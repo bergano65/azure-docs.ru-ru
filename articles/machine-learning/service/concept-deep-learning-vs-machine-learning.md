@@ -1,6 +1,6 @@
 ---
 title: Сравнение глубокого обучения и машинного обучения
-titleSuffix: Azure Machine Learning
+titleSuffix: Azure
 description: Узнайте, как глубокое обучение относится к машинному обучению и искусственному интеллекту. Глубокое обучение используется в таких сценариях, как обнаружение мошенничества, распознавание речи & распознавания лиц, аналитика тональности и прогнозирование временных рядов.
 services: machine-learning
 ms.service: machine-learning
@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: lazzeri
 author: FrancescaLazzeri
 ms.date: 11/04/2019
-ms.openlocfilehash: cc98e620194c5bf67d2efa12d61af44d5527bafc
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 2ed9f933e790aa70b257e27fa2bbbc04f6a2e077
+ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73497483"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73647995"
 ---
 # <a name="deep-learning-vs-machine-learning"></a>Сравнение глубокого обучения и машинного обучения
 

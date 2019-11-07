@@ -1,47 +1,47 @@
 ---
-title: Устранение неполадок в пользовательских политиках с помощью Application Insights в Azure Active Directory B2C | Документация Майкрософт
-description: Сведения о настройке Application Insights для отслеживания выполнения пользовательских политик.
+title: Устранение неполадок пользовательских политик с помощью Application Insights Azure Active Directory B2C
+description: Настройка Application Insights для трассировки выполнения пользовательских политик.
 services: active-directory-b2c
 author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 08/04/2017
+ms.date: 11/04/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: df5d710792d8c47e491f5b06d88f4050e8eb4a01
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b8bf26791ca6489c12e4f9538d56ae0f0f66cc8c
+ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66508067"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73602025"
 ---
-# <a name="azure-active-directory-b2c-collecting-logs"></a>Azure Active Directory B2C: сбор журналов
+# <a name="collect-azure-active-directory-b2c-logs-with-application-insights"></a>Собирайте журналы Azure Active Directory B2C с помощью Application Insights
 
-В этой статье приводятся действия по сбору журналов из Azure AD B2C, с помощью которых вы сможете диагностировать неполадки в пользовательских политиках.
+В этой статье приводятся действия по сбору журналов из Active Directory B2C (Azure AD B2C), чтобы можно было диагностировать проблемы с пользовательскими политиками. Application Insights позволяет диагностировать исключения и визуализировать проблемы производительности в приложениях. Azure AD B2C включает функцию отправки данных в Application Insights.
 
->[!NOTE]
->Сейчас детально описанные здесь журналы действий предназначены **только** для упрощения разработки пользовательских политик. Не используйте режим разработки в рабочей среде.  В журналах регистрируются все утверждения, отправляемые и принимаемые поставщиками удостоверений во время разработки.  При использовании режима разработки в рабочей среде разработчик несет ответственность за персональные данные (личные сведения), собранные в его журнале App Insights.  Эти подробные журналы могут собираться, только когда политика помещается в **режим разработки**.
+Подробные журналы действий, описанные здесь, должны быть включены **только** во время разработки пользовательских политик.
 
+> [!WARNING]
+> Не включайте режим разработки в рабочей среде. Журналы собираются все утверждения, отправленные поставщикам удостоверений и от них. Разработчик несет ответственность за любые персональные данные, собранные в журналах Application Insights. Эти подробные журналы собираются только в том случае, если политика помещается в **режим разработчика**.
 
-## <a name="use-application-insights"></a>Использование Application Insights
+## <a name="set-up-application-insights"></a>Настройка Application Insights
 
-Служба Azure AD B2C поддерживает функцию отправки данных в Application Insights.  Application Insights позволяет диагностировать исключения и визуализировать проблемы производительности в приложениях.
+Создайте экземпляр Application Insights в подписке, если он еще не создан.
 
-### <a name="setup-application-insights"></a>Настройка Application Insights
+1. Войдите на [портал Azure](https://portal.azure.com).
+1. Выберите фильтр **каталог и подписка** в верхнем меню, а затем выберите каталог, содержащий подписку Azure (а не Azure AD B2C каталог).
+1. Выберите **создать ресурс** в меню навигации слева.
+1. Найдите и выберите **Application Insights**, а затем щелкните **создать**.
+1. Заполните форму, выберите **проверить и создать**, а затем щелкните **создать**.
+1. После завершения развертывания выберите **Переход к ресурсу**.
+1. В меню **Настройка** в Application Insights выберите пункт **свойства**.
+1. Запишите **ключ инструментирования** для использования на следующем шаге.
 
-1. Перейдите на [портал Azure](https://portal.azure.com). Убедитесь, что вы находитесь в клиенте с подпиской Azure (а не в клиенте Azure AD B2C).
-1. На панели навигации слева щелкните **+ Создать**.
-1. Найдите и выберите **Application Insights**, а затем щелкните **Создать**.
-1. Заполните форму и щелкните **Создать**. Выберите **универсальный** **тип приложения**.
-1. Откройте ресурс Application Insights после его создания.
-1. Найдите пункт **Свойства** в меню слева и выберите его.
-1. Скопируйте **ключ инструментирования** и сохраните его для использования в следующем разделе.
+## <a name="configure-the-custom-policy"></a>Настройка настраиваемой политики
 
-### <a name="set-up-the-custom-policy"></a>Настройка пользовательской политики
-
-1. Откройте файл проверяющей стороны (например, SignUpOrSignin.xml).
+1. Откройте файл проверяющей стороны (RP), например *SignUpOrSignin. XML*.
 1. Добавьте следующие атрибуты в элемент `<TrustFrameworkPolicy>`.
 
    ```XML
@@ -49,26 +49,27 @@ ms.locfileid: "66508067"
    UserJourneyRecorderEndpoint="urn:journeyrecorder:applicationinsights"
    ```
 
-1. Если он еще не существует, добавьте дочерний узел `<UserJourneyBehaviors>` в узел `<RelyingParty>`. Он должен находиться сразу после `<DefaultUserJourney ReferenceId="UserJourney Id from your extensions policy, or equivalent (for example:SignUpOrSigninWithAAD" />`.
-2. Добавьте следующий узел в качестве дочернего узла элемента `<UserJourneyBehaviors>`. Обязательно замените `{Your Application Insights Key}` **ключом инструментирования**, полученным из Application Insights в предыдущем разделе.
+1. Если он еще не существует, добавьте `<UserJourneyBehaviors>` дочерний узел в узел `<RelyingParty>`. Он должен располагаться сразу после `<DefaultUserJourney ReferenceId="UserJourney Id" from your extensions policy, or equivalent (for example:SignUpOrSigninWithAAD" />`.
+1. Добавьте следующий узел в качестве дочернего узла элемента `<UserJourneyBehaviors>`. Обязательно замените `{Your Application Insights Key}` Application Insightsным **ключом инструментирования** , записанным ранее.
 
-   ```XML
-   <JourneyInsights TelemetryEngine="ApplicationInsights" InstrumentationKey="{Your Application Insights Key}" DeveloperMode="true" ClientEnabled="false" ServerEnabled="true" TelemetryVersion="1.0.0" />
-   ```
+    ```XML
+    <JourneyInsights TelemetryEngine="ApplicationInsights" InstrumentationKey="{Your Application Insights Key}" DeveloperMode="true" ClientEnabled="false" ServerEnabled="true" TelemetryVersion="1.0.0" />
+    ```
 
-   * Параметр `DeveloperMode="true"` сообщает Application Insights о том, что необходимо ускорить передачу данных телеметрии через конвейер обработки. Это удобно при разработке, но связано с ограничениями при больших объемах.
-   * Параметр `ClientEnabled="true"` отправляет Application Insights клиентский скрипт для отслеживания представления страницы и ошибок на стороне клиента (необязательно).
-   * Параметр `ServerEnabled="true"` отправляет существующие данные JSON UserJourneyRecorder как пользовательское событие в Application Insights.
-   Пример:
+    * `DeveloperMode="true"` указывает ApplicationInsights ускорить передачу данных телеметрии через конвейер обработки. Подходит для разработки, но ограничена большими объемами томов.
+    * `ClientEnabled="true"` отправляет скрипт на стороне клиента ApplicationInsights для отслеживания просмотра страниц и ошибок на стороне клиента. Их можно просмотреть в таблице **бровсертимингс** на портале Application Insights. Настроив `ClientEnabled= "true"`, вы добавляете в скрипт страницы Application Insights и получаете время загрузки страниц и вызовов AJAX, количество, сведения об исключениях браузера и сбоях AJAX, а также число пользователей и сеансов. Это поле является **необязательным**и по умолчанию имеет значение `false`.
+    * Параметр `ServerEnabled="true"` отправляет существующие данные JSON UserJourneyRecorder как пользовательское событие в Application Insights.
 
-   ```XML
-   <TrustFrameworkPolicy
-    ...
-    TenantId="fabrikamb2c.onmicrosoft.com"
-    PolicyId="SignUpOrSignInWithAAD"
-    DeploymentMode="Development"
-    UserJourneyRecorderEndpoint="urn:journeyrecorder:applicationinsights"
-   >
+    Например:
+
+    ```XML
+    <TrustFrameworkPolicy
+      ...
+      TenantId="fabrikamb2c.onmicrosoft.com"
+      PolicyId="SignUpOrSignInWithAAD"
+      DeploymentMode="Development"
+      UserJourneyRecorderEndpoint="urn:journeyrecorder:applicationinsights"
+    >
     ...
     <RelyingParty>
       <DefaultUserJourney ReferenceId="UserJourney ID from your extensions policy, or equivalent (for example: SignUpOrSigninWithAzureAD)" />
@@ -76,42 +77,36 @@ ms.locfileid: "66508067"
         <JourneyInsights TelemetryEngine="ApplicationInsights" InstrumentationKey="{Your Application Insights Key}" DeveloperMode="true" ClientEnabled="false" ServerEnabled="true" TelemetryVersion="1.0.0" />
       </UserJourneyBehaviors>
       ...
-   </TrustFrameworkPolicy>
-   ```
+    </TrustFrameworkPolicy>
+    ```
 
-3. Отправьте политику.
+1. Отправьте политику.
 
-### <a name="see-the-logs-in-application-insights"></a>Просмотр журналов в Application Insights
+## <a name="see-the-logs-in-application-insights"></a>Просмотр журналов в Application Insights
 
->[!NOTE]
-> Новые журналы отобразятся в Application Insights через некоторое время (менее 5 минут).
+Для просмотра новых журналов в Application Insights требуется небольшая задержка (обычно менее пяти минут).
 
 1. Откройте созданный ресурс Application Insights на [портале Azure](https://portal.azure.com).
-1. В меню **Обзор** выберите пункт **Analytics**.
+1. В меню **Обзор** выберите пункт **аналитика**.
 1. Откройте новую вкладку в Application Insights
-1. Ниже приведен список запросов, которые можно использовать для просмотра журналов.
 
-| Запрос | Описание |
+Ниже приведен список запросов, которые можно использовать для просмотра журналов.
+
+| Запрос | Description (Описание) |
 |---------------------|--------------------|
-traces | Просмотр всех журналов, созданных Azure AD B2C |
-traces \| where timestamp > ago(1d) | Просмотр всех журналов, созданных Azure AD B2C за последний день
+`traces` | Просмотр всех журналов, созданных Azure AD B2C |
+`traces | where timestamp > ago(1d)` | Просмотр всех журналов, созданных Azure AD B2C за последний день
 
-Записи могут быть длинными.  Выполните экспорт в CSV-файл, чтобы изучить их подробнее.
+Записи могут быть длинными. Выполните экспорт в CSV-файл, чтобы изучить их подробнее.
 
-Дополнительные сведения об инструменте Analytics см. [здесь](https://docs.microsoft.com/azure/application-insights/app-insights-analytics).
+Дополнительные сведения о запросах см. [в разделе Обзор запросов журналов в Azure Monitor](../azure-monitor/log-query/log-query-overview.md).
 
->[!NOTE]
->Для разработчиков удостоверений сообщество разработало средство просмотра пути взаимодействия пользователя.  Это средство не поддерживается Майкрософт и предоставляется исключительно в том виде, в котором оно было создано.  Оно считывается из экземпляра Application Insights и обеспечивает хорошо структурированное представление событий пути взаимодействия пользователя.  Исходный код можно получить и развернуть в собственном решении.
+## <a name="next-steps"></a>Дальнейшие действия
 
-Версия средства просмотра, которое считывает события из Application Insights, находится [здесь](https://github.com/Azure-Samples/active-directory-b2c-advanced-policies/tree/master/wingtipgamesb2c/src/WingTipUserJourneyPlayerWebApplication)
+Для разработчиков удостоверений сообщество разработало средство просмотра пути взаимодействия пользователя. Оно считывается из экземпляра Application Insights и обеспечивает хорошо структурированное представление событий пути взаимодействия пользователя. Исходный код можно получить и развернуть в собственном решении.
 
->[!NOTE]
->Сейчас детально описанные здесь журналы действий предназначены **только** для упрощения разработки пользовательских политик. Не используйте режим разработки в рабочей среде.  В журналах регистрируются все утверждения, отправляемые и принимаемые поставщиками удостоверений во время разработки.  При использовании режима разработки в рабочей среде разработчик несет ответственность за персональные данные (личные сведения), собранные в его журнале App Insights.  Эти подробные журналы могут собираться, только когда политика помещается в **режим разработки**.
+Пользовательский проигрыватель не поддерживается корпорацией Майкрософт и становится доступным строго как есть.
 
-[Репозиторий GitHub с примерами неподдерживаемых пользовательских политик и связанных с ними средств](https://github.com/Azure-Samples/active-directory-b2c-advanced-policies)
+Версию средства просмотра, считывающего события из Application Insights на GitHub, можно найти здесь:
 
-
-
-## <a name="next-steps"></a>Следующие шаги
-
-Изучите данные в Application Insights, чтобы понять, как работает платформа Identity Experience Framework, лежащая в основе B2C, чтобы предоставить собственные удостоверения.
+[Azure-Samples/Active-Directory-B2C-Advanced-Policies](https://github.com/Azure-Samples/active-directory-b2c-advanced-policies/tree/master/wingtipgamesb2c/src/WingTipUserJourneyPlayerWebApplication)

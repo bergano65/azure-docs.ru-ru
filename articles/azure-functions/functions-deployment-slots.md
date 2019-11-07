@@ -1,8 +1,6 @@
 ---
 title: Слоты развертывания функций Azure
 description: Узнайте, как создавать и использовать слоты развертывания с помощью функций Azure.
-services: functions
-documentationcenter: na
 author: craigshoemaker
 manager: gwallace
 keywords: функции Azure, функции
@@ -10,12 +8,12 @@ ms.service: azure-functions
 ms.topic: reference
 ms.date: 08/12/2019
 ms.author: cshoe
-ms.openlocfilehash: 50337745b008cdd38dd860a0329e44ee712e7acd
-ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
+ms.openlocfilehash: 23a4870332266ce180c2e94aeb0b5ca24073878b
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70085667"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73576320"
 ---
 # <a name="azure-functions-deployment-slots"></a>Слоты развертывания функций Azure
 
@@ -27,7 +25,7 @@ ms.locfileid: "70085667"
 - Если во время переключения выполняется функция, выполнение продолжится, и последующие триггеры направляются в перенаправляемый экземпляр приложения.
 
 > [!NOTE]
-> Слоты недоступны для плана потребления Linux.
+> В настоящее время слоты недоступны для плана потребления Linux.
 
 ## <a name="why-use-slots"></a>Зачем использовать слоты?
 
@@ -77,12 +75,12 @@ ms.locfileid: "70085667"
 - В разделе *функции платформы > общие параметры*щелкните **Конфигурация** .
 - Щелкните имя параметра, которое вы хотите прикрепить к текущему слоту.
 - Установите флажок **параметр слота развертывания** .
-- Щелкните **ОК**
+- Нажмите кнопку **ОК**
 - После того, как колонка настройки исчезнет, нажмите кнопку **сохранить** , чтобы сохранить изменения.
 
 ![Параметр слота развертывания](./media/functions-deployment-slots/azure-functions-deployment-slots-deployment-setting.png)
 
-## <a name="deployment"></a>Развертывание.
+## <a name="deployment"></a>Развертывание
 
 При создании слота слоты пусты. Для развертывания приложения в слот можно использовать любую из [поддерживаемых технологий развертывания](./functions-deployment-technologies.md) .
 
@@ -111,8 +109,8 @@ ms.locfileid: "70085667"
 
 1. Переход к приложению функции
 1. Щелкните имя слота источника, который нужно поменять местами
-1. На вкладке *Обзор* нажмите кнопку **Переключить** , ![Swap слот развертывания функций Azure ](./media/functions-deployment-slots/azure-functions-deployment-slots-swap.png)
-1. Проверьте параметры конфигурации для переключения и щелкните " **поменять местами** ![Swap слот развертывания функций Azure ](./media/functions-deployment-slots/azure-functions-deployment-slots-swap-config.png)
+1. На вкладке *Обзор* нажмите кнопку **Переключить** , ![переключить слот развертывания функций Azure](./media/functions-deployment-slots/azure-functions-deployment-slots-swap.png)
+1. Проверьте параметры конфигурации для переключения, а затем щелкните " **поменять местами** ![слот развертывания функций Azure](./media/functions-deployment-slots/azure-functions-deployment-slots-swap-config.png)
 
 Операция может занять некоторое время, пока выполняется операция переключения.
 
@@ -159,7 +157,7 @@ ms.locfileid: "70085667"
 
 1. Выберите новый план службы приложений или создайте новый план.
 
-1. Щелкните **ОК**
+1. Нажмите кнопку **ОК**
 
     ![Изменение плана службы приложений](./media/functions-deployment-slots/azure-functions-deployment-slots-change-app-service-select.png)
 
@@ -182,10 +180,10 @@ ms.locfileid: "70085667"
 | План ОС и размещения           | Уровень поддержки     |
 | ------------------------- | -------------------- |
 | Использование Windows       | Общедоступная версия |
-| Windows Premium (Предварительная версия) | Preview (Предварительный просмотр)              |
+| Windows Premium           | Общедоступная версия  |
 | Выделенные Windows         | Общедоступная версия |
 | Использование Linux         | Не поддерживается          |
-| Linux Premium (Предварительная версия)   | Preview (Предварительный просмотр)              |
+| Linux Premium             | Общедоступная версия  |
 | Выделенные Linux           | Общедоступная версия |
 
 ## <a name="next-steps"></a>Дальнейшие действия

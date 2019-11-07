@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/17/2019
 ms.author: allensu
-ms.openlocfilehash: 62af688c6090b61f2596ab376cb479c270b87759
-ms.sourcegitcommit: f272ba8ecdbc126d22a596863d49e55bc7b22d37
+ms.openlocfilehash: 78e085aae97114e6848b736c40b16c755256d0cd
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72274117"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73571116"
 ---
 # <a name="load-balancer-health-probes"></a>Пробы работоспособности Load Balancer
 
@@ -48,6 +48,9 @@ ms.locfileid: "72274117"
 - Протокол пробы
 - Порт пробы
 - Путь HTTP, используемый для HTTP GET при использовании зондов HTTP (S)
+
+> [!NOTE]
+> Определение зонда не является обязательным или не проверяется при использовании Azure PowerShell, Azure CLI, шаблонов или API. Тесты проверки зонда выполняются только при использовании портала Azure.
 
 ## <a name="understanding-application-signal-detection-of-the-signal-and-reaction-of-the-platform"></a>Основные сведения о сигнальном приложении, обнаружении сигнала и реакции платформы
 
@@ -248,7 +251,7 @@ UDP не требует соединения, поэтому состояние 
 - Пробы HTTPS не поддерживают взаимную проверку подлинности с помощью сертификата клиента.
 - Если отметка времени TCP включена, Ассумеххеалс зонды завершатся ошибкой.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте больше об [Azure Load Balancer уровня "Стандартный"](load-balancer-standard-overview.md).
 - [Краткое руководство. Создание общедоступной подсистемы балансировки нагрузки с помощью Azure PowerShell](load-balancer-get-started-internet-arm-ps.md)

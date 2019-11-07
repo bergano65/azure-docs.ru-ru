@@ -1,19 +1,19 @@
 ---
-title: Подключение кэша HPC для Azure (Предварительная версия)
+title: Подключение кэша HPC для Azure
 description: Подключение клиентов к службе кэша Azure HPC
 author: ekpgh
 ms.service: hpc-cache
 ms.topic: conceptual
-ms.date: 09/24/2019
+ms.date: 10/30/2019
 ms.author: rohogue
-ms.openlocfilehash: 3257cf92c628650fc50e0a36ec37fcab920aba2f
-ms.sourcegitcommit: 1c2659ab26619658799442a6e7604f3c66307a89
+ms.openlocfilehash: d906ed9a1a55e936c6374806a9037085c47e3b01
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72254568"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73582214"
 ---
-# <a name="mount-the-azure-hpc-cache-preview"></a>Подключение кэша HPC для Azure (Предварительная версия)
+# <a name="mount-the-azure-hpc-cache"></a>Подключение кэша HPC для Azure
 
 После создания кэша клиенты NFS могут получить к нему доступ с помощью простой команды подключения.
 
@@ -63,6 +63,6 @@ root@test-client:/tmp#
 ``mountproto=netid`` | Этот параметр поддерживает соответствующую обработку сетевых ошибок для операций подключения.
 ``retry=n`` | Задайте значение ``retry=30``, чтобы избежать временных ошибок при подключении. (При подключении переднего плана рекомендуется использовать другое значение.)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Чтобы переместить данные в целевые объекты хранилища кэша, прочитайте статью [заполнение нового хранилища BLOB-объектов Azure](hpc-cache-ingest.md).

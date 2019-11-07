@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
-ms.date: 10/09/2019
+ms.date: 11/04/2019
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: 15253e67283d1ad53bb1d4c018987dceaafac6c8
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
-ms.translationtype: HT
+ms.openlocfilehash: 418324ea0d50cb2f8ff4a30018a31e7807d52eac
+ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73486757"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73602594"
 ---
 # <a name="add-chit-chat-to-a-knowledge-base"></a>Добавление беседы в базу знаний
 
@@ -45,15 +45,15 @@ ms.locfileid: "73486757"
 
 |язык|
 |--|
-|Китайский, `zh-cn`|
-|Английский, `en-us`|
-|Французский, `fr-fr`|
-|Германия, `de-de`|
-|Итальянский, `it-it`|
-|Японский, `ja-jp`|
-|Корейский, `ko-kr`|
-|Португальский, `pr-br`|
-|Испанский, `es-es`|
+|Китайский|
+|Английский|
+|Французский|
+|Германия|
+|Итальянский|
+|Японский|
+|Корейский|
+|Португальский|
+|Испанский|
 
 
 ## <a name="add-chit-chat-during-kb-creation"></a>Добавление беседы во время создания базы знаний

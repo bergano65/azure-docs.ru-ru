@@ -1,5 +1,5 @@
 ---
-title: Подключение к виртуальному рабочему столу Windows из Windows 10 или Windows 7 — Azure
+title: Подключение к виртуальному рабочему столу Windows 10 или 7 в Azure
 description: Как подключиться к виртуальному рабочему столу Windows с помощью настольного клиента Windows.
 services: virtual-desktop
 author: Heidilohr
@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 10/31/2019
 ms.author: helohr
-ms.openlocfilehash: 1d7f08dbaa9b91cd2dbac28daf5c17ea85d09985
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
-ms.translationtype: HT
+ms.openlocfilehash: 2552fcbd860a0cc98aa7e2a6c7f92796a8d588ca
+ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73482219"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73605788"
 ---
 # <a name="connect-with-the-windows-desktop-client"></a>Подключение к классическому клиенту Windows
 

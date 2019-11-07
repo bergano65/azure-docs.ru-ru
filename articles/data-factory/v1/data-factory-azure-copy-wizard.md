@@ -1,5 +1,5 @@
 ---
-title: Мастер копирования фабрики данных Azure | Документация Майкрософт
+title: Мастер копирования фабрики данных Azure
 description: Из этой статьи вы узнаете, как с помощью мастера копирования фабрики данных Azure копировать данные из поддерживаемых источников данных в приемники.
 services: data-factory
 documentationcenter: ''
@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: d13e304b0d10e8bd34d306426f1f9164bcc6be94
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: b2ec8e2cc09b6deb236bd83cb5cca99fead97279
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60567679"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73683229"
 ---
 # <a name="azure-data-factory-copy-wizard"></a>Мастер копирования фабрики данных Azure
 > [!NOTE]
@@ -91,4 +91,4 @@ ms.locfileid: "60567679"
 ![Планирование свойств](./media/data-factory-copy-wizard/scheduling-properties.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Краткое пошаговое руководство по созданию конвейера с действием копирования с помощью мастера копирования фабрики данных см. в статье [Руководство. Создание конвейера с действием копирования с помощью мастера копирования фабрики данных](data-factory-copy-data-wizard-tutorial.md).
+Краткое пошаговое руководство по созданию конвейера с действием копирования с помощью мастера копирования фабрики данных см. в [этой статье](data-factory-copy-data-wizard-tutorial.md).

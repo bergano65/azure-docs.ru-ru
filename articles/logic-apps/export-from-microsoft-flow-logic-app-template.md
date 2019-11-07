@@ -1,6 +1,6 @@
 ---
-title: Экспорт потоков из Microsoft Flow в Azure Logic Apps
-description: Перенос потоков из Microsoft Flow в Azure Logic Apps путем экспорта в качестве Azure Resource Manager шаблонов
+title: Экспорт потоков из Power Автоматизация в Azure Logic Apps
+description: Перенесите потоки из Power Автоматизация в Azure Logic Apps, экспортировав их как шаблоны Azure Resource Manager
 services: logic-apps
 ms.service: logic-apps
 ms.suite: integration
@@ -9,31 +9,31 @@ ms.author: estfan
 ms.reviewer: klam, LADocs
 ms.topic: conceptual
 ms.date: 07/10/2019
-ms.openlocfilehash: 82c4e55eff36a7da70e0304fc8152491a8030e04
-ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
+ms.openlocfilehash: e0dda5c2097243143d18851c47e7006c81769c87
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68441006"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73583253"
 ---
-# <a name="export-flows-from-microsoft-flow-and-deploy-to-azure-logic-apps"></a>Экспорт потоков из Microsoft Flow и их развертывание в Azure Logic Apps
+# <a name="export-flows-from-power-automate-and-deploy-to-azure-logic-apps"></a>Экспорт потоков из Power Автоматизация и развертывание в Azure Logic Apps
 
-Чтобы расширить и расширить возможности потока, можно перенести поток с [Microsoft Flow](https://flow.microsoft.com) на [Azure Logic Apps](../logic-apps/logic-apps-overview.md). Вы можете экспортировать последовательность в качестве шаблона Azure Resource Manager для приложения логики, развернуть шаблон приложения логики в группе ресурсов Azure, а затем открыть это приложение логики в конструкторе приложений логики.
+Чтобы расширить и расширить возможности потока, можно перенести этот поток из [Power Автоматизация](https://flow.microsoft.com) в [Azure Logic Apps](../logic-apps/logic-apps-overview.md). Вы можете экспортировать последовательность в качестве шаблона Azure Resource Manager для приложения логики, развернуть шаблон приложения логики в группе ресурсов Azure, а затем открыть это приложение логики в конструкторе приложений логики.
 
 > [!NOTE]
-> Не все соединители Microsoft Flow доступны в Azure Logic Apps. Вы можете импортировать потоки с [эквивалентными соединителями](../connectors/apis-list.md) в Azure Logic Apps. Например, триггер кнопки, соединитель утверждения и соединитель уведомлений относятся к Microsoft Flow.
+> В Azure Logic Apps доступны не все соединители Power автоматизиру. Вы можете импортировать потоки с [эквивалентными соединителями](../connectors/apis-list.md) в Azure Logic Apps. Например, триггер кнопки, соединитель утверждения и соединитель уведомлений относятся только к автоматизации питания.
 >
-> Потоки на основе OpenAPI, экспортированные из Microsoft Flow, в настоящее время не поддерживаются для развертывания в качестве шаблонов приложений логики. 
+> Потоки на основе OpenAPI, экспортированные из Power автоматизирующие, в настоящее время не поддерживаются для развертывания в качестве шаблонов приложений логики. 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
-* Поток, который необходимо экспортировать из Microsoft Flow
+* Последовательность, которую требуется экспортировать из Power автоматизирующие
 
 ## <a name="export-a-flow"></a>Экспорт последовательности
 
-1. Войдите в [Microsoft Flow](https://flow.microsoft.com)и выберите **мои потоки**. Найдите и выберите свой поток. На панели инструментов нажмите кнопку с многоточием ( **...** ). Выберите **Экспорт** > **Logic Apps шаблон (. JSON)** .
+1. Войдите в [Power Автоматизируйте](https://flow.microsoft.com)и выберите **мои потоки**. Найдите и выберите свой поток. На панели инструментов нажмите кнопку с многоточием ( **...** ). Выберите **экспорт** > **Logic Apps шаблон (. JSON)** .
 
    ![Экспорт потока](./media/export-from-microsoft-flow-logic-app-template/export-flow.png)
 
@@ -53,13 +53,13 @@ ms.locfileid: "68441006"
 
    ![Выберите "создать собственный шаблон в редакторе".](./media/export-from-microsoft-flow-logic-app-template/build-template-in-editor.png)
 
-1. На панели инструментов **изменение шаблона** выберите **загрузить файл**. Найдите и выберите шаблон JSON, экспортированный из Microsoft Flow, и нажмите кнопку **Открыть**.
+1. На панели инструментов **изменение шаблона** выберите **загрузить файл**. Найдите и выберите шаблон JSON, экспортированный из Power автоматизиру, и нажмите кнопку **Открыть**.
 
    ![Выберите "загрузить файл".](./media/export-from-microsoft-flow-logic-app-template/load-file.png)
 
 1. После того как в редакторе отобразятся JSON, параметры и ресурсы в шаблоне, выберите **сохранить**.
   
-   ![Сохранить шаблон](./media/export-from-microsoft-flow-logic-app-template/save-template.png)
+   ![Сохранение шаблона](./media/export-from-microsoft-flow-logic-app-template/save-template.png)
 
 1. Теперь укажите эти входные параметры для шаблона:
 
@@ -76,7 +76,7 @@ ms.locfileid: "68441006"
   
    ![Укажите входные параметры для шаблона](./media/export-from-microsoft-flow-logic-app-template/template-input-parameters.png)
 
-   Azure развертывает шаблон в качестве приложения логики в указанной группе ресурсов. Все приложения логики, перенесенные из Microsoft Flow, развертываются в отключенном состоянии.
+   Azure развертывает шаблон в качестве приложения логики в указанной группе ресурсов. Все приложения логики, переносимые из Power автоматизируются, развертываются в отключенном состоянии.
 
 1. Перед активацией приложения логики Авторизуйте все новые подключения, выполнив следующие действия.
 
@@ -84,7 +84,7 @@ ms.locfileid: "68441006"
 
       Для каждого подключения, требующего авторизации, отображается значок предупреждения:
 
-      ![Значок предупреждения](./media/export-from-microsoft-flow-logic-app-template/authorize-connections.png)
+      ![Значок "Внимание!"](./media/export-from-microsoft-flow-logic-app-template/authorize-connections.png)
 
    1. Для каждого шага, для которого требуется авторизация подключения, разверните этот шаг и выберите **Добавить новый**.
 
@@ -102,9 +102,9 @@ ms.locfileid: "68441006"
 
 Если вы настроили Visual Studio с [предварительными требованиями](../logic-apps/quickstart-create-logic-apps-with-visual-studio.md#prerequisites) для создания приложений логики, вы можете развернуть экспортированный шаблон из Visual Studio, чтобы Azure Logic Apps.
 
-1. В Visual Studio откройте файл шаблона, экспортированный из Microsoft Flow.
+1. В Visual Studio откройте файл шаблона, экспортированный из Power автоматизирующие.
 
-1. В Visual Studio создайте проект группы ресурсов Azure и выберите шаблон **приложения логики** , выполнив действия, описанные [в кратком руководстве. Создавайте автоматизированные задачи, процессы и рабочие процессы с помощью Azure Logic Apps](../logic-apps/quickstart-create-logic-apps-with-visual-studio.md)-Visual Studio, например:
+1. В Visual Studio создайте проект группы ресурсов Azure и выберите шаблон **приложения логики** , выполнив действия, описанные в разделе [Краткое руководство. Создание автоматических задач, процессов и рабочих процессов с помощью Azure Logic Apps-Visual Studio](../logic-apps/quickstart-create-logic-apps-with-visual-studio.md), например:
 
    ![Создание проекта группы ресурсов Azure](./media/export-from-microsoft-flow-logic-app-template/create-azure-resource-group-project.png)
 
@@ -134,7 +134,7 @@ ms.locfileid: "68441006"
 
    1. Сохраните решение перед развертыванием приложения логики.
 
-1. В Обозреватель решений откройте контекстное меню проекта и выберите пункт **развернуть** > **Новый**. Если отобразится запрос на вход в учетную запись Azure, выполните его.
+1. В обозреватель решений откройте контекстное меню проекта и выберите **развернуть** > **создать**. Если отобразится запрос на вход в учетную запись Azure, выполните его.
 
 1. При появлении запроса подтвердите подписку Azure, группу ресурсов Azure и другие параметры, которые вы хотите использовать для развертывания, например [файл параметров](../azure-resource-manager/resource-group-template-deploy.md#parameter-files) , который будет использоваться для передачи значений параметров шаблона, а затем нажмите кнопку **развернуть**.
 
@@ -144,7 +144,7 @@ ms.locfileid: "68441006"
 
    ![Изменить параметры развертывания](./media/export-from-microsoft-flow-logic-app-template/edit-parameters-deployment.png)
 
-   При запуске развертывания его состояние отобразится в окне **Выходные данные** Visual Studio. Если состояние не отображается, откройте список **Показать вывод из** и выберите свою группу ресурсов Azure. Пример:
+   При запуске развертывания его состояние отобразится в окне **Выходные данные** Visual Studio. Если состояние не отображается, откройте список **Показать вывод из** и выберите свою группу ресурсов Azure. Например:
 
    ![Окно вывода](./media/export-from-microsoft-flow-logic-app-template/output-window.png)
 
@@ -158,9 +158,9 @@ ms.locfileid: "68441006"
 
 1. Чтобы избежать запуска повторяющихся рабочих процессов, убедитесь, что вы деактивируете или удаляете исходный поток.
 
-Дополнительные сведения об этих шагах развертывания см. [в разделе Краткое руководство. Создание автоматизированных задач, процессов и рабочих процессов с помощью Azure Logic Apps — Visual Studio](../logic-apps/quickstart-create-logic-apps-with-visual-studio.md#deploy-to-Azure)
+Дополнительные сведения об этих шагах развертывания см [. в разделе Краткое руководство. Создание автоматизированных задач, процессов и рабочих процессов с помощью Azure Logic Apps — Visual Studio.](../logic-apps/quickstart-create-logic-apps-with-visual-studio.md#deploy-to-Azure)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о [соединителях для Azure Logic Apps](../connectors/apis-list.md)
 * Дополнительные сведения о [Azure Logic Apps](../logic-apps/logic-apps-overview.md)

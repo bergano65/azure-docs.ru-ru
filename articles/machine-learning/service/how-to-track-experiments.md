@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 09/11/2019
 ms.custom: seodec18
-ms.openlocfilehash: 2d8bf44f5e5e7a3f8c328a47480599f9dd18b845
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
-ms.translationtype: HT
+ms.openlocfilehash: d8a2c456c725a3170bc940bf17dec6b0c4ad2c3e
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/04/2019
-ms.locfileid: "73489524"
+ms.locfileid: "73584525"
 ---
 # <a name="monitor-azure-ml-experiment-runs-and-metrics"></a>Мониторинг запусков и метрик экспериментов машинного обучения Azure
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -26,6 +26,9 @@ ms.locfileid: "73489524"
 
 > [!NOTE]
 > Машинное обучение Azure также может записывать в журнал данные из других источников во время обучения, такие как автоматические запуски машинного обучения или контейнер DOCKER, выполняющий задание обучения. Эти журналы не документированы. Если возникли проблемы и вы можете обратиться в службу поддержки Майкрософт, они смогут использовать эти журналы во время устранения неполадок.
+
+> [!TIP]
+> Сведения в этом документе предназначены главным образом для специалистов по обработке и анализу данных и разработчиков, желающих отслеживать процесс обучения модели. Если вы являетесь администратором, который заинтересован в наблюдении за использованием ресурсов и событиями из машинного обучения Azure, таких как квоты, завершенные обучающие запуски или завершенные развертывания моделей, см. раздел [мониторинг машинное обучение Azure](monitor-azure-machine-learning.md).
 
 ## <a name="available-metrics-to-track"></a>Доступные метрики для мониторинга
 

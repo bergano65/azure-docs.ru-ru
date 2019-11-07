@@ -1,18 +1,18 @@
 ---
 title: Псевдонимы сервера Azure Analysis Services | Документация Майкрософт
-description: Описывается создание и использование псевдонимов сервера.
+description: Узнайте, как создавать псевдонимы имен серверов Azure Analysis Services. После этого пользователи смогут подключаться к серверу с более коротким именем псевдонима вместо имени сервера.
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
 ms.date: 10/29/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: ea618ecb29451650cbb01e9c95d263f42d406555
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 5e7017fad90e32cb8c4b952987fe248e463e4d03
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73146347"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73572295"
 ---
 # <a name="alias-server-names"></a>Псевдонимы сервера
 

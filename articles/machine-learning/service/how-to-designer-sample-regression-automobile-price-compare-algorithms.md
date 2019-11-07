@@ -1,5 +1,5 @@
 ---
-title: 'Пример конструктора #3: регрессия по ценам и сравнению алгоритмов'
+title: 'Конструктор: Прогнозирование цен на автомобиль (регрессия)'
 titleSuffix: Azure Machine Learning
 description: В этой статье показано, как создать сложный конвейер машинного обучения без написания единой строки кода с помощью конструктора (Предварительная версия). Узнайте, как обучить и сравнивать несколько моделей регрессии для прогнозирования цены автомобиля на основе технических характеристик.
 services: machine-learning
@@ -10,12 +10,12 @@ author: xiaoharper
 ms.author: zhanxia
 ms.reviewer: peterlu
 ms.date: 11/04/2019
-ms.openlocfilehash: 4fb2e4c5c96c0c4c1b4d8ef14de65e470d545638
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: d73f6d67afff13696de78d026ff65228fd68fb28
+ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73515438"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73647955"
 ---
 # <a name="sample-2---regression-predict-price-and-compare-algorithms"></a>Пример 2. регрессия. Прогнозирование цен и алгоритмов сравнения
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-enterprise-sku.md)]
@@ -28,7 +28,7 @@ ms.locfileid: "73515438"
 
 [![граф конвейера](media/how-to-ui-sample-regression-predict-automobile-price-compare-algorithms/graph.png)](media/how-to-ui-sample-classification-predict-credit-risk-cost-sensitive/graph.png#lightbox)
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [aml-ui-prereq](../../../includes/aml-ui-prereq.md)]
 

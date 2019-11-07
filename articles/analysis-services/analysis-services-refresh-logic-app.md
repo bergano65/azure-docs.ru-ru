@@ -1,17 +1,17 @@
 ---
 title: Обновление с помощью Logic Apps для моделей Azure Analysis Services | Документация Майкрософт
-description: Узнайте, как кодировать асинхронное обновление с помощью Azure Logic Apps.
+description: В этой статье описывается, как выполнить код асинхронного обновления для Azure Analysis Services с помощью Azure Logic Apps.
 author: chrislound
 ms.service: analysis-services
 ms.topic: conceptual
-ms.date: 04/26/2019
+ms.date: 10/30/2019
 ms.author: chlound
-ms.openlocfilehash: acf31bf3e7e8c3a0835640dee36f8435a1eba625
-ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
+ms.openlocfilehash: a44aa5b355bea675f5d99761d97b8876a9b2a7d7
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2019
-ms.locfileid: "72294621"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73572341"
 ---
 # <a name="refresh-with-logic-apps"></a>Обновление с помощью Logic Apps
 
@@ -19,7 +19,7 @@ ms.locfileid: "72294621"
 
 Дополнительные сведения об использовании API-интерфейсов RESTFUL с Azure Analysis Services см. в разделе [асинхронное обновление с помощью REST API](analysis-services-async-refresh.md).
 
-## <a name="authentication"></a>Проверка подлинности
+## <a name="authentication"></a>Аутентификация
 
 Все вызовы должны пройти проверку подлинности с помощью допустимого маркера Azure Active Directory (OAuth 2).  В примерах, приведенных в этой статье, для проверки подлинности в Azure Analysis Services используется субъект-служба (SPN). Дополнительные сведения см. в статье [Создание субъекта-службы с помощью портал Azure](../active-directory/develop/howto-create-service-principal-portal.md).
 
@@ -64,15 +64,15 @@ ms.locfileid: "72294621"
 
 |Свойство  |Значение  |
 |---------|---------|
-|**Метод**     |ПОМЕСТИТЬ         |
+|**Метод**     |ПУБЛИКАЦИЯ         |
 |**URI**     | https:// */серверс/* имя*сервера консультантов*/Моделс/*имя базы данных*/рефрешес <br /> <br /> Пример: https: \//westus. asazure. Windows. NET/Servers/MyServer/Models/AdventureWorks/обновляет|
 |**Заголовки**     |   Content-Type, Application/JSON <br /> <br />  ![Заголовки](./media/analysis-services-async-refresh-logic-app/6.png)    |
 |**Текст**     |   Дополнительные сведения о создании текста запроса см. в разделе [асинхронное обновление с помощью REST API-POST/рефрешес](analysis-services-async-refresh.md#post-refreshes). |
-|**Authentication**     |Active Directory OAuth         |
+|**Проверка подлинности**     |Active Directory OAuth         |
 |**Клиентом**     |Заполните Azure Active Directory TenantId         |
 |**Аудитория**     |HTTPS://*. asazure. Windows. NET         |
 |**Идентификатор клиента**     |Введите имя участника-службы ClientID         |
-|**Тип учетных данных**     |`Secret`         |
+|**Тип учетных данных**     |Секрет         |
 |**Секрет**     |Введите секретное имя субъекта-службы         |
 
 Пример:
@@ -113,7 +113,7 @@ ms.locfileid: "72294621"
 
 Сохраните приложение логики.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Примеры](analysis-services-samples.md)  
-[REST API](https://docs.microsoft.com/rest/api/analysisservices/servers)
+[ИНТЕРФЕЙС REST API](https://docs.microsoft.com/rest/api/analysisservices/servers)

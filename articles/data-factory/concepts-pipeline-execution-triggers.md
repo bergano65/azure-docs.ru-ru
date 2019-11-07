@@ -1,5 +1,5 @@
 ---
-title: Выполнение конвейера и триггеры в фабрике данных Azure | Документация Майкрософт
+title: Выполнение конвейера и триггеры в фабрике данных Azure
 description: В этой статье объясняется, как выполнить конвейер в фабрике данных Azure по запросу или путем создания триггера.
 services: data-factory
 documentationcenter: ''
@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 07/05/2018
-ms.openlocfilehash: adc7b65b4e079c55b9400b06603625971efc3ea3
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.openlocfilehash: 20a5a9c5513c165cd5add2e97f019a741dfd0b03
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73177676"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73681471"
 ---
 # <a name="pipeline-execution-and-triggers-in-azure-data-factory"></a>Выполнение конвейера и триггеры в фабрике данных Azure
 > [!div class="op_single_selector" title1="Выберите версию службы "Фабрика данных", которую вы используете:"]
@@ -77,12 +77,12 @@ _Запуск конвейера_ в службе "Фабрика данных A
 В определении JSON этот конвейер принимает два параметра: **sourceBlobContainer** и **sinkBlobContainer**. Значения этих параметров передаются во время выполнения.
 
 Вы можете вручную запустить свой конвейер, используя один из методов ниже:
-- SDK .NET
+- ПАКЕТ SDK .NET
 - модуль Azure PowerShell;
-- REST API
-- Пакет Python SDK
+- REST API
+- Пакет SDK для Python
 
-### <a name="rest-api"></a>REST API
+### <a name="rest-api"></a>REST API
 В следующем примере команды показано, как запустить конвейер вручную с помощью REST API:
 
 ```
@@ -121,7 +121,7 @@ Invoke-AzDataFactoryV2Pipeline -DataFactory $df -PipelineName "Adfv2QuickStartPi
 
 Полный пример см. в статье [Создание фабрики данных Azure с помощью PowerShell](quickstart-create-data-factory-powershell.md).
 
-### <a name="net-sdk"></a>SDK .NET
+### <a name="net-sdk"></a>ПАКЕТ SDK .NET
 В следующем примере вызова показано, как запустить конвейер вручную с помощью .NET SDK:
 
 ```csharp
@@ -230,7 +230,7 @@ client.Pipelines.CreateRunWithHttpMessagesAsync(resourceGroup, dataFactoryName, 
 ### <a name="schema-overview"></a>Общее представление схемы
 Таблица ниже содержит обзор основных элементов схемы, связанных с периодичностью выполнения и расписанием триггера:
 
-| Свойство JSON | Описание |
+| Свойство JSON | Description (Описание) |
 |:--- |:--- |
 | **startTime** | Значение даты и времени. Для базовых расписаний значение свойства **startTime** применяется к первому выполнению. В сложных расписаниях триггер не запускается раньше, чем определяется значением **startTime**. |
 | **endTime** | Дата и время завершения триггера. После указанной даты и времени триггер перестает выполняться. Значение свойства не может быть в прошлом. <!-- This property is optional. --> |
@@ -276,13 +276,13 @@ client.Pipelines.CreateRunWithHttpMessagesAsync(resourceGroup, dataFactoryName, 
 
 ### <a name="schema-defaults-limits-and-examples"></a>Параметры схемы по умолчанию, ограничения и примеры
 
-| Свойство JSON | Тип | Обязательно для заполнения | Значение по умолчанию | Допустимые значения | Пример |
+| Свойство JSON | Тип | Обязательно | Значение по умолчанию | Допустимые значения | Пример |
 |:--- |:--- |:--- |:--- |:--- |:--- |
-| **startTime** | string | ДА | Нет | Дата и время по спецификации ISO 8601 | `"startTime" : "2013-01-09T09:30:00-08:00"` |
-| **recurrence** | object | ДА | Нет | Объект recurrence | `"recurrence" : { "frequency" : "monthly", "interval" : 1 }` |
+| **startTime** | строка | Да | None | Дата и время по спецификации ISO 8601 | `"startTime" : "2013-01-09T09:30:00-08:00"` |
+| **recurrence** | object | Да | None | Объект recurrence | `"recurrence" : { "frequency" : "monthly", "interval" : 1 }` |
 | **interval** | number | Нет | 1 | От 1 до 1000 | `"interval":10` |
-| **endTime** | string | ДА | Нет | Значение даты и времени, представляющее время в будущем. | `"endTime" : "2013-02-09T09:30:00-08:00"` |
-| **schedule** | object | Нет | Нет | Объект schedule | `"schedule" : { "minute" : [30], "hour" : [8,17] }` |
+| **endTime** | строка | Да | None | Значение даты и времени, представляющее время в будущем. | `"endTime" : "2013-02-09T09:30:00-08:00"` |
+| **schedule** | object | Нет | None | Объект schedule | `"schedule" : { "minute" : [30], "hour" : [8,17] }` |
 
 ### <a name="starttime-property"></a>Свойство startTime
 В следующей таблице показано, как свойство **startTime** управляет запуском триггера:
@@ -309,7 +309,7 @@ client.Pipelines.CreateRunWithHttpMessagesAsync(resourceGroup, dataFactoryName, 
 
 В следующей таблице элементы свойства **schedule** описаны подробно.
 
-| Элемент JSON | Описание | Допустимые значения |
+| Элемент JSON | Description (Описание) | Допустимые значения |
 |:--- |:--- |:--- |
 | **minutes** | Минуты часа, в которые будет выполняться триггер. |Целое число<br />Массив целых чисел|
 | **hours** | Часы дня, в которые будет выполняться триггер. |Целое число<br />Массив целых чисел|
@@ -333,7 +333,7 @@ client.Pipelines.CreateRunWithHttpMessagesAsync(resourceGroup, dataFactoryName, 
 
 В примерах предполагается, что **interval** имеет значение равное 1, а значение **frequency** является правильным согласно определению расписания. Например, у вас не может быть значения **frequency** "день" и изменения **monthDays** в объекте **schedule**. Такие ограничения описаны в таблице в предыдущем разделе.
 
-| Пример | Описание |
+| Пример | Description (Описание) |
 |:--- |:--- |
 | `{"hours":[5]}` | Выполняется каждый день в 05:00. |
 | `{"minutes":[15], "hours":[5]}` | Выполняется каждый день в 05:15. |
@@ -360,7 +360,7 @@ client.Pipelines.CreateRunWithHttpMessagesAsync(resourceGroup, dataFactoryName, 
 | `{"monthlyOccurrences":[{"day":"friday", "occurrence":1},{"day":"friday", "occurrence":-1}]}` | Задание выполняется в первую и последнюю пятницу каждого месяца в указанное время начала. |
 | `{"monthlyOccurrences":[{"day":"friday", "occurrence":5}]}` | Задание выполняется в пятую пятницу каждого месяца в указанное время начала.<br /><br />Оно не выполняется, если пятой пятницы в месяце нет. Чтобы триггер выполнялся в последнюю пятницу месяца, используйте вместо значения **повторения** 5 значение –1. |
 | `{"minutes":[0,15,30,45], "monthlyOccurrences":[{"day":"friday", "occurrence":-1}]}` | Задание выполняется каждые 15 минут в последнюю пятницу месяца. |
-| `{"minutes":[15,45], "hours":[5,17], "monthlyOccurrences":[{"day":"wednesday", "occurrence":3}]}` | Задание выполняется в 5:15, 5:45, 17:15, 17:45 в третью среду каждого месяца. |
+| `{"minutes":[15,45], "hours":[5,17], "monthlyOccurrences":[{"day":"wednesday", "occurrence":3}]}` | Задание выполняется в 05:15, 05:45, 17:15, 17:45 в третью среду каждого месяца. |
 
 ## <a name="trigger-type-comparison"></a>Сравнение типов триггеров
 Триггер "переворачивающегося" окна и триггер расписания работают с одинаковыми интервалами времени. Чем они отличаются?

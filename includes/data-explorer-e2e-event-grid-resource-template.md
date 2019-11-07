@@ -4,16 +4,16 @@ ms.service: data-explorer
 ms.topic: include
 ms.date: 10/23/2019
 ms.author: lugoldbe
-ms.openlocfilehash: 9aca01b24bc3351460c462c08689fdaa41e3a755
-ms.sourcegitcommit: 38251963cf3b8c9373929e071b50fd9049942b37
+ms.openlocfilehash: d0cef9f8ec4d7afde4f83e4f83bccdb44d5615ca
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73057290"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73581802"
 ---
 ## <a name="azure-resource-manager-template"></a>Шаблон Azure Resource Manager
 
-В этой статье шаблон Azure Resource Manager используется для создания группы ресурсов, учетной записи хранения и контейнера, концентратора событий и кластера Azure обозреватель данных и базы данных. Сохраните следующее содержимое в файл с именем `template.json`, который будет использоваться для запуска примера кода.
+В этой статье используется шаблон Azure Resource Manager для создания группы ресурсов, учетной записи хранения и контейнера, концентратора событий и кластера Azure обозреватель данных и базы данных. Сохраните следующее содержимое в файле с именем `template.json`. Этот файл будет использоваться для запуска примера кода.
 
 ```json
 {

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/23/2019
 ms.author: mlottner
-ms.openlocfilehash: 0262be687b74ec1b97cb508f6da1b95cd5d7a533
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: 639a3f89e470a832279add8d2ed7cf49441611f4
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68596920"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73571798"
 ---
 # <a name="azure-security-center-for-iot-frequently-asked-questions"></a>Часто задаваемые вопросы о центре безопасности Azure для Интернета вещей  
 
@@ -66,11 +66,11 @@ Azure предоставляет интегрированное представ
 
 ## <a name="where-can-i-get-the-azure-security-center-for-iot-security-agent"></a>Где можно получить центр безопасности Azure для агента безопасности IoT?
 
-Центр безопасности Azure для агента безопасности IoT — это открытый исходный код, доступный на сайте GitHub в 32 и 64-разрядных версиях Windows и https://github.com/Azure/Azure-Security-IoT Linux:.
+Центр безопасности Azure для агента безопасности IoT — это открытый исходный код, который доступен на сайте GitHub в 32 и 64-разрядных версиях Windows и Linux: https://github.com/Azure/Azure-Security-IoT.
 
 ## <a name="where-does-the-azure-security-center-for-iot-agent-get-installed"></a>Где устанавливается центр безопасности Azure для агента IoT? 
 
-Подробные сведения об установке и развертывании агента можно найти в GitHub https://github.com/Azure/Azure-Security-IoT:.
+Подробные сведения об установке и развертывании агента можно найти в GitHub: https://github.com/Azure/Azure-IoT-Security.
 
 ## <a name="what-are-the-dependencies-and-prerequisites-of-the-agent"></a>Каковы зависимости и предварительные условия агента?
 
@@ -92,7 +92,7 @@ Azure предоставляет интегрированное представ
 
 Да. Передаваемые агентом данные учитываются в квоте центра Интернета вещей. 
 
-## <a name="what-next-ive-installed-an-agent-and-dont-see-any-activities-or-logs"></a>Дальнейшие действия Я установил агент и не вижу действий или журналов...
+## <a name="what-next-ive-installed-an-agent-and-dont-see-any-activities-or-logs"></a>Что делать дальше? Я установил агент и не вижу действий или журналов...
 
 1. Убедитесь, что [Тип агента соответствует назначенной платформе ОС устройства](how-to-deploy-agent.md) .
 
@@ -139,7 +139,7 @@ Azure предоставляет интегрированное представ
 Центр безопасности Azure для модуля IoT используется для настройки агента и управления им.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о том, как приступить к работе с центром безопасности Azure для Интернета вещей, см. в следующих статьях:
 

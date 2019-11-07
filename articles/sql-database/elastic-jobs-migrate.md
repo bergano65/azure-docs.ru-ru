@@ -1,5 +1,5 @@
 ---
-title: Миграция к новым заданиям обработки эластичных баз данных | Документация Майкрософт
+title: 'Миграция на новые задания обработки эластичных баз данных '
 description: Миграция к новым заданиям обработки эластичных баз данных.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: johnpaulkee
 ms.author: joke
 ms.reviewer: sstein
 ms.date: 03/13/2019
-ms.openlocfilehash: 9fa3444244cbd51c3f14abcfef5212a366cadbd2
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 2cba7ecb4be500a8f7007c8da009e03e6f33dfde
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68550565"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73692265"
 ---
 # <a name="migrate-to-the-new-elastic-database-jobs"></a>Миграция к новым заданиям обработки эластичных баз данных
 
@@ -25,7 +25,7 @@ ms.locfileid: "68550565"
 Если у вас есть версия заданий обработки эластичных баз данных, размещенных в клиенте, то для быстрого перехода на последнюю версию предоставляются командлеты и сценарии миграции.
 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Новая версия задания обработки эластичных баз данных обладает новым набором командлетов PowerShell, которые можно использовать во время процесса миграции. С помощью новых командлетов будут перенесены все существующие учетные данные задания, объекты (базы данных, сервера, пользовательские коллекции), триггеры задания, расписания задания, содержимое задания на новый агент заданий обработки эластичных баз данных.
 
@@ -88,11 +88,11 @@ Use-AzureSqlJobConnection -CurrentAzureSubscription -Credential (Get-Credential)
 
 
 
-## <a name="migration"></a>Перенос
+## <a name="migration"></a>Миграция
 
 Теперь когда обе версии (новая и старая) командлетов задания обработки эластичных баз данных инициализированы, можно выполнить миграцию учетных данных задания, и заданий в новую *базу данных заданий*.
 
-### <a name="setup"></a>Установка
+### <a name="setup"></a>Настройка
 
 ```powershell
 $ErrorActionPreference = "Stop";
@@ -627,7 +627,7 @@ $jobs | Start-AzSqlElasticJob
 $jobs | Set-AzSqlElasticJob -Enable
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Создание заданий обработки эластичных баз данных и управление ими с помощью PowerShell](elastic-jobs-powershell.md)
 - [Use Transact-SQL (T-SQL) to create and manage Elastic Database Jobs](elastic-jobs-tsql.md) (Создание заданий обработки эластичных БД и управление ими с использованием Transact-SQL (T-SQL))

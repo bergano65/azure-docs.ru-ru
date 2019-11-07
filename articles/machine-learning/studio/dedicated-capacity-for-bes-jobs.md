@@ -1,6 +1,6 @@
 ---
 title: Задания пакетной службы Azure
-titleSuffix: Azure Machine Learning Studio (classic)
+titleSuffix: ML Studio (classic) Azure
 description: Общие сведения о пакетных службах Azure для заданий Машинное обучение Studio (классические). Обработка в пуле пакетной службы связана с возможностью создавать пулы, куда можно отправлять соответствующие задания.
 services: machine-learning
 ms.service: machine-learning
@@ -10,12 +10,12 @@ author: xiaoharper
 ms.author: amlstudiodocs
 ms.custom: seodec18, previous-title='Dedicated capacity for batch execution service jobs - Azure Machine Learning Studio (classic) | Microsoft Docs'
 ms.date: 04/19/2017
-ms.openlocfilehash: 1de7ad10a54c34595f69a543843097cee1377067
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: a0e829f61117df25f8643301a0acdadeafd7c267
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73493036"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73684814"
 ---
 # <a name="azure-batch-service-for-azure-machine-learning-studio-classic-jobs"></a>Пакетная служба Azure для заданий Машинное обучение Azure Studio (классическая модель)
 
@@ -43,7 +43,7 @@ ms.locfileid: "73493036"
 
 Вы можете использовать любую веб-службу на основе новой версии Resource Manager, но помните, что тарификация обработки заданий производится на основе плана выставления счетов, связанного с этой службой. Вы также можете создать веб-службу и план выставления счетов специально для запуска заданий пула пакетной службы.
 
-См. дополнительные сведения о [развертывании веб-службы машинного обучения Azure](publish-a-machine-learning-web-service.md).
+См. дополнительные сведения о [развертывании веб-службы машинного обучения Azure](deploy-a-machine-learning-web-service.md).
 
 Создав пул, вы можете отправить задание BES, используя URL-адрес запросов пакетной службы для веб-службы. Задание можно отправить для классической пакетной обработки или обработки в пуле. Чтобы отправить задание для обработки в пуле пакетной службы, добавьте следующий параметр в текст запроса на отправку задания:
 

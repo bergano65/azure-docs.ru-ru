@@ -7,14 +7,14 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 09/04/2019
 ms.author: helohr
-ms.openlocfilehash: fa61d69ae7aa650b6011696fd45d05ba20d2ac8b
-ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
+ms.openlocfilehash: dc980d60c1db684a47c38b3b8efceb08dd618838
+ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71338702"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73605801"
 ---
-# <a name="connect-with-the-macos-client"></a>Подключение с помощью клиента macOS
+# <a name="connect-with-the-macos-client"></a>Подключение к клиенту macOS
 
 > Применимо к: macOS 10,12 или более поздней версии
 
@@ -25,7 +25,7 @@ ms.locfileid: "71338702"
 
 ## <a name="install-the-client"></a>Установка клиента
 
-Чтобы приступить к работе, [Скачайте](https://apps.apple.com/app/microsoft-remote-desktop/id1295203466?mt=12) и установите клиент на устройстве macOS.
+Чтобы приступить к работе, [скачайте](https://apps.apple.com/app/microsoft-remote-desktop/id1295203466?mt=12) и установите клиент на устройстве macOS.
 
 ## <a name="subscribe-to-a-feed"></a>Подпишитесь на веб-канал
 
@@ -35,7 +35,7 @@ ms.locfileid: "71338702"
 
 1. Выберите **Добавить веб-канал** на главной странице, чтобы подключиться к службе и получить ресурсы.
 2. Введите URL-адрес канала. Это может быть URL-адрес или адрес электронной почты:
-   - Если вы используете URL-адрес, воспользуйтесь одним из предоставленных администратором. Обычно URL-адрес имеет <https://rdweb.wvd.microsoft.com>значение.
+   - Если вы используете URL-адрес, воспользуйтесь одним из предоставленных администратором. Обычно URL-адрес <https://rdweb.wvd.microsoft.com>.
    - Чтобы использовать электронную почту, введите свой адрес электронной почты. Это указывает клиенту на необходимость поиска URL-адреса, связанного с адресом электронной почты, если администратор настроил сервер таким образом.
 3. Выберите **подписывать**.
 4. При появлении запроса войдите в систему с помощью учетной записи пользователя.
@@ -44,6 +44,6 @@ ms.locfileid: "71338702"
 
 После того как вы подписались на веб-канал, содержимое веб-канала автоматически обновляется на регулярной основе. Ресурсы можно добавлять, изменять или удалять в зависимости от изменений, внесенных администратором.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о клиенте macOS см. в статье [Приступая к работе с клиентской](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/clients/remote-desktop-mac) документацией по macOS.

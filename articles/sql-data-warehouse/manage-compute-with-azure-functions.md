@@ -1,21 +1,22 @@
 ---
-title: Руководство по Управление вычислениями с помощью службы "Функции Azure" в Хранилище данных SQL Azure | Документация Майкрософт
+title: Руководство. Управление средами вычислений с помощью функций Azure
 description: Инструкции по использованию службы "Функции Azure" для управления вычислениями в хранилище данных.
 services: sql-data-warehouse
-author: KavithaJonnakuti
+author: julieMSFT
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: consume
 ms.date: 04/27/2018
-ms.author: kavithaj
+ms.author: jrasnick
 ms.reviewer: igorstan
-ms.openlocfilehash: b94e4c6f178119d6205c302cf35a9effaf2aa885
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.custom: seo-lt-2019
+ms.openlocfilehash: bc350ed092c063dcc7eca479f064114be9eb28f5
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61083881"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73693019"
 ---
 # <a name="use-azure-functions-to-manage-compute-resources-in-azure-sql-data-warehouse"></a>Управление вычислительными ресурсами в хранилище данных Azure SQL с помощью службы "Функции Azure"
 
@@ -64,7 +65,7 @@ ms.locfileid: "61083881"
    {second} {minute} {hour} {day} {month} {day-of-week}
    ```
 
-   Например, *«0 30 9 * * 1-5»* будет отражать триггер, активирующийся каждый будний день в 9:30. Дополнительные сведения см. в [примерах расписаний][schedule examples] службы "Функции Azure".
+   Например, *«0 30 9 * * 1-5»* будет отражать триггер, активирующийся каждый будний день в 9:30. Дополнительные сведения см. в [примерах расписания][schedule examples]функций Azure.
 
 
 ## <a name="change-the-time-of-the-scale-operation"></a>Изменение времени операции масштабирования
@@ -92,7 +93,7 @@ ms.locfileid: "61083881"
 3. Перейдите на вкладки *интеграции* для соответствующих триггеров, чтобы изменить их расписание.
 
    > [!NOTE]
-   > Функциональная разница между триггерами масштабирования и триггерами паузы или возобновления — это сообщение, отправленное в очередь. Дополнительные сведения см. в разделе [Добавление новой функции триггера][Add a new trigger function].
+   > Функциональная разница между триггерами масштабирования и триггерами паузы или возобновления — это сообщение, отправленное в очередь. Дополнительные сведения см. [в разделе Добавление новой функции триггера][Add a new trigger function].
 
 
 ## <a name="add-a-new-trigger-function"></a>Добавление новой функции триггера

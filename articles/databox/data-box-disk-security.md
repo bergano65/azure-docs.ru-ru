@@ -1,19 +1,19 @@
 ---
-title: Обзор диска Microsoft Azure Data Box | Документация Майкрософт
-description: Описание диска Azure Data Box — облачного приложения, которое позволяет передавать большие объемы данных в хранилище Azure
+title: Microsoft Azure функции безопасности Диск Data Box | Документация Майкрософт данных
+description: Описание функций безопасности, реализованных для Диск Azure Data Box, облачного решения, которое позволяет передавать большие объемы данных в Azure.
 services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: disk
-ms.topic: overview
-ms.date: 01/09/2019
+ms.topic: conceptual
+ms.date: 11/04/2019
 ms.author: alkohli
-ms.openlocfilehash: afb344418f843e54c3172c17d28bde7055e101b4
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: HT
+ms.openlocfilehash: 5db65ab6f1c96ff816252ecaba2170adf358001c
+ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58093462"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73606573"
 ---
 # <a name="azure-data-box-disk-security-and-data-protection"></a>Безопасность работы Диска Azure Data Box и защита данных
 
@@ -90,8 +90,8 @@ ms.locfileid: "58093462"
 Дополнительные сведения см. в политике конфиденциальности Майкрософт в [центре управления безопасностью](https://www.microsoft.com/trustcenter).
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Знакомство с [требованиями диска Data Box](data-box-disk-system-requirements.md).
+- Ознакомьтесь с [требованиями к диску Data Box](data-box-disk-system-requirements.md).
 - Объяснение [ограничений диска Data Box](data-box-disk-limits.md).
-- Быстрое развертывание [диска Azure Data Box](data-box-disk-quickstart-portal.md) на портале Azure.
+- Быстро разверните [диск Azure Data Box](data-box-disk-quickstart-portal.md) на портале Azure.

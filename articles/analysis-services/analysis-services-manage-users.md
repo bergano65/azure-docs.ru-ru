@@ -1,18 +1,18 @@
 ---
-title: Аутентификация и разрешения пользователей в службах Azure Analysis Services | Документация Майкрософт
-description: Узнайте о проверке подлинности и разрешениях пользователя в службах Azure Analysis Services.
+title: Azure Analysis Services проверка подлинности и разрешения пользователей | Документация Майкрософт
+description: В этой статье описывается, как Azure Analysis Services использует Azure Active Directory (Azure AD) для управления удостоверениями и проверки подлинности пользователей.
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 10/29/2019
+ms.date: 10/30/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: a48292b7600d8b9e400bf1e2d61aec313ce29f4b
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 4a054c3c042e18f1679acd75e5ba5ad74f66edff
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73146872"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73572763"
 ---
 # <a name="authentication-and-user-permissions"></a>Аутентификация и разрешения пользователей
 
@@ -22,7 +22,7 @@ Azure Analysis Services поддерживает [службу совместн�
 
 ![Архитектура проверки подлинности Azure Analysis Services](./media/analysis-services-manage-users/aas-manage-users-arch.png)
 
-## <a name="authentication"></a>Authentication
+## <a name="authentication"></a>Аутентификация
 
 Все клиентские приложения и средства используют одну или несколько [клиентских библиотек](analysis-services-data-providers.md) Analysis Services (AMO, MSOLAP, ADOMD) для подключения к серверу. 
 
@@ -81,4 +81,4 @@ Power BI Desktop подключается к Azure Analysis Services с помо
 [Управление доступом к ресурсам с помощью групп Azure Active Directory](../active-directory/fundamentals/active-directory-manage-groups.md)   
 [Управление ролями и пользователями базы данных](analysis-services-database-users.md)  
 [Управление администраторами сервера](analysis-services-server-admins.md)  
-[Управление доступом на основе ролей](../role-based-access-control/overview.md)  
+[Контроль доступа на основе ролей](../role-based-access-control/overview.md)  

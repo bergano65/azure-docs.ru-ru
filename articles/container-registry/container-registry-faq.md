@@ -8,14 +8,14 @@ ms.service: container-registry
 ms.topic: article
 ms.date: 07/02/2019
 ms.author: sajaya
-ms.openlocfilehash: cfa8efe0b73811474b1e50a7d2fb1e9abe9045c6
-ms.sourcegitcommit: e0a1a9e4a5c92d57deb168580e8aa1306bd94723
+ms.openlocfilehash: 88c4b2065576bd5bdcb29a266bd564c60b0e537c
+ms.sourcegitcommit: 6c2c97445f5d44c5b5974a5beb51a8733b0c2be7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72286514"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73622707"
 ---
-# <a name="frequently-asked-questions-about-azure-container-registry"></a>Часто задаваемые вопросы о реестре контейнеров Azure
+# <a name="frequently-asked-questions-about-azure-container-registry"></a>Часто задаваемые вопросы о Реестре контейнеров Azure
 
 В этой статье рассматриваются часто задаваемые вопросы и известные проблемы реестра контейнеров Azure.
 
@@ -188,7 +188,7 @@ az acr login -n MyRegistry
 
 Да. Включите TLS с помощью любого последнего клиента DOCKER (версия 18.03.0 и выше). 
 
-### <a name="does-azure-container-registry-support-content-trust"></a>Поддерживает ли реестр контейнеров Azure отношение доверия с содержимым?
+### <a name="does-azure-container-registry-support-content-trust"></a>Поддерживает ли Реестр контейнеров Azure функцию доверия к содержимому?
 
 Да, вы можете использовать надежные образы в реестре контейнеров Azure, так как [DOCKER Нотари](https://docs.docker.com/notary/getting_started/) интегрирован и может быть включен. Дополнительные сведения см. [в статье о доверии содержимого в реестре контейнеров Azure](container-registry-content-trust.md).
 
@@ -206,8 +206,8 @@ az acr login -n MyRegistry
 
 Запись контроля доступа поддерживает [пользовательские роли](container-registry-roles.md) , предоставляющие различные уровни разрешений. В частности, `AcrPull` и `AcrPush` позволяют пользователям получать и (или) отправлять изображения без разрешения на управление ресурсом реестра в Azure.
 
-* Портал Azure: Реестр — > управления доступом (IAM) — > Добавить (выберите `AcrPull` или `AcrPush` для роли).
-* Azure CLI: Найдите идентификатор ресурса реестра, выполнив следующую команду:
+* Портал Azure. Реестр — > управления доступом (IAM) — > Добавить (выберите `AcrPull` или `AcrPush` для роли).
+* Azure CLI. Найдите идентификатор ресурса реестра, выполнив следующую команду:
 
   ```azurecli
   az acr show -n myRegistry
@@ -253,7 +253,7 @@ az acr login -n MyRegistry
 
 ## <a name="diagnostics-and-health-checks"></a>Диагностика и проверка работоспособности
 
-- [Проверка работоспособности с `az acr check-health`](#check-health-with-az-acr-check-health)
+- [Проверка работоспособности с помощью `az acr check-health`](#check-health-with-az-acr-check-health)
 - [Сбой docker pull с ошибкой: NET/http: запрос отменен при ожидании соединения (превышение времени ожидания клиента.](#docker-pull-fails-with-error-nethttp-request-canceled-while-waiting-for-connection-clienttimeout-exceeded-while-awaiting-headers)
 - [Отправка DOCKER завершается успешно, но docker pull завершается ошибкой: не санкционировано: требуется проверка подлинности](#docker-push-succeeds-but-docker-pull-fails-with-error-unauthorized-authentication-required)
 - [Включение и получение журналов отладки управляющей программы DOCKER](#enable-and-get-the-debug-logs-of-the-docker-daemon) 
@@ -306,7 +306,7 @@ unauthorized: authentication required
 ```
 
 Чтобы устранить эту ошибку, сделайте следующее:
-1. Добавьте параметр `--signature-verification=false` в файл конфигурации управляющей программы DOCKER `/etc/sysconfig/docker`. Пример:
+1. Добавьте параметр `--signature-verification=false` в файл конфигурации управляющей программы DOCKER `/etc/sysconfig/docker`. Например:
 
   ```
   OPTIONS='--selinux-enabled --log-driver=journald --live-restore --signature-verification=false'
@@ -448,6 +448,8 @@ curl $redirect_url
 
 - [Разделы справки выполнения пакетной отмены?](#how-do-i-batch-cancel-runs)
 - [Разделы справки включить папку Git в команду AZ контроля доступа?](#how-do-i-include-the-git-folder-in-az-acr-build-command)
+- [Поддерживают ли задачи GitLab для исходных триггеров?](#does-tasks-support-gitlab-for-source-triggers)
+- [Какая служба управления репозиторием Git поддерживает задачи?](#what-git-repository-management-service-does-tasks-support)
 
 ### <a name="how-do-i-batch-cancel-runs"></a>Разделы справки выполнения пакетной отмены?
 
@@ -462,17 +464,36 @@ az acr task list-runs -r $myregistry --run-status Running --query '[].runId' -o 
 
 При передаче локальной исходной папки в команду `az acr build` папка `.git` будет исключена из переданного пакета по умолчанию. Вы можете создать файл `.dockerignore` со следующим параметром. Она сообщает команде восстановить все файлы в папке `.git` в отправленном пакете. 
 
-```
+```sh
 !.git/**
 ```
 
 Этот параметр также применяется к команде `az acr run`.
+
+### <a name="does-tasks-support-gitlab-for-source-triggers"></a>Поддерживают ли задачи GitLab для исходных триггеров?
+
+Сейчас мы не поддерживаем GitLab для исходных триггеров.
+
+### <a name="what-git-repository-management-service-does-tasks-support"></a>Какая служба управления репозиторием Git поддерживает задачи?
+
+| Служба Git | Исходный контекст | Сборка вручную | Автоматическая сборка с помощью триггера Commit |
+|---|---|---|---|
+| GitHub | https://github.com/user/myapp-repo.git#mybranch:myfolder | Да | Да |
+| Azure Repos | https://dev.azure.com/user/myproject/_git/myapp-repo#mybranch:myfolder | Да | Да |
+| GitLab | https://gitlab.com/user/myapp-repo.git#mybranch:myfolder | Да | Нет |
+| Bitbucket; | https://user@bitbucket.org/user/mayapp-repo.git#mybranch:myfolder | Да | Нет |
+
+## <a name="run-error-message-troubleshooting"></a>Выполнение устранения неполадок с сообщением об ошибке
+
+| Сообщение об ошибке | Руководство по устранению неполадок |
+|---|---|
+|Доступ к виртуальной машине не был настроен, поэтому подписки не найдены|Это может произойти, если вы используете `az login --identity` в задаче записи контроля доступа. Это временная ошибка, которая возникает, когда не распространяется назначение роли для управляемого удостоверения. Подождите несколько секунд, прежде чем повторять попытку.|
 
 ## <a name="cicd-integration"></a>Интеграция CI/CD
 
 - [ЦирклеЦи](https://github.com/Azure/acr/blob/master/docs/integration/CircleCI.md)
 - [Действия GitHub](https://github.com/Azure/acr/blob/master/docs/integration/github-actions/github-actions.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Дополнительные сведения](container-registry-intro.md) о реестре контейнеров Azure.
