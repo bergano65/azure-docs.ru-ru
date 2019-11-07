@@ -1,47 +1,65 @@
 ---
-title: Что такое хранилище данных SQL Azure? | Документация Майкрософт
-description: Распределенная база данных корпоративного класса, способная обрабатывать петабайты реляционных и нереляционных данных. Это первое облачное хранилище данных в отрасли, в котором можно увеличивать и уменьшать количество вычислительных ресурсов, а также приостанавливать их работу за считанные секунды.
+title: Что такое Azure Synapse Analytics (ранее — Хранилище данных SQL)? | Документация Майкрософт
+description: Azure Synapse Analytics (ранее — Хранилище данных SQL) — это служба аналитики без ограничений, которая объединяет корпоративные хранилища данных и аналитику больших данных.
 services: sql-data-warehouse
 author: mlee3gsd
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: overview
 ms.subservice: design
-ms.date: 05/30/2019
+ms.date: 11/04/2019
 ms.author: martinle
 ms.reviewer: igorstan
-mscustom: sqlfreshmay19
-ms.openlocfilehash: a9126e9023091dd8c3df71f2aa2558a01227a8be
-ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
+ms.openlocfilehash: d10ea99e2dc8513a9cfebec782535f9e3185a3b9
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66428028"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73496309"
 ---
-# <a name="what-is-azure-sql-data-warehouse"></a>Что такое хранилище данных SQL Azure?
+# <a name="what-is-azure-synapse-analytics-formerly-sql-dw"></a>Что такое Azure Synapse Analytics (ранее — Хранилище данных SQL)?
 
-Хранилище данных SQL — это облачное корпоративное хранилище данных (EDW), использующее массовую параллельную обработку (MPP) для быстрого выполнения сложных запросов с петабайтами данных. Используйте хранилище данных SQL как ключевой компонент решения для больших данных. Импортируйте большие данные в хранилище данных SQL с помощью простых запросов T-SQL [PolyBase](/sql/relational-databases/polybase/polybase-guide?view=sql-server-2017&viewFallbackFrom=azure-sqldw-latest) и используйте возможности MPP для выполнения высокопроизводительной аналитики. Во время интеграции и анализа хранилище данных станет единственным оптимальным и надежным вариантом получения аналитических сведений для вашей компании.  
+Azure Synapse — это служба аналитики без ограничений, которая объединяет корпоративные хранилища данных и аналитику больших данных. Служба позволяет вам запрашивать данные на своих условиях, используя бессерверные ресурсы по запросу или подготовленные ресурсы в любом масштабе. Azure Synapse объединяет эти две возможности вместе, предоставляя единый интерфейс для приема, подготовки, контроля и обслуживания данных для насущных потребностей бизнес-аналитики и машинного обучения.
 
-## <a name="key-component-of-big-data-solution"></a>Ключевой компонент решения для больших данных
+В Azure Synapse есть четыре компонента.
+- Аналитика SQL. Выполнение аналитики на основе T-SQL — общедоступная версия
+    - Пул SQL (оплата за DWU по мере подготовки) 
+    - SQL по запросу (оплата за обработанные ТБ) — (Предварительная версия)
+- Spark. Глубокая интегрированная Apache Spark (предварительная версия) 
+- Интеграция данных. Гибридная интеграция данных (предварительная версия)
+- Studio. Унифицированное взаимодействие с пользователем.  (предварительная версия)
 
-Хранилище данных SQL — это ключевой компонент комплексного решения для больших данных в облаке.
+> [!NOTE]
+> Чтобы получить доступ к функциям предварительной версии Azure Synapse, запросите доступ [здесь](https://aka.ms/synapsepreview). Корпорация Майкрософт будет рассматривать все запросы и реагировать как можно скорее.
+
+## <a name="sql-analytics-and-sql-pool-in-azure-synapse"></a>SQL Analytics и пул SQL в Azure Synapse
+
+Название SQL Analytics относится к функциям хранения корпоративных данных, которые стали общедоступны в Azure Synapse. 
+
+Пул SQL представляет коллекцию аналитических ресурсов, которые подготавливаются при использовании SQL Analytics. Размер пула SQL определяется единицами хранения данных (DWU).
+
+Импортируйте большие данные с помощью простых запросов T-SQL [PolyBase](/sql/relational-databases/polybase/polybase-guide?view=sql-server-2017&viewFallbackFrom=azure-sqldw-latest) и используйте возможности MPP для выполнения высокопроизводительной аналитики. По мере интеграции и анализа SQL Analytics станет единственным оптимальным и надежным вариантом получения надежных и своевременных аналитических сведений для вашей компании.  
+
+## <a name="key-component-of-a-big-data-solution"></a>Ключевой компонент решения для больших данных
+
+Хранилище данных — это ключевой компонент комплексного решения для больших данных в облаке.
 
 ![Решение хранилища данных](media/sql-data-warehouse-overview-what-is/data-warehouse-solution.png) 
 
-В облачном решении для работы с данными данные принимаются в хранилища больших данных из различных источников. После отправки в хранилище больших данных алгоритмы Hadoop, Spark и машинного обучения выполняют подготовку и обучение данных. Когда данные будут готовы к сложному анализу, хранилище данных SQL запрашивает хранилища больших данных с помощью PolyBase. PolyBase использует стандартные запросы T-SQL для передачи данных в хранилище данных SQL.
+В облачном решении для работы с данными данные принимаются в хранилища больших данных из различных источников. После отправки в хранилище больших данных алгоритмы Hadoop, Spark и машинного обучения выполняют подготовку и обучение данных. Когда данные будут готовы к сложному анализу, SQL Analytics запрашивает хранилища больших данных с помощью PolyBase. PolyBase использует стандартные запросы T-SQL для передачи данных в SQL Analytics.
  
-Хранилище данных SQL сохраняет данные в реляционных таблицах с хранением по столбцам. Этот формат значительно снижает затраты на хранение данных и повышает производительность запросов. После сохранения данных в хранилище данных SQL вы сможете выполнять аналитику в большом масштабе. По сравнению с традиционными системами баз данных запросы анализа выполняются за секунды вместо минут или за часы вместо дней. 
+SQL Analytics сохраняет данные в реляционных таблицах с хранением по столбцам. Этот формат значительно снижает затраты на хранение данных и повышает производительность запросов. После сохранения данных вы сможете вести аналитику в большом масштабе. По сравнению с традиционными системами баз данных запросы анализа выполняются за секунды вместо минут или за часы вместо дней. 
 
 Результаты анализа можно передать в базы данных и приложения отчетности по всему миру. Специалисты по бизнес-аналитике могут получить данные для принятия обоснованных бизнес-решений.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Изучите [архитектуру хранилища данных SQL Azure](/azure/sql-data-warehouse/massively-parallel-processing-mpp-architecture).
-- Быстро [создайте хранилище данных SQL Azure][create a SQL Data Warehouse].
+- Знакомство с [архитектурой Azure Synapse](/azure/sql-data-warehouse/massively-parallel-processing-mpp-architecture)
+- Быстрое создание [пула SQL](create-data-warehouse-portal.md)
 - [Загрузите демонстрационные данные][load sample data].
 - Просмотрите [видео](/azure/sql-data-warehouse/sql-data-warehouse-videos).
 
-Или ознакомьтесь со следующими ресурсами, посвященными хранилищу данных SQL.  
+Или ознакомьтесь со следующими ресурсами, посвященными SQL Analytics.  
 * Ищите информацию в [Блоги].
 * Отправьте [Запросы функций].
 * Ищите информацию в [Блоги группы консультирования клиентов].
@@ -56,9 +74,9 @@ ms.locfileid: "66428028"
 <!--Article references-->
 [Создание запроса в службу поддержки]: ./sql-data-warehouse-get-started-create-support-ticket.md
 [load sample data]: ./sql-data-warehouse-load-sample-databases.md
-[create a SQL Data Warehouse]: ./sql-data-warehouse-get-started-provision.md
+[create a data warehouse]: ./sql-data-warehouse-get-started-provision.md
 [Migration documentation]: ./sql-data-warehouse-overview-migrate.md
-[SQL Data Warehouse solution partners]: ./sql-data-warehouse-partner-business-intelligence.md
+[Azure Synapse Analytics solution partners]: ./sql-data-warehouse-partner-business-intelligence.md
 [Integrated tools overview]: ./sql-data-warehouse-overview-integrate.md
 [Backup and restore overview]: ./sql-data-warehouse-restore-database-overview.md
 [Azure glossary]: ../azure-glossary-cloud-terminology.md
@@ -73,6 +91,6 @@ ms.locfileid: "66428028"
 [Форум Stack Overflow]: https://stackoverflow.com/questions/tagged/azure-sqldw
 [Twitter]: https://twitter.com/hashtag/SQLDW
 [Videos]: https://azure.microsoft.com/documentation/videos/index/?services=sql-data-warehouse
-[SLA for SQL Data Warehouse]: https://azure.microsoft.com/support/legal/sla/sql-data-warehouse/v1_0/
+[SLA for Azure Synapse Analytics]: https://azure.microsoft.com/support/legal/sla/sql-data-warehouse/v1_0/
 [Volume Licensing]: https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=37
 [Service Level Agreements]: https://azure.microsoft.com/support/legal/sla/

@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: tutorial
 ms.date: 06/27/2019
-ms.openlocfilehash: 04771ddc633c210ce8c7b3c42a9e46cb2f1ed349
-ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
+ms.openlocfilehash: f6139bb98fa0272e43c8e180d4ec029f7a7538bb
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71122177"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73494333"
 ---
 # <a name="tutorial-query-apache-hive-with-odbc-and-powershell"></a>Руководство по отправке запросов в Apache Hive с помощью PowerShell и драйвера ODBC
 
@@ -36,7 +36,7 @@ ms.locfileid: "71122177"
 
 ## <a name="install-microsoft-hive-odbc-driver"></a>Установка драйвера Microsoft Hive ODBC
 
-Скачайте и установите [Microsoft Hive ODBC Driver](https://go.microsoft.com/fwlink/?LinkID=286698).
+Скачайте и установите [Microsoft Hive ODBC Driver](https://www.microsoft.com/download/details.aspx?id=40886).
 
 ## <a name="create-apache-hive-odbc-data-source"></a>Создание источника данных Apache Hive ODBC
 
@@ -44,7 +44,7 @@ ms.locfileid: "71122177"
 
 1. В Windows откройте **Пуск** > **Средства администрирования Windows** > **ODBC Data Sources (32-bit)/(64-bit)** (Источники данных ODBC (32-разрядная или 64-разрядная версия)).  Откроется окно **Администратор источников данных ODBC**.
 
-    ![Администратор источников данных ODBC](./media/apache-hive-query-odbc-driver-powershell/hive-odbc-driver-dsn-setup.png "Настройка DSN с помощью администратора источников данных ODBC")
+    ![Администратор источника данных ODBC](./media/apache-hive-query-odbc-driver-powershell/hive-odbc-driver-dsn-setup.png "Настройка DSN с помощью администратора источников данных ODBC")
 
 1. На вкладке **DSN пользователя** выберите **Добавить**, чтобы открыть окно **Создание нового источника данных**.
 

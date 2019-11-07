@@ -9,20 +9,22 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: tutorial
-ms.date: 09/04/2019
+ms.date: 10/14/2019
 ms.author: diberry
-ms.openlocfilehash: 87e4fe3671f419383cb342fdb7dca55a8d2eb45d
-ms.sourcegitcommit: aebe5a10fa828733bbfb95296d400f4bc579533c
+ms.openlocfilehash: a917176cb06e833745996326520341c1f819c5bf
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70376266"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73465405"
 ---
 # <a name="tutorial-extract-names-with-simple-entity-and-a-phrase-list"></a>Руководство по Извлечение имен с использованием простой сущности и списка фраз
 
 В этом руководстве описано извлечение данных машинного обучения о названии должности из высказывания с помощью **простой** сущности. Чтобы повысить точность извлечения, добавьте список фраз, состоящий из терминов, относящихся к простой сущности.
 
 Простая сущность обнаруживает единую концепцию данных, содержащуюся в слове или фразе.
+
+[!INCLUDE [Waiting for LUIS portal refresh](./includes/wait-v3-upgrade.md)]
 
 **В этом руководстве рассмотрено, как выполнять следующие задачи.**
 
@@ -93,7 +95,7 @@ ms.locfileid: "70376266"
 
 1. В выражении `I want to apply for the new accounting job` выберите `accounting`, введите `Job` в поле сверху всплывающего меню, а затем во всплывающем меню выберите **Create new entity** (Создать сущность). 
 
-    [![Снимок экрана LUIS с намерением ApplyForJob и выделенными шагами создания сущности](media/luis-quickstart-primary-and-secondary-data/hr-create-entity.png "Screenshot of LUIS with 'ApplyForJob' intent with create entity steps highlighted")](media/luis-quickstart-primary-and-secondary-data/hr-create-entity.png#lightbox)
+    [![Снимок экрана LUIS с намерением ApplyForJob и выделенными шагами создания сущности](media/luis-quickstart-primary-and-secondary-data/hr-create-entity.png "Снимок экрана LUIS с намерением ApplyForJob и выделенными шагами создания сущности")](media/luis-quickstart-primary-and-secondary-data/hr-create-entity.png#lightbox)
 
 1. Во всплывающем окне проверьте имя и тип сущности, а затем выберите **Готово**.
 
@@ -101,7 +103,7 @@ ms.locfileid: "70376266"
 
 1. В оставшихся высказываниях пометьте слова, связанные с заданием, с помощью сущности **Должность**, выбрав слово или фразу, а затем выбрав **Должность** в контекстном меню. 
 
-    [![Снимок экрана LUIS с выделенной сущностью должности, используемой для добавления метки](media/luis-quickstart-primary-and-secondary-data/hr-label-simple-entity.png "Screenshot of LUIS labeling job entity highlighted")](media/luis-quickstart-primary-and-secondary-data/hr-label-simple-entity.png#lightbox)
+    [![Снимок экрана с выделенной сущностью задания маркировки LUIS](media/luis-quickstart-primary-and-secondary-data/hr-label-simple-entity.png "Снимок экрана с выделенной сущностью задания маркировки LUIS")](media/luis-quickstart-primary-and-secondary-data/hr-label-simple-entity.png#lightbox)
 
 
 ## <a name="add-more-example-utterances-and-mark-entity"></a>Добавление дополнительных примеров высказываний и метки сущности
@@ -231,7 +233,7 @@ ms.locfileid: "70376266"
 
 1. Присвойте списку фраз имя `JobNames` и скопируйте список из файла jobs-phrase-list.csv в текстовое поле **Значения**.
 
-    [![Снимок экрана, на котором показано всплывающее диалоговое окно для создания списка фраз](media/luis-quickstart-primary-and-secondary-data/hr-create-phrase-list-1.png "Screenshot of create new phrase list dialog pop-up")](media/luis-quickstart-primary-and-secondary-data/hr-create-phrase-list-1.png#lightbox)
+    [![Снимок экрана со всплывающим диалоговым окном создания списка фраз](media/luis-quickstart-primary-and-secondary-data/hr-create-phrase-list-1.png "Снимок экрана со всплывающим диалоговым окном создания списка фраз")](media/luis-quickstart-primary-and-secondary-data/hr-create-phrase-list-1.png#lightbox)
 
     Если вы хотите добавить в список фраз другие слова, выберите **Recommend** (Рекомендации), просмотрите новые варианты в разделе **Related Values** (Связанные значения) и добавьте те, что вам необходимы. 
 
@@ -239,7 +241,7 @@ ms.locfileid: "70376266"
 
 1. Щелкните **Готово**, чтобы активировать список фраз.
 
-    [![Снимок экрана, на котором показано всплывающее диалоговое окно для создания списка фраз со словами в области значений списка фраз](media/luis-quickstart-primary-and-secondary-data/hr-create-phrase-list-2.png "Screenshot of create new phrase list dialog pop-up with words in phrase list values box")](media/luis-quickstart-primary-and-secondary-data/hr-create-phrase-list-2.png#lightbox)
+    [![Снимок экрана со всплывающим диалоговым окном создания списка фраз со словами в окне значений списка фраз](media/luis-quickstart-primary-and-secondary-data/hr-create-phrase-list-2.png "Снимок экрана со всплывающим диалоговым окном создания списка фраз со словами в окне значений списка фраз")](media/luis-quickstart-primary-and-secondary-data/hr-create-phrase-list-2.png#lightbox)
 
 1. Обучите и опубликуйте приложение еще раз, чтобы использовать список фраз.
 

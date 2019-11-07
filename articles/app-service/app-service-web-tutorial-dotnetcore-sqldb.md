@@ -14,12 +14,12 @@ ms.topic: tutorial
 ms.date: 08/06/2019
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 9a4d4f84626eafdfbc5cc21eef1968a9ed64fcad
-ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
+ms.openlocfilehash: a52a842bbd8ba9d8b22cdcf6792ec7e45a06e964
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "71055613"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73471169"
 ---
 # <a name="tutorial-build-an-aspnet-core-and-sql-database-app-in-azure-app-service"></a>Руководство по Создание приложения ASP.NET Core и Базы данных SQL в Службе приложений Azure
 
@@ -408,13 +408,15 @@ az webapp log tail --name <app_name> --resource-group myResourceGroup
 
 ## <a name="manage-your-azure-app"></a>Управление приложением Azure
 
-Перейдите на [портал Azure](https://portal.azure.com), чтобы увидеть созданное приложение.
+Чтобы просмотреть созданное приложение, на [портале Azure](https://portal.azure.com) найдите в поиске и выберите **Службы приложений**.
 
-В меню слева щелкните **Службы приложений**, а затем — имя своего приложения Azure.
+![Выберите службы приложений на портале Azure](./media/app-service-web-tutorial-dotnetcore-sqldb/app-services.png)
+
+На странице **Службы приложений** выберите имя приложения Azure.
 
 ![Переход к приложению Azure на портале](./media/app-service-web-tutorial-dotnetcore-sqldb/access-portal.png)
 
-По умолчанию на портале отображается страница **Обзор** приложения. Здесь вы можете наблюдать за работой приложения. Вы также можете выполнять базовые задачи управления: обзор, завершение, запуск, перезагрузку и удаление. На вкладках в левой части страницы отображаются различные страницы конфигурации, которые можно открыть.
+По умолчанию на портале отображается страница **Обзор** приложения. Здесь вы можете наблюдать за работой приложения. Вы также можете выполнять базовые задачи управления: обзор, завершение, запуск, перезагрузку и удаление. В левой части страницы отображаются различные страницы конфигурации, которые можно открыть.
 
 ![Страница службы приложений на портале Azure](./media/app-service-web-tutorial-dotnetcore-sqldb/web-app-blade.png)
 

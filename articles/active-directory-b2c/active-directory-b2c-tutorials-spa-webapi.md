@@ -10,12 +10,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: 9ac95896e67338437325e8290a96b8e42b2fa3a7
-ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
+ms.openlocfilehash: 30e7059605ef86e6afd86251db0e416c9143a9ec
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72374252"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73475104"
 ---
 # <a name="tutorial-grant-access-to-an-aspnet-core-web-api-from-a-single-page-application-using-azure-active-directory-b2c"></a>Руководство по Предоставление доступа к веб-API ASP.NET Core из одностраничного приложения с помощью Azure Active Directory B2C
 
@@ -46,7 +46,7 @@ ms.locfileid: "72374252"
 
 [!INCLUDE [active-directory-b2c-scopes](../../includes/active-directory-b2c-scopes.md)]
 
-Запишите **значение полной области**, которое будет использоваться в области `demo.read` на следующих шагах при настройке одностраничного приложения. Значение полной области аналогично `https://yourtenant.onmicrosoft.com/api/demo.read`.
+Запишите значение в разделе **Области**, которое будет использоваться в области `demo.read` на следующих шагах при настройке одностраничного приложения. Значение полной области аналогично `https://contosob2c.onmicrosoft.com/api/demo.read`.
 
 ## <a name="grant-permissions"></a>Предоставление разрешений
 
@@ -133,8 +133,8 @@ git clone https://github.com/Azure-Samples/active-directory-b2c-dotnetcore-webap
 
 1. Откройте файл *index.html* в проекте [active-directory-b2c-javascript-msal-singlepageapp][github-js-spa], скачанном или клонированном в предыдущем учебнике.
 1. Настройте пример с помощью URI для области *demo.read*, созданной ранее, а также URL-адрес веб-API.
-    1. В определении `appConfig` замените значение `b2cScopes` полным URI для области (**значение полной области**, записанное ранее).
-    1. Замените значение `webApi` значением `applicationURL`, указанным в предыдущем разделе.
+    1. В определении `appConfig` замените значение `b2cScopes` полным URI для области (значение **SCOPE**, записанное ранее).
+    1. Измените значение `webApi` на URI перенаправления, добавленный при регистрации приложения веб-API на предыдущем шаге.
 
     Определение `appConfig` должно выглядеть как следующий блок кода (с именем клиента вместо `<your-tenant-name>`):
 

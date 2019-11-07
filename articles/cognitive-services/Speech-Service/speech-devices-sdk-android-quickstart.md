@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 07/05/2019
 ms.author: erhopf
-ms.openlocfilehash: f7039b525cf0d52670b8d76a24d8ec3ea5115772
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: acb041ce29d0340686a09764158063ad8d000c7c
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68559115"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73491307"
 ---
 # <a name="quickstart-run-the-speech-devices-sdk-sample-app-on-android"></a>Краткое руководство. Запуск примера приложения на базе пакета SDK для речевых устройств в Android
 
@@ -102,14 +102,14 @@ ms.locfileid: "68559115"
     private static final String CTSRegion="<Conversation Transcription Service Region>";// Region may be "centralus" or "eastasia"
     ```
 
-1. По умолчанию слово для пробуждения (ключевое слово) — "Компьютер". Можно также попробовать одно из других предоставленных слов для пробуждения — "Машина" или "Помощник". Файлы ресурсов для этих альтернативных слов пробуждения находятся в пакете SDK для речевых устройств в папке "keyword". Например, C:\SDSDK\Android-Sample-Release\keyword\Computer содержит файлы, используемые для слова пробуждения "Компьютер".
+1. Ключевое слово по умолчанию — "Компьютер". Можно также попробовать одно из других предоставленных ключевых слов — "Машина" или "Помощник". Файлы ресурсов для этих альтернативных ключевых слов находятся в пакете SDK для речевых устройств в папке keyword. Например, C:\SDSDK\Android-Sample-Release\keyword\Computer содержит файлы, используемые для слова пробуждения "Компьютер".
 
    > [!TIP]
-   > Кроме того, вы можете [создать пользовательское слово пробуждения](speech-devices-sdk-create-kws.md).
+   > Кроме того, вы можете [создать пользовательское ключевое слово](speech-devices-sdk-create-kws.md).
 
-    Для использования нового слова активации обновите следующие две строки в файле `MainActivity.java` и скопируйте пакет слов активации в приложение. Например, для использования слова активации "Machine" из пакета слов активации kws-machine.zip:
+    Для использования нового ключевого слова обновите следующие две строки в файле `MainActivity.java` и скопируйте пакет ключевых слов в приложение. Например, чтобы использовать ключевое слово "Машина" из файла kws-machine.zip пакета ключевых слов, сделайте следующее.
 
-   * Скопируйте пакет слов активации в папку "C:\SDSDK\Android-Sample-Release\example\app\src\main\assets\".
+   * Скопируйте пакет ключевых слов в папку "C:\SDSDK\Android-Sample-Release\example\app\src\main\assets\".
    * Укажите в файле `MainActivity.java` ключевое слово и имя пакета:
 
      ```java

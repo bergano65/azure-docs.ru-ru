@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: quickstart
 ms.date: 06/20/2018
 ms.author: jingwang
-ms.openlocfilehash: 5baa8c78ad581a00a3601706f31cf815359120c7
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 3dee054f6c382a00a55e4acf07e2a188c5cc6a07
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70077044"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73490663"
 ---
 # <a name="quickstart-create-a-data-factory-by-using-the-azure-data-factory-ui"></a>Краткое руководство. Создание фабрики данных с помощью пользовательского интерфейса службы "Фабрика данных Azure"
 
@@ -39,7 +39,10 @@ ms.locfileid: "70077044"
 
 1. Запустите веб-браузер **Microsoft Edge** или **Google Chrome**. Сейчас только эти браузеры поддерживают пользовательский интерфейс фабрики данных.
 1. Перейдите на [портал Azure](https://portal.azure.com). 
-1. В меню слева выберите **Создать ресурс**, **Аналитика**, **Фабрика данных**. 
+1. Выберите команду **Создать ресурс** в меню на портале Azure.
+   
+   ![Выберите команду "Создать ресурс" в меню на портале Azure.](./media/doc-common-process/create-a-resource.png)
+1. Выберите пункт **Аналитика**, а затем — **Фабрика данных**. 
    
    ![Выбор фабрики данных в области "Создать"](./media/doc-common-process/new-azure-data-factory-menu.png)
 1. На странице **Новая фабрика данных** введите **ADFTutorialDataFactory** в поле **Имя**. 

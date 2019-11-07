@@ -9,18 +9,20 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: tutorial
-ms.date: 07/16/2019
+ms.date: 10/14/2019
 ms.author: diberry
-ms.openlocfilehash: 69f853b77e3fbab149dbf163ed5cccb08578aa4e
-ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
+ms.openlocfilehash: 4e4f1787db86378eaeff9df196cc061c42d0ab1e
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70390338"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73499008"
 ---
 # <a name="tutorial-add-common-pattern-template-utterance-formats"></a>Руководство по Добавление шаблонов высказываний в стандартных форматах
 
 В этом руководстве используйте шаблоны для улучшения намерения и сущности прогнозирования, в то же время предоставляя меньше примеров высказываний. Шаблон предоставляется в виде примера высказывания шаблона, который включает синтаксис для идентификации сущностей и игнорируемый текст. Шаблон представляет собой сочетание сопоставления выражений и машинного обучения.  Пример высказывания шаблона вместе с высказываниями намерений дает LUIS лучшее представление о том, какие высказывания соответствуют намерениям. 
+
+[!INCLUDE [Waiting for LUIS portal refresh](./includes/wait-v3-upgrade.md)]
 
 **В этом руководстве рассмотрено, как выполнять следующие задачи.**
 
@@ -69,7 +71,7 @@ ms.locfileid: "70390338"
     |Who does Jill Jones directly report to?|
     |Who is Jill Jones supervisor?|
 
-    [![Снимок экрана: добавление новых высказываний к намерениям в LUIS](media/luis-tutorial-pattern/hr-orgchart-manager-intent.png "Снимок экрана: добавление новых высказываний к намерениям в LUIS")](media/luis-tutorial-pattern/hr-orgchart-manager-intent.png#lightbox)
+    [![Снимок экрана LUIS "Добавление новых высказываний к намерениям"](media/luis-tutorial-pattern/hr-orgchart-manager-intent.png "Снимок экрана LUIS "Добавление новых высказываний к намерениям"")](media/luis-tutorial-pattern/hr-orgchart-manager-intent.png#lightbox)
 
     Не беспокойтесь, если объект keyPhrase помечен в высказываниях намерения, а не сущности Employee. Оба они правильно прогнозированы в тестовой панели и в конечной точке. 
 

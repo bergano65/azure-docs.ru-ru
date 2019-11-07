@@ -16,12 +16,12 @@ ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: lenalepa, aragra, sureshja
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5100af99046a03345230ed0468071766aae1c77b
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: 30b0649f23403363ca4ab4101a2d5cf7a42d505b
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72389609"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73473688"
 ---
 # <a name="quickstart-configure-a-client-application-to-access-web-apis"></a>Краткое руководство. Настройка клиентского приложения для доступа к веб-API
 
@@ -57,7 +57,8 @@ ms.locfileid: "72389609"
 
 1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
 1. Если учетная запись предоставляет доступ нескольким клиентам, выберите свою учетную запись в правом верхнем углу и нужный клиент Azure AD для этого сеанса портала.
-1. В области навигации слева выберите службу **Azure Active Directory**, а затем выберите **Регистрация приложений**.
+1. Найдите и выберите **Azure Active Directory**. 
+1. В левой области щелкните **Регистрация приложений**.
 1. Найдите и выберите приложение, которое нужно настроить. После выбора приложения появится страница **Обзор** приложения или главная страница регистрации.
 1. Выполните действия по настройке приложения для доступа к веб-API:
     * [Добавьте URI перенаправления в приложение](#add-redirect-uris-to-your-application).

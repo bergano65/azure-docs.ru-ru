@@ -7,14 +7,14 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 10/18/2019
+ms.date: 10/30/2019
 ms.author: iainfou
-ms.openlocfilehash: b99eafeae60e81fd7d902289a47190a2cbe1daa3
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: 2a1fbe8d47af8a2215b0d0a3d81fbe67a62d4755
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72786989"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73474420"
 ---
 # <a name="tutorial-create-and-configure-an-azure-active-directory-domain-services-instance"></a>Руководство по Создание и настройка экземпляра доменных служб Azure Active Directory
 
@@ -55,7 +55,7 @@ ms.locfileid: "72786989"
 
 Чтобы запустить мастер **включения доменных служб Azure AD**, выполните указанные ниже действия.
 
-1. Щелкните **+ Создать ресурс** в верхнем левом углу окна портала Azure.
+1. На **домашней странице** или в меню портала Azure выберите команду **Создать ресурс**.
 1. В строке поиска введите *Доменные службы* и выберите *Доменные службы Azure AD* в списке вариантов.
 1. На странице "Доменные службы Azure AD" щелкните **Создать**. Запустится мастер **включения доменных служб Azure AD**.
 1. Выберите **подписку** Azure, в которой следует создать управляемый домен.
@@ -87,7 +87,11 @@ ms.locfileid: "72786989"
 Заполните поля в окне *Основные данные* на портале Azure, чтобы создать экземпляр Azure AD DS.
 
 1. Введите **доменное имя DNS** для управляемого домена, учитывая описанные выше ограничения.
-1. Выберите **расположение** Azure, в котором необходимо создать управляемый домен.
+1. Выберите **расположение** Azure, в котором необходимо создать управляемый домен. Если вы выбрали регион, который поддерживает зоны доступности, ресурсы Azure AD DS распределяются между зонами для дополнительной избыточности.
+
+    Зоны доступности — уникальные физические расположения в пределах одного региона Azure. Каждая зона состоит из одного или нескольких центров обработки данных, оснащенных независимыми системами электроснабжения, охлаждения и сетевого взаимодействия. Чтобы обеспечить отказоустойчивость, во всех включенных регионах используются минимум три отдельные зоны.
+
+    Вы не можете настроить распределение Azure AD DS между зонами. Платформа Azure автоматически обрабатывает распределение ресурсов зоны. Дополнительные сведения о зонах доступности и регионах см. в статье [Что такое зоны доступности в Azure?][availability-zones].
 
     ![Настройка базовых параметров для экземпляра доменных служб Azure AD](./media/tutorial-create-instance/basics-window.png)
 
@@ -117,7 +121,7 @@ ms.locfileid: "72786989"
 
     ![Состояние доменных служб после успешного завершения подготовки](./media/tutorial-create-instance/successfully-provisioned.png)
 
-Мы подготавливаем доменные службы Azure AD в клиенте Azure Active Directory и ресурс доменных служб Azure AD для службы, созданной в связанной подписке Azure. В процессе подготовки Azure AD DS создает в вашем каталоге два корпоративных приложения с именами *Domain Controller Services* и *AzureActiveDirectoryDomainControllerServices* в вашем экземпляре Azure Active Directory, в котором включены доменные службы AD. Эти корпоративные приложения нужны для обслуживания управляемого домена.  Крайне важно ни в коем случае не удалять эти приложения.
+Управляемый домен связан с вашим клиентом Azure AD. В процессе подготовки Azure AD DS создает в вашем клиенте Azure AD два корпоративных приложения с именами *Domain Controller Services* и *AzureActiveDirectoryDomainControllerServices*. Эти корпоративные приложения нужны для обслуживания управляемого домена. Не удаляйте эти приложения.
 
 ## <a name="update-dns-settings-for-the-azure-virtual-network"></a>Обновление настроек DNS для виртуальной сети Azure
 
@@ -188,6 +192,7 @@ ms.locfileid: "72786989"
 [on-prem-sync]: tutorial-configure-password-hash-sync.md
 [configure-sspr]: ../active-directory/authentication/quickstart-sspr.md
 [password-hash-sync-process]: ../active-directory/hybrid/how-to-connect-password-hash-synchronization.md#password-hash-sync-process-for-azure-ad-domain-services
+[availability-zones]: ../availability-zones/az-overview.md
 
 <!-- EXTERNAL LINKS -->
 [naming-prefix]: /windows-server/identity/ad-ds/plan/selecting-the-forest-root-domain#selecting-a-prefix

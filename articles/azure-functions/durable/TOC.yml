@@ -81,8 +81,8 @@
       href: durable-functions-bindings.md
     - name: API HTTP
       href: durable-functions-http-api.md
-    - name: API расширения "Устойчивые функции"
-      href: /dotnet/api/microsoft.azure.webjobs.extensions.durabletask?view=azure-dotnet-preview
+    - name: API для .NET
+      href: /dotnet/api/microsoft.azure.webjobs.extensions.durabletask?view=azure-dotnet
 - name: Руководства
   items:
     - name: Разработка

@@ -1,19 +1,19 @@
 ---
-title: Руководство по Общий доступ за пределами организации в предварительной версии Azure Data Share
-description: Руководство по совместному использованию данных клиентами и партнерами с помощью предварительной версии Azure Data Share
+title: Руководство по Общий доступ за пределами организации в Azure Data Share
+description: Руководство по совместному использованию данных клиентами и партнерами с помощью Azure Data Share
 author: joannapea
 ms.author: joanpo
 ms.service: data-share
 ms.topic: tutorial
 ms.date: 07/10/2019
-ms.openlocfilehash: f7df46a6a6f149ef0228fda8c967469a25dc3d50
-ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
+ms.openlocfilehash: 4ef9256404b0d0d4d6379e4f5a76c0d41a38c7cd
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71327414"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73499328"
 ---
-# <a name="tutorial-share-your-data-using-azure-data-share-preview"></a>Руководство по Совместное использование данных с помощью предварительной версии Azure Data Share
+# <a name="tutorial-share-data-using-azure-data-share"></a>Руководство по Совместное использование данных с помощью Azure Data Share  
 
 Из этого руководства вы узнаете, как настроить новый Azure Data Share и начать предоставлять свои данные клиентам и партнерам за пределами вашей организации Azure. 
 
@@ -28,9 +28,28 @@ ms.locfileid: "71327414"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
-* Учетная запись хранилища Azure: Если у вас ее еще нет, вы можете создать [Учетную запись службі хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account)
-* Разрешение на добавление назначения ролей в учетную запись хранения с разрешением *Microsoft.Authorization/role assignments/write*. Это разрешение назначено роли владельца. 
 * Адрес электронной почты для входа получателей в Azure (псевдонимы электронной почты не поддерживаются).
+
+### <a name="share-from-a-storage-account"></a>Совместное использование из учетной записи хранения
+
+* Учетная запись хранения Azure. Если у вас ее еще нет, вы можете создать [Учетную запись службі хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account)
+* Разрешение на добавление назначения ролей в учетную запись хранения с разрешением *Microsoft.Authorization/role assignments/write*. Это разрешение назначено роли владельца. 
+
+### <a name="share-from-a-sql-based-source"></a>Совместное использование из источника на основе SQL
+
+* База данных SQL Azure или хранилище данных SQL Azure с таблицами и представлениями, к которым вы хотите предоставить общий доступ.
+* Разрешение на доступ к хранилищу данных для общего ресурса данных. Это можно обеспечить следующим образом. 
+    1. Укажите себя в качестве администратора Azure Active Directory для сервера.
+    1. Подключитесь к хранилищу данных или базе данных Azure SQL с использованием Azure Active Directory.
+    1. Используйте редактор запросов (предварительная версия) для выполнения следующего скрипта, чтобы добавить MSI Data Share в качестве роли db_owner. Необходимо подключиться с помощью Active Directory, а не проверки подлинности SQL Server. 
+    
+```sql
+    create user <share_acct_name> from external provider;     
+    exec sp_addrolemember db_owner, <share_acct_name>; 
+```                   
+Обратите внимание, что *<share_acc_name>*  — это имя вашей учетной записи Data Share. Если вы еще не создали учетную запись Data Share, вы можете вернуться к этому требованию позже.  
+
+* Доступ к брандмауэру для IP-адреса клиента SQL Server Это можно обеспечить следующим образом. 1. Перейдите к разделу *Брандмауэры и виртуальные сети* 1. Чтобы разрешить доступ к службам Azure, щелкните переключатель **Вкл.** . 
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
@@ -44,7 +63,7 @@ ms.locfileid: "71327414"
 
 1. Найдите *Data Share*.
 
-1. Выберите "Data Share (preview)" (Data Share (предварительная версия)) и выберите команду **Создать**.
+1. Выберите Data Share и команду **Создать**.
 
 1. Укажите основные сведения о ресурсе Azure Data Share, указав следующую информацию. 
 
@@ -64,7 +83,7 @@ ms.locfileid: "71327414"
 
 1. Перейдите на страницу "Обзор Data Share".
 
-    ![Совместное использование данных](./media/share-receive-data.png "совместное использование данных") 
+    ![Общий доступ к данным](./media/share-receive-data.png "Общий доступ к данным") 
 
 1. Выберите команду **Начать совместное использование данных**.
 
@@ -72,31 +91,31 @@ ms.locfileid: "71327414"
 
 1. Введите сведения для Data Share. Укажите имя, описание содержимого и условия использования (необязательно). 
 
-    ![EnterShareDetails](./media/enter-share-details.png "Введите сведения для Data Share") 
+    ![EnterShareDetails](./media/enter-share-details.png "Введите сведения об общем ресурсе") 
 
 1. Выберите **Продолжить**
 
 1. Чтобы добавить наборы данных для Data Share, выберите **Добавить наборы данных**. 
 
-    ![Datasets](./media/datasets.png "Наборы данных")
+    ![Наборы данных](./media/datasets.png "Наборы данных")
 
 1. Выберите тип набора данных, который хотите добавить. 
 
-    ![AddDatasets](./media/add-datasets.png "Добавить наборы данных")    
+    ![AddDatasets](./media/add-datasets.png "Добавление наборов данных")    
 
 1. Перейдите к объекту, доступ к которому нужно предоставить, и выберите "Добавить наборы данных". 
 
-    ![SelectDatasets](./media/select-datasets.png "Выберите наборы данных")    
+    ![SelectDatasets](./media/select-datasets.png "Выбор наборов данных")    
 
 1. На вкладке "Получатели" введите адреса электронной почты получателей данных, выбрав команду "+Добавить получателя". 
 
-    ![AddRecipients](./media/add-recipient.png "Добавить получателей") 
+    ![AddRecipients](./media/add-recipient.png "Добавление получателей") 
 
 1. Выберите **Продолжить**
 
 1. Если хотите, чтобы потребитель данных мог получать добавочные обновления ваших данных, включите создание моментальных снимков по расписанию. 
 
-    ![EnableSnapshots](./media/enable-snapshots.png "Включить моментальные снимки") 
+    ![EnableSnapshots](./media/enable-snapshots.png "Включение моментальных снимков") 
 
 1. Выберите время начала и интервал повторения. 
 

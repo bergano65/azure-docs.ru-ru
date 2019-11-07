@@ -3,14 +3,14 @@ author: MashaMSFT
 ms.service: sql-database
 ms.subservice: single-database
 ms.topic: include
-ms.date: 07/31/2019
+ms.date: 11/04/2019
 ms.author: mathoma
-ms.openlocfilehash: ff5505c2cb35d088565773e8d0ba01e8abb4b8c3
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 0fad326107fa101cbba869311724710bd3f5307b
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72933236"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73496134"
 ---
 На этом этапе вы создадите отдельную базу данных в службе "База данных SQL Azure". 
 
@@ -55,12 +55,12 @@ ms.locfileid: "72933236"
 
      ![Сведения о Базе данных SQL](../media/sql-database-get-started-portal/sql-db-basic-db-details.png)
 
-   - Выберите **Подготовлено** и **5-е поколение**.
+   - Выберите **Подготовлено**.
 
      ![Элементы "Подготовлено" и "4-е поколение"](../media/sql-database-get-started-portal/create-database-provisioned.png)
 
-   - Проверьте значения параметров **Максимальное число виртуальных ядер**, **Минимальное число виртуальных ядер**, **Задержка перед автоматической приостановкой** и **Максимальный размер данных**. Измените их при необходимости.
-   - Примите условия использования предварительной версии и нажмите кнопку **ОК**.
+   - Проверьте параметры **виртуальных ядер** и **максимального размера данных**. Измените их при необходимости. 
+     - При необходимости можно также выбрать команду **Изменить конфигурацию**, чтобы изменить параметры создания оборудования.
    - Нажмите кнопку **Применить**.
 
 5. Перейдите на вкладку **Дополнительные параметры**. 

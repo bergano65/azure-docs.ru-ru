@@ -1,26 +1,21 @@
 ---
-title: Создайте свою первую функцию PowerShell с помощью службы Функций Azure
+title: Создание первой функции PowerShell в Azure
 description: Узнайте, как создать свою первую функцию PowerShell в Azure с помощью кода Visual Studio.
-services: functions
-keywords: ''
 author: joeyaiello
-manager: jeconnoc
+manager: gwallace
 ms.author: jaiello
 ms.reviewer: glenga
 ms.date: 04/25/2019
 ms.topic: quickstart
 ms.service: azure-functions
-ms.devlang: powershell
-ms.openlocfilehash: c9de4cec417625bb8451457652dacb61550c31b0
-ms.sourcegitcommit: 961468fa0cfe650dc1bec87e032e648486f67651
+ms.openlocfilehash: 1d6d641e141862b12fed40b800589aad70af2789
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72248336"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73469412"
 ---
-# <a name="create-your-first-powershell-function-in-azure-preview"></a>Создание первой функции PowerShell в Azure (предварительная версия)
-
-[!INCLUDE [functions-powershell-preview-note](../../includes/functions-powershell-preview-note.md)]
+# <a name="create-your-first-powershell-function-in-azure"></a>Создание первой функции PowerShell в Azure
 
 В этом кратком руководстве содержатся инструкции по созданию первой [безсерверной](https://azure.com/serverless) функции PowerShell с помощью кода Visual Studio.
 
@@ -66,7 +61,7 @@ ms.locfileid: "72248336"
     > [!NOTE]
     > Рассматриваемый в этой статье пример выполняется вне рабочей области. В этом случае не нужно указывать папку проекта, которая является частью рабочей области.
 
-1. Выберите **Powershell (предварительная версия)** в качестве языка для проекта приложения-функций, а затем выберите  **Функции Azure версия 2**.
+1. Выберите **Powershell** в качестве языка для проекта приложения-функции, а затем выберите  **Функции Azure версия 2**.
 
 1. Выберите **Триггер HTTP** в качестве шаблона для первой функции, `HTTPTrigger` в качестве имени функции, а также выберите уровень авторизации **Функция**.
 
@@ -104,9 +99,9 @@ Visual Studio Code создает проект приложение-функци
 
 > [!NOTE]
 > Не забудьте удалить все вызовы `Wait-Debugger` перед публикацией своих функций в Azure. 
-
-> [!NOTE]
-> При создании приложения-функции в Azure будет запрашиваться только его имя. Задайте значение true для azureFunctions.advancedCreation для возможности запрашивать все остальные значения.
+>
+> При создании приложения-функции в Azure будет запрашиваться только его имя. Другие значения определяются пользователем.
+> Задайте для параметра `azureFunctions.advancedCreation` значение `true`, чтобы получать запрос на ввод всех других значений.
 
 [!INCLUDE [functions-publish-project-vscode](../../includes/functions-publish-project-vscode.md)]
 

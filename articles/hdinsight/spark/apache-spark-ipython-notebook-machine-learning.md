@@ -1,5 +1,5 @@
 ---
-title: Руководство по Создание приложения машинного обучения Spark в Azure HDInsight
+title: Руководство по Создание приложения машинного обучения Spark — Azure HDInsight
 description: 'Учебник: пошаговые инструкции по созданию приложения машинного обучения Apache Spark в кластерах HDInsight Spark с помощью записной книжки Jupyter.'
 author: hrasheed-msft
 ms.author: hrasheed
@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,mvc
 ms.topic: tutorial
 ms.date: 06/26/2019
-ms.openlocfilehash: e77414da964d548b64250bbf98f86bee1529f2ab
-ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
+ms.openlocfilehash: 6e46d7403e251bccd69467cfcdaa1d5073b4e454
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71327020"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73494570"
 ---
 # <a name="tutorial-build-an-apache-spark-machine-learning-application-in-azure-hdinsight"></a>Руководство по Создание приложения машинного обучения Apache Spark в Azure HDInsight
 
@@ -141,7 +141,7 @@ ms.locfileid: "71327020"
 
     Сравнение выходных данных со сведениями в необработанном CSV-файле. Например, в первой строке CSV-файла содержатся следующие данные:
 
-    ![Моментальный снимок выходных данных для примера машинного обучения Spark](./media/apache-spark-ipython-notebook-machine-learning/spark-machine-learning-output-data.png "Моментальный снимок выходных данных для примера машинного обучения Spark")
+    ![Моментальный снимок выходных данных из примера машинного обучения Spark](./media/apache-spark-ipython-notebook-machine-learning/spark-machine-learning-output-data.png "Моментальный снимок выходных данных из примера машинного обучения Spark")
 
     Обратите внимание на то, насколько фактическая температура меньше целевой, что свидетельствует о том, что здание холодное. В выходных данных обучения видно, что значение в первой строке столбца **label** составляет **0,0**. Это означает, что в здании не тепло.
 
@@ -202,7 +202,7 @@ ms.locfileid: "71327020"
 
 1. Нажмите кнопку **Удалить**. Выберите **Да**.
 
-![Удаление кластера HDInsight на портале Azure](./media/apache-spark-ipython-notebook-machine-learning/hdinsight-azure-portal-delete-cluster.png "Удаление кластера HDInsight")
+![Как удалить кластер HDInsight на портале Azure](./media/apache-spark-ipython-notebook-machine-learning/hdinsight-azure-portal-delete-cluster.png "Удаление кластера HDInsight")
 
 ## <a name="next-steps"></a>Дополнительная информация
 

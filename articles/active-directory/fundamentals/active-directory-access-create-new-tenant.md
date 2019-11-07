@@ -12,12 +12,12 @@ ms.date: 09/10/2018
 ms.author: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4bc3e3bb178efbbc8f4cee6d81417ce70bd7a662
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: c8310b6fc33f1d03e1ccc9ccddfcd7b9e6c35d37
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68562072"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73473371"
 ---
 # <a name="quickstart-create-a-new-tenant-in-azure-active-directory"></a>Краткое руководство. Создание клиента в Azure Active Directory
 С помощью портала Azure Active Directory (Azure AD) можно выполнять все административные задачи, включая создание клиента для своей организации. 
@@ -26,22 +26,24 @@ ms.locfileid: "68562072"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
-Войдите на [портал Azure](https://portal.azure.com/) своей организации, используя учетную запись глобального администратора.
-
-![Экран портала Azure с параметром Azure AD](media/active-directory-access-create-new-tenant/azure-ad-portal.png)
-
 ## <a name="create-a-new-tenant-for-your-organization"></a>Создание клиента для организации
 После входа на портал Azure можно создать клиент для своей организации. Новый клиент представляет организацию и помогает управлять определенным экземпляром облачных служб Майкрософт для внутренних и внешних пользователей.
 
 ### <a name="to-create-a-new-tenant"></a>Создание клиента
-1. Выберите **Создать ресурсы**, **Идентификатор**, **Azure Active Directory**.
+
+1. Войдите на [портал Azure](https://portal.azure.com/) своей организации, используя учетную запись глобального администратора.
+
+1. Выберите команду **Создать ресурс** в меню на портале Azure.  
+
+    ![Страница создания ресурса Azure Active Directory](media/active-directory-access-create-new-tenant/azure-ad-portal.png)
+
+1. Выберите **Удостоверение**, а затем щелкните **Azure Active Directory**.
 
     Откроется страница **Создание каталога**.
 
     ![Страница создания каталога Azure Active Directory](media/active-directory-access-create-new-tenant/azure-ad-create-new-tenant.png)
 
-2.  На странице **Создание каталога** введите следующие сведения.
+1.  На странице **Создание каталога** введите следующие сведения.
     
     - В поле **Название организации** введите _Contoso_.
 
@@ -49,7 +51,7 @@ ms.locfileid: "68562072"
 
     - Оставьте значение _США_ в поле **Страна или регион**.
 
-3. Нажмите кнопку **Создать**.
+1. Нажмите кнопку **Создать**.
 
 Будет создан клиент с доменом contoso.onmicrosoft.com.
 

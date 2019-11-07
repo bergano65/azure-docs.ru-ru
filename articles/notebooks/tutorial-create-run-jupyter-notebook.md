@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 01/11/2019
 ms.author: kraigb
-ms.openlocfilehash: 827338c299b19d04245d7114a99d946d0332c82f
-ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
+ms.openlocfilehash: 42072894b99ebf1cfcbb5e622c2a9c3a4321a944
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2019
-ms.locfileid: "71973047"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73496653"
 ---
 # <a name="tutorial-create-and-run-a-jupyter-notebook-with-python"></a>Руководство. Создание и запуск записной книжки Jupyter с помощью Python
 
@@ -430,4 +430,4 @@ ms.locfileid: "71973047"
 - [Представление слайд-шоу](present-jupyter-notebooks-slideshow.md)
 - [Работа с файлами данных](work-with-project-data-files.md)
 - [Доступ к ресурсам данных](access-data-resources-jupyter-notebooks.md)
-- [Работа со Службами машинного обучения Azure](use-machine-learning-services-jupyter-notebooks.md)
+- [Использование Машинного обучения Azure](use-machine-learning-services-jupyter-notebooks.md)
