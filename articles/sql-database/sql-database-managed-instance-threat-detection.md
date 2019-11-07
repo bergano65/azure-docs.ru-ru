@@ -1,5 +1,5 @@
 ---
-title: Настройка расширенной защиты от угроз для управляемого экземпляра базы данных SQL Azure | Документация Майкрософт
+title: Настройка расширенной защиты от угроз для управляемого экземпляра базы данных SQL Azure
 description: Расширенная защита от угроз обнаруживает аномальные действия базы данных, указывающие потенциальные угрозы безопасности для базы данных в управляемом экземпляре.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: rmatchoro
 ms.author: ronmat
 ms.reviewer: vanto
 ms.date: 08/05/2019
-ms.openlocfilehash: eb6d8229e85e54a6a3fc8591dc4688a73773fd8b
-ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
+ms.openlocfilehash: 8e419031c34a693bac7ab9f9825c24576e80ba14
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68816578"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73687884"
 ---
 # <a name="configure-advanced-threat-protection-in-azure-sql-database-managed-instance"></a>Настройка расширенной защиты от угроз в управляемом экземпляре базы данных SQL Azure
 
@@ -31,18 +31,18 @@ ms.locfileid: "68816578"
 1. Запустите портал Azure: [https://portal.azure.com](https://portal.azure.com).
 2. Перейдите на страницу настройки управляемого экземпляра, который требуется защитить. На странице **Параметры** выберите пункт **Расширенная защита данных**.
 3. На странице настройки дополнительной защиты данных
-   - Включите расширенную защиту данных.
+   - Включите **расширенную** защиту данных.
    - Настройте **список электронных адресов** для получения оповещений безопасности в случае обнаружения подозрительной активности в базе данных.
    - Выберите **учетную запись хранения Azure** для сохранения записей аудита аномальных угроз.
    - Выберите **типы расширенной защиты от угроз** , которые вы хотите настроить. Дополнительные сведения об [оповещениях Advanced Threat protection](sql-database-threat-detection-overview.md).
 4. Нажмите кнопку **сохранить** , чтобы сохранить новую или обновленную расширенную политику безопасности данных.
 
-   ![Advanced Threat Protection](./media/sql-database-managed-instance-threat-detection/threat-detection.png)
+   ![Расширенная защита от угроз](./media/sql-database-managed-instance-threat-detection/threat-detection.png)
 
    > [!NOTE]
    > Цены на снимках экрана не всегда соответствуют текущей цене и являются примером.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [Advanced Threat protection](sql-database-threat-detection-overview.md).
 - Дополнительные сведения см. в статье [Использование Управляемого экземпляра базы данных SQL с виртуальными сетями и почти полной совместимостью](sql-database-managed-instance.md).

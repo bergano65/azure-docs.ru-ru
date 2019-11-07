@@ -1,5 +1,5 @@
 ---
-title: Единицы хранилища данных (DWU, Cdwu) в Azure синапсе Analytics (прежнее название — SQL DW) | Документация Майкрософт
+title: Единицы хранилища данных (DWU, Cdwu) в Azure синапсе Analytics (прежнее название — SQL DW)
 description: Рекомендации по выбору идеального количества единиц использования хранилища данных (DWU, cDWU) для оптимизации затрат и производительности, а также по изменению количества единиц.
 services: sql-data-warehouse
 author: mlee3gsd
@@ -10,13 +10,13 @@ ms.subservice: design
 ms.date: 11/04/2019
 ms.author: martinle
 ms.reviewer: igorstan
-mscustom: sqlfreshmay19
-ms.openlocfilehash: 32e75b78b8a5c304fc65a9c20d16fb85b4f8307b
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.custom: seo-lt-2019
+ms.openlocfilehash: f3415522a6ae80723500ba2d38867322fdef0dd7
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73475756"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73685331"
 ---
 # <a name="data-warehouse-units-dwus-and-compute-data-warehouse-units-cdwus"></a>Единицы использования хранилища данных (DWU) и вычислительные единицы использования хранилища данных (cDWU)
 
@@ -215,4 +215,4 @@ Content-Type: application/json; charset=UTF-8
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об управлении производительностью см. в статьях [Классы ресурсов для управления рабочими нагрузками](resource-classes-for-workload-management.md) и [Memory and concurrency limits for Azure SQL Data Warehouse](memory-and-concurrency-limits.md) (Ограничения памяти и параллелизма для хранилища данных SQL Azure).
+Дополнительные сведения об управлении производительностью см. в разделе [классы ресурсов для управления рабочими нагрузками](resource-classes-for-workload-management.md) и [ограничения памяти и параллелизма] память-параллелизм — limits.md).

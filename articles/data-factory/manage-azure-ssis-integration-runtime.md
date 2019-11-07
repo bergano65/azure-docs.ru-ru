@@ -1,5 +1,5 @@
 ---
-title: Перенастройка среды выполнения интеграции SQL Server Integration Services Azure | Документация Майкрософт
+title: Перенастройка среды выполнения интеграции SQL Server Integration Services Azure
 description: Узнайте, как перенастроить среду выполнения интеграции Azure-SSIS в фабрике данных Azure после ее подготовки.
 services: data-factory
 documentationcenter: ''
@@ -12,20 +12,20 @@ author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: craigg
-ms.openlocfilehash: 3c1178a20debc36fbdbbd374eaf9adb6005a93a7
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 09ef8560edc47a6bb12fad782ae3d34987471127
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66152344"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73672532"
 ---
 # <a name="reconfigure-the-azure-ssis-integration-runtime"></a>Перенастройка среды выполнения интеграции SQL Server Integration Services Azure
 Из этой статьи вы узнаете, как перенастроить существующую среду выполнения интеграции SQL Server Integration Services Azure. Сведения о создании среды выполнения интеграции SQL Server Integration Services Azure в Фабрике данных Azure см. в [этой статье](create-azure-ssis-integration-runtime.md).  
 
-## <a name="data-factory-ui"></a>Пользовательский интерфейс фабрики данных 
+## <a name="data-factory-ui"></a>Пользовательский интерфейс Фабрики данных 
 Пользовательский интерфейс фабрики данных можно использовать для остановки, изменения, повторной настройки и удаления среды выполнения интеграции Azure SSIS. 
 
-1. В **пользовательском интерфейсе фабрики данных** переключитесь на вкладку **Правка**. Чтобы запустить пользовательский интерфейс фабрики данных, щелкните **Создание и мониторинг** на домашней странице фабрики данных.
+1. В **пользовательском интерфейсе фабрики данных**перейдите на вкладку **Правка** . Чтобы запустить пользовательский интерфейс фабрики данных, щелкните " **Создать монитор &** " на домашней странице фабрики данных.
 2. В области слева щелкните **Подключения**.
 3. На панели справа перейдите на вкладку **Integration Runtimes** (Среды выполнения интеграции). 
 4. С помощью кнопок в столбце действий можно **остановить**, **изменить** или **удалить** среду выполнения интеграции. Кнопка **Код** в столбце **Действия** позволяет просмотреть определение JSON, связанное со средой выполнения интеграции.  
@@ -47,17 +47,17 @@ ms.locfileid: "66152344"
 
 ### <a name="reconfigure-an-azure-ssis-ir"></a>Перенастройка Azure-SSIS IR
 
-1. Сначала остановите среду выполнения интеграции Azure SSIS с помощью [Stop AzDataFactoryV2IntegrationRuntime](/powershell/module/az.datafactory/stop-Azdatafactoryv2integrationruntime) командлета. Эта команда освобождает все узлы и прекращает выставление счетов.
+1. Сначала завершите работу среды выполнения интеграции Azure SSIS с помощью командлета [-AzDataFactoryV2IntegrationRuntime](/powershell/module/az.datafactory/stop-Azdatafactoryv2integrationruntime) . Эта команда освобождает все узлы и прекращает выставление счетов.
 
     ```powershell
     Stop-AzDataFactoryV2IntegrationRuntime -DataFactoryName $DataFactoryName -Name $AzureSSISName -ResourceGroupName $ResourceGroupName 
     ```
-2. Затем выполните настройку Azure SSIS IR с помощью [AzDataFactoryV2IntegrationRuntime набора](/powershell/module/az.datafactory/set-Azdatafactoryv2integrationruntime) командлета. В следующем примере команды развертывается среда выполнения интеграции Azure-SSIS на пять узлов.
+2. Затем перенастройте Azure-SSIS IR с помощью командлета [Set-AzDataFactoryV2IntegrationRuntime](/powershell/module/az.datafactory/set-Azdatafactoryv2integrationruntime) . В следующем примере команды развертывается среда выполнения интеграции Azure-SSIS на пять узлов.
 
     ```powershell
     Set-AzDataFactoryV2IntegrationRuntime -DataFactoryName $DataFactoryName -Name $AzureSSISName -ResourceGroupName $ResourceGroupName -NodeCount 5
     ```  
-3. Запустите среду выполнения интеграции Azure SSIS с помощью [AzDataFactoryV2IntegrationRuntime начала](/powershell/module/az.datafactory/start-Azdatafactoryv2integrationruntime) командлета. Эта команда выделяет все ее узлы для запуска пакетов SSIS.   
+3. Затем запустите среду выполнения интеграции Azure SSIS с помощью командлета [Start-AzDataFactoryV2IntegrationRuntime](/powershell/module/az.datafactory/start-Azdatafactoryv2integrationruntime) . Эта команда выделяет все ее узлы для запуска пакетов SSIS.   
 
     ```powershell
     Start-AzDataFactoryV2IntegrationRuntime -DataFactoryName $DataFactoryName -Name $AzureSSISName -ResourceGroupName $ResourceGroupName
@@ -95,7 +95,7 @@ ms.locfileid: "66152344"
 
 - [Среда выполнения интеграции Azure SSIS](concepts-integration-runtime.md#azure-ssis-integration-runtime). В этой статье содержатся общие сведения о средах выполнения интеграции в целом, включая Azure SSIS IR. 
 - [Развертывание пакетов служб интеграции SQL Server (SSIS) в Azure](tutorial-create-azure-ssis-runtime-portal.md). Эта статья содержит пошаговые инструкции для создания Azure SSIS IR и использует базу данных SQL Azure для размещения каталога SSIS. 
-- [Руководство. Создание среды выполнения интеграции Azure SSIS](create-azure-ssis-integration-runtime.md). Эта статья дополняет соответствующее руководство, а также предоставляет инструкции по использованию Управляемого экземпляра Базы данных SQL Azure и присоединению среды выполнения интеграции к виртуальной сети. 
+- [Создание среды выполнения интеграции Azure SSIS](create-azure-ssis-integration-runtime.md). Эта статья дополняет соответствующее руководство, а также предоставляет инструкции по использованию Управляемого экземпляра Базы данных SQL Azure и присоединению среды выполнения интеграции к виртуальной сети. 
 - [Присоединение среды выполнения интеграции Azure SSIS к виртуальной сети](join-azure-ssis-integration-runtime-virtual-network.md) В этой статье содержатся общие сведения о присоединении среды выполнения интеграции Azure–SSIS к виртуальной сети Azure. В ней также показано, как настроить виртуальную сеть, чтобы присоединить среду выполнения интеграции Azure–SSIS к виртуальной сети с помощью портала Azure. 
 - [Мониторинг среды выполнения интеграции в фабрике данных Azure](monitor-integration-runtime.md#azure-ssis-integration-runtime). В этом статье показано, как извлечь сведения о среде выполнения интеграции Azure SSIS и описания состояний из возвращаемых данных. 
  

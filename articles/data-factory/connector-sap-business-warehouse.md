@@ -1,5 +1,5 @@
 ---
-title: Копирование данных из SAP BW с помощью фабрики данных Azure | Документация Майкрософт
+title: Копирование данных из SAP BW с помощью фабрики данных Azure
 description: Узнайте, как копировать данные из SAP Business Warehouse на поддерживаемые приемники хранилища данных с помощью действия копирования в конвейере фабрики данных Azure.
 services: data-factory
 documentationcenter: ''
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 09/04/2019
 ms.author: jingwang
-ms.openlocfilehash: e53cb822d1100b3d13a96c9f86aee6db420e4bb1
-ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
+ms.openlocfilehash: c2dbacc2fd7906aaf22447dfb39c543206f05392
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71089611"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73680282"
 ---
 # <a name="copy-data-from-sap-business-warehouse-using-azure-data-factory"></a>Копирование данных из SAP Business Warehouse с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -66,17 +66,17 @@ ms.locfileid: "71089611"
 
 Для связанной службы SAP Business Warehouse (BW) поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description (Описание) | Обязательно |
 |:--- |:--- |:--- |
-| type | Свойству type необходимо задать значение **SapBw**. | Да |
+| type | Для свойства type необходимо задать значение **SapBw** | Да |
 | server | Имя сервера, на котором размещен экземпляр SAP Business Warehouse. | Да |
 | systemNumber | Номер системы SAP Business Warehouse.<br/>Допустимые значения: двузначное десятичное число, представленное в виде строки. | Да |
-| clientId | Идентификатор клиента в системе SAP Business Warehouse.<br/>Допустимые значения: трехзначное десятичное число, представленное в виде строки. | Да |
+| clientid | Идентификатор клиента в системе SAP Business Warehouse.<br/>Допустимые значения: трехзначное десятичное число, представленное в виде строки. | Да |
 | userName | Имя пользователя, имеющего доступ к серверу SAP. | Да |
-| password | Пароль для пользователя Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
+| пароль | Пароль для пользователя Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Требуется локальная среда IR, как упоминалось в разделе [Предварительные требования](#prerequisites). |Да |
 
-**Пример.**
+**Пример**
 
 ```json
 {
@@ -107,7 +107,7 @@ ms.locfileid: "71089611"
 
 Чтобы скопировать данные из SAP BW, задайте для свойства Type набора данных значение **сапбвкубе**. Сейчас для набора данных SAP Business Warehouse типа RelationalTable не поддерживаются какие-либо свойства типа.
 
-**Пример.**
+**Пример**
 
 ```json
 {
@@ -124,7 +124,7 @@ ms.locfileid: "71089611"
 }
 ```
 
-Если вы использовали `RelationalTable` типизированный набор данных, он по-прежнему поддерживается "как есть", хотя вы можете использовать новый объект, который будет использоваться в дальнейшем.
+Если вы использовали `RelationalTable` типизированный набор данных, он по-прежнему поддерживается как есть, хотя вы предлагаете использовать новый.
 
 ## <a name="copy-activity-properties"></a>Свойства действия копирования
 
@@ -134,12 +134,12 @@ ms.locfileid: "71089611"
 
 Чтобы скопировать данные из SAP BW, в разделе **источник** действия копирования поддерживаются следующие свойства.
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description (Описание) | Обязательно |
 |:--- |:--- |:--- |
-| type | Свойству type источника действия копирования необходимо задать значение **сапбвсаурце** | Да |
-| query | Указывает запрос многомерных выражений для чтения данных из экземпляра SAP Business Warehouse. | Да |
+| type | Свойство Type источника действия копирования должно иметь значение **сапбвсаурце** . | Да |
+| запрос | Указывает запрос многомерных выражений для чтения данных из экземпляра SAP Business Warehouse. | Да |
 
-**Пример.**
+**Пример**
 
 ```json
 "activities":[
@@ -180,27 +180,27 @@ ms.locfileid: "71089611"
 | Тип данных SAP BW | Тип промежуточных данных фабрики данных |
 |:--- |:--- |
 | ACCP | Int |
-| CHAR | String |
-| CLNT | String |
-| CURR | Decimal |
-| CUKY | String |
-| DEC | Decimal |
+| CHAR | string |
+| CLNT | string |
+| CURR | DECIMAL |
+| CUKY | string |
+| DEC | DECIMAL |
 | FLTP | Double |
 | INT1 | Byte |
 | INT2 | Int16 |
 | INT4 | Int |
-| LANG | String |
-| LCHR | String |
+| LANG | string |
+| LCHR | string |
 | LRAW | Byte[] |
 | PREC | Int16 |
-| QUAN | Decimal |
+| QUAN | DECIMAL |
 | RAW | Byte[] |
 | RAWSTRING | Byte[] |
-| STRING | String |
-| UNIT | String |
-| DATS | String |
-| NUMC | String |
-| TIMS | Строковое |
+| STRING | string |
+| ЕДИНИЦА ИЗМЕРЕНИЯ | string |
+| DATS | string |
+| NUMC | string |
+| TIMS | string |
 
 
 ## <a name="lookup-activity-properties"></a>Свойства действия поиска
@@ -208,5 +208,5 @@ ms.locfileid: "71089611"
 Чтобы получить сведения о свойствах, проверьте [действие поиска](control-flow-lookup-activity.md).
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

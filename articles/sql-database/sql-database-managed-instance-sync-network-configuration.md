@@ -1,5 +1,5 @@
 ---
-title: Синхронизация конфигурации сети в Службе приложений Azure | Документация Майкрософт
+title: Служба приложений Azure — конфигурация сети синхронизации
 description: В этой статье описано, как синхронизировать конфигурацию сети для плана размещения Службы приложений Azure.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: srdan-bozovic-msft
 ms.author: srbozovi
 ms.reviewer: sstein, bonova, carlrab
 ms.date: 12/13/2018
-ms.openlocfilehash: 920851e33255b0bcb5b085c541ae636c5988be72
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: e7263d6a7716caf9f53e8496c6fb02b6d17b5509
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68567319"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73687894"
 ---
 # <a name="sync-networking-configuration-for-azure-app-service-hosting-plan"></a>Синхронизация конфигурации сети для плана размещения Службы приложений Azure
 
@@ -44,6 +44,6 @@ ms.locfileid: "68567319"
 
 Теперь можно попробовать заново установить подключение к Управляемому экземпляру.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о настройке виртуальной сети Управляемого экземпляра см. в статье [Архитектура подключения к Управляемому экземпляру Базы данных SQL Azure](sql-database-managed-instance-connectivity-architecture.md) и [Configure an existing VNet for Azure SQL Database Managed Instance](sql-database-managed-instance-configure-vnet-subnet.md) (Настройка имеющейся виртуальной сети для Управляемого экземпляра Базы данных SQL Azure).

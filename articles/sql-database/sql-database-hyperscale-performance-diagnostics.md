@@ -1,5 +1,5 @@
 ---
-title: База данных SQL Azure — диагностика производительности на уровне службы "масштабирование" | Документация Майкрософт
+title: База данных SQL Azure — диагностика производительности на уровне службы "масштабирование"
 description: В этой статье описывается устранение проблем с производительностью масштабирования в базе данных SQL Azure.
 services: sql-database
 ms.service: sql-database
@@ -9,12 +9,12 @@ author: denzilribeiro
 ms.author: denzilr
 ms.reviewer: sstein
 ms.date: 10/18/2019
-ms.openlocfilehash: fa8b02cf5ee6f24bcc77aae057f41842da721981
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: b8acdbc63098ae99355e8874f7c1585759e5fb7f
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73521135"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73689847"
 ---
 # <a name="sql-hyperscale-performance-troubleshooting-diagnostics"></a>Диагностика по устранению неполадок производительности в SQL
 

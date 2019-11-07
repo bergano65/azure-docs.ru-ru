@@ -1,6 +1,6 @@
 ---
 title: Руководство. Обновление приложения Сетки Azure Service Fabric | Документы Майкрософт
-description: Узнайте, как обновить приложение Service Fabric с помощью Visual Studio
+description: Это руководство является четвертой частью цикла, в котором показано, как обновить приложение Сетки Azure Service Fabric непосредственно из Visual Studio.
 services: service-fabric-mesh
 documentationcenter: .net
 author: dkkapur
@@ -14,18 +14,18 @@ ms.workload: NA
 ms.date: 11/29/2018
 ms.author: dekapur
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 20aa65f0a8e47485e71fd03d73ff144f5290bcb7
-ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
+ms.openlocfilehash: 81f155d5708a2fca2fc1145feb20af12d2fd151e
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69036084"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73686195"
 ---
-# <a name="tutorial-learn-how-to-upgrade-a-service-fabric-application-using-visual-studio"></a>Учебник. Узнайте, как обновить приложение Service Fabric с помощью Visual Studio
+# <a name="tutorial-learn-how-to-upgrade-a-service-fabric-application-using-visual-studio"></a>Руководство. Узнайте, как обновить приложение Service Fabric с помощью Visual Studio
 
 Это руководство является четвертой частью цикла, в котором показано, как обновить приложение Сетки Azure Service Fabric непосредственно из Visual Studio. Обновления затронут как код, так и конфигурацию. Вы увидите, что действия по обновлению и публикации в Visual Studio одинаковы.
 
-Из этого руководства вы узнаете, как выполнить следующие задачи:
+Из этого руководства вы узнали, как выполнять такие задачи:
 > [!div class="checklist"]
 > * Обновление службы сетки Service Fabric с помощью Visual Studio
 
@@ -43,33 +43,33 @@ ms.locfileid: "69036084"
 
 Перед началом работы с этим руководством выполните следующие действия:
 
-* Если вы еще не развернули приложение списка дел, следуйте инструкциям в статье [Руководство. Развертывание приложения Сетки Service Fabric](service-fabric-mesh-tutorial-deploy-service-fabric-mesh-app.md).
+* Если вы еще не развернули приложение списка дел, следуйте инструкциям в разделе [Публикация веб-приложения Сетки Service Fabric](service-fabric-mesh-tutorial-deploy-service-fabric-mesh-app.md).
 
 ## <a name="upgrade-a-service-fabric-mesh-service-by-using-visual-studio"></a>Обновление службы сетки Service Fabric с помощью Visual Studio
 
-В этой статье показано, как обновить микрослужбу в приложении. В этом примере мы изменим `WebFrontEnd` службу, чтобы она отображала категорию задач, и увеличит объем ЦП, который он задает. Затем мы выполним обновление развернутой службы.
+В этой статье показано, как обновить микрослужбу в приложении. В этом примере мы изменим службу `WebFrontEnd`, чтобы отобразить категорию задач и увеличить объем ЦП, который он задает. Затем мы выполним обновление развернутой службы.
 
 ## <a name="modify-the-config"></a>Изменение конфигурации
 
 При создании Service Fabric приложения для сетки Visual Studio добавляет файл **Parameters. YAML** для каждой среды развертывания (облачной и локальной). В этих файлах можно определить параметры и их значения, на которые затем можно будет ссылаться из файлов сетки *. YAML, таких как Service. YAML или Network. YAML.  Visual Studio предоставляет несколько переменных, например, сколько ресурсов ЦП может использовать служба.
 
-Мы будем обновлять `WebFrontEnd_cpu` параметр, чтобы обновить ресурсы ЦП до `1.5` , в результате чего служба WebService будет более интенсивно использоваться.
+Мы будем обновлять параметр `WebFrontEnd_cpu`, чтобы обновить ресурсы ЦП, чтобы `1.5` в ожидании **того, что служба WebService** будет более интенсивно использоваться.
 
-1. В проекте **тодолистапп** в разделе **среды** > **облака**откройте файл **Parameters. YAML** . `WebFrontEnd_cpu`Измените значение`1.5`, равное. Перед именем параметра рекомендуется использовать имя `WebFrontEnd_` службы, чтобы отличить его от параметров с тем же именем, которые применяются к разным службам.
+1. В проекте **тодолистапп** в разделе **среды** > **облако**откройте файл **Parameters. YAML** . Измените `WebFrontEnd_cpu`значение на `1.5`. Имя параметра предшествует имени службы `WebFrontEnd_` рекомендуется отличать его от параметров с тем же именем, которые относятся к разным службам.
 
     ```xml
     WebFrontEnd_cpu: 1.5
     ```
 
-2. Откройте файл **Service. YAML проекта WebService** > в разделе**ресурсы службы WebService**.
+2. Откройте файл **Service. YAML проекта WebService** **в разделе** **ресурсы службы** ** > .**
 
-    Обратите внимание, `resources:` что в `cpu:` разделе in задано значение `"[parameters('WebFrontEnd_cpu')]"`. Если проект строится для облака, значение `'WebFrontEnd_cpu` для будет взято > из файла Environments**облака** > **Parameters. YAML** и будет `1.5`. Если проект строится для запуска локально, значение будет взято из файла**Local** > **Parameters. YAML** **окружений** > и будет равно "0,5".
+    Обратите внимание, что в разделе `resources:` `cpu:` задано значение `"[parameters('WebFrontEnd_cpu')]"`. Если проект строится для облака, значение `'WebFrontEnd_cpu` будет взято из **среды** > **облако** > **parameters. YAML** и будет `1.5`. Если проект строится для локального запуска, значение будет взято из **окружений** > **локальный** > **Parameters. YAML** File и будет равен "0,5".
 
 > [!Tip]
 > По умолчанию файл параметров, являющийся одноранговым узлом файла Profile. YAML, будет использоваться для предоставления значений для этого файла Profile. YAML.
 > Например, среды > облачные > Параметры. YAML предоставляет значения параметров для сред > Cloud > Profile. YAML.
 >
-> Это можно переопределить, добавив следующий элемент в файл Profile. YAML:`parametersFilePath=”relative or full path to the parameters file”` Например,  или `parametersFilePath=”..\CommonParameters.yaml”`.
+> Это можно переопределить, добавив следующий элемент в файл Profile. YAML:`parametersFilePath=”relative or full path to the parameters file”` например `parametersFilePath=”C:\MeshParms\CustomParameters.yaml”` или `parametersFilePath=”..\CommonParameters.yaml”`
 
 ## <a name="modify-the-model"></a>Изменение модели
 
@@ -137,11 +137,11 @@ public static ToDoItem Load(string description, int index, bool completed)
 
 Используйте раскрывающийся список **целевой профиль** , чтобы выбрать файл Profile. YAML, который будет использоваться для этого развертывания. Мы обновляем приложение в облаке, чтобы мы выбрали **Cloud. YAML** в раскрывающемся списке, который будет использовать `WebFrontEnd_cpu` значение 1,0, определенное в этом файле.
 
-![Диалоговое окно публикации службы "Сетка Service Fabric" в Visual Studio](./media/service-fabric-mesh-tutorial-deploy-dotnetcore/visual-studio-publish-dialog.png)
+![Диалоговое окно публикации Сетки Service Fabric в Visual Studio](./media/service-fabric-mesh-tutorial-deploy-dotnetcore/visual-studio-publish-dialog.png)
 
 Выберите учетную запись Azure и подписку. Установите **Расположение** в расположение, которое использовалось при первоначальной публикации этого приложения в Azure. В этой статье используется **восточная часть США**.
 
-Укажите группу ресурсов, которая использовалась при первоначальной публикации этого приложения в Azure.
+Укажите **группу ресурсов,** которая использовалась при первоначальной публикации этого приложения в Azure.
 
 Укажите в **реестре контейнеров** Azure имя реестра контейнеров Azure, которое вы создали при первоначальной публикации этого приложения в Azure.
 
@@ -159,7 +159,7 @@ The application was deployed successfully and it can be accessed at http://10.00
 
 Откройте веб-браузер и перейдите к URL-адресу, чтобы увидеть работу сайта в Azure. Теперь вы видите веб-страницу, содержащую столбец категории.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой части руководства было показано следующее.
 > [!div class="checklist"]

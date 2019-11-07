@@ -1,5 +1,5 @@
 ---
-title: Действие условия If в фабрике данных Azure | Документация Майкрософт
+title: Действие условия If в фабрике данных Azure
 description: Действие условия If позволяет управлять потоком обработки на основе условия.
 services: data-factory
 documentationcenter: ''
@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: fc6318b5033ff1297f917ab95b28f8ed9285e930
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: 562e84b4fe51603ae32884057578541f5536ebd4
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70142489"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73679850"
 ---
 # <a name="if-condition-activity-in-azure-data-factory"></a>Действие условия If в фабрике данных Azure
 Действие условия If предоставляет те же функциональные возможности, что и инструкция if в языках программирования. Оно определяет набор действий, если условие принимает значение `true`, и другой набор действий, если условие принимает значение `false`. 
@@ -63,13 +63,13 @@ ms.locfileid: "70142489"
 
 ## <a name="type-properties"></a>Свойства типа
 
-Свойство | Описание | Допустимые значения | Обязательное значение
+Свойство | Description (Описание) | Допустимые значения | Обязательно
 -------- | ----------- | -------------- | --------
-name | Имя действия условия If. | Строковое | Да
-type | Для этого свойства необходимо задать значение **IfCondition**. | Строковое | Да
+name | Имя действия условия If. | string | Да
+type | Для этого свойства необходимо задать значение **IfCondition**. | string | Да
 expression | Выражение, для которого возвращается значение true или false. | Выражение с типом результата "логический" | Да
-ifTrueActivities | Набор действий, которые выполняются, если выражение получает значение `true`. | Array | Да
-ifFalseActivities | Набор действий, которые выполняются, если выражение получает значение `false`. | Array | Да
+ifTrueActivities | Набор действий, которые выполняются, если выражение получает значение `true`. | Массив, | Да
+ifFalseActivities | Набор действий, которые выполняются, если выражение получает значение `false`. | Массив, | Да
 
 ## <a name="example"></a>Пример
 В этом примере конвейер копирует данные из входной папки в выходную папку. Выходная папка определяется значением параметра конвейера routeSelection. Если значение routeSelection — true, данные копируются в outputPath1, а если значение routeSelection — false, данные копируются в outputPath2. 
@@ -247,7 +247,7 @@ ifFalseActivities | Набор действий, которые выполняю
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Выполнение этих команды предполагает, что вы сохранили файлы JSON в папку C:\ADF. 
+Эти команды предполагают, что вы сохранили файлы JSON в папку C:\ADF. 
 
 ```powershell
 Connect-AzAccount
@@ -288,7 +288,7 @@ Write-Host "\nActivity 'Error' section:" -foregroundcolor "Yellow"
 $result.Error -join "`r`n"
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь с другими действиями потока управления, которые поддерживаются фабрикой данных: 
 
 - [Действие выполнения конвейера](control-flow-execute-pipeline-activity.md)

@@ -1,5 +1,5 @@
 ---
-title: Работа с данными JSON в базе данных SQL Azure | Документация Майкрософт
+title: Работа с данными JSON в базе данных SQL Azure
 description: База данных SQL Azure позволяет анализировать, запрашивать и форматировать данные в формате JSON (нотация объектов JavaScript).
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: ''
 ms.date: 01/15/2019
-ms.openlocfilehash: 3a09fba3f01eec6c712bad67ef10b8b5c55fb33e
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 2fe760e3792b5540b18946fd9dbcc5d571b50ee9
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68567842"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73689644"
 ---
 # <a name="getting-started-with-json-features-in-azure-sql-database"></a>Приступая к работе с функциями JSON в Базе данных SQL Azure
 База данных SQL Azure позволяет анализировать и запрашивать данные, представленные в формате [JSON](https://www.json.org/) (нотация объектов JavaScript), и экспортировать реляционные данные в виде текста JSON. В Базе данных SQL Azure доступны следующие сценарии использования JSON.
@@ -186,7 +186,7 @@ END
 ```
 Набор заказов, отформатированный как массив JSON и указанный в качестве параметра хранимой процедуры, можно проанализировать и вставить в таблицу Orders.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Чтобы узнать, как интегрировать JSON в приложение, ознакомьтесь с приведенным ниже материалами.
 
 * [Блог TechNet](https://blogs.technet.microsoft.com/dataplatforminsider/20../../json-in-sql-server-2016-part-1-of-4/)

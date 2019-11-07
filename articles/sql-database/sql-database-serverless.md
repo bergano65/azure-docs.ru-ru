@@ -1,5 +1,5 @@
 ---
-title: Бессерверная база данных SQL Azure | Документация Майкрософт
+title: Бессерверные вычисления в Базе данных SQL Azure
 description: В этой статье описан новый уровень бессерверных вычислений, который сравнивается с существующим уровнем подготовленных вычислений
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: moslake
 ms.author: moslake
 ms.reviewer: sstein, carlrab
 ms.date: 11/04/2019
-ms.openlocfilehash: e8629baa3487795349844229b26d80321c1316ee
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: fcd79182e046d94f9e67acecebd5cf6a45f2706f
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73496246"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73687382"
 ---
 # <a name="azure-sql-database-serverless"></a>Бессерверные вычисления в Базе данных SQL Azure
 
@@ -174,8 +174,6 @@ ms.locfileid: "73496246"
    |Min виртуальных ядер|Зависит от параметра max виртуальных ядер — см. раздел [ограничения ресурсов](sql-database-vcore-resource-limits-single-databases.md#general-purpose---serverless-compute---gen5).|0,5 виртуального ядра|
    |Задержка автоматической приостановки работы|Минимум: 60 мин (1 час)<br>Максимум: 10080 мин (7 дней)<br>Приращения: 60 минут<br>Отключение автоматической приостановки: -1|60 минут|
 
-> [!NOTE]
-> Сейчас нельзя использовать T-SQL для перемещения существующей базы данных на уровень бессерверных вычислений или изменения объема вычислительных ресурсов. Но это можно сделать с помощью портала Azure или PowerShell.
 
 ### <a name="create-new-database-in-serverless-compute-tier"></a>Создание новой базы данных на уровне бессерверных вычислений 
 
@@ -200,6 +198,17 @@ New-AzSqlDatabase `
   -AutoPauseDelayInMinutes 720
 ```
 
+#### <a name="use-transact-sql-t-sql"></a>Использовать Transact-SQL (T-SQL)
+
+В следующем примере создается новая база данных на уровне бессерверных вычислений.
+
+```sql
+CREATE DATABASE testdb
+( EDITION = 'GeneralPurpose', SERVICE_OBJECTIVE = 'GP_S_Gen5_1' ) ;
+```
+
+Дополнительные сведения см. в разделе [Создание базы данных](/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-current).  
+
 ### <a name="move-database-from-provisioned-compute-tier-into-serverless-compute-tier"></a>Перемещение базы данных из подготовленного уровня вычислений в бессерверный уровень вычислений
 
 #### <a name="use-powershell"></a>Использование PowerShell
@@ -218,6 +227,17 @@ Set-AzSqlDatabase `
   -MaxVcore 4 `
   -AutoPauseDelayInMinutes 1440
 ```
+
+#### <a name="use-transact-sql-t-sql"></a>Использовать Transact-SQL (T-SQL)
+
+В следующем примере база данных перемещается из подготовленного уровня вычислений в бессерверный уровень вычислений. 
+
+```sql
+ALTER DATABASE testdb 
+MODIFY ( SERVICE_OBJECTIVE = 'GP_S_Gen5_1') ;
+```
+
+Дополнительные сведения см. в разделе [ALTER DATABASE](/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-current).
 
 ### <a name="move-database-from-serverless-compute-tier-into-provisioned-compute-tier"></a>Перемещение базы данных с бессерверного уровня вычислений в подготовленный уровень вычислений
 
@@ -323,6 +343,10 @@ Get-AzSqlDatabase `
 |Общее количество Виртуальное ядро секунд, выставленных за 24 часа||||50400 Виртуальное ядро секунд|
 
 Предположим, что цена за единицу вычислений составляет 0,000073 долл. США/виртуальное ядро/секунда.  Затем выплата за этот 24-часовой период будет выставляться по цене за единицу вычислений и виртуальное ядро за считанные секунды: $0.000073/Виртуальное ядро/Second * 50400 Виртуальное ядро секунд = $3,68
+
+### <a name="azure-hybrid-benefit-and-reserved-capacity"></a>Преимущество гибридного использования Azure и зарезервированная емкость
+
+Преимущество гибридного использования Azure (АХБ) и зарезервированные скидки не применяются к уровню вычислений без сервера.
 
 ## <a name="available-regions"></a>Доступные регионы
 

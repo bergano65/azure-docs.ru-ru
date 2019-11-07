@@ -11,12 +11,12 @@ ms.service: azure-functions
 ms.topic: reference
 ms.date: 04/01/2017
 ms.author: cshoe
-ms.openlocfilehash: b261594076857b841ba288dfaba8b5b8e9250065
-ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
+ms.openlocfilehash: 64c99c6e7e33be5856e67db0500bf48123cdcf09
+ms.sourcegitcommit: b2fb32ae73b12cf2d180e6e4ffffa13a31aa4c6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72987932"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73614477"
 ---
 # <a name="azure-service-bus-bindings-for-azure-functions"></a>Привязки служебной шины Azure для службы "Функции Azure"
 
@@ -24,7 +24,7 @@ ms.locfileid: "72987932"
 
 [!INCLUDE [intro](../../includes/functions-bindings-intro.md)]
 
-## <a name="packages---functions-1x"></a>Пакеты – Функции 1.x
+## <a name="packages---functions-1x"></a>Пакеты — Функции 1.x
 
 Привязки служебной шины доступны в пакете NuGet [Microsoft.Azure.WebJobs.ServiceBus](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.ServiceBus) версии 2.х. 
 
@@ -32,7 +32,7 @@ ms.locfileid: "72987932"
 
 ## <a name="packages---functions-2x"></a>Пакеты — Функции 2.x
 
-Привязки служебной шины доступны в пакете NuGet [Microsoft.Azure.WebJobs.Extensions.ServiceBus](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.ServiceBus) версии 3.х. Исходный код для пакета находится в репозитории GitHub [azure-webjobs-sdk](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs.Extensions.ServiceBus/).
+Привязки служебной шины доступны в пакете NuGet [Microsoft.Azure.WebJobs.Extensions.ServiceBus](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.ServiceBus) версии 3.х. Исходный код для пакета находится в репозитории GitHub [Azure-functions-servicebus-Extension](https://github.com/Azure/azure-functions-servicebus-extension) .
 
 > [!NOTE]
 > Версия 2. x не создает раздел или подписку, настроенную в экземпляре `ServiceBusTrigger`. Версия 2. x основана на [Microsoft. Azure. servicebus](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus) и не обрабатывает управление очередями.
@@ -323,11 +323,11 @@ def main(msg: func.ServiceBusMessage):
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `ServiceBusTrigger`.
 
-|свойство function.json | Свойство атрибута |Описание|
+|свойство function.json | Свойство атрибута |Description (Описание)|
 |---------|---------|----------------------|
-|**type** | Н/Д | Для этого свойства нужно задать значение "serviceBusTrigger". Это свойство задается автоматически при создании триггера на портале Azure.|
-|**direction** | Н/Д | Для этого свойства необходимо задать значение "in". Это свойство задается автоматически при создании триггера на портале Azure. |
-|**name** | Н/Д | Имя переменной, представляющей сообщение очереди или раздела в коде функции. Задайте значение "$return", ссылающееся на возвращаемое значение функции. |
+|**type** | Недоступно | Для этого свойства нужно задать значение "serviceBusTrigger". Это свойство задается автоматически при создании триггера на портале Azure.|
+|**direction** | Недоступно | Для этого свойства необходимо задать значение "in". Это свойство задается автоматически при создании триггера на портале Azure. |
+|**name** | Недоступно | Имя переменной, представляющей сообщение очереди или раздела в коде функции. Задайте значение "$return", ссылающееся на возвращаемое значение функции. |
 |**queueName**|**QueueName**|Имя очереди для отслеживания.  Задается только в том случае, если отслеживается очередь, но не раздел.
 |**topicName**|**TopicName**|Имя отслеживаемого раздела. Задается только в том случае, если отслеживается раздел, но не очередь.|
 |**subscriptionName**|**Параметр SubscriptionName**|Имя отслеживаемой подписки. Задается только в том случае, если отслеживается раздел, но не очередь.|
@@ -345,7 +345,7 @@ def main(msg: func.ServiceBusMessage):
 * Пользовательский тип. Если сообщение содержит JSON, то служба "Функции Azure" пытается выполнить десериализацию данных JSON.
 * `BrokeredMessage` — выдается десериализованное сообщение с помощью метода [BrokeredMessage. @ body\<t > ()](https://docs.microsoft.com/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.getbody?view=azure-dotnet#Microsoft_ServiceBus_Messaging_BrokeredMessage_GetBody__1) .
 
-Эти параметры предназначены для решения "Функции Azure" версии 1.x. Если используется версия 2.x, вместо `BrokeredMessage` примените [`Message`](https://docs.microsoft.com/dotnet/api/microsoft.azure.servicebus.message).
+Эти параметры предназначены для решения "Функции Azure" версии 1.x. Если используется версия 2.x, вместо [ примените `Message`](https://docs.microsoft.com/dotnet/api/microsoft.azure.servicebus.message)`BrokeredMessage`.
 
 В JavaScript доступ к сообщению очереди или раздела осуществляется с помощью `context.bindings.<name from function.json>`. Сообщение служебной шины передается в функцию в качестве строки или объекта JSON.
 
@@ -363,7 +363,7 @@ def main(msg: func.ServiceBusMessage):
 
 Триггер служебной шины предоставляет несколько [свойств метаданных](./functions-bindings-expressions-patterns.md#trigger-metadata). Эти свойства можно использовать как часть выражений привязки в других привязках или как параметры в коде. Эти свойства относятся к классу [BrokeredMessage](https://docs.microsoft.com/dotnet/api/microsoft.servicebus.messaging.brokeredmessage).
 
-|Свойство|Тип|Описание|
+|Свойство|Тип|Description (Описание)|
 |--------|----|-----------|
 |`DeliveryCount`|`Int32`|Число доставок.|
 |`DeadLetterSource`|`string`|Источник недоставленных сообщений.|
@@ -396,10 +396,10 @@ def main(msg: func.ServiceBusMessage):
 }
 ```
 
-|Свойство  |значение по умолчанию | Описание |
+|Свойство  |значение по умолчанию | Description (Описание) |
 |---------|---------|---------|
 |maxConcurrentCalls|16|Максимальное число параллельных вызовов к обратному вызову, которое должен инициировать процесс обработки сообщений. По умолчанию в среде выполнения службы "Функции" одновременно обрабатывается несколько сообщений очереди. Чтобы среда выполнения обрабатывала в любой момент времени только одно сообщение очереди или раздела, для свойства `maxConcurrentCalls` нужно задать значение 1. |
-|prefetchCount|Н/Д|Значение PrefetchCount по умолчанию, которое будет использоваться базовым компонентом MessageReceiver.|
+|prefetchCount|Недоступно|Значение PrefetchCount по умолчанию, которое будет использоваться базовым компонентом MessageReceiver.|
 |maxAutoRenewDuration|00:05:00|Максимальный период времени, в течение которого блокировка сообщения будет продлеваться автоматически.|
 
 ## <a name="output"></a>Выходные данные
@@ -473,12 +473,12 @@ public static void Run(TimerInfo myTimer, ILogger log, out string outputSbQueue)
 Ниже приведен код сценария C#, который создает несколько сообщений.
 
 ```cs
-public static void Run(TimerInfo myTimer, ILogger log, ICollector<string> outputSbQueue)
+public static async Task Run(TimerInfo myTimer, ILogger log, IAsyncCollector<string> outputSbQueue)
 {
     string message = $"Service Bus queue messages created at: {DateTime.Now}";
     log.LogInformation(message); 
-    outputSbQueue.Add("1 " + message);
-    outputSbQueue.Add("2 " + message);
+    await outputSbQueue.AddAsync("1 " + message);
+    await outputSbQueue.AddAsync("2 " + message);
 }
 ```
 
@@ -690,11 +690,11 @@ public static string Run([HttpTrigger] dynamic input, ILogger log)
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `ServiceBus`.
 
-|свойство function.json | Свойство атрибута |Описание|
+|свойство function.json | Свойство атрибута |Description (Описание)|
 |---------|---------|----------------------|
-|**type** | Н/Д | Для этого свойства нужно задать значение "serviceBus". Это свойство задается автоматически при создании триггера на портале Azure.|
-|**direction** | Н/Д | Для этого свойства необходимо задать значение out. Это свойство задается автоматически при создании триггера на портале Azure. |
-|**name** | Н/Д | Имя переменной, представляющей очередь или раздел в коде функции. Задайте значение "$return", ссылающееся на возвращаемое значение функции. |
+|**type** | Недоступно | Для этого свойства нужно задать значение "serviceBus". Это свойство задается автоматически при создании триггера на портале Azure.|
+|**direction** | Недоступно | Для этого свойства необходимо задать значение out. Это свойство задается автоматически при создании триггера на портале Azure. |
+|**name** | Недоступно | Имя переменной, представляющей очередь или раздел в коде функции. Задайте значение "$return", ссылающееся на возвращаемое значение функции. |
 |**queueName**|**QueueName**|Имя очереди.  Задается только в случае отправки сообщений очереди, а не раздела.
 |**topicName**|**TopicName**|Имя отслеживаемого раздела. Задается только в случае отправки сообщений раздела, а не очереди.|
 |**подключение**|**Connection**|Имя параметра приложения, содержащего строку подключения к служебной шине, используемую для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если задать для `connection` значение MyServiceBus, то среда выполнения службы "Функции" будет искать параметр приложения AzureWebJobsMyServiceBus. Если оставить строку `connection` пустой, то среда выполнения службы "Функции" будет использовать строку подключения к служебной шине по умолчанию для параметра приложения AzureWebJobsServiceBus.<br><br>Чтобы получить строку подключения, следуйте инструкциям, указанным в разделе [Получение учетных данных управления](../service-bus-messaging/service-bus-quickstart-portal.md#get-the-connection-string). Строка подключения указывается для пространства имен служебной шины, и она не должна ограничиваться определенной очередью или разделом.|
@@ -725,7 +725,7 @@ public static string Run([HttpTrigger] dynamic input, ILogger log)
 
 Чтобы отправить сообщение в очередь с поддержкой сеансов наC# языках, отличных от языка, используйте [пакет SDK служебной шины Azure](https://docs.microsoft.com/azure/service-bus-messaging) , а не встроенную выходную привязку.
 
-## <a name="exceptions-and-return-codes"></a>Исключения и коды возврата
+## <a name="exceptions-and-return-codes"></a>Коды возврата и исключений
 
 | Привязка | Справочные материалы |
 |---|---|
@@ -736,10 +736,10 @@ public static string Run([HttpTrigger] dynamic input, ILogger log)
 
 ## <a name="hostjson-settings"></a>Параметры файла host.json
 
-В этом разделе описываются глобальные параметры конфигурации, доступные для этой привязки в версии 2.x. В приведенном ниже примере файла host.json содержатся только параметры версии 2.x для этой привязки. Дополнительные сведения о глобальных параметрах конфигурации в версии 2.x см. в статье [Справочник по файлу host.json для Функций Azure](functions-host-json.md).
+В этом разделе описываются глобальные параметры конфигурации, доступные для этой привязки в версии 2.x. В приведенном ниже примере файла host.json содержатся только параметры версии 2.x для этой привязки. Дополнительные сведения о глобальных настройках конфигурации в версии 2.x смотрите в статье [Справочник по файлу host.json для Функций Azure](functions-host-json.md).
 
 > [!NOTE]
-> Сведения о файле host.json в Функциях Azure версии 1.x см. в [этой статье](functions-host-json-v1.md).
+> Чтобы получить дополнительные сведения о файле host.json в Функции 1.x, см. статью [host.json reference for Azure Functions 1.x](functions-host-json-v1.md)(Справочник по файлу host.json для службы "Функции Azure" версии 1.x.).
 
 ```json
 {
@@ -757,12 +757,12 @@ public static string Run([HttpTrigger] dynamic input, ILogger log)
 }
 ```
 
-|Свойство  |значение по умолчанию | Описание |
+|Свойство  |значение по умолчанию | Description (Описание) |
 |---------|---------|---------|
 |maxAutoRenewDuration|00:05:00|Максимальный период времени, в течение которого блокировка сообщения будет продлеваться автоматически.|
-|autoComplete|true|Триггер следует отметить как выполненный (автозавершение) или дождаться обработки вызова завершения.|
+|autoComplete|Да|Триггер следует отметить как выполненный (автозавершение) или дождаться обработки вызова завершения.|
 |maxConcurrentCalls|16|Максимальное число параллельных вызовов к обратному вызову, которое должен инициировать процесс обработки сообщений. По умолчанию в среде выполнения службы "Функции" одновременно обрабатывается несколько сообщений очереди. Чтобы среда выполнения обрабатывала в любой момент времени только одно сообщение очереди или раздела, для свойства `maxConcurrentCalls` нужно задать значение 1. |
-|prefetchCount|Н/Д|Значение PrefetchCount по умолчанию, которое будет использоваться базовым компонентом MessageReceiver.|
+|prefetchCount|Недоступно|Значение PrefetchCount по умолчанию, которое будет использоваться базовым компонентом MessageReceiver.|
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

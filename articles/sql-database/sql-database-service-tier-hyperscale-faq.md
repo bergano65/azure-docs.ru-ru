@@ -1,5 +1,5 @@
 ---
-title: Вопросы и ответы об уровне служб "Гипермасштабирование" Базы данных SQL Azure | Документация Майкрософт
+title: Вопросы и ответы по масштабированию базы данных SQL Azure
 description: Ответы на распространенные вопросы о базе данных Azure SQL на уровне служб "Гипермасштабирование", обычно называемой базой данных уровня "Гипермасштабирование".
 services: sql-database
 ms.service: sql-database
@@ -7,16 +7,16 @@ ms.subservice: ''
 ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
-author: stevestein
-ms.author: sstein
+author: dimitri-furman
+ms.author: dfurman
 ms.reviewer: ''
 ms.date: 10/12/2019
-ms.openlocfilehash: 379629cfe3c742bd247e02cdf7a891afab08107f
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: c7960ca4e2dc2e676bc8668981108ce0f8589c0d
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73496184"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73687331"
 ---
 # <a name="azure-sql-database-hyperscale-faq"></a>Вопросы и ответы по масштабированию базы данных SQL Azure
 
@@ -385,6 +385,6 @@ SQL Server 2005. Дополнительные сведения см. в разд
 
 С момента фиксации транзакции на первичной основе, в зависимости от текущей частоты создания журнала, она может быть как мгновенными, так и ненизкими миллисекундами.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о уровне службы "масштабирование" см. в разделе " [уровень служб](sql-database-service-tier-hyperscale.md)".

@@ -1,5 +1,5 @@
 ---
-title: Выполнение пакетов SQL Server Integration Services (SSIS) с помощью служебной программы dtexec с поддержкой Azure | Документация Майкрософт
+title: Выполнение пакетов SQL Server Integration Services (SSIS) с помощью служебной программы dtexec с поддержкой Azure
 description: Узнайте, как выполнять пакеты SQL Server Integration Services (SSIS) с помощью служебной программы dtexec с поддержкой Azure.
 services: data-factory
 documentationcenter: ''
@@ -12,12 +12,12 @@ author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: craigg
-ms.openlocfilehash: 472792351b8b7ab96e055bacd64141840ce7a630
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.openlocfilehash: 9ab308d0e2145a0d0b40e8b37c8c5be07b55dac6
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72596948"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73673553"
 ---
 # <a name="run-sql-server-integration-services-packages-with-the-azure-enabled-dtexec-utility"></a>Выполнение пакетов SQL Server Integration Services с помощью служебной программы dtexec с поддержкой Azure
 В этой статье описывается программа командной строки dtexec (Азуредтексек) с поддержкой Azure. Он используется для запуска пакетов SQL Server Integration Services (SSIS) на Azure-SSIS Integration Runtime (IR) в фабрике данных Azure.
@@ -30,11 +30,11 @@ ms.locfileid: "72596948"
 
 Азуредтексек можно настроить с помощью среды SSMS, чтобы использовать приложение Azure Active Directory (Azure AD), которое создает конвейеры в фабрике данных. Кроме того, его можно настроить для доступа к файловым системам, файловым ресурсам или файлам Azure, где хранятся пакеты. В зависимости от значений, которые вы присваиваете параметрам вызова, Азуредтексек создает и выполняет уникальный конвейер фабрики данных с действием выполнить пакет служб SSIS. Вызов Азуредтексек с теми же значениями параметров перезапускает существующий конвейер.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 Чтобы использовать Азуредтексек, скачайте и установите последнюю версию SSMS, которая имеет версию 18,3 или более позднюю. Скачайте его с [этого веб-сайта](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-2017).
 
 ## <a name="configure-the-azuredtexec-utility"></a>Настройка служебной программы Азуредтексек
-При установке SSMS на локальном компьютере также устанавливаются Азуредтексек. Чтобы настроить параметры, запустите SSMS с параметром **Запуск от имени администратора** . Затем выберите **инструменты**  > **перенести в Azure**  > **настроить dtexec с поддержкой Azure**.
+При установке SSMS на локальном компьютере также устанавливаются Азуредтексек. Чтобы настроить параметры, запустите SSMS с параметром **Запуск от имени администратора** . Затем выберите **инструменты** > **перенести в Azure** > **настроить dtexec с поддержкой Azure**.
 
 ![Настройка меню dtexec с поддержкой Azure](media/how-to-invoke-ssis-package-azure-enabled-dtexec/ssms-azure-enabled-dtexec-menu.png)
 
@@ -86,7 +86,7 @@ ms.locfileid: "72596948"
 - **/Conf [igFile]** : определяет файл конфигурации, из которого извлекаются значения. С помощью этого параметра можно задать конфигурацию времени выполнения для пакета, отличающуюся от указанной во время разработки. Можно сохранить различные параметры в XML-файле конфигурации, а затем загрузить их перед выполнением пакета. Дополнительные сведения см. в разделе [конфигурации пакетов служб SSIS](https://docs.microsoft.com/sql/integration-services/packages/package-configurations?view=sql-server-2017). Чтобы указать значение этого параметра, используйте UNC-путь к файлу конфигурации в файловой системе, общей папке или службе файлов Azure с расширением dtsConfig. Если указанный UNC-путь содержит пробелы, заключите весь путь в кавычки.
 - **/Conn [ection]** : Указывает строки подключения для существующих диспетчеров соединений в пакете. С помощью этого параметра можно задать строки подключения времени выполнения для существующих диспетчеров соединений в пакете, которые отличаются от указанных во время разработки. Укажите значение для этого параметра следующим образом: `connection_manager_name_or_id;connection_string [[;connection_manager_name_or_id;connection_string]...]`.
 - **/Set**: переопределяет конфигурацию параметра, переменной, свойства, контейнера, регистратора, перечислителя foreach или соединения в пакете. Этот параметр можно указать несколько раз. Укажите значение для этого параметра следующим образом: `property_path;value`. Например, `\package.variables[counter].Value;1` переопределяет значение переменной `counter` как 1. Мастер **настройки пакета** можно использовать для поиска, копирования и вставки значения `property_path` для элементов в пакете, значение которых необходимо переопределить. Дополнительные сведения см. в разделе [Мастер настройки пакета](https://docs.microsoft.com/sql/integration-services/package-configuration-wizard-ui-reference?view=sql-server-2014).
-- **/De [шифрование]** : задает пароль расшифровки для пакета, настроенного на уровне защиты **EncryptAllWithPassword** /**EncryptSensitiveWithPassword** .
+- **/De [шифрование]** : задает пароль расшифровки для пакета, настроенного на уровне защиты **EncryptAllWithPassword**/**EncryptSensitiveWithPassword** .
 
 > [!NOTE]
 > При вызове Азуредтексек с новыми значениями параметров создается новый конвейер, за исключением параметра **/de [нарий]** .

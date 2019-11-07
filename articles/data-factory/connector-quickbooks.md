@@ -1,5 +1,5 @@
 ---
-title: Копирование данных из QuickBooks Online с помощью Фабрики данных Azure (предварительная версия) | Документация Майкрософт
+title: Копирование данных из QuickBooks Online с помощью Фабрики данных Azure (предварительная версия)
 description: Узнайте, как копировать данные из QuickBooks Online в поддерживаемые хранилища данных в качестве приемников с помощью действия копирования в конвейере Фабрики данных Azure.
 services: data-factory
 documentationcenter: ''
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 08/01/2019
 ms.author: jingwang
-ms.openlocfilehash: 44bfae58badd6aa6b05763dff094475f82fb2e18
-ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
+ms.openlocfilehash: dd8044c6c2e87262f80a53eaa52114c82b71de50
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71089693"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73680418"
 ---
 # <a name="copy-data-from-quickbooks-online-using-azure-data-factory-preview"></a>Копирование данных из QuickBooks Online с помощью Фабрики данных Azure (предварительная версия)
 
@@ -49,7 +49,7 @@ ms.locfileid: "71089693"
 
 Для связанной службы QuickBooks поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description (Описание) | Обязательно |
 |:--- |:--- |:--- |
 | type | Для свойства type необходимо задать значение **QuickBooks**. | Да |
 | endpoint | Конечная точка сервера QuickBooks Online. (это quickbooks.api.intuit.com).  | Да |
@@ -60,7 +60,7 @@ ms.locfileid: "71089693"
 | accessTokenSecret | Секрет маркера доступа для аутентификации OAuth 1.0. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
 | useEncryptedEndpoints | Указывает, шифруются ли конечные точки источника данных с помощью протокола HTTPS. По умолчанию используется значение true.  | Нет |
 
-**Пример.**
+**Пример**
 
 ```json
 {
@@ -95,9 +95,9 @@ ms.locfileid: "71089693"
 
 Чтобы скопировать данные из QuickBooks Online, установите для набора данных тип **QuickBooksObject**. Поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description (Описание) | Обязательно |
 |:--- |:--- |:--- |
-| type | Свойство type для набора данных должно иметь значение **QuickBooksObject**. | Да |
+| type | Свойство Type набора данных должно иметь значение **куиккбуксобжект** . | Да |
 | tableName | Имя таблицы. | Нет (если свойство query указано в источнике действия) |
 
 **Пример**
@@ -125,12 +125,12 @@ ms.locfileid: "71089693"
 
 Чтобы копировать данные из QuickBooks Online, установите тип источника **QuickBooksSource** в действии копирования. В разделе **source** действия копирования поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description (Описание) | Обязательно |
 |:--- |:--- |:--- |
 | type | Свойство type источника действия копирования должно иметь значение **QuickBooksSource**. | Да |
-| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM "Bill" WHERE Id = '123'"`. | Нет (если для набора данных задано свойство tableName) |
+| запрос | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM "Bill" WHERE Id = '123'"`. | Нет (если для набора данных задано свойство tableName) |
 
-**Пример.**
+**Пример**
 
 ```json
 "activities":[
@@ -170,5 +170,5 @@ ms.locfileid: "71089693"
 Чтобы получить сведения о свойствах, проверьте [действие поиска](control-flow-lookup-activity.md).
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

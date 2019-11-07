@@ -1,5 +1,5 @@
 ---
-title: PowerShell и CLI. Включение SQL TDE — с Azure Key Vault. Использование собственного ключа в базе данных SQL Azure | Документация Майкрософт
+title: 'PowerShell и CLI. Включение SQL TDE — с Azure Key Vault. Использование собственного ключа — база данных SQL Azure '
 description: Сведения о настройке прозрачного шифрования данных в базе данных SQL Azure и хранилище данных с помощью PowerShell или интерфейса командной строки для шифрования данных при хранении.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: aliceku
 ms.author: aliceku
 ms.reviewer: vanto
 ms.date: 03/12/2019
-ms.openlocfilehash: beeb5fa4f979ac457db8a779dd8f8f2e94ef87f5
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 232f38b239090356ae3ad1a70b522188f6ab6a4f
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73163854"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73686760"
 ---
 # <a name="powershell-and-cli-enable-transparent-data-encryption-with-customer-managed-key-from-azure-key-vault"></a>PowerShell и CLI: включение прозрачное шифрование данных с помощью ключа, управляемого клиентом, из Azure Key Vault
 
@@ -33,7 +33,7 @@ ms.locfileid: "73163854"
 - Необходимо установить и запустить Azure PowerShell. 
 - Создайте Azure Key Vault и ключи для TDE.
   - [Инструкции для PowerShell и ключа из Key Vault](../key-vault/quick-create-powershell.md).
-  - [Инструкции по использованию аппаратного модуля безопасности (HSM) и Key Vault](../key-vault/key-vault-hsm-protected-keys.md).
+  - [Инструкции по использованию аппаратного модуля безопасности (HSM) и Key Vault](../key-vault/key-vault-hsm-protected-keys.md)
     - Чтобы использовать хранилище ключей для TDE, обязательно настройте для него следующее свойство:
   - [обратимое удаление](../key-vault/key-vault-ovw-soft-delete.md) и очистка защиты
   - [Как использовать обратимое удаление в Key Vault с помощью PowerShell](../key-vault/key-vault-soft-delete-powershell.md) 
@@ -175,7 +175,7 @@ ms.locfileid: "73163854"
    -ResourceGroupName <SQLDatabaseResourceGroupName>   
    ```
  
-## <a name="troubleshooting"></a>Устранение неисправностей
+## <a name="troubleshooting"></a>Устранение неполадок
 
 При возникновении ошибок выполните следующие проверки.
 - Если хранилище ключей найти не удается, убедитесь, что вы находитесь в подписке с помощью командлета [Get-азсубскриптион](/powershell/module/az.accounts/get-azsubscription) .
@@ -201,7 +201,7 @@ ms.locfileid: "73163854"
 - Интерфейс командной строки версии 2.0 или более поздней версии. Сведения об установке последней версии и связывании ее с подпиской Azure можно найти в разделе [Установка Azure CLI 1.0](https://docs.microsoft.com/cli/azure/install-azure-cli). 
 - Создайте Azure Key Vault и ключи для TDE.
   - [Управление Key Vault с помощью интерфейса командной строки 2.0](../key-vault/key-vault-manage-with-cli2.md)
-  - [Инструкции по использованию аппаратного модуля безопасности (HSM) и Key Vault](../key-vault/key-vault-hsm-protected-keys.md).
+  - [Инструкции по использованию аппаратного модуля безопасности (HSM) и Key Vault](../key-vault/key-vault-hsm-protected-keys.md)
     - Чтобы использовать хранилище ключей для TDE, обязательно настройте для него следующее свойство:
   - [soft-delete](../key-vault/key-vault-ovw-soft-delete.md) (обратимое удаление).
   - [Как использовать обратимое удаление в Key Vault с помощью CLI](../key-vault/key-vault-soft-delete-cli.md) 

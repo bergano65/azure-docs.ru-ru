@@ -7,18 +7,20 @@ manager: jeconnoc
 keywords: ''
 ms.service: azure-functions
 ms.topic: conceptual
-ms.date: 12/07/2018
+ms.date: 11/02/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 81c1279670e786ddaa03946869773121a859d3b7
-ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
+ms.openlocfilehash: e2f1042fe1210fe51ae79b1152e51191e7fb066a
+ms.sourcegitcommit: b2fb32ae73b12cf2d180e6e4ffffa13a31aa4c6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70735241"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73615029"
 ---
 # <a name="fan-outfan-in-scenario-in-durable-functions---cloud-backup-example"></a>Сценарии развертывания и объединения в устойчивых функциях. Пример резервного копирования в облако
 
 *Развертывание и объединение* — это шаблон параллельного выполнения нескольких функций с последующим статистическим вычислением результатов. В этой статье описывается пример, использующий [устойчивые функции](durable-functions-overview.md) для реализации сценариев развертывания и объединения. Образец представляет устойчивую функцию, создающую резервную копию всего или некоторого содержимого сайта приложения в службе хранилища Azure.
+
+[!INCLUDE [v1-note](../../../includes/functions-durable-v1-tutorial-note.md)]
 
 [!INCLUDE [durable-functions-prerequisites](../../../includes/durable-functions-prerequisites.md)]
 
@@ -26,21 +28,21 @@ ms.locfileid: "70735241"
 
 В этом образце функции рекурсивно отправляют все файлы в указанном каталоге в хранилище BLOB-объектов и подсчитывают общее число отправленных байтов.
 
-Можно написать одну функцию, которая отвечает за все. Основная проблема, которая может возникнуть, связана с выполнением **масштабируемости**. На одной виртуальной машине можно запустить выполнение только одной функции, поэтому пропускная способность будет ограничена пропускной способностью одной виртуальной машины. Следующая проблема заключается в **надежности**. Если в середине процесса происходит сбой или весь процесс занимает более 5 минут, резервное копирование может завершиться ошибкой в состоянии частичного завершения. В таком случае его необходимо начать сначала.
+Можно написать одну функцию, которая отвечает за все. Основная проблема, которая может возникнуть, связана с выполнением **масштабируемости**. На одной виртуальной машине можно запустить выполнение только одной функции, поэтому пропускная способность будет ограничена пропускной способностью одной виртуальной машины. Следующая проблема заключается в **надежности**. В случае сбоя в посередине или если весь процесс занимает более 5 минут, резервное копирование может завершиться сбоем в частично завершенном состоянии. В таком случае его необходимо начать сначала.
 
-Более надежным подходом было бы записать две обычные функции: одна для перечисления файлов и добавления их имен в очередь, а другая для чтения из очереди и отправки файлов в хранилище BLOB-объектов. Это лучше с точки зрения пропускной способность и надежности, но для этого необходимо подготовить очередь и управлять ею. Если требуется выполнить какое-либо действие (например, сообщить об общем количестве отправленных байтов), могут возникнуть значительные проблемы в контексте **управления состоянием** и **координацией**.
+Более надежным подходом было бы записать две обычные функции: одна для перечисления файлов и добавления их имен в очередь, а другая для чтения из очереди и отправки файлов в хранилище BLOB-объектов. Этот подход лучше в плане пропускной способности и надежности, но он требует подготавливать очередь и управлять ею. Если требуется выполнить какое-либо действие (например, сообщить об общем количестве отправленных байтов), могут возникнуть значительные проблемы в контексте **управления состоянием** и **координацией**.
 
 Подход к устойчивым функциям обеспечивает получение всех упомянутых преимуществ с очень низкими издержками.
 
 ## <a name="the-functions"></a>Функции
 
-В этой статье описаны следующие функции в примере приложения:
+В этой статье описываются следующие функции в примере приложения:
 
 * `E2_BackupSiteContent`
 * `E2_GetFileList`
 * `E2_CopyFileToBlob`
 
-В следующих разделах рассматривается конфигурация и код, которые используются для написания скриптов на языке C#. Код для разработки с помощью Visual Studio представлен в конце этой статьи.
+В следующих разделах описывается конфигурация и код, используемые для C# создания скриптов. Код для разработки с помощью Visual Studio представлен в конце этой статьи.
 
 ## <a name="the-cloud-backup-orchestration-visual-studio-code-and-azure-portal-sample-code"></a>Оркестрация облачной резервной копии (пример кода Visual Studio Code и портала Azure)
 
@@ -54,11 +56,11 @@ ms.locfileid: "70735241"
 
 [!code-csharp[Main](~/samples-durable-functions/samples/csx/E2_BackupSiteContent/run.csx)]
 
-### <a name="javascript-functions-2x-only"></a>JavaScript (только для решения "Функции" версии 2.x)
+### <a name="javascript-functions-20-only"></a>JavaScript (только функции 2,0)
 
 [!code-javascript[Main](~/samples-durable-functions/samples/javascript/E2_BackupSiteContent/index.js)]
 
-Эта функция оркестратора выполняет следующие задачи:
+Она выполняет следующие основные задачи:
 
 1. Принимает значение `rootDirectory` в качестве входного параметра.
 2. Вызывает функцию для получения рекурсивного списка файлов в `rootDirectory`.
@@ -66,7 +68,7 @@ ms.locfileid: "70735241"
 4. Ожидает завершения всех передач.
 5. Возвращает сумму общего количества байтов, отправленных в хранилище BLOB-объектов Azure.
 
-Обратите внимание на строки `await Task.WhenAll(tasks);` (C#) и `yield context.df.Task.all(tasks);` (JavaScript). Все отдельные вызовы функции `E2_CopyFileToBlob` *не* ожидались. Это сделано намеренно, чтобы они могли выполняться параллельно. При передаче массива задач в `Task.WhenAll` (C#) или `context.df.Task.all` (JavaScript) мы получаем задачу, которая не выполнится до *завершения всех операций копирования*. Если вы знакомы с библиотекой параллельных задач (TPL) в .NET или с [`Promise.all`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all) в JavaScript, то вы уже знаете об этой особенности. Разница заключается в том, что задачи могут выполняться на нескольких виртуальных машинах одновременно, а расширение устойчивых функций гарантирует, что комплексное выполнение устойчиво к перезапуску процессов.
+Обратите внимание на строки `await Task.WhenAll(tasks);` (C#) и `yield context.df.Task.all(tasks);` (JavaScript). Все отдельные вызовы функции `E2_CopyFileToBlob` *не* ожидают, что позволяет выполнять их параллельно. При передаче массива задач в `Task.WhenAll` (C#) или `context.df.Task.all` (JavaScript) мы получаем задачу, которая не выполнится до *завершения всех операций копирования*. Если вы знакомы с библиотекой параллельных задач (TPL) в .NET или с [`Promise.all`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all) в JavaScript, то вы уже знаете об этой особенности. Разница заключается в том, что задачи могут выполняться на нескольких виртуальных машинах одновременно, а расширение устойчивых функций гарантирует, что комплексное выполнение устойчиво к перезапуску процессов.
 
 > [!NOTE]
 > Несмотря на то что задачи концептуально похожи на обещания JavaScript, функции оркестратора должны использовать `context.df.Task.all` и `context.df.Task.any` вместо `Promise.all` и `Promise.race` для управления параллелизацией задач.
@@ -85,7 +87,7 @@ ms.locfileid: "70735241"
 
 [!code-csharp[Main](~/samples-durable-functions/samples/csx/E2_GetFileList/run.csx)]
 
-### <a name="javascript-functions-2x-only"></a>JavaScript (только для решения "Функции" версии 2.x)
+### <a name="javascript-functions-20-only"></a>JavaScript (только функции 2,0)
 
 [!code-javascript[Main](~/samples-durable-functions/samples/javascript/E2_GetFileList/index.js)]
 
@@ -98,13 +100,13 @@ ms.locfileid: "70735241"
 
 [!code-json[Main](~/samples-durable-functions/samples/csx/E2_CopyFileToBlob/function.json)]
 
-Реализация для C# также не вызывает затруднений. Иногда используются некоторые дополнительные функции привязок Функций Azure (то есть параметр `Binder`). Но не нужно беспокоиться об этом в рамках нашего пошагового руководства.
+C# Реализация также проста. Иногда используются некоторые дополнительные функции привязок Функций Azure (то есть параметр `Binder`). Но не нужно беспокоиться об этом в рамках нашего пошагового руководства.
 
 ### <a name="c"></a>C#
 
 [!code-csharp[Main](~/samples-durable-functions/samples/csx/E2_CopyFileToBlob/run.csx)]
 
-### <a name="javascript-functions-2x-only"></a>JavaScript (только для решения "Функции" версии 2.x)
+### <a name="javascript-functions-20-only"></a>JavaScript (только функции 2,0)
 
 В реализации JavaScript нет доступа к компоненту `Binder` решения "Функции Azure". Вместо этого используется [пакет SDK службы хранилища Azure для Node](https://github.com/Azure/azure-storage-node).
 
@@ -136,7 +138,7 @@ Content-Length: 20
 HTTP/1.1 202 Accepted
 Content-Length: 719
 Content-Type: application/json; charset=utf-8
-Location: http://{host}/admin/extensions/DurableTaskExtension/instances/b4e9bdcc435d460f8dc008115ff0a8a9?taskHub=DurableFunctionsHub&connection=Storage&code={systemKey}
+Location: http://{host}/runtime/webhooks/durabletask/instances/b4e9bdcc435d460f8dc008115ff0a8a9?taskHub=DurableFunctionsHub&connection=Storage&code={systemKey}
 
 (...trimmed...)
 ```
@@ -144,16 +146,16 @@ Location: http://{host}/admin/extensions/DurableTaskExtension/instances/b4e9bdcc
 В зависимости от количества файлов журнала в приложении-функции, эта операция может занять несколько минут. Информацию об актуальном состоянии можно получить, отправив запрос на URL-адрес в заголовке `Location` предыдущего ответа HTTP 202.
 
 ```
-GET http://{host}/admin/extensions/DurableTaskExtension/instances/b4e9bdcc435d460f8dc008115ff0a8a9?taskHub=DurableFunctionsHub&connection=Storage&code={systemKey}
+GET http://{host}/runtime/webhooks/durabletask/instances/b4e9bdcc435d460f8dc008115ff0a8a9?taskHub=DurableFunctionsHub&connection=Storage&code={systemKey}
 ```
 
 ```
 HTTP/1.1 202 Accepted
 Content-Length: 148
 Content-Type: application/json; charset=utf-8
-Location: http://{host}/admin/extensions/DurableTaskExtension/instances/b4e9bdcc435d460f8dc008115ff0a8a9?taskHub=DurableFunctionsHub&connection=Storage&code={systemKey}
+Location: http://{host}/runtime/webhooks/durabletask/instances/b4e9bdcc435d460f8dc008115ff0a8a9?taskHub=DurableFunctionsHub&connection=Storage&code={systemKey}
 
-{"runtimeStatus":"Running","input":"D:\\home\\LogFiles","output":null,"createdTime":"2017-06-29T18:50:55Z","lastUpdatedTime":"2017-06-29T18:51:16Z"}
+{"runtimeStatus":"Running","input":"D:\\home\\LogFiles","output":null,"createdTime":"2019-06-29T18:50:55Z","lastUpdatedTime":"2019-06-29T18:51:16Z"}
 ```
 
 В этом случае функция все еще выполняется. Вы можете просмотреть входные данные, сохраненные в состоянии оркестратора, и последнее время обновления. Для опроса состояния завершения операции можно продолжать использовать значения заголовка `Location`. Если состояние — "Завершено", вы увидите HTTP-ответ, как в примере ниже:
@@ -163,7 +165,7 @@ HTTP/1.1 200 OK
 Content-Length: 152
 Content-Type: application/json; charset=utf-8
 
-{"runtimeStatus":"Completed","input":"D:\\home\\LogFiles","output":452071,"createdTime":"2017-06-29T18:50:55Z","lastUpdatedTime":"2017-06-29T18:51:26Z"}
+{"runtimeStatus":"Completed","input":"D:\\home\\LogFiles","output":452071,"createdTime":"2019-06-29T18:50:55Z","lastUpdatedTime":"2019-06-29T18:51:26Z"}
 ```
 
 Теперь оркестрация завершена, и вы можете оценить, сколько времени ушло на ее выполнение. Вы также увидите значение поля `output`, в котором указано, что отправлено примерно 450 КБ данных журналов.
@@ -173,11 +175,11 @@ Content-Type: application/json; charset=utf-8
 Пример описанной оркестрации, реализованной в одном файле C# в проекте Visual Studio:
 
 > [!NOTE]
-> Чтобы запустить приведенный ниже пример кода, потребуется установить пакет Nuget `Microsoft.Azure.WebJobs.Extensions.Storage`.
+> Для запуска примера кода ниже необходимо установить `Microsoft.Azure.WebJobs.Extensions.Storage` пакет NuGet.
 
 [!code-csharp[Main](~/samples-durable-functions/samples/precompiled/BackupSiteContent.cs)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом примере показано, как реализовать шаблон развертывания и объединения. В следующем примере показано, как реализовать шаблон мониторинга с помощью [устойчивых таймеров](durable-functions-timers.md).
 

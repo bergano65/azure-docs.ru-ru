@@ -1,5 +1,5 @@
 ---
-title: Миграция служб SSIS с управляемым экземпляром базы данных SQL Azure в качестве назначения рабочей нагрузки базы данных | Документация Майкрософт
+title: Миграция служб SSIS с управляемым экземпляром базы данных SQL Azure в качестве назначения рабочей нагрузки базы данных
 description: Миграция служб SSIS с управляемым экземпляром базы данных SQL Azure в качестве назначения рабочей нагрузки базы данных.
 services: data-factory
 documentationcenter: ''
@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 9/12/2019
-ms.openlocfilehash: c1bb056909641ad0b8654e84f35c4fbd5b38db82
-ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
+ms.openlocfilehash: 6ea9134085812b99d59ad64aa2c9ec1b2ff827d9
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70968527"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73684400"
 ---
 # <a name="ssis-migration-with-azure-sql-database-managed-instance-as-the-database-workload-destination"></a>Миграция служб SSIS с управляемым экземпляром базы данных SQL Azure в качестве назначения рабочей нагрузки базы данных
 
@@ -27,7 +27,7 @@ ms.locfileid: "70968527"
 
 ## <a name="migrate-ssis-catalog-ssisdb"></a>Перенос каталога служб SSIS (SSISDB)
 
-Миграцию SSISDB можно выполнить с помощью DMS, как описано в статье: [Перенос пакетов служб SSIS в управляемый экземпляр базы данных SQL Azure](https://docs.microsoft.com/azure/dms/how-to-migrate-ssis-packages-managed-instance).
+Миграцию SSISDB можно выполнить с помощью DMS, как описано в статье [Миграция пакетов служб SSIS в управляемый экземпляр базы данных SQL Azure](https://docs.microsoft.com/azure/dms/how-to-migrate-ssis-packages-managed-instance).
 
 ## <a name="ssis-jobs-to-azure-sql-database-managed-instance-agent"></a>Задание служб SSIS для агента управляемого экземпляра базы данных SQL Azure
 
@@ -41,7 +41,7 @@ ms.locfileid: "70968527"
 - [Сетевые топологии для миграции управляемого экземпляра базы данных SQL Azure с помощью DMS](https://docs.microsoft.com/azure/dms/resource-network-topologies)
 - [Миграция пакетов служб SSIS в управляемый экземпляр базы данных SQL Azure](https://docs.microsoft.com/azure/dms/how-to-migrate-ssis-packages-managed-instance)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Подключение к каталогу SSIS (SSISDB) в Azure](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-connect-to-catalog-database)
 - [Запуск пакетов служб SSIS, развернутых в Azure](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-run-packages)

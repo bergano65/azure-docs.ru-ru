@@ -1,5 +1,5 @@
 ---
-title: Уведомление о миграции трафика шлюза для базы данных SQL Azure | Документация Майкрософт
+title: Уведомление о миграции трафика шлюза для базы данных SQL Azure
 description: Статья содержит уведомление для пользователей о миграции IP-адресов шлюзов базы данных SQL Azure.
 services: sql-database
 ms.service: sql-database
@@ -10,12 +10,12 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: vanto
 ms.date: 07/01/2019
-ms.openlocfilehash: a2064e0012abea237c1b4c0c6f7e35119c1aeff5
-ms.sourcegitcommit: 6013bacd83a4ac8a464de34ab3d1c976077425c7
+ms.openlocfilehash: 37c6c8e0f26d0281c3f6e76cb891fe14eb2ef04e
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71686801"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73690006"
 ---
 # <a name="azure-sql-database-traffic-migration-to-newer-gateways"></a>Перенос трафика базы данных SQL Azure на более новые шлюзы
 
@@ -27,17 +27,17 @@ ms.locfileid: "71686801"
 
 Первый цикл миграции трафика на более новые шлюзы планируется **14 октября 2019** в следующих регионах:
 - Южная Бразилия
-- Западная часть США
+- Запад США
 - Западная Европа
-- East US
-- Центральная часть США
+- Восток США
+- Центральный регион США
 - Юго-Восточная Азия
 - Центрально-южная часть США
 - Северная Европа
 - Центрально-северная часть США
-- Западная Япония
-- Восточная Япония
-- Восточная часть США 2
+- Западная часть Японии
+- Восточная часть Японии
+- Восток США 2
 - Восточная Азия
 
 При миграции трафика будет изменен общедоступный IP-адрес, разрешаемый службой DNS для базы данных SQL.
@@ -58,6 +58,6 @@ ms.locfileid: "71686801"
 
 Если описанное выше решение не работает, отправьте запрос в службу поддержки для базы данных SQL по следующему URL-адресу: https://aka.ms/getazuresupport
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте больше о [архитектуре подключения SQL Azure](sql-database-connectivity-architecture.md)

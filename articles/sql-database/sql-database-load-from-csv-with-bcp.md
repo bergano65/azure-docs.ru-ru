@@ -1,5 +1,5 @@
 ---
-title: Загрузка данных из CSV-файла в базу данных SQL Azure (с использованием bcp) | Документация Майкрософт
+title: Загрузка данных из CSV-файла в базу данных SQL Azure (BCP)
 description: Для импорта небольших объемов данных в базу данных SQL Azure используйте программу bcp.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: carlrab
 ms.date: 01/25/2019
-ms.openlocfilehash: b3dff4e100d3859978667ad0df7d895a24ca8a8d
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: d9c4a6293fe2c52870e61488713455ac6c2ed4a1
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68567830"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73689566"
 ---
 # <a name="load-data-from-csv-into-azure-sql-database-flat-files"></a>Загрузка данных из CSV-файла в базу данных SQL Azure (неструктурированные файлы)
 
@@ -24,7 +24,7 @@ ms.locfileid: "68567830"
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-### <a name="prerequisites"></a>предварительные требования
+### <a name="prerequisites"></a>Предварительные требования
 
 Для выполнения задач из этой статьи необходимо следующее:
 
@@ -57,7 +57,7 @@ sqlcmd.exe -S <server name> -d <database name> -U <username> -P <password> -I -Q
 ```
 
 
-## <a name="2-create-a-source-data-file"></a>2. Создание файла источника данных
+## <a name="2-create-a-source-data-file"></a>2. Создание файла исходных данных
 
 Откройте блокнот и скопируйте следующие строки данных в новый текстовый файл, а затем сохраните этот файл в локальный временный каталог (C:\Temp\DimDate2.txt). Эти данные имеют формат ASCII.
 
@@ -103,17 +103,17 @@ sqlcmd.exe -S <server name> -d <database name> -U <username> -P <password> -I -Q
 | 20150101 |1 |3 |
 | 20150201 |1 |3 |
 | 20150301 |1 |3 |
-| 20150401 |2 |4 |
-| 20150501 |2 |4 |
-| 20150601 |2 |4 |
+| 20150401 |2 |4\. |
+| 20150501 |2 |4\. |
+| 20150601 |2 |4\. |
 | 20150701 |3 |1 |
 | 20150801 |3 |1 |
 | 20150801 |3 |1 |
-| 20151001 |4 |2 |
-| 20151101 |4 |2 |
-| 20151201 |4 |2 |
+| 20151001 |4\. |2 |
+| 20151101 |4\. |2 |
+| 20151201 |4\. |2 |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Миграция базы данных SQL Server описана в статье [Миграция базы данных SQL Server в базу данных SQL в облаке](sql-database-single-database-migrate.md).
 

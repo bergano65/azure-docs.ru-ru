@@ -1,5 +1,5 @@
 ---
-title: Копирование данных из MongoDB с помощью фабрики данных Azure | Документация Майкрософт
+title: Копирование данных из MongoDB с помощью фабрики данных Azure
 description: Узнайте, как копировать данные из MongoDB на поддерживаемые приемники хранилища данных с помощью действия копирования в конвейере фабрики данных Azure.
 services: data-factory
 documentationcenter: ''
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 08/12/2019
 ms.author: jingwang
-ms.openlocfilehash: 86029c5617d2a3c2723e388fb5812a3947166623
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: 2f675bed803873e46ee25ca7bc0afda5cb09c07b
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68966930"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73680659"
 ---
 # <a name="copy-data-from-mongodb-using-azure-data-factory"></a>Копирование данных из MongoDB с помощью фабрики данных Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "68966930"
 
 В частности, этот соединитель MongoDB поддерживает **версии до 3.4 включительно**.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [data-factory-v2-integration-runtime-requirements](../../includes/data-factory-v2-integration-runtime-requirements.md)]
 
@@ -46,14 +46,14 @@ ms.locfileid: "68966930"
 
 Для связанной службы MongoDB поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description (Описание) | Обязательно |
 |:--- |:--- |:--- |
-| type |Свойству type необходимо задать значение **MongoDbV2** |Да |
+| type |Для свойства Type необходимо задать значение **MongoDbV2** . |Да |
 | connectionString |Укажите строку подключения MongoDB, например `mongodb://[username:password@]host[:port][/[database][?options]]`. Дополнительные сведения см. в [руководстве MongoDB по строке подключения](https://docs.mongodb.com/manual/reference/connection-string/). <br/><br />Пометьте это поле как **SecureString**, чтобы безопасно хранить его в фабрике данных. Вы можете также [указать секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). |Да |
 | database | Имя базы данных, к которой нужно получить доступ. | Да |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Дополнительные сведения см. в разделе " [Предварительные требования](#prerequisites) ". Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |Нет |
 
-**Пример.**
+**Пример**
 
 ```json
 {
@@ -79,12 +79,12 @@ ms.locfileid: "68966930"
 
 Полный список разделов и свойств, используемых для определения наборов данных, приведен в статье [Наборы данных и связанные службы в фабрике данных Azure](concepts-datasets-linked-services.md). Набор данных MongoDB поддерживает следующие свойства.
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description (Описание) | Обязательно |
 |:--- |:--- |:--- |
-| type | Для свойства type набора данных необходимо задать следующее значение: **MongoDbV2Collection** | Да |
+| type | Свойство Type набора данных должно иметь значение **MongoDbV2Collection** . | Да |
 | collectionName |Имя коллекции в базе данных MongoDB |Да |
 
-**Пример.**
+**Пример**
 
 ```json
 {
@@ -111,10 +111,10 @@ ms.locfileid: "68966930"
 
 В разделе **source** действия копирования поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description (Описание) | Обязательно |
 |:--- |:--- |:--- |
-| type | Свойству type источника действия копирования необходимо задать значение **MongoDbV2Source** | Да |
-| filter | Задает фильтр выбора с помощью операторов запросов. Чтобы получить все документы в коллекции, не указывайте этот параметр или передайте пустой документ ({}). | Нет |
+| type | Свойство Type источника действия копирования должно иметь значение **MongoDbV2Source** . | Да |
+| фильтр | Задает фильтр выбора с помощью операторов запросов. Чтобы получить все документы в коллекции, не указывайте этот параметр или передайте пустой документ ({}). | Нет |
 | cursorMethods.project | Определяет, какие поля в документах для проекции необходимо получить. Чтобы получить все поля в соответствующих документах, не указывайте этот параметр. | Нет |
 | cursorMethods.sort | Определяет, в каком порядке запрос будет возвращать соответствующие документы. См. [cursor.sort()](https://docs.mongodb.com/manual/reference/method/cursor.sort/#cursor.sort). | Нет |
 | cursorMethods.limit | Определяет максимальное количество документов, возвращаемых сервером. См. [cursor.limit()](https://docs.mongodb.com/manual/reference/method/cursor.limit/#cursor.limit).  | Нет |
@@ -124,7 +124,7 @@ ms.locfileid: "68966930"
 >[!TIP]
 >ADF поддерживает прием документа BSON в **строгом режиме**. Убедитесь в том, что запрос фильтра находится в строгом режиме, а не в режиме оболочки. Более подробное описание см. в [руководстве MongoDB](https://docs.mongodb.com/manual/reference/mongodb-extended-json/index.html).
 
-**Пример.**
+**Пример**
 
 ```json
 "activities":[
@@ -170,5 +170,5 @@ ms.locfileid: "68966930"
 
 Инструкции по копированию данных из MongoDB в табличный приемник см. в разделе о [сопоставлении схем](copy-activity-schema-and-type-mapping.md#schema-mapping).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md##supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

@@ -1,5 +1,5 @@
 ---
-title: Преобразование данных с помощью фабрики данных Azure | Документация Майкрософт
+title: 'Преобразование данных с помощью фабрики данных Azure '
 description: Узнайте, как преобразовать или обработать данные в фабрике данных Azure с помощью Hadoop, Машинного обучения Azure или Azure Data Lake Analytics.
 services: data-factory
 documentationcenter: ''
@@ -11,12 +11,12 @@ ms.date: 07/31/2018
 author: nabhishek
 ms.author: abnarain
 manager: craigg
-ms.openlocfilehash: aa344915b8d5b4ff6e874f64d44ce3f665cd7a5a
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 97077b9f72de8792e6aba1d72ff34b9185b2d998
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73464344"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73683811"
 ---
 # <a name="transform-data-in-azure-data-factory"></a>Преобразование данных в фабрике данных Azure
 > [!div class="op_single_selector"]

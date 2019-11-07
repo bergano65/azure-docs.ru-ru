@@ -1,5 +1,5 @@
 ---
-title: Запуск Планировщика развертывания Azure Site Recovery для аварийного восстановления VMware в Azure | Документация Майкрософт
+title: Запустите Планировщик развертывания аварийного восстановления VMware с помощью Azure Site Recovery
 description: В этой статье описано, как запустить Планировщик развертывания Azure Site Recovery для аварийного развертывания VMware в Azure.
 author: mayurigupta13
 manager: rochakm
@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 4/15/2019
 ms.author: mayg
-ms.openlocfilehash: 3a6c9e50804db573395984b8ba38838eb15b0792
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 611213f6cf0f51a8b6c6f7f89a795b2daa94a38a
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61276742"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73693209"
 ---
 # <a name="run-the-azure-site-recovery-deployment-planner-for-vmware-disaster-recovery-to-azure"></a>Запуск Планировщика развертывания Azure Site Recovery для аварийного восстановления VMware в Azure
 В этой статье приведены рекомендации по использованию планировщика развертывания Azure Site Recovery в сценариях рабочих развертываний виртуальных машин VMware в Azure.
@@ -65,7 +65,7 @@ ms.locfileid: "61276742"
 ASRDeploymentPlanner.exe -Operation StartProfiling /?
 ```
 
-| Имя параметра | Описание |
+| Имя параметра | Description (Описание) |
 |---|---|
 | -Operation | StartProfiling |
 | -Server | Полное доменное имя или IP-адрес сервера vCenter Server или узла vSphere ESXi, профилирование виртуальных машин которого необходимо выполнить.|
@@ -81,7 +81,7 @@ ASRDeploymentPlanner.exe -Operation StartProfiling /?
 |-Protocol| (Необязательно.) Указывает протокол (HTTP или HTTPS) для подключения к vCenter. По умолчанию используется протокол HTTPS.|
 | -StorageAccountName | (Необязательно.) Имя учетной записи хранения, используемой для определения объема пропускной способности, доступной для репликации данных из локальной среды в Azure. Программа отправляет тестовые данные в эту учетную запись хранения, чтобы рассчитать пропускную способность. Учетная запись хранения должна относиться к универсальному типу версии 1 (GPv1). |
 | -StorageAccountKey | (Необязательно.) Ключ, используемый для доступа к учетной записи хранения. Перейдите на портал Azure и выберите "Учетные записи хранения" > <*имя_учетной записи_хранения*> > "Параметры" > "Ключи доступа" > Key1. |
-| -Environment | (необязательно) Это целевая среда учетной записи хранения Azure. Этот параметр может иметь одно из трех значений: AzureCloud, AzureUSGovernment, AzureChinaCloud. Значение по умолчанию — AzureCloud. Используйте параметр, если ваш целевой регион Azure — Azure для государственных организаций США или Azure China 21Vianet. |
+| -Environment | (необязательно) Это целевая среда учетной записи хранения Azure. Этот параметр может иметь одно из трех значений: AzureCloud, AzureUSGovernment, AzureChinaCloud. Значение по умолчанию — AzureCloud. Используйте параметр, если целевой регион Azure — Azure для государственных организаций США или Azure Китая (21Vianet). |
 
 
 Рекомендуем выполнять профилирование виртуальных машин более 7 дней. Если в течение месяца шаблон обработки изменяется, рекомендуем выполнять профилирование в течение недели, когда будет зафиксирован максимальный показатель. Чтобы получить точные данные, рекомендуем профилировать машины в течение 31 дня. В течение этого периода программа ASRDeploymentPlanner.exe продолжает работать. Время профилирования необходимо указать в днях. Чтобы быстро протестировать программу или подтвердить концепцию, можно выполнять профилирование в течение нескольких часов или минут. Минимальное разрешенное время профилирования составляет 30 минут.
@@ -95,7 +95,7 @@ ASRDeploymentPlanner.exe -Operation StartProfiling /?
 <!-- Maximum number of vms supported-->
 <add key="MaxVmsSupported" value="1000"/>
 ```
-Используя параметры по умолчанию, для профилирования, например, 1500 виртуальных машин создайте два файла VMList.txt. Один файл должен содержать 1000 виртуальных машин, а второй — 500. Запустите два экземпляра Azure планировщик развертывания Site Recovery, один со списком VMList1.txt и второй со списком VMList2.txt. Профилируемые данные обеих виртуальных машин VMList можно хранить в одной папке.
+Используя параметры по умолчанию, для профилирования, например, 1500 виртуальных машин создайте два файла VMList.txt. Один файл должен содержать 1000 виртуальных машин, а второй — 500. Запустите два экземпляра Планировщик развертывания Azure Site Recovery: один с списком vmlist1. txt, а другой — с списком vmlist2. txt. Профилируемые данные обеих виртуальных машин VMList можно хранить в одной папке.
 
 Мы убедились, что в зависимости от конфигурации оборудования (особенно в зависимости от размера ОЗУ сервера, на котором запускается средство для создания отчетов), операция может завершиться ошибкой из-за нехватки памяти. При наличии хорошего оборудования можно увеличить значение параметра MaxVMsSupported.  
 
@@ -108,18 +108,18 @@ ASRDeploymentPlanner.exe -Operation StartProfiling /?
 
 Команда профилирования создает в каталоге профилирования несколько файлов. Не удаляйте их, так как это повлияет на создание отчетов.
 
-#### <a name="example-1-profile-vms-for-30-days-and-find-the-throughput-from-on-premises-to-azure"></a>Пример 1 Профилирование виртуальных машин, выполняемое в течение 30 дней, и определение пропускной способности, достигаемой при репликации данных из локальной среды в Azure
+#### <a name="example-1-profile-vms-for-30-days-and-find-the-throughput-from-on-premises-to-azure"></a>Пример 1. Профилирование виртуальных машин, выполняемое в течение 30 дней, и определение пропускной способности, достигаемой при репликации данных из локальной среды в Azure
 ```
 ASRDeploymentPlanner.exe -Operation StartProfiling -Virtualization VMware -Directory “E:\vCenter1_ProfiledData” -Server vCenter1.contoso.com -VMListFile “E:\vCenter1_ProfiledData\ProfileVMList1.txt”  -NoOfDaysToProfile  30  -User vCenterUser1 -StorageAccountName  asrspfarm1 -StorageAccountKey Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==
 ```
 
-#### <a name="example-2-profile-vms-for-15-days"></a>Пример 2 Профилирование виртуальных машин в течение 15 дней
+#### <a name="example-2-profile-vms-for-15-days"></a>Пример 2. Профилирование виртуальных машин, выполняемое в течение 15 дней
 
 ```
 ASRDeploymentPlanner.exe -Operation StartProfiling -Virtualization VMware -Directory “E:\vCenter1_ProfiledData” -Server vCenter1.contoso.com -VMListFile “E:\vCenter1_ProfiledData\ProfileVMList1.txt” -NoOfDaysToProfile  15  -User vCenterUser1
 ```
 
-#### <a name="example-3-profile-vms-for-60-minutes-for-a-quick-test-of-the-tool"></a>Пример 3 Профилирование виртуальных машин в течение 60 минут для быстрой проверки программы
+#### <a name="example-3-profile-vms-for-60-minutes-for-a-quick-test-of-the-tool"></a>Пример 3. Профилирование виртуальных машин в течение 60 минут для быстрой проверки программы
 ```
 ASRDeploymentPlanner.exe -Operation StartProfiling -Virtualization VMware -Directory “E:\vCenter1_ProfiledData” -Server vCenter1.contoso.com -VMListFile “E:\vCenter1_ProfiledData\ProfileVMList1.txt”  -NoOfMinutesToProfile 60  -User vCenterUser1
 ```
@@ -136,16 +136,16 @@ ASRDeploymentPlanner.exe -Operation StartProfiling -Virtualization VMware -Direc
 
 
 ## <a name="generate-report"></a>Создание отчета
-Планировщик создает отчет в формате XLSM (файл Microsoft Excel с поддержкой макросов). В нем содержатся все рекомендации по развертыванию. Этот отчет называется `DeploymentPlannerReport_<unique numeric identifier>.xlsm` и помещается в указанный каталог.
+Планировщик создает отчет в формате XLSM (файл Microsoft Excel с поддержкой макросов). В нем содержатся все рекомендации по развертыванию. Отчет называется `DeploymentPlannerReport_<unique numeric identifier>.xlsm` и помещается в указанный каталог.
 
 >[!NOTE]
->Создание отчета требуется компьютер Windows или Windows Server с Excel 2013 или более поздней версии. Десятичный разделитель на этом компьютере должен быть настроен как «.» для создания оценки затрат. В случае, если вы уже настроили «, «как десятичный разделитель, перейдите к «Изменение даты, времени или числовые форматы» панели управления и перейти к «Дополнительные настройки», чтобы изменить десятичный разделитель для».».
+>Для создания отчета требуется компьютер с Windows или Windows Server с Excel 2013 или более поздней версии. Десятичный символ на этом компьютере должен быть настроен как "." для получения оценки затрат. Если вы используете "," как десятичный символ, перейдите в раздел "изменение даты, времени или чисел в формате" на панели управления и перейдите к разделу "Дополнительные параметры", чтобы изменить десятичный символ на ".".
 
 После завершения профилирования планировщик можно запустить в режиме создания отчетов. В таблице ниже приведен список обязательных и необязательных параметров для запуска программы в режиме создания отчетов.
 
 `ASRDeploymentPlanner.exe -Operation GenerateReport /?`
 
-|Имя параметра | Описание |
+|Имя параметра | Description (Описание) |
 |-|-|
 | -Operation | Создание отчета. |
 | -Server |  Полное доменное имя или IP-адрес сервера vCenter Server или сервера vSphere (имя или IP-адрес должны совпадать с используемыми во время профилирования), где расположены виртуальные машины, для которых необходимо создать отчет. Обратите внимание, если профилирование выполняется на сервере vCenter Server, вы не можете использовать для создания отчетов сервер vSphere (и наоборот).|
@@ -174,34 +174,34 @@ ASRDeploymentPlanner.exe -Operation StartProfiling -Virtualization VMware -Direc
 <add key="MaxVmsSupported" value="1000"/>
 ```
 
-#### <a name="example-1-generate-a-report-with-default-values-when-the-profiled-data-is-on-the-local-drive"></a>Пример 1 Создание отчета со значениями по умолчанию, когда данные профилирования находятся на локальном диске
+#### <a name="example-1-generate-a-report-with-default-values-when-the-profiled-data-is-on-the-local-drive"></a>Пример 1. Создание отчета со значениями по умолчанию, когда данные профилирования находятся на локальном диске
 ```
 ASRDeploymentPlanner.exe -Operation GenerateReport -Virtualization VMware -Server vCenter1.contoso.com -Directory “E:\vCenter1_ProfiledData” -VMListFile “E:\vCenter1_ProfiledData\ProfileVMList1.txt”
 ```
 
-#### <a name="example-2-generate-a-report-when-the-profiled-data-is-on-a-remote-server"></a>Пример 2 Создание отчета, когда данные профилирования находятся на удаленном сервере
+#### <a name="example-2-generate-a-report-when-the-profiled-data-is-on-a-remote-server"></a>Пример 2. Создание отчета, когда данные профилирования находятся на удаленном сервере
 У вас должен быть доступ на чтение и запись к удаленному каталогу.
 ```
 ASRDeploymentPlanner.exe -Operation GenerateReport -Virtualization VMware -Server vCenter1.contoso.com -Directory “\\PS1-W2K12R2\vCenter1_ProfiledData” -VMListFile “\\PS1-W2K12R2\vCenter1_ProfiledData\ProfileVMList1.txt”
 ```
 
-#### <a name="example-3-generate-a-report-with-a-specific-bandwidth-and-goal-to-complete-ir-within-specified-time"></a>Пример 3 Создание отчета с определенной пропускной способностью для выполнения начальной репликации в указанный интервал времени
+#### <a name="example-3-generate-a-report-with-a-specific-bandwidth-and-goal-to-complete-ir-within-specified-time"></a>Пример 3. Создание отчета с определенной пропускной способностью для выполнения начальной репликации в указанный интервал времени
 ```
 ASRDeploymentPlanner.exe -Operation GenerateReport -Virtualization VMware -Server vCenter1.contoso.com -Directory “E:\vCenter1_ProfiledData” -VMListFile “E:\vCenter1_ProfiledData\ProfileVMList1.txt” -Bandwidth 100 -GoalToCompleteIR 24
 ```
 
-#### <a name="example-4-generate-a-report-with-a-5-percent-growth-factor-instead-of-the-default-30-percent"></a>Пример 4. Создание отчета с коэффициентом роста 5 %, а не 30 % (значение по умолчанию)
+#### <a name="example-4-generate-a-report-with-a-5-percent-growth-factor-instead-of-the-default-30-percent"></a>Пример 4. Создание отчета с коэффициентом роста 5 %, а не 30 % (значение по умолчанию)
 ```
 ASRDeploymentPlanner.exe -Operation GenerateReport -Virtualization VMware -Server vCenter1.contoso.com -Directory “E:\vCenter1_ProfiledData” -VMListFile “E:\vCenter1_ProfiledData\ProfileVMList1.txt” -GrowthFactor 5
 ```
 
-#### <a name="example-5-generate-a-report-with-a-subset-of-profiled-data"></a>Пример 5. Создание отчета с подмножеством данных профилирования
+#### <a name="example-5-generate-a-report-with-a-subset-of-profiled-data"></a>Пример 5. Создание отчета с подмножеством данных профилирования
 Например, у вас есть данные профилирования за 30 дней, но вы хотите создать отчет только за 20 дней.
 ```
 ASRDeploymentPlanner.exe -Operation GenerateReport -Virtualization VMware -Server vCenter1.contoso.com -Directory “E:\vCenter1_ProfiledData” -VMListFile “E:\vCenter1_ProfiledData\ProfileVMList1.txt” -StartDate  01-10-2017:12:30 -EndDate 01-19-2017:12:30
 ```
 
-#### <a name="example-6-generate-a-report-for-5-minute-rpo"></a>Пример 6. Создание отчета для пятиминутной целевой точки восстановления
+#### <a name="example-6-generate-a-report-for-5-minute-rpo"></a>Пример 6. Создание отчета для 5-минутной целевой точки восстановления
 ```
 ASRDeploymentPlanner.exe -Operation GenerateReport -Virtualization VMware -Server vCenter1.contoso.com -Directory “E:\vCenter1_ProfiledData” -VMListFile “E:\vCenter1_ProfiledData\ProfileVMList1.txt”  -DesiredRPO 5
 ```
@@ -257,7 +257,7 @@ ASRDeploymentPlanner.exe -Operation GenerateReport -Virtualization VMware  -Dire
 
 `ASRDeploymentPlanner.exe -Operation GetThroughput /?`
 
-|Имя параметра | Описание |
+|Имя параметра | Description (Описание) |
 |-|-|
 | -Operation | Оценка пропускной способности. |
 |-Virtualization|Укажите тип виртуализации (VMware или Hyper-V).|
@@ -265,7 +265,7 @@ ASRDeploymentPlanner.exe -Operation GenerateReport -Virtualization VMware  -Dire
 | -StorageAccountName | Имя учетной записи хранения, используемой для определения пропускной способности, необходимой для репликации данных из локальной среды в Azure. Программа отправляет тестовые данные в эту учетную запись хранения, чтобы рассчитать используемую пропускную способность. Учетная запись хранения должна относиться к универсальному типу версии 1 (GPv1).|
 | -StorageAccountKey | Ключ, используемый для доступа к учетной записи хранения. Перейдите на портал Azure и выберите "Учетные записи хранения > *имя_учетной записи_хранения* > Параметры > Ключи доступа > Ключ 1" (или первичный ключ доступа для классической учетной записи хранения). |
 | -VMListFile | Файл со списком виртуальных машин, профилирование которых необходимо выполнить, для расчета используемой пропускной способности. Путь к файлу может быть абсолютным или относительным. Этот файл должен содержать по одному имени или IP-адресу виртуальной машины в каждой строке. Имена виртуальных машин, указанные в файле, должны совпадать с именами виртуальных машин на сервере vCenter Server или узле vSphere ESXi.<br>Например, файл VMList.txt содержит следующие виртуальные машины:<ul><li>VM_A;</li><li>10.150.29.110</li><li>VM_B.</li></ul>|
-| -Environment | (необязательно) Это целевая среда учетной записи хранения Azure. Этот параметр может иметь одно из трех значений: AzureCloud, AzureUSGovernment, AzureChinaCloud. Значение по умолчанию — AzureCloud. Используйте параметр, если ваш целевой регион Azure — Azure для государственных организаций США или Azure China 21Vianet. |
+| -Environment | (необязательно) Это целевая среда учетной записи хранения Azure. Этот параметр может иметь одно из трех значений: AzureCloud, AzureUSGovernment, AzureChinaCloud. Значение по умолчанию — AzureCloud. Используйте параметр, если целевой регион Azure — Azure для государственных организаций США или Azure Китая (21Vianet). |
 
 Планировщик создает в указанном каталоге несколько файлов asrvhdfile<#>.vhd емкостью 64 МБ (# — число), а затем передает их в учетную запись хранения для определения пропускной способности. После измерения пропускной способности он удаляет эти файлы из учетной записи хранения и с локального сервера. Если программа по каким-либо причинам прерывает работу, не завершив оценку пропускной способности, она не удаляет файлы. Их необходимо удалить вручную.
 

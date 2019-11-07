@@ -1,26 +1,27 @@
 ---
-title: Прозрачное шифрование данных в хранилище данных SQL (T-SQL) | Документация Майкрософт
+title: Прозрачное шифрование данных (T-SQL)
 description: Прозрачное шифрование данных в хранилище данных SQL (T-SQL)
 services: sql-data-warehouse
-author: KavithaJonnakuti
+author: julieMSFT
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: security
 ms.date: 04/30/2019
-ms.author: kavithaj
+ms.author: jrasnick
 ms.reviewer: rortloff
-ms.openlocfilehash: 1d62bc5cb080f2167f13bd58e9a8a334b8ae5163
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.custom: seo-lt-2019
+ms.openlocfilehash: 98695aa7578e90be9ada2f86640e68b05a9812ed
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65146073"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73692748"
 ---
 # <a name="get-started-with-transparent-data-encryption-tde"></a>Начало работы с прозрачным шифрованием данных (TDE)
 > [!div class="op_single_selector"]
 > * [Обзор безопасности](sql-data-warehouse-overview-manage-security.md)
-> * [Аутентификация](sql-data-warehouse-authentication.md)
+> * [Проверка подлинности](sql-data-warehouse-authentication.md)
 > * [Шифрование (портал)](sql-data-warehouse-encryption-tde.md)
 > * [Шифрование (T-SQL)](sql-data-warehouse-encryption-tde-tsql.md)
 > 

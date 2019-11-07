@@ -1,5 +1,5 @@
 ---
-title: Журнал диагностики производительности Intelligent Insights для базы данных SQL Azure | Документация Майкрософт
+title: Журнал диагностики производительности Intelligent Insights — база данных SQL Azure
 description: Intelligent Insights предоставляет журнал диагностики проблем производительности базы данных SQL Azure.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: danimir
 ms.author: danil
 ms.reviewer: jrasnik, carlrab
 ms.date: 12/19/2018
-ms.openlocfilehash: c25d37a4d1695ab94cc0667a13e36e4da640e12a
-ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
+ms.openlocfilehash: 86381f5670f09b5e6a215793dc1ea4eab7ecbb8e
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71262150"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73689700"
 ---
 # <a name="use-the-intelligent-insights-azure-sql-database-performance-diagnostics-log"></a>Использование журнала диагностики производительности Intelligent Insights для Базы данных SQL Azure
 
@@ -77,10 +77,10 @@ ms.locfileid: "71262150"
 
 | Выявляемые шаблоны снижения производительности | Выводимые сведения |
 | :------------------- | ------------------- |
-| достижение лимитов ресурсов; | <li>Затронутые ресурсы</li><li>Хэши запросов</li><li>Процент потребления ресурсов</li> |
+| Достижение лимитов ресурсов | <li>Затронутые ресурсы</li><li>Хэши запросов</li><li>Процент потребления ресурсов</li> |
 | Увеличение рабочей нагрузки | <li>Количество запросов, объем выполнения которых увеличился</li><li>Хэши запросов, больше всего повлиявших на увеличение рабочей нагрузки</li> |
 | Нехватка памяти | <li>Клерк памяти</li> |
-| Выполняется блокировка | <li>Хэши затронутых запросов</li><li>Хэши блокирующих запросов</li> |
+| Блокировка | <li>Хэши затронутых запросов</li><li>Хэши блокирующих запросов</li> |
 | Повышенное значение MAXDOP | <li>Хэши запросов</li><li>Время ожидания CXP</li><li>Время ожидания</li> |
 | Состязание за кратковременную блокировку страниц | <li>Хэши запросов, которые приводят к состязанию</li> |
 | Отсутствующий индекс | <li>Хэши запросов</li> |
@@ -93,7 +93,7 @@ ms.locfileid: "71262150"
 | Медленная работа клиента | <li>Хэши запросов</li><li>Время ожидания</li> |
 | Переход на более низкую ценовую категорию | <li>Текстовое уведомление</li> |
 
-### <a name="impact"></a>Воздействие
+### <a name="impact"></a>Влияние
 
 Свойство влияния (impact) показывает, насколько база данных подвержена выявленной проблеме по шкале от 1 до 3, где 3 — это наибольшая подверженность, 2 — умеренная, а 1 — наименьшая. Значение impact может использоваться в качестве входных данных для автоматизации настраиваемых оповещений, в зависимости от конкретных потребностей. Свойство затронутых запросов (QueryHashes) содержит список хэшей запросов, затронутых выявленной проблемой.
 
@@ -113,7 +113,7 @@ ms.locfileid: "71262150"
 }]
 ```
 
-### <a name="metrics"></a>metrics
+### <a name="metrics"></a>Метрики
 
 Единицы измерения каждой полученной метрики предоставляются в свойстве метрики (metric). Его возможные значения: seconds, number и percentage. Значение измеряемой метрики указывается в свойстве значения (value).
 
@@ -136,7 +136,7 @@ ms.locfileid: "71262150"
 
 Журнал производительности Intelligent Insights можно использовать с [Azure Monitor журналами]( https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-sql) или решениями сторонних производителей для настраиваемых оповещений и отчетов DevOps.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Ознакомьтесь с понятиями [Intelligent Insights](sql-database-intelligent-insights.md).
 - Узнайте как [устранять проблемы с производительностью базы данных SQL Azure с помощью Intelligent Insights](sql-database-intelligent-insights-troubleshoot-performance.md).
 - Ознакомьтесь с [мониторингом базы данных SQL Azure с помощью службы "Аналитика SQL Azure"](https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-sql).

@@ -1,5 +1,5 @@
 ---
-title: Повышение производительности транзакций SQL с помощью выполняющейся в памяти OLTP | Документация Майкрософт
+title: Производительность выполняющейся в памяти OLTP улучшает транзакция производительности SQL
 description: Внедрите технологию In-Memory OLTP, чтобы повысить производительность транзакций в вашей базе данных SQL.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: MightyPen
 ms.date: 11/07/2018
-ms.openlocfilehash: e869b2bba3bd64b58d9063e9445889ef709efdc3
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 82b24b51a103d31bf20bbb7a9fc304095be523d5
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68567946"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73689837"
 ---
 # <a name="use-in-memory-oltp-to-improve-your-application-performance-in-sql-database"></a>Повышение производительности приложений в базе данных SQL с помощью выполняющейся в памяти OLTP
 
@@ -28,7 +28,7 @@ ms.locfileid: "68567946"
 
 Выполните следующие действия, чтобы внедрить выполняющуюся в памяти OLTP в существующую базу данных.
 
-## <a name="step-1-ensure-you-are-using-a-premium-and-business-critical-tier-database"></a>Шаг 1.: Проверка того, используется ли база данных нужного уровня ("Премиум" или "Критически важный для бизнеса")
+## <a name="step-1-ensure-you-are-using-a-premium-and-business-critical-tier-database"></a>Шаг 1. Проверка того, используется ли база данных нужного уровня ("Премиум"или "Критически важный для бизнеса")
 
 Выполняющаяся в памяти OLTP поддерживается только в базах данных уровней "Премиум"и "Критически важный для бизнеса". In-Memory поддерживается, если полученное значение равно 1 (не 0):
 
@@ -40,7 +40,7 @@ SELECT DatabasePropertyEx(Db_Name(), 'IsXTPSupported');
 
 
 
-## <a name="step-2-identify-objects-to-migrate-to-in-memory-oltp"></a>Шаг 2.: Определение объектов для переноса в In-Memory OLTP
+## <a name="step-2-identify-objects-to-migrate-to-in-memory-oltp"></a>Этап 2. Определение объектов для переноса в In-Memory OLTP
 Среда SSMS позволяет создать отчет **Обзор анализа производительности транзакций** , который затем можно запустить для базы данных с активной рабочей нагрузкой. В отчете определены таблицы и хранимые процедуры, которые подходят для миграции в компонент In-Memory OLTP.
 
 Для создания отчета в среде SSMS выполните следующие действия:
@@ -150,7 +150,7 @@ CREATE PROCEDURE schemaname.procedurename
 4. С помощью SP_RENAME переименуйте старую хранимую процедуру. Или просто удалите ее с помощью DROP.
 5. Запустите измененный сценарий T-SQL CREATE PROCEDURE.
 
-## <a name="step-6-run-your-workload-in-test"></a>Шаг 6. Запуск рабочей нагрузки в тестовой среде
+## <a name="step-6-run-your-workload-in-test"></a>Шаг 6. Запуск рабочей нагрузки в тестовой среде
 Запустите рабочую нагрузку в тестовой базе данных, как если бы это была рабочая нагрузка, запущенная в рабочей базе данных. Вы увидите, насколько выросла производительность таблиц и хранимых процедур при использовании компонента In-Memory.
 
 Основные атрибуты рабочей нагрузки:
@@ -162,7 +162,7 @@ CREATE PROCEDURE schemaname.procedurename
 
 Чтобы свести к минимуму задержки в сети, выполняйте проверку в географическом регионе Azure, в котором расположена ваша база данных.
 
-## <a name="step-7-post-implementation-monitoring"></a>Шаг 7. Мониторинг после реализации
+## <a name="step-7-post-implementation-monitoring"></a>Шаг 7. Мониторинг после реализации
 Рассмотрите возможность отслеживания влияния, оказываемого компонентом In-Memory в рабочей среде.
 
 * [Мониторинг хранилища In-Memory](sql-database-in-memory-oltp-monitoring.md).

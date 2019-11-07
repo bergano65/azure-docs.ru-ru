@@ -1,5 +1,5 @@
 ---
-title: Преобразование "EXISTS" в потоке данных сопоставления фабрики данных Azure | Документация Майкрософт
+title: Преобразование EXISTS в потоке данных сопоставления фабрики данных Azure
 description: Проверка наличия существующих строк с помощью преобразования "EXISTS" в потоке данных сопоставления фабрики данных Azure
 author: kromerm
 ms.author: makromer
@@ -7,18 +7,18 @@ ms.reviewer: daperlov
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 10/16/2019
-ms.openlocfilehash: 79bdfc84310686b2648e12d73d783de049e9d2fa
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.openlocfilehash: a477eba246c4ebcfbd32e92f1fd30c301ea1cc5b
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72596512"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73676728"
 ---
 # <a name="exists-transformation-in-mapping-data-flow"></a>Преобразование EXISTS в потоке данных сопоставления
 
 Преобразование «EXISTS» — это преобразование «Фильтрация строк», которое проверяет, существуют ли ваши данные в другом источнике или потоке. Выходной поток включает все строки в левом потоке, которые либо существуют, либо не существуют в правильном потоке. Преобразование EXISTS похоже на ```SQL WHERE EXISTS``` и ```SQL WHERE NOT EXISTS```.
 
-## <a name="configuration"></a>Настройка
+## <a name="configuration"></a>Конфигурация
 
 1. Выберите поток данных для проверки существования в правильном раскрывающемся списке **потока** .
 1. Укажите, нужно ли, чтобы данные были уже существуют или не существовали в параметре **типа EXISTS** .

@@ -1,5 +1,5 @@
 ---
-title: Миграция базы данных SQL Server в отдельную базу данных или базу данных в пуле в Базе данных SQL Azure | Документация Майкрософт
+title: SQL Server миграция базы данных в одну базу данных или в составе пула в базе данных SQL Azure
 description: Сведения о том, как выполнить миграцию базы данных SQL Server в отдельную базу данных или эластичный пул в Базе данных SQL Azure.
 keywords: миграция базы данных, миграция базы данных SQL Server, средства миграции базы данных, миграция базы данных, миграция базы данных SQL
 services: sql-database
@@ -12,12 +12,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: carlrab
 ms.date: 02/11/2019
-ms.openlocfilehash: a156d73c7eedcbdf7c703b946a26d46ca9129632
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 67030d14670ccc51c89a04863f8b39ab6a9bb183
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68566595"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73687181"
 ---
 # <a name="sql-server-database-migration-to-azure-sql-database"></a>Перенос базы данных SQL Server в Базу данных SQL Azure
 
@@ -88,10 +88,10 @@ ms.locfileid: "68566595"
 
 2. Создание публикации
    - [С помощью SQL Server Management Studio (SSMS)](https://msdn.microsoft.com/library/ms151160.aspx#Anchor_1).
-   - [Использование Transact-SQL](https://msdn.microsoft.com/library/ms151160.aspx#Anchor_2)
+   - [С помощью Transact-SQL](https://msdn.microsoft.com/library/ms151160.aspx#Anchor_2).
 3. Создание подписки
    - [С помощью SQL Server Management Studio (SSMS)](https://msdn.microsoft.com/library/ms152566.aspx#Anchor_0).
-   - [Использование Transact-SQL](https://msdn.microsoft.com/library/ms152566.aspx#Anchor_1)
+   - [С помощью Transact-SQL](https://msdn.microsoft.com/library/ms152566.aspx#Anchor_1).
 
 Некоторые советы и описание различий при миграции в базу данных SQL
 
@@ -118,7 +118,7 @@ ms.locfileid: "68566595"
 > [!IMPORTANT]
 > Служба "Управляемый экземпляр Базы данных SQL" позволяет перенести существующий экземпляр SQL Server и его базы данных с минимальными проблемами совместимости или вовсе без них. См. раздел [Общие сведения об Управляемом экземпляре Базы данных SQL Azure (предварительная версия)](sql-database-managed-instance.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Воспользуйтесь скриптом в блоге разработчиков EMEA SQL Azure для [отслеживания использования базы данных TempDB во время миграции](https://blogs.msdn.microsoft.com/azuresqlemea/2016/12/28/lesson-learned-10-monitoring-tempdb-usage/).
 - Воспользуйтесь скриптом в блоге разработчиков EMEA SQL Azure, чтобы [отслеживать объем, занимаемый журналом транзакций в базе данных, во время миграции](https://blogs.msdn.microsoft.com/azuresqlemea/2016/10/31/lesson-learned-7-monitoring-the-transaction-log-space-of-my-database/0).

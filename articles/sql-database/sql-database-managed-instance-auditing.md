@@ -1,5 +1,5 @@
 ---
-title: Аудит управляемого экземпляра Базы данных SQL Azure | Документация Майкрософт
+title: Аудит управляемого экземпляра базы данных SQL Azure
 description: Узнайте, как приступить к аудиту управляемого экземпляра Базы данных SQL Azure с помощью T-SQL
 services: sql-database
 ms.service: sql-database
@@ -13,12 +13,12 @@ author: barmichal
 ms.author: mibar
 ms.reviewer: vanto
 ms.date: 04/08/2019
-ms.openlocfilehash: 23e3a15ac26cdf0950ee31fddad2af4a3b7414c2
-ms.sourcegitcommit: d47a30e54c5c9e65255f7ef3f7194a07931c27df
+ms.openlocfilehash: 915d804cd3ae67848b4b9aa2f50fb5f1b4f1f092
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73025380"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73689423"
 ---
 # <a name="get-started-with-azure-sql-database-managed-instance-auditing"></a>Начало работы с аудитом управляемого экземпляра Базы данных SQL Azure
 
@@ -130,7 +130,7 @@ ms.locfileid: "73025380"
 
      1. Войдите в учетную запись Azure (необязательно):
 
-        ![Войдите в Azure](./media/sql-managed-instance-auditing/12_mi_SSMS_sign_in_to_azure.png)
+        ![Вход в Azure](./media/sql-managed-instance-auditing/12_mi_SSMS_sign_in_to_azure.png)
 
      1. Выберите подписку, учетную запись хранения и контейнер больших двоичных объектов из раскрывающихся списков или создайте собственный контейнер, щелкнув **Создать**. Когда вы зададите все необходимые параметры, нажмите кнопку **ОК**:
 
@@ -171,7 +171,7 @@ ms.locfileid: "73025380"
 
 5. Выберите назначение для событий аудита — концентратор событий, журналы Azure Monitor или и то, и другое. Настройте необходимые параметры (например, рабочую область Log Analytics) для каждой цели.
 
-6. В нижней части страницы нажмите кнопку **Save**.
+6. Щелкните **Сохранить**.
 
     ![Настройка параметров диагностики](./media/sql-managed-instance-auditing/9_mi_configure_diagnostics.png)
 

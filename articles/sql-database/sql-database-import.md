@@ -1,5 +1,5 @@
 ---
-title: Импорт BACPAC-файла для создания базы данных SQL Azure | Документация Майкрософт
+title: Импорт BACPAC-файла для создания базы данных SQL Azure
 description: Создайте базу данных SQL Azure, импортировав BACPAC-файл.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 06/20/2019
-ms.openlocfilehash: 5e0f3ccafa449cc431166d5b4bd4135a1d1ac97c
-ms.sourcegitcommit: 9a4296c56beca63430fcc8f92e453b2ab068cc62
+ms.openlocfilehash: 4b96f076abf36a8f93d2b257be8fac2fd9e6de48
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2019
-ms.locfileid: "72675877"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73689889"
 ---
 # <a name="quickstart-import-a-bacpac-file-to-a-database-in-azure-sql-database"></a>Краткое руководство. импорт BACPAC-файла в базу данных в базе данных SQL Azure
 
@@ -45,7 +45,7 @@ ms.locfileid: "72675877"
 
    ![База данных import2](./media/sql-database-import/import2.png)
 
-4. Последовательно выберите **ОК**.
+4. Нажмите кнопку **ОК**.
 
 5. Чтобы отслеживать ход выполнения импорта, откройте страницу сервера базы данных. В разделе **Параметры** выберите **Журнал импорта и экспорта**. При успешном выполнении импорта отображается состояние **Завершено**.
 

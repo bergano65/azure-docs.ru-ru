@@ -1,5 +1,5 @@
 ---
-title: Управляемый экземпляр базы данных SQL — восстановление до точки во времени | Документация Майкрософт
+title: Управляемый экземпляр базы данных SQL — восстановление до точки во времени
 description: Восстановление базы данных SQL в управляемом экземпляре до предыдущей точки во времени.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein, carlrab, mathoma
 ms.date: 08/25/2019
-ms.openlocfilehash: 61249d8ac21c3bb698deb92e5f46a8998205ced9
-ms.sourcegitcommit: f29fec8ec945921cc3a89a6e7086127cc1bc1759
+ms.openlocfilehash: 44f99b6a5201e91e37ace0f5aa4c5c2eb8e3b1db
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72529667"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73687984"
 ---
 # <a name="restore-a-sql-database-in-a-managed-instance-to-a-previous-point-in-time"></a>Восстановление базы данных SQL в управляемом экземпляре до предыдущей точки во времени
 
@@ -48,17 +48,17 @@ ms.locfileid: "72529667"
 
 |           |Восстановление существующей базы данных в том же управляемом экземпляре| Восстановление существующей базы данных в другом управляемом экземпляре|Восстановить удаленную базу данных в том же управляемом экземпляре|Восстановить удаленную базу данных в другом управляемом экземпляре|
 |:----------|:----------|:----------|:----------|:----------|
-|**Портал Azure**| ДА|Нет |Нет|Нет|
-|**Azure CLI**|ДА |ДА |Нет|Нет|
-|**PowerShell**| ДА|ДА |ДА|ДА|
+|**портал Azure**| Да|Нет |Нет|Нет|
+|**Интерфейс командной строки Azure**|Да |Да |Нет|Нет|
+|**PowerShell**| Да|Да |Да|Да|
 
 ## <a name="restore-an-existing-database"></a>Восстановление существующей базы данных
 
 Восстановите существующую базу данных в том же экземпляре с помощью портал Azure, PowerShell или Azure CLI. Чтобы восстановить базу данных на другой экземпляр, используйте PowerShell или Azure CLI, чтобы указать свойства целевого управляемого экземпляра и группы ресурсов. Если эти параметры не заданы, база данных будет восстановлена в существующий экземпляр по умолчанию. Портал Azure в настоящее время не поддерживает восстановление в другой экземпляр.
 
-# <a name="portaltabazure-portal"></a>[Microsoft Azure](#tab/azure-portal)
+# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
 
-1. Войдите на [портале Azure](https://portal.azure.com). 
+1. Войдите на [портал Azure](https://portal.azure.com). 
 2. Перейдите к управляемому экземпляру и выберите базу данных, которую требуется восстановить.
 3. На странице базы данных выберите **восстановить** .
 
@@ -110,7 +110,7 @@ Restore-AzSqlInstanceDatabase -FromPointInTimeBackup `
 
 Дополнительные сведения см. в разделе [RESTORE-азсклинстанцедатабасе](https://docs.microsoft.com/powershell/module/az.sql/restore-azsqlinstancedatabase).
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-clitabazure-cli"></a>[Интерфейс командной строки Azure](#tab/azure-cli)
 
 Если вы еще не установили Azure CLI, см. статью [установка Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest).
 
@@ -197,7 +197,7 @@ DROP DATABASE WorldWideImporters;
 - [Точка-сеть](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-configure-p2s)
 - [Общедоступная конечная точка](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-public-endpoint-configure)
 
-# <a name="portaltabazure-portal"></a>[Microsoft Azure](#tab/azure-portal)
+# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
 
 В портал Azure выберите базу данных из управляемого экземпляра, а затем щелкните **Удалить**.
 
@@ -215,7 +215,7 @@ $databaseName = "<Source database>"
 Remove-AzSqlInstanceDatabase -Name $databaseName -InstanceName $managedInstanceName -ResourceGroupName $resourceGroupName
 ```
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-clitabazure-cli"></a>[Интерфейс командной строки Azure](#tab/azure-cli)
 
 Используйте следующую команду Azure CLI, чтобы удалить существующую базу данных из управляемого экземпляра.
 

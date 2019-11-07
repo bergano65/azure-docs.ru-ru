@@ -1,5 +1,5 @@
 ---
-title: Запуск пакета служб SSIS с помощью действия "выполнение пакета служб SSIS" в Azure | Документация Майкрософт
+title: Запуск пакета служб SSIS с помощью действия "выполнение пакета служб SSIS" в Azure
 description: В этой статье описывается, как выполнить пакет SQL Server Integration Services (SSIS) в конвейере фабрики данных Azure с помощью действия "выполнение пакета служб SSIS".
 services: data-factory
 documentationcenter: ''
@@ -13,12 +13,12 @@ author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: craigg
-ms.openlocfilehash: 965bb0641aac3224ac98820006f308e6b5fb0f71
-ms.sourcegitcommit: 1c2659ab26619658799442a6e7604f3c66307a89
+ms.openlocfilehash: b8ed0a04d2d13556f38873ef5f346d49ba4d1845
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72255641"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73673736"
 ---
 # <a name="run-an-ssis-package-with-the-execute-ssis-package-activity-in-azure-data-factory"></a>Запуск пакета Integration Services с помощью действия выполнения пакета SSIS в Фабрике данных Azure
 В этой статье описывается, как выполнить пакет SQL Server Integration Services (SSIS) в конвейере фабрики данных Azure с помощью действия "выполнение пакета служб SSIS". 
@@ -27,7 +27,7 @@ ms.locfileid: "72255641"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Создайте среду выполнения интеграции Azure SSIS (IR), если она еще не создана, следуя пошаговым инструкциям в [Tutorial: Подготовка Integration Runtime Azure – SSIS в Фабрике данных Azure](tutorial-create-azure-ssis-runtime-portal.md).
+Создайте среду выполнения интеграции Azure SSIS (IR), если у вас ее еще нет, следуя пошаговым инструкциям в [руководстве по подготовке Azure-SSIS IR](tutorial-create-azure-ssis-runtime-portal.md).
 
 ## <a name="run-a-package-in-the-azure-portal"></a>Запуск пакета в портале Azure
 В этом разделе вы используете пользовательский интерфейс фабрики данных (UI) или приложение для создания конвейера фабрики данных с действием выполнить пакет служб SSIS, которое выполняет пакет служб SSIS.
@@ -69,9 +69,9 @@ ms.locfileid: "72255641"
 
    ![Установка свойств на вкладке "Параметры" вручную](media/how-to-invoke-ssis-package-ssis-activity/ssis-activity-settings2.png)
 
-   Если в качестве расположения пакета выбрана **Файловая система (пакет)** , которая будет автоматически выбрана, если Azure-SSIS IR была подготовлена без SSISDB, укажите путь к файлу пакета в формате unc (@no __t-1) в поле **путь к пакету** . Например, если пакет хранится в службе файлов Azure, его путь к пакету — `\\<storage account name>.file.core.windows.net\<file share name>\<package name>.dtsx`. 
+   Если в качестве расположения пакета выбрана **Файловая система (пакет)** , которая будет автоматически выбрана, если Azure-SSIS IR была подготовлена без SSISDB, укажите путь к файлу пакета в формате unc (@no __t_1_) в поле **путь к пакету** .`.dtsx` Например, если пакет хранится в службе файлов Azure, его путь к пакету — `\\<storage account name>.file.core.windows.net\<file share name>\<package name>.dtsx`. 
    
-   Если пакет настроен в отдельном файле, необходимо также указать UNC-путь к файлу конфигурации (@no__t – 0) в поле **путь конфигурации** . Например, если вы храните конфигурацию в службе файлов Azure, ее путь конфигурации — `\\<storage account name>.file.core.windows.net\<file share name>\<configuration name>.dtsConfig`.
+   Если пакет настроен в отдельном файле, необходимо также указать UNC-путь к файлу конфигурации (`.dtsConfig`) в поле **путь конфигурации** . Например, если вы храните конфигурацию в службе файлов Azure, ее путь конфигурации — `\\<storage account name>.file.core.windows.net\<file share name>\<configuration name>.dtsConfig`.
 
    ![Установка свойств на вкладке "Параметры" вручную](media/how-to-invoke-ssis-package-ssis-activity/ssis-activity-settings3.png)
 
@@ -130,7 +130,7 @@ ms.locfileid: "72255641"
 
 1. Чтобы запустить конвейер, выберите **триггер** на панели инструментов и щелкните **Активировать сейчас**. 
 
-   ![Trigger Now (Активировать сейчас)](./media/how-to-invoke-ssis-package-ssis-activity/ssis-activity-trigger.png)
+   ![Запустить сейчас](./media/how-to-invoke-ssis-package-ssis-activity/ssis-activity-trigger.png)
 
 2. На странице **Запуск конвейера** нажмите кнопку **Готово**. 
 
@@ -166,7 +166,7 @@ ms.locfileid: "72255641"
 Чтобы установить модули Azure PowerShell, выполните пошаговые инструкции из [этой статьи](/powershell/azure/install-az-ps).
 
 ### <a name="create-a-data-factory-with-azure-ssis-ir"></a>Создание фабрики данных с Azure-SSIS IR
-Вы можете использовать существующую фабрику данных, уже имеющую Azure-SSIS IR подготовлена, или создать новую фабрику данных с Azure-SSIS IR. Выполните пошаговые инструкции в разделе [Tutorial: в Фабрике данных Azure с помощью PowerShell](https://docs.microsoft.com/azure/data-factory/tutorial-deploy-ssis-packages-azure-powershell).
+Вы можете использовать существующую фабрику данных, уже имеющую Azure-SSIS IR подготовлена, или создать новую фабрику данных с Azure-SSIS IR. Выполните пошаговые инструкции из [руководства Развертывание пакетов служб SSIS в Azure с помощью PowerShell](https://docs.microsoft.com/azure/data-factory/tutorial-deploy-ssis-packages-azure-powershell).
 
 ### <a name="create-a-pipeline-with-an-execute-ssis-package-activity"></a>Создание конвейера с действием "Выполнить пакет SSIS" 
 На этом этапе создается конвейер с действием "Выполнить пакет SSIS". Это действие запускает пакет SSIS. 
@@ -483,6 +483,6 @@ while ($True) {
    select * from catalog.executions
    ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 См. в следующей записи блога:
 - [Модернизировать и расширьте рабочие процессы ETL/ELT с помощью действий SSIS в конвейерах фабрики данных Azure](https://techcommunity.microsoft.com/t5/SQL-Server-Integration-Services/Modernize-and-Extend-Your-ETL-ELT-Workflows-with-SSIS-Activities/ba-p/388370)
