@@ -1,5 +1,5 @@
 ---
-title: Действие Wait в фабрике данных Azure | Документация Майкрософт
+title: Действие Wait в фабрике данных Azure
 description: Действие Wait приостанавливает обработку в конвейере на указанный период.
 services: data-factory
 documentationcenter: ''
@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/12/2018
-ms.openlocfilehash: 48a722979e61209a855dd1fec22fcdcc756ae1ce
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: f9dd53fded06eec169219d00993620a0f2aa2bf0
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70142416"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73678243"
 ---
 # <a name="execute-wait-activity-in-azure-data-factory"></a>Выполнение действия Wait в фабрике данных Azure
 Если в конвейере используется действие Wait, он приостанавливает обработку на указанный период, прежде чем возобновить выполнение последующих действий. 
@@ -36,11 +36,11 @@ ms.locfileid: "70142416"
 
 ## <a name="type-properties"></a>Свойства типа
 
-Свойство | Описание | Допустимые значения | Обязательное значение
+Свойство | Description (Описание) | Допустимые значения | Обязательно
 -------- | ----------- | -------------- | --------
-name | Имя действия `Wait`. | Строковое | Да
-type | Для этого свойства необходимо задать значение **Wait**. | Строковое | Да
-waitTimeInSeconds | Период ожидания в секундах перед возобновлением обработки в конвейере. | Integer | Да
+name | Имя действия `Wait`. | string | Да
+type | Для этого свойства необходимо задать значение **Wait**. | string | Да
+waitTimeInSeconds | Период ожидания в секундах перед возобновлением обработки в конвейере. | Целое число | Да
 
 ## <a name="example"></a>Пример
 
@@ -98,10 +98,10 @@ waitTimeInSeconds | Период ожидания в секундах перед
 
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь с другими действиями потока управления, которые поддерживаются фабрикой данных: 
 
-- [Действие условия If](control-flow-if-condition-activity.md)
+- [действие условия If](control-flow-if-condition-activity.md);
 - [Действие выполнения конвейера](control-flow-execute-pipeline-activity.md)
 - [Действие ForEach](control-flow-for-each-activity.md)
 - [Действие получения метаданных](control-flow-get-metadata-activity.md)

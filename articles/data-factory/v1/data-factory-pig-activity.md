@@ -1,5 +1,5 @@
 ---
-title: Преобразование данных с помощью действия Pig в фабрике данных Azure | Документация Майкрософт
+title: Преобразование данных с помощью действия Pig в фабрике данных Azure
 description: Узнайте, как с помощью действия Pig в фабрике данных Azure выполнять запросы Pig к собственному кластеру HDInsight или к кластеру HDInsight по требованию.
 services: data-factory
 documentationcenter: ''
@@ -12,12 +12,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: 72f532c277096a20387ab1b4922def2cd35a9afb
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: a6861a22f853bb0b48eb7c9832adb251bc3467ca
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70139128"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73682394"
 ---
 # <a name="transform-data-using-pig-activity-in-azure-data-factory"></a>Преобразование данных с помощью действия Pig в фабрике данных Azure
 > [!div class="op_single_selector" title1="Действия преобразования"]
@@ -39,7 +39,7 @@ ms.locfileid: "70139128"
 Действие Pig HDInsight в [конвейере](data-factory-create-pipelines.md) фабрики данных выполняет запросы Pig к [вашему собственному](data-factory-compute-linked-services.md#azure-hdinsight-linked-service) кластеру HDInsight или кластеру HDInsight [по запросу](data-factory-compute-linked-services.md#azure-hdinsight-on-demand-linked-service) под управлением Windows или Linux. Данная статья основана на материалах статьи о [действиях преобразования данных](data-factory-data-transformation-activities.md) , в которой приведен общий обзор преобразования данных и список поддерживаемых действий преобразования.
 
 > [!NOTE] 
-> Если вы не знакомы с Фабрикой данных Azure, сначала ознакомьтесь со статьей [Введение в фабрику данных Azure](data-factory-introduction.md) и руководством [Преобразование данных в облаке с помощью действия Spark в фабрике данных Azure](data-factory-build-your-first-pipeline.md) перед чтением этой статьи. 
+> Если вы не знакомы с фабрикой данных Azure, сначала ознакомьтесь со статьей [Введение в фабрику данных Azure](data-factory-introduction.md) и руководством [Создание первого конвейера для преобразования данных с помощью кластера Hadoop](data-factory-build-your-first-pipeline.md). 
 
 ## <a name="syntax"></a>Синтаксис
 
@@ -82,14 +82,14 @@ ms.locfileid: "70139128"
 
 ## <a name="syntax-details"></a>Сведения о синтаксисе
 
-| Свойство | Описание | Обязательное значение |
+| Свойство | Description (Описание) | Обязательно |
 | --- | --- | --- |
 | name |Имя действия. |Да |
 | description |Текст, описывающий, для чего используется действие |Нет |
 | type |HDinsightPig |Да |
-| Входные данные |Входные данные, используемые действием Pig. |Нет |
-| выходные данные |Выходные данные, создаваемые действием Pig. |Да |
-| linkedServiceName |Ссылка на кластер HDInsight, зарегистрированный в качестве связанной службы в фабрике данных. |Да |
+| inputs |Входные данные, используемые действием Pig. |Нет |
+| outputs |Выходные данные, создаваемые действием Pig. |Да |
+| linkedServiceName (имя связанной службы) |Ссылка на кластер HDInsight, зарегистрированный в качестве связанной службы в фабрике данных. |Да |
 | script |Указывается встроенный сценарий Pig. |Нет |
 | scriptPath |Путь к файлу сценария Pig в хранилище BLOB-объектов Azure. Можно использовать либо свойство script, либо свойство scriptPath, но не оба сразу. В имени файла учитывается регистр знаков. |Нет |
 | defines |Параметры в виде пары "ключ — значение", ссылки на которые указываются в сценарии Pig. |Нет |

@@ -1,5 +1,5 @@
 ---
-title: Код файла событий XEvent для базы данных SQL | Документация Майкрософт
+title: Код файла событий XEvent для базы данных SQL
 description: Содержит сценарии PowerShell и Transact-SQL для примера двухэтапного кода, демонстрирующего целевой файл событий в расширенном событии в Базе данных SQL Azure. Обязательной частью данного сценария является хранилище Azure.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: MightyPen
 ms.author: genemi
 ms.reviewer: jrasnik
 ms.date: 03/12/2019
-ms.openlocfilehash: f0994f92444da338b18447eb1b248c74df9aa2d2
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: ea5c90433a4d2928e5fb88df149631c80df9dacf
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68566103"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73686832"
 ---
 # <a name="event-file-target-code-for-extended-events-in-sql-database"></a>Код целевого файла событий для расширенных событий в Базе данных SQL
 
@@ -53,7 +53,7 @@ ms.locfileid: "68566103"
   
   * Модули предоставляют команды, такие как- **New-азсторажеаккаунт**.
 
-## <a name="phase-1-powershell-code-for-azure-storage-container"></a>Этап 1. Код PowerShell для контейнера службы хранилища Azure
+## <a name="phase-1-powershell-code-for-azure-storage-container"></a>Этап 1. Код PowerShell для контейнера хранилища Azure
 
 На первом этапе примера двухэтапного кода используется PowerShell.
 
@@ -233,7 +233,7 @@ Now shift to the Transact-SQL portion of the two-part code sample!';
 
 Обратите внимание на ряд именованных значений, которые выводятся на экран по завершении сценария PowerShell. Эти значения нужно будет внести в сценарий Transact-SQL, работа с которым составляет второй этап.
 
-## <a name="phase-2-transact-sql-code-that-uses-azure-storage-container"></a>Этап 2. Код Transact-SQL, использующий контейнер службы хранилища Azure
+## <a name="phase-2-transact-sql-code-that-uses-azure-storage-container"></a>Этап 2. Код Transact-SQL, использующий контейнер хранилища Azure
 
 * На первом этапе работы с примером кода вы выполнили сценарий PowerShell, создающий контейнер службы хранилища Azure.
 * На втором этапе этот контейнер используется в сценарии Transact-SQL.
@@ -461,11 +461,11 @@ GO
 ```
 
 
-## <a name="output"></a>Вывод
+## <a name="output"></a>Выходные данные
 
-После того как сценарий Transact-SQL будет выполнен, щелкните ячейку под заголовком столбца **event_data_XML**. Отображается один  **\<элемент события >** , в котором показана одна инструкция UPDATE.
+После того как сценарий Transact-SQL будет выполнен, щелкните ячейку под заголовком столбца **event_data_XML**. Отображается один элемент **> события\<** , в котором показана одна инструкция UPDATE.
 
-Ниже приведен один  **\<элемент > событий** , созданный во время тестирования:
+Ниже приведен один **\<элемент > события** , созданный во время тестирования:
 
 
 ```xml
@@ -527,15 +527,15 @@ SELECT 'AFTER__Updates', EmployeeKudosCount, * FROM gmTabEmployee;
   
   * Учетная запись хранения Azure при этом не нужна.
 
-## <a name="more-information"></a>Дополнительная информация
+## <a name="more-information"></a>Дополнительные сведения
 
 Дополнительные сведения об учетных записях и контейнерах в службе хранилища Azure см. в следующих статьях:
 
 * [Использование хранилища BLOB-объектов из .NET](../storage/blobs/storage-dotnet-how-to-use-blobs.md)
 * [Именование контейнеров, больших двоичных объектов и метаданных и ссылка на них](https://msdn.microsoft.com/library/azure/dd135715.aspx)
 * [Работа с корневым контейнером](https://msdn.microsoft.com/library/azure/ee395424.aspx)
-* [1. Создание хранимой политики доступа и хранилища с общим доступом](https://msdn.microsoft.com/library/dn466430.aspx)
-  * [2. Создание учетных данных SQL Server с помощью подписанного URL-адреса](https://msdn.microsoft.com/library/dn466435.aspx)
+* [Урок 1. Создание хранимой политики доступа и подписанного URL-адреса для контейнера Azure](https://msdn.microsoft.com/library/dn466430.aspx)
+  * [Урок 2. Создание учетных данных SQL Server с использованием подписанного URL-адреса](https://msdn.microsoft.com/library/dn466435.aspx)
 * [Расширенные события](https://docs.microsoft.com/sql/relational-databases/extended-events/extended-events)
 
 <!--

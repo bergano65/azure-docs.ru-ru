@@ -1,5 +1,5 @@
 ---
-title: Инструмент копирования данных фабрики данных Azure | Документация Майкрософт
+title: Копирование данных инструментов фабрика данных Azure
 description: В этой статье предоставляются сведения об инструменте копирования данных в пользовательском интерфейсе фабрики данных Azure
 services: data-factory
 documentationcenter: ''
@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 06/18/2018
 ms.author: yexu
-ms.openlocfilehash: 144a991eb911fa6a337b6711515bd5760456fc10
-ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
+ms.openlocfilehash: b5c93213199cac399487f949a3a8cb04c2d9addb
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69996391"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73678316"
 ---
 # <a name="copy-data-tool-in-azure-data-factory"></a>Инструмент копирования данных в фабрике данных Azure
 Инструмент копирования данных фабрики данных Azure предназначен для оптимизации процесса приема данных в озеро данных, что обычно является первым шагом сценария комплексной интеграции данных.  Это позволяет сэкономить время, особенно при использовании фабрики данных Azure для принятия данных из источников данных впервые. Ниже приведены некоторые преимущества использования этого средства:
@@ -105,7 +105,7 @@ ms.locfileid: "69996391"
 ![Параметры планирования](./media/copy-data-tool/scheduling-options.png)
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь с руководствами ниже, при работе с которыми используется инструмент копирования данных:
 
 - [Использование средства копирования данных для копирования данных](quickstart-create-data-factory-copy-data-tool.md)

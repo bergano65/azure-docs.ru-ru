@@ -1,5 +1,5 @@
 ---
-title: Репликация транзакций с помощью Базы данных SQL Azure | Документация Майкрософт
+title: Репликация транзакций с базой данных SQL Azure "
 description: Сведения об использовании репликации транзакций SQL Server с отдельными базами данных, базами данных в составе пула и базами данных экземпляров в Базе данных SQL Azure.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: MashaMSFT
 ms.author: mathoma
 ms.reviewer: carlrab
 ms.date: 02/08/2019
-ms.openlocfilehash: 86bd479eff48a7feb42557eb1d175345728f0a69
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 016b4f2ee191443cf608af18d1be6a94b6d53a39
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68879056"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73687831"
 ---
 # <a name="transactional-replication-with-single-pooled-and-instance-databases-in-azure-sql-database"></a>Репликация транзакций с отдельными базами данных, базами данных в составе пула и базами данных экземпляров в Базе данных SQL Azure.
 
@@ -49,7 +49,7 @@ ms.locfileid: "68879056"
 
 **Подписчик** — это экземпляр или сервер, который принимает изменения, внесенные в издателе. Подписчиками могут быть отдельные базы данных, базы данных в составе пула и базы данных экземпляров в Базе данных SQL Azure или в базах данных SQL Server. Подписчика отдельной базы данных или базы данных в пуле необходимо настроить как принудительного подписчика. 
 
-| Role | Отдельные базы данных и базы данных в пуле | Базы данных экземпляров |
+| Роль | Отдельные базы данных и базы данных в пуле | Базы данных экземпляров |
 | :----| :------------- | :--------------- |
 | **Издатель** | Нет | Да | 
 | **Распространитель** | Нет | Да|
@@ -82,11 +82,11 @@ ms.locfileid: "68879056"
   
   | **Издатель**   | **Распространитель** | **Абонент** |
 | :------------   | :-------------- | :------------- |
-| SQL Server 2017 | SQL Server 2017 | SQL Server 2017 <br/> SQL Server 2016 <br/> SQL Server 2014 |
-| SQL Server 2016 | SQL Server 2017 <br/> SQL Server 2016 | SQL Server 2017 <br/>SQL Server 2016 <br/> SQL Server 2014 <br/> SQL Server 2012 |
-| SQL Server 2014 | SQL Server 2017 <br/> SQL Server 2016 <br/> SQL Server 2014 <br/>| SQL Server 2017 <br/> SQL Server 2016 <br/> SQL Server 2014 <br/> SQL Server 2012 <br/> SQL Server 2008 R2 <br/> SQL Server 2008 |
-| SQL Server 2012 | SQL Server 2017 <br/> SQL Server 2016 <br/> SQL Server 2014 <br/>SQL Server 2012 <br/> | SQL Server 2016 <br/> SQL Server 2014 <br/> SQL Server 2012 <br/> SQL Server 2008 R2 <br/> SQL Server 2008 | 
-| SQL Server 2008 R2 <br/> SQL Server 2008 | SQL Server 2017 <br/> SQL Server 2016 <br/> SQL Server 2014 <br/>SQL Server 2012 <br/> SQL Server 2008 R2 <br/> SQL Server 2008 | SQL Server 2014 <br/> SQL Server 2012 <br/> SQL Server 2008 R2 <br/> SQL Server 2008 <br/>  |
+| SQL Server 2017 | SQL Server 2017 | SQL Server 2017 <br/> SQL Server 2016 <br/> SQL Server 2014 |
+| SQL Server 2016 | SQL Server 2017 <br/> SQL Server 2016 | SQL Server 2017 <br/>SQL Server 2016 <br/> SQL Server 2014 <br/> SQL Server 2012 |
+| SQL Server 2014 | SQL Server 2017 <br/> SQL Server 2016 <br/> SQL Server 2014 <br/>| SQL Server 2017 <br/> SQL Server 2016 <br/> SQL Server 2014 <br/> SQL Server 2012 <br/> SQL Server 2008 R2 <br/> SQL Server 2008 |
+| SQL Server 2012 | SQL Server 2017 <br/> SQL Server 2016 <br/> SQL Server 2014 <br/>SQL Server 2012 <br/> | SQL Server 2016 <br/> SQL Server 2014 <br/> SQL Server 2012 <br/> SQL Server 2008 R2 <br/> SQL Server 2008 | 
+| SQL Server 2008 R2 <br/> SQL Server 2008 | SQL Server 2017 <br/> SQL Server 2016 <br/> SQL Server 2014 <br/>SQL Server 2012 <br/> SQL Server 2008 R2 <br/> SQL Server 2008 | SQL Server 2014 <br/> SQL Server 2012 <br/> SQL Server 2008 R2 <br/> SQL Server 2008 <br/>  |
 | &nbsp; | &nbsp; | &nbsp; |
 
 ## <a name="requirements"></a>Требования
@@ -99,7 +99,7 @@ ms.locfileid: "68879056"
 
 >[!NOTE]
 > - При подключении к файлу службы хранилища Azure может возникнуть ошибка 53, если порт исходящей сетевой группы безопасности (NSG) 445 заблокирован, если распространитель является экземпляром базы данных и подписчиком в локальной среде. Чтобы устранить эту проблему [, обновите NSG виртуальной сети](/azure/storage/files/storage-troubleshoot-windows-file-connection-problems) . 
-> - Если базы данных издателя и распространителя в управляемых экземплярах используют [группы автоматической](sql-database-auto-failover-group.md)отработки отказа, администратор управляемого экземпляра должен [удалить все публикации на старом основном экземпляре и перенастроить их на новом первичном](sql-database-managed-instance-transact-sql-information.md#replication)экземпляре после отработки отказа.
+> - Если базы данных издателя и распространителя в управляемых экземплярах используют [группы автоматической отработки отказа](sql-database-auto-failover-group.md), администратор управляемого экземпляра должен [удалить все публикации на старом основном экземпляре и перенастроить их на новом первичном экземпляре после отработки отказа](sql-database-managed-instance-transact-sql-information.md#replication).
 
 ### <a name="compare-data-sync-with-transactional-replication"></a>Сравнение синхронизации данных с репликацией транзакций
 
@@ -138,7 +138,7 @@ ms.locfileid: "68879056"
 В этой конфигурации База данных SQL Azure (отдельная база данных, база данных в составе пула и база данных экземпляра) является подписчиком. Эта конфигурация поддерживает миграцию из локальной среды в Azure. Если подписчик находится в отдельной базе данных или базе данных в пуле, он должен находиться в режиме принудительной отправки.  
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 1. [Настройка репликации между двумя управляемыми экземплярами](replication-with-sql-database-managed-instance.md). 
 1. [Создание публикации](https://docs.microsoft.com/sql/relational-databases/replication/publish/create-a-publication).
