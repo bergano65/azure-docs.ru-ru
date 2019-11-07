@@ -10,14 +10,17 @@ ms.subservice: language-understanding
 ms.topic: quickstart
 ms.date: 09/04/2019
 ms.author: diberry
-ms.openlocfilehash: ff666437790a1e32dde83f9e3be90b4c62637181
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.openlocfilehash: 6888c53122e649d6a0e91f8ece30101f051c08e8
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70307721"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73488742"
 ---
 # <a name="quickstart-create-a-new-app-in-the-luis-portal"></a>Краткое руководство. Создание приложения на портале LUIS
+
+
+[!INCLUDE [Waiting for LUIS portal refresh](./includes/wait-v3-upgrade.md)]
 
 В этом кратком руководстве описывается, как создать приложение на [портале LUIS](https://www.luis.ai). Сначала вы создадите основные части приложения, **намерения** и **сущности**. Затем вы протестируете приложение, предоставив образец пользовательского речевого фрагмента на интерактивной тестовой панели, чтобы получить прогнозируемое намерение.
 
@@ -27,7 +30,7 @@ ms.locfileid: "70307721"
 
 ## <a name="create-an-app"></a>Создание приложения
 
-1. Выберите **Создать новое приложение** на контекстной панели инструментов.
+1. Выберите **+ Создать** на контекстной панели инструментов.
 
    [![Создание приложения в LUIS](./media/get-started-portal-build-app/create-app-in-portal.png)](./media/get-started-portal-build-app/create-app-in-portal.png#lightbox)
 

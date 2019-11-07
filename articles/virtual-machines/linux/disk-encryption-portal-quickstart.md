@@ -6,12 +6,12 @@ ms.author: mbaldwin
 ms.service: security
 ms.topic: quickstart
 ms.date: 10/02/2019
-ms.openlocfilehash: 83446d30de17973352e836d6107ad545b2da63e3
-ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
+ms.openlocfilehash: a480e459fdbbf135b00ee46d1513eddb0f36e09e
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72550313"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73479605"
 ---
 # <a name="quickstart-create-and-encrypt-a-virtual-machine-with-the-azure-portal"></a>Краткое руководство. Создание и шифрование виртуальной машины на портале Azure
 
@@ -56,7 +56,7 @@ ms.locfileid: "72550313"
 1. На странице "Создать" в разделе "Популярные" выберите **Ubuntu Server 18.04 LTS**.
 1. На вкладке **Basics** (Основные) в разделе **Project Details** (Сведения о проекте) убедитесь, что выбрана правильная подписка.
 1. Для **Группы ресурсов** выберите группу ресурсов, созданную при создании хранилища ключей выше (например, **myResourceGroup**)
-1. В поле **Virtual Machine Name** (Имя виртуальной машины) введите *MyVM* и выберите 
+1. В поле **Имя виртуальной машины** введите *MyVM*.
 1. Для параметра **регион** выберите тот же регион, который использовался при создании хранилища ключей выше (например, **Восточная часть США**).
 1. Убедитесь, что для параметра **Размер** выбрано значение *Standard D2s v3*.
 1. В разделе **Учетная запись администратора** выберите **Пароль**. Введите имя пользователя и пароль.

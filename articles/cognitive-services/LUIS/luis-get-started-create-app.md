@@ -9,14 +9,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: quickstart
-ms.date: 09/27/2019
+ms.date: 10/23/2019
 ms.author: diberry
-ms.openlocfilehash: 748c51e74db20ac101dc2dff0d924567acded114
-ms.sourcegitcommit: 6fe40d080bd1561286093b488609590ba355c261
+ms.openlocfilehash: 4acf6e4df978ffee6e0f8320bafbb64994aa0639
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71703242"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73495270"
 ---
 # <a name="quickstart-use-prebuilt-home-automation-app"></a>Краткое руководство. Использование предварительно созданного приложения для системы домашней автоматики
 
@@ -31,48 +31,44 @@ ms.locfileid: "71703242"
 ## <a name="create-a-new-app"></a>Создание нового приложения
 Создавать и администрировать приложения можно на странице **Мои приложения**. 
 
-1. Выберите **Создать приложение**.
+1. На портале LUIS в списке "Мои приложения" щелкните **+ Создать**.
 
-    [![Снимок экрана со списком приложений](media/luis-quickstart-new-app/app-list.png "Screenshot of app list")](media/luis-quickstart-new-app/app-list.png)
+    ![На портале LUIS в списке "Мои приложения" щелкните "+ Создать".](./media/create-app-in-portal.png)
 
-1. В диалоговом окне присвойте приложению имя Home Automation.
+1. В диалоговом окне введите имя приложения `Home Automation` и нажмите кнопку **Готово**. LUIS создает приложение.
 
-    [![Снимок экрана со всплывающим диалоговым окном "Создание приложения"](media/luis-quickstart-new-app/create-new-app-dialog.png "Screenshot of Create new app pop-up dialog")](media/luis-quickstart-new-app/create-new-app-dialog.png)
-
-1. Выберите язык и региональные параметры для приложения. Для нашего примера Home Automation выберите английский язык. Затем выберите **Готово**. LUIS создаст приложение Home Automation. 
+    ![В диалоговом окне присвойте приложению имя Home Automation.](./media/create-new-app-details.png)
 
     >[!NOTE]
     >Язык и региональные параметры нельзя изменить после создания приложения. 
 
 ## <a name="add-prebuilt-domain"></a>Добавление готовой предметной области
 
-На панели навигации слева выберите **Prebuilt domains** (Предварительно созданные предметные области). Выполните поиск по строке Home. Выберите **Add domain** (Добавить предметную область).
+Выберите **Prebuilt domains** (Предварительно созданные предметные области), а затем выполните поиск **HomeAutomation**. Нажмите кнопку **Add domain** (Добавить предметную область) на карточке HomeAutomation.
 
-[![Снимок экрана с предметной областью Home Automation, вызываемой из предварительно созданного меню предметных областей](media/luis-quickstart-new-app/home-automation.png "Screenshot of Home Automation domain called out in prebuilt domain menu")](media/luis-quickstart-new-app/home-automation.png)
+![Выберите Prebuilt domains (Предварительно созданные предметные области) и найдите HomeAutomation. Нажмите кнопку Add domain (Добавить предметную область) на карточке HomeAutomation.](media/luis-quickstart-new-app/home-automation.png)
 
 Когда предметная область будет успешно добавлена, в области предварительно созданных предметных областей отобразится кнопка **Remove domain** (Удалить предметную область).
 
-[![Снимок экрана с кнопкой удаления в предметной области Home Automation](media/luis-quickstart-new-app/remove-domain.png "Screenshot of Home Automation domain with remove button")](media/luis-quickstart-new-app/remove-domain.png)
-
 ## <a name="intents-and-entities"></a>Намерения и сущности
 
-Выберите **Intents** (Намерения) в области навигации слева, чтобы просмотреть намерения из предметной области HomeAutomation. По каждому намерению представлены примеры высказываний.
+Выберите **Intents** (Намерения) для просмотра намерений предметной области HomeAutomation. Для намерений предварительно созданных предметных областей есть примеры речевых фрагментов.
 
-![Снимок экрана списка намерений HomeAutomation](media/luis-quickstart-new-app/home-automation-intents.png "Screenshot of HomeAutomation intents list")]
+![Снимок экрана со списком намерений HomeAutomation](media/luis-quickstart-new-app/home-automation-intents.png "Снимок экрана со списком намерений HomeAutomation")
 
 > [!NOTE]
 > Намерение **None** (Нет) стандартно предоставляется всеми приложениями LUIS. Оно используется для обработки фраз, которые не соответствуют функциям приложения. 
 
 Выберите намерение **HomeAutomation.TurnOff**. Вы увидите, что это намерение содержит список фраз с обозначенными сущностями.
 
-[![Снимок экрана с намерением HomeAutomation.TurnOff](media/luis-quickstart-new-app/home-automation-turnoff.png "Screenshot of HomeAutomation.TurnOff intent")](media/luis-quickstart-new-app/home-automation-turnoff.png)
+[![Снимок экрана с намерением HomeAutomation.TurnOff](media/luis-quickstart-new-app/home-automation-turnoff.png "Снимок экрана с намерением HomeAutomation.TurnOff")](media/luis-quickstart-new-app/home-automation-turnoff.png)
 
 ## <a name="train-the-luis-app"></a>Обучение приложения LUIS
 
 [!INCLUDE [LUIS How to Train steps](../../../includes/cognitive-services-luis-tutorial-how-to-train.md)]
 
 ## <a name="test-your-app"></a>Тестирование приложения
-После обучения можно выполнить тестирование приложения. Щелкните **Test** (Тестировать) в меню навигации сверху. Введите тестовое высказывание, например Turn off the lights (Выключить свет) в области интерактивного тестирования и нажмите клавишу ВВОД. 
+После обучения можно выполнить тестирование приложения. Выберите **Тест**. Введите тестовый речевой фрагмент, например `Turn off the lights`, в области интерактивного тестирования и нажмите клавишу ВВОД. 
 
 ```
 Turn off the lights
@@ -82,12 +78,11 @@ Turn off the lights
 
 В нашем примере `Turn off the lights` правильно распознано как намерение с высокой оценкой **HomeAutomation.TurnOff**.
 
-[![Снимок экрана с выделенной фразой на панели тестирования](media/luis-quickstart-new-app/test.png "Screenshot of Test panel with utterance highlighted")](media/luis-quickstart-new-app/test.png)
-
+![Снимок экрана с панелью тестирования, на которой выделено намерение](media/luis-quickstart-new-app/review-test-inspection-pane-in-portal.png)
 
 Выберите **Inspect** (Проверить), чтобы просмотреть дополнительные сведения о прогнозе.
 
-![Снимок экрана с панелью тестирования, на которой выделено намерение](media/luis-quickstart-new-app/review-test-inspection-pane-in-portal.png)
+![Снимок экрана: панель тестирования со сведениями о проверке](media/luis-quickstart-new-app/test.png)
 
 Снова щелкните **Test** (Тестировать), чтобы свернуть панель тестирования. 
 
@@ -95,75 +90,96 @@ Turn off the lights
 
 ## <a name="publish-the-app-to-get-the-endpoint-url"></a>Публикация приложения для получения URL-адреса конечной точки
 
-[!INCLUDE [LUIS How to Publish steps](../../../includes/cognitive-services-luis-tutorial-how-to-publish.md)]
+[!INCLUDE [LUIS How to Publish steps](./includes/howto-publish.md)]
 
-## <a name="query-the-v2-api-prediction-endpoint"></a>Запрос конечной точки прогнозирования API V2
+<a name="query-the-v2-api-prediction-endpoint"></a>
 
-1. [!INCLUDE [LUIS How to get endpoint first step](../../../includes/cognitive-services-luis-tutorial-how-to-get-endpoint.md)] 
+## <a name="query-the-v3-api-prediction-endpoint"></a>Запрос конечной точки прогнозирования API V3
 
-1. Перейдите в конец URL-адреса, введите `turn off the living room light` и нажмите клавишу ВВОД. 
+[!INCLUDE [LUIS How to get endpoint first step](./includes/v3-prediction-endpoint.md)] 
 
-    #### <a name="v2-prediction-endpointtabv2"></a>[Конечная точка прогнозирования V2](#tab/V2)
+1. В адресной строке браузера для строки запроса проверьте, указаны ли в URL-адресе следующие строки имени и значения. Если они отсутствуют в строке запроса, добавьте их:
 
-    `https://<region>.api.cognitive.microsoft.com/luis/**v2.0**/apps/<appID>?subscription-key=<YOUR_KEY>&**q=<user-utterance-text>**`
+    |Пара "имя — значение"|
+    |--|
+    |`verbose=true`|
+    |`show-all-intents=true`|
 
-    Браузер отображает ответ JSON от **API V2** для конечной точки HTTP.
-
-    ```json
-    {
-      "query": "turn off the lights",
-      "topScoringIntent": {
-        "intent": "HomeAutomation.TurnOff",
-        "score": 0.995867
-      },
-      "entities": [
-        {
-          "entity": "lights",
-          "type": "HomeAutomation.DeviceType",
-          "startIndex": 13,
-          "endIndex": 18,
-          "resolution": {
-            "values": [
-              "light"
-            ]
-          }
-        }
-      ]
-    }
-    ```
-    
-    #### <a name="v3-prediction-endpointtabv3"></a>[Конечная точка прогнозирования V3](#tab/V3)
-
-    Для [запроса API V3](luis-migration-api-v3.md) в браузере измените HTTPS-запрос метода GET, изменив значения в угловых скобках для ваших значений.     
-
-    `https://<region>.api.cognitive.microsoft.com/luis/**v3.0-preview**/apps/<appID>/**slots**/**production**/**predict**?subscription-key=<YOUR_KEY>&**query=<user-utterance-text>**`
+1. В адресной строке браузера перейдите в конец URL-адреса и введите `turn off the living room light` для значения _запроса_, а затем нажмите клавишу ВВОД.
 
     ```json
     {
-        "query": "turn off the lights",
+        "query": "turn off the living room light",
         "prediction": {
-            "normalizedQuery": "turn off the lights",
             "topIntent": "HomeAutomation.TurnOff",
             "intents": {
                 "HomeAutomation.TurnOff": {
-                    "score": 0.99649024
+                    "score": 0.967174649
                 }
             },
             "entities": {
+                "HomeAutomation.Location": [
+                    "living room"
+                ],
+                "HomeAutomation.DeviceName": [
+                    [
+                        "living room light"
+                    ]
+                ],
                 "HomeAutomation.DeviceType": [
                     [
                         "light"
                     ]
-                ]
+                ],
+                "$instance": {
+                    "HomeAutomation.Location": [
+                        {
+                            "type": "HomeAutomation.Location",
+                            "text": "living room",
+                            "startIndex": 13,
+                            "length": 11,
+                            "score": 0.9494325,
+                            "modelTypeId": 1,
+                            "modelType": "Entity Extractor",
+                            "recognitionSources": [
+                                "model"
+                            ]
+                        }
+                    ],
+                    "HomeAutomation.DeviceName": [
+                        {
+                            "type": "HomeAutomation.DeviceName",
+                            "text": "living room light",
+                            "startIndex": 13,
+                            "length": 17,
+                            "modelTypeId": 5,
+                            "modelType": "List Entity Extractor",
+                            "recognitionSources": [
+                                "model"
+                            ]
+                        }
+                    ],
+                    "HomeAutomation.DeviceType": [
+                        {
+                            "type": "HomeAutomation.DeviceType",
+                            "text": "light",
+                            "startIndex": 25,
+                            "length": 5,
+                            "modelTypeId": 5,
+                            "modelType": "List Entity Extractor",
+                            "recognitionSources": [
+                                "model"
+                            ]
+                        }
+                    ]
+                }
             }
         }
     }
     ```
 
-
     Дополнительные сведения о [конечной точке прогнозирования V3](luis-migration-api-v3.md).
     
-    * * * 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

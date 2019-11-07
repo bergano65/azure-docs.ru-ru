@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: tutorial
 ms.date: 08/28/2019
 ms.author: wolfma
-ms.openlocfilehash: cf5bf3dfd7b6a408179bb267156433168e562a8e
-ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
+ms.openlocfilehash: 7f42d5914a2ec7f479a8b3d1df1b8672f318036b
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71326836"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73464626"
 ---
 # <a name="tutorial-recognize-intents-from-speech-using-the-speech-sdk-for-c"></a>Руководство по Распознавание намерений в речи с помощью пакета SDK службы "Речь" для C#
 
@@ -45,11 +45,12 @@ ms.locfileid: "71326836"
 
 Чтобы распознать намерения из речи, LUIS интегрируется в службу "Речь". Подписка на службу "Речь" не требуется.
 
-В LUIS используются два типа ключей.
+В LUIS используется три типа ключей:
 
 |Тип ключа|Назначение|
 |--------|-------|
 |Разработка|Позволяет программно создавать и изменять приложения LUIS.|
+|Ключ для начала работы|Позволяет тестировать приложение LUIS только с помощью текста|
 |Конечная точка |Разрешает доступ к определенному приложению LUIS.|
 
 Для работы с этим руководством требуется тип ключа конечной точки. В этом руководстве используется пример приложения LUIS для системы домашней автоматики, который можно создать, выполнив инструкции в кратком руководстве [Использование предварительно созданного приложения для системы домашней автоматики](https://docs.microsoft.com/azure/cognitive-services/luis/luis-get-started-create-app). Также вместо него можно использовать собственное приложение LUIS.
@@ -179,7 +180,7 @@ result.Properties.GetProperty(PropertyId.LanguageUnderstandingServiceResponse_Js
 
 К другим возможностям можно отнести считывание звукового файла в формате WAV, содержащего речь, подлежащую обработке. Реализация включает создание конфигурации звука, которую можно использовать при создании распознавателя намерений. Файл должен состоять из одного канала (моно) с уровнем дискретизации 16 000 Гц.
 
-Чтобы опробовать эти возможности, удалите или прокомментируйте текст метода и добавьте вместо него следующий код.
+Чтобы опробовать эти возможности, удалите или прокомментируйте текст метода `RecognizeIntentAsync()` и добавьте вместо него следующий код.
 
 [!code-csharp[Intent recognition by using events from a file](~/samples-cognitive-services-speech-sdk/samples/csharp/sharedcontent/console/intent_recognition_samples.cs#intentContinuousRecognitionWithFile)]
 
@@ -195,4 +196,4 @@ result.Properties.GetProperty(PropertyId.LanguageUnderstandingServiceResponse_Js
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Как распознавать речь](quickstart-csharp-dotnetcore-windows.md).
+> [Как распознавать речь](~/articles/cognitive-services/Speech-Service/quickstarts/speech-to-text-from-microphone.md?pivots=programming-language-csharp&tabs=dotnetcore).

@@ -8,16 +8,16 @@ ms.topic: tutorial
 ms.date: 10/03/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: d2eeada500de0f174178234ab92b51bcf16b3502
-ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
+ms.openlocfilehash: 61b4f41a0b36945413e45a357a5ca73ac75ceb98
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72176731"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73480117"
 ---
 # <a name="prepare-on-premises-machines-for-migration-to-azure"></a>Подготовка локальных компьютеров к миграции в Azure
 
-В этой статье описывается подготовка локального и облачного компьютера перед миграцией в Azure с помощью [миграции сервера службы "Миграция Azure"](migrate-services-overview.md#azure-migrate-server-migration).
+В этой статье описывается подготовка локальных компьютеров перед миграцией в Azure с помощью [миграции сервера службы "Миграция Azure"](migrate-services-overview.md#azure-migrate-server-migration-tool).
 
 
 Работая с этой статьей, вы выполните следующие задачи:

@@ -16,12 +16,12 @@ ms.date: 06/27/2019
 author: mlearned
 ms.custom: mvc
 monikerRange: vsts
-ms.openlocfilehash: 4a48b5c413f6dfb58a1ba3f896ded49250cde306
-ms.sourcegitcommit: e0a1a9e4a5c92d57deb168580e8aa1306bd94723
+ms.openlocfilehash: 15ac201a078864717d8e0079801507cf5fc0fe3b
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72286287"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73481119"
 ---
 # <a name="tutorial-create-a-cicd-pipeline-for-your-existing-code-by-using-azure-devops-projects"></a>Руководство по Создание конвейера CI/CD для существующего кода с помощью Azure DevOps Projects
 
@@ -48,7 +48,11 @@ Azure DevOps Projects создает конвейер CI/CD в Azure Pipelines. 
 
 1. Войдите на [портале Azure](https://portal.azure.com).
 
-2. В области слева на панели навигации щелкните **+ Создать ресурс** и в поле поиска введите **DevOps Projects**, а затем нажмите кнопку **Создать**.
+2. В меню портала Azure выберите **Создать ресурс**.
+
+   ![Меню портала Azure: "Создать ресурс"](_img/azure-devops-project-github/createaresource.png)
+
+3. Выберите **DevOps > Проект DevOps**.
 
    ![Панель мониторинга DevOps Projects](_img/azure-devops-project-github/azuredashboard.png)
 
@@ -56,7 +60,7 @@ Azure DevOps Projects создает конвейер CI/CD в Azure Pipelines. 
 
 ## <a name="configure-access-to-your-github-repo-and-choose-a-framework"></a>настройка доступа к репозиторию GitHub и выбор платформы;
 
-1. Выберите **GitHub** или внешний репозиторий кода **Git**. Для работы с этим учебником выберите **GitHub**. В первый раз вам может потребоваться пройти проверку подлинности в GitHub, чтобы разрешить Azure доступ к репозиторию GitHub.
+1. Выберите **GitHub** или внешний репозиторий кода **Git**. Для работы с этим учебником выберите **GitHub**. В первый раз вам может потребоваться пройти аутентификацию в GitHub, чтобы разрешить Azure доступ к репозиторию GitHub.
 
 2. Выберите **репозиторий** и **ветку**, а затем нажмите кнопку **Далее**.
 

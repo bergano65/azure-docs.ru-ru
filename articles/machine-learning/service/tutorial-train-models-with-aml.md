@@ -8,20 +8,21 @@ ms.subservice: core
 ms.topic: tutorial
 author: sdgilley
 ms.author: sgilley
-ms.date: 08/20/2019
+ms.date: 11/04/2019
 ms.custom: seodec18
-ms.openlocfilehash: 8f3277d76709fe14a5eaa28cc0f562d95c1e4004
-ms.sourcegitcommit: 2ed6e731ffc614f1691f1578ed26a67de46ed9c2
+ms.openlocfilehash: dd215e754b7e72c9ac424a53015955332068558e
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71128947"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73493568"
 ---
 # <a name="tutorial-train-image-classification-models-with-mnist-data-and-scikit-learn-using-azure-machine-learning"></a>Руководство по Обучение моделей классификации изображений с помощью данных MNIST и scikit-learn в Службе машинного обучения Azure
+[!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
 В этом руководстве необходимо обучить модель машинного обучения на удаленных вычислительных ресурсах. Вы будете использовать рабочий процесс обучения и развертывания для Машинного обучения Azure в Jupyter Notebook для Python.  Затем можно использовать записную книжку как шаблон для обучения собственной модели машинного обучения со своими данными. Это руководство представляет собой **первую часть серии, состоящей из двух частей**.  
 
-В руководстве показано, как обучить простую модель регрессии для функции логистики с помощью набора данных [MNIST](http://yann.lecun.com/exdb/mnist/) и [Scikit-learn](https://scikit-learn.org) в Машинном обучении Azure. MNIST — это популярный набор данных, состоящий из 70 000 изображений в оттенках серого. Каждое изображение содержит рукописную цифру размером 28 x 28 пикселей, то есть числа от нуля до девяти. Целью является создание многоклассового классификатора для идентификации цифры, которую отображает указанное изображение.
+В руководстве показано, как обучить простую модель регрессии для функции логистики с помощью набора данных [MNIST](http://yann.lecun.com/exdb/mnist/) и [Scikit-learn](https://scikit-learn.org) в Машинном обучении Azure. MNIST — это популярный набор данных, состоящий из 70 000 изображений в оттенках серого. Каждое изображение содержит рукописную цифру размером 28 x 28 пикселей, то есть числа от нуля до девяти. Целью является создание многоклассового классификатора для идентификации цифры, которую отображает данное изображение.
 
 Узнайте, как выполнять следующие действия:
 
@@ -36,19 +37,25 @@ ms.locfileid: "71128947"
 Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) уже сегодня.
 
 >[!NOTE]
-> Код в этой статье протестирован с помощью [пакета SDK для Машинного обучения Azure](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py) версии 1.0.57.
+> Код в этой статье протестирован с помощью [пакета SDK для Машинного обучения Azure](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py) версии 1.0.65.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Пройдите [руководство по началу работы по созданию эксперимента Машинного обучения](tutorial-1st-experiment-sdk-setup.md), чтобы выполнить такие задачи:
     * Создание рабочей области
-    * создать облачный сервер записных книжек;
-    * запустить панель мониторинга записной книжки Jupyter.
+    * выполните клонирование записной книжки с учебниками в папку в рабочей области;
+    * создание облачной вычислительной операции.
 
-* После запуска веб-страницы записной книжки Jupyter откройте записную книжку **tutorials/img-classification-part1-training.ipynb**.
+* Откройте записную книжку **img-classification-part1-deploy.ipynb** в клонированной папке **tutorials**. 
 
-Это руководство и дополняющий его файл **utils.py** также доступны на сайте [GitHub](https://github.com/Azure/MachineLearningNotebooks/tree/master/tutorials), если вы хотите использовать их в собственной [локальной среде](how-to-configure-environment.md#local).  Убедитесь, что вы установили `matplotlib` и `scikit-learn` в своей среде.
 
+Это руководство и дополняющий его файл **utils.py** также доступны на сайте [GitHub](https://github.com/Azure/MachineLearningNotebooks/tree/master/tutorials), если вы хотите использовать их в собственной [локальной среде](how-to-configure-environment.md#local). Выполните `pip install azureml-sdk[notebooks] azureml-opendatasets matplotlib`, чтобы установить зависимости для этого руководства.
+
+> [!Important]
+> Оставшаяся часть этой статьи содержит то же содержимое, что и записная книжка.  
+>
+> Перейдите в записную книжку Jupyter, чтобы вы могли просматривать его во время выполнения кода. 
+> Чтобы выполнить одну ячейку кода в записной книжке, щелкните эту ячейку и нажмите клавиши **SHIFT+ВВОД**. Или запустите всю записную книжку, выбрав **Запустить все** в верхней части панели инструментов.
 
 ## <a name="start"></a>Настройка среды разработки
 
@@ -143,34 +150,34 @@ else:
 
 ## <a name="explore-data"></a>Изучение данных
 
-Прежде чем начинать обучение модели, необходимо понимать, какие данные используются для ее обучения. Вам необходимо также скопировать данные в используемое облако, чтобы к ним можно было обращаться из облачной среды обучения. В этом разделе описано, как выполнять следующие действия:
+Прежде чем начинать обучение модели, необходимо понимать, какие данные используются для ее обучения. Из этого раздела вы узнаете, как выполнять следующие действия.
 
 * Скачивание набора данных MNIST.
 * Отображение примеров изображений.
-* Отправьте данные в рабочую область в облаке.
 
 ### <a name="download-the-mnist-dataset"></a>Скачивание набора данных MNIST
 
-Скачайте набор данных MNIST и сохраните файлы в локальном каталоге `data`. Загрузите изображения и метки для обучения и тестирования.
+Используйте Открытые наборы данных Azure для получения необработанных файлов данных MNIST. [Открытые наборы данных Azure](https://docs.microsoft.com/azure/open-datasets/overview-what-are-open-datasets) — это проверенные общедоступные наборы данных, которые можно использовать для добавления функций конкретных сценариев в решения машинного обучения для создания более точных моделей. Каждый набор данных использует соответствующий класс (в данном случае — `MNIST`) для получения данных различными способами.
+
+Этот код получает данные в виде объекта `FileDataset`, который является подклассом `Dataset`. `FileDataset` ссылается на один или несколько файлов в любом формате, размещенных в хранилищах данных или доступных по общедоступным URL-адресам. С помощью этого класса вы можете скачивать их или подключать к вычислительной среде, создав ссылку на расположение источника данных. Кроме того, вы регистрируете набор данных в своей рабочей области, чтобы упростить получение данных во время обучения.
+
+Чтобы узнать больше о наборах данных и их использовании в пакете SDK, ознакомьтесь с этим [практическим руководством](how-to-create-register-datasets.md).
 
 ```python
-import urllib.request
-import os
+from azureml.core import Dataset
+from azureml.opendatasets import MNIST
 
 data_folder = os.path.join(os.getcwd(), 'data')
 os.makedirs(data_folder, exist_ok=True)
 
-urllib.request.urlretrieve('http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz',
-                           filename=os.path.join(data_folder, 'train-images.gz'))
-urllib.request.urlretrieve('http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz',
-                           filename=os.path.join(data_folder, 'train-labels.gz'))
-urllib.request.urlretrieve('http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz',
-                           filename=os.path.join(data_folder, 'test-images.gz'))
-urllib.request.urlretrieve('http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz',
-                           filename=os.path.join(data_folder, 'test-labels.gz'))
-```
+mnist_file_dataset = MNIST.get_file_dataset()
+mnist_file_dataset.download(data_folder, overwrite=True)
 
-Вы увидите примерно такие выходные данные: ```('./data/test-labels.gz', <http.client.HTTPMessage at 0x7f40864c77b8>)```.
+mnist_file_dataset = mnist_file_dataset.register(workspace=ws,
+                                                 name='mnist_opendataset',
+                                                 description='training and test dataset',
+                                                 create_new_version=True)
+```
 
 ### <a name="display-some-sample-images"></a>Отображение некоторых примеров изображений
 
@@ -181,13 +188,10 @@ urllib.request.urlretrieve('http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ub
 from utils import load_data
 
 # note we also shrink the intensity values (X) from 0-255 to 0-1. This helps the model converge faster.
-X_train = load_data(os.path.join(
-    data_folder, 'train-images.gz'), False) / 255.0
-X_test = load_data(os.path.join(data_folder, 'test-images.gz'), False) / 255.0
-y_train = load_data(os.path.join(
-    data_folder, 'train-labels.gz'), True).reshape(-1)
-y_test = load_data(os.path.join(
-    data_folder, 'test-labels.gz'), True).reshape(-1)
+X_train = load_data(os.path.join(data_folder, "train-images-idx3-ubyte.gz"), False) / 255.0
+X_test = load_data(os.path.join(data_folder, "t10k-images-idx3-ubyte.gz"), False) / 255.0
+y_train = load_data(os.path.join(data_folder, "train-labels-idx1-ubyte.gz"), True).reshape(-1)
+y_test = load_data(os.path.join(data_folder, "t10k-labels-idx1-ubyte.gz"), True).reshape(-1)
 
 # now let's show some randomly chosen images from the traininng set.
 count = 0
@@ -209,33 +213,6 @@ plt.show()
 
 Теперь у вас есть представление о том, как выглядят эти изображения, и прогноз ожидаемого результата.
 
-### <a name="create-a-filedataset"></a>Создание FileDataset
-
-Объект `FileDataset` ссылается на один или несколько файлов в хранилище данных рабочей области или общедоступных URL-адресов. Это могут быть файлы любого формата, и с помощью этого класса вы сможете скачивать их или подключать к вычислительной среде. Создавая `FileDataset`, вы одновременно создаете ссылку на расположение источника данных. Любые преобразования, примененные к такому набору данных, будут сохранены и в исходном наборе данных. Данные хранятся только в исходном расположении, а значит не потребуется лишних расходов на хранение. Дополнительные сведения см. в соответствующем [практическом руководстве](https://docs.microsoft.com/en-us/azure/machine-learning/service/how-to-create-register-datasets) по пакету `Dataset`.
-
-```python
-from azureml.core.dataset import Dataset
-
-web_paths = [
-            'http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz',
-            'http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz',
-            'http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz',
-            'http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz'
-            ]
-dataset = Dataset.File.from_files(path=web_paths)
-```
-
-Метод `register()` позволяет зарегистрировать набор данных в рабочей области, чтобы затем предоставлять его другими пользователям, повторно использовать в нескольких экспериментах и (или) использовать именованную ссылку на него в скрипте обучения.
-
-```python
-dataset = dataset.register(workspace=ws,
-                           name='mnist dataset',
-                           description='training and test dataset',
-                           create_new_version=True)
-```
-
-Теперь у вас есть все необходимое для начала обучения модели.
-
 ## <a name="train-on-a-remote-cluster"></a>Обучение на удаленном кластере
 
 Для выполнения этой задачи отправьте задание в кластер удаленного обучения, который мы настроили ранее.  Чтобы отправить задание, нужно:
@@ -249,7 +226,6 @@ dataset = dataset.register(workspace=ws,
 Создайте каталог для доставки необходимого кода с компьютера на удаленный ресурс.
 
 ```python
-import os
 script_folder = os.path.join(os.getcwd(), "sklearn-mnist")
 os.makedirs(script_folder, exist_ok=True)
 ```
@@ -351,7 +327,7 @@ env.python.conda_dependencies = cd
 from azureml.train.sklearn import SKLearn
 
 script_params = {
-    '--data-folder': dataset.as_named_input('mnist').as_mount(),
+    '--data-folder': mnist_file_dataset.as_named_input('mnist_opendataset').as_mount(),
     '--regularization': 0.5
 }
 

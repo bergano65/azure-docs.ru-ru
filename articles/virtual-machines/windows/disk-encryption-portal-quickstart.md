@@ -6,12 +6,12 @@ ms.author: mbaldwin
 ms.service: security
 ms.topic: quickstart
 ms.date: 10/02/2019
-ms.openlocfilehash: bde0c483eacec7fb8e076530bba594eb33a32a12
-ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
+ms.openlocfilehash: 2590b9851b654990795f111e76f6cc5ea6c96723
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72553438"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73491945"
 ---
 # <a name="quickstart-create-and-encrypt-a-windows-virtual-machine-with-the-azure-portal"></a>Краткое руководство. Создание и шифрование виртуальной машины Windows на портале Azure
 
@@ -56,7 +56,7 @@ ms.locfileid: "72553438"
 1. На странице "Создать" в разделе "Популярные" выберите **Windows Server 2016 Datacenter**.
 1. На вкладке **Basics** (Основные) в разделе **Project Details** (Сведения о проекте) убедитесь, что выбрана правильная подписка.
 1. Для **Группы ресурсов** выберите группу ресурсов, созданную при создании хранилища ключей выше (например, **myResourceGroup**)
-1. В поле **Virtual Machine Name** (Имя виртуальной машины) введите *MyVM* и выберите 
+1. В поле **Имя виртуальной машины** введите *MyVM*.
 1. Для параметра **регион** выберите тот же регион, который использовался при создании хранилища ключей выше (например, **Восточная часть США**).
 1. Убедитесь, что для параметра **Размер** выбрано значение *Standard D2s v3*.
 1. В разделе **Учетная запись администратора** выберите **Пароль**. Введите имя пользователя и пароль.

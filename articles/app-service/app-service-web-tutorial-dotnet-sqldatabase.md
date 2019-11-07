@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 06/25/2018
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: f010e7564f097f28269070d85e2895e73f454054
-ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
+ms.openlocfilehash: 2f815d99c32c2dcaa1fd35d00110b27a90f53ab4
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65415575"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73471193"
 ---
 # <a name="tutorial-build-an-aspnet-app-in-azure-with-sql-database"></a>Руководство. Создание приложения ASP.NET в Azure с подключением к базе данных SQL
 
@@ -392,11 +392,11 @@ Application: 2017-04-06T23:30:54  PID[8132] Verbose     GET /Todos/Index
 
 ## <a name="manage-your-azure-app"></a>Управление приложением Azure
 
-Перейдите на [портал Azure](https://portal.azure.com), чтобы увидеть созданное приложение. 
+Перейдите на [портал Azure](https://portal.azure.com) для управления веб-приложением. Найдите и выберите **Службы приложений**. 
 
+![Поиск Служб приложений Azure](./media/app-service-web-tutorial-dotnet-sqldatabase/azure-portal-navigate-app-services.png)
 
-
-В меню слева выберите **Служба приложений**, а затем щелкните имя своего приложения Azure.
+Выберите имя приложения Azure.
 
 ![Переход к приложению Azure на портале](./media/app-service-web-tutorial-dotnet-sqldatabase/access-portal.png)
 

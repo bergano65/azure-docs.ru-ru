@@ -6,12 +6,12 @@ ms.author: dacoulte
 ms.date: 10/21/2019
 ms.topic: overview
 ms.service: resource-graph
-ms.openlocfilehash: 45853e3c8986cec58f27d785af31f174aff21b2e
-ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
+ms.openlocfilehash: c113719d304aa4ed9c13df1fe0264d22aacb5002
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72755890"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73499138"
 ---
 # <a name="overview-of-the-azure-resource-graph-service"></a>Обзор службы Azure Resource Graph
 
@@ -92,7 +92,9 @@ Resource Graph поддерживает Azure CLI, Azure PowerShell, пакет 
 
 ## <a name="next-steps"></a>Дополнительная информация
 
+- Выполните свой первый запрос на [портале Azure](first-query-portal.md).
 - Выполните первый запрос с помощью [Azure CLI](first-query-azurecli.md).
 - Выполните первый запрос с помощью [Azure PowerShell](first-query-powershell.md).
+- Получите более подробную информацию о [языке запросов](./concepts/query-language.md).
 - Начните с [начальных запросов](./samples/starter.md).
 - Перейдите к [расширенным запросам](./samples/advanced.md).

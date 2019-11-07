@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: tutorial
 ms.date: 09/27/2019
 ms.author: victorh
-ms.openlocfilehash: 53a4fca0c05cd54bae6d01d07e72e1033a247a05
-ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
+ms.openlocfilehash: afdb5d256c33042655c122e9c84a4ab07c94f14c
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71327365"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73470032"
 ---
 # <a name="tutorial-configure-an-application-gateway-with-ssl-termination-using-the-azure-portal"></a>Руководство по Настройка шлюза приложений с завершением SSL-запросов с помощью портала Azure
 
@@ -62,7 +62,7 @@ E1E81C23B3AD33F9B4D1717B20AB65DBB91AC630  CN=www.contoso.com
 > Не используйте специальные символы в пароле PFX-файла. Поддерживаются только буквенно-цифровые символы.
 
 ```powershell
-$pwd = ConvertTo-SecureString -String "Azure123456!" -Force -AsPlainText
+$pwd = ConvertTo-SecureString -String "Azure123456" -Force -AsPlainText
 Export-PfxCertificate `
   -cert cert:\localMachine\my\E1E81C23B3AD33F9B4D1717B20AB65DBB91AC630 `
   -FilePath c:\appgwcert.pfx `
@@ -150,7 +150,7 @@ Export-PfxCertificate `
 
    - **PFX-файл сертификата**. Найдите и выберите файл c:\appgwcert.pfx, созданный ранее.
    - **Имя сертификата**. Введите *mycert1* для имени сертификата.
-   - **Пароль**. Введите *Azure123456!* . в качестве пароля.
+   - **Пароль**. Введите пароль *Azure123456*.
   
         Примите значения по умолчанию для других параметров на вкладке **Прослушиватель**, а затем выберите вкладку **Серверные целевые объекты**, чтобы настроить остальную часть правила маршрутизации.
 
@@ -194,7 +194,7 @@ Export-PfxCertificate `
     - **Группа ресурсов.** Выберите **myResourceGroupAG** для имени группы ресурсов.
     - **Имя виртуальной машины**. Введите *myVM* для имени виртуальной машины.
     - **Имя пользователя**. Введите *azureuser* для имени администратора.
-    - **Пароль**. Введите *Azure123456!* для пароля администратора.
+    - **Пароль**. Введите пароль администратора — *Azure123456*.
 4. Примите остальные значения по умолчанию и щелкните **Далее: Диски**.  
 5. Примите значения по умолчанию на вкладке **Диски**, а затем выберите **Далее: Сети**.
 6. На вкладке **Сети** убедитесь, что для параметра **Виртуальная сеть** выбрано значение **myVNet**, а для параметра **Подсеть** — значение **myBackendSubnet**. Примите остальные значения по умолчанию и щелкните **Далее: управление**.
