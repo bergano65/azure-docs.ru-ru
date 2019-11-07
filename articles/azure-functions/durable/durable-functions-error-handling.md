@@ -7,14 +7,14 @@ manager: jeconnoc
 keywords: ''
 ms.service: azure-functions
 ms.topic: conceptual
-ms.date: 12/07/2018
+ms.date: 11/02/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 5a3cfb78fe97b52abb1406dff64132fc1b3fb985
-ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
+ms.openlocfilehash: adc23cad4ad7c55ce81096b1550520c496f744c1
+ms.sourcegitcommit: b2fb32ae73b12cf2d180e6e4ffffa13a31aa4c6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70933428"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73614873"
 ---
 # <a name="handling-errors-in-durable-functions-azure-functions"></a>Обработка ошибок в устойчивых функциях (Функции Azure)
 
@@ -22,7 +22,7 @@ ms.locfileid: "70933428"
 
 ## <a name="errors-in-activity-functions"></a>Ошибки в функциях действий
 
-Любое исключение, которое вызывается в функции действия, передается обратно в функцию Orchestrator и выдается `FunctionFailedException`как. Вы можете написать код для обработки и компенсации ошибок, соответствующий вашим потребностям в функции оркестратора.
+Любое исключение, которое вызывается в функции действия, передается обратно в функцию Orchestrator и выдается как `FunctionFailedException`. Вы можете написать код для обработки и компенсации ошибок, соответствующий вашим потребностям в функции оркестратора.
 
 Например, рассмотрим следующую функцию оркестратора, которая перемещает средства с одного счета на другой:
 
@@ -30,7 +30,7 @@ ms.locfileid: "70933428"
 
 ```csharp
 [FunctionName("TransferFunds")]
-public static async Task Run([OrchestrationTrigger] DurableOrchestrationContext context)
+public static async Task Run([OrchestrationTrigger] IDurableOrchestrationContext context)
 {
     var transferDetails = ctx.GetInput<TransferOperation>();
 
@@ -69,7 +69,7 @@ public static async Task Run([OrchestrationTrigger] DurableOrchestrationContext 
 ```csharp
 #r "Microsoft.Azure.WebJobs.Extensions.DurableTask"
 
-public static async Task Run(DurableOrchestrationContext context)
+public static async Task Run(IDurableOrchestrationContext context)
 {
     var transferDetails = ctx.GetInput<TransferOperation>();
 
@@ -103,7 +103,10 @@ public static async Task Run(DurableOrchestrationContext context)
 }
 ```
 
-### <a name="javascript-functions-2x-only"></a>JavaScript (только для решения "Функции" версии 2.x)
+> [!NOTE]
+> Предыдущие C# примеры предназначены для устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать `DurableOrchestrationContext` вместо `IDurableOrchestrationContext`. Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
+
+### <a name="javascript-functions-20-only"></a>JavaScript (только функции 2,0)
 
 ```javascript
 const df = require("durable-functions");
@@ -149,7 +152,7 @@ module.exports = df.orchestrator(function*(context) {
 
 ```csharp
 [FunctionName("TimerOrchestratorWithRetry")]
-public static async Task Run([OrchestrationTrigger] DurableOrchestrationContext context)
+public static async Task Run([OrchestrationTrigger] IDurableOrchestrationContext context)
 {
     var retryOptions = new RetryOptions(
         firstRetryInterval: TimeSpan.FromSeconds(5),
@@ -164,7 +167,7 @@ public static async Task Run([OrchestrationTrigger] DurableOrchestrationContext 
 ### <a name="c-script"></a>Скрипт C#
 
 ```csharp
-public static async Task Run(DurableOrchestrationContext context)
+public static async Task Run(IDurableOrchestrationContext context)
 {
     var retryOptions = new RetryOptions(
         firstRetryInterval: TimeSpan.FromSeconds(5),
@@ -176,7 +179,10 @@ public static async Task Run(DurableOrchestrationContext context)
 }
 ```
 
-### <a name="javascript-functions-2x-only"></a>JavaScript (только для решения "Функции" версии 2.x)
+> [!NOTE]
+> Предыдущие C# примеры предназначены для устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать `DurableOrchestrationContext` вместо `IDurableOrchestrationContext`. Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
+
+### <a name="javascript-functions-20-only"></a>JavaScript (только функции 2,0)
 
 ```javascript
 const df = require("durable-functions");
@@ -190,16 +196,16 @@ module.exports = df.orchestrator(function*(context) {
 });
 ```
 
-API `CallActivityWithRetryAsync` (.NET) или `callActivityWithRetry` (JavaScript) принимает параметр `RetryOptions`. В вызовах суборкестрации через API `CallSubOrchestratorWithRetryAsync` (.NET) или `callSubOrchestratorWithRetry` (JavaScript) можно использовать эти же политики повтора.
+API `CallActivityWithRetryAsync` (.NET) или `callActivityWithRetry` (JavaScript) принимает параметр `RetryOptions`. Вызовы подоркестрации с помощью API `CallSubOrchestratorWithRetryAsync` (.NET) или `callSubOrchestratorWithRetry` (JavaScript) могут использовать те же политики повтора.
 
 Существует несколько вариантов настройки политики автоматического повтора.
 
-* **Max number of attempts** (Максимальное число попыток). Максимальное число повторных попыток.
-* **First retry interval** (Интервал до первого повтора). Время ожидания перед первой повторной попыткой.
-* **Backoff coefficient** (Коэффициент отсрочки). Коэффициент, позволяющий определить степень увеличения отсрочки. По умолчанию равен 1.
-* **Max retry interval** (Максимальный интервал повтора). Максимальное время ожидания между повторными попытками.
-* **Retry timeout** (Время ожидания повтора). Максимальное время, отведенное на выполнение повторных попыток. Поведение по умолчанию — бесконечное повторение.
-* **Handle** (Обработка). Можно указать определяемый пользователем обратный вызов, чтобы определить, следует ли повторить попытку выполнения функции.
+* **Max number of attempts** (Максимальное число попыток): максимальное число повторных попыток.
+* **First retry interval** (Интервал до первого повтора): время ожидания перед первой повторной попыткой.
+* **Backoff coefficient** (Коэффициент отсрочки): коэффициент, позволяющий определить степень увеличения отсрочки. По умолчанию равен 1.
+* **Max retry interval** (Максимальный интервал повтора): максимальное время ожидания между повторными попытками.
+* **Retry timeout** (Время ожидания повтора): максимальное время, отведенное на выполнение повторных попыток. Поведение по умолчанию — бесконечное повторение.
+* **Handle**: можно указать определяемый пользователем обратный вызов, чтобы определить, следует ли повторить попытку выполнения функции.
 
 ## <a name="function-timeouts"></a>Время ожидания функций
 
@@ -209,7 +215,7 @@ API `CallActivityWithRetryAsync` (.NET) или `callActivityWithRetry` (JavaScri
 
 ```csharp
 [FunctionName("TimerOrchestrator")]
-public static async Task<bool> Run([OrchestrationTrigger] DurableOrchestrationContext context)
+public static async Task<bool> Run([OrchestrationTrigger] IDurableOrchestrationContext context)
 {
     TimeSpan timeout = TimeSpan.FromSeconds(30);
     DateTime deadline = context.CurrentUtcDateTime.Add(timeout);
@@ -238,7 +244,7 @@ public static async Task<bool> Run([OrchestrationTrigger] DurableOrchestrationCo
 ### <a name="c-script"></a>Скрипт C#
 
 ```csharp
-public static async Task<bool> Run(DurableOrchestrationContext context)
+public static async Task<bool> Run(IDurableOrchestrationContext context)
 {
     TimeSpan timeout = TimeSpan.FromSeconds(30);
     DateTime deadline = context.CurrentUtcDateTime.Add(timeout);
@@ -264,7 +270,10 @@ public static async Task<bool> Run(DurableOrchestrationContext context)
 }
 ```
 
-### <a name="javascript-functions-2x-only"></a>JavaScript (только для решения "Функции" версии 2.x)
+> [!NOTE]
+> Предыдущие C# примеры предназначены для устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать `DurableOrchestrationContext` вместо `IDurableOrchestrationContext`. Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
+
+### <a name="javascript-functions-20-only"></a>JavaScript (только функции 2,0)
 
 ```javascript
 const df = require("durable-functions");
@@ -295,7 +304,7 @@ module.exports = df.orchestrator(function*(context) {
 
 Если функция оркестратора завершается сбоем с необработанным исключением, сведения об этом исключении регистрируются в журнале, и экземпляр завершает работу с состоянием `Failed`.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Сведения об оркестрации нескончаемые](durable-functions-eternal-orchestrations.md)

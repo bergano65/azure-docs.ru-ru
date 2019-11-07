@@ -1,5 +1,5 @@
 ---
-title: Классы ресурсов для управления рабочей нагрузкой в хранилище данных SQL Azure | Документация Майкрософт
+title: Классы ресурсов для управления рабочими нагрузками
 description: Руководство по использованию классов ресурсов для управления параллелизмом и вычислительными ресурсами для запросов в хранилище данных SQL Azure.
 services: sql-data-warehouse
 author: ronortloff
@@ -7,15 +7,16 @@ manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: workload-management
-ms.date: 10/04/2019
+ms.date: 11/04/2019
 ms.author: rortloff
 ms.reviewer: jrasnick
-ms.openlocfilehash: 5ef95faf162a6774e42b7cf258515757fdc9c7eb
-ms.sourcegitcommit: f9e81b39693206b824e40d7657d0466246aadd6e
+ms.custom: seo-lt-2019
+ms.openlocfilehash: 558a6e3faa207e15000657a17bec99a7b1ac99e4
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72035081"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73685929"
 ---
 # <a name="workload-management-with-resource-classes-in-azure-sql-data-warehouse"></a>Управление рабочими нагрузками в хранилище данных SQL Azure с помощью классов ресурсов
 
@@ -35,7 +36,7 @@ ms.locfileid: "72035081"
 
 Классы ресурсов используют слоты выдачи для оценки потребления ресурсов.  [Слоты выдачи](#concurrency-slots) описаны в этой статье далее.
 
-- Сведения об использовании ресурсов для классов ресурсов см. в статье [Ограничения параллелизма и памяти для хранилища данных SQL Azure](memory-and-concurrency-limits.md#concurrency-maximums).
+- Сведения об использовании ресурсов для классов ресурсов см. в разделе [ограничения памяти и параллелизма] память-параллелизм — limits.md).
 - Чтобы настроить класс ресурсов, вы можете выполнить запрос под именем другого пользователя или [изменить членство в классе ресурсов текущего пользователя](#change-a-users-resource-class).
 
 ### <a name="static-resource-classes"></a>Статические классы ресурсов
@@ -70,8 +71,8 @@ ms.locfileid: "72035081"
 |:--------------:|:-----------------:|:----------------------:|
 | smallrc        | 3 %                | 32                     |
 | mediumrc       | 10 %               | 10                     |
-| largerc        | 22 %               | 4                      |
-| xlargerc       | 70%               | 1                      |
+| largerc        | 22 %               | 4\.                      |
+| xlargerc       | 70 %               | 1                      |
 
 ### <a name="default-resource-class"></a>Класс ресурсов по умолчанию
 
@@ -112,7 +113,7 @@ ms.locfileid: "72035081"
 Следующие инструкции исключены из классов ресурсов и всегда выполняются в классе ресурса smallrc:
 
 - CREATE или DROP TABLE;
-- ALTER TABLE ... SWITCH, SPLIT или MERGE PARTITION;
+- ИЗМЕНИТЬ ТАБЛИЦУ... Переключение, РАЗБИЕНИе или объединение СЕКЦИй
 - ALTER INDEX DISABLE
 - DROP INDEX
 - CREATE, UPDATE или DROP STATISTICS;
@@ -331,7 +332,7 @@ SELECT 'DW100c' AS DWU,4 AS max_queries,4 AS max_slots,1 AS slots_used_
     SELECT 'DW30000c', 128, 1200, 36, 120, 264, 840, 1, 2, 4, 8, 16, 32, 64, 128 
 )
 -- Creating workload mapping to their corresponding slot consumption and default memory grant.
-,map
+,map  
 AS
 (
   SELECT CONVERT(varchar(20), 'SloDWGroupSmall') AS wg_name, slots_used_smallrc AS slots_used FROM alloc WHERE DWU = @DWU
@@ -580,7 +581,7 @@ SELECT  CASE
 GO
 ```
 
-## <a name="next-step"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об управлении пользователями и безопасностью базы данных см. в статье [Защита базы данных в хранилище данных SQL][Secure a database in SQL Data Warehouse]. Дополнительные сведения о повышении качества кластеризованных индексов columnstore за счет повышения класса ресурсов см. в статье [Максимальное повышение качества группы строк для индекса columnstore](sql-data-warehouse-memory-optimizations-for-columnstore-compression.md).
 

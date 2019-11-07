@@ -1,5 +1,5 @@
 ---
-title: Преобразование данных с помощью Databricks Jar (Azure) | Документы Майкрософт
+title: Преобразование данных с помощью JAR-файла в Azure
 description: Сведения об обработке или преобразовании данных с помощью Databricks Jar.
 services: data-factory
 documentationcenter: ''
@@ -12,12 +12,12 @@ ms.date: 03/15/2018
 author: nabhishek
 ms.author: abnarain
 manager: craigg
-ms.openlocfilehash: 924367c6bb85b64bafbcb8feb546eeb490e07a34
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: 982f00b5de9fd3e84233e5fe3b68e22fa6f7fe2a
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70812791"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73683958"
 ---
 # <a name="transform-data-by-running-a-jar-activity-in-azure-databricks"></a>Преобразование данных с помощью выполнения действий Jar в Azure Databricks
 
@@ -56,14 +56,14 @@ ms.locfileid: "70812791"
 
 В следующей таблице приведено описание свойств, используемых в определении JSON.
 
-|Свойство|Описание|Обязательное значение|
+|Свойство|Description (Описание)|Обязательно|
 |:--|---|:-:|
 |name|Имя действия в конвейере.|Да|
 |description|Описание действия.|Нет|
 |type|Тип действия Jar в Databricks — DatabricksSparkJar.|Да|
-|linkedServiceName|Имя связанной службы Databricks, в которой выполняется действие Jar. Дополнительные сведения об этой связанной службе см. в статье  [Вычислительные среды, поддерживаемые фабрикой данных Azure](compute-linked-services.md) .|Да|
+|linkedServiceName (имя связанной службы)|Имя связанной службы Databricks, в которой выполняется действие Jar. Дополнительные сведения об этой связанной службе см. в статье  [Вычислительные среды, поддерживаемые фабрикой данных Azure](compute-linked-services.md) .|Да|
 |mainClassName|Полное имя класса, содержащего метод main, который будет выполнен. Этот класс должен содержаться в файле JAR, предоставляемом в виде библиотеки.|Да|
-|параметры|Параметры, которые будут переданы в метод main.  Массив строк.|Нет|
+|parameters|Параметры, которые будут переданы в метод main.  Массив строк.|Нет|
 |libraries|Список библиотек, которые должны быть установлены на кластере, на котором будет выполнено задание. Массив объектов <строка, объект>|Да (по крайней мере один метод, содержащий mainClassName)|
 
 > [!NOTE]

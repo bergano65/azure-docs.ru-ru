@@ -1,5 +1,5 @@
 ---
-title: Маршрутизация, зависящая от данных, с использованием службы "База данных SQL Azure" | Документация Майкрософт
+title: Маршрутизация, зависящая от данных, с базой данных SQL Azure
 description: Как использовать класс ShardMapManager в приложениях .NET для маршрутизации, зависящей от данных, — функции сегментированных баз данных для Базы данных SQL Azure.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 01/25/2019
-ms.openlocfilehash: 3f0ce4f3bdf3159e991bfd72590882dfa7412ee3
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 319f2744cd437aea51a05592cd7a26f8b58fe761
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68568481"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73690273"
 ---
 # <a name="use-data-dependent-routing-to-route-a-query-to-appropriate-database"></a>Использование маршрутизации с зависимостью от данных для маршрутизации запроса в соответствующую базу данных
 
@@ -174,7 +174,7 @@ Configuration.SqlRetryPolicy.ExecuteAction(() =&gt;
 
 Свойства транзакций сохраняются для всех операций, являющихся локальными для сегмента. Например, транзакции, осуществленные посредством маршрутизации, зависящей от данных, выполняются в области целевого сегмента для подключения. В данный момент нет возможности связывания нескольких подключений с транзакцией, поэтому невозможно гарантировать осуществление транзакций для операций, выполняемых через сегменты.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения об отсоединении сегмента или его повторном присоединении см. в статье [Устранение проблем сопоставления сегментов с помощью класса RecoveryManager](sql-database-elastic-database-recovery-manager.md).
 

@@ -1,5 +1,5 @@
 ---
-title: Командлеты PowerShell для хранилища данных SQL Azure
+title: Командлеты PowerShell
 description: Ознакомьтесь с основными командлетами PowerShell для хранилища данных SQL Azure, а также узнайте, как приостанавливать и возобновлять работу базы данных.
 services: sql-data-warehouse
 author: kevinvngo
@@ -10,15 +10,16 @@ ms.subservice: manage
 ms.date: 04/17/2018
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: 095e66c6c5f75a27b1f0231dfe8cabfd4d741d18
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.custom: seo-lt-2019
+ms.openlocfilehash: b36a64bb82449ace7acc1de0b3c2bc7c5efebe70
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65205175"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73685557"
 ---
 # <a name="powershell-cmdlets-and-rest-apis-for-sql-data-warehouse"></a>Использование командлетов PowerShell и интерфейсов REST API при работе с хранилищем данных SQL
-Многими задачами по администрированию хранилища данных SQL можно управлять с помощью командлетов Azure PowerShell или интерфейсов API REST.  Ниже представлены некоторые примеры использования команд PowerShell для автоматизации обычных задач в хранилище данных SQL.  Хорошие примеры использования REST приведены в статье [Управление вычислительными ресурсами в хранилище данных SQL Azure (REST)][Manage scalability with REST].
+Многими задачами по администрированию хранилища данных SQL можно управлять с помощью командлетов Azure PowerShell или интерфейсов API REST.  Ниже представлены некоторые примеры использования команд PowerShell для автоматизации обычных задач в хранилище данных SQL.  Хорошие примеры использования REST приведены в разделе [Управление вычислительными ресурсами в хранилище данных SQL Azure (REST)][Manage scalability with REST].
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -38,7 +39,7 @@ ms.locfileid: "65205175"
 ```Powershell
 Suspend-AzSqlDatabase –ResourceGroupName "ResourceGroup1" –ServerName "Server01" –DatabaseName "Database02"
 ```
-Как вариант, передает по конвейеру в этом примере полученный объект для [Suspend-AzSqlDatabase][Suspend-AzSqlDatabase].  В результате база данных приостанавливается. Последняя команда отображает результаты.
+Вариант, в этом примере полученный объект переводится в [Suspend-азсклдатабасе][Suspend-AzSqlDatabase].  В результате база данных приостанавливается. Последняя команда отображает результаты.
 
 ```Powershell
 $database = Get-AzSqlDatabase –ResourceGroupName "ResourceGroup1" –ServerName "Server01" –DatabaseName "Database02"
@@ -53,7 +54,7 @@ $resultDatabase
 Resume-AzSqlDatabase –ResourceGroupName "ResourceGroup1" –ServerName "Server01" -DatabaseName "Database02"
 ```
 
-Как вариант, в этом примере извлекается база данных с именем Database02 с сервера Server01, который находится в группе ресурсов с именем ResourceGroup1. Она передает полученный объект для [Resume-AzSqlDatabase][Resume-AzSqlDatabase].
+Как вариант, в этом примере извлекается база данных с именем Database02 с сервера Server01, который находится в группе ресурсов с именем ResourceGroup1. Он передает полученный объект в [Resume-азсклдатабасе][Resume-AzSqlDatabase].
 
 ```Powershell
 $database = Get-AzSqlDatabase –ResourceGroupName "ResourceGroup1" –ServerName "Server01" –DatabaseName "Database02"
@@ -70,22 +71,22 @@ $resultDatabase = $database | Resume-AzSqlDatabase
 
 * [Get-AzSqlDatabase][Get-AzSqlDatabase]
 * [Get-AzSqlDeletedDatabaseBackup][Get-AzSqlDeletedDatabaseBackup]
-* [Get-AzSqlDatabaseRestorePoint][Get-AzSqlDatabaseRestorePoint]
+* [Get-Азсклдатабасересторепоинт][Get-AzSqlDatabaseRestorePoint]
 * [New-AzSqlDatabase][New-AzSqlDatabase]
 * [Remove-AzSqlDatabase][Remove-AzSqlDatabase]
 * [Restore-AzSqlDatabase][Restore-AzSqlDatabase]
-* [Resume-AzSqlDatabase][Resume-AzSqlDatabase]
-* [Выберите AzSubscription][Select-AzSubscription]
+* [Resume-Азсклдатабасе][Resume-AzSqlDatabase]
+* [SELECT-Азсубскриптион][Select-AzSubscription]
 * [Set-AzSqlDatabase][Set-AzSqlDatabase]
-* [Приостановка AzSqlDatabase][Suspend-AzSqlDatabase]
+* [Suspend-Азсклдатабасе][Suspend-AzSqlDatabase]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные примеры PowerShell см. в указанных далее документах.
 
-* [Создание хранилища данных SQL с помощью PowerShell][Create a SQL Data Warehouse using PowerShell]
+* [Создание хранилища данных SQL с помощью Powershell][Create a SQL Data Warehouse using PowerShell]
 * [Восстановление базы данных][Database restore]
 
-Другие задачи, которые можно автоматизировать с помощью PowerShell, описаны в статье о [командлетах Базы данных SQL Azure][Azure SQL Database Cmdlets]. Обратите внимание, что хранилище данных SQL Azure поддерживает не все командлеты для Базы данных SQL Azure.  Список задач, которые можно автоматизировать с помощью REST, см. в статье [Операции для баз данных SQL Azure][Operations for Azure SQL Database].
+Сведения о других задачах, которые можно автоматизировать с помощью PowerShell, см. в статье [командлеты базы данных SQL Azure][Azure SQL Database Cmdlets]. Обратите внимание, что хранилище данных SQL Azure поддерживает не все командлеты для Базы данных SQL Azure.  Список задач, которые можно автоматизировать с помощью службы "остальное", см. в статье [операции с базой данных SQL Azure][Operations for Azure SQL Database].
 
 <!--Image references-->
 

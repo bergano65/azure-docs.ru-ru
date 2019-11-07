@@ -1,5 +1,5 @@
 ---
-title: Копирование данных из SAP ECC с помощью фабрики данных Azure | Документация Майкрософт
+title: Копирование данных из SAP ECC с помощью фабрики данных Azure
 description: Узнайте, как копировать данные из SAP ECC в поддерживаемые хранилища данных, используемые в качестве приемника, с помощью действия копирования в конвейере фабрики данных Azure.
 services: data-factory
 documentationcenter: ''
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: jingwang
-ms.openlocfilehash: c2b9fcc3f75b8f310532978061c887776f007ff0
-ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
+ms.openlocfilehash: 526f85ca4b8854a36232c75a55847a73a8d372cc
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71089534"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73680294"
 ---
 # <a name="copy-data-from-sap-ecc-by-using-azure-data-factory"></a>Копирование данных из SAP ECC с помощью фабрики данных Azure
 
@@ -62,7 +62,7 @@ ms.locfileid: "71089534"
 
 [!INCLUDE [data-factory-v2-integration-runtime-requirements](../../includes/data-factory-v2-integration-runtime-requirements.md)]
 
-## <a name="get-started"></a>Начало работы
+## <a name="get-started"></a>Приступая к работе
 
 [!INCLUDE [data-factory-v2-connector-get-started](../../includes/data-factory-v2-connector-get-started.md)]
 
@@ -72,9 +72,9 @@ ms.locfileid: "71089534"
 
 Для связанной службы SAP ECC поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательное значение |
+| Свойство | Description (Описание) | Обязательно |
 |:--- |:--- |:--- |
-| `type` | `type` Для`SapEcc`свойства необходимо задать значение. | Да |
+| `type` | Для свойства `type` необходимо задать значение `SapEcc`. | Да |
 | `url` | URL-адрес службы SAP ECC OData. | Да |
 | `username` | Имя пользователя, используемое для подключения к SAP ECC. | Нет |
 | `password` | Пароль в формате обычного текста, используемый для подключения к SAP ECC. | Нет |
@@ -107,11 +107,11 @@ ms.locfileid: "71089534"
 
 Полный список разделов и свойств, доступных для определения наборов данных, см. в разделе [наборы данных](concepts-datasets-linked-services.md). В следующем разделе приведен список свойств, поддерживаемых набором данных SAP ECC.
 
-Чтобы скопировать данные из SAP ECC, присвойте `type` свойству `SapEccResource`набора данных значение.
+Чтобы скопировать данные из SAP ECC, установите для свойства `type` набора данных значение `SapEccResource`.
 
 Поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательное значение |
+| Свойство | Description (Описание) | Обязательно |
 |:--- |:--- |:--- |
 | `path` | Путь к сущности SAP ECC OData. | Да |
 
@@ -140,14 +140,14 @@ ms.locfileid: "71089534"
 
 ### <a name="sap-ecc-as-a-source"></a>SAP ECC в качестве источника
 
-Чтобы скопировать данные из SAP ECC, задайте `type` для `SapEccSource`свойства `source` в разделе действия копирования значение.
+Чтобы скопировать данные из SAP ECC, задайте для свойства `type` в разделе `source` действия копирования значение `SapEccSource`.
 
-В `source` разделе действия копирования поддерживаются следующие свойства:
+В разделе `source` действия копирования поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательное значение |
+| Свойство | Description (Описание) | Обязательно |
 |:--- |:--- |:--- |
-| `type` | Свойство раздела действия копирования должно иметь значение. `SapEccSource` `type` `source` | Да |
-| `query` | Параметры запроса OData для фильтрации данных. Пример:<br/><br/>`"$select=Name,Description&$top=10"`<br/><br/>Соединитель SAP ECC копирует данные из комбинированного URL-адреса:<br/><br/>`<URL specified in the linked service>/<path specified in the dataset>?<query specified in the copy activity's source section>`<br/><br/>Дополнительные сведения см. в статье о [компонентах URL-адреса OData](https://www.odata.org/documentation/odata-version-3-0/url-conventions/). | Нет |
+| `type` | Свойство `type` раздела `source` действия копирования должно иметь значение `SapEccSource`. | Да |
+| `query` | Параметры запроса OData для фильтрации данных. Например:<br/><br/>`"$select=Name,Description&$top=10"`<br/><br/>Соединитель SAP ECC копирует данные из комбинированного URL-адреса:<br/><br/>`<URL specified in the linked service>/<path specified in the dataset>?<query specified in the copy activity's source section>`<br/><br/>Дополнительные сведения см. в статье о [компонентах URL-адреса OData](https://www.odata.org/documentation/odata-version-3-0/url-conventions/). | Нет |
 
 ### <a name="example"></a>Пример
 
@@ -210,6 +210,6 @@ ms.locfileid: "71089534"
 
 Чтобы получить сведения о свойствах, проверьте [действие поиска](control-flow-lookup-activity.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Список хранилищ данных, поддерживаемых действием копирования в фабрике данных Azure в качестве источников и приемников, см. в разделе [Supported Data Stores (поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats)).

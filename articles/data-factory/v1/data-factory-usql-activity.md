@@ -1,5 +1,5 @@
 ---
-title: Преобразование данных с помощью сценария U-SQL в Azure | Документация Майкрософт
+title: Преобразование данных с помощью скрипта U-SQL — Azure
 description: Узнайте, как обрабатывать и преобразовывать данные с помощью сценариев U-SQL в службе вычислений Azure Data Lake Analytics.
 services: data-factory
 documentationcenter: ''
@@ -13,15 +13,15 @@ author: nabhishek
 ms.author: abnarain
 manager: craigg
 robots: noindex
-ms.openlocfilehash: 5835c37363c7e9d2dd3253c08ab97f17852725f5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7608719c4e0c2b9e23f1982efda9789d25f50224
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61248153"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73665949"
 ---
 # <a name="transform-data-by-running-u-sql-scripts-on-azure-data-lake-analytics"></a>Преобразование данных с помощью сценариев U-SQL в Azure Data Lake Analytics 
-> [!div class="op_single_selector" title1="Выберите версию службы фабрики данных, которую вы используете:"]
+> [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
 > * [Версия 1](data-factory-usql-activity.md)
 > * [Версия 2 (текущая)](../transform-data-using-data-lake-analytics.md)
 
@@ -46,7 +46,7 @@ ms.locfileid: "61248153"
 
 В следующей таблице приведены описания универсальных свойств из определения JSON. Вы можете выбирать между проверкой подлинности на основе субъекта-службы и учетных данных пользователя.
 
-| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
+| Свойство | Description (Описание) | Обязательно |
 | --- | --- | --- |
 | **type** |Свойству type необходимо присвоить значение **AzureDataLakeAnalytics**. |Да |
 | **accountName** |Имя учетной записи аналитики озера данных Azure. |Да |
@@ -62,13 +62,13 @@ ms.locfileid: "61248153"
 
 Используйте проверку подлинности на основе субъекта-службы, указав следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
+| Свойство | Description (Описание) | Обязательно |
 |:--- |:--- |:--- |
 | **servicePrincipalId** | Укажите идентификатора клиента приложения. | Да |
 | **servicePrincipalKey** | Укажите ключ приложения. | Да |
 | **tenant** | Укажите сведения о клиенте (доменное имя или идентификатор клиента), в котором находится приложение. Эти сведения можно получить, наведя указатель мыши на правый верхний угол страницы портала Azure. | Да |
 
-**Пример. Проверка подлинности субъекта-службы**
+**Пример. Проверка подлинности на основе субъекта-службы**
 ```json
 {
     "name": "AzureDataLakeAnalyticsLinkedService",
@@ -90,9 +90,9 @@ ms.locfileid: "61248153"
 ### <a name="user-credential-authentication"></a>Использование проверки подлинности на основе учетных данных пользователя
 Кроме того, для Data Lake Analytics можно использовать проверку подлинности на основе учетных данных пользователя, указав приведенные ниже свойства.
 
-| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
+| Свойство | Description (Описание) | Обязательно |
 |:--- |:--- |:--- |
-| **authorization** | Нажмите кнопку **Авторизовать** в редакторе фабрики данных и введите учетные данные. URL-адрес авторизации будет создан автоматически и присвоен этому свойству. | Да |
+| **авторизации** | Нажмите кнопку **Авторизовать** в редакторе фабрики данных и введите учетные данные. URL-адрес авторизации будет создан автоматически и присвоен этому свойству. | Да |
 | **sessionId** | Идентификатор сеанса OAuth из сеанса авторизации OAuth. Каждый идентификатор сеанса является уникальным и используется только один раз. Этот параметр создается автоматически при использовании редактора фабрики данных. | Да |
 
 **Пример. Использование проверки подлинности на основе учетных данных пользователя**
@@ -114,7 +114,7 @@ ms.locfileid: "61248153"
 ```
 
 #### <a name="token-expiration"></a>Срок действия маркера
-Срок действия кода авторизации, созданного с помощью кнопки **Авторизовать**, через некоторое время истекает. Сроки действия для различных типов учетных записей пользователей см. в следующей таблице. В случае истечения **срока действия маркера** аутентификации может появиться следующее сообщение об ошибке. Произошла ошибка при операции с учетными данными: invalid_grant – AADSTS70002: ошибка при проверке учетных данных. AADSTS70008: срок действия предоставленных прав доступа истек, или они были отозваны. Идентификатор трассировки: d18629e8-af88-43c5-88e3-d8419eb1fca1 Идентификатор корреляции: fac30a0c-6be6-4e02-8d69-a776d2ffefd7 Метка времени: 2015-12-15 21-09-31Z.
+Срок действия кода авторизации, созданного с помощью кнопки **Авторизовать**, через некоторое время истекает. Сроки действия для различных типов учетных записей пользователей см. в следующей таблице. По истечении **срока действия маркера** проверки подлинности может появиться следующее сообщение об ошибке: "Произошла ошибка при операции с учетными данными: invalid_grant — AADSTS70002: ошибка при проверке учетных данных". AADSTS70008: срок действия предоставленных прав доступа истек или они были отозваны. Идентификатор отслеживания: d18629e8-af88-43c5-88e3-d8419eb1fca1 Идентификатор корреляции: fac30a0c-6be6-4e02-8d69-a776d2ffefd7 Временная отметка: 2015-12-15 21:09:31Z".
 
 | Тип пользователя | Срок действия |
 |:--- |:--- |
@@ -148,9 +148,9 @@ if (linkedService.Properties.TypeProperties is AzureDataLakeStoreLinkedService |
 }
 ```
 
-Подробные сведения о классах фабрики данных, используемых в коде, см. в статьях [AzureDataLakeStoreLinkedService — класс](https://msdn.microsoft.com/library/microsoft.azure.management.datafactories.models.azuredatalakestorelinkedservice.aspx), [AzureDataLakeAnalyticsLinkedService — класс](https://msdn.microsoft.com/library/microsoft.azure.management.datafactories.models.azuredatalakeanalyticslinkedservice.aspx) и [AuthorizationSessionGetResponse — класс](https://msdn.microsoft.com/library/microsoft.azure.management.datafactories.models.authorizationsessiongetresponse.aspx). Добавьте ссылку на Microsoft.IdentityModel.Clients.ActiveDirectory.WindowsForms.dll для класса WindowsFormsWebAuthenticationDialog. 
+Подробные сведения о классах фабрики данных, используемых в коде, см. в статьях [AzureDataLakeStoreLinkedService — класс](https://msdn.microsoft.com/library/microsoft.azure.management.datafactories.models.azuredatalakestorelinkedservice.aspx), [AzureDataLakeAnalyticsLinkedService — класс](https://msdn.microsoft.com/library/microsoft.azure.management.datafactories.models.azuredatalakeanalyticslinkedservice.aspx) и [AuthorizationSessionGetResponse — класс](https://msdn.microsoft.com/library/microsoft.azure.management.datafactories.models.authorizationsessiongetresponse.aspx). Для использования класса WindowsFormsWebAuthenticationDialog следует добавить ссылку на Microsoft.IdentityModel.Clients.ActiveDirectory.WindowsForms.dll. 
 
-## <a name="data-lake-analytics-u-sql-activity"></a>Действие U-SQL в аналитике озера данных
+## <a name="data-lake-analytics-u-sql-activity"></a>Действие U-SQL в Data Lake Analytics
 В следующем фрагменте кода JSON определяется конвейер с действием U-SQL в аналитике озера данных. Определение действия содержит ссылку на созданную ранее связанную службу аналитики озера данных Azure.   
 
 ```json
@@ -206,18 +206,18 @@ if (linkedService.Properties.TypeProperties is AzureDataLakeStoreLinkedService |
 
 В следующей таблице описаны имена и описания свойств, относящихся к этому действию. 
 
-| Свойство            | ОПИСАНИЕ                              | Обязательно для заполнения                                 |
+| Свойство            | Description (Описание)                              | Обязательно                                 |
 | :------------------ | :--------------------------------------- | :--------------------------------------- |
 | type                | Для свойства type нужно задать значение **DataLakeAnalyticsU-SQL**. | Да                                      |
-| linkedServiceName   | Ссылка на службу Azure Data Lake Analytics, зарегистрированную в качестве связанной службы в фабрике данных | Да                                      |
+| linkedServiceName (имя связанной службы)   | Ссылка на службу Azure Data Lake Analytics, зарегистрированную в качестве связанной службы в фабрике данных | Да                                      |
 | scriptPath          | Путь к папке, содержащей скрипт U-SQL В имени файла учитывается регистр. | Нет (если используется скрипт)                   |
 | scriptLinkedService | Связанная служба, которая связывает хранилище, содержащее скрипт, с фабрикой данных | Нет (если используется скрипт)                   |
 | script              | Указание сценария непосредственно в строке вместо использования scriptPath и scriptLinkedService. Например, `"script": "CREATE DATABASE test"`. | Нет (при использовании scriptPath и scriptLinkedService) |
 | degreeOfParallelism | Максимальное количество узлов, используемых одновременно для выполнения задания. | Нет                                       |
-| приоритет            | Определяет, какие задания из всех в очереди должны запускаться в первую очередь. Чем меньше число, тем выше приоритет. | Нет                                       |
+| priority            | Определяет, какие задания из всех в очереди должны запускаться в первую очередь. Чем меньше число, тем выше приоритет. | Нет                                       |
 | parameters          | Параметры скрипта U-SQL          | Нет                                       |
 | runtimeVersion      | Версия среды выполнения обработчика U-SQL, которую нужно использовать. | Нет                                       |
-| compilationMode     | <p>Режим компиляции U-SQL. Может иметь одно из следующих значений.</p> <ul><li>**Semantic**: выполнение только семантических проверок и необходимых проверок работоспособности.</li><li>**Full**: выполнение полной компиляции, включая проверку синтаксиса, оптимизацию, создание кода и т. д.</li><li>**SingleBox**: выполнение полной компиляции с параметром TargetType, заданным для SingleBox.</li></ul><p>Если не указать значение для этого свойства, сервер определит оптимальный режим компиляции. </p> | Нет                                       |
+| compilationMode     | <p>Режим компиляции U-SQL. Может иметь одно из следующих значений.</p> <ul><li>**Semantic**: выполнение только семантических проверок и необходимых проверок работоспособности.</li><li>**Full:** выполнение полной компиляции, включая проверку синтаксиса, оптимизацию, создание кода и т. д.</li><li>**SingleBox:** выполнение полной компиляции с параметром TargetType, заданным для SingleBox.</li></ul><p>Если не указать значение для этого свойства, сервер определит оптимальный режим компиляции. </p> | Нет                                       |
 
 Определение сценария см. в разделе [Определение сценария SearchLogProcessing.txt](#sample-u-sql-script). 
 
@@ -317,7 +317,7 @@ OUTPUT @rs1
       USING Outputters.Tsv(quoting:false, dateTimeFormat:null);
 ```
 
-Значения для  **\@в** и  **\@out** параметры в скрипте U-SQL передаются динамически с помощью фабрики данных AZURE с помощью раздела «параметры». См. раздел parameters в определении конвейера.
+Значения параметров **\@in** и **\@out** в скрипте U-SQL динамически передаются модулем ADF с помощью раздела Parameters. См. раздел parameters в определении конвейера.
 
 В определении конвейера для заданий, которые выполняются в службе Azure Data Lake Analytics, можно определить другие свойства, например degreeOfParallelism и priority.
 
@@ -331,7 +331,7 @@ OUTPUT @rs1
 }
 ```
 
-Вместо этого можно использовать динамические параметры. Пример: 
+Вместо этого можно использовать динамические параметры. Например: 
 
 ```json
 "parameters": {

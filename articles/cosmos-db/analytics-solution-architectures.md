@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.service: cosmos-db
 ms.date: 09/26/2019
 ms.reviewer: sngun
-ms.openlocfilehash: d50b946e67bbcc171850b71021165356011f58e3
-ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
+ms.openlocfilehash: d0b5042c1401a95cc75f4c01ace843659b6babfe
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72755201"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73681751"
 ---
 # <a name="solutions-using-globally-distributed-analytics-in-azure-cosmos-db"></a>Решения, использующие глобально распределенную аналитику в Azure Cosmos DB
 
@@ -34,12 +34,12 @@ ms.locfileid: "72755201"
 
 На следующем рисунке показано, как поддержка Azure Cosmos DB Spark используется для оптимизации цен и рекламных предложений:
 
-![Поддержка Spark Azure Cosmos DB для оптимизации цен и рекламных предложений](./media/spark-api-introduction/optimize-pricing-and-promotions.png)
+![Поддержка Spark Azure Cosmos DB для оптимизации цен и рекламных предложений](./media/analytics-solution-architectures/optimize-pricing-and-promotions.png)
 
 
 На следующем рисунке показано, как поддержка Azure Cosmos DB Spark используется в подсистеме рекомендаций в режиме реального времени:
 
-![Поддержка Spark Azure Cosmos DB в подсистеме рекомендаций в режиме реального времени](./media/spark-api-introduction/real-time-recommendation-engine.png)
+![Поддержка Spark Azure Cosmos DB в подсистеме рекомендаций в режиме реального времени](./media/analytics-solution-architectures/real-time-recommendation-engine.png)
 
 ## <a name="manufacturing-and-iot"></a>Производство и Интернет вещей
 
@@ -49,9 +49,9 @@ ms.locfileid: "72755201"
 
 На следующем рисунке показано, как поддержка Spark в Azure Cosmos DB используется для считывания метрик с устройств Интернета вещей и применения интеллектуальной аналитики сетей:
 
-![Поддержка Spark Azure Cosmos DB для считывания метрик с устройств Интернета вещей](./media/spark-api-introduction/read-metrics-from-iot-devices.png)
+![Поддержка Spark Azure Cosmos DB для считывания метрик с устройств Интернета вещей](./media/analytics-solution-architectures/read-metrics-from-iot-devices.png)
 
-## <a name="predictive-maintenance"></a>Упреждающее обслуживание
+## <a name="predictive-maintenance"></a>Диагностическое обслуживание
 
 * Обслуживание таких ресурсов, как компрессоры, которые используются в небольших бурильных установках для глубоководных платформ, является сложной задачей. Эти ресурсы расположены по всему миру и создают петабайты данных. С помощью Azure Cosmos DB вы можете создать сквозной конвейер прогнозирования данных, который использует потоковую передачу Spark для обработки больших объемов данных телеметрии датчиков, хранения частей ресурсов и данных сопоставления датчиков.
 
@@ -59,11 +59,11 @@ ms.locfileid: "72755201"
 
 На следующем рисунке показано, как поддержка Spark в Azure Cosmos DB используется для создания системы прогнозного обслуживания:
 
-![Поддержка Spark Azure Cosmos DB для построения системы прогнозного обслуживания](./media/spark-api-introduction/predictive-maintenance-system.png)
+![Поддержка Spark Azure Cosmos DB для построения системы прогнозного обслуживания](./media/analytics-solution-architectures/predictive-maintenance-system.png)
 
 На следующем рисунке показано, как поддержка Spark в Azure Cosmos DB используется для создания системы диагностики транспортных средств в режиме реального времени:
 
-![Поддержка Spark Azure Cosmos DB для создания системы диагностики транспортных средств в режиме реального времени](./media/spark-api-introduction/real-time-vehicle-diagnostic-system.png)
+![Поддержка Spark Azure Cosmos DB для создания системы диагностики транспортных средств в режиме реального времени](./media/analytics-solution-architectures/real-time-vehicle-diagnostic-system.png)
 
 ## <a name="gaming"></a>Игры
 
@@ -75,7 +75,7 @@ ms.locfileid: "72755201"
 
 На следующем рисунке показано, как поддержка Spark Azure Cosmos DB используется в игровой аналитике:
 
-![Поддержка Spark Azure Cosmos DB в аналитике игры](./media/spark-api-introduction/gaming-analytics.png)
+![Поддержка Spark Azure Cosmos DB в аналитике игры](./media/analytics-solution-architectures/gaming-analytics.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

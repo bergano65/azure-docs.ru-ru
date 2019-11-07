@@ -1,5 +1,5 @@
 ---
-title: Перенос имеющихся баз данных для масштабирования | Документация Майкрософт
+title: Перенос существующих баз данных для развертывания
 description: Преобразование сегментированных баз данных для использования средств эластичной базы данных путем создания диспетчера сопоставления сегментов
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 01/25/2019
-ms.openlocfilehash: 2d6d5c51cb381c089633ba010a1d64c8486ddcd8
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: b88c56872408a7ffe127a4e96d2313301d44c892
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68568734"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73690528"
 ---
 # <a name="migrate-existing-databases-to-scale-out"></a>Перенос существующих баз данных для развертывания
 Вы можете легко управлять существующими масштабируемыми сегментированными базами данных с помощью средств Базы данных SQL Azure (таких как [клиентская библиотека для эластичных баз данных](sql-database-elastic-database-client-library.md)). Для использования [диспетчера сопоставления сегментов](sql-database-elastic-scale-shard-map-management.md) следует сначала преобразовать существующий набор баз данных. 
@@ -97,10 +97,10 @@ ms.locfileid: "68568734"
     -RangeShardMapName 'RangeShardMap' 
     -ShardMapManager $ShardMapManager 
 
-### <a name="option-3-list-mappings-on-an-individual-database"></a>Вариант 3. Список сопоставлений на отдельной базе данных
+### <a name="option-3-list-mappings-on-an-individual-database"></a>Вариант 3. список сопоставлений в отдельной базе данных
 Для настройки этого шаблона также требуется создать карту списков, как показано в разделе "Шаг 2, вариант 1".
 
-## <a name="step-3-prepare-individual-shards"></a>Шаг 3. Подготовка отдельных сегментов
+## <a name="step-3-prepare-individual-shards"></a>Шаг 3. Подготовка отдельных сегментов
 Добавьте каждый сегмент (база данных) в диспетчер сопоставления сегментов. Таким образом отдельные базы данных будут подготовлены для хранения сведений о сопоставлении. Подготовьте так каждый сегмент.
 
     Add-Shard 
@@ -110,7 +110,7 @@ ms.locfileid: "68568734"
     # The $ShardMap is the shard map created in step 2.
 
 
-## <a name="step-4-add-mappings"></a>Шаг 4. Добавление сопоставлений
+## <a name="step-4-add-mappings"></a>Шаг 4. Добавление сопоставлений
 Добавление сопоставлений зависит от вида созданной карты сегментов. Если создана карта списков, нужно добавить сопоставления по спискам. Если создана карта диапазонов, нужно добавить сопоставления по диапазонам.
 
 ### <a name="option-1-map-the-data-for-a-list-mapping"></a>Вариант 1. Сопоставление данных для сопоставления по списку
@@ -147,13 +147,13 @@ ms.locfileid: "68568734"
     Get-Shards -ShardMap $ShardMap 
     Get-Mappings -ShardMap $ShardMap 
 
-## <a name="summary"></a>Резюме
+## <a name="summary"></a>Сводка
 После завершения настройки можно начать работу с клиентской библиотекой эластичной базы данных. Кроме того, можно воспользоваться [маршрутизацией, зависящей от данных](sql-database-elastic-scale-data-dependent-routing.md), и [формированием многосегментных запросов](sql-database-elastic-scale-multishard-querying.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Скачайте сценарии PowerShell со страницы [Azure SQL DB-Elastic Database tools scripts](https://gallery.technet.microsoft.com/scriptcenter/Azure-SQL-DB-Elastic-731883db) (База данных SQL Azure — сценарии для инструментов эластичной базы данных).
 
-Средства также доступны на сайте GitHub: [Elastic database tools for Azure SQL Database](https://github.com/Azure/elastic-db-tools) (Средства эластичной базы данных для Базы данных SQL Azure).
+Средства также доступны на сайте GitHub: [Azure/elastic-db-tools](https://github.com/Azure/elastic-db-tools).
 
 Используйте средство разбиения и слияния для перемещения данных из модели с несколькими клиентами в модель с одним клиентом и наоборот. Ознакомьтесь со статьей о [средстве разбиения и объединения](sql-database-elastic-scale-get-started.md).
 

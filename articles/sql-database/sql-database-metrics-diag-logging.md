@@ -1,5 +1,5 @@
 ---
-title: Ведение журналов метрик и диагностики Базы данных SQL Azure | Документация Майкрософт
+title: Метрики и журналы диагностики Базы данных SQL Azure
 description: Узнайте, как включить диагностику в базе данных SQL Azure для хранения сведений об использовании ресурсов и статистике выполнения запросов.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: danimir
 ms.author: danil
 ms.reviewer: jrasnik, carlrab
 ms.date: 05/21/2019
-ms.openlocfilehash: 235cdff1297b840bfd1a522e265633b47094c855
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.openlocfilehash: 6c2040a223b7ec33b05ee3c8b3c65bad031aa3c2
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72597969"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73687791"
 ---
 # <a name="azure-sql-database-metrics-and-diagnostics-logging"></a>Метрики и журналы диагностики Базы данных SQL Azure
 
@@ -41,17 +41,17 @@ ms.locfileid: "72597969"
 
 Можно включить ведение таких журналов метрик и диагностической телеметрии и управлять ими, используя один из следующих методов:
 
-- портала Azure
+- Портал Azure
 - PowerShell
 - Azure CLI
-- REST API Azure Monitor
+- Azure Monitor REST API
 - Шаблон Azure Resource Manager
 
 При включении метрик и журналов диагностики необходимо указать назначение ресурсов Azure для сбора данных телеметрии диагностики. Доступны следующие варианты:
 
-- Аналитика SQL Azure
+- Azure SQL Analytics
 - Центры событий Azure
-- Служба хранилища Azure
+- Хранилище Azure
 
 Вы можете подготовить новый ресурс Azure или выбрать имеющийся. После выбора ресурса с помощью настройки **Параметры диагностики** укажите, какие данные следует собирать.
 
@@ -63,16 +63,16 @@ ms.locfileid: "72597969"
 
 | Мониторинг телеметрии для баз данных | Поддержка отдельной базы данных и базы данных в пуле | Поддержка базы данных экземпляра |
 | :------------------- | ----- | ----- |
-| [Основные метрики](#basic-metrics): содержит количество единиц DTU/ЦП, ограничение DTU/ЦП, процент считанных физических данных, процент записи в журнал, успешных/неудачных или заблокированных подключениями брандмауэра, процент сеансов, процент рабочих ролей, хранилище, процент хранения и XTP процент хранения. | ДА | Нет |
-| [QueryStoreRuntimeStatistics](#query-store-runtime-statistics): содержит сведения о статистике времени выполнения запросов, такие как загрузка ЦП и статистика длительности запросов. | ДА | ДА |
-| [QueryStoreWaitStatistics](#query-store-wait-statistics): содержит сведения о статистике ожидания запросов (запросы, ожидающие выполнения запросов), такие как ЦП, журнал и блокировка. | ДА | ДА |
-| [Ошибки](#errors-dataset): содержит сведения об ошибках SQL в базе данных. | ДА | ДА |
-| [DatabaseWaitStatistics](#database-wait-statistics-dataset) содержит статистику по значениям времени ожидания различных типов для базы данных. | ДА | Нет |
-| [Время ожидания](#time-outs-dataset): содержит сведения об истечении времени ожидания в базе данных. | ДА | Нет |
-| [Блоки](#blockings-dataset): содержит сведения о блокировании событий в базе данных. | ДА | Нет |
-| [Взаимоблокировки](#deadlocks-dataset): содержит сведения о событиях взаимоблокировки в базе данных. | ДА | Нет |
-| [Аутоматиктунинг](#automatic-tuning-dataset): содержит сведения о рекомендациях по автоматической настройке для базы данных. | ДА | Нет |
-| [SQLInsights](#intelligent-insights-dataset): содержит Intelligent Insights производительности для базы данных. Дополнительные сведения см. в статье об [Intelligent Insights](sql-database-intelligent-insights.md). | ДА | ДА |
+| [Основные метрики](#basic-metrics): содержит количество единиц DTU/ЦП, ограничение DTU/ЦП, процент считанных физических данных, процент записи в журнал, успешных/неудачных или заблокированных подключениями брандмауэра, процент сеансов, процент рабочих ролей, хранилище, процент хранения и XTP процент хранения. | Да | Нет |
+| [QueryStoreRuntimeStatistics](#query-store-runtime-statistics): содержит сведения о статистике времени выполнения запросов, такие как загрузка ЦП и статистика длительности запросов. | Да | Да |
+| [QueryStoreWaitStatistics](#query-store-wait-statistics): содержит сведения о статистике ожидания запросов (запросы, ожидающие выполнения запросов), такие как ЦП, журнал и блокировка. | Да | Да |
+| [Ошибки](#errors-dataset): содержит сведения об ошибках SQL в базе данных. | Да | Да |
+| [DatabaseWaitStatistics](#database-wait-statistics-dataset) содержит статистику по значениям времени ожидания различных типов для базы данных. | Да | Нет |
+| [Время ожидания](#time-outs-dataset): содержит сведения об истечении времени ожидания в базе данных. | Да | Нет |
+| [Блоки](#blockings-dataset): содержит сведения о блокировании событий в базе данных. | Да | Нет |
+| [Взаимоблокировки](#deadlocks-dataset): содержит сведения о событиях взаимоблокировки в базе данных. | Да | Нет |
+| [Аутоматиктунинг](#automatic-tuning-dataset): содержит сведения о рекомендациях по автоматической настройке для базы данных. | Да | Нет |
+| [SQLInsights](#intelligent-insights-dataset): содержит Intelligent Insights производительности для базы данных. Дополнительные сведения см. в статье об [Intelligent Insights](sql-database-intelligent-insights.md). | Да | Да |
 
 > [!IMPORTANT]
 > Эластичные пулы и управляемые экземпляры имеют отдельные данные телеметрии диагностики из баз данных, которые они содержат. Это важно отметить, так как данные телеметрии диагностики настраиваются отдельно для каждого из этих ресурсов, как описано ниже.
@@ -80,7 +80,7 @@ ms.locfileid: "72597969"
 > [!NOTE]
 > Журналы аудита безопасности и Склсекуритяудитевентс не могут быть включены из параметров диагностики базы данных (хотя отображается на экране). Сведения о включении потоковой передачи журналов аудита см. в статьях [Настройка аудита для базы данных](sql-database-auditing.md#subheading-2)и [аудит журналов в Azure Monitor журналах и концентраторах событий Azure](https://techcommunity.microsoft.com/t5/Azure-SQL-Database/SQL-Audit-logs-in-Azure-Log-Analytics-and-Azure-Event-Hubs/ba-p/386242).
 
-## <a name="azure-portal"></a>портала Azure
+## <a name="azure-portal"></a>Портал Azure
 
 Для настройки потоковой передачи диагностических данных диагностики можно использовать меню " **параметры диагностики** " для каждой отдельной базы портал Azure, в составе группы или экземпляра. Кроме того, диагностические данные диагностики можно также настроить отдельно для контейнеров базы данных: эластичные пулы и управляемые экземпляры. Вы можете задать следующие назначения для потоковой передачи телеметрии: служба хранилища Azure, концентраторы событий Azure и журналы Azure Monitor.
 
@@ -113,7 +113,7 @@ ms.locfileid: "72597969"
 1. Выберите целевой ресурс для данных диагностики потоковой передачи: **архивировать в учетную запись хранения**, **передавать в концентратор событий**или **отправить в log Analytics**.
 1. Для log Analytics выберите **настроить** и создайте новую рабочую область, выбрав **+ создать рабочую область**или выбрав существующую рабочую область.
 1. Установите флажок для телеметрии диагностики эластичного пула: **основные** метрики.
-   Диагностика ![Configure для эластичных пулов ](./media/sql-database-metrics-diag-logging/diagnostics-settings-container-elasticpool-selection.png)
+   ![настроить диагностику для эластичных пулов](./media/sql-database-metrics-diag-logging/diagnostics-settings-container-elasticpool-selection.png)
 1. Щелкните **Сохранить**.
 1. Кроме того, настройте потоковую передачу телеметрии диагностики для каждой базы данных в эластичном пуле, который необходимо отслеживать, выполнив действия, описанные в следующем разделе.
 
@@ -137,7 +137,7 @@ ms.locfileid: "72597969"
 1. Выберите целевой ресурс для данных диагностики потоковой передачи: **архивировать в учетную запись хранения**, **передавать в концентратор событий**или **отправить в log Analytics**.
 1. Для стандартных функций мониторинга на основе событий установите следующие флажки для телеметрии журнала диагностики базы данных: **SQLInsights**, **аутоматиктунинг**, **QueryStoreRuntimeStatistics**, **QueryStoreWaitStatistics** , **Ошибок**, **DatabaseWaitStatistics**, **времени ожидания**, **блоков**и **взаимоблокировок**.
 1. Чтобы получить дополнительные возможности мониторинга на основе одной минуты, установите флажок для **основных** метрик.
-   ![Configure диагностики для баз данных с одним, пулом или экземпляров ](./media/sql-database-metrics-diag-logging/diagnostics-settings-database-sql-selection.png)
+   ![настроить диагностику для баз данных с одним, пулом или экземпляров](./media/sql-database-metrics-diag-logging/diagnostics-settings-database-sql-selection.png)
 1. Щелкните **Сохранить**.
 1. Повторите эти действия для каждой базы данных, которую необходимо отслеживать.
 
@@ -175,7 +175,7 @@ ms.locfileid: "72597969"
 1. Выберите целевой ресурс для данных диагностики потоковой передачи: **архивировать в учетную запись хранения**, **передавать в концентратор событий**или **отправить в log Analytics**.
 1. Для log Analytics выберите **настроить** и создайте новую рабочую область, выбрав **+ создать рабочую область**или используя существующую рабочую область.
 1. Установите флажок для телеметрии диагностики экземпляра: **ресаурцеусажестатс**.
-   Диагностика ![Configure для управляемого экземпляра ](./media/sql-database-metrics-diag-logging/diagnostics-settings-container-mi-selection.png)
+   ![настроить диагностику для управляемого экземпляра](./media/sql-database-metrics-diag-logging/diagnostics-settings-container-mi-selection.png)
 1. Щелкните **Сохранить**.
 1. Кроме того, настройте потоковую передачу телеметрии диагностики для каждой базы данных экземпляра в управляемом экземпляре, за которым вы хотите наблюдать, выполнив действия, описанные в следующем разделе.
 
@@ -199,7 +199,7 @@ ms.locfileid: "72597969"
 1. Введите имя настройки для вашей собственной ссылки.
 1. Выберите целевой ресурс для данных диагностики потоковой передачи: **архивировать в учетную запись хранения**, **передавать в концентратор событий**или **отправить в log Analytics**.
 1. Установите флажки для телеметрии диагностики базы данных: **SQLInsights**, **QueryStoreRuntimeStatistics**, **QueryStoreWaitStatistics** и **Errors**.
-   Диагностика ![Configure для баз данных экземпляров ](./media/sql-database-metrics-diag-logging/diagnostics-settings-database-mi-selection.png)
+   ![настроить диагностику для баз данных экземпляров](./media/sql-database-metrics-diag-logging/diagnostics-settings-database-mi-selection.png)
 1. Щелкните **Сохранить**.
 1. Повторите эти действия для каждой базы данных экземпляра, которую необходимо отслеживать.
 
@@ -298,7 +298,7 @@ ms.locfileid: "72597969"
 
 Можно объединять эти параметры, чтобы получить несколько вариантов вывода.
 
-### <a name="rest-api"></a>REST API
+### <a name="rest-api"></a>REST API
 
 Сведения об изменении параметров диагностики с помощью REST API Azure Monitor см. в [этом документе](https://docs.microsoft.com/rest/api/monitor/diagnosticsettings).
 
@@ -435,7 +435,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 
 ### <a name="resource-usage-stats-for-managed-instance"></a>Статистика использования ресурсов для управляемого экземпляра
 
-|Свойство|Описание|
+|Свойство|Description (Описание)|
 |---|---|
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure.|
@@ -451,7 +451,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 |ResourceId|Универсальный код ресурса (URI) |
 |SKU_s|Номер SKU продукта управляемого экземпляра |
 |virtual_core_count_s|Доступное количество виртуальных ядер |
-|avg_cpu_percent_s|Средний процент использования ЦП |
+|avg_cpu_percent_s|Average CPU percentage (Средний процент использования ЦП) |
 |reserved_storage_mb_s|Зарезервированная емкость хранилища в управляемом экземпляре |
 |storage_space_used_mb_s|Использованный объем хранилища в управляемом экземпляре |
 |io_requests_s|Количество операций ввода-вывода |
@@ -460,7 +460,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 
 ### <a name="query-store-runtime-statistics"></a>Статистика среды выполнения хранилища запросов
 
-|Свойство|Описание|
+|Свойство|Description (Описание)|
 |---|---|
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure. |
@@ -511,7 +511,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 
 ### <a name="query-store-wait-statistics"></a>Статистика времени ожидания хранилища запросов
 
-|Свойство|Описание|
+|Свойство|Description (Описание)|
 |---|---|
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure. |
@@ -549,7 +549,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 
 ### <a name="errors-dataset"></a>Набор данных ошибок
 
-|Свойство|Описание|
+|Свойство|Description (Описание)|
 |---|---|
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure. |
@@ -569,7 +569,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 |Сообщение|Сообщение об ошибке в виде обычного текста. |
 |user_defined_b|Указывает, установлен ли бит ошибки пользователем. |
 |error_number_d|Код ошибки |
-|Серьезность|Серьезность ошибки. |
+|Уровень серьезности|Серьезность ошибки. |
 |state_d|Состояние ошибки. |
 |query_hash_s|Хэш запроса, завершившегося сбоем (при наличии) |
 |query_plan_hash_s|Хэш плана запроса для запроса, завершившегося сбоем (при наличии) |
@@ -578,7 +578,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 
 ### <a name="database-wait-statistics-dataset"></a>Набор данных статистики времени ожидания базы данных
 
-|Свойство|Описание|
+|Свойство|Description (Описание)|
 |---|---|
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure. |
@@ -607,7 +607,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 
 ### <a name="time-outs-dataset"></a>Набор данных времени ожидания
 
-|Свойство|Описание|
+|Свойство|Description (Описание)|
 |---|---|
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure. |
@@ -630,7 +630,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 
 ### <a name="blockings-dataset"></a>Набор данных блокировки
 
-|Свойство|Описание|
+|Свойство|Description (Описание)|
 |---|---|
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure. |
@@ -654,7 +654,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 
 ### <a name="deadlocks-dataset"></a>Набор данных взаимоблокировки
 
-|Свойство|Описание|
+|Свойство|Description (Описание)|
 |---|---|
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure. |
@@ -675,7 +675,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 
 ### <a name="automatic-tuning-dataset"></a>Набор данных автоматической настройки
 
-|Свойство|Описание|
+|Свойство|Description (Описание)|
 |---|---|
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure. |

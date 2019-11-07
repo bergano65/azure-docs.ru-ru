@@ -1,5 +1,5 @@
 ---
-title: Примеры Azure PowerShell для фабрики данных Azure | Документация Майкрософт
+title: Примеры Azure PowerShell для фабрики данных Azure
 description: Примеры Azure PowerShell — это скрипты для создания фабрик данных и управления ими.
 services: data-factory
 ms.service: data-factory
@@ -10,12 +10,12 @@ manager: jroth
 ms.reviewer: maghan
 ms.topic: conceptual
 ms.date: 01/16/2018
-ms.openlocfilehash: 02ec7de918b0704a3d72611f6f3e47cda2d23fae
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: b42a7667321215247233776eb0f2d733d67ab945
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70140855"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73684446"
 ---
 # <a name="azure-powershell-samples-for-azure-data-factory"></a>Примеры Azure PowerShell для фабрики данных Azure
 

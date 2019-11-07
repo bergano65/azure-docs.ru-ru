@@ -1,5 +1,5 @@
 ---
-title: Удаленный рабочий стол подключения клиентов в виртуальном рабочем столе Windows — Azure
+title: Устранение неполадок удаленный рабочий стол виртуальных рабочих столов Windows в Azure
 description: Устранение проблем при настройке клиентских подключений в среде клиента виртуальных рабочих столов Windows.
 services: virtual-desktop
 author: Heidilohr
@@ -7,18 +7,18 @@ ms.service: virtual-desktop
 ms.topic: troubleshooting
 ms.date: 04/08/2019
 ms.author: helohr
-ms.openlocfilehash: 22590a7ecc94efbfad5eefe27f284bdb191e876d
-ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
+ms.openlocfilehash: 3aae74a4fed499674f015ed0adb59016877583f3
+ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71676408"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73607389"
 ---
 # <a name="remote-desktop-client-connections"></a>Подключения клиента удаленного рабочего стола
 
 Используйте эту статью для устранения проблем с подключением клиентов к виртуальным рабочим столам Windows.
 
-## <a name="provide-feedback"></a>Оставить отзыв
+## <a name="provide-feedback"></a>Отзывы
 
 Посетите [техническое сообщество Виртуального рабочего стола Windows](https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop), чтобы обсудить службу "Виртуальный рабочий стол Windows" с группой разработчиков и активными членами сообщества.
 
@@ -34,23 +34,23 @@ nslookup rdweb.wvd.microsoft.com
 
 Попробуйте подключиться с помощью другого клиента, например удаленный рабочий стол клиента для Windows 7 или Windows 10, и проверьте, можно ли открыть веб-клиент.
 
-### <a name="error-opening-another-site-fails"></a>Ошибка: Не удается открыть другой сайт
+### <a name="error-opening-another-site-fails"></a>Ошибка: сбой при открытии другого сайта
 
-**Причина.** Проблемы с сетью и (или) простои.
+**Причина:** Проблемы с сетью и (или) простои.
 
-**Исправно** Обратитесь в службу поддержки сети.
+**Исправление:** Обратитесь в службу поддержки сети.
 
-### <a name="error-nslookup-cannot-resolve-the-name"></a>Ошибка: Nslookup не удается разрешить имя
+### <a name="error-nslookup-cannot-resolve-the-name"></a>Ошибка: nslookup не удается разрешить имя
 
-**Причина.** Проблемы с сетью и (или) простои.
+**Причина:** Проблемы с сетью и (или) простои.
 
-**Исправно** Обратитесь в службу поддержки сети
+**Исправление:** Обратитесь в службу поддержки сети
 
-### <a name="error-you-cant-connect-but-other-clients-can-connect"></a>Ошибка: Невозможно подключиться, но другие клиенты могут подключаться
+### <a name="error-you-cant-connect-but-other-clients-can-connect"></a>Ошибка: невозможно подключиться, но другие клиенты могут подключаться
 
-**Причина.** Браузер работает не так, как ожидалось, и остановлен.
+**Причина:** Браузер работает не так, как ожидалось, и остановлен.
 
-**Исправно** Выполните эти инструкции для устранения неполадок в браузере.
+**Исправление:** Выполните эти инструкции для устранения неполадок в браузере.
 
 1. Перезапустите браузер.
 2. Очистите файлы cookie браузера. См. раздел [Удаление файлов cookie в Internet Explorer](https://support.microsoft.com/help/278835/how-to-delete-cookie-files-in-internet-explorer).
@@ -61,11 +61,11 @@ nslookup rdweb.wvd.microsoft.com
 
 Попробуйте подключиться с помощью другого браузера или клиента.
 
-### <a name="error-other-browsers-and-clients-also-malfunction-or-fail-to-open"></a>Ошибка: Другие браузеры и клиенты также неисправен или не могут открыться
+### <a name="error-other-browsers-and-clients-also-malfunction-or-fail-to-open"></a>Ошибка: другие браузеры и клиенты также неисправен или не удается открыть
 
-**Причина.** Проблемы с сетью и (или) операционной системой или простои
+**Причина:** Проблемы с сетью и (или) операционной системой или простои
 
-**Исправно** Обратитесь в службу поддержки.
+**Исправление:** Обратитесь в службу поддержки.
 
 ## <a name="web-client-keeps-prompting-for-credentials"></a>Веб-клиент сохраняет запросы учетных данных
 
@@ -135,28 +135,28 @@ Remove-Item C:\Users\pavithir\AppData\Roaming\RdClientRadc\* -Recurse
     Time              : <Timestampt>
     ```
 
-### <a name="error-o_add_user_to_group_failed--failed-to-add-user--username-to-group--remote-desktop-users-reason-win32error_no_such_member"></a>Ошибка: O_ADD_USER_TO_GROUP_FAILED или не удалось добавить пользователя = ≤ username ≥ в Group = удаленный рабочий стол пользователей. Причина: Win32.ERROR_NO_SUCH_MEMBER
+### <a name="error-o_add_user_to_group_failed--failed-to-add-user--username-to-group--remote-desktop-users-reason-win32error_no_such_member"></a>Ошибка: O_ADD_USER_TO_GROUP_FAILED или не удалось добавить пользователя = ≤ username ≥ в Group = удаленный рабочий стол пользователей. Причина: Win32. ERROR_NO_SUCH_MEMBER
 
-**Причина.** Виртуальная машина не присоединена к домену, в котором находится объект пользователя.
+**Причина:** Виртуальная машина не присоединена к домену, в котором находится объект пользователя.
 
-**Исправно** Добавьте виртуальную машину в правильный домен. См. раздел [присоединение виртуальной машины Windows Server к управляемому домену](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-admin-guide-join-windows-vm-portal).
+**Исправление:** Добавьте виртуальную машину в правильный домен. См. раздел [присоединение виртуальной машины Windows Server к управляемому домену](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-admin-guide-join-windows-vm-portal).
 
-### <a name="error-nslookup-cannot-resolve-the-name"></a>Ошибка: Nslookup не удается разрешить имя
+### <a name="error-nslookup-cannot-resolve-the-name"></a>Ошибка: nslookup не удается разрешить имя
 
-**Причина.** Сетевые проблемы или простои.
+**Причина:** Сетевые проблемы или простои.
 
-**Исправно** Обратитесь в службу поддержки сети
+**Исправление:** Обратитесь в службу поддержки сети
 
-### <a name="error-connectionfailedclientprotocolerror"></a>Ошибка: коннектионфаиледклиентпротоколеррор
+### <a name="error-connectionfailedclientprotocolerror"></a>Ошибка: Коннектионфаиледклиентпротоколеррор
 
-**Причина.** Виртуальные машины, к которым пытается подключиться пользователь, не присоединены к домену.
+**Причина:** Виртуальные машины, к которым пытается подключиться пользователь, не присоединены к домену.
 
-**Исправно** Присоедините все виртуальные машины, которые являются частью пула узлов, к контроллеру домена.
+**Исправление:** Присоедините все виртуальные машины, которые являются частью пула узлов, к контроллеру домена.
 
-### <a name="error-connectionfailedusersidinformationmismatch"></a>Ошибка: коннектионфаиледусерсидинформатионмисматч
-**Причина.** Идентификатор безопасности из маркера Azure Active Directory (AD) пользователя не соответствует идентификатору безопасности, возвращенному контроллером домена при попытке включить удаленный вход в систему. Эта ошибка обычно возникает при попытке входа в среду Azure Active Directory доменных служб (Azure AD DS) с пользовательским исходным кодом из Windows Server AD.
+### <a name="error-connectionfailedusersidinformationmismatch"></a>Ошибка: Коннектионфаиледусерсидинформатионмисматч
+**Причина:** Идентификатор безопасности из маркера Azure Active Directory (AD) пользователя не соответствует идентификатору безопасности, возвращенному контроллером домена при попытке включить удаленный вход в систему. Эта ошибка обычно возникает при попытке входа в среду Azure Active Directory доменных служб (Azure AD DS) с пользовательским исходным кодом из Windows Server AD.
 
-**Исправно** В настоящее время этот сценарий не поддерживается. Только пользователи, источником которых является Azure Active Directory, могут входить в виртуальные машины виртуальных рабочих столов Windows, подключенные к Azure AD DS.
+**Исправление:** В настоящее время этот сценарий не поддерживается. Только пользователи, источником которых является Azure Active Directory, могут входить в виртуальные машины виртуальных рабочих столов Windows, подключенные к Azure AD DS.
 
 ## <a name="user-connects-but-nothing-is-displayed-no-feed"></a>Пользователь подключается, но ничего не отображается (канал отсутствует)
 
@@ -172,10 +172,10 @@ Get-RdsAppGroupUser <tenantname> <hostpoolname> <appgroupname>
 
 Если используется веб-клиент, убедитесь в отсутствии проблем с кэшированными учетными данными.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Общие сведения об устранении неполадок с виртуальным рабочим столом Windows и сведениями о эскалации см. в разделе [Обзор устранения неполадок, обратная связь и поддержка](troubleshoot-set-up-overview.md).
 - Сведения об устранении неполадок при создании клиента и пула узлов в среде виртуальных рабочих столов Windows см. в статье [Создание пула клиентов и узлов](troubleshoot-set-up-issues.md).
 - Сведения об устранении неполадок при настройке виртуальной машины в виртуальном рабочем столе Windows см. в разделе [Конфигурация виртуальной машины узла сеанса](troubleshoot-vm-configuration.md).
 - Сведения об устранении неполадок при использовании PowerShell с виртуальным рабочим столом Windows см. в статье [Windows Virtual Desktop PowerShell](troubleshoot-powershell.md).
-- Сведения об устранении неполадок см. в статье [Tutorial: Устранение неполадок при](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-tutorial-troubleshoot)развертывании шаблонов диспетчер ресурсов.
+- Руководство по устранению неполадок см. в разделе [учебник. Устранение неполадок диспетчер ресурсов развертываний шаблонов](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-tutorial-troubleshoot).

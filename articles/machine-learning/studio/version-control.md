@@ -1,6 +1,6 @@
 ---
 title: Управление жизненным циклом приложения
-titleSuffix: Azure Machine Learning Studio (classic)
+titleSuffix: ML Studio (classic) Azure
 description: Применение рекомендаций по управлению жизненным циклом приложений в классической версии Машинное обучение Azure Studio
 services: machine-learning
 ms.service: machine-learning
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: xiaoharper
 ms.author: amlstudiodocs
 ms.date: 10/27/2016
-ms.openlocfilehash: ce1a398939a65bb47c74f00159b667c3659f5a93
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: d5e2ee72c30933305356cd2a7792d1972fa938da
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73467006"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73684746"
 ---
 # <a name="application-lifecycle-management-in-azure-machine-learning-studio-classic"></a>Управление жизненным циклом приложений в Машинное обучение Azure Studio (классическая модель)
 Машинное обучение Azure Studio (классическая модель) — это инструмент для разработки экспериментов машинного обучения, которые поддерживаются в облачной платформе Azure. Это решение позволяет объединить в рамках одной платформы возможности Visual Studio IDE и масштабируемой облачной службы. В классической версии Машинное обучение Azure Studio можно реализовать стандартные методики управления жизненным циклом приложений (ALM) с управлением версиями различных ресурсов для автоматического выполнения и развертывания. В этой статье рассматриваются некоторые возможности и подходы.
@@ -96,4 +96,4 @@ ms.locfileid: "73467006"
 ## <a name="next-steps"></a>Дальнейшие действия
 * Скачайте модуль [PowerShell для машинное обучение Azure Studio (классическая модель)](https://aka.ms/amlps) и начните АВТОМАТИЗИРОВАТЬ задачи ALM.
 * Узнайте, как [создавать большое число моделей машинного обучения и управлять ими, используя только один эксперимент](create-models-and-endpoints-with-powershell.md), с помощью PowerShell и API переобучения.
-* См. дополнительные сведения о [развертывании веб-служб машинного обучения Azure](publish-a-machine-learning-web-service.md).
+* См. дополнительные сведения о [развертывании веб-служб машинного обучения Azure](deploy-a-machine-learning-web-service.md).

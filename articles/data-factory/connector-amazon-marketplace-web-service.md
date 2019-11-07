@@ -1,5 +1,5 @@
 ---
-title: Копирование данных из Amazon Marketplace Web Service с помощью Фабрики данных Azure | Документация Майкрософт
+title: Копирование данных из Amazon Marketplace Web Service с помощью Фабрики данных Azure
 description: Узнайте, как копировать данные из Amazon Marketplace Web Service на поддерживаемые приемники хранилища данных с помощью действия копирования в конвейере фабрики данных Azure.
 services: data-factory
 documentationcenter: ''
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 08/01/2018
 ms.author: jingwang
-ms.openlocfilehash: cddb8eaf546760ad9d983c429424144ff131de11
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 8613b52ff8d04b578342a34fe24d6e9e12a8a98c
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72931201"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73681409"
 ---
 # <a name="copy-data-from-amazon-marketplace-web-service-using-azure-data-factory"></a>Копирование данных из Amazon Marketplace Web Service с помощью Фабрики данных Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "72931201"
 
 Фабрика данных Azure имеет встроенный драйвер для настройки подключения. Поэтому с использованием этого соединителя вам не нужно устанавливать драйверы вручную.
 
-## <a name="getting-started"></a>Начало работы
+## <a name="getting-started"></a>Приступая к работе
 
 [!INCLUDE [data-factory-v2-connector-get-started](../../includes/data-factory-v2-connector-get-started.md)]
 
@@ -44,20 +44,20 @@ ms.locfileid: "72931201"
 
 Для связанной службы Amazon Marketplace Web Service поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description (Описание) | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Для свойства type необходимо задать значение **AmazonMWS**. | ДА |
-| endpoint | Конечная точка сервера Amazon MWS (то есть mws.amazonservices.com).  | ДА |
-| marketplaceID | Идентификатор Amazon Marketplace, из которого нужно получать данные. Для получения данных из нескольких идентификаторов Marketplace, разделите их запятой (`,`). (То есть A2EUQ1WTGCTBG2.)  | ДА |
-| sellerID | Идентификатор продавца Amazon.  | ДА |
-| mwsAuthToken | Маркер проверки подлинности Amazon MWS. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | ДА |
-| accessKeyId | Идентификатор ключа доступа, используемый для доступа к данным.  | ДА |
-| secretKey | Секретный ключ, используемый для доступа к данным. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | ДА |
+| type | Для свойства type необходимо задать значение **AmazonMWS**. | Да |
+| endpoint | Конечная точка сервера Amazon MWS (то есть mws.amazonservices.com).  | Да |
+| marketplaceID | Идентификатор Amazon Marketplace, из которого нужно получать данные. Для получения данных из нескольких идентификаторов Marketplace, разделите их запятой (`,`). (То есть A2EUQ1WTGCTBG2.)  | Да |
+| sellerID | Идентификатор продавца Amazon.  | Да |
+| mwsAuthToken | Маркер проверки подлинности Amazon MWS. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
+| accessKeyId | Идентификатор ключа доступа, используемый для доступа к данным.  | Да |
+| secretKey | Секретный ключ, используемый для доступа к данным. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
 | useEncryptedEndpoints | Указывает, шифруются ли конечные точки источника данных с помощью протокола HTTPS. По умолчанию используется значение true.  | Нет |
 | useHostVerification | Указывает, следует ли требовать, чтобы имя узла в сертификате сервера совпадало с именем узла сервера при подключении по протоколу SSL. По умолчанию используется значение true.  | Нет |
 | usePeerVerification | Указывает, следует ли проверять удостоверение сервера при подключении по протоколу SSL. По умолчанию используется значение true.  | Нет |
 
-**Пример.**
+**Пример**
 
 ```json
 {
@@ -88,9 +88,9 @@ ms.locfileid: "72931201"
 
 Чтобы скопировать данные из Amazon Marketplace Web Service, установите для свойства type набора данных значение **AmazonMWSObject**. Поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description (Описание) | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Свойство Type набора данных должно иметь значение **амазонмвсобжект** . | ДА |
+| type | Свойство Type набора данных должно иметь значение **амазонмвсобжект** . | Да |
 | tableName | Имя таблицы. | Нет (если свойство query указано в источнике действия) |
 
 **Пример**
@@ -119,12 +119,12 @@ ms.locfileid: "72931201"
 
 Чтобы скопировать данные из Amazon Marketplace Web Service, задайте тип источника **AmazonMWSSource** в действии копирования. В разделе **source** действия копирования поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description (Описание) | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Свойство type источника действия копирования должно иметь значение **AmazonMWSSource**. | ДА |
-| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM Orders where  Amazon_Order_Id = 'xx'"`. | Нет (если для набора данных задано свойство tableName) |
+| type | Свойство type источника действия копирования должно иметь значение **AmazonMWSSource**. | Да |
+| запрос | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM Orders where  Amazon_Order_Id = 'xx'"`. | Нет (если для набора данных задано свойство tableName) |
 
-**Пример.**
+**Пример**
 
 ```json
 "activities":[

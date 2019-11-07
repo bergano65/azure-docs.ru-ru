@@ -1,5 +1,5 @@
 ---
-title: Подключение приложений к Управляемому экземпляру Базы данных SQL Azure | Документация Майкрософт
+title: Приложение Управляемый экземпляр Базы данных SQL Azure Connect
 description: В этой статье описывается, как подключить приложение к Управляемому экземпляру Базы данных SQL.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: srdan-bozovic-msft
 ms.author: srbozovi
 ms.reviewer: sstein, bonova, carlrab, vanto
 ms.date: 11/09/2018
-ms.openlocfilehash: 133110d015ac7a26f18f14f6ff957729a4f079b5
-ms.sourcegitcommit: 388c8f24434cc96c990f3819d2f38f46ee72c4d8
+ms.openlocfilehash: 5dc287ab58636b4921c14ae71f9a62ab36d9c596
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70060654"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73688243"
 ---
 # <a name="connect-your-application-to-azure-sql-database-managed-instance"></a>Подключение приложения к управляемому экземпляру базы данных SQL Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "70060654"
 
 Независимо от выбранной схемы, вы можете подключить приложение к Управляемому экземпляру.  
 
-![высокий уровень доступности](./media/sql-database-managed-instance/application-deployment-topologies.png)
+![Высокая доступность](./media/sql-database-managed-instance/application-deployment-topologies.png)
 
 ## <a name="connect-an-application-inside-the-same-vnet"></a>Подключение приложений внутри одной виртуальной сети
 
@@ -65,7 +65,7 @@ ms.locfileid: "70060654"
 
 Другой сценарий, реализуемый клиентами, заключается в том, что VPN-шлюз размещается в виртуальной сети и подписке, которые отличаются от используемых для Управляемого экземпляра. Затем между двумя виртуальными сетями устанавливается пиринговая связь. На следующей схеме примера архитектуры показано, как это можно реализовать.
 
-![Пиринг VNet](./media/sql-database-managed-instance-connect-app/vnet-peering.png)
+![Пиринговая связь между виртуальными сетями](./media/sql-database-managed-instance-connect-app/vnet-peering.png)
 
 После настройки базовой инфраструктуры необходимо изменить некоторые параметры, чтобы VPN-шлюз мог просматривать IP-адреса в виртуальной сети, где размещен Управляемый экземпляр. Чтобы сделать это, внесите следующие изменения в разделе **Параметры пиринга**.
 
@@ -137,7 +137,7 @@ ms.locfileid: "70060654"
 
 Ниже приведены рекомендуемые минимальные версии средств и драйверов, необходимые, чтобы подключиться к Управляемому экземпляру.
 
-| Драйвер или средство | Version |
+| Драйвер или средство | Version (версия) |
 | --- | --- |
 |.NET Framework | 4.6.1 (или .NET Core) |
 |Драйвер ODBC| версия 17 |
@@ -148,7 +148,7 @@ ms.locfileid: "70060654"
 |SSMS| 18,0 или [более поздней версии](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) |
 |[SMO](https://docs.microsoft.com/sql/relational-databases/server-management-objects-smo/sql-server-management-objects-smo-programming-guide) | [150](https://www.nuget.org/packages/Microsoft.SqlServer.SqlManagementObjects) или более поздней версии |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения об Управляемом экземпляре см. в [обзоре Управляемого экземпляра](sql-database-managed-instance.md).
 - См. инструкцию по [созданию Управляемого экземпляра](sql-database-managed-instance-get-started.md).

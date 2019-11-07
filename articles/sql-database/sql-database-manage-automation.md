@@ -1,5 +1,5 @@
 ---
-title: Управление базами данных SQL Azure с помощью службы автоматизации Azure | Документация Майкрософт
+title: Управление базами данных SQL Azure с помощью службы автоматизации Azure
 description: Способы использования службы автоматизации Azure для управления базами данных SQL Azure при масштабировании.
 services: sql-database
 ms.service: sql-database
@@ -11,18 +11,18 @@ author: juliemsft
 ms.author: jrasnick
 ms.reviewer: carlrab
 ms.date: 03/12/2019
-ms.openlocfilehash: bb195d5809ef0e2af2a4975a263a9739db1cdfa6
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 0e29cd85c63bb2f6e083f9cda9abd48fa6d9975a
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68567734"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73689451"
 ---
 # <a name="managing-azure-sql-databases-using-azure-automation"></a>Управление базами данных SQL Azure с помощью службы автоматизации Azure
 
 В этом руководстве будет представлена служба автоматизации Azure и способы ее использования для упрощения управления базами данных SQL Azure.
 
-## <a name="what-is-azure-automation"></a>Что такое служба автоматизации Azure
+## <a name="what-is-azure-automation"></a>Что такое служба автоматизации Azure?
 
 [Служба автоматизации Azure](https://azure.microsoft.com/services/automation/) — это служба Azure для упрощения управления облаком путем автоматизации процессов. С помощью службы автоматизации Azure можно автоматизировать длительные, выполняемые вручную, ненадежные и часто повторяющиеся задачи для повышения надежности, эффективности и ускорения вывода продукта на рынок.
 
@@ -43,7 +43,7 @@ ms.locfileid: "68567734"
 - [Усечение таблицы SQL, когда база данных достигает максимального размера](https://gallery.technet.microsoft.com/scriptcenter/Azure-Automation-Your-SQL-30f8736b)
 - [Индексирование таблиц в базе данных SQL Azure при их высокой фрагментации](https://gallery.technet.microsoft.com/scriptcenter/Indexes-tables-in-an-Azure-73a2a8ea)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы познакомились с основами службы автоматизации Azure и способах ее использования для управления базами данных SQL Azure, пройдите по ссылкам, чтобы получить дополнительные сведения о службе автоматизации Azure.
 

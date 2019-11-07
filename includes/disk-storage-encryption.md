@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 10/24/2019
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: 762d6991eb8c45abc7de4f331f1b9335d68c0143
-ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
+ms.openlocfilehash: 0659e57f5a5b223c199becf492b27c7a70cbdc63
+ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "73034535"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73612156"
 ---
 Управляемые диски Azure автоматически шифруют данные по умолчанию при сохранении их в облаке. Шифрование на стороне сервера защищает ваши данные и помогает удовлетворить ваши обязательства по обеспечению безопасности и соответствия требованиям Организации. Данные на управляемых дисках Azure шифруются прозрачно с помощью 256-битного [шифрования AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard), одним из наиболее подданных блоков блочных шифров и совместимым с FIPS 140-2.   
 
@@ -157,6 +157,7 @@ New-AzResourceGroupDeployment -ResourceGroupName $rgName `
 $vm = Get-AzVM -Name $vmName -ResourceGroupName $rgName 
 $disk = Get-AzDisk -DiskName $diskName -ResourceGroupName $rgName
 $vm = Add-AzVMDataDisk -VM $vm -Name $diskName -CreateOption Attach -ManagedDiskId $disk.Id -Lun 1
+Update-AzVM -ResourceGroupName $rgName -VM $vm
 ```
 
 

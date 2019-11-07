@@ -1,5 +1,5 @@
 ---
-title: Действие Filter в фабрике данных Azure | Документация Майкрософт
+title: Действие Filter в фабрике данных Azure
 description: Действие Filter фильтрует входные данные.
 services: data-factory
 documentationcenter: ''
@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 05/04/2018
-ms.openlocfilehash: c0f5d3264d953498af61c6e8d36dadee7dd61931
-ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
+ms.openlocfilehash: 5794a2c754e2082fdf45ad689bdb89ea494541c2
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70915516"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73679861"
 ---
 # <a name="filter-activity-in-azure-data-factory"></a>Действие Filter в фабрике данных Azure
 Вы можете использовать действие Filter в конвейере для применения выражения фильтра к входному массиву. 
@@ -36,16 +36,16 @@ ms.locfileid: "70915516"
 
 ## <a name="type-properties"></a>Свойства типа
 
-Свойство | Описание | Допустимые значения | Обязательное значение
+Свойство | Description (Описание) | Допустимые значения | Обязательно
 -------- | ----------- | -------------- | --------
-name | Имя действия `Filter`. | Строковое | Да
-type | Должно быть задано значение **filter**. | Строковое | Да
-условие | Условие, которое можно использовать для фильтрации входных данных. | Выражение | Да
-items | Входной массив, к которому должен применяться фильтр. | Выражение | Да
+name | Имя действия `Filter`. | string | Да
+type | Должно быть задано значение **filter**. | string | Да
+condition | Условие, которое можно использовать для фильтрации входных данных. | Expression | Да
+Items | Входной массив, к которому должен применяться фильтр. | Expression | Да
 
 ## <a name="example"></a>Пример
 
-В этом примере конвейер содержит два действия: **Filter** и **ForEach**. Действие Filter настроено для фильтрации входного массива на наличие элементов со значением больше 3. Затем действие ForEach выполняет перебор отфильтрованных значений и **присваивает переменной значение** текущему значению.
+В этом примере конвейер имеет два вида действий: **Filter** и **ForEach**. Действие Filter настроено для фильтрации входного массива на наличие элементов со значением больше 3. Затем действие ForEach выполняет перебор отфильтрованных значений и **присваивает переменной значение** текущему значению.
 
 ```json
 {
@@ -111,10 +111,10 @@ items | Входной массив, к которому должен приме
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь с другими действиями потока управления, которые поддерживаются фабрикой данных: 
 
-- [Действие условия If](control-flow-if-condition-activity.md)
+- [действие условия If](control-flow-if-condition-activity.md);
 - [Действие выполнения конвейера](control-flow-execute-pipeline-activity.md)
 - [Действие ForEach](control-flow-for-each-activity.md)
 - [Действие получения метаданных](control-flow-get-metadata-activity.md)

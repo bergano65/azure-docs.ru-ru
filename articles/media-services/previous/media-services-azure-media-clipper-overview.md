@@ -3,18 +3,18 @@ title: Создание клипов с помощью Azure Media Clipper | Д�
 description: Обзор Azure Media Clipper — инструмент для создания клипов мультимедиа из файлов
 services: media-services
 keywords: clip;subclip;encoding;media
-author: dbgeorge
-manager: jasonsue
-ms.author: dwgeo
+author: Juliako
+manager: femila
+ms.author: juliako
 ms.date: 03/14/2019
 ms.topic: article
 ms.service: media-services
-ms.openlocfilehash: 35f1f359b44af00000ccd9047673b80ca541d376
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 51f85dffd48e451b477018ef20491f8619a30f25
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61243882"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73685015"
 ---
 # <a name="create-clips-with-azure-media-clipper"></a>Создание клипов с помощью Azure Media Clipper 
 
@@ -31,7 +31,7 @@ Azure Media Clipper позволяет делать следующее:
 
 Для запроса новых функций и обратной связи отправляйте сообщения в [UserVoice для служб мультимедиа Azure](https://aka.ms/amsvoice/). При наличии конкретных проблем, вопросов или найденных программных ошибок сообщите об этом группе разработки служб мультимедиа по адресу amcinfo@microsoft.com.
 
-На следующем изображении представлен интерфейс Clipper ![Azure Media Clipper](media/media-services-azure-media-clipper-overview/media-services-azure-media-clipper-interface.PNG).
+На следующем изображении представлен интерфейс Clipper: ![Azure Media Clipper](media/media-services-azure-media-clipper-overview/media-services-azure-media-clipper-interface.PNG)
 
 ## <a name="release-notes"></a>Заметки о выпуске
 В следующем списке приведена ссылка на запись а блоге, а также описаны известные проблемы и журнал изменений последней версии средства Clipper:

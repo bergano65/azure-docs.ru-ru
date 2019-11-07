@@ -1,5 +1,5 @@
 ---
-title: Обзор соединителя фабрики данных Azure | Документация Майкрософт
+title: Обзор соединителя фабрики данных Azure
 description: Узнайте о поддерживаемых соединителях в фабрике данных.
 services: data-factory
 author: linda33wj
@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 8/26/2019
 ms.author: jingwang
 ms.reviewer: craigg
-ms.openlocfilehash: 14efe4d71ef11f0a4d32266368f0eefa167dff4b
-ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+ms.openlocfilehash: 386372b73940c4917305d89f2e4d16759797bb87
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70129891"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73680469"
 ---
 # <a name="azure-data-factory-connector-overview"></a>Обзор соединителя фабрики данных Azure
 
@@ -22,7 +22,7 @@ ms.locfileid: "70129891"
 
 [!INCLUDE [Connector overview](../../includes/data-factory-v2-connector-overview.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Действие копирования](copy-activity-overview.md)
 - [Поток данных сопоставления](concepts-data-flow-overview.md)

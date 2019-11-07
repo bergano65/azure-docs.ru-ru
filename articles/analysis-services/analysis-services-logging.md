@@ -1,18 +1,18 @@
 ---
 title: Ведение журнала диагностики для Azure Analysis Services | Документация Майкрософт
-description: Узнайте том, как настроить журнал ведения диагностики для Azure Analysis Services.
+description: Описание настройки ведения журнала диагностики ресурсов Azure для мониторинга сервера Azure Analysis Services.
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 09/12/2019
+ms.date: 10/31/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: a9684042a76c9c906a75334c319b4ca8ee0b727b
-ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
+ms.openlocfilehash: b8ae2c529bebebae4ebc2d7b0b8a7e420fe9bcc7
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2019
-ms.locfileid: "72298606"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73572778"
 ---
 # <a name="setup-diagnostic-logging"></a>Настройка журнала ведения диагностики
 
@@ -53,7 +53,7 @@ ms.locfileid: "72298606"
 |Обработка запросов     |   Direct Query Begin      |
 |Обработка запросов     |  Direct Query End       |
 
-### <a name="service"></a>Service
+### <a name="service"></a>служба
 
 |Имя операции  |Когда выполняется  |
 |---------|---------|
@@ -88,7 +88,7 @@ ms.locfileid: "72298606"
     * **Служба**. Выберите этот параметр, чтоб вести журнал событий уровня службы. Если выполняется архивация в учетную запись хранения, можно выбрать период удержания для журналов диагностики. По окончании периода хранения журналы удаляются автоматически.
     * **Метрики**. Выберите этот параметр, чтобы хранить подробные данные в разделе [Метрики](analysis-services-monitor.md#server-metrics). Если выполняется архивация в учетную запись хранения, можно выбрать период удержания для журналов диагностики. По окончании периода хранения журналы удаляются автоматически.
 
-3. Нажмите кнопку **Сохранить**.
+3. Щелкните **Сохранить**.
 
     Если отобразится сообщение об ошибке Failed to update diagnostics for \<workspace name>. The subscription \<subscription id> is not registered to use Microsoft.Insights (Не удалось обновить данные диагностики для <имя_рабочей_области>. Подписку <идентификатор_подписки> не зарегистрировано для использования Microsoft.Insights), следуйте инструкциям статьи [Устранение неполадок Диагностики Azure](https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-storage), чтобы зарегистрировать учетную запись, а затем повторите процедуру.
 
@@ -324,7 +324,7 @@ Set-AzDiagnosticSetting -ResourceId $account.ResourceId`
   -RetentionEnabled $true -RetentionInDays 90
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте больше о [журнал ведения диагностики ресурсов Azure](../azure-monitor/platform/resource-logs-overview.md).
 

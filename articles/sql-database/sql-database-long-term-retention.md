@@ -1,5 +1,5 @@
 ---
-title: Хранение резервных копий базы данных SQL Azure до 10 лет | Документы Майкрософт
+title: Хранение резервных копий базы данных SQL Azure до 10 лет
 description: Узнайте, как база данных SQL Azure поддерживает хранение полных резервных копий базы данных в течение 10 лет.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab
 ms.date: 05/18/2019
-ms.openlocfilehash: b43097dee6a3b4e8ec762e193dc2faf006ec796c
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 5d6f0797802a622ada1916752bc35c1bae2cde9f
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68567756"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73689517"
 ---
 # <a name="store-azure-sql-database-backups-for-up-to-10-years"></a>Хранение резервных копий базы данных SQL Azure до 10 лет
 
@@ -77,6 +77,6 @@ W = 12 недель (84 дня), M = 12 месяцев (365 дней), Y = 10 л
 
 Восстановление базы данных из хранилища долгосрочного хранения (LTR) можно выполнить, выбрав необходимую резервную копию по метке времени. Базу данных можно восстановить на любой доступный сервер с той же подпиской, что и у исходной базы данных. Сведения о восстановлении базы данных из резервной копии LTR с помощью портал Azure или PowerShell см. в статье [Управление долгосрочным хранением резервных копий базы данных SQL Azure](sql-database-long-term-backup-retention-configure.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Поскольку резервные копии базы данных защищают данные от случайного повреждения или удаления, они являются важной частью любой стратегии непрерывности бизнес-процессов и аварийного восстановления. Дополнительные сведения о других решениях для базы данных SQL, обеспечивающих непрерывность бизнес-процессов, см. в статье [Обзор обеспечения непрерывности бизнес-процессов с помощью базы данных SQL Azure](sql-database-business-continuity.md).

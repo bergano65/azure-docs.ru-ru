@@ -1,22 +1,22 @@
 ---
-title: Использование локального шлюза данных для источников данных виртуальной сети Azure | Документация Майкрософт
-description: Узнайте, как настроить сервер, чтобы использовать шлюз для источников данных в виртуальной сети.
+title: Настройка Azure Analysis Services для источников данных виртуальной сети | Документация Майкрософт
+description: Узнайте, как настроить сервер Azure Analysis Services для использования шлюза для источников данных в виртуальной сети Azure (VNet).
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 09/12/2019
+ms.date: 10/30/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: d1993996c0f982624d6976b50871fa8c4592e2f6
-ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
+ms.openlocfilehash: 384f4c2ee3021678c530aa5c98eaf4dbfd661e95
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2019
-ms.locfileid: "72301220"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73572276"
 ---
 # <a name="use-gateway-for-data-sources-on-an-azure-virtual-network-vnet"></a>Использование шлюза для источников данных в виртуальной сети Azure
 
-В этой статье описывается свойство сервера **AlwaysUseGateway**, которое следует использовать при размещении источников данных в [виртуальной сети Azure](../virtual-network/virtual-networks-overview.md).
+В этой статье описывается свойство сервера Azure Analysis Services **AlwaysUseGateway** для использования при работе с источниками данных в [виртуальной сети Azure (VNet)](../virtual-network/virtual-networks-overview.md).
 
 ## <a name="server-access-to-vnet-data-sources"></a>Доступ сервера к источникам данных виртуальной сети
 
@@ -35,7 +35,7 @@ ms.locfileid: "72301220"
     ![Свойство AlwaysUseGateway](media/analysis-services-vnet-gateway/aas-ssms-always-property.png)
 
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>Дополнительные материалы
 [Подключение к локальным источникам данных](analysis-services-gateway.md)   
 [Установка и настройка локального шлюза данных](analysis-services-gateway-install.md)   
 [Виртуальная сеть Azure](../virtual-network/virtual-networks-overview.md)   

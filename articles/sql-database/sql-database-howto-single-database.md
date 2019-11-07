@@ -1,5 +1,5 @@
 ---
-title: Настройка отдельной базы данных SQL Azure | Документация Майкрософт
+title: Как настроить базу данных SQL Azure — Single
 description: Сведения о том, как настроить отдельную базу данных SQL Azure и управлять ею
 services: sql-database
 ms.service: sql-database
@@ -11,18 +11,18 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: carlr
 ms.date: 02/08/2019
-ms.openlocfilehash: 2117a811f977230dd9c9eecf6ea09b9b7deda3be
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 45e25641092fae36cd58a59400cea025f74cbc1f
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68568052"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73689902"
 ---
 # <a name="how-to-use-a-single-database-in-azure-sql-database"></a>Использование отдельной базы данных в Базе данных SQL Azure
 
 В этом разделе можно найти различные руководства, сценарии и объяснения, которые помогут в управлении и настройке отдельной базы данных в Базе данных SQL Azure.
 
-## <a name="migrate"></a>Перенос
+## <a name="migrate"></a>Миграция
 
 - [Перенос базы данных SQL Server в базу данных SQL Azure](sql-database-single-database-migrate.md) — содержит информацию о рекомендуемом процессе миграции и средствах для миграции в управляемый экземпляр.
 - [Новый администратор базы данных в облаке — управление базой данных в службе "База данных SQL Azure"](sql-database-manage-after-migration.md).
@@ -72,5 +72,5 @@ ms.locfileid: "68568052"
 - [Использование Entity Framework](sql-database-elastic-scale-use-entity-framework-applications-visual-studio.md) для запроса сегментированных данных.
 - [Использование платформы Dapper](sql-database-elastic-scale-working-with-dapper.md) для запроса сегментированных данных.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о руководствах по Управляемому экземпляру см. в [этой статье](sql-database-howto-managed-instance.md).

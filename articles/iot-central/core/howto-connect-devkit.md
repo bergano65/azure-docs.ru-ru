@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: philmea
-ms.openlocfilehash: 24ce6de63d06402e24abdeb33996a3853175ce91
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 4e04ae7d9594ac064c9f3707c797fb2709a79cb6
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72954413"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73582986"
 ---
 # <a name="connect-an-mxchip-iot-devkit-device-to-your-azure-iot-central-application"></a>Подключение устройства MXChip IoT DevKit к приложению Azure IoT Central
 
@@ -25,7 +25,7 @@ ms.locfileid: "72954413"
 
 Для выполнения действий, описанных в этой статье, необходимы следующие ресурсы:
 
-1. Приложение Azure IoT Central, созданное на основе шаблона приложения **Sample Devkits** (Образец Devkits). Дополнительные сведения см. в [кратком руководстве по созданию приложения](quick-deploy-iot-central.md).
+1. Приложение Azure IoT Central, созданное на основе шаблона приложения **Sample Devkits** (Образец Devkits). Дополнительные сведения см. в статье [Создание приложения Azure IoT Central](quick-deploy-iot-central.md).
 1. Устройство DevKit. Чтобы приобрести устройство DevKit, посетите сайт [MXChip IoT DevKit](https://microsoft.github.io/azure-iot-developer-kit/).
 
 ## <a name="sample-devkits-application"></a>Пример приложения Devkits
@@ -119,7 +119,7 @@ ms.locfileid: "72954413"
 
 Вы можете просмотреть измерения телеметрии и значения передаваемых свойств, а также настроить параметры в Azure IoT Central:
 
-1. Используйте **Device Explorer**, чтобы перейти на страницу **Measurements** (Измерения) реального устройства MXChip, которое вы добавили:
+1. Используйте **устройства** для перехода на страницу " **измерения** " для реального устройства MXChip, которое вы добавили:
 
     ![Переход к реальному устройству](media/howto-connect-devkit/realdevicenew.png)
 
@@ -162,7 +162,7 @@ git clone https://github.com/Azure/iot-central-firmware
 
 Используйте Visual Studio Code, чтобы открыть папку `MXCHIP/mxchip_advanced` в папке `iot-central-firmware`:
 
-![Код Visual Studio](media/howto-connect-devkit/vscodeview.png)
+![Visual Studio Code](media/howto-connect-devkit/vscodeview.png)
 
 Чтобы увидеть, как данные телеметрии отправляются в приложение IoT Central Azure, откройте файл **телеметрии. cpp** в папке `src`.
 
@@ -194,7 +194,7 @@ git clone https://github.com/Azure/iot-central-firmware
 
 #### <a name="telemetry"></a>Телеметрия
 
-| Имя поля     | Единицы  | Минимальная | Максимальная | Число десятичных знаков |
+| Имя поля     | Units  | Минимальная | Максимальная | Число десятичных знаков |
 | -------------- | ------ | ------- | ------- | -------------- |
 | Влажность       | %      | 0       | 100     | 0              |
 | temp           | °C     | –40     | 120     | 0              |
@@ -210,20 +210,20 @@ git clone https://github.com/Azure/iot-central-firmware
 | gyroscopeZ     | милиградусов/с   | –2000   | 2000    | 0              |
 
 #### <a name="states"></a>Состояния 
-| Name          | Отображаемое имя   | ОБЫЧНЫЙ РЕЖИМ | ВНИМАНИЕ! | ОПАСНОСТЬ! | 
+| Имя          | Отображаемое имя   | ОБЫЧНЫЙ РЕЖИМ | ВНИМАНИЕ! | ОПАСНОСТЬ! | 
 | ------------- | -------------- | ------ | ------- | ------ | 
-| DeviceState   | Состояние устройства   | Зеленый  | Orange  | Красный    | 
+| DeviceState   | Состояние устройства   | Зеленый  | Оранжевый  | Красный    | 
 
-#### <a name="events"></a>Мероприятия 
-| Name             | Отображаемое имя      | 
+#### <a name="events"></a>События 
+| Имя             | Отображаемое имя      | 
 | ---------------- | ----------------- | 
 | ButtonBPressed   | Нажата кнопка B  | 
 
-### <a name="settings"></a>Настройки
+### <a name="settings"></a>Параметры
 
 Числовые параметры
 
-| Отображаемое имя | Имя поля | Единицы | Число десятичных знаков | Минимальная | Максимальная | Initial |
+| Отображаемое имя | Имя поля | Units | Число десятичных знаков | Минимальная | Максимальная | Initial |
 | ------------ | ---------- | ----- | -------------- | ------- | ------- | ------- |
 | Напряжение      | setVoltage | В | 0              | 0       | 240     | 0       |
 | Текущее значение      | setCurrent | Амперы  | 0              | 0       | 100     | 0       |
@@ -233,21 +233,21 @@ git clone https://github.com/Azure/iot-central-firmware
 
 | Отображаемое имя | Имя поля | Включение текста | Отключение текста | Initial |
 | ------------ | ---------- | ------- | -------- | ------- |
-| IR           | activateIR | ВКЛ      | ВЫКЛ.      | Выключено     |
+| IR           | activateIR | ВКЛ      | ВЫКЛ.      | Отключить     |
 
-### <a name="properties"></a>properties
+### <a name="properties"></a>Свойства
 
 | Тип            | Отображаемое имя | Имя поля | Тип данных |
 | --------------- | ------------ | ---------- | --------- |
 | Свойство устройства | Серийный номер   | dieNumber  | number    |
 | Свойство устройства | Расположение устройства   | location  | location    |
-| Текст            | Произведено в     | manufacturedIn   | Н/Д       |
+| текст            | Произведено в     | manufacturedIn   | Недоступно       |
 
 ### <a name="commands"></a>Команды
 
 | Отображаемое имя | Имя поля | Тип возвращаемого значения | Отображаемое имя поля ввода | Имя входного поля | Тип входного поля |
 | ------------ | ---------- | ----------- | ------------------------ | ---------------- | ---------------- |
-| Возврат         | echo (вывод на экран)       | текст        | отображаемое значение         | дисплайедвалуе   | текст             |
+| Возврат         | echo (вывод на экран)       | text        | отображаемое значение         | дисплайедвалуе   | text             |
 | Оставшего    | Оставшего  | number      | Число из               | каунтфром        | number           |
 
 ## <a name="next-steps"></a>Дальнейшие действия

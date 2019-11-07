@@ -1,5 +1,5 @@
 ---
-title: Защищенные общедоступные конечные точки для управляемого экземпляра — управляемый экземпляр базы данных SQL Azure | Документация Майкрософт
+title: Общедоступные конечные точки для безопасного управляемого экземпляра — управляемый экземпляр базы данных SQL Azure
 description: Безопасно использовать общедоступные конечные точки в Azure с управляемым экземпляром
 services: sql-database
 ms.service: sql-database
@@ -10,16 +10,16 @@ author: srdan-bozovic-msft
 ms.author: srbozovi
 ms.reviewer: vanto, carlrab
 ms.date: 05/08/2019
-ms.openlocfilehash: c7f57a636e95bb137dd4285b8f9ce8343b27d2a0
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 3d97eb16ee2a8b3203b187dca7b2a17974473098
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68567368"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73687948"
 ---
 # <a name="use-an-azure-sql-database-managed-instance-securely-with-public-endpoints"></a>Безопасное использование управляемого экземпляра базы данных SQL Azure с общедоступными конечными точками
 
-Управляемые экземпляры базы данных SQL Azure могут обеспечить возможность подключения пользователей через общедоступные [конечные точки](../virtual-network/virtual-network-service-endpoints-overview.md). В этой статье объясняется, как сделать эту конфигурацию более безопасной.
+Управляемые экземпляры базы данных SQL Azure могут обеспечить возможность подключения пользователей через [общедоступные конечные точки](../virtual-network/virtual-network-service-endpoints-overview.md). В этой статье объясняется, как сделать эту конфигурацию более безопасной.
 
 ## <a name="scenarios"></a>Сценарии
 
@@ -49,8 +49,8 @@ ms.locfileid: "68567368"
 
 Когда клиентам необходимо инициировать подключение из локальной сети, убедитесь, что исходный адрес преобразован в известный набор IP-адресов. Если это невозможно (например, в качестве типичного сценария для мобильных устройств), мы рекомендуем использовать [VPN-подключения типа "точка — сеть" и частную конечную точку](sql-database-managed-instance-configure-p2s.md).
 
-Если подключения запускаются из Azure, мы рекомендуем использовать трафик, полученный с помощью известного назначенного [виртуального IP-адреса](../virtual-network/virtual-networks-reserved-public-ip.md) (например, виртуальной машины). Чтобы упростить управление виртуальными IP-адресами, может потребоваться использовать префиксы общедоступного [IP-адреса](../virtual-network/public-ip-address-prefix.md).
+Если подключения запускаются из Azure, мы рекомендуем использовать трафик, полученный с помощью известного назначенного [виртуального IP-адреса](../virtual-network/virtual-networks-reserved-public-ip.md) (например, виртуальной машины). Чтобы упростить управление виртуальными IP-адресами, может потребоваться использовать [префиксы общедоступного IP-адреса](../virtual-network/public-ip-address-prefix.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Узнайте, как настроить общедоступную конечную точку для управления экземплярами. [Настройка общедоступной конечной точки](sql-database-managed-instance-public-endpoint-configure.md)
+- Узнайте, как настроить общедоступную конечную точку для управления экземплярами: [Настройка общедоступной конечной точки](sql-database-managed-instance-public-endpoint-configure.md)

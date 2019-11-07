@@ -1,5 +1,5 @@
 ---
-title: Обзор устранения неполадок виртуальных рабочих столов Windows, Отзывы и поддержка — Azure
+title: Обзор устранения неполадок виртуальных рабочих столов Windows — Azure
 description: Общие сведения об устранении неполадок при настройке среды клиента виртуальных рабочих столов Windows.
 services: virtual-desktop
 author: Heidilohr
@@ -7,18 +7,18 @@ ms.service: virtual-desktop
 ms.topic: troubleshooting
 ms.date: 04/08/2019
 ms.author: helohr
-ms.openlocfilehash: b16d993717529953da1dc31604e6112f53ed7ac9
-ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
+ms.openlocfilehash: aa4254673d426579a5e5f0e90e389db7c6cadff0
+ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71679439"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73607351"
 ---
 # <a name="troubleshooting-overview-feedback-and-support"></a>Общие сведения об устранении неисправностей, отзывы и поддержка
 
 В этой статье приводятся общие сведения о проблемах, которые могут возникнуть при настройке среды клиента виртуальных рабочих столов Windows, а также способы решения этих проблем.
 
-## <a name="provide-feedback"></a>Оставить отзыв
+## <a name="provide-feedback"></a>Отзывы
 
 Посетите [техническое сообщество Виртуального рабочего стола Windows](https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop), чтобы обсудить службу "Виртуальный рабочий стол Windows" с группой разработчиков и активными членами сообщества.
 
@@ -45,13 +45,13 @@ ms.locfileid: "71679439"
 | Скорость реагирования удаленных приложений или настольных компьютеров                                      | Если проблемы связаны с конкретным приложением или продуктом, обратитесь к группе, ответственной за этот продукт. |
 | Сообщения о лицензировании или ошибки                                                          | Если проблемы связаны с конкретным приложением или продуктом, обратитесь к группе, ответственной за этот продукт. |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения об устранении неполадок при создании клиента и пула узлов в среде виртуальных рабочих столов Windows см. в статье [Создание пула клиентов и узлов](troubleshoot-set-up-issues.md).
 - Сведения об устранении неполадок при настройке виртуальной машины в виртуальном рабочем столе Windows см. в разделе [Конфигурация виртуальной машины узла сеанса](troubleshoot-vm-configuration.md).
 - Сведения об устранении неполадок клиентских подключений Windows к виртуальным рабочим столам см. в разделе [Удаленный рабочий стол клиентские подключения](troubleshoot-client-connection.md).
 - Сведения об устранении неполадок при использовании PowerShell с виртуальным рабочим столом Windows см. в статье [Windows Virtual Desktop PowerShell](troubleshoot-powershell.md).
 - Дополнительные сведения о службе см. в разделе [Среда виртуальных рабочих столов Windows](https://docs.microsoft.com/azure/virtual-desktop/environment-setup).
-- Сведения об устранении неполадок см. в статье [Tutorial: Устранение неполадок при](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-tutorial-troubleshoot)развертывании шаблонов диспетчер ресурсов.
+- Руководство по устранению неполадок см. в разделе [учебник. Устранение неполадок диспетчер ресурсов развертываний шаблонов](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-tutorial-troubleshoot).
 - Сведения о действиях аудита см. в статье [Операции аудита с помощью Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-audit).
 - Дополнительные сведения об определении ошибок во время развертывания см. в статье [Просмотр операций развертывания с помощью портала Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-deployment-operations).

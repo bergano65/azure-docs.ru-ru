@@ -7,12 +7,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/08/2018
 ms.author: glenga
-ms.openlocfilehash: 96c346db74c1e6c43c3501b657621d09e019309c
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
-ms.translationtype: HT
+ms.openlocfilehash: 584fb7b97b8342289d7ca2f23b0479eb1169867a
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/04/2019
-ms.locfileid: "73469203"
+ms.locfileid: "73575892"
 ---
 # <a name="hostjson-reference-for-azure-functions-2x"></a>Справочник по файлу host.json для службы "Функции Azure" версии 2.x  
 
@@ -113,11 +113,11 @@ ms.locfileid: "73469203"
 
 |Свойство  |значение по умолчанию | Description (Описание) |
 |---------|---------|---------| 
-|isEnabled|true|Включает или отключает выборку.| 
+|isEnabled|Да|Включает или отключает выборку.| 
 |maxTelemetryItemsPerSecond|20|Пороговое значение, при котором начинается выборка.| 
-|енаблеливеметрикс |true|Включает сбор динамических метрик.|
-|енабледепенденцитраккинг|true|Включает отслеживание зависимостей.|
-|енаблеперформанцекаунтерсколлектион|true|Включает сбор счетчиков производительности KUDU.|
+|енаблеливеметрикс |Да|Включает сбор динамических метрик.|
+|енабледепенденцитраккинг|Да|Включает отслеживание зависимостей.|
+|енаблеперформанцекаунтерсколлектион|Да|Включает сбор счетчиков производительности KUDU.|
 
 ## <a name="cosmosdb"></a>СosmosDB
 
@@ -174,7 +174,7 @@ ms.locfileid: "73469203"
 
 |Свойство  |значение по умолчанию | Description (Описание) |
 |---------|---------|---------| 
-|Включено|true|Указывает, включена ли функция. | 
+|Включено|Да|Указывает, включена ли функция. | 
 |healthCheckInterval|10 с|Интервал времени между периодическими фоновыми проверками работоспособности. | 
 |healthCheckWindow|2 минуты|Скользящее окно времени, используемое в сочетании с параметром `healthCheckThreshold`.| 
 |healthCheckThreshold|6|Максимальное количество попыток проверки работоспособности, которые могут завершиться сбоем, прежде чем инициируется повторный запуск.| 
@@ -182,23 +182,7 @@ ms.locfileid: "73469203"
 
 ## <a name="http"></a>http
 
-Параметры конфигурации см. в статье [Триггеры и привязки HTTP в службе "Функции Azure"](functions-bindings-http-webhook.md).
-
-```json
-{
-    "extensions": {
-        "http": {
-            "routePrefix": "api",
-            "maxOutstandingRequests": 200,
-            "maxConcurrentRequests": 100,
-            "dynamicThrottlesEnabled": true
-        }
-    }
-}
-```
-
-
-[!INCLUDE [functions-host-json-http](../../includes/functions-host-json-http.md)]
+Параметры конфигурации см. в статье [Триггеры и привязки HTTP в службе "Функции Azure"](functions-bindings-http-webhook.md#hostjson-settings).
 
 ## <a name="logging"></a>Ведение журналов
 
@@ -206,7 +190,7 @@ ms.locfileid: "73469203"
 
 ```json
 "logging": {
-    "fileLoggingMode": "debugOnly",
+    "fileLoggingMode": "debugOnly"
     "logLevel": {
       "Function.MyFunction": "Information",
       "default": "None"
@@ -223,9 +207,9 @@ ms.locfileid: "73469203"
 |Свойство  |значение по умолчанию | Description (Описание) |
 |---------|---------|---------|
 |fileLoggingMode|debugOnly|Определяет, какой уровень журнала файла включен.  Доступны следующие параметры: `never`, `always` и `debugOnly`. |
-|LogLevel|Н/Д|Объект, который определяет фильтрацию категорий журналов для функций в приложении. Версия 2.x соответствует макету ASP.NET Core для фильтрации категорий журналов. Это позволяет фильтровать ведения журнала определенных функций. Дополнительные сведения см. в документации по использованию ASP.NET Core [Фильтрация журнала](https://docs.microsoft.com/aspnet/core/fundamentals/logging/?view=aspnetcore-2.1#log-filtering). |
-|console|Н/Д| Параметр ведения журнала [консоли](#console). |
-|applicationInsights|Н/Д| Параметр [applicationInsights](#applicationinsights). |
+|LogLevel|Недоступно|Объект, который определяет фильтрацию категорий журналов для функций в приложении. Версия 2.x соответствует макету ASP.NET Core для фильтрации категорий журналов. Это позволяет фильтровать ведения журнала определенных функций. Дополнительные сведения см. в документации по использованию ASP.NET Core [Фильтрация журнала](https://docs.microsoft.com/aspnet/core/fundamentals/logging/?view=aspnetcore-2.1#log-filtering). |
+|console|Недоступно| Параметр ведения журнала [консоли](#console). |
+|applicationInsights|Недоступно| Параметр [applicationInsights](#applicationinsights). |
 
 ## <a name="console"></a>console
 
@@ -293,7 +277,7 @@ ms.locfileid: "73469203"
 |listenerLockPeriod|00:01:00|Период времени, на который применяются блокировки прослушивателя.| 
 |listenerLockRecoveryPollingInterval|00:01:00|Интервал времени, используемый для восстановления блокировки прослушивателя, если блокировку прослушивателя не удалось получить при запуске.| 
 |lockAcquisitionTimeout|00:01:00|Максимальный период времени, за который среда выполнения будет пытаться получить блокировку.| 
-|lockAcquisitionPollingInterval|Н/Д|Интервал между попытками получения блокировки.| 
+|lockAcquisitionPollingInterval|Недоступно|Интервал между попытками получения блокировки.| 
 
 ## <a name="version"></a>версия
 

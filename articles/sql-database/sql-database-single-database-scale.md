@@ -1,5 +1,5 @@
 ---
-title: Масштабирование ресурсов отдельной базы данных SQL Azure | Документация Майкрософт
+title: Масштабирование отдельных ресурсов базы данных в базе данных SQL Azure
 description: В этой статье описано масштабирование вычислительных ресурсов и ресурсов хранилища, предоставляемых отдельной базе данных в Базе данных SQL Azure.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: carlrab
 ms.date: 04/26/2019
-ms.openlocfilehash: d2571b04f10bbbd3a461e553a56904abb3b46588
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 7f3e0c6a5f2d3594e8a03ed4034248b1fd43c73d
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73496031"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73687161"
 ---
 # <a name="scale-single-database-resources-in-azure-sql-database"></a>Масштабирование ресурсов отдельной базы данных в Базе данных SQL Azure
 

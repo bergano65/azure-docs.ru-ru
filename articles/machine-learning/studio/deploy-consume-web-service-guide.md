@@ -1,6 +1,6 @@
 ---
 title: развертывание и использование
-titleSuffix: Azure Machine Learning Studio (classic)
+titleSuffix: ML Studio (classic) Azure
 description: Вы можете использовать Машинное обучение Azure Studio (классическая модель) для развертывания рабочих процессов и моделей машинного обучения в качестве веб-служб. Затем эти веб-службы можно использовать для вызова моделей машинного обучения из приложений в Интернете, чтобы делать прогнозы в режиме реального времени или в пакетном режиме.
 services: machine-learning
 ms.service: machine-learning
@@ -10,12 +10,12 @@ author: xiaoharper
 ms.author: amlstudiodocs
 ms.custom: seodec18
 ms.date: 04/19/2017
-ms.openlocfilehash: bf169a9b7064bd83caf0c9f8ec6dd6dd55894d67
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 47cd04615919fcc9db757ed4b9e8fd06eb297592
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73493014"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73684819"
 ---
 # <a name="azure-machine-learning-studio-classic-web-services-deployment-and-consumption"></a>Веб-службы Машинное обучение Azure Studio (классическая модель): развертывание и использование
 
@@ -31,8 +31,8 @@ ms.locfileid: "73493014"
 
 В статьях по следующим ссылкам содержатся общие сведения о процессе развертывания новой веб-службы:
 
-* Общие сведения о развертывании новой веб-службы на основе Azure Resource Manager см. в статье [Развертывание новой веб-службы](publish-a-machine-learning-web-service.md).
-* Пошаговое руководство по развертыванию веб-службы см. в статье [Развертывание веб-службы машинного обучения Azure](publish-a-machine-learning-web-service.md).
+* Общие сведения о развертывании новой веб-службы на основе Azure Resource Manager см. в статье [Развертывание новой веб-службы](deploy-a-machine-learning-web-service.md).
+* Пошаговое руководство по развертыванию веб-службы см. в статье [Развертывание веб-службы машинного обучения Azure](deploy-a-machine-learning-web-service.md).
 * Полное пошаговое руководство по созданию и развертыванию веб-службы см. в [руководстве 1. прогнозирование кредитного риска](tutorial-part1-credit-risk.md).
 * Конкретные примеры развертывания веб-службы см. в следующих статьях:
 
@@ -87,8 +87,8 @@ ms.locfileid: "73493014"
 
 Веб-службу можно проверить на портале веб-служб Машинного обучения Azure. Эта проверка включает в себя тестирование интерфейсов службы запрос-ответ (RRS) и службы пакетного выполнения (BES).
 
-* [Развертывание новой веб-службы](publish-a-machine-learning-web-service.md)
-* [Развертывание веб-службы машинного обучения Azure](publish-a-machine-learning-web-service.md)
+* [Развертывание новой веб-службы](deploy-a-machine-learning-web-service.md)
+* [Развертывание веб-службы машинного обучения Azure](deploy-a-machine-learning-web-service.md)
 * [Учебник 3. Развертывание модели кредитных рисков](tutorial-part3-credit-risk-deploy.md)
 
 ### <a name="from-excel"></a>Из Excel

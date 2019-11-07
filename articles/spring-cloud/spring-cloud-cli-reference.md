@@ -6,12 +6,12 @@ ms.service: spring-cloud
 ms.topic: reference
 ms.date: 10/03/2019
 ms.author: jeconnoc
-ms.openlocfilehash: c0694bf53f4a0644c8da2b50660dbfd6a5b339c7
-ms.sourcegitcommit: d773b5743cb54b8cbcfa5c5e4d21d5b45a58b081
+ms.openlocfilehash: a1f82d4efa7756b44ca5ed9859aa872c1f55b565
+ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72038864"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73607823"
 ---
 # <a name="az-spring-cloud"></a>AZ пружины — облако
 
@@ -734,7 +734,7 @@ az spring-cloud app binding redis add --app
 
 | Необязательные параметры | |
 | --- | ---: |
-| --ЦП | Число виртуальных ядер ЦП на экземпляр.  Значение по умолчанию: 1 |
+| --ЦП | Число виртуальных ядер ЦП на экземпляр.  Значение по умолчанию: 1. |
 | --env | Переменные окружения, разделенные пробелами, в формате "ключ [= значение]". |
 | --instance-count | Число экземпляров. Значение по умолчанию: 1. |
 | --JAR-Path | Если оно предоставлено, разверните JAR-файл.  В противном случае разверните текущую папку как tar. |
@@ -1040,4 +1040,4 @@ az spring-cloud test-endpoint renew-key --name -n
 | --- | ---: |
 | --name | Имя облака Azure весны. |
 | --resource-group -g | Имя группы ресурсов.  Вы можете настроить расположение по умолчанию с помощью `az configure --defaults group=<name>`. |
-| --Тип | Тип ключа тестовой конечной точки.  Допустимые значения:  Первичный, вторичный. |
+| --Тип | Тип ключа тестовой конечной точки.  Допустимые значения: первичный, вторичный. |

@@ -1,5 +1,5 @@
 ---
-title: Визуализация данных хранилища данных SQL с помощью Power BI | Microsoft Azure
+title: Визуализация данных с помощью Power BI Microsoft Azure
 description: Визуализация данных хранилища данных SQL с помощью Power BI
 services: sql-data-warehouse
 author: mlee3gsd
@@ -10,12 +10,13 @@ ms.subservice: integration
 ms.date: 04/17/2018
 ms.author: martinle
 ms.reviewer: igorstan
-ms.openlocfilehash: 4650e171c180653e94d78451d66bba1bcc71b136
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.custom: seo-lt-2019
+ms.openlocfilehash: eea4e3b0b1f0e4ec3eaf3e0aba8952f6693d2921
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66241291"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73685790"
 ---
 # <a name="visualize-data-with-power-bi"></a>Визуализация данных с помощью Power BI
 В этом руководстве показано, как использовать Power BI для подключения к хранилищу данных SQL и создания нескольких базовых визуализаций.
@@ -24,12 +25,12 @@ ms.locfileid: "66241291"
 > 
 > 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 Для выполнения этих действий необходимо иметь следующее:
 
 * Хранилище данных SQL, в которое предварительно загружена база данных AdventureWorksDW. Для подготовки хранилища данных см. статью [Краткое руководство. Создание хранилища данных SQL Azure на портале Azure и отправка запросов к этому хранилищу данных](create-data-warehouse-portal.md) и выберите загрузку демонстрационных данных. Если хранилище данных уже существует, но в нем нет демонстрационных данных, вы можете [загрузить WideWorldImportersDW](load-data-wideworldimportersdw.md).
 
-## <a name="1-connect-to-your-database"></a>1. Подключение к базе данных
+## <a name="1-connect-to-your-database"></a>1. подключение к базе данных
 Чтобы открыть Power BI и подключиться к базе данных AdventureWorksDW, выполните следующие действия.
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
@@ -93,4 +94,4 @@ ms.locfileid: "66241291"
 Эти ограничения и примечания могут измениться по мере улучшения работы продукта.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Теперь, когда вы разобрались с образцом данных некоторое время, см. в разделе Практическое [разрабатывать](sql-data-warehouse-overview-develop.md) или [загрузить](design-elt-data-loading.md). Кроме того, рекомендуем ознакомиться с [веб-сайтом Power BI](https://www.powerbi.com/).
+Теперь, когда мы предоставили вам некоторое время, чтобы получить демонстрационные данные, см. статью как [разработать](sql-data-warehouse-overview-develop.md) или [загрузить](design-elt-data-loading.md). Кроме того, рекомендуем ознакомиться с [веб-сайтом Power BI](https://www.powerbi.com/).

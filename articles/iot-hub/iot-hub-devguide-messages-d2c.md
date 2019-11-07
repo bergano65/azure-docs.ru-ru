@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 05/15/2019
 ms.author: asrastog
-ms.openlocfilehash: 5d21d3800655cc0be78a2b63d13a3616b1d0f2f8
-ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
+ms.openlocfilehash: e4f1797d600a226eb152a464efe4da8ddbdb6207
+ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72372714"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73606228"
 ---
 # <a name="use-iot-hub-message-routing-to-send-device-to-cloud-messages-to-different-endpoints"></a>Использование маршрутизации сообщений центра Интернета вещей для отправки сообщений с устройства в облако в разные конечные точки
 
@@ -41,15 +41,15 @@ ms.locfileid: "72372714"
 
 Вы можете использовать стандартную [интеграцию Центров событий и пакеты SDK](iot-hub-devguide-messages-read-builtin.md), чтобы отправлять сообщения с устройства в облако из встроенной конечной точки (**messages/events**). После создания маршрута данные перестают передаваться во встроенную конечную точку, если только маршрут не создан для этой конечной точки.
 
-### <a name="azure-blob-storage"></a>Хранилище BLOB-объектов Azure
+### <a name="azure-storage"></a>Хранилище Azure
 
-Центр Интернета вещей поддерживает запись данных в хранилище BLOB-объектов Azure в формате [Apache Avro](https://avro.apache.org/) , а также в формате JSON. Возможность кодирования формата JSON в целом доступна во всех регионах, где доступен центр Интернета вещей. По умолчанию используется AVRO. Формат кодирования можно задать только при настройке конечной точки хранилища BLOB-объектов. Формат не может быть изменен для существующей конечной точки. При использовании кодировки JSON необходимо задать для contentType значение **Application/JSON** , а ContentEncoding **— UTF-8** в [свойствах системы](iot-hub-devguide-routing-query-syntax.md#system-properties)сообщений. Оба этих значения не учитывают регистр. Если кодировка содержимого не задана, центр Интернета вещей будет записывать сообщения в формате Base 64. Вы можете выбрать формат кодировки с помощью центра Интернета вещей создание или обновление REST API, в частности [раутингсторажеконтаинерпропертиес](https://docs.microsoft.com/rest/api/iothub/iothubresource/createorupdate#routingstoragecontainerproperties), портал Azure, [Azure CLI](https://docs.microsoft.com/cli/azure/iot/hub/routing-endpoint?view=azure-cli-latest)или [Azure PowerShell](https://docs.microsoft.com/powershell/module/az.iothub/add-aziothubroutingendpoint?view=azps-1.3.0). На следующей схеме показано, как выбрать формат кодировки в портал Azure.
+Существует два центра Интернета вещей служб хранилища, которые могут маршрутизировать сообщения в [хранилище BLOB-объектов Azure](../storage/blobs/storage-blobs-introduction.md) и учетные записи [Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-introduction.md) (ADLS 2-го поколения). Учетные записи Azure Data Lake Storage являются иерархическими учетными записями хранения с поддержкой [пространств имен](../storage/blobs/data-lake-storage-namespace.md), созданными на основе хранилища BLOB-объектов. Оба они используют большие двоичные объекты для хранения.
+
+Центр Интернета вещей поддерживает запись данных в службу хранилища Azure в формате [Apache Avro](https://avro.apache.org/) , а также в формате JSON. По умолчанию используется AVRO. Формат кодирования можно задать только при настройке конечной точки хранилища BLOB-объектов. Формат не может быть изменен для существующей конечной точки. При использовании кодировки JSON необходимо задать для contentType значение **Application/JSON** , а ContentEncoding **— UTF-8** в [свойствах системы](iot-hub-devguide-routing-query-syntax.md#system-properties)сообщений. Оба этих значения не учитывают регистр. Если кодировка содержимого не задана, центр Интернета вещей будет записывать сообщения в формате Base 64. Вы можете выбрать формат кодировки с помощью центра Интернета вещей создание или обновление REST API, в частности [раутингсторажеконтаинерпропертиес](https://docs.microsoft.com/rest/api/iothub/iothubresource/createorupdate#routingstoragecontainerproperties), портал Azure, [Azure CLI](https://docs.microsoft.com/cli/azure/iot/hub/routing-endpoint?view=azure-cli-latest)или [Azure PowerShell](https://docs.microsoft.com/powershell/module/az.iothub/add-aziothubroutingendpoint?view=azps-1.3.0). На следующей схеме показано, как выбрать формат кодировки в портал Azure.
 
 ![Кодирование конечной точки хранилища BLOB-объектов](./media/iot-hub-devguide-messages-d2c/blobencoding.png)
 
-Центр Интернета вещей также поддерживает маршрутизацию сообщений в учетные записи [Azure Data Lake Storage](https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction) (ADLS) Gen2, которые являются иерархическими учетными записями хранения с поддержкой [пространств имен](../storage/blobs/data-lake-storage-namespace.md), созданными на основе хранилища BLOB-объектов. Эта возможность доступна в общедоступной предварительной версии и доступна для новых учетных записей ADLS 2-го поколения в западной части США 2 и западной центральной части США. [Зарегистрируйтесь](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR2EUNXd_ZNJCq_eDwZGaF5VURjFLTDRGS0Q4VVZCRFY5MUVaTVJDTkROMi4u) для просмотра этого. Мы вскоре рассмотрим эту возможность для всех облачных регионов. 
-
-Центр Интернета вещей собирает сообщения и записывает данные в большой двоичный объект при каждом достижении определенного размера пакета или после истечения отведенного времени. По умолчанию Центр Интернета вещей использует следующее соглашение об именовании файлов: 
+Центр Интернета вещей пакетно передает сообщения и записывает данные в хранилище каждый раз, когда пакет достигнет определенного размера или прошло определенное время. По умолчанию Центр Интернета вещей использует следующее соглашение об именовании файлов: 
 
 ```
 {iothub}/{partition}/{YYYY}/{MM}/{DD}/{HH}/{mm}
@@ -57,29 +57,34 @@ ms.locfileid: "72372714"
 
 Вы можете применять любое соглашение об именовании файлов, однако необходимо использовать все перечисленные токены. Центр Интернета вещей будет записывать пустой большой двоичный объект, если нет данных для записи.
 
-При маршрутизации к хранилищу BLOB-объектов мы рекомендуем включить большие двоичные объекты в список, а затем выполнять перебор по ним, чтобы обеспечить считывание всех контейнеров независимо от секции. Диапазон секций может измениться в процессе [инициированной корпорацией Майкрософт отработки отказа](iot-hub-ha-dr.md#microsoft-initiated-failover) или при [переходе на другой ресурс вручную](iot-hub-ha-dr.md#manual-failover) с помощью Центра Интернета вещей. Для перечисления списка больших двоичных объектов можно использовать [API List blobs](https://docs.microsoft.com/rest/api/storageservices/list-blobs) . Ознакомьтесь со следующим примером в качестве руководства.
+Мы рекомендуем прикрепить контейнеры хранилища и затем перепроходить их, чтобы убедиться, что все контейнеры считаны без принятия каких либо предположений о секции. Диапазон секций может измениться в процессе [инициированной корпорацией Майкрософт отработки отказа](iot-hub-ha-dr.md#microsoft-initiated-failover) или при [переходе на другой ресурс вручную](iot-hub-ha-dr.md#manual-failover) с помощью Центра Интернета вещей. Для перечисления списка больших двоичных объектов можно использовать [API List blobs](https://docs.microsoft.com/rest/api/storageservices/list-blobs) . Ознакомьтесь со следующим примером в качестве руководства.
 
-   ```csharp
-        public void ListBlobsInContainer(string containerName, string iothub)
+```csharp
+public void ListBlobsInContainer(string containerName, string iothub)
+{
+    var storageAccount = CloudStorageAccount.Parse(this.blobConnectionString);
+    var cloudBlobContainer = storageAccount.CreateCloudBlobClient().GetContainerReference(containerName);
+    if (cloudBlobContainer.Exists())
+    {
+        var results = cloudBlobContainer.ListBlobs(prefix: $"{iothub}/");
+        foreach (IListBlobItem item in results)
         {
-            var storageAccount = CloudStorageAccount.Parse(this.blobConnectionString);
-            var cloudBlobContainer = storageAccount.CreateCloudBlobClient().GetContainerReference(containerName);
-            if (cloudBlobContainer.Exists())
-            {
-                var results = cloudBlobContainer.ListBlobs(prefix: $"{iothub}/");
-                foreach (IListBlobItem item in results)
-                {
-                    Console.WriteLine(item.Uri);
-                }
-            }
+            Console.WriteLine(item.Uri);
         }
-   ```
+    }
+}
+```
+
+Чтобы создать учетную запись хранения Azure Data Lake, совместимую с Gen2, создайте новую учетную запись хранения v2 и выберите параметр *включена* в поле *Иерархическое пространство имен* на вкладке **Дополнительно** , как показано на следующем рисунке.
+
+![Выберите хранилище Azure Date Lake Gen2](./media/iot-hub-devguide-messages-d2c/selectadls2storage.png)
+
 
 ### <a name="service-bus-queues-and-service-bus-topics"></a>Очереди и разделы служебной шины
 
-Для очередей и разделов служебной шины, которые используются как конечные точки Центра Интернета вещей, **сеансы** или **поиск повторяющихся данных** должны быть выключены. Если одна из этих возможностей включена, на портале Azure конечная точка будет отображаться как **недоступная**.
+Для очередей и разделов служебной шины, которые используются как конечные точки Центра Интернета вещей, **сеансы** или **поиск повторяющихся данных** должны быть выключены. Если один из этих параметров включен, конечная точка отображается как **недоступная** на портале Azure.
 
-### <a name="event-hubs"></a>Концентраторы событий
+### <a name="event-hubs"></a>Центры событий
 
 Помимо конечной точки, совместимой со встроенными Центрами событий, вы также можете направлять данные в пользовательские конечные точки типа Центров событий. 
 
@@ -121,7 +126,7 @@ ms.locfileid: "72372714"
 
 Для обработки дубликатов сообщений рекомендуется пометить уникальный идентификатор в свойствах приложения сообщения в точке происхождения, которая обычно является устройством или модулем. Служба, использующая сообщения, может управлять повторяющимися сообщениями с помощью этого идентификатора.
 
-## <a name="latency"></a>Задержка
+## <a name="latency"></a>Latency
 
 При маршрутизации сообщений телеметрии, передаваемой с устройства в облако с помощью встроенных конечных точек наблюдается небольшое увеличение общей задержки после создания первого маршрута.
 

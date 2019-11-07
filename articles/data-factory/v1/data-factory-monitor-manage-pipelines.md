@@ -1,5 +1,5 @@
 ---
-title: Мониторинг конвейеров и управление ими с помощью портала Azure и PowerShell | Документация Майкрософт
+title: Мониторинг конвейеров и управление ими с помощью портал Azure и PowerShell
 description: Сведения о том, как с помощью портала Azure и Azure PowerShell отслеживать состояние созданных конвейеров и фабрик данных Azure и управлять ими.
 services: data-factory
 documentationcenter: ''
@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 04/30/2018
-ms.openlocfilehash: 8e8215d9737087cf1a5632dc8514c12988ff999f
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: 44aadecfa80524345932c03abb51e8ebd040a902
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70139661"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73666981"
 ---
 # <a name="monitor-and-manage-azure-data-factory-pipelines-by-using-the-azure-portal-and-powershell"></a>Мониторинг конвейеров фабрики данных Azure и управление ими с помощью портала Azure и PowerShell
 > [!div class="op_single_selector"]
@@ -46,7 +46,7 @@ ms.locfileid: "70139661"
 В этом разделе также содержатся сведения о переходе среза набора данных из одного состояния в другое.   
 
 ### <a name="navigate-to-your-data-factory"></a>Переход к фабрике данных
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 2. Щелкните колонку **Фабрики данных** в меню слева. Если вы ее не видите, выберите **Больше служб** и щелкните **Фабрики данных** в категории **Аналитика**.
 
    !["Просмотреть все" -> "Фабрики данных"](./media/data-factory-monitor-manage-pipelines/browseall-data-factories.png)
@@ -87,7 +87,7 @@ ms.locfileid: "70139661"
 
 <table>
 <tr>
-    <th align="left">Область</th><th align="left">Подсостояние</th><th align="left">Описание</th>
+    <th align="left">Состояние</th><th align="left">Подсостояние</th><th align="left">Description (Описание)</th>
 </tr>
 <tr>
     <td rowspan="8">Waiting</td><td>ScheduleTime</td><td>Время для выполнения среза еще не пришло.</td>
@@ -105,7 +105,7 @@ ms.locfileid: "70139661"
 <td>ActivityResume</td><td>Действие приостановлено, и до его возобновления выполнять срезы нельзя.</td>
 </tr>
 <tr>
-<td>Повтор</td><td>Действие выполняется повторно.</td>
+<td>Retry</td><td>Действие выполняется повторно.</td>
 </tr>
 <tr>
 <td>Проверка</td><td>Проверка еще не начата.</td>
@@ -115,16 +115,16 @@ ms.locfileid: "70139661"
 </tr>
 <tr>
 <tr>
-<td rowspan="2">Выполняется</td><td>Выполняется проверка</td><td>Проверка выполняется.</td>
+<td rowspan="2">InProgress</td><td>Validating</td><td>Проверка выполняется.</td>
 </tr>
 <td>-</td>
 <td>Срез обрабатывается.</td>
 </tr>
 <tr>
-<td rowspan="4">Неудача</td><td>TimedOut</td><td>Выполнение действия заняло больше времени, чем разрешено для данного действия.</td>
+<td rowspan="4">Сбой</td><td>TimedOut</td><td>Выполнение действия заняло больше времени, чем разрешено для данного действия.</td>
 </tr>
 <tr>
-<td>Отменено</td><td>Срез был отменен пользователем.</td>
+<td>Canceled</td><td>Срез был отменен пользователем.</td>
 </tr>
 <tr>
 <td>Проверка</td><td>Сбой проверки.</td>
@@ -132,13 +132,13 @@ ms.locfileid: "70139661"
 <tr>
 <td>-</td><td>Не удалось создать и/или проверить срез.</td>
 </tr>
-<td>Готово</td><td>-</td><td>Срез готов к использованию.</td>
+<td>Ready</td><td>-</td><td>Срез готов к использованию.</td>
 </tr>
 <tr>
-<td>Пропущен</td><td>Отсутствуют</td><td>Срез не обрабатывается.</td>
+<td>Skipped</td><td>None</td><td>Срез не обрабатывается.</td>
 </tr>
 <tr>
-<td>Отсутствуют</td><td>-</td><td>Срез, который ранее существовал с другим состоянием, но был сброшен.</td>
+<td>None</td><td>-</td><td>Срез, который ранее существовал с другим состоянием, но был сброшен.</td>
 </tr>
 </table>
 
@@ -150,7 +150,7 @@ ms.locfileid: "70139661"
 
 Если срез выполнялся несколько раз, вы увидите несколько строк в списке **Выполнения действий** . Чтобы просмотреть сведения о выполнении действия, щелкните запись цикла в списке **Циклы выполнения действия** . Отобразятся все файлы журналов и сообщения об ошибках, если таковые были. Эта функция удобна для просмотра и обработки файлов журналов непосредственно из фабрики данных.
 
-![Подробности о выполнении операции](./media/data-factory-monitor-manage-pipelines/activity-run-details.png)
+![СВЕДЕНИЯ О ВЫПОЛНЕННОМ ДЕЙСТВИИ](./media/data-factory-monitor-manage-pipelines/activity-run-details.png)
 
 Если срез не находится в состоянии **Готово**, вы можете увидеть восходящие срезы, которые не находятся в состоянии готовности и блокируют выполнение текущего среза в списке **Неготовые восходящие срезы**. Эта функция удобна для просмотра восходящих зависимостей, если срез находится в состоянии **Ожидание**.
 
@@ -161,7 +161,7 @@ ms.locfileid: "70139661"
 
 ![Схема состояний](./media/data-factory-monitor-manage-pipelines/state-diagram.png)
 
-Поток переходов состояния набора данных в фабрике данных выглядит следующим образом: Ожидание -> Выполняется/Выполняется (Проверка) -> Готово/Сбой.
+Поток переходов между состояниями выглядит так: "Ожидание" -> "Выполняется" или "Выполняется (проверка)" -> "Готово" или "Сбой".
 
 Изначально срезы находятся в состоянии **Ожидание**, ожидая, что предварительные условия будут соблюдены до выполнения действий. Затем начинается выполнение действия, и срез переходит в состояние **Выполняется**. Выполнение действия может завершиться успешно или с ошибкой. В зависимости от того, как завершится действие, срез перейдет в состояние **Готово** или **Сбой**.
 
@@ -178,7 +178,7 @@ ms.locfileid: "70139661"
 ```powershell
 Suspend-AzDataFactoryPipeline [-ResourceGroupName] <String> [-DataFactoryName] <String> [-Name] <String>
 ```
-Пример:
+Например:
 
 ```powershell
 Suspend-AzDataFactoryPipeline -ResourceGroupName ADF -DataFactoryName productrecgamalbox1dev -Name PartitionProductsUsagePipeline
@@ -189,7 +189,7 @@ Suspend-AzDataFactoryPipeline -ResourceGroupName ADF -DataFactoryName productrec
 ```powershell
 Resume-AzDataFactoryPipeline [-ResourceGroupName] <String> [-DataFactoryName] <String> [-Name] <String>
 ```
-Пример:
+Например:
 
 ```powershell
 Resume-AzDataFactoryPipeline -ResourceGroupName ADF -DataFactoryName productrecgamalbox1dev -Name PartitionProductsUsagePipeline
@@ -222,7 +222,7 @@ Resume-AzDataFactoryPipeline -ResourceGroupName ADF -DataFactoryName productrecg
     ```powershell   
     Get-AzDataFactorySlice [-ResourceGroupName] <String> [-DataFactoryName] <String> [-DatasetName] <String> [-StartDateTime] <DateTime> [[-EndDateTime] <DateTime> ] [-Profile <AzureProfile> ] [ <CommonParameters>]
     ```   
-   Пример:
+   Например:
 
     ```powershell   
     Get-AzDataFactorySlice -ResourceGroupName ADF -DataFactoryName LogProcessingFactory -DatasetName EnrichedGameEventsTable -StartDateTime 2014-05-04 20:00:00
@@ -236,7 +236,7 @@ Resume-AzDataFactoryPipeline -ResourceGroupName ADF -DataFactoryName productrecg
     <DateTime> [-Profile <AzureProfile> ] [ <CommonParameters>]
     ```
 
-    Пример:
+    Например:
 
     ```powershell   
     Get-AzDataFactoryRun -ResourceGroupName ADF -DataFactoryName LogProcessingFactory -DatasetName EnrichedGameEventsTable -StartDateTime "5/5/2014 12:00:00 AM"
@@ -290,7 +290,7 @@ Resume-AzDataFactoryPipeline -ResourceGroupName ADF -DataFactoryName productrecg
 ### <a name="use-azure-powershell"></a>Использование Azure PowerShell
 Ошибки можно повторно запустить с помощью командлета **Set-аздатафакторислицестатус** . Синтаксис и другие сведения о командлете см. в разделе [Set-аздатафакторислицестатус](https://docs.microsoft.com/powershell/module/az.datafactory/set-azdatafactoryslicestatus) .
 
-**Пример.**
+**Пример**
 
 В следующем примере состояние всех срезов в таблице DAWikiAggregatedData в фабрике данных WikiADF меняется на Waiting.
 
@@ -309,7 +309,7 @@ Set-AzDataFactorySliceStatus -ResourceGroupName ADF -DataFactoryName WikiADF -Da
 
     ![Создание оповещения](media/data-factory-monitor-manage-pipelines/v1alerts-image2.png)
 
-3.  Определите **условия оповещения**. (Выберите значение **Фабрики данных** в поле **фильтрации по типу ресурсов**.) Вы также можете указать значения для **измерений**.
+3.  Определите **условия оповещения**. (Не забудьте выбрать **фабрики данных** в поле **Фильтр по типу ресурса** .) Можно также указать значения для **измерений**.
 
     ![Определение условия оповещения — выбор цели](media/data-factory-monitor-manage-pipelines/v1alerts-image3.png)
 

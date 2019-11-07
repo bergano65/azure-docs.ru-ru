@@ -1,5 +1,5 @@
 ---
-title: Отработки аварийного восстановления базы данных SQL | Документация Майкрософт
+title: Детализация аварийного восстановления базы данных SQL
 description: Дополнительные сведения и рекомендации по использованию Базы данных SQL Azure для выполнения детализации при аварийном восстановлении.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab
 ms.date: 12/18/2018
-ms.openlocfilehash: 2923ae8b9b25932ae214cfa45780dffb8780dd39
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: bf337b1312abc59048649aabe3e4f895d07a8d51
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68568847"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73690621"
 ---
 # <a name="performing-disaster-recovery-drill"></a>Отработка аварийного восстановления
 
@@ -65,7 +65,7 @@ ms.locfileid: "68568847"
 
 Выполните отработку, проверив целостность приложения после восстановления (в том числе проверьте подключение, протестируйте основные функции или выполните другие проверки, требуемые для утверждения отработки).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Ознакомьтесь со [сценариями обеспечения непрерывности для бизнес-процессов](sql-database-business-continuity.md).
 * Чтобы узнать об автоматически создаваемых резервных копиях базы данных SQL Azure, ознакомьтесь с разделом [создаваемых автоматически резервных копий базы данных SQL](sql-database-automated-backups.md)

@@ -1,5 +1,5 @@
 ---
-title: Настройка управляемого экземпляра Базы данных SQL Azure | Документация Майкрософт
+title: Настройка управляемого экземпляра базы данных SQL Azure
 description: Узнайте, как настроить управляемый экземпляр Базы данных SQL Azure и управлять им.
 services: sql-database
 ms.service: sql-database
@@ -11,18 +11,18 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein, carlr
 ms.date: 04/16/2019
-ms.openlocfilehash: b8c05ab05630e92e64a4885d5e6cdc6f5471dff2
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 22bad381a59a74237a5539cd4294a08797c017b1
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68568068"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73689925"
 ---
 # <a name="how-to-use-a-managed-instance-in-azure-sql-database"></a>Использование управляемого экземпляра в Базе данных SQL Azure
 
 В этой статье можно найти различные руководства, сценарии и пояснения, которые помогут в администрировании и настройке управляемого экземпляра.
 
-## <a name="migration"></a>Перенос
+## <a name="migration"></a>Миграция
 
 - [Перенос экземпляра SQL Server в Управляемый экземпляр Базы данных SQL Azure](sql-database-managed-instance-migrate.md). По этой ссылке содержится информация о рекомендуемом процессе и средствах переноса в управляемый экземпляр.
 
@@ -44,6 +44,6 @@ ms.locfileid: "68568068"
 - [Настройка репликации в Управляемом экземпляре Базы данных SQL Azure](replication-with-sql-database-managed-instance.md) — позволяет реплицировать данные между управляемыми экземплярами или с локального сервера SQL Server на управляемый экземпляр и наоборот. Дополнительные сведения о том, как использовать и настроить репликацию транзакций, можно найти в этом руководстве.
 - [Настройка обнаружения угроз](sql-database-managed-instance-threat-detection.md) — [обнаружение угроз](sql-database-threat-detection-overview.md) — это встроенная функция Базы данных SQL Azure, которая обнаруживает различные потенциальные атаки, такие как внедрение кода SQL или доступ из подозрительных мест. В этом руководстве вы узнаете, как включить и настроить [обнаружение угроз](sql-database-threat-detection-overview.md) для управляемого экземпляра.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения см. в статье [Использование отдельной базы данных](sql-database-howto-single-database.md)

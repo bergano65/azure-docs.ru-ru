@@ -1,17 +1,17 @@
 ---
 title: Обновление моделей Azure Analysis Services с помощью службы автоматизации Azure | Документация Майкрософт
-description: Узнайте, как обновить модель кода с помощью службы автоматизации Azure.
+description: В этой статье описывается, как обновить модель кода для Azure Analysis Services с помощью службы автоматизации Azure.
 author: chrislound
 ms.service: analysis-services
 ms.topic: conceptual
-ms.date: 04/26/2019
+ms.date: 10/30/2019
 ms.author: chlound
-ms.openlocfilehash: ed1634ef1009149dc2937174b20248eab9cd335f
-ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
+ms.openlocfilehash: a79123d57f80474e1871ef68f9a92ea9417089ac
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2019
-ms.locfileid: "72294796"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73572357"
 ---
 # <a name="refresh-with-azure-automation"></a>Обновление с помощью службы автоматизации Azure
 
@@ -21,7 +21,7 @@ ms.locfileid: "72294796"
 
 Пример модуля Runbook PowerShell, демонстрирующий обновление модели, приведен далее в этой статье.  
 
-## <a name="authentication"></a>Проверка подлинности
+## <a name="authentication"></a>Аутентификация
 
 Все вызовы должны пройти проверку подлинности с помощью допустимого маркера Azure Active Directory (OAuth 2).  В примере, приведенном в этой статье, для проверки подлинности в Azure Analysis Services используется субъект-служба (SPN).
 
@@ -105,7 +105,7 @@ ms.locfileid: "72294796"
 
     ![Настройка расписания](./media/analysis-services-refresh-azure-automation/15.png)
 
-3. Нажмите кнопку **Создать**.
+3. Щелкните **Создать**.
 
 4. Заполните параметры расписания. Они будут использоваться при каждом срабатывании модуля Runbook. При выполнении по расписанию параметр **WEBHOOKDATA** должен оставаться пустым.
 
@@ -148,7 +148,7 @@ ms.locfileid: "72294796"
 |---------|---------|
 |**аналисиссервицесдатабасе**     |Имя базы данных Azure Analysis Services <br/> Пример: AdventureWorksDB         |
 |**аналисиссервицессервер**     |Имя сервера Azure Analysis Services. <br/> Пример: https: \//westus. asazure. Windows. NET/Servers/MyServer/Models/AdventureWorks/         |
-|**датабасерефрештипе**     |Тип выполняемого обновления. <br/> Пример: Полное         |
+|**датабасерефрештипе**     |Тип выполняемого обновления. <br/> Пример: Full         |
 
 Пример текста JSON:
 
@@ -175,7 +175,7 @@ ms.locfileid: "72294796"
 >
 >Дополнительные сведения о настройке гибридных рабочих ролей службы автоматизации Azure см. в статье [Автоматизация ресурсов в центре обработки данных или в облаке с помощью гибридной рабочей роли Runbook](../automation/automation-hybrid-runbook-worker.md#install-a-hybrid-runbook-worker).
 
-После настройки гибридной рабочей роли создайте веб-перехватчик, как описано в разделе [Использование фабрики данных](#consume-with-data-factory).  Единственное отличие заключается в том, что при настройке веб-перехватчика можно выбрать параметр **выполнить в** **гибридной рабочей роли**  > .
+После настройки гибридной рабочей роли создайте веб-перехватчик, как описано в разделе [Использование фабрики данных](#consume-with-data-factory).  Единственное отличие заключается в том, что при настройке веб-перехватчика можно выбрать параметр **выполнить в** **гибридной рабочей роли** > .
 
 Пример веб-перехватчика с использованием гибридной рабочей роли:
 
@@ -224,7 +224,7 @@ else
 ```
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Примеры](analysis-services-samples.md)  
-[REST API](https://docs.microsoft.com/rest/api/analysisservices/servers)
+[ИНТЕРФЕЙС REST API](https://docs.microsoft.com/rest/api/analysisservices/servers)

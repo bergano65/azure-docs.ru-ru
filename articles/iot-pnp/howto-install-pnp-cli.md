@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
 ms.custom: mvc
-ms.openlocfilehash: 41a626ba602ad33f22c3ea4acc39dd4f3438cbd0
-ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
+ms.openlocfilehash: eb4f607672c39d45b7791ccaeeb6f7cff9393cb9
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70935694"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73571021"
 ---
 # <a name="install-and-use-the-azure-iot-extension-for-the-azure-cli"></a>Установка и использование расширения Интернета вещей Azure для Azure CLI
 
@@ -62,7 +62,7 @@ az login
     > [!NOTE]
     > Во время общедоступной предварительной версии функции Интернета вещей Plug and Play доступны только в **центрах**Интернета вещей, созданных в центральной части США, **Северной Европе**и в **восточной части Японии** .
 
-- Устройство, зарегистрированное в центре Интернета вещей. Для регистрации устройства можно использовать следующую команду Azure CLI. не забудьте заменить `{YourIoTHubName}` заполнители и `{YourDeviceID}` значениями:
+- Устройство, зарегистрированное в центре Интернета вещей. Для регистрации устройства можно использовать следующую команду Azure CLI. не забудьте заменить заполнители `{YourIoTHubName}` и `{YourDeviceID}` своими значениями:
 
     ```cmd/sh
     az iot hub device-identity create --hub-name {YourIoTHubName} --device-id {YourDeviceID}
@@ -126,31 +126,31 @@ az iot dt update-property --hub-name {YourIoTHubName} --device-id {YourDeviceID}
 az iot dt list-commands --hub-name {YourIoTHubName} --device-id {YourDeviceID} --interface {YourInterfaceID} --source private --repo-login {YourCompanyModelRepoConnectionString}
 ```
 
-`--repo-login` Без параметра эта команда использует репозиторий общедоступной модели.
+Без параметра `--repo-login` эта команда использует репозиторий общедоступной модели.
 
 Вызов команды:
 
 ```cmd/sh
-az iot dt invoke-command --hub-name {YourIoTHubName} --device-id {YourDeviceID} --interface {YourInterfaceID} --command-name {CommandName} --command-payload {CommandPayload or FilePath}
+az iot dt invoke-command --hub-name {YourIoTHubName} --device-id {YourDeviceID} --interface {YourInterfaceID} --cn {CommandName} --command-payload {CommandPayload or FilePath}
 ```
 
-#### <a name="telemetry"></a>Телеметрия
+#### <a name="digital-twin-events"></a>События цифровых двойника
 
-Мониторинг всех данных телеметрии Plug and Play Интернета вещей с определенного устройства и интерфейса, переданного в конечную точку концентратора событий **$Default** :
+Мониторинг всех событий Интернета вещей Plug and Play Digital двойника с определенного устройства и интерфейса, который переведет в **$Default** группу потребителей концентратора событий:
 
 ```cmd/sh
-az iot dt monitor-events --hub-name {YourIoTHubName} --device-id {YourDeviceID} --interface {YourInterfaceID} --source private --repo-login {YourCompanyModelRepoConnectionString}
+az iot dt monitor-events --hub-name {YourIoTHubName} --device-id {YourDeviceID} --interface {YourInterfaceID}
 ```
 
-Мониторинг всех данных телеметрии Plug and Play Интернета вещей с определенного устройства и интерфейса, поступающий в определенную группу потребителей:
+Мониторинг всех событий Интернета вещей Plug and Play Digital двойника с определенного устройства и интерфейса, поступающий в определенную группу потребителей:
 
 ```cmd/sh
-az iot dt monitor-events --hub-name {YourIoTHubName} --device-id {YourDeviceID} --interface {YourInterfaceID} --source private --repo-login {YourCompanyModelRepoConnectionString} --consumer-group {YourConsumerGroup}
+az iot dt monitor-events --hub-name {YourIoTHubName} --device-id {YourDeviceID} --interface {YourInterfaceID} --consumer-group {YourConsumerGroup}
 ```
 
 ### <a name="manage-interfaces-in-a-model-repository"></a>Управление интерфейсами в репозитории модели
 
-Следующие команды используют общедоступный репозиторий модели Интернета вещей Plug and Play. Чтобы использовать репозиторий модели компании, добавьте `--login` аргумент в строку подключения к репозиторию модели.
+Следующие команды используют общедоступный репозиторий модели Интернета вещей Plug and Play. Чтобы использовать репозиторий модели компании, добавьте аргумент `--login` в строку подключения к репозиторию модели.
 
 Вывод списка интерфейсов в общедоступном репозитории моделей Plug and Play IoT:
 
@@ -190,7 +190,7 @@ az iot pnp interface publish --interface {YourInterfaceID} --login {YourCompanyM
 
 ### <a name="manage-device-capability-models-in-a-model-repository"></a>Управление моделями возможностей устройств в репозитории моделей
 
-Следующие команды используют общедоступный репозиторий модели Интернета вещей Plug and Play. Чтобы использовать репозиторий модели компании, добавьте `--login` аргумент в строку подключения к репозиторию модели.
+Следующие команды используют общедоступный репозиторий модели Интернета вещей Plug and Play. Чтобы использовать репозиторий модели компании, добавьте аргумент `--login` в строку подключения к репозиторию модели.
 
 Список моделей возможностей устройств в репозитории общедоступных моделей Plug and Play IoT:
 
@@ -228,6 +228,6 @@ az iot pnp capability-model publish --model {YourModelID} --login {YourCompanyMo
 
 Только партнеры Майкрософт могут публиковать модели в общедоступном репозитории моделей.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом пошаговом руководстве вы узнали, как установить и использовать расширение Интернета вещей Azure для Azure CLI взаимодействия с устройствами Plug and Play. Рекомендуемый следующий шаг — научиться [управлять моделями](./howto-manage-models.md).

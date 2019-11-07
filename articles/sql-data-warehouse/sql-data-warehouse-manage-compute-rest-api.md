@@ -1,6 +1,6 @@
 ---
-title: Приостановка, возобновление и масштабирование ресурсов в хранилище данных SQL Azure с помощью REST | Документация Майкрософт
-description: Управление вычислительными ресурсами в хранилище данных SQL с помощью REST API.
+title: Приостановка, возобновление и масштабирование с помощью интерфейсов API
+description: Управление мощностью вычислений в хранилище данных SQL Azure с помощью интерфейсов API RESTFUL.
 services: sql-data-warehouse
 author: kevinvngo
 manager: craigg
@@ -10,12 +10,13 @@ ms.subservice: implement
 ms.date: 03/29/2019
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: 5b8652a0b08b426e708a909ff988e51eee9c0821
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.custom: seo-lt-2019
+ms.openlocfilehash: f72b3fd1024a68a6f48d2e9e676fc7ca23bf2a4f
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66476074"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73686040"
 ---
 # <a name="rest-apis-for-azure-sql-data-warehouse"></a>REST API для хранилища данных Azure SQL
 REST API для управления вычислительными ресурсами в хранилище данных Azure SQL.
@@ -36,7 +37,7 @@ Content-Type: application/json; charset=UTF-8
 
 ## <a name="pause-compute"></a>Приостановка работы вычислительных ресурсов
 
-Чтобы приостановить базу данных, используйте API REST [Приостановка базы данных](/rest/api/sql/databases/pause) . В приведенном ниже примере приостанавливается работа базы данных с именем Database02, размещенной на сервере с именем Server01. Сервер находится в группе ресурсов Azure с именем ResourceGroup1.
+Чтобы приостановить базу данных, используйте REST API [приостановки базы данных](/rest/api/sql/databases/pause). В приведенном ниже примере приостанавливается работа базы данных с именем Database02, размещенной на сервере с именем Server01. Сервер находится в группе ресурсов Azure с именем ResourceGroup1.
 
 ```
 POST https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Sql/servers/{server-name}/databases/{database-name}/pause?api-version=2014-04-01-preview HTTP/1.1
@@ -53,22 +54,22 @@ POST https://management.azure.com/subscriptions/{subscription-id}/resourceGroups
 ## <a name="check-database-state"></a>Проверка состояния базы данных
 
 > [!NOTE]
-> В настоящее время проверки состояния базы данных, могут возвращать ONLINE, пока базы данных завершает online рабочего процесса, привело к ошибке. Может потребоваться добавление 2 – 3 минут задержки в коде приложения, если вы используете этот вызов API для активации попытки подключения.
+> В настоящее время проверка состояния базы данных может вернуть значение "в сети", пока база данных завершает рабочий процесс в сети, что приводит к ошибкам подключения. Может потребоваться добавить в код приложения задержку в 2 – 3 минуты, если вы используете этот вызов API для активации попыток подключения.
 
 ```
 GET https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Sql/servers/{server-name}/databases/{database-name}?api-version=2014-04-01 HTTP/1.1
 ```
 
-## <a name="get-maintenance-schedule"></a>Получить расписание обслуживания
-Проверьте расписание обслуживания, которое было задано для хранилища данных. 
+## <a name="get-maintenance-schedule"></a>Получение расписания обслуживания
+Проверьте расписание обслуживания, установленное для хранилища данных. 
 
 ```
 GET https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Sql/servers/{server-name}/databases/{database-name}/maintenanceWindows/current?maintenanceWindowName=current&api-version=2017-10-01-preview HTTP/1.1
 
 ```
 
-## <a name="set-maintenance-schedule"></a>Расписание обслуживания набор
-Для установки и обновления расписания maintnenance на существующее хранилище данных.
+## <a name="set-maintenance-schedule"></a>Задать расписание обслуживания
+Установка и обновление расписания маинтненанце в существующем хранилище данных.
 
 ```
 PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Sql/servers/{server-name}/databases/{database-name}/maintenanceWindows/current?maintenanceWindowName=current&api-version=2017-10-01-preview HTTP/1.1

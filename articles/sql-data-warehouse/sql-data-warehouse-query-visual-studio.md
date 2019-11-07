@@ -1,6 +1,6 @@
 ---
-title: Подключение к хранилищу данных SQL Azure — VSTS | Документация Майкрософт
-description: Отправка запросов к хранилищу данных SQL с помощью Visual Studio.
+title: Подключение к VSTS
+description: Запросите хранилище данных SQL Azure с помощью Visual Studio.
 services: sql-data-warehouse
 author: kevinvngo
 manager: craigg
@@ -10,17 +10,18 @@ ms.subservice: development
 ms.date: 08/15/2019
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: e6c3de1714d363eb1481bcea5f470d04125b96b9
-ms.sourcegitcommit: 5ded08785546f4a687c2f76b2b871bbe802e7dae
+ms.custom: seo-lt-2019
+ms.openlocfilehash: e2d37b2d71f605077903197d25b5da2803e34ad3
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69575312"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73685574"
 ---
 # <a name="connect-to-sql-data-warehouse-with-visual-studio-and-ssdt"></a>Подключение к хранилищу данных SQL с помощью Visual Studio и SSDT
 > [!div class="op_single_selector"]
 > * [Power BI](sql-data-warehouse-get-started-visualize-with-power-bi.md)
-> * [машинное обучение Azure](sql-data-warehouse-get-started-analyze-with-azure-machine-learning.md)
+> * [Машинное обучение Azure](sql-data-warehouse-get-started-analyze-with-azure-machine-learning.md)
 > * [Visual Studio](sql-data-warehouse-query-visual-studio.md)
 > * [sqlcmd](sql-data-warehouse-get-started-connect-sqlcmd.md) 
 > * [SSMS](sql-data-warehouse-query-ssms.md)
@@ -36,7 +37,7 @@ ms.locfileid: "69575312"
 * Расширение SSDT для Visual Studio. Скорее всего, оно уже есть, если на вашем компьютере установлено приложение Visual Studio. Инструкции по установке и параметры см. в статье [Установка Visual Studio и SSDT][Installing Visual Studio and SSDT].
 * Полное имя сервера SQL Server. Чтобы найти это, см. раздел [Подключение к хранилищу данных SQL][Connect to SQL Data Warehouse].
 
-## <a name="1-connect-to-your-sql-data-warehouse"></a>1. Подключение к хранилищу данных SQL
+## <a name="1-connect-to-your-sql-data-warehouse"></a>1. подключение к хранилищу данных SQL
 1. Откройте Visual Studio 2019.
 2. Откройте обозреватель объектов SQL Server. Чтобы сделать это, выберите **Представление** > **Обозреватель объектов SQL Server**.
    
@@ -56,7 +57,7 @@ ms.locfileid: "69575312"
    
     ![Обзор AdventureWorksDW][4]
 
-## <a name="2-run-a-sample-query"></a>2. Запуск пробного запроса
+## <a name="2-run-a-sample-query"></a>2. Запуск примера запроса
 Теперь, когда мы подключились к базе данных, давайте напишем запрос.
 
 1. Щелкните правой кнопкой мыши базу данных в обозревателе объектов SQL Server.
@@ -70,12 +71,12 @@ ms.locfileid: "69575312"
     ```
 4. Выполните запрос. Для этого щелкните зеленую стрелку или воспользуйтесь сочетанием клавиш `CTRL`+`SHIFT`+`E`.
    
-    ![Запустить запрос][6]
+    ![Выполнение запроса][6]
 5. Просмотрите результаты запроса. В этом примере таблица FactInternetSales содержит 60 398 строк.
    
     ![Результаты запроса][7]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда вы можете подключаться к базе данных и отправлять запросы, попробуйте [визуализировать данные с помощью PowerBI][visualizing the data with PowerBI].
 
 Сведения о настройке среды для проверки подлинности Azure Active Directory см. в статье Проверка подлинности [в хранилище данных SQL][Authenticate to SQL Data Warehouse].
