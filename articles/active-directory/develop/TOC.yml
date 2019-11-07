@@ -436,7 +436,7 @@
                   href: msal-js-prompt-behavior.md
             - name: MSAL для iOS и MacOS
               items:
-                - name: Отличия библиотеки проверки подлинности Майкрософт для iOS и macOS
+                - name: Разница между MSAL для iOS и для macOS
                   href: msal-differences-ios-macos.md
                 - name: Настройка цепочки ключей
                   href: howto-v2-keychain-objc.md

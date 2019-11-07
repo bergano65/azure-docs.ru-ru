@@ -30,6 +30,8 @@
                   href: hpc-cache-ingest-msrsync.md
                 - name: Заполнение кэша с помощью копирования файлов вручную
                   href: hpc-cache-ingest-manual.md
+        - name: Изменение целевых расположений хранилищ
+          href: hpc-cache-edit-storage.md
     - name: Подключение к кэшу
       href: hpc-cache-mount.md
     - name: Управление кэшем

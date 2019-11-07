@@ -1,91 +1,67 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Документация по API Автозаполнения Bing
+summary: API "Автозаполнение Bing" позволяет отправлять частичные поисковые запросы в Bing и получать список предложений, основанных на намерениях пользователя и предыдущих поисковых запросах. Вызовите API, чтобы заполнять вариантами поля поиска и раскрывающиеся списки в приложении по мере ввода запроса пользователем.
 metadata:
   document_id: ce69fd12-adf8-11e7-abc4-cec278b6b50a
-  title: 'Документация по API Автозаполнения Bing. Учебные материалы, краткие руководства и справочники по API'
+  title: Документация по API Автозаполнения Bing. Учебные материалы, краткие руководства и справочники по API
   titleSuffix: Azure Cognitive Services
-  description: 'Узнайте, как с помощью API Автозаполнения Bing получать предлагаемые запросы на основе частичного запроса. В руководствах описано, как создавать приложения, использующие эту службу.'
+  description: Узнайте, как с помощью API Автозаполнения Bing получать предлагаемые запросы на основе частичного запроса. В руководствах описано, как создавать приложения, использующие эту службу.
   services: cognitive-services
   author: aahill
   manager: nitinme
   ms.service: cognitive-services
   ms.subservice: bing-autosuggest
   ms.topic: landing-page
-  ms.date: 07/25/2019
+  ms.date: 10/28/2019
   ms.author: aahi
-abstract:
-  description: 'API Автозаполнения Bing позволяет отправить частичный поисковый запрос и получить список предложений по запросам, которые другие пользователи вводили для поиска.  Например, по мере того, как пользователь вводит каждый символ термина для поиска, вызывается этот API и раскрывающийся список в поле поиска заполняется предложениями. Узнайте, как использовать API Автозаполнения Bing, изучив краткие инструкции, примеры и руководства.'
-sections:
-  - items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - href: /azure/cognitive-services/bing-autosuggest/get-suggested-search-terms
-            html: <p>Ознакомьтесь с API Автозаполнения Bing</p>
-            image:
-              src: ../media/index/i_overview.svg
-            title: Что такое API Автозаполнения Bing?
-          - href: /azure/cognitive-services/bing-autosuggest/concepts/get-suggestions
-            html: '<p>Узнайте, как получать предложения по поиску в реальном времени</p>'
-            image:
-              src: ../media/index/i_guidelines.svg
-            title: Получение предложений из API Автозаполнения Bing
-          - href: /azure/cognitive-services/bing-autosuggest/language-support
-            html: '<p>Узнайте, какие языки поддерживает этот API.</p>'
-            image:
-              src: ../media/index/i_guidelines.svg
-            title: Поддерживаемые языки
-  - title: Пятиминутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: 'Начните работу с API Автозаполнения Bing, составив запрос и просмотрев ответ в формате JSON:'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: media/index/logo_csharp.svg
-            href: quickstarts/csharp
-            text: 'C#'
-          - image:
-              src: media/index/logo_java.svg
-            href: quickstarts/java
-            text: Java
-          - image:
-              src: media/index/logo_nodejs.svg
-            href: quickstarts/nodejs
-            text: Node.js
-          - image:
-              src: media/index/logo_php.svg
-            href: quickstarts/php
-            text: PHP
-          - image:
-              src: media/index/logo_python.svg
-            href: quickstarts/python
-            text: Python
-          - image:
-              src: media/index/logo_ruby.svg
-            href: quickstarts/ruby
-            text: Ruby
-  - title: Пошаговые инструкции
-    items:
-      - type: paragraph
-        text: 'Инструкции по разработке приложений с использованием API Автозаполнения Bing:'
-      - type: paragraph
-        text: <a href="tutorials/autosuggest.md">Одностраничное веб-приложение</a>
-  - title: Справочные материалы
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: Программные интерфейсы
-            html: '<p><a href="https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-autosuggest-api-v7-reference">API Автозаполнения Bing версии 7</a></p> <p><a href="https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v5-reference">API Автозаполнения Bing версии 5</p>'
-          - title: Пакеты SDK
-            html: '<p><a href="https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/bingautosuggest?view=azure-dotnet">.NET</a></p> <p><a href="https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.0/autosuggest">GO</a></p> <p><a href="https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/bingautosuggest?view=azure-java-stable">Java</a></p>'
-          - title: PowerShell
-            html: '<p><a href="https://docs.microsoft.com/powershell/module/az.cognitiveservices/#cognitive_services">Azure PowerShell</a></p>'
-          - title: CLI
-            html: '<p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest">Azure CLI</a></p>'
+  ms.openlocfilehash: 3e7126b4f98ecc7729afd5abd003caffc2644d75
+  ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 11/04/2019
+  ms.locfileid: "73580126"
+landingContent:
+- title: Сведения об API Автозаполнения Bing
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое API Автозаполнения Bing?
+      url: get-suggested-search-terms.md
+    - text: Сравнение API-интерфейсов Поиска Bing
+      url: ../bing-web-search/bing-api-comparison.md
+- title: Получение предлагаемых условий поиска
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Использование C#
+      url: quickstarts/csharp.md
+    - text: Использование Python
+      url: quickstarts/python.md
+    - text: Использование Java
+      url: quickstarts/java.md
+    - text: Использование Node.js
+      url: quickstarts/nodejs.md
+  - linkListType: tutorial
+    links:
+    - text: Создание одностраничного веб-приложения
+      url: tutorials/autosuggest.md
+  - linkListType: how-to-guide
+    links:
+    - text: Использование предлагаемых условий
+      url: concepts/get-suggestions.md
+    - text: Отправка запросов к API
+      url: quickstarts/csharp.md
+- title: Справочные материалы
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: REST API автозаполнения версии 7
+      url: https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-autosuggest-api-v7-reference
+    - text: REST API автозаполнения версии 5
+      url: https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-autosuggest-api-v5-reference
+    - text: Пакет SDK для .NET
+      url: https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/bingautosuggest?view=azure-dotnet
+    - text: Пакет SDK для Java
+      url: https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/bingautosuggest?view=azure-java-stable
+    - text: Пакет SDK для GO
+      url: https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.0/autosuggest

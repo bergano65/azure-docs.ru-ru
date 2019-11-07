@@ -518,6 +518,8 @@
           href: data-movement-security-considerations.md
         - name: Хранение учетных данных в Azure Key Vault
           href: store-credentials-in-key-vault.md
+        - name: Использование секретов Azure Key Vault в действиях конвейера
+          href: how-to-use-azure-key-vault-secrets-pipeline-activities.md
         - name: Шифрование учетных данных для локальной среды выполнения интеграции
           href: encrypt-credentials-self-hosted-integration-runtime.md
         - name: Управляемое удостоверение для Фабрики данных

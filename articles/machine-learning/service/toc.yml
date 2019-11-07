@@ -84,9 +84,6 @@
     - name: Автоматическое машинное обучение
       displayName: 'automl, auto ml'
       href: concept-automated-ml.md
-    - name: Вычислительная операция
-      displayName: 'resource, dsvm, Data Science Virtual Machine'
-      href: concept-compute-instance.md
     - name: Целевой объект вычисления
       displayName: 'resource, dsvm, AKS, kubernetes, amlcompute, Data Science Virtual Machine, local, cluster, ACI, container instance, ADB, Databricks, data lake, lake, HDI, HDInsight'
       href: concept-compute-target.md
@@ -115,6 +112,8 @@
     - name: Глубокое обучение
       displayName: 'deep learning vs machine learning, deep learning, vs, versus'
       href: concept-deep-learning-vs-machine-learning.md
+    - name: Интеграция с Сеткой событий
+      href: concept-event-grid-integration.md
     - name: Интеграция Git
       displayName: git github gitlab
       href: concept-train-model-git-integration.md
@@ -163,6 +162,12 @@
         - name: Управление версиями и отслеживание наборов данных
           displayName: 'data, data set'
           href: how-to-version-track-datasets.md
+        - name: Получение меток для данных
+          displayName: 'data, dataset, labeling'
+          href: how-to-create-labeling-projects.md
+        - name: Добавление меток для изображений
+          displayName: 'data, dataset, labeling'
+          href: how-to-label-images.md
     - name: Обучение моделей
       items:
         - name: Использование конструктора
@@ -227,11 +232,14 @@
         - name: Использование автоматического машинного обучения (Python)
           displayName: SDK automl
           href: how-to-configure-auto-train.md
-        - name: Использование автоматизированного машинного обучения (целевая страница рабочей области)
+        - name: Использование автоматизированного машинного обучения (интерфейс)
           href: how-to-create-portal-experiments.md
         - name: Использование удаленных целевых объектов вычислений
           displayName: automl automated auto ml
           href: how-to-auto-train-remote.md
+        - name: Определение задач машинного обучения
+          displayName: 'machine learning, task type'
+          href: how-to-define-task-type.md
         - name: Автоматическое обучение прогнозной модели
           displayName: time series
           href: how-to-auto-train-forecast.md
@@ -270,7 +278,7 @@
         - name: Служба приложений Azure
           displayName: web app
           href: how-to-deploy-app-service.md
-        - name: Вычислительные операции
+        - name: Виртуальные машины записных книжек
           href: how-to-deploy-local-container-notebook-vm.md
         - name: Использование пользовательского образа Docker
           href: how-to-deploy-custom-docker-image.md
@@ -317,6 +325,9 @@
     - name: Экспорт и удаление данных
       displayName: GDPR
       href: how-to-export-delete-data.md
+    - name: Создание рабочих процессов на основе событий
+      displayName: event grid
+      href: how-to-use-event-grid.md
 - name: Справочные материалы
   items:
     - name: Пакет SDK для ML (Python)
@@ -328,6 +339,8 @@
     - name: Интерфейс командной строки для Машинного обучения
       displayName: 'extension, command line, command-line, az, ci/cd, automate, automated'
       href: reference-azure-machine-learning-cli.md
+    - name: REST API
+      href: 'https://docs.microsoft.com/rest/api/azureml/'
     - name: Справочник по мониторингу данных
       href: monitor-resource-reference.md
     - name: Справочник по конвейеру машинного обучения YAML

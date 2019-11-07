@@ -91,7 +91,7 @@
           href: how-to/run-dev-spaces-windows-containers.md
         - name: Использование traefik для пользовательского входящего трафика и HTTPS
           href: how-to/ingress-https-traefik.md
-        - name: Использование Azure Dev Spaces Connect (предварительная версия)
+        - name: Подключение компьютера для разработки к кластеру AKS (предварительная версия)
           href: how-to/connect.md
     - name: Устранение неполадок
       href: troubleshooting.md

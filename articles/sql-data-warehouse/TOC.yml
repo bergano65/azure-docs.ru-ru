@@ -47,10 +47,10 @@
           href: quickstart-scale-compute-tsql.md
     - name: Управление рабочей нагрузкой
       items:
-        - name: Создание классификатора рабочих нагрузок
+        - name: Создание изоляции рабочей нагрузки
           items:
             - name: T-SQL
-              href: quickstart-create-a-workload-classifier-tsql.md
+              href: quickstart-configure-workload-isolation-tsql.md
 - name: Основные понятия
   items:
     - name: Безопасность
@@ -213,14 +213,18 @@
           href: sql-data-warehouse-develop-label.md
     - name: Управление рабочей нагрузкой
       items:
-        - name: Классы ресурсов и управление рабочими нагрузками
-          href: resource-classes-for-workload-management.md
+        - name: Обзор
+          href: sql-data-warehouse-workload-management.md
         - name: Классификация рабочих нагрузок
           href: sql-data-warehouse-workload-classification.md
         - name: Уровень важности рабочей нагрузки
           href: sql-data-warehouse-workload-importance.md
+        - name: Изоляция рабочей нагрузки
+          href: sql-data-warehouse-workload-isolation.md
         - name: Ограничения памяти и параллелизма
-          href: memory-and-concurrency-limits.md
+          href: memory-concurrency-limits.md
+        - name: Классы ресурсов
+          href: resource-classes-for-workload-management.md
     - name: Управляемость и мониторинг
       items:
         - name: Обзор
@@ -303,6 +307,8 @@
           href: sql-data-warehouse-how-to-manage-and-monitor-workload-importance.md
         - name: Настройка уровня важности рабочей нагрузки
           href: sql-data-warehouse-how-to-configure-workload-importance.md
+        - name: Преобразование классов ресурсов в группы рабочей нагрузки
+          href: sql-data-warehouse-how-to-convert-resource-classes-workload-groups.md
     - name: Управление и мониторинг
       items:
         - name: Обновление до 2-го поколения

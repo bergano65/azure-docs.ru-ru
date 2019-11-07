@@ -34,6 +34,8 @@
       href: vpn-over-expressroute.md
     - name: Подключение шлюза виртуальной сети к Виртуальной глобальной сети
       href: connect-virtual-network-gateway-vwan.md
+    - name: Настройка глобального пиринга виртуальных сетей
+      href: global-peering-vnet.md
     - name: Настройка пользовательской политики IPsec
       href: virtual-wan-custom-ipsec-portal.md
     - name: Настройка сертификатов для VPN пользователя

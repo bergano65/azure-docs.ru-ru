@@ -7,10 +7,14 @@
 - name: Краткие руководства
   expanded: true
   items:
-    - name: Использование модели возможностей устройства для создания устройства
+    - name: Создание устройства (Windows)
       href: quickstart-create-pnp-device.md
-    - name: Подключение устройства к Центру Интернета вещей
+    - name: Создание устройства (Linux)
+      href: quickstart-create-pnp-device-linux.md
+    - name: Подключение устройства к Центру Интернета вещей (Windows)
       href: quickstart-connect-pnp-device.md
+    - name: Подключение устройства к Центру Интернета вещей (Linux)
+      href: quickstart-connect-pnp-device-linux.md
     - name: Подключение устройства к IoT Central
       href: ../iot-central/core/quick-create-pnp-device-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
     - name: Подключение к устройству в решении

@@ -502,6 +502,8 @@
           href: sql-database-elastic-pool-failover-group-tutorial.md
         - name: Настройка безопасности
           href: sql-database-security-tutorial.md
+        - name: Потоковая передача данных с помощью Stream Analytics
+          href: sql-database-stream-analytics.md
     - name: Основные понятия
       items:
         - name: Ресурсы отдельной базы данных

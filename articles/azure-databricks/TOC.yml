@@ -37,7 +37,7 @@
         - name: Приступая к работе с Azure Databricks
           href: /azure/databricks/getting-started/quick-start
           maintainContext: true
-        - name: Общие сведения о данных
+        - name: Обзор данных
           href: /azure/databricks/getting-started/data
           maintainContext: true
         - name: Основные понятия Azure Databricks
@@ -245,7 +245,7 @@
             - name: 'База данных SQL Azure, использующая соединитель Apache Spark'
               href: /azure/databricks/data/data-sources/sql-databases-azure
               maintainContext: true
-            - name: Хранилище blob-объектов Azure
+            - name: Хранилище BLOB-объектов Azure
               href: /azure/databricks/data/data-sources/azure/azure-storage
               maintainContext: true
             - name: Azure Data Lake Storage 2-го поколения
@@ -260,7 +260,7 @@
             - name: Cosmos DB
               href: /azure/databricks/data/data-sources/azure/cosmosdb-connector
               maintainContext: true
-            - name: Хранилище данных SQL
+            - name: "Хранилище данных SQL\_Azure"
               href: /azure/databricks/data/data-sources/azure/sql-data-warehouse
               maintainContext: true
             - name: Двоичные файлы
@@ -272,7 +272,7 @@
             - name: Couchbase
               href: /azure/databricks/data/data-sources/couchbase
               maintainContext: true
-            - name: Эластичный поиск
+            - name: ElasticSearch
               href: /azure/databricks/data/data-sources/elasticsearch
               maintainContext: true
             - name: Образы
@@ -708,14 +708,17 @@
             - name: Пример деревьев принятия решений
               href: /azure/databricks/applications/machine-learning/mllib/decision-trees
               maintainContext: true
-            - name: Конвейеры MLib и структурированная потоковая передача
+            - name: Конвейеры MLlib и структурированная потоковая передача
               href: /azure/databricks/applications/machine-learning/mllib/mllib-pipelines-and-stuctured-streaming
               maintainContext: true
-            - name: Расширенный пример MLib
+            - name: Расширенный пример MLlib
               href: /azure/databricks/applications/machine-learning/mllib/advanced-mllib
               maintainContext: true
         - name: Автоматизированное машинное обучение
           items:
+            - name: Общие сведения об автоматизированном машинном обучении
+              href: /azure/databricks/applications/machine-learning/automl/index
+              maintainContext: true
             - name: Hyperopt
               items:
                 - name: Обзор Hyperopt
@@ -730,8 +733,16 @@
                 - name: Поиск по моделям в распределенном Hyperopt
                   href: /azure/databricks/applications/machine-learning/automl/hyperopt/hyperopt-model-selection
                   maintainContext: true
-            - name: MLib и автоматизированное отслеживание MLflow
+            - name: MLlib и автоматизированное отслеживание MLflow
               href: /azure/databricks/applications/machine-learning/automl/mllib-mlflow-integration
+              maintainContext: true
+        - name: Экспорт и импорт моделей машинного обучения
+          items:
+            - name: Общие сведения об экспорте и импорте
+              href: /azure/databricks/applications/machine-learning/model-export-import/index
+              maintainContext: true
+            - name: Экспорт модели машинного обучения MLeap
+              href: /azure/databricks/applications/machine-learning/model-export-import/mleap-model-export
               maintainContext: true
         - name: Интеграция машинного обучения сторонних поставщиков
           href: /azure/databricks/applications/machine-learning/third-party/index
@@ -826,33 +837,39 @@
         - name: Обзор MLflow
           href: /azure/databricks/applications/mlflow/index
           maintainContext: true
-        - name: Приступая к работе с MLflow
-          href: /azure/databricks/applications/mlflow/quick-start
-          maintainContext: true
-        - name: Приступая к работе с MLflow для Java и Scala
-          href: /azure/databricks/applications/mlflow/quick-start-java-scala
-          maintainContext: true
-        - name: Приступая к работе с MLflow для Python
-          href: /azure/databricks/applications/mlflow/quick-start-python
-          maintainContext: true
-        - name: Приступая к работе с MLflow для R
-          href: /azure/databricks/applications/mlflow/quick-start-r
-          maintainContext: true
+        - name: Начало работы
+          items:
+            - name: Приступая к работе с MLflow
+              href: /azure/databricks/applications/mlflow/quick-start
+              maintainContext: true
+            - name: Приступая к работе с MLflow для Java и Scala
+              href: /azure/databricks/applications/mlflow/  quick-start-java-scala
+              maintainContext: true
+            - name: Приступая к работе с MLflow для Python
+              href: /azure/databricks/applications/mlflow/  quick-start-python
+              maintainContext: true
+            - name: Приступая к работе с MLflow для R
+              href: /azure/databricks/applications/mlflow/quick-start-r
+              maintainContext: true
         - name: Отслеживание обучающих прогонов машинного обучения
-          href: /azure/databricks/applications/mlflow/tracking
-          maintainContext: true
-        - name: Примеры отслеживания MLflow
-          href: /azure/databricks/applications/mlflow/tracking-examples
-          maintainContext: true
-        - name: Доступ к отслеживанию извне
-          href: /azure/databricks/applications/mlflow/access-hosted-tracking-server
-          maintainContext: true
+          items:
+            - name: Общие сведения об отслеживании
+              href: /azure/databricks/applications/mlflow/tracking
+              maintainContext: true
+            - name: Примеры отслеживания MLflow
+              href: /azure/databricks/applications/mlflow/  tracking-examples
+              maintainContext: true
+            - name: Доступ к отслеживанию извне
+              href: /azure/databricks/applications/mlflow/  access-hosted-tracking-server
+              maintainContext: true
         - name: 'Сохранение, загрузка и развертывание моделей'
-          href: /azure/databricks/applications/mlflow/models
-          maintainContext: true
-        - name: Примеры моделей MLflow
-          href: /azure/databricks/applications/mlflow/model-examples
-          maintainContext: true
+          items:
+            - name: 'Общие сведения о сохранении, загрузке и развертывании'
+              href: /azure/databricks/applications/mlflow/models
+              maintainContext: true
+            - name: Примеры моделей MLflow
+              href: /azure/databricks/applications/mlflow/  model-examples
+              maintainContext: true
         - name: Воспроизведение прогонов для проектов MLflow
           href: /azure/databricks/applications/mlflow/projects
           maintainContext: true
@@ -880,9 +897,6 @@
         - name: Общие сведения о Genomics
           href: /azure/databricks/applications/genomics/index
           maintainContext: true
-        - name: Общие сведения о ETL Genomics
-          href: /azure/databricks/applications/genomics/etl/index
-          maintainContext: true
         - name: Вторичный анализ
           items:
             - name: Общие сведения о вторичном анализе
@@ -908,6 +922,9 @@
               maintainContext: true
         - name: 'Извлечение, преобразование и загрузка'
           items:
+            - name: Общие сведения о ETL Genomics
+              href: /azure/databricks/applications/genomics/etl/index
+              maintainContext: true
             - name: Ввод и вывод вариантов в Apache Spark SQL
               href: /azure/databricks/applications/genomics/etl/variant-data
               maintainContext: true
@@ -1211,10 +1228,7 @@
               maintainContext: true
             - name: Не удалось обнаружить кодировку в JSON
               href: /azure/databricks/kb/data-sources/json-unicode
-              maintainContext: true
-            - name: Параметр запроса JDBC не работает для Oracle Database
-              href: /azure/databricks/kb/data-sources/query-option-not-work-oracle
-              maintainContext: true
+              maintainContext: true j
         - name: Файловая система Databricks
           items:
             - name: 'Не удается прочитать объекты, сохраненные в корневом каталоге файловой системы Databricks'
@@ -1293,6 +1307,9 @@
               maintainContext: true
             - name: Сбой задания maxresultsize
               href: /azure/databricks/kb/jobs/job-fails-maxresultsize-exception
+              maintainContext: true
+            - name: Обеспечение идемпотентности
+              href: /azure/databricks/kb/jobs/jobs-idempotency
               maintainContext: true
         - name: Библиотеки
           items:

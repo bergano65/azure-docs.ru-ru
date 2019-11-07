@@ -31,6 +31,8 @@
       href: publish-marketplace-app.md
     - name: Создание управляемого приложения с настраиваемого поставщика
       href: tutorial-create-managed-app-with-custom-provider.md
+    - name: Подключение ресурсов с помощью настраиваемых поставщиков
+      href: tutorial-custom-providers-resource-onboarding.md
 - name: Примеры
   items:
     - name: Интерфейс командной строки Azure
@@ -45,6 +47,10 @@
       href: custom-providers-overview.md
     - name: Просмотр артефакта определения
       href: concepts-view-definition.md
+    - name: Артефакты определения роли
+      href: concepts-custom-role-definition.md
+    - name: Подключение ресурсов
+      href: concepts-custom-providers-resourceonboarding.md
 - name: Руководства
   items:
     - name: Настраиваемые поставщики

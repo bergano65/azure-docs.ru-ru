@@ -8,8 +8,8 @@
       href: durable-functions-overview.md
     - name: Сравнение с бессерверными службами
       href: ../functions-compare-logic-apps-ms-flow-webjobs.md?toc=%2fazure%2fazure-functions%2fdurable%2ftoc.json
-    - name: Функции предварительной версии
-      href: durable-functions-preview.md
+    - name: Версии расширения "Устойчивые функции"
+      href: durable-functions-versions.md
 - name: Краткие руководства
   expanded: true
   items:

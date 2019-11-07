@@ -67,10 +67,14 @@
               href: billing-prepay-sql-data-warehouse-charges-with-reserved-capacity.md
             - name: Виртуальная машина
               href: ../virtual-machines/windows/prepay-reserved-vm-instances.md?toc=/azure/billing/TOC.json
+            - name: Хранилище Azure
+              href: ../storage/blobs/storage-blob-reserved-capacity.md?toc=/azure/billing/TOC.json
             - name: Cosmos DB
               href: ../cosmos-db/cosmos-db-reserved-capacity.md?toc=/azure/billing/TOC.json
             - name: База данных SQL
               href: ../sql-database/sql-database-reserved-capacity.md?toc=/azure/billing/TOC.json
+            - name: Azure Data Explorer
+              href: ../data-explorer/pricing-reserved-capacity.md?toc=/azure/billing/TOC.json
             - name: Azure Databricks
               href: billing-prepay-databricks-reserved-capacity.md
             - name: Служба приложений
@@ -85,14 +89,24 @@
           items:
             - name: Зарезервированные экземпляры виртуальных машин
               href: billing-understand-vm-reservation-charges.md
+            - name: Зарезервированная емкость в службе хранилища Azure
+              href: billing-understand-storage-charges.md
             - name: "Резервная мощность Cosmos\_DB"
               href: billing-understand-cosmosdb-reservation-charges.md
             - name: Резервная мощность Базы данных SQL
               href: billing-understand-reservation-charges.md
             - name: Хранилище данных SQL
               href: billing-how-reservation-discount-is-applied-to-azure-sql-dw.md
+            - name: Azure Data Explorer
+              href: billing-understand-kusto-azuredataexplorer-reservation-charges.md
             - name: Azure Databricks
               href: billing-reservation-discount-databricks.md
+            - name: База данных Azure для MySQL
+              href: billing-understand-reservation-charges-mysql.md
+            - name: База данных Azure для PostgreSQL
+              href: billing-understand-reservation-charges-postgresql.md
+            - name: База данных Azure для MariaDB
+              href: billing-understand-reservation-charges-mariadb.md
             - name: Служба приложений
               href: billing-reservation-discount-app-service-isolated-stamp.md
             - name: Планы программного обеспечения Azure

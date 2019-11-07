@@ -53,6 +53,8 @@
       href: functions-create-function-linux-custom-image.md
     - name: Функции на устройстве IoT Edge
       href: ../iot-edge/tutorial-deploy-function.md?toc=%2fazure%2fazure-functions%2ftoc.json
+    - name: Использование Java с Azure Cosmos DB и Центрами событий
+      href: functions-event-hub-cosmos-db.md
 - name: Примеры
   items:
     - name: Azure Serverless Community Library
@@ -244,6 +246,8 @@
           href: install-update-binding-extensions-manual.md
         - name: Отключение функции
           href: disable-function.md
+        - name: Геоизбыточное аварийное восстановление
+          href: functions-geo-disaster-recovery.md
     - name: Мониторинг
       items:
         - name: Мониторинг функций
@@ -275,8 +279,6 @@
           href: ../app-service/overview-managed-identity.md?toc=%2fazure%2fazure-functions%2ftoc.json
         - name: Добавление ссылок на секреты из Key Vault
           href: ../app-service/app-service-key-vault-references.md?toc=%2fazure%2fazure-functions%2ftoc.json
-        - name: Геоизбыточное аварийное восстановление
-          href: functions-geo-disaster-recovery.md
     - name: Интеграция
       items:
         - name: Добавление привязок

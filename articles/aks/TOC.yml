@@ -345,6 +345,8 @@
           maintainContext: true
         - name: Средство запуска для центра развертывания
           href: deployment-center-launcher.md
+        - name: Действия GitHub для Kubernetes
+          href: ../aks/kubernetes-action.md
     - name: Устранение неполадок
       items:
         - name: Распространенные проблемы

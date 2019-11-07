@@ -54,18 +54,22 @@
       href: user-help-auth-app-backup-recovery.md
     - name: Часто задаваемые вопросы
       href: user-help-auth-app-faq.md
-- name: Справка по предварительной версии параметра "Мой профиль" на портале
+- name: Справка по порталу "Моя учетная запись"
   items:
     - name: Обзор
-      href: myprofile-portal-overview.md
+      href: my-account-portal-overview.md
     - name: Управление сведениями для защиты
       href: user-help-security-info-overview.md
-    - name: Управление организациями
-      href: myprofile-portal-organizations-page.md
     - name: Управление подключенными устройствами
-      href: myprofile-portal-devices-page.md
+      href: my-account-portal-devices-page.md
+    - name: Изменение пароля
+      href: my-account-change-password-page.md
+    - name: Управление организациями
+      href: my-account-portal-organizations-page.md
     - name: 'Просмотр сведений, связанных с конфиденциальностью'
-      href: myprofile-portal-privacy-page.md
+      href: my-account-portal-privacy-page.md
+    - name: Просмотр недавних действий входа в систему
+      href: my-account-portal-sign-ins-page.md
 - name: Справка по сведениям для защиты (предварительная версия)
   items:
     - name: Обзор

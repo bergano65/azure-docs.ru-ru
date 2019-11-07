@@ -52,6 +52,8 @@
       items:
         - name: Создание и администрирование лабораторий для аудитории
           href: how-to-manage-classroom-labs.md
+        - name: Использование панели мониторинга
+          href: use-dashboard.md
         - name: Настройка и публикация шаблонов
           href: how-to-create-manage-template.md
         - name: Настройка и администрирование пула виртуальных машин
@@ -80,6 +82,8 @@
   items:
     - name: REST API
       href: 'https://docs.microsoft.com/rest/api/labservices/'
+    - name: Модуль PowerShell Az.LabServices (предварительная версия)
+      href: reference-powershell-module.md
 - name: Ресурсы
   items:
     - name: Обновления Azure

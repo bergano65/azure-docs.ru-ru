@@ -141,7 +141,7 @@
 - name: Основные понятия
   items:
     - name: Azure Resource Manager
-      href: ../../azure-resource-manager/resource-group-overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json
+      href: ../../azure-resource-manager/resource-group-overview.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
     - name: Регионы
       href: regions.md
     - name: Доступность и производительность
@@ -151,7 +151,7 @@
         - name: Совместное размещение
           href: co-location.md
         - name: проблемы с производительностью сети;
-          href: ../..//virtual-network/virtual-network-optimize-network-bandwidth.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json
+          href: ../..//virtual-network/virtual-network-optimize-network-bandwidth.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
     - name: Типы и размеры виртуальных машин
       href: sizes.md
       items:
@@ -231,7 +231,7 @@
     - name: Сеть
       href: network-overview.md
     - name: Масштабируемые наборы
-      href: ../../virtual-machine-scale-sets/overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json
+      href: ../../virtual-machine-scale-sets/overview.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
     - name: Автоматизация инфраструктуры
       href: infrastructure-automation.md
     - name: Безопасность
@@ -320,7 +320,7 @@
         - name: Использование WinRM
           href: winrm.md
         - name: Использование элементов управления доступом
-          href: ../../role-based-access-control/overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json
+          href: ../../role-based-access-control/overview.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
         - name: Использование политик
           href: policy.md
         - name: Создание хранилища ключей
@@ -328,25 +328,25 @@
     - name: Защита виртуальных машин
       items:
         - name: Резервное копирование виртуальных машин
-          href: ../../backup/backup-introduction-to-azure-backup.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json
+          href: ../../backup/backup-introduction-to-azure-backup.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
           items:
             - name: Резервное копирование одной виртуальной машины
-              href: ../../backup/quick-backup-vm-cli.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json
+              href: ../../backup/quick-backup-vm-cli.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
             - name: Резервное копирование нескольких виртуальных машин
-              href: ../../backup/tutorial-backup-vm-at-scale.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json
+              href: ../../backup/tutorial-backup-vm-at-scale.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
             - name: Восстановление диска
-              href: ../../backup/tutorial-restore-disk.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json
+              href: ../../backup/tutorial-restore-disk.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
             - name: Восстановление отдельных файлов
-              href: ../../backup/tutorial-restore-files.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json
+              href: ../../backup/tutorial-restore-files.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
         - name: Настройка аварийного восстановления для виртуальных машин
-          href: ../../site-recovery/site-recovery-overview.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json
+          href: ../../site-recovery/site-recovery-overview.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
           items:
             - name: Включение аварийного восстановления для виртуальной машины
-              href: ../../site-recovery/azure-to-azure-tutorial-enable-replication.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json
+              href: ../../site-recovery/azure-to-azure-tutorial-enable-replication.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
             - name: Выполнение отработки аварийного восстановления для виртуальной машины
-              href: ../../site-recovery/azure-to-azure-tutorial-dr-drill.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json
+              href: ../../site-recovery/azure-to-azure-tutorial-dr-drill.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
             - name: Отработка отказа виртуальной машины в другой регион
-              href: ../../site-recovery/azure-to-azure-tutorial-failover-failback.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json
+              href: ../../site-recovery/azure-to-azure-tutorial-failover-failback.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
     - name: Управление виртуальными машинами
       items:
         - name: Использование виртуальных машин
@@ -407,7 +407,7 @@
             - name: Портал
               href: shared-images-portal.md
             - name: CLI
-              href: ../linux/shared-images.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json
+              href: ../linux/shared-images.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
             - name: Совместное использование образов в клиентах
               href: share-images-across-tenants.md
             - name: Устранение неполадок с общими образами
@@ -415,7 +415,7 @@
         - name: Конструктор изображений (предварительная версия)
           items:
             - name: Обзор
-              href: ../linux/image-builder-overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json
+              href: ../linux/image-builder-overview.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
             - name: Использование Azure CLI
               href: image-builder.md
             - name: Сборка для коллекций образов
@@ -423,9 +423,9 @@
             - name: Обновление существующего образа
               href: image-builder-gallery-update-image-version.md
             - name: Хранение скриптов
-              href: ../linux/image-builder-user-assigned-identity.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json
+              href: ../linux/image-builder-user-assigned-identity.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
             - name: Справочник по шаблонам
-              href: ../linux/image-builder-json.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json
+              href: ../linux/image-builder-json.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
             - name: Устранение неполадок
               href: 'https://github.com/danielsollondon/azvmimagebuilder/blob/master/troubleshootingaib.md'
         - name: Поиск и использование образов
@@ -445,7 +445,7 @@
     - name: Высокая доступность и масштабирование
       items:
         - name: Масштабируемые наборы виртуальных машин
-          href: ../../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json
+          href: ../../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
         - name: Высокий уровень доступности
           href: manage-availability.md
         - name: Создание группы размещения близкого взаимодействия
@@ -543,7 +543,7 @@
       href: ps-common-network-ref.md
       items:
         - name: Создание виртуальной сети
-          href: ../../virtual-network/virtual-networks-create-vnet-arm-pportal.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json
+          href: ../../virtual-network/virtual-networks-create-vnet-arm-pportal.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
         - name: Открытие портов для виртуальной машины
           items:
             - name: Портал Azure
@@ -551,15 +551,15 @@
             - name: Azure PowerShell
               href: nsg-quickstart-powershell.md
         - name: Назначение общедоступного IP-адреса
-          href: ../../virtual-network/virtual-network-deploy-static-pip-arm-portal.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json
+          href: ../../virtual-network/virtual-network-deploy-static-pip-arm-portal.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
         - name: Использование нескольких сетевых адаптеров
           href: multiple-nics.md
         - name: Использование ускорения работы в сети
-          href: ../../virtual-network/create-vm-accelerated-networking-powershell.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json
+          href: ../../virtual-network/create-vm-accelerated-networking-powershell.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
         - name: Назначение общедоступного DNS-имени
           href: portal-create-fqdn.md
         - name: Разрешение DNS
-          href: ../../dns/dns-for-azure-services.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json
+          href: ../../dns/dns-for-azure-services.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
     - name: Настройка управляемых удостоверений
       items:
         - name: Портал
@@ -581,9 +581,9 @@
         - name: Изменение подписки или группы ресурсов
           href: move-vm.md
         - name: Перемещение регионов
-          href: ../../site-recovery/azure-to-azure-tutorial-migrate.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json
+          href: ../../site-recovery/azure-to-azure-tutorial-migrate.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
         - name: Перемещение в зону доступности
-          href: ../../site-recovery/move-azure-vms-avset-azone.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json
+          href: ../../site-recovery/move-azure-vms-avset-azone.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
         - name: Миграция AWS и локальных виртуальных машин
           href: on-prem-to-azure.md
           items:
@@ -592,7 +592,7 @@
             - name: Перемещение из Amazon Web Services (AWS)
               href: aws-to-azure.md
             - name: Использование Azure Site Recovery
-              href: ../../site-recovery/site-recovery-migrate-to-azure.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json
+              href: ../../site-recovery/site-recovery-migrate-to-azure.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
         - name: Переход с классической модели развертывания на модель Azure Resource Manager
           href: migration-classic-resource-manager-overview.md
           items:
@@ -634,7 +634,7 @@
 - name: Ресурсы
   items:
     - name: Создание шаблонов
-      href: ../../azure-resource-manager/resource-group-authoring-templates.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json
+      href: ../../azure-resource-manager/resource-group-authoring-templates.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
     - name: Развитие навыков с помощью Microsoft Learn
       href: /learn/browse/?products=azure-virtual-machines
     - name: Стратегия развития Azure

@@ -12,12 +12,12 @@ metadata:
   author: memildin
   ms.author: memildin
   ms.date: 11/04/2019
-  ms.openlocfilehash: 48140c014492383fd4c714669b070df1fa6214e6
-  ms.sourcegitcommit: 3f8017692169bd75483eefa96c225d45cd497f06
+  ms.openlocfilehash: 8174498a5cc94eca0883102c95b543630cd37fdf
+  ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 11/04/2019
-  ms.locfileid: "73521152"
+  ms.lasthandoff: 11/05/2019
+  ms.locfileid: "73607501"
 landingContent:
 - title: Сведения о центре безопасности
   linkLists:
@@ -27,6 +27,22 @@ landingContent:
       url: security-center-intro.md
     - text: Какие поддерживаются версии Windows Server и Linux?
       url: security-center-os-coverage.md
+- title: Последние новости
+  linkLists:
+  - linkListType: whats-new
+    links:
+    - text: Защита контейнеров
+      url: container-security.md
+    - text: Добавление динамических пакетов соответствия
+      url: update-regulatory-compliance-packages.md
+    - text: Интеграция с Windows Admin Center
+      url: windows-admin-center-integration.md
+    - text: Автоматизация ответов на оповещения и рекомендации
+      url: workflow-automation.md
+    - text: Экспорт оповещений о безопасности и рекомендаций
+      url: continuous-export.md
+    - text: Настройка расширенной защиты от угроз для Azure Key Vault
+      url: advanced-threat-protection-key-vault.md
 - title: Начало работы
   linkLists:
   - linkListType: get-started

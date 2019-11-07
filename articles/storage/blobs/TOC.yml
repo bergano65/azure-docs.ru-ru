@@ -26,15 +26,31 @@
         - name: Разработка с использованием больших двоичных объектов
           items:
             - name: .NET
-              href: storage-quickstart-blobs-dotnet.md
+              items:
+                - name: .NET (пакет SDK версии 12)
+                  href: storage-quickstart-blobs-dotnet.md
+                - name: .NET (пакет SDK версии 11)
+                  href: storage-quickstart-blobs-dotnet-legacy.md
             - name: Java
-              href: storage-quickstart-blobs-java.md
+              items:
+                - name: Java (пакет SDK версии 12)
+                  href: storage-quickstart-blobs-java.md
+                - name: Java (пакет SDK версии 8)
+                  href: storage-quickstart-blobs-java-legacy.md
             - name: Python
-              href: storage-quickstart-blobs-python.md
-            - name: JavaScript (Node.js)
-              href: storage-quickstart-blobs-nodejs-v10.md
-            - name: JavaScript (для браузера)
-              href: storage-quickstart-blobs-javascript-client-libraries-v10.md
+              items:
+                - name: Python (пакет SDK версии 12)
+                  href: storage-quickstart-blobs-python.md
+                - name: Python (пакет SDK версии 2.1)
+                  href: storage-quickstart-blobs-python-legacy.md
+            - name: JavaScript
+              items:
+                - name: JavaScript (пакет SDK версии 12 для Node.js)
+                  href: storage-quickstart-blobs-nodejs.md
+                - name: JavaScript (пакет SDK версии 10 для Node.js)
+                  href: storage-quickstart-blobs-nodejs-v10.md
+                - name: JavaScript (пакет SDK версии 10 для браузера)
+                  href: storage-quickstart-blobs-javascript-client-libraries-v10.md
             - name: Go
               href: storage-quickstart-blobs-go.md
             - name: PHP
@@ -147,7 +163,7 @@
               href: storage-blob-performance-tiers.md
             - name: Управление жизненным циклом хранилища BLOB-объектов Azure
               href: storage-lifecycle-management-concepts.md
-        - name: Производительность и масштабируемость
+        - name: 'Производительность, масштабирование и оптимизация затрат'
           items:
             - name: Целевые показатели масштабируемости и производительности хранилища
               href: ../common/storage-scalability-targets.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
@@ -155,8 +171,16 @@
               href: storage-performance-checklist.md
             - name: Задержка в хранилище BLOB-объектов
               href: storage-blobs-latency.md
+            - name: Зарезервированная емкость в службе хранилища Azure
+              href: storage-blob-reserved-capacity.md
         - name: Параллелизм
           href: ../common/storage-concurrency.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+        - name: Поиск и анализ данных BLOB-объектов
+          items:
+            - name: Использование искусственного интеллекта для анализа данных BLOB-объектов
+              href: ../../search/search-blob-ai-integration.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+            - name: Полнотекстовый поиск по данным BLOB-объектов
+              href: ../../search/search-blob-storage-integration.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: Перенос данных
           items:
             - name: Сравнение решений для передачи данных
@@ -385,7 +409,7 @@
             - name: Предыдущие версии пакета SDK
               items:
                 - name: "JavaScript (Node.js) (пакет SDK Службы хранилища версии\_2)"
-                  href: storage-quickstart-blobs-nodejs.md
+                  href: storage-quickstart-blobs-nodejs-legacy.md
                 - name: "JavaScript (для браузера) (пакет SDK Службы хранилища версии\_2)"
                   href: storage-quickstart-blobs-javascript-client-libraries.md
         - name: Управление большими двоичными объектами
@@ -600,7 +624,7 @@
         - name: Обработка больших данных
           href: ../blobs/data-lake-storage-data-scenarios.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: Интеграция со службами Azure
-          href: ../blobs/data-lake-store-integrate-with-azure-services.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+          href: ../blobs/data-lake-storage-integrate-with-azure-services.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: Драйвер Azure Blob File System для Hadoop
           href: ../blobs/data-lake-storage-abfs-driver.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: Формат URI для Azure Blob File System

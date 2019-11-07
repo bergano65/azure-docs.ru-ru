@@ -8,6 +8,8 @@
   items:
     - name: Создание службы с помощью портала
       href: quickstart-create-data-migration-service-portal.md
+    - name: Создание службы в гибридном режиме с помощью портала
+      href: quickstart-create-data-migration-service-hybrid-portal.md
 - name: Учебники
   items:
     - name: "Перенос базы данных SQL\_Server в отдельную базу данных в службе \"База данных SQL Azure\" в автономном режиме"

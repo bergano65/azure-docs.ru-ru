@@ -26,6 +26,8 @@
       href: cdn-custom-ssl.md
     - name: Настройка правил кэширования
       href: cdn-caching-rules-tutorial.md
+    - name: Принудительное применение HTTPS с помощью стандартного обработчика правил
+      href: cdn-standard-rules-engine.md
 - name: Примеры
   items:
     - name: Примеры кода
@@ -134,6 +136,13 @@
           href: cdn-troubleshoot-allowed-ca.md
 - name: Справочные материалы
   items:
+    - name: Справочник по стандартному обработчику правил (Майкрософт)
+      href: cdn-standard-rules-engine-reference.md
+      items:
+        - name: Условия соответствия для стандартного обработчика правил
+          href: cdn-standard-rules-engine-match-conditions.md
+        - name: Действия стандартного обработчика правил
+          href: cdn-standard-rules-engine-actions.md
     - name: Справочник по обработчику правил Verizon категории "Премиум"
       href: cdn-verizon-premium-rules-engine-reference.md
       items:

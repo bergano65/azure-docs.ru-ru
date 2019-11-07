@@ -173,7 +173,7 @@ $BlockRule = New-AzApplicationGatewayFirewallCustomRule `
 |Код страны | Название страны |
 | ----- | ----- |
 | AD | Андорра |
-| AE | Объединенные Арабские Эмираты|
+| AE | ОАЭ|
 | AF | Афганистан|
 | AG | Антигуа и Барбуда|
 | AL | Албания|
@@ -326,7 +326,7 @@ $BlockRule = New-AzApplicationGatewayFirewallCustomRule `
 | SR | Суринам|
 | SS | Южный Судан|
 | SV | Эль-Сальвадор|
-| SY | Сирийская Арабская Республика|
+| SY | Сирия|
 | SZ | Свазиленд|
 | TC | Острова Теркс и Кайкос|
 | TG | Того|

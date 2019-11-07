@@ -65,6 +65,10 @@
               href: rest-speech-to-text.md
             - name: Интерфейсы REST API для пакетного транскрибирования
               href: batch-transcription.md
+    - name: Ресурсы
+      items:
+        - name: Вопросы и ответы. Преобразование речи в текст
+          href: faq-stt.md
 - name: Преобразование текста в речь
   exanded: false
   items:
@@ -112,6 +116,10 @@
           items:
             - name: REST API преобразования текста в речь.
               href: rest-text-to-speech.md
+    - name: Ресурсы
+      items:
+        - name: Вопросы и ответы. Преобразование текста в речь
+          href: faq-text-to-speech.md
 - name: Распознавание намерений
   exanded: false
   items:
@@ -182,6 +190,10 @@
               href: 'https://aka.ms/csspeech/pythonref'
             - name: Заметки о выпуске
               href: releasenotes.md
+    - name: Ресурсы
+      items:
+        - name: Вопросы и ответы. Перевод речи
+          href: 'https://www.microsoft.com/translator/faq.aspx'
 - name: Транскрибирование бесед
   expanded: false
   items:
@@ -254,7 +266,7 @@
       items:
         - name: Включение голосовых команд в боте с помощью пакета SDK службы "Речь"
           href: tutorial-voice-enable-your-bot-speech-sdk.md
-    - name: Справочные материалы
+    - name: Ресурсы
       items:
         - name: 'Голосовые помощники: часто задаваемые вопросы'
           href: faq-voice-assistants.md
@@ -368,6 +380,8 @@
           href: scenario-availability.md
     - name: Краткие руководства
       items:
+        - name: Создание проекта
+          href: quickstarts/create-project.md
         - name: 'Настройка пакета SDK службы "Речь" с помощью C#'
           href: quickstarts/setup-platform.md?pivots=programming-language-csharp
         - name: Настройка пакета SDK службы "Речь" с помощью C++

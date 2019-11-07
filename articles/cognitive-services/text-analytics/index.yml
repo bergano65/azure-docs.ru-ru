@@ -14,12 +14,12 @@ metadata:
   ms.topic: landing-page
   ms.date: 07/29/2019
   ms.author: aahi
-  ms.openlocfilehash: 9b90900b7d09f9a8f94e57941cccf366c440690f
-  ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
+  ms.openlocfilehash: 534faa10fbd82692ef69db16ea9244a26c826a64
+  ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 10/02/2019
-  ms.locfileid: "71827789"
+  ms.lasthandoff: 11/07/2019
+  ms.locfileid: "73742775"
 landingContent:
 - title: Об API Анализа текста
   linkLists:
@@ -42,15 +42,15 @@ landingContent:
   - linkListType: quickstart
     links:
     - text: Использование C#
-      url: quickstarts/csharp.md#sentiment-analysis
+      url: quickstarts/text-analytics-sdk.md?pivots=programming-language-csharp#sentiment-analysis
     - text: Использование Python
-      url: quickstarts/python-sdk.md#sentiment-analysis
+      url: quickstarts/text-analytics-sdk.md?pivots=programming-language-python#sentiment-analysis
     - text: Использование Node.js
-      url: quickstarts/nodejs-sdk.md#sentiment-analysis
+      url: quickstarts/text-analytics-sdk.md?pivots=programming-language-nodejs#sentiment-analysis
     - text: Использование Go
-      url: quickstarts/go-sdk.md#sentiment-analysis
+      url: quickstarts/text-analytics-sdk.md?pivots=programming-language-go#sentiment-analysis
     - text: Использование Ruby
-      url: quickstarts/ruby-sdk.md#sentiment-analysis
+      url: quickstarts/text-analytics-sdk.md?pivots=programming-language-ruby#sentiment-analysis
   - linkListType: tutorial
     links:
     - text: Интеграция Power BI для анализа тональности пользователей
@@ -66,15 +66,15 @@ landingContent:
   - linkListType: quickstart
     links:
     - text: Использование C#
-      url: quickstarts/csharp.md#language-detection
+      url: quickstarts/text-analytics-sdk.md?pivots=programming-language-csharp#language-detection
     - text: Использование Python
-      url: quickstarts/python-sdk.md#language-detection
+      url: quickstarts/text-analytics-sdk.md?pivots=programming-language-python#language-detection
     - text: Использование Node.js
-      url: quickstarts/nodejs-sdk.md#language-detection
+      url: quickstarts/text-analytics-sdk.md?pivots=programming-language-nodejs#language-detection
     - text: Использование Go
-      url: quickstarts/go-sdk.md#language-detection
+      url: quickstarts/text-analytics-sdk.md?pivots=programming-language-go#language-detection
     - text: Использование Ruby
-      url: quickstarts/ruby-sdk.md#language-detection
+      url: quickstarts/text-analytics-sdk.md?pivots=programming-language-ruby#language-detection
   - linkListType: how-to-guide
     links:
     - text: Определение языка
@@ -84,15 +84,15 @@ landingContent:
   - linkListType: quickstart
     links:
     - text: Использование C#
-      url: quickstarts/csharp.md#key-phrase-extraction
+      url: quickstarts/text-analytics-sdk.md?pivots=programming-language-csharp#key-phrase-extraction
     - text: Использование Python
-      url: quickstarts/python-sdk.md#key-phrase-extraction
+      url: quickstarts/text-analytics-sdk.md?pivots=programming-language-python#key-phrase-extraction
     - text: Использование Node.js
-      url: quickstarts/nodejs-sdk.md#key-phrase-extraction
+      url: quickstarts/text-analytics-sdk.md?pivots=programming-language-nodejs#key-phrase-extraction
     - text: Использование Go
-      url: quickstarts/go-sdk.md#key-phrase-extraction
+      url: quickstarts/text-analytics-sdk.md?pivots=programming-language-go#key-phrase-extraction
     - text: Использование Ruby
-      url: quickstarts/ruby-sdk.md#key-phrase-extraction
+      url: quickstarts/text-analytics-sdk.md?pivots=programming-language-ruby#key-phrase-extraction
   - linkListType: how-to-guide
     links:
     - text: Извлечение ключевых слов
@@ -102,15 +102,15 @@ landingContent:
   - linkListType: quickstart
     links:
     - text: Использование C#
-      url: quickstarts/csharp.md#entity-recognition
+      url: quickstarts/text-analytics-sdk.md?pivots=programming-language-csharp#entity-recognition
     - text: Использование Python
-      url: quickstarts/python-sdk.md#entity-recognition
+      url: quickstarts/text-analytics-sdk.md?pivots=programming-language-python#entity-recognition
     - text: Использование Node.js
-      url: quickstarts/nodejs-sdk.md#entity-recognition
+      url: quickstarts/text-analytics-sdk.md?pivots=programming-language-nodejs#entity-recognition
     - text: Использование Go
-      url: quickstarts/go-sdk.md#entity-recognition
+      url: quickstarts/text-analytics-sdk.md?pivots=programming-language-go#entity-recognition
     - text: Использование Ruby
-      url: quickstarts/ruby-sdk.md#entity-recognition
+      url: quickstarts/text-analytics-sdk.md?pivots=programming-language-ruby#entity-recognition
   - linkListType: how-to-guide
     links:
     - text: Распознавание сущностей
@@ -126,7 +126,7 @@ landingContent:
     - text: Клиентская библиотека Python
       url: https://docs.microsoft.com/python/api/overview/azure/cognitiveservices/textanalytics?view=azure-python
     - text: Клиентская библиотека Node.js
-      url: https://docs.microsoft.com/javascript/api/azure-cognitiveservices-textanalytics?view=azure-node-latest
+      url: https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-textanalytics/?view=azure-node-latest
     - text: Клиентская библиотека Java
       url: https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/textanalytics?view=azure-java-stable
     - text: Клиентская библиотека Go

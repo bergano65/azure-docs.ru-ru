@@ -39,6 +39,8 @@
       href: security-overview.md
     - name: Маршрутизация
       href: virtual-networks-udr-overview.md
+    - name: Теги служб
+      href: service-tags-overview.md
     - name: Конечные точки службы
       href: virtual-network-service-endpoints-overview.md
     - name: Политики конечной точки службы
@@ -65,6 +67,8 @@
       href: ipv6-public-ip-address-prefix.md
     - name: Защита от атак DDoS
       href: ddos-protection-overview.md
+    - name: Расширение подсети
+      href: subnet-extension.md
     - name: Взаимодействие компонентов при подключении к серверной части
       items:
         - name: Вводная часть и сведения о настройке теста
@@ -297,6 +301,8 @@
           href: diagnose-network-routing-problem.md
         - name: Тестирование пропускной способности
           href: virtual-network-bandwidth-testing.md
+        - name: Проверка задержки сети виртуальной машины
+          href: virtual-network-test-latency.md
         - name: Не удается удалить виртуальные сети
           href: virtual-network-troubleshoot-cannot-delete-vnet.md
         - name: Проблемы с подключением между виртуальными машинами

@@ -195,6 +195,8 @@
           href: search-blob-storage-integration.md
         - name: Настройка индексатора больших двоичных объектов
           href: search-howto-indexing-azure-blob-storage.md
+        - name: "Настройка индексатора Azure Data Lake Storage\_2-го поколения"
+          href: search-howto-index-azure-data-lake-storage.md
         - name: Индексирование больших двоичных объектов по модели "один ко многим"
           href: search-howto-index-one-to-many-blobs.md
         - name: Индексация больших двоичных объектов CSV

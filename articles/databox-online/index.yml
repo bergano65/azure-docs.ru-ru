@@ -1,9 +1,9 @@
 ### YamlMime:Landing
-title: Документация по Azure Data Box. Передача данных через Интернет
-summary: Используйте Шлюз Azure Data Box и устройства Azure Data Box Edge для быстрой передачи больших объемов данных по сети. Выберите Шлюз Data Box для отправки данных, чтобы выполнять их архивацию, аварийное восстановление, а также обработку в масштабе облака. Используйте Data Box Edge для фильтрации, анализа и преобразования данных перед их перемещением в Azure.
+title: Документация по Azure Stack и Шлюзу Azure Data Box. Передача данных через Интернет
+summary: Используйте Шлюз Azure Data Box и устройства Azure Stack Edge для высокопроизводительной передачи данных по сети. Выберите Шлюз Data Box для отправки данных, чтобы выполнять их архивацию, аварийное восстановление, а также обработку в масштабе облака. Используйте Azure Stack Edge для фильтрации, анализа и преобразования данных перед их перемещением в Azure. Недавно мы переименовали Azure Data Box Edge на Azure Stack Edge.
 metadata:
-  title: Документация по Azure Data Box. Передача данных через Интернет
-  description: Документация по Шлюзу Data Box и Data Box Edge. Высокопроизводительная передача данных по сети в Azure
+  title: Документация по Azure Stack и Шлюзу Azure Data Box. Передача данных через Интернет
+  description: Документация по Шлюзу Data Box и Azure Stack Edge (прежнее название — Data Box Edge) для обеспечения высокопроизводительной передачи данных по сети в Azure.
   services: databox
   ms.service: databox
   ms.subservice: edge
@@ -11,21 +11,21 @@ metadata:
   ms.collection: collection
   author: alkohli
   ms.author: alkohli
-  ms.date: 08/15/2019
-  ms.openlocfilehash: f1b3c4f8473807b7bbffa2b40f1d3a89b6acff5a
-  ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
+  ms.date: 11/04/2019
+  ms.openlocfilehash: 61cda4ccab69396c13581598f399104b0a4fb181
+  ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 08/23/2019
-  ms.locfileid: "70012865"
+  ms.lasthandoff: 11/04/2019
+  ms.locfileid: "73570115"
 landingContent:
-- title: Сведения о семействе Data Box
+- title: Сведения об Azure Stack Edge и Шлюзе Data Box
   linkLists:
   - linkListType: overview
     links:
     - text: Общие сведения о Шлюзе Data Box
       url: data-box-gateway-overview.md
-    - text: Общие сведения о Data Box Edge
+    - text: Что такое Azure Stack Edge?
       url: data-box-edge-overview.md
   - linkListType: architecture
     links:
@@ -43,11 +43,11 @@ landingContent:
     links:
     - text: Требования Шлюза Data Box
       url: data-box-gateway-system-requirements.md
-    - text: Требования Data Box Edge
+    - text: Требования Azure Stack Edge
       url: data-box-edge-system-requirements.md
     - text: Ограничения Шлюза Data Box
       url: data-box-gateway-limits.md
-    - text: Ограничения Data Box Edge
+    - text: Ограничения Azure Stack Edge
       url: data-box-edge-limits.md
 - title: Развертывание
   linkLists:
@@ -55,7 +55,7 @@ landingContent:
     links:
     - text: Шлюз Data Box
       url: data-box-gateway-deploy-prep.md
-    - text: Data Box Edge
+    - text: Azure Stack Edge
       url: data-box-edge-deploy-prep.md
 - title: Разработка
   linkLists:
@@ -65,7 +65,7 @@ landingContent:
       url: data-box-edge-create-iot-edge-module.md
   - linkListType: download
     links:
-    - text: Примеры на C# для Data Box Edge
+    - text: Примеры C# для Azure Stack Edge
       url: https://docs.microsoft.com/samples/azure-samples/data-box-edge-csharp-modules/data-box-edge-csharp-modules/
 - title: Управление
   linkLists:
@@ -73,7 +73,7 @@ landingContent:
     links:
     - text: Общие папки Шлюза Data Box
       url: data-box-gateway-manage-shares.md
-    - text: Общие папки Data Box Edge
+    - text: Общие папки Azure Stack Edge
       url: data-box-edge-manage-shares.md
     - text: Пограничные вычисления
       url: data-box-edge-manage-compute.md
@@ -85,11 +85,11 @@ landingContent:
     links:
     - text: Шлюз Data Box
       url: data-box-gateway-troubleshoot.md
-    - text: Data Box Edge
+    - text: Azure Stack Edge
       url: data-box-edge-troubleshoot.md
     - text: Модули пограничных вычислений
       url: data-box-edge-connect-powershell-interface.md#monitor-and-troubleshoot-compute-modules
-    - text: Возврат или замена Data Box Edge
+    - text: Возврат или замена Azure Stack Edge
       url: data-box-edge-return-device.md
     - text: Открыть запрос в службу поддержки
       url: data-box-edge-contact-microsoft-support.md

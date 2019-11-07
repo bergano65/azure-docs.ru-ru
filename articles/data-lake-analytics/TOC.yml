@@ -121,11 +121,17 @@
     - name: Основные сведения об Apache Spark для разработчиков U-SQL
       items:
         - name: Основные сведения об Apache Spark для разработчиков U-SQL
-          href: data-lake-analytics-understand-spark-for-usql-developers.md
+          href: understand-spark-for-usql-developers.md
         - name: Основные сведения о форматах данных Apache Spark
-          href: data-lake-analytics-understand-spark-data-formats.md
+          href: understand-spark-data-formats.md
         - name: Общие принципы написания кода Apache Spark
-          href: data-lake-analytics-understand-spark-code-concepts.md
+          href: understand-spark-code-concepts.md
+    - name: Устранение неполадок с заданиями U-SQL
+      items:
+        - name: Устранение неполадок со средой выполнения U-SQL
+          href: runtime-troubleshoot.md
+        - name: Устранение неполадок с обновлением .NET
+          href: dotnet-upgrade-troubleshoot.md
 - name: Справочные материалы
   items:
     - name: Azure PowerShell

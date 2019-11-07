@@ -97,6 +97,8 @@
           href: stream-analytics-power-bi-dashboard.md
         - name: Остановка или удаление задания
           href: stream-analytics-clean-up-your-job.md
+        - name: Копирование или резервное копирование задания
+          href: copy-job.md
         - name: Связывание заданий для обеспечения надежности
           href: stream-analytics-job-reliability.md
         - name: "Аутентификация на основе управляемых удостоверений\_— выходные данные ADLS 1-го поколения"

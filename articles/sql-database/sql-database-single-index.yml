@@ -3,7 +3,7 @@ documentType: LandingData
 title: Подключение к базе данных SQL Azure и Отдельная база данных
 metadata:
   document_id: 36d89c48-3646-380e-34a0-ae3ac62e2641
-  title: Документация по Базе данных SQL Azure. Руководства и справочники по API | Документация Майкрософт
+  title: Документация по Базе данных SQL Azure (отдельная база данных)
   meta.description: Learn how to use Azure SQL databases.
   services: sql-database
   requires-business-manager-approval: false

@@ -1,10 +1,10 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Документация по Пользовательскому поиску Bing
+summary: Узнайте, как с помощью портала и API "Пользовательский поиск Bing" создавать пользовательские экземпляры службы поиска.
 metadata:
-  title: 'Документация по API Пользовательского поиска Bing. Руководства, краткие руководства и справочники по API'
+  title: Документация по API Пользовательского поиска Bing. Руководства, краткие руководства и справочники по API
   titleSuffix: Azure Cognitive Services
-  description: 'Узнайте, как с помощью портала и API Пользовательского поиска Bing создавать пользовательские экземпляры службы поиска'
+  description: Создавайте экземпляры службы поиска для интересующих вас тем с помощью API Пользовательского поиска Bing. Укажите домены и веб-страницы для поиска и настройте приоритет, чтобы полностью персонализировать свой интерфейс поиска.
   services: cognitive-services
   author: aahill
   manager: nitinme
@@ -12,72 +12,94 @@ metadata:
   ms.service: cognitive-services
   ms.subservice: bing-custom-search
   ms.topic: landing-page
-  ms.date: 07/25/2019
+  ms.date: 10/31/2019
   ms.author: aahill
-abstract:
-  description: 'Создавайте экземпляры службы поиска для интересующих вас тем с помощью API Пользовательского поиска Bing. Укажите домены и веб-страницы для поиска и настройте приоритет, чтобы полностью персонализировать свой интерфейс поиска.'
-sections:
-  - items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - href: /azure/cognitive-services/bing-custom-search/overview
-            html: <p>Сведения об API Пользовательского поиска Bing</p>
-            image:
-              src: ../media/index/i_overview.svg
-            title: Знакомство с API Пользовательского поиска Bing
-          - href: /azure/cognitive-services/bing-custom-search/quick-start
-            html: '<p>Узнайте, как настроить интерфейс поиска для создания настраиваемого веб-представления.</p>'
-            image:
-              src: ../media/index/i_guidelines.svg
-            title: Создание экземпляра Пользовательского поиска Bing
-          - href: /azure/cognitive-services/bing-custom-search/hosted-ui
-            html: '<p>Узнайте, как можно без труда интегрировать размещенный пользовательский интерфейс в веб-страницы и веб-приложения.</p>'
-            image:
-              src: ../media/index/i_guidelines.svg
-            title: Настройка размещенного пользовательского интерфейса
-  - title: Пятиминутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: 'Реализация поиска в пользовательском представлении веб-сайта с помощью следующих языков:'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: media/logo_Csharp.svg
-            href: sdk-csharp-quick-start
-            text: 'C#'
-          - image:
-              src: media/logo_java.svg
-            href: call-endpoint-java
-            text: Java
-          - image:
-              src: media/logo_nodejs.svg
-            href: call-endpoint-nodejs
-            text: Node.js
-          - image:
-              src: media/logo_python.svg
-            href: call-endpoint-python
-            text: Python
-  - title: Пошаговое руководство
-    items:
-      - type: paragraph
-        text: 'Инструкции по разработке приложений с использованием API Пользовательского поиска Bing:'
-      - type: paragraph
-        text: <a href="tutorials/custom-search-web-page">Создание веб-страницы пользовательского поиска</a>
-  - title: Справочные материалы
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: Программные интерфейсы
-            html: "<p><a href=\"https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-custom-search-api-v7-reference\">API Пользовательского поиска версии\_7</a></p> <p><a href=\"https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-custom-autosuggest-api-v7-reference\">API Пользовательского автозаполнения версии\_7</a></p> <p><a href=\"https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-custom-images-api-v7-reference\">API Пользовательского поиска изображений версии\_7</a></p> <p><a href=\"https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-custom-videos-api-v7-reference\">API Пользовательского поиска видео версии\_7</a></p>"
-          - title: Пакеты SDK
-            html: "<p><a href=\"https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/bingcustomsearch?view=azure-dotnet\">.NET</a></p> <p><a href=\"https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/bingcustomsearch?view=azure-java-stable\">Java\_— Пользовательский поиск</a></p> <p><a href=\"https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/bingcustomimagesearch?view=azure-java-stable\">Java\_— Пользовательский поиск изображений</a></p> <p><a href=\"https://docs.microsoft.com/python/api/overview/azure/cognitiveservices/customsearch?view=azure-python\">Python</a></p> <p><a href=\"https://docs.microsoft.com/javascript/api/azure-cognitiveservices-customsearch?view=azure-node-latest\">Node.js</a></p> <p><a href=\"https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.0/customsearch\">Go\_— Пользовательский поиск</a></p> <p><a href=\"https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.0/customimagesearch\">Go\_— Пользовательский поиск изображений</a></p>"
-          - title: PowerShell
-            html: '<p><a href="https://docs.microsoft.com/powershell/module/az.cognitiveservices/#cognitive_services">Azure PowerShell</a></p>'
-          - title: CLI
-            html: '<p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest">Azure CLI</a></p>'
+  ms.openlocfilehash: fc2435fabc73ad344461b04a339135e22d173191
+  ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 11/04/2019
+  ms.locfileid: "73580114"
+landingContent:
+- title: Сведения об API "Пользовательский поиск Bing"
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Знакомство с API Пользовательского поиска Bing
+      url: overview.md
+    - text: Сравнение API "Поиск Bing" для приложений
+      url: ../bing-web-search/bing-api-comparison.md
+- title: Интеграция пользовательского представления веб-сайта
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Настройка экземпляра пользовательского поиска
+      url: define-your-custom-view.md
+    - text: Получение результатов поиска изображения
+      url: get-images-from-instance.md
+    - text: Получение результатов поиска видео
+      url: get-videos-from-instance.md
+    - text: Вызов экземпляра пользовательского поиска
+      url: search-your-custom-view.md
+    - text: Постраничный просмотр результатов поиска
+      url: ../bing-web-search/paging-search-results.md
+    - text: Обработка выделения совпадений
+      url: ../bing-web-search/hit-highlighting.md
+    - text: Настройка и интеграция размещенного пользовательского интерфейса
+      url: hosted-ui.md
+    - text: Определение пользовательских автозаполнений
+      url: define-custom-suggestions.md
+    - text: Совместное использование экземпляра пользовательского поиска
+      url: share-your-custom-search.md
+- title: Справочник по пакету SDK
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: .NET
+      url: https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/bingcustomsearch?view=azure-dotnet
+    - text: Python
+      url: https://docs.microsoft.com/python/api/overview/azure/cognitiveservices/customsearch?view=azure-python
+    - text: Go — Пользовательский поиск
+      url: https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.0/customsearch
+    - text: Go — Пользовательский поиск изображений
+      url: https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.0/customimagesearch
+    - text: Java — Пользовательский поиск
+      url: https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/bingcustomsearch?view=azure-java-stable
+    - text: Java — Пользовательский поиск изображений
+      url: https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/bingcustomimagesearch?view=azure-java-stable
+    - text: Node.js
+      url: https://docs.microsoft.com/javascript/api/azure-cognitiveservices-customsearch?view=azure-node-latest
+    - text: Azure PowerShell
+      url: https://docs.microsoft.com/powershell/module/az.cognitiveservices/#cognitive_services
+    - text: Инфраструктура CLI Azure
+      url: /cli/azure/cognitiveservices#az-cognitiveservices-list
+- title: Получение результатов пользовательского поиска из Интернета
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Создание экземпляра пользовательского поиска
+      url: quick-start.md
+  - linkListType: quickstart
+    links:
+    - text: Использование C#
+      url: sdk-csharp-quick-start.md
+    - text: Использование Python
+      url: sdk-python-quickstart.md
+    - text: Использование Java
+      url: sdk-java-quickstart.md
+  - linkListType: tutorial
+    links:
+    - text: Создание веб-страницы пользовательского поиска
+      url: tutorials/custom-search-web-page.md
+- title: Справочник по REST API
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: REST API пользовательского поиска версии 7
+      url: https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-custom-search-api-v7-reference
+    - text: REST API пользовательского автозаполнения версии 7
+      url: https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-custom-autosuggest-api-v7-reference
+    - text: REST API пользовательского поиска изображений версии 7
+      url: https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-custom-images-api-v7-reference
+    - text: REST API пользовательского поиска видео версии 7
+      url: https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-custom-videos-api-v7-reference

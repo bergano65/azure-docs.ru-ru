@@ -84,6 +84,14 @@
               href: entitlement-management-request-access.md
     - name: Проверки доступа
       items:
+        - name: Пакеты для доступа
+          items:
+            - name: Создание проверки доступа
+              href: entitlement-management-access-reviews-create.md
+            - name: Проверка доступа
+              href: entitlement-management-access-reviews-review-access.md
+            - name: Самостоятельная проверка доступа
+              href: entitlement-management-access-reviews-self-review.md
         - name: Группы и приложения
           items:
             - name: Создание проверки доступа
