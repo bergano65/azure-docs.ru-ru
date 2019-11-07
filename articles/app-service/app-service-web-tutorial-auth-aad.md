@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 08/14/2019
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: ad0c510244c78fa3bdba41690c2284d0650c4b55
-ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
+ms.openlocfilehash: c82cad30fcc2aa80eea52ab13f60fc0c4da33cd1
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69019345"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73471311"
 ---
 # <a name="tutorial-authenticate-and-authorize-users-end-to-end-in-azure-app-service"></a>Руководство. Сквозная проверка подлинности и авторизации в Службе приложений Azure
 
@@ -218,29 +218,31 @@ Azure Active Directory используется в качестве постав
 
 ### <a name="enable-authentication-and-authorization-for-back-end-app"></a>Включение проверки подлинности и авторизации в серверном приложении
 
-На [портале Azure](https://portal.azure.com) откройте страницу управления серверным приложением. Для этого последовательно выберите в меню слева **Группы ресурсов** > **myAuthResourceGroup** >  **_\<имя_серверного_приложения>_** .
+1. В меню [портала Azure](https://portal.azure.com) выберите **Группы ресурсов** или выполните поиск по запросу *Группы ресурсов* на любой странице и выберите этот пункт.
 
-![API ASP.NET Core, выполняющийся в службе приложений Azure](./media/app-service-web-tutorial-auth-aad/portal-navigate-back-end.png)
+1. В разделе **Группы ресурсов** найдите и выберите свою группу ресурсов. В разделе **Обзор** выберите страницу управления внутреннего приложения.
 
-В левом меню вашего серверного приложения щелкните **Проверка подлинности/авторизация**, а затем включите проверку подлинности службы приложений, нажав **Включено**.
+   ![API ASP.NET Core, выполняющийся в службе приложений Azure](./media/app-service-web-tutorial-auth-aad/portal-navigate-back-end.png)
 
-В раскрывающемся списке **Предпринимаемое действие, если проверка подлинности для запроса не выполнена** выберите **Войти с использованием Azure Active Directory**.
+1. В левом меню вашего внутреннего приложения выберите **Проверка подлинности или авторизация**, а затем включите проверку подлинности Службы приложений, выбрав **Включено**.
 
-В разделе **Поставщики проверки подлинности** щелкните **Azure Active Directory**. 
+1. В раскрывающемся списке **Предпринимаемое действие, если проверка подлинности для запроса не выполнена** выберите **Войти с использованием Azure Active Directory**.
 
-![API ASP.NET Core, выполняющийся в службе приложений Azure](./media/app-service-web-tutorial-auth-aad/configure-auth-back-end.png)
+1. В разделе **Поставщики проверки подлинности** выберите **Azure Active Directory**. 
 
-Щелкните **Экспресс**, затем примите настройки по умолчанию, чтобы создать приложение AD, и нажмите кнопку**OK**.
+   ![API ASP.NET Core, выполняющийся в службе приложений Azure](./media/app-service-web-tutorial-auth-aad/configure-auth-back-end.png)
 
-На странице **Проверка подлинности/авторизация** нажмите кнопку **Сохранить**. 
+1. Выберите **Экспресс**, затем примите настройки по умолчанию, чтобы создать приложение AD, и нажмите кнопку **ОК**.
 
-После того, как вы увидите уведомление с сообщением `Successfully saved the Auth Settings for <back-end-app-name> App`, обновите страницу.
+1. На странице **Проверка подлинности или авторизация** нажмите кнопку **Сохранить**.
 
-Щелкните **Azure Active Directory** еще раз, а затем выберите **Azure AD App**.
+   После того, как вы увидите уведомление с сообщением `Successfully saved the Auth Settings for <back-end-app-name> App`, обновите страницу.
 
-Скопируйте **Идентификатор клиента** приложения Azure в Блокнот. Это значение понадобится позже.
+1. Щелкните **Azure Active Directory** еще раз, а затем выберите **Приложение Azure AD**.
 
-![API ASP.NET Core, выполняющийся в службе приложений Azure](./media/app-service-web-tutorial-auth-aad/get-application-id-back-end.png)
+1. Скопируйте **Идентификатор клиента** приложения Azure в Блокнот. Это значение понадобится позже.
+
+   ![API ASP.NET Core, выполняющийся в службе приложений Azure](./media/app-service-web-tutorial-auth-aad/get-application-id-back-end.png)
 
 ### <a name="enable-authentication-and-authorization-for-front-end-app"></a>Включение проверки подлинности и авторизации в интерфейсном приложении
 
@@ -259,15 +261,17 @@ Azure Active Directory используется в качестве постав
 
 Теперь, когда вы включили проверку подлинности и авторизацию для обоих ваших приложений, каждое из них поддерживается приложением AD. На этом шаге предоставьте разрешения интерфейсному приложению для доступа к серверной части от имени пользователя. (Технически вы предоставляете интерфейсному _приложению AD_ разрешения на доступ к серверному _приложению AD_ от имени пользователя).
 
-В меню слева на портале выберите**Azure Active Directory** > **Регистрации приложения** > **Собственные приложения** >  **\<имя_интерфейсного_приложения>**  > **Разрешения API**.
+1. В меню [портала Azure](https://portal.azure.com) выберите **Azure Active Directory** или выполните поиск по запросу *Azure Active Directory* на любой странице и выберите этот пункт.
 
-![API ASP.NET Core, выполняющийся в службе приложений Azure](./media/app-service-web-tutorial-auth-aad/add-api-access-front-end.png)
+1. Выберите **Регистрация приложений** > **Собственные приложения**. Щелкните имя внешнего приложения, а затем выберите **Разрешения API**.
 
-Выберите **Добавить разрешение**, а затем — **Мои API** >  **\<имя_серверного_приложения>** .
+   ![API ASP.NET Core, выполняющийся в службе приложений Azure](./media/app-service-web-tutorial-auth-aad/add-api-access-front-end.png)
 
-На странице**Разрешения API запросов** серверного приложения выберите**Делегированные разрешения**  и **user_impersonation**, а затем — **Добавить разрешения**.
+1. Выберите **Добавить разрешение**, а затем — **Мои API** >  **\<имя_серверного_приложения>** .
 
-![API ASP.NET Core, выполняющийся в службе приложений Azure](./media/app-service-web-tutorial-auth-aad/select-permission-front-end.png)
+1. На странице**Разрешения API запросов** серверного приложения выберите**Делегированные разрешения**  и **user_impersonation**, а затем — **Добавить разрешения**.
+
+   ![API ASP.NET Core, выполняющийся в службе приложений Azure](./media/app-service-web-tutorial-auth-aad/select-permission-front-end.png)
 
 ### <a name="configure-app-service-to-return-a-usable-access-token"></a>Настройка службы приложений для возвращения используемых маркеров доступа
 

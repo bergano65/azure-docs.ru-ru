@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 09/09/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 268def74a354b19427849738549fbc0c6b197746
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: e07b1d7e01d743bb46c8d5a21664bf68184c97dd
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70813400"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73488458"
 ---
 # <a name="set-up-disaster-recovery-to-azure-for-on-premises-vmware-vms"></a>Настройка аварийного восстановления в Azure для локальных виртуальных машин VMware
 
@@ -158,7 +158,7 @@ ms.locfileid: "70813400"
 
 ## <a name="create-a-replication-policy"></a>Создание политики репликации
 
-1. Откройте [портал Azure](https://portal.azure.com) и выберите **Все ресурсы**.
+1. Откройте [портал Azure](https://portal.azure.com). Выполните поиск по строке **Хранилища служб восстановления** и выберите соответствующий элемент.
 2. Выберите хранилище служб восстановления (в нашем примере это **ContosoVMVault**).
 3. Чтобы создать политику репликации, выберите **Site Recovery infrastructure** (Инфраструктура Site Recovery) > **Политики репликации** >  **+Replication Policy** (+Политика репликации).
 4. На странице **Создать политику репликации** введите имя политики. Мы используем имя **VMwareRepPolicy**.

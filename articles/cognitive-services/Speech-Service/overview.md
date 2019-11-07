@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: overview
-ms.date: 07/05/2019
+ms.date: 11/05/2019
 ms.author: erhopf
-ms.openlocfilehash: 993064a36bd12c95e83ffb7c9635c3e4dfcec0f0
-ms.sourcegitcommit: 4f3f502447ca8ea9b932b8b7402ce557f21ebe5a
+ms.openlocfilehash: 46e9182d9660729dbf65367f52483d96428760ff
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71803346"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73467393"
 ---
 # <a name="what-are-the-speech-services"></a>Общие сведения о службе "Речь"
 
@@ -35,7 +35,7 @@ ms.locfileid: "71803346"
 | [Преобразование текста в речь](text-to-speech.md) | Преобразование текста в речь | Преобразование текста в речь преобразует вводимый текст в синтезированную речь, похожую на человеческую, с помощью [языка разметки синтеза речи (SSML)](text-to-speech.md#speech-synthesis-markup-language-ssml). Выберите из стандартных и нейронных голосовых моделей (см. раздел [Поддержка языков](language-support.md)). | [Да](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk-reference) | [Да](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis) |
 | | [Создание настраиваемых голосовых моделей](#customize-your-speech-experience) | Создание пользовательских голосовых моделей, уникальных для вашего бренда или продукта. | Нет | [Да](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis) |
 | [Перевод речи](speech-translation.md) | Перевод речи | Перевод речи позволяет применить в инструментах, приложениях и устройствах полнофункциональное решение для перевода устной речи на многих языках в режиме реального времени. Используйте эту службу для перевода речи и преобразования речи в текст. | [Да](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk-reference) | Нет |
-| [Виртуальные помощники по обработке голоса](voice-first-virtual-assistants.md) | Виртуальные помощники по обработке голоса | Настраиваемые виртуальные помощники, использующие Службы речи Azure, позволяют разработчикам создавать естественные и привычные для человека разговорные функции для своих приложений и интерфейсов. Канал "Речь Direct Line" в Bot Framework расширяет эти возможности, предоставляя согласованные и организованные точки входа для совместимых ботов, которые включают возможности входящего и исходящего голосового взаимодействия с низкой задержкой и высокой надежностью. | [Да](voice-first-virtual-assistants.md) | Нет |
+| [Голосовые помощники](voice-assistants.md) | Голосовые помощники | Голосовые помощники, использующие службы распознавания речи Azure, позволяют разработчикам создавать естественные и привычные для человека разговорные функции для своих приложений и интерфейсов. Служба голосового помощника обеспечивает быстрое и надежное взаимодействие между устройством и реализацией помощника, которая использует канал Bot Framework Direct Line Speech или интегрированную службу "Пользовательские команды" (предварительная версия) для завершения задач. | [Да](voice-assistants.md) | Нет |
 
 ## <a name="news-and-updates"></a>Новости и обновления
 
@@ -48,7 +48,7 @@ ms.locfileid: "71803346"
   * Добавлен новый стиль речи [`chat`](speech-synthesis-markup.md#adjust-speaking-styles) для голоса `en-US-JessaNeural`. 
 * Июнь 2019 г.
   * Выпущен пакет SDK версии 1.6.0 для службы "Речь". Полный список обновлений, улучшений и распространенных проблем см. в статье [Release notes](releasenotes.md) (Заметки о выпуске).
-* Май 2019 г. Доступна документация по [транскрибированию бесед](conversation-transcription-service.md), [транскрибированию обращений в центры обработки вызовов](call-center-transcription.md) и [виртуальным помощникам по обработке голоса](voice-first-virtual-assistants.md).
+* Май 2019 г. Доступна документация по [транскрибированию бесед](conversation-transcription-service.md), [транскрибированию обращений в центры обработки вызовов](call-center-transcription.md) и [голосовым помощникам](voice-assistants.md).
 * Май 2019 г.
   * Выпущен пакет SDK версии 1.5.1 для службы "Речь". Полный список обновлений, улучшений и распространенных проблем см. в статье [Release notes](releasenotes.md) (Заметки о выпуске).
   * Выпущен пакет SDK версии 1.5.0 для службы "Речь". Полный список обновлений, улучшений и распространенных проблем см. в статье [Release notes](releasenotes.md) (Заметки о выпуске).
@@ -59,10 +59,9 @@ ms.locfileid: "71803346"
 
 | Преобразование речи в текст (пакет SDK) | Преобразование текста в речь (SDK) | Перевод (пакет SDK) |
 |----------------------|----------------------|-------------------|
-| [C#, .NET Core (для Windows)](quickstart-csharp-dotnet-windows.md) | [C#, .NET framework (для Windows)](quickstart-text-to-speech-dotnet-windows.md) | [Java (для Windows, Linux)](quickstart-translate-speech-java-jre.md) |
-| [JavaScript (для браузера)](quickstart-js-browser.md) | [C++ (для Windows)](quickstart-text-to-speech-cpp-windows.md) | [C#, .NET Core (для Windows)](quickstart-translate-speech-dotnetcore-windows.md) |
-| [Python (для Windows, Linux, macOS)](quickstart-python.md) | [C++ (Linux)](quickstart-text-to-speech-cpp-linux.md) | [C#, .NET framework (для Windows)](quickstart-translate-speech-dotnetframework-windows.md) |
-| [Java (для Windows, Linux)](quickstart-java-jre.md) | | [C++ (для Windows)](quickstart-translate-speech-cpp-windows.md) |
+| [Распознавание речи из звукового файла](quickstarts/speech-to-text-from-file.md) | [Синтезирование речи в звуковой файл](quickstarts/text-to-speech-audio-file.md) | [Перевод речи в текст](quickstarts/translate-speech-to-text.md) |
+| [Распознавание речи с микрофона](quickstarts/speech-to-text-from-microphone.md) | [Синтезирование речи в виде речи докладчика](quickstarts/text-to-speech.md) | [Перевод речи на несколько целевых языков](quickstarts/translate-speech-to-text-multiple-languages.md) |
+| [Распознавание речи из файлов, находящихся в хранилище BLOB-объектов](quickstarts/from-blob.md) | [Асинхронное синтезирование для больших звуковых файлов](quickstarts/text-to-speech/async-synthesis-long-form-audio.md) | [Перевод речи в речь](quickstarts/translate-speech-to-speech.md) |
 
 > [!NOTE]
 > Функции преобразования речи в текст и текста в речь также используют конечные точки REST и связанные примеры использования.
@@ -80,7 +79,7 @@ ms.locfileid: "71803346"
 * [Примеры преобразования речи в текст, текста в речь и перевода речи (SDK)](https://github.com/Azure-Samples/cognitive-services-speech-sdk)
 * [Примеры транскрибирования с помощью Пакетной службы (REST)](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/samples/batch)
 * [Примеры преобразования текста в речь (REST)](https://github.com/Azure-Samples/Cognitive-Speech-TTS)
-* [Примеры виртуального помощника по обработке голоса (пакет SDK)](https://aka.ms/csspeech/samples)
+* [Примеры голосового помощника (SDK)](https://aka.ms/csspeech/samples)
 
 ## <a name="customize-your-speech-experience"></a>Настройки работы речи
 

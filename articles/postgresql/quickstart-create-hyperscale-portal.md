@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство. База данных Azure для PostgreSQL с решением Hyperscale (Citus) (предварительная версия)
-description: Краткое руководство по созданию распределенных таблиц и выполнению к ним запросов с помощью Базы данных Azure для PostgreSQL с решением Hyperscale (Citus) (предварительная версия).
+title: Краткое руководство. База данных Azure для PostgreSQL с решением "Гипермасштабирование (Citus)"
+description: Краткое руководство по созданию распределенных таблиц и выполнению к ним запросов с помощью Базы данных Azure для PostgreSQL с решением "Гипермасштабирование (Citus)".
 author: jonels-msft
 ms.author: jonels
 ms.service: postgresql
@@ -8,16 +8,16 @@ ms.subservice: hyperscale-citus
 ms.custom: mvc
 ms.topic: quickstart
 ms.date: 05/14/2019
-ms.openlocfilehash: fe981167249e24a43a8cb14c51c9b7c1eb081225
-ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
+ms.openlocfilehash: 6b5bfbf16e76cbf90a5536332d8e3bf1035f983a
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70164017"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73500074"
 ---
-# <a name="quickstart-create-an-azure-database-for-postgresql---hyperscale-citus-preview-in-the-azure-portal"></a>Краткое руководство. Создание Базы данных Azure для PostgreSQL" с решением Hyperscale (Citus) (предварительная версия) на портале Azure
+# <a name="quickstart-create-an-azure-database-for-postgresql---hyperscale-citus-in-the-azure-portal"></a>Краткое руководство. Создание Базы данных Azure для PostgreSQL с решением "Гипермасштабирование (Citus)" на портале Azure
 
-База данных Azure для PostgreSQL — это управляемая служба, с помощью которой можно запускать и масштабировать базы данных PostgreSQL высокой доступности, а также управлять ими в облаке. Из этого краткого руководства вы узнаете, как создать серверную группу Базы данных Azure для PostgreSQL с решением Hyperscale (Citus) (предварительная версия) на портале Azure. Вы узнаете о распределении данных — сегментировании таблиц по узлам, приеме данных и выполнении запросов на нескольких узлах.
+База данных Azure для PostgreSQL — это управляемая служба, с помощью которой можно запускать и масштабировать базы данных PostgreSQL высокой доступности, а также управлять ими в облаке. Из этого краткого руководства вы узнаете, как создать серверную группу Базы данных Azure для PostgreSQL с решением "Гипермасштабирование (Citus)" на портале Azure. Вы узнаете о распределении данных — сегментировании таблиц по узлам, приеме данных и выполнении запросов на нескольких узлах.
 
 [!INCLUDE [azure-postgresql-hyperscale-create-db](../../includes/azure-postgresql-hyperscale-create-db.md)]
 

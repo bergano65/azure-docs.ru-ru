@@ -10,14 +10,15 @@ author: sdgilley
 ms.author: sgilley
 ms.date: 08/26/2019
 ms.custom: seodec18
-ms.openlocfilehash: 988f91d9ab644df4ecb375114abf4245440cbf13
-ms.sourcegitcommit: a7a9d7f366adab2cfca13c8d9cbcf5b40d57e63a
+ms.openlocfilehash: ae657daca86c979495ca14d9df845e2a7a769e0a
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71162525"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73476167"
 ---
 # <a name="tutorial-deploy-an-image-classification-model-in-azure-container-instances"></a>Руководство по Развертывание модели классификации изображений в Экземплярах контейнеров Azure
+[!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
 Это руководство представляет собой **вторую часть серии, состоящей из двух частей**. В [предыдущем руководстве](tutorial-train-models-with-aml.md) вы обучили модели машинного обучения и затем зарегистрировали модель в рабочей области в облаке.  
 
@@ -39,9 +40,15 @@ ms.locfileid: "71162525"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы запустить записную книжку, выполните обучение модели, как описано в статье [Руководство (часть 1). Развертывание модели классификации изображений в Экземплярах контейнеров Azure](tutorial-train-models-with-aml.md).   Затем откройте записную книжку **tutorials/img-classification-part2-deploy.ipynb**, используя тот же сервер записных книжек.
+Чтобы запустить записную книжку, выполните обучение модели, как описано в статье [Руководство (часть 1). Развертывание модели классификации изображений в Экземплярах контейнеров Azure](tutorial-train-models-with-aml.md).   Затем откройте записную книжку **/img-classification-part2-deploy.ipynb** в клонированной папке **tutorials**.
 
 Это руководство также доступно на сайте [GitHub](https://github.com/Azure/MachineLearningNotebooks/tree/master/tutorials), если вы хотите использовать его в собственной [локальной среде](how-to-configure-environment.md#local).  Убедитесь, что вы установили `matplotlib` и `scikit-learn` в своей среде. 
+
+> [!Important]
+> Оставшаяся часть этой статьи содержит то же содержимое, что и записная книжка.  
+>
+> Перейдите в записную книжку Jupyter, чтобы вы могли просматривать его во время выполнения кода.
+> Чтобы выполнить одну ячейку кода в записной книжке, щелкните эту ячейку и нажмите клавиши **SHIFT+ВВОД**. Или запустите всю записную книжку, выбрав **Запустить все** в верхней части панели инструментов.
 
 ## <a name="start"></a>Настройка среды
 

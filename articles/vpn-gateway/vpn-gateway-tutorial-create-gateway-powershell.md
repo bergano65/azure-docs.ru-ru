@@ -5,15 +5,14 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: tutorial
-ms.date: 07/23/2019
+ms.date: 11/04/2019
 ms.author: cherylmc
-ms.custom: mvc
-ms.openlocfilehash: d1c90e61890ee98dc5371faed872d03409aaf31f
-ms.sourcegitcommit: bafb70af41ad1326adf3b7f8db50493e20a64926
+ms.openlocfilehash: bfec1493492fb1e8e9bd7394aae3db8983f4cff9
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68489548"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73495657"
 ---
 # <a name="tutorial-create-and-manage-a-vpn-gateway-using-powershell"></a>Руководство по Создание VPN-шлюза и управление им с помощью PowerShell
 
@@ -128,7 +127,7 @@ New-AzVirtualNetworkGateway -Name $Gw1 -ResourceGroupName $RG1 `
 Ниже приведены значения ключевых параметров:
 * GatewayType. Используйте **Vpn** для подключений "сеть — сеть" и "виртуальная сеть — виртуальная сеть".
 * VpnType. Используйте **RouteBased** для взаимодействия с более широким диапазоном VPN-устройств и получения доступа к дополнительным возможностям маршрутизации.
-* GatewaySku. Значение по умолчанию — **VpnGw1**. Измените его на VpnGw2 или VpnGw3, если требуется более высокая пропускная способность или дополнительные подключения. Дополнительные сведения см. в разделе о [номерах SKU шлюзов](vpn-gateway-about-vpn-gateway-settings.md#gwsku).
+* GatewaySku. Значение по умолчанию — **VpnGw1**. Измените его на другой SKU VpnGw, если требуется более высокая пропускная способность или дополнительные подключения. Дополнительные сведения см. в разделе о [номерах SKU шлюзов](vpn-gateway-about-vpn-gateway-settings.md#gwsku).
 
 Если вы используете функцию "Попробовать", время сеанса может истечь. Это не страшно. Вы по-прежнему сможете создать шлюз.
 

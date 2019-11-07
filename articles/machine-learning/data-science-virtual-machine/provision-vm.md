@@ -7,12 +7,12 @@ author: gvashishtha
 ms.author: gopalv
 ms.topic: quickstart
 ms.date: 09/10/2019
-ms.openlocfilehash: c9b72c90bc23cfac6f064445c4f6f98d05d7fe16
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.openlocfilehash: afc026ccb602538b0749fa294cee763efa3d27d0
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72331772"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73483223"
 ---
 # <a name="quickstart-set-up-the-data-science-virtual-machine-for-windows"></a>Краткое руководство. Настройка виртуальной машины для обработки и анализа данных для Windows
 
@@ -34,7 +34,7 @@ ms.locfileid: "72331772"
 
 1. В нижней части страницы нажмите кнопку **Создать**.
 
-    [![](media/provision-vm/create-windows.png "Кнопка для создания машины Windows")](media/provision-vm/create-windows-expanded.png#lightbox)
+    [![](media/provision-vm/create-windows.png "Button to create a Windows machine")](media/provision-vm/create-windows-expanded.png#lightbox)
 
 1. Вы будете перенаправлены в колонку "Создание виртуальной машины".
    ![Вкладка "Основные сведения" соответствует виртуальной машине Windows](./media/provision-vm/review-create-windows.png)
@@ -72,7 +72,7 @@ ms.locfileid: "72331772"
 ## <a name="next-steps"></a>Дополнительная информация
 
 * Изучите средства в DSVM, открыв меню **Пуск**.
-* Дополнительные сведения о службе "Машинное обучение Azure" см. в [этой статье](../service/overview-what-is-azure-ml.md) и [руководствах](../index.yml).
+* Дополнительные сведения о Машинном обучении Azure см. в [этой статье](../service/overview-what-is-azure-ml.md) и [учебниках](../index.yml).
 * В проводнике перейдите к C:\Program Files\Microsoft\ML Server\R_SERVER\library\RevoScaleR\demoScripts, в котором размещены примеры использования библиотеки RevoScaleR в R, поддерживающей анализ данных на корпоративном уровне. 
 * Ознакомьтесь со статьей [10 задач, которые можно выполнить на виртуальной машине для обработки и анализа данных](https://aka.ms/dsvmtenthings).
 * Изучите систематический подход к созданию комплексных аналитических решений с помощью [группового процесса обработки и анализа данных](../team-data-science-process/index.yml).

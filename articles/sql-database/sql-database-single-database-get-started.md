@@ -11,12 +11,12 @@ author: sachinpMSFT
 ms.author: ninarn
 ms.reviewer: carlrab, sstein
 ms.date: 09/09/2019
-ms.openlocfilehash: 831ebbd3f85ffa9b78ac3e97a6ec68a8c41bceb5
-ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
+ms.openlocfilehash: 0035495d9dd3b82b65aa3b4a7b1d918c73288df8
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70845293"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73496126"
 ---
 # <a name="quickstart-create-a-single-database-in-azure-sql-database-using-the-azure-portal-powershell-and-azure-cli"></a>Краткое руководство. Создание отдельной базы данных в Базе данных SQL Azure с помощью портала Azure, PowerShell и Azure CLI
 
@@ -28,7 +28,7 @@ ms.locfileid: "70845293"
 
 ## <a name="create-a-single-database"></a>Создание отдельной базы данных
 
-Отдельную базу данных можно создавать в рамах уровня подготовленных или бессерверных вычислений (предварительная версия).
+Отдельную базу данных можно создавать в рамках уровня подготовленных или бессерверных вычислений.
 
 - Отдельная база данных на уровне подготовленных вычислений имеет определенное количество предварительно выделенных вычислительных ресурсов, в том числе объем памяти и циклов ЦП, для которых используется одна из двух [моделей приобретения](sql-database-purchase-models.md).
 - Отдельная база данных на уровне бессерверных вычислений имеет широкий спектр автоматически масштабирующихся вычислительных ресурсов, в том числе объем памяти и циклов ЦП. Такая база данных доступна только в рамках [моделей приобретения на основе виртуальных ядер](sql-database-service-tiers-vcore.md).

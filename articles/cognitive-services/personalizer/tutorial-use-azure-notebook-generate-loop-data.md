@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: personalizer
 ms.topic: tutorial
-ms.date: 10/04/2019
+ms.date: 10/23/2019
 ms.author: diberry
-ms.openlocfilehash: 7c0dc40ee2d748b1f48c3254a3e3a6e197069c08
-ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
+ms.openlocfilehash: 6bc306551d158d4b996002de0bb5ab991a0bcbd9
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72515170"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73467245"
 ---
 # <a name="tutorial-use-personalizer-in-azure-notebook"></a>Руководство по Использование Персонализатора в Azure Notebook
 
@@ -81,7 +81,7 @@ ms.locfileid: "72515170"
 
 ## <a name="configure-personalizer-resource"></a>Настройка ресурса Персонализатора
 
-На портале Azure настройте [ресурс Персонализатора](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesPersonalizer), указав **частоту обновления модели** в 15 секунд и **время ожидания вознаграждения** в 15 секунд. Эти параметры доступны на странице **[Параметры](how-to-settings.md#configure-service-settings-in-the-azure-portal)** . 
+На портале Azure настройте [ресурс Персонализатора](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesPersonalizer), указав **частоту обновления модели** в 15 секунд и **время ожидания вознаграждения** в 15 секунд. Эти значения находятся на странице **[Настройка](how-to-settings.md#configure-service-settings-in-the-azure-portal)** . 
 
 |Параметр|Значение|
 |--|--|
@@ -170,7 +170,7 @@ def get_last_updated(currentModifiedDate):
 
 Эти два вызова REST позволяют проверить состояние службы.
 
-Эти ячейки не имеют выходных данных. Эта функция выводит параметры службы при вызове.
+Эти ячейки не имеют выходных данных. Эта функция выводит значения службы при вызове.
 
 ```python
 def get_service_settings():
@@ -578,7 +578,7 @@ createChart(count,rewards)
 
 `100-20=80`
 
-Это значение можно найти на портале Azure на странице **Параметры** для ресурса Персонализатора. 
+Это значение исследования можно найти на портале Azure на странице **Настройка** для ресурса Персонализатора. 
 
 Чтобы определить более эффективную политику обучения на основе данных, предоставленных в API оценки, выполните на портале [автономную оценку](how-to-offline-evaluation.md) для цикла Персонализатора.
 
@@ -598,7 +598,7 @@ createChart(count,rewards)
 
 ## <a name="change-update-model-frequency-to-5-minutes"></a>Изменение интервала обновления модели на 5 минут
 
-1. На портале Azure выберите страницу **Параметры** для ресурса Персонализатора. 
+1. На портале Azure выберите страницу **Настройка** для ресурса Персонализатора. 
 1. Измените значения **частоты обновления модели** и **времени ожидания вознаграждения** на 5 минут и щелкните **Сохранить**.
 
 Изучите дополнительные сведения о [времени ожидания вознаграждения](concept-rewards.md#reward-wait-time) и [частоте обновления модели](how-to-settings.md#model-update-frequency).

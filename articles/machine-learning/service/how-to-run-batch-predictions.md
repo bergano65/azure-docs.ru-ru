@@ -1,81 +1,74 @@
 ---
-title: Выполнение пакетных прогнозов для больших данных с помощью конвейеров
+title: Выполнение пакетного вывода больших объемов данных
 titleSuffix: Azure Machine Learning
-description: Узнайте, как асинхронное выполнение пакетных прогнозов на больших объемах данных с помощью Машинное обучение Azure.
+description: Сведения о том, как асинхронно выполнять пакетный вывод больших объемов данных в Машинном обучении Azure. Функция пакетного вывода по умолчанию поддерживает возможности параллельной обработки. Она оптимизирована для сценариев вывода больших данных с высокой пропускной способностью без вмешательства пользователя.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: conceptual
-ms.reviewer: jmartens, garye
-ms.author: jordane
-author: jpe316
-ms.date: 07/12/2019
-ms.openlocfilehash: 910974eac6a67c9c9fe68c502f2876ef68bb94eb
-ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
-ms.translationtype: MT
+ms.topic: tutorial
+ms.reviewer: trbye, jmartens, larryfr
+ms.author: tracych
+author: tracych
+ms.date: 11/04/2019
+ms.custom: Ignite2019
+ms.openlocfilehash: 4390fab3d59706bf692de46d17923dad4f9a8f21
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72028519"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73489624"
 ---
-# <a name="run-batch-predictions-on-large-data-sets-with-azure-machine-learning-pipelines"></a>Выполнение пакетных прогнозов в больших наборах данных с помощью конвейеров Машинное обучение Azure
+# <a name="run-batch-inference-on-large-amounts-of-data-by-using-azure-machine-learning"></a>Выполнение пакетного вывода больших объемов данных с помощью Машинного обучения Azure
+[!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
-Из этой статьи вы узнаете, как асинхронно создавать прогнозы для больших объемов данных с помощью конвейеров машинного обучения с Машинное обучение Azure.
+В этом практическом руководстве описано, как в асинхронном и параллельном режиме выполнять пакетный вывод больших объемов данных с помощью Машинного обучения Azure. Описанные здесь возможности пакетного вывода предоставляются в режиме общедоступной предварительной версии. Вы сможете создавать выводы и эффективно обрабатывать данные, используя высокую пропускную способность сети. Возможности асинхронной обработки поддерживаются без дополнительной настройки.
 
-Пакетное прогнозирование (или пакетная оценка) обеспечивает экономичное получение выводов с непревзойденной пропускной способностью для асинхронных приложений. Конвейеры пакетного прогнозирования могут масштабировать свои ресурсы, чтобы получать выводы на основе терабайтов рабочих данных. Пакетное прогнозирование оптимизировано для обеспечения высокой пропускной способности и получения мгновенных прогнозов для большой коллекции данных.
+Функция пакетного вывода позволяет очень легко масштабировать вывод с локальных компьютеров в крупные кластеры, которые позволяют обрабатывать терабайты рабочих данных, повышая производительность и оптимизируя затраты.
 
->[!TIP]
-> Если вашей системе требуется обработка с низкой задержкой (для быстрой обработки отдельных документов или небольшого набора документов), используйте [оценку в реальном времени](how-to-consume-web-service.md) вместо пакетного прогнозирования.
+В этом практическом руководстве описано, как выполнять следующие задачи:
 
-На следующих шагах вы создадите [конвейер машинного обучения](concept-ml-pipelines.md) для регистрации предварительно обученной модели компьютерной концепции ([порождение — v3](https://arxiv.org/abs/1512.00567)). Затем вы используете предварительно обученную модель для пакетной оценки образов, доступных в учетной записи хранилища BLOB-объектов Azure. Для оценки будут использоваться изображения без меток из набора данных [ImageNet](http://image-net.org/).
+> * создание удаленного целевого вычислительного ресурса;
+> * создание пользовательского скрипта вывода;
+> * создание [конвейера машинного обучения](concept-ml-pipelines.md), который позволяет зарегистрировать модель классификации изображений, предварительно обученную по набору данных [MNIST](https://publicdataset.azurewebsites.net/dataDetail/mnist/); 
+> * использование предварительно обученной модели для пакетного вывода изображений, которые размещены в учетной записи хранилища BLOB-объектов Azure. 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Попробуйте [бесплатную или платную версию машинное обучение Azure](https://aka.ms/AMLFree).
+* Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree).
 
-- Настройте среду разработки для установки пакета SDK для Машинного обучения Azure. Для получения дополнительных сведений см. раздел [Настройка среды разработки для Машинного обучения Azure](how-to-configure-environment.md).
+* Чтобы быстро начать работу, вы можете выполнить инструкции из [руководства по установке](tutorial-1st-experiment-sdk-setup.md), если у вас еще нет рабочей области Машинного обучения Azure или виртуальной машины записных книжек. 
 
-- Создайте рабочую область Машинного обучения Azure, в которой будут храниться все ресурсы конвейера. Можно использовать приведенный ниже код. Чтобы ознакомиться с дополнительными возможностями, прочитайте раздел [Создание файла конфигурации рабочей области](how-to-configure-environment.md#workspace).
-
-  ```python
-  from azureml.core import Workspace
-  ws = Workspace.create(name = '<workspace-name>',
-                        subscription_id = '<subscription-id>',
-                        resource_group = '<resource-group>',
-                        location = '<workspace_region>',
-                        exist_ok = True
-                        )
-  ```
+* Сведения о том, как управлять средой и зависимостями, см. в [этом практическом руководстве](how-to-configure-environment.md) по настройке среды. Выполните `pip install azureml-sdk[notebooks] azureml-pipeline-core azureml-contrib-pipeline-steps` в своей среде, чтобы скачать необходимые зависимости.
 
 ## <a name="set-up-machine-learning-resources"></a>Настройка ресурсов машинного обучения
 
-На следующих шагах настраиваются ресурсы, необходимые для запуска конвейера.
+Следующие действия позволяют настроить ресурсы, которые потребуются для запуска конвейера пакетного вывода.
 
-- Получение доступа к хранилищу данных, содержащему предварительно обученную модель, входные метки и изображения для оценки (все это уже настроено для вас).
-- Настройка хранилища данных для хранения выходных данных.
-- Настройка объектов `DataReference` для указания на данные в описанных выше хранилищах данных.
-- Настройка вычислительных компьютеров или кластеров, на которых будут выполняться действия конвейера.
+- Создайте хранилище данных, которое указывает на контейнер больших двоичных объектов с изображениями для вывода.
+- Настройте ссылки на данные в качестве входных и выходных данных для шага конвейера пакетного вывода.
+- Настройте вычислительный кластер для выполнения шага пакетного вывода.
 
-### <a name="access-the-datastores"></a>Доступ к хранилищам данных
+### <a name="create-a-datastore-with-sample-images"></a>Создание хранилища данных с примерами изображений
 
-Сначала следует получить доступ к хранилищу данных, содержащему модели, метки и изображения.
+Извлеките оценочный набор данных MNIST из общедоступного контейнера BLOB-объектов `sampledata`, который размещен в учетной записи с именем `pipelinedata`. Создайте хранилище данных с именем `mnist_datastore`, которое указывает на этот контейнер. В следующем вызове функции `register_azure_blob_container` значение `True` для флага `overwrite` означает, что любое ранее созданное хранилище данных с тем же именем будет перезаписано. 
 
-Используйте общедоступный контейнер больших двоичных объектов с именем *SampleData*в учетной записи *пипелинедата* , которая содержит образы из набора оценки ImageNet. Имя хранилища данных для этого общедоступного — *images_datastore*. Зарегистрируйте это хранилище данных в своей рабочей области.
+Этот шаг можно изменить, указав ссылку на контейнер больших двоичных объектов, предоставив собственные значения для `datastore_name`, `container_name` и `account_name`.
 
 ```python
 from azureml.core import Datastore
+from azureml.core import Workspace
 
-account_name = "pipelinedata"
-datastore_name = "images_datastore"
-container_name = "sampledata"
+# Load workspace authorization details from config.json
+ws = Workspace.from_config()
 
-batchscore_blob = Datastore.register_azure_blob_container(ws,
-                                                          datastore_name=datastore_name,
-                                                          container_name=container_name,
-                                                          account_name=account_name,
-                                                          overwrite=True)
+mnist_blob = Datastore.register_azure_blob_container(ws, 
+                      datastore_name="mnist_datastore", 
+                      container_name="sampledata", 
+                      account_name="pipelinedata",
+                      overwrite=True)
 ```
 
-Затем настройте хранилище данных по умолчанию для выходных данных.
+Теперь задайте хранилище данных по умолчанию в рабочей области в качестве выходного хранилища данных. Сюда будут сохраняться выходные данные вывода.
 
 При создании рабочей области к ней по умолчанию подключаются [Файлы Azure](https://docs.microsoft.com/azure/storage/files/storage-files-introduction) и [хранилище BLOB-объектов](https://docs.microsoft.com/azure/storage/blobs/storage-blobs-introduction) . Файлы Azure — это хранилище данных по умолчанию для рабочей области, но вы можете также использовать хранилище BLOB-объектов для хранения данных. Дополнительные сведения см. в статье [Выбор между большими двоичными объектами Azure, службой файлов Azure и дисками Azure](https://docs.microsoft.com/azure/storage/common/storage-decide-blobs-files-disks).
 
@@ -83,78 +76,82 @@ batchscore_blob = Datastore.register_azure_blob_container(ws,
 def_data_store = ws.get_default_datastore()
 ```
 
-### <a name="configure-data-references"></a>Настройка ссылок на данные
+### <a name="configure-data-inputs-and-outputs"></a>Настройка входных и выходных данных
 
-Теперь добавьте в конвейер ссылки на данные в качестве входных данных шагов.
+Теперь вам нужно настроить входные и выходные данные, в том числе:
 
-Источник данных в конвейере представлен объектом [DataReference](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference) . Объект `DataReference` указывает на данные, которые хранятся или доступны в хранилище данных. Объекты `DataReference` требуются для каталога, используемого для входных изображений, каталога, в котором хранится предварительно обученная модель, каталога для меток и каталога выходных данных.
+- Каталог, содержащий входные изображения.
+- каталог, в котором хранится предварительно обученная модель;
+- каталог, который содержит метки;
+- каталог для выходных данных.
+
+Класс `Dataset` в Машинном обучении Azure предназначен для изучения, преобразования и администрирования данных. Этот класс имеет два типа: `TabularDataset` и `FileDataset`. В нашем примере в качестве входных данных для шага конвейера пакетного вывода используется `FileDataset`. 
+
+> [!NOTE] 
+> Поддержка `FileDataset` для пакетного вывода в настоящее время ограничена хранилищем BLOB-объектов Azure. 
+
+В пользовательском скрипте вывода вы также можете ссылаться на другие наборы данных. Например, можно обращаться из скрипта к меткам, чтобы добавлять их к изображениям, используя `Dataset.register` и `Dataset.get_by_name`.
+
+Дополнительные сведения о наборах данных в Машинном обучении Azure см. в руководстве по [созданию наборов данных и получению доступа к ним (предварительная версия)](https://docs.microsoft.com/azure/machine-learning/service/how-to-create-register-datasets).
+
+Объекты `PipelineData` нужны для передачи промежуточных данных между шагами конвейера. В нашем примере они используются для выходных данных вывода.
 
 ```python
-from azureml.data.data_reference import DataReference
+from azureml.core.dataset import Dataset
 
-input_images = DataReference(datastore=batchscore_blob,
-                             data_reference_name="input_images",
-                             path_on_datastore="batchscoring/images",
-                             mode="download")
+mnist_ds_name = 'mnist_sample_data'
 
-model_dir = DataReference(datastore=batchscore_blob,
-                          data_reference_name="input_model",
-                          path_on_datastore="batchscoring/models",
-                          mode="download")
+path_on_datastore = mnist_blob.path('mnist/')
+input_mnist_ds = Dataset.File.from_files(path=path_on_datastore, validate=False)
+registered_mnist_ds = input_mnist_ds.register(ws, mnist_ds_name, create_new_version=True)
+named_mnist_ds = registered_mnist_ds.as_named_input(mnist_ds_name)
 
-label_dir = DataReference(datastore=batchscore_blob,
-                          data_reference_name="input_labels",
-                          path_on_datastore="batchscoring/labels",
-                          mode="download")
-
-output_dir = PipelineData(name="scores",
-                          datastore=def_data_store,
-                          output_path_on_compute="batchscoring/results")
+output_dir = PipelineData(name="inferences", 
+                          datastore=def_data_store, 
+                          output_path_on_compute="mnist/results")
 ```
 
-### <a name="set-up-compute-target"></a>Настройка целевого объекта для вычислений
+### <a name="set-up-a-compute-target"></a>Настройка целевой среды для вычислений
 
-В Машинном обучении Azure *вычислительной средой* (или *целевым объектом вычислений*) считаются компьютеры или кластеры, которые выполняют вычислительные операции конвейера машинного обучения. Например, можно создать Машинное обучение Azure вычислений с помощью класса [амлкомпуте](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.amlcompute%28class%29?view=azure-ml-py) .
+В Машинном обучении Azure *вычислительной средой* (или *целевым объектом вычислений*) считаются компьютеры или кластеры, которые выполняют вычислительные операции конвейера машинного обучения. Выполните следующий код, чтобы создать целевой объект [AmlCompute](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.amlcompute.amlcompute?view=azure-ml-py) на основе ЦП.
 
 ```python
-from azureml.core.compute import AmlCompute
-from azureml.core.compute import ComputeTarget
+from azureml.core.compute import AmlCompute, ComputeTarget
+from azureml.core.compute_target import ComputeTargetException
 
-compute_name = "gpucluster"
-compute_min_nodes = 0
-compute_max_nodes = 4
-vm_size = "STANDARD_NC6"
+# choose a name for your cluster
+compute_name = os.environ.get("AML_COMPUTE_CLUSTER_NAME", "cpu-cluster")
+compute_min_nodes = os.environ.get("AML_COMPUTE_CLUSTER_MIN_NODES", 0)
+compute_max_nodes = os.environ.get("AML_COMPUTE_CLUSTER_MAX_NODES", 4)
+
+# This example uses CPU VM. For using GPU VM, set SKU to STANDARD_NC6
+vm_size = os.environ.get("AML_COMPUTE_CLUSTER_SKU", "STANDARD_D2_V2")
+
 
 if compute_name in ws.compute_targets:
     compute_target = ws.compute_targets[compute_name]
     if compute_target and type(compute_target) is AmlCompute:
-        print('Found compute target. just use it. ' + compute_name)
+        print('found compute target. just use it. ' + compute_name)
 else:
-    print('Creating a new compute target...')
-    provisioning_config = AmlCompute.provisioning_configuration(
-        vm_size=vm_size,  # NC6 is GPU-enabled
-        vm_priority='lowpriority',  # optional
-        min_nodes=compute_min_nodes,
-        max_nodes=compute_max_nodes)
+    print('creating a new compute target...')
+    provisioning_config = AmlCompute.provisioning_configuration(vm_size = vm_size,
+                                                                min_nodes = compute_min_nodes, 
+                                                                max_nodes = compute_max_nodes)
 
     # create the cluster
-    compute_target = ComputeTarget.create(ws,
-                                          compute_name,
-                                          provisioning_config)
-
-    compute_target.wait_for_completion(
-        show_output=True,
-        min_node_count=None,
-        timeout_in_minutes=20)
+    compute_target = ComputeTarget.create(ws, compute_name, provisioning_config)
+    
+    # can poll for a minimum number of nodes and for a specific timeout. 
+    # if no min node count is provided it will use the scale settings for the cluster
+    compute_target.wait_for_completion(show_output=True, min_node_count=None, timeout_in_minutes=20)
+    
+     # For a more detailed view of current AmlCompute status, use get_status()
+    print(compute_target.get_status().serialize())
 ```
 
 ## <a name="prepare-the-model"></a>Подготовка модели
 
-Прежде чем использовать предварительно обученную модель, ее необходимо скачать и зарегистрировать в рабочей области.
-
-### <a name="download-the-pretrained-model"></a>Скачивание предварительно обученной модели
-
-Скачайте предварительно обученную модель компьютерного зрения (InceptionV3) отсюда: <http://download.tensorflow.org/models/inception_v3_2016_08_28.tar.gz>. Извлеките содержимое во вложенную папку `models`.
+[Скачайте предварительно обученную модель классификации изображений](https://pipelinedata.blob.core.windows.net/mnist-model/mnist-tf.tar.gz) и извлеките ее в каталог `models`.
 
 ```python
 import os
@@ -165,197 +162,194 @@ model_dir = 'models'
 if not os.path.isdir(model_dir):
     os.mkdir(model_dir)
 
-url = "http://download.tensorflow.org/models/inception_v3_2016_08_28.tar.gz"
+url="https://pipelinedata.blob.core.windows.net/mnist-model/mnist-tf.tar.gz"
 response = urllib.request.urlretrieve(url, "model.tar.gz")
 tar = tarfile.open("model.tar.gz", "r:gz")
 tar.extractall(model_dir)
 ```
 
-### <a name="register-the-model"></a>Регистрация модели
-
-Вот как можно зарегистрировать модель:
+Затем зарегистрируйте модель в рабочей области, чтобы она была доступна для удаленного вычислительного ресурса.
 
 ```python
-import shutil
 from azureml.core.model import Model
 
-# register downloaded model
-model = Model.register(
-    model_path="models/inception_v3.ckpt",
-    model_name="inception",  # This is the name of the registered model
-    tags={'pretrained': "inception"},
-    description="Imagenet trained tensorflow inception",
-    workspace=ws)
+# Register the downloaded model 
+model = Model.register(model_path="models/",
+                       model_name="mnist",
+                       tags={'pretrained': "mnist"},
+                       description="Mnist trained tensorflow model",
+                       workspace=ws)
 ```
 
-## <a name="write-your-scoring-script"></a>Создание сценария оценки
+## <a name="write-your-inference-script"></a>Создание пользовательского скрипта вывода
 
 >[!Warning]
->Приведенный ниже код является только примером содержимого файла [batch_score.py](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines/pipeline-batch-scoring/batch_scoring.py), используемого [примером записной книжки](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines/pipeline-batch-scoring/pipeline-batch-scoring.ipynb). Вам потребуется создать собственный сценарий оценки, подходящий для вашей ситуации.
+>Следующий пример кода приведен в качестве примера, который включен в [пример записной книжки](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines/pipeline-batch-scoring/notebooks/contrib/batch_inferencing/file-dataset-image-inference-mnist.ipynb). Вам следует создать собственный скрипт с учетом своего сценария.
 
-Сценарий `batch_score.py` принимает входные изображения в *dataset_path*, предварительно обученные модели в *model_dir* и выводит *ресултс-лабел. txt* в *output_dir*.
+Этот скрипт *должен* содержать две функции.
+- `init()`: Эта функция применяется для всех затратных или повторяющихся операций подготовки к последующему выводу. Например, в ней можно загружать модель в глобальный объект.
+-  `run(mini_batch)`: Эта функция будет выполняться для каждого экземпляра `mini_batch`.
+    -  `mini_batch`: Пакетный вывод вызывает метод run и передает ему в качестве аргумента список либо Pandas DataFrame. Каждая запись в min_batch содержит одно из следующих значений: путь к файлу для входных данных в формате FileDataset и Pandas DataFrame для входных данных в формате TabularDataset.
+    -  `response`: метод run() должен возвращать Pandas DataFrame или массив. Для append_row output_action эти возвращаемые элементы добавляются в общий выходной файл. Для summary_only содержимое элементов игнорируется. Для всех выходных действий каждый возвращаемый элемент обозначает один успешный вывод для входного элемента во входном мини-пакете. Пользователь должен убедиться в том, что в результат вывода включено достаточно данных, чтобы сопоставить входные данные для вывода. Выходные данные вывода будут записаны в выходной файл и для них не гарантируется правильный порядок. Для сопоставления со входными данными пользователю нужно использовать какой-либо ключ.
 
 ```python
-# Snippets from a sample scoring script
-# Refer to the accompanying batch-scoring Notebook
-# https://github.com/Azure/MachineLearningNotebooks/blob/master/pipeline/pipeline-batch-scoring.ipynb
-# for the implementation script
+# Snippets from a sample script.
+# Refer to the accompanying digit_identification.py
+# (https://github.com/Azure/MachineLearningNotebooks/blob/master/pipeline/digit_identification.py)
+# for the implementation script.
 
-# Get labels
-def get_class_label_dict(label_file):
-  label = []
-  proto_as_ascii_lines = tf.gfile.GFile(label_file).readlines()
-  for l in proto_as_ascii_lines:
-    label.append(l.rstrip())
-  return label
+import os
+import numpy as np
+import tensorflow as tf
+from PIL import Image
+from azureml.core import Model
 
-class DataIterator:
-  # Definition of the DataIterator here
 
-def main(_):
-    # Refer to batch-scoring Notebook for implementation.
-    label_file_name = os.path.join(args.label_dir, "labels.txt")
-    label_dict = get_class_label_dict(label_file_name)
-    classes_num = len(label_dict)
-    test_feeder = DataIterator(data_dir=args.dataset_path)
-    total_size = len(test_feeder.labels)
+def init():
+    global g_tf_sess
 
-    # get model from model registry
-    model_path = Model.get_model_path(args.model_name)
-    with tf.Session() as sess:
-        test_images = test_feeder.input_pipeline(batch_size=args.batch_size)
-        with slim.arg_scope(inception_v3.inception_v3_arg_scope()):
-            input_images = tf.placeholder(tf.float32, [args.batch_size, image_size, image_size, num_channel])
-            logits, _ = inception_v3.inception_v3(input_images,
-                                                        num_classes=classes_num,
-                                                        is_training=False)
-            probabilities = tf.argmax(logits, 1)
+    # Pull down the model from the workspace
+    model_path = Model.get_model_path("mnist")
 
-        sess.run(tf.global_variables_initializer())
-        sess.run(tf.local_variables_initializer())
-        coord = tf.train.Coordinator()
-        threads = tf.train.start_queue_runners(sess=sess, coord=coord)
-        saver = tf.train.Saver()
-        saver.restore(sess, model_path)
-        out_filename = os.path.join(args.output_dir, "result-labels.txt")
+    # Construct a graph to execute
+    tf.reset_default_graph()
+    saver = tf.train.import_meta_graph(os.path.join(model_path, 'mnist-tf.model.meta'))
+    g_tf_sess = tf.Session()
+    saver.restore(g_tf_sess, os.path.join(model_path, 'mnist-tf.model'))
 
-        # copy the file to artifacts
-        shutil.copy(out_filename, "./outputs/")
+
+def run(mini_batch):
+    print(f'run method start: {__file__}, run({mini_batch})')
+    resultList = []
+    in_tensor = g_tf_sess.graph.get_tensor_by_name("network/X:0")
+    output = g_tf_sess.graph.get_tensor_by_name("network/output/MatMul:0")
+
+    for image in mini_batch:
+        # Prepare each image
+        data = Image.open(image)
+        np_im = np.array(data).reshape((1, 784))
+        # Perform inference
+        inference_result = output.eval(feed_dict={in_tensor: np_im}, session=g_tf_sess)
+        # Find the best probability, and add it to the result list
+        best_result = np.argmax(inference_result)
+        resultList.append("{}: {}".format(os.path.basename(image), best_result))
+
+    return resultList
 ```
 
-## <a name="build-and-run-the-batch-scoring-pipeline"></a>Сборка и запуск конвейера пакетной оценки
+## <a name="build-and-run-the-batch-inference-pipeline"></a>Сборка и запуск конвейера пакетного вывода
+
+Теперь все готово для сборки конвейера.
 
 ### <a name="prepare-the-run-environment"></a>Подготовка среды выполнения
 
-Укажите зависимости Conda для своего сценария. Этот объект потребуется позже, когда будет создаваться шаг конвейера.
+Для начала укажите зависимости для скрипта. Этот объект потребуется позже при создании шага конвейера.
 
 ```python
-from azureml.core.runconfig import DEFAULT_GPU_IMAGE
-from azureml.core.runconfig import RunConfiguration
+from azureml.core import Environment
 from azureml.core.conda_dependencies import CondaDependencies
+from azureml.core.runconfig import DEFAULT_GPU_IMAGE
 
-cd = CondaDependencies.create(
-    pip_packages=["tensorflow-gpu==1.10.0", "azureml-defaults"])
+batch_conda_deps = CondaDependencies.create(pip_packages=["tensorflow==1.13.1", "pillow"])
 
-# Runconfig
-amlcompute_run_config = RunConfiguration(conda_dependencies=cd)
-amlcompute_run_config.environment.docker.enabled = True
-amlcompute_run_config.environment.docker.gpu_support = True
-amlcompute_run_config.environment.docker.base_image = DEFAULT_GPU_IMAGE
-amlcompute_run_config.environment.spark.precache_packages = False
+batch_env = Environment(name="batch_environment")
+batch_env.python.conda_dependencies = batch_conda_deps
+batch_env.docker.enabled = True
+batch_env.docker.base_image = DEFAULT_CPU_IMAGE
+batch_env.spark.precache_packages = False
 ```
 
-### <a name="specify-the-parameter-for-your-pipeline"></a>Указание параметра для конвейера
+### <a name="specify-the-parameters-for-your-batch-inference-pipeline-step"></a>Указание параметров для шага конвейера пакетного вывода
 
-Создайте параметр конвейера, используя объект [PipelineParameter](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.pipelineparameter?view=azure-ml-py) со значением по умолчанию.
+`ParallelRunConfig` назначается основной конфигурацией для вновь созданного экземпляра пакетного вывода `ParallelRunStep` в конвейере Машинного обучения Azure. Он пригодится вам как оболочка скрипта для настройки необходимых параметров, включая перечисленные ниже.
+- `entry_script`: Локальный путь к пользовательскому скрипту, который будет выполняться параллельно на нескольких узлах. Если присутствует `source_directly`, используйте относительный путь. В противном случае используйте любой путь, доступный на компьютере.
+- `mini_batch_size`: Размер мини-пакета, который передается в одном вызове `run()`. (Необязательный параметр; по умолчанию используется значение `1`.)
+    - Для `FileDataset` здесь указывается количество файлов; минимальное допустимое значение — `1`. Несколько файлов можно объединить в один мини-пакет.
+    - Для `TabularDataset` здесь указывается размер данных. Примеры допустимых значений: `1024`, `1024KB`, `10MB` и `1GB`. Мы рекомендуем использовать значение `1MB`. Обратите внимание, что мини-пакет из `TabularDataset` никогда не пересекает границы файлов. Предположим, что у вас есть CSV-файлы с разными размерами в пределах от 100 КБ до 10 МБ. Если задать `mini_batch_size = 1MB`, все файлы с размером меньше 1 МБ будут рассматриваться как один мини-пакет. Файлы с размером, превышающим 1 МБ, будут разбиты на несколько мини-пакетов.
+- `error_threshold`: Количество ошибок записи для `TabularDataset` и сбоев чтения файлов для `FileDataset`, которые следует игнорировать во время обработки. Если общее количество ошибок для всего объема входных данных превысит это значение, задание будет остановлено. Пороговое количество ошибок применяется к общему объему входных данных, а не к отдельным мини-пакетам, которые передаются в метод `run()`. Используется диапазон `[-1, int.max]`. Часть `-1` указывает на то, что следует игнорировать все сбои во время обработки.
+- `output_action`: Одно из следующих значений указывает, как будут организованы выходные данные.
+    - `summary_only`: Выходные данные сохраняются в пользовательском скрипте. `ParallelRunStep` использует выходные данные только для вычисления порога ошибок.
+    - `append_row`: Для всех входных файлов в выходной папке будет создан только один файл, куда будут добавляться все выходные данные, разделенные пустой строкой. Этому файлу присваивается имя parallel_run_step.txt.
+- `source_directory`: Пути к папкам, которые содержат все файлы для выполнения в целевом объекте вычислений (необязательно).
+- `compute_target`: Поддерживается только `AmlCompute`.
+- `node_count`: Количество вычислительных узлов, которые будут использоваться для выполнения пользовательского скрипта.
+- `process_count_per_node`: Количество процессов на каждом узле.
+- `environment`: Определение среды Python. Вы можете настроить использование существующей среды Python или временной среды для указанного эксперимента. Также это определение может задавать необходимые зависимости приложения (необязательно).
+- `logging_level`: Детализация журнала. Значения уровня детализации в порядке увеличения: `WARNING`, `INFO` и `DEBUG`. По умолчанию используется значение `INFO` (необязательно).
+- `run_invocation_timeout`: Время вызова метода `run()` в секундах. По умолчанию используется значение `60`.
 
 ```python
-from azureml.pipeline.core.graph import PipelineParameter
-batch_size_param = PipelineParameter(
-    name="param_batch_size",
-    default_value=20)
+from azureml.contrib.pipeline.steps import ParallelRunConfig
+
+parallel_run_config = ParallelRunConfig(
+    source_directory=scripts_folder,
+    entry_script="digit_identification.py",
+    mini_batch_size="5",
+    error_threshold=10,
+    output_action="append_row",
+    environment=batch_env,
+    compute_target=compute_target,
+    node_count=4)
 ```
 
 ### <a name="create-the-pipeline-step"></a>Создание шага конвейера
 
-Создайте шаг конвейера, используя сценарий, конфигурацию среды и параметры. Укажите целевой объект вычислений, уже подключенный к вашей рабочей области, в качестве цели выполнения сценария. Используйте [PythonScriptStep](https://docs.microsoft.com/python/api/azureml-pipeline-steps/azureml.pipeline.steps.python_script_step.pythonscriptstep?view=azure-ml-py), чтобы создать шаг конвейера.
+Создайте шаг конвейера, используя сценарий, конфигурацию среды и параметры. Укажите целевой объект вычислений, который уже подключен к рабочей области, в качестве целевого объекта для выполнения скрипта. Используйте `ParallelRunStep`, чтобы создать шаг конвейера пакетного вывода, который принимает все следующие параметры.
+- `name`: Имя шага со следующими ограничениями на именование: уникальность, от 3 до 32 символов, соответствие регулярному выражению ^\[a-z\]([-a-z0-9]*[a-z0-9])?$.
+- `models`: Ноль или несколько имен моделей, которые уже зарегистрированы в реестре моделей Машинного обучения Azure.
+- `parallel_run_config`: Объект `ParallelRunConfig`, как определено ранее.
+- `inputs`: Один или несколько наборов данных Машинного обучения Azure с одним типом.
+- `output`: Объект `PipelineData`, который соответствует каталогу для выходных данных.
+- `arguments`: Список аргументов, переданных в пользовательский скрипт (необязательно).
+- `allow_reuse`: Указывает, должен ли шаг повторно использовать предыдущие результаты при запуске с теми же параметрами и входными данными. Если этот параметр имеет значение `False`, то во время выполнения конвейера для этого шага всегда будет создаваться новый запуск. (Необязательный параметр; по умолчанию используется значение `True`.)
 
 ```python
-from azureml.pipeline.steps import PythonScriptStep
-inception_model_name = "inception_v3.ckpt"
+from azureml.contrib.pipeline.steps import ParallelRunStep
 
-batch_score_step = PythonScriptStep(
-    name="batch_scoring",
-    script_name="batch_score.py",
-    arguments=["--dataset_path", input_images,
-               "--model_name", "inception",
-               "--label_dir", label_dir,
-               "--output_dir", output_dir,
-               "--batch_size", batch_size_param],
-    compute_target=compute_target,
-    inputs=[input_images, label_dir],
-    outputs=[output_dir],
-    runconfig=amlcompute_run_config,
-    source_directory=scripts_folder
+parallelrun_step = ParallelRunStep(
+    name="batch-mnist",
+    models=[model],
+    parallel_run_config=parallel_run_config,
+    inputs=[named_mnist_ds],
+    output=output_dir,
+    arguments=[],
+    allow_reuse=True
+)
 ```
 
 ### <a name="run-the-pipeline"></a>Запуск конвейера
 
-Теперь запустите конвейер и изучите полученные выходные данные. Выходные данные содержат оценку, соответствующую каждому входному изображению.
+Теперь запустите конвейер. Прежде всего создайте объект `Pipeline`, используя ссылку на вашу рабочую область и созданный шаг конвейера. Параметр `steps` является массивом шагов. В этом случае для пакетной оценки выполняется только один шаг. Чтобы создать конвейеры с несколькими шагами, разместите шаги по порядку в этом массиве.
+
+Затем используйте функцию `Experiment.submit()`, чтобы передать конвейер для выполнения.
 
 ```python
-import pandas as pd
 from azureml.pipeline.core import Pipeline
+from azureml.core.experiment import Experiment
 
-# Run the pipeline
-pipeline = Pipeline(workspace=ws, steps=[batch_score_step])
-pipeline_run = Experiment(ws, 'batch_scoring').submit(
-    pipeline, pipeline_params={"param_batch_size": 20})
+pipeline = Pipeline(workspace=ws, steps=[parallelrun_step])
+pipeline_run = Experiment(ws, 'digit_identification').submit(pipeline)
+```
 
-# Wait for the run to finish (this might take several minutes)
+## <a name="monitor-the-batch-inference-job"></a>Мониторинг задания пакетного вывода
+
+Задание пакетного вывода может выполняться длительное время. В этом примере ход выполнения отслеживается с помощью мини-приложения Jupyter. Вы также можете управлять ходом выполнения задания, используя следующие средства:
+
+* Студии машинного обучения Azure. 
+* консольные выходные данные из объекта [`PipelineRun`](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.run.pipelinerun?view=azure-ml-py).
+
+```python
+from azureml.widgets import RunDetails
+RunDetails(pipeline_run).show()
+
 pipeline_run.wait_for_completion(show_output=True)
-
-# Download and review the output
-step_run = list(pipeline_run.get_children())[0]
-step_run.download_file("./outputs/result-labels.txt")
-
-df = pd.read_csv("result-labels.txt", delimiter=":", header=None)
-df.columns = ["Filename", "Prediction"]
-df.head()
 ```
 
-## <a name="publish-the-pipeline"></a>Публикация конвейера
+## <a name="next-steps"></a>Дополнительная информация
 
-Когда результат запуска конвейера вас устроит, опубликуйте этот конвейер, чтобы позже вы могли запустить его с другими входными значениями. При публикации конвейера вы получаете конечную точку REST. Эта конечная точка принимает вызов запуска конвейера с набором параметров, которые вы уже добавили с помощью объекта [PipelineParameter](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.pipelineparameter?view=azure-ml-py).
+Чтобы наблюдать весь процесс, воспользуйтесь [записной книжкой пакетного вывода](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines/). 
 
-```python
-published_pipeline = pipeline_run.publish_pipeline(
-    name="Inception_v3_scoring",
-    description="Batch scoring using Inception v3 model",
-    version="1.0")
-```
+См. инструкции по [отладке и устранению неполадок с конвейерами](how-to-debug-pipelines.md).
 
-## <a name="rerun-the-pipeline-by-using-the-rest-endpoint"></a>Повторный запуск конвейера с помощью конечной точки REST
+[!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-for-examples.md)]
 
-Чтобы повторно запустить конвейер, потребуется маркер заголовка аутентификации Azure Active Directory, как описывается в [классе AzureCliAuthentication](https://docs.microsoft.com/python/api/azureml-core/azureml.core.authentication.azurecliauthentication?view=azure-ml-py).
-
-```python
-from azureml.pipeline.core.run import PipelineRun
-from azureml.pipeline.core import PublishedPipeline
-
-rest_endpoint = published_pipeline.endpoint
-# specify batch size when running the pipeline
-response = requests.post(rest_endpoint,
-                         headers=aad_token,
-                         json={"ExperimentName": "batch_scoring",
-                               "ParameterAssignments": {"param_batch_size": 50}})
-
-# Monitor the run
-published_pipeline_run = PipelineRun(ws.experiments["batch_scoring"], run_id)
-
-RunDetails(published_pipeline_run).show()
-```
-
-## <a name="next-steps"></a>Следующие шаги
-
-Чтобы просмотреть этот рабочий комплекс, попробуйте использовать записную книжку пакетной оценки в [GitHub](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines)или перейдите в [центр архитектуры Azure](/azure/architecture/reference-architectures/ai/batch-scoring-python) , чтобы просмотреть пример архитектуры решения.

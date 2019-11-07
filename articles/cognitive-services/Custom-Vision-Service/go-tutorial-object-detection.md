@@ -4,18 +4,18 @@ titleSuffix: Azure Cognitive Services
 description: Создайте проект, добавьте теги, загрузите изображения, обучите проект и найдите объекты с помощью пакета SDK для Go.
 services: cognitive-services
 author: areddish
+ms.author: areddish
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: custom-vision
 ms.topic: quickstart
 ms.date: 08/08/2019
-ms.author: daauld
-ms.openlocfilehash: 3831f89842f969ecce582c5b5d7a5f8a54c5e7a1
-ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
+ms.openlocfilehash: 050d0593f64c939c687601eb25677f2356f4ba51
+ms.sourcegitcommit: f7f70c9bd6c2253860e346245d6e2d8a85e8a91b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2019
-ms.locfileid: "68946213"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73519087"
 ---
 # <a name="quickstart-create-an-object-detection-project-with-the-custom-vision-go-sdk"></a>Краткое руководство. Создание проекта обнаружения объектов с помощью пакета SDK Пользовательского визуального распознавания для Go
 
@@ -24,6 +24,7 @@ ms.locfileid: "68946213"
 ## <a name="prerequisites"></a>Предварительные требования
 
 - [Go 1.8 или более поздней версии](https://golang.org/doc/install)
+- [!INCLUDE [create-resources](includes/create-resources.md)]
 
 ## <a name="install-the-custom-vision-sdk"></a>Установка пакета SDK Пользовательского визуального распознавания
 
@@ -48,7 +49,9 @@ dep ensure -add github.com/Azure/azure-sdk-for-go
 
 ### <a name="create-the-custom-vision-service-project"></a>Создание проекта Пользовательской службы визуального распознавания
 
-Добавьте в скрипт следующий код, чтобы создать проект Пользовательской службы визуального распознавания. Вставьте ключи подписки в соответствующие определения. Ознакомьтесь с методом [CreateProject](https://docs.microsoft.com/java/api/com.microsoft.azure.cognitiveservices.vision.customvision.training.trainings.createproject?view=azure-java-stable#com_microsoft_azure_cognitiveservices_vision_customvision_training_Trainings_createProject_String_CreateProjectOptionalParameter_), чтобы указать другие параметры при создании проекта (см. пояснения в руководстве по [созданию средства обнаружения объектов с помощью веб -портала](get-started-build-detector.md)).
+Добавьте в скрипт следующий код, чтобы создать проект Пользовательской службы визуального распознавания. Вставьте ключи подписки в соответствующие определения. Кроме того, получите URL-адрес конечной точки на странице параметров веб-сайта службы "Пользовательское визуальное распознавание".
+
+Ознакомьтесь с методом [CreateProject](https://docs.microsoft.com/java/api/com.microsoft.azure.cognitiveservices.vision.customvision.training.trainings.createproject?view=azure-java-stable#com_microsoft_azure_cognitiveservices_vision_customvision_training_Trainings_createProject_String_CreateProjectOptionalParameter_), чтобы указать другие параметры при создании проекта (см. пояснения в руководстве по [созданию средства обнаружения объектов с помощью веб-портала](get-started-build-detector.md)).
 
 ```go
 import(
@@ -67,7 +70,7 @@ var (
     training_key string = "<your training key>"
     prediction_key string = "<your prediction key>"
     prediction_resource_id = "<your prediction resource id>"
-    endpoint string = "https://southcentralus.api.cognitive.microsoft.com"
+    endpoint string = "<your endpoint URL>"
     project_name string = "Go Sample OD Project"
     iteration_publish_name = "detectModel"
     sampleDataDirectory = "<path to sample images>"

@@ -5,15 +5,15 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: tutorial
-ms.date: 09/17/2019
+ms.date: 11/02/2019
 ms.author: victorh
 customer intent: As an administrator, I want to control network access from an on-premises network to an Azure virtual network.
-ms.openlocfilehash: 50f1d0bca958ef4504394cad1d771459cc8be27d
-ms.sourcegitcommit: 71db032bd5680c9287a7867b923bf6471ba8f6be
+ms.openlocfilehash: 4a4fd2f89bc662f394b59aa6295c3a909cb8552b
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71018973"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73468466"
 ---
 # <a name="tutorial-deploy-and-configure-azure-firewall-in-a-hybrid-network-using-the-azure-portal"></a>Руководство по Развертывание и настройка Брандмауэра Azure в гибридной сети с помощью портала Azure
 
@@ -107,14 +107,6 @@ ms.locfileid: "71018973"
 9. В разделе **Подсеть** в поле **Имя** введите **SN-Workload**.
 10. В поле **Диапазон адресов** введите **10.6.0.0/24**.
 11. Оставьте значения по умолчанию для других параметров и выберите **Создать**.
-
-Создайте вторую подсеть для шлюза.
-
-1. На странице **VNet-Spoke** выберите **Подсети**.
-2. Выберите **+Subnet** (+Подсеть).
-3. В поле **Имя**введите**GatewaySubnet**.
-4. В поле **Диапазон адресов (блок CIDR)** введите **10.6.1.0/24**.
-5. Нажмите кнопку **ОК**.
 
 ## <a name="create-the-on-premises-virtual-network"></a>Создание локальной виртуальной сети
 
@@ -341,7 +333,7 @@ ms.locfileid: "71018973"
 2. После создания таблицы маршрутов щелкните ее, чтобы открыть страницу сведений.
 3. В левом столбце выберите **Маршруты**.
 4. Выберите **Добавить**.
-5. В поле "Имя маршрута" введите **ToSpoke**.
+5. В поле "Имя маршрута" введите **ToHub**.
 6. В поле "Префикс адреса" укажите **0.0.0.0/0**.
 7. В поле "Тип следующего прыжка" выберите **Виртуальный модуль**.
 8. В поле "Адрес следующего прыжка" введите частный IP-адрес брандмауэра, который вы записали ранее.
@@ -384,7 +376,7 @@ ms.locfileid: "71018973"
 ### <a name="install-iis"></a>Установка служб IIS
 
 1. На портале Azure откройте Cloud Shell и убедитесь, что здесь выбран вариант **PowerShell**.
-2. Чтобы установить службы IIS, выполните на виртуальной машине следующие команды:
+2. Чтобы установить службы IIS, выполните на виртуальной машине следующие команды и измените расположение, если это необходимо:
 
    ```azurepowershell-interactive
    Set-AzVMExtension `
@@ -420,7 +412,7 @@ ms.locfileid: "71018973"
 
 ## <a name="test-the-firewall"></a>тестирование брандмауэра.
 
-1. Сначала получите и запишите частный IP-адрес для виртуальной машины **VM-spoke-01**.
+1. Сначала запишите частный IP-адрес для виртуальной машины **VM-spoke-01**.
 
 2. На портале Azure подключитесь к виртуальной машине **VM-Onprem**.
 <!---2. Open a Windows PowerShell command prompt on **VM-Onprem**, and ping the private IP for **VM-spoke-01**.

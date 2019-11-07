@@ -1,6 +1,6 @@
 ---
-title: Руководство. Проектирование панели мониторинга для отображения данных в реальном времени с помощью Базы данных Azure для PostgreSQL с решением Hyperscale (Citus) (предварительная версия)
-description: В этом учебнике показано, как создавать и заполнять распределенные таблицы и выполнять к ним запрос с помощью решения Hyperscale (Citus) (предварительная версия) в Базе данных Azure для PostgreSQL.
+title: Учебник. Проектирование панели мониторинга для отображения данных в реальном времени с помощью Базы данных Azure для PostgreSQL с решением "Гипермасштабирование (Citus)"
+description: В этом учебнике показано, как создавать и заполнять распределенные таблицы и выполнять к ним запрос с помощью решения "Гипермасштабирование (Citus)" в Базе данных Azure для PostgreSQL.
 author: jonels-msft
 ms.author: jonels
 ms.service: postgresql
@@ -8,16 +8,16 @@ ms.subservice: hyperscale-citus
 ms.custom: mvc
 ms.topic: tutorial
 ms.date: 05/14/2019
-ms.openlocfilehash: a5e4b2073a29785ee851b2733c12d6331afe59d8
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 32487d65397a96d9e96ae3bf3476eed23ddb8adc
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65791302"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73482869"
 ---
-# <a name="tutorial-design-a-real-time-analytics-dashboard-by-using-azure-database-for-postgresql--hyperscale-citus-preview"></a>Руководство по Проектирование панели мониторинга для отображения данных в реальном времени с помощью Базы данных Azure для PostgreSQL с решением Hyperscale (Citus) (предварительная версия)
+# <a name="tutorial-design-a-real-time-analytics-dashboard-by-using-azure-database-for-postgresql--hyperscale-citus"></a>Руководство по проектированию панели мониторинга для отображения данных в реальном времени с помощью Базы данных Azure для PostgreSQL с решением "Гипермасштабирование (Citus)"
 
-В этом руководстве используется решение Hyperscale (Citus) (предварительная версия) в Базе данных Azure для PostgreSQL, чтобы продемонстрировать следующее:
+В этом учебнике используется решение "Гипермасштабирование (Citus)" в Базе данных Azure для PostgreSQL, чтобы продемонстрировать следующее:
 
 > [!div class="checklist"]
 > * создание группы серверов Hyperscale (Citus);
@@ -34,7 +34,7 @@ ms.locfileid: "65791302"
 
 ## <a name="use-psql-utility-to-create-a-schema"></a>Использование служебной программы psql для создания схемы
 
-Подключившись с помощью psql к Hyperscale (Citus) (предварительная версия) в Базе данных Azure для PostgreSQL, вы сможете выполнить некоторые несложные задачи. В этом руководстве показано, как выполнить прием данных из средства веб-аналитики и сведение данных для их представления в реальном времени на панели мониторинга.
+Подключившись с помощью psql к решению "Гипермасштабирование (Citus)" в Базе данных Azure для PostgreSQL, вы сможете выполнить некоторые несложные задачи. В этом руководстве показано, как выполнить прием данных из средства веб-аналитики и сведение данных для их представления в реальном времени на панели мониторинга.
 
 Давайте создадим таблицу, в которую будут поступать необработанные данные. В окне терминала psql выполните следующие команды:
 

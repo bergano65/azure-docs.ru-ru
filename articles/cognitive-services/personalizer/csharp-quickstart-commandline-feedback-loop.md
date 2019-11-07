@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: personalizer
 ms.topic: quickstart
-ms.date: 09/26/2019
+ms.date: 10/24/2019
 ms.author: diberry
-ms.openlocfilehash: 4308ed6d00bd3900986f08a93a686f0d7d00bcfb
-ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
+ms.openlocfilehash: b86a8df86b7f9b8a5936752a5f0413aa863ae85f
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72515595"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73490796"
 ---
 # <a name="quickstart-personalizer-client-library-for-net"></a>Краткое руководство. Клиентская библиотека Персонализатора для .NET
 
@@ -38,29 +38,28 @@ ms.locfileid: "72515595"
 Для использования этого краткого руководства необходимо выполнить несколько действий.
 
 * Создайте ресурс "Персонализатор" на портале Azure.
-* В ресурсе "Персонализатор" на странице **Параметров** измените частоту обновления модели.
+* На портале Azure в ресурсе "Персонализатор" на странице **Настройка** измените частоту обновления модели.
 * В редакторе кода создайте и измените файл кода.
 * В командной строке или терминале установите пакет SDK из командной строки.
 * В командной строке (или терминале) запустите файл кода.
 
 ## <a name="create-a-personalizer-azure-resource"></a>Создание ресурса Azure для Персонализатора
 
-Ресурсами Azure, на которые вы подписаны, будет представлено семейство служб Azure Cognitive Services. Создайте ресурс для Персонализатора с помощью [портала Azure](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) или [Azure CLI](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account-cli) на локальном компьютере. Также можно:
+Создайте ресурс для Персонализатора с помощью [портала Azure](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) или [Azure CLI](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account-cli) на локальном компьютере. Также можно:
 
 * получить бесплатный [ключ пробной версии](https://azure.microsoft.com/try/cognitive-services) на 7 дней. После регистрации он будет доступен на [веб-сайте Azure](https://azure.microsoft.com/try/cognitive-services/my-apis/).  
 * Просмотреть этот ресурс на [портале Azure](https://portal.azure.com/).
 
-<!-- rename TBD_KEY to something meaningful for your service, like TEXT_ANALYTICS_KEY -->
 После получения ключа из своего ресурса или пробной подписки создайте две [переменные среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication):
 
 * `PERSONALIZER_RESOURCE_KEY` — для ключа ресурса.
 * `PERSONALIZER_RESOURCE_ENDPOINT` — для конечной точки ресурса.
 
-На портале Azure ключ и значения конечных точек можно найти на странице **Быстрый запуск**.
+На портале Azure ключ и значения конечных точек можно найти на странице **быстрый запуск**.
 
 ## <a name="change-the-model-update-frequency"></a>Изменение частоты обновления модели
 
-В ресурсе "Персонализатор" на странице **Параметров** установите значение для параметра **Частота обновления модели** на 10 секунд. С этим значением служба будет обучаться быстро, и вы увидите, как главное действие меняется с каждой итерацией.
+На портале Azure в ресурсе "Персонализатор" на странице **Настройка** установите значение для параметра **Частота обновления модели** на 10 секунд. С такой высокой частотой служба будет обучаться быстро, и вы увидите, как главное действие меняется с каждой итерацией.
 
 ![Изменение частоты обновления модели](./media/settings/configure-model-update-frequency-settings.png)
 
@@ -110,11 +109,11 @@ dotnet add package Microsoft.Azure.CognitiveServices.Personalizer --version 0.8.
 
 Чтобы отправить вознаграждение в Персонализатор, создайте [RewardRequest](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.personalizer.models.rewardrequest?view=azure-dotnet-preview), а затем передайте его в метод [client.Reward](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.personalizer.personalizerclientextensions.reward?view=azure-dotnet-preview). 
 
-Определение вознаграждения в этом кратком руководстве тривиально. Со временем определение факторов влияния на [оценку вознаграждения](concept-rewards.md) и сложность процесса в рабочей системе может измениться. Это должно быть одним из основных проектных решений в вашей архитектуре Персонализатора. 
+Определение вознаграждения в этом кратком руководстве тривиально. Со временем определение факторов влияния на [оценку вознаграждения](concept-rewards.md) и сложность процесса в рабочей системе может измениться. Это решение должно быть одним из основных решений в вашей архитектуре Персонализатора. 
 
 ## <a name="code-examples"></a>Примеры кода
 
-Фрагменты кода по приведенным ниже ссылкам показывают, как выполнить одноименные действия с помощью клиентской библиотеки Персонализатора для .NET:
+Фрагменты кода по приведенным ниже ссылкам показывают, как выполнить следующие задачи с помощью клиентской библиотеки Персонализатора для .NET:
 
 * [создание клиента Персонализатора](#create-a-personalizer-client);
 * [запрос ранжирования](#request-a-rank);

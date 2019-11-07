@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 03/28/2018
 ms.author: glenga
 ms.custom: mvc, cc996988-fb4f-47
-ms.openlocfilehash: 13aa1f8cd643d579734cc603bbc81519a690fe59
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: a070a7da48af8abe138900dd0221bace2149aa20
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70085864"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73469326"
 ---
 # <a name="create-a-function-in-azure-that-is-triggered-by-a-timer"></a>Создание в Azure функции, активируемой по таймеру
 
@@ -42,7 +42,7 @@ ms.locfileid: "70085864"
 
 ## <a name="create-a-timer-triggered-function"></a>Создание функции, активируемой по таймеру
 
-1. Разверните приложение-функцию и нажмите кнопку **+** рядом с элементом **Функции**. Если это первая функция в приложении-функции, последовательно выберите **На портале** и **Продолжить**. Если нет, перейдите к шагу 3.
+1. Разверните приложение-функцию и нажмите кнопку **+** рядом с элементом **Функции**. Если это первая функция в приложении-функции, последовательно выберите **На портале** и **Продолжить**. Если нет, перейдите к шагу 3.
 
    ![Страница быстрого начала работы с функциями на портале Azure](./media/functions-create-scheduled-function/function-app-quickstart-choose-portal.png)
 

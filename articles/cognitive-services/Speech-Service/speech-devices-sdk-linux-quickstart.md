@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 07/10/2019
 ms.author: erhopf
-ms.openlocfilehash: 3ee39f4cf0c78850b0128fc5e497f2b2aee57bbc
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 5c881551648e8fc6078405e34fa3280723009b20
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68558970"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73490963"
 ---
 # <a name="quickstart-run-the-speech-devices-sdk-sample-app-on-linux"></a>Краткое руководство. Запуск примера приложения пакета SDK для речевых устройств в Linux
 
@@ -35,7 +35,7 @@ ms.locfileid: "68558970"
 * [Azure Kinect DK](https://azure.microsoft.com/services/kinect-dk/).
 * [Eclipse Java IDE](https://www.eclipse.org/downloads/)
 * Только [Java 8](https://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) или [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/index.html).
-* Ключ подписки Azure для службы "Речь". [Его можно получить бесплатно](get-started.md).
+* Ключ подписки Azure для службы "Речь". [Получить бесплатно](get-started.md).
 * Скачайте последнюю версию [пакета SDK для речевых устройств](https://aka.ms/sdsdk-download-JRE) для Java и извлеките ZIP-файл в рабочую папку.
    > [!NOTE]
    > В ZIP-файл JRE-Sample-Release входит пример приложения JRE. В рамках этого краткого руководства допускается следующий путь для извлечения приложения: /home/wcaltest/JRE-Sample-Release.
@@ -113,14 +113,14 @@ ms.locfileid: "68558970"
     private static final String CTSRegion="<Conversation Transcription Service Region>";// Region may be "centralus" or "eastasia"
     ```
 
-1. По умолчанию слово для пробуждения (ключевое слово) — "Компьютер". Можно также попробовать одно из других предоставленных слов для пробуждения — "Машина" или "Помощник". Файлы ресурсов для этих альтернативных слов пробуждения находятся в пакете SDK для речевых устройств в папке "keyword". Например, `/home/wcaltest/JRE-Sample-Release/keyword/Computer` содержит файлы, используемые для слова активации "Computer".
+1. Ключевое слово по умолчанию — "Компьютер". Можно также попробовать одно из других предоставленных ключевых слов — "Машина" или "Помощник". Файлы ресурсов для этих альтернативных ключевых слов находятся в пакете SDK для речевых устройств в папке keyword. Например, `/home/wcaltest/JRE-Sample-Release/keyword/Computer` содержит файлы, используемые для ключевого слова "Компьютер".
 
    > [!TIP]
-   > Кроме того, вы можете [создать пользовательское слово пробуждения](speech-devices-sdk-create-kws.md).
+   > Кроме того, вы можете [создать пользовательское ключевое слово](speech-devices-sdk-create-kws.md).
 
-    Для использования нового слова активации обновите следующие две строки в файле `FunctionsList.java` и скопируйте пакет слов активации в приложение. Например, для использования слова активации "Machine" из пакета слов активации `kws-machine.zip`:
+    Для использования нового ключевого слова обновите следующие две строки в файле `FunctionsList.java` и скопируйте пакет ключевых слов в приложение. Например, чтобы использовать ключевое слово "Машина" из файла `kws-machine.zip` пакета ключевых слов:
 
-   * Скопируйте пакет слов активации в папку проекта **target/classes**.
+   * Скопируйте пакет ключевых слов в папку проекта **target/classes**.
 
    * Укажите в файле `FunctionsList.java` ключевое слово и имя пакета:
 

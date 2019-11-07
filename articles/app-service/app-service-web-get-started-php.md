@@ -14,12 +14,12 @@ ms.topic: quickstart
 ms.date: 08/24/2018
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 90f83e3e6fa1910641b3e384460cf4aa14016c1a
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 386229bc272a520ec8093c95bc861704ce9ea7eb
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70067327"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73471444"
 ---
 # <a name="create-a-php-web-app-in-azure"></a>Создание веб-приложения PHP в Azure
 
@@ -182,17 +182,19 @@ git push azure master
 
 ## <a name="manage-your-new-azure-app"></a>Управление новым приложением Azure
 
-Перейдите на <a href="https://portal.azure.com" target="_blank">портал Azure</a> для управления созданным веб-приложением.
+1. Перейдите на <a href="https://portal.azure.com" target="_blank">портал Azure</a> для управления созданным веб-приложением. Найдите в поиске и выберите **Службы приложений**.
 
-В меню слева щелкните **Службы приложений**, а затем — имя своего приложения Azure.
+    ![Поиск Служб приложений, портал Azure, создание веб-приложения PHP](media/app-service-web-get-started-php/navigate-to-app-services-in-the-azure-portal.png)
 
-![Переход к приложению Azure на портале](./media/app-service-web-get-started-php/php-docs-hello-world-app-service-list.png)
+2. Выберите имя приложения Azure.
 
-Отобразится страница обзора вашего веб-приложения. Вы можете выполнять базовые задачи управления: обзор, завершение, запуск, перезагрузку и удаление.
+    ![Переход к приложению Azure на портале](./media/app-service-web-get-started-php/php-docs-hello-world-app-service-list.png)
 
-![Страница службы приложений на портале Azure](media/app-service-web-get-started-php/php-docs-hello-world-app-service-detail.png)
+    Отобразится страница **обзора** вашего веб-приложения. Вы можете выполнять базовые задачи управления: **обзор**, **остановку**, **перезагрузку** и **удаление**.
 
-В меню слева доступно несколько возможностей настройки приложения. 
+    ![Страница службы приложений на портале Azure](media/app-service-web-get-started-php/php-docs-hello-world-app-service-detail.png)
+
+    Меню веб-приложение предоставляет различные параметры для настройки приложения. 
 
 [!INCLUDE [cli-samples-clean-up](../../includes/cli-samples-clean-up.md)]
 

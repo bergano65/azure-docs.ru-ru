@@ -1,6 +1,6 @@
 ---
-title: Проектирование мультитенантной базы данных с помощью Базы данных Azure для PostgreSQL. Учебник по решению Hyperscale (Citus) (предварительная версия)
-description: В этом учебнике показано, как создавать и заполнять распределенные таблицы и выполнять к ним запрос с помощью решения Hyperscale (Citus) (предварительная версия) в Базе данных Azure для PostgreSQL.
+title: Учебник по проектированию мультитенантной базы данных с помощью Базы данных Azure для PostgreSQL с решением "Гипермасштабирование (Citus)"
+description: В этом учебнике показано, как создавать и заполнять распределенные таблицы и выполнять к ним запрос с помощью решения "Гипермасштабирование (Citus)" в Базе данных Azure для PostgreSQL.
 author: jonels-msft
 ms.author: jonels
 ms.service: postgresql
@@ -9,16 +9,16 @@ ms.custom: mvc
 ms.devlang: azurecli
 ms.topic: tutorial
 ms.date: 05/14/2019
-ms.openlocfilehash: ba20a048faecc9e37a2bfbe750de0fbeba88d538
-ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
+ms.openlocfilehash: 130c3e9f5abb24ffcc4e0c4ad6b96af5fca62090
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70163986"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73496544"
 ---
-# <a name="tutorial-design-a-multi-tenant-database-by-using-azure-database-for-postgresql--hyperscale-citus-preview"></a>Руководство по проектированию мультитенантной базы данных с помощью Базы данных Azure для PostgreSQL — Hyperscale (Citus) (предварительная версия)
+# <a name="tutorial-design-a-multi-tenant-database-by-using-azure-database-for-postgresql--hyperscale-citus"></a>Учебник по проектированию мультитенантной базы данных с помощью Базы данных Azure для PostgreSQL с решением "Гипермасштабирование (Citus)"
 
-В этом руководстве используется решение Hyperscale (Citus) (предварительная версия) в Базе данных Azure для PostgreSQL, чтобы продемонстрировать следующее:
+В этом учебнике используется решение "Гипермасштабирование (Citus)" в Базе данных Azure для PostgreSQL, чтобы продемонстрировать следующее:
 
 > [!div class="checklist"]
 > * создание группы серверов Hyperscale (Citus);
@@ -35,7 +35,7 @@ ms.locfileid: "70163986"
 
 ## <a name="use-psql-utility-to-create-a-schema"></a>Использование служебной программы psql для создания схемы
 
-Подключившись с помощью psql к Hyperscale (Citus) (предварительная версия) в Базе данных Azure для PostgreSQL, вы сможете выполнить некоторые несложные задачи. В этом руководстве описывается создание веб-приложения, которое позволяет рекламодателям отслеживать свои рекламные кампании.
+Подключившись с помощью psql к решению "Гипермасштабирование (Citus)" в Базе данных Azure для PostgreSQL, вы сможете выполнить некоторые несложные задачи. В этом руководстве описывается создание веб-приложения, которое позволяет рекламодателям отслеживать свои рекламные кампании.
 
 Это приложение могут использовать несколько организаций сразу, поэтому мы создадим таблицу для списка организаций и еще одну — для рекламных кампаний. В консоли psql выполните следующие команды:
 

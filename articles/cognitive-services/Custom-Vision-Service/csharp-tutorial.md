@@ -10,12 +10,12 @@ ms.subservice: custom-vision
 ms.topic: quickstart
 ms.date: 08/08/2019
 ms.author: anroth
-ms.openlocfilehash: 7faad2c432e15ed363bd1caf290e03dc75e9d298
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: ca21bbd77b269e3034fd69cc4685311e91295f36
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70141070"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "73519126"
 ---
 # <a name="quickstart-create-an-image-classification-project-with-the-custom-vision-net-sdk"></a>Краткое руководство. Создание проекта классификации изображений с помощью пакета SDK Пользовательской службы визуального распознавания для .NET
 
@@ -24,6 +24,7 @@ ms.locfileid: "70141070"
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Любой выпуск [Visual Studio 2015 или 2017](https://www.visualstudio.com/downloads/).
+- [!INCLUDE [create-resources](includes/create-resources.md)]
 
 ## <a name="get-the-custom-vision-sdk-and-sample-code"></a>Получение пакета SDK для Пользовательской службы визуального распознавания и примеров кода
 
@@ -40,13 +41,13 @@ ms.locfileid: "70141070"
 
 ## <a name="understand-the-code"></a>Изучение кода
 
-Откройте файл _Program.cs_ и проверьте код. Вставьте ключи подписки в соответствующие определения в методе **Main**.
+Откройте файл _Program.cs_ и проверьте код. [Создайте переменные среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для ключей обучения и прогнозирования с именами `CUSTOM_VISION_TRAINING_KEY` и `CUSTOM_VISION_PREDICTION_KEY` соответственно. Скрипт будет искать их.
 
-[!code-csharp[](~/cognitive-services-dotnet-sdk-samples/CustomVision/ImageClassification/Program.cs?range=21-30)]
+[!code-csharp[](~/cognitive-services-dotnet-sdk-samples/CustomVision/ImageClassification/Program.cs?name=snippet_keys)]
 
-Для параметра конечной точки нужно указать регион, в котором создана группа ресурсов Azure, содержащая ресурсы Пользовательской службы визуального распознавания. В этом примере мы предположим, что это регион центрально-южная часть США, и воспользуемся следующей командой:
+Кроме того, получите URL-адрес конечной точки на странице параметров веб-сайта службы "Пользовательское визуальное распознавание". Сохраните его в переменную среды с именем `CUSTOM_VISION_ENDPOINT`. Скрипт сохраняет ссылку на нее в корне класса.
 
-[!code-csharp[](~/cognitive-services-dotnet-sdk-samples/CustomVision/ImageClassification/Program.cs?range=14-14)]
+[!code-csharp[](~/cognitive-services-dotnet-sdk-samples/CustomVision/ImageClassification/Program.cs?name=snippet_endpoint)]
 
 Следующие строки кода реализуют основную функциональность проекта.
 
@@ -54,68 +55,35 @@ ms.locfileid: "70141070"
 
 Созданный проект будет отображаться на [веб-сайте Пользовательской службы визуального распознавания](https://customvision.ai/), который вы посещали ранее. Ознакомьтесь с методом [CreateProject](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.customvision.training.customvisiontrainingclientextensions.createproject?view=azure-dotnet#Microsoft_Azure_CognitiveServices_Vision_CustomVision_Training_CustomVisionTrainingClientExtensions_CreateProject_Microsoft_Azure_CognitiveServices_Vision_CustomVision_Training_ICustomVisionTrainingClient_System_String_System_String_System_Nullable_System_Guid__System_String_System_Collections_Generic_IList_System_String__), чтобы указать другие параметры при создании проекта (см. пояснения в руководстве по [созданию классификатора с помощью веб-портала](getting-started-build-a-classifier.md)).   
 
-[!code-csharp[](~/cognitive-services-dotnet-sdk-samples/CustomVision/ImageClassification/Program.cs?range=32-34)]
+[!code-csharp[](~/cognitive-services-dotnet-sdk-samples/CustomVision/ImageClassification/Program.cs?name=snippet_create)]
 
 ### <a name="create-tags-in-the-project"></a>Создание тегов в проекте
 
-[!code-csharp[](~/cognitive-services-dotnet-sdk-samples/CustomVision/ImageClassification/Program.cs?range=36-38)]
+[!code-csharp[](~/cognitive-services-dotnet-sdk-samples/CustomVision/ImageClassification/Program.cs?name=snippet_tags)]
 
 ### <a name="upload-and-tag-images"></a>Отправка и снабжение тегами изображений
 
 Изображения для этого проекта включены. Они указаны в методе**LoadImagesFromDisk** в файле _Program.cs_. В одном пакете можно передать до 64 изображений.
 
-[!code-csharp[](~/cognitive-services-dotnet-sdk-samples/CustomVision/ImageClassification/Program.cs?range=40-55)]
+[!code-csharp[](~/cognitive-services-dotnet-sdk-samples/CustomVision/ImageClassification/Program.cs?name=snippet_upload)]
 
 ### <a name="train-the-classifier-and-publish"></a>Обучение и публикация классификатора
 
 Этот код создает первую итерацию в проекте и публикует ее в конечной точке прогнозирования. Имя, присвоенное опубликованной итерации, можно использовать для отправки запросов на прогнозирование. Итерация недоступна в конечной точке прогнозирования, пока она не будет опубликована.
 
-```csharp
-var iteration = trainingApi.TrainProject(project.Id);
-// The returned iteration will be in progress, and can be queried periodically to see when it has completed
-while (iteration.Status == "Training")
-{
-        Thread.Sleep(1000);
-
-        // Re-query the iteration to get it's updated status
-        iteration = trainingApi.GetIteration(project.Id, iteration.Id);
-}
-
-// The iteration is now trained. Publish it to the prediction end point.
-var publishedModelName = "treeClassModel";
-var predictionResourceId = "<target prediction resource ID>";
-trainingApi.PublishIteration(project.Id, iteration.Id, publishedModelName, predictionResourceId);
-Console.WriteLine("Done!\n");
-```
+[!code-csharp[](~/cognitive-services-dotnet-sdk-samples/CustomVision/ImageClassification/Program.cs?name=snippet_train)]
 
 ### <a name="set-the-prediction-endpoint"></a>Настройка конечной точки прогнозирования
 
 Конечная точка прогнозирования является ссылкой, которую можно использовать для отправки изображения в текущую модель и получения прогноза классификации.
 
-```csharp
-// Create a prediction endpoint, passing in obtained prediction key
-CustomVisionPredictionClient endpoint = new CustomVisionPredictionClient()
-{
-        ApiKey = predictionKey,
-        Endpoint = SouthCentralUsEndpoint
-};
-```
+[!code-csharp[](~/cognitive-services-dotnet-sdk-samples/CustomVision/ImageClassification/Program.cs?name=snippet_prediction_endpoint)]
 
 ### <a name="submit-an-image-to-the-default-prediction-endpoint"></a>Отправка изображения в конечную точку прогнозирования по умолчанию
 
 В этом скрипте тестовый образ загружается в метод **LoadImagesFromDisk**, а выходные данные прогноза модели должны отображаться в консоли. Значение переменной publishedModelName должно соответствовать значению, указанному в поле "Published as" (Опубликовано как) на вкладке **производительности** портала Пользовательского визуального распознавания. 
 
-```csharp
-// Make a prediction against the new project
-Console.WriteLine("Making a prediction:");
-var result = endpoint.ClassifyImage(project.Id, publishedModelName, testImage);
-
-// Loop over each prediction and write out the results
-foreach (var c in result.Predictions)
-{
-        Console.WriteLine($"\t{c.TagName}: {c.Probability:P1}");
-}
-```
+[!code-csharp[](~/cognitive-services-dotnet-sdk-samples/CustomVision/ImageClassification/Program.cs?name=snippet_prediction)]
 
 ## <a name="run-the-application"></a>Выполнение приложения
 

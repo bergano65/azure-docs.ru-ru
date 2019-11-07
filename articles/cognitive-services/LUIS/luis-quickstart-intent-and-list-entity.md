@@ -9,18 +9,20 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: tutorial
-ms.date: 09/03/2019
+ms.date: 10/14/2019
 ms.author: diberry
-ms.openlocfilehash: 25882f2aaa5d32dfb594d5f8fdb9cdc46f2ad958
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.openlocfilehash: 9531e86e63fa8d944aa216fddd0c8215b73038a9
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70307614"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73492702"
 ---
 # <a name="tutorial-get-exact-text-matched-data-from-an-utterance"></a>Руководство по Получение точных данных, сравниваемых с текстом, на основе речевого фрагмента
 
 В этом руководстве вы узнаете, как получить данные сущности, соответствующие предварительно определенному списку элементов. 
+
+[!INCLUDE [Waiting for LUIS portal refresh](./includes/wait-v3-upgrade.md)]
 
 **В этом руководстве рассмотрено, как выполнять следующие задачи.**
 
@@ -78,7 +80,7 @@ ms.locfileid: "70307614"
     |Стив Стандиш — в отдел 1234.|
     |Таннер Томпсон — в отдел 3456.|
 
-    [![Снимок экрана намерения с примерами речевых фрагментов](media/luis-quickstart-intent-and-list-entity/intent-transfer-employee-to-department.png "Screenshot of intent with example utterances")](media/luis-quickstart-intent-and-list-entity/intent-transfer-employee-to-department.png#lightbox)
+    [![Снимок экрана намерения с примерами фрагментов речи](media/luis-quickstart-intent-and-list-entity/intent-transfer-employee-to-department.png "Снимок экрана намерения с примерами фрагментов речи")](media/luis-quickstart-intent-and-list-entity/intent-transfer-employee-to-department.png#lightbox)
 
     [!INCLUDE [Do not use too few utterances](../../../includes/cognitive-services-luis-too-few-example-utterances.md)]  
 
@@ -104,7 +106,7 @@ ms.locfileid: "70307614"
 
 1. Во всплывающем диалоговом окне сущности введите имя сущности `Department` и **Список** для типа сущности. Нажмите кнопку **Готово**.  
 
-    [![Снимок экрана со всплывающим диалоговым окном для создания сущности](media/luis-quickstart-intent-and-list-entity/create-new-list-entity-named-department.png "Screenshot of creating new entity pop-up dialog")](media/luis-quickstart-intent-and-list-entity/create-new-list-entity-named-department.png#lightbox)
+    [![Снимок экрана всплывающего диалогового окна создания сущности](media/luis-quickstart-intent-and-list-entity/create-new-list-entity-named-department.png "Снимок экрана всплывающего диалогового окна создания сущности")](media/luis-quickstart-intent-and-list-entity/create-new-list-entity-named-department.png#lightbox)
 
 1. На странице сущности Department введите `Accounting` в качестве нового значения.
 

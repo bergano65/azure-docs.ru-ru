@@ -8,12 +8,12 @@ ms.date: 06/13/2019
 ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: b9f9fe78db2d8bcf50a076fdfc3eba7b1f347201
-ms.sourcegitcommit: c4700ac4ddbb0ecc2f10a6119a4631b13c6f946a
+ms.openlocfilehash: 6d8f67cf94e143cd67a525fa2cc675650fb59e65
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2019
-ms.locfileid: "72965391"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73494022"
 ---
 # <a name="tutorial-configure-an-iot-edge-device"></a>Руководство по Настройка устройства IoT Edge
 
@@ -73,11 +73,11 @@ ms.locfileid: "72965391"
 
 ## <a name="upload-certificates-to-azure-key-vault"></a>Отправка сертификатов в Azure Key Vault
 
-Чтобы безопасно хранить сертификаты, а также сделать их доступными с разных устройств, мы отправим эти сертификаты в Azure Key Vault. Как видно в приведенном выше списке, у нас есть два типа файлов сертификатов: PFX и PEM. В нашем примере мы передадим в хранилище Key Vault файлы PFX как сертификаты хранилища ключей. Файлы PEM в формате простого текста мы будем использовать как секреты хранилища ключей. Для отправки мы выберем хранилище Key Vault, связанное с рабочей областью Службы машинного обучения Azure, которую мы создали с помощью [Записных книжек Azure](tutorial-machine-learning-edge-04-train-model.md#run-azure-notebooks).
+Чтобы безопасно хранить сертификаты, а также сделать их доступными с разных устройств, мы отправим эти сертификаты в Azure Key Vault. Как видно в приведенном выше списке, у нас есть два типа файлов сертификатов: PFX и PEM. В нашем примере мы передадим в хранилище Key Vault файлы PFX как сертификаты хранилища ключей. Файлы PEM в формате простого текста мы будем использовать как секреты хранилища ключей. Мы выберем хранилище Key Vault, связанное с рабочей областью Машинного обучения Azure, которую мы создали с помощью [Записных книжек Azure](tutorial-machine-learning-edge-04-train-model.md#run-azure-notebooks).
 
-1. Войдите на [портал Azure](https://portal.azure.com) и перейдите к рабочей области Службы машинного обучения.
+1. Войдите на [портал Azure](https://portal.azure.com) и перейдите к рабочей области Машинного обучения Azure.
 
-2. На странице обзора для рабочей области Службы машинного обучения Azure введите имя хранилища **Key Vault**.
+2. На странице обзора для рабочей области Машинного обучения Azure найдите имя хранилища **Key Vault**.
 
     ![Копирование имени Key Vault](media/tutorial-machine-learning-edge-05-configure-edge-device/find-key-vault-name.png)
 

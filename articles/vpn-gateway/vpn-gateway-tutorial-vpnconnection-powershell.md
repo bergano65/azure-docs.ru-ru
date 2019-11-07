@@ -5,15 +5,15 @@ services: vpn-gateway
 author: yushwang
 ms.service: vpn-gateway
 ms.topic: tutorial
-ms.date: 02/11/2019
+ms.date: 10/17/2019
 ms.author: yushwang
 ms.custom: mvc
-ms.openlocfilehash: b59d58eb2c387e5ba1f71748751110bf932837b9
-ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
+ms.openlocfilehash: 1f2cbe447508ca6939fcdb997a9536ea91a7953f
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66727125"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73495640"
 ---
 # <a name="tutorial-create-and-manage-s2s-vpn-connections-using-powershell"></a>Руководство по Создание и администрирование VPN-подключений S2S с помощью PowerShell
 
@@ -99,10 +99,10 @@ $lng1 = Get-AzLocalNetworkGateway   -Name $LNG1 -ResourceGroupName $RG1
 
 New-AzVirtualNetworkGatewayConnection -Name $Connection1 -ResourceGroupName $RG1 `
   -Location $Location1 -VirtualNetworkGateway1 $vng1 -LocalNetworkGateway2 $lng1 `
-  -ConnectionType IPsec -SharedKey "Azure@!b2C3"
+  -ConnectionType IPsec -SharedKey "Azure@!b2C3" -ConnectionProtocol IKEv2
 ```
 
-Добавьте дополнительное свойство **-EnableBGP $True**, чтобы включить использование протокола BGP. Он отключен по умолчанию.
+Добавьте дополнительное свойство **-EnableBGP $True**, чтобы включить использование протокола BGP. Он отключен по умолчанию. Параметр -ConnectionProtocol необязателен при использовании IKEv2 по умолчанию. Вы можете создать подключение с использованием протоколов IKEv1, указав **-ConnectionProtocol IKEv1**.
 
 ## <a name="update-the-vpn-connection-pre-shared-key-bgp-and-ipsecike-policy"></a>Обновление свойств VPN-подключения: общий ключ, BGP и политики IPsec/IKE
 

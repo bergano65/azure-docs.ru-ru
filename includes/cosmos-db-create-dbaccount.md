@@ -8,18 +8,18 @@ ms.topic: include
 ms.date: 04/08/2019
 ms.author: rimman
 ms.custom: include file
-ms.openlocfilehash: d21fd6c4848a4806039d5cbed5c7ed8ab4112405
-ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
+ms.openlocfilehash: 93652273dda16e93bdcf9123d7d4a9b3fc956fe9
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71307603"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73466187"
 ---
-1. Войдите на [портале Azure](https://portal.azure.com/).
-1. Последовательно выберите **Создать ресурс** > **Базы данных** > **Azure Cosmos DB**.
+1. Создайте учетную запись для базы данных Azure Cosmos DB, [перейдя на портал Azure](https://portal.azure.com/). Найдите в поиске и выберите **Azure Cosmos DB**
 
    ![Область "Базы данных" на портале Azure](./media/cosmos-db-create-dbaccount/create-nosql-db-databases-json-tutorial-1.png)
 
+1. Выберите **Добавить**.
 1. На странице **создания учетной записи Azure Cosmos DB** введите основные параметры для новой учетной записи Azure Cosmos. 
 
     |Параметр|Значение|ОПИСАНИЕ |

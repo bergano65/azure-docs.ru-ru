@@ -1,5 +1,5 @@
 ---
-title: Руководство по Обработка данных из Центров событий Azure с помощью Apache Spark в HDInsight
+title: Руководство по данным Центров событий Azure и Apache Spark — HDInsight
 description: Руководство. Подключение Apache Spark в Azure HDInsight к Центрам событий Azure и потоковая передача данных
 author: hrasheed-msft
 ms.author: hrasheed
@@ -7,13 +7,13 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive,mvc
 ms.topic: tutorial
-ms.date: 05/24/2019
-ms.openlocfilehash: be21b809272a132ee6e63582036c36ad5dcdf4ad
-ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
+ms.date: 10/17/2019
+ms.openlocfilehash: 0b24d1b0215564fb9f6063d4a2d091bb7a9a1c3e
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "71266199"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73494638"
 ---
 # <a name="tutorial-process-tweets-using-azure-event-hubs-and-apache-spark-in-hdinsight"></a>Руководство по Обработка твитов с помощью Центров событий Azure и Apache Spark в HDInsight
 
@@ -32,7 +32,7 @@ ms.locfileid: "71266199"
 
 * Опыт работы с записными книжками Jupyter с Spark в HDInsight. Дополнительные сведения см. в статье [Руководство. Загрузка данных и выполнение запросов в кластере Apache Spark в Azure HDInsight](./apache-spark-load-data-run-query.md).
 
-* [Учетная запись Twitter](https://twitter.com/i/flow/signup).
+* [Учетная запись Twitter](https://twitter.com/i/flow/signup) и знакомство с Twitter.
 
 ## <a name="create-a-twitter-application"></a>Создание приложения Twitter
 
@@ -40,45 +40,45 @@ ms.locfileid: "71266199"
 
 1. Перейдите на [страницу управления приложениями Twitter](https://apps.twitter.com/).
 
-1. Выберите **Create New App** (Создать приложение).
+1. Выберите **Create an app** (Создать приложение).
 
-1. Укажите следующие значения.
+1. Укажите следующие обязательные значения:
 
     |Свойство |Значение |
     |---|---|
-    |ИМЯ|Укажите имя приложения. В этом руководстве используется имя **HDISparkStreamApp0423**. Имя должно быть уникальным.|
-    |ОПИСАНИЕ|Дайте краткое описание приложения. В этом руководстве используется следующее описание: **Простое приложение потоковой передачи HDInsight Spark**.|
-    |Веб-сайт|Укажите веб-сайт приложения. Необязательно указывать действительный веб-сайт.  В этом руководстве используется значение `http://www.contoso.com`.|
-    |URL-адрес обратного вызова|Можно оставить пустым.|
+    |Имя приложения.|Укажите имя приложения. В этом руководстве используется имя **HDISparkStreamApp0423**. Имя должно быть уникальным.|
+    |Описание приложения|Дайте краткое описание приложения. В этом руководстве используется следующее описание: **Простое приложение потоковой передачи HDInsight Spark**.|
+    |Website URL (URL-адрес веб-сайта)|Укажите веб-сайт приложения. Необязательно указывать действительный веб-сайт.  В этом руководстве используется значение `http://www.contoso.com`.|
+    |Tell us how this app will be used (Расскажите, как будет использоваться это приложение)|Только в целях тестирования. Создание приложения потоковой передачи Apache Spark для отправки твитов в концентратор событий Azure.|
 
-1. Выберите **Yes, I have read and agree to the Twitter Developer Agreement** (Я подтверждаю ознакомление и согласие с соглашением с разработчиком Twitter), а затем выберите **Create your Twitter application** (Создать приложение Twitter).
+1. Нажмите кнопку **Создать**.
 
-1. Откройте вкладку **Ключи и токены доступа** .
+1. Во всплывающем окне **Review our Developer Terms** (Просмотреть условия для разработчика) выберите **Create** (Создать).
 
-1. В конце страницы выберите **Create my access token** (Создать маркер доступа).
+1. Откройте вкладку **Keys and tokens** (Ключи и токены).
 
-1. Запишите следующие значения со страницы.  Они понадобятся вам позже при работе с этим руководством.
+1. В разделе **Access token & access token secret** (Маркер доступа и секрет маркера доступа) выберите **Create** (Создать).
 
-    - **Ключ пользователя (ключ API)** .    
-    - **Секрет пользователя (секрет API)** .  
+1. Запишите следующие четыре значения, которые теперь отображаются на странице, для последующего использования:
+
+    - **ключ объекта-получателя (ключ API)** ;
+    - **секрет объекта-получателя (ключ секрета API)** ;
     - **Маркер доступа**
-    - **Секрет маркера доступа**.   
+    - **Секрет маркера доступа**
 
 ## <a name="create-an-azure-event-hubs-namespace"></a>Создание пространства имен Центров событий Azure
 
 Используйте этот концентратор событий для хранения твитов.
 
-1. Войдите на [портале Azure](https://portal.azure.com). 
+1. Войдите на [портале Azure](https://portal.azure.com).
 
-2. В меню слева выберите **Все службы**.  
-
-3. В разделе **ИНТЕРНЕТ ВЕЩЕЙ** выберите **Центры событий**. 
+1. В меню слева перейдите к пунктам **Все службы** > **Интернет вещей** > **Концентраторы событий**.  
 
     ![Создание концентратора событий для примера потоковой передачи Spark](./media/apache-spark-eventhub-streaming/hdinsight-create-event-hub-for-spark-streaming.png "Создание концентратора событий для примера потоковой передачи Spark")
 
-4. Щелкните **+ Добавить**.
+1. Щелкните **+ Добавить**.
 
-5. Для пространства имен нового Центра событий введите следующие значения.
+1. Для пространства имен нового Центра событий введите следующие значения.
 
     |Свойство |Значение |
     |---|---|
@@ -92,26 +92,26 @@ ms.locfileid: "71266199"
 
     ![Указание имени концентратора событий для примера потоковой передачи Spark](./media/apache-spark-eventhub-streaming/hdinsight-provide-event-hub-name-for-spark-streaming.png "Указание имени концентратора событий для примера потоковой передачи Spark")
 
-6. Выберите **Создать**, чтобы создать пространство имен.  Развертывание займет несколько минут.
+1. Выберите **Создать**, чтобы создать пространство имен.  Развертывание займет несколько минут.
 
 ## <a name="create-an-azure-event-hub"></a>Создание Центра событий Azure
+
 Создайте Центр событий после развертывания пространства имен Центров событий.  На портале
 
-1. В меню слева выберите **Все службы**.  
+1. В меню слева перейдите к пунктам **Все службы** > **Интернет вещей** > **Концентраторы событий**.
 
-1. В разделе **ИНТЕРНЕТ ВЕЩЕЙ** выберите **Центры событий**.  
-
-1. Выберите пространство имен Центров событий из списка.  
+1. Выберите пространство имен Центров событий из списка.
 
 1. На странице **Пространство имен Центров событий** выберите **+ Концентратор событий**.  
+
 1. Введите следующие значения на странице **Создать Центр событий**.
 
-    - **Имя.** Задайте имя для этого Центра событий. 
- 
+    - **Имя.** Задайте имя для этого Центра событий.
+
     - **Количество разделов**: 10.  
 
-    - **Хранение сообщений**: 1.   
-   
+    - **Хранение сообщений**: 1.
+
       ![Указание сведений о концентраторе событий для примера потоковой передачи Spark](./media/apache-spark-eventhub-streaming/hdinsight-provide-event-hub-details-for-spark-streaming-example.png "Указание сведений о концентраторе событий для примера потоковой передачи Spark")
 
 1. Нажмите кнопку **Создать**.  Развертывание завершится через несколько секунд, и вы вернетесь на страницу пространства имен Центров событий.
@@ -119,17 +119,16 @@ ms.locfileid: "71266199"
 1. В разделе **Параметры** выберите **Политики общего доступа**.
 
 1. Выберите **RootManageSharedAccessKey**.
-    
+
      ![Определение политик концентратора событий для примера потоковой передачи Spark](./media/apache-spark-eventhub-streaming/hdinsight-set-event-hub-policies-for-spark-streaming-example.png "Определение политик концентратора событий для примера потоковой передачи Spark")
 
-1. Сохраните значения **Первичный ключ** и **Строка подключения — первичный ключ**. Они понадобятся позже для работы с этим руководством.
+1. Сохраните значения **Первичный ключ** и **Строка подключения — первичный ключ**. Они понадобятся позже для работы с этим учебником.
 
      ![Просмотр ключей политик концентратора событий для примера потоковой передачи Spark](./media/apache-spark-eventhub-streaming/hdinsight-view-event-hub-policy-keys.png "Просмотр ключей политик концентратора событий для примера потоковой передачи Spark")
 
-
 ## <a name="send-tweets-to-the-event-hub"></a>Отправка твитов в концентратор событий
 
-Создайте записную книжку Jupyter с именем **SendTweetsToEventHub**. 
+1. Перейдите на страницу `https://CLUSTERNAME.azurehdinsight.net/jupyter`, где `CLUSTERNAME` — имя кластера Apache Spark. Создайте записную книжку Jupyter с именем **SendTweetsToEventHub**.
 
 1. Добавьте внешние библиотеки Apache Maven, выполнив следующий код:
 
@@ -138,53 +137,53 @@ ms.locfileid: "71266199"
     {"conf":{"spark.jars.packages":"com.microsoft.azure:azure-eventhubs-spark_2.11:2.3.13,org.twitter4j:twitter4j-core:4.0.6"}}
     ```
 
-2. Измените приведенный ниже код, заменив `<Event hub name>`, `<Event hub namespace connection string>`, `<CONSUMER KEY>`, `<CONSUMER SECRET>`, `<ACCESS TOKEN>` и `<TOKEN SECRET>` соответствующими значениями. Отправьте твиты в центр событий, выполнив исправленный код:
+1. Измените приведенный ниже код, заменив `<Event hub name>`, `<Event hub namespace connection string>`, `<CONSUMER KEY>`, `<CONSUMER SECRET>`, `<ACCESS TOKEN>` и `<TOKEN SECRET>` соответствующими значениями. Отправьте твиты в центр событий, выполнив исправленный код:
 
     ```scala
     import java.util._
     import scala.collection.JavaConverters._
     import java.util.concurrent._
-    
+
     import org.apache.spark._
     import org.apache.spark.streaming._
     import org.apache.spark.eventhubs.ConnectionStringBuilder
 
     // Event hub configurations
-    // Replace values below with yours        
+    // Replace values below with yours
     val eventHubName = "<Event hub name>"
     val eventHubNSConnStr = "<Event hub namespace connection string>"
-    val connStr = ConnectionStringBuilder(eventHubNSConnStr).setEventHubName(eventHubName).build 
-    
+    val connStr = ConnectionStringBuilder(eventHubNSConnStr).setEventHubName(eventHubName).build
+
     import com.microsoft.azure.eventhubs._
     val pool = Executors.newFixedThreadPool(1)
     val eventHubClient = EventHubClient.create(connStr.toString(), pool)
-    
+
     def sendEvent(message: String) = {
           val messageData = EventData.create(message.getBytes("UTF-8"))
           eventHubClient.get().send(messageData)
           println("Sent event: " + message + "\n")
     }
-    
+
     import twitter4j._
     import twitter4j.TwitterFactory
     import twitter4j.Twitter
     import twitter4j.conf.ConfigurationBuilder
 
     // Twitter application configurations
-    // Replace values below with yours   
+    // Replace values below with yours
     val twitterConsumerKey = "<CONSUMER KEY>"
     val twitterConsumerSecret = "<CONSUMER SECRET>"
     val twitterOauthAccessToken = "<ACCESS TOKEN>"
     val twitterOauthTokenSecret = "<TOKEN SECRET>"
-    
+
     val cb = new ConfigurationBuilder()
     cb.setDebugEnabled(true).setOAuthConsumerKey(twitterConsumerKey).setOAuthConsumerSecret(twitterConsumerSecret).setOAuthAccessToken(twitterOauthAccessToken).setOAuthAccessTokenSecret(twitterOauthTokenSecret)
-    
+
     val twitterFactory = new TwitterFactory(cb.build())
     val twitter = twitterFactory.getInstance()
 
     // Getting tweets with keyword "Azure" and sending them to the Event Hub in realtime!
-    
+
     val query = new Query(" #Azure ")
     query.setCount(100)
     query.lang("en")
@@ -202,16 +201,16 @@ ms.locfileid: "71266199"
       }
       query.setMaxId(lowestStatusId - 1)
     }
-    
+
     // Closing connection to the Event Hub
     eventHubClient.get().close()
     ```
 
-3. Откройте концентратор событий на портале Azure.  На странице **обзора** вы увидите несколько диаграмм, отображающих сообщения, отправленные в концентратор событий.
+1. Откройте концентратор событий на портале Azure.  На странице **обзора** вы увидите несколько диаграмм, отображающих сообщения, отправленные в концентратор событий.
 
 ## <a name="read-tweets-from-the-event-hub"></a>Чтение твитов из концентратора событий
 
-Создайте другую записную книжку Jupyter с именем **ReadTweetsFromEventHub**. 
+Создайте другую записную книжку Jupyter с именем **ReadTweetsFromEventHub**.
 
 1. Добавьте внешнюю библиотеку Apache Maven, выполнив следующий код:
 
@@ -225,24 +224,24 @@ ms.locfileid: "71266199"
     ```scala
     import org.apache.spark.eventhubs._
     // Event hub configurations
-    // Replace values below with yours        
+    // Replace values below with yours
     val eventHubName = "<Event hub name>"
     val eventHubNSConnStr = "<Event hub namespace connection string>"
     val connStr = ConnectionStringBuilder(eventHubNSConnStr).setEventHubName(eventHubName).build
-    
+
     val customEventhubParameters = EventHubsConf(connStr).setMaxEventsPerTrigger(5)
     val incomingStream = spark.readStream.format("eventhubs").options(customEventhubParameters.toMap).load()
-    //incomingStream.printSchema    
-    
+    //incomingStream.printSchema
+
     import org.apache.spark.sql.types._
     import org.apache.spark.sql.functions._
-    
+
     // Event Hub message format is JSON and contains "body" field
     // Body is binary, so you cast it to string to see the actual content of the message
     val messages = incomingStream.withColumn("Offset", $"offset".cast(LongType)).withColumn("Time (readable)", $"enqueuedTime".cast(TimestampType)).withColumn("Timestamp", $"enqueuedTime".cast(LongType)).withColumn("Body", $"body".cast(StringType)).select("Offset", "Time (readable)", "Timestamp", "Body")
-    
+
     messages.printSchema
-    
+
     messages.writeStream.outputMode("append").format("console").option("truncate", false).start().awaitTermination()
     ```
 

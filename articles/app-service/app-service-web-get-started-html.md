@@ -14,12 +14,12 @@ ms.topic: quickstart
 ms.date: 08/23/2019
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: ac0fe7a77496a0dae8606e4599bcb262a191196c
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 12c034e6521a1afd25e2390502faec39461bf5b5
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70067308"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73471483"
 ---
 # <a name="create-a-static-html-web-app-in-azure"></a>Создание статического веб-приложения HTML в Azure
 
@@ -67,7 +67,7 @@ az webapp up --location westeurope --name <app_name>
 
 - создание приложения с указанным именем.
 
-- [Разверните ZIP-файлы](https://docs.microsoft.com/azure/app-service/deploy-zip) для веб-приложения из текущего рабочего каталога.
+- [развертывание ZIP-файлов](https://docs.microsoft.com/azure/app-service/deploy-zip) для веб-приложения из текущего рабочего каталога.
 
 Выполнение этой команды может занять несколько минут. При выполнении эта команда выводит приблизительно следующие сведения:
 
@@ -117,9 +117,11 @@ az webapp up --location westeurope --name <app_name>
 
 ## <a name="manage-your-new-azure-app"></a>Управление новым приложением Azure
 
-Перейдите на <a href="https://portal.azure.com" target="_blank">портал Azure</a> для управления созданным веб-приложением.
+Чтобы управлять созданным веб-приложением, на [портале Azure](https://portal.azure.com) найдите в поиске и выберите **Службы приложений**. 
 
-В меню слева щелкните **Службы приложений**, а затем — имя своего приложения Azure.
+![Выбор службы приложений на портале Azure](./media/app-service-web-get-started-html/portal0.png)
+
+На странице **Службы приложений** выберите имя приложения Azure.
 
 ![Переход к приложению Azure на портале](./media/app-service-web-get-started-html/portal1.png)
 

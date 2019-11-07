@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: tutorial
 ms.date: 08/30/2019
 ms.author: helohr
-ms.openlocfilehash: f5b40e59a4ed2393e3b9912f8e4caa06ee267428
-ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
+ms.openlocfilehash: 76cb2e0378cc7a005232304174c1de887adfe387
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72757522"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73482231"
 ---
 # <a name="tutorial-create-a-host-pool-by-using-the-azure-marketplace"></a>Руководство по Создание пула узлов с использованием Azure Marketplace
 
@@ -40,7 +40,7 @@ Add-RdsAccount -DeploymentUrl "https://rdbroker.wvd.microsoft.com"
 
 Запустите предложение Azure Marketplace для подготовки пула узлов:
 
-1. Щелкните **+** или выберите **+Создать ресурс**.
+1. На **домашней странице** или в меню портала Azure выберите команду **Создать ресурс**.
 2. В окне поиска Marketplace введите **Виртуальный рабочий стол Windows**.
 3. Выберите **Windows Virtual Desktop — Provision a host pool** (Виртуальный рабочий стол Windows — подготовка пула узлов) и щелкните **Создать**.
 

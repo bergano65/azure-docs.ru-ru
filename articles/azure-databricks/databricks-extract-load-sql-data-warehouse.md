@@ -8,12 +8,12 @@ ms.service: azure-databricks
 ms.custom: mvc
 ms.topic: tutorial
 ms.date: 06/20/2019
-ms.openlocfilehash: c2d7d7d97dce974ad8d72cc98f9ec6d3d554fb6d
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: 39f71e109b0d9d7b3b0375c0ec2c4d1e4a657994
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72783986"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73469472"
 ---
 # <a name="tutorial-extract-transform-and-load-data-by-using-azure-databricks"></a>Руководство по Извлечение, преобразование и загрузка данных с помощью Azure Databricks
 
@@ -89,9 +89,15 @@ ms.locfileid: "72783986"
 
 В этом разделе вы создадите службу Azure Databricks с помощью портала Azure.
 
-1. На портале Azure выберите **Создать ресурс** > **Analytics** > **Azure Databricks**.
+1. Выберите команду **Создать ресурс** в меню на портале Azure.
 
-    ![Databricks на портале Azure](./media/databricks-extract-load-sql-data-warehouse/azure-databricks-on-portal.png "Databricks на портале Azure")
+    ![Создание ресурса на портале Azure](./media/databricks-extract-load-sql-data-warehouse/azure-databricks-on-portal.png)
+
+    Затем выберите **Аналитика** > **Azure Databricks**.
+
+    ![Создание Azure Databricks на портале Azure](./media/databricks-extract-load-sql-data-warehouse/azure-databricks-resource-create.png)
+
+
 
 2. В разделе **Служба Azure Databricks** укажите следующие значения, чтобы создать службу Databricks.
 

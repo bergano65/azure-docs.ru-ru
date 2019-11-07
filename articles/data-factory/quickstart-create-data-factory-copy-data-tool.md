@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: quickstart
 ms.date: 06/20/2018
 ms.author: yexu
-ms.openlocfilehash: b330c6010ddb5401dbf9753c2ea91bfeedf35c3b
-ms.sourcegitcommit: 80dff35a6ded18fa15bba633bf5b768aa2284fa8
+ms.openlocfilehash: 22ff4adfa3cbb8ead500e817620b9236fe32ed0e
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70020062"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73490875"
 ---
 # <a name="quickstart-use-the-copy-data-tool-to-copy-data"></a>Краткое руководство. Копирование данных с помощью средства копирования данных
 
@@ -35,9 +35,14 @@ ms.locfileid: "70020062"
 
 1. Запустите веб-браузер **Microsoft Edge** или **Google Chrome**. Сейчас только эти браузеры поддерживают пользовательский интерфейс фабрики данных.
 1. Перейдите на [портал Azure](https://portal.azure.com). 
-1. В меню слева выберите **Создать ресурс**, **Аналитика**, **Фабрика данных**. 
-   
-   ![Выбор фабрики данных в области "Создать"](./media/doc-common-process/new-azure-data-factory-menu.png)
+1. Выберите команду **Создать ресурс** в меню на портале Azure.
+
+    ![Пункт "Создать ресурс" в меню портала Azure](./media/quickstart-create-data-factory-copy-data-tool/create-data-factory-resource.png)
+
+1. Выберите **Аналитика**, а затем **Фабрика данных**.
+
+   ![Выбор фабрики данных в области "Создать"](./media/quickstart-create-data-factory-copy-data-tool/new-azure-data-factory-menu.png)
+
 1. На странице **Новая фабрика данных** введите **ADFTutorialDataFactory** в поле **Имя**. 
  
    Имя фабрики данных Azure должно быть *глобально уникальным*. При возникновении указанной ниже ошибки измените имя фабрики данных (например, на **&lt;ваше_имя_&gt;ADFTutorialDataFactory**) и попробуйте создать фабрику данных снова. Правила именования для артефактов службы "Фабрика данных" см. в [этой](naming-rules.md) статье.
