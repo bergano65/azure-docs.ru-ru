@@ -1,5 +1,5 @@
 ---
-title: Заметки о выпуске шлюза управления данными | Документация Майкрософт
+title: Заметки о выпуске шлюза управления данными
 description: Заметки о выпуске шлюза управления данными
 services: data-factory
 author: nabhishek
@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: abnarain
 robots: noindex
-ms.openlocfilehash: 865bfdae199bca7ebee888be527db239d34511d1
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: bb89ed08b05f9a8f271ceee400bc609881e7048d
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60486470"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73682584"
 ---
 # <a name="release-notes-for-data-management-gateway"></a>Заметки о выпуске шлюза управления данными
 > [!NOTE]
@@ -62,12 +62,12 @@ ms.locfileid: "60486470"
 
 ## <a name="2762401"></a>2.7.6240.1
 ### <a name="enhancements-"></a>Улучшения
-- Исправлено. Неправильное считывание десятичного значения NULL из источника Oracle.
+- Исправлено. Неправильное считывание десятичного значения Null из источника Oracle.
 
 ## <a name="2661922"></a>2.6.6192.2
 ### <a name="whats-new"></a>Новые возможности
 - Клиенты могут оставлять отзывы о регистрации шлюза.
-- Поддерживается сжатие в формате ZIP (Deflate)
+- Поддерживается сжатие в формате ZIP (Deflate).
 
 ### <a name="enhancements-"></a>Улучшения
 - Повышение производительности приемника Oracle и источника HDFS.
