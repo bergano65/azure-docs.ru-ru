@@ -1,5 +1,5 @@
 ---
-title: Уровни служб "Общее назначение" и "Критически важный для бизнеса" в Базе данных Azure SQL | Документация Майкрософт
+title: 'База данных SQL Azure — общее назначение и критически важный для бизнеса '
 description: В этой статье обсуждаются уровни обслуживания общего назначения и критически важных для бизнеса моделей в модели приобретения на основе виртуальное ядро.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: sashan, moslake, carlrab
 ms.date: 10/01/2019
-ms.openlocfilehash: a971b428da72028bcabd874e848d53bc2392a0f6
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: c6af083c4b3d16fa695da0ccc968c90b5480b6c4
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73496114"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73687275"
 ---
 # <a name="azure-sql-database-service-tiers"></a>Уровни служб в Базе данных SQL Azure
 

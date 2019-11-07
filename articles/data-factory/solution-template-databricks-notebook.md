@@ -1,5 +1,5 @@
 ---
-title: Преобразование данных с помощью Databricks в Фабрике данных Azure | Документация Майкрософт
+title: Преобразование данных с помощью Databricks в Фабрике данных Azure
 description: Сведения об использовании шаблона решения для преобразования данных с помощью записной книжки Databricks в Фабрике данных Azure.
 services: data-factory
 documentationcenter: ''
@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 12/10/2018
 ms.author: abnarain
 ms.reviewer: douglasl
-ms.openlocfilehash: 562ce675acc43002ce468d60f8a8c412410be86c
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 471c1d9610fa346b0eac44c73fe02f4510bd2889
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60395401"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73684250"
 ---
 # <a name="transform-data-by-using-databricks-in-azure-data-factory"></a>Преобразование данных с помощью Databricks в Фабрике данных Azure
 
@@ -33,13 +33,13 @@ ms.locfileid: "60395401"
 
 ![1](media/solution-template-Databricks-notebook/Databricks-tutorial-image01.png)
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 1.  Создайте **учетную запись хранения больших двоичных объектов** и контейнер с именем `sinkdata` для использования в качестве **приемника**. Сохраните **имя учетной записи хранения**, **имя контейнера** и **ключ доступа**, так как они понадобятся позже в шаблоне.
 
 2.  Убедитесь в наличии **рабочей области Azure Databricks** или создайте новую.
 
-1.  **Импортируйте записную книжку для извлечения, преобразования и загрузки**. Импортируйте приведенную ниже записную книжку преобразования в рабочую область Databricks. (Она не обязательно должна находиться в том же расположении, которое показано ниже, но следует запомнить выбранный путь для использования в будущем.) Импортируйте записную книжку, расположенную по следующему URL-адресу, введя в соответствующем поле этот URL-адрес: `https://adflabstaging1.blob.core.windows.net/share/Transformations.html`. Выберите **Импортировать**.
+1.  **Импортируйте записную книжку для извлечения, преобразования и загрузки**. Импортируйте приведенную ниже записную книжку преобразования в рабочую область Databricks. (Он не должен находиться в том же расположении, что и ниже, но помните путь, выбранный для дальнейшего использования.) Импортируйте записную книжку со следующего URL-адреса, введя его в поле URL-адрес: `https://adflabstaging1.blob.core.windows.net/share/Transformations.html`. Выберите **Импортировать**.
 
     ![2](media/solution-template-Databricks-notebook/Databricks-tutorial-image02.png)
 
@@ -125,9 +125,9 @@ ms.locfileid: "60395401"
 
 1.  Создайте действие копирования **file-to-blob** (файл в большой двоичный объект) для копирования набора данных из источника в приемник. В этом случае данные — это двоичный файл. Настройки источника и приемника в действии копирования см. на снимках экрана ниже.
 
-    ![13](media/solution-template-Databricks-notebook/Databricks-tutorial-image13.png)
+    ![13.](media/solution-template-Databricks-notebook/Databricks-tutorial-image13.png)
 
-    ![14](media/solution-template-Databricks-notebook/Databricks-tutorial-image14.png)
+    ![14.](media/solution-template-Databricks-notebook/Databricks-tutorial-image14.png)
 
 1.  Определите **параметры конвейера**.
 

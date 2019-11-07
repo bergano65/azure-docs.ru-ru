@@ -1,6 +1,6 @@
 ---
-title: Общие сведения об управляемости и мониторинге Хранилища данных SQL | Документация Майкрософт
-description: 'Общие сведения об управляемости и мониторинге: использование ресурсов, ведение журналов и действия запросов, рекомендации и защита данных (резервное копирование и восстановление).'
+title: Управление и мониторинг — обзор
+description: Общие сведения о мониторинге использования ресурсов, действиях журналов и запросов, рекомендации и защите данных (резервное копирование и восстановление) в хранилище данных SQL Azure.
 services: sql-data-warehouse
 author: kevinvngo
 manager: craigg
@@ -10,12 +10,13 @@ ms.subservice: manage
 ms.date: 08/27/2018
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: e9fb06b8ba34566689f769ca9a69328eee37e3c1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.custom: seo-lt-2019
+ms.openlocfilehash: 3bacd77f49f97bd98a5e1bee844bc80c595f5cbe
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60747580"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73685599"
 ---
 # <a name="manageability-and-monitoring-with-azure-sql-data-warehouse"></a>Управляемость и мониторинг в Хранилище данных SQL Azure
 
@@ -23,12 +24,12 @@ ms.locfileid: "60747580"
 
 ## <a name="overview"></a>Обзор
 
-* [Управление вычислительными ресурсами в хранилище данных SQL Azure][manage compute]
-* [Общие сведения о метриках и журналах, доступных на портале Azure][resource utilization]
-* [Резервное копирование и восстановление в хранилище данных SQL Azure][data protection]
-* [Рекомендации в Хранилище данных SQL][recommendations]
-* [Планирование обслуживания для хранилища данных SQL Azure][maintenance]
-* [Устранение неполадок хранилища данных SQL Azure][troubleshoot]
+* [Сведения об управлении и эластичности вычислений][manage compute]
+* [Сведения о том, какие метрики и журналы доступны в портал Azure][resource utilization]
+* [Сведения о возможностях резервного копирования и восстановления][data protection]
+* [Дополнительные сведения о встроенной аналитике и рекомендациях][recommendations]
+* [Узнайте о периодах обслуживания и о том, что доступно для сокращения времени простоя хранилища данных.][maintenance]
+* [Общие рекомендации по устранению неполадок][troubleshoot]
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

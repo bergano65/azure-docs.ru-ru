@@ -1,5 +1,5 @@
 ---
-title: Подключение к хранилищу данных SQL Azure | Документация Майкрософт
+title: Подключение к хранилищу данных SQL Azure
 description: Подключитесь к хранилищу данных SQL Azure.
 services: sql-data-warehouse
 author: XiaoyuMSFT
@@ -10,12 +10,13 @@ ms.subservice: development
 ms.date: 04/17/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: 71f5c8ca56bc188c0664604a78c38a05be3c3b01
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.custom: seo-lt-2019
+ms.openlocfilehash: 5a14b99753c9f06f2e0cf32dd8b5c7776cfdad89
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68479750"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73685876"
 ---
 # <a name="connect-to-azure-sql-data-warehouse"></a>Подключение к хранилищу данных SQL Azure
 Подключитесь к хранилищу данных SQL Azure.
@@ -63,12 +64,12 @@ jdbc:sqlserver://yourserver.database.windows.net:1433;database=yourdatabase;user
 
 | Параметр базы данных | Значение |
 |:--- |:--- |
-| [ANSI_NULLS][ANSI_NULLS] |ВКЛ. |
-| [QUOTED_IDENTIFIERS][QUOTED_IDENTIFIERS] |ВКЛ. |
+| [ANSI_NULLS][ANSI_NULLS] |ВКЛ |
+| [QUOTED_IDENTIFIERS][QUOTED_IDENTIFIERS] |ВКЛ |
 | [DATEFORMAT][DATEFORMAT] |мдг |
 | [DATEFIRST][DATEFIRST] |7 |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Сведения о подключении и выполнении запросов с помощью Visual Studio см. в разделе [запросы с помощью Visual Studio][Query with Visual Studio]. Дополнительные сведения о параметрах проверки подлинности см. в статье [Проверка подлинности в хранилище данных SQL Azure][Authentication to Azure SQL Data Warehouse].
 
 <!--Articles-->

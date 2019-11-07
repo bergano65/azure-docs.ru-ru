@@ -3,18 +3,18 @@ title: Использование Azure Media Clipper на портале | До
 description: Создание клипов на портале Azure с помощью Azure Media Clipper
 services: media-services
 keywords: clip;subclip;encoding;media
-author: dbgeorge
-manager: jasonsue
-ms.author: dwgeo
+author: Juliako
+manager: femila
+ms.author: juliako
 ms.date: 03/14/2019
 ms.topic: article
 ms.service: media-services
-ms.openlocfilehash: 8c88caefb0909da55de87116a23fa520c1679cc2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ec43fa469547dcd6481c0c6781c438f42ab4e2bd
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61465853"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73684992"
 ---
 # <a name="create-clips-with-azure-media-clipper-in-the-portal"></a>Создание клипов на портале с помощью Azure Media Clipper  
 
@@ -36,7 +36,7 @@ Clipper сейчас предоставляется в режиме общедо
 
 Чтобы создать фильтр динамического манифеста, перейдите на вкладку **Ресурсы** и выберите нужный ресурс. Нажмите кнопку **Субклип** в верхнем меню. В меню дополнительных параметров выберите режим обрезки "Фильтр динамического манифеста". Затем, чтобы создать фильтр, примените ту же процедуру, что и для создания клипа, преобразованного для просмотра. Фильтры можно создавать только из одного ресурса.
 
-На следующем изображении показан Clipper в режиме фильтрации динамического манифеста на портале Azure. ![Azure Media Clipper в режиме фильтрации динамического манифеста на портале Azure](media/media-services-azure-media-clipper-portal/media-services-azure-media-clipper-filter.PNG)
+На следующем изображении показано средство Clipper в режиме "Фильтр динамического манифеста" на портале Azure. ![Azure Media Clipper в режиме "Фильтр динамического манифеста" на портале Azure](media/media-services-azure-media-clipper-portal/media-services-azure-media-clipper-filter.PNG)
 
 ## <a name="submitting-clipping-jobs"></a>Отправка заданий обрезки
 Когда вы закончите составление клипа, нажмите кнопку отправки задания, которая запускает соответствующее задание обрезки или вызывает динамический манифест.

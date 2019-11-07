@@ -1,5 +1,5 @@
 ---
-title: Восстановление хранилища данных SQL Azure из географической резервной копии | Документация Майкрософт
+title: Восстановление хранилища данных из географической резервной копии
 description: Руководство по географической восстановлению хранилища данных SQL Azure.
 services: sql-data-warehouse
 author: anumjs
@@ -10,12 +10,13 @@ ms.subservice: manage
 ms.date: 07/12/2019
 ms.author: anjangsh
 ms.reviewer: igorstan
-ms.openlocfilehash: 768646522c2589c302fd7a58031d4ebdb7fcdc12
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.custom: seo-lt-2019
+ms.openlocfilehash: 69eb1221686da61868df8b06ed80664ae76d1627
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68426659"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73685501"
 ---
 # <a name="geo-restore-azure-sql-data-warehouse"></a>Географическое восстановление хранилища данных SQL Azure
 
@@ -29,7 +30,7 @@ ms.locfileid: "68426659"
 
 ## <a name="restore-from-an-azure-geographical-region-through-powershell"></a>Восстановление из географического региона Azure с помощью PowerShell
 
-Чтобы выполнить восстановление из географической резервной копии, используйте командлет [Get-азсклдатабасежеобаккуп][Get-AzSqlDatabaseGeoBackup] и RESTORE [-азсклдатабасе][Restore-AzSqlDatabase] .
+Чтобы выполнить восстановление из географической резервной копии, используйте командлет [Get-азсклдатабасежеобаккуп][Get-AzSqlDatabaseGeoBackup] и [RESTORE-азсклдатабасе][Restore-AzSqlDatabase] .
 
 > [!NOTE]
 > Можно выполнить геовосстановление в хранилище 2-го поколения! Для этого в качестве необязательного параметра укажите имя ServiceObjectiveName 2-го поколения (например, DW1000**c**).
@@ -79,15 +80,15 @@ $GeoRestoredDatabase.status
 1. Щелкните **+ создать ресурс** и найдите хранилище данных SQL и нажмите кнопку **создать**.
 
     ![Создать хранилище данных](./media/sql-data-warehouse-restore-from-geo-backup/georestore-new.png)
-1. Заполните сведения, запрошенные на вкладке "основы **", и нажмите кнопку "Далее". Дополнительные параметры**.
+1. Заполните сведения, запрошенные на вкладке " **основы** ", и нажмите кнопку " **Далее": дополнительные параметры**.
 
-    ![Основные сведения](./media/sql-data-warehouse-restore-from-geo-backup/georestore-dw-1.png)
+    ![Основы](./media/sql-data-warehouse-restore-from-geo-backup/georestore-dw-1.png)
 1. Для параметра **использовать существующий параметр данных** выберите **резервное копирование** и выберите соответствующую резервную копию в параметрах прокрутки вниз. Щелкните **проверить и создать**.
  
-   ![резервное копирование](./media/sql-data-warehouse-restore-from-geo-backup/georestore-select.png)
+   ![backup](./media/sql-data-warehouse-restore-from-geo-backup/georestore-select.png)
 2. После восстановления хранилища данных убедитесь, что **состояние** находится в сети.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Восстановление существующего хранилища данных][Restore an existing data warehouse]
 - [Восстановление удаленного хранилища данных][Restore a deleted data warehouse]
 

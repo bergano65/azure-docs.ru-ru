@@ -8,12 +8,12 @@ ms.date: 11/04/2019
 ms.topic: article
 ms.service: azure-blockchain
 ms.reviewer: chroyal
-ms.openlocfilehash: 1e92ae36aee5e62cd05b40bbaa38a226943f0adb
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
-ms.translationtype: HT
+ms.openlocfilehash: 9f408b090db40e5145b424034c39cdba4de14a8f
+ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73518025"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73605902"
 ---
 # <a name="configure-blockchain-data-manager-using-azure-cli"></a>Настройка Диспетчер данных Блокчейн с помощью Azure CLI
 
@@ -27,7 +27,7 @@ ms.locfileid: "73518025"
 * Добавление приложения блокчейн
 * Запуск экземпляра
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Установите последнюю [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) и войдите в нее с помощью `az login`.
 * Полное [руководство. использование Visual Studio Code для подключения к сети консорциума Блокчейн службы Azure](connect-vscode.md)
@@ -259,6 +259,10 @@ az resource create \
 
 При добавлении приложения блокчейн Блокчейн Диспетчер данных декодирует события и состояние свойства для приложения. В противном случае отправляются только данные необработанных блоков и необработанных транзакций. Блокчейн Диспетчер данных также обнаруживает контрактные адреса при развертывании контракта. К экземпляру Диспетчер данных Блокчейн можно добавить несколько приложений блокчейн.
 
+
+> [!IMPORTANT]
+> В настоящее время блокчейн приложения, объявляющие [типы массивов](https://solidity.readthedocs.io/en/v0.5.12/types.html#arrays) или [типов сопоставлений](https://solidity.readthedocs.io/en/v0.5.12/types.html#mapping-types) , не полностью поддерживаются. Свойства, объявленные как массив или типы сопоставления, не будут декодированы в сообщениях *контрактпропертиесмсг* или *декодедконтрактевентсмсг* .
+
 ``` azurecli
 az resource create \
                    --resource-group <Resource group> \
@@ -306,7 +310,7 @@ az resource create \
 | location | Регион, в котором создается ресурс приложения. |
 | artifactType | Тип приложения. В настоящее время поддерживается **есереумсмартконтракт** . |
 | абифилеурл | URL-адрес для JSON-файла ABI Smart Contract. Дополнительные сведения о получении интерфейса ABI контракта и создании URL-адреса см. в разделе [получение контракта ABI и байт-кода](data-manager-portal.md#get-contract-abi-and-bytecode) и [Создание интерфейса ABI и URL для кода](data-manager-portal.md#create-contract-abi-and-bytecode-url)интерфейса. |
-| битекодефилеурл | URL-адрес JSON-файла байтового кода Smart Contract. Дополнительные сведения о получении кода и создании URL-адреса интеллектуального контракта см. в [статьях получение интерфейса ABI и байт кода](data-manager-portal.md#get-contract-abi-and-bytecode) и [Создание интерфейса ABI и URL-адреса кода контракта](data-manager-portal.md#create-contract-abi-and-bytecode-url). |
+| битекодефилеурл | URL-адрес развернутого JSON-файла байтового кода Smart Contract. Дополнительные сведения о получении развернутого байт-кода для Smart Contract и создании URL-адреса см. в [статьях получение интерфейса ABI и байт кода](data-manager-portal.md#get-contract-abi-and-bytecode) и [Создание интерфейса ABI и URL-адреса кода контракта](data-manager-portal.md#create-contract-abi-and-bytecode-url). Примечание. для Диспетчер данных Блокчейн требуется **развернутый байт**. |
 | куеритаржеттипес | Типы опубликованных сообщений. При указании **контрактпропертиес** публикуются типы сообщений *контрактпропертиесмсг* . При указании **контрактевентс** публикуются типы сообщений *декодедконтрактевентсмсг* . Примечание. типы сообщений *равблоккандтрансактионмсг* и *равтрансактионконтракткреатионмсг* всегда публикуются. |
 
 Создайте приложение с именем *myApplication* для *миватчер* , которое отслеживает смарт-контракт, определенный строкой JSON.
@@ -415,4 +419,7 @@ az resource delete \
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о [обработчиках событий в службе "Сетка событий Azure](../../event-grid/event-handlers.md)".
+Попробуйте создать блокчейн обозреватель сообщений транзакций с помощью Блокчейн Диспетчер данных и Azure Cosmos DB.
+
+> [!div class="nextstepaction"]
+> [Учебник. Использование Диспетчер данных Блокчейн для отправки данных в Azure Cosmos DB](data-manager-cosmosdb.md)

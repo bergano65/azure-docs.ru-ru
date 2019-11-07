@@ -1,5 +1,5 @@
 ---
-title: Руководство. Добавление эластичного пула базы данных SQL Azure в группу отработки отказа | Документация Майкрософт
+title: 'Учебник. Добавление эластичного пула базы данных SQL Azure в группу отработки отказа '
 description: Добавьте эластичный пул базы данных SQL Azure в группу отработки отказа с помощью портал Azure, PowerShell или Azure CLI.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: MashaMSFT
 ms.author: mathoma
 ms.reviewer: sstein, carlrab
 ms.date: 08/27/2019
-ms.openlocfilehash: 838bdd2aeba18ebeaa964cb329939931419c588c
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 980740c4417d1085d7c367b172005b10ce828e0e
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72933401"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73690498"
 ---
 # <a name="tutorial-add-an-azure-sql-database-elastic-pool-to-a-failover-group"></a>Учебник. Добавление эластичного пула базы данных SQL Azure в группу отработки отказа
 
@@ -28,7 +28,7 @@ ms.locfileid: "72933401"
 > - Создайте [группу отработки отказа](sql-database-auto-failover-group.md) для двух эластичных пулов между двумя логическими серверами SQL.
 > - Тестовая отработка отказа.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В рамках этого руководства вам потребуются: 
 
@@ -43,7 +43,7 @@ ms.locfileid: "72933401"
 На этом шаге вы создадите эластичный пул и добавите в него отдельную базу данных. 
 
 
-# <a name="portaltabazure-portal"></a>[Microsoft Azure](#tab/azure-portal)
+# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
 
 Создайте эластичный пул с помощью портал Azure. 
 
@@ -118,7 +118,7 @@ ms.locfileid: "72933401"
 
 В этой части руководства используются следующие командлеты PowerShell:
 
-| Команда | Заметки |
+| Команда | Примечания |
 |---|---|
 | [New-AzSqlElasticPool](/powershell/module/az.sql/new-azsqlelasticpool) | Создает пул эластичных баз данных для базы данных SQL Azure.| 
 | [Set-AzSqlDatabase](/powershell/module/az.sql/set-azsqldatabase) | Определяет свойства базы данных или перемещает ее в эластичный пул. | 
@@ -129,11 +129,11 @@ ms.locfileid: "72933401"
 На этом шаге вы создадите [группу отработки отказа](sql-database-auto-failover-group.md) между существующим сервером Azure SQL Server и новым сервером Azure SQL Server в другом регионе. Затем добавьте эластичный пул в группу отработки отказа. 
 
 
-# <a name="portaltabazure-portal"></a>[Microsoft Azure](#tab/azure-portal)
+# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
 
 Создайте группу отработки отказа с помощью портал Azure. 
 
-1. На [портале Azure](https://portal.azure.com) в меню слева выберите **Azure SQL**. Если **SQL Azure** отсутствует в списке, выберите **все службы**, а затем введите Azure SQL в поле поиска. (Необязательно) Щелкните звезду рядом с **Azure SQL**, чтобы добавить этот элемент в избранное и область навигации слева. 
+1. На **портале Azure** в меню слева выберите [Azure SQL](https://portal.azure.com). Если **SQL Azure** отсутствует в списке, выберите **все службы**, а затем введите Azure SQL в поле поиска. (Необязательно) Щелкните звезду рядом с **Azure SQL**, чтобы добавить этот элемент в избранное и область навигации слева. 
 1. Выберите эластичный пул, созданный в предыдущем разделе, например `myElasticPool`. 
 1. В области **Обзор** выберите имя сервера в поле **имя сервера** , чтобы открыть параметры для сервера.
   
@@ -236,7 +236,7 @@ ms.locfileid: "72933401"
 
 В этой части руководства используются следующие командлеты PowerShell:
 
-| Команда | Заметки |
+| Команда | Примечания |
 |---|---|
 | [New-AzSqlServer](/powershell/module/az.sql/new-azsqlserver) | Создает сервер Базы данных SQL, на котором размещены отдельные базы данных и эластичные пулы. |
 | [New-AzSqlServerFirewallRule](/powershell/module/az.sql/new-azsqlserverfirewallrule) | Создание правила брандмауэра для логического сервера. | 
@@ -252,11 +252,11 @@ ms.locfileid: "72933401"
 На этом шаге группа отработки отказа будет передаваться на сервер-получатель, а затем восстановлена с помощью портал Azure. 
 
 
-# <a name="portaltabazure-portal"></a>[Microsoft Azure](#tab/azure-portal)
+# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
 
 Тестовая отработка отказа группы отработки отказа с помощью портал Azure. 
 
-1. На [портале Azure](https://portal.azure.com) в меню слева выберите **Azure SQL**. Если **SQL Azure** отсутствует в списке, выберите **все службы**, а затем введите Azure SQL в поле поиска. (Необязательно) Щелкните звезду рядом с **Azure SQL**, чтобы добавить этот элемент в избранное и область навигации слева. 
+1. На **портале Azure** в меню слева выберите [Azure SQL](https://portal.azure.com). Если **SQL Azure** отсутствует в списке, выберите **все службы**, а затем введите Azure SQL в поле поиска. (Необязательно) Щелкните звезду рядом с **Azure SQL**, чтобы добавить этот элемент в избранное и область навигации слева. 
 1. Выберите эластичный пул, созданный в предыдущем разделе, например `myElasticPool`. 
 1. Выберите имя сервера в поле **имя сервера** , чтобы открыть параметры для сервера.
 
@@ -344,7 +344,7 @@ ms.locfileid: "72933401"
 
 В этой части руководства используются следующие командлеты PowerShell:
 
-| Команда | Заметки |
+| Команда | Примечания |
 |---|---|
 | [Get-AzSqlDatabaseFailoverGroup](/powershell/module/az.sql/get-azsqldatabasefailovergroup) | Возвращает или перечисляет группы отработки отказа для Базы данных SQL Azure. |
 | [Switch-AzSqlDatabaseFailoverGroup](/powershell/module/az.sql/switch-azsqldatabasefailovergroup)| Выполняет отработку отказа для группы отработки отказа Базы данных SQL Azure. |
@@ -357,7 +357,7 @@ ms.locfileid: "72933401"
 Очистите ресурсы, удалив группу ресурсов. 
 
 
-# <a name="portaltabazure-portal"></a>[Microsoft Azure](#tab/azure-portal)
+# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
 
 
 1. Перейдите к группе ресурсов в [портал Azure](https://portal.azure.com).
@@ -382,7 +382,7 @@ ms.locfileid: "72933401"
 
 В этой части руководства используется следующий командлет PowerShell:
 
-| Команда | Заметки |
+| Команда | Примечания |
 |---|---|
 | [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup) | Удаляет группу ресурсов. | 
 
@@ -396,7 +396,7 @@ ms.locfileid: "72933401"
 
 Этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Команда | Заметки |
+| Команда | Примечания |
 |---|---|
 | [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [New-AzSqlServer](/powershell/module/az.sql/new-azsqlserver) | Создает сервер Базы данных SQL, на котором размещены отдельные базы данных и эластичные пулы. |
@@ -412,7 +412,7 @@ ms.locfileid: "72933401"
 | [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup) | Удаляет группу ресурсов. | 
 
 
-# <a name="portaltabazure-portal"></a>[Microsoft Azure](#tab/azure-portal)
+# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
 Для портал Azure нет доступных скриптов.
 
 ---

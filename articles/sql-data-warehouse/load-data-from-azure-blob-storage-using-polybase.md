@@ -1,5 +1,5 @@
 ---
-title: Руководство по загрузке данных такси Нью-Йорка в хранилище данных SQL Azure | Документация Майкрософт
+title: Учебник. Загрузка данных такси в Нью Йорк
 description: В руководстве используется портал Azure и SQL Server Management Studio для загрузки данных такси в Нью-Йорке из глобального большого двоичного объекта Azure в хранилище данных SQL Azure.
 services: sql-data-warehouse
 author: kevinvngo
@@ -10,12 +10,13 @@ ms.subservice: load-data
 ms.date: 04/26/2019
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: 2e799d84aee9ba4d3bfb00ddfad358c9b90c3d59
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.custom: seo-lt-2019
+ms.openlocfilehash: 5bf1a600bf57ecb598aac485e11f3618dda7244e
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73482401"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73686076"
 ---
 # <a name="tutorial-load-new-york-taxicab-data-to-azure-sql-data-warehouse"></a>Руководство по загрузке данных такси Нью-Йорка в хранилище данных SQL Azure
 
@@ -44,7 +45,7 @@ ms.locfileid: "73482401"
 
 ## <a name="create-a-blank-sql-data-warehouse"></a>Создание пустого хранилища данных SQL
 
-Хранилище данных SQL Azure создается с определенным набором [вычислительных ресурсов](memory-and-concurrency-limits.md). База данных создается в пределах [группы ресурсов Azure](../azure-resource-manager/resource-group-overview.md) и [логического сервера SQL Azure](../sql-database/sql-database-features.md). 
+Хранилище данных SQL Azure создается с определенным набором [COMPUTE Resources] Memory-limits.md). База данных создается в пределах [группы ресурсов Azure](../azure-resource-manager/resource-group-overview.md) и [логического сервера SQL Azure](../sql-database/sql-database-features.md). 
 
 Чтобы создать пустое хранилище данных SQL, выполните следующие действия. 
 
@@ -564,7 +565,7 @@ ms.locfileid: "73482401"
 ## <a name="authenticate-using-managed-identities-to-load-optional"></a>Проверка подлинности с помощью управляемых удостоверений для загрузки (необязательно)
 Загрузка с использованием Polybase и аутентификация через управляемые удостоверения — наиболее безопасный механизм, позволяющий использовать конечные точки службы виртуальной сети в службе хранилища Azure. 
 
-### <a name="prerequisites"></a>Технические условия
+### <a name="prerequisites"></a>Предварительные требования
 1.  Установите Azure PowerShell, следуя инструкциям в этом [руководстве](https://docs.microsoft.com/powershell/azure/install-az-ps).
 2.  При наличии учетной записи хранения общего назначения версии 1 или учетной записи хранилища BLOB-объектов необходимо сначала выполнить обновление до учетной записи хранения общего назначения версии 2, следуя инструкциям в этом [руководстве](https://docs.microsoft.com/azure/storage/common/storage-account-upgrade).
 3.  Необходимо включить параметр **Разрешить доверенным службам Майкрософт доступ к этой учетной записи хранения** в меню параметров **Брандмауэры и виртуальные сети** учетной записи службы хранилища Azure. Дополнительные сведения см. в [этом руководстве](https://docs.microsoft.com/azure/storage/common/storage-network-security#exceptions).

@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство по использованию Striim и хранилища данных SQL Azure | Документация Майкрософт
+title: Быстрый запуск Стриим
 description: Быстро приступите к работе со Striim и хранилищем данных SQL Azure.
 services: sql-data-warehouse
 author: mlee3gsd
@@ -10,12 +10,13 @@ ms.subservice: integration
 ms.date: 10/12/2018
 ms.author: martinle
 ms.reviewer: igorstan
-ms.openlocfilehash: 8ed9936884a648d736942caecade2ac3c2980e67
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.custom: seo-lt-2019
+ms.openlocfilehash: 65dc0b8fcece4364f3828fee09221612b999df4e
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65873409"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73685353"
 ---
 # <a name="striim-azure-sql-dw-marketplace-offering-install-guide"></a>Руководство по установке Striim для хранилища данных SQL Azure
 
@@ -29,7 +30,7 @@ ms.locfileid: "65873409"
 
 ![Настройка Striim][configure]
 
-После развертывания, щелкните \<имя виртуальной Машины >-masternode на портале Azure, нажмите кнопку Connect и скопируйте имя входа, с помощью локальной учетной записи виртуальной Машины 
+После развертывания щелкните \<имя виртуальной машины >-мастерноде в портал Azure, щелкните подключить и скопируйте имя входа с помощью локальной учетной записи виртуальной машины. 
 
 ![Подключение Striim к хранилищу данных SQL Azure][connect]
 
@@ -55,7 +56,7 @@ ms.locfileid: "65873409"
 
 ![Запуск кластера Striim][start-striim]
 
-Теперь откройте свой браузер и перейдите к \<DNS-имя >: 9080
+Теперь откройте свой любимый браузер и перейдите по адресу \<DNS-имя >: 9080.
 
 ![Переход на экран входа][navigate]
 

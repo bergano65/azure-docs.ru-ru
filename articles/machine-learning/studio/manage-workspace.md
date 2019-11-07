@@ -1,6 +1,6 @@
 ---
-title: Управление рабочей областью Машинное обучение Studio (классическая модель)
-titleSuffix: Azure Machine Learning Studio (classic)
+title: Управление рабочими областями
+titleSuffix: ML Studio (classic) Azure
 description: Управление доступом к рабочим областям Машинное обучение Azure Studio (классические), развертывание веб-служб API Машинное обучение и управление ими
 services: machine-learning
 ms.service: machine-learning
@@ -10,12 +10,12 @@ author: xiaoharper
 ms.author: amlstudiodocs
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 02/27/2017
-ms.openlocfilehash: f514079379143e001d72c0e6618c88e2fbb283b8
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 0ec619e765dde39f6d4c24cdadaab8bff4729f79
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73489234"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73684754"
 ---
 # <a name="manage-an-azure-machine-learning-studio-classic-workspace"></a>Управление рабочей областью Машинное обучение Azure Studio (классическая модель)
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство по пулам экземпляров базы данных SQL Azure (Предварительная версия) | Документация Майкрософт
+title: Руководство по пулам экземпляров базы данных SQL Azure (Предварительная версия)
 description: В этой статье описывается, как создавать пулы экземпляров базы данных SQL Azure (Предварительная версия) и управлять ими.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: bonova
 ms.author: bonova
 ms.reviewer: sstein, carlrab
 ms.date: 09/05/2019
-ms.openlocfilehash: 5862a54c92de7395ce42865ae32d453e926048d8
-ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
+ms.openlocfilehash: 461de4da35905ed860fb2ed9d2c655b55b777683
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70294273"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73689731"
 ---
 # <a name="azure-sql-database-instance-pools-preview-how-to-guide"></a>Руководство по пулам экземпляров баз данных SQL Azure (Предварительная версия)
 
@@ -26,7 +26,7 @@ ms.locfileid: "70294273"
 
 В следующей таблице показаны доступные операции, связанные с пулами экземпляров и их доступности в портал Azure и PowerShell.
 
-|Command|портала Azure|PowerShell|
+|Команда|Портал Azure|PowerShell|
 |:---|:---|:---|
 |Создание пула экземпляров|Нет|Да|
 |Обновление пула экземпляров (ограниченное число свойств)|Нет |Да |
@@ -41,7 +41,7 @@ ms.locfileid: "70294273"
 
 Доступные [команды PowerShell](https://docs.microsoft.com/powershell/module/az.sql/)
 
-|Командлет |Описание |
+|Командлет |Description (Описание) |
 |:---|:---|
 |[New-Азсклинстанцепул](/powershell/module/az.sql/new-azsqlinstancepool/) | Создает пул экземпляров базы данных SQL Azure. |
 |[Get-Азсклинстанцепул](/powershell/module/az.sql/get-azsqlinstancepool/) | Возвращает сведения о пуле экземпляров SQL Azure. |
@@ -261,7 +261,7 @@ $instanceOne | Set-AzSqlInstance -InstancePoolName "pool-mi-001" -PublicDataEndp
 Если имеется несколько баз данных, повторите эту процедуру для каждой базы данных.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о функциях и список сравнения см. в статье [Сравнение функций Базы данных SQL Azure и SQL Server](sql-database-features.md).
 - Дополнительные сведения о настройке виртуальной сети для управляемого экземпляра базы данных SQL Azure см. в [этой статье](sql-database-managed-instance-connectivity-architecture.md).

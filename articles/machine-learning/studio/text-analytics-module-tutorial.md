@@ -1,6 +1,6 @@
 ---
-title: Создание модели анализа тональности
-titleSuffix: Azure Machine Learning Studio (classic)
+title: Вариант использования "Анализ тональности"
+titleSuffix: ML Studio (classic) Azure
 description: Создание моделей текстовой аналитики в Машинное обучение Azure Studio (классическая модель) с помощью модулей для предварительной обработки текста, N-грамм или хэширования компонентов
 services: machine-learning
 ms.service: machine-learning
@@ -10,12 +10,12 @@ author: xiaoharper
 ms.author: amlstudiodocs
 ms.custom: seodec18
 ms.date: 03/14/2018
-ms.openlocfilehash: d24e4f98e987cb911a8bc0ffcd1b49e1bed8b920
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 63c1d19f1ab44fa56893c17edd78aeaf54a17314
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73467166"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73670704"
 ---
 # <a name="create-a-sentiment-analysis-model-in-azure-machine-learning-studio-classic"></a>Создание модели анализа тональности в Машинное обучение Azure Studio (классическая модель)
 
@@ -86,6 +86,6 @@ ms.locfileid: "73467166"
 
 Теперь у нас готов эксперимент, который можно опубликовать как веб-службу и вызывать с помощью интерфейсов API "запрос-ответ" или пакетного выполнения.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о модулях текстовой аналитики см. в [документации MSDN](https://msdn.microsoft.com/library/azure/dn905886.aspx).
 

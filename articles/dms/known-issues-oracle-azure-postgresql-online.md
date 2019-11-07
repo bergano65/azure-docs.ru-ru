@@ -10,13 +10,13 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: mvc
 ms.topic: article
-ms.date: 10/03/2019
-ms.openlocfilehash: cc7e510d9a6db93edc211799eda8df79116236a7
-ms.sourcegitcommit: 87efc325493b1cae546e4cc4b89d9a5e3df94d31
+ms.date: 11/05/2019
+ms.openlocfilehash: ecd2750926fd04c84d2d6b48f5fde06363dd15df
+ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73053654"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73606758"
 ---
 # <a name="known-issuesmigration-limitations-with-online-migrations-from-oracle-to-azure-db-for-postgresql-single-server"></a>Известные проблемы и ограничения миграции при оперативной миграции из Oracle в базу данных Azure для PostgreSQL — один сервер
 
@@ -26,7 +26,7 @@ ms.locfileid: "73053654"
 
 Azure Database Migration Service поддерживает подключение к:
 
-- Oracle версии 10G, 11c и 12c.
+- Oracle версии 10G, 11g и 12c.
 - Oracle Enterprise, Standard, Express и Personal Edition.
 
 Azure Database Migration Service не поддерживает подключение к базам данных контейнеров с несколькими клиентами (Кдбс).
@@ -47,7 +47,7 @@ Azure Database Migration Service поддерживает миграцию в б
 - SDO_GEOMETRY
 - Вложенные таблицы
 - Определяемые пользователем типы данных
-- Заметки
+- Примечания
 - Виртуальные столбцы
 - Материализованные представления, основанные на столбце ROWID
 

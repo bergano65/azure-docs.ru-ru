@@ -1,5 +1,5 @@
 ---
-title: Мониторинг и повышение производительности базы данных SQL Azure | Документация Майкрософт
+title: Мониторинг и повышение производительности — база данных SQL Azure
 description: База данных SQL Azure предоставляет средства оценки производительности для выявления областей, которые могут улучшить производительность текущих запросов.
 ms.service: sql-database
 ms.subservice: performance
@@ -10,12 +10,12 @@ author: danimir
 ms.author: danil
 ms.reviewer: jrasnik, carlrab
 ms.date: 01/25/2019
-ms.openlocfilehash: 39a100c487588fb717c642036c7713150a95e047
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 483cd9f185cfa626d21fe0a5b86ba782ebb2f612
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68567085"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73687667"
 ---
 # <a name="monitor-and-improve-performance"></a>Мониторинг и повышение производительности
 
@@ -58,7 +58,7 @@ ms.locfileid: "68567085"
 
 Узнать, как найти и применить рекомендации по производительности, можно в статье [Поиск и применение рекомендаций по производительности](sql-database-advisor-portal.md).
 
-## <a name="automatic-tuning"></a>Автонастройка
+## <a name="automatic-tuning"></a>Автоматическая настройка
 
 Базы данных SQL Azure могут автоматически настраивать производительность, применяя [рекомендации по производительности](sql-database-advisor.md). Чтобы узнать больше, прочитайте статью [Автоматическая настройка](sql-database-automatic-tuning.md). Кроме того, вы можете узнать, [как включить автоматическую настройку](sql-database-automatic-tuning-enable.md).
 

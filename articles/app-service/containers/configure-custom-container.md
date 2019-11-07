@@ -1,6 +1,6 @@
 ---
-title: Настройка пользовательского контейнера — службы приложений Azure | Документация Майкрософт
-description: Сведения о настройке приложения Node.js на работу в службе приложений Azure
+title: Настройка настраиваемого контейнера в службе приложений Azure | Документация Майкрософт
+description: Узнайте, как настроить приложения Node. js для работы в службе приложений Azure.
 services: app-service
 documentationcenter: ''
 author: cephalin
@@ -13,22 +13,22 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 03/28/2019
 ms.author: cephalin
-ms.openlocfilehash: 02231f86d4ceddd6cde53fd242c2c91158d744a9
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 7290e2b09c316a97bfb88744307e185aef72852a
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67480764"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73668985"
 ---
 # <a name="configure-a-custom-linux-container-for-azure-app-service"></a>Настройка пользовательского контейнера Linux для службы приложений Azure
 
 В этой статье показано, как настроить пользовательский контейнер Linux для запуска в службе приложений Azure.
 
-Это руководство содержит основные понятия и инструкции по контейнеризации приложений Linux в службе приложений. Если вы раньше не использовали службы приложений Azure, выполните [быстрого запуска пользовательского контейнера](quickstart-docker-go.md) и [руководстве](tutorial-custom-docker-image.md) первого. Имеется также [быстрого запуска многоконтейнерного приложения](quickstart-multi-container.md) и [руководстве](tutorial-multi-container-app.md).
+Это краткое описание содержит основные понятия и инструкции по работе с контейнерами приложений Linux в службе приложений. Если вы никогда не использовали службу приложений Azure, сначала ознакомьтесь с кратким [руководством](tutorial-custom-docker-image.md) по [пользовательскому контейнеру](quickstart-docker-go.md) и руководству. Существует также краткое [руководство](tutorial-multi-container-app.md)по [многоконтейнерному приложению](quickstart-multi-container.md) .
 
-## <a name="configure-port-number"></a>Номера портов
+## <a name="configure-port-number"></a>Настройка номера порта
 
-Веб-сервера в пользовательский образ может использовать порт, отличный от 80. Сообщить Azure, порт, используемый вашего настраиваемого контейнера с помощью `WEBSITES_PORT` параметр приложения. На странице GitHub с [примером кода Python в этом руководстве](https://github.com/Azure-Samples/docker-django-webapp-linux) показано, что для параметра `WEBSITES_PORT` необходимо задать значение _8000_. Можно разместить его, выполнив [ `az webapp config appsettings set` ](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set) команду в Cloud Shell. Пример:
+Веб-сервер в пользовательском образе может использовать порт, отличный от 80. Вы сообщаете Azure о порте, который использует настраиваемый контейнер, с помощью параметра приложения `WEBSITES_PORT`. На странице GitHub с [примером кода Python в этом руководстве](https://github.com/Azure-Samples/docker-django-webapp-linux) показано, что для параметра `WEBSITES_PORT` необходимо задать значение _8000_. Его можно задать, выполнив команду [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set) в Cloud Shell. Например:
 
 ```azurecli-interactive
 az webapp config appsettings set --resource-group <resource-group-name> --name <app-name> --settings WEBSITES_PORT=8000
@@ -36,46 +36,46 @@ az webapp config appsettings set --resource-group <resource-group-name> --name <
 
 ## <a name="configure-environment-variables"></a>Настройка переменных среды
 
-Ваш пользовательский контейнер может использовать переменные среды, которые необходимо представить извне. Можно передать их в, запустив [ `az webapp config appsettings set` ](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set) команду в Cloud Shell. Пример:
+Пользовательский контейнер может использовать переменные среды, которые необходимо предоставить извне. Их можно передать в, выполнив команду [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set) в Cloud Shell. Например:
 
 ```azurecli-interactive
 az webapp config appsettings set --resource-group <resource-group-name> --name <app-name> --settings WORDPRESS_DB_HOST="myownserver.mysql.database.azure.com"
 ```
 
-Этот метод работает для приложений в одном контейнере или многоконтейнерных приложений, где заданы переменные среды в *docker-compose.yml* файл.
+Этот метод работает как для приложений с одним контейнером, так и для приложений с несколькими контейнерами, где переменные среды указаны в файле *DOCKER-Compose. yml* .
 
-## <a name="use-persistent-shared-storage"></a>Использовать постоянное хранилище общего доступа
+## <a name="use-persistent-shared-storage"></a>Использовать постоянное общее хранилище
 
-Можно использовать */home* каталог в файловой системе приложения для сохранения файлов между перезагрузками и совместно использовать их в экземплярах. `/home` В приложении предоставляется для обеспечения доступа к постоянному хранилищу вашего приложения-контейнера.
+Вы можете использовать каталог */Home* в файловой системе приложения для сохранения файлов между перезапусками и их совместного использования в экземплярах. В приложении предоставлены `/home`, позволяющие приложению-контейнеру получать доступ к постоянному хранилищу.
 
-При постоянном хранилище отключено, а затем записывает `/home` каталога не сохраняются между перезагрузками приложения или на нескольких экземплярах. Единственным исключением является `/home/LogFiles` каталог, который используется для хранения журналов Docker и контейнерах. При включении постоянное хранилище, все операции записи `/home` directory сохраняются и доступны для всех экземпляров горизонтально масштабируемого приложения.
+Если постоянное хранилище отключено, запись в каталог `/home` не сохраняется между перезапусками приложений или несколькими экземплярами. Единственным исключением является каталог `/home/LogFiles`, который используется для хранения журналов DOCKER и контейнеров. Если постоянное хранилище включено, все операции записи в каталог `/home` сохраняются и доступны для всех экземпляров масштабируемого приложения.
 
-По умолчанию является постоянное хранилище *включена* и параметр не отображается в разделе параметров приложения. Чтобы отключить его, установите `WEBSITES_ENABLE_APP_SERVICE_STORAGE` параметр приложения, выполнив [ `az webapp config appsettings set` ](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set) команду в Cloud Shell. Пример:
+По умолчанию постоянное хранилище *включено* и параметр не отображается в параметрах приложения. Чтобы отключить его, задайте параметр приложения `WEBSITES_ENABLE_APP_SERVICE_STORAGE`, выполнив команду [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set) в Cloud Shell. Например:
 
 ```azurecli-interactive
 az webapp config appsettings set --resource-group <resource-group-name> --name <app-name> --settings WEBSITES_ENABLE_APP_SERVICE_STORAGE=false
 ```
 
 > [!NOTE]
-> Вы также можете [настроить собственные постоянное хранилище](how-to-serve-content-from-azure-storage.md).
+> Вы также можете [настроить постоянное хранилище](how-to-serve-content-from-azure-storage.md).
 
 ## <a name="enable-ssh"></a>Включение SSH
 
-SSH обеспечивает безопасный обмен данными между клиентом и контейнером. Чтобы пользовательский контейнер для поддержки SSH необходимо добавить в него самого.
+SSH обеспечивает безопасный обмен данными между клиентом и контейнером. Чтобы пользовательский контейнер поддерживал SSH, его необходимо добавить в Dockerfile.
 
 > [!TIP]
-> Все встроенные контейнеры Linux добавили инструкции SSH в репозиториях образа. Можно выполнить следующие инструкции с [репозитории Node.js 10.14](https://github.com/Azure-App-Service/node/blob/master/10.14) чтобы увидеть, как он включен существует.
+> Все встроенные контейнеры Linux добавили инструкции SSH в свои репозитории образов. Чтобы увидеть, как он включен, можно выполнить приведенные ниже инструкции с помощью [репозитория Node. js 10,14](https://github.com/Azure-App-Service/node/blob/master/10.14) .
 
-- Используйте [ЗАПУСКА](https://docs.docker.com/engine/reference/builder/#run) инструкции для установки SSH-сервер и задать пароль для учетной записи root для `"Docker!"`. Например, для образа на основе [Alpine Linux](https://hub.docker.com/_/alpine), вам потребуется следующие команды:
+- Используйте инструкцию [Run](https://docs.docker.com/engine/reference/builder/#run) для установки сервера SSH и задайте для учетной записи root значение `"Docker!"`. Например, для образа, основанного на [Alpine Linux](https://hub.docker.com/_/alpine), требуются следующие команды:
 
     ```Dockerfile
     RUN apk add openssh \
          && echo "root:Docker!" | chpasswd 
     ```
 
-    Эта конфигурация не разрешает внешние подключения к контейнеру. SSH доступен только через `https://<app-name>.scm.azurewebsites.net` и проверку подлинности с учетными данными для публикации.
+    Эта конфигурация не разрешает внешние подключения к контейнеру. Протокол SSH доступен только для `https://<app-name>.scm.azurewebsites.net` и аутентификации с учетными данными публикации.
 
-- Добавить [этот файл sshd_config](https://github.com/Azure-App-Service/node/blob/master/10.14/sshd_config) в свой репозиторий образов и использовать [КОПИРОВАНИЯ](https://docs.docker.com/engine/reference/builder/#copy) инструкции для копирования файла в */etc/ssh/* каталога. Дополнительные сведения о *sshd_config* файлы, см. в разделе [OpenBSD документации](https://man.openbsd.org/sshd_config).
+- Добавьте [этот файл sshd_config](https://github.com/Azure-App-Service/node/blob/master/10.14/sshd_config) в репозиторий образов и скопируйте файл в каталог *каталог/etc/SSH/* с помощью инструкции [копирования](https://docs.docker.com/engine/reference/builder/#copy) . Дополнительные сведения о файлах *sshd_config* см. в [документации по OpenBSD](https://man.openbsd.org/sshd_config).
 
     ```Dockerfile
     COPY sshd_config /etc/ssh/
@@ -86,19 +86,19 @@ SSH обеспечивает безопасный обмен данными ме
     > - `Ciphers` должен содержать по крайней мере один элемент в этом списке: `aes128-cbc,3des-cbc,aes256-cbc`.
     > - `MACs` должен содержать по крайней мере один элемент в этом списке: `hmac-sha1,hmac-sha1-96`.
 
-- Используйте [ПРЕДОСТАВЛЯТЬ](https://docs.docker.com/engine/reference/builder/#expose) инструкции, чтобы открыть порт 2222 в контейнере. Несмотря на то, что известен пароль пользователя root, порт 2222 недоступен из Интернета. Он доступен контейнерам внутри Мостовой сети виртуальной частной сети.
+- Используйте инструкцию [предоставления](https://docs.docker.com/engine/reference/builder/#expose) , чтобы открыть порт 2222 в контейнере. Несмотря на то, что пароль root известен, порт 2222 недоступен из Интернета. Он доступен только контейнерам в сети моста частной виртуальной сети.
 
     ```Dockerfile
     EXPOSE 80 2222
     ```
 
-- В сценарии запуска для вашего контейнера запустите сервер SSH.
+- В скрипте запуска для контейнера запустите SSH-сервер.
 
     ```bash
     /usr/sbin/sshd
     ```
 
-    Например, см. в разделе как значение по умолчанию [Node.js 10.14 контейнера](https://github.com/Azure-App-Service/node/blob/master/10.14/startup/init_container.sh) запускает сервер SSH.
+    Пример см. в разделе как [контейнер Node. js 10,14](https://github.com/Azure-App-Service/node/blob/master/10.14/startup/init_container.sh) по умолчанию запускает сервер SSH.
 
 ## <a name="access-diagnostic-logs"></a>Доступ к журналам диагностики
 
@@ -106,23 +106,23 @@ SSH обеспечивает безопасный обмен данными ме
 
 ## <a name="configure-multi-container-apps"></a>Настройка приложений с несколькими контейнерами
 
-- [Использовать постоянное хранилище в Docker Compose](#use-persistent-storage-in-docker-compose)
+- [Использование постоянного хранилища в Docker Compose](#use-persistent-storage-in-docker-compose)
 - [Ограничения предварительной версии](#preview-limitations)
-- [Параметры docker Compose](#docker-compose-options)
+- [Параметры Docker Compose](#docker-compose-options)
 
-### <a name="use-persistent-storage-in-docker-compose"></a>Использовать постоянное хранилище в Docker Compose
+### <a name="use-persistent-storage-in-docker-compose"></a>Использование постоянного хранилища в Docker Compose
 
-Многоконтейнерных приложений, такие как WordPress требуется постоянное хранилище для правильной. Чтобы включить ее, конфигурацию Docker Compose должен указывать на расположение хранилища *за пределами* контейнера. Места хранения внутри контейнера не сохранять изменения, помимо перезапуск приложения.
+Для правильной работы приложений с несколькими контейнерами, таких как WordPress, требуется постоянное хранилище. Чтобы включить его, конфигурация Docker Compose должна указывать на место хранения *за пределами* контейнера. Расположения хранилищ внутри контейнера не сохраняют изменения после перезапуска приложения.
 
-Включить постоянное хранилище, задав `WEBSITES_ENABLE_APP_SERVICE_STORAGE` приложения с помощью [az webapp config appsettings set](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set) команду в Cloud Shell.
+Включите постоянное хранилище, задав параметр приложения `WEBSITES_ENABLE_APP_SERVICE_STORAGE`, используя команду [AZ webapp config appSettings Set](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set) в Cloud Shell.
 
 ```azurecli-interactive
 az webapp config appsettings set --resource-group <resource-group-name> --name <app-name> --settings WEBSITES_ENABLE_APP_SERVICE_STORAGE=TRUE
 ```
 
-В вашей *docker-compose.yml* файл "," Карта `volumes` равным `${WEBAPP_STORAGE_HOME}`. 
+В файле *DOCKER-Compose. yml* сопоставьте параметр `volumes` для `${WEBAPP_STORAGE_HOME}`. 
 
-`WEBAPP_STORAGE_HOME` — это переменная среды в Службе приложений, которая сопоставляется с постоянным хранилищем для вашего приложения. Пример:
+`WEBAPP_STORAGE_HOME` — это переменная среды в Службе приложений, которая сопоставляется с постоянным хранилищем для вашего приложения. Например:
 
 ```yaml
 wordpress:
@@ -135,21 +135,21 @@ wordpress:
 
 ### <a name="preview-limitations"></a>Ограничения предварительной версии
 
-Несколькими контейнерами в настоящее время доступна Предварительная версия. Следующие функции платформы службы приложений не поддерживаются:
+В настоящее время поддерживается Предварительная версия нескольких контейнеров. Следующие функции платформы службы приложений не поддерживаются:
 
 - проверка подлинности/авторизация;
 - управляемые удостоверения.
 
-### <a name="docker-compose-options"></a>Параметры docker Compose
+### <a name="docker-compose-options"></a>Параметры Docker Compose
 
-В следующих списках приведены поддерживаемые и неподдерживаемые Docker Compose параметры конфигурации:
+В следующих списках показаны поддерживаемые и неподдерживаемые параметры конфигурации Docker Compose.
 
 #### <a name="supported-options"></a>Поддерживаемые параметры
 
 - command
 - entrypoint;
 - Среда
-- image
+- изображение
 - ports;
 - restart
 - services;
@@ -164,12 +164,16 @@ wordpress:
 - порты, отличные от 80 и 8080 (игнорируются).
 
 > [!NOTE]
-> В общедоступной предварительной версии учитываются другие параметры явно не указано.
+> Любые другие параметры, не вызываемые явно, игнорируются в общедоступной предварительной версии.
+
+## <a name="configure-vnet-integration"></a>Настройка интеграции с виртуальной сетью
+
+Для использования пользовательского контейнера с интеграцией виртуальной сети может потребоваться дополнительная настройка контейнера. См. статью [Интеграция приложения с виртуальной сетью Azure](../web-sites-integrate-with-vnet.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Учебник. по развертыванию из частного репозитория контейнеров](tutorial-custom-docker-image.md)
+> [Руководство. Развертывание из закрытого репозитория контейнеров](tutorial-custom-docker-image.md)
 
 > [!div class="nextstepaction"]
-> [Учебник. по приложению WordPress с несколькими контейнерами](tutorial-multi-container-app.md)
+> [Учебник. многоконтейнерное приложение WordPress](tutorial-multi-container-app.md)

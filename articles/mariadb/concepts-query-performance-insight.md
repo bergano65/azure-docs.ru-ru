@@ -5,24 +5,21 @@ author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 06/27/2019
-ms.openlocfilehash: b1007080c907eecc940b57184954c793b85f5eec
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.date: 11/04/2019
+ms.openlocfilehash: 31aacfea7c68614add0229c3a9c494de4714fe16
+ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72595590"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73604033"
 ---
 # <a name="query-performance-insight-in-azure-database-for-mariadb"></a>анализ производительности запросов в базе данных Azure для MariaDB
 
 **Применимо к:** База данных Azure для MariaDB 10,2
 
-> [!IMPORTANT]
-> Анализ производительности запросов находится на этапе предварительной версии.
-
 Этот компонент помогает быстро определить наиболее медленно выполняющиеся запросы, их изменение со временем и ожидания каких действий влияют на них.
 
-## <a name="common-scenarios"></a>Стандартные сценарии
+## <a name="common-scenarios"></a>Распространенные сценарии
 
 ### <a name="long-running-queries"></a>Долго выполняющиеся запросы
 
@@ -38,7 +35,7 @@ ms.locfileid: "72595590"
 
 Чтобы просматривать текст запросов в анализе производительности запросов, требуются разрешения **Владельца** или **Участника**. **Модуль чтения** может просматривать графики и таблицы, но не текст запросов.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы компонент "Анализ производительности запросов" работал, данные должны находиться в [хранилище запросов](concepts-query-store.md).
 

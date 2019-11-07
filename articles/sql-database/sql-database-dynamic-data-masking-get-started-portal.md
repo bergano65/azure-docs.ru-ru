@@ -1,5 +1,5 @@
 ---
-title: 'Портал Azure: Динамическое маскирование данных Базы данных SQL | Документация Майкрософт'
+title: 'Портал Azure: Динамическое маскирование данных в базе данных SQL '
 description: Как приступить к работе с динамическим маскированием данных в базе данных SQL на портале Azure.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: ronitr
 ms.author: ronitr
 ms.reviewer: vanto
 ms.date: 03/04/2018
-ms.openlocfilehash: 1400a21c3fee51bb26a3271546a7553a3429b42d
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: d92f77c56221d7c79ed30a6ca67d31d1b3f7f703
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68568800"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73690586"
 ---
 # <a name="get-started-with-sql-database-dynamic-data-masking-with-the-azure-portal"></a>Приступая к работе с динамическим маскированием данных в базе данных SQL на портале Azure
 
@@ -55,7 +55,7 @@ ms.locfileid: "68568800"
 
 10. Щелкните **Сохранить** на странице настройки маскирования данных, чтобы сохранить новую или обновленную политику маскирования.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Обзор динамического маскирования данных см. в разделе [Динамическое маскирование данных](sql-database-dynamic-data-masking-get-started.md).
 * Динамическое маскирование данных можно также реализовать с помощью [командлетов для Базы данных SQL Azure](https://docs.microsoft.com/powershell/module/az.sql/) или [REST API](https://docs.microsoft.com/rest/api/sql/).

@@ -11,19 +11,19 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/12/2019
+ms.date: 10/31/2019
 ms.author: spelluru
-ms.openlocfilehash: e9073e7cba97c4f5e2d550e5e49a6655ec76abbe
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.openlocfilehash: f438c32deb7e923f08396b0580d807d6e5b5e69a
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72332086"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73585034"
 ---
 # <a name="use-a-shared-image-gallery-in-azure-lab-services"></a>Использование общей коллекции образов в службах лаборатории Azure
 В этой статье показано, как преподаватели и Администраторы лаборатории могут сохранить образ виртуальной машины шаблона для повторного использования другими пользователями. Эти образы сохраняются в [коллекции общих образов](../../virtual-machines/windows/shared-image-galleries.md)Azure. В качестве первого шага Администратор лаборатории Присоединяет существующую коллекцию общих образов к учетной записи лаборатории. После присоединения коллекции общих образов лаборатории, созданные в учетной записи лаборатории, могут сохранять образы в общей коллекции образов. Другие преподаватели могут выбрать этот образ из коллекции общих образов, чтобы создать шаблон для своих классов. 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 - Создайте коллекцию общих образов, используя [Azure PowerShell](../../virtual-machines/windows/shared-images.md) или [Azure CLI](../../virtual-machines/linux/shared-images.md).
 - Вы подключили коллекцию общих образов к учетной записи лаборатории. Пошаговые инструкции см. [в разделе как подключить или отключить коллекцию общих образов](how-to-attach-detach-shared-image-gallery.md).
 

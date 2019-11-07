@@ -1,5 +1,5 @@
 ---
-title: Порты для базы данных SQL помимо 1433 | Документация Майкрософт
+title: Порты свыше 1433 для базы данных SQL
 description: Взаимодействие с базой данных при клиентских подключениях из ADO.NET к базе данных SQL Azure может происходить напрямую, без прокси-сервера, если база данных не использует порт 1433.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: MightyPen
 ms.author: genemi
 ms.reviewer: sstein
 ms.date: 04/03/2019
-ms.openlocfilehash: a39cfd1981041c807a91a08c198378d238f0846e
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 38ab3b6b0c64ad17311d15fd12e7625e8aa728ce
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68568917"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73690683"
 ---
 # <a name="ports-beyond-1433-for-adonet-45"></a>Порты для ADO.NET 4.5, отличные от порта 1433
 
@@ -30,11 +30,11 @@ ms.locfileid: "68568917"
 
 В случае подключения к Базе данных SQL Azure сначала нужно узнать, запускается ли клиентская программа *за пределами* или *в пределах* границ облака Azure. В подразделах рассматриваются два типичных сценария.
 
-### <a name="outside-client-runs-on-your-desktop-computer"></a>*Внешняя программа*. Клиент выполняется на настольном компьютере
+### <a name="outside-client-runs-on-your-desktop-computer"></a>*Внешняя программа.* Клиент работает на настольном компьютере
 
 Порт 1433 — единственный порт, который должен быть открыт на компьютере, где размещено ваше клиентское приложение базы данных SQL.
 
-### <a name="inside-client-runs-on-azure"></a>*Внутренняя программа*. Клиент выполняется в Azure
+### <a name="inside-client-runs-on-azure"></a>*Внутренняя программа.* Клиент работает в Azure
 
 При запуске внутри границ облака Azure для взаимодействия с сервером Базы данных SQL клиент использует то, что можно назвать *прямым маршрутом* . После установления подключения дальнейшее взаимодействие между клиентом и базой данных не включает в себя шлюз Базы данных SQL Azure.
 
@@ -83,6 +83,6 @@ ms.locfileid: "68568917"
 * [Список версий протокола TDS](https://www.freetds.org/userguide/tdshistory.htm)
 * [Общие сведения о разработке базы данных SQL](sql-database-develop-overview.md)
 * [Брандмауэр Базы данных SQL Azure](sql-database-firewall-configure.md)
-* [Практическое руководство. Настройка правил брандмауэра в Базе данных SQL](sql-database-configure-firewall-settings.md)
+* [Практическое руководство. Настройка параметров брандмауэра для Базы данных SQL](sql-database-configure-firewall-settings.md)
 
 

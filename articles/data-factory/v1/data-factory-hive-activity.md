@@ -1,5 +1,5 @@
 ---
-title: Преобразование данных с помощью действия Hive в Azure | Документация Майкрософт
+title: Преобразование данных с помощью действия Hive — Azure
 description: Узнайте, как с помощью действия Hive в фабрике данных Azure выполнять запросы Hive к кластеру HDInsight по требованию или собственному кластеру HDInsight.
 services: data-factory
 documentationcenter: ''
@@ -12,12 +12,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: 8a7e6748f450ae398a05097ac6b192d074f5f1f7
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: f159f672c999d7877ef89cd78d23c4a608ccf1ab
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70139537"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73666996"
 ---
 # <a name="transform-data-using-hive-activity-in-azure-data-factory"></a>Преобразование данных с помощью действия Hive в фабрике данных Azure 
 > [!div class="op_single_selector" title1="Действия преобразования"]
@@ -38,7 +38,7 @@ ms.locfileid: "70139537"
 Действие Hive HDInsight в [конвейере](data-factory-create-pipelines.md) фабрики данных выполняет запросы Hive к [вашему собственному](data-factory-compute-linked-services.md#azure-hdinsight-linked-service) кластеру HDInsight или кластеру HDInsight [по запросу](data-factory-compute-linked-services.md#azure-hdinsight-on-demand-linked-service) под управлением Windows или Linux. Данная статья основана на материалах статьи о [действиях преобразования данных](data-factory-data-transformation-activities.md) , в которой приведен общий обзор преобразования данных и список поддерживаемых действий преобразования.
 
 > [!NOTE] 
-> Если вы не знакомы с Фабрикой данных Azure, сначала ознакомьтесь со статьей [Введение в фабрику данных Azure](data-factory-introduction.md) и руководством [Преобразование данных в облаке с помощью действия Spark в фабрике данных Azure](data-factory-build-your-first-pipeline.md) перед чтением этой статьи. 
+> Если вы не знакомы с фабрикой данных Azure, сначала ознакомьтесь со статьей [Введение в фабрику данных Azure](data-factory-introduction.md) и руководством [Создание первого конвейера для преобразования данных с помощью кластера Hadoop](data-factory-build-your-first-pipeline.md). 
 
 ## <a name="syntax"></a>Синтаксис
 
@@ -72,14 +72,14 @@ ms.locfileid: "70139537"
 }
 ```
 ## <a name="syntax-details"></a>Сведения о синтаксисе
-| Свойство | Описание | Обязательное значение |
+| Свойство | Description (Описание) | Обязательно |
 | --- | --- | --- |
 | name |Имя действия. |Да |
 | description |Текст, описывающий, для чего используется действие |Нет |
 | type |HDInsightHive. |Да |
 | inputs |Входные данные, используемые действием Hive |Нет |
-| выходные данные |Выходные данные, создаваемые действием Hive |Да |
-| linkedServiceName |Ссылка на кластер HDInsight, зарегистрированный в качестве связанной службы в фабрике данных. |Да |
+| outputs |Выходные данные, создаваемые действием Hive |Да |
+| linkedServiceName (имя связанной службы) |Ссылка на кластер HDInsight, зарегистрированный в качестве связанной службы в фабрике данных. |Да |
 | script |Указывается встроенный сценарий Hive. |Нет |
 | scriptPath |Путь к файлу сценария Hive в хранилище BLOB-объектов Azure. Можно использовать либо свойство script, либо свойство scriptPath, но не оба сразу. В имени файла учитывается регистр знаков. |Нет |
 | defines |Параметры в виде пары "ключ-значение", ссылки на которые указываются в сценарии Hive с помощью элемента hiveconf. |Нет |

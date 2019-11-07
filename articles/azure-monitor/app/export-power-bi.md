@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 08/10/2018
-ms.openlocfilehash: 04848f763fe8246f8e10f563169c04ea37b0ed37
-ms.sourcegitcommit: 1bd2207c69a0c45076848a094292735faa012d22
+ms.openlocfilehash: 3ec20f82bc12b60e5b88a02bb92a4a0ada4dcae7
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72677315"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73668013"
 ---
 # <a name="feed-power-bi-from-application-insights"></a>Использование данных Application Insights в Power BI
 [Power BI](https://www.powerbi.com/) — это набор бизнес-инструментов для анализа данных и обмена сведениями. На каждом устройстве доступны панели мониторинга с широкими возможностями. Вы можете объединять данные из различных источников, в том числе аналитические запросы из [ Application Insights](../../azure-monitor/app/app-insights-overview.md).
@@ -81,15 +81,17 @@ ms.locfileid: "72677315"
 
    ![Снимок экрана Power BI Desktop, на котором выделен измененный заголовок](./media/export-power-bi/changetitle.png)
 
-## <a name="troubleshooting"></a>Устранение неисправностей
+## <a name="troubleshooting"></a>Устранение неполадок
 
 Могут возникнуть ошибки, относящиеся к учетным данным или размеру набора данных. Ниже приведены сведения о том, что нужно делать в случае возникновения таких ошибок.
 
 ### <a name="unauthorized-401-or-403"></a>Недостаточно прав (401 или 403)
 Такая ошибка может произойти, если токен обновления не обновлен. Попробуйте выполнить следующие действия, чтобы убедиться, что у вас по-прежнему есть доступ.
 
-1. Войдите на портал Azure и убедитесь, что можете получить доступ к ресурсу.
+1. Войдите в портал Azure и убедитесь, что вы можете получить доступ к ресурсу.
 2. Попробуйте обновить учетные данные для панели мониторинга.
+3. Попробуйте очистить кэш на рабочем столе PowerBI.
+
 
    Если у вас есть доступ, но обновление учетных данных не выполняется, обратитесь в службу поддержки.
 
@@ -100,8 +102,8 @@ ms.locfileid: "72677315"
 
 1. Создайте [ключ API](https://dev.applicationinsights.io/documentation/Authorization/API-key-and-App-ID).
 2. Обновите сценарий Power BI на языке M, экспортированный из Analytics, заменив URL-адрес Azure Resource Manager интерфейсом API Application Insights.
-   * Заменить **https: \//Management.Azure.com/Subscriptions/...**
-   * с, **https: \//API.applicationinsights.IO/Beta/Apps/...**
+   * Заменить **https:\//Management.Azure.com/Subscriptions/...**
+   * с, **https:\//API.applicationinsights.IO/Beta/Apps/...**
 3. Наконец, измените учетные данные на базовые и используйте свой ключ API.
 
 **Существующий сценарий**

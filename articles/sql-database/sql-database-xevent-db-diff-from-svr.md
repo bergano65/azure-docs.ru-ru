@@ -1,5 +1,5 @@
 ---
-title: Расширенные события в базе данных SQL | Документация Майкрософт
+title: Расширенные события в Базе данных SQL
 description: В статье описываются расширенные события (XEvents) в Базе данных SQL Azure и отличия соответствующих сеансов событий от сеансов событий в Microsoft SQL Server.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: MightyPen
 ms.author: genemi
 ms.reviewer: jrasnik
 ms.date: 12/19/2018
-ms.openlocfilehash: f9af487e2eb35e7dc94e1b70945d5c03ffdde2ba
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 64cfcd9451416a6eb35301268b285bd00cf0cad4
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68566077"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73686778"
 ---
 # <a name="extended-events-in-sql-database"></a>Расширенные события в Базе данных SQL
 [!INCLUDE [sql-database-xevents-selectors-1-include](../../includes/sql-database-xevents-selectors-1-include.md)]
@@ -31,7 +31,7 @@ ms.locfileid: "68566077"
 
 Дополнительные сведения о расширенных событиях для Базы данных SQL Azure и Microsoft SQL Server доступны в следующих разделах.
 
-- [Краткое руководство. Расширенные события в SQL Server](https://msdn.microsoft.com/library/mt733217.aspx)
+- [Quick Start: Extended events in SQL Server](https://msdn.microsoft.com/library/mt733217.aspx)
 - [Расширенные события](https://msdn.microsoft.com/library/bb630282.aspx)
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -81,7 +81,7 @@ ms.locfileid: "68566077"
 
 Функцию расширенных событий поддерживают несколько [представлений каталога](https://msdn.microsoft.com/library/ms174365.aspx). Представления каталога сообщают *метаданные или определения* сеансов событий, созданных пользователями в текущей базе данных. Представления не возвращают сведения об экземплярах активных сеансов событий.
 
-| Имя<br/>представления каталога | Описание |
+| Имя<br/>представления каталога | Description (Описание) |
 |:--- |:--- |
 | **sys.database_event_session_actions** |Возвращает строку для каждого действия с каждым событием в сеансе событий. |
 | **sys.database_event_session_events** |Возвращает строку для каждого события в сеансе событий. |
@@ -95,7 +95,7 @@ ms.locfileid: "68566077"
 
 База данных SQL Azure включает [динамические административные представления (DMV)](https://msdn.microsoft.com/library/bb677293.aspx) , которые поддерживают расширенные события. DMV сообщают об *активных* сеансах событий.
 
-| Имя DMV | Описание |
+| Имя DMV | Description (Описание) |
 |:--- |:--- |
 | **sys.dm_xe_database_session_event_actions** |Возвращает сведения о действиях в сеансе событий. |
 | **sys.dm_xe_database_session_events** |Возвращает сведения о событиях в сеансе. |
@@ -169,9 +169,9 @@ API [трассировки событий для Windows (ETW)](https://msdn.mi
 
 Маркер SAS, сформированный для вашего контейнера хранилища Azure, должен указывать **rwl** для разрешений. Значение **rwl** обеспечивает следующие разрешения:
 
-- Чтение
-- Запись
-- List
+- чтение
+- запись
+- список
 
 ## <a name="performance-considerations"></a>Рекомендации по производительности
 
@@ -180,9 +180,9 @@ API [трассировки событий для Windows (ETW)](https://msdn.mi
 При появлении сообщения о превышении максимального объема памяти можно предпринять следующие коррекционные меры:
 
 - уменьшить количество одновременно запущенных сеансов событий;
-- уменьшить объем памяти, заданный в предложении **MAX\_MEMORY**, с помощью операторов **CREATE** и **ALTER**.
+- уменьшить объем памяти, заданный в предложении **MAX**MEMORY **, с помощью операторов** CREATE **и \_ALTER**.
 
-### <a name="network-latency"></a>Сетевая задержка
+### <a name="network-latency"></a>Задержки сети
 
 Целевой объект **Файл событий** может столкнуться с медленной работой или отказами сети при сохранении данных в большие двоичные объекты хранилища Azure. Другие события в Базе данных SQL могут откладываться до установки подключения к сети. Такая задержка может замедлить вашу работу.
 

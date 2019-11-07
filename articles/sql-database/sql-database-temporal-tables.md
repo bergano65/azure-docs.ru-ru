@@ -1,5 +1,5 @@
 ---
-title: Приступая к работе с темпоральными таблицами в Базе данных SQL Azure | Документация Майкрософт
+title: Приступая к работе с временными таблицами в базе данных SQL Azure
 description: Узнайте, как приступить к работе с временными таблицами в Базе данных SQL Azure.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: bonova
 ms.author: bonova
 ms.reviewer: carlrab
 ms.date: 06/26/2019
-ms.openlocfilehash: 39c19661a71a8b466aa6ff25be9e895189dfbfb3
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 44a5589357301f979bb094579626e1c02e582846
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68566362"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73686986"
 ---
 # <a name="getting-started-with-temporal-tables-in-azure-sql-database"></a>Приступая к работе с временными таблицами в базе данных SQL Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "68566362"
 
 К счастью, вам не нужно программировать хранение этой информации об активности в приложении. Благодаря временным таблицам этот процесс автоматизирован, что обеспечивает абсолютную гибкость во время разработки веб-сайта и позволяет больше времени уделить непосредственно анализу данных. Единственное, что необходимо сделать, — убедиться, что таблица **WebSiteInfo** настроена как [временная с системным управлением версиями](https://msdn.microsoft.com/library/dn935015.aspx#Anchor_0). Конкретные шаги по использованию временных таблиц в этом сценарии описаны ниже.
 
-## <a name="step-1-configure-tables-as-temporal"></a>Шаг 1.: Настройка таблиц в качестве временных
+## <a name="step-1-configure-tables-as-temporal"></a>Шаг 1. Настройка таблиц в качестве временных
 В зависимости от того, начинаете вы разработку новых приложений или обновляете существующее приложение, вы создадите временные таблицы или измените существующие, добавляя в них временные атрибуты. В общем случае может потребоваться сделать и то, и другое. Выполните это с помощью [SQL Server Management Studio](https://msdn.microsoft.com/library/mt238290.aspx) (SSMS), [SQL Server Data Tools](https://msdn.microsoft.com/library/mt204009.aspx) (SSDT) или любого другого средства для разработки Transact-SQL.
 
 > [!IMPORTANT]
@@ -105,7 +105,7 @@ ON dbo.WebsiteUserInfoHistory
 WITH (DROP_EXISTING = ON); 
 ```
 
-## <a name="step-2-run-your-workload-regularly"></a>Шаг 2.: Регулярный запуск рабочей нагрузки
+## <a name="step-2-run-your-workload-regularly"></a>Шаг 2. Регулярный запуск рабочей нагрузки
 Главным преимуществом временных таблиц является то, что для отслеживания изменений вам не нужно каким-либо образом изменять или настраивать веб-сайт. После создания временных таблиц в них прозрачно сохраняются предыдущие версии строк каждый раз, когда вы вносите изменения в данные. 
 
 Чтобы использовать автоматическое отслеживание изменений в этом конкретном сценарии, давайте просто обновляйте столбец **пажесвиситед** каждый раз, когда пользователь завершает свой сеанс на веб-сайте:
@@ -119,7 +119,7 @@ WHERE [UserID] = 1;
 
 ![TemporalArchitecture](./media/sql-database-temporal-tables/AzureTemporal5.png)
 
-## <a name="step-3-perform-historical-data-analysis"></a>Шаг 3. Анализ данных журнала
+## <a name="step-3-perform-historical-data-analysis"></a>Шаг 3. Анализ данных журнала
 Теперь, когда временное управления версиями системой включено, анализ данных журнала — дело всего одного запроса. В этой статье мы приведем несколько примеров распространенных сценариев анализа. Чтобы изучить все подробности, ознакомьтесь с возможностями предложения [FOR SYSTEM_TIME](https://msdn.microsoft.com/library/dn935015.aspx#Anchor_3).
 
 Чтобы просмотреть 10 лидирующих пользователей час назад, упорядоченных по числу посещаемых веб-страниц, выполните этот запрос.
@@ -193,8 +193,8 @@ ALTER TABLE dbo.WebsiteUserInfo
 * [Секционирование таблиц.](https://msdn.microsoft.com/library/mt637341.aspx#Anchor_2)
 * [Пользовательский сценарий очистки](https://msdn.microsoft.com/library/mt637341.aspx#Anchor_3)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о временных таблицах см. в разделе Извлечение [временных таблиц](https://docs.microsoft.com/sql/relational-databases/tables/temporal-tables).
-- Посетите сайт Channel 9, чтобы услышать [историю успешного внедрения темпоральных решений реальным клиентом](https://channel9.msdn.com/Blogs/jsturtevant/Azure-SQL-Temporal-Tables-with-RockStep-Solutions) и просмотреть [наглядную демонстрацию темпоральных решений](https://channel9.msdn.com/Shows/Data-Exposed/Temporal-in-SQL-Server-2016).
+- Посетите сайт Channel 9, чтобы услышать [историю успешного внедрения темпоральных решений реальным клиентом](https://channel9.msdn.com/Blogs/jsturtevant/Azure-SQL-Temporal-Tables-with-RockStep-Solutions) и посмотреть [наглядную демонстрацию темпоральных решений](https://channel9.msdn.com/Shows/Data-Exposed/Temporal-in-SQL-Server-2016).
 

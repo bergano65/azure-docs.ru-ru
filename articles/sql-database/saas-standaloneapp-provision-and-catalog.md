@@ -1,5 +1,5 @@
 ---
-title: Руководство по мультитенантному приложению SaaS, использующему базу данных SQL Azure | Документация Майкрософт
+title: Руководство по созданию SaaS для нескольких клиентов. база данных SQL Azure
 description: Подготовка новых клиентов и их каталогизация при помощи шаблона изолированного приложения
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: billgib
 ms.date: 09/24/2018
-ms.openlocfilehash: f9087ff33bccb54497ec8d781a47469553683d65
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: de1007aac3988f2ea78b9d1b7b1de19b862f196a
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68570280"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73691949"
 ---
 # <a name="provision-and-catalog-new-tenants-using-the--application-per-tenant-saas-pattern"></a>Подготовка новых клиентов и их каталогизация при помощи шаблона однотенантного приложения SaaS
 
@@ -57,7 +57,7 @@ ms.locfileid: "68570280"
 
 ## <a name="tutorial"></a>Учебник
 
-Из этого руководства вы узнаете, как выполнить следующие задачи:
+Из этого руководства вы узнали, как выполнять такие задачи:
 
 * Подготовка каталога
 * Регистрация примеров баз данных клиента, развернутых ранее в каталоге.
@@ -67,7 +67,7 @@ ms.locfileid: "68570280"
 
 В конце работы с этим руководством у вас будет набор изолированных однотенантных приложений, базы данных которых будут зарегистрированы в каталоге.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством выполните следующие предварительные требования: 
 
@@ -146,7 +146,7 @@ ms.locfileid: "68570280"
 
 - Дополнительные сведения о приложениях SaaS для мультитенантных приложений см. в статье [Мультитенантные шаблоны клиента в базе данных SaaS](saas-tenancy-app-design-patterns.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали следующее:
 

@@ -1,5 +1,5 @@
 ---
-title: Подключение к виртуальному рабочему столу Windows из веб-браузера — Azure
+title: Подключение веб-клиента виртуальных рабочих столов Windows — Azure
 description: Как подключиться к виртуальному рабочему столу Windows с помощью веб-клиента.
 services: virtual-desktop
 author: Heidilohr
@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.author: helohr
-ms.openlocfilehash: e7fa1d2b21bfde6495a63676bc2aa1faa07e6bc5
-ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
+ms.openlocfilehash: a29081f77587a96dc48930eab359610a42fc0be5
+ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71676754"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73605817"
 ---
 # <a name="connect-with-the-web-client"></a>Подключение к веб-клиенту
 
@@ -25,7 +25,7 @@ ms.locfileid: "71676754"
 
 Хотя любой браузер, поддерживающий HTML5, должен работать, корпорация Майкрософт официально поддерживает следующие операционные системы и браузеры.
 
-| Browser           | Поддерживаемая ОС                     | Примечания               |
+| "Обзор"           | Поддерживаемая ОС                     | Примечания               |
 |-------------------|----------------------------------|---------------------|
 | Microsoft Edge    | Windows                          |                     |
 | Internet Explorer | Windows                          |                     |

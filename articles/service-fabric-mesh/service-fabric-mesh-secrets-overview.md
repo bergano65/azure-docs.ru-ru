@@ -1,6 +1,6 @@
 ---
 title: Хранение и использование секретов приложения в службе "Сетка Azure Service Fabric" | Документация Майкрософт
-description: Хранение и использование секретов в службе "Сетка Service Fabric".
+description: Служба "Сетка Service Fabric" поддерживает секреты в качестве ресурсов Azure. Вот как можно хранить секреты и управлять ими с помощью приложений Service Fabricной сетки.
 services: service-fabric-mesh
 keywords: секретные коды
 author: v-steg
@@ -9,12 +9,12 @@ ms.date: 10/25/2018
 ms.topic: conceptual
 ms.service: service-fabric-mesh
 manager: jeconnoc
-ms.openlocfilehash: b5cfa93298222d914069b6ab63deb8ba8a9b59c3
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: 72188517c237b170b709c48f16d3c131985f95d1
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67875346"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73686243"
 ---
 # <a name="service-fabric-mesh-application-secrets"></a>Секреты приложения в службе "Сетка Service Fabric"
 Служба "Сетка Service Fabric" поддерживает секреты в качестве ресурсов Azure. Секретом в службе "Сетка Service Fabric" может быть любая конфиденциальная текстовая информация, например строки подключения к хранилищу, пароли или другие значения, которые должны хранится и передаваться защищенными.
@@ -22,11 +22,11 @@ ms.locfileid: "67875346"
 ![Общие сведения секретах в Сетке][sf-mesh-secrets-overview]
 
 ## <a name="mesh-secrets-resources"></a>Ресурсы секретов Сетки
-Секрет приложения в Сетке состоит из следующих компонентов:
+Секрет приложения сетки состоит из следующих компонентов.
 * Ресурс **Секреты** — это контейнер, в котором хранятся секреты в текстовом формате. Секреты, находящиеся в пределах ресурса **Секреты**, хранятся и передаются в защищенном виде.
-* Один или несколько ресурсов **Секреты** (или Значения), которые хранятся в контейнере ресурса **Секреты**. Каждый ресурс **Секреты** (или Значения) отличается номером версии.
+* Один или несколько ресурсов **Секреты** (или Значения), которые хранятся в контейнере ресурса **Секреты**. Каждый ресурс **Секреты/Значения** отличается номером версии.
 
-## <a name="next-steps"></a>Следующие шаги 
+## <a name="next-steps"></a>Дальнейшие действия 
 Дополнительные сведения о секретах в службе "Сетка Service Fabric".
 - [Управление секретами приложения в службе "Сетка Service Fabric"](service-fabric-mesh-howto-manage-secrets.md)
 - [Общие сведения о модели ресурсов Service Fabric](service-fabric-mesh-service-fabric-resources.md)

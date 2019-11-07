@@ -1,5 +1,5 @@
 ---
-title: Подключение Excel к отдельной базе данных в Базе данных SQL Azure | Документация Майкрософт
+title: Подключение Excel к отдельной базе данных в базе данных SQL Azure
 description: Узнайте, как подключить Microsoft Excel к отдельной базе данных SQL Azure. Импортируйте данные в Excel для создания отчетов и просмотра данных.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: joseidz
 ms.author: craigg
 ms.reviewer: ''
 ms.date: 02/12/2019
-ms.openlocfilehash: 8711d8f7ebc00b2d0fa51ff9f420293e96766d1c
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 603aa52aefc4c4d1200d433f7f73f6070849c8f7
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68569363"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73691021"
 ---
 # <a name="connect-excel-to-a-single-database-in-azure-sql-database-and-create-a-report"></a>Подключение Excel к отдельной базе данных в Базе данных SQL Azure и создание отчета
 
@@ -67,7 +67,7 @@ ms.locfileid: "68569363"
 
 > [!TIP]
 > Если нужно подключить другие книги и листы Excel к базе данных, на вкладке **Данные** нажмите кнопку **Последние источники**, чтобы открыть диалоговое окно **Последние источники**. Выберите в списке ранее созданное подключение и нажмите кнопку **Открыть**.
-> ![Диалоговое окно «последние источники»](media/sql-database-connect-excel/recent-connections.png)
+> диалоговое окно ![последние источники](media/sql-database-connect-excel/recent-connections.png)
 
 ## <a name="create-a-permanent-connection-using-odc-file"></a>Создание постоянного подключения с помощью файла ODC
 
@@ -98,7 +98,7 @@ ms.locfileid: "68569363"
 
     ![Существующее подключение](media/sql-database-connect-excel/existing-connection.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, как [подключаться к базе данных SQL с помощью SQL Server Management Studio](sql-database-connect-query-ssms.md) для выполнения сложных запросов и анализа.
 * Узнайте о преимуществах использования [пулов эластичных БД](sql-database-elastic-pool.md).

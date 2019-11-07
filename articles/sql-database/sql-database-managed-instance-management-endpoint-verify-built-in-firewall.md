@@ -1,5 +1,5 @@
 ---
-title: Обнаружение встроенного брандмауэра Управляемого экземпляра Базы данных SQL Azure | Документация Майкрософт
+title: Обнаружение встроенного брандмауэра Управляемый экземпляр Базы данных SQL Azure
 description: Узнайте, как проверить защиту встроенного брандмауэра в Управляемом экземпляре Базы данных SQL.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: srdan-bozovic-msft
 ms.author: srbozovi
 ms.reviewer: sstein, carlrab
 ms.date: 12/04/2018
-ms.openlocfilehash: c98b0fd5669140559b4840e157394c2e8c6086ae
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 912eeb95895597b9172d50463f380dd511fe196c
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68567429"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73688022"
 ---
 # <a name="verifying-the-managed-instance-built-in-firewall"></a>Проверка встроенного брандмауэра Управляемого экземпляра
 
@@ -28,6 +28,6 @@ ms.locfileid: "68567429"
 
 ![Проверка встроенного брандмауэра](./media/sql-database-managed-instance-management-endpoint/03_verify_firewall.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об Управляемых экземплярах и подключениях см. в статье [Архитектура подключения к Управляемому экземпляру Базы данных SQL Azure](sql-database-managed-instance-connectivity-architecture.md).

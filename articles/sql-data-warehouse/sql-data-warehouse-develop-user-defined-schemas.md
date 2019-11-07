@@ -1,5 +1,5 @@
 ---
-title: Использование определяемых пользователем схем в хранилище данных SQL | Документация Майкрософт
+title: Использование определяемых пользователем схем
 description: Советы по использованию определяемых пользователем схем T-SQL в хранилище данных SQL Azure для разработки решений.
 services: sql-data-warehouse
 author: XiaoyuMSFT
@@ -10,12 +10,13 @@ ms.subservice: development
 ms.date: 04/17/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: e0ae00e0fca5ed4c6fba04444e5c50424462d297
-ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
+ms.custom: seo-lt-2019
+ms.openlocfilehash: 697bffa36e9b208c1a027654df81fb356ddfc8ed
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68479570"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73685804"
 ---
 # <a name="using-user-defined-schemas-in-sql-data-warehouse"></a>Использование определяемых пользователем схем в хранилище данных SQL
 Советы по использованию определяемых пользователем схем T-SQL в хранилище данных SQL Azure для разработки решений.
@@ -120,6 +121,6 @@ FROM    [edw].customer
 > 
 > 
 
-## <a name="next-steps"></a>Следующие шаги
-Дополнительные советы по разработке приведены в [обзоре разработки](sql-data-warehouse-overview-develop.md).
+## <a name="next-steps"></a>Дальнейшие действия
+Дополнительные советы по разработке см. в статье [Проектные решения и методики программирования для хранилища данных SQL](sql-data-warehouse-overview-develop.md).
 

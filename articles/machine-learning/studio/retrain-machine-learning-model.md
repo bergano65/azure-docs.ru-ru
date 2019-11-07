@@ -1,6 +1,6 @@
 ---
-title: Повторное обучение и развертывание веб-службы
-titleSuffix: Azure Machine Learning Studio (classic)
+title: Переобучение веб-службы
+titleSuffix: ML Studio (classic) Azure
 description: Узнайте, как обновить веб-службу для использования недавно обученной модели машинного обучения в Машинное обучение Azure Studio (классическая модель).
 services: machine-learning
 ms.service: machine-learning
@@ -10,18 +10,18 @@ author: xiaoharper
 ms.author: amlstudiodocs
 ms.custom: seodec18
 ms.date: 02/14/2019
-ms.openlocfilehash: 55b054ffe55430ea106c72cdd91fdfba3a457cf5
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: e35ab4b3a45edd5a1172bc3a07d7c31abd2135f7
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73482997"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73684774"
 ---
 # <a name="retrain-and-deploy-a-machine-learning-model"></a>Повторное обучение и развертывание модели машинного обучения
 
 Повторное обучение — один из способов поддерживать точность моделей машинного обучения и учитывать самые актуальные доступные данные. В этой статье показано, как переучить и развернуть модель машинного обучения в качестве новой веб-службы в Studio (классической). Если вас интересует повторное обучение для классической веб-службы, [изучите это практическое руководство.](retrain-classic-web-service.md)
 
-Для работы с этой статьей требуется развернутая прогнозная веб-служба. Если у вас еще нет прогнозной веб-службы, [Узнайте, как развернуть веб-службу Studio (классическая).](publish-a-machine-learning-web-service.md)
+Для работы с этой статьей требуется развернутая прогнозная веб-служба. Если у вас еще нет прогнозной веб-службы, [Узнайте, как развернуть веб-службу Studio (классическая).](deploy-a-machine-learning-web-service.md)
 
 Для повторного обучения и развертывания новой веб-службы машинного обучения вам потребуется выполнить следующие задачи:
 

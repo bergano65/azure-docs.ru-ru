@@ -1,5 +1,5 @@
 ---
-title: Восстановление существующего хранилища данных SQL Azure | Документация Майкрософт
+title: Восстановление существующего хранилища данных
 description: Руководство по восстановлению существующего хранилища данных SQL Azure.
 services: sql-data-warehouse
 author: anumjs
@@ -10,12 +10,13 @@ ms.subservice: manage
 ms.date: 08/29/2018
 ms.author: anjangsh
 ms.reviewer: igorstan
-ms.openlocfilehash: 7470dd96109823057a174d2ecf097583dcb51898
-ms.sourcegitcommit: 5ded08785546f4a687c2f76b2b871bbe802e7dae
+ms.custom: seo-lt-2019
+ms.openlocfilehash: a73658510111df44c522d88ed5eceb7dcfa80d0d
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69575272"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73685531"
 ---
 # <a name="restore-an-existing-azure-sql-data-warehouse"></a>Восстановление существующего хранилища данных SQL Azure
 
@@ -88,7 +89,7 @@ $RestoredDatabase.status
 
 ## <a name="restore-an-existing-data-warehouse-through-the-azure-portal"></a>Восстановление существующего хранилища данных с помощью портал Azure
 
-1. Войдите на [портале Azure][Azure portal].
+1. Войдите на [портал Azure][Azure portal].
 2. Перейдите к хранилищу данных SQL, из которого требуется выполнить восстановление.
 3. В верхней области колонки обзора выберите **Восстановить**.
 
@@ -98,7 +99,7 @@ $RestoredDatabase.status
 
     ![Точки автоматического восстановления](./media/sql-data-warehouse-restore-active-paused-dw/restoring-11.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Восстановление удаленного хранилища данных][Restore a deleted data warehouse]
 - [Восстановление из хранилища геоархивных данных][Restore from a geo-backup data warehouse]
  

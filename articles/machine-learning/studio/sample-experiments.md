@@ -1,6 +1,6 @@
 ---
-title: Kickstart эксперименты на основе примеров
-titleSuffix: Azure Machine Learning Studio (classic)
+title: Kickstart эксперименты из примеров
+titleSuffix: ML Studio (classic) Azure
 description: Узнайте, как использовать примеры экспериментов машинного обучения для создания экспериментов с помощью Коллекция решений ИИ Azure и Машинное обучение Azure Studio (классическая модель).
 services: machine-learning
 ms.service: machine-learning
@@ -10,12 +10,12 @@ author: xiaoharper
 ms.author: amlstudiodocs
 ms.custom: seodec18, previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 01/05/2018
-ms.openlocfilehash: 547cd7c97ddf7aa08ef94f6aeea82e16119c7135
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: fa23612070a5b0c1a33c2effb9cd9e533ca5eada
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73496778"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73670644"
 ---
 # <a name="create-azure-machine-learning-studio-classic-experiments-from-working-examples-in-azure-ai-gallery"></a>Создавайте эксперименты Машинное обучение Azure Studio (классические) на основе рабочих примеров в Коллекция решений ИИ Azure
 
@@ -59,4 +59,4 @@ ms.locfileid: "73496778"
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Импорт обучающих данных в Студию машинного обучения Azure из разных источников данных](import-data.md)
 * [Краткое руководство по языку программирования R для службы машинного обучения Azure](r-quickstart.md)
-* [Развертывание веб-службы машинного обучения Azure](publish-a-machine-learning-web-service.md)
+* [Развертывание веб-службы машинного обучения Azure](deploy-a-machine-learning-web-service.md)

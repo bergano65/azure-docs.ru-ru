@@ -1,5 +1,5 @@
 ---
-title: Создание контейнера профиля Фслогикс для пула узлов с помощью общей папки на основе виртуальной машины в Azure
+title: Общий ресурс контейнера профиля Фслогикс Windows для виртуальных рабочих столов — Azure
 description: Как настроить контейнер Фслогикс Profile для пула узлов виртуальных рабочих столов Windows с помощью общей папки на основе виртуальной машины.
 services: virtual-desktop
 author: Heidilohr
@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 08/20/2019
 ms.author: helohr
-ms.openlocfilehash: 0e7516fc4874e4cbc387f2f494efc6ef745d64f7
-ms.sourcegitcommit: 9dec0358e5da3ceb0d0e9e234615456c850550f6
+ms.openlocfilehash: 65d800cc6c1b6818369807ffeae9cd350a34066f
+ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2019
-ms.locfileid: "72311589"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73606991"
 ---
 # <a name="create-a-profile-container-for-a-host-pool-using-a-file-share"></a>Создание контейнера профиля для пула узлов с помощью общей папки
 
@@ -59,15 +59,15 @@ ms.locfileid: "72311589"
 
 1. [Подключитесь к виртуальной машине](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-portal#connect-to-virtual-machine) с помощью учетных данных, указанных при создании виртуальной машины.
 2. Запустите Интернет браузер и перейдите по [этой ссылке](https://go.microsoft.com/fwlink/?linkid=2084562) , чтобы скачать агент фслогикс.
-3. Перейдите в файл \\ @ no__t-1Win32 @ no__t-2Release или \\ @ no__t-4X64 @ no__t-5Release в файле zip и запустите **фслогиксаппссетуп** , чтобы установить агент фслогикс.  Дополнительные сведения об установке Фслогикс см. в статье [Загрузка и установка фслогикс](https://docs.microsoft.com/fslogix/install-ht).
-4. Перейдите в раздел **Program files** > **фслогикс** **приложения**  > , чтобы подтвердить установку агента.
-5. В меню Пуск запустите **программу Regedit** от имени администратора. Перейдите в раздел **Computer @ no__t-1HKEY_LOCAL_MACHINE @ no__t-2software @ no__t-3FSLogix**.
+3. Перейдите в \\\\Win32\\Release или \\\\x64\\в ZIP-файл и запустите **фслогиксаппссетуп** , чтобы установить агент фслогикс.  Дополнительные сведения об установке Фслогикс см. в статье [Загрузка и установка фслогикс](https://docs.microsoft.com/fslogix/install-ht).
+4. Перейдите в раздел **Program files** > **фслогикс** > **Apps** , чтобы подтвердить установку агента.
+5. В меню Пуск запустите **программу Regedit** от имени администратора. Перейдите в раздел **Computer\\HKEY_LOCAL_MACHINE\\software\\фслогикс**.
 6. Создайте ключ с именем **Profiles**.
 7. Создайте следующие значения для ключа Profiles:
 
-| ИМЯ                | Type               | Данные и значение                        |
+| Имя                | Тип               | Данные и значение                        |
 |---------------------|--------------------|-----------------------------------|
-| Enabled             | DWORD              | 1                                 |
+| Включено             | DWORD              | 1                                 |
 | вхдлокатионс        | Многострочное значение | "Сетевой путь к общей папке"     |
 
 >[!IMPORTANT]

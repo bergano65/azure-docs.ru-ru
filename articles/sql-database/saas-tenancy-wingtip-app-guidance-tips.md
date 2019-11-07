@@ -1,5 +1,5 @@
 ---
-title: Рекомендации по использованию примера мультитенантного приложения базы данных SQL | Документация Майкрософт
+title: 'Руководство по примеру для приложения с несколькими клиентами базы данных SQL — SaaS Wingtip '
 description: В этой статье приводятся шаги и рекомендации по установке и запуску примера мультитенантного приложения SaaS, использующего Базу данных SQL Azure — Wingtip Tickets.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: MightyPen
 ms.author: genemi
 ms.reviewer: sstein
 ms.date: 12/18/2018
-ms.openlocfilehash: 6c14fd69521be85dbda5ec4ceda991dfdff54ae0
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 9258e1e8219300c47e77ea8164e54edd5855bb39
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68570062"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73691810"
 ---
 # <a name="general-guidance-for-working-with-wingtip-tickets-sample-saas-apps"></a>Общие рекомендации по работе с примерами приложений SaaS Wingtip Tickets
 
@@ -48,7 +48,7 @@ ms.locfileid: "68570062"
 
 Измените файл **UserConfig.psm1**, используя имя группы ресурсов и значение пользователя, заданные во время развертывания:
 
-1. Откройте *интегрированную среду сценариев PowerShell* и загрузите файл *Learning Modules*\\UserConfig.psm1\\. 
+1. Откройте *интегрированную среду сценариев PowerShell* и загрузите файл \\Learning Modules\\*UserConfig.psm1*. 
 2. В полях *ResourceGroupName* и *Name* введите специфические для развертывания значения (только в строках 10 и 11).
 3. Сохраните изменения.
 
@@ -56,7 +56,7 @@ ms.locfileid: "68570062"
 
 ### <a name="execute-the-scripts-by-pressing-f5"></a>Выполнение сценариев нажатием клавиши F5
 
-Некоторые скрипты используют *$PSScriptRoot*, чтобы разрешить перемещение по папкам. Переменная *$PSScriptRoot* обрабатывается только при выполнении скрипта по нажатию клавиши **F5**.  Если выделить несколько скриптов и запустить их (**F8**), может произойти ошибка, поэтому нажмите клавишу **F5** при выполнении скриптов.
+Некоторые скрипты используют *$PSScriptRoot*, чтобы разрешить перемещение по папкам. Переменная *$PSScriptRoot* обрабатывается только при выполнении скрипта по нажатию клавиши **F5**.  Выделение и запуск выделенного фрагмента (**F8**) может привести к ошибкам, поэтому при выполнении скриптов нажмите клавишу **F5** .
 
 ### <a name="step-through-the-scripts-to-examine-the-implementation"></a>Пошаговое выполнение скриптов и изучение их реализации
 
@@ -93,7 +93,7 @@ ms.locfileid: "68570062"
 
    ![сервер каталога](media/saas-tenancy-wingtip-app-guidance-tips/connect.png)
 
-3. Используйте следующие демонстрационные учетные данные: Имя для входа — *разработчик*, пароль — *P\@ssword1*
+3. Демонстрационные учетные данные: имя входа = *разработчик*, пароль = *P\@ssword1*
 
     На следующем рисунке показано имя для входа для шаблона *однотенантной базы данных*. 
     ![подключение](media/saas-tenancy-wingtip-app-guidance-tips/tenants1-connect.png)
@@ -114,7 +114,7 @@ ms.locfileid: "68570062"
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Развертывание изолированного приложения SaaS Wingtip Tickets](saas-standaloneapp-get-started-deploy.md)
 - [Развертывание приложения SaaS Wingtip Tickets для однотенантной базы данных](saas-dbpertenant-get-started-deploy.md)
 - [Развертывание приложения SaaS Wingtip Tickets для мультитенантной базы данных](saas-multitenantdb-get-started-deploy.md)

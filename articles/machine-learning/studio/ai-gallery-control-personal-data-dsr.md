@@ -1,6 +1,6 @@
 ---
-title: Управление данными из Коллекции решений ИИ Azure
-titleSuffix: Azure Machine Learning Studio (classic)
+title: Управление данными Коллекция решений ИИ Azure
+titleSuffix: ML Studio (classic) Azure
 description: Можно экспортировать и удалять хранящиеся в продукте пользовательские данные из коллекции решений ИИ Azure, используя интерфейс или API каталога коллекции решений ИИ. В этой статье показано, как это сделать.
 services: machine-learning
 ms.service: machine-learning
@@ -11,12 +11,12 @@ ms.author: amlstudiodocs
 ms.custom: seodec18
 ms.date: 05/25/2018
 ms.reviewer: jmartens, mldocs
-ms.openlocfilehash: f0b0bd4b01056769d38179597e477ecb164fa9ab
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: b99fa6ae740de4e9c87061b201f2104d6d025e6c
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73493535"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73684890"
 ---
 # <a name="view-and-delete-in-product-user-data-from-azure-ai-gallery"></a>Просмотр и удаление хранящихся в продукте пользовательских данных из коллекции решений ИИ Azure
 
