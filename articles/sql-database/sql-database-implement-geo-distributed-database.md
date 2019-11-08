@@ -1,5 +1,5 @@
 ---
-title: Реализация решения географически распределенной базы данных SQL Azure | Документация Майкрософт
+title: Реализация геораспределенного решения
 description: Сведения о настройке базы данных SQL Azure и приложения для отработки отказа в реплицированную базу данных и тестовой отработки отказа.
 services: sql-database
 ms.service: sql-database
@@ -11,14 +11,14 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab
 ms.date: 03/12/2019
-ms.openlocfilehash: 4a21fe3ed15d1dc2550f6863611b27d2b36c5c51
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 51380d312c778380602c64cac766b050511cf994
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68568096"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73810926"
 ---
-# <a name="tutorial-implement-a-geo-distributed-database"></a>Учебник. Реализация географически распределенной базы данных
+# <a name="tutorial-implement-a-geo-distributed-database"></a>Руководство. Реализация географически распределенной базы данных
 
 Настройте базу данных SQL Azure и приложение для отработки отказа в удаленный регион, а затем протестируйте план отработки отказа. Вы узнаете, как выполнять следующие задачи:
 
@@ -329,7 +329,7 @@ ms.locfileid: "68568096"
       -FailoverGroupName $myfailovergroupname
    ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы настроили базу данных SQL Azure и приложение для отработки отказа в удаленный регион и протестировали план отработки отказа. Вы научились выполнять следующие задачи:
 

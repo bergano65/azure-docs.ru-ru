@@ -1,5 +1,5 @@
 ---
-title: Создание правила брандмауэра на уровне сервера Базы данных SQL Azure | Документация Майкрософт
+title: создадим правило брандмауэра на уровне сервера;
 description: Создание правила брандмауэра на уровне сервера Базы данных SQL для отдельной базы данных или базы данных в пуле
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: sachinpMSFT
 ms.author: sachinp
 ms.reviewer: vanto, carlrab
 ms.date: 02/11/2019
-ms.openlocfilehash: 27b554159fca2043fbd0c853e260a66294c10387
-ms.sourcegitcommit: a7a9d7f366adab2cfca13c8d9cbcf5b40d57e63a
+ms.openlocfilehash: ff2508952b75bad88ff8ff92388c20ba52f50f42
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71162310"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73818258"
 ---
 # <a name="quickstart-create-a-server-level-firewall-rule-for-single-and-pooled-databases-using-the-azure-portal"></a>Краткое руководство. Создание правила брандмауэра на уровне сервера для отдельной базы данных или базы данных в пуле с помощью портала Azure
 

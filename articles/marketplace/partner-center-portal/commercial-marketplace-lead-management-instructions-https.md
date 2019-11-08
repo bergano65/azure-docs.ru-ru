@@ -4,15 +4,16 @@ description: Настройка управления интересами для
 services: Azure, Marketplace, commercial marketplace, Partner Center
 author: qianw211
 ms.service: marketplace
+ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 07/31/2019
 ms.author: evansma
-ms.openlocfilehash: 6a34bdcab5a13af682515bbae96e9a1800ccc37f
-ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
+ms.openlocfilehash: 83efb9cfd1ee7464a334ebc4064dbfaa20ab30de
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69902199"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73812285"
 ---
 # <a name="configure-lead-management-using-an-https-endpoint"></a>Настройка управления интересами с помощью конечной точки HTTPS
 
@@ -24,7 +25,7 @@ ms.locfileid: "69902199"
 
 2. Войдите и выберите **Мои потоки** в строке меню.
 
-3. Выберите **+ автоматизировано — с пустого**поля.
+3. Выберите **+ автоматически — из пустого**поля.
 
     ![Мои потоки + автоматизированный — из пустых](./media/commercial-marketplace-lead-management-instructions-https/my-flows-automated.png)
 
@@ -108,7 +109,7 @@ ms.locfileid: "69902199"
 1. Выберите **+ Новый шаг**.
 2. Выберите систему CRM по своему усмотрению, выполнив поиск там, где отображается список *соединителей поиска и действий*, и выберите его в разделе *действия* с действием создать новую запись. На следующем снимке экрана показана **Dynamics 365 — создайте** новую запись в качестве примера.
 
-    ![Создать новую запись](./media/commercial-marketplace-lead-management-instructions-https/create-new-record.png)
+    ![Создание записи](./media/commercial-marketplace-lead-management-instructions-https/create-new-record.png)
 
 3. Укажите **название организации** , связанное с системой CRM. Выберите **Интересы** в раскрывающемся списке **Имя сущности**.
 
@@ -116,7 +117,7 @@ ms.locfileid: "69902199"
 
 4. В службе Flow отобразится форма для предоставления информации о потенциальном клиенте. Вы можете сопоставлять элементы из входного запроса, выбрав Добавление динамического содержимого. На приведенном ниже снимке экрана показан пример **OfferTitle**.
 
-    ![Добавить динамическое содержимое](./media/commercial-marketplace-lead-management-instructions-https/add-dynamic-content.png)
+    ![Добавление динамического содержимого](./media/commercial-marketplace-lead-management-instructions-https/add-dynamic-content.png)
 
 5. Сопоставьте нужные поля и сохраните поток нажав **эту** кнопку. Создается URL-адрес HTTP POST и доступен в окне *Получение HTTP-запроса* . Скопируйте этот URL-адрес с помощью элемента управления копированием, который расположен справа от URL-адреса HTTP POST. это важно, чтобы не пропустить все части URL-адреса по ошибке. Сохраните этот URL-адрес, так как он понадобится при настройке управления интересами на портале публикации.
 
@@ -129,7 +130,7 @@ ms.locfileid: "69902199"
 3. В разделе **действия**выберите **Отправить сообщение электронной почты (Office 365 Outlook)** .
 
     >[!Note]
-    >Если вы хотите использовать другой поставщик электронной почты, выполните поиск по адресу и выберите *Отправить уведомление по электронной почте (mail)* в качестве действия.
+    >Если вы хотите использовать другой поставщик электронной почты, выполните поиск по *адресу и выберите Отправить уведомление по электронной почте (mail)* в качестве действия.
 
     ![Добавление действия электронной почты](./media/commercial-marketplace-lead-management-instructions-https/https-request-received-send-email.png)
 
@@ -150,13 +151,13 @@ ms.locfileid: "69902199"
 
 5. Нажмите кнопку **Сохранить**, чтобы завершить поток. URL-адрес HTTP POST создается и доступен в окне *Получение HTTP-запроса* . Скопируйте этот URL-адрес с помощью элемента управления копированием, который расположен справа от URL-адреса HTTP POST. это важно, чтобы не пропустить все части URL-адреса по ошибке. Сохраните этот URL-адрес, так как он понадобится при настройке управления интересами на портале публикации.
 
-   ![URL-адрес HTTP POST ](./media/commercial-marketplace-lead-management-instructions-https/http-post-url.png)
+   ![URL-АДРЕС HTTP POST ](./media/commercial-marketplace-lead-management-instructions-https/http-post-url.png)
 
 ### <a name="testing"></a>Тестирование
 
 Вы можете проверить, что все работает правильно, выполнив следующие действия с помощью средства [POST](https://app.getpostman.com/app/download/win64), которое можно скачать в Интернете. Это доступно для Windows. 
 
-1. Запустите POST и выберите **Новый** > **запрос** , чтобы настроить средство тестирования. 
+1. Запустите POST и выберите **новый** > **запросе** , чтобы настроить средство тестирования. 
 
    ![Запрос на настройку средства тестирования](./media/commercial-marketplace-lead-management-instructions-https/postman-request.png)
 
@@ -201,7 +202,7 @@ ms.locfileid: "69902199"
 
 1. Перейдите на страницу **настройки предложения** для вашего предложения.
 2. Выберите **Подключиться** в разделе Управление интересами.
-3. Во всплывающем окне сведения о подключении выберите конечная **точка HTTPS** для **назначения интереса** и вставьте URL-адрес HTTP POST в потоке, который вы создали, выполнив предыдущие шаги в поле **URL-адрес конечной точки HTTPS** .
+3. Во всплывающем окне сведения о подключении выберите **Конечная точка HTTPS** для **назначения интереса** и вставьте URL-адрес HTTP POST в потоке, который вы создали, выполнив предыдущие шаги в поле **URL-адрес конечной точки HTTPS** .
 4. Щелкните **Сохранить**. 
 
 >[!Note] 

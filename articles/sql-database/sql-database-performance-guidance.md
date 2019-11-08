@@ -1,5 +1,5 @@
 ---
-title: Руководство по настройке производительности базы данных SQL Azure
+title: Руководство по настройке производительности
 description: Сведения об использовании рекомендаций по ручной настройке производительности запросов базы данных SQL Azure.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: juliemsft
 ms.author: jrasnick
 ms.reviewer: carlrab
 ms.date: 01/25/2019
-ms.openlocfilehash: 971b35838f370f31d6e2d2da06dfdbced2fafb02
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 6e42911d05f387ea47b56b913e9a1868100c1b3c
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73687677"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73821363"
 ---
 # <a name="manual-tune-query-performance-in-azure-sql-database"></a>Ручная настройка производительности запросов в Базе данных SQL Azure
 

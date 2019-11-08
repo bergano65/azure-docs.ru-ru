@@ -8,12 +8,12 @@ ms.topic: overview
 author: j-martens
 ms.author: jmartens
 ms.date: 11/04/2019
-ms.openlocfilehash: 9399353cb676ef4525e81229cf3920fd9d7e3aaf
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 7e07419115a6e9709879c71dfac1234408bda0ee
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73684923"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73824060"
 ---
 # <a name="what-is-azure-machine-learning"></a>Что такое служба "Машинное обучение Microsoft Azure"?
 
@@ -44,7 +44,7 @@ ms.locfileid: "73684923"
 
 + Записные книжки Jupyter. Используйте наши [примеры записных книжек](https://aka.ms/aml-notebooks) или создайте свои записные книжки, чтобы использовать для машинного обучения наши примеры для <a href="https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py" target="_blank">пакета SDK для Python</a>. 
 
-+ Скрипты R или записные книжки, в которых используется <a href="https://azure.github.io/azureml-sdk-for-r/reference/index.html on" target="_blank">пакет SDK для R</a> для написания собственного кода, или модули R в конструкторе.
++ Скрипты R или записные книжки, в которых используется <a href="https://azure.github.io/azureml-sdk-for-r/reference/index.html" target="_blank">пакет SDK для R</a> для написания собственного кода, или модули R в конструкторе.
 
 + [Расширение Visual Studio Code](how-to-vscode-tools.md)
 

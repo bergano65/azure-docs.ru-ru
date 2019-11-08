@@ -1,18 +1,19 @@
 ---
-title: Создать или изменить предложение | Azure Marketplace
+title: Создание или изменение предложения | Azure Marketplace
 description: API для создания нового или обновления существующего предложения.
 services: Azure, Marketplace, Cloud Partner Portal,
 author: v-miclar
 ms.service: marketplace
+ms.subservice: partnercenter-marketplace-publisher
 ms.topic: reference
 ms.date: 09/13/2018
 ms.author: pabutler
-ms.openlocfilehash: 55f6aa60c836d55333e1c5b02a44114b91df822d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: bfb9cfbe2c63caafef8487015f42a05b98afa29c
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64935524"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73819720"
 ---
 <a name="create-or-modify-an-offer"></a>Создание или изменение предложения
 =========================
@@ -25,24 +26,24 @@ ms.locfileid: "64935524"
 <a name="uri-parameters"></a>Параметры универсального кода ресурса (URI)
 --------------
 
-|  **Имя**         |  **Описание**                      |  **Тип данных**  |
+|  **имя**         |  **Описание**                      |  **Тип данных**  |
 |  --------         |  ----------------                     |  -------------  |
-| publisherid       |  Идентификатор издателя, например `contoso` |   String |
-| offerId           |  Идентификатор предложения                     |   String        |
+| publisherid       |  Идентификатор издателя, например `contoso` |   string |
+| OfferId           |  Идентификатор предложения                     |   string        |
 | api-version       |  Последняя версия API            |   Дата           |
 |  |  |  |
 
-<a name="header"></a>Верхний колонтитул
+<a name="header"></a>Заголовок
 ------
 
-|  **Имя**        |  **Значение**               |
+|  **имя**        |  **Значение**               |
 |  ---------       |  ----------              | 
 | Content-Type     | `application/json`       |
 | Авторизация    | `Bearer YOUR_TOKEN`      |
 |  |  |
 
 
-<a name="body-example"></a>Пример текста запроса
+<a name="body-example"></a>Пример текста
 ------------
 
 В примере ниже показано создание предложения с помощью offerID `contosovirtualmachine`.

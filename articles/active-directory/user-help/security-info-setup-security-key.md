@@ -1,5 +1,5 @@
 ---
-title: Настройка сведений о безопасности для использования ключа безопасности (Предварительная версия) — Azure Active Directory | Документация Майкрософт
+title: Настройка сведений о безопасности (Предварительная версия) для ключа безопасности — Azure AD
 description: Как настроить сведения о безопасности для проверки личности с помощью ключа безопасности быстрого удостоверения Online (FIDO2).
 services: active-directory
 author: eross-msft
@@ -12,14 +12,14 @@ ms.topic: conceptual
 ms.date: 07/18/2019
 ms.author: lizross
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 47ae7de87efd787b7d3cba14a33688c4b29637e6
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: a9d86d594f0918e6a9ffed49142a81a0f7834e86
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73160707"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73803785"
 ---
-# <a name="set-up-security-info-to-use-a-security-key-preview"></a>Настройка сведений о безопасности для использования ключа безопасности (Предварительная версия)
+# <a name="set-up-security-info-preview-for-a-security-key"></a>Настройка сведений о безопасности (Предварительная версия) для ключа безопасности
 
 Ключи безопасности можно использовать в качестве метода входа без пароля в Организации. Ключ безопасности — это физическое устройство, которое используется с уникальным ПИН-кодом для входа в рабочую или учебную учетную запись. Так как для ключей безопасности требуется физическое устройство и что-то известное, оно считается более надежным методом проверки подлинности по сравнению с именем пользователя и паролем.
 

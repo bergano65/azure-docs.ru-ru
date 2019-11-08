@@ -5,14 +5,15 @@ author: qianw211
 manager: evansma
 ms.author: v-qiwe
 ms.service: marketplace
+ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 08/27/2019
-ms.openlocfilehash: f0fa86cc3de9f8c183d7b7a24fb03d02204adc17
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 38dcfe04473e8d2fbd81614908adef9636c44b19
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70076151"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73812859"
 ---
 # <a name="co-sell-state-codes"></a>Коды состояния совместной продажи
 
@@ -25,14 +26,14 @@ ms.locfileid: "70076151"
 | Алабама                             | US-AL     |
 | Аляска                              | US-AK     |
 | Аризона                             | US-AZ     |
-| Арканзас                            | US-AR     |
+| Как Арканзас так                            | US-AR     |
 | Калифорния                          | US-CA     |
 | Колорадо                            | US-CO     |
 | Коннектикут                         | US-CT     |
 | Делавэр                            | US-DE     |
-| Флорида                             | US-FL     |
+| Флориде                             | US-FL     |
 | Джорджия                             | US-GA     |
-| Гавайские острова                              | US-HI     |
+| Гавайи                              | US-HI     |
 | Айдахо                               | US-ID     |
 | Иллинойс                            | US-IL     |
 | Индиана                             | US-IN     |
@@ -40,46 +41,46 @@ ms.locfileid: "70076151"
 | Канзас                              | US-KS     |
 | Кентукки                            | US-KY     |
 | Луизиана                           | US-LA     |
-| Мэйн                               | US-ME     |
-| Мэрилэнд                            | US-MD     |
+| Maine                               | US-ME     |
+| Maryland                            | US-MD     |
 | Массачусетс                       | US-MA     |
 | Мичиган                            | US-MI     |
-| Миннесота                           | US-MN     |
-| Миссисипи                         | US-MS     |
-| Миссури                            | US-MO     |
+| Миннесоте                           | US-MN     |
+| Побережью                         | US-MS     |
+| Missouri                            | US-MO     |
 | Монтана                             | US-MT     |
 | Небраска                            | US-NE     |
 | Невада                              | US-NV     |
-| Нью Гэмпшир                       | US-NH     |
+| Создать Нью Гемпшир                       | US-NH     |
 | Нью Джерси                          | US-NJ     |
-| Нью Мексико                          | US-NM     |
-| Нью Йорк                            | US-МОСКВА     |
+| Новый Мексика                          | US-NM     |
+| Нью-Йорк                            | US-МОСКВА     |
 | Северная Каролина                      | US-NC     |
 | Северная Дакота                        | US-ND     |
 | Огайо                                | US-АХ     |
 | Оклахома                            | US-ОК     |
 | Орегон                              | US ИЛИ     |
 | Пенсильвания                        | US-PA     |
-| Род-Айленд                        | US-RI     |
+| Остров Айленд                        | US-RI     |
 | Южная Каролина                      | US-SC     |
 | Южная Дакота                        | US-SD     |
-| Теннеси                           | US-ТН     |
+| Теннесси                           | US-ТН     |
 | Техас                               | US-TX     |
-| Юта                                | US-UT     |
-| Вермонт                             | US-VT     |
+| Штат Юта                                | US-UT     |
+| Вермонтской                             | US-VT     |
 | Виргиния                            | US-ВА     |
 | Вашингтон                          | US-WA     |
 | Западная Виргиния                       | US-WV     |
-| Висконсин                           | US-WI     |
+| Висконсина                           | US-WI     |
 | Вайоминг                             | US-WY     |
 | Округ Колумбия                | US-DC     |
-| Восточное Самоа                      | US-AS     |
-| Остров Гуам                                | US-GU     |
-| Северные Марианские Острова            | US-MP     |
+| Американское Самоа                      | US-AS     |
+| Гуам                                | US-GU     |
+| Северные Марианские острова            | US-MP     |
 | Пуэрто-Рико                         | US-PR     |
-| Внешние малые о-ва (США) | US-UM    |
+| Внешние малые острова США | US-UM    |
 |Виргинские острова, США                 | US-VI     |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о [параметрах совместной продажи в центре партнеров](./commercial-marketplace-co-sell.md).

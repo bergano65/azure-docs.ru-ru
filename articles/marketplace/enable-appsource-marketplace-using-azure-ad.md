@@ -5,15 +5,16 @@ services: Azure, AppSource, Marketplace, Compute, Storage, Networking, Blockchai
 author: qianw211
 manager: pabutler
 ms.service: marketplace
+ms.subservice: partnercenter-marketplace-publisher
 ms.topic: article
 ms.date: 09/12/2018
 ms.author: pabutler
-ms.openlocfilehash: 0b68687a2bbaa817f2776757ccab9571638c0fd5
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: 9423263270313659017b16a5e34511e7ef385af5
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67875998"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73825887"
 ---
 # <a name="enable-an-appsource-and-marketplace-listing-by-using-azure-active-directory"></a>Включение описания в AppSource и Marketplace с помощью Azure Active Directory
 
@@ -34,13 +35,13 @@ ms.locfileid: "67875998"
 
 | **Тип предложения**    | **Требования к единому входу в Azure AD**  |  |   |  |
 | :------------------- | :-------------------|:-------------------|:-------------------|:-------------------|
-|  | Связь со мной | Пробная версия | Тестовый выпуск | "Транзакция" |
-| Виртуальная машина | Н/Д | Нет | Нет | Нет |
-| Приложения Azure (шаблон решения)  | Н/Д | Н/Д | Н/Д | Н/Д |
-| Управляемые приложения  | Н/Д | Н/Д | Н/Д | Нет |
+|  | "Свяжитесь со мной" | Пробная версия | Тестовый выпуск | "Транзакция" |
+| Виртуальная машина | Недоступно | Нет | Нет | Нет |
+| Приложения Azure (шаблон решения)  | Недоступно | Недоступно | Недоступно | Недоступно |
+| Управляемые приложения  | Недоступно | Недоступно | Недоступно | Нет |
 | SaaS  | Нет | Да | Да | Да |
-| Контейнеры  | Н/Д | Н/Д | Н/Д | Нет |
-| Консультационные услуги  | Нет | Н/Д | Н/Д | Н/Д |
+| Контейнеры  | Недоступно | Недоступно | Недоступно | Нет |
+| Консультационные услуги  | Нет | Недоступно | Недоступно | Недоступно |
 
 Дополнительные сведения о технических требованиях к SaaS см. в статье [Руководство по публикации SaaS-приложений](https://docs.microsoft.com/azure/marketplace/marketplace-saas-applications-technical-publishing-guide).
 
@@ -86,7 +87,7 @@ ms.locfileid: "67875998"
 - Разработайте тестовый выпуск для одного клиента.
 - Создайте демонстрационное мультитенантное приложение, использующее единый вход.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Убедитесь, что была выполнена [регистрация в Azure Marketplace](https://azuremarketplace.microsoft.com/sell).
 - Дополнительные сведения о том, как создать или завершить предложение, см. в статье [Создание учетной записи центра партнеров](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) .

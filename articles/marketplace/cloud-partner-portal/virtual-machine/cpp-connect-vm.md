@@ -1,18 +1,19 @@
 ---
-title: Подключение к виртуальной машине Microsoft Azure под управлением | Azure Marketplace
+title: Подключение к виртуальной машине на основе Microsoft Azure | Azure Marketplace
 description: В этой статье описывается подключение к новой виртуальной машине, созданной в Azure.
 services: Azure, Marketplace, Cloud Partner Portal,
 author: v-miclar
 ms.service: marketplace
+ms.subservice: partnercenter-marketplace-publisher
 ms.topic: article
 ms.date: 10/19/2018
 ms.author: pabutler
-ms.openlocfilehash: ca002a77fd7252466f604b995af949b54694bc8c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 256952d06e8b417be9ab2bc3c6c8c6857d50e2ea
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64938580"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73817367"
 ---
 # <a name="connect-to-your-azure-based-virtual-machine"></a>Подключение к виртуальной машине Azure
 
@@ -22,7 +23,7 @@ ms.locfileid: "64938580"
 
 Для подключения к виртуальной машине Windows, расположенной в Azure, вы будете использовать клиент удаленного рабочего стола.  Большинство версий Windows изначально поддерживают протокол удаленного рабочего стола (RDP).  Для других машин сведения о клиентах удаленного рабочего стола можно найти в [этой статье](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/clients/remote-desktop-clients).  
 
-Статье подробно описано, как использовать встроенную поддержку протокола удаленного рабочего СТОЛА Windows для подключения к виртуальной Машине: [Способы подключения и выполните вход на виртуальную машину Azure под управлением Windows](../../../virtual-machines/windows/connect-logon.md).  
+В следующей статье описывается, как использовать встроенную поддержку RDP Windows для подключения к виртуальной машине: [Как подключиться к виртуальной машине Azure под управлением Windows и войти на нее](../../../virtual-machines/windows/connect-logon.md).  
 
 >[!TIP]
 > Вы можете получить предупреждения системы безопасности во время процесса, например что RDP-файл от неизвестного издателя или что не удается проверить учетные данные пользователя.  Эти предупреждения можно игнорировать.
@@ -47,7 +48,7 @@ ms.locfileid: "64938580"
 7. Нажмите кнопку **Открыть**, чтобы открыть окно терминала PuTTY.  
 8. При появлении запроса введите имя и пароль учетной записи виртуальной машины Linux. 
 
-   Если возникают проблемы с подключением, см. в документации по SSH-клиента, например [Глава 10: Распространенные сообщения об ошибках](https://www.ssh.com/ssh/putty/putty-manuals/0.68/Chapter10.html#errors).
+   Если возникают проблемы с подключением, ознакомьтесь со сведениями в документации по клиенту SSH, например [главой 10 с распространенными сообщениями об ошибках](https://www.ssh.com/ssh/putty/putty-manuals/0.68/Chapter10.html#errors).
 
 Дополнительные сведения, в том числе о том, как добавить рабочий стол в подготовленную виртуальную машину Linux, см. в статье [Установка и настройка удаленного рабочего стола для подключения к виртуальной машине Linux в Azure](../../../virtual-machines/linux/use-remote-desktop.md).
 

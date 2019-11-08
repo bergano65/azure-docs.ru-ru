@@ -1,5 +1,5 @@
 ---
-title: 'Конечные точки и правила виртуальной сети для отдельных баз данных и пулов в SQL Azure '
+title: Конечные точки и правила виртуальной сети для одной и для баз данных в составе пула
 description: Пометьте подсеть как конечную точку службы для виртуальной сети. Затем внесите конечную точку в виде правила виртуальной сети в список управления доступом к базе данных SQL Azure. После этого база данных SQL будет принимать подключения от всех виртуальных машин и других узлов в этой подсети.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: vanto, genemi
 ms.date: 08/27/2019
-ms.openlocfilehash: e1f8ab6725c58d9e1f15f88e6d2465ab88df79e2
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: f171181aa56287561aba3159f5039f70165dc8ab
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73686916"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73807518"
 ---
 # <a name="use-virtual-network-service-endpoints-and-rules-for-database-servers"></a>Использование конечных точек служб и правил виртуальной сети для серверов базы данных
 

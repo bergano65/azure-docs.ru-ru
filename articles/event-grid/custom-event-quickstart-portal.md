@@ -1,20 +1,20 @@
 ---
-title: Отправка пользовательских событий в конечную веб-точку — Сетка событий, портал Azure
-description: Используйте службу "Сетка событий Azure" и портал Azure, чтобы публиковать пользовательские темы и подписываться на события, связанные с этими темами. События обрабатываются в веб-приложении.
+title: Краткое руководство. Отправка пользовательских событий в конечную веб-точку — Сетка событий, портал Azure
+description: Краткое руководство. Используйте службу "Сетка событий Azure" и портал Azure, чтобы публиковать пользовательские темы и подписываться на события, связанные с этими темами. События обрабатываются в веб-приложении.
 services: event-grid
 keywords: ''
 author: spelluru
 ms.author: spelluru
-ms.date: 03/27/2019
+ms.date: 11/05/2019
 ms.topic: quickstart
 ms.service: event-grid
 ms.custom: seodec18
-ms.openlocfilehash: afb53ed013af6cd1db2f6ff3d25c350aa2b4f1e8
-ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
+ms.openlocfilehash: 398e63ec9a8b9e1b16d8ffcee538351fc6572de9
+ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69638564"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73720792"
 ---
 # <a name="quickstart-route-custom-events-to-web-endpoint-with-the-azure-portal-and-event-grid"></a>Краткое руководство. Перенаправление пользовательских событий в конечную веб-точку с помощью портала Azure и службы "Сетка событий"
 

@@ -6,16 +6,16 @@ ms.author: dacoulte
 ms.date: 11/04/2019
 ms.topic: tutorial
 ms.service: azure-policy
-ms.openlocfilehash: 79219b9405f76e7044a4d403b37ba2f1545dfbea
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 780dbf02fbdb0a607f29c710da9a6320a8626f7b
+ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73510008"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73643754"
 ---
 # <a name="tutorial-manage-tag-governance-with-azure-policy"></a>Руководство по системе управления тегами с помощью Политики Azure
 
-[Теги](../../../azure-resource-manager/resource-group-using-tags.md) являются важной частью организации ресурсов Azure в таксономию. Если следовать [рекомендациям по управлению тегами](/azure/architecture/cloud-adoption/ready/considerations/name-and-tag#metadata-tags), с помощью тегов можно применять бизнес-политики с использованием службы "Политика Azure" или [отслеживать затраты с помощью службы "Управление затратами"](../../../cost-management/cost-mgt-best-practices.md#organize-and-tag-your-resources).
+[Теги](../../../azure-resource-manager/resource-group-using-tags.md) являются важной частью организации ресурсов Azure в таксономию. Если следовать [рекомендациям по управлению тегами](/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging#naming-and-tagging-resources), с помощью тегов можно применять бизнес-политики с использованием службы "Политика Azure" или [отслеживать затраты с помощью службы "Управление затратами"](../../../cost-management/cost-mgt-best-practices.md#organize-and-tag-your-resources).
 Независимо от метода и причины применения тегов, важно иметь возможность быстро добавлять, изменять и удалять эти теги в ресурсах Azure.
 
 Действие [изменения](../concepts/effects.md#modify) Политики Azure призвано помочь в управлении тегами, независимо от этапа управления ресурсами. Действие **изменения** помогает в следующих случаях:

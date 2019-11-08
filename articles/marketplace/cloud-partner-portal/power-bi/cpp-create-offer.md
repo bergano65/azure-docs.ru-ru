@@ -1,18 +1,19 @@
 ---
-title: Создание предложения приложение Power BI | Azure Marketplace
+title: Создание предложения для Power BI приложения | Azure Marketplace
 description: Создание предложения приложения Power BI для Microsoft AppSource Marketplace.
 services: Azure, AppSource, Marketplace, Cloud Partner Portal, Power BI
 author: v-miclar
 ms.service: marketplace
+ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 01/29/2019
 ms.author: pabutler
-ms.openlocfilehash: 702be34a5be69c050b809713a5742c2189892a27
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e0ee26672697517556a2f639b533a1217712d03d
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64943322"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73822687"
 ---
 # <a name="create-a-power-bi-app-offer"></a>Создание предложения приложения Power BI
 
@@ -20,10 +21,10 @@ ms.locfileid: "64943322"
 
 Группы основных ресурсов описаны в таблице ниже.
 
-|   Группа ресурсов      | Описание                                                                         |
+|   Группа ресурсов      | Description (Описание)                                                                         |
 | ----------------   | ----------------                                                                    |
 | Параметры предложения     | Первичные идентифицирующие данные и название предложения.                                      |
-| Технические сведения     | URL-адрес установщика, используемый для установки приложения в рабочей области Power BI клиента. Дополнительные сведения о создании этого URL-адреса см. в [документации по приложениям Power BI](https://go.microsoft.com/fwlink/?linkid=2028636). |
+| Технические сведения     | URL-адрес установщика, который используется для установки приложения в рабочей области Power BI клиента. Дополнительные сведения о создании этого URL-адреса см. в [документации по приложениям Power BI](https://go.microsoft.com/fwlink/?linkid=2028636). |
 | Подробные сведения об онлайн-магазинах | Содержит маркетинговые, юридические ресурсы и ресурсы управления потенциальными клиентами. Маркетинговые ресурсы включают описание и логотипы предложения, а юридические — политику конфиденциальности, условия использования и другие юридические документы. Политика управления потенциальными клиентами позволяет указать способ обработки потенциальных клиентов пользовательского портала AppSource. |
 | Контакты           | Содержит сведения о поддержке контактных данных и политики.                                     |
 

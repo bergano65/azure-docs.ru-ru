@@ -1,18 +1,19 @@
 ---
-title: Справочник по API на портале партнера Cloud | Azure Marketplace
+title: Справочник по Портал Cloud Partner API | Azure Marketplace
 description: Описание предварительных требований и список операций Marketplace API.
 services: Azure, Marketplace, Cloud Partner Portal,
 author: v-miclar
 ms.service: marketplace
+ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: pabutler
-ms.openlocfilehash: 9626fdb5dbdf720a65217421565fc559a0cee684
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b6591e1780d03cbfaff70fbd19ec3dfd274fae79
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64935475"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73819619"
 ---
 <a name="cloud-partner-portal-api-reference"></a>Справочные материалы по API портала Cloud Partner
 ==================================

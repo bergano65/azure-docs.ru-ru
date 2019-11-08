@@ -1,22 +1,22 @@
 ---
-title: Аварийное восстановление для приложений SaaS с помощью георепликации базы данных SQL Azure
+title: Аварийное восстановление для приложений SaaS с георепликацией
 description: Узнайте, как использовать георепликацию базы данных SQL Azure для восстановления мультитенантных приложений SaaS в случае сбоя
 services: sql-database
 ms.service: sql-database
 ms.subservice: scenario
-ms.custom: ''
+ms.custom: seo-lt-2019
 ms.devlang: ''
 ms.topic: conceptual
 author: AyoOlubeko
 ms.author: craigg
 ms.reviewer: sstein
 ms.date: 01/25/2019
-ms.openlocfilehash: f6f8ed39de36ce38b0bc4b879980a054bf480d0e
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 0668ccf5ceb972dd120e4e3f37be6d879a12d0a7
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73692239"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73811705"
 ---
 # <a name="disaster-recovery-for-a-multi-tenant-saas-application-using-database-geo-replication"></a>Аварийное восстановление мультитенантных приложений SaaS с использованием георепликации базы данных
 

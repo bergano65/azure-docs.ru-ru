@@ -1,5 +1,5 @@
 ---
-title: Обучение нейронной сети для глубокого обучения с помощью PyTorch
+title: Обучение моделей PyTorch для глубокого обучения
 titleSuffix: Azure Machine Learning
 description: Узнайте, как выполнять сценарии обучения PyTorch в масштабе предприятия с помощью класса оценщика PyTorch Машинное обучение Azure.  Примеры сценариев классифицируют Chicken и Турция изображений для создания нейронной сети глубокого обучения на основе руководства по переносу PyTorch.
 services: machine-learning
@@ -11,12 +11,12 @@ author: maxluk
 ms.reviewer: peterlu
 ms.date: 08/01/2019
 ms.custom: seodec18
-ms.openlocfilehash: f08e19ac08d39b19838582cdfbb0d00dfde9de62
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 2c704e36f4353b34733ccc29b785c752b2a5c559
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73584480"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73822716"
 ---
 # <a name="train-pytorch-deep-learning-models-at-scale-with-azure-machine-learning"></a>Обучить модели глубокого обучения Pytorch в масштабе с помощью Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -163,7 +163,7 @@ run.wait_for_completion(show_output=True)
 
 - **Масштабирование**. Кластер пытается выполнить масштабирование, если кластеру Batch AI требуется больше узлов для выполнения выполнения, чем в настоящее время доступно.
 
-- **Выполняется**: все скрипты в папке Script передаются в целевой объект вычислений, хранилища данных подключаются или копируются, и выполняется entry_script. Выходные данные из STDOUT и папки/логс передаются в журнал выполнения и могут использоваться для наблюдения за выполнением.
+- **Выполняется**: все скрипты в папке Script передаются в целевой объект вычислений, хранилища данных подключаются или копируются, а entry_script выполняется. Выходные данные из STDOUT и папки/логс передаются в журнал выполнения и могут использоваться для наблюдения за выполнением.
 
 - **Пост-обработка**. папка/Outputs для выполнения копируется в журнал выполнения.
 

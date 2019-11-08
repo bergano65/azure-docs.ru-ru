@@ -1,18 +1,19 @@
 ---
-title: Предложение руководство по публикации AppSource для AppsSource storefront | Azure Marketplace
+title: AppSource рекомендации по публикации предложения для Аппссаурце витрины | Azure Marketplace
 description: Пошаговое руководство и контрольные списки по публикации приложений Office 365, Dynamics 365, Power BI и Power Apps в онлайн-магазине AppSource
 services: Marketplace, Compute, Storage, Networking, Blockchain, Security, SaaS
 author: ellacroi
 ms.service: marketplace
+ms.subservice: partnercenter-marketplace-publisher
 ms.topic: article
 ms.date: 07/09/2018
 ms.author: ellacroi
-ms.openlocfilehash: 38175bd2365ee9ab7246f0d967c364912efda37d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4a5d61d9434a73556d81010da7c7b3e96139a9e4
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64935685"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73824319"
 ---
 # <a name="office-365-dynamics-365-power-apps-and-power-bi-offer-publishing-guide"></a>Руководство по публикации предложения, касающегося приложений Office 365, Dynamics 365, Power Apps и Power BI
 
@@ -22,7 +23,7 @@ ms.locfileid: "64935685"
 
 ## <a name="product-specific-guides"></a>Руководства по конкретным продуктам
 
-### <a name="office-365"></a>Office 365
+### <a name="office-365"></a>Office 365
 
 Ознакомьтесь с [процессом публикации и рекомендациями](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store).
 
@@ -41,7 +42,7 @@ ms.locfileid: "64935685"
 
 Сведения о публикации предложения на портале Cloud Partner см. в статье [Предложение Dynamics 365 for Finance and Operations](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cpp-dynamics-365-operations-offer).
 
-### <a name="dynamics-365-for-customer-engagement"></a>Dynamics 365 for Customer Engagement
+### <a name="dynamics-365-for-customer-engagement"></a>Dynamics 365 для взаимодействия с клиентами
 Ознакомьтесь с [процессом публикации и рекомендациями](https://docs.microsoft.com/dynamics365/customer-engagement/developer/publish-app-appsource).
 
 Сведения о публикации предложения на портале Cloud Partner см. в статье [Предложение Dynamics 365 for Customer Engagements](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cpp-customer-engagement-offer).

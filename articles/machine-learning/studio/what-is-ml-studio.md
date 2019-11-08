@@ -11,12 +11,12 @@ ms.service: machine-learning
 ms.subservice: studio
 ms.topic: overview
 ms.date: 10/17/2019
-ms.openlocfilehash: 327bc40e5989cc3bca148f415113de32b19a7022
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 325278ee0222070ce7c02c1d72961f0431284677
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73500132"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73670546"
 ---
 # <a name="what-is-machine-learning-studio-classic"></a>Что такое Студия машинного обучения (классическая)?
 
@@ -107,7 +107,7 @@ ms.locfileid: "73500132"
 Разобраться в огромной библиотеке доступных алгоритмов машинного обучения вам поможет статья [How to choose algorithms for Microsoft Azure Machine Learning Studio (classic)](algorithm-choice.md) (Выбор алгоритмов Студии машинного обучения Azure (классической)).
 
 ## <a name="deploying-a-predictive-analytics-web-service"></a>Развертывание веб-службы прогнозной аналитики
-После подготовки модели прогнозной аналитики можно развернуть ее как веб-службу непосредственно из Студии машинного обучения (классической). Дополнительные сведения о том, как это сделать, см. в статье [Deploy an Azure Machine Learning Studio (classic) web service](publish-a-machine-learning-web-service.md) (Развертывание веб-службы Студии машинного обучения Azure (классической)).
+После подготовки модели прогнозной аналитики можно развернуть ее как веб-службу непосредственно из Студии машинного обучения (классической). Дополнительные сведения о том, как это сделать, см. в статье [Deploy an Azure Machine Learning Studio (classic) web service](deploy-a-machine-learning-web-service.md) (Развертывание веб-службы Студии машинного обучения Azure (классической)).
 
 ## <a name="next-steps"></a>Дополнительная информация
 Сведения о базовых принципах прогнозной аналитики и машинного обучения см. в статье [Руководство. Создание первого эксперимента по обработке и анализу данных в студии машинного обучения Azure](create-experiment.md) и [Создание экспериментов Студии машинного обучения на основе рабочих примеров из Коллекции решений ИИ Azure](sample-experiments.md).

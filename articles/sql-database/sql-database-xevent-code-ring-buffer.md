@@ -1,5 +1,5 @@
 ---
-title: Код кольцевого буфера XEvent для базы данных SQL
+title: Код кольцевого буфера XEvent
 description: Содержит пример кода Transact-SQL, обеспечивающего простоту и удобство использования целевого объекта "Кольцевой буфер" в Базе данных SQL Azure.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: MightyPen
 ms.author: genemi
 ms.reviewer: jrasnik
 ms.date: 12/19/2018
-ms.openlocfilehash: 8fd04cac394f05a9db18e84117a8647c1a17ba30
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 7adffac045ddb2ba369993b1b805e3ce2304fb38
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73686811"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73822314"
 ---
 # <a name="ring-buffer-target-code-for-extended-events-in-sql-database"></a>Код целевого объекта "Кольцевой буфер" для расширенных событий в базе данных SQL
 

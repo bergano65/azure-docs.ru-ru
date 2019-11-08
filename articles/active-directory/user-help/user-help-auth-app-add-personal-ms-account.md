@@ -1,5 +1,5 @@
 ---
-title: Добавление личных учетных записей, предоставленных корпорацией Майкрософт, в приложение Microsoft Authenticator (Azure Active Directory) | Документация Майкрософт
+title: Добавление персонального учетная запись Майкрософт в приложение для проверки подлинности Azure AD
 description: Сведения о добавлении личных учетных записей, предоставленных корпорацией Майкрософт, например Outlook.com или Xbox LIVE, в приложение Microsoft Authenticator для двухфакторной проверки подлинности.
 services: active-directory
 author: eross-msft
@@ -12,12 +12,12 @@ ms.date: 01/24/2019
 ms.author: lizross
 ms.reviewer: olhaun
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7cf4629ca97abc5d4ce508f7078f4691467ba249
-ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
+ms.openlocfilehash: 9ca01aad76bfbeba0cf56be8ee74287a79f6346e
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69616083"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73820245"
 ---
 # <a name="add-your-personal-microsoft-accounts"></a>Добавление личных учетных записей Майкрософт
 
@@ -39,7 +39,7 @@ ms.locfileid: "69616083"
 
 ### <a name="turn-on-two-factor-verification"></a>Включение двухфакторной проверки подлинности
 
-1. На компьютере перейдите на страницу [Сведения о безопасности](https://account.microsoft.com/security) и войдите с помощью личной учетной записи Майкрософт. Например, alain@outlook.com.
+1. На компьютере перейдите на страницу [Сведения о безопасности](https://account.microsoft.com/security) и войдите с помощью личной учетной записи Майкрософт. Пример: alain@outlook.com.
 
 2. В нижней части страницы **Сведения о безопасности** выберите ссылку **дополнительные параметры безопасности**.
 
@@ -66,7 +66,7 @@ ms.locfileid: "69616083"
 
     Ваша личная учетная запись добавлена в приложение Microsoft Authenticator.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Добавив учетные записи в приложение, вы можете использовать их для входа с помощью приложения Authenticator на мобильном устройстве. Дополнительные сведения см. в статье [Вход с использованием телефона вместо ввода пароля](user-help-auth-app-sign-in.md).
 

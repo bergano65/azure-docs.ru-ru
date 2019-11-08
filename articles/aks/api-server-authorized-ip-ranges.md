@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 11/05/2019
 ms.author: mlearned
-ms.openlocfilehash: 558c04be77f911f40be9e8880950d1670a3c169e
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
-ms.translationtype: HT
+ms.openlocfilehash: aa0cf1ef3f758d7aba4639d779bde90249d039cb
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73747750"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73815673"
 ---
 # <a name="secure-access-to-the-api-server-using-authorized-ip-address-ranges-in-azure-kubernetes-service-aks"></a>Безопасный доступ к серверу API с помощью диапазонов полномочных IP-адресов в службе Kubernetes Azure (AKS)
 
@@ -25,17 +25,9 @@ ms.locfileid: "73747750"
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-В этой статье предполагается, что вы работаете с кластерами, использующими [кубенет][kubenet].  В кластерах, основанных на [контейнерах Azure (CNI)][cni-networking] , отсутствует нужная таблица маршрутов для защиты доступа.  Таблицу маршрутов потребуется создать вручную.  Дополнительные сведения об управлении таблицами маршрутов см. [в разделе Создание, изменение или удаление таблицы маршрутов][route-tables].
-
 Допустимые диапазоны IP-адресов сервера API работают только для создаваемых кластеров AKS. В этой статье показано, как создать кластер AKS с помощью Azure CLI.
 
 Требуется Azure CLI версии 2.0.76 или более поздней. Чтобы узнать версию, выполните команду  `az --version`. Если необходимо установить или обновить, см. раздел [install Azure CLI][install-azure-cli].
-
-## <a name="limitations"></a>Ограничения
-
-При настройке допустимых диапазонов IP-адресов сервера API применяются следующие ограничения.
-
-* В настоящее время нельзя использовать Azure Dev Spaces, так как связь с сервером API также заблокирована.
 
 ## <a name="overview-of-api-server-authorized-ip-ranges"></a>Общие сведения о IP-адресах полномочных серверов API
 
@@ -69,6 +61,7 @@ az aks create \
 > Эти диапазоны следует добавить в список разрешений:
 > - Общедоступный IP-адрес брандмауэра
 > - Любой диапазон, представляющий сети, из которых будет осуществляться администрирование кластера.
+> - Если вы используете Azure Dev Spaces в кластере AKS, необходимо разрешить [Дополнительные диапазоны на основе вашего региона][dev-spaces-ranges].
 
 ### <a name="specify-the-outbound-ips-for-the-standard-sku-load-balancer"></a>Укажите исходящие IP-адреса для стандартного балансировщика нагрузки SKU
 
@@ -141,6 +134,7 @@ az aks update \
 
 <!-- LINKS - external -->
 [cni-networking]: https://github.com/Azure/azure-container-networking/blob/master/docs/cni.md
+[dev-spaces-ranges]: https://github.com/Azure/dev-spaces/tree/master/public-ips
 [kubenet]: https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/network-plugins/#kubenet
 
 <!-- LINKS - internal -->

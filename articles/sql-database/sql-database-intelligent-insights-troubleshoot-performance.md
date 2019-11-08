@@ -1,5 +1,5 @@
 ---
-title: Устранение проблем с производительностью базы данных SQL Azure с помощью Intelligent Insights
+title: Устранение проблем с производительностью Intelligent Insights
 description: Intelligent Insights помогает устранять проблемы с производительностью базы данных SQL Azure.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: danimir
 ms.author: danil
 ms.reviewer: jrasnik, carlrab
 ms.date: 01/25/2019
-ms.openlocfilehash: fef1ed386dbf3acccc09b9bba743b6b33492da0e
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: b6ec1952d730b6515032572def65806a1ccbc0b2
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73689717"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73810365"
 ---
 # <a name="troubleshoot-azure-sql-database-performance-issues-with-intelligent-insights"></a>Устранение проблем с производительностью базы данных SQL Azure с помощью Intelligent Insights
 

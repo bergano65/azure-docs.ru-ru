@@ -9,12 +9,12 @@ ms.service: iot-dps
 services: iot-dps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: 8f06d3f033a2bf5907dc2ee324359bef0eb247d0
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 41689b7596c9da350a9e0fec619e49d332a36d5b
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58170740"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73826192"
 ---
 # <a name="configure-cloud-resources-for-device-provisioning-with-the-iot-hub-device-provisioning-service"></a>Настройка облачных ресурсов для подготовки устройств с помощью службы подготовки устройств для Центра Интернета вещей
 
@@ -47,8 +47,8 @@ ms.locfileid: "58170740"
    | Параметр       | Рекомендуемое значение | Описание | 
    | ------------ | ------------------ | ------------------------------------------------- | 
    | **Имя** | Любое уникальное имя. | -- | 
-   | **Подписка** | Ваша подписка  | Дополнительные сведения о подписках см. [здесь](https://account.windowsazure.com/Subscriptions). |
-   | **Группа ресурсов** | myResourceGroup | Допустимые имена групп ресурсов см. в статье о [правилах и ограничениях именования](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions). |
+   | **подписка** | Ваша подписка  | Дополнительные сведения о подписках см. [здесь](https://account.windowsazure.com/Subscriptions). |
+   | **Группа ресурсов** | myResourceGroup | Допустимые имена групп ресурсов см. в статье о [правилах и ограничениях именования](/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging). |
    | **Местоположение.** | Любое допустимое расположение | Дополнительные сведения о регионах Azure см. [здесь](https://azure.microsoft.com/regions/). |   
 
    ![Ввод основных сведений о службе подготовки устройств на портале](./media/tutorial-set-up-cloud/create-iot-dps-portal.png)

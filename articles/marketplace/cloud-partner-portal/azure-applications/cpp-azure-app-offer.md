@@ -4,15 +4,16 @@ description: Обзор процесса публикации предложен
 services: Azure, Marketplace, Cloud Partner Portal,
 author: dan-wesley
 ms.service: marketplace
+ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 02/06/2019
 ms.author: pabutler
-ms.openlocfilehash: 3691664ee6212f838e7a9b95089893e4b52c689f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9125b5c71b63b27c58ea72b7bfd49f730854b33d
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64943012"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73818792"
 ---
 # <a name="azure-application-offer"></a>Предложение приложения Azure
 
@@ -38,7 +39,7 @@ ms.locfileid: "64943012"
 Управляемые приложения можно предлагать не только в Azure Marketplace, но и в каталоге служб. Каталог служб — это внутренний каталог утвержденных решений для пользователей в организации. С помощью каталога вы можете обеспечить соответствие стандартам организации, предоставляя эффективные решения для групп в организации. Каталог поможет сотрудникам в организации без труда найти набор приложений, рекомендуемых и утвержденных ИТ-отделом.
 
 >[!Note]
->Поставщики решений (CSP) партнер канала необязательно в облако теперь доступна.  См. в разделе [поставщиков облачных решений](../../cloud-solution-providers.md) Дополнительные сведения о маркетинг вашего предложения с помощью Microsoft CSP partner каналов.
+>Вы можете получить доступ к партнерским каналам поставщика облачных решений (CSP).  Дополнительные сведения о маркетинге вашего предложения с помощью партнерских каналов Microsoft CSP см. в статье [поставщики облачных решений](../../cloud-solution-providers.md) .
 
 Дополнительные сведения о преимуществах и типах управляемых приложений см. в статье [Обзор управляемых приложений Azure](https://docs.microsoft.com/azure/managed-applications/overview).
 

@@ -8,12 +8,12 @@ ms.service: event-grid
 ms.topic: conceptual
 ms.date: 05/22/2019
 ms.author: babanisa
-ms.openlocfilehash: b9e471928940094b29bdffeb73ea42fe852492cb
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 8fe85685a41e05b5132157453a6dcbc81c2399af
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73665573"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73825773"
 ---
 # <a name="event-grid-security-and-authentication"></a>Сетка событий: безопасность и проверка подлинности 
 
@@ -204,7 +204,7 @@ static string BuildSharedAccessSignature(string resource, DateTime expirationUtc
 
 Вы можете [назначить эти роли для пользователя или группы](../role-based-access-control/quickstart-assign-role-user-portal.md).
 
-**EventGrid EventSubscription Contributor (предварительная версия)** : управляет операциями подписки Сетки событий.
+**Участник EventGrid подписки**: управление операциями подписки в сетке событий
 
 ```json
 [
@@ -212,7 +212,7 @@ static string BuildSharedAccessSignature(string resource, DateTime expirationUtc
     "Description": "Lets you manage EventGrid event subscription operations.",
     "IsBuiltIn": true,
     "Id": "428e0ff05e574d9ca2212c70d0e0a443",
-    "Name": "EventGrid EventSubscription Contributor (Preview)",
+    "Name": "EventGrid EventSubscription Contributor",
     "IsServiceRole": false,
     "Permissions": [
       {
@@ -240,7 +240,7 @@ static string BuildSharedAccessSignature(string resource, DateTime expirationUtc
 ]
 ```
 
-**EventGrid EventSubscription Reader (предварительная версия)** : позволяет читать подписки Сетки событий.
+**Читатель EventGrid подписки**: чтение подписок на сетку событий
 
 ```json
 [
@@ -248,7 +248,7 @@ static string BuildSharedAccessSignature(string resource, DateTime expirationUtc
     "Description": "Lets you read EventGrid event subscriptions.",
     "IsBuiltIn": true,
     "Id": "2414bbcf64974faf8c65045460748405",
-    "Name": "EventGrid EventSubscription Reader (Preview)",
+    "Name": "EventGrid EventSubscription Reader",
     "IsServiceRole": false,
     "Permissions": [
       {

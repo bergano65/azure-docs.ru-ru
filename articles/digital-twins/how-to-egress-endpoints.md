@@ -8,12 +8,12 @@ ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
 ms.date: 10/02/2019
-ms.openlocfilehash: e7516fffb4aa8806062655e39c591e4691e779b1
-ms.sourcegitcommit: 7868d1c40f6feb1abcafbffcddca952438a3472d
+ms.openlocfilehash: 9a5e060d6248d3144720930fe960e0a371a73d6e
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71959117"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73822270"
 ---
 # <a name="egress-and-endpoints"></a>Исходящий трафик и конечные точки
 
@@ -47,21 +47,21 @@ ms.locfileid: "71959117"
 }
 ```
 
-| Атрибут | Type | ОПИСАНИЕ |
+| Атрибут | Тип | Description (Описание) |
 | --- | --- | --- |
-| id | string | Уникальный идентификатор события. |
-| subject | string | Определенный издателем путь к субъекту событий. |
+| id | строка | Уникальный идентификатор события. |
+| subject | строка | Определенный издателем путь к субъекту событий. |
 | data | object | Данные события, относящиеся к поставщику ресурсов. |
-| eventType | string | Один из зарегистрированных типов событий для этого источника событий. |
-| eventTime | string | Время создания события с учетом времени поставщика в формате UTC. |
-| dataVersion | string | Версия схемы для объекта данных. Версию схемы определяет издатель. |
-| metadataVersion | string | Версия схемы для метаданных события. Служба "Сетка событий" определяет схему свойств верхнего уровня. Это значение предоставляет служба "Сетка событий". |
-| topic | string | Полный путь к ресурсу для источника событий. Это поле защищено от записи. Это значение предоставляет служба "Сетка событий". |
+| eventType | строка | Один из зарегистрированных типов событий для этого источника событий. |
+| eventTime | строка | Время создания события с учетом времени поставщика в формате UTC. |
+| dataVersion | строка | Версия схемы для объекта данных. Версию схемы определяет издатель. |
+| metadataVersion | строка | Версия схемы для метаданных события. Служба "Сетка событий" определяет схему свойств верхнего уровня. Это значение предоставляет служба "Сетка событий". |
+| Раздел | строка | Полный путь к ресурсу для источника событий. Это поле защищено от записи. Это значение предоставляет служба "Сетка событий". |
 
 Дополнительные сведения о схеме событий службы "Сетка событий Azure":
 
 - См. в статье [Схема событий службы "Сетка событий Azure"](../event-grid/event-schema.md).
-- См. [Azure EventGrid Node.js SDK EventGridEvent reference](https://docs.microsoft.com/javascript/api/azure-eventgrid/eventgridevent?view=azure-node-latest) (Интерфейс EventGridEvent).
+- См. [Azure EventGrid Node.js SDK EventGridEvent reference](https://docs.microsoft.com/javascript/api/@azure/eventgrid/eventgridevent?view=azure-node-latest) (Интерфейс EventGridEvent).
 
 ## <a name="event-types"></a>Типы событий
 
@@ -85,7 +85,7 @@ ms.locfileid: "71959117"
 - ExtendedPropertyKey
 - ExtendedType
 - KeyStore
-- Сообщить
+- Отчет
 - RoleDefinition
 - Датчик
 - SensorBlobMetadata
@@ -95,8 +95,8 @@ ms.locfileid: "71959117"
 - SpaceExtendedProperty
 - SpaceResource
 - SpaceRoleAssignment
-- Система
-- Пользовательская
+- системный;
+- Пользователь
 - UserBlobMetadata
 - UserExtendedProperty
 
@@ -356,7 +356,7 @@ YOUR_MANAGEMENT_API_URL/endpoints
 
 Если конечная точка недоступна, система перейдет в экспоненциальную задержку со временем ожидания до 30 минут. События будут удаляться при каждом активированном времени ожидания задержки.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения см. в статье [Использование Swagger с Digital Twins](how-to-use-swagger.md).
 

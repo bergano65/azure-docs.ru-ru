@@ -1,18 +1,19 @@
 ---
-title: Соответствие требованиям GDPR | Azure Marketplace
+title: Соответствие GDPR | Azure Marketplace
 description: Портал Cloud Partner и Общий регламент по защите данных (GDPR).
 services: Azure, Marketplace, Cloud Partner Portal,
 author: dan-wesley
 ms.service: marketplace
+ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: pabutler
-ms.openlocfilehash: 91db369f9a2a0439bdbaf8600d1b329f0da00aa0
-ms.sourcegitcommit: 1572b615c8f863be4986c23ea2ff7642b02bc605
+ms.openlocfilehash: bc43a6cb3c30638d8c3904d7ca5b004e0905f1d2
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67786471"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73824305"
 ---
 <a name="cloud-partner-portal-gdpr-compliance"></a>Соответствия GDPR и портала Cloud Partner
 ====================================
@@ -24,12 +25,12 @@ ms.locfileid: "67786471"
 <a name="discover"></a>Поиск
 --------
 
-Портал Cloud Partner предоставляет доступ ко всем данным на вкладке "Пользователи". Здесь можно определить персональные данные. Как добавлять или удалять пользователей, см. в [документациях](./cloud-partner-portal-manage-users.md).
+Портал Cloud Partner предоставляет доступ ко всем данным на вкладке Пользователи. Здесь можно найти личные данные. Как добавлять или удалять пользователей, см. в [документациях](./cloud-partner-portal-manage-users.md).
 
 <a name="manage"></a>Управление
 ------
 
-Вы можете управлять вашим персональными данными, нажав клавишу "Удалить" в учетной записи пользователя на вкладке "Пользователи". Доступны роли **Владелец** и **Участник**, которые можно назначить каждому пользователю, и их можно назначить, скопировать, обновить или удалить.
+Вы можете управлять личными данными, нажав клавишу DELETE в учетной записи пользователя на вкладке Пользователи. У нас есть роли **владельца** и **участника** , которые могут быть назначены каждому конкретному пользователю и могут быть назначены, скопированы, обновлены или удалены.
 
 <a name="consent"></a>Согласие на предоставление разрешений
 -------

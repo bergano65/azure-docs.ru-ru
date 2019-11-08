@@ -1,19 +1,20 @@
 ---
-title: Публикации контрольный список для AppSource | Azure Marketplace
+title: Контрольный список публикации для AppSource | Azure Marketplace
 description: Публикация контрольных списков для AppSource.
 services: Azure, Marketplace, Compute, Storage, Networking, Blockchain, Security
 author: jm-aditi-ms
 manager: pabutler
 ms.service: marketplace
+ms.subservice: partnercenter-marketplace-publisher
 ms.topic: article
 ms.date: 06/05/2018
 ms.author: ellacroi
-ms.openlocfilehash: 7df88c941c1d42bc4a49e391fa3d64273237bd08
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3a40816604df510eb66d6ea7bccbe86f8c327406
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64937577"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73822645"
 ---
 # <a name="publishing-checklist-for-appsource"></a>Публикация контрольных списков для AppSource  
 

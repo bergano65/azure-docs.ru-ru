@@ -1,5 +1,5 @@
 ---
-title: 'Портал Azure: Георепликация базы данных SQL '
+title: 'Портал Azure: Георепликация'
 description: Настройка георепликации для отдельных баз данных или баз данных в пуле в Базе данных SQL Azure с помощью портала Azure и запуск отработки отказа
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab
 ms.date: 02/13/2019
-ms.openlocfilehash: 2a9d627cb2b51d0d7d0b07052f18a8dbe1dc2f19
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 7ddaefb0f65db1cfc828e4baa844f6d8e01f9d2e
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73691332"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73808126"
 ---
 # <a name="configure-active-geo-replication-for-azure-sql-database-in-the-azure-portal-and-initiate-failover"></a>Настройка активной георепликации для Базы данных SQL Azure с помощью портала Azure и запуск отработки отказа
 

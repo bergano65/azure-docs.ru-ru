@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 09/28/2019
 ms.author: mjbrown
-ms.openlocfilehash: 1c81045408a948820c8b9fef56e2c7d69cd39e08
-ms.sourcegitcommit: 80da36d4df7991628fd5a3df4b3aa92d55cc5ade
+ms.openlocfilehash: c399bed803145659bae1863e9e0b919f33254627
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71811921"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73820201"
 ---
 # <a name="configure-access-from-virtual-networks-vnet"></a>Настройка доступа из виртуальных сетей (VNet)
 
@@ -50,9 +50,9 @@ ms.locfileid: "71811921"
 
 > [!NOTE]
 > Чтобы включить конечные точки служб для виртуальной сети, потребуются следующие права доступа к подписке:
->   * подписка с виртуальной сетью — участник сетей;
->   * подписка с учетной записью Azure Cosmos DB — участник учетной записи DocumentDB.
->   * Если ваша виртуальная сеть и учетная запись Azure Cosmos DB находятся в разных подписках, убедитесь, что в подписке, в которой есть виртуальная сеть, также зарегистрирован `Microsoft.DocumentDB` поставщик ресурсов. Сведения о регистрации поставщика ресурсов см. в статье [поставщики и типы ресурсов Azure](../azure-resource-manager/resource-manager-supported-services.md) .
+>   * подписка с виртуальной сетью — участник сетей;
+>   * подписка с учетной записью Azure Cosmos DB — участник учетной записи DocumentDB.
+>   * Если ваша виртуальная сеть и учетная запись Azure Cosmos DB находятся в разных подписках, убедитесь, что в подписке с виртуальной сетью также зарегистрирован `Microsoft.DocumentDB` поставщик ресурсов. Сведения о регистрации поставщика ресурсов см. в статье [поставщики и типы ресурсов Azure](../azure-resource-manager/resource-manager-supported-services.md) .
 
 Ниже приведены инструкции по регистрации подписки с помощью поставщика ресурсов.
 
@@ -68,7 +68,7 @@ ms.locfileid: "71811921"
 
    ![Выбор виртуальной сети и подсети для новой виртуальной сети](./media/how-to-configure-vnet-service-endpoint/choose-subnet-and-vnet-new-vnet.png)
 
-Если ваша учетная запись Azure Cosmos DB используется другими службами Azure, такими как поиск Azure, или доступ к ней осуществляется из Stream Analytics или Power BI, вы разрешаете доступ, выбрав **принять подключения из в глобальных центрах обработки данных Azure**.
+Если учетная запись Azure Cosmos DB используется другими службами Azure, такими как Azure Когнитивный поиск, или доступ к ней осуществляется из Stream Analytics или Power BI, вы разрешаете доступ, выбрав **принять подключения из в глобальных центрах обработки данных Azure**.
 
 Чтобы иметь доступ к метрикам Azure Cosmos DB с портала, необходимо включить параметр **Разрешение доступа с портала Azure**. Дополнительные сведения об этих параметрах см. в статье [Настройка брандмауэра IP-адресов](how-to-configure-firewall.md). После включения доступа выберите **Сохранить** для сохранения настроек.
 
@@ -376,6 +376,6 @@ az network vnet subnet update \
 
 1. Удалите правило брандмауэра для IP-адресов для подсети.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения о настройке брандмауэра для Azure Cosmos DB см. в статье [Поддержка брандмауэра](firewall-support.md) для Azure Cosmos DB.

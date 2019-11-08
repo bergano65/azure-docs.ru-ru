@@ -1,5 +1,5 @@
 ---
-title: Скачивание и установка приложения Microsoft Authenticator в Azure Active Directory | Документация Майкрософт
+title: Скачайте и установите приложение Microsoft Authenticator — Azure AD.
 description: Как скачать, установить и использовать приложение Microsoft Authenticator для двухфакторной проверки подлинности.
 services: active-directory
 author: eross-msft
@@ -13,12 +13,12 @@ ms.date: 01/24/2019
 ms.author: lizross
 ms.reviewer: olhaun
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 15ecdf0feb0d8e5307eac9916748e0bacdf51620
-ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
+ms.openlocfilehash: ebe80d44d52ffa348413e51cd5e82e8468537479
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69616049"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73820227"
 ---
 # <a name="download-and-install-the-microsoft-authenticator-app"></a>Скачивание и установка приложения Microsoft Authenticator
 
@@ -27,7 +27,7 @@ ms.locfileid: "69616049"
 
 Приложение Microsoft Authenticator позволяет войти в учетные записи при использовании двухфакторной проверки подлинности. которая обеспечивает более безопасный доступ к учетным записям, особенно когда просматривается конфиденциальная информация. Так как пользователи могут забыть пароли и их могут украсть или скомпрометировать, двухфакторная проверка подлинности — это дополнительный этап обеспечения безопасности, который усиливает защиту учетной записи от несанкционированного доступа.
 
-Существует несколько вариантов использования приложения Microsoft Authenticator, в том числе:
+Приложение Microsoft Authenticator можно использовать несколькими способами, в том числе:
 
 - **Двухфакторная проверка подлинности**. Стандартный метод проверки, где один из факторов — это пароль. После входа с использованием имени пользователя и пароля вы можете либо подтвердить уведомление, либо ввести указанный код проверки.
 
@@ -52,8 +52,8 @@ ms.locfileid: "69616049"
 - **Apple iOS.** На устройстве Apple iOS перейдите к App Store, чтобы [скачать и установить приложение Microsoft Authenticator](https://app.adjust.com/e3rxkc_7lfdtm?fallback=https%3A%2F%2Fitunes.apple.com%2Fus%2Fapp%2Fmicrosoft-authenticator%2Fid983156458).
 
 >[!Important]
->Если вы не находитесь на мобильном устройстве, вы по-прежнему можете получить Microsoft Authenticatorное приложение, отправив на [странице Microsoft Authenticator](https://www.microsoft.com/account/authenticator)ссылку для скачивания.
+>Если вы не находитесь на мобильном устройстве, вы по-прежнему можете получить Microsoft Authenticatorное приложение, отправив на [странице Microsoft Authenticator](https://www.microsoft.com/en-us/account/authenticator)ссылку для скачивания.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - После скачивания и установки приложения необходимо добавить различные учетные записи. Дополнительные сведения см. в статье о [добавлении учетных записей](user-help-auth-app-add-account-overview.md).

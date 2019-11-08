@@ -4,15 +4,16 @@ description: Общие сведения о процессе публикаци�
 services: Azure, Marketplace, Cloud Partner Portal
 author: v-miclar
 ms.service: marketplace
+ms.subservice: partnercenter-marketplace-publisher
 ms.topic: article
 ms.date: 12/04/2018
 ms.author: pabutler
-ms.openlocfilehash: fed0f47c963edf40883c432f5476bd7fe5720abb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0313c4f2581615e1d1a3a57fc191db7d7cc6e825
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64938060"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73808559"
 ---
 # <a name="virtual-machine-offer"></a>Предложение виртуальной машины
 

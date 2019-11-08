@@ -1,5 +1,5 @@
 ---
-title: Доступ и запуск приложений из портала "Мои приложения (Предварительная версия)" — Azure Active Directory | Документация Майкрософт
+title: Доступ и запуск приложений с портала "Мои приложения (Предварительная версия)" в Azure AD
 description: Узнайте, как получить доступ к облачным приложениям Организации и запускать их с портала "Мои приложения (Предварительная версия)".
 services: active-directory
 author: eross-msft
@@ -13,12 +13,12 @@ ms.author: lizross
 ms.reviewer: kasimpso
 ms.custom: user-help
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e7eb3dbe3ce82b794a5ed530107781b634ceb32f
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: ed450f67b152bef4eb68ac8252b586b62992aa0d
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73573857"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73820392"
 ---
 # <a name="access-and-start-apps-from-the-my-apps-preview-portal"></a>Доступ к приложениям и их запуск с помощью портала "Мои приложения" (Предварительная версия)
 

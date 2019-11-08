@@ -1,5 +1,5 @@
 ---
-title: Сравнение Фабрики данных Azure c Фабрикой данных версии 1 | Документация Майкрософт
+title: Сравнение Фабрики данных Azure c Фабрикой данных версии 1
 description: В этой статье сравниваются возможности Фабрики данных Azure с возможностями Фабрики данных версии 1.
 services: data-factory
 documentationcenter: ''
@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.topic: overview
 ms.date: 04/09/2018
 ms.author: makromer
-ms.openlocfilehash: 4cdb517e644d55504bfdafbd3bacdfd4bfa0b36c
-ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
+ms.openlocfilehash: cab4f156aa1fb2fa4d3b122377be1b28337f15a9
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68479303"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73681586"
 ---
 # <a name="compare-azure-data-factory-with-data-factory-version-1"></a>Сравнение Фабрики данных Azure c Фабрикой данных версии 1
 В этой статье сравниваются возможности Фабрики данных с возможностями Фабрики данных версии 1. Дополнительные сведения о Фабрике данных см. [здесь](introduction.md). Дополнительные сведения о Фабрике данных Azure версии 1 см. в [этой статье](v1/data-factory-introduction.md). 

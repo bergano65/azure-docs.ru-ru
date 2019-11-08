@@ -4,15 +4,16 @@ description: Настройка управления интересами для
 services: Azure, Marketplace, commercial marketplace, Partner Center
 author: qianw211
 ms.service: marketplace
+ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 7/30/2019
 ms.author: evansma
-ms.openlocfilehash: c67855422808f5ec4c81242edcece4e447f2f44f
-ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
+ms.openlocfilehash: 5da4e0ab315b3f66a477b816f6fc5d27de7aa339
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69902368"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73812370"
 ---
 # <a name="lead-management-instructions-for-azure-blob"></a>Инструкции по управлению интересами для большого двоичного объекта Azure
 
@@ -28,7 +29,7 @@ ms.locfileid: "69902368"
 1. Когда учетная запись Azure будет активна, войдите в [портал Azure](https://portal.azure.com).
 1. В портал Azure создайте учетную запись хранения, выполнив следующую процедуру.  
     1. Выберите **+ создать ресурс** в левой строке меню.  Справа появится **Новая** панель (колонка).
-    2. В области **создать** выберите **хранилище** .  Справа отображается список с описанием.
+    2. В области **создать** выберите **хранилище** .  Справа отображается список с **описанием** .
     3. Выберите **учетную запись хранения** , чтобы начать создание учетной записи.  Следуйте инструкциям в статье [Создание учетной записи хранения](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account?tabs=azure-portal).
 
     ![Шаги по созданию учетной записи хранения Azure](./media/commercial-marketplace-lead-management-instructions-azure-blob/azure-storage-create.png)
@@ -80,8 +81,8 @@ ms.locfileid: "69902368"
 
 4. Укажите **имя контейнера** и **строку подключения к учетной записи хранения** , которые вы получили, следуя этим инструкциям.
 
-    * Пример имени контейнера:`marketplaceleadcontainer`
-    * Пример строки подключения учетной записи хранения: `DefaultEndpointsProtocol=https;AccountName=myAccountName;AccountKey=myAccountKey;EndpointSuffix=core.windows.net`![Сведения о подключении](./media/commercial-marketplace-lead-management-instructions-azure-blob/connection-details.png) 
+    * Пример имени контейнера: `marketplaceleadcontainer`
+    * Пример строки подключения учетной записи хранения: `DefaultEndpointsProtocol=https;AccountName=myAccountName;AccountKey=myAccountKey;EndpointSuffix=core.windows.net` сведения о соединении ![](./media/commercial-marketplace-lead-management-instructions-azure-blob/connection-details.png) 
 
 5. Щелкните **Сохранить**.
 

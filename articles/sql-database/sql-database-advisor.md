@@ -1,5 +1,5 @@
 ---
-title: Рекомендации по производительности — база данных SQL Azure
+title: Рекомендации по производительности
 description: База данных SQL Azure предоставляет рекомендации для баз данных SQL, которые могут повысить текущую производительность запросов.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: danimir
 ms.author: danil
 ms.reviewer: jrasnik
 ms.date: 12/19/2018
-ms.openlocfilehash: de6ddd8886f8cadafa57724a5d5e33a3ba4e3c74
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: fb7ba90724a98a34adf4aa279eefc8e3d7a63bf3
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73691244"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73811387"
 ---
 # <a name="performance-recommendations-for-sql-database"></a>Рекомендации по производительности для базы данных SQL
 
