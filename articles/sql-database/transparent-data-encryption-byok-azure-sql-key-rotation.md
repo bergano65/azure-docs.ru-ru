@@ -1,22 +1,22 @@
 ---
-title: PowerShell — смена предохранителя TDE — База данных SQL Azure | Документация Майкрософт
+title: Смена предохранителя TDE (PowerShell)
 description: Сведения о смене предохранителя прозрачного шифрования данных (TDE) для сервера Azure SQL.
 services: sql-database
 ms.service: sql-database
 ms.subservice: security
-ms.custom: ''
+ms.custom: seo-lt-2019
 ms.devlang: ''
 ms.topic: conceptual
 author: aliceku
 ms.author: aliceku
 ms.reviewer: vanto
 ms.date: 03/12/2019
-ms.openlocfilehash: 464ea73d9b3d7116205377600ffccee13a9e2dcb
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 5bfcacb9348940e0b36947f6e4e0d27839de35bb
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68566045"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73824685"
 ---
 # <a name="rotate-the-transparent-data-encryption-tde-protector-using-powershell"></a>Смена предохранителя TDE с помощью PowerShell
 
@@ -32,7 +32,7 @@ ms.locfileid: "68566045"
 > После смены **НЕ УДАЛЯЙТЕ** старую версию ключа.  При смене ключа обычно сохраняются данные, зашифрованные прежними версиями ключа, например резервные копии базы данных. 
 >
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 > [!IMPORTANT]
@@ -92,8 +92,8 @@ ms.locfileid: "68566045"
    -ResourceGroup <SQLDatabaseResourceGroupName> 
    ``` 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о том, как удалить потенциально скомпрометированный предохранитель TDE в случае угрозы безопасности, вы найдете в [этой статье](transparent-data-encryption-byok-azure-sql-remove-tde-protector.md). 
 
-- Начало работы с интеграцией Azure Key Vault и поддержка при создании собственных ключей для TDE. [включении прозрачного шифрования данных с использованием собственного ключа из Key Vault с помощью PowerShell](transparent-data-encryption-byok-azure-sql-configure.md).
+- Приступая к работе с Azure Key Vault интеграция и поддержка создание собственных ключей для TDE: [Включение TDE с помощью собственного ключа из Key Vault с помощью PowerShell](transparent-data-encryption-byok-azure-sql-configure.md)

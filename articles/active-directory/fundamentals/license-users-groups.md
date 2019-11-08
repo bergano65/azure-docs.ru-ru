@@ -9,17 +9,17 @@ ms.service: active-directory
 ms.subservice: fundamentals
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 09/18/2018
+ms.date: 09/06/2018
 ms.author: ajburnle
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 869713967a6a89611ab2ea9ca7b7516f090a5f92
-ms.sourcegitcommit: f9e81b39693206b824e40d7657d0466246aadd6e
+ms.openlocfilehash: 9f690d23ac4d8c452d731c2f6fd4ae67dc281639
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72034275"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73805527"
 ---
 # <a name="assign-or-remove-licenses-in-the-azure-active-directory-portal"></a>Назначение или удаление лицензий на портале Azure Active Directory
 
@@ -31,9 +31,9 @@ ms.locfileid: "72034275"
 
 - Azure AD уровня "Бесплатный"
 
-- Azure AD Premium P1
+- Azure AD Premium P1
 
-- Azure AD Premium P2
+- Azure AD Premium P2
 
 Конкретные сведения о каждом плане лицензии и связанных с ней сведениях о лицензировании см. в разделе [какая лицензия необходима?](https://azure.microsoft.com/pricing/details/active-directory/)
 
@@ -87,6 +87,8 @@ ms.locfileid: "72034275"
 1. Выберите **Назначить**.
 
     Пользователь добавляется в список лицензированных пользователей и получает доступ к входящим в лицензию службам Azure AD.
+    > [!NOTE]
+    > Лицензии также можно назначать непосредственно пользователю на странице **лицензий** пользователя. Если пользователю назначена лицензия с помощью членства в группе и вы хотите назначить эту же лицензию непосредственно пользователю, это можно сделать только на странице **продукты** , упомянутой в шаге 1.
 
 ### <a name="to-assign-a-license-to-a-group"></a>Назначение лицензии группе
 
@@ -135,7 +137,7 @@ ms.locfileid: "72034275"
 
     ![Страница "Лицензированные группы" с выделенным параметром "Удалить лицензию"](media/license-users-groups/license-products-group-blade-with-remove-option-highlight.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После назначения лицензий можно выполнять следующие операции:
 

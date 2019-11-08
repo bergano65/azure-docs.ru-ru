@@ -1,5 +1,5 @@
 ---
-title: Интеграция системы управления версиями | Документация Майкрософт
+title: Интеграция системы управления версиями
 description: Использование DevOps с базой данных корпоративного класса для Хранилища данных SQL и интеграция платформенной функциональности системы управления версиями с помощью Azure Repos (Git и GitHub).
 services: sql-data-warehouse
 author: kevinvngo
@@ -10,12 +10,12 @@ ms.subservice: integration
 ms.date: 08/23/2019
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: 10a10882efe05ef9e6bb86e54fcfcf8c5d73d225
-ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
+ms.openlocfilehash: 82d366b3f807e21e3531da00da78520fed90bc66
+ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70098739"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73645260"
 ---
 # <a name="source-control-integration-for-azure-sql-data-warehouse"></a>Интеграция системы управления версиями для Хранилища данных SQL Azure
 

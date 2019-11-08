@@ -4,15 +4,16 @@ description: 'Устаревшая статья CPP, связанная со с�
 services: Azure, Marketplace, AppSource, Cloud Partner Portal, Dynamics 365 for Customer Engagement
 author: ChJenk
 ms.service: marketplace
+ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 09/30/2019
 ms.author: v-chjen
-ms.openlocfilehash: fdf99d1d38a39ee3bebc04ab08ed27233a30ad0d
-ms.sourcegitcommit: f9e81b39693206b824e40d7657d0466246aadd6e
+ms.openlocfilehash: 0e201f6d54d46fab7120239b26a58e1d2b92020e
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72034074"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73824650"
 ---
 # <a name="dynamics-365-for-customer-engagement-application-test-drive-tab"></a>Вкладка "Тестовый выпуск" в приложении Dynamics 365 for Customer Engagement
 

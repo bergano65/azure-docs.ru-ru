@@ -1,22 +1,22 @@
 ---
-title: Управляемый экземпляр Базы данных SQL Azure определить размер виртуальной сети
+title: Управляемый экземпляр определяет размер виртуальной сети
 description: В этой статье описывается вычисление размера подсети, в которой будет развернут Управляемый экземпляр Базы данных SQL Azure.
 services: sql-database
 ms.service: sql-database
 ms.subservice: managed-instance
-ms.custom: ''
+ms.custom: seo-lt-2019
 ms.devlang: ''
 ms.topic: conceptual
 author: srdan-bozovic-msft
 ms.author: srbozovi
 ms.reviewer: sstein, bonova, carlrab
 ms.date: 02/22/2019
-ms.openlocfilehash: fb0d79a82553349d5dad547a2d78a460301cbd6d
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 7f0ef26343284b7b668e71676114586f4bec8b9e
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73688113"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73825756"
 ---
 # <a name="determine-vnet-subnet-size-for-azure-sql-database-managed-instance"></a>Определение размера подсети виртуальной сети для Управляемого экземпляра Базы данных SQL Azure
 

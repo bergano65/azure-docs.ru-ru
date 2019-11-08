@@ -1,6 +1,6 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: 'База данных SQL Azure: Мониторинг и настройка'
+title: Мониторинг и настройка
 metadata:
   document_id: 36d89c48-3646-380e-34a0-ae3ac62e2641
   title: База данных SQL Azure. Мониторинг и настройка
@@ -27,7 +27,7 @@ sections:
           - title: Сведения о производительности запросов
             href: /azure/sql-database/sql-database-query-performance
             html: <p>Встроенные возможности мониторинга на портале Azure позволяют с легкостью отслеживать использование ресурсов в базе данных SQL Azure (отдельной или в пуле).</p>
-          - title: Azure SQL Analytics
+          - title: Аналитика SQL Azure
             href: 'https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-sql?toc=/azure/sql-database/toc.json'
             html: '<p>Мониторинг Azure SQL Analytics позволяет легко отслеживать большой парк баз данных, эластичных пулов и экземпляров на одной стеклянной панели.</p>'
           - title: Автоматическая настройка

@@ -5,15 +5,16 @@ services: Azure, Marketplace, Compute, Storage, Networking, Blockchain, Security
 author: qianw211
 manager: pabutler
 ms.service: marketplace
+ms.subservice: partnercenter-marketplace-publisher
 ms.topic: article
 ms.date: 11/13/2018
 ms.author: pabutler
-ms.openlocfilehash: 8a06573e6bcb2d5a6c6c97ad19e168f9c71aaa13
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.openlocfilehash: 43ca74faadf7890f1274afc4905af79237918f4a
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70308220"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73827799"
 ---
 # <a name="publishing-guide-by-offer-type"></a>Руководство по публикации разных типов предложений
 
@@ -44,7 +45,7 @@ ms.locfileid: "70308220"
 
 Наконец, в описании [**требований к Azure AD**](https://docs.microsoft.com/azure/marketplace/enable-appsource-marketplace-using-azure-ad) можно просмотреть описание и типы предложений, а также требования к единому входу.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 *   Ознакомьтесь с требованиями к соответствию для выбранного варианта публикации по типу предложения, чтобы завершить выбор и настройку предложения.
 *   Просмотрите шаблоны публикации для каждого онлайн-магазина, чтобы на их примере понять, как решение сопоставляется с типом предложения и конфигурацией.

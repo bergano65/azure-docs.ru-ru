@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 04/08/2019
 ms.author: jingwang
-ms.openlocfilehash: 437d1e13bfb0831bb3ece26f761cef4f5e2e0c6f
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: d8f65bef669e21af96ffe86319602ca5d1eea2c1
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73676990"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73822727"
 ---
 # <a name="managed-identity-for-data-factory"></a>Управляемое удостоверение для Фабрики данных
 
@@ -26,7 +26,7 @@ ms.locfileid: "73676990"
 
 ## <a name="overview"></a>Обзор
 
-При создании фабрики данных можно создать управляемое удостоверение вместе с созданием фабрики. Управляемое удостоверение — это управляемое приложение, зарегистрированное в каталоге действий Azure и представляющее эту конкретную фабрику данных.
+При создании фабрики данных можно создать управляемое удостоверение вместе с созданием фабрики. Управляемое удостоверение является управляемым приложением, зарегистрированным в Azure Active Directory, и представляет эту конкретную фабрику данных.
 
 Управляемое удостоверение для фабрики данных предоставляет следующие возможности:
 

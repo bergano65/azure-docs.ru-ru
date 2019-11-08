@@ -4,15 +4,16 @@ description: Обновление имеющегося предложения п
 services: Azure, Marketplace, Cloud Partner Portal,
 author: dan-wesley
 ms.service: marketplace
+ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: pabutler
-ms.openlocfilehash: a36df757e3a2682af641101ed82583a0cd293e0a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6854e445ea63639866e9e39a6afc725237bbc8fe
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64942820"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73826115"
 ---
 # <a name="update-an-existing-azure-application-offer"></a>Обновление имеющегося предложения приложения Azure
 
@@ -66,11 +67,11 @@ ms.locfileid: "64942820"
 
 1. Войдите на [Портал Cloud Partner](https://cloudpartner.azure.com/).
 2. В разделе **Все предложения** найдите предложение, которое нужно обновить.
-3. Перейдите на вкладку **Marketplace**. Внесите изменения в метаданные в соответствии с инструкциями, описанными в статье [Publish Azure application offer](./cpp-publish-offer.md) (Публикация предложения приложения Azure).
+3. Перейдите на вкладку **Marketplace** . Используйте инструкции из статьи [Публикация предложения приложения Azure](./cpp-publish-offer.md) для внесения изменений в метаданные.
 4. Щелкните **Опубликовать**, чтобы запустить рабочий процесс публикации изменений.
  
 >[!Note]
->Поставщики решений (CSP) партнер канала необязательно в облако теперь доступна.  См. в разделе [поставщиков облачных решений](../../cloud-solution-providers.md) Дополнительные сведения о маркетинг вашего предложения с помощью Microsoft CSP partner каналов.
+>Вы можете получить доступ к партнерским каналам поставщика облачных решений (CSP).  Дополнительные сведения о маркетинге вашего предложения с помощью партнерских каналов Microsoft CSP см. в статье [поставщики облачных решений](../../cloud-solution-providers.md) .
 
 ## <a name="deleting-an-existing-offer"></a>Удаление существующего предложения
 

@@ -13,15 +13,15 @@ ms.author: ajburnle
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a8b436fbdb0d70318e6820d3f59f1e198c639e5a
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: e98b09d8b07c625613e3be149e64ac8f06adc089
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68561695"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73805558"
 ---
 # <a name="add-or-delete-users-using-azure-active-directory"></a>Добавление или удаление пользователей с помощью Azure Active Directory
-Добавление новых пользователей или удаление существующих пользователей из Организации Azure Active Directory (Azure AD).
+Добавление новых пользователей или удаление существующих пользователей из Организации Azure Active Directory (Azure AD). Для добавления или удаления пользователей необходимо быть администратором или глобальным администратором. 
 
 ## <a name="add-a-new-user"></a>Добавление нового пользователя
 Вы можете создать пользователя с помощью портала Azure Active Directory.
@@ -39,7 +39,7 @@ ms.locfileid: "68561695"
 
    - **Имя (обязательно).** Имя и фамилия нового пользователя. Например, Мэри Паркер.
 
-   - **Имя пользователя (обязательно).** Имя нового пользователя. Например, mary@contoso.com.
+   - **Имя пользователя (обязательно).** Имя нового пользователя. Пример: mary@contoso.com.
     
        В доменной части имени пользователя должно использоваться либо начальное доменное имя по умолчанию, <_yourdomainname_>.onmicrosoft.com, либо имя личного домена, например contoso.com. Дополнительные сведения о создании имени личного домена см. в статье [How to add a custom domain name to Azure Active Directory](add-custom-domain.md) (Как добавить имя личного домена в Azure Active Directory).
 
@@ -75,7 +75,7 @@ ms.locfileid: "68561695"
     >[!Note]
     >Используйте Windows Server Active Directory для обновления удостоверения, контактных данных или сведений о должности для пользователей, чьим главным источником является Windows Server Active Directory. После завершения обновления изменения будут отображаться после следующего цикла синхронизации.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После добавления пользователей можно выполнить следующие базовые операции:
 

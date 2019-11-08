@@ -1,6 +1,6 @@
 ---
 title: Развертывание модуля двойника OPC в существующем проекте Azure | Документация Майкрософт
-description: Развертывание OPC двойника в существующем проекте.
+description: В этой статье описывается, как развернуть двойника OPC в существующем проекте. Вы также можете узнать, как устранять неполадки при развертывании.
 author: dominicbetts
 ms.author: dobett
 ms.date: 11/26/2018
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: industrial-iot
 services: iot-industrialiot
 manager: philmea
-ms.openlocfilehash: 74b502a37081c729c5e33a0db7dc7f26cb44774b
-ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
+ms.openlocfilehash: b971ec13c71ccfd7d28ae6987593d09201b9b764
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69972282"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73824120"
 ---
 # <a name="deploy-opc-twin-to-an-existing-project"></a>Развертывание OPC двойника в существующем проекте
 
@@ -52,7 +52,7 @@ cd azure-iiot-components
 
    Выходные данные включают URL-адрес общедоступной конечной точки. 
 
-3. После успешного завершения скрипта укажите, нужно ли сохранить `.env` файл.  Если требуется подключиться `.env` к облачной конечной точке с помощью таких средств, как консоль или развертывание модулей для разработки и отладки, необходим файл среды.
+3. После успешного завершения скрипта укажите, нужно ли сохранить файл `.env`.  Файл среды `.env` требуется для подключения к облачной конечной точке с помощью таких средств, как консоль или развертывание модулей для разработки и отладки.
 
 ## <a name="troubleshooting-deployment-failures"></a>Устранение неполадок при развертывании
 
@@ -137,7 +137,7 @@ cd azure-iiot-components
 -credentials
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали, как развернуть двойника OPC в существующем проекте, предлагаем следующий шаг:
 

@@ -1,21 +1,21 @@
 ---
-title: Руководство по разработке приложений Java с использованием Azure Cosmos DB
-description: В этом руководстве по разработке веб-приложения Java показано, как использовать службу Azure Cosmos DB и API SQL для хранения данных и доступа к ним из приложения Java, размещенного на веб-сайтах Azure.
+title: Руководство по Руководство по разработке приложений Java с использованием Azure Cosmos DB
+description: Руководство по В этом руководстве по разработке веб-приложения Java показано, как использовать службу Azure Cosmos DB и API SQL для хранения данных и доступа к ним из приложения Java, размещенного на веб-сайтах Azure.
 author: tknandu
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.devlang: java
 ms.topic: tutorial
-ms.date: 12/22/2018
+ms.date: 11/05/2019
 ms.author: ramkris
-ms.openlocfilehash: bd2894c23e206ed5f49fec8aa169d6ed852df4c6
-ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
+ms.openlocfilehash: 4a7c307e8a4d4088fe4d2f7800398fda4704219c
+ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69616652"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73720831"
 ---
-# <a name="build-a-java-web-application-using-azure-cosmos-db-and-the-sql-api"></a>Создание веб-приложения Java с использованием Azure Cosmos DB и API SQL
+# <a name="tutorial-build-a-java-web-application-using-azure-cosmos-db-and-the-sql-api"></a>Руководство по Создание веб-приложения Java с использованием Azure Cosmos DB и API SQL
 
 > [!div class="op_single_selector"]
 > * [.NET](sql-api-dotnet-application.md)

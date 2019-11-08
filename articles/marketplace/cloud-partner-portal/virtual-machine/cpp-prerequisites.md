@@ -1,22 +1,23 @@
 ---
-title: Требования к виртуальной машины для Microsoft Azure | Azure Marketplace
+title: Необходимые компоненты виртуальной машины для Microsoft Azure | Azure Marketplace
 description: Список предварительных требований, необходимых для публикации предложения виртуальной машины в Azure Marketplace.
 services: Azure, Marketplace, Cloud Partner Portal
 author: v-miclar
 ms.service: marketplace
+ms.subservice: partnercenter-marketplace-publisher
 ms.topic: article
 ms.date: 03/13/2019
 ms.author: pabutler
-ms.openlocfilehash: 258d21eae5af50b5dc0bed6887618e2999cae45a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a657ceaacf3680de54dc0d639a3f1a0aff6a6a03
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66257385"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73824422"
 ---
 # <a name="virtual-machine-prerequisites"></a>Предварительные требования к виртуальным машинам
 
-В этой статье перечислены оба технических и бизнес-требований, которые необходимо выполнить, прежде чем можно публиковать предложения виртуальной Машины для [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/).  Если вы еще не сделано, просмотрите [виртуальной машины предоставляют руководство по публикации](../../marketplace-virtual-machines.md).
+В этой статье перечислены технические и бизнес-требования, которые необходимо выполнить перед публикацией предложения виртуальной машины в [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/).  Ознакомьтесь с [руководством по публикации предложения виртуальной машины](../../marketplace-virtual-machines.md), если вы еще этого не сделали.
 
 
 ## <a name="technical-requirements"></a>Технические требования
@@ -42,15 +43,15 @@ ms.locfileid: "66257385"
     > Следует использовать одну и ту же учетную запись регистрации Центра разработки для Майкрософт для входа на [портал Cloud Partner](https://cloudpartner.azure.com).
     > У вас должна быть только одна учетная запись Майкрософт для публикации предложений в Azure Marketplace. Эта запись не должна быть привязана к конкретным службам или предложениям.
     
-- Ваша компания (или ее филиал) должна находиться в продажи — от страны или региона поддерживаемыми Azure Marketplace.  Текущий список этих стран или регионов см. в разделе [политики участия в Microsoft Azure Marketplace](https://azure.microsoft.com/support/legal/marketplace/participation-policies/).
+- Ваша компания (или ее филиал) должна находиться в продаже по стране или регионе, поддерживаемой Azure Marketplace.  Текущий список стран и регионов см. в разделе [политики участия в Microsoft Azure Marketplace](https://azure.microsoft.com/support/legal/marketplace/participation-policies/).
 - Продукт должен иметь лицензию, совместимую с моделями выставления счетов, которые поддерживает Azure Marketplace.  Подробнее см. статью [Варианты выставления счетов за использование Azure Marketplace](https://docs.microsoft.com/azure/marketplace/billing-options-azure-marketplace). 
 - Вы должны предоставить клиентам техническую поддержку экономически обоснованным образом. Поддержка может быть платной, бесплатной или обеспечиваться посредством поддержки от сообщества.
 - Вы несете ответственность за лицензирование программного обеспечения, а также любых зависимостей от стороннего программного обеспечения.
 - Необходимо предоставить маркетинговые материалы, отвечающие критериям вашего предложения, соблюдение которых требуется для добавления приложения в Azure Marketplace и на портале Azure. <!-- TD: Meaning/links? -->
 - Вам нужно принять условия [политики участия в Microsoft Azure Marketplace](https://azure.microsoft.com/support/legal/marketplace/participation-policies/) и соглашения для издателей.
-- Вы должны соблюдать [Microsoft Azure веб-сайта условия использования](https://azure.microsoft.com/support/legal/website-terms-of-use/), [заявление о конфиденциальности Microsoft](https://privacy.microsoft.com/privacystatement), и [соглашение по программе сертификации Azure Microsoft](https://azure.microsoft.com/support/legal/marketplace/certified-program-agreement/).
+- Вы должны соблюдать [условия использования Microsoft Azure веб-сайта](https://azure.microsoft.com/support/legal/website-terms-of-use/), заявления [о конфиденциальности Майкрософт](https://privacy.microsoft.com/privacystatement)и [соглашения о Microsoft Azure сертифицированной программе](https://azure.microsoft.com/support/legal/marketplace/certified-program-agreement/).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-После выполнения этих предварительных требованиях, вы можете [Создание предложения виртуальной Машины](./cpp-create-offer.md).
+После выполнения этих предварительных требований можно [создать предложение виртуальной машины](./cpp-create-offer.md).

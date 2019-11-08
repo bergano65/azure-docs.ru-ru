@@ -1,5 +1,5 @@
 ---
-title: База данных SQL Azure — миграция с DTU на виртуальное ядро
+title: Миграция с DTU на виртуальное ядро
 description: Выполните миграцию из модели DTU в модель Виртуальное ядро. Переход на виртуальное ядро аналогичен обновлению или переходу на более раннюю версию уровня "Стандартный" и "Премиум".
 services: sql-database
 ms.service: sql-database
@@ -9,12 +9,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: sashan, moslake, carlrab
 ms.date: 10/08/2019
-ms.openlocfilehash: 73803ed6c583b8f40daa569a75806f54f6f4be45
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: f34439b7750ca1858e71d4a36121eb65001fff50
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73690574"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73811272"
 ---
 # <a name="migrate-from-the-dtu-based-model-to-the-vcore-based-model"></a>Миграция из модели на основе DTU в модель на основе виртуальное ядро
 

@@ -1,6 +1,6 @@
 ---
 title: Обзор акселератора решения для удаленного мониторинга — Azure | Документация Майкрософт
-description: Общие сведения об акселераторе решения для удаленного мониторинга.
+description: В этой статье представлен обзор некоторых ключевых элементов решения для удаленного мониторинга, позволяющих понять, как это работает.
 author: dominicbetts
 manager: timlt
 ms.service: iot-accelerators
@@ -8,12 +8,12 @@ services: iot-accelerators
 ms.topic: conceptual
 ms.date: 03/08/2019
 ms.author: dobett
-ms.openlocfilehash: af09ea39f373d518d5600e3fa46adc378fd9236d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 33005bc286f7dc2c0ebed74bd9df0309e71346f5
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61442552"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73824834"
 ---
 # <a name="remote-monitoring-solution-accelerator-overview"></a>Обзор акселератора решения для удаленного мониторинга
 
@@ -41,7 +41,7 @@ ms.locfileid: "61442552"
 С момента выпуска корпорацией Майкрософт первых акселераторов решений архитектура облака эволюционировала. [Микрослужбы](https://azure.microsoft.com/blog/microservices-an-application-revolution-powered-by-the-cloud/) — это проверенный метод, который обеспечивает масштабируемость и гибкость без снижения скорости разработки. В некоторых службах Майкрософт по умолчанию используется шаблон архитектуры, который обеспечивает высокую надежность и масштабируемость. В обновленных акселераторах решений реализованы эти наработки, чтобы вы в полной мере смогли воспользоваться их преимуществами.
 
 > [!TIP]
-> Дополнительные сведения об архитектурах микрослужб см. на странице [архитектуры приложения для .NET](https://www.microsoft.com/net/learn/architecture), а также в записи блога, посвященной [возможностям микрослужб для приложений на основе облака](https://azure.microsoft.com/blog/microservices-an-application-revolution-powered-by-the-cloud/).
+> Дополнительные сведения об архитектурах микрослужб см. на странице [архитектуры приложения для .NET](https://www.microsoft.com/net/learn/architecture), а также в записи блога, посвященной [возможностям микрослужб — мощные возможности приложения, обеспечиваемые облачной средой](https://azure.microsoft.com/blog/microservices-an-application-revolution-powered-by-the-cloud/).
 
 ## <a name="device-connectivity"></a>Взаимодействие устройств
 

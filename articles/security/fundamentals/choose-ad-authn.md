@@ -2,19 +2,19 @@
 title: Выбор правильного метода аутентификации для гибридного решения для идентификации Azure AD | Документация Майкрософт
 description: Это руководство поможет руководителям, директорам по ИТ, руководителям по информационной безопасности, старшим архитекторам по идентификации, корпоративным архитекторам и руководителям отделов безопасности и ИТ-отделов, ответственным за выбор метода аутентификации для своего гибридного решения для идентификации Azure AD в средних и крупных организациях.
 keywords: ''
-author: TerryLanfear
-ms.author: terrylan
+author: martincoetzer
+ms.author: martinco
 ms.date: 10/30/2019
 ms.topic: article
 ms.service: security
 ms.subservice: security-fundamentals
 ms.workload: identity
-ms.openlocfilehash: 564175141a8076d2ac4324b0dccf02cc250a613c
-ms.sourcegitcommit: 6c2c97445f5d44c5b5974a5beb51a8733b0c2be7
+ms.openlocfilehash: 71b4a8abc641a3ab11d6b17bbc8de3b42b61c34c
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73621180"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73820545"
 ---
 # <a name="choose-the-right-authentication-method-for-your-azure-active-directory-hybrid-identity-solution"></a>Выбор правильного метода аутентификации для гибридного решения для идентификации Azure Active Directory
 

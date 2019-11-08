@@ -1,5 +1,5 @@
 ---
-title: Условный доступ. База данных SQL Azure и хранилище данных | Документация Майкрософт
+title: Условный доступ
 description: Узнайте, как настроить условный доступ для базы данных SQL Azure и хранилища данных.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto
 ms.date: 03/29/2019
-ms.openlocfilehash: 1b7000138c4dfc42b774969c1b971d969064b78f
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 9b8c0dbe03e47d32d8194408663973f07a07b1b9
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68569330"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73827163"
 ---
 # <a name="conditional-access-mfa-with-azure-sql-database-and-data-warehouse"></a>Условный доступ (MFA) и база данных SQL Azure и хранилище данных  
 
@@ -27,13 +27,13 @@ ms.locfileid: "68569330"
 
 Ниже показано, как настроить базу данных SQL для принудительного применения политики условного доступа.  
 
-## <a name="prerequisites"></a>предварительные требования  
+## <a name="prerequisites"></a>Предварительные требования  
 - Вы должны настроить базу данных SQL или хранилище данных SQL для поддержки аутентификации Azure Active Directory. Дополнительные сведения см. в статье [Настройка аутентификации Azure Active Directory и управление ею с использованием базы данных SQL или хранилища данных SQL](sql-database-aad-authentication-configure.md).  
 - При включении многофакторной идентификации необходимо выполнить подключение с помощью поддерживаемого средства, например последней версии SSMS. Дополнительные сведения см. в разделе [Настройка многофакторной проверки подлинности в Базе данных SQL Azure для SQL Server Management Studio](sql-database-ssms-mfa-authentication-configure.md).  
 
 ## <a name="configure-ca-for-azure-sql-dbdw"></a>Настройка центра сертификации для базы данных или хранилища данных SQL Azure  
-1. Войдите на портал, выберите **Azure Active Directory**, а затем выберите условный **доступ**. Дополнительные сведения см. в статье [Техническая информация об условном доступе в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-technical-reference).  
-   ![Колонка условного доступа](./media/sql-database-conditional-access/conditional-access-blade.png) 
+1. Войдите на портал, выберите **Azure Active Directory**, а затем выберите **Условный доступ**. Дополнительные сведения см. в статье [Техническая информация об условном доступе в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-technical-reference).  
+   ![колонки условного доступа](./media/sql-database-conditional-access/conditional-access-blade.png) 
      
 2. В колонке **политик условного доступа** щелкните **Создать политику**, укажите имя, а затем щелкните **Configure rules** (Настройка правил).  
 3. В разделе **назначения**выберите **Пользователи и группы**, установите флажок **выбрать пользователей и группы**, а затем выберите пользователя или группу для условного доступа. Щелкните **Выбрать** , а затем **Готово** ,чтобы подтвердить выбор.  
@@ -53,6 +53,6 @@ ms.locfileid: "68569330"
 Выбранное приложение (база данных SQL Azure), позволяющее подключаться к базе данных или хранилищу данных SQL Azure, с помощью Azure AD Premium, теперь принудительно применяет выбранную политику условного доступа **Требовать многофакторную проверку подлинности.**  
 Если у вас есть вопросы о базе данных SQL Azure и хранилище данных в отношении многофакторной проверки подлинности, используйте MFAforSQLDB@microsoft.com.  
 
-## <a name="next-steps"></a>Следующие шаги  
+## <a name="next-steps"></a>Дальнейшие действия  
 
 Ознакомьтесь с руководством [Защита базы данных SQL Azure](sql-database-security-tutorial.md).

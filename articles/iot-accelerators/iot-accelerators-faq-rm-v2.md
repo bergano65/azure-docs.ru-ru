@@ -1,6 +1,6 @@
 ---
 title: Вопросы и ответы об акселераторе решения для удаленного мониторинга — Azure | Документация Майкрософт
-description: Часто задаваемые вопросы об акселераторе решения для удаленного мониторинга
+description: В этой статье содержатся ответы на часто задаваемые вопросы о акселераторах решений для удаленного мониторинга.
 author: dominicbetts
 manager: timlt
 ms.service: iot-accelerators
@@ -8,12 +8,12 @@ services: iot-accelerators
 ms.topic: conceptual
 ms.date: 02/15/2018
 ms.author: dobett
-ms.openlocfilehash: 746d21c7ff4d5b939eea7690193ac07425b4001c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c410ac7f41adb623a7198320a1edced097778569
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61447919"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73826241"
 ---
 # <a name="frequently-asked-questions-for-remote-monitoring-solution-accelerator"></a>Часто задаваемые вопросы об акселераторе решения для удаленного мониторинга
 
@@ -46,7 +46,7 @@ ms.locfileid: "61447919"
 
 Вы также можете ознакомиться с другими функциями и возможностями акселераторов решений для Интернета вещей:
 
-* [Обзор возможностей акселератора решений для удаленного мониторинга](quickstart-remote-monitoring-deploy.md)
+* [Обзор возможностей акселератора решения для удаленного мониторинга](quickstart-remote-monitoring-deploy.md)
 * [Общие сведения об акселераторе решений для диагностического обслуживания](iot-accelerators-predictive-overview.md)
 * [Развертывание акселератора решения "Подключенная фабрика"](quickstart-connected-factory-deploy.md)
 * [Комплексная защита в Интернете вещей](/azure/iot-fundamentals/iot-security-ground-up)

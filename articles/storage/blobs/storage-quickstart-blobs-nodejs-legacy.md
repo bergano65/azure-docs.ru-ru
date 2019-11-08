@@ -1,5 +1,5 @@
 ---
-title: Создание большого двоичного объекта в службе хранилища Azure для Node. js
+title: Краткое руководство. Клиентская библиотека хранилища BLOB-объектов Azure версии 2 для JavaScript
 description: Создайте учетную запись хранения и контейнер в хранилище объектов (больших двоичных объектов). Затем с помощью клиентской библиотеки Службы хранилища Azure для Node.js версии 2 передайте BLOB-объект в Службу хранилища Azure, скачайте его и перечислите все BLOB-объекты в контейнере.
 author: mhopkins-msft
 ms.author: mhopkins
@@ -8,14 +8,14 @@ ms.service: storage
 ms.subservice: blobs
 ms.topic: conceptual
 ms.custom: seo-javascript-september2019
-ms.openlocfilehash: 8d0afc5a224e752bdd745ab4df0473a134b4180b
-ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+ms.openlocfilehash: 12078300b36412a1507991507a39654acdeb7c69
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73609103"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73825345"
 ---
-# <a name="upload-download-and-list-blobs-using-the-client-library-for-nodejs"></a>Отправка, скачивание и перечисление больших двоичных объектов с помощью клиентской библиотеки для Node. js
+# <a name="quickstart-azure-blob-storage-client-library-v2-for-javascript"></a>Краткое руководство. Клиентская библиотека хранилища BLOB-объектов Azure версии 2 для JavaScript
 
 Из этого руководства вы узнаете, как использовать клиентскую библиотеку для Node.js версии 2 для передачи, скачивания и перечисления больших двоичных объектов в хранилище BLOB-объектов Azure.
 
