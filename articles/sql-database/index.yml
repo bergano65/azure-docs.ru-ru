@@ -1,206 +1,140 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Документация по Базе данных SQL Azure
+summary: База данных SQL Azure — это реляционная база данных, предоставляемая по модели "как услуга" (DBaaS), на основе последней стабильной версии Microsoft SQL Server.
 metadata:
-  document_id: 36d89c48-3646-380e-34a0-ae3ac62e2641
   title: Документация по Базе данных SQL Azure. Руководства и справочники по API
   meta.description: Learn how to use Azure SQL databases.
   services: sql-database
-  author: stevestein
-  manager: craigg
   ms.service: sql-database
   ms.subservice: service
   ms.tgt_pltfrm: na
-  ms.devlang: null
-  ms.topic: overview
-  ms.date: 09/09/2019
+  ms.devlang: 
+  ms.topic: landing-page
+  author: stevestein
   ms.author: sstein
-abstract:
-  description: "База данных SQL Azure\_— это реляционная база данных общего назначения, предоставляемая по модели \"как услуга\" (DBaaS), на основе последней стабильной версии ядра СУБД Microsoft SQL Server. База данных SQL\_— это высокопроизводительная, надежная и безопасная облачная база данных, с помощью которой можно создавать приложения и веб-сайты на основе данных, используя любой язык программирования, без необходимости управлять инфраструктурой. Узнайте, как использовать Базу данных SQL, с помощью наших шаблонов быстрого запуска, примеров и руководств."
-  aside:
-    image:
-      alt: null
-      height: 110
-      src: 'https://docs.microsoft.com/azure/sql-database/media/index/create-sql-database-on-azure.png'
-      width: 250
-    title: 'Создание базы данных SQL в Azure. (3:12)'
-    href: 'https://azure.microsoft.com/resources/videos/create-sql-database-on-azure/'
-    width: 250
-sections:
-  - title: Основные понятия
-    items:
-      - type: paragraph
-        text: 'Узнайте об основных преимуществах, которые предоставляет база данных типа "платформа как услуга" (PaaS), а также о моделях приобретения и уровнях обслуживания, которые обеспечивают оптимальное сочетание цены и производительности.'
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - href: /azure/sql-database/sql-database-technical-overview
-            html: "<p>База данных PaaS, которая всегда выполняется в последней стабильной версии ядра СУБД SQL Server и в ОС с установленными исправлениями при доступности на уровне 99,99\_%.</p>"
-            image:
-              src: media/index/i_managed.svg
-            title: Обзор
-          - href: /azure/sql-database/sql-database-service-tiers
-            html: "<p>Определите нужное соотношение цены и производительности в соответствии со своими потребностями и выберите один из уровней служб с гибкими условиями\_— от доступного предложения по цене от 5\_долл. США в месяц до мощных 80-ядерных баз данных.</p>"
-            image:
-              src: media/index/i_perftier.svg
-            title: Модели ценообразования
-          - href: /azure/sql-database/sql-database-service-tiers-general-purpose-business-critical
-            html: '<p>Выберите уровень служб и облачную архитектуру, которые лучше всего соответствуют вашим требованиям или инфраструктуре, используемой в локальной среде.</p>'
-            image:
-              src: media/index/gear.svg
-            title: Уровни службы
-          - href: /azure/sql-database/sql-database-scalability-index
-            html: <p>Легко выполняйте вертикальное и горизонтальное масштабирование или сегментируйте базы данных с учетом своих требований для повышения производительности приложений.</p>
-            image:
-              src: media/index/i_scale.svg
-            title: Масштабируемость
-          - href: /azure/sql-database/sql-database-paas
-            html: '<p>Встроенные средства обеспечения высокой доступности, автоматическое резервное копирование и георепликация помогают избежать простоев во время операций обслуживания и сбоев инфраструктуры или оборудования.</p>'
-            image:
-              src: media/index/i_intelligence.svg
-            title: Платформа как услуга
-          - href: /azure/sql-database/sql-database-security-index
-            html: '<p>Защитите свою базу данных с помощью аутентификации Azure AD, виртуальных сетей, брандмауэров и подключений с использованием Always Encrypted. Выявляйте угрозы и уязвимости благодаря встроенным средствам безопасности.</p>'
-            image:
-              src: media/index/i_security.svg
-            title: Расширенные функции безопасности
-  - title: Модели развертывания
-    items:
-      - type: paragraph
-        text: "Выберите модель развертывания, которая соответствует вашим требованиям. Отдельная база данных\_— лучший вариант для новых современных облачных приложений. Эластичные пулы больше всего подходят для размещения большого объема баз данных. А управляемый экземпляр обеспечивает хорошую совместимость с SQL\_Server и простую миграцию в облако."
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 2
-        items:
-          - href: /azure/sql-database/sql-database-single-index
-            html: '<p>Используйте отдельную базу данных под управлением сервера Базы данных SQL для своих приложений SaaS и микрослужб, которым требуются отдельные базы данных с прогнозируемой производительностью.</p>'
-            image:
-              src: media/index/i_db.svg
-            title: Отдельная база данных
-          - href: /azure/sql-database/sql-database-elastic-pool
-            html: <p>Эластичные пулы Базы данных SQL — это простое и экономичное решение для администрирования и масштабирования нескольких баз данных с отличными и непредсказуемыми требованиями к ресурсам.</p>
-            image:
-              src: media/index/i_elasticpool.svg
-            title: Эластичные пулы
-          - href: /azure/sql-database/sql-database-managed-instance-index
-            html: "<p>Получите полностью управляемый экземпляр ядра СУБД SQL\_Server, размещенный в облаке Azure, с помощью управляемого экземпляра, внося незначительные изменения в код базы данных или не изменяя его для миграции из локальных баз данных.</p>"
-            image:
-              src: media/index/i_mi.svg
-            title: Управляемый экземпляр
-          - href: /azure/sql-database/sql-database-instance-pools
-            html: '<p>Используйте пулы управляемых экземпляров как простое и экономичное решение для развертывания нескольких быстро масштабируемых управляемых экземпляров, совместно использующих ресурсы.</p>'
-            image:
-              src: media/index/i-instancepools.svg
-            title: Пул экземпляров
-  - title: Пятиминутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: "База данных SQL Azure позволяет легко выполнять основные задачи управления с помощью портала Azure, Azure\_CLI и Azure PowerShell. Узнайте, как выполнять основные задачи управления с использованием примеров из следующих кратких руководств:"
-      - type: table
-        style: dataMatrix
-        columns:
-          - image:
-              src: media/index/portal.svg
-            title: Портал Azure
-          - image:
-              src: media/index/cli.svg
-            title: Azure CLI
-          - image:
-              src: media/index/logo_powershell.svg
-            title: PowerShell
-          - image:
-              src: media/index/logo_arm.svg
-            title: Шаблон Azure Resource Manager
-        rows:
-          - title: Создание отдельной базы данных
-            values:
-              - href: /azure/sql-database/sql-database-single-database-get-started
-              - href: /azure/sql-database/scripts/sql-database-create-and-configure-database-cli
-              - href: /azure/sql-database/scripts/sql-database-create-and-configure-database-powershell
-              - href: 'https://github.com/Azure/azure-quickstart-templates/tree/master/201-sql-database-transparent-encryption-create'
-          - title: Создание эластичного пула
-            values:
-              - href: /azure/sql-database/sql-database-elastic-pool-manage
-              - href: /azure/sql-database/scripts/sql-database-move-database-between-pools-cli
-              - href: /azure/sql-database/scripts/sql-database-move-database-between-pools-powershell
-              - href: 'https://github.com/Azure/azure-quickstart-templates/tree/master/101-sql-elastic-pool-create'
-          - title: Создание управляемого экземпляра
-            values:
-              - href: /azure/sql-database/sql-database-managed-instance-get-started
-              - href: 'https://medium.com/azure-sqldb-managed-instance/working-with-sql-managed-instance-using-azure-cli-611795fe0b44'
-              - href: /azure/sql-database/scripts/sql-database-create-configure-managed-instance-powershell
-              - href: 'https://github.com/Azure/azure-quickstart-templates/tree/master/101-sqlmi-new-vnet'
-          - title: Создание пула экземпляров
-            values:
-              - href: null
-              - href: null
-              - href: '/azure/sql-database/sql-database-instance-pools-how-to#create-an-instance-pool'
-              - href: null
-  - title: Пошаговые руководства и учебные материалы
-    items:
-      - type: paragraph
-        text: 'Сведения о создании, администрировании и переносе баз данных с помощью Базы данных SQL'
-      - type: list
-        style: ordered
-        items:
-          - html: "Узнайте, как определить, <a href=\"/azure/sql-database/sql-database-paas-vs-sql-server-iaas\">какой вариант больше всего подходит для вашей рабочей нагрузки: SQL\_Server на виртуальной машине (IaaS) или База данных SQL Azure (PaaS)</a>."
-          - html: 'Узнайте, <a href="/azure/sql-database/sql-database-features">какие функции поддерживает База данных SQL Azure и каковы особенности ее поведения</a>.'
-          - html: 'Начните работу с <a href="/azure/sql-database/sql-database-single-database-quickstart-guide">отдельной базой данных</a> и <a href="/azure/sql-database/sql-database-managed-instance-quickstart-guide">управляемым экземпляром</a>, используя наши краткие руководства.'
-          - html: Создание и проектирование схемы для новой отдельной базы данных с помощью <a href="/azure/sql-database/sql-database-design-first-database">SSMS</a> или <a href="/azure/sql-database/sql-database-design-first-database-csharp">.NET</a>
-          - html: 'Переносите существующие базы данных в Azure с помощью <a href="/azure/sql-database/sql-database-managed-instance-get-started-restore">собственного файла резервной копии SQL Server</a>, <a href="/azure/sql-database/sql-database-migrate-your-sql-server-database">Помощника по миграции баз данных</a> или <a href="/azure/sql-database/sql-database-import">импорта файла BACPAC</a>.'
-          - html: <a href="/azure/sql-database/sql-database-security-tutorial">Защита базы данных SQL Azure</a>
-          - html: Распределяйте данные глобально с помощью <a href="/azure/sql-database/sql-database-implement-geo-distributed-database">географически распределенной базы данных</a>.
-          - html: Ознакомьтесь с <a href="/azure/sql-database/sql-database-release-notes">новыми функциями в Базе данных SQL Azure</a>.
-  - title: Развитие навыков с помощью Microsoft Learn
-    items:
-      - type: list
-        style: cards
-        className: cardsFTitle
-        items:
-          - title: Подготовка базы данных SQL Azure для хранения данных приложения
-            href: /learn/modules/provision-azure-sql-db/
-            image:
-              src: /learn/achievements/provision-azure-sql-db.svg
-              href: /learn/modules/provision-azure-sql-db/
-      - type: paragraph
-        text: <a href="/learn/browse/?products=azure-sql-database">Другие интерактивные руководства</a>
-  - title: Бесплатные видеоуроки PluralSight
-    items:
-      - type: list
-        style: cards
-        className: cardsFTitle
-        items:
-          - title: Разработка с помощью .NET в Azure
-            href: 'https://www.pluralsight.com/courses/developing-dotnet-microsoft-azure-getting-started?twoid=FEED65A23CB221A7'
-            image:
-              src: 'https://docs.microsoft.com/media/logos/logo_pluralsight.svg'
-              href: 'https://www.pluralsight.com/courses/developing-dotnet-microsoft-azure-getting-started?twoid=FEED65A23CB221A7'
-  - title: Примеры
-    items:
-      - type: paragraph
-        text: Найдите скрипты для выполнения типовых задач.
-      - type: list
-        style: unordered
-        className: spaced noBullet
-        items:
-          - html: <a href="/azure/sql-database/sql-database-powershell-samples">Azure PowerShell</a>
-          - html: <a href="/azure/sql-database/sql-database-cli-samples">Azure CLI</a>
-  - title: Справочные материалы
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: Командная строка
-            html: '<p><a href="/powershell/module/Az.Sql/">Azure PowerShell</a></p><p><a href="/powershell/module/elasticdatabasejobs/#elasticdatabasejobs">Azure PowerShell (эластичная база данных)</a></p><p><a href="/cli/azure/sql">Azure CLI</a></p>'
-          - title: Языки
-            html: '<p><a href="/dotnet/api/microsoft.azure.management.sql.models">.NET</a></p><p><a href="/java/api/com.microsoft.azure.management.sql">Java</a></p><p><a href="https://msdn.microsoft.com/library/mt652093.aspx">Node.js</a></p><p><a href="https://msdn.microsoft.com/library/mt652092.aspx">Python</a></p><p><a href="https://msdn.microsoft.com/library/mt691981.aspx">Ruby</a></p><p><a href="https://msdn.microsoft.com/library/dn865013.aspx">PHP</a></p><p><a href="https://msdn.microsoft.com/library/azure/bb510741.aspx">T-SQL</a></p>'
-          - title: REST
-            html: <p><a href="/rest/api/sql/">Справочник по API REST</a></p>
-          - title: Средства SQL Server
-            html: '<p><a href="https://msdn.microsoft.com/library/mt238365.aspx">Средства SQL Server</a></p><p><a href="https://msdn.microsoft.com/library/mt238290.aspx">SQL Server Management Studio (SSMS)</a></p><p><a href="https://msdn.microsoft.com/library/mt204009.aspx">SQL Server Data Tools (SSDT)</a></p><p><a href="https://msdn.microsoft.com/library/ms162802.aspx">BCP</a></p><p><a href="https://msdn.microsoft.com/library/ms162773.aspx">sqlcmd</a></p><p><a href="https://docs.microsoft.com/sql/tools/sqlpackage">SqlPackage</a></p><p><a href="https://www.nuget.org/packages/Microsoft.Azure.Management.Sql">Пакет библиотеки управления Базой данных SQL</a></p>'
-          - title: Драйверы SQL Server
-            html: '<p><a href="https://msdn.microsoft.com/library/mt654049.aspx">Драйверы SQL Server</a></p><p><a href="/sql/connect/ado-net/microsoft-ado-net-sql-server">ADO.NET</a></p><p><a href="https://msdn.microsoft.com/library/mt484311.aspx">JDBC</a></p><p><a href="https://msdn.microsoft.com/library/mt654048.aspx">ODBC</a></p>'
+  ms.date: 10/30/2019
+  ms.openlocfilehash: 815eebac3cc4a09f7f73bd639fc36cfd17de9ada
+  ms.sourcegitcommit: 3486e2d4eb02d06475f26fbdc321e8f5090a7fac
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 10/31/2019
+  ms.locfileid: "73242825"
+landingContent:
+- title: Сведения о Базе данных SQL
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое база данных SQL?
+      url: sql-database-technical-overview.md
+    - text: Какой вариант Базы данных SQL следует выбрать?
+      url: sql-database-paas-vs-sql-server-iaas.md
+    - text: Варианты приобретения
+      url: sql-database-purchase-models.md
+    - text: Уровни службы
+      url: sql-database-service-tiers-general-purpose-business-critical.md
+  - linkListType: concept
+    links:
+    - text: Масштабируемость
+      url: sql-database-scalability-index.yml
+    - text: Платформа как услуга
+      url: sql-database-paas-index.yml
+    - text: Расширенные функции безопасности
+      url: sql-database-security-overview.md
+- title: Модели развертывания
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Отдельная база данных
+      url: sql-database-single-index.yml
+    - text: Эластичные пулы
+      url: sql-database-elastic-pool.md
+    - text: Управляемый экземпляр
+      url: sql-database-managed-instance-index.yml
+    - text: Пулы экземпляров
+      url: sql-database-instance-pools.md
+- title: Начало работы
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Краткое руководство по работе с отдельной базой данных
+      url: sql-database-single-database-quickstart-guide.md
+    - text: Краткое руководство по работе с управляемыми экземплярами
+      url: sql-database-managed-instance-quickstart-guide.md
+    - text: Краткое руководство по работе с пулами экземпляров
+      url: sql-database-instance-pools-how-to.md
+- title: Миграция в Базу данных SQL Azure
+  linkLists:
+  - linkListType: deploy
+    links:
+    - text: Какой вариант Базы данных SQL следует выбрать?
+      url: sql-database-paas-vs-sql-server-iaas.md
+    - text: Миграция в Базу данных SQL
+      url: sql-database-single-database-migrate.md
+    - text: Миграция в Управляемый экземпляр SQL
+      url: sql-database-managed-instance-migrate.md
+- title: Проектирование базы данных
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Проектирование базы данных с помощью SQL Server Management Studio (SSMS)
+      url: sql-database-design-first-database.md
+    - text: Проектирование базы данных с помощью программных средств в приложении
+      url: sql-database-design-first-database-csharp.md
+  - linkListType: reference
+    links:
+    - text: Инфраструктура CLI Azure
+      url: https://docs.microsoft.com/cli/azure/sql
+    - text: PowerShell
+      url: https://docs.microsoft.com/powershell/module/az.sql
+    - text: REST API
+      url: https://docs.microsoft.com/rest/api/sql/
+- title: Запрос к базе данных
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Выполнение запросов с помощью SQL Server Management Studio (SSMS)
+      url: sql-database-connect-query-ssms.md
+    - text: Выполнение запросов с помощью Azure Data Studio
+      url: https://docs.microsoft.com/sql/azure-data-studio/quickstart-sql-database
+  - linkListType: reference
+    links:
+    - text: Справочник по Transact-SQL (T-SQL)
+      url: https://docs.microsoft.com/sql/t-sql/language-reference
+    - text: Скачивание и установка SSMS
+      url: https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms
+    - text: Скачивание и установка Azure Data Studio
+      url: https://docs.microsoft.com/sql/azure-data-studio/download
+- title: Защита Базы данных SQL
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Общие сведения о безопасности
+      url: sql-database-security-overview.md
+    - text: Правила брандмауэра
+      url: sql-database-firewall-configure.md
+  - linkListType: architecture
+    links:
+    - text: Аудит
+      url: sql-database-auditing.md
+    - text: Расширенная защита данных
+      url: sql-database-advanced-data-security.md
+- title: Непрерывность бизнес-процессов (BCDR)
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Непрерывность бизнес-процессов
+      url: sql-database-business-continuity.md
+    - text: Высокий уровень доступности
+      url: sql-database-high-availability.md
+    - text: Резервные копии базы данных
+      url: sql-database-automated-backups.md
+- title: Справочник по API
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Инфраструктура CLI Azure
+      url: https://docs.microsoft.com/cli/azure/sql
+    - text: PowerShell
+      url: https://docs.microsoft.com/powershell/module/az.sql
+    - text: REST API
+      url: https://docs.microsoft.com/rest/api/sql/

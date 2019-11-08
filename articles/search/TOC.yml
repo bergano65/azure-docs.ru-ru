@@ -119,7 +119,7 @@
           href: search-security-trimming-for-azure-search.md
         - name: Фильтр по удостоверениям AAD
           href: search-security-trimming-for-azure-search-with-aad.md
-        - name: Управление ключами шифрования (предварительная версия)
+        - name: Управление ключами шифрования
           href: search-security-manage-encryption-keys.md
     - name: Разработка
       items:
@@ -253,7 +253,7 @@
           href: cognitive-search-concept-troubleshooting.md
         - name: Ссылки на документацию
           href: cognitive-search-resources-documentation.md
-        - name: Хранилище знаний (предварительная версия)
+        - name: Хранилище знаний
           items:
             - name: Создание с помощью REST и Postman
               href: knowledge-store-create-rest.md
@@ -277,7 +277,7 @@
           href: query-simple-syntax.md
         - name: Полный синтаксис запросов Lucene
           href: query-lucene-syntax.md
-        - name: moreLikeThis (предварительная версия)
+        - name: Параметр запроса moreLikeThis
           href: search-more-like-this.md
     - name: Применение фильтров
       items:

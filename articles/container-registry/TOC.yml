@@ -39,7 +39,7 @@
           href: container-registry-tutorial-deploy-update.md
 - name: Основные понятия
   items:
-    - name: Номера SKU реестра контейнеров
+    - name: Номера SKU и ограничения реестра контейнеров
       href: container-registry-skus.md
     - name: 'Реестры, репозитории и образы'
       href: container-registry-concepts.md
@@ -75,8 +75,6 @@
               href: container-registry-retention-policy.md
             - name: Автоматическая очистка тегов и манифестов (предварительная версия)
               href: container-registry-auto-purge.md
-        - name: Обновление классического реестра
-          href: container-registry-upgrade.md
         - name: Использование веб-перехватчиков ACR
           href: container-registry-webhook.md
         - name: Репозитории с чартами Helm (предварительная версия)

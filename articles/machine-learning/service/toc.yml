@@ -58,11 +58,13 @@
       href: tutorial-train-deploy-model-cli.md
 - name: Примеры
   items:
-    - name: Записные книжки
+    - name: Записные книжки Jupyter
       displayName: 'example, examples, server, jupyter, azure notebooks, python, notebook, github'
       href: samples-notebooks.md
     - name: Открытые наборы данных Azure
       href: /azure/open-datasets/samples?context=azure/machine-learning/service/context/ml-context
+    - name: Полные примеры MLOps
+      href: 'https://github.com/microsoft/MLOps'
 - name: Основные понятия
   items:
     - name: Рабочая область
@@ -109,14 +111,11 @@
               href: how-to-change-storage-access-key.md
         - name: Мониторинг Машинного обучения Azure
           href: monitor-azure-machine-learning.md
+        - name: Интеграция с Сеткой событий
+          href: concept-event-grid-integration.md
     - name: Глубокое обучение
       displayName: 'deep learning vs machine learning, deep learning, vs, versus'
       href: concept-deep-learning-vs-machine-learning.md
-    - name: Интеграция с Сеткой событий
-      href: concept-event-grid-integration.md
-    - name: Интеграция Git
-      displayName: git github gitlab
-      href: concept-train-model-git-integration.md
 - name: Руководства
   items:
     - name: Создание рабочих областей и управление ими
@@ -145,6 +144,9 @@
         - name: "Использование расширения VS\_Code"
           displayName: 'Visual Studio Code, VSCode, tools, ai, vs'
           href: how-to-vscode-tools.md
+        - name: Интеграция Git
+          displayName: github gitlab
+          href: concept-train-model-git-integration.md
     - name: Работа с данными
       items:
         - name: Получение данных из хранилища данных
@@ -330,21 +332,17 @@
       href: how-to-use-event-grid.md
 - name: Справочные материалы
   items:
-    - name: Пакет SDK для ML (Python)
+    - name: Пакет SDK для Python
       displayName: 'api, core, package, python, class'
       href: 'https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py'
-    - name: Пакет SDK для ML (R)
+    - name: Пакет SDK для R
       displayName: 'api, core, package, R, class'
       href: 'https://azure.github.io/azureml-sdk-for-r/reference/index.html'
-    - name: Интерфейс командной строки для Машинного обучения
+    - name: CLI
       displayName: 'extension, command line, command-line, az, ci/cd, automate, automated'
       href: reference-azure-machine-learning-cli.md
     - name: REST API
       href: 'https://docs.microsoft.com/rest/api/azureml/'
-    - name: Справочник по мониторингу данных
-      href: monitor-resource-reference.md
-    - name: Справочник по конвейеру машинного обучения YAML
-      href: reference-pipeline-yaml.md
     - name: Модули конструктора
       displayName: 'module, reference, algorithm, studio'
       items:
@@ -478,6 +476,12 @@
               href: ../algorithm-module-reference/summarize-data.md
         - name: Сообщения об ошибках и коды
           href: ../algorithm-module-reference/machine-learning-module-error-codes.md
+    - name: Машинное обучение в масштабе
+      href: /azure/architecture/data-guide/big-data/machine-learning-at-scale
+    - name: Справочник по мониторингу данных
+      href: monitor-resource-reference.md
+    - name: Справочник по конвейеру машинного обучения YAML
+      href: reference-pipeline-yaml.md
 - name: Ресурсы
   items:
     - name: Заметки о выпуске

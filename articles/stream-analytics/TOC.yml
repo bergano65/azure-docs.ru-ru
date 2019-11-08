@@ -107,6 +107,8 @@
           href: sql-reference-data.md
         - name: "Аутентификация на основе управляемых удостоверений\_— выходные данные хранилища BLOB-объектов"
           href: blob-output-managed-identity.md
+        - name: "Аутентификация на основе управляемых удостоверений в Power\_BI"
+          href: powerbi-output-managed-identity.md
     - name: Создание решений
       items:
         - name: Анализ тональности в Twitter

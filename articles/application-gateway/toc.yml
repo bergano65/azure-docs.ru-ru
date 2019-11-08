@@ -147,6 +147,8 @@
           href: ingress-controller-letsencrypt-certificate-application-gateway.md
         - name: Предоставление WebSocket Шлюзу приложений
           href: ingress-controller-expose-websocket-server.md
+        - name: Автоматическое масштабирование модулей pod AKS на основе метрик Шлюза приложений
+          href: ingress-controller-autoscale-pods.md
     - name: Маршрутизация на основе URL-адреса
       items:
         - name: Azure PowerShell

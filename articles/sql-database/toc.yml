@@ -361,7 +361,7 @@
               href: /azure/connectors/connectors-create-api-sqlazure?toc=/azure/sql-database/toc.json
             - name: Использование соединителя Spark
               href: sql-database-spark-connector.md
-            - name: Индексирование с помощью службы "Поиск Azure"
+            - name: Индексирование с помощью службы "Когнитивный поиск Azure"
               href: /azure/search/search-howto-connecting-azure-sql-database-to-azure-search-using-indexers?toc=/azure/sql-database/toc.json
             - name: Настройка политики временного хранения
               href: sql-database-temporal-tables-retention-policy.md

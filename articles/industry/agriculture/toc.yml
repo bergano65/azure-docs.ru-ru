@@ -1,0 +1,40 @@
+- name: Обзор
+  items:
+    - name: Что такое FarmBeats?
+      href: overview.md
+- name: Учебники
+  expanded: true
+  items:
+    - name: Создание карты влажности почвы
+      href: generate-soil-moisture-map.md
+    - name: Прием архивных данных телеметрии
+      href: ingest-historical-telemetry-data.md
+- name: Основные понятия
+  items:
+    - name: Шаблоны интеграции
+      href: integration-patterns.md
+    - name: Интеграция с партнерскими датчиками
+      href: sensor-partner-integration.md
+    - name: Интеграция с партнерскими решениями для получения снимков
+      href: imagery-partner-integration.md
+- name: Практические руководства
+  items:
+    - name: Развертывание FarmBeats
+      href: prepare-for-deployment.md
+    - name: Управление фермами
+      href: manage-farms.md
+    - name: Получение данных от датчиков
+      href: get-sensor-data-from-sensor-partner.md
+    - name: Создание карт
+      href: generate-maps.md
+    - name: Настройка правил и управление оповещениями
+      href: configure-rules-alerts.md
+    - name: Получение изображений от дронов
+      href: get-drone-imagery.md
+- name: Устранение неполадок
+  items:
+    - name: Устранение неполадок в FarmBeats
+      href: troubleshoot-project-farmbeats.md
+- name: Справочные материалы
+  items: null
+  href: references-for-farmbeats.md

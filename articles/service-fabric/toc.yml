@@ -487,6 +487,8 @@
                   href: service-fabric-application-secret-management-windows.md
                 - name: Настройка шифрования секретов и сертификата шифрования в Linux
                   href: service-fabric-application-secret-management-linux.md
+                - name: Безопасное хранение секретов с помощью KeyVaultReference (предварительная версия)
+                  href: service-fabric-keyvault-references.md
             - name: Настройка обратного прокси-сервера для безопасного подключения
               href: service-fabric-reverseproxy-configure-secure-communication.md
             - name: Выполнение скрипта при запуске службы от имени локального пользователя или системной учетной записи

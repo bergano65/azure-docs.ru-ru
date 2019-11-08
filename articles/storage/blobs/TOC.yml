@@ -247,6 +247,8 @@
                   href: ../common/storage-analytics-logging.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: Обработка событий
           href: storage-blob-event-overview.md
+        - name: Канал изменений
+          href: storage-blob-change-feed.md
         - name: Возможности страничных BLOB-объектов
           href: storage-blob-pageblob-overview.md
         - name: Статические веб-сайты
@@ -374,6 +376,8 @@
           href: storage-custom-domain-name.md
         - name: Маршрутизация событий в пользовательскую конечную точку
           href: storage-blob-event-quickstart.md
+        - name: Обработка журналов канала изменений
+          href: storage-blob-change-feed-how-to.md
         - name: Поиск хранилища BLOB-объектов с помощью Поиска Azure
           href: ../../search/search-blob-storage-integration.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: Передача данных
@@ -432,24 +436,24 @@
           href: /cli/azure/storage
         - name: .NET
           items:
-            - name: 'Большие двоичные объекты, очереди и файлы'
-              href: /dotnet/api/overview/azure/storage/client
+            - name: Большие двоичные объекты (версия 12.x)
+              href: /dotnet/api/azure.storage.blobs
             - name: Перемещение данных
               href: /dotnet/api/microsoft.azure.storage.datamovement
             - name: Поставщик ресурсов хранилища
               href: /dotnet/api/overview/azure/storage/management
         - name: Java
           items:
-            - name: "Большие двоичные объекты, очереди и файлы (12.x\_— предварительная версия)"
-              href: 'https://azure.github.io/azure-sdk-for-java/track2reports/index.html'
-            - name: "Большие двоичные объекты, очереди и файлы (версия\_8)"
-              href: 'https://docs.microsoft.com/java/api/overview/azure/storage?view=azure-java-legacy'
+            - name: Большие двоичные объекты (версия 12.x)
+              href: 'https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-blob/12.0.0/index.html'
+            - name: Большие двоичные объекты (версия 8.x)
+              href: /java/api/com.microsoft.azure.storage.blob
             - name: Поставщик ресурсов хранилища
               href: /java/api/overview/azure/storage/management
-        - name: Node.js
-          href: /javascript/api/overview/azure/storage
-        - name: Python
-          href: /python/api/overview/azure/storage
+        - name: JavaScript (версия 12.x)
+          href: /javascript/api/@azure/storage-blob/?view=azure-node-preview
+        - name: Python (версия 12.x)
+          href: /python/api/azure-storage-blob/
         - name: REST
           items:
             - name: 'Большие двоичные объекты, очереди, таблицы и файлы'
@@ -737,20 +741,24 @@
           href: /cli/azure/storage
         - name: .NET
           items:
-            - name: 'Большие двоичные объекты, очереди, таблицы и файлы'
-              href: /dotnet/api/overview/azure/storage/client
+            - name: Большие двоичные объекты (версия 12.x)
+              href: /dotnet/api/azure.storage.blobs
             - name: Перемещение данных
               href: /dotnet/api/microsoft.azure.storage.datamovement
-            - name: Resource Manager
+            - name: Поставщик ресурсов хранилища
               href: /dotnet/api/overview/azure/storage/management
         - name: Java
           items:
-            - name: "Большие двоичные объекты, очереди и файлы (12.x\_— предварительная версия)"
-              href: 'https://azure.github.io/azure-sdk-for-java/track2reports/index.html'
-            - name: "Большие двоичные объекты, очереди и файлы (версия\_8)"
-              href: 'https://docs.microsoft.com/java/api/overview/azure/storage?view=azure-java-legacy'
+            - name: Большие двоичные объекты (версия 12.x)
+              href: 'https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-blob/12.0.0/index.html'
+            - name: Большие двоичные объекты (версия 8.x)
+              href: /java/api/com.microsoft.azure.storage.blob
             - name: Поставщик ресурсов хранилища
               href: /java/api/overview/azure/storage/management
+        - name: JavaScript (версия 12.x)
+          href: /javascript/api/@azure/storage-blob/?view=azure-node-preview
+        - name: Python (версия 12.x)
+          href: /python/api/azure-storage-blob/
         - name: REST
           items:
             - name: 'Большие двоичные объекты, очереди, таблицы и файлы'

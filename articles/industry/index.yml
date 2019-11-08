@@ -1,0 +1,53 @@
+### YamlMime:Hub
+title: Документация по Azure для отраслевых решений
+summary: Узнайте, как использовать Azure, чтобы создавать решения для распространенных вариантов использования в различных отраслях.
+brand: azure
+metadata:
+  title: Документация по Azure для отраслевых решений
+  description: Узнайте, как использовать Azure, чтобы создавать решения для распространенных вариантов использования в различных отраслях.
+  ms.service: azure-industry
+  ms.topic: hub-page
+  ms.collection: collection
+  author: DCtheGeek
+  ms.author: dacoulte
+  ms.date: 11/04/2019
+  ms.openlocfilehash: 2777093db7486f17cf19b45db08bbd0168a4e2a8
+  ms.sourcegitcommit: 018e3b40e212915ed7a77258ac2a8e3a660aaef8
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 11/07/2019
+  ms.locfileid: "73797080"
+highlightedContent:
+  items:
+  - title: Azure FarmBeats
+    itemType: overview
+    url: ./agriculture/overview.md
+  - title: Форум сообщества
+    itemType: concept
+    url: https://aka.ms/FarmBeatsMSDN
+  - title: UserVoice (обратная связь)
+    itemType: get-started
+    url: https://aka.ms/FarmBeatsForum
+productDirectory:
+  title: Области отраслевых решений
+  items:
+  - title: Azure FarmBeats
+    imageSrc: ../media/index/industry-agriculture-farmbeats.svg
+    summary: Позволяет быстро создавать цифровые решения для сельского хозяйства в облаке.
+    url: ./agriculture/overview.md
+  - title: Финансовые услуги
+    imageSrc: ../media/index/industry-financial.png
+    summary: Решения и варианты использования для финансовых услуг.
+    url: /azure/industry-marketing/financial/
+  - title: Услуги здравоохранения и медицинские услуги
+    imageSrc: ../media/index/industry-health.png
+    summary: Решения и варианты использования для здравоохранения и медико-биологических наук.
+    url: /azure/industry-marketing/health/
+  - title: Производство
+    imageSrc: ../media/index/industry-manufacturing.png
+    summary: Решения и варианты использования для обрабатывающей промышленности.
+    url: /azure/industry-marketing/manufacturing/
+  - title: Розничная торговля
+    imageSrc: ../media/index/industry-retail.png
+    summary: Решения и варианты использования для розничной торговли.
+    url: /azure/industry-marketing/retail/
