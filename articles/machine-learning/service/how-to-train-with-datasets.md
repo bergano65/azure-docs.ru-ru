@@ -11,14 +11,14 @@ author: MayMSFT
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 09/25/2019
-ms.openlocfilehash: 53a190a611af42f0eaca8d4348d1d066d3d4f9e4
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: f95798241084efdb91993a5add52f84a8a6dc1ec
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73584415"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73814801"
 ---
-# <a name="train-with-datasets-preview-in-azure-machine-learning"></a>Обучение с наборами данных (Предварительная версия) в Машинное обучение Azure
+# <a name="train-with-datasets-in-azure-machine-learning"></a>Обучение с наборами данных в Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
 В этой статье вы узнаете о двух способах использования [наборов данных машинное обучение Azure](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset%28class%29?view=azure-ml-py) в ходе удаленного обучения экспериментов, не беспокоясь о строках подключения и путях к данным.
@@ -40,7 +40,7 @@ ms.locfileid: "73584415"
 * [Установленный пакет SDK для машинное обучение Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py), включающий пакет azureml-DataSets.
 
 > [!Note]
-> Некоторые классы набора данных (Предварительная версия) имеют зависимости от пакета [azureml-](https://docs.microsoft.com/python/api/azureml-dataprep/?view=azure-ml-py) DataMarket. Для пользователей Linux эти классы поддерживаются только в следующих дистрибутивах: Red Hat Enterprise Linux, Ubuntu, Fedora и CentOS.
+> Некоторые классы наборов данных имеют зависимости от пакета [azureml-](https://docs.microsoft.com/python/api/azureml-dataprep/?view=azure-ml-py) DataMarket. Для пользователей Linux эти классы поддерживаются только в следующих дистрибутивах: Red Hat Enterprise Linux, Ubuntu, Fedora и CentOS.
 
 ## <a name="option-1-use-datasets-directly-in-training-scripts"></a>Вариант 1. Использование наборов данных непосредственно в сценариях обучения
 
@@ -82,7 +82,7 @@ df = dataset.to_pandas_dataframe()
 Этот код создает универсальный объект средства оценки, `est`, который указывает
 
 * Каталог скрипта для скриптов. Все файлы в этом каталоге передаются в узел кластера для выполнения.
-* Обучающий сценарий *train_titanic. Корректировка*.
+* Сценарий обучения, *train_titanic. Корректировка*.
 * Входной набор данных для обучения, `titanic`.
 * Целевой объект вычислений для эксперимента.
 * Определение окружения для эксперимента.

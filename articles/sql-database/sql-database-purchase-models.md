@@ -1,5 +1,5 @@
 ---
-title: 'Модели приобретения для Базы данных SQL Azure '
+title: Модели приобретения
 description: Сведения о моделях приобретения, доступных для базы данных SQL Azure.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: carlrab
 ms.date: 04/26/2019
-ms.openlocfilehash: 48537ec4c62410565d32350b1e3a11bbc7a2ca6e
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: be223245c634b8e38dc5e4c89df4c265c22c0b57
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73687554"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73821264"
 ---
 # <a name="choose-between-the-vcore-and-the-dtu-purchasing-models"></a>Выбор между Виртуальное ядро и моделями приобретения DTU
 
@@ -125,7 +125,7 @@ DTU наиболее полезны для понимания относител
 
 ### <a name="determine-the-number-of-dtus-needed-by-a-workload"></a>Определение числа единиц DTU, требуемых для рабочей нагрузки
 
-Если вы хотите перенести существующую локальную или SQL Server рабочую нагрузку виртуальной машины в базу данных SQL Azure, используйте [Калькулятор DTU](https://dtucalculator.azurewebsites.net/) , чтобы приблизительно указать необходимое количество DTU. Для существующей рабочей нагрузки базы данных SQL Azure используйте [аналитические сведения о производительности запросов](sql-database-query-performance.md) , чтобы понять, как потребление ресурсов базы данных (DTU) и получить более подробные сведения для оптимизации рабочей нагрузки. Динамическое административное представление [sys. DM _db_ resource_stats](https://msdn.microsoft.com/library/dn800981.aspx) позволяет просматривать потребление ресурсов за последний час. Представление каталога [sys. resource_stats](https://msdn.microsoft.com/library/dn269979.aspx) отображает потребление ресурсов за последние 14 дней, но с более низким уровнем точности в среднем за пять минут.
+Если вы хотите перенести существующую локальную или SQL Server рабочую нагрузку виртуальной машины в базу данных SQL Azure, используйте [Калькулятор DTU](https://dtucalculator.azurewebsites.net/) , чтобы приблизительно указать необходимое количество DTU. Для существующей рабочей нагрузки базы данных SQL Azure используйте [аналитические сведения о производительности запросов](sql-database-query-performance.md) , чтобы понять, как потребление ресурсов базы данных (DTU) и получить более подробные сведения для оптимизации рабочей нагрузки. Динамическое административное представление [sys. dm_db_ resource_stats](https://msdn.microsoft.com/library/dn800981.aspx) позволяет просматривать потребление ресурсов за последний час. Представление каталога [sys. resource_stats](https://msdn.microsoft.com/library/dn269979.aspx) отображает потребление ресурсов за последние 14 дней, но с более низким уровнем точности в среднем за пять минут.
 
 ### <a name="workloads-that-benefit-from-an-elastic-pool-of-resources"></a>Рабочие нагрузки, для которых эффективно используется эластичный пул ресурсов
 

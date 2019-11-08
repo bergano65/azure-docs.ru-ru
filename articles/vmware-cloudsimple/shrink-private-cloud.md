@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 00d0067fe51efef8efffe31860e16f4530adf3ac
-ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
+ms.openlocfilehash: 1ae2f87a3719853f4a91cb8ba801be6d578597d3
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69972371"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73825683"
 ---
 # <a name="shrink-a-cloudsimple-private-cloud"></a>Сжатие Клаудсимпле частного облака
 
@@ -26,7 +26,7 @@ ms.locfileid: "69972371"
 * Кластер vSphere должен содержать три узла.  Невозможно сжать кластер с тремя узлами.
 * Общий объем потребляемого хранилища не должен превышать общую емкость после сжатия кластера. 
 
-## <a name="sign-in-to-azure"></a>Войдите в Azure
+## <a name="sign-in-to-azure"></a>Вход в Azure
 
 Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
 
@@ -54,7 +54,11 @@ ms.locfileid: "69972371"
 
 Начинается сжатие частного облака.  Вы можете отслеживать ход выполнения задач.  Процесс сжатия может занять несколько часов в зависимости от данных, которые необходимо повторно синхронизировать в vSAN.
 
-## <a name="next-steps"></a>Следующие шаги
+> [!NOTE]
+> Если вы сжимаете частное облако, удаляя последний или единственный кластер в центре обработки данных, центр обработки данных не будет удален.  
+
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Использование виртуальных машин VMware в Azure](quickstart-create-vmware-virtual-machine.md)
 * Дополнительные сведения о [частных облаках](cloudsimple-private-cloud.md)

@@ -1,5 +1,5 @@
 ---
-title: Непрерывность облачных бизнес-процессов — восстановление базы данных — база данных SQL
+title: Непрерывность облачных бизнес-процессов — восстановление базы данных
 description: Узнайте, как базы данных SQL Azure поддерживают непрерывное выполнение облачных бизнес-процессов и восстановление баз данных, а также помогают обеспечить выполнение важных облачных приложений.
 keywords: непрерывность бизнес-процессов, непрерывность облачных бизнес-процессов, аварийное восстановление базы данных, восстановление базы данных
 services: sql-database
@@ -12,12 +12,12 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab
 ms.date: 06/25/2019
-ms.openlocfilehash: c4e82b0311e010eb8a4b8f37f3ff817d9a5400ad
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 5a6a96f478c4402a830cc522657f56cfd11fa56f
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73691044"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73821827"
 ---
 # <a name="overview-of-business-continuity-with-azure-sql-database"></a>Обзор обеспечения непрерывности бизнес-процессов с помощью Базы данных SQL Azure
 

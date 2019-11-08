@@ -1,5 +1,5 @@
 ---
-title: Обновите данные профиля и учетной записи на портале "Мои приложения" — Azure Active Directory | Документация Майкрософт
+title: Обновление профиля и учетной записи на портале "Мои приложения" в Azure AD
 description: Узнайте, как обновить профиль и сведения о рабочей или учебной учетной записи, включая изменение пароля, включение сброса пароля, обновление методов проверки безопасности, просмотр условий использования вашей организации и выход из везде, где вы вошли с помощью рабочей или учебной учетной записи.
 services: active-directory
 author: eross-msft
@@ -13,14 +13,14 @@ ms.author: lizross
 ms.reviewer: kasimpso
 ms.custom: user-help, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 40cf8e16e08db67c36009435758db36797518d96
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 4416b35d2e2204cec2a9ffe2f50e92983d6204c0
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73160765"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73820378"
 ---
-# <a name="update-your-profile-and-account-info-from-the-my-apps-portal"></a>Обновление сведений о профиле и учетной записи с портала "Мои приложения"
+# <a name="update-your-profile-and-account-info-on-the-my-apps-portal"></a>Обновление сведений о профиле и учетной записи на портале "Мои приложения"
 
 На веб-портале **Мои приложения** можно использовать рабочую или учебную учетную запись, чтобы просматривать и запускать многие облачные приложения вашей организации, обновлять сведения о профиле и учетной записи, просматривать сведения о **группах** и выполнять **проверки доступа** к приложениям и группам. Если у вас нет доступа к порталу **Мои приложения**, обратитесь за разрешением в службу технической поддержки.
 

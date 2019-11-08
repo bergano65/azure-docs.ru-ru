@@ -1,18 +1,19 @@
 ---
-title: Настройка интересов | Azure Marketplace
+title: Настройка интересов клиентов | Azure Marketplace
 description: Настройка получения сведений о потенциальных клиентах на Портале Cloud Partner.
 services: Azure, Marketplace, Cloud Partner Portal,
 author: dan-wesley
 ms.service: marketplace
+ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 09/14/2018
 ms.author: pabutler
-ms.openlocfilehash: c3e483a33d986eff767b3529e30208319ad90b23
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 312e172321c25248f1b0801bdbccf71762319989
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64934999"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73818811"
 ---
 <a name="get-customer-leads"></a>Получение интересов
 ==================
@@ -65,7 +66,7 @@ ms.locfileid: "64934999"
 
 Формат источника потенциальных клиентов: **Источник**-**Действие** |  **Предложение**.
 
-**Источники**: «AzureMarketplace», «AzurePortal», «TestDrive» и «AppSource (SPZA)»
+**Источники**: AzureMarketplace, AzurePortal, TestDrive и AppSource (SPZA).
 
 **Действия**:
 - INS — это установка. Это действие выполняется в Azure Marketplace или AppSource, когда клиент покупает ваш продукт.
@@ -76,19 +77,19 @@ ms.locfileid: "64934999"
 
 **Предложения**
 
-В следующих примерах показано уникальные идентификаторы, которые назначаются издателя и конкретное предложение: checkpoint.check точка r77-10sg-byol, bitnami.openedxcypress и 56-91e6-3ed0b622145a docusign.3701c77e-1cfa - 4c.
+В следующих примерах показаны уникальные идентификаторы, назначенные издателю, и определенное предложение: Checkpoint. Check-Point-R77-10SG-byol, BitNami. опенедксципресс и DocuSign. 3701c77e-1cfa-4c56-91e6-3ed0b622145a.
 
 
 ### <a name="customer-info"></a>Сведения о клиентах
 
 В полях в следующем примере представлены данные клиента, содержащиеся в сведениях о потенциальном клиенте.
-- FirstName: Артем
-- Фамилия: Smith
+- Имя: Джон.
+- Фамилия: Смит.
 - Адрес электронной почты: jsmith\@microsoft.com.
-- Телефон: 1234567890
-- Страна: США
-- Компании: Майкрософт
-- Заголовок. ТЕХНИЧЕСКИЙ ДИРЕКТОР
+- Номер телефона: 1234567890.
+- Страна: США.
+- Компания: корпорация Майкрософт.
+- Должность: технический директор.
 
 >[!Note]
 >Не все данные в предыдущем примере всегда доступны для каждого потенциального клиента.

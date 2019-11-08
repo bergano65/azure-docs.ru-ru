@@ -15,12 +15,12 @@ ms.author: billmath
 search.appverid:
 - MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1d8caafe312c123a9d572e9a5f4c5cf64a05f7ea
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: ac1b75536e092203490a390860a1cead7ac333b7
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73721041"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73817975"
 ---
 # <a name="implement-password-hash-synchronization-with-azure-ad-connect-sync"></a>Реализация синхронизации хэшированных паролей в службе синхронизации Azure AD Connect
 В этой статье содержатся сведения о том, как синхронизировать пароли пользователей локального экземпляра службы Active Directory (AD) и облачного экземпляра службы Azure Active Directory (Azure AD).
@@ -100,7 +100,7 @@ ms.locfileid: "73721041"
 
 Чтобы включить функцию Енфорцеклаудпассвордполицифорпассвордсинцедусерс, выполните следующую команду с помощью модуля PowerShell MSOnline:
 
-`Set-MsolDirSyncFeature -Feature EnforceCloudPasswordPolicyForPasswordSyncedUsers  $true`
+`Set-MsolDirSyncFeature -Feature EnforceCloudPasswordPolicyForPasswordSyncedUsers -Enable $true`
 
 После включения Azure AD не перейдет к каждому синхронизированному пользователю, чтобы удалить значение `DisablePasswordExpiration` из атрибута PasswordPolicies. Вместо этого значение задается равным `None` во время следующей синхронизации паролей для каждого пользователя при следующем изменении пароля в локальной службе AD.  
 

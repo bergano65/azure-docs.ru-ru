@@ -1,6 +1,6 @@
 ---
 title: Возможности решения подключенной фабрики Azure | Документация Майкрософт
-description: Обзор возможностей в решении подключенной фабрики с предварительно заданными параметрами.
+description: В этой статье описывается обзор возможностей предварительно настроенного решения подключенной фабрики, например информационной панели, правил и оповещений в облаке.
 author: dominicbetts
 manager: timlt
 ms.service: iot-accelerators
@@ -8,12 +8,12 @@ services: iot-accelerators
 ms.topic: conceptual
 ms.date: 06/10/2019
 ms.author: dobett
-ms.openlocfilehash: 2a11640959a8c7fdd0d238aba92698eb47934969
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: c868aa0f1c2449ccf163523c9ded25a31d1d84c4
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67080446"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73820112"
 ---
 # <a name="what-is-connected-factory-iot-solution-accelerator"></a>Общие сведения об акселераторе решений IoT для подключенной фабрики
 
@@ -33,7 +33,7 @@ ms.locfileid: "67080446"
 
 ## <a name="remote-management"></a>Удаленное управление
 
-- Настройка ресурсов OPC UA с помощью облачной панели мониторинга (вызов методов, чтение и запись данных).
+- Настройка активов OPC UA с помощью облачной панели мониторинга (вызов методов, чтение и запись данных).
 - Публикация и отмена публикации данных телеметрии, получаемых от активов OPC UA через облачную панель мониторинга.
 
 ## <a name="cloud-dashboard"></a>Облачная панель мониторинга
@@ -65,4 +65,4 @@ ms.locfileid: "67080446"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о Connected Factory solution accelerator, см. в разделе быстрого запуска [попробуйте Облачное решение для управления промышленных устройств Интернета вещей](quickstart-connected-factory-deploy.md).
+Дополнительные сведения о комплекте Solution Accelerator для подключенной фабрики см. в руководстве по использованию [облачного решения для управления устройствами IOT](quickstart-connected-factory-deploy.md).

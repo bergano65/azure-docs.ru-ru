@@ -2,19 +2,19 @@
 title: Общие сведения о мире без паролей с помощью Azure Active Directory | Документация Майкрософт
 description: Это руководством поможет генеральных, руководители, Цисос, руководитель идентификации, архитекторы предприятия и ответственные за ИТ-специалисты, отвечающие за выбор метода проверки подлинности, не защищенного паролем, для своей Azure Active Directoryной реализации.
 keywords: пароль, azuread
-author: TerryLanfear
-ms.author: terrylan
+author: martincoetzer
+ms.author: martinco
 ms.date: 07/09/2019
 ms.topic: article
 ms.service: security
 ms.subservice: security-fundamentals
 ms.workload: identity
-ms.openlocfilehash: a24195dcf8f384db8d78d39ac7100e487f6c9272
-ms.sourcegitcommit: 6c2c97445f5d44c5b5974a5beb51a8733b0c2be7
+ms.openlocfilehash: 0fbd8404e326ecc6fabef8c89991009809b1448b
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73621281"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73820507"
 ---
 # <a name="a-world-without-passwords-with-azure-active-directory"></a>Мир без паролей с Azure Active Directory
 

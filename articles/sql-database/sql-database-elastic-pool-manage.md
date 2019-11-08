@@ -1,5 +1,5 @@
 ---
-title: Управление эластичными пулами в базе данных SQL Azure
+title: Управление пулами эластичных БД
 description: Создание эластичных пулов в базе данных SQL Azure и управление ими.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: oslake
 ms.author: moslake
 ms.reviewer: carlrab
 ms.date: 03/12/2019
-ms.openlocfilehash: ad8f076c65c852f338e380f1ad8fca4e5dcb79ba
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 4ae2e84ab5f6108de4e8236c39371cf9658809d8
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73690468"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73823859"
 ---
 # <a name="manage-elastic-pools-in-azure-sql-database"></a>Управление эластичными пулами в базе данных SQL Azure
 

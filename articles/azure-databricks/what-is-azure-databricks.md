@@ -10,18 +10,18 @@ ms.topic: overview
 ms.date: 05/08/2019
 ms.author: mamccrea
 ms.custom: mvc
-ms.openlocfilehash: 149b83b9aacf23cde06a2b35aed06c164afe9647
-ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
+ms.openlocfilehash: 1e86658422e444cb7104c3e3428a74d31d453a72
+ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72243329"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73605974"
 ---
 # <a name="what-is-azure-databricks"></a>Что такое Azure Databricks?
 
 Azure Databricks — это платформа аналитики на основе Apache Spark, оптимизированная для платформы облачных служб Microsoft Azure. Разработанная с помощью основателей Apache Spark платформа Databricks интегрируется с Azure, предоставляя установку одним щелчком, упрощенные рабочие процессы и интерактивную рабочую область, которая обеспечивает совместную работу специалистов в области обработки и анализа данных, инжиниринга данных и бизнес-аналитики.
 
-![Что такое Azure Databricks?](./media/what-is-azure-databricks/azure-databricks-overview.png "What is Azure Databricks?")
+![What is Azure Databricks?](./media/what-is-azure-databricks/azure-databricks-overview.png "Что такое Azure Databricks?") (Что такое Azure Databricks).
 
 Azure Databricks — это быстрая и удобная служба аналитики на базе Apache Spark с возможностью совместной работы. В конвейере больших данных эти данные (необработанные или структурированные) принимаются в Azure через Фабрику данных Azure в виде пакетов, либо выполняется их потоковая передача практически в реальном времени при помощи Kafka, концентратора событий или Центра Интернета вещей. Эти данные попадают в озеро данных для долгосрочного хранения в хранилище BLOB-объектов Azure или Azure Data Lake Storage. В рамках рабочего процесса аналитики вы можете использовать Azure Databricks для считывания данных из множества источников данных, таких как [хранилище BLOB-объектов Azure](../storage/blobs/storage-blobs-introduction.md), [Azure Data Lake Storage](../data-lake-store/index.md), [Azure Cosmos DB](../cosmos-db/index.yml) или [Хранилище данных SQL Azure](../sql-data-warehouse/index.yml), и получать из них полезную статистику с помощью Spark.
 
@@ -31,7 +31,7 @@ Azure Databricks — это быстрая и удобная служба ана
 
 Azure Databricks включает в себя полноценные технологии и возможности кластера Apache Spark с открытым исходным кодом. Spark в Azure Databricks содержит указанные ниже компоненты.
 
-![Apache Spark в Azure Databricks](./media/what-is-azure-databricks/apache-spark-ecosystem-databricks.png "Apache Spark in Azure Databricks")
+![Apache Spark в Azure Databricks](./media/what-is-azure-databricks/apache-spark-ecosystem-databricks.png "Apache Spark в Azure Databricks")
 
 * **Spark SQL и DataFrames**: Spark SQL — это модуль Spark для работы со структурированными данными. Таблица данных — это распределенная коллекция данных, упорядоченных в именованных столбцах. Она, в принципе, эквивалентна таблице в реляционной базе данных или фрейме данных в R/Python.
 
@@ -96,9 +96,9 @@ Azure Databricks тесно интегрируется с такими база�
 ## <a name="next-steps"></a>Дополнительная информация
 
 * [Краткое руководство по запуску задания Spark в Azure Databricks](quickstart-create-databricks-workspace-portal.md)
-* [Clusters](https://docs.azuredatabricks.net/user-guide/clusters/index.html) (Кластеры)
-* [Notebooks](https://docs.azuredatabricks.net/user-guide/notebooks/index.html) (Записные книжки)
-* [Jobs](https://docs.azuredatabricks.net/user-guide/jobs.html) (Задания)
+* [Clusters](/azure/databricks/clusters/index) (Кластеры)
+* [Notebooks](/azure/databricks/notebooks/index) (Записные книжки)
+* [Jobs](/azure/databricks/jobs) (Задания)
 
  
 

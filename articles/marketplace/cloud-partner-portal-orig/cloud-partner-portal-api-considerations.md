@@ -4,15 +4,16 @@ description: Управление версиями, обработка ошиб�
 services: Azure, Marketplace, Cloud Partner Portal,
 author: v-miclar
 ms.service: marketplace
+ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: pabutler
-ms.openlocfilehash: 762c90b62ed2a9347ae88a50a11bfe02f3b23ba4
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 07cdb5e44dde0ca655191111d0a23dbab85b4cb2
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73162663"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73819726"
 ---
 # <a name="api-considerations"></a>Рекомендации API
 
@@ -35,7 +36,7 @@ ms.locfileid: "73162663"
     }
 ```            
 
-<a name="errors"></a>Errors
+<a name="errors"></a>Ошибки
 ------
 
 API отвечает на ошибки с соответствующими кодами состояния HTTP и, необязательно, с дополнительной информацией в ответе, сериализованном как JSON.

@@ -4,15 +4,16 @@ description: Настройка управления интересами для
 services: Azure, Marketplace, commercial marketplace, Partner Center
 author: qianw211
 ms.service: marketplace
+ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 08/01/2019
 ms.author: evansma
-ms.openlocfilehash: 9470a593f5db564689a0b26601a201874c215aa2
-ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
+ms.openlocfilehash: 8d13e8c3aeabf6d3fdea80ffddbae47b80adc139
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69902095"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73812142"
 ---
 # <a name="configure-lead-management-in-marketo"></a>Настройка управления интересами в Marketo
 
@@ -54,7 +55,7 @@ ms.locfileid: "69902095"
 
     **Другой способ определить эти значения**
 
-    - Идентификатор сервера находится в URL-адресе экземпляра Marketo,`serverID.marketo.com`например "".
+    - Идентификатор сервера находится в URL-адресе экземпляра Marketo, например "`serverID.marketo.com`".
     - Получите идентификатор Мунчинг вашей подписки, перейдя в меню Администратор > Munchkin в поле Идентификатор учетной записи Munchkin или из первой части дочернего домена Marketo REST API: `https://{Munchkin ID}.mktorest.com`.
     - Идентификатор формы — это идентификатор формы кода внедрения, созданной на шаге 7 для направления интересов из нашего магазина.
 

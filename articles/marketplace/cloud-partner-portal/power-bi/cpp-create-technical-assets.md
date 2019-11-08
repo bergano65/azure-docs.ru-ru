@@ -1,18 +1,19 @@
 ---
-title: Создавайте технические ресурсы для предложения приложение Power BI | Azure Marketplace
+title: Создание технических ресурсов для предложения Power BI приложения | Azure Marketplace
 description: Список технических ресурсов, необходимых для публикации предложения приложения Power BI в Microsoft AppSource Marketplace.
 services: Azure, AppSource, Marketplace, Cloud Partner Portal, Power BI
 author: v-miclar
 ms.service: marketplace
+ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 01/31/2019
 ms.author: pabutler
-ms.openlocfilehash: 7736dcb892d829fc0e3af4bc87f1e6d80a3fa6cb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2d0ae48b7314b63f2863e238fd38d0351546502d
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64943071"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73817915"
 ---
 # <a name="create-power-bi-app-offer-technical-assets"></a>Создание технических ресурсов предложения приложения Power BI
 

@@ -7,12 +7,12 @@ ms.service: vs-appcenter
 ms.topic: article
 ms.date: 10/22/2019
 ms.author: emalani
-ms.openlocfilehash: 8ce032a6ad10b22bed5d266bb23fe81846e8a072
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: 6349f90eeacaedb03db4d6e91902fea69a8d0dae
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72795852"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73818015"
 ---
 # <a name="different-stages-in-mobile-application-development"></a>Различные этапы разработки мобильных приложений
 Создание мобильного приложения включает несколько этапов, и разработчики могут легко использовать преимущества служб, средств и технологий Майкрософт для создания высококлассных мобильных приложений.
@@ -35,6 +35,6 @@ ms.locfileid: "72795852"
 
 ## <a name="additional-services"></a>Дополнительные службы
 Существует множество служб Azure, которые можно использовать в зависимости от типа и природы создаваемого приложения.
-  - Поиск Azure для поиска всех типов внутренних данных с быстрыми запросами.
+  - Azure Когнитивный поиск для поиска всех типов внутренних данных с быстрыми запросами.
   - Azure Cognitive Services для использования искусственного интеллекта в приложении.
   - Azure SignalR для включения взаимодействия в режиме реального времени в приложении.

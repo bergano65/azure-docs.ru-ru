@@ -1,6 +1,6 @@
 ---
 title: Использование панели мониторинга подключенной фабрики в Azure | Документы Майкрософт
-description: Узнайте, как использовать функции панели мониторинга подключенной фабрики.
+description: В этой статье описывается, как использовать функции панели мониторинга подключенной фабрики для мониторинга промышленных устройств IoT и управления ими.
 author: dominicbetts
 manager: timlt
 ms.service: iot-accelerators
@@ -8,12 +8,12 @@ services: iot-accelerators
 ms.topic: conceptual
 ms.date: 07/10/2018
 ms.author: dobett
-ms.openlocfilehash: 82045ddcc204fe369b7330fe9b3c2a8cadd56d88
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: b53177d578768428665891704269e63bd8edb09e
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67067936"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73820179"
 ---
 # <a name="use-features-in-the-connected-factory-solution-accelerator-dashboard"></a>Использование функций панели мониторинга акселератора решений для подключенной фабрики
 
@@ -111,5 +111,5 @@ ms.locfileid: "67067936"
 
 Теперь, когда вы развернули рабочей акселератор решений, можно продолжить знакомство с акселератором решений Интернета вещей. Для этого ознакомьтесь со следующими статьями:
 
-* [Настройка Connected Factory solution accelerator](iot-accelerators-connected-factory-configure.md)
+* [Настройка комплекта Solution Accelerator для подключенной фабрики](iot-accelerators-connected-factory-configure.md)
 * [Разрешения на сайте azureiotsolutions.com](iot-accelerators-permissions.md)

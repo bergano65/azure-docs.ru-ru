@@ -1,21 +1,21 @@
 ---
-title: Создание консольного приложения .NET для управления данными в учетной записи API SQL для Azure Cosmos DB
-description: Из этой статьи вы узнаете, как создать ресурсы API SQL для Azure Cosmos DB с помощью консольного приложения C#.
+title: Руководство по Создание консольного приложения .NET для управления данными в учетной записи API SQL для Azure Cosmos DB
+description: Руководство по Из этой статьи вы узнаете, как создать ресурсы API SQL для Azure Cosmos DB с помощью консольного приложения C#.
 author: kirankumarkolli
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.devlang: dotnet
 ms.topic: tutorial
-ms.date: 09/24/2019
+ms.date: 11/05/2019
 ms.author: kirankk
-ms.openlocfilehash: 35e92ff1591bc5f0427dabbf68e697d9c3c32b48
-ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
+ms.openlocfilehash: 25846bb7a19d29a3a72146d4046b5205183a247e
+ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71299289"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73720849"
 ---
-# <a name="build-a-net-console-app-to-manage-data-in-azure-cosmos-db-sql-api-account"></a>Создание консольного приложения .NET для управления данными в учетной записи API SQL для Azure Cosmos DB
+# <a name="tutorial-build-a-net-console-app-to-manage-data-in-azure-cosmos-db-sql-api-account"></a>Руководство по Создание консольного приложения .NET для управления данными в учетной записи API SQL для Azure Cosmos DB
 
 > [!div class="op_single_selector"]
 > * [.NET](sql-api-get-started.md)

@@ -1,5 +1,5 @@
 ---
-title: Заметки о выпуске базы данных SQL Azure | Документация Майкрософт
+title: Заметки о выпуске
 description: Узнайте о новых возможностях и улучшениях в службе базы данных SQL Azure и документации по базе данных SQL Azure.
 services: sql-database
 author: stevestein
@@ -9,12 +9,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: sstein
-ms.openlocfilehash: 62ec5d4e85a6e72982b49872af59e7b579c4fd77
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 56830e20b190958c1c411f5daa1d2a7e928f0f3d
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73496264"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73821198"
 ---
 # <a name="sql-database-release-notes"></a>Заметки о выпуске базы данных SQL
 

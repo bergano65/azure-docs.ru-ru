@@ -4,19 +4,20 @@ description: Сведения о получении универсального
 services: Azure, Marketplace, Cloud Partner Portal,
 author: pbutlerm
 ms.service: marketplace
+ms.subservice: partnercenter-marketplace-publisher
 ms.topic: article
 ms.date: 10/19/2018
 ms.author: pabutler
-ms.openlocfilehash: c242fbcd19187abb608ca80a49d04dae195bd7c6
-ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
+ms.openlocfilehash: dda074d81857247a922eb7a179b33aa2593e5bf8
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72374373"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73824470"
 ---
 # <a name="get-shared-access-signature-uri-for-your-vm-image"></a>Получение универсального кода ресурса (URI) подписанного URL-адреса для образа виртуальной машины
 
-При публикации вы предоставляете универсальный код ресурса (URI) для каждого виртуального жесткого диска, связанного с вашими номерами SKU. Майкрософт понадобится доступ к этим VHD во время процесса сертификации. В этой статье объясняется, как создать URI подписанного URL-адреса (SAS) для каждого виртуального жесткого диска. Этот URI нужно ввести на вкладке с **номерами SKU** на Портале Cloud Partner. 
+При публикации вы предоставляете универсальный код ресурса (URI) для каждого виртуального жесткого диска, связанного с вашими номерами SKU. Майкрософт понадобится доступ к этим дискам во время сертификации. В этой статье объясняется, как создать URI подписанного URL-адреса (SAS) для каждого виртуального жесткого диска. Этот URI нужно ввести на вкладке с **номерами SKU** на Портале Cloud Partner. 
 
 Создавая URI SAS для виртуальных жестких дисков, придерживайтесь следующих требований:
 

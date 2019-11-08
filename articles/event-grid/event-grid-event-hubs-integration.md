@@ -1,19 +1,19 @@
 ---
-title: Отправка данных Центров событий Azure в хранилище данных в службе "Сетка событий"
-description: Описывается, как перенести данные в Хранилище данных SQL с помощью службы "Сетка событий Azure" и Центров событий Хранилище данных SQL использует функцию Azure, чтобы получить файл записи.
+title: Руководство по Отправка данных Центров событий Azure в хранилище данных в службе "Сетка событий"
+description: Руководство по Описывается, как перенести данные в Хранилище данных SQL с помощью службы "Сетка событий Azure" и Центров событий Хранилище данных SQL использует функцию Azure, чтобы получить файл записи.
 services: event-grid
 author: spelluru
 manager: timlt
 ms.service: event-grid
 ms.topic: tutorial
-ms.date: 01/13/2019
+ms.date: 11/05/2019
 ms.author: spelluru
-ms.openlocfilehash: 1ae7a18660d2a7324bc5897d6b3952da42b6c4b2
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.openlocfilehash: 6f5bd129b175210cd5b9415a65b8db06d904e24d
+ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65603441"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73718180"
 ---
 # <a name="tutorial-stream-big-data-into-a-data-warehouse"></a>Руководство. Потоковая передача больших данных в хранилище данных
 [Сетка событий](overview.md) Azure — интеллектуальная служба маршрутизации событий, позволяющая реагировать на уведомления (события) приложений и служб. Например, она может активировать функции Azure для обработки данных Центров событий, собранных в хранилище BLOB-объектов Azure или Data Lake Storage, и переноса данных в другие репозитории данных. В этом [примере интеграции Центров событий Azure и службы "Сетка событий"](https://github.com/Azure/azure-event-hubs/tree/master/samples/e2e/EventHubsCaptureEventGridDemo) показано, как с помощью Центров событий Azure и службы "Сетка событий Azure" легко перенести данные Центров событий из хранилища BLOB-объектов в Хранилище данных SQL.
@@ -87,7 +87,7 @@ ms.locfileid: "65603441"
     1. Укажите имя для **группы ресурсов**
     2. Нажмите клавишу **ВВОД**. 
 
-        Вот пример: 
+        Вот пример:
     
         ```azurecli
         user@Azure:~$ az group create -l eastus -n ehubegridgrp

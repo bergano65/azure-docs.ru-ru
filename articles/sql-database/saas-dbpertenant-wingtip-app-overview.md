@@ -1,5 +1,5 @@
 ---
-title: Пример приложения для клиентов базы данных SQL Azure — SaaS Wingtip
+title: Пример приложения с несколькими клиентами — SaaS Wingtip
 description: Изучите пример мультитенантного приложения SaaS Wingtip, использующего Базу данных SQL Azure
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 09/24/2018
-ms.openlocfilehash: 1a4931a24802290e0e7e207f32528a1192fd880f
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 46cdcd5f768278dbc729f48e450c68a63be604be
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73692056"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73822164"
 ---
 # <a name="introduction-to-a-multitenant-saas-app-that-uses-the-database-per-tenant-pattern-with-sql-database"></a>Общие сведения о мультитенантном приложении SaaS на основе Базы данных SQL, в котором используется отдельная база данных для каждого клиента
 

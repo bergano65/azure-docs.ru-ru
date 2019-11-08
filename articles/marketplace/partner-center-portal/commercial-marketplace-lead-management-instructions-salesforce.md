@@ -4,15 +4,16 @@ description: Настройка управления интересами в Sal
 services: Azure, Marketplace, commercial marketplace, Partner Center
 author: qianw211
 ms.service: marketplace
+ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 08/01/2019
 ms.author: evansma
-ms.openlocfilehash: d941a7902dd374a931147bdaa8f015c46268ee8a
-ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
+ms.openlocfilehash: bdd3bb50fc69083c73eb01a84bf0fb0db82a8a65
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69901991"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73812159"
 ---
 # <a name="configure-lead-management-for-salesforce"></a>Настройка управления интересами для Salesforce
 
@@ -30,22 +31,22 @@ ms.locfileid: "69901991"
 
 3. При использовании классического интерфейса SalesForce:
     1. Выберите **Настройка** на домашней странице Salesforce.
-    ![Классическая установка Salesforce](./media/commercial-marketplace-lead-management-instructions-salesforce/salesforce-classic-setup.png)
+    ![классической установки Salesforce](./media/commercial-marketplace-lead-management-instructions-salesforce/salesforce-classic-setup.png)
 
     1. На странице Настройка перейдите по левой панели навигации, чтобы **построить-> customize-> интересы — > веб-to-Lead**.
-    ![Классический веб-узел Salesforce](./media/commercial-marketplace-lead-management-instructions-salesforce/salesforce-classic-web-to-lead.png)
+    ![классическая веб-](./media/commercial-marketplace-lead-management-instructions-salesforce/salesforce-classic-web-to-lead.png)
 
 Остальные инструкции одинаковы, независимо от используемого интерфейса SalesForce.
 
 4. На **странице Настройка с веб-сайта**нажмите кнопку **создать форму Web-to-Lead** .
 5. На **установке Web-to-Lead** выберите **Создать форму Web-to-Lead**.
-    ![Настройка Salesforce-Web-to-Lead](./media/commercial-marketplace-lead-management-instructions-salesforce/salesforce-3.png)
+    ](./media/commercial-marketplace-lead-management-instructions-salesforce/salesforce-3.png) установки ![Salesforce-Web-to-Lead
 
-6. В **форме создание веб-формы**убедитесь, что `the Include reCAPTCHA in HTML` параметр не установлен, и нажмите кнопку **создать**. 
-    ![SalesForce — создание формы "веб-руководитель"](./media/commercial-marketplace-lead-management-instructions-salesforce/salesforce-4.png)
+6. В **форме создание веб-формы**убедитесь, что `the Include reCAPTCHA in HTML` параметр снят, и нажмите кнопку **создать**. 
+    ![Salesforce — создание формы с Интернет-руководителем](./media/commercial-marketplace-lead-management-instructions-salesforce/salesforce-4.png)
 
 7. Появится текст HTML. Найдите текст "OID" и скопируйте **значение OID** из текста HTML (только текст между кавычками) и сохраните его. Это значение будет вставлено в поле **идентификатор организации** на портале публикации.
-    ![SalesForce — создание формы "веб-руководитель"](./media/commercial-marketplace-lead-management-instructions-salesforce/salesforce-5.png)
+    ![Salesforce — создание формы с Интернет-руководителем](./media/commercial-marketplace-lead-management-instructions-salesforce/salesforce-5.png)
 
 8. Выбранные **Завершенные**.
 
@@ -55,9 +56,9 @@ ms.locfileid: "69901991"
 
 1. Перейдите на страницу **настройки предложения** для вашего предложения.
 1. Выберите **Подключиться** в разделе Управление интересами.
-    ![Управление интересами — подключение](./media/commercial-marketplace-lead-management-instructions-salesforce/lead-management-connect.png)
+    ![управление интересами. Подключение](./media/commercial-marketplace-lead-management-instructions-salesforce/lead-management-connect.png)
 
-1. Во всплывающем окне Connection Details (сведения о подключении) выберите **Salesforce** для **целевого адресата** и `oid` вставьте его в форму from web-a-Lead, созданную, выполнив предыдущие шаги в поле **идентификатор организации** .
+1. Во всплывающем окне Connection Details (сведения о подключении) выберите **Salesforce** для **целевого адресата** и вставьте `oid` из формы Web to-Lead, созданной на предыдущем шаге, в поле **идентификатор организации** .
 
 1. Щелкните **Сохранить**. 
 

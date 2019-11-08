@@ -1,22 +1,23 @@
 ---
-title: 'Прозрачное шифрование данных для базы данных и хранилища данных SQL Azure '
+title: Прозрачное шифрование данных
 description: Обзор прозрачного шифрования данных для хранилища данных и Базы данных SQL. В этом документе описаны преимущества и параметры конфигурации прозрачного шифрования, включая управляемое службой прозрачное шифрование данных и создание собственных ключей.
 services: sql-database
 ms.service: sql-database
 ms.subservice: security
-ms.custom: ''
+titleSuffix: Azure SQL Database and SQL Data Warehouse
+ms.custom: seo-lt-2019
 ms.devlang: ''
 ms.topic: conceptual
 author: aliceku
 ms.author: aliceku
 ms.reviewer: vanto
 ms.date: 11/01/2019
-ms.openlocfilehash: ff712f956278a2a54584c0b0346f8f1147add189
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: b6af171eafbaf1f4d31bad649fcb0c69d8bdc24d
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73686788"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73821708"
 ---
 # <a name="transparent-data-encryption-for-sql-database-and-data-warehouse"></a>Прозрачное шифрование данных для хранилища данных и Базы данных SQL
 

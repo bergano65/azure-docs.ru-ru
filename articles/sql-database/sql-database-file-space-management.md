@@ -1,5 +1,5 @@
 ---
-title: Управление файловым пространством отдельной базы данных или базы данных в пуле Базы данных SQL Azure | Документация Майкрософт
+title: Управление местом в файлах для отдельных баз данных/в составе пула
 description: Здесь описывается управление файловым пространством отдельной базы данных или базы данных в пуле Базы данных SQL Azure и приведены примеры кода для определения необходимости сжатия отдельной базы данных или базы данных в составе пула и выполнения операции сжатия.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: oslake
 ms.author: moslake
 ms.reviewer: jrasnick, carlrab
 ms.date: 03/12/2019
-ms.openlocfilehash: c92ffb6aa6db9c77a859661115d54ff63ea02401
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: a8fe58313bce6e9a21b07aa095672ec35ce572d2
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68568199"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73803055"
 ---
 # <a name="manage-file-space-for-single-and-pooled-databases-in-azure-sql-database"></a>Управление файловым пространством отдельной базы данных или базы данных в пуле Базы данных SQL Azure
 
@@ -249,7 +249,7 @@ ALTER DATABASE [db1] SET AUTO_SHRINK ON
 
 После сжатия файлов базы данных индексы могут стать фрагментированными, а эффективность оптимизации их производительности может ухудшиться. Если происходит замедление, попробуйте перестроить индексы базы данных. Дополнительные сведения о фрагментации и перестроении индексов см. в статье [Реорганизация и перестроение индексов](https://docs.microsoft.com/sql/relational-databases/indexes/reorganize-and-rebuild-indexes).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о максимальных размерах базы данных см. в статьях:
   - [Ограничения ресурсов для отдельной базы данных в Базе данных SQL Azure при использовании модели приобретения на основе виртуальных ядер](sql-database-vcore-resource-limits-single-databases.md)

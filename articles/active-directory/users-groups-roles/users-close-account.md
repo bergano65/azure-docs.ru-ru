@@ -1,5 +1,5 @@
 ---
-title: Закрытие рабочей или учебной учетной записи в неуправляемом каталоге — Azure Active Directory | Документация Майкрософт
+title: Закрытие рабочей или учебной учетной записи в неуправляемом каталоге Azure AD
 description: Как закрыть рабочую или учебную учетную запись в неуправляемой Azure Active Directory.
 services: active-directory
 author: rolyon
@@ -13,12 +13,12 @@ ms.author: rolyon
 ms.reviewer: ''
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0da4c6b1c1434dae564ab4876a3ab3f341a87097
-ms.sourcegitcommit: a3a40ad60b8ecd8dbaf7f756091a419b1fe3208e
+ms.openlocfilehash: 3c101c0ef7932151e675c5c514ac558e6e0f94b2
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69891956"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73815719"
 ---
 # <a name="close-your-work-or-school-account-in-an-unmanaged-directory"></a>Закрытие рабочей или учебной учетной записи в неуправляемом каталоге
 
@@ -53,7 +53,7 @@ ms.locfileid: "69891956"
 
     ![Мои запросы к данным — подтвердить закрытие](./media/users-close-account/confirm-close.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Что такое самостоятельная регистрация для Azure Active Directory?](directory-self-service-signup.md)
 - [Удаление пользователя из неуправляемого клиента](https://docs.microsoft.com/flow/gdpr-dsr-delete#delete-the-user-from-unmanaged-tenant)

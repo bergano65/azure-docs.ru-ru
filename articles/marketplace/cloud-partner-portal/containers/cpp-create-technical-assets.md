@@ -1,18 +1,19 @@
 ---
-title: Создание образа Azure контейнеры технических средств | Azure Marketplace
+title: Создание ресурсов Azure с изображениями в виде контейнеров | Azure Marketplace
 description: Создание технических ресурсов для контейнера Azure.
 services: Azure, Marketplace, Cloud Partner Portal,
 author: dan-wesley
 ms.service: marketplace
+ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/01/2018
 ms.author: pabutler
-ms.openlocfilehash: c639389fdd0d4624152fcdfa4432be09a18a97bc
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6aae1957a3dcc58339eb4f3c9e250513843ceb18
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65794345"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73819052"
 ---
 # <a name="prepare-your-container-technical-assets"></a>Подготовка технических ресурсов для контейнера
 
@@ -45,9 +46,9 @@ ms.locfileid: "65794345"
 
 -   [Azure Storage Explorer;](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer)
 -   [Visual Studio Code](https://code.visualstudio.com/)
-    *   Расширение: [Средства Azure Resource Manager](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools)
-    *   Расширение: [Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify)
-    *   Расширение: [Prettify JSON](https://marketplace.visualstudio.com/items?itemName=mohsen1.prettify-json)
+    *   Расширение: [Инструменты Azure Resource Manager](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools).
+    *   Расширение: [Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify).
+    *   Расширение: [Prettify JSON](https://marketplace.visualstudio.com/items?itemName=mohsen1.prettify-json).
 
 Мы также предлагаем проверить доступные средства на странице [Средства для разработчиков Azure](https://azure.microsoft.com/tools/) и, если вы используете Visual Studio, на странице [Visual Studio Marketplace](https://marketplace.visualstudio.com/).
 
@@ -55,8 +56,8 @@ ms.locfileid: "65794345"
 
 Дополнительную информацию см. в следующих статьях:
 
-* [Учебник. Создать образ контейнера для развертывания экземпляры контейнеров Azure](https://docs.microsoft.com/azure/container-instances/container-instances-tutorial-prepare-app)
-* [Учебник. Создание и развертывание образов контейнеров в облаке с реестром контейнеров Azure](https://docs.microsoft.com/azure/container-registry/container-registry-tutorial-quick-task)
+* [Руководство. Создание образа контейнера для развертывания в службе "экземпляры контейнеров Azure"](https://docs.microsoft.com/azure/container-instances/container-instances-tutorial-prepare-app)
+* [Руководство. Создание и развертывание образов контейнеров в облаке с помощью задач реестра контейнеров Azure](https://docs.microsoft.com/azure/container-registry/container-registry-tutorial-quick-task)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

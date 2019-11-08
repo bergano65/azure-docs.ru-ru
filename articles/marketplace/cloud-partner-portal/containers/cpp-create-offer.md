@@ -1,18 +1,19 @@
 ---
-title: Создайте предложение контейнеров Azure | Azure Marketplace
+title: Создание предложения контейнеров Azure | Azure Marketplace
 description: Как опубликовать новое предложение контейнеров в Marketplace.
 services: Azure, Marketplace, Cloud Partner Portal,
 author: dan-wesley
 ms.service: marketplace
+ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/01/2018
 ms.author: pabutler
-ms.openlocfilehash: 1a0a2bd9132ba5d018bc5d45699c052d10c30162
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a9766f234b074fd259eeb7bcc184573e21e390a7
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64942676"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73823215"
 ---
 # <a name="create-a-new-container-offer-with-the-cloud-partner-portal"></a>Создайте новое предложение контейнеров с помощью Портала Cloud Partner.
 

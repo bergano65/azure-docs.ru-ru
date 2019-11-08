@@ -1,5 +1,5 @@
 ---
-title: Мониторинг производительности базы данных SQL Azure с помощью динамических административных представлений
+title: Мониторинг производительности с помощью динамических административных представлений
 description: Узнайте, как выявлять и диагностировать распространенные проблемы производительности с помощью динамических представлений управления для мониторинга Базы данных SQL Microsoft Azure.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: juliemsft
 ms.author: jrasnick
 ms.reviewer: carlrab
 ms.date: 12/19/2018
-ms.openlocfilehash: c7eed3fc8e9d0328a3e793e1ff4b3652ab86e2bc
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: bea6a572e55f1a79515c385fd7b79881c54ae65e
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73687751"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73802922"
 ---
 # <a name="monitoring-performance-azure-sql-database-using-dynamic-management-views"></a>Мониторинг производительности Базы данных SQL Azure с помощью динамических административных представлений
 
@@ -237,7 +237,7 @@ GO
 
 ## <a name="identify-tempdb-performance-issues"></a>Поиск проблем производительности `tempdb`
 
-При определении проблем с производительностью операций ввода-вывода главные типы ожидания, связанные с проблемами `tempdb`, — `PAGELATCH_*` (не `PAGEIOLATCH_*`). Однако ожидания `PAGELATCH_*` не всегда означают состязание `tempdb`.  Этот тип ожидания может также указывать на состязание за страницы данных объекта пользователя из-за одновременных запросов к одной странице данных. Чтобы уточнить `tempdb` состязание, используйте [sys. DM _exec_requests](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql) , чтобы убедиться, что значение wait_resource начинается с `2:x:y` где 2 `tempdb` — это идентификатор базы данных, `x` — это идентификатор файла, а `y` — идентификатор страницы.  
+При определении проблем с производительностью операций ввода-вывода главные типы ожидания, связанные с проблемами `tempdb`, — `PAGELATCH_*` (не `PAGEIOLATCH_*`). Однако ожидания `PAGELATCH_*` не всегда означают состязание `tempdb`.  Этот тип ожидания может также указывать на состязание за страницы данных объекта пользователя из-за одновременных запросов к одной странице данных. Чтобы еще больше подтвердить `tempdb` состязание, используйте [sys. dm_exec_requests](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql) , чтобы убедиться, что значение wait_resource начинается с `2:x:y` где 2 — `tempdb` — идентификатор базы данных, `x` — это идентификатор файла, а `y` — идентификатор страницы.  
 
 Для состязаний за tempdb рекомендуется сократить или повторно написать код приложения, который зависит от `tempdb`.  Распространенные области использования `tempdb`:
 

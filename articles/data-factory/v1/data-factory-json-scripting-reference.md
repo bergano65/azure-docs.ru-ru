@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: bade2e7ac53277b2e23e8cf6847cc30940cd4819
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: b72be7026b0b8077cf5bf9f775d10fd03edd9118
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73666814"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73815641"
 ---
 # <a name="azure-data-factory---json-scripting-reference"></a>Справочник по написанию скриптов JSON фабрики данных Azure
 > [!NOTE]
@@ -378,7 +378,7 @@ structure:
 | &nbsp; |[Azure Cosmos DB](#azure-cosmos-db) |
 | &nbsp; |[база данных SQL Azure;](#azure-sql-database) |
 | &nbsp; |[Хранилище данных Azure SQL](#azure-sql-data-warehouse) |
-| &nbsp; |[Поиск Azure;](#azure-search) |
+| &nbsp; |[Когнитивный поиск Azure](#azure-cognitive-search) |
 | &nbsp; |[Хранилище таблиц Azure](#azure-table-storage) |
 | **Базы данных** |[Amazon Redshift](#amazon-redshift) |
 | &nbsp; |[IBM DB2](#ibm-db2) |
@@ -1279,15 +1279,15 @@ structure:
 
 Дополнительные сведения см. в статье о [соединителе хранилища данных SQL Azure](data-factory-azure-sql-data-warehouse-connector.md#copy-activity-properties).
 
-## <a name="azure-search"></a>Поиск Azure
+## <a name="azure-cognitive-search"></a>Когнитивный поиск Azure
 
 ### <a name="linked-service"></a>Связанные службы
-Для определения связанной службы Поиска Azure задайте **AzureSearch** в качестве **типа** связанной службы и укажите в разделе **typeProperties** следующие свойства:
+Чтобы определить связанную службу Azure Когнитивный поиск, задайте **AzureSearch**в качестве **типа** связанной службы и укажите в разделе **typeProperties** следующие свойства:
 
 | Свойство | Description (Описание) | Обязательно |
 | -------- | ----------- | -------- |
-| URL-адрес | URL-адрес службы Поиска Azure. | Да |
-| key | Ключ администратора службы Поиска Azure. | Да |
+| URL-адрес | URL-адрес службы поиска. | Да |
+| key | Ключ администратора для службы поиска. | Да |
 
 #### <a name="example"></a>Пример
 
@@ -1304,15 +1304,15 @@ structure:
 }
 ```
 
-Дополнительные сведения см. в статье о [соединителе Поиска Azure](data-factory-azure-search-connector.md#linked-service-properties).
+Дополнительные сведения см. в статье о [соединителе когнитивный Поиск Azure](data-factory-azure-search-connector.md#linked-service-properties) .
 
 ### <a name="dataset"></a>Выборка
-Для определения набора данных Поиска Azure задайте **AzureSearchIndex** в качестве **типа** набора данных и укажите в разделе **typeProperties** следующие свойства:
+Чтобы определить набор данных Azure Когнитивный поиск, установите **тип** набора данных **AzureSearchIndex**и укажите следующие свойства в разделе **typeProperties** :
 
 | Свойство | Description (Описание) | Обязательно |
 | -------- | ----------- | -------- |
 | type | Для свойства type необходимо задать значение **AzureSearchIndex**| Да |
-| indexName | Имя индекса Поиска Azure. Фабрика данных не создает индекс. Индекс должен существовать в Поиске Azure. | Да |
+| indexName | Имя индекса поиска. Фабрика данных не создает индекс. Индекс должен существовать в Когнитивный поиск Azure. | Да |
 
 #### <a name="example"></a>Пример
 
@@ -1333,15 +1333,15 @@ structure:
 }
 ```
 
-Дополнительные сведения см. в статье о [соединителе Поиска Azure](data-factory-azure-search-connector.md#dataset-properties).
+Дополнительные сведения см. в статье о [соединителе когнитивный Поиск Azure](data-factory-azure-search-connector.md#dataset-properties) .
 
-### <a name="azure-search-index-sink-in-copy-activity"></a>Приемник индекса Поиска Azure в действии копирования
-При копировании данных в индекс Поиска Azure задайте **AzureSearchIndexSink** в качестве **типа приемника** для действия копирования и укажите в разделе **sink** следующие свойства:
+### <a name="azure-cognitive-search-index-sink-in-copy-activity"></a>Приемник индекса Azure Когнитивный поиск в действии копирования
+При копировании данных в индекс поиска задайте **AzureSearchIndexSink**в качестве **типа приемника** для действия копирования и укажите в разделе **приемника** следующие свойства:
 
 | Свойство | Description (Описание) | Допустимые значения | Обязательно |
 | -------- | ----------- | -------------- | -------- |
 | WriteBehavior | Указывает действие (объединение или замена), выполняемое, если документ уже существует в индексе. | Merge (по умолчанию)<br/>Отправить| Нет |
-| WriteBatchSize | Передает данные в индекс Поиска Azure, когда размер буфера достигает значения writeBatchSize. | 1–1000. Значение по умолчанию — 1000. | Нет |
+| WriteBatchSize | Передает данные в индекс поиска, когда размер буфера достигает writeBatchSize. | 1–1000. Значение по умолчанию — 1000. | Нет |
 
 #### <a name="example"></a>Пример
 
@@ -1386,7 +1386,7 @@ structure:
 }
 ```
 
-Дополнительные сведения см. в статье о [соединителе Поиска Azure](data-factory-azure-search-connector.md#copy-activity-properties).
+Дополнительные сведения см. в статье о [соединителе когнитивный Поиск Azure](data-factory-azure-search-connector.md#copy-activity-properties) .
 
 ## <a name="azure-table-storage"></a>Хранилище таблиц Azure
 

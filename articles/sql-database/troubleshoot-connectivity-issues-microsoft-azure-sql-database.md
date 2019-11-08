@@ -1,19 +1,20 @@
 ---
-title: Устранение проблем с подключением к База данных SQL Microsoft Azure | Документация Майкрософт
+title: Устранение проблем подключения
 description: Описание способов устранения проблем с подключением в базе данных SQL Azure.
 services: sql-database
 ms.service: sql-database
 ms.topic: troubleshooting
+ms.custom: seo-lt-2019
 author: v-miegge
 ms.author: ramakoni
 ms.reviewer: ''
 ms.date: 09/27/2019
-ms.openlocfilehash: 9de6d85e1fc54d60f999cfa18665067b3998a432
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: 20988296b5eac7152c53abd6d238043288feacc8
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72390662"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73807269"
 ---
 # <a name="troubleshooting-connectivity-issues-with-microsoft-azure-sql-database"></a>Устранение проблем с подключением к База данных SQL Microsoft Azure
 
@@ -28,9 +29,9 @@ ms.locfileid: "72390662"
 Действия для устранения этой проблемы.
 
 1. Проверьте [Microsoft Azure панели мониторинга службы](https://status.azure.com/status) на наличие известных простоев. 
-2. Если нет известных простоев, перейдите на [веб-сайт поддержки Microsoft Azure](http://azure.microsoft.com/support/options) , чтобы открыть обращение в службу поддержки.
+2. Если нет известных простоев, перейдите на [веб-сайт поддержки Microsoft Azure](https://azure.microsoft.com/support/options) , чтобы открыть обращение в службу поддержки.
 
-Дополнительные сведения см. [в разделе Устранение неполадок при возникновении ошибки "база данных на сервере в настоящее время недоступна"](https://docs.microsoft.com/azure/sql-database/sql-database-troubleshoot-common-connection-issues#troubleshoot-transient-errors).
+Дополнительные сведения см. [в разделе Устранение неполадок при возникновении ошибки "база данных на сервере в настоящее время недоступна"](sql-database-troubleshoot-common-connection-issues.md#troubleshoot-transient-errors).
 
 ## <a name="a-network-related-or-instance-specific-error-occurred-while-establishing-a-connection-to-sql-server"></a>При установлении соединения с SQL Server возникла ошибка, связанная с сетью или экземпляром
 
@@ -165,7 +166,7 @@ ms.locfileid: "72390662"
 
 ## <a name="transient-errors-errors-40197-40545"></a>Временные ошибки (ошибки 40197, 40545)
 
-### <a name="error-40197-the-service-has-encountered-an-error-processing-your-request-please-try-again-error-code--code-"></a>Ошибка 40197: Служба обнаружила ошибку при обработке запроса. Попробуйте позже. Код ошибки < >
+### <a name="error-40197-the-service-has-encountered-an-error-processing-your-request-please-try-again-error-code--code-"></a>Ошибка 40197: Служба обнаружила ошибку при обработке запроса. Повторите попытку позже. Код ошибки < >
 
 Эта проблема возникает из-за временной ошибки, возникшей во время перенастройки или отработки отказа в серверной части.
 
@@ -188,7 +189,7 @@ ms.locfileid: "72390662"
   > [!NOTE]
   > Это минимальный подход, который может не решить проблему.
 
-  1. Выполните следующий SQL запрос, чтобы проверить представление [sys. DM _exec_requests](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql) , чтобы просмотреть все блокирующие запросы:
+  1. Выполните следующий SQL запрос, чтобы проверить представление [sys. dm_exec_requests](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql) , чтобы увидеть все блокирующие запросы:
 
              ```
              SELECT * FROM dm_exec_requests
@@ -197,7 +198,7 @@ ms.locfileid: "72390662"
   2. Определите **входной буфер** для блока Head.
   3. Настройка запроса к головному блоку.
 
-    Подробное описание процедуры устранения неполадок см. в статье как [работает мой запрос в облаке?](http://blogs.msdn.com/b/sqlblog/archive/2013/11/01/is-my-query-running-fine-in-the-cloud.aspx).
+    Подробное описание процедуры устранения неполадок см. в статье как [работает мой запрос в облаке?](https://blogs.msdn.com/b/sqlblog/archive/2013/11/01/is-my-query-running-fine-in-the-cloud.aspx).
 
 * Если база данных постоянно достигает ограничения, несмотря на блокировку и длительные запросы, рассмотрите возможность обновления до одного из новых предварительных выпусков (например, [выпуска Standard или Premium](https://azure.microsoft.com/pricing/details/sql-database/)).
 
@@ -265,7 +266,7 @@ ms.locfileid: "72390662"
 
 Если эта ошибка повторяется, попробуйте устранить проблему, выполнив следующие действия. 
 
-1. Проверьте представление sys. DM _exec_requests, чтобы просмотреть все открытые сеансы, имеющие большое значение для столбца total_elapsed_time. Выполните эту проверку, выполнив следующий скрипт SQL:
+1. Проверьте представление sys. dm_exec_requests, чтобы просмотреть все открытые сеансы, имеющие большое значение для столбца total_elapsed_time. Выполните эту проверку, выполнив следующий скрипт SQL:
 
    ```
    SELECT * FROM dm_exec_requests
@@ -275,7 +276,7 @@ ms.locfileid: "72390662"
 
 Также рассмотрите возможность пакетной обработки запросов. Сведения о пакетировании см. в разделе [Использование пакетной обработки для повышения производительности приложения базы данных SQL](https://docs.microsoft.com/azure/sql-database/sql-database-use-batching-to-improve-performance).
 
-Подробное описание процедуры устранения неполадок см. в статье как [работает мой запрос в облаке?](http://blogs.msdn.com/b/sqlblog/archive/2013/11/01/is-my-query-running-fine-in-the-cloud.aspx).
+Подробное описание процедуры устранения неполадок см. в статье как [работает мой запрос в облаке?](https://blogs.msdn.com/b/sqlblog/archive/2013/11/01/is-my-query-running-fine-in-the-cloud.aspx).
 
 ### <a name="error-40551-the-session-has-been-terminated-because-of-excessive-tempdb-usage"></a>Ошибка 40551: сеанс был завершен из-за чрезмерного использования базы данных TEMPDB
 
@@ -311,7 +312,7 @@ ms.locfileid: "72390662"
 
 Чтобы обойти эту ошибку, попробуйте оптимизировать запрос.
 
-Подробное описание процедуры устранения неполадок см. в статье как [работает мой запрос в облаке?](http://blogs.msdn.com/b/sqlblog/archive/2013/11/01/is-my-query-running-fine-in-the-cloud.aspx).
+Подробное описание процедуры устранения неполадок см. в статье как [работает мой запрос в облаке?](https://blogs.msdn.com/b/sqlblog/archive/2013/11/01/is-my-query-running-fine-in-the-cloud.aspx).
 
 
 ### <a name="cannot-open-database-master-requested-by-the-login-the-login-failed"></a>Не удается открыть базу данных "Master", запрашиваемую именем для входа. Вход в систему не выполнен.
@@ -336,7 +337,7 @@ System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
 ClientConnectionId:<Client connection ID>
 ```
 
-Если исключение вызывается проблемами запросов, вы увидите стек вызовов, аналогичный приведенному ниже (Обратите внимание на ссылку на класс **SqlCommand** ). В этом случае [Настройте запросы](http://blogs.msdn.com/b/sqlblog/archive/2013/11/01/is-my-query-running-fine-in-the-cloud.aspx).
+Если исключение вызывается проблемами запросов, вы увидите стек вызовов, аналогичный приведенному ниже (Обратите внимание на ссылку на класс **SqlCommand** ). В этом случае [Настройте запросы](https://blogs.msdn.com/b/sqlblog/archive/2013/11/01/is-my-query-running-fine-in-the-cloud.aspx).
 
 ```
   at System.Data.SqlClient.SqlCommand.ExecuteReader()
@@ -364,7 +365,7 @@ ClientConnectionId:<Client connection ID>
 
 5. Рекомендуется убедиться в том, что логика повторных попыток выполнена. Дополнительные сведения о логике повторных попыток см. [в разделе Устранение временных сбоев и ошибок подключения к базе данных SQL](https://docs.microsoft.com/azure/sql-database/sql-database-connectivity-issues).
 
-Если эти действия не помогли устранить проблему, попробуйте получить дополнительные данные и обратитесь в службу поддержки. Если приложение является облачной службой, включите ведение журнала. Этот шаг возвращает метку времени ошибки в формате UTC. Кроме того, SQL Azure возвращает идентификатор трассировки. Эти сведения могут использовать [службы поддержки пользователей Майкрософт](http://azure.microsoft.com/support/options/) . 
+Если эти действия не помогли устранить проблему, попробуйте получить дополнительные данные и обратитесь в службу поддержки. Если приложение является облачной службой, включите ведение журнала. Этот шаг возвращает метку времени ошибки в формате UTC. Кроме того, SQL Azure возвращает идентификатор трассировки. Эти сведения могут использовать [службы поддержки пользователей Майкрософт](https://azure.microsoft.com/support/options/) . 
 
 Дополнительные сведения о включении ведения журнала см. [в статье Включение ведения журнала диагностики для приложений в службе приложений Azure](https://azure.microsoft.com/documentation/articles/web-sites-enable-diagnostic-log/).
 

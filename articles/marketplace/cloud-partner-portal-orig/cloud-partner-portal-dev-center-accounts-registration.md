@@ -4,15 +4,16 @@ description: Требования и шаги по созданию учетно
 services: Azure, Marketplace, Cloud Partner Portal,
 author: v-miclar
 ms.service: marketplace
+ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: pabutler
-ms.openlocfilehash: 4fde5d81fb97bec23fdb46ff53b05874c88d9d67
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 522caa53123ad5ccb8076839d2dfa7dc1236b022
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64935867"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73818422"
 ---
 <a name="create-a-microsoft-developer-account"></a>Создание учетной записи разработчика Майкрософт
 ====================================
@@ -99,7 +100,7 @@ ms.locfileid: "64935867"
    ![Выбор страны или региона](./media/cloud-partner-portal-create-dev-center-registration/imgRegisterCo_04.png)
 
     >[!WARNING]
-    >«Продажа — от» странах и регионах: Для продажи своих услуг в Azure Marketplace, ваше зарегистрированное юридическое должно быть в одной из утвержденных «Продажа — от» страны (регионы) в раскрывающемся списке. Это ограничение связано с выплатами и налогообложением. Дополнительные сведения см. в описании политик участия в Marketplace.
+    >"Проходящие" страны и регионы. для продажи ваших служб в Azure Marketplace ваша зарегистрированная сущность должна быть из одной из утвержденных для продажи стран или регионов, которые отображаются в раскрывающемся списке. Это ограничение связано с выплатами и налогообложением. Дополнительные сведения см. в описании политик участия в Marketplace.
 
 5. Для параметра "Тип учетной записи" выберите значение **Компания** и щелкните **Далее**.
 

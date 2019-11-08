@@ -6,20 +6,20 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 10/11/2019
 ms.author: tisande
-ms.openlocfilehash: d92e24836a0eb5757de9bbdb516be290456deb7f
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.openlocfilehash: e41e81457421bfe27e3c0313fc06e39e6df4cdce
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72333265"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73819104"
 ---
 # <a name="group-by-clause-in-azure-cosmos-db"></a>Предложение GROUP BY в Azure Cosmos DB
 
 Предложение GROUP BY разделяет результаты запроса в соответствии со значениями одного или нескольких указанных свойств.
 
 > [!NOTE]
-> Azure Cosmos DB в настоящее время поддерживает GROUP BY в [пакете SDK для .net 3,3](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/3.3.0) или более поздней версии.
-> Поддержка других языковых пакетов SDK и портала Azure в настоящее время недоступна, но планируется.
+> В настоящее время Azure Cosmos DB поддерживает GROUP BY в пакете SDK для .NET 3,3 и более поздних версий, а также в пакете SDK для JavaScript 3,4 и выше.
+> Поддержка других языковых пакетов SDK в настоящее время недоступна, но планируется.
 
 ## <a name="syntax"></a>Синтаксис
 
@@ -173,6 +173,6 @@ GROUP BY ARRAY_CONTAINS(f.tags, {name: 'orange'}), f.version BETWEEN 0 AND 2
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Начало работы](sql-query-getting-started.md)
+- [Приступая к работе](sql-query-getting-started.md)
 - [Предложение SELECT](sql-query-select.md)
 - [Агрегатные функции](sql-query-aggregates.md)

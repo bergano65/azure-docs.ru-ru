@@ -5,15 +5,16 @@ services: Azure, Marketplace, Cloud Partner Portal,
 author: pbutlerm
 manager: Ricardo.Villalobos
 ms.service: marketplace
+ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: pabutler
-ms.openlocfilehash: a6b2a7981452b47a3992b6c0efee286878e143fb
-ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
+ms.openlocfilehash: d47a67be157f71a30a6ae155790ed78a78fd6743
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70962882"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73814647"
 ---
 <a name="web-analytics"></a>Веб-аналитика
 =============
@@ -43,7 +44,7 @@ ms.locfileid: "70962882"
 
 Например, вы можете использовать: <https://appsource.microsoft.com/product/dynamics-365/contoso.offername?mktcmpid=NewCampaign>
 
-1. (Дополнительно): Используйте в URL-адресе один из поддерживаемых универсальных идентификаторов кампании. Мы хотим, чтобы вы могли использовать дополнительные теги, поэтому мы поддерживаем их автоматическое распознавание:
+1. (Дополнительно.) Используйте один из наших поддерживаемых общих идентификаторов кампании в URL-адресе. Мы хотим, чтобы вы могли использовать дополнительные теги, поэтому мы поддерживаем их автоматическое распознавание:
     
     1. **utm\_campaign**;
     2. **utm\_source**;
@@ -54,7 +55,7 @@ ms.locfileid: "70962882"
 
 Вы можете выбрать комбинацию из нескольких идентификаторов кампаний для дальнейшего определения нескольких источников, создающих трафик для кампании, например, откуда пришел клиент (электронная почта, блог, источник в социальных сетях и т. д.).
 
-Пример:
+Например:
 
 1. Ссылка на информационный бюллетень: <https://appsource.microsoft.com/product/dynamics-365/contoso.offername?mktcmpid=NewCampaign&src=newsletter>
 2. Ссылка на LinkedIn: <https://appsource.microsoft.com/product/dynamics-365/contoso.offername?mktcmpid=NewCampaign&src=LinkedIn>
@@ -65,13 +66,13 @@ ms.locfileid: "70962882"
 
 Пример:
 
-1. Маркетинговый сотрудник покупает рекламу в Google для привлечения трафика на целевую страницу ​​компании <https://contoso.com>. Эта целевая страница содержит ссылку на \"пробную версию продукта\", которая ведет на <https://appsource.com>.
+1. Маркетинговый сотрудник покупает рекламу в Google для привлечения трафика на целевую страницу ​​компании \'. Эта целевая страница содержит ссылку на \"пробную версию продукта\", которая ведет на <https://appsource.com>.
 2. Пользователь щелкает объявление и попадает на целевую страницу компании.
     1.  URL-адрес реферрала = google.com
     2.  URL-адрес целевой страницы = <https://contoso.com/?utm_campaign=MyCampaignAdName&utm_source=MySourceAdName>
 3. Пользователь щелкает ссылку \"пробной версии продукта\" и переходит в AppSource.
     1. URL-адрес реферрала = <https://contoso.com/?utm_campaign=MyCampaignAdName&utm_source=MySourceAdName>
-    2. URL-адрес целевой страницы (**убедитесь, что этот URL-адрес содержит utm\_campaign и utm\_source**) = [https://appsource.microsoft.com/product/dynamics-365/contoso.offername?**utmutm\_ campaign=MyCampaignAdName&utm\_ source=MySourceAdName**](https://appsource.microsoft.com/product/dynamics-365/contoso.offername?utm_campaign=MyCampaignAdName&utm_source=MySourceAdName)
+    2. URL-адрес целевой страницы (**убедитесь, что этот URL-адрес содержит utm\_campaign и utm\_source**) = [https://appsource.microsoft.com/product/dynamics-365/contoso.offername?**utmutm\_campaign=MyCampaignAdName&utm\_source=MySourceAdName**](https://appsource.microsoft.com/product/dynamics-365/contoso.offername?utm_campaign=MyCampaignAdName&utm_source=MySourceAdName)
 
 <a name="how-to-evaluate-the-success-of-a-campaign"></a>Как оценить успех кампании
 -----------------------------------------
@@ -94,7 +95,7 @@ ms.locfileid: "70962882"
 
 Подобно тому как мы смотрим на домены ваших клиентов, эта диаграмма позволяет вам видеть распределение ваших данных по кампаниям, с помощью которых пользователи попадают в marketplace. \_NoCampaign означает, что у клиента не было идентификатора кампании в URL-адресе, когда он переходил в marketplace.
 
-<a name="next-steps"></a>**Дальнейшие действия**
+<a name="next-steps"></a>**Next Steps**
 --------------
 
 Теперь, когда у вас есть возможность отслеживать успех ваших предложений, можно приступить к созданию дополнительных кампаний.

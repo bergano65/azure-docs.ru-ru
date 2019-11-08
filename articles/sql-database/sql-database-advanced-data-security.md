@@ -1,5 +1,5 @@
 ---
-title: Расширенная защита данных в базе данных SQL Azure
+title: Расширенная защита данных
 description: Узнайте о таких функциях, как обнаружение и классификация конфиденциальных данных, управление уязвимостями базы данных, а также выявление аномальной активности, которая может указывать на угрозу для базы данных SQL Azure.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: memildin
 manager: rkarlin
 ms.reviewer: vanto
 ms.date: 03/31/2019
-ms.openlocfilehash: ce9cfa7e4b08dac878de52ba9765bcc204ed8196
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: a4f4306023b37c3b1cba46acd11ec5c0a489d0d6
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73691297"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73822570"
 ---
 # <a name="advanced-data-security-for-azure-sql-database"></a>Расширенная защита данных для Базы данных SQL Azure
 

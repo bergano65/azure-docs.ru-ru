@@ -1,5 +1,5 @@
 ---
-title: 'Выполнение запросов аналитики к базам данных SQL Azure '
+title: Выполнение запросов аналитики
 description: Узнайте о выполнении межклиентских запросов аналитики с помощью данных, извлеченных из нескольких баз данных службы "База данных SQL Azure" в мультитенантном приложении.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: anjangsh,billgib,genemi
 ms.date: 09/19/2018
-ms.openlocfilehash: 2044e72697526a1c757fa13aeffb85260a9b821e
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 067afd09f942b8062825553a3cf90f715e8d3938
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73692004"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73822144"
 ---
 # <a name="cross-tenant-analytics-using-extracted-data---multi-tenant-app"></a>Получение межклиентской аналитики на основе извлеченных с мультитенантного приложения данных
  

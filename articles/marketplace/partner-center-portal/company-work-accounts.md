@@ -5,14 +5,15 @@ author: ChJenk
 manager: evansma
 ms.author: parthp
 ms.service: marketplace
+ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 05/30/2019
-ms.openlocfilehash: 744b4e4975c5d4cec5c705e639e9cc8d252a7dd6
-ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
+ms.openlocfilehash: 4783d3ac8ef78929621179d87f9c8948f6dd079c
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70194283"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73811997"
 ---
 # <a name="company-work-accounts-and-partner-center"></a>Рабочие учетные записи компании и центр партнеров
 
@@ -52,6 +53,6 @@ ms.locfileid: "70194283"
 
 ![Схема для устранения неполадок при входе в рабочую учетную запись](./media/onboarding-aad-flow.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Управление учетной записью коммерческого магазина в центре партнеров](./manage-account.md) 

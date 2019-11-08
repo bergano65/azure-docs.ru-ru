@@ -8,12 +8,12 @@ ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
 ms.date: 10/27/2019
-ms.openlocfilehash: 5df8bb0ba0323692bddf94ae2888e8fcf1ad24a9
-ms.sourcegitcommit: f7f70c9bd6c2253860e346245d6e2d8a85e8a91b
+ms.openlocfilehash: b0c3d72085e008524811f479ccbdeec013e26c4c
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73063269"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73822248"
 ---
 # <a name="how-to-use-azure-digital-twins-management-apis"></a>Как использовать API управления Azure Digital Twins
 
@@ -39,7 +39,7 @@ API управления Azure Digital Twins предоставляют эффе
 
 * [/матчерс](https://docs.westcentralus.azuresmartspaces.net/management/swagger/ui/index#/Matchers). Эти API позволяют указать условия, которые необходимо оценить на основе данных входящих устройств. Дополнительные сведения см. в [этой статье](concepts-user-defined-functions.md#matchers). 
 
-* [/усердефинедфунктионс](https://docs.westcentralus.azuresmartspaces.net/management/swagger/ui/index#/UserDefinedFunctions). Эти API-интерфейсы позволяют создавать, удалять или обновлять пользовательские функции, которые будут выполняться при возникновении условий, определенных *соответствующими критериями* , для обработки данных, поступающих из программы установки. Дополнительные сведения об этих настраиваемых функциях, которые также называются *определяемыми пользователем*, см. [в этой статье](concepts-user-defined-functions.md#user-defined-functions). 
+* [/усердефинедфунктионс](https://docs.westcentralus.azuresmartspaces.net/management/swagger/ui/index#/UserDefinedFunctions). Эти API-интерфейсы позволяют создавать, удалять или обновлять пользовательские функции, которые будут выполняться при возникновении условий, определенных *соответствующими критериями* , для обработки данных, поступающих из программы установки. Дополнительные сведения об этих настраиваемых функциях, которые также называются [определяемыми пользователем](concepts-user-defined-functions.md#user-defined-functions), см. *в этой статье*. 
 
 * [/ендпоинтс](https://docs.westcentralus.azuresmartspaces.net/management/swagger/ui/index#/Endpoints). Эти API позволяют создавать конечные точки, чтобы ваше решение Digital двойников может взаимодействовать с другими службами Azure для хранения и аналитики данных. Дополнительные сведения см. в [этой статье](concepts-events-routing.md). 
 
@@ -56,7 +56,7 @@ API управления Azure Digital Twins предоставляют эффе
 
 Программные интерфейсы Digital Twins поддерживают фильтрацию и навигацию по пространственному графу с использованием следующих параметров:
 
-- **спацеид**: API будет фильтровать результаты по заданному идентификатору пространства. Кроме того, к API [/spaces](https://docs.westcentralus.azuresmartspaces.net/management/swagger/ui/index#!/Spaces) можно применить логический флаг **useParentSpace**, который указывает, что данный идентификатор пространства ссылается на родительское пространство вместо текущего. 
+- **спацеид**: API будет фильтровать результаты по заданному идентификатору пространства. Кроме того, к API **/spaces** можно применить логический флаг [useParentSpace](https://docs.westcentralus.azuresmartspaces.net/management/swagger/ui/index#!/Spaces), который указывает, что данный идентификатор пространства ссылается на родительское пространство вместо текущего. 
 
 - **минлевел** и **МАКСЛЕВЕЛ**: корневые пространства считаются на уровне 1. Пространства в родительском пространстве на уровне *n* располагаются на уровне *n+1*. С помощью этих значений можно фильтровать результаты по определенных уровнях. При установке эти значения становятся инклюзивными. Устройства, датчики и другие объекты находятся на одном уровне с ближайшим пространством. Чтобы получить все объекты на определенном уровне, задайте для параметров **minLevel** и **maxLevel** одинаковое значение.
 
@@ -116,4 +116,4 @@ API управления Azure Digital Twins предоставляют эффе
 
 Дополнительные сведения о конечных точках API см. в статье [Использование цифрового двойников Swagger](./how-to-use-swagger.md).
 
-Чтобы просмотреть синтаксис OData и доступные операторы сравнения, прочитайте [Операторы сравнения OData в службе поиска Azure](../search/search-query-odata-comparison-operators.md).
+Чтобы просмотреть синтаксис OData и доступные операторы сравнения, прочитайте [Операторы сравнения OData в Azure когнитивный Поиск](../search/search-query-odata-comparison-operators.md).

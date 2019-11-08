@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/23/2019
 ms.author: govindk
 ms.reviewer: sngun
-ms.openlocfilehash: dfc3ebc0274c87466d6dc27c93880483df023085
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 791821fbfe5854c27b7e3e6927a56a66ac1f1dc2
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66242466"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73819088"
 ---
 # <a name="access-azure-cosmos-db-from-virtual-networks-vnet"></a>Доступ к Azure Cosmos DB из виртуальных сетей
 
@@ -44,10 +44,10 @@ ms.locfileid: "66242466"
 Доступ имеют только виртуальные сети и их подсети, добавленные к учетной записи Azure Cosmos. Одноранговые виртуальные сети не могут получить доступ к учетной записи, пока подсети в одноранговых виртуальных сетях не будут добавлены в учетную запись.
 
 ### <a name="what-is-the-maximum-number-of-subnets-allowed-to-access-a-single-cosmos-account"></a>Каково максимальное число подсетей, которым разрешен доступ к одной учетной записи Cosmos? 
-В настоящее время может иметь не более 64 подсетей, разрешенное для учетной записи Azure Cosmos.
+В настоящее время для учетной записи Azure Cosmos можно использовать не более 64 подсетей.
 
 ### <a name="can-i-enable-access-from-vpn-and-express-route"></a>Можно ли включить доступ для VPN и Express Route? 
-Для доступа к учетной записи Azure Cosmos через Express route из локальной среды, необходимо включить пиринг Майкрософт. После размещения правил доступа к брандмауэру IP-адресов или виртуальной сети можно добавить общедоступные IP-адреса, используемые для пиринга Майкрософт в брандмауэре учетной записи Azure Cosmos, чтобы разрешить локальным службам доступ к учетной записи. 
+Чтобы получить доступ к учетной записи Azure Cosmos через Express Route из локальной среды, необходимо включить пиринг Майкрософт. После размещения правил доступа к брандмауэру IP-адресов или виртуальной сети можно добавить общедоступные IP-адреса, используемые для пиринга Майкрософт в брандмауэре учетной записи Azure Cosmos, чтобы разрешить локальным службам доступ к учетной записи. 
 
 ### <a name="do-i-need-to-update-the-network-security-groups-nsg-rules"></a>Нужно ли обновлять правила группы безопасности сети (NSG)? 
 Правила группы безопасности сети позволяют ограничить возможность подключения к подсети с помощью виртуальной сети. При добавлении конечной точки службы для Azure Cosmos DB к подсети нет необходимости открывать исходящие подключения в группе безопасности сети для учетной записи Azure Cosmos. 
@@ -56,11 +56,11 @@ ms.locfileid: "66242466"
 Нет, только виртуальные сети Azure Resource Manager могут использовать конечную точку службы. Классические виртуальные сети не поддерживают конечные точки службы.
 
 ### <a name="can-i-accept-connections-from-within-public-azure-datacenters-when-service-endpoint-access-is-enabled-for-azure-cosmos-db"></a>Можно ли принимать подключения из общедоступных центров данных Azure, если для Azure Cosmos DB включен доступ через конечную точку службы?  
-Это необходимо, только если требуется, чтобы к учетной записи Azure Cosmos DB могли получать доступ другие службы Azure, такие как фабрика данных Azure, поиск Azure или любые службы, развернутые в данном регионе Azure.
+Это необходимо только в том случае, если вы хотите, чтобы учетная запись Azure Cosmos DB была доступна другим службам первого поставщика Azure, таким как фабрика данных Azure, Когнитивный поиск Azure или любая служба, развернутая в заданном регионе Azure.
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Получение доступа к ресурсам Azure Cosmos DB из виртуальных сетей](how-to-configure-vnet-service-endpoint.md)
-* [How-to configure IP firewall for your Azure Cosmos account](how-to-configure-firewall.md) (Инструкции по настройке брандмауэра IP-адресов для учетной записи Azure Cosmos)
+* [How-to configure IP firewall for your Azure Cosmos account](how-to-configure-firewall.md) (Настройка брандмауэра IP-адресов для учетной записи Azure Cosmos)
 

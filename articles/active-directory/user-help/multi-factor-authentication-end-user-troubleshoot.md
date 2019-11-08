@@ -1,5 +1,5 @@
 ---
-title: Устранение распространенных проблем с двухфакторной проверкой — Azure Active Directory | Документация Майкрософт
+title: Устранение распространенных проблем с двухфакторной проверкой подлинности в Azure AD
 description: Узнайте о возможных решениях некоторых из наиболее распространенных проблем с двухфакторной проверкой подлинности.
 services: active-directory
 author: eross-msft
@@ -13,12 +13,12 @@ ms.date: 10/28/2019
 ms.author: lizross
 ms.reviewer: kexia
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bb510755e7cc163af8ff0cb2c8699e1d2dd04d7f
-ms.sourcegitcommit: 38251963cf3b8c9373929e071b50fd9049942b37
+ms.openlocfilehash: f8d226d61f4b67541a6991fef3a435b4cfff500f
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73043219"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73805300"
 ---
 # <a name="troubleshoot-common-two-factor-verification-problems"></a>Устранение распространенных проблем с двухфакторной проверкой подлинности
 
@@ -84,9 +84,9 @@ ms.locfileid: "73043219"
 
 2. Обновите сведения об учетной записи и устройстве на странице " **Дополнительная проверка безопасности** ", удалив старое устройство и добавив новое. Дополнительные сведения см. в статье [Управление параметрами метода для двухфакторной проверки подлинности](multi-factor-authentication-end-user-manage-settings.md) .
 
-3. Необязательный элемент. Скачайте, установите и настройте приложение Microsoft Authenticator на мобильном устройстве, выполнив действия, описанные в статье [Загрузка и установка Microsoft Authenticator приложения](user-help-auth-app-download-install.md) .
+3. необязательный параметр. Скачайте, установите и настройте приложение Microsoft Authenticator на мобильном устройстве, выполнив действия, описанные в статье [Загрузка и установка Microsoft Authenticator приложения](user-help-auth-app-download-install.md) .
 
-4. Необязательный элемент. Включите двухфакторную проверку подлинности для доверенных устройств, выполнив действия, описанные в разделе **Включение двухфакторной проверки подлинности на странице доверенное устройство** статьи [Управление параметрами метода для двухфакторной проверки](multi-factor-authentication-end-user-manage-settings.md#turn-on-two-factor-verification-prompts-on-a-trusted-device) .
+4. необязательный параметр. Включите двухфакторную проверку подлинности для доверенных устройств, выполнив действия, описанные в разделе **Включение двухфакторной проверки подлинности на странице доверенное устройство** статьи [Управление параметрами метода для двухфакторной проверки](multi-factor-authentication-end-user-manage-settings.md#turn-on-two-factor-verification-prompts-on-a-trusted-device) .
 
 ## <a name="im-having-problems-signing-in-on-my-mobile-device-while-traveling"></a>Возникли проблемы при входе на мобильное устройство в поездках
 

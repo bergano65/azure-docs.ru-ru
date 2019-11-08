@@ -1,5 +1,5 @@
 ---
-title: Выполните проверку доступа на портале "Мои приложения" — Azure Active Directory | Документация Майкрософт
+title: Выполнение проверки доступа на портале "Мои приложения" в Azure AD
 description: Узнайте, как просматривать и управлять доступом к безопасности для приложений и групп вашей организации.
 services: active-directory
 author: eross-msft
@@ -13,12 +13,12 @@ ms.author: lizross
 ms.reviewer: kasimpso
 ms.custom: user-help, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6681720fc7c0fe04c99bf7957be14865c663dd67
-ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
+ms.openlocfilehash: bf803027aac7c62ea500d1af104ae3234fadf8b5
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68383149"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73804047"
 ---
 # <a name="perform-an-access-review-from-the-my-apps-portal"></a>Выполнение проверки доступа на портале "Мои приложения"
 
@@ -40,7 +40,7 @@ ms.locfileid: "68383149"
 
 1. Войдите в рабочую или учебную учетную запись.
 
-2. Откройте веб-браузер и перейдите https://myapps.microsoft.com по ссылке или воспользуйтесь ссылкой, предоставленной вашей организацией. Например, вы можете направить на настроенную страницу для вашей организации, например https://myapps.microsoft.com/contoso.com.
+2. Откройте веб-браузер и перейдите в https://myapps.microsoft.comили воспользуйтесь ссылкой, предоставленной вашей организацией. Например, вы можете направить на настроенную страницу Организации, например https://myapps.microsoft.com/contoso.com.
 
     Откроется страница **приложения** , на которой показаны все облачные приложения, принадлежащие вашей организации и доступные для использования.
 
@@ -72,7 +72,7 @@ ms.locfileid: "68383149"
     >[!Note]
     >Вы можете изменить доступ в любое время, пока не завершится период проверки доступа. Если вы удалите доступ к приложению или группе, это не будет немедленно удалено. Удаление происходит, когда заканчивается период проверки доступа или когда администратор закрывает проверку.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Доступ к приложениям и их использование на портале "Мои приложения"](my-apps-portal-end-user-access.md).
 

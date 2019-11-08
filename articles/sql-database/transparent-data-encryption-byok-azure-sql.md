@@ -1,22 +1,22 @@
 ---
-title: Управляемое клиентом прозрачное шифрование данных (TDE) — база данных SQL Azure | Документация Майкрософт
+title: Прозрачное шифрование данных, управляемое клиентом (TDE)
 description: Поддержка создания собственных ключей для прозрачного шифрования данных в Azure Key Vault для Базы данных SQL и хранилища данных SQL. Обзор TDE с поддержкой BYOK, преимущества, принцип работы, замечания и рекомендации.
 services: sql-database
 ms.service: sql-database
 ms.subservice: security
-ms.custom: ''
+ms.custom: seo-lt-2019
 ms.devlang: ''
 ms.topic: conceptual
 author: aliceku
 ms.author: aliceku
 ms.reviewer: vanto
 ms.date: 11/04/2019
-ms.openlocfilehash: 49ffed06936f8de2aed6d34ed83fca9e71ac0daf
-ms.sourcegitcommit: b2fb32ae73b12cf2d180e6e4ffffa13a31aa4c6f
+ms.openlocfilehash: 3ae5403c2313bc1d2f271aeba9d4a99d9a0c5db7
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73615710"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73822286"
 ---
 # <a name="azure-sql-transparent-data-encryption-with-customer-managed-key"></a>Прозрачное шифрование данных Azure SQL с ключом, управляемым клиентом
 

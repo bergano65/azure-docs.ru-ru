@@ -1,5 +1,5 @@
 ---
-title: Создание, управление серверами базы данных SQL Azure и отдельными базами данных
+title: Создание серверов и отдельных баз данных, управление ими
 description: Узнайте, как создавать серверы Базы данных SQL и отдельные базы данных и управлять ими.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 03/12/2019
-ms.openlocfilehash: 91a5ca6ef842b364ada24aa4ede5768cf205c776
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 02c4d7ba545282e3654f3889dd8000af33c728c7
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73687115"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73820921"
 ---
 # <a name="create-and-manage-sql-database-servers-and-single-databases-in-azure-sql-database"></a>Создание серверов Базы данных SQL и отдельных баз данных в Базе данных SQL Azure и управление ими
 

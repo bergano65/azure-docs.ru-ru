@@ -1,5 +1,5 @@
 ---
-title: Руководство по SaaS для одного клиента. база данных SQL Azure
+title: Руководство по SaaS с одним клиентом
 description: Развертывание и изучение отдельного однотенантного SaaS-приложения, в котором используется база данных SQL Azure.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: MightyPen
 ms.author: genemi
 ms.reviewer: sstein
 ms.date: 11/07/2018
-ms.openlocfilehash: df9c3913851055f1bb477264cf5a7486f79b56b0
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: e3afc8aa58551b995070ffaca978c8e7c8454da3
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73691957"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73822136"
 ---
 # <a name="deploy-and-explore-a-standalone-single-tenant-application-that-uses-azure-sql-database"></a>Развертывание и изучение отдельного однотенантного приложения, в котором используется база данных SQL Azure
 

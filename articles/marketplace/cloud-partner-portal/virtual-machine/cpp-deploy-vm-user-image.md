@@ -1,18 +1,19 @@
 ---
-title: Разверните виртуальную Машину Azure из виртуального жесткого диска пользователя | Azure Marketplace
+title: Развертывание виртуальной машины Azure из виртуального жесткого диска пользователя | Azure Marketplace
 description: В этой статье описывается развертывание пользовательского образа виртуального жесткого диска для создания экземпляра виртуальной машины Azure.
 services: Azure, Marketplace, Cloud Partner Portal,
 author: v-miclar
 ms.service: marketplace
+ms.subservice: partnercenter-marketplace-publisher
 ms.topic: article
 ms.date: 11/29/2018
 ms.author: pabutler
-ms.openlocfilehash: e4da523fa54a513fe77fda037aea0a5fd530250b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 8421e9b7b7e2b7d13054e977da83be044b4e6af7
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64938243"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73816641"
 ---
 # <a name="deploy-an-azure-vm-from-a-user-vhd"></a>Развертывание виртуальной машины Azure из виртуального жесткого диска пользователя
 

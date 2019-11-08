@@ -4,15 +4,16 @@ description: Руководство по определению и публик�
 services: Azure, Marketplace, Cloud Partner Portal,
 author: qianw211
 ms.service: marketplace
+ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/30/2018
 ms.author: pabutler
-ms.openlocfilehash: 6c75664e558602429250420f1896b75a74546e67
-ms.sourcegitcommit: b03516d245c90bca8ffac59eb1db522a098fb5e4
+ms.openlocfilehash: 506b34281ba8ab5b669c87b4699fb8b138c8734a
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71145457"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73819189"
 ---
 # <a name="azure-and-dynamics-365-consulting-service-offer"></a>Предложение консультационных услуг в Dynamics 365 и Azure
 
@@ -34,16 +35,16 @@ ms.locfileid: "71145457"
 - [Предварительные требования к консультационной услуге](./cpp-consulting-service-prerequisites.md) предлагают требования к публикации предложения консультационной услуги для:
  
     - Microsoft Azure
-    - Dynamics 365 for Customer Engagement 
+    - Dynamics 365 для взаимодействия с клиентами 
     - Dynamics 365 for Finance and Operations 
     - Dynamics 365 Business Central 
     - Power BI 
-    - PowerApps
+    - PowerApps.
 - [Создание предложения](./cpp-consulting-service-create-offer.md) предлагает шаги по созданию записи предложения консультационных услуг с помощью Портала Cloud Partner.
     - [Вкладка с параметрами предложения](./cpp-consulting-service-define-offer-settings.md).
     - [Вкладка со сведениями об онлайн-магазине](./cpp-consulting-service-storefront-details.md).
 - [Публикация предложения консультационных услуг](./cpp-consulting-service-publish-offer.md) описывается, как запустить предложения для публикации.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Прежде чем выполнять эти действия по публикации предложения консультационных услуг, необходимо выполнить [предварительные требования](./cpp-consulting-service-prerequisites.md) для публикации предложения консультационных услуг.

@@ -1,5 +1,5 @@
 ---
-title: Типы подключений управляемого экземпляра базы данных SQL Azure
+title: Типы соединения с управляемым экземпляром
 description: Дополнительные сведения о типах соединений с управляемым экземпляром
 services: sql-database
 ms.service: sql-database
@@ -9,12 +9,12 @@ author: srdan-bozovic-msft
 ms.author: srbozovi
 ms.reviewer: vanto
 ms.date: 10/07/2019
-ms.openlocfilehash: c810f1f07587c84a5900460d4a865b0de16ae208
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 46223d1701b930d93de7c49c1e216a41045dda16
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73688225"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73819463"
 ---
 # <a name="azure-sql-database-managed-instance-connection-types"></a>Типы подключений управляемого экземпляра базы данных SQL Azure
 

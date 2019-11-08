@@ -1,5 +1,5 @@
 ---
-title: Руководство по SaaS для базы данных и клиента — база данных SQL Azure
+title: Руководство по SaaS для базы данных на клиента
 description: Разверните и изучите мультитенантное приложение SaaS Wingtip Tickets, которое демонстрирует шаблон "одна база данных на клиент" и другие схемы работы с приложениями SaaS с использованием Базы данных SQL Azure.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: MightyPen
 ms.author: genemi
 ms.reviewer: sstein
 ms.date: 01/25/2019
-ms.openlocfilehash: b271c4bbf942bee70c4995ee04ec370591d4f67d
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 31f712f80ee2492e4bbaec99bd093d46f9d04e6d
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73692183"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73823995"
 ---
 # <a name="deploy-and-explore-a-multitenant-saas-app-that-uses-the-database-per-tenant-pattern-with-sql-database"></a>Разверните и изучите мультитенантное приложение SaaS на основе базы данных SQL, в котором используется отдельная база данных для каждого клиента.
 

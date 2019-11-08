@@ -1,7 +1,7 @@
 ---
 title: Что такое API Распознавания лиц?
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как использовать службу "Распознавание лиц" для обнаружения и анализа лиц на изображениях.
+description: API Распознавания лиц Azure — это когнитивная служба, предоставляющая алгоритмы для обнаружения, распознавания и анализа человеческих лиц на изображениях.
 author: PatrickFarley
 manager: nitinme
 ms.service: cognitive-services
@@ -9,12 +9,12 @@ ms.subservice: face-api
 ms.topic: overview
 ms.date: 07/03/2019
 ms.author: pafarley
-ms.openlocfilehash: 4be33f781dec93fd9fe1b1846322672266cd7350
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: 95ea1718682340967d5d39fe5f550f2638273796
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67606908"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73743700"
 ---
 # <a name="what-is-the-azure-face-api"></a>Что такое API распознавания лиц Azure?
 

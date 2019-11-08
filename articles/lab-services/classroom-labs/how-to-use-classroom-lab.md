@@ -14,12 +14,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 09/19/2019
 ms.author: spelluru
-ms.openlocfilehash: 10813600621293e9f559129230193f81ea0c505a
-ms.sourcegitcommit: a7a9d7f366adab2cfca13c8d9cbcf5b40d57e63a
+ms.openlocfilehash: 2ac9e8b8d0635eceb7d4f85ad867b102f7d064f5
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71161530"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73585158"
 ---
 # <a name="how-to-access-a-classroom-lab-in-azure-lab-services"></a>Как войти в лабораторию для аудитории в Службах лабораторий Azure
 В этой статье описывается, как выполнить регистрацию в лаборатории для аудитории, просмотреть все лаборатории, к которым у вас есть доступ, запустить или остановить виртуальную машину в лаборатории и подключиться к этой машине. 
@@ -107,7 +107,7 @@ ms.locfileid: "71161530"
 2. Войдите в службу с помощью учетной записи пользователя, которая использовалась для регистрации в лаборатории. 
 3. Убедитесь, что вы видите все лаборатории, к которым у вас есть доступ. 
 
-    ![Просмотр всех лабораторий](../media/how-to-use-classroom-lab/all-labs.png)
+    ![Просмотр всех лабораторий](../media/how-to-manage-classroom-labs/all-labs.png)
 
 
 ## <a name="next-steps"></a>Дополнительная информация

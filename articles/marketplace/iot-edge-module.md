@@ -5,15 +5,16 @@ services: Azure, Marketplace, Compute, Storage, Networking, Blockchain, IoT Edge
 author: qianw211
 manager: pabutler
 ms.service: marketplace
+ms.subservice: partnercenter-marketplace-publisher
 ms.topic: article
 ms.date: 09/22/2018
 ms.author: pabutler
-ms.openlocfilehash: 54369e0f2c943c146d186605833198253b960022
-ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
+ms.openlocfilehash: db501c34a4418bc7b08b19105a9b28585288f877
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71949527"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73823068"
 ---
 # <a name="iot-edge-modules"></a>Модули IoT Edge
 
@@ -76,11 +77,11 @@ Marketplace в настоящее время поддерживает **бесп
 
 ## <a name="documentation-and-resources"></a>Документация и ресурсы
 
-[Создание предложения модуля IoT Edge](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/iot-edge-module/cpp-create-offer) — шаги для публикации нового модуля IoT Edge с помощью Портала Cloud Partner.
+[Создание предложения модуля IOT Edge](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/iot-edge-module/cpp-create-offer) . действия по публикации нового модуля IOT Edgeного предложения с помощью портала Cloud Publishing.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Если это еще не сделано:
+Если это еще не сделано,
 
 - [зарегистрируйтесь](https://azuremarketplace.microsoft.com/sell) в Marketplace.
 

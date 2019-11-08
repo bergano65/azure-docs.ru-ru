@@ -8,13 +8,13 @@ author: ecfan
 ms.author: estfan
 ms.reviewer: klam, LADocs
 ms.topic: article
-ms.date: 11/06/2019
-ms.openlocfilehash: adb89c04a83bbfbd5bddd5c23b0fa88019a88991
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.date: 11/08/2019
+ms.openlocfilehash: da68cfe504332ed6641c52322f0df0d2efd95997
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73721383"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73820671"
 ---
 # <a name="access-to-azure-virtual-network-resources-from-azure-logic-apps-by-using-integration-service-environments-ises"></a>Доступ к ресурсам виртуальных сетей Azure из Azure Logic Apps с использованием сред службы интеграции (ISE)
 
@@ -108,8 +108,8 @@ ms.locfileid: "73721383"
 
 * Соединитель с меткой ISE для этой системы
 
-  > [!IMPORTANT]
-  > Чтобы использовать проверку подлинности Windows с соединителем SQL Server, необходимо использовать [локальный шлюз данных](../logic-apps/logic-apps-gateway-install.md). Соединитель SQL Server не поддерживает проверку подлинности Windows для приложения логики в интегрированной среде сценариев.
+  > [!NOTE]
+  > Чтобы использовать проверку подлинности Windows с соединителем SQL Server в [среде службы интеграции (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md), используйте неинтегрированную версию соединителя с [локальным шлюзом данных](../logic-apps/logic-apps-gateway-install.md). Версия ISE с меткой не поддерживает проверку подлинности Windows.
 
 * Настраиваемый соединитель
 

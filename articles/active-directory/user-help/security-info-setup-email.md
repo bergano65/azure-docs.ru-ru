@@ -1,5 +1,5 @@
 ---
-title: Настройка адреса электронной почты в сведениях для защиты (предварительная версия). Azure Active Directory | Документация Майкрософт
+title: Настройка сведений о безопасности (Предварительная версия) для использования электронной почты — Azure AD
 description: Настройка подтверждения личности с помощью адреса электронной почты в сведениях для защиты.
 services: active-directory
 author: eross-msft
@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 02/13/2019
 ms.author: lizross
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c8f5590cb528082a73cbdf92850218993a1a6b95
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: a025005065174d5a6ca5fca27ee06ebb036b7b1d
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73161019"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73820343"
 ---
 # <a name="set-up-security-info-preview-to-use-your-email-address"></a>Настройка использования адреса электронной почты в сведениях для защиты (предварительная версия)
 

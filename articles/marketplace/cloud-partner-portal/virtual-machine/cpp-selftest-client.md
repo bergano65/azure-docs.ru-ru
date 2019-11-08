@@ -4,15 +4,16 @@ description: Как создать клиент самопроверки для 
 services: Azure, Marketplace, Cloud Partner Portal, Virtual Machine
 author: dan-wesley
 ms.service: marketplace
+ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 01/23/2018
 ms.author: pabutler
-ms.openlocfilehash: 46923ecd33a054a36aa6900a415d0b563e5afff0
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: fc62875873f38630e592c79aebd6a138665ed6e4
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73163260"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73809212"
 ---
 # <a name="create-a-self-test-client-to-pre-validate-an-azure-virtual-machine-image"></a>Создание клиента самопроверки для предварительной проверки образа виртуальной машины Azure
 
@@ -20,7 +21,7 @@ ms.locfileid: "73163260"
 
 ## <a name="development-and-testing-overview"></a>Обзор разработки и тестирования
 
-В рамках процесса самотестирования вы создадите локальный клиент, который подключается к Azure Marketplace для проверки виртуальной машины в подписке Azure. Виртуальная машина может работать под управлением ОС Windows или Linux.
+В рамках процесса самотестирования вы создадите локальный клиент, который подключается к Azure Marketplace для проверки виртуальной машины, работающей в вашей подписке Azure. Виртуальная машина может работать под управлением ОС Windows или Linux.
 
 Локальный клиент выполняет скрипт, который выполняет аутентификацию в API самотестирования, отправляет сведения о подключении и получает результаты теста.
 
@@ -62,9 +63,9 @@ Request body:    The Request body parameters should use the following JSON forma
 В следующей таблице описаны поля API.
 
 
-|      Поле         |    Описание    |
+|      Поле         |    Description (Описание)    |
 |  ---------------   |  ---------------  |
-|  Авторизация     |  Строка "Bearer xxxx-xxxx-xxxx-xxxxx" содержит маркер клиента AAD, который можно создать с помощью PowerShell.          |
+|  Авторизация     |  Строка "Bearer XXXX-XXXX-XXXX-XXXXX" содержит маркер клиента Azure Active Directory (AD), который можно создать с помощью PowerShell.          |
 |  DNSName           |  DNS-имя виртуальной машины, которую нужно проверить    |
 |  Пользователь              |  Имя пользователя, которое будет использоваться для входа в систему виртуальной машины         |
 |  Пароль          |  Пароль, который будет использоваться для входа в систему виртуальной машины          |
@@ -99,7 +100,7 @@ $Body = @{
     "CompanyName" = "ABCD"
 
 } | ConvertTo-Json
-$res = Invoke-WebRequest -Method "Post" -Uri $uri -Body $Body -ContentType "application/json" –Headers $headers;
+$res = Invoke-WebRequest -Method "Post" -Uri $uri -Body $Body -ContentType "application/json" -Headers $headers;
 $Content = $res | ConvertFrom-Json
 ```
 На следующем снимке экрана показан пример для вызова API из PowerShell.
@@ -109,7 +110,7 @@ $Content = $res | ConvertFrom-Json
 Выполнив предыдущий пример, вы получите ответ в формате JSON, анализ которого даст вам следующие сведения.
 
 ```powershell
-$testresult = ConvertFrom-Json –InputObject (ConvertFrom-Json –InputObject $res)
+$testresult = ConvertFrom-Json -InputObject (ConvertFrom-Json -InputObject $res)
 
   Write-Host "OSName: $($testresult.OSName)"
   Write-Host "OSVersion: $($testresult.OSVersion)"
@@ -144,7 +145,7 @@ For ($i=0; $i -lt $testresult.Tests.Length; $i++)
 В следующем примере кода показан вызов API из PowerShell.
 
 ```powershell
-$accesstoken = “Get token for your Client AAD App”
+$accesstoken = "Get token for your Client AAD App"
 $headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
 $headers.Add("Authorization", "Bearer $accesstoken")
 $Body = @{
@@ -156,7 +157,7 @@ $Body = @{
     "CompanyName" = "ABCD"
 
 } | ConvertTo-Json
-$res = Invoke-WebRequest -Method "Post" -Uri $uri -Body $Body -ContentType "application/json" –Headers $headers;
+$res = Invoke-WebRequest -Method "Post" -Uri $uri -Body $Body -ContentType "application/json" -Headers $headers;
 $Content = $res | ConvertFrom-Json
 ```
 
@@ -167,7 +168,7 @@ $Content = $res | ConvertFrom-Json
 Выполнив предыдущий пример, вы получите ответ в формате JSON, анализ которого даст вам следующие сведения.
 
 ```powershell
-$testresult = ConvertFrom-Json –InputObject (ConvertFrom-Json –InputObject $res)
+$testresult = ConvertFrom-Json -InputObject (ConvertFrom-Json -InputObject $res)
 
   Write-Host "OSName: $($testresult.OSName)"
   Write-Host "OSVersion: $($testresult.OSVersion)"
@@ -219,7 +220,7 @@ https://isvapp.azurewebsites.net/selftest-vm
 
 С помощью следующей процедуры выберите арендатор Azure AD, в котором нужно создать приложение.
 
-1. Войдите на [портале Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 2. На панели меню сверху выберите учетную запись, а затем в списке "Каталог" выберите арендатор Active Directory, в котором нужно зарегистрировать приложение. Также можно щелкнуть значок **Каталог и подписка**, чтобы просмотреть фильтр глобальных подписок. На следующем снимке экрана показан пример такого фильтра.
 
    ![Выбор фильтра подписок](./media/stclient-subscription-filter.png)
@@ -230,7 +231,7 @@ https://isvapp.azurewebsites.net/selftest-vm
 
    **Чтобы получить сведения об арендаторе, сделайте следующее.**
 
-   В разделе **Azure Active Directory Overview** (Обзор Azure Active Directory) выполните поиск по запросу "Свойства" и выберите результат **Свойства**. На следующем снимке экрана вы видите пример этой страницы свойств.
+   В **Azure Active Directory обзор**найдите "Свойства" и выберите пункт " **свойства**". На следующем снимке экрана вы видите пример этой страницы свойств.
 
    - **Имя** — имя арендатора или имя каталога.
    - **Идентификатор каталога** — идентификатор арендатора или идентификатор каталога. Также раздел "Свойства" можно найти с помощью полосы прокрутки.
@@ -245,8 +246,8 @@ https://isvapp.azurewebsites.net/selftest-vm
 2. В разделе **Регистрация приложений** выберите **+ Регистрация нового приложения**.
 3. В разделе **Создать** укажите обязательную информацию для следующих полей.
 
-   - **Имя** — введите понятное имя для приложения. Например, SelfTestClient.
-   - **Тип приложения** — выберите вариант **Web App/API** (Веб-приложение или API).
+   - **Имя** — введите понятное имя для приложения. Например, "Селфтестклиент".
+   - **Тип приложения** — выбор **веб-приложения или API**
    - **URL-адрес входа** — введите "https:\//isvapp.azurewebsites.NET/SelfTest-VM"
 
 4. Нажмите кнопку **Создать**.
@@ -258,13 +259,13 @@ https://isvapp.azurewebsites.net/selftest-vm
 7. Выберите **Требуемые разрешения**, чтобы настроить разрешения для приложения.
 8. В области **Требуемые разрешения** щелкните **+ Добавить**.
 9. В области **Добавить доступ через API** выберите **Выбор API**.
-10. В разделе **Выбор API** введите "Windows Azure classic deployment model" (Классическая модель развертывания Azure), чтобы найти нужный API.
+10. В разделе **Выбор API**введите "Классическая модель развертывания Windows Azure", чтобы найти API.
 11. В результатах поиска выберите элемент **Windows Azure classic deployment model** (Классическая модель развертывания Azure) и щелкните **Выбрать**.
 
     ![Настройка поддержки нескольких арендаторов для приложения](./media/stclient-select-api.png)
 
 12. В области **Добавить доступ через API** выберите **Выбор разрешений**.
-13. Выберите **Access “Windows Azure Service Management API”** (Доступ к API управления службами Windows Azure).
+13. Выберите **доступ "Windows Azure API управления службами"** .
 
     ![Включение доступа к API для приложения](./media/stclient-enable-api-access.png)
 
@@ -279,13 +280,13 @@ https://isvapp.azurewebsites.net/selftest-vm
 19. В разделе **Параметры** выберите **Ключи**.
 20. Создание секретный ключ, выбрав текстовое поле **Описание** для ключа. Задайте значения в следующих полях:
 
-    - Введите имя ключа. Например, selftestclient.
-    - В раскрывающемся списке **Истекает** выберите вариант "через один год".
+    - Введите имя ключа. Например, "селфтестклиент"
+    - В раскрывающемся списке **срок действия** выберите значение "в течение 1 года".
     - Щелкните **Сохранить**, чтобы создать ключ.
     - В поле **Значение** скопируйте ключ.
 
       >[!Important]
-      >После выхода из формы **Ключи** вы не сможете увидеть значение этого ключа.
+      >После выхода из формы " **ключи** " вы не сможете увидеть значение ключа.
 
     ![Форма со значением ключа](./media/stclient-create-key.png)
 
@@ -293,7 +294,7 @@ https://isvapp.azurewebsites.net/selftest-vm
 
 Для создания и получения маркера через OAuth REST API вы можете использовать любую из следующих программ:
 
-- Postman
+- postman
 - cURL в Linux;
 - C#
 - PowerShell
@@ -377,7 +378,7 @@ var token = JObject.Parse(content)["access_token"];
 
 ```powershell
 $clientId = "Application Id of AD Client APP";
-$clientSecret = "Secret Key of AD Client APP “
+$clientSecret = "Secret Key of AD Client APP "
 $audience = "https://management.core.windows.net";
 $authority = "https://login.microsoftonline.com/common/oauth2/token"
 $grantType = "client_credentials";
@@ -397,8 +398,8 @@ $token.AccessToken
 Передайте маркер в API самотестирования, добавив следующий код в заголовок авторизации:
 
 ```powershell
-$redirectUri = ‘https://isvapp.azurewebsites.net/selftest-vm’
-$accesstoken = ‘place your token here’
+$redirectUri = 'https://isvapp.azurewebsites.net/selftest-vm'
+$accesstoken = 'place your token here'
 
 $headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
 $headers.Add("Authorization", "Bearer $accesstoken")

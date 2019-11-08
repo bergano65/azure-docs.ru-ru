@@ -1,7 +1,7 @@
 ---
-title: Создание наборов данных для доступа к данным с помощью azureml-DataSets
+title: Создание Машинное обучение Azure наборов данных для доступа к данным
 titleSuffix: Azure Machine Learning
-description: Узнайте, как создавать наборы данных из различных источников и регистрировать наборы данных в рабочей области.
+description: Узнайте, как создать Машинное обучение Azure наборы данных для доступа к данным для запуска экспериментов машинного обучения.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,18 +11,18 @@ author: MayMSFT
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 11/04/2019
-ms.openlocfilehash: 1379085e410ddf119ae4ed1fe45389f00eb1b2a5
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: 51102962879b43d4ef3ae8662d7c3136bc7441d9
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73716589"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73818437"
 ---
-# <a name="create-and-access-datasets-in-azure-machine-learning"></a>Создание наборов данных и доступ к ним в Машинное обучение Azure
+# <a name="create-azure-machine-learning-datasets"></a>Создание наборов данных Машинное обучение Azure
 
 [!INCLUDE [aml-applies-to-basic-enterprise-sku](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
-В этой статье вы узнаете, как создать Машинное обучение Azure наборы данных (Предварительная версия) и как получить доступ к данным из локальных и удаленных экспериментов.
+Из этой статьи вы узнаете, как создать Машинное обучение Azure наборы данных для доступа к данным в локальных и удаленных экспериментах.
 
 С помощью Машинное обучение Azure наборов данных можно:
 
@@ -43,7 +43,7 @@ ms.locfileid: "73716589"
 * [Установленный пакет SDK для машинное обучение Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py), включающий пакет azureml-DataSets.
 
 > [!NOTE]
-> Некоторые классы набора данных (Предварительная версия) имеют зависимости от пакета [azureml-](https://docs.microsoft.com/python/api/azureml-dataprep/?view=azure-ml-py) DataMarket. Для пользователей Linux эти классы поддерживаются только в следующих дистрибутивах: Red Hat Enterprise Linux, Ubuntu, Fedora и CentOS.
+> Некоторые классы наборов данных имеют зависимости от пакета [azureml-](https://docs.microsoft.com/python/api/azureml-dataprep/?view=azure-ml-py) DataMarket. Для пользователей Linux эти классы поддерживаются только в следующих дистрибутивах: Red Hat Enterprise Linux, Ubuntu, Fedora и CentOS.
 
 ## <a name="dataset-types"></a>Типы наборов данных
 

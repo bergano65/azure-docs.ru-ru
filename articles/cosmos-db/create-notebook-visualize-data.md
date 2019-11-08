@@ -1,20 +1,20 @@
 ---
-title: Создание записной книжки в Azure Cosmos DB для анализа и визуализации данных
-description: Узнайте, как использовать встроенные записные книжки Jupyter для импорта данных в Azure Cosmos DB, анализа данных и визуализации результатов.
+title: Руководство по Создание записной книжки в Azure Cosmos DB для анализа и визуализации данных
+description: Руководство по Узнайте, как использовать встроенные записные книжки Jupyter для импорта данных в Azure Cosmos DB, анализа данных и визуализации результатов.
 author: deborahc
 ms.topic: tutorial
 ms.service: cosmos-db
-ms.date: 09/25/2019
+ms.date: 11/05/2019
 ms.author: dech
 ms.reviewer: sngun
-ms.openlocfilehash: 679887ca6e9ad7713480899d1b40fddf9923c4c0
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 45dd4e8dcfd74cdb5d96b935e239b9f4b5094a7c
+ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72931504"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73720926"
 ---
-# <a name="create-a-notebook-in-azure-cosmos-db-to-analyze-and-visualize-the-data"></a>Создание записной книжки в Azure Cosmos DB для анализа и визуализации данных
+# <a name="tutorial-create-a-notebook-in-azure-cosmos-db-to-analyze-and-visualize-the-data"></a>Руководство по Создание записной книжки в Azure Cosmos DB для анализа и визуализации данных
 
 В этой статье описано, как использовать встроенные записные книжки Jupyter для импорта демонстрационных данных розничной торговли в Azure Cosmos DB. Вы узнаете, как использовать магические команды SQL и Azure Cosmos DB для выполнения запросов, анализа данных и визуализации результатов.
 

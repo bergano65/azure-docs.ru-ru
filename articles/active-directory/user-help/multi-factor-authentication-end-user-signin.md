@@ -1,7 +1,6 @@
 ---
-title: Azure MFA входа в систему с помощью двухфакторной проверки подлинности — Azure Active Directory | Документация Майкрософт
-description: На этой странице предоставлены рекомендации по использованию разных методов входа с помощью Azure MFA.
-keywords: проверка подлинности пользователя, вход в систему, вход с помощью мобильного телефона, вход с помощью рабочего телефона
+title: Вход с использованием двухфакторной проверки в Azure AD
+description: Узнайте, как войти в рабочую или учебную учетную запись с помощью различных методов двухфакторной проверки подлинности.
 services: active-directory
 author: eross-msft
 manager: daveba
@@ -15,14 +14,15 @@ ms.author: lizross
 ms.reviewer: librown
 ms.custom: end-user, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1350b2d86e18f213d99f1c27d64e371451f5f9b7
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: de080a613c69dd6f48f548c4ba89b2728e8c5e1d
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60334437"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73820428"
 ---
-# <a name="the-sign-in-experience-with-azure-multi-factor-authentication"></a>Варианты входа с помощью Многофакторной идентификации Azure
+# <a name="sign-in-to-your-work-or-school-account-using-two-factor-verification"></a>Вход в рабочую или учебную учетную запись с помощью двухфакторной проверки подлинности
+
 > [!NOTE]
 > В этой статье рассматривается стандартная процедура входа. Если у вас возникают проблемы со входом в систему см. статью [об устранении неполадок при двухфакторной проверке подлинности](multi-factor-authentication-end-user-troubleshoot.md).
 

@@ -1,18 +1,19 @@
 ---
-title: Функционирование | Azure Marketplace
+title: Начать прямо | Azure Marketplace
 description: API запуска инициирует динамический перечень процессов предложения.
 services: Azure, Marketplace, Cloud Partner Portal,
 author: v-miclar
 ms.service: marketplace
+ms.subservice: partnercenter-marketplace-publisher
 ms.topic: reference
 ms.date: 09/13/2018
 ms.author: pabutler
-ms.openlocfilehash: ac56f86bad132f3e00a4b5c2507d65c0722c628c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 30500e9dfae9411563fc727290d0569998ba3550
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64935493"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73819687"
 ---
 <a name="go-live"></a>Запуск
 =======
@@ -24,25 +25,25 @@ ms.locfileid: "64935493"
 <a name="uri-parameters"></a>Параметры универсального кода ресурса (URI)
 --------------
 
-|  **Имя**      |   **Описание**                                                           | **Тип данных** |
+|  **имя**      |   **Описание**                                                           | **Тип данных** |
 |  --------      |   ---------------                                                           | ------------- |
-| publisherid    | Идентификатор издателя для извлечения предложения, например `contoso`.       |  String       |
-| offerId        | Идентификатор извлекаемой записи предложения.                                   |  String       |
+| publisherid    | Идентификатор издателя для извлечения предложения, например `contoso`.       |  string       |
+| OfferId        | Идентификатор извлекаемой записи предложения.                                   |  string       |
 | api-version    | Последняя версия API                                                   |  Дата         |
 |  |  |  |
 
 
-<a name="header"></a>Верхний колонтитул
+<a name="header"></a>Заголовок
 ------
 
-|  **Имя**       |     **Значение**       |
+|  **имя**       |     **Значение**       |
 |  ---------      |     ----------      |
 | Content-Type    | `application/json`  |
 | Авторизация   | `Bearer YOUR_TOKEN` |
 |  |  |
 
 
-<a name="body-example"></a>Пример текста запроса
+<a name="body-example"></a>Пример текста
 ------------
 
 ### <a name="response"></a>Ответ
@@ -52,7 +53,7 @@ ms.locfileid: "64935493"
 
 ### <a name="response-header"></a>Заголовок ответа
 
-|  **Имя**             |      **Значение**                                                            |
+|  **имя**             |      **Значение**                                                            |
 |  --------             |      ----------                                                           |
 | Operation-Location    |  URL-адрес, который можно запросить для определения текущего состояния операции.            |
 |  |  |
@@ -62,7 +63,7 @@ ms.locfileid: "64935493"
 
 | **Код** |  **Описание**                                                                        |
 | -------- |  ----------------                                                                        |
-|  202     | `Accepted` — запрос был успешно принят. Ответ содержит расположение для отслеживания состояния операции. |
+|  202     | `Accepted`. Запрос был успешно принят. Ответ содержит расположение для отслеживания состояния операции. |
 |  400     | `Bad/Malformed request` — дополнительные сведения об ошибке находятся в тексте ответа. |
 |  404     |  `Not found` — указанная сущность не существует.                                       |
 |  |  |

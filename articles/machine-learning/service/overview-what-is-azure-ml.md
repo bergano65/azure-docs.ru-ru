@@ -8,12 +8,12 @@ ms.topic: overview
 author: j-martens
 ms.author: jmartens
 ms.date: 11/04/2019
-ms.openlocfilehash: f0f9a2e59e0e231c956e9f1c36bb6a54bcbaca24
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 9399353cb676ef4525e81229cf3920fd9d7e3aaf
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73476325"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73684923"
 ---
 # <a name="what-is-azure-machine-learning"></a>Что такое служба "Машинное обучение Microsoft Azure"?
 
@@ -73,7 +73,7 @@ ms.locfileid: "73476325"
 
   Дополнительные сведения см. в [статье с обзором конструктора Машинного обучение Azure](concept-designer.md). 
 
-  ![Пример конструктора Машинного обучения Azure](/media/concept-ml-pipelines/visual-design-surface.gif)
+  ![Пример конструктора Машинного обучения Azure](media/concept-ml-pipelines/designer-drag-and-drop.gif)
 
 + **Пользовательский интерфейс автоматизированного машинного обучения.**
 
@@ -117,7 +117,7 @@ ms.locfileid: "73476325"
 
 - Создайте свой первый эксперимент предпочитаемым способом:
   + [Использование записных книжек Python для обучения и развертывания моделей машинного обучения](tutorial-1st-experiment-sdk-setup.md).
-  + [Использование R Markdown для обучения и развертывания моделей машинного обучения](tutorial-1st-r-experiment.md). 
+  + [Использование R Markdown для обучения и развертывания моделей машинного обучения](tutorial-1st-r-experiment.md). 
   + [Использование автоматизированного машинного обучения для обучения и развертывания моделей](  tutorial-first-experiment-automated-ml.md). 
   + [Использование возможностей перетаскивания конструктора для обучения и развертывания](tutorial-designer-automobile-price-train-score.md). 
   + [Использование CLI машинного обучения для обучения и развертывания модели](tutorial-train-deploy-model-cli.md).

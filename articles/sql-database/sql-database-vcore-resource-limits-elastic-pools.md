@@ -1,5 +1,5 @@
 ---
-title: Ограничения ресурсов Виртуальное ядро базы данных SQL Azure — эластичные пулы | Документация Майкрософт
+title: ограничения ресурсов Виртуальное ядро — эластичные пулы
 description: На этой странице описаны некоторые общие ограничения ресурсов Виртуальное ядро для эластичных пулов в базе данных SQL Azure.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: oslake
 ms.author: moslake
 ms.reviewer: carlrab, sstein
 ms.date: 11/04/2019
-ms.openlocfilehash: 65c2bfe4d79f5b7d468999143524b96b60f0efaf
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: f356b9d248ac9c5f0bcfaaeeb37b43d958eaa528
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73496002"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73822373"
 ---
 # <a name="resource-limits-for-elastic-pools-using-the-vcore-purchasing-model"></a>Ограничения ресурсов для эластичных пулов с использованием модели приобретения Виртуальное ядро
 

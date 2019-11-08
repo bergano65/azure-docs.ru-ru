@@ -11,12 +11,12 @@ ms.author: tracych
 author: tracych
 ms.date: 11/04/2019
 ms.custom: Ignite2019
-ms.openlocfilehash: 4390fab3d59706bf692de46d17923dad4f9a8f21
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 615536fbba38279a23516352c69461c19f9972ed
+ms.sourcegitcommit: 018e3b40e212915ed7a77258ac2a8e3a660aaef8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73489624"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73796712"
 ---
 # <a name="run-batch-inference-on-large-amounts-of-data-by-using-azure-machine-learning"></a>Выполнение пакетного вывода больших объемов данных с помощью Машинного обучения Azure
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -184,7 +184,7 @@ model = Model.register(model_path="models/",
 ## <a name="write-your-inference-script"></a>Создание пользовательского скрипта вывода
 
 >[!Warning]
->Следующий пример кода приведен в качестве примера, который включен в [пример записной книжки](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines/pipeline-batch-scoring/notebooks/contrib/batch_inferencing/file-dataset-image-inference-mnist.ipynb). Вам следует создать собственный скрипт с учетом своего сценария.
+>Следующий пример кода приведен в качестве примера, который включен в [пример записной книжки](https://aka.ms/batch-inference-notebooks). Вам следует создать собственный скрипт с учетом своего сценария.
 
 Этот скрипт *должен* содержать две функции.
 - `init()`: Эта функция применяется для всех затратных или повторяющихся операций подготовки к последующему выводу. Например, в ней можно загружать модель в глобальный объект.
@@ -347,7 +347,7 @@ pipeline_run.wait_for_completion(show_output=True)
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Чтобы наблюдать весь процесс, воспользуйтесь [записной книжкой пакетного вывода](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines/). 
+Чтобы наблюдать весь процесс, воспользуйтесь [записной книжкой пакетного вывода](https://aka.ms/batch-inference-notebooks). 
 
 См. инструкции по [отладке и устранению неполадок с конвейерами](how-to-debug-pipelines.md).
 

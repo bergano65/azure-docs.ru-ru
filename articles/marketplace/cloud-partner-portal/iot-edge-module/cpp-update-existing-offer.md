@@ -1,18 +1,19 @@
 ---
-title: Обновление существующего предложения модуль Edge Интернета вещей Azure | Azure Marketplace
+title: Обновление существующего предложения модуля Azure IoT Edge | Azure Marketplace
 description: Как обновить существующее предложение модуля IoT Edge в Azure Marketplace.
 services: Azure, Marketplace, Cloud Partner Portal,
 author: dan-wesley
 ms.service: marketplace
+ms.subservice: partnercenter-marketplace-publisher
 ms.topic: article
 ms.date: 10/18/2018
 ms.author: pabutler
-ms.openlocfilehash: 1dc6832fe09a610634ad934e3b173be6cc3331e6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: cd0167e1af5bf8ef667df88237d83e9f33ed41f9
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64942153"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73813392"
 ---
 # <a name="update-an-existing-iot-edge-module-offer"></a>Обновление существующего предложения модуля IoT Edge
 
@@ -29,7 +30,7 @@ ms.locfileid: "64942153"
 
 ## <a name="unpermitted-changes-to-iot-edge-module-offer-or-sku"></a>Неразрешенные изменения в предложениях модуля IoT Edge или номерах SKU
 
-Существуют атрибуты предложение модуль Edge Интернета вещей или номер SKU, который нельзя изменить после предложение станет активным в Azure Marketplace. Вы не можете изменить следующие параметры.
+Существуют атрибуты предложения модуля IoT Edge или номера SKU, которые невозможно изменить после того, как предложение будет открыто в Azure Marketplace. Вы не можете изменить следующие параметры.
 
 -  **Идентификатор предложения** и **идентификатор издателя** предложения.
 -  Идентификаторы существующих **номеров SKU**.
@@ -42,7 +43,7 @@ ms.locfileid: "64942153"
 
 ### <a name="update-the-iot-edge-module-image-version-for-a-sku"></a>Обновление номера SKU версии образа модуля IoT Edge
 
-Довольно часто для образа модуля Edge Интернета вещей периодически обновляться с помощью исправления безопасности, дополнительные функции и т. д. В этом случае требуется обновить образ модуля IoT Edge, который указан в номере SKU, выполнив следующие действия:
+Распространенный образ модуля IoT Edge периодически обновляется с помощью исправлений системы безопасности, дополнительных функций и т. д. В этом случае требуется обновить образ модуля IoT Edge, который указан в номере SKU, выполнив следующие действия:
 
 1.  Войдите на [Портал Cloud Partner](https://cloudpartner.azure.com/).
 
@@ -66,7 +67,7 @@ ms.locfileid: "64942153"
 
 3.  На вкладке **Номера SKU** щелкните **Add new SKU** (Добавить новый номер SKU) и введите **идентификатор номера SKU** во всплывающем окне.
 
-4.  Повторно опубликуйте модуль Edge Интернета вещей, выполнив действия, описанные в [публикации модуля IoT Edge в Azure Marketplace](./cpp-publish-offer.md).
+4.  Повторно опубликуйте модуль IoT Edge, выполнив действия, описанные в статье [Публикация модуля IOT EDGE в Azure Marketplace](./cpp-publish-offer.md).
 
 5.  Щелкните **Опубликовать**, чтобы запустить рабочий процесс публикации нового номера SKU.
 
@@ -79,7 +80,7 @@ ms.locfileid: "64942153"
 
 2.  В разделе **Все предложения** найдите предложение, которое нужно обновить.
 
-3.  Перейдите на вкладку **Marketplace**. Инструкции см. в [публикации модуля IoT Edge в Azure Marketplace](./cpp-publish-offer.md) статью, чтобы внести изменения в метаданных.
+3.  Перейдите на вкладку **Marketplace** . Используйте инструкции из статьи [Публикация модуля IOT EDGE в Azure Marketplace](./cpp-publish-offer.md) для внесения изменений в метаданные.
 
 4.  Щелкните **Опубликовать**, чтобы запустить рабочий процесс публикации изменений.
 

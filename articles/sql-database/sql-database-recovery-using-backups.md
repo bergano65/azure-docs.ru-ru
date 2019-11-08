@@ -1,5 +1,5 @@
 ---
-title: Восстановление базы данных SQL Azure из резервной копии
+title: Восстановление базы данных из резервной копии
 description: Узнайте о восстановлении до точки во времени, которое позволяет выполнить откат базы данных SQL Azure до 35 дней.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab, danil
 ms.date: 09/26/2019
-ms.openlocfilehash: 799926eeb6a508ea04b879231625cf321e95d043
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: ba961547bc46b0746997ea95ddd14f1a6d1d8a23
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73687539"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73821206"
 ---
 # <a name="recover-an-azure-sql-database-by-using-automated-database-backups"></a>Восстановление базы данных SQL Azure с помощью автоматически создаваемых резервных копий базы данных
 

@@ -48,16 +48,6 @@
       href: front-door-url-rewrite.md
     - name: Перенаправление URL-адреса
       href: front-door-url-redirect.md
-    - name: WAF
-      items:
-        - name: Обзор
-          href: waf-overview.md
-        - name: Настраиваемые правила
-          href: waf-front-door-custom-rules.md
-        - name: Параметры политики
-          href: waf-front-door-policy-settings.md
-        - name: Мониторинг и ведение журнала
-          href: waf-front-door-monitor.md
 - name: Руководства
   items:
     - name: Перенаправление трафика
@@ -74,26 +64,10 @@
           href: front-door-troubleshoot-routing.md
         - name: Разрешенные центры сертификации
           href: front-door-troubleshoot-allowed-ca.md
-    - name: Настройка WAF
-      items:
-        - name: "Настройка политики WAF\_— портал"
-          href: waf-front-door-create-portal.md
-        - name: "Настройка политики WAF\_— Azure PowerShell"
-          href: waf-front-door-custom-rules-powershell.md
-        - name: Настройка защиты от ботов
-          href: waf-front-door-policy-configure-bot-protection.md
-        - name: Настройка кода отклика
-          href: waf-front-door-configure-custom-response-code.md
-        - name: Настройка ограничений IP-адресов
-          href: waf-front-door-configure-ip-restriction.md
-        - name: "Настройка ограничения скорости\_— Azure PowerShell"
-          href: waf-front-door-rate-limit-powershell.md
 - name: Часто задаваемые вопросы
   items:
     - name: Часто задаваемые вопросы о службе Front Door
       href: front-door-faq.md
-    - name: Часто задаваемые вопросы о WAF
-      href: waf-faq.md
 - name: Справочные материалы
   items:
     - name: Azure CLI

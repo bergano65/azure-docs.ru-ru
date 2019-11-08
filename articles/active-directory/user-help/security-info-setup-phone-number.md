@@ -1,5 +1,5 @@
 ---
-title: Настройка использования звонков в сведениях для защиты (предварительная версия) — Azure Active Directory | Документация Майкрософт
+title: Настройка сведений о безопасности (Предварительная версия) для телефонных звонков — Azure AD
 description: Настройка подтверждения личности с помощью телефонных звонков в сведениях для защиты.
 services: active-directory
 author: eross-msft
@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 02/13/2019
 ms.author: lizross
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b28330f8e81efbb496fb30a14e8ae10415ded27f
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: a5dc5ec06e60112e69a31d1ce4c69e698576609f
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73160747"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73803805"
 ---
 # <a name="set-up-security-info-preview-to-use-phone-calls"></a>Настройка использования звонков в сведениях для защиты (предварительная версия)
 
@@ -80,7 +80,7 @@ ms.locfileid: "73160747"
 
 2. Выберите **Да** в окне подтверждения, чтобы удалить номер **телефона**. При этом номер телефона удаляется из сведений для защиты и со страницы **Сведения для защиты**. Если **телефон** был выбран как метод по умолчанию, вместо него будет автоматически выбран другой доступный метод.
 
-## <a name="change-your-default-security-info-method"></a>Изменение метода по умолчанию в сведениях для защиты
+## <a name="change-your-default-security-info-method"></a>Изменение метода проверки сведений для защиты по умолчанию
 
 Если вам нужно, чтобы телефонные звонки использовались по умолчанию при входе в рабочую или учебную учетную запись с применением двухфакторной проверки подлинности или для сброса пароля, вы можете настроить этот метод на странице **Сведения для защиты**.
 
@@ -92,7 +92,7 @@ ms.locfileid: "73160747"
 
 2. Выберите вариант **Phone - call (Телефон — вызов) ( *_номер_телефона_* )** из раскрывающегося списка доступных методов, а затем щелкните **Подтвердить**.
 
-    ![Выбор метода входа по умолчанию](media/security-info/securityinfo-myprofile-phonecall-changeddefault.png)
+    ![Выбор метода для входа по умолчанию](media/security-info/securityinfo-myprofile-phonecall-changeddefault.png)
 
     Теперь по умолчанию будет использоваться новый метод входа в систему: **Phone - call (Телефон — вызов) ( *_номер_телефона_* )** .
 

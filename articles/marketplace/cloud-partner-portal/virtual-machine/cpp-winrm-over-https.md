@@ -1,18 +1,19 @@
 ---
-title: Удаленное управление Windows по протоколу HTTPS для Azure | Azure Marketplace
-description: В этой статье описывается настройка Виртуальной машине на базе Windows, размещенных в Azure, таким образом, чтобы им можно управлять удаленно с помощью PowerShell.
+title: служба удаленного управления Windows по протоколу HTTPS для Azure | Azure Marketplace
+description: В этой статье объясняется, как настроить размещенную в Azure виртуальную машину на основе Windows, чтобы ее можно было удаленно управлять с помощью PowerShell.
 services: Azure, Marketplace, Cloud Partner Portal,
 author: v-miclar
 ms.service: marketplace
+ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/26/2018
 ms.author: pabutler
-ms.openlocfilehash: fb661a2705d437d1f40ceebcad7e759c2a78540f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6e159bd9b57b26c99afd590d6a9f2153dba2a205
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64938228"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73808420"
 ---
 # <a name="windows-remote-management-over-https"></a>Служба удаленного управления Windows по протоколу HTTPS
 
@@ -22,7 +23,7 @@ ms.locfileid: "64938228"
 
 - С помощью [портала Azure](https://portal.azure.com/), обычно на основе утвержденного базового образа в соответствии с инструкциями в статье [Создание виртуального жесткого диска, совместимого с Azure](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/virtual-machine/cpp-create-vhd).
 - [С помощью шаблонов Azure Resource Manager](https://docs.microsoft.com/azure/virtual-machines/windows/ps-template)
-- С помощью командной оболочки Azure PowerShell или Azure CLI.  Примеры см. в документах [Краткое руководство. Создание виртуальной машины Windows в Azure с помощью PowerShell](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-powershell) и [Краткое руководство по созданию виртуальной машины Linux с помощью Azure CLI](https://docs.microsoft.com/azure/virtual-machines/linux/quick-create-cli).
+- С помощью командной оболочки Azure PowerShell или Azure CLI.  Примеры см. [в разделе Краткое руководство. Создание виртуальной машины Windows в Azure с помощью PowerShell](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-powershell) и [Краткое руководство. Создание виртуальной машины Linux с Azure CLI](https://docs.microsoft.com/azure/virtual-machines/linux/quick-create-cli).
 
 Эта конечная точка WinRM также требуется для запуска набора инструментов сертификации при подключении виртуальной машины как описано в статье [Сертификация образа виртуальной машины](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/virtual-machine/cpp-certify-vm).
 

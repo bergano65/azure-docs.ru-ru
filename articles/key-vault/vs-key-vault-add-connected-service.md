@@ -9,12 +9,12 @@ ms.custom: vs-azure
 ms.topic: conceptual
 ms.date: 08/07/2019
 ms.author: ghogen
-ms.openlocfilehash: 27c21171c2a53cb739215dcae070b94c8610a490
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 9331f13bd85d9df0d47f8fa9d0964974764691f7
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68880933"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73815106"
 ---
 # <a name="add-key-vault-to-your-web-application-by-using-visual-studio-connected-services"></a>Добавление хранилища ключей в веб-приложение с помощью функции "Подключенные службы" в Visual Studio
 
@@ -33,7 +33,7 @@ ms.locfileid: "68880933"
 
 Прежде чем начать, убедитесь, что вы вошли в Visual Studio. Войдите, используя ту же учетную запись, которая используется для подписки Azure. Затем откройте веб-проект ASP.NET 4.7.1 или более поздней версии или ASP.NET Core 2,0 и выполните следующие действия.
 
-1. В **обозревателе решений** выберите **Добавить** > **Подключенная служба**.
+1. В **Обозреватель решений**щелкните правой кнопкой мыши проект, для которого требуется добавить поддержку хранилища ключей, и выберите пункт **Добавить** > **подключенную службу**.
    Откроется страница "Подключенная служба" с перечнем служб, которые можно добавить в проект.
 1. В меню доступных служб выберите **Безопасно храните секреты в Azure Key Vault**.
 
@@ -67,7 +67,7 @@ ms.locfileid: "68880933"
 
 1. В обозреватель решений щелкните правой кнопкой мыши проект и выберите **Управление пакетами NuGet**. На вкладке **Обзор** найдите и установите следующие два пакета NuGet: [Microsoft. Azure. Services. AppAuthentication](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication) и [Microsoft. Azure. KeyVault](https://www.nuget.org/packages/Microsoft.Azure.KeyVault).
 
-1. Перейдите на `Program.cs` вкладку и замените класс Program следующим кодом:
+1. Перейдите на вкладку `Program.cs` и замените класс Program следующим кодом:
 
    ```csharp
     public class Program
@@ -99,8 +99,8 @@ ms.locfileid: "68880933"
     }
    ```
 
-1. Затем откройте `About.cshtml.cs` файл и напишите следующий код:
-   1. Включите ссылку на `Microsoft.Extensions.Configuration` этот оператор using:
+1. Затем откройте файл `About.cshtml.cs` и напишите следующий код:
+   1. Включите ссылку на `Microsoft.Extensions.Configuration` с помощью этой инструкции using:
 
        ```csharp
        using Microsoft.Extensions.Configuration
@@ -115,7 +115,7 @@ ms.locfileid: "68880933"
        }
        ```
 
-   1. Обновите `OnGet` метод. Обновите значение заполнителя, показанное здесь, на имя секрета, созданного в приведенных выше командах.
+   1. Обновите метод `OnGet`. Обновите значение заполнителя, показанное здесь, на имя секрета, созданного в приведенных выше командах.
 
        ```csharp
        public void OnGet()
@@ -143,17 +143,17 @@ ms.locfileid: "68880933"
 
 Влияет на ссылки .NET на файл проекта и на ссылки на пакет NuGet.
 
-| Тип | Ссылка |
+| Тип | Справочные материалы |
 | --- | --- |
 | NuGet | Microsoft.AspNetCore.AzureKeyVault.HostingStartup |
 
 ### <a name="added-files-for-aspnet-core"></a>Добавлены файлы для ASP.NET Core
 
-- `ConnectedService.json`Добавлены сведения о поставщике подключенной службы, версии и ссылке на документацию.
+- Добавлен `ConnectedService.json`, в котором записываются сведения о поставщике подключенной службы, версии и ссылка на документацию.
 
 ### <a name="project-file-changes-for-aspnet-core"></a>Изменения в файле проекта для ASP.NET Core
 
-- Добавлены подключенные службы ItemGroup и `ConnectedServices.json` File.
+- Добавлены Подключенные службы ItemGroup и `ConnectedServices.json` файл.
 
 ### <a name="launchsettingsjson-changes-for-aspnet-core"></a>изменения launchsettings. JSON для ASP.NET Core
 
@@ -177,9 +177,9 @@ ms.locfileid: "68880933"
 
 ### <a name="added-references-for-aspnet-framework"></a>Добавлены ссылки для ASP.NET Framework
 
-Затрагивает ссылки на файл проекта .NET и `packages.config` (ссылки NuGet).
+Влияет на ссылки и `packages.config` в файле проекта .NET (ссылки NuGet).
 
-| Type | Ссылка |
+| Тип | Справочные материалы |
 | --- | --- |
 | .NET; NuGet | Microsoft.Azure.KeyVault |
 | .NET; NuGet | Microsoft.Azure.KeyVault.WebKey |
@@ -188,7 +188,7 @@ ms.locfileid: "68880933"
 
 ### <a name="added-files-for-aspnet-framework"></a>Добавлены файлы для ASP.NET Framework
 
-- `ConnectedService.json`Добавлены сведения о поставщике подключенной службы, версии и ссылке на документацию.
+- `ConnectedService.json` добавлен, в котором записываются сведения о поставщике подключенной службы, версии и ссылке на документацию.
 
 ### <a name="project-file-changes-for-aspnet-framework"></a>Изменения в файле проекта для ASP.NET Framework
 
@@ -223,6 +223,6 @@ ms.locfileid: "68880933"
 - Создана группа ресурсов или использована существующая.
 - В указанной группе ресурсов создано хранилище ключей.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Key Vault разработке см. в разделе [руководств разработчика Key Vault](key-vault-developers-guide.md).

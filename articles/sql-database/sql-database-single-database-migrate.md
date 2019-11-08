@@ -1,5 +1,5 @@
 ---
-title: SQL Server миграция базы данных в одну базу данных или в составе пула в базе данных SQL Azure
+title: SQL Server миграции базы данных в одну базу данных или в составе пула
 description: Сведения о том, как выполнить миграцию базы данных SQL Server в отдельную базу данных или эластичный пул в Базе данных SQL Azure.
 keywords: миграция базы данных, миграция базы данных SQL Server, средства миграции базы данных, миграция базы данных, миграция базы данных SQL
 services: sql-database
@@ -12,12 +12,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: carlrab
 ms.date: 02/11/2019
-ms.openlocfilehash: 67030d14670ccc51c89a04863f8b39ab6a9bb183
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: df1ef21da43bc74809bd9fd71b5dde3906cdb343
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73687181"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73820973"
 ---
 # <a name="sql-server-database-migration-to-azure-sql-database"></a>Перенос базы данных SQL Server в Базу данных SQL Azure
 

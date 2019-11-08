@@ -1,5 +1,5 @@
 ---
-title: Настройка проверки подлинности Azure Active Directory — SQL
+title: Настройка проверки подлинности Azure Active Directory
 description: Узнайте, как подключиться к базе данных SQL, управляемому экземпляру и хранилищу данных SQL с помощью Azure Active Directory проверки подлинности после настройки Azure AD.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto, carlrab
 ms.date: 11/06/2019
-ms.openlocfilehash: d23fcb781f5eddd71d5ddce9344d988d2e323611
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 48334d8ce266ddcc92e4d2b27634db3d8c9f1bc9
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73691386"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73816796"
 ---
 # <a name="configure-and-manage-azure-active-directory-authentication-with-sql"></a>Настройка и администрирование аутентификации Azure Active Directory с помощью SQL
 
@@ -161,7 +161,7 @@ ms.locfileid: "73691386"
 | Администратор входа Azure AD для MI во время общедоступной предварительной версии | Функция общедоступного администратора Azure AD для MI |
 | --- | ---|
 | Ведет себя аналогично тому, как администратор Azure AD для базы данных SQL, который обеспечивает проверку подлинности Azure AD, но администратор Azure AD не может создавать имена входа Azure AD или SQL в базе данных master для MI. | Администратор Azure AD имеет разрешение sysadmin и может создавать имена входа AAD и SQL в базе данных master для MI. |
-| Отсутствует в представлении sys. server_principals | Содержится в представлении sys. server_principals |
+| Отсутствует в представлении sys. server_principals | Имеется в представлении sys. server_principals |
 | Позволяет настроить отдельные гостевые пользователи Azure AD в качестве администратора Azure AD для MI. Дополнительные сведения см. [в разделе добавление Azure Active Directory пользователей службы совместной работы B2B в портал Azure](../active-directory/b2b/add-users-administrator.md). | Требуется создание группы Azure AD с гостевыми пользователями в качестве участников для настройки этой группы в качестве администратора Azure AD для MI. Дополнительные сведения см. [в статье поддержка Azure AD для](sql-database-ssms-mfa-authentication.md#azure-ad-business-to-business-support)бизнеса. |
 
 Рекомендуется выполнить сброс администратора Azure AD с помощью портал Azure "удалить администратора" и "настроить администратора" для того же пользователя или группы Azure AD, как и для существующих администраторов Azure AD для MI, созданных до общедоступной версии.

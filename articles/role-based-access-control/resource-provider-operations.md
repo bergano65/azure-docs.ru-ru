@@ -13,12 +13,12 @@ ms.workload: identity
 ms.date: 09/25/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 6360c7ea5bfdfb2d348cc843288655ed904e6c74
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: ca9b0289fbc8dd01427de38e0e7b30eec266bb12
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73580789"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73818594"
 ---
 # <a name="azure-resource-manager-resource-provider-operations"></a>Операции поставщиков ресурсов Azure Resource Manager
 
@@ -4778,8 +4778,8 @@ ms.locfileid: "73580789"
 > | Действие | Microsoft.Search/searchServices/delete | Удаляет службу поиска. |
 > | Действие | Microsoft.Search/searchServices/deleteQueryKey/delete | Удаляет ключ запроса. |
 > | Действие | Microsoft.Search/searchServices/listAdminKeys/action | Считывает ключи администратора. |
-> | Действие | Microsoft. Search/Сеарчсервицес/Листкуерикэйс/действие | Возвращает список ключей API запроса для данной службы поиска Azure. |
-> | Действие | Microsoft.Search/searchServices/listQueryKeys/read | Возвращает список ключей API запроса для данной службы поиска Azure. |
+> | Действие | Microsoft. Search/Сеарчсервицес/Листкуерикэйс/действие | Возвращает список ключей API запроса для заданной службы Когнитивный поиск Azure. |
+> | Действие | Microsoft.Search/searchServices/listQueryKeys/read | Возвращает список ключей API запроса для заданной службы Когнитивный поиск Azure. |
 > | Действие | Microsoft.Search/searchServices/read | Считывает службу поиска. |
 > | Действие | Microsoft.Search/searchServices/regenerateAdminKey/action | Повторно создает ключ администратора. |
 > | Действие | Microsoft.Search/searchServices/start/action | Запускает службу поиска. |

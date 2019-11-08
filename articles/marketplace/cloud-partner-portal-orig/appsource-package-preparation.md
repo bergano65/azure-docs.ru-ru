@@ -5,15 +5,16 @@ services: Azure, Marketplace, Cloud Partner Portal,
 author: pbutlerm
 manager: Ricardo.Villalobos
 ms.service: marketplace
+ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: pabutler
-ms.openlocfilehash: ff822e87bfec5daa161172c0d47975eb06cc2808
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2c6b78e62afb43562910c872d31e2c9f564040da
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64935649"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73806095"
 ---
 # <a name="appsource-package-preparation"></a>Подготовка пакета AppSource
 
@@ -27,14 +28,14 @@ ms.locfileid: "64935649"
 
 Выполните приведенные ниже шаги, чтобы создать пакет AppSource.
 
-## <a name="a-create-a-package-for-the-package-deployer"></a>a. Создание пакета для средства Package Deployer
+## <a name="a-create-a-package-for-the-package-deployer"></a>а. Создание пакета для средства Package Deployer
 
 Пакет для средства Package Deployer является частью пакета AppSource.
 
 Чтобы создать пакет для средства Package Deployer, выполните инструкции, перейдя по следующей ссылке: [https://msdn.microsoft.com/library/dn688182.aspx](https://msdn.microsoft.com/library/dn688182.aspx). По завершении создания ваш пакет будет состоять из следующих ресурсов:
 
-1. Папка пакета, которая содержит все решения, данные конфигурации, неструктурированные файлы и содержимое для вашего пакета. _Примечание. В следующем примере предполагается, что пакет называется «PkgFolder»_
-2. Библиотека DLL: Сборка содержит пользовательский код для пакета. _Примечание. В следующем примере предполагается, что этот файл называется «MicrosoftSample.dll.»_
+1. Папка пакета, которая содержит все решения, данные конфигурации, неструктурированные файлы и содержимое для вашего пакета. _Примечание. В следующем примере папка пакета называется PkgFolder_.
+2. Библиотека DLL. Сборка содержит пользовательский код для вашего пакета. _Примечание. В следующем примере этот файл называется MicrosoftSample.dll._
 
 Теперь вам нужно создать файл с именем **Content_Types.xml**. Этот файл будет содержать все расширения ресурсов, которые являются частью вашего пакета. Ниже приведен пример кода для файла.
 
@@ -73,14 +74,14 @@ ms.locfileid: "64935649"
 
 ![CRMScreenShot4](media/CRMScreenShot4.png)
 
-## <a name="b-create-an-appsource-package"></a>2\. Создание пакета AppSource
+## <a name="b-create-an-appsource-package"></a>b. Создание пакета AppSource
 
 Для пакета AppSource требуется несколько дополнительных файлов.
 
 1. JPG (разрешение 32 x 32).
 2. HTML (файл форматирования HTML).
 3. **Content_Types.xml** (упомянутый выше).
-4. Xml
+4. xml
 
 Ниже приведен пример кода для файла input.xml. Определения см. в приведенной ниже таблице.
 
@@ -111,13 +112,13 @@ ms.locfileid: "64935649"
 |SolutionAnchorName |Имя ZIP-файла решения в Package Deployer, который используется для отображаемого имени и описания ресурсов решения.|
 | StartDate| Это день, когда пакет решения станет доступен. Формат — ММ/ДД/ГГГГ.|
 |EndDate|Это день, когда пакет решений станет недоступным. Формат — ММ/ДД/ГГГГ. |
-|SupportedCountries |Это разделенный запятыми список стран и регионов, которые будут доступны этого пакета. За списком всех текущих кодов стран обратитесь к веб-службам. В то время написания этой статьи список был: AE, AL, AM, AO, АРГЕНТИНА, AT, AU, ШТАТ АРИЗОНА, BA, BB, BD, БЫТЬ, BG, BH, BM, BN, BO, BR ПО ЦС, CH, CI, CL, CM, ШТАТ КОЛОРАДО, CR, CV, CW, CY, CZ, DE, DK,, DZ, EC, EE, НАПРИМЕР, ES, FI, FR, ГБ, GE, GH, GR, GT, HK , HN, HR, ВЕНГРИЯ, КОД, IE, IL, IN, IQ, ЯВЛЯЕТСЯ, ОН, JM, ДЖО, JP, KE, КГ, KN, КОРЕЯ, КВТ, KY, KZ, БАЛАНСИРОВКИ НАГРУЗКИ, LK, LT, LU, LV, LY, ШТАТ МАССАЧУСЕТС, MC, MD, МНЕ, MK, MN, MO, MT, ЦЕНТРА ОБНОВЛЕНИЯ МАЙКРОСОФТ, MX, MY, NG, NI, NL, НЕТ, NZ, OM, PA, PE, PH , PK, PL, ЗАПРОС НА ВЫТЯГИВАНИЕ, PS, PT, PY, КОНТРОЛЯ КАЧЕСТВА, RO, RS, RU, RW, SA, SE, SG, SI, SK, SN, SV, TH, TM, TN, TR, TT, TW, UA, США, UY, UZ, VE, VI, VN, ZA, ZW |
+|SupportedCountries |Это разделенный запятыми список стран или регионов, которые должны видеть этот пакет. За списком всех текущих кодов стран обратитесь к веб-службам. В настоящее время в списке представлены следующие коды: AE,AL,AM,AO,AR,AT,AU,AZ,BA,BB,BD,BE,BG,BH,BM,BN,BO,BR,BY,CA,CH,CI,CL,CM,CO,CR,CV,CW,CY,CZ,DE,DK,DO,DZ,EC,EE,EG,ES,FI,FR,GB,GE,GH,GR,GT,HK,HN,HR,HU,ID,IE,IL,IN,IQ,IS,IT,JM,JO,JP,KE,KG,KN,KR,KW,KY,KZ,LB,LK,LT,LU,LV,LY,MA,MC,MD,ME,MK,MN,MO,MT,MU,MX,MY,NG,NI,NL,NO,NZ,OM,PA,PE,PH,PK,PL,PR,PS,PT,PY,QA,RO,RS,RU,RW,SA,SE,SG,SI,SK,SN,SV,TH,TM,TN,TR,TT,TW,UA,US,UY,UZ,VE,VI,VN,ZA,ZW. |
 |LearnMoreLink | URL-адрес страницы с дополнительными сведениями для этого пакета. |
 |Locales|Один экземпляр этого узла для каждого языка пользовательского интерфейса, который должен поддерживаться в предпочтительном пользовательском интерфейсе решения. Этот узел содержит дочерние элементы, которые описывают языковой стандарт, логотип и термины каждого языка.|
-|Языковые стандарты: PackageLocale.Code|Код языка для этого узла. Пример: Английский (США) — 1033|
-|Языковые стандарты: PackageLocale.IsDefault|Указывает, что это язык по умолчанию. Этот язык используется в качестве резервного языка, если выбранный клиентом язык пользовательского интерфейса недоступен.|
-|Языковые стандарты: Логотип|Это логотип, используемый для данного пакета. Размер значка — 32 x 32. Разрешены следующие форматы: PNG и JPG.|
-|Языковые стандарты: условия: PackageTerm.File|Это имя файла документа HTML, в котором содержатся условия лицензии.|
+|Locales: PackageLocale.Code|Код языка для этого узла. Например, английский язык (US) — 1033.|
+|Locales: PackageLocale.IsDefault|Указывает, что это язык по умолчанию. Этот язык используется в качестве резервного языка, если выбранный клиентом язык пользовательского интерфейса недоступен.|
+|Locales: Logo|Это логотип, используемый для данного пакета. Размер значка — 32 x 32. Разрешены следующие форматы: PNG и JPG.|
+|Locales:Terms: PackageTerm.File|Это имя файла документа HTML, в котором содержатся условия лицензии.|
 
 Ниже приведен пример отображения логотипа:
 
@@ -127,7 +128,7 @@ ms.locfileid: "64935649"
 
 1. ZIP-файл (созданный ранее).
 2. Файл **Content_Types.xml**.
-3. Xml
+3. xml
 4. png
 5. html
 

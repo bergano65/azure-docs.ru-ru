@@ -1,18 +1,19 @@
 ---
-title: Новое меню предложения для Azure Marketplace
-description: Общие сведения о New предлагают меню в облачном портале для партнеров для Azure Marketplace.
+title: Новое меню предложений для Azure Marketplace
+description: Обзор меню "новое предложение" в Портал Cloud Partner для Azure Marketplace.
 services: Azure, Marketplace, Cloud Partner Portal,
 author: v-miclar
 ms.service: marketplace
+ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/12/2018
 ms.author: pabutler
-ms.openlocfilehash: 8ec1a6a6ec77838ec75666d219d90739bf74517b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c96341d462d541b1c08ce2851acf3a6a4c0bd804
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64943270"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73821501"
 ---
 # <a name="new-offer-menu"></a>Меню "Новое предложение"
 
