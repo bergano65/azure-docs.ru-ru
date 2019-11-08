@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/04/2019
 ms.author: memildin
-ms.openlocfilehash: d3ea0adb4adf88e557ca360799836555cb90078e
-ms.sourcegitcommit: 3f8017692169bd75483eefa96c225d45cd497f06
+ms.openlocfilehash: 709ac3a9f5e7cf0bd13a6e387f0b80caf2608fe0
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73520945"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73748465"
 ---
 # <a name="alert-validation-eicar-test-file-in-azure-security-center"></a>Проверка предупреждений (файл теста EICAR) в центре безопасности Azure
 Этот документ содержит информацию о том, как убедиться, что ваша система правильно настроена для оповещений центра безопасности Azure.
@@ -33,7 +33,7 @@ ms.locfileid: "73520945"
 * [Linux](#validate-linux)
 * [Kubernetes](#validate-kubernetes)
 
-## Проверка оповещений на виртуальной машине Windows<a name="validate-windows"></a>
+## Проверка оповещений на виртуальных машинах Windows<a name="validate-windows"></a>
 
 После установки агента Центра безопасности на компьютере выполните следующие действия на компьютере, на котором вы хотите использовать для этого предупреждение:
 
@@ -46,7 +46,7 @@ ms.locfileid: "73520945"
 >
 >```reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\policies\system\Audit" /f /v "ProcessCreationIncludeCmdLine_Enabled"```
 
-## Проверка оповещений на виртуальной машине Linux<a name="validate-linux"></a>
+## Проверка оповещений на виртуальных машинах Linux<a name="validate-linux"></a>
 
 После установки агента Центра безопасности на компьютере выполните следующие действия на компьютере, на котором вы хотите использовать для этого предупреждение:
 1. Скопируйте исполняемый файл в удобное место и переименуйте его в **./asc_alerttest_662jfi039n**, например:

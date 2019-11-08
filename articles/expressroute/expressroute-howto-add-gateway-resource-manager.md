@@ -1,5 +1,5 @@
 ---
-title: 'Добавление шлюза виртуальной сети для ExpressRoute с помощью PowerShell: в Azure | Документация Майкрософт'
+title: Добавление шлюза виртуальной сети в виртуальную сеть для канала ExpressRoute с помощью PowerShell в Azure | Документация Майкрософт
 description: В этой статье объясняется, как добавлять шлюз виртуальной сети в созданную виртуальную сеть Resource Manager для ExpressRoute.
 services: expressroute
 author: charwen
@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 02/21/2019
 ms.author: charwen
 ms.custom: seodec18
-ms.openlocfilehash: 6ab701adcc2122270c607604f222ac5edbceeb37
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: bbb091addd078a08a075d2754256ed016d8dd086
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66730502"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73748343"
 ---
 # <a name="configure-a-virtual-network-gateway-for-expressroute-using-powershell"></a>Настройка шлюза виртуальной сети для ExpressRoute с помощью PowerShell
 > [!div class="op_single_selector"]
@@ -24,17 +24,17 @@ ms.locfileid: "66730502"
 > 
 > 
 
-В этой статье объясняется, как добавить, изменить размер и удалить шлюз виртуальной сети для существующей виртуальной сети. Действия по настройке применяются к виртуальным сетям, созданных с помощью модели развертывания Resource Manager для настройки ExpressRoute. Дополнительные сведения см. в статье [Сведения о шлюзах виртуальных сетей ExpressRoute](expressroute-about-virtual-network-gateways.md).
+В этой статье объясняется, как добавить, изменить размер и удалить шлюз виртуальной сети для существующей виртуальной сети. Действия для этой конфигурации применяются к виртуальных сетей, которые были созданы с помощью модели развертывания диспетчер ресурсов для конфигурации ExpressRoute. Дополнительные сведения см. в статье [Сведения о шлюзах виртуальных сетей ExpressRoute](expressroute-about-virtual-network-gateways.md).
 
 ## <a name="before-beginning"></a>Подготовка
 
 ### <a name="working-with-powershell"></a>Работа с PowerShell
 
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+[!INCLUDE [updated-for-az](../../includes/hybrid-az-ps.md)]
 
-[!INCLUDE [working with cloud shell](../../includes/expressroute-cloud-shell-powershell-about.md)]
+[!INCLUDE [working with cloud shell](../../includes/expressroute-cloudshell-powershell-about.md)]
 
-### <a name="configuration-reference-list"></a>Справочный список для настройки
+### <a name="configuration-reference-list"></a>Список ссылок конфигурации
 
 [!INCLUDE [expressroute-gateway-rm-ps](../../includes/expressroute-gateway-rm-ps-include.md)]
 

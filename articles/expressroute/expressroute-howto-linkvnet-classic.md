@@ -1,5 +1,5 @@
 ---
-title: 'Связывание виртуальной сети с каналом ExpressRoute — PowerShell: классическое: Azure | Документация Майкрософт'
+title: Связывание виртуальной сети с каналом ExpressRoute с помощью PowerShell и классического портала Azure | Документация Майкрософт
 description: В этом документе содержатся общие сведения о связывании виртуальных сетей с каналами ExpressRoute с помощью классической модели развертывания и PowerShell.
 services: expressroute
 documentationcenter: na
@@ -8,12 +8,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 07/27/2018
 ms.author: cherylmc
-ms.openlocfilehash: 21676ff329613f792d6570713f044bb7440e58d4
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 9365e36cb2beff21e795adecaef5fa41e0d7583c
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60370634"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73748254"
 ---
 # <a name="connect-a-virtual-network-to-an-expressroute-circuit-using-powershell-classic"></a>Подключение виртуальной сети к каналу ExpressRoute с помощью PowerShell (классическая модель)
 > [!div class="op_single_selector"]
@@ -35,8 +35,6 @@ ms.locfileid: "60370634"
 [!INCLUDE [vpn-gateway-classic-rm](../../includes/vpn-gateway-classic-rm-include.md)]
 
 
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
-
 ## <a name="configuration-prerequisites"></a>Предварительные требования для настройки
 
 * Прежде чем приступить к настройке, изучите [предварительные требования](expressroute-prerequisites.md), [требования к маршрутизации](expressroute-routing.md) и [рабочие процессы](expressroute-workflows.md).
@@ -48,14 +46,14 @@ ms.locfileid: "60370634"
 
 ### <a name="download-the-latest-powershell-cmdlets"></a>Скачивание последних версий командлетов PowerShell
 
-Установите последние версии модулей PowerShell для управления службами Azure и модуль ExpressRoute. При использовании следующего примера обратите внимание, что номер версии (в нашем случае — 5.1.1) будет меняться по мере выпуска новых версий командлетов.
+Установите последние версии модулей PowerShell управления службами Azure (SM) и модуля ExpressRoute. При использовании следующего примера обратите внимание, что номер версии (в нашем случае — 5.1.1) будет меняться по мере выпуска новых версий командлетов.
 
 ```powershell
 Import-Module 'C:\Program Files\WindowsPowerShell\Modules\Azure\5.1.1\Azure\Azure.psd1'
 Import-Module 'C:\Program Files\WindowsPowerShell\Modules\Azure\5.1.1\ExpressRoute\ExpressRoute.psd1'
 ```
 
-Пошаговые инструкции настройки компьютера для использования модулей Azure PowerShell см. в статье [Общие сведения об Azure PowerShell](/powershell/azure/overview).
+См. пошаговые инструкции по [настройке компьютера для использования командлетов Azure PowerShell](/powershell/azure/overview).
 
 ### <a name="sign-in"></a>Вход
 
@@ -102,7 +100,7 @@ Remove-AzureDedicatedCircuitLink -ServiceKey "*****************************" -VN
 ## <a name="connect-a-virtual-network-in-a-different-subscription-to-a-circuit"></a>Подключение к каналу виртуальной сети в другой подписке
 Канал ExpressRoute может совместно использоваться несколькими подписками. На рисунке ниже схематично показан способ совместного использования каналов ExpressRoute несколькими подписками.
 
-Каждое маленькое облако внутри большого облака представляет подписки, принадлежащие различным подразделениям одной организации. Любое подразделение в организации может использовать свою собственную подписку для развертывания своих служб. Кроме того, подразделения могут совместно использовать один выделенный канал ExpressRoute для подключения к корпоративной сети. Владельцем канала ExpressRoute может выступать один отдел (в этом примере — отдел ИТ). Другие подписки в организации могут использовать канал ExpressRoute.
+Каждое маленькое облако внутри большого облака представляет подписки, принадлежащие различным подразделениям одной организации. Любое подразделение в организации может использовать свою собственную подписку для развертывания своих служб. Кроме того, подразделения могут совместно использовать один выделенный канал ExpressRoute для подключения к корпоративной сети. Владельцем канала ExpressRoute может выступать одно подразделение (в данном примере — ИТ-подразделение). Другие подписки в организации могут использовать канал ExpressRoute.
 
 > [!NOTE]
 > Плата за подключение выделенного канала ExpressRoute и использование полосы пропускания будет взиматься с владельца выделенного канала. Полоса пропускания распределяется между всеми виртуальными сетями.

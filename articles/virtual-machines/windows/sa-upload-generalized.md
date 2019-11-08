@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 05/18/2017
 ms.author: cynthn
 ROBOTS: NOINDEX
-ms.openlocfilehash: ac1572a75a3310afb9d0e0a34c6751ed12d839f9
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 24ed7b75dfa8cb09c530a3f4a896aa9ff9aa92b5
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70102438"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73749172"
 ---
 # <a name="upload-a-generalized-vhd-to-azure-to-create-a-new-vm"></a>Отправка универсального виртуального жесткого диска в Azure для создания новой виртуальной машины
 
@@ -30,7 +30,7 @@ ms.locfileid: "70102438"
 
 В этой статье описывается использование учетных записей хранения, однако мы рекомендуем клиентам использовать вместо них управляемые диски. Полные пошаговые инструкции по подготовке, передаче и созданию виртуальной машины с помощью управляемых дисков приведены в разделе [Создание виртуальной машины на основе универсального диска VHD, переданного в Azure, с использованием управляемых дисков](upload-generalized-managed.md).
 
-[!INCLUDE [updated-for-az.md](../../../includes/updated-for-az.md)]
+ 
 
 ## <a name="prepare-the-vm"></a>Подготовка виртуальной машины
 
@@ -40,7 +40,7 @@ ms.locfileid: "70102438"
   * Подготовка виртуальной машины к использованию с помощью Sysprep
 
 ### <a name="generalize-a-windows-virtual-machine-using-sysprep"></a>Обобщение виртуальной машины Windows с помощью Sysprep
-В этом разделе содержатся сведения о том, как обобщить виртуальную машину Windows для ее дальнейшего использования в качестве образа. Помимо прочих действий Sysprep удаляет все сведения о вашей учетной записи и подготавливает машину к использованию в качестве образа. Дополнительные сведения о Sysprep см. в статье [How to Use Sysprep: An Introduction (Использование средства Sysprep: введение). статье](https://technet.microsoft.com/library/bb457073.aspx).
+В этом разделе содержатся сведения о том, как обобщить виртуальную машину Windows для ее дальнейшего использования в качестве образа. Помимо прочих действий Sysprep удаляет все сведения о вашей учетной записи и подготавливает машину к использованию в качестве образа. Сведения о Sysprep см. в статье [Использование программы Sysprep: введение](https://technet.microsoft.com/library/bb457073.aspx).
 
 Убедитесь, что Sysprep поддерживает роли сервера, запущенные на компьютере. Дополнительные сведения см. в статье [Sysprep Support for Server Roles](https://msdn.microsoft.com/windows/hardware/commercialize/manufacture/desktop/sysprep-support-for-server-roles) (Поддержка серверных ролей в Sysprep).
 
@@ -55,7 +55,7 @@ ms.locfileid: "70102438"
 4. В разделе **Параметры завершения работы** выберите **Завершение работы**.
 5. Нажмите кнопку **ОК**.
    
-    ![Запуск Sysprep](./media/upload-generalized-managed/sysprepgeneral.png)
+    ![Запустите Sysprep](./media/upload-generalized-managed/sysprepgeneral.png)
 6. После выполнения всех необходимых действий Sysprep завершает работу виртуальной машины. 
 
 > [!IMPORTANT]
@@ -112,7 +112,7 @@ Get-AzStorageAccount
     New-AzResourceGroup -Name myResourceGroup -Location "West US"
     ```
 
-2. С помощью командлета [New-AzStorageAccount](https://docs.microsoft.com/powershell/module/az.storage/new-azstorageaccount) создайте в этой группе ресурсов учетную запись хранения с именем **mystorageaccount**:
+2. С помощью командлета **New-AzStorageAccount** создайте в этой группе ресурсов учетную запись хранения с именем [mystorageaccount](https://docs.microsoft.com/powershell/module/az.storage/new-azstorageaccount):
    
     ```powershell
     New-AzStorageAccount -ResourceGroupName myResourceGroup -Name mystorageaccount -Location "West US" `
@@ -224,7 +224,7 @@ $vnet = Get-AzVirtualNetwork -ResourceGroupName $rgName -Name $vnetName
 ```
 
 ### <a name="create-the-vm"></a>Создание виртуальной машины
-Следующий сценарий PowerShell предназначен для настройки конфигураций виртуальных машин и использования переданного образа виртуальной машины в качестве источника новой установки.
+Следующий сценарий PowerShell предназначен для настройки конфигураций виртуальных машин и использования отправленного образа виртуальной машины в качестве источника новой установки.
 
 
 
@@ -289,7 +289,7 @@ $vnet = Get-AzVirtualNetwork -ResourceGroupName $rgName -Name $vnetName
     $vmList.Name
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Сведения об управлении созданной виртуальной машиной с помощью Azure PowerShell см. в статье [Управление виртуальными машинами Azure с помощью Azure Resource Manager и PowerShell](tutorial-manage-vm.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 
 

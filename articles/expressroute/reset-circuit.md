@@ -1,5 +1,5 @@
 ---
-title: 'Сведения о сбросе канала ExpressRoute после сбоя с помощью PowerShell: Azure | Документация Майкрософт'
+title: 'Сброс канала с ошибками — ExpressRoute: PowerShell: Azure | Документация Майкрософт'
 description: Эта статья поможет вам сбросить канал ExpressRoute, который находится в неисправном состоянии.
 services: expressroute
 author: anzaman
@@ -8,18 +8,18 @@ ms.topic: article
 ms.date: 11/28/2018
 ms.author: anzaman
 ms.custom: seodec18
-ms.openlocfilehash: f6fd8e5f0e5730e55fa5bbe13f74be796dd6a4cb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: deeb1c65cae7e3a5b42230dbda1ad8efa717ba0b
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66115837"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73748108"
 ---
 # <a name="reset-a-failed-expressroute-circuit"></a>Сброс канала ExpressRoute после сбоя
 
 Если операция на канале ExpressRoute не выполнена, канал может перейти в состояние сбоя. Эта статья поможет вам сбросить канал Azure ExpressRoute после сбоя.
 
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+[!INCLUDE [updated-for-az](../../includes/hybrid-az-ps.md)]
 
 ## <a name="reset-a-circuit"></a>Сброс канала
 

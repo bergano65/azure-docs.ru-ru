@@ -1,5 +1,5 @@
 ---
-title: 'Связывание виртуальной сети с каналом ExpressRoute с помощью PowerShell: Azure | Документация Майкрософт'
+title: Связывание виртуальной сети с каналом ExpressRoute с помощью PowerShell и Azure | Документация Майкрософт
 description: В этом документе содержатся общие сведения о связывании виртуальных сетей с каналами ExpressRoute с помощью модели развертывания Resource Manager и PowerShell.
 services: expressroute
 author: ganesr
@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 05/20/2018
 ms.author: ganesr
 ms.custom: seodec18
-ms.openlocfilehash: 620eff5468d7d3b4bf8ddeea62fa67b39609fce6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d4b746a245fc1ee2b0d3532bfabc973f513c7661
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65950375"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73748297"
 ---
 # <a name="connect-a-virtual-network-to-an-expressroute-circuit"></a>Подключение виртуальной сети к каналу ExpressRoute
 > [!div class="op_single_selector"]
@@ -45,7 +45,7 @@ ms.locfileid: "65950375"
 
 ### <a name="working-with-azure-powershell"></a>Работа с Azure PowerShell
 
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+[!INCLUDE [updated-for-az](../../includes/hybrid-az-ps.md)]
 
 [!INCLUDE [expressroute-cloudshell](../../includes/expressroute-cloudshell-powershell-about.md)]
 
@@ -61,7 +61,7 @@ $connection = New-AzVirtualNetworkGatewayConnection -Name "ERConnection" -Resour
 ## <a name="connect-a-virtual-network-in-a-different-subscription-to-a-circuit"></a>Подключение к каналу виртуальной сети в другой подписке
 Канал ExpressRoute может совместно использоваться несколькими подписками. На рисунке ниже схематично показан способ совместного использования каналов ExpressRoute несколькими подписками.
 
-Каждое маленькое облако внутри большого облака представляет подписки, принадлежащие различным подразделениям одной организации. Любое подразделение в организации может использовать свою собственную подписку для развертывания служб. Кроме того, оно может совместно использовать один выделенный канал ExpressRoute для подключения к корпоративной сети. Владельцем канала ExpressRoute может выступать один отдел (в этом примере — отдел ИТ). Другие подписки в организации могут использовать канал ExpressRoute.
+Каждое маленькое облако внутри большого облака представляет подписки, принадлежащие различным подразделениям одной организации. Любое подразделение в организации может использовать свою собственную подписку для развертывания служб. Кроме того, оно может совместно использовать один выделенный канал ExpressRoute для подключения к корпоративной сети. Владельцем канала ExpressRoute может выступать одно подразделение (в данном примере — ИТ-подразделение). Другие подписки в организации могут использовать канал ExpressRoute.
 
 > [!NOTE]
 > Плата за подключение канала ExpressRoute и использование полосы пропускания будет взиматься с владельца подписки. Полоса пропускания распределяется между всеми виртуальными сетями.
@@ -176,11 +176,11 @@ Set-AzVirtualNetworkGatewayConnection -VirtualNetworkGatewayConnection $connecti
 
 Диапазон значений *RoutingWeight*: 0 до 32 000. Значение по умолчанию — 0.
 
-## <a name="configure-expressroute-fastpath"></a>Настройка ExpressRoute FastPath 
-Вы можете включить [ExpressRoute FastPath](expressroute-about-virtual-network-gateways.md) Если ваша цепь ExpressRoute находится на [ExpressRoute Direct](expressroute-erdirect-about.md) и шлюз виртуальной newtork максимальной производительностью или ErGw3AZ. FastPath улучшает данных о производительности пути данных, например пакетов в секунду и соединений в секунду между локальной сетью и виртуальной сети. 
+## <a name="configure-expressroute-fastpath"></a>Настройка Фастпас ExpressRoute 
+Вы можете включить [ExpressRoute фастпас](expressroute-about-virtual-network-gateways.md) , если канал expressroute включен в [expressroute Direct](expressroute-erdirect-about.md) , а шлюз виртуальной сети — Ultra Performance или ErGw3AZ. Фастпас улучшает производительность пути к данным, например количество пакетов в секунду и число подключений в секунду между локальной сетью и виртуальной сетью. 
 
 > [!NOTE] 
-> Если вы уже есть подключение к виртуальной сети, но еще не включили FastPath необходимо удалить подключение виртуальной сети и создать новую. 
+> Если у вас уже есть подключение к виртуальной сети, но оно не включено Фастпас, необходимо удалить подключение к виртуальной сети и создать новое. 
 > 
 >  
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 03/30/2017
 ms.author: kasing
-ms.openlocfilehash: bf964f23b6c38444fb15b61161cb7ed5a2b15e00
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 01d5670add82291cb91264ab41fcd312a338840c
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70102655"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73749322"
 ---
 # <a name="migrate-iaas-resources-from-classic-to-azure-resource-manager-by-using-azure-powershell"></a>Перенос ресурсов IaaS из классической модели в модель Azure Resource Manager с помощью Azure PowerShell
 Ниже последовательно описано, как использовать команды Azure PowerShell для переноса ресурсов IaaS из классической модели развертывания в модель развертывания с помощью Azure Resource Manager.
@@ -35,9 +35,9 @@ ms.locfileid: "70102655"
 
 ![Screenshot that shows the migration steps](media/migration-classic-resource-manager/migration-flow.png)
 
-[!INCLUDE [updated-for-az.md](../../../includes/updated-for-az.md)]
+ 
 
-## <a name="step-1-plan-for-migration"></a>Шаг 1. Планирование миграции
+## <a name="step-1-plan-for-migration"></a>Шаг 1. Планирование миграции
 Ниже приведено несколько рекомендаций для оценки переноса ресурсов IaaS из классической модели в модель Resource Manager.
 
 * Ознакомьтесь с [поддерживаемыми и неподдерживаемыми компонентами и конфигурациями](migration-classic-resource-manager-overview.md). Если у вас есть виртуальные машины, которые используют неподдерживаемые конфигурации или компоненты, мы рекомендуем отложить перенос до того момента, пока не будет заявлено об их поддержке. Также вы можете удалить такую функцию или вынести ее за пределы конфигурации, чтобы выполнить перенос.
@@ -48,8 +48,8 @@ ms.locfileid: "70102655"
 >
 >Шлюзы ExpressRoute, подключенные к каналам ExpressRoute в другой подписке, перенести автоматически невозможно. В таких случаях удалите шлюз ExpressRoute, перенесите виртуальную сеть и создайте шлюз заново. Дополнительные сведения см. в статье [Перенос каналов ExpressRoute и связанных виртуальных сетей из классической модели развертывания на модель Resource Manager](../../expressroute/expressroute-migration-classic-resource-manager.md).
 
-## <a name="step-2-install-the-latest-version-of-azure-powershell"></a>Шаг 2. Установка последней версии Azure PowerShell
-Существует два основных параметра установки Azure PowerShell: [коллекция PowerShell](https://www.powershellgallery.com/profiles/azure-sdk/) или [установщик веб-платформы (WebPI)](https://aka.ms/webpi-azps). Обновления для установщика веб-платформы выпускаются ежемесячно. Обновления для коллекции PowerShell выпускаются на постоянной основе. В этой статье используется Azure PowerShell 2.1.0.
+## <a name="step-2-install-the-latest-version-of-azure-powershell"></a>Шаг 2. Установка последней версии Azure PowerShell
+Есть два основных способа установки Azure PowerShell — с помощью [коллекции PowerShell](https://www.powershellgallery.com/profiles/azure-sdk/) и [установщика веб-платформы (WebPI)](https://aka.ms/webpi-azps). Обновления для установщика веб-платформы выпускаются ежемесячно. Обновления для коллекции PowerShell выпускаются на постоянной основе. В этой статье используется Azure PowerShell 2.1.0.
 
 Инструкции по установке см. в статье [Установка и настройка Azure PowerShell](/powershell/azure/overview).
 
@@ -64,7 +64,7 @@ ms.locfileid: "70102655"
 
 Если вам не удалась добавить соадминистратора, обратитесь к администратору или соадминистратору служб для подписки, чтобы вас добавили.   
 
-## <a name="step-4-set-your-subscription-and-sign-up-for-migration"></a>Шаг 4. Настройка подписки и регистрация для миграции
+## <a name="step-4-set-your-subscription-and-sign-up-for-migration"></a>Шаг 4. Настройка подписки и регистрация для миграции
 Сначала запустите командную строку PowerShell. Для переноса необходимо настроить среду как для классической модели, так и для модели Resource Manager.
 
 Войдите в учетную запись для модели Resource Manager.
@@ -124,7 +124,7 @@ ms.locfileid: "70102655"
 
 <br>
 
-## <a name="step-5-make-sure-you-have-enough-azure-resource-manager-virtual-machine-vcpus-in-the-azure-region-of-your-current-deployment-or-vnet"></a>Шаг 5. Проверка наличия достаточного количества виртуальных ЦП для виртуальных машин Azure Resource Manager в регионе Azure, в котором находится текущее развертывание или виртуальная сеть
+## <a name="step-5-make-sure-you-have-enough-azure-resource-manager-virtual-machine-vcpus-in-the-azure-region-of-your-current-deployment-or-vnet"></a>Шаг 5. Проверка наличия достаточного числа виртуальных ЦП для виртуальных машин Azure, развертываемых с помощью Resource Manager, в регионе Azure, в котором находится текущее развертывание или виртуальная сеть
 Чтобы проверить текущее количество виртуальных ЦП в Azure Resource Manager, используйте приведенную ниже команду PowerShell. Чтобы узнать больше о квотах на виртуальные ЦП, см. соответствующий раздел статьи [Подписка Azure, границы, квоты и ограничения службы](../../azure-subscription-service-limits.md#limits-and-azure-resource-manager).
 
 В этом примере проверяется доступность в регионе **Западная часть США**. Замените регион в примере своим собственным значением.
@@ -142,7 +142,7 @@ Get-AzVMUsage -Location "West US"
 > Все операции, описанные здесь, являются идемпотентными. Если вы столкнетесь с какой-либо проблемой, не связанной с неподдерживаемой функцией или ошибкой конфигурации, мы рекомендуем повторить подготовку, прервать или зафиксировать текущую операцию. Платформа попытается повторить это действие.
 
 
-### <a name="step-61-option-1---migrate-virtual-machines-in-a-cloud-service-not-in-a-virtual-network"></a>Шаг 6.1. Вариант 1. Миграция виртуальных машин в облачную службу (не в виртуальную сеть)
+### <a name="step-61-option-1---migrate-virtual-machines-in-a-cloud-service-not-in-a-virtual-network"></a>Шаг. 6.1. Вариант 1. Миграция виртуальных машин в облачную службу (не в виртуальную сеть)
 Получите список облачных служб, выполнив следующую команду, а затем выберите облачную службу для переноса. Если виртуальные машины в облачной службе размещены в виртуальной сети или им назначены веб-роли или рабочие роли, то команда возвращает сообщение об ошибке.
 
 ```powershell
@@ -342,7 +342,7 @@ Get-AzVMUsage -Location "West US"
         Move-AzureStorageAccount -Commit -StorageAccountName $storageAccountName
     ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Обзор поддерживаемого платформой переноса ресурсов IaaS из классической модели в модель Azure Resource Manager](migration-classic-resource-manager-overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
 * [Техническое руководство по поддерживаемому платформой переносу из классической модели в модель Azure Resource Manager](migration-classic-resource-manager-deep-dive.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
 * [Planning for migration of IaaS resources from classic to Azure Resource Manager](migration-classic-resource-manager-plan.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) (Планирование переноса ресурсов IaaS из классической модели в модель Azure Resource Manager)

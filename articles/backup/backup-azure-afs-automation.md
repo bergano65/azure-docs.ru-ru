@@ -1,6 +1,6 @@
 ---
 title: Резервное копирование и восстановление файлов Azure с помощью Azure Backup и PowerShell
-description: Резервное копирование и восстановление файлов Azure с помощью Azure Backup и PowerShell.
+description: В этой статье вы узнаете, как выполнять резервное копирование и восстановление файлов Azure с помощью службы Azure Backup и PowerShell.
 author: dcurwin
 manager: carmonm
 ms.service: backup
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 08/20/2019
 ms.author: dacurwin
 ms.reviewer: pullabhk
-ms.openlocfilehash: bfaecc5fe9fbbd68ba0f138b7b40b2507d729635
-ms.sourcegitcommit: b1c94635078a53eb558d0eb276a5faca1020f835
+ms.openlocfilehash: 491e27f85d00ce512995a63e43b9e248798e5d0f
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2019
-ms.locfileid: "72968636"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73747627"
 ---
 # <a name="back-up-and-restore-azure-files-with-powershell"></a>Резервное копирование и восстановление файлов Azure с помощью PowerShell
 
@@ -22,8 +22,9 @@ ms.locfileid: "72968636"
 В этом учебнике объясняется, как выполнить такие задачи:
 
 > [!div class="checklist"]
+>
 > * Настройте PowerShell и зарегистрируйте поставщик служб восстановления Azure.
-> * Создайте хранилище служб восстановления.
+> * Создайте хранилище служб восстановления,
 > * Настройте резервное копирование для файлового ресурса Azure.
 > * Запустите задание резервного копирования.
 > * Восстановление резервной копии общего файлового ресурса Azure или отдельного файла из общей папки.
@@ -41,7 +42,7 @@ ms.locfileid: "72968636"
 
 ![Иерархия объектов служб восстановления](./media/backup-azure-vms-arm-automation/recovery-services-object-hierarchy.png)
 
-Ознакомьтесь со справочником по [командлету](/powershell/module/az.recoveryservices) **AZ. RecoveryServices** в библиотеке Azure.
+Ознакомьтесь со **справочником по командлету** [AZ. RecoveryServices](/powershell/module/az.recoveryservices) в библиотеке Azure.
 
 ## <a name="set-up-and-install"></a>Установка и установка
 

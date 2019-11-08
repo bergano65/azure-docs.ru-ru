@@ -8,12 +8,12 @@ ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 10/16/2019
 ms.author: raynew
-ms.openlocfilehash: 90b1250009e6efdb2f8cb9351fe270c8324cc77a
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: e752d52d0f792d39f417031c26d923fce07ccdf8
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/07/2019
-ms.locfileid: "73715480"
+ms.locfileid: "73747980"
 ---
 # <a name="azure-migrate-support-matrix"></a>Матрица поддержки службы "миграция Azure"
 
@@ -51,7 +51,7 @@ ms.locfileid: "73715480"
 [Corent Technology](https://go.microsoft.com/fwlink/?linkid=2084928) | Оцените и перенесите виртуальные машины VMware, виртуальные машины Hyper-V, физические серверы, рабочие нагрузки общедоступных облаков. |  Перенесите виртуальные машины VMware, виртуальные машины Hyper-V, физические серверы, рабочие нагрузки из общедоступных облаков.
 [Устройство 42](https://go.microsoft.com/fwlink/?linkid=2097158) | Оцените виртуальные машины VMware, виртуальные машины Hyper-V, физические серверы, рабочие нагрузки общедоступных облаков.| Нет данных
 [DMA](https://docs.microsoft.com/sql/dma/dma-overview?view=sql-server-2017) | Оценка локальных SQL Server баз данных. | Нет данных
-[DMS](https://docs.microsoft.com/azure/dms/dms-overview) | Миграция SQL Server, Oracle, MySQL, PostgreSQL, MongoDB. | Нет данных
+[DMS](https://docs.microsoft.com/azure/dms/dms-overview) | Нет данных | Миграция SQL Server, Oracle, MySQL, PostgreSQL, MongoDB. 
 [лакесиде](https://go.microsoft.com/fwlink/?linkid=2104908) | Оценка инфраструктуры виртуальных рабочих столов (VDI) | Нет данных
 [Movere](https://go.microsoft.com/fwlink/?linkid=2109528) | Оценка виртуальных машин VMWare, виртуальных машин Hyper-V, виртуальных машин Xen, физических компьютеров, рабочих станций (включая VDI), рабочих нагрузок в общедоступном облаке | Нет данных
 [раккваре](https://go.microsoft.com/fwlink/?linkid=2102735) | Нет данных | Перенос виртуальных машин VMWare, виртуальных машин Hyper-V, виртуальных машин Xen, виртуальных машин KVM, физических компьютеров, рабочих нагрузок в общедоступном облаке 

@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 03/23/2018
 ms.author: akjosh
 ms.reviewer: cynthn
-ms.openlocfilehash: e096982c7bbf4f06b96ef4e3918ca1caa9d481a0
-ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
+ms.openlocfilehash: 599417131f228c95168641c54ffbb947e3682f7b
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71169085"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73750012"
 ---
 # <a name="use-azure-policy-to-restrict-extensions-installation-on-windows-vms"></a>Ограничение установки расширений на виртуальных машинах Windows с помощью службы "Политика Azure"
 
@@ -26,7 +26,7 @@ ms.locfileid: "71169085"
 
 В этом руководстве используется интерфейс Azure PowerShell в Cloud Shell, который постоянно обновляется до последней версии. 
 
-[!INCLUDE [updated-for-az.md](../../../includes/updated-for-az.md)]
+ 
 
 ## <a name="create-a-rules-file"></a>Создание файла правил
 
@@ -141,7 +141,7 @@ $assignment
 
 ## <a name="test-the-policy"></a>Проверка политики
 
-Чтобы проверить политику, попробуйте применить расширение для доступа к виртуальной машине. Следующий пример должен завершиться ошибкой с сообщением "Set-AzVMAccessExtension: Resource 'myVMAccess' was disallowed by policy" (Ресурс myVMAccess запрещен политикой).
+Чтобы проверить политику, попробуйте применить расширение для доступа к виртуальной машине. Следующая ошибка должна завершиться с сообщением "Set-Азвмакцессекстенсион: Resource" Мивмакцесс "запрещено политикой".
 
 ```azurepowershell-interactive
 Set-AzVMAccessExtension `
@@ -165,5 +165,5 @@ Remove-AzPolicyAssignment -Name not-allowed-vmextension-windows -Scope $scope
 Remove-AzPolicyDefinition -Name not-allowed-vmextension-windows
 ```
     
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения см. в статье [Что такое служба "Политика Azure"?](../../governance/policy/overview.md)

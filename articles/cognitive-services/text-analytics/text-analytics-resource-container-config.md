@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 08/21/2019
+ms.date: 11/07/2019
 ms.author: dapine
-ms.openlocfilehash: f1c42002343de1dd3b3ef6b9c9e35f458db925f4
-ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
+ms.openlocfilehash: 8a39327275dca43ddb6ce0e46a3e3bb51ec4555b
+ms.sourcegitcommit: 018e3b40e212915ed7a77258ac2a8e3a660aaef8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70051130"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73795310"
 ---
 # <a name="configure-text-analytics-docker-containers"></a>Настройка контейнеров Docker API анализа текста
 
@@ -29,13 +29,13 @@ ms.locfileid: "70051130"
 > [!IMPORTANT]
 > Параметры [`ApiKey`](#apikey-configuration-setting), [`Billing`](#billing-configuration-setting) и [`Eula`](#eula-setting) используются совместно, и для всех трех параметров необходимо указать допустимые значения. В противном случае контейнер не запустится. Дополнительные сведения об использовании этих параметров конфигурации для создания экземпляра контейнера см. в разделе [Выставление счетов](how-tos/text-analytics-how-to-install-containers.md#billing).
 
-## <a name="apikey-configuration-setting"></a>Параметр конфигурации ApiKey
+## <a name="apikey-configuration-setting"></a>Настройка конфигурации ApiKey
 
 Параметр `ApiKey` определяет ключ ресурса Azure, который используется для отслеживания данных для выставления счетов для контейнера. Значение ApiKey является обязательным и должно содержать допустимый ключ ресурса службы _Анализ текста_, который определяется в параметре конфигурации [`Billing`](#billing-configuration-setting).
 
 Этот параметр можно найти в следующем месте.
 
-* Портал Azure: **Анализ текста** управление ресурсами в разделе **ключи**
+* Портал Azure: управление ресурсами **анализ текста** в разделе **ключи**
 
 ## <a name="applicationinsights-setting"></a>Параметр ApplicationInsights.
 
@@ -47,11 +47,11 @@ ms.locfileid: "70051130"
 
 Этот параметр можно найти в следующем месте.
 
-* Портал Azure: **Анализ текста** Общие сведения, помеченные`Endpoint`
+* Портал Azure: **анализ текста** обзор с метками `Endpoint`
 
-|Обязательное значение| Название | Тип данных | Описание |
+|Обязательно| Имя | Тип данных | Description (Описание) |
 |--|------|-----------|-------------|
-|Да| `Billing` | Строковое | Требуемый URI конечной точки выставления счетов |
+|Да| `Billing` | string | URI конечной точки выставления счетов. Дополнительные сведения о получении URI выставления счетов см. в разделе [сбор обязательных параметров](how-tos/text-analytics-how-to-install-containers.md#gathering-required-parameters). Дополнительные сведения и полный список региональных конечных точек см. в статье [Custom subdomain names for Cognitive Services](../cognitive-services-custom-subdomains.md) (Пользовательские имена поддоменов для Cognitive Services). |
 
 ## <a name="eula-setting"></a>Параметр Eula
 
@@ -77,30 +77,30 @@ ms.locfileid: "70051130"
 
 Точный синтаксис расположения подключения к узлу зависит от операционной системы узла. Кроме того,расположение подключения на [главном компьютере](how-tos/text-analytics-how-to-install-containers.md#the-host-computer) может оказаться недоступным из-за конфликта между разрешениями для учетной записи службы Docker и расположения подключения к узлу. 
 
-|Необязательный| Название | Тип данных | Описание |
+|Необязательно| Имя | Тип данных | Description (Описание) |
 |-------|------|-----------|-------------|
-|Не разрешено| `Input` | Строковое | Контейнеры API анализа текста не используют этот элемент.|
-|Необязательный| `Output` | Строковое | Цель выходного подключения. Значение по умолчанию — `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример:<br>`--mount type=bind,src=c:\output,target=/output`|
+|Не разрешено| `Input` | string | Контейнеры API анализа текста не используют этот элемент.|
+|Необязательно| `Output` | string | Цель выходного подключения. По умолчанию используется значение `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример:<br>`--mount type=bind,src=c:\output,target=/output`|
 
 ## <a name="example-docker-run-commands"></a>Примеры команд docker run 
 
 В следующих примерах параметры конфигурации иллюстрируют процесс написания и использования команд `docker run`.  После запуска контейнер продолжает работу, пока вы его не [остановите](how-tos/text-analytics-how-to-install-containers.md#stop-the-container).
 
-* **Символ продолжения строки**. В командах Docker в следующих разделах используется обратная косая черта (`\`) как символ продолжения строки. Замените или удалите ее в соответствии с требованиями вашей операционной системы. 
-* **Порядок аргументов**. Не изменяйте порядок аргументов, если вы еще не очень хорошо знакомы с контейнерами Docker.
+* **Символ продолжения строки**. в командах DOCKER в следующих разделах используется обратная косая черта, `\`, как символ продолжения строки. Замените или удалите ее в соответствии с требованиями вашей операционной системы. 
+* **Порядок аргументов**. не изменяйте порядок аргументов, если вы не знакомы с контейнерами DOCKER.
 
 Замените строку {_имя_аргумента_} собственными значениями.
 
-| Местозаполнитель | Значение | Формат или пример |
+| Placeholder | Значение | Формат или пример |
 |-------------|-------|---|
-| **{API_KEY}** | Ключ `Text Analytics` конечной точки ресурса, доступный на странице ключей Azure `Text Analytics` . |`xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`|
-| **{ENDPOINT_URI}** | Значение конечной точки выставления счетов доступно на странице `Text Analytics` обзора Azure.| См. раздел [сбор обязательных параметров](how-tos/text-analytics-how-to-install-containers.md#gathering-required-parameters) для явных примеров. |
+| **{API_KEY}** | Ключ конечной точки `Text Analytics` ресурса, доступный на странице ключей `Text Analytics` Azure. |`xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`|
+| **{ENDPOINT_URI}** | Значение конечной точки выставления счетов доступно на странице обзора `Text Analytics` Azure.| См. раздел [сбор обязательных параметров](how-tos/text-analytics-how-to-install-containers.md#gathering-required-parameters) для явных примеров. |
 
 > [!IMPORTANT]
-> Для запуска контейнера необходимо указать параметры `Eula`, `Billing` и `ApiKey`. В противном случае контейнер не запустится.  Дополнительные сведения см. в [разделе о выставлении счетов](how-tos/text-analytics-how-to-install-containers.md#billing).
-> Значение apiKey является **ключом** на странице ключей ресурсов Azure `Text Analytics` . 
+> Для выполнения контейнера необходимо указать параметры `Eula`, `Billing` и `ApiKey`. В противном случае контейнер не запустится.  Дополнительные сведения см. в [разделе о выставлении счетов](how-tos/text-analytics-how-to-install-containers.md#billing).
+> Значение ApiKey является **ключом** на странице ключей ресурсов Azure `Text Analytics`. 
 
-#### <a name="key-phrase-extractiontabkeyphrase"></a>[Извлечение ключевых фраз](#tab/keyphrase).
+#### <a name="key-phrase-extractiontabkeyphrase"></a>[Извлечение ключевых фраз](#tab/keyphrase)
 
 [!INCLUDE [key-phrase-extraction-docker-examples](includes/key-phrase-extraction-docker-examples.md)]
 
@@ -114,7 +114,7 @@ ms.locfileid: "70051130"
 
 ***
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Изучите статью об [установке и запуске контейнеров](how-tos/text-analytics-how-to-install-containers.md).
 * Воспользуйтесь [дополнительными контейнерами Cognitive Services](../cognitive-services-container-support.md)

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 09/26/2017
 ms.author: cynthn
-ms.openlocfilehash: d10844a52505331418e3bc4e9b36d00a5a7e7b6f
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: f7f4e65253e0fc160da4d343115e9115abfab808
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70102617"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73749315"
 ---
 # <a name="create-and-manage-a-windows-virtual-machine-that-has-multiple-nics"></a>Создание виртуальной машины Windows, использующей несколько сетевых адаптеров, и управление ею
 Виртуальные машины (VM) в Azure могут иметь несколько виртуальных сетевых адаптеров (NIC). Распространенный сценарий состоит в том, чтобы иметь разные подсети для интерфейсных и внутренних подключений. Вы можете связать несколько сетевых адаптеров на виртуальной машине с несколькими подсетями, но эти подсети должны находиться в одной и той же виртуальной сети (vNet). В этой статье подробно описывается, как создать виртуальную машину с несколькими сетевыми адаптерами. Вы также узнаете, как добавить или удалить сетевые адаптеры на существующей виртуальной машине. Различные [размеры виртуальных машин](sizes.md) поддерживают разное число сетевых карт, так что выбирайте соответствующий размер виртуальной машины.
@@ -27,7 +27,7 @@ ms.locfileid: "70102617"
 
 В следующих примерах замените имена параметров собственными значениями. Примеры имен параметров: *myResourceGroup*, *myVnet* и *myVM*.
 
-[!INCLUDE [updated-for-az.md](../../../includes/updated-for-az.md)]
+ 
 
 ## <a name="create-a-vm-with-multiple-nics"></a>Создание виртуальной машины с несколькими сетевыми адаптерами
 Сначала создайте группу ресурсов. В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *EastUs*:
@@ -139,7 +139,7 @@ $myNic2 = New-AzNetworkInterface -ResourceGroupName "myResourceGroup" `
     $vm = Get-AzVm -Name "myVM" -ResourceGroupName "myResourceGroup"
     ```
 
-3. В следующем примере создается виртуальный сетевой адаптер с помощью [New-AzNetworkInterface](https://docs.microsoft.com/powershell/module/az.network/new-aznetworkinterface) с именем *myNic3*, подключенный к *mySubnetBackEnd*. Затем с помощью [Add-AzVMNetworkInterface](https://docs.microsoft.com/powershell/module/az.compute/add-azvmnetworkinterface) он подключается к виртуальной машине *myVM* в *myResourceGroup*
+3. В следующем примере создается виртуальный сетевой адаптер с помощью [New-AzNetworkInterface](https://docs.microsoft.com/powershell/module/az.network/new-aznetworkinterface) с именем *myNic3*, подключенный к *mySubnetBackEnd*. Затем с помощью *Add-AzVMNetworkInterface* он подключается к виртуальной машине *myVM* в [myResourceGroup](https://docs.microsoft.com/powershell/module/az.compute/add-azvmnetworkinterface)
 
     ```powershell
     # Get info for the back end subnet
@@ -293,7 +293,7 @@ Azure назначает шлюз по умолчанию для первого 
 
     Маршрут указанный в *192.168.1.1* в разделе **Шлюз** — это маршрут по умолчанию для основного сетевого интерфейса. Маршрут *192.168.2.1* в разделе **Шлюз** — это добавленный маршрут.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 При создании виртуальной машины с несколькими сетевыми адаптерами ознакомьтесь со статьей [Размеры виртуальных машин Windows в Azure](sizes.md). Обратите внимание на максимальное число сетевых адаптеров, поддерживаемых каждым из размеров виртуальной машины. 
 
 

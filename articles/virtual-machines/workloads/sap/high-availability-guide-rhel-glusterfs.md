@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/16/2018
 ms.author: sedusch
-ms.openlocfilehash: fd5014de622c37950c15006c2cc4dcbbb27ef8e1
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 2ae9a1419232cca051f7cab4e9bd8c70f885df73
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70101129"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73749044"
 ---
 # <a name="glusterfs-on-azure-vms-on-red-hat-enterprise-linux-for-sap-netweaver"></a>GlusterFS в виртуальных машинах Azure с Red Hat Enterprise Linux для SAP NetWeaver
 
@@ -86,7 +86,7 @@ ms.locfileid: "70101129"
 ### <a name="deploy-linux-via-azure-template"></a>Развертывание Linux с помощью шаблон Azure
 
 В Azure Marketplace доступен образ для Red Hat Enterprise Linux, который можно использовать для развертывания новых виртуальных машин.
-Все необходимые ресурсы можно развернуть с помощью шаблонов быстрого запуска с сайта GitHub. Шаблон развертывает виртуальные машины, группу доступности и т. д. Выполните следующее, чтобы развернуть шаблон.
+Все необходимые ресурсы можно развернуть с помощью шаблонов быстрого запуска с сайта GitHub. Шаблон развертывает виртуальные машины, группу доступности и т. д. Чтобы развернуть шаблон, выполните следующие действия.
 
 1. Откройте [шаблон файлового сервера SAP][template-file-server] в портал Azure
 1. Задайте следующие параметры.
@@ -102,10 +102,10 @@ ms.locfileid: "70101129"
 
 ### <a name="deploy-linux-manually-via-azure-portal"></a>Развертывание Linux вручную с помощью портала Azure
 
-Сначала необходимо создать виртуальные машины для этого кластера. После этого следует создать подсистему балансировки нагрузки и использовать виртуальные машины во внутренних пулах.
+Сначала необходимо создать виртуальные машины для этого кластера. После этого следует создать подсистему балансировки нагрузки и использовать виртуальные машины во внутренних пулах. Рекомендуется использовать [стандартную подсистему балансировки нагрузки](https://docs.microsoft.com/azure/load-balancer/load-balancer-standard-overview).  
 
 1. Создание группы ресурсов
-1. Создать виртуальную сеть
+1. Создайте виртуальную сеть
 1. Создание группы доступности.  
    Настройка максимального числа доменов обновления.
 1. Создание виртуальной машины 1.  
@@ -348,7 +348,7 @@ ms.locfileid: "70101129"
    sudo gluster volume start <b>NW2</b>-aers
    </code></pre>
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Настройка кластера Pacemaker в SUSE Linux Enterprise Server в Azure](high-availability-guide-rhel.md)
 * [Планирование и реализация виртуальных машин Azure для SAP][planning-guide]

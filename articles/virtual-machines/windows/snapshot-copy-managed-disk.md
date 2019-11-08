@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 10/08/2018
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: 76110fa04441540875e65c8bc056fc21555c5db6
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 74ef55fe9a0a6603bd43d68b6b8557dce1bca921
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70102282"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73749146"
 ---
 # <a name="create-a-snapshot"></a>Создание моментального снимка
 
@@ -29,7 +29,7 @@ ms.locfileid: "70102282"
 
 ## <a name="use-the-azure-portal"></a>Использование портала Azure 
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 2. В меню слева выберите **Создать ресурс**, а затем найдите и выберите **моментальный снимок**.
 3. В окне **Моментальный снимок** нажмите кнопку **Создать**. Откроется окно **Создание моментального снимка**.
 4. Заполните поле **Имя** для моментального снимка.
@@ -43,7 +43,7 @@ ms.locfileid: "70102282"
 
 Ниже показано, как скопировать диск VHD, создать конфигурацию моментального снимка и собственно моментальный снимок диска с помощью командлета [New-AzSnapshot](https://docs.microsoft.com/powershell/module/az.compute/new-azsnapshot). 
 
-[!INCLUDE [updated-for-az.md](../../../includes/updated-for-az.md)]
+ 
 
 1. Задайте некоторые параметры: 
 
@@ -84,6 +84,6 @@ ms.locfileid: "70102282"
    ```
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Создайте виртуальную машину из моментального снимка, преобразовав его в управляемый диск, а затем подключив этот диск как диск ОС. Дополнительные сведения см. в статье [Создание виртуальной машины из моментального снимка с помощью PowerShell](./../scripts/virtual-machines-windows-powershell-sample-create-vm-from-snapshot.md?toc=%2fpowershell%2fmodule%2ftoc.json).

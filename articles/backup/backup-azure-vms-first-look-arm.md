@@ -1,18 +1,18 @@
 ---
 title: Резервное копирование виртуальной машины Azure из параметров виртуальной машины с помощью Azure Backup
-description: Узнайте, как создать резервную копию виртуальной машины Azure с помощью службы Azure Backup
+description: Из этой статьи вы узнаете, как выполнить резервное копирование отдельной виртуальной машины Azure или нескольких виртуальных машин Azure с помощью службы Azure Backup.
 author: dcurwin
 manager: carmonm
 ms.service: backup
 ms.topic: conceptual
 ms.date: 06/13/2019
 ms.author: dacurwin
-ms.openlocfilehash: cfbec94a2922995eed546d526c1f469e2ea54118
-ms.sourcegitcommit: b1c94635078a53eb558d0eb276a5faca1020f835
+ms.openlocfilehash: 232c027ef60a031df53f2439586a0ae459ab67d5
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2019
-ms.locfileid: "72969047"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73747237"
 ---
 # <a name="back-up-an-azure-vm-from-the-vm-settings"></a>Создание резервной копии виртуальной машины Azure на основе параметров виртуальной машины
 
@@ -35,7 +35,7 @@ ms.locfileid: "72969047"
 
 ## <a name="back-up-from-azure-vm-settings"></a>Создание резервной копии на основе параметров виртуальной машины Azure
 
-1. Войдите на [портале Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 2. Выберите **Все службы**, в диалоговом окне фильтра введите **Виртуальные машины**, а затем выберите **Виртуальные машины**.
 3. Из списка виртуальных машин выберите виртуальную машину для создания резервной копии.
 4. В меню виртуальной машины щелкните **Создать резервную копию**.

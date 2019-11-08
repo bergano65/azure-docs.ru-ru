@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 10/09/2019
 ms.author: pabouwer
 zone_pivot_groups: client-operating-system
-ms.openlocfilehash: ec8250f6cdb44af3c99c1d34d1f14fbd2209aac0
-ms.sourcegitcommit: f29fec8ec945921cc3a89a6e7086127cc1bc1759
+ms.openlocfilehash: f70052a62152a20f808c1e491a663d1406fbd407
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72530099"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73747709"
 ---
 # <a name="install-linkerd-in-azure-kubernetes-service-aks"></a>Установка Linkerd в службе Kubernetes Azure (AKS)
 
@@ -23,7 +23,7 @@ ms.locfileid: "72530099"
 > [!NOTE]
 > Эти инструкции ссылаются на Linkerd версии `stable-2.6.0`.
 >
-> @No__t_0 Linkerd можно запускать в `1.13+` версиях Kubernetes. Дополнительные стабильные и граничные версии Linkerd можно найти в [выпусках GitHub-Linkerd][linkerd-github-releases].
+> `stable-2.6.x` Linkerd можно запускать в `1.13+`версиях Kubernetes. Дополнительные стабильные и граничные версии Linkerd можно найти в [выпусках GitHub-Linkerd][linkerd-github-releases].
 
 В этой статье раскрываются следующие темы:
 
@@ -248,7 +248,7 @@ Opening Linkerd dashboard in the default browser
 > [!WARNING]
 > Удаление Linkerd из работающей системы может привести к проблемам с трафиком между Вашими службами. Перед продолжением убедитесь, что вы выполнили предварительные условия для правильной работы системы без Linkerd.
 
-Сначала необходимо удалить прокси-серверы плоскости данных. Удалите все автоматические [аннотации][linkerd-automatic-proxy-injection] введения прокси-сервера из пространств имен рабочей нагрузки и выполните развертывание рабочей нагрузки. У рабочих нагрузок больше нет связанных компонентов плоскости данных.
+Сначала необходимо удалить прокси-серверы плоскости данных. Удалите все автоматические [аннотации][linkerd-automatic-proxy-injection] введения прокси-сервера из пространств имен рабочей нагрузки и развертывание рабочих нагрузок. У рабочих нагрузок больше нет связанных компонентов плоскости данных.
 
 Наконец, удалите плоскость управления, как показано ниже.
 

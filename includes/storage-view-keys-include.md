@@ -5,17 +5,17 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: include
-ms.date: 06/20/2019
+ms.date: 11/06/2019
 ms.author: tamram
 ms.custom: include file
-ms.openlocfilehash: 0e8f1453687f7424c6b651dc324e66e84dd8d29f
-ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
+ms.openlocfilehash: e3b3d944508a4261b78def0b3bee13f7395a8bf0
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67302542"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73748993"
 ---
-Для просмотра и скопируйте ключи доступа учетной записи хранения или строки подключения на портале Azure:
+Чтобы просмотреть и скопировать ключи доступа к учетной записи хранения или строку подключения из портал Azure:
 
 1. Перейдите на [портал Azure](https://portal.azure.com).
 2. Перейдите к учетной записи хранения.
@@ -23,4 +23,6 @@ ms.locfileid: "67302542"
 4. Найдите значение **ключа** в разделе **key1** и нажмите кнопку **Копировать**, чтобы скопировать ключ учетной записи.
 5. Кроме того, можно скопировать всю строку подключения. Найдите значение **Строка подключения** в разделе **key1** и нажмите кнопку **Скопировать**, чтобы скопировать строку подключения.
 
-    ![Снимок экрана, показывающий, как просмотреть ключи доступа на портале Azure](media/storage-view-keys-include/portal-connection-string.png)
+    ![Снимок экрана, показывающий, как просмотреть ключи доступа в портал Azure](media/storage-view-keys-include/portal-connection-string.png)
+
+Для доступа к службе хранилища Azure можно использовать любой из этих ключей, но в общем случае рекомендуется использовать первый ключ и зарезервировать использование второго ключа при вращении ключей.
