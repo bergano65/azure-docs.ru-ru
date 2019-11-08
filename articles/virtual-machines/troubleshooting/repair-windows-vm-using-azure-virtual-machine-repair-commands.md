@@ -6,7 +6,7 @@ documentationcenter: ''
 author: v-miegge
 manager: dcscontentpm
 editor: ''
-tags: ''
+tags: virtual-machines
 ms.service: virtual-machines
 ms.topic: troubleshooting
 ms.workload: infrastructure-services
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.devlang: azurecli
 ms.date: 09/10/2019
 ms.author: v-miegge
-ms.openlocfilehash: d942f3861eb2fcc4e096248d495b2db2d8119ea1
-ms.sourcegitcommit: 2ed6e731ffc614f1691f1578ed26a67de46ed9c2
+ms.openlocfilehash: 6bda8cb831e84a56c889ed40109954551a34c113
+ms.sourcegitcommit: 018e3b40e212915ed7a77258ac2a8e3a660aaef8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71132108"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73796175"
 ---
 # <a name="repair-a-windows-vm-by-using-the-azure-virtual-machine-repair-commands"></a>Восстановление виртуальной машины Windows с помощью команд восстановления виртуальной машины Azure
 
@@ -54,7 +54,7 @@ ms.locfileid: "71132108"
 
    Azure Cloud Shell — это бесплатная интерактивная оболочка, с помощью которой можно выполнять действия, описанные в этой статье. Он включает общие средства Azure, предварительно установленные и настроенные для использования с вашей учетной записью.
 
-   Чтобы открыть Cloud Shell, выберите **проверить** в правом верхнем углу блока кода. Вы также можете открыть Cloud Shell на отдельной вкладке браузера, посетив [https://shell.azure.com](https://shell.azure.com)страницу.
+   Чтобы открыть Cloud Shell, выберите **проверить** в правом верхнем углу блока кода. Можно также открыть Cloud Shell на отдельной вкладке браузера, посетив [https://shell.azure.com](https://shell.azure.com).
 
    Выберите **Копировать** , чтобы скопировать блоки кода, вставьте код в Cloud Shell и нажмите клавишу **Ввод** , чтобы запустить его.
 
@@ -66,7 +66,7 @@ ms.locfileid: "71132108"
    az extension add -n vm-repair
    ```
 
-   Если вы ранее использовали эти `az vm repair` команды, примените все обновления к расширению восстановления виртуальной машины.
+   Если вы ранее использовали `az vm repair` команды, примените все обновления к расширению восстановления виртуальной машины.
 
    ```azurepowershell-interactive
    az extension update -n vm-repair
@@ -94,13 +94,13 @@ ms.locfileid: "71132108"
 
 В следующем примере на виртуальной машине ``myVMDeployed`` в группе ресурсов ``myResourceGroup`` включается расширение диагностики:
 
-Azure CLI
+Azure CLI
 
 ```azurepowershell-interactive
 az vm boot-diagnostics enable --name myVMDeployed --resource-group myResourceGroup --storage https://mystor.blob.core.windows.net/
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * При возникновении проблем с подключением к виртуальной машине ознакомьтесь со статьей [Устранение неполадок с подключением к удаленному рабочему столу на виртуальной машине Azure под управлением Windows](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/troubleshoot-rdp-connection).
 * Сведения о проблемах доступа к приложениям, выполняемым на виртуальной машине, см. [в статье Устранение неполадок с подключением к приложениям на виртуальных машинах в Azure](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/troubleshoot-app-connection).
