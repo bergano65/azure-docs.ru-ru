@@ -8,33 +8,14 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 10/21/2019
 ms.author: aahi
-ms.openlocfilehash: 6e46d58b3f1ef33902ab44043e954d9718d865af
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 3aa4da9a9cf3d1d4b664e81f1fd18f2b225d731d
+ms.sourcegitcommit: 018e3b40e212915ed7a77258ac2a8e3a660aaef8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73508048"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73800098"
 ---
 ## <a name="personal-information-entity-types"></a>Типы сущностей личных сведений:
-
-### <a name="person"></a>Person
-Распознаваемые имена и другие лица в тексте.
-Языки:
-* Общедоступная Предварительная версия: `English`
-
-| Имя подтипа | Description (Описание)             |
-|--------------|-------------------------|
-| Недоступно          | Распознаваемые имена, например `Bill Gates`, `Marie Curie` |
-
-### <a name="organization"></a>План  
-
-Признанные организации, Организации, учреждения и другие группы людей. Например: компании, «неправительственные» группы, музыкальные зоны, спортивные треф, государственные органы и общедоступные Организации. Национальные и религионсы не включаются в этот тип сущности. Языки: 
-
-* Общедоступная Предварительная версия: `English`
-
-| Имя подтипа | Description (Описание)                                                                                      |
-|--------------|--------------------------------------------------------------------------------------------------|
-| Недоступно          | Организации, например `Microsoft`, `NASA` `National Oceanic and Atmospheric Administration` |
 
 ### <a name="phone-number"></a>номер телефона;
 

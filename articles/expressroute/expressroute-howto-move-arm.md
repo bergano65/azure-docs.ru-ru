@@ -1,5 +1,5 @@
 ---
-title: 'Перенос каналов ExpressRoute из классической модели развертывания в модель развертывания с помощью Resource Manager: PowerShell: Azure | Документация Майкрософт'
+title: 'Перемещение цепей из классической модели в диспетчер ресурсов-ExpressRoute: PowerShell: Azure | Документация Майкрософт'
 description: В этой статье описывается перемещение классического канала в модель развертывания Resource Manager с помощью PowerShell.
 services: expressroute
 author: ganesr
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 02/25/2019
 ms.author: cherylmc
 ms.custom: seodec18
-ms.openlocfilehash: 11a84d4ced3232102d262352b84abe1f813e2406
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 34dd7ed4c6352ed90793288f918d78b7fb07af80
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60365199"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73748242"
 ---
 # <a name="move-expressroute-circuits-from-classic-to-resource-manager-deployment-model-using-powershell"></a>Перемещение каналов ExpressRoute из классической модели развертывания в модель развертывания с помощью Resource Manager с использованием PowerShell
 
@@ -21,9 +21,9 @@ ms.locfileid: "60365199"
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+[!INCLUDE [updated-for-az](../../includes/hybrid-az-ps.md)]
 
-* Убедитесь, что вы установили модули Az Azure PowerShell и классической локально на компьютере. Подробнее: [Установка и настройка Azure PowerShell](/powershell/azure/overview).
+* Убедитесь, что на компьютере установлены компоненты Classic и AZ Azure PowerShell modules. Дополнительные сведения см. в статье [Установка и настройка Azure PowerShell](/powershell/azure/overview).
 * Не забудьте изучить [предварительные требования](expressroute-prerequisites.md), [требования к маршрутизации](expressroute-routing.md) и [рабочие процессы](expressroute-workflows.md), прежде чем приступать к настройке.
 * Просмотрите сведения в статье [Перемещение каналов ExpressRoute из классической модели развертывания в модель развертывания с помощью Resource Manager](expressroute-move.md). Убедитесь, что вам полностью понятны пределы и ограничения.
 * Убедитесь, что канал полноценно работает в классической модели развертывания.
@@ -31,7 +31,7 @@ ms.locfileid: "60365199"
 
 ## <a name="move-an-expressroute-circuit"></a>Перемещение канала ExpressRoute
 
-### <a name="step-1-gather-circuit-details-from-the-classic-deployment-model"></a>Шаг 1. Сбор сведений о канале из классической модели развертывания
+### <a name="step-1-gather-circuit-details-from-the-classic-deployment-model"></a>Шаг 1. Соберите сведения о канале из классической модели развертывания
 
 Войдите в классическую среду Azure и получите ключ службы.
 
@@ -60,7 +60,7 @@ ms.locfileid: "60365199"
    Get-AzureDedicatedCircuit
    ```
 
-### <a name="step-2-sign-in-and-create-a-resource-group"></a>Шаг 2. Вход и создание группы ресурсов
+### <a name="step-2-sign-in-and-create-a-resource-group"></a>Шаг 2. Вход и создание группы ресурсов
 
 Войдите в среду Resource Manager и создайте группу ресурсов.
 
@@ -82,7 +82,7 @@ ms.locfileid: "60365199"
    New-AzResourceGroup -Name "DemoRG" -Location "West US"
    ```
 
-### <a name="step-3-move-the-expressroute-circuit-to-the-resource-manager-deployment-model"></a>Шаг 3. Перемещение канала ExpressRoute в модель развертывания Resource Manager
+### <a name="step-3-move-the-expressroute-circuit-to-the-resource-manager-deployment-model"></a>Шаг 3. Перемещение канала ExpressRoute в модель развертывания Resource Manager
 
 Теперь все готово для перемещения канала ExpressRoute из классической модели развертывания в модель Resource Manager. Прежде чем продолжить, просмотрите сведения в статье [Перемещение каналов ExpressRoute из классической модели развертывания в модель развертывания с помощью Resource Manager](expressroute-move.md).
 
@@ -92,7 +92,7 @@ ms.locfileid: "60365199"
 Move-AzExpressRouteCircuit -Name "MyCircuit" -ResourceGroupName "DemoRG" -Location "West US" -ServiceKey "<Service-key>"
 ```
 
-В классическом режиме для а ExpressRoute не предусмотрена привязка к региону. Но в Resource Manager каждый ресурс должен быть сопоставлен с регионом Azure. Регион, указанный в командлет Move-AzExpressRouteCircuit с технической точки зрения может быть любой регион. В соответствии с задачами организации может потребоваться выбрать регион, который точно представляет ваше расположение пиринга.
+В классическом режиме для а ExpressRoute не предусмотрена привязка к региону. Но в Resource Manager каждый ресурс должен быть сопоставлен с регионом Azure. Регион, указанный в командлете Move-АзекспрессраутеЦиркуит, технически может быть любым регионом. В соответствии с задачами организации может потребоваться выбрать регион, который точно представляет ваше расположение пиринга.
 
 > [!NOTE]
 > После завершения перемещения новое имя, указанное в предыдущем командлете, будет использоваться для адресации ресурсов. По существу канал будет переименован.

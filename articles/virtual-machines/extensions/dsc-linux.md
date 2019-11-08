@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 06/12/2018
 ms.author: robreed
-ms.openlocfilehash: e2faf444aa411f0e60f1b5c7b1f811abc2f6b63a
-ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
+ms.openlocfilehash: 1825f9f0f5d525c0129341d800ca5949136ae633
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72176691"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73750076"
 ---
 # <a name="dsc-extension-for-linux-microsoftostcextensionsdscforlinux"></a>Расширение DSC для Linux (Microsoft.OSTCExtensions.DSCForLinux)
 
@@ -35,15 +35,15 @@ Desired State Configuration (DSC) — это платформа, которая 
 - установка пользовательских модулей DSC на виртуальную машину Linux (Install ExtensionAction);
 - удаление пользовательских модулей DSC с виртуальной машины Linux (Remove ExtensionAction).
 
-[!INCLUDE [updated-for-az.md](../../../includes/updated-for-az.md)]
+ 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-### <a name="operating-system"></a>Операционная система
+### <a name="operating-system"></a>операционная система
 
 Расширение DSC для Linux поддерживает все [дистрибутивы Linux, рекомендованные для Azure](/azure/virtual-machines/linux/endorsed-distros), за исключением следующих.
 
-| Дистрибутив | Version |
+| Дистрибутив | Version (версия) |
 |---|---|
 | Debian | Все версии. |
 | Ubuntu| 18,04 |
@@ -305,7 +305,7 @@ $ azure vm extension set <vm-name> DSCForLinux Microsoft.OSTCExtensions <version
 $ azure vm extension list
 ```
 
-#### <a name="212-resource-manager"></a>2.1.2. Resource Manager
+#### <a name="212-resource-manager"></a>2.1.2. Диспетчер ресурсов
 Чтобы переключиться в режим Azure Resource Manager, выполните команду:
 ```
 $ azure config mode arm
@@ -420,8 +420,8 @@ az vm extension list --resource-group myResourceGroup --vm-name myVM -o table
 /var/log/azure/<extension-name>/<version>/extension.log file.
 ```
 
-Код ошибки: 51 указывает на неподдерживаемый дистрибутив или неподдерживаемое действие расширения.
-Иногда расширению DSC Linux не удается установить OMI, если на компьютере уже есть более новая версия OMI. [error response: (000003)Downgrade not allowed] (сообщение об ошибке: (000003) откат на более старую версию запрещен)
+Код ошибки 51 указывает на неподдерживаемый дистрибутив или неподдерживаемое действие расширения.
+Иногда расширению DSC Linux не удается установить OMI, если на компьютере уже есть более новая версия OMI. [error response: (000003)Downgrade not allowed] (сообщение об ошибке: (000003) откат на более старую версию не разрешен)
 
 
 
@@ -429,5 +429,5 @@ az vm extension list --resource-group myResourceGroup --vm-name myVM -o table
 
 Если в любой момент при изучении этой статьи вам потребуется дополнительная помощь, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/community/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните "Получить поддержку". Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о расширениях виртуальных машин см. в обзоре [расширений и компонентов виртуальной машины для Linux](features-linux.md).

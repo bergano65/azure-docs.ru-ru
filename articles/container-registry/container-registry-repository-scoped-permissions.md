@@ -8,12 +8,12 @@ ms.service: container-registry
 ms.topic: article
 ms.date: 10/31/2019
 ms.author: danlep
-ms.openlocfilehash: dbfadea9bc05614108333ef5a046e11b5280cc68
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 7b9d220ac7e507513458eab6b55276b3aa434739
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73588438"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73742747"
 ---
 # <a name="repository-scoped-permissions-in-azure-container-registry"></a>Разрешения уровня репозитория в реестре контейнеров Azure 
 
@@ -28,9 +28,8 @@ ms.locfileid: "73588438"
 
 ## <a name="preview-limitations"></a>Ограничения предварительной версии
 
-* Эта функция доступна только в реестре контейнеров уровня " **премиум** ". Сведения о уровнях служб реестра см. в статье [номера SKU реестра контейнеров Azure](container-registry-skus.md).
+* Эта функция доступна только в реестре контейнеров уровня " **премиум** ". Сведения об уровнях и ограничениях служб реестра см. в статье [номера SKU реестра контейнеров Azure](container-registry-skus.md).
 * В настоящее время невозможно назначить разрешения уровня репозитория для объекта Azure Active Directory, такого как субъект-служба или управляемое удостоверение.
-* Реестр поддерживает не более 20 000 сопоставлений областей и токенов 20 000.
 
 ## <a name="prerequisites"></a>Предварительные требования
 

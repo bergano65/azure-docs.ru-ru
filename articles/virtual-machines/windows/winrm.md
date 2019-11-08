@@ -14,33 +14,33 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 06/16/2016
 ms.author: kasing
-ms.openlocfilehash: f7f57a43697a9376062bdd3baa2d5f7333bf4a7f
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 25091e8e58fbdba908fb00ece3cd2d3d296c5ab1
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70100154"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73749051"
 ---
 # <a name="setting-up-winrm-access-for-virtual-machines-in-azure-resource-manager"></a>Настройка доступа WinRM для виртуальных машин в Azure Resource Manager
 
 Ниже приведены шаги, которые необходимо выполнить для настройки виртуальной машины с возможностью подключения WinRM:
 
 1. Создание хранилища ключей
-2. создать самозаверяющий сертификат;
+2. Создание самозаверяющего сертификата
 3. передать самозаверяющий сертификат в хранилище ключей;
 4. получить URL-адрес для самозаверяющего сертификата в хранилище ключей;
 5. сослаться на URL-адрес самозаверяющего сертификата при создании виртуальной машины.
 
-[!INCLUDE [updated-for-az.md](../../../includes/updated-for-az.md)]
+ 
 
-## <a name="step-1-create-a-key-vault"></a>Шаг 1. Создание хранилища ключей
+## <a name="step-1-create-a-key-vault"></a>Шаг 1. Создание хранилища ключей
 Для создания хранилища ключей можно воспользоваться следующей командой:
 
 ```
 New-AzKeyVault -VaultName "<vault-name>" -ResourceGroupName "<rg-name>" -Location "<vault-location>" -EnabledForDeployment -EnabledForTemplateDeployment
 ```
 
-## <a name="step-2-create-a-self-signed-certificate"></a>Шаг 2. Создание самозаверяющего сертификата
+## <a name="step-2-create-a-self-signed-certificate"></a>Шаг 2. Создание самозаверяющего сертификата
 Можно создать самозаверяющий сертификат с помощью этого сценария PowerShell.
 
 ```
@@ -55,7 +55,7 @@ $password = Read-Host -Prompt "Please enter the certificate password." -AsSecure
 Export-PfxCertificate -Cert $cert -FilePath ".\$certificateName.pfx" -Password $password
 ```
 
-## <a name="step-3-upload-your-self-signed-certificate-to-the-key-vault"></a>Шаг 3. Передача самозаверяющего сертификата в Key Vault
+## <a name="step-3-upload-your-self-signed-certificate-to-the-key-vault"></a>Шаг 3. Передача самозаверяющего сертификата в хранилище ключей
 Перед передачей сертификата в хранилище ключей, созданное на шаге 1, необходимо преобразовать его в формат, который будет понятен для поставщика ресурсов Microsoft.Compute. Следующий сценарий PowerShell позволит это сделать:
 
 ```
@@ -78,11 +78,11 @@ $secret = ConvertTo-SecureString -String $jsonEncoded -AsPlainText –Force
 Set-AzKeyVaultSecret -VaultName "<vault name>" -Name "<secret name>" -SecretValue $secret
 ```
 
-## <a name="step-4-get-the-url-for-your-self-signed-certificate-in-the-key-vault"></a>Шаг 4. получить URL-адрес для самозаверяющего сертификата в хранилище ключей;
+## <a name="step-4-get-the-url-for-your-self-signed-certificate-in-the-key-vault"></a>Шаг 4. Получение URL-адреса для самозаверяющего сертификата в хранилище ключей
 При подготовке виртуальной машины поставщику ресурсов Microsoft.Compute требуется URL-адрес для секрета в хранилище ключей. Это позволяет поставщику ресурсов Microsoft.Compute скачать секрет и создать эквивалент сертификата на виртуальной машине.
 
 > [!NOTE]
-> URL-адрес секрета также должен включать в себя версию. Пример URL-адреса выглядит примерно ниже HTTPS\/:/contosovault.Vault.Azure.NET:443/Secrets/contososecret/01h9db0df2cd4300a20ence585a6s7ve
+> URL-адрес секрета также должен включать в себя версию. Пример URL-адреса выглядит следующим образом:\//contosovault.vault.azure.net:443/secrets/contososecret/01h9db0df2cd4300a20ence585a6s7ve.
 
 #### <a name="templates"></a>Шаблоны
 Получить ссылку на URL-адрес в шаблоне можно с помощью следующего кода:
@@ -94,7 +94,7 @@ Set-AzKeyVaultSecret -VaultName "<vault name>" -Name "<secret name>" -SecretValu
 
     $secretURL = (Get-AzKeyVaultSecret -VaultName "<vault name>" -Name "<secret name>").Id
 
-## <a name="step-5-reference-your-self-signed-certificates-url-while-creating-a-vm"></a>Шаг 5. сослаться на URL-адрес самозаверяющего сертификата при создании виртуальной машины.
+## <a name="step-5-reference-your-self-signed-certificates-url-while-creating-a-vm"></a>Шаг 5. Создание ссылки на URL-адрес самозаверяющего сертификата при создании виртуальной машины
 #### <a name="azure-resource-manager-templates"></a>Шаблоны Azure Resource Manager
 При создании виртуальной машины с помощью шаблонов ссылки на сертификат задаются в разделе секретов и разделе winRM, как показано ниже.
 

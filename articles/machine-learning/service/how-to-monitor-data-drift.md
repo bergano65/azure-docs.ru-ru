@@ -10,12 +10,12 @@ ms.reviewer: jmartens
 ms.author: copeters
 author: cody-dkdc
 ms.date: 11/04/2019
-ms.openlocfilehash: eddfddc994482bcb6e60604703e7f306fee9c32b
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
-ms.translationtype: MT
+ms.openlocfilehash: 24b1c22d9badc58360b0355bb4ef89017db27f06
+ms.sourcegitcommit: 018e3b40e212915ed7a77258ac2a8e3a660aaef8
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73574320"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73796740"
 ---
 # <a name="detect-data-drift-preview-on-models-deployed-to-azure-kubernetes-service-aks"></a>Обнаружение смещения данных (Предварительная версия) в моделях, развернутых в службе Kubernetes Azure (AKS)
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-enterprise-sku.md)]
@@ -189,6 +189,8 @@ datadrift.disable_schedule()
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Полный пример использования смещения данных см. в [записной книжке "смещение данных машинного обучения Azure](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/monitor-models/data-drift/azure-ml-datadrift.ipynb)". В этом Jupyter Notebook демонстрируется использование [открытого набора данных Azure](https://docs.microsoft.com/azure/open-datasets/overview-what-are-open-datasets) для обучения модели для прогнозирования погоды, ее развертывания в AKS и отслеживания смещения данных. 
+* Полный пример использования смещения данных см. в [записной книжке "смещение данных машинного обучения Azure](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/monitor-models/data-drift/drift-on-aks.ipynb)". В этом Jupyter Notebook демонстрируется использование [открытого набора данных Azure](https://docs.microsoft.com/azure/open-datasets/overview-what-are-open-datasets) для обучения модели для прогнозирования погоды, ее развертывания в AKS и отслеживания смещения данных. 
+
+* Обнаружение смещения данных с помощью [мониторов наборов данных](how-to-monitor-datasets.md).
 
 * Мы очень ценим ваши вопросы, комментарии или предложения по мере того, как смещение данных перемещается в общую доступность. Используйте кнопку отзыв о продукте ниже. 

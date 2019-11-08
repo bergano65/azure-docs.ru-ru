@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 08/13/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: bced7a4b994172a1a2076149d6f25adb39c99b54
-ms.sourcegitcommit: fe50db9c686d14eec75819f52a8e8d30d8ea725b
+ms.openlocfilehash: 62d75267421d1f7587f136ea1e76f7c4b4341a37
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69015562"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73742644"
 ---
 # <a name="language-customization-in-azure-active-directory-b2c"></a>Настройка языка в Azure Active Directory B2C
 
@@ -27,9 +27,9 @@ ms.locfileid: "69015562"
 
 Иногда вам может не понадобиться такой уровень контроля за тем, какие языки будут доступны пользователю. Если не указать параметр `ui_locales`, настройка языка будет зависеть от параметров браузера. Вы сможете управлять тем, какие языки будут доступны потоку пользователя, добавив их в качестве поддерживаемых. Если браузер клиента настроен для отображения на языке, который не требуется поддерживать, вместо него будет отображаться язык, выбранный по умолчанию для поддерживаемых языков.
 
-* **Язык, указанный с помощью ui-locales**. После включения настройки языка поток пользователя переводится на указанный язык.
-* **Язык, запрошенный браузером**. Если параметр `ui_locales` не указан, поток пользователя получает страницу на языке, запрошенном браузером, *при условии наличия поддержки данного языка*.
-* **Язык, заданный в политике по умолчанию**. Если в браузере не указан язык или указан неподдерживаемый язык, для перевода потока пользователя будет использоваться язык политики по умолчанию.
+* **язык, указанный в пользовательском интерфейсе**: после включения настройки языка поток пользователя будет переведен на указанный здесь язык.
+* **Язык, запрошенный браузером**: если не указан `ui_locales` параметр, поток пользователя преобразуется в требуемый для браузера язык, *Если язык поддерживается*.
+* **Язык политики по умолчанию**: Если в браузере не указан язык или он указывает, что он не поддерживается, поток пользователя преобразуется в язык пользовательского потока по умолчанию.
 
 > [!NOTE]
 > Если используются пользовательские атрибуты, необходимо предоставить собственный перевод. Дополнительные сведения см. в разделе [Настройка строк](#customize-your-strings).
@@ -145,7 +145,7 @@ ms.locfileid: "69015562"
 
 ## <a name="customize-the-page-ui-by-using-language-customization"></a>Настройка пользовательского интерфейса страницы с помощью настройки языка
 
-Локализация HTML-содержимого выполняется двумя способами. Одним из способов является включение [настройка языка](active-directory-b2c-reference-language-customization.md). Включение этой функции позволяет Azure AD B2C пересылать параметр `ui-locales`OpenID Connect Connect в конечную точку. Сервер содержимого может использовать этот параметр для предоставления настроенных страниц HTML на конкретном языке.
+Локализация HTML-содержимого выполняется двумя способами. Одним из способов является включение [настройка языка](active-directory-b2c-reference-language-customization.md). Включение этой функции позволяет Azure AD B2C пересылать в конечную точку параметр OpenID Connect Connect, `ui-locales`. Сервер содержимого может использовать этот параметр для предоставления настроенных страниц HTML на конкретном языке.
 
 Кроме того, можно извлечь содержимое из разных расположений, в зависимости от используемого языкового стандарта. В конечной точке с поддержкой CORS можно настроить структуру папок для размещения содержимого для определенных языков. При использовании шаблона подстановки `{Culture:RFC5646}` запрос будет правильным. Например, предположим, что это URI вашей настраиваемой страницы.
 
@@ -175,7 +175,7 @@ https://wingtiptoysb2c.blob.core.windows.net/fr/wingtip/unified.html
 >[!IMPORTANT]
 >Прежде чем вы сможете сохранить, необходимо включить пользовательские языки или отправить переопределения для них.
 
-## <a name="additional-information"></a>Дополнительные сведения
+## <a name="additional-information"></a>Дополнительная информация
 
 ### <a name="page-ui-customization-labels-as-overrides"></a>Использование меток настройки пользовательского интерфейса страницы для переопределения параметров страницы
 
@@ -201,58 +201,58 @@ https://wingtiptoysb2c.blob.core.windows.net/fr/wingtip/unified.html
 
 Azure AD B2C включает поддержку следующих языков. Языки потока пользователей предоставляются Azure AD B2C. Языки уведомлений многофакторной идентификации (MFA) предоставляются [Azure MFA](../active-directory/authentication/concept-mfa-howitworks.md).
 
-| Язык              | Код языка | Маршруты пользователей         | Уведомления MFA  |
+| язык              | Код языка | Маршруты пользователей         | Уведомления MFA  |
 |-----------------------| :-----------: | :----------------: | :----------------: |
-| Арабский                | ar            | :x:                | :heavy_check_mark: |
-| Болгарский             | платежей            | :x:                | :heavy_check_mark: |
-| Бенгальский                | bn            | :heavy_check_mark: | :x:                |
-| Каталанский               | Корнев            | :x:                | :heavy_check_mark: |
-| Чешский                 | cs            | :heavy_check_mark: | :heavy_check_mark: |
-| Датский                | da            | :heavy_check_mark: | :heavy_check_mark: |
-| Немецкий                | de            | :heavy_check_mark: | :heavy_check_mark: |
-| Греческий                 | el            | :heavy_check_mark: | :heavy_check_mark: |
-| Английский               | ru-RU            | :heavy_check_mark: | :heavy_check_mark: |
-| Испанский               | es            | :heavy_check_mark: | :heavy_check_mark: |
-| Эстонский              | ET            | :x:                | :heavy_check_mark: |
-| Баскский (Баскский)                | величин            | :x:                | :heavy_check_mark: |
-| Финский               | fi            | :heavy_check_mark: | :heavy_check_mark: |
-| Французский                | fr            | :heavy_check_mark: | :heavy_check_mark: |
-| галисийский              | Фин            | :x:                | :heavy_check_mark: |
-| Гуджарати              | gu            | :heavy_check_mark: | :x:                |
-| Иврит                | he            | :x:                | :heavy_check_mark: |
-| Хинди                 | hi            | :heavy_check_mark: | :heavy_check_mark: |
-| Хорватский              | ч            | :heavy_check_mark: | :heavy_check_mark: |
-| Венгерский             | hu            | :heavy_check_mark: | :heavy_check_mark: |
-| Индонезийский            | id            | :x:                | :heavy_check_mark: |
-| Итальянский               | it            | :heavy_check_mark: | :heavy_check_mark: |
-| Японский              | ja            | :heavy_check_mark: | :heavy_check_mark: |
-| казахский                | кк            | :x:                | :heavy_check_mark: |
-| Каннада               | kn            | :heavy_check_mark: | :x:                |
-| Корейский                | ko            | :heavy_check_mark: | :heavy_check_mark: |
-| Литовский            | lt            | :x:                | :heavy_check_mark: |
-| Латышский               | LV            | :x:                | :heavy_check_mark: |
-| Малаялам             | ml            | :heavy_check_mark: | :x:                |
-| Маратхи               | mr            | :heavy_check_mark: | :x:                |
-| Малайский                 | мс            | :heavy_check_mark: | :heavy_check_mark: |
-| Норвежский (букмол)      | nb            | :heavy_check_mark: | :x:                |
-| Голландский                 | nl            | :heavy_check_mark: | :heavy_check_mark: |
-| Норвежский             | нет            | :x:                | :heavy_check_mark: |
-| Панджаби               | pa            | :heavy_check_mark: | :x:                |
-| Польский                | pl            | :heavy_check_mark: | :heavy_check_mark: |
-| Португальский - Бразилия   | pt-br         | :heavy_check_mark: | :heavy_check_mark: |
-| Португальский - Португалия | pt-pt         | :heavy_check_mark: | :heavy_check_mark: |
-| Румынский              | ro            | :heavy_check_mark: | :heavy_check_mark: |
-| Русский               | ru            | :heavy_check_mark: | :heavy_check_mark: |
-| Словацкий                | sk            | :heavy_check_mark: | :heavy_check_mark: |
-| Словенский             | SL            | :x:                | :heavy_check_mark: |
-| Сербский — кириллица    | SR-Крил-CS    | :x:                | :heavy_check_mark: |
-| Сербский (латиница)       | SR-ЛАТН-CS    | :x:                | :heavy_check_mark: |
-| Шведский               | sv            | :heavy_check_mark: | :heavy_check_mark: |
-| Тамильский                 | ta            | :heavy_check_mark: | :x:                |
-| Телугу                | te            | :heavy_check_mark: | :x:                |
-| Тайский                  | -й            | :heavy_check_mark: | :heavy_check_mark: |
-| Турецкий               | tr            | :heavy_check_mark: | :heavy_check_mark: |
-| Украинский             | Великобритании            | :x:                | :heavy_check_mark: |
-| Вьетнамский            | Редактор            | :x:                | :heavy_check_mark: |
-| Китайский (упрощенное письмо)  | zh-hans       | :heavy_check_mark: | :heavy_check_mark: |
-| Китайский (традиционное письмо) | zh-hant       | :heavy_check_mark: | :heavy_check_mark: |
+| Арабский                | ar            | ![Нет](media/active-directory-b2c-reference-language-customization/no.png) | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) |
+| Болгарский             | платежей            | ![Нет](media/active-directory-b2c-reference-language-customization/no.png) | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) |
+| Бенгальский                | bn            | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) | ![Нет](media/active-directory-b2c-reference-language-customization/no.png) |
+| Каталанский               | Корнев            | ![Нет](media/active-directory-b2c-reference-language-customization/no.png) | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) |
+| Чешский                 | cs            | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) |
+| Датский                | da            | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) |
+| Немецкий                | de            | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) |
+| Греческий                 | el            | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) |
+| Английский               | en            | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) |
+| Испанский               | es            | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) |
+| Эстонский              | ET            | ![Нет](media/active-directory-b2c-reference-language-customization/no.png) | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) |
+| Баскский                | величин            | ![Нет](media/active-directory-b2c-reference-language-customization/no.png) | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) |
+| Финский               | fi            | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) |
+| Французский                | fr            | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) |
+| Галисийский              | Фин            | ![Нет](media/active-directory-b2c-reference-language-customization/no.png) | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) |
+| Гуджарати              | gu            | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) | ![Нет](media/active-directory-b2c-reference-language-customization/no.png) |
+| Иврит                | he            | ![Нет](media/active-directory-b2c-reference-language-customization/no.png) | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) |
+| Хинди                 | hi            | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) |
+| Хорватский              | hr            | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) |
+| Венгерский             | hu            | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) |
+| Индонезийский            | id            | ![Нет](media/active-directory-b2c-reference-language-customization/no.png) | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) |
+| Итальянский               | it            | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) |
+| Японский              | ja            | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) |
+| Казахский                | кк            | ![Нет](media/active-directory-b2c-reference-language-customization/no.png) | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) |
+| Каннада               | kn            | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) | ![Нет](media/active-directory-b2c-reference-language-customization/no.png) |
+| Корейский                | ko            | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) |
+| Литовский            | lt            | ![Нет](media/active-directory-b2c-reference-language-customization/no.png) | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) |
+| Латышский               | LV            | ![Нет](media/active-directory-b2c-reference-language-customization/no.png) | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) |
+| Малаялам             | ml            | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) | ![Нет](media/active-directory-b2c-reference-language-customization/no.png) |
+| Маратхи               | mr            | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) | ![Нет](media/active-directory-b2c-reference-language-customization/no.png) |
+| Малайский                 | ms            | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) |
+| Норвежский (букмол)      | nb            | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) | ![Нет](media/active-directory-b2c-reference-language-customization/no.png) |
+| Нидерландский                 | nl            | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) |
+| Норвежский             | Нет            | ![Нет](media/active-directory-b2c-reference-language-customization/no.png) | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) |
+| Панджаби               | pa            | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) | ![Нет](media/active-directory-b2c-reference-language-customization/no.png) |
+| Польский                | pl            | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) |
+| Португальский (Бразилия)   | pt-br         | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) |
+| Португальский (Португалия) | pt-pt         | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) |
+| Румынский              | ro            | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) |
+| Русский               | ru            | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) |
+| Словацкий                | sk            | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) |
+| Словенский             | SL            | ![Нет](media/active-directory-b2c-reference-language-customization/no.png) | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) |
+| Сербский — кириллица    | SR-Крил-CS    | ![Нет](media/active-directory-b2c-reference-language-customization/no.png) | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) |
+| Сербский (латиница)       | SR-ЛАТН-CS    | ![Нет](media/active-directory-b2c-reference-language-customization/no.png) | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) |
+| Шведский               | sv            | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) |
+| Тамильский                 | ta            | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) | ![Нет](media/active-directory-b2c-reference-language-customization/no.png) |
+| Телугу                | te            | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) | ![Нет](media/active-directory-b2c-reference-language-customization/no.png) |
+| Тайский                  | th            | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) |
+| Турецкий               | tr            | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) |
+| Украинский             | Великобритании            | ![Нет](media/active-directory-b2c-reference-language-customization/no.png) | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) |
+| Вьетнамский            | Редактор            | ![Нет](media/active-directory-b2c-reference-language-customization/no.png) | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) |
+| Китайский (упрощенное письмо)  | zh-hans       | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) |
+| Китайский (традиционное письмо) | zh-hant       | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) | ![Да](media/active-directory-b2c-reference-language-customization/yes.png) |

@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 05/23/2017
 ms.author: cynthn
 ROBOTS: NOINDEX
-ms.openlocfilehash: cc3c1d9352d9df44a51a917700c656055b8b8361
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: cdbf55aae52cec9df1ba34cbeb34c67b8e5fc5d0
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70088623"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73749202"
 ---
 # <a name="create-a-vm-from-a-specialized-vhd-in-a-storage-account"></a>Создание виртуальной машины на основе специализированного VHD в учетной записи хранения
 
@@ -30,7 +30,7 @@ ms.locfileid: "70088623"
 * [Передача VHD](sa-create-vm-specialized.md#option-1-upload-a-specialized-vhd)
 * [Копирование VHD, имеющейся виртуальной машины Azure](sa-create-vm-specialized.md#option-2-copy-the-vhd-from-an-existing-azure-vm).
 
-[!INCLUDE [updated-for-az.md](../../../includes/updated-for-az.md)]
+ 
 
 
 ## <a name="option-1-upload-a-specialized-vhd"></a>Вариант 1. Передача специализированного VHD
@@ -70,7 +70,7 @@ Get-AzStorageAccount
     New-AzResourceGroup -Name myResourceGroup -Location "West US"
     ```
 
-2. С помощью командлета [New-AzStorageAccount](https://docs.microsoft.com/powershell/module/az.storage/new-azstorageaccount) создайте в этой группе ресурсов учетную запись хранения с именем **mystorageaccount**:
+2. С помощью командлета **New-AzStorageAccount** создайте в этой группе ресурсов учетную запись хранения с именем [mystorageaccount](https://docs.microsoft.com/powershell/module/az.storage/new-azstorageaccount):
    
     ```powershell
     New-AzStorageAccount -ResourceGroupName myResourceGroup -Name mystorageaccount -Location "West US" `
@@ -118,8 +118,8 @@ C:\Users\Public\Doc...  https://mystorageaccount.blob.core.windows.net/mycontain
 ### <a name="deallocate-the-vm"></a>Освобождение виртуальной машины
 Освободите виртуальную машину, что позволит скопировать VHD. 
 
-* **Портал**. Щелкните **Виртуальные машины** > **myVM** > "Остановить".
-* **PowerShell**. Выполните командлет [Stop-AzVM](https://docs.microsoft.com/powershell/module/az.compute/stop-azvm), чтобы остановить виртуальную машину **myVM** или отменить ее подготовку в группе ресурсов **myResourceGroup**.
+* **Портал**: щелкните **Виртуальные машины** > **myVM** > Остановить
+* **PowerShell**. Используйте команду " [AzVM](https://docs.microsoft.com/powershell/module/az.compute/stop-azvm) " для завершения (освобождения) виртуальной машины с именем **myVM** в группе ресурсов **myResourceGroup**.
 
 ```powershell
 Stop-AzVM -ResourceGroupName myResourceGroup -Name myVM
@@ -132,8 +132,8 @@ Stop-AzVM -ResourceGroupName myResourceGroup -Name myVM
 
 Для получения URL-адреса можно использовать портал Azure или Azure PowerShell:
 
-* **Портал**. Щелкните **>** **Все службы** > **Учетные записи хранения** > *учетная запись хранения* > **Большие двоичные объекты**. Ваш исходный VHD-файл скорее всего будет находиться в контейнере **vhds**. Щелкните **Свойства** контейнера и скопируйте текст с пометкой **URL-адрес**. Вам понадобятся URL-адреса исходного и целевого контейнеров. 
-* **PowerShell**. Выполните командлет [Get-AzVM](https://docs.microsoft.com/powershell/module/az.compute/get-azvm), чтобы получить сведения о виртуальной машине **myVM** в группе ресурсов **myResourceGroup**. В результатах просмотрите раздел **Storage profile** (Профиль хранилища) и найдите в нем **URI VHD**. Первая часть URI является URL-адресом контейнера, а последняя часть — именем VHD операционной системы для виртуальной машины.
+* **Портал.** Щелкните **>** **Все службы** > **Учетные записи хранения** > *учетная запись хранения* > **Большие двоичные объекты**. Ваш исходный VHD-файл скорее всего будет находиться в контейнере **vhds**. Щелкните **Свойства** контейнера и скопируйте текст с пометкой **URL-адрес**. Вам понадобятся URL-адреса исходного и целевого контейнеров. 
+* **PowerShell**. Используйте [Get-AzVM](https://docs.microsoft.com/powershell/module/az.compute/get-azvm) , чтобы получить сведения для виртуальной машины с именем **myVM** в группе ресурсов **myResourceGroup**. В результатах просмотрите раздел **Storage profile** (Профиль хранилища) и найдите в нем **URI VHD**. Первая часть URI является URL-адресом контейнера, а последняя часть — именем VHD операционной системы для виртуальной машины.
 
 ```powershell
 Get-AzVM -ResourceGroupName "myResourceGroup" -Name "myVM"
@@ -142,8 +142,8 @@ Get-AzVM -ResourceGroupName "myResourceGroup" -Name "myVM"
 ## <a name="get-the-storage-access-keys"></a>Получение ключей доступа к хранилищу
 Найдите ключи доступа для исходной и целевой учетных записей хранения. Дополнительные сведения о ключах доступа см. в статье [Об учетных записях хранения Azure](../../storage/common/storage-create-storage-account.md).
 
-* **Портал**. Щелкните **Все службы** > **Учетные записи хранения** > *учетная запись хранения* > **Ключи доступа**. Скопируйте ключ с пометкой **key1**.
-* **PowerShell**. Выполните командлет [Get-AzStorageAccountKey](https://docs.microsoft.com/powershell/module/az.storage/get-azstorageaccountkey), чтобы получить сведения о ключе к хранилищу данных для учетной записи хранения **mystorageaccount** в группе ресурсов **myResourceGroup**. Скопируйте ключ с пометкой **key1**.
+* **Портал.** Щелкните **Все службы** > **Учетные записи хранения** > *учетная запись хранения* > **Ключи доступа**. Скопируйте ключ с пометкой **key1**.
+* **PowerShell**. Используйте [Get-азсторажеаккаунткэй](https://docs.microsoft.com/powershell/module/az.storage/get-azstorageaccountkey) , чтобы получить ключ хранилища для учетной записи хранения **mystorageaccount** в группе ресурсов **myResourceGroup**. Скопируйте ключ с пометкой **key1**.
 
 ```powershell
 Get-AzStorageAccountKey -Name mystorageaccount -ResourceGroupName myResourceGroup
@@ -277,7 +277,7 @@ $vm = Add-AzVMNetworkInterface -VM $vmConfig -Id $nic.Id
     $vm = Set-AzVMOSDisk -VM $vm -Name $osDiskName -VhdUri $osDiskUri -CreateOption attach -Windows
     ```
 
-Дополнительно при наличии дисков данных, которые необходимо подключить к виртуальной машине, добавьте их, используя URL-адреса виртуальных жестких дисков данных и соответствующий логический номер устройства (LUN).
+(Необязательно.) При наличии дисков данных, которые необходимо подключить к виртуальной машине, добавьте их, используя URL-адреса виртуальных жестких дисков данных и соответствующий логический номер устройства (LUN).
 
 ```powershell
 $dataDiskName = $vmName + "dataDisk"
@@ -313,6 +313,6 @@ $vmList = Get-AzVM -ResourceGroupName $rgName
 $vmList.Name
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Войдите на свою новую виртуальную машину. Дополнительные сведения см. в статье [Как подключиться к виртуальной машине Azure под управлением Windows и войти на нее](connect-logon.md).
 

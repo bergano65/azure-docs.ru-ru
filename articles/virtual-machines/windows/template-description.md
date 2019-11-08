@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 01/03/2019
 ms.author: cynthn
-ms.openlocfilehash: 23519edb61df23c97dfd2162d6cabea6b7fa5d38
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: afbf77014ece981568d4123db7820a2fa0a8f60d
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70101772"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73749109"
 ---
 # <a name="virtual-machines-in-an-azure-resource-manager-template"></a>Виртуальные машины в шаблоне Azure Resource Manager
 
@@ -27,7 +27,7 @@ ms.locfileid: "70101772"
 
 [В коллекции есть много шаблонов](https://azure.microsoft.com/documentation/templates/?term=VM), которые включают в себя ресурс виртуальной машины. Здесь описываются не все элементы, которые могут быть включены в шаблон.
 
-[!INCLUDE [updated-for-az.md](../../../includes/updated-for-az.md)]
+ 
 
 В этом примере показан типичный раздел ресурсов шаблона для создания указанного числа виртуальных машин.
 
@@ -374,7 +374,7 @@ Resource Manager параллельно развертывает все ресу
 ],
 ```
 
-## <a name="extensions"></a>Расширения
+## <a name="extensions"></a>расширения.
 
 Хотя функции [расширения](extensions-features.md) являются отдельным ресурсом, они тесно связаны с виртуальными машинами. Расширения можно добавить как дочерний ресурс виртуальной машины или как отдельный ресурс. В примере показано добавление [расширения системы диагностики](extensions-diagnostics-template.md) к виртуальным машинам.
 
@@ -446,7 +446,7 @@ Resource Manager параллельно развертывает все ресу
 
 Сведения о расширении также можно получить с помощью команды PowerShell **Get-AzVMExtension**, команды Azure CLI **vm extension get** или команды REST API **Get extension information**.
 
-## <a name="deployments"></a>Развертывания
+## <a name="deployments"></a>Развернутые приложения
 
 При развертывании шаблона Azure отслеживает ресурсы, развернутые в рамках группы, и автоматически присваивает имя этой развернутой группе. Имя этого развертывания совпадает с именем шаблона.
 
@@ -456,7 +456,7 @@ Resource Manager параллельно развертывает все ресу
     
 Один и тот же шаблон можно использовать для создания или для обновления существующих ресурсов. При использовании команд для развертывания шаблонов вы сможете выбрать, какой [режим](../../resource-group-template-deploy.md) хотите использовать. Можно задать **полный** или **добавочный** режим. По умолчанию выполняются добавочные обновления. Будьте внимательны при использовании режима **Полный**, так как можно случайно удалить ресурсы. Если выбран режим **Завершить**, Resource Manager удаляет все ресурсы в группе ресурсов, которых нет в шаблоне.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о создании собственного шаблона см. в статье [Создание шаблонов Azure Resource Manager](../../resource-group-authoring-templates.md).
 - Сведения о развертывании созданного шаблона см. в статье [Создание виртуальной машины Windows с использованием шаблона Resource Manager](ps-template.md).
