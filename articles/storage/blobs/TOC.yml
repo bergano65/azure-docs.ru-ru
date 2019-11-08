@@ -378,8 +378,6 @@
           href: storage-blob-event-quickstart.md
         - name: Обработка журналов канала изменений
           href: storage-blob-change-feed-how-to.md
-        - name: Поиск хранилища BLOB-объектов с помощью Поиска Azure
-          href: ../../search/search-blob-storage-integration.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: Передача данных
           items:
             - name: AzCopy
@@ -706,7 +704,6 @@
             - name: Настройка разрешений на уровне файлов и каталогов
               href: ../blobs/data-lake-storage-how-to-set-permissions-storage-explorer.md
         - name: Оптимизация производительности
-          href: ../blobs/data-lake-storage-use-power-bi.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
           items:
             - name: Обзор
               href: ../blobs/data-lake-storage-performance-tuning-guidance.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
@@ -733,6 +730,7 @@
         - name: Использование с интерфейсом командной строки для файловой системы Hadoop
           href: ../blobs/data-lake-storage-use-hdfs-data-lake-storage.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: Использование с Power BI
+          href: ../blobs/data-lake-storage-use-power-bi.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
     - name: Справочные материалы
       items:
         - name: PowerShell
