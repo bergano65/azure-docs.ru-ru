@@ -1,5 +1,5 @@
 ---
-title: Возможности работы с несколькими моделями в базе данных SQL Azure
+title: Возможности при использовании нескольких моделей
 description: База данных SQL Azure позволяет работать с несколькими моделями данных в одной базе данных.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: ''
 ms.date: 12/17/2018
-ms.openlocfilehash: 0d59db65e940cab12dccaeeacc9083eb7fbba20e
-ms.sourcegitcommit: 018e3b40e212915ed7a77258ac2a8e3a660aaef8
-ms.translationtype: HT
+ms.openlocfilehash: 2e8519fa8d96b7fe016b9da4ba84ce481a57d94e
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73795763"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73802816"
 ---
 # <a name="multi-model-capabilities-of-azure-sql-database"></a>Возможности при использовании нескольких моделей в службе "База данных SQL Azure"
 
