@@ -5,14 +5,14 @@ services: application-gateway
 author: caya
 ms.service: application-gateway
 ms.topic: article
-ms.date: 10/22/2019
+ms.date: 11/4/2019
 ms.author: caya
-ms.openlocfilehash: 045fb54956e78e826b06dc1c56c29e1c7bd430bd
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: dec43a4d7eb5a9546fcd77cce972b93542ea3b10
+ms.sourcegitcommit: 018e3b40e212915ed7a77258ac2a8e3a660aaef8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73513423"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73795951"
 ---
 # <a name="install-an-application-gateway-ingress-controller-agic-using-an-existing-application-gateway"></a>Установка контроллера входящего трафика шлюза приложений (АГИК) с помощью существующего шлюза приложений
 
@@ -27,7 +27,7 @@ ms.locfileid: "73513423"
 - [Установка контроллера входящего трафика с помощью Helm](#install-ingress-controller-as-a-helm-chart)
 - [Шлюз приложений с несколькими кластерами и общим доступом](#multi-cluster--shared-application-gateway). Установите агик в среде, где шлюз приложений является общим для одного или нескольких кластеров AKS и (или) других компонентов Azure.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 В этом документе предполагается, что у вас уже установлены следующие средства и инфраструктура:
 - [AKS](https://azure.microsoft.com/services/kubernetes-service/) с включенной поддержкой [расширенных сетей](https://docs.microsoft.com/azure/aks/configure-azure-cni)
 - [Шлюз приложений версии 2](https://docs.microsoft.com/azure/application-gateway/create-zone-redundant) в той же виртуальной сети, что и AKS
@@ -128,7 +128,7 @@ armAuth:
 ```
 
 ## <a name="install-ingress-controller-as-a-helm-chart"></a>Установка контроллера входящего трафика как Helm диаграммы
-В первых нескольких шагах мы установим Helm в кластере Kubernetes. Для установки пакета Helm АГИК используйте [Cloud Shell](https://shell.azure.com/) :
+В первых нескольких шагах мы устанавливаем Helm в кластере Kubernetes. Для установки пакета Helm АГИК используйте [Cloud Shell](https://shell.azure.com/) :
 
 1. Добавление `application-gateway-kubernetes-ingress` репозитория Helm и выполнение обновления Helm
 
@@ -246,7 +246,7 @@ armAuth:
 ### <a name="example-scenario"></a>Пример сценария
 Рассмотрим воображаемый шлюз приложений, который управляет трафиком для двух веб-сайтов:
   - `dev.contoso.com`, размещенный на новом AKS с использованием шлюза приложений и АГИК
-  - `prod.contoso.com`, размещенный в [масштабируемом наборе машин Azure виртуальную](https://azure.microsoft.com/services/virtual-machine-scale-sets/)
+  - `prod.contoso.com`, размещенный в [масштабируемом наборе виртуальных машин Azure](https://azure.microsoft.com/services/virtual-machine-scale-sets/)
 
 При использовании параметров по умолчанию АГИК предполагает владение шлюзом приложений на 100%, на который указывает. АГИК перезаписывает все настройки шлюза приложений. Если бы мы вручную создали прослушиватель для `prod.contoso.com` (в шлюзе приложений), не определяя его в Kubernetes, АГИК удалит конфигурацию `prod.contoso.com` в течение нескольких секунд.
 
@@ -323,7 +323,7 @@ Helm install с `appgw.shared=true` выполнит развертывание 
     ```
 
 ### <a name="enable-for-an-existing-agic-installation"></a>Включить для существующей установки АГИК
-Предположим, что у нас уже есть рабочий AKS, шлюз приложений и настроенный АГИК в нашем кластере. У нас есть входящий `prod.contosor.com` и они успешно обслуживают трафик из AKS. Мы хотим добавить `staging.contoso.com` к существующему шлюзу приложений, но необходимо разместить его на [виртуальной машине](https://azure.microsoft.com/services/virtual-machines/). Мы будем повторно использовать существующий шлюз приложений и вручную настроить прослушиватель и пулы серверной части для `staging.contoso.com`. Но Настройка конфигурации шлюза приложений вручную (через [портал](https://portal.azure.com), [API ARM](https://docs.microsoft.com/rest/api/resources/) или [terraform](https://www.terraform.io/)) противоречит предположениям полного владения агик. Вскоре после применения изменений АГИК будет перезаписывать или удалять их.
+Предположим, что у нас уже есть рабочий AKS, шлюз приложений и настроенный АГИК в нашем кластере. У нас есть входящий `prod.contosor.com` и они успешно обслуживают трафик из AKS. Мы хотим добавить `staging.contoso.com` к существующему шлюзу приложений, но необходимо разместить его на [виртуальной машине](https://azure.microsoft.com/services/virtual-machines/). Мы будем повторно использовать существующий шлюз приложений и вручную настроить прослушиватель и серверные пулы для `staging.contoso.com`. Но Настройка конфигурации шлюза приложений вручную (через [портал](https://portal.azure.com), [API ARM](https://docs.microsoft.com/rest/api/resources/) или [terraform](https://www.terraform.io/)) противоречит предположениям полного владения агик. Вскоре после применения изменений АГИК будет перезаписывать или удалять их.
 
 Мы можем запретить АГИК внесение изменений в подмножество конфигурации.
 

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 09/17/2018
 ms.author: cynthn
-ms.openlocfilehash: 30e5a7e5953c56ff452b992370e8225ca103abba
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 016b53660499b86de13855cfa994c84d6d9bc702
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70079695"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73749508"
 ---
 # <a name="create-a-vm-from-a-managed-image"></a>Создание виртуальной машины из управляемого образа
 
@@ -43,7 +43,7 @@ ms.locfileid: "70079695"
 
 С помощью PowerShell вы можете создать виртуальную машину из образа, используя упрощенный набор параметров для командлета [New-AzVm](https://docs.microsoft.com/powershell/module/az.compute/new-azvm). Образ должен находиться в той же группе ресурсов, где будет создана виртуальная машина.
 
-[!INCLUDE [updated-for-az.md](../../../includes/updated-for-az.md)]
+ 
 
 Для создания виртуальной машины из образа в упрощенном наборе параметров для [New-AzVm](https://docs.microsoft.com/powershell/module/az.compute/new-azvm) нужно указать только имя, группу ресурсов и имя образа. В качестве имени всех ресурсов, которые создаются автоматически, New-AzVm будет использовать значение параметра **-Name**. В этом примере мы предоставим более подробные имена для каждого из ресурсов, которые автоматически создаются при помощи командлета. Также можно создать такие ресурсы, как виртуальная сеть, заранее и передать соответствующее имя ресурса в командлет. New-AzVm будет использовать существующие ресурсы, если их можно найти по имени.
 
@@ -65,6 +65,6 @@ New-AzVm `
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [Руководство. Создание и администрирование виртуальных машин Windows с помощью Azure PowerShell](tutorial-manage-vm.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
 

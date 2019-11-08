@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: 864c806f146d7da4e45cc2b58159e5cad23364f8
-ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
+ms.openlocfilehash: c1e96a3acf2a576e0656afb3abea9dd787bf989a
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71828716"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73750066"
 ---
 # <a name="azure-disk-encryption-troubleshooting-guide"></a>Руководство по устранению неполадок шифрования дисков Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "71828716"
 - [Требования к сети](disk-encryption-overview.md#networking-requirements)
 - [Требования к хранилищу ключей шифрования](disk-encryption-overview.md#encryption-key-storage-requirements)
 
-[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
+ 
 
 ## <a name="troubleshooting-linux-os-disk-encryption"></a>Устранение неполадок шифрования диска ОС Linux
 
@@ -69,7 +69,7 @@ uname -a
 
 Последовательность шифрования диска операционной системы Linux временно отключает диск операционной системы. Затем выполняется блочное шифрование всего диска операционной системы перед его повторным подключением в зашифрованном состоянии. Шифрование дисков Linux не позволяет одновременно использовать виртуальную машину во время выполнения шифрования. Характеристики производительности виртуальной машины могут существенно повлиять на время, необходимое для завершения шифрования. К таким характеристикам относится размер диска и класс учетной записи хранения ("Стандартный" или "Премиум" (SSD)).
 
-Чтобы проверить состояние шифрования, опросить поле **ProgressMessage** , возвращенное командой [Get-азвмдискенкриптионстатус](/powershell/module/az.compute/get-azvmdiskencryptionstatus) . Во время шифрования диска ОС виртуальная машина входит в состояние обслуживания, а также отключается SSH, чтобы предотвратить нарушение текущего процесса. В процессе шифрования часто появляется сообщение **EncryptionInProgress**. Через несколько часов появляется сообщение **VMRestartPending**, в котором вам будет предложено перезагрузить виртуальную машину. Пример:
+Чтобы проверить состояние шифрования, опросить поле **ProgressMessage** , возвращенное командой [Get-азвмдискенкриптионстатус](/powershell/module/az.compute/get-azvmdiskencryptionstatus) . Во время шифрования диска ОС виртуальная машина входит в состояние обслуживания, а также отключается SSH, чтобы предотвратить нарушение текущего процесса. В процессе шифрования часто появляется сообщение **EncryptionInProgress**. Через несколько часов появляется сообщение **VMRestartPending**, в котором вам будет предложено перезагрузить виртуальную машину. Например:
 
 
 ```azurepowershell
@@ -120,7 +120,7 @@ ProgressMessage            : OS disk successfully encrypted, please reboot the V
 
 Чтобы отключить шифрование дисков Azure с помощью интерфейса командной строки, используйте команду [AZ VM Encryption Disable](/cli/azure/vm/encryption). 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом документе вы узнали о некоторых распространенных проблемах в шифровании дисков Azure и их устранении. Дополнительные сведения об этой службе и ее возможностях см. в статьях:
 

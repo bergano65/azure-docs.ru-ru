@@ -6,6 +6,7 @@ documentationcenter: na
 author: v-miegge
 manager: dcscontentpm
 editor: ''
+tags: virtual-network
 ms.assetid: 1a3d1e84-f793-41b4-aa04-774a7e8f7719
 ms.service: virtual-network
 ms.devlang: na
@@ -14,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/28/2019
 ms.author: kaushika
-ms.openlocfilehash: 0898a65323957cbab4c2ab5278e9970cf0c16a90
-ms.sourcegitcommit: 3fa4384af35c64f6674f40e0d4128e1274083487
+ms.openlocfilehash: 1fddbe908ccebc1384dcccde0810366f1a6d5da7
+ms.sourcegitcommit: 018e3b40e212915ed7a77258ac2a8e3a660aaef8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71219239"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73796237"
 ---
 # <a name="troubleshoot-virtual-network-peering-issues"></a>Устранение неполадок с пирингом виртуальной сети
 
@@ -66,11 +67,11 @@ ms.locfileid: "71219239"
 
 ### <a name="for-a-site-to-site-connection-or-an-expressroute-connection"></a>Для подключения типа "сеть — сеть" или ExpressRoute
 
-Выполните действия, описанные в разделе. [Настройте транзит VPN-шлюза для пиринга виртуальной сети](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-peering-gateway-transit?toc=/azure/virtual-network/toc.json).
+Выполните действия, описанные в разделе [Настройка транзита VPN-шлюза для пиринга виртуальных сетей](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-peering-gateway-transit?toc=/azure/virtual-network/toc.json).
 
 ### <a name="for-point-to-site-connections"></a>Для подключений "точка — сеть"
 
-1. Выполните действия, описанные в разделе. [Настройте транзит VPN-шлюза для пиринга виртуальной сети](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-peering-gateway-transit?toc=/azure/virtual-network/toc.json).
+1. Выполните действия, описанные в разделе [Настройка транзита VPN-шлюза для пиринга виртуальных сетей](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-peering-gateway-transit?toc=/azure/virtual-network/toc.json).
 2. После установки или изменения пиринга виртуальной сети Скачайте и переустановите пакет "точка — сеть", чтобы клиенты "точка — сеть" могли получать обновленные маршруты к виртуальной сети "звезда".
 
 ## <a name="configure-virtual-network-peering-with-hub-spoke-topology-virtual-network"></a>Настройка пиринга виртуальной сети с помощью виртуальной сети с топологией звезды
@@ -126,7 +127,7 @@ ms.locfileid: "71219239"
    1. Запустите трассировку сети на целевой виртуальной машине. Для Windows можно использовать **netsh**. Для Linux используйте **TCPDump**.
    2. Запустите **TcpPing** или **PsPing** из источника в конечный IP-адрес.
 
-      Вот пример команды **TcpPing** :`tcping64.exe -t <destination VM address> 3389`
+      Вот пример команды **TcpPing** : `tcping64.exe -t <destination VM address> 3389`
 
    3. После завершения **TcpPing** завершите трассировку сети в месте назначения.
    4. Если пакеты поступают из источника, сетевая ошибка отсутствует. Изучите брандмауэр виртуальной машины и приложение, слушающее этот порт, для выявления проблемы конфигурации.
@@ -222,11 +223,11 @@ ms.locfileid: "71219239"
 
 ## <a name="troubleshoot-a-virtual-network-peering-configuration-error-message"></a>Устранение проблемы с сообщением об ошибке конфигурации пиринга виртуальной сети 
 
-### <a name="current-tenant-tenant-id-isnt-authorized-to-access-linked-subscription"></a>Текущий клиент `<TENANT ID>` не имеет прав доступа к связанной подписке
+### <a name="current-tenant-tenant-id-isnt-authorized-to-access-linked-subscription"></a>Текущий `<TENANT ID>` клиента не имеет прав доступа к связанной подписке
 
 Чтобы устранить эту проблему, см. раздел [Создание пиринга-Azure CLI](https://docs.microsoft.com/azure/virtual-network/create-peering-different-subscriptions#cli).
 
-### <a name="not-connected"></a>Нет соединения
+### <a name="not-connected"></a>Не подключено
 
 Чтобы устранить эту проблему, удалите пиринг из обеих виртуальных сетей, а затем создайте их заново.
 
@@ -234,6 +235,6 @@ ms.locfileid: "71219239"
 
 Чтобы устранить эту проблему, настройте пиринг виртуальных сетей в разделе **Azure Databricks**, а затем укажите целевую виртуальную сеть с помощью **идентификатора ресурса**. Дополнительные сведения см. [в разделе одноранговая виртуальная сеть данных в удаленной виртуальной сети](https://docs.azuredatabricks.net/administration-guide/cloud-configurations/azure/vnet-peering.html#id2).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Устранение проблем с подключением между виртуальными машинами Azure](https://docs.microsoft.com/azure/virtual-network/virtual-network-troubleshoot-connectivity-problem-between-vms)

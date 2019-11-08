@@ -7,23 +7,23 @@ ms.service: container-service
 ms.topic: article
 ms.date: 03/15/2019
 ms.author: jenoller
-ms.openlocfilehash: b4c771b406d635410c22db5c1c4687a34a2e6eb0
-ms.sourcegitcommit: 2ed6e731ffc614f1691f1578ed26a67de46ed9c2
+ms.openlocfilehash: 4f2e1a6f18a83d1e6c691f3fbcb0d85c7afd1575
+ms.sourcegitcommit: 018e3b40e212915ed7a77258ac2a8e3a660aaef8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71130019"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73795105"
 ---
 # <a name="customize-coredns-with-azure-kubernetes-service"></a>Настройка Кореднс с помощью службы Kubernetes Azure
 
 Служба Azure Kubernetes Service (AKS) использует проект [кореднс][coredns] для управления DNS кластера и разрешения для всех кластеров *1.12. x* и более поздних версий. Ранее использовался проект KUBE-DNS. Этот проект KUBE-DNS теперь устарел. Дополнительные сведения о настройке Кореднс и Kubernetes см. в [официальной вышестоящей документации][corednsk8s].
 
-Так как AKS является управляемой службой, вы не можете изменить основную конфигурацию Кореднс ( *корефиле*). Вместо этого используйте Kubernetes *ConfigMap* для переопределения параметров по умолчанию. Чтобы просмотреть AKS кореднс конфигмапс по умолчанию, используйте `kubectl get configmaps --namespace=kube-system coredns -o yaml` команду.
+Так как AKS является управляемой службой, вы не можете изменить основную конфигурацию Кореднс ( *корефиле*). Вместо этого используйте Kubernetes *ConfigMap* для переопределения параметров по умолчанию. Чтобы просмотреть AKS Кореднс Конфигмапс по умолчанию, используйте команду `kubectl get configmaps --namespace=kube-system coredns -o yaml`.
 
 В этой статье показано, как использовать Конфигмапс для базовых параметров настройки Кореднс в AKS. Этот подход отличается от настройки Кореднс в других контекстах, таких как использование Корефиле. Проверьте используемую версию Кореднс, так как значения конфигурации могут изменяться в разных версиях.
 
 > [!NOTE]
-> `kube-dns`предложены различные [варианты настройки][kubednsblog] через карту конфигурации Kubernetes. Кореднс **не** поддерживает обратную совместимость с KUBE-DNS. Все ранее использовавшиеся настройки должны быть обновлены для использования с Кореднс.
+> `kube-dns` предлагает различные [варианты настройки][kubednsblog] через карту конфигурации Kubernetes. Кореднс **не** поддерживает обратную совместимость с KUBE-DNS. Все ранее использовавшиеся настройки должны быть обновлены для использования с Кореднс.
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
@@ -35,7 +35,7 @@ ms.locfileid: "71130019"
 
 ## <a name="rewrite-dns"></a>Перезапись DNS
 
-Один из сценариев — выполнить перезапись DNS-имени на лету. В следующем примере замените `<domain to be written>` на собственное полное доменное имя. Создайте файл с именем `corednsms.yaml` и вставьте следующий пример конфигурации:
+Один из сценариев — выполнить перезапись DNS-имени на лету. В следующем примере замените `<domain to be written>` своим полным доменным именем. Создайте файл с именем `corednsms.yaml` и вставьте следующий пример конфигурации:
 
 ```yaml
 apiVersion: v1
@@ -49,7 +49,7 @@ data:
         errors
         cache 30
         rewrite name substring <domain to be rewritten>.com default.svc.cluster.local
-        proxy .  /etc/resolv.conf # you can redirect this to a specific DNS server such as 10.0.0.10
+        forward .  /etc/resolv.conf # you can redirect this to a specific DNS server such as 10.0.0.10
     }
 ```
 
@@ -65,18 +65,18 @@ kubectl apply -f corednsms.yaml
 kubectl get configmaps --namespace=kube-system coredns-custom -o yaml
 ```
 
-Теперь принудительно перезагрузите ConfigMap Кореднс. Команда [kubectl Delete Pod][kubectl delete] не является обратимой и не приводит к простою. `kube-dns` Удаляются модули, а затем планировщик Kubernetes воссоздает их. Эти новые модули Pod содержат изменение значения TTL.
+Теперь принудительно перезагрузите ConfigMap Кореднс. Команда [kubectl Delete Pod][kubectl delete] не является обратимой и не приводит к простою. `kube-dns` модули удаляются, а планировщик Kubernetes воссоздает их. Эти новые модули Pod содержат изменение значения TTL.
 
 ```console
 kubectl delete pod --namespace kube-system -l k8s-app=kube-dns
 ```
 
 > [!Note]
-> Указанная выше команда верна. Пока мы изменим `coredns`, развертывание находится под именем **KUBE-DNS** .
+> Указанная выше команда верна. При изменении `coredns`развертывание находится под именем **KUBE-DNS** .
 
-## <a name="custom-proxy-server"></a>Настраиваемый прокси-сервер
+## <a name="custom-forward-server"></a>Пользовательский сервер пересылки
 
-Если необходимо указать прокси-сервер для сетевого трафика, можно создать ConfigMap для настройки DNS. В следующем примере обновите `proxy` имя и адрес, указав значения для своей среды. Создайте файл с именем `corednsms.yaml` и вставьте следующий пример конфигурации:
+Если необходимо указать сервер пересылки для сетевого трафика, можно создать ConfigMap для настройки DNS. В следующем примере обновите имя `forward` и адрес, указав значения для своей среды. Создайте файл с именем `corednsms.yaml` и вставьте следующий пример конфигурации:
 
 ```yaml
 apiVersion: v1
@@ -87,7 +87,7 @@ metadata:
 data:
   test.server: | # you may select any name here, but it must end with the .server file extension
     <domain to be rewritten>.com:53 {
-        proxy foo.com 1.1.1.1
+        forward foo.com 1.1.1.1
     }
 ```
 
@@ -95,7 +95,7 @@ data:
 
 ```console
 kubectl apply -f corednsms.yaml
-kubectl delete pod --namespace kube-system --label k8s-app=kube-dns
+kubectl delete pod --namespace kube-system --selector k8s-app=kube-dns
 ```
 
 ## <a name="use-custom-domains"></a>Использовать личные домены
@@ -115,7 +115,7 @@ data:
     puglife.local:53 {
         errors
         cache 30
-        proxy . 192.11.0.1  # this is my test/dev DNS server
+        forward . 192.11.0.1  # this is my test/dev DNS server
     }
 ```
 
@@ -123,7 +123,7 @@ data:
 
 ```console
 kubectl apply -f corednsms.yaml
-kubectl delete pod --namespace kube-system --label k8s-app=kube-dns
+kubectl delete pod --namespace kube-system --selector k8s-app=kube-dns
 ```
 
 ## <a name="stub-domains"></a>Домены-заглушки
@@ -141,12 +141,12 @@ data:
     abc.com:53 {
         errors
         cache 30
-        proxy . 1.2.3.4
+        forward . 1.2.3.4
     }
     my.cluster.local:53 {
         errors
         cache 30
-        proxy . 2.3.4.5
+        forward . 2.3.4.5
     }
 
 ```
@@ -155,7 +155,7 @@ data:
 
 ```console
 kubectl apply -f corednsms.yaml
-kubectl delete pod --namespace kube-system --label k8s-app=kube-dns
+kubectl delete pod --namespace kube-system --selector k8s-app=kube-dns
 ```
 
 ## <a name="hosts-plugin"></a>Подключаемый модуль узлов
@@ -176,7 +176,7 @@ data:
           }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье показано несколько примеров сценариев для настройки Кореднс. Сведения о проекте Кореднс см. [на странице вышестоящего проекта кореднс][coredns].
 
@@ -187,8 +187,6 @@ data:
 [coredns]: https://coredns.io/
 [corednsk8s]: https://kubernetes.io/docs/tasks/administer-cluster/dns-custom-nameservers/#coredns
 [dnscache]: https://coredns.io/plugins/cache/
-[aks-quickstart-cli]: https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough
-[aks-quickstart-portal]: https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough-portal
 [kubectl-apply]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#apply
 [kubectl-get]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get
 [kubectl delete]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#delete

@@ -10,12 +10,12 @@ ms.service: billing
 ms.topic: article
 ms.date: 05/30/2019
 ms.author: byvinyal
-ms.openlocfilehash: 71e4b62ddcb3f144b49b99e6ba95a47971d3f4bb
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
-ms.translationtype: MT
+ms.openlocfilehash: 12e9367ca9e330806af4c7cc5db626edddff5c25
+ms.sourcegitcommit: 018e3b40e212915ed7a77258ac2a8e3a660aaef8
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73476930"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73795272"
 ---
 # <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Подписка Azure, границы, квоты и ограничения службы
 В этом документе указаны некоторые из наиболее распространенных ограничений Microsoft Azure, которые иногда называются квотами. Этот документ на текущий момент охватывает не все службы Azure. Со временем список будет развернут и обновлен, чтобы охватить больше служб.
@@ -48,6 +48,7 @@ ms.locfileid: "73476930"
 * [Служба автоматизации](#automation-limits)
 * [Кэш Azure для Redis](#azure-cache-for-redis-limits)
 * [Oблачныe службы Azure2}
+* [Когнитивный поиск Azure](#azure-cognitive-search-limits)
 * [Azure Cognitive Services](#azure-cognitive-services-limits)
 * [Azure Cosmos DB](#azure-cosmos-db-limits)
 * [База данных Azure для MySQL](#azure-database-for-mysql)
@@ -60,7 +61,6 @@ ms.locfileid: "73476930"
 * [Azure Maps](#azure-maps-limits)
 * [Azure Monitor](#azure-monitor-limits)
 * [Политика Azure](#azure-policy-limits)
-* [Поиск Azure;](#azure-search-limits)
 * [Служба Azure SignalR](#azure-signalr-service-limits)
 * [Архивация](#backup-limits)
 * [Пакетная служба](#batch-limits)
@@ -270,7 +270,7 @@ ms.locfileid: "73476930"
 ### <a name="azure-database-for-postgresql"></a>База данных Azure для PostgreSQL
 Сведения об ограничениях базы данных Azure для PostgreSQL см. в статье [Ограничения базы данных Azure для PostgreSQL](postgresql/concepts-limits.md).
 
-### <a name="azure-search-limits"></a>Ограничения поиска Azure
+### <a name="azure-cognitive-search-limits"></a>Ограничения Когнитивный поиск Azure
 Ценовые категории определяют емкость и ограничения службы поиска. Существуют следующие категории:
 
 * **Бесплатная** многоклиентская служба, совместно используемая с другими подписчиками Azure, предназначена для оценки и небольших проектов разработки.
@@ -285,7 +285,7 @@ ms.locfileid: "73476930"
 
 [!INCLUDE [azure-search-limits-per-service](../includes/azure-search-limits-per-service.md)]
 
-Дополнительные сведения об ограничениях, включая размер документов, количество запросов в секунду, ключи, запросы и ответы, см. в статье [Ограничения поиска Azure](search/search-limits-quotas-capacity.md).
+Дополнительные сведения об ограничениях на более детализированном уровне, таких как размер документа, количество запросов в секунду, ключи, запросы и ответы, см. [в статье ограничения служб в Azure когнитивный Поиск](search/search-limits-quotas-capacity.md).
 
 ### <a name="media-services-limits"></a>Ограничения служб мультимедиа
 [!INCLUDE [azure-mediaservices-limits](../includes/azure-mediaservices-limits.md)]

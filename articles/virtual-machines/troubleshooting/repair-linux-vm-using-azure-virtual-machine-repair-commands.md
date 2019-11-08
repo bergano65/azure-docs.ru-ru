@@ -6,7 +6,7 @@ documentationcenter: ''
 author: v-miegge
 manager: dcscontentpm
 editor: ''
-tags: ''
+tags: virtual-machines
 ms.service: virtual-machines
 ms.topic: troubleshooting
 ms.workload: infrastructure-services
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.devlang: azurecli
 ms.date: 09/10/2019
 ms.author: v-miegge
-ms.openlocfilehash: 56e420f9641638bfa79ff077be73132b00b934ab
-ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
+ms.openlocfilehash: 49fdfde402938ce8d0ee1b141a47e68c99c502e7
+ms.sourcegitcommit: 018e3b40e212915ed7a77258ac2a8e3a660aaef8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "71132095"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73796204"
 ---
 # <a name="repair-a-linux-vm-by-using-the-azure-virtual-machine-repair-commands"></a>Восстановление виртуальной машины Linux с помощью команд восстановления виртуальной машины Azure
 
@@ -54,13 +54,13 @@ ms.locfileid: "71132095"
 
    Если вы решили установить и использовать CLI локально, для выполнения инструкций из этого руководства вам потребуется Azure CLI 2.0.30 или более поздней версии. Чтобы узнать версию, выполните команду ``az --version``. Если вам нужно установить или обновить Azure CLI, см. раздел [install Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
 
-2. Если вы используете команды `az vm repair` в первый раз, добавьте расширение CLI для восстановления виртуальной машины.
+2. Если вы используете `az vm repair` команды в первый раз, добавьте расширение CLI для восстановления виртуальной машины.
 
    ```azurecli-interactive
    az extension add -n vm-repair
    ```
 
-   Если вы ранее использовали команды `az vm repair`, примените все обновления к расширению восстановления виртуальной машины.
+   Если вы ранее использовали `az vm repair` команды, примените все обновления к расширению восстановления виртуальной машины.
 
    ```azurecli-interactive
    az extension update -n vm-repair
