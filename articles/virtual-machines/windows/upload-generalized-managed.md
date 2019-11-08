@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 09/25/2018
 ms.author: cynthn
-ms.openlocfilehash: 6382a39e67805eb9bddb356a7b76205a82f3f7c2
-ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
+ms.openlocfilehash: ead44c321ffb7afb69295d1bf8c0e1acd26cb9ce
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72553465"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73749071"
 ---
 # <a name="upload-a-generalized-vhd-and-use-it-to-create-new-vms-in-azure"></a>Отправка универсального диска VHD и создание виртуальных машин с его помощью в Azure
 
@@ -30,9 +30,9 @@ ms.locfileid: "72553465"
 ## <a name="before-you-begin"></a>Перед началом работы
 
 - Прежде чем передавать в Azure какой-либо виртуальный жесткий диск, следует выполнить инструкции из статьи [Подготовка диска VHD или VHDX для Windows к отправке в Azure](prepare-for-upload-vhd-image.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
-- Прежде чем начать миграцию на [Управляемые диски](managed-disks-overview.md), внимательно изучите [этот раздел](on-prem-to-azure.md#plan-for-the-migration-to-managed-disks).
+- Прежде чем начать миграцию на [Управляемые диски](on-prem-to-azure.md#plan-for-the-migration-to-managed-disks), внимательно изучите [этот раздел](managed-disks-overview.md).
 
-[!INCLUDE [updated-for-az.md](../../../includes/updated-for-az.md)]
+ 
 
 
 ## <a name="generalize-the-source-vm-by-using-sysprep"></a>Подготовка исходной виртуальной машины к использованию с помощью Sysprep
@@ -52,7 +52,7 @@ ms.locfileid: "72553465"
 4. В разделе **Параметры завершения работы** выберите **Завершение работы**.
 5. Нажмите кнопку **ОК**.
    
-    ![Запуск Sysprep](./media/upload-generalized-managed/sysprepgeneral.png)
+    ![Запустите Sysprep](./media/upload-generalized-managed/sysprepgeneral.png)
 6. После выполнения всех необходимых действий Sysprep завершает работу виртуальной машины. Не перезапускайте виртуальную машину.
 
 

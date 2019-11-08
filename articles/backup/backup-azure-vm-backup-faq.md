@@ -1,6 +1,6 @@
 ---
 title: Часто задаваемые вопросы о резервном копировании виртуальных машин Azure с помощью Azure Backup
-description: Ответы на часто задаваемые вопросы о резервном копировании виртуальных машин Azure с помощью Azure Backup.
+description: В этой статье вы найдете ответы на часто задаваемые вопросы о резервном копировании виртуальных машин Azure с помощью службы Azure Backup.
 ms.reviewer: sogup
 author: dcurwin
 manager: carmonm
@@ -8,18 +8,18 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 09/17/2019
 ms.author: dacurwin
-ms.openlocfilehash: d93225186fe5b16300a3138d67dd40c66d56976e
-ms.sourcegitcommit: b1c94635078a53eb558d0eb276a5faca1020f835
+ms.openlocfilehash: ad5e715de2f3467d4530759cbb2acec0358e5597
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2019
-ms.locfileid: "72968404"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73747281"
 ---
 # <a name="frequently-asked-questions-back-up-azure-vms"></a>Часто задаваемые вопросы. Резервное копирование виртуальных машин Azure
 
 В этой статье содержатся ответы на часто задаваемые вопросы о резервном копировании виртуальных машин Azure со службой [Azure Backup](backup-introduction-to-azure-backup.md) .
 
-## <a name="backup"></a>Backup
+## <a name="backup"></a>Архивация
 
 ### <a name="which-vm-images-can-be-enabled-for-backup-when-i-create-them"></a>Какие образы виртуальных машин можно включить для резервного копирования при их создании?
 

@@ -9,15 +9,15 @@ manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: development
-ms.date: 10/17/2019
+ms.date: 11/06/2019
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: caf4a3efbfafcdb10a8834c213b2469e30296501
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 96d66e6190732d88ba9a33094b6c27bbadfd4aae
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73692679"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73747803"
 ---
 # <a name="getting-started-with-visual-studio-2019-for-sql-data-warehouse"></a>Начало работы с Visual Studio 2019 для хранилища данных SQL
 Visual Studio **2019** SQL Server Data Tools (SSDT) — это единый инструмент, позволяющий выполнять следующие действия:
@@ -29,14 +29,8 @@ Visual Studio **2019** SQL Server Data Tools (SSDT) — это единый ин
 - Интегрируйте проект базы данных с системами управления версиями, такими как Git, с Azure Repos
 - Настройка конвейеров непрерывной интеграции и развертывания с помощью серверов автоматизации, таких как Azure DevOps
 
-> [!NOTE]
-> Сейчас проекты базы данных Visual Studio SSDT находятся на этапе предварительной версии. Для получения периодических обновлений об этой функции проголосуйте на сайте [UserVoice].
-
-## <a name="install-visual-studio-2019-preview"></a>Установка Visual Studio 2019 Preview
+## <a name="install-visual-studio-2019"></a>Установка Visual Studio 2019
 См. статью [Загрузка Visual Studio 2019][] для загрузки и установки visual Studio **16,3 и более поздних версий**. Во время установки выберите рабочую нагрузку "хранение и обработка данных". Автономная установка SSDT больше не требуется в Visual Studio 2019.
-
-## <a name="reporting-issues-with-ssdt-visual-studio-2019-preview"></a>Отчеты о проблемах с SSDT Visual Studio 2019 (Предварительная версия)
-Чтобы сообщить о проблемах при использовании SSDT с хранилищем данных SQL, отправьте по электронной почте следующий список рассылки: <sqldwssdtpreview@service.microsoft.com>
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда у вас установлена последняя версия SSDT, вы можете [Подключиться][connect] к хранилищу данных SQL.

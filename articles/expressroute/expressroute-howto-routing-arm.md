@@ -8,21 +8,21 @@ ms.topic: conceptual
 ms.date: 04/24/2019
 ms.author: jaredro
 ms.custom: seodec18
-ms.openlocfilehash: 3f2c768fe7998cc166e3102619e7183c96d1ccbb
-ms.sourcegitcommit: c4700ac4ddbb0ecc2f10a6119a4631b13c6f946a
+ms.openlocfilehash: 813263442bc82254d0cb5ea9e9f7e8a265de5b4a
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2019
-ms.locfileid: "72965364"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73748205"
 ---
 # <a name="create-and-modify-peering-for-an-expressroute-circuit-using-powershell"></a>Создание и изменение пиринга для канала ExpressRoute с помощью PowerShell
 
 В этой статье описано, как создать конфигурацию маршрутизации ExpressRoute и управлять ею в модели развертывания Azure Resource Manager, используя PowerShell. Вы также сможете проверить состояние, обновить, удалить и отозвать пиринги для канала ExpressRoute. Если вы хотите использовать для работы с каналом другой метод, выберите подходящую статью из списка ниже.
 
 > [!div class="op_single_selector"]
-> * [Портал Azure](expressroute-howto-routing-portal-resource-manager.md)
+> * [портал Azure](expressroute-howto-routing-portal-resource-manager.md)
 > * [PowerShell](expressroute-howto-routing-arm.md)
-> * [Azure CLI](howto-routing-cli.md)
+> * [Интерфейс командной строки Azure](howto-routing-cli.md)
 > * [Видео — частный пиринг](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-set-up-azure-private-peering-for-your-expressroute-circuit)
 > * [Видео — общедоступный пиринг](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-set-up-azure-public-peering-for-your-expressroute-circuit)
 > * [Видео — пиринг Майкрософт](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-set-up-microsoft-peering-for-your-expressroute-circuit)
@@ -41,12 +41,12 @@ ms.locfileid: "72965364"
 
 ## <a name="configuration-prerequisites"></a>Предварительные требования для настройки
 
-* Прежде чем приступать к настройке, обязательно изучите [предварительные требования](expressroute-prerequisites.md), [требования к маршрутизации](expressroute-routing.md) и [рабочие процессы](expressroute-workflows.md).
-* Вам потребуется активный канал ExpressRoute. Приступая к работе, [создайте канал ExpressRoute](expressroute-howto-circuit-arm.md); он должен быть затем включен на стороне поставщика услуг подключения. Для выполнения командлетов, описанных в статье, нужно подготовить и включить канал ExpressRoute.
+* Прежде чем приступить к настройке, обязательно изучите [предварительные требования](expressroute-prerequisites.md), [требования к маршрутизации](expressroute-routing.md) и [рабочие процессы](expressroute-workflows.md).
+* Вам потребуется активный канал ExpressRoute. Приступая к работе, [создайте канал ExpressRoute](expressroute-howto-circuit-arm.md) ; он должен быть затем включен на стороне поставщика услуг подключения. Для выполнения командлетов, описанных в статье, нужно подготовить и включить канал ExpressRoute.
 
 ### <a name="working-with-azure-powershell"></a>Работа с Azure PowerShell
 
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+[!INCLUDE [updated-for-az](../../includes/hybrid-az-ps.md)]
 
 [!INCLUDE [expressroute-cloudshell](../../includes/expressroute-cloudshell-powershell-about.md)]
 

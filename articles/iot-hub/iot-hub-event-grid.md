@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 02/20/2019
 ms.author: kgremban
-ms.openlocfilehash: f411771fbf39a99642506253fc025d6b29840423
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.openlocfilehash: 7d5a232d92c37a94ff427a3bf203f6f20764060e
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69648643"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73748580"
 ---
 # <a name="react-to-iot-hub-events-by-using-event-grid-to-trigger-actions"></a>Реагирование на события в Центре Интернета вещей с использованием службы "Сетка событий" для запуска действий
 
@@ -23,15 +23,15 @@ ms.locfileid: "69648643"
 
 ![Архитектура службы "Сетка событий Azure"](./media/iot-hub-event-grid/event-grid-functional-model.png)
 
-## <a name="regional-availability"></a>Доступность в регионах
+## <a name="regional-availability"></a>Доступ по регионам
 
-Интеграция со службой "Сетка событий" доступна для центров IoT, расположенных в регионах, где поддерживается эта служба. Все события устройств, за исключением событий телеметрии устройств, являются общедоступными. Событие телеметрии устройства находится в общедоступной предварительной версии и доступно во всех регионах, кроме Восточная часть США, Западная часть США, Западная Европа, [Azure для государственных организаций](/azure/azure-government/documentation-government-welcome), [Azure](/azure/china)для [Германии и Azure](https://azure.microsoft.com/global-infrastructure/germany/)для немецкого региона. Наиболее актуальный список регионов см. в статье [Общие сведения о службе "Сетка событий Azure"](../event-grid/overview.md).
+Интеграция со службой "Сетка событий" доступна для центров IoT, расположенных в регионах, где поддерживается эта служба. Все события устройств, за исключением событий телеметрии устройств, являются общедоступными. Событие телеметрии устройства находится в общедоступной предварительной версии и доступно во всех регионах, кроме Восточная часть США, Западная часть США, Западная Европа, [Azure для государственных организаций](/azure/azure-government/documentation-government-welcome), [Azure](/azure/china)для [Германии и Azure для немецкого](https://azure.microsoft.com/global-infrastructure/germany/)региона. Наиболее актуальный список регионов см. в статье [Общие сведения о службе "Сетка событий Azure"](../event-grid/overview.md).
 
 ## <a name="event-types"></a>Типы событий
 
 Центр Интернета вещей публикует следующие типы событий:
 
-| Тип события | Описание |
+| Тип события | Description (Описание) |
 | ---------- | ----------- |
 | Microsoft.Devices.DeviceCreated | Публикуется при регистрации устройства в Центре Интернета вещей. |
 | Microsoft.Devices.DeviceDeleted | Публикуется при удалении устройства из Центра Интернета вещей. |
@@ -194,14 +194,14 @@ devices/{deviceId}
 
 * Сообщения могут прибывать не по порядку или с задержкой. Используйте поле eTag, чтобы узнать, являются ли сведения об объектах актуальными для событий создания или удаления устройства.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Send email notifications about Azure IoT Hub events using Logic Apps](../event-grid/publish-iot-hub-events-to-logic-apps.md) (Отправка уведомлений электронной почты о событиях в Центре Интернета вещей Azure с помощью Logic Apps)
 
-* См. дополнительные сведения об [упорядочении событий подключения и отключения устройств](iot-hub-how-to-order-connection-state-events.md).
+* [Order device connection events from Azure IoT Hub using Azure Cosmos DB](iot-hub-how-to-order-connection-state-events.md) (Упорядочение событий подключения устройств из Центра Интернета вещей с помощью Azure Cosmos DB)
 
 * [Общие сведения о службе "Сетка событий Azure"](../event-grid/overview.md)
 
 * [Сравнение маршрутизации сообщений со службой "Сетка событий" и без нее для Центра Интернета вещей](iot-hub-event-grid-routing-comparison.md)
 
-* [Узнайте, как использовать события телеметрии IoT для реализации пространственного анализа IoT с помощью Azure Maps (и маршрутизации сообщений центра Интернета вещей).](../azure-maps/tutorial-iot-hub-maps.md#filter-events-using-iot-hub-message-routing)
+* [Узнайте, как использовать события телеметрии IoT для реализации пространственного анализа IoT с помощью Azure Maps](../azure-maps/tutorial-iot-hub-maps.md#create-an-azure-function-and-add-an-event-grid-subscription)

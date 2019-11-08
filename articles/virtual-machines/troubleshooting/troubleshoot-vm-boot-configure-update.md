@@ -13,18 +13,18 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 09/18/2018
 ms.author: delhan
-ms.openlocfilehash: 4263afe33caa4d6471848c8e7dbf9bc1eeec4bee
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.openlocfilehash: da45e24898bc3b5aead250077af69a61bdb33bab
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72332522"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73749639"
 ---
 # <a name="vm-startup-is-stuck-on-getting-windows-ready-dont-turn-off-your-computer-in-azure"></a>При запуске виртуальная машина зависла на сообщении "Подготовка Windows. Не выключайте компьютер" в Azure
 
 В этой статье описываются экраны "подготовка" и "Подготовка Windows", которые могут возникнуть при загрузке виртуальной машины Windows в Microsoft Azure. Представляем шаги, которые помогут вам при сборе данных для запроса в службу поддержки.
 
-[!INCLUDE [updated-for-az.md](../../../includes/updated-for-az.md)]
+ 
 
 ## <a name="symptoms"></a>Симптомы
 
@@ -100,7 +100,7 @@ ms.locfileid: "72332522"
 3. [Отсоедините диск ОС и снова подключите его к необходимой виртуальной машине](../windows/troubleshoot-recovery-disks-portal.md).
 4. Запустите виртуальную машину и получите доступ к последовательной консоли.
 5. Выберите параметр **Отправить немаскируемое прерывание (NMI)** , чтобы активировать дамп памяти.
-    @no__t образом 0the, куда отправить немаскируемое прерывание @ no__t-1
+    ![образом отправить](./media/troubleshoot-vm-configure-update-boot/run-nmi.png) прерываний, не поддерживающих маскирование
 6. Снова подключите диск операционной системы к виртуальной машине восстановления и собирайте файл дампа.
 
 ## <a name="contact-microsoft-support"></a>Обратиться в службу поддержки Майкрософт

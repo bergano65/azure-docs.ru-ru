@@ -1,6 +1,6 @@
 ---
-title: 'Azure Backup: Восстановление виртуальных машин Azure с помощью REST API'
-description: Управление операциями восстановления из резервной копии виртуальной машины Azure с помощью REST API
+title: Azure Backup. Восстановление виртуальных машин Azure с помощью REST API
+description: Из этой статьи вы узнаете, как управлять операциями восстановления резервной копии виртуальных машин Azure с помощью REST API.
 ms.reviewer: pullabhk
 author: dcurwin
 manager: carmonm
@@ -10,16 +10,16 @@ ms.topic: conceptual
 ms.date: 09/12/2018
 ms.author: dacurwin
 ms.assetid: b8487516-7ac5-4435-9680-674d9ecf5642
-ms.openlocfilehash: bdbceec2f1d0a900ffdb392d8a0505ce11419036
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.openlocfilehash: 364b6ab589cc0fa50953a71d55adeccc79462eed
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68954894"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73747530"
 ---
 # <a name="restore-azure-virtual-machines-using-rest-api"></a>Восстановление виртуальных машин Azure с помощью REST API
 
-После архивации одной виртуальной машины Azure с помощью Azure Backup из одной архивной копии можно восстановить все виртуальные машины Azure, диски или файлы. В этой статье описываются способы восстановления виртуальной машины Azure или дисков с помощью REST API.
+После завершения резервного копирования виртуальной машины Azure, использующей Azure Backup, можно восстановить все виртуальные машины Azure или диски или файлы из одной и той же резервной копии. В этой статье описываются способы восстановления виртуальной машины Azure или дисков с помощью REST API.
 
 Для любой операции восстановления необходимо сначала определить соответствующую точку восстановления.
 
@@ -31,15 +31,15 @@ ms.locfileid: "68954894"
 GET https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}/recoveryPoints?api-version=2016-12-01
 ```
 
-`{containerName}` и `{protectedItemName}` созданы [здесь](backup-azure-arm-userestapi-backupazurevms.md#example-responses-1). `{fabricName}` — это Azure.
+`{containerName}` и `{protectedItemName}` созданы [здесь](backup-azure-arm-userestapi-backupazurevms.md#example-responses-1). Значение параметра `{fabricName}` — Azure.
 
 Универсальный код ресурса (URI) *GET* имеет все необходимые параметры. Необходимость для дополнительного текста запроса отсутствует.
 
-### <a name="responses"></a>Responses
+### <a name="responses"></a>Ответы
 
-|Название  |Тип  |Описание  |
+|Имя  |Тип  |Description (Описание)  |
 |---------|---------|---------|
-|200 ОК     |   [RecoveryPointResourceList](https://docs.microsoft.com/rest/api/backup/recoverypoints/list#recoverypointresourcelist)      |       OK  |
+|200 ОК     |   [RecoveryPointResourceList](https://docs.microsoft.com/rest/api/backup/recoverypoints/list#recoverypointresourcelist)      |       ОК  |
 
 #### <a name="example-response"></a>Пример ответа
 
@@ -137,9 +137,9 @@ POST https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/
 
 Чтобы инициировать восстановление диска из резервной копии виртуальной машины Azure, выполните компоненты текста запроса.
 
-|Название  |Тип  |Описание  |
+|Имя  |Тип  |Description (Описание)  |
 |---------|---------|---------|
-|свойства     | [IaaSVMRestoreRequest](https://docs.microsoft.com/rest/api/backup/restores/trigger#iaasvmrestorerequest)        |    RestoreRequestResourceProperties     |
+|properties     | [IaaSVMRestoreRequest](https://docs.microsoft.com/rest/api/backup/restores/trigger#iaasvmrestorerequest)        |    RestoreRequestResourceProperties     |
 
 Полный список определений в тексте запроса и другие сведения см. в [документации REST API о запуске восстановления](https://docs.microsoft.com/rest/api/backup/restores/trigger#request-body).
 
@@ -165,13 +165,13 @@ POST https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/
 }
 ```
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
-Активация восстановления диска является [асинхронной операцией](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-async-operations). Это означает, что такая операция создает другую операцию, которая должна отслеживаться отдельно.
+Активация восстановления диска является [асинхронной операцией](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-async-operations). Это означает, что эта операция создает другую операцию, которая должна отслеживаться отдельно.
 
-Она возвращает два ответа: 202 (принято), когда создается другая операция, и 200 (ОК), когда эта операция завершается.
+Она возвращает два ответа: 202 (принято), когда создается другая операция, и 200 (ОК), когда эта операция завершается.
 
-|Название  |Тип  |Описание  |
+|Имя  |Тип  |Description (Описание)  |
 |---------|---------|---------|
 |202 — принято     |         |     Принято    |
 
@@ -197,7 +197,7 @@ Location: https://management.azure.com/subscriptions//subscriptions/00000000-000
 X-Powered-By: ASP.NET
 ```
 
-Затем отследите итоговую операцию, используя заголовок location или Azure-AsyncOperation с помощью простой команды *GET*.
+Отследите итоговую операцию, используя заголовки location или Azure-AsyncOperation с помощью простой команды *GET*.
 
 ```http
 GET https://management.azure.com/subscriptions//subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/testVaultRG/providers/microsoft.recoveryservices/vaults/testVault/backupFabrics/Azure/protectionContainers/iaasvmcontainer;iaasvmcontainerv2;testRG;testVM/protectedItems/vm;testRG;testVM/operationResults/781a0f18-e250-4d73-b059-5e9ffed4069e?api-version=2016-12-01
@@ -279,7 +279,7 @@ X-Powered-By: ASP.NET
 
 Для восстановления дисков ответы должны обрабатываться так же, как [описано выше](#response).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о REST API Azure Backup с использованием API REST см. в следующих документах:
 

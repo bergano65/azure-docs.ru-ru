@@ -14,22 +14,18 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 03/29/2019
 ms.author: magoedte
-ms.openlocfilehash: b6b1292e4c8874da826740d303cd0de26f9f46ee
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: b2a86ffab0286559cfcce89252c889c530f00871
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70092755"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73750116"
 ---
 # <a name="azure-monitor-dependency-virtual-machine-extension-for-windows"></a>Расширение виртуальной машины зависимостей Azure Monitor для Windows
 
 Функция схемы в Azure Monitor для виртуальных машин получает данные от Microsoft Dependency Agent. Расширение виртуальной машины агента зависимостей Azure для Windows опубликовано и поддерживается корпорацией Майкрософт. Расширение устанавливает агент зависимостей на виртуальных машинах Azure. В этом документе подробно описаны поддерживаемые платформы, конфигурации и варианты развертывания для расширения виртуальной машины агента зависимостей виртуальных машин Azure для Windows.
 
-## <a name="prerequisites"></a>Предварительные требования
-
-[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
-
-### <a name="operating-system"></a>Операционная система
+## <a name="operating-system"></a>операционная система
 
 Расширение агента зависимостей виртуальной машины Azure для Windows можно выполнить для поддерживаемых операционных систем, перечисленных в разделе " [Поддерживаемые операционные системы](../../azure-monitor/insights/vminsights-enable-overview.md#supported-operating-systems) " статьи о развертывании Azure Monitor для виртуальных машин.
 
@@ -75,12 +71,12 @@ ms.locfileid: "70092755"
 
 ### <a name="property-values"></a>Значения свойств
 
-| Название | Значение/пример |
+| Имя | Значение/пример |
 | ---- | ---- |
-| apiVersion | 2015-01-01 |
+| версия_API | 2015-01-01 |
 | publisher | Microsoft.Azure.Monitoring.DependencyAgent |
 | type | DependencyAgentWindows |
-| typeHandlerVersion | 9.5 |
+| typeHandlerVersion | 9,5 |
 
 ## <a name="template-deployment"></a>Развертывание шаблона
 
@@ -88,7 +84,7 @@ ms.locfileid: "70092755"
 
 JSON для расширения виртуальной машины можно вложить в ресурс виртуальной машины. Вы также можете поместить его на корневом или верхнем уровне шаблона диспетчер ресурсов JSON. Размещение JSON влияет на значения имени и типа ресурса. Дополнительные сведения см. в разделе [Указание имени и типа дочернего ресурса в шаблоне Resource Manager](../../azure-resource-manager/child-resource-name-type.md).
 
-В следующем примере предполагается, что расширение агента зависимостей вложено в ресурс виртуальной машины. При вложении ресурса расширения JSON помещается в `"resources": []` объект виртуальной машины.
+В следующем примере предполагается, что расширение агента зависимостей вложено в ресурс виртуальной машины. При вложении ресурса расширения JSON помещается в объект `"resources": []` виртуальной машины.
 
 
 ```json
@@ -131,7 +127,7 @@ JSON для расширения виртуальной машины можно 
 
 ## <a name="powershell-deployment"></a>Развертывание с помощью PowerShell
 
-С помощью `Set-AzVMExtension` команды можно развернуть расширение виртуальной машины агента зависимостей на существующей виртуальной машине. Перед выполнением команды необходимо сохранить общедоступные и частные конфигурации в хэш-таблице PowerShell.
+Вы можете использовать команду `Set-AzVMExtension`, чтобы развернуть расширение виртуальной машины агента зависимостей на существующей виртуальной машине. Перед выполнением команды необходимо сохранить общедоступные и частные конфигурации в хэш-таблице PowerShell.
 
 ```powershell
 

@@ -1,7 +1,7 @@
 ---
 title: Установка и запуск контейнеров — API распознавания лиц
 titleSuffix: Azure Cognitive Services
-description: Загрузка, установка и запуск контейнеров для лиц в этом пошаговом руководстве.
+description: В этой статье показано, как загрузить, установить и запустить контейнеры для лиц в этом пошаговом руководстве.
 services: cognitive-services
 author: IEvangelist
 manager: nitinme
@@ -11,12 +11,12 @@ ms.subservice: face-api
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.author: dapine
-ms.openlocfilehash: f2bf5766dc09b85f276349a5e72f1bc3b8ba23b3
-ms.sourcegitcommit: 9fba13cdfce9d03d202ada4a764e574a51691dcd
+ms.openlocfilehash: b3c064ae2dbc37858ca6fe89742161e0dda1784f
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71316375"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73743272"
 ---
 # <a name="install-and-run-face-containers"></a>Установка и запуск контейнеров лиц
 
@@ -28,11 +28,11 @@ ms.locfileid: "71316375"
 
 Прежде чем использовать контейнеры API распознавания лиц, необходимо выполнить следующие предварительные требования.
 
-|Обязательное значение|Цель|
+|Обязательно|Назначение|
 |--|--|
-|Модуль Docker| Подсистема DOCKER должна быть установлена на [главном компьютере](#the-host-computer). Docker предоставляет пакеты, которые настраивают среду Docker в ОС [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> В Windows DOCKER также должен быть настроен для поддержки контейнеров Linux.<br><br>|
-|Опыт работы с Docker | Вам потребуется базовое понимание концепций DOCKER, таких как реестры, репозитории, контейнеры и образы контейнеров. Также необходимо знание основных `docker` команд.| 
-|Ресурс лица |Для использования этого контейнера необходимо следующее:<br><br>Ресурс **лица** Azure, а также соответствующий ключ API и URI конечной точки. Оба значения доступны на страницах **обзора** и **ключей** для ресурса. Они необходимы для запуска контейнера.<br><br>**{API_KEY}** : Один из двух доступных ключей ресурсов на странице " **ключи** "<br><br>**{ENDPOINT_URI}** : Конечная точка, указанная на странице **обзора**
+|Модуль Docker| Подсистема DOCKER должна быть установлена на [главном компьютере](#the-host-computer). Docker предоставляет пакеты, которые настраивают среду Docker в ОС [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). См. [общие сведения о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> В Windows DOCKER также должен быть настроен для поддержки контейнеров Linux.<br><br>|
+|Опыт работы с Docker | Вам потребуется базовое понимание концепций DOCKER, таких как реестры, репозитории, контейнеры и образы контейнеров. Также необходимо знание основных `docker`ных команд.| 
+|Ресурс лица |Для использования этого контейнера необходимо следующее:<br><br>Ресурс **лица** Azure, а также соответствующий ключ API и URI конечной точки. Оба значения доступны на страницах **обзора** и **ключей** для ресурса. Они необходимы для запуска контейнера.<br><br>**{API_KEY}** : один из двух доступных ключей ресурсов на странице " **ключи** "<br><br>**{ENDPOINT_URI}** : конечная точка, указанная на странице **обзора**
 
 [!INCLUDE [Gathering required container parameters](../containers/includes/container-gathering-required-parameters.md)]
 
@@ -48,7 +48,7 @@ ms.locfileid: "71316375"
 
 В следующей таблице описаны минимальное и рекомендуемое число ядра ЦП и памяти для каждого контейнера API распознавания лиц.
 
-| Контейнер | Минимум | Рекомендуется | Транзакций в секунду<br>(Минимум, максимум)|
+| Контейнер | Минимальная | Рекомендуется | Транзакций в секунду<br>(Минимум, максимум)|
 |-----------|---------|-------------|--|
 |Распознавание лиц | 1 ядро, 2 ГБ памяти | 1 ядро, 4 ГБ памяти |10, 20|
 
@@ -82,9 +82,9 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-face:latest
 
 ## <a name="run-the-container-with-docker-run"></a>Запуск контейнера с помощью запуска DOCKER
 
-Воспользуйтесь командой [docker run](https://docs.docker.com/engine/reference/commandline/run/) для запуска контейнера. Дополнительные сведения о том, как получить значения и `{API_KEY}` , `{ENDPOINT_URI}` см. в разделе [сбор обязательных параметров](#gathering-required-parameters) .
+Воспользуйтесь командой [docker run](https://docs.docker.com/engine/reference/commandline/run/) для запуска контейнера. Сведения о том, как получить значения `{ENDPOINT_URI}` и `{API_KEY}`, см. в разделе [сбор обязательных параметров](#gathering-required-parameters) .
 
-[Доступны примеры](face-resource-container-config.md#example-docker-run-commands) `docker run` команд.
+Доступны [примеры](face-resource-container-config.md#example-docker-run-commands) команды `docker run`.
 
 ```bash
 docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 \
@@ -104,7 +104,7 @@ ApiKey={API_KEY}
 Доступны дополнительные [примеры](./face-resource-container-config.md#example-docker-run-commands) команды `docker run`. 
 
 > [!IMPORTANT]
-> Для запуска `Billing`контейнера необходимо `ApiKey` указать параметры ,и,чтобыконтейнернезапускался.`Eula` Дополнительные сведения см. в [разделе о выставлении счетов](#billing).
+> Для запуска контейнера необходимо указать параметры `Eula`, `Billing`и `ApiKey`, чтобы контейнер не запускался. Дополнительные сведения см. в [разделе о выставлении счетов](#billing).
 
 [!INCLUDE [Running multiple containers on the same host](../../../includes/cognitive-services-containers-run-multiple-same-host.md)]
 
@@ -144,17 +144,17 @@ ApiKey={API_KEY}
 
 ## <a name="summary"></a>Сводка
 
-В этой статье вы узнали основные понятия и рабочий процесс загрузки, установки и запуска контейнеров API распознавания лиц. В разделе "Сводка" сделайте следующее.
+В этой статье вы узнали основные понятия и рабочий процесс загрузки, установки и запуска контейнеров API распознавания лиц. Краткая сводка.
 
 * Образы контейнеров загружаются из реестра контейнеров Azure.
-* Образы контейнеров выполняются в Docker.
+* Образы контейнеров, которые выполняются в Docker.
 * Можно использовать REST API или пакет SDK для вызова операций в контейнерах API распознавания лиц, указав универсальный код ресурса (URI) узла контейнера.
 * При создании экземпляра контейнера необходимо указать сведения о выставлении счетов.
 
 > [!IMPORTANT]
 > Cognitive Services контейнеры не лицензированы для запуска без подключения к Azure для измерения. Клиенты должны включить контейнеры для передачи сведений о выставлении счетов в службу контроля использования в любое время. Контейнеры Cognitive Services не отправляют в корпорацию Майкрософт данные клиента, например анализируемые изображения или тексты.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Параметры конфигурации см. в разделе [Configure Containers](face-resource-container-config.md).
 * Дополнительные сведения об обнаружении и определении лиц см. в разделе [Обзор лиц](Overview.md).

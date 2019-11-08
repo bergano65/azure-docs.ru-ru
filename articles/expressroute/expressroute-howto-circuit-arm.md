@@ -1,5 +1,5 @@
 ---
-title: Создание и изменение канала ExpressRoute с помощью PowerShell в Azure | Документация Майкрософт
+title: 'Создание и изменение канала ExpressRoute с помощью PowerShell: Azure | Документация Майкрософт'
 description: Создание, подготовка, проверка, обновление, удаление и отзыв канала ExpressRoute.
 services: expressroute
 author: cherylmc
@@ -9,19 +9,19 @@ ms.date: 02/20/2019
 ms.author: cherylmc
 ms.reviewer: ganesr
 ms.custom: seodec18
-ms.openlocfilehash: 2ff22a3c0087ff7e24517f792ba9abacbae76e3a
-ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
+ms.openlocfilehash: 9d0df2d9eda861a06e2952ff1623fb4ad5160e81
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67846643"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73748333"
 ---
 # <a name="create-and-modify-an-expressroute-circuit-using-powershell"></a>Создание и изменение канала ExpressRoute с помощью PowerShell
 > [!div class="op_single_selector"]
 > * [портал Azure](expressroute-howto-circuit-portal-resource-manager.md)
 > * [PowerShell](expressroute-howto-circuit-arm.md)
 > * [Интерфейс командной строки Azure](howto-circuit-cli.md)
-> * [Шаблон Azure Resource Manager](expressroute-howto-circuit-resource-manager-template.md)
+> * [Шаблон диспетчера ресурсов Azure](expressroute-howto-circuit-resource-manager-template.md)
 > * [Видео — портал Azure](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-create-an-expressroute-circuit)
 > * [PowerShell (классическая модель)](expressroute-howto-circuit-classic.md)
 >
@@ -34,7 +34,7 @@ ms.locfileid: "67846643"
 
 ### <a name="working-with-azure-powershell"></a>Работа с Azure PowerShell
 
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+[!INCLUDE [updated-for-az](../../includes/hybrid-az-ps.md)]
 
 [!INCLUDE [expressroute-cloudshell](../../includes/expressroute-cloudshell-powershell-about.md)]
 
@@ -43,7 +43,7 @@ ms.locfileid: "67846643"
 
 [!INCLUDE [sign in](../../includes/expressroute-cloud-shell-connect.md)]
 
-### <a name="2-get-the-list-of-supported-providers-locations-and-bandwidths"></a>2. Получение списка поддерживаемых поставщиков, расположений и значений пропускной способности
+### <a name="2-get-the-list-of-supported-providers-locations-and-bandwidths"></a>2. получите список поддерживаемых поставщиков, расположений и пропускной способности.
 Перед созданием канала ExpressRoute потребуется список поддерживаемых поставщиков услуг подключения, расположений и вариантов пропускной способности.
 
 Командлет PowerShell **Get-азекспрессраутесервицепровидер** возвращает эти сведения, которые будут использоваться в последующих шагах:
@@ -90,7 +90,7 @@ get-help New-AzExpressRouteCircuit -detailed
 ```
 
 
-### <a name="4-list-all-expressroute-circuits"></a>4. Получение списка всех каналов ExpressRoute
+### <a name="4-list-all-expressroute-circuits"></a>4. Вывод списка всех каналов ExpressRoute
 Чтобы получить список всех созданных каналов ExpressRoute, выполните команду **Get-азекспрессраутеЦиркуит** :
 
 ```azurepowershell-interactive
@@ -153,7 +153,7 @@ Get-AzExpressRouteCircuit
     Peerings                         : []
 
 
-### <a name="5-send-the-service-key-to-your-connectivity-provider-for-provisioning"></a>5. Отправка ключа службы поставщику услуг подключения для подготовки
+### <a name="5-send-the-service-key-to-your-connectivity-provider-for-provisioning"></a>5. Отправьте ключ службы поставщику услуг подключения для подготовки
 Параметр *ServiceProviderProvisioningState* предоставляет сведения о текущем состоянии подготовки на стороне поставщика услуг. Параметр Status предоставляет состояние на стороне Майкрософт. Дополнительные сведения о состояниях подготовки канала см. в разделе о [рабочих процессах](expressroute-workflows.md#expressroute-circuit-provisioning-states).
 
 Вновь созданный канал ExpressRoute будет имеет следующее состояние:
@@ -173,7 +173,7 @@ Get-AzExpressRouteCircuit
     ServiceProviderProvisioningState : Provisioned
     CircuitProvisioningState         : Enabled
 
-### <a name="6-periodically-check-the-status-and-the-state-of-the-circuit-key"></a>6. Периодическая проверка состояния и статуса ключа канала
+### <a name="6-periodically-check-the-status-and-the-state-of-the-circuit-key"></a>6. периодически проверяйте состояние и состояние ключа канала
 Проверка состояния и состояния ключа канала позволит вам узнать, когда поставщик активирует ваш канал. После настройки канала значение параметра *ServiceProviderProvisioningState* изменится на *Provisioned*, как показано в примере ниже.
 
 ```azurepowershell-interactive
@@ -386,7 +386,7 @@ Set-AzExpressRouteCircuit -ExpressRouteCircuit $ckt
 Remove-AzExpressRouteCircuit -ResourceGroupName "ExpressRouteResourceGroup" -Name "ExpressRouteARMCircuit"
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После создания канала обязательно выполните задачи, описанные в следующих статьях:
 

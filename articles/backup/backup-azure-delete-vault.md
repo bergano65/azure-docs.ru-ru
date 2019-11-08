@@ -1,23 +1,22 @@
 ---
 title: Удаление хранилища служб восстановления Microsoft Azure Backup
-description: В этой статье описывается, как удалить хранилище служб восстановления Microsoft Azure Backup.
+description: Из этой статьи вы узнаете, как удалить зависимости, а затем удалить хранилище служб восстановления Microsoft Azure Backup (MARS).
 author: dcurwin
 manager: carmonm
 ms.service: backup
 ms.topic: conceptual
 ms.date: 09/20/2019
 ms.author: dacurwin
-ms.openlocfilehash: ae8421ca9e3705d697e9638e80fc61f853ff9d28
-ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
+ms.openlocfilehash: 469d6532449df8327389b8117904b078d9340e5b
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72028276"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73747571"
 ---
 # <a name="delete-an-azure-backup-recovery-services-vault"></a>Удаление хранилища служб восстановления Azure Backup
 
 В этой статье описывается удаление хранилища служб Microsoft [Azure Backup](backup-overview.md) Recovery (MARS). В нем содержатся инструкции по удалению зависимостей, а также удалению хранилища.
-
 
 ## <a name="before-you-start"></a>Перед началом работы
 
@@ -33,7 +32,7 @@ ms.locfileid: "72028276"
 
   ![Удалите ошибку защищенного сервера.](./media/backup-azure-delete-vault/error-message.jpg)
 
-- Если элементы архивации находятся в состоянии обратимого удаления ниже предупреждения, появится сообщение о том, что они будут окончательно удалены. Дополнительные сведения см. в [этой статье](https://aka.ms/SoftDeleteCloudWorkloads).
+- Если элементы архивации находятся в состоянии обратимого удаления ниже предупреждения, появится сообщение о том, что они будут окончательно удалены. Дополнительные сведения см. в этой [статье](https://aka.ms/SoftDeleteCloudWorkloads).
 
    ![Удалите ошибку хранилища.](./media/backup-azure-delete-vault/error-message-soft-delete.png)
   
@@ -46,7 +45,6 @@ ms.locfileid: "72028276"
 У меня есть защищенные элементы в облаке (например, виртуальная машина Лаас или файловый ресурс Azure).  | Выполните действия, описанные в разделе [удаление защищенных элементов в облаке](#delete-protected-items-in-the-cloud) .
 У меня есть защищенные элементы в локальной среде и в облаке | Выполните действия, описанные в следующих разделах, в следующем порядке: <br> 1. [удаление защищенных элементов в облаке](#delete-protected-items-in-the-cloud)<br> 2. [Удаление элементов архивации из консоли управления Mars](#delete-backup-items-from-the-mars-management-console) <br> 3. [Удаление архивных элементов из консоли управления MABS](#delete-backup-items-from-the-mabs-management-console)
 У меня нет защищенных элементов в локальной среде или в облаке; Однако я по-прежнему получаю сообщение об ошибке удаления хранилища | Выполните действия, описанные в статье [Удаление хранилища служб восстановления с помощью Azure Resource Manager](#delete-the-recovery-services-vault-by-using-azure-resource-manager)
-
 
 ## <a name="delete-protected-items-in-the-cloud"></a>Удаление защищенных элементов в облаке
 
@@ -64,12 +62,12 @@ ms.locfileid: "72028276"
 
         ![Область "завершение архивации".](./media/backup-azure-delete-vault/stop-backup-item.png)
 
-    - Если появится область **Удаление данных резервного копирования** , введите имя элемента резервного копирования (с учетом регистра), а затем выберите причину из раскрывающегося меню. Введите свои комментарии, если они есть. Затем нажмите кнопку **Удалить**. 
+    - Если появится область **Удаление данных резервного копирования** , введите имя элемента резервного копирования (с учетом регистра), а затем выберите причину из раскрывающегося меню. Введите свои комментарии, если они есть. Затем выберите **Удалить**.
 
          ![Панель удаление данных резервной копии.](./media/backup-azure-delete-vault/stop-backup-blade-delete-backup-data.png)
 
-5. Проверьте значок **уведомления** : ![The значок уведомления. ](./media/backup-azure-delete-vault/messages.png) После завершения процесса служба отобразит следующее сообщение: *Остановка резервного копирования и удаление данных резервного копирования для* *элемента Backup*. *Операция успешно завершена*.
-6. Выберите **Обновить** в меню **архивные элементы** , чтобы убедиться, что элемент резервного копирования был удален.
+3. Проверьте значок **уведомления** : ![значок уведомления.](./media/backup-azure-delete-vault/messages.png) После завершения процесса служба отобразит следующее сообщение: *Остановка резервного копирования и удаление данных резервного копирования для* *элемента Backup*. *Операция успешно завершена*.
+4. Выберите **Обновить** в меню **архивные элементы** , чтобы убедиться, что элемент резервного копирования был удален.
 
       ![Страница «Удаление элементов архивации».](./media/backup-azure-delete-vault/empty-items-list.png)
 
@@ -80,12 +78,11 @@ ms.locfileid: "72028276"
 1. В меню панели мониторинга хранилища выберите пункт **инфраструктура резервного копирования**.
 2. В зависимости от локального сценария выберите один из следующих вариантов.
 
-      - Для режима MARS выберите **защищенные серверы** , а затем **Azure Backup агент**. Затем выберите сервер, который требуется удалить. 
+      - Для режима MARS выберите **защищенные серверы** , а затем **Azure Backup агент**. Затем выберите сервер, который требуется удалить.
 
         ![Для режима MARS выберите хранилище, чтобы открыть его панель мониторинга.](./media/backup-azure-delete-vault/identify-protected-servers.png)
 
-      - Для MABS или DPM выберите **серверы управления архивацией**. Затем выберите сервер, который требуется удалить. 
-
+      - Для MABS или DPM выберите **серверы управления архивацией**. Затем выберите сервер, который требуется удалить.
 
           ![Для MABS выберите хранилище, чтобы открыть его панель мониторинга.](./media/backup-azure-delete-vault/delete-backup-management-servers.png)
 
@@ -101,15 +98,13 @@ ms.locfileid: "72028276"
 
 4. Установите флажок согласие и нажмите кнопку **Удалить**.
 
-
-5. Проверьте значок **уведомления** ![delete ](./media/backup-azure-delete-vault/messages.png) данных резервной копии. По завершении операции служба отобразит сообщение: *Остановка резервного копирования и удаление данных резервного копирования для элемента Backup.* *Операция успешно завершена*.
+5. Проверьте значок **уведомления** ![удалить данные резервного копирования](./media/backup-azure-delete-vault/messages.png). По завершении операции служба отобразит сообщение: *Остановка резервного копирования и удаление данных резервного копирования для элемента Backup.* *Операция успешно завершена*.
 6. Выберите **Обновить** в меню **архивные элементы** , чтобы убедиться, что элемент резервного копирования удален.
 
 После завершения этого процесса можно удалить элементы резервного копирования из консоли управления:
-    
-   - [Удаление элементов архивации из консоли управления MARS](#delete-backup-items-from-the-mars-management-console)
-    - [Удаление элементов архивации из консоли управления MABS](#delete-backup-items-from-the-mabs-management-console)
 
+- [Удаление элементов архивации из консоли управления MARS](#delete-backup-items-from-the-mars-management-console)
+- [Удаление элементов архивации из консоли управления MABS](#delete-backup-items-from-the-mabs-management-console)
 
 ### <a name="delete-backup-items-from-the-mars-management-console"></a>Удаление элементов архивации из консоли управления MARS
 
@@ -122,7 +117,7 @@ ms.locfileid: "72028276"
 
     ![Останавливает архивацию по расписанию.](./media/backup-azure-delete-vault/stop-schedule-backup.png)
 4. Вам будет предложено ввести ПИН-код безопасности (персональный идентификационный номер), который необходимо создать вручную. Для этого сначала войдите в портал Azure.
-5. Выберите**параметры**  >  **хранилище служб восстановления**  > **Свойства**.
+5. Выберите **параметры** > **хранилище служб восстановления** > **Свойства**.
 6. В разделе **ПИН-код безопасности**выберите **создать**. Скопируйте этот ПИН-код. ПИН-код действителен только в течение пяти минут.
 7. В консоли управления Вставьте ПИН-код и нажмите кнопку **ОК**.
 
@@ -139,11 +134,12 @@ ms.locfileid: "72028276"
 Существует два метода удаления архивных элементов из консоли управления MABS.
 
 #### <a name="method-1"></a>Метод 1
+
 Чтобы отключить защиту и удалить данные резервных копий, выполните следующие действия.
 
-1.  Откройте консоль администрирования DPM и выберите **Защита** на панели навигации.
-2.  На панели "дисплей" выберите член группы защиты, который необходимо удалить. Щелкните правой кнопкой мыши, чтобы выбрать параметр **Отключить защиту членов группы** .
-3.  В диалоговом окне " **Завершение защиты** " выберите **Удалить защищенные данные**, а затем установите флажок **удалить хранилище в сети** . Затем выберите пункт **Отключить защиту**.
+1. Откройте консоль администрирования DPM и выберите **Защита** на панели навигации.
+2. На панели "дисплей" выберите член группы защиты, который необходимо удалить. Щелкните правой кнопкой мыши, чтобы выбрать параметр **Отключить защиту членов группы** .
+3. В диалоговом окне " **Завершение защиты** " выберите **Удалить защищенные данные**, а затем установите флажок **удалить хранилище в сети** . Затем выберите пункт **Отключить защиту**.
 
     ![Выберите Удалить защищенные данные на панели "отключить защиту".](./media/backup-azure-delete-vault/delete-storage-online.png)
 
@@ -158,12 +154,12 @@ ms.locfileid: "72028276"
     ![Удаление оперативного хранилища.](./media/backup-azure-delete-vault/remove-replica-on-disk-and-online.png)
 
 #### <a name="method-2"></a>Метод 2
+
 Откройте консоль **управления MABS** . В разделе **Выбор метода защиты данных**снимите флажок **требуется защита в сети** .
 
   ![Выберите способ защиты данных.](./media/backup-azure-delete-vault/data-protection-method.png)
 
 После удаления локальных архивных элементов выполните следующие действия на портале.
-
 
 ## <a name="delete-the-recovery-services-vault"></a>Удаление хранилища служб восстановления
 
@@ -185,71 +181,73 @@ ms.locfileid: "72028276"
 - Если вы используете SQL в резервной копии виртуальных машин Azure и включили автоматическую защиту для экземпляров SQL, сначала отключите автоматическую защиту.
 
     ```PowerShell
-        Disable-AzRecoveryServicesBackupAutoProtection 
-           [-InputItem] <ProtectableItemBase> 
-           [-BackupManagementType] <BackupManagementType> 
-           [-WorkloadType] <WorkloadType> 
-           [-PassThru] 
-           [-VaultId <String>] 
-           [-DefaultProfile <IAzureContextContainer>] 
-           [-WhatIf] 
-           [-Confirm] 
-           [<CommonParameters>] 
+        Disable-AzRecoveryServicesBackupAutoProtection
+           [-InputItem] <ProtectableItemBase>
+           [-BackupManagementType] <BackupManagementType>
+           [-WorkloadType] <WorkloadType>
+           [-PassThru]
+           [-VaultId <String>]
+           [-DefaultProfile <IAzureContextContainer>]
+           [-WhatIf]
+           [-Confirm]
+           [<CommonParameters>]
     ```
 
-  Дополнительные [сведения](https://docs.microsoft.com/powershell/module/az.recoveryservices/disable-azrecoveryservicesbackupautoprotection?view=azps-2.6.0) о том, как отключить защиту для элемента, защищенного с помощью Azure Backup 
+  Дополнительные [сведения](https://docs.microsoft.com/powershell/module/az.recoveryservices/disable-azrecoveryservicesbackupautoprotection?view=azps-2.6.0) о том, как отключить защиту для элемента, защищенного с помощью Azure Backup.
 
 - Отключите защиту и удалите данные для всех элементов, защищенных с резервным копированием в облаке (например, Виртуальная машина Лаас, файловый ресурс Azure и т. д.):
 
     ```PowerShell
-       Disable-AzRecoveryServicesBackupProtection 
-       [-Item] <ItemBase> 
-       [-RemoveRecoveryPoints] 
-       [-Force] 
-       [-VaultId <String>] 
-       [-DefaultProfile <IAzureContextContainer>] 
-       [-WhatIf] 
-       [-Confirm] 
-       [<CommonParameters>] 
+       Disable-AzRecoveryServicesBackupProtection
+       [-Item] <ItemBase>
+       [-RemoveRecoveryPoints]
+       [-Force]
+       [-VaultId <String>]
+       [-DefaultProfile <IAzureContextContainer>]
+       [-WhatIf]
+       [-Confirm]
+       [<CommonParameters>]
     ```
-    [Дополнительные  about отключение](https://docs.microsoft.com/powershell/module/az.recoveryservices/disable-azrecoveryservicesbackupprotection?view=azps-2.6.0&viewFallbackFrom=azps-2.5.0) защиты для элемента, защищенного с помощью резервной копии. 
+
+    [Дополнительные о](https://docs.microsoft.com/powershell/module/az.recoveryservices/disable-azrecoveryservicesbackupprotection?view=azps-2.6.0&viewFallbackFrom=azps-2.5.0) отключении защиты для элемента, защищенного с помощью резервной копии.
 
 - Для локальных файлов и папок, защищенных с помощью агента Azure Backup (MARS), которые архивируются в Azure, используйте следующую команду PowerShell для удаления резервных данных из каждого модуля MARS PowerShell:
 
-    ```
+    ```powershell
     Get-OBPolicy | Remove-OBPolicy -DeleteBackup -SecurityPIN <Security Pin>
     ```
 
-    POST, в котором будет отображаться следующее приглашение:
-     
-    *Microsoft Azure Backup вы действительно хотите удалить эту политику архивации? Удаленные резервные копии данных будут храниться в течение 14 дней. По истечении этого времени данные резервного копирования будут окончательно удалены.  <br/> [Y] Да [A] Да для всех [N] нет [L] No ко всем [S] приостановить [?] Справка (по умолчанию — "Y"):*
+    POST, где будет отображаться следующее приглашение:
 
+    *Microsoft Azure Backup вы действительно хотите удалить эту политику архивации? Удаленные резервные копии данных будут храниться в течение 14 дней. По истечении этого времени данные резервного копирования будут окончательно удалены. <br/> [Y] Да [A] Да для всех [N] нет [L] No ко всем [S] приостановить [?] Справка (по умолчанию — "Y"):*
 
 - Для локальных компьютеров, защищенных с помощью MABS (Microsoft Azure Backup Server) или DPM, в Azure (System Center Data Protection Manager) используйте следующую команду, чтобы удалить резервные копии данных в Azure.
 
-    ```
-    Get-OBPolicy | Remove-OBPolicy -DeleteBackup -SecurityPIN <Security Pin> 
+    ```powershell
+    Get-OBPolicy | Remove-OBPolicy -DeleteBackup -SecurityPIN <Security Pin>
     ```
 
-    POST, в котором будет отображаться следующее приглашение: 
-         
-   *Microsoft Azure Backup вы действительно хотите удалить эту политику архивации? Удаленные резервные копии данных будут храниться в течение 14 дней. По истечении этого времени данные резервного копирования будут окончательно удалены.  <br/> [Y] Да [A] Да для всех [N] нет [L] No ко всем [S] приостановить [?] Справка (по умолчанию — "Y"):*
+    POST, где будет отображаться следующее приглашение:
 
-После удаления резервных копий данных отмените регистрацию локальных контейнеров и серверов управления. 
+   *Microsoft Azure Backup* Вы действительно хотите удалить эту политику архивации? Удаленные резервные копии данных будут храниться в течение 14 дней. По истечении этого времени данные резервного копирования будут окончательно удалены. <br/>
+   [Y] Да [A] Да для всех [N] нет [L] No ко всем [S] приостановить [?] Справка (по умолчанию — "Y"):*
+
+После удаления резервной копии данных отмените регистрацию локальных контейнеров и серверов управления.
 
 - Для локальных файлов и папок, защищенных с помощью агента Azure Backup (режим MARS), резервное копирование в Azure:
 
     ```PowerShell
-    Unregister-AzRecoveryServicesBackupContainer 
-              [-Container] <ContainerBase> 
-              [-PassThru] 
-              [-VaultId <String>] 
-              [-DefaultProfile <IAzureContextContainer>] 
-              [-WhatIf] 
-              [-Confirm] 
-              [<CommonParameters>] 
+    Unregister-AzRecoveryServicesBackupContainer
+              [-Container] <ContainerBase>
+              [-PassThru]
+              [-VaultId <String>]
+              [-DefaultProfile <IAzureContextContainer>]
+              [-WhatIf]
+              [-Confirm]
+              [<CommonParameters>]
     ```
-    Дополнительные [сведения](https://docs.microsoft.com/powershell/module/az.recoveryservices/unregister-azrecoveryservicesbackupcontainer?view=azps-2.6.0) об отмене регистрации сервера Windows или другого контейнера из хранилища. 
+
+    Дополнительные [сведения](https://docs.microsoft.com/powershell/module/az.recoveryservices/unregister-azrecoveryservicesbackupcontainer?view=azps-2.6.0) об отмене регистрации сервера Windows или другого контейнера из хранилища.
 
 - Для локальных компьютеров, защищенных с помощью MABS (Microsoft Azure Backup Server) или DPM, в Azure (защита данных System Center управляется:
 
@@ -266,57 +264,57 @@ ms.locfileid: "72028276"
 
     Дополнительные [сведения](https://docs.microsoft.com/powershell/module/az.recoveryservices/unregister-azrecoveryservicesbackupcontainer?view=azps-2.6.0) о отмене регистрации контейнера управления архивацией из хранилища.
 
-После окончательного удаления резервных копий данных и отмены регистрации всех контейнеров перейдите к удалению хранилища. 
+После окончательного удаления резервных копий данных и отмены регистрации всех контейнеров перейдите к удалению хранилища.
 
-Удаление хранилища служб восстановления: 
+Удаление хранилища служб восстановления:
 
    ```PowerShell
-       Remove-AzRecoveryServicesVault 
-      -Vault <ARSVault> 
-      [-DefaultProfile <IAzureContextContainer>] 
-      [-WhatIf] 
-      [-Confirm] 
-      [<CommonParameters>]        
+       Remove-AzRecoveryServicesVault
+      -Vault <ARSVault>
+      [-DefaultProfile <IAzureContextContainer>]
+      [-WhatIf]
+      [-Confirm]
+      [<CommonParameters>]
    ```
 
-Дополнительные [сведения](https://docs.microsoft.com/powershell/module/az.recoveryservices/remove-azrecoveryservicesvault) об удалении хранилища служб восстановления. 
+Дополнительные [сведения](https://docs.microsoft.com/powershell/module/az.recoveryservices/remove-azrecoveryservicesvault) об удалении хранилища служб восстановления.
 
 ## <a name="delete-the-recovery-services-vault-by-using-cli"></a>Удаление хранилища служб восстановления с помощью интерфейса командной строки
 
 Сначала ознакомьтесь с разделом **[перед](#before-you-start)** началом работы, чтобы понять зависимость и процесс удаления хранилища.
 
 > [!NOTE]
-> В настоящее время Azure Backup CLI поддерживает управление только резервными копиями виртуальных машин Azure, поэтому следующая команда удаляет хранилище работает только в том случае, если хранилище содержит резервные копии виртуальных машин Azure. Вы не можете удалить хранилище с помощью Azure Backup CLI, если хранилище содержит любой элемент резервного копирования типа, отличного от виртуальных машин Azure. 
+> В настоящее время Azure Backup CLI поддерживает управление только резервными копиями виртуальных машин Azure, поэтому следующая команда удаляет хранилище работает только в том случае, если хранилище содержит резервные копии виртуальных машин Azure. Вы не можете удалить хранилище с помощью Azure Backup CLI, если хранилище содержит любой элемент резервного копирования типа, отличного от виртуальных машин Azure.
 
-Чтобы удалить существующее хранилище служб восстановления, выполните следующие действия. 
+Чтобы удалить существующее хранилище служб восстановления, выполните следующие действия.
 
-- Отключение защиты и удаление данных резервного копирования 
-
-    ```CLI
-    az backup protection disable --container-name 
-                             --item-name 
-                             [--delete-backup-data {false, true}] 
-                             [--ids] 
-                             [--resource-group] 
-                             [--subscription] 
-                             [--vault-name] 
-                             [--yes] 
-    ```
-
-    Дополнительные сведения см. в этой [статье](/cli/azure/backup/protection#az-backup-protection-disable). 
-
-- Удаление существующего хранилища служб восстановления: 
+- Отключение защиты и удаление данных резервного копирования
 
     ```CLI
-    az backup vault delete [--force] 
-                       [--ids] 
-                       [--name] 
-                       [--resource-group] 
-                       [--subscription] 
-                       [--yes] 
+    az backup protection disable --container-name
+                             --item-name
+                             [--delete-backup-data {false, true}]
+                             [--ids]
+                             [--resource-group]
+                             [--subscription]
+                             [--vault-name]
+                             [--yes]
     ```
 
-    Дополнительные сведения см. в этой [статье](https://docs.microsoft.com/cli/azure/backup/vault?view=azure-cli-latest) . 
+    Дополнительные сведения см. в этой [статье](/cli/azure/backup/protection#az-backup-protection-disable).
+
+- Удаление существующего хранилища служб восстановления:
+
+    ```CLI
+    az backup vault delete [--force]
+                       [--ids]
+                       [--name]
+                       [--resource-group]
+                       [--subscription]
+                       [--yes]
+    ```
+
+    Дополнительные сведения см. в этой [статье](https://docs.microsoft.com/cli/azure/backup/vault?view=azure-cli-latest) .
 
 ## <a name="delete-the-recovery-services-vault-by-using-azure-resource-manager"></a>Удалите хранилище служб восстановления с помощью Azure Resource Manager
 
@@ -335,7 +333,7 @@ ms.locfileid: "72028276"
 
 3. В портал Azure Соберите идентификатор подписки и имя группы ресурсов для хранилища, которое необходимо удалить.
 
-Дополнительные сведения о команде ARMClient см. в [файле сведений о ARMClient](https://github.com/projectkudu/ARMClient/blob/master/README.md).
+Дополнительные сведения о команде ARMClient см. в разделе [файл сведений ARMClient](https://github.com/projectkudu/ARMClient/blob/master/README.md).
 
 ### <a name="use-the-azure-resource-manager-client-to-delete-a-recovery-services-vault"></a>Удаление хранилища служб восстановления с помощью клиента Azure Resource Manager
 
@@ -344,6 +342,7 @@ ms.locfileid: "72028276"
    ```azurepowershell
    ARMClient.exe delete /subscriptions/<subscriptionID>/resourceGroups/<resourcegroupname>/providers/Microsoft.RecoveryServices/vaults/<recovery services vault name>?api-version=2015-03-15
    ```
+
 2. Если хранилище не пусто, вы получите следующее сообщение об ошибке: *хранилище не может быть удалено, так как в этом хранилище есть ресурсы.* Чтобы удалить защищенный элемент или контейнер в хранилище, выполните следующую команду:
 
    ```azurepowershell
@@ -351,7 +350,6 @@ ms.locfileid: "72028276"
    ```
 
 3. В портал Azure убедитесь, что хранилище удалено.
-
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

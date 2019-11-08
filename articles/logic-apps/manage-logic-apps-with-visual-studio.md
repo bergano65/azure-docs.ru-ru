@@ -1,6 +1,6 @@
 ---
 title: Управление приложениями логики с помощью Visual Studio — Azure Logic Apps
-description: Узнайте, как управлять приложениями логики и другими ресурсами Azure с помощью Visual Studio с помощью Visual Studio Cloud Explorer.
+description: Управление приложениями логики и другими ресурсами Azure с помощью Visual Studio с Cloud Explorer
 services: logic-apps
 ms.service: logic-apps
 ms.suite: integration
@@ -9,13 +9,13 @@ ms.author: estfan
 ms.reviewer: klam, LADocs
 ms.topic: article
 ms.custom: mvc
-ms.date: 05/07/2019
-ms.openlocfilehash: db4143b3bf75d1745245d5baae267a55ce71e95f
-ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
+ms.date: 10/29/2019
+ms.openlocfilehash: e10683bcd5612db788d6dd5675425fec4130ffeb
+ms.sourcegitcommit: 018e3b40e212915ed7a77258ac2a8e3a660aaef8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71212598"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73796599"
 ---
 # <a name="manage-logic-apps-with-visual-studio"></a>Управление приложениями логики в Visual Studio
 
@@ -44,7 +44,7 @@ ms.locfileid: "71212598"
 
   * [Azure PowerShell](https://github.com/Azure/azure-powershell#installation)
 
-  * Средства Azure Logic Apps для необходимой версии Visual Studio:
+  * Новейшие средства Azure Logic Apps для расширения Visual Studio для нужной версии:
 
     * [Visual Studio 2019](https://aka.ms/download-azure-logic-apps-tools-visual-studio-2019)
 
@@ -66,7 +66,7 @@ ms.locfileid: "71212598"
 
 1. Откройте Visual Studio. В меню **Представление** выберите **Cloud Explorer**.
 
-1. В Cloud Explorer выберите **Управление учетными записями**. Выберите подписку Azure, связанную с приложениями логики, и нажмите кнопку **Применить**. Пример:
+1. В Cloud Explorer выберите **Управление учетными записями**. Выберите подписку Azure, связанную с приложениями логики, и нажмите кнопку **Применить**. Например:
 
    ![Выберите "Управление учетными записями".](./media/manage-logic-apps-with-visual-studio/account-management-select-Azure-subscription.png)
 
@@ -78,7 +78,7 @@ ms.locfileid: "71212598"
 
 <a name="open-designer"></a>
 
-## <a name="open-in-visual-studio"></a>Открыть в Visual Studio
+## <a name="open-in-visual-studio"></a>Открытие в Visual Studio
 
 В Visual Studio можно открыть ранее созданные и развернутые приложения логики непосредственно через портал Azure или как проекты группы ресурсов Azure с помощью Visual Studio.
 
@@ -112,7 +112,7 @@ ms.locfileid: "71212598"
 
 1. На панели инструментов конструктора нажмите кнопку **загрузить**.
 
-   ![Выберите "Скачать".](./media/manage-logic-apps-with-visual-studio/download-logic-app.png)
+   ![Скачать приложение логики из портал Azure](./media/manage-logic-apps-with-visual-studio/download-logic-app-from-portal.png)
 
 1. Когда появится запрос указать расположение, перейдите к нему и сохраните шаблон Resource Manager для определения этого приложения логики в виде JSON-файла.
 
@@ -126,24 +126,74 @@ ms.locfileid: "71212598"
 
 1. В Visual Studio откройте проект группы ресурсов Azure, содержащий приложение логики.
 
-1. В обозреватель решений откройте контекстное меню **< Logic-App-name >. JSON** и выберите **Открыть в конструкторе приложений логики**. (Или нажмите клавиши Ctrl+L.)
+1. В обозреватель решений откройте контекстное меню **< Logic-App-name >. JSON** и выберите **Открыть в конструкторе приложений логики**. (Клавиатура: Ctrl + L)
 
    ![Открытие JSON файла приложения логики с помощью конструктора приложений логики](./media/manage-logic-apps-with-visual-studio/open-logic-app-designer.png)
 
    > [!TIP]
-   > Если у вас нет этой команды в Visual Studio 2019, убедитесь, что установлены последние обновления для Visual Studio.
+   > Если у вас нет этой команды в Visual Studio 2019, убедитесь, что у вас есть последние обновления Visual Studio и расширения Azure Logic Apps Tools.
 
-1. Чтобы убедиться, что конструктор приложений логики имеет фокус, выберите вкладку или область конструктора, чтобы на панели свойств было указано свойство **учетная запись интеграции** для приложения логики.
+1. Убедитесь, что конструктор приложений логики имеет фокус, выбрав вкладку или область конструктора, чтобы окно свойств Показать свойство **учетной записи интеграции** для приложения логики.
 
-   ![Панель "Свойства" показывает свойство "учетная запись интеграции"](./media/manage-logic-apps-with-visual-studio/open-logic-app-properties.png)
+   ![Окно свойств — свойство "учетная запись интеграции"](./media/manage-logic-apps-with-visual-studio/open-logic-app-properties-integration-account.png)
 
-1. Откройте список **учетная запись интеграции** и выберите учетную запись интеграции, которую нужно связать с приложением логики, например:
+   > [!TIP]
+   > Если окно свойств еще не открыт, в меню **вид** выберите пункт **окно свойств**. (Клавиатура: нажмите клавишу F4)
+
+1. Откройте список свойств **учетной записи интеграции** и выберите учетную запись интеграции, которую нужно связать с приложением логики, например:
 
    ![Открыть список свойств "учетная запись интеграции"](./media/manage-logic-apps-with-visual-studio/select-integration-account.png)
 
 1. Когда все будет готово, не забудьте сохранить решение Visual Studio.
 
-Если задать свойство **учетной записи интеграции** в Visual Studio и сохранить приложение логики как шаблон Azure Resource Manager, этот шаблон также будет содержать объявление параметра для выбранной учетной записи интеграции. Дополнительные сведения о параметрах шаблонов и приложениях логики см [. в разделе Обзор: Автоматизируйте развертывание](../logic-apps/logic-apps-azure-resource-manager-templates-overview.md#template-parameters)приложений логики.
+Если задать свойство **учетной записи интеграции** в Visual Studio и сохранить приложение логики как шаблон Azure Resource Manager, этот шаблон также будет содержать объявление параметра для выбранной учетной записи интеграции. Дополнительные сведения о параметрах шаблонов и приложениях логики см. в разделе [Обзор: Автоматизация развертывания приложений логики](../logic-apps/logic-apps-azure-resource-manager-templates-overview.md#template-parameters).
+
+<a name="change-location"></a>
+
+## <a name="change-deployment-location"></a>Изменить расположение развертывания
+
+В Visual Studio, если приложение логики существует как файл JSON (JSON) в [проекте группы ресурсов Azure](../azure-resource-manager/vs-azure-tools-resource-groups-deployment-projects-create-deploy.md) , который используется для автоматизации развертывания, для этого приложения логики задается тип расположения и определенное расположение. Это расположение является либо регионом Azure, либо существующей [средой службы интеграции (ISE)](connect-virtual-network-vnet-isolated-environment.md).
+
+Чтобы изменить тип расположения или расположение приложения логики, необходимо открыть файл определения рабочего процесса (JSON) приложения логики из обозреватель решений с помощью конструктора приложений логики. Эти свойства нельзя изменить с помощью Cloud Explorer.
+
+> [!IMPORTANT]
+> Изменение типа расположения с **региона** на [**Среда службы интеграции**](connect-virtual-network-vnet-isolated-environment-overview.md) влияет на [модель ценообразования](logic-apps-pricing.md#fixed-pricing) приложения логики, используемую для выставления счетов, [ограничений](logic-apps-limits-and-config.md#integration-account-limits), [поддержки учетных записей интеграции](connect-virtual-network-vnet-isolated-environment-overview.md#ise-skus)и т. д. Прежде чем выбрать другой тип расположения, убедитесь, что вы понимаете влияние на приложение логики.
+
+1. В Visual Studio откройте проект группы ресурсов Azure, содержащий приложение логики.
+
+1. В обозреватель решений откройте контекстное меню `<logic-app-name>.json`ного файла и выберите **Открыть в конструкторе приложений логики**. (Клавиатура: Ctrl + L)
+
+   ![Открытие JSON файла приложения логики с помощью конструктора приложений логики](./media/manage-logic-apps-with-visual-studio/open-logic-app-designer.png)
+
+   > [!TIP]
+   > Если у вас нет этой команды в Visual Studio 2019, убедитесь, что у вас есть последние обновления Visual Studio и расширения Azure Logic Apps Tools.
+
+1. Убедитесь, что конструктор приложений логики имеет фокус, выбрав вкладку или область конструктора, чтобы окно свойств Показать свойства **выбора типа расположения** и **расположения** для приложения логики. Для типа расположения проекта задано значение " **регион** " или " **Среда службы интеграции**".
+
+   ![Окно свойств-"Выбор типа расположения" & "расположение"](./media/manage-logic-apps-with-visual-studio/open-logic-app-properties-location.png)
+
+   > [!TIP]
+   > Если окно свойств еще не открыт, в меню **вид** выберите пункт **окно свойств**. (Клавиатура: нажмите клавишу F4)
+
+1. Чтобы изменить тип расположения, откройте список свойств **Выбор типа расположения** и выберите нужный тип расположения.
+
+   Например, если тип расположения — **Среда службы интеграции**, можно выбрать **регион**.
+
+   ![Свойство "Выбор типа расположения" — изменение типа расположения](./media/manage-logic-apps-with-visual-studio/change-location-type.png)
+
+1. Чтобы изменить конкретное расположение, откройте список свойств **Расположение** . В зависимости от типа расположения выберите нужное расположение, например:
+
+   * Выберите другой регион Azure:
+
+     ![Откройте список свойств "расположение", выберите другой регион Azure.](./media/manage-logic-apps-with-visual-studio/change-azure-resource-group-region.png)
+
+   * Выберите другую интегрированную среду сценариев:
+
+     ![Откройте список свойств "расположение", выберите другую интегрированную среду сценариев](./media/manage-logic-apps-with-visual-studio/change-integration-service-environment.png)
+
+1. Когда все будет готово, не забудьте сохранить решение Visual Studio.
+
+При изменении типа расположения или расположения в Visual Studio и сохранении приложения логики в качестве шаблона Azure Resource Manager этот шаблон также включает объявления параметров для этого типа расположения и расположения. Дополнительные сведения о параметрах шаблонов и приложениях логики см. в разделе [Обзор: Автоматизация развертывания приложений логики](../logic-apps/logic-apps-azure-resource-manager-templates-overview.md#template-parameters).
 
 <a name="refresh"></a>
 
@@ -157,19 +207,19 @@ ms.locfileid: "71212598"
 
 * В Cloud Explorer Visual Studio откройте контекстное меню приложения логики и выберите **Обновить**.
 
-![Обновление приложения логики с изменениями](./media/manage-logic-apps-with-visual-studio/refresh-logic-app.png)
+![Обновление приложения логики с изменениями](./media/manage-logic-apps-with-visual-studio/refresh-logic-app-with-updates-from-portal.png)
 
 ## <a name="publish-logic-app-updates"></a>Публикация обновлений приложения логики
 
 Когда вы будете готовы к развертыванию обновлений приложения логики из Visual Studio в Azure, на панели инструментов конструктора приложений логики выберите **опубликовать**.
 
-![Публикация обновленного приложения логики](./media/manage-logic-apps-with-visual-studio/publish-logic-app.png)
+![Публикация обновленного приложения логики в портал Azure](./media/manage-logic-apps-with-visual-studio/publish-logic-app-to-azure-portal.png)
 
 ## <a name="manually-run-your-logic-app"></a>Запуск приложения логики вручную
 
 В Visual Studio вы можете вручную запустить приложение логики, развернутое в Azure. На панели инструментов конструктора приложений логики выберите **запустить триггер**.
 
-![Запуск приложения логики вручную](./media/manage-logic-apps-with-visual-studio/manually-run-logic-app.png)
+![Запуск триггера для приложения логики вручную](./media/manage-logic-apps-with-visual-studio/manually-run-logic-app.png)
 
 ## <a name="review-run-history"></a>Просмотр журнала выполнения
 
@@ -177,37 +227,37 @@ ms.locfileid: "71212598"
 
 1. В Cloud Explorer откройте контекстное меню приложения логики и выберите **Открыть журнал запусков**.
 
-   ![Выбор параметра "Открыть журнал запусков"](./media/manage-logic-apps-with-visual-studio/view-run-history.png)
+   ![Открытие журнала выполнения для приложения логики](./media/manage-logic-apps-with-visual-studio/open-run-history-for-logic-app.png)
 
-1. Чтобы просмотреть сведения об определенном запуске, дважды щелкните его. Пример:
+1. Чтобы просмотреть сведения об определенном запуске, дважды щелкните его. Например:
 
-   ![Подробный журнал запусков](./media/manage-logic-apps-with-visual-studio/view-run-history-details.png)
+   ![Просмотр сведений о конкретном запуске](./media/manage-logic-apps-with-visual-studio/view-run-history-details.png)
   
    > [!TIP]
    > Чтобы отсортировать таблицу по свойству, выберите заголовок столбца для этого свойства.
 
 1. Разверните шаги, входные и выходные данные которых необходимо проверить, например:
 
-   ![Просмотр входных и выходных данных для каждого шага](./media/manage-logic-apps-with-visual-studio/run-inputs-outputs.png)
+   ![Просмотр входных и выходных данных для каждого шага](./media/manage-logic-apps-with-visual-studio/view-run-history-inputs-outputs.png)
 
 ## <a name="disable-or-enable-logic-app"></a>Отключение и включение приложения логики
 
 Остановить запуск триггера в следующий раз, когда будет выполнено его условие, можно без удаления приложения логики. Отключение приложения логики предотвращает создание и запуск обработчиком Logic Apps будущих экземпляров рабочего процесса для этого приложения. В Cloud Explorer откройте контекстное меню приложения логики и выберите **Отключить**.
 
-![Отключение приложения логики](./media/manage-logic-apps-with-visual-studio/disable-logic-app.png)
+![Отключение приложения логики в Cloud Explorer](./media/manage-logic-apps-with-visual-studio/disable-logic-app-cloud-explorer.png)
 
 > [!NOTE]
 > При отключении приложения логики новые экземпляры запуска не создаются. Работа всех выполняющихся и ожидающих выполнения запусков будет продолжаться до завершения, что может занять некоторое время.
 
 Чтобы повторно активировать приложение логики, в Cloud Explorer откройте контекстное меню приложения логики и выберите **включить**.
 
-![Включение приложения логики](./media/manage-logic-apps-with-visual-studio/enable-logic-app.png)
+![Включение приложения логики в Cloud Explorer](./media/manage-logic-apps-with-visual-studio/enable-logic-app-cloud-explorer.png)
 
 ## <a name="delete-your-logic-app"></a>Удаление приложения логики
 
 Чтобы удалить приложение логики с портала Azure, в Cloud Explorer откройте его контекстное меню и выберите **Удалить**.
 
-![Удаление приложения логики](./media/manage-logic-apps-with-visual-studio/delete-logic-app.png)
+![Удаление приложения логики из портал Azure](./media/manage-logic-apps-with-visual-studio/delete-logic-app-from-azure-portal.png)
 
 > [!NOTE]
 > При удалении приложения логики новые экземпляры запуска не создаются. Всех выполняющиеся и ожидающие выполнения запуски будут отменены. При наличии тысяч операций запуска отмена может занять значительное время. 
@@ -220,7 +270,7 @@ ms.locfileid: "71212598"
 
 * Чтобы удалить ранее выбранные подписки для *всех* приложений логики в решении, удалите скрытую папку параметров Visual Studio (VS) в каталоге решения. Это расположение хранит сведения о подписке.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этой статьи вы узнали, как управлять развернутыми приложениями логики в Visual Studio. Теперь ознакомьтесь с настройкой определений приложения логики для развертывания:
 

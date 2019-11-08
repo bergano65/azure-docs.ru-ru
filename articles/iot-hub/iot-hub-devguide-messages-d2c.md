@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 05/15/2019
 ms.author: asrastog
-ms.openlocfilehash: e4f1797d600a226eb152a464efe4da8ddbdb6207
-ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+ms.openlocfilehash: ff50d972ad9590fb70dbcf67e21f8b5dc8c32fad
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73606228"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73748058"
 ---
 # <a name="use-iot-hub-message-routing-to-send-device-to-cloud-messages-to-different-endpoints"></a>Использование маршрутизации сообщений центра Интернета вещей для отправки сообщений с устройства в облако в разные конечные точки
 
@@ -57,7 +57,7 @@ ms.locfileid: "73606228"
 
 Вы можете применять любое соглашение об именовании файлов, однако необходимо использовать все перечисленные токены. Центр Интернета вещей будет записывать пустой большой двоичный объект, если нет данных для записи.
 
-Мы рекомендуем прикрепить контейнеры хранилища и затем перепроходить их, чтобы убедиться, что все контейнеры считаны без принятия каких либо предположений о секции. Диапазон секций может измениться в процессе [инициированной корпорацией Майкрософт отработки отказа](iot-hub-ha-dr.md#microsoft-initiated-failover) или при [переходе на другой ресурс вручную](iot-hub-ha-dr.md#manual-failover) с помощью Центра Интернета вещей. Для перечисления списка больших двоичных объектов можно использовать [API List blobs](https://docs.microsoft.com/rest/api/storageservices/list-blobs) . Ознакомьтесь со следующим примером в качестве руководства.
+Рекомендуется перечислить большие двоичные объекты или файлы, а затем перепроходить их, чтобы гарантировать чтение всех больших двоичных объектов или файлов без принятия каких-либо предположений раздела. Диапазон секций может измениться в процессе [инициированной корпорацией Майкрософт отработки отказа](iot-hub-ha-dr.md#microsoft-initiated-failover) или при [переходе на другой ресурс вручную](iot-hub-ha-dr.md#manual-failover) с помощью Центра Интернета вещей. Вы можете использовать [API List blobs](https://docs.microsoft.com/rest/api/storageservices/list-blobs) для перечисления списка больших двоичных объектов или [ADLS 2-го поколения API списка](https://docs.microsoft.com/rest/api/storageservices/datalakestoragegen2/path/list) файлов. Ознакомьтесь со следующим примером в качестве руководства.
 
 ```csharp
 public void ListBlobsInContainer(string containerName, string iothub)

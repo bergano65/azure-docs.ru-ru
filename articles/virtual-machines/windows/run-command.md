@@ -8,18 +8,18 @@ ms.author: robreed
 ms.date: 04/26/2019
 ms.topic: article
 manager: carmonm
-ms.openlocfilehash: bbe236bd4575ffb849b6f4739fc3a27c09aa5e47
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.openlocfilehash: fa7f72989d47499127714eddfa6b5e98aa80178c
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72595146"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73749225"
 ---
 # <a name="run-powershell-scripts-in-your-windows-vm-by-using-run-command"></a>Выполнение сценариев PowerShell на виртуальной машине Windows с помощью команды Run
 
 Функция "выполнить команду" использует агент виртуальной машины для выполнения скриптов PowerShell на виртуальной машине Azure под управлением Windows. Эти скрипты можно использовать для общего управления компьютерами или приложениями. Они могут помочь вам быстро диагностировать и исправлять проблемы доступа к виртуальной машине и сети, а также восстановить работоспособность виртуальной машины.
 
-[!INCLUDE [updated-for-az.md](../../../includes/updated-for-az.md)]
+ 
 
 ## <a name="benefits"></a>Преимущества
 
@@ -51,7 +51,7 @@ ms.locfileid: "72595146"
 The entity was not found in this Azure location
 ```
 
-|**Имя**|**Описание**|
+|**имя**|**Описание**|
 |---|---|
 |**RunPowerShellScript**|Запускает сценарий PowerShell.|
 |**EnableRemotePS**|Настраивает компьютер для удаленного подключения к PowerShell.|
@@ -77,7 +77,7 @@ az vm run-command invoke  --command-id RunPowerShellScript --name win-vm -g my-r
     --scripts @script.ps1 --parameters "arg1=somefoo" "arg2=somebar"
 ```
 
-## <a name="azure-portal"></a>портала Azure
+## <a name="azure-portal"></a>Портал Azure
 
 Перейдите к виртуальной машине в [портал Azure](https://portal.azure.com) и выберите **команду выполнить** в разделе **операции**. Отобразится список доступных команд для выполнения на виртуальной машине.
 

@@ -1,6 +1,6 @@
 ---
 title: Использование PowerShell для архивации Windows Server в Azure
-description: Узнайте о том, как развернуть службу архивации Azure и управлять ею с помощью PowerShell
+description: В этой статье описано, как использовать PowerShell для настройки Azure Backup в Windows Server или клиенте Windows, а также для управления резервным копированием и восстановлением.
 ms.reviewer: shivamg
 author: dcurwin
 manager: carmonm
@@ -8,18 +8,19 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 08/20/2019
 ms.author: dacurwin
-ms.openlocfilehash: d65da05ea2b24e3820d9a6fde31b3d4a5c72dbd1
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.openlocfilehash: 78b83eb725da09dc98df05865ba4d41c505f0f4c
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69656740"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73747260"
 ---
 # <a name="deploy-and-manage-backup-to-azure-for-windows-serverwindows-client-using-powershell"></a>Развертывание резервного копирования в Azure для Windows Server или клиента Windows и управление им с помощью PowerShell
 
 В этой статье описано, как использовать PowerShell для настройки службы архивации Azure на сервере Windows Server или клиенте Windows, а также для управления резервным копированием и восстановлением данных.
 
-## <a name="install-azure-powershell"></a>Установить Azure PowerShell
+## <a name="install-azure-powershell"></a>Установка Azure PowerShell
+
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 Чтобы приступить к работе, [установите последнюю версию PowerShell](/powershell/azure/install-az-ps).
@@ -78,7 +79,6 @@ SubscriptionId    : 1234-567f-8910-abc
 Properties        : Microsoft.Azure.Commands.RecoveryServices.ARSVaultProperties
 ```
 
-
 [!INCLUDE [backup-upgrade-mars-agent.md](../../includes/backup-upgrade-mars-agent.md)]
 
 ## <a name="installing-the-azure-backup-agent"></a>Установка агента службы архивации Azure.
@@ -100,7 +100,7 @@ Properties        : Microsoft.Azure.Commands.RecoveryServices.ARSVaultProperties
 MARSAgentInstaller.exe /q
 ```
 
-Агент будет установлен с параметрами по умолчанию. Установка займет всего несколько минут и пройдет в фоновом режиме. Если параметр */nu* не будет указан, в конце установки откроется окно **Обновления Windows** для проверки наличия обновлений. После установки агент появится в списке установленных программ.
+Агент будет установлен с параметрами по умолчанию. Установка займет всего несколько минут и пройдет в фоновом режиме. Если параметр */Nu* не указан, то в конце установки откроется окно **Центр обновления Windows** , чтобы проверить наличие обновлений. После установки агент появится в списке установленных программ.
 
 Чтобы просмотреть список установленных программ, выберите **Панель управления** > **Программы** > **Программы и компоненты**.
 
@@ -108,7 +108,7 @@ MARSAgentInstaller.exe /q
 
 ### <a name="installation-options"></a>Параметры установки
 
-Чтобы просмотреть все доступные в командной строке параметры, используйте следующую команду:
+Чтобы просмотреть все параметры, доступные через командную строку, используйте следующую команду:
 
 ```powershell
 MARSAgentInstaller.exe /?
@@ -116,7 +116,7 @@ MARSAgentInstaller.exe /?
 
 Доступны следующие параметры.
 
-| Параметр | Подробнее | Значение по умолчанию |
+| Параметр | Сведения | значение по умолчанию |
 | --- | --- | --- |
 | /q |Позволяет выполнить тихую установку. |- |
 | /p:"расположение" |Путь к папке установки для агента архивации Azure. |C:\Program Files\Microsoft Azure Recovery Services Agent |
@@ -151,9 +151,9 @@ $CredsFilename = Get-AzRecoveryServicesVaultSettingsFile -Certificate $certifica
 ```
 
 На сервере Windows Server или DPM запустите командлет [Start-OBRegistration](https://technet.microsoft.com/library/hh770398%28v=wps.630%29.aspx) , чтобы зарегистрировать компьютер в хранилище.
-Этот и другие командлеты, используемые для резервного копирования, входят в модуль MSONLINE, который установщик агента Mars добавляет в процессе установки.
+Это и другие командлеты, используемые для резервного копирования, из модуля MSONLINE, который К установщика агента Mars добавил как часть процесса установки.
 
-Установка агента не обновляет переменную $Env:PSModulePath. Это означает, что автоматическая загрузка модуля завершается ошибкой. Чтобы устранить эту проблему, выполните следующие действия.
+Установка агента не обновляет переменную $Env:PSModulePath. Это означает, что автоматическая загрузка модуля завершается ошибкой. Для решения этой проблемы можно выполнить следующие действия.
 
 ```powershell
 $Env:PSModulePath += ';C:\Program Files\Microsoft Azure Recovery Services Agent\bin\Modules'
@@ -208,11 +208,11 @@ Set-OBMachineSetting -NoThrottle
 Server properties updated successfully.
 ```
 
-## <a name="encryption-settings"></a>Параметры шифрования.
+## <a name="encryption-settings"></a>Параметры шифрования
 
 Для защиты конфиденциальности данных резервные копии данных, отправляемые в службу архивации Azure, зашифровываются. Используемая для шифрования парольная фраза является "паролем" для расшифровки данных во время их восстановления.
 
-Чтобы создать ПИН-код безопасности, выберите **создать**в разделе **Параметры** > **Свойства** > **ПИН-код** в **хранилище служб восстановления** портал Azure. Затем используйте его `generatedPIN` в качестве в команде:
+Чтобы создать ПИН-код безопасности, нажмите кнопку " **создать**" в разделе " **параметры** > **Свойства** > **ПИН-код безопасности** " в разделе " **хранилище служб восстановления** " портал Azure. Затем используйте его в качестве `generatedPIN` в команде:
 
 ```powershell
 $PassPhrase = ConvertTo-SecureString -String "Complex!123_STRING" -AsPlainText -Force
@@ -246,10 +246,10 @@ $NewPolicy = New-OBPolicy
 
 ### <a name="configuring-the-backup-schedule"></a>Настройка расписания резервного копирования
 
-Первым из трех компонентов политики является расписание резервного копирования, которое создается с помощью командлета [New-OBSchedule](https://technet.microsoft.com/library/hh770401) . В расписании резервного копирования указывается, когда необходимо выполнить резервное копирование. При создании расписания необходимо указать 2 входных параметра:
+Первая из трех частей политики — это расписание резервного копирования, созданное с помощью командлета [New-OBSchedule](https://technet.microsoft.com/library/hh770401) . В расписании резервного копирования указывается, когда необходимо выполнить резервное копирование. При создании расписания необходимо указать два входных параметра:
 
 * **Дни недели** , в которые необходимо выполнять резервное копирование. Можно указать, чтобы задание резервного копирования выполнялось только один день или каждый день недели либо в определенный промежуток времени.
-* **Время** запуска резервного копирования. Можно определить до трех разных значений времени дня, когда будет выполняться резервное копирование.
+* **Время** запуска резервного копирования. При запуске резервного копирования можно определить до трех разных значений времени суток.
 
 Например, политику резервного копирования можно настроить таким образом, чтобы соответствующее задание выполнялось в 16:00 каждые субботу и воскресенье.
 
@@ -266,9 +266,10 @@ Set-OBSchedule -Policy $NewPolicy -Schedule $Schedule
 ```Output
 BackupSchedule : 4:00 PM Saturday, Sunday, Every 1 week(s) DsList : PolicyName : RetentionPolicy : State : New PolicyState : Valid
 ```
+
 ### <a name="configuring-a-retention-policy"></a>Настройка политики хранения
 
-Политика хранения определяет, как долго хранятся точки восстановления, созданные из заданий резервного копирования. При создании новой политики хранения с помощью командлета [New-OBRetentionPolicy](https://technet.microsoft.com/library/hh770425) можно указать число дней, в течение которых следует хранить точки восстановления в службе архивации Azure. В приведенном ниже примере приведена политика хранения точек восстановления в течение 7 дней.
+Политика хранения определяет, как долго хранятся точки восстановления, созданные из заданий резервного копирования. При создании новой политики хранения с помощью командлета [New-OBRetentionPolicy](https://technet.microsoft.com/library/hh770425) можно указать число дней, в течение которых следует хранить точки восстановления в службе архивации Azure. В приведенном ниже примере политика хранения устанавливается в семь дней.
 
 ```powershell
 $RetentionPolicy = New-OBRetentionPolicy -RetentionDays 7
@@ -300,6 +301,7 @@ RetentionPolicy : Retention Days : 7
 State           : New
 PolicyState     : Valid
 ```
+
 ### <a name="including-and-excluding-files-to-be-backed-up"></a>Включение и исключение файлов для резервного копирования
 
 Объект `OBFileSpec` определяет файлы для включения в резервную копию или исключения из нее. Это набор правил, которые определяют область защищенных файлов и папок на компьютере. Можно создать любое количество правил включения или исключения файлов и связать их с политикой. При создании нового объекта OBFileSpec, можно сделать следующее:
@@ -310,7 +312,7 @@ PolicyState     : Valid
 
 Для выполнения последней задачи необходимо установить флаг -NonRecursive в команде New-OBFileSpec.
 
-В примере ниже выполняется резервное копирование томов C: и D: с исключением двоичных файлов операционной системы в папке Windows и других временных папках. Для этого мы создадим две спецификации файлов с помощью командлета [New-OBFileSpec](https://technet.microsoft.com/library/hh770408) — для включения и исключения. После создания спецификации файлов связываются с политикой с помощью командлета [Add-OBFileSpec](https://technet.microsoft.com/library/hh770424) .
+В примере ниже выполняется резервное копирование томов C: и D: с исключением двоичных файлов операционной системы в папке Windows и других временных папках. Для этого мы создадим две спецификации файла с помощью командлета [New-OBFileSpec](https://technet.microsoft.com/library/hh770408) — один для включения, а другой — для исключения. После создания спецификации файлов связываются с политикой с помощью командлета [Add-OBFileSpec](https://technet.microsoft.com/library/hh770424) .
 
 ```powershell
 $Inclusions = New-OBFileSpec -FileSpec @("C:\", "D:\")
@@ -403,16 +405,18 @@ RetentionPolicy : Retention Days : 7
 State           : New
 PolicyState     : Valid
 ```
+
 ## <a name="back-up-windows-server-system-state-in-mabs-agent"></a>Резервное копирование состояния системы Windows Server в агенте MABS
 
 В этом разделе описывается команда PowerShell для настройки состояния системы в агенте MABS.
 
 ### <a name="schedule"></a>Расписание
+
 ```powershell
 $sched = New-OBSchedule -DaysOfWeek Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday -TimesOfDay 2:00
 ```
 
-### <a name="retention"></a>Удержание
+### <a name="retention"></a>Сохранение
 
 ```powershell
 $rtn = New-OBRetentionPolicy -RetentionDays 32 -RetentionWeeklyPolicy -RetentionWeeks 13 -WeekDaysOfWeek Sunday -WeekTimesOfDay 2:00  -RetentionMonthlyPolicy -RetentionMonths 13 -MonthDaysOfMonth 1 -MonthTimesOfDay 2:00
@@ -432,7 +436,7 @@ Get-OBSystemStatePolicy
 
 ### <a name="applying-the-policy"></a>Применение политики
 
-Объект политики готов и имеет связанные расписание резервного копирования, политику хранения, а также список включенных и исключенных файлов. На данном этапе эту политику можно зафиксировать в службе архивации Azure для использования. Перед применением новой политики убедитесь в отсутствии существующих политик резервного копирования, связанных с сервером, с помощью командлета [Remove-OBPolicy](https://technet.microsoft.com/library/hh770415) . При удалении политики будет запрошено соответствующее подтверждение. Чтобы пропустить подтверждение, используйте в командлете флаг `-Confirm:$false` .
+Объект политики готов и имеет связанные расписание резервного копирования, политику хранения, а также список включенных и исключенных файлов. На данном этапе эту политику можно зафиксировать в службе архивации Azure для использования. Перед применением вновь созданной политики убедитесь, что с сервером не связаны существующие политики резервного копирования с помощью командлета [Remove-OBPolicy](https://technet.microsoft.com/library/hh770415) . При удалении политики будет запрошено соответствующее подтверждение. Чтобы пропустить подтверждение, используйте флаг `-Confirm:$false` с командлетом.
 
 ```powershell
 Get-OBPolicy | Remove-OBPolicy
@@ -442,7 +446,7 @@ Get-OBPolicy | Remove-OBPolicy
 Microsoft Azure Backup Are you sure you want to remove this backup policy? This will delete all the backed up data. [Y] Yes [A] Yes to All [N] No [L] No to All [S] Suspend [?] Help (default is "Y"):
 ```
 
-Фиксация объекта политики выполняется с помощью командлета [Set-OBPolicy](https://technet.microsoft.com/library/hh770421) . При этом также будет запрашиваться соответствующее подтверждение. Чтобы пропустить подтверждение, используйте в командлете флаг `-Confirm:$false` .
+Фиксация объекта политики выполняется с помощью командлета [Set-OBPolicy](https://technet.microsoft.com/library/hh770421) . При этом также будет запрашиваться соответствующее подтверждение. Чтобы пропустить подтверждение, используйте флаг `-Confirm:$false` с командлетом.
 
 ```powershell
 Set-OBPolicy -Policy $NewPolicy
@@ -545,7 +549,7 @@ IsRecursive : True
 
 ### <a name="performing-an-ad-hoc-backup"></a>Выполнение внепланового резервного копирования
 
-После настройки соответствующей политики резервное копирование будет выполняться по расписанию. Вы также можете выполнить внеплановое резервное копирование с помощью командлета [Start-OBBackup](https://technet.microsoft.com/library/hh770426):
+После установки политики резервного копирования резервные копии будут выполняться по расписанию. Вы также можете выполнить внеплановое резервное копирование с помощью командлета [Start-OBBackup](https://technet.microsoft.com/library/hh770426):
 
 ```powershell
 Get-OBPolicy | Start-OBBackup
@@ -687,7 +691,7 @@ $Item = Get-OBRecoverableItem -RecoveryPoint $Rps[0] -Location "D:\MyData" -Sear
 
 ### <a name="triggering-the-restore-process"></a>Запуск процесса восстановления
 
-Чтобы запустить процесс восстановления, необходимо сначала указать параметры восстановления. Это можно сделать с помощью командлета [New-OBRecoveryOption](https://technet.microsoft.com/library/hh770417.aspx) . В этом примере предположим, что нужно восстановить файлы в папку *C:\temp*. Предположим также, что нужно пропустить файлы, которые уже существуют в целевой папке *C:\temp*. Для создания такого параметра восстановления используйте следующую команду:
+Чтобы запустить процесс восстановления, необходимо сначала указать параметры восстановления. Это можно сделать с помощью командлета [New-OBRecoveryOption](https://technet.microsoft.com/library/hh770417.aspx) . В этом примере предположим, что нужно восстановить файлы в *C:\temp*. Предположим также, что мы хотим пропустить файлы, которые уже существуют в папке назначения *C:\temp*. Чтобы создать такой вариант восстановления, используйте следующую команду:
 
 ```powershell
 $RecoveryOption = New-OBRecoveryOption -DestinationPath "C:\temp" -OverwriteType Skip
@@ -768,9 +772,9 @@ $Session = New-PSSession -ComputerName REMOTESERVER01
 Invoke-Command -Session $Session -Script { param($D, $A) Start-Process -FilePath $D $A -Wait } -ArgumentList $Agent, $Args
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительная информация о службе архивации Azure для сервера или клиента Windows
+Дополнительные сведения о Azure Backup для Windows Server и клиента:
 
 * [Общие сведения о службе архивации Azure](backup-introduction-to-azure-backup.md)
 * [Резервное копирование серверов Windows](backup-configure-vault.md)

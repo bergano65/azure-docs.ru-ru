@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 10/31/2019
 ms.author: apimpm
-ms.openlocfilehash: bfb012116f74e451f9479c8c65057e5c8405bbb4
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: fc7e0f7e4e0e80a030a437bc4f0f13360595f32e
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73513787"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73747694"
 ---
 # <a name="deploy-an-azure-api-management-self-hosted-gateway-to-docker"></a>Развертывание самостоятельно размещенного шлюза службы управления API Azure в DOCKER
 
@@ -26,11 +26,14 @@ ms.locfileid: "73513787"
 > [!NOTE]
 > Функция самостоятельно размещенного шлюза доступна в предварительной версии. В течение предварительной версии шлюз с самостоятельным размещением доступен только на уровнях Developer и Premium без дополнительной платы. Уровень разработчика ограничен одним развертыванием с помощью самостоятельного размещения шлюза.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Выполните задачи в кратком руководстве по [созданию экземпляра службы управления API Azure](get-started-create-service-instance.md).
 - Создайте среду DOCKER. [DOCKER для настольных систем](https://www.docker.com/products/docker-desktop) является хорошим вариантом для целей разработки и оценки. Сведения о всех выпусках DOCKER, их функциях и исчерпывающей документации по собственно DOCKER см. в [документации по DOCKER](https://docs.docker.com) .
 - [Подготавливает ресурс шлюза в экземпляре управления API](api-management-howto-provision-self-hosted-gateway.md)
+
+> [!NOTE]
+> Самостоятельно размещенный шлюз упаковывается как контейнер DOCKER на основе Linux.
 
 ## <a name="deploy-the-self-hosted-gateway-to-docker"></a>Развертывание самостоятельно размещенного шлюза в DOCKER
 
@@ -63,4 +66,5 @@ CONTAINER ID        IMAGE                                                 COMMAN
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Дополнительные сведения о самостоятельно размещенном шлюзе см. в статье [Обзор самостоятельного размещения шлюза в службе управления API Azure](self-hosted-gateway-overview.md) .
+* Дополнительные сведения о шлюзе, размещенном в собственном расположении, см. в статье [Общие сведения о шлюзе службы управления API Azure](self-hosted-gateway-overview.md).
+* [Настройте имя личного домена для самостоятельно размещенного шлюза](api-management-howto-configure-custom-domain-gateway.md).

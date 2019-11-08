@@ -2,20 +2,20 @@
 author: larryfr
 ms.service: machine-learning
 ms.topic: include
-ms.date: 07/26/2019
+ms.date: 11/04/2019
 ms.author: larryfr
-ms.openlocfilehash: ec0f85ff568bcd89d74ccd727d1c5ecfd8aab398
-ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
+ms.openlocfilehash: f35245aea0d7ba20561d1504b111e747ccbe5e0d
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70390641"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73800079"
 ---
-Записи в `deploymentconfig.json` документе соответствуют параметрам для [локалвебсервице. deploy_configuration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.local.localwebservicedeploymentconfiguration?view=azure-ml-py). В следующей таблице описывается сопоставление между сущностями в документе JSON и параметрами метода.
+Записи в документе `deploymentconfig.json` соответствуют параметрам для [локалвебсервице. deploy_configuration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.local.localwebservicedeploymentconfiguration?view=azure-ml-py). В следующей таблице описывается сопоставление между сущностями в документе JSON и параметрами метода.
 
-| Сущность JSON | Параметр метода | Описание |
+| Сущность JSON | Параметр метода | Description (Описание) |
 | ----- | ----- | ----- |
-| `computeType` | Н/Д | Целевой объект вычисления. Для локальных целевых объектов значение должно быть `local`. |
+| `computeType` | Нет данных | Целевой объект вычисления. Для локальных целевых объектов значение должно быть `local`. |
 | `port` | `port` | Локальный порт, на который будет предоставляться конечная точка HTTP службы. |
 
 Этот формат JSON является примером конфигурации развертывания для использования с CLI:

@@ -6,12 +6,12 @@ ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.openlocfilehash: 55e802aa1f7bdf0d67d1a9c3f020d255afdc8130
-ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
+ms.openlocfilehash: 4291db0bb1edbc366c42febed992a7c27d46eb15
+ms.sourcegitcommit: 018e3b40e212915ed7a77258ac2a8e3a660aaef8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71261905"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73796751"
 ---
 # <a name="migrate-your-postgresql-database-using-dump-and-restore"></a>Перенос базы данных PostgreSQL с помощью дампа и ее восстановление
 Можно извлечь базу данных PostgreSQL в файл дампа с помощью [pg_dump](https://www.postgresql.org/docs/current/static/app-pgdump.html) и с помощью [pg_restore](https://www.postgresql.org/docs/current/static/app-pgrestore.html) восстановить базу данных PostgreSQL из файла архива, созданного pg_dump.
@@ -34,7 +34,7 @@ pg_dump -Fc -v --host=localhost --username=masterlogin --dbname=testdb -f testdb
 ```
 
 
-## <a name="restore-the-data-into-the-target-azure-database-for-postrgesql-using-pg_restore"></a>Восстановление данных в целевую базу данных Azure для PostrgeSQL с помощью pg_restore
+## <a name="restore-the-data-into-the-target-azure-database-for-postgresql-using-pg_restore"></a>Восстановление данных в целевую базу данных Azure для PostgreSQL с помощью pg_restore
 После создания целевой базы данных можно воспользоваться командой pg_restore с параметром -d, --dbname, чтобы восстановить данные в целевую базу данных из файла дампа.
 ```bash
 pg_restore -v --no-owner --host=<server name> --port=<port> --username=<user@servername> --dbname=<target database name> <database>.dump
@@ -61,7 +61,7 @@ pg_restore -v --no-owner --host=mydemoserver.postgres.database.azure.com --port=
 >
 
 ### <a name="for-the-backup"></a>Для резервного копирования
-- Создайте резервную копию с использованием параметра -Fc, чтобы вы могли выполнять восстановление параллельно, что позволит ускорить его. Пример:
+- Создайте резервную копию с использованием параметра -Fc, чтобы вы могли выполнять восстановление параллельно, что позволит ускорить его. Например:
 
     ```
     pg_dump -h MySourceServerName -U MySourceUserName -Fc -d MySourceDatabaseName -f Z:\Data\Backups\MyDatabaseBackup.dump
@@ -72,7 +72,7 @@ pg_restore -v --no-owner --host=mydemoserver.postgres.database.azure.com --port=
 
 - Это должно происходить по умолчанию, но откройте файл дампа, чтобы проверить, что инструкции создания индекса находятся после вставленных данных. Если это не так, переместите инструкции создания индекса после вставленных данных.
 
-- Выполните восстановление с параметрами -Fc и -j *#* для параллельной операции. *#* — это количество ядер на целевом сервере. Вы также можете попробовать установить вдвое большее количество ядер целевого сервера, используя *#* , чтобы оценить влияние. Пример:
+- Выполните восстановление с параметрами -Fc и -j *#* для параллельной операции. *#* — это количество ядер на целевом сервере. Вы также можете попробовать установить вдвое большее количество ядер целевого сервера, используя *#* , чтобы оценить влияние. Например:
 
     ```
     pg_restore -h MyTargetServer.postgres.database.azure.com -U MyAzurePostgreSQLUserName -Fc -j 4 -d MyTargetDatabase Z:\Data\Backups\MyDatabaseBackup.dump
@@ -89,6 +89,6 @@ pg_restore -v --no-owner --host=mydemoserver.postgres.database.azure.com --port=
 
 Не забудьте проверить и протестировать эти команды в тестовой среде, прежде чем использовать их в рабочей среде.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Перенос базы данных PostgreSQL с помощью метода экспорта и импорта см. в [этой статье](howto-migrate-using-export-and-import.md).
 - Дополнительные сведения о переносе баз данных в службу "База данных Azure для PostgreSQL" см. в [этой статье](https://aka.ms/datamigration).

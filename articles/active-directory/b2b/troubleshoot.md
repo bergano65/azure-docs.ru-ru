@@ -4,20 +4,23 @@ description: Способы устранения распространенны�
 services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
-ms.topic: conceptual
+ms.topic: troubleshooting
 ms.date: 05/25/2017
+tags: active-directory
 ms.author: mimart
 author: v-miegge
-manager: celestedg
+manager: dcscontentpm
 ms.reviewer: mal
-ms.custom: it-pro, seo-update-azuread-jan
+ms.custom:
+- it-pro
+- seo-update-azuread-jan"
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f91ddee8668316df69c98ed14fbcabcb06b6da82
-ms.sourcegitcommit: 909ca340773b7b6db87d3fb60d1978136d2a96b0
+ms.openlocfilehash: 6449644f98280d75363f737be11f8e8b824cab36
+ms.sourcegitcommit: 018e3b40e212915ed7a77258ac2a8e3a660aaef8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70983395"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73795180"
 ---
 # <a name="troubleshooting-azure-active-directory-b2b-collaboration"></a>Устранение неполадок службы совместной работы Azure Active Directory B2B
 
@@ -92,6 +95,6 @@ ms.locfileid: "70983395"
 
 Если клиентом удостоверений является клиент JIT или вирусный клиент (то есть отдельный неуправляемый клиент Azure), только гостевой пользователь может сбросить пароль. Иногда организация будет [управлять вирусными клиентами](https://docs.microsoft.com/azure/active-directory/users-groups-roles/domains-admin-takeover), которые создаются, когда сотрудники используют свои рабочие электронные адреса для регистрации в службах. После получения организацией контроля над вирусным клиентом только администратор в организации может сбросить пароль пользователя или включить SSPR. При необходимости приглашающая организация может удалить учетную запись гостя из каталога и повторно отправить приглашение.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Получение поддержки для службы совместной работы B2B](get-support.md)

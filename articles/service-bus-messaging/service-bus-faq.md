@@ -9,12 +9,12 @@ ms.service: service-bus-messaging
 ms.topic: article
 ms.date: 01/23/2019
 ms.author: aschhab
-ms.openlocfilehash: 80809afc9f2a8e8da2f6adecfe916141c4cd3e45
-ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
+ms.openlocfilehash: 8a2a704f39aa678be819a7297b30f8926e414e56
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68278345"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73748449"
 ---
 # <a name="service-bus-faq"></a>Часто задаваемые вопросы о служебной шине
 
@@ -74,7 +74,7 @@ ms.locfileid: "68278345"
     ```
     nslookup <yournamespace>.servicebus.windows.net
     ```
-2. Запишите имя в разделе неполномочного **ответа** , который имеет один из следующих форматов: 
+2. Запишите имя в разделе **неполномочного ответа** , который имеет один из следующих форматов: 
 
     ```
     <name>-s1.servicebus.windows.net
@@ -92,7 +92,7 @@ ms.locfileid: "68278345"
 Приведенные ниже свойства очереди и раздела являются неизменяемыми. Учитывайте это ограничение при подготовке сущностей, так как эти свойства нельзя изменить без создания новой сущности для замены.
 
 * Секционирование
-* Сеансы:
+* Сеансы
 * Обнаружение дубликатов
 * экспресс-сущность.
 
@@ -111,6 +111,13 @@ ms.locfileid: "68278345"
 
 ### <a name="does-service-bus-charge-for-storage"></a>Взимает ли служебная шина плату за использование хранилища?
 Нет, служебная шина не взимает плату за использование хранилища. Тем не менее существует квота, ограничивающая максимальный объем данных, которые могут быть сохранены в каждой очереди или разделе. См. следующий раздел часто задаваемых вопросов.
+
+### <a name="i-have-a-service-bus-standard-namespace-why-do-i-see-charges-under-resource-group-system"></a>У меня есть стандартное пространство имен служебной шины. Почему я вижу оплату в группе ресурсов "$system"?
+Служебная шина Azure недавно обновила компоненты выставления счетов. Из-за этого, если у вас есть стандартное пространство имен служебной шины, вы можете увидеть элементы строки для ресурса "/Subscriptions/< azure_subscription_id >/resourceGroups/$system/Провидерс/Микрософт.сервицебус/намеспацес/$system" в группе ресурсов "$ система ".
+
+Эти расходы представляют базовую плату за подписку Azure, в которой подготовлено стандартное пространство имен служебной шины. 
+
+Важно отметить, что это не новая плата, т. е. они существовали и в предыдущей модели выставления счетов. Единственное изменение состоит в том, что они теперь перечислены в разделе "$system". Это делается из-за очередностью в новой системе выставления счетов, которая группирует расходы на уровне подписки, не привязанные к определенному ресурсу, под идентификатором ресурса "$system".
 
 ## <a name="quotas"></a>Квоты
 
@@ -141,7 +148,7 @@ ms.locfileid: "68278345"
 
 Вы можете переместить пространство имен из одной подписки Azure в другую, используя [портал Azure](https://portal.azure.com) или выполняя команды PowerShell. При перемещении пространство имен уже должно быть активно. Пользователь, который выполняет команды, должен обладать правами администратора как в исходной, так и в целевой подписках.
 
-#### <a name="portal"></a>Портал
+#### <a name="portal"></a>Microsoft Azure
 
 Чтобы использовать портал Azure для переноса пространств имен служебной шины в другую подписку, следуйте [этим инструкциям](../azure-resource-manager/resource-group-move-resources.md#use-the-portal). 
 
@@ -160,7 +167,7 @@ $res = Find-AzResource -ResourceNameContains mynamespace -ResourceType 'Microsof
 Move-AzResource -DestinationResourceGroupName 'targetRG' -DestinationSubscriptionId 'ffffffff-ffff-ffff-ffff-ffffffffffff' -ResourceId $res.ResourceId
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о служебной шине см. в следующих статьях:
 
 * [Introducing Azure Service Bus Premium Messaging](https://azure.microsoft.com/blog/introducing-azure-service-bus-premium-messaging/) (Общие сведения об обмене сообщениями через служебную шину Azure уровня "Премиум") (запись блога)

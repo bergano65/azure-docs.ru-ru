@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 08/09/2018
 ms.author: genli
-ms.openlocfilehash: 9c7bc316900c9e1422289c76b2c3d05924130312
-ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+ms.openlocfilehash: 00f6e763006cbb8e5a2724536664291e0381e42f
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73602507"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73749647"
 ---
 # <a name="troubleshoot-a-windows-vm-by-attaching-the-os-disk-to-a-recovery-vm-using-azure-powershell"></a>Устранение неполадок с виртуальной машиной Windows при подключении диска операционной системы к виртуальной машине восстановления с помощью Azure PowerShell
 Если возникает проблема с загрузкой или диском на виртуальной машине Windows в Azure, возможно, вам нужно устранить неполадки, связанные с самим диском. Например, такая ситуация может возникнуть из-за сбоя обновления приложения, который мешает успешно загрузить виртуальную машину. В этой статье подробно описано, как с помощью Azure PowerShell подключить диск к другой виртуальной машине Windows для устранения ошибок, а затем исправить исходную виртуальную машину. 
@@ -25,7 +25,7 @@ ms.locfileid: "73602507"
 > [!Important]
 > Скрипты в этой статье применяются только к виртуальным машинам, которые используют [управляемый диск](../windows/managed-disks-overview.md). 
 
-[!INCLUDE [updated-for-az.md](../../../includes/updated-for-az.md)]
+ 
 
 ## <a name="recovery-process-overview"></a>Обзор процесса восстановления
 Теперь мы можем использовать Azure PowerShell, чтобы изменить диск операционной системы для виртуальной машины. Больше не нужно удалять и повторно создавать виртуальную машину.

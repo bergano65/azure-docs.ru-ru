@@ -13,18 +13,18 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 12/15/2015
 ms.author: saurabh
-ms.openlocfilehash: 771064774371e71c0664918790b296c156ed1c1f
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 547de4862081b56bf627c3a00564ce6564f2ad09
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70084792"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73750100"
 ---
 # <a name="use-powershell-to-enable-azure-diagnostics-in-a-virtual-machine-running-windows"></a>Включение системы диагностики Azure на виртуальной машине под управлением Windows с помощью PowerShell
 
 Система диагностики Azure позволяет выполнять сбор диагностических данных в развернутом приложении. Для сбора диагностических данных, таких как журналы приложений или счетчики производительности, на виртуальной машине Azure под управлением Windows можно использовать расширение диагностики. 
 
-[!INCLUDE [updated-for-az.md](../../../includes/updated-for-az.md)]
+ 
 
 ## <a name="enable-the-diagnostics-extension-if-you-use-the-resource-manager-deployment-model"></a>Включения расширения диагностики при использовании модели развертывания диспетчера ресурсов
 Вы можете включить расширение диагностики при создании виртуальной машины Windows, используя модель развертывания диспетчера ресурсов Azure. Для этого в шаблон диспетчера ресурсов нужно добавить конфигурацию расширения. Дополнительные сведения см. в статье [Создание виртуальной машины Windows с мониторингом и диагностикой с использованием шаблона диспетчера ресурсов Azure](diagnostics-template.md).
@@ -195,7 +195,7 @@ ms.locfileid: "70084792"
     </PublicConfig>
     ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные рекомендации по использованию системы диагностики Azure и других методов для устранения неполадок см. в статье [Включение системы диагностики Azure в облачных службах Azure](../../cloud-services/cloud-services-dotnet-diagnostics.md).
 * Пояснение различных параметров XML-конфигураций для расширения диагностики см. в статье, посвященной [схеме конфигураций диагностики](https://msdn.microsoft.com/library/azure/mt634524.aspx).
 

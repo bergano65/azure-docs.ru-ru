@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 02/25/2019
 ms.author: cherylmc
 ms.custom: seodec18
-ms.openlocfilehash: f35ed65b25d469b524e7174affecb45ad7c4735c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d26210ab226f8e907aa845d51dca94f59badd6a3
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66115807"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73748076"
 ---
 # <a name="configure-a-site-to-site-vpn-over-expressroute-microsoft-peering"></a>Настройка VPN типа "сеть — сеть" через пиринговый канал Майкрософт ExpressRoute
 
@@ -24,7 +24,7 @@ ms.locfileid: "66115807"
 >
 >
 
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+[!INCLUDE [updated-for-az](../../includes/hybrid-az-ps.md)]
 
 ## <a name="architecture"></a>Архитектура
 
@@ -65,9 +65,9 @@ VPN-туннели через пиринговый канал Майкрософ
 
 ![канал](./media/site-to-site-vpn-over-microsoft-peering/ExpressRouteCkt.png)
 
-## <a name="routefilter"></a>2. Настройка фильтров маршрута
+## <a name="routefilter"></a>2. Настройка фильтров маршрутов
 
-Фильтр маршрутов позволяет вам идентифицировать службы, которые можно использовать через пиринг Майкрософт по каналу ExpressRoute. Это фактически утвержденный список всех значений сообщества BGP. 
+Фильтр маршрутов позволяет вам идентифицировать службы, которые можно использовать через пиринг Майкрософт по каналу ExpressRoute. По сути, это список разрешений для всех значений сообщества BGP. 
 
 ![фильтр маршрутов](./media/site-to-site-vpn-over-microsoft-peering/route-filter.png)
 
@@ -91,7 +91,7 @@ VPN-туннели через пиринговый канал Майкрософ
 show ip bgp vpnv4 vrf 10 summary
 ```
 
-Следующих неполных выходных данных показано, что 68 префиксов были получены от соседнего узла \*.243.229.34 с ASN 12076 (MSEE):
+В следующих частичных выходных данных показано, что префиксы 68 были получены от соседа \*.243.229.34 с ASN 12076 (MSEE):
 
 ```
 ...
@@ -475,7 +475,7 @@ ip route 10.2.0.229 255.255.255.255 Tunnel1
 !
 ```
 
-## <a name="firewalls"></a>5. Настройка фильтрации VPN-устройств и брандмауэров (необязательно)
+## <a name="firewalls"></a>5. Настройка фильтрации и брандмауэров VPN-устройств (необязательно)
 
 Настройте брандмауэр и фильтрацию в соответствии с требованиями.
 

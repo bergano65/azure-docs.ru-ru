@@ -1,7 +1,7 @@
 ---
 title: Основные понятия проверок, рабочих процессов и заданий — Content Moderator
 titleSuffix: Azure Cognitive Services
-description: Сведения о проверках, рабочих процессах и заданиях
+description: В этой статье вы узнаете об основных понятиях средства проверки. обзоры, рабочие процессы и задания.
 services: cognitive-services
 author: PatrickFarley
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: content-moderator
 ms.topic: conceptual
 ms.date: 03/14/2019
 ms.author: pafarley
-ms.openlocfilehash: 917636c8ae339e06321c169979611f74276ca523
-ms.sourcegitcommit: 38251963cf3b8c9373929e071b50fd9049942b37
+ms.openlocfilehash: 1aba86efb9ea76fbf060e80b47f9f2f6cdf8ee71
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73044007"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73744422"
 ---
 # <a name="content-moderation-reviews-workflows-and-jobs"></a>Обзоры, рабочие процессы и задания для контроля содержимого
 
@@ -35,7 +35,7 @@ Content Moderator сочетает ролевую поддержку с возм
 
 ### <a name="view-workflows"></a>Просмотр рабочих процессов
 
-Чтобы просмотреть существующие рабочие процессы, перейдите к [средству проверки](https://contentmoderator.cognitive.microsoft.com/) и выберите **Параметры**  > **рабочие процессы**.
+Чтобы просмотреть существующие рабочие процессы, перейдите к [средству проверки](https://contentmoderator.cognitive.microsoft.com/) и выберите **Параметры** > **рабочие процессы**.
 
 ![Рабочий процесс по умолчанию](images/default-workflow-listed.PNG)
 
@@ -64,7 +64,7 @@ Content Moderator сочетает ролевую поддержку с возм
 }
 ```
 
-[Чтобы](./review-tool-user-guide/workflows.md) приступить к созданию и использованию рабочих процессов, см. руководство по [REST API](./try-review-api-workflow.md) , чтобы узнать, как это сделать программным способом.
+Чтобы приступить к созданию и использованию рабочих процессов, см. [Руководство](./review-tool-user-guide/workflows.md) по [REST API](./try-review-api-workflow.md) , чтобы узнать, как это сделать программным способом.
 
 ## <a name="jobs"></a>Задания
 

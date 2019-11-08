@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: 026b5d219bee34dd846990d54e691039d1c6e458
-ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
+ms.openlocfilehash: 0d4e76f4d02b0287770243bfddf995a19f90d232
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72245075"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73749451"
 ---
 # <a name="azure-disk-encryption-troubleshooting-guide"></a>Руководство по устранению неполадок шифрования дисков Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "72245075"
 - [Требования к групповой политике](disk-encryption-overview.md#group-policy-requirements)
 - [Требования к хранилищу ключей шифрования](disk-encryption-overview.md#encryption-key-storage-requirements)
 
-[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
+ 
 
 ## <a name="troubleshooting-azure-disk-encryption-behind-a-firewall"></a>Устранение неполадок шифрования диска Azure в связи с брандмауэром
 
@@ -63,7 +63,7 @@ ms.locfileid: "72245075"
 
 1. Используйте DiskPart, чтобы проверить тома, а затем продолжайте.  
 
-Пример:
+Например:
 
 ```
 DISKPART> list vol
@@ -83,7 +83,7 @@ DISKPART> list vol
 
 Чтобы отключить шифрование дисков Azure с помощью интерфейса командной строки, используйте команду [AZ VM Encryption Disable](/cli/azure/vm/encryption). 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом документе вы узнали о некоторых распространенных проблемах в шифровании дисков Azure и их устранении. Дополнительные сведения об этой службе и ее возможностях см. в статьях:
 
