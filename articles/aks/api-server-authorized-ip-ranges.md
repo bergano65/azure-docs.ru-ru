@@ -5,14 +5,14 @@ services: container-service
 author: mlearned
 ms.service: container-service
 ms.topic: article
-ms.date: 05/06/2019
+ms.date: 11/05/2019
 ms.author: mlearned
-ms.openlocfilehash: 8418499cc3e094162ac7483aaa6c71e74db95ae1
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
-ms.translationtype: MT
+ms.openlocfilehash: 558c04be77f911f40be9e8880950d1670a3c169e
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73472971"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73747750"
 ---
 # <a name="secure-access-to-the-api-server-using-authorized-ip-address-ranges-in-azure-kubernetes-service-aks"></a>Безопасный доступ к серверу API с помощью диапазонов полномочных IP-адресов в службе Kubernetes Azure (AKS)
 
@@ -25,7 +25,7 @@ ms.locfileid: "73472971"
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-В этой статье предполагается, что вы работаете с кластерами, использующими [кубенет][kubenet].  В кластерах, основанных на [контейнерах Azure (CNI)][cni-networking] , отсутствует нужная таблица маршрутов для защиты доступа.  Таблицу маршрутов потребуется создать вручную.  Дополнительные сведения см. в разделе [Управление таблицами маршрутов](https://docs.microsoft.com/azure/virtual-network/manage-route-table) .
+В этой статье предполагается, что вы работаете с кластерами, использующими [кубенет][kubenet].  В кластерах, основанных на [контейнерах Azure (CNI)][cni-networking] , отсутствует нужная таблица маршрутов для защиты доступа.  Таблицу маршрутов потребуется создать вручную.  Дополнительные сведения об управлении таблицами маршрутов см. [в разделе Создание, изменение или удаление таблицы маршрутов][route-tables].
 
 Допустимые диапазоны IP-адресов сервера API работают только для создаваемых кластеров AKS. В этой статье показано, как создать кластер AKS с помощью Azure CLI.
 
@@ -41,60 +41,86 @@ ms.locfileid: "73472971"
 
 Сервер API Kubernetes — это то, как предоставляются базовые API-интерфейсы Kubernetes. Этот компонент поддерживает взаимодействие со средствами управления, например с `kubectl` или панелью мониторинга Kubernetes. AKS предоставляет главный кластер с одним клиентом с выделенным сервером API. По умолчанию серверу API назначается общедоступный IP-адрес, и управление доступом осуществляется с помощью управления доступом на основе ролей (RBAC).
 
-Чтобы защитить доступ к общедоступной плоскости управления AKS или серверу API, можно включить и использовать разрешенные IP-диапазоны. Эти диапазоны разрешенных IP-адресов разрешают обмен данными только с сервером API. Запрос к серверу API из IP-адреса, который не является частью этих разрешенных диапазонов IP-адресов, блокируется. Следует продолжать использовать RBAC для авторизации пользователей и действий, которые они запрашивают.
+Чтобы защитить доступ к общедоступной плоскости управления AKS или серверу API, можно включить и использовать разрешенные IP-диапазоны. Эти диапазоны разрешенных IP-адресов разрешают обмен данными только с сервером API. Запрос к серверу API из IP-адреса, который не является частью этих разрешенных диапазонов IP-адресов, блокируется. Продолжайте использовать RBAC для авторизации пользователей и действий, которые они запрашивают.
 
 Дополнительные сведения о сервере API и других компонентах кластера см. в разделе [Основные понятия Kubernetes Core для AKS][concepts-clusters-workloads].
 
-## <a name="create-an-aks-cluster"></a>Создание кластера AKS
+## <a name="create-an-aks-cluster-with-api-server-authorized-ip-ranges-enabled"></a>Создание кластера AKS с включенными IP-диапазонами разрешенных серверов API
 
-Допустимые диапазоны IP-адресов сервера API работают только для новых кластеров AKS. Вы не можете включить диапазоны разрешенных IP-адресов в рамках операции создания кластера. При попытке включить разрешенные диапазоны IP-адресов в процессе создания кластера узлы кластера не смогут получить доступ к серверу API во время развертывания, так как IP-адрес исходящего трафика не определен в этой точке.
+Допустимые диапазоны IP-адресов сервера API работают только для новых кластеров AKS. Создайте кластер с помощью команды [AZ AKS Create][az-aks-create] и укажите параметр *--API-Server-авторизовать-IP-ranges* , чтобы предоставить список ДОПУСТИМЫХ диапазонов IP-адресов. Эти диапазоны IP-адресов обычно являются диапазонами адресов, используемыми локальными сетями или общедоступными IP-адресами. При указании диапазона CIDR начинается с первого IP-адреса в диапазоне. Например, *137.117.106.90/29* является допустимым диапазоном, но убедитесь, что вы указали первый IP-адрес в диапазоне, например *137.117.106.88/29*.
 
-Сначала создайте кластер с помощью команды [AZ AKS Create][az-aks-create] . В следующем примере создается кластер с одним узлом с именем *myAKSCluster* в группе ресурсов с именем *myResourceGroup*.
+> [!IMPORTANT]
+> По умолчанию в кластере используется [балансировщик нагрузки стандартного SKU][standard-sku-lb] , который можно использовать для настройки исходящего шлюза. При включении разрешенных диапазонов IP-адресов сервера API во время создания кластера общедоступный IP-адрес кластера также разрешается по умолчанию в дополнение к указанным диапазонам. Если указать значение " *"* или не указывать значения для параметра *--API-Server-авторизовать-IP-ranges*, то диапазоны разрешенных IP-адресов сервера API будут отключены.
+
+В следующем примере создается кластер с одним узлом с именем *myAKSCluster* в группе ресурсов с именем *myResourceGroup* с включенными диапазонами разрешенных IP-адресов сервера API. Допустимые диапазоны IP-адресов: *73.140.245.0/24*.
 
 ```azurecli-interactive
-# Create an Azure resource group
-az group create --name myResourceGroup --location eastus
-
-# Create an AKS cluster
 az aks create \
     --resource-group myResourceGroup \
     --name myAKSCluster \
     --node-count 1 \
     --vm-set-type VirtualMachineScaleSets \
     --load-balancer-sku standard \
+    --api-server-authorized-ip-ranges 73.140.245.0/24 \
     --generate-ssh-keys
-
-# Get credentials to access the cluster
-az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
-```
-
-## <a name="update-cluster-with-authorized-ip-ranges"></a>Обновление кластера с санкционированными IP-адресами
-
-По умолчанию в кластере используется [балансировщик нагрузки "Стандартный" SKU][standard-sku-lb], который можно использовать для настройки исходящего шлюза. Используйте команду [AZ Network public-IP List][az-network-public-ip-list] и укажите группу ресурсов кластера AKS, которая обычно начинается с *MC_* . Отобразится общедоступный IP-адрес кластера, который можно разрешить. Используйте команду [AZ AKS Update][az-aks-update] и укажите параметр *--API-Server-Allowed-IP-ranges* , чтобы разрешить IP-адрес кластера. Например:
-
-```azurecli-interactive
-RG=$(az aks show --resource-group myResourceGroup --name myAKSCluster --query nodeResourceGroup -o tsv)
-SLB_PublicIP=$(az network public-ip list --resource-group $RG --query [].ipAddress -o tsv)
-az aks update --api-server-authorized-ip-ranges $SLB_PublicIP --resource-group myResourceGroup --name myAKSCluster
-```
-
-Чтобы включить диапазоны разрешенных IP-адресов сервера API, выполните команду [AZ AKS Update][az-aks-update] и укажите параметр *--API-Server-авторизовать-IP-ranges* , чтобы предоставить список РАЗРЕШЕНных диапазонов IP-адреса. Эти диапазоны IP-адресов обычно являются диапазонами адресов, используемыми локальными сетями или общедоступными IP-адресами. При указании диапазона CIDR начинается с первого IP-адреса в диапазоне. Например, *137.117.106.90/29* является допустимым диапазоном, но убедитесь, что вы указали первый IP-адрес в диапазоне, например *137.117.106.88/29*.
-
-В следующем примере включается авторизация IP-адресов сервера API в кластере с именем *myAKSCluster* в группе ресурсов с именем *myResourceGroup*. Диапазоны IP-адресов для авторизации: *172.0.0.0/16* (диапазон адресов Pod/nodes) и *168.10.0.0/18* (сервицеЦидр):
-
-```azurecli-interactive
-az aks update \
-    --resource-group myResourceGroup \
-    --name myAKSCluster \
-    --api-server-authorized-ip-ranges 172.0.0.0/16,168.10.0.0/18
 ```
 
 > [!NOTE]
 > Эти диапазоны следует добавить в список разрешений:
 > - Общедоступный IP-адрес брандмауэра
-> - CIDR службы
-> - Диапазон адресов для подсетей с использованием узлов и модулей Pod
 > - Любой диапазон, представляющий сети, из которых будет осуществляться администрирование кластера.
+
+### <a name="specify-the-outbound-ips-for-the-standard-sku-load-balancer"></a>Укажите исходящие IP-адреса для стандартного балансировщика нагрузки SKU
+
+При создании кластера AKS, если указаны исходящие IP-адреса или префиксы для кластера, эти адреса или префиксы также разрешены. Например:
+
+```azurecli-interactive
+az aks create \
+    --resource-group myResourceGroup \
+    --name myAKSCluster \
+    --node-count 1 \
+    --vm-set-type VirtualMachineScaleSets \
+    --load-balancer-sku standard \
+    --api-server-authorized-ip-ranges 73.140.245.0/24 \
+    --load-balancer-outbound-ips <publicIpId1>,<publicIpId2> \
+    --generate-ssh-keys
+```
+
+В приведенном выше примере все IP-адреса, указанные в параметре *--Load-балансировщик-Outbound-IP* , разрешены вместе с IP-адресами в параметре *— API-Server-Allowed-IP-ranges* .
+
+Кроме того, можно указать параметр *--Load-балансировщик-Outbound-IP-префиксы* , чтобы разрешить исходящие префиксы IP-адресов балансировки нагрузки.
+
+### <a name="allow-only-the-outbound-public-ip-of-the-standard-sku-load-balancer"></a>Разрешить только исходящий общедоступный IP-адрес SKU "Стандартный" балансировщика нагрузки
+
+При включении допустимых диапазонов IP-адресов для сервера API во время создания кластера в дополнение к указанным диапазонам также разрешены исходящие общедоступные IP-адреса для стандартного балансировщика нагрузки SKU для кластера. Чтобы разрешить только исходящий общедоступный IP-адрес для балансировщика нагрузки уровня "Стандартный", используйте *0.0.0.0/32* при указании параметра *--API-Server-Allowed-IP-ranges* .
+
+В следующем примере разрешен только исходящий общедоступный IP-адрес подсистемы балансировки нагрузки уровня "Стандартный", и доступ к серверу API можно получить только с узлов в кластере.
+
+```azurecli-interactive
+az aks create \
+    --resource-group myResourceGroup \
+    --name myAKSCluster \
+    --node-count 1 \
+    --vm-set-type VirtualMachineScaleSets \
+    --load-balancer-sku standard \
+    --api-server-authorized-ip-ranges 0.0.0.0/32 \
+    --generate-ssh-keys
+```
+
+## <a name="update-a-clusters-api-server-authorized-ip-ranges"></a>Обновление диапазонов IP-адресов сервера API кластера
+
+Чтобы обновить разрешенные IP-адреса сервера API в существующем кластере, выполните команду [AZ AKS Update][az-aks-update] и используйте командлеты *--API-Server-авторизовать-IP-ranges*, *--Load-балансировщик-Outbound-IP-префиксы*, *--Load-балансировщик-Outbound-* Servers, или *--Load-балансировщик-Outbound-IP — префиксы* параметров.
+
+В следующем примере выполняется обновление диапазонов IP-адресов сервера API в кластере с именем *myAKSCluster* в группе ресурсов с именем *myResourceGroup*. Диапазон IP-адресов для авторизации — *73.140.245.0/24*:
+
+```azurecli-interactive
+az aks update \
+    --resource-group myResourceGroup \
+    --name myAKSCluster \
+    --api-server-authorized-ip-ranges  73.140.245.0/24
+```
+
+Можно также использовать *0.0.0.0/32* при указании параметра *--API-Server-Allowed-IP-ranges* , чтобы разрешить только общедоступный IP-адрес стандартного балансировщика нагрузки SKU.
 
 ## <a name="disable-authorized-ip-ranges"></a>Отключение диапазонов IP-адресов с правом доступа
 
@@ -125,4 +151,5 @@ az aks update \
 [concepts-security]: concepts-security.md
 [install-azure-cli]: /cli/azure/install-azure-cli
 [operator-best-practices-cluster-security]: operator-best-practices-cluster-security.md
+[route-tables]: ../virtual-network/manage-route-table.md
 [standard-sku-lb]: load-balancer-standard.md

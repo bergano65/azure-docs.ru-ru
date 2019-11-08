@@ -1,6 +1,6 @@
 ---
 title: Azure Backup. Резервное копирование виртуальных машин Azure с помощью REST API
-description: Управление операциями резервного копирования виртуальных машин Azure с помощью REST API
+description: Из этой статьи вы узнаете, как настраивать, инициировать и администрировать операции резервного копирования виртуальной машины Azure с помощью REST API.
 ms.reviewer: pullabhk
 author: dcurwin
 manager: carmonm
@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 08/03/2018
 ms.author: dacurwin
 ms.assetid: b80b3a41-87bf-49ca-8ef2-68e43c04c1a3
-ms.openlocfilehash: 837401256aa264a527e2323b055713f4bd8e8d1c
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 901ae66281e1d68474304a4f5456a0163fcb6f2a
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73671691"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73747616"
 ---
 # <a name="back-up-an-azure-vm-using-azure-backup-via-rest-api"></a>Резервное копирование виртуальных машин Azure с помощью службы Azure Backup и REST API
 
@@ -108,13 +108,13 @@ GET https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{
 
 Универсальный код ресурса (URI) *GET* имеет все необходимые параметры. Для этой операции текст запроса также не требуется.
 
-##### <a name="responses-1"></a>Правляют
+#### <a name="responses-1"></a>Правляют
 
 |Имя  |Тип  |Description (Описание)  |
 |---------|---------|---------|
 |200 ОК     | [WorkloadProtectableItemResourceList](https://docs.microsoft.com/rest/api/backup/backupprotectableitems/list#workloadprotectableitemresourcelist)        |       ОК |
 
-##### <a name="example-responses-1"></a>Примеры ответов
+#### <a name="example-responses-1"></a>Примеры ответов
 
 После отправки запроса *GET* возвращается ответ 200 (OK).
 
@@ -329,7 +329,7 @@ POST https://management.azure.com/Subscriptions/00000000-0000-0000-0000-00000000
 |---------|---------|---------|
 |202 — принято     |         |     Принято    |
 
-##### <a name="example-responses-3"></a>Примеры ответов
+#### <a name="example-responses-3"></a>Примеры ответов
 
 После отправки запроса *POST* для выполнения резервного копирования по запросу будет получен первоначальный ответ 202 (принято) с заголовками location или Azure-AsyncOperation.
 
@@ -454,7 +454,7 @@ DELETE https://management.azure.com//Subscriptions/00000000-0000-0000-0000-00000
 
 [Восстановление данных из резервной копии виртуальной машины Azure](backup-azure-arm-userestapi-restoreazurevms.md)
 
-Дополнительные сведения о REST API Azure Backup с использованием REST API см. в следующих документах:
+Дополнительные сведения о REST API Azure Backup с использованием API REST см. в следующих документах:
 
 - [Recovery Services](/rest/api/recoveryservices/) (Службы восстановления)
 - [Начало работы с Azure REST API](/rest/api/azure/)

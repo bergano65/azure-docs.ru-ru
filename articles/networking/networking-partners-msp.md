@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 11/05/2019
 ms.author: sukishen
-ms.openlocfilehash: 089d54a2aae288511a283dfb28b03efa34c33b53
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
-ms.translationtype: MT
+ms.openlocfilehash: 83c3c72ad189720b8f0aa554b7804b55f3488b83
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/07/2019
-ms.locfileid: "73715443"
+ms.locfileid: "73747951"
 ---
 # <a name="about-azure-networking-msp-partners"></a>Сведения о партнерах по сети MSP Azure
 
@@ -28,7 +28,7 @@ Azure Networking MSP — это специализированный набор 
 
 Используйте ссылки в этом разделе для получения дополнительных сведений об управляемых облачных сетевых службах, предоставляемых партнерами MSP в сети Azure. Если партнер по облачным сетевым службам не указан в разделе ниже, обратитесь к нам с поставщиком. Он может обратиться к нам, отправив сообщение по адресу ManagedVirtualWAN@microsoft.com. 
 
-| **РАСШИРЕНИЕМ** | **Службы преобразования облачной сети** | **Управляемый ExpressRoute** | **Управляемая Виртуальная глобальная сеть** | **Управляемый брандмауэр** |**Вычисление границ управляемой сети** |
+| **РАСШИРЕНИЕМ** | **Службы преобразования облачной сети** | **Управляемый ExpressRoute** | **Управляемая Виртуальная глобальная сеть** | **Управляемые службы безопасности сети** |**Вычисление границ управляемой сети** |
 | ---| ---| ---| ---| ---| ---|
 |[амдокс](https://www.amdocs.com/)|||||Да|
 |[Группа ANS UK](https://www.ans.co.uk/)|Да|Да||||

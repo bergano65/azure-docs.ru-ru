@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 12/20/2018
 ms.author: genli
-ms.openlocfilehash: d554629c4a03b81ee3c04d27f6365c1a8734c952
-ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
+ms.openlocfilehash: 47ff8870df7c89ee2ab3e48e064e31aa581f65f0
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71058195"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73748632"
 ---
 # <a name="windows-activation-fails-in-forced-tunneling-scenario"></a>Активация Windows завершается ошибкой в случае принудительного туннелирования
 
@@ -50,7 +50,7 @@ IP-адрес сервера управления ключами для глоб
 
 ### <a name="for-resource-manager-vms"></a>Виртуальные машины Resource Manager
 
-[!INCLUDE [updated-for-az.md](../../../includes/updated-for-az.md)]
+ 
 
 > [!NOTE] 
 > Активация использует общедоступные IP-адреса и будет зависеть от конфигурации "Стандартный" SKU Load Balancer. Внимательно ознакомьтесь с [исходящими подключениями в Azure](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-connections) , чтобы узнать о требованиях.
@@ -109,7 +109,7 @@ IP-адрес сервера управления ключами для глоб
 
 4. Попробуйте активировать Windows, чтобы увидеть, устранена ли проблема.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Ключи установки клиента сервера управления ключами](https://docs.microsoft.com/windows-server/get-started/kmsclientkeys
 )
