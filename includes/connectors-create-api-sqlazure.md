@@ -7,13 +7,13 @@ ms.service: logic-apps
 ms.topic: include
 ms.author: estfan
 ms.custom: include file
-ms.date: 05/15/2018
-ms.openlocfilehash: d60d7727e0674298fa6da7e7330221318da23efd
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.date: 11/08/2019
+ms.openlocfilehash: 0be29f6f541aa58e57eb665ebaf29e35f42865e4
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73161620"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73826316"
 ---
 * Если вы используете Базу данных SQL Azure, следуйте инструкциям в разделе [Подключение к базе данных](#connect-azure-sql-db).
 
@@ -44,7 +44,9 @@ ms.locfileid: "73161620"
 
 ### <a name="connect-to-sql-server"></a>Подключение к SQL Server
 
-Когда триггер или действие SQL запрашивает сведения о подключении, выполните следующие действия, которые работают как для триггеров, так и для действий. Однако прежде чем начать, убедитесь, что вы уже [настроили локальный шлюз данных](https://docs.microsoft.com/azure/logic-apps/logic-apps-gateway-connection). В противном случае шлюз не будет отображаться в списке шлюзов при создании подключения.
+Когда триггер или действие SQL запрашивает сведения о подключении, выполните следующие действия, которые работают как для триггеров, так и для действий. Для сценариев, требующих установки локального [шлюза данных](https://docs.microsoft.com/azure/logic-apps/logic-apps-gateway-install) на локальном компьютере и [создания ресурса шлюза данных Azure](https://docs.microsoft.com/azure/logic-apps/logic-apps-gateway-connection), сначала обязательно выполните эти требования. В противном случае ресурс шлюза не появится в списке шлюзов при создании подключения.
+
+Кроме того, чтобы использовать проверку подлинности Windows с соединителем SQL Server в [среде службы интеграции (ISE)](https://docs.microsoft.com/azure/logic-apps/connect-virtual-network-vnet-isolated-environment-overview), используйте неинтегрированную версию и локальный шлюз данных соединителя. Версия ISE с меткой не поддерживает проверку подлинности Windows.
 
 1. В качестве **имени подключения**создайте имя для подключения.
 

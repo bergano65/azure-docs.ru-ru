@@ -1,6 +1,6 @@
 ---
 title: Часто задаваемые вопросы об акселераторах решений для Интернета вещей Azure | Документация Майкрософт
-description: Часто задаваемые вопросы об акселераторах решений для Интернета вещей
+description: В этой статье содержатся ответы на часто задаваемые вопросы по акселераторам решений IoT. Он содержит ссылки на репозитории GitHub.
 author: dominicbetts
 manager: timlt
 ms.service: iot-accelerators
@@ -8,12 +8,12 @@ services: iot-accelerators
 ms.topic: conceptual
 ms.date: 02/15/2018
 ms.author: dobett
-ms.openlocfilehash: b2f08e811217572e09a254e9ab3306ab954b14b5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b448099dab0e79dca38310396896be46cf2e0ff6
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61447971"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73826258"
 ---
 # <a name="frequently-asked-questions-for-iot-solution-accelerators"></a>Часто задаваемые вопросы об акселераторах решений для Интернета вещей
 
@@ -23,8 +23,8 @@ ms.locfileid: "61447971"
 
 Исходный код хранится в следующих репозиториях GitHub:
 
-* [акселератор решений для удаленного мониторинга (.NET)](https://github.com/Azure/azure-iot-pcs-remote-monitoring-dotnet);
-* [акселератор решений для удаленного мониторинга (Java)](https://github.com/Azure/azure-iot-pcs-remote-monitoring-java);
+* [акселератор решения для удаленного мониторинга (.NET)](https://github.com/Azure/azure-iot-pcs-remote-monitoring-dotnet);
+* [акселератор решения для удаленного мониторинга (Java)](https://github.com/Azure/azure-iot-pcs-remote-monitoring-java);
 * [акселератор решений для прогнозного обслуживания](https://github.com/Azure/azure-iot-predictive-maintenance);
 * [акселератор решения "Подключенная фабрика"](https://github.com/Azure/azure-iot-connected-factory).
 
@@ -71,9 +71,9 @@ ms.locfileid: "61447971"
 
 Да, новое решение для удаленного мониторинга доступно в том же географическом регионе.
 
-### <a name="whats-the-difference-between-deleting-a-resource-group-in-the-azure-portal-and-clicking-delete-on-a-solution-accelerator-in-azureiotsolutionscom"></a>Какова разница между удалением группы ресурсов на портале Azure и нажав кнопку delete на решение в azureiotsolutions.com?
+### <a name="whats-the-difference-between-deleting-a-resource-group-in-the-azure-portal-and-clicking-delete-on-a-solution-accelerator-in-azureiotsolutionscom"></a>В чем разница между удалением группы ресурсов в портал Azure и нажатием кнопки Удалить в Solution Accelerator в azureiotsolutions.com?
 
-* При удалении solution accelerator в [azureiotsolutions.com](https://www.azureiotsolutions.com/), будут удалены все ресурсы, которые были развернуты при создании комплекта solution accelerator. Если вы добавляли в группу ресурсов дополнительные ресурсы, они также будут удалены.
+* Если удалить Solution Accelerator в [azureiotsolutions.com](https://www.azureiotsolutions.com/), удаляются все ресурсы, развернутые при создании акселератора решений. Если вы добавляли в группу ресурсов дополнительные ресурсы, они также будут удалены.
 * Если удалить группу ресурсов на [портале Azure](https://portal.azure.com), будут удалены ресурсы в этой группе. Вам также придется удалить приложение Azure Active Directory, связанное с акселератором решений.
 
 ### <a name="can-i-continue-to-leverage-my-existing-investments-in-azure-iot-solution-accelerators"></a>Можно ли и дальше использовать существующие системы на базе акселераторов решений для Интернета вещей Azure?
@@ -107,7 +107,7 @@ ms.locfileid: "61447971"
 
 Вы также можете ознакомиться с другими функциями и возможностями акселераторов решений для Интернета вещей:
 
-* [Обзор возможностей акселератора решений для удаленного мониторинга](quickstart-remote-monitoring-deploy.md)
+* [Обзор возможностей акселератора решения для удаленного мониторинга](quickstart-remote-monitoring-deploy.md)
 * [Общие сведения об акселераторе решений для диагностического обслуживания](iot-accelerators-predictive-overview.md)
 * [Развертывание акселератора решения "Подключенная фабрика"](quickstart-connected-factory-deploy.md)
 * [Комплексная защита в Интернете вещей](/azure/iot-fundamentals/iot-security-ground-up)

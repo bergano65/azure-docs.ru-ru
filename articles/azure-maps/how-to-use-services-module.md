@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: cpendleton
-ms.openlocfilehash: 77659fdf93947cfbaa0daa322dccf4e9cb1a41fa
-ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
+ms.openlocfilehash: 3911d4e780e993fdd1c2945b34cd683d47fb884a
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70844715"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73827275"
 ---
 # <a name="use-the-azure-maps-services-module"></a>Использование модуля Azure Maps Services
 
@@ -23,7 +23,7 @@ ms.locfileid: "70844715"
 
 1. Создайте HTML-файл.
 1. Загрузите модуль служб Azure Maps Services. Загрузить его можно одним из двух способов:
-    - Используйте глобально размещенную версию сети доставки содержимого Azure модуля Azure Maps Services. Добавьте ссылку на скрипт в `<head>` элемент файла:
+    - Используйте глобально размещенную версию сети доставки содержимого Azure модуля Azure Maps Services. Добавьте ссылку на скрипт в элемент `<head>` файла:
 
         ```html
         <script src="https://atlas.microsoft.com/sdk/javascript/service/2/atlas-service.min.js"></script>
@@ -33,7 +33,7 @@ ms.locfileid: "70844715"
     
         > **NPM установка Azure-Maps-RESTful**
     
-        Затем добавьте ссылку на скрипт в `<head>` элемент файла:
+        Затем добавьте ссылку на скрипт в элемент `<head>` файла:
 
          ```html
         <script src="node_modules/azure-maps-rest/dist/js/atlas-service.min.js"></script>
@@ -124,7 +124,7 @@ ms.locfileid: "70844715"
 
     Дополнительные сведения см. [в статье Проверка подлинности с помощью Azure Maps](azure-maps-authentication.md).
 
-1. Следующий код использует только что созданный клиент URL-адреса службы поиска Azure для геокодирования адреса. "1 Microsoft Way, Редмонд, штат Вашингтон". Код использует `searchAddress` функцию и отображает результаты в виде таблицы в тексте страницы.
+1. В следующем коде используется созданный клиент URL-адреса службы поиска Azure Maps для геокодирования адреса: "1 Microsoft Way, Redmond, WA". Код использует функцию `searchAddress` и отображает результаты в виде таблицы в тексте страницы.
 
     ```javascript
     // Search for "1 microsoft way, redmond, wa".
@@ -163,7 +163,7 @@ ms.locfileid: "70844715"
 Посмотрите перо <a href='https://codepen.io/azuremaps/pen/zbXGMR/'>с помощью модуля службы</a> , Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 

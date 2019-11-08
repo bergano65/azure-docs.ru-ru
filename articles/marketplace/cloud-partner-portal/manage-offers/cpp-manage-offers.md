@@ -1,18 +1,19 @@
 ---
-title: Управление Azure и AppSource Marketplace предлагает | Azure Marketplace
+title: Управление предложениями Azure и AppSource Marketplace | Azure Marketplace
 description: Управление предложениями в Azure Marketplace и AppSource Marketplace
 services: Azure, AppSource, Marketplace, Cloud Partner Portal,
 author: v-miclar
 ms.service: marketplace
+ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 01/09/2019
 ms.author: pabutler
-ms.openlocfilehash: 8a03ce94971d704aa38c1be5d7cfbb3c24bd2f82
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9bbbad0434cf0e3b27d985b10bd0552d1fb4315a
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64943360"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73826749"
 ---
 # <a name="manage-azure-and-appsource-marketplace-offers"></a>Управление предложениями Azure и AppSource Marketplace
 
@@ -23,7 +24,7 @@ ms.locfileid: "64943360"
 
 На Портале Cloud Partner издатель может выполнять следующие основные операции над предложением.
 
-|     Операция      |  Описание                                           |
+|     Операция      |  Description (Описание)                                           |
 |     ---------      |  -----------                                           |
 | [Создание предложения](./cpp-create-offer.md)   | Создает запись предложения ожидания в репозитории подключения, но автоматически не публикует его в Microsoft Marketplace. | 
 | [Просмотр сведений о состоянии предложения](./cpp-view-status-offer.md)   | Предоставляет состояние публикации предложения.  На портале существует несколько мест, где отображаются сведения о состоянии. |

@@ -4,15 +4,16 @@ description: Политики и условия коммерческого ры�
 services: Azure, Marketplace, AppSource, commercial marketplace, Partner Center
 author: qianw211
 ms.service: marketplace
+ms.subservice: partnercenter-marketplace-publisher
 ms.topic: article
 ms.date: 08/09/2019
 ms.author: v-qiwe
-ms.openlocfilehash: edee3224e32fd853ca2de836f5c4dc0e5e87a100
-ms.sourcegitcommit: 0c906f8624ff1434eb3d3a8c5e9e358fcbc1d13b
+ms.openlocfilehash: 2b63120ae3c9f9a6e7689b68af2f80e94514f6d5
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69543595"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73827909"
 ---
 # <a name="commercial-marketplace-policies-and-terms"></a>Политики и условия коммерческой Marketplace
 
@@ -33,7 +34,7 @@ ms.locfileid: "69543595"
 
 * [Условия Azure Marketplace](https://docs.microsoft.com/legal/marketplace/terms)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Посетите страницу с [руководством по публикации в Azure Marketplace и AppSource](./marketplace-publishers-guide.md) .
 

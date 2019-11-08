@@ -1,22 +1,22 @@
 ---
-title: Миграция базы данных из SQL Server экземпляра в экземпляр, управляемый базой данных SQL Azure
+title: Миграция с SQL Server на управляемый экземпляр
 description: Узнайте, как перенести базу данных из экземпляра SQL Server в управляемый экземпляр базы данных SQL Azure.
 services: sql-database
 ms.service: sql-database
 ms.subservice: migration
-ms.custom: ''
+ms.custom: seo-lt-2019
 ms.devlang: ''
 ms.topic: conceptual
 author: bonova
 ms.author: bonova
 ms.reviewer: douglas, carlrab
 ms.date: 07/11/2019
-ms.openlocfilehash: 228b22d9d283fe8c23cbf7a82036b7f3782cbf25
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 802dfa7e3b2d0b9deac957662ac1e7604d085fd9
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73687996"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73828072"
 ---
 # <a name="sql-server-instance-migration-to-azure-sql-database-managed-instance"></a>Перенос экземпляра SQL Server в управляемый экземпляр Базы данных SQL Azure
 
@@ -68,7 +68,7 @@ ms.locfileid: "73687996"
 Ниже приведены некоторые параметры, которые необходимо измерять в экземпляре SQL Server. 
 - [Отслеживайте использование ЦП на экземпляре SQL Server](https://techcommunity.microsoft.com/t5/Azure-SQL-Database/Monitor-CPU-usage-on-SQL-Server/ba-p/680777#M131) и записывайте среднюю и пиковую загрузку ЦП.
 - [Отслеживайте использование памяти на экземпляре SQL Server](https://docs.microsoft.com/sql/relational-databases/performance-monitor/monitor-memory-usage) и определите объем памяти, используемый различными компонентами, такими как буферный пул, кэш планов, пул хранилища столбцов, выполняющаяся [в памяти OLTP](https://docs.microsoft.com/sql/relational-databases/in-memory-oltp/monitor-and-troubleshoot-memory-usage?view=sql-server-2017)и т. д. Кроме того, вы должны найти средние и пиковые значения счетчика производительности "ожидаемая память страницы".
-- Мониторинг использования дискового ввода-вывода на экземпляре SQL Server источника с помощью представления [sys. DM _io_virtual_file_stats](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-io-virtual-file-stats-transact-sql) или [счетчиков производительности](https://docs.microsoft.com/sql/relational-databases/performance-monitor/monitor-disk-usage).
+- Мониторинг использования дискового ввода-вывода на экземпляре SQL Server источника с помощью представления [sys. dm_io_virtual_file_stats](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-io-virtual-file-stats-transact-sql) или [счетчиков производительности](https://docs.microsoft.com/sql/relational-databases/performance-monitor/monitor-disk-usage).
 - Отслеживайте производительность рабочей нагрузки и запросов или экземпляр SQL Server, проверив динамические административные представления или хранилище запросов при миграции с SQL Server 2016 + версии. Выявление средней длительности и загрузки ЦП наиболее важных запросов в рабочей нагрузке для сравнения с запросами, выполняемыми на Управляемый экземпляр.
 
 > [!Note]

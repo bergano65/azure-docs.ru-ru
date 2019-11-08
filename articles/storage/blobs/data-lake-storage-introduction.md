@@ -8,12 +8,12 @@ ms.date: 10/11/2019
 ms.author: normesta
 ms.reviewer: jamesbak
 ms.subservice: data-lake-storage-gen2
-ms.openlocfilehash: d843e288297db656cca6e2a07f2e1f3322ebfa89
-ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
+ms.openlocfilehash: 99863f68c20a2f95dfc744e13a977bf3ccbbf639
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2019
-ms.locfileid: "72299649"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73580434"
 ---
 # <a name="introduction-to-azure-data-lake-storage-gen2"></a>Общие сведения о хранилище Azure Data Lake Storage 2-го поколения
 
@@ -83,7 +83,7 @@ Data Lake Storage 2-го поколения — это дополнительн
 
 ## <a name="supported-azure-services"></a>Поддерживаемые службы Azure
 
-ADLS 2-го поколения поддерживает несколько служб Azure, которые можно использовать для приема данных, выполнения аналитики и создания визуальных представлений. Список поддерживаемых служб Azure см. в статье [Integrate Azure Data Lake Storage with Azure services](data-lake-store-integrate-with-azure-services.md) (Интеграция Azure Data Lake Storage со службами Azure).
+ADLS 2-го поколения поддерживает несколько служб Azure, которые можно использовать для приема данных, выполнения аналитики и создания визуальных представлений. Список поддерживаемых служб Azure см. в статье [Integrate Azure Data Lake Storage with Azure services](data-lake-storage-integrate-with-azure-services.md) (Интеграция Azure Data Lake Storage со службами Azure).
 
 ## <a name="next-steps"></a>Дополнительная информация
 
@@ -92,4 +92,4 @@ ADLS 2-го поколения поддерживает несколько сл�
 - [Иерархическое пространство имен хранилища Azure Data Lake Storage Gen2 (предварительная версия)](data-lake-storage-namespace.md)
 - [создать учетную запись хранения;](data-lake-storage-quickstart-create-account.md)
 - [Multi-protocol access on Azure Data Lake Storage (preview)](data-lake-storage-multi-protocol-access.md) (Доступ с использованием нескольких протоколов на Azure Data Lake Storage (предварительная версия))
-- [Integrate Azure Data Lake Storage with Azure services](data-lake-store-integrate-with-azure-services.md) (Интеграция Azure Data Lake Storage со службами Azure)
+- [Integrate Azure Data Lake Storage with Azure services](data-lake-storage-integrate-with-azure-services.md) (Интеграция Azure Data Lake Storage со службами Azure)

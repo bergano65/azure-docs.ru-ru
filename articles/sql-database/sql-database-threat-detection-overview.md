@@ -1,5 +1,5 @@
 ---
-title: Расширенная защита от угроз — база данных SQL Azure
+title: Расширенная защита от угроз
 description: Расширенная защита от угроз обнаруживает аномальные действия базы данных, указывающие на потенциальные угрозы безопасности в базе данных SQL Azure.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: monhaber
 ms.author: ronmat
 ms.reviewer: vanto, carlrab
 ms.date: 03/31/2019
-ms.openlocfilehash: fca68fbc1ee30b1df100255e463eca2fc895980b
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: d09cc202c3f7e18358ec693d1cfe4bd2648811ba
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73686972"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73820704"
 ---
 # <a name="advanced-threat-protection-for-azure-sql-database"></a>Расширенная защита от угроз для Базы данных SQL Azure
 

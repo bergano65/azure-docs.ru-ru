@@ -1,18 +1,19 @@
 ---
-title: Страница «журнал аудита» для Azure Marketplace
-description: Общие сведения о странице журнала аудита в облачном портале для партнеров для Azure Marketplace.
+title: Страница "журнал аудита" для Azure Marketplace
+description: Общие сведения о странице журнала аудита в Портал Cloud Partner для Azure Marketplace.
 services: Azure, Marketplace, Cloud Partner Portal,
 author: v-miclar
 ms.service: marketplace
+ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/13/2018
 ms.author: pabutler
-ms.openlocfilehash: a579008aa0954507a130bef65dc60254f9e12c03
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a09eca891c434a6bd836269908c3e2cf37fbd3f5
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64943472"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73821553"
 ---
 # <a name="audit-history-page"></a>Страница "Журнал аудита"
 

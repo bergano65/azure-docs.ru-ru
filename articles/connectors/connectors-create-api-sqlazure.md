@@ -10,13 +10,13 @@ ms.reviewer: klam; LADocs
 manager: carmonm
 ms.topic: conceptual
 tags: connectors
-ms.date: 11/06/2019
-ms.openlocfilehash: ed30ba305ec990256625052cb92f1b7524c826e2
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.date: 11/08/2019
+ms.openlocfilehash: a6367e5897e9bd548550b099c0bd2e6186845d6d
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73720956"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73826333"
 ---
 # <a name="automate-workflows-for-sql-server-or-azure-sql-database-by-using-azure-logic-apps"></a>Автоматизация рабочих процессов для SQL Server или базы данных SQL Azure с помощью Azure Logic Apps
 
@@ -44,10 +44,11 @@ ms.locfileid: "73720956"
 
     `Server=tcp:{your-server-name}.database.windows.net,1433;Initial Catalog={your-database-name};Persist Security Info=False;User ID={your-user-name};Password={your-password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;`
 
-* Прежде чем можно будет подключить приложения логики к локальным системам, например SQL Server, необходимо [настроить локальный шлюз данных](../logic-apps/logic-apps-gateway-install.md). Шлюз можно выбрать при создании SQL-подключения для приложения логики.
+* Локальный [шлюз данных](../logic-apps/logic-apps-gateway-install.md) , установленный на локальном компьютере, и [ресурс шлюза данных Azure, созданный в портал Azure](../logic-apps/logic-apps-gateway-connection.md) для следующих сценариев:
 
-  > [!IMPORTANT]
-  > Чтобы использовать проверку подлинности Windows с этим соединителем, необходимо использовать локальный шлюз данных. Этот соединитель не поддерживает проверку подлинности Windows для приложения логики в [среде службы интеграции (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md).
+  * Приложения логики не выполняются в [среде службы интеграции (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md).
+
+  * *Приложения логики выполняются в* среде службы интеграции, но для подключения к SQL Server необходимо использовать проверку подлинности Windows. В этом сценарии используется версия, не относящаяся к ИНТЕГРИРОВАНному соединителю SQL Server, а также шлюз данных, так как среда ISE не поддерживает проверку подлинности Windows.
 
 * Приложения логики с возможностью доступа к базе данных SQL. Чтобы запустить приложение логики с помощью триггера SQL, требуется [пустое приложение логики](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 

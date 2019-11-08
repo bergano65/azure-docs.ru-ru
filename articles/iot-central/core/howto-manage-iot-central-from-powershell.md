@@ -1,6 +1,6 @@
 ---
 title: Управление IoT Central в Azure PowerShell | Документация Майкрософт
-description: Управление IoT Central в Azure PowerShell.
+description: В этой статье описывается создание приложений IoT Central и управление ими из Azure PowerShell.
 services: iot-central
 ms.service: iot-central
 author: dominicbetts
@@ -8,12 +8,12 @@ ms.author: dobett
 ms.date: 07/11/2019
 ms.topic: conceptual
 manager: philmea
-ms.openlocfilehash: 269b8a6c2a90884b060b4fb916b77af919a63a63
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: eadc021335488bed1f236d3728acca245be7d71e
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72953347"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73806647"
 ---
 # <a name="manage-iot-central-from-azure-powershell"></a>Управление IoT Central в Azure PowerShell
 
@@ -21,7 +21,7 @@ ms.locfileid: "72953347"
 
 Вместо создания приложений IoT Central и управления ими на веб-сайте [диспетчера приложений Azure IOT Central](https://aka.ms/iotcentral) можно использовать [Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview) для управления приложениями.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -45,7 +45,7 @@ Install-Module Az.IotCentral
 
 ## <a name="create-an-application"></a>Создание приложения
 
-Используйте командлет [New-AzIotCentralApp](https://docs.microsoft.com/powershell/module/az.iotcentral/New-AzIotCentralApp), чтобы создать приложение IoT Central в подписке Azure. Пример.
+Используйте командлет [New-AzIotCentralApp](https://docs.microsoft.com/powershell/module/az.iotcentral/New-AzIotCentralApp), чтобы создать приложение IoT Central в подписке Azure. Например:
 
 ```powershell
 # Create a resource group for the IoT Central application
@@ -63,19 +63,19 @@ New-AzIotCentralApp -ResourceGroupName "MyIoTCentralResourceGroup" `
 
 Сначала скрипт создает группу ресурсов в регионе восточной части США для приложения. В следующей таблице описаны параметры, используемые в команде **New-AzIotCentralApp**:
 
-|Параметр         |Описание |
+|Параметр         |Description (Описание) |
 |------------------|------------|
 |ResourceGroupName |Группа ресурсов, в которой содержится приложение. В подписке уже должна существовать эта группа ресурсов. |
-|Location |По умолчанию этот командлет использует расположение из группы ресурсов. В настоящее время можно создать IoT Centralное приложение в **восточной части США**, **западной части США**, **Северной Европе**или **Западной Европе** , а также в географических регионах **Австралии** или **Азиатско-Тихоокеанский регион** .  |
-|Name              |Имя приложения на портале Azure. |
+|Расположение |По умолчанию этот командлет использует расположение из группы ресурсов. В настоящее время можно создать IoT Centralное приложение в **восточной части США**, **западной части США**, **Северной Европе**или **Западной Европе** , а также в географических регионах **Австралии** или **Азиатско-Тихоокеанский регион** .  |
+|Имя              |Имя приложения на портале Azure. |
 |Поддомен         |Поддомен в URL-адресе приложения. В примере URL-адрес приложения — https://mysubdomain.azureiotcentral.com. |
-|SKU               |В настоящее время единственное значение — **S1** (уровень "Стандартный"). Ознакомьтесь с разделом [Цены на Azure IoT Central](https://azure.microsoft.com/pricing/details/iot-central/). |
+|Sku               |В настоящее время единственное значение — **S1** (уровень "Стандартный"). Ознакомьтесь с разделом [Цены на Azure IoT Central](https://azure.microsoft.com/pricing/details/iot-central/). |
 |Шаблон          | Шаблон приложения для использования. Дополнительные сведения приведены в таблице ниже. |
-|displayName       |Имя приложения, отображаемое на пользовательском интерфейсе. |
+|DisplayName       |Имя приложения, отображаемое на пользовательском интерфейсе. |
 
 **Шаблоны приложения**
 
-|Имя шаблона  |Описание |
+|Имя шаблона  |Description (Описание) |
 |---------------|------------|
 |iotc-default@1.0.0 |Создает пустое приложение, в которое необходимо добавить собственные шаблоны устройств и сами устройства. |
 |iotc-demo@1.0.0    |Создает приложение, содержащее шаблон устройства, созданный для охлаждаемого торгового автомата. Используйте этот шаблон, чтобы приступить к работе в Azure IoT Central. |
@@ -100,7 +100,7 @@ Set-AzIotCentralApp -Name "myiotcentralapp" `
 
 ## <a name="remove-an-application"></a>Удаление приложения
 
-Используйте командлет [Remove-AzIotCentralApp](https://docs.microsoft.com/powershell/module/az.iotcentral/Remove-AzIotCentralApp) для удаления приложения IoT Central. Пример.
+Используйте командлет [Remove-AzIotCentralApp](https://docs.microsoft.com/powershell/module/az.iotcentral/Remove-AzIotCentralApp) для удаления приложения IoT Central. Например:
 
 ```powershell
 Remove-AzIotCentralApp -ResourceGroupName "MyIoTCentralResourceGroup" `

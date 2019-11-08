@@ -1,5 +1,5 @@
 ---
-title: Создание отдельной базы данных в Базе данных SQL Azure | Документация Майкрософт
+title: Создание отдельной базы данных
 description: Из этой статьи вы узнаете, как создать отдельную базу данных в Базе данных SQL Azure и отправить к ней запросы с помощью портала Azure, PowerShell и Azure CLI.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: sachinpMSFT
 ms.author: ninarn
 ms.reviewer: carlrab, sstein
 ms.date: 09/09/2019
-ms.openlocfilehash: 0035495d9dd3b82b65aa3b4a7b1d918c73288df8
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 482fc3f08fb986908efcab83a82338ced36ee689
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73496126"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73821004"
 ---
 # <a name="quickstart-create-a-single-database-in-azure-sql-database-using-the-azure-portal-powershell-and-azure-cli"></a>Краткое руководство. Создание отдельной базы данных в Базе данных SQL Azure с помощью портала Azure, PowerShell и Azure CLI
 

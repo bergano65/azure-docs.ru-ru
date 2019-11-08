@@ -1,5 +1,5 @@
 ---
-title: Репликация транзакций с базой данных SQL Azure "
+title: Репликация транзакций
 description: Сведения об использовании репликации транзакций SQL Server с отдельными базами данных, базами данных в составе пула и базами данных экземпляров в Базе данных SQL Azure.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: MashaMSFT
 ms.author: mathoma
 ms.reviewer: carlrab
 ms.date: 02/08/2019
-ms.openlocfilehash: 016b4f2ee191443cf608af18d1be6a94b6d53a39
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: a57d1c85384204c26e75f7138b9514f2b3297bef
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73687831"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73823297"
 ---
 # <a name="transactional-replication-with-single-pooled-and-instance-databases-in-azure-sql-database"></a>Репликация транзакций с отдельными базами данных, базами данных в составе пула и базами данных экземпляров в Базе данных SQL Azure.
 

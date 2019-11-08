@@ -1,5 +1,5 @@
 ---
-title: Последовательные обновления приложений в базе данных SQL Azure
+title: Последовательные обновления приложений
 description: Вы можете узнать, как использовать георепликацию базы данных SQL Azure для поддержки оперативных обновлений облачного приложения.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab
 ms.date: 02/13/2019
-ms.openlocfilehash: 253a10e75832cf6ee8294405e34fa93b801c1b49
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 9c627c3e597fdcd3859ce02ea208fc7a8b5d612b
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73689497"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73822855"
 ---
 # <a name="manage-rolling-upgrades-of-cloud-applications-by-using-sql-database-active-geo-replication"></a>Управление последовательными обновлениями для облачных приложений с помощью активной георепликации базы данных SQL
 

@@ -1,6 +1,6 @@
 ---
 title: Руководство 1. Прогнозирование кредитного риска
-titleSuffix: Azure Machine Learning Studio (classic)
+titleSuffix: ML Studio (classic) Azure
 description: Подробный учебник по созданию решения прогнозной аналитики для оценки кредитных рисков в классической версии Студии машинного обучения Azure. Это первое руководство в серии, состоящей из трех частей.  В нем рассказывается, как создать рабочую область, отправить данные и запустить эксперимент.
 keywords: кредитный риск, решение прогнозной аналитики, оценка рисков
 author: sdgilley
@@ -10,12 +10,12 @@ ms.service: machine-learning
 ms.subservice: studio
 ms.topic: tutorial
 ms.date: 02/11/2019
-ms.openlocfilehash: b861fbca1f8b4fd6b313e770b1636674767e406a
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 78092bd4ad4da896cd2fd36768f181764335ee85
+ms.sourcegitcommit: 6c2c97445f5d44c5b5974a5beb51a8733b0c2be7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73492630"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73619183"
 ---
 # <a name="tutorial-1-predict-credit-risk---azure-machine-learning-studio-classic"></a>Руководство 1. Прогнозирование кредитного риска — Студия машинного обучения Azure (классическая)
 

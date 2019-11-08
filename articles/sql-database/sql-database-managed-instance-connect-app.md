@@ -1,5 +1,5 @@
 ---
-title: Приложение Управляемый экземпляр Базы данных SQL Azure Connect
+title: Приложение для подключения к управляемому экземпляру
 description: В этой статье описывается, как подключить приложение к Управляемому экземпляру Базы данных SQL.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: srdan-bozovic-msft
 ms.author: srbozovi
 ms.reviewer: sstein, bonova, carlrab, vanto
 ms.date: 11/09/2018
-ms.openlocfilehash: 5dc287ab58636b4921c14ae71f9a62ab36d9c596
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 9f592c345b7cfcf5f21d816fde1fae6b8e6b98c7
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73688243"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73823385"
 ---
 # <a name="connect-your-application-to-azure-sql-database-managed-instance"></a>Подключение приложения к управляемому экземпляру базы данных SQL Azure
 

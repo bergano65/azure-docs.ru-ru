@@ -9,56 +9,52 @@ ms.topic: conceptual
 author: ronychatterjee
 ms.author: achatter
 ms.reviewer: davidph
-ms.date: 11/04/2019
-ms.openlocfilehash: 4771db21a0ea5e841dbe12c8ce915b3833a8a30d
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.date: 11/07/2019
+ms.openlocfilehash: 976c849f9cb48e1c197f70d10e911216a6a7425c
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73692324"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73822848"
 ---
 # <a name="machine-learning-and-ai-with-onnx-in-sql-database-edge-preview"></a>Машинное обучение и AI с ONNX в предварительной версии базы данных SQL
 
 Машинное обучение в предварительной версии базы данных SQL Azure для предварительного просмотра поддерживает модели в формате [Open нейронной сети (ONNX)](https://onnx.ai/) . ONNX — это открытый формат, который можно использовать для обмена моделями между различными [платформами и инструментами машинного обучения](https://onnx.ai/supported-tools).
 
-## <a name="supported-tool-kits"></a>Поддерживаемые наборы средств
+## <a name="overview"></a>Обзор
 
-Оннксмлтулс позволяет преобразовывать модели из различных наборов средств машинного обучения в модель ONNX. В настоящее время для числовых типов данных и одиночных входных столбцов поддерживаются следующие наборы средств:
-
-* [scikit-learn](https://github.com/onnx/sklearn-onnx);
-* [Tensorflow](https://github.com/onnx/tensorflow-onnx)
-* [Keras](https://github.com/onnx/keras-onnx);
-* [CoreML](https://github.com/onnx/onnxmltools)
-* [Spark ML (экспериментальная версия)](https://github.com/onnx/onnxmltools/tree/master/onnxmltools/convert/sparkml)
-* [LightGBM](https://github.com/onnx/onnxmltools)
-* [либсвм](https://github.com/onnx/onnxmltools)
-* [XGBoost](https://github.com/onnx/onnxmltools)
+Чтобы вычислять модели машинного обучения в пограничных базах данных SQL Azure, сначала необходимо получить модель. Это может быть предварительно обученная модель или пользовательская модель, обученная вашей инфраструктурой по выбору. Служба "границы базы данных SQL Azure" поддерживает формат ONNX, и вам потребуется преобразовать модель в этот формат. На точность модели не должно повлиять, и, если у вас есть модель ONNX, можно развернуть модель в области базы данных SQL Azure и использовать [собственную оценку с функцией прогнозирования T-SQL](/sql/advanced-analytics/sql-native-scoring/).
 
 ## <a name="get-onnx-models"></a>Получение моделей ONNX
 
 Существует несколько способов получить модель в формате ONNX:
 
-- [ONNX Model Zoo](https://github.com/onnx/models): содержит несколько предварительно обученных моделей ONNX для различных типов задач. Вы можете скачать и использовать версии, поддерживаемые Машинное обучение Windows.
+- [ONNX Model Zoo](https://github.com/onnx/models): содержит множество предварительно обученных моделей ONNX для различных типов задач, которые могут быть скачаны и готовы к использованию.
 
-- [Собственный экспорт из платформ обучения машинного обучения](https://onnx.ai/supported-tools). несколько платформ обучения поддерживают собственные функции экспорта для ONNX, что позволяет сохранить обученную модель в определенной версии формата ONNX. Например, Chain, Caffee2 и PyTorch. Кроме того, службы, такие как [машинное обучение Azure службы](https://azure.microsoft.com/services/machine-learning-service/) и [Azure пользовательское визуальное распознавание](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/getting-started-build-a-classifier) , также предоставляют собственный экспорт ONNX.
+- [Собственный экспорт из платформ обучения ML](https://onnx.ai/supported-tools). несколько платформ обучения поддерживают собственные функции экспорта в ONNX, что позволяет сохранять обученную модель в определенной версии формата ONNX, включая [PyTorch](https://pytorch.org/docs/stable/onnx.html), Chain и Caffe2. Кроме того, службы создания моделей, такие как [Автоматизированная функция машинное обучение в машинное обучение Azure](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/classification-bank-marketing-all-features/auto-ml-classification-bank-marketing-all-features.ipynb) и [Azure ПОЛЬЗОВАТЕЛЬСКАЯ служба визуального распознавания](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/getting-started-build-a-classifier) обеспечивают экспорт ONNX.
 
-  - Сведения о том, как обучать и экспортировать модель ONNX в облаке с помощью Пользовательское визуальное распознавание, см. в разделе [учебник. Использование модели ONNX из пользовательское визуальное распознавание с помощью машинного обучения Windows (Предварительная версия)](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/custom-vision-onnx-windows-ml).
+- [Преобразование существующих моделей](https://github.com/onnx/tutorials#converting-to-onnx-format). для платформ, которые не поддерживают собственный экспорт, существуют автономные пакеты для преобразования моделей в формат ONNX. Примеры и учебники см. [в разделе Преобразование в формат ONNX](https://github.com/onnx/tutorials#converting-to-onnx-format). 
 
-- [Преобразование существующих моделей с помощью винмлтулс](https://docs.microsoft.com/windows/ai/windows-ml/convert-model-winmltools). Этот пакет Python позволяет преобразовывать модели из нескольких форматов инфраструктуры обучения в ONNX. Вы можете указать версию ONNX, в которую требуется преобразовать модель, в зависимости от того, какие сборки Windows предназначены для приложения. Если вы не знакомы с Python, для преобразования моделей можно использовать [панель мониторинга на основе пользовательского интерфейса Windows машинное обучение](https://github.com/Microsoft/Windows-Machine-Learning/tree/master/Tools/WinMLDashboard) .
+### <a name="supported-frameworks"></a>Поддерживаемые платформы
 
-> [!IMPORTANT]
-> Границы базы данных SQL Azure поддерживают не все версии ONNX. В настоящее время поддерживается только прогнозирование числовых типов данных с помощью модели ONNX.
+Преобразователи ONNX позволяют преобразовывать модели, обученные из разных платформ машинного обучения, в формат ONNX. К популярным конвертерам относятся: 
 
-Получив модель ONNX, вы можете развернуть ее в области базы данных SQL Azure. Затем можно использовать [собственную оценку с функцией прогнозирования T-SQL](/sql/advanced-analytics/sql-native-scoring/).
+* [PyTorch](http://pytorch.org/docs/master/onnx.html)
+* [Tensorflow](https://github.com/onnx/tensorflow-onnx)
+* [Keras](https://github.com/onnx/keras-onnx);
+* [Scikit-learn](https://github.com/onnx/sklearn-onnx)
+* [CoreML](https://github.com/onnx/onnxmltools)
+
+Полный список поддерживаемых платформ см. в разделе [Преобразование в формат ONNX](https://github.com/onnx/tutorials#converting-to-onnx-format).
 
 ## <a name="limitations"></a>Ограничения
 
-В настоящее время эта поддержка ограничена моделями с **числовыми типами данных**:
+В настоящее время с помощью границы базы данных SQL Azure поддерживаются не все модели ONNX. Поддержка ограничена моделями с **числовыми типами данных**:
 
 - [int и bigint](https://docs.microsoft.com/sql/t-sql/data-types/int-bigint-smallint-and-tinyint-transact-sql5)
 - [Real и float](https://docs.microsoft.com/sql/t-sql/data-types/float-and-real-transact-sql).
   
-Другие числовые типы могут быть преобразованы в поддерживаемые типы с помощью приведения и преобразования [Cast](https://docs.microsoft.com/sql/t-sql/functions/cast-and-convert-transact-sql)и Convert.
+Другие числовые типы можно преобразовать в поддерживаемые типы с помощью функций [CAST и Convert](https://docs.microsoft.com/sql/t-sql/functions/cast-and-convert-transact-sql).
 
 Входные данные модели должны быть структурированы таким образом, чтобы каждый вход модели соответствовал одному столбцу в таблице. Например, если для обучения модели используется кадр данных Pandas, то каждый вход должен быть отдельным столбцом в модели.
 

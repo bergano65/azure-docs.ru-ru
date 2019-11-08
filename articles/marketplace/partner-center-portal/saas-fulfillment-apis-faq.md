@@ -5,14 +5,15 @@ author: qianw211
 manager: evansma
 ms.author: v-qiwe
 ms.service: marketplace
+ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 07/11/2019
-ms.openlocfilehash: b324d3b9dca710dca6f5f99ad50ce4d973a42d2a
-ms.sourcegitcommit: 10251d2a134c37c00f0ec10e0da4a3dffa436fb3
+ms.openlocfilehash: 2f8aa41604ac176181252fb7b30cdeb2f039d10f
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67869551"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73822875"
 ---
 # <a name="saas-fulfillment-apis---faq"></a>Вопросы и ответы об API-интерфейсах исполнения SaaS
 
@@ -58,7 +59,7 @@ ms.locfileid: "67869551"
 
 * Преобразования можно выполнять в любое время в цикле выставления счетов. Необходимо подтвердить любое преобразование, которое вступит в силу после подтверждения.
 
-* Предварительно оплаченный план (ежемесячный или **ежегодный**) оценивается по мере использования. Все превышения, созданные до момента преобразования, будут начисляться в следующем счете. На основе нового плана будет выдаваться новое превышение.
+* Предварительно оплаченный план (**ежемесячный** или **ежегодный**) оценивается по мере использования. Все превышения, созданные до момента преобразования, будут начисляться в следующем счете. На основе нового плана будет выдаваться новое превышение.
 
 >[!Note]
 >Вы можете заблокировать переход на более раннюю версию, если не хотите поддерживать определенные пути преобразования.
@@ -83,6 +84,6 @@ ms.locfileid: "67869551"
 
 ![Клиент отменяет подписывание в витрине Майкрософт](media/saas-metering-service-integration-flow-e.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения см. в статье [API-интерфейсы службы измерения Marketplace](./marketplace-metering-service-apis.md) .

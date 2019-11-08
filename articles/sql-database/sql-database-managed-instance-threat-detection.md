@@ -1,5 +1,5 @@
 ---
-title: Настройка расширенной защиты от угроз для управляемого экземпляра базы данных SQL Azure
+title: Настройка расширенной защиты от угроз — управляемый экземпляр
 description: Расширенная защита от угроз обнаруживает аномальные действия базы данных, указывающие потенциальные угрозы безопасности для базы данных в управляемом экземпляре.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: rmatchoro
 ms.author: ronmat
 ms.reviewer: vanto
 ms.date: 08/05/2019
-ms.openlocfilehash: 8e419031c34a693bac7ab9f9825c24576e80ba14
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 69292a934af8b8777f11ab58ed3fe306abf8b408
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73687884"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73822548"
 ---
 # <a name="configure-advanced-threat-protection-in-azure-sql-database-managed-instance"></a>Настройка расширенной защиты от угроз в управляемом экземпляре базы данных SQL Azure
 

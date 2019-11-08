@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 11/05/2019
 ms.author: sukishen
-ms.openlocfilehash: 83c3c72ad189720b8f0aa554b7804b55f3488b83
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
-ms.translationtype: HT
+ms.openlocfilehash: 3151d72c0e74e7eb694ef2bdd5737f65992fe905
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73747951"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73824379"
 ---
 # <a name="about-azure-networking-msp-partners"></a>Сведения о партнерах по сети MSP Azure
 
@@ -50,7 +50,7 @@ Azure Networking MSP — это специализированный набор 
 |[Облачные службы oncore]( https://www.oncore.cloud/services/ue-for-expressroute/)|Да|Да||||
 |[орикском]( https://www.orixcom.com/cloud-solutions/)|Да|Да||||
 |[Sejong Telecom](https://www.sejongtelecom.net/en/pages/service/cloud_ms)|Да|Да||||
-|[Tata связь](https://www.tatacommunications.com/about/our-alliances/microsoft-alliance/)|Да|Да||||
+|[Tata связь](https://www.tatacommunications.com/about/our-alliances/microsoft-alliance/)|Да|Да|Да|Да||
 |[тктс](https://www.tatacommunications-ts.com/index.php)|Да|Да|Да|||
 |[Tech Махиндра](https://networkservices.techmahindra.com/pages/default.aspx)|Да||||Да|
 |[вандис](https://www.vandis.com/microsoft-azure-practice/)|Да|Да|Да|||

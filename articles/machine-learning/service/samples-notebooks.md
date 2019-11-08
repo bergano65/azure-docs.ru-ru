@@ -11,12 +11,12 @@ ms.author: sgilley
 ms.reviewer: sgilley
 ms.date: 11/04/2019
 ms.custom: seodec18
-ms.openlocfilehash: 145ab994bbd2ac2445947968ccdeadbb730eb76a
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 16066ceeb7196bb181d144cc9529d6db627ed828
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/04/2019
-ms.locfileid: "73476078"
+ms.locfileid: "73582515"
 ---
 # <a name="explore-azure-machine-learning-with-jupyter-notebooks"></a>Использование записных книжек Jupyter в Машинном обучении Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "73476078"
 
 В этой статье показано, как получить доступ к репозиторию из следующих сред:
 
-- [Вычислительная операция Машинного обучения Azure](#notebookvm)
+- [Виртуальная машина Notebook Машинного обучения Azure](#notebookvm)
 - [Сервер собственных записных книжек](#byo)
 - [Виртуальные машины для обработки и анализа данных](#dsvm)
 
@@ -32,7 +32,7 @@ ms.locfileid: "73476078"
 > Клонировав репозиторий, вы получите руководства по работе с записными книжками в папке **tutorials**, а сами записные книжки, связанные с определенными функциями, — в папке **how-to-use-azureml**.
 
 <a name="notebookvm"></a>
-## <a name="get-samples-on-azure-machine-learning-compute-instance"></a>Получение примеров вычислительных операций Машинного обучения Azure
+## <a name="get-samples-on-azure-machine-learning-notebook-vm"></a>Получение примеров на виртуальной машине записных книжек службы "Машинное обучение Azure"
 
 Самый простой способ приступить к работе с примерами, — ознакомиться с руководством по [ настройке среды и рабочей области](tutorial-1st-experiment-sdk-setup.md). После этого вы получите выделенный сервер записных книжек, предварительно загруженный с пакетом SDK, и репозиторий с примером. Скачивать или устанавливать что-либо вам не нужно.
 

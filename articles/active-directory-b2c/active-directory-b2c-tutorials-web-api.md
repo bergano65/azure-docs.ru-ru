@@ -10,12 +10,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: bb33f7f2ec917e9ae168a013a8775ec4f551848d
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 0cd2eff7e3fafc1a6f3418a1f86629cfb1584e89
+ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73475013"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73641751"
 ---
 # <a name="tutorial-grant-access-to-an-aspnet-web-api-using-azure-active-directory-b2c"></a>Руководство по Предоставление доступа к веб-API ASP.NET с помощью Azure Active Directory B2C
 
@@ -39,7 +39,7 @@ ms.locfileid: "73475013"
 
 Ресурсы веб-API необходимо зарегистрировать в клиенте, чтобы они могли принимать запросы защищенных ресурсов от клиентских приложений, которые представляют маркер доступа, и отвечать на них.
 
-Чтобы зарегистрировать приложение в клиенте Azure AD B2C, можно использовать текущий интерфейс **приложений** или новый объединенный интерфейс **Регистрация приложений (предварительная версия)** . [Дополнительные сведения об интерфейсе предварительной версии](https://aka.ms/b2cappregintro).
+Чтобы зарегистрировать приложение в клиенте Azure AD B2C, можно использовать текущий интерфейс **приложений** или новый объединенный интерфейс **Регистрация приложений (предварительная версия)** . [См. дополнительные сведения о новом интерфейсе](https://aka.ms/b2cappregintro).
 
 #### <a name="applicationstabapplications"></a>[Приложения](#tab/applications/)
 

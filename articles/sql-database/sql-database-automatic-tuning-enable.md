@@ -1,5 +1,5 @@
 ---
-title: Включение автоматической настройки для базы данных SQL Azure
+title: Включение автоматической настройки
 description: Вы можете легко включить автоматическую настройку для базы данных SQL Azure.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: danimir
 ms.author: danil
 ms.reviewer: jrasnik, carlrab
 ms.date: 01/25/2019
-ms.openlocfilehash: 52e3dd01446a6292c3404f14bd8ebfb32aa00dd6
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 0abf4bb015be52a10178423a566433b87127a167
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73691124"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73821912"
 ---
 # <a name="enable-automatic-tuning-to-monitor-queries-and-improve-workload-performance"></a>Включение автоматической настройки для отслеживания запросов и повышения производительности рабочей нагрузки
 

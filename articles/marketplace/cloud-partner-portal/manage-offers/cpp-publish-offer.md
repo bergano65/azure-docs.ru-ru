@@ -1,18 +1,19 @@
 ---
-title: Публикация предложения Marketplace | Azure Marketplace
+title: Опубликовать предложения Marketplace | Azure Marketplace
 description: Публикация предложений в Azure Marketplace и AppSource Marketplace с помощью Портала Cloud Partner
 services: Azure, AppSource, Marketplace, Cloud Partner Portal,
 author: v-miclar
 ms.service: marketplace
+ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 01/12/2019
 ms.author: pabutler
-ms.openlocfilehash: b0121be4aecffe46c9440e62372e17ac7993163c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e77f0994f604f3a7365f1ed1ddb9191a2510883a
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64943531"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73826740"
 ---
 # <a name="publish-azure-marketplace-and-appsource-offers"></a>Публикация предложений Azure Marketplace и AppSource
 

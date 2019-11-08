@@ -10,12 +10,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: 587848c6718a003bf781f81d0298c73ef1549bb3
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: d88ad13c1326ce62b73dbffa0c79904c6f81e6f4
+ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73474905"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73641808"
 ---
 # <a name="tutorial-enable-authentication-in-a-web-application-using-azure-active-directory-b2c"></a>Руководство по Включение в веб-приложении аутентификации с помощью Azure Active Directory B2C
 
@@ -41,7 +41,7 @@ ms.locfileid: "73474905"
 
 ### <a name="add-a-redirect-uri-reply-url"></a>Добавление URI перенаправления (URL-адреса ответа)
 
-Для обновления приложения можно использовать текущий интерфейс **Приложения** или новый объединенный интерфейс **Регистрация приложений (предварительная версия)** . [Дополнительные сведения об интерфейсе предварительной версии](http://aka.ms/b2cappregintro).
+Для обновления приложения можно использовать текущий интерфейс **Приложения** или новый объединенный интерфейс **Регистрация приложений (предварительная версия)** . [См. дополнительные сведения о новом интерфейсе](https://aka.ms/b2cappregintro).
 
 #### <a name="applicationstabapplications"></a>[Приложения](#tab/applications/)
 

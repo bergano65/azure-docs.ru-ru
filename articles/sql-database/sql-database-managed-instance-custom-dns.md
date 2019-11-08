@@ -1,5 +1,5 @@
 ---
-title: Управляемый экземпляр Базы данных SQL Azure настраиваемый DNS-сервер
+title: Настраиваемый DNS-сервер управляемого экземпляра
 description: В этой статье описаны параметры конфигурации пользовательской службы DNS для Управляемого экземпляра Базы данных SQL Azure.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: srdan-bozovic-msft
 ms.author: srbozovi
 ms.reviewer: sstein, bonova, carlrab
 ms.date: 07/17/2019
-ms.openlocfilehash: b44c2b1fdf27f285868c5681c38fe3ffa6e5e86d
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 3161d931c6e912c05c595db7f3c790da454dd5ed
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73688150"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73823357"
 ---
 # <a name="configuring-a-custom-dns-for-azure-sql-database-managed-instance"></a>Настройка пользовательской службы DNS для Управляемого экземпляра Базы данных SQL Azure
 

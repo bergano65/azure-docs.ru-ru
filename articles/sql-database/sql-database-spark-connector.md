@@ -1,5 +1,5 @@
 ---
-title: Соединитель Spark с Базой данных SQL Azure и SQL Server | Документация Майкрософт
+title: Соединитель Spark с базой данных SQL Azure и SQL Server
 description: Узнайте, как использовать соединитель Spark для Базы данных SQL Azure и SQL Server
 services: sql-database
 ms.service: sql-database
@@ -11,29 +11,29 @@ author: allenwux
 ms.author: xiwu
 ms.reviewer: carlrab
 ms.date: 09/25/2018
-ms.openlocfilehash: efa31e72811b83c00c1b2ee4a5d1a42fc7089630
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: d398019b62078da6943cb98cbafc3ac39640513f
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73163172"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73820872"
 ---
 # <a name="accelerate-real-time-big-data-analytics-with-spark-connector-for-azure-sql-database-and-sql-server"></a>Ускорение анализа больших данных в режиме реального времени с помощью Базы данных SQL Azure и SQL Server
 
 Соединитель Spark для Базы данных SQL Azure и SQL Server разрешает использовать базы данных SQL, включая Базу данных SQL Azure и SQL Server, в качестве источника входных данных или приемника выходных данных для заданий Spark. Это позволяет использовать данные о транзакциях в реальном времени при анализе больших данных и сохранять результаты нерегламентированных запросов или отчетов. По сравнению со встроенным соединителем JDBC этот соединитель обеспечивает возможность массовой вставки данных в базы данных SQL. Он может в 10-20 раз превосходить по производительности вставку по строкам. Соединитель Spark для Базы данных SQL Azure и SQL Server также поддерживает аутентификацию AAD. Это позволяет безопасно подключаться к базе данных SQL Azure из Azure Databricks, используя учетную запись AAD. Она предоставляет аналогичные интерфейсы со встроенным соединителем JDBC. Имеющиеся задания Spark можно легко перенести, чтобы использовать этот соединитель.
 
-## <a name="download"></a>Download (Скачать)
+## <a name="download"></a>Загрузить
 Чтобы приступить к работе, скачайте соединитель Spark для базы данных SQL из репозитория [azure-sqldb-spark](https://github.com/Azure/azure-sqldb-spark) на сайте GitHub.
 
 ## <a name="official-supported-versions"></a>Официальные поддерживаемые версии
 
-| Компонент                            |Версия                  |
+| Компонент                            |Version (версия)                  |
 | :----------------------------------- | :---------------------- |
 | Apache Spark                         |2.0.2 или более поздние версии           |
 | Scala                                |2.10 или более поздние версии            |
 | Microsoft JDBC Driver для SQL Server |6.2 или более поздние версии             |
 | Microsoft SQL Server                 |SQL Server 2008 или более поздняя версия |
-| Базы данных SQL Azure                   |Поддерживается                |
+| База данных SQL Azure                   |Поддерживаются                |
 
 Соединитель Spark для Базы данных SQL Azure и SQL Server использует Microsoft JDBC Driver для SQL Server, чтобы перемещать данные между рабочими узлами Spark и базами данных SQL:
  

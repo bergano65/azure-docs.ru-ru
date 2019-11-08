@@ -5,14 +5,15 @@ author: qianw211
 manager: evansma
 ms.author: v-qiwe
 ms.service: marketplace
+ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 07/11/2019
-ms.openlocfilehash: ccab7e59eaa925df4ba46447cef458111dc7e60a
-ms.sourcegitcommit: 10251d2a134c37c00f0ec10e0da4a3dffa436fb3
+ms.openlocfilehash: c4f51adbcaa5e5b750169f53a1333544365fd4f3
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67869577"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73825493"
 ---
 # <a name="marketplace-metering-service-apis---faq"></a>Вопросы и ответы об API-интерфейсах службы из Marketplace для контроля потребления
 
@@ -47,8 +48,8 @@ ms.locfileid: "67869577"
 
 ### <a name="can-you-get-a-list-of-all-saas-subscriptions-including-active-and-unsubscribed-subscriptions"></a>Можно ли получить список всех подписок SaaS, включая активные и неподписанные подписки?
 
-Да, при вызове `GET /saas/subscriptions` API он включает список всех подписок SaaS. В поле состояние в ответе для каждой подписки SaaS захватывается, является ли подписка активной или неподписанной. При вызове List Subscriptions в момент времени будет возвращено не более 100 подписок.
+Да, при вызове API `GET /saas/subscriptions` он включает список всех подписок SaaS. В поле состояние в ответе для каждой подписки SaaS захватывается, является ли подписка активной или неподписанной. При вызове List Subscriptions в момент времени будет возвращено не более 100 подписок.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения см. в статье [API-интерфейсы службы измерения Marketplace](./marketplace-metering-service-apis.md) .

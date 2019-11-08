@@ -1,5 +1,5 @@
 ---
-title: Как переместить ресурсы базы данных SQL Azure в другой регион
+title: Перемещение ресурсов в другой регион
 description: Узнайте, как переместить базу данных SQL Azure, эластичный пул SQL Azure или управляемый экземпляр SQL Azure в другой регион.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: MashaMSFT
 ms.author: mathoma
 ms.reviewer: carlrab
 ms.date: 06/25/2019
-ms.openlocfilehash: 9e7cd6cb338de1d029d38ef08693a7b52f7cf15c
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 851ef49a5c066f12a95baa54daf5e267cb4278c5
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73687772"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73821438"
 ---
 # <a name="how-to-move-azure-sql-resources-to-another-region"></a>Как переместить ресурсы SQL Azure в другой регион
 

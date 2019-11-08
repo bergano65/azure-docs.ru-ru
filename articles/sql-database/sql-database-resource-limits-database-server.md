@@ -1,5 +1,5 @@
 ---
-title: Ограничения ресурсов для сервера базы данных SQL Azure
+title: Ограничения ресурсов сервера
 description: Статья представляет обзор ограничения ресурсов сервера Базы данных SQL Azure для отдельных баз данных и эластичных пулов. Здесь также содержится информация о том, что происходит, когда эти ограничения ресурсов соответствуют или превышают допустимые нормы.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: sashan,moslake,josack
 ms.date: 04/18/2019
-ms.openlocfilehash: b358e69df1df579e91a9098c120c7e6b4e3f2ead
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 907fc89c0d9af01865037f650c407edd97e96645
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73687485"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73821140"
 ---
 # <a name="sql-database-resource-limits-for-azure-sql-database-server"></a>Ограничения ресурсов для сервера Базы данных SQL Azure
 
@@ -88,7 +88,7 @@ ms.locfileid: "73687485"
 
 Фактические частоты создания журналов, накладываемые во время выполнения, могут также повлиять на механизмы обратной связи, временно сокращая допустимые скорости ведения журнала, чтобы система могла стабилизировать работу системы. Управление местом в файле журнала, что позволяет избежать появления пространства журнала, а механизмы репликации группы доступности временно снижают общие системные ограничения. 
 
-Формирование трафика регулятора скорости ведения журнала осуществляется через следующие типы ожидания (представленные в динамическом административном [представлении sys. DM _db_wait_stats](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-db-wait-stats-azure-sql-database) ):
+Формирование трафика регулятора скорости ведения журнала осуществляется с помощью следующих типов ожидания (которые доступны в представлении динамического административного представления [sys. dm_db_wait_stats](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-db-wait-stats-azure-sql-database) ):
 
 | Тип ожидания | Примечания |
 | :--- | :--- |

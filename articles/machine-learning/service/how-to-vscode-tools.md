@@ -1,5 +1,5 @@
 ---
-title: Использование Visual Studio Code для машинного обучения
+title: Машинное обучение Azure в Visual Studio Code
 titleSuffix: Azure Machine Learning
 description: Узнайте, как установить Машинное обучение Azure для Visual Studio Code и создать эксперимент в Машинное обучение Azure.
 services: machine-learning
@@ -10,12 +10,12 @@ ms.author: jimgries
 author: greazer
 ms.date: 09/20/2019
 ms.custom: seodec18
-ms.openlocfilehash: df23c41629dfe86058f0f2fb6602e85fd5a6d494
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: dd85f3a495b90b3a1dc9d3f021d3600496792759
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73489288"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73824351"
 ---
 # <a name="get-started-with-azure-machine-learning-for-visual-studio-code"></a>Приступая к работе с Azure Machine Learning for Visual Studio Code
 
@@ -25,7 +25,7 @@ ms.locfileid: "73489288"
 + Для обучения он обеспечивает поддержку запуска экспериментов локально или удаленно. Для каждого эксперимента можно зарегистрировать пользовательские метрики нескольких запусков для точной настройки параметров.
 + Вы также можете использовать Машинное обучение Azure для простого развертывания моделей машинного обучения в целях тестирования и эксплуатации.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 + Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Попробуйте [бесплатную или платную версию машинное обучение Azure](https://aka.ms/AMLFree).
 

@@ -1,7 +1,7 @@
 ---
-title: Обнаружение смещения данных (Предварительная версия) при развертываниях AKS
+title: Обнаружение смещения данных в развертываниях AKS
 titleSuffix: Azure Machine Learning
-description: Обнаружение смещения данных в развернутых моделях службы Kubernetes Azure в Машинное обучение Azure.
+description: Обнаружение смещения данных (Предварительная версия) в развернутых моделях службы Kubernetes Azure в Машинное обучение Azure.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,12 +10,12 @@ ms.reviewer: jmartens
 ms.author: copeters
 author: cody-dkdc
 ms.date: 11/04/2019
-ms.openlocfilehash: 24b1c22d9badc58360b0355bb4ef89017db27f06
-ms.sourcegitcommit: 018e3b40e212915ed7a77258ac2a8e3a660aaef8
-ms.translationtype: HT
+ms.openlocfilehash: 9ac1c5cb25d6b2ad396c2caed74942988a723a0e
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73796740"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73824256"
 ---
 # <a name="detect-data-drift-preview-on-models-deployed-to-azure-kubernetes-service-aks"></a>Обнаружение смещения данных (Предварительная версия) в моделях, развернутых в службе Kubernetes Azure (AKS)
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-enterprise-sku.md)]
@@ -152,7 +152,7 @@ drift_figures = datadrift.show(with_details=True)
 
 ## <a name="schedule-data-drift-scans"></a>Планирование сканирования смещения данных 
 
-Когда вы включаете обнаружение расхождения данных, Датадрифтдетектор выполняется по заданной запланированной частоте. Если datadrift_coefficient достигает указанного `drift_threshold`, то при каждом запланированном выполнении отправляется сообщение электронной почты. 
+Когда вы включаете обнаружение расхождения данных, Датадрифтдетектор выполняется по заданной запланированной частоте. Если datadrift_coefficient достигает заданного `drift_threshold`, то при каждом запланированном выполнении отправляется сообщение электронной почты. 
 
 ```python
 datadrift.enable_schedule()

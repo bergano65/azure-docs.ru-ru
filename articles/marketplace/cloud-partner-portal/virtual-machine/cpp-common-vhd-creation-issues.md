@@ -4,16 +4,17 @@ description: Часто задаваемые вопросы о создании 
 services: Azure Marketplace
 author: HannibalSII
 ms.service: marketplace
+ms.subservice: partnercenter-marketplace-publisher
 ms.topic: article
 ms.date: 10/02/2018
 ms.author: hascipio
 ms.reviewer: v-divte; v-miclar
-ms.openlocfilehash: bb7e62138dbefdd8ff4933ef10602986a5da2bf6
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: 1d4224d8f1f735ecef3d4551e3032b916e81dc3c
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67874999"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73826617"
 ---
 # <a name="common-issues-during-vhd-creation-faq"></a>Распространенные проблемы при создании виртуального жесткого диска. Вопросы и ответы
 
@@ -67,7 +68,7 @@ Azure Marketplace в настоящее время не поддерживает
 
 ## <a name="in-a-vm-how-do-you-manage-the-custom-script-extension-in-the-startup-task"></a>Как управлять расширением пользовательских скриптов в задаче запуска на виртуальной машине?
 
-В этой статье объясняется, как использовать расширение пользовательских сценариев с помощью модуля Azure PowerShell и шаблонов Azure Resource Manager, а также подробно описываются действия по устранению неполадок в системах Windows. [Расширение Custom Script в ОС Windows](https://azure.microsoft.com/documentation/articles/virtual-machines-windows-extensions-customscript/)
+Использование расширения пользовательских скриптов с помощью модуля Azure PowerShell, шаблонов Azure Resource Manager и сведения о действиях по устранению неполадок в системах Windows см. в статье [Расширение Custom Script в ОС Windows](https://azure.microsoft.com/documentation/articles/virtual-machines-windows-extensions-customscript/).
 
 
 ## <a name="are-32-bit-applications-or-services-supported-in-the-azure-marketplace"></a>Поддерживаются ли 32-разрядные приложения или службы в Azure Marketplace?

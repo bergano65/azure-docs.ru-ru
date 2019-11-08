@@ -14,12 +14,12 @@ ms.tgt_pltfrm: dotnet
 ms.workload: na
 ms.date: 02/06/2019
 ms.author: shvija
-ms.openlocfilehash: 804ef04f0066a8b8dd9df82aef03fcfc32d7cb43
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 5d980cefa5aa953a3fb9683adb589bf202e73250
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60343742"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73826293"
 ---
 # <a name="create-a-namespace-with-event-hub-and-enable-capture-using-a-template"></a>Создание пространства имен с концентратором событий и включение записи с помощью шаблона
 
@@ -29,15 +29,15 @@ ms.locfileid: "60343742"
 
 Дополнительные сведения о создании шаблонов см. в статье [Создание шаблонов Azure Resource Manager][Authoring Azure Resource Manager templates]. Синтаксис и свойства JSON, используемые в шаблоне, см. в статье о [типах ресурсов Microsoft.EventHub](/azure/templates/microsoft.eventhub/allversions).
 
-Дополнительные сведения о шаблонах и рекомендациях по соглашениям об именовании ресурсов Azure см. в статье [Naming conventions][Azure Resources naming conventions] (Соглашения об именовании).
+Дополнительные сведения о шаблонах и методиках соглашения об именовании ресурсов Azure см. в статье [соглашения об именовании ресурсов Azure][Azure Resources naming conventions].
 
 Полные шаблоны доступны на сайте GitHub по следующим ссылкам:
 
-- [шаблон для развертывания концентратора событий и включения записи в службу хранилища][Event Hub and enable Capture to Storage template]; 
-- [шаблон для развертывания концентратора событий и включения записи в Azure Data Lake Store][Event Hub and enable Capture to Azure Data Lake Store template].
+- [Использование концентратора событий и включение записи в шаблон хранилища][Event Hub and enable Capture to Storage template] 
+- [Использование концентратора событий и включение записи в шаблон Azure Data Lake Store][Event Hub and enable Capture to Azure Data Lake Store template]
 
 > [!NOTE]
-> Чтобы узнать о новых шаблонах, изучите коллекцию [Шаблоны быстрого запуска Azure][Azure Quickstart Templates] и выполните в ней поиск по запросу "Центры событий".
+> Чтобы узнать о новых шаблонах, посетите коллекцию [Шаблоны быстрого запуска Azure][Azure Quickstart Templates] и выполните поиск по запросу "Центры событий".
 > 
 > 
 
@@ -55,7 +55,7 @@ ms.locfileid: "60343742"
 
 С помощью диспетчера ресурсов Azure можно определить параметры значений, которые должны указываться на этапе развертывания шаблона. В шаблоне есть раздел `Parameters` , содержащий все значения параметров. Для этих значений необходимо определить параметры, которые будут зависеть от развертываемого проекта либо от среды, в которой выполняется развертывание. Не определяйте параметры для значений, которые не меняются. Значение каждого параметра в шаблоне определяет развертываемые ресурсы.
 
-Ниже описаны параметры, которые определяет шаблон.
+Шаблон определяет следующие параметры.
 
 ### <a name="eventhubnamespacename"></a>eventHubNamespaceName
 
@@ -193,7 +193,7 @@ ms.locfileid: "60343742"
   
 ```
 
-### <a name="apiversion"></a>apiVersion
+### <a name="apiversion"></a>версия_API
 
 Версия API шаблона.
 
@@ -409,7 +409,7 @@ New-AzResourceGroupDeployment -ResourceGroupName \<resource-group-name\> -Templa
 New-AzResourceGroupDeployment -ResourceGroupName \<resource-group-name\> -TemplateFile https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/201-eventhubs-create-namespace-and-enable-capture-for-adls/azuredeploy.json
 ```
 
-## <a name="azure-cli"></a>Инфраструктура CLI Azure
+## <a name="azure-cli"></a>Azure CLI
 
 Хранилище BLOB-объектов Azure в качестве места назначения:
 
@@ -439,6 +439,6 @@ azure group deployment create \<my-resource-group\> \<my-deployment-name\> --tem
 
 [Authoring Azure Resource Manager templates]: ../azure-resource-manager/resource-group-authoring-templates.md
 [Azure Quickstart Templates]:  https://azure.microsoft.com/documentation/templates/?term=event+hubs
-[Azure Resources naming conventions]: https://azure.microsoft.com/documentation/articles/guidance-naming-conventions/
+[Azure Resources naming conventions]: /azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging
 [Event hub and enable Capture to Storage template]: https://github.com/Azure/azure-quickstart-templates/tree/master/201-eventhubs-create-namespace-and-enable-capture
 [Event hub and enable Capture to Azure Data Lake Store template]: https://github.com/Azure/azure-quickstart-templates/tree/master/201-eventhubs-create-namespace-and-enable-capture-for-adls

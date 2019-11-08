@@ -1,6 +1,6 @@
 ---
-title: Экспорт отдельной базы данных SQL Azure или ее пула в BACPAC-файл
-description: Экспорт базы данных SQL Azure в BACPAC-файл с помощью портала Azure.
+title: Экспорт отдельной базы данных или в составе пула в BACPAC-файл
+description: Экспорт базы данных SQL Azure в BACPAC-файл с помощью портала Azure
 services: sql-database
 ms.service: sql-database
 ms.subservice: data-movement
@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: carlrab
 ms.date: 07/16/2019
-ms.openlocfilehash: f3f6071d42d77ffa07dd27080b1bc18d7bbc6952
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: b96d2e69b757774afe177341caffe2f3cbf00e2b
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73690072"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73823454"
 ---
 # <a name="export-an-azure-sql-database-to-a-bacpac-file"></a>Экспорт базы данных SQL Azure в BACPAC-файл
 

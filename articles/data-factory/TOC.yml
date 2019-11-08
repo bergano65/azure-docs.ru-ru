@@ -209,6 +209,8 @@
           href: format-avro.md
         - name: Хранилище BLOB-объектов Azure
           href: connector-azure-blob-storage.md
+        - name: Когнитивный поиск Azure
+          href: connector-azure-search.md
         - name: API SQL для Azure Cosmos DB
           href: connector-azure-cosmos-db.md
         - name: "API Azure Cosmos\_DB для MongoDB"
@@ -227,8 +229,6 @@
           href: connector-azure-database-for-postgresql.md
         - name: Хранилище файлов Azure
           href: connector-azure-file-storage.md
-        - name: Поиск Azure
-          href: connector-azure-search.md
         - name: База данных SQL Azure
           href: connector-azure-sql-database.md
         - name: Управляемый экземпляр Базы данных SQL Azure

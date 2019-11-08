@@ -1,5 +1,5 @@
 ---
-title: Настройка общедоступной конечной точки — управляемый экземпляр базы данных SQL Azure
+title: Настройка открытого экземпляра, управляемого общедоступной конечной точкой
 description: Узнайте, как настроить общедоступную конечную точку для управляемого экземпляра.
 services: sql-database
 ms.service: sql-database
@@ -10,12 +10,12 @@ author: srdan-bozovic-msft
 ms.author: srbozovi
 ms.reviewer: vanto, carlrab
 ms.date: 05/07/2019
-ms.openlocfilehash: 6f953e4c549619a30564bdb061e98761474174c3
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: a35176770a3100a288ad3da52cd89870e0110f63
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73687964"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73828028"
 ---
 # <a name="configure-public-endpoint-in-azure-sql-database-managed-instance"></a>Настройка общедоступной конечной точки в управляемом экземпляре базы данных SQL Azure
 
