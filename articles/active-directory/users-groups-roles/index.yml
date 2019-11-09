@@ -12,12 +12,12 @@ metadata:
   ms.date: 08/28/2019
   author: curtand
   ms.author: curtand
-  ms.openlocfilehash: 4689a573bf8d58aa9734af97ea66f78ab4e5707a
-  ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+  ms.openlocfilehash: db210331e07ec1b23c3300a5a5a972570be5b591
+  ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 08/28/2019
-  ms.locfileid: "70126928"
+  ms.lasthandoff: 11/09/2019
+  ms.locfileid: "73885808"
 landingContent:
 - title: Пользователи, группы, роли и лицензии
   linkLists:
@@ -32,7 +32,7 @@ landingContent:
     - text: Делегирование прав на администрирование
       url: roles-concept-delegation.md
     - text: Сравнение ролей RBAC Azure и ролей администраторов Azure AD
-      url: https://docs.microsoft.com/en-us/azure/role-based-access-control/rbac-and-directory-admin-roles?context=azure/active-directory/users-groups-roles/context/ugr-context
+      url: https://docs.microsoft.com/azure/role-based-access-control/rbac-and-directory-admin-roles?context=azure/active-directory/users-groups-roles/context/ugr-context
 - title: Начало работы
   linkLists:
   - linkListType: quickstart
@@ -42,7 +42,7 @@ landingContent:
     - text: Настройка политики истечения срока действия для групп
       url: groups-quickstart-expiration.md
     - text: Назначение лицензий пользователям
-      url: https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/license-users-groups?context=azure/active-directory/users-groups-roles/context/ugr-context
+      url: https://docs.microsoft.com/azure/active-directory/fundamentals/license-users-groups?context=azure/active-directory/users-groups-roles/context/ugr-context
 - title: Назначение ролей администраторов в Azure AD
   linkLists:
   - linkListType: how-to-guide
@@ -78,6 +78,6 @@ landingContent:
   - linkListType: how-to-guide
     links:
     - text: Добавление имени личного домена
-      url: https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/add-custom-domain?context=azure/active-directory/users-groups-roles/context/ugr-context
+      url: https://docs.microsoft.com/azure/active-directory/fundamentals/add-custom-domain?context=azure/active-directory/users-groups-roles/context/ugr-context
     - text: Управление именами личных доменов
       url: domains-manage.md

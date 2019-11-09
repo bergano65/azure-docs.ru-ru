@@ -86,7 +86,7 @@
 - name: Ресурсы
   items:
     - name: REST API управления ресурсами Смешанной реальности Azure
-      href: 'https://docs.microsoft.com/en-us/rest/api/mixedreality/'
+      href: 'https://docs.microsoft.com/rest/api/mixedreality/'
     - name: Часто задаваемые вопросы
       href: spatial-anchor-faq.md
     - name: Отзыв о продукте

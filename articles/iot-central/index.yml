@@ -10,72 +10,72 @@ metadata:
   author: philmea
   ms.author: philmea
   ms.date: 10/25/2019
-  ms.openlocfilehash: cf720d7a526a913cc4c06ee160de3eecbe92e0a1
-  ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+  ms.openlocfilehash: f43c21d483bbb43bb270a7a70c4de6be1fb90f35
+  ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 10/30/2019
-  ms.locfileid: "73176115"
+  ms.lasthandoff: 11/09/2019
+  ms.locfileid: "73890748"
 highlightedContent:
   items:
   - title: Что такое IoT Central?
     itemType: overview
-    url: ./core/overview-iot-central-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
+    url: ./preview/overview-iot-central.md
   - title: Что представляют собой шаблоны приложений?
     itemType: concept
-    url: ./core/concepts-app-templates.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
+    url: ./core/concepts-app-templates.md
   - title: Архитектура Azure IoT Central
     itemType: architecture
-    url: ./core/concepts-architecture-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
+    url: ./preview/concepts-architecture.md
   - title: Создание приложения
     itemType: quickstart
-    url: ./core/quick-deploy-iot-central-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
+    url: ./preview/quick-deploy-iot-central.md
   - title: Определение типа устройства и добавление устройства
     itemType: tutorial
-    url: ./core/howto-set-up-template-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
+    url: ./preview/howto-set-up-template.md
   - title: Мониторинг устройств
     itemType: tutorial
-    url: ./core/tutorial-create-telemetry-rules-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
+    url: ./preview/tutorial-create-telemetry-rules.md
 conceptualContent:
   items:
   - title: Подключение (предварительные версии функций)
     links:
-    - url: ./core/howto-set-up-template-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
+    - url: ./preview/howto-set-up-template.md
       itemType: how-to-guide
       text: Настройка шаблона устройства
-    - url: ./core/tutorial-connect-pnp-device-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
+    - url: ./preview/tutorial-connect-pnp-device.md
       itemType: tutorial
       text: Подключение устройства Plug and Play IoT
     footerLink:
-      url: ./core/index.yml?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
+      url: ./preview/index.yml
       text: Дополнительные сведения
   - title: Сохранение доступа (предварительные версии функций)
     links:
-    - url: ./core/tutorial-use-device-groups-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
+    - url: ./preview/tutorial-use-device-groups.md
       itemType: how-to-guide
       text: Использование групп устройств
-    - url: ./core/howto-manage-devices-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
+    - url: ./preview/howto-manage-devices.md
       itemType: how-to-guide
       text: Управление устройствами
-    - url: ./core/howto-run-a-job.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
+    - url: ./core/howto-run-a-job.md
       itemType: concept
       text: Как выполнить задание
-    - url: ./core/howto-create-analytics-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
+    - url: ./preview/howto-create-analytics.md
       itemType: how-to-guide
       text: Анализ данных устройства
     footerLink:
-      url: ./core/index.yml?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
+      url: ./preview/index.yml
       text: Дополнительные сведения
   - title: Преобразование (предварительные версии функций)
     links:
-    - url: ./core/howto-create-telemetry-rules.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
+    - url: ./preview/tutorial-create-telemetry-rules.md
       itemType: how-to-guide
       text: Создание правила телеметрии
-    - url: ./core/howto-export-data-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
+    - url: ./preview/howto-export-data.md
       itemType: how-to-guide
       text: Настройка экспорта непрерывных данных
     footerLink:
-      url: ./core/index.yml?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
+      url: ./preview/index.yml
       text: Дополнительные сведения
 productDirectory:
   title: Начните разработку приложений с шаблонов отраслевых приложений

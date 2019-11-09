@@ -1,0 +1,155 @@
+- name: Документация по Azure IoT Central (предварительная версия функций)
+  href: index.yml
+- name: Обзор
+  items:
+    - name: Что собой представляет Azure IoT Central
+      href: overview-iot-central.md
+    - name: Параметры решения для Интернета вещей
+      href: ../core/overview-iot-options.md?toc=/azure/iot-central/preview/toc.json&bc=/azure/iot-central/preview/breadcrumb/toc.json
+    - name: Обзор пользовательского интерфейса
+      href: overview-iot-central-tour.md
+    - name: Подключение
+      href: overview-iot-central-get-connected.md
+    - name: Сохранение доступа
+      href: overview-iot-central-stay-connected.md
+    - name: Преобразование
+      href: overview-iot-central-transform.md
+- name: Краткие руководства
+  expanded: true
+  items:
+    - name: 1. Создание приложения
+      href: quick-deploy-iot-central.md
+    - name: 2. Добавление имитированного устройства
+      href: quick-create-pnp-device.md
+    - name: 3. Настройка правила и действий
+      href: quick-configure-rules.md
+    - name: 4. Мониторинг устройств
+      href: quick-monitor-devices.md
+- name: Учебники
+  items:
+    - name: Подключение
+      items:
+        - name: Создание шаблона устройства Интернета вещей и управление им
+          href: tutorial-define-iot-device-type.md
+        - name: Подключение устройства
+          href: tutorial-connect-pnp-device.md
+        - name: "Создание шаблона устройства IoT\_Edge и управление им"
+          href: tutorial-define-edge-device-type.md
+        - name: "Подключение устройства IoT\_Edge"
+          href: tutorial-add-edge-as-leaf-device.md
+    - name: Сохранение доступа
+      items:
+        - name: Создание группы устройств
+          href: tutorial-use-device-groups.md
+    - name: Преобразование
+      items:
+        - name: Создание правила
+          href: tutorial-create-telemetry-rules.md
+        - name: Использование REST API
+          href: 'https://docs.microsoft.com/learn/modules/manage-iot-central-apps-with-rest-api/'
+- name: Основные понятия
+  items:
+    - name: Архитектура
+      href: concepts-architecture.md
+    - name: Что представляют собой шаблоны приложений?
+      href: ../core/concepts-app-templates.md?toc=/azure/iot-central/preview/toc.json&bc=/azure/iot-central/preview/breadcrumb/toc.json
+- name: Руководства
+  items:
+    - name: Подключение
+      items:
+        - name: Подготовка и подключение MXChip IoT DevKit
+          href: howto-connect-devkit.md
+        - name: Подготовка и подключение устройства RuuviTag
+          href: howto-connect-ruuvi.md
+        - name: Подготовка и подключение Rigado Cascade 500
+          href: howto-connect-rigado-cascade-500.md
+    - name: Сохранение доступа
+      items:
+        - name: "Мониторинг подключения устройств с помощью Azure\_CLI"
+          href: howto-monitor-devices-azure-cli.md
+        - name: Создание версии шаблона устройства
+          href: howto-version-device-template.md
+        - name: Управление устройствами
+          href: howto-manage-devices.md
+        - name: Анализ данных устройства
+          href: howto-create-analytics.md
+        - name: Добавление плиток на панель мониторинга
+          href: ../core/howto-add-tiles-to-your-dashboard.md?toc=/azure/iot-central/preview/toc.json&bc=/azure/iot-central/preview/breadcrumb/toc.json
+        - name: Создание собственных панелей мониторинга Azure IoT Central
+          href: ../core/howto-create-personal-dashboards.md?toc=/azure/iot-central/preview/toc.json&bc=/azure/iot-central/preview/breadcrumb/toc.json
+        - name: Выполнение задания
+          href: ../core/howto-run-a-job.md?toc=/azure/iot-central/preview/toc.json&bc=/azure/iot-central/preview/breadcrumb/toc.json
+        - name: Создание версии шаблона устройства
+          href: howto-version-device-template.md
+    - name: Преобразование
+      items:
+        - name: Настройка экспорта непрерывных данных
+          href: howto-export-data.md
+        - name: Создание действий веб-перехватчиков на основе правил
+          href: howto-create-webhooks.md
+        - name: Подключение групп действий Azure Monitor на основе правил
+          href: howto-use-action-groups.md
+        - name: Создание настраиваемых правил
+          href: howto-create-custom-rules.md
+        - name: Создание пользовательских решений аналитики с помощью Databricks
+          href: howto-create-custom-analytics.md
+    - name: Администрирование
+      items:
+        - name: Управление приложением
+          items:
+            - name: Изменение параметров приложения
+              href: howto-administer.md
+            - name: Управление пользователями и ролями
+              href: howto-manage-users-roles.md
+            - name: Управление счетом
+              href: howto-view-bill.md
+            - name: Настройка пользовательского интерфейса приложения
+              href: howto-customize-ui.md
+            - name: Экспорт приложения
+              href: howto-use-app-templates.md
+        - name: Управление с помощью других решений
+          items:
+            - name: Управление с помощью портала Azure
+              href: ../core/howto-manage-iot-central-from-portal.md?toc=/azure/iot-central/preview/toc.json&bc=/azure/iot-central/preview/breadcrumb/toc.json
+            - name: Управление с помощью Azure CLI
+              href: ../core/howto-manage-iot-central-from-cli.md?toc=/azure/iot-central/preview/toc.json&bc=/azure/iot-central/preview/breadcrumb/toc.json
+            - name: Управление с помощью Azure PowerShell
+              href: ../core/howto-manage-iot-central-from-powershell.md?toc=/azure/iot-central/preview/toc.json&bc=/azure/iot-central/preview/breadcrumb/toc.json
+            - name: Управление с портала CSP
+              href: ../core/howto-create-and-manage-applications-csp.md?toc=/azure/iot-central/preview/toc.json&bc=/azure/iot-central/preview/breadcrumb/toc.json
+        - name: Настройка приложения
+          items:
+            - name: Управление личными настройками
+              href: ../core/howto-manage-preferences.md?toc=/azure/iot-central/preview/toc.json&bc=/azure/iot-central/preview/breadcrumb/toc.json
+            - name: Переключение чата в реальном времени
+              href: ../core/howto-show-hide-chat.md?toc=/azure/iot-central/preview/toc.json&bc=/azure/iot-central/preview/breadcrumb/toc.json
+- name: Сопутствующие материалы
+  items:
+    - name: Службы платформы
+      items:
+        - name: Центр Интернета вещей
+          href: /azure/iot-hub
+        - name: IoT Plug and Play
+          href: /azure/iot-pnp
+        - name: Служба подготовки устройств к добавлению в Центр Интернета вещей
+          href: /azure/iot-dps
+        - name: Службы на основе определения местоположения
+          href: /azure/location-based-services
+        - name: Пакеты SDK службы
+          href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks'
+        - name: Аналитика временных рядов
+          href: /azure/time-series-insights
+    - name: IoT Edge
+      items:
+        - name: Azure IoT Edge
+          href: /azure/iot-edge
+        - name: Пакеты SDK для устройств Интернета вещей
+          href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks'
+- name: Ресурсы
+  items:
+    - name: REST API
+      href: 'https://docs.microsoft.com/rest/api/iotcentral/'
+    - name: Запросы данных клиентов
+      href: ../core/iot-central-customer-data-requests.md?toc=/azure/iot-central/preview/toc.json&bc=/azure/iot-central/preview/breadcrumb/toc.json
+    - name: Поддерживаемые браузеры
+      href: ../core/iot-central-supported-browsers.md?toc=/azure/iot-central/preview/toc.json&bc=/azure/iot-central/preview/breadcrumb/toc.json

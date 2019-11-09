@@ -12,12 +12,12 @@ metadata:
   title: Документация по Персонализатору
   titleSuffix: Azure Cognitive Services
   description: Персонализатор Azure — это облачная служба API, с помощью которой приложение максимально удобный режим работы для своих пользователей, изучая их поведение в реальном времени.
-  ms.openlocfilehash: 19736d881400a311964920f5669a0e9423891f9e
-  ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+  ms.openlocfilehash: d71f5f673a3008f13f7bb762fc48a687c0cf0ddb
+  ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73604203"
+  ms.lasthandoff: 11/09/2019
+  ms.locfileid: "73889260"
 landingContent:
 - title: Сведения о Персонализаторе
   linkLists:
@@ -66,7 +66,7 @@ landingContent:
     - text: Пакет NuGet
       url: https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Personalizer/0.8.0-preview
     - text: Справочная документация по NuGet
-      url: https://docs.microsoft.com/en-us/dotnet/api/microsoft.azure.cognitiveservices.personalizer?view=azure-dotnet-preview&viewFallbackFrom=azure-dotnet
+      url: https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.personalizer?view=azure-dotnet-preview&viewFallbackFrom=azure-dotnet
   - linkListType: get-started
     links:
     - text: Разработка цикла Персонализатора с помощью Node.js

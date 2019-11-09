@@ -5,8 +5,6 @@
   items:
     - name: Интерпретация счета
       href: billing-understand-your-bill.md
-    - name: Интерпретация счета EA
-      href: billing-understand-your-bill-ea.md
     - name: "Пояснения к счету\_— для клиентского соглашения Майкрософт"
       href: billing-mca-understand-your-bill.md
     - name: "Пояснения к счету\_— для партнерского соглашения Майкрософт"
@@ -159,6 +157,8 @@
       items:
         - name: Начало работы на портале Azure EA
           href: billing-ea-portal-get-started.md
+        - name: Интерпретация счета EA
+          href: billing-understand-your-bill-ea.md
         - name: Роли EA в Azure
           href: billing-understand-ea-roles.md
         - name: Администрирование портала Azure EA
