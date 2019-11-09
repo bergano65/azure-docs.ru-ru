@@ -1,7 +1,7 @@
 ---
 title: Часто задаваемые вопросы об API анализа текста
 titleSuffix: Azure Cognitive Services
-description: Получите ответы на часто задаваемые вопросы об API анализа текста.
+description: Найдите ответы на часто задаваемые вопросы о концепциях, коде и сценариях, связанных с API анализа текста для Azure Cognitive Services.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 02/13/2019
 ms.author: aahi
-ms.openlocfilehash: a85fa543a6b26a5ea6452ce99fb91dc1ce465db7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: aca3b0bea65923cee1bae25020058666c973922c
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60827958"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73837123"
 ---
 # <a name="frequently-asked-questions-faq-about-the-text-analytics-cognitive-service"></a>Часто задаваемые вопросы об API анализа текста (Cognitive Service)
 
@@ -51,7 +51,7 @@ ms.locfileid: "60827958"
 
 У вас есть вопрос об отсутствующей функции или компоненте? Вы можете оставить запрос или участвовать в голосовании на [веб-сайте User Voice](https://cognitive.uservoice.com/forums/555922-text-analytics).
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>Дополнительные материалы
 
  [StackOverflow: API анализа текста](https://stackoverflow.com/questions/tagged/text-analytics-api)   
  [StackOverflow: Cognitive Services](https://stackoverflow.com/questions/tagged/microsoft-cognitive)

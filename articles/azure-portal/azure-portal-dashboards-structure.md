@@ -13,12 +13,12 @@ ms.tgt_pltfrm: NA
 ms.workload: na
 ms.date: 09/01/2017
 ms.author: kfollis
-ms.openlocfilehash: dccf1550052910269efe156b999882234669d7dc
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 5933521993b598ae3758df6e2e7dbf61bf424779
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/08/2019
-ms.locfileid: "73815707"
+ms.locfileid: "73832796"
 ---
 # <a name="the-structure-of-azure-dashboards"></a>Структура панелей мониторинга Azure
 В этом документе описывается структура панели мониторинга Azure. В качестве примера используется следующая панель мониторинга Azure:
@@ -295,7 +295,7 @@ ms.locfileid: "73815707"
 
 ### <a name="the-id-property"></a>Свойство id
 
-Идентификатор ресурса Azure, в котором учитывается [соглашение об именовании ресурсов Azure](/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging). Когда портал создает панель мониторинга, он обычно выбирает идентификатор в форме GUID, однако при создании панели программным способом можно использовать любое допустимое имя. 
+Идентификатор ресурса Azure, в котором учитывается [соглашение об именовании ресурсов Azure](/azure/architecture/best-practices/resource-naming). Когда портал создает панель мониторинга, он обычно выбирает идентификатор в форме GUID, однако при создании панели программным способом можно использовать любое допустимое имя. 
 
 ### <a name="the-name-property"></a>Свойство name
 Имя является сегментом идентификатора ресурса, который не включает в себя сведения о подписке, типе ресурса или группе ресурсов. По сути, это последний сегмент идентификатора ресурса.

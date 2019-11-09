@@ -1,7 +1,7 @@
 ---
 title: Метод Translate в API перевода текстов
 titleSuffix: Azure Cognitive Services
-description: Использование метода Translate в API перевода текстов.
+description: Общие сведения о параметрах, заголовках и сообщениях текста для метода перевода API перевода текстов Cognitive Services Azure для перевода текста.
 services: cognitive-services
 author: swmachan
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 10/16/2019
 ms.author: swmachan
-ms.openlocfilehash: b809171549a8f3cbbbb6ccad1553608598afa345
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: b4daa04a4dbf87006147fb0d44d7b128a6d8ecf4
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73161719"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73835785"
 ---
 # <a name="translator-text-api-30-translate"></a>API перевода текстов 3.0: Translate
 
@@ -35,18 +35,18 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
 
 <table width="100%">
   <th width="20%">Параметр запроса</th>
-  <th>Описание</th>
+  <th>Description (Описание)</th>
   <tr>
     <td>api-version</td>
-    <td><em>Обязательный параметр.</em><br/>Версия API, запрошенная клиентом. Необходимое значение: <code>3.0</code>.</td>
+    <td><em>Обязательный параметр</em>.<br/>Версия API, запрошенная клиентом. Этот параметр должен содержать значение <code>3.0</code>.</td>
   </tr>
   <tr>
     <td>from</td>
-    <td><em>Необязательный параметр.</em><br/>Определяет язык вводимого текста. Чтобы просмотреть, какие языки доступны для перевода, выполните поиск <a href="./v3-0-languages.md">поддерживаемых языков</a>, используя область <code>translation</code>. Если параметр <code>from</code> не указан, исходный язык определяется автоматически. <br/><br/>При использовании функции <a href="https://docs.microsoft.com/azure/cognitive-services/translator/dynamic-dictionary">динамического словаря</a> необходимо использовать параметр <code>from</code>, а не автоматическое обнаружение.</td>
+    <td><em>Необязательный параметр.</em><br/>Определяет язык оригинального текста. Чтобы просмотреть, какие языки доступны для перевода, выполните поиск <a href="./v3-0-languages.md">поддерживаемых языков</a>, используя область <code>translation</code>. Если параметр <code>from</code> не указан, исходный язык определяется автоматически. <br/><br/>При использовании функции <a href="https://docs.microsoft.com/azure/cognitive-services/translator/dynamic-dictionary">динамического словаря</a> необходимо использовать параметр <code>from</code>, а не автоматическое обнаружение.</td>
   </tr>
   <tr>
     <td>значение</td>
-    <td><em>Обязательный параметр.</em><br/>Определяет язык выходного текста. Целевой язык должен быть одним из <a href="./v3-0-languages.md">поддерживаемых языков</a>, включенных в область <code>translation</code>. Например, используйте параметр <code>to=de</code>, чтобы перевести на немецкий.<br/>Вы можете одновременно переводить на различные языки, использовав этот параметр в строке запроса несколько раз. Например, используйте параметр <code>to=de&to=it</code>, чтобы перевести на немецкий и итальянский.</td>
+    <td><em>Обязательный параметр</em>.<br/>Определяет язык выходного текста. Целевой язык должен быть одним из <a href="./v3-0-languages.md">поддерживаемых языков</a>, включенных в область <code>translation</code>. Например, используйте параметр <code>to=de</code>, чтобы перевести на немецкий.<br/>Вы можете одновременно переводить на различные языки, использовав этот параметр в строке запроса несколько раз. Например, используйте параметр <code>to=de&to=it</code>, чтобы перевести на немецкий и итальянский.</td>
   </tr>
   <tr>
     <td>textType</td>
@@ -95,7 +95,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
 
 <table width="100%">
   <th width="20%">Заголовки</th>
-  <th>Описание</th>
+  <th>Description (Описание)</th>
   <tr>
     <td>Заголовки проверки подлинности</td>
     <td><em>Обязательный заголовок запроса</em>.<br/>См. <a href="https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication">описание доступных способов аутентификации</a>.</td>
@@ -137,7 +137,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
 
       * `language` — строку, которая представляет код обнаруженного языка.
 
-      * `score` — значение с плавающей запятой, обозначающее достоверность результата. Может принимать значения от нуля до единицы, где низкая оценка обозначает низкую достоверность.
+      * `score` — значение с плавающей запятой, обозначающее достоверность результата. Может принимать ноль или единицу, где низкая оценка обозначает низкую достоверность.
 
     Свойство `detectedLanguage` присутствует в объекте результатов только при запросе автоматического распознавания языка.
 
@@ -173,7 +173,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
 
 <table width="100%">
   <th width="20%">Заголовки</th>
-  <th>Описание</th>
+  <th>Description (Описание)</th>
     <tr>
     <td>X-RequestId</td>
     <td>Сформированное службой значение для идентификации запроса. Оно используется для устранения неполадок.</td>
@@ -190,7 +190,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
 
 <table width="100%">
   <th width="20%">Код состояния</th>
-  <th>Описание</th>
+  <th>Description (Описание)</th>
   <tr>
     <td>200</td>
     <td>Успешно.</td>
@@ -217,11 +217,11 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
   </tr>
   <tr>
     <td>500</td>
-    <td>Произошла непредвиденная ошибка. Если ошибка сохраняется, передайте отчет о ней, включив следующие данные: дата и время сбоя, идентификатор запроса из заголовка ответа <code>X-RequestId</code> и идентификатор клиента из заголовка запроса <code>X-ClientTraceId</code>.</td>
+    <td>Произошла непредвиденная ошибка. Если ошибка повторяется, сообщите о ней, указав следующие данные: дата и время сбоя, идентификатор запроса из заголовка ответа <code>X-RequestId</code> и идентификатор клиента из заголовка запроса <code>X-ClientTraceId</code>.</td>
   </tr>
   <tr>
     <td>503</td>
-    <td>Сервер временно недоступен. Повторите запрос. Если ошибка сохраняется, передайте отчет о ней, включив следующие данные: дата и время сбоя, идентификатор запроса из заголовка ответа <code>X-RequestId</code> и идентификатор клиента из заголовка запроса <code>X-ClientTraceId</code>.</td>
+    <td>Сервер временно недоступен. Повторите запрос. Если ошибка повторяется, сообщите о ней, указав следующие данные: дата и время сбоя, идентификатор запроса из заголовка ответа <code>X-RequestId</code> и идентификатор клиента из заголовка запроса <code>X-ClientTraceId</code>.</td>
   </tr>
 </table> 
 
@@ -354,7 +354,7 @@ curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-versio
 
 <table width="100%">
   <th width="20%">ProfanityAction</th>
-  <th>Действия</th>
+  <th>Действие</th>
   <tr>
     <td><code>NoAction</code></td>
     <td>Это поведение по умолчанию. Ненормативная лексика оригинального текста сохранится в переводе.<br/><br/>
@@ -381,7 +381,7 @@ curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-versio
   </tr>
 </table> 
 
-Пример.
+Например:
 
 ```curl
 curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=de&profanityAction=Marked" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json; charset=UTF-8" -d "[{'Text':'This is a freaking good idea.'}]"

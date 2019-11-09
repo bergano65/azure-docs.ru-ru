@@ -9,14 +9,14 @@ services: cognitive-services
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 11/04/2019
+ms.date: 11/07/2019
 ms.author: diberry
-ms.openlocfilehash: 0788df1c05d70c01d4de7f7a6ba62a476252f75a
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 2e32d0f4906dea69d6eab27faca4a2e41106ed73
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73498923"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73836838"
 ---
 # <a name="whats-new-in-language-understanding"></a>Новые возможности Language Understanding
 
@@ -31,11 +31,13 @@ ms.locfileid: "73498923"
     * Возможность импорта и экспорта приложений с помощью формата Lu ([лудовн](https://github.com/microsoft/botbuilder-tools/tree/master/packages/Ludown)). Это создает условия способ эффективного процесса CI/CD. 
 * Расширение языка
     * [Арабский и хинди](luis-language-support.md) в общедоступной предварительной версии.
-* Создание моделей
+* Предварительно созданные модели
     * Предварительно [созданные домены](luis-reference-prebuilt-domains.md) теперь общедоступны (GA)
     * Японские предварительно [подготовленные сущности](luis-reference-prebuilt-entities.md#japanese-entity-support) — возраст, валюта, число, процент не поддерживаются в версии 3.
     * Предустановленный итальянский набор [сущностей](luis-reference-prebuilt-entities.md#italian-entity-support) (Age), валюта, размер, число, разрешение в процентах изменено с v2.
-* Улучшите взаимодействие с пользователем на [портале Preview.Luis.AI](https://preview.luis.ai) , чтобы обеспечить создание и отладку сложных моделей.
+* Улучшите взаимодействие с пользователем на [портале Preview.Luis.AI](https://preview.luis.ai) , чтобы обеспечить создание и отладку сложных моделей. Попробуйте ознакомиться с учебниками по порталу предварительной версии:
+    * [Только для целей](tutorial-intents-only.md)
+    * [Делимыми сущность, занятая компьютером](tutorial-machine-learned-entity.md) 
 * Дополнительные возможности языкового понимания — [Создание сложных языковых моделей](luis-concept-entity-types.md) с меньшими усилиями. 
 * Определение функций машинного обучения на уровне модели и включение моделей для использования в качестве сигналов для другой модели, например использование сущностей в качестве функций для целей и других сущностей.
 * Новые, развернутые [ограничения](luis-boundaries.md) — более высокие значения для списков фраз и итоговых фраз, Новая модель — ограничения функций

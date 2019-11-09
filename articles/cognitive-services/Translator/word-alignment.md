@@ -1,7 +1,7 @@
 ---
 title: Сопоставлении слов с помощью API перевода текстов
 titleSuffix: Azure Cognitive Services
-description: Получение сведений о выравнивании слов из API перевода текстов.
+description: Чтобы получить сведения о сопоставлении, следует использовать метод Translate, включив необязательный параметр includeAlignment.
 services: cognitive-services
 author: swmachan
 manager: nitinme
@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 06/04/2019
 ms.author: swmachan
 ms.custom: seodec18
-ms.openlocfilehash: 5818d3f4d2ebed7cbcd46aadf538640914d3b7d4
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: dd4ff1e39c062910f4627973c801dc3c51f345e5
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68594786"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73837224"
 ---
 # <a name="how-to-receive-word-alignment-information"></a>Как получить сведения о сопоставлении слов
 
@@ -26,7 +26,7 @@ ms.locfileid: "68594786"
 ## <a name="alignment-information-format"></a>Формат сведений о сопоставлении
 Сведения о сопоставлении возвращаются в виде строкового значения в следующем формате для каждого слова источника. Сведения о каждом слове разделяются пробелом, в том числе в языках (системах письменности) без разделения пробелами, таких как китайский:
 
-[[SourceTextStartIndex]: [SourceTextEndIndex]–[TgtTextStartIndex]:[TgtTextEndIndex]] *
+[[SourceTextStartIndex]:[SourceTextEndIndex]–[TgtTextStartIndex]:[TgtTextEndIndex]] *
 
 Пример строки со сведениями о сопоставлении: 0:0-7:10 1:2-11:20 3:4-0:3 3:4-4:6 5:5-21:21.
 

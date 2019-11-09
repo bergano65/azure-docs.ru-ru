@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 09/13/2019
 ms.author: rajanaki
-ms.openlocfilehash: 68881d57f251d2f26996b2a837780106326ec1d3
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: c126d72720c16d4ba869156e86a6e60110b2c31b
+ms.sourcegitcommit: 16c5374d7bcb086e417802b72d9383f8e65b24a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73492286"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73847477"
 ---
 # <a name="upcoming-deprecation-of-dr-between-customer-owned-sites-using-hyper-v-and-between-sites-managed-by-scvmm-to-azure"></a>Предстоящие нерекомендуемые средства аварийного восстановления между клиентскими сайтами с помощью Hyper-V и между сайтами, управляемыми SCVMM, в Azure
 
@@ -43,11 +43,11 @@ ms.locfileid: "73492286"
 - Выберите, чтобы [начать использовать Azure в качестве цели аварийного восстановления для виртуальных машин на узлах Hyper-V](hyper-v-azure-tutorial.md).
 
 > [!IMPORTANT]
-> Обратите внимание, что ваша локальная среда по-прежнему может иметь СКВМММ, но вы настроите ASR со ссылками только на узлы Hyper-V.
+> Обратите внимание, что локальная среда по-прежнему может иметь SCVMM, но вы настроите ASR со ссылками только на узлы Hyper-V.
 
 - Выберите продолжение репликации "сеть — сеть", но используя базовое [решение реплики Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/set-up-hyper-v-replica), но не сможет управлять КОНФИГУРАЦИЯми аварийного восстановления с помощью Azure Site Recovery в портал Azure. 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Запланируйте нерекомендуемость и выберите альтернативный вариант, который лучше всего подходит для вашей инфраструктуры и бизнеса. Если у вас есть запросы, касающиеся этого, обратитесь к служба поддержки Майкрософт
 

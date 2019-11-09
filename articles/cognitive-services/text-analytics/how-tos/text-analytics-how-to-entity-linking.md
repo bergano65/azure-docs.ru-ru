@@ -1,7 +1,7 @@
 ---
 title: Использование распознавания сущностей с помощью API анализа текста
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как извлечь сущности, используя REST API анализа текста.
+description: Узнайте, как идентифицировать и устранить неоднозначность удостоверения сущности, найденной в тексте с помощью REST API Анализ текста.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: article
 ms.date: 10/21/2019
 ms.author: aahi
-ms.openlocfilehash: e51e5945df8b08ec81db0c85416b31b3ec788ffd
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: b139f473bb20dbecde75c3b08dd92371849f096e
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73488628"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73835662"
 ---
 # <a name="how-to-use-named-entity-recognition-in-text-analytics"></a>Как использовать распознавание именованных сущностей в Анализ текста
 
@@ -117,7 +117,7 @@ NER
 | DateTime      | Диапазон дат     | "с 2 по 5 мая"    |
 | DateTime      | Диапазон времени     | "6:00–17:00"     |
 | DateTime      | Длительность      | "1 минута и 45 секунд"   |
-| DateTime      | Набор           | "каждый вторник"     |
+| DateTime      | Set           | "каждый вторник"     |
 | URL-адрес           | Недоступно\*         | "https:\//www.bing.com"    |
 | Email         | Недоступно\*         | "support@contoso.com" |
 

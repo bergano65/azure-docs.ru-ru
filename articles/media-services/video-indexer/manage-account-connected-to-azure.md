@@ -1,6 +1,6 @@
 ---
 title: Управление учетной записью Индексатора видео
-titlesuffix: Azure Media Services
+titleSuffix: Azure Media Services
 description: В этой статье объясняется, как управлять учетной записью Индексатора видео, подключенной к Azure.
 services: media-services
 author: Juliako
@@ -10,12 +10,12 @@ ms.subservice: video-indexer
 ms.topic: article
 ms.date: 05/15/2019
 ms.author: juliako
-ms.openlocfilehash: 37aef7c0ae06aefc69b8a72a80c8ade3951e8b0d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a8221cdcf7afe82ee969f645d7f459c69519711d
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65799515"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73838983"
 ---
 # <a name="manage-a-video-indexer-account-connected-to-azure"></a>Управление учетной записью Индексатора видео, подключенной к Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "65799515"
 > [!NOTE]
 > Чтобы вносить изменения в конфигурацию учетной записи, описанные в этой статье, вам необходимо быть владельцем учетной записи Индексатора видео.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Подключите свою учетную запись Индексатора видео к Azure, как описано в статье [Создание учетной записи Индексатора видео, подключенной к Azure](connect-to-azure.md). 
 
@@ -62,7 +62,7 @@ ms.locfileid: "65799515"
 
 Если для вашей учетной записи необходима корректировка, вы увидите соответствующие ошибки и предупреждения о конфигурации учетной записи на странице **Параметры**. Сообщения содержат ссылки на точные места на портале Azure, где необходимо внести изменения. В этом разделе содержатся дополнительные сведения о сообщениях про ошибки и предупреждающих сообщениях.
 
-* Сетка событий Azure
+* Сетка событий
 
     Вам необходимо зарегистрировать поставщик ресурсов Сетки событий с помощью портала Azure. На [портале Azure](https://portal.azure.com/) последовательно выберите **Подписки** > [подписка] > **ResourceProviders** > **Microsoft.EventGrid**. Если не отображается состояние **Зарегистрировано**, щелкните **Зарегистрировать**. Регистрация займет несколько минут. 
 

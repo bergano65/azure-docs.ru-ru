@@ -5,16 +5,18 @@ author: uhabiba04
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: v-umha
-ms.openlocfilehash: 598248a0efb3322a9c22a5e38e4986f5ba5142ab
-ms.sourcegitcommit: 018e3b40e212915ed7a77258ac2a8e3a660aaef8
+ms.openlocfilehash: 19d709a2eb0af5bdb9d40a2bce96c5716ce3c6f6
+ms.sourcegitcommit: 16c5374d7bcb086e417802b72d9383f8e65b24a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73798457"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73847416"
 ---
 # <a name="get-drone-imagery-from-drone-partners"></a>Получение образов помощью Дронов от партнеров помощью Дронов
 
-В этой статье описывается, как можно перенести данные орсомосаик из партнеров помощью Дронов Images в центр данных Фармбеатс Azure. В настоящее время поддерживаются следующие партнеры по образам:  
+В этой статье описывается, как можно перенести данные орсомосаик из партнеров помощью Дронов Images в центр данных Фармбеатс Azure. Орсомосаик — это аэрофотосъемки иллюстрация или изображение, которое является геометрически исправленным и сшивка из данных, собираемых помощью дронов.
+
+В настоящее время поддерживаются следующие партнеры по образам.
 
   ![Перебивает ферму проекта](./media/get-drone-imagery-from-drone-partner/drone-partner-1.png)
 

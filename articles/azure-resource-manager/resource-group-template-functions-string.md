@@ -6,12 +6,12 @@ ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 07/31/2019
 ms.author: tomfitz
-ms.openlocfilehash: 93f17ea9d2ffa33d1dca9da3eb60f75165e8ed61
-ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
+ms.openlocfilehash: d5c95e964740978af0db8db233c65adb7eb074f0
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2019
-ms.locfileid: "71973329"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73834342"
 ---
 # <a name="string-functions-for-azure-resource-manager-templates"></a>Строковые функции для шаблонов Azure Resource Manager
 
@@ -32,7 +32,7 @@ ms.locfileid: "71973329"
 * [indexOf](#indexof)
 * [last](#last)
 * [lastIndexOf](#lastindexof)
-* [length](#length)
+* [длина](#length)
 * [newGuid](#newguid)
 * [padLeft](#padleft)
 * [replace](#replace)
@@ -59,7 +59,7 @@ ms.locfileid: "71973329"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательное значение | Type | Описание |
+| Параметр | Обязательно | Тип | Description (Описание) |
 |:--- |:--- |:--- |:--- |
 | входная_строка |Да |строка |Значение, которое нужно вернуть в кодировке base64. |
 
@@ -110,11 +110,11 @@ ms.locfileid: "71973329"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Название | Type | Значение |
+| Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| base64Output | Строка, | b25lLCB0d28sIHRocmVl |
-| toStringOutput | Строка, | one, two, three |
-| toJsonOutput | Object | {"one": "a", "two": "b"} |
+| base64Output | string | b25lLCB0d28sIHRocmVl |
+| toStringOutput | string | one, two, three |
+| toJsonOutput | Объект | {"one": "a", "two": "b"} |
 
 ## <a name="base64tojson"></a>base64ToJson
 
@@ -124,7 +124,7 @@ ms.locfileid: "71973329"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательное значение | Type | Описание |
+| Параметр | Обязательно | Тип | Description (Описание) |
 |:--- |:--- |:--- |:--- |
 | base64Value |Да |строка |Представление в кодировке base64, которое необходимо преобразовать в объект JSON. |
 
@@ -175,11 +175,11 @@ ms.locfileid: "71973329"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Название | Type | Значение |
+| Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| base64Output | Строка, | b25lLCB0d28sIHRocmVl |
-| toStringOutput | Строка, | one, two, three |
-| toJsonOutput | Object | {"one": "a", "two": "b"} |
+| base64Output | string | b25lLCB0d28sIHRocmVl |
+| toStringOutput | string | one, two, three |
+| toJsonOutput | Объект | {"one": "a", "two": "b"} |
 
 ## <a name="base64tostring"></a>base64ToString
 
@@ -189,7 +189,7 @@ ms.locfileid: "71973329"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательное значение | Type | Описание |
+| Параметр | Обязательно | Тип | Description (Описание) |
 |:--- |:--- |:--- |:--- |
 | base64Value |Да |строка |Представление в кодировке base64, которое необходимо преобразовать в строку. |
 
@@ -240,11 +240,11 @@ ms.locfileid: "71973329"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Название | Type | Значение |
+| Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| base64Output | Строка, | b25lLCB0d28sIHRocmVl |
-| toStringOutput | Строка, | one, two, three |
-| toJsonOutput | Object | {"one": "a", "two": "b"} |
+| base64Output | string | b25lLCB0d28sIHRocmVl |
+| toStringOutput | string | one, two, three |
+| toJsonOutput | Объект | {"one": "a", "two": "b"} |
 
 ## <a name="concat"></a>concat
 
@@ -254,7 +254,7 @@ ms.locfileid: "71973329"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательное значение | Type | Описание |
+| Параметр | Обязательно | Тип | Description (Описание) |
 |:--- |:--- |:--- |:--- |
 | arg1 |Да |строка или массив |Первое значение для сцепки. |
 | дополнительные аргументы |Нет |строка |Дополнительные значения в последовательном порядке для сцепки. |
@@ -288,9 +288,9 @@ ms.locfileid: "71973329"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Название | Type | Значение |
+| Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| concatOutput | Строка, | prefix-5yj4yjf5mbg72 |
+| concatOutput | string | prefix-5yj4yjf5mbg72 |
 
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/concat-array.json) показано, как объединить два массива.
 
@@ -329,11 +329,11 @@ ms.locfileid: "71973329"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Название | Type | Значение |
+| Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| return | Array | ["1-1", "1-2", "1-3", "2-1", "2-2", "2-3"] |
+| return | Массив, | ["1-1", "1-2", "1-3", "2-1", "2-2", "2-3"] |
 
-## <a name="contains"></a>содержит
+## <a name="contains"></a>contains
 
 `contains (container, itemToFind)`
 
@@ -341,7 +341,7 @@ ms.locfileid: "71973329"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательное значение | Type | Описание |
+| Параметр | Обязательно | Тип | Description (Описание) |
 |:--- |:--- |:--- |:--- |
 | container |Да |массив, объект или строка |Значение, содержащее значение, которое необходимо найти. |
 | itemToFind |Да |строка или целое число |Значение, которое необходимо найти. |
@@ -405,13 +405,13 @@ ms.locfileid: "71973329"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Название | Type | Значение |
+| Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| stringTrue | Bool | True |
+| stringTrue | Bool | Да |
 | stringFalse | Bool | Ложь |
-| objectTrue | Bool | True |
+| objectTrue | Bool | Да |
 | objectFalse | Bool | Ложь |
-| arrayTrue | Bool | True |
+| arrayTrue | Bool | Да |
 | arrayFalse | Bool | Ложь |
 
 ## <a name="datauri"></a>dataUri
@@ -422,7 +422,7 @@ ms.locfileid: "71973329"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательное значение | Type | Описание |
+| Параметр | Обязательно | Тип | Description (Описание) |
 |:--- |:--- |:--- |:--- |
 | stringToConvert |Да |строка |Значение, которое необходимо преобразовать в URI данных. |
 
@@ -464,10 +464,10 @@ ms.locfileid: "71973329"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Название | Type | Значение |
+| Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| dataUriOutput | Строка, | data:text/plain;charset=utf8;base64,SGVsbG8= |
-| toStringOutput | Строка, | Привет, мир! |
+| dataUriOutput | string | data:text/plain;charset=utf8;base64,SGVsbG8= |
+| toStringOutput | string | Привет, мир! |
 
 ## <a name="datauritostring"></a>dataUriToString
 
@@ -477,7 +477,7 @@ ms.locfileid: "71973329"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательное значение | Type | Описание |
+| Параметр | Обязательно | Тип | Description (Описание) |
 |:--- |:--- |:--- |:--- |
 | dataUriToConvert |Да |строка |Значение URI данных, которое необходимо преобразовать. |
 
@@ -519,10 +519,10 @@ ms.locfileid: "71973329"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Название | Type | Значение |
+| Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| dataUriOutput | Строка, | data:text/plain;charset=utf8;base64,SGVsbG8= |
-| toStringOutput | Строка, | Привет, мир! |
+| dataUriOutput | string | data:text/plain;charset=utf8;base64,SGVsbG8= |
+| toStringOutput | string | Привет, мир! |
 
 ## <a name="empty"></a>empty
 
@@ -532,7 +532,7 @@ ms.locfileid: "71973329"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательное значение | Type | Описание |
+| Параметр | Обязательно | Тип | Description (Описание) |
 |:--- |:--- |:--- |:--- |
 | itemToTest |Да |массив, объект или строка |Значение, которое необходимо проверить, если оно пустое. |
 
@@ -583,11 +583,11 @@ ms.locfileid: "71973329"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Название | Type | Значение |
+| Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| arrayEmpty | Bool | True |
-| objectEmpty | Bool | True |
-| stringEmpty | Bool | True |
+| arrayEmpty | Bool | Да |
+| objectEmpty | Bool | Да |
+| stringEmpty | Bool | Да |
 
 ## <a name="endswith"></a>endsWith
 
@@ -597,7 +597,7 @@ ms.locfileid: "71973329"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательное значение | Type | Описание |
+| Параметр | Обязательно | Тип | Description (Описание) |
 |:--- |:--- |:--- |:--- |
 | stringToSearch |Да |строка |Значение, содержащее элемент, который необходимо найти. |
 | stringToFind |Да |строка |Значение, которое необходимо найти. |
@@ -646,13 +646,13 @@ ms.locfileid: "71973329"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Название | Type | Значение |
+| Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| startsTrue | Bool | True |
+| startsTrue | Bool | Да |
 | startsCapTrue | Bool | Да |
 | startsFalse | Bool | Ложь |
-| endsTrue | Bool | True |
-| endsCapTrue | Bool | True |
+| endsTrue | Bool | Да |
+| endsCapTrue | Bool | Да |
 | endsFalse | Bool | Ложь |
 
 ## <a name="first"></a>first
@@ -663,7 +663,7 @@ ms.locfileid: "71973329"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательное значение | Type | Описание |
+| Параметр | Обязательно | Тип | Description (Описание) |
 |:--- |:--- |:--- |:--- |
 | arg1 |Да |массив или строка |Значение, из которого необходимо извлечь первый элемент или знак. |
 
@@ -702,10 +702,10 @@ ms.locfileid: "71973329"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Название | Type | Значение |
+| Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| arrayOutput | Строка, | one |
-| stringOutput | Строка, | O |
+| arrayOutput | string | one |
+| stringOutput | string | O |
 
 ## <a name="format"></a>format
 
@@ -715,7 +715,7 @@ ms.locfileid: "71973329"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательное значение | Type | Описание |
+| Параметр | Обязательно | Тип | Description (Описание) |
 |:--- |:--- |:--- |:--- |
 | formatString | Да | строка | Строка составного формата. |
 | arg1 | Да | Строка, целое число или логическое значение | Значение, включаемое в отформатированную строку. |
@@ -760,9 +760,9 @@ ms.locfileid: "71973329"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Название | Type | Значение |
+| Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| форматтест | Строка, | Привет, пользователь. Форматированное число: 8 175 133 |
+| форматтест | string | Привет, пользователь. Форматированное число: 8 175 133 |
 
 ## <a name="guid"></a>guid
 
@@ -772,7 +772,7 @@ ms.locfileid: "71973329"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательное значение | Type | Описание |
+| Параметр | Обязательно | Тип | Description (Описание) |
 |:--- |:--- |:--- |:--- |
 | baseString |Да |строка |Значение, используемое в хэш-функции для создания GUID. |
 | Дополнительные параметры (если необходимы) |Нет |строка |Можно добавить столько строк, сколько необходимо для создания значения, которое задает уровень уникальности. |
@@ -843,7 +843,7 @@ ms.locfileid: "71973329"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательное значение | Type | Описание |
+| Параметр | Обязательно | Тип | Description (Описание) |
 |:--- |:--- |:--- |:--- |
 | stringToSearch |Да |строка |Значение, содержащее элемент, который необходимо найти. |
 | stringToFind |Да |строка |Значение, которое необходимо найти. |
@@ -888,13 +888,13 @@ ms.locfileid: "71973329"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Название | Type | Значение |
+| Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| firstT | int | 0 |
-| lastT | int | 3 |
-| firstString | int | 2 |
-| lastString | int | 0 |
-| notFound | int | -1 |
+| firstT | Int | 0 |
+| lastT | Int | 3 |
+| firstString | Int | 2 |
+| lastString | Int | 0 |
+| notFound | Int | -1 |
 
 ## <a name="last"></a>last
 
@@ -904,7 +904,7 @@ ms.locfileid: "71973329"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательное значение | Type | Описание |
+| Параметр | Обязательно | Тип | Description (Описание) |
 |:--- |:--- |:--- |:--- |
 | arg1 |Да |массив или строка |Значение, из которого необходимо извлечь последний элемент или знак. |
 
@@ -943,10 +943,10 @@ ms.locfileid: "71973329"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Название | Type | Значение |
+| Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| arrayOutput | Строка, | three |
-| stringOutput | Строка, | e |
+| arrayOutput | string | three |
+| stringOutput | string | e |
 
 ## <a name="lastindexof"></a>lastIndexOf
 
@@ -956,7 +956,7 @@ ms.locfileid: "71973329"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательное значение | Type | Описание |
+| Параметр | Обязательно | Тип | Description (Описание) |
 |:--- |:--- |:--- |:--- |
 | stringToSearch |Да |строка |Значение, содержащее элемент, который необходимо найти. |
 | stringToFind |Да |строка |Значение, которое необходимо найти. |
@@ -1001,15 +1001,15 @@ ms.locfileid: "71973329"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Название | Type | Значение |
+| Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| firstT | int | 0 |
-| lastT | int | 3 |
-| firstString | int | 2 |
-| lastString | int | 0 |
-| notFound | int | -1 |
+| firstT | Int | 0 |
+| lastT | Int | 3 |
+| firstString | Int | 2 |
+| lastString | Int | 0 |
+| notFound | Int | -1 |
 
-## <a name="length"></a>length
+## <a name="length"></a>длина
 
 `length(string)`
 
@@ -1017,7 +1017,7 @@ ms.locfileid: "71973329"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательное значение | Type | Описание |
+| Параметр | Обязательно | Тип | Description (Описание) |
 |:--- |:--- |:--- |:--- |
 | arg1 |Да |массив, строка или объект |Массив, используемый для получения числа элементов, строки, используемой для получения числа символов, или объекта, используемого для получения числа свойств корневого уровня. |
 
@@ -1079,11 +1079,11 @@ ms.locfileid: "71973329"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Название | Type | Значение |
+| Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| arrayLength | int | 3 |
-| stringLength | int | 13 |
-| обжектленгс | int | 4 |
+| arrayLength | Int | 3 |
+| stringLength | Int | 13. |
+| обжектленгс | Int | 4\. |
 
 ## <a name="newguid"></a>newGuid
 
@@ -1134,7 +1134,7 @@ ms.locfileid: "71973329"
 
 Выходные данные предыдущего примера зависят от каждого развертывания, но будут выглядеть примерно так:
 
-| Название | Type | Значение |
+| Имя | Тип | Значение |
 | ---- | ---- | ----- |
 | гуидаутпут | строка | b76a51fc-bd72-4a77-b9a2-3c29e7d2e551 |
 
@@ -1177,7 +1177,7 @@ ms.locfileid: "71973329"
 
 Выходные данные предыдущего примера зависят от каждого развертывания, но будут выглядеть примерно так:
 
-| Название | Type | Значение |
+| Имя | Тип | Значение |
 | ---- | ---- | ----- |
 | намеаутпут | строка | storagenziwvyru7uxie |
 
@@ -1190,7 +1190,7 @@ ms.locfileid: "71973329"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательное значение | Type | Описание |
+| Параметр | Обязательно | Тип | Description (Описание) |
 |:--- |:--- |:--- |:--- |
 | значение_для_заполнения |Да |строка или целое число |Значение, выравниваемое по правому краю. |
 | общая_длина |Да |int |Общее число символов в возвращаемой строке. |
@@ -1228,9 +1228,9 @@ ms.locfileid: "71973329"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Название | Type | Значение |
+| Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| stringOutput | Строка, | 0000000123 |
+| stringOutput | string | 0000000123 |
 
 ## <a name="replace"></a>replace
 
@@ -1240,7 +1240,7 @@ ms.locfileid: "71973329"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательное значение | Type | Описание |
+| Параметр | Обязательно | Тип | Description (Описание) |
 |:--- |:--- |:--- |:--- |
 | исходная_строка |Да |строка |Значение, в котором все экземпляры одной строки заменены другой строкой. |
 | oldString |Да |строка |Строка, которая удаляется из исходной строки. |
@@ -1280,12 +1280,12 @@ ms.locfileid: "71973329"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Название | Type | Значение |
+| Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| firstOutput | Строка, | 1231231234 |
-| secondOutput | Строка, | 123-123-xxxx |
+| firstOutput | string | 1231231234 |
+| secondOutput | string | 123-123-xxxx |
 
-## <a name="skip"></a>пропустить
+## <a name="skip"></a>skip
 
 `skip(originalValue, numberToSkip)`
 
@@ -1293,7 +1293,7 @@ ms.locfileid: "71973329"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательное значение | Type | Описание |
+| Параметр | Обязательно | Тип | Description (Описание) |
 |:--- |:--- |:--- |:--- |
 | originalValue |Да |массив или строка |Массив или строка, используемые для пропуска. |
 | numberToSkip |Да |int |Число элементов или знаков, которые необходимо пропустить. Если это значение меньше или равно 0, то возвращаются все элементы или знаки в значении. Если он превышает длину массива или строки, возвращается пустой массив или строка. |
@@ -1348,10 +1348,10 @@ ms.locfileid: "71973329"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Название | Type | Значение |
+| Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| arrayOutput | Array | ["three"] |
-| stringOutput | Строка, | two three |
+| arrayOutput | Массив, | ["three"] |
+| stringOutput | string | two three |
 
 ## <a name="split"></a>split
 
@@ -1361,7 +1361,7 @@ ms.locfileid: "71973329"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательное значение | Type | Описание |
+| Параметр | Обязательно | Тип | Description (Описание) |
 |:--- |:--- |:--- |:--- |
 | входная_строка |Да |строка |Строка для разделения. |
 | delimiter |Да |строка или массив строк |Разделитель для разбиения строки. |
@@ -1407,10 +1407,10 @@ ms.locfileid: "71973329"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Название | Type | Значение |
+| Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| firstOutput | Array | ["one", "two", "three"] |
-| secondOutput | Array | ["one", "two", "three"] |
+| firstOutput | Массив, | ["one", "two", "three"] |
+| secondOutput | Массив, | ["one", "two", "three"] |
 
 ## <a name="startswith"></a>startsWith
 
@@ -1420,7 +1420,7 @@ ms.locfileid: "71973329"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательное значение | Type | Описание |
+| Параметр | Обязательно | Тип | Description (Описание) |
 |:--- |:--- |:--- |:--- |
 | stringToSearch |Да |строка |Значение, содержащее элемент, который необходимо найти. |
 | stringToFind |Да |строка |Значение, которое необходимо найти. |
@@ -1469,13 +1469,13 @@ ms.locfileid: "71973329"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Название | Type | Значение |
+| Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| startsTrue | Bool | True |
+| startsTrue | Bool | Да |
 | startsCapTrue | Bool | Да |
 | startsFalse | Bool | Ложь |
-| endsTrue | Bool | True |
-| endsCapTrue | Bool | True |
+| endsTrue | Bool | Да |
+| endsCapTrue | Bool | Да |
 | endsFalse | Bool | Ложь |
 
 ## <a name="string"></a>строка
@@ -1486,9 +1486,9 @@ ms.locfileid: "71973329"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательное значение | Type | Описание |
+| Параметр | Обязательно | Тип | Description (Описание) |
 |:--- |:--- |:--- |:--- |
-| valueToConvert |Да | Any |Значение, которое необходимо преобразовать в строку. Можно преобразовать любой тип значения, включая объекты и массивы. |
+| valueToConvert |Да | Любой |Значение, которое необходимо преобразовать в строку. Можно преобразовать любой тип значения, включая объекты и массивы. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -1543,11 +1543,11 @@ ms.locfileid: "71973329"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Название | Type | Значение |
+| Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| objectOutput | Строка, | {"valueA":10,"valueB":"Example Text"} |
-| arrayOutput | Строка, | ["a","b","c"] |
-| intOutput | Строка, | 5 |
+| objectOutput | string | {"valueA":10,"valueB":"Example Text"} |
+| arrayOutput | string | ["a","b","c"] |
+| intOutput | string | 5 |
 
 ## <a name="substring"></a>substring
 
@@ -1557,11 +1557,11 @@ ms.locfileid: "71973329"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательное значение | Type | Описание |
+| Параметр | Обязательно | Тип | Description (Описание) |
 |:--- |:--- |:--- |:--- |
 | stringToParse |Да |строка |Исходная строка, из которой извлекается подстрока. |
 | startIndex |Нет |int |Отсчитываемая от нуля позиция первого знака для подстроки. |
-| length |Нет |int |Число символов в подстроке. Этот параметр должен ссылаться на позицию в строке. Значение этого параметра должно быть равным нулю или больше него. |
+| длина |Нет |int |Число символов в подстроке. Этот параметр должен ссылаться на позицию в строке. Значение этого параметра должно быть равным нулю или больше него. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -1569,7 +1569,7 @@ ms.locfileid: "71973329"
 
 ### <a name="remarks"></a>Примечания
 
-Если substring выходит за пределы строки или когда длина меньше нуля, происходит ошибка выполнения функции. Следующий пример завершается ошибкой "Параметры индекса и длины должны относиться к расположению в строке. Параметр индекса: "0", параметр длины: "11", параметр длины строки: "10".".
+Если substring выходит за пределы строки или когда длина меньше нуля, происходит ошибка выполнения функции. Следующий пример завершается ошибкой "Параметры индекса и длины должны относиться к расположению в строке. Параметр индекса: 0, параметр длины: 11, параметр длины строкового параметра: 10".
 
 ```json
 "parameters": {
@@ -1606,9 +1606,9 @@ ms.locfileid: "71973329"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Название | Type | Значение |
+| Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| substringOutput | Строка, | two |
+| substringOutput | string | two |
 
 ## <a name="take"></a>take
 
@@ -1618,7 +1618,7 @@ ms.locfileid: "71973329"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательное значение | Type | Описание |
+| Параметр | Обязательно | Тип | Description (Описание) |
 |:--- |:--- |:--- |:--- |
 | originalValue |Да |массив или строка |Массив или строка, из которых берутся элементы. |
 | numberToTake |Да |int |Число элементов или знаков, которые необходимо взять. Если это значение меньше или равно 0, то возвращается пустой массив или строка. Если он превышает длину заданного массива или строки, возвращаются все элементы массива или строки. |
@@ -1673,10 +1673,10 @@ ms.locfileid: "71973329"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Название | Type | Значение |
+| Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| arrayOutput | Array | ["one", "two"] |
-| stringOutput | Строка, | on |
+| arrayOutput | Массив, | ["one", "two"] |
+| stringOutput | string | on |
 
 ## <a name="tolower"></a>toLower
 
@@ -1686,7 +1686,7 @@ ms.locfileid: "71973329"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательное значение | Type | Описание |
+| Параметр | Обязательно | Тип | Description (Описание) |
 |:--- |:--- |:--- |:--- |
 | изменяемая_строка |Да |строка |Значение, преобразовываемое в нижний регистр. |
 
@@ -1724,10 +1724,10 @@ ms.locfileid: "71973329"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Название | Type | Значение |
+| Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| toLowerOutput | Строка, | one two three |
-| toUpperOutput | Строка, | ONE TWO THREE |
+| toLowerOutput | string | one two three |
+| toUpperOutput | string | ONE TWO THREE |
 
 ## <a name="toupper"></a>toUpper
 
@@ -1737,7 +1737,7 @@ ms.locfileid: "71973329"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательное значение | Type | Описание |
+| Параметр | Обязательно | Тип | Description (Описание) |
 |:--- |:--- |:--- |:--- |
 | изменяемая_строка |Да |строка |Значение, преобразовываемое в верхний регистр. |
 
@@ -1775,10 +1775,10 @@ ms.locfileid: "71973329"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Название | Type | Значение |
+| Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| toLowerOutput | Строка, | one two three |
-| toUpperOutput | Строка, | ONE TWO THREE |
+| toLowerOutput | string | one two three |
+| toUpperOutput | string | ONE TWO THREE |
 
 ## <a name="trim"></a>trim
 
@@ -1788,7 +1788,7 @@ ms.locfileid: "71973329"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательное значение | Type | Описание |
+| Параметр | Обязательно | Тип | Description (Описание) |
 |:--- |:--- |:--- |:--- |
 | stringToTrim |Да |строка |Обрезаемое значение. |
 
@@ -1822,9 +1822,9 @@ ms.locfileid: "71973329"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Название | Type | Значение |
+| Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| return | Строка, | one two three |
+| return | string | one two three |
 
 ## <a name="uniquestring"></a>uniqueString
 
@@ -1834,7 +1834,7 @@ ms.locfileid: "71973329"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательное значение | Type | Описание |
+| Параметр | Обязательно | Тип | Description (Описание) |
 |:--- |:--- |:--- |:--- |
 | baseString |Да |строка |Значение, используемое в хэш-функции для создания уникальной строки. |
 | Дополнительные параметры (если необходимы) |Нет |строка |Можно добавить столько строк, сколько необходимо для создания значения, которое задает уровень уникальности. |
@@ -1904,7 +1904,7 @@ ms.locfileid: "71973329"
 }
 ```
 
-## <a name="uri"></a>универсальный код ресурса
+## <a name="uri"></a>uri
 
 `uri (baseUri, relativeUri)`
 
@@ -1912,7 +1912,7 @@ ms.locfileid: "71973329"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательное значение | Type | Описание |
+| Параметр | Обязательно | Тип | Description (Описание) |
 |:--- |:--- |:--- |:--- |
 | baseUri |Да |строка |Строка базового универсального кода ресурса (URI). Следите за поведением обработки замыкающей косой черты ('/'), как описано ниже в этой таблице.  |
 | relativeUri |Да |строка |Строка относительного универсального кода ресурса (URI), добавляемая к строке базового универсального кода ресурса (URI). |
@@ -1925,7 +1925,7 @@ ms.locfileid: "71973329"
 
    * Если **baseUri** имеет несколько косых черт, но не заканчивается косой чертой, все, начиная с последней косой черты, удаляется из **baseUri** , а результатом является **baseUri** , за которым следует значение **relativeUri**.
      
-Далее приводятся некоторые примеры.
+Ниже приведены некоторые примеры:
 
 ```
 uri('http://contoso.org/firstpath', 'myscript.sh') -> http://contoso.org/myscript.sh
@@ -1978,11 +1978,11 @@ uri('http://contoso.org/firstpath/azuredeploy.json/', 'myscript.sh') -> http://c
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Название | Type | Значение |
+| Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| uriOutput | Строка, | http://contoso.com/resources/nested/azuredeploy.json |
-| componentOutput | Строка, | http%3A%2F%2Fcontoso.com%2Fresources%2Fnested%2Fazuredeploy.json |
-| toStringOutput | Строка, | http://contoso.com/resources/nested/azuredeploy.json |
+| uriOutput | string | `http://contoso.com/resources/nested/azuredeploy.json` |
+| componentOutput | string | `http%3A%2F%2Fcontoso.com%2Fresources%2Fnested%2Fazuredeploy.json` |
+| toStringOutput | string | `http://contoso.com/resources/nested/azuredeploy.json` |
 
 ## <a name="uricomponent"></a>uriComponent
 
@@ -1992,7 +1992,7 @@ uri('http://contoso.org/firstpath/azuredeploy.json/', 'myscript.sh') -> http://c
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательное значение | Type | Описание |
+| Параметр | Обязательно | Тип | Description (Описание) |
 |:--- |:--- |:--- |:--- |
 | stringToEncode |Да |строка |Значение для кодирования. |
 
@@ -2033,11 +2033,11 @@ uri('http://contoso.org/firstpath/azuredeploy.json/', 'myscript.sh') -> http://c
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Название | Type | Значение |
+| Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| uriOutput | Строка, | http://contoso.com/resources/nested/azuredeploy.json |
-| componentOutput | Строка, | http%3A%2F%2Fcontoso.com%2Fresources%2Fnested%2Fazuredeploy.json |
-| toStringOutput | Строка, | http://contoso.com/resources/nested/azuredeploy.json |
+| uriOutput | string | `http://contoso.com/resources/nested/azuredeploy.json` |
+| componentOutput | string | `http%3A%2F%2Fcontoso.com%2Fresources%2Fnested%2Fazuredeploy.json` |
+| toStringOutput | string | `http://contoso.com/resources/nested/azuredeploy.json` |
 
 ## <a name="uricomponenttostring"></a>uriComponentToString
 
@@ -2047,7 +2047,7 @@ uri('http://contoso.org/firstpath/azuredeploy.json/', 'myscript.sh') -> http://c
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательное значение | Type | Описание |
+| Параметр | Обязательно | Тип | Description (Описание) |
 |:--- |:--- |:--- |:--- |
 | uriEncodedString |Да |строка |Значение, закодированное в формате URI, которое необходимо преобразовать в строку. |
 
@@ -2088,11 +2088,11 @@ uri('http://contoso.org/firstpath/azuredeploy.json/', 'myscript.sh') -> http://c
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Название | Type | Значение |
+| Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| uriOutput | Строка, | http://contoso.com/resources/nested/azuredeploy.json |
-| componentOutput | Строка, | http%3A%2F%2Fcontoso.com%2Fresources%2Fnested%2Fazuredeploy.json |
-| toStringOutput | Строка, | http://contoso.com/resources/nested/azuredeploy.json |
+| uriOutput | string | `http://contoso.com/resources/nested/azuredeploy.json` |
+| componentOutput | string | `http%3A%2F%2Fcontoso.com%2Fresources%2Fnested%2Fazuredeploy.json` |
+| toStringOutput | string | `http://contoso.com/resources/nested/azuredeploy.json` |
 
 ## <a name="utcnow"></a>utcnow
 
@@ -2102,7 +2102,7 @@ uri('http://contoso.org/firstpath/azuredeploy.json/', 'myscript.sh') -> http://c
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательное значение | Type | Описание |
+| Параметр | Обязательно | Тип | Description (Описание) |
 |:--- |:--- |:--- |:--- |
 | format |Нет |строка |Значение, закодированное в формате URI, которое необходимо преобразовать в строку. Используйте либо [стандартные строки формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) , либо [строки настраиваемого формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). |
 
@@ -2161,7 +2161,7 @@ uri('http://contoso.org/firstpath/azuredeploy.json/', 'myscript.sh') -> http://c
 
 Выходные данные предыдущего примера зависят от каждого развертывания, но будут выглядеть примерно так:
 
-| Название | Type | Значение |
+| Имя | Тип | Значение |
 | ---- | ---- | ----- |
 | уткаутпут | строка | 20190305T175318Z |
 | уткшортаутпут | строка | 03/05/2019 |
@@ -2203,7 +2203,7 @@ uri('http://contoso.org/firstpath/azuredeploy.json/', 'myscript.sh') -> http://c
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Описание разделов в шаблоне Azure Resource Manager см. в статье [Создание шаблонов Azure Resource Manager](resource-group-authoring-templates.md).
 * Инструкции по объединению нескольких шаблонов см. в статье [Использование связанных шаблонов в Azure Resource Manager](resource-group-linked-templates.md).
 * Указания по выполнению заданного количества циклов итерации при создании типа ресурса см. в статье [Создание нескольких экземпляров ресурсов в Azure Resource Manager](resource-group-create-multiple.md).

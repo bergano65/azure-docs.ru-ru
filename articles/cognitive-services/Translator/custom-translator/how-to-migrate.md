@@ -1,7 +1,7 @@
 ---
 title: Необходимо перенести рабочую область и проекты Microsoft Translator Hub? Custom Translator
 titleSuffix: Azure Cognitive Services
-description: Перенос рабочей области и проектов центра в Custom Translator.
+description: В этой статье объясняется, как перенести рабочую область и проекты центра в Azure Cognitive Services настраиваемого транслятора.
 author: swmachan
 manager: nitinme
 ms.service: cognitive-services
@@ -9,12 +9,12 @@ ms.subservice: translator-text
 ms.date: 02/21/2019
 ms.author: swmachan
 ms.topic: conceptual
-ms.openlocfilehash: 9c97eaef30a08123605ed4c01810745e312d6aa0
-ms.sourcegitcommit: 9a4296c56beca63430fcc8f92e453b2ab068cc62
+ms.openlocfilehash: 7ea7b48e1fc36399a0ca173f9068faf8b88849d5
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2019
-ms.locfileid: "72675499"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73836578"
 ---
 # <a name="migrate-hub-workspace-and-projects-to-custom-translator"></a>Перенос рабочей области и проектов центра в Custom Translator
 
@@ -80,11 +80,11 @@ ms.locfileid: "72675499"
 
 4. На следующей странице выберите любой из этих двух параметров:
 
-    а) Только развернутые учебные курсы: при выборе этого параметра будут перенесены только развернутые системы и связанные документы.
+    а. Только развернутые учебные курсы: при выборе этого параметра будут перенесены только развернутые системы и связанные документы.
 
-    б) Все успешные учебные курсы: при выборе этого параметра будут перенесены все успешные учебные курсы и связанные документы.
+    b. Все успешные учебные курсы: при выборе этого параметра будут перенесены все успешные учебные курсы и связанные документы.
 
-    в) Введите идентификатор рабочей области назначения в Custom Translator.
+    c. Введите идентификатор рабочей области назначения в Custom Translator.
 
     ![Перенос из центра](media/how-to/how-to-migrate-from-hub-screen.png)
 
@@ -132,12 +132,12 @@ ms.locfileid: "72675499"
 
 |   | Microsoft Translator Hub | Пользовательский переводчик |
 |:-----|:----:|:----:|
-|Состояние компонента настройки   | Общая доступность  | Общая доступность |
+|Состояние компонента настройки   | Общедоступная версия  | Общедоступная версия |
 | Версия API перевода текстов  | V2    | V3  |
-| Настройка SMT | ДА   | Нет |
-| Настройка NMT | Нет    | ДА |
-| Настройка новых единых служб распознавания речи | Нет    | ДА |
-| Без трассировки | ДА | ДА |
+| Настройка SMT | Да   | Нет |
+| Настройка NMT | Нет    | Да |
+| Настройка новых единых служб распознавания речи | Нет    | Да |
+| Без трассировки | Да | Да |
 
 ## <a name="new-languages"></a>Новые языки
 
@@ -146,4 +146,4 @@ ms.locfileid: "72675499"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Train a model](how-to-train-model.md) (Обучение модели).
-- Начните использовать развернутую пользовательскую модель перевода с помощью [API перевода текстов Майкрософт версии 3](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-translate?tabs=curl).
+- Начните использовать развернутую пользовательскую модель перевода с помощью [API перевода текстов Microsoft версии 3](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-translate?tabs=curl).

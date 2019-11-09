@@ -1,7 +1,7 @@
 ---
 title: Переход на API перевода текстов версии 3
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как перейти с API перевода текстов версии 2 на версию 3.
+description: Эта статья содержит инструкции по переходу с версии v2 на версию 3 API перевода текстов Cognitive Services Azure.
 services: cognitive-services
 author: swmachan
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: conceptual
 ms.date: 02/01/2019
 ms.author: swmachan
-ms.openlocfilehash: 9ce9dc330ec1b0c32ce045437fadb5d8c191529e
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: eb43d549d3e0cd449c865d533fc8701c4c3912fd
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68595242"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73837310"
 ---
 # <a name="translator-text-api-v2-to-v3-migration"></a>Переход с API перевода текстов версии 2 на версию 3
 
@@ -61,7 +61,7 @@ ms.locfileid: "68595242"
 
 Интерфейс API перевода текстов Microsoft Translator версии 2 принимал и возвращал данные в формате XML. В версии 3 все отправленные и полученные через API данные имеют формат JSON. Данные в формате XML больше не принимаются и не возвращаются в версии 3.
 
-Это изменение может повлиять на некоторые аспекты приложения, написанного для API перевода текстов версии 2. Например: API Languages (Языки) возвращает сведения о языке для перевода текста и транслитерации, а также два метода словаря. Вы можете запросить все сведения о языке для всех методов в одном вызове или по отдельности.
+Это изменение может повлиять на некоторые аспекты приложения, написанного для API перевода текстов версии 2. Например, интерфейс API языков возвращает сведения о языке перевода текста, транслитерацию и два метода Dictionary. Вы можете запросить все сведения о языке для всех методов в одном вызове или по отдельности.
 
 Метод Languages не требует проверки подлинности. Чтобы просмотреть все сведения о языке для версии 3 в формате JSON, перейдите по следующей ссылке:
 
@@ -86,7 +86,7 @@ Microsoft Translator V3 имеет такую же модель ценообра
 
 ## <a name="v3-end-points"></a>Конечные точки версии 3
 
-Глобальный
+Глобальные
 
 * api.cognitive.microsofttranslator.com
 
@@ -143,7 +143,7 @@ Microsoft Translator V3 имеет такую же модель ценообра
 * [Юридическая информация о платформе Microsoft Azure](https://azure.microsoft.com/support/legal)
 * [Условия служб Online Services](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=31)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [API перевода текстов версии 3.0](reference/v3-0-reference.md)

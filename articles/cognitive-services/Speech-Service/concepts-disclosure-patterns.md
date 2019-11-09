@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 10/10/2019
 ms.author: angle
-ms.openlocfilehash: fde4a73dd4a95028f23563fb6a8ae36c0142fd39
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: dfa05ff114ea0976cb8d57f711eaacc016ea53cc
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73507322"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73836993"
 ---
 # <a name="disclosure-design-patterns"></a>Шаблоны проектирования раскрытия
 Теперь, когда&#39;вы определили правильный [уровень разглашения](concepts-disclosure-guidelines.md#disclosure-assessment) искусственного голоса, мы&#39;очень хорошо рассмотрю потенциальные конструктивные шаблоны.
@@ -247,11 +247,11 @@ ms.locfileid: "73507322"
 
 ## <a name="reference-docs"></a>Справочная документация
 
-* [Примечание о прозрачности](https://aka.ms/neural-tts-transparency-note)
+* [Раскрытие голоса для речи](https://aka.ms/disclosure-voice-talent)
 * [Рекомендации для ответственного развертывания технологии искусственного голоса](concepts-guidelines-responsible-deployment-synthetic.md)
 * [Обзор ограничения](concepts-gating-overview.md)
 * [Как раскрывать](concepts-disclosure-guidelines.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Примечание о прозрачности](https://aka.ms/neural-tts-transparency-note)
+* [Раскрытие голоса для речи](https://aka.ms/disclosure-voice-talent)

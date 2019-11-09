@@ -1,7 +1,7 @@
 ---
 title: Фильтр ненормативной лексики — API перевода текстов
 titleSuffix: Azure Cognitive Services
-description: Используйте фильтр ненормативной лексики в API перевода текстов.
+description: Используйте фильтрацию ненормативной лексики, чтобы определить уровень ненормативной лексики, переведенный в текст в API перевода текстов Cognitive Services Azure.
 services: cognitive-services
 author: swmachan
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: conceptual
 ms.date: 06/04/2019
 ms.author: swmachan
-ms.openlocfilehash: 114dea098db5c824a1235ba1635f547383bf6743
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: e7e2097e0d3daf360f1fa0f30bf3fd2c62c07163
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68595199"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73836229"
 ---
 # <a name="add-profanity-filtering-with-the-translator-text-api"></a>Добавление фильтра ненормативной лексики в API перевода текстов
 
@@ -26,12 +26,12 @@ ms.locfileid: "68595199"
 Метод Translate() принимает параметр "options", который содержит новый элемент ProfanityAction. Принятыми значениями для элемента ProfanityAction являются "NoAction" (пропущено), "Marked" (помечено) и "Deleted" (удалено).
 
 ## <a name="accepted-values-of-profanityaction-and-examples"></a>Принятые значения ProfanityAction и примеры
-|Значение ProfanityAction | Action | Пример Исходный язык — японский | Пример Целевой язык — английский|
+|Значение ProfanityAction | Действие | Пример: Источник — японский | Пример: Целевой объект — английский|
 | :---|:---|:---|:---|
 | NoAction | По умолчанию. Аналогично отсутствию параметра. Ненормативная лексика переходит из источника в целевой объект. | 彼は変態です。 | Он подонок. |
 | Marked | Оскорбительные слова выделены XML тегами \<profanity> ... \</profanity>. | 彼は変態です。 | Он \<нецензурная лексика>jerk\</profanity >. |
 | Deleted | Оскорбительные слова удаляются из выходных данных без замены. | 彼は。 | Он — . |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 > [!div class="nextstepaction"]
 > [Применение фильтра ненормативной лексики с помощью вызова API переводчика](reference/v3-0-translate.md)

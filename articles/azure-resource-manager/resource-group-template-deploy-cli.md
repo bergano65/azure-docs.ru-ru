@@ -6,12 +6,12 @@ ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 10/09/2019
 ms.author: tomfitz
-ms.openlocfilehash: c5a07d8b52e83215b2fdc220d76557ca45e1eae9
-ms.sourcegitcommit: e0a1a9e4a5c92d57deb168580e8aa1306bd94723
+ms.openlocfilehash: e2f1747b8ae98ce53ce570422044a2f172c1a526
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72286017"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73834477"
 ---
 # <a name="deploy-resources-with-resource-manager-templates-and-azure-cli"></a>Развертывание ресурсов с использованием шаблонов Resource Manager и Azure CLI
 
@@ -37,9 +37,11 @@ az group deployment create --resource-group <resource-group-name> --template-fil
 az deployment create --location <location> --template-file <path-to-template>
 ```
 
-В настоящее время развертывания группы управления поддерживаются только в REST API. См. статью [развертывание ресурсов с помощью шаблонов диспетчер ресурсов и диспетчер ресурсов REST API](resource-group-template-deploy-rest.md).
+Дополнительные сведения о развертываниях уровня подписки см. в статье [Создание групп ресурсов и ресурсов на уровне подписки](deploy-to-subscription.md).
 
-В примерах этой статьи используются развертывания групп ресурсов. Дополнительные сведения о развертывании подписок см. в статье [Создание групп ресурсов и ресурсов на уровне подписки](deploy-to-subscription.md).
+В настоящее время развертывания группы управления поддерживаются только в REST API. Дополнительные сведения о развертывании на уровне группы управления см. [в разделе Создание ресурсов на уровне группы управления](deploy-to-management-group.md).
+
+В примерах этой статьи используются развертывания групп ресурсов.
 
 ## <a name="deploy-local-template"></a>Развертывание локального шаблона
 
@@ -151,7 +153,7 @@ az group deployment create \
 
 ## <a name="handle-extended-json-format"></a>Обработку расширенного формата JSON
 
-Чтобы развернуть шаблон с многострочными строками или комментариями, необходимо использовать параметр `--handle-extended-json-format`.  Пример:
+Чтобы развернуть шаблон с многострочными строками или комментариями, необходимо использовать параметр `--handle-extended-json-format`.  Например:
 
 ```json
 {
@@ -222,7 +224,7 @@ az group deployment validate \
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о откате к успешному развертыванию при возникновении ошибки см. в разделе [откат при ошибке для успешного развертывания](rollback-on-error.md).
 - Сведения о том, как указать способ обработки ресурсов, которые существуют в группе ресурсов, но не определены в шаблоне, см. в [описании режимов развертывания с помощью Azure Resource Manager](deployment-modes.md).

@@ -4,14 +4,14 @@ description: В этой статье описывается создание г
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: conceptual
-ms.date: 10/07/2019
+ms.date: 11/07/2019
 ms.author: tomfitz
-ms.openlocfilehash: d8b1be1d79ae0426d73c45408dd3c4f4f4660afb
-ms.sourcegitcommit: 6eecb9a71f8d69851bc962e2751971fccf29557f
+ms.openlocfilehash: 04a46700b68bcf498956f93c96ce2dccf1b555fe
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72532191"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73832716"
 ---
 # <a name="create-resource-groups-and-resources-at-the-subscription-level"></a>Создание групп ресурсов и ресурсов на уровне подписки
 
@@ -23,7 +23,7 @@ ms.locfileid: "72532191"
 
 На уровне подписки можно развернуть следующие типы ресурсов:
 
-* [размещения](/azure/templates/microsoft.resources/deployments) 
+* [размещения](/azure/templates/microsoft.resources/deployments)
 * [пираснс](/azure/templates/microsoft.peering/peerasns)
 * [полициассигнментс](/azure/templates/microsoft.authorization/policyassignments)
 * [policyDefinitions](/azure/templates/microsoft.authorization/policydefinitions)
@@ -32,14 +32,20 @@ ms.locfileid: "72532191"
 * [roleAssignments](/azure/templates/microsoft.authorization/roleassignments)
 * [roleDefinitions](/azure/templates/microsoft.authorization/roledefinitions)
 
-### <a name="schema"></a>SCHEMA (Схема)
+### <a name="schema"></a>Схема
 
 Схема, используемая для развертываний на уровне подписки, отличается от схемы развертываний группы ресурсов.
 
-Для схемы используйте:
+Для шаблонов используйте:
 
 ```json
 https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#
+```
+
+Для файлов параметров используйте:
+
+```json
+https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentParameters.json#
 ```
 
 ## <a name="deployment-commands"></a>Команды развертывания
@@ -76,14 +82,14 @@ New-AzDeployment `
 
 Можно указать имя развертывания или использовать имя развертывания по умолчанию. Имя по умолчанию — это имя файла шаблона. Например, развернув шаблон с именем **azuredeploy.json** создается имя развертывания по умолчанию **azuredeploy**.
 
-Для каждого имени развертывания расположение является неизменяемым. Не возможно создать развертывание в одном расположении, если в другом расположении уже существует развертывание с таким же именем. Если появится код ошибки `InvalidDeploymentLocation`, используйте другое имя или то же расположение, что и для предыдущего развертывания с этим именем.
+Для каждого имени развертывания расположение является неизменяемым. Нельзя создать развертывание в одном месте, если существует развертывание с тем же именем в другом расположении. Если появится код ошибки `InvalidDeploymentLocation`, используйте другое имя или то же расположение, что и для предыдущего развертывания с этим именем.
 
 ## <a name="use-template-functions"></a>Использование функций шаблонов
 
 Важные рекомендации при использовании функций шаблонов для развертываний на уровне подписки:
 
 * Функция [resourceGroup()](resource-group-template-functions-resource.md#resourcegroup) **не** поддерживается.
-* Функция [resourceId()](resource-group-template-functions-resource.md#resourceid) поддерживается. Используйте ее для получения идентификатора ресурса для ресурсов, которые используются в развертываниях уровня подписки. Например получите идентификатор ресурса для определения политики с помощью `resourceId('Microsoft.Authorization/roleDefinitions/', parameters('roleDefinition'))`
+* Функция [resourceId()](resource-group-template-functions-resource.md#resourceid) поддерживается. Используйте ее для получения идентификатора ресурса для ресурсов, которые используются в развертываниях уровня подписки. Например, получите идентификатор ресурса для определения политики с `resourceId('Microsoft.Authorization/roleDefinitions/', parameters('roleDefinition'))`. Или используйте функцию [субскриптионресаурцеид ()](resource-group-template-functions-resource.md#subscriptionresourceid) , чтобы получить идентификатор ресурса для ресурса уровня подписки.
 * Функции [reference()](resource-group-template-functions-resource.md#reference) и [list()](resource-group-template-functions-resource.md#list) поддерживаются.
 
 ## <a name="create-resource-groups"></a>Создание группы ресурсов
