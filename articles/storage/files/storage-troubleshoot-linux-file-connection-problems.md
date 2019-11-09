@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/16/2018
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: 12976e2b2dd37b640efe1823fc8d2ca7048ebcdb
-ms.sourcegitcommit: b45ee7acf4f26ef2c09300ff2dba2eaa90e09bc7
+ms.openlocfilehash: 005e93837d1d420526f6fb33e79d25a94da6fab7
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73097365"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73838532"
 ---
 # <a name="troubleshoot-azure-files-problems-in-linux"></a>Устранение неполадок службы файлов Azure в Linux
 
@@ -60,7 +60,7 @@ ms.locfileid: "73097365"
 
 Из соображений безопасности, если коммуникационный канал не зашифрован, а попытка подключения осуществляется не из того же центра обработки данных, в котором находятся файловые ресурсы Azure, то подключение к ним Azure будет заблокировано. Незашифрованные подключения в одном центре обработки данных также могут быть заблокированы, если в учетной записи хранения включен параметр [Требуется безопасное перемещение](https://docs.microsoft.com/azure/storage/common/storage-require-secure-transfer). Шифрование коммуникационного канала выполняется, только если клиентская ОС пользователя поддерживает шифрование SMB.
 
-Подробнее см. в статье [Предварительные требования для подключения файлового ресурса Azure с помощью Linux и пакета cifs-utils](https://docs.microsoft.com/azure/storage/files/storage-how-to-use-files-linux#prerequisites-for-mounting-an-azure-file-share-with-linux-and-the-cifs-utils-package). 
+Подробнее см. в статье [Предварительные требования для подключения файлового ресурса Azure с помощью Linux и пакета cifs-utils](storage-how-to-use-files-linux.md#prerequisites). 
 
 ### <a name="solution-for-cause-1"></a>Решение для причины 1
 
@@ -111,7 +111,7 @@ ms.locfileid: "73097365"
     - Средства сторонних разработчиков с открытым кодом, например:
         - [GNU Parallel](https://www.gnu.org/software/parallel/).
         - [Фпарт](https://github.com/martymac/fpart) — сортирует файлы и упаковывает их в разделы.
-        - [Фпсинк](https://github.com/martymac/fpart/blob/master/tools/fpsync) — использует фпарт и средство копирования для создания нескольких экземпляров для переноса данных из SRC_DIR в dst_url.
+        - [Фпсинк](https://github.com/martymac/fpart/blob/master/tools/fpsync) — использует фпарт и средство копирования для создания нескольких экземпляров для переноса данных из src_dir в dst_url.
         - [Многопоточные](https://github.com/pkolano/mutil) CP и md5sum, основанные на GNU кореутилс.
 - Если задать размер файла заранее, вместо того, чтобы каждый раз писать расширенную запись, помогает повысить скорость копирования в сценариях, где известен размер файла. Если нужно избежать необходимости расширения операций записи, можно задать размер целевого файла с помощью команды `truncate - size <size><file>`. После этого команда `dd if=<source> of=<target> bs=1M conv=notrunc`скопирует исходный файл без необходимости повторного обновления размера целевого файла. Например, можно задать размер целевого файла для каждого копируемого файла (предположим, что общая папка подключена в/МНТ/шаре):
     - `$ for i in `` find * -type f``; do truncate --size ``stat -c%s $i`` /mnt/share/$i; done`
@@ -289,6 +289,6 @@ sudo mount -t cifs //<storage-account-name>.file.core.windows.net/<share-name> <
 
 Если не удается выполнить обновление до последних версий ядра, можно решить эту проблему, поместив в файловый ресурс Azure файл и перезаписывая его каждые 30 секунд (или чаще). Это должна быть операция записи, такая как перезапись даты создания или изменения файла. В противном случае можно получить кэшированные результаты, в итоге операция записи не активирует повторное подключение.
 
-## <a name="need-help-contact-support"></a>Нужна помощь? Обратитесь в службу поддержки.
+## <a name="need-help-contact-support"></a>Требуется помощь? Обратитесь в службу поддержки.
 
 Если вам все еще нужна помощь, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), которая поможет быстро устранить проблему.

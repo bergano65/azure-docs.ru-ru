@@ -1,6 +1,6 @@
 ---
 title: Копирование чужих примеров обработки и анализа данных
-titleSuffix: ML Studio (classic) Azure
+titleSuffix: ML Studio (classic) - Azure
 description: 'Секрет успешного процесса обработки и анализа данных: используйте работу других пользователей в своих целях. Воспользуйтесь примерами машинного обучения из коллекции средств ИИ Azure.'
 services: machine-learning
 ms.service: machine-learning
@@ -10,12 +10,12 @@ author: sdgilley
 ms.author: sgilley
 ms.custom: seodec18
 ms.date: 03/22/2019
-ms.openlocfilehash: 6004a3092856b0dbe55e044676b6a93e77debb1e
-ms.sourcegitcommit: 6c2c97445f5d44c5b5974a5beb51a8733b0c2be7
+ms.openlocfilehash: 3a99ad12af7f6eecb74f6c0d52a269770fd5ed7c
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73619504"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73837820"
 ---
 # <a name="copy-other-peoples-work-to-do-data-science"></a>Копирование работы других пользователей для обработки и анализа данных
 ## <a name="video-5-data-science-for-beginners-series"></a>Видео 5. Обработка и анализ данных для начинающих

@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d6f0d732917a6587307e6d60581e0189687cc7e9
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: dd50ca8b81b933a61a67ac36db6a656791a8121f
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73164774"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73832854"
 ---
 # <a name="sign-in-to-windows-virtual-machine-in-azure-using-azure-active-directory-authentication-preview"></a>Вход в виртуальную машину Windows в Azure с помощью проверки подлинности Azure Active Directory (Предварительная версия)
 
@@ -33,7 +33,7 @@ ms.locfileid: "73164774"
 - Больше не требуется управлять учетными записями локального администратора.
 - Azure RBAC позволяет предоставлять соответствующий доступ к виртуальным машинам в зависимости от необходимости и удалять его, если он больше не нужен.
 - Перед предоставлением доступа к виртуальной машине условный доступ Azure AD может применять дополнительные требования, например: 
-   - Многофакторная Идентификация
+   - Многофакторная проверка подлинности
    - Риск при входе
 - Автоматизируйте и масштабируйте присоединение к Azure AD для виртуальных машин Windows на основе Azure.
 
@@ -166,7 +166,7 @@ az vm extension set \
 
 ### <a name="using-the-azure-cloud-shell-experience"></a>Использование интерфейса Azure Cloud Shell
 
-В следующем примере с помощью команды [AZ Role назначение](https://docs.microsoft.com/cli/azure/role/assignment#az-role-assignment-create) роли имя администратора виртуальной машины НАЗНАЧАЕТСЯ виртуальной машине для текущего пользователя Azure. Имя пользователя активной учетной записи Azure получено с помощью команды [AZ Account шоу](https://docs.microsoft.com/cli/azure/account#az-account-show), а для области задана виртуальная машина, созданная на предыдущем шаге, с помощью команды [AZ VM демонстрация](https://docs.microsoft.com/cli/azure/vm#az-vm-show). Область также можно назначить на уровне группы ресурсов или подписки. При этом применяются обычные разрешения наследования RBAC. Дополнительные сведения см. в разделе [Управление доступом на основе ролей](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview#access-control).
+В следующем примере с помощью команды [AZ Role назначение](https://docs.microsoft.com/cli/azure/role/assignment#az-role-assignment-create) роли имя администратора виртуальной машины НАЗНАЧАЕТСЯ виртуальной машине для текущего пользователя Azure. Имя пользователя активной учетной записи Azure получено с помощью команды [AZ Account шоу](https://docs.microsoft.com/cli/azure/account#az-account-show), а для области задана виртуальная машина, созданная на предыдущем шаге, с помощью команды [AZ VM демонстрация](https://docs.microsoft.com/cli/azure/vm#az-vm-show). Область также можно назначить на уровне группы ресурсов или подписки. При этом применяются обычные разрешения наследования RBAC. Дополнительные сведения см. в разделе [Управление доступом на основе ролей](../../virtual-machines/linux/login-using-aad.md).
 
 ```AzureCLI
 username=$(az account show --query user.name --output tsv)
@@ -223,24 +223,24 @@ az role assignment create \
 
    | Команда для запуска | Ожидаемые выходные данные |
    | --- | --- |
-   | Перелистывание метаданных: true "http://169.254.169.254/metadata/instance?api-version=2017-08-01 " | Правильные сведения о виртуальной машине Azure |
-   | Перелистывание метаданных: true "http://169.254.169.254/metadata/identity/info?api-version=2018-02-01 " | Допустимый идентификатор клиента, связанный с подпиской Azure |
-   | Перелистывание метаданных: true "http://169.254.169.254/metadata/identity/oauth2/token?resource=urn:ms-drs:enterpriseregistration.windows.net&api-version=2018-02-01 " | Допустимый маркер доступа, выданный Azure Active Directory для управляемого удостоверения, назначенного этой виртуальной машине |
+   | Перелистывание метаданных: true "http://169.254.169.254/metadata/instance?api-version=2017-08-01" | Правильные сведения о виртуальной машине Azure |
+   | Перелистывание метаданных: true "http://169.254.169.254/metadata/identity/info?api-version=2018-02-01" | Допустимый идентификатор клиента, связанный с подпиской Azure |
+   | Перелистывание метаданных: true "http://169.254.169.254/metadata/identity/oauth2/token?resource=urn:ms-drs:enterpriseregistration.windows.net&api-version=2018-02-01" | Допустимый маркер доступа, выданный Azure Active Directory для управляемого удостоверения, назначенного этой виртуальной машине |
 
    > [!NOTE]
    > Маркер доступа можно декодировать с помощью такого средства, как [http://calebb.net/](http://calebb.net/). Проверьте, что идентификатор AppID в маркере доступа соответствует управляемому удостоверению, назначенному виртуальной машине.
 
 1. Убедитесь, что необходимые конечные точки доступны из виртуальной машины с помощью командной строки:
    
-   - фигурная https://login.microsoftonline.com/ -D —
-   - Перелистывание https://login.microsoftonline.com/`<TenantID>` /-D —
+   - фигурная https://login.microsoftonline.com/-D —
+   - Перелистывание https://login.microsoftonline.com/`<TenantID>`/-D —
 
    > [!NOTE]
    > Замените `<TenantID>` ИДЕНТИФИКАТОРом клиента Azure AD, связанным с подпиской Azure.
 
-   - фигурная https://enterpriseregistration.windows.net/ -D-
-   - фигурная https://device.login.microsoftonline.com/ -D-
-   - фигурная https://pas.windows.net/ -D-
+   - фигурная https://enterpriseregistration.windows.net/-D-
+   - фигурная https://device.login.microsoftonline.com/-D-
+   - фигурная https://pas.windows.net/-D-
 
 1. Состояние устройства можно просмотреть, выполнив `dsregcmd /status`. Цель — это состояние устройства, которое будет отображаться как `AzureAdJoined : YES`.
 
@@ -267,15 +267,15 @@ az role assignment create \
 
 1. Убедитесь, что необходимые конечные точки доступны из виртуальной машины с помощью командной строки:
 
-   - фигурная https://login.microsoftonline.com/ -D —
-   - Перелистывание https://login.microsoftonline.com/`<TenantID>` /-D —
+   - фигурная https://login.microsoftonline.com/-D —
+   - Перелистывание https://login.microsoftonline.com/`<TenantID>`/-D —
    
    > [!NOTE]
    > Замените `<TenantID>` ИДЕНТИФИКАТОРом клиента Azure AD, связанным с подпиской Azure. Если необходимо найти идентификатор клиента, можно навести указатель мыши на имя учетной записи, чтобы получить идентификатор каталога или клиента, или выбрать Azure Active Directory > Свойства > идентификатор каталога в портал Azure.
 
-   - фигурная https://enterpriseregistration.windows.net/ -D-
-   - фигурная https://device.login.microsoftonline.com/ -D-
-   - фигурная https://pas.windows.net/ -D-
+   - фигурная https://enterpriseregistration.windows.net/-D-
+   - фигурная https://device.login.microsoftonline.com/-D-
+   - фигурная https://pas.windows.net/-D-
 
 1. Если какая-либо из команд завершается с ошибкой "не удалось разрешить узел `<URL>`", попробуйте выполнить эту команду, чтобы определить сервер DNS, используемый виртуальной машиной.
    
@@ -312,7 +312,7 @@ az role assignment create \
 
 ![Ваша учетная запись настроена для предотвращения использования этого устройства.](./media/howto-vm-sign-in-azure-ad-windows/rbac-role-not-assigned.png)
 
-Убедитесь, что для ВИРТУАЛЬНОЙ машины [настроены политики RBAC](https://docs.microsoft.com/azure/virtual-machines/linux/login-using-aad#configure-rbac-policy-for-the-virtual-machine) , которые предоставляют пользователю имя входа администратора виртуальной машины или роль входа пользователя виртуальной машины.
+Убедитесь, что для ВИРТУАЛЬНОЙ машины [настроены политики RBAC](../../virtual-machines/linux/login-using-aad.md) , которые предоставляют пользователю имя входа администратора виртуальной машины или роль входа пользователя виртуальной машины.
  
 #### <a name="unauthorized-client"></a>Неавторизованный клиент
 

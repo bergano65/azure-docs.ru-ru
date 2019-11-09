@@ -7,18 +7,18 @@ ms.service: firewall
 ms.topic: article
 ms.date: 7/9/2018
 ms.author: victorh
-ms.openlocfilehash: b39174152e427e408e7dfbbc353baf5f96ec7c01
-ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
+ms.openlocfilehash: c0a6cda54a58e3cc03ba31e221fb57fc725dd779
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67657091"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73839388"
 ---
 # <a name="deploy-azure-firewall-using-a-template"></a>Развертывание Брандмауэра Azure с помощью шаблона
 
-[Шаблон "Создание настройки песочницы AzureFirewall"](https://github.com/Azure/azure-quickstart-templates/tree/master/101-azurefirewall-with-zones-sandbox) создает тестовую сетевую среду с брандмауэром. Сеть имеет одну виртуальную сеть (VNet) с тремя подсетями. *AzureFirewallSubnet*, *ServersSubnet* и *JumpboxSubnet*. В подсетях *ServersSubnet* и *JumpboxSubnet* есть одна двухъядерная виртуальная машина Windows Server.
+[Шаблон "Создание настройки песочницы AzureFirewall"](https://github.com/Azure/azure-quickstart-templates/tree/master/101-azurefirewall-with-zones-sandbox) создает тестовую сетевую среду с брандмауэром. Сеть имеет одну виртуальную сеть (VNet) с тремя подсетями: *азурефиреваллсубнет*, *серверссубнет*и *жумпбокссубнет*. В подсетях *ServersSubnet* и *JumpboxSubnet* есть одна двухъядерная виртуальная машина Windows Server.
 
-Брандмауэр находится в подсети *AzureFirewallSubnet* и имеет коллекцию правил приложения с одним правилом, которое разрешает доступ к *www.microsoft.com*.
+Брандмауэр находится в подсети *азурефиреваллсубнет* и содержит набор правил приложений с одним правилом, обеспечивающим доступ к `www.microsoft.com`.
 
 Определенный пользователем маршрут направляет сетевой трафик из подсети *ServersSubnet* через брандмауэр, где применяются его правила.
 
@@ -41,10 +41,10 @@ ms.locfileid: "67657091"
 
 1. На странице портала **Create a sandbox setup of AzureFirewall** (Создание настройки песочницы AzureFirewall) введите или выберите следующие значения.
    
-   - **Группа ресурсов**. Выберите **Create new** (Создать новую), введите имя группы ресурсов и выберите **ОК**. 
-   - **Имя виртуальной сети**. Введите имя новой виртуальной сети. 
-   - **Имя администратора**. Введите имя учетной записи пользователя с правами администратора.
-   - **Пароль администратора**. Введите пароль администратора. 
+   - **Группа ресурсов**: выберите **создать**, введите имя группы ресурсов и нажмите кнопку **ОК**. 
+   - **Имя виртуальной сети**. Введите имя для новой сети. 
+   - **Имя пользователя администратора**: введите имя пользователя для учетной записи администратора.
+   - **Пароль**администратора. Введите пароль администратора. 
    
 1. Прочтите условия использования и установите флажок **Я принимаю указанные выше условия**.
    
@@ -58,16 +58,16 @@ ms.locfileid: "67657091"
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Когда они больше не нужны, можно удалить группу ресурсов, брандмауэра и все связанные ресурсы, выполнив [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup) команду PowerShell. Чтобы удалить группу ресурсов с именем *MyResourceGroup*, выполните следующее. 
+Если они больше не нужны, можно удалить группу ресурсов, брандмауэр и все связанные с ней ресурсы, выполнив команду PowerShell [Remove-азресаурцеграуп](/powershell/module/az.resources/remove-azresourcegroup) . Чтобы удалить группу ресурсов с именем *MyResourceGroup*, выполните следующее. 
 
 ```azurepowershell-interactive
 Remove-AzResourceGroup -Name MyResourceGroup
 ```
 Не удаляйте группу ресурсов и брандмауэр, если планируете перейти к изучению руководства по отслеживанию брандмауэра. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Также вы можете изучить журналы брандмауэра Azure.
 
 > [!div class="nextstepaction"]
-> [Руководство. Мониторинг журналов и метрик Брандмауэра Azure](./tutorial-diagnostics.md)
+> [Руководство по мониторингу журналов Брандмауэра Azure](./tutorial-diagnostics.md)

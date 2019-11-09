@@ -1,5 +1,5 @@
 ---
-title: Копирование данных между Azure Data Lake Storage 1-го поколения и базой данных SQL Azure с помощью Sqoop | Документация Майкрософт
+title: Копирование данных между Data Lake Storage 1-го поколения и Azure SQL-Sqoop | Документация Майкрософт
 description: Сведения о копировании данных между базой данных SQL Azure и Azure Data Lake Storage 1-го поколения с помощью Sqoop.
 services: data-lake-store
 author: twooley
@@ -7,12 +7,12 @@ ms.service: data-lake-store
 ms.topic: conceptual
 ms.date: 07/30/2019
 ms.author: twooley
-ms.openlocfilehash: 22789deca0934a9d4e88d587cd24aacacc9b12c6
-ms.sourcegitcommit: 08d3a5827065d04a2dc62371e605d4d89cf6564f
+ms.openlocfilehash: cf3893706afcb4c4cc5b90dd3d2431ecedc71d0a
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68620002"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73839059"
 ---
 # <a name="copy-data-between-data-lake-storage-gen1-and-azure-sql-database-using-sqoop"></a>Копирование данных между Data Lake Storage 1-го поколения и базой данных SQL Azure с помощью Sqoop
 
@@ -24,11 +24,11 @@ ms.locfileid: "68620002"
 
 [Apache Sqoop](https://sqoop.apache.org/docs/1.4.4/SqoopUserGuide.html) — это средство, предназначенное для передачи данных между реляционными базами данных и репозиторием больших данных, например Azure Data Lake Storage 1-го поколения. Его можно использовать для импорта данных из системы управления реляционными базами данных (RDBMS), такой как База данных SQL Azure, в Azure Data Lake Storage 1-го поколения. Затем можно преобразовать и проанализировать данные с помощью рабочих нагрузок больших данных, а затем экспортировать данные обратно в реляционную СУБД. В этой статье вы используете базу данных SQL Azure в качестве реляционной базы данных для импорта и экспорта.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы убедитесь, что у вас есть такие компоненты.
 
-* **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
+* **Подписка Azure**. Ознакомьтесь с [бесплатной пробной версией Azure](https://azure.microsoft.com/pricing/free-trial/).
 * **Учетная запись Azure Data Lake Storage 1-го поколения**. Инструкции по созданию учетной записи см. в статье [Приступая к работе с Azure Data Lake Storage 1-го поколения](data-lake-store-get-started-portal.md)
 * **Кластер Azure HDInsight** с доступом к учетной записи Data Lake Storage 1-го поколения. Дополнительные сведения см. в статье [Создание кластеров HDInsight, использующих Data Lake Store, с помощью портала Azure](data-lake-store-hdinsight-hadoop-use-portal.md). В этой статье предполагается, что у вас есть кластер HDInsight на платформе Linux с доступом к Data Lake Storage 1-го поколения.
 * **База данных SQL Azure**. Инструкции по созданию базы данных см. в статье [Руководство по Базе данных SQL: создание базы данных SQL за несколько минут с помощью портала Azure](../sql-database/sql-database-get-started.md).
@@ -69,9 +69,9 @@ ms.locfileid: "68620002"
 
 ## <a name="use-sqoop-from-an-hdinsight-cluster-with-access-to-data-lake-storage-gen1"></a>Использование Sqoop из кластера Azure HDInsight с доступом в Data Lake Storage 1-го поколения
 
-В кластере HDInsight уже имеются доступные пакеты Sqoop. Если кластер HDInsight настроен для использования Data Lake Storage 1-го поколения в качестве дополнительного хранилища, можно использовать Sqoop (без изменений конфигурации) для импорта и экспорта данных между реляционной базой данных, такой как база данных SQL Azure, и учетной записью Data Lake Storage 1-го поколения .
+В кластере HDInsight уже имеются доступные пакеты Sqoop. Если кластер HDInsight настроен для использования Data Lake Storage 1-го поколения в качестве дополнительного хранилища, можно использовать Sqoop (без изменений конфигурации) для импорта и экспорта данных между реляционной базой данных, такой как база данных SQL Azure, и учетной записью Data Lake Storage 1-го поколения.
 
-1. В этой статье предполагается, что вы создали кластер Linux, поэтому для подключения к кластеру необходимо использовать SSH. См. раздел [Подключение к кластеру HDInsight на основе Linux](../hdinsight/hdinsight-hadoop-linux-use-ssh-unix.md).
+1. В этой статье предполагается, что вы создали кластер Linux, поэтому для подключения к кластеру необходимо использовать SSH. См. подраздел [Подключение к кластеру HDInsight на основе Linux](../hdinsight/hdinsight-hadoop-linux-use-ssh-unix.md).
 
 1. Проверьте, доступна ли учетная запись хранилища Data Lake Storage 1-го поколения из кластера. Выполните следующую команду из командной строки SSH:
 
@@ -134,9 +134,9 @@ ms.locfileid: "68620002"
 
 Сведения о настройке производительности задания Sqoop для копирования данных в Data Lake Storage 1-го поколения см. в записи [блога о производительности Sqoop](https://blogs.msdn.microsoft.com/bigdatasupport/2015/02/17/sqoop-job-performance-tuning-in-hdinsight-hadoop/).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Копирование данных из больших двоичных объектов хранилища Azure в хранилище озера данных](data-lake-store-copy-data-azure-storage-blob.md)
 * [Защита данных в Data Lake Storage Gen1](data-lake-store-secure-data.md)
-* [Начало работы с Azure Data Lake Analytics с помощью портала Azure](../data-lake-analytics/data-lake-analytics-get-started-portal.md)
+* [Использование Azure Data Lake Analytics с Azure Data Lake Storage 1-го поколения](../data-lake-analytics/data-lake-analytics-get-started-portal.md)
 * [Создание кластеров HDInsight, использующих Data Lake Store, с помощью портала Azure](data-lake-store-hdinsight-hadoop-use-portal.md)

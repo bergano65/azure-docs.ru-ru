@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 07/23/2019
 ms.author: victorh
-ms.openlocfilehash: 659c4cb3a6f0d50176875b76eeb2784c711eafd1
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: 84a46e66bb6c36950a84fbeb2dacc3a8d6bcc241
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68967139"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73833369"
 ---
 # <a name="generate-an-azure-application-gateway-self-signed-certificate-with-a-custom-root-ca"></a>Создание самозаверяющего сертификата шлюза приложений Azure с помощью пользовательского корневого ЦС
 
@@ -29,7 +29,7 @@ ms.locfileid: "68967139"
 - Создание самозаверяющего сертификата, подписанного пользовательским центром сертификации
 - Отправка самозаверяющего корневого сертификата в шлюз приложений для проверки подлинности внутреннего сервера
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - **[OpenSSL](https://www.openssl.org/) на компьютере под управлением Windows или Linux** 
 
@@ -40,7 +40,7 @@ ms.locfileid: "68967139"
 
 - **SKU шлюза приложений версии 2**
    
-  Если у вас нет шлюза приложений, см. [раздел Краткое руководство. Направление веб-трафика с помощью Шлюза приложений Azure на портале Azure](quick-create-portal.md).
+  Если у вас нет шлюза приложений, см. раздел [Краткое руководство. прямой веб-трафик с помощью шлюза приложений Azure — портал Azure](quick-create-portal.md).
 
 ## <a name="create-a-root-ca-certificate"></a>Создание сертификата корневого ЦС
 
@@ -87,7 +87,7 @@ ms.locfileid: "68967139"
 CSR — это открытый ключ, предоставляемый ЦС при запросе сертификата. ЦС выдает сертификат для этого конкретного запроса.
 
 > [!NOTE]
-> CN (общее имя) для сертификата сервера должно отличаться от имени домена издателя. Например, в этом случае CN-имя издателя — www.contoso.com, а www.fabrikam.com сертификата сервера —.
+> CN (общее имя) для сертификата сервера должно отличаться от имени домена издателя. Например, в данном случае это CN-имя для издателя `www.contoso.com`, а `www.fabrikam.com`сертификата сервера имеет значение CN.
 
 
 1. Чтобы создать CSR, используйте следующую команду:
@@ -96,7 +96,7 @@ CSR — это открытый ключ, предоставляемый ЦС п
    openssl req -new -sha256 -key fabrikam.key -out fabrikam.csr
    ```
 
-1. При появлении запроса введите пароль для корневого ключа и сведения о организации для пользовательского ЦС. Country, штат, org, OU и полное доменное имя. Это домен веб-сайта, который должен отличаться от издателя.
+1. При появлении запроса введите пароль для корневого ключа и сведения о организации для пользовательского ЦС: Country, штат, org, OU и полное доменное имя. Это домен веб-сайта, который должен отличаться от издателя.
 
    ![Сертификат сервера](media/self-signed-certificates/server-cert.png)
 
@@ -130,7 +130,7 @@ CSR — это открытый ключ, предоставляемый ЦС п
 
 ### <a name="iis"></a>IIS
 
-Инструкции по импорту сертификата и его передаче в качестве сертификата сервера в IIS см. в [разделе как Установите импортированные сертификаты на веб-сервер в Windows Server](https://support.microsoft.com/help/816794/how-to-install-imported-certificates-on-a-web-server-in-windows-server)2003.
+Инструкции по импорту сертификата и его передаче в качестве сертификата сервера в IIS см. в разделе [как установить импортированные сертификаты на веб-сервере в Windows server 2003](https://support.microsoft.com/help/816794/how-to-install-imported-certificates-on-a-web-server-in-windows-server).
 
 Инструкции по привязке SSL см. в разделе [Настройка SSL в IIS 7](https://docs.microsoft.com/iis/manage/configuring-security/how-to-set-up-ssl-on-iis#create-an-ssl-binding-1).
 
@@ -178,7 +178,7 @@ openssl s_client -connect localhost:443 -servername www.fabrikam.com -showcerts
 
 Чтобы отправить сертификат в шлюзе приложений, необходимо экспортировать CRT-сертификат в формате CER с кодировкой 64. Поскольку CRT уже содержит открытый ключ в формате Base-64, просто Переименуйте расширение файла с CRT на CER. 
 
-### <a name="azure-portal"></a>портала Azure
+### <a name="azure-portal"></a>Портал Azure
 
 Чтобы отправить доверенный корневой сертификат с портала, выберите **Параметры HTTP** и выберите протокол **HTTPS** .
 
@@ -268,7 +268,7 @@ Set-AzApplicationGateway -ApplicationGateway $gw
 
     ![Проверка HTTPS](media/self-signed-certificates/https-probe.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о ССЛ\ТЛС в шлюзе приложений см. в разделе [Общие сведения о завершении работы SSL и сквозном использовании SSL с помощью шлюза приложений](ssl-overview.md).
 

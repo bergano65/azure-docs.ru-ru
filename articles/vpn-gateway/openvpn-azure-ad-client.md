@@ -1,22 +1,26 @@
 ---
-title: 'Настройка VPN-клиента для P2S VPN-подключений: Аутентификация Azure AD | Документация Майкрософт'
+title: 'Настройка VPN-клиента для подключений Опенвпн Protocol P2S: Аутентификация Azure AD | Документация Майкрософт'
 description: VPN-подключение P2S можно использовать для подключения к виртуальной сети с помощью проверки подлинности Azure AD.
 services: vpn-gateway
-author: cherylmc
+author: anzaman
 ms.service: vpn-gateway
 ms.topic: conceptual
-ms.date: 10/08/2019
-ms.author: cherylmc
-ms.openlocfilehash: 704dcd6335766a6058de4e520b8dcbca0d304c9d
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.date: 11/07/2019
+ms.author: alzam
+ms.openlocfilehash: da863144da5ec4361673c913392495d3d622f5a9
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73721471"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73837980"
 ---
-# <a name="configure-a-vpn-client-for-p2s-vpn-connections-azure-ad-authentication-preview"></a>Настройка VPN-клиента для P2S VPN-подключений: проверка подлинности Azure AD (Предварительная версия)
+# <a name="configure-a-vpn-client-for-p2s-openvpn-protocol-connections-azure-ad-authentication-preview"></a>Настройка VPN-клиента для подключений по протоколу P2S Опенвпн: проверка подлинности Azure AD (Предварительная версия)
 
 Эта статья поможет настроить VPN-клиент для подключения к виртуальной сети с помощью VPN типа "точка — сеть" и Azure Active Directory проверки подлинности. Прежде чем можно будет подключиться и пройти проверку подлинности с помощью Azure AD, необходимо сначала настроить клиент Azure AD. Дополнительные сведения см. в статье [Настройка клиента Azure AD](openvpn-azure-ad-tenant.md).
+
+> [!NOTE]
+> Аутентификация Azure AD поддерживается только для подключений по протоколу Опенвпн®.
+>
 
 ## <a name="profile"></a>Работа с профилями клиентов
 

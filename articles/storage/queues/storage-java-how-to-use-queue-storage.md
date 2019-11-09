@@ -8,12 +8,12 @@ ms.date: 12/08/2016
 ms.subservice: queues
 ms.topic: conceptual
 ms.reviewer: cbrooks
-ms.openlocfilehash: 33123c823a2e0d6044e3419f62a512f3e84f953f
-ms.sourcegitcommit: bd4198a3f2a028f0ce0a63e5f479242f6a98cc04
+ms.openlocfilehash: 17d02d8df96927aa506683fef94899e5c5114684
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2019
-ms.locfileid: "72303002"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73839022"
 ---
 # <a name="how-to-use-queue-storage-from-java"></a>Использование хранилища очередей из Java
 
@@ -69,7 +69,7 @@ String storageConnectionString =
 В приведенных ниже примерах предполагается, что вы использовали одно из этих двух определений для получения строки подключения к хранилищу.
 
 ## <a name="how-to-create-a-queue"></a>Практическое руководство. Создание очереди
-Объект **CloudQueueClient** позволяет ссылаться на объекты очередей. Следующий код создает объект **CloudQueueClient**. (Примечание. Существуют также другие способы создания объектов **CloudStorageAccount**. Дополнительные сведения см. в разделе **CloudStorageAccount** [справочнике по пакету SDK для клиента службы хранилища Azure].
+Объект **CloudQueueClient** позволяет ссылаться на объекты очередей. Следующий код создает объект **CloudQueueClient**. (Примечание. Есть и другие способы создания объектов **CloudStorageAccount**. Дополнительные сведения см. в разделе **CloudStorageAccount** в [справочнике по пакету SDK для клиента службы хранилища Azure].)
 
 С помощью объекта **CloudqueueClient** получите ссылку на очередь, которую необходимо использовать. Очередь можно создать, если она не существует.
 
@@ -97,7 +97,7 @@ catch (Exception e)
 ```
 
 ## <a name="how-to-add-a-message-to-a-queue"></a>Практическое руководство. Добавление сообщения в очередь
-Чтобы вставить сообщение в существующую очередь, сначала создайте новый объект **CloudQueueMessage**. Затем вызовите метод **AddMessage**. Для создания объекта **CloudQueueMessage** можно использовать строку (в формате UTF-8) или массив байтов. Ниже приведен код, создающий очередь (если она не существует) и вставляет сообщение "Hello, World".
+Чтобы вставить сообщение в существующую очередь, сначала создайте объект **CloudQueueMessage**. Затем вызовите метод **AddMessage**. Для создания объекта **CloudQueueMessage** можно использовать строку (в формате UTF-8) или массив байтов. Ниже приведен код, создающий очередь (если она не существует) и вставляет сообщение "Hello, World".
 
 ```java
 try
@@ -337,7 +337,7 @@ catch (Exception e)
 }
 ```
 
-## <a name="how-to-list-the-queues"></a>Практическое руководство. Перечисление очередей
+## <a name="how-to-list-the-queues"></a>Как перечислять очереди
 Чтобы получить список текущей очереди, вызовите метод **CloudQueueClient.listQueues()** , который возвращает коллекцию объектов **CloudQueue**.
 
 ```java
@@ -391,10 +391,10 @@ catch (Exception e)
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Вы изучили основные сведения о хранилище очередей. Дополнительные сведения о более сложных задачах по использованию хранилища можно найти по следующим ссылкам.
 
-* [Пакет SDK для службы хранилища Azure для Java][Azure Storage SDK for Java]
+* [пакет SDK службы хранилища Azure для Java][Azure Storage SDK for Java]
 * [справочнике по пакету SDK для клиента службы хранилища Azure][Azure Storage Client SDK Reference]
 * [API-интерфейс REST служб хранилища Azure][Azure Storage Services REST API]
 * [Блог рабочей группы службы хранилища Azure][Azure Storage Team Blog]
@@ -402,6 +402,6 @@ catch (Exception e)
 [Azure SDK for Java]: https://go.microsoft.com/fwlink/?LinkID=525671
 [Azure Storage SDK for Java]: https://github.com/azure/azure-storage-java
 [Azure Storage SDK for Android]: https://github.com/azure/azure-storage-android
-[справочнике по пакету SDK для клиента службы хранилища Azure]: http://dl.windowsazure.com/storage/javadoc/
+[справочнике по пакету SDK для клиента службы хранилища Azure]: https://javadoc.io/doc/com.microsoft.azure/azure-core/0.8.0/index.html
 [Azure Storage Services REST API]: https://msdn.microsoft.com/library/azure/dd179355.aspx
 [Azure Storage Team Blog]: https://blogs.msdn.com/b/windowsazurestorage/

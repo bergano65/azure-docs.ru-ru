@@ -11,12 +11,12 @@ ms.author: sanpil
 author: sanpil
 ms.date: 08/09/2019
 ms.custom: seodec18
-ms.openlocfilehash: 3dc439c352bb3e6e56fae4b83d783da94720bfe1
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 4af18eaa0dc5622dcc52603e6fb4e569f505feeb
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/08/2019
-ms.locfileid: "73818404"
+ms.locfileid: "73838109"
 ---
 # <a name="create-and-run-machine-learning-pipelines-with-azure-machine-learning-sdk"></a>Создание и запуск конвейеров машинного обучения с помощью пакета SDK для Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -411,14 +411,14 @@ response = requests.post(published_pipeline1.endpoint,
 ### <a name="view-results-of-a-published-pipeline"></a>Просмотр результатов опубликованного конвейера
 
 Просмотрите список всех опубликованных конвейеров и сведения о их выполнении:
-1. Войдите в [машинное обучение Azure Studio](https://ml.azure.com).
+1. Войдите в [машинное обучение Azure](https://ml.azure.com).
 
 1. [Просмотрите рабочую область](how-to-manage-workspace.md#view), чтобы найти список конвейеров.
  ![Список конвейеров машинного обучения](./media/how-to-create-your-first-pipeline/list_of_pipelines.png)
  
 1. Выберите конкретный конвейер, чтобы просмотреть результаты его запуска.
 
-Эти результаты также доступны в рабочей области в [Машинное обучение Azure Studio]] (https://ml.azure.com).
+Эти результаты также доступны в рабочей области в [машинное обучение Azure](https://ml.azure.com).
 
 ### <a name="disable-a-published-pipeline"></a>Отключение опубликованного конвейера
 

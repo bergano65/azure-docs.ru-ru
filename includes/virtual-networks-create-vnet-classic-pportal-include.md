@@ -8,17 +8,17 @@ ms.topic: include
 ms.date: 04/13/2018
 ms.author: genli
 ms.custom: include file
-ms.openlocfilehash: aa88bf3bd6c5037b41c09e9ffe47921f1b9dc9be
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: ac5599a38c3fcbc4a6c331d2b14c6b6c55c31d82
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185201"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73850473"
 ---
 ## <a name="how-to-create-a-classic-vnet-in-the-azure-portal"></a>Создание классической виртуальной сети на портале Azure
 Чтобы создать классическую виртуальную сеть по предыдущему сценарию, выполните следующие действия.
 
-1. В браузере перейдите по адресу http://portal.azure.com и при необходимости выполните вход с помощью учетной записи Azure.
+1. В браузере перейдите по адресу https://portal.azure.com и при необходимости выполните вход с помощью учетной записи Azure.
 2. Последовательно выберите **Создать ресурс** > **Сети** > **Виртуальная сеть**. Обратите внимание, что в списке **Выбор модели развертывания** уже содержится вариант **Классическая**. 3. Щелкните **Создать**, как показано на следующем снимке экрана.
    
     ![Создание виртуальной сети на портале Azure](./media/virtual-networks-create-vnet-classic-pportal-include/vnet-create-pportal-figure1.gif)

@@ -7,12 +7,12 @@ ms.reviewer: orspodek
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 10/31/2019
-ms.openlocfilehash: 293a90591a77825279c8ebbae64516b6126d8621
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: a7a9efbf6fd9c3dbe6b16d12a54f743d5b0820ba
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73588269"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73838219"
 ---
 # <a name="deploy-azure-data-explorer-into-your-virtual-network-preview"></a>Развертывание обозреватель данных Azure в виртуальной сети (Предварительная версия)
 
@@ -220,30 +220,32 @@ Azure обозреватель данных поддерживает разве�
 
 Если вы хотите защитить исходящий трафик с помощью [брандмауэра Azure](/azure/firewall/overview) или любого виртуального устройства для ограничения доменных имен, в брандмауэре должны быть разрешены следующие полные доменные имена (FQDN).
 
-* prod.warmpath.msftcloudes.com:443
-* production.diagnostics.monitoring.core.windows.net:443
-* graph.windows.net:443
-* *. update.microsoft.com:443
-* shavamanifestcdnprod1.azureedge.net:443
-* login.live.com:443
-* wdcp.microsoft.com:443
-* login.microsoftonline.com:443
-* azureprofilerfrontdoor.cloudapp.net:443
-* *. core.windows.net:443
-* *. servicebus.windows.net:443
-* shoebox2.metrics.nsatc.net:443
-* production.diagnostics.monitoring.core.windows.net:443
-* prod-dsts.dsts.core.windows.net:443
-* ocsp.msocsp.com:80
-* *. windowsupdate.com:80
-* ocsp.digicert.com:80
-* go.microsoft.com:80
-* dmd.metaservices.microsoft.com:80
-* www.msftconnecttest.com:80
-* crl.microsoft.com:80
-* www.microsoft.com:80
-* adl.windows.com:80
-* crl3.digicert.com:80
+```
+prod.warmpath.msftcloudes.com:443
+production.diagnostics.monitoring.core.windows.net:443
+graph.windows.net:443
+*.update.microsoft.com:443
+shavamanifestcdnprod1.azureedge.net:443
+login.live.com:443
+wdcp.microsoft.com:443
+login.microsoftonline.com:443
+azureprofilerfrontdoor.cloudapp.net:443
+*.core.windows.net:443
+*.servicebus.windows.net:443
+shoebox2.metrics.nsatc.net:443
+production.diagnostics.monitoring.core.windows.net:443
+prod-dsts.dsts.core.windows.net:443
+ocsp.msocsp.com:80
+*.windowsupdate.com:80
+ocsp.digicert.com:80
+go.microsoft.com:80
+dmd.metaservices.microsoft.com:80
+www.msftconnecttest.com:80
+crl.microsoft.com:80
+www.microsoft.com:80
+adl.windows.com:80
+crl3.digicert.com:80
+```
 
 Кроме того, необходимо определить [таблицу маршрутов](/azure/virtual-network/virtual-networks-udr-overview) в подсети с [адресами управления](#azure-data-explorer-management-ip-addresses) и [адресами мониторинга работоспособности](#health-monitoring-addresses) в *Интернете* следующего прыжка, чтобы предотвратить возникновение проблем с асимметричными маршрутами.
 

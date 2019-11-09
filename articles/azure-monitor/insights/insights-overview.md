@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/22/2019
-ms.openlocfilehash: 81d82ce79130513a2827090a98bfef192c9d7829
-ms.sourcegitcommit: 018e3b40e212915ed7a77258ac2a8e3a660aaef8
+ms.openlocfilehash: d1b53267daa2d47baf9976727bbaf3fa56172432
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73795732"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73832091"
 ---
 # <a name="overview-of-insights-in-azure-monitor"></a>Обзор аналитических сведений в Azure Monitor
 Insights предоставляет настраиваемый интерфейс мониторинга для конкретных приложений и служб. Они хранят данные на [платформе данных Azure Monitor](../platform/data-platform.md) и используют другие функции Azure Monitor для анализа и оповещений, но могут содействовать дополнительные данные и обеспечивают уникальную работу пользователей в портал Azure. Получите доступ к аналитике из раздела " **аналитика** " в меню Azure Monitor в портал Azure.
@@ -47,8 +47,8 @@ Azure Monitor для виртуальных машин отслеживает в
 
 ![Azure Monitor для виртуальных машин](media/insights-overview/vm-insights.png)
 
-## <a name="azure-monitor-for-network-preview"></a>Azure Monitor для сети (Предварительная версия)
-Azure Monitor для сети предоставляет исчерпывающее представление о работоспособности и метриках для всех сетевых ресурсов. Функция расширенного поиска помогает определить зависимости ресурсов, включая такие сценарии, как идентификация ресурсов, на которых размещен ваш веб-сайт, путем простого поиска имени веб-сайта.
+## <a name="azure-monitor-for-networks-preview"></a>Azure Monitor для сетей (Предварительная версия)
+[Azure Monitor для сетей](network-insights-overview.md) предоставляет исчерпывающее представление о работоспособности и метриках для всех сетевых ресурсов. Функция расширенного поиска помогает определить зависимости ресурсов, включая такие сценарии, как идентификация ресурсов, на которых размещен ваш веб-сайт, путем простого поиска имени веб-сайта.
 
 ![Azure Monitor для сетей](media/insights-overview/network-insights.png)
 

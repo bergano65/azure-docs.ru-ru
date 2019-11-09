@@ -9,12 +9,12 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 10/10/2019
-ms.openlocfilehash: a1c3bec4b32a9d3450e307f42958bb19263c3d7a
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: ddd631b809d4a0635107069f48281db4c0a2e7e0
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73717153"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73837556"
 ---
 # <a name="permutation-feature-importance"></a>Важность функции перестановки
 
@@ -24,7 +24,7 @@ ms.locfileid: "73717153"
 
 Результаты, возвращаемые модулем, представляют *изменение* производительности обученной модели после перестановки. Важные функции, как правило, более чувствительны к процессу перетасовывание, поэтому они приводят к увеличению рейтинга важности. 
 
-В этой статье приводятся общие сведения о функции перестановки, ее теоретической основе и приложениях в машинном обучении: [приоритетность функций перестановки](http://blogs.technet.com/b/machinelearning/archive/2015/04/14/permutation-feature-importance.aspx).  
+В этой статье приводятся общие сведения о функции перестановки, ее теоретической основе и приложениях в машинном обучении: [приоритетность функций перестановки](https://blogs.technet.com/b/machinelearning/archive/2015/04/14/permutation-feature-importance.aspx).  
 
 ## <a name="how-to-use-permutation-feature-importance"></a>Как использовать важность функции перестановки
 

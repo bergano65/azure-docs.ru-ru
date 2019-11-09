@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: c764460fb65287dab0031b27291d2f332cec3b3d
-ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
+ms.openlocfilehash: ceb3b7315439aced7f781e8de5e62b49fd83818c
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72756554"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73833818"
 ---
 # <a name="use-the-azure-maps-map-control"></a>Использование элемента управления картой Azure Maps
 
@@ -27,14 +27,14 @@ ms.locfileid: "72756554"
 
 2. Загрузите в веб-пакет SDK Azure Maps. Это можно сделать с помощью одного из двух параметров.
 
-    а) Используйте размещенную на глобальном уровне версию CDN веб-пакета SDK Azure Maps, добавив конечные точки URL-адреса в таблицу стилей и источник сценария в элементе `<head>` файла.
+    а. Используйте размещенную на глобальном уровне версию CDN веб-пакета SDK Azure Maps, добавив конечные точки URL-адреса в таблицу стилей и источник сценария в элементе `<head>` файла.
 
     ```HTML
     <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.css" type="text/css">
     <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.js"></script>
     ```
 
-    б) Кроме того, загрузите исходный код веб-пакета SDK Azure Maps локально с помощью пакета NPM [azure-maps-control](https://www.npmjs.com/package/azure-maps-control) и разместите его в приложении. Этот пакет также включает определения TypeScript.
+    b. Кроме того, загрузите исходный код веб-пакета SDK Azure Maps локально с помощью пакета NPM [azure-maps-control](https://www.npmjs.com/package/azure-maps-control) и разместите его в приложении. Этот пакет также включает определения TypeScript.
 
     > npm install azure-maps-control
 
@@ -174,7 +174,7 @@ ms.locfileid: "72756554"
 
 8. Откройте файл в веб-браузере и вы увидите готовую для просмотра карту. Он должен выглядеть, как в следующем коде:
 
-    <iframe height="700" style="width: 100%;" scrolling="no" title="Использование элемента управления картой" src="//codepen.io/azuremaps/embed/yZpEYL/?height=557&theme-id=0&default-tab=html,result" frameborder="no" allowtransparency="true" allowfullscreen="true">См. сведения <a href='https://codepen.io/azuremaps/pen/yZpEYL/'>об использовании элемента управления Map</a> с помощью Azure Maps (<a href='https://codepen.io/azuremaps'> @azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
+    <iframe height="700" style="width: 100%;" scrolling="no" title="Использование элемента управления картой" src="//codepen.io/azuremaps/embed/yZpEYL/?height=557&theme-id=0&default-tab=html,result" frameborder="no" allowtransparency="true" allowfullscreen="true">См. сведения <a href='https://codepen.io/azuremaps/pen/yZpEYL/'>об использовании элемента управления Map</a> с помощью Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
     </iframe>
 
 ## <a name="localizing-the-map"></a>Локализация схемы
@@ -183,7 +183,7 @@ Azure Maps предоставляет два разных способа нас�
 
 ```javascript
 atlas.setLanguage('fr-FR');
-atlas.setView('auto');
+atlas.setView('Auto');
 ```
 
 Второй вариант — передать эту информацию в параметры карты при загрузке карты следующим образом:
@@ -191,7 +191,7 @@ atlas.setView('auto');
 ```javascript
 map = new atlas.Map('myMap', {
     language: 'fr-FR',
-    view: 'auto',
+    view: 'Auto',
 
     authOptions: {
         authType: 'aad',

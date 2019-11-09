@@ -6,12 +6,12 @@ ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 08/21/2019
 ms.author: tomfitz
-ms.openlocfilehash: 88aabb676d3a15dd2efff3acd751818301519ae1
-ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
+ms.openlocfilehash: 0634b069c79495ad6de536b27ebd9981eeb36128
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2019
-ms.locfileid: "71972710"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73837097"
 ---
 # <a name="deploy-resources-with-resource-manager-templates-and-azure-powershell"></a>Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell
 
@@ -33,9 +33,11 @@ New-AzResourceGroupDeployment -ResourceGroupName <resource-group-name> -Template
 New-AzDeployment -Location <location> -TemplateFile <path-to-template>
 ```
 
-В настоящее время развертывания группы управления поддерживаются только в REST API. См. статью [развертывание ресурсов с помощью шаблонов диспетчер ресурсов и диспетчер ресурсов REST API](resource-group-template-deploy-rest.md).
+Дополнительные сведения о развертываниях уровня подписки см. в статье [Создание групп ресурсов и ресурсов на уровне подписки](deploy-to-subscription.md).
 
-В примерах этой статьи используются развертывания групп ресурсов. Дополнительные сведения о развертывании подписок см. в статье [Создание групп ресурсов и ресурсов на уровне подписки](deploy-to-subscription.md).
+В настоящее время развертывания группы управления поддерживаются только в REST API. Дополнительные сведения о развертывании на уровне группы управления см. [в разделе Создание ресурсов на уровне группы управления](deploy-to-management-group.md).
+
+В примерах этой статьи используются развертывания групп ресурсов.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -76,7 +78,7 @@ New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName `
   -TemplateUri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-storage-account-create/azuredeploy.json
 ```
 
-В предыдущем примере для шаблона требуется общедоступный код URI, который подходит для большинства сценариев, так как шаблон не должен содержать конфиденциальные данные. Если необходимо указать конфиденциальные данные (например, пароль администратора), то передайте это значение с помощью безопасного параметра. Но если вы не хотите, чтобы шаблон был общедоступным, можно защитить его, сохранив в закрытом контейнере хранилища. Сведения о развертывании шаблона, требующего маркер подписанного URL-адреса (SAS), см. в статье [Развертывание частного шаблона Resource Manager с использованием токена SAS и Azure PowerShell](resource-manager-powershell-sas-token.md). Изучите статью [Руководство. Интеграция с Azure Key Vault при развертывании шаблона Resource Manager](./resource-manager-tutorial-use-key-vault.md).
+В предыдущем примере для шаблона требуется общедоступный код URI, который подходит для большинства сценариев, так как шаблон не должен содержать конфиденциальные данные. Если необходимо указать конфиденциальные данные (например, пароль администратора), то передайте это значение с помощью безопасного параметра. Но если вы не хотите, чтобы шаблон был общедоступным, можно защитить его, сохранив в закрытом контейнере хранилища. Сведения о развертывании шаблона, требующего маркер подписанного URL-адреса (SAS), см. в статье [Развертывание частного шаблона Resource Manager с использованием токена SAS и Azure PowerShell](resource-manager-powershell-sas-token.md). Чтобы пройти обучение, см. [руководство по интеграции Azure Key Vault в диспетчер ресурсов шаблоны развертывания](./resource-manager-tutorial-use-key-vault.md).
 
 ## <a name="deploy-from-azure-cloud-shell"></a>Развертывание из Azure Cloud Shell
 
@@ -185,7 +187,7 @@ Test-AzResourceGroupDeployment : After parsing a value an unexpected character w
   ". Path 'variables', line 31, position 3.
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о откате к успешному развертыванию при возникновении ошибки см. в разделе [откат при ошибке для успешного развертывания](rollback-on-error.md).
 - Сведения о том, как указать способ обработки ресурсов, которые существуют в группе ресурсов, но не определены в шаблоне, см. в [описании режимов развертывания с помощью Azure Resource Manager](deployment-modes.md).

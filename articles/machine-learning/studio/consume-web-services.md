@@ -1,6 +1,6 @@
 ---
 title: Использование веб-службы
-titleSuffix: ML Studio (classic) Azure
+titleSuffix: ML Studio (classic) - Azure
 description: После развертывания службы машинного обучения из Машинное обучение Azure Studio (классической) веб-службу RESTFUL можно использовать как службу запросов и ответов в режиме реального времени либо как службу пакетного выполнения.
 services: machine-learning
 ms.service: machine-learning
@@ -10,12 +10,12 @@ author: xiaoharper
 ms.author: amlstudiodocs
 ms.custom: seodec18
 ms.date: 06/02/2017
-ms.openlocfilehash: b955b274f3e96eab7e6075b0e966117c2871bbf8
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 1a567e8f910ccf539038a19eef0319f21833f336
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73671435"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73839692"
 ---
 # <a name="how-to-consume-an-azure-machine-learning-studio-classic-web-service"></a>Как использовать веб-службу Машинное обучение Azure Studio (классическая модель)
 

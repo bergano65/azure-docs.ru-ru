@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/26/2018
 ms.author: victorh
-ms.openlocfilehash: 11962d8958811bc87fb94dc6fe78cb760fdaa20e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e96579d52752f75b864c430ea0334a544606998c
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66729715"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73835574"
 ---
 # <a name="create-an-application-gateway-with-multiple-site-hosting-using-azure-powershell"></a>Создание шлюза приложений с несколькими сайтами с помощью Azure PowerShell
 
@@ -98,7 +98,7 @@ $frontendport = New-AzApplicationGatewayFrontendPort `
 
 ### <a name="create-the-backend-pools-and-settings"></a>Создание внутреннего пула и настройка параметров
 
-Создайте внутренние пулы *contosoPool* и *fabrikamPool* для шлюза приложений с помощью [New AzApplicationGatewayBackendAddressPool](/powershell/module/az.network/new-azapplicationgatewaybackendaddresspool). Настройте параметры для пула, используя командлет [New-AzApplicationGatewayBackendHttpSettings](/powershell/module/az.network/new-azapplicationgatewaybackendhttpsetting).
+Создайте серверные пулы с именами *contosoPool* и *fabrikamPool* для шлюза приложений с помощью [New-азаппликатионгатевайбаккендаддресспул](/powershell/module/az.network/new-azapplicationgatewaybackendaddresspool). Настройте параметры для пула, используя командлет [New-AzApplicationGatewayBackendHttpSettings](/powershell/module/az.network/new-azapplicationgatewaybackendhttpsetting).
 
 ```azurepowershell-interactive
 $contosoPool = New-AzApplicationGatewayBackendAddressPool `
@@ -117,7 +117,7 @@ $poolSettings = New-AzApplicationGatewayBackendHttpSettings `
 
 Прослушиватель позволяет шлюзу приложений правильно маршрутизировать трафик на внутренние пулы. В этом руководстве создаются прослушиватели для каждого из двух ваших доменов. В этом примере создаются прослушиватели для доменов *www.contoso.com* и *www.fabrikam.com*.
 
-Создайте прослушиватели *contosoListener* и *fabrikamListener* с помощью [New AzApplicationGatewayHttpListener](/powershell/module/az.network/new-azapplicationgatewayhttplistener) с конфигурацией внешнего интерфейса и интерфейса порт, созданный ранее. Правила требуются для того, чтобы указать прослушивателям, какой внутренний пул использовать для входящего трафика. Создайте базовые правила *contosoRule* и *fabrikamRule* с помощью [New AzApplicationGatewayRequestRoutingRule](/powershell/module/az.network/new-azapplicationgatewayrequestroutingrule).
+Создайте прослушиватели с именами *contosoListener* и *FabrikamListener* , используя [New-азаппликатионгатевайхттплистенер](/powershell/module/az.network/new-azapplicationgatewayhttplistener) с интерфейсной конфигурацией и интерфейсным портом, созданными ранее. Правила требуются для того, чтобы указать прослушивателям, какой внутренний пул использовать для входящего трафика. Создайте базовые правила с именами *contosoRule* и *FabrikamRule* , используя [New-азаппликатионгатевайрекуестраутингруле](/powershell/module/az.network/new-azapplicationgatewayrequestroutingrule).
 
 ```azurepowershell-interactive
 $contosolistener = New-AzApplicationGatewayHttpListener `
@@ -252,7 +252,7 @@ for ($i=1; $i -le 2; $i++)
 
 ## <a name="create-cname-record-in-your-domain"></a>Создание записи CNAME в домене
 
-После создания шлюза приложений с общедоступным IP-адресом можно получить DNS-адрес и использовать его для создания записи CNAME в своем домене. Чтобы получить DNS-адрес шлюза приложений, используйте командлет [Get-AzPublicIPAddress](/powershell/module/az.network/get-azpublicipaddress). Скопируйте значение *fqdn* для DNSSettings и используйте его в качестве значения создаваемой записи CNAME. Использовать записи A не рекомендуется, так как виртуальный IP-адрес может измениться после перезапуска шлюза приложений.
+После создания шлюза приложений с общедоступным IP-адресом можно получить DNS-адрес и использовать его для создания записи CNAME в своем домене. Чтобы получить DNS-адрес шлюза приложений, используйте командлет [Get-AzPublicIPAddress](/powershell/module/az.network/get-azpublicipaddress). Скопируйте значение *fqdn* для DNSSettings и используйте его в качестве значения создаваемой записи CNAME. Использование записей A не рекомендуется, так как виртуальный IP-адрес может измениться после перезапуска шлюза приложений.
 
 ```azurepowershell-interactive
 Get-AzPublicIPAddress -ResourceGroupName myResourceGroupAG -Name myAGPublicIPAddress
@@ -260,7 +260,7 @@ Get-AzPublicIPAddress -ResourceGroupName myResourceGroupAG -Name myAGPublicIPAdd
 
 ## <a name="test-the-application-gateway"></a>Тестирование шлюза приложений
 
-В адресной строке браузера введите имя домена. Например, http://www.contoso.com.
+В адресной строке браузера введите имя домена. Например, https://www.contoso.com.
 
 ![Проверка сайта contoso в шлюзе приложений](./media/application-gateway-create-multisite-azureresourcemanager-powershell/application-gateway-iistest.png)
 

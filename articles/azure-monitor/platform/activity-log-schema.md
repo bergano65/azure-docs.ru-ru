@@ -8,17 +8,17 @@ ms.topic: reference
 ms.date: 1/16/2019
 ms.author: dukek
 ms.subservice: logs
-ms.openlocfilehash: abe2ed0d50ce26ddebeeeccb87c49fc20db43b2a
-ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
+ms.openlocfilehash: 9f58f08718cc0bfeb94b83de55531c9bd22720e2
+ms.sourcegitcommit: 16c5374d7bcb086e417802b72d9383f8e65b24a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69515391"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73847351"
 ---
 # <a name="azure-activity-log-event-schema"></a>Схема событий журнала действий Azure
 **Журнал действий Azure** — это журнал с подробными сведениями о событиях на уровне подписки, которые произошли в Azure. В этой статье описывается схема событий по категориям данных. Схема данных зависит от того, считываются ли данные через портал, PowerShell, CLI или напрямую через REST API и [передачу потока данных в хранилище или Центры событий с помощью профиля журнала](activity-log-export.md). В примерах ниже приведена схема, доступная на портале, в PowerShell, CLI и REST API. Сопоставление этих свойств со [схемой журналов системы диагностики Azure](diagnostic-logs-schema.md) приведено в конце статьи.
 
-## <a name="administrative"></a>Административная
+## <a name="administrative"></a>Administrative
 Эта категория содержит записи всех операций создания, обновления, удаления и других действий, которые выполняются через Resource Manager. В качестве примеров типов событий, которые относятся к этой категории, можно назвать "создание виртуальной машины" или "удаление группы безопасности сети". Каждое действие, выполняемое пользователем или приложением с помощью Resource Manager, моделируется как операция с определенным типом ресурсов. Если тип операции — "запись", "удаление" или "действие", то любые сведения об этой операции (о ее запуске, успешном выполнении или сбое) записываются в категорию "Административная". Категория "Административная" также включает в себя любые изменения в управлении доступом на основе ролей, которые происходят в подписке.
 
 ### <a name="sample-event"></a>Пример события
@@ -110,34 +110,34 @@ ms.locfileid: "69515391"
 ```
 
 ### <a name="property-descriptions"></a>Описания свойств
-| Имя элемента | Описание |
+| Имя элемента | Description (Описание) |
 | --- | --- |
-| авторизация |BLOB-объект со свойствами RBAC события. Обычно включает следующие свойства: action, role и scope. |
-| вызывающая сторона |Адрес электронной почты пользователя, который выполнил операцию, утверждение имени субъекта-службы или имени участника-пользователя в зависимости от доступности. |
-| каналы |Одно из следующих значений: Admin, Operation |
+| authorization |BLOB-объект со свойствами RBAC события. Обычно включает следующие свойства: action, role и scope. |
+| caller |Адрес электронной почты пользователя, который выполнил операцию, утверждение имени субъекта-службы или имени участника-пользователя в зависимости от доступности. |
+| каналов |Одно из следующих значений: Admin или Operation. |
 | claims |Токен JWT, который используется Active Directory для аутентификации пользователя или приложения при выполнении этой операции в Resource Manager. |
 | correlationId |Обычно GUID в строковом формате. События, которые совместно используют идентификатор correlationId, принадлежат к одному общему действию. |
-| Description (Описание) |Статическое описание события в текстовом виде. |
+| description |Статическое описание события в текстовом виде. |
 | eventDataId |Уникальный идентификатор события. |
 | eventName | Понятное имя административного события. |
 | category | Всегда "административный" |
 | httpRequest |Большой двоичный объект, описывающий HTTP-запрос. Обычно включает clientRequestId, clientIpAddress и method (метод HTTP, например PUT). |
-| уровень |Уровень события. Одно из следующих значений: Critical, Error, Warning или Informational |
-| resourceGroupName |Имя группы ресурсов для затронутого ресурса. |
+| level |Уровень события. Одно из таких значений: Critical, Error, Warning, Informational. |
+| имя_группы_ресурсов |Имя группы ресурсов для затронутого ресурса. |
 | resourceProviderName |Имя поставщика ресурса для затронутого ресурса. |
-| resourceType | Тип ресурса, затронутого административным событием. |
+| тип_ресурса | Тип ресурса, затронутого административным событием. |
 | resourceId |Идентификатор ресурса для затронутого ресурса. |
 | operationId |События, относящиеся к одной операции, совместно используют один GUID. |
 | operationName |Имя операции. |
-| свойства |Набор пар `<Key, Value>` (например, Dictionary) c подробным описанием события. |
-| Состояние |Строка, описывающая состояние операции. Некоторые обычные значения: Started (Запущен), In Progress (Выполняется), Succeeded (Успешно), Failed (Сбой), Active (Активно), Resolved (Разрешено). |
-| subStatus |Обычно это код состояния HTTP соответствующего вызова REST, но может также включать другие строки, описывающие подсостояние, например: OK (код состояния HTTP: 200), Created (Создано) (код состояния HTTP: 201), Accepted (Принято) (код состояния HTTP: 202), No Content (Нет содержимого) (код состояния HTTP: 204), Bad Request (Недопустимый запрос) (код состояния HTTP: 400), Not Found (Не найдено) (код состояния HTTP: 404), Conflict (Конфликт) (код состояния HTTP: 409), Internal Server Error (Внутренняя ошибка сервера) (код состояния HTTP: 500), Service Unavailable (Служба недоступна) (код состояния HTTP: 503), Gateway Timeout (Истекло время ожидания шлюза) (код состояния HTTP: 504). |
+| properties |Набор пар `<Key, Value>` (например, Dictionary) c подробным описанием события. |
+| status |Строка, описывающая состояние операции. Обычные значения: Started, In Progress, Succeeded, Failed, Active, Resolved. |
+| subStatus |Обычно содержит код состояния HTTP для соответствующего вызова REST, но может содержать и другие строковые описания подсостояния, например: OK (код состояния HTTP: 200); Created (код состояния HTTP: 201); Accepted (код состояния HTTP: 202); No Content (код состояния HTTP: 204); Bad Request (код состояния HTTP: 400); Not Found (код состояния HTTP: 404); Conflict (код состояния HTTP: 409); Internal Server Error (код состояния HTTP: 500); Service Unavailable (код состояния HTTP: 503); Gateway Timeout (код состояния HTTP: 504). |
 | eventTimestamp |Метка времени, когда служба Azure создала событие при обработке соответствующего этому событию запроса. |
 | submissionTimestamp |Метка времени, когда событие стало доступно для запросов. |
 | subscriptionId |Идентификатор подписки Azure. |
 
 ## <a name="service-health"></a>Работоспособность службы
-Эта категория содержит записи всех инцидентов, связанных с работоспособностью службы, которые произошли в Azure. В качестве примера типа события из этой категории можно назвать следующее: "В работе SQL Azure в восточной части США наблюдаются простои". Существует шесть разновидностей событий работоспособности служб: Action Required (Требуется действие), Assisted Recovery (Помощь при восстановлении), Incident (Инцидент), Maintenance (Обслуживание), Information (Информация) и Security (Безопасность). Они отображаются, только если в подписке есть ресурс, на который повлияет данное событие.
+Эта категория содержит записи всех инцидентов, связанных с работоспособностью службы, которые произошли в Azure. В качестве примера типа события из этой категории можно назвать следующее: "В работе SQL Azure в восточной части США наблюдаются простои". Существует шесть разновидностей событий работоспособности службы: "Требуется действие", "Помощь при восстановлении", "Инцидент", "Обслуживание", "Сведения" и "Безопасность". Они отображаются, только если в подписке есть ресурс, на который повлияет данное событие.
 
 ### <a name="sample-event"></a>Пример события
 ```json
@@ -181,13 +181,13 @@ ms.locfileid: "69515391"
     "title": "Network Infrastructure - UK South",
     "service": "Service Fabric",
     "region": "UK South",
-    "communication": "Starting at approximately 21:41 UTC on 20 Jul 2017, a subset of customers in UK South may experience degraded performance, connectivity drops or timeouts when accessing their Azure resources hosted in this region. Engineers are investigating underlying Network Infrastructure issues in this region. Impacted services may include, but are not limited to App Services, Automation, Service Bus, Log Analytics, Key Vault, SQL Database, Service Fabric, Event Hubs, Stream Analytics, Azure Data Movement, API Management, and Azure Search. Multiple engineering teams are engaged in multiple workflows to mitigate the impact. The next update will be provided in 60 minutes, or as events warrant.",
+    "communication": "Starting at approximately 21:41 UTC on 20 Jul 2017, a subset of customers in UK South may experience degraded performance, connectivity drops or timeouts when accessing their Azure resources hosted in this region. Engineers are investigating underlying Network Infrastructure issues in this region. Impacted services may include, but are not limited to App Services, Automation, Service Bus, Log Analytics, Key Vault, SQL Database, Service Fabric, Event Hubs, Stream Analytics, Azure Data Movement, API Management, and Azure Cognitive Search. Multiple engineering teams are engaged in multiple workflows to mitigate the impact. The next update will be provided in 60 minutes, or as events warrant.",
     "incidentType": "Incident",
     "trackingId": "NA0F-BJG",
     "impactStartTime": "2017-07-20T21:41:00.0000000Z",
     "impactedServices": "[{\"ImpactedRegions\":[{\"RegionName\":\"UK South\"}],\"ServiceName\":\"Service Fabric\"}]",
     "defaultLanguageTitle": "Network Infrastructure - UK South",
-    "defaultLanguageContent": "Starting at approximately 21:41 UTC on 20 Jul 2017, a subset of customers in UK South may experience degraded performance, connectivity drops or timeouts when accessing their Azure resources hosted in this region. Engineers are investigating underlying Network Infrastructure issues in this region. Impacted services may include, but are not limited to App Services, Automation, Service Bus, Log Analytics, Key Vault, SQL Database, Service Fabric, Event Hubs, Stream Analytics, Azure Data Movement, API Management, and Azure Search. Multiple engineering teams are engaged in multiple workflows to mitigate the impact. The next update will be provided in 60 minutes, or as events warrant.",
+    "defaultLanguageContent": "Starting at approximately 21:41 UTC on 20 Jul 2017, a subset of customers in UK South may experience degraded performance, connectivity drops or timeouts when accessing their Azure resources hosted in this region. Engineers are investigating underlying Network Infrastructure issues in this region. Impacted services may include, but are not limited to App Services, Automation, Service Bus, Log Analytics, Key Vault, SQL Database, Service Fabric, Event Hubs, Stream Analytics, Azure Data Movement, API Management, and Azure Cognitive Search. Multiple engineering teams are engaged in multiple workflows to mitigate the impact. The next update will be provided in 60 minutes, or as events warrant.",
     "stage": "Active",
     "communicationId": "636361902146035247",
     "version": "0.1.1"
@@ -196,8 +196,8 @@ ms.locfileid: "69515391"
 ```
 Дополнительные сведения о значениях в свойствах см. в статье об [уведомлениях о работоспособности службы](./../../azure-monitor/platform/service-notifications.md).
 
-## <a name="resource-health"></a>Работоспособность ресурсов
-Эта категория содержит записи всех событий, связанных с работоспособностью службы, которые произошли с ресурсами Azure. Пример события такого типа из этой категории: Virtual Machine health status changed to unavailable (Состояние работоспособности виртуальной машины изменилось на "Недоступно"). Существует четыре вида событий работоспособности ресурсов: Available (Доступно), Unavailable (Недоступно), Degraded (Понижено) и Unknown (Неизвестно). Кроме того, события работоспособности ресурсов можно классифицировать по свойствам PlatformInitiated (Инициировано платформой) и UserInitiated (Инициировано пользователем).
+## <a name="resource-health"></a>Работоспособность ресурса
+Эта категория содержит записи всех событий, связанных с работоспособностью службы, которые произошли с ресурсами Azure. Пример события такого типа из этой категории: Virtual Machine health status changed to unavailable (Состояние работоспособности виртуальной машины изменилось на "Недоступно"). События работоспособности ресурсов соответствуют одному из четырех состояний: Available (Доступно), Unavailable (Недоступно), Degraded (Понижено) и Unknown (Неизвестно). Кроме того, события работоспособности ресурсов можно классифицировать по свойствам PlatformInitiated (Инициировано платформой) и UserInitiated (Инициировано пользователем).
 
 ### <a name="sample-event"></a>Пример события
 
@@ -257,35 +257,35 @@ ms.locfileid: "69515391"
 ```
 
 ### <a name="property-descriptions"></a>Описания свойств
-| Имя элемента | Описание |
+| Имя элемента | Description (Описание) |
 | --- | --- |
-| каналы | Всегда имеет значение "Admin, Operation". |
+| каналов | Всегда имеет значение "Admin, Operation". |
 | correlationId | Глобальный уникальный идентификатор (GUID) в строковом формате. |
 | description |Статическое текстовое описание события оповещения. |
 | eventDataId |Уникальный идентификатор события оповещения. |
 | category | Всегда ResourceHealth. |
 | eventTimestamp |Метка времени, когда служба Azure создала событие при обработке соответствующего этому событию запроса. |
-| уровень |Уровень события. Одно из следующих значений: Critical (Критическое), Error (Ошибка), Warning (Предупреждение), Informational (Информационное) или Verbose (Подробные сведения) |
+| level |Уровень события. Принимает одно из следующих значений: Critical (Критическое), Error (Ошибка), Warning (Предупреждение), Informational (Информационное) или Verbose (Подробные сведения). |
 | operationId |События, относящиеся к одной операции, совместно используют один GUID. |
 | operationName |Имя операции. |
-| resourceGroupName |Имя группы ресурсов, к которой относится ресурс. |
+| имя_группы_ресурсов |Имя группы ресурсов, к которой относится ресурс. |
 | resourceProviderName |Всегда Microsoft.Resourcehealth/healthevent/action. |
-| resourceType | Тип ресурса, на который повлияло событие работоспособности ресурса. |
+| тип_ресурса | Тип ресурса, на который повлияло событие работоспособности ресурса. |
 | resourceId | Имя идентификатора затронутого ресурса. |
-| Состояние |Строка, описывающая состояние события работоспособности. Значения могут быть такими: Active (Активно), Resolved (Разрешено), InProgress (Выполняется), Updated (Обновлено). |
+| status |Строка, описывающая состояние события работоспособности. Возможные значения: Active (Активно), Resolved (Разрешено), InProgress (Выполняется), Updated (Обновлено). |
 | subStatus | Обычно для оповещений имеет значение null. |
 | submissionTimestamp |Метка времени, когда событие стало доступно для запросов. |
 | subscriptionId |Идентификатор подписки Azure. |
-| свойства |Набор пар `<Key, Value>` (например, Dictionary) c подробным описанием события.|
+| properties |Набор пар `<Key, Value>` (например, Dictionary) c подробным описанием события.|
 | properties.title | Понятная для пользователя строка с описанием состояния работоспособности ресурса. |
 | properties.details | Понятная для пользователя строка с описанием подробностей события. |
-| properties.currentHealthStatus | Текущее состояние работоспособности ресурса. Одно из следующих значений: Available (Доступно), Unavailable (Недоступно), Degraded (Понижено) и Unknown (Неизвестно). |
-| properties.previousHealthStatus | Предыдущее состояние работоспособности ресурса. Одно из следующих значений: Available (Доступно), Unavailable (Недоступно), Degraded (Понижено) и Unknown (Неизвестно). |
+| properties.currentHealthStatus | Текущее состояние работоспособности ресурса. Возможные значения: Available (Доступно), Unavailable (Недоступно), Degraded (Понижено) и Unknown (Неизвестно). |
+| properties.previousHealthStatus | Предыдущее состояние работоспособности ресурса. Возможные значения: Available (Доступно), Unavailable (Недоступно), Degraded (Понижено) и Unknown (Неизвестно). |
 | properties.type | Описание типа события работоспособности ресурса. |
 | properties.cause | Описание причины события работоспособности ресурса: UserInitiated либо PlatformInitiated. |
 
 
-## <a name="alert"></a>Оповещение
+## <a name="alert"></a>Предупреждение
 Эта категория содержит записи всех активаций оповещений Azure. В качестве примера типа события из этой категории можно назвать следующее: "Процент использования ЦП на виртуальной машине myVM за последние 5 минут превышал 80 %". Различные системы Azure работают по принципу оповещений, то есть вы можете определить какое-то правило, и система будет направлять вам уведомление, когда условия этого правила выполняются. Каждый раз, когда "активируется" поддерживаемый тип оповещения Azure или выполняются условия для создания уведомления, в эту категорию журнала активности также передается запись об активации.
 
 ### <a name="sample-event"></a>Пример события
@@ -350,23 +350,23 @@ ms.locfileid: "69515391"
 ```
 
 ### <a name="property-descriptions"></a>Описания свойств
-| Имя элемента | Описание |
+| Имя элемента | Description (Описание) |
 | --- | --- |
 | caller | Всегда имеет значение Microsoft.Insights/alertRules. |
-| каналы | Всегда имеет значение "Admin, Operation". |
+| каналов | Всегда имеет значение "Admin, Operation". |
 | claims | Большой двоичный объект JSON с именем субъекта-службы (SPN) или типом ресурса обработчика предупреждений. |
 | correlationId | Глобальный уникальный идентификатор (GUID) в строковом формате. |
 | description |Статическое текстовое описание события оповещения. |
 | eventDataId |Уникальный идентификатор события оповещения. |
 | category | Всегда "предупреждение" |
-| уровень |Уровень события. Одно из следующих значений: Critical, Error, Warning или Informational |
-| resourceGroupName |Имя группы ресурсов для затронутого ресурса, если это оповещение метрики. Для других типов оповещений это имя группы ресурсов, содержащей само оповещение. |
+| level |Уровень события. Одно из таких значений: Critical, Error, Warning, Informational. |
+| имя_группы_ресурсов |Имя группы ресурсов для затронутого ресурса, если это оповещение метрики. Для других типов оповещений это имя группы ресурсов, содержащей само оповещение. |
 | resourceProviderName |Имя поставщика ресурсов для затронутого ресурса, если это оповещение метрики. Для других типов оповещений это имя поставщика ресурсов для самого оповещения. |
 | resourceId | Имя идентификатора ресурса для затронутого ресурса, если это оповещение метрики. Для других типов оповещений это идентификатор ресурса самого ресурса оповещения. |
 | operationId |События, относящиеся к одной операции, совместно используют один GUID. |
 | operationName |Имя операции. |
-| свойства |Набор пар `<Key, Value>` (например, Dictionary) c подробным описанием события. |
-| Состояние |Строка, описывающая состояние операции. Некоторые обычные значения: Started (Запущен), In Progress (Выполняется), Succeeded (Успешно), Failed (Сбой), Active (Активно), Resolved (Разрешено). |
+| properties |Набор пар `<Key, Value>` (например, Dictionary) c подробным описанием события. |
+| status |Строка, описывающая состояние операции. Обычные значения: Started, In Progress, Succeeded, Failed, Active, Resolved. |
 | subStatus | Обычно для оповещений имеет значение null. |
 | eventTimestamp |Метка времени, когда служба Azure создала событие при обработке соответствующего этому событию запроса. |
 | submissionTimestamp |Метка времени, когда событие стало доступно для запросов. |
@@ -376,7 +376,7 @@ ms.locfileid: "69515391"
 Поле свойств будет содержать разные значения в зависимости от источника события оповещения. Два распространенных поставщика событий оповещений — оповещения журнала действий и оповещения метрик.
 
 #### <a name="properties-for-activity-log-alerts"></a>Свойства оповещений журнала действий
-| Имя элемента | Описание |
+| Имя элемента | Description (Описание) |
 | --- | --- |
 | properties.subscriptionId | Идентификатор подписки из события журнала действий, которое вызвало активацию данного правила оповещения журнала действий. |
 | properties.eventDataId | Идентификатор данных события из события журнала действий, которое вызвало активацию данного правила оповещения журнала действий. |
@@ -387,7 +387,7 @@ ms.locfileid: "69515391"
 | properties.status | Состояние из события журнала действий, которое вызвало активацию данного правила оповещения журнала действий.|
 
 #### <a name="properties-for-metric-alerts"></a>Свойства оповещений метрик
-| Имя элемента | Описание |
+| Имя элемента | Description (Описание) |
 | --- | --- |
 | properties.RuleUri | Идентификатор ресурса самого правила оповещения метрики. |
 | properties.RuleName | Имя правила оповещения метрики. |
@@ -399,7 +399,7 @@ ms.locfileid: "69515391"
 | properties.MetricName | Имя метрики, используемой для оценки правила оповещения метрики. |
 | properties.MetricUnit | Единица измерения метрики, используемая для оценки правила оповещения метрики. |
 
-## <a name="autoscale"></a>Автомасштабирование
+## <a name="autoscale"></a>Autoscale
 Эта категория содержит записи всех событий, связанных с операциями системы автоматического масштабирования, в основе которой лежат параметры автомасштабирования, определенные в подписке. В качестве примера типа события из этой категории можно назвать следующее: "Не удалось выполнить автоматическое увеличение масштаба". С помощью функции автомасштабирования можно автоматически увеличивать или уменьшать число экземпляров в поддерживаемом типе ресурсов на основе времени суток и (или) загружать данные (метрики), используя параметр автомасштабирования. Когда выполняются условия для увеличения или уменьшения масштаба, в эту категорию записываются соответствующие события (запуск, успешное выполнение или сбой).
 
 ### <a name="sample-event"></a>Пример события
@@ -460,27 +460,27 @@ ms.locfileid: "69515391"
 ```
 
 ### <a name="property-descriptions"></a>Описания свойств
-| Имя элемента | Описание |
+| Имя элемента | Description (Описание) |
 | --- | --- |
-| вызывающая сторона | Всегда имеет значение Microsoft.Insights/autoscaleSettings. |
-| каналы | Всегда имеет значение "Admin, Operation". |
+| caller | Всегда имеет значение Microsoft.Insights/autoscaleSettings. |
+| каналов | Всегда имеет значение "Admin, Operation". |
 | claims | Большой двоичный объект JSON с именем субъекта-службы (SPN) или типом ресурса системы автомасштабирования. |
 | correlationId | Глобальный уникальный идентификатор (GUID) в строковом формате. |
 | description |Статическое текстовое описание события автомасштабирования. |
 | eventDataId |Уникальный идентификатор события автомасштабирования. |
-| уровень |Уровень события. Одно из следующих значений: Critical, Error, Warning или Informational |
-| resourceGroupName |Имя группы ресурсов для параметра автомасштабирования. |
+| level |Уровень события. Одно из таких значений: Critical, Error, Warning, Informational. |
+| имя_группы_ресурсов |Имя группы ресурсов для параметра автомасштабирования. |
 | resourceProviderName |Имя поставщика ресурсов для параметра автомасштабирования. |
 | resourceId |Идентификатор ресурса параметра автомасштабирования. |
 | operationId |События, относящиеся к одной операции, совместно используют один GUID. |
 | operationName |Имя операции. |
-| свойства |Набор пар `<Key, Value>` (например, Dictionary) c подробным описанием события. |
+| properties |Набор пар `<Key, Value>` (например, Dictionary) c подробным описанием события. |
 | properties.Description | Подробное описание действий, выполненных системой автоматического масштабирования. |
 | properties.ResourceName | Идентификатор ресурса для затронутого ресурса (ресурса, в отношении которого выполнялось действие масштабирования). |
 | properties.OldInstancesCount | Число экземпляров до выполнения действия автомасштабирования. |
 | properties.NewInstancesCount | Число экземпляров после выполнения действия автомасштабирования. |
 | properties.LastScaleActionTime | Метка времени, когда произошло действие автоматического масштабирования. |
-| Состояние |Строка, описывающая состояние операции. Некоторые обычные значения: Started (Запущен), In Progress (Выполняется), Succeeded (Успешно), Failed (Сбой), Active (Активно), Resolved (Разрешено). |
+| status |Строка, описывающая состояние операции. Обычные значения: Started, In Progress, Succeeded, Failed, Active, Resolved. |
 | subStatus | Обычно для автоматического масштабирования имеет значение null. |
 | eventTimestamp |Метка времени, когда служба Azure создала событие при обработке соответствующего этому событию запроса. |
 | submissionTimestamp |Метка времени, когда событие стало доступно для запросов. |
@@ -550,32 +550,32 @@ ms.locfileid: "69515391"
 ```
 
 ### <a name="property-descriptions"></a>Описания свойств
-| Имя элемента | Описание |
+| Имя элемента | Description (Описание) |
 | --- | --- |
-| каналы | Всегда значение Operation. |
+| каналов | Всегда значение Operation. |
 | correlationId | Глобальный уникальный идентификатор (GUID) в строковом формате. |
 | description |Статическое текстовое описание события безопасности. |
 | eventDataId |Уникальный идентификатор события безопасности. |
 | eventName |Понятное имя события безопасности. |
 | category | Всегда «безопасность» |
 | id |Уникальный идентификатор ресурса события безопасности. |
-| уровень |Уровень события. Одно из следующих значений: Critical (Критический), Error (Ошибка), Warning (Предупреждение) или Informational (Информационное) |
-| resourceGroupName |Имя группы ресурсов для ресурса. |
+| level |Уровень события. Одно из таких значений: Critical, Error, Warning или Informational. |
+| имя_группы_ресурсов |Имя группы ресурсов для ресурса. |
 | resourceProviderName |Имя поставщика ресурсов для центра безопасности Azure. Всегда значение Microsoft.Security. |
-| resourceType |Тип ресурса, создавшего событие безопасности, например Microsoft.Security/locations/alerts. |
+| тип_ресурса |Тип ресурса, создавшего событие безопасности, например Microsoft.Security/locations/alerts. |
 | resourceId |Идентификатор ресурса оповещения системы безопасности. |
 | operationId |События, относящиеся к одной операции, совместно используют один GUID. |
 | operationName |Имя операции. |
-| свойства |Набор пар `<Key, Value>` (например, Dictionary) c подробным описанием события. Эти свойства будут различаться в зависимости от типа оповещения системы безопасности. [Здесь](../../security-center/security-center-alerts-overview.md) описаны типы предупреждений, поступающих из центра безопасности. |
+| properties |Набор пар `<Key, Value>` (например, Dictionary) c подробным описанием события. Эти свойства будут различаться в зависимости от типа оповещения системы безопасности. [Здесь](../../security-center/security-center-alerts-overview.md) описаны типы предупреждений, поступающих из центра безопасности. |
 | properties.Severity |Уровень серьезности. Возможные значения: High, Medium или Low. |
-| Состояние |Строка, описывающая состояние операции. Некоторые обычные значения: Started (Запущен), In Progress (Выполняется), Succeeded (Успешно), Failed (Сбой), Active (Активно), Resolved (Разрешено). |
+| status |Строка, описывающая состояние операции. Обычные значения: Started, In Progress, Succeeded, Failed, Active, Resolved. |
 | subStatus | Обычно имеет значение null для событий безопасности. |
 | eventTimestamp |Метка времени, когда служба Azure создала событие при обработке соответствующего этому событию запроса. |
 | submissionTimestamp |Метка времени, когда событие стало доступно для запросов. |
 | subscriptionId |Идентификатор подписки Azure. |
 
-## <a name="recommendation"></a>Рекомендация
-Эта категория содержит запись о любых новых рекомендациях, которые создаются для служб. Примером рекомендации будет "использование группы доступности для повышения отказоустойчивости". Существует четыре типа событий уровня рекомендаций, которые могут быть сгенерированы: High Availability (Высокий уровень доступности), Performance (Производительность), Security (Безопасность) и Cost Optimization (Оптимизация затрат). 
+## <a name="recommendation"></a>Рекомендации
+Эта категория содержит запись о любых новых рекомендациях, которые создаются для служб. Примером рекомендации будет "использование группы доступности для повышения отказоустойчивости". Существует четыре типа событий рекомендаций, которые могут быть созданы: высокая доступность, производительность, безопасность и оптимизация затрат. 
 
 ### <a name="sample-event"></a>Пример события
 ```json
@@ -631,24 +631,24 @@ ms.locfileid: "69515391"
 
 ```
 ### <a name="property-descriptions"></a>Описания свойств
-| Имя элемента | Описание |
+| Имя элемента | Description (Описание) |
 | --- | --- |
-| каналы | Всегда значение Operation. |
+| каналов | Всегда значение Operation. |
 | correlationId | Глобальный уникальный идентификатор (GUID) в строковом формате. |
 | description |Статическое текстовое описание события рекомендации |
 | eventDataId | Уникальный идентификатор события рекомендации. |
 | category | Всегда "Рекомендация" |
 | id |Уникальный идентификатор ресурса события рекомендации. |
-| уровень |Уровень события. Одно из следующих значений: Critical (Критический), Error (Ошибка), Warning (Предупреждение) или Informational (Информационное) |
+| level |Уровень события. Одно из таких значений: Critical, Error, Warning или Informational. |
 | operationName |Имя операции.  Всегда "Microsoft.Advisor/generateRecommendations/action"|
-| resourceGroupName |Имя группы ресурсов для ресурса. |
+| имя_группы_ресурсов |Имя группы ресурсов для ресурса. |
 | resourceProviderName |Имя поставщика ресурсов для ресурса, к которому применяется данная рекомендация, например "MICROSOFT.COMPUTE" |
-| resourceType |Имя типа ресурсов для ресурса, к которому применяется данная рекомендация, например "MICROSOFT.COMPUTE/virtualmachines" |
+| тип_ресурса |Имя типа ресурсов для ресурса, к которому применяется данная рекомендация, например "MICROSOFT.COMPUTE/virtualmachines" |
 | resourceId |Идентификатор ресурса для ресурса, к которому применяется рекомендация |
-| Состояние | Всегда "Active" |
+| status | Всегда "Active" |
 | submissionTimestamp |Метка времени, когда событие стало доступно для запросов. |
 | subscriptionId |Идентификатор подписки Azure. |
-| свойства |Набор пар `<Key, Value>` (например, Dictionary) c подробным описанием рекомендации.|
+| properties |Набор пар `<Key, Value>` (например, Dictionary) c подробным описанием рекомендации.|
 | properties.recommendationSchemaVersion| Версия схемы свойств рекомендации, опубликована в записи журнала действий |
 | properties.recommendationCategory | Категория рекомендации. Возможные значения: "Высокая доступность", "Производительность", "Безопасность" и "Стоимость" |
 | properties.recommendationImpact| Влияние рекомендации Возможные значения: High, Medium или Low |
@@ -741,11 +741,11 @@ ms.locfileid: "69515391"
 
 ### <a name="policy-event-property-descriptions"></a>Описания свойств события Политики
 
-| Имя элемента | Описание |
+| Имя элемента | Description (Описание) |
 | --- | --- |
-| авторизация | Массив со свойствами RBAC события. Для новых ресурсов — это действие и область запроса, вызвавшего вычисление. Для имеющихся ресурсов действием является "Microsoft.Resources/checkPolicyCompliance/read". |
-| вызывающая сторона | Для новых ресурсов — это удостоверение, которое запустило развертывание. Для имеющихся ресурсов — глобальный уникальный идентификатор поставщика ресурсов Microsoft Azure Policy Insights. |
-| каналы | События политики используют только канал "Operation". |
+| authorization | Массив со свойствами RBAC события. Для новых ресурсов — это действие и область запроса, вызвавшего вычисление. Для имеющихся ресурсов действием является "Microsoft.Resources/checkPolicyCompliance/read". |
+| caller | Для новых ресурсов — это удостоверение, которое запустило развертывание. Для имеющихся ресурсов — глобальный уникальный идентификатор поставщика ресурсов Microsoft Azure Policy Insights. |
+| каналов | События политики используют только канал "Operation". |
 | claims | Токен JWT, который используется Active Directory для аутентификации пользователя или приложения при выполнении этой операции в Resource Manager. |
 | correlationId | Обычно GUID в строковом формате. События, которые совместно используют идентификатор correlationId, принадлежат к одному общему действию. |
 | description | Это поле будет пустым для событий Политики. |
@@ -754,14 +754,14 @@ ms.locfileid: "69515391"
 | category | Объявляет события журнала действий как относящиеся к "Policy". |
 | eventTimestamp | Метка времени, когда служба Azure создала событие при обработке соответствующего этому событию запроса. |
 | id | Уникальный идентификатор события для конкретного ресурса. |
-| уровень | Уровень события. Audit использует значение "Warning", а Deny — "Error". Ошибка auditIfNotExists или deployIfNotExists может создать значения "Warning" и "Error" в зависимости от серьезности. Все события Политики используют значение "Informational". |
+| level | Уровень события. Audit использует значение "Warning", а Deny — "Error". Ошибка auditIfNotExists или deployIfNotExists может создать значения "Warning" и "Error" в зависимости от серьезности. Все события Политики используют значение "Informational". |
 | operationId | События, относящиеся к одной операции, совместно используют один GUID. |
 | operationName | Имя операции непосредственно коррелируется c эффектом Политики. |
-| resourceGroupName | Имя группы ресурсов для оцениваемого ресурса. |
+| имя_группы_ресурсов | Имя группы ресурсов для оцениваемого ресурса. |
 | resourceProviderName | Имя поставщика ресурсов для оцениваемого ресурса. |
-| resourceType | Для новых ресурсов — это оцениваемый тип. Для имеющихся ресурсов — возвращает "Microsoft.Resources/checkPolicyCompliance/read". |
+| тип_ресурса | Для новых ресурсов — это оцениваемый тип. Для имеющихся ресурсов — возвращает "Microsoft.Resources/checkPolicyCompliance/read". |
 | resourceId | Идентификатор оцениваемого ресурса. |
-| Состояние | Строка, описывающая состояние результата оценки Политики. Большинство оценок Политики возвращают значение "Succeeded", но эффект Deny возвращает значение "Failed". Ошибки в auditIfNotExists или deployIfNotExists также возвращают значение "Failed". |
+| status | Строка, описывающая состояние результата оценки Политики. Большинство оценок Политики возвращают значение "Succeeded", но эффект Deny возвращает значение "Failed". Ошибки в auditIfNotExists или deployIfNotExists также возвращают значение "Failed". |
 | subStatus | Поле будет пустым для событий Политики. |
 | submissionTimestamp | Метка времени, когда событие стало доступно для запросов. |
 | subscriptionId | Идентификатор подписки Azure. |
@@ -784,20 +784,20 @@ ms.locfileid: "69515391"
 | resultType | status.value | |
 | resultSignature | substatus.value | |
 | resultDescription | description |  |
-| durationMs | Н/Д | Всегда 0 |
+| durationMs | Недоступно | Всегда 0 |
 | callerIpAddress | httpRequest.clientIpAddress |  |
 | correlationId | correlationId |  |
 | identity | свойства удостоверений и авторизации |  |
 | Уровень | Уровень |  |
-| расположение | Н/Д | Расположение, где было обработано событие. *Это не расположение ресурса, а место, где событие было обработано. Это свойство будет удалено в будущем обновлении.* |
+| location | Недоступно | Расположение, где было обработано событие. *Это не расположение ресурса, а, если событие было обработано. Это свойство будет удалено в будущем обновлении.* |
 | Свойства | properties.eventProperties |  |
 | properties.eventCategory | category | Если свойство properties.eventCategory не задано, параметр category равен "Административная" |
 | properties.eventName | eventName |  |
 | properties.operationId | operationId |  |
-| properties.eventProperties | свойства |  |
+| properties.eventProperties | properties |  |
 
 
-## <a name="next-steps"></a>Следующие шаги
-* [См. дополнительные сведения о журнале действий](activity-logs-overview.md)
+## <a name="next-steps"></a>Дальнейшие действия
+* [Дополнительные сведения о журнале действий](activity-logs-overview.md)
 * [Экспорт журнала действий в службу хранилища Azure или концентраторы событий](activity-log-export.md)
 

@@ -8,19 +8,19 @@ ms.subservice: core
 ms.topic: conceptual
 ms.author: laobri
 author: lobrien
-ms.date: 10/15/2019
-ms.openlocfilehash: 31c3cd944651b9ba4ca4fcaa275e5b0ccedd947c
-ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
+ms.date: 11/06/2019
+ms.openlocfilehash: ded95800c482d43fcaf27993869f1e71eee68f47
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72559441"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73831822"
 ---
 # <a name="schedule-machine-learning-pipelines-with-azure-machine-learning-sdk-for-python"></a>Планирование конвейеров машинного обучения с помощью пакета SDK для Машинное обучение Azure для Python
 
 В этой статье вы узнаете, как программным образом запланировать запуск конвейера в Azure. Расписание можно создать на основе истекшего времени или изменения файловой системы. Расписания на основе времени можно использовать для выполнения регулярных задач, таких как мониторинг смещения данных. Расписания на основе изменений можно использовать для реагирования на нестандартные или непредсказуемые изменения, такие как отправка новых данных или изменение старых данных. После изучения способов создания расписаний вы узнаете, как извлекать и деактивировать их.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://aka.ms/AMLFree).
 
@@ -54,7 +54,7 @@ pipeline_id = "aaaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"
 
 ## <a name="create-a-schedule"></a>Создание расписания
 
-Чтобы выполнить конвейер на повторяющейся основе, создайте расписание. @No__t_0 связывает конвейер, эксперимент и триггер. Триггер может представлять собой `ScheduleRecurrence`, описывающий ожидание между запусками или путь к хранилищу данных, указывающий каталог для отслеживания изменений. В любом случае вам потребуется идентификатор конвейера и имя эксперимента, в котором создается расписание.
+Чтобы выполнить конвейер на повторяющейся основе, создайте расписание. `Schedule` связывает конвейер, эксперимент и триггер. Триггер может представлять собой`ScheduleRecurrence`, описывающий ожидание между запусками или путь к хранилищу данных, указывающий каталог для отслеживания изменений. В любом случае вам потребуется идентификатор конвейера и имя эксперимента, в котором создается расписание.
 
 ### <a name="create-a-time-based-schedule"></a>Создание расписания на основе времени
 
@@ -75,7 +75,7 @@ recurring_schedule = Schedule.create(ws, name="MyRecurringSchedule",
 
 Конвейеры, активируемые изменениями файлов, могут оказаться более эффективными по сравнению с расписаниями, основанными на времени. Например, может потребоваться выполнить шаг предварительной обработки при изменении файла или при добавлении нового файла в каталог данных. Вы можете отслеживать любые изменения в хранилище данных или изменения в определенном каталоге в хранилище данных. При мониторинге определенного каталога изменения в подкаталогах этого каталога _не_ активируют запуск.
 
-Чтобы создать пере`Schedule` файлов, необходимо задать параметр `datastore` в вызове [Schedule. Create](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.schedule.schedule?view=azure-ml-py#create-workspace--name--pipeline-id--experiment-name--recurrence-none--description-none--pipeline-parameters-none--wait-for-provisioning-false--wait-timeout-3600--datastore-none--polling-interval-5--data-path-parameter-name-none--continue-on-step-failure-none--path-on-datastore-none---workflow-provider-none---service-endpoint-none-). Для наблюдения за папкой задайте аргумент `path_on_datastore`.
+Чтобы создать пере`Schedule`файлов, необходимо задать параметр `datastore` в вызове [Schedule. Create](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.schedule.schedule?view=azure-ml-py#create-workspace--name--pipeline-id--experiment-name--recurrence-none--description-none--pipeline-parameters-none--wait-for-provisioning-false--wait-timeout-3600--datastore-none--polling-interval-5--data-path-parameter-name-none--continue-on-step-failure-none--path-on-datastore-none---workflow-provider-none---service-endpoint-none-). Для наблюдения за папкой задайте аргумент `path_on_datastore`.
 
 Аргумент `polling_interval` позволяет указать в минутах частоту, с которой проверяется наличие изменений в хранилище данных.
 
@@ -94,9 +94,9 @@ reactive_schedule = Schedule.create(ws, name="MyReactiveSchedule", description="
 
 ## <a name="view-your-scheduled-pipelines"></a>Просмотр запланированных конвейеров
 
-В веб-браузере перейдите к рабочей области службы Машинное обучение. В разделе **активы** панели навигации выберите **конвейеры**. Эта ссылка позволяет перейти к списку конвейеров, опубликованных в рабочей области.
+В веб-браузере перейдите по адресу Машинное обучение Azure. В разделе **конечные точки** панели навигации выберите пункт **конечные точки конвейера**. Откроется список конвейеров, опубликованных в рабочей области.
 
-![Страница «конвейеры» рабочей области](media/how-to-schedule-a-pipeline/pipelines-list.png)
+![Страница конвейеров AML](media/how-to-schedule-pipelines/scheduled-pipelines.png)
 
 На этой странице можно просмотреть сводную информацию обо всех конвейерах в рабочей области: имена, описания, состояние и т. д. Выполните детализацию, щелкнув конвейер. На полученной странице имеются дополнительные сведения о конвейере, и вы можете выполнить детализацию для отдельных запусков.
 
@@ -134,7 +134,7 @@ stop_by_schedule(ws, schedule_id)
 
 В этой статье вы использовали пакет SDK для Машинное обучение Azure для Python, чтобы запланировать конвейер двумя разными способами. Одно расписание повторяется на основе затраченного времени. Другое расписание выполняется при изменении файла на указанном `Datastore` или в каталоге в этом хранилище. Вы узнали, как использовать портал для проверки конвейера и отдельных запусков. Наконец, вы узнали, как отключить расписание, чтобы остановить выполнение конвейера.
 
-Дополнительные сведения см. здесь:
+Дополнительные сведения можно найти в разделе
 
 > [!div class="nextstepaction"]
 > [Использование конвейеров Машинное обучение Azure для пакетной оценки](tutorial-pipeline-batch-scoring-classification.md)

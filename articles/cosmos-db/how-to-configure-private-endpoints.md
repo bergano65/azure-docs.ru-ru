@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: thweiss
-ms.openlocfilehash: 34b54459629560ba80e6a38d10edbab32ea44778
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 3f987b9e05bcdcda9afe26a1eb1354e5e2450ac5
+ms.sourcegitcommit: 16c5374d7bcb086e417802b72d9383f8e65b24a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/08/2019
-ms.locfileid: "73820152"
+ms.locfileid: "73846539"
 ---
 # <a name="configure-azure-private-link-for-an-azure-cosmos-account-preview"></a>Настройка частной ссылки Azure для учетной записи Azure Cosmos (Предварительная версия)
 
@@ -86,7 +86,7 @@ ms.locfileid: "73820152"
 
 ### <a name="fetch-the-private-ip-addresses"></a>Получение частных IP-адресов
 
-После подготовки частной конечной точки можно запросить IP-адреса. Для просмотра IP-адресов из портал Azure. Выберите **все ресурсы**, найдите закрытую конечную точку, созданную ранее в этом случае — "dbPrivateEndpoint3", и перейдите на вкладку "Обзор", чтобы просмотреть параметры DNS и IP-адреса:
+После подготовки частной конечной точки можно запросить IP-адреса. Чтобы просмотреть IP-адреса из портал Azure, выберите **все ресурсы**, найдите закрытую конечную точку, созданную ранее в этом случае — "dbPrivateEndpoint3", и перейдите на вкладку "Обзор", чтобы просмотреть параметры DNS и IP-адреса:
 
 ![Частные IP-адреса в портал Azure](./media/how-to-configure-private-endpoints/private-ip-addresses-portal.png)
 

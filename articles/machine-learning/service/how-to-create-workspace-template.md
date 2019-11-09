@@ -10,20 +10,22 @@ ms.author: larryfr
 author: Blackmist
 ms.date: 11/04/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: 9d966c7a4e9c56529b36eb87ecc46dbd6b5bab6a
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: f20c7955856e2e848d331d857d2564649c837bb0
+ms.sourcegitcommit: 16c5374d7bcb086e417802b72d9383f8e65b24a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73497038"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73847464"
 ---
+[!INCLUDE [aml-applies-to-basic-enterprise-sku](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
+
 # <a name="use-an-azure-resource-manager-template-to-create-a-workspace-for-azure-machine-learning"></a>Создание рабочей области для Машинное обучение Azure с помощью шаблона Azure Resource Manager
 
 Из этой статьи вы узнаете несколько способов создания Машинное обучение Azure рабочей области с помощью шаблонов Azure Resource Manager. Шаблон Resource Manager позволяет легко создать все ресурсы в отдельной скоординированной операции. Шаблон представляет собой документ JSON, в котором определены необходимые для развертывания ресурсы. Также здесь можно указать параметры развертывания. Эти параметры позволят предоставить входные значения при использовании шаблона.
 
 Узнайте подробнее [о развертывании приложения с помощью шаблона диспетчера ресурсов Azure](../../azure-resource-manager/resource-group-template-deploy.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * **Подписка Azure**. Если у вас ее нет, попробуйте [бесплатную или платную версию машинное обучение Azure](https://aka.ms/AMLFree).
 

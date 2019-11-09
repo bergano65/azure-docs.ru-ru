@@ -11,14 +11,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/11/2019
+ms.date: 11/07/2019
 ms.author: juliako
-ms.openlocfilehash: c402381534087f1e8cdab711bd1b2a34c78417f4
-ms.sourcegitcommit: 9a4296c56beca63430fcc8f92e453b2ab068cc62
+ms.openlocfilehash: 7b4e2d14e8719808db138a4f2607b19cece401a6
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2019
-ms.locfileid: "72675722"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73839583"
 ---
 # <a name="configure-postman-for-media-services-rest-api-calls"></a>Настройка Postman для вызовов REST API служб мультимедиа
 
@@ -26,7 +26,7 @@ ms.locfileid: "72675722"
 
 Перед началом разработки ознакомьтесь [с разработкой с помощью API-интерфейсов служб мультимедиа v3](media-services-apis-overview.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - [Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md). Обязательно запомните имя группы ресурсов и имя учетной записи Служб мультимедиа. 
 - Получите информацию, необходимую для [доступа к API-интерфейсам](access-api-cli-how-to.md).
@@ -91,6 +91,11 @@ ms.locfileid: "72675722"
 4. Ответ на этот запрос возвращает маркер и присваивает его значение переменной среды AccessToken.  
 
     ![Получение маркера AAD](./media/develop-with-postman/postman-get-aad-auth-token.png)
+
+## <a name="troubleshooting"></a>Устранение неполадок 
+
+* Если приложение завершается с ошибкой "HTTP 504: время ожидания шлюза", убедитесь, что для переменной расположения не было явно задано значение, отличное от ожидаемого расположения учетной записи служб мультимедиа. 
+* Если возникает ошибка "учетная запись не найдена", убедитесь, что для свойства Location в тексте сообщения JSON задано расположение учетной записи служб мультимедиа. 
 
 ## <a name="see-also"></a>Дополнительные материалы
 

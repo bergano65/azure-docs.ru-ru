@@ -16,12 +16,12 @@ ms.date: 10/26/2019
 ms.author: ajburnle
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9107471448a58dc7866fb2cd6052abf168437d2b
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.openlocfilehash: e76e5c5d2cfcfd983f2b5cdc279f0c13fa6706e4
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73174176"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73832710"
 ---
 # <a name="govern-access-for-external-users-in-azure-ad-entitlement-management"></a>Управление доступом для внешних пользователей в управлении назначениями Azure AD
 
@@ -97,7 +97,7 @@ ms.locfileid: "73174176"
 
 ### <a name="review-your-sharepoint-online-external-sharing-settings"></a>Проверьте параметры внешнего общего доступа SharePoint Online.
 
-- Если вы хотите включить сайты SharePoint Online в пакеты доступа для внешних пользователей, убедитесь, что для параметра внешний общий доступ на уровне Организации выбрано значение " **любой** " (пользователи не требуют входа) или **новые и существующие гости** (гости должны подписываться в или предоставьте код проверки). Дополнительные сведения см. [в разделе Включение или отключение внешнего общего доступа](https://docs.microsoft.com/sharepoint/turn-external-sharing-on-or-off#change-the-organization-level-external-sharing-setting).
+- Если вы хотите включить сайты SharePoint Online в пакеты доступа для внешних пользователей, убедитесь, что для параметра внешний общий доступ на уровне Организации выбрано значение **любой пользователь** (пользователи не требуют входа) или **новые и существующие гости** (гости должны войти в систему или предоставить код проверки). Дополнительные сведения см. [в разделе Включение или отключение внешнего общего доступа](https://docs.microsoft.com/sharepoint/turn-external-sharing-on-or-off#change-the-organization-level-external-sharing-setting).
 
 - Если вы хотите ограничить внешний общий доступ за пределами управления назначением, можно задать для параметра внешний общий доступ **существующие гости**. Тогда доступ к этим сайтам смогут получить только новые пользователи, приглашенные через управление назначением. Дополнительные сведения см. [в разделе Включение или отключение внешнего общего доступа](https://docs.microsoft.com/sharepoint/turn-external-sharing-on-or-off#change-the-organization-level-external-sharing-setting).
 
@@ -113,7 +113,7 @@ ms.locfileid: "73174176"
 
 ### <a name="review-your-teams-sharing-settings"></a>Обзор параметров совместного использования команд
 
-- Если вы хотите включить команды в пакеты доступа для внешних пользователей, убедитесь, что для параметра **Разрешить гостевой доступ в Microsoft Teams** выбрано значение **включено** , чтобы разрешить гостевой доступ. Дополнительные сведения см. [в статье Настройка гостевого доступа в центре администрирования Microsoft Teams](https://docs.microsoft.com/microsoftteams/set-up-guests#configure-guest-access-in-the-microsoft-teams-admin-center).
+- Если вы хотите включить команды в пакеты доступа для внешних пользователей, убедитесь, что для параметра **Разрешить гостевой доступ в Microsoft Teams** выбрано значение **включено** , чтобы разрешить гостевой доступ. Дополнительные сведения см. [в статье Настройка гостевого доступа в центре администрирования Microsoft Teams](/microsoftteams/set-up-guests#configure-guest-access-in-the-teams-admin-center).
 
 ## <a name="manage-the-lifecycle-of-external-users"></a>Управление жизненным циклом внешних пользователей
 
@@ -143,7 +143,7 @@ ms.locfileid: "73174176"
 
 1. Если вы хотите удалить учетную запись гостевого пользователя в этом каталоге, можно задать число дней до его удаления. Если вы хотите удалить учетную запись гостя, как только она потеряет свое последнее назначение пакетам доступа, задайте **число дней перед удалением внешнего пользователя из этого каталога** в значение **0**.
 
-1. В нижней части страницы нажмите кнопку **Save**.
+1. Щелкните **Сохранить**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

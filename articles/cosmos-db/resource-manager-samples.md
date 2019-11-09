@@ -1,17 +1,17 @@
 ---
 title: Шаблоны Azure Resource Manager для Azure Cosmos DB
 description: Используйте шаблоны Azure Resource Manager для создания и настройки Azure Cosmos DB.
-author: markjbrown
+author: TheovanKraay
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 10/31/2019
-ms.author: mjbrown
-ms.openlocfilehash: ecdfe89e899e0d416784ae32a0d66b335c09e2b6
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.date: 11/07/2019
+ms.author: thvankra
+ms.openlocfilehash: 7c508d736c7c04cc6df2b42e0a90a2906052adbc
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73582804"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73835515"
 ---
 # <a name="azure-resource-manager-templates-for-azure-cosmos-db"></a>Шаблоны Azure Resource Manager для Azure Cosmos DB
 
@@ -37,8 +37,6 @@ ms.locfileid: "73582804"
 |**Шаблон**|**Описание**|
 |---| ---|
 |[Создание учетной записи Azure Cosmos, пространства ключей, Table](manage-cassandra-with-resource-manager.md#create-resource) | Этот шаблон создает учетную запись API Cassandra в двух регионах с включенной поддержкой нескольких хозяев. Учетная запись Azure Cosmos будет содержать две таблицы, которые совместно используют пропускную способность на уровне пространства ключей. |
-|[Обновление пропускной способности (единиц запросов в секунду) для пространства ключей](manage-cassandra-with-resource-manager.md#keyspace-ru-update) | Этот шаблон обновляет пропускную способность для пространства ключей в учетной записи API Cassandra. |
-|[Обновление пропускной способности (единиц запросов/с) для таблицы](manage-cassandra-with-resource-manager.md#table-ru-update) | Этот шаблон обновляет пропускную способность для таблицы в учетной записи API Cassandra. |
 
 ## <a name="gremlin-api"></a>API Gremlin
 

@@ -4,12 +4,12 @@ ms.service: data-factory
 ms.topic: include
 ms.date: 10/25/2019
 ms.author: jingwang
-ms.openlocfilehash: f26c18095dc745b9f562e3678b2f5f25276aec12
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 08e6d0c3516f16b72dc58e5dfe3f1e7da2eca154
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73523672"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73850472"
 ---
 | Категория              | Хранилище данных                                                   | [Действие копирования](../articles/data-factory/copy-activity-overview.md) (источник или приемник) | [Поток данных сопоставления](../articles/data-factory/concepts-data-flow-overview.md) | [Действие поиска](../articles/data-factory/control-flow-lookup-activity.md) | [Действие получения метаданных](../articles/data-factory/control-flow-get-metadata-activity.md) | [Удалить действие](../articles/data-factory/delete-activity.md) |
 | :-------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- | ------------------------------------------------------------ | :----------------------------------------------------------- |
@@ -26,7 +26,7 @@ ms.locfileid: "73523672"
 | &nbsp;                | [база данных SQL Azure;](../articles/data-factory/connector-azure-sql-database.md) | ✓/✓                                                           | ✓ <br> <small>Проверка подлинности MSI не поддерживается</small>                                                            | ✓                                                            | ✓                                                            |                                                              |
 | &nbsp;                | [Управляемый экземпляр Базы данных SQL Azure](../articles/data-factory/connector-azure-sql-database-managed-instance.md) | ✓/✓                                                          |                                                              | ✓                                                            | ✓                                                            |                                                              |
 | &nbsp;                | [Хранилище данных Azure SQL](../articles/data-factory/connector-azure-sql-data-warehouse.md) | ✓/✓                                                          | ✓                                                            | ✓                                                            | ✓                                                            |                                                              |
-| &nbsp;                | [Индекс службы поиска Azure](../articles/data-factory/connector-azure-search.md) | −/✓                                                          |                                                              |                                                              |                                                              |                                                              |
+| &nbsp;                | [Индекс Azure Когнитивный поиск](../articles/data-factory/connector-azure-search.md) | −/✓                                                          |                                                              |                                                              |                                                              |                                                              |
 | &nbsp;                | [Хранилище таблиц Azure](../articles/data-factory/connector-azure-table-storage.md) | ✓/✓                                                          |                                                              | ✓                                                            |                                                              |                                                              |
 | **База данных**          | [Amazon Redshift](../articles/data-factory/connector-amazon-redshift.md) | ✓/−                                                          |                                                              | ✓                                                            |                                                              |                                                              |
 | &nbsp;                | [DB2](../articles/data-factory/connector-db2.md)             | ✓/−                                                          |                                                              | ✓                                                            |                                                              |                                                              |
