@@ -7,12 +7,12 @@ ms.service: firewall
 ms.date: 4/10/2019
 ms.author: victorh
 ms.topic: conceptual
-ms.openlocfilehash: 494beb6ba2bf8a9409962b4418089cdad0e182e1
-ms.sourcegitcommit: 8e1fb03a9c3ad0fc3fd4d6c111598aa74e0b9bd4
+ms.openlocfilehash: 7f48012ca1f97c2e28380d95da37863c4bc17f63
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70114781"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73831839"
 ---
 # <a name="deploy-and-configure-azure-firewall-using-azure-powershell"></a>Развертывание и настройка брандмауэра Azure с помощью Azure PowerShell
 
@@ -38,8 +38,8 @@ ms.locfileid: "70114781"
 > [!div class="checklist"]
 > * настройка тестовой сетевой среды;
 > * развертывание брандмауэра;
-> * создание маршрута по умолчанию;
-> * настройка правила приложения для предоставления доступа к www.google.com
+> * Создание маршрута по умолчанию
+> * настройка правила приложения для предоставления доступа к www.google.com;
 > * настройка сетевых правил для предоставления доступа к внешним DNS-серверам;
 > * тестирование брандмауэра.
 
@@ -55,7 +55,7 @@ ms.locfileid: "70114781"
 
 Сначала создайте группу ресурсов, необходимых для развертывания брандмауэра. Затем создайте виртуальную сеть, подсети и тестовые серверы.
 
-### <a name="create-a-resource-group"></a>Создать группу ресурсов
+### <a name="create-a-resource-group"></a>Создание группы ресурсов
 
 Группа ресурсов содержит все ресурсы для развертывания.
 
@@ -68,7 +68,7 @@ New-AzResourceGroup -Name Test-FW-RG -Location "East US"
 Эта виртуальная сеть имеет три подсети:
 
 > [!NOTE]
-> Размер подсети Азурефиреваллсубнет —/26. Дополнительные сведения о размере подсети см. в разделе [часто задаваемые вопросы о брандмауэре Azure](firewall-faq.md#why-does-azure-firewall-need-a-26-subnet-size).
+> Размер подсети AzureFirewallSubnet равен /26. Дополнительные сведения о размере подсети см. в статье с [часто задаваемыми вопросами о Брандмауэре Azure](firewall-faq.md#why-does-azure-firewall-need-a-26-subnet-size).
 
 ```azurepowershell
 $FWsub = New-AzVirtualNetworkSubnetConfig -Name AzureFirewallSubnet -AddressPrefix 10.0.1.0/26
@@ -137,7 +137,7 @@ $AzfwPrivateIP
 
 Запишите частный IP-адрес. Вы будете использовать его позже при создании маршрута по умолчанию.
 
-## <a name="create-a-default-route"></a>создание маршрута по умолчанию;
+## <a name="create-a-default-route"></a>Создание маршрута по умолчанию
 
 Создание таблицы с отключенным распространением маршрута BGP
 
@@ -184,7 +184,7 @@ Set-AzFirewall -AzureFirewall $Azfw
 
 Брандмауэр Azure содержит встроенную коллекцию правил для целевых полных доменных имен инфраструктуры, которые разрешены по умолчанию. Эти доменные имена предназначены для платформы и не могут использоваться для других целей. См. дополнительные сведения об [FQDN инфраструктуры](infrastructure-fqdns.md).
 
-## <a name="configure-a-network-rule"></a>Настройка правила сети
+## <a name="configure-a-network-rule"></a>настройка правила сети;
 
 Правило сети разрешает исходящий доступ к двум IP-адресам через порт 53 (DNS).
 
@@ -241,7 +241,7 @@ $NIC | Set-AzNetworkInterface
    Invoke-WebRequest -Uri https://www.microsoft.com
    ```
 
-   Запросы www.google.com должны выполняться успешно, и запросы www.microsoft.com должны завершаться сбоем. Это показывает, что правила брандмауэра работают должным образом.
+   Запросы на `www.google.com` должны выполняться успешно, и запросы `www.microsoft.com` должны завершаться сбоем. Это показывает, что правила брандмауэра работают должным образом.
 
 Итак, теперь вы убедились в том, что правила брандмауэра работают:
 
@@ -256,6 +256,6 @@ $NIC | Set-AzNetworkInterface
 Remove-AzResourceGroup -Name Test-FW-RG
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Учебник. Мониторинг журналов и метрик Брандмауэра Azure](./tutorial-diagnostics.md)
+* [Руководство по мониторингу журналов Брандмауэра Azure](./tutorial-diagnostics.md)

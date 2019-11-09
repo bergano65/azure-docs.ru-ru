@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 11/04/2019
 ms.author: cherylmc
-ms.openlocfilehash: 851fbf52571b12b60345a78af3e26a875919fb14
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: fa152bb4cfb7ab59daababf267d3da26170119c0
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73585226"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73838147"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Партнеры и одноранговые расположения ExpressRoute
 
@@ -237,9 +237,9 @@ ms.locfileid: "73585226"
 | **[Chief](https://www.chief.com.tw/dispPageBox/ct.aspx?ddsPageID=ENCLOUDSERVICE&dbid=4852937342)** | Equinix | Гонконг, САР |
 | **[Cinia](https://www.cinia.fi/en/services/connectivity-services/direct-public-cloud-connection.html)** | Equinix, Megaport | Франкфурт, Германия |
 | **[CloudXpress](https://www2.telenet.be/fr/business/produits-services/internet/cloudxpress/)** | Equinix | Амстердам | 
-| **[Телекоммуникации CMC]( https://cmctelecom.vn/san-pham/value-added-service-and-it/cmc-telecom-cloud-express-en/)** | Equinix | Сингапур | 
+| **[Телекоммуникации CMC](https://cmctelecom.vn/san-pham/value-added-service-and-it/cmc-telecom-cloud-express-en/)** | Equinix | Сингапур | 
 | **[Технологии аптум](https://aptum.com/services/cloud/managed-azure/)**| Equinix | Монреаль, Торонто |
-| **[кореазуре](http://coreazure.com/expressroute)**| Equinix | Лондон |
+| **[кореазуре](https://coreazure.com/expressroute)**| Equinix | Лондон |
 | **[Cox Business](https://www.cox.com/business/networking/cloud-connectivity.html)**| Equinix | Даллас, Кремниевая долина, Вашингтон, округ Колумбия |
 | **[Самые Castle](https://fiber.crowncastle.com/solutions/added/cloud-connect)**| Equinix | Атланта, Чикаго, Далласе, Лос-Анджелес, Нью-Йорк, Вашингтон (округ Колумбия) |
 | **[Data Foundry](https://www.datafoundry.com/services/cloud-connect)** | Megaport | Даллас |

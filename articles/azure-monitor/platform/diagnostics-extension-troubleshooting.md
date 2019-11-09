@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: rboucher
 ms.author: robb
 ms.date: 05/08/2019
-ms.openlocfilehash: 24a2b8a3c190ed440684ea3aa0ab35ebbf93fca0
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 0a6322edccc2047ffd9d67e4e3ed113e668898da
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73161971"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73834694"
 ---
 # <a name="azure-diagnostics-troubleshooting"></a>Устранение неполадок с помощью системы диагностики Azure
 Данная статья содержит сведения об устранении неполадок, относящихся к средствами диагностики Azure. Дополнительные сведения о системе диагностики Azure см. в [обзоре системы диагностики Azure](diagnostics-extension-overview.md).
@@ -27,7 +27,7 @@ ms.locfileid: "73161971"
 ## <a name="logartifact-paths"></a>Пути к журналам и артефактам
 В таблицах ниже приведены расположения некоторых важных журналов и артефактов. Эти сведения используются в остальной части документа.
 
-### <a name="azure-cloud-services"></a>Oблачныe службы Azure
+### <a name="azure-cloud-services"></a>Облачные службы Azure
 | Артефакт | Путь |
 | --- | --- |
 | **Файл конфигурации системы диагностики Azure** | %SystemDrive%\Packages\Plugins\Microsoft.Azure.Diagnostics.PaaSDiagnostics\<версия>\Config.txt |
@@ -58,7 +58,7 @@ ms.locfileid: "73161971"
 Если идентификатор ресурса неверный, необходимо проверить правильность его значения. Для этого выберите **Diagnostics** **Configuration** (Конфигурация диагностики)  > **Метрики** > **ResourceId**.
 
 Если нет данных для конкретной метрики, необходимо проверить, включена ли метрика (счетчик производительности). Для этого выберите **Diagnostics Configuration** (Конфигурация диагностики)  > **PerformanceCounter**. Следующие счетчики включены по умолчанию.
-- \Processor(_Total)\% Загруженность процессора
+- \Процессор (_общий объем ресурсов)\% загруженности процессора
 - \Память\доступные байты
 - \ASP.NET Applications(__Total__)\Requests/Sec
 - \ASP.NET Applications(__Total__)\Errors Total/Sec
@@ -166,7 +166,7 @@ DiagnosticsPluginLauncher.exe Information: 0 : [4/16/2016 6:24:15 AM] Diagnostic
             tableName = "WAD" + eventDestination;
 ```
 
-Вот пример:
+Пример:
 
 ```XML
         <EtwEventSourceProviderConfiguration provider="prov1">
@@ -206,17 +206,17 @@ DiagnosticsPluginLauncher.exe Information: 0 : [4/16/2016 6:24:15 AM] Diagnostic
 ```
 Этот код создает четыре таблицы:
 
-| Мероприятие | Имя таблицы |
+| Событие | Имя таблицы |
 | --- | --- |
 | Provider = "prov1" &lt;событие с ИД = "1"/&gt; |Вадевент + MD5 ("prov1") + "1" |
 | Provider = "prov1" &lt;событие с ИД = "2" Евентдестинатион = "dest1"/&gt; |WADdest1 |
 | Provider = "prov1" &lt;Дефаултевентс/&gt; |Ваддефаулт + MD5 ("prov1") |
 | Provider = "prov2" &lt;Дефаултевентс Евентдестинатион = "dest2"/&gt; |WADdest2 |
 
-## <a name="references"></a>Справочники
+## <a name="references"></a>Ссылки
 
 ### <a name="how-to-check-diagnostics-extension-configuration"></a>Как проверить конфигурацию расширения системы диагностики
-Самый простой способ проверить конфигурацию расширения — перейти в [обозреватель ресурсов Azure](http://resources.azure.com) и выбрать виртуальную машину или облачную службу, где выполняется расширение системы диагностики Azure (IaaSDiagnostics или PaaDiagnostics).
+Самый простой способ проверить конфигурацию расширения — перейти в [обозреватель ресурсов Azure](https://resources.azure.com) и выбрать виртуальную машину или облачную службу, где выполняется расширение системы диагностики Azure (IaaSDiagnostics или PaaDiagnostics).
 
 Кроме того, вы можете подключиться к удаленному рабочему столу виртуальной машины и просмотреть файл конфигурации системы диагностики Azure, как описано в разделе "Пути к артефактам".
 
@@ -229,7 +229,7 @@ DiagnosticsPluginLauncher.exe Information: 0 : [4/16/2016 6:24:15 AM] Diagnostic
 ### <a name="azure-diagnostics-plugin-exit-codes"></a>Коды выхода подключаемого модуля системы диагностики Azure
 Подключаемый модуль возвращает следующие коды выхода:
 
-| Код выхода | Описание |
+| Код выхода | Description (Описание) |
 | --- | --- |
 | 0 |Успешно. |
 | -1 |Общая ошибка. |

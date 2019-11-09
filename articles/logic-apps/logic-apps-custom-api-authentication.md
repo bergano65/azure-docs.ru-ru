@@ -9,12 +9,12 @@ ms.author: estfan
 ms.reviewer: klam, LADocs
 ms.topic: article
 ms.date: 09/22/2017
-ms.openlocfilehash: 555083235aff08476e82f0daa81203b66591f3cc
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ecec237eab42cf434ab8627ebdf9b1e34f3ab3f1
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66167284"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73838133"
 ---
 # <a name="secure-calls-to-custom-apis-from-azure-logic-apps"></a>Защита вызовов к пользовательским API из Azure Logic Apps
 
@@ -24,12 +24,12 @@ ms.locfileid: "66167284"
 
 Защитить вызовы к настраиваемому API можно следующими способами:
 
-* [Без изменения кода](#no-code): защитите API с помощью [Azure Active Directory (Azure AD)](../active-directory/fundamentals/active-directory-whatis.md) на портале Azure, чтобы не обновлять код и не развертывать API повторно.
+* [Без изменения кода.](#no-code) Защитите API с помощью [Azure Active Directory (Azure AD)](../active-directory/fundamentals/active-directory-whatis.md) на портале Azure, чтобы не обновлять код и не развертывать API повторно.
 
   > [!NOTE]
   > По умолчанию проверка подлинности Azure AD, которую можно включить на портале Azure, не обеспечивает детального уровня авторизации. Например, при такой проверке подлинности API блокируется только для конкретного арендатора, а не для определенного пользователя или приложения. 
 
-* [Обновление кода API](#update-code): защитите API, применив [проверку подлинности на основе сертификата](#certificate), [обычную проверку подлинности](#basic) или [проверку подлинности Azure AD](#azure-ad-code) с помощью кода.
+* [Обновление кода API](#update-code). Защитите API, применив [проверку подлинности на основе сертификата](#certificate), [обычную проверку подлинности](#basic) или [проверку подлинности Azure AD](#azure-ad-code) с помощью кода.
 
 <a name="no-code"></a>
 
@@ -43,13 +43,13 @@ ms.locfileid: "66167284"
 
 3. Добавьте идентификаторы приложений в определение приложения логики.
 
-#### <a name="part-1-create-an-azure-ad-application-identity-for-your-logic-app"></a>Часть 1. Создание удостоверения приложения Azure AD для приложения логики
+#### <a name="part-1-create-an-azure-ad-application-identity-for-your-logic-app"></a>Часть 1. Создание удостоверения приложения Azure AD для приложения логики
 
 Приложение логики использует это удостоверение приложения Azure AD для проверки подлинности в Azure AD. Для вашего каталога это удостоверение необходимо настроить только один раз. Например, вы можете использовать одно удостоверение для всех приложений логики или создать отдельные удостоверения для каждого из них. Вы можете настроить эти удостоверения на портале Azure или с помощью [PowerShell](#powershell).
 
 **Создание удостоверения для приложения логики на портале Azure**
 
-1. На [портале Azure](https://portal.azure.com "https://portal.azure.com") выберите **Azure Active Directory**. 
+1. В [портал Azure](https://portal.azure.com "https://portal.azure.com")выберите **Azure Active Directory**. 
 
 2. Убедитесь, что вы открыли каталог своего веб-приложения или приложения API.
 
@@ -100,21 +100,23 @@ ms.locfileid: "66167284"
 
 1. `Add-AzAccount`
 
-2. `$SecurePassword = Read-Host -AsSecureString` (Введите пароль и нажмите ВВОД)
+1. `$SecurePassword = Read-Host -AsSecureString`
 
-3. `New-AzADApplication -DisplayName "MyLogicAppID" -HomePage "http://mydomain.tld" -IdentifierUris "http://mydomain.tld" -Password $SecurePassword`
+1. Введите пароль и нажмите клавишу ВВОД.
 
-4. Скопируйте использованные ранее **идентификатор клиента** (GUID для клиента Azure AD), **идентификатор приложения** и пароль.
+1. `New-AzADApplication -DisplayName "MyLogicAppID" -HomePage "http://mydomain.tld" -IdentifierUris "http://mydomain.tld" -Password $SecurePassword`
+
+1. Скопируйте использованные ранее **идентификатор клиента** (GUID для клиента Azure AD), **идентификатор приложения** и пароль.
 
 Дополнительные сведения см. в статье [Использование Azure PowerShell для создания субъекта-службы и доступа к ресурсам](../active-directory/develop/howto-authenticate-service-principal-powershell.md).
 
-#### <a name="part-2-create-an-azure-ad-application-identity-for-your-web-app-or-api-app"></a>Часть 2. Создание удостоверения приложения Azure AD для веб-приложения или приложения API
+#### <a name="part-2-create-an-azure-ad-application-identity-for-your-web-app-or-api-app"></a>Часть 2. Создание удостоверения приложения Azure AD для веб-приложения или приложения API
 
 Если веб-приложение или приложение API уже развернуты, можно включить проверку подлинности и создать удостоверение приложения на портале Azure. В противном случае вы можете [включить проверку подлинности при развертывании с использованием шаблона Azure Resource Manager](#authen-deploy). 
 
 **Создание удостоверения приложения и включение проверки подлинности для развернутых приложений на портале Azure**
 
-1. На [портале Azure](https://portal.azure.com "https://portal.azure.com") найдите и выберите веб-приложение или приложение API. 
+1. В [портал Azure](https://portal.azure.com "https://portal.azure.com")найдите и выберите свое веб-приложение или приложение API. 
 
 2. В разделе **Параметры** выберите **Аутентификация или авторизация**. В разделе **Проверка подлинности службы приложений** включите проверку подлинности, нажав кнопку **Вкл.** В разделе **Поставщики проверки подлинности** щелкните **Azure Active Directory**.
 
@@ -151,7 +153,7 @@ ms.locfileid: "66167284"
 
 **Проверка подлинности и авторизация в службе приложений Azure**
 
-Вам все же потребуется создать удостоверение приложения Azure AD для веб-приложения или приложения API, которое отличается от удостоверения приложения логики. Чтобы создать удостоверение приложения, выполните шаги на портале Azure, приведенные в части 2. 
+Вам по-прежнему нужно создать удостоверение приложения Azure AD для веб-приложения или приложения API, которое отличается от удостоверения приложения для приложения логики. Чтобы создать удостоверение приложения, выполните шаги на портале Azure, приведенные в части 2. 
 
 Вы также можете выполнить шаги, приведенные в части 1, но при этом обязательно укажите фактическое значение `https://{URL}` веб-приложения или приложения API для параметров **URL-адрес для входа** и **URI кода приложения**. В этих шагах необходимо сохранить идентификаторы клиента и арендатора, чтобы использовать их в шаблоне развертывания приложения и в части 3.
 
@@ -161,19 +163,21 @@ ms.locfileid: "66167284"
 Получив идентификаторы клиента и арендатора, добавьте их в шаблон развертывания в качестве подресурса веб-приложения или приложения API.
 
 ``` json
-"resources": [ {
-    "apiVersion": "2015-08-01",
-    "name": "web",
-    "type": "config",
-    "dependsOn": ["[concat('Microsoft.Web/sites/','parameters('webAppName'))]"],
-    "properties": {
-        "siteAuthEnabled": true,
-        "siteAuthSettings": {
-            "clientId": "{client-ID}",
-            "issuer": "https://sts.windows.net/{tenant-ID}/",
-        }
-    }
-} ]
+"resources": [ 
+   {
+      "apiVersion": "2015-08-01",
+      "name": "web",
+      "type": "config",
+      "dependsOn": ["[concat('Microsoft.Web/sites/','parameters('webAppName'))]"],
+      "properties": {
+         "siteAuthEnabled": true,
+         "siteAuthSettings": {
+            "clientId": "<client-ID>",
+            "issuer": "https://sts.windows.net/<tenant-ID>/"
+         }
+      }
+   } 
+]
 ```
 
 Чтобы автоматически развернуть пустое веб-приложение и приложение логики и включить проверку подлинности с помощью Azure Active Directory, просмотрите полный шаблон [здесь](https://github.com/Azure/azure-quickstart-templates/tree/master/201-logic-app-custom-api/azuredeploy.json) или щелкните **Развертывание в Azure**:
@@ -184,13 +188,21 @@ ms.locfileid: "66167284"
 
 В предыдущем шаблоне этот раздел авторизации уже настроен. Но если вы разрабатываете приложение логики полностью самостоятельно, вам потребуется включить весь раздел авторизации.
 
-Откройте определение приложения логики в представлении кода, перейдите к разделу действия **HTTP**, найдите раздел **Авторизация** и добавьте следующую строку:
+Откройте определение приложения логики в представлении кода, перейдите к определению действия **http** , найдите раздел **authorization** и включите следующие свойства:
 
-`{"tenant": "{tenant-ID}", "audience": "{client-ID-from-Part-2-web-app-or-API app}", "clientId": "{client-ID-from-Part-1-logic-app}", "secret": "{key-from-Part-1-logic-app}", "type": "ActiveDirectoryOAuth" }`
+```json
+{
+   "tenant": "<tenant-ID>",
+   "audience": "<client-ID-from-Part-2-web-app-or-API app>", 
+   "clientId": "<client-ID-from-Part-1-logic-app>",
+   "secret": "<key-from-Part-1-logic-app>", 
+   "type": "ActiveDirectoryOAuth"
+}
+```
 
-| Элемент | Обязательно для заполнения | Описание | 
-| ------- | -------- | ----------- | 
-| tenant | Да | GUID для арендатора Azure AD. | 
+| Свойство | Обязательно | Description (Описание) | 
+| -------- | -------- | ----------- | 
+| клиенте | Да | GUID для арендатора Azure AD. | 
 | audience | Да | GUID целевого ресурса, к которому требуется доступ, являющийся идентификатором клиента из удостоверения приложения для веб-приложения или приложения API. | 
 | clientid | Да | GUID клиента, запрашивающего доступ, являющийся идентификатором клиента из удостоверения приложения логики. | 
 | secret | Да | Ключ или пароль из удостоверения приложения для клиента, который запрашивает маркер доступа. | 
@@ -202,10 +214,9 @@ ms.locfileid: "66167284"
 ``` json
 {
    "actions": {
-      "some-action": {
-         "conditions": [],
+      "HTTP": {
          "inputs": {
-            "method": "post",
+            "method": "POST",
             "uri": "https://your-api-azurewebsites.net/api/your-method",
             "authentication": {
                "tenant": "tenant-ID",
@@ -214,7 +225,7 @@ ms.locfileid: "66167284"
                "secret": "key-from-azure-ad-app-for-logic-app",
                "type": "ActiveDirectoryOAuth"
             }
-         },
+         }
       }
    }
 }
@@ -230,14 +241,20 @@ ms.locfileid: "66167284"
 
 Вы можете использовать сертификаты клиента для проверки входящих запросов из приложения логики к веб-приложению или приложению API. Чтобы узнать, как настроить код, см. статью о [настройке взаимной проверки подлинности TLS](../app-service/app-service-web-configure-tls-mutual-auth.md).
 
-В разделе **Авторизация** добавьте следующую строку: 
+В разделе **authorization (авторизация** ) включите следующие свойства:
 
-`{"type": "clientcertificate", "password": "password", "pfx": "long-pfx-key"}`
+```json
+{
+   "type": "ClientCertificate",
+   "password": "<password>",
+   "pfx": "<long-pfx-key>"
+} 
+```
 
-| Элемент | Обязательно для заполнения | Описание | 
-| ------- | -------- | ----------- | 
+| Свойство | Обязательно | Description (Описание) | 
+| -------- | -------- | ----------- | 
 | type | Да | Тип проверки подлинности. Для SSL-сертификатов клиента используйте значение `ClientCertificate`. | 
-| password | Да | Пароль для доступа к сертификату клиента (PFX-файл). | 
+| пароль | Да | Пароль для доступа к сертификату клиента (PFX-файл). | 
 | pfx | Да | Содержимое сертификата клиента в кодировке Base64 (PFX-файл). | 
 |||| 
 
@@ -247,15 +264,21 @@ ms.locfileid: "66167284"
 
 Для проверки входящих запросов из приложения логики к веб-приложениям или приложениям API можно использовать обычную проверку подлинности: имя пользователя и пароль. Обычная проверка подлинности — это универсальный вариант, который подходит для веб-приложений и приложений API, написанных на любых языках программирования.
 
-В разделе **Авторизация** добавьте следующую строку:
+В разделе **authorization (авторизация** ) включите следующие свойства:
 
-`{"type": "basic", "username": "username", "password": "password"}`.
+```json
+{
+   "type": "Basic",
+   "username": "<username>",
+   "password": "<password>"
+}
+```
 
-| Элемент | Обязательно для заполнения | Описание | 
-| ------- | -------- | ----------- | 
+| Свойство | Обязательно | Description (Описание) | 
+| -------- | -------- | ----------- | 
 | type | Да | Тип аутентификации, который будет использоваться. Для обычной проверки подлинности используйте значение `Basic`. | 
-| username | Да | Имя пользователя, которое будет использоваться для аутентификации. | 
-| password | Да | Пароль, который будет использоваться для аутентификации. | 
+| Имя пользователя | Да | Имя пользователя, которое будет использоваться для аутентификации. | 
+| пароль | Да | Пароль, который будет использоваться для аутентификации. | 
 |||| 
 
 <a name="azure-ad-code"></a>

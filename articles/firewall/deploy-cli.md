@@ -7,12 +7,12 @@ ms.service: firewall
 ms.date: 08/29/2019
 ms.author: victorh
 ms.topic: article
-ms.openlocfilehash: 94db17405457be91795d1588bee68a0deea68246
-ms.sourcegitcommit: 8e1fb03a9c3ad0fc3fd4d6c111598aa74e0b9bd4
+ms.openlocfilehash: e97783d1a32916cad151f1d0858a8190d0005fd0
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70114813"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73831967"
 ---
 # <a name="deploy-and-configure-azure-firewall-using-azure-cli"></a>Развертывание и настройка брандмауэра Azure с помощью Azure CLI
 
@@ -38,8 +38,8 @@ ms.locfileid: "70114813"
 > [!div class="checklist"]
 > * настройка тестовой сетевой среды;
 > * развертывание брандмауэра;
-> * создание маршрута по умолчанию;
-> * настройка правила приложения для предоставления доступа к www.google.com
+> * Создание маршрута по умолчанию
+> * настройка правила приложения для предоставления доступа к www.google.com;
 > * настройка сетевых правил для предоставления доступа к внешним DNS-серверам;
 > * тестирование брандмауэра.
 
@@ -51,7 +51,7 @@ ms.locfileid: "70114813"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-### <a name="azure-cli"></a>Azure CLI
+### <a name="azure-cli"></a>Azure CLI
 
 Если вы решили установить и использовать CLI локально, вам потребуется Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду **az --version**. Дополнительные сведения об установке или обновлении см. [здесь]( /cli/azure/install-azure-cli).
 
@@ -66,7 +66,7 @@ az extension add -n azure-firewall
 
 Сначала создайте группу ресурсов, необходимых для развертывания брандмауэра. Затем создайте виртуальную сеть, подсети и тестовые серверы.
 
-### <a name="create-a-resource-group"></a>Создать группу ресурсов
+### <a name="create-a-resource-group"></a>Создание группы ресурсов
 
 Группа ресурсов содержит все ресурсы для развертывания.
 
@@ -79,7 +79,7 @@ az group create --name Test-FW-RG --location eastus
 Эта виртуальная сеть имеет три подсети.
 
 > [!NOTE]
-> Размер подсети Азурефиреваллсубнет —/26. Дополнительные сведения о размере подсети см. в разделе [часто задаваемые вопросы о брандмауэре Azure](firewall-faq.md#why-does-azure-firewall-need-a-26-subnet-size).
+> Размер подсети AzureFirewallSubnet равен /26. Дополнительные сведения о размере подсети см. в статье с [часто задаваемыми вопросами о Брандмауэре Azure](firewall-faq.md#why-does-azure-firewall-need-a-26-subnet-size).
 
 ```azurecli-interactive
 az network vnet create \
@@ -179,7 +179,7 @@ fwprivaddr="$(az network firewall ip-config list -g Test-FW-RG -f Test-FW01 --qu
 
 Запишите частный IP-адрес. Вы будете использовать его позже при создании маршрута по умолчанию.
 
-## <a name="create-a-default-route"></a>создание маршрута по умолчанию;
+## <a name="create-a-default-route"></a>Создание маршрута по умолчанию
 
 Создание таблицы с отключенным распространением маршрута BGP
 
@@ -233,7 +233,7 @@ az network firewall application-rule create \
 
 Брандмауэр Azure содержит встроенную коллекцию правил для целевых полных доменных имен инфраструктуры, которые разрешены по умолчанию. Эти доменные имена предназначены для платформы и не могут использоваться для других целей. См. дополнительные сведения об [FQDN инфраструктуры](infrastructure-fqdns.md).
 
-## <a name="configure-a-network-rule"></a>Настройка правила сети
+## <a name="configure-a-network-rule"></a>настройка правила сети;
 
 Правило сети разрешает исходящий доступ к двум IP-адресам через порт 53 (DNS).
 
@@ -284,7 +284,7 @@ az network firewall network-rule create \
    Invoke-WebRequest -Uri https://www.microsoft.com
    ```
 
-   Запросы www.google.com должны выполняться успешно, и запросы www.microsoft.com должны завершаться сбоем. Это показывает, что правила брандмауэра работают должным образом.
+   Запросы на `www.google.com` должны выполняться успешно, и запросы `www.microsoft.com` должны завершаться сбоем. Это показывает, что правила брандмауэра работают должным образом.
 
 Итак, теперь вы убедились в том, что правила брандмауэра работают:
 
@@ -300,6 +300,6 @@ az group delete \
   -n Test-FW-RG
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Учебник. Мониторинг журналов и метрик Брандмауэра Azure](./tutorial-diagnostics.md)
+* [Руководство по мониторингу журналов Брандмауэра Azure](./tutorial-diagnostics.md)

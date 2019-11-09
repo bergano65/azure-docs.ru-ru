@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 07/19/2019
 ms.author: absha
-ms.openlocfilehash: 4b233117bc0f967368aeac7baec8c4875aa16826
-ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
+ms.openlocfilehash: ef2bbf8804e96a3e25f053d189c6d85bfa845b0b
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70051419"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73833175"
 ---
 # <a name="troubleshoot-app-service-issues-in-application-gateway"></a>Устранение неполадок службы приложений в шлюзе приложений
 
@@ -39,10 +39,10 @@ ms.locfileid: "70051419"
 
 ## <a name="sample-configuration"></a>Пример конфигурации
 
-- Прослушиватель HTTP: Базовый или несколько сайтов
-- Серверный пул адресов: Служба приложений
-- Параметры HTTP: **Выбор имени узла из серверного адреса** включен
-- Датчики **Выбор имени узла из включенных параметров HTTP**
+- Прослушиватель HTTP: базовый или несколько сайтов
+- Пул адресов серверной части: служба приложений
+- Параметры HTTP: **выбрать имя узла из серверного адреса** включено
+- Проба: **Выбор имени узла из параметров HTTP** включено
 
 ## <a name="cause"></a>Причина:
 
@@ -76,16 +76,16 @@ Set-Cookie: ARRAffinity=b5b1b14066f35b3e4533a1974cacfbbd969bf1960b6518aa2c2e2619
 
 X-Powered-By: ASP.NET
 ```
-Обратите внимание, что в предыдущем примере заголовок ответа имеет код состояния 301 для перенаправления. Заголовок location имеет имя узла службы приложений вместо исходного имени узла www.contoso.com.
+Обратите внимание, что в предыдущем примере заголовок ответа имеет код состояния 301 для перенаправления. Заголовок location содержит имя узла службы приложений вместо исходного имени узла `www.contoso.com`.
 
-## <a name="solution-rewrite-the-location-header"></a>Решение: Перезаписать заголовок Location
+## <a name="solution-rewrite-the-location-header"></a>Решение. Перепишите заголовок Location
 
 Задайте имя узла в заголовке Location в качестве имени домена шлюза приложений. Для этого создайте [правило перезаписи](https://docs.microsoft.com/azure/application-gateway/rewrite-http-headers) с условием, которое оценивает, содержит ли заголовок Location в ответе azurewebsites.NET. Кроме того, необходимо выполнить действие для перезаписи заголовка Location, чтобы он имел имя узла шлюза приложений. Дополнительные сведения см. в разделе инструкции по [перезаписи заголовка Location](https://docs.microsoft.com/azure/application-gateway/rewrite-http-headers#modify-a-redirection-url).
 
 > [!NOTE]
-> Поддержка переопределения HTTP-заголовков доступна только для SKU шлюза приложений [Standard_v2 и WAF_v2](https://docs.microsoft.com/azure/application-gateway/application-gateway-autoscaling-zone-redundant) . При использовании номера SKU v1 рекомендуется [выполнить миграцию с версии v1 на версию 2](https://docs.microsoft.com/azure/application-gateway/migrate-v1-v2). Вы хотите использовать функцию перезаписи и другие [Расширенные возможности](https://docs.microsoft.com/azure/application-gateway/application-gateway-autoscaling-zone-redundant#feature-comparison-between-v1-sku-and-v2-sku) , доступные в версии v2.
+> Поддержка переопределения HTTP-заголовков доступна только для [Standard_v2 и WAF_V2 SKU](https://docs.microsoft.com/azure/application-gateway/application-gateway-autoscaling-zone-redundant) шлюза приложений. При использовании номера SKU v1 рекомендуется [выполнить миграцию с версии v1 на версию 2](https://docs.microsoft.com/azure/application-gateway/migrate-v1-v2). Вы хотите использовать функцию перезаписи и другие [Расширенные возможности](https://docs.microsoft.com/azure/application-gateway/application-gateway-autoscaling-zone-redundant#feature-comparison-between-v1-sku-and-v2-sku) , доступные в версии v2.
 
-## <a name="alternate-solution-use-a-custom-domain-name"></a>Альтернативное решение: Использовать пользовательское доменное имя
+## <a name="alternate-solution-use-a-custom-domain-name"></a>Альтернативное решение. Используйте имя пользовательского домена.
 
 Если вы используете номер SKU v1, вы не сможете переписать заголовок Location. Эта возможность доступна только для SKU версии 2. Чтобы устранить проблему перенаправления, передайте имя узла, которое шлюз приложений получит в службу приложений, вместо того, чтобы переопределять узел.
 
@@ -97,9 +97,9 @@ X-Powered-By: ASP.NET
 
     ![Список пользовательских доменов службы приложений](./media/troubleshoot-app-service-redirection-app-service-url/appservice-2.png)
 
-- Ваша служба приложений готова принять имя узла www.contoso.com. Измените запись CNAME в DNS, чтобы она указывала на полное доменное имя шлюза приложений, например appgw.eastus.cloudapp.azure.com.
+- Ваша служба приложений готова принять имя узла `www.contoso.com`. Измените запись CNAME в DNS, чтобы она указывала на полное доменное имя шлюза приложений, например `appgw.eastus.cloudapp.azure.com`.
 
-- Убедитесь, что домен www.contoso.com разрешается в полное доменное имя шлюза приложений при выполнении запроса DNS.
+- Убедитесь, что домен `www.contoso.com` разрешается в полное доменное имя шлюза приложений при выполнении запроса DNS.
 
 - Настройте пользовательскую пробу, чтобы отключить **Выбор имени узла из серверных параметров HTTP**. В портал Azure снимите флажок в параметрах зонда. В PowerShell не используйте параметр **-пиккхостнамефромбаккендхттпсеттингс** в команде **Set-азаппликатионгатевайпробеконфиг** . В поле имя узла зонда введите полное доменное имя службы приложений, example.azurewebsites.net. Запросы пробы, отправленные из шлюза приложений, содержат полное доменное имя в заголовке узла.
 
@@ -110,7 +110,7 @@ X-Powered-By: ASP.NET
 
 - Свяжите пользовательскую пробу с параметрами HTTP серверной части и убедитесь, что серверная части работоспособна.
 
-- Шлюз приложений теперь должен перенаправлять одно и то же имя узла www.contoso.com в службу приложений. Перенаправление происходит в том же имени узла. Проверьте следующие примеры заголовков запросов и ответов.
+- Шлюз приложений теперь должен перенаправлять одно и то же имя узла, `www.contoso.com`, в службу приложений. Перенаправление происходит в том же имени узла. Проверьте следующие примеры заголовков запросов и ответов.
 
 Чтобы реализовать предыдущие шаги с помощью PowerShell для существующей установки, используйте приведенный ниже пример сценария PowerShell. Обратите внимание, что мы не использовали параметры **-пиккхостнаме** в конфигурации проверки и HTTP-параметров.
 
@@ -142,6 +142,6 @@ Set-AzApplicationGateway -ApplicationGateway $gw
 
   X-Powered-By: ASP.NET
   ```
-  ## <a name="next-steps"></a>Следующие шаги
+  ## <a name="next-steps"></a>Дальнейшие действия
 
 Если описанные выше действия не помогли устранить проблему, отправьте запрос в [службу поддержки](https://azure.microsoft.com/support/options/).

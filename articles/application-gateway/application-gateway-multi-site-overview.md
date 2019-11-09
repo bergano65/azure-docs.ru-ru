@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.date: 1/16/2019
 ms.author: amsriva
 ms.topic: conceptual
-ms.openlocfilehash: d01ff17966d2e6b9aeaaf3c1f69817dbc84c3a6f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f2e50217b361b62a468e872fe489381911de9c2c
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "57792639"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73835355"
 ---
 # <a name="application-gateway-multiple-site-hosting"></a>Размещение нескольких сайтов с помощью шлюза приложений
 
@@ -23,9 +23,9 @@ ms.locfileid: "57792639"
 > [!IMPORTANT]
 > Правила обрабатываются в том порядке, в котором они указаны на портале. Мы настоятельно рекомендуем в первую очередь настроить многосайтовые прослушиватели, чтобы настроить базовый прослушиватель.  Это позволит гарантировать, что трафик будет перенаправлен на правильный внутренний сервер. Если базовый прослушиватель стоит первым в списке и совпадает с входящим запросом, он будет обрабатываться прослушивателем.
 
-Запросы для http://contoso.com маршрутизируются в ContosoServerPool, а запросы для http://fabrikam.com — в FabrikamServerPool.
+Запросы для `http://contoso.com` маршрутизируются в ContosoServerPool, а запросы для `http://fabrikam.com` — в FabrikamServerPool.
 
-Точно так же в одном развернутом шлюзе приложений можно разместить два поддомена одного родительского домена. К примерам использования поддоменов можно отнести размещение http://blog.contoso.com и http://app.contoso.com в одном развернутом шлюзе приложений.
+Точно так же в одном развернутом шлюзе приложений можно разместить два поддомена одного родительского домена. К примерам использования поддоменов можно отнести размещение `http://blog.contoso.com` и `http://app.contoso.com` в одном развернутом шлюзе приложений.
 
 ## <a name="host-headers-and-server-name-indication-sni"></a>Заголовки узлов и указание имени сервера (SNI)
 

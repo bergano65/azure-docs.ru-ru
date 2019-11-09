@@ -9,12 +9,12 @@ ms.service: key-vault
 ms.topic: conceptual
 ms.date: 09/04/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 6c7a9fdb5ed60023a82984fd5be5b424c634e679
-ms.sourcegitcommit: a19f4b35a0123256e76f2789cd5083921ac73daf
+ms.openlocfilehash: 75317f73ad724b4ce8ad7a894890b2269bd8c5d0
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71720245"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73837502"
 ---
 # <a name="provide-key-vault-authentication-with-a-managed-identity"></a>Предоставление Key Vault проверки подлинности с помощью управляемого удостоверения
 
@@ -34,14 +34,14 @@ ms.locfileid: "71720245"
    - [Создание хранилища ключей с Azure PowerShell](quick-create-powershell.md)
    - [Создайте хранилище ключей с портал Azure](quick-create-portal.md).
 - Существующее приложение службы приложений, к которому предоставляется доступ к хранилищу ключей. Его можно быстро создать, выполнив действия, описанные в [документации по службе приложений](../app-service/overview.md).
-- [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) или [Azure PowerShell](/powershell/azure/overview). Кроме того, можно использовать [портал Azure](http://portal.azure.com).
+- [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) или [Azure PowerShell](/powershell/azure/overview). Кроме того, можно использовать [портал Azure](https://portal.azure.com).
 
 
 ## <a name="adding-a-system-assigned-identity"></a>Добавление назначаемого системой удостоверения 
 
 Во-первых, необходимо добавить назначенное системой удостоверение в приложение. 
  
-### <a name="azure-portal"></a>портала Azure 
+### <a name="azure-portal"></a>Портал Azure 
 
 Чтобы настроить управляемое удостоверение на портале, сначала необходимо создать обычное приложение, а затем активировать соответствующую функцию. 
 
@@ -49,11 +49,11 @@ ms.locfileid: "71720245"
 
 1. Выберите **Управляемое удостоверение**. 
 
-1. На вкладке **Назначено системой** для параметра **Состояние** установите значение **Вкл**. Нажмите кнопку **Сохранить**. 
+1. На вкладке **Назначено системой** для параметра **Состояние** установите значение **Вкл**. Щелкните **Сохранить**. 
 
     ![](./media/managed-identity-system-assigned.png)
 
-### <a name="azure-cli"></a>Azure CLI
+### <a name="azure-cli"></a>Azure CLI
 
 Для этого краткого руководства требуется Azure CLI версии 2.0.4 или более поздней. Чтобы узнать, какая версия используется сейчас, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest). 
 
@@ -76,7 +76,7 @@ az webapp identity assign --name myApp --resource-group myResourceGroup
 az functionapp identity assign --name myApp --resource-group myResourceGroup
 ```
 
-Запишите значение `PrincipalId`, которое потребуется в следующем разделе.
+Запишите `PrincipalId`, который потребуется в следующем разделе.
 
 ```json
 {
@@ -87,7 +87,7 @@ az functionapp identity assign --name myApp --resource-group myResourceGroup
 ```
 ## <a name="grant-your-app-access-to-key-vault"></a>Предоставьте приложению доступ к Key Vault 
 
-### <a name="azure-portal"></a>портала Azure
+### <a name="azure-portal"></a>Портал Azure
 
 1.  Перейдите к Key Vault ресурсу. 
 
@@ -101,7 +101,7 @@ az functionapp identity assign --name myApp --resource-group myResourceGroup
 
     ![](./media/managed-identity-access-policy.png)
 
-### <a name="azure-cli"></a>Azure CLI
+### <a name="azure-cli"></a>Azure CLI
 
 Чтобы предоставить приложению доступ к хранилищу ключей, используйте команду Azure CLI [AZ keyvault Set-Policy](/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-set-policy) , указав параметр **ObjectID** с указанным выше **principalId** .
 
@@ -109,9 +109,9 @@ az functionapp identity assign --name myApp --resource-group myResourceGroup
 az keyvault set-policy --name myKeyVault --object-id <PrincipalId> --secret-permissions get list 
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- безопасность [Azure Key Vault: Управление удостоверениями и доступом @ no__t-0
+- [Azure Key Vault безопасность: Управление удостоверениями и доступом](overview-security.md#identity-and-access-management)
 - [Предоставление Key Vault проверки подлинности с помощью политики управления доступом](key-vault-group-permissions-for-apps.md)
 - [Сведения о ключах, секретах и сертификатах](about-keys-secrets-and-certificates.md)
 - [Обеспечьте безопасность хранилища ключей](key-vault-secure-your-key-vault.md).

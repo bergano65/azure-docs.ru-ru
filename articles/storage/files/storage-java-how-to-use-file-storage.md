@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/19/2017
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 00130114b793b5f4d4459eee3404fc4adaf6a8b4
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: 28a280ea7c3bf9ef84a1fff05da5090ed526fb12
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68699411"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73837462"
 ---
 # <a name="develop-for-azure-files-with-java"></a>Разработка для файлов Azure с использованием языка Java
 [!INCLUDE [storage-selector-file-include](../../../includes/storage-selector-file-include.md)]
@@ -72,7 +72,7 @@ try {
 
 **CloudStorageAccount.parse** вызывает прерывание InvalidKeyException, поэтому необходимо поместить его в блок try-catch.
 
-## <a name="create-an-azure-file-share"></a>создать файловый ресурс Azure;
+## <a name="create-an-azure-file-share"></a>Создание файлового ресурса Azure
 Все файлы и каталоги в файлах Azure находятся в контейнере, который называется **общей папкой**. Учетная запись хранения может иметь столько общих папок, насколько позволяет емкость вашей учетной записи. Чтобы получить доступ к общей папке и ее содержимому, необходимо использовать клиент файлов Azure.
 
 ```java
@@ -120,7 +120,7 @@ try
 }
 ```
 
-## <a name="create-a-directory"></a>создать каталог;
+## <a name="create-a-directory"></a>Создайте каталог
 Вы также можете организовать хранилище, помещая файлы в подкаталоги, а не размещая их в корневом каталоге. Служба файлов Azure позволяет создать такое количество каталогов, которое допускается в вашей учетной записи. В следующем примере кода в корневом каталоге создается подкаталог с именем **sampledir**.
 
 ```java
@@ -165,7 +165,7 @@ for ( ListFileItem fileItem : rootDir.listFilesAndDirectories() ) {
 }
 ```
 
-## <a name="upload-a-file"></a>Отправить файл
+## <a name="upload-a-file"></a>Отправка файла
 В этом разделе вы узнаете, как отправить файл из локального хранилища в корневой каталог общего ресурса.
 
 Первым шагом при отправке файла является получение ссылки на каталог, где файл будет находиться. Это делается путем вызова метода **getRootDirectoryReference** объекта общей папки.
@@ -185,7 +185,7 @@ CloudFileDirectory rootDir = share.getRootDirectoryReference();
         cloudFile.uploadFromFile(filePath);
 ```
 
-## <a name="download-a-file"></a>Скачать файл
+## <a name="download-a-file"></a>Скачивание файла
 Одной из наиболее частых операций, которые выполняются с файлами Azure, является скачивание файлов. В следующем примере происходит скачивание файла SampleFile.txt с последующим отображением его содержимого.
 
 ```java
@@ -203,7 +203,7 @@ System.out.println(file.downloadText());
 ```
 
 ## <a name="delete-a-file"></a>Удаление файла
-Другая распространенная операция в службе файлов Azure — это удаление файлов. Следующий пример программы удаляет файл с именем SampleFile.txt, хранящийся в каталоге с именем **sampledir**.
+Другая распространенная операция с файлами Azure — это удаление файлов. Следующий пример программы удаляет файл с именем SampleFile.txt, хранящийся в каталоге с именем **sampledir**.
 
 ```java
 // Get a reference to the root directory for the share.
@@ -221,14 +221,14 @@ if ( file.deleteIfExists() ) {
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Если вы хотите узнать больше о других API-интерфейсах Azure, пожалуйста перейдите по следующим ссылкам.
 
 * [Azure for Java developers](/java/azure) (Azure для разработчиков Java)
-* [Пакет SDK для службы хранилища Azure для Java](https://github.com/azure/azure-storage-java)
+* [пакет SDK службы хранилища Azure для Java](https://github.com/azure/azure-storage-java)
 * [Microsoft Azure Storage SDK for Android](https://github.com/azure/azure-storage-android)
-* [справочнике по пакету SDK для клиента службы хранилища Azure](http://dl.windowsazure.com/storage/javadoc/)
+* [справочнике по пакету SDK для клиента службы хранилища Azure](https://javadoc.io/doc/com.microsoft.azure/azure-core/0.8.0/index.html)
 * [API-интерфейс REST служб хранилища Azure](https://msdn.microsoft.com/library/azure/dd179355.aspx)
 * [Блог рабочей группы службы хранилища Azure](https://blogs.msdn.com/b/windowsazurestorage/)
 * [Приступая к работе со служебной программой командной строки AzCopy](../common/storage-use-azcopy.md)
-* [Устранение неполадок с файлами Azure в Windows](storage-troubleshoot-windows-file-connection-problems.md)
+* [Устранение неполадок со службой файлов Azure в Windows](storage-troubleshoot-windows-file-connection-problems.md)

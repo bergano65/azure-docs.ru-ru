@@ -1,6 +1,6 @@
 ---
 title: Повторное обучение классической веб-службы
-titleSuffix: ML Studio (classic) Azure
+titleSuffix: ML Studio (classic) - Azure
 description: Узнайте, как переучить модель и обновить классическую веб-службу для использования недавно обученной модели в Машинное обучение Azure Studio (классическая модель).
 services: machine-learning
 ms.service: machine-learning
@@ -10,12 +10,12 @@ author: peterclu
 ms.author: amlstudiodocs
 ms.custom: seodec18, previous-ms.author=yahajiza, previous-author=YasinMSFT
 ms.date: 02/14/2019
-ms.openlocfilehash: 17d15de3df73592c3ce410535235559c8c6fb584
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: eac7674ae4a88621a803c70bd55a88e65b2cb7e9
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73670530"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73838693"
 ---
 # <a name="retrain-and-deploy-a-classic-studio-classic-web-service"></a>Повторное обучение и развертывание классической веб-службы (классическая модель)
 

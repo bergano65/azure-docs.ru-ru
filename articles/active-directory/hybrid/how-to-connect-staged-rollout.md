@@ -6,16 +6,16 @@ manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 10/28/2019
+ms.date: 11/07/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 24efd9d67e5bcc083ce1a02dcf0850a39189afe8
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.openlocfilehash: 2596091324acde5c4fdc3f7c467849f90266fec9
+ms.sourcegitcommit: 16c5374d7bcb086e417802b72d9383f8e65b24a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73173107"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73847228"
 ---
 # <a name="cloud-authentication-staged-rollout-public-preview"></a>Облачная аутентификация: промежуточное развертывание (общедоступная Предварительная версия)
 
@@ -33,7 +33,7 @@ ms.locfileid: "73173107"
 
 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 -   У вас есть клиент Azure AD с федеративными доменами.
 
@@ -117,18 +117,18 @@ ms.locfileid: "73173107"
 
 2. Перейдите в папку% ProgramFiles%\\Microsoft Azure Active Directory Connect.
 
-3. Импортируйте модуль PowerShell для простого единого входа с помощью следующей команды: `Import-Module .\\AzureADSSO.psd1`.
+3. Импортируйте модуль PowerShell для простого единого входа с помощью следующей команды: `Import-Module .\AzureADSSO.psd1`.
 
 4. Откройте PowerShell от имени администратора. В PowerShell вызовите `New-AzureADSSOAuthenticationContext`. Эта команда должна предоставить диалоговое окно, в котором можно ввести учетные данные глобального администратора клиента.
 
-5. Вызовите `Get-AzureADSSOStatus \| ConvertFrom-Json`. Эта команда предоставляет список лесов AD (см. список доменов \"\"), на которых эта функция включена. По умолчанию для него задано значение false на уровне клиента.
+5. Вызовите `Get-AzureADSSOStatus | ConvertFrom-Json`. Эта команда предоставляет список лесов AD (см. список доменов \"\"), на которых эта функция включена. По умолчанию для него задано значение false на уровне клиента.
 
    > **Пример.** 
    > ![пример выходных данных Windows PowerShell](./media/how-to-connect-staged-rollout/sr3.png)
 
-6. Вызовите `\$creds = Get-Credential`. При запросе введите свои учетные данные администратора домена для нужного леса AD.
+6. Вызовите `$creds = Get-Credential`. При запросе введите свои учетные данные администратора домена для нужного леса AD.
 
-7. Вызовите `Enable-AzureADSSOForest -OnPremCredentials \$creds`. Эта команда создает учетную запись компьютера AZUREADSSOACC из локального контроллера домена для этого конкретного Active Directory леса, необходимого для простого единого входа.
+7. Вызовите `Enable-AzureADSSOForest -OnPremCredentials $creds`. Эта команда создает учетную запись компьютера AZUREADSSOACC из локального контроллера домена для этого конкретного Active Directory леса, необходимого для простого единого входа.
 
 8. Для простого единого входа необходимо, чтобы URL-адреса были в зоне интрасети. Для развертывания этих URL-адресов с помощью групповых политик обратитесь к [краткому руководству по эффективному единому входу](how-to-connect-sso-quick-start.md#step-3-roll-out-the-feature) .
 
@@ -240,7 +240,7 @@ ms.locfileid: "73173107"
 
 -   **Вопрос. можно ли использовать PowerShell для выполнения промежуточного развертывания?**
 
--   Ответ. Да, ознакомьтесь с документацией по использованию PowerShell для выполнения промежуточного развертывания.
+-   Ответ. Да, ознакомьтесь с документацией по использованию PowerShell для выполнения промежуточного [развертывания.](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0-preview#staged_rollout)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Предварительная версия AzureAD 2,0](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0-preview#staged_rollout )

@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2d80ac949dea3c9d6c3d28d2a343c4ed7bad8983
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 22e3131a204589a506b2d5f1e2508c37ad3b4100
+ms.sourcegitcommit: 16c5374d7bcb086e417802b72d9383f8e65b24a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73474314"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73847218"
 ---
 # <a name="planning-a-cloud-based-azure-multi-factor-authentication-deployment"></a>Планирование развертывания многофакторной идентификации Azure на основе облачных служб
 
@@ -24,7 +24,7 @@ ms.locfileid: "73474314"
 
 [Многофакторная идентификация Azure (MFA)](concept-mfa-howitworks.md) помогает защитить доступ к данным и приложениям. Он обеспечивает дополнительный уровень безопасности, используя вторую форму проверки подлинности. Организации могут использовать [Условный доступ](../conditional-access/overview.md) для того, чтобы решение соответствовало конкретным потребностям.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом развертывания многофакторной идентификации Azure необходимо учитывать необходимые компоненты.
 
@@ -209,6 +209,9 @@ function Set-MfaState {
 Get-MsolUser -All | Set-MfaState -State Disabled
 ```
 
+> [!NOTE]
+> Мы недавно изменили поведение и сценарий PowerShell. Ранее скрипт сохранялся из методов MFA, отключил MFA и восстановил методы. Это больше не требуется, так как поведение по умолчанию для Disable не приводит к очистке методов.
+
 ## <a name="plan-conditional-access-policies"></a>Планирование политик условного доступа
 
 Чтобы спланировать стратегию политики условного доступа, которая определит, когда требуется MFA и другие элементы управления, см. статью [что такое условный доступ в Azure Active Directory?](../conditional-access/overview.md).
@@ -280,7 +283,7 @@ Get-MsolUser -All | Set-MfaState -State Disabled
 
 Этот параметр определяет, что нужно делать при проверке подлинности пользователя, не зарегистрированного для MFA. Последствия изменения этого параметра перечислены в таблице ниже.
 
-| Настройки | Состояние пользователя MFA | Параметров |
+| Параметры | Состояние пользователя MFA | Параметров |
 | --- | --- | --- |
 | Ключ не существует | Не зарегистрировано | Запрос MFA не выполнен |
 | Значение true/Not Set | Не зарегистрировано | Запрос MFA не выполнен |

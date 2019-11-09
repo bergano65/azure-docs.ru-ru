@@ -1,6 +1,6 @@
 ---
 title: Импорт и экспорт данных в веб-службах
-titleSuffix: ML Studio (classic) Azure
+titleSuffix: ML Studio (classic) - Azure
 description: Узнайте, как использовать модули импорта и экспорта данных для отправки и получения данных из веб-службы.
 services: machine-learning
 author: xiaoharper
@@ -12,12 +12,12 @@ ms.service: machine-learning
 ms.subservice: studio
 ms.topic: conceptual
 ms.date: 03/28/2017
-ms.openlocfilehash: 3a88d3958378a0746a22e99a817ad9ecebf217dc
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 0ae545fd3ecafda74b90a6a4694dd6f506fb44b1
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73684710"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73838806"
 ---
 # <a name="deploy-azure-machine-learning-studio-classic-web-services-that-use-data-import-and-data-export-modules"></a>Развертывание веб-служб Машинное обучение Azure Studio (классическая модель), использующих модули импорта и экспорта данных
 

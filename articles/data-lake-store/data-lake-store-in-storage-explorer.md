@@ -1,25 +1,17 @@
 ---
-title: Управление ресурсами Azure Data Lake Storage 1-го поколения в обозревателе службы хранилища Azure
+title: Управление ресурсами Data Lake Storage 1-го поколения — Обозреватель службы хранилища Azure
 description: Сведения о доступе к данным и ресурсам Azure Data Lake Storage 1-го поколения, а также управление ими в обозревателе службы хранилища Azure
-Keywords: Store Озера данных Azure, обозревателя службы хранилища Azure
-services: Data Lake Store
-documentationcenter: ''
 author: jejiang
-manager: DJ
-editor: Jenny Jiang
-ms.assetid: ''
 ms.service: data-lake-store
-ms.custom: Azure Data Lake Store
-ms.devlang: dotnet
-ms.topic: article
+ms.topic: conceptual
 ms.date: 02/05/2018
 ms.author: jejiang
-ms.openlocfilehash: 18ef1f182611a9c8fbf24cd08026633f5449bbe9
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: a5117f72f933e1e48dc471a75624a8d3921f55af
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60613621"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73832257"
 ---
 # <a name="manage-azure-data-lake-storage-gen1-resources-by-using-storage-explorer"></a>Управление ресурсами Azure Data Lake Storage 1-го поколения с помощью обозревателя службы хранилища
 
@@ -27,11 +19,12 @@ ms.locfileid: "60613621"
 
 Другое преимущество заключается в том, что вам не нужно разрешение в подписке для управления данными Data Lake Storage 1-го поколения. В обозревателе службы хранилища вы можете добавить путь Data Lake Storage 1-го поколения к узлу **Локальные и присоединенные**, пока действует соответствующее разрешение.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
+
 Чтобы выполнить действия, описанные в этой статье, необходимо следующее.
 
-*   Подписка Azure. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial).
-*   Учетная запись Data Lake Storage 1-го поколения. За инструкциями по созданию учетной записи обращайтесь к статье [Начало работы с Azure Data Lake Storage 1-го поколения](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-get-started-portal).
+* Подписка Azure. Ознакомьтесь с [бесплатной пробной версией Azure](https://azure.microsoft.com/pricing/free-trial).
+* Учетная запись Data Lake Storage 1-го поколения. Инструкции по созданию учетной записи см. в статье [Начало работы с Azure Data Lake Storage 1-го поколения](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-get-started-portal).
 
 ## <a name="install-storage-explorer"></a>Установка Обозревателя службы хранилища
 
@@ -40,18 +33,18 @@ ms.locfileid: "60613621"
 ## <a name="connect-to-an-azure-subscription"></a>Подключение к подписке Azure
 
 1. В Обозревателе службы хранилища Azure щелкните значок подключаемого модуля слева.
-       
+
    ![Значок подключаемого модуля](./media/data-lake-store-in-storage-explorer/plug-in-icon.png)
- 
-2. Выберите **Add an Azure Account** (Добавить учетную запись Azure), а затем щелкните **Войти**.
+
+1. Выберите **Add an Azure Account** (Добавить учетную запись Azure), а затем щелкните **Войти**.
 
    ![Диалоговое окно подключения к службе хранилища Azure](./media/data-lake-store-in-storage-explorer/connect-to-azure-subscription.png)
 
-2. В диалоговом окне **Sign in to your account** (Вход в учетную запись) введите свои учетные данные Azure.
+1. В диалоговом окне **Sign in to your account** (Вход в учетную запись) введите свои учетные данные Azure.
 
     ![Диалоговое окно входа в Azure](./media/data-lake-store-in-storage-explorer/sign-in.png)
 
-3. Выберите свою подписку в списке и нажмите кнопку **Применить**.
+1. Выберите свою подписку в списке и нажмите кнопку **Применить**.
 
     ![Сведения о подписке и кнопка "Применить"](./media/data-lake-store-in-storage-explorer/apply-subscription.png)
 
@@ -62,7 +55,9 @@ ms.locfileid: "60613621"
 Вы успешно подключили Data Lake Storage 1-го поколения к подписке Azure.
 
 ## <a name="connect-to-data-lake-storage-gen1"></a>Подключение к Data Lake Storage 1-го поколения
+
 Вы можете получить доступ к ресурсам, которых нет в вашей подписке, если вам предоставят универсальный код ресурса (URI) для ресурсов. Вы можете подключиться к Data Lake Storage 1-го поколения с его помощью после входа в систему.
+
 1. Откройте обозреватель хранилищ.
 2. В левой области разверните узел **Local and Attached** (Локальные и присоединенные).
 3. Щелкните правой кнопкой мыши **Data Lake Store** и выберите команду **Connect to Data Lake Store** (Подключиться к Data Lake Store).
@@ -76,6 +71,7 @@ ms.locfileid: "60613621"
       ![Результат подключения к Data Lake Storage 1-го поколения](./media/data-lake-store-in-storage-explorer/storageexplorer-adls-attach-finish.png)
 
 ## <a name="view-a-data-lake-storage-gen1-accounts-contents"></a>Просмотр содержимого учетной записи Data Lake Storage 1-го поколения
+
 В ресурсах учетной записи Data Lake Storage 1-го поколения содержатся файлы и папки.
 
 В шагах ниже описывается, как просмотреть содержимое учетной записи Data Lake Storage 1-го поколения в обозревателе службы хранилища.
@@ -83,25 +79,27 @@ ms.locfileid: "60613621"
 1. Откройте обозреватель хранилищ.
 2. В левой области разверните подписку, в которой содержится нужная учетная запись Data Lake Storage 1-го поколения.
 3. Разверните **Data Lake Store**.
-4. Щелкните правой кнопкой мыши узел учетной записи Data Lake Storage 1-го поколения, который необходимо просмотреть, и выберите **Открыть**. Кроме того, чтобы открыть учетную запись Data Lake Storage 1-го поколения, можно дважды щелкнуть ее. 
-   
+4. Щелкните правой кнопкой мыши узел учетной записи Data Lake Storage 1-го поколения, который необходимо просмотреть, и выберите **Открыть**. Кроме того, чтобы открыть учетную запись Data Lake Storage 1-го поколения, можно дважды щелкнуть ее.
+
    На главной панели отобразится содержимое учетной записи Data Lake Storage 1-го поколения.
 
-   ![Главная панель со списком папок](./media/data-lake-store-in-storage-explorer/storageexplorer-adls-toolbar-mainpane.png) 
+   ![Главная панель со списком папок](./media/data-lake-store-in-storage-explorer/storageexplorer-adls-toolbar-mainpane.png)
 
 ## <a name="manage-resources-in-data-lake-storage-gen1"></a>Управление ресурсами в Data Lake Storage 1-го поколения
 
 Вы можете управлять ресурсами Data Lake Storage 1-го поколения. Для этого доступны следующие операции:
-*   Просмотр ресурсов Data Lake Storage 1-го поколения в нескольких учетных записях Data Lake Storage 1-го поколения.  
-*   Использование строки подключения, чтобы напрямую подключиться к Data Lake Storage 1-го поколения и управлять им. 
-*   Просмотр ресурсов Data Lake Storage 1-го поколения, к которым другие пользователи предоставили общий доступ, с помощью списка управления доступом (ACL) в узле **Локальные и присоединенные**.
-*   Выполнение операций CRUD в папках и файлах: поддержка рекурсивных папок и множественного выбора файлов. 
-*   Перетаскивание, удаление и добавление папки для быстрого доступа к последним расположениям. Эта операция соответствует возможностям настольной версии проводника. 
-*   Копирование и открытие гиперссылки Data Lake Storage 1-го поколения с помощью обозревателя службы хранилища в один щелчок. 
-*   Отображение журнала действий в нижней правой области для просмотра состояния действия.
-*   Отображение статистики папки и свойств файла.
+
+* Просмотр ресурсов Data Lake Storage 1-го поколения в нескольких учетных записях Data Lake Storage 1-го поколения.  
+* Использование строки подключения, чтобы напрямую подключиться к Data Lake Storage 1-го поколения и управлять им.
+* Просмотр ресурсов Data Lake Storage 1-го поколения, к которым другие пользователи предоставили общий доступ, с помощью списка управления доступом (ACL) в узле **Локальные и присоединенные**.
+* Выполнение операций CRUD в папках и файлах: поддержка рекурсивных папок и множественного выбора файлов.
+* Перетаскивание, удаление и добавление папки для быстрого доступа к последним расположениям. Эта операция соответствует возможностям настольной версии проводника.
+* Копирование и открытие гиперссылки Data Lake Storage 1-го поколения с помощью обозревателя службы хранилища в один щелчок.
+* Отображение журнала действий в нижней правой области для просмотра состояния действия.
+* Отображение статистики папки и свойств файла.
 
 ## <a name="manage-resources-in-azure-storage-explorer"></a>Управление ресурсами в обозревателе службы хранилища Azure
+
 После создания учетной записи Data Lake Storage 1-го поколения вы сможете:
 
 * передавать папки и файлы, а также загружать и открывать ресурсы на локальном компьютере;
@@ -110,11 +108,11 @@ ms.locfileid: "60613621"
 
 С помощью элементов ниже показано, как управлять ресурсами в учетной записи Data Lake Storage 1-го поколения. Следуйте приведенным ниже инструкциям, чтобы выполнить необходимую задачу.
 
-### <a name="upload-files"></a>Upload files
+### <a name="upload-files"></a>Отправка файлов
 
 1. На панели инструментов в главной области нажмите кнопку **Отправить**, а затем в раскрывающемся меню выберите **Отправить файлы**.
 
-   ![Пункт меню "Отправить файлы"](./media/data-lake-store-in-storage-explorer/storageexplorer-adls-upload-files-menu.png) 
+   ![Пункт меню "Отправить файлы"](./media/data-lake-store-in-storage-explorer/storageexplorer-adls-upload-files-menu.png)
 
 2. В диалоговом окне **Select files to Upload** (Выбор файлов для отправки) выберите нужные файлы.
 
@@ -126,19 +124,19 @@ ms.locfileid: "60613621"
 
 1. На панели инструментов в основной области нажмите кнопку **Отправить**, а затем в раскрывающемся меню выберите **Upload Folder** (Отправить папку).
 
-   ![Пункт меню Upload Folder (Отправить папку)](./media/data-lake-store-in-storage-explorer/storageexplorer-adls-upload-folder-menu.png) 
-     
+   ![Пункт меню Upload Folder (Отправить папку)](./media/data-lake-store-in-storage-explorer/storageexplorer-adls-upload-folder-menu.png)
+
 2. В диалоговом окне **Select folder to upload** (Выбор папки для отправки) выберите нужную папку. Затем щелкните **Выбрать папку**.
 
-   ![Диалоговое окно для отправки папок](./media/data-lake-store-in-storage-explorer/storageexplorer-adls-upload-folder-dialog.png)      
+   ![Диалоговое окно для отправки папок](./media/data-lake-store-in-storage-explorer/storageexplorer-adls-upload-folder-dialog.png)
 
    Начнется загрузка.
 
-   ![Диалоговое окно выполнения отправки](./media/data-lake-store-in-storage-explorer/storageexplorer-adls-upload-folder-drag.png) 
+   ![Диалоговое окно выполнения отправки](./media/data-lake-store-in-storage-explorer/storageexplorer-adls-upload-folder-drag.png)
 
 > [!NOTE]
-> Вы можете напрямую перетащить папки и файлы на локальный компьютер, чтобы начать отправку. 
-       
+> Вы можете напрямую перетащить папки и файлы на локальный компьютер, чтобы начать отправку.
+
 ### <a name="download-folders-or-files-to-your-local-computer"></a>Загрузка папок или файлов на локальный компьютер
 
 1. Выберите папки или файлы, которые вы хотите загрузить.
@@ -153,7 +151,7 @@ ms.locfileid: "60613621"
 
 Файл будет скачан и открыт с помощью приложения, выбор которого зависит от базового типа файла. Папка же откроется в основной области.
 
-![Открытый файл](./media/data-lake-store-in-storage-explorer/storageexplorer-adls-open.png) 
+![Открытый файл](./media/data-lake-store-in-storage-explorer/storageexplorer-adls-open.png)
 
 ### <a name="copy-folders-or-files-to-the-clipboard"></a>Копирование файлов и папок в буфер обмена
 
@@ -166,7 +164,7 @@ ms.locfileid: "60613621"
 
 > [!NOTE]
 > Операции копирования и вставки между разными типами хранилища не поддерживаются. Вы можете скопировать папки или файлы Data Lake Storage 1-го поколения и вставить их в другую учетную запись Data Lake Storage 1-го поколения. Но *вы не можете* копировать файлы или папки Data Lake Storage 1-го поколения и вставлять их в хранилище BLOB-объектов Azure или наоборот.
-> 
+>
 > Для выполнения операции копирования и вставки нужно загрузить папки или файлы на локальный компьютер, а потом передать их оттуда в расположения назначения. В серверной части эти операции *не выполняются*. Операция копирования и вставки больших файлов может занять много времени. Метод оптимизации копирования и перемещения файлов находится в разработке.
 
 ### <a name="delete-folders-or-files"></a>Удаление файлов или папок
@@ -189,12 +187,13 @@ ms.locfileid: "60613621"
 После закрепления папки для узла **быстрого доступа**, можно легко получить доступ к ресурсам.
 
 ### <a name="use-deep-links"></a>Использование прямых ссылок
+
 Если доступен URL-адрес, его можно просто ввести в путь адреса в проводнике или браузере. Затем для перехода в расположение URL-адреса автоматически запустится файл Storage Explorer.exe.
 
 ![Прямая ссылка в проводнике](./media/data-lake-store-in-storage-explorer/storageexplorer-adls-deep-link.png)
 
-
 ## <a name="next-steps"></a>Дальнейшие действия
+
 * Последние заметки о выпуске Обозревателя службы хранилищ и связанные с ним видео см. [здесь](https://www.storageexplorer.com).
 * Сведения об управлении Azure DB Cosmos в Обозревателе службы хранилища Azure см. в [этой статье](https://docs.microsoft.com/azure/cosmos-db/storage-explorer).
 * [Приступая к работе с обозревателем службы хранилища (предварительная версия)](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer).

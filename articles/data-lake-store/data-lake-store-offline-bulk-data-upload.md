@@ -1,39 +1,35 @@
 ---
-title: Отправка больших объемов данных в Data Lake Storage 1-го поколения автономными методами | Документация Майкрософт
-description: Узнайте, как с помощью средства AdlCopy копировать данные из больших двоичных объектов службы хранилища Azure в Azure Data Lake Storage 1-го поколения.
-services: data-lake-store
-documentationcenter: ''
+title: Передача больших наборов данных в методы автономного Azure Data Lake Storage 1-го поколения
+description: Используйте службу импорта и экспорта для копирования данных из хранилища BLOB-объектов Azure в Azure Data Lake Storage 1-го поколения
 author: twooley
-manager: mtillman
-editor: cgronlun
-ms.assetid: 45321f6a-179f-4ee4-b8aa-efa7745b8eb6
 ms.service: data-lake-store
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
-ms.openlocfilehash: 4a8126d658f227d9eed372cd51cf06f8f12c99f9
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: aa3eb0bcd9ddd2a094563efe326f7af7e9e8708a
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60194983"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73839294"
 ---
-# <a name="use-the-azure-importexport-service-for-offline-copy-of-data-to-azure-data-lake-storage-gen1"></a>Автономное копирование данных в Azure Data Lake Storage 1-го поколения с помощью службы импорта и экспорта Azure
-В этой статье описано, как скопировать огромные наборы данных (>200 ГБ) в Azure Data Lake Storage 1-го поколения, используя методы автономного копирования, такие как [служба импорта и экспорта Azure](../storage/common/storage-import-export-service.md). В частности, в качестве примера в этой статье используется файл размером 339 420 860 416 байт, т. е. 319 ГБ на диске. Давайте назовем этот файл 319GB.tsv.
+# <a name="use-the-azure-importexport-service-for-offline-copy-of-data-to-data-lake-storage-gen1"></a>Используйте службу импорта и экспорта Azure для автономной копии данных в Data Lake Storage 1-го поколения
+
+В этой статье вы узнаете, как скопировать огромные наборы данных (> 200 ГБ) в Data Lake Storage 1-го поколения с помощью методов автономного копирования, таких как [Служба импорта и экспорта Azure](../storage/common/storage-import-export-service.md). В частности, в качестве примера в этой статье используется файл размером 339 420 860 416 байт, т. е. 319 ГБ на диске. Давайте назовем этот файл 319GB.tsv.
 
 Служба импорта и экспорта Azure позволяет безопасно переносить большие объемы данных в хранилище BLOB-объектов Azure, отправляя жесткие диски в центр обработки данных Azure.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
+
 Перед началом работы убедитесь, что у вас есть такие компоненты.
 
-* **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
+* **Подписка Azure**. Ознакомьтесь с [бесплатной пробной версией Azure](https://azure.microsoft.com/pricing/free-trial/).
 * **Учетная запись хранения Azure.**
-* **Учетная запись Azure Data Lake Storage 1-го поколения**. За инструкциями по созданию учетной записи обращайтесь к статье [Начало работы с Azure Data Lake Storage 1-го поколения](data-lake-store-get-started-portal.md).
+* **Учетная запись Azure Data Lake Storage 1-го поколения**. Инструкции по созданию учетной записи см. в статье [Начало работы с Azure Data Lake Storage 1-го поколения](data-lake-store-get-started-portal.md).
 
-## <a name="preparing-the-data"></a>Подготовка данных
+## <a name="prepare-the-data"></a>Подготовка данных
 
-Перед использованием службы импорта и экспорта необходимо разделить передаваемый файл данных на **копии, размер которых не превышает 200 ГБ**. Это нужно сделать, так как инструмент для импорта не работает с файлами, размер которых превышает 200 ГБ. В этом руководстве мы разделим файл на блоки по 100 ГБ. Это можно сделать с помощью [Cygwin](https://cygwin.com/install.html). Это средство поддерживает команды Linux. Воспользуйтесь следующей командой:
+Перед использованием службы импорта и экспорта необходимо разделить передаваемый файл данных на **копии, размер которых не превышает 200 ГБ**. Это нужно сделать, так как инструмент для импорта не работает с файлами, размер которых превышает 200 ГБ. В этой статье файл разбивается на фрагменты размером 100 ГБ. Это можно сделать с помощью [Cygwin](https://cygwin.com/install.html). Это средство поддерживает команды Linux. Воспользуйтесь следующей командой:
 
     split -b 100m 319GB.tsv
 
@@ -48,6 +44,7 @@ ms.locfileid: "60194983"
     319GB.tsv-part-ad
 
 ## <a name="get-disks-ready-with-data"></a>Подготовка дисков с данными
+
 Для подготовки жестких дисков следуйте инструкциям в статье [Использование службы импорта и экспорта Azure для передачи данных в хранилище BLOB-объектов](../storage/common/storage-import-export-service.md) в подразделе **Подготовка дисков**. Вот общая последовательность действий:
 
 1. Приобретите жесткий диск, который отвечает требованиям к использованию в службе импорта и экспорта Azure.
@@ -61,18 +58,22 @@ ms.locfileid: "60194983"
 4. Приведенная выше команда создает файл журнала в указанном расположении. С его помощью вы создадите задание импорта из [портала Azure](https://portal.azure.com).
 
 ## <a name="create-an-import-job"></a>создание задания импорта;
+
 Теперь можно создать задание импорта, воспользовавшись инструкциями в статье [Использование службы импорта и экспорта Azure для передачи данных в хранилище BLOB-объектов](../storage/common/storage-import-export-service.md) в подразделе **Создание задания импорта**. Помимо других сведений укажите для этого задания импорта файл журнала, созданный при подготовке дисков.
 
 ## <a name="physically-ship-the-disks"></a>Физическая доставка дисков
+
 Теперь можно выполнить физическую доставку дисков в центр обработки данных Azure. Там данные копируются в большие двоичные объекты службы хранилища Azure, указанные при создании задания импорта. Кроме того, если при создании задания было решено указать сведения об отслеживании позже, теперь можно вернуться к заданию импорта и обновить номер отслеживания.
 
-## <a name="copy-data-from-azure-storage-blobs-to-azure-data-lake-storage-gen1"></a>Копирование данных из больших двоичных объектов службы хранилища Azure в Azure Data Lake Storage 1-го поколения
+## <a name="copy-data-from-blobs-to-data-lake-storage-gen1"></a>Копирование данных из больших двоичных объектов в Data Lake Storage 1-го поколения
+
 После того как задание импорта перейдет в состояние "Завершено", можно проверить, доступны ли данные в указанных больших двоичных объектах службы хранилища Azure. Затем можно переместить данные из больших двоичных объектов в Azure Data Lake Storage 1-го поколения, используя различные методы. Сведения о всех доступных вариантах передачи данных см. в разделе [Прием данных в Azure Data Lake Storage 1-го поколения](data-lake-store-data-scenarios.md#ingest-data-into-data-lake-storage-gen1).
 
 В этом разделе указаны определения JSON, с помощью которых можно создать конвейер фабрики данных Azure для копирования данных. Эти определения JSON доступны на [портале Azure](../data-factory/tutorial-copy-data-portal.md), а также в [Visual Studio](../data-factory/tutorial-copy-data-dot-net.md).
 
 ### <a name="source-linked-service-azure-storage-blob"></a>Связанная служба источника (большой двоичный объект службы хранилища Azure)
-```
+
+```JSON
 {
     "name": "AzureStorageLinkedService",
     "properties": {
@@ -85,8 +86,9 @@ ms.locfileid: "60194983"
 }
 ```
 
-### <a name="target-linked-service-azure-data-lake-storage-gen1"></a>Связанная целевая служба (Azure Data Lake Storage 1-го поколения)
-```
+### <a name="target-linked-service-data-lake-storage-gen1"></a>Целевая связанная служба (Data Lake Storage 1-го поколения)
+
+```JSON
 {
     "name": "AzureDataLakeStorageGen1LinkedService",
     "properties": {
@@ -100,8 +102,10 @@ ms.locfileid: "60194983"
     }
 }
 ```
+
 ### <a name="input-data-set"></a>Входной набор данных
-```
+
+```JSON
 {
     "name": "InputDataSet",
     "properties": {
@@ -120,8 +124,10 @@ ms.locfileid: "60194983"
     }
 }
 ```
+
 ### <a name="output-data-set"></a>Выходной набор данных
-```
+
+```JSON
 {
 "name": "OutputDataSet",
 "properties": {
@@ -138,8 +144,10 @@ ms.locfileid: "60194983"
   }
 }
 ```
+
 ### <a name="pipeline-copy-activity"></a>Конвейер (действие копирования)
-```
+
+```JSON
 {
     "name": "CopyImportedData",
     "properties": {
@@ -187,15 +195,16 @@ ms.locfileid: "60194983"
     }
 }
 ```
+
 Дополнительные сведения см. в статье [Копирование данных в Azure Data Lake Storage 1-го поколения и из него с помощью Фабрики данных Azure](../data-factory/connector-azure-data-lake-store.md).
 
-## <a name="reconstruct-the-data-files-in-azure-data-lake-storage-gen1"></a>Воссоздание файлов данных в Azure Data Lake Storage 1-го поколения
+## <a name="reconstruct-the-data-files-in-data-lake-storage-gen1"></a>Восстановление файлов данных в Data Lake Storage 1-го поколения
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 Мы начали работу с файлом размером 319 ГБ и разделили его на файлы меньшего размера для передачи с помощью службы импорта и экспорта Azure. Теперь после передачи данных в Azure Data Lake Storage 1-го поколения мы можем воссоздать исходный файл. Для этого вы также можете воспользоваться приведенными ниже командлетами Azure PowerShell.
 
-```
+```PowerShell
 # Login to our account
 Connect-AzAccount
 
@@ -211,6 +220,7 @@ Join-AzDataLakeStoreItem -AccountName "<adlsg1_account_name" -Paths "/importedda
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
+
 * [Защита данных в Data Lake Storage Gen1](data-lake-store-secure-data.md)
-* [Начало работы с Azure Data Lake Analytics с помощью портала Azure](../data-lake-analytics/data-lake-analytics-get-started-portal.md)
+* [Использование Azure Data Lake Analytics с Azure Data Lake Storage 1-го поколения](../data-lake-analytics/data-lake-analytics-get-started-portal.md)
 * [Создание кластеров HDInsight, использующих Data Lake Store, с помощью портала Azure](data-lake-store-hdinsight-hadoop-use-portal.md)
