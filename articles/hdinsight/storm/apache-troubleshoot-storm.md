@@ -2,19 +2,19 @@
 title: Устранение неполадок в Storm с помощью Azure HDInsight
 description: Ответы на часто задаваемые вопросы об использовании Apache Storm с Azure HDInsight.
 keywords: Azure HDInsight, Storm, вопросы и ответы, руководство по устранению неполадок, часто задаваемые вопросы
-ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
+ms.service: hdinsight
 ms.topic: troubleshooting
-ms.date: 08/15/2019
+ms.date: 11/08/2019
 ms.custom: seodec18
-ms.openlocfilehash: f307d6245b107fdbd3c6d6baafa5a162988235da
-ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
+ms.openlocfilehash: e2cc9dd81a0bbefa5cf37facb6067bda07117eaf
+ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72800013"
+ms.lasthandoff: 11/10/2019
+ms.locfileid: "73903720"
 ---
 # <a name="troubleshoot-apache-storm-by-using-azure-hdinsight"></a>Устранение неполадок в Apache Storm с помощью Azure HDInsight
 
@@ -103,7 +103,7 @@ ms.locfileid: "72800013"
 
 * Узлы шлюза
 * Головные узлы
-* Узлы Zookeeper
+* Узлы Zookeeper.
 * Рабочие узлы
 
 ### <a name="gateway-nodes"></a>Узлы шлюза
@@ -113,12 +113,12 @@ ms.locfileid: "72800013"
 ### <a name="head-nodes"></a>Головные узлы
 
 Головные узлы Storm запускают следующие службы:
-* Nimbus
+* Nimbus;
 * сервер Ambari;
 * сервер метрик Ambari;
 * сборщик метрик Ambari.
  
-### <a name="zookeeper-nodes"></a>Узлы Zookeeper
+### <a name="zookeeper-nodes"></a>Узлы Zookeeper.
 
 HDInsight поставляется с кворумом Zookeeper, включающим три узла. Размер кворума является фиксированным и не может быть перенастроен.
 
@@ -127,7 +127,7 @@ HDInsight поставляется с кворумом Zookeeper, включаю
 ### <a name="worker-nodes"></a>Рабочие узлы
 
 Рабочие узлы Storm запускают следующие службы:
-* Контролер
+* Supervisor;
 * виртуальные машины Java (JVM) рабочей роли для выполнения топологий;
 * агент Ambari.
 
@@ -168,7 +168,17 @@ HDInsight поставляется с кворумом Zookeeper, включаю
 Примеры: `/usr/hdp/2.6.0.2-76/storm/log4j2/cluster.xml`
 `/usr/hdp/2.6.0.2-76/storm/log4j2/worker.xml`
 
-## <a name="next-steps"></a>Дальнейшие действия
+---
+
+## <a name="not-a-leader-exception"></a>Не является исключением лидера
+
+При отправке топологии пользователь может получить сообщение об ошибке следующего вида: `Topology submission exception, cause not a leader, the current leader is NimbusInfo`.
+
+Чтобы устранить эту проблему, пользователю может потребоваться создать билет для перезапуска или перезагрузки узлов. Дополнительные сведения можно найти здесь: [https://community.hortonworks.com/content/supportkb/150287/error-ignoring-exception-while-trying-to-get-leade.html](https://community.hortonworks.com/content/supportkb/150287/error-ignoring-exception-while-trying-to-get-leade.html).
+
+---
+
+## <a name="next-steps"></a>Дополнительная информация
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 
@@ -176,4 +186,4 @@ HDInsight поставляется с кворумом Zookeeper, включаю
 
 - Подключайтесь с [@AzureSupport](https://twitter.com/azuresupport) — официальная учетная запись Microsoft Azure для улучшения качества взаимодействия с клиентами. Подключение сообщества Azure к нужным ресурсам: ответы, поддержка и эксперты.
 
-- Если вам нужна дополнительная помощь, можно отправить запрос в службу поддержки из [портал Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите пункт **Поддержка** в строке меню или откройте центр **справки и поддержки** . Для получения более подробных сведений см. статью [о создании запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request). Доступ к управлению подписками и поддержкой выставления счетов включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется через один из [планов поддержки Azure](https://azure.microsoft.com/support/plans/).
+- Если вам нужна дополнительная помощь, можно отправить запрос в службу поддержки из [портал Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите пункт **Поддержка** в строке меню или откройте центр **справки и поддержки** . Для получения более подробных сведений см. статью [о создании запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request). Доступ к поддержке в рамках управления подпиской и выставления счетов включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется через тот или иной [план поддержки Azure](https://azure.microsoft.com/support/plans/).

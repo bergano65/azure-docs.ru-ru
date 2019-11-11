@@ -8,12 +8,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 09/17/2018
 ms.author: mlearned
-ms.openlocfilehash: bbd08e49256886a1df334cbf36e6e468bb8f3895
-ms.sourcegitcommit: e0a1a9e4a5c92d57deb168580e8aa1306bd94723
+ms.openlocfilehash: ba52cac4ebe923b7217550ed90948d908d8daf7f
+ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72286785"
+ms.lasthandoff: 11/10/2019
+ms.locfileid: "73900667"
 ---
 # <a name="authenticate-with-azure-container-registry-from-azure-kubernetes-service"></a>Аутентификация с помощью реестра контейнеров Azure из Службы Azure Kubernetes
 
@@ -30,7 +30,7 @@ ms.locfileid: "72286785"
 
 ## <a name="create-a-new-aks-cluster-with-acr-integration"></a>Создание нового кластера AKS с интеграцией записей контроля доступа
 
-Вы можете настроить интеграцию AKS и записей контроля доступа во время первоначального создания кластера AKS.  Чтобы разрешить кластеру AKS взаимодействовать с записью контроля доступа, используется **субъект-служба** Azure Active Directory. Следующая команда CLI позволяет авторизовать существующую запись контроля доступа в подписке и настроить соответствующую роль **акрпулл** для субъекта-службы. Укажите допустимые значения для параметров ниже.  Параметры в квадратных скобках являются необязательными.
+Вы можете настроить интеграцию AKS и записей контроля доступа во время первоначального создания кластера AKS.  Чтобы разрешить кластеру AKS взаимодействовать с записью контроля доступа, используется **субъект-служба** Azure Active Directory. Следующая команда CLI позволяет авторизовать существующую запись контроля доступа в подписке и настроить соответствующую роль **акрпулл** для субъекта-службы. Укажите допустимые значения для параметров ниже. 
 ```azurecli
 # set this to the name of your Azure Container Registry.  It must be globally unique
 MYACR=myContainerRegistry
@@ -39,15 +39,15 @@ MYACR=myContainerRegistry
 az acr create -n $MYACR -g myContainerRegistryResourceGroup --sku basic
 
 # Create an AKS cluster with ACR integration
-az aks create -n myAKSCluster -g myResourceGroup --attach-acr $MYACR
+az aks create -n myAKSCluster -g myResourceGroup --generate-ssh-keys --attach-acr $MYACR
 
 ```
 Кроме того, можно указать имя записи контроля доступа с помощью идентификатора ресурса записей контроля доступа, имеющего следующий формат:
 
-/Subscriptions/\<subscription-ID @ no__t-1/resourceGroups/\<resource-Group-Name @ no__t-3/providers/Microsoft. ContainerRegistry/registrys/\<name @ no__t-5 
+/Subscriptions/\<Subscription — ID\>/resourceGroups/\<Resource-Group-Name\>/Провидерс/Микрософт.контаинеррегистри/регистриес/\<Name\> 
  
 ```azurecli
-az aks create -n myAKSCluster -g myResourceGroup --attach-acr /subscriptions/<subscription-id>/resourceGroups/myContainerRegistryResourceGroup/providers/Microsoft.ContainerRegistry/registries/myContainerRegistry
+az aks create -n myAKSCluster -g myResourceGroup --generate-ssh-keys --attach-acr /subscriptions/<subscription-id>/resourceGroups/myContainerRegistryResourceGroup/providers/Microsoft.ContainerRegistry/registries/myContainerRegistry
 ```
 
 Выполнение этого шага может занять несколько минут.

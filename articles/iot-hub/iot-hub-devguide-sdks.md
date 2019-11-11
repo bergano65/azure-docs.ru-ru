@@ -8,12 +8,12 @@ ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 09/14/2018
-ms.openlocfilehash: 7113914fe8681ca099fc0f3fc1e4a7d064c19480
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.openlocfilehash: 22734d29973f0d7102307aa9038b6ebe7cc2521b
+ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "71000251"
+ms.lasthandoff: 11/10/2019
+ms.locfileid: "73903315"
 ---
 # <a name="understand-and-use-azure-iot-hub-sdks"></a>Понимание и использование пакетов SDK для Центра Интернета вещей Azure
 
@@ -48,7 +48,7 @@ ms.locfileid: "71000251"
 * Скачивание из [Nuget](https://www.nuget.org/packages/Microsoft.Azure.Devices.Client/).  Пространство имен — это Microsoft.Azure.Devices.Clients, который содержит клиенты устройств Центра Интернета вещей (DeviceClient, ModuleClient).
 * [Исходный код](https://github.com/Azure/azure-iot-sdk-csharp).
 * [Справочник по API](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices?view=azure-dotnet)
-* [Справочник по модулям](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.moduleclient?view=azure-dotnet).
+* [Справочник по модулям](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.moduleclient?view=azure-dotnet)
 
 Пакет SDK для устройств Центра Интернета вещей Azure для C (ANSI C-C99):
 
@@ -56,7 +56,7 @@ ms.locfileid: "71000251"
 * [Исходный код](https://github.com/Azure/azure-iot-sdk-c).
 * [Компиляция пакета SDK для устройств C](https://github.com/Azure/azure-iot-sdk-c/blob/master/iothub_client/readme.md#compiling-the-c-device-sdk).
 * [Справочник по API](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/)
-* [Справочник по модулям](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/iothub-module-client-h).
+* [Справочник по модулям](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/iothub-module-client-h)
 * [Перенос пакета SDK C для других платформ](https://github.com/Azure/azure-c-shared-utility/blob/master/devdoc/porting_guide.md)
 * [Документация для разработчиков](https://github.com/Azure/azure-iot-sdk-c/tree/master/doc) содержит сведения о кроссплатформенной компиляции, начале работы на различных платформах и т. д.
 * [Сведения о потреблении ресурсов пакета SDK для центра Интернета вещей Azure](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/c_sdk_resource_information.md)
@@ -66,14 +66,14 @@ ms.locfileid: "71000251"
 * добавление в проект [Maven](https://github.com/Azure/azure-iot-sdk-java/blob/master/doc/java-devbox-setup.md#for-the-device-sdk);
 * [Исходный код](https://github.com/Azure/azure-iot-sdk-java).
 * [Справочник по API](https://docs.microsoft.com/java/api/com.microsoft.azure.sdk.iot.device)
-* [Справочник по модулям](https://docs.microsoft.com/java/api/com.microsoft.azure.sdk.iot.device.moduleclient?view=azure-java-stable).
+* [Справочник по модулям](https://docs.microsoft.com/java/api/com.microsoft.azure.sdk.iot.device.moduleclient?view=azure-java-stable)
 
 Пакет SDK для устройств Azure IoT для Node.js: 
 
 * установка из [npm](https://www.npmjs.com/package/azure-iot-device);
 * [Исходный код](https://github.com/Azure/azure-iot-sdk-node).
 * [Справочник по API](https://docs.microsoft.com/javascript/api/azure-iot-device/?view=azure-iot-typescript-latest)
-* [Справочник по модулям](https://docs.microsoft.com/javascript/api/azure-iot-device/moduleclient?view=azure-node-latest).
+* [Справочник по модулям](https://docs.microsoft.com/javascript/api/azure-iot-device/moduleclient?view=azure-node-latest)
 
 Пакет SDK для устройств Azure IoT для Python: 
 
@@ -160,11 +160,11 @@ ms.locfileid: "71000251"
 * [Исходный код](https://github.com/Azure/azure-iot-device).
 * Скачивание [пакета SDK для устройств](https://pypi.org/project/azure-iot-device/) и [пакета SDK службы](https://pypi.org/project/azure-iothub-provisioningserviceclient/) из pip
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Пакеты SDK для Azure IoT также предоставляют набор инструментов для разработки:
 * [iothub-diagnostics](https://github.com/Azure/iothub-diagnostics) — средство кроссплатформенной командной строки для диагностирования проблем, связанных с подключением к Центру Интернета вещей;
-* [device-explorer](https://github.com/Azure/azure-iot-sdk-csharp/tree/master/tools/DeviceExplorer) — классическое приложение Windows для подключения к Центру Интернета вещей.
+* [Azure-IOT-Explorer](https://github.com/Azure/azure-iot-explorer): многоплатформенное классическое приложение для подключения к центру Интернета вещей и добавления устройств Интернета вещей, управления ими и обмена данными с ними.
 
 Соответствующие документы, относящиеся к разработке с помощью пакетов SDK для Azure IoT.
 * Дополнительные сведения о том, как управлять подключениями и надежным обменом сообщениями с помощью пакетов SDK центра Интернета вещей, см. в [этой статье](iot-hub-reliability-features-in-sdks.md).

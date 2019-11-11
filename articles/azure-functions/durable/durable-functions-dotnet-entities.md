@@ -9,12 +9,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 10/06/2019
 ms.author: azfuncdf
-ms.openlocfilehash: a59e5443c80c9372f646edfdae2261157a41acc9
-ms.sourcegitcommit: b2fb32ae73b12cf2d180e6e4ffffa13a31aa4c6f
+ms.openlocfilehash: d854f41ffc883b40f9159a7dacdde0fb3bb7240f
+ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73614886"
+ms.lasthandoff: 11/10/2019
+ms.locfileid: "73904062"
 ---
 # <a name="developers-guide-to-durable-entities-in-net"></a>Рекомендации разработчика по устойчивым сущностям в .NET
 
@@ -117,7 +117,7 @@ public class Counter
 
 ## <a name="accessing-entities-directly"></a>Прямой доступ к сущностям
 
-К сущностям на основе классов можно обращаться напрямую, используя явные имена строк для сущности и ее операций. Ниже приведены некоторые примеры. более подробное описание базовых понятий (таких как сигналы и вызовы) см. в обсуждении [доступа к сущностям](durable-functions-entities.md#accessing-entities). 
+К сущностям на основе классов можно обращаться напрямую, используя явные имена строк для сущности и ее операций. Ниже приведены некоторые примеры. более подробное описание базовых понятий (таких как сигналы и вызовы) см. в обсуждении [сущностей Access](durable-functions-entities.md#access-entities). 
 
 > [!NOTE]
 > Там, где это возможно, мы советуем [обращаться к сущностям через интерфейсы](#accessing-entities-through-interfaces), так как они обеспечивают дополнительную проверку типов.
@@ -207,7 +207,7 @@ public class Counter : ICounter
 
 ### <a name="example-client-signals-entity-through-interface"></a>Пример. Клиент оповещает сущность через интерфейс
 
-Клиентский код может использовать `SignalEntityAsync<TEntityInterface>` для отправки сигналов в сущности, реализующие `TEntityInterface`. Например:
+Клиентский код может использовать `SignalEntityAsync<TEntityInterface>` для отправки сигналов в сущности, реализующие `TEntityInterface`. Например,
 
 ```csharp
 [FunctionName("DeleteCounter")]
@@ -373,9 +373,9 @@ public static Task Run([EntityTrigger] IDurableEntityContext ctx)
 
 ### <a name="bindings-in-entity-classes"></a>Привязки в классах сущностей
 
-В отличие от обычных функций, методы классов сущностей не имеют прямого доступа к входным и выходным привязкам. Вместо этого данные привязки должны быть захвачены в объявлении функции точки входа, а затем переданы в метод `DispatchAsync<T>`. Любые объекты, передаваемые в `DispatchAsync<T>`, будут автоматически переданы в конструктор класса сущностей в качестве аргумента.
+В отличие от обычных функций, методы классов сущностей не имеют прямого доступа к входным и выходным привязкам. Вместо этого данные привязки должны быть записаны в объявлении функции точки входа, а затем переданы в метод `DispatchAsync<T>`. Любые объекты, передаваемые в `DispatchAsync<T>`, будут автоматически переданы в конструктор класса сущностей в виде аргумента.
 
-В следующем примере показано, как `CloudBlobContainer` ссылку на [входную привязку BLOB-объекта](../functions-bindings-storage-blob.md#input) можно сделать доступной сущности на основе класса.
+В следующем примере показано, как можно сделать ссылку `CloudBlobContainer` из [входной привязки BLOB-объекта](../functions-bindings-storage-blob.md#input) доступной для сущности на основе класса.
 
 ```csharp
 public class BlobBackedEntity
@@ -402,11 +402,11 @@ public class BlobBackedEntity
 }
 ```
 
-Дополнительные сведения о привязках в функциях Azure см. в документации по [триггерам и привязкам функций Azure](../functions-triggers-bindings.md) .
+Дополнительные сведения о привязках в Функциях Azure см. в статье[Azure Functions triggers and bindings concepts](../functions-triggers-bindings.md) (Основные понятия триггеров и привязок в Функциях Azure).
 
 ### <a name="dependency-injection-in-entity-classes"></a>Внедрение зависимостей в классы сущностей
 
-Классы сущностей поддерживают [внедрение зависимостей функций Azure](../functions-dotnet-dependency-injection.md). В следующем примере показано, как зарегистрировать службу `IHttpClientFactory` в сущность на основе класса.
+Классы сущностей [поддерживают внедрение зависимостей Функций Azure](../functions-dotnet-dependency-injection.md). В следующем примере показано, как зарегистрировать службу `IHttpClientFactory` в сущность на основе класса.
 
 ```csharp
 [assembly: FunctionsStartup(typeof(MyNamespace.Startup))]
@@ -423,7 +423,7 @@ namespace MyNamespace
 }
 ```
 
-В следующем фрагменте кода показано, как внедрить внедренную службу в класс сущностей.
+В следующем фрагменте кода показано, как встроить внедренную службу в класс сущностей.
 
 ```csharp
 public class HttpEntity
@@ -454,7 +454,7 @@ public class HttpEntity
 > Чтобы избежать проблем с сериализацией, не забудьте исключить поля, предназначенные для хранения внедренных значений из сериализации.
 
 > [!NOTE]
-> В отличие от внедрения конструктора в обычных функциях Azure .NET, метод точки входа функций для сущностей на основе класса *должен* быть объявлен `static`. Объявление нестатической точки входа в функцию может привести к конфликтам между обычным инициализатором объектов функций Azure и инициализатором объектов долговременных сущностей.
+> В отличие от внедрения конструктора в обычных Функциях Azure .NET, метод точки входа функций для сущностей на основе класса *необходимо* объявить `static`. Объявление нестатической точки входа функции может привести к конфликтам между обычным инициализатором объектов Функций Azure и инициализатором объектов Устойчивых сущностей.
 
 ## <a name="function-based-syntax"></a>Синтаксис на основе функций
 
@@ -511,7 +511,7 @@ public static void Counter([EntityTrigger] IDurableEntityContext ctx)
 * `SignalEntity(EntityId, operation, input)`: отправляет одностороннее сообщение в сущность.
 * `CreateNewOrchestration(orchestratorFunctionName, input)`: запускает новое согласование.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
 > [Сведения о концепциях сущностей](durable-functions-entities.md)

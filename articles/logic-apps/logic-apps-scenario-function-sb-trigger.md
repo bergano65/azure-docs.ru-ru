@@ -8,19 +8,19 @@ author: ecfan
 ms.author: estfan
 ms.reviewer: jehollan, klam, LADocs
 ms.topic: article
-ms.date: 06/04/2019
-ms.openlocfilehash: 2ab6ace7c30c3dd385928b6b0ae8000485d5f495
-ms.sourcegitcommit: d37991ce965b3ee3c4c7f685871f8bae5b56adfa
+ms.date: 11/08/2019
+ms.openlocfilehash: c65a0464bbad6dbaca51dbc5bbc0d84adbd605d7
+ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72680146"
+ms.lasthandoff: 11/10/2019
+ms.locfileid: "73904658"
 ---
 # <a name="call-or-trigger-logic-apps-by-using-azure-functions-and-azure-service-bus"></a>Вызов или Активация приложений логики с помощью функций Azure и служебной шины Azure
 
 Вы можете использовать [функции Azure](../azure-functions/functions-overview.md) для активации приложения логики, когда требуется развернуть долгосрочный прослушиватель или задачу. Например, можно создать функцию Azure, которая прослушивает очередь [служебной шины Azure](../service-bus-messaging/service-bus-messaging-overview.md) и сразу же запускает приложение логики в качестве триггера push-уведомлений.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
@@ -32,13 +32,13 @@ ms.locfileid: "72680146"
 
 ## <a name="create-logic-app"></a>Создание приложения логики
 
-В этом сценарии у вас есть функция, выполняющая каждое приложение логики, которое необходимо активировать. Сначала создайте приложение логики, которое начинается с триггера HTTP-запроса. Функция Azure вызывает эту конечную точку при получении каждого сообщения из очереди.  
+В этом сценарии у вас есть функция, выполняющая каждое приложение логики, которое необходимо активировать. Сначала создайте приложение логики, которое начинается с триггера HTTP-запроса. Функция Azure вызывает эту конечную точку при получении каждого сообщения из очереди.
 
 1. Войдите на [портал Azure](https://portal.azure.com) и создайте пустое приложение логики.
 
    Если вы пока не знакомы с приложениями логики, ознакомьтесь со статьей [Краткое руководство. Создание первого автоматизированного рабочего процесса с помощью Azure Logic Apps на портале Azure](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 
-1. В поле поиска введите фильтр "HTTP-запрос". В списке триггеров выберите триггер **При получении HTTP-запроса**.
+1. В поле поиска введите `http request`. В списке триггеры выберите **время получения HTTP-запроса** триггера.
 
    ![Выбор триггера](./media/logic-apps-scenario-function-sb-trigger/when-http-request-received-trigger.png)
 
@@ -52,7 +52,7 @@ ms.locfileid: "72680146"
 
    1. В триггере запросов выберите **Использовать пример полезной нагрузки, чтобы создать схему**.
 
-   1. В разделе **Введение или вставка примера полезных данных JSON** введите свой пример полезных данных, а затем выберите **Готово**.
+   1. В разделе **введите или вставьте пример полезных данных JSON**, введите Пример полезных данных и нажмите кнопку **Готово**.
 
       ![Ввод примера полезных данных](./media/logic-apps-scenario-function-sb-trigger/enter-sample-payload.png)
 
@@ -102,9 +102,9 @@ ms.locfileid: "72680146"
 
 1. На портале Azure откройте и разверните приложение-функцию, если оно еще не открыто. 
 
-1. В разделе с именем приложения-функции разверните **Функции**. На панели **Функции** выберите **Новая функция**.
+1. В разделе с именем приложения-функции разверните **Функции**. На панели **функции** выберите **создать функцию**.
 
-   ![Разверните узел "функции" и выберите "создать функцию".](./media/logic-apps-scenario-function-sb-trigger/create-new-function.png)
+   ![Разверните узел "функции" и выберите "создать функцию".](./media/logic-apps-scenario-function-sb-trigger/add-new-function-to-function-app.png)
 
 1. Выберите этот шаблон в зависимости от того, создано ли новое приложение-функция, в котором вы выбрали .NET в качестве стека выполнения, или используете существующее приложение-функцию.
 
@@ -118,7 +118,15 @@ ms.locfileid: "72680146"
 
 1. В области **триггер очереди служебной шины Azure** укажите имя для триггера и настройте подключение служебной **шины** для очереди, в которой используется средство прослушивания пакетов SDK служебной шины Azure `OnMessageReceive()` прослушиватель, и нажмите кнопку **создать**.
 
-1. Напишите базовую функцию для вызова ранее созданной конечной точки приложения логики, используя сообщение очереди в качестве триггера. В примере используется сообщение с типом содержимого `application/json`. При необходимости этот тип можно изменить. По возможности повторно используйте экземпляр HTTP-клиентов. Дополнительные сведения см. [в статье Управление подключениями в функциях Azure](../azure-functions/manage-connections.md).
+1. Напишите базовую функцию для вызова ранее созданной конечной точки приложения логики, используя сообщение очереди в качестве триггера. Прежде чем писать функцию, ознакомьтесь со следующими соображениями.
+
+   * В примере используется сообщение с типом содержимого `application/json`. При необходимости этот тип можно изменить.
+   
+   * Из-за возможных одновременно выполняемых функций, больших объемов или интенсивных загрузок не рекомендуется создавать экземпляры [класса HttpClient](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient) с помощью инструкции `using` и непосредственно создавать HttpClient экземпляров на каждый запрос. Дополнительные сведения см. [в статье Использование хттпклиентфактори для реализации устойчивых HTTP-запросов](https://docs.microsoft.com/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests#issues-with-the-original-httpclient-class-available-in-net-core).
+   
+   * По возможности повторно используйте экземпляр HTTP-клиентов. Дополнительные сведения см. [в статье Управление подключениями в функциях Azure](../azure-functions/manage-connections.md).
+
+   В этом примере используется [метод`Task.Run`](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task.run) в [асинхронном](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/async) режиме. Дополнительные сведения см. [в разделе Асинхронное программирование с использованием Async и await](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/async/).
 
    ```CSharp
    using System;
@@ -126,17 +134,16 @@ ms.locfileid: "72680146"
    using System.Net.Http;
    using System.Text;
 
-   // Callback URL for previously created Request trigger
+   // Can also fetch from App Settings or environment variable
    private static string logicAppUri = @"https://prod-05.westus.logic.azure.com:443/workflows/<remaining-callback-URL>";
 
-   // Reuse the instance of HTTP clients if possible
+   // Reuse the instance of HTTP clients if possible: https://docs.microsoft.com/azure/azure-functions/manage-connections
    private static HttpClient httpClient = new HttpClient();
 
-   public static void Run(string myQueueItem, ILogger log)
+   public static async Task Run(string myQueueItem, TraceWriter log) 
    {
-       log.LogInformation($"C# ServiceBus queue trigger function processed message: {myQueueItem}");
-
-       var response = httpClient.PostAsync(logicAppUri, new StringContent(myQueueItem, Encoding.UTF8, "application/json")).Result;
+      log.Info($"C# ServiceBus queue trigger function processed message: {myQueueItem}");
+      var response = await httpClient.PostAsync(logicAppUri, new StringContent(myQueueItem, Encoding.UTF8, "application/json")); 
    }
    ```
 
@@ -144,6 +151,6 @@ ms.locfileid: "72680146"
 
    Приложение логики должно активироваться сразу же, как только функция получит это сообщение.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-[Вызов, активация или вложение рабочих процессов с помощью конечных точек HTTP](../logic-apps/logic-apps-http-endpoint.md)
+* [Вызов, активация или вложение рабочих процессов с помощью конечных точек HTTP](../logic-apps/logic-apps-http-endpoint.md)

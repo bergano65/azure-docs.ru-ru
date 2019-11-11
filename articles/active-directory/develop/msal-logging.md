@@ -13,17 +13,17 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 09/05/2019
+ms.date: 10/31/2019
 ms.author: twhitney
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e12badd84bd929bdeb7b60ad6e99d6b3169e5022
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: e9045fd6c1f5dcc4587b6ff85d567584f02421ba
+ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73150447"
+ms.lasthandoff: 11/10/2019
+ms.locfileid: "73902903"
 ---
 # <a name="logging-in-msal-applications"></a>Ведение журнала в приложениях MSAL
 
@@ -88,7 +88,7 @@ class Program
 - `tag` — это строка, передаваемая обратному вызову библиотекой. Он связан с записью журнала и может использоваться для сортировки сообщений журнала.
 - `logLevel` позволяет выбрать необходимый уровень ведения журнала. Поддерживаются следующие уровни журнала: `Error`, `Warning`, `Info`и `Verbose`.
 - `message` — это содержимое записи журнала.
-- `containsPII` указывает, заносятся ли в журнал сообщения, содержащие персональные данные или данные Организации. По умолчанию задано значение false, чтобы приложение не заносить персональные данные в журнал. Если `containsPII` имеет `true`, этот метод получит сообщения дважды: один раз, если для параметра `containsPII` задано значение `false` и `message` без персональных данных, а во второй раз с параметром `containsPii` задано значение `true` и сообщение может содержать персональные данные. В некоторых случаях (если сообщение не содержит персональные данные) сообщения будут одинаковыми.
+- `containsPII` указывает, заносятся ли в журнал сообщения, содержащие персональные данные или данные Организации. По умолчанию задано значение false, чтобы приложение не заносить персональные данные в журнал. Если `containsPII` имеет `true`, этот метод получит сообщения дважды: один раз, если для параметра `containsPII` задано значение `false` и `message` без персональных данных, а во второй раз с параметром `containsPii` установлено значение `true` и сообщение может содержать персональные данные. В некоторых случаях (если сообщение не содержит персональные данные) сообщения будут одинаковыми.
 
 ```java
 private StringBuilder mLogs;
@@ -117,14 +117,15 @@ Logger.getInstance().setEnablePII(true);
 Logger.getInstance().setEnablePII(false);
 ```
 
-По умолчанию ведение журнала в logcat отключено. Чтобы включить: 
+По умолчанию ведение журнала в logcat отключено. Чтобы включить:
+
 ```java
 Logger.getInstance().setEnableLogcatLog(true);
 ```
 
 ## <a name="logging-in-msaljs"></a>Ведение журнала в MSAL.js
 
- Включите ведение журнала в MSAL. js, передав объект средства ведения журнала во время настройки для создания экземпляра `UserAgentApplication`. Этот объект средства ведения журнала имеет следующие свойства.
+ Включите ведение журнала в MSAL. js (JavaScript), передав объект средства ведения журнала во время настройки для создания экземпляра `UserAgentApplication`. Этот объект средства ведения журнала имеет следующие свойства.
 
 - `localCallback`: экземпляр обратного вызова, который разработчик может предоставить для использования и публикации журналов особым образом. Реализуйте метод localCallback в зависимости от желаемого способа перенаправления журналов.
 - `level` (необязательно): настраиваемый уровень ведения журнала. Поддерживаются следующие уровни журнала: `Error`, `Warning`, `Info`и `Verbose`. Значение по умолчанию — `Info`.
@@ -173,7 +174,7 @@ var UserAgentApplication = new Msal.UserAgentApplication(msalConfig);
 typedef void (^MSALLogCallback)(MSALLogLevel level, NSString *message, BOOL containsPII);
 ```
 
-Пример.
+Например,
 
 Objective-C
 ```objc
@@ -202,9 +203,9 @@ MSALGlobalConfig.loggerConfig.setLogCallback { (level, message, containsPII) in
 }
 ```
 
-### <a name="personal-identifiable-information-pii"></a>Личные идентифицирующие сведения (PII)
+### <a name="personal-data"></a>Персональные данные
 
-По умолчанию MSAL не записывает персональные данные и не регистрирует их. Библиотека позволяет разработчикам приложений включать это через свойство в классе Мсаллогжер. Включив персональные данные, приложение несет ответственность за безопасную обработку данных с высоким уровнем конфиденциальности и соблюдение нормативных требований.
+По умолчанию MSAL не собирает и не регистрирует личные данные (PII). Библиотека позволяет разработчикам приложений включать это через свойство в классе Мсаллогжер. При включении `pii.Enabled`приложение отвечает за безопасную обработку данных с высоким уровнем конфиденциальности и соблюдение нормативных требований.
 
 Objective-C
 ```objc
@@ -232,15 +233,15 @@ MSALGlobalConfig.loggerConfig.piiEnabled = false
 
 Чтобы задать уровень ведения журнала при использовании MSAL для iOS и macOS, используйте одно из следующих значений:
 
-|уровень  |Описание |
+|уровень  |ОПИСАНИЕ |
 |---------|---------|
 | `MSALLogLevelNothing`| Отключить ведение журнала |
 | `MSALLogLevelError` | Уровень по умолчанию, выводит сведения только при возникновении ошибок |
 | `MSALLogLevelWarning` | Предупреждения |
 | `MSALLogLevelInfo` |  Точки входа библиотеки с параметрами и различными операциями цепочки ключей |
-|`MSALLogLevelVerbose`     |  Трассировка API       |
+|`MSALLogLevelVerbose`     |  Трассировка API |
 
-Пример.
+Например,
 
 Objective-C
 ```objc
@@ -256,8 +257,56 @@ MSALGlobalConfig.loggerConfig.logLevel = .verbose
 
 Часть сообщения журнала MSAL имеет формат `TID = <thread_id> MSAL <sdk_ver> <OS> <OS_ver> [timestamp - correlation_id] message`
 
-Пример.
+Например,
 
 `TID = 551563 MSAL 0.2.0 iOS Sim 12.0 [2018-09-24 00:36:38 - 36764181-EF53-4E4E-B3E5-16FE362CFC44] acquireToken returning with error: (MSALErrorDomain, -42400) User cancelled the authorization session.`
 
 Предоставление идентификаторов корреляции и отметок времени полезно для отслеживания проблем. Сведения о метке времени и ИДЕНТИФИКАТОРе корреляции доступны в сообщении журнала. Единственное надежное место для извлечения — это MSAL сообщения ведения журнала.
+
+## <a name="logging-in-msal-for-java"></a>Вход в MSAL для Java
+
+MSAL for Java (MSAL4J) позволяет использовать библиотеку ведения журналов, которая уже используется в приложении, при условии, что оно совместимо с SLF4J. MSAL4j использует [Простое ведение журнала фасад для Java](http://www.slf4j.org/) (SLF4J) в качестве простой фасадной или абстракции для различных платформ ведения журналов, таких как [Java. util. Logging](https://docs.oracle.com/javase/7/docs/api/java/util/logging/package-summary.html), [Logback](http://logback.qos.ch/) и [log4j](https://logging.apache.org/log4j/2.x/). SLF4J позволяет конечному пользователю подключаться к нужной инфраструктуре ведения журналов во время развертывания.
+
+Например, чтобы использовать Logback в качестве платформы ведения журнала в приложении, добавьте зависимость Logback в файл Maven POM для вашего приложения:
+
+```xml
+<dependency>
+    <groupId>ch.qos.logback</groupId>
+    <artifactId>logback-classic</artifactId>
+    <version>1.2.3</version>
+</dependency>
+```
+
+Затем добавьте файл конфигурации Logback:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true">
+
+</configuration>
+```
+
+SLF4J автоматически привязывается к Logback во время развертывания. Журналы MSAL будут записаны в консоль.
+
+Инструкции по привязке к другим платформам ведения журналов см. в [руководстве по SLF4J](http://www.slf4j.org/manual.html).
+
+### <a name="personal-and-organization-information"></a>Персональные данные и сведения об Организации
+
+По умолчанию ведение журнала MSAL не записывает и не регистрирует личные или корпоративные данные. В следующем примере ведение журнала личных или организационных данных по умолчанию отключено.
+
+```java
+    PublicClientApplication app2 = PublicClientApplication.builder(PUBLIC_CLIENT_ID)
+            .authority(AUTHORITY)
+            .build();
+```
+
+Включите ведение журнала личных данных и организации, установив `logPii()` в построителе клиентских приложений. Если включить ведение журнала личных данных или организации, приложение должно соблюдать ответственность за безопасную обработку данных с высоким уровнем конфиденциальности и соблюдение нормативных требований.
+
+В следующем примере включается ведение журнала личных или организационных данных.
+
+```java
+PublicClientApplication app2 = PublicClientApplication.builder(PUBLIC_CLIENT_ID)
+        .authority(AUTHORITY)
+        .logPii(true)
+        .build();
+```

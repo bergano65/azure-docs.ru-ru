@@ -1,5 +1,5 @@
 ---
-title: Разработка и ключи среды выполнения — LUIS
+title: Использование создания и использования ключей среды выполнения с LUIS
 titleSuffix: Azure Cognitive Services
 description: LUIS использует два ключа — ключ разработки для создания модели и ключ среды выполнения для запроса конечной точки прогнозирования с пользовательским фразы продолжительностью.
 services: cognitive-services
@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 10/25/2019
 ms.author: diberry
-ms.openlocfilehash: 973a8dd56437506d907159f212164ff147ba975c
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: b58aa97dbb97bade87a38456c58df8f93a29946f
+ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73487496"
+ms.lasthandoff: 11/10/2019
+ms.locfileid: "73901701"
 ---
 # <a name="authoring-and-runtime-keys"></a>Ключи разработки и среды выполнения
 
@@ -123,7 +123,7 @@ LUIS позволяет выполнять три типа ресурсов Azur
 |Импорт версии||
 |Предоставление к приложению общего доступа|Если приложение является общедоступным, запросить его может любой пользователь с ключом разработки или ключом конечной точки.|
 |Изменение модели|
-|Опубликовать|
+|ОПУБЛИКОВАТЬ|
 |Проверка высказываний конечной точки для [активного обучения](luis-how-to-review-endpoint-utterances.md)|
 |Обучение|
 
@@ -165,7 +165,7 @@ LUIS не имеет концепции передачи владения рес
 
 Вы можете контролировать, кто может просматривать ключ конечной точки среды выполнения LUIS PREDICTION, вызывая его в среде "сервер-сервер". Если вы используете LUIS из бота, соединение между ботом и LUIS уже защищено. При вызове конечной точки LUIS напрямую следует создать серверный API (такой как [функция](https://azure.microsoft.com/services/functions/) Azure) с контролируемым доступом (таким как [AAD](https://azure.microsoft.com/services/active-directory/)). После вызова серверного API и прохождения авторизации и проверки подлинности нужно передать вызов в LUIS. Хотя эта стратегия не предотвращает распространение атак с перехватом, она маскирует конечную точку от пользователей, позволяет отслеживать доступ и добавлять функцию ведения журнала ответов конечной точки (такую как [Application Insights](https://azure.microsoft.com/services/application-insights/)).  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * Поймите принципы [управления версиями](luis-concept-version.md). 
 * Узнайте [, как создавать ключи](luis-how-to-azure-subscription.md).

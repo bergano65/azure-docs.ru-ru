@@ -1,18 +1,18 @@
 ---
 title: Резервное копирование виртуальных машин VMware с помощью Azure Backup Server
-description: Для резервного копирования виртуальных машин VMware, запущенных на серверах VMWare vCenter и ESXi, используйте Azure Backup Server.
+description: Из этой статьи вы узнаете, как использовать Azure Backup Server для резервного копирования виртуальных машин VMware, работающих на сервере VMware vCenter или ESXi.
 author: dcurwin
 manager: carmonm
 ms.service: backup
 ms.topic: conceptual
 ms.date: 12/11/2018
 ms.author: dacurwin
-ms.openlocfilehash: 3d8983835c587ffeec9dd2bc418f1c01afbeb571
-ms.sourcegitcommit: b4665f444dcafccd74415fb6cc3d3b65746a1a31
+ms.openlocfilehash: df41907ee10b54ab3bfaeb548e085617f7d79084
+ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72264500"
+ms.lasthandoff: 11/10/2019
+ms.locfileid: "73903229"
 ---
 # <a name="back-up-vmware-vms-with-azure-backup-server"></a>Резервное копирование виртуальных машин VMware с помощью Azure Backup Server
 
@@ -66,7 +66,7 @@ ms.locfileid: "72264500"
    - Файл корневого сертификата с расширением, которое начинается с нумерованной последовательности, например, .0 и .1.
    - Файл списка отзыва сертификатов имеет расширение, которое начинается с такой последовательности, как .r0 или .r1. Файл списка отзыва сертификатов связан с сертификатом.
 
-         ![Downloaded certificates](./media/backup-azure-backup-server-vmware/extracted-files-in-certs-folder.png)
+    ![Загруженные сертификаты](./media/backup-azure-backup-server-vmware/extracted-files-in-certs-folder.png)
 
 6. В папке **certs** щелкните правой кнопкой мыши файл корневого сертификата и выберите **Переименовать**.
 
@@ -82,7 +82,7 @@ ms.locfileid: "72264500"
 
 10. На странице **Хранилище сертификатов** выберите **Поместить все сертификаты в следующее хранилище**, а затем щелкните **Обзор**, чтобы выбрать хранилище сертификатов.
 
-         ![Certificate storage](./media/backup-azure-backup-server-vmware/cert-import-wizard-local-store.png)
+    ![Хранилище сертификатов](./media/backup-azure-backup-server-vmware/cert-import-wizard-local-store.png)
 
 11. В окне **Select Certificate Store** (Выбор хранилища сертификатов) в качестве папки назначения для сертификатов выберите **Trusted Root Certification Authorities** (Доверенные корневые центры сертификации и нажмите кнопку) и щелкните **ОК**.
 
@@ -100,11 +100,9 @@ ms.locfileid: "72264500"
 
 1. Скопируйте приведенный ниже текст и вставьте его в TXT-файл.
 
-      ```text
-      Windows Registry Editor Version 5.00
-      [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft Data Protection Manager\VMWare]
-      "IgnoreCertificateValidation"=dword:00000001
-      ```
+       ```text
+      Редактор реестра Windows версии 5,00 [HKEY_LOCAL_MACHINE \Софтваре\микрософт\микрософт Data Protection Манажер\вмваре] "Игнорецертификатевалидатион" = DWORD: 00000001
+       ```
 
 2. На компьютере Azure Backup Server сохраните файл с именем **DisableSecureAuthentication.reg**.
 
@@ -117,7 +115,7 @@ ms.locfileid: "72264500"
 1. Войдите на сервер vCenter Server (или, если вы не используете vCenter Server, на узел ESXi).
 2. На панели **Навигатор** щелкните **Администрирование**.
 
-    ![Администрирование](./media/backup-azure-backup-server-vmware/vmware-navigator-panel.png)
+    ![Administration](./media/backup-azure-backup-server-vmware/vmware-navigator-panel.png)
 
 3. В **Администрирование** > **Роли** щелкните значок добавления роли (символ "+").
 
@@ -130,7 +128,7 @@ ms.locfileid: "72264500"
    - Чтобы выбрать привилегии виртуальной машины, необходимо использовать несколько уровней иерархии родителей-потомков.
    - Вам не нужно выбирать все дочерние привилегии, входящие в родительскую.
 
-             ![Parent child privilege hierarchy](./media/backup-azure-backup-server-vmware/cert-add-privilege-expand.png)
+    ![Иерархия привилегий родителей-потомков](./media/backup-azure-backup-server-vmware/cert-add-privilege-expand.png)
 
 ### <a name="role-permissions"></a>Разрешения ролей
 
@@ -165,7 +163,7 @@ VirtualMachine.State.RemoveSnapshot | VirtualMachine.State.RemoveSnapshot
 
 2. На панели **vCenter Users and Groups** (Пользователи и группы vCenter) выберите вкладку **Users** (Пользователи), а затем щелкните значок добавления пользователей (знак "+").
 
-         ![vCenter Users and Groups panel](./media/backup-azure-backup-server-vmware/usersandgroups.png)
+    ![Панель vCenter Users and Groups (Пользователи и группы vCenter)](./media/backup-azure-backup-server-vmware/usersandgroups.png)
 
 3. В диалоговом окне **Новый пользователь** добавьте сведения о пользователе, а затем щелкните **ОК**. В этой процедуре имя пользователя — BackupAdmin.
 
@@ -221,7 +219,7 @@ VirtualMachine.State.RemoveSnapshot | VirtualMachine.State.RemoveSnapshot
 
 2. На странице **Production Server Addition Wizard**(Мастер добавления рабочего сервера) > **Select Production Server type**  (Выбор типа рабочего сервера) выберите **VMware Servers** (Серверы VMware), а затем щелкните **Далее**.
 
-         ![Production Server Addition Wizard](./media/backup-azure-backup-server-vmware/production-server-add-wizard.png)
+    ![Мастер добавления рабочего сервера](./media/backup-azure-backup-server-vmware/production-server-add-wizard.png)
 
 3. На шаге **Выбрать компьютеры** в строке **Server Name/IP Address Имя или IP-адрес сервера** (Имя или IP-адрес сервера) укажите полное доменное имя или IP-адрес сервера VMware. Если один и тот же сервер vCenter управляет всеми серверами ESXi, то укажите имя vCenter. В противном случае добавьте узел ESXi.
 
@@ -233,7 +231,7 @@ VirtualMachine.State.RemoveSnapshot | VirtualMachine.State.RemoveSnapshot
 
     ![Указание учетных данных](./media/backup-azure-backup-server-vmware/identify-creds.png)
 
-6. Щелкните **Добавить**, чтобы добавить сервер VMware в список серверов. Затем нажмите кнопку **Далее**.
+6. Щелкните **Добавить**, чтобы добавить сервер VMware в список серверов. Нажмите кнопку **Далее**.
 
     ![Добавление сервера VMware и учетных данных](./media/backup-azure-backup-server-vmware/add-vmware-server-credentials.png)
 
@@ -261,14 +259,14 @@ VirtualMachine.State.RemoveSnapshot | VirtualMachine.State.RemoveSnapshot
 
 1. На странице **Выбор типа группы защиты** выберите **Серверы** и нажмите кнопку **Далее**. Появится страница **Выбор элементов группы**.
 
-1. В окне **Выбор элементов группы**выберите виртуальные машины (или папки виртуальных машин), для которых требуется создать резервную копию. Затем нажмите кнопку **Далее**.
+1. В окне **Выбор элементов группы**выберите виртуальные машины (или папки виртуальных машин), для которых требуется создать резервную копию. Нажмите кнопку **Далее**.
 
     - Когда вы выберите папку, виртуальные машины или папки внутри этой папки также будут выбраны для резервного копирования. Можно отменить выбор папок или виртуальных машин, для которых вы не хотите создавать резервную копию.
 1. Это сделать невозможно, если уже выполняется резервное копирование виртуальной машины или папки. Это гарантирует, что дублирование точек восстановления для виртуальной машины не создается.
 
-         ![Select group members](./media/backup-azure-backup-server-vmware/server-add-selected-members.png)
+    ![Выберите членов группы](./media/backup-azure-backup-server-vmware/server-add-selected-members.png)
 
-1. На странице **Select Data Protection Method** (Выбор метода защиты данных) введите имя для группы защиты и параметры защиты. Чтобы создать резервную копию Azure, установите краткосрочную защиту **Диска** и разрешите защиту в сети. Затем нажмите кнопку **Далее**.
+1. На странице **Select Data Protection Method** (Выбор метода защиты данных) введите имя для группы защиты и параметры защиты. Чтобы создать резервную копию Azure, установите краткосрочную защиту **Диска** и разрешите защиту в сети. Нажмите кнопку **Далее**.
 
     ![Выберите метод защиты данных](./media/backup-azure-backup-server-vmware/name-protection-group.png)
 
@@ -284,46 +282,46 @@ VirtualMachine.State.RemoveSnapshot | VirtualMachine.State.RemoveSnapshot
 1. В окне **Проверить выделение дискового пространства** проверьте дисковое пространство для резервных копий виртуальных машин. Для виртуальных машин.
 
    - Рекомендуемые дисковые пространства основаны на указанном диапазоне периода удержания, типе рабочей нагрузки и размере защищенных данных. Внесите необходимые изменения и щелкните **Далее**.
-   - **Размер данных.** Размер данных в группе защиты.
-   - **Место на диске.** Рекомендуемый объем дискового пространства для группы защиты. Если вы хотите изменить этот параметр, вы должны выделить общее место, объем которого будет немного превышать рассчитанный вами объем для каждого источника данных.
-   - **Совместное размещение данных.** Если вы включите совместное размещение, несколько источников данных в защите могут сопоставляться с отдельной репликой и томом точек восстановления. Совместное размещение поддерживается не для всех рабочих нагрузок.
-   - **Автоматическое увеличение.** Если вы включите этот параметр, то в случае, когда объем данных в защищенной группе превысит первоначальный выделенный объем, Azure Backup Server попытается увеличить размер диска на 25 %.
-   - **Дополнительные сведения о пуле носителей.** Этот параметр отображает состояние пула хранилища, включая общий размер диска и оставшийся.
+   - **Размер данных** — размер данных в группе защиты.
+   - **Место на диске** — рекомендуемый объем дискового пространства для группы защиты. Если вы хотите изменить этот параметр, вы должны выделить общее место, объем которого будет немного превышать рассчитанный вами объем для каждого источника данных.
+   - **Совместное размещение данных** — если вы включите совместное размещение, несколько источников данных в защите могут сопоставиться с отдельной репликой и томом точек восстановления. Совместное размещение поддерживается не для всех рабочих нагрузок.
+   - **Автоматическое увеличение:** Если включить этот параметр, то если данные в защищенной группе будут увеличивать начальное выделение, Azure Backup Server попытается увеличить размер диска на 25 процентов.
+   - **Дополнительные сведения о пуле носителей** — этот параметр отображает состояние пула носителей, включая общий размер диска и оставшийся.
 
-         ![Review disk allocation](./media/backup-azure-backup-server-vmware/review-disk-allocation.png)
+    ![Просмотр выделения дискового пространства](./media/backup-azure-backup-server-vmware/review-disk-allocation.png)
 
 1. В окне **Choose Replica Creation Method** (Выбрать метод создания реплики) определите, как вы хотите выполнить начальное резервное копирование, а затем щелкните **Далее**.
    - Значения по умолчанию — **Автоматически по сети** и **Сейчас**.
    - Если вы используете значения по умолчанию, укажите время низкой нагрузки. Выберите параметр **Позже** и укажите день и время.
    - Для больших объемов данных или неоптимальных условий сети лучше выбрать автономную репликацию данных с использованием съемных носителей.
 
-         ![Choose replica creation method](./media/backup-azure-backup-server-vmware/replica-creation.png)
+    ![Выберите метод создания реплики](./media/backup-azure-backup-server-vmware/replica-creation.png)
 
-1. На странице **Consistency Check Options** (Параметры проверки согласованности) выберите, как и когда автоматически запускать проверки на согласованность. Затем нажмите кнопку **Далее**.
+1. На странице **Consistency Check Options** (Параметры проверки согласованности) выберите, как и когда автоматически запускать проверки на согласованность. Нажмите кнопку **Далее**.
       - В случае несогласованности данных реплики вы можете запустить проверку на согласованность, либо эта проверка может выполняться по расписанию.
       - Если настраивать автоматическую проверку согласованности не требуется, можно выполнить проверку вручную. Чтобы это сделать, щелкните правой кнопкой мыши группу защиты, а затем нажмите **Perform Consistency Check** (Выполнить проверку согласованности).
 
-1. На странице **Specify Online Protection Data** (Указание данных для оперативной защиты) выберите виртуальные машины или папки виртуальной машины для создания резервной копии. Вы можете выбрать элементы по отдельности или же щелкнуть **Выделить все**. Затем нажмите кнопку **Далее**.
+1. На странице **Specify Online Protection Data** (Указание данных для оперативной защиты) выберите виртуальные машины или папки виртуальной машины для создания резервной копии. Вы можете выбрать элементы по отдельности или же щелкнуть **Выделить все**. Нажмите кнопку **Далее**.
 
-          ![Specify online protection data](./media/backup-azure-backup-server-vmware/select-data-to-protect.png)
+    ![Выбор оперативной защиты данных](./media/backup-azure-backup-server-vmware/select-data-to-protect.png)
 
 1. На странице **Specify Online Backup Schedule**  (Укажите расписание архивации в сети) укажите частоту резервного копирования данных из локального хранилища в Azure.
 
-    - Точки восстановления для данных в облаке будут созданы согласно с расписанием. Затем нажмите кнопку **Далее**.
+    - Точки восстановления для данных в облаке будут созданы согласно с расписанием. Нажмите кнопку **Далее**.
     - Созданная точка восстановления передается в хранилище служб восстановления в Azure.
 
-          ![Specify online backup schedule](./media/backup-azure-backup-server-vmware/online-backup-schedule.png)
+    ![Выбор расписания оперативного резервного копирования](./media/backup-azure-backup-server-vmware/online-backup-schedule.png)
 
 1. На странице **Specify Online Retention Policy** (Выбор политику хранения в сети) укажите, каким образом точки восстановления, созданные из ежедневных, еженедельных, ежемесячных и ежегодных резервных копий, должны храниться в Azure. Затем нажмите **Далее**.
 
     - Для хранения данных в Azure нет временных ограничений.
     - Единственным ограничением является то, что на защищенный экземпляр у вас может быть не более 9999 точек восстановления. В этом примере защищенным экземпляром является сервер VMware.
 
-          ![Specify online retention policy](./media/backup-azure-backup-server-vmware/retention-policy.png)
+    ![Выбор политики оперативного хранения](./media/backup-azure-backup-server-vmware/retention-policy.png)
 
 1. На странице **Сводка** просмотрите параметры и нажмите кнопку **Создать группу**.
 
-         ![Protection group member and setting summary](./media/backup-azure-backup-server-vmware/protection-group-summary.png)
+    ![Сводка параметров и элементов группы защиты](./media/backup-azure-backup-server-vmware/protection-group-summary.png)
 
 ## <a name="vmware-vsphere-67"></a>VMWare vSphere 6,7
 
@@ -335,26 +333,27 @@ VirtualMachine.State.RemoveSnapshot | VirtualMachine.State.RemoveSnapshot
 
 - Задайте следующие разделы реестра:
 
-```text
- Windows Registry Editor Version 5.00
+       ```text
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\.NETFramework\v2.0.50727]
-"SystemDefaultTlsVersions"=dword:00000001
-"SchUseStrongCrypto"=dword:00000001
+        Windows Registry Editor Version 5.00
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\.NETFramework\v4.0.30319]
-"SystemDefaultTlsVersions"=dword:00000001
-"SchUseStrongCrypto"=dword:00000001
+        [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\.NETFramework\v2.0.50727]
+       "SystemDefaultTlsVersions"=dword:00000001
+       "SchUseStrongCrypto"=dword:00000001
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v2.0.50727]
-"SystemDefaultTlsVersions"=dword:00000001
-"SchUseStrongCrypto"=dword:00000001
+       [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\.NETFramework\v4.0.30319]
+       "SystemDefaultTlsVersions"=dword:00000001
+       "SchUseStrongCrypto"=dword:00000001
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v4.0.30319]
-"SystemDefaultTlsVersions"=dword:00000001
-"SchUseStrongCrypto"=dword:00000001
-```
+       [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v2.0.50727]
+       "SystemDefaultTlsVersions"=dword:00000001
+       "SchUseStrongCrypto"=dword:00000001
 
-## <a name="next-steps"></a>Следующие шаги
+       [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v4.0.30319]
+       "SystemDefaultTlsVersions"=dword:00000001
+       "SchUseStrongCrypto"=dword:00000001
+       ```
+
+## <a name="next-steps"></a>Дополнительная информация
 
 Для решения проблем с устранением неполадок при настройке резервного копирования см. статью [Устранение неполадок Azure Backup Server](./backup-azure-mabs-troubleshoot.md).

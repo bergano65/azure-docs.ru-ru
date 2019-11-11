@@ -10,12 +10,12 @@ ms.service: azure-functions
 ms.topic: reference
 ms.date: 11/21/2017
 ms.author: cshoe
-ms.openlocfilehash: d8aee88f6ef3f6a73beadfdf242d79d9b361de0a
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 081a0e9ac165fdee2426780be6d1440cf8d4fcc0
+ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73469392"
+ms.lasthandoff: 11/10/2019
+ms.locfileid: "73904015"
 ---
 # <a name="azure-cosmos-db-bindings-for-azure-functions-2x"></a>Привязки Azure Cosmos DB для службы "Функции Azure" версии 2.х
 
@@ -255,7 +255,7 @@ namespace CosmosDBSamplesV2
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `CosmosDBTrigger`.
 
-|свойство function.json | Свойство атрибута |Description (Описание)|
+|свойство function.json | Свойство атрибута |ОПИСАНИЕ|
 |---------|---------|----------------------|
 |**type** || Нужно задать значение `cosmosDBTrigger`. |
 |**direction** || Нужно задать значение `in`. Этот параметр задается автоматически при создании триггера на портале Azure. |
@@ -292,6 +292,10 @@ namespace CosmosDBSamplesV2
 
 Входная привязка Azure Cosmos DB извлекает один или несколько документов из Azure Cosmos DB и передает их входному параметру функции через API SQL. Идентификатор документа или параметры запроса можно определить по триггеру, который вызывает функцию.
 
+> [!NOTE]
+> Если коллекция [секционирована](../cosmos-db/partition-data.md#logical-partitions), операции уточняющего запроса необходимо также указать значение ключа секции.
+>
+
 ## <a name="input---examples"></a>Примеры входных данных
 
 См. примеры (для разных языков), в которых для считывания одного документа указывается значение идентификатора:
@@ -324,6 +328,7 @@ namespace CosmosDBSamplesV2
     public class ToDoItem
     {
         public string Id { get; set; }
+        public string PartitionKey { get; set; }
         public string Description { get; set; }
     }
 }
@@ -333,7 +338,7 @@ namespace CosmosDBSamplesV2
 
 #### <a name="queue-trigger-look-up-id-from-json-c"></a>Триггер очереди, поисковый идентификатор из JSON (C#)
 
-В следующем примере показана [функция C#](functions-dotnet-class-library.md), которая получает один документ. Функция активируется сообщением из очереди, который содержит объект JSON. Очередь триггера анализирует JSON в объект с именем `ToDoItemLookup`, который содержит идентификатор для поиска. Этот идентификатор используется для получения `ToDoItem` документа из указанной базы данных и коллекции.
+В следующем примере показана [функция C#](functions-dotnet-class-library.md), которая получает один документ. Функция активируется сообщением из очереди, который содержит объект JSON. Триггер очереди анализирует JSON в объект с именем `ToDoItemLookup`, который содержит идентификатор и значение ключа секции для поиска. Этот идентификатор и значение ключа секции используются для получения `ToDoItem` документа из указанной базы данных и коллекции.
 
 ```cs
 namespace CosmosDBSamplesV2
@@ -341,6 +346,8 @@ namespace CosmosDBSamplesV2
     public class ToDoItemLookup
     {
         public string ToDoItemId { get; set; }
+
+        public string ToDoItemPartitionKeyValue { get; set; }
     }
 }
 ```
@@ -361,10 +368,11 @@ namespace CosmosDBSamplesV2
                 databaseName: "ToDoItems",
                 collectionName: "Items",
                 ConnectionStringSetting = "CosmosDBConnection",
-                Id = "{ToDoItemId}")]ToDoItem toDoItem,
+                Id = "{ToDoItemId}",
+                PartitionKey = "{ToDoItemPartitionKeyValue}")]ToDoItem toDoItem,
             ILogger log)
         {
-            log.LogInformation($"C# Queue trigger function processed Id={toDoItemLookup?.ToDoItemId}");
+            log.LogInformation($"C# Queue trigger function processed Id={toDoItemLookup?.ToDoItemId} Key={toDoItemLookup?.ToDoItemPartitionKeyValue}");
 
             if (toDoItem == null)
             {
@@ -383,7 +391,7 @@ namespace CosmosDBSamplesV2
 
 #### <a name="http-trigger-look-up-id-from-query-string-c"></a>Триггер HTTP, поисковый идентификатор из строки запроса (C#)
 
-В следующем примере показана [функция C#](functions-dotnet-class-library.md), которая получает один документ. Функция инициируется HTTP-запросом, который в строке запроса указывает идентификатор для поиска. Этот идентификатор используется для получения `ToDoItem` документа из указанной базы данных и коллекции.
+В следующем примере показана [функция C#](functions-dotnet-class-library.md), которая получает один документ. Функция активируется HTTP-запросом, который использует строку запроса для указания идентификатора и значения ключа секции для поиска. Этот идентификатор и значение ключа секции используются для получения `ToDoItem` документа из указанной базы данных и коллекции.
 
 >[!NOTE]
 >Параметры строки запроса HTTP задаются с учетом регистра.
@@ -409,7 +417,8 @@ namespace CosmosDBSamplesV2
                 databaseName: "ToDoItems",
                 collectionName: "Items",
                 ConnectionStringSetting = "CosmosDBConnection",
-                Id = "{Query.id}")] ToDoItem toDoItem,
+                Id = "{Query.id}",
+                PartitionKey = "{Query.partitionKey}")] ToDoItem toDoItem,
             ILogger log)
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
@@ -432,7 +441,7 @@ namespace CosmosDBSamplesV2
 
 #### <a name="http-trigger-look-up-id-from-route-data-c"></a>Триггер HTTP, поисковый идентификатор из данных маршрута (C#)
 
-В следующем примере показана [функция C#](functions-dotnet-class-library.md), которая получает один документ. Функция инициируется HTTP-запросом, в котором с помощью данных маршрута указывается идентификатор для поиска. Этот идентификатор используется для получения `ToDoItem` документа из указанной базы данных и коллекции.
+В следующем примере показана [функция C#](functions-dotnet-class-library.md), которая получает один документ. Функция активируется HTTP-запросом, который использует данные маршрута для указания идентификатора и значения ключа секции для поиска. Этот идентификатор и значение ключа секции используются для получения `ToDoItem` документа из указанной базы данных и коллекции.
 
 ```cs
 using Microsoft.AspNetCore.Http;
@@ -449,12 +458,13 @@ namespace CosmosDBSamplesV2
         [FunctionName("DocByIdFromRouteData")]
         public static IActionResult Run(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post",
-                Route = "todoitems/{id}")]HttpRequest req,
+                Route = "todoitems/{partitionKey}/{id}")]HttpRequest req,
             [CosmosDB(
                 databaseName: "ToDoItems",
                 collectionName: "Items",
                 ConnectionStringSetting = "CosmosDBConnection",
-                Id = "{id}")] ToDoItem toDoItem,
+                Id = "{id}",
+                PartitionKey = "{partitionKey}")] ToDoItem toDoItem,
             ILogger log)
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
@@ -481,6 +491,9 @@ namespace CosmosDBSamplesV2
 
 В примере показано, как использовать выражение привязки в параметре `SqlQuery`. Вы можете передать данные маршрута в параметр `SqlQuery`, как показано здесь, но сейчас [невозможно передать значения строки запроса](https://github.com/Azure/azure-functions-host/issues/2554#issuecomment-392084583).
 
+> [!NOTE]
+> Если необходимо выполнить запрос только по ИДЕНТИФИКАТОРу, рекомендуется использовать поиск, как в [предыдущих примерах](#http-trigger-look-up-id-from-query-string-c), так как он будет потреблять меньше [единиц запросов](../cosmos-db/request-units.md). Операции чтения точки (GET) [более эффективны](../cosmos-db/optimize-cost-queries.md) , чем запросы по идентификатору.
+>
 
 ```cs
 using Microsoft.AspNetCore.Http;
@@ -730,7 +743,7 @@ namespace CosmosDBSamplesV2
 
 #### <a name="http-trigger-look-up-id-from-query-string-c-script"></a>Триггер HTTP, поисковый идентификатор из строки запроса (скрипт C#)
 
-В следующем примере показана [функция скрипта C#](functions-reference-csharp.md), которая получает один документ. Функция инициируется HTTP-запросом, который в строке запроса указывает идентификатор для поиска. Этот идентификатор используется для получения `ToDoItem` документа из указанной базы данных и коллекции.
+В следующем примере показана [функция скрипта C#](functions-reference-csharp.md), которая получает один документ. Функция активируется HTTP-запросом, который использует строку запроса для указания идентификатора и значения ключа секции для поиска. Этот идентификатор и значение ключа секции используются для получения `ToDoItem` документа из указанной базы данных и коллекции.
 
 Ниже показан файл *function.json*.
 
@@ -759,7 +772,8 @@ namespace CosmosDBSamplesV2
       "collectionName": "Items",
       "connectionStringSetting": "CosmosDBConnection",
       "direction": "in",
-      "Id": "{Query.id}"
+      "Id": "{Query.id}",
+      "PartitionKey" : "{Query.partitionKeyValue}"
     }
   ],
   "disabled": false
@@ -792,7 +806,7 @@ public static HttpResponseMessage Run(HttpRequestMessage req, ToDoItem toDoItem,
 
 #### <a name="http-trigger-look-up-id-from-route-data-c-script"></a>Триггер HTTP, поисковый идентификатор из данных маршрута (скрипт C#)
 
-В следующем примере показана [функция скрипта C#](functions-reference-csharp.md), которая получает один документ. Функция инициируется HTTP-запросом, в котором с помощью данных маршрута указывается идентификатор для поиска. Этот идентификатор используется для получения `ToDoItem` документа из указанной базы данных и коллекции.
+В следующем примере показана [функция скрипта C#](functions-reference-csharp.md), которая получает один документ. Функция активируется HTTP-запросом, который использует данные маршрута для указания идентификатора и значения ключа секции для поиска. Этот идентификатор и значение ключа секции используются для получения `ToDoItem` документа из указанной базы данных и коллекции.
 
 Ниже показан файл *function.json*.
 
@@ -808,7 +822,7 @@ public static HttpResponseMessage Run(HttpRequestMessage req, ToDoItem toDoItem,
         "get",
         "post"
       ],
-      "route":"todoitems/{id}"
+      "route":"todoitems/{partitionKeyValue}/{id}"
     },
     {
       "name": "$return",
@@ -822,7 +836,8 @@ public static HttpResponseMessage Run(HttpRequestMessage req, ToDoItem toDoItem,
       "collectionName": "Items",
       "connectionStringSetting": "CosmosDBConnection",
       "direction": "in",
-      "Id": "{id}"
+      "Id": "{id}",
+      "PartitionKey": "{partitionKeyValue}"
     }
   ],
   "disabled": false
@@ -1046,7 +1061,7 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, Docume
 
 #### <a name="http-trigger-look-up-id-from-query-string-javascript"></a>Триггер HTTP, поисковый идентификатор из строки запроса (JavaScript)
 
-В следующем примере показана [функция JavaScript](functions-reference-node.md), которая получает один документ. Функция инициируется HTTP-запросом, который в строке запроса указывает идентификатор для поиска. Этот идентификатор используется для получения `ToDoItem` документа из указанной базы данных и коллекции.
+В следующем примере показана [функция JavaScript](functions-reference-node.md), которая получает один документ. Функция активируется HTTP-запросом, который использует строку запроса для указания идентификатора и значения ключа секции для поиска. Этот идентификатор и значение ключа секции используются для получения `ToDoItem` документа из указанной базы данных и коллекции.
 
 Ниже показан файл *function.json*.
 
@@ -1075,7 +1090,8 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, Docume
       "collectionName": "Items",
       "connectionStringSetting": "CosmosDBConnection",
       "direction": "in",
-      "Id": "{Query.id}"
+      "Id": "{Query.id}",
+      "PartitionKey": "{Query.partitionKeyValue}"
     }
   ],
   "disabled": false
@@ -1104,7 +1120,7 @@ module.exports = function (context, req, toDoItem) {
 
 #### <a name="http-trigger-look-up-id-from-route-data-javascript"></a>Триггер HTTP, поисковый идентификатор из данных маршрута (JavaScript)
 
-В следующем примере показана [функция JavaScript](functions-reference-node.md), которая получает один документ. Функция инициируется HTTP-запросом, который в строке запроса указывает идентификатор для поиска. Этот идентификатор используется для получения `ToDoItem` документа из указанной базы данных и коллекции.
+В следующем примере показана [функция JavaScript](functions-reference-node.md), которая получает один документ. Функция активируется HTTP-запросом, который использует строку запроса для указания идентификатора и значения ключа секции для поиска. Этот идентификатор и значение ключа секции используются для получения `ToDoItem` документа из указанной базы данных и коллекции.
 
 Ниже показан файл *function.json*.
 
@@ -1120,7 +1136,7 @@ module.exports = function (context, req, toDoItem) {
         "get",
         "post"
       ],
-      "route":"todoitems/{id}"
+      "route":"todoitems/{partitionKeyValue}/{id}"
     },
     {
       "name": "$return",
@@ -1134,7 +1150,8 @@ module.exports = function (context, req, toDoItem) {
       "collectionName": "Items",
       "connection": "CosmosDBConnection",
       "direction": "in",
-      "Id": "{id}"
+      "Id": "{id}",
+      "PartitionKey": "{partitionKeyValue}"
     }
   ],
   "disabled": false
@@ -1257,7 +1274,7 @@ def main(queuemsg: func.QueueMessage, documents: func.DocumentList) -> func.Docu
 
 #### <a name="http-trigger-look-up-id-from-query-string-python"></a>Триггер HTTP, поисковый идентификатор из строки запроса (Python)
 
-В следующем примере показана [функция Python](functions-reference-python.md), которая получает один документ. Функция инициируется HTTP-запросом, который в строке запроса указывает идентификатор для поиска. Этот идентификатор используется для получения `ToDoItem` документа из указанной базы данных и коллекции.
+В следующем примере показана [функция Python](functions-reference-python.md), которая получает один документ. Функция активируется HTTP-запросом, который использует строку запроса для указания идентификатора и значения ключа секции для поиска. Этот идентификатор и значение ключа секции используются для получения `ToDoItem` документа из указанной базы данных и коллекции.
 
 Ниже показан файл *function.json*.
 
@@ -1286,7 +1303,8 @@ def main(queuemsg: func.QueueMessage, documents: func.DocumentList) -> func.Docu
       "collectionName": "Items",
       "connectionStringSetting": "CosmosDBConnection",
       "direction": "in",
-      "Id": "{Query.id}"
+      "Id": "{Query.id}",
+      "PartitionKey": "{Query.partitionKeyValue}"
     }
   ],
   "disabled": true,
@@ -1315,7 +1333,7 @@ def main(req: func.HttpRequest, todoitems: func.DocumentList) -> str:
 
 #### <a name="http-trigger-look-up-id-from-route-data-python"></a>Триггер HTTP, поисковый идентификатор из данных маршрута (Python)
 
-В следующем примере показана [функция Python](functions-reference-python.md), которая получает один документ. Функция инициируется HTTP-запросом, который в строке запроса указывает идентификатор для поиска. Этот идентификатор используется для получения `ToDoItem` документа из указанной базы данных и коллекции.
+В следующем примере показана [функция Python](functions-reference-python.md), которая получает один документ. Функция активируется HTTP-запросом, который использует строку запроса для указания идентификатора и значения ключа секции для поиска. Этот идентификатор и значение ключа секции используются для получения `ToDoItem` документа из указанной базы данных и коллекции.
 
 Ниже показан файл *function.json*.
 
@@ -1331,7 +1349,7 @@ def main(req: func.HttpRequest, todoitems: func.DocumentList) -> str:
         "get",
         "post"
       ],
-      "route":"todoitems/{id}"
+      "route":"todoitems/{partitionKeyValue}/{id}"
     },
     {
       "name": "$return",
@@ -1345,7 +1363,8 @@ def main(req: func.HttpRequest, todoitems: func.DocumentList) -> str:
       "collectionName": "Items",
       "connection": "CosmosDBConnection",
       "direction": "in",
-      "Id": "{id}"
+      "Id": "{id}",
+      "PartitionKey": "{partitionKeyValue}"
     }
   ],
   "disabled": false,
@@ -1489,7 +1508,7 @@ public class ToDoItem {
 
 #### <a name="http-trigger-look-up-id-from-query-string---string-parameter-java"></a>Триггер HTTP, поисковый идентификатор из строки запроса — строковый параметр (Java)
 
-В следующем примере показана функция Java, которая получает один документ. Функция инициируется HTTP-запросом, который в строке запроса указывает идентификатор для поиска. Этот идентификатор используется для получения документа из указанной базы данных и коллекции в виде строки.
+В следующем примере показана функция Java, которая получает один документ. Функция активируется HTTP-запросом, который использует строку запроса для указания идентификатора и значения ключа секции для поиска. Этот идентификатор и значение ключа секции используются для получения документа из указанной базы данных и коллекции в виде строки.
 
 ```java
 public class DocByIdFromQueryString {
@@ -1504,7 +1523,7 @@ public class DocByIdFromQueryString {
               databaseName = "ToDoList",
               collectionName = "Items",
               id = "{Query.id}",
-              partitionKey = "{Query.id}",
+              partitionKey = "{Query.partitionKeyValue}",
               connectionStringSetting = "Cosmos_DB_Connection_String")
             Optional<String> item,
             final ExecutionContext context) {
@@ -1535,7 +1554,7 @@ public class DocByIdFromQueryString {
 
 #### <a name="http-trigger-look-up-id-from-query-string---pojo-parameter-java"></a>Триггер HTTP, поисковый идентификатор из строки запроса — параметр POJO (Java)
 
-В следующем примере показана функция Java, которая получает один документ. Функция инициируется HTTP-запросом, который в строке запроса указывает идентификатор для поиска. Этот идентификатор используется для получения документа из указанной базы данных и коллекции. Затем документ преобразуется в ранее созданный экземпляр POJO ```ToDoItem``` и передается функции в качестве аргумента.
+В следующем примере показана функция Java, которая получает один документ. Функция активируется HTTP-запросом, который использует строку запроса для указания идентификатора и значения ключа секции для поиска. Этот идентификатор и значение ключа секции используются для получения документа из указанной базы данных и коллекции. Затем документ преобразуется в ранее созданный экземпляр POJO ```ToDoItem``` и передается функции в качестве аргумента.
 
 ```java
 public class DocByIdFromQueryStringPojo {
@@ -1550,7 +1569,7 @@ public class DocByIdFromQueryStringPojo {
               databaseName = "ToDoList",
               collectionName = "Items",
               id = "{Query.id}",
-              partitionKey = "{Query.id}",
+              partitionKey = "{Query.partitionKeyValue}",
               connectionStringSetting = "Cosmos_DB_Connection_String")
             ToDoItem item,
             final ExecutionContext context) {
@@ -1577,7 +1596,7 @@ public class DocByIdFromQueryStringPojo {
 
 #### <a name="http-trigger-look-up-id-from-route-data-java"></a>Триггер HTTP, поисковый идентификатор из данных маршрута (Java)
 
-В следующем примере показана функция Java, которая получает один документ. Функция инициируется HTTP-запросом, в параметре маршрута которого указан идентификатор для поиска. Этот идентификатор используется для получения документа из указанной базы данных и коллекции. Полученный документ возвращается как ```Optional<String>```.
+В следующем примере показана функция Java, которая получает один документ. Функция активируется HTTP-запросом, который использует параметр Route для указания идентификатора и значения ключа секции для поиска. Этот идентификатор и значение ключа секции используются для получения документа из указанной базы данных и коллекции, возвращая его в виде ```Optional<String>```.
 
 ```java
 public class DocByIdFromRoute {
@@ -1587,13 +1606,13 @@ public class DocByIdFromRoute {
             @HttpTrigger(name = "req",
               methods = {HttpMethod.GET, HttpMethod.POST},
               authLevel = AuthorizationLevel.ANONYMOUS,
-              route = "todoitems/{id}")
+              route = "todoitems/{partitionKeyValue}/{id}")
             HttpRequestMessage<Optional<String>> request,
             @CosmosDBInput(name = "database",
               databaseName = "ToDoList",
               collectionName = "Items",
               id = "{id}",
-              partitionKey = "{id}",
+              partitionKey = "{partitionKeyValue}",
               connectionStringSetting = "Cosmos_DB_Connection_String")
             Optional<String> item,
             final ExecutionContext context) {
@@ -1623,6 +1642,10 @@ public class DocByIdFromRoute {
 #### <a name="http-trigger-look-up-id-from-route-data-using-sqlquery-java"></a>Триггер HTTP, поисковый идентификатор из данных маршрута, используется SqlQuery (Java)
 
 В следующем примере показана функция Java, которая получает один документ. Функция инициируется HTTP-запросом, в параметре маршрута которого указан идентификатор для поиска. Этот идентификатор используется для получения документа из указанной базы данных и коллекции. При этом результирующий набор преобразуется в ```ToDoItem[]```, так как может быть возвращено несколько документов в зависимости от критериев запроса.
+
+> [!NOTE]
+> Если необходимо выполнить запрос только по ИДЕНТИФИКАТОРу, рекомендуется использовать поиск, как в [предыдущих примерах](#http-trigger-look-up-id-from-query-string---pojo-parameter-java), так как он будет потреблять меньше [единиц запросов](../cosmos-db/request-units.md). Операции чтения точки (GET) [более эффективны](../cosmos-db/optimize-cost-queries.md) , чем запросы по идентификатору.
+>
 
 ```java
 public class DocByIdFromRouteSqlQuery {
@@ -1714,7 +1737,7 @@ public class DocsFromRouteSqlQuery {
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `CosmosDB`.
 
-|свойство function.json | Свойство атрибута |Description (Описание)|
+|свойство function.json | Свойство атрибута |ОПИСАНИЕ|
 |---------|---------|----------------------|
 |**type**     || Нужно задать значение `cosmosDB`.        |
 |**direction**     || Нужно задать значение `in`.         |
@@ -1724,7 +1747,7 @@ public class DocsFromRouteSqlQuery {
 |**id**    | **Id** | Идентификатор документа, который нужно получить. Это свойство поддерживает [выражения привязок](./functions-bindings-expressions-patterns.md). Не задавайте свойства **id** или **sqlQuery** одновременно. Если не задать ни одного из них, извлекается вся коллекция. |
 |**sqlQuery**  |**SqlQuery**  | SQL-запрос к Azure Cosmos DB, используемый для извлечения нескольких документов. Свойство поддерживает привязки времени выполнения, как показано в примере: `SELECT * FROM c where c.departmentId = {departmentId}`. Не задавайте свойства **id** или **sqlQuery** одновременно. Если не задать ни одного из них, извлекается вся коллекция.|
 |**connectionStringSetting**     |**ConnectionStringSetting**|Имя параметра приложения, содержащего строку подключения к Azure Cosmos DB.        |
-|**partitionKey**|**PartitionKey**|Задает значение ключа секции для поиска. Может включать параметры привязки.|
+|**partitionKey**|**PartitionKey**|Задает значение ключа секции для поиска. Может включать параметры привязки. Он необходим для уточняющих запросов в [секционированных](../cosmos-db/partition-data.md#logical-partitions) коллекциях.|
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
@@ -2351,7 +2374,7 @@ def main(req: func.HttpRequest, doc: func.Out[func.Document]) -> func.HttpRespon
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `CosmosDB`.
 
-|свойство function.json | Свойство атрибута |Description (Описание)|
+|свойство function.json | Свойство атрибута |ОПИСАНИЕ|
 |---------|---------|----------------------|
 |**type**     || Нужно задать значение `cosmosDB`.        |
 |**direction**     || Нужно задать значение `out`.         |
@@ -2382,7 +2405,7 @@ def main(req: func.HttpRequest, doc: func.Out[func.Document]) -> func.HttpRespon
 
 ## <a name="hostjson-settings"></a>Параметры файла host.json
 
-В этом разделе описываются глобальные параметры конфигурации, доступные для этой привязки в версии 2.x. Дополнительные сведения о глобальных настройках конфигурации в версии 2.x смотрите в статье [Справочник по файлу host.json для Функций Azure](functions-host-json.md).
+В этом разделе описываются глобальные параметры конфигурации, доступные для этой привязки в версии 2.x. Дополнительные сведения о глобальных параметрах конфигурации в версии 2.x см. в статье [Справочник по файлу host.json для Функций Azure](functions-host-json.md).
 
 ```json
 {
@@ -2399,13 +2422,13 @@ def main(req: func.HttpRequest, doc: func.Out[func.Document]) -> func.HttpRespon
 }
 ```
 
-|Свойство  |значение по умолчанию | Description (Описание) |
+|Свойство  |значение по умолчанию | ОПИСАНИЕ |
 |---------|---------|---------|
-|GatewayMode|Шлюз|Режим подключения, используемый функцией при подключении к службе Azure Cosmos DB. Возможные значения: `Direct` и `Gateway`.|
+|GatewayMode|gateway|Режим подключения, используемый функцией при подключении к службе Azure Cosmos DB. Возможные значения: `Direct` и `Gateway`.|
 |Протокол|Https|Протокол подключения, используемый функцией при подключении к службе Azure Cosmos DB.  [Описание обоих режимов](../cosmos-db/performance-tips.md#networking)|
-|leasePrefix|Н/Д|Префикс аренды для использования во всех функциях приложения.|
+|leasePrefix|Недоступно|Префикс аренды для использования во всех функциях приложения.|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Azure Cosmos DB: обработка данных бессерверных баз данных с помощью службы "Функции Azure"](../cosmos-db/serverless-computing-database.md)
 * [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md)

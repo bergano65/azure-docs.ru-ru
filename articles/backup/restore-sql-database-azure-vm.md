@@ -7,12 +7,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 05/22/2019
 ms.author: dacurwin
-ms.openlocfilehash: 648c5ca1eb1cb1c0f1832654fc66d436b9318af3
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 878658135bdb8844c5c86bc207db580ccd7ff63f
+ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73161924"
+ms.lasthandoff: 11/10/2019
+ms.locfileid: "73903604"
 ---
 # <a name="restore-sql-server-databases-on-azure-vms"></a>Восстановление баз данных SQL Server на виртуальных машинах Azure
 
@@ -27,7 +27,7 @@ Azure Backup можете восстановить базы данных SQL Ser
 - Восстановление до определенной даты или времени (во второй) с помощью резервных копий журнала транзакций. Azure Backup автоматически определяет соответствующую полную разностную резервную копию и цепочку резервных копий журналов, которые требуются для восстановления в зависимости от выбранного времени.
 - Восстановление определенной полной или разностной резервной копии для восстановления до определенной точки восстановления.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 Перед восстановлением базы данных обратите внимание на следующее.
 
@@ -76,9 +76,9 @@ Azure Backup можете восстановить базы данных SQL Ser
    - **Альтернативное расположение**. Восстановите базу данных в альтернативное расположение и сохранив исходную базу данных.
    - **Перезаписать базу данных**: восстановление данных в том же экземпляре SQL Server, где находится исходный источник. Этот параметр перезаписывает исходную базу данных.
 
-           > [!IMPORTANT]
-           > If the selected database belongs to an Always On availability group, SQL Server doesn't allow the database to be overwritten. Only **Alternate Location** is available.
-           >
+    > [!IMPORTANT]
+    > Если выбранная база данных принадлежит к группе доступности Always On, SQL Server не позволит перезаписать базу данных. Доступно только значение **Альтернативное расположение**.
+    >
    - **Восстановить в виде файлов**. вместо восстановления в качестве базы данных восстановите файлы резервных копий, которые можно будет восстановить в виде базы данных, на любом компьютере, где имеются файлы, с помощью SQL Server Management Studio.
      ![меню конфигурации восстановления](./media/backup-azure-sql-database/restore-configuration.png)
 
@@ -177,6 +177,6 @@ Azure Backup можете восстановить базы данных SQL Ser
 
   ![Восстановление базы данных с большим размером файла](./media/backup-azure-sql-database/restore-large-files.jpg)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 [Управление и мониторинг](manage-monitor-sql-database-backup.md) SQL Server базы данных, для которых выполняется резервное копирование Azure Backup.

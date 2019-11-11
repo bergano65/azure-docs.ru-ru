@@ -1,5 +1,5 @@
 ---
-title: Пакетный тест — LUIS
+title: Выполнение пакетного теста — LUIS
 titleSuffix: Azure Cognitive Services
 description: Использование наборов высказываний для пакетного тестирования Интеллектуальной службы распознавание речи (LUIS) для поиска фрагментов речи с неправильными намерениями и сущностями.
 services: cognitive-services
@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 10/25/2019
 ms.author: diberry
-ms.openlocfilehash: a99b2e7097f2abf36f184368b3b4fdaba8f2730b
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: bfef7eae7158a05b09a3534e8fb44335333d8cf1
+ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73467406"
+ms.lasthandoff: 11/10/2019
+ms.locfileid: "73904355"
 ---
 # <a name="batch-testing-with-a-set-of-example-utterances"></a>Пакетное тестирование с помощью набора примеров высказываний
 
@@ -100,11 +100,11 @@ ms.locfileid: "73467406"
 
 [!INCLUDE [Entity roles in batch testing - currently not supported](../../../includes/cognitive-services-luis-roles-not-supported-in-batch-testing.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Если тестирование показывает, что приложение LUIS не распознает правильные намерения и сущности, вы можете повысить производительность приложения LUIS, пометив дополнительные высказывания или добавив компоненты. 
 
-* я[Label suggested utterances with LUIS](luis-how-to-review-endpoint-utterances.md) (Пометка предлагаемых высказываний в LUIS) 
+* [Label suggested utterances with LUIS](luis-how-to-review-endpoint-utterances.md) (Пометка предлагаемых высказываний в LUIS) 
 * [Use features to improve your LUIS app's performance](luis-how-to-add-features.md) (Использование функций для повышения производительности приложения LUIS) 
 * [Understand batch testing with this tutorial](luis-tutorial-batch-testing.md) (Общие сведения о пакетном тестировании в этом руководстве)
 * [Learn batch testing concepts](luis-concept-batch-test.md) (Общие сведения о принципах пакетного тестирования)

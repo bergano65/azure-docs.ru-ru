@@ -5,14 +5,14 @@ services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: troubleshooting
-ms.date: 04/08/2019
+ms.date: 11/09/2019
 ms.author: helohr
-ms.openlocfilehash: aa4254673d426579a5e5f0e90e389db7c6cadff0
-ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+ms.openlocfilehash: 7f80fb07bbed3bdb478bce557241a92cd571cc83
+ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73607351"
+ms.lasthandoff: 11/10/2019
+ms.locfileid: "73904898"
 ---
 # <a name="troubleshooting-overview-feedback-and-support"></a>Общие сведения об устранении неисправностей, отзывы и поддержка
 
@@ -44,8 +44,9 @@ ms.locfileid: "73607351"
 | Подключение клиентов                                                                    | См. раздел [Удаленный рабочий стол клиентские подключения](troubleshoot-client-connection.md) . Если это не поможет, см. раздел [Конфигурация виртуальной машины узла сеанса](troubleshoot-vm-configuration.md). |
 | Скорость реагирования удаленных приложений или настольных компьютеров                                      | Если проблемы связаны с конкретным приложением или продуктом, обратитесь к группе, ответственной за этот продукт. |
 | Сообщения о лицензировании или ошибки                                                          | Если проблемы связаны с конкретным приложением или продуктом, обратитесь к группе, ответственной за этот продукт. |
+| Проблемы при использовании средств виртуальных рабочих столов Windows на GitHub (шаблоны Azure Resource Manager, средство диагностики, средство управления) | Сведения о проблемах см. в статье [шаблоны ARM для службы удаленных рабочих столов](https://github.com/Azure/RDS-Templates/blob/master/README.md) . |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Сведения об устранении неполадок при создании клиента и пула узлов в среде виртуальных рабочих столов Windows см. в статье [Создание пула клиентов и узлов](troubleshoot-set-up-issues.md).
 - Сведения об устранении неполадок при настройке виртуальной машины в виртуальном рабочем столе Windows см. в разделе [Конфигурация виртуальной машины узла сеанса](troubleshoot-vm-configuration.md).
@@ -54,4 +55,4 @@ ms.locfileid: "73607351"
 - Дополнительные сведения о службе см. в разделе [Среда виртуальных рабочих столов Windows](https://docs.microsoft.com/azure/virtual-desktop/environment-setup).
 - Руководство по устранению неполадок см. в разделе [учебник. Устранение неполадок диспетчер ресурсов развертываний шаблонов](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-tutorial-troubleshoot).
 - Сведения о действиях аудита см. в статье [Операции аудита с помощью Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-audit).
-- Дополнительные сведения об определении ошибок во время развертывания см. в статье [Просмотр операций развертывания с помощью портала Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-deployment-operations).
+- Сведения о действиях по определению ошибок при развертывании см. в разделе [Просмотр операций развертывания](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-deployment-operations).

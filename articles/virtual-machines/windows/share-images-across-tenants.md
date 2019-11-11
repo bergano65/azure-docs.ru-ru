@@ -10,14 +10,16 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 07/15/2019
 ms.author: cynthn
-ms.openlocfilehash: b921aabd8d71654d089c5f16aba27c286a1e91ec
-ms.sourcegitcommit: 770b060438122f090ab90d81e3ff2f023455213b
+ms.openlocfilehash: 6bf627b5456cbd878580d7b346536c98a513ca6a
+ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68305040"
+ms.lasthandoff: 11/10/2019
+ms.locfileid: "73903687"
 ---
 # <a name="share-gallery-vm-images-across-azure-tenants"></a>Совместное использование образов виртуальных машин коллекции в клиентах Azure
+
+Коллекции общих образов позволяют обмениваться изображениями с помощью RBAC. RBAC можно использовать для совместного использования образов в клиенте и даже для пользователей за пределами клиента. Дополнительные сведения об этом простом параметре общего доступа см. в разделе [общий доступ к коллекции](/azure/virtual-machines/windows/shared-images-portal#share-the-gallery).
 
 [!INCLUDE [virtual-machines-share-images-across-tenants](../../../includes/virtual-machines-share-images-across-tenants.md)]
 
@@ -26,7 +28,6 @@ ms.locfileid: "68305040"
 > Вы не можете использовать портал для развертывания виртуальной машины из образа в другом клиенте Azure. Чтобы создать виртуальную машину из образа, совместно используемого клиентами, необходимо использовать [Azure CLI](../linux/share-images-across-tenants.md) или PowerShell.
 
 ## <a name="create-a-vm-using-powershell"></a>Создание виртуальной машины с помощью PowerShell
-
 
 Войдите в оба клиента, используя идентификатор приложения, секрет и идентификатор клиента. 
 
@@ -83,6 +84,6 @@ Add-AzVMNetworkInterface -Id $nic.Id
 New-AzVM -ResourceGroupName $resourceGroup -Location $location -VM $vmConfig
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Вы также можете создавать ресурсы коллекции общих образов с помощью [портал Azure](shared-images-portal.md).

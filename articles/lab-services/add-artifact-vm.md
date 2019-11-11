@@ -1,6 +1,6 @@
 ---
-title: Добавление артефакта к виртуальной Машине в Azure DevTest Labs | Документация Майкрософт
-description: Узнайте, как Добавление артефакта к виртуальной машине в лаборатории в Azure DevTest Labs
+title: Добавление артефакта в виртуальную машину в Azure DevTest Labs | Документация Майкрософт
+description: Узнайте, как добавить артефакт в виртуальную машину в лаборатории Azure DevTest Labs
 services: devtest-lab,virtual-machines
 documentationcenter: na
 author: spelluru
@@ -14,19 +14,19 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/25/2019
 ms.author: spelluru
-ms.openlocfilehash: 19a7d6052091f8889a88c61793186b7bf7d9d869
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 27fec279582d845972b87ac635c87c16c239924e
+ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60304291"
+ms.lasthandoff: 11/10/2019
+ms.locfileid: "73901323"
 ---
-# <a name="add-an-artifact-to-a-vm"></a>Добавление артефакта к виртуальной Машине
-При создании виртуальной Машины, к нему можно добавить существующие артефакты. Артефактами могут быть либо из [общедоступном репозитории DevTest Labs Git](https://github.com/Azure/azure-devtestlab/tree/master/Artifacts) или из репозитория Git. В этой статье показано, как добавить артефакты на портале Azure, а также с помощью Azure PowerShell. 
+# <a name="add-an-artifact-to-a-vm"></a>Добавление артефакта на виртуальную машину
+При создании виртуальной машины в нее можно добавить существующие артефакты. Эти артефакты могут находиться в [общедоступном репозитории Git DevTest Labs](https://github.com/Azure/azure-devtestlab/tree/master/Artifacts) или в собственном репозитории Git. В этой статье показано, как добавить артефакты в портал Azure и с помощью Azure PowerShell. 
 
 *Артефакты* Azure DevTest Labs позволяют указывать *действия*, которые выполняются при подготовке виртуальной машины, включая запуск скриптов Windows PowerShell, выполнение команд Bash и установку программного обеспечения. *Параметры* артефакта позволяют настроить артефакт для конкретной ситуации.
 
-Дополнительные сведения о том, как создавать пользовательские артефакты, см. в статье: [Создание пользовательских артефактов](devtest-lab-artifact-author.md).
+Дополнительные сведения о создании пользовательских артефактов см. в статье [Создание пользовательских артефактов](devtest-lab-artifact-author.md).
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -65,7 +65,7 @@ ms.locfileid: "60304291"
 1. Нажмите кнопку **ОК**, чтобы закрыть область **Выбранные артефакты**.
 
 ## <a name="use-powershell"></a>Использование PowerShell
-Следующий сценарий применяется заданного артефакта для указанной виртуальной Машины. [Invoke AzResourceAction](/powershell/module/az.resources/invoke-azresourceaction) команда является тот, который выполняет операцию.  
+Следующий скрипт применяет указанный артефакт к указанной виртуальной машине. Команда [Invoke-азресаурцеактион](/powershell/module/az.resources/invoke-azresourceaction) выполняет операцию.  
 
 ```powershell
 #Requires -Module Az.Resources
@@ -90,7 +90,7 @@ param
 Set-AzContext -SubscriptionId $SubscriptionId | Out-Null
  
 # Get the lab resource group name
-$resourceGroupName = (Find-AzResource -ResourceType 'Microsoft.DevTestLab/labs' | Where-Object { $_.Name -eq $DevTestLabName}).ResourceGroupName
+$resourceGroupName = (Get-AzResource -ResourceType 'Microsoft.DevTestLab/labs' | Where-Object { $_.Name -eq $DevTestLabName}).ResourceGroupName
 if ($resourceGroupName -eq $null) { throw "Unable to find lab $DevTestLabName in subscription $SubscriptionId." }
 
 # Get the internal repo name
@@ -163,10 +163,10 @@ if ($virtualMachine -ne $null) {
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
-На артефакты, ознакомьтесь со следующими статьями:
+## <a name="next-steps"></a>Дополнительная информация
+Дополнительные сведения о артефактах см. в следующих статьях:
 
 - [Укажите обязательные артефакты для лаборатории](devtest-lab-mandatory-artifacts.md)
 - [Создание настраиваемых артефактов](devtest-lab-artifact-author.md)
-- [Добавить репозиторий артефактов в лабораторию](devtest-lab-artifact-author.md)
+- [Добавление репозитория артефактов в лабораторию](devtest-lab-artifact-author.md)
 - [Диагностика сбоев артефактов](devtest-lab-troubleshoot-artifact-failure.md)

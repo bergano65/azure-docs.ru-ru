@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 08/20/2019
 ms.author: dacurwin
 ms.reviewer: pullabhk
-ms.openlocfilehash: 491e27f85d00ce512995a63e43b9e248798e5d0f
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: 4642549dcdd455c97ea3e8fd8a8b5440779b923c
+ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73747627"
+ms.lasthandoff: 11/10/2019
+ms.locfileid: "73903616"
 ---
 # <a name="back-up-and-restore-azure-files-with-powershell"></a>Резервное копирование и восстановление файлов Azure с помощью PowerShell
 
@@ -24,7 +24,7 @@ ms.locfileid: "73747627"
 > [!div class="checklist"]
 >
 > * Настройте PowerShell и зарегистрируйте поставщик служб восстановления Azure.
-> * Создайте хранилище служб восстановления,
+> * Создайте хранилище служб восстановления.
 > * Настройте резервное копирование для файлового ресурса Azure.
 > * Запустите задание резервного копирования.
 > * Восстановление резервной копии общего файлового ресурса Azure или отдельного файла из общей папки.
@@ -276,7 +276,7 @@ testAzureFS       Backup               Completed            11/12/2018 2:42:07 P
 
 ### <a name="using-on-demand-backups-to-extend-retention"></a>Использование резервных копий по запросу для расширения срока хранения
 
-Резервные копии по запросу можно использовать для хранения моментальных снимков в течение 10 лет. Планировщики можно использовать для выполнения сценариев PowerShell по запросу с выбранным хранением и, таким же, создавать моментальные снимки через регулярные интервалы каждую неделю, месяц или год. Создание регулярных моментальных снимков относится к [ограничениям резервного копирования по требованию](https://docs.microsoft.com/azure/backup/backup-azure-files-faq#how-many-on-demand-backups-can-i-take-per-file-share-) с помощью службы архивации Azure.
+Резервные копии по запросу можно использовать для хранения моментальных снимков в течение 10 лет. Планировщики можно использовать для выполнения сценариев PowerShell по запросу с выбранным хранением и, таким же, создавать моментальные снимки через регулярные интервалы каждую неделю, месяц или год. При создании обычных моментальных снимков ознакомьтесь с [ограничениями резервного копирования по требованию](https://docs.microsoft.com/azure/backup/backup-azure-files-faq#how-many-on-demand-backups-can-i-take-per-file-share) с помощью службы архивации Azure.
 
 Если вы ищете примеры сценариев, см. пример скрипта на сайте GitHub (<https://github.com/Azure-Samples/Use-PowerShell-for-long-term-retention-of-Azure-Files-Backup)> с помощью модуля Runbook службы автоматизации Azure, который позволяет планировать резервное копирование на периодической основе и хранить их даже до 10 лет.
 
@@ -422,6 +422,6 @@ $job.ErrorDetails
 1073871825 Microsoft Azure Backup encountered an internal error. Wait for a few minutes and then try the operation again. If the issue persists, please contact Microsoft support.
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 [Сведения о](backup-azure-files.md) резервном копировании файлов Azure в портал Azure.
