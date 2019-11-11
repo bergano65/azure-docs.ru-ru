@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: 457154a797a4b6d9853b1effe0d8121053653a99
-ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
+ms.openlocfilehash: cd16ee87b213c2bfa4c541c4d3c453a4499855d0
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72174763"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73887730"
 ---
 # <a name="azure-maps-supported-map-styles"></a>Стили карт, поддерживаемые в службе Azure Maps
 Служба Azure Maps поддерживает несколько различных встроенных стилей карт, как описано ниже.
@@ -29,9 +29,9 @@ ms.locfileid: "72174763"
 * Элемент управления картой веб-пакета SDK
 * Элемент управления картой Android
 
-## <a name="blank-and-blank_accessible"></a>blank и blank_accessible
+## <a name="blank-and-blank_accessible"></a>пусто и blank_accessible
 
-**Пустые** и **blank_accessibleные** стили карт предоставляют пустой холст для визуализации данных. В стиле **blank_accessible** будет по-прежнему предоставляться информация о расположении, где расположена схема, и в том случае, если базовая схема не отображается.
+**Пустые** и **blank_accessible** стили карт предоставляют пустой холст для визуализации данных. Стиль **blank_accessible** продолжит предоставлять обновления средства чтения с экрана с подробными сведениями о расположении, где расположена схема, даже если базовая схема не отображается.
 
 > [!Note]
 > В веб-пакете SDK можно изменить цвет фона на карте, установив стиль CSS `background-color` элемента Map DIV.
@@ -98,9 +98,9 @@ ms.locfileid: "72174763"
 * Элемент управления картой Android
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Узнайте, как задать стиль схемы в Azure Maps.
 
 > [!div class="nextstepaction"]
-> [Выбор стиля карты](https://docs.microsoft.com/en-us/azure/azure-maps/choose-map-style)
+> [Выбор стиля карты](https://docs.microsoft.com/azure/azure-maps/choose-map-style)

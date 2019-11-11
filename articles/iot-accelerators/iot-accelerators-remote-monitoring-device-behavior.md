@@ -1,5 +1,5 @@
 ---
-title: Поведение имитированного устройства в решении для удаленного мониторинга в Azure | Документация Майкрософт
+title: Имитация устройства в решении для удаленного мониторинга в Azure | Документация Майкрософт
 description: В этой статье описывается, как определить поведение имитированного устройства в решении для удаленного мониторинга с помощью JavaScript.
 author: dominicbetts
 manager: timlt
@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 01/29/2018
 ms.topic: conceptual
-ms.openlocfilehash: 04d2ad2f0e86ee977600af86a2ffd1e9d7680375
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c39ca0a018bd22844cf7e5350e6d3586319aac16
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65823422"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73890848"
 ---
 # <a name="implement-the-device-model-behavior"></a>Реализация поведения модели устройства
 
@@ -80,7 +80,7 @@ function main(context, previousState, previousProperties) {
 
 - `currentTime` как строку в формате `yyyy-MM-dd'T'HH:mm:sszzz`;
 - `deviceId`, например `Simulated.Chiller.123`;
-- `deviceModel`, например `Chiller`.
+- `deviceModel`, например `Chiller`;
 
 В параметре `state` содержится состояние устройства, поддерживаемое службой моделирования устройств. Это значение представляет собой объект `state`, возвращенный предыдущим вызовом функции `main`.
 
@@ -201,7 +201,7 @@ function main(context, previousState, previousProperties) {
 
 - `currentTime` как строку в формате `yyyy-MM-dd'T'HH:mm:sszzz`;
 - `deviceId`, например `Simulated.Chiller.123`;
-- `deviceModel`, например `Chiller`.
+- `deviceModel`, например `Chiller`;
 
 В параметре `state` содержится состояние устройства, поддерживаемое службой моделирования устройств.
 
@@ -256,7 +256,7 @@ function main(context, previousState, previousProperties) {
 
 Сведения о локальном запуске службы имитирования устройств содержатся в статье [Running the service locally](https://github.com/Azure/device-simulation-dotnet#running-the-service-locally-eg-for-development-tasks) (Локальный запуск службы) на сайте GitHub. Локальный запуск службы упрощает отладку имитированного устройства перед его развертыванием в облако.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 В этой статье описывается, как определить поведение собственной настраиваемой модели имитированного устройства. Из этой статьи вы узнали, как выполнять следующие задачи:
 

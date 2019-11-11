@@ -1,16 +1,16 @@
 ---
-title: Получить изображение помощью Дронов
+title: Получение изображений от дронов
 description: Описывает, как получить образы помощью Дронов от партнеров.
 author: uhabiba04
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: v-umha
-ms.openlocfilehash: 19d709a2eb0af5bdb9d40a2bce96c5716ce3c6f6
-ms.sourcegitcommit: 16c5374d7bcb086e417802b72d9383f8e65b24a7
+ms.openlocfilehash: 6ee4391369744f966ce273697e5ba9e7f0590edd
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73847416"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73890997"
 ---
 # <a name="get-drone-imagery-from-drone-partners"></a>Получение образов помощью Дронов от партнеров помощью Дронов
 
@@ -32,7 +32,7 @@ ms.locfileid: "73847416"
 Чтобы включить интеграцию с Фармбеатс, необходимо предоставить поставщику устройства следующие сведения.  
  - Конечная точка API  
  - Tenant ID  
- - Идентификатор клиента  
+ - идентификатор клиента  
  - Секрет клиента  
 
 Выполните следующие действия.
@@ -55,7 +55,7 @@ ms.locfileid: "73847416"
 
     ```azurepowershell-interactive 
 
-    PS> ./generateCredentials.ps1   
+    ./generateCredentials.ps1   
 
     ```
 
@@ -89,6 +89,6 @@ ms.locfileid: "73847416"
 
   ![Перебивает ферму проекта](./media/get-drone-imagery-from-drone-partner/view-drone-maps-1.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Узнайте, как использовать [API](references-for-farmbeats.md#rest-api) концентратора данных фармбеатс для получения образов помощью дронов.

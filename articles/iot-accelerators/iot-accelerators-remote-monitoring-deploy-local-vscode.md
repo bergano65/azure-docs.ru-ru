@@ -1,5 +1,5 @@
 ---
-title: Локальное развертывание решения для удаленного мониторинга (Visual Studio Code) в Azure | Документация Майкрософт
+title: Локальное развертывание решения для удаленного мониторинга — Visual Studio Code Azure | Документация Майкрософт
 description: В этом руководстве показано, как развернуть акселератор решения для удаленного мониторинга на локальном компьютере с помощью Visual Studio Code для тестирования и разработки.
 author: avneet723
 manager: hegate
@@ -8,20 +8,20 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 01/17/2019
 ms.topic: conceptual
-ms.openlocfilehash: ed3301eb0e723e05e2a642ffea2f1609032553b4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 8f1d20e9a6a78d99a23fe4b98aeb4f3eb8359da7
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66730168"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73890954"
 ---
 # <a name="deploy-the-remote-monitoring-solution-accelerator-locally---visual-studio-code"></a>Локальное развертывание акселератора решения для удаленного мониторинга в Visual Studio Code
 
 [!INCLUDE [iot-accelerators-selector-local](../../includes/iot-accelerators-selector-local.md)]
 
-В этой статье показано, как развернуть акселератор решения для удаленного мониторинга на локальном компьютере в целях тестирования и разработки. Вы узнаете, как запустить микрослужбы в Visual Studio Code. При локальном развертывании микрослужб используются следующие облачные службы: Центр Интернета вещей, Cosmos DB, Azure Streaming Analytics и Аналитика временных рядов Azure.
+В этой статье показано, как развернуть акселератор решения для удаленного мониторинга на локальном компьютере в целях тестирования и разработки. Вы узнаете, как запустить микрослужбы в Visual Studio Code. Локальное развертывание микрослужб использует следующие облачные службы: центр Интернета вещей, Cosmos DB, Azure Stream Analytics и аналитика временных рядов Azure.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 Для развертывания служб Azure, используемых акселератором решения для удаленного мониторинга, требуется активная подписка Azure.
 
@@ -31,7 +31,7 @@ ms.locfileid: "66730168"
 
 Для завершения локального развертывания необходимо установить следующие средства на локальный компьютер разработчика:
 
-* [Git](https://git-scm.com/)
+* [Git.](https://git-scm.com/)
 * [.NET Core](https://dotnet.microsoft.com/download)
 * [Docker](https://www.docker.com)
 * [Nginx](https://nginx.org/en/download.html)
@@ -59,17 +59,17 @@ dotnet build -c Release
 
 ### <a name="deploy-all-other-microservices-on-local-machine"></a>Разверните все микрослужбы на локальном компьютере.
 
-Ниже показано, как запускать микрослужбы удаленного мониторинга в Visual Studio Code:
+Ниже описано, как запустить микрослужбы удаленного мониторинга в Visual Studio Code.
 
 1. Запустите Visual Studio Code.
-1. В VS Code откройте **azure-iot-pcs-remote-monitoring-dotnet** папки.
-1. Создайте новую папку с именем **.vscode** в **azure-iot-pcs-remote-monitoring-dotnet** папки.
-1. Скопируйте файлы **launch.json** и **tasks.json** из services\scripts\local\launch\idesettings\vscode для **.vscode** созданную папку.
-1. Откройте **панели отладки** в VS Code и выполнения **запустить все микрослужбы** конфигурации. Эта конфигурация запускает микрослужбу симулятора устройства в Docker и запускает другие микрослужбы в отладчике.
+1. В VS Code откройте папку **Azure-IOT-PCS-Remote-Monitoring-DotNet** .
+1. Создайте новую папку с именем **. vscode** в папке **Azure-IOT-PCS-Remote-Monitoring-DotNet** .
+1. Скопируйте файлы **Launch. JSON** и **tasks. JSON** из сервицес\скриптс\локал\лаунч\идесеттингс\вскоде в только что созданную папку **. vscode** .
+1. Откройте **панель "Отладка** " в VS Code и запустите конфигурацию " **запустить все микрослужбы** ". Эта конфигурация запускает микрослужбу симулятора устройства в Docker и запускает другие микрослужбы в отладчике.
 
-В результате выполнения **запустить все микрослужбы** в консоли отладки выглядит следующим образом:
+Выходные данные **выполнения ALL микрослужбы** в консоль отладки выглядят следующим образом:
 
-[![Развернуть Local Микрослужб](./media/deploy-locally-vscode/auth-debug-results-inline.png)](./media/deploy-locally-vscode/auth-debug-results-expanded.png#lightbox)
+[![ное развертывание — локальные микрослужбы](./media/deploy-locally-vscode/auth-debug-results-inline.png)](./media/deploy-locally-vscode/auth-debug-results-expanded.png#lightbox)
 
 ### <a name="run-the-web-ui"></a>Запуск веб-интерфейса
 
@@ -80,7 +80,7 @@ npm install
 npm start
 ```
 
-По завершении запуска браузер отображает страницу **http:\//localhost:3000 / панели мониторинга**. На этой странице могут возникать ошибки. Чтобы просмотреть приложение без ошибок, выполните следующие действия.
+Когда начало завершится, в браузере отобразится страница **http:\//ЛОКАЛХОСТ: 3000/Dashboard**. На этой странице могут возникать ошибки. Чтобы просмотреть приложение без ошибок, выполните следующие действия.
 
 ### <a name="configure-and-run-nginx"></a>Настройка и запуск NGINX
 
@@ -93,7 +93,7 @@ npm start
 
 ### <a name="connect-to-the-dashboard"></a>Подключение к панели мониторинга
 
-Чтобы получить доступ к панели мониторинга решения для удаленного мониторинга, перейдите к http:\//localhost:9000 в браузере.
+Чтобы получить доступ к панели мониторинга решения для удаленного мониторинга, перейдите в браузере http:\//ЛОКАЛХОСТ: 9000.
 
 ## <a name="clean-up"></a>Очистка
 
@@ -101,6 +101,6 @@ npm start
 
 Также можно удалить локальную копию репозитория удаленного мониторинга, созданную при клонировании исходного кода из GitHub.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Теперь, когда вы развернули решение для удаленного мониторинга, ознакомьтесь со статьей [Краткое руководство. Использование облачного решения для удаленного мониторинга](quickstart-remote-monitoring-deploy.md).

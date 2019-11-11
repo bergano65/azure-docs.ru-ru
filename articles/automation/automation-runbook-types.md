@@ -9,18 +9,18 @@ ms.author: robreed
 ms.date: 03/05/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: e655e286c3aebe28bcb09c8723516c2ff52ad20e
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 6c29015e2fd327d74183d5fbbd6214152507e517
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68850357"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73886783"
 ---
 # <a name="azure-automation-runbook-types"></a>Типы модулей Runbook в службе автоматизации Azure
 
 Служба автоматизации Azure поддерживает несколько типов модулей Runbook, кратко описанных в приведенной ниже таблице.  Следующие разделы содержат дополнительную информацию о каждом типе, включая рекомендацию по использованию.
 
-| Type | Описание |
+| введите | ОПИСАНИЕ |
 |:--- |:--- |
 | [Графический](#graphical-runbooks)|Опирается на Windows PowerShell, а полностью создается и редактируется в графическом редакторе на портале Azure. |
 | [Графический модуль рабочего процесса PowerShell](#graphical-runbooks)|Опирается на рабочий процесс Windows PowerShell, а полностью создается и редактируется в графическом редакторе на портале Azure. |
@@ -114,9 +114,9 @@ Runbook рабочих процессов PowerShell представляют с
 * Вы не можете преобразовать модули Runbook из графического типа в текстовый или наоборот.
 * При использовании других типов дочерних модулей Runbook могут действовать некоторые ограничения. Дополнительные сведения см. в статье [Дочерние модули Runbook в службе автоматизации Azure](automation-child-runbooks.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 * Дополнительные сведения о графической разработке модулей Runbook см. в статье [Графическая разработка в службе автоматизации Azure](automation-graphical-authoring-intro.md).
 * Чтобы понять различия между PowerShell и рабочими процессами PowerShell для модулей Runbook, см. статью [Изучение рабочего процесса Windows PowerShell](automation-powershell-workflow.md).
 * Дополнительные сведения о создании и импорте модуля Runbook см. в статье [Создание или импорт модуля Runbook в службе автоматизации Azure](manage-runbooks.md).
-* Дополнительные сведения о PowerShell, включая Справочник по языку и обучающие модули, см. в документации по [PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/overview).
+* Дополнительные сведения о PowerShell, включая Справочник по языку и обучающие модули, см. в документации по [PowerShell](https://docs.microsoft.com/powershell/scripting/overview).

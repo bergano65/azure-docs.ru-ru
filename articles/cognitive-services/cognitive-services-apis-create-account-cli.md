@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 10/04/2019
 ms.author: aahi
-ms.openlocfilehash: 8ca994b0b4abb27eef284eedf5a76571fe19699d
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.openlocfilehash: d715252f16a34f2261c108ebd3ff5d1f6f3424d8
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72595318"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73887916"
 ---
 # <a name="create-a-cognitive-services-resource-using-the-azure-command-line-interfacecli"></a>Создание Cognitive Services ресурса с помощью интерфейс командной строки Azure (CLI)
 
@@ -25,7 +25,7 @@ ms.locfileid: "72595318"
 
 [!INCLUDE [cognitive-services-subscription-types](../../includes/cognitive-services-subscription-types.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 * Допустимая подписка Azure — [создайте ее](https://azure.microsoft.com/free/) бесплатно.
 * [Интерфейс командной строки Azure (CLI)](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)
@@ -88,28 +88,28 @@ az group create \
 
 | Служба                    | Вид                      |
 |----------------------------|---------------------------|
-| Компьютерное зрение            | `ComputerVision`          |
+| API Компьютерного зрения            | `ComputerVision`          |
 | Прогнозирование Пользовательское визуальное распознавание | `CustomVision.Prediction` |
 | Пользовательское визуальное распознавание обучение   | `CustomVision.Training`   |
-| API-интерфейс для распознавания лиц                   | `Face`                    |
+| API распознавания лиц                   | `Face`                    |
 | Распознаватель документов            | `FormRecognizer`          |
 | Распознаватель рукописного текста             | `InkRecognizer`           |
 
-### <a name="search"></a>служба поиска.
+### <a name="search"></a>поиска
 
 | Служба            | Вид                  |
 |--------------------|-----------------------|
-| Автозаполнение Bing   | `Bing.Autosuggest.v7` |
+| API автозаполнения Bing   | `Bing.Autosuggest.v7` |
 | Пользовательский поиск Bing | `Bing.CustomSearch`   |
-| API Bing для поиска сущностей | `Bing.EntitySearch`   |
+| API Поиска сущностей Bing | `Bing.EntitySearch`   |
 | Поиск Bing        | `Bing.Search.v7`      |
-| Проверка орфографии Bing   | `Bing.SpellCheck.v7`  |
+| API Bing для проверки орфографии   | `Bing.SpellCheck.v7`  |
 
 ### <a name="speech"></a>Речь
 
 | Служба            | Вид                 |
 |--------------------|----------------------|
-| Службы речи    | `SpeechServices`     |
+| Службы распознавания речи    | `SpeechServices`     |
 | Распознавание речи | `SpeakerRecognition` |
 
 ### <a name="language"></a>Язык
@@ -119,7 +119,7 @@ az group create \
 | Основные сведения о форме | `FormUnderstanding` |
 | LUIS               | `LUIS`              |
 | QnA Maker          | `QnAMaker`          |
-| Анализ текста     | `TextAnalytics`     |
+| Текстовая аналитика     | `TextAnalytics`     |
 | Перевод текста   | `TextTranslation`   |
 
 ### <a name="decision"></a>Решение
@@ -179,7 +179,7 @@ az login
 
 ## <a name="get-current-quota-usage-for-your-resource"></a>Получение сведений об используемой квоте для ресурса
 
-Используйте команду [AZ cognitiveservices Account List-Usage](https://docs.microsoft.com/en-us/cli/azure/cognitiveservices/account?view=azure-cli-latest#az-cognitiveservices-account-list-usage) , чтобы получить сведения об использовании для вашего ресурса службы "неприятный".
+Используйте команду [AZ cognitiveservices Account List-Usage](https://docs.microsoft.com/cli/azure/cognitiveservices/account?view=azure-cli-latest#az-cognitiveservices-account-list-usage) , чтобы получить сведения об использовании для вашего ресурса службы "неприятный".
 
 ```azurecli-interactive
 az cognitiveservices account list-usage \
@@ -198,7 +198,7 @@ az cognitiveservices account list-usage \
 az group delete --name storage-resource-group
 ```
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также
 
 * [Проверка подлинности запросов к Azure Cognitive Services](authentication.md)
 * [Что такое Azure Cognitive Services?](Welcome.md)

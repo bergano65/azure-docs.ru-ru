@@ -1,19 +1,18 @@
 ---
-title: Функции запроса данных клиента
-description: Сводка о возможностях запроса данных клиента
+title: Запросы данных клиентов для устройств центра Интернета вещей Azure
+description: Большинство устройств, управляемых в центре Интернета вещей Azure, не являются личными, но некоторые из них. В этой статье рассказывается о том, как администраторы могут экспортировать или удалять персональные данные с устройства.
 author: robinsh
-manager: philmea
 ms.author: robinsh
 ms.date: 05/16/2018
 ms.topic: conceptual
 ms.service: iot-hub
 services: iot-hub
-ms.openlocfilehash: 1519637eddf909040131a1efac5738fc7cc8e565
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 29b3ed46ffe7f2236fc63d65ed49385b29b1a08a
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60845806"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73889482"
 ---
 # <a name="summary-of-customer-data-request-features"></a>Сводка о возможностях запроса данных клиента
 
@@ -41,7 +40,7 @@ ms.locfileid: "60845806"
 
 ## <a name="exporting-customer-data"></a>Экспорт данных клиента
 
-Администраторы клиента могут использовать на портале Azure операции копирования и вставки в колонке устройств Интернета вещей расширения Центра Интернета вещей для экспорта данных, связанных с устройством.
+Администраторы клиента могут использовать копирование и вставку в области устройства IoT в расширении центра Интернета вещей Azure в портал Azure для экспорта данных, связанных с устройством.
 
 Выполнять операции экспорта для устройств можно также с помощью REST API. Дополнительные сведения см. в [Service - Get Device](/rest/api/iothub/service/getdevice) (Служба. Получение сведений об устройстве).
 

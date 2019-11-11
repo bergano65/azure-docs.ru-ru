@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 10/09/2019
 ms.author: pabouwer
 zone_pivot_groups: client-operating-system
-ms.openlocfilehash: 9c9dcd567b8632626bf4b1f0bf2ef6b5e69b8a9d
-ms.sourcegitcommit: f29fec8ec945921cc3a89a6e7086127cc1bc1759
+ms.openlocfilehash: 245ac3b1fd88b8d2430e9ddefef3562efd16e6d1
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72530450"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73885384"
 ---
 # <a name="install-and-use-istio-in-azure-kubernetes-service-aks"></a>Установка и использование Istio в Службе Azure Kubernetes (AKS)
 
@@ -21,9 +21,9 @@ ms.locfileid: "72530450"
 В этой статье описано, как установить Istio. Двоичный файл клиента Istio `istioctl` устанавливается на клиентский компьютер, а компоненты Istio устанавливаются в кластер Kubernetes на AKS.
 
 > [!NOTE]
-> Эти инструкции ссылаются на Istio версии `1.3.2` и используют по крайней мере Helm версии `2.14.2`.
+> Эти инструкции ссылаются на Istio версии `1.3.2`и используют по крайней мере Helm версии `2.14.2`.
 >
-> Istio выпуски `1.3.x` были протестированы группой Istio по сравнению с Kubernetes версиями `1.13`, `1.14` `1.15`. Дополнительные версии Istio можно найти в разделе [GitHub-Istio][istio-github-releases], сведения о каждой из выпусков в [Istio News][istio-release-notes] и поддерживаемых версиях Kubernetes в [Istio общие вопросы и ответы][istio-faq].
+> Istio выпуски `1.3.x` были протестированы группой Istio по сравнению с Kubernetes версиями `1.13`, `1.14``1.15`. Дополнительные версии Istio можно найти в разделе [GitHub-Istio][istio-github-releases], сведения о каждой из выпусков в [Istio News][istio-release-notes] и поддерживаемых версиях Kubernetes в [Istio общие вопросы и ответы][istio-faq].
 
 В этой статье раскрываются следующие темы:
 
@@ -180,7 +180,7 @@ istio-init-crd-12-1.3.2   1/1           14s        14s
 
 ::: zone-end
 
-@No__t_0 диаграмма Helm развертывает большое количество объектов. Список можно просмотреть из выходных данных команды `helm install` выше. Для завершения развертывания компонентов Istio в зависимости от среды кластера необходимо выполнить до 2 минут.
+`istio` диаграмма Helm развертывает большое количество объектов. Список можно просмотреть из выходных данных команды `helm install` выше. Для завершения развертывания компонентов Istio в зависимости от среды кластера необходимо выполнить до 2 минут.
 
 На этом этапе вы развернули Istio в кластере AKS. Чтобы убедиться в успешном развертывании Istio, перейдем к следующему разделу, чтобы [проверить установку Istio](#validate-the-istio-installation).
 
@@ -195,7 +195,7 @@ kubectl get svc --namespace istio-system --output wide
 В следующем примере выходных данных показаны службы, которые должны быть запущены:
 
 - службы `istio-*`
-- службы трассировки надстроек `jaeger-*`, `tracing` и `zipkin`
+- службы трассировки надстроек `jaeger-*`, `tracing`и `zipkin`
 - Служба метрик для `prometheus`
 - `grafana` службы "аналитика и мониторинг" надстройки
 - `kiali` службы панели мониторинга для сетки службы надстройки
@@ -309,7 +309,7 @@ istioctl dashboard envoy <pod-name>.<namespace>
 
 ### <a name="remove-istio-components-and-namespace"></a>Удалить компоненты и пространство имен Istio
 
-Чтобы удалить Istio из кластера AKS, используйте следующие команды. @No__t_0 команды будут удалять диаграммы `istio` и `istio-init`, а команда `kubectl delete namespace` удалит пространство имен `istio-system`.
+Чтобы удалить Istio из кластера AKS, используйте следующие команды. `helm delete` команды будут удалять диаграммы `istio` и `istio-init`, а команда `kubectl delete namespace` удалит пространство имен `istio-system`.
 
 ```azurecli
 helm delete --purge istio
@@ -339,7 +339,7 @@ kubectl delete namespace istio-system
 
 ::: zone-end
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 В следующей документации описывается, как можно использовать Istio для обеспечения интеллектуальной маршрутизации для развертывания ранний выпуска.
 
@@ -383,7 +383,7 @@ kubectl delete namespace istio-system
 [kubernetes-crd]: https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#customresourcedefinitions
 [kubernetes-jobs]: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/
 [kubernetes-secrets]: https://kubernetes.io/docs/concepts/configuration/secret/
-[kubernetes-node-selectors]: https://docs.microsoft.com/en-us/azure/aks/concepts-clusters-workloads#node-selectors
+[kubernetes-node-selectors]: https://docs.microsoft.com/azure/aks/concepts-clusters-workloads#node-selectors
 [kubectl-get]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get
 [kubectl-describe]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#describe
 [kubectl-port-forward]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#port-forward

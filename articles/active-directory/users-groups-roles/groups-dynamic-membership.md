@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4a8823a9b354ca4ae9ecab0eeac265b486116bec
-ms.sourcegitcommit: ec2b75b1fc667c4e893686dbd8e119e7c757333a
+ms.openlocfilehash: 050bc3cf6b81b9467d9947a4f611477e2fcbcd9a
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72808970"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73885858"
 ---
 # <a name="dynamic-membership-rules-for-groups-in-azure-active-directory"></a>Правила динамического членства в группах для Azure Active Directory
 
@@ -70,7 +70,7 @@ user.department -eq "Sales"
 
 - Свойство
 - operator
-- Value
+- Значение
 
 Чтобы избежать синтаксических ошибок, следует соблюдать определенный порядок частей в этом выражении.
 
@@ -78,22 +78,22 @@ user.department -eq "Sales"
 
 Существует три типа свойств, которые можно использовать для создания правил членства.
 
-- Логический
-- Строка
+- Логическое значение.
+- Строка,
 - Коллекция строк
 
 Ниже приведены свойства пользователя, которые можно использовать для создания одного выражения.
 
 ### <a name="properties-of-type-boolean"></a>Свойства логического типа
 
-| properties | Допустимые значения | Использование |
+| свойства | Допустимые значения | Использование |
 | --- | --- | --- |
 | AccountEnabled |true, false |user.accountEnabled -eq true |
 | dirSyncEnabled |true, false |user.dirSyncEnabled -eq true |
 
 ### <a name="properties-of-type-string"></a>Свойства строкового типа
 
-| properties | Допустимые значения | Использование |
+| свойства | Допустимые значения | Использование |
 | --- | --- | --- |
 | city |Любое строковое значение или *null*. |(user.city -eq "value") |
 | country |Любое строковое значение или *null*. |(user.country -eq "value") |
@@ -105,7 +105,7 @@ user.department -eq "Sales"
 | givenName |Любое строковое значение или *null*. |(user.givenName -eq "value") |
 | jobTitle |Любое строковое значение или *null*. |(user.jobTitle -eq "value") |
 | mail |Любое строковое значение или *null* (SMTP-адрес пользователя). |(user.mail -eq "value") |
-| mailNickName |Любое строковое значение (псевдоним электронной почты пользователя) |(user.mailNickName -eq "value") |
+| mailNickname |Любое строковое значение (псевдоним электронной почты пользователя) |(user.mailNickName -eq "value") |
 | mobile |Любое строковое значение или *null*. |(user.mobile -eq "value") |
 | objectId |GUID объекта пользователя. |(user.objectId -eq "11111111-1111-1111-1111-111111111111") |
 | onPremisesSecurityIdentifier; | Локальный идентификатор безопасности (SID) для пользователей, которые были синхронизированы из локальной среды в облако. |(user.onPremisesSecurityIdentifier -eq "S-1-1-11-1111111111-1111111111-1111111111-1111111") |
@@ -124,10 +124,10 @@ user.department -eq "Sales"
 
 ### <a name="properties-of-type-string-collection"></a>Свойства типа коллекции строк
 
-| properties | Допустимые значения | Использование |
+| свойства | Допустимые значения | Использование |
 | --- | --- | --- |
 | otherMails |Любое строковое значение. |(user.otherMails -contains "alias@domain") |
-| proxyAddresses |SMTP: alias@domain, smtp: alias@domain |(user.proxyAddresses -contains "SMTP: alias@domain") |
+| proxyAddresses |SMTP: alias@domain smtp: alias@domain |(user.proxyAddresses -contains "SMTP: alias@domain") |
 
 Свойства, используемые для правил устройств, описаны в разделе [Правила для устройств](#rules-for-devices).
 
@@ -160,7 +160,7 @@ user.department -eq "Sales"
 
 
 ### <a name="using-the--match-operator"></a>Используйте оператор -match 
-Оператор **-match** используется для сопоставления с любым регулярным выражением. Примеры.
+Оператор **-match** используется для сопоставления с любым регулярным выражением. Примеры:
 
 ```
 user.displayName -match "Da.*"   
@@ -178,7 +178,7 @@ Da, Dav, David имеют значение true, aDa имеет значение
 
 * строк
 * логическое (true или false);
-* Числа
+* Числовые значения
 * массивы (чисел или строк).
 
 Включая значение в выражение, важно использовать правильный синтаксис, чтобы избежать ошибок. Вот несколько советов по синтаксису:
@@ -249,10 +249,10 @@ Da, Dav, David имеют значение true, aDa имеет значение
 
 Многозначные свойства являются коллекциями объектов того же типа. Их можно использовать для создания правил членства с помощью логических операторов -any и (или) -all.
 
-| properties | Значения | Использование |
+| свойства | Значения | Использование |
 | --- | --- | --- |
 | assignedPlans | Каждый объект в коллекции предоставляет следующие строковые параметры: capabilityStatus, service, servicePlanId |user.assignedPlans -any (assignedPlan.servicePlanId -eq "efb87545-963c-4e0d-99df-69c6916d9eb0" -and assignedPlan.capabilityStatus -eq "Enabled") |
-| proxyAddresses| SMTP: alias@domain, smtp: alias@domain | (user.proxyAddresses -any (\_ -contains "contoso")) |
+| proxyAddresses| SMTP: alias@domain smtp: alias@domain | (user.proxyAddresses -any (\_ -contains "contoso")) |
 
 ### <a name="using-the--any-and--all-operators"></a>Использование операторов -any и -all
 
@@ -357,7 +357,10 @@ user.extension_c272a57b722d4eb29bfe327874ae79cb_OfficeNumber -eq "123"
 
 ## <a name="rules-for-devices"></a>Правила для устройств
 
-Можно также создать правило, которое выбирает объекты устройств для членства в группе. Членами одной группы не могут являться одновременно пользователи и устройства. Атрибут **organizationalUnit** больше не доступен в списке, и его не следует использовать. Эту строку Intune задает в определенных случаях, но она не распознается службой Azure AD. Поэтому устройства не будут добавляться в группы на основе этого атрибута.
+Можно также создать правило, которое выбирает объекты устройств для членства в группе. Членами одной группы не могут являться одновременно пользователи и устройства. 
+
+> [!NOTE]
+> Атрибут **organizationalUnit** больше не доступен в списке, и его не следует использовать. Эту строку Intune задает в определенных случаях, но она не распознается службой Azure AD. Поэтому устройства не будут добавляться в группы на основе этого атрибута.
 
 > [!NOTE]
 > системлабелс — это атрибут, предназначенный только для чтения и не может быть установлен в Intune.
@@ -369,26 +372,25 @@ user.extension_c272a57b722d4eb29bfe327874ae79cb_OfficeNumber -eq "123"
  Атрибут устройства  | Значения | Пример
  ----- | ----- | ----------------
  AccountEnabled | true, false | (device.accountEnabled -eq true)
- displayName | Любое строковое значение |(Device. displayName-EQ "Вадим iPhone")
- deviceOSType | Любое строковое значение | (device.deviceOSType -eq "iPad") -or (device.deviceOSType -eq "iPhone")<br>(Device. deviceOSType — содержит "Андроидентерприсе")<br>(Device. deviceOSType-EQ "Андроидфорворк")
- deviceOSVersion | Любое строковое значение | (device.deviceOSVersion -eq "9.1")
+ displayName | Любое строковое значение. |(Device. displayName-EQ "Вадим iPhone")
+ deviceOSType | Любое строковое значение. | (device.deviceOSType -eq "iPad") -or (device.deviceOSType -eq "iPhone")<br>(Device. deviceOSType — содержит "Андроидентерприсе")<br>(Device. deviceOSType-EQ "Андроидфорворк")
+ deviceOSVersion | Любое строковое значение. | (device.deviceOSVersion -eq "9.1")
  deviceCategory | Допустимое имя категории устройств. | (device.deviceCategory -eq "BYOD")
- deviceManufacturer | Любое строковое значение | (device.deviceManufacturer -eq "Samsung")
- deviceModel | Любое строковое значение | (device.deviceModel -eq "iPad Air")
+ deviceManufacturer | Любое строковое значение. | (device.deviceManufacturer -eq "Samsung")
+ deviceModel | Любое строковое значение. | (device.deviceModel -eq "iPad Air")
  deviceOwnership | Personal, Company, Unknown | (device.deviceOwnership -eq "Company")
  enrollmentProfileName | Профиль регистрации устройств Apple, регистрация устройств — идентификаторы корпоративных устройств (Android-киоск) или имя профиля Windows автопилота. | (device.enrollmentProfileName -eq "DEP iPhones")
  isRooted | true, false | (device.isRooted -eq true)
  managementType | MDM (для мобильных устройств).<br>PC (для компьютеров, управляемых агентом Intune PC). | (device.managementType -eq "MDM")
- organizationalUnit | допустимое локальное организационное подразделение (OU) | (Device. organizationalUnit — содержит "портативный компьютер")
  deviceId | Допустимый идентификатор устройства Azure AD. | (device.deviceId -eq "d4fe7726-5966-431c-b3b8-cddc8fdb717d")
- objectId | Допустимый идентификатор объекта Azure AD. |  (device.objectId -eq 76ad43c9-32c5-45e8-a272-7b58b58f596d")
+ objectId | Допустимый идентификатор объекта Azure AD. |  (device.objectId -eq "76ad43c9-32c5-45e8-a272-7b58b58f596d")
  девицефисикалидс | любое строковое значение, используемое автопилотом, например все устройства автопилота, OrderID или PurchaseOrderID  | (Device. Девицефисикалидс-Any _-содержит "[Зтдид]") (Device. Девицефисикалидс-Any _-EQ "[OrderID]: 179887111881") (Device. Девицефисикалидс-Any _-EQ "[PurchaseOrderId]: 76222342342")
  systemLabels | Любая строка, соответствующая свойству устройства Intune, для добавления тегов устройств в Modern Workplace. | (Device. Системлабелс — содержит "M365Managed")
 
 > [!Note]  
 > При создании динамических групп для устройств необходимо указать для атрибута deviceOwnership значение Company (Организация). В Intune этому значению соответствует тип владения устройством Corporate (Корпоративное). Дополнительные сведения см. в разделе [OwnerTypes](https://docs.microsoft.com/intune/reports-ref-devices#ownertypes). 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 В следующих статьях содержатся дополнительные сведения о группах в Azure Active Directory.
 

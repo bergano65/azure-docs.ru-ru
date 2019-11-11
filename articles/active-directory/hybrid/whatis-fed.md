@@ -1,5 +1,5 @@
 ---
-title: Использование федерации с Azure Active Directory | Документы Майкрософт
+title: Использование федерации с Azure Active Directory | Документация Майкрософт
 description: Использование федерации с Azure Active Directory
 services: active-directory
 author: billmath
@@ -13,12 +13,12 @@ ms.date: 11/28/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 52f9832a4307ea9519df448f192eeca70043a6d6
-ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
+ms.openlocfilehash: aeb8886987c09b504262d6ea12863a646d6022cc
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70035172"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73883647"
 ---
 # <a name="what-is-federation-with-azure-ad"></a>Использование федерации с Azure Active Directory
 
@@ -33,9 +33,9 @@ ms.locfileid: "70035172"
 > Если вы решите использовать федерацию со службами федерации Active Directory (AD FS), вы сможете дополнительно настроить синхронизацию хэша паролей как дополнительную защиту на случай сбоя в инфраструктуре AD FS.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Что собой представляет гибридная идентификация](https://docs.microsoft.com/en-us/azure/active-directory/hybrid/whatis-hybrid-identity)
+- [Что собой представляет гибридная идентификация](https://docs.microsoft.com/azure/active-directory/hybrid/whatis-hybrid-identity)
 - [Использование Azure AD Connect с расширением Azure AD Connect Health](whatis-azure-ad-connect.md)
 - [Использование синхронизации хэша паролей](whatis-phs.md)
 - [Использование федерации](whatis-fed.md)

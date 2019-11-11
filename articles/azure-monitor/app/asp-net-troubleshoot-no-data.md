@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 07/23/2018
-ms.openlocfilehash: 0bb32486ea3fcfd37337b18b02f4f432effa8f75
-ms.sourcegitcommit: 1bd2207c69a0c45076848a094292735faa012d22
+ms.openlocfilehash: 857188ebb5ddc3c24f6a225819c47fc1643417e6
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72678330"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73887530"
 ---
 # <a name="troubleshooting-no-data---application-insights-for-net"></a>Устранение неполадок, связанных с тем, что в Application Insights для .NET не отображаются данные
 ## <a name="some-of-my-telemetry-is-missing"></a>Некоторая телеметрия отсутствует
@@ -113,7 +113,7 @@ ms.locfileid: "72678330"
 
 Исправление:
 
-* В обозревателе решений щелкните проект правой кнопкой мыши и выберите пункт Application Insights, а затем — "Настроить Application Insights". В открывшемся диалоговом окне можно отправить данные телеметрии в существующий ресурс или создать новый. Или сделайте так:
+* В обозревателе решений щелкните проект правой кнопкой мыши и выберите пункт Application Insights, а затем — "Настроить Application Insights". В открывшемся диалоговом окне можно отправить данные телеметрии в существующий ресурс или создать новый. Или:
 * Откройте ресурс напрямую. Войдите на [портал Azure](https://portal.azure.com), выберите пункт Application Insights на панели навигации слева и выберите приложение.
 
 ## <a name="where-do-i-find-my-telemetry"></a>Где найти мои данные телеметрии
@@ -174,14 +174,14 @@ ms.locfileid: "72678330"
 О прекращении ведения журналов с IP-адресами клиентов было объявлено 5 февраля 2018 г. Это не влияет на географическое расположение.
 
 > [!NOTE]
-> Если вам требуются первые три октета IP-адресов, можно использовать [инициализатор телеметрии](https://docs.microsoft.com/azure/application-insights/app-insights-api-filtering-sampling#add-properties-itelemetryinitializer) для добавления пользовательского свойства.
+> Если вам требуются первые три октета IP-адресов, можно использовать [инициализатор телеметрии](https://docs.microsoft.com/azure/application-insights/app-insights-api-filtering-sampling#addmodify-properties-itelemetryinitializer) для добавления пользовательского свойства.
 > Это изменение не влияет на данные, собранные до 5 февраля 2018 г.
 
 ## <a name="wrong-geographical-data-in-user-telemetry"></a>Неправильные географические данные в телеметрии пользователя
 Город, область и страна определяются по IP-адресу и не всегда являются точными. Эти IP-адреса сначала обрабатываются для расположения, а затем изменяются на IP-адрес 0.0.0.0 для хранения.
 
 ## <a name="exception-method-not-found-on-running-in-azure-cloud-services"></a>Исключение "метод не найден" при выполнении в облачных службах Azure
-Выполняется сборка для .NET 4.6? Версия 4.6 не поддерживается автоматически в ролях облачных служб Azure. [установите версию 4.6 в каждой роли](../../cloud-services/cloud-services-dotnet-install-dotnet.md) .
+Выполняется сборка для .NET 4.6? Версия 4.6 не поддерживается автоматически в ролях облачных служб Azure. [Установите версию 4.6 в каждой роли](../../cloud-services/cloud-services-dotnet-install-dotnet.md) , прежде чем запустить приложение.
 
 ## <a name="troubleshooting-logs"></a>Журналы для устранения неполадок
 

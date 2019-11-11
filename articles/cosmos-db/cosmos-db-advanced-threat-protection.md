@@ -8,12 +8,12 @@ ms.custom: seodec18
 ms.author: memildin
 author: memildin
 manager: rkarlin
-ms.openlocfilehash: dca653bfaf625ff31e4dd7f43752219b312779d1
-ms.sourcegitcommit: e0a1a9e4a5c92d57deb168580e8aa1306bd94723
+ms.openlocfilehash: 57303c41d90f6205c284c7de67bb8643aa3cd368
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72286760"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73888069"
 ---
 # <a name="advanced-threat-protection-for-azure-cosmos-db"></a>Расширенная защита от угроз для Azure Cosmos DB
 
@@ -61,7 +61,7 @@ ms.locfileid: "72286760"
 ### <a name="using-azure-resource-manager-templates"></a>Использование шаблонов диспетчера ресурсов Azure
 
 Используйте шаблон Azure Resource Manager, чтобы настроить Cosmos DB с включенной Advanced Threat protection.
-Дополнительные сведения см. [в статье Создание учетной записи CosmosDB с помощью Advanced Threat protection](https://azure.microsoft.com/en-us/resources/templates/201-cosmosdb-advanced-threat-protection-create-account/).
+Дополнительные сведения см. [в статье Создание учетной записи CosmosDB с помощью Advanced Threat protection](https://azure.microsoft.com/resources/templates/201-cosmosdb-advanced-threat-protection-create-account/).
 
 ### <a name="using-azure-policy"></a>Использование политики Azure
 
@@ -99,7 +99,7 @@ ms.locfileid: "72286760"
 
  Список предупреждений, созданных при наблюдении за учетными записями Azure Cosmos DB, см. в разделе [Cosmos DB Alerts](../security-center/security-center-alerts-data-services.md#cosmos-db) в документации по центру безопасности.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 * Дополнительные сведения о [ведении журналов диагностики в Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/logging#turn-on-logging-in-the-azure-portal)
 * Узнайте больше о [центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-intro).

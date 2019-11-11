@@ -7,12 +7,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 4/11/2019
 ms.author: alkarche
-ms.openlocfilehash: 34759077bd7223d17fea70d32bda63fd1b2595eb
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 4e55932d47389e09b135d571d0e000b9795e6edc
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73668125"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73884961"
 ---
 # <a name="azure-functions-networking-options"></a>Параметры сети функций Azure
 
@@ -86,7 +86,7 @@ ms.locfileid: "73668125"
 Функция интеграции виртуальной сети:
 
 * Требуется план службы приложений "Стандартный", "Премиум" или "категории премиум v2"
-* поддержка TCP и UDP
+* Поддержка TCP и UDP
 * Работает с приложениями службы приложений и приложениями функций
 
 Интеграция с виртуальной сетью не поддерживается, в том числе:
@@ -117,6 +117,12 @@ ms.locfileid: "73668125"
 
 [Дополнительные сведения о требованиях к учетной записи хранения.](./functions-create-function-app-portal.md#storage-account-requirements)
 
+### <a name="using-key-vault-references"></a>Использование Key Vault ссылок 
+
+Key Vault ссылки позволяют использовать секреты из Azure Key Vault в приложении "функции Azure" без каких бы то ни было изменений кода. Azure Key Vault — это служба, которая обеспечивает централизованное управление секретами с полным контролем над политиками доступа и журналом аудита.
+
+В настоящее время [Key Vault ссылки](../app-service/app-service-key-vault-references.md) не будут работать, если ваша Key Vault защищена с помощью конечных точек службы. Чтобы подключиться к Key Vault с помощью интеграции с виртуальной сетью, необходимо вызвать хранилище ключей в коде приложения.
+
 ## <a name="virtual-network-triggers-non-http"></a>Триггеры виртуальной сети (не HTTP)
 
 В настоящее время для использования триггеров функций, отличных от HTTP, в виртуальной сети необходимо запустить приложение-функцию в плане службы приложений или в Среда службы приложений.
@@ -139,7 +145,7 @@ ms.locfileid: "73668125"
 
 При интеграции приложения-функции в план Premium или план службы приложений с виртуальной сетью приложение может выполнять исходящие вызовы через Интернет.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о работе с сетью и функциях Azure:
 

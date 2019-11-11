@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: lahugh
-ms.openlocfilehash: 6d90075f866cb65e5428a1641ebd4cf77dd2a887
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: b5cc4a511d6347d28a1737932c1b4b5b768d3fc4
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73479577"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73891573"
 ---
 # <a name="support-for-generation-2-vms-on-azure"></a>Поддержка виртуальных машин поколения 2 в Azure
 
@@ -59,7 +59,8 @@ ms.locfileid: "73479577"
 * Windows Server 2012 Datacenter
 * SUSE Linux Enterprise Server 15 с пакетом обновления 1
 * SUSE Linux Enterprise Server 12 SP4
-* Ubuntu Server 16.04 или более поздней версии;
+* Ubuntu Server 16.04, 18.04, 19,04, 19,10 
+* RHEL 8,0
 
 ## <a name="on-premises-vs-azure-generation-2-vms"></a>Локальная среда и виртуальные машины поколения 2 для Azure
 
@@ -101,7 +102,7 @@ ms.locfileid: "73479577"
 
 В портал Azure или Azure CLI можно создать виртуальные машины поколения 2 из образа Marketplace, который поддерживает загрузку UEFI.
 
-#### <a name="azure-portal"></a>Портал Azure
+#### <a name="azure-portal"></a>портале Azure
 
 Образы поколения 2 для Windows и SLES включены в одно и то же предложение сервера в качестве образов Gen1. Это означает, что с точки зрения потока вы выбрали предложение и номер SKU на портале для виртуальной машины. Если SKU поддерживает образы поколения 1 и 2, можно выбрать создание виртуальной машины поколения 2 на вкладке *Дополнительно* в последовательности создания виртуальной машины.
 
@@ -139,7 +140,7 @@ Get-AzVMImageSku -Location westus2 -PublisherName MicrosoftWindowsServer -Offer 
 
 Вы можете создать виртуальную машину поколения 2 из управляемого образа или управляемого диска таким же образом, как и виртуальная машина поколения 1.
 
-### <a name="virtual-machine-scale-sets"></a>Масштабируемые наборы виртуальных машин
+### <a name="virtual-machine-scale-sets"></a>наборы для масштабирования виртуальных машин
 
 Вы также можете создать виртуальные машины поколения 2 с помощью масштабируемых наборов виртуальных машин. В Azure CLI используйте масштабируемые наборы Azure для создания виртуальных машин поколения 2.
 
@@ -149,7 +150,7 @@ Get-AzVMImageSku -Location westus2 -PublisherName MicrosoftWindowsServer -Offer 
     Да. Но не все [размеры виртуальных машин поколения 2](#generation-2-vm-sizes) доступны в каждом регионе. Доступность виртуальной машины поколения 2 зависит от доступности размера виртуальной машины.
 
 * **Есть ли разница в ценах между виртуальными машинами поколения 1 и 2?**  
-    Нет.
+    Нет
 
 * **У меня есть VHD-файл из локальной виртуальной машины поколения 2. Можно ли использовать этот VHD-файл для создания виртуальной машины поколения 2 в Azure?**
   Да, вы можете перенести VHD-файл версии 2 в Azure и использовать его для создания виртуальной машины поколения 2. Для этого выполните следующие действия.
@@ -191,6 +192,6 @@ Get-AzVMImageSku -Location westus2 -PublisherName MicrosoftWindowsServer -Offer 
 * **Можно ли перенести виртуальную машину из поколения 1 в поколение 2?**  
     Нет, вы не сможете изменить создание виртуальной машины после ее создания. Если необходимо переключиться между поколениями виртуальных машин, создайте новую виртуальную машину другого поколения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * Дополнительные сведения о [виртуальных машинах версии 2 в Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/plan/should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v).

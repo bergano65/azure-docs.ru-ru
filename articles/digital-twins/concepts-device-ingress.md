@@ -7,13 +7,13 @@ manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 09/17/2019
-ms.openlocfilehash: 6c61bc6075b3f0713dd790f1b3aa1a47af9d8e6c
-ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
+ms.date: 11/07/2019
+ms.openlocfilehash: 723fe14db9089e1127f39eae3ed7b10bbddf70bf
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71950022"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73889711"
 ---
 # <a name="device-connectivity-and-telemetry-ingress"></a>Возможность подключения устройств и входящие данные телеметрии
 
@@ -67,17 +67,17 @@ YOUR_MANAGEMENT_API_URL/devices?HardwareIds=YOUR_DEVICE_HARDWARE_ID&includes=Con
 
  Содержимое полезных данных **сообщения** может быть произвольными данными размером до 256 КБ. Существует ряд требований, ожидаемый для свойств типа [`Message.Properties`](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.message.properties?view=azure-dotnet). В таблице показаны обязательные и необязательные свойства, поддерживаемые системой.
 
-| Имя свойства | Значение | Обязательное значение | Описание |
+| Имя свойства | Значение | обязательные | ОПИСАНИЕ |
 |---|---|---|---|
-| **DigitalTwins-Telemetry** | 1.0 | Да | Постоянное значение, которое идентифицирует сообщение в системе. |
-| **DigitalTwins-SensorHardwareId** | `string(72)` | Да | Уникальный идентификатор датчика, отправляющего **сообщение**. Это значение должно соответствовать свойству **HardwareId** объекта, чтобы система могла его обработать. Например, `00FF0643BE88-CO2`. |
-| **CreationTimeUtc** | `string` | Нет | Строка даты в формате [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601), идентифицирующая время выборки полезных данных. Например, `2018-09-20T07:35:00.8587882-07:00`. |
-| **CorrelationId** | `string` | Нет | UUID, который может использоваться для трассировки событий в системе. Например, `cec16751-ab27-405d-8fe6-c68e1412ce1f`.
+| **DigitalTwins-Telemetry** | 1.0 | Yes | Постоянное значение, которое идентифицирует сообщение в системе. |
+| **DigitalTwins-SensorHardwareId** | `string(72)` | Yes | Уникальный идентификатор датчика, отправляющего **сообщение**. Это значение должно соответствовать свойству **HardwareId** объекта, чтобы система могла его обработать. Пример: `00FF0643BE88-CO2`. |
+| **CreationTimeUtc** | `string` | Нет | Строка даты в формате [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601), идентифицирующая время выборки полезных данных. Пример: `2018-09-20T07:35:00.8587882-07:00`. |
+| **CorrelationId** | `string` | Нет | UUID, который может использоваться для трассировки событий в системе. Пример: `cec16751-ab27-405d-8fe6-c68e1412ce1f`.
 
 ### <a name="send-your-message-to-digital-twins"></a>Отправка сообщения в Digital Twins
 
 Используйте вызов [SendEventAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.deviceclient.sendeventasync?view=azure-dotnet) или [SendEventBatchAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.deviceclient.sendeventbatchasync?view=azure-dotnet) свойства DeviceClient для отправки сообщения в Digital Twins.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 - Дополнительные сведения о возможностях обработки данных Azure Digital Twins и определяемых пользователем функциях см. в статье [Обработка данных и определяемые пользователем функции](concepts-user-defined-functions.md).

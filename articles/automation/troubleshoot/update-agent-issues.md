@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: automation
 ms.subservice: update-management
 manager: carmonm
-ms.openlocfilehash: 956e31c157c667acd2f830702467249d869648cb
-ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
+ms.openlocfilehash: d3099498c3abea428e04d94ca0fcd553e6a0fec6
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69971275"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73886401"
 ---
 # <a name="understand-the-windows-agent-check-results-in-update-management"></a>Общие сведения о результатах проверки агента Windows в службе "Управление обновлениями"
 
@@ -48,11 +48,11 @@ ms.locfileid: "69971275"
 
 ## <a name="prerequisite-checks"></a>Проверка предварительных требований
 
-### <a name="operating-system"></a>Операционная система
+### <a name="operating-system"></a>операционная система
 
 Проверка операционной системы обнаруживает, работает ли в гибридной рабочей роли Runbook одна из этих операционных систем:
 
-|Операционная система  |Примечания  |
+|операционная система  |Примечания  |
 |---------|---------|
 |Windows Server 2008 R2 RTM, Windows Server 2008 | Поддерживает только оценки обновлений.         |
 |Windows Server 2008 R2 с пакетом обновления 1 и более поздней версии |Требуется .NET Framework 4.6.1 или более поздней версии. ([Скачать .NET Framework](/dotnet/framework/install/guide-for-developers))<br/> Требуется Windows PowerShell 5,1.  ([Скачать Windows Management Framework 5.1](https://www.microsoft.com/download/details.aspx?id=54616))        |
@@ -107,7 +107,7 @@ ms.locfileid: "69971275"
 
 ## <a name="troubleshoot-offline"></a>Автономное устранение неполадок
 
-Средство устранения неполадок можно использовать в гибридной рабочей роли в автономном режиме, запустив скрипт локально. Скрипт [Troubleshoot-WindowsUpdateAgentRegistration](https://www.powershellgallery.com/packages/Troubleshoot-WindowsUpdateAgentRegistration) можно найти в коллекции PowerShell. Для запуска скрипта необходимо установить WMF 4,0 или более поздней версии. Чтобы скачать последнюю версию PowerShell, см. статью [Установка различных версий PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell).
+Средство устранения неполадок можно использовать в гибридной рабочей роли в автономном режиме, запустив скрипт локально. Скрипт [Troubleshoot-WindowsUpdateAgentRegistration](https://www.powershellgallery.com/packages/Troubleshoot-WindowsUpdateAgentRegistration) можно найти в коллекции PowerShell. Для запуска скрипта необходимо установить WMF 4,0 или более поздней версии. Чтобы скачать последнюю версию PowerShell, см. статью [Установка различных версий PowerShell](https://docs.microsoft.com/powershell/scripting/install/installing-powershell).
 
 Выходные данные этого скрипта выглядят так:
 
@@ -203,7 +203,7 @@ CheckResultMessageId        : TlsVersionCheck.Passed.EnabledByDefault
 CheckResultMessageArguments : {}
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Чтобы устранить другие неполадки, ознакомьтесь со статьей [Устранение неполадок с гибридными рабочими ролями Runbook](hybrid-runbook-worker.md).
 

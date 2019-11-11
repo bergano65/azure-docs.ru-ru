@@ -12,29 +12,30 @@ ms.devlang: tbd
 ms.topic: conceptual
 ms.tgt_pltfrm: dotnet
 ms.workload: na
-ms.date: 04/10/2019
+ms.date: 11/04/2019
 ms.author: aschhab
-ms.openlocfilehash: abef7815effcf420c8a0065ed46ce3c16c19ebe0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: cecd37c16d34c0cd6cf7a4d98732762d16073864
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65991762"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73884117"
 ---
 # <a name="get-started-with-service-bus-queues"></a>Начало работы с очередями служебной шины
 [!INCLUDE [service-bus-selector-queues](../../includes/service-bus-selector-queues.md)]
-В этом руководстве вы создадите консольные приложения .NET Core, чтобы отправлять и получать сообщения из очереди служебной шины. 
+В этом руководстве вы создадите консольные приложения .NET Core для отправки сообщений в очередь служебной шины и получения сообщений из нее.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
-1. [Visual Studio 2017 с обновлением 3 (версия 15.3, 26730.01)](https://www.visualstudio.com/vs) или более новая версия.
-2. [Пакет SDK для .NET Core](https://www.microsoft.com/net/download/windows) версии 2.0 или более новой.
-2. Подписка Azure. Для работы с этим учебником требуется учетная запись Azure. Вы можете активировать ваши [преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/?WT.mc_id=A85619ABF) или зарегистрироваться для [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
-3. Если у вас нет очереди для работы с, выполните шаги [с помощью портала Azure создать очередь служебной шины](service-bus-quickstart-portal.md) статью, чтобы создать очередь.
-    1. Чтение быстрого **Обзор** служебной шины **очереди**. 
-    2. Чтобы создать служебную шину **пространства имен**. 
-    3. Получить **строку подключения**. 
-    4. Чтобы создать служебную шину **очереди**. 
+- [Visual Studio 2019](https://www.visualstudio.com/vs).
+- [Пакет SDK для .NET Core](https://www.microsoft.com/net/download/windows) версии 2.0 или более новой.
+- Подписка Azure. Для работы с этим учебником требуется учетная запись Azure. Вы можете активировать [преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/?WT.mc_id=A85619ABF) или зарегистрироваться для использования [бесплатной учетной записи](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
+- Если у вас нет очереди для работы, выполните действия, описанные в статье [использование портал Azure для создания очереди служебной шины](service-bus-quickstart-portal.md) для создания очереди.
+
+  - Ознакомьтесь с кратким обзором очередей служебной шины.
+  - Создайте пространство имен служебной шины.
+  - Получите строку подключения.
+  - Создается очередь служебной шины.
 
 ## <a name="send-messages-to-the-queue"></a>Отправка сообщений в очередь
 
@@ -42,19 +43,20 @@ ms.locfileid: "65991762"
 
 ### <a name="create-a-console-application"></a>Создание консольного приложение
 
-Откройте Visual Studio и создайте проект **Консольное приложение (.NET Core)** .
+Запустите Visual Studio и создайте проект **консольного приложения (.NET Core)** для C#. В этом примере имя приложения *коресендерапп*.
 
 ### <a name="add-the-service-bus-nuget-package"></a>Получение пакета NuGet для служебной шины
 
 1. Щелкните созданный проект правой кнопкой мыши и выберите **Управление пакетами NuGet**.
-2. Откройте вкладку **Обзор**, выполните поиск по фразе **[Microsoft.Azure.ServiceBus](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus/)** и выберите элемент **Microsoft.Azure.ServiceBus**. Щелкните **Установить** , чтобы выполнить установку, а затем закройте это диалоговое окно.
-   
+1. Щелкните **Обзор**. Найдите и выберите **[Microsoft. Azure. servicebus](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus/)** .
+1. Нажмите кнопку **установить** , чтобы завершить установку, а затем закройте диспетчер пакетов NuGet.
+
     ![Установка пакета NuGet][nuget-pkg]
 
 ### <a name="write-code-to-send-messages-to-the-queue"></a>Написание кода для отправки сообщений в очередь
 
-1. В файл Program.cs добавьте следующие операторы `using` в начале определения пространства имен перед объявлением класса.
-   
+1. В *Program.CS*добавьте следующие операторы `using` в начале определения пространства имен перед объявлением класса:
+
     ```csharp
     using System.Text;
     using System.Threading;
@@ -62,21 +64,23 @@ ms.locfileid: "65991762"
     using Microsoft.Azure.ServiceBus;
     ```
 
-2. В классе `Program` объявите приведенные ниже переменные. Укажите для переменной `ServiceBusConnectionString` строку подключения, полученную при создании пространства имен, и задайте для `QueueName` имя очереди, которое использовалось при ее создании.
-   
+1. В классе `Program` объявите следующие переменные:
+
     ```csharp
     const string ServiceBusConnectionString = "<your_connection_string>";
     const string QueueName = "<your_queue_name>";
     static IQueueClient queueClient;
-    ``` 
+    ```
 
-3. Замените содержимое объекта `Main()` по умолчанию следующей строкой кода:
+    Введите строку подключения для пространства имен в качестве `ServiceBusConnectionString` переменной. Введите имя очереди.
+
+1. Замените содержимое объекта `Main()` по умолчанию следующей строкой кода:
 
     ```csharp
     MainAsync().GetAwaiter().GetResult();
     ```
 
-4. Сразу после `Main()` добавьте следующий асинхронный метод `MainAsync()`, который позволяет вызвать метод отправки сообщений:
+1. Сразу после `Main()` добавьте следующий асинхронный метод `MainAsync()`, который позволяет вызвать метод отправки сообщений:
 
     ```csharp
     static async Task MainAsync()
@@ -97,7 +101,7 @@ ms.locfileid: "65991762"
     }
     ```
 
-5. Сразу после метода `MainAsync()` добавьте следующий метод `SendMessagesAsync()`, который позволяет отправлять такое число сообщений, как задано для параметра `numberOfMessagesToSend` (текущее значение — 10):
+1. Сразу после метода `MainAsync()` добавьте следующий метод `SendMessagesAsync()`, который выполняет отправку количества сообщений, указанных `numberOfMessagesToSend` (в настоящее время установлено равным 10):
 
     ```csharp
     static async Task SendMessagesAsync(int numberOfMessagesToSend)
@@ -123,86 +127,94 @@ ms.locfileid: "65991762"
         }
     }
     ```
-   
-6. Вот как будет выглядеть файл Program.cs.
-   
-    ```csharp
-    namespace CoreSenderApp
+
+Вот как должен выглядеть файл *Program.CS* .
+
+```csharp
+namespace CoreSenderApp
+{
+    using System;
+    using System.Text;
+    using System.Threading;
+    using System.Threading.Tasks;
+    using Microsoft.Azure.ServiceBus;
+
+    class Program
     {
-        using System;
-        using System.Text;
-        using System.Threading;
-        using System.Threading.Tasks;
-        using Microsoft.Azure.ServiceBus;
+        // Connection String for the namespace can be obtained from the Azure portal under the 
+        // 'Shared Access policies' section.
+        const string ServiceBusConnectionString = "<your_connection_string>";
+        const string QueueName = "<your_queue_name>";
+        static IQueueClient queueClient;
 
-        class Program
+        static void Main(string[] args)
         {
-            // Connection String for the namespace can be obtained from the Azure portal under the 
-            // 'Shared Access policies' section.
-            const string ServiceBusConnectionString = "<your_connection_string>";
-            const string QueueName = "<your_queue_name>";
-            static IQueueClient queueClient;
+            MainAsync().GetAwaiter().GetResult();
+        }
 
-            static void Main(string[] args)
+        static async Task MainAsync()
+        {
+            const int numberOfMessages = 10;
+            queueClient = new QueueClient(ServiceBusConnectionString, QueueName);
+
+            Console.WriteLine("======================================================");
+            Console.WriteLine("Press ENTER key to exit after sending all the messages.");
+            Console.WriteLine("======================================================");
+
+            // Send Messages
+            await SendMessagesAsync(numberOfMessages);
+
+            Console.ReadKey();
+
+            await queueClient.CloseAsync();
+        }
+
+        static async Task SendMessagesAsync(int numberOfMessagesToSend)
+        {
+            try
             {
-                MainAsync().GetAwaiter().GetResult();
-            }
-
-            static async Task MainAsync()
-            {
-                const int numberOfMessages = 10;
-                queueClient = new QueueClient(ServiceBusConnectionString, QueueName);
-
-                Console.WriteLine("======================================================");
-                Console.WriteLine("Press ENTER key to exit after sending all the messages.");
-                Console.WriteLine("======================================================");
-
-                // Send Messages
-                await SendMessagesAsync(numberOfMessages);
-                        
-                Console.ReadKey();
-
-                await queueClient.CloseAsync();
-            }
-
-            static async Task SendMessagesAsync(int numberOfMessagesToSend)
-            {
-                try
+                for (var i = 0; i < numberOfMessagesToSend; i++)
                 {
-                    for (var i = 0; i < numberOfMessagesToSend; i++)
-                    {
-                        // Create a new message to send to the queue
-                        string messageBody = $"Message {i}";
-                        var message = new Message(Encoding.UTF8.GetBytes(messageBody));
+                    // Create a new message to send to the queue
+                    string messageBody = $"Message {i}";
+                    var message = new Message(Encoding.UTF8.GetBytes(messageBody));
 
-                        // Write the body of the message to the console
-                        Console.WriteLine($"Sending message: {messageBody}");
+                    // Write the body of the message to the console
+                    Console.WriteLine($"Sending message: {messageBody}");
 
-                        // Send the message to the queue
-                        await queueClient.SendAsync(message);
-                    }
+                    // Send the message to the queue
+                    await queueClient.SendAsync(message);
                 }
-                catch (Exception exception)
-                {
-                    Console.WriteLine($"{DateTime.Now} :: Exception: {exception.Message}");
-                }
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine($"{DateTime.Now} :: Exception: {exception.Message}");
             }
         }
     }
-    ```
+}
+```
 
-7. Запустите программу и перейдите на портал Azure. В окне **Обзор** пространства имен щелкните имя очереди. Отобразится экран очереди **Основное**. Обратите внимание, что значение параметра **Количество активных сообщений** должно равняться **десяти**. Каждый раз при запуске приложения отправителя без получения сообщений (как указано в следующем разделе) это значение увеличивается на 10. А при каждом добавлении сообщения в очередь текущий размер очереди увеличивается, как и значение параметра **Текущий** в колонке **Основное**.
-   
-      ![Размер сообщения][queue-message]
+Запустите программу и проверьте портал Azure.
+
+Выберите имя очереди в окне **Обзор** пространства имен, чтобы отобразить список **основных**компонентов очереди.
+
+![Получено сообщений с количеством и размером][queue-message]
+
+Значение **счетчика активных сообщений** для очереди теперь равно **10**. Каждый раз, когда вы запускаете это приложение отправителя без получения сообщений, это значение увеличивается на 10.
+
+Текущий размер очереди увеличивает **Текущее** значение в **Essentials** каждый раз, когда приложение добавляет сообщения в очередь.
+
+В следующем разделе описано, как получить эти сообщения.
 
 ## <a name="receive-messages-from-the-queue"></a>Получение сообщений из очереди
 
-Чтобы получить отправленных сообщений, создайте другое консольное приложение .NET Core и установить **Microsoft.Azure.ServiceBus** пакет NuGet с инструкциями для предыдущего приложения отправителя.
+Чтобы получить отправленные сообщения, создайте другое приложение **консольного приложения (.NET Core)** . Установите пакет NuGet **Microsoft. Azure. servicebus** , как и для приложения отправителя.
 
 ### <a name="write-code-to-receive-messages-from-the-queue"></a>Написание кода для получения сообщений из очереди
 
-1. В файл Program.cs добавьте следующие операторы `using` в начале определения пространства имен перед объявлением класса.
-   
+1. В *Program.CS*добавьте следующие операторы `using` в начале определения пространства имен перед объявлением класса:
+
     ```csharp
     using System.Text;
     using System.Threading;
@@ -210,21 +222,23 @@ ms.locfileid: "65991762"
     using Microsoft.Azure.ServiceBus;
     ```
 
-2. В классе `Program` объявите приведенные ниже переменные. Укажите для переменной `ServiceBusConnectionString` строку подключения, полученную при создании пространства имен, и задайте для `QueueName` имя очереди, которое использовалось при ее создании.
-   
+1. В классе `Program` объявите следующие переменные:
+
     ```csharp
     const string ServiceBusConnectionString = "<your_connection_string>";
     const string QueueName = "<your_queue_name>";
     static IQueueClient queueClient;
     ```
 
-3. Замените содержимое объекта `Main()` по умолчанию следующей строкой кода:
+    Введите строку подключения для пространства имен в качестве `ServiceBusConnectionString` переменной. Введите имя очереди.
+
+1. Замените содержимое объекта `Main()` по умолчанию следующей строкой кода:
 
     ```csharp
     MainAsync().GetAwaiter().GetResult();
     ```
 
-4. Сразу после `Main()` добавьте следующий асинхронный метод `MainAsync()`, который позволяет вызвать метод `RegisterOnMessageHandlerAndReceiveMessages()`.
+1. Сразу после `Main()` добавьте следующий асинхронный метод `MainAsync()`, который позволяет вызвать метод `RegisterOnMessageHandlerAndReceiveMessages()`.
 
     ```csharp
     static async Task MainAsync()
@@ -244,7 +258,7 @@ ms.locfileid: "65991762"
     }
     ```
 
-5. Сразу после метода `MainAsync()` добавьте следующий метод, который позволяет зарегистрировать обработчик сообщений и получать сообщения, отправленные приложением-отправителем:
+1. Сразу после метода `MainAsync()` добавьте следующий метод, который регистрирует обработчик сообщений и получает сообщения, отправленные приложением отправителя:
 
     ```csharp
     static void RegisterOnMessageHandlerAndReceiveMessages()
@@ -266,8 +280,8 @@ ms.locfileid: "65991762"
     }
     ```
 
-6. Сразу после предыдущего метода добавьте следующий метод `ProcessMessagesAsync()` для обработки полученных сообщений:
- 
+1. Сразу после предыдущего метода добавьте следующий метод `ProcessMessagesAsync()` для обработки полученных сообщений:
+
     ```csharp
     static async Task ProcessMessagesAsync(Message message, CancellationToken token)
     {
@@ -284,8 +298,8 @@ ms.locfileid: "65991762"
     }
     ```
 
-7. Наконец, добавьте следующий метод для обработки исключений, которые могут возникнуть:
- 
+1. Наконец, добавьте следующий метод для обработки исключений, которые могут возникнуть:
+
     ```csharp
     // Use this handler to examine the exceptions received on the message pump.
     static Task ExceptionReceivedHandler(ExceptionReceivedEventArgs exceptionReceivedEventArgs)
@@ -297,110 +311,111 @@ ms.locfileid: "65991762"
         Console.WriteLine($"- Entity Path: {context.EntityPath}");
         Console.WriteLine($"- Executing Action: {context.Action}");
         return Task.CompletedTask;
-    }    
-    ```    
-   
-8. Вот как будет выглядеть файл Program.cs.
-   
-    ```csharp
-    namespace CoreReceiverApp
-    {
-        using System;
-        using System.Text;
-        using System.Threading;
-        using System.Threading.Tasks;
-        using Microsoft.Azure.ServiceBus;
-
-        class Program
-        {
-            // Connection String for the namespace can be obtained from the Azure portal under the 
-            // 'Shared Access policies' section.
-            const string ServiceBusConnectionString = "<your_connection_string>";
-            const string QueueName = "<your_queue_name>";
-            static IQueueClient queueClient;
-
-            static void Main(string[] args)
-            {
-                MainAsync().GetAwaiter().GetResult();
-            }
-
-            static async Task MainAsync()
-            {
-                queueClient = new QueueClient(ServiceBusConnectionString, QueueName);
-
-                Console.WriteLine("======================================================");
-                Console.WriteLine("Press ENTER key to exit after receiving all the messages.");
-                Console.WriteLine("======================================================");
-
-                // Register QueueClient's MessageHandler and receive messages in a loop
-                RegisterOnMessageHandlerAndReceiveMessages();
-                    
-                Console.ReadKey();
-
-                await queueClient.CloseAsync();
-            }
-
-            static void RegisterOnMessageHandlerAndReceiveMessages()
-            {
-                // Configure the MessageHandler Options in terms of exception handling, number of concurrent messages to deliver etc.
-                var messageHandlerOptions = new MessageHandlerOptions(ExceptionReceivedHandler)
-                {
-                    // Maximum number of Concurrent calls to the callback `ProcessMessagesAsync`, set to 1 for simplicity.
-                    // Set it according to how many messages the application wants to process in parallel.
-                    MaxConcurrentCalls = 1,
-
-                    // Indicates whether MessagePump should automatically complete the messages after returning from User Callback.
-                    // False below indicates the Complete will be handled by the User Callback as in `ProcessMessagesAsync` below.
-                    AutoComplete = false
-                };
-
-                // Register the function that will process messages
-                queueClient.RegisterMessageHandler(ProcessMessagesAsync, messageHandlerOptions);
-            }
-
-            static async Task ProcessMessagesAsync(Message message, CancellationToken token)
-            {
-                // Process the message
-                Console.WriteLine($"Received message: SequenceNumber:{message.SystemProperties.SequenceNumber} Body:{Encoding.UTF8.GetString(message.Body)}");
-
-                // Complete the message so that it is not received again.
-                // This can be done only if the queueClient is created in ReceiveMode.PeekLock mode (which is default).
-                await queueClient.CompleteAsync(message.SystemProperties.LockToken);
-
-                // Note: Use the cancellationToken passed as necessary to determine if the queueClient has already been closed.
-                // If queueClient has already been Closed, you may chose to not call CompleteAsync() or AbandonAsync() etc. calls 
-               // to avoid unnecessary exceptions.
-            }
-
-            static Task ExceptionReceivedHandler(ExceptionReceivedEventArgs exceptionReceivedEventArgs)
-            {
-                Console.WriteLine($"Message handler encountered an exception {exceptionReceivedEventArgs.Exception}.");
-                var context = exceptionReceivedEventArgs.ExceptionReceivedContext;
-                Console.WriteLine("Exception context for troubleshooting:");
-                Console.WriteLine($"- Endpoint: {context.Endpoint}");
-                Console.WriteLine($"- Entity Path: {context.EntityPath}");
-                Console.WriteLine($"- Executing Action: {context.Action}");
-                return Task.CompletedTask;
-            }
-        }
     }
     ```
-4. Запустите программу и перейдите на портал еще раз. Обратите внимание, что значения параметра **Количество активных сообщений** и **Текущий** равны **нулю**.
-   
-    ![Длина очереди][queue-message-receive]
 
-Поздравляем! Теперь вы создали очередь, отправили в нее набор сообщений и получили сообщения из нее.
+Вот как должен выглядеть файл *Program.CS* :
+
+```csharp
+namespace CoreReceiverApp
+{
+    using System;
+    using System.Text;
+    using System.Threading;
+    using System.Threading.Tasks;
+    using Microsoft.Azure.ServiceBus;
+
+    class Program
+    {
+        // Connection String for the namespace can be obtained from the Azure portal under the 
+        // 'Shared Access policies' section.
+        const string ServiceBusConnectionString = "<your_connection_string>";
+        const string QueueName = "<your_queue_name>";
+        static IQueueClient queueClient;
+
+        static void Main(string[] args)
+        {
+            MainAsync().GetAwaiter().GetResult();
+        }
+
+        static async Task MainAsync()
+        {
+            queueClient = new QueueClient(ServiceBusConnectionString, QueueName);
+
+            Console.WriteLine("======================================================");
+            Console.WriteLine("Press ENTER key to exit after receiving all the messages.");
+            Console.WriteLine("======================================================");
+
+            // Register QueueClient's MessageHandler and receive messages in a loop
+            RegisterOnMessageHandlerAndReceiveMessages();
+ 
+            Console.ReadKey();
+
+            await queueClient.CloseAsync();
+        }
+
+        static void RegisterOnMessageHandlerAndReceiveMessages()
+        {
+            // Configure the MessageHandler Options in terms of exception handling, number of concurrent messages to deliver etc.
+            var messageHandlerOptions = new MessageHandlerOptions(ExceptionReceivedHandler)
+            {
+                // Maximum number of Concurrent calls to the callback `ProcessMessagesAsync`, set to 1 for simplicity.
+                // Set it according to how many messages the application wants to process in parallel.
+                MaxConcurrentCalls = 1,
+
+                // Indicates whether MessagePump should automatically complete the messages after returning from User Callback.
+                // False below indicates the Complete will be handled by the User Callback as in `ProcessMessagesAsync` below.
+                AutoComplete = false
+            };
+
+            // Register the function that will process messages
+            queueClient.RegisterMessageHandler(ProcessMessagesAsync, messageHandlerOptions);
+        }
+
+        static async Task ProcessMessagesAsync(Message message, CancellationToken token)
+        {
+            // Process the message
+            Console.WriteLine($"Received message: SequenceNumber:{message.SystemProperties.SequenceNumber} Body:{Encoding.UTF8.GetString(message.Body)}");
+
+            // Complete the message so that it is not received again.
+            // This can be done only if the queueClient is created in ReceiveMode.PeekLock mode (which is default).
+            await queueClient.CompleteAsync(message.SystemProperties.LockToken);
+
+            // Note: Use the cancellationToken passed as necessary to determine if the queueClient has already been closed.
+            // If queueClient has already been Closed, you may chose to not call CompleteAsync() or AbandonAsync() etc. calls 
+            // to avoid unnecessary exceptions.
+        }
+
+        static Task ExceptionReceivedHandler(ExceptionReceivedEventArgs exceptionReceivedEventArgs)
+        {
+            Console.WriteLine($"Message handler encountered an exception {exceptionReceivedEventArgs.Exception}.");
+            var context = exceptionReceivedEventArgs.ExceptionReceivedContext;
+            Console.WriteLine("Exception context for troubleshooting:");
+            Console.WriteLine($"- Endpoint: {context.Endpoint}");
+            Console.WriteLine($"- Entity Path: {context.EntityPath}");
+            Console.WriteLine($"- Executing Action: {context.Action}");
+            return Task.CompletedTask;
+        }
+    }
+}
+```
+
+Запустите программу и перейдите на портал еще раз. **Число активных сообщений** и **текущие** значения теперь равны **0**.
+
+![Очередь после получения сообщений][queue-message-receive]
+
+Поздравляем! Теперь вы создали очередь, отправили в нее набор сообщений и получили эти сообщения из одной очереди.
 
 > [!NOTE]
-> Вы можете управлять ресурсами служебной шины с помощью [обозревателя служебной шины](https://github.com/paolosalvatori/ServiceBusExplorer/). Обозреватель служебной шины позволяет без труда подключаться к пространству имен служебной шины и управлять сущностями обмена сообщениями. Средство предоставляет дополнительные возможности, например функции импорта и экспорта или возможность проверять разделы, очереди, подписки, службы ретрансляции, центры уведомлений и концентраторы событий. 
+> Вы можете управлять ресурсами служебной шины с помощью [обозревателя служебной шины](https://github.com/paolosalvatori/ServiceBusExplorer/). Обозреватель служебной шины позволяет пользователям легко подключаться к пространству имен служебной шины и администрировать сущности обмена сообщениями. Это средство предоставляет расширенные возможности, такие как функции импорта и экспорта, а также возможность тестирования разделов, очередей, подписок, служб ретранслятора, центров уведомлений и концентраторов событий.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Ознакомьтесь с [примерами в репозитории GitHub](https://github.com/Azure/azure-service-bus/tree/master/samples), демонстрирующими расширенные возможности обмена сообщениями служебной шины.
 
 <!--Image references-->
 
 [nuget-pkg]: ./media/service-bus-dotnet-get-started-with-queues/nuget-package.png
-[queue-message]: ./media/service-bus-dotnet-get-started-with-queues/queue-message.png
-[queue-message-receive]: ./media/service-bus-dotnet-get-started-with-queues/queue-message-receive.png
+[queue-message]: ./media/service-bus-dotnet-get-started-with-queues/messages-sent-to-essentials.png
+[queue-message-receive]: ./media/service-bus-dotnet-get-started-with-queues/queue-message-receive-in-essentials.png
 

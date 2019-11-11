@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 05/22/2019
-ms.openlocfilehash: 5b9b92cd39e8d540f784d82d6c7f4a5754c85b62
-ms.sourcegitcommit: 1bd2207c69a0c45076848a094292735faa012d22
+ms.openlocfilehash: 8a87335dba237e8088275706f7dcc2eb7f34831a
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72677730"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73887565"
 ---
 # <a name="application-insights-for-aspnet-core-applications"></a>Application Insights для ASP.NET Core приложений
 
@@ -34,7 +34,7 @@ ms.locfileid: "72677730"
 > [!NOTE]
 > Если вы используете ASP.NET Core 3,0 вместе с Application Insights, используйте версию [2.8.0](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore/2.8.0) или более позднюю. Это единственная версия, которая поддерживает ASP.NET Core 3,0.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 - Работающее приложение ASP.NET Core. Если необходимо создать ASP.NET Core приложение, следуйте указаниям в этом [ASP.NET Coreном руководстве](https://docs.microsoft.com/aspnet/core/getting-started/).
 - Допустимый ключ инструментирования Application Insights. Этот ключ необходим для отправки любых данных телеметрии в Application Insights. Если необходимо создать новый Application Insights ресурс для получения ключа инструментирования, см. раздел [Создание ресурса Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/create-new-resource).
@@ -44,19 +44,19 @@ ms.locfileid: "72677730"
 1. Откройте проект в Visual Studio.
 
     > [!TIP]
-    > При необходимости можно настроить систему управления версиями для проекта, чтобы можно было отвестися от всех изменений, которые Application Insights делает. Чтобы включить систему управления версиями, выберите **файл**  > **Добавить в систему управления версиями**.
+    > При необходимости можно настроить систему управления версиями для проекта, чтобы можно было отвестися от всех изменений, которые Application Insights делает. Чтобы включить систему управления версиями, выберите **файл** > **Добавить в систему управления версиями**.
 
 2. Выберите **Проект** > **Добавить телеметрию Application Insights**.
 
 3. Выберите **Начать**. Текст этого варианта может отличаться в зависимости от используемой версии Visual Studio. В некоторых более ранних версиях вместо нее используется кнопка **запустить бесплатно** .
 
-4. Выберите свою подписку. Затем выберите **ресурс**  > **регистр**.
+4. Выберите свою подписку. Затем выберите **ресурс** > **регистр**.
 
-5. После добавления Application Insights в проект убедитесь, что вы используете последний стабильный выпуск пакета SDK. Перейдите в **проект**  > **Управление пакетами NuGet**  > **Microsoft. ApplicationInsights. AspNetCore**. При необходимости выберите **Обновить**.
+5. После добавления Application Insights в проект убедитесь, что вы используете последний стабильный выпуск пакета SDK. Перейдите в **проект** > **Управление пакетами NuGet** > **Microsoft. ApplicationInsights. AspNetCore**. При необходимости выберите **Обновить**.
 
      ![Снимок экрана, на котором показано, где выбрать пакет Application Insights для обновления](./media/asp-net-core/update-nuget-package.png)
 
-6. Если вы**применяете**необязательную подсказку и добавили проект в систему управления версиями, перейдите в раздел **View**  > **Team Explorer**  >  Changes. Затем выберите каждый файл, чтобы просмотреть различие изменений, внесенных Application Insights телеметрии.
+6. Если вы **применяете**необязательную подсказку и добавили проект в систему управления версиями, перейдите в раздел **View** > **Team Explorer** > Changes. Затем выберите каждый файл, чтобы просмотреть различие изменений, внесенных Application Insights телеметрии.
 
 ## <a name="enable-application-insights-server-side-telemetry-no-visual-studio"></a>Включить телеметрию на стороне сервера Application Insights (без Visual Studio)
 
@@ -107,7 +107,7 @@ ms.locfileid: "72677730"
 
     * `ApplicationInsights:InstrumentationKey`
 
-    Пример.
+    Например,
 
     * `SET ApplicationInsights:InstrumentationKey=putinstrumentationkeyhere`
 
@@ -151,13 +151,13 @@ ms.locfileid: "72677730"
 
 Предыдущие шаги достаточно, чтобы помочь начать сбор данных телеметрии на стороне сервера. Если приложение имеет клиентские компоненты, выполните следующие действия, чтобы начать сбор данных [телеметрии использования](https://docs.microsoft.com/azure/azure-monitor/app/usage-overview).
 
-1. В `_ViewImports.cshtml` добавьте внедрение:
+1. В `_ViewImports.cshtml`добавьте внедрение:
 
     ```cshtml
         @inject Microsoft.ApplicationInsights.AspNetCore.JavaScriptSnippet JavaScriptSnippet
     ```
 
-2. В `_Layout.cshtml` вставьте `HtmlHelper` в конце раздела `<head>`, но перед любым другим сценарием. Если вы хотите сообщить о любых пользовательских данных телеметрии JavaScript со страницы, вставьте ее после этого фрагмента кода:
+2. В `_Layout.cshtml`вставьте `HtmlHelper` в конце раздела `<head>`, но перед любым другим сценарием. Если вы хотите сообщить о любых пользовательских данных телеметрии JavaScript со страницы, вставьте ее после этого фрагмента кода:
 
     ```cshtml
         @Html.Raw(JavaScriptSnippet.FullScript)
@@ -195,7 +195,7 @@ public void ConfigureServices(IServiceCollection services)
 
 Полный список параметров в `ApplicationInsightsServiceOptions`
 
-|Параметр | Описание | значение по умолчанию
+|Настройка | ОПИСАНИЕ | значение по умолчанию
 |---------------|-------|-------
 |енаблекуиккпулсеметрикстреам | Включить или отключить функцию Ливеметрикс | true
 |енаблеадаптивесамплинг | Включение или отключение адаптивной выборки | true
@@ -205,7 +205,7 @@ public void ConfigureServices(IServiceCollection services)
 
 Просмотрите [Настраиваемые параметры в `ApplicationInsightsServiceOptions`](https://github.com/microsoft/ApplicationInsights-aspnetcore/blob/develop/src/Shared/Extensions/ApplicationInsightsServiceOptions.cs) для наиболее актуального списка.
 
-### <a name="sampling"></a>Выборка
+### <a name="sampling"></a>выборки
 
 Пакет SDK Application Insights для ASP.NET Core поддерживает как фиксированную, так и адаптивную выборку. Адаптивная выборка включена по умолчанию. 
 
@@ -213,7 +213,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ### <a name="adding-telemetryinitializers"></a>Добавление Telemetryinitializer
 
-Используйте [инициализаторы телеметрии](https://docs.microsoft.com/azure/azure-monitor/app/api-filtering-sampling#add-properties-itelemetryinitializer) , если необходимо определить глобальные свойства, которые отправляются со всеми данными телеметрии.
+Используйте [инициализаторы телеметрии](https://docs.microsoft.com/azure/azure-monitor/app/api-filtering-sampling#addmodify-properties-itelemetryinitializer) , если необходимо определить глобальные свойства, которые отправляются со всеми данными телеметрии.
 
 Добавьте новые `TelemetryInitializer` в контейнер `DependencyInjection`, как показано в следующем коде. Пакет SDK автоматически берет все `TelemetryInitializer`, добавленные в контейнер `DependencyInjection`.
 
@@ -277,7 +277,7 @@ Application Insights использует модули телеметрии дл
 * `AzureInstanceMetadataTelemetryModule` — собирает сведения о неходе сердца (которые отправляются в виде пользовательских метрик), о среде виртуальной машины Azure, в которой размещено приложение.
 * `EventCounterCollectionModule` — собирает [евенткаунтерс.](eventcounters.md) Этот модуль является новой функцией и доступен в пакете SDK версии 2.8.0 и выше.
 
-Чтобы настроить любое `TelemetryModule` по умолчанию, используйте метод расширения `ConfigureTelemetryModule<T>` в `IServiceCollection`, как показано в следующем примере.
+Чтобы настроить любое `TelemetryModule`по умолчанию, используйте метод расширения `ConfigureTelemetryModule<T>` в `IServiceCollection`, как показано в следующем примере.
 
 ```csharp
 using Microsoft.ApplicationInsights.DependencyCollector;
@@ -406,7 +406,7 @@ public class HomeController : Controller
 
 ### <a name="can-i-enable-application-insights-monitoring-by-using-tools-like-status-monitor"></a>Можно ли включить Application Insights мониторинг с помощью таких средств, как монитор состояния?
 
-Нет. В настоящее время [Монитор состояния](https://docs.microsoft.com/azure/azure-monitor/app/monitor-performance-live-website-now) и [Монитор состояния v2](https://docs.microsoft.com/azure/azure-monitor/app/status-monitor-v2-overview) поддерживают только ASP.NET 4. x.
+Нет В настоящее время [Монитор состояния](https://docs.microsoft.com/azure/azure-monitor/app/monitor-performance-live-website-now) и [Монитор состояния v2](https://docs.microsoft.com/azure/azure-monitor/app/status-monitor-v2-overview) поддерживают только ASP.NET 4. x.
 
 ### <a name="is-application-insights-automatically-enabled-for-my-aspnet-core-20-application"></a>Включено ли Application Insights для приложения ASP.NET Core 2,0 автоматически?
 
@@ -437,7 +437,7 @@ using Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel;
 
 ### <a name="is-this-sdk-supported-for-the-new-net-core-30-worker-service-template-applications"></a>Поддерживается ли этот пакет SDK для новых приложений-шаблонов рабочих служб .NET Core 3,0?
 
-Этот пакет SDK требует `HttpContext` и, следовательно, не работает в приложениях, отличных от HTTP, включая приложения рабочей службы .NET Core 3,0. Ознакомьтесь с [этим](worker-service.md) документом, чтобы включить Application Insights в таких приложениях с помощью ВЫПУЩЕННОГО пакета SDK для Microsoft. ApplicationInsights. воркерсервице.
+Этот пакет SDK требует `HttpContext`и, следовательно, не работает в приложениях, отличных от HTTP, включая приложения рабочей службы .NET Core 3,0. Ознакомьтесь с [этим](worker-service.md) документом, чтобы включить Application Insights в таких приложениях с помощью ВЫПУЩЕННОГО пакета SDK для Microsoft. ApplicationInsights. воркерсервице.
 
 ## <a name="open-source-sdk"></a>Пакет SDK с открытым исходным кодом
 
@@ -448,7 +448,7 @@ using Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel;
 - Ознакомьтесь с этим внешним пошаговым видео, чтобы [настроить Application Insights с .NET Core и Visual Studio](https://www.youtube.com/watch?v=NoS9UhcR4gA&t) с нуля.
 - Ознакомьтесь с этим внешним пошаговым видео, чтобы [настроить Application Insights с .NET Core и Visual Studio Code](https://youtu.be/ygGt84GDync) с нуля.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Изучите потоки пользователей](../../azure-monitor/app/usage-flows.md) , чтобы понять, как пользователи переходят через приложение.
 * [Настройте сбор моментальных снимков](https://docs.microsoft.com/azure/application-insights/app-insights-snapshot-debugger) для просмотра состояния исходного кода и переменных в момент возникновения исключения.

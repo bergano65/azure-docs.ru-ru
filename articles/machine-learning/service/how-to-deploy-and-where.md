@@ -11,12 +11,12 @@ author: jpe316
 ms.reviewer: larryfr
 ms.date: 09/13/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: df2f22f91cbed17035485d25369965d3284dbaf7
-ms.sourcegitcommit: 6c2c97445f5d44c5b5974a5beb51a8733b0c2be7
+ms.openlocfilehash: 0d478b56d7be4ae0c7f2403f9960e5eed59e2b4d
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73622393"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73888639"
 ---
 # <a name="deploy-models-with-azure-machine-learning"></a>Развертывание моделей с помощью Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -32,7 +32,7 @@ ms.locfileid: "73622393"
 
 Дополнительные сведения об основных понятиях, связанных с рабочим процессом развертывания, см. в разделе [Управление моделями, их развертывание и мониторинг с помощью машинное обучение Azure](concept-model-management-and-deployment.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 - Рабочая область машинного обучения Azure. Дополнительные сведения см. в статье [создание машинное обучение Azure рабочей области](how-to-manage-workspace.md).
 
@@ -206,7 +206,7 @@ ms.locfileid: "73622393"
 
 AZUREML_MODEL_DIR — это переменная среды, созданная во время развертывания службы. Эту переменную среды можно использовать для поиска расположения развернутых моделей.
 
-В следующей таблице описывается значение AZUREML_MODEL_DIR в зависимости от числа развернутых моделей:
+В следующей таблице описано значение AZUREML_MODEL_DIR в зависимости от числа развернутых моделей:
 
 | Развертывание | Значение переменной среды |
 | ----- | ----- |
@@ -228,7 +228,7 @@ model_path = os.path.join(os.getenv('AZUREML_MODEL_DIR'), 'sklearn_model/1/sklea
 
 ##### <a name="get_model_path"></a>get_model_path
 
-При регистрации модели вы предоставляете имя модели, используемое для управления моделью в реестре. Это имя используется с методом [model. Get _model_path ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#get-model-path-model-name--version-none---workspace-none-) для получения пути к файлу модели или файлам в локальной файловой системе. При регистрации папки или коллекции файлов этот API возвращает путь к каталогу, содержащему эти файлы.
+При регистрации модели вы предоставляете имя модели, используемое для управления моделью в реестре. Это имя используется с методом [model. get_model_path ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#get-model-path-model-name--version-none---workspace-none-) для получения пути к файлу модели или файлам в локальной файловой системе. При регистрации папки или коллекции файлов этот API возвращает путь к каталогу, содержащему эти файлы.
 
 При регистрации модели ей присваивается имя. Имя соответствует месту размещения модели: локально или во время развертывания службы.
 
@@ -540,7 +540,7 @@ az ml model deploy -n myservice -m mymodel:1 --ic inferenceconfig.json
 from azureml.core.webservice import AciWebservice, AksWebservice, LocalWebservice
 ```
 
-#### <a name="profiling"></a>Профилирование.
+#### <a name="profiling"></a>Профилирование
 
 Перед развертыванием модели в качестве службы может потребоваться ее профилирование для определения оптимальных требований к ЦП и памяти. Для профилирования модели можно использовать либо пакет SDK, либо интерфейс командной строки. В следующих примерах показано, как профилировать модель с помощью пакета SDK.
 
@@ -661,7 +661,7 @@ print(response.json())
 
 ### <a name="web-service-schema-openapi-specification"></a>Схема веб-службы (спецификация OpenAPI)
 
-Если вы использовали автоматическое создание схем в развертывании, можно получить адрес спецификации OpenAPI для службы с помощью [Свойства swagger_uri](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.local.localwebservice?view=azure-ml-py#swagger-uri). (Например, `print(service.swagger_uri)`.) Используйте запрос GET или откройте универсальный код ресурса (URI) в браузере, чтобы получить спецификацию.
+Если вы использовали автоматическое создание схем в развертывании, можно получить адрес спецификации OpenAPI для службы с помощью [свойства swagger_uri](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.local.localwebservice?view=azure-ml-py#swagger-uri). (Например, `print(service.swagger_uri)`.) Используйте запрос GET или откройте универсальный код ресурса (URI) в браузере, чтобы получить спецификацию.
 
 Следующий документ JSON является примером схемы (спецификации OpenAPI), созданной для развертывания:
 
@@ -858,6 +858,78 @@ CLI:
 az ml model download --model-id mymodel:1 --target-dir model_folder
 ```
 
+## <a name="preview-no-code-model-deployment"></a>Образца Развертывание модели без кода
+
+Развертывание модели без кода сейчас находится на этапе предварительной версии и поддерживает следующие платформы машинного обучения:
+
+### <a name="tensorflow-savedmodel-format"></a>Формат Саведмодел Tensorflow
+
+```python
+from azureml.core import Model
+
+model = Model.register(workspace=ws,
+                       model_name='flowers',                        # Name of the registered model in your workspace.
+                       model_path='./flowers_model',                # Local Tensorflow SavedModel folder to upload and register as a model.
+                       model_framework=Model.Framework.TENSORFLOW,  # Framework used to create the model.
+                       model_framework_version='1.14.0',            # Version of Tensorflow used to create the model.
+                       description='Flowers model')
+
+service_name = 'tensorflow-flower-service'
+service = Model.deploy(ws, service_name, [model])
+```
+
+### <a name="onnx-models"></a>Модели ONNX
+
+Регистрация и развертывание модели ONNX поддерживаются для любого графа вывода ONNX. Этапы предварительной обработки и выполнения процессов в настоящее время не поддерживаются.
+
+Ниже приведен пример регистрации и развертывания модели MNIST ONNX.
+
+```python
+from azureml.core import Model
+
+model = Model.register(workspace=ws,
+                       model_name='mnist-sample',                  # Name of the registered model in your workspace.
+                       model_path='mnist-model.onnx',              # Local ONNX model to upload and register as a model.
+                       model_framework=Model.Framework.ONNX ,      # Framework used to create the model.
+                       model_framework_version='1.3',              # Version of ONNX used to create the model.
+                       description='Onnx MNIST model')
+
+service_name = 'onnx-mnist-service'
+service = Model.deploy(ws, service_name, [model])
+```
+
+### <a name="scikit-learn-models"></a>Scikit — изучение моделей
+
+Не поддерживается развертывание модели кода для всех встроенных типов моделей scikit-учиться.
+
+Ниже приведен пример регистрации и развертывания модели sklearn без дополнительного кода.
+
+```python
+from azureml.core import Model
+from azureml.core.resource_configuration import ResourceConfiguration
+
+model = Model.register(workspace=ws,
+                       model_name='my-sklearn-model',                # Name of the registered model in your workspace.
+                       model_path='./sklearn_regression_model.pkl',  # Local file to upload and register as a model.
+                       model_framework=Model.Framework.SCIKITLEARN,  # Framework used to create the model.
+                       model_framework_version='0.19.1',             # Version of scikit-learn used to create the model.
+                       resource_configuration=ResourceConfiguration(cpu=1, memory_in_gb=0.5),
+                       description='Ridge regression model to predict diabetes progression.',
+                       tags={'area': 'diabetes', 'type': 'regression'})
+                       
+service_name = 'my-sklearn-service'
+service = Model.deploy(ws, service_name, [model])
+```
+
+Примечание. Эти зависимости включены в готовый контейнер вывода sklearn:
+
+```yaml
+    - azureml-defaults
+    - inference-schema[numpy-support]
+    - scikit-learn
+    - numpy
+```
+
 ## <a name="package-models"></a>Модели пакетов
 
 В некоторых случаях может потребоваться создать образ DOCKER без развертывания модели (например, если планируется [развертывание в службе приложений Azure](how-to-deploy-app-service.md)). Также можно загрузить образ и запустить его в локальной установке DOCKER. Может даже потребоваться загрузить файлы, используемые для создания образа, проверить их, изменить и создать образ вручную.
@@ -885,7 +957,7 @@ package = Model.package(ws, [model], inference_config)
 package.wait_for_creation(show_output=True)
 ```
 
-После создания пакета можно использовать `package.pull()` для извлечения образа в локальную среду DOCKER. Выходные данные этой команды будут отображать имя изображения. Например: 
+После создания пакета можно использовать `package.pull()` для извлечения образа в локальную среду DOCKER. Выходные данные этой команды будут отображать имя изображения. Например, 
 
 `Status: Downloaded newer image for myworkspacef78fd10.azurecr.io/package:20190822181338`. 
 
@@ -998,79 +1070,7 @@ docker kill mycontainer
 
 Дополнительные сведения см. в документации по [WebService. Delete ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice(class)?view=azure-ml-py#delete--) и [model. Delete ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#delete--).
 
-## <a name="preview-no-code-model-deployment"></a>Образца Развертывание модели без кода
-
-Развертывание модели без кода сейчас находится на этапе предварительной версии и поддерживает следующие платформы машинного обучения:
-
-### <a name="tensorflow-savedmodel-format"></a>Формат Саведмодел Tensorflow
-
-```python
-from azureml.core import Model
-
-model = Model.register(workspace=ws,
-                       model_name='flowers',                        # Name of the registered model in your workspace.
-                       model_path='./flowers_model',                # Local Tensorflow SavedModel folder to upload and register as a model.
-                       model_framework=Model.Framework.TENSORFLOW,  # Framework used to create the model.
-                       model_framework_version='1.14.0',            # Version of Tensorflow used to create the model.
-                       description='Flowers model')
-
-service_name = 'tensorflow-flower-service'
-service = Model.deploy(ws, service_name, [model])
-```
-
-### <a name="onnx-models"></a>Модели ONNX
-
-Регистрация и развертывание модели ONNX поддерживаются для любого графа вывода ONNX. Этапы предварительной обработки и выполнения процессов в настоящее время не поддерживаются.
-
-Ниже приведен пример регистрации и развертывания модели MNIST ONNX.
-
-```python
-from azureml.core import Model
-
-model = Model.register(workspace=ws,
-                       model_name='mnist-sample',                  # Name of the registered model in your workspace.
-                       model_path='mnist-model.onnx',              # Local ONNX model to upload and register as a model.
-                       model_framework=Model.Framework.ONNX ,      # Framework used to create the model.
-                       model_framework_version='1.3',              # Version of ONNX used to create the model.
-                       description='Onnx MNIST model')
-
-service_name = 'onnx-mnist-service'
-service = Model.deploy(ws, service_name, [model])
-```
-
-### <a name="scikit-learn-models"></a>Scikit — изучение моделей
-
-Не поддерживается развертывание модели кода для всех встроенных типов моделей scikit-учиться.
-
-Ниже приведен пример регистрации и развертывания модели sklearn без дополнительного кода.
-
-```python
-from azureml.core import Model
-from azureml.core.resource_configuration import ResourceConfiguration
-
-model = Model.register(workspace=ws,
-                       model_name='my-sklearn-model',                # Name of the registered model in your workspace.
-                       model_path='./sklearn_regression_model.pkl',  # Local file to upload and register as a model.
-                       model_framework=Model.Framework.SCIKITLEARN,  # Framework used to create the model.
-                       model_framework_version='0.19.1',             # Version of scikit-learn used to create the model.
-                       resource_configuration=ResourceConfiguration(cpu=1, memory_in_gb=0.5),
-                       description='Ridge regression model to predict diabetes progression.',
-                       tags={'area': 'diabetes', 'type': 'regression'})
-                       
-service_name = 'my-sklearn-service'
-service = Model.deploy(ws, service_name, [model])
-```
-
-Примечание. Эти зависимости включены в готовый контейнер вывода sklearn:
-
-```yaml
-    - azureml-defaults
-    - inference-schema[numpy-support]
-    - scikit-learn
-    - numpy
-```
-
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Развертывание модели с помощью пользовательского образа DOCKER](how-to-deploy-custom-docker-image.md)
 * [Устранение неполадок развертывания](how-to-troubleshoot-deployment.md)

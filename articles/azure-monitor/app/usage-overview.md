@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 09/19/2019
-ms.openlocfilehash: 7131cf1902cc92fed66ae4db59449700973c6913
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: aa37717c5037294c2b5ec61f7815b007cbf74992
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72899431"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73884827"
 ---
 # <a name="usage-analysis-with-application-insights"></a>Анализ использования с помощью Application Insights
 
@@ -56,7 +56,7 @@ ms.locfileid: "72899431"
 
 Отчеты о пользователях и сеансах позволяют фильтровать данные по страницам или пользовательским событиям, а также разделять их по свойствам, таким как расположение, среда и страница. Можно также добавить собственные фильтры.
 
-![Пользователи](./media/usage-overview/users.png)  
+![Users](./media/usage-overview/users.png)  
 
 Аналитические сведения справа позволяют выделять важные закономерности в наборе данных.  
 
@@ -73,7 +73,7 @@ ms.locfileid: "72899431"
 - Сформируйте гипотезу на основе данных реальных пользователей. 
 - Определите, является ли период удержания проблемой для вашего продукта. 
 
-![Хранение](./media/usage-overview/retention.png) 
+![Сохранение](./media/usage-overview/retention.png) 
 
 Помимо прочего, элементы управления периодом удержания позволяют определить конкретные события и диапазон времени для вычисления периода удержания. График в середине дает визуальное представление об общем проценте удержания за указанный диапазон времени. График внизу отображает период удержания отдельных пользователей за заданный период времени. Такой уровень детализации позволяет лучше понять, что ваши пользователи делают и что может повлиять на возвращение пользователей.  
 
@@ -125,7 +125,7 @@ ms.locfileid: "72899431"
 
 Чтобы сравнить различные версии, на портале Application Insights можно отфильтровать и разделить данные по значениям свойств.
 
-Для этого следует [настроить инициализатор телеметрии](../../azure-monitor/app/api-filtering-sampling.md#add-properties-itelemetryinitializer).
+Для этого следует [настроить инициализатор телеметрии](../../azure-monitor/app/api-filtering-sampling.md#addmodify-properties-itelemetryinitializer).
 
 **Приложения ASP.NET**
 
@@ -170,10 +170,10 @@ ms.locfileid: "72899431"
 
 Все новые клиенты телеметрии автоматически добавляют указанное значение свойства. Отдельные события телеметрии могут переопределять значения по умолчанию.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
    - [Пользователи, сеансы, события](usage-segmentation.md)
    - [Воронки](usage-funnels.md)
-   - [Сохранение](usage-retention.md)
+   - [Удержание](usage-retention.md)
    - [Средство "Маршруты пользователей"](usage-flows.md)
    - [Книги](../../azure-monitor/app/usage-workbooks.md)
    - [Добавление контекста пользователей](usage-send-user-context.md)

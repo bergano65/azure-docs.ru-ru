@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 5/03/2019
 ms.author: terrylan
-ms.openlocfilehash: e2e829fba9846c2429e362903f5ce49b9344e1bd
-ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
+ms.openlocfilehash: 0bf9b4d3aa1926343ad25000a05762a31d49617d
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2019
-ms.locfileid: "71672632"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73889854"
 ---
 # <a name="azure-security-best-practices-and-patterns"></a>Рекомендации и шаблоны для обеспечения безопасности в Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "71672632"
 
 Рекомендации предназначены для ИТ-специалистов. К ним могут относиться проектировщики, архитекторы, разработчики и тестировщики, занимающиеся созданием и развертыванием безопасных решений в Azure.
 
-* [Облачные службы Microsoft Cloud и сетевая безопасность](https://docs.microsoft.com/en-us/azure/security/fundamentals/network-best-practices#adopt-a-zero-trust-approach)
+* [Облачные службы Microsoft Cloud и сетевая безопасность](/azure/security/fundamentals/network-best-practices#adopt-a-zero-trust-approach)
 * [Рекомендации по обеспечению безопасности базы данных Azure](database-best-practices.md)
 * [Рекомендации по защите и шифрованию данных в Azure](data-encryption-best-practices.md)
 * [Рекомендации по обеспечению безопасности за счет управления удостоверениями и контроля доступа Azure](identity-management-best-practices.md)
@@ -37,7 +37,7 @@ ms.locfileid: "71672632"
 * [Защита развернутых служб PaaS](paas-deployments.md)
 * [Рекомендации по безопасности Azure Service Fabric](service-fabric-best-practices.md)
 * [Рекомендации по обеспечению безопасности виртуальных машин Azure](iaas.md)
-* [Implementing a secure hybrid network architecture in Azure (Реализация защищенной гибридной сетевой архитектуры в Azure)](/azure/architecture/reference-architectures/dmz/secure-vnet-hybrid)
+* [Реализация защищенной гибридной сетевой архитектуры в Azure](/azure/architecture/reference-architectures/dmz/secure-vnet-hybrid)
 * [Рекомендации по обеспечению безопасности "Интернета вещей"](iot-best-practices.md)
 * [Защита баз данных PaaS в Azure](paas-applications-using-sql.md)
 * [Защита мобильных приложений и веб-приложений PaaS с помощью службы приложений Azure](paas-applications-using-app-services.md)

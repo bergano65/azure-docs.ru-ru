@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 66e583a75f7103a7cccf560d537e440ba47cae5a
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.openlocfilehash: c016ce349acdfff6145286d9fc07e08db4ed9516
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72596337"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73882815"
 ---
 # <a name="how-to-plan-your-hybrid-azure-active-directory-join-implementation"></a>Руководство. Планирование реализации гибридного Azure Active Directory Join
 
@@ -30,7 +30,7 @@ ms.locfileid: "72596337"
 
 Если у вас есть локальная среда Active Directory (AD) и вы хотите присоединить к Azure AD компьютеры, присоединенные к домену AD, это можно сделать, выполнив гибридное присоединение к Azure AD. В этой статье приведены соответствующие шаги для реализации гибридного присоединения устройств к Azure AD в вашей среде. 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 В этой статье предполагается, что вы знакомы с [введением в Управление удостоверениями устройств в Azure Active Directory](../device-management-introduction.md).
 
@@ -55,7 +55,7 @@ ms.locfileid: "72596337"
 
 ### <a name="windows-current-devices"></a>Текущие устройства Windows
 
-- Windows 10
+- Windows 10
 - Windows Server 2016
 - Windows Server 2019
 
@@ -65,7 +65,7 @@ ms.locfileid: "72596337"
 
 - Windows 8.1
 - Windows 7. Сведения о поддержке в Windows 7 см. в статье [Поддержка Windows 7 в конце концов](https://www.microsoft.com/microsoft-365/windows/end-of-windows-7-support).
-- Windows Server 2012 R2
+- Windows Server 2012 R2
 - Windows Server 2012
 - Windows Server 2008 R2. Сведения о поддержке в Windows Server 2008 и 2008 R2 см. в разделе [Подготовка к завершению поддержки Windows server 2008](https://www.microsoft.com/cloud-platform/windows-server-2008).
 
@@ -75,7 +75,7 @@ ms.locfileid: "72596337"
 
 Гибридное присоединение к Azure AD в настоящее время не поддерживается, если среда состоит из одного леса AD, который синхронизирует данные удостоверений с несколькими клиентами Azure AD.
 
-Если в вашей среде используется инфраструктура виртуальных рабочих столов (VDI), см. статью [Идентификация устройств и Виртуализация рабочего стола](https://docs.microsoft.com/en-us/azure/active-directory/devices/howto-device-identity-virtual-desktop-infrastructure).
+Если в вашей среде используется инфраструктура виртуальных рабочих столов (VDI), см. статью [Идентификация устройств и Виртуализация рабочего стола](https://docs.microsoft.com/azure/active-directory/devices/howto-device-identity-virtual-desktop-infrastructure).
 
 Гибридное присоединение к Azure AD поддерживается для FIPS-совместимого доверенного платформенного модуля 2,0 и не поддерживается для TPM 1,2. Если на устройствах установлен совместимый с FIPS доверенный платформенный модуль 1,2, необходимо отключить их, прежде чем продолжить гибридное присоединение к Azure AD. Корпорация Майкрософт не предоставляет средств для отключения режима FIPS для доверенных платформенных модулей, так как он зависит от производителя доверенного платформенного модуля. Обратитесь за поддержкой к ИЗГОТОВИТЕЛю оборудования. Начиная с выпуска WIndows 10 1903, доверенные 1,2 платформенные модули не используются для гибридного присоединение к Azure AD, а устройства с этими доверенными платформенными модулями будут рассматриваться как недоверенные.
 
@@ -124,12 +124,12 @@ ms.locfileid: "72596337"
   `/adfs/services/trust/13/certificatemixed` 
 
 > [!WARNING] 
-> Также нужно включить **adfs/services/trust/2005/windowstransport** или **adfs/services/trust/13/windowstransport**, но только в качестве конечных точек с подключением к интрасети. Их НЕЛЬЗЯ предоставлять как конечные точки с подключением к экстрасети через прокси-сервер веб-приложения. Дополнительные сведения см. в статье об [отключении конечных точек WS-Trust в Windows на прокси-сервере](https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/deployment/best-practices-securing-ad-fs#disable-ws-trust-windows-endpoints-on-the-proxy-ie-from-extranet). В разделе **Служба** > **Конечные точки** вы можете увидеть, какие конечные точки активированы в консоли управления AD FS.
+> Также нужно включить **adfs/services/trust/2005/windowstransport** или **adfs/services/trust/13/windowstransport**, но только в качестве конечных точек с подключением к интрасети. Их НЕЛЬЗЯ предоставлять как конечные точки с подключением к экстрасети через прокси-сервер веб-приложения. Дополнительные сведения см. в статье об [отключении конечных точек WS-Trust в Windows на прокси-сервере](https://docs.microsoft.com/windows-server/identity/ad-fs/deployment/best-practices-securing-ad-fs#disable-ws-trust-windows-endpoints-on-the-proxy-ie-from-extranet). В разделе **Служба** > **Конечные точки** вы можете увидеть, какие конечные точки активированы в консоли управления AD FS.
 
 > [!NOTE]
 > Azure AD не поддерживает смарт-карты и сертификаты в управляемых доменах.
 
-Начиная с версии 1.1.819.0 Azure AD Connect предоставляет мастер для настройки гибридного присоединения к Azure AD. Этот мастер позволяет значительно упростить настройку. Если установка нужной версии Azure AD Connect для вас не подходит, перейдите к [руководству по настройке гибридного присоединения устройств к Azure AD вручную](hybrid-azuread-join-manual.md). 
+Начиная с версии 1.1.819.0, Azure AD Connect предоставляет мастер для настройки гибридного присоединения устройств к Azure AD. Мастер позволяет значительно упростить процесс конфигурации. Если установка нужной версии Azure AD Connect для вас не подходит, перейдите к [руководству по настройке гибридного присоединения устройств к Azure AD вручную](hybrid-azuread-join-manual.md). 
 
 На основе сценария, соответствующего вашей инфраструктуре идентификации, см.:
 
@@ -145,14 +145,14 @@ ms.locfileid: "72596337"
 
 В приведенной ниже таблице приведены сведения о поддержке имен участников-пользователей локальной службы AD для гибридного присоединения к Azure Active Directory в Windows 10.
 
-| Тип имени участника-пользователя локальной службы AD | Тип домена | Версия Windows 10 | Описание |
+| Тип имени участника-пользователя локальной службы AD | Тип домена | Версия Windows 10 | ОПИСАНИЕ |
 | ----- | ----- | ----- | ----- |
 | Маршрутизируемый | Федеративные | Начиная с выпуска 1703 | Общедоступная версия |
 | Немаршрутизируемый | Федеративные | Начиная с выпуска 1803 | Общедоступная версия |
-| Маршрутизируемый | Управляемое | Начиная с выпуска 1803 | Общедоступная версия Azure AD SSPR в Windows на экране блокировки не поддерживается |
-| Немаршрутизируемый | Управляемое | Не поддерживается | |
+| Маршрутизируемый | Управляемые | Начиная с выпуска 1803 | Общедоступная версия Azure AD SSPR в Windows на экране блокировки не поддерживается |
+| Немаршрутизируемый | Управляемые | Не поддерживается | |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
 > [Настройка гибридного Azure Active Directory Join для Федеративной среды](hybrid-azuread-join-federated-domains.md)

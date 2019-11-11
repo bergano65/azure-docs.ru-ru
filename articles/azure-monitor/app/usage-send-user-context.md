@@ -8,12 +8,12 @@ author: NumberByColors
 ms.author: daviste
 ms.date: 01/03/2019
 ms.reviewer: abgreg;mbullwin
-ms.openlocfilehash: cf639be5db90e3632b8931564ac397c42e1d8403
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: b105e8ba79e99be02420ca1821f6a080b0862d6f
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72899359"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73887415"
 ---
 # <a name="send-user-context-ids-to-enable-usage-experiences-in-azure-application-insights"></a>Отправка идентификаторов контекста пользователей для обеспечения оптимальной работы в Azure Application Insights
 
@@ -48,7 +48,7 @@ Application Insights позволяет отслеживать пользова�
 
 ## <a name="aspnet-apps-setting-the-user-context-in-an-itelemetryinitializer"></a>Приложения ASP.NET: установка контекста пользователя в ITelemetryInitializer
 
-[Создайте инициализатор телеметрии](https://docs.microsoft.com/azure/application-insights/app-insights-api-filtering-sampling#add-properties-itelemetryinitializer). Передайте идентификатор сеанса в запросе телеметрии и задайте Context.User.Id и Context.Session.Id.
+[Создайте инициализатор телеметрии](https://docs.microsoft.com/azure/application-insights/app-insights-api-filtering-sampling#addmodify-properties-itelemetryinitializer). Передайте идентификатор сеанса в запросе телеметрии и задайте Context.User.Id и Context.Session.Id.
 
 В этом примере в качестве идентификатора пользователя задается идентификатор, срок действия которого истекает по завершении сеанса. По возможности используйте идентификатор пользователя, который сохраняется между сеансами.
 
@@ -128,12 +128,12 @@ namespace MvcWebRole.Telemetry
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Чтобы обеспечить оптимальное использование, начните отправлять [пользовательские события](https://docs.microsoft.com/azure/application-insights/app-insights-api-custom-events-metrics#trackevent) или [сведения о просмотрах страниц](https://docs.microsoft.com/azure/application-insights/app-insights-api-custom-events-metrics#page-views).
 - Если вы уже сделали это, изучите инструменты использования, чтобы узнать, как пользователи используют службу.
     - [Общие сведения об использовании](usage-overview.md)
     - [Анализ пользователей, сеансов и событий в Application Insights](usage-segmentation.md)
     - [Воронки](usage-funnels.md)
-    - [Сохранение](usage-retention.md)
+    - [Удержание](usage-retention.md)
     - [Книги](../../azure-monitor/app/usage-workbooks.md)

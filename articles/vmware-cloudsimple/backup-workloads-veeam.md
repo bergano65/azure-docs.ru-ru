@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 880b31702cf1c0a92ab7ee536cd88e8e6957f6f8
-ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
+ms.openlocfilehash: 3414cc54e5023bdeebb2d5536c1408f981e68f19
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72430854"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73891399"
 ---
 # <a name="back-up-workload-vms-on-cloudsimple-private-cloud-using-veeam-br"></a>Резервное копирование виртуальных машин рабочей нагрузки в частном облаке Клаудсимпле с помощью Veeam B & R
 
@@ -54,7 +54,7 @@ ms.locfileid: "72430854"
 
 * Veeam Backup Server и прокси-сервер установлены на одной виртуальной машине в частном облаке.
 * Первичный репозиторий резервных копий на основе Linux в Azure, настроенный в качестве цели для заданий резервного копирования.
-* `azcopy` используется для копирования данных из основного репозитория резервных копий в контейнер больших двоичных объектов Azure, который реплицируется в другой регион.
+* `azcopy`, используемые для копирования данных из основного репозитория резервных копий в контейнер больших двоичных объектов Azure, который реплицируется в другой регион.
 
 ![Основные сценарии развертывания](media/veeam-basicdeployment.png)
 
@@ -65,7 +65,7 @@ ms.locfileid: "72430854"
 * Один прокси-сервер на узел в кластере vSAN, как рекомендуется для Veeam.
 * Основной репозиторий резервных копий на основе Windows в частном облаке для кэширования данных за пять дней для быстрого восстановления.
 * Резервное хранилище Linux в Azure в качестве целевого объекта для заданий резервного копирования для длительного хранения. Этот репозиторий следует настроить в качестве хранилища резервных копий с горизонтальным масштабированием.
-* `azcopy` используется для копирования данных из основного репозитория резервных копий в контейнер больших двоичных объектов Azure, который реплицируется в другой регион.
+* `azcopy`, используемые для копирования данных из основного репозитория резервных копий в контейнер больших двоичных объектов Azure, который реплицируется в другой регион.
 
 ![Основные сценарии развертывания](media/veeam-advanceddeployment.png)
 
@@ -136,7 +136,7 @@ ms.locfileid: "72430854"
 
 В следующей таблице приводится список портов.
 
-| Значок | Описание | Значок | Описание |
+| Значок | ОПИСАНИЕ | Значок | ОПИСАНИЕ |
 | ------------ | ------------- | ------------ | ------------- |
 | Backup Server  | vCenter  | HTTPS/TCP  | 443 |
 | Backup Server <br> *Требуется для развертывания Veeam резервного копирования & компонентов репликации* | Прокси-сервер резервного копирования  | TCP/UDP  | 135, 137 – 139 и 445 |
@@ -194,7 +194,7 @@ ms.locfileid: "72430854"
 
 ### <a name="configure-azure-blob-storage-for-long-term-data-retention"></a>Настройка хранилища BLOB-объектов Azure для долгосрочного хранения данных
 
-1. Создайте учетную запись хранения общего назначения (GPv2) типа "Стандартный" и контейнер больших двоичных объектов, как описано в [видеоначало работы Майкрософт со службой хранилища Azure](https://azure.microsoft.com/en-gb/resources/videos/get-started-with-azure-storage).
+1. Создайте учетную запись хранения общего назначения (GPv2) типа "Стандартный" и контейнер больших двоичных объектов, как описано в [видеоначало работы Майкрософт со службой хранилища Azure](https://azure.microsoft.com/resources/videos/get-started-with-azure-storage).
 2. Создайте контейнер службы хранилища Azure, как описано в справочнике по [созданию контейнера](https://docs.microsoft.com/rest/api/storageservices/create-container) .
 2. Скачайте служебную программу командной строки `azcopy` для Linux от Майкрософт. Вы можете использовать следующие команды в оболочке bash в CentOS 7,5.
 
@@ -290,7 +290,7 @@ ms.locfileid: "72430854"
 * [Подключение виртуальной сети к другой подписке](../expressroute/expressroute-howto-linkvnet-portal-resource-manager.md#connect-a-vnet-to-a-circuit---different-subscription)
 * [Создание виртуальной машины Linux на портал Azure](../virtual-machines/linux/quick-create-portal.md)
 * [Как подключить управляемый диск данных к виртуальной машине Windows в портал Azure](../virtual-machines/windows/attach-managed-disk-portal.md)
-* [Начало работы с хранилищем Azure — видео](https://azure.microsoft.com/en-gb/resources/videos/get-started-with-azure-storage)
+* [Начало работы с хранилищем Azure — видео](https://azure.microsoft.com/resources/videos/get-started-with-azure-storage)
 * [Создать контейнер](https://docs.microsoft.com/rest/api/storageservices/create-container)
 * [Перенос данных с помощью AzCopy для Linux](../storage/common/storage-use-azcopy-linux.md)
 

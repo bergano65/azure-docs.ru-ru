@@ -9,12 +9,12 @@ ms.author: robreed
 ms.date: 03/20/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 5daa1cf04e04507174fa480c785bd15b656541a1
-ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
+ms.openlocfilehash: d1ef652747dccdcb0e04ac8032dd47e2ebaa6bf2
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69019110"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73886892"
 ---
 # <a name="runbook-and-module-galleries-for-azure-automation"></a>Коллекции модулей Runbook и других модулей для службы автоматизации Azure
 
@@ -35,7 +35,7 @@ Runbook и [модули](#modules-in-powershell-gallery) PowerShell можно 
 
 1. На портале Azure выберите свою учетную запись службы автоматизации.
 2. В разделе **Автоматизация процессов** выберите пункт **Коллекция модулей Runbook**.
-3. Выберите **источник: Коллекция PowerShell**.
+3. Выберите **Источник: коллекция PowerShell**.
 4. Найдите нужный элемент коллекции и выберите его, чтобы просмотреть сведения о нем. Слева вы можете ввести дополнительные параметры для издателя и типа.
 
    ![Обзор коллекции](media/automation-runbook-gallery/browse-gallery.png)
@@ -109,8 +109,8 @@ Runbook и [модули](#modules-in-powershell-gallery) PowerShell можно 
 * [Copy-итемфромазуревм](https://www.powershellgallery.com/packages/Copy-ItemFromAzureVM/) — этот модуль Runbook копирует удаленный файл из виртуальной машины Windows Azure.
 * [Copy-итемфромазуревм](https://www.powershellgallery.com/packages/Copy-ItemToAzureVM/) — этот модуль Runbook копирует локальный файл на виртуальную машину Azure.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 * Сведения о том, как начать работу с модулями Runbook, см. в статье [Управление модулями runbook в службе автоматизации Azure](manage-runbooks.md).
 * Чтобы понять различия между PowerShell и рабочим процессом PowerShell с модулями Runbook, см. статью [Изучение рабочего процесса Windows PowerShell](automation-powershell-workflow.md).
-* Дополнительные сведения о PowerShell, включая Справочник по языку и обучающие модули, см. в документации по [PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/overview).
+* Дополнительные сведения о PowerShell, включая Справочник по языку и обучающие модули, см. в документации по [PowerShell](https://docs.microsoft.com/powershell/scripting/overview).

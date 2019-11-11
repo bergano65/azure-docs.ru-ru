@@ -8,12 +8,12 @@ author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 03/15/2019
 ms.reviewer: sdash
-ms.openlocfilehash: 65a257cc4613fb9e4dece09a2544de2e78779ab4
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 305de556cc6e50af21cb38aa1b8073b420efbf43
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73577058"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73887751"
 ---
 # <a name="application-map-triage-distributed-applications"></a>Схема приложений: рассмотрение распределенных приложений
 
@@ -178,7 +178,7 @@ appInsights.defaultClient.addTelemetryProcessor(envelope => {
 });
 ```
 
-### <a name="java"></a>Java
+### <a name="java"></a>Java:
 
 Начиная с Application Insights пакета SDK 2.5.0 для Java можно указать имя облачной роли, добавив `<RoleName>` в файл `ApplicationInsights.xml`, например
 
@@ -234,13 +234,13 @@ appInsights.addTelemetryInitializer((envelope) => {
 
 Сценарий, в котором может потребоваться переопределить значение для экземпляра облачной роли, может быть в том случае, если приложение выполняется в контейнерной среде, в котором только знание отдельного сервера может оказаться недостаточно для определения конкретной проблемы.
 
-Дополнительные сведения о том, как переопределить свойство имени облачной роли с помощью инициализаторов телеметрии, см. в разделе [Добавление свойств: ITelemetryInitializer](api-filtering-sampling.md#add-properties-itelemetryinitializer).
+Дополнительные сведения о том, как переопределить свойство имени облачной роли с помощью инициализаторов телеметрии, см. в разделе [Добавление свойств: ITelemetryInitializer](api-filtering-sampling.md#addmodify-properties-itelemetryinitializer).
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 
 Если схема приложений не работает должным образом, попробуйте сделать следующее:
 
-### <a name="general"></a>Общие сведения
+### <a name="general"></a>Общие
 
 1. Убедитесь, что вы используете официально поддерживаемый пакет SDK. Неподдерживаемые пакеты SDK и пакеты SDK сообщества могут не поддерживать корреляцию.
 
@@ -274,7 +274,7 @@ appInsights.addTelemetryInitializer((envelope) => {
 
 ![Изображение MapLink-1](./media/app-map/14-updated.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * Дополнительные сведения о работе корреляции в Application Insights см. в [статье корреляция телеметрии](https://docs.microsoft.com/azure/application-insights/application-insights-correlation).
 * Средство [диагностики сквозных транзакций](transaction-diagnostics.md) сопоставляет данные телеметрии на стороне сервера от всех Application Insights отслеживаемых компонентов в едином представлении.

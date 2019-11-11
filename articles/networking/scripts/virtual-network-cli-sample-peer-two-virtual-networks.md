@@ -4,10 +4,7 @@ description: Пример скрипта Azure CLI. Пиринг между дв
 services: virtual-network
 documentationcenter: virtual-network
 author: KumudD
-manager: timlt
-editor: tysonn
-tags: ''
-ms.assetid: ''
+manager: mtillman
 ms.service: virtual-network
 ms.devlang: azurecli
 ms.topic: article
@@ -15,12 +12,12 @@ ms.tgt_pltfrm: ''
 ms.workload: infrastructure
 ms.date: 07/07/2017
 ms.author: kumud
-ms.openlocfilehash: 072d62f925d4f4024aa17d648a56dc6f37de00f1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0e5aaf07b49546aca9f44dcb9a43a79127c82341
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60848441"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73890244"
 ---
 # <a name="peer-two-virtual-networks"></a>Пиринг между двумя виртуальными сетями
 
@@ -54,7 +51,7 @@ az group delete --name myResourceGroup --yes
 | [az network vnet peering create](https://docs.microsoft.com/cli/azure/network/vnet/peering) | Создает пиринг между двумя виртуальными сетями.  |
 | [az group delete](https://docs.microsoft.com/cli/azure/vm/extension) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
 

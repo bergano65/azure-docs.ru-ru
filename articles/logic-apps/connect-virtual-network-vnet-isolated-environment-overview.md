@@ -9,12 +9,12 @@ ms.author: estfan
 ms.reviewer: klam, LADocs
 ms.topic: article
 ms.date: 11/08/2019
-ms.openlocfilehash: da68cfe504332ed6641c52322f0df0d2efd95997
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: e06ac0c0647d9a9a6b5adee289b497f2fe94b222
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73820671"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73889374"
 ---
 # <a name="access-to-azure-virtual-network-resources-from-azure-logic-apps-by-using-integration-service-environments-ises"></a>Доступ к ресурсам виртуальных сетей Azure из Azure Logic Apps с использованием сред службы интеграции (ISE)
 
@@ -50,7 +50,7 @@ ms.locfileid: "73820671"
 
 * Хранилище BLOB-объектов, хранилище файлов и хранилище таблиц Azure
 * Очереди Azure, Служебная шина Azure, Центры событий Azure и IBM MQ
-* FTP и SFTP-SSH
+* Файловая система, FTP и SFTP — SSH
 * SQL Server, хранилище данных SQL Azure Azure Cosmos DB
 * AS2, X12 и EDIFACT
 
@@ -125,7 +125,7 @@ ms.locfileid: "73820671"
 
 Учетные записи интеграции с приложениями логики можно использовать в среде службы интеграции. Тем не менее эти учетные записи интеграции должны использовать *ту же ISE*, что и связанные приложения логики. Приложения логики в среде ISE могут ссылаться только на те учетные записи интеграции, которые находятся в одной с ними среде ISE. При создании учетной записи интеграции можно выбрать среду ISE в качестве расположения учетной записи интеграции. Чтобы узнать, как цены и данные о выставлении счетов для учетных записей интеграции с интегрированной средой ISE, см. [Logic Appsную модель ценообразования](../logic-apps/logic-apps-pricing.md#fixed-pricing). Цены см. на странице [цен на Logic Apps](https://azure.microsoft.com/pricing/details/logic-apps/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Подключение к виртуальным сетям Azure из изолированных приложений логики](../logic-apps/connect-virtual-network-vnet-isolated-environment.md)
 * [Добавление артефактов в среды службы интеграции](../logic-apps/add-artifacts-integration-service-environment-ise.md)

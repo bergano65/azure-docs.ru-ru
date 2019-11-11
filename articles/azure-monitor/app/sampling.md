@@ -8,12 +8,12 @@ author: cijothomas
 ms.author: cithomas
 ms.date: 03/14/2019
 ms.reviewer: vitalyg
-ms.openlocfilehash: 82c0855e3ea3b6a89c1b20569971b0dc6b3d449c
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: c124e6c433f83212c0db815a2fd06cfcfdf86253
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72899865"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73884717"
 ---
 # <a name="sampling-in-application-insights"></a>Выборка в Application Insights
 
@@ -100,7 +100,7 @@ ms.locfileid: "72899865"
 
 Вместо установки параметра выборки в CONFIG-файле можно задать эти значения программным способом.
 
-1. Удалите все узлы `AdaptiveSamplingTelemetryProcessor` из файла конфигурации.
+1. Удалите все `AdaptiveSamplingTelemetryProcessor` узлы из файла конфигурации.
 2. Используйте следующий фрагмент кода для настройки адаптивной выборки.
 
 *C#*
@@ -145,7 +145,7 @@ ms.locfileid: "72899865"
 
 ### <a name="turning-off-adaptive-sampling"></a>Отключение адаптивной выборки
 
-Функцию выборки по умолчанию можно отключить при добавлении Application Insights службы в методе ```ConfigureServices``` с помощью ```ApplicationInsightsServiceOptions``` в файле `Startup.cs`:
+Функцию выборки по умолчанию можно отключить во время добавления Application Insights службы в ```ConfigureServices```метода с помощью ```ApplicationInsightsServiceOptions``` в файле `Startup.cs`:
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -190,7 +190,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, Telemetr
 
 ```
 
-**При использовании метода выше для настройки выборки используйте параметры ```aiOptions.EnableAdaptiveSampling = false;``` с Аддаппликатионинсигхтстелеметри ().**
+**Если для настройки выборки используется метод, описанный выше, обязательно используйте параметры ```aiOptions.EnableAdaptiveSampling = false;``` с Аддаппликатионинсигхтстелеметри ().**
 
 ## <a name="fixed-rate-sampling-for-aspnet-aspnet-core-java-websites-and-python-applications"></a>Выборка с фиксированной частотой для ASP.NET, ASP.NET Core, веб-сайтов Java и приложений Python
 
@@ -257,7 +257,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, Telemetr
 
 ### <a name="configuring-fixed-rate-sampling-in-aspnet-core"></a>Настройка выборки с фиксированной частотой в ASP.NET Core
 
-1. **Отключить адаптивную выборку**: изменения можно вносить в метод ```ConfigureServices``` с помощью ```ApplicationInsightsServiceOptions```:
+1. **Отключить адаптивную выборку**: изменения можно вносить в метод ```ConfigureServices```с помощью ```ApplicationInsightsServiceOptions```:
 
     ```csharp
     public void ConfigureServices(IServiceCollection services)
@@ -271,7 +271,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, Telemetr
     }
     ```
 
-2. **Включите модуль выборки с фиксированной частотой.** Изменения можно выполнить в методе ```Configure```, как показано в следующем фрагменте кода:
+2. **Включите модуль выборки с фиксированной частотой.** Изменения можно вносить в метод ```Configure```, как показано в следующем фрагменте кода:
 
     ```csharp
     public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -502,7 +502,7 @@ union requests,dependencies,pageViews,browserTimings,exceptions,traces
 
 *Можно ли выполнить выборку данных телеметрии более одного раза?*
 
-* Нет. Самплингтелеметрипроцессорс не учитывать элементы из соображений выборки, если элемент уже выбран. То же самое справедливо и для выборки приема, что не будет применять выборку к этим элементам, уже выбранным в пакете SDK.
+* Нет Самплингтелеметрипроцессорс не учитывать элементы из соображений выборки, если элемент уже выбран. То же самое справедливо и для выборки приема, что не будет применять выборку к этим элементам, уже выбранным в пакете SDK.
 
 *Почему выборка — это не простой сбор X процентов данных телеметрии каждого типа?*
 
@@ -534,7 +534,7 @@ union requests,dependencies,pageViews,browserTimings,exceptions,traces
 
 *Есть определенные редкие события, которые я всегда хочу просматривать. Как сделать так, чтобы модуль выборки не отфильтровывал их?*
 
-* Лучший способ добиться этого — написать настраиваемый [TelemetryInitializer](../../azure-monitor/app/api-filtering-sampling.md#add-properties-itelemetryinitializer), который задает `SamplingPercentage` равным 100 в элементе телеметрии, который необходимо сохранить, как показано ниже. Так как инициализаторы гарантированно выполняются до обработчиков данных телеметрии (включая выборку), это гарантирует, что все методы выборки будут игнорировать этот элемент из соображений выборки.
+* Лучший способ добиться этого — написать пользовательский [TelemetryInitializer](../../azure-monitor/app/api-filtering-sampling.md#addmodify-properties-itelemetryinitializer), который задает для `SamplingPercentage` значение 100 в элементе телеметрии, который необходимо сохранить, как показано ниже. Так как инициализаторы гарантированно выполняются до обработчиков данных телеметрии (включая выборку), это гарантирует, что все методы выборки будут игнорировать этот элемент из соображений выборки.
 
 ```csharp
      public class MyTelemetryInitializer : ITelemetryInitializer
@@ -549,7 +549,7 @@ union requests,dependencies,pageViews,browserTimings,exceptions,traces
       }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Фильтрация](../../azure-monitor/app/api-filtering-sampling.md) может обеспечивать более строгий контроль над данными, отправляемыми пакетом SDK.
 * Прочтите статью "сеть разработчика", чтобы [оптимизировать телеметрию с помощью Application Insights](https://msdn.microsoft.com/magazine/mt808502.aspx).

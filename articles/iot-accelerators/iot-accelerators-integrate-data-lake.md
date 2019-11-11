@@ -1,5 +1,5 @@
 ---
-title: Интеграция решения для удаленного мониторинга с Azure Data Lake Store | Документация Майкрософт
+title: Потоковая передача данных из удаленного мониторинга в Data Lake Store в Azure | Документация Майкрософт
 description: Узнайте о том, как выполнить интеграцию решения для удаленного мониторинга с Azure Data Lake Store с помощью задания Azure Stream Analytics.
 author: philmea
 manager: timlt
@@ -8,12 +8,12 @@ ms.date: 04/29/2018
 ms.topic: conceptual
 ms.service: iot-accelerators
 services: iot-accelerators
-ms.openlocfilehash: 021f18f588613817110539d408f9260fb9247895
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0a684151e01b298c60ff17ef1470e0648a425850
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61449500"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73889236"
 ---
 # <a name="integrate-the-remote-monitoring-solution-with-azure-data-lake-store"></a>Интеграция решения для удаленного мониторинга с Azure Data Lake Store
 
@@ -21,7 +21,7 @@ ms.locfileid: "61449500"
 
 В этом практическом руководстве используется задание Azure Stream Analytics для потоковой передачи данных из Центра Интернета вещей в вашем решении для удаленного мониторинга в Azure Data Lake Store.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 Для работы с этим практическим руководством необходимо следующее:
 
@@ -178,6 +178,6 @@ Azure Stream Analytics использует SQL-подобный язык зап
 
     ![Анализ данных потоковой передачи](./media/iot-accelerators-integrate-data-lake/data-lake-store-file-preview.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Azure Data Lake Analytics можно использовать для выполнения анализа больших данных в наборах данных Data Lake Store. Дополнительные сведения см. в [документации по Data Lake Analytics](https://docs.microsoft.com/azure/data-lake-analytics).

@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 06/26/2019
 ms.author: brendm
 ms.custom: seodec18
-ms.openlocfilehash: fa3cd84978119a5858e63712b4d22c2ea89ea528
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 8f6fb9737d3d8dad93a95f31d566f7cc4706ded3
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73470902"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73886049"
 ---
 # <a name="configure-a-linux-java-app-for-azure-app-service"></a>Настройка приложения Java для Linux для службы приложений Azure
 
@@ -86,7 +86,7 @@ jcmd 116 JFR.start name=MyRecording settings=profile duration=30s filename="/hom
 
 #### <a name="continuous-recording"></a>Непрерывная запись
 
-Zulu «черного ящика» можно использовать для непрерывного профилирования приложения Java с минимальным влиянием на производительность среды выполнения ([источник](https://assets.azul.com/files/Zulu-Mission-Control-data-sheet-31-Mar-19.pdf)). Для этого выполните следующую команду Azure CLI, чтобы создать параметр приложения с именем JAVA_OPTS и требуемой конфигурацией. Содержимое параметра приложения JAVA_OPTS передается команде `java` при запуске приложения.
+Zulu «черного ящика» можно использовать для непрерывного профилирования приложения Java с минимальным влиянием на производительность среды выполнения ([источник](https://assets.azul.com/files/Zulu-Mission-Control-data-sheet-31-Mar-19.pdf)). Для этого выполните следующую команду Azure CLI, чтобы создать параметр приложения с именем JAVA_OPTS с требуемой конфигурацией. Содержимое параметра JAVA_OPTS приложения передается команде `java` при запуске приложения.
 
 ```azurecli
 az webapp config appsettings set -g <your_resource_group> -n <your_app_name> --settings JAVA_OPTS=-XX:StartFlightRecording=disk=true,name=continuous_recording,dumponexit=true,maxsize=1024m,maxage=1d
@@ -239,6 +239,24 @@ public int getServerPort()
 
 Чтобы внедрить эти секреты в файл конфигурации весны или Tomcat, используйте синтаксис внедрения переменных среды (`${MY_ENV_VAR}`). Дополнительные сведения о файлах конфигурации пружины см. в этой документации по [внешним конфигурациям](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html).
 
+## <a name="using-the-java-key-store"></a>Использование хранилища ключей Java
+
+По умолчанию все общедоступные или частные сертификаты, [Отправленные в службу приложений Linux](../configure-ssl-certificate.md) , будут загружены в хранилище ключей Java при запуске контейнера. Это означает, что отправленные сертификаты будут доступны в контексте подключения при создании исходящих TLS подключений.
+
+Вы можете взаимодействовать или отлаживать инструмент для работы с ключами Java, [открыв SSH-подключение](app-service-linux-ssh-support.md) к службе приложений и выполнив команду `keytool`. Список команд см. в [документации по основным средствам](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/keytool.html) . Сертификаты хранятся в расположении файлов хранилища ключей Java по умолчанию, `$JAVA_HOME/jre/lib/security/cacerts`.
+
+Для шифрования подключения JDBC может потребоваться дополнительная настройка. Обратитесь к документации по выбранному драйверу JDBC.
+
+- [PostgreSQL](https://jdbc.postgresql.org/documentation/head/ssl-client.html)
+- [SQL Server](https://docs.microsoft.com/sql/connect/jdbc/connecting-with-ssl-encryption?view=sql-server-ver15)
+- [MySQL](https://dev.mysql.com/doc/connector-j/5.1/en/connector-j-reference-using-ssl.html)
+
+### <a name="manually-initialize-and-load-the-key-store"></a>Инициализация и загрузка хранилища ключей вручную
+
+Вы можете инициализировать хранилище ключей и добавить сертификаты вручную. Создайте параметр приложения `SKIP_JAVA_KEYSTORE_LOAD`со значением `1`, чтобы отключить автоматическую загрузку сертификатов в хранилище ключей службой приложений. Все общедоступные сертификаты, отправленные в службу приложений через портал Azure, хранятся в `/var/ssl/certs/`. Частные сертификаты хранятся в разделе `/var/ssl/private/`.
+
+Дополнительные сведения об API хранилища ключей см. в [официальной документации](https://docs.oracle.com/javase/8/docs/api/java/security/KeyStore.html).
+
 ## <a name="configure-apm-platforms"></a>Настройка платформ APM
 
 В этом разделе показано, как подключить приложения Java, развернутые в службе приложений Azure на платформе Linux, с помощью платформ мониторинга производительности приложений NewRelic и AppDynamics (APM).
@@ -298,7 +316,7 @@ public int getServerPort()
 |------------|-----------------------------------------------|------------------------------------------------------------------------------------------|
 | PostgreSQL | `org.postgresql.Driver`                        | [Загрузить](https://jdbc.postgresql.org/download.html)                                    |
 | MySQL      | `com.mysql.jdbc.Driver`                        | [Скачать](https://dev.mysql.com/downloads/connector/j/) (выберите "Platform Independent" (Независимо от платформы)) |
-| SQL Server | `com.microsoft.sqlserver.jdbc.SQLServerDriver` | [Загрузить](https://docs.microsoft.com/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-2017#available-downloads-of-jdbc-driver-for-sql-server)                                                           |
+| SQL Server; | `com.microsoft.sqlserver.jdbc.SQLServerDriver` | [Загрузить](https://docs.microsoft.com/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-2017#available-downloads-of-jdbc-driver-for-sql-server)                                                           |
 
 Чтобы настроить Tomcat для использования Java Database Connectivity (JDBC) или API сохраняемости Java (JPA), сначала настройте переменную среды `CATALINA_OPTS`, которая считывается в Tomcat при запуске. Задайте эти значения с помощью параметра приложения в [подключаемом модуле Maven для службы приложений](https://github.com/Microsoft/azure-maven-plugins/blob/develop/azure-webapp-maven-plugin/README.md):
 
@@ -595,7 +613,7 @@ public int getServerPort()
             DATABASE_CONNECTION_URL=jdbc:sqlserver://<database server name>:1433;database=<database name>;user=<admin name>;password=<admin password>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
     ```
 
-    Значения DATABASE_CONNECTION_URL отличаются для каждого сервера базы данных и отличаются от значений в портал Azure. Приведенные здесь форматы URL-адресов (и в приведенных выше фрагментах) необходимы для использования Вилдфли:
+    Значения DATABASE_CONNECTION_URL различаются для каждого сервера базы данных и отличаются от значений в портал Azure. Приведенные здесь форматы URL-адресов (и в приведенных выше фрагментах) необходимы для использования Вилдфли:
 
     * **PostgreSQL:** `jdbc:postgresql://<database server name>:5432/<database name>?ssl=true`
     * **MySQL:** `jdbc:mysql://<database server name>:3306/<database name>?ssl=true\&useLegacyDatetimeCode=false\&serverTimezone=GMT`
@@ -712,7 +730,7 @@ public int getServerPort()
 
 8. Обновите конфигурацию `azure-webapp-maven-plugin` в файле *POM. XML* вашего приложения, чтобы они ссылались на сведения об учетной записи Redis. В этом файле используются ранее настроенные переменные среды для сохранения данных учетной записи из исходных файлов.
 
-    При необходимости измените `1.7.0` до текущей версии [подключаемого модуля Maven для службы приложений Azure](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme).
+    При необходимости измените `1.7.0` на текущую версию [подключаемого модуля Maven для Службы приложений Azure](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme).
 
     ```xml
     <plugin>
@@ -794,7 +812,7 @@ public int getServerPort()
 
 Если планируется прекращение использования какой-либо поддерживаемой среды выполнения Java, то разработчики для Azure, использующие эту среду выполнения, получат соответствующее уведомление по крайней мере за шесть месяцев до прекращения использования.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Посетите центр [Azure для разработчиков Java](/java/azure/), чтобы найти краткие руководства Azure, руководства и справочную документацию по Java.
 

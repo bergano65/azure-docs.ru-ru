@@ -9,12 +9,12 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 41da5b59c7d9429a068ecd483aa96edb1141b727
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: 0657d3d5aec414b867e85b627fcf77174c8ce789
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73719947"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73889899"
 ---
 # <a name="how-to-index-cosmos-db-data-using-an-indexer-in-azure-cognitive-search"></a>Индексирование Cosmos DB данных с помощью индексатора в Azure Когнитивный поиск 
 
@@ -78,17 +78,11 @@ ms.locfileid: "73719947"
 
    ![Определение источника данных Cosmos DB](media/search-howto-index-cosmosdb/cosmosdb-datasource.png "Определение источника данных Cosmos DB")
 
-### <a name="4---skip-the-add-cognitive-search-page-in-the-wizard"></a>4\. Пропуск страницы "Добавление когнитивного поиска" в мастере
+### <a name="4---skip-the-enrich-content-page-in-the-wizard"></a>4\. Пропустите страницу "обогащение содержимого" в мастере
 
-Для импорта документов не требуется добавлять профессиональные навыки. Если нет необходимости [добавлять обогащение искусственного интеллекта](cognitive-search-concept-intro.md) в конвейер индексирования, этот шаг следует пропустить.
+Добавление неученых навыков (или обогащения) не является требованием импорта. Если нет необходимости [добавлять обогащение искусственного интеллекта](cognitive-search-concept-intro.md) в конвейер индексирования, этот шаг следует пропустить.
 
-Чтобы пропустить этот шаг, сначала перейдите на следующую страницу.
-
-   ![Кнопка "Следующая страница" для добавления навыков](media/search-get-started-portal/next-button-add-cog-search.png)
-
-На этой странице можно сразу перейти к настройке индекса.
-
-   ![Пропуск шага когнитивных навыков](media/search-get-started-portal/skip-cog-skill-step.png)
+Чтобы пропустить этот шаг, щелкните синюю кнопку в нижней части страницы для "Далее" и "пропустить".
 
 ### <a name="5---set-index-attributes"></a>5\. Настройка атрибутов индекса
 
@@ -176,7 +170,7 @@ ms.locfileid: "73719947"
 
 Текст запроса содержит определение источника данных, который должен включать следующие поля.
 
-| Поле   | Description (Описание) |
+| Поле   | ОПИСАНИЕ |
 |---------|-------------|
 | **name** | обязательный параметр. Выберите любое имя, представляющее объект источника данных. |
 |**type**| обязательный параметр. Этот параметр должен содержать значение `cosmosdb`. |
@@ -260,7 +254,7 @@ ms.locfileid: "73719947"
 | Bool |Edm.Boolean, Edm.String |
 | Числа, которые выглядят как целые числа |Edm.Int32, Edm.Int64, Edm.String |
 | Числа, которые выглядят как числа с плавающей запятой |Edm.Double, Edm.String |
-| string |Edm.String |
+| Строка, |Edm.String |
 | Массивы типов-примитивов, например [a, b, c] |Collection(Edm.String) |
 | Строки, которые выглядят как даты |Edm.DateTimeOffset, Edm.String |
 | Геообъекты JSON, например { "тип": "Точка", "координаты": [ долгота, широта ] } |Edm.GeographyPoint |

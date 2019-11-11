@@ -1,18 +1,18 @@
 ---
-title: Потоки устройств Центра Интернета вещей (предварительная версия) | Документация Майкрософт
-description: Обзор потоков устройств центра Интернета вещей
+title: Потоки устройств центра Интернета вещей Azure | Документация Майкрософт
+description: Обзор потоков устройств центра Интернета вещей Azure, которые упрощают безопасные двунаправленные туннели TCP для различных сценариев взаимодействия между облаком и устройством.
 author: robinsh
 services: iot-hub
 ms.service: iot-hub
 ms.topic: conceptual
 ms.date: 01/15/2019
 ms.author: robinsh
-ms.openlocfilehash: c71ca96ee657cd4d4d0d57e05dc31c03112dc848
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: ff738e56226f7cbb720a754573a9d8607e0e3247
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72900725"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73890467"
 ---
 # <a name="iot-hub-device-streams-preview"></a>Потоки устройств Центра Интернета вещей (предварительная версия)
 
@@ -138,7 +138,7 @@ az iot hub devicestream show --name <YourIoTHubName>
 
    !["Доступ к журналам потоковой передачи устройства"](./media/iot-hub-device-streams-overview/device-streams-view-logs.png)
 
-## <a name="regional-availability"></a>Доступность по регионам
+## <a name="regional-availability"></a>Доступ по регионам
 
 Во время общедоступной предварительной версии потоки устройств центра Интернета вещей доступны в центральной части США, центральной части США (EUAP), Северной Европе и Юго-Восточной Азии. Убедитесь, что центр создан в одном из этих регионов.
 
@@ -190,7 +190,7 @@ az iot hub devicestream show --name <YourIoTHubName>
 
 4. Локальный прокси-сервер службы ожидает передачи данных на указанный порт, в частности новых SSH-подключений от пользователя (в примере используется порт — 2222, но вы можете настроить любой доступный порт). Пользователь указывает клиент SSH на порте локального прокси-сервера в localhost.
 
-### <a name="notes"></a>Заметки
+### <a name="notes"></a>Примечания
 
 * На описанных выше шагах создается сквозной туннель между клиентом SSH (справа) и управляющей программой SSH (слева). В рамках этого сквозного подключения выполняется отправка трафика в Центр Интернета вещей через поток устройства.
 
@@ -208,7 +208,7 @@ az iot hub devicestream show --name <YourIoTHubName>
 
 * [Программа для устройства C](quickstart-device-streams-proxy-c.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Используйте приведенные ниже ссылки для получения дополнительных сведений о потоках устройств.
 

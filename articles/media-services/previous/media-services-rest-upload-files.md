@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: 9563def1a7b510c403cf299a66066def0b03b59a
-ms.sourcegitcommit: 018e3b40e212915ed7a77258ac2a8e3a660aaef8
+ms.openlocfilehash: d5b84a9d216457720e9bd4e17b002d6ab9490f9d
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73796790"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73888600"
 ---
 # <a name="upload-files-into-a-media-services-account-using-rest"></a>Передача файлов в учетную запись служб мультимедиа с помощью REST  
 > [!div class="op_single_selector"]
@@ -34,18 +34,18 @@ ms.locfileid: "73796790"
 > [!div class="checklist"]
 > * Настройка Postman для всех операций отправки файлов.
 > * Подключение к службам мультимедиа 
-> * Создание политики доступа с разрешением на запись
+> * Создание политики доступа с разрешением на запись.
 > * Создание ресурса
 > * Создание указателя SAS и URL-адреса отправки
 > * Отправка файла в хранилище больших двоичных объектов с помощью URL-адреса отправки.
 > * Создание в ресурсе метаданных для переданного файла мультимедиа.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
-- Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.
+- Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) , прежде чем начинать работу.
 - [Создание учетной записи служб мультимедиа Azure с помощью портала Azure](media-services-portal-create-account.md).
 - Ознакомьтесь со статьей [Доступ к API служб мультимедиа Azure с помощью аутентификации Azure AD](media-services-use-aad-auth-to-access-ams-api.md).
-- Кроме того, дополнительные сведения см. в статье [использование аутентификации Azure AD для доступа к API служб мультимедиа с помощью функции RESTful](https://docs.microsoft.com/en-us/azure/media-services/previous/media-services-rest-connect-with-aad) .
+- Кроме того, дополнительные сведения см. в статье [использование аутентификации Azure AD для доступа к API служб мультимедиа с помощью функции RESTful](https://docs.microsoft.com/azure/media-services/previous/media-services-rest-connect-with-aad) .
 - Настройте **Postman**, как описано в статье [Configure Postman for Media Services REST API calls](media-rest-apis-with-postman.md) (Настройка Postman для вызовов к API REST служб мультимедиа).
 
 ## <a name="considerations"></a>Рекомендации
@@ -69,7 +69,7 @@ ms.locfileid: "73796790"
 
     Значения для первых пяти из этих переменных вы найдете в статье [Доступ к API служб мультимедиа Azure с помощью аутентификации Azure AD](media-services-use-aad-auth-to-access-ams-api.md). 
 
-    ![Отправка файла](./media/media-services-rest-upload-files/postman-import-env.png)
+    ![отправить файл;](./media/media-services-rest-upload-files/postman-import-env.png)
 2. Укажите значение для переменной среды **MediaFileName**.
 
     Укажите имя файла мультимедиа, который вы собираетесь передать. В нашем примере это файл BigBuckBunny.mp4. 
@@ -91,7 +91,7 @@ ms.locfileid: "73796790"
 
     Часть URL-адреса заполняется переменной среды **AzureADSTSEndpoint** (ранее в этом руководстве вы задали значения переменных среды, поддерживающих коллекции).
 
-    ![Отправка файла](./media/media-services-rest-upload-files/postment-get-token.png)
+    ![отправить файл;](./media/media-services-rest-upload-files/postment-get-token.png)
 
 5. Нажмите кнопку **Отправить**.
 
@@ -99,7 +99,7 @@ ms.locfileid: "73796790"
 
     Когда истечет срок действия маркера, повторно выполните действие "Получить маркер безопасности Azure AD для субъекта-службы". 
 
-## <a name="create-an-access-policy-with-write-permission"></a>Создание политики доступа с разрешением на запись
+## <a name="create-an-access-policy-with-write-permission"></a>Создание политики доступа с разрешением на запись.
 
 ### <a name="overview"></a>Обзор 
 
@@ -113,7 +113,7 @@ ms.locfileid: "73796790"
 1. Выберите **AccessPolicy** -> **Create AccessPolicy for Upload** (Создать AccessPolicy для отправки).
 2. Нажмите кнопку **Отправить**.
 
-    ![Отправка файла](./media/media-services-rest-upload-files/postman-access-policy.png)
+    ![отправить файл;](./media/media-services-rest-upload-files/postman-access-policy.png)
 
     Скрипт test получает идентификатор AccessPolicy и сохраняет его в соответствующей переменной среды.
 
@@ -134,7 +134,7 @@ ms.locfileid: "73796790"
 1. Выберите **Ресурсы** -> **Создать ресурс**.
 2. Нажмите кнопку **Отправить**.
 
-    ![Отправка файла](./media/media-services-rest-upload-files/postman-create-asset.png)
+    ![отправить файл;](./media/media-services-rest-upload-files/postman-create-asset.png)
 
     Скрипт test получает идентификатор ресурса и сохраняет его в соответствующей переменной среды.
 
@@ -167,7 +167,7 @@ ms.locfileid: "73796790"
 
     Скрипт test создает URL-адрес отправки, используя указанное вами имя файла мультимедиа и сведения о локаторе SAS, а затем сохраняет его в соответствующей переменной среды.
 
-    ![Отправка файла](./media/media-services-rest-upload-files/postman-create-sas-locator.png)
+    ![отправить файл;](./media/media-services-rest-upload-files/postman-create-sas-locator.png)
 
 ## <a name="upload-a-file-to-blob-storage-using-the-upload-url"></a>Отправка файла в хранилище больших двоичных объектов с помощью URL-адреса отправки.
 
@@ -194,7 +194,7 @@ ms.locfileid: "73796790"
 4. Выберите файл с именем, которое сохранено в переменной среды **MediaFileName**.
 5. Нажмите кнопку **Отправить**.
 
-    ![Отправка файла](./media/media-services-rest-upload-files/postman-upload-file.png)
+    ![отправить файл;](./media/media-services-rest-upload-files/postman-upload-file.png)
 
 ##  <a name="create-a-metadata-in-the-asset"></a>Создание метаданных в ресурсе
 
@@ -203,7 +203,7 @@ ms.locfileid: "73796790"
 1. Выберите **AssetFiles** -> **CreateFileInfos**.
 2. Нажмите кнопку **Отправить**.
 
-    ![Отправка файла](./media/media-services-rest-upload-files/postman-create-file-info.png)
+    ![отправить файл;](./media/media-services-rest-upload-files/postman-create-file-info.png)
 
 Это действие запускает отправку файла и создание метаданных.
 
@@ -222,7 +222,7 @@ ms.locfileid: "73796790"
     "ContentFileSize": "3186542",
     "ParentAssetId": "nb:cid:UUID:0b8f3b04-72fb-4f38-8e7b-d7dd78888938",
             
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Теперь можно закодировать отправленные ресурсы. Дополнительную информацию см. в статье, посвященной [кодированию ресурсов](media-services-portal-encode.md).
 

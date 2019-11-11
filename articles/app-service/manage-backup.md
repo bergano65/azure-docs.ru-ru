@@ -13,14 +13,14 @@ ms.topic: article
 ms.date: 10/16/2019
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: bbfab41c3324bc16874463d2fc0201f99ee9284b
-ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
+ms.openlocfilehash: a56abbcb72afc1f45683259d3bd3bf13309cda07
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72516977"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73886065"
 ---
-# <a name="back-up-your-app-in-azure"></a>Резервное копирование приложения в Azure
+# <a name="back-up-your-app-in-azure"></a>Архивация приложения в Azure
 Функция архивации и восстановления в [службе приложений Azure](overview.md) позволяет легко создавать резервные копии приложений вручную или по расписанию. Резервные копии можно настроить для хранения в течение неопределенного времени. Вы можете восстановить приложение до моментального снимка предыдущего состояния, перезаписав существующее приложение или восстановив другое.
 
 Сведения о восстановлении приложения из резервной копии см. в статье [Восстановление приложения в службе приложений Azure](web-sites-restore.md).
@@ -39,7 +39,7 @@ ms.locfileid: "72516977"
 - [База данных SQL](https://azure.microsoft.com/services/sql-database/)
 - [База данных Azure для MySQL](https://azure.microsoft.com/services/mysql)
 - [База данных Azure для PostgreSQL](https://azure.microsoft.com/services/postgresql)
-- [MySQL в приложении](https://azure.microsoft.com/en-us/blog/mysql-in-app-preview-app-service/).
+- [MySQL в приложении](https://azure.microsoft.com/blog/mysql-in-app-preview-app-service/).
  
 
 > [!NOTE]
@@ -114,7 +114,7 @@ ms.locfileid: "72516977"
 <a name="partialbackups"></a>
 
 ## <a name="configure-partial-backups"></a>Настройка частичной архивации
-Иногда не нужно создавать резервную копию всего приложения. Ниже приведено несколько примеров:
+Иногда не нужно создавать резервную копию всего приложения. Вот несколько таких случаев.
 
 * У вас [настроена еженедельная архивация](#configure-automated-backups) приложения со статическим содержимым, которое никогда не меняется. Это могут быть старые записи блога или изображения.
 * Размер содержимого приложения превышает 10 ГБ (т. е. максимальный размер резервной копии, которую можно создать за раз).
@@ -176,5 +176,5 @@ ms.locfileid: "72516977"
 
 <a name="nextsteps"></a>
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Сведения о восстановлении приложения из резервной копии см. в статье [Восстановление приложения в службе приложений Azure](web-sites-restore.md). 

@@ -1,18 +1,18 @@
 ---
 title: Создание Центра Интернета вещей Azure с помощью средств Интернета вещей Azure для VS Code | Документация Майкрософт
-description: Использование средств Интернета вещей Azure для VS Code при создании центра Интернета вещей.
+description: Узнайте, как использовать средства Azure IoT для Visual Studio Code, чтобы создать центр Интернета вещей Azure в группе ресурсов.
 author: formulahendry
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 01/04/2019
 ms.author: junhan
-ms.openlocfilehash: c37eeec6429e8367ade12b58bb4e20022423edf6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3fe4dfae2e86d549056805e87c0fd3927697fe24
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66166243"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73890568"
 ---
 # <a name="create-an-iot-hub-using-the-azure-iot-tools-for-visual-studio-code"></a>Создание Центра Интернета вещей с помощью средств Интернета вещей Azure для Visual Studio Code
 
@@ -24,13 +24,13 @@ ms.locfileid: "66166243"
 
 Для работы с этой статьей необходимо следующее:
 
-- Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+- Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу.
 
 - [Visual Studio Code](https://code.visualstudio.com/)
 
 - [Средства Azure IoT](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools) для Visual Studio Code.
 
-## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
+## <a name="create-an-iot-hub"></a>Создание центра IoT
 
 1. Откройте в Visual Studio Code представление **Explorer**.
 
@@ -56,7 +56,7 @@ ms.locfileid: "66166243"
 
 11. Подождите несколько минут, пока Центр Интернета вещей не будет создан.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Вы развернули Центр Интернета вещей с помощью средств Интернета вещей Azure для Visual Studio Code. Чтобы продолжить изучение, ознакомьтесь со следующими статьями:
 

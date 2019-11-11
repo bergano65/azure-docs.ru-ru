@@ -1,6 +1,6 @@
 ---
 title: Отправка сообщений на сервер MQTT с помощью клиентской библиотеки Azure MQTT | Документация Майкрософт
-description: Использование DevKit в качестве клиента для отправки сообщений на сервер MQTT
+description: Узнайте, как использовать клиентскую библиотеку MQTT для отправки сообщений в брокер MQTT. Также Узнайте, как настроить mXChip IoT DevKit как клиент MQTT.
 author: liydu
 manager: jeffya
 ms.service: iot-hub
@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 04/02/2018
 ms.author: liydu
-ms.openlocfilehash: 6afe0a2fe366b83af45682245776c803c99483d3
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 4de8b0910a2be48cc626775c5c9bc873c6e780dc
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73484035"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73889553"
 ---
 # <a name="send-messages-to-an-mqtt-server"></a>Отправка сообщений на сервер MQTT
 
@@ -80,12 +80,12 @@ Serial Monitor отобразит все сообщения, отправлен�
 * [Gitter.im](https://gitter.im/Microsoft/azure-iot-developer-kit)
 * [Stack Overflow](https://stackoverflow.com/questions/tagged/iot-devkit)
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также
 
 * [Подключение платы IoT DevKit AZ3166 к Центру Интернета вещей Azure в облаке](iot-hub-arduino-iot-devkit-az3166-get-started.md)
 * [Shake, Shake: получение сообщений из Twitter](iot-hub-arduino-iot-devkit-az3166-retrieve-twitter-message.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Теперь вы знаете, как настроить MXChip Iot DevKit в качестве клиента MQTT и применить клиентскую библиотеку MQTT для отправки сообщений на брокер MQTT. Мы предлагаем вам продолжить обучение, изучив следующие статьи.
 

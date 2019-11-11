@@ -6,12 +6,12 @@ author: SnehaGunda
 ms.author: sngun
 ms.topic: conceptual
 ms.date: 05/21/2019
-ms.openlocfilehash: e22b426b2172c169f9343569fffac57f370afbee
-ms.sourcegitcommit: 3fa4384af35c64f6674f40e0d4128e1274083487
+ms.openlocfilehash: de2bc551547706fb820813e57996e77bf49148d1
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71219881"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73888939"
 ---
 # <a name="common-azure-cosmos-db-use-cases"></a>Распространенные примеры использования Azure Cosmos DB
 В этой статье представлен обзор нескольких распространенных примеров использования Azure Cosmos DB.  Рекомендации в данной статье служат отправной точкой для разработки приложений с использованием Cosmos DB.   
@@ -68,7 +68,7 @@ Azure Cosmos DB часто используется для источников
 ## <a name="gaming"></a>Игры
 Категория базы данных является критически важным компонентом для игровых приложений. Современные игры обрабатывают графику на клиентах мобильных устройств или консолей, однако получают из облака настраиваемое и персонализированное содержимое, например игровую статистику, интеграцию с социальными сетями и списки лидеров по набранным баллам. Играм часто требуются операции чтения и записи с задержками порядка миллисекунд, чтобы обеспечить комфортное участие в игровом процессе. База данных игры должна быть быстрой и способной обрабатывать значительные всплески частоты запросов, происходящие во время выпуска новых игр и обновления функций.
 
-Azure Cosmos DB используется в таких играх, как [The Walking Dead: No Man's Land](https://azure.microsoft.com/blog/the-walking-dead-no-mans-land-game-soars-to-1-with-azure-documentdb/) от [Next Games](https://www.nextgames.com/) и [Halo 5: Guardians](https://azure.microsoft.com/blog/how-halo-5-guardians-implemented-social-gameplay-using-azure-documentdb/). Azure Cosmos DB обеспечивает для разработчиков игр следующие преимущества.
+Azure Cosmos DB используется в таких играх, как [The Walking Dead: No Man's Land](https://azure.microsoft.com/blog/the-walking-dead-no-mans-land-game-soars-to-1-with-azure-documentdb/) от [Next Games](https://www.nextgames.com/) и [Halo 5: Guardians](https://azure.microsoft.com/blog/how-halo-5-guardians-implemented-social-gameplay-using-azure-documentdb/). Azure Cosmos DB обеспечивает для разработчиков игр следующие преимущества.
 
 * Эта служба позволяет гибко масштабировать производительность. Это позволяет играм обновлять профили и статистику для как малого, так и большого числа одновременных игроков с помощью одного вызова API.
 * Azure Cosmos DB поддерживает операции чтения и записи, занимающие считаные миллисекунды, что помогает избежать любых задержек во время игры.
@@ -97,8 +97,8 @@ JSON — это эффективный формат, поддерживаемы
 
 ![Эталонная архитектура веб-приложения на основе Azure Cosmos DB](./media/use-cases/personalization.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 * Чтобы приступить к работе с Azure Cosmos DB, ознакомьтесь с нашими [краткими руководствами](create-sql-api-dotnet.md) по созданию учетной записи и работе со службой Cosmos DB.
 
-* Если вы хотите узнать больше о клиентах, использующих Azure Cosmos DB, см. страницу " [примеры использования клиентов](https://azure.microsoft.com/en-us/case-studies/?service=cosmos-db) ".
+* Если вы хотите узнать больше о клиентах, использующих Azure Cosmos DB, см. страницу " [примеры использования клиентов](https://azure.microsoft.com/case-studies/?service=cosmos-db) ".

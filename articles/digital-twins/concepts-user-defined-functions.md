@@ -7,13 +7,13 @@ manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 09/17/2019
-ms.openlocfilehash: b8ea5c54afd4b1e2c212422417688e528367d44f
-ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
+ms.date: 11/07/2019
+ms.openlocfilehash: 0708b1dd2d272757949d014d768c1da649b50146
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71949974"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73889681"
 ---
 # <a name="data-processing-and-user-defined-functions"></a>Обработка данных и определяемые пользователем функции
 
@@ -34,7 +34,7 @@ Azure Digital Twins предлагает расширенные вычислит
 
 Обработка данных в Azure Digital Twins состоит из определения трех объектов: *сопоставлений*, *определяемых пользователем функций* и *назначений ролей*.
 
-[объекты обработки данных ![Azure Digital двойников](media/concepts/digital-twins-user-defined-functions.png)](media/concepts/digital-twins-user-defined-functions.png#lightbox)
+[![объектов обработки данных Azure Digital двойников](media/concepts/digital-twins-user-defined-functions.png)](media/concepts/digital-twins-user-defined-functions.png#lightbox)
 
 ### <a name="matchers"></a>Сопоставления
 
@@ -42,35 +42,40 @@ Azure Digital Twins предлагает расширенные вычислит
 
 - Все датчики с типом данных **Temperature** (Температура), представленные экранированным строковым значением `\"Temperature\"`.
 - Наличие `01` в их портах.
-- Те, что относятся к устройствам с ключом расширенного свойства **Manufacturer** (Производитель), которому присвоено экранированное строковое значение `\"GoodCorp\"`.
+- Те, что относятся к устройствам с ключом расширенного свойства **Manufacturer** (Производитель), которому присвоено экранированное строковое значение `\"Contoso\"`.
 - Те, что принадлежат пространствам типа, заданного экранированным строковым значением `\"Venue\"`.
 - Которые являются потомками родительского **SpaceId** `DE8F06CA-1138-4AD7-89F4-F782CC6F69FD`.
 
 ```JSON
 {
-  "SpaceId": "DE8F06CA-1138-4AD7-89F4-F782CC6F69FD",
-  "Name": "My custom matcher",
-  "Description": "All sensors of datatype Temperature with 01 in their port that belong to devices with the extended property key Manufacturer set to the value GoodCorp and that belong to spaces of type Venue that are somewhere below space Id DE8F06CA-1138-4AD7-89F4-F782CC6F69FD",
-  "Conditions": [
+  "id": "23535afafd-f39b-46c0-9b0c-0dd3892a1c30",
+  "name": "My custom matcher",
+  "spaceId": "DE8F06CA-1138-4AD7-89F4-F782CC6F69FD",
+  "description": "All sensors of datatype Temperature with 01 in their port that belong to devices with the extended property key Manufacturer set to the value Contoso and that belong to spaces of type Venue that are somewhere below space Id DE8F06CA-1138-4AD7-89F4-F782CC6F69FD",
+  "conditions": [
     {
+      "id": "43898sg43-e15a-4e9c-abb8-2gw464364",
       "target": "Sensor",
       "path": "$.dataType",
       "value": "\"Temperature\"",
       "comparison": "Equals"
     },
     {
+      "id": "wt3th44-e15a-35sg-seg3-235wf3ga463",
       "target": "Sensor",
       "path": "$.port",
       "value": "01",
       "comparison": "Contains"
     },
     {
+      "id": "735hs33-e15a-37jj-23532-db901d550af5",
       "target": "SensorDevice",
       "path": "$.properties[?(@.name == 'Manufacturer')].value",
-      "value": "\"GoodCorp\"",
+      "value": "\"Contoso\"",
       "comparison": "Equals"
     },
     {
+      "id": "222325-e15a-49fg-5744-463643644",
       "target": "SensorSpace",
       "path": "$.type",
       "value": "\"Venue\"",
@@ -92,7 +97,7 @@ Azure Digital Twins предлагает расширенные вычислит
 
 Определяемая пользователем функция — это пользовательская функция, выполняемая в изолированной среде в Azure Digital Twins. Эти функции имеют доступ к сообщению необработанной телеметрии датчика при его получении. Определяемые пользователем функции также имеют доступ к пространственному графику и диспетчерской службе. Как только определяемая пользователем функция регистрируется в графе, необходимо создать сопоставитель (описано [выше](#matchers)), чтобы указать, когда следует выполнять эту функцию. Например, когда Digital Twins получает новые данные телеметрии из данного датчика, сопоставленная определяемая пользователем функция может вычислить скользящее среднее значение нескольких последних значений датчика.
 
-Определяемые пользователем функции (UDF) можно создавать в JavaScript. Существуют вспомогательные методы для взаимодействия с графами в среде выполнения, определяемой пользователем. Разработчики могут выполнять пользовательские фрагменты кода для сообщений телеметрии датчиков. Примеры приведены ниже.
+Определяемые пользователем функции (UDF) можно создавать в JavaScript. Существуют вспомогательные методы для взаимодействия с графами в среде выполнения, определяемой пользователем. Разработчики могут выполнять пользовательские фрагменты кода для сообщений телеметрии датчиков. Примеры таких ошибок:
 
 - вводить считывание датчика непосредственно на датчик объекта в графе;
 - выполнять действие в графе на основании показаний датчика в пространстве;
@@ -107,13 +112,13 @@ Azure Digital Twins предлагает расширенные вычислит
 - [Эта функция](https://github.com/Azure-Samples/digital-twins-samples-csharp/blob/master/occupancy-quickstart/src/actions/userDefinedFunctions/availabilityForTutorial.js) проверяет значения уровня углекислого газа, температуры и движения, чтобы определить, есть ли свободная комната, для которой эти значения находятся в указанном диапазоне. В [руководствах по Digital Twins](tutorial-facilities-udf.md) эта функция рассматривается более подробно. 
 - [Эта функция](https://github.com/Azure-Samples/digital-twins-samples-csharp/blob/master/occupancy-quickstart/src/actions/userDefinedFunctions/multiplemotionsensors.js) получает данные от нескольких датчиков движения и определяет, что помещение свободно, если ни один из датчиков не обнаруживает никакого движения. Вы можете легко заменить определяемую пользователем функцию, которая используется в этом [кратком руководстве](quickstart-view-occupancy-dotnet.md), или этих [руководствах](tutorial-facilities-setup.md), внеся изменения, указанные в разделе комментариев файла. 
 
-### <a name="role-assignment"></a>Назначение ролей
+### <a name="role-assignment"></a>Назначение роли
 
 Для защиты данных в службе действия определяемой пользователем функции попадают под [контроль управления доступом на основе ролей](./security-role-based-access-control.md) Azure Digital Twins. Назначения ролей определяют, какие определяемые пользователем функции имеют разрешения, необходимые для взаимодействия с пространственным графом и его сущностями. Например, определяемой пользователем функции может быть назначена возможность, а также разрешение на *СОЗДАНИЕ*, *ЧТЕНИЕ*, *ИЗМЕНЕНИЕ* или *УДАЛЕНИЕ* данных графа в данном пространстве. Уровень доступности определяемой пользователем функции проверяется, когда эта функция запрашивает данные графа или пытается выполнить действие. Дополнительные сведения об [управлении доступом на основе ролей](./security-create-manage-role-assignments.md).
 
 Сопоставитель может запускать UDF-функцию, которая не имеет назначений ролей. В этом случае определяемая пользователем функция не сможет считывать данные из графа.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 - Узнать, как маршрутизировать события и сообщения телеметрии к другим службам Azure, в [этой статье](./concepts-events-routing.md).
 

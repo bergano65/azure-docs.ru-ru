@@ -12,12 +12,12 @@ author: barmichal
 ms.author: mibar
 ms.reviewer: vanto
 ms.date: 08/22/2019
-ms.openlocfilehash: 2767b1b5603baa311d480109988d66dd136297ab
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: b5f839cc6216eb12bfd0a86009ec49e987279d6e
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73808066"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73889831"
 ---
 # <a name="azure-sql-database-and-sql-data-warehouse-data-discovery--classification"></a>Классификация & базы данных SQL Azure и хранилища данных SQL
 
@@ -162,8 +162,8 @@ ms.locfileid: "73808066"
 - [Set-Азсклдатабасесенситивитиклассификатион](https://docs.microsoft.com/powershell/module/az.sql/set-azsqldatabasesensitivityclassification)
 - [Remove-Азсклдатабасесенситивитиклассификатион](https://docs.microsoft.com/powershell/module/az.sql/remove-azsqldatabasesensitivityclassification)
 - [Get-Азсклдатабасесенситивитирекоммендатион](https://docs.microsoft.com/powershell/module/az.sql/get-azsqldatabasesensitivityrecommendation)
-- [Enable-Азсклдатабасесенситивитирекоммендатион](https://docs.microsoft.com/en-us/powershell/module/az.sql/enable-azsqldatabasesensitivityrecommendation)
-- [Disable-Азсклдатабасесенситивитирекоммендатион](https://docs.microsoft.com/en-us/powershell/module/az.sql/disable-azsqldatabasesensitivityrecommendation)
+- [Enable-Азсклдатабасесенситивитирекоммендатион](https://docs.microsoft.com/powershell/module/az.sql/enable-azsqldatabasesensitivityrecommendation)
+- [Disable-Азсклдатабасесенситивитирекоммендатион](https://docs.microsoft.com/powershell/module/az.sql/disable-azsqldatabasesensitivityrecommendation)
 
 ### <a name="powershell-cmdlets-for-managed-instance"></a>Командлеты PowerShell для управляемого экземпляра
 
@@ -171,8 +171,8 @@ ms.locfileid: "73808066"
 - [Set-Азсклинстанцедатабасесенситивитиклассификатион](https://docs.microsoft.com/powershell/module/az.sql/set-azsqlinstancedatabasesensitivityclassification)
 - [Remove-Азсклинстанцедатабасесенситивитиклассификатион](https://docs.microsoft.com/powershell/module/az.sql/remove-azsqlinstancedatabasesensitivityclassification)
 - [Get-Азсклинстанцедатабасесенситивитирекоммендатион](https://docs.microsoft.com/powershell/module/az.sql/get-azsqlinstancedatabasesensitivityrecommendation)
-- [Enable-Азсклинстанцедатабасесенситивитирекоммендатион](https://docs.microsoft.com/en-us/powershell/module/az.sql/enable-azsqlinstancedatabasesensitivityrecommendation)
-- [Disable-Азсклинстанцедатабасесенситивитирекоммендатион](https://docs.microsoft.com/en-us/powershell/module/az.sql/disable-azsqlinstancedatabasesensitivityrecommendation)
+- [Enable-Азсклинстанцедатабасесенситивитирекоммендатион](https://docs.microsoft.com/powershell/module/az.sql/enable-azsqlinstancedatabasesensitivityrecommendation)
+- [Disable-Азсклинстанцедатабасесенситивитирекоммендатион](https://docs.microsoft.com/powershell/module/az.sql/disable-azsqlinstancedatabasesensitivityrecommendation)
 
 ## <a name="permissions"></a>Разрешения
 

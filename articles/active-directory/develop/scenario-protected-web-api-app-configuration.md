@@ -17,12 +17,12 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a8cc02831fa00a3974da1b74b07daf581f50dd22
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: eb562caf2dfc83841762748f37d1a7ee325de10b
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73569623"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73882625"
 ---
 # <a name="protected-web-api-code-configuration"></a>Защищенный веб-API: конфигурация кода
 
@@ -148,7 +148,7 @@ services.Configure<JwtBearerOptions>(AzureADDefaults.JwtBearerAuthenticationSche
 
 В этой таблице описаны проверяющие элементы управления.
 
-| Управления | Description (Описание) |
+| Управления | ОПИСАНИЕ |
 |---------|---------|
 | `ValidateAudience` | Гарантирует, что маркер предназначен для приложения, которое проверяет маркер (для меня). |
 | `ValidateIssuer` | Гарантирует, что маркер был выдан доверенной службой STS (от доверенного лица). |
@@ -159,7 +159,11 @@ services.Configure<JwtBearerOptions>(AzureADDefaults.JwtBearerAuthenticationSche
 
 Все проверяющие элементы управления связаны со свойствами класса `TokenValidationParameters`, которые самостоятельно инициализируются из конфигурации ядра ASP.NET/ASP.NET. В большинстве случаев изменять параметры не требуется. Существует одно исключение для приложений, которые не являются отдельными клиентами. (То есть веб-приложения, которые принимают пользователей из любой организации или из личных учетных записей Майкрософт.) В этом случае издатель должен быть проверен.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="token-validation-in-azure-functions"></a>Проверка токенов в функциях Azure
+
+Также можно проверить входящие маркеры доступа в функциях Azure. Примеры проверки маркеров в функциях Azure можно найти в [DotNet](https://github.com/Azure-Samples/ms-identity-dotnet-webapi-azurefunctions), [NodeJS](https://github.com/Azure-Samples/ms-identity-nodejs-webapi-azurefunctions)и [Python](https://github.com/Azure-Samples/ms-identity-python-webapi-azurefunctions).
+
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
 > [Проверка областей и ролей приложений в коде](scenario-protected-web-api-verification-scope-app-roles.md)

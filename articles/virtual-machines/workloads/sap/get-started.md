@@ -13,15 +13,15 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 11/04/2019
+ms.date: 11/08/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: d444ed21f3eb86975442f2176b8caa8dca6e0c3f
-ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+ms.openlocfilehash: d092dcf6fa9942f7b3283d1d77157b1f291a5062
+ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73602431"
+ms.lasthandoff: 11/10/2019
+ms.locfileid: "73905045"
 ---
 # <a name="use-azure-to-host-and-run-sap-workload-scenarios"></a>Использование Azure для размещения и запуска сценариев рабочей нагрузки SAP
 
@@ -79,13 +79,13 @@ ms.locfileid: "73602431"
 - [Развертывание SAP IDES EHP7 SP3 для SAP ERP 6.0 в Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/cal-ides-erp6-erp7-sp3-sql)
 - [Запуск SAP NetWeaver на виртуальных машинах SUSE Linux Microsoft Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/suse-quickstart)
 - [SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/planning-guide)
-- [Развертывание виртуальных машин Azure для SAP NetWeaver](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/deployment-guide)
+- [Развертывание Виртуальных машин Azure для SAP NetWeaver](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/deployment-guide)
 - [Защита многоуровневого развертывания приложения SAP NetWeaver с помощью Site Recovery](https://docs.microsoft.com/azure/site-recovery/site-recovery-sap)
 - [Соединитель SAP LaMa для Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/lama-installation)
 
 Сведения о базах данных, отличных от HANA, в рабочей нагрузке SAP в Azure см. в следующих статьях:
 
-- [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms_guide_general)
+- [Вопросы развертывания СУБД для рабочей нагрузки SAP на Виртуальных машинах Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms_guide_general)
 - [SAP NetWeaver на виртуальных машинах Azure. Руководство по развертыванию СУБД SQL Server](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms_guide_sqlserver)
 - [Рабочие нагрузки SAP на Виртуальных машинах Azure. Руководство по развертыванию СУБД Oracle](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms_guide_oracle)
 - [Рабочие нагрузки SAP на Виртуальных машинах Azure. Руководство по развертыванию СУБД IBM DB2](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms_guide_ibm)
@@ -120,6 +120,8 @@ ms.locfileid: "73602431"
 
 
 ## <a name="change-log"></a>Журнал изменений
+- 11/08/2019: изменения в [высоком уровне доступности SAP HANA на виртуальных машинах Azure на SUSE Linux Enterprise Server](sap-hana-high-availability.md), [настройка репликации системы SAP HANA на виртуальные машины Azure](sap-hana-high-availability-rhel.md), [Высокая доступность виртуальных машин azure для SAP NETWEAVER на SUSE Linux Enterprise Server для приложений SAP](high-availability-guide-suse.md), высокая доступность виртуальных машин Azure для SAP NetWeaver на SUSE Linux Enterprise Server [с Azure NetApp Files](high-availability-guide-suse-netapp-files.md), [Высокая доступность виртуальных машин Azure для SAP NetWeaver на Red Hat Enterprise Linux ](high-availability-guide-rhel.md), [Высокая доступность виртуальных машин Azure для SAP NetWeaver на Red Hat Enterprise Linux с Azure NetApp Files](high-availability-guide-rhel-netapp-files.md), [высокий уровень доступности для NFS на виртуальных машинах Azure на SUSE Linux Enterprise Server](high-availability-guide-suse-nfs.md), [глустерфс на виртуальных машинах Azure на Red Hat Enterprise Linux для SAP NetWeaver](high-availability-guide-rhel-glusterfs.md) , чтобы рекомендовать Стандартный балансировщик нагрузки Azure.  
+- 11/08/2019: изменения в [контрольном списке планирования рабочей нагрузки SAP и рекомендации по развертыванию](sap-deployment-checklist.md) для уточнения рекомендаций по шифрованию  
 - 11/04/2019: изменения в [настройке Pacemaker на SUSE Linux Enterprise Server в Azure](high-availability-guide-suse-pacemaker.md) для создания кластера непосредственно с конфигурацией одноадресной рассылки  
 - 10/29/2019: выпуск [общедоступной конечной точки для виртуальных машин с помощью Load Balancer (цен. Категория "Стандартный") Azure в сценариях высокого уровня доступности SAP](high-availability-guide-standard-load-balancer-outbound-connections.md)
 - 10/25/2019: изменения в [SAP HANA конфигурации хранилища виртуальных машин Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-vm-operations-storage) и [SAP HANA масштабирование с помощью резервного узла на виртуальных машинах Azure с Azure NetApp Files на SUSE Linux Enterprise Server](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-scale-out-standby-netapp-files-suse) для уточнения протокола NFS для тома/Hana/Shared
