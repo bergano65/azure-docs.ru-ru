@@ -876,6 +876,8 @@
       href: service-fabric-common-questions.md
     - name: Форум MSDN
       href: 'https://social.msdn.microsoft.com/Forums/home?forum=AzureServiceFabric'
+    - name: Ограничения при развертывании с помощью Azure Resource Manager
+      href: service-fabric-azure-resource-manager-guardrails.md
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/service-fabric/'
     - name: Калькулятор цен

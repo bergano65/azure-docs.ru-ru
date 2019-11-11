@@ -150,6 +150,8 @@
               href: check-cluster-health.md
         - name: База данных
           items:
+            - name: Базы данных подписчиков
+              href: follower.md
             - name: Управление разрешениями базы данных
               href: manage-database-permissions.md
             - name: Политики

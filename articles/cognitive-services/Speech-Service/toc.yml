@@ -39,6 +39,10 @@
           href: how-to-automatic-language-detection.md
         - name: Использование форматов сжатых входных звуковых данных
           href: how-to-use-codec-compressed-audio-input-streams.md
+        - name: Использование форматов сжатых входных звуковых данных (iOS)
+          href: how-to-use-codec-compressed-audio-input-streams-ios.md
+        - name: Использование форматов сжатых входных звуковых данных (Android)
+          href: how-to-use-codec-compressed-audio-input-streams-android.md
         - name: Использование распознавания речи с контейнерами Docker
           href: speech-container-howto.md?tabs=stt
     - name: Справочные материалы
@@ -200,11 +204,11 @@
     - name: Обзор
       items:
         - name: Что такое транскрибирование бесед?
-          href: conversation-transcription-service.md
+          href: conversation-transcription.md
     - name: Руководства
       items:
         - name: Транскрибирование бесед в реальном времени
-          href: how-to-use-conversation-transcription-service.md
+          href: how-to-use-conversation-transcription.md
         - name: Асинхронное транскрибирование бесед
           href: how-to-async-conversation-transcription.md
     - name: Справочные материалы
@@ -330,6 +334,11 @@
 - name: Служба "Речь"
   expanded: false
   items:
+    - name: Сценарии
+      items:
+        - name: Центры обработки вызовов
+          href: get-started.md
+          displayName: 'IVRs, IVR, Telephony Data, Transcription for Telephony Data, Real-time Transcription for Call Centers'
     - name: Руководства
       items:
         - name: Бесплатная пробная версия службы "Речь"

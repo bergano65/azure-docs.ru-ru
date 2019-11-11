@@ -91,6 +91,8 @@
       href: iot-hub-scaling.md
     - name: Высокая доступность и аварийное восстановление
       href: iot-hub-ha-dr.md
+    - name: Клонирование Центра Интернета вещей в другой регион
+      href: iot-hub-how-to-clone.md
     - name: Основные сведения об IP-адресе центра Интернета вещей
       href: iot-hub-understand-ip-address.md
     - name: Поддержка дополнительных протоколов

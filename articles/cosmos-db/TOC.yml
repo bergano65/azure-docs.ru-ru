@@ -1011,7 +1011,7 @@
           href: changefeed-ecommerce-solution.md
         - name: Служба приложений Azure
           href: create-website.md
-        - name: Индексатор Поиска Azure
+        - name: Индексатор службы "Когнитивный поиск Azure"
           href: /azure/search/search-howto-index-cosmosdb
           maintainContext: true
         - name: Функции Azure

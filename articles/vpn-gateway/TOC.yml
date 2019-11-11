@@ -134,18 +134,18 @@
               href: point-to-site-vpn-client-configuration-radius.md
             - name: Интеграция аутентификации P2S VPN RADIUS с использованием сервера NPS
               href: vpn-gateway-radiuis-mfa-nsp.md
+        - name: "Аутентификация Azure\_AD"
+          items:
+            - name: Настройка клиента
+              href: openvpn-azure-ad-tenant.md
+            - name: Настройка VPN-клиента
+              href: openvpn-azure-ad-client.md
         - name: OpenVPN
           items:
             - name: "Настройка OpenVPN для подключений \"точка\_— сеть\""
               href: vpn-gateway-howto-openvpn.md
             - name: Настройка клиентов OpenVPN
               href: vpn-gateway-howto-openvpn-clients.md
-            - name: "OpenVPN\_— проверка подлинности Azure Active Directory"
-              items:
-                - name: Настройка клиента AAD
-                  href: openvpn-azure-ad-tenant.md
-                - name: "Настройка VPN-клиента в Azure\_AD"
-                  href: openvpn-azure-ad-client.md
         - name: Переход на общедоступный сертификат шлюза от ЦС для P2S
           href: vpn-gateway-point-to-site-gateway-public-ca.md
         - name: Настройка туннеля Always On VPN для устройства

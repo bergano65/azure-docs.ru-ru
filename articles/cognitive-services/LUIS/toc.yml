@@ -39,12 +39,15 @@
           href: get-started-get-model-rest-apis.md
 - name: Учебники
   items:
+    - name: Создание делимого приложения
+      items:
+        - name: 1. Определение намерений пользователя
+          href: tutorial-intents-only.md
+        - name: 2. Извлечение данных пользователя
+          href: tutorial-machine-learned-entity.md
+          displayName: 'n-depth, constraint, descriptor, phrase list, entity'
     - name: Создание приложения
       items:
-        - name: Определение намерений пользователя
-          href: tutorial-intents-only.md
-        - name: Определение общих данных пользователей с помощью предварительно созданных моделей
-          href: luis-tutorial-prebuilt-intents-entities.md
         - name: Определение тональности высказываний пользователя
           href: luis-quickstart-intent-and-sentiment-analysis.md
         - name: Получение данных в правильном формате с помощью регулярных выражений

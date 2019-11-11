@@ -1,9 +1,9 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: База данных Azure SQL — функции
+title: Функции
 metadata:
   document_id: 36d89c48-3646-380e-34a0-ae3ac62e2641
-  title: База данных Azure SQL — функции
+  title: Возможности Базы данных SQL Azure
   meta.description: Learn about the features in Azure SQL Database.
   services: sql-database
   author: jovanpop-msft
@@ -17,34 +17,34 @@ metadata:
 sections:
   - items:
       - type: paragraph
-        text: 'База данных SQL Azure больше, чем механизм классической реляционной базы данных, который позволяет выполнить запрос данных с помощью языка SQL. Функции базы данных в базе данных SQL Azure позволяют выполнять больше операций с помощью эффективных и реализовать дополнительные сценарии.'
+        text: "База данных SQL Azure\_— это не просто классическое ядро реляционной базы данных, позволяющее запрашивать данные с помощью языка SQL. Функции базы данных в Базе данных SQL Azure позволяют выполнять множество эффективных операций и реализовывать сложные сценарии."
       - type: list
         style: cards
         className: cardsM
         columns: 3
         items:
-          - title: Технологии in-memory
+          - title: 'Технологии, выполняющиеся в памяти'
             href: /azure/sql-database/sql-database-in-memory
-            html: <p>Реализуйте высокопроизводительных приложений с помощью технологии in-memory.</p>
+            html: '<p>Реализуйте высокопроизводительные приложения с помощью технологий, выполняющихся в памяти.</p>'
           - title: Возможности при использовании нескольких моделей
             href: /azure/sql-database/sql-database-multi-model-features
-            html: '<p>Дополнительные сведения о Graph, JSON, XML, возможностей обработки пространственных данных в базе данных SQL Azure.</p>'
+            html: '<p>Сведения о Graph, JSON, XML и пространственных функциях в Базе данных SQL Azure.</p>'
           - title: Репликация транзакций
             href: /azure/sql-database/sql-database-managed-instance-transactional-replication
-            html: <p>Реплицировать данные между таблицами базы данных SQL Azure и SQL Server.</p>
+            html: <p>Репликация данных между Базой данных SQL Azure и таблицами SQL Server.</p>
           - title: Синхронизация данных
             href: /azure/sql-database/sql-database-sync-data
-            html: <p>Синхронизация данных между несколькими базами данных SQL и экземплярах SQL Server.</p>
+            html: <p>Синхронизация данных в нескольких базах данных SQL и экземплярах SQL Server.</p>
           - title: Автоматизация заданий
             href: /azure/sql-database/sql-database-job-automation-overview
-            html: <p>Планирование повторяющихся задач с помощью агента SQL и эластичных заданий.</p>
+            html: <p>Планирование повторяющихся задач с помощью агента SQL и заданий обработки эластичных БД.</p>
           - title: Временные таблицы
             href: /azure/sql-database/sql-database-temporal-tables
-            html: <p>Отслеживать и анализировать полный журнал изменений в данных.</p>
+            html: <p>Отслеживание и анализ полного журнала изменений в данных.</p>
   - title: Дополнительные ресурсы
     items:
       - type: list
         style: ordered
         items:
-          - html: Дополнительные сведения о <a href="/azure/sql-database/sql-database-features">компоненты баз данных различия между SQL Server и Azure SQL</a>.
-          - html: Сведения об использовании этих функций в <a href="/azure/sql-database/sql-database-howto">практические руководства по</a>.
+          - html: Сведения о <a href="/azure/sql-database/sql-database-features">различиях между функциями SQL Server и Базы данных SQL Azure</a>.
+          - html: 'Узнайте, как использовать эти функции, из <a href="/azure/sql-database/sql-database-howto">практических руководств</a>.'

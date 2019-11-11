@@ -71,7 +71,7 @@ ms.locfileid: "73499008"
     |Who does Jill Jones directly report to?|
     |Who is Jill Jones supervisor?|
 
-    [![Снимок экрана LUIS "Добавление новых высказываний к намерениям"](media/luis-tutorial-pattern/hr-orgchart-manager-intent.png "Снимок экрана LUIS "Добавление новых высказываний к намерениям"")](media/luis-tutorial-pattern/hr-orgchart-manager-intent.png#lightbox)
+    [![Снимок экрана LUIS Добавление новых высказываний к намерениям](media/luis-tutorial-pattern/hr-orgchart-manager-intent.png "Снимок экрана LUIS "Добавление новых высказываний к намерениям"")](media/luis-tutorial-pattern/hr-orgchart-manager-intent.png#lightbox)
 
     Не беспокойтесь, если объект keyPhrase помечен в высказываниях намерения, а не сущности Employee. Оба они правильно прогнозированы в тестовой панели и в конечной точке. 
 

@@ -138,6 +138,8 @@
           href: resource-group-create-multiple.md
         - name: Ресурсы на уровне подписки
           href: deploy-to-subscription.md
+        - name: Ресурсы уровня группы управления
+          href: deploy-to-management-group.md
     - name: Развертывание шаблонов
       items:
         - name: "Развертывание\_— портал"
