@@ -616,6 +616,8 @@
           href: connector-troubleshoot-guide.md
         - name: Устранение неполадок с управлением Azure-SSIS IR
           href: ssis-integration-runtime-management-troubleshoot.md
+        - name: Устранение неполадок в локальной среде IR
+          href: self-hosted-integration-runtime-troubleshoot-guide.md
         - name: "Устранение неполадок с выполнением пакетов в Azure-SSIS\_IR"
           href: ssis-integration-runtime-ssis-activity-faq.md
         - name: Устранение неполадок с Потоком данных

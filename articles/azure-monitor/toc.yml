@@ -1183,21 +1183,19 @@
               href: platform/autoscale-webhook-email.md
         - name: PowerShell
           items:
-            - name: Примеры сценариев Azure PowerShell
+            - name: Управление с помощью PowerShell
               href: platform/powershell-quickstart-samples.md
-            - name: Командлеты PowerShell
+            - name: Создание оповещений
+              href: app/powershell-alerts.md
+            - name: Управление Log Analytics
               href: platform/powershell-workspace-configuration.md
-            - name: Приложения
+            - name: Application Insights
               items:
-                - name: Создание ресурсов Application Insights
+                - name: Управление Azure Application Insights
                   href: app/powershell.md
-                - name: Создание ресурсов
-                  href: app/powershell-script-create-resource.md
-                - name: Задание предупреждений
-                  href: app/powershell-alerts.md
-                - name: Получение данных диагностики Azure
+                - name: Управление облачными службами Azure
                   href: app/powershell-azure-diagnostics.md
-        - name: "Примеры Azure\_CLI"
+        - name: "Примеры для Azure\_CLI"
           href: platform/cli-samples.md
         - name: Шаблоны Resource Manager
           href: platform/template-workspace-configuration.md

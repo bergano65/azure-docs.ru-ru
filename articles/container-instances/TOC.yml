@@ -91,6 +91,8 @@
       items:
         - name: Настройка проб активности
           href: container-instances-liveness-probe.md
+        - name: Настройка проб готовности
+          href: container-instances-readiness-probe.md
         - name: Остановка и запуск контейнеров
           href: container-instances-stop-start.md
         - name: Обновление работающих контейнеров

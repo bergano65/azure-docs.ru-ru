@@ -326,7 +326,7 @@
               href: shared-images.md
             - name: Портал
               href: shared-images-portal.md
-            - name: Совместное использование образов в клиентах
+            - name: Регистрация приложения для совместного использования
               href: share-images-across-tenants.md
             - name: Устранение неполадок с общими образами
               href: troubleshooting-shared-images.md

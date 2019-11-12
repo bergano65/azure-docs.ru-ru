@@ -407,8 +407,8 @@
             - name: Портал
               href: shared-images-portal.md
             - name: CLI
-              href: ../linux/shared-images.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
-            - name: Совместное использование образов в клиентах
+              href: ../linux/shared-images.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Регистрация приложения для совместного использования
               href: share-images-across-tenants.md
             - name: Устранение неполадок с общими образами
               href: troubleshooting-shared-images.md

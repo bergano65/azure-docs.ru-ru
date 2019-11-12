@@ -1,5 +1,5 @@
 ### YamlMime:Landing
-title: Документация по Azure IoT Central
+title: Документация по Azure IoT Central (предварительная версия функций)
 summary: Azure IoT Central — это полностью управляемое SaaS-решение (модели "программное обеспечение как услуга"), которое облегчает подключение и мониторинг ресурсов Интернета вещей, а также управление ими в любом масштабе. Azure IoT Central упрощает начальную настройку вашего решения Интернета вещей и снижает расходы на управление, эксплуатационные расходы и дополнительные временные затраты для стандартных проектов Интернета вещей. Узнайте, как создать, настроить, администрировать и использовать приложение Azure IoT Central, из наших кратких руководств и других материалов.
 metadata:
   title: Документация по Azure IoT Central
@@ -10,14 +10,14 @@ metadata:
   author: philmea
   ms.author: philmea
   ms.date: 10/25/2019
-  ms.openlocfilehash: d769b906324c1022baffff198fea6e4e44821757
-  ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+  ms.openlocfilehash: 90faa0b7422814011096a10164a6f2bdfceba4d5
+  ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 11/09/2019
-  ms.locfileid: "73891811"
+  ms.lasthandoff: 11/12/2019
+  ms.locfileid: "73929848"
 landingContent:
-- title: Сведения об Azure IoT Central
+- title: Что такое Azure IoT Central (предварительные версии функций)?
   linkLists:
   - linkListType: overview
     links:

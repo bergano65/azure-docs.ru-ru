@@ -307,8 +307,8 @@
               href: concepts-gating-overview.md
             - name: Развертывание технологии для синтеза
               href: concepts-guidelines-responsible-deployment-synthetic.md
-            - name: Примечание о прозрачности для Пользовательского голоса
-              href: 'https://aka.ms/neural-tts-transparency-note'
+            - name: Предоставление сведений специалистам по озвучиванию
+              href: 'https://aka.ms/disclosure-voice-talent'
             - name: Рекомендации по проектированию для раскрытия информации
               href: concepts-disclosure-guidelines.md
             - name: Конструктивные шаблоны для раскрытия информации

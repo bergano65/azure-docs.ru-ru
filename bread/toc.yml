@@ -184,9 +184,12 @@
           tocHref: /azure/iot-central/
           topicHref: /azure/iot-central/
           items:
-            - name: Основные сведения об IoT Central
+            - name: IoT Central
               tocHref: /azure/iot-central/core/
               topicHref: /azure/iot-central/core/
+            - name: IoT Central (предварительная версия)
+              tocHref: /azure/iot-central/preview/
+              topicHref: /azure/iot-central/preview/
             - name: IoT Central для энергетики
               tocHref: /azure/iot-central/energy/
               topicHref: /azure/iot-central/energy/

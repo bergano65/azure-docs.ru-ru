@@ -85,3 +85,7 @@ sections:
           - html: <a href="/azure/spatial-anchors/tutorials/tutorial-use-cosmos-db-to-store-anchors">Постоянный общий доступ с помощью Azure Cosmos DB.</a>
           - html: <a href="/azure/spatial-anchors/tutorials/tutorial-new-unity-hololens-app">Запуск нового приложения Unity HoloLens.</a>
           - html: <a href="/azure/spatial-anchors/tutorials/tutorial-new-android-app">Запуск нового приложения Android.</a>
+  - title: Заметки о выпуске
+    items:
+      - type: paragraph
+        text: '<a href="https://github.com/Azure/azure-spatial-anchors-samples/releases">Просмотреть заметки о выпуске на GitHub.</a>'

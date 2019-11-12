@@ -134,6 +134,8 @@
               href: azure-expressroute-connection.md
             - name: Настройка разрешения имен DNS
               href: on-premises-dns-setup.md
+            - name: "Настройка VPN-подключений \"сеть\_— сеть\" с высоким уровнем доступности"
+              href: high-availability-vpn-connection.md
         - name: Платформа VMware
           items:
             - name: Обучение модели разрешений частного облака

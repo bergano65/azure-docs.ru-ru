@@ -4,18 +4,18 @@ ms.service: azure
 ms.topic: include
 ms.date: 06/13/2019
 ms.author: sttramer
-ms.openlocfilehash: fdb4ddc43c1fcde55da8186bd2c09b709eb41374
-ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
+ms.openlocfilehash: 47873016a8e355127df36928f2c26439cf3f28c4
+ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "71055231"
+ms.lasthandoff: 11/10/2019
+ms.locfileid: "73901450"
 ---
 ## <a name="use-azure-cloud-shell"></a>Использование Azure Cloud Shell
 
-В Azure есть Azure Cloud Shell, интерактивная оболочка среды, с которой можно работать в браузере. Для работы со службами Azure в Cloud Shell можно использовать `bash` и `PowerShell`. Для запуска кода из этой статьи можно использовать предварительно установленные команды Cloud Shell. Ничего дополнительного в локальной среде устанавливать не нужно.
+В Azure есть Azure Cloud Shell, интерактивная оболочка среды, с которой можно работать в браузере. Для работы со службами Azure можно использовать Bash или PowerShell с Cloud Shell. Для запуска кода из этой статьи можно использовать предварительно установленные команды Cloud Shell. Ничего дополнительного в локальной среде устанавливать не нужно.
 
-Чтобы запустить Azure Cloud Shell, выполните следующие действия:
+Начало работы с Azure Cloud Shell
 
 | Параметр | Пример и ссылка |
 |-----------------------------------------------|---|
@@ -29,6 +29,6 @@ ms.locfileid: "71055231"
 
 1. В блоке кода нажмите кнопку **Копировать**, чтобы скопировать код.
 
-1. Вставьте код в окно сеанса Cloud Shell, нажав клавиши **Ctrl**+**Shift**+**V** в Windows и Linux или **Cmd**+**Shift**+**V** в macOS.
+1. Вставьте код в окно сеанса Cloud Shell, нажав клавиши **CTRL**+**SHIFT**+**V** в Windows и Linux или **CMD**+**SHIFT**+**V** в macOS.
 
 1. Нажмите клавишу **ВВОД**, чтобы выполнить код.

@@ -353,6 +353,10 @@
               href: application-sign-in-problem-on-premises-application-proxy.md
             - name: Проблемы с CORS в прокси приложения
               href: application-proxy-understand-cors-issues.md
+    - name: Безопасный гибридный доступ (для облачных и локальных приложений)
+      items:
+        - name: Защита устаревших приложений с помощью контроллеров или сетей доставки приложений
+          href: secure-hybrid-access.md
 - name: Справочные материалы
   items:
     - name: Подготовка приложения (SCIM)

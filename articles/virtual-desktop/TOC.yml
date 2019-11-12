@@ -96,6 +96,8 @@
       href: troubleshoot-vm-configuration.md
     - name: "Устранение неполадок с виртуальной машиной Windows\_7 в службе \"Виртуальный рабочий стол Windows\""
       href: troubleshoot-windows-7-vm.md
+    - name: Устранение неполадок со средством управления Виртуального рабочего стола Windows
+      href: troubleshoot-management-tool.md
     - name: Подключения клиента удаленного рабочего стола
       href: troubleshoot-client-connection.md
     - name: "Виртуальный рабочий стол Windows\_— PowerShell"
