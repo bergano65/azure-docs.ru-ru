@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 10/26/2019
 ms.author: erhopf
-ms.openlocfilehash: 391cddbbd1b69fb7cb5422adbaea2f3378e273bf
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: f03e32eb17c7c02d8969ea6f79663a5c99196d7b
+ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73580158"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73931925"
 ---
 # <a name="long-audio-api-preview"></a>Длинный аудио API (Предварительная версия)
 
@@ -25,6 +25,9 @@ ms.locfileid: "73580158"
 
 * Синтезированный речевой ввод, возвращенный службой, использует нейронные голоса, что обеспечивает высокую точность вывода звука.
 * Так как ответы в реальном времени не поддерживаются, нет необходимости развертывать конечную точку голоса.
+
+> [!NOTE]
+> Длинный аудио API теперь поддерживает только [Пользовательский нейронный голос](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-custom-voice#custom-neural-voices).
 
 ## <a name="workflow"></a>Рабочий процесс
 
@@ -63,7 +66,7 @@ API длинного звука поддерживает следующие фо
 * Audio-24khz-96kbitrate-Mono-MP3
 * Audio-24khz-160kbitrate-Mono-MP3
 
-## <a name="quickstarts"></a>Краткие руководства
+## <a name="quickstarts"></a>Быстрое начало работы
 
 Мы предлагаем самые краткие руководства, которые помогут вам успешно запустить длинный аудио API. В этой таблице содержится список длинных кратких руководств по API аудио, упорядоченных по языку.
 

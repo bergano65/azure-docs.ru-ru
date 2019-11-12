@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 08/03/2018
 ms.author: dacurwin
 ms.assetid: b234533e-ac51-4482-9452-d97444f98b38
-ms.openlocfilehash: c0ce79c68b9d9cf11ea20c2d6469f4240fb38a95
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: 5fe0255a8f304061dc970907c651261832fee614
+ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73747548"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73929097"
 ---
 # <a name="track-backup-and-restore-jobs-using-rest-api"></a>Отслеживание заданий резервного копирования и восстановления с помощью REST API
 
@@ -44,20 +44,20 @@ Azure Backup служба активирует задания, выполняе�
 ## <a name="tracking-the-job"></a>Отслеживание задания
 
 ```http
-GET https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupJobs/{jobName}?api-version=2017-07-01
+GET https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupJobs/{jobName}?api-version=2019-05-13
 ```
 
 Имя задания `{jobName}` — JobId, упомянутое выше. Ответ — всегда 200 OК с полем status, указывающим текущее состояние задания. Когда вы получите состояние Completed или CompletedWithWarnings, в разделе extendedInfo отобразятся дополнительные сведения о задании.
 
 ### <a name="response"></a>Ответ
 
-|Имя  |Тип  |Description (Описание)  |
+|имя  |введите  |ОПИСАНИЕ  |
 |---------|---------|---------|
 |200 ОК     | [JobResource](https://docs.microsoft.com/rest/api/backup/jobdetails/get#jobresource)        | ОК        |
 
 #### <a name="example-response"></a>Пример ответа
 
-После отправки универсального кода ресурса (URI) *GET* возвращается ответ 200 (OК).
+После отправки URI *GET* возвращается ответ 200 (OK).
 
 ```http
 HTTP/1.1 200 OK

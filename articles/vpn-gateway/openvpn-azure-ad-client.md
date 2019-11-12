@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 11/07/2019
 ms.author: alzam
-ms.openlocfilehash: da863144da5ec4361673c913392495d3d622f5a9
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: 714cabc204c9ec9a0c3bbc93be287957c91d1936
+ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73837980"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73932334"
 ---
 # <a name="configure-a-vpn-client-for-p2s-openvpn-protocol-connections-azure-ad-authentication-preview"></a>Настройка VPN-клиента для подключений по протоколу P2S Опенвпн: проверка подлинности Azure AD (Предварительная версия)
 
@@ -24,7 +24,11 @@ ms.locfileid: "73837980"
 
 ## <a name="profile"></a>Работа с профилями клиентов
 
-Для подключения необходимо [скачать](https://www.microsoft.com/p/azure-vpn-client-preview/9np355qt2sqb?rtc=1&activetab=pivot:overviewtab) VPN-клиент Azure и настроить профиль VPN-клиента на каждом компьютере, который хочет подключиться к виртуальной сети. Можно создать клиентский профиль на компьютере, экспортировать его, а затем импортировать на дополнительные компьютеры.
+Для подключения необходимо скачать VPN-клиент Azure (Предварительная версия) и настроить профиль VPN-клиента на каждом компьютере, который хочет подключиться к виртуальной сети. Можно создать клиентский профиль на компьютере, экспортировать его, а затем импортировать на дополнительные компьютеры.
+
+### <a name="to-download-the-azure-vpn-client"></a>Загрузка VPN-клиента Azure
+
+Используйте эту [ссылку](https://www.microsoft.com/p/azure-vpn-client-preview/9np355qt2sqb?rtc=1&activetab=pivot:overviewtab) , чтобы скачать VPN-клиент Azure (Предварительная версия).
 
 ### <a name="cert"></a>Создание профиля клиента на основе сертификата
 
@@ -42,11 +46,11 @@ ms.locfileid: "73837980"
 
 1. Выделите профиль VPN-клиента, который требуется экспортировать, щелкните.. **.** , а затем выберите **Экспорт**.
 
-    ![Программе](./media/openvpn-azure-ad-client/export/export1.jpg)
+    ![программе](./media/openvpn-azure-ad-client/export/export1.jpg)
 
 2. Выберите расположение, в которое нужно сохранить этот профиль, оставьте имя файла, а затем нажмите кнопку **сохранить** , чтобы сохранить XML-файл.
 
-    ![Программе](./media/openvpn-azure-ad-client/export/export2.jpg)
+    ![программе](./media/openvpn-azure-ad-client/export/export2.jpg)
 
 ### <a name="import"></a>Импорт профиля клиента
 
@@ -140,6 +144,6 @@ ms.locfileid: "73837980"
 
     ![обнаруживать](./media/openvpn-azure-ad-client/diagnose/diagnose4.jpg)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения см. в статье [Создание клиента Azure Active Directory для P2S открытых VPN-подключений, использующих проверку подлинности Azure AD](openvpn-azure-ad-tenant.md).

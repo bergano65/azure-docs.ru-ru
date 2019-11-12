@@ -1,5 +1,5 @@
 ---
-title: Создание правил телеметрии и управление ими в приложении Azure IoT Central | Документация Майкрософт
+title: Использование правил телеметрии в приложении IoT Central Azure | Документация Майкрософт
 description: Правила телеметрии Azure IoT Central позволяют отслеживать устройства практически в реальном времени и автоматически вызывать действия (например, отправлять сообщение электронной почты) при срабатывании правила.
 author: ankitgupta
 ms.author: ankitgup
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpr
-ms.openlocfilehash: d586f899a46a1404af6e798eda4d783a5a7ead85
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 3b2fff84b70c5c5e37d14faa87143e5dacc82bce
+ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72953789"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73930187"
 ---
 # <a name="create-a-telemetry-rule-and-set-up-notifications-in-your-azure-iot-central-application"></a>Создание правила телеметрии и настройка уведомлений в приложении Azure IoT Central
 
@@ -108,7 +108,7 @@ ms.locfileid: "72953789"
 
 Перейдите к устройству и выберите правило, которое требуется включить или отключить. Переведите переключатель **Enable rule for this device** (Включить правило для этого устройства), чтобы включить или отключить правило для этого устройства.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Вы узнали, как создавать правила в приложении Azure IoT Central, а значит вы готовы к следующему шагу:
 

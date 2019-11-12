@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 11/05/2019
 ms.author: helohr
-ms.openlocfilehash: cf344d6c551ecd3d301d79c29efe9e7adb7f8d83
-ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
+ms.openlocfilehash: dc93480807f34a79ee02f628f7b6f090c7efa428
+ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73646889"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73931702"
 ---
 # <a name="windows-virtual-desktop-partner-integrations"></a>Интеграция с партнерами по виртуальным рабочим столам Windows
 
@@ -59,7 +59,7 @@ Citrix расширяет ценность виртуальных рабочих
 
 При использовании с виртуальным рабочим столом Windows Контролуп предоставляет дополнительные возможности для оптимизации сред виртуальных рабочих столов Windows и взаимодействия с конечными пользователями. В консоли Контролуп он получает видимость среды конечного пользователя для эффективного мониторинга и устранения проблем с производительностью. Интуитивно понятная панель мониторинга предоставляет аналитические сведения и аналитику для развертывания виртуальных рабочих столов, а также возможности автоматизированной отчетности, дополненные показателями производительности сообщества. Контролуп может управлять несколькими источниками данных и типами, организуя их в высокопроизводительные наборы данных, агрегированные в рамках инфраструктуры вычислений, хранения и виртуальных рабочих столов Windows, позволяя выполнять детализированную видимость из одной области стекла.
 
-- [См. Краткий обзор решения присоединиться](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3PUit).
+- [Ознакомьтесь с кратким](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3PUit)обзорным решением.
 - [Перейдите на веб-сайт партнера](https://www.controlup.com/solutions/ms_wvd/).
 
 ## <a name="devicetrust"></a>девицетруст
@@ -205,7 +205,7 @@ Nerdio расширяет ценность виртуальных рабочих
 - [Ознакомьтесь с кратким](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3oL8P)обзорным решением.
 - [Перейдите на веб-сайт партнера](https://www.workspot.com/wvd).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Дополнительные сведения о виртуальных рабочих столах Windows](overview.md).
 - [Создание клиента в виртуальном рабочем столе Windows](tenant-setup-azure-active-directory.md).

@@ -1,5 +1,5 @@
 ---
-title: Управление ролями в рабочей области Машинное обучение Azure
+title: Управление ролями в рабочей области
 titleSuffix: Azure Machine Learning
 description: Узнайте, как получить доступ к рабочей области Машинное обучение Azure с помощью управления доступом на основе ролей (RBAC).
 services: machine-learning
@@ -11,12 +11,12 @@ ms.author: larryfr
 author: Blackmist
 ms.date: 11/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: 07191245c08e26fe884ba237a9e3ef1a080aa069
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: b5f42ac015ff492b67aa73c799ec1d952b468ed0
+ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73671493"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73932178"
 ---
 # <a name="manage-access-to-an-azure-machine-learning-workspace"></a>Управление доступом к рабочей области Машинное обучение Azure
 [!INCLUDE [aml-applies-to-enterprise-sku](../../../includes/aml-applies-to-enterprise-sku.md)]
@@ -112,7 +112,7 @@ az ml workspace share -w my_workspace -g my_resource_group --role "Data Scientis
 
 Дополнительные сведения об операциях (действиях), которые можно использовать с пользовательскими ролями, см. в разделе [операции с поставщиками ресурсов](/azure/role-based-access-control/resource-provider-operations#microsoftmachinelearningservices).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Обзор корпоративной безопасности](concept-enterprise-security.md)
 - [Безопасный запуск экспериментов и выведение/Оценка в виртуальной сети](how-to-enable-virtual-network.md)

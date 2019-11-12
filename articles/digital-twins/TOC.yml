@@ -67,8 +67,6 @@
           href: how-to-navigate-apis.md
         - name: Стандартные шаблоны запросов
           href: how-to-query-common-apis.md
-    - name: Регистрация приложения с помощью прежних версий AAD
-      href: how-to-use-legacy-aad.md
 - name: Справочные материалы
   items:
     - name: Клиентская библиотека определяемых пользователем функций

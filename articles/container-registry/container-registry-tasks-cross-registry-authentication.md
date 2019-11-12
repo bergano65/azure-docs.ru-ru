@@ -1,18 +1,18 @@
 ---
-title: Проверка подлинности между реестром в задаче реестра контейнеров Azure
-description: Включите управляемое удостоверение для ресурсов Azure в задаче реестра контейнеров Azure (запись контроля доступа), чтобы разрешить задаче доступ к другому частному реестру контейнеров.
+title: Проверка подлинности между реестром из задачи реестра контейнеров Azure
+description: Настройка задачи реестра контейнеров Azure (задача контроля доступа) для доступа к другому частному реестру контейнеров Azure с помощью управляемого удостоверения для ресурсов Azure
 services: container-registry
 author: dlepow
 ms.service: container-registry
 ms.topic: article
 ms.date: 07/12/2019
 ms.author: danlep
-ms.openlocfilehash: 07fa7f3df5274ae88c93deac75093ead3f32f036
-ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
+ms.openlocfilehash: f2ffb42ce109f5e6f7186461f931b7f8da57ff32
+ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69509092"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73931513"
 ---
 # <a name="cross-registry-authentication-in-an-acr-task-using-an-azure-managed-identity"></a>Проверка подлинности между реестром в задаче контроля доступа с помощью удостоверения, управляемого Azure 
 
@@ -30,7 +30,7 @@ ms.locfileid: "69509092"
 
 В реальной ситуации Организация может поддерживать набор базовых образов, используемых всеми группами разработчиков для создания приложений. Эти базовые образы хранятся в корпоративном реестре, и каждая группа разработчиков имеет только права на вытягивание. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 В этой статье вам понадобятся два реестра контейнеров Azure:
 
@@ -39,7 +39,7 @@ ms.locfileid: "69509092"
 
 Замените собственными именами реестра на последующих шагах.
 
-Если у вас еще нет необходимых реестров контейнеров Azure, см. раздел [краткое руководство. по созданию закрытого реестра контейнеров с помощью Azure CLI](container-registry-get-started-azure-cli.md). Вам не нужно отправлять образы в реестр.
+Если у вас еще нет необходимых реестров контейнеров Azure, см. раздел [Краткое руководство. создание закрытого реестра контейнеров с помощью Azure CLI](container-registry-get-started-azure-cli.md). Вам не нужно отправлять образы в реестр.
 
 ## <a name="prepare-base-registry"></a>Подготовка базового реестра
 
@@ -56,7 +56,7 @@ az acr build --image baseimages/node:9-alpine --registry mybaseregistry --file D
 
 ## <a name="define-task-steps-in-yaml-file"></a>Определение шагов задачи в файле YAML
 
-Шаги для этого примера многошаговой [задачи](container-registry-tasks-multi-step.md) определяются в [файле YAML](container-registry-tasks-reference-yaml.md). Создайте файл с именем `helloworldtask.yaml` в локальном рабочем каталоге и вставьте в него следующее содержимое. Обновите значение `REGISTRY_NAME` на шаге сборки, указав имя сервера в базовом реестре.
+Шаги для этого примера [многошаговой задачи](container-registry-tasks-multi-step.md) определяются в [файле YAML](container-registry-tasks-reference-yaml.md). Создайте файл с именем `helloworldtask.yaml` в локальном рабочем каталоге и вставьте в него следующее содержимое. Обновите значение `REGISTRY_NAME` на шаге сборки, указав имя сервера в базовом реестре.
 
 ```yml
 version: v1.0.0
@@ -66,17 +66,17 @@ steps:
   - push: ["{{.Run.Registry}}/hello-world:{{.Run.ID}}"]
 ```
 
-Для создания образа на этапе `Dockerfile-app` сборки используется файл в репозитории [Azure-Samples/контроля учетных записей-сборка-HelloWorld-node](https://github.com/Azure-Samples/acr-build-helloworld-node.git) . Объект `--build-arg` ссылается на базовый реестр для извлечения базового образа. После успешной сборки образ помещается в реестр, используемый для выполнения задачи.
+Для создания образа на этапе сборки используется файл `Dockerfile-app` в репозитории [Azure-Samples/контроля учетных записей — сборка-HelloWorld-node](https://github.com/Azure-Samples/acr-build-helloworld-node.git) . `--build-arg` ссылается на базовый реестр для извлечения базового образа. После успешной сборки образ помещается в реестр, используемый для выполнения задачи.
 
-## <a name="option-1-create-task-with-user-assigned-identity"></a>Вариант 1. Создание задачи с удостоверением, назначенным пользователем
+## <a name="option-1-create-task-with-user-assigned-identity"></a>Вариант 1. Создание задачи с назначенным пользователем удостоверением
 
-В этом разделе описывается создание задачи и включение назначенного пользователю удостоверения. Если вместо этого вы хотите включить назначенное системой удостоверение, см [. вариант 2. Создать задачу с назначенным системой удостоверением](#option-2-create-task-with-system-assigned-identity). 
+В этом разделе описывается создание задачи и включение назначенного пользователю удостоверения. Если вместо этого требуется включить назначенное системой удостоверение, см. раздел [вариант 2. Создание задачи с назначенным системой удостоверением](#option-2-create-task-with-system-assigned-identity). 
 
 [!INCLUDE [container-registry-tasks-user-assigned-id](../../includes/container-registry-tasks-user-assigned-id.md)]
 
 ### <a name="create-task"></a>Создание задачи
 
-Создайте задачу *хелловорлдтаск* , выполнив следующую команду [AZ контроля доступа Task Create][az-acr-task-create] . Задача выполняется без контекста исходного кода, а команда ссылается на файл `helloworldtask.yaml` в рабочем каталоге. `--assign-identity` Параметр передает идентификатор ресурса назначенного пользователю удостоверения. 
+Создайте задачу *хелловорлдтаск* , выполнив следующую команду [AZ контроля доступа Task Create][az-acr-task-create] . Задача выполняется без контекста исходного кода, а команда ссылается на файл `helloworldtask.yaml` в рабочем каталоге. Параметр `--assign-identity` передает идентификатор ресурса назначенного пользователю удостоверения. 
 
 ```azurecli
 az acr task create \
@@ -89,13 +89,13 @@ az acr task create \
 
 [!INCLUDE [container-registry-tasks-user-id-properties](../../includes/container-registry-tasks-user-id-properties.md)]
 
-## <a name="option-2-create-task-with-system-assigned-identity"></a>Вариант 2. Создание задачи с удостоверением, назначенным системой
+## <a name="option-2-create-task-with-system-assigned-identity"></a>Вариант 2. Создание задачи с удостоверением, назначенным системой
 
-В этом разделе описано, как создать задачу и включить назначенное системой удостоверение. Если вместо этого вы хотите включить пользовательское удостоверение, см [. вариант 1. Создать задачу с назначенным пользователем удостоверением](#option-1-create-task-with-user-assigned-identity). 
+В этом разделе описано, как создать задачу и включить назначенное системой удостоверение. Если вместо этого вы хотите включить пользовательское удостоверение, см. раздел [вариант 1. Создание задачи с назначенным пользователем удостоверением](#option-1-create-task-with-user-assigned-identity). 
 
 ### <a name="create-task"></a>Создание задачи
 
-Создайте задачу *хелловорлдтаск* , выполнив следующую команду [AZ контроля доступа Task Create][az-acr-task-create] . Задача выполняется без контекста исходного кода, а команда ссылается на файл `helloworldtask.yaml` в рабочем каталоге. `--assign-identity` Параметр без значения активирует для задачи назначенное системой удостоверение. 
+Создайте задачу *хелловорлдтаск* , выполнив следующую команду [AZ контроля доступа Task Create][az-acr-task-create] . Задача выполняется без контекста исходного кода, а команда ссылается на файл `helloworldtask.yaml` в рабочем каталоге. Параметр `--assign-identity` без значения включает в задаче назначенное системой удостоверение. 
 
 ```azurecli
 az acr task create \
@@ -117,7 +117,7 @@ az acr task create \
 baseregID=$(az acr show --name mybaseregistry --query id --output tsv)
 ```
 
-Используйте команду [AZ Role назначение Create][az-role-assignment-create] , чтобы назначить удостоверение `acrpull` роли базовому реестру. Эта роль имеет разрешения только на извлечение изображений из реестра.
+Чтобы назначить удостоверение роли `acrpull` базовому реестру, используйте команду [AZ Role назначение Create][az-role-assignment-create] . Эта роль имеет разрешения только на извлечение изображений из реестра.
 
 ```azurecli
 az role assignment create --assignee $principalID --scope $baseregID --role acrpull
@@ -125,7 +125,7 @@ az role assignment create --assignee $principalID --scope $baseregID --role acrp
 
 ## <a name="add-target-registry-credentials-to-task"></a>Добавление учетных данных целевого реестра в задачу
 
-Теперь используйте команду [AZ запись контроля учетных данных][az-acr-task-credential-add] для добавления учетных данных удостоверения в задачу, чтобы она могла проходить проверку подлинности в основном реестре. Выполните команду, соответствующую типу управляемого удостоверения, включенного в задаче. Если вы включили назначенное пользователем удостоверение, `--use-identity` передайте идентификатор клиента удостоверения. Если вы включили назначенное системой удостоверение, `--use-identity [system]`передайте.
+Теперь используйте команду [AZ запись контроля учетных данных][az-acr-task-credential-add] для добавления учетных данных удостоверения в задачу, чтобы она могла проходить проверку подлинности в основном реестре. Выполните команду, соответствующую типу управляемого удостоверения, включенного в задаче. Если вы включили назначенное пользователем удостоверение, передайте `--use-identity` с ИДЕНТИФИКАТОРом клиента удостоверения. Если вы включили назначенное системой удостоверение, передайте `--use-identity [system]`.
 
 ```azurecli
 # Add credentials for user-assigned identity to the task
@@ -208,13 +208,13 @@ Run ID: cf10 was successful after 32s
 az acr repository show-tags --name myregistry --repository hello-world --output tsv
 ```
 
-Пример выходных данных:
+Выходные данные примера:
 
 ```console
 cf10
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 * Дополнительные сведения о [включении управляемого удостоверения в задаче контроля](container-registry-tasks-authentication-managed-identity.md)доступа.
 * См. раздел [YAML Tasks Reference](container-registry-tasks-reference-yaml.md)

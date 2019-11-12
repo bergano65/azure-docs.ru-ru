@@ -10,18 +10,21 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: erhopf
-ms.openlocfilehash: 2c1e6ef84a472ccec5116b12e18ad80c92b68960
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: d308623a323fecd39efa90639da71fb981936fe5
+ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73681883"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73930576"
 ---
 # <a name="quickstart-asynchronous-synthesis-for-long-form-audio-in-python-preview"></a>Краткое руководство. асинхронное синтез для звука в длинном формате в Python (Предварительная версия)
 
 В этом кратком руководстве вы используете длинный аудио API для асинхронного преобразования текста в речь и получения звуковых выходных данных из URI, предоставленного службой. Этот REST API идеально подходит для поставщиков содержимого, которым необходимо преобразовать текстовые файлы длиннее 10 000 символов или 50 абзацев в синтезированный речевой перевод. Дополнительные сведения см. в разделе [Long Audio API](../../long-audio-api.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+> [!NOTE]
+> Асинхронное синтез для длинных аудиофайлов можно использовать только с [пользовательскими нейронными голосовыми](../../how-to-custom-voice.md#custom-neural-voices)данными.
+
+## <a name="prerequisites"></a>предварительным требованиям
 
 Для работы с этим кратким руководством вам понадобится:
 
@@ -271,7 +274,7 @@ delete successful
 
 Полный `voice_synthesis_client.py` можно скачать на сайте [GitHub](https://github.com/Azure-Samples/Cognitive-Speech-TTS/blob/master/CustomVoice-API-Samples/Python/voiceclient.py).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
 > [Дополнительные сведения об API длинного звука](../../long-audio-api.md)

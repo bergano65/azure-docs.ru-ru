@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 10/31/2016
-ms.openlocfilehash: 0771079eb338c2f22cb0b1f31c48b0b9f80a3ff5
-ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
+ms.openlocfilehash: cf03fa0055710dde86a0f74cd58344575494faf1
+ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72819088"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73928562"
 ---
 # <a name="use-powershell-to-set-alerts-in-application-insights"></a>Настройка оповещений в Application Insights с помощью PowerShell
 
@@ -20,7 +20,7 @@ ms.locfileid: "72819088"
 
 Вы можете автоматизировать настройку [оповещений](../../azure-monitor/app/alerts.md) в [Application Insights](../../azure-monitor/app/app-insights-overview.md).
 
-Кроме того, вы можете [установить объекты webhook, чтобы автоматизировать реагирование на оповещения](../../azure-monitor/platform/alerts-webhooks.md).
+Кроме того, вы можете [установить веб-перехватчики для автоматизации реагирования на оповещение](../../azure-monitor/platform/alerts-webhooks.md).
 
 > [!NOTE]
 > Если вы хотите создать ресурсы и оповещения одновременно, рассмотрите возможность [использования шаблона Azure Resource Manager](powershell.md).
@@ -45,7 +45,7 @@ ms.locfileid: "72819088"
 ## <a name="get-alerts"></a>Получение оповещений
     Get-AzAlertRule -ResourceGroup "Fabrikam" [-Name "My rule"] [-DetailedOutput]
 
-## <a name="add-alert"></a>Добавление оповещения
+## <a name="add-alert"></a>Добавить оповещение
     Add-AzMetricAlertRule  -Name "{ALERT NAME}" -Description "{TEXT}" `
      -ResourceGroup "{GROUP NAME}" `
      -ResourceId "/subscriptions/{SUBSCRIPTION ID}/resourcegroups/{GROUP NAME}/providers/microsoft.insights/components/{APP RESOURCE NAME}" `
@@ -93,7 +93,7 @@ GUID — это идентификатор подписки (не ключ ин�
 Это же правило можно использовать для метрики, передаваемой с помощью [параметра измерения](../../azure-monitor/app/api-custom-events-metrics.md#properties) другого вызова отслеживания, например TrackEvent или trackPageView.
 
 ## <a name="metric-names"></a>Имена метрик
-| Имя метрики | Имя экрана | Описание |
+| Имя метрики | Имя экрана | ОПИСАНИЕ |
 | --- | --- | --- |
 | `basicExceptionBrowser.count` |Исключения браузера |Число необработанных исключений в браузере. |
 | `basicExceptionServer.count` |Исключения сервера |Число необработанных исключений приложения |
@@ -122,16 +122,16 @@ GUID — это идентификатор подписки (не ключ ин�
 
 | Группа метрик | Модуль сборщика |
 | --- | --- |
-| basicExceptionBrowser,<br/>clientPerformance,<br/>показать |[Browser JavaScript](../../azure-monitor/app/javascript.md) |
+| basicExceptionBrowser,<br/>clientPerformance,<br/>view |[Browser JavaScript](../../azure-monitor/app/javascript.md) |
 | performanceCounter |[Производительность](../../azure-monitor/app/configuration-with-applicationinsights-config.md) |
-| remoteDependencyFailed |[Зависимость](../../azure-monitor/app/configuration-with-applicationinsights-config.md) |
+| remoteDependencyFailed |[Dependency](../../azure-monitor/app/configuration-with-applicationinsights-config.md) |
 | request,<br/>requestFailed |[Server request](../../azure-monitor/app/configuration-with-applicationinsights-config.md) |
 
 ## <a name="webhooks"></a>Веб-перехватчики
-Вы можете [автоматизировать реагирование на оповещения](../../azure-monitor/platform/alerts-webhooks.md). При возникновении оповещения Azure будет вызывать выбранный вами веб-адрес.
+Вы можете [автоматизировать свой ответ на оповещение](../../azure-monitor/platform/alerts-webhooks.md). При возникновении оповещения Azure будет вызывать выбранный вами веб-адрес.
 
-## <a name="see-also"></a>Дополнительные материалы
-* [Сценарий настройки Application Insights](powershell-script-create-resource.md)
+## <a name="see-also"></a>См. также
+* [Сценарий настройки Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/create-new-resource#creating-a-resource-automatically)
 * [Создание ресурсов Application Insights и веб-тестов на основе шаблонов](powershell.md)
 * [Автоматизация связывания Диагностики Microsoft Azure с Application Insights](powershell-azure-diagnostics.md)
-* [Автоматизация реагирования на оповещения](../../azure-monitor/platform/alerts-webhooks.md)
+* [Автоматизация реагирования на оповещение](../../azure-monitor/platform/alerts-webhooks.md)

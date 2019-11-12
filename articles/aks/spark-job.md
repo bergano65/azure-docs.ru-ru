@@ -9,18 +9,18 @@ ms.topic: article
 ms.date: 10/18/2019
 ms.author: alehall
 ms.custom: mvc
-ms.openlocfilehash: c4fca9b8f4c8a01124074396985b1ec3f1c896c6
-ms.sourcegitcommit: 9a4296c56beca63430fcc8f92e453b2ab068cc62
+ms.openlocfilehash: 5ecfa1853479c1cdc705a1a465a1de6318917a72
+ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2019
-ms.locfileid: "72675152"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73929000"
 ---
 # <a name="running-apache-spark-jobs-on-aks"></a>Запуск заданий Apache Spark в AKS
 
 [Apache Spark][apache-spark] — это быстрый механизм для обработки больших данных. Начиная с [выпуска Spark 2.3.0][spark-latest-release], Apache Spark поддерживает собственную интеграцию с кластерами Kubernetes. Служба Azure Kubernetes (AKS) — это управляемая среда Kubernetes, выполняющаяся в Azure. В этом документе описывается подготовка и запуск заданий Apache Spark в кластере Службы Azure Kubernetes (AKS).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 Чтобы выполнить действия, описанные в этой статье, необходимо следующее:
 
@@ -33,7 +33,7 @@ ms.locfileid: "72675152"
 
 ## <a name="create-an-aks-cluster"></a>Создание кластера AKS
 
-Spark используется для крупномасштабной обработки данных и требует, чтобы узлы Kubernetes соответствовали требованиям к ресурсам Spark. Минимальный рекомендуемый размер для узлов Службы Azure Kubernetes (AKS) — `Standard_D3_v2`.
+Spark используется для крупномасштабной обработки данных и требует, чтобы узлы Kubernetes соответствовали требованиям к ресурсам Spark. Минимальный рекомендуемый размер для узлов службы Azure Kubernetes (AKS) — `Standard_D3_v2`.
 
 Если вам нужен кластер AKS, соответствующий этой минимальной рекомендации, выполните следующие команды.
 
@@ -322,6 +322,7 @@ ENTRYPOINT [ "/opt/entrypoint.sh" ]
     --name spark-pi \
     --class org.apache.spark.examples.SparkPi \
     --conf spark.executor.instances=3 \
+    --conf spark.kubernetes.authenticate.driver.serviceAccountName=spark \
     --conf spark.kubernetes.container.image=<spark-image> \
     local:///opt/spark/work-dir/<your-jar-name>.jar
 ```
@@ -329,7 +330,7 @@ ENTRYPOINT [ "/opt/entrypoint.sh" ]
 > [!WARNING]
 > Из [документации по][spark-docs]Spark: "Планировщик Kubernetes в настоящее время экспериментальен. В будущих версиях возможны изменения в поведении конфигурации, образов контейнеров и точек входа".
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения см. в документации по Spark.
 

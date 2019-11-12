@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 09/27/2019
 ms.author: zarhoads
-ms.openlocfilehash: 8ebd91f8f02ad7eacd8440b34a31b78f5cac5741
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: c2d652b31c264d7b17fcf303564c327d09d416f9
+ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73472625"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73929136"
 ---
 # <a name="use-a-standard-sku-load-balancer-in-azure-kubernetes-service-aks"></a>Использование балансировщика нагрузки "Стандартный" в службе Kubernetes Azure (AKS)
 
@@ -22,7 +22,7 @@ ms.locfileid: "73472625"
 
 В этой статье предполагается, что основное понимание Kubernetes и Azure Load Balancer концепций. Дополнительные сведения см. в разделе [Основные понятия Kubernetes Core для службы Kubernetes Azure (AKS)][kubernetes-concepts] и [что Azure Load Balancer?][azure-lb].
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -40,7 +40,7 @@ ms.locfileid: "73472625"
 * По крайней мере один общедоступный IP-адрес или префикс IP-адреса необходим для разрешения исходящего трафика из кластера AKS. Общедоступный IP-адрес или префикс IP-адреса также требуется для поддержания подключения между узлами управления и агентами, а также для обеспечения совместимости с предыдущими версиями AKS. Существуют следующие варианты указания общедоступных IP-адресов или префиксов IP с подсистемой балансировки нагрузки уровня " *стандартный* ":
     * Предоставьте собственные общедоступные IP-адреса.
     * Предоставьте собственные префиксы общедоступных IP-адресов.
-    * Укажите число до 100, чтобы разрешить кластеру AKS создавать общедоступные IP-адреса *стандартного* SKU в той же группе ресурсов, которая была создана как кластер AKS, которая обычно называется с *MC_* в начале. AKS назначает общедоступный IP-адрес подсистеме балансировки нагрузки уровня " *стандартный* ". По умолчанию один общедоступный IP-адрес будет автоматически создан в той же группе ресурсов, что и кластер AKS, если не указан общедоступный IP-адрес, префикс общедоступного IP-адреса или число адресов IP. Кроме того, необходимо разрешить общедоступные адреса и избежать создания политики Azure, Ban создание IP-адресов.
+    * Укажите число до 100, чтобы разрешить кластеру AKS создавать общедоступные IP-адреса уровня " *стандартный* " в той же группе ресурсов, которая создается в качестве кластера AKS, которая обычно называется *MC_* в начале. AKS назначает общедоступный IP-адрес подсистеме балансировки нагрузки уровня " *стандартный* ". По умолчанию один общедоступный IP-адрес будет автоматически создан в той же группе ресурсов, что и кластер AKS, если не указан общедоступный IP-адрес, префикс общедоступного IP-адреса или число адресов IP. Кроме того, необходимо разрешить общедоступные адреса и избежать создания политики Azure, Ban создание IP-адресов.
 * При использовании SKU " *стандартный* " для подсистемы балансировки нагрузки необходимо использовать Kubernetes версии 1,13 или более поздней.
 * Определение номера SKU подсистемы балансировки нагрузки может выполняться только при создании кластера AKS. Вы не можете изменить SKU балансировщика нагрузки после создания кластера AKS.
 * В одном кластере можно использовать только один номер SKU балансировщика нагрузки.
@@ -148,7 +148,26 @@ az aks create \
     --load-balancer-outbound-ip-prefixes <publicIpPrefixId1>,<publicIpPrefixId2>
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="show-the-outbound-rule-for-your-load-balancer"></a>Отображение правила исходящего трафика для балансировщика нагрузки
+
+Чтобы отобразить правило исходящего трафика, созданное в подсистеме балансировки нагрузки, используйте команду [AZ Network фунтов исходящего трафика-Rule][az-network-lb-outbound-rule-list] и укажите группу ресурсов узла кластера AKS:
+
+```azurecli-interactive
+NODE_RG=$(az aks show --resource-group myResourceGroup --name myAKSCluster --query nodeResourceGroup -o tsv)
+az network lb outbound-rule list --resource-group $NODE_RG --lb-name kubernetes -o table
+```
+
+В предыдущих командах будет перечисляться правило исходящего трафика для балансировщика нагрузки, например:
+
+```console
+AllocatedOutboundPorts    EnableTcpReset    IdleTimeoutInMinutes    Name             Protocol    ProvisioningState    ResourceGroup
+------------------------  ----------------  ----------------------  ---------------  ----------  -------------------  -------------
+0                         True              30                      aksOutboundRule  All         Succeeded            MC_myResourceGroup_myAKSCluster_eastus  
+```
+
+В примере выходных данных *аллокатедаутбаундпортс* имеет значение 0. Значение параметра *аллокатедаутбаундпортс* означает, что распределение портов SNAT возвращается к автоматическому назначению на основе размера внутреннего пула. Дополнительные сведения см. в разделе [Load Balancer правила исходящих][azure-lb-outbound-rules] [подключений и исходящие подключения в Azure][azure-lb-outbound-connections] .
+
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о Kubernetes Services см. в [документации по службам Kubernetes][kubernetes-services].
 
@@ -176,11 +195,14 @@ az aks create \
 [az-feature-register]: /cli/azure/feature#az-feature-register
 [az-group-create]: /cli/azure/group#az-group-create
 [az-provider-register]: /cli/azure/provider#az-provider-register
+[az-network-lb-outbound-rule-list]: /cli/azure/network/lb/outbound-rule?view=azure-cli-latest#az-network-lb-outbound-rule-list
 [az-network-public-ip-show]: /cli/azure/network/public-ip?view=azure-cli-latest#az-network-public-ip-show
 [az-network-public-ip-prefix-show]: /cli/azure/network/public-ip/prefix?view=azure-cli-latest#az-network-public-ip-prefix-show
 [az-role-assignment-create]: /cli/azure/role/assignment#az-role-assignment-create
 [azure-lb]: ../load-balancer/load-balancer-overview.md
 [azure-lb-comparison]: ../load-balancer/load-balancer-overview.md#skus
+[azure-lb-outbound-rules]: ../load-balancer/load-balancer-outbound-rules-overview.md#snatports
+[azure-lb-outbound-connections]: ../load-balancer/load-balancer-outbound-connections.md#snat
 [install-azure-cli]: /cli/azure/install-azure-cli
 [internal-lb-yaml]: internal-lb.md#create-an-internal-load-balancer
 [kubernetes-concepts]: concepts-clusters-workloads.md

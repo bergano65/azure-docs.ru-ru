@@ -5,12 +5,12 @@ author: uhabiba04
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: v-umha
-ms.openlocfilehash: 2b15cc56cb4f804fac0b047819ccf166950e1cf3
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: 232ade55350ad1ac85612cf8c69117c19cb20d0c
+ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73890970"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73927799"
 ---
 # <a name="imagery-partner-integration"></a>Интеграция с партнерскими решениями для получения снимков
 
@@ -97,7 +97,7 @@ Content-Type  | Формат запроса (Content-Type: Application/<format>)
 
 Ниже приведен пример запроса для получения списка устройств:
 
-```azurepowershell-interactive
+```bash
 curl -X GET "https://microsoft-farmbeats.azurewebsites.net/Device" -H
 "Content-Type: application/json" -H
 "Authorization: Bearer <Access-Token>”
@@ -108,7 +108,7 @@ curl -X GET "https://microsoft-farmbeats.azurewebsites.net/Device" -H
 Приведенный ниже пример запроса заключается в создании устройства (у него есть входные данные JSON с текстом запроса).
 
 
-```azurepowershell-interactive
+```bash
 curl -X POST "https://microsoft-farmbeats.azurewebsites.net/Device" -H  
 "accept: application/json" -H  
 "Content-Type: application/json" -H "Authorization: Bearer <Access-Token>" -d
@@ -326,6 +326,7 @@ JSON (нотация объектов JavaScript) — это распростр�
   ]
 }
 ```
+
 Это будет однократная настройка, и область этого нового сценетипе будет ограничена подпиской, в которой развернут проект Фармбеатс.
 
 Пример. чтобы добавить Сценесаурце: "Слантранже", вы помещаете идентификатор/Екстендедтипе с ключом: "Сценесаурце" входными данными:

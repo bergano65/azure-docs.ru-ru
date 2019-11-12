@@ -1,5 +1,5 @@
 ---
-title: Создание клиента для использования развернутой веб-службы
+title: Создание клиента для модели, развернутой как веб-служба
 titleSuffix: Azure Machine Learning
 description: Узнайте, как использовать веб-службу, которая была создана при развертывании модели Машинного обучения Azure. Эта веб-служба предоставляет REST API. Вы можете создать для этого API клиенты на любом языке программирования по своему усмотрению.
 services: machine-learning
@@ -11,12 +11,12 @@ author: aashishb
 ms.reviewer: larryfr
 ms.date: 11/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: 387ba970aed68a5f4e682f932a362d3b04b35b8d
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 608f343166b528cacf3b1479d993466f6df7cb7e
+ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73671454"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73932163"
 ---
 # <a name="consume-an-azure-machine-learning-model-deployed-as-a-web-service"></a>Использование модели Машинного обучения Azure, развернутой в качестве веб-службы
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -77,10 +77,10 @@ ms.locfileid: "73671454"
 
 Машинное обучение Azure предоставляет два способа управления доступом к веб-службам.
 
-|Метод проверки подлинности|ACI|AKS|
+|Authentication Method|ACI|AKS|
 |---|---|---|
 |Ключ|Отключено по умолчанию| Включено по умолчанию|
-|токен| Недоступно| Отключено по умолчанию |
+|Маркер| Недоступно| Отключено по умолчанию |
 
 При отправке запроса к службе, защищенной с помощью ключа или токена, используйте заголовок __authorization__ для передачи ключа или маркера. Ключ или маркер должен быть отформатирован как `Bearer <key-or-token>`, где `<key-or-token>` является значением ключа или токена.
 
@@ -499,6 +499,6 @@ Power BI поддерживает использование Машинное о
 
 После развертывания веб-службы ее можно использовать в Power BI потоках данных. [Узнайте, как использовать веб-службу машинное обучение Azure из Power BI](https://docs.microsoft.com/power-bi/service-machine-learning-integration).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Чтобы просмотреть эталонную архитектуру для оценки моделей Python и глубокого обучения в реальном времени, перейдите в [центр архитектуры Azure](/azure/architecture/reference-architectures/ai/realtime-scoring-python).

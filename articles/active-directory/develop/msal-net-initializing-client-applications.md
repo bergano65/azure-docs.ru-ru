@@ -18,19 +18,19 @@ ms.author: twhitney
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f15f6480c2dc77fb1f6e229b62a0114f0f6fb735
-ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
+ms.openlocfilehash: a8cf7b7004097ef5a4d915d8fdff60cc9606c5be
+ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72802839"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73927076"
 ---
 # <a name="initialize-client-applications-using-msalnet"></a>Инициализация клиентских приложений с помощью MSAL.NET
 В этой статье описывается инициализация общедоступного клиента и конфиденциальных клиентских приложений с помощью библиотеки проверки подлинности Майкрософт для .NET (MSAL.NET).  Дополнительные сведения о типах клиентских приложений и параметрах конфигурации приложений см. в [обзоре](msal-client-applications.md).
 
 При использовании MSAL.NET 3. x рекомендуемым способом создания экземпляра приложения является использование построителей приложений: `PublicClientApplicationBuilder` и `ConfidentialClientApplicationBuilder`. Они предлагают мощный механизм настройки приложения либо из кода, либо из файла конфигурации, либо путем смешивания обоих подходов.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 Перед инициализацией приложения необходимо сначала [зарегистрировать его](quickstart-register-app.md) , чтобы приложение можно было интегрировать с платформой Microsoft Identity.  После регистрации может потребоваться следующая информация (которую можно найти в портал Azure):
 
 - Идентификатор клиента (строка, представляющая GUID)
@@ -101,7 +101,7 @@ IConfidentialClientApplication app = ConfidentialClientApplicationBuilder.Create
 
 Модификаторы, которые можно задать в построителе общедоступных клиентов или конфиденциальных клиентских приложений:
 
-|Параметр | Описание|
+|Модификатор | ОПИСАНИЕ|
 |--------- | --------- |
 |переопределения `.WithAuthority()` 7 | Устанавливает центр по умолчанию для центра приложений Azure AD с возможностью выбора облака Azure, аудитории, клиента (идентификатора клиента или имени домена) или непосредственного URI центра.|
 |`.WithAdfsAuthority(string)` | Задает центр по умолчанию приложения в качестве центра ADFS.|
@@ -120,7 +120,7 @@ IConfidentialClientApplication app = ConfidentialClientApplicationBuilder.Create
 
 Модификаторы, которые можно задать в построителе общедоступных клиентских приложений для Xamarin. iOS:
 
-|Параметр | Описание|
+|Модификатор | ОПИСАНИЕ|
 |--------- | --------- |
 |`.WithIosKeychainSecurityGroup()` | **Только Xamarin. iOS**. задает группу безопасности цепочки ключей iOS (для сохраняемости кэша).|
 
@@ -128,7 +128,7 @@ IConfidentialClientApplication app = ConfidentialClientApplicationBuilder.Create
 
 Ниже перечислены модификаторы, которые можно задать в построителе конфиденциальных клиентских приложений.
 
-|Параметр | Описание|
+|Модификатор | ОПИСАНИЕ|
 |--------- | --------- |
 |`.WithCertificate(X509Certificate2 certificate)` | Задает сертификат, идентифицирующий приложение в Azure AD.|
 |`.WithClientSecret(string clientSecret)` | Задает секрет клиента (пароль приложения), определяющий приложение в Azure AD.|

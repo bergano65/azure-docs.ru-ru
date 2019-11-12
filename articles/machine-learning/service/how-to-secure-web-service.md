@@ -1,5 +1,5 @@
 ---
-title: Защита с помощью SSL
+title: Защита веб-служб с помощью SSL
 titleSuffix: Azure Machine Learning
 description: Узнайте, как включить протокол HTTPS для обеспечения слишком надежной защиты веб-службы, развернутой с помощью Машинное обучение Azure.
 services: machine-learning
@@ -11,12 +11,12 @@ ms.author: aashishb
 author: aashishb
 ms.date: 08/12/2019
 ms.custom: seodec18
-ms.openlocfilehash: 1455ec17898e82ed0f39fea66c44d2e9b4f57280
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: f1021ad1983f78252d924a5d3cb674419732d66e
+ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73489550"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73932062"
 ---
 # <a name="use-ssl-to-secure-a--through-azure-machine-learning"></a>Использование SSL для защиты с помощью Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -71,7 +71,7 @@ ms.locfileid: "73489550"
 
 ## <a id="enable"></a>Включение SSL и развертывание
 
-Чтобы развернуть (или повторно развернуть) службу с включенным протоколом SSL, задайте для параметра *ssl_enabled* значение "true" везде, где это применимо. Присвойте параметру *ssl_certificate* значение файла *сертификата* . Задайте для *ssl_key* значение файла *ключа* .
+Чтобы развернуть (или повторно развернуть) службу с включенным протоколом SSL, задайте для параметра *Ssl_enabled* значение "true" везде, где это применимо. Присвойте параметру *ssl_certificate* значение файла *сертификата* . Задайте *ssl_key* в качестве значения файла *ключа* .
 
 ### <a name="deploy-on-aks-and-field-programmable-gate-array-fpga"></a>Развертывание в AKS и программируемом массиве Gates (FPGA)
 
@@ -81,13 +81,13 @@ ms.locfileid: "73489550"
 При развертывании в AKS можно создать новый кластер AKS или подключить существующий. Дополнительные сведения о создании или присоединении кластера см. в статье [развертывание модели в кластере службы Azure Kubernetes](how-to-deploy-azure-kubernetes-service.md).
   
 -  При создании нового кластера используется **[акскомпуте. provisionining_configuration ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.akscompute#provisioning-configuration-agent-count-none--vm-size-none--ssl-cname-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--location-none--vnet-resourcegroup-name-none--vnet-name-none--subnet-name-none--service-cidr-none--dns-service-ip-none--docker-bridge-cidr-none--cluster-purpose-none-)** .
-- При присоединении существующего кластера используется **[акскомпуте. attach_configuration ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.akscompute#attach-configuration-resource-group-none--cluster-name-none--resource-id-none--cluster-purpose-none-)** . Оба возвращают объект конфигурации с методом **enable_ssl** .
+- При присоединении существующего кластера используется **[акскомпуте. attach_configuration ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.akscompute#attach-configuration-resource-group-none--cluster-name-none--resource-id-none--cluster-purpose-none-)** . Оба возвращают объект конфигурации, имеющий метод **enable_ssl** .
 
 Метод **enable_ssl** может использовать сертификат, предоставляемый корпорацией Майкрософт или сертификатом, который вы приобрели.
 
-  * При использовании сертификата от корпорации Майкрософт необходимо использовать параметр *leaf_domain_label* . Этот параметр создает DNS-имя для службы. Например, значение «MyService» создает доменное имя «MyService\<> с шестью случайными символами.\<благодаря >. cloudapp. Azure. com ", где \<благодаря > — это регион, содержащий службу. При необходимости можно использовать параметр *overwrite_existing_domain* , чтобы перезаписать существующий *leaf_domain_label*.
+  * При использовании сертификата от корпорации Майкрософт необходимо использовать параметр *leaf_domain_label* . Этот параметр создает DNS-имя для службы. Например, значение «MyService» создает доменное имя «MyService\<> с шестью случайными символами.\<благодаря >. cloudapp. Azure. com ", где \<благодаря > — это регион, содержащий службу. При необходимости можно использовать параметр *overwrite_existing_domain* для перезаписи существующего *leaf_domain_label*.
 
-    Чтобы развернуть (или повторно развернуть) службу с включенным протоколом SSL, задайте для параметра *ssl_enabled* значение "true" везде, где это применимо. Присвойте параметру *ssl_certificate* значение файла *сертификата* . Задайте для *ssl_key* значение файла *ключа* .
+    Чтобы развернуть (или повторно развернуть) службу с включенным протоколом SSL, задайте для параметра *Ssl_enabled* значение "true" везде, где это применимо. Присвойте параметру *ssl_certificate* значение файла *сертификата* . Задайте *ssl_key* в качестве значения файла *ключа* .
 
     > [!IMPORTANT]
     > При использовании сертификата от корпорации Майкрософт вам не нужно приобретать собственный сертификат или имя домена.
@@ -247,7 +247,7 @@ update_config = AksUpdateConfiguration(ssl_configuration)
 aks_target.update(update_config)
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 Вы узнаете, как выполнять следующие задачи:
 + [Использование модели машинного обучения, развернутой в](how-to-consume-web-service.md)
 + [Безопасный запуск экспериментов и вывод в виртуальной сети Azure](how-to-enable-virtual-network.md)

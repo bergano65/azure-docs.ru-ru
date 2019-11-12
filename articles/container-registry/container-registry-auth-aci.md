@@ -1,5 +1,5 @@
 ---
-title: Аутентификация с помощью реестра контейнеров Azure из службы "Экземпляры контейнеров Azure"
+title: Доступ к реестру контейнеров Azure из экземпляров контейнеров
 description: Узнайте, как обеспечить доступ к образам в закрытом реестре контейнеров из службы "Экземпляры контейнеров Azure" с помощью субъекта-службы Azure Active Directory.
 services: container-registry
 author: dlepow
@@ -8,12 +8,12 @@ ms.service: container-registry
 ms.topic: article
 ms.date: 04/23/2018
 ms.author: danlep
-ms.openlocfilehash: b11f88cbb29016032cbf536a2c970573eda82152
-ms.sourcegitcommit: b4665f444dcafccd74415fb6cc3d3b65746a1a31
+ms.openlocfilehash: 53cdca72587dafd39abd3f13ad488dcb460bf622
+ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72262863"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73931673"
 ---
 # <a name="authenticate-with-azure-container-registry-from-azure-container-instances"></a>Аутентификация с помощью реестра контейнеров Azure из службы "Экземпляры контейнеров Azure"
 
@@ -52,7 +52,7 @@ az container create \
 * [Интерфейс командной строки Azure][acr-scripts-cli]
 * [Azure PowerShell][acr-scripts-psh]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 В следующих статьях приводятся дополнительные сведения о работе с субъектами-службами и реестром контейнеров Azure.
 

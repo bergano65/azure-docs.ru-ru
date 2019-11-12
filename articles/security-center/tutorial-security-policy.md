@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/04/2019
 ms.author: memildin
-ms.openlocfilehash: 4ac6ac52d6d950d814a37e94ea2801c2ba8e4170
-ms.sourcegitcommit: 3f8017692169bd75483eefa96c225d45cd497f06
+ms.openlocfilehash: 45a27be400753b56c42310a340334feba8a420c5
+ms.sourcegitcommit: 6dec090a6820fb68ac7648cf5fa4a70f45f87e1a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73521215"
+ms.lasthandoff: 11/11/2019
+ms.locfileid: "73906852"
 ---
 # <a name="working-with-security-policies"></a>Использование политик безопасности
 
@@ -105,6 +105,10 @@ ms.locfileid: "73521215"
    > [!NOTE]
    > Помните, что Группа управления применяет свои политики к своим подпискам. Таким образом, если отключить политику подписки, а подписка принадлежит к группе управления, которая по-прежнему использует ту же политику, вы будете продолжать получать рекомендации политики. Политика будет по-прежнему применяться на уровне управления, и рекомендации по-прежнему будут созданы.
 
+1. Щелкните **Просмотреть действующую политику**.
+
+   ![отключить политику](./media/tutorial-security-policy/view-effective-policy.png)
+
 1. Щелкните назначенную политику.
 
    ![отключить политику](./media/tutorial-security-policy/security-policy.png)
@@ -113,14 +117,14 @@ ms.locfileid: "73521215"
 
    ![отключить политику](./media/tutorial-security-policy/disable-policy.png)
 
-1. Щелкните **Сохранить**.
+1. Выберите команду **Сохранить**.
 
    > [!NOTE]
    > Для вступления в силу изменений политики отключения может потребоваться до 12 часов.
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 В этой статье вы узнали о политиках безопасности. Связанные сведения см. в следующих статьях:
 
 * Инструкции по настройке политик с помощью PowerShell см. в разделе [Краткое руководство. Создание назначения политики для обнаружения ресурсов, не соответствующих требованиям, с помощью модуля Azure PowerShell](../governance/policy/assign-policy-powershell.md)

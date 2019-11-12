@@ -1,27 +1,23 @@
 ---
 title: Создание определений элементов пользовательского интерфейса для портала Azure | Документация Майкрософт
 description: Сведения об элементах, используемых при создании определений пользовательского интерфейса для портала Azure.
-services: managed-applications
-documentationcenter: na
 author: tfitzmac
 ms.service: managed-applications
-ms.devlang: na
 ms.topic: reference
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 09/19/2018
+ms.date: 11/11/2019
 ms.author: tomfitz
-ms.openlocfilehash: 41a583a77f85bb1524112fa20d9098e18bc4f431
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 9f952b8301f1d85d81fcc63e5d46dc57b1fb1106
+ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60587944"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73932002"
 ---
 # <a name="createuidefinition-elements"></a>Элементы CreateUiDefinition
+
 В этой статье описывается схема и свойства всех поддерживаемых элементов CreateUiDefinition. 
 
-## <a name="schema"></a>Схема
+## <a name="schema"></a>SCHEMA (Схема)
 
 Для большинства элементов схема выглядит следующим образом:
 
@@ -38,9 +34,9 @@ ms.locfileid: "60587944"
 }
 ```
 
-| Свойство | Обязательно для заполнения | ОПИСАНИЕ |
+| Свойство | обязательные | ОПИСАНИЕ |
 | -------- | -------- | ----------- |
-| name | Yes | Внутренний идентификатор для ссылки на конкретный экземпляр элемента. Чаще всего имя элемента используется в `outputs`, где значения выходных данных указанных элементов сопоставляются с параметрами шаблона. Его также можно использовать для привязки выходного значения элемента к `defaultValue` другого элемента. |
+| Имя | Yes | Внутренний идентификатор для ссылки на конкретный экземпляр элемента. Чаще всего имя элемента используется в `outputs`, где значения выходных данных указанных элементов сопоставляются с параметрами шаблона. Его также можно использовать для привязки выходного значения элемента к `defaultValue` другого элемента. |
 | type | Yes | Элемент управления пользовательского интерфейса для обработки элемента. Список поддерживаемых типов см. в разделе [Элементы](#elements). |
 | label | Yes | Отображаемый текст элемента. Некоторые типы элементов содержат несколько меток, поэтому значение может быть объектом, содержащим несколько строк. |
 | defaultValue | Нет | Значение элемента по умолчанию. Некоторые типы элементов поддерживают сложные значения по умолчанию, поэтому значение может быть объектом. |
@@ -59,6 +55,7 @@ ms.locfileid: "60587944"
 - [Элемент пользовательского интерфейса Microsoft.Common.OptionsGroup](microsoft-common-optionsgroup.md)
 - [Элемент пользовательского интерфейса Microsoft.Common.PasswordBox](microsoft-common-passwordbox.md)
 - [Элемент пользовательского интерфейса Microsoft.Common.Section](microsoft-common-section.md)
+- [Microsoft. Common. Тагсбиресаурце](microsoft-common-tagsbyresource.md)
 - [Microsoft.Common.TextBlock](microsoft-common-textblock.md)
 - [Элемент пользовательского интерфейса Microsoft.Common.TextBox](microsoft-common-textbox.md)
 - [Элемент пользовательского интерфейса Microsoft.Compute.CredentialsCombo](microsoft-compute-credentialscombo.md)
@@ -69,5 +66,6 @@ ms.locfileid: "60587944"
 - [Элемент пользовательского интерфейса Microsoft.Storage.MultiStorageAccountCombo](microsoft-storage-multistorageaccountcombo.md)
 - [Элемент пользовательского интерфейса Microsoft.Storage.StorageAccountSelector](microsoft-storage-storageaccountselector.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
+
 Общие сведения о создании определений пользовательского интерфейса см. в статье [Начало работы с CreateUiDefinition](create-uidefinition-overview.md).

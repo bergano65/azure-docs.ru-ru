@@ -7,14 +7,14 @@ ms.service: firewall-manager
 ms.topic: conceptual
 ms.date: 10/25/2019
 ms.author: victorh
-ms.openlocfilehash: fe733b686f2b56beee26a6c33c4d6264d621e627
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: bcea9a8674e4b1979698b7d28eb4192172b0dc11
+ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73516348"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73931307"
 ---
-# <a name="deploy-a-trusted-security-partner-preview"></a>Развертывание доверенного партнера по безопасности (Предварительная версия)
+# <a name="deploy-a-trusted-security-partner-preview"></a>Развертывание функции доверенного партнера по безопасности (предварительная версия)
 
 [!INCLUDE [Preview](../../includes/firewall-manager-preview-notice.md)]
 
@@ -24,10 +24,10 @@ ms.locfileid: "73516348"
 
 Поддерживаемые партнеры безопасности — это **ZScaler** и **ибосс** для этой предварительной версии. Поддерживаемые регионы: WestCentralUS, NorthCentralUS, WestUS, WestUS2 и EastUS.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 > [!IMPORTANT]
-> Предварительную версию диспетчера брандмауэра Azure необходимо явно включить с помощью команды PowerShell `Register-AzProviderFeature`.
+> Предварительную версию Диспетчера брандмауэра Azure необходимо включить явным образом с помощью команды `Register-AzProviderFeature` в PowerShell.
 
 В командной строке PowerShell выполните следующие команды:
 
@@ -35,7 +35,7 @@ ms.locfileid: "73516348"
 connect-azaccount
 Register-AzProviderFeature -FeatureName AllowCortexSecurity -ProviderNamespace Microsoft.Network
 ```
-Для завершения регистрации компонента требуется до 30 минут. Выполните следующую команду, чтобы проверить состояние регистрации:
+Регистрация функции занимает до 30 минут. Чтобы проверить состояние регистрации, выполните следующую команду:
 
 `Get-AzProviderFeature -FeatureName AllowCortexSecurity -ProviderNamespace Microsoft.Network`
 
@@ -53,7 +53,7 @@ Register-AzProviderFeature -FeatureName AllowCortexSecurity -ProviderNamespace M
 8. Если вы хотите развернуть в концентраторе только сторонние поставщики безопасности, выберите параметр **брандмауэр Azure: включено/отключено** , чтобы **Отключить**его. 
 9. Выберите **Далее: доверенные партнеры безопасности**.
 10. Выберите **доверенный партнер безопасности** , чтобы задать для него значение **включено**. Выберите партнера. 
-11. Щелкните **Далее**. 
+11. Нажмите кнопку **Далее**. 
 12. Просмотрите содержимое, а затем выберите **создать**.
 
 Развертывание VPN-шлюза может занять более 30 минут.
@@ -83,12 +83,11 @@ Register-AzProviderFeature -FeatureName AllowCortexSecurity -ProviderNamespace M
 
    > [!NOTE]
    > Вы можете ограничить доступ только той группой ресурсов, чтобы получить более детализированный контроль.
-3. Следуйте инструкциям по следующей ссылке.
+3. Следуйте указаниям в [ZScaler: настройка Microsoft Azure интеграции виртуальной глобальной сети](https://help.zscaler.com/zia/configuring-microsoft-azure-virtual-wan-integration) :
 
-   - Чтобы войти на портал партнера и добавить учетные данные, чтобы предоставить доверенному партнеру доступ к защищенному центру.
-   - После проверки учетных данных аутентификации Azure AD выполните следующие инструкции, чтобы синхронизировать виртуальные концентраторы на портале партнера и настроить туннель для виртуального концентратора.
-
-   [ZScaler: Настройка интеграции виртуальной глобальной сети Microsoft Azure](https://help.zscaler.com/zia/configuring-microsoft-azure-virtual-wan-integration)
+   - Войдите на портал партнера и добавьте свои учетные данные, чтобы предоставить доверенному партнеру доступ к защищенному центру.
+   - Синхронизируйте виртуальные концентраторы на портале партнера и настройте туннель для виртуального концентратора. Это можно сделать после проверки учетных данных аутентификации Azure AD.
+   
 4. Вы можете просмотреть состояние создания туннеля на портале виртуальной глобальной сети Azure в Azure. Когда туннели **появятся в Azure и на** портале партнера, перейдите к следующим шагам, чтобы настроить маршруты, чтобы выбрать, какие ветви и виртуальных сетей должны отсылать Интернет-трафик партнеру.
 
 ## <a name="configure-route-settings"></a>Настройка параметров маршрута
@@ -114,7 +113,7 @@ Register-AzProviderFeature -FeatureName AllowCortexSecurity -ProviderNamespace M
 
 После завершения шагов настройки маршрутов виртуальные машины виртуальной сети, а также сайты филиалов отправляют 0/0 на маршрут службы стороннего производителя. Вы не можете подключиться к этим виртуальным машинам по протоколу RDP или SSH. Чтобы выполнить вход, можно развернуть службу [Azure бастиона](../bastion/bastion-overview.md) в одноранговой виртуальной сети.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Руководство. Защитите облачную сеть с помощью предварительной версии диспетчера брандмауэра Azure, используя портал Azure](secure-cloud-network.md)
 

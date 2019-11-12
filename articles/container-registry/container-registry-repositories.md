@@ -1,6 +1,6 @@
 ---
 title: Репозитории Реестра контейнеров Azure на портале Azure
-description: Узнайте, как просмотреть список репозиториев Реестра контейнеров Azure на портале Azure.
+description: Используйте портал Azure для просмотра репозиториев реестра контейнеров Azure, в которых размещены образы контейнеров DOCKER и другие поддерживаемые артефакты.
 services: container-registry
 author: cristy
 manager: gwallace
@@ -8,22 +8,22 @@ ms.service: container-registry
 ms.topic: article
 ms.date: 01/05/2018
 ms.author: jeconnoc
-ms.openlocfilehash: 22f84efee2b3996734e8e38c73d30ba891b745d9
-ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
+ms.openlocfilehash: 793d8e82ca78c6055a6e956d4f41b7991d5fd700
+ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68310584"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73931529"
 ---
 # <a name="view-container-registry-repositories-in-the-azure-portal"></a>Просмотр списка репозиториев реестра контейнеров на портале Azure
 
 Реестр контейнеров Azure позволяет хранить образы контейнеров Docker в репозиториях. Это позволяет хранить группы образов (версии образов) в изолированных средах. Эти репозитории можно указать при отправке образов в реестр и просмотреть их содержимое на портале Azure.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
-* **Реестр контейнеров**: Создайте реестр контейнеров в подписке Azure. Это можно сделать на [портале Azure](container-registry-get-started-portal.md) или с помощью [Azure CLI](container-registry-get-started-azure-cli.md).
-* Интерфейс **командной строки DOCKER**: Установите [DOCKER][docker-install] на локальном компьютере, который предоставляет интерфейс командной строки DOCKER.
-* **Образ контейнера**: Отправка образа в реестр контейнеров. Рекомендации о том, как это сделать, см. в статье [Отправка первого образа в частный реестр контейнеров Docker с помощью интерфейса командной строки Docker](container-registry-get-started-docker-cli.md).
+* **Реестр контейнеров.** Создайте реестр контейнеров в своей подписке Azure. Это можно сделать на [портале Azure](container-registry-get-started-portal.md) или с помощью [Azure CLI](container-registry-get-started-azure-cli.md).
+* **DOCKER CLI**: установите [DOCKER][docker-install] на локальном компьютере, который предоставляет интерфейс командной строки DOCKER.
+* **Образ контейнера.** Отправьте образ в реестр контейнеров. Рекомендации о том, как это сделать, см. в статье [Отправка первого образа в частный реестр контейнеров Docker с помощью интерфейса командной строки Docker](container-registry-get-started-docker-cli.md).
 
 ## <a name="view-repositories-in-azure-portal"></a>Просмотр списка репозиториев на портале Azure
 
@@ -48,7 +48,7 @@ docker push myregistry.azurecr.io/samples/nginx
 
 ![Репозитории на портале](./media/container-registry-repositories/container-registry-repositories.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Теперь, когда вы знаете, как просматривать список репозиториев на портале и работать с ними, попробуйте использовать Реестр контейнеров Azure с кластером [службы Azure Kubernetes (AKS)](../aks/tutorial-kubernetes-prepare-app.md).
 

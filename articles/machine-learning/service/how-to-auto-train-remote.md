@@ -11,12 +11,12 @@ ms.subservice: core
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 4276a713e62f96cc5340fc7be0e8391939d32342
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 5104e6e037341c41a032f80287c6d56d17361d4c
+ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73497315"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73932201"
 ---
 # <a name="train-models-with-automated-machine-learning-in-the-cloud"></a>Обучение моделей с помощью автоматического машинного обучения в облаке
 
@@ -103,7 +103,7 @@ y = Dataset.Tabular.from_delimited_files(path=ds.path('digitsdata/y_train.csv'))
 
 ## <a name="create-run-configuration"></a>Создать конфигурацию запуска
 
-Чтобы сделать зависимости доступными для скрипта get_data. корректировки, определите объект `RunConfiguration` с определенными `CondaDependencies`. Используйте этот объект для параметра `run_configuration` в `AutoMLConfig`.
+Чтобы сделать зависимости доступными для скрипта get_data. копировать, определите объект `RunConfiguration` с определенными `CondaDependencies`. Используйте этот объект для параметра `run_configuration` в `AutoMLConfig`.
 
 ```python
 from azureml.core.runconfig import RunConfiguration
@@ -148,24 +148,6 @@ automl_config = AutoMLConfig(task='classification',
                              X = X,
                              y = y,
                              **automl_settings,
-                             )
-```
-
-### <a name="enable-model-explanations"></a>Включение описаний модели
-
-Задайте дополнительный параметр `model_explainability` в конструкторе `AutoMLConfig`. Кроме того, объект проверки кадра данных нужно передать в качестве параметра `X_valid` для использования функции объясняемости модели.
-
-```python
-automl_config = AutoMLConfig(task='classification',
-                             debug_log='automl_errors.log',
-                             path=project_folder,
-                             compute_target=compute_target,
-                             run_configuration=run_config,
-                             X = X,
-                             y = y,
-                             **automl_settings,
-                             model_explainability=True,
-                             X_valid=X_test
                              )
 ```
 
@@ -237,59 +219,13 @@ remote_run.get_portal_url()
 
 Та же информация доступна в вашей рабочей области.  Дополнительные сведения об этих результатах см. в разделе [понимание автоматических результатов машинного обучения](how-to-understand-automated-ml.md).
 
-### <a name="view-logs"></a>Просмотр журналов
-
-Найдите журналы на DSVM в каталоге `/tmp/azureml_run/{iterationid}/azureml-logs`.
-
-## <a name="explain"></a>Лучшее описание модели
-
-Извлечение данных описания модели позволяет просмотреть подробные данные о моделях для повышения прозрачности компонентов, выполняемых на внутреннем сервере. В этом примере вы выполняете описания модели только для самой подходящей модели. При выполнении для всех моделей в конвейере это займет значительное время. Описание модели включает следующее:
-
-* shap_values: сведения, формируемые библиотекой ШАП lib.
-* expected_values: ожидаемое значение модели, применяемое к набору данных X_train.
-* overall_summary: значения важности функций уровня модели сортируются в порядке убывания.
-* overall_imp: имена функций сортируются в том же порядке, что и в overall_summary.
-* per_class_summary: значения важности функций уровня класса сортируются в порядке убывания. Доступно только для случая классификации.
-* per_class_imp: имена функций сортируются в том же порядке, что и в per_class_summary. Доступно только для случая классификации.
-
-Используйте следующий код, чтобы выбрать лучший конвейер из итераций. Метод `get_output` возвращает лучшее выполнение и соответствующую модель для последнего соответствующего вызова.
-
-```python
-best_run, fitted_model = remote_run.get_output()
-```
-
-Импортируйте функцию `retrieve_model_explanation` и выполните оптимальную модель.
-
-```python
-from azureml.train.automl.automlexplainer import retrieve_model_explanation
-
-shap_values, expected_values, overall_summary, overall_imp, per_class_summary, per_class_imp = \
-    retrieve_model_explanation(best_run)
-```
-
-Выведите результаты для переменных описания `best_run`, которые вы хотите просмотреть.
-
-```python
-print(overall_summary)
-print(overall_imp)
-print(per_class_summary)
-print(per_class_imp)
-```
-
-Вывод результатов переменных описаний сводки `best_run` в следующих выходных данных:
-
-![Выходные данные консоли объясняемости модели](./media/how-to-auto-train-remote/expl-print.png)
-
-Можно также визуализировать важность компонентов через пользовательский интерфейс мини-приложения или в рабочей области в [машинное обучение Azure Studio](https://ml.azure.com). 
-
-![Пользовательский интерфейс объясняемости модели](./media/how-to-auto-train-remote/model-exp.png)
-
 ## <a name="example"></a>Пример
 
-В записной книжке [хов-то-усе-азуремл/аутоматед-Мачине-леарнинг/ремоте-амлкомпуте/АУТО-мл-ремоте-амлкомпуте. ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/remote-amlcompute/auto-ml-remote-amlcompute.ipynb) показаны понятия, описанные в этой статье.
+В следующей [записной книжке](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/regression/auto-ml-regression.ipynb) показаны понятия, описанные в этой статье.
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-for-examples.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-Узнайте, [как настроить параметры автоматического обучения](how-to-configure-auto-train.md)
+* Узнайте, [как настроить параметры автоматического обучения](how-to-configure-auto-train.md)
+* См. [практические руководства](how-to-machine-learning-interpretability-automl.md) по включению функций интерпретации модели в автоматизированных экспериментах ml.

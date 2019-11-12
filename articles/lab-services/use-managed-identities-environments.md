@@ -11,12 +11,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/01/2019
 ms.author: spelluru
-ms.openlocfilehash: d1dd059f1a6f9ce96b27d4fe1f214978dfc06a8f
-ms.sourcegitcommit: 80da36d4df7991628fd5a3df4b3aa92d55cc5ade
+ms.openlocfilehash: a4ba4206c01e492f2ae980c5806de1e72c7051c3
+ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71815997"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73931154"
 ---
 # <a name="use-azure-managed-identities-to-deploy-environments-in-a-lab"></a>Использование управляемых удостоверений Azure для развертывания сред в лаборатории 
 Как владелец лаборатории вы можете использовать управляемое удостоверение для развертывания сред в лаборатории. Эта функция полезна в сценариях, где среда содержит или содержит ссылки на ресурсы Azure, такие как хранилища ключей, общие галереи образов и сети, являющиеся внешними по отношению к группе ресурсов среды. Она позволяет создавать изолированные среды, которые не ограничиваются группой ресурсов этой среды.
@@ -24,7 +24,7 @@ ms.locfileid: "71815997"
 > [!NOTE]
 > В настоящее время для лаборатории поддерживается только одно назначенное пользователем удостоверение. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 - [Создание, перечисление, удаление или назначение роли назначенному пользователем управляемому удостоверению с помощью портал Azure](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md). 
 
 ## <a name="use-azure-portal"></a>Использование портала Azure
@@ -67,6 +67,10 @@ ms.locfileid: "71815997"
                 "[userAssignedIdentityResourceId]":{}
             }
         }
+        "properties":{
+            "identityUsageType":"Environment"
+                     }
+          
     }
     ```
  
@@ -83,6 +87,9 @@ ms.locfileid: "71815997"
                 "/subscriptions/0000000000-0000-0000-0000-000000000000000/resourceGroups/exampleRG/providers/Microsoft.ManagedIdentity/userAssignedIdentities/sampleuseridentity":{}
             }
         }
+        "properties":{
+            "identityUsageType":"Environment"
+                     }
     }
     ```
  

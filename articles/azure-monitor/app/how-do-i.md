@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 04/04/2017
-ms.openlocfilehash: 28881403e4938376cc1912227bdff51aa5f069cf
-ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
+ms.openlocfilehash: 61bd5898c494018a2bacbd894d4dc2aac97f53b4
+ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72817367"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73928423"
 ---
 # <a name="how-do-i--in-application-insights"></a>Разделы справки по Application Insights
 ## <a name="get-an-email-when-"></a>Получать уведомление по электронной почте, если...
@@ -72,26 +72,26 @@ ms.locfileid: "72817367"
 [Создание новых оповещений с помощью PowerShell](../../azure-monitor/app/alerts.md#automation)
 
 ## <a name="use-powershell-to-manage-application-insights"></a>Использование PowerShell для управления Application Insights
-* [Создание новых ресурсов](../../azure-monitor/app/powershell-script-create-resource.md)
+* [Создание новых ресурсов](https://docs.microsoft.com/azure/azure-monitor/app/create-new-resource#creating-a-resource-automatically)
 * [Создание новых оповещений](../../azure-monitor/app/alerts.md#automation)
 
 ## <a name="separate-telemetry-from-different-versions"></a>Разделение телеметрии разных версий
 
 * Несколько ролей в приложении: используйте один ресурс Application Insights и выполните фильтрацию по [cloud_Rolename](../../azure-monitor/app/app-map.md).
 * Отдельные стадии разработки, тестирования и выпуска версий. Используйте различные ресурсы Application Insights. Выберите ключи инструментирования из файла Web. config. Дополнительные [сведения](../../azure-monitor/app/separate-resources.md)
-* Отчеты о версиях сборки. Добавьте свойство с помощью инициализатора телеметрии. [Дополнительные сведения](../../azure-monitor/app/separate-resources.md)
+* Отчеты о версиях сборки. Добавьте свойство с помощью инициализатора телеметрии. [Подробнее](../../azure-monitor/app/separate-resources.md)
 
 ## <a name="monitor-backend-servers-and-desktop-apps"></a>Мониторинг внутренних серверов и классических приложений
 [Используйте модуль пакета SDK для Windows Server](../../azure-monitor/app/windows-desktop.md).
 
-## <a name="visualize-data"></a>Визуализация данных
+## <a name="visualize-data"></a>Визуализируйте данные
 #### <a name="dashboard-with-metrics-from-multiple-apps"></a>Панель мониторинга с метрикой для нескольких приложений
 * В [обозревателе метрик](../../azure-monitor/app/metrics-explorer.md)настройте диаграмму и сохраните ее в списке избранного. Закрепите ее на панели мониторинга Azure.
 
 #### <a name="dashboard-with-data-from-other-sources-and-application-insights"></a>Панель мониторинга с данными из других источников и Application Insights
 * [Экспорт телеметрии в Power BI](../../azure-monitor/app/export-power-bi.md ).
 
-или
+Или
 
 * Используйте SharePoint как панель мониторинга для отображения данных веб-компонентов SharePoint. [Используйте непрерывный экспорт и Stream Analytics для экспорта в SQL](../../azure-monitor/app/code-sample-export-sql-stream-analytics.md).  Используйте PowerView для просмотра базы данных и создания веб-компонента SharePoint для PowerView.
 
@@ -102,7 +102,7 @@ ms.locfileid: "72817367"
 
 Затем можно:
 
-* выполнить поиск по определенным идентификаторам пользователей;
+* Поиск по указанным идентификаторам пользователей
 
 ![](./media/how-do-i/110-search.png)
 
@@ -114,12 +114,12 @@ ms.locfileid: "72817367"
 Создайте [фильтр](../../azure-monitor/app/api-filtering-sampling.md#filtering). Это позволяет изменять или фильтровать данные телеметрии перед их отправкой из приложения в Application Insights.
 
 ## <a name="list-specific-users-and-their-usage"></a>Вывод списка определенных пользователей и информации об их использовании
-Если нужно просто выполнить [поиск конкретных пользователей](#search-specific-users), можно установить [идентификатор пользователя, прошедшего проверку подлинности](../../azure-monitor/app/api-custom-events-metrics.md#authenticated-users).
+Если нужно просто [найти конкретных пользователей](#search-specific-users), можно задать [идентификатор пользователя, прошедшего проверку подлинности](../../azure-monitor/app/api-custom-events-metrics.md#authenticated-users).
 
 Если вы хотите получить список пользователей с данными — например, на какие страницы заходят пользователи или как часто они входят в систему, — существует два варианта действий:
 
-* [Установить идентификатор пользователя, прошедшего проверку подлинности](../../azure-monitor/app/api-custom-events-metrics.md#authenticated-users), [выполнить экспорт данных в базу данных](../../azure-monitor/app/code-sample-export-sql-stream-analytics.md) и проанализировать данные в базе данных с помощью подходящих инструментов.
-* Если количество пользователей невелико, отправить пользовательские события или метрики с использованием интересующих данных, таких как значение метрики и имя события, и задавать идентификатор пользователя в качестве свойства. Для анализа просмотров страниц замените стандартный вызов JavaScript trackPageView. Чтобы проанализировать данные телеметрии на стороне сервера, используйте инициализатор телеметрии для добавления идентификатора пользователя ко всем данным телеметрии сервера. После этого можно фильтровать и разделять метрику и выполнять поиск по идентификатору пользователя.
+* [Укажите идентификатор пользователя, прошедшего проверку подлинности](../../azure-monitor/app/api-custom-events-metrics.md#authenticated-users), [экспортируйте его в базу данных](../../azure-monitor/app/code-sample-export-sql-stream-analytics.md) и используйте подходящие средства для анализа данных пользователя.
+* Если имеется небольшое количество пользователей, отправьте пользовательские события или метрики, используя интересующие данные в качестве значения метрики или имени события, и задавая идентификатор пользователя в качестве свойства. Для анализа просмотров страниц замените стандартный вызов JavaScript trackPageView. Чтобы проанализировать данные телеметрии на стороне сервера, используйте инициализатор телеметрии, чтобы добавить идентификатор пользователя во все данные телеметрии сервера. Затем можно отфильтровать и сегментировать метрики и поиск по ИДЕНТИФИКАТОРу пользователя.
 
 ## <a name="reduce-traffic-from-my-app-to-application-insights"></a>Уменьшение трафика из вашего приложения в Application Insights
 * В файле [ApplicationInsights.config](../../azure-monitor/app/configuration-with-applicationinsights-config.md)отключите все неиспользуемые модули, например сборщик данных счетчиков производительности.

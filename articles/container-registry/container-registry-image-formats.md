@@ -1,6 +1,6 @@
 ---
 title: Форматы содержимого Реестра контейнеров Azure
-description: Сведения о поддерживаемых форматах содержимого в Реестре контейнеров Azure.
+description: Сведения о форматах содержимого, поддерживаемых реестром контейнеров Azure, включая образы контейнеров, совместимые с DOCKER, Helmные диаграммы, изображения OCI и, например, артефакты OCI.
 services: container-registry
 author: dlepow
 manager: gwallace
@@ -8,12 +8,12 @@ ms.service: container-registry
 ms.topic: article
 ms.date: 08/30/2019
 ms.author: danlep
-ms.openlocfilehash: d49aab89c9568f168808c40508b4fe7d3175e902
-ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
+ms.openlocfilehash: 98bab18f9a8250b99410941a8f865fd7ec1c5fe0
+ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70164521"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73931584"
 ---
 # <a name="content-formats-supported-in-azure-container-registry"></a>Форматы содержимого, поддерживаемые в Реестре контейнеров Azure
 
@@ -41,7 +41,7 @@ ms.locfileid: "70164521"
 
 Реестр контейнеров Azure может размещать репозитории для [диаграмм Helm](https://helm.sh/), формат упаковки, используемый для быстрого управления и развертывания приложений для Kubernetes. Поддерживается [клиент Helm](https://docs.helm.sh/using_helm/#installing-helm) версии 2 (2.11.0 или более поздней).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 * Узнайте, как [принудительно отправлять и извлекать](container-registry-get-started-docker-cli.md) образы с помощью Реестра контейнеров Azure.
 

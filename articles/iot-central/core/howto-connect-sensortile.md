@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: sandeep.pujar
-ms.openlocfilehash: 0969ee6dbc035ffa105dd54d34f3b4711d4915cf
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: e46d4f99075a0d3fa326c84e17792b8959e23517
+ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72951215"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73930222"
 ---
 # <a name="connect-sensortilebox-device-to-your-azure-iot-central-application"></a>Подключение устройства Сенсортиле. Box к приложению Azure IoT Central
 
@@ -27,7 +27,7 @@ ms.locfileid: "72951215"
 
 * Устройство Сенсортиле. Box. Дополнительные сведения см. в разделе [сенсортиле. Box](https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/mems-motion-sensor-eval-boards/steval-mksbox1v1.html).
 * Приложение датчика ST BLE, установленное на устройстве Android, можно [скачать отсюда](https://play.google.com/store/apps/details?id=com.st.bluems). Дополнительные сведения см. в [Поддатчике St BLE](https://www.st.com/stblesensor) .
-* Приложение IoT Central Azure, созданное из шаблона приложения **девкитс** . Дополнительные сведения см. в [кратком руководстве по созданию приложения](quick-deploy-iot-central.md).
+* Приложение IoT Central Azure, созданное из шаблона приложения **девкитс** . Дополнительные сведения см. в статье [Создание приложения Azure IoT Central](quick-deploy-iot-central.md).
 * Добавьте шаблон устройства **сенсортиле. Box** в приложение IOT Central, перейдя на страницу **шаблоны устройств** , щелкнув **+ создать**и выбрав шаблон **сенсортиле. Box** .
 
 ### <a name="get-your-device-connection-details"></a>Получение сведений о подключении устройства
@@ -86,7 +86,7 @@ ms.locfileid: "72951215"
 
 ### <a name="telemetry"></a>Телеметрия
 
-| Имя поля     | Единицы  | Минимальная | Максимальная | Число десятичных знаков |
+| Имя поля     | Units  | Минимальная | Максимальная | Число десятичных знаков |
 | -------------- | ------ | ------- | ------- | -------------- |
 | Влажность       | %      | 30       | 90     | 1              |
 | temp           | °C     | 0     | 40     | 1              |
@@ -104,6 +104,6 @@ ms.locfileid: "72951215"
 | FFT_Y     |    |    |     |               |
 | FFT_Z     |    |    |     |               |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Теперь, когда вы узнали, как подключить Сенсортиле. Box к приложению Azure IoT Central, предлагаем следующий шаг, чтобы узнать, [как настроить пользовательский шаблон устройства](howto-set-up-template.md) для вашего устройства IOT.

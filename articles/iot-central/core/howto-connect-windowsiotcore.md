@@ -1,5 +1,5 @@
 ---
-title: Подключение устройства Windows IoT Core к приложению Azure IoT Central | Документация Майкрософт
+title: Подключение Windows IoT Core к приложению Azure IoT Central | Документация Майкрософт
 description: Вы узнаете, как разработчик устройства может подключить устройство MXChip IoT DevKit к приложению Azure IoT Central.
 author: miriambrus
 ms.author: miriamb
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpr
-ms.openlocfilehash: d880130e114b2bd3e4f978c2ae3fc7bacf0648c4
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 43e99c54249738436f24369ed3525e78ff971a12
+ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72953906"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73930208"
 ---
 # <a name="connect-a-windows-iot-core-device-to-your-azure-iot-central-application"></a>Подключение устройства Windows IoT Core к приложению Azure IoT Central
 
@@ -25,7 +25,7 @@ ms.locfileid: "72953906"
 
 Чтобы выполнить действия, описанные в этой статье, необходимо следующее:
 
-- Приложение Azure IoT Central, созданное на основе шаблона приложения **Sample Devkits** (Образец Devkits). Дополнительные сведения см. в [кратком руководстве по созданию приложения](quick-deploy-iot-central.md).
+- Приложение Azure IoT Central, созданное на основе шаблона приложения **Sample Devkits** (Образец Devkits). Дополнительные сведения см. в статье [Создание приложения Azure IoT Central](quick-deploy-iot-central.md).
 
 - Устройство под управлением операционной системы Windows 10 IoT Core. Дополнительные сведения см. в разделе [Настройка устройства Windows 10 IOT базовая](https://docs.microsoft.com/windows/iot-core/tutorials/quickstarter/devicesetup).
 
@@ -90,7 +90,7 @@ ms.locfileid: "72953906"
 [Портал устройств Windows](https://docs.microsoft.com/windows/iot-core/manage-your-device/deviceportal) содержит средства, которые можно использовать для устранения неполадок устройства:
 
 - Страница **Диспетчер приложений** позволяет управлять приложениями, выполняемыми на устройстве.
-- Если у вас нет монитора, подключенного к устройству, можно использовать страницу **Параметры устройства** для записи снимков экрана с устройства. Пример.
+- Если у вас нет монитора, подключенного к устройству, можно использовать страницу **Параметры устройства** для записи снимков экрана с устройства. Например,
 
     ![Снимок экрана приложения](media/howto-connect-windowsiotcore/iot-hub-foreground-client.png)
 
@@ -104,27 +104,27 @@ ms.locfileid: "72953906"
 
 ### <a name="telemetry-measurements"></a>Измерения телеметрии
 
-| Имя поля     | Единицы  | Минимальная | Максимальная | Число десятичных знаков |
+| Имя поля     | Units  | Минимальная | Максимальная | Число десятичных знаков |
 | -------------- | ------ | ------- | ------- | -------------- |
 | Влажность       | %      | 0       | 100     | 0              |
 | temp           | °C     | –40     | 120     | 0              |
 | pressure       | гПа    | 260     | 1260    | 0              |
 
-### <a name="settings"></a>Настройки
+### <a name="settings"></a>данных
 
 Числовые параметры
 
-| Отображаемое имя | Имя поля | Единицы | Число десятичных знаков | Минимальная | Максимальная | Initial |
+| Отображаемое имя | Имя поля | Units | Число десятичных знаков | Минимальная | Максимальная | Initial |
 | ------------ | ---------- | ----- | -------------- | ------- | ------- | ------- |
 | Скорость вращения вентилятора    | fanSpeed   | Об/мин   | 0              | 0       | 1000    | 0       |
 
-### <a name="properties"></a>properties
+### <a name="properties"></a>свойства
 
-| Тип            | Отображаемое имя | Имя поля | Тип данных |
+| введите            | Отображаемое имя | Имя поля | Тип данных |
 | --------------- | ------------ | ---------- | --------- |
 | Свойство устройства | Серийный номер   | dieNumber  | number    |
-| Текст            | Location     | location   | Н/Д       |
+| текст            | Место проведения     | location   | Недоступно       |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Теперь, когда вы узнали, как подключить устройство Windows IoT Core к приложению Azure IoT Central, предлагаем следующий шаг: Узнайте, как [настроить пользовательский шаблон устройства](howto-set-up-template.md) для вашего устройства IOT.

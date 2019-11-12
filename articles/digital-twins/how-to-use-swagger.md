@@ -9,12 +9,12 @@ services: digital-twins
 ms.topic: conceptual
 ms.date: 10/03/2019
 ms.custom: seodec18
-ms.openlocfilehash: 06cbdf6fbba89b6666e6fe3162fd591e93dffecd
-ms.sourcegitcommit: 7868d1c40f6feb1abcafbffcddca952438a3472d
+ms.openlocfilehash: 6a99693c3f88e94c093910da6ba4a305c26fe39d
+ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71958867"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73931343"
 ---
 # <a name="azure-digital-twins-swagger-reference-documentation"></a>Справочная документация о Swagger с Azure Digital Twins
 
@@ -42,15 +42,15 @@ Swagger предоставляет интерактивную сводку по 
 
 В краткой сводке описывается API.
 
-[@no__t 1Swagger Top](media/how-to-use-swagger/swagger-management-top-img.png)](media/how-to-use-swagger/swagger-management-top-img.png#lightbox)
+[![в начало Swagger](media/how-to-use-swagger/swagger-management-top-img.png)](media/how-to-use-swagger/swagger-management-top-img.png#lightbox)
 
 Кроме того, перечислены модели объекта API управления.
 
-[модели @no__t 1Swagger](media/how-to-use-swagger/swagger-management-models-img.png)](media/how-to-use-swagger/swagger-management-models-img.png#lightbox)
+[![моделей Swagger](media/how-to-use-swagger/swagger-management-models-img.png)](media/how-to-use-swagger/swagger-management-models-img.png#lightbox)
 
 Можно выбрать каждую объектную модель объекта в списке, чтобы ознакомится с более подробным описанием атрибутов ключей.
 
-[модель @no__t 1Swagger](media/how-to-use-swagger/swagger-management-model-img.png)](media/how-to-use-swagger/swagger-management-model-img.png#lightbox)
+[![ная модель Swagger](media/how-to-use-swagger/swagger-management-model-img.png)](media/how-to-use-swagger/swagger-management-model-img.png#lightbox)
 
 С помощью созданных объектных моделей Swagger можно просмотреть все доступные [объекты и API](./concepts-objectmodel-spatialgraph.md) Azure Digital Twins. Этот ресурс используется разработчиками при построении решений на Azure Digital Twins.
 
@@ -64,7 +64,7 @@ Swagger также предоставляет полный обзор всех �
 * Типы данных обязательных параметров.
 * Метод HTTP для получения доступа к ресурсу.
 
-[конечные точки @no__t 1Swagger](media/how-to-use-swagger/swagger-management-endpoints-img.png)](media/how-to-use-swagger/swagger-management-endpoints-img.png#lightbox)
+[![конечных точек Swagger](media/how-to-use-swagger/swagger-management-endpoints-img.png)](media/how-to-use-swagger/swagger-management-endpoints-img.png#lightbox)
 
 Чтобы просмотреть более подробные сведения, выберите каждый ресурс.
 
@@ -74,11 +74,11 @@ Swagger также предоставляет полный обзор всех �
 
 Выбрав конкретную конечную точку, вы увидите пункт **Попробовать**.
 
-[@no__t 1Swagger try](media/how-to-use-swagger/swagger-management-try-img.png)](media/how-to-use-swagger/swagger-management-try-img.png#lightbox)
+[![Swagger try](media/how-to-use-swagger/swagger-management-try-img.png)](media/how-to-use-swagger/swagger-management-try-img.png#lightbox)
 
 После развертывания этого раздела появятся поля ввода для каждого обязательного и дополнительного параметров. Введите соответствующие значения и щелкните **Execute** (Выполнить).
 
-[![Swagger попытка](media/how-to-use-swagger/swagger-management-tried-img.png)](media/how-to-use-swagger/swagger-management-tried-img.png#lightbox)
+[![Swagger попытался](media/how-to-use-swagger/swagger-management-tried-img.png)](media/how-to-use-swagger/swagger-management-tried-img.png#lightbox)
 
 Выполнив тестирование, можно проверить данные ответа.
 
@@ -86,7 +86,7 @@ Swagger также предоставляет полный обзор всех �
 
 Каждая указанная конечная точка также содержит данные текста ответа, необходимые для проверки вашей разработки и тестирования. Эти примеры включают коды нужного состояния и JSON, необходимые для успешного выполнения HTTP-запросов.
 
-[ответ @no__t 1Swagger](media/how-to-use-swagger/swagger-management-response-img.png)](media/how-to-use-swagger/swagger-management-response-img.png#lightbox)
+[![ный ответ Swagger](media/how-to-use-swagger/swagger-management-response-img.png)](media/how-to-use-swagger/swagger-management-response-img.png#lightbox)
 
 Примеры также включают коды ошибок, которые помогают отлаживать или улучшать неудачные тестирования.
 
@@ -95,14 +95,14 @@ Swagger также предоставляет полный обзор всех �
 > [!NOTE]
 > * Субъект-пользователь, создавший ресурс Azure Digital двойников, будет иметь назначение роли администратора пространства и сможет создавать дополнительные назначения ролей для других пользователей. Такие пользователи и их роли могут быть разрешены для вызова API-интерфейсов.
 
-1. Выполните действия, описанные в [этом кратком руководстве](https://docs.microsoft.com/azure/active-directory/develop/quickstart-v1-integrate-apps-with-azure-ad) , или [зарегистрируйте приложение Azure Digital двойников с помощью Azure Active Directory Legacy](./how-to-use-legacy-aad.md) , чтобы создать и настроить приложение Azure AD. Кроме того, можно повторно использовать существующую регистрацию приложения.
+1. Выполните действия, описанные в [этом кратком руководстве](https://docs.microsoft.com/azure/active-directory/develop/quickstart-v1-integrate-apps-with-azure-ad) , чтобы создать и настроить приложение Azure AD. Кроме того, можно повторно использовать существующую регистрацию приложения.
 
 1. Добавьте следующий URL-адрес ответа в регистрацию приложения:
 
     ```plaintext
     https://YOUR_SWAGGER_URL/ui/oauth2-redirect-html
     ```
-    | Название  | Заменить на | Пример |
+    | имя  | Заменить на | Пример |
     |---------|---------|---------|
     | YOUR_SWAGGER_URL | На портале найден URL-адрес документации по REST API управления  | `https://yourDigitalTwinsName.yourLocation.azuresmartspaces.net/management/swagger` |
 
@@ -112,19 +112,19 @@ Swagger также предоставляет полный обзор всех �
 
 1. Нажмите кнопку **авторизовать** на странице Swagger.
 
-    [@no__t 1Select кнопка Swagger авторизовать](media/how-to-use-swagger/swagger-select-authorize-btn.png)](media/how-to-use-swagger/swagger-select-authorize-btn.png#lightbox)
+    [![нажмите кнопку "авторизовать" Swagger](media/how-to-use-swagger/swagger-select-authorize-btn.png)](media/how-to-use-swagger/swagger-select-authorize-btn.png#lightbox)
 
 1. Вставьте идентификатор приложения в поле **client_id** .
 
-    [поле @no__t 1Swagger client_id](media/how-to-use-swagger/swagger-auth-form.png)](media/how-to-use-swagger/swagger-auth-form.png#lightbox)
+    [![поле Swagger client_id](media/how-to-use-swagger/swagger-auth-form.png)](media/how-to-use-swagger/swagger-auth-form.png#lightbox)
 
 1. Затем вы будете перенаправлены к следующему модальному результату.
 
-    [@no__t — модальное перенаправление 1Swagger](media/how-to-use-swagger/swagger-auth-redirect-img.png)](media/how-to-use-swagger/swagger-auth-redirect-img.png#lightbox)
+    [![модальное перенаправление Swagger](media/how-to-use-swagger/swagger-auth-redirect-img.png)](media/how-to-use-swagger/swagger-auth-redirect-img.png#lightbox)
 
 Дополнительные сведения об интерактивном тестировании запросов, защищенных с помощью OAuth 2.0, см. в [официальной документации](https://swagger.io/docs/specification/authentication/oauth2/).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 - Дополнительные сведения об объектных моделях и пространственном интеллектуальном графе Azure Digital Twins см. [здесь](./concepts-objectmodel-spatialgraph.md).
 

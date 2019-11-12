@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 02/20/2019
 ms.author: kgremban
-ms.openlocfilehash: 7d5a232d92c37a94ff427a3bf203f6f20764060e
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: a2bb961989d5bb1cc879b197e45d25b566c56e83
+ms.sourcegitcommit: 6dec090a6820fb68ac7648cf5fa4a70f45f87e1a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73748580"
+ms.lasthandoff: 11/11/2019
+ms.locfileid: "73906775"
 ---
 # <a name="react-to-iot-hub-events-by-using-event-grid-to-trigger-actions"></a>Реагирование на события в Центре Интернета вещей с использованием службы "Сетка событий" для запуска действий
 
@@ -25,13 +25,13 @@ ms.locfileid: "73748580"
 
 ## <a name="regional-availability"></a>Доступ по регионам
 
-Интеграция со службой "Сетка событий" доступна для центров IoT, расположенных в регионах, где поддерживается эта служба. Все события устройств, за исключением событий телеметрии устройств, являются общедоступными. Событие телеметрии устройства находится в общедоступной предварительной версии и доступно во всех регионах, кроме Восточная часть США, Западная часть США, Западная Европа, [Azure для государственных организаций](/azure/azure-government/documentation-government-welcome), [Azure](/azure/china)для [Германии и Azure для немецкого](https://azure.microsoft.com/global-infrastructure/germany/)региона. Наиболее актуальный список регионов см. в статье [Общие сведения о службе "Сетка событий Azure"](../event-grid/overview.md).
+Интеграция со службой "Сетка событий" доступна для центров IoT, расположенных в регионах, где поддерживается эта служба. Наиболее актуальный список регионов см. в статье [Общие сведения о службе "Сетка событий Azure"](../event-grid/overview.md).
 
 ## <a name="event-types"></a>Типы событий
 
 Центр Интернета вещей публикует следующие типы событий:
 
-| Тип события | Description (Описание) |
+| Тип события | ОПИСАНИЕ |
 | ---------- | ----------- |
 | Microsoft.Devices.DeviceCreated | Публикуется при регистрации устройства в Центре Интернета вещей. |
 | Microsoft.Devices.DeviceDeleted | Публикуется при удалении устройства из Центра Интернета вещей. |
@@ -194,11 +194,11 @@ devices/{deviceId}
 
 * Сообщения могут прибывать не по порядку или с задержкой. Используйте поле eTag, чтобы узнать, являются ли сведения об объектах актуальными для событий создания или удаления устройства.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Send email notifications about Azure IoT Hub events using Logic Apps](../event-grid/publish-iot-hub-events-to-logic-apps.md) (Отправка уведомлений электронной почты о событиях в Центре Интернета вещей Azure с помощью Logic Apps)
 
-* [Order device connection events from Azure IoT Hub using Azure Cosmos DB](iot-hub-how-to-order-connection-state-events.md) (Упорядочение событий подключения устройств из Центра Интернета вещей с помощью Azure Cosmos DB)
+* См. дополнительные сведения об [упорядочении событий подключения и отключения устройств](iot-hub-how-to-order-connection-state-events.md).
 
 * [Общие сведения о службе "Сетка событий Azure"](../event-grid/overview.md)
 

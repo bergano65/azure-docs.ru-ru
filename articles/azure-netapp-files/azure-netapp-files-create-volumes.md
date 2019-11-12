@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 10/12/2019
+ms.date: 11/08/2019
 ms.author: b-juche
-ms.openlocfilehash: 1a479b4928631f27d5453d462a59fe7fed09a88c
-ms.sourcegitcommit: bd4198a3f2a028f0ce0a63e5f479242f6a98cc04
+ms.openlocfilehash: 1f312e8a5034d238e4802e9323bc1b5ac5cdae21
+ms.sourcegitcommit: f226cdd6406372b5693d46b6d04900f2f0cda4e6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2019
-ms.locfileid: "72302760"
+ms.lasthandoff: 11/11/2019
+ms.locfileid: "73906237"
 ---
 # <a name="create-an-nfs-volume-for-azure-netapp-files"></a>Создание тома NFS для Azure NetApp Files
 
@@ -29,12 +29,12 @@ Azure NetApp Files поддерживает тома NFS (NFSv3 и Нфсв 4.1)
 Перед началом необходимо настроить пул емкости.   
 [Настройка пула емкости](azure-netapp-files-set-up-capacity-pool.md)   
 Подсеть должна быть делегирована службе Azure NetApp Files.  
-[Делегирование подсети службе Azure NetApp Files](azure-netapp-files-delegate-subnet.md)
+[Делегирование подсети в Azure NetApp Files](azure-netapp-files-delegate-subnet.md)
 
 ## <a name="considerations"></a>Рекомендации 
 
 > [!IMPORTANT] 
-> Для доступа к функции Нфсв 4.1 требуется список разрешений.  Чтобы запросить список разрешений, отправьте запрос в <anffeedback@microsoft.com>. 
+> Для доступа к функции NFS версии 4.1 требуется внесение в список разрешений.  Чтобы запросить внесение в список разрешений, отправьте запрос по адресу <anffeedback@microsoft.com>. 
 
 * Выбор используемой версии NFS  
   NFSv3 может поддерживать широкий спектр вариантов использования и обычно развертывается в большинстве корпоративных приложений. Необходимо проверить, какая версия (NFSv3 или Нфсв 4.1) требуется приложению, и создать том с использованием соответствующей версии. Например, при использовании [Apache активемк](https://activemq.apache.org/shared-file-system-master-slave)рекомендуется блокировать файл с помощью нфсв 4.1 вместо NFSv3. 
@@ -43,7 +43,7 @@ Azure NetApp Files поддерживает тома NFS (NFSv3 и Нфсв 4.1)
   Поддержка бит в режиме UNIX (чтение, запись и выполнение) доступна для NFSv3 и Нфсв 4.1. Для подключения томов NFS требуется доступ на корневом уровне к клиенту NFS.
 
 * Поддержка локальных пользователей и групп и LDAP для Нфсв 4.1  
-  В настоящее время Нфсв 4.1 поддерживает только корневой доступ к томам. 
+  В настоящее время Нфсв 4.1 поддерживает только корневой доступ к томам. См. раздел [Настройка домена по умолчанию нфсв 4.1 для Azure NetApp Files](azure-netapp-files-configure-nfsv41-domain.md). 
 
 ## <a name="best-practice"></a>Рекомендации
 
@@ -93,15 +93,15 @@ Azure NetApp Files поддерживает тома NFS (NFSv3 и Нфсв 4.1)
     
         ![Создание подсети](../media/azure-netapp-files/azure-netapp-files-create-subnet.png)
 
-4. Щелкните **протокол**, а затем выполните следующие действия.  
-    * Выберите **NFS** в качестве типа протокола для тома.   
+4. Щелкните **Протокол**, а затем выполните приведенные ниже действия.  
+    * Выберите **NFS** в качестве типа протокола тома.   
     * Укажите **путь к файлу** , который будет использоваться для создания пути экспорта для нового тома. Путь экспорта используется для подключения и получения доступа к тому.
 
         Имя пути к файлу может содержать только буквы, цифры и дефисы. Длина имени находится в диапазоне от 16 до 40 знаков. 
 
         Путь к файлу должен быть уникальным в пределах каждой подписки и каждого региона. 
 
-    * Выберите версию NFS (**NFSv3** или **нфсв 4.1**) для тома.  
+    * Выберите версию NFS (**NFSv3** или **NFSv4.1**) для тома.  
     * При необходимости [Настройте политику экспорта для тома NFS](azure-netapp-files-configure-export-policy.md).
 
     ![Указание протокола NFS](../media/azure-netapp-files/azure-netapp-files-protocol-nfs.png)
@@ -113,9 +113,10 @@ Azure NetApp Files поддерживает тома NFS (NFSv3 и Нфсв 4.1)
     От пула емкости том наследует атрибуты подписки, группы ресурсов и расположения. Состояние развертывания можно отслеживать на вкладке уведомлений.
 
 
-## <a name="next-steps"></a>Следующие шаги  
+## <a name="next-steps"></a>Дополнительная информация  
 
+* [Настройка домена Нфсв 4.1 по умолчанию для Azure NetApp Files](azure-netapp-files-configure-nfsv41-domain.md)
 * [Подключение или отключение тома для виртуальных машин Windows или Linux](azure-netapp-files-mount-unmount-volumes-for-virtual-machines.md)
 * [Configure export policy for an NFS volume](azure-netapp-files-configure-export-policy.md) (Настройка политики экспорта для тома NFS)
 * [Ограничения ресурсов для службы Azure NetApp Files](azure-netapp-files-resource-limits.md)
-* [Узнайте об интеграции виртуальной сети для служб Azure](https://docs.microsoft.com/azure/virtual-network/virtual-network-for-azure-services)
+* [Подробнее об интеграции виртуальной сети для служб Azure](https://docs.microsoft.com/azure/virtual-network/virtual-network-for-azure-services)

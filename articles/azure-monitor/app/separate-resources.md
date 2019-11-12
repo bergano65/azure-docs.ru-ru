@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 05/15/2017
-ms.openlocfilehash: bcf741e82e247a5b79a478ef1015a70cccb4d274
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: c4d029de782ae408b83c265322a865db7b166c1e
+ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72899911"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73928301"
 ---
 # <a name="separating-telemetry-from-development-test-and-production"></a>Отделение телеметрии стадий разработки, тестирования и эксплуатации
 
@@ -51,7 +51,7 @@ ms.locfileid: "72899911"
 В этом примере ключи инструментирования (ikey) для различных ресурсов приводятся в различных версиях файла веб-конфигурации. При смене файла веб-конфигурации, что можно сделать в рамках сценария выпуска, сменится и целевой ресурс.
 
 ### <a name="web-pages"></a>Веб-страницы
-Ключ инструментирования iKey также используется в веб-страницах приложения, в [сценарии, который вы получили в колонке быстрого запуска](../../azure-monitor/app/javascript.md). Вместо того чтобы вставлять его в код сценария напрямую, генерируйте его из состояния сервера. Например, в приложении ASP.NET:
+IKey также используется на веб-страницах вашего приложения в [сценарии, полученном из колонки быстрый](../../azure-monitor/app/javascript.md)запуск. Вместо того чтобы вставлять его в код сценария напрямую, генерируйте его из состояния сервера. Например, в приложении ASP.NET:
 
 *JavaScript в Razor*
 
@@ -71,7 +71,7 @@ ms.locfileid: "72899911"
 
 Перейдите по адресу [portal.azure.com](https://portal.azure.com)и добавьте новый ресурс Application Insights.
 
-![Нажмите "Создать" и "Application Insights"](./media/separate-resources/01-new.png)
+![Нажмите «Создать» и «Application Insights»](./media/separate-resources/01-new.png)
 
 * **Тип приложения** определяет содержимое колонки «Обзор» и свойства, доступные в [обозревателе метрик](../../azure-monitor/app/metrics-explorer.md)Microsoft Azure. Если тип вашего приложения не отображается, выберите тип веб-ресурса для веб-страниц.
 * **Группа ресурсов** — удобный способ для управления свойствами наподобие [контроля доступа](../../azure-monitor/app/resources-roles-access-control.md). Для разработки, тестирования и эксплуатации можно использовать отдельные группы ресурсов.
@@ -81,7 +81,7 @@ ms.locfileid: "72899911"
 
 Создание ресурса занимает всего несколько секунд. Как только ресурс будет создан, появится предупреждение.
 
-(Для автоматического создания ресурсов можно написать [сценарий PowerShell](../../azure-monitor/app/powershell-script-create-resource.md) .)
+(Для автоматического создания ресурсов можно написать [сценарий PowerShell](https://docs.microsoft.com/azure/azure-monitor/app/create-new-resource#creating-a-resource-automatically) .)
 
 ### <a name="getting-the-instrumentation-key"></a>Получение ключа инструментирования
 Ключ инструментирования идентифицирует созданный вами ресурс. 
@@ -134,7 +134,7 @@ ms.locfileid: "72899911"
     Чтобы разрешить MSBuild генерировать номера версий, задайте версию вида `1.0.*` в файле AssemblyReference.cs.
 
 ## <a name="version-and-release-tracking"></a>Отслеживание версии и выпуска
-Для отслеживания версии приложения убедитесь, что во время выполнения процесса Microsoft Build Engine создается `buildinfo.config`. Добавьте в CSPROJ-файл:  
+Для отслеживания версии приложения убедитесь, что во время выполнения процесса Microsoft Build Engine создается `buildinfo.config`. В файл `.csproj` добавьте:  
 
 ```XML
 
@@ -145,13 +145,13 @@ ms.locfileid: "72899911"
 
 При наличии данных сборки веб-модуль Application Insights автоматически добавляет **версию приложения** как свойство для каждого элемента телеметрии. Это позволяет применить фильтр по версии при [диагностическом поиске](../../azure-monitor/app/diagnostic-search.md) или [изучении метрик](../../azure-monitor/app/metrics-explorer.md).
 
-Обратите внимание, что номер версии сборки создается только Microsoft Build Engine, а не в процессе сборки в Visual Studio.
+Однако обратите внимание, что номер версии сборки создается только Microsoft Build Engine, а не сборкой разработчика из Visual Studio.
 
 ### <a name="release-annotations"></a>Примечания к выпуску
 Если используется Azure DevOps, можно настроить [добавление маркера заметки](../../azure-monitor/app/annotations.md) к диаграммам при выпуске новой версии. На следующем рисунке показано, как появляется этот маркер.
 
 ![Снимок экрана, где показана диаграмма с примером заметки о новом выпуске](media/separate-resources/release-annotation.png)
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Monitor multi-component applications with Application Insights (preview)](../../azure-monitor/app/app-map.md) (Мониторинг приложений с несколькими компонентами с помощью Application Insights (предварительная версия))
 * [Добавление свойств: ITelemetryInitializer](../../azure-monitor/app/api-filtering-sampling.md#add-properties)
