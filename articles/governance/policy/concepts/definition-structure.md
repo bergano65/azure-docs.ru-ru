@@ -1,17 +1,14 @@
 ---
 title: Сведения о структуре определения политики
 description: Описывается, как определение политики ресурсов, описывающее условия применения данной политики и соответствующий эффект, используется службой "Политика Azure", чтобы установить соглашения о ресурсах в вашей организации.
-author: DCtheGeek
-ms.author: dacoulte
 ms.date: 11/04/2019
 ms.topic: conceptual
-ms.service: azure-policy
-ms.openlocfilehash: d415075bda4ff58d4a3a633fe820f22d8a157459
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 50edf2941aeb24d800752eec1e93f69abf4211ea
+ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73464033"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73959998"
 ---
 # <a name="azure-policy-definition-structure"></a>Структура определения службы "Политика Azure"
 
@@ -23,9 +20,9 @@ ms.locfileid: "73464033"
 Для создания определения политики используется JSON. Определение политики содержит следующие элементы:
 
 - mode;
-- parameters
+- Параметры
 - display name
-- description
+- Description (Описание)
 - policy rule
   - logical evaluation
   - effect
@@ -66,7 +63,7 @@ ms.locfileid: "73464033"
 
 Все примеры политик Azure приведены в [примерах политики Azure](../samples/index.md).
 
-## <a name="mode"></a>Mode
+## <a name="mode"></a>Режим
 
 **Режим** настраивается в зависимости от того, нацелена ли политика в свойство Azure Resource Manager или на свойство поставщика ресурсов.
 
@@ -93,7 +90,7 @@ ms.locfileid: "73464033"
 > [!NOTE]
 > Режимы поставщиков ресурсов поддерживают только встроенные определения политик и не поддерживают инициативы в предварительной версии.
 
-## <a name="parameters"></a>Параметры
+## <a name="parameters"></a>parameters
 
 Параметры помогают упростить управление политиками за счет сокращения числа определений политик. Параметры можно рассматривать как поля в форме: `name`, `address`, `city`, `state`. Эти параметры никогда не меняются, однако их значения изменяются в зависимости от того, как пользователь заполняет форму.
 Точно так же параметры работают при создании политик. Добавив параметры в определение политики, вы сможете повторно использовать ее в различных сценариях, указывая разные значения.
@@ -473,7 +470,7 @@ ms.locfileid: "73464033"
   (Get-AzPolicyAlias -NamespaceMatch 'compute').Aliases
   ```
 
-- Azure CLI
+- Интерфейс командной строки Azure
 
   ```azurecli-interactive
   # Login first with az login if not using Cloud Shell
@@ -493,7 +490,7 @@ ms.locfileid: "73464033"
 
 ### <a name="understanding-the--alias"></a>Общие сведения о псевдониме [*]
 
-Некоторые доступные псевдонимы имеют версию с отображаемым именем "Обычный", а другие — с подключенным к ней **[\*]** . Например:
+Некоторые доступные псевдонимы имеют версию с отображаемым именем "Обычный", а другие — с подключенным к ней **[\*]** . Например,
 
 - `Microsoft.Storage/storageAccounts/networkAcls.ipRules`
 - `Microsoft.Storage/storageAccounts/networkAcls.ipRules[*]`
@@ -602,10 +599,10 @@ ms.locfileid: "73464033"
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Просмотрите примеры в [примерах политики Azure](../samples/index.md).
-- Изучите [сведения о действии политик](effects.md).
+- См. дополнительные сведения о [действиях политик](effects.md).
 - Узнайте, как [программно создавать политики](../how-to/programmatically-create.md).
 - Узнайте, как [получить данные о соответствии](../how-to/getting-compliance-data.md).
 - Узнайте, как [исправлять несоответствующие ресурсы](../how-to/remediate-resources.md).

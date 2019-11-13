@@ -1,5 +1,5 @@
 ---
-title: Устранение неисправностей
+title: Устранение неполадок
 titleSuffix: Azure Dev Spaces
 services: azure-dev-spaces
 ms.service: azure-dev-spaces
@@ -7,14 +7,14 @@ author: zr-msft
 ms.author: zarhoads
 ms.date: 09/25/2019
 ms.topic: conceptual
-description: Быстрая разработка Kubernetes с использованием контейнеров и микрослужб в Azure
-keywords: 'Docker, Kubernetes, Azure, служба контейнеров Azure, служба Azure Kubernetes, контейнеры, Helm, сетка службы, сетка службы маршрутизации, kubectl, k8s '
-ms.openlocfilehash: e145c234c7fc0bc7b9263f40f22d3fd90c1b7250
-ms.sourcegitcommit: f7f70c9bd6c2253860e346245d6e2d8a85e8a91b
+description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
+keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s '
+ms.openlocfilehash: 0afdc0ac246e4cacbd4f45cca36c3c57b1c26e02
+ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73064115"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74005994"
 ---
 # <a name="troubleshooting-guide"></a>Руководство по устранению неполадок
 
@@ -56,13 +56,13 @@ az aks use-dev-spaces -g <resource group name> -n <cluster name>
 
 ### <a name="controller-create-failing-because-of-controller-name-length"></a>Сбой создания контроллера из-за длины имени контроллера
 
-Длина имени контроллера Azure Dev Spaces не может превышать 31 символ. Если имя контроллера превышает 31 символ при включении пространств разработки в кластере AKS или создании контроллера, появится сообщение об ошибке. Пример.
+Длина имени контроллера Azure Dev Spaces не может превышать 31 символ. Если имя контроллера превышает 31 символ при включении пространств разработки в кластере AKS или создании контроллера, появится сообщение об ошибке. Например,
 
 ```console
 Failed to create a Dev Spaces controller for cluster 'a-controller-name-that-is-way-too-long-aks-east-us': Azure Dev Spaces Controller name 'a-controller-name-that-is-way-too-long-aks-east-us' is invalid. Constraint(s) violated: Azure Dev Spaces Controller names can only be at most 31 characters long*
 ```
 
-Чтобы устранить эту проблему, создайте контроллер с альтернативным именем. Пример.
+Чтобы устранить эту проблему, создайте контроллер с альтернативным именем. Например,
 
 ```cmd
 azds controller create --name my-controller --target-name MyAKS --resource-group MyResourceGroup
@@ -93,6 +93,10 @@ azure-cli                         2.0.60 *
 Несмотря на сообщение об ошибке при запуске `az aks use-dev-spaces` с версией Azure CLI перед 2.0.63, установка выполнена не будет. Вы можете продолжать использовать `azds` без каких бы то ни было проблем.
 
 Чтобы устранить эту проблему, обновите установку [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) до 2.0.63 или более поздней версии. Это обновление позволяет устранить сообщение об ошибке, полученное при запуске `az aks use-dev-spaces`. Кроме того, можно продолжить использовать текущую версию Azure CLI и CLI Azure Dev Spaces.
+
+### <a name="aks-clusters-with-api-server-authorized-ip-address-ranges-enabled"></a>Кластеры AKS с разрешенными диапазонами IP-адресов сервера API
+
+Если для кластера AKS включены [Разрешенные диапазоны IP-адресов сервера API](../aks/api-server-authorized-ip-ranges.md) , необходимо также [создать](../aks/api-server-authorized-ip-ranges.md#create-an-aks-cluster-with-api-server-authorized-ip-ranges-enabled) или [Обновить](../aks/api-server-authorized-ip-ranges.md#update-a-clusters-api-server-authorized-ip-ranges) кластер, чтобы [разрешить дополнительные диапазоны на основе вашего региона](https://github.com/Azure/dev-spaces/tree/master/public-ips).
 
 ## <a name="common-issues-when-preparing-your-project-for-azure-dev-spaces"></a>Распространенные проблемы при подготовке проекта к Azure Dev Spaces
 
@@ -143,7 +147,7 @@ Container image build failed
 
 Чтобы устранить эту проблему, перезапустите узлы агента в кластере.
 
-### <a name="error-release-azds-identifier-spacename-servicename-failed-services-servicename-already-exists-or-pull-access-denied-for-servicename-repository-does-not-exist-or-may-require-docker-login"></a>Ошибка "Release аздс-\<идентификатор\>-\<спаценаме\>-\<ServiceName\> не пройден: службы"\<ServiceName\>"уже существует" или "отказано в доступе для \<ServiceName"\>, репозиторий не существует или может требовать "DOCKER Login"
+### <a name="error-release-azds-identifier-spacename-servicename-failed-services-servicename-already-exists-or-pull-access-denied-for-servicename-repository-does-not-exist-or-may-require-docker-login"></a>Ошибка "Release аздс-\<идентификатор\>-\<спаценаме\>-\<ServiceName\> не пройден: службы"\<ServiceName\>"уже существует" или "запрос на принудительный доступ запрещен для \<ServiceName\>, репозиторий не существует или может требовать" DOCKER Login "
 
 Эти ошибки могут возникать при смешении выполнения команд Direct Helm (таких как `helm install`, `helm upgrade`или `helm delete`) с командами пространства разработки (например, `azds up` и `azds down`) внутри одного пространства разработки. Это происходит потому, что пространства разработки имеют собственный экземпляр ящика, который конфликтует с собственным экземпляром, работающим в том же пространстве разработки.
 
@@ -155,7 +159,7 @@ Container image build failed
 
 Настройте службу Azure Dev Spaces так, чтобы она указывала на конкретный файл _Dockerfile_ в вашем проекте. Если Azure Dev Spaces не использует файл _Dockerfile_, который вы хотели использовать для сборки своих контейнеров, то можно явно указать Azure Dev Spaces, какой файл Dockerfile нужно использовать. 
 
-Чтобы устранить эту проблему, откройте файл _аздс. YAML_ , который Azure dev Spaces создан в проекте. *Конфигурации обновления: Разработка: сборка: dockerfile* , указывающая на dockerfile, который вы хотите использовать. Пример.
+Чтобы устранить эту проблему, откройте файл _аздс. YAML_ , который Azure dev Spaces создан в проекте. *Конфигурации обновления: Разработка: сборка: dockerfile* , указывающая на dockerfile, который вы хотите использовать. Например,
 
 ```yaml
 ...
@@ -202,7 +206,7 @@ install:
 
 Эта ошибка может возникать, когда не удается запустить код службы. Чаще всего причина в пользовательском коде. Чтобы получить дополнительные диагностические сведения, включите более подробное ведение журнала при запуске службы.
 
-В командной строке используйте `--verbose`, чтобы включить более подробное ведение журнала. Можно также указать формат выходных данных с помощью `--output`. Пример.
+В командной строке используйте `--verbose`, чтобы включить более подробное ведение журнала. Можно также указать формат выходных данных с помощью `--output`. Например,
 
 ```cmd
 azds up --verbose --output json
@@ -295,9 +299,9 @@ Service cannot be started.
 
 ### <a name="error-internal-watch-failed-watch-enospc-when-attaching-debugging-to-a-nodejs-application"></a>Ошибка "Сбой внутреннего наблюдения: Просмотр ЕНОСПК" при присоединении отладки к приложению Node. js
 
-Эта ошибка возникает, когда узел, на котором выполняется модуль с приложением Node. js, к которому вы пытаетесь присоединиться с помощью отладчика, превысил значение *FS. инотифи. Max _user_watches* . В некоторых случаях [значение по умолчанию для *FS. инотифи. Max _user_watches* может быть слишком маленьким для параллельного подключения отладчика к Pod](https://github.com/Azure/AKS/issues/772).
+Эта ошибка возникает, когда узел, на котором выполняется модуль с приложением Node. js, к которому вы пытаетесь присоединиться с помощью отладчика, превысил значение *FS. инотифи. max_user_watches* . В некоторых случаях [значение по умолчанию для *FS. инотифи. max_user_watches* может быть слишком маленьким для параллельного подключения отладчика к Pod](https://github.com/Azure/AKS/issues/772).
 
-Временное решение этой проблемы — увеличить значение *FS. инотифи. Max _user_watches* на каждом узле в кластере и перезапустить этот узел, чтобы изменения вступили в силу.
+Временное решение этой проблемы — увеличить значение *FS. инотифи. max_user_watches* на каждом узле в кластере и перезапустить этот узел, чтобы изменения вступили в силу.
 
 ## <a name="other-common-issues"></a>Другие распространенные проблемы
 
@@ -316,7 +320,7 @@ Service cannot be started.
 
 ### <a name="authorization-error-microsoftdevspacesregisteraction"></a>Ошибка авторизации "Microsoft. Девспацес/Register/Action"
 
-Вам потребуется доступ *владельца* или *участника* в подписке Azure, чтобы управлять Azure Dev Spaces. Если вы пытаетесь управлять пространствами разработки и у вас нет доступа *владельца* или *участника* к связанной подписке Azure, может появиться сообщение об ошибке авторизации. Пример.
+Вам потребуется доступ *владельца* или *участника* в подписке Azure, чтобы управлять Azure Dev Spaces. Если вы пытаетесь управлять пространствами разработки и у вас нет доступа *владельца* или *участника* к связанной подписке Azure, может появиться сообщение об ошибке авторизации. Например,
 
 ```console
 The client '<User email/Id>' with object id '<Guid>' does not have authorization to perform action 'Microsoft.DevSpaces/register/action' over scope '/subscriptions/<Subscription Id>'.
@@ -372,7 +376,7 @@ azds controller create --name <cluster name> -g <resource group name> -tn <clust
     * В качестве *роли*выберите *участник* или *владелец*.
     * В поле *Назначение доступа к* выберите *Пользователь, группа или субъект-служба Azure AD*.
     * В поле *выбрать*найдите пользователя, которого нужно предоставить разрешения.
-1. В нижней части страницы нажмите кнопку *Save*.
+1. Выберите команду *Сохранить*.
 
 ### <a name="dns-name-resolution-fails-for-a-public-url-associated-with-a-dev-spaces-service"></a>Сбой разрешения DNS-имен для общедоступных URL-адресов, связанных со службой Dev Spaces
 

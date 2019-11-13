@@ -5,16 +5,16 @@ services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: conceptual
-ms.date: 10/31/2019
+ms.date: 11/12/2019
 ms.author: helohr
-ms.openlocfilehash: 2552fcbd860a0cc98aa7e2a6c7f92796a8d588ca
-ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+ms.openlocfilehash: 420978e79da99847f16e5c85b2d2510083ca97a7
+ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73605788"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74006271"
 ---
-# <a name="connect-with-the-windows-desktop-client"></a>Подключение к классическому клиенту Windows
+# <a name="connect-with-the-windows-desktop-client"></a>Подключение к клиенту Windows Desktop
 
 > Область применения: Windows 7 и Windows 10
 
@@ -28,8 +28,8 @@ ms.locfileid: "73605788"
 Выберите клиент, который соответствует вашей версии Windows:
 
 - [Windows 64-разрядная](https://go.microsoft.com/fwlink/?linkid=2068602)
-- [Предварительная версия Windows 32-bit](https://go.microsoft.com/fwlink/?linkid=2098960)
-- [Предварительная версия Windows ARM64](https://go.microsoft.com/fwlink/?linkid=2098961)
+- [Windows 32-разрядная](https://go.microsoft.com/fwlink/?linkid=2098960)
+- [ARM64 Windows](https://go.microsoft.com/fwlink/?linkid=2098961)
 
 Можно установить клиент для текущего пользователя, который не требует прав администратора, или администратор может установить и настроить клиент, чтобы все пользователи устройства могли получить к нему доступ.
 
@@ -55,6 +55,6 @@ ms.locfileid: "73605788"
 
 После подписки на веб-канал содержимое веб-канала автоматически обновляется на регулярной основе. Ресурсы можно добавлять, изменять или удалять в зависимости от изменений, внесенных администратором.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения об использовании настольного клиента Windows см. в статье Начало [работы с настольным клиентом Windows](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/clients/windowsdesktop).

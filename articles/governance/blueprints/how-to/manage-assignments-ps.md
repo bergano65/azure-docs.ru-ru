@@ -1,17 +1,14 @@
 ---
 title: Управление назначениями с помощью PowerShell
 description: Узнайте, как управлять назначениями схем с помощью официального модуля PowerShell для чертежей Azure, AZ. чертеж.
-author: DCtheGeek
-ms.author: dacoulte
 ms.date: 09/30/2019
 ms.topic: conceptual
-ms.service: blueprints
-ms.openlocfilehash: ef9674165533ef3e4887bba68507344406ca128c
-ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
+ms.openlocfilehash: 98c2173568f65d029b00ca6c8b25d2195094a5e3
+ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72755925"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73961618"
 ---
 # <a name="how-to-manage-assignments-with-powershell"></a>Управление назначениями с помощью PowerShell
 
@@ -171,7 +168,7 @@ ResourceGroups    : ResourceGroup
 
 ### <a name="example-1-provide-parameters"></a>Пример 1. Указание параметров
 
-В следующем примере создается новое назначение версии "1,1" определения схемы "My-чертеж", полученного с `Get-AzBlueprint`, задает расположение управляемого удостоверения и объекта назначения "westus2", блокирует ресурсы с помощью _аллресаурцесреадонли_. и задает хэш-таблицы для **параметра** и **ресаурцеграуппараметер** в конкретной подписке, представленной в виде `{subId}`:
+В следующем примере создается новое назначение версии "1,1" определения схемы "My-чертеж", полученного с `Get-AzBlueprint`, устанавливается расположение управляемого удостоверения и объекта назначения в "westus2", блокируются ресурсы с помощью _аллресаурцесреадонли_и задаются хэш-таблицы для **параметров** и **ресаурцеграуппараметер** в конкретной подписке, представленной как `{subId}`.
 
 ```azurepowershell-interactive
 # Login first with Connect-AzAccount if not using Cloud Shell
@@ -378,7 +375,7 @@ Remove-AzBlueprintAssignment -InputObject $bpAssignment -SubscriptionId '{subId}
 #endregion
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Ознакомьтесь со сведениями о [жизненном цикле схем](../concepts/lifecycle.md).
 - Узнайте, как использовать [статические и динамические параметры](../concepts/parameters.md).

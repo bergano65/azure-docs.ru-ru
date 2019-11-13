@@ -1,6 +1,6 @@
 ---
-title: Управление эталонными данными для среды "Аналитика временных рядов Azure" с помощью C# | Документация Майкрософт
-description: Из этой статьи вы узнаете, как управлять эталонными данными для среды службы "Аналитика временных рядов Azure", создав пользовательское приложение на C# (c-sharp) .NET.
+title: Управление эталонными данными в общедоступной C# среде с помощью службы "аналитика временных рядов Azure" | Документация Майкрософт
+description: Узнайте, как управлять эталонными данными для общедоступной среды, создав пользовательское приложение C#, написанное на.
 ms.service: time-series-insights
 services: time-series-insights
 author: deepakpalled
@@ -11,18 +11,18 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 10/03/2019
 ms.custom: seodec18
-ms.openlocfilehash: 4eb8a22ee56203fe84df6ee1cff779e3f3bdf491
-ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
+ms.openlocfilehash: a32bf00d21311a1a8041a901f70b9b400a49ab76
+ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72990044"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74012569"
 ---
 # <a name="manage-ga-reference-data-for-an-azure-time-series-insights-environment-by-using-c"></a>Управление эталонными данными на основе общедоступной версии для среды службы "аналитика временных рядов Azure" с помощьюC#
 
 В этой статье описан пример проекта C#, который вы можете компилировать, чтобы управлять эталонными данными для среды службы "Аналитика временных рядов Azure".
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 Перед компиляцией и запуском примера кода выполните следующие шаги.
 
@@ -244,6 +244,6 @@ namespace TimeSeriesInsightsReferenceDataSampleApp
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Прочтите [API эталонных данных](https://docs.microsoft.com/rest/api/time-series-insights/ga-reference-data-api).

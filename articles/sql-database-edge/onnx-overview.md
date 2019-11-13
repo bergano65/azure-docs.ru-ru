@@ -10,12 +10,12 @@ author: ronychatterjee
 ms.author: achatter
 ms.reviewer: davidph
 ms.date: 11/07/2019
-ms.openlocfilehash: 976c849f9cb48e1c197f70d10e911216a6a7425c
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 744ac9f8526b7d65709d3627a5f90b31d234b2cd
+ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73822848"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74009080"
 ---
 # <a name="machine-learning-and-ai-with-onnx-in-sql-database-edge-preview"></a>Машинное обучение и AI с ONNX в предварительной версии базы данных SQL
 
@@ -27,25 +27,20 @@ ms.locfileid: "73822848"
 
 ## <a name="get-onnx-models"></a>Получение моделей ONNX
 
-Существует несколько способов получить модель в формате ONNX:
+Чтобы получить модель в формате ONNX, выполните следующие действия.
 
-- [ONNX Model Zoo](https://github.com/onnx/models): содержит множество предварительно обученных моделей ONNX для различных типов задач, которые могут быть скачаны и готовы к использованию.
+- **Службы создания моделей**. такие службы, как [автоматизированная функция машинное обучение в Машинное обучение Azure](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/classification-bank-marketing-all-features/auto-ml-classification-bank-marketing-all-features.ipynb) и [Azure пользовательская служба визуального распознавания](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/getting-started-build-a-classifier) , поддерживают непосредственное экспорт обученной модели в формате ONNX.
 
-- [Собственный экспорт из платформ обучения ML](https://onnx.ai/supported-tools). несколько платформ обучения поддерживают собственные функции экспорта в ONNX, что позволяет сохранять обученную модель в определенной версии формата ONNX, включая [PyTorch](https://pytorch.org/docs/stable/onnx.html), Chain и Caffe2. Кроме того, службы создания моделей, такие как [Автоматизированная функция машинное обучение в машинное обучение Azure](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/classification-bank-marketing-all-features/auto-ml-classification-bank-marketing-all-features.ipynb) и [Azure ПОЛЬЗОВАТЕЛЬСКАЯ служба визуального распознавания](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/getting-started-build-a-classifier) обеспечивают экспорт ONNX.
+- [**Преобразование и (или) экспорт существующих моделей**](https://github.com/onnx/tutorials#converting-to-onnx-format). несколько платформ обучения (например, [PyTorch](https://pytorch.org/docs/stable/onnx.html), формирователь и Caffe2) поддерживают встроенные функции экспорта в ONNX, что позволяет сохранить обученную модель в определенной версии формата ONNX. Для платформ, которые не поддерживают собственный экспорт, существуют автономные пакеты преобразователей ONNX, которые позволяют преобразовывать модели, обученные из разных платформ машинного обучения, в формат ONNX.
 
-- [Преобразование существующих моделей](https://github.com/onnx/tutorials#converting-to-onnx-format). для платформ, которые не поддерживают собственный экспорт, существуют автономные пакеты для преобразования моделей в формат ONNX. Примеры и учебники см. [в разделе Преобразование в формат ONNX](https://github.com/onnx/tutorials#converting-to-onnx-format). 
-
-### <a name="supported-frameworks"></a>Поддерживаемые платформы
-
-Преобразователи ONNX позволяют преобразовывать модели, обученные из разных платформ машинного обучения, в формат ONNX. К популярным конвертерам относятся: 
-
-* [PyTorch](http://pytorch.org/docs/master/onnx.html)
-* [Tensorflow](https://github.com/onnx/tensorflow-onnx)
-* [Keras](https://github.com/onnx/keras-onnx);
-* [Scikit-learn](https://github.com/onnx/sklearn-onnx)
-* [CoreML](https://github.com/onnx/onnxmltools)
-
-Полный список поддерживаемых платформ см. в разделе [Преобразование в формат ONNX](https://github.com/onnx/tutorials#converting-to-onnx-format).
+     **Поддерживаемые платформы**
+   * [PyTorch](http://pytorch.org/docs/master/onnx.html)
+   * [Tensorflow](https://github.com/onnx/tensorflow-onnx)
+   * [Keras](https://github.com/onnx/keras-onnx);
+   * [Scikit-learn](https://github.com/onnx/sklearn-onnx)
+   * [CoreML](https://github.com/onnx/onnxmltools)
+    
+    Полный список поддерживаемых платформ и примеры см. в разделе [Преобразование в формат ONNX](https://github.com/onnx/tutorials#converting-to-onnx-format).
 
 ## <a name="limitations"></a>Ограничения
 
@@ -58,7 +53,7 @@ ms.locfileid: "73822848"
 
 Входные данные модели должны быть структурированы таким образом, чтобы каждый вход модели соответствовал одному столбцу в таблице. Например, если для обучения модели используется кадр данных Pandas, то каждый вход должен быть отдельным столбцом в модели.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Развертывание пограничных баз данных SQL с помощью портал Azure](deploy-portal.md)
 - [Развертывание модели ONNX в предварительной версии базы данных SQL Azure](deploy-onnx.md)

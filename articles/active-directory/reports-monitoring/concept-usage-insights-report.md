@@ -3,7 +3,7 @@ title: Отчет об использовании и аналитике | Док
 description: Общие сведения об использовании и отчете Insights на портале Azure Active Directory
 services: active-directory
 documentationcenter: ''
-author: cawrites
+author: MarkusVi
 manager: daveba
 editor: ''
 ms.assetid: 3fba300d-18fc-4355-9924-d8662f563a1f
@@ -14,14 +14,14 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 05/13/2019
-ms.author: chadam
+ms.author: markvi
 ms.reviewer: dhanyahk
-ms.openlocfilehash: 568eaa358f6788af525a69cd8ecda76a0591879f
-ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
+ms.openlocfilehash: b3db86137207ae726c7befc393f62590fd1456d7
+ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72820942"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74008267"
 ---
 # <a name="usage-and-insights-report-in-the-azure-active-directory-portal"></a>Отчет об использовании и аналитике на портале Azure Active Directory
 
@@ -31,7 +31,7 @@ ms.locfileid: "72820942"
 *   Какие приложения имеют самые неудачные попытки входа? 
 *   Каковы основные ошибки входа для каждого приложения?
 
-## <a name="prerequisites"></a>Технические условия 
+## <a name="prerequisites"></a>предварительным требованиям 
 
 Чтобы получить доступ к данным из отчета об использовании и Insights, вам потребуется:
 
@@ -60,6 +60,6 @@ ms.locfileid: "72820942"
 
 ![Отчет об использовании и аналитике](./media/concept-usage-insights-report/usage-and-insights-report.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Отчет о событиях входа](concept-sign-ins.md)

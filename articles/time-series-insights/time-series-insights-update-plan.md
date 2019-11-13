@@ -1,6 +1,6 @@
 ---
-title: Планирование среды "Аналитика временных рядов Azure" (предварительная версия) | Документация Майкрософт
-description: Запланируйте среду службы"Аналитика временных рядов Azure (предварительная версия)".
+title: Планирование среды предварительного просмотра с помощью Azure Time Series Insights | Документация Майкрософт
+description: Узнайте, как спланировать среду предварительной версии службы "аналитика временных рядов Azure".
 author: deepakpalled
 ms.author: dpalled
 manager: cshankar
@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.custom: seodec18
-ms.openlocfilehash: f5a12ca2bdccee1d2f738aa3c810577caf3d8eac
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 4b87bf9bdb70f2bcef27927dbaa0d79716c81368
+ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73491961"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74006339"
 ---
 # <a name="plan-your-azure-time-series-insights-preview-environment"></a>Запланируйте среду службы"Аналитика временных рядов Azure (предварительная версия)"
 
@@ -97,7 +97,7 @@ ms.locfileid: "73491961"
 
 [!INCLUDE [business-disaster-recover](../../includes/time-series-insights-business-recovery.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Ознакомьтесь с [помощником по Azure](../advisor/advisor-overview.md) , чтобы спланировать параметры конфигурации бизнес-восстановления.
 - Дополнительные сведения о [хранении и входе см](./time-series-insights-update-storage-ingress.md) . в статье Предварительная версия службы "аналитика временных рядов".

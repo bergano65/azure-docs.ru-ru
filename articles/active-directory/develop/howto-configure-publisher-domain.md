@@ -18,14 +18,14 @@ ms.author: ryanwi
 ms.reviewer: lenalepa, sureshja, zachowd
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 26ef28be328e01f8edcf898f123db55f262f286c
-ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
+ms.openlocfilehash: 3558e589004e0488e5b96b0e39bd3f5ceea69658
+ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72803343"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74013057"
 ---
-# <a name="how-to-configure-an-applications-publisher-domain-preview"></a>Как настроить домен издателя приложения (Предварительная версия)
+# <a name="how-to-configure-an-applications-publisher-domain"></a>Как настроить домен издателя приложения
 
 Домен издателя приложения отображается для пользователей в [запросе согласия приложения](application-consent-experience.md) , чтобы пользователи могли понять, куда отправляются данные. Приложения с несколькими клиентами, зарегистрированные после 21 мая, 2019, у которых нет домена издателя, не отображаются как **непроверенные**. Приложения с несколькими клиентами — это приложения, которые поддерживают учетные записи за пределами единого каталога организации. Например, поддерживаются все учетные записи Azure AD или поддерживаются все учетные записи Azure AD и личные учетные записи Майкрософт.
 

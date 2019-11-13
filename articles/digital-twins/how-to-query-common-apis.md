@@ -1,6 +1,6 @@
 ---
-title: Общие шаблоны запросов Azure Digital Twins | Документация Майкрософт
-description: Изучите общие шаблоны запросов API-интерфейсов управления Azure Digital Twins.
+title: Общие шаблоны запросов в Azure Digital двойников | Документация Майкрософт
+description: Узнайте о нескольких распространенных шаблонах запросов API для API управления цифровыми двойников Azure.
 ms.author: alinast
 author: alinamstanciu
 manager: bertvanhoof
@@ -8,12 +8,12 @@ ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
 ms.date: 10/27/2019
-ms.openlocfilehash: ef9e7a41f1de05e4d21a9ad7b45ed2b99885b6b8
-ms.sourcegitcommit: 38251963cf3b8c9373929e071b50fd9049942b37
+ms.openlocfilehash: c821524b344c8b741047ba415127cffe59a74ca2
+ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73044437"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74005895"
 ---
 # <a name="how-to-query-azure-digital-twins-apis-for-common-tasks"></a>Как запросить API Azure Digital Twins для выполнения общих задач
 
@@ -234,7 +234,7 @@ ms.locfileid: "73044437"
     YOUR_MANAGEMENT_API_URL/users/ANY_USER_ID
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Сведения об аутентификации с помощью API управления см. в статье [Подключение к API и аутентификация](./security-authenticating-apis.md).
 

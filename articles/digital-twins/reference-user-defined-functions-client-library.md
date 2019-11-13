@@ -1,5 +1,5 @@
 ---
-title: Справочник по определяемым пользователем функциям Azure Digital двойников | Документация Майкрософт
+title: Справочник по клиентской библиотеке пользовательских функций — Azure Digital двойников | Документация Майкрософт
 description: Справочник по клиентским библиотекам определяемых пользователем функций Azure Digital Twins.
 ms.author: alinast
 author: alinamstanciu
@@ -9,12 +9,12 @@ services: digital-twins
 ms.topic: article
 ms.date: 08/12/2019
 ms.custom: seodec18
-ms.openlocfilehash: daab63067087267c12cef75178b5f974043e0fd9
-ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
+ms.openlocfilehash: 0bbf247adbeab89cf8b16ed089eb13e53cf501f5
+ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73931243"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74009234"
 ---
 # <a name="user-defined-functions-client-library-reference"></a>Справочник по клиентским библиотекам определяемых пользователем функций
 

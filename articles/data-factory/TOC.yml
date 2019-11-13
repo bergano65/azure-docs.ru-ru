@@ -165,8 +165,8 @@
               href: concepts-data-flow-monitoring.md
             - name: Производительность потока данных
               href: concepts-data-flow-performance.md
-            - name: Перенос узлов
-              href: concepts-data-flow-move-nodes.md
+            - name: Управление графом
+              href: concepts-data-flow-manage-graph.md
             - name: Построитель выражений
               href: concepts-data-flow-expression-builder.md
             - name: Язык выражений
@@ -648,6 +648,8 @@
           href: scenario-ssis-migration-ssisdb-mi.md
 - name: Справочные материалы
   items:
+    - name: Скрипт потока данных
+      href: data-flow-script.md
     - name: .NET
       href: /dotnet/api/microsoft.azure.management.datafactory
     - name: PowerShell

@@ -1,17 +1,14 @@
 ---
 title: Создание динамических схем с использованием параметров
 description: Ознакомьтесь со сведениями о статических и динамических параметрах и о том, как создавать динамические схемы с их использованием.
-author: DCtheGeek
-ms.author: dacoulte
 ms.date: 03/12/2019
 ms.topic: conceptual
-ms.service: blueprints
-ms.openlocfilehash: 2bb38e0698d7504ba1bb139ca1bd5e3b14e5cdd4
-ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
+ms.openlocfilehash: da0670bdc880c47c3b715dc8344896a6c695924c
+ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71981069"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73960516"
 ---
 # <a name="creating-dynamic-blueprints-through-parameters"></a>Создание динамических схем с использованием параметров
 
@@ -88,7 +85,7 @@ ms.locfileid: "71981069"
   PUT https://management.azure.com/providers/Microsoft.Management/managementGroups/{YourMG}/providers/Microsoft.Blueprint/blueprints/MyBlueprint?api-version=2018-11-01-preview
   ```
 
-- Тело запроса
+- Текст запроса
 
   ```json
   {
@@ -121,7 +118,7 @@ ms.locfileid: "71981069"
   PUT https://management.azure.com/providers/Microsoft.Management/managementGroups/{YourMG}/providers/Microsoft.Blueprint/blueprints/MyBlueprint/artifacts/roleOwner?api-version=2018-11-01-preview
   ```
 
-- Тело запроса
+- Текст запроса
 
   ```json
   {
@@ -146,7 +143,7 @@ ms.locfileid: "71981069"
   PUT https://management.azure.com/providers/Microsoft.Management/managementGroups/{YourMG}/providers/Microsoft.Blueprint/blueprints/MyBlueprint/artifacts/policyStorageTags?api-version=2018-11-01-preview
   ```
 
-- Тело запроса
+- Текст запроса
 
   ```json
   {
@@ -192,7 +189,7 @@ ms.locfileid: "71981069"
   PUT https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.Blueprint/blueprintAssignments/assignMyBlueprint?api-version=2018-11-01-preview
   ```
 
-- Тело запроса
+- Текст запроса
 
   ```json
   {
@@ -235,7 +232,7 @@ ms.locfileid: "71981069"
   }
   ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 - См. список [функций](../reference/blueprint-functions.md)схемы.
 - Ознакомьтесь со сведениями о [жизненном цикле схем](lifecycle.md).

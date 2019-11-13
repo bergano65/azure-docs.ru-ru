@@ -3,7 +3,7 @@ title: Отчеты о действиях аудита на портале Azure
 description: Общие сведения об отчетах о действиях аудита на портале Azure Active Directory.
 services: active-directory
 documentationcenter: ''
-author: cawrites
+author: MarkusVi
 manager: daveba
 editor: ''
 ms.assetid: a1f93126-77d1-4345-ab7d-561066041161
@@ -14,15 +14,15 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 07/17/2019
-ms.author: chadam
+ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a43c5849dcd037915a46de182064b3e630a663ec
-ms.sourcegitcommit: 6dec090a6820fb68ac7648cf5fa4a70f45f87e1a
+ms.openlocfilehash: 8883e3ade7e5d52f3a62346bf8be51ac36042f82
+ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2019
-ms.locfileid: "73907183"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74008538"
 ---
 # <a name="audit-activity-reports-in-the-azure-active-directory-portal"></a>Отчеты о действиях аудита на портале Azure Active Directory 
 
@@ -42,7 +42,6 @@ ms.locfileid: "73907183"
 ## <a name="who-can-access-the-data"></a>Кто может получить доступ к данным?
 
 * Пользователи в роли " **администратор безопасности**", " **читатель безопасности**", " **читатель отчетов** " или " **глобальный администратор** "
-* Кроме того, все пользователи (не администраторы) могут видеть свои собственные действия при входе в систему.
 
 ## <a name="audit-logs"></a>Журналы аудита
 

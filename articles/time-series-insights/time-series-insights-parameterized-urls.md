@@ -1,6 +1,6 @@
 ---
-title: Предоставление общего доступа к пользовательским представлениям службы "Аналитика временных рядов Azure" с помощью параметризованных URL-адресов | Документация Майкрософт
-description: В этой статье объясняется, как создавать параметризованные URL-адреса в службе "Аналитика временных рядов Azure", чтобы с легкостью представлять общий доступ к пользовательскому представлению.
+title: Совместное использование пользовательских представлений с параметризованными URL-адресами Azure Time Series Insights | Документация Майкрософт
+description: Узнайте, как разрабатывать параметризованные URL-адреса в службе "аналитика временных рядов Azure", чтобы легко обмениваться настраиваемыми представлениями.
 ms.service: time-series-insights
 services: time-series-insights
 author: deepakpalled
@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.workload: big-data
 ms.date: 10/18/2019
 ms.custom: seodec18
-ms.openlocfilehash: e62455a0c8412a579c0fab9d7fabd6016f47dbf3
-ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
+ms.openlocfilehash: 145af35f8c36d7f4659c3937209cb0d4d5b221a3
+ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72991112"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74006372"
 ---
 # <a name="share-a-custom-view-using-a-parameterized-url"></a>Предоставление общего доступа к пользовательскому представлению с помощью параметризованного URL-адреса
 
@@ -67,7 +67,7 @@ ms.locfileid: "72991112"
 
 Параметр `timeSeriesDefinitions=<collection of term objects>` указывает условия представления "аналитика временных рядов":
 
-| Параметр | Элемент URL-адреса | Описание |
+| Параметр | Элемент URL-адреса | ОПИСАНИЕ |
 | --- | --- | --- |
 | **name** | `\<string>` | имя *условия*; |
 | **сплитби** | `\<string>` | имя столбца, по которому выполняется *разбиение*; |
@@ -80,7 +80,7 @@ ms.locfileid: "72991112"
 * `timeBucketUnit=<Unit>&timeBucketSize=<integer>` позволяет настроить ползунок интервала, чтобы обеспечить более детализированное или более гладкое, более обобщенное представление диаграммы.  
 * Параметр `timezoneOffset=<integer>` позволяет задать часовой пояс для просматриваемой диаграммы в качестве смещения в формате UTC.
 
-| Пары | Описание |
+| Пары | ОПИСАНИЕ |
 | --- | --- |
 | `multiChartStack=false` | `true` включен по умолчанию, поэтому передайте `false` в стек. |
 | `multiChartStack=false&multiChartSameScale=true` | Чтобы использовать одну и ту же шкалу оси Y для разных условий, должно быть включено наложение.  По умолчанию это `false`, поэтому передача значения true позволяет реализовать эту функцию. |
@@ -113,13 +113,13 @@ https://insights.timeseries.azure.com/samples?environmentId=10000000-0000-0000-0
 
 Приведенный выше URL-адрес описывает и создает представление обозревателя "аналитика временных рядов".
 
-[Условия обозревателя "аналитика временных рядов"![](media/parameterized-url/url1.png)](media/parameterized-url/url1.png#lightbox)
+[Условия обозревателя "аналитика временных рядов" ![](media/parameterized-url/url1.png)](media/parameterized-url/url1.png#lightbox)
 
 Полное представление (включая диаграмму):
 
-[представление диаграммы![](media/parameterized-url/url2.png)](media/parameterized-url/url2.png#lightbox)
+[представление диаграммы ![](media/parameterized-url/url2.png)](media/parameterized-url/url2.png#lightbox)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * Узнайте, как [запрашивать данные C#с помощью ](time-series-insights-query-data-csharp.md).
 

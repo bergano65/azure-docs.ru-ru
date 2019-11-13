@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 03/15/2019
 ms.author: dacurwin
 ms.assetid: 57854626-91f9-4677-b6a2-5d12b6a866e1
-ms.openlocfilehash: 229d960f7851b5fab8504b6c2a109bece6c7b31f
-ms.sourcegitcommit: b1c94635078a53eb558d0eb276a5faca1020f835
+ms.openlocfilehash: 34a8b27442fc3f755cbe33f61857aa13d3be700b
+ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2019
-ms.locfileid: "72969091"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74012819"
 ---
 # <a name="back-up-and-restore-sql-databases-in-azure-vms-with-powershell"></a>Резервное копирование и восстановление баз данных SQL на виртуальных машинах Azure с помощью PowerShell
 
@@ -24,6 +24,7 @@ ms.locfileid: "72969091"
 В этом учебнике объясняется, как выполнить такие задачи:
 
 > [!div class="checklist"]
+>
 > * Настройте PowerShell и зарегистрируйте поставщик служб восстановления Azure.
 > * Создайте хранилище служб восстановления.
 > * Настройте резервное копирование для базы данных SQL на виртуальной машине Azure.
@@ -43,7 +44,7 @@ ms.locfileid: "72969091"
 
 ![Иерархия объектов служб восстановления](./media/backup-azure-vms-arm-automation/recovery-services-object-hierarchy.png)
 
-Ознакомьтесь со справочником по [командлету](/powershell/module/az.recoveryservices) **AZ. RecoveryServices** в библиотеке Azure.
+Ознакомьтесь со **справочником по командлету** [AZ. RecoveryServices](/powershell/module/az.recoveryservices) в библиотеке Azure.
 
 ### <a name="set-up-and-install"></a>Установка и установка
 
@@ -270,10 +271,10 @@ Enable-AzRecoveryServicesBackupAutoProtection -InputItem $SQLInstance -BackupMan
 
 Azure Backup можете восстановить базы данных SQL Server, работающие на виртуальных машинах Azure, следующим образом:
 
-1. Восстановление до определенной даты или времени (во второй) с помощью резервных копий журнала транзакций. Azure Backup автоматически определяет соответствующую полную разностную резервную копию и цепочку резервных копий журналов, которые требуются для восстановления в зависимости от выбранного времени.
-2. Восстановление определенной полной или разностной резервной копии для восстановления до определенной точки восстановления.
+* Восстановление до определенной даты или времени (во второй) с помощью резервных копий журнала транзакций. Azure Backup автоматически определяет соответствующую полную разностную резервную копию и цепочку резервных копий журналов, которые требуются для восстановления в зависимости от выбранного времени.
+* Восстановление определенной полной или разностной резервной копии для восстановления до определенной точки восстановления.
 
-Перед восстановлением SQL баз данных проверьте предварительные требования, указанные [здесь](restore-sql-database-azure-vm.md#prerequisites) .
+Перед восстановлением SQL баз данных проверьте предварительные требования, описанные [здесь](restore-sql-database-azure-vm.md#prerequisites) .
 
 Сначала извлеките соответствующую резервную копию базы данных SQL с помощью командлета [Get-азрековерисервицесбаккупитем](https://docs.microsoft.com/powershell/module/az.recoveryservices/Get-AzRecoveryServicesBackupItem?view=azps-1.5.0) PS.
 
@@ -335,9 +336,9 @@ SQLDataBase;MSSQLSERVER;azu... 3/18/2019 8:09:35 PM           3/19/2019 12:08:32
 
 В случае восстановления базы данных SQL поддерживаются следующие сценарии восстановления.
 
-1. Переопределение резервной копии базы данных SQL данными из другой точки восстановления — Оригиналворклоадресторе
-2. Восстановление базы данных SQL в качестве новой базы данных в том же экземпляре SQL — Алтернатеворклоадресторе
-3. Восстановление базы данных SQL в качестве новой базы данных в другом экземпляре SQL в другой виртуальной машине SQL — Алтернатеворклоадресторе
+* Переопределение резервной копии базы данных SQL данными из другой точки восстановления — Оригиналворклоадресторе
+* Восстановление базы данных SQL в качестве новой базы данных в том же экземпляре SQL — Алтернатеворклоадресторе
+* Восстановление базы данных SQL в качестве новой базы данных в другом экземпляре SQL в другой виртуальной машине SQL — Алтернатеворклоадресторе
 
 После получения соответствующей точки восстановления (DISTINCT или Log-On-Time) используйте командлет [Get-азрековерисервицесбаккупворклоадрековериконфиг](https://docs.microsoft.com/powershell/module/az.recoveryservices/Get-AzRecoveryServicesBackupWorkloadRecoveryConfig?view=azps-1.5.0) PS, чтобы получить объект конфигурации восстановления в соответствии с требуемым планом восстановления.
 
@@ -499,7 +500,7 @@ $SQLContainer = Get-AzRecoveryServicesBackupContainer -ContainerType AzureVMAppC
 Register-AzRecoveryServicesBackupContainer -Container $SQLContainer -BackupManagementType AzureWorkload -WorkloadType MSSQL -VaultId $targetVault.ID
 ````
 
-### <a name="stop-protection"></a>остановка защиты;
+### <a name="stop-protection"></a>Остановить защиту
 
 #### <a name="retain-data"></a>Хранить данные
 
@@ -510,7 +511,7 @@ $bkpItem = Get-AzRecoveryServicesBackupItem -BackupManagementType AzureWorkload 
 Disable-AzRecoveryServicesBackupProtection -Item $bkpItem -VaultId $targetVault.ID
 ````
 
-#### <a name="delete-backup-data"></a>удаление резервных копий;
+#### <a name="delete-backup-data"></a>Удаление данных резервных копий
 
 Чтобы полностью удалить сохраненные резервные копии данных в хранилище, просто добавьте флаг "-Ремоверековерипоинтс" или переключитесь в [команду "Disable"](#retain-data).
 
@@ -560,12 +561,12 @@ Get-AzRecoveryServicesBackupJob -Status InProgress -BackupManagementType AzureWo
 
 Например, предположим, что в группе доступности SQL есть два узла: "SQL-Server-0" и "SQL-Server-1" и 1 база данных SQL AG. Как только эти узлы будут зарегистрированы, если пользователь [выведет список защищаемых элементов](#fetching-sql-dbs), в нем будут перечислены следующие компоненты.
 
-1. Объект SQL AG — защищаемый тип элемента как SQLAvailabilityGroup
-2. Тип защищаемого элемента базы данных SQL AG в виде SQLDatabase
-3. SQL-Server-0 — Тип защищаемого элемента — SQLInstance
-4. SQL-Server-1 — Тип защищаемого элемента — SQLInstance
-5. Все значения по умолчанию SQL баз данных (Master, Model, msdb) в SQL-Server-0 — защищаемый тип элемента как SQLDatabase
-6. Все значения по умолчанию SQL баз данных (Master, Model, msdb) в SQL-Server-1 — защищаемый тип элемента как SQLDatabase
+* Объект SQL AG — защищаемый тип элемента как SQLAvailabilityGroup
+* Тип защищаемого элемента базы данных SQL AG в виде SQLDatabase
+* SQL-Server-0 — Тип защищаемого элемента — SQLInstance
+* SQL-Server-1 — Тип защищаемого элемента — SQLInstance
+* Все значения по умолчанию SQL баз данных (Master, Model, msdb) в SQL-Server-0 — защищаемый тип элемента как SQLDatabase
+* Все значения по умолчанию SQL баз данных (Master, Model, msdb) в SQL-Server-1 — защищаемый тип элемента как SQLDatabase
 
 SQL-Server-0, SQL-Server-1 также будет отображаться как "Азуревмаппконтаинер" при [отображении контейнеров резервного копирования](https://docs.microsoft.com/powershell/module/az.recoveryservices/Get-AzRecoveryServicesBackupContainer?view=azps-1.5.0).
 

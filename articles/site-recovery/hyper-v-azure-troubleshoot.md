@@ -1,5 +1,5 @@
 ---
-title: Устранение неполадок при аварийном восстановлении Hyper-V в Azure с помощью Azure Site Recovery | Документация Майкрософт
+title: Устранение неполадок аварийного восстановления Hyper-V с помощью Azure Site Recovery
 description: Сведения об устранении проблем аварийного восстановления при репликации Hyper-V в Azure с помощью Azure Site Recovery
 services: site-recovery
 author: rajani-janaki-ram
@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 04/14/2019
 ms.author: rajanaki
-ms.openlocfilehash: 2cf43f8a235b112cfcf1fc6c9dba626a5a0c9b7e
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: 0a3e5c922009353e4ba9ccab12cf70ea2b5992da
+ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68828403"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73961484"
 ---
 # <a name="troubleshoot-hyper-v-to-azure-replication-and-failover"></a>Устранение неполадок с отработкой отказа и репликацией из Hyper-V в Azure
 
@@ -112,7 +112,7 @@ ms.locfileid: "68828403"
 7. Проверьте, наблюдается ли большая скорость изменения данных на виртуальной машине.
     - Частоту ежедневного изменения данных для гостевых виртуальных машин можно измерить с помощью счетчиков производительности на узле Hyper-V. Чтобы измерить скорость изменения данных, включите следующий счетчик. Зафиксируйте пример этого значения на дисках виртуальной машины в течение 5–15 минут, чтобы получить сведения об изменении данных виртуальной машины.
         - Категория: "Виртуальное устройство хранения Hyper-V".
-        - Счетчик: "Записано байтов в секунду".</br>
+        - Счетчик: "Записанных байтов в секунду".</br>
         - Скорость изменения данных увеличится или останется на высоком уровне. Это зависит от текущей загруженности виртуальной машины или ее приложений.
         - Для стандартного хранилища в Site Recovery среднее значение скорости изменения данных исходного диска составляет 2 МБ в секунду. [Подробнее](hyper-v-deployment-planner-analyze-report.md#azure-site-recovery-limits)
     - Кроме того, можно [проверить целевые показатели масштабируемости хранилища](https://docs.microsoft.com/azure/storage/common/storage-scalability-targets).
@@ -125,18 +125,18 @@ ms.locfileid: "68828403"
 1. Проверьте журналы событий на наличие ошибок VSS и просмотрите рекомендации.
     - На сервере узла Hyper-V откройте журнал событий администратора Hyper-V, выбрав **Средство просмотра событий** > **Applications and Services Logs** > **Microsoft** > **Windows** > **Hyper-V** > **Admin**.
     - Проверьте, есть ли там события, указывающие на сбои моментальных снимков с согласованием приложений.
-    - Стандартная ошибка: "Hyper-V failed to generate VSS snapshot set for virtual machine 'XYZ': The writer experienced a non-transient error. Restarting the VSS service might resolve issues if the service is unresponsive" (Hyper-V не удалось создать набор моментальных снимков VSS для виртуальной машины XYZ. Повторяющаяся ошибка модуля записи. Если служба VSS не отвечает, можно попробовать перезапустить ее).
+    - Распространенная ошибка: "Hyper-V failed to generate VSS snapshot set for virtual machine 'XYZ': The writer experienced a non-transient error. Restarting the VSS service might resolve issues if the service is unresponsive" (Hyper-V не удалось создать набор моментальных снимков VSS для виртуальной машины XYZ. Повторяющаяся ошибка модуля записи. Если служба VSS не отвечает, можно попробовать перезапустить ее).
 
 2. Чтобы создавать моментальные снимки VSS для виртуальной машины, установите на виртуальной машине службы Integration Services Hyper-V и включите службу интеграции резервного копирования (VSS).
     - Убедитесь, что службы или управляющие программы Integration Services VSS выполняются на гостевой виртуальной машине и находятся в состоянии **ОК**.
-    - Это можно сделать в сеансе PowerShell с повышенными привилегиями на узле Hyper-V с помощью команды **Get-VMIntegrationService\<-VMName VMName >-Name VSS** . Эти сведения можно также получить, войдя на гостевую виртуальную машину. [Узнайте больше](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services).
+    - Это можно проверить в сеансе PowerShell с повышенными привилегиями на узле Hyper-V, выполнив команду **Get-VMIntegrationService-VMName\<VMName >-Name VSS** . Эти сведения можно также получить, войдя на ГОСТЕВую виртуальную машину. [Дополнительные сведения](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services)
     - Убедитесь, что службы интеграции резервного копирования или VSS на виртуальной машине запущены и находятся в работоспособном состоянии. В противном случае перезапустите эти службы и службу запросов на теневое копирование томов Hyper-V на сервере узла Hyper-V.
 
 ### <a name="common-errors"></a>Распространенные ошибки
 
-**Код ошибки** | **Сообщение** | **Сведения**
+**Код ошибки** | **Сообщение** | **Дополнительные сведения**
 --- | --- | ---
-**0x800700EA** | "Hyper-V failed to generate VSS snapshot set for virtual machine: More data is available. (0x800700EA). VSS snapshot set generation can fail if backup operation is in progress.<br/><br/> Replication operation for virtual machine failed: More data is available" (Hyper-V не удалось создать набор моментальных снимков VSS для виртуальной машины. Доступно больше данных. (0x800700EA). Процесс создания моментальных снимков VSS может завершиться неудачно, если выполняется операция резервного копирования. Не удалось выполнить операцию репликации для виртуальной машины. Доступно больше данных). | Проверьте, включен ли на виртуальной машине динамический диск. Эта возможность не поддерживается.
+**0x800700EA** | "Hyper-V failed to generate VSS snapshot set for virtual machine: More data is available. (0x800700EA). VSS snapshot set generation can fail if backup operation is in progress.<br/><br/> Replication operation for virtual machine failed: More data is available" (Hyper-V не удалось создать набор моментальных снимков VSS для виртуальной машины. Доступно больше данных. Процесс создания моментальных снимков VSS может завершиться неудачно, если выполняется операция резервного копирования. Не удалось выполнить операцию репликации для виртуальной машины. Доступно больше данных). | Проверьте, включен ли на виртуальной машине динамический диск. Эта возможность не поддерживается.
 **0x80070032** | "Hyper-V Volume Shadow Copy Requestor failed to connect to virtual machine <./VMname> because the version does not match the version expected by Hyper-V" (Не удалось подключить службу запросов на теневое копирование томов Hyper-V к виртуальной машине <./имя ВМ>, так как имеющаяся версия не соответствует ожидаемый Hyper-V). | Проверьте, установлены ли последние обновления Windows.<br/><br/> [Обновите](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services#keep-integration-services-up-to-date) службы Integration Services до последней версии.
 
 
@@ -156,7 +156,7 @@ ms.locfileid: "68828403"
 
 ### <a name="event-log-locations"></a>Расположения журналов событий
 
-**Журнал событий** | **Сведения** |
+**Журнал событий** | **Дополнительные сведения** |
 --- | ---
 **Applications and Service Logs/Microsoft/VirtualMachineManager/Server/Admin** (сервер VMM) | Журналы, с помощью которых можно устранять проблемы с VMM.
 **Applications and Service Logs/MicrosoftAzureRecoveryServices/Replication** (узел Hyper-V) | Журналы, с помощью которых можно устранять проблемы с агентом служб восстановления Microsoft Azure. 

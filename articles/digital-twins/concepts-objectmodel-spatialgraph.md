@@ -1,5 +1,5 @@
 ---
-title: Общие сведения об объектных моделях Azure Digital двойников и диаграмме пространственной аналитики | Документация Майкрософт
+title: Общие сведения об объектных моделях и диаграмме пространственной аналитики в Azure Digital двойников | Документация Майкрософт
 description: Моделирование связей между пользователями, расположениями и устройствами с помощью Azure Digital Twins
 ms.author: alinast
 author: alinamstanciu
@@ -8,12 +8,12 @@ ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
 ms.date: 11/05/2019
-ms.openlocfilehash: da345c0cf039e3cc2f7f8828a0769b6e65048571
-ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
+ms.openlocfilehash: 85fb67248a69a2726fef99ebe4749d61807631e4
+ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73930415"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74010089"
 ---
 # <a name="understand-digital-twins-object-models-and-spatial-intelligence-graph"></a>Основные сведения об объектных моделях и пространственном интеллектуальном графе в Digital Twins
 

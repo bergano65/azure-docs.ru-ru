@@ -1,6 +1,6 @@
 ---
-title: Исходящий трафик и конечные точки в Azure Digital Twins | Документация Майкрософт
-description: Руководство по созданию конечных точек с помощью Azure Digital Twins.
+title: Исходящие и конечные точки — Azure Digital двойников | Документация Майкрософт
+description: Узнайте, как создавать и исходящие конечные точки событий в Azure Digital двойников.
 ms.author: alinast
 author: alinamstanciu
 manager: bertvanhoof
@@ -8,14 +8,14 @@ ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
 ms.date: 10/02/2019
-ms.openlocfilehash: 9a5e060d6248d3144720930fe960e0a371a73d6e
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 33e8a6a281fbc6620a4608c7b0821b196043423e
+ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73822270"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74010051"
 ---
-# <a name="egress-and-endpoints"></a>Исходящий трафик и конечные точки
+# <a name="egress-and-endpoints-in-azure-digital-twins"></a>Исходящие и конечные точки в цифровом двойников Azure
 
 *Конечные точки* Azure Digital Twins представляют собой брокер сообщений или событий в пользовательской подписке Azure. События и сообщения могут отправляться в Центры событий Azure, Сетку событий Azure и в разделы служебной шины Azure.
 
@@ -47,7 +47,7 @@ ms.locfileid: "73822270"
 }
 ```
 
-| Атрибут | Тип | Description (Описание) |
+| Атрибут | введите | ОПИСАНИЕ |
 | --- | --- | --- |
 | id | строка | Уникальный идентификатор события. |
 | subject | строка | Определенный издателем путь к субъекту событий. |
@@ -95,7 +95,7 @@ ms.locfileid: "73822270"
 - SpaceExtendedProperty
 - SpaceResource
 - SpaceRoleAssignment
-- системный;
+- System
 - Пользователь
 - UserBlobMetadata
 - UserExtendedProperty
@@ -356,7 +356,7 @@ YOUR_MANAGEMENT_API_URL/endpoints
 
 Если конечная точка недоступна, система перейдет в экспоненциальную задержку со временем ожидания до 30 минут. События будут удаляться при каждом активированном времени ожидания задержки.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Дополнительные сведения см. в статье [Использование Swagger с Digital Twins](how-to-use-swagger.md).
 

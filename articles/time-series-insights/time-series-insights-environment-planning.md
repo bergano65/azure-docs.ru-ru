@@ -1,6 +1,6 @@
 ---
-title: Подготовка к масштабированию среды Аналитики временных рядов Azure | Документация Майкрософт
-description: В этой статье описывается, как следовать рекомендациям по планированию среды службы "аналитика временных рядов Azure". В число охваченных областей входят емкость хранилища, хранение данных, емкость входящего трафика, мониторинг, непрерывность бизнес-процессов и аварийное восстановление (BCDR).
+title: Планирование общедоступной среды Azure Time Series Insights | Документация Майкрософт
+description: Ознакомьтесь с рекомендациями по планированию общедоступной среды.
 services: time-series-insights
 ms.service: time-series-insights
 author: deepakpalled
@@ -11,12 +11,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 10/10/2019
 ms.custom: seodec18
-ms.openlocfilehash: 649ff31e40bf612f1b70f81e895920f7fc21f082
-ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
+ms.openlocfilehash: 2dd3b79e931464e83264433a923e9078b2f62525
+ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72991244"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74006952"
 ---
 # <a name="plan-your-azure-time-series-insights-ga-environment"></a>Планирование общедоступной среды службы "аналитика временных рядов Azure"
 
@@ -60,7 +60,7 @@ ms.locfileid: "72991244"
 > [!IMPORTANT]
 > В среде Azure Time Series Insights можно настроить не более 400 дней хранения данных.
 
-### <a name="configure-data-retention"></a>Настройка срока хранения данных
+### <a name="configure-data-retention"></a>Настройка времени хранения данных
 
 1. Выберите нужную среду Аналитики временных рядов на [портале Azure](https://portal.azure.com).
 
@@ -68,7 +68,7 @@ ms.locfileid: "72991244"
 
 1. В поле **время хранения данных (в днях)** введите значение от 1 до 400.
 
-   [Настройка хранения![](media/environment-mitigate-latency/configure-retention.png)](media/environment-mitigate-latency/configure-retention.png#lightbox)
+   [Настройка хранения ![](media/environment-mitigate-latency/configure-retention.png)](media/environment-mitigate-latency/configure-retention.png#lightbox)
 
 > [!TIP]
 > Дополнительные сведения о реализации соответствующей политики хранения данных см. в разделе [Настройка хранения](./time-series-insights-how-to-configure-retention.md).
@@ -123,7 +123,7 @@ ms.locfileid: "72991244"
 
 [!INCLUDE [business-disaster-recover](../../includes/time-series-insights-business-recovery.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Начните с создания [новой среды "аналитика временных рядов" в портал Azure](time-series-insights-get-started.md).
 

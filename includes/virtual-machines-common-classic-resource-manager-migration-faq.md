@@ -8,18 +8,16 @@ ms.topic: include
 ms.date: 05/18/2018
 ms.author: kasing
 ms.custom: include file
-ms.openlocfilehash: c4f9334a91e99c92e74af060d84308a8aaccc6e7
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: c8629975d375dda32fdd9aee42b4ae09069a2049
+ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67671277"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74005419"
 ---
-# <a name="frequently-asked-questions-about-classic-to-azure-resource-manager-migration"></a>Часто задаваемые вопросы о миграции из классической модели в модель Azure Resource Manager
-
 ## <a name="does-this-migration-plan-affect-any-of-my-existing-services-or-applications-that-run-on-azure-virtual-machines"></a>Влияет ли этот план миграции на существующие службы или приложения, которые выполняются на виртуальных машинах Azure? 
 
-Нет. Виртуальные машины (классические) — это службы, которые полностью поддерживаются в общедоступной версии. Можно продолжать использовать эти ресурсы, чтобы расширить занимаемый объем в Microsoft Azure.
+Нет Виртуальные машины (классические) — это службы, которые полностью поддерживаются в общедоступной версии. Можно продолжать использовать эти ресурсы, чтобы расширить занимаемый объем в Microsoft Azure.
 
 ## <a name="what-happens-to-my-vms-if-i-dont-plan-on-migrating-in-the-near-future"></a>Что произойдет с моей виртуальной машиной, если я не планирую перенос в ближайшем будущем? 
 
@@ -43,7 +41,7 @@ ms.locfileid: "67671277"
 
 ## <a name="do-i-have-to-buy-another-express-route-circuit-if-i-have-to-use-iaas-under-resource-manager"></a>Нужно ли приобретать еще один канал ExpressRoute, если нужно использовать ресурсы IaaS в модели Resource Manager? 
 
-Нет. Мы недавно включили [перемещение каналов ExpressRoute из классической модели развертывания в модель развертывания с помощью Resource Manager](../articles/expressroute/expressroute-move.md). Поэтому при наличии существующего канала ExpressRoute не нужно приобретать еще один.
+Нет Мы недавно включили [перемещение каналов ExpressRoute из классической модели развертывания в модель развертывания с помощью Resource Manager](../articles/expressroute/expressroute-move.md). Поэтому при наличии существующего канала ExpressRoute не нужно приобретать еще один.
 
 ## <a name="what-if-i-had-configured-role-based-access-control-policies-for-my-classic-iaas-resources"></a>Что произойдет, если для классических ресурсов IaaS настроено управление доступом на основе ролей? 
 
@@ -88,6 +86,6 @@ ms.locfileid: "67671277"
 
 Каналы ExpressRoute, использующие ссылки авторизации между подписками, невозможно перенести автоматически без простоев. У нас есть рекомендации о том, как их можно перенести вручную. Дополнительные сведения см. в статье [Перенос каналов ExpressRoute и связанных виртуальных сетей из классической модели развертывания на модель Resource Manager](../articles/expressroute/expressroute-migration-classic-resource-manager.md).
 
-## <a name="i-got-the-message-vm-is-reporting-the-overall-agent-status-as-not-ready-hence-the-vm-cannot-be-migrated-ensure-that-the-vm-agent-is-reporting-overall-agent-status-as-ready-or-vm-contains-extension-whose-status-is-not-being-reported-from-the-vm-hence-this-vm-cannot-be-migrated"></a>Получено сообщение *"VM is reporting the overall agent status as Not Ready. Hence, the VM cannot be migrated. Добейтесь того, чтобы сообщаемое агентом виртуальной машины общее состояние имело значение "Готов"."* или *"VM contains Extension whose Status is not being reported from the VM. Hence, this VM cannot be migrated"* (Виртуальная машина содержит расширение, о состоянии которого она не сообщает. Поэтому виртуальную машину нельзя перенести).
+## <a name="i-got-the-message-vm-is-reporting-the-overall-agent-status-as-not-ready-hence-the-vm-cannot-be-migrated-ensure-that-the-vm-agent-is-reporting-overall-agent-status-as-ready-or-vm-contains-extension-whose-status-is-not-being-reported-from-the-vm-hence-this-vm-cannot-be-migrated"></a>Я получил сообщение *"виртуальная машина сообщает о том, что общее состояние агента не готово. Поэтому миграция виртуальной машины невозможна. Убедитесь, что агент виртуальной машины сообщает общее состояние агента как "Готово"* или *"виртуальная машина содержит расширение, состояние которого не сообщается с виртуальной машины. Следовательно, эту виртуальную машину невозможно перенести. "*
 
 Это сообщение отображается в том случае, когда у виртуальной машины нет исходящего подключения к Интернету. Агент виртуальной машины использует исходящее подключение для обращения к учетной записи хранения Azure, чтобы обновлять состояние агента каждые пять минут.

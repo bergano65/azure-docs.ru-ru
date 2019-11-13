@@ -1,6 +1,6 @@
 ---
-title: Моделирование данных с помощью службы "Аналитика временных рядов Azure" (предварительная версия) | Документация Майкрософт
-description: Общие сведения о моделировании данных в предварительной версии службы "Аналитика временных рядов".
+title: Моделирование данных в средах предварительного просмотра — служба "аналитика временных рядов Azure" | Документация Майкрософт
+description: Сведения о моделировании данных в предварительной версии службы "аналитика временных рядов Azure".
 author: deepakpalled
 ms.author: dpalled
 manager: cshankar
@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 10/29/2019
 ms.custom: seodec18
-ms.openlocfilehash: 81c2c2af78f5f066e1b27e14fa774df04d7c5868
-ms.sourcegitcommit: f7f70c9bd6c2253860e346245d6e2d8a85e8a91b
+ms.openlocfilehash: fb1bfb30d531f8b93489c8fc1dfbc6b8172339a3
+ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73063984"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74006459"
 ---
 # <a name="data-modeling-in-azure-time-series-insights-preview"></a>Моделирование данных в предварительной версии службы "Аналитика временных рядов"
 
@@ -76,7 +76,7 @@ ms.locfileid: "73063984"
 
 1. Введите сведения об иерархии и выберите **Создать**.
 
-    [![сведения о иерархии управляющих и кнопку "создать"](media/v2-update-how-to-tsm/portal-nine.png)](media/v2-update-how-to-tsm/portal-nine.png#lightbox)
+    [сведения о ![иерархии и кнопка "создать"](media/v2-update-how-to-tsm/portal-nine.png)](media/v2-update-how-to-tsm/portal-nine.png#lightbox)
 
 ### <a name="bulk-upload-one-or-more-hierarchies"></a>Массовая отправка одной или нескольких иерархий
 
@@ -130,7 +130,7 @@ ms.locfileid: "73063984"
 
     [![выбора для редактирования одного экземпляра](media/v2-update-how-to-tsm/portal-sixteen.png)](media/v2-update-how-to-tsm/portal-sixteen.png#lightbox)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Дополнительные сведения о модели временных рядов см. в статье [моделирование данных](./time-series-insights-update-tsm.md).
 

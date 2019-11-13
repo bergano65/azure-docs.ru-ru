@@ -1,17 +1,14 @@
 ---
 title: Исправление несоответствующих ресурсов
 description: В этом руководстве описывается исправление ресурсов, которые не соответствуют политикам в политике Azure.
-author: DCtheGeek
-ms.author: dacoulte
 ms.date: 09/09/2019
 ms.topic: conceptual
-ms.service: azure-policy
-ms.openlocfilehash: 219a3c56f9e4e4c9e132fa759b017fac63ade766
-ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
+ms.openlocfilehash: 53ca21e4b8a1f3e7973706acd10601593efc3448
+ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71977989"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73959497"
 ---
 # <a name="remediate-non-compliant-resources-with-azure-policy"></a>Исправление несоответствующих ресурсов с помощью службы "Политика Azure"
 
@@ -25,7 +22,7 @@ ms.locfileid: "71977989"
 ![Управляемое удостоверение. Отсутствующая роль](../media/remediate-resources/missing-role.png)
 
 > [!IMPORTANT]
-> Если ресурс, измененный с помощью **deployIfNotExists** или **Modify** , находится за пределами области назначения политики, или шаблон обращается к свойствам ресурсов за пределами области назначения политики, управляемое удостоверение назначения должно быть [ вручную предоставить доступ](#manually-configure-the-managed-identity) или развертывание исправления будет невозможно.
+> Если ресурс, измененный с помощью **deployIfNotExists** или **Modify** , находится за пределами области назначения политики, или шаблон обращается к свойствам ресурсов за пределами области назначения политики, то управляемому удостоверению назначения должен быть [предоставлен доступ вручную](#manually-configure-the-managed-identity) или развертывание исправления завершится сбоем.
 
 ## <a name="configure-policy-definition"></a>Настройка определения политики
 
@@ -160,7 +157,7 @@ if ($roleDefinitionIds.Count -gt 0)
 
 ### <a name="create-a-remediation-task-through-azure-cli"></a>Создание задачи исправления с помощью Azure CLI
 
-Чтобы создать **задачу исправления** с Azure CLI, используйте команды `az policy remediation`. Замените `{subscriptionId}` на идентификатор подписки и `{myAssignmentId}` на свой **deployIfNotExists** или **измените** идентификатор назначения политики.
+Чтобы создать **задачу исправления** с Azure CLI, используйте команды `az policy remediation`. Замените `{subscriptionId}` ИДЕНТИФИКАТОРом подписки и `{myAssignmentId}` с помощью **deployIfNotExists** или **измените** идентификатор назначения политики.
 
 ```azurecli-interactive
 # Login first with az login if not using Cloud Shell
@@ -173,7 +170,7 @@ az policy remediation create --name myRemediation --policy-assignment '/subscrip
 
 ### <a name="create-a-remediation-task-through-azure-powershell"></a>Создание задачи исправления с помощью Azure PowerShell
 
-Чтобы создать **задачу исправления** с Azure PowerShell, используйте команды `Start-AzPolicyRemediation`. Замените `{subscriptionId}` на идентификатор подписки и `{myAssignmentId}` на свой **deployIfNotExists** или **измените** идентификатор назначения политики.
+Чтобы создать **задачу исправления** с Azure PowerShell, используйте команды `Start-AzPolicyRemediation`. Замените `{subscriptionId}` ИДЕНТИФИКАТОРом подписки и `{myAssignmentId}` с помощью **deployIfNotExists** или **измените** идентификатор назначения политики.
 
 ```azurepowershell-interactive
 # Login first with Connect-AzAccount if not using Cloud Shell
@@ -184,11 +181,11 @@ Start-AzPolicyRemediation -Name 'myRemedation' -PolicyAssignmentId '/subscriptio
 
 Другие командлеты и примеры исправления см. в разделе [AZ. полициинсигхтс](/powershell/module/az.policyinsights/#policy_insights) Module.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 - Просмотрите примеры в [примерах политики Azure](../samples/index.md).
 - Изучите статью о [структуре определения Политики Azure](../concepts/definition-structure.md).
-- Изучите [сведения о действии политик](../concepts/effects.md).
+- См. дополнительные сведения о [действиях политик](../concepts/effects.md).
 - Узнайте, как [программно создавать политики](programmatically-create.md).
 - Узнайте, как [получить данные о соответствии](getting-compliance-data.md).
 - Дополнительные сведения о группе управления см. в статье [Упорядочивание ресурсов с помощью групп управления Azure](../../management-groups/overview.md).

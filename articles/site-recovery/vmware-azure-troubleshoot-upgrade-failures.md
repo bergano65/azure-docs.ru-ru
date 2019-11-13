@@ -1,18 +1,18 @@
 ---
-title: Устранение неполадок с обновлением поставщика службы Microsoft Azure Site Recovery | Документация Майкрософт
-description: Общие сведения
+title: Устранение неполадок при обновлении поставщика Microsoft Azure Site Recovery
+description: Устранение распространенных проблем при обновлении поставщика Microsoft Azure Site Recovery
 author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: troubleshooting
-ms.date: 02/05/2019
+ms.date: 11/10/2019
 ms.author: raynew
-ms.openlocfilehash: 6bb8263e7291506be6af7d5af7eda5786274d73c
-ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
+ms.openlocfilehash: 73309103d422391aae3d72e3b0267d5d5a85515a
+ms.sourcegitcommit: 44c2a964fb8521f9961928f6f7457ae3ed362694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2019
-ms.locfileid: "71972610"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73953771"
 ---
 # <a name="troubleshoot-microsoft-azure-site-recovery-provider-upgrade-failures"></a>Устранение неполадок с обновлением поставщика службы Microsoft Azure Site Recovery
 

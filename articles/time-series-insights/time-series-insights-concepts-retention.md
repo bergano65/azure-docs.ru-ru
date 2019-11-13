@@ -1,5 +1,5 @@
 ---
-title: Хранение данных в среде службы "Аналитика временных рядов Azure" | Документация Майкрософт
+title: Общие сведения о хранении данных в вашей среде — служба "аналитика временных рядов Azure" | Документация Майкрософт
 description: В этой статье описываются две параметра, которые контролируют хранение данных в среде службы "Аналитика временных рядов Azure".
 ms.service: time-series-insights
 services: time-series-insights
@@ -11,12 +11,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 10/03/2019
 ms.custom: seodec18
-ms.openlocfilehash: 9dd771d44452ddc36913caf04f3c3a2d15ff1f08
-ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
+ms.openlocfilehash: 8200c2511d4f85705ff56df43f128034d29b0604
+ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72990124"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74012701"
 ---
 # <a name="understand-data-retention-in-azure-time-series-insights"></a>Общие сведения о хранении данных в службе "аналитика временных рядов Azure"
 
@@ -90,11 +90,11 @@ ms.locfileid: "72990124"
 
 [![хранения сообщений концентратора событий.](media/time-series-insights-contepts-retention/event-hub-retention.png)](media/time-series-insights-contepts-retention/event-hub-retention.png#lightbox)
 
-Если в источнике событий (`timeStampPropertyName`) не настроено ни одного свойства, по умолчанию для аналитики временных рядов используется метка времени прибытия в концентраторе событий в качестве оси X. Если `timeStampPropertyName` настроена на что-то другое, среда ищет настроенную `timeStampPropertyName` в пакете данных при анализе событий.
+Если ни одно из свойств не настроено в источнике события (`timeStampPropertyName`), по умолчанию для аналитики временных рядов используется метка времени прибытия в концентраторе событий в качестве оси X. Если `timeStampPropertyName` настроена на что-то другое, среда ищет настроенную `timeStampPropertyName` в пакете данных при анализе событий.
 
 Узнайте [, как масштабировать среду "аналитика временных рядов](time-series-insights-how-to-scale-your-environment.md) ", чтобы масштабировать среду в соответствии с дополнительной емкостью или увеличить длину хранения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Сведения о настройке и изменении параметров хранения данных см. [в этой статьи](time-series-insights-how-to-configure-retention.md).
 

@@ -11,12 +11,12 @@ ms.author: clauren
 ms.reviewer: jmartens
 ms.date: 10/25/2019
 ms.custom: seodec18
-ms.openlocfilehash: 3a79c95d627bbdec3a91a1d048a48ff061b308ca
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: cb0f373000d09cb387fb73eec344997381fe45d1
+ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73489355"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73961660"
 ---
 # <a name="troubleshooting-azure-machine-learning-azure-kubernetes-service-and-azure-container-instances-deployment"></a>Устранение неполадок Машинное обучение Azure службы Azure Kubernetes и развертывания экземпляров контейнеров Azure
 
@@ -41,6 +41,16 @@ ms.locfileid: "73489355"
 4. Запуск новых контейнеров в ACI или AKS. 
 
 Дополнительные сведения об этом процессе см. во введении в [Управление моделями](concept-model-management-and-deployment.md).
+
+## <a name="prerequisites"></a>предварительным требованиям
+
+* **Подписка Azure**. Если у вас ее нет, попробуйте [бесплатную или платную версию машинное обучение Azure](https://aka.ms/AMLFree).
+* [Пакет SDK для машинное обучение Azure](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py).
+* [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+* [Расширение CLI для машинное обучение Azure](reference-azure-machine-learning-cli.md).
+* Для локальной отладки необходимо иметь рабочую установку DOCKER в локальной системе.
+
+    Чтобы проверить установку DOCKER, используйте команду `docker run hello-world` из терминала или из командной строки. Сведения об установке DOCKER или устранении ошибок DOCKER см. в [документации по DOCKER](https://docs.docker.com/).
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
@@ -152,12 +162,9 @@ b\'{"code":"InternalServerError","statusCode":500,"message":"An internal server 
 * Изучите политики доступа Key Vault, а затем используйте эти политики, чтобы задать свойство `accessPolicies` шаблона.
 * Убедитесь, что Key Vault ресурс уже существует. Если это так, не создавайте его повторно с помощью шаблона. Например, добавьте параметр, который позволяет отключить создание Key Vault ресурса, если он уже существует.
 
-## <a name="debug-locally"></a>Локальная отладка
+## <a name="debug-locally"></a>Отладка в локальной среде
 
 Если возникли проблемы при развертывании модели в ACI или AKS, попробуйте развернуть ее как локальную. Использование локальных средств упрощает устранение неполадок. Образ DOCKER, содержащий модель, загружается и запускается в локальной системе.
-
-> [!IMPORTANT]
-> Для локальных развертываний требуется работающая установка DOCKER в локальной системе. Перед развертыванием локального модуля необходимо запустить DOCKER. Сведения об установке и использовании DOCKER см. в разделе [https://www.docker.com/](https://www.docker.com/).
 
 > [!WARNING]
 > Локальные развертывания не поддерживаются в рабочих сценариях.
@@ -245,7 +252,7 @@ print(ws.webservices['mysvc'].get_logs())
 
 ## <a name="function-fails-get_model_path"></a>Ошибка выполнения функции: get_model_path()
 
-Часто в функции `init()` в скрипте оценки вызывается функция [model. Get _model_path ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#get-model-path-model-name--version-none---workspace-none-) для определения местоположения файла модели или папки с файлами модели в контейнере. Если не удается найти файл или папку модели, происходит сбой функции. Самый простой способ устранить эту ошибку — это выполнить приведенный ниже код Python в оболочке контейнера.
+Часто в функции `init()` в скрипте оценки вызывается функция [model. get_model_path ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#get-model-path-model-name--version-none---workspace-none-) для определения местоположения файла модели или папки с файлами модели в контейнере. Если не удается найти файл или папку модели, происходит сбой функции. Самый простой способ устранить эту ошибку — это выполнить приведенный ниже код Python в оболочке контейнера.
 
 ```python
 from azureml.core.model import Model
@@ -260,7 +267,7 @@ print(Model.get_model_path(model_name='my-best-model'))
 
 ## <a name="function-fails-runinput_data"></a>Ошибка выполнения функции: run(input_data)
 
-Если служба успешно развернута, но аварийно завершает работу при публикации данных в конечную точку оценки, можно добавить оператор для перехвата ошибок в функцию `run(input_data)`, чтобы она возвращала подробное сообщение об ошибке. Например:
+Если служба успешно развернута, но аварийно завершает работу при публикации данных в конечную точку оценки, можно добавить оператор для перехвата ошибок в функцию `run(input_data)`, чтобы она возвращала подробное сообщение об ошибке. Например,
 
 ```python
 def run(input_data):
@@ -325,8 +332,8 @@ def run(input_data):
 
 > [!IMPORTANT]
 > Этот метод отладки не работает при использовании `Model.deploy()` и `LocalWebservice.deploy_configuration` для локального развертывания модели. Вместо этого необходимо создать образ с помощью класса [контаинеримаже](https://docs.microsoft.com/python/api/azureml-core/azureml.core.image.containerimage?view=azure-ml-py) . 
->
-> Для локальных развертываний требуется работающая установка DOCKER в локальной системе. Перед развертыванием локального модуля необходимо запустить DOCKER. Сведения об установке и использовании DOCKER см. в разделе [https://www.docker.com/](https://www.docker.com/).
+
+Для локальных развертываний требуется работающая установка DOCKER в локальной системе. Дополнительные сведения об использовании DOCKER см. в [документации по DOCKER](https://docs.docker.com/).
 
 ### <a name="configure-development-environment"></a>Настройка среды разработки
 
@@ -527,7 +534,7 @@ myregistry.azurecr.io/myimage:1
 docker stop debug
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о развертывании см. в статьях, представленных ниже.
 

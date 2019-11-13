@@ -1,6 +1,6 @@
 ---
-title: Визуализация данных с помощью обозревателя службы "Аналитика временных рядов Azure" (предварительная версия) | Документация Майкрософт
-description: В этой статье описаны функции и возможности, доступные в веб-приложении обозревателя службы "Аналитика временных рядов Azure" (предварительная версия).
+title: Визуализация данных в обозревателе предварительной версии — Azure Time Series Insights | Документация Майкрософт
+description: Сведения о функциях и параметрах, доступных в обозревателе предварительного просмотра службы "аналитика временных рядов Azure".
 author: deepakpalled
 ms.author: dpalled
 manager: cshankar
@@ -10,18 +10,18 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 10/07/2019
 ms.custom: seodec18
-ms.openlocfilehash: 3f6c03ace13b9b6cb1bda004799502e1f382051d
-ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
+ms.openlocfilehash: f09de6fee4c9de39d98ec66714686ab1e805c4cd
+ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72989956"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74014880"
 ---
 # <a name="visualize-data-in-the-explorer-preview"></a>Визуализация данных в обозревателе (предварительная версия)
 
 В этом документе описывается пользовательский интерфейс и функции взаимодействия с пользователем, а также интерфейс [демонстрационного веб-приложения](https://insights.timeseries.azure.com/preview/demo)"аналитика временных рядов Azure". В частности, в нем обсуждается структура размещенного примера, параметры настройки интерфейса и Навигация по предоставленной демонстрации.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 Чтобы начать работу с обозревателем предварительного просмотра службы "аналитика временных рядов Azure", необходимо:
 
@@ -92,7 +92,7 @@ ms.locfileid: "72989956"
 
 Чтобы изменить макет страницы « **анализ** диаграммы», щелкните значок многоточия в правом верхнем углу.
 
-  [параметры макета телеметрии![](media/v2-update-explorer/explorer-six.png)](media/v2-update-explorer/explorer-six.png#lightbox)
+  [параметры макета телеметрии ![](media/v2-update-explorer/explorer-six.png)](media/v2-update-explorer/explorer-six.png#lightbox)
 
 > [!NOTE]
 > Если вы видите следующее сообщение, у экземпляра не будет данных в течение выбранного интервала времени. Чтобы устранить эту проблему, увеличьте период времени или подтвердите, что экземпляр отправляет данные.
@@ -103,7 +103,7 @@ ms.locfileid: "72989956"
 
 Используя диаграмму, можно отобразить экземпляры "аналитика временных рядов" в виде строк. Панель управления среда, модель данных и временной диапазон можно свернуть, выбрав веб-элементы управления, чтобы увеличить диаграмму.
 
-  [Обзор диаграммы предварительной версии![](media/v2-update-explorer/explorer-eight.png)](media/v2-update-explorer/explorer-eight.png#lightbox)
+  [Обзор диаграммы предварительной версии ![](media/v2-update-explorer/explorer-eight.png)](media/v2-update-explorer/explorer-eight.png#lightbox)
 
 - **Выбранный диапазон дат**: определяет, какие элементы данных доступны для визуализации.
 
@@ -121,7 +121,7 @@ ms.locfileid: "72989956"
 
 Чтобы продолжить детализацию определенного среза данных, щелкните точку данных на текущем графе, а затем перетащите выбранную область в конечную точку по своему усмотрению. Щелкните правой кнопкой мыши серую выбранную область и выберите **масштаб**, как показано на следующем рисунке:
 
-  [масштаб предварительной версии диаграммы![](media/v2-update-explorer/explorer-nine.png)](media/v2-update-explorer/explorer-nine.png#lightbox)
+  [масштаб предварительной версии диаграммы ![](media/v2-update-explorer/explorer-nine.png)](media/v2-update-explorer/explorer-nine.png#lightbox)
 
 После выполнения действия **масштабирования** вы увидите выбранный набор данных. Выберите элемент управления "Формат оси y", чтобы пройти по трем представлениям по оси y для данных "аналитика временных рядов".
 
@@ -159,7 +159,7 @@ ms.locfileid: "72989956"
 
 ### <a name="current-session-share-link-control"></a>Элемент управления ссылкой на общий доступ к текущему сеансу
 
-  [значок общего доступа к![](media/v2-update-explorer/explorer-fifteen.png)](media/v2-update-explorer/explorer-fifteen.png#lightbox)
+  [значок общего доступа к ![](media/v2-update-explorer/explorer-fifteen.png)](media/v2-update-explorer/explorer-fifteen.png#lightbox)
 
 Щелкните значок новый **общий ресурс** , чтобы поделиться ссылкой на URL-адрес с вашей командой.
 
@@ -167,7 +167,7 @@ ms.locfileid: "72989956"
 
 ### <a name="tenant-section"></a>Раздел клиента
 
-  [Выбор клиента![](media/v2-update-explorer/explorer-sixteen.png)](media/v2-update-explorer/explorer-sixteen.png#lightbox)
+  [Выбор клиента ![](media/v2-update-explorer/explorer-sixteen.png)](media/v2-update-explorer/explorer-sixteen.png#lightbox)
 
 * Отображает текущие сведения об учетной записи для входа в службу "аналитика временных рядов".
 * Используйте его для переключения между доступными темами "аналитика временных рядов".
@@ -177,7 +177,7 @@ ms.locfileid: "72989956"
 
 Чтобы выбрать новую тему, выберите значок профиля, расположенный в правом верхнем углу. Затем выберите **изменить тему**.
 
-  [Выбор темы![](media/v2-update-explorer/theme-selection.png)](media/v2-update-explorer/theme-selection.png#lightbox)
+  [Выбор темы ![](media/v2-update-explorer/theme-selection.png)](media/v2-update-explorer/theme-selection.png#lightbox)
 
 > [!TIP]
 > Выбрать язык также можно, выбрав значок профиля.
@@ -203,30 +203,30 @@ ms.locfileid: "72989956"
 
 **WHERE**: использование предложения WHERE для быстрой фильтрации событий с помощью набора операндов, перечисленных в следующей таблице. При выполнении поиска путем выбора операнда предикат автоматически обновляется на основе поиска. Поддерживаются следующие типы операндов:
 
-| Операция | Поддерживаемые типы   | Заметки |
+| Операция | Поддерживаемые типы   | Примечания |
 | --- | --- | --- |
 | `<`, `>`, `<=`, `>=` | Double, DateTime, TimeSpan | |
 | `=`, `!=`, `<>` | String, Bool, Double, DateTime, TimeSpan, NULL |
 | `IN` | String, Bool, Double, DateTime, TimeSpan, NULL | Все операнды должны быть одного типа или являться константой NULL. |
-| `HAS` | Строка | В правой части разрешены только константные строковые литералы. Пустые строки и значения NULL не допускаются. |
+| `HAS` | Строка, | В правой части разрешены только константные строковые литералы. Пустые строки и значения NULL не допускаются. |
 
 Дополнительные сведения о поддерживаемых операциях запросов и типах данных см. в разделе [выражение временных рядов (целевой сервер)](https://docs.microsoft.com/rest/api/time-series-insights/preview-tsx).
 
 ### <a name="examples-of-where-clauses"></a>Примеры предложений WHERE
 
-  [Примеры предложения WHERE![](media/v2-update-explorer/explorer-nineteen.png)](media/v2-update-explorer/explorer-nineteen.png#lightbox)
+  [Примеры предложения WHERE ![](media/v2-update-explorer/explorer-nineteen.png)](media/v2-update-explorer/explorer-nineteen.png#lightbox)
 
 **Мера**: раскрывающийся список, в котором отображаются все числовые столбцы (**Double**), которые можно использовать в качестве элементов для текущей диаграммы.
 
 **Разделить по**: в этом раскрывающемся списке отображаются все доступные столбцы категорий (строки) в модели, по которым можно группировать данные. Можно добавить до пяти условий для просмотра на одной оси x. Введите необходимые параметры, а затем нажмите кнопку **Добавить** , чтобы добавить новый термин.
 
-  [1![запрошенное и отфильтрованное представление](media/v2-update-explorer/explorer-twenty.png)](media/v2-update-explorer/explorer-twenty.png#lightbox)
+  [1 ![запрошенное и отфильтрованное представление](media/v2-update-explorer/explorer-twenty.png)](media/v2-update-explorer/explorer-twenty.png#lightbox)
 
 Вы можете отображать и скрывать элементы на панели диаграммы, щелкнув значок видимого, как показано на следующем рисунке. Чтобы полностью удалить запросы, выберите красный **крестик**.
 
   [![представление запросов и отфильтрованных представлений 2](media/v2-update-explorer/explorer-twenty-one.png)](media/v2-update-explorer/explorer-twenty-one.png#lightbox)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Сведения о [хранении и](./time-series-insights-update-storage-ingress.md) входе в предварительной версии службы "аналитика временных рядов Azure".
 - Прочитайте документ предварительной версии аналитики временных рядов для [моделирования данных](./time-series-insights-update-tsm.md).

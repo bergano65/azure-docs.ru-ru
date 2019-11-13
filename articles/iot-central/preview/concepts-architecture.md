@@ -3,17 +3,17 @@ title: Сведения об архитектуре Azure IoT Central | Доку
 description: В этой статье описаны ключевые понятия, связанные с архитектурой Azure IoT Central.
 author: dominicbetts
 ms.author: dobett
-ms.date: 10/15/2019
+ms.date: 11/12/2019
 ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: philmea
-ms.openlocfilehash: cb2ca8fe227abd107daa60a0f7d31ba5dc4e7c1b
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: 66792d9d0a8b1cd72ef8f22481016a35f37a1597
+ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73895336"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74013852"
 ---
 # <a name="azure-iot-central-architecture-preview-features"></a>Архитектура IoT Central Azure (Предварительная версия компонентов)
 
@@ -33,6 +33,68 @@ ms.locfileid: "73895336"
 В Azure IoT Central данные, которыми устройство может обмениваться с приложением, задаются в шаблоне устройства. Дополнительные сведения о шаблонах устройства см. в разделе об [управлении метаданными](#metadata-management).
 
 Дополнительные сведения о подключении устройств к приложению Azure IoT Central см. в [этой](overview-iot-central-get-connected.md) статье.
+
+## <a name="azure-iot-edge-devices"></a>устройство Azure IoT Edge.
+
+А также устройств, созданных с помощью [пакетов SDK для Интернета вещей Azure](https://github.com/Azure/azure-iot-sdks), можно также подключить [устройства Azure IOT Edge](../../iot-edge/about-iot-edge.md) к IOT Central приложению. IoT Edge позволяет запускать облачную аналитику и пользовательскую логику непосредственно на устройствах IoT, управляемых IoT Central. Среда выполнения IoT Edge позволяет выполнять следующие задачи:
+
+- Установка и обновление рабочих нагрузок на устройстве.
+- Поддержание стандартов безопасности IoT Edge на устройстве.
+- Обеспечение рабочего состояния модулей IoT Edge.
+- Передача данных о состоянии работоспособности модуля в облако для удаленного мониторинга.
+- Управление связью между подчиненными конечными устройствами и устройством IoT Edge, между модулями на устройстве IoT Edge, а также между устройством IoT Edge и облаком.
+
+![IoT Central Azure с Azure IoT Edge](./media/concepts-architecture/iotedge.png)
+
+IoT Central предоставляет следующие возможности для устройств IoT Edge.
+
+- Шаблоны устройств для описания возможностей устройства IoT Edge, например:
+  - Возможность отправки манифеста развертывания, которая помогает управлять манифестом для парка устройств.
+  - Модули, запускаемые на устройстве IoT Edge.
+  - Данные телеметрии, которые отправляет каждый модуль.
+  - Каждый модуль сообщает о свойствах.
+  - Команды, на которые отвечает каждый модуль.
+  - Связи между моделью возможностей устройства шлюза IoT Edge и моделью возможностей подчиненного устройства.
+  - Свойства облака, которые не хранятся на устройстве IoT Edge.
+  - Настройки, панели мониторинга и формы, которые являются частью вашего приложения IoT Central.
+
+  Дополнительные сведения см. в руководстве по [созданию шаблона устройства IOT Edge](./tutorial-define-edge-device-type.md) .
+
+- Возможность подготавливать IoT Edge устройства в масштабе с помощью службы подготовки устройств Интернета вещей Azure
+- Правила и действия.
+- Настраиваемые панели мониторинга и аналитика.
+- Непрерывный экспорт данных телеметрии с устройств IoT Edge.
+
+### <a name="iot-edge-device-types"></a>Типы устройств IoT Edge
+
+IoT Central классифицирует IoT Edge типов устройств следующим образом:
+
+- Конечные устройства. Устройство IoT Edge может иметь нисходящие конечные устройства, но эти устройства не подготавливаются в IoT Central.
+- Устройства шлюзов с подчиненными устройствами. Устройства шлюза и подчиненные устройства подготавливаются в IoT Central
+
+![Обзор IoT Central с IoT Edge](./media/concepts-architecture/gatewayedge.png)
+
+### <a name="iot-edge-patterns"></a>Шаблоны IoT Edge
+
+IoT Central поддерживает следующие шаблоны устройств IoT Edge:
+
+#### <a name="iot-edge-as-leaf-device"></a>IoT Edge в качестве конечного устройства
+
+![IoT Edge в качестве конечного устройства](./media/concepts-architecture/edgeasleafdevice.png)
+
+Устройство IoT Edge подготовлено в IoT Central, а все нижестоящие устройства и их данные телеметрии представлены как поступающие от устройства IoT Edge. Подчиненные устройства, подключенные к устройству IoT Edge, не подготавливаются в IoT Central.
+
+#### <a name="iot-edge-gateway-device-connected-to-downstream-devices-with-identity"></a>IoT Edge устройство шлюза подключено к подчиненным устройствам с удостоверением
+
+![IoT Edge с удостоверением подчиненного устройства](./media/concepts-architecture/edgewithdownstreamdeviceidentity.png)
+
+IoT Edge устройство подготавливается в IoT Central вместе с подчиненными устройствами, подключенными к IoT Edge устройству. Поддержка среды выполнения для подготовки подчиненных устройств через шлюз в настоящее время не поддерживается.
+
+#### <a name="iot-edge-gateway-device-connected-to-downstream-devices-with-identity-provided-by-the-iot-edge-gateway"></a>IoT Edge устройство шлюза подключено к подчиненным устройствам с удостоверением, предоставленным шлюзом IoT Edge
+
+![IoT Edge с подчиненным устройством без удостоверения](./media/concepts-architecture/edgewithoutdownstreamdeviceidentity.png)
+
+IoT Edge устройство подготавливается в IoT Central вместе с подчиненными устройствами, подключенными к IoT Edge устройству. В настоящее время поддержка шлюза, предоставляющего удостоверения для подчиненных устройств и подготовки нижестоящих устройств, сейчас не поддерживается. Если вы перенесете собственный модуль трансляции идентификаторов, IoT Central поддерживает этот шаблон.
 
 ## <a name="cloud-gateway"></a>Облачный шлюз
 

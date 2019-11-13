@@ -1,5 +1,5 @@
 ---
-title: Выполнение тестирования аварийного восстановления виртуальных машин Hyper-V на дополнительный сайт с помощью Azure Site Recovery | Документация Майкрософт
+title: Выполните отработку аварийного восстановления Нхипер-V на дополнительный сайт с помощью Azure Site Recovery
 description: Узнайте, как запустить выполнение тестирования аварийного восстановления виртуальных машин Hyper-V в облаках VMM в дополнительный локальный центр обработки данных с помощью Azure Site Recovery.
 author: rajani-janaki-ram
 manager: rochakm
@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: rajanaki
-ms.openlocfilehash: ef8504f3f79d23fa0d59493c06cfbe133e1c4113
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 444868f1716ae55f1851e50c057b172f5e3eb3d1
+ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72933459"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73961393"
 ---
 # <a name="run-a-dr-drill-for-hyper-v-vms-to-a-secondary-site"></a>Выполнение тестирования аварийного восстановления виртуальных машин Hyper-V на дополнительный сайт
 
@@ -147,7 +147,7 @@ ms.locfileid: "72933459"
 * Такой способ тестирования приводит к простою рабочего приложения. Попросите пользователей не использовать приложение во время тренировки аварийного восстановления.  
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 После успешного выполнения тестового аварийного восстановления можно выполнить [полную отработку отказа](site-recovery-failover.md).
 
 

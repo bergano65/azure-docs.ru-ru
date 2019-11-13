@@ -2,7 +2,7 @@
 title: Отчет о событиях входа с рисками на портале | Документация Майкрософт
 description: Описание отчета о событиях входа, представляющих риск, на портале Azure Active Directory.
 services: active-directory
-author: cawrites
+author: MarkusVi
 manager: daveba
 ms.assetid: 7728fcd7-3dd5-4b99-a0e4-949c69788c0f
 ms.service: active-directory
@@ -12,15 +12,15 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 10/28/2019
-ms.author: chadam
+ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7bb0cd2c98d0133b0eaffce1730fb9f7cb74bf60
-ms.sourcegitcommit: 38251963cf3b8c9373929e071b50fd9049942b37
+ms.openlocfilehash: 3f19744e6c860ae315b681f5eb090cba23b153af
+ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73043546"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74008338"
 ---
 # <a name="risky-sign-ins-report-in-the-azure-active-directory-portal"></a>Отчет о событиях входа, представляющих риск, на портале Azure Active Directory
 
@@ -128,7 +128,7 @@ Azure Active Directory (AAD) обнаруживает подозрительны
 
 ![События входа, представляющие риск](./media/concept-risky-sign-ins/325.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Настройка политики риска пользователя](../identity-protection/howto-user-risk-policy.md)
 - [Настройка политики снижения рисков при входе](../identity-protection/howto-user-risk-policy.md)

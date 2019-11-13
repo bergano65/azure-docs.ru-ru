@@ -1,6 +1,6 @@
 ---
-title: Подготовка к работе службы "Аналитика временных рядов Azure" (предварительная версия) и управление ею | Документация Майкрософт
-description: Понимание процессов подготовки к работе службы "Аналитика временных рядов Azure (предварительная версия)" и управление ею.
+title: Создание среды предварительного просмотра и управление ею с помощью временных рядов Azure | Документация Майкрософт
+description: Узнайте, как подготавливать среду предварительной версии службы "аналитика временных рядов Azure" и управлять ею.
 author: deepakpalled
 ms.author: dpalled
 manager: cshankar
@@ -10,18 +10,18 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 10/23/2019
 ms.custom: seodec18
-ms.openlocfilehash: 47c96cb14f2e466d02d57f73fb2e66bc1f44a311
-ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
+ms.openlocfilehash: f66925c20f6767286eb98a7f5fab180845da4c33
+ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72989909"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74014796"
 ---
 # <a name="provision-and-manage-azure-time-series-insights-preview"></a>Подготовка к работе службы "Аналитика временных рядов Azure" (предварительная версия) и управление ею
 
 В этой статье описывается создание среды "Аналитика временных рядов Azure" (предварительная версия) и управление ею с помощью [портала Azure](https://portal.azure.com/).
 
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
 
 Среда "Аналитика временных рядов Azure" (предварительная версия) является средой с оплатой по мере использования.
 
@@ -70,11 +70,11 @@ ms.locfileid: "72989909"
      > [!TIP]
      > Время в очереди сообщений может быть не лучшим параметром, настроенным для использования в сценариях пакетных событий или в сценариях передачи исторических данных. В таких случаях обязательно убедитесь, что ваше решение использует или не использует свойство timestamp.
 
-     [Вкладка «Источник событий![»](media/v2-update-manage/manage-two.png)](media/v2-update-manage/manage-two.png#lightbox)
+     [Вкладка «Источник событий ![»](media/v2-update-manage/manage-two.png)](media/v2-update-manage/manage-two.png#lightbox)
 
 1. Убедитесь, что среда подготовлена с нужными параметрами.
 
-    [Вкладка![проверка и создание](media/v2-update-manage/manage-three.png)](media/v2-update-manage/manage-three.png#lightbox)
+    [Вкладка ![проверка и создание](media/v2-update-manage/manage-three.png)](media/v2-update-manage/manage-three.png#lightbox)
 
 ## <a name="manage-the-environment"></a>Управление средой
 
@@ -93,7 +93,7 @@ ms.locfileid: "72989909"
 
 [![среды предварительной версии аналитики временных рядов в портал Azure](media/v2-update-manage/manage-four.png)](media/v2-update-manage/manage-four.png#lightbox)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Дополнительные сведения о доступности сред и предварительных версий для аналитики временных рядов см. в статье [Планирование среды](./time-series-insights-update-plan.md).
 

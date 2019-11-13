@@ -1,7 +1,7 @@
 ---
 title: Использование автономного метода оценки — Персонализация
 titleSuffix: Azure Cognitive Services
-description: Создание цикла обратной связи в этом кратком руководстве для C# с помощью службы "Персонализатор".
+description: В этой статье объясняется, как использовать автономную оценку для измерения эффективности работы приложения и анализа цикла обучения.
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: personalizer
 ms.topic: conceptual
 ms.date: 05/07/2019
 ms.author: diberry
-ms.openlocfilehash: f382c07dea75cb534632061c986dd8044c4aafa9
-ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
+ms.openlocfilehash: 6b7414d67a5c5b068c675ef7b57391b8990a7a16
+ms.sourcegitcommit: 44c2a964fb8521f9961928f6f7457ae3ed362694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72515583"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73953076"
 ---
 # <a name="offline-evaluation"></a>Автономная оценка
 
@@ -96,7 +96,7 @@ ms.locfileid: "72515583"
 * Существуют ли нежелательные функции, которые не должны использоваться при персонализации из-за нормативных требований или правил ответственного использования? Существуют ли функции, которые схожи с (т. е точно повторяют или коррелируют с) нежелательными?
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-[Настройка персонализации](how-to-settings.md) 
+[Настройка персонализации](how-to-settings.md)
 [Запуск автономных вычислений](how-to-offline-evaluation.md) Узнайте, [как работает Персонализация](how-personalizer-works.md)

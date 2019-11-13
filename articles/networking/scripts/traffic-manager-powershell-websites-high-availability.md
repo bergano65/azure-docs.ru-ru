@@ -1,5 +1,5 @@
 ---
-title: Пример скрипта Azure PowerShell. Маршрутизация трафика для обеспечения высокой доступности приложений | Документация Майкрософт
+title: Маршрутизация трафика для обеспечения высокой доступности приложений — Azure PowerShell — диспетчер трафика
 description: Пример скрипта Azure PowerShell для маршрутизация трафика с целью обеспечения высокой доступности приложений.
 services: traffic-manager
 documentationcenter: traffic-manager
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: traffic-manager
 ms.date: 05/16/2017
 ms.author: allensu
-ms.openlocfilehash: 2f3b4ef9abdfae2c0400f54a90694db468470c94
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: 99768afa9de22767d73576143a5c747be6a3bef9
+ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73889494"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74013369"
 ---
 # <a name="route-traffic-for-high-availability-of-applications"></a>Маршрутизация трафика для обеспечения высокой доступности приложений
 

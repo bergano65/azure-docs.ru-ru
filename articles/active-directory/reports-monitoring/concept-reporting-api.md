@@ -3,7 +3,7 @@ title: Начало работы с API отчетов Azure AD | Докумен
 description: Как начать работу с API отчетов Azure Active Directory
 services: active-directory
 documentationcenter: ''
-author: cawrites
+author: MarkusVi
 manager: daveba
 editor: ''
 ms.assetid: 8813b911-a4ec-4234-8474-2eef9afea11e
@@ -14,15 +14,15 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 11/13/2018
-ms.author: chadam
+ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 28c64653ee0f9135e6da4c3768b89f9a0b25b2ef
-ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+ms.openlocfilehash: c841195cacd8c8d7698f69435572587bf04c3d67
+ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70127358"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74008359"
 ---
 # <a name="get-started-with-the-azure-active-directory-reporting-api"></a>Начало работы с API отчетов Azure Active Directory
 
@@ -34,14 +34,14 @@ API Microsoft Graph для отчетов Azure AD обеспечивает пр
 
 При возникновении проблем ознакомьтесь со статьей [Как получить поддержку для Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-troubleshooting-support-howto).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 Чтобы получить доступ к API отчетов с вмешательством пользователя или без него, потребуется:
 
 1. Назначение ролей (читателя сведений о безопасности, администратора безопасности, глобального администратора).
 2. Регистрация приложения
-3. предоставьте разрешения;
-4. Сбор параметров конфигурации
+3. Предоставление разрешений
+4. соберите параметры конфигурации.
 
 Подробные инструкции см. в [предварительных требованиях для доступа к API отчетов Azure Active Directory](howto-configure-prerequisites-for-reporting-api.md). 
 
@@ -68,7 +68,7 @@ API Microsoft Graph для отчетов Azure AD обеспечивает пр
 
 Подробные инструкции см. в статье о [получении данных с помощью API отчетов Azure AD с сертификатами](tutorial-access-api-with-certificates.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
  * [Предварительные требования для доступа к API отчетов](howto-configure-prerequisites-for-reporting-api.md) 
  * [Получение данных, используя API отчетов Azure AD с сертификатами](tutorial-access-api-with-certificates.md)

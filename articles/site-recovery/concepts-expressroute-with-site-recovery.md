@@ -1,5 +1,5 @@
 ---
-title: Сведения об использовании ExpressRoute и Azure Site Recovery для аварийного восстановления и миграции | Документация Майкрософт
+title: Об использовании ExpressRoute с Azure Site Recovery
 description: Сведения об использовании Azure ExpressRoute и службы Azure Site Recovery для аварийного восстановления и миграции.
 services: site-recovery
 author: mayurigupta13
@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 10/13/2019
 ms.author: mayg
-ms.openlocfilehash: 97aea824fac60f8bed71971a416f12e8df0e5e64
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.openlocfilehash: dcc5105fcf2ad7b6a9f0695b3086dc2956a76a50
+ms.sourcegitcommit: 44c2a964fb8521f9961928f6f7457ae3ed362694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72333052"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73954068"
 ---
 # <a name="azure-expressroute-with-azure-site-recovery"></a>Использование Azure ExpressRoute и Azure Site Recovery
 
@@ -58,7 +58,7 @@ Azure Site Recovery позволяет выполнять аварийное в�
 
 Репликацию виртуальных машин Azure можно выполнить в любой регион Azure, входящий в тот же географический кластер, как описано [здесь](../site-recovery/azure-to-azure-support-matrix.md#region-support). Если выбранный целевой регион Azure находится не в том же геополитическом регионе, что и исходный регион, вам потребуется ExpressRoute ценовой категории "Премиум". Дополнительные сведения см. в разделе [Регионы Azure с расположениями ExpressRoute в пределах геополитических регионов](../expressroute/expressroute-locations.md) и на странице [цен на ExpressRoute](https://azure.microsoft.com/pricing/details/expressroute/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 - Дополнительные сведения о [каналах ExpressRoute](../expressroute/expressroute-circuit-peerings.md).
 - Дополнительные сведения о [доменах маршрутизации ExpressRoute](../expressroute/expressroute-circuit-peerings.md#peeringcompare).
 - Дополнительные сведения о [расположениях ExpressRoute](../expressroute/expressroute-locations.md).

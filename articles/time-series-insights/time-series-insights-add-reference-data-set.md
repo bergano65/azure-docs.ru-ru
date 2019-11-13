@@ -1,5 +1,5 @@
 ---
-title: Как добавить эталонный набор данных в среду Аналитики временных рядов Azure | Документация Майкрософт
+title: Как добавить эталонный набор данных в вашу среду — "аналитика временных рядов Azure" | Документация Майкрософт
 description: Из этой статьи вы узнаете, как добавить эталонный набор данных в среду аналитики временных рядов Azure.
 ms.service: time-series-insights
 services: time-series-insights
@@ -11,12 +11,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 10/10/2019
 ms.custom: seodec18
-ms.openlocfilehash: 3aca1f64d469ce228a4b2738c72c0b4bc1956051
-ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
+ms.openlocfilehash: 31ae271a4ad6aa1370828640884a54eb2669804d
+ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72991275"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74012725"
 ---
 # <a name="create-a-reference-data-set-for-your-time-series-insights-environment-using-the-azure-portal"></a>Создание эталонного набора данных для среды Аналитики временных рядов с помощью портала Azure
 
@@ -94,11 +94,11 @@ ms.locfileid: "72991275"
 
 1. Для передачи данных нажмите кнопку **передачи строк**.
 
-    [Отправка![](media/add-reference-data-set/upload-rows.png)](media/add-reference-data-set/upload-rows.png#lightbox)
+    [Отправка ![](media/add-reference-data-set/upload-rows.png)](media/add-reference-data-set/upload-rows.png#lightbox)
 
     На странице вы увидите подтверждение завершенной загрузки и сообщение **Набор данных успешно отправлен**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Управление эталонными данными](time-series-insights-manage-reference-data-csharp.md) программными средствами.
 

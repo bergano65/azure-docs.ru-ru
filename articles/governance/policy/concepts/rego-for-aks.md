@@ -1,17 +1,14 @@
 ---
 title: Сведения о политике Azure для службы Kubernetes Azure
 description: Узнайте, как политика Azure использует Рего и Open Policy Agent для управления кластерами в службе Kubernetes Azure.
-author: DCtheGeek
-ms.author: dacoulte
 ms.date: 11/04/2019
 ms.topic: conceptual
-ms.service: azure-policy
-ms.openlocfilehash: 248f96b4385e97605986b53bd94fd83236ec8f08
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: dbac1ee762066fb59cd57c04839666026a2bd89b
+ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73480900"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73959800"
 ---
 # <a name="understand-azure-policy-for-azure-kubernetes-service"></a>Общие сведения о политике Azure для службы Kubernetes Azure
 
@@ -92,7 +89,7 @@ _Надстройка политики Azure_ для Kubernetes подключа
 
 ### <a name="installing-the-add-on"></a>Установка надстройки
 
-#### <a name="prerequisites"></a>Технические условия
+#### <a name="prerequisites"></a>предварительным требованиям
 
 Перед установкой надстройки в кластере AKS необходимо установить расширение предварительной версии. Этот шаг выполняется с Azure CLI:
 
@@ -126,7 +123,7 @@ _Надстройка политики Azure_ для Kubernetes подключа
 
 После завершения предварительных требований установите надстройку политики Azure в кластере AKS, которым вы хотите управлять.
 
-- Портал Azure
+- портале Azure
 
   1. Запустите службу AKS в портал Azure, щелкнув **все службы**, а затем выполнив поиск и выбрав **Kubernetes Services**.
 
@@ -143,7 +140,7 @@ _Надстройка политики Azure_ для Kubernetes подключа
      > [!NOTE]
      > Если кнопка **включить надстройка** неактивна, подписка еще не добавлена в предварительную версию. Необходимые шаги см. [в разделе согласие на предварительную версию](#opt-in-for-preview) .
 
-- Azure CLI
+- Интерфейс командной строки Azure
 
   ```azurecli-interactive
   # Log in first with az login if you're not using Cloud Shell
@@ -209,7 +206,7 @@ _Надстройка политики Azure_ для Kubernetes подключа
 
 Чтобы удалить надстройку политики Azure из кластера AKS, используйте либо портал Azure, либо Azure CLI.
 
-- Портал Azure
+- портале Azure
 
   1. Запустите службу AKS в портал Azure, щелкнув **все службы**, а затем выполнив поиск и выбрав **Kubernetes Services**.
 
@@ -223,7 +220,7 @@ _Надстройка политики Azure_ для Kubernetes подключа
 
      ![Отключите политику Azure для надстройки AKS](../media/rego-for-aks/disable-policy-add-on.png)
 
-- Azure CLI
+- Интерфейс командной строки Azure
 
   ```azurecli-interactive
   # Log in first with az login if you're not using Cloud Shell
@@ -254,11 +251,11 @@ _Надстройка политики Azure_ для Kubernetes подключа
 - Исключения и ошибки, обнаруженные надстройкой политики Azure во время установки агента при оценке политики
 - Число политик привратника, не установленных надстройкой политики Azure
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Просмотрите примеры в [примерах политики Azure](../samples/index.md).
 - См. дополнительные сведения о [структуре определения Политики Azure](definition-structure.md).
-- Изучите [сведения о действии политик](effects.md).
+- См. дополнительные сведения о [действиях политик](effects.md).
 - Узнайте, как [программно создавать политики](../how-to/programmatically-create.md).
 - Узнайте, как [получить данные о соответствии](../how-to/getting-compliance-data.md).
 - Узнайте, как [исправлять несоответствующие ресурсы](../how-to/remediate-resources.md).

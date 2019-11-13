@@ -9,12 +9,12 @@ ms.custom: vs-azure
 ms.topic: conceptual
 ms.date: 08/07/2019
 ms.author: ghogen
-ms.openlocfilehash: 9331f13bd85d9df0d47f8fa9d0964974764691f7
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 4cbc4044b5d1270cecd1a271d2a1db02801650dd
+ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73815106"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74012768"
 ---
 # <a name="add-key-vault-to-your-web-application-by-using-visual-studio-connected-services"></a>Добавление хранилища ключей в веб-приложение с помощью функции "Подключенные службы" в Visual Studio
 
@@ -22,7 +22,7 @@ ms.locfileid: "73815106"
 
 Подробные сведения об изменениях, вносимых функцией "Подключенные службы" в проект для поддержки Key Vault, можно получить из раздела [Что произошло с моим проектом ASP.NET при добавлении подключенной службы Key Vault в Visual Studio?](#how-your-aspnet-framework-project-is-modified) или [Что произошло с моим проектом ASP.NET Core при добавлении подключенной службы Key Vault в Visual Studio?](#how-your-aspnet-core-project-is-modified)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 - **Подписка Azure**. Если у вас нет подписки, зарегистрируйтесь, чтобы получить [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/).
 - **Visual studio 2019 версии 16,3 Предварительная версия 1** или более поздней или **Visual studio 2017 версии 15,7** с установленной рабочей нагрузкой **веб-разработки** . [Скачайте это приложение](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs).
@@ -135,6 +135,21 @@ ms.locfileid: "73815106"
 2. Выберите **Удалить группу ресурсов**.
 3. В поле **введите имя группы ресурсов:** введите имя группы ресурсов и выберите **Удалить**.
 
+## <a name="troubleshooting"></a>Устранение неполадок
+
+Если хранилище ключей выполняется на другом учетная запись Майкрософт, отличном от того, который вы выполнили в Visual Studio (например, хранилище ключей выполняется в рабочей учетной записи, но Visual Studio использует вашу личную учетную запись), в файле Program.cs появляется ошибка. , Visual Studio не сможет получить доступ к хранилищу ключей. Чтобы устранить эту проблему:
+
+1. Перейдите к [портал Azure](https://portal.azure.com) и откройте Key Vault.
+
+1. Выберите **политики доступа**, затем **Добавить политику доступа**и выберите учетную запись, с которой вы вошли в качестве участника.
+
+1. В Visual Studio выберите **файл** > **Параметры учетной записи**.
+Выберите **Добавить учетную запись** в разделе **все учетная запись** . Войдите, используя учетную запись, выбранную в качестве участника политики доступа.
+
+1. Выберите **сервис** > **Параметры**и найдите **проверку подлинности службы Azure**. Затем выберите учетную запись, которую вы только что добавили в Visual Studio.
+
+Теперь при отладке приложения Visual Studio подключается к учетной записи, в которой находится хранилище ключей.
+
 ## <a name="how-your-aspnet-core-project-is-modified"></a>Изменение проекта ASP.NET Core
 
 В этом разделе указаны точные изменения, внесенные в проект ASP.NET при добавлении подключенной службы Key Vault с помощью Visual Studio.
@@ -143,7 +158,7 @@ ms.locfileid: "73815106"
 
 Влияет на ссылки .NET на файл проекта и на ссылки на пакет NuGet.
 
-| Тип | Справочные материалы |
+| введите | Справочные материалы |
 | --- | --- |
 | NuGet | Microsoft.AspNetCore.AzureKeyVault.HostingStartup |
 
@@ -179,7 +194,7 @@ ms.locfileid: "73815106"
 
 Влияет на ссылки и `packages.config` в файле проекта .NET (ссылки NuGet).
 
-| Тип | Справочные материалы |
+| введите | Справочные материалы |
 | --- | --- |
 | .NET; NuGet | Microsoft.Azure.KeyVault |
 | .NET; NuGet | Microsoft.Azure.KeyVault.WebKey |
@@ -223,6 +238,6 @@ ms.locfileid: "73815106"
 - Создана группа ресурсов или использована существующая.
 - В указанной группе ресурсов создано хранилище ключей.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о Key Vault разработке см. в разделе [руководств разработчика Key Vault](key-vault-developers-guide.md).

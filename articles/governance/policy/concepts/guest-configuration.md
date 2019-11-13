@@ -1,27 +1,24 @@
 ---
 title: Изучение аудита содержимого виртуальных машин
 description: Узнайте, как политика Azure использует гостевую конфигурацию для аудита параметров на компьютере Azure.
-author: DCtheGeek
-ms.author: dacoulte
 ms.date: 11/04/2019
 ms.topic: conceptual
-ms.service: azure-policy
-ms.openlocfilehash: 0e5592f629646db3132ffd65fd56b1a0d5d5be39
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 5148ecb2f10a2ac517c5cf6c7f682a0f25808910
+ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73581431"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73959780"
 ---
 # <a name="understand-azure-policys-guest-configuration"></a>Общие сведения о гостевой конфигурации службы "Политика Azure"
 
-Помимо аудита и [устранения](../how-to/remediate-resources.md) ресурсов Azure, политика Azure может выполнять аудит параметров внутри компьютера. Проверка выполняется с помощью расширения гостевой конфигурации и клиента. Расширение через клиент проверяет такие параметры, как:
+Помимо аудита и [устранения](../how-to/remediate-resources.md) ресурсов Azure, политика Azure может выполнять аудит параметров внутри компьютера. Проверка выполняется с помощью расширения гостевой конфигурации и клиента. Расширение с помощью клиента проверяет такие параметры, как:
 
 - Конфигурация операционной системы
-- Конфигурация или присутствие приложения
+- конфигурация или наличие приложения;
 - Параметры среды
 
-В настоящее время Гостевая Конфигурация политики Azure выполняет аудит только параметров внутри компьютера. Конфигурации не применяются.
+В настоящее время гостевая конфигурация политики Azure выполняет аудит только параметров внутри компьютера. Конфигурации не применяются.
 
 ## <a name="extension-and-client"></a>Расширение и клиент
 
@@ -75,14 +72,14 @@ Register-AzResourceProvider -ProviderNamespace 'Microsoft.GuestConfiguration'
 
 В следующей таблице перечислены операционные системы, поддерживаемые в образах Azure:
 
-|ИЗДАТЕЛЬ|Имя|Версии|
+|Издатель|имя|Версии|
 |-|-|-|
 |Canonical|Сервер Ubuntu|14.04, 16.04, 18.04|
 |Credativ|Debian|8, 9|
 |Microsoft|Windows Server|2012 Datacenter, 2012 R2 Datacenter, 2016 Datacenter, 2019 Datacenter|
 |Microsoft|Клиент Windows|Windows 10|
 |OpenLogic|CentOS|7.3, 7.4, 7.5|
-|Red Hat|Red Hat Enterprise Linux.|7.4, 7.5|
+|Red Hat|Red Hat Enterprise Linux|7.4, 7.5|
 |SUSE|SLES|12 с пакетом обновления 3|
 
 > [!IMPORTANT]
@@ -159,7 +156,7 @@ Windows: `C:\Packages\Plugins\Microsoft.GuestConfiguration.ConfigurationforWindo
 
 Linux: `/var/lib/waagent/Microsoft.GuestConfiguration.ConfigurationforLinux-<version>/GCAgent/logs/dsc.log`
 
-Где `<version>` относится к номеру текущей версии.
+Где `<version>` ссылается на номер текущей версии.
 
 ### <a name="collecting-logs-remotely"></a>Удаленная сбор журналов
 
@@ -195,11 +192,11 @@ egrep -B $linesToIncludeBeforeMatch -A $linesToIncludeAfterMatch 'DSCEngine|DSCM
 - [Индекс выборок — конфигурация гостя](../samples/index.md#guest-configuration)
 - [Репозиторий с примерами политик Azure](https://github.com/Azure/azure-policy/tree/master/samples/GuestConfiguration)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Просмотрите примеры в [примерах политики Azure](../samples/index.md).
 - Изучите статью о [структуре определения Политики Azure](definition-structure.md).
-- Изучите [сведения о действии политик](effects.md).
+- См. дополнительные сведения о [действиях политик](effects.md).
 - Узнайте, как [программно создавать политики](../how-to/programmatically-create.md).
 - Узнайте, как [получить данные о соответствии](../how-to/getting-compliance-data.md).
 - Узнайте, как [исправлять несоответствующие ресурсы](../how-to/remediate-resources.md).

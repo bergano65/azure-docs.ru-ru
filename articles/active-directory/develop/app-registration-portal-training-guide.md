@@ -1,6 +1,7 @@
 ---
-title: Обучающие материалы по регистрации приложений на портале регистрации приложения — платформа Microsoft Identity | Службы
-description: Регистрация приложений в портал Azure для пользователей, знакомых с порталом регистрации приложений
+title: Переход с портала регистрации приложений на новый Регистрация приложений интерфейс в портал Azure
+titleSuffix: Microsoft identity platform
+description: Общие сведения о новом интерфейсе регистрации приложений в портал Azure
 services: active-directory
 documentationcenter: ''
 author: archieag
@@ -17,14 +18,14 @@ ms.author: aragra
 ms.reviewer: lenalepa, alamaral
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1974616c0331203a803e4f13a19297940fb5d42e
-ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
+ms.openlocfilehash: 0e9c09ce2d997c58e2725c411fff0b87a0f5071b
+ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2019
-ms.locfileid: "73905476"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74013025"
 ---
-# <a name="training-guide-using-app-registrations-in-the-azure-portal-instead-of-application-registration-portal"></a>Руководство по обучению. Использование Регистрация приложений в портал Azure вместо портала регистрации приложений
+# <a name="transitioning-from-application-registration-portal-to-the-new-app-registrations-experience-in-the-azure-portal"></a>Переход с портала регистрации приложений на новый Регистрация приложений интерфейс в портал Azure
 
 Новые возможности [Регистрация приложений](https://go.microsoft.com/fwlink/?linkid=2083908) в портал Azureе значительно улучшены. Если вы больше знакомы с порталом регистрации приложений (apps.dev.microsoft.com) для регистрации приложений и управления ими, которые называются старыми впечатлениями, это руководство поможет вам приступить к работе с новым интерфейсом.
 
@@ -83,7 +84,7 @@ ms.locfileid: "73905476"
 
 В новом интерфейсе **секреты приложения** были переименованы в **Сертификаты & секреты**. Кроме того, **открытые ключи** называются **сертификатами** и **паролями** , называемыми **секретами клиента**. Мы решили не выводить эту функцию вместе с новым интерфейсом по соображениям безопасности, поэтому вы больше не можете создать новую пару ключей.
 
-## <a name="platformsauthentication---reply-urlsredirect-uris"></a>Платформы, проверка подлинности — URL-адреса ответа и URI перенаправления
+## <a name="platformsauthentication-reply-urlsredirect-uris"></a>Платформы и аутентификация: URL-адреса ответа и URI перенаправления
 В старом интерфейсе приложение имело раздел "платформы" для веб-интерфейса, собственного веб-API, а также для настройки URL-адресов перенаправления, URL-адреса выхода и неявного потока.
 
 В новом интерфейсе URL-адреса ответов можно найти в разделе "Проверка подлинности приложения\'s". Кроме того, они называются URI перенаправления, и формат URI перенаправления изменился. Они должны быть связаны с типом приложения (веб-сайт или общедоступный клиент — Mobile и Desktop). [Подробнее](quickstart-configure-app-access-web-apis.md#add-redirect-uris-to-your-application)

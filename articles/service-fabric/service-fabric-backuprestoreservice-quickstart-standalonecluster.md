@@ -1,5 +1,5 @@
 ---
-title: Периодическое резервное копирование и восстановление в Azure Service Fabric | Документация Майкрософт
+title: Периодическое резервное копирование и восстановление в автономной Service Fabric Azure
 description: Использование функции периодического резервного копирования и восстановления Service Fabric для включения периодического резервного копирования данных приложения.
 services: service-fabric
 documentationcenter: .net
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 5/24/2019
 ms.author: hrushib
-ms.openlocfilehash: b949a0edff7ed6341d10518bc1c38afe2f7efad0
-ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
+ms.openlocfilehash: 559f6cce7044d57c0a17fc3fe17f1c61f710913a
+ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73929180"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74013335"
 ---
 # <a name="periodic-backup-and-restore-in-azure-service-fabric"></a>Периодическое резервное копирование и восстановление в Azure Service Fabric
 > [!div class="op_single_selector"]

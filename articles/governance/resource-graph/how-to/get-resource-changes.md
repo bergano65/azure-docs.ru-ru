@@ -1,18 +1,14 @@
 ---
 title: Получение данных об изменении ресурса
 description: Узнайте, как определить, когда ресурс был изменен, и получить список измененных свойств.
-services: resource-graph
-author: DCtheGeek
-ms.author: dacoulte
 ms.date: 10/09/2019
 ms.topic: conceptual
-ms.service: resource-graph
-ms.openlocfilehash: 44e7bbde40dbd4b79a6ce3735ab5a1ac81421d3b
-ms.sourcegitcommit: 6c2c97445f5d44c5b5974a5beb51a8733b0c2be7
+ms.openlocfilehash: 25d900276518e51e80021d1fdb1ac80945eb2d5c
+ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73622560"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73958760"
 ---
 # <a name="get-resource-changes"></a>Получение данных об изменении ресурса
 
@@ -288,7 +284,7 @@ POST https://management.azure.com/providers/Microsoft.ResourceGraph/resourceChan
 
 Чтобы сравнить результаты, либо используйте свойство **Changes** в **ресаурцечанжес** , либо оцените часть **содержимого** каждого моментального снимка в **ресаурцечанжедетаилс** , чтобы определить разницу. При сравнении моментальных снимков **Метка времени** всегда отображается в виде разницы, несмотря на ожидаемую.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - См. язык, используемый в [начальных запросах](../samples/starter.md).
 - См. Дополнительные сведения о расширенном использовании в [расширенных запросах](../samples/advanced.md).

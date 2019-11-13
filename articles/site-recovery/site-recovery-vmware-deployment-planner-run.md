@@ -1,5 +1,5 @@
 ---
-title: Запустите Планировщик развертывания аварийного восстановления VMware с помощью Azure Site Recovery
+title: Запустите Планировщик развертывания аварийного восстановления VMware с Azure Site Recovery
 description: В этой статье описано, как запустить Планировщик развертывания Azure Site Recovery для аварийного развертывания VMware в Azure.
 author: mayurigupta13
 manager: rochakm
@@ -7,14 +7,14 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 4/15/2019
 ms.author: mayg
-ms.openlocfilehash: 611213f6cf0f51a8b6c6f7f89a795b2daa94a38a
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 044e5c5df8e0af67e4717b864de1e31fc2520408
+ms.sourcegitcommit: 44c2a964fb8521f9961928f6f7457ae3ed362694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73693209"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73953282"
 ---
-# <a name="run-the-azure-site-recovery-deployment-planner-for-vmware-disaster-recovery-to-azure"></a>Запуск Планировщика развертывания Azure Site Recovery для аварийного восстановления VMware в Azure
+# <a name="run-the-deployment-planner-for-vmware-disaster-recovery"></a>Запуск Планировщик развертывания аварийного восстановления VMware
 В этой статье приведены рекомендации по использованию планировщика развертывания Azure Site Recovery в сценариях рабочих развертываний виртуальных машин VMware в Azure.
 
 
@@ -65,7 +65,7 @@ ms.locfileid: "73693209"
 ASRDeploymentPlanner.exe -Operation StartProfiling /?
 ```
 
-| Имя параметра | Description (Описание) |
+| Имя параметра | ОПИСАНИЕ |
 |---|---|
 | -Operation | StartProfiling |
 | -Server | Полное доменное имя или IP-адрес сервера vCenter Server или узла vSphere ESXi, профилирование виртуальных машин которого необходимо выполнить.|
@@ -80,7 +80,7 @@ ASRDeploymentPlanner.exe -Operation StartProfiling /?
 |-Port|(Необязательно.) Номер порта для подключения к узлу vCenter или ESXi. По умолчанию используется порт 443.|
 |-Protocol| (Необязательно.) Указывает протокол (HTTP или HTTPS) для подключения к vCenter. По умолчанию используется протокол HTTPS.|
 | -StorageAccountName | (Необязательно.) Имя учетной записи хранения, используемой для определения объема пропускной способности, доступной для репликации данных из локальной среды в Azure. Программа отправляет тестовые данные в эту учетную запись хранения, чтобы рассчитать пропускную способность. Учетная запись хранения должна относиться к универсальному типу версии 1 (GPv1). |
-| -StorageAccountKey | (Необязательно.) Ключ, используемый для доступа к учетной записи хранения. Перейдите на портал Azure и выберите "Учетные записи хранения" > <*имя_учетной записи_хранения*> > "Параметры" > "Ключи доступа" > Key1. |
+| -StorageAccountKey | (Необязательно.) Ключ, используемый для доступа к учетной записи хранения. Перейдите на портал Azure и выберите "Учетные записи хранения > <*имя_учетной записи_хранения* > > Параметры > Ключи доступа > Key1". |
 | -Environment | (необязательно) Это целевая среда учетной записи хранения Azure. Этот параметр может иметь одно из трех значений: AzureCloud, AzureUSGovernment, AzureChinaCloud. Значение по умолчанию — AzureCloud. Используйте параметр, если целевой регион Azure — Azure для государственных организаций США или Azure Китая (21Vianet). |
 
 
@@ -145,7 +145,7 @@ ASRDeploymentPlanner.exe -Operation StartProfiling -Virtualization VMware -Direc
 
 `ASRDeploymentPlanner.exe -Operation GenerateReport /?`
 
-|Имя параметра | Description (Описание) |
+|Имя параметра | ОПИСАНИЕ |
 |-|-|
 | -Operation | Создание отчета. |
 | -Server |  Полное доменное имя или IP-адрес сервера vCenter Server или сервера vSphere (имя или IP-адрес должны совпадать с используемыми во время профилирования), где расположены виртуальные машины, для которых необходимо создать отчет. Обратите внимание, если профилирование выполняется на сервере vCenter Server, вы не можете использовать для создания отчетов сервер vSphere (и наоборот).|
@@ -257,7 +257,7 @@ ASRDeploymentPlanner.exe -Operation GenerateReport -Virtualization VMware  -Dire
 
 `ASRDeploymentPlanner.exe -Operation GetThroughput /?`
 
-|Имя параметра | Description (Описание) |
+|Имя параметра | ОПИСАНИЕ |
 |-|-|
 | -Operation | Оценка пропускной способности. |
 |-Virtualization|Укажите тип виртуализации (VMware или Hyper-V).|
@@ -290,5 +290,5 @@ ASRDeploymentPlanner.exe -Operation GetThroughput -Directory  E:\vCenter1_Profil
 >
 >  4. Измените параметры Site Recovery на сервере обработки, чтобы [увеличить объем пропускной способности сети, необходимой для репликации](./site-recovery-plan-capacity-vmware.md#control-network-bandwidth).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 * [Анализ созданного отчета](site-recovery-vmware-deployment-planner-analyze-report.md)

@@ -1,17 +1,14 @@
 ---
 title: Создание групп управления для Организации ресурсов. Управление Azure
 description: Узнайте, как создавать группы управления Azure для управления множеством ресурсов с помощью портала, Azure PowerShell и Azure CLI.
-author: rthorn17
-ms.service: governance
 ms.date: 04/05/2019
-ms.author: rithorn
 ms.topic: conceptual
-ms.openlocfilehash: 17154ea72a49ff48a482b1149eeecf0229fcccd7
-ms.sourcegitcommit: 1c2659ab26619658799442a6e7604f3c66307a89
+ms.openlocfilehash: 335dd8f7f3a9ec20c2b7740e4ec97454489027f6
+ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72254690"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73960197"
 ---
 # <a name="create-management-groups-for-resource-organization-and-management"></a>Создание групп управления для упорядочения ресурсов и управления ими
 
@@ -27,7 +24,7 @@ ms.locfileid: "72254690"
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 
-1. Выберите **все службы** > **Управление + система управления**.
+1. Выберите **все службы** > **управления и управление**.
 
 1. Выберите **Управление затратами + выставление счетов**
 
@@ -91,7 +88,7 @@ az account management-group create --name Contoso --display-name 'Contoso Group'
 az account management-group create --name ContosoSubGroup --parent Contoso
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о группах управления:
 

@@ -1,17 +1,14 @@
 ---
 title: Определение причин несоответствия требованиям
 description: Если ресурс не соответствует требованиям, существует множество возможных причин. Узнайте, что привело к несоответствию.
-author: DCtheGeek
-ms.author: dacoulte
 ms.date: 04/26/2019
 ms.topic: conceptual
-ms.service: azure-policy
-ms.openlocfilehash: 556a8029b9b5f831ac3ace7ed0fcc474fb2e262e
-ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
+ms.openlocfilehash: 6f113080ab84fe7d159766e6543ff61b28f4ead2
+ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71978111"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73959617"
 ---
 # <a name="determine-causes-of-non-compliance"></a>Определение причин несоответствия требованиям
 
@@ -84,7 +81,7 @@ ms.locfileid: "71978111"
 
 Следующая матрица сопоставляет каждую возможную _причину_ с ответственным [условием](../concepts/definition-structure.md#conditions) в определении политики:
 
-|`Reason` | Условие |
+|Причина | Условие |
 |-|-|
 |Текущее значение должно содержать целевое значение в качестве ключа. |containsKey или **не** нотконтаинскэй |
 |Текущее значение должно содержать целевое значение. |Contains или **Not** notContains |
@@ -114,7 +111,7 @@ ms.locfileid: "71978111"
 
 У вас также может не быть доступа для входа на виртуальную машину напрямую, но необходимо сообщить о том, почему виртуальная машина не _соответствует требованиям_.
 
-### <a name="azure-portal"></a>портала Azure
+### <a name="azure-portal"></a>портале Azure
 
 Сначала выполните действия, описанные в предыдущем разделе, чтобы просмотреть сведения о соответствии политике.
 
@@ -124,7 +121,7 @@ ms.locfileid: "71978111"
 
 На странице **назначения гостей** отображаются все доступные сведения о соответствии. Каждая строка в представлении представляет собой вычисление, выполненное внутри компьютера. В столбце **Причина** отображается фраза, описывающая, почему назначение гостя не _соответствует требованиям_ . Например, при аудите политик паролей в столбце **Причина** будет отображаться текст, включая текущее значение для каждого параметра.
 
-![Просмотрите сведения о соответствии.](../media/determine-non-compliance/guestconfig-compliance-details.png)
+![Просмотр сведений о соответствии](../media/determine-non-compliance/guestconfig-compliance-details.png)
 
 ### <a name="azure-powershell"></a>Azure PowerShell
 
@@ -191,7 +188,7 @@ Audit that an application is installed inside Windows VMs.                Compli
 Audit that an application is installed inside Windows VMs                 NonCompliant                       02/09/2019 09:00:20 AM 02/09/2019 09:00:23 AM VM01  ../15ze1...
 ```
 
-## <a name="a-namechange-historychange-history-preview"></a>Журнал @no__t 0Change (Предварительная версия)
+## <a name="a-namechange-historychange-history-preview"></a>Журнал изменений <a name="change-history"/>(Предварительная версия)
 
 В рамках новой **общедоступной предварительной версии**История изменений за последние 14 дней доступна для всех ресурсов Azure, поддерживающих [полное удаление режима](../../../azure-resource-manager/complete-mode-deletion.md). Журнал изменений содержит подробные сведения о том, когда было обнаружено изменение и _отличия между визуальными элементами_ для каждого изменения. Обнаружение изменений активируется при добавлении, удалении или изменении свойств диспетчер ресурсов.
 
@@ -213,11 +210,11 @@ _Отличия между визуальными элементами_ позв
 
 Данные журнала изменений предоставляются [графом ресурсов Azure](../../resource-graph/overview.md). Сведения о запросе этих сведений за пределами портал Azure см. в разделе [Получение изменений ресурсов](../../resource-graph/how-to/get-resource-changes.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 - Просмотрите примеры в [примерах политики Azure](../samples/index.md).
 - Изучите статью о [структуре определения Политики Azure](../concepts/definition-structure.md).
-- Изучите [сведения о действии политик](../concepts/effects.md).
+- См. дополнительные сведения о [действиях политик](../concepts/effects.md).
 - Узнайте, как [программно создавать политики](programmatically-create.md).
 - Узнайте, как [получить данные о соответствии](getting-compliance-data.md).
 - Узнайте, как [исправлять несоответствующие ресурсы](remediate-resources.md).

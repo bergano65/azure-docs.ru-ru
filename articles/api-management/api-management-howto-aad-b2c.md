@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
-ms.openlocfilehash: 62657134775d21ad6aabdf8f02a1e001de0a6094
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.openlocfilehash: 55a9cbcfdb9766c6adc6d10f975fa4d074ec3aaf
+ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73176843"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74011664"
 ---
 # <a name="how-to-authorize-developer-accounts-by-using-azure-active-directory-b2c-in-azure-api-management"></a>Как авторизовать учетные записи разработчиков с помощью Azure Active Directory B2C в службе управления API Azure
 
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
 
 Azure Active Directory B2C — это облачное решение, позволяющее управлять удостоверениями в веб-приложениях и мобильных приложениях, с которыми взаимодействуют клиенты. Его можно использовать для управления доступом к порталу разработчика. В этом руководстве объясняется, как настроить службу управления API для интеграции с Azure Active Directory B2C. Сведения о предоставлении доступа к порталу разработчика с помощью классической службы Azure Active Directory см. в статье [Авторизация учетных записей разработчиков с помощью Azure Active Directory в управлении API Azure].
 
@@ -87,11 +87,11 @@ Azure Active Directory B2C — это облачное решение, позв
 
 ## <a name="developer-portal---add-azure-ad-b2c-account-authentication"></a>Портал разработчика. Добавление проверки подлинности учетной записи Azure AD B2C
 
-Чтобы включить вход с помощью AAD B2C на портале разработчика, необходимо добавить мини-приложение " **кнопки OAuth** " в форму входа.
+На портале разработчика для мини-приложения " **кнопки OAuth** " можно войти с помощью AAD B2C. Мини-приложение уже включено на странице входа в содержимое портала разработчика по умолчанию.
 
 ![Мини-приложение кнопок AAD](./media/api-management-howto-aad/portal-oauth-widget.png)
 
-Несмотря на то, что новая учетная запись будет автоматически создана при входе нового пользователя с AAD B2C, можно добавить то же мини-приложение в форму регистрации.
+Несмотря на то что новая учетная запись будет создана автоматически при входе нового пользователя с AAD B2C, вы можете добавить это же мини-приложение на страницу регистрации.
 
 ## <a name="legacy-developer-portal---how-to-sign-up-with-azure-ad-b2c"></a>Устаревший портал разработчика. Регистрация с помощью Azure AD B2C
 
@@ -110,13 +110,13 @@ Azure Active Directory B2C — это облачное решение, позв
    > [!NOTE]
    > Если Azure Active Directory B2C является единственным активным параметром на вкладке **Удостоверения** на портале издателя, вы будете сразу перенаправлены к политике регистрации.
 
-   ![Портал разработчика][api-management-howto-aad-b2c-dev-portal-b2c-options]
+   ![Developer portal][api-management-howto-aad-b2c-dev-portal-b2c-options]
 
    После завершения регистрации вы будете перенаправлены обратно на портал разработчика. Теперь вы вошли на портал разработчика вашего экземпляра службы управления API.
 
     ![Регистрация завершена][api-management-registration-complete]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 *  [Azure Active Directory B2C: регистрация и вход пользователей в приложения]
 *  [Azure Active Directory B2C: расширяемая инфраструктура политик]

@@ -1,17 +1,14 @@
 ---
 title: Устранение распространенных ошибок
 description: Узнайте, как устранять проблемы с запросом ресурсов Azure с помощью графа ресурсов Azure.
-author: DCtheGeek
-ms.author: dacoulte
 ms.date: 10/18/2019
 ms.topic: troubleshooting
-ms.service: resource-graph
-ms.openlocfilehash: 030fe26a0aa8fc4ed855fb7744e576366f4fd2e2
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: e8f42650265b1ca400731365203408eeb22a4e4c
+ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72389701"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73958519"
 ---
 # <a name="troubleshoot-errors-using-azure-resource-graph"></a>Устранение ошибок с помощью графа ресурсов Azure
 
@@ -33,7 +30,7 @@ ms.locfileid: "72389701"
 
 Azure CLI и PowerShell пересылают только первые 1000 подписки на граф ресурсов Azure. REST API для графа ресурсов Azure принимает максимальное число подписок для выполнения запроса.
 
-#### <a name="resolution"></a>Разрешение
+#### <a name="resolution"></a>Способы устранения:
 
 Пакетные запросы для запроса с подмножеством подписок должны оставаться в пределах подписки 1000. Решение использует параметр **Subscription** в PowerShell.
 
@@ -70,9 +67,9 @@ $response
 
 Граф ресурсов Azure REST API поддерживает только `Content-Type` **приложения/JSON**. Некоторые инструменты или агенты по умолчанию имеют **текст/Plain**, который не поддерживается REST API.
 
-#### <a name="resolution"></a>Разрешение
+#### <a name="resolution"></a>Способы устранения:
 
-Убедитесь, что средство или агент, которые вы используете для запроса графа ресурсов Azure, имеют заголовок REST API `Content-Type`, настроенный для **Application/JSON**.
+Убедитесь, что средство или агент, которые вы используете для запроса графа ресурсов Azure, имеют заголовок REST API `Content-Type` настроен для **Application/JSON**.
 
 ### <a name="rest-403"></a>Сценарий: нет разрешения на чтение для всех подписок в списке
 
@@ -84,11 +81,11 @@ $response
 
 Если у клиента нет разрешения на чтение для всех предоставленных подписок, запрос отклоняется из-за отсутствия соответствующих прав доступа.
 
-#### <a name="resolution"></a>Разрешение
+#### <a name="resolution"></a>Способы устранения:
 
 Включите по крайней мере одну подписку в список подписок, чтобы у клиента, выполняющего запрос, был по крайней мере доступ для чтения. Дополнительные сведения см. [в статье разрешения в графе ресурсов Azure](../overview.md#permissions-in-azure-resource-graph).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 

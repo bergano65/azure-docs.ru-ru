@@ -3,7 +3,7 @@ title: Устранение неполадок с отчетами об ошиб
 description: Узнайте, как устранить ошибки входа с помощью отчетов Azure Active Directory на портале Azure
 services: active-directory
 documentationcenter: ''
-author: cawrites
+author: MarkusVi
 manager: daveba
 editor: ''
 ms.service: active-directory
@@ -11,15 +11,15 @@ ms.topic: conceptual
 ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 11/13/2018
-ms.author: chadam
+ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 692fd2034fb70feffe02320eea5cdb9a3d163475
-ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
+ms.openlocfilehash: ec5fe7f62e8537a7f687202d365eb37d43b48b78
+ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72819697"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74008064"
 ---
 # <a name="how-to-troubleshoot-sign-in-errors-using-azure-active-directory-reports"></a>Практическое руководство. Устранение ошибок входа с помощью отчетов Azure Active Directory
 
@@ -32,11 +32,11 @@ ms.locfileid: "72819697"
 
 Кроме того, отчет о событиях входа также помогает устранить ошибки входа для пользователей в вашей организации. В этом руководстве вы узнаете, как найти сбой входа в отчете о событиях входа и использовать его, чтобы понять основную причину сбоя.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 Вам необходимы:
 
-* Клиент Azure AD с лицензией Premium (P1/P2). Дополнительные сведения об обновлении выпуска Azure Active Directory см. в статье [Приступая к работе с Azure Active Directory Premium](../fundamentals/active-directory-get-started-premium.md) .
+* Клиент Azure AD с лицензией Premium (P1/P2). Чтобы обновить выпуск Azure Active Directory, ознакомьтесь со статьей [Регистрация для работы с выпусками Azure Active Directory Premium](../fundamentals/active-directory-get-started-premium.md).
 * Пользователь, являющийся **глобальным администратором**, **администратором безопасности**, **средством чтения безопасности**или ролью **читателя отчетов** для клиента. а также любой пользователь, который может получить доступ к своим собственным событиям входов. 
 
 ## <a name="troubleshoot-sign-in-errors-using-the-sign-ins-report"></a>Устранение ошибок входа с помощью отчета о событиях входа
@@ -61,7 +61,7 @@ ms.locfileid: "72819697"
 
 8. Если ничего не поможет или проблема будет повторяться, несмотря на выполнение рекомендуемых действий, [отправьте запрос в службу поддержки](../fundamentals/active-directory-troubleshooting-support-howto.md), следуя инструкциям на вкладке **Устранение неполадок и поддержка**. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Справочник по кодам ошибок входов](reference-sign-ins-error-codes.md)
 * [Обзор отчета о событиях входа](concept-sign-ins.md)

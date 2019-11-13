@@ -1,28 +1,27 @@
 ---
-title: Исключение дисков из репликации при настройке аварийного восстановления с помощью службы Azure Site Recovery | Документация Майкрософт
+title: Исключение дисков из репликации при аварийном восстановлении с помощью Azure Site Recovery
 description: В статье объясняется, как исключать диски виртуальных машин из репликации во время аварийного восстановления в Azure.
 author: mayurigupta13
 manager: rochakm
 ms.service: site-recovery
-services: site-recovery
 ms.topic: conceptual
-ms.date: 01/19/2019
+ms.date: 11/12/2019
 ms.author: mayg
-ms.openlocfilehash: f86ded99ef5280a4e6929c39a9fd323d1b61f6f0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 12304067e1a92559c2313fd7382f271249a8c784
+ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60773935"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73961440"
 ---
 # <a name="exclude-disks-from-replication"></a>Исключение дисков из репликации
 В этой статье описывается, как исключать диски из репликации. Благодаря этому можно оптимизировать использование пропускной способности при репликации или же ресурсы целевой стороны, используемые такими дисками.
 
 ## <a name="supported-scenarios"></a>Поддерживаемые сценарии использования.
 
-**Возможность** | **VMware в VMware** | **Hyper-V в Azure** | **Из Azure в Azure**| **Из Hyper-V в Hyper-V** 
+**Компонент** | **VMware в VMware** | **Hyper-V в Azure** | **Из Azure в Azure**| **Из Hyper-V в Hyper-V** 
 --|--|--|--|--
-Исключение диска | Да | Да | Нет | Нет
+Исключение диска | Yes | Yes | Нет | Нет
 
 ## <a name="why-exclude-disks-from-replication"></a>Зачем исключать диски из репликации
 Исключение дисков из репликации часто бывает необходимо:
@@ -60,7 +59,7 @@ ms.locfileid: "60773935"
 - Диск с файлом tempdb SQL Server.
 - Диск с файлом подкачки (pagefile.sys).
 
-## <a name="example-1-exclude-the-sql-server-tempdb-disk"></a>Пример 1 Исключение диска с файлом tempdb SQL Server
+## <a name="example-1-exclude-the-sql-server-tempdb-disk"></a>Пример 1. Исключение диска с файлом tempdb SQL Server
 Рассмотрим виртуальную машину SQL Server с диском tempdb, который может быть исключен из репликации.
 
 Имя виртуального диска — SalesDB.
@@ -73,7 +72,7 @@ ms.locfileid: "60773935"
 DB-Disk0-OS | Диск 0 | C:\ | Диск операционной системы
 DB-Disk1| Диск 1 | D:\ | Системная база данных SQL и база данных пользователя Database1
 DB-Disk 2 (исключенный из репликации) | Диск 2 | E:\ | Временные файлы
-DB-Disk 3 (исключенный из репликации) | Диск 3 | F:\ | База данных tempdb SQL (путь к папке — F:\MSSQL\Data\) <br /> <br />Запишите путь к папке перед выполнением отработки отказа.
+DB-Disk 3 (исключенный из репликации) | Диск 3 | F:\ | База данных tempdb SQL (путь к папке — F:\MSSQL\Data\) <br /> <br />Запишите путь к папке перед отработкой отказа.
 DB-Disk4 | Диск 4 |G:\ |База данных пользователя Database2
 
 Так как поток данных на двух дисках виртуальной машины является временным, при защите виртуальной машины SalesDB исключите диски 2 и 3 из репликации. Эти диски не будут реплицироваться в Azure Site Recovery. Эти диски не будут присутствовать в виртуальной машине, перенесенной в Azure при отработке отказа.
@@ -135,7 +134,7 @@ DB-Disk4 | Диск 4 |G:\ |База данных пользователя Data
 Обратитесь к следующим рекомендациям Azure для диска временного хранилища:
 
 * [Использование SSD на виртуальных машинах Azure для хранения базы данных TempDB SQL Server и расширений буферного пула](https://blogs.technet.microsoft.com/dataplatforminsider/2014/09/25/using-ssds-in-azure-vms-to-store-sql-server-tempdb-and-buffer-pool-extensions/)
-* [Рекомендации по оптимизации производительности SQL Server на виртуальных машинах Azure](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-performance)
+* [Рекомендации по оптимизации производительности SQL Server в виртуальных машинах Azure](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-performance)
 
 ## <a name="failback-from-azure-to-an-on-premises-host"></a>Восстановление размещения (из Azure на локальный узел)
 Теперь разберемся, какие диски будут реплицированы при выполнении отработки отказа из Azure в локальный узел Hyper-V. Диски, созданные в Azure вручную, не будут реплицированы. Например, если вы выполните отработку отказа трех дисков и создадите два диска непосредственно на виртуальных машинах Azure, то восстановление размещения будет выполнено только для трех дисков, задействованных при отработке отказа. Восстановление размещения после сбоя или повторная защита из локальной среды в Azure недоступны для дисков, созданных вручную. Диски временного хранилища также не реплицируются в локальные узлы.
@@ -163,7 +162,7 @@ DB-Disk2 (исключенный из репликации) | Диск 2 | E:\ 
 DB-Disk3 (исключенный из репликации) | Диск 3 | F:\ | База данных tempdb SQL (путь к папке — F:\MSSQL\Data\)
 DB-Disk4 | Диск 4 | G:\ | База данных пользователя Database2
 
-## <a name="example-2-exclude-the-paging-file-pagefilesys-disk"></a>Пример 2 Исключение диска с файлом подкачки (pagefile.sys)
+## <a name="example-2-exclude-the-paging-file-pagefilesys-disk"></a>Пример 2. Исключение диска с файлом подкачки (pagefile.sys)
 
 Рассмотрим виртуальную машину с диском с файлом подкачки, который можно исключить из репликации.
 Есть два способа.
@@ -227,5 +226,5 @@ DB-Disk3 | Диск 3 | F:\ | Пользовательские данные 2
 
 ![Параметры файла подкачки на виртуальной машине Azure](./media/hyper-v-exclude-disk/pagefile-on-Azure-vm-after-failover-2.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 Настроив и запустив развертывание, вы можете ознакомиться с [дополнительными сведениями](site-recovery-failover.md) о различных типах обработки отказа.

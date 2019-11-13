@@ -1,5 +1,5 @@
 ---
-title: Управление сетевыми интерфейсами при аварийном восстановлении из локальной среды в Azure с помощью Azure Site Recovery | Документация Майкрософт
+title: Управление сетевыми адаптерами для локального аварийного восстановления с помощью Azure Site Recovery
 description: В статье описано, как управлять сетевыми интерфейсами при аварийном восстановлении из локальной среды в Azure с помощью Azure Site Recovery
 author: mayurigupta13
 manager: rochakm
@@ -7,14 +7,15 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 4/9/2019
 ms.author: mayg
-ms.openlocfilehash: 5d5dd7bc3f6b60c2f9d7c2179f2bd356ca101dc4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2a4752b501e40f9e8a4f3bc82cb2533c11f9e526
+ms.sourcegitcommit: 44c2a964fb8521f9961928f6f7457ae3ed362694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61471780"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73954593"
 ---
-# <a name="manage-virtual-machine-network-interfaces-for-on-premises-disaster-recovery-to-azure"></a>Управление сетевыми интерфейсами виртуальных машин при аварийном восстановлении из локальной среды в Azure
+# <a name="manage-vm-network-interfaces-for-on-premises-disaster-recovery-to-azure"></a>Управление сетевыми интерфейсами виртуальной машины для локального аварийного восстановления в Azure
+
 К виртуальной машине в Azure должен быть подключен по крайней мере один сетевой интерфейс. К виртуальной машине можно подключить столько сетевых интерфейсов, сколько поддерживает ее размер.
 
 По умолчанию первый сетевой интерфейс, подключенный к виртуальной машине, определяется в качестве ее основного сетевого интерфейса. Все остальные сетевые интерфейсы в виртуальной машине считаются дополнительными. Кроме того, по умолчанию весь исходящий трафик виртуальной машины отправляется с IP-адреса, назначенного основной IP-конфигурации основного сетевого интерфейса.
@@ -67,5 +68,5 @@ ms.locfileid: "61471780"
 
 6. Щелкните **Сохранить**, чтобы сохранить все изменения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
   [Узнайте больше](../virtual-network/virtual-network-network-interface-vm.md) о сетевых интерфейсах для виртуальных машин Azure.

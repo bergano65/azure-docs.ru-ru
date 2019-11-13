@@ -1,17 +1,14 @@
 ---
 title: Настройка среды для роли "Оператор схем"
 description: Узнайте, как настроить среду Azure для использования с помощью встроенной роли "Управление доступом на основе ролей" (RBAC).
-author: DCtheGeek
-ms.author: dacoulte
 ms.date: 08/26/2019
 ms.topic: conceptual
-ms.service: blueprints
-ms.openlocfilehash: 8c6d3a4d30d8b0b5ec361584846f31a7714b43ec
-ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
+ms.openlocfilehash: f4b999354e31afed56a3a5f5a35a80887292e83f
+ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71978468"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73960396"
 ---
 # <a name="configure-your-environment-for-a-blueprint-operator"></a>Настройка среды для роли "Оператор схем"
 
@@ -37,7 +34,7 @@ ms.locfileid: "71978468"
 
 1. В качестве **оператора**схемы [назначьте](../create-blueprint-portal.md#assign-a-blueprint) схему, которая использует новое назначенное пользователем управляемое удостоверение.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 - Ознакомьтесь со сведениями о [жизненном цикле схем](../concepts/lifecycle.md).
 - Узнайте, как использовать [статические и динамические параметры](../concepts/parameters.md).

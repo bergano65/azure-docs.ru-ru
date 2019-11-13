@@ -154,6 +154,8 @@
         - name: "Развертывание\_— REST API"
           displayName: deployment
           href: resource-group-template-deploy-rest.md
+        - name: Развертывание "что если"
+          href: template-deploy-what-if.md
         - name: Повторное развертывание при возникновении ошибки
           displayName: rollback
           href: rollback-on-error.md

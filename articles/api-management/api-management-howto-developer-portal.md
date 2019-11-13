@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
-ms.openlocfilehash: 1eef7b6505c4800acbe8aa69cf6f17eecc503aed
-ms.sourcegitcommit: 018e3b40e212915ed7a77258ac2a8e3a660aaef8
+ms.openlocfilehash: 6bf8c8690977ef1036c853d8c1c01a3a366b50df
+ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73796021"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74011478"
 ---
 # <a name="azure-api-management-developer-portal-overview"></a>Обзор портала разработчика управления API Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "73796021"
 
 > [!WARNING]
 > В настоящее время выполняется развертывание нового портала разработчика в службах управления API.
-> Если служба была только что создана или является службой уровня разработчика, у вас уже должна быть последняя версия. В противном случае могут возникнуть проблемы (например, с помощью функции публикации). Развертывание функций будет завершено в понедельник 11 ноября 2019.
+> Если служба была только что создана или является службой уровня разработчика, у вас уже должна быть последняя версия. В противном случае могут возникнуть проблемы (например, с помощью функции публикации). Ожидается, что развертывание функции будет завершено до пятницы ноября 22, 2019.
 >
 > [Узнайте, как выполнить миграцию из предварительной версии в общедоступную версию](#preview-to-ga) портала разработчика.
 
@@ -109,15 +109,15 @@ API описан в [разделе вики репозитория GitHub][2]. 
 
 ### <a name="does-the-portal-support-azure-resource-manager-templates-andor-is-it-compatible-with-api-management-devops-resource-kit"></a>Поддерживает ли портал Azure Resource Manager шаблоны и/или является ли он совместимым с набором средств API Management DevOps Resource Kit?
 
-Нет.
+Нет
 
 ### <a name="do-i-need-to-enable-additional-vnet-connectivity-for-the-managed-portal-dependencies"></a>Нужно ли включать дополнительное подключение к виртуальной сети для зависимостей управляемого портала?
 
-Нет.
+Нет
 
 ### <a name="im-getting-a-cors-error-when-using-the-interactive-console-what-should-i-do"></a>При использовании интерактивной консоли я получаю ошибку CORS. Что делать?
 
-Интерактивная консоль выполняет клиентский запрос API из браузера. Проблему CORS можно устранить, добавив [политику CORS](https://docs.microsoft.com/azure/api-management/api-management-cross-domain-policies#CORS) в API-интерфейсы. Можно указать все параметры вручную или использовать `*` подстановочных знаков. Например:
+Интерактивная консоль выполняет клиентский запрос API из браузера. Проблему CORS можно устранить, добавив [политику CORS](https://docs.microsoft.com/azure/api-management/api-management-cross-domain-policies#CORS) в API-интерфейсы. Можно указать все параметры вручную или использовать `*` подстановочных знаков. Например,
 
 ```XML
 <cors>
@@ -143,7 +143,7 @@ API описан в [разделе вики репозитория GitHub][2]. 
 </cors>
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о новом портале разработчика:
 

@@ -1,24 +1,24 @@
 ---
-title: Сопоставление виртуальных сетей между двумя регионами Azure в Azure Site Recovery | Документация Майкрософт
-description: Azure Site Recovery координирует репликацию, отработку отказа и восстановление виртуальных машин и физических серверов. Узнайте о функции отработки отказа в Azure или в дополнительный центр обработки данных.
+title: Сопоставление виртуальных сетей между двумя регионами в Azure Site Recovery
+description: Сведения о сопоставлении виртуальных сетей между двумя регионами Azure для аварийного восстановления виртуальных машин Azure с помощью Azure Site Recovery.
 author: mayurigupta13
 manager: rochakm
 ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 10/15/2019
 ms.author: mayg
-ms.openlocfilehash: 687c21170c0397b89270e9c3a6af1e994c758179
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.openlocfilehash: b8f0512f978f25ca196ad6e9a7a03243c47f0662
+ms.sourcegitcommit: 44c2a964fb8521f9961928f6f7457ae3ed362694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72331107"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73954152"
 ---
 # <a name="set-up-network-mapping-and-ip-addressing-for-vnets"></a>Настройка сетевого сопоставления и IP-адресации для виртуальных сетей
 
 В этой статье описан процесс сопоставления двух экземпляров виртуальной сети Azure, размещенных в разных регионах Azure, и настройки IP-адресации между ними. Сетевое сопоставление предоставляет поведение по умолчанию для выбора целевой сети на основе исходной сети во время включения репликации.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 Чтобы настроить сетевое сопоставление, у вас должны быть созданы [виртуальные сети Azure](../virtual-network/virtual-networks-overview.md) в исходном и целевом регионах Azure. 
 
@@ -92,7 +92,7 @@ ms.locfileid: "72331107"
 - Значение целевого IP-адреса можно изменить в параметрах **Вычисления и сеть** для виртуальной машины.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Изучите [рекомендации по управлению сетями](site-recovery-azure-to-azure-networking-guidance.md) для аварийного восстановления виртуальных машин Azure.
 - [Изучите рекомендации](site-recovery-retain-ip-azure-vm-failover.md) по сохранению IP-адресов после отработки отказа.

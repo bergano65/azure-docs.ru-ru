@@ -3,7 +3,7 @@ title: Предварительные требования для API отчет
 description: Узнайте о предварительных требованиях для доступа к API отчетов Azure AD
 services: active-directory
 documentationcenter: ''
-author: cawrites
+author: MarkusVi
 manager: daveba
 editor: ''
 ms.assetid: ada19f69-665c-452a-8452-701029bf4252
@@ -14,15 +14,15 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 08/30/2019
-ms.author: chadam
+ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: af5e198a900241bc7bb0b6aff9a57eed59d1cd86
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: 3a9559f85e31a38c50034d6aacc8f65e4d68aec2
+ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72895227"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74014438"
 ---
 # <a name="prerequisites-to-access-the-azure-active-directory-reporting-api"></a>Предварительные требования для доступа к API отчетов Azure Active Directory
 
@@ -76,16 +76,16 @@ API отчетов использует [OAuth](https://docs.microsoft.com/azure
 
     ![Регистрация приложения](./media/howto-configure-prerequisites-for-reporting-api/04.png)
 
-    а) В текстовом поле **Имя** введите `Reporting API application`.
+    a. В текстовом поле **Имя** введите `Reporting API application`.
 
-    б) Для **поддерживаемого типа учетных записей**выберите **учетные записи только в этом Организации**.
+    Б. Для **поддерживаемого типа учетных записей**выберите **учетные записи только в этом Организации**.
 
-    в) В **текстовом поле** **URL-адрес перенаправления** выберите тип `https://localhost`.
+    c. В **текстовом поле** **URL-адрес перенаправления** выберите тип `https://localhost`.
 
-    г) Выберите **Зарегистрировать**. 
+    d. Выберите **Зарегистрировать**. 
 
 
-## <a name="grant-permissions"></a>предоставьте разрешения; 
+## <a name="grant-permissions"></a>Предоставление разрешений 
 
 В зависимости от API, к которому вы хотите получить доступ, приложению необходимо предоставить следующие разрешения:  
 
@@ -127,7 +127,7 @@ API отчетов использует [OAuth](https://docs.microsoft.com/azure
 В этом разделе показано, как получить из каталога следующие параметры:
 
 - Доменное имя
-- Идентификатор клиента
+- идентификатор клиента
 - Секрет клиента
 
 Эти значения необходимы при настройке вызовов API отчетов. 
@@ -179,13 +179,13 @@ API отчетов использует [OAuth](https://docs.microsoft.com/azure
 
 5. На странице **Добавление секрета клиента** добавьте:
 
-    а) В текстовом поле **Описание** введите `Reporting API`.
+    a. В текстовом поле **Описание** введите `Reporting API`.
 
-    б) Для параметра **Срок действия истекает** выберите значение **Через 2 года**.
+    Б. Для параметра **Срок действия истекает** выберите значение **Через 2 года**.
 
-    в) В нижней части страницы нажмите кнопку **Save**.
+    c. Выберите команду **Сохранить**.
 
-    г) Скопируйте значение ключа.
+    d. Скопируйте значение ключа.
 
 ## <a name="troubleshoot-errors-in-the-reporting-api"></a>Устранение ошибок в API отчетов
 
@@ -222,8 +222,8 @@ API отчетов использует [OAuth](https://docs.microsoft.com/azure
 
 Выполните действия, описанные в разделе [необходимые условия для доступа к API отчетов Azure Active Directory](howto-configure-prerequisites-for-reporting-api.md) , чтобы убедиться, что приложение работает с нужным набором разрешений. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Получение данных с помощью API отчетов Azure Active Directory с сертификатами](tutorial-access-api-with-certificates.md)
-* [Справочник по API аудита](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/directoryaudit) 
+* [Ссылка на API аудита](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/directoryaudit) 
 * [Справочник по API отчетов о действиях при входе](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/signin)

@@ -7,17 +7,17 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 08/01/2019
+ms.date: 11/12/2019
 author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: craigg
-ms.openlocfilehash: 178628db11b95fbd345e94111ebf15809da3fc35
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 55abdab6a427547ee8bd498500deee94b8f67453
+ms.sourcegitcommit: 44c2a964fb8521f9961928f6f7457ae3ed362694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73684296"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73954726"
 ---
 # <a name="configure-self-hosted-ir-as-a-proxy-for-azure-ssis-ir-in-adf"></a>Настройка самостоятельно размещенного IR в качестве прокси-сервера для Azure-SSIS IR в ADF
 В этой статье описывается, как запускать пакеты SQL Server Integration Services (SSIS) в Azure-SSIS Integration Runtime (IR) в фабрике данных Azure (ADF) с локальным IR-сервером, настроенным в качестве прокси.  Эта функция позволяет получать доступ к данным в локальной среде, не [присоединяя Azure-SSIS IR к виртуальной сети](https://docs.microsoft.com/azure/data-factory/join-azure-ssis-integration-runtime-virtual-network).  Это полезно, если в корпоративной сети имеется чрезмерно сложная политика настройки или политики, позволяющая внедрять в нее Azure-SSIS IR.
@@ -87,10 +87,10 @@ ms.locfileid: "73684296"
 
 ## <a name="current-limitations"></a>Текущие ограничения
 
-- В настоящее время поддерживаются только диспетчеры соединений OLEDB и неструктурированных файлов и источники OLEDB/неструктурированных файлов. 
+- В настоящее время поддерживаются только задачи потока данных с диспетчерами соединений ODBC, OLEDB и неструктурированных файлов, а также источники ODBC/OLEDB/неструктурированных файлов. 
 - В настоящее время поддерживаются только связанные службы хранилища BLOB-объектов Azure с **ключом учетной записи**/**URI SAS**/проверки подлинности **субъекта-службы** .
 - В настоящее время поддерживается только локальная IR, подготовленная в том же ADF-файле, в котором подготовлена Azure-SSIS IR.
-- Использование параметров или переменных служб SSIS в свойствах источников OLEDB/неструктурированных файлов и диспетчеров соединений не поддерживается.
+- Использование параметров или переменных служб SSIS в свойствах источников ODBC/OLEDB/неструктурированных файлов и диспетчеров соединений в настоящее время не поддерживается.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 После настройки локальной среды IR в качестве прокси-сервера для Azure-SSIS IR можно развернуть и запустить пакеты для доступа к данным в локальной среде как выполнение действий пакета служб SSIS в конвейерах ADF. см. раздел [Запуск пакетов служб SSIS как выполнение действий пакета SSIS в конвейерах ADF. ](https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-ssis-activity).

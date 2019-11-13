@@ -1,5 +1,5 @@
 ---
-title: Управление устройствами Интернета вещей Azure с помощью Cloud Explorer для Visual Studio | Документация Майкрософт
+title: Управление устройствами Azure IoT с Cloud Explorer Visual Studio
 description: Управляйте устройствами Интернета вещей Azure с помощью Cloud Explorer для Visual Studio, используя прямые методы и возможности управления требуемыми свойствами двойника.
 author: shizn
 ms.service: iot-hub
@@ -7,22 +7,22 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 08/20/2019
 ms.author: xshi
-ms.openlocfilehash: e05ba421a4535e6e424e65a1f2271d19f9d9abf4
-ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
+ms.openlocfilehash: 6fe5a45dda6632c56b3c6714827950e25e7d26af
+ms.sourcegitcommit: 44c2a964fb8521f9961928f6f7457ae3ed362694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70048698"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73953184"
 ---
 # <a name="use-cloud-explorer-for-visual-studio-for-azure-iot-hub-device-management"></a>Управление устройствами Центра Интернета вещей Azure с помощью Cloud Explorer для Visual Studio
 
-![Комплексная схема](media/iot-hub-device-management-visual-studio/iot-e2e-simple.png)
+![Сквозная схема](media/iot-hub-device-management-visual-studio/iot-e2e-simple.png)
 
 [Cloud Explorer](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.CloudExplorerForVS) — это полезное расширение для Visual Studio. Оно позволяет просматривать ресурсы Azure, проверять их свойства и выполнять основные действия разработчика в среде Visual Studio. В нем предусмотрены возможности управления, с помощью которых можно выполнять различные задачи.
 
 [!INCLUDE [iot-hub-basic](../../includes/iot-hub-basic-whole.md)]
 
-| Возможность управления          | Задача                    |
+| Возможность управления          | Задача.                    |
 |----------------------------|--------------------------------|
 | Прямые методы             | Выполнение на устройстве таких действий, как запуск и остановка отправки сообщений или перезагрузка устройства.                                        |
 | Чтение двойников устройств           | Получение зарегистрированного состояния устройства, например данных о том, что сейчас на устройстве мигает индикатор.                                    |
@@ -43,7 +43,7 @@ ms.locfileid: "70048698"
 
 ## <a name="what-you-need"></a>Необходимые элементы
 
-Вам потребуются следующие компоненты:
+Вам потребуется сделать следующее:
 
 - Активная подписка Azure.
 
@@ -59,7 +59,7 @@ ms.locfileid: "70048698"
 
 ## <a name="sign-in-to-access-your-hub"></a>Войдите, чтобы получить доступ к концентратору
 
-1. В Visual Studio выберите **Просмотреть** > **Cloud Explorer** , чтобы открыть Cloud Explorer.
+1. В Visual Studio выберите **просмотреть** > **Cloud Explorer** , чтобы открыть Cloud Explorer.
 
 1. Щелкните значок управления учетной записью, чтобы отобразить подписки.
 
@@ -107,7 +107,7 @@ ms.locfileid: "70048698"
 
    Результаты отображаются в **выходных данных**.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Вы узнали, как использовать Cloud Explorer для Visual Studio с различными параметрами управления.
 

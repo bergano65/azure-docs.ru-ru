@@ -1,18 +1,18 @@
 ---
-title: Настройка IP-адресации для подключения к дополнительному локальному сайту после отработки отказа с Azure Site Recovery
+title: Настройка IP-адресов после отработки отказа на дополнительный сайт с Azure Site Recovery
 description: Сведения о том, как настроить IP-адреса для подключения к виртуальным машинам на второй локальной площадке после аварийного восстановления и отработки отказа с помощью Azure Site Recovery.
 author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 09/09/2019
+ms.date: 11/12/2019
 ms.author: raynew
-ms.openlocfilehash: f158c6b71bb53d6b683577401e625e24808eb7eb
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: a61f7ff69e648262eb721eb61a98b09dbbee924c
+ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70813683"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73961431"
 ---
 # <a name="set-up-ip-addressing-to-connect-to-a-secondary-on-premises-site-after-failover"></a>Настройка назначения IP-адресов для подключения к локальному веб-сайту после отработки отказа
 
@@ -125,7 +125,7 @@ ms.locfileid: "70813683"
 ![Другой IP-адрес — после отработки отказа](./media/hyper-v-vmm-networking/network-design11.png)
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 [Запуск отработки отказа](hyper-v-vmm-failover-failback.md)
 

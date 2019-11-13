@@ -1,17 +1,14 @@
 ---
 title: Импорт и экспорт определений схем с помощью PowerShell
 description: Узнайте, как работать с определениями схем в виде кода. Совместное использование, управление исходным кодом и управление ими с помощью команд экспорта и импорта.
-author: DCtheGeek
-ms.author: dacoulte
 ms.date: 09/03/2019
 ms.topic: conceptual
-ms.service: blueprints
-ms.openlocfilehash: 30e734c99a87364acfba9a58d83fe9a377958607
-ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
+ms.openlocfilehash: ca756ed093d5d423f6f83e5ca3953a8ecfce7d5a
+ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71978440"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73960372"
 ---
 # <a name="import-and-export-blueprint-definitions-with-powershell"></a>Импорт и экспорт определений схем с помощью PowerShell
 
@@ -26,7 +23,7 @@ ms.locfileid: "71978440"
 
 По каким бы то ни было вашим причинам, Управление определениями схем в качестве кода имеет свои преимущества. В этой статье показано, как использовать команды `Import-AzBlueprintWithArtifact` и `Export-AzBlueprintWithArtifact` в модуле [AZ. чертеж](https://powershellgallery.com/packages/Az.Blueprint/) .
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 В этой статье предполагается умеренный опыт работы с чертежами Azure. Если вы еще не сделали этого, выполните действия, описанные в следующих статьях:
 
@@ -43,7 +40,7 @@ ms.locfileid: "71978440"
 > [!IMPORTANT]
 > Если значение параметра **Name** командлета `Import-AzBlueprintWithArtifact` не передается, используется имя папки, в которой хранится определение схемы.
 
-Вместе с определением схемы, которое должно иметь имя `blueprint.json`, — это артефакты, из которых состоит определение схемы. Каждый артефакт должен находиться в подпапке с именем `artifacts`.
+Вместе с определением схемы, которое должно называться `blueprint.json`, — это артефакты, из которых состоит определение схемы. Каждый артефакт должен находиться в подпапке с именем `artifacts`.
 Вместе, структура определения схемы как JSON Files в папках должна выглядеть следующим образом:
 
 ```text
@@ -65,7 +62,7 @@ ms.locfileid: "71978440"
 
 - **Чертеж** [обязательный]
   - Указывает определение схемы
-  - Чтобы получить ссылочный объект, используйте `Get-AzBlueprint`.
+  - Получение ссылочного объекта с помощью `Get-AzBlueprint`
 - **OutputPath** [обязательный]
   - Указывает путь для сохранения JSON определения схемы в
   - Выходные файлы находятся во вложенной папке с именем определения схемы.
@@ -122,7 +119,7 @@ ms.locfileid: "71978440"
 - Защита развертываний с помощью [блокировки ресурсов](../concepts/resource-locking.md)схемы.
 - [Управляйте чертежами в виде кода](https://github.com/Azure/azure-blueprints/blob/master/README.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 - Ознакомьтесь со сведениями о [жизненном цикле схем](../concepts/lifecycle.md).
 - Узнайте, как использовать [статические и динамические параметры](../concepts/parameters.md).

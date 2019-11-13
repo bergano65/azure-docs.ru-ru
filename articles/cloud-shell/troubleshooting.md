@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/24/2018
 ms.author: damaerte
-ms.openlocfilehash: 91dc87cd6bda93663fb4b4eae3d498ae56ba4b3e
-ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
+ms.openlocfilehash: 5af73e166f3caa4997851ae4b17d8377550bf40a
+ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72169600"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73961554"
 ---
 # <a name="troubleshooting--limitations-of-azure-cloud-shell"></a>Устранение неполадок и ограничения в Azure Cloud Shell
 
@@ -31,61 +31,67 @@ ms.locfileid: "72169600"
 
 ### <a name="early-timeouts-in-firefox"></a>Преждевременное истечение времени ожидания в FireFox
 
-- **Подробности:** Cloud Shell использует открытый WebSocket для передачи входящих и исходящих значений в браузер. FireFox включает предварительно заданные политики, которые могут преждевременно закрыть подключение по протоколу WebSocket, что может стать причиной преждевременного истечения времени ожидания в Cloud Shell.
-- **Решение**. Откройте FireFox и перейдите в область about:config в поле URL-адреса. Введите в строку поиска network.websocket.timeout.ping.request и измените значение 0 на 10.
+- **Сведения.** Cloud Shell использует открытый WebSocket для передачи входящих и исходящих значений в браузер. FireFox включает предварительно заданные политики, которые могут преждевременно закрыть подключение по протоколу WebSocket, что может стать причиной преждевременного истечения времени ожидания в Cloud Shell.
+- **Решение.** Откройте FireFox и перейдите в область about:config в поле URL-адреса. Введите в строку поиска network.websocket.timeout.ping.request и измените значение 0 на 10.
 
 ### <a name="disabling-cloud-shell-in-a-locked-down-network-environment"></a>Отключение Cloud Shell в заблокированной среде сети
 
-- **Подробности:** администраторам может потребоваться отключить доступ к Cloud Shell для своих пользователей. Cloud Shell использует доступ к домену `ux.console.azure.com`, который можно запретить, заключив любой доступ к EntryPoint Cloud Shell, включая portal.azure.com, shell.azure.com, Visual Studio Code расширение учетной записи Azure и docs.microsoft.com.
-- **Решение**. Ограничьте доступ к `ux.console.azure.com` через параметры сети для вашей среды. Значок Cloud Shell по-прежнему будет присутствовать на сайте portal.azure.com, но подключение к службе не произойдет.
+- **Сведения**. Администраторам может потребоваться отключить доступ к Cloud Shell для своих пользователей. Cloud Shell использует доступ к домену `ux.console.azure.com`, который можно запретить, заключив любой доступ к Cloud Shell EntryPoint, включая portal.azure.com, shell.azure.com, Visual Studio Code расширение учетной записи Azure и docs.microsoft.com.
+- **Решение**. Ограничение доступа к `ux.console.azure.com` через параметры сети к вашей среде. Значок Cloud Shell по-прежнему будет присутствовать на сайте portal.azure.com, но подключение к службе не произойдет.
 
-### <a name="storage-dialog---error-403-requestdisallowedbypolicy"></a>Диалоговое окно хранилища. Ошибка: 403 RequestDisallowedByPolicy
+### <a name="storage-dialog---error-403-requestdisallowedbypolicy"></a>Диалоговое окно службы хранилища. Ошибка: 403 RequestDisallowedByPolicy
 
-- **Подробности:** создание учетной записи хранилища с помощью Cloud Shell завершается ошибкой из-за политики Azure, установленной администратором. Сообщение об ошибке содержит следующие сведения: `The resource action 'Microsoft.Storage/storageAccounts/write' is disallowed by one or more policies.`
-- **Решение**. Обратитесь к администратору Azure с просьбой удалить или обновить политику Azure, которая отклоняет создание хранилища.
+- **Сведения**. при создании учетной записи хранения с помощью Cloud Shell она не будет выполнена из-за политики Azure, установленной администратором. Сообщение об ошибке будет содержать следующее: `The resource action 'Microsoft.Storage/storageAccounts/write' is disallowed by one or more policies.`
+- **Решение.** Обратитесь к администратору Azure с просьбой удалить или обновить политику Azure, которая отклоняет создание хранилища.
 
-### <a name="storage-dialog---error-400-disallowedoperation"></a>Диалоговое окно хранилища. Ошибка: 400 DisallowedOperation
+### <a name="storage-dialog---error-400-disallowedoperation"></a>Диалоговое окно службы хранилища. Ошибка: 400 DisallowedOperation
 
-- **Подробности:** не удается создать хранилище, используя подписку Azure Active Directory.
-- **Решение**. Используйте подписку Azure, которая позволяет создавать ресурсы хранилища. Подписки Azure AD не поддерживают создание ресурсов Azure.
+- **Сведения.** Не удается создать хранилище, используя подписку Azure Active Directory.
+- **Устранение.** Используйте подписку Azure, которая позволяет создавать ресурсы хранилища. Подписки Azure AD не поддерживают создание ресурсов Azure.
 
-### <a name="terminal-output---error-failed-to-connect-terminal-websocket-cannot-be-established-press-enter-to-reconnect"></a>Выходные данные терминала. Ошибка: Failed to connect terminal: websocket cannot be established. Press `Enter` to reconnect" (Не удалось подключиться к терминалу. Невозможно установить подключение по протоколу WebSocket. Нажмите клавишу ВВОД, чтобы подключиться еще раз)
-- **Подробности:** для Cloud Shell требуется возможность установить подключение по протоколу WebSocket к инфраструктуре Cloud Shell.
-- **Решение**. Убедитесь, что параметры сети настроены для разрешения отправки HTTP-запросов и запросов WebSocket к доменам по адресу *.console.azure.com.
+### <a name="terminal-output---error-failed-to-connect-terminal-websocket-cannot-be-established-press-enter-to-reconnect"></a>Выходные данные терминала. Ошибка "Failed to connect terminal: websocket cannot be established. Press `Enter` to reconnect" (Не удалось подключиться к терминалу. Невозможно установить подключение по протоколу WebSocket. Нажмите клавишу ВВОД, чтобы подключиться еще раз)
+- **Сведения.** Для Cloud Shell требуется возможность установить подключение по протоколу WebSocket к инфраструктуре Cloud Shell.
+- **Решение.** Убедитесь, что параметры сети настроены для разрешения отправки HTTP-запросов и запросов WebSocket к доменам по адресу *.console.azure.com.
 
 ### <a name="set-your-cloud-shell-connection-to-support-using-tls-12"></a>Настройка поддержки TLS 1.2 в подключении Cloud Shell
- - **Подробности:** Чтобы определить версию протокола TLS для подключения к Cloud Shell, необходимо задать параметры для конкретного браузера.
- - **Решение**. Перейдите к параметрам безопасности браузера и установите флажок "Использовать TLS 1.2".
+ - **Сведения**: чтобы определить версию протокола TLS для подключения к Cloud Shell, необходимо задать параметры, зависящие от браузера.
+ - **Решение.** Перейдите к параметрам безопасности браузера и установите флажок "Использовать TLS 1.2".
 
 ## <a name="bash-troubleshooting"></a>Устранение неполадок в Bash
 
 ### <a name="cannot-run-the-docker-daemon"></a>Не удается запустить управляющую программу Docker
 
-- **Подробности:** Cloud Shell использует контейнер для размещения оболочки среды, поэтому выполнение управляющей программы запрещено.
-- **Решение**. Используйте компонент [docker-machine](https://docs.docker.com/machine/overview/), установленный по умолчанию, для управления контейнерами Docker с удаленного узла Docker.
+- **Сведения**. Cloud Shell использует контейнер для размещения оболочки среды, поэтому выполнение управляющей программы запрещено.
+- **Устранение**. Используйте компонент [docker-machine](https://docs.docker.com/machine/overview/), установленный по умолчанию, для управления контейнерами Docker с удаленного узла Docker.
 
 ## <a name="powershell-troubleshooting"></a>Устранение неполадок в PowerShell
 
 ### <a name="gui-applications-are-not-supported"></a>Приложения с графическим пользовательским интерфейсом не поддерживаются
 
-- **Подробности:** если пользователь запускает приложение с графическим пользовательским интерфейсом, командная строка не отображается. Например, когда клонируется частный репозиторий GitHub с поддержкой двухфакторной проверки подлинности, отображается диалоговое окно выполнения двухфакторной проверки подлинности.
-- **Решение**. Закройте и снова откройте оболочку.
+- **Сведения.** Если пользователь запускает приложение с графическим пользовательским интерфейсом, командная строка не отображается. Например, когда клонируется частный репозиторий GitHub с поддержкой двухфакторной проверки подлинности, отображается диалоговое окно выполнения двухфакторной проверки подлинности.
+- **Разрешение.** Закройте и снова откройте оболочку.
 
 ### <a name="troubleshooting-remote-management-of-azure-vms"></a>Устранение неполадок удаленного управления виртуальными машинами Azure
 > [!NOTE]
 > Виртуальные машины Azure должны иметь общедоступный IP-адрес.
 
-- **Подробности:** из-за параметров брандмауэра Windows по умолчанию для WinRM может появиться следующее сообщение об ошибке: `Ensure the WinRM service is running. Remote Desktop into the VM for the first time and ensure it can be discovered.`.
-- **Решение**.  Запустите `Enable-AzVMPSRemoting`, чтобы включить на целевом компьютере все аспекты удаленного взаимодействия PowerShell.
+- **Сведения**. Из-за параметров брандмауэра Windows по умолчанию для WinRM может появиться следующее сообщение об ошибке: `Ensure the WinRM service is running. Remote Desktop into the VM for the first time and ensure it can be discovered.`.
+- **Разрешение**. Запустите `Enable-AzVMPSRemoting`, чтобы включить на целевом компьютере все аспекты удаленного взаимодействия PowerShell.
 
 ### <a name="dir-does-not-update-the-result-in-azure-drive"></a>`dir` не обновляет результат на диске Azure
 
-- **Подробности:** чтобы оптимизировать взаимодействие с пользователем, по умолчанию результаты `dir` кэшируются на диск Azure.
-- **Решение**. После создания, обновления или удаления ресурса Azure выполните команду `dir -force` для обновления результатов на диске Azure.
+- **Сведения.** Чтобы оптимизировать взаимодействие с пользователем, по умолчанию результаты `dir` кэшируются на диск Azure.
+- **Решение.** После создания, обновления или удаления ресурса Azure выполните команду `dir -force` для обновления результатов на диске Azure.
 
 ## <a name="general-limitations"></a>Общие ограничения
 
 Azure Cloud Shell имеет следующие известные ограничения:
+
+### <a name="quota-limitations"></a>Ограничения квот
+
+Azure Cloud Shell имеет ограничение в 20 одновременных пользователей на одного клиента в каждом регионе. Если вы попытаетесь открыть более одновременные сеансы, чем это ограничение, вы увидите ошибку "клиент поверх квоты". Если у вас есть законная потребность в открытии большего числа сеансов (например, для учебных семинаров), обратитесь в службу поддержки, прежде чем запрашивать увеличение квоты.
+
+Cloud Shell предоставляется в качестве бесплатной службы и предназначена для использования при настройке среды Azure, а не в качестве платформы общего назначения. Чрезмерное автоматизированное использование может считаться нарушением условий предоставления услуг Azure и может привести к блокировке доступа к Cloud Shell.
 
 ### <a name="system-state-and-persistence"></a>Состояние системы и сохраняемость
 
@@ -157,10 +163,10 @@ Azure Cloud Shell серьезно относится к личным данны
 
 [!INCLUDE [GDPR-related guidance](../../includes/gdpr-intro-sentence.md)]
 
-### <a name="export"></a>Экспорт
+### <a name="export"></a>экспорт.
 Чтобы **экспортировать** пользовательские настройки, сохраненные Cloud Shell, такие как предпочитаемая оболочка, размер и тип шрифта, выполните следующие команды.
 
-1. [![](https://shell.azure.com/images/launchcloudshell.png "Запуск Azure Cloud Shell")](https://shell.azure.com)
+1. [![](https://shell.azure.com/images/launchcloudshell.png "Launch Azure Cloud Shell")](https://shell.azure.com)
 2. В Bash или PowerShell выполните следующие команды.
 
 Bash:
@@ -177,13 +183,13 @@ PowerShell:
   ((Invoke-WebRequest -Uri https://management.azure.com/providers/Microsoft.Portal/usersettings/cloudconsole?api-version=2017-12-01-preview -Headers @{Authorization = "Bearer $token"}).Content | ConvertFrom-Json).properties | Format-List
 ```
 
-### <a name="delete"></a>Оператор delete
+### <a name="delete"></a>Удалить
 Чтобы **удалить** пользовательские настройки, сохраненные Cloud Shell, такие как предпочитаемая оболочка, размер и тип шрифта, выполните следующие команды. При следующем запуске Cloud Shell вам будет предложено еще раз выставить файловый ресурс. 
 
 >[!Note]
 > При удалении параметров пользователя сам общий ресурс службы файлов Azure не будет удален. Перейдите к службе файлов Azure для выполнения этого действия.
 
-1. [![](https://shell.azure.com/images/launchcloudshell.png "Запуск Azure Cloud Shell")](https://shell.azure.com)
+1. [![](https://shell.azure.com/images/launchcloudshell.png "Launch Azure Cloud Shell")](https://shell.azure.com)
 2. В Bash или PowerShell выполните следующие команды.
 
 Bash:

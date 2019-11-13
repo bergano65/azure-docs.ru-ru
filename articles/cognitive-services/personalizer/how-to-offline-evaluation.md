@@ -1,7 +1,7 @@
 ---
 title: Как выполнить автономную оценку — Персонализация
 titleSuffix: Azure Cognitive Services
-description: Сведения об использовании автономной оценки для анализа цикла обучения
+description: В этой статье показано, как использовать автономную оценку для измерения эффективности работы приложения и анализа цикла обучения.
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: personalizer
 ms.topic: conceptual
 ms.date: 10/23/2019
 ms.author: diberry
-ms.openlocfilehash: 9d7336fb933ee5e9781d15214fa3e59446aa5b6a
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: c2aec0db2d1f9865188f2749a0eeb765a14d04ed
+ms.sourcegitcommit: 44c2a964fb8521f9961928f6f7457ae3ed362694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73490710"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73953006"
 ---
 # <a name="analyze-your-learning-loop-with-an-offline-evaluation"></a>Анализ цикла обучения с помощью автономной оценки
 
@@ -26,7 +26,7 @@ ms.locfileid: "73490710"
 Дополнительные сведения см. в разделе [Автономные оценки](concepts-offline-evaluation.md).
 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 * Настроенный цикл персонализации
 * Цикл персонализации должен иметь репрезентативный объем данных — в качестве примерную мы рекомендуем по крайней мере 50 000 событий в своих журналах для осмысленных результатов оценки. При необходимости ранее экспортированные файлы _политики обучения_ можно сравнить и протестировать в одном и том же процессе оценивания.
@@ -64,6 +64,6 @@ ms.locfileid: "73490710"
 
 Эффективность [Функций](concepts-features.md) для действий и контекста.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * Сведения об [автономной оценке](concepts-offline-evaluation.md).

@@ -3,7 +3,7 @@ title: Отчеты о действиях входа на портале Azure A
 description: Общие сведения об отчетах о действиях входа на портале Azure Active Directory.
 services: active-directory
 documentationcenter: ''
-author: cawrites
+author: MarkusVi
 manager: daveba
 editor: ''
 ms.assetid: 4b18127b-d1d0-4bdc-8f9c-6a4c991c5f75
@@ -14,15 +14,15 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 10/28/2019
-ms.author: chadam
+ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 553d882600203d0fa01cd876562d9ced7985d7a8
-ms.sourcegitcommit: 38251963cf3b8c9373929e071b50fd9049942b37
+ms.openlocfilehash: 778353621491f912d3237900785e6dee17bf975e
+ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73043800"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74014496"
 ---
 # <a name="sign-in-activity-reports-in-the-azure-active-directory-portal"></a>Отчеты о действиях входа на портале Azure Active Directory
 
@@ -31,13 +31,13 @@ ms.locfileid: "73043800"
 - **Действие** 
     - **События входа**. Информация об использовании управляемых приложений и действиях входа пользователей.
     - **Журналы аудита** - [журналы аудита](concept-audit-logs.md) предоставляют сведения о системных действиях для пользователей и управления группами, управляемых приложений и действий с каталогами.
-- **Безопасность** 
+- **безопасность** 
     - **Рискованные входы** . [рискованный вход](concept-risky-sign-ins.md) — это индикатор попытки входа, которая не является законным владельцем учетной записи пользователя.
     - **Пользователи, находящиеся в группе риска**. [Пользователи, находящиеся в группе риска](concept-user-at-risk.md) означает, что конфиденциальность учетной записи пользователя, возможно, нарушена.
 
 В этой статье приводятся общие сведения о отчете о входе в систему.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 ### <a name="who-can-access-the-data"></a>Кто может получить доступ к данным?
 
@@ -47,7 +47,7 @@ ms.locfileid: "73043800"
 
 ### <a name="what-azure-ad-license-do-you-need-to-access-sign-in-activity"></a>Какие лицензии Azure AD требуются для доступа к действию входа?
 
-* Для просмотра отчета обо всех действиях входа с клиентом должна быть связана лицензия Azure AD Premium. Дополнительные сведения об обновлении выпуска Azure Active Directory см. в статье [Приступая к работе с Azure Active Directory Premium](../fundamentals/active-directory-get-started-premium.md) . Для отображения данных в отчетах после обновления до лицензии Premium без действий с данными до обновления может потребоваться несколько дней.
+* Для просмотра отчета обо всех действиях входа с клиентом должна быть связана лицензия Azure AD Premium. Чтобы обновить выпуск Azure Active Directory, ознакомьтесь со статьей [Регистрация для работы с выпусками Azure Active Directory Premium](../fundamentals/active-directory-get-started-premium.md). Для отображения данных в отчетах после обновления до лицензии Premium без действий с данными до обновления может потребоваться несколько дней.
 
 ## <a name="sign-ins-report"></a>Отчет о входе
 
@@ -153,7 +153,7 @@ ms.locfileid: "73043800"
 
 Щелкните " **скачать** ", чтобы создать CSV-файл или формат JSON для последних 250 000 записей. Начните с [загрузки данных входа,](quickstart-download-sign-in-report.md) если вы хотите работать с ним за пределами портал Azure.  
 
-![Загрузить](./media/concept-sign-ins/71.png "Download (Скачать)")
+![Загрузить](./media/concept-sign-ins/71.png "Скачивание")
 
 > [!IMPORTANT]
 > На число записей, которые можно скачать, влияют особенности [политики хранения отчетов Azure Active Directory](reference-reports-data-retention.md).  
@@ -164,7 +164,7 @@ ms.locfileid: "73043800"
 Azure AD и портал Azure предоставляют дополнительные точки входа для данных входа.
 
 - Обзор защиты удостоверений
-- Пользователи
+- Users
 - Группы
 - корпоративные приложения.
 
@@ -191,7 +191,7 @@ Azure AD и портал Azure предоставляют дополнитель
 - Идентификатор приложения
 - Приложение
 - Клиент
-- Location
+- Место проведения
 - IP-адрес
 - Дата
 - Требуется многофакторная идентификация
@@ -234,7 +234,7 @@ Azure AD и портал Azure предоставляют дополнитель
 
 Вы также можете получить доступ к журналам действий Office 365 программным путем с помощью [API-интерфейсов управления office 365](https://docs.microsoft.com/office/office-365-management-api/office-365-management-apis-overview).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Коды ошибок в отчете о действиях входа](reference-sign-ins-error-codes.md)
 * [Политики хранения отчетов Azure Active Directory](reference-reports-data-retention.md)
