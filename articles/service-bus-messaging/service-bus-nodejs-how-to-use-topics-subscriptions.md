@@ -1,6 +1,6 @@
 ---
-title: Использование разделов и подписок служебной шины Azure с Node.js | Документация Майкрософт
-description: Узнайте, как использовать разделы и подписки служебной шины в Azure в приложении Node.js.
+title: Краткое руководство. Использование разделов и подписок служебной шины Azure с Node.js
+description: Краткое руководство. Узнайте, как использовать разделы и подписки служебной шины в Azure в приложении Node.js.
 services: service-bus-messaging
 documentationcenter: nodejs
 author: axisc
@@ -11,26 +11,26 @@ ms.service: service-bus-messaging
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: nodejs
-ms.topic: article
-ms.date: 04/15/2019
+ms.topic: quickstart
+ms.date: 11/05/2019
 ms.author: aschhab
-ms.openlocfilehash: 3dbec81237edd7cbf51e4812e83da068b9a366e0
-ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
-ms.translationtype: MT
+ms.openlocfilehash: 40543f55dc0cb56f6bc575f926456faf2d0ae5a3
+ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67540991"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73719208"
 ---
-# <a name="how-to-use-service-bus-topics-and-subscriptions-with-nodejs-and-the-azure-sb-package"></a>Использование служебной шины для разделов и подписок с помощью Node.js и пакет azure-sb
-> [!div class="op_multi_selector" title1="Язык программирования" title2="Пакета node.js"]
+# <a name="quickstart-how-to-use-service-bus-topics-and-subscriptions-with-nodejs-and-the-azure-sb-package"></a>Краткое руководство. Использование разделов и подписок служебной шины с Node.js и пакетом azure/sb
+> [!div class="op_multi_selector" title1="Язык программирования" title2="Пакет Node.js"]
 > - [(Node.js | azure-sb)](service-bus-nodejs-how-to-use-topics-subscriptions.md)
 > - [(Node.js | @azure/service-bus)](service-bus-nodejs-how-to-use-topics-subscriptions-new-package.md)
 
-В этом руководстве вы узнаете, как создавать приложения Node.js для отправки сообщений в раздел служебной шины и получения сообщений из подписки служебной шины с помощью [azure-sb](https://www.npmjs.com/package/azure-sb) пакета. Примеры написаны на JavaScript и используют Node.js [модуль Azure](https://www.npmjs.com/package/azure) внутренним образом использует `azure-sb` пакета.
+Из этого учебника вы узнаете, как создавать приложения Node.js для отправки сообщений в раздел служебной шины и получения сообщений из подписки служебной шины с помощью пакета [azure-sb](https://www.npmjs.com/package/azure-sb). Эти примеры написаны на JavaScript и используют [модуль Node.js для Azure](https://www.npmjs.com/package/azure) с интегрированным пакетом `azure-sb`.
 
-[Azure-sb](https://www.npmjs.com/package/azure-sb) пакет использует [API среды выполнения служебной шины REST](/rest/api/servicebus/service-bus-runtime-rest). Вы можете получить возможность быстрее с новым [ @azure/service-bus ](https://www.npmjs.com/package/@azure/service-bus) пакета, который использует быстрее [протокол AMQP 1.0](service-bus-amqp-overview.md). Дополнительные сведения по новому пакету, см. в разделе [как использовать разделы служебной шины и подписки с помощью Node.js и @azure/service-bus пакета](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-nodejs-how-to-use-topics-subscriptions-new-package), в противном случае продолжайте чтение, чтобы узнать, как использовать [azure](https://www.npmjs.com/package/azure) пакета.
+Пакет [azure-sb](https://www.npmjs.com/package/azure-sb) работает с [интерфейсами REST API служебной шины](/rest/api/servicebus/service-bus-runtime-rest). Вы можете ускорить работу с помощью нового пакета [@azure/service-bus](https://www.npmjs.com/package/@azure/service-bus), который использует более быстрый [протокол AMQP 1.0](service-bus-amqp-overview.md). Дополнительные сведения о новом пакете см. в статьях [об использовании разделов и подписок служебной шины с Node. js и пакетом @azure/service-bus](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-nodejs-how-to-use-topics-subscriptions-new-package). Далее в этой статье описывается работа с пакетом [azure](https://www.npmjs.com/package/azure).
 
-Такие сценарии, как описано здесь:
+Здесь рассматриваются следующие сценарии:
 
 - создание разделов и подписок; 
 - создание фильтров подписки; 
@@ -40,12 +40,12 @@ ms.locfileid: "67540991"
 
 Дополнительные сведения о разделах и подписках см. в разделе [Дальнейшие действия](#next-steps).
 
-## <a name="prerequisites"></a>Технические условия
-- Подписка Azure. Для работы с этим учебником требуется учетная запись Azure. Вы можете активировать ваши [преимущества для подписчиков Visual Studio или MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A85619ABF) или зарегистрироваться для [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
-- Выполните шаги [краткое руководство: Чтобы создать раздел служебной шины и подписок для раздела с помощью портала Azure](service-bus-quickstart-topics-subscriptions-portal.md) для создания служебной шины **пространства имен** и получить **строку подключения**.
+## <a name="prerequisites"></a>Предварительные требования
+- Подписка Azure. Для работы с этим учебником требуется учетная запись Azure. Вы можете [активировать преимущества подписчика Visual Studio или MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A85619ABF) или [зарегистрироваться для получения бесплатной учетной записи](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
+- Выполните шаги из [краткого руководства по созданию раздела Служебной шины и подписок на него с помощью портала Azure](service-bus-quickstart-topics-subscriptions-portal.md), чтобы создать **пространство имен** Служебной шины и получить **строку подключения**.
 
     > [!NOTE]
-    > Вы создадите **разделе** и **подписки** в раздел с помощью **Node.js** в этом кратком руководстве. 
+    > В рамках этого краткого руководства вы создадите **раздел** и **подписку** на этот раздел с помощью **Node.js**. 
 
 ## <a name="create-a-nodejs-application"></a>Создание приложения Node.js
 Создайте пустое приложение Node.js. Указания по созданию приложения Node.js см. в статьях [Создание и развертывание приложения Node.js на веб-сайте Azure], [Облачная служба Node.js][Node.js Cloud Service] (с помощью Windows PowerShell) или веб-сайт с WebMatrix.
@@ -148,9 +148,9 @@ var serviceBusService = azure.createServiceBusService().withFilter(retryOperatio
 Подписки на разделы также создаются с помощью объекта **ServiceBusService**. Подписки имеют имена и могут использовать дополнительный фильтр, который ограничивает набор сообщений, доставляемых в виртуальную очередь подписки.
 
 > [!NOTE]
-> По умолчанию подписки хранятся постоянно пока не будет либо или разделе они связаны с, удаляются. Если приложение содержит логику для создания подписки, она сначала должна проверить, существует ли подписка, используя метод `getSubscription`.
+> По умолчанию подписки являются постоянными и существуют либо до их удаления, либо до удаления раздела, с которым они связаны. Если приложение содержит логику для создания подписки, она сначала должна проверить, существует ли подписка, используя метод `getSubscription`.
 >
-> У вас есть подписки, автоматически удаляется, задав [AutoDeleteOnIdle свойство](https://docs.microsoft.com/javascript/api/azure-arm-sb/sbsubscription?view=azure-node-latest#autodeleteonidle).
+> Вы можете удалять подписки автоматически, задав [свойство AutoDeleteOnIdle](https://docs.microsoft.com/javascript/api/azure-arm-sb/sbsubscription?view=azure-node-latest#autodeleteonidle).
 
 ### <a name="create-a-subscription-with-the-default-matchall-filter"></a>Создание подписки с фильтром по умолчанию (MatchAll)
 Фильтр **MatchAll** является фильтром по умолчанию при создании подписки. Если используется фильтр **MatchAll**, все сообщения, опубликованные в разделе, помещаются в виртуальную очередь подписки. В следующем примере создается подписка AllMessages и используется фильтр по умолчанию **MatchAll**.
@@ -314,7 +314,7 @@ serviceBusService.receiveSubscriptionMessage('MyTopic', 'HighMessages', { isPeek
 Если в приложении происходит сбой после обработки сообщения, но перед вызовом метода `deleteMessage`, сообщение будет повторно доставлено в приложение после его перезапуска. Такая реакция на событие часто называется *по крайней мере одна обработка*. Это значит, что каждое приложение обрабатывается по крайней мере один раз, но в некоторых случаях одно и то же сообщение может быть доставлено повторно. Если повторная обработка недопустима, необходимо добавить логику для обработки повторной доставки сообщения. Для этого можно использовать свойство сообщения **MessageId**, которое остается постоянным в ходе разных попыток доставки.
 
 ## <a name="delete-topics-and-subscriptions"></a>Удаление разделов и подписок
-Разделы и подписки хранятся постоянно Если [свойство autoDeleteOnIdle](https://docs.microsoft.com/javascript/api/azure-arm-sb/sbsubscription?view=azure-node-latest#autodeleteonidle) имеет значение и их нужно удалять [портала Azure][Azure portal] или программным способом.
+Если не задано [свойство AutoDeleteOnIdle](https://docs.microsoft.com/javascript/api/azure-arm-sb/sbsubscription?view=azure-node-latest#autodeleteonidle), разделы и подписки хранятся постоянно, и их нужно удалять явным образом на [портале Azure][Azure portal] или с помощью программных средств.
 В следующем примере показано, как удалить раздел с именем `MyTopic`.
 
 ```javascript
@@ -338,7 +338,7 @@ serviceBusService.deleteSubscription('MyTopic', 'HighMessages', function (error)
 > [!NOTE]
 > Вы можете управлять ресурсами служебной шины с помощью [обозревателя служебной шины](https://github.com/paolosalvatori/ServiceBusExplorer/). Обозреватель служебной шины позволяет без труда подключаться к пространству имен служебной шины и управлять сущностями обмена сообщениями. Средство предоставляет дополнительные возможности, например функции импорта и экспорта или возможность проверять разделы, очереди, подписки, службы ретрансляции, центры уведомлений и концентраторы событий. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 Вы узнали основные сведения о разделах служебной шины. Для получения дополнительных сведений используйте следующие ссылки.
 
 * См. статью [Очереди, разделы и подписки][Queues, topics, and subscriptions].

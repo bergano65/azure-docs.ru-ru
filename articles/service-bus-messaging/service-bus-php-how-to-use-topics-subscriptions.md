@@ -1,6 +1,6 @@
 ---
-title: Использование разделов служебной шины в PHP | Документация Майкрософт
-description: Узнайте, как использовать разделы служебной шины с PHP в Azure.
+title: Краткое руководство. Как использовать разделы Служебной шины с PHP
+description: Краткое руководство. Узнайте, как использовать разделы служебной шины с PHP в Azure.
 services: service-bus-messaging
 documentationcenter: php
 author: axisc
@@ -11,17 +11,17 @@ ms.service: service-bus-messaging
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: PHP
-ms.topic: article
-ms.date: 04/15/2019
+ms.topic: quickstart
+ms.date: 11/05/2019
 ms.author: aschhab
-ms.openlocfilehash: eba2c0aeb37f2bc2283e7afb108bb4578981120e
-ms.sourcegitcommit: b03516d245c90bca8ffac59eb1db522a098fb5e4
-ms.translationtype: MT
+ms.openlocfilehash: b55d3c93f9926b7446dadf069b37a878caa81e15
+ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71147220"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73721655"
 ---
-# <a name="how-to-use-service-bus-topics-and-subscriptions-with-php"></a>Как использовать разделы и подписки служебной шины с PHP
+# <a name="quickstart-how-to-use-service-bus-topics-and-subscriptions-with-php"></a>Краткое руководство. Как использовать разделы и подписки служебной шины с PHP
 
 [!INCLUDE [service-bus-selector-topics](../../includes/service-bus-selector-topics.md)]
 
@@ -34,11 +34,11 @@ ms.locfileid: "71147220"
 - удаление разделов и подписок.
 
 ## <a name="prerequisites"></a>Предварительные требования
-1. Подписка Azure. Для работы с этим учебником требуется учетная запись Azure. Вы можете активировать [преимущества Visual Studio или подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A85619ABF) или зарегистрироваться для использования [бесплатной учетной записи](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
-2. Выполните действия, [описанные в кратком руководстве: Используйте портал Azure для создания раздела служебной шины и подписки на раздел](service-bus-quickstart-topics-subscriptions-portal.md) , чтобы создать **пространство имен** служебной шины и получить **строку подключения**.
+1. Подписка Azure. Для работы с этим учебником требуется учетная запись Azure. Вы можете активировать [преимущества подписчика Visual Studio или MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A85619ABF) или зарегистрироваться для получения [бесплатной учетной записи](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
+2. Выполните шаги из [краткого руководства по созданию раздела Служебной шины и подписок на него с помощью портала Azure](service-bus-quickstart-topics-subscriptions-portal.md), чтобы создать **пространство имен** Служебной шины и получить **строку подключения**.
 
     > [!NOTE]
-    > В этом кратком руководстве вы создадите **раздел** и **подписку** на раздел с помощью **PHP** . 
+    > В этом кратком руководстве описано, как создать **раздел** и **подписку** на этот разделу с помощью **PHP**. 
 
 ## <a name="create-a-php-application"></a>Создание приложения PHP
 Единственным требованием для создания приложения PHP, которое получает доступ к службе BLOB-объектов Azure, является наличие ссылки на классы в [пакете SDK для Azure для PHP](https://github.com/Azure/azure-sdk-for-php) непосредственно из кода. Для создания приложения можно использовать любые средства разработки или Блокнот.
@@ -62,7 +62,7 @@ ms.locfileid: "71147220"
       }
     }
     ```
-2. Скачайте **[Composer. Phar] [Composer-Phar]** в корневую папку проекта.
+2. Скачайте **[composer.phar][composer-phar]** в корневой каталог проекта.
 3. Откройте командную строку и выполните следующую команду в корневом каталоге проекта.
    
     ```
@@ -72,7 +72,7 @@ ms.locfileid: "71147220"
 ## <a name="configure-your-application-to-use-service-bus"></a>Настройка приложения для использования служебной шины
 Чтобы использовать интерфейсы API служебной шины, требуется следующее.
 
-1. Сослаться на файл автозагрузчика с помощью инструкции [require_once][require-once] .
+1. Создайте ссылку на файл автозагрузчика с использованием оператора [require_once][require-once].
 2. Ссылка на любые классы, которые могут использоваться.
 
 В следующем примере показано, как включить файл автозагрузчика и сослаться на класс **ServiceBusService**.
@@ -98,7 +98,7 @@ Endpoint=[yourEndpoint];SharedAccessKeyName=RootManageSharedAccessKey;SharedAcce
 
 где `Endpoint` обычно имеет формат `https://[yourNamespace].servicebus.windows.net`.
 
-Для создания клиента службы Azure необходимо использовать класс `ServicesBuilder`. Можно выполнить следующие действия:
+Для создания клиента службы Azure необходимо использовать класс `ServicesBuilder`. Вы можете:
 
 * Передать строку подключения напрямую или
 * использовать **CloudConfigurationManager (CCM)** для проверки нескольких внешних источников на наличие строки подключения:
@@ -117,7 +117,7 @@ $connectionString = "Endpoint=[yourEndpoint];SharedAccessKeyName=RootManageShare
 $serviceBusRestProxy = ServicesBuilder::getInstance()->createServiceBusService($connectionString);
 ```
 
-## <a name="create-a-topic"></a>Создать раздел
+## <a name="create-a-topic"></a>Создание раздела
 Операции управления разделами служебной шины можно выполнять с помощью класса `ServiceBusRestProxy`. Объект `ServiceBusRestProxy` создается посредством фабричного метода `ServicesBuilder::createServiceBusService` с соответствующей строкой подключения, инкапсулирующей в себе разрешения маркера на управление им.
 
 В приведенном ниже примере показано, как создать экземпляр `ServiceBusRestProxy` и вызвать метод `ServiceBusRestProxy->createTopic` для создания раздела `mytopic` в пространстве имен `MySBNamespace`.
@@ -152,7 +152,7 @@ catch(ServiceException $e){
 > 
 > 
 
-## <a name="create-a-subscription"></a>Создать подписку
+## <a name="create-a-subscription"></a>Создание подписки
 Подписки на разделы также создаются с помощью метода `ServiceBusRestProxy->createSubscription`. Подписки имеют имена и могут использовать дополнительный фильтр, ограничивающий набор сообщений, доставляемых в виртуальную очередь подписки.
 
 ### <a name="create-a-subscription-with-the-default-matchall-filter"></a>Создание подписки с фильтром по умолчанию (MatchAll)
@@ -184,7 +184,7 @@ catch(ServiceException $e){
 ```
 
 ### <a name="create-subscriptions-with-filters"></a>Создание подписок с фильтрами
-Кроме того, можно настраивать фильтры, позволяющие определять, какие посылаемые в раздел сообщения должны появляться в рамках конкретной подписки. Самый гибкий тип фильтра, который поддерживается подписками, — это [SqlFilter](/dotnet/api/microsoft.servicebus.messaging.sqlfilter), реализующий подмножество SQL92. Фильтры SQL работают со свойствами сообщений, которые опубликованы в разделе. Дополнительные сведения о фильтрах sqlfilter см. в разделе [свойство SqlFilter. SqlExpression][sqlfilter].
+Кроме того, можно настраивать фильтры, позволяющие определять, какие посылаемые в раздел сообщения должны появляться в рамках конкретной подписки. Самый гибкий тип фильтра, который поддерживается подписками, — это [SqlFilter](/dotnet/api/microsoft.servicebus.messaging.sqlfilter), реализующий подмножество SQL92. Фильтры SQL работают со свойствами сообщений, которые опубликованы в разделе. См. сведения о фильтрах SqlFilter в описании [свойства SqlFilter.SqlExpression][sqlfilter].
 
 > [!NOTE]
 > Каждое правило в подписке обрабатывает входящие сообщения независимо, добавляя к подписке свои сообщения о результате. Кроме того, в состав каждой новой подписки по умолчанию входит объект **Правило** с фильтром, который добавляет все сообщения из раздела в подписку. Чтобы получать только сообщения, соответствующие условиям фильтра, необходимо удалить это правило по умолчанию. Правило по умолчанию можно удалить с помощью метода `ServiceBusRestProxy->deleteRule`.
@@ -252,7 +252,7 @@ catch(ServiceException $e){
 }
 ```
 
-Сообщения, отправляемые в разделы служебной шины и получаемые из них, — это экземпляры класса [BrokeredMessage][BrokeredMessage]. Объекты [BrokeredMessage][BrokeredMessage] имеют набор стандартных свойств и методов, а также свойства, которые можно использовать для хранения настраиваемых свойств конкретного приложения. В следующем примере показано, как отправить пять тестовых сообщений в созданный ранее раздел `mytopic`. Метод `setProperty` используется для добавления настраиваемого свойства (`MessageNumber`) в каждое сообщение. Значение свойства `MessageNumber` меняется в каждом сообщении (с помощью этого можно определить, какие подписки его получают, как показано в разделе [Создание подписки](#create-a-subscription)).
+Сообщения, отправляемые в разделы служебной шины и получаемые из них, — это экземпляры класса [BrokeredMessage][BrokeredMessage]. У объектов [BrokeredMessage][BrokeredMessage] есть набор стандартных свойств и методов, а также свойства, которые можно использовать для хранения настраиваемых свойств приложения. В следующем примере показано, как отправить пять тестовых сообщений в созданный ранее раздел `mytopic`. Метод `setProperty` используется для добавления настраиваемого свойства (`MessageNumber`) в каждое сообщение. Значение свойства `MessageNumber` меняется в каждом сообщении (с помощью этого можно определить, какие подписки его получают, как показано в разделе [Создание подписки](#create-a-subscription)).
 
 ```php
 for($i = 0; $i < 5; $i++){
@@ -363,8 +363,8 @@ $serviceBusRestProxy->deleteSubscription("mytopic", "mysubscription");
 > [!NOTE]
 > Вы можете управлять ресурсами служебной шины с помощью [обозревателя служебной шины](https://github.com/paolosalvatori/ServiceBusExplorer/). Обозреватель служебной шины позволяет без труда подключаться к пространству имен служебной шины и управлять сущностями обмена сообщениями. Средство предоставляет дополнительные возможности, например функции импорта и экспорта или возможность проверять разделы, очереди, подписки, службы ретрансляции, центры уведомлений и концентраторы событий. 
 
-## <a name="next-steps"></a>Следующие шаги
-Дополнительные сведения см. в разделе [очереди, разделы и подписки][Queues, topics, and subscriptions].
+## <a name="next-steps"></a>Дополнительная информация
+См. сведения об [очередях, разделах и подписках][Queues, topics, and subscriptions].
 
 [BrokeredMessage]: /dotnet/api/microsoft.servicebus.messaging.brokeredmessage
 [Queues, topics, and subscriptions]: service-bus-queues-topics-subscriptions.md

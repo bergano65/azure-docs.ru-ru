@@ -35,6 +35,8 @@
       items:
         - name: Компоненты Apache Hadoop в HDInsight
           href: ./hdinsight-component-versioning.md
+        - name: Компоненты высокого уровня доступности
+          href: ./hdinsight-high-availability-components.md
         - name: Машинное обучение в HDInsight
           href: ./hdinsight-machine-learning-overview.md
         - name: Потоковая передача в нужном масштабе в HDInsight

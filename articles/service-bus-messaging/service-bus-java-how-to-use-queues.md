@@ -1,6 +1,6 @@
 ---
-title: Использование очередей служебной шины Azure с Java
-description: Узнайте, как использовать очереди служебной шины в Azure. Примеры кода написаны на Java.
+title: Краткое руководство. Использование очередей Служебной шины Azure с Java
+description: Краткое руководство. Узнайте, как использовать очереди служебной шины в Azure. Примеры кода написаны на Java.
 services: service-bus-messaging
 documentationcenter: java
 author: axisc
@@ -11,32 +11,33 @@ ms.service: service-bus-messaging
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: Java
-ms.topic: article
-ms.date: 04/10/2019
+ms.topic: quickstart
+ms.date: 11/05/2019
 ms.author: aschhab
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: 19cfd2c5dd4229e4687fcb1a3286509c9b768d7a
-ms.sourcegitcommit: 116bc6a75e501b7bba85e750b336f2af4ad29f5a
-ms.translationtype: MT
+ms.openlocfilehash: bb51f30a69294cd78d0664a5bdae70c969da1972
+ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71155502"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73721706"
 ---
-# <a name="use-azure-service-bus-queues-with-java-to-send-and-receive-messages"></a>Использование очередей служебной шины Azure с Java для отправки и получения сообщений
+# <a name="quickstart-use-azure-service-bus-queues-with-java-to-send-and-receive-messages"></a>Краткое руководство. Использование очередей Служебной шины Azure с Java для отправки и получения сообщений
+
 [!INCLUDE [service-bus-selector-queues](../../includes/service-bus-selector-queues.md)]
-В этом руководстве вы узнаете, как создавать приложения Java для отправки сообщений в очередь служебной шины Azure и получать сообщения из нее. 
+В этом руководстве показано, как создавать приложения Java для отправки и получения сообщений через очередь Служебной шины Azure. 
 
 > [!NOTE]
 > Примеры Java можно найти на сайте GitHub в [репозитории azure-service-bus](https://github.com/Azure/azure-service-bus/tree/master/samples/Java).
 
 ## <a name="prerequisites"></a>Предварительные требования
-1. Подписка Azure. Для работы с этим учебником требуется учетная запись Azure. Вы можете активировать [преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/?WT.mc_id=A85619ABF) или зарегистрироваться для использования [бесплатной учетной записи](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
-2. Если у вас нет очереди для работы, выполните действия, описанные в статье [использование портал Azure для создания очереди служебной шины](service-bus-quickstart-portal.md) для создания очереди.
-    1. Ознакомьтесь с кратким **обзором** **очередей**служебной шины. 
-    2. Создайте **пространство имен**служебной шины. 
-    3. Возвращает **строку подключения**.
-    4. Создайте **очередь**служебной шины.
-3. Установите [пакет Azure SDK для Java][Azure SDK for Java]. 
+1. Подписка Azure. Для работы с этим учебником требуется учетная запись Azure. Вы можете активировать [преимущества подписчика MSDN](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/?WT.mc_id=A85619ABF) или зарегистрироваться для получения [бесплатной учетной записи](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
+2. Если у вас нет подходящей очереди служебной шины, [создайте ее с помощью портала Azure](service-bus-quickstart-portal.md).
+    1. Ознакомьтесь с **общими сведениями** об **очередях** Служебной шины. 
+    2. Создайте **пространство имен** Служебной шины. 
+    3. Получите **строку подключения**.
+    4. Создайте **очередь** Служебной шины.
+3. Установите [пакет Azure SDK для][Azure SDK for Java]Java. 
 
 
 ## <a name="configure-your-application-to-use-service-bus"></a>Настройка приложения для использования служебной шины
@@ -187,7 +188,7 @@ public void run() throws Exception {
 > [!NOTE]
 > Вы можете управлять ресурсами служебной шины с помощью [обозревателя служебной шины](https://github.com/paolosalvatori/ServiceBusExplorer/). Обозреватель служебной шины позволяет без труда подключаться к пространству имен служебной шины и управлять сущностями обмена сообщениями. Средство предоставляет дополнительные возможности, например функции импорта и экспорта или возможность проверять разделы, очереди, подписки, службы ретрансляции, центры уведомлений и концентраторы событий. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Вы ознакомились с основами использования очередей служебной шины. Дополнительные сведения см. в статье [Очереди, разделы и подписки служебной шины][Queues, topics, and subscriptions].
 
 Дополнительную информацию см. в [Центре разработчиков Java](https://azure.microsoft.com/develop/java/).

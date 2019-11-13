@@ -1,26 +1,26 @@
 ---
-title: Обработка событий Apache Kafka с использованием Stream Analytics в Центрах событий Azure | Документация Майкрософт
-description: В этой статье показано, как обрабатывать события Kafka, которые принимаются через Центры событий, с помощью Azure Stream Analytics
+title: Руководство по Обработка событий Apache Kafka с использованием Stream Analytics в Центрах событий Azure
+description: Руководство по В этой статье показано, как обрабатывать события Kafka, которые принимаются через Центры событий, с помощью Azure Stream Analytics
 services: event-hubs
 documentationcenter: ''
 author: spelluru
 manager: ''
 ms.service: event-hubs
 ms.devlang: na
-ms.topic: article
+ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.custom: seodec18
-ms.date: 12/06/2018
+ms.date: 11/05/2019
 ms.author: spelluru
-ms.openlocfilehash: 0c4beede2508104fc9af934d3f9a2bbcce791292
-ms.sourcegitcommit: c0419208061b2b5579f6e16f78d9d45513bb7bbc
-ms.translationtype: MT
+ms.openlocfilehash: 7801b3252ab13df1f92e7aa5e0eba071195cb76c
+ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67626186"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73720616"
 ---
-# <a name="process-apache-kafka-for-event-hubs-events-using-stream-analytics"></a>Обработка событий Центров событий в Apache Kafka с использованием Stream Analytics 
+# <a name="tutorial-process-apache-kafka-for-event-hubs-events-using-stream-analytics"></a>Руководство по Обработка событий Центров событий в Apache Kafka с использованием Stream Analytics 
 В этой статье показано, как выполняется потоковая передача данных в Центры событий с поддержкой Kafka и обработка с помощью Azure Stream Analytics. Здесь подробно описаны следующие действия: 
 
 1. создание пространства имен Центров событий с поддержкой Kafka;
@@ -30,7 +30,7 @@ ms.locfileid: "67626186"
 Вам не обязательно изменять протокол клиентов или запускать собственные кластеры при использовании конечной точки Kafka, предоставленной концентратором событий. Центры событий Azure поддерживают [Apache Kafka 1.0.](https://kafka.apache.org/10/documentation.html) и более поздние версии. 
 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Ниже указаны требования для работы с этим кратким руководством.
 
@@ -133,7 +133,7 @@ ms.locfileid: "67626186"
 
 ### <a name="configure-job-input"></a>Настройка входных данных для задания
 
-1. В сообщение уведомления, выберите **перейти к ресурсу** для см. в разделе **задания Stream Analytics** страницы. 
+1. В сообщении уведомления, щелкните **Перейти к ресурсу**, чтобы открыть страницу **задания Stream Analytics**. 
 2. Выберите **Входные данные** в разделе **Топология задания** в меню слева.
 3. Выберите **Добавить потоковый вход**, а затем выберите **Концентратор событий**. 
 
@@ -204,7 +204,7 @@ ms.locfileid: "67626186"
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 В этой статье вы узнаете, как выполнять потоковую передачу данных в Центры событий с поддержкой Kafka без необходимости менять клиенты протоколов или запускать собственные кластеры. Дополнительные сведения о Центрах событий и Центрах событий для Kafka см. в статьях:  
 
 - [Сведения о Центрах событий](event-hubs-what-is-event-hubs.md)

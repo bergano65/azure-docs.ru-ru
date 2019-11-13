@@ -1,6 +1,6 @@
 ---
-title: Создание пространства имен и очереди служебной шины Azure с помощью шаблона Azure Resource Manager | Документация Майкрософт
-description: Создание пространства имен и очереди служебной шины с помощью шаблона диспетчера ресурсов Azure
+title: Краткое руководство. Создание пространства имен и очереди служебной шины Azure с помощью шаблона Azure Resource Manager
+description: Краткое руководство. Создание пространства имен и очереди служебной шины с помощью шаблона диспетчера ресурсов Azure
 services: service-bus-messaging
 documentationcenter: .net
 author: spelluru
@@ -9,19 +9,19 @@ editor: ''
 ms.assetid: a6bfb5fd-7b98-4588-8aa1-9d5f91b599b6
 ms.service: service-bus-messaging
 ms.devlang: tbd
-ms.topic: article
+ms.topic: quickstart
 ms.tgt_pltfrm: dotnet
 ms.workload: na
-ms.date: 01/23/2019
+ms.date: 11/05/2019
 ms.author: spelluru
-ms.openlocfilehash: 1c6a4202b944b2eb95008964eb1040f176645334
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
-ms.translationtype: MT
+ms.openlocfilehash: 40aeff225cfa6d499ebdfae6736e0684b2a27244
+ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73482379"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73718795"
 ---
-# <a name="create-a-service-bus-namespace-and-a-queue-using-an-azure-resource-manager-template"></a>Создание пространства имен и очереди служебной шины с помощью шаблона диспетчера ресурсов Azure
+# <a name="quickstart-create-a-service-bus-namespace-and-a-queue-using-an-azure-resource-manager-template"></a>Краткое руководство. Создание пространства имен и очереди служебной шины с помощью шаблона диспетчера ресурсов Azure
 
 В этой статье показывается, как использовать шаблон Azure Resource Manager, создающий пространство имен служебной шины и очередь в нем. Здесь объясняется, как указать развертываемые ресурсы и определить параметры, указываемые при развертывании. Этот шаблон можно использовать для собственных развертываний или настроить его в соответствии с вашими требованиями.
 
@@ -37,7 +37,7 @@ ms.locfileid: "73482379"
 > * [Создайте пространство имен служебной шины](service-bus-resource-manager-namespace.md)
 > * [Создание пространства имен служебной шины с разделом, подпиской и правилом с помощью шаблона Azure Resource Manager](service-bus-resource-manager-namespace-topic-with-rule.md)
 > 
-> Чтобы узнать о последних шаблонах, перейдите в коллекцию шаблонов быстрого запуска [Azure][Azure Quickstart Templates] и выполните поиск по запросу **Service Bus**.
+> Чтобы узнать о новых шаблонах, в коллекции [шаблонов быстрого запуска Azure][Azure Quickstart Templates] выполните поиск по фразе **служебная шина**.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -130,7 +130,7 @@ ms.locfileid: "73482379"
 New-AzResourceGroupDeployment -ResourceGroupName \<resource-group-name\> -TemplateFile <https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/201-servicebus-create-queue/azuredeploy.json>
 ```
 
-## <a name="azure-cli"></a>Azure CLI
+## <a name="azure-cli"></a>Инфраструктура CLI Azure
 
 ```azurecli
 azure config mode arm
@@ -138,8 +138,8 @@ azure config mode arm
 azure group deployment create \<my-resource-group\> \<my-deployment-name\> --template-uri <https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/201-servicebus-create-queue/azuredeploy.json>
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
-См. следующий раздел, в котором показано, как создать правило авторизации для пространства имен и очереди: [Создание правила авторизации служебной шины для пространства имен и очереди с помощью шаблона Azure Resource Manager](service-bus-resource-manager-namespace-auth-rule.md)
+## <a name="next-steps"></a>Дополнительная информация
+См. следующий раздел, в котором показано, как создать правило авторизации для пространства имен или очереди: [Создание правила авторизации Служебной шины для пространства имен и очереди с помощью шаблона Azure Resource Manager](service-bus-resource-manager-namespace-auth-rule.md)
 
 Узнайте, как управлять этими ресурсами, просмотрев следующие статьи:
 

@@ -1,6 +1,6 @@
 ---
-title: Использование разделов служебной шины (Ruby) | Документация Майкрософт
-description: Узнайте, как использовать разделы и подписки служебной шины в Azure. Примеры кода написаны для приложений Ruby.
+title: Краткое руководство. Как использовать разделы и подписки Служебной шины с Ruby
+description: Краткое руководство. Узнайте, как использовать разделы и подписки служебной шины в Azure. Примеры кода написаны для приложений Ruby.
 services: service-bus-messaging
 documentationcenter: ruby
 author: axisc
@@ -11,17 +11,17 @@ ms.service: service-bus-messaging
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: ruby
-ms.topic: article
-ms.date: 04/15/2019
+ms.topic: quickstart
+ms.date: 11/05/2019
 ms.author: aschhab
-ms.openlocfilehash: b2a05a4695ee80873a2d7464c0a1cf4d46ed30f5
-ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
-ms.translationtype: MT
+ms.openlocfilehash: b5401eae844ed2113a9fbc07c8b3ad8601709d43
+ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67543652"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73718931"
 ---
-# <a name="how-to-use-service-bus-topics-and-subscriptions-with-ruby"></a>Как использовать разделы и подписки служебной шины с Ruby
+# <a name="quickstart-how-to-use-service-bus-topics-and-subscriptions-with-ruby"></a>Краткое руководство. Как использовать разделы и подписки служебной шины с Ruby
  
 [!INCLUDE [service-bus-selector-topics](../../includes/service-bus-selector-topics.md)]
 
@@ -34,12 +34,12 @@ ms.locfileid: "67543652"
 - удаление разделов и подписок.
 
 
-## <a name="prerequisites"></a>Технические условия
-1. Подписка Azure. Для работы с этим учебником требуется учетная запись Azure. Вы можете активировать ваши [преимущества для подписчиков Visual Studio или MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A85619ABF) или зарегистрируйте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
-2. Выполните шаги [краткое руководство: Чтобы создать раздел служебной шины и подписок для раздела с помощью портала Azure](service-bus-quickstart-topics-subscriptions-portal.md) для создания служебной шины **пространства имен** и получить **строку подключения**. 
+## <a name="prerequisites"></a>Предварительные требования
+1. Подписка Azure. Для работы с этим учебником требуется учетная запись Azure. Вы можете активировать [преимущества подписчика Visual Studio или MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A85619ABF) или зарегистрироваться для получения [бесплатной учетной записи](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
+2. Выполните шаги из [краткого руководства по созданию раздела Служебной шины и подписок на него с помощью портала Azure](service-bus-quickstart-topics-subscriptions-portal.md), чтобы создать **пространство имен** Служебной шины и получить **строку подключения**. 
 
     > [!NOTE]
-    > Вы создадите **разделе** и **подписки** в раздел с помощью **Ruby** в этом кратком руководстве. 
+    > В этом кратком руководстве описано, как создать **раздел** и **подписку** на этот разделу с помощью **Ruby**. 
 
 [!INCLUDE [service-bus-ruby-setup](../../includes/service-bus-ruby-setup.md)]
 
@@ -70,7 +70,7 @@ topic = azure_service_bus_service.create_topic(topic)
 
 По умолчанию подписки являются постоянными. Они существуют либо до их удаления, либо до удаления раздела, с которым они связаны. Если приложение содержит логику для создания подписки, оно сначала должно проверить, существует ли подписка, используя метод getSubscription.
 
-У вас есть подписки, автоматически удаляется, задав [AutoDeleteOnIdle свойство](https://docs.microsoft.com/dotnet/api/microsoft.servicebus.messaging.subscriptiondescription.autodeleteonidle).
+Вы можете удалять подписки автоматически, задав [свойство AutoDeleteOnIdle](https://docs.microsoft.com/dotnet/api/microsoft.servicebus.messaging.subscriptiondescription.autodeleteonidle).
 
 ### <a name="create-a-subscription-with-the-default-matchall-filter"></a>Создание подписки с фильтром по умолчанию (MatchAll)
 Если при создании подписки не указан фильтр, то используется фильтр по умолчанию — **MatchAll**. Если используется фильтр **MatchAll**, то все сообщения, опубликованные в разделе, помещаются в виртуальную очередь подписки. В следующем примере создается подписка с именем "all-messages" и используется фильтр по умолчанию **MatchAll**.
@@ -158,7 +158,7 @@ azure_service_bus_service.delete_subscription_message(message)
 Если в приложении происходит сбой после обработки сообщения, но перед вызовом метода `delete_subscription_message()`, сообщение будет повторно доставлено в приложение после его перезапуска. Часто такой подход называют *Обработать хотя бы один раз*, т. е. каждое сообщение будет обрабатываться по крайней мере один раз, но в некоторых случаях это же сообщение может доставляться повторно. Если повторная обработка недопустима, разработчики приложения должны добавить дополнительную логику для обработки повторной доставки сообщений. Как правило, эта логика достигается с помощью свойства `message_id` сообщения, которое остается постоянным для различных попыток доставки.
 
 ## <a name="delete-topics-and-subscriptions"></a>Удаление разделов и подписок
-Разделы и подписки хранятся постоянно Если [AutoDeleteOnIdle свойство](https://docs.microsoft.com/dotnet/api/microsoft.servicebus.messaging.subscriptiondescription.autodeleteonidle) имеет значение. Они могут быть удалены, либо через [портала Azure][Azure portal] или программным способом. В следующем примере показано, как удалить раздел с именем `test-topic`.
+Разделы и подписки сохраняются постоянно, если не задано [свойство AutoDeleteOnIdle](https://docs.microsoft.com/dotnet/api/microsoft.servicebus.messaging.subscriptiondescription.autodeleteonidle). Их можно удалять на [портале Azure][Azure portal] или с помощью программных средств. В следующем примере показано, как удалить раздел с именем `test-topic`.
 
 ```ruby
 azure_service_bus_service.delete_topic("test-topic")
@@ -173,7 +173,7 @@ azure_service_bus_service.delete_subscription("test-topic", "high-messages")
 > [!NOTE]
 > Вы можете управлять ресурсами служебной шины с помощью [обозревателя служебной шины](https://github.com/paolosalvatori/ServiceBusExplorer/). Обозреватель служебной шины позволяет без труда подключаться к пространству имен служебной шины и управлять сущностями обмена сообщениями. Средство предоставляет дополнительные возможности, например функции импорта и экспорта или возможность проверять разделы, очереди, подписки, службы ретрансляции, центры уведомлений и концентраторы событий. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 Вы узнали основные сведения о разделах служебной шины. Для получения дополнительных сведений используйте следующие ссылки.
 
 * См. статью [Очереди, разделы и подписки](service-bus-queues-topics-subscriptions.md).
