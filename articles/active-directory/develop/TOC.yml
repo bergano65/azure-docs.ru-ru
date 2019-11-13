@@ -392,9 +392,9 @@
               href: active-directory-configurable-token-lifetimes.md
         - name: Конфигурация приложений
           items:
-            - name: Учебное руководство по регистрации приложений на портале Azure (устаревшие сведения)
+            - name: Переход с функции "Регистрация приложений" прежних версий на новую функцию "Регистрация приложений" на портале Azure
               href: app-registrations-training-guide-for-app-registrations-legacy-users.md
-            - name: Руководство по регистрации приложений на портале регистрации приложений
+            - name: Переход с портала "Регистрация приложений" на новый интерфейс "Регистрация приложений" на портале Azure
               href: app-registration-portal-training-guide.md
             - name: Преобразование однотенантного приложения в мультитенантное
               href: howto-convert-app-to-be-multi-tenant.md

@@ -1,5 +1,5 @@
 ---
-title: Примеры манифестов приложения Reliable Services в Azure Service Fabric | Документация Майкрософт
+title: Примеры манифеста приложения надежных служб Azure Service Fabric
 description: Узнайте, как настроить параметры манифестов приложений и служб для приложения Service Fabric Reliable Services.
 services: service-fabric
 documentationcenter: na
@@ -13,19 +13,19 @@ ms.tgt_pltfrm: na
 ms.workload: multiple
 ms.date: 06/11/2018
 ms.author: pepogors
-ms.openlocfilehash: a5678b4c4c0f7a9d8d3f3cf6e838580de2059a8f
-ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
+ms.openlocfilehash: 9cc79610b6dc9f9d2869a41e0b483168087368cc
+ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69035640"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74013231"
 ---
 # <a name="reliable-services-application-and-service-manifest-examples"></a>Примеры манифестов приложений Reliable Services и служб
 Ниже приведены примеры манифестов приложений и служб для приложения Service Fabric с внешним веб-интерфейсном ASP.NET Core и серверной частью с отслеживанием состояния. Цель этих примеров — показать, какие параметры являются доступными и как их использовать. Эти манифесты приложений и служб основаны на манифестах [в кратком руководстве по Service Fabric для .NET](https://github.com/Azure-Samples/service-fabric-dotnet-quickstart/).
 
 Показаны следующие функции:
 
-|Манифест|Компоненты|
+|Manifest|Функции|
 |---|---|
 |[Манифест приложения](#application-manifest)| [Управление ресурсами](service-fabric-resource-governance.md), [запуск службы с использованием учетной записи локального администратора](service-fabric-application-runas-security.md), [применение политики по умолчанию для всех пакетов кода службы](service-fabric-application-runas-security.md#apply-a-default-policy-to-all-service-code-packages), [создание субъектов пользователей и групп](service-fabric-application-runas-security.md), совместное использование пакета данных экземплярами служб, [переопределение конечных точек службы](service-fabric-service-manifest-resources.md#overriding-endpoints-in-servicemanifestxml)| 
 |Манифест службы FrontEndService| [Выполнение сценария при запуске службы](service-fabric-run-script-at-service-startup.md), [определение конечной точки HTTPS](service-fabric-tutorial-dotnet-app-enable-https-endpoint.md#define-an-https-endpoint-in-the-service-manifest) | 
@@ -399,7 +399,7 @@ ms.locfileid: "69035640"
  Дополнительные сведения см. в разделе [Элемент Arguments](service-fabric-service-model-schema-elements.md#ArgumentsElementxs:stringComplexTypeDefinedInExeHostEntryPointTypecomplexType).
 
 ### <a name="workingfolder-element"></a>Элемент WorkingFolder
-Рабочая папка для процесса находится в пакете кода на узле кластера, в котором развернуто приложение. Можно задать три значения: Work (значение по умолчанию), CodePackage или CodeBase. CodeBase указывает, что в качестве рабочей папки установлен каталог, в котором в пакете кода определен EXE-файл. CodePackage задает рабочую папку, которая будет корнем пакета кода независимо от того, определен ли EXE-файл в каталоге пакета кода. Work задает в качестве рабочей уникальную папку, созданную на узле.  Эта папка является одинаковой для всего экземпляра приложения. По умолчанию в качестве рабочей папки всех процессов в приложении задана рабочая папка приложения. Здесь процессы могут записывать данные. Записывать данные в пакет кода или базу кода не рекомендуется, так как эти папки могут совместно использоваться в различных экземплярах приложений и могут быть удалены. Дополнительные сведения см. в разделе [Элемент WorkingFolder](service-fabric-service-model-schema-elements.md#WorkingFolderElementanonymouscomplexTypeComplexTypeDefinedInExeHostEntryPointTypecomplexType).
+Рабочая папка для процесса находится в пакете кода на узле кластера, в котором развернуто приложение. Можно задать три значения: Work (по умолчанию), CodePackage или CodeBase. CodeBase указывает, что в качестве рабочей папки установлен каталог, в котором в пакете кода определен EXE-файл. CodePackage задает рабочую папку, которая будет корнем пакета кода независимо от того, определен ли EXE-файл в каталоге пакета кода. Work задает в качестве рабочей уникальную папку, созданную на узле.  Эта папка является одинаковой для всего экземпляра приложения. По умолчанию в качестве рабочей папки всех процессов в приложении задана рабочая папка приложения. Здесь процессы могут записывать данные. Записывать данные в пакет кода или базу кода не рекомендуется, так как эти папки могут совместно использоваться в различных экземплярах приложений и могут быть удалены. Дополнительные сведения см. в разделе [Элемент WorkingFolder](service-fabric-service-model-schema-elements.md#WorkingFolderElementanonymouscomplexTypeComplexTypeDefinedInExeHostEntryPointTypecomplexType).
 
 ### <a name="consoleredirection-element"></a>Элемент ConsoleRedirection
 
@@ -449,7 +449,7 @@ ms.locfileid: "69035640"
 Имя исполняемого файла.  Например, MySetup.bat или MyServiceHost.exe. Дополнительные сведения см. в разделе [Элемент Program](service-fabric-service-model-schema-elements.md#ProgramElementxs:stringComplexTypeDefinedInExeHostEntryPointTypecomplexType).
 
 ### <a name="workingfolder-element"></a>Элемент WorkingFolder
-Рабочая папка для процесса находится в пакете кода на узле кластера, в котором развернуто приложение. Можно задать три значения: Work (значение по умолчанию), CodePackage или CodeBase. CodeBase указывает, что в качестве рабочей папки установлен каталог, в котором в пакете кода определен EXE-файл. CodePackage задает рабочую папку, которая будет корнем пакета кода независимо от того, определен ли EXE-файл в каталоге пакета кода. Work задает в качестве рабочей уникальную папку, созданную на узле.  Эта папка является одинаковой для всего экземпляра приложения. По умолчанию в качестве рабочей папки всех процессов в приложении задана рабочая папка приложения. Здесь процессы могут записывать данные. Записывать данные в пакет кода или базу кода не рекомендуется, так как эти папки могут совместно использоваться в различных экземплярах приложений и могут быть удалены. Дополнительные сведения см. в разделе [Элемент WorkingFolder](service-fabric-service-model-schema-elements.md#WorkingFolderElementanonymouscomplexTypeComplexTypeDefinedInExeHostEntryPointTypecomplexType).
+Рабочая папка для процесса находится в пакете кода на узле кластера, в котором развернуто приложение. Можно задать три значения: Work (по умолчанию), CodePackage или CodeBase. CodeBase указывает, что в качестве рабочей папки установлен каталог, в котором в пакете кода определен EXE-файл. CodePackage задает рабочую папку, которая будет корнем пакета кода независимо от того, определен ли EXE-файл в каталоге пакета кода. Work задает в качестве рабочей уникальную папку, созданную на узле.  Эта папка является одинаковой для всего экземпляра приложения. По умолчанию в качестве рабочей папки всех процессов в приложении задана рабочая папка приложения. Здесь процессы могут записывать данные. Записывать данные в пакет кода или базу кода не рекомендуется, так как эти папки могут совместно использоваться в различных экземплярах приложений и могут быть удалены. Дополнительные сведения см. в разделе [Элемент WorkingFolder](service-fabric-service-model-schema-elements.md#WorkingFolderElementanonymouscomplexTypeComplexTypeDefinedInExeHostEntryPointTypecomplexType).
 
 ### <a name="configpackage-element"></a>Элемент ConfigPackage
 Объявляет в разделе PackageRoot папку с именем, указанным в атрибуте Name, которая содержит файл Settings.xml. Этот файл содержит разделы заданных пользователем параметров пар "ключ-значение", которые могут считываться процессом во время выполнения. Во время обновления при изменении одного только атрибута version для ConfigPackage перезапуск процесса не выполняется. Вместо этого при помощи обратного вызова в процесс передается уведомление о том, что параметры конфигурации изменились, поэтому они были перезагружены в динамическом режиме. Дополнительные сведения см. в разделе [Элемент ConfigPackage](service-fabric-service-model-schema-elements.md#ConfigPackageElementConfigPackageTypeComplexTypeDefinedInServiceManifestTypecomplexTypeDefinedInDigestedConfigPackageelement).

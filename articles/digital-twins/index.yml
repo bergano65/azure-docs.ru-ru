@@ -3,7 +3,7 @@ title: Документация по Azure Digital Twins (предварител
 summary: Узнайте, как с помощью Azure Digital Twins создавать связи между людьми, местами и вещами, а также создавать пространственные интеллектуальные решения для Интернета вещей. Изучите краткое руководство и пошаговые инструкции, с помощью которых вы сможете подробно рассмотреть основные понятия, научиться отслеживать условное интеллектуальное здание и создать решение следующего поколения для Интернета вещей, которое моделирует физическое окружение.
 metadata:
   title: Документация по Azure Digital Twins (предварительная версия). Руководства и справочник по API | Документация Майкрософт
-  description: Создавайте пространственные интеллектуальные решения с помощью Azure Digital Twins.
+  description: Узнайте, как с помощью Azure Digital Twins создавать связи между людьми, местами и вещами, а также пространственные интеллектуальные решения для Интернета вещей.
   services: digital-twins
   ms.service: digital-twins
   ms.subservice: digital-twins
@@ -12,12 +12,12 @@ metadata:
   author: KingdomOfEnds
   ms.author: v-adgera
   ms.date: 09/03/2019
-  ms.openlocfilehash: b5a449d09b1068dbf874828b9e65b1ac318b58fd
-  ms.sourcegitcommit: 3fa4384af35c64f6674f40e0d4128e1274083487
+  ms.openlocfilehash: 3d55dcfc4b57d0179ca6e02bae50bf3d37dc70f3
+  ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 09/24/2019
-  ms.locfileid: "71219734"
+  ms.lasthandoff: 11/13/2019
+  ms.locfileid: "74009302"
 landingContent:
 - title: Сведения об Azure Digital Twins
   linkLists:

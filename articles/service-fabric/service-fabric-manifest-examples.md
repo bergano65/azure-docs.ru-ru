@@ -1,5 +1,5 @@
 ---
-title: Примеры манифеста приложения-контейнера Azure Service Fabric | Документация Майкрософт
+title: Примеры манифеста приложения Azure Service Fabric
 description: Узнайте, как настроить параметры манифестов приложений и служб для приложения Service Fabric.
 services: service-fabric
 documentationcenter: na
@@ -13,21 +13,21 @@ ms.tgt_pltfrm: na
 ms.workload: multiple
 ms.date: 06/11/2018
 ms.author: pepogors
-ms.openlocfilehash: dc3384821ddfba0a137a74297bc44903b6ed5d1d
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.openlocfilehash: 969f15ecb45164e3b3f26c22f756a022e55782ed
+ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69650581"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74013176"
 ---
 # <a name="service-fabric-application-and-service-manifest-examples"></a>Примеры манифестов приложений и служб Service Fabric
 В этом разделе содержатся примеры манифестов приложений и служб. Эти примеры предназначены не для того, чтобы продемонстрировать важные сценарии, а чтобы показать различные доступные параметры и способы их использования. 
 
 Ниже приведен список возможностей и примеры манифестов, частью которых они являются.
 
-|Компонент|Манифест|
+|Функция|Manifest|
 |---|---|
-|[Система управления ресурсами](service-fabric-resource-governance.md)|[Манифест приложения Reliable Services](service-fabric-manifest-example-reliable-services-app.md#application-manifest), [манифест приложения контейнера](service-fabric-manifest-example-container-app.md#application-manifest)|
+|[Управление ресурсами](service-fabric-resource-governance.md)|[Манифест приложения Reliable Services](service-fabric-manifest-example-reliable-services-app.md#application-manifest), [манифест приложения контейнера](service-fabric-manifest-example-container-app.md#application-manifest)|
 |[Запуск службы с использованием учетной записи локального администратора](service-fabric-application-runas-security.md)|[Манифест приложения Reliable Services](service-fabric-manifest-example-reliable-services-app.md#application-manifest)|
 |[Применение политики по умолчанию ко всем пакетам кода службы](service-fabric-application-runas-security.md#apply-a-default-policy-to-all-service-code-packages)|[Манифест приложения Reliable Services](service-fabric-manifest-example-reliable-services-app.md#application-manifest)|
 |[Создание субъектов пользователей и групп](service-fabric-application-runas-security.md)|[Манифест приложения Reliable Services](service-fabric-manifest-example-reliable-services-app.md#application-manifest)|

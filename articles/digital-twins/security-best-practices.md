@@ -8,14 +8,14 @@ ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
 ms.date: 09/30/2019
-ms.openlocfilehash: ba10a6105972eddc8474841b234d2eeddc994f5d
-ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
+ms.openlocfilehash: 9f3f98863f9a7cd0e6328ddc75b1154ee933fe0b
+ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71948917"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74009254"
 ---
-# <a name="security-best-practices"></a>Рекомендации по обеспечению безопасности
+# <a name="azure-digital-twins-security-best-practices"></a>Рекомендации по обеспечению безопасности Azure Digital Twins
 
 Служба безопасности Azure Digital Twins предоставляет детализированное управление доступом к определенным ресурсам и действиям в графе Интернета вещей. Эти функции предоставляются с помощью детализированных возможностей управления ролями и доступом, которые называются [управление доступом на основе ролей](./security-role-based-access-control.md).
 
@@ -71,7 +71,7 @@ Azure Digital Twins используют Azure Active Directory для ауте�
 
 [!INCLUDE [digital-twins-rbac-best-practices](../../includes/digital-twins-rbac-best-practices.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 * Рекомендации по Интернету вещей Azure см. в [этой статье](../iot-fundamentals/iot-security-best-practices.md).
 

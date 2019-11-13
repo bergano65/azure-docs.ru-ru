@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/23/2019
 ms.author: sngun
 ms.custom: seodec18
-ms.openlocfilehash: bdbc50983708327cf5d3857282c92fcab1c28b09
-ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
+ms.openlocfilehash: d9c294d4ddadd1f6be7f66cd7fdd0f0dc723e18f
+ms.sourcegitcommit: 44c2a964fb8521f9961928f6f7457ae3ed362694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/12/2019
-ms.locfileid: "73930545"
+ms.locfileid: "73950575"
 ---
 # <a name="diagnostic-logging-in-azure-cosmos-db"></a>Журнал ведения диагностики в Azure Cosmos DB 
 
@@ -401,7 +401,7 @@ $blobs | Get-AzStorageBlobContent `
 ![Пример поиска 10 самых последних журналов](./media/logging/log-analytics-query.png)
 
 <a id="#queries"></a>
-### <a name="cosmosdb-log-analytics-queries-in-azure-monitor"></a>CosmosDB Log Analytics запросов в Azure Monitor
+### <a name="azure-cosmos-db-log-analytics-queries-in-azure-monitor"></a>Azure Cosmos DB запросов Log Analytics в Azure Monitor
 
 Ниже приведены некоторые дополнительные запросы, которые можно ввести в поле **поиска по журналам** , чтобы упростить мониторинг контейнеров Azure Cosmos. Эти запросы поддерживают [новый язык](../log-analytics/log-analytics-log-search-upgrade.md).  
 
@@ -445,6 +445,7 @@ $blobs | Get-AzStorageBlobContent `
     | where Caller == "test@company.com" and ResourceProvider=="MICROSOFT.DOCUMENTDB" and Category=="DataPlaneRequests" 
     | summarize count() by Resource
     ```
+
     > [!NOTE]
     > Это команда для журнала действий, а не для журнала диагностики.
 
@@ -462,8 +463,6 @@ $blobs | Get-AzStorageBlobContent `
     | order by requestCharge_s desc
     | limit 100
     ```
-    
-      
 
 * Для запроса операций, которые выполнялись дольше 3 миллисекунд:
 
@@ -496,11 +495,8 @@ $blobs | Get-AzStorageBlobContent `
     AzureDiagnostics 
     | where ResourceProvider=="MICROSOFT.DOCUMENTDB" and Category=="PartitionKeyStatistics" 
     | project SubscriptionId, regionName_s, databaseName_s, collectionname_s, partitionkey_s, sizeKb_s, ResourceId 
-    
-   
     ```
     
-
 Дополнительные сведения об использовании нового языка поиска по журналам см. в разделе [сведения о поиске по журналам в Azure Monitor журналах](../log-analytics/log-analytics-log-search-new.md). 
 
 ## <a id="interpret"></a>Интерпретация журналов

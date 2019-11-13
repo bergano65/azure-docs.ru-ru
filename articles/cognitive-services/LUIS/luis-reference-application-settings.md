@@ -1,7 +1,7 @@
 ---
 title: Параметры приложения — LUIS
 titleSuffix: Azure Cognitive Services
-description: Общие сведения о параметрах приложений для определения языка приложения.
+description: Параметры приложений для языка Cognitive Services Azure "Общие сведения о приложениях" хранятся в приложении и на портале.
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -9,27 +9,27 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 07/16/2019
+ms.date: 11/12/2019
 ms.author: diberry
-ms.openlocfilehash: 6d516590b90efd937789fa0847b707d2521f6459
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: bae4f09b539e26ca8c0d4ce97999776dc0911601
+ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68932583"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73961788"
 ---
 # <a name="application-settings"></a>Параметры приложения
 
 Эти параметры приложения хранятся в [экспортированном](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c40) приложении и [обновляются](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/versions-update-application-version-settings) с помощью интерфейсов API. При изменении параметров версии приложения состояние обучения приложения сбрасывается на "не обучено".
 
-|Параметр|Значение по умолчанию|Примечания|
+|Настройка|Значение по умолчанию|Примечания|
 |--|--|--|
-|нормализепунктуатион|True|Удаляет знаки препинания.|
-|NormalizeDiacritics|True|Удаляет диакритические знаки.|
+|нормализепунктуатион|True,|Удаляет знаки препинания.|
+|NormalizeDiacritics|True,|Удаляет диакритические знаки.|
 
 ## <a name="diacritics-normalization"></a>Нормализация диакритических знаков 
 
-Включите нормализацию utterance для диакритических знаков в файле приложения Luis JSON в `settings` параметре.
+Включите нормализацию utterance для диакритических знаков в файле приложения LUIS JSON в параметре `settings`.
 
 ```JSON
 "settings": [
@@ -46,7 +46,7 @@ ms.locfileid: "68932583"
 
 ### <a name="language-support-for-diacritics"></a>Языковая поддержка диакритических знаков
 
-#### <a name="brazilian-portuguese-pt-br-diacritics"></a>Португальская `pt-br` бразильская диакритические знаки
+#### <a name="brazilian-portuguese-pt-br-diacritics"></a>Португальский (Бразилия) `pt-br` диакритические знаки
 
 |Диакритические знаки имеют значение false|Диакритические знаки имеют значение true|
 |-|-|
@@ -64,7 +64,7 @@ ms.locfileid: "68932583"
 |`ú`|`u`| 
 |||
 
-#### <a name="dutch-nl-nl-diacritics"></a>Голландская `nl-nl` диакритические знаки
+#### <a name="dutch-nl-nl-diacritics"></a>Голландский `nl-nl` диакритические знаки
 
 |Диакритические знаки имеют значение false|Диакритические знаки имеют значение true|
 |-|-|
@@ -81,7 +81,7 @@ ms.locfileid: "68932583"
 |`ü`|`u`|
 |||
 
-#### <a name="french-fr--diacritics"></a>Канадские `fr-` диакритические знаки
+#### <a name="french-fr--diacritics"></a>Французский `fr-` диакритические знаки
 
 К ним относятся французские и канадские языки и региональные параметры.
 
@@ -102,7 +102,7 @@ ms.locfileid: "68932583"
 |`ü`|`u`| 
 |`ÿ`|`y`| 
 
-#### <a name="german-de-de-diacritics"></a>Знаки `de-de` на немецком языке
+#### <a name="german-de-de-diacritics"></a>`de-de` знаков на немецком языке
 
 |Диакритические знаки имеют значение false|Диакритические знаки имеют значение true|
 |--|--|
@@ -125,7 +125,7 @@ ms.locfileid: "68932583"
 |`ù`|`u`|
 |`ú`|`u`|
 
-#### <a name="spanish-es--diacritics"></a>Испанские `es-` диакритические знаки
+#### <a name="spanish-es--diacritics"></a>Испанский `es-` диакритические знаки
 
 Сюда входит испанский и канадский Мексики.
 
@@ -142,7 +142,7 @@ ms.locfileid: "68932583"
 
 ## <a name="punctuation-normalization"></a>Нормализация знаков препинания
 
-Включите нормализацию utterance для знаков препинания в файле приложения Luis JSON в `settings` параметре.
+Включите нормализацию utterance для знаков препинания в файле приложения LUIS JSON в параметре `settings`.
 
 ```JSON
 "settings": [
@@ -150,16 +150,16 @@ ms.locfileid: "68932583"
 ] 
 ```
 
-В следующем фразы продолжительностью показано, как диакритические знаки влияют на фразы продолжительностью:
+В следующем фразы продолжительностью показано, как пунктуация влияет на фразы продолжительностью:
 
-|Если диакритические знаки имеют значение false|Если диакритические знаки имеют значение true|
+|Если для пунктуации задано значение false|Если для пунктуации задано значение true|
 |--|--|
 |`Hmm..... I will take the cappuccino`|`Hmm I will take the cappuccino`|
 |||
 
 ### <a name="punctuation-removed"></a>Пунктуация удалена
 
-Следующие знаки пунктуации удаляются `NormalizePunctuation` с параметром, установленным в значение true.
+Следующие знаки пунктуации удаляются с `NormalizePunctuation` имеет значение true.
 
 |Пунктуация|
 |--|

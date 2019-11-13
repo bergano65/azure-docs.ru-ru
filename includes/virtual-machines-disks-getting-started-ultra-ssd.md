@@ -8,15 +8,13 @@ ms.topic: include
 ms.date: 11/04/2019
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: 838037804baad9105b4636934de957c2e5f3e810
-ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+ms.openlocfilehash: 3525edb2a73811254b2a4dce70ce3edb58988492
+ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73612155"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74012448"
 ---
-# <a name="using-azure-ultra-disks"></a>Использование Ultra дисков Azure
-
 Высокопроизводительные диски Azure обеспечивают высокую пропускную способность, высокую скорость операций ввода-вывода и постоянную задержку на диске для виртуальных машин Azure IaaS. Это новое предложение обеспечивает первоклассную производительность с тем же уровнем доступности, что и имеющиеся предложения дисков. Одним из основных преимуществ использования Ultra Disks является возможность динамического изменения производительности SSD вместе с рабочими нагрузками без необходимости перезапуска виртуальных машин. Ultra Disks подходит для ресурсоемких рабочих нагрузок, таких как SAP HANA, базы данных верхнего уровня и рабочие нагрузки с большим объемом транзакций.
 
 ## <a name="ga-scope-and-limitations"></a>Область и ограничения общедоступного уровня
@@ -49,7 +47,7 @@ $vmSize = "Standard_E64s_v3"
 
 Сохраните значение **зон** , оно представляет вашу зону доступности и потребуется для развертывания Ultra Disk.
 
-|ResourceType  |Имя  |Расположение  |Зоны  |Ограничение  |Функция  |Значение  |
+|ResourceType  |имя  |Место проведения  |Зоны  |Ограничение  |Функция  |Значение  |
 |---------|---------|---------|---------|---------|---------|---------|
 |disks     |UltraSSD_LRS         |eastus2         |X         |         |         |         |
 
@@ -197,6 +195,6 @@ $diskupdateconfig = New-AzDiskUpdateConfig -DiskMBpsReadWrite 2000
 Update-AzDisk -ResourceGroupName $resourceGroup -DiskName $diskName -DiskUpdate $diskupdateconfig
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Если вы хотите попробовать новый тип диска [запросить доступ с помощью этого опроса](https://aka.ms/UltraDiskSignup).

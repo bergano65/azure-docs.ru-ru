@@ -1,6 +1,6 @@
 ---
-title: Отладка пользовательских функций в Azure Digital Twins | Документация Майкрософт
-description: Рекомендации по отладке пользовательских функций в Azure Digital Twins
+title: Отладка пользовательских функций в Azure Digital двойников | Документация Майкрософт
+description: Узнайте о рекомендуемых подходах к отладке определяемых пользователем функций в Azure Digital двойников.
 ms.author: alinast
 author: alinamstanciu
 manager: bertvanhoof
@@ -9,12 +9,12 @@ services: digital-twins
 ms.topic: conceptual
 ms.date: 10/01/2019
 ms.custom: seodec18
-ms.openlocfilehash: 7b122df279ecde8ed9ed49b5a89251073f3feda7
-ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
+ms.openlocfilehash: 130250156f0fae3e6c40742278479b5d4612657b
+ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71949883"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74005940"
 ---
 # <a name="how-to-debug-user-defined-functions-in-azure-digital-twins"></a>Сведения о том, как выполнять отладку пользовательских функций в Azure Digital Twins
 
@@ -35,7 +35,7 @@ Azure Digital Twins поддерживает надежные механизмы
 
 * Сведения о настройке ведения журнала в Azure Digital двойников см. [в статье Настройка мониторинга и ведения журнала](./how-to-configure-monitoring.md).
 * Дополнительные сведения о мощных параметрах журналов, включенных в Azure Monitor, см. в обзоре [Azure Monitor](../azure-monitor/overview.md) .
-* Просмотрите статью [сбор и использование данных журналов из ресурсов Azure](../azure-monitor/platform/resource-logs-overview.md) для настройки параметров журналов диагностики в Azure Digital двойников с помощью портала azure, Azure CLI или PowerShell.
+* Просмотрите статью [сбор и использование данных журналов из ресурсов Azure](../azure-monitor/platform/resource-logs-overview.md) для настройки параметров журналов диагностики в службе Digital двойников с помощью портал Azure, Azure CLI или PowerShell.
 
 После настройки вы сможете выбрать все категории журналов, метрики и использовать мощные Azure Monitor рабочие области log Analytics для поддержки отладки.
 
@@ -212,7 +212,7 @@ function process(telemetry, executionContext) {
 
 1. **Нет прав**. Если у пользовательской функции нет назначения роли или достаточных разрешений для доступа к некоторым метаданным топологии, такая операция завершится ошибкой.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 - Дополнительные сведения о включении [журналов и мониторинга](./how-to-configure-monitoring.md) для Azure Digital Twins.
 

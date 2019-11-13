@@ -1,17 +1,14 @@
 ---
 title: Основные сведения о языке запросов
 description: Описывает таблицы графа ресурсов и доступные типы данных, операторы и функции Kusto, которые можно использовать с графом ресурсов Azure.
-author: DCtheGeek
-ms.author: dacoulte
 ms.date: 10/21/2019
 ms.topic: conceptual
-ms.service: resource-graph
-ms.openlocfilehash: d0ba3195aef246ff49042f61dcec0b4397b5dde6
-ms.sourcegitcommit: 6c2c97445f5d44c5b5974a5beb51a8733b0c2be7
+ms.openlocfilehash: baef46f4ba6f899c2c0a1392f87006223d75a4e1
+ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73622634"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73959053"
 ---
 # <a name="understanding-the-azure-resource-graph-query-language"></a>Общие сведения о языке запросов графика ресурсов Azure
 
@@ -27,7 +24,7 @@ ms.locfileid: "73622634"
 
 Граф ресурсов предоставляет несколько таблиц для хранения данных о диспетчер ресурсов типах ресурсов и их свойствах. Эти таблицы можно использовать с операторами `join` или `union` для получения свойств из связанных типов ресурсов. Ниже приведен список таблиц, доступных в диаграмме ресурсов.
 
-|Таблицы графов ресурсов |Description (Описание) |
+|Таблицы графов ресурсов |ОПИСАНИЕ |
 |---|---|
 |Ресурсы |Таблица по умолчанию, если в запросе не определено значение None. Большинство диспетчер ресурсов типов и свойств ресурсов. |
 |ресаурцеконтаинерс |Включает подписку (в предварительной версии — `Microsoft.Resources/subscriptions`) и типы ресурсов и данные группы ресурсов (`Microsoft.Resources/subscriptions/resourcegroups`). |
@@ -47,7 +44,7 @@ Resources
 | limit 1
 ```
 
-Следующий запрос демонстрирует более сложное использование `join`. Запрос ограничивает соединяемую таблицу ресурсами подписок и с `project`, чтобы включить только исходное поле _SubscriptionId_ и поле _имени_ , переименованное в _подимя_. Переименование поля позволяет избежать `join` добавления его в качестве _name1_ , так как поле уже существует в _ресурсах_. Исходная таблица фильтруется с `where`, а следующие `project` включают столбцы из обеих таблиц. Результатом запроса является одно хранилище ключей, отображающее тип, имя хранилища ключей и имя подписки, в которой он находится.
+Следующий запрос демонстрирует более сложное использование `join`. Запрос ограничивает объединенную таблицу до ресурсов подписки, а `project` включает только исходное поле _subscriptionId_ и поле _name_, переименованное в _SubName_. Переименование поля позволяет избежать `join` добавления его в качестве _name1_ , так как поле уже существует в _ресурсах_. Исходная таблица фильтруется с `where`, а следующая `project` включает столбцы из обеих таблиц. Результатом запроса является одно хранилище ключей, отображающее тип, имя хранилища ключей и имя подписки, в которой оно находится.
 
 ```kusto
 Resources
@@ -75,7 +72,7 @@ Resources
 |[extend](/azure/kusto/query/extendoperator) |[Подсчет виртуальных машин по типу ОС](../samples/starter.md#count-os) | |
 |[join](/azure/kusto/query/joinoperator) |[Хранилище ключей с именем подписки](../samples/advanced.md#join) |Поддерживаемые флаги соединений: [иннеруникуе](/azure/kusto/query/joinoperator#default-join-flavor), [inner](/azure/kusto/query/joinoperator#inner-join), [leftouter](/azure/kusto/query/joinoperator#left-outer-join). Ограничение в 3 `join` в одном запросе. Пользовательские стратегии подключения, такие как широковещательное соединение, не допускаются. Может использоваться в одной таблице или между таблицами _Resources_ и _ресаурцеконтаинерс_ . |
 |[limit](/azure/kusto/query/limitoperator) |[Вывод списка общедоступных IP-адресов](../samples/starter.md#list-publicip) |Синоним `take` |
-|[MV — развернуть](/azure/kusto/query/mvexpandoperator) |[Вывод списка Cosmos DB с конкретными расположениями записи](../samples/advanced.md#mvexpand-cosmosdb) |_Ровлимит_ максимум 400 |
+|[MV — развернуть](/azure/kusto/query/mvexpandoperator) |[Список Cosmos DB с конкретным указанием расположений записи](../samples/advanced.md#mvexpand-cosmosdb) |_Ровлимит_ максимум 400 |
 |[порядок](/azure/kusto/query/orderoperator) |[Вывод списка ресурсов, отсортированных по имени](../samples/starter.md#list-resources) |Синоним `sort` |
 |[project](/azure/kusto/query/projectoperator) |[Вывод списка ресурсов, отсортированных по имени](../samples/starter.md#list-resources) | |
 |[project-away](/azure/kusto/query/projectawayoperator) |[Удаление столбцов из результатов](../samples/advanced.md#remove-column) | |
@@ -118,7 +115,7 @@ Resources
     where type=~'Microsoft.Insights/alertRules' | project name, properties.condition.`$type
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - См. язык, используемый в [начальных запросах](../samples/starter.md).
 - См. Дополнительные сведения о расширенном использовании в [расширенных запросах](../samples/advanced.md).

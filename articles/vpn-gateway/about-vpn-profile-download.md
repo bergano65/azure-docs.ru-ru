@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: cherylmc
-ms.openlocfilehash: 4e3276e6cde254daf2299f33d8b5ed9f54985327
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 340ff6d9b112f4ff04950499b2708d8882fa6120
+ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73517661"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73960634"
 ---
 # <a name="about-p2s-vpn-client-profiles"></a>О профилях VPN-клиента P2S
 
@@ -34,7 +34,7 @@ $PROFILE.VpnProfileSASUrl
 
 * AzureVPN
 * Универсальный
-* OpenVPN
+* Опенвпн (если вы включили параметры проверки подлинности Опенвпн и Azure AD на шлюзе. См. раздел [Создание клиента](openvpn-azure-ad-tenant.md).)
 
 ## <a name="3-retrieve-information"></a>3. Получение сведений
 
@@ -66,6 +66,6 @@ $PROFILE.VpnProfileSASUrl
 
 * Скачанный ZIP-файл также может содержать папки **WindowsAmd64** и **WindowsX86** . Эти папки содержат установщик для клиентов SSTP и IKEv2 для Windows. Для их установки требуются права администратора на клиенте.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о "точка — сеть" см. в разделе [сведения о точках на](point-to-site-about.md)узел.

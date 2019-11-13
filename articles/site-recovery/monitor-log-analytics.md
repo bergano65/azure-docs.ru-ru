@@ -1,18 +1,18 @@
 ---
-title: Мониторинг Azure Site Recovery с помощью журналов Azure Monitor (Log Analytics) | Документация Майкрософт
+title: Мониторинг Azure Site Recovery с помощью журналов Azure Monitor
 description: Сведения о мониторинге Azure Site Recovery с помощью журналов Azure Monitor (Log Analytics)
 author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 10/13/2019
+ms.date: 11/12/2019
 ms.author: raynew
-ms.openlocfilehash: 889fa3bee17aa3b0300431b058332c5ec10d9faf
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.openlocfilehash: b5bf568e03d4949b8798dd2e0f4c2d8cbcbbe0c7
+ms.sourcegitcommit: 44c2a964fb8521f9961928f6f7457ae3ed362694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72331924"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73936090"
 ---
 # <a name="monitor-site-recovery-with-azure-monitor-logs"></a>Мониторинг Site Recovery с помощью журналов Azure Monitor
 
@@ -36,7 +36,7 @@ ms.locfileid: "72331924"
 
 - По крайней мере один компьютер, защищенный в хранилище служб восстановления.
 - Рабочая область Log Analytics для хранения журналов Site Recovery. [Сведения о](../azure-monitor/learn/quick-create-workspace.md) настройке рабочей области.
-- Основные сведения о том, как писать, выполнять и анализировать запросы журналов в Log Analytics. [Узнайте больше](../azure-monitor/log-query/get-started-portal.md).
+- Основные сведения о том, как писать, выполнять и анализировать запросы журналов в Log Analytics. [Дополнительные сведения](../azure-monitor/log-query/get-started-portal.md)
 
 Перед началом работы рекомендуется ознакомиться с [общими вопросами мониторинга](monitoring-common-questions.md) .
 
@@ -61,7 +61,7 @@ ms.locfileid: "72331924"
 Данные из журналов извлекаются с помощью запросов журналов, написанных на [языке запросов Kusto](../azure-monitor/log-query/get-started-queries.md). В этом разделе приводится несколько примеров распространенных запросов, которые можно использовать для мониторинга Site Recovery.
 
 > [!NOTE]
-> В некоторых примерах для параметра **replicationProviderName_s** используется значение **A2A**. При этом будут извлечены виртуальные машины Azure, которые реплицируются в дополнительный регион Azure, с помощью Site Recovery. В этих примерах можно заменить **A2A** на **InMageAzureV2**, если вы хотите получить локальные виртуальные машины VMware или физические серверы, которые реплицируются в Azure с помощью Site Recovery.
+> В некоторых примерах используется **replicationProviderName_s** задано значение **A2A**. При этом будут извлечены виртуальные машины Azure, которые реплицируются в дополнительный регион Azure, с помощью Site Recovery. В этих примерах можно заменить **A2A** на **InMageAzureV2**, если вы хотите получить локальные виртуальные машины VMware или физические серверы, которые реплицируются в Azure с помощью Site Recovery.
 
 
 ### <a name="query-replication-health"></a>Запрос работоспособности репликации
@@ -223,7 +223,7 @@ AzureDiagnostics 
 Вы можете настроить Site Recovery оповещения на основе Azure Monitor данных. Дополнительные [сведения](../azure-monitor/platform/alerts-log.md#managing-log-alerts-from-the-azure-portal) о настройке оповещений журнала. 
 
 > [!NOTE]
-> В некоторых примерах для параметра **replicationProviderName_s** используется значение **A2A**. Этот параметр задает оповещения для виртуальных машин Azure, которые реплицируются в дополнительный регион Azure. В этих примерах можно заменить **A2A** на **InMageAzureV2** , если вы хотите настроить оповещения для локальных виртуальных машин VMware или физических серверов, реплицированных в Azure.
+> В некоторых примерах используется **replicationProviderName_s** задано значение **A2A**. Этот параметр задает оповещения для виртуальных машин Azure, которые реплицируются в дополнительный регион Azure. В этих примерах можно заменить **A2A** на **InMageAzureV2** , если вы хотите настроить оповещения для локальных виртуальных машин VMware или физических серверов, реплицированных в Azure.
 
 ### <a name="multiple-machines-in-a-critical-state"></a>Несколько компьютеров в критическом состоянии
 
@@ -327,6 +327,6 @@ AzureDiagnostics  
 
 Для предупреждения установите **пороговое значение** 1, а **период** — 1440 минут, чтобы проверить ошибки за последний день.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 [Дополнительные сведения о](site-recovery-monitor-and-troubleshoot.md) встроенном мониторинге Site Recovery.

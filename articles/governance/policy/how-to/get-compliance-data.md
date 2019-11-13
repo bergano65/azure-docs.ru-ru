@@ -1,17 +1,14 @@
 ---
 title: Получение данных о соответствии политике
 description: Соответствие определяется оценками и действиями Политики Azure. Узнайте о том, как получить подробные сведения о соответствии.
-author: DCtheGeek
-ms.author: dacoulte
 ms.date: 02/01/2019
 ms.topic: conceptual
-ms.service: azure-policy
-ms.openlocfilehash: bd65fcf6ebff931fbb408ca8337a37d355221dfe
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: b460a3e70b5462be3fdc7f34dd7261d491a495b3
+ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73480238"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73959572"
 ---
 # <a name="get-compliance-data-of-azure-resources"></a>Получение данных о соответствии ресурсов Azure
 
@@ -56,7 +53,7 @@ ms.locfileid: "73480238"
 
 Сканирование поддерживает оценку ресурсов в подписке или группе ресурсов. Запустите сканирование для области через команду **POST** REST API, используя следующие структуры универсального кода ресурса (URI):
 
-- Подписка
+- подписку
 
   ```http
   POST https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.PolicyInsights/policyStates/latest/triggerEvaluation?api-version=2018-07-01-preview
@@ -89,12 +86,12 @@ https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.
 
 | Состояние ресурса | Результат | Оценка политики | Состояние соответствия |
 | --- | --- | --- | --- |
-| Exists | Deny, Audit, Append\*, DeployIfNotExist\*, AuditIfNotExist\* | Да | Не соответствует |
-| Exists | Deny, Audit, Append\*, DeployIfNotExist\*, AuditIfNotExist\* | Нет | Соответствует |
-| Создать | Audit, AuditIfNotExist\* | Да | Не соответствует |
-| Создать | Audit, AuditIfNotExist\* | Нет | Соответствует |
+| Exists | Deny, Audit, Append\*, DeployIfNotExist\*, AuditIfNotExist\* | True, | Не соответствует |
+| Exists | Deny, Audit, Append\*, DeployIfNotExist\*, AuditIfNotExist\* | Ложь | Соответствует |
+| Создать | Audit, AuditIfNotExist\* | True, | Не соответствует |
+| Создать | Audit, AuditIfNotExist\* | Ложь | Соответствует |
 
-\* Для эффектов Append, DeployIfNotExist и AuditIfNotExist требуется, чтобы оператор IF имел значение TRUE,
+\*Для эффектов Append, DeployIfNotExist и AuditIfNotExist требуется, чтобы оператор IF имел значение TRUE.
 Эффекты также требуют, чтобы условие существования FALSE было несоответствующим. Когда установлено значение TRUE, условие IF запускает оценку условия существования для связанных ресурсов.
 
 Например, предположим, что у вас есть группа ресурсов ContosoRG с некоторыми учетными записями хранения (выделены красным цветом), которые доступны в общедоступных сетях.
@@ -118,7 +115,7 @@ _Общее количество ресурсов_ определяется ка
 
 ![Пример соответствия политики на странице соответствия требованиям](../media/getting-compliance-data/simple-compliance.png)
 
-## <a name="portal"></a>Microsoft Azure
+## <a name="portal"></a>Портал
 
 На портале Azure можно ознакомиться с процессом визуализации и оценки состояния соответствия в вашей среде. На странице **Политика** параметр **Обзор** предоставляет сведения о соответствии для доступных областей в рамках соответствия для политик и инициатив. В дополнение к состоянию соответствия и числу на каждое назначение, в нем содержится диаграмма, отображающая соответствие за последние семь дней. На странице **Соответствие** содержится большая часть этой информации (за исключением диаграммы), а также предоставляются дополнительные возможности фильтрации и сортировки.
 
@@ -402,11 +399,11 @@ Trent Baker
 
 ![Соответствие политики Azure с помощью журналов Azure Monitor](../media/getting-compliance-data/compliance-loganalytics.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Просмотрите примеры в [примерах политики Azure](../samples/index.md).
 - Изучите статью о [структуре определения Политики Azure](../concepts/definition-structure.md).
-- Изучите [сведения о действии политик](../concepts/effects.md).
+- См. дополнительные сведения о [действиях политик](../concepts/effects.md).
 - Узнайте, как [программно создавать политики](programmatically-create.md).
 - Узнайте, как [исправлять несоответствующие ресурсы](remediate-resources.md).
 - Дополнительные сведения о группе управления см. в статье [Упорядочивание ресурсов с помощью групп управления Azure](../../management-groups/overview.md).

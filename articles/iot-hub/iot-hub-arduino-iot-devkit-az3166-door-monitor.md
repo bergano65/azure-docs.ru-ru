@@ -1,22 +1,21 @@
 ---
-title: Получение сообщения электронной почты в случае открытия двери с помощью службы SendGrid и решения "Функции Azure" | Документация Майкрософт
+title: Отправка сообщения электронной почты при открытии дверцы с помощью функций Azure
 description: Наблюдайте за магнитным датчиком, чтобы обнаружить, когда дверь открыта, и используйте решение "Функции Azure" для отправки уведомления по электронной почте.
 author: liydu
-manager: jeffya
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 03/19/2018
 ms.author: liydu
-ms.openlocfilehash: 6cbf3f906b511d9d76319f57f5508a2c584213cb
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 23607b52f866bb7b0be760e49be7d62d1732d43c
+ms.sourcegitcommit: 44c2a964fb8521f9961928f6f7457ae3ed362694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73484057"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73954754"
 ---
-# <a name="door-monitor"></a>Мониторинг двери          
+# <a name="door-monitor----using-azure-functions-and-sendgrid-send-email-when-a-door-is-opened"></a>Монитор двери — использование функций Azure и SendGrid, отправка электронной почты при открытии дверцы           
 
 Плата MXChip IoT DevKit содержит встроенный магнитный датчик. В этом проекте необходимо обнаружить присутствие или отсутствие поблизости мощного магнитного поля, которое в этом случае исходит от маленького постоянного магнита.
 
@@ -196,7 +195,7 @@ ms.locfileid: "73484057"
 * [Gitter.im](https://gitter.im/Microsoft/azure-iot-developer-kit)
 * [Stack Overflow](https://stackoverflow.com/questions/tagged/iot-devkit)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Вы узнали, как подключить устройство DevKit к акселератору решения Azure IoT для удаленного мониторинга и как использовать службу SendGrid для отправки сообщений электронной почты. Ниже приведены предлагаемые дальнейшие действия:
 

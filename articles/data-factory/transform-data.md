@@ -11,15 +11,16 @@ ms.date: 07/31/2018
 author: nabhishek
 ms.author: abnarain
 manager: craigg
-ms.openlocfilehash: 97077b9f72de8792e6aba1d72ff34b9185b2d998
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 0b91d22454d6023094f269b184c845047092b4fb
+ms.sourcegitcommit: 44c2a964fb8521f9961928f6f7457ae3ed362694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73683811"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73954270"
 ---
 # <a name="transform-data-in-azure-data-factory"></a>Преобразование данных в фабрике данных Azure
 > [!div class="op_single_selector"]
+> * [Поток данных сопоставления](data-flow-create.md)
 > * [Hive](transform-data-using-hadoop-hive.md)  
 > * [Pig](transform-data-using-hadoop-pig.md)  
 > * [MapReduce](transform-data-using-hadoop-map-reduce.md)  
@@ -34,7 +35,7 @@ ms.locfileid: "73683811"
 > * [Пользовательские действия .NET](transform-data-using-dotnet-custom-activity.md)
 
 ## <a name="overview"></a>Обзор
-В этой статье объясняются действия преобразования данных в фабрике данных Azure, с помощью которых можно обрабатывать необработанные данные и преобразовывать их в прогнозы и аналитику. Действие преобразования выполняется в вычислительной среде, например в кластере Azure HDInsight или пакетной службе Azure. Статья содержит ссылки на статьи с подробными сведениями о каждом действии преобразования.
+В этой статье описываются действия по преобразованию данных в фабрике данных Azure, которые можно использовать для преобразования и обработки необработанных данных в прогнозы и аналитические сведения в масштабе. Действие преобразования выполняется в вычислительной среде, например Azure Databricks или Azure HDInsight. Статья содержит ссылки на статьи с подробными сведениями о каждом действии преобразования.
 
 Фабрика данных поддерживает указанные ниже действия преобразования, которые вы можете добавлять в [конвейеры](concepts-pipelines-activities.md) как по отдельности, так и в цепочке с другим действием.
 
@@ -49,6 +50,8 @@ ms.locfileid: "73683811"
 Потоки данных структурирование в фабрике данных Azure позволяют итеративно выполнять подготовку данных без кода в масштабе облака. Потоки данных структурирование интегрируются с [Power Query Online](https://docs.microsoft.com/power-query/) и делают функции Power Query M доступными для структурирование данных в облачном масштабировании с помощью выполнения Spark. Дополнительные сведения см. в разделе [структурирование Data](wrangling-data-flow-overview.md)Flows.
 
 ## <a name="external-transformations"></a>Внешние преобразования
+
+При необходимости можно вручную преобразовать код и управлять внешней средой вычислений самостоятельно.
 
 ### <a name="hdinsight-hive-activity"></a>Действие Hive HDInsight
 Действие Hive HDInsight в конвейере фабрики данных выполняет запросы Hive к вашему собственному кластеру HDInsight или кластеру HDInsight по запросу под управлением Windows или Linux. Дополнительные сведения об этом действии см. в статье [Преобразование данных с помощью действия Hadoop Hive в фабрике данных Azure](transform-data-using-hadoop-hive.md). 
@@ -80,7 +83,7 @@ C помощью действия хранимой процедуры SQL Serve
 
 ### <a name="databricks-notebook-activity"></a>Действие Notebook в Databricks
 
-Действие Azure Databricks Notebook в конвейере Фабрики данных позволяет запустить записную книжку Databricks в рабочей области Azure Databricks. Azure Databricks — это управляемая платформа для запуска Apache Spark. См. раздел [Преобразование данных с помощью записной книжки Databricks](transform-data-databricks-notebook.md).
+Действие Azure Databricks записной книжке в конвейере фабрики данных запускает записную книжку "кирпичы" в рабочей области Azure Databricks. Azure Databricks — это управляемая платформа для запуска Apache Spark. См. раздел [Преобразование данных с помощью записной книжки Databricks](transform-data-databricks-notebook.md).
 
 ### <a name="databricks-jar-activity"></a>Действие JAR в Databricks
 
@@ -103,5 +106,5 @@ C помощью действия хранимой процедуры SQL Serve
 
 В статье [Связанные службы вычислений](compute-linked-services.md) описывается, какие службы вычислений поддерживает фабрика данных. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 Пример использования действия преобразования см. в руководстве [Преобразование данных в облаке с помощью действия Spark в фабрике данных Azure](tutorial-transform-data-spark-powershell.md).

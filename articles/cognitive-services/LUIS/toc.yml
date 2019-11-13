@@ -166,9 +166,7 @@
       items:
         - name: Добавление намерения
           href: luis-how-to-add-intents.md
-        - name: Добавление сущности к фрагменту речи
-          href: luis-how-to-add-example-utterances.md
-        - name: Добавление сущности без фрагмента речи
+        - name: Добавление сущности для извлечения данных
           href: luis-how-to-add-entities.md
           displayName: 'roles, import'
         - name: Использование предварительно созданных моделей
@@ -306,6 +304,8 @@
       displayName: 'Calendar, Communication,Email,HomeAutomation,Note,Places, RestaurantReservation,ToDo,Utilities,Weather,Web'
     - name: Справочник по настраиваемым сущностям
       items:
+        - name: 'Сущность, прошедшая машинное обучение'
+          href: reference-entity-machine-learned-entity.md
         - name: Составная сущность
           href: reference-entity-composite.md
         - name: Сущность списка
@@ -316,6 +316,8 @@
           href: reference-entity-regular-expression.md
         - name: Простая сущность
           href: reference-entity-simple.md
+    - name: Синтаксис шаблона
+      href: reference-pattern-syntax.md
     - name: Мнение
       href: luis-reference-prebuilt-sentiment.md
     - name: Ресурсы для разработчиков

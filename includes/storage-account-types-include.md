@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 03/23/2019
 ms.author: tamram
 ms.custom: include file
-ms.openlocfilehash: 16d05203e6c8e845b2354298880d132801e4b952
-ms.sourcegitcommit: 7efb2a638153c22c93a5053c3c6db8b15d072949
+ms.openlocfilehash: 1a9cebe334b266dfcf7f06608fd6a526ded7179b
+ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72882565"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "74000736"
 ---
 Служба хранилища Azure предлагает несколько типов учетных записей хранения. Каждый тип поддерживает различные возможности, и у каждого из них своя модель ценообразования. Прежде чем создавать учетную запись хранения, рассмотрите эти различия, чтобы определить подходящий для ваших приложений тип учетной записи. Типы учетных записей хранения:
 
@@ -27,11 +27,11 @@ ms.locfileid: "72882565"
 
 | Тип учетной записи хранения | Поддерживаемые службы                       | Поддерживаемые уровни производительности      | Поддерживаемые уровни доступа         | Варианты репликации               | Модель развертывания<div role="complementary" aria-labelledby="deployment-model"><sup>1</sup></div> | Шифрование<div role="complementary" aria-labelledby="encryption"><sup>2</sup></div> |
 |----------------------|------------------------------------------|-----------------------------|--------------------------------|-----------------------------------|------------------------------|------------------------|
-| Общего назначения версии 2   | Большой двоичный объект, файл, очередь, таблица и диск       | "Стандартный", "Премиум"<div role="complementary" aria-labelledby="premium-performance"><sup>5</sup></div> | Горячий, холодное, архивная<div role="complementary" aria-labelledby="archive"><sup>3</sup></div> | LRS, GRS, RA-GRS, ZRS, ГЗРС (Предварительная версия), RA-ГЗРС (Предварительная версия)<div role="complementary" aria-labelledby="zone-redundant-storage"><sup>4..</sup></div> | Resource Manager             | Зашифрованный              |
-| Общего назначения версии 1   | Большой двоичный объект, файл, очередь, таблица и диск       | "Стандартный", "Премиум"<div role="complementary" aria-labelledby="premium-performance"><sup>5</sup></div> | Н/Д                            | LRS, GRS, RA-GRS                  | Resource Manager, классическая    | Зашифрованный              |
-| блоккблобстораже   | Большой двоичный объект (блочные и добавочные BLOB-объекты) | "Премиум"                       | Н/Д                            | LRS                               | Resource Manager             | Зашифрованный              |
-| филестораже   | Только файлы | "Премиум"                       | Н/Д                            | LRS                               | Resource Manager             | Зашифрованный              |
-| блобстораже         | Большой двоичный объект (блочные и добавочные BLOB-объекты) | Стандарт                      | Горячий, холодное, архивная<div role="complementary" aria-labelledby="archive"><sup>3</sup></div> | LRS, GRS, RA-GRS                  | Resource Manager             | Зашифрованный              |
+| Общего назначения версии 2   | Большой двоичный объект, файл, очередь, таблица и диск       | "Стандартный", "Премиум"<div role="complementary" aria-labelledby="premium-performance"><sup>5</sup></div> | Горячий, холодное, архивная<div role="complementary" aria-labelledby="archive"><sup>3</sup></div> | LRS, GRS, RA-GRS, ZRS, ГЗРС (Предварительная версия), RA-ГЗРС (Предварительная версия)<div role="complementary" aria-labelledby="zone-redundant-storage"><sup>4</sup></div> | Диспетчер ресурсов             | зашифрованный.              |
+| Общего назначения версии 1   | Большой двоичный объект, файл, очередь, таблица и диск       | "Стандартный", "Премиум"<div role="complementary" aria-labelledby="premium-performance"><sup>5</sup></div> | Недоступно                            | LRS, GRS, RA-GRS                  | Resource Manager, классическая    | зашифрованный.              |
+| блоккблобстораже   | Большой двоичный объект (блочные и добавочные BLOB-объекты) | Премиальный                       | Недоступно                            | LRS, ZRS<div role="complementary" aria-labelledby="zone-redundant-storage"><sup>4</sup></div>                               | Диспетчер ресурсов             | зашифрованный.              |
+| филестораже   | Только файлы | Премиальный                       | Недоступно                            | LRS, ZRS<div role="complementary" aria-labelledby="zone-redundant-storage"><sup>4</sup></div>                               | Диспетчер ресурсов             | зашифрованный.              |
+| блобстораже         | Большой двоичный объект (блочные и добавочные BLOB-объекты) | Standard                      | Горячий, холодное, архивная<div role="complementary" aria-labelledby="archive"><sup>3</sup></div> | LRS, GRS, RA-GRS                  | Диспетчер ресурсов             | зашифрованный.              |
 
 <div id="deployment-model"><sup>1</sup> Рекомендуется использовать модель развертывания с помощью Azure Resource Manager. Учетные записи хранения, в которых используется классическая модель развертывания, по-прежнему можно создавать в некоторых расположениях, а имеющиеся классические учетные записи по-прежнему поддерживаются. Дополнительные сведения см. в статье <a href="https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-deployment-model">Развертывание с помощью Azure Resource Manager и классическое развертывание: сведения о моделях развертывания и состоянии ресурсов</a>.</div>
 
@@ -39,6 +39,6 @@ ms.locfileid: "72882565"
 
 <div id="archive"><sup>3</sup> Архивный уровень доступен только на уровне отдельного большого двоичного объекта, а не на уровне учетной записи хранения. Заархивировать можно только блочные и добавочные BLOB-объекты. Дополнительные сведения см. в статье <a href="https://docs.microsoft.com/azure/storage/blobs/storage-blob-storage-tiers">Хранилище BLOB-объектов Azure: горячий, холодный и архивный уровни</a>.</div>
 
-<div id="zone-redundant-storage"><sup>4</sup> Хранилище, избыточное в рамках зоны (ZRS) и хранилище, избыточное в геопоясе (ГЗРС) (Предварительная версия), доступны только для стандартных учетных записей хранения общего назначения версии 2. Дополнительные сведения о ZRS см. в статье <a href="https://docs.microsoft.com/azure/storage/common/storage-redundancy-zrs">Хранилище, избыточное между зонами (ZRS). Высокодоступные приложения для службы хранилища Azure</a>. Дополнительные сведения о ГЗРС см. в статье <a href="https://docs.microsoft.com/azure/storage/common/storage-redundancy-gzrs">хранилище, избыточное в геопоясе, для обеспечения высокой доступности и максимальной устойчивости (Предварительная версия)</a>. Дополнительные сведения о других вариантах репликации см. в статье <a href="https://docs.microsoft.com/azure/storage/common/storage-redundancy">Репликация службы хранилища Azure</a>.</div>
+<div id="zone-redundant-storage"><sup>4</sup> Хранилище, избыточное в рамках зоны (ZRS) и хранилище, избыточное в геопоясе (ГЗРС/RA-ГЗРС) (Предварительная версия), доступны только для стандартных учетных записей v2, Блоккблобстораже и Филестораже в определенных регионах. Дополнительные сведения о ZRS см. в статье <a href="https://docs.microsoft.com/azure/storage/common/storage-redundancy-zrs">Хранилище, избыточное между зонами (ZRS). Высокодоступные приложения для службы хранилища Azure</a>. Дополнительные сведения о ГЗРС/RA-ГЗРС см. в разделе <a href="https://docs.microsoft.com/azure/storage/common/storage-redundancy-gzrs">хранилище, избыточное в геопоясе, для обеспечения высокой доступности и максимальной устойчивости (Предварительная версия)</a>. Дополнительные сведения о других вариантах репликации см. в статье <a href="https://docs.microsoft.com/azure/storage/common/storage-redundancy">Репликация службы хранилища Azure</a>.</div>
 
 <div id="premium-performance"><sup>5</sup> Производительность Premium для учетных записей общего назначения версии 2 и общего назначения v1 доступна только для дисков и страничных BLOB-объектов.</div>

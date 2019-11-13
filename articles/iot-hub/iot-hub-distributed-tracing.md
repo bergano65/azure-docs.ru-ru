@@ -1,5 +1,5 @@
 ---
-title: Добавление идентификаторов корреляции в сообщения Интернета вещей с помощью функции распределенной трассировки (предварительная версия)
+title: Добавление идентификаторов корреляции в сообщения Интернета вещей w/Распределенная трассировка (пред.)
 description: Узнайте, как использовать распределенную трассировку для отслеживания сообщений Интернета вещей в службах Azure, используемых решением.
 author: jlian
 manager: briz
@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 02/06/2019
 ms.author: jlian
-ms.openlocfilehash: a6e7d2dc9b6274c07fda011bff8ec9dc59f74f95
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: 835a359d3b5781ad814e423e4a69e8d60379c97b
+ms.sourcegitcommit: 44c2a964fb8521f9961928f6f7457ae3ed362694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73889444"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73953155"
 ---
 # <a name="trace-azure-iot-device-to-cloud-messages-with-distributed-tracing-preview"></a>Трассировка отправляемых с устройства в облако сообщений Интернета вещей Azure с помощью функции распределенной трассировки (предварительная версия)
 
