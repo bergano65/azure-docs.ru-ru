@@ -1,17 +1,14 @@
 ---
 title: Пример схемы теста производительности CIS для платформ Microsoft Azure — общие сведения
 description: Общие сведения о примере схемы теста производительности CIS для платформ Microsoft Azure. Этот пример схемы помогает клиентам оценить определенные средства управления.
-author: DCtheGeek
-ms.author: dacoulte
 ms.date: 08/09/2019
 ms.topic: sample
-ms.service: blueprints
-ms.openlocfilehash: bf4b79dbb3da15605dc4362b5f0578a457886316
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 89b7396b39ed6d308240316bbb5e718922d5e156
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73581373"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74032407"
 ---
 # <a name="overview-of-the-cis-microsoft-azure-foundations-benchmark-blueprint-sample"></a>Общие сведения о примере схемы теста производительности CIS для платформ Microsoft Azure
 

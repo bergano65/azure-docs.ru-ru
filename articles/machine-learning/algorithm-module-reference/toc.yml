@@ -1,147 +1,142 @@
-- name: Справочник по модулям для конструктора Машинного обучения Azure
+- name: Алгоритмы конструктора и модули
   href: module-reference.md
-- name: Документация по Машинному обучению Azure
-  href: ../index.yml
-- name: Категории модулей
-  expanded: true
+- name: Входные и выходные данные
   items:
-    - name: Входные и выходные данные
+    - name: Импорт данных
+      href: import-data.md
+    - name: Ввод данных вручную
+      href: enter-data-manually.md
+    - name: Экспорт данных
+      href: export-data.md
+- name: Преобразование данных.
+  items:
+    - name: Добавление столбцов
+      href: add-columns.md
+    - name: Добавление строк
+      href: add-rows.md
+    - name: Применение преобразования SQL
+      href: apply-sql-transformation.md
+    - name: Преобразование в CSV-файл
+      href: convert-to-csv.md
+    - name: Преобразование в набор данных
+      href: convert-to-dataset.md
+    - name: Очистка недостающих данных
+      href: clean-missing-data.md
+    - name: Правка метаданных
+      href: edit-metadata.md
+    - name: Объединение данных
+      href: join-data.md
+    - name: Нормализация данных
+      href: normalize-data.md
+    - name: Удаление дублирующихся строк
+      href: remove-duplicate-rows.md
+    - name: Преобразование "Выбор столбцов"
+      href: select-columns-transform.md
+    - name: Выбор столбцов в наборе данных
+      href: select-columns-in-dataset.md
+- name: Выборка
+  items:
+    - name: Перекрестная проверка модели
+      href: cross-validate-model.md
+    - name: Секционирование и выборка
+      href: partition-and-sample.md
+    - name: SMOTE
+      href: smote.md
+    - name: Разделение данных
+      href: split-data.md
+- name: Выбор признаков
+  items:
+    - name: Выбор признаков с помощью фильтра
+      href: filter-based-feature-selection.md
+    - name: Значение функции перестановки
+      href: permutation-feature-importance.md
+- name: Python и R
+  items:
+    - name: Создание модели Python
+      href: create-python-model.md
+    - name: Выполнение скриптов Python
+      href: execute-python-script.md
+    - name: Выполнение сценария R
+      href: execute-r-script.md
+- name: Текстовая аналитика
+  items:
+    - name: Извлечение N-грамм из текста
+      href: extract-n-gram-features-from-text.md
+    - name: Хэширование признаков
+      href: feature-hashing.md
+    - name: Preprocess Text
+      href: preprocess-text.md
+- name: Алгоритмы машинного обучения
+  items:
+    - name: классификация;
       items:
-        - name: Импорт данных
-          href: import-data.md
-        - name: Ввод данных вручную
-          href: enter-data-manually.md
-        - name: Экспорт данных
-          href: export-data.md
-    - name: Преобразование данных.
+        - name: Лес решений с несколькими классами
+          href: multiclass-decision-forest.md
+        - name: Мультиклассовое увеличивающееся дерево принятия решений
+          href: multiclass-boosted-decision-tree.md
+        - name: Мультиклассовая регрессионная логистическая модель
+          href: multiclass-logistic-regression.md
+        - name: Мультиклассовая нейронная сеть
+          href: multiclass-neural-network.md
+        - name: "Многоклассовый классификатор \"один\_— все\""
+          href: one-vs-all-multiclass.md
+        - name: Двухклассовая регрессионная логистическая модель
+          href: two-class-logistic-regression.md
+        - name: Двухклассовое усредненное восприятие
+          href: two-class-averaged-perceptron.md
+        - name: Двухклассовое увеличивающееся дерево принятия решений;
+          href: two-class-boosted-decision-tree.md
+        - name: Двухклассовый лес принятия решений
+          href: two-class-decision-forest.md
+        - name: Двухклассовая нейронная сеть
+          href: two-class-neural-network.md
+        - name: Двухклассовый метод опорных векторов
+          href: two-class-support-vector-machine.md
+    - name: Кластеризация
       items:
-        - name: Добавление столбцов
-          href: add-columns.md
-        - name: Добавление строк
-          href: add-rows.md
-        - name: Применение преобразования SQL
-          href: apply-sql-transformation.md
-        - name: Преобразование в CSV-файл
-          href: convert-to-csv.md
-        - name: Преобразование в набор данных
-          href: convert-to-dataset.md
-        - name: Очистка недостающих данных
-          href: clean-missing-data.md
-        - name: Правка метаданных
-          href: edit-metadata.md
-        - name: Объединение данных
-          href: join-data.md
-        - name: Нормализация данных
-          href: normalize-data.md
-        - name: Удаление дублирующихся строк
-          href: remove-duplicate-rows.md
-        - name: Преобразование "Выбор столбцов"
-          href: select-columns-transform.md
-        - name: Выбор столбцов в наборе данных
-          href: select-columns-in-dataset.md
-    - name: Выборка
+        - name: Кластеризация методом K-средних
+          href: k-means-clustering.md
+    - name: Регрессия
       items:
-        - name: Перекрестная проверка модели
-          href: cross-validate-model.md
-        - name: Секционирование и выборка
-          href: partition-and-sample.md
-        - name: SMOTE
-          href: smote.md
-        - name: Разделение данных
-          href: split-data.md
-    - name: Выбор признаков
+        - name: Регрессия с помощью увеличивающегося дерева принятия решений
+          href: boosted-decision-tree-regression.md
+        - name: Регрессия с использованием модели леса принятия решений
+          href: decision-forest-regression.md
+        - name: Линейная регрессия
+          href: linear-regression.md
+        - name: Регрессия нейронной сети
+          href: neural-network-regression.md
+    - name: Рекомендатель
       items:
-        - name: Выбор признаков с помощью фильтра
-          href: filter-based-feature-selection.md
-        - name: Значение функции перестановки
-          href: permutation-feature-importance.md
-    - name: Python и R
-      items:
-        - name: Создание модели Python
-          href: create-python-model.md
-        - name: Выполнение скриптов Python
-          href: execute-python-script.md
-        - name: Выполнение сценария R
-          href: execute-r-script.md
-    - name: Текстовая аналитика
-      items:
-        - name: Извлечение N-грамм из текста
-          href: extract-n-gram-features-from-text.md
-        - name: Хэширование признаков
-          href: feature-hashing.md
-        - name: Preprocess Text
-          href: preprocess-text.md
-    - name: Алгоритмы машинного обучения
-      items:
-        - name: классификация;
-          items:
-            - name: Лес решений с несколькими классами
-              href: multiclass-decision-forest.md
-            - name: Мультиклассовое увеличивающееся дерево принятия решений
-              href: multiclass-boosted-decision-tree.md
-            - name: Мультиклассовая регрессионная логистическая модель
-              href: multiclass-logistic-regression.md
-            - name: Мультиклассовая нейронная сеть
-              href: multiclass-neural-network.md
-            - name: "Многоклассовый классификатор \"один\_— все\""
-              href: one-vs-all-multiclass.md
-            - name: Двухклассовая регрессионная логистическая модель
-              href: two-class-logistic-regression.md
-            - name: Двухклассовое усредненное восприятие
-              href: two-class-averaged-perceptron.md
-            - name: Двухклассовое увеличивающееся дерево принятия решений;
-              href: two-class-boosted-decision-tree.md
-            - name: Двухклассовый лес принятия решений
-              href: two-class-decision-forest.md
-            - name: Двухклассовая нейронная сеть
-              href: two-class-neural-network.md
-            - name: Двухклассовый метод опорных векторов
-              href: two-class-support-vector-machine.md
-        - name: Кластеризация
-          items:
-            - name: Кластеризация методом K-средних
-              href: k-means-clustering.md
-        - name: Регрессия
-          items:
-            - name: Регрессия с помощью увеличивающегося дерева принятия решений
-              href: boosted-decision-tree-regression.md
-            - name: Регрессия с использованием модели леса принятия решений
-              href: decision-forest-regression.md
-            - name: Линейная регрессия
-              href: linear-regression.md
-            - name: Регрессия нейронной сети
-              href: neural-network-regression.md
-        - name: Рекомендатель
-          items:
-            - name: Обучение рекомендателя SVD
-              href: train-svd-recommender.md
+        - name: Обучение рекомендателя SVD
+          href: train-svd-recommender.md
+- name: Обучение модели
+  items:
     - name: Обучение модели
-      items:
-        - name: Обучение модели
-          href: train-model.md
-        - name: Обучение модели кластеризации
-          href: train-clustering-model.md
-        - name: Настройка гиперпараметров модели
-          href: tune-model-hyperparameters.md
+      href: train-model.md
+    - name: Обучение модели кластеризации
+      href: train-clustering-model.md
+    - name: Настройка гиперпараметров модели
+      href: tune-model-hyperparameters.md
+- name: Анализ модели
+  items:
     - name: Анализ модели
-      items:
-        - name: Анализ модели
-          href: evaluate-model.md
-        - name: Оценка рекомендателя
-          href: evaluate-recommender.md
+      href: evaluate-model.md
+    - name: Оценка рекомендателя
+      href: evaluate-recommender.md
+- name: Оценка модели
+  items:
+    - name: Применение преобразования
+      href: apply-transformation.md
+    - name: Назначение данных в кластеры
+      href: assign-data-to-clusters.md
     - name: Оценка модели
-      items:
-        - name: Применение преобразования
-          href: apply-transformation.md
-        - name: Назначение данных в кластеры
-          href: assign-data-to-clusters.md
-        - name: Оценка модели
-          href: score-model.md
-        - name: Оценка рекомендателя SVD
-          href: score-svd-recommender.md
-    - name: Статистические функции
-      items:
-        - name: Применение математической операции
-          href: apply-math-operation.md
-        - name: Сведение данных
-          href: summarize-data.md
+      href: score-model.md
+    - name: Оценка рекомендателя SVD
+      href: score-svd-recommender.md
+- name: Статистические функции
+  items:
+    - name: Применение математической операции
+      href: apply-math-operation.md
+    - name: Сведение данных
+      href: summarize-data.md

@@ -141,27 +141,6 @@
       items:
         - name: Устранение неполадок Azure Load Balancer
           href: load-balancer-troubleshoot.md
-    - name: Статьи о классической модели развертывания
-      items:
-        - name: Исходящие подключения (классическая модель)
-          href: load-balancer-outbound-connections-classic.md
-        - name: Настройка нескольких виртуальных IP-адресов для облачной службы
-          href: load-balancer-multivip.md
-          items:
-            - name: Настройка внутренней службы Azure Load Balancer для облачных служб
-              href: load-balancer-get-started-ilb-classic-cloud.md
-              items:
-                - name: Настройка внутренней службы Azure Load Balancer для облачных служб (PowerShell)
-                  href: load-balancer-get-started-ilb-classic-ps.md
-                - name: Настройка внутренней службы Azure Load Balancer для облачных служб (CLI)
-                  href: load-balancer-get-started-ilb-classic-cli.md
-            - name: 'Настройка общедоступной службы Azure Load Balancer (классическая модель: PowerShell)'
-              href: load-balancer-get-started-internet-classic-ps.md
-              items:
-                - name: 'Настройка общедоступной службы Azure Load Balancer (классическая модель: облачные службы)'
-                  href: load-balancer-get-started-internet-classic-cloud.md
-                - name: 'Настройка общедоступной службы Azure Load Balancer (классическая модель: CLI)'
-                  href: load-balancer-get-started-internet-classic-cli.md
 - name: Справочные материалы
   items:
     - name: Примеры кода

@@ -548,16 +548,12 @@
       tocHref: /azure/logic-apps/
       topicHref: /azure/logic-apps/
     - name: Машинное обучение
-      tocHref: /azure/machine-learning/
+      tocHref: /azure/machine-learning
       topicHref: /azure/machine-learning/
       items:
-        - name: Служба
-          tocHref: /azure/machine-learning/service
-          topicHref: /azure/machine-learning/service/
-          items:
-            - name: Справочник по алгоритмам и модулям
-              tocHref: /azure/machine-learning/algorithm-module-reference
-              topicHref: /azure/machine-learning/algorithm-module-reference/module-reference
+        - name: Справочник по алгоритмам и модулям
+          tocHref: /azure/machine-learning/algorithm-module-reference
+          topicHref: /azure/machine-learning/algorithm-module-reference/module-reference
         - name: Студия (классическая)
           tocHref: /azure/machine-learning/studio
           topicHref: /azure/machine-learning/studio/
