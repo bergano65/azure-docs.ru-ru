@@ -128,8 +128,6 @@
               href: virtual-nodes-cli.md
             - name: Использование портала Azure
               href: virtual-nodes-portal.md
-        - name: Использование Virtual Kubelet
-          href: virtual-kubelet.md
         - name: Использование автомасштабирования кластера
           href: cluster-autoscaler.md
         - name: Использование Зон доступности
