@@ -1,24 +1,24 @@
 ---
-title: Разрешения роли настраиваемого администратора для управления регистрацией приложений — Azure Active Directory | Документация Майкрософт
+title: Доступные настраиваемые разрешения роли администратора — Azure AD | Документация Майкрософт
 description: Разрешения настраиваемой роли администратора для делегирования управления удостоверениями.
 services: active-directory
 author: curtand
-manager: mtillman
+manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: article
-ms.date: 07/31/2019
+ms.date: 11/08/2019
 ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7ebffbc1c451404d93383a483eecdd4a25acf6b6
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: d6156857202c1cca94df6d70ec2059daf55178f1
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72928617"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74025149"
 ---
 # <a name="application-registration-subtypes-and-permissions-in-azure-active-directory"></a>Подтипы регистрации приложений и разрешения в Azure Active Directory
 
@@ -52,7 +52,7 @@ ms.locfileid: "72928617"
 
 Существует два разрешения для предоставления возможности удалять регистрации приложений:
 
-#### <a name="microsoftdirectoryapplicationsdelete"></a>Microsoft. Directory/Applications/Delete
+#### <a name="microsoftdirectoryapplicationsdelete"></a>microsoft.directory/applications/delete
 
 Предоставляет возможность удалять регистрации приложений независимо от подтипа. то есть приложения с одним клиентом и несколькими клиентами.
 
@@ -91,7 +91,7 @@ ms.locfileid: "72928617"
 
 Предоставляет те же разрешения, что и Microsoft. Directory/Applications/Standard/Read, но только для приложений с одним клиентом.
 
-### <a name="update"></a>Обновить
+### <a name="update"></a>Блокировка изменений
 
 #### <a name="microsoftdirectoryapplicationsallpropertiesupdate"></a>Microsoft. Directory/Applications/Аллпропертиес/Update
 
@@ -167,7 +167,7 @@ ms.locfileid: "72928617"
 
 [!INCLUDE [License requirement for using custom roles in Azure AD](../../../includes/active-directory-p1-license.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Создание настраиваемых ролей с помощью [портал Azure, Azure AD PowerShell и API Graph](roles-create-custom.md)
 - [Просмотр назначений для пользовательской роли](roles-view-assignments.md)

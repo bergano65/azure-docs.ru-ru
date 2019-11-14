@@ -1,5 +1,5 @@
 ---
-title: Иерархия стран и регионов, используемая для географической маршрутизации в диспетчере трафика Azure | Документация Майкрософт
+title: Иерархия стран или регионов, используемая географической маршрутизацией — диспетчер трафика Azure
 description: В этой статье приведена иерархия стран и регионов, используемая для географической маршрутизации в диспетчере трафика Azure.
 services: traffic-manager
 documentationcenter: ''
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/22/2017
 ms.author: allensu
-ms.openlocfilehash: d16529e966fb2e16d1012f4aa0aafcff204a3093
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 13f4101c17d78a59e8cde724863d237ba888e6a4
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67071162"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74037206"
 ---
 # <a name="countryregion-hierarchy-used-by-azure-traffic-manager-for-geographic-traffic-routing-method"></a>Иерархия стран и регионов, используемая диспетчером трафика Azure для географической маршрутизации трафика
 
@@ -128,7 +128,7 @@ ms.locfileid: "67071162"
         - SM (Сан-Марино)
 
         - UA (Украина)
-            - Область Крым
+            - Регион Крым
 
         - VA (Ватикан)
 
@@ -270,7 +270,7 @@ ms.locfileid: "67071162"
 
         - TT (Тринидад и Тобаго)
 
-        - UM (Внешние малые о-ва (США))
+        - UM (Малые Тихоокеанские отдаленные острова США)
 
         - US (США)
 
@@ -380,7 +380,7 @@ ms.locfileid: "67071162"
 
         - VG (Виргинские о-ва (Великобритания))
 
-        - VI (Виргинские о-ва (США))
+        - VI (Виргинские острова США)
 
         - XE (Синт-Эстатиус)
 
@@ -548,7 +548,7 @@ ms.locfileid: "67071162"
 
         - SD (Судан)
 
-        - SH (острова Св. Елены, Вознесения и Тристан-да-Кунья)
+        - SH (Святая Елена, остров Вознесения, Тристан-да-Кунья)
 
         - SL (Сьерра-Леоне)
 
@@ -688,6 +688,6 @@ ms.locfileid: "67071162"
 
         - WS (Самоа)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Узнайте больше о [методе географической маршрутизации трафика в диспетчере трафика Azure](traffic-manager-routing-methods.md#geographic).

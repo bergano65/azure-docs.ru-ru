@@ -11,12 +11,12 @@ author: MayMSFT
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 11/04/2019
-ms.openlocfilehash: 51102962879b43d4ef3ae8662d7c3136bc7441d9
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 50728363ffd02e189b4bc0dacebd684a7f13091e
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73818437"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74030708"
 ---
 # <a name="create-azure-machine-learning-datasets"></a>Создание наборов данных Машинное обучение Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "73818437"
 
 * Совместное использование данных и совместная работа с другими пользователями.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 Для создания наборов данных и работы с ними требуется:
 
@@ -112,11 +112,11 @@ titanic_ds = Dataset.Tabular.from_delimited_files(path=web_path, set_column_type
 titanic_ds.take(3).to_pandas_dataframe()
 ```
 
-| |пассенжерид|Оставшихся|пкласс|Имя|Пол|Age|сибсп|парч|Службу|FARE|кабин|Предпринимались
+| |пассенжерид|Оставшихся|пкласс|имя|Пол|Age|сибсп|парч|Службу|FARE|кабин|Предпринимались
 -|-----------|--------|------|----|---|---|-----|-----|------|----|-----|--------|
 0|1|Ложь|3|Браунд, Mr. О'мэлли Owen Харрис|Мужской|22,0|1|0|A/5 21171|7,2500||S
-1|2|Да|1|Кумингс, Mrs. Джон Кирилл (Флоренция Бриггс TH...|Женский|38,0|1|0|PC 17599|71,2833|C85|C
-2|3|Да|3|Хеиккинен, промах. лаина|Женский|26,0|0|0|СТОН/O2. 3101282|7,9250||S
+1|2|True,|1|Кумингс, Mrs. Джон Кирилл (Флоренция Бриггс TH...|Женский|38,0|1|0|PC 17599|71,2833|C85|C
+2|3|True,|3|Хеиккинен, промах. лаина|Женский|26,0|0|0|СТОН/O2. 3101282|7,9250||S
 
 Для чтения из базы данных SQL Azure используйте метод [`from_sql_query()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.dataset_factory.tabulardatasetfactory?view=azure-ml-py#from-sql-query-query--validate-true--set-column-types-none-) класса `TabularDatasetFactory`.
 
@@ -150,16 +150,14 @@ data_slice = dataset.time_between(datetime(2019, 1, 1), datetime(2019, 2, 1))
 data_slice = dataset.time_recent(timedelta(weeks=1, days=1))
 ```
 
-#### <a name="create-a-filedataset"></a>Создание Филедатасет
+#### <a name="create-a-filedataset"></a>Создание FileDataset
 
 Используйте метод [`from_files()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.dataset_factory.filedatasetfactory?view=azure-ml-py#from-files-path--validate-true-) класса `FileDatasetFactory` для загрузки файлов в любом формате и создания незарегистрированного филедатасет:
 
 ```Python
-# create a FileDataset from multiple paths in datastore
+# create a FileDataset pointing to files in 'animals' folder and its subfolders recursively
 datastore_paths = [
-                  (datastore, 'animals/dog/1.jpg'),
-                  (datastore, 'animals/dog/2.jpg'),
-                  (datastore, 'animals/dog/*.jpg')
+                  (datastore, 'animals')
                  ]
 animal_ds = Dataset.File.from_files(path=datastore_paths)
 
@@ -285,7 +283,7 @@ titanic_ds = Dataset.get_by_name(workspace=workspace, name=dataset_name)
 df = titanic_ds.to_pandas_dataframe()
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * Узнайте, [как обучаться с помощью наборов данных](how-to-train-with-datasets.md).
 * Используйте автоматическое машинное обучение для [обучения с табулардатасетс](https://aka.ms/automl-dataset).

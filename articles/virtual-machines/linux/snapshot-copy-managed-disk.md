@@ -1,5 +1,5 @@
 ---
-title: Создание моментального снимка виртуального жесткого диска в Azure | Документация Майкрософт
+title: Создание моментального снимка виртуального жесткого диска в Azure
 description: Узнайте, как создать копию виртуального жесткого диска (VHD) в Azure в качестве резервной копии или для устранения неполадок.
 documentationcenter: ''
 author: roygara
@@ -14,18 +14,18 @@ ms.topic: article
 ms.date: 07/11/2018
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: 9f2f3ac3668f0e48716fc30fb69cd1782dbd4e56
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 15696469ca3861586617e9f418f8a55a7ea90467
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64706973"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74034798"
 ---
 # <a name="create-a-snapshot"></a>Создание моментального снимка 
 
 Создайте моментальный снимок операционной системы или диска данных для резервного копирования или устранения неполадок с виртуальной машиной. Моментальный снимок — это полная копия виртуального жесткого диска, доступная только для чтения. 
 
-## <a name="use-azure-cli"></a>Использование Azure CLI 
+## <a name="use-azure-cli"></a>Использование интерфейса командной строки Azure 
 
 В следующем примере необходимо использовать [Cloud Shell](https://shell.azure.com/bash) или установить Azure CLI.
 
@@ -63,7 +63,7 @@ az snapshot list \
 
 ## <a name="use-azure-portal"></a>Использование портала Azure 
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 2. В левом верхнем углу щелкните **Создать ресурс** и выполните поиск фразы **моментальный снимок**. В результатах поиска выберите **Моментальный снимок**.
 3. В колонке **Моментальный снимок** щелкните **Создать**.
 4. Заполните поле **Имя** для моментального снимка.
@@ -73,7 +73,7 @@ az snapshot list \
 9. Нажмите кнопку **Создать**.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
  Создайте виртуальную машину из моментального снимка, создав из него управляемый диск, а затем подключив этот диск как диск ОС. См. дополнительные сведения о скрипте для [создания виртуальной машины из моментального снимка](./../scripts/virtual-machines-linux-cli-sample-create-vm-from-snapshot.md?toc=%2fcli%2fmodule%2ftoc.json).
 

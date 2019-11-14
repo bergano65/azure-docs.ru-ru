@@ -6,22 +6,22 @@ ms.subservice: application-insights
 ms.topic: conceptual
 author: cweining
 ms.author: cweining
-ms.date: 08/06/2018
+ms.date: 11/08/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: 44f45c53a12c7ac73c3de3f2734f024cb9bc6dd5
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: fa1179e55a4826450d30351be0a905efb059780b
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72900000"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74031017"
 ---
 # <a name="profile-web-apps-running-on-an-azure-virtual-machine-or-a-virtual-machine-scale-set-by-using-application-insights-profiler"></a>Профилирование веб-приложений, работающих на виртуальной машине Azure или в масштабируемом наборе виртуальных машин, с использованием Application Insights Profiler
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 Вы можете развернуть Azure Application Insights Profiler для таких служб:
-* [Служба приложений Azure](../../azure-monitor/app/profiler.md?toc=/azure/azure-monitor/toc.json)
-* [Oблачныe службы Azure](profiler-cloudservice.md?toc=/azure/azure-monitor/toc.json)
+* [службы приложений Azure](../../azure-monitor/app/profiler.md?toc=/azure/azure-monitor/toc.json)
+* [Облачные службы Azure](profiler-cloudservice.md?toc=/azure/azure-monitor/toc.json)
 * [Azure Service Fabric](profiler-vm.md?toc=/azure/azure-monitor/toc.json)
 
 ## <a name="deploy-profiler-on-a-virtual-machine-or-a-virtual-machine-scale-set"></a>Развертывание Profiler на виртуальной машине или в масштабируемом наборе виртуальных машин
@@ -69,12 +69,12 @@ ms.locfileid: "72900000"
 
 1. Если нужное приложение выполняется с помощью [IIS](https://www.microsoft.com/web/downloads/platform.aspx), необходимо включить компонент Windows `IIS Http Tracing`.
 
-   а) Установите удаленный доступ к среде, а затем используйте окно [Добавить функции Windows]( https://docs.microsoft.com/iis/configuration/system.webserver/tracing/) или выполните следующую команду в PowerShell (с правами администратора):  
+   a. Установите удаленный доступ к среде, а затем используйте окно [Добавить функции Windows]( https://docs.microsoft.com/iis/configuration/system.webserver/tracing/) или выполните следующую команду в PowerShell (с правами администратора):  
 
     ```powershell
     Enable-WindowsOptionalFeature -FeatureName IIS-HttpTracing -Online -All
     ```  
-   б) Если не удается установить удаленный доступ, можно использовать [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli), чтобы выполнить следующую команду:  
+   Б. Если не удается установить удаленный доступ, можно использовать [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli), чтобы выполнить следующую команду:  
 
     ```powershell
     az vm run-command invoke -g MyResourceGroupName -n MyVirtualMachineName --command-id RunPowerShellScript --scripts "Enable-WindowsOptionalFeature -FeatureName IIS-HttpTracing -Online -All"
@@ -89,15 +89,15 @@ ms.locfileid: "72900000"
 
     ![Проверьте, установлено ли расширение WAD][wadextension]
 
-1. Найдите расширение диагностики виртуальных машин для виртуальной машины. Разверните группу ресурсов, Microsoft. COMPUTE virtualMachines, имя виртуальной машины и расширения.  
+2. Найдите расширение диагностики виртуальных машин для виртуальной машины. Перейдите к [https://resources.azure.com](https://resources.azure.com). Разверните группу ресурсов, Microsoft. COMPUTE virtualMachines, имя виртуальной машины и расширения.  
 
     ![Перейдите к WAD config в обозреватель ресурсов Azure][azureresourceexplorer]
 
-1. Добавьте приемник Application Insights Profiler в узел SinksConfig в разделе WadCfg. Если у вас еще нет раздела SinksConfig, может потребоваться добавить его. Не забудьте указать правильные Application Insights iKey в параметрах. Необходимо переключить режим проводника на чтение и запись в правом верхнем углу и нажать синюю кнопку "Изменить".
+3. Добавьте приемник Application Insights Profiler в узел SinksConfig в разделе WadCfg. Если у вас еще нет раздела SinksConfig, может потребоваться добавить его. Не забудьте указать правильные Application Insights iKey в параметрах. Необходимо переключить режим проводника на чтение и запись в правом верхнем углу и нажать синюю кнопку "Изменить".
 
     ![Добавление приемника Application Insights Profiler][resourceexplorersinksconfig]
 
-1. Завершив редактирование конфигурации, нажмите кнопку "вставить". Если помещение прошло успешно, в середине экрана появится зеленая галочка.
+4. Завершив редактирование конфигурации, нажмите кнопку "вставить". Если помещение прошло успешно, в середине экрана появится зеленая галочка.
 
     ![Отправить запрос на добавление изменений][resourceexplorerput]
 
@@ -109,7 +109,7 @@ ms.locfileid: "72900000"
 ## <a name="can-profiler-run-on-on-premises-servers"></a>Можно ли запустить Profiler на локальных серверах?
 Поддержка Application Insights Profiler на локальных серверах не планируется.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Создайте трафик к приложению (например, запустите [тест доступности](monitor-web-app-availability.md)). Подождите 10–15 минут, пока трассировки не начнут отправляться в экземпляр Application Insights.
 - См. раздел [Включение профилировщика](profiler-overview.md?toc=/azure/azure-monitor/toc.json).

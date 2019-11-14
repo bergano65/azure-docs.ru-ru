@@ -1,5 +1,5 @@
 ---
-title: Преобразование хранилища управляемых дисков Azure из уровня "Стандартный" в "Премиум" или "Премиум" в "Стандартный" | Документация Майкрософт
+title: Преобразование хранилища управляемых дисков Azure из уровня "Стандартный" в "Премиум" или "Премиум" в "Стандартный"
 description: Как преобразовать управляемые диски Azure с уровня "Стандартный" на "Премиум" или "Премиум" на "Стандартный" с помощью Azure PowerShell.
 author: roygara
 ms.service: virtual-machines-windows
@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 02/22/2019
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: 274697d555974f286c2c71f26280640077c11f81
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: b63d4d0247fd640e961d03d336d6b211473c48fb
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73749549"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74033928"
 ---
 # <a name="update-the-storage-type-of-a-managed-disk"></a>Обновление типа хранилища управляемого диска
 
@@ -22,7 +22,7 @@ ms.locfileid: "73749549"
 
  
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 * Так как для преобразования требуется перезагрузка виртуальной машины, необходимо запланировать миграцию дискового накопителя во время работы предварительно существующего периода обслуживания.
 * Если диск не управляется, сначала [преобразуйте его в управляемый диск](convert-unmanaged-to-managed-disks.md) , чтобы можно было переключаться между вариантами хранения.
@@ -111,7 +111,7 @@ Start-AzVM -ResourceGroupName $vm.ResourceGroupName -Name $vm.Name
 
 ## <a name="convert-managed-disks-from-standard-to-premium-in-the-azure-portal"></a>Преобразование управляемых дисков из уровня "Стандартный" в "Премиум" в портал Azure
 
-Выполните следующие действия.
+Выполните следующие действия:
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 2. Выберите виртуальную машину из списка **виртуальных машин** на портале.
@@ -154,6 +154,6 @@ Update-AzDisk -DiskUpdate $diskUpdateConfig -ResourceGroupName $rgName `
 Start-AzVM -ResourceGroupName $vm.ResourceGroupName -Name $vm.Name
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Создайте копию виртуальной машины, доступную только для чтения, с помощью [моментальных снимков](snapshot-copy-managed-disk.md).

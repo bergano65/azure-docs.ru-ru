@@ -1,5 +1,5 @@
 ---
-title: Размеры с ограничением на виртуальные ЦП Azure в Windows | Документация Майкрософт
+title: Размеры ограниченного виртуальных ЦП Azure — Windows
 description: Список размеров виртуальных машин, в которых можно задать ограниченное число виртуальных ЦП.
 services: virtual-machines-windows
 documentationcenter: ''
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 03/09/2018
 ms.author: jonbeck
-ms.openlocfilehash: ebd936b7003caaf12030876560ab3ca94537142f
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 41260c269fca966ddbe4fdc8d70194f26ac6dcd3
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70079817"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74039465"
 ---
 # <a name="constrained-vcpu-capable-vm-sizes"></a>Размеры виртуальных машин, поддерживающие ограниченное число виртуальных ЦП
 
@@ -33,6 +33,6 @@ ms.locfileid: "70079817"
 - [GPU](sizes-gpu.md)
 - [Для высокопроизводительных вычислений](sizes-hpc.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 Узнайте больше о том, как с помощью [единиц вычислений Azure (ACU)](acu.md) сравнить производительность вычислений для различных номеров SKU Azure.
 

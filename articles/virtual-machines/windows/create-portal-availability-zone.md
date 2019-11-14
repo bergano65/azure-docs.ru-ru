@@ -1,5 +1,5 @@
 ---
-title: Создание зональной виртуальной машины Windows с помощью портала Azure | Документация Майкрософт
+title: Создание виртуальной машины с зоной для Windows с помощью портал Azure
 description: Создание виртуальной машины Windows в зоне доступности с помощью портала Azure
 services: virtual-machines-windows
 documentationcenter: virtual-machines
@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 03/27/2018
 ms.author: cynthn
 ms.custom: ''
-ms.openlocfilehash: 90c6f7106cbc885c513d47bf80a7b1ec218d8c6c
-ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
+ms.openlocfilehash: c6f843693ccfa16f9b31027ba370242e0462b138
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71168552"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74033895"
 ---
 # <a name="create-a-windows-virtual-machine-in-an-availability-zone-with-the-azure-portal"></a>Создание виртуальной машины Windows в зоне доступности с помощью портала Azure
 
@@ -72,6 +72,6 @@ ms.locfileid: "71168552"
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Из этой статье вы узнали, как создать виртуальную машину в зоне доступности. Дополнительные сведения о [доступности](availability.md) для виртуальных машин Azure.

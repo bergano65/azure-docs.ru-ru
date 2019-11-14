@@ -1,26 +1,25 @@
 ---
-title: Управление административными единицами (предварительная версия) — Azure Active Directory | Документация Майкрософт
+title: Управление административными единицами (Предварительная версия) — Azure AD | Документация Майкрософт
 description: Использование административных единиц для делегирования разрешений в Azure Active Directory на фрагментарном уровне
 services: active-directory
 documentationcenter: ''
 author: curtand
-manager: mtillman
-editor: ''
+manager: daveba
 ms.service: active-directory
 ms.topic: article
 ms.subservice: users-groups-roles
 ms.workload: identity
-ms.date: 08/01/2019
+ms.date: 11/13/2019
 ms.author: curtand
 ms.reviewer: elkuzmen
 ms.custom: oldportal;it-pro;
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 58b61186a876af90c812ec7faf41fa9f5b14bf4e
-ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
+ms.openlocfilehash: 3c4958975a080a98fb900bf317229ba9eda795d5
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71336919"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74028413"
 ---
 # <a name="administrative-units-management-in-azure-active-directory-preview"></a>Управление административными единицами в Azure Active Directory (Предварительная версия)
 
@@ -34,14 +33,14 @@ ms.locfileid: "71336919"
 
 ## <a name="license-requirements"></a>Требования лицензий
 
-Для использования административных единиц требуется лицензия Azure Active Directory Premium для каждого административного администратора. Дополнительные сведения см. в разделе [Приступая к работе с Azure AD Premium](../fundamentals/active-directory-get-started-premium.md).
+Для использования административных единиц требуется лицензия Azure Active Directory Premium для каждого административного администратора. Дополнительные сведения см. в статье [Приступая к работе с Azure AD Premium](../fundamentals/active-directory-get-started-premium.md).
 
 ## <a name="managing-administrative-units"></a>Управление административными единицами
 
 В этом предварительном выпуске единственным способом создания и управления административными единицами является использование модуля Azure Active Directory для командлетов Windows PowerShell, как описано в разделе [Работа с административными единицами](https://docs.microsoft.com/powershell/azure/active-directory/working-with-administrative-units?view=azureadps-2.0) .
 
-Дополнительные сведения о требованиях к программному обеспечению и установке модуля Azure AD, а также справочные сведения о командлетах модуля Azure AD для управления административными единицами, включая синтаксис, описания параметров и примеры, см. в статье [Azure Active Каталог PowerShell](https://docs.microsoft.com/powershell/azure/active-directory/overview?view=azureadps-2.0).
+Дополнительные сведения о требованиях к программному обеспечению и установке модуля Azure AD, а также справочные сведения о командлетах модуля Azure AD для управления административными единицами, включая синтаксис, описания параметров и примеры, см. в разделе [Azure Active Directory PowerShell](https://docs.microsoft.com/powershell/azure/active-directory/overview?view=azureadps-2.0).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 [Выпуски Azure Active Directory](../fundamentals/active-directory-whatis.md)

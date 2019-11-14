@@ -1,25 +1,25 @@
 ---
-title: Примеры PowerShell и Graph для групп лицензирования — Azure Active Directory | Документация Майкрософт
+title: Примеры PowerShell и Graph для группового лицензирования — Azure AD | Документация Майкрософт
 description: Примеры PowerShell и Graph и сценарии для лицензирования на основе групп Azure Active Directory
 services: active-directory
 keywords: Лицензирование Azure AD
 documentationcenter: ''
 author: curtand
-manager: mtillman
+manager: daveba
 ms.service: active-directory
 ms.subservice: users-groups-roles
 ms.topic: article
 ms.workload: identity
-ms.date: 03/18/2019
+ms.date: 11/08/2019
 ms.author: curtand
 ms.reviewer: sumitp
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8965f4872ac88601a4a77dc48ba430c2f419250f
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 52a741fd0616fc17ed133309ea6200dca43a83b7
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73160581"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74025578"
 ---
 # <a name="powershell-and-graph-examples-for-group-based-licensing-in-azure-ad"></a>Примеры PowerShell и Graph для группового лицензирования в Azure AD
 
@@ -619,7 +619,7 @@ aadbe4da-c4b5-4d84-800a-9400f31d7371 User has no direct license to remove. Skipp
 > [!NOTE]
 > Обновите значения переменных `$skuId` и `$groupId` которые предназначены для удаления прямых лицензий в соответствии с тестовой средой перед выполнением приведенного выше скрипта. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о наборе функций для управления лицензиями с помощью групп см. в следующих статьях:
 

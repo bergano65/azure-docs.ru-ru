@@ -1,5 +1,5 @@
 ---
-title: 'Размеры виртуальных машин Linux в Azure: предыдущие поколения | Документация Майкрософт'
+title: Размеры виртуальных машин Linux в Azure — предыдущие поколения
 description: Список размеров виртуальных машин Linux предыдущих поколений в Azure. Сведения о количестве виртуальных ЦП, дисков данных и сетевых адаптеров, а также о пропускной способности хранилища и сети для размеров виртуальных машин этой серии.
 services: virtual-machines-linux
 documentationcenter: ''
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 04/11/2019
 ms.author: jonbeck
-ms.openlocfilehash: e56fb938ca8d45a148700a0a6b91e22a4f9034c3
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: fc64e5d15175e015f782e905d8a3135e4a0413bc
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70100853"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74034856"
 ---
 # <a name="previous-generations-of-virtual-machine-sizes"></a>Размеры виртуальных машин предыдущих поколений
 
@@ -40,6 +40,6 @@ ms.locfileid: "70100853"
 - [GPU](sizes-gpu.md)
 - [Для высокопроизводительных вычислений](sizes-hpc.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Узнайте больше о том, как с помощью [единиц вычислений Azure (ACU)](acu.md) сравнить производительность вычислений для различных номеров SKU Azure.

@@ -1,5 +1,5 @@
 ---
-title: Установка драйвера GPU на виртуальные машины Azure серии N для Windows | Документация Майкрософт
+title: Установка драйвера GPU для Azure серии N для Windows
 description: Как установить драйверы NVIDIA GPU для виртуальных машин серии N под управлением Windows Server или Windows в Azure
 services: virtual-machines-windows
 author: cynthn
@@ -14,12 +14,12 @@ ms.workload: infrastructure-services
 ms.date: 09/24/2018
 ms.author: cynthn
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 92ebd34c20e3733971593344925dcb566a1bf912
-ms.sourcegitcommit: 5f67772dac6a402bbaa8eb261f653a34b8672c3a
+ms.openlocfilehash: 9f6286f0a9c15b8089ff5ce9d6f3879b40aceaef
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2019
-ms.locfileid: "70207368"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74033164"
 ---
 # <a name="install-nvidia-gpu-drivers-on-n-series-vms-running-windows"></a>Установка драйверов GPU NVIDIA на виртуальные машины серии N под управлением Windows 
 
@@ -55,7 +55,7 @@ ms.locfileid: "70207368"
 
 ![Состояние устройства NVIDIA](./media/n-series-driver-setup/smi.png)  
 
-## <a name="rdma-network-connectivity"></a>Сетевое подключение RDMA
+## <a name="rdma-network-connectivity"></a>Сетевое подключение к RDMA
 
 Сетевое подключение RDMA можно включить на виртуальных машинах серии N с поддержкой RDMA, таких как NC24r, развернутых в одной группе доступности или в одной группе размещения в масштабируемом наборе виртуальных машин. Необходимо добавить расширение HpcVmDrivers для установки драйверов сетевых устройств Windows, обеспечивающих подключения RDMA. Чтобы в виртуальную машину серии N с поддержкой RDMA добавить расширение виртуальной машины, используйте командлеты [Azure PowerShell](/powershell/azure/overview) для Azure Resource Manager.
 
@@ -68,7 +68,7 @@ ms.locfileid: "70207368"
 Сеть RDMA поддерживает трафик MPI (Message Passing Interface) для приложений, использующих [Microsoft MPI](https://docs.microsoft.com/message-passing-interface/microsoft-mpi) или Intel MPI 5.x. 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 * Разработчики приложений с ускорением GPU, предназначенных для графических процессоров NVIDIA Tesla, могут также скачать и установить последнюю версию [CUDA Toolkit](https://developer.nvidia.com/cuda-downloads). Дополнительные сведения см. в [руководстве по установке CUDA](https://docs.nvidia.com/cuda/cuda-installation-guide-microsoft-windows/index.html#axzz4ZcwJvqYi).
 

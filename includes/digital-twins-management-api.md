@@ -7,22 +7,22 @@ author: alinamstanciu
 manager: bertvanhoof
 ms.service: digital-twins
 ms.topic: include
-ms.date: 10/02/2019
+ms.date: 11/12/2019
 ms.custom: include file
-ms.openlocfilehash: f9fad0f53211fcdedd1796b84e086cff0245cf0b
-ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
+ms.openlocfilehash: 3cc01182a7127794d69eb341d2881e0b62d7688c
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71948953"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74062921"
 ---
 В приведенных ниже примерах `YOUR_MANAGEMENT_API_URL` относится к универсальному коду ресурса API Digital Twins:
 
-```plaintext
+```URL
 https://YOUR_INSTANCE_NAME.YOUR_LOCATION.azuresmartspaces.net/management/api/v1.0
 ```
 
-| Название | Заменить на |
+| имя | Заменить на |
 | --- | --- |
 | YOUR_INSTANCE_NAME | Имя вашего экземпляра Azure Digital Twins |
 | YOUR_LOCATION | Регион, в котором размещен ваш экземпляр |

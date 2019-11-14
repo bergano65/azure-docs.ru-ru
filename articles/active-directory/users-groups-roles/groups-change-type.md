@@ -1,26 +1,25 @@
 ---
-title: Изменение статического типа членства в группах на динамический в Azure Active Directory | Документация Майкрософт
+title: Изменение членства статической группы на Dynamic — Azure AD | Документация Майкрософт
 description: Сведения о создании правил членства для автоматического заполнения групп и о ссылках на эти правила.
 services: active-directory
 documentationcenter: ''
 author: curtand
-manager: mtillman
-editor: ''
+manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: article
-ms.date: 03/18/2019
+ms.date: 11/08/2019
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dd753ca4994975302a0bc6fede61964f80196d7c
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 34451fcc4597f77464e5e9566613e21e9fecdbc6
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60472077"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74027311"
 ---
 # <a name="change-static-group-membership-to-dynamic-in-azure-active-directory"></a>Изменение статического типа членства в группах на динамический в Azure Active Directory
 
@@ -33,7 +32,7 @@ ms.locfileid: "60472077"
 
 ## <a name="change-the-membership-type-for-a-group"></a>Изменение типа членства для группы
 
-1. Войдите в [Центр администрирования Azure AD](https://aad.portal.azure.com) с учетной записью глобального администратора или администратора пользователей в клиенте.
+1. Войдите в [центр администрирования Azure AD](https://aad.portal.azure.com) с помощью учетной записи глобального администратора или администратора пользователя в клиенте.
 2. Выберите **Группы**.
 3. В списке **Все группы** откройте группу, которую нужно изменить.
 4. Выберите **Свойства**.
@@ -116,7 +115,7 @@ ConvertDynamicGroupToStatic "a58913b2-eee4-44f9-beb2-e381c375058f"
 ConvertStaticGroupToDynamic "a58913b2-eee4-44f9-beb2-e381c375058f" "user.displayName -startsWith ""Peter"""
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 В следующих статьях содержатся дополнительные сведения о группах в Azure Active Directory.
 

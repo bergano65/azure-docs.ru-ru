@@ -1,5 +1,5 @@
 ---
-title: Временные диски ОС для виртуальных машин Azure Linux | Документация Майкрософт
+title: Временные диски ОС для Azure Виртуальные машины Linux
 description: Дополнительные сведения о временных дисках ОС для виртуальных машин Azure.
 services: virtual-machines-linux
 author: cynthn
@@ -11,17 +11,17 @@ ms.topic: article
 ms.date: 07/01/2019
 ms.author: cynthn
 ms.subservice: disks
-ms.openlocfilehash: a318743876761a3a9b68d40fd963f43a527f0c7a
-ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
+ms.openlocfilehash: 806ca1b0e2ed7bca674b45fc309d486ab6db7bc4
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67805870"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74036236"
 ---
 # <a name="ephemeral-os-disks-for-azure-vms"></a>Временные диски ОС для виртуальных машин Azure
 
 [!INCLUDE [virtual-machines-common-ephemeral](../../../includes/virtual-machines-common-ephemeral.md)]
  
-## <a name="next-steps"></a>Следующие шаги
-Вы можете создать виртуальную Машину с временный диск ОС с помощью [Azure CLI](https://docs.microsoft.com/cli/azure/vm#az-vm-create).
+## <a name="next-steps"></a>Дополнительная информация
+Вы можете создать виртуальную машину с эфемерным диском ОС, используя [Azure CLI](https://docs.microsoft.com/cli/azure/vm#az-vm-create).
 

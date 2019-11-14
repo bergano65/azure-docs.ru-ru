@@ -1,17 +1,17 @@
 ---
-title: Управляемые диски Azure. Преобразование виртуальной машины Windows с неуправляемыми дисками для использования управляемых дисков | Документация Майкрософт
+title: Преобразование виртуальной машины Windows из неуправляемых дисков в управляемые диски с помощью управляемых дисков Azure
 description: Переключение виртуальной машины Windows, развернутой в рамках модели Resource Manager, с неуправляемых дисков на управляемые диски с помощью PowerShell.
 author: roygara
 ms.service: virtual-machines-windows
 ms.topic: conceptual
 ms.date: 07/12/2018
 ms.author: rogarana
-ms.openlocfilehash: 64ff47f1dc4b06d1407497adf41981c670ea9064
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: 92f70cbfcf261c218ea43b159ed49126f7b2ecd5
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73749528"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74033901"
 ---
 # <a name="convert-a-windows-virtual-machine-from-unmanaged-disks-to-managed-disks"></a>Переключение виртуальной машины Windows с неуправляемых дисков на управляемые диски
 
@@ -34,7 +34,7 @@ ms.locfileid: "73749528"
 ## <a name="convert-single-instance-vms"></a>Преобразование одноэкземплярных виртуальных машин
 В этом разделе описывается, как преобразовать одноэкземплярные виртуальные машины Azure с неуправляемыми дисками, чтобы они могли использовать Управляемые диски. (Если виртуальные машины находятся в группе доступности, ознакомьтесь со следующим разделом.) 
 
-1. Отмените распределение виртуальной машины с помощью командлета [Stop-AzVM](https://docs.microsoft.com/powershell/module/az.compute/stop-azvm). В следующем примере освобождается виртуальная машина `myVM`, входящая в группу ресурсов `myResourceGroup`. 
+1. Отмените распределение виртуальной машины с помощью командлета [Stop-AzVM](https://docs.microsoft.com/powershell/module/az.compute/stop-azvm). В следующем примере отменяется подготовка виртуальной машины с именем `myVM`, входящей в группу ресурсов с именем `myResourceGroup`. 
 
    ```azurepowershell-interactive
    $rgName = "myResourceGroup"
@@ -52,7 +52,7 @@ ms.locfileid: "73749528"
 
 ## <a name="convert-vms-in-an-availability-set"></a>Преобразование виртуальных машин в группе доступности
 
-Если виртуальные машины, которые вы хотите преобразовать для использования управляемых дисков, входят в группу доступности, то необходимо сначала преобразовать эту группу доступности в управляемую группу доступности.
+Если виртуальные машины, которые вы хотите переключить на управляемые диски, входят в группу доступности, необходимо сначала преобразовать эту группу доступности в управляемую группу доступности.
 
 1. Преобразуйте группу доступности с помощью командлета [Update-AzAvailabilitySet](https://docs.microsoft.com/powershell/module/az.compute/update-azavailabilityset). В следующем примере преобразовывается группа доступности `myAvailabilitySet` в группе ресурсов `myResourceGroup`.
 
@@ -102,7 +102,7 @@ ms.locfileid: "73749528"
 
 Виртуальная машина будет остановлена и перезапущена после завершения миграции.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 [Преобразование управляемых дисков уровня "Стандартный" в диски уровня "Премиум"](convert-disk-storage.md)
 

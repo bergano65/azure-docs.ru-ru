@@ -1,5 +1,5 @@
 ---
-title: Создание и использование пары ключей SSH для виртуальных машин Linux в Azure | Документация Майкрософт
+title: Создание и использование пары ключей SSH для виртуальных машин Linux в Azure
 description: Сведения о создании и использовании пары из открытого и закрытого ключей SSH для виртуальных машин Linux в Azure с целью повышения безопасности процесса аутентификации.
 services: virtual-machines-linux
 documentationcenter: ''
@@ -14,14 +14,14 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 09/11/2018
 ms.author: cynthn
-ms.openlocfilehash: e66c0d2cf16733b4350366d87e9fd67d7f645b38
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: cb3bb6a91c25298535cfba1107b85f200031a7d6
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70082964"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74035912"
 ---
-# <a name="quick-steps-create-and-use-an-ssh-public-private-key-pair-for-linux-vms-in-azure"></a>Краткая инструкция. Создание и использование пары из открытого и закрытого ключей SSH для виртуальных машин Linux в Azure
+# <a name="quick-steps-create-and-use-an-ssh-public-private-key-pair-for-linux-vms-in-azure"></a>Краткая инструкция: создание и использование пары из открытого и закрытого ключей SSH для виртуальных машин Linux в Azure
 
 С помощью пары ключей Secure Shell (SSH) в Azure вы можете создавать виртуальные машины, использующие ключи SSH для проверки подлинности, что позволяет обойтись без использования паролей для входа. В этой статье показано, как быстро создать и использовать пару файлов открытого и закрытого ключей SSH для виртуальных машин Linux. Эти шаги можно выполнить с помощью Azure Cloud Shell, узла macOS или Linux, подсистемы Windows для Linux либо других инструментов, поддерживающих OpenSSH. 
 
@@ -90,7 +90,7 @@ ssh azureuser@myvm.westus.cloudapp.azure.com
 
 Если виртуальная машина использует политику доступа JIT, запросите доступ, прежде чем подключиться к виртуальной машине. Дополнительные сведения о политике JIT см. в статье [Управление доступом к виртуальным машинам с помощью JIT-доступа](../../security-center/security-center-just-in-time.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 * Дополнительные сведения о работе с парами ключей SSH см. в разделе [Подробные инструкции: создание ключей SSH для аутентификации на виртуальной машине Linux в Azure и управление этими ключами](create-ssh-keys-detailed.md).
 

@@ -1,24 +1,24 @@
 ---
-title: Назначение пользовательских ролей с областью действия ресурса с помощью Azure PowerShell-Azure Active Directory | Документация Майкрософт
+title: Назначение пользовательских ролей с помощью Azure PowerShell Azure AD | Документация Майкрософт
 description: Управление членами настраиваемой роли администратора Azure AD с помощью Azure PowerShell.
 services: active-directory
 author: curtand
-manager: mtillman
+manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: article
-ms.date: 08/05/2019
+ms.date: 11/08/2019
 ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fd3f590659017d2bb79c7445f6896817b8432f41
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 0a2096b7899039e7a9d3455bc0c6fb3ec84ebd1a
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68880733"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74025320"
 ---
 # <a name="assign-custom-roles-with-resource-scope-using-powershell-in-azure-active-directory"></a>Назначение пользовательских ролей с областью действия ресурса с помощью PowerShell в Azure Active Directory
 
@@ -47,7 +47,7 @@ get-module azureadpreview
   Binary     2.0.0.115    azureadpreview               {Add-AzureADMSAdministrati...}
 ```
 
-Теперь можно начать использование командлетов в модуле. Полное описание командлетов в модуле Azure AD см. в интерактивной справочной документации по модулю [Azure AD Preview](https://www.powershellgallery.com/packages/AzureADPreview/2.0.0.17).
+Теперь можно начать использование командлетов в модуле. Полное описание командлетов в модуле Azure AD см. в интерактивной справочной документации по [модулю Azure AD Preview](https://www.powershellgallery.com/packages/AzureADPreview/2.0.0.17).
 
 ## <a name="assign-a-role-to-a-user-or-service-principal-with-resource-scope"></a>Назначение роли пользователю или субъекту-службе с областью действия ресурса
 
@@ -160,7 +160,7 @@ Get-AzureADMSRoleAssignment -Filter "roleDefinitionId eq '355aed8a-864b-4e2b-b22
 Remove-AzureADMSRoleAssignment -Id 'qiho4WOb9UKKgng_LbPV7tvKaKRCD61PkJeKMh7Y458-1'
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 - Поделитесь с нами на [форуме по административным ролям Azure AD](https://feedback.azure.com/forums/169401-azure-active-directory?category_id=166032).
 - Дополнительные сведения о ролях и назначениях ролей администратора Azure AD см. в статье [назначение ролей администратора](directory-assign-admin-roles.md).

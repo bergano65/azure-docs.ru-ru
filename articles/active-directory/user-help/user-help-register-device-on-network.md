@@ -1,5 +1,5 @@
 ---
-title: Регистрировать персональные устройства в корпоративной сети — Azure Active Directory | Документация Майкрософт
+title: Регистрация персональных устройств в сети организации — Azure AD
 description: Из этой статьи можно узнать, как зарегистрировать персональное устройство в сети организации и как с его помощью получить доступ к ее защищенным ресурсам.
 services: active-directory
 author: eross-msft
@@ -14,12 +14,12 @@ ms.author: lizross
 ms.reviewer: jairoc
 ms.custom: user-help, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 041c8bb6b4de2bbe2cbeb4c1a89e452239ae57bd
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 879fa55df422e6039c6830e25e43637fc31b8037
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60473698"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74028488"
 ---
 # <a name="register-your-personal-device-on-your-organizations-network"></a>Регистрация персонального устройства в сети организации
 Регистрация персонального устройства (в роли которого может выступать телефон или планшет) в сети организации. После регистрации устройства с него можно получать доступ к ограниченным ресурсам организации.
@@ -50,7 +50,7 @@ ms.locfileid: "60473698"
 
     ![Окно доступа к учетной записи места работы или учебного заведения с выделенным параметром "Подключить"](./media/user-help-register-device-on-network/register-device-access-work-school-connect.png)
 
-3. На экране **Добавить рабочую или учебную учетную запись** введите адрес электронной почты для вашей рабочей или учебной учетной записи, а затем выберите **Далее**. Например, alain@contoso.com.
+3. На экране **Добавить рабочую или учебную учетную запись** введите адрес электронной почты для вашей рабочей или учебной учетной записи, а затем выберите **Далее**. Пример: alain@contoso.com.
 
 4. Войдите в рабочую или учебную учетную запись, а затем выберите **Войти**.
 
@@ -67,7 +67,7 @@ ms.locfileid: "60473698"
 
     ![Окно доступа к учетной записи места работы или учебного заведения с подключенной учетной записью Contoso](./media/user-help-register-device-on-network/register-device-setup-verify.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 После регистрации персонального устройства в сети организации доступ к большинству ресурсов будет открыт.
 
 - Если организации требуется, чтобы вы подключили рабочее устройство, см. статью [Join your work device to your organization's network](user-help-join-device-on-network.md) (Подключение рабочего устройства к сети организации).

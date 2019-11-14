@@ -1,75 +1,75 @@
 ---
-title: Подключение в обозреватель данных Azure с помощью ODBC
-description: В этой статье вы узнаете, как настроить подключение к Open Database Connectivity (ODBC) в обозреватель данных Azure.
+title: Подключение к Azure обозреватель данных с помощью ODBC
+description: Из этой статьи вы узнаете, как настроить подключение по протоколу ODBC к Azure обозреватель данных.
 author: orspod
 ms.author: orspodek
-ms.reviewer: mblythe
+ms.reviewer: gabil
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 06/30/2019
-ms.openlocfilehash: 65795b5b4dea8d2cdeecf5f78f9de751f275dac0
-ms.sourcegitcommit: 084630bb22ae4cf037794923a1ef602d84831c57
+ms.openlocfilehash: 1b2e7a79eb932f5b971dda1d5d51b650789394db
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67537585"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74034028"
 ---
-# <a name="connect-to-azure-data-explorer-with-odbc"></a>Подключение в обозреватель данных Azure с помощью ODBC
+# <a name="connect-to-azure-data-explorer-with-odbc"></a>Подключение к Azure обозреватель данных с помощью ODBC
 
-Open Database Connectivity ([ODBC](/sql/odbc/reference/odbc-overview)) — широко применяемый прикладной программный интерфейс (API) для доступа к базе данных. Использование ODBC для подключения в обозреватель данных Azure из приложений, у которых нет выделенных соединителя.
+[ODBC](/sql/odbc/reference/odbc-overview)— это широко принятый интерфейс прикладного программирования (API) для доступа к базе данных. Используйте ODBC для подключения к Azure обозреватель данных из приложений, у которых нет выделенного соединителя.
 
-На самом деле приложения вызывают функции через интерфейс ODBC, которые реализованы в конкретной базе данных модулей, которые называются *драйверы*. Обозреватель данных Azure поддерживает подмножество протокола связи SQL Server ([MS-TDS](/azure/kusto/api/tds/)), поэтому его можно использовать драйвер ODBC для SQL Server.
+В фоновом режиме приложения вызывают функции в интерфейсе ODBC, которые реализуются в модулях, связанных с базами данных, которые называются *драйверами*. Azure обозреватель данных поддерживает подмножество протокола связи SQL Server ([MS-TDS](/azure/kusto/api/tds/)), поэтому он может использовать драйвер ODBC для SQL Server.
 
-Используется в следующем видео, вы научитесь создавать подключение ODBC. 
+С помощью следующего видео вы можете научиться создавать подключение ODBC. 
 
 > [!VIDEO https://www.youtube.com/embed/qA5wxhrOwog]
 
-Кроме того, вы можете [настроить источник данных ODBC](#configure-the-odbc-data-source) как описано ниже. 
+Кроме того, можно [настроить источник данных ODBC](#configure-the-odbc-data-source) , как описано ниже. 
 
-В этой статье вы узнаете, как использовать драйвер ODBC для SQL Server, чтобы вы могли подключаться к обозреватель данных Azure из любого приложения, поддерживающий ODBC. 
+В этой статье вы узнаете, как использовать драйвер ODBC SQL Server, чтобы вы могли подключиться к обозреватель данных Azure из любого приложения, которое поддерживает ODBC. 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 Кроме этого, вам потребуются:
 
-* [Драйвер Microsoft ODBC для SQL Server версии 17.2.0.1 или более поздней версии](/sql/connect/odbc/download-odbc-driver-for-sql-server) для вашей операционной системы.
+* [Microsoft ODBC Driver for SQL Server версии 17.2.0.1 или более поздней](/sql/connect/odbc/download-odbc-driver-for-sql-server) для операционной системы.
 
 ## <a name="configure-the-odbc-data-source"></a>Настройка источника данных ODBC
 
-Выполните следующие действия для настройки источника данных ODBC с помощью драйвера ODBC для SQL Server.
+Выполните следующие действия, чтобы настроить источник данных ODBC с помощью драйвера ODBC для SQL Server.
 
-1. В Windows, найдите *источников данных ODBC*и откройте классическое приложение источников данных ODBC.
+1. В Windows найдите *Источники данных ODBC*и откройте классическое приложение источники данных ODBC.
 
 1. Выберите **Добавить**.
 
     ![Добавление источника данных](media/connect-odbc/add-data-source.png)
 
-1. Выберите **ODBC Driver 17 for SQL Server** затем **Готово**.
+1. Выберите **ODBC Driver 17 для SQL Server** затем нажмите кнопку **Готово**.
 
     ![Выбор драйвера](media/connect-odbc/select-driver.png)
 
-1. Введите имя и описание для соединения и кластер, вы хотите подключиться, затем выберите **Далее**. URL-адрес должен быть в форме кластера  *\<ClusterName\>.\< Регион\>. kusto.windows.net*.
+1. Введите имя и описание подключения, а также кластер, к которому нужно подключиться, а затем нажмите кнопку **Далее**. URL-адрес кластера должен быть в формате *\<имя_кластера\>.\<Region\>. kusto.Windows.NET*.
 
-    ![Выберите сервер](media/connect-odbc/select-server.png)
+    ![Выбор сервера](media/connect-odbc/select-server.png)
 
-1. Выберите **интегрированных с Active Directory** затем **Далее**.
+1. Выберите **Active Directory интеграция** и **Далее**.
 
-    ![Встроенная проверка подлинности Active Directory](media/connect-odbc/active-directory-integrated.png)
+    ![Встроенная Active Directory](media/connect-odbc/active-directory-integrated.png)
 
-1. Затем выберите базу данных с использованием образца данных **Далее**.
+1. Выберите базу данных с образцом данных **Далее**.
 
-    ![Изменение базы данных по умолчанию](media/connect-odbc/change-default-database.png)
+    ![Изменить базу данных по умолчанию](media/connect-odbc/change-default-database.png)
 
-1. На следующем экране оставьте все параметры по умолчанию выберите **Готово**.
+1. На следующем экране оставьте все параметры по умолчанию, а затем нажмите кнопку **Готово**.
 
 1. Выберите **проверить источник данных**.
 
-    ![Источник данных теста](media/connect-odbc/test-data-source.png)
+    ![Проверить источник данных](media/connect-odbc/test-data-source.png)
 
-1. Убедитесь, что тест успешно выберите **ОК**. Если тест не удается, проверьте значения, заданные на предыдущих шагах и убедитесь, что у вас есть достаточные разрешения для подключения к кластеру.
+1. Убедитесь, что тест успешно прошел, и нажмите кнопку **ОК**. Если тест не был выполнен успешно, проверьте значения, указанные на предыдущих шагах, и убедитесь, что у вас есть необходимые разрешения для подключения к кластеру.
 
-    ![Проверка завершена успешно](media/connect-odbc/test-succeeded.png)
+    ![Проверка прошла](media/connect-odbc/test-succeeded.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-* [Подключение к Azure Data Explorer из Tableau](tableau.md)
+* [Подключение к обозреватель данных Azure из Tableau](tableau.md)

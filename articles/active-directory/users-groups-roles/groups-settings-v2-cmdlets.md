@@ -1,31 +1,31 @@
 ---
-title: Примеры PowerShell для управления группами и обратной записи групп в локальную среду — Azure Active Directory | Документация Майкрософт
+title: Примеры PowerShell v2 для управления группами в Azure AD | Документация Майкрософт
 description: На этой странице представлены примеры командлетов PowerShell, которые помогут вам управлять группами в Azure Active Directory.
 keywords: Azure AD, Azure Active Directory, PowerShell, группы, управление группами
 services: active-directory
 author: curtand
-manager: mtillman
+manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: article
-ms.date: 06/14/2019
+ms.date: 11/08/2019
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2e22baabda901a34f624cf27c25037ff3ba94e90
-ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
+ms.openlocfilehash: 1aa696ccaecc24df700315962c1f01f3a298c56c
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68381844"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74026697"
 ---
 # <a name="azure-active-directory-version-2-cmdlets-for-group-management"></a>Командлеты Azure Active Directory версии 2 для управления группами
 
 > [!div class="op_single_selector"]
-> * [портал Azure](../fundamentals/active-directory-groups-create-azure-portal.md?context=azure/active-directory/users-groups-roles/context/ugr-context)
-> * [PowerShell](groups-settings-v2-cmdlets.md)
+> - [портал Azure](../fundamentals/active-directory-groups-create-azure-portal.md?context=azure/active-directory/users-groups-roles/context/ugr-context)
+> - [PowerShell](groups-settings-v2-cmdlets.md)
 >
 >
 
@@ -199,7 +199,7 @@ ms.locfileid: "68381844"
     PS C:\Windows\system32> Remove-AzureADGroup -ObjectId b11ca53e-07cc-455d-9a89-1fe3ab24566b
 ```
 
-## <a name="manage-group-membership"></a>Управление членством в группе
+## <a name="manage-group-membership"></a>Управление членством в группах
 
 ### <a name="add-members"></a>Добавление членов
 
@@ -224,7 +224,7 @@ ms.locfileid: "68381844"
                           8120cc36-64b4-4080-a9e8-23aa98e8b34f User
 ```
 
-### <a name="remove-members"></a>Удалить членов
+### <a name="remove-members"></a>Удаление членов
 
 Чтобы удалить члена, ранее добавленного в группу, используйте командлет Remove-AzureADGroupMember, как показано здесь:
 
@@ -308,7 +308,7 @@ ms.locfileid: "68381844"
 
 ## <a name="reserved-aliases"></a>Зарезервированные псевдонимы
 
-После создания группы определенные конечные точки позволяют пользователю указать mailNickname или псевдоним, который можно использовать как часть адреса электронной почты группы. Группы с приведенными ниже привилегированными псевдонимами электронной почты может создавать только глобальный администратор Azure AD. 
+После создания группы определенные конечные точки позволяют пользователю указать mailNickname или псевдоним, который можно использовать как часть адреса электронной почты группы. Группы со следующими псевдонимами электронной почты с высоким уровнем привилегий могут создаваться только глобальным администратором Azure AD. 
   
 * abuse
 * admin
@@ -332,7 +332,7 @@ ms.locfileid: "68381844"
 
 Обратная запись групп Office 365 — это общедоступная Предварительная версия функции Azure Active Directory (Azure AD) и доступна с любым платным планом лицензирования Azure AD. Некоторые юридические сведения о предварительных версиях см. в разделе Дополнительные [условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительную документацию по PowerShell Azure Active Directory см. в разделе [Azure Active Directory Cmdlets](/powershell/azure/install-adv2?view=azureadps-2.0) (Командлеты Azure Active Directory).
 

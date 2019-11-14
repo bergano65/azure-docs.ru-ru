@@ -1,5 +1,5 @@
 ---
-title: Диски Ultra SSD для виртуальных машин Windows. Управляемые диски в Azure | Документация Майкрософт
+title: Ultra Disks для виртуальных машин Windows — управляемые диски Azure
 description: Дополнительные сведения о Ultra Disks для виртуальных машин Azure
 author: roygara
 ms.service: virtual-machines-windows
@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 08/15/2019
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: 912fd349e1252ca73195b6316a6802c9d039544b
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: 860b7bd2cb5589483d2323e4b43575f2653ccff6
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/13/2019
-ms.locfileid: "74012450"
+ms.locfileid: "74033617"
 ---
 # <a name="using-azure-ultra-disks"></a>Использование Ultra дисков Azure
 [!INCLUDE [virtual-machines-disks-ultra-ssd](../../../includes/virtual-machines-disks-getting-started-ultra-ssd.md)]

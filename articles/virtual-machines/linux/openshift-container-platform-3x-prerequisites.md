@@ -1,5 +1,5 @@
 ---
-title: Платформа OpenShift Container 3,11 в предварительных требованиях к Azure | Документация Майкрософт
+title: Платформа OpenShift Container 3,11 в предварительных требованиях Azure
 description: Необходимые условия для развертывания OpenShift контейнера платформы 3,11 в Azure.
 services: virtual-machines-linux
 documentationcenter: virtual-machines
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 10/23/2019
 ms.author: haroldw
-ms.openlocfilehash: 0b7eaaf68c1b0907b6d687b823ef71a7c9bd0102
-ms.sourcegitcommit: 7efb2a638153c22c93a5053c3c6db8b15d072949
+ms.openlocfilehash: 069561c4bed55bf6021b594d693e076ef8d313bd
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72882404"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74035479"
 ---
 # <a name="common-prerequisites-for-deploying-openshift-container-platform-311-in-azure"></a>Общие предварительные требования для развертывания платформы контейнеров OpenShift 3,11 в Azure
 
@@ -49,9 +49,9 @@ ms.locfileid: "72882404"
 > * Создайте хранилище ключей, чтобы управлять ключами SSH для кластера OpenShift.
 > * Создайте субъект-службу, которую будет использовать поставщик облачных служб Azure.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу.
 
-## <a name="sign-in-to-azure"></a>Войдите в Azure 
+## <a name="sign-in-to-azure"></a>Вход в Azure 
 Войдите в подписку Azure с помощью команды [az login](/cli/azure/reference-index) и следуйте инструкциям на экране или щелкните **Попробовать**, чтобы использовать Cloud Shell.
 
 ```azurecli 
@@ -139,7 +139,7 @@ az ad sp create-for-rbac --name openshiftsp \
 
 ## <a name="prerequisites-applicable-only-to-resource-manager-template"></a>Предварительные требования применимы только к шаблону диспетчер ресурсов
 
-Секреты должны быть созданы для закрытого ключа SSH (**сшприватекэй**), секрета клиента Azure AD (**aadClientSecret**), пароля администратора OpenShift (**Опеншифтпассворд**) и пароля диспетчера подписки Red Hat или ключа активации ( **Рхсмпассвордорактиватионкэй**).  Кроме того, если используются пользовательские SSL-сертификаты, необходимо создать шесть дополнительных секретов — **раутингкафиле**, **раутингцертфиле**, **раутингкэйфиле**, **мастеркафиле**, **мастерцертфиле**и  **мастеркэйфиле**.  Эти параметры будут более подробно описаны.
+Секреты должны быть созданы для закрытого ключа SSH (**сшприватекэй**), секрета клиента Azure AD (**aadClientSecret**), пароля администратора OpenShift (**Опеншифтпассворд**) и пароля диспетчера подписки Red Hat или ключа активации (**рхсмпассвордорактиватионкэй**).  Кроме того, если используются пользовательские SSL-сертификаты, необходимо создать шесть дополнительных секретов — **раутингкафиле**, **раутингцертфиле**, **раутингкэйфиле**, **мастеркафиле**, **мастерцертфиле**и **мастеркэйфиле**.  Эти параметры будут более подробно описаны.
 
 Шаблон ссылается на конкретные имена секретов, поэтому **необходимо** использовать указанные выше имена (с учетом регистра).
 
@@ -164,7 +164,7 @@ az ad sp create-for-rbac --name openshiftsp \
 az keyvault secret set --vault-name KeyVaultName -n mastercafile --file ~/certificates/masterca.pem
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 В этой статье рассматриваются следующие темы:
 > [!div class="checklist"]

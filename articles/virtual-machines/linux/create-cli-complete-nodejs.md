@@ -1,5 +1,5 @@
 ---
-title: Создание полной среды Linux с помощью Azure CLI | Документы Майкрософт
+title: Создание полной среды Linux с помощью Azure Classic CLI
 description: С помощью Azure CLI 2.0 создайте "с нуля" хранилище, виртуальную машину Linux, виртуальную сеть и подсеть, балансировщик нагрузки, сетевой адаптер, общедоступный IP-адрес и группу безопасности сети.
 services: virtual-machines-linux
 documentationcenter: virtual-machines
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 02/09/2017
 ms.author: cynthn
-ms.openlocfilehash: aaf91aa81be5fc4c5944dde804798a61ceffc5a6
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 1ee89ce18600685f3f82bfb49d4d8ecbaf192b04
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70083717"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74036529"
 ---
 # <a name="create-a-complete-linux-environment-with-the-azure-classic-cli"></a>Создание полной среды Linux с помощью Azure Classic CLI
 В этой статье мы создаем простую сеть с балансировщиком нагрузки и парой виртуальных машин, подходящих для разработки и простых вычислений. Мы поэтапно выполняем полное развертывание, от первой до последней команды, в результате чего создаем две защищенные рабочие виртуальные машины Linux, к которым можно подключиться откуда угодно через Интернет. Затем вы сможете работать с более сложными сетями и средами.
@@ -65,7 +65,7 @@ azure group create -n myResourceGroup -l westeurope
 azure group show myResourceGroup --json | jq '.'
 ```
 
-Создайте учетную запись хранения. В следующем примере создается учетная запись хранения с именем `mystorageaccount` (Имя учетной записи хранения должно быть уникальным, поэтому введите собственное имя для учетной записи.)
+Создайте учетную запись хранения. В следующем примере создается учетная запись хранения с именем `mystorageaccount`. Имя учетной записи хранения должно быть уникальным, поэтому введите собственное уникальное имя.
 
 ```azurecli
 azure storage account create -g myResourceGroup -l westeurope \
@@ -78,7 +78,7 @@ azure storage account create -g myResourceGroup -l westeurope \
 azure storage account show -g myResourceGroup mystorageaccount --json | jq '.'
 ```
 
-Создание виртуальной сети. В следующем примере создается виртуальная сеть с именем `myVnet`.
+Создание виртуальной сети. В следующем примере создается виртуальная сеть `myVnet`:
 
 ```azurecli
 azure network vnet create -g myResourceGroup -l westeurope\
@@ -98,7 +98,7 @@ azure network vnet subnet create -g myResourceGroup \
 azure network vnet show myResourceGroup myVnet --json | jq '.'
 ```
 
-Создайте общедоступный IP-адрес. В следующем примере создается общедоступный IP-адрес `myPublicIP` с DNS-именем `mypublicdns`. (DNS-имя должно быть уникальным, поэтому укажите собственное уникальное имя.)
+Создайте общедоступный IP-адрес. В следующем примере создается общедоступный IP-адрес `myPublicIP` с DNS-именем `mypublicdns`. DNS-имя должно быть уникальным, поэтому укажите собственное уникальное имя.
 
 ```azurecli
 azure network public-ip create -g myResourceGroup -l westeurope \
@@ -300,7 +300,7 @@ data:
 info:    group create command OK
 ```
 
-## <a name="create-a-storage-account"></a>Создать учетную запись хранения
+## <a name="create-a-storage-account"></a>Создайте учетную запись хранения
 Необходимы учетные записи хранения для дисков виртуальной машины и других дисков данных, которые вы захотите добавить. Учетные записи хранения создаются практически сразу после создания групп ресурсов.
 
 В этом случае мы используем команду `azure storage account create` и с ее помощью передаем расположение учетной записи, имя группы ресурсов, которая ее контролирует, и нужный вам тип поддержки хранилища. В следующем примере создается учетная запись хранения с именем `mystorageaccount`:
@@ -452,7 +452,7 @@ azure group show myResourceGroup --json | jq '.'
 }
 ```
 
-Теперь давайте создадим подсеть в виртуальной сети `myVnet`, в которой выполняется развертывание виртуальных машин. Мы используем команду `azure network vnet subnet create` с уже созданными ресурсами: группой ресурсов `myResourceGroup` и виртуальной сетью `myVnet`. В следующем примере мы добавим подсеть `mySubnet` с префиксом адреса `192.168.1.0/24`.
+Теперь давайте создадим подсеть в виртуальной сети `myVnet` , в которой выполняется развертывание виртуальных машин. Мы используем команду `azure network vnet subnet create` с уже созданными ресурсами: группой ресурсов `myResourceGroup` и виртуальной сетью `myVnet`. В следующем примере мы добавим подсеть `mySubnet` с префиксом адреса `192.168.1.0/24`.
 
 ```azurecli
 azure network vnet subnet create --resource-group myResourceGroup \
@@ -591,7 +591,7 @@ azure group show myResourceGroup --json | jq '.'
 }
 ```
 
-Вы можете изучить дополнительные сведения о ресурсе, в том числе полное доменное имя (FQDN) поддомена, используя полную команду `azure network public-ip show`. Ресурс общедоступного IP-адреса выделен логически, но при этом конкретный адрес еще не назначен. Для получения IP-адреса вам потребуется балансировщик нагрузки, но он еще не создан.
+Вы можете изучить дополнительные сведения о ресурсе, в том числе полное доменное имя (FQDN) поддомена, используя полную команду `azure network public-ip show` . Ресурс общедоступного IP-адреса выделен логически, но при этом конкретный адрес еще не назначен. Для получения IP-адреса вам потребуется балансировщик нагрузки, но он еще не создан.
 
 ```azurecli
 azure network public-ip show myResourceGroup myPublicIP --json | jq '.'
@@ -682,7 +682,7 @@ data:    Provisioning state              : Succeeded
 info:    network lb address-pool create command OK
 ```
 
-Можно узнать, как выглядит балансировщик нагрузки, введя команду `azure network lb show`, и проверить выходные данные JSON.
+Можно узнать, как выглядит балансировщик нагрузки, введя команду `azure network lb show` , и проверить выходные данные JSON.
 
 ```azurecli
 azure network lb show myResourceGroup myLoadBalancer --json | jq '.'
@@ -995,7 +995,7 @@ data:
 info:    network nic create command OK
 ```
 
-Чтобы отобразить сведения, необходимо просмотреть ресурс напрямую. Проверить ресурс можно с помощью команды `azure network nic show`:
+Чтобы отобразить сведения, необходимо просмотреть ресурс напрямую. Проверить ресурс можно с помощью команды `azure network nic show` :
 
 ```azurecli
 azure network nic show myResourceGroup myNic1 --json | jq '.'
@@ -1096,7 +1096,7 @@ azure network nic set --resource-group myResourceGroup --name myNic2 \
   --network-security-group-name myNetworkSecurityGroup
 ```
 
-## <a name="create-an-availability-set"></a>Создать группу доступности
+## <a name="create-an-availability-set"></a>"Создать группу доступности"
 Группы доступности помогают распределить виртуальные машины между доменами сбоя и доменами обновления. Создадим группу доступности для виртуальных машин. В следующем примере создается группа доступности с именем `myAvailabilitySet`.
 
 ```azurecli
@@ -1122,7 +1122,7 @@ azure availset create --resource-group myResourceGroup --location westeurope
 
 Кроме того, можно использовать метод `--admin-password` для проверки подлинности подключений по протоколу SSH после создания виртуальной машины. Обычно этот метод менее безопасен.
 
-Мы создаем виртуальную машину, собирая вместе все наши ресурсы и информацию командой `azure vm create`.
+Мы создаем виртуальную машину, собирая вместе все наши ресурсы и информацию командой `azure vm create` .
 
 ```azurecli
 azure vm create \
@@ -1205,7 +1205,7 @@ azure vm create \
   --admin-username azureuser
 ```
 
-Теперь, чтобы проверить то, что вы создали, можно использовать команду `azure vm show myResourceGroup myVM1`. На данном этапе имеются работающие виртуальные машины Ubuntu, расположенные за балансировщиком нагрузки в Azure, входить на которые можно только с помощью пары ключей SSH (так как пароли отключены). Можно установить nginx или httpd, развернуть веб-приложение и посмотреть, как трафик проходит через балансировщик нагрузки на обе виртуальные машины.
+Теперь, чтобы проверить то, что вы создали, можно использовать команду `azure vm show myResourceGroup myVM1` . На данном этапе имеются работающие виртуальные машины Ubuntu, расположенные за балансировщиком нагрузки в Azure, входить на которые можно только с помощью пары ключей SSH (так как пароли отключены). Можно установить nginx или httpd, развернуть веб-приложение и посмотреть, как трафик проходит через балансировщик нагрузки на обе виртуальные машины.
 
 ```azurecli
 azure vm show --resource-group myResourceGroup --name myVM1
@@ -1276,7 +1276,7 @@ info:    vm show command OK
 azure group export --name myResourceGroup
 ```
 
-С помощью этой команды в текущем рабочем каталоге создается файл `myResourceGroup.json`. При создании среды на основе этого шаблона запрашиваются все имена ресурсов, включая балансировщик нагрузки, сетевые интерфейсы или виртуальные машины. Эти имена можно указать в файле шаблона, добавив параметр `-p` или `--includeParameterDefaultValue` в команду `azure group export`, которая была показана ранее. Измените шаблон JSON, чтобы указать имена ресурсов, или [создайте файл parameters.json](../../resource-group-authoring-templates.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) , задающий их.
+С помощью этой команды в текущем рабочем каталоге создается файл `myResourceGroup.json` . При создании среды на основе этого шаблона запрашиваются все имена ресурсов, включая балансировщик нагрузки, сетевые интерфейсы или виртуальные машины. Эти имена можно указать в файле шаблона, добавив параметр `-p` или `--includeParameterDefaultValue` в команду `azure group export`, которая была показана ранее. Измените шаблон JSON, чтобы указать имена ресурсов, или [создайте файл parameters.json](../../resource-group-authoring-templates.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) , задающий их.
 
 Чтобы создать среду из шаблона, выполните следующие действия.
 
@@ -1287,5 +1287,5 @@ azure group deployment create --resource-group myNewResourceGroup \
 
 Вы можете прочитать [дополнительные сведения о развертывании из шаблонов](../../resource-group-template-deploy-cli.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json). Узнайте, как поэтапно обновлять среды, использовать файл параметров и обращаться к шаблонам из единого места хранения.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 Теперь вы готовы приступить к работе с несколькими сетевыми компонентами и виртуальными машинами. Используя этот пример среды, можно создать приложение на основе представленных здесь основных компонентов.

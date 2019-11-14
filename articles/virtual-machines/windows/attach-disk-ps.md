@@ -1,5 +1,5 @@
 ---
-title: Подключение диска данных к виртуальной машине Windows в Azure с помощью PowerShell | Документация Майкрософт
+title: Подключение диска данных к виртуальной машине Windows в Azure с помощью PowerShell
 description: Подключение нового или существующего диска данных к виртуальной машине Windows с помощью PowerShell в модели развертывания Resource Manager.
 author: roygara
 ms.service: virtual-machines-windows
@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/16/2018
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: ebdaa9aafa884a266ef8cf8d75d1d5fb326c690e
-ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
+ms.openlocfilehash: ce995a84d2290845e83416caf9c8b0004242eed4
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2019
-ms.locfileid: "72300656"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74033685"
 ---
 # <a name="attach-a-data-disk-to-a-windows-vm-with-powershell"></a>Подключение диска данных к виртуальной машине Windows с помощью PowerShell
 
@@ -23,7 +23,7 @@ ms.locfileid: "72300656"
 * Размер виртуальной машины определяет, сколько дисков данных к ней можно подключить. Дополнительные сведения см. в разделе [Размеры виртуальных машин](sizes.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 * Для использования хранилища категории "Премиум" (SSD) необходима [виртуальная машина соответствующего типа](sizes-memory.md), например серии DS или GS.
 
-В этой статье используется PowerShell в [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview), который постоянно обновляется до последней версии. Чтобы открыть Cloud Shell, выберите вариант **попробовать** в верхней части любого блока кода.
+В этой статье используется PowerShell в [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview), который постоянно обновляется до последней версии. Чтобы открыть Cloud Shell, выберите **Попробовать** в верхнем углу любого блока кода.
 
 ## <a name="add-an-empty-data-disk-to-a-virtual-machine"></a>Добавление пустого диска данных в виртуальную машину
 
@@ -115,6 +115,6 @@ $vm = Add-AzVMDataDisk -CreateOption Attach -Lun 0 -VM $vm -ManagedDiskId $disk.
 Update-AzVM -VM $vm -ResourceGroupName $rgName
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Вы также можете развернуть управляемые диски с помощью шаблонов. Дополнительные сведения см. в статьях [Использование управляемых дисков в](using-managed-disks-template-deployments.md) шаблонах Azure Resource Manager или [шаблон](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-multiple-data-disk) быстрого запуска для развертывания нескольких дисков данных.

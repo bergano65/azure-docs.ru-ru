@@ -1,5 +1,5 @@
 ---
-title: Развертывание OpenShift в Azure Stack | Документация Майкрософт
+title: Развертывание OpenShift в Azure Stack
 description: Развертывание OpenShift в Azure Stack.
 services: virtual-machines-linux
 documentationcenter: virtual-machines
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 10/14/2019
 ms.author: haroldw
-ms.openlocfilehash: 97529118d420813cf638f211bdd5559068802c95
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: d6c73b8cd33aa85793a2ce839410065e03b97be7
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72390653"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74035535"
 ---
 # <a name="deploy-openshift-container-platform-or-okd-in-azure-stack"></a>Развертывание платформы контейнеров OpenShift (OKD) в Azure Stack
 
@@ -68,7 +68,7 @@ ms.locfileid: "72390653"
 
 Инструкции по развертыванию с помощью Azure CLI вы найдете в соответствующем разделе документации по [платформе контейнеров OpenShift](./openshift-container-platform-3x.md) или [OKD](./openshift-okd.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Задачи, выполняемые после развертывания](./openshift-container-platform-3x-post-deployment.md)
 - [Устранение неполадок с развертыванием OpenShift в Azure](./openshift-container-platform-3x-troubleshooting.md)

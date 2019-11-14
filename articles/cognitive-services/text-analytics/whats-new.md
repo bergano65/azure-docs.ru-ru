@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: aahi
-ms.openlocfilehash: 7e4eb8f7f9077ce04ee8138580a836637b89cf8c
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: 15beb8d3e326f04f1ae61c26f00e9428d95f6bc4
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73835600"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74031376"
 ---
 # <a name="whats-new-in-the-text-analytics-api"></a>Новые возможности в API "Анализ текста"
 
@@ -29,22 +29,22 @@ API анализа текста обновляется на постоянной
     * номер телефона.
     * IP-адрес
 
-* Новая конечная точка для распознавания типов сущностей личных сведений (только на английском языке)
-* Разделяйте конечные точки для распознавания сущностей и связывания сущностей.
+* [Новая конечная точка](https://cognitiveusw2ppe.portal.azure-api.net/docs/services/TextAnalytics-v3-0-Preview-1/operations/EntitiesRecognitionPii) для распознавания типов сущностей личных сведений (только на английском языке)
+* Разделяйте конечные точки для [распознавания сущностей]( https://cognitiveusw2ppe.portal.azure-api.net/docs/services/TextAnalytics-v3-0-Preview-1/operations/EntitiesRecognitionGeneral) и [связывания сущностей]( https://cognitiveusw2ppe.portal.azure-api.net/docs/services/TextAnalytics-v3-0-Preview-1/operations/EntitiesLinking).
 
-Связывание сущностей поддерживает английский и испанский языки. Языковая поддержка NER зависит от типа сущности. Дополнительные сведения см. по ссылке ниже. 
+Связывание сущностей поддерживает английский и испанский языки. Языковая поддержка NER зависит от типа сущности. 
 
 > [!div class="nextstepaction"]
 > [Дополнительные сведения о распознавании имен сущностей v3](how-tos/text-analytics-how-to-entity-linking.md#named-entity-recognition-v3-public-preview)
 
 ## <a name="sentiment-analysis-v3-public-preview---october-2019"></a>Анализ тональности v3 (общедоступная Предварительная версия) — Октябрь 2019
 
-Следующая версия анализ тональности теперь доступна для общедоступной предварительной версии и обеспечивает значительные улучшения точности и детализации классификации и оценки текста API. Кроме того, он предоставляет:
+[Следующая версия анализ тональности](https://cognitiveusw2ppe.portal.azure-api.net/docs/services/TextAnalytics-v3-0-Preview-1/operations/Sentiment) теперь доступна для общедоступной предварительной версии и обеспечивает значительные улучшения точности и детализации классификации и оценки текста API. Кроме того, он предоставляет:
 
 * Автоматическая маркировка для различных тональности в тексте.
 * Тональности анализ и вывод на уровне документа и предложения. 
 
-Он поддерживает английский (`en`), японский (`ja`), Китайская упрощенная (`zh-Hans`), Китайская традиционная (`zh-Hant`), французский (`fr`), итальянский (`it`), Испанский (`es`), Нидерландский (`nl`), португальский (`pt`) и немецкий (`de`), доступны в следующих регионах: `Australia East`, `Central Canada`, `Central US`, `East Asia`, `East US`, `East US 2`, `North Europe`и `Southeast Asia`.`South Central US``UK South``West Europe``West US 2`
+Он поддерживает английский (`en`), японский (`ja`), Китайская упрощенная (`zh-Hans`), Китайская традиционная (`zh-Hant`), французский (`fr`), итальянский (`it`), Испанский (`es`), Нидерландский (`nl`), португальский (`pt`) и немецкий (`de`), доступны в следующих регионах: `Australia East`, `Central Canada`, `Central US`, `East Asia`, `East US`, `East US 2`, `North Europe`и `Southeast Asia`.`South Central US``UK South``West Europe``West US 2` 
 
 > [!div class="nextstepaction"]
 > [Дополнительные сведения о анализ тональности v3](how-tos/text-analytics-how-to-sentiment-analysis.md#sentiment-analysis-v3-public-preview)

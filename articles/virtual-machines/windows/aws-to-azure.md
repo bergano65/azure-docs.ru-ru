@@ -1,5 +1,5 @@
 ---
-title: Перемещение виртуальных машин Windows из AWS в Azure | Документация Майкрософт
+title: Перемещение виртуальных машин Windows AWS в Azure
 description: Перемещение экземпляра виртуальной машины Windows EC2 из Amazon Web Services (AWS) на виртуальную машину Azure.
 services: virtual-machines-windows
 documentationcenter: ''
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 06/01/2018
 ms.author: cynthn
-ms.openlocfilehash: 31f6ffc4f114039e0c53c1994f8c4364dea18298
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 9bd01f24ac2cada02f51089d238519cd6c7e0248
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70089505"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74039285"
 ---
 # <a name="move-a-windows-vm-from-amazon-web-services-aws-to-an-azure-virtual-machine"></a>Перемещение виртуальной машины Windows из Amazon Web Services (AWS) на виртуальную машину Azure
 
@@ -60,7 +60,7 @@ aws ec2 create-instance-export-task --instance-id <instanceID> --target-environm
 > В AWS взимается плата за передачу данных при скачивании VHD-файла. Дополнительные сведения см. на странице [Цены на Amazon S3](https://aws.amazon.com/s3/pricing/).
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Теперь можно передать VHD в Azure и создать виртуальную машину. 
 

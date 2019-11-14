@@ -1,25 +1,25 @@
 ---
-title: Правила автоматического назначения динамического членства в группах в Azure Active Directory | Документация Майкрософт
+title: Правила динамического членства в группах в Azure AD | Документация Майкрософт
 description: Сведения о создании правил членства для автоматического заполнения групп и о ссылках на эти правила.
 services: active-directory
 documentationcenter: ''
 author: curtand
-manager: mtillman
+manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: article
-ms.date: 09/10/2019
+ms.date: 11/08/2019
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 050bc3cf6b81b9467d9947a4f611477e2fcbcd9a
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: a6cfad04d9b0dd3537d60f2651ed341d96bd0210
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73885858"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74027129"
 ---
 # <a name="dynamic-membership-rules-for-groups-in-azure-active-directory"></a>Правила динамического членства в группах для Azure Active Directory
 

@@ -1,5 +1,5 @@
 ---
-title: Общие команды PowerShell для виртуальных машин Azure | Документация Майкрософт
+title: Общие команды PowerShell для виртуальных машин Azure
 description: Общие команды PowerShell, позволяющие приступить к созданию виртуальных машин Windows в Azure и управлению ими.
 services: virtual-machines-windows
 documentationcenter: ''
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 06/01/2018
 ms.author: cynthn
-ms.openlocfilehash: 24cb9db9dff670ece75db24df873d24c08919722
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: e61d0840f66dad2e1bf91512281d9171771f7ca9
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73749266"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74032908"
 ---
 # <a name="common-powershell-commands-for-creating-and-managing-azure-virtual-machines"></a>Общие команды PowerShell для создания виртуальных машин Azure и управления ими
 
@@ -70,6 +70,6 @@ ms.locfileid: "73749266"
 | Удаление виртуальной машины |[Remove-AzVM](https://docs.microsoft.com/powershell/module/az.compute/remove-azvm) -ResourceGroupName $myResourceGroup -Name $myVM |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 * Ознакомьтесь с основными шагами по созданию виртуальной машины в разделе [Создание виртуальной машины Windows с помощью Resource Manager и PowerShell](../virtual-machines-windows-ps-create.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 

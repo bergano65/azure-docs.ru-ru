@@ -1,5 +1,5 @@
 ---
-title: Установка и настройка terraform для инициализации ресурсов Azure | Документация Майкрософт
+title: Установка и настройка terraform для инициализации ресурсов Azure
 description: Узнайте, как установить и настроить Terraform для создания ресурсов Azure
 services: virtual-machines-linux
 documentationcenter: virtual-machines
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 09/20/2019
 ms.author: tarcher
-ms.openlocfilehash: cd3c8d7d862788f626356b4cfcdccccca36227b3
-ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
+ms.openlocfilehash: efba440448ac912b7656eeab017eef947ab25e95
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71168736"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74034685"
 ---
 # <a name="install-and-configure-terraform-to-provision-azure-resources"></a>Установка и настройка terraform для инициализации ресурсов Azure
  
@@ -145,7 +145,7 @@ azurerm_resource_group.rg: Creating...
 azurerm_resource_group.rg: Creation complete after 1s
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 В этой статье вы установили Terraform или использовали Cloud Shell, чтобы настроить учетные данные Azure и начать создание ресурсов в подписке Azure. Чтобы создать полное развертывание Terraform в Azure, перейдите к следующей статье:
 

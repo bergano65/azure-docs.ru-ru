@@ -9,14 +9,14 @@ ms.topic: reference
 author: peterclu
 ms.author: peterlu
 ms.date: 11/11/2019
-ms.openlocfilehash: 938286f0dafdeb11473bef1b88f876d7918e76ca
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: 21577936f2487313683ac763b0c6c661c6c1f958
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/13/2019
-ms.locfileid: "74012757"
+ms.locfileid: "74039334"
 ---
-# <a name="algorithm--module-reference"></a>Справочник по алгоритмам и модулям
+# <a name="algorithm--module-reference-for-azure-machine-learning-designer"></a>Ссылка на модуль & алгоритма для конструктора Машинное обучение Azure
 
 Это справочное содержимое содержит технические сведения о каждом из алгоритмов и модулей машинного обучения, доступных в Машинное обучение Azure Designer (Предварительная версия).
 

@@ -1,6 +1,6 @@
 ---
-title: 'Связывание виртуальной сети с каналом ExpressRoute: портал Azure | Документация Майкрософт'
-description: Подключение виртуальной сети к каналу Azure ExpressRoute. Пошаговое руководство.
+title: 'ExpressRoute: связывание виртуальной сети с цепью: портал Azure'
+description: Подключите виртуальную сеть к каналу Azure ExpressRoute. Пошаговое руководство.
 services: expressroute
 author: cherylmc
 ms.service: expressroute
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 09/17/2019
 ms.author: cherylmc
 ms.custom: seodec18
-ms.openlocfilehash: 6185540340bba4299eb9307432480c91d531779a
-ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
+ms.openlocfilehash: 4c7a24ad692086398059d1afd48c8927e9d18582
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71088918"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74022190"
 ---
 # <a name="connect-a-virtual-network-to-an-expressroute-circuit-using-the-portal"></a>Подключение виртуальной сети к каналу ExpressRoute с помощью портала
 > [!div class="op_single_selector"]
@@ -71,7 +71,7 @@ ms.locfileid: "71088918"
 
 - Каждое маленькое облако внутри большого облака представляет подписки, принадлежащие различным подразделениям одной организации.
 - Любое подразделение в организации может использовать свою собственную подписку для развертывания служб. Кроме того, оно может совместно использовать один выделенный канал ExpressRoute для подключения к корпоративной сети.
-- Владельцем канала ExpressRoute может выступать одно подразделение (в этом примере — подразделение ИТ). Другие подписки в организации могут использовать канал ExpressRoute и авторизации, связанные с каналом, в том числе подписки, связанные с другими клиентами Azure Active Directory и регистрациями соглашения Enterprise.
+- Владельцем канала ExpressRoute может выступать одно подразделение (в данном примере — ИТ-подразделение). Другие подписки в организации могут использовать канал ExpressRoute и авторизации, связанные с каналом, в том числе подписки, связанные с другими клиентами Azure Active Directory и регистрациями соглашения Enterprise.
 
   > [!NOTE]
   > Плата за подключение выделенного канала ExpressRoute и использование полосы пропускания будет взиматься с владельца выделенного канала. Полоса пропускания распределяется между всеми виртуальными сетями.
@@ -96,7 +96,7 @@ ms.locfileid: "71088918"
 
 1. На странице ExpressRoute щелкните **Разрешения**, введите **имя** разрешения и щелкните **Сохранить**.
 
-   ![Авторизации](./media/expressroute-howto-linkvnet-portal-resource-manager/authorization.png)
+   ![Authorizations](./media/expressroute-howto-linkvnet-portal-resource-manager/authorization.png)
 2. После сохранения конфигурации скопируйте **идентификатор ресурса** и **ключ авторизации**.
 
    ![Ключ авторизации](./media/expressroute-howto-linkvnet-portal-resource-manager/authkey.png)
@@ -135,5 +135,5 @@ ms.locfileid: "71088918"
 
 Можно удалить подключение и разорвать связь виртуальной сети с каналом ExpressRoute, выбрав значок **Удалить** на странице соответствующего подключения.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 Дополнительные сведения об ExpressRoute см. в статье [Вопросы и ответы по ExpressRoute](expressroute-faqs.md).

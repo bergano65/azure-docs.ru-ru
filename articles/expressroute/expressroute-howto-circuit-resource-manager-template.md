@@ -1,19 +1,19 @@
 ---
-title: 'Создайте шаблон диспетчер ресурсов канала ExpressRoute: Azure | Документация Майкрософт'
+title: Шаблон Azure ExpressRoute. Создание канала ExpressRoute
 description: Создание, инициализация, удаление и Реинициализация канала ExpressRoute.
-services: expressroute;azure-resource-manager
+services: expressroute
 author: cherylmc
 ms.service: expressroute
 ms.topic: article
 ms.date: 07/05/2019
 ms.author: cherylmc
 ms.reviewer: ganesr
-ms.openlocfilehash: 103c61b6ad244bf4b140f897c070ce5bfd54cded
-ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
+ms.openlocfilehash: d6d9a3b472e2a40bfacf25a0b8fe0accb7d62cb8
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67849219"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74031971"
 ---
 # <a name="create-an-expressroute-circuit-by-using-azure-resource-manager-template"></a>Создание канала ExpressRoute с помощью шаблона Azure Resource Manager
 
@@ -90,7 +90,7 @@ Azure PowerShell используется для развертывания ша
 
 * Связь между ExpressRoute и всеми виртуальными сетями необходимо разорвать. Если операция завершится ошибкой, проверьте, не привязаны ли к каналу какие-либо виртуальные сети.
 * Если подготовка поставщика услуг канала ExpressRoute находится в состоянии **Идет подготовка** или **Подготовлено** то свяжитесь с поставщиком услуг, чтобы отозвать канал с его стороны. Мы будем резервировать ресурсы и выставлять вам счета до тех пор, пока поставщик услуг не завершит отзыв канала и не отправит нам соответствующее уведомление.
-* Если поставщик услуг отзовет канал (состояние подготовки поставщика услуг изменится на **Не подготовлено**), вы можете удалить такой канал. Это приостанавливает выставление счетов для канала.
+* Если поставщик услуг отзовет канал (состояние подготовки поставщика услуг изменится на **Не подготовлено**), вы можете удалить его. Это приостанавливает выставление счетов для канала.
 
 Вы можете удалить канал ExpressRoute, выполнив следующую команду PowerShell:
 
@@ -101,7 +101,7 @@ $resourceGroupName = "${circuitName}rg"
 Remove-AzExpressRouteCircuit -ResourceGroupName $resourceGroupName -Name $circuitName
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Создав канал, выполните задачи, описанные в следующих статьях:
 

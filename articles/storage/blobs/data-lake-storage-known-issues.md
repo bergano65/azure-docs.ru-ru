@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/03/2019
 ms.author: normesta
 ms.reviewer: jamesbak
-ms.openlocfilehash: 95f2dbdbb34ff349d14be430b4e5a4fa84df0f5a
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 78693dceaac119279b1c1d06a6c3a18cc4fdb485
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73581489"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74033937"
 ---
 # <a name="known-issues-with-azure-data-lake-storage-gen2"></a>Известные проблемы с Azure Data Lake Storage 2-го поколения
 
@@ -57,12 +57,12 @@ API-интерфейсы RESTFUL для больших двоичных объе
 | **Политики управления жизненным циклом хранилища BLOB-объектов Azure** | Поддерживаются все уровни доступа. Уровень доступа к архиву сейчас находится на этапе предварительной версии. Удаление моментальных снимков BLOB-объектов пока не поддерживается. |
 | **Сеть доставки содержимого (CDN) Azure** | Еще не поддерживается|
 | **Поиск Azure** |Поддерживается (Предварительная версия)|
-| **Azure Storage Explorer;** | Поддержка конкретных версий <br><br>Используйте только версию `1.6.0` или более позднюю. <br>Версия `1.6.0` доступна для [бесплатной загрузки](https://azure.microsoft.com/features/storage-explorer/).|
+| **Azure Storage Explorer;** | Поддержка конкретных версий <br><br>Используйте только версии `1.6.0` с помощью `1.10.0`. <br> Версия `1.10.0` доступна для [бесплатной загрузки](https://docs.microsoft.com/azure/vs-azure-tools-storage-explorer-relnotes). Версия `1.11.0` еще не поддерживается.|
 | **Списки ACL контейнера больших двоичных объектов** |Еще не поддерживается|
 | **Blobfuse** |Еще не поддерживается|
-| **Пользовательские домены** |Еще не поддерживается|
+| **Личные домены** |Еще не поддерживается|
 | **Обозреватель службы хранилища в портал Azure** | Ограниченная поддержка. Списки управления доступом пока не поддерживаются. |
-| **Журнал ведения диагностики** |Журналы диагностики поддерживаются (Предварительная версия).<br><br>Включение журналов в портал Azure в настоящее время не поддерживается. Ниже приведен пример того, как включить журналы с помощью PowerShell. <br><br>`$storageAccount = Get-AzStorageAccount -ResourceGroupName <resourceGroup> -Name <storageAccountName>`<br><br>`Set-AzStorageServiceLoggingProperty -Context $storageAccount.Context -ServiceType Blob -LoggingOperations read,write,delete -RetentionDays <days>`. <br><br>Убедитесь, что в качестве значения параметра `-ServiceType` указано значение `Blob`, как показано в этом примере. <br><br>В настоящее время Обозреватель службы хранилища Azure не может использоваться для просмотра журналов диагностики. Чтобы просмотреть журналы, используйте AzCopy или пакеты SDK.
+| **Журнал ведения диагностики** |Журналы диагностики поддерживаются (Предварительная версия).<br><br>Включение журналов в портал Azure в настоящее время не поддерживается. Ниже приведен пример того, как включить журналы с помощью PowerShell. <br><br>`$storageAccount = Get-AzStorageAccount -ResourceGroupName <resourceGroup> -Name <storageAccountName>`<br><br>`Set-AzStorageServiceLoggingProperty -Context $storageAccount.Context -ServiceType Blob -LoggingOperations read,write,delete -RetentionDays <days>`. <br><br>Убедитесь, что в качестве значения параметра `-ServiceType` указан `Blob`, как показано в этом примере. <br><br>В настоящее время Обозреватель службы хранилища Azure не может использоваться для просмотра журналов диагностики. Чтобы просмотреть журналы, используйте AzCopy или пакеты SDK.
 | **Неизменяемое хранилище** |Еще не поддерживается <br><br>Неизменяемое хранилище дает возможность хранить данные в [черве (запись один раз, чтение из множества)](https://docs.microsoft.com/azure/storage/blobs/storage-blob-immutable-storage) .|
 | **Уровни уровня объектов** |Поддерживаются уровни "крутой" и "Архив". Уровень архива находится на этапе предварительной версии. Все остальные уровни доступа пока не поддерживаются.|
 | **Поддержка PowerShell и интерфейса командной строки** | Ограниченная функциональность <br><br>Поддерживаются операции с BLOB-объектами. Работа с каталогами и Настройка списков управления доступом (ACL) пока не поддерживаются. |

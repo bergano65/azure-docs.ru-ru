@@ -1,5 +1,5 @@
 ---
-title: Безопасность и использование политик на виртуальных машинах Linux в Azure | Документация Майкрософт
+title: Защита и использование политик на виртуальных машинах Linux в Azure
 description: Сведения о безопасности и политиках виртуальных машин Linux в Azure.
 services: virtual-machines-linux
 documentationcenter: ''
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.date: 11/27/2018
 ms.author: cynthn
 ms.topic: conceptual
-ms.openlocfilehash: 6f884d46db34dda5f3812efb3418bffdf3165941
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 9cd31d39d2881aebf83d5b40aa826433de5d0993
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67708313"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74035061"
 ---
 # <a name="secure-and-use-policies-on-virtual-machines-in-azure"></a>Обеспечение безопасности и использование политик на виртуальных машинах в Azure
 

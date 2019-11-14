@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 07/31/2019
 ms.author: bwren
 ms.subservice: logs
-ms.openlocfilehash: c1b7f81c62217d9e113f3293a8f351d908a6a576
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: b90e5ccf38e95d33c4b5b6f3b8da0e91a4facb5a
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73887271"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74023744"
 ---
 # <a name="create-diagnostic-setting-to-collect-platform-logs-and-metrics-in-azure"></a>Создание параметра диагностики для сбора журналов и метрик платформы в Azure
 [Журналы платформы](resource-logs-overview.md) в Azure предоставляют подробные сведения о диагностике и аудите для ресурсов Azure и платформы Azure, от которых они зависят. В этой статье содержатся сведения о создании и настройке параметров диагностики для получения журналов платформы в разные места назначения.
@@ -42,7 +42,8 @@ ms.locfileid: "73887271"
 | [Учетная запись хранения Azure.](resource-logs-collect-storage.md) | Архивация журналов в учетную запись хранения Azure полезна для аудита, статического анализа или резервного копирования. |
 
 
-
+> [!IMPORTANT]
+> Учетные записи Azure Data Lake Storage 2-го поколения в настоящее время не поддерживаются в качестве места назначения для параметров диагностики, хотя они могут быть указаны в портал Azure в качестве допустимого параметра.
 
 ## <a name="create-diagnostic-settings-in-azure-portal"></a>Создание параметров диагностики в портал Azure
 Параметры диагностики можно настроить в портал Azure в меню Azure Monitor или в меню для ресурса.

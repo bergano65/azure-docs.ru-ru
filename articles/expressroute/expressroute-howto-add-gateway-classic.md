@@ -1,5 +1,5 @@
 ---
-title: Настройка шлюза виртуальной сети для ExpressRoute на основе классической модели развертывания с помощью Azure PowerShell | Документация Майкрософт
+title: 'Azure ExpressRoute: Добавление шлюза в виртуальную сеть: классическая модель'
 description: Узнайте, как настроить шлюз виртуальной сети для виртуальной сети на основе классической модели развертывания с помощью командлетов PowerShell для настройки ExpressRoute.
 services: expressroute
 author: charwen
@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 11/05/2018
 ms.author: charwen
 ms.custom: seodec18
-ms.openlocfilehash: 101e03d07a15e9058ef236a575251b052017db32
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 75c2b400a2caf4e5f2e14589fc007bb506b46338
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60365155"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74031874"
 ---
 # <a name="configure-a-virtual-network-gateway-for-expressroute-using-powershell-classic"></a>Настройка шлюза виртуальной сети для ExpressRoute с помощью PowerShell (классическая модель)
 > [!div class="op_single_selector"]
@@ -36,6 +36,6 @@ ms.locfileid: "60365155"
 
 [!INCLUDE [expressroute-gateway-classic-ps](../../includes/expressroute-gateway-classic-ps-include.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 После создания шлюза виртуальной сети вы можете связать виртуальную сеть с каналом ExpressRoute. Ознакомьтесь со статьей [Связывание виртуальной сети с каналом ExpressRoute](expressroute-howto-linkvnet-classic.md).
 

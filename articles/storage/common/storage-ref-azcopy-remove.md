@@ -8,12 +8,12 @@ ms.date: 10/16/2019
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
-ms.openlocfilehash: fc23afb9a407fc2e6689c5c8766cb4beba868269
-ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
+ms.openlocfilehash: abce1acb88e920c0de7bbb6447ec9d838f10486c
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72513441"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74033999"
 ---
 # <a name="azcopy-remove"></a>azcopy remove
 
@@ -24,6 +24,13 @@ ms.locfileid: "72513441"
 ```azcopy
 azcopy remove [resourceURL] [flags]
 ```
+
+## <a name="related-conceptual-articles"></a>Связанные концептуальные статьи
+
+- [Get started with AzCopy](storage-use-azcopy-v10.md) (Начало работы с AzCopy)
+- [Перенос данных с помощью AzCopy и хранилища BLOB-объектов](storage-use-azcopy-blobs.md)
+- [Transfer data with AzCopy and file storage](storage-use-azcopy-files.md) (Передача данных с помощью AzCopy и хранилища файлов)
+- [Configure, optimize, and troubleshoot AzCopy](storage-use-azcopy-configure.md) (Настройка, оптимизация и устранение неполадок с AzCopy)
 
 ## <a name="examples"></a>Примеры
 
@@ -100,11 +107,11 @@ azcopy rm "https://[account].dfs.core.windows.net/[container]/[path/to/directory
 
 ## <a name="options-inherited-from-parent-commands"></a>Параметры, унаследованные от родительских команд
 
-|Вариант|Описание|
+|Параметр|ОПИСАНИЕ|
 |---|---|
 |--Cap-Мбит/с UInt32|Скорость передачи с прописными буквами в мегабит в секунду. Посекундная пропускная способность может немного отличаться от ограничения. Если этот параметр имеет значение 0 или пропущен, пропускная способность не ограничена.|
 |--строка выходного типа|Формат вывода команды. Среди вариантов: Text, JSON. Значение по умолчанию — "Text".|
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также
 
 - [azcopy](storage-ref-azcopy.md)

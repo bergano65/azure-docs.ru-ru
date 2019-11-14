@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/01/2019
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: f782c5abe611086baae5d2ad71bc38516039a231
-ms.sourcegitcommit: 018e3b40e212915ed7a77258ac2a8e3a660aaef8
+ms.openlocfilehash: 3470e27f64a672db0165b0132996db91a1447c08
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73796050"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74033978"
 ---
 # <a name="multi-protocol-access-on-azure-data-lake-storage"></a>Доступ с несколькими протоколами на Azure Data Lake Storage
 
@@ -49,12 +49,13 @@ API-интерфейсы больших двоичных объектов и API
 |---|---|
 |[Стильный уровень доступа](storage-blob-storage-tiers.md)|Общедоступная версия|
 |Пакеты SDK для BLOB-объектов |Общедоступная версия|
+|API-интерфейсы RESTFUL для BLOB-объектов|Общедоступно|
 |[PowerShell](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-powershell) |Общедоступная версия|
 |[ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-cli) |Общедоступная версия|
-|[Журналы диагностики](../common/storage-analytics-logging.md)| Предварительный просмотр|
-|[Политики управления жизненным циклом](storage-lifecycle-management-concepts.md)| Предварительный просмотр|
-|[Уведомления через службу "Сетка событий Azure"](data-lake-storage-events.md)|Предварительный просмотр|
-|[Архивный уровень доступа](storage-blob-storage-tiers.md)| Предварительный просмотр|
+|[Журналы диагностики](../common/storage-analytics-logging.md)| Предварительная версия|
+|[Политики управления жизненным циклом](storage-lifecycle-management-concepts.md)| Предварительная версия|
+|[Уведомления через службу "Сетка событий Azure"](data-lake-storage-events.md)|Предварительная версия|
+|[Архивный уровень доступа](storage-blob-storage-tiers.md)| Предварительная версия|
 |[blobfuse](storage-how-to-mount-container-linux.md)|Еще не поддерживается|
 |[Неизменяемое хранилище](storage-blob-immutable-storage.md)|Еще не поддерживается|
 |[Моментальные снимки](storage-blob-snapshots.md)|Еще не поддерживается|
@@ -79,13 +80,13 @@ API-интерфейсы больших двоичных объектов и API
 |[Azure Stream Analytics](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-quick-create-portal)|Общедоступная версия|
 |[Центр Интернета вещей](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messages-d2c)|Общедоступная версия|
 |[Приложения логики](https://azure.microsoft.com/services/logic-apps/)|Общедоступная версия|
-|[Когнитивный поиск Azure](https://docs.microsoft.com/azure/search/search-howto-index-azure-data-lake-storage)|Предварительный просмотр|
+|[Когнитивный поиск Azure](https://docs.microsoft.com/azure/search/search-howto-index-azure-data-lake-storage)|Предварительная версия|
 
 Полный список поддержки для Data Lake Storage 2-го поколения в службе экосистемы Azure см. в статье [интеграция Azure Data Lake Storage со службами Azure](data-lake-storage-integrate-with-azure-services.md).
 
 Дополнительные сведения об общих проблемах и ограничениях, связанных с Azure Data Lake Storage 2-го поколения, см. в разделе [Известные проблемы](data-lake-storage-known-issues.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 См. [Известные проблемы](data-lake-storage-known-issues.md)
 

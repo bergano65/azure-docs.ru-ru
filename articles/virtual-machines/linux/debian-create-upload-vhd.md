@@ -1,5 +1,5 @@
 ---
-title: Подготовка виртуального жесткого диска Debian Linux в Azure | Документация Майкрософт
+title: Подготовка виртуального жесткого диска Debian Linux в Azure
 description: Дополнительные сведения о создании VHD-образов Debian для развертывания в Azure.
 services: virtual-machines-linux
 documentationcenter: ''
@@ -14,15 +14,15 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 11/13/2018
 ms.author: szark
-ms.openlocfilehash: 009918a95ca1ff6189553d502fd06773fcd0d402
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 7f371e2681ecc2b3bb4bcb3e1a8b642061dc2449
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70083453"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74036478"
 ---
 # <a name="prepare-a-debian-vhd-for-azure"></a>Подготовка виртуального жесткого диска Debian для Azure
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 В этом разделе предполагается, что вы уже установили на виртуальный жесткий диск (VHD) операционную систему Debian Linux из ISO-файла, полученного с [веб-сайта Debian](https://www.debian.org/distrib/). Существует несколько средств для создания VHD-файлов. Hyper-V — это лишь один из примеров. Инструкции по работе с Hyper-V см. в разделе [Установка роли Hyper-V и настройка виртуальной машины](https://technet.microsoft.com/library/hh846766.aspx).
 
 ## <a name="installation-notes"></a>Замечания по установке
@@ -106,6 +106,6 @@ ms.locfileid: "70083453"
 
 10. В диспетчере Hyper-V выберите **Действие** -> Завершение работы. Виртуальный жесткий диск Linux готов к передаче в Azure.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 Теперь виртуальный жесткий диск Debian можно использовать для создания новых виртуальных машин Azure. Если вы отправляете VHD-файл в Azure впервые, см. раздел [Вариант 1. Передача VHD](upload-vhd.md#option-1-upload-a-vhd).
 

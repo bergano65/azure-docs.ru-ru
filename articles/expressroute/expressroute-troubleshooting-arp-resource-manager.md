@@ -1,5 +1,5 @@
 ---
-title: 'Получение таблиц ARP — устранение неполадок — ExpressRoute: Azure | Документация Майкрософт'
+title: 'Azure ExpressRoute: получение таблиц ARP — устранение неполадок'
 description: На этой странице приводятся инструкции по получению таблиц ARP для канала ExpressRoute.
 services: expressroute
 author: ganesr
@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 01/30/2017
 ms.author: ganesr
 ms.custom: seodec18
-ms.openlocfilehash: e35020923405ec072ac9c42093752ec5a9290824
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: 2410465052bd9ff83090c6f7122ffab2855af1d0
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73748163"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74033436"
 ---
 # <a name="getting-arp-tables-in-the-resource-manager-deployment-model"></a>Получение таблиц ARP в модели развертывания с помощью Resource Manager
 > [!div class="op_single_selector"]

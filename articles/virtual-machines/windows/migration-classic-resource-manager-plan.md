@@ -1,6 +1,6 @@
 ---
-title: Планирование переноса ресурсов IaaS из классической модели в модель Azure Resource Manager | Документация Майкрософт
-description: Планирование переноса ресурсов IaaS из классической модели развертывания в модель Azure Resource Manager.
+title: Планирование переноса ресурсов IaaS из классической модели в модель Azure Resource Manager
+description: Планирование переноса ресурсов IaaS из классической модели в модель Azure Resource Manager
 services: virtual-machines-windows
 documentationcenter: ''
 author: singhkays
@@ -14,14 +14,14 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 04/01/2017
 ms.author: kasing
-ms.openlocfilehash: 840d7b9534124a4fcc93962e8329dc6ce2bdf1a4
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: 2c0f4924c41b36c306d4e6b9286105662744c4da
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73749346"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74033228"
 ---
-# <a name="planning-for-migration-of-iaas-resources-from-classic-to-azure-resource-manager"></a>Планирование переноса ресурсов IaaS из классической модели развертывания в модель Azure Resource Manager.
+# <a name="planning-for-migration-of-iaas-resources-from-classic-to-azure-resource-manager"></a>Планирование переноса ресурсов IaaS из классической модели в модель Azure Resource Manager
 Хотя Azure Resource Manager и предлагает множество разнообразных возможностей, чрезвычайно важно спланировать процесс переноса ресурсов, чтобы не столкнуться с какими-либо проблемами. Грамотное планирование позволит предотвратить возникновение ошибок при выполнении действий по переносу ресурсов.
 
 > [!NOTE]
@@ -213,7 +213,7 @@ ms.locfileid: "73749346"
 Не забывайте об основной цели миграции из классической модели в модель Azure Resource Manager.  Каковы были первоначальные коммерческие соображения? Достигли ли вы этих целей?
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Обзор поддерживаемого платформой переноса ресурсов IaaS из классической модели в модель Azure Resource Manager](migration-classic-resource-manager-overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
 * [Техническое руководство по поддерживаемому платформой переносу из классической модели в модель Azure Resource Manager](migration-classic-resource-manager-deep-dive.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)

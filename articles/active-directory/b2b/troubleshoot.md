@@ -5,7 +5,7 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: troubleshooting
-ms.date: 05/25/2017
+ms.date: 11/12/2019
 tags: active-directory
 ms.author: mimart
 author: v-miegge
@@ -15,12 +15,12 @@ ms.custom:
 - it-pro
 - seo-update-azuread-jan"
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6449644f98280d75363f737be11f8e8b824cab36
-ms.sourcegitcommit: 018e3b40e212915ed7a77258ac2a8e3a660aaef8
+ms.openlocfilehash: 6aee049f91aaa071595ab42e9bb4d6b2f5e8616d
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73795180"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74021844"
 ---
 # <a name="troubleshooting-azure-active-directory-b2b-collaboration"></a>Устранение неполадок службы совместной работы Azure Active Directory B2B
 
@@ -95,6 +95,10 @@ ms.locfileid: "73795180"
 
 Если клиентом удостоверений является клиент JIT или вирусный клиент (то есть отдельный неуправляемый клиент Azure), только гостевой пользователь может сбросить пароль. Иногда организация будет [управлять вирусными клиентами](https://docs.microsoft.com/azure/active-directory/users-groups-roles/domains-admin-takeover), которые создаются, когда сотрудники используют свои рабочие электронные адреса для регистрации в службах. После получения организацией контроля над вирусным клиентом только администратор в организации может сбросить пароль пользователя или включить SSPR. При необходимости приглашающая организация может удалить учетную запись гостя из каталога и повторно отправить приглашение.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="a-guest-user-is-unable-to-use-the-azuread-powershell-v1-module"></a>Гостевой пользователь не может использовать модуль AzureAD PowerShell v1
+
+С 18 ноября 2019 г. гостевые пользователи в каталоге (определенные как учетные записи пользователей, для которых свойство **userType** имеет значение **Guest**) блокируются с помощью модуля AzureAD PowerShell v1. В дальнейшем пользователь должен быть пользователем-членом (где **userType** равен **member**) или использовать модуль AzureAD PowerShell v2.
+
+## <a name="next-steps"></a>Дополнительная информация
 
 [Получение поддержки для службы совместной работы B2B](get-support.md)

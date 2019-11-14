@@ -1,30 +1,29 @@
 ---
-title: Перенаправление администратора для неуправляемого каталога — Azure Active Directory | Документация Майкрософт
-description: Узнайте, как выполнить смену доменного имени DNS в неуправляемом каталоге (теневом клиенте) в Azure Active Directory.
+title: Перенаправление администратора для неуправляемого каталога — Azure AD | Документация Майкрософт
+description: Как получить доменное имя DNS в неуправляемой Организации Azure AD (теневой клиент).
 services: active-directory
 documentationcenter: ''
 author: curtand
-manager: mtillman
-editor: ''
+manager: daveba
 ms.service: active-directory
 ms.subservice: users-groups-roles
 ms.topic: article
 ms.workload: identity
-ms.date: 08/01/2019
+ms.date: 11/08/2019
 ms.author: curtand
 ms.reviewer: elkuzmen
 ms.custom: it-pro;seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 44276c911768f588064245c37a1284adeda8138f
-ms.sourcegitcommit: 9fba13cdfce9d03d202ada4a764e574a51691dcd
+ms.openlocfilehash: 7a0697e151c50b9722fef908eeb2c7498503b8c0
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71315724"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74027368"
 ---
 # <a name="take-over-an-unmanaged-directory-as-administrator-in-azure-active-directory"></a>Смена неуправляемого каталога от имени администратора в Azure Active Directory
 
-В этой статье описывается два способа смены доменного имени DNS в неуправляемом каталоге в Azure Active Directory (Azure AD). Когда пользователь самостоятельно регистрируется в облачной службе, использующей Azure AD, он добавляется в неуправляемый каталог Azure AD на основе домена электронной почты. Дополнительные сведения о самостоятельной (или "вирусной") регистрации в службе см. в статье [Что такое самостоятельная регистрация для Azure Active Directory?](directory-self-service-signup.md)
+В этой статье описывается два способа смены доменного имени DNS в неуправляемом каталоге в Azure Active Directory (Azure AD). Когда пользователь самостоятельно регистрируется в облачной службе, использующей Azure AD, он добавляется в неуправляемый каталог Azure AD на основе домена электронной почты. Дополнительные сведения о самообслуживании или "вирусной" регистрации для службы см. в статье [что такое самостоятельная регистрация для Azure Active Directory?](directory-self-service-signup.md)
 
 ## <a name="decide-how-you-want-to-take-over-an-unmanaged-directory"></a>Выбор способа смены неуправляемого каталога
 В процессе смены администратором можно подтвердить права владельца, как описано в статье [Краткое руководство. Добавление личного домена в Azure Active Directory](../fundamentals/add-custom-domain.md). В следующем разделе возможности администрирования описываются более подробно, но если вкратце, то:
@@ -58,13 +57,13 @@ ms.locfileid: "71315724"
 ### <a name="adding-the-domain-name-to-a-managed-tenant-in-azure-ad"></a>Добавление доменного имени в управляемый клиент в Azure AD
 
 1. Откройте [центр администрирования Microsoft 365](https://admin.microsoft.com).
-2. Выберите вкладку **Пользователи** и создайте новую учетную запись пользователя с именем, например *user\@fourthcoffeexyz.onmicrosoft.com* , которое не использует имя личного домена. 
+2. Выберите вкладку **Пользователи** и создайте новую учетную запись пользователя с таким именем, как *User\@fourthcoffeexyz.onmicrosoft.com* , которая не использует имя личного домена. 
 3. Убедитесь, что у этой новой учетной записи пользователя есть права глобального администратора для клиента Azure AD.
 4. Откройте вкладку **домены** в центре администрирования Microsoft 365, выберите имя домена и нажмите кнопку **Удалить**. 
   
    ![Удаление доменного имени из Office 365](./media/domains-admin-takeover/remove-domain-from-o365.png)
   
-5. Если у вас есть пользователи или группы в Office 365, которые ссылаются на удаленное доменное имя, то их необходимо переименовать, используя домен .onmicrosoft.com. Если принудительно удалить доменное имя, все пользователи будут автоматически переименованы в этом примере *для\@пользователя fourthcoffeexyz.onmicrosoft.com*.
+5. Если у вас есть пользователи или группы в Office 365, которые ссылаются на удаленное доменное имя, то их необходимо переименовать, используя домен .onmicrosoft.com. Если принудительно удалить доменное имя, все пользователи будут автоматически переименованы в этом примере для *пользователя\@fourthcoffeexyz.onmicrosoft.com*.
   
 6. Войдите в [Центр администрирования Azure AD](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview) с помощью учетной записи, которая является глобальным администратором для клиента Azure AD.
   
@@ -73,7 +72,7 @@ ms.locfileid: "71315724"
    ![домен проверен как добавленный в Azure AD](./media/domains-admin-takeover/add-domain-to-azure-ad.png)
   
 > [!NOTE]
-> Если доменное имя удаляется, то всем пользователям Power BI или службы Azure Rights Management, у которых есть лицензии, назначенные в клиенте Office 365, необходимо сохранить свои панели мониторинга. Они должны выполнить вход с именем пользователя, например *user\@fourthcoffeexyz.onmicrosoft.com* , а *не\@User fourthcoffee. XYZ*.
+> Если доменное имя удаляется, то всем пользователям Power BI или службы Azure Rights Management, у которых есть лицензии, назначенные в клиенте Office 365, необходимо сохранить свои панели мониторинга. Они должны входить с использованием имени пользователя, например *user\@fourthcoffeexyz.onmicrosoft.com* , а не *User\@fourthcoffee. XYZ*.
 
 ## <a name="external-admin-takeover"></a>Внешняя смена администратором
 
@@ -81,7 +80,7 @@ ms.locfileid: "71315724"
 
 Когда выполняется проверка принадлежности доменного имени, Azure AD удаляет доменное имя из неуправляемого клиента и перемещает его в существующий клиент. При внешней смене администратором неуправляемого каталога требуется выполнить тот же процесс проверки DNS с помощью записи TXT, как и при внутренней смене администратором. Разница заключается в том, что с доменным именем также переносятся следующие компоненты:
 
-- Пользователи
+- Users
 - Подписки
 - Назначения лицензий
 
@@ -96,7 +95,7 @@ ms.locfileid: "71315724"
 - PowerApps (бесплатная версия);
 - PowerFlow (бесплатная версия);
 - RMS для частных лиц;
-- Microsoft Stream
+- Microsoft Stream;
 - Dynamics 365 (бесплатная пробная версия).
 
 Внешний администратор перенаправление не поддерживается для всех служб, в которых есть планы обслуживания, включающие SharePoint, OneDrive или Skype для бизнеса. Например, с помощью бесплатной подписки Office. 
@@ -150,7 +149,7 @@ ms.locfileid: "71315724"
     Get-MsolDomainVerificationDns –DomainName contoso.com –Mode DnsTxtRecord
    ```
 
-4. Скопируйте значение (запрос защиты), которое возвращает эта команда. Пример:
+4. Скопируйте значение (запрос защиты), которое возвращает эта команда. Например,
    ```powershell
     MS=32DD01B82C05D27151EA9AE93C5890787F0E65D9
    ```
@@ -161,7 +160,7 @@ ms.locfileid: "71315724"
     Confirm-MsolEmailVerifiedDomain -DomainName *your_domain_name*
    ```
   
-   Пример:
+   Например,
   
    ```powershell
     Confirm-MsolEmailVerifiedDomain -DomainName contoso.com
@@ -169,7 +168,7 @@ ms.locfileid: "71315724"
 
 Успешный запрос защиты возвращает строки без ошибок.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Добавление имени личного домена в Azure Active Directory](../fundamentals/add-custom-domain.md)
 * [Как установить и настроить Azure PowerShell](/powershell/azure/overview)

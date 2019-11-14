@@ -1,5 +1,5 @@
 ---
-title: OpenShift-платформа контейнеров 3,11 в задачах, выполняемых после развертывания Azure | Документация Майкрософт
+title: OpenShift-платформа контейнеров 3,11 в задачах, выполняемых после развертывания Azure
 description: Дополнительные задачи после развертывания кластера OpenShift для платформы контейнеров 3,11.
 services: virtual-machines-linux
 documentationcenter: virtual-machines
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 10/14/2019
 ms.author: haroldw
-ms.openlocfilehash: c1e04f048c081da4777045e5bee43991c95b4625
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: d3008e2e2d720b67fcf0846c27d2fed1ef7db307
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72392778"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74035508"
 ---
 # <a name="post-deployment-tasks"></a>Задачи, выполняемые после развертывания
 
@@ -206,6 +206,6 @@ Open Service Broker для Azure (OSBA) позволяет подготавли�
 > [!NOTE]
 > Выполните только шаги, описанные в разделе Шаблон проекта OpenShift, а не во всем разделе установки.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Overview](https://docs.openshift.com) (Обзор)

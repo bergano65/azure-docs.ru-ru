@@ -1,5 +1,5 @@
 ---
-title: Создание виртуальной машины Windows с помощью специализированного VHD в Azure | Документация Майкрософт
+title: Создание виртуальной машины Windows из специализированного виртуального жесткого диска в Azure
 description: Создание новой виртуальной машины Windows на основе подключенного специализированного управляемого диска операционной системы с использованием модели развертывания с помощью Resource Manager.
 services: virtual-machines-windows
 author: cynthn
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 10/10/2019
 ms.author: cynthn
-ms.openlocfilehash: be773779b25a32a5904012ae31950b18c33341dc
-ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
+ms.openlocfilehash: ac18056f9bfdf22c55b5effac810b8c24ab4d81d
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72553430"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74033855"
 ---
 # <a name="create-a-windows-vm-from-a-specialized-disk-by-using-powershell"></a>Создание виртуальной машины Windows из специализированного диска с помощью PowerShell
 
@@ -165,7 +165,7 @@ $osDisk = New-AzDisk -DiskName $osDiskName -Disk `
        -AddressPrefix 10.0.0.0/24
     ```
     
-2. Создание виртуальной сети. В этом примере задается имя виртуальной сети *myVnetName*, расположение *Западная часть США* и префикс адреса виртуальной сети *10.0.0.0/16*. 
+2. Создание виртуальной сети. В этом примере задается имя виртуальной сети *myVnetName*, расположение *западная часть США* и префикс адреса виртуальной сети *10.0.0.0/16*. 
    
     ```powershell
     $vnetName = "myVnetName"
@@ -274,6 +274,6 @@ $vmList = Get-AzVM -ResourceGroupName $destinationResourceGroup
 $vmList.Name
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 Войдите на свою новую виртуальную машину. Дополнительные сведения см. в статье [Как подключиться к виртуальной машине Azure под управлением Windows и войти на нее](connect-logon.md).
 

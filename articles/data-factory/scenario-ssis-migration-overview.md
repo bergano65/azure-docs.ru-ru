@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 9/3/2019
-ms.openlocfilehash: e75e6bc78740ffb8aba0faa0ef95f4b13a8c56ef
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 99b7de8c0e24fdbd12742b26394e61c956638525
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73684409"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74038278"
 ---
 # <a name="migrate-on-premises-ssis-workloads-to-ssis-in-adf"></a>Перенос локальных рабочих нагрузок служб SSIS в службы SSIS в ADF
 
@@ -48,7 +48,7 @@ Azure-SSIS Integration Runtime (IR) в фабрике данных Azure (ADF) �
   - MSDB — это системная база данных в SQL Server, используемая для хранения пакетов служб SSIS.
   - Управляемая файловая система, которая является определенной папкой в SQL Server пути установки, используемого для хранения пакетов служб SSIS.
 
-Сейчас DMA поддерживает пакетную оценку пакетов, хранящихся в типе хранилища **файловой системы** , с момента **DMA версии 4.5**.
+Сейчас DMA поддерживает пакетную оценку пакетов, хранящихся в **файловой системе**, **хранилище пакетов**и **каталоге служб SSIS** , с момента **DMA версии 5.0**.
 
 Получите [DMA](https://docs.microsoft.com/sql/dma/dma-overview)и [выполните оценку пакета с его помощью](https://docs.microsoft.com/sql/dma/dma-assess-ssis).
 
@@ -85,7 +85,7 @@ Azure-SSIS Integration Runtime (IR) в фабрике данных Azure (ADF) �
 - [Миграция пакетов служб SSIS в управляемый экземпляр базы данных SQL Azure](https://docs.microsoft.com/azure/dms/how-to-migrate-ssis-packages-managed-instance)
 - [Повторное развертывание пакетов в базе данных SQL Azure](https://docs.microsoft.com/azure/dms/how-to-migrate-ssis-packages)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Проверка пакетов служб SSIS, развернутых в Azure](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-validate-packages)
 - [Запуск пакетов служб SSIS, развернутых в Azure](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-run-packages)

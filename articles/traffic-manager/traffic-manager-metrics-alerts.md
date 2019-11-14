@@ -1,6 +1,6 @@
 ---
 title: Метрики и оповещения в диспетчере трафика Azure
-description: В этой статье описываются метрики, доступные для диспетчера трафика в Azure.
+description: В этой статье вы узнаете о метриках и оповещениях, доступных для диспетчера трафика в Azure.
 services: traffic-manager
 author: asudbring
 ms.service: traffic-manager
@@ -10,12 +10,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/11/2018
 ms.author: allensu
-ms.openlocfilehash: e689398a38030a712ec6beb651131d0424e44476
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 7e374e11053f0a1baabed72fdb240b34e2107b2a
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67071118"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74038066"
 ---
 # <a name="traffic-manager-metrics-and-alerts"></a>Метрики и оповещения диспетчера трафика
 
@@ -33,13 +33,13 @@ ms.locfileid: "67071118"
   
 ![Статистическое представление всех запросов](./media/traffic-manager-metrics-alerts/traffic-manager-metrics-queries-aggregate-view.png)
 
-*Рис. 1. Статистическое представление всех запросов*
+*Рис. 1. Статистическое представление всех запросов*
   
 На рис. 2 отображаются те же сведения, но разделенные по конечным точкам. В результате отображаются все ответы на запросы, в которых возвращена конкретная конечная точка.
 
 ![Метрики диспетчера трафика — разделенное представление всех запросов на каждую конечную точку](./media/traffic-manager-metrics-alerts/traffic-manager-metrics-query-volume-per-endpoint.png)
 
-*Рис. 2. Разделенное представление всех запросов для возвращенной конечной точки*
+*Рис. 2. Разделенное представление всех запросов для возвращенной конечной точки*
 
 ## <a name="endpoint-status-by-endpoint"></a>Проверка состояния конечных точек
 [Эта метрика](../azure-monitor/platform/metrics-supported.md#microsoftnetworktrafficmanagerprofiles) позволяет проверить состояние работоспособности конечных точек в профиле. Эта метрика имеет два значения:
@@ -51,18 +51,18 @@ ms.locfileid: "67071118"
 
 ![Метрики диспетчера трафика — составное представление состояния конечной точки](./media/traffic-manager-metrics-alerts/traffic-manager-metrics-endpoint-status-composite-view.png)
 
-*Рис. 3. Составное представление метрики состояния конечной точки с выбранным значением агрегирования "Сред."*
+*Рис. 3. Составное представление метрики состояния конечной точки с выбранным значением агрегирования "Сред."*
 
 
 ![Метрики диспетчера трафика — разделенное представление состояния конечной точки](./media/traffic-manager-metrics-alerts/traffic-manager-metrics-endpoint-status-split-view.png)
 
-*Рис. 4. Разделенное представление метрик состояния конечной точки*
+*Рис. 4. Разделенное представление метрик состояния конечной точки*
 
 Вы можете использовать эти метрики на портале [службы Azure Monitor](../azure-monitor/platform/metrics-supported.md) с помощью [REST API](https://docs.microsoft.com/rest/api/monitor/), [Azure CLI](https://docs.microsoft.com/cli/azure/monitor) и [Azure PowerShell](https://docs.microsoft.com/powershell/module/az.applicationinsights), а также в разделе метрики при работе на портале диспетчера трафика.
 
 ## <a name="alerts-on-traffic-manager-metrics"></a>Оповещения о метриках диспетчера трафика
 Помимо обработки и отображения метрик из диспетчера трафика, Azure Monitor позволяет клиентам настроить и получать оповещения, связанные с этими метриками. Вы можете выбрать для метрик условия, при выполнении которых будет отправляться оповещение, частоту мониторинга этих условий и способ отправки оповещений. Дополнительные сведения см. в [документации по оповещениям Azure Monitor](../monitoring-and-diagnostics/monitor-alerts-unified-usage.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 - Узнайте больше о службе [Azure Monitor](../azure-monitor/platform/metrics-supported.md).
 - См. [здесь](../azure-monitor/platform/metrics-getting-started.md#create-your-first-metric-chart), чтобы узнать, как создать диаграмму с помощью Azure Monitor.

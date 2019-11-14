@@ -1,5 +1,5 @@
 ---
-title: Размеры виртуальных машин Linux в Azure, серии B | Документация Майкрософт
+title: Размеры виртуальных машин Linux в Azure серии B
 description: В этой статье описываются размеры виртуальных машин Azure серии B с накапливаемыми ресурсами.
 services: virtual-machines-linux
 documentationcenter: ''
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 06/25/2019
 ms.author: ayshak
-ms.openlocfilehash: 01da424872cdfde6c7e035cadd2b948117fb996c
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: b9e55d64636b6ee8bf2cff72d44c73e73bf877c1
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70084002"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74036976"
 ---
 # <a name="b-series-burstable-virtual-machine-sizes"></a>Размеры виртуальных машин Azure серии B с накапливаемыми ресурсами
 
@@ -34,5 +34,5 @@ ms.locfileid: "70084002"
 - [Оптимизированные для GPU](sizes-gpu.md)
 - [Для высокопроизводительных вычислений](sizes-hpc.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 Узнайте больше о том, как с помощью [единиц вычислений Azure (ACU)](acu.md) сравнить производительность вычислений для различных номеров SKU Azure.

@@ -8,12 +8,12 @@ ms.date: 10/16/2019
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
-ms.openlocfilehash: 84b65470b12212eb1038e18bd442ff07511a5c1a
-ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
+ms.openlocfilehash: 538c54c338540059baa17b9818d444cc863b7309
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72513497"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74034055"
 ---
 # <a name="azcopy-logout"></a>azcopy logout
 
@@ -27,19 +27,26 @@ ms.locfileid: "72513497"
 azcopy logout [flags]
 ```
 
+## <a name="related-conceptual-articles"></a>Связанные концептуальные статьи
+
+- [Get started with AzCopy](storage-use-azcopy-v10.md) (Начало работы с AzCopy)
+- [Перенос данных с помощью AzCopy и хранилища BLOB-объектов](storage-use-azcopy-blobs.md)
+- [Transfer data with AzCopy and file storage](storage-use-azcopy-files.md) (Передача данных с помощью AzCopy и хранилища файлов)
+- [Configure, optimize, and troubleshoot AzCopy](storage-use-azcopy-configure.md) (Настройка, оптимизация и устранение неполадок с AzCopy)
+
 ## <a name="options"></a>Параметры
 
-|Вариант|Описание|
+|Параметр|ОПИСАНИЕ|
 |--|--|
 |-h, --help|Отображение содержимого справки для команды Logout.|
 
 ## <a name="options-inherited-from-parent-commands"></a>Параметры, унаследованные от родительских команд
 
-|Вариант|Описание|
+|Параметр|ОПИСАНИЕ|
 |---|---|
 |--Cap-Мбит/с UInt32|Скорость передачи с прописными буквами в мегабит в секунду. Посекундная пропускная способность может немного отличаться от ограничения. Если этот параметр имеет значение 0 или пропущен, пропускная способность не ограничена.|
 |--строка выходного типа|Формат вывода команды. Среди вариантов: Text, JSON. Значение по умолчанию — "Text".|
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также
 
 - [azcopy](storage-ref-azcopy.md)

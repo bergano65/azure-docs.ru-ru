@@ -1,27 +1,28 @@
 ---
-title: Настройка прослушивателя внутреннего балансировщика нагрузки для групп доступности AlwaysOn в Azure | Документация Майкрософт
-description: В этом руководстве используются ресурсы, созданные в классической модели развертывания, а также создается прослушиватель группы доступности AlwaysOn в Azure, использующий внутренний балансировщик нагрузки.
+title: Настройка прослушивателя ILB для групп доступности (классическая модель)
+description: В этом руководстве используются ресурсы, созданные с помощью классической модели развертывания, и создается прослушиватель группы доступности Always On в для виртуальной машины SQL Server в Azure, которая использует внутренний балансировщик нагрузки.
 services: virtual-machines-windows
 documentationcenter: na
 author: MikeRayMSFT
 manager: craigg
 editor: ''
 tags: azure-service-management
-ms.assetid: 291288a0-740b-4cfa-af62-053218beba77
+ms.assetid: 291288a0-740b-4cfa-af62-053218beba77j
 ms.service: virtual-machines-sql
 ms.topic: article
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 05/02/2017
 ms.author: mikeray
-ms.openlocfilehash: ca8adf4f9ce221533240e6c797f1fb01dacf6e8d
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.custom: seo-lt-2019
+ms.openlocfilehash: 29aaedeafb3995cc09e221d2e049dd538808904a
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70101911"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74032660"
 ---
-# <a name="configure-an-ilb-listener-for-always-on-availability-groups-in-azure"></a>Настройка прослушивателя внутреннего балансировщика нагрузки для групп доступности AlwaysOn в Azure
+# <a name="configure-an-ilb-listener-for-availability-groups-on-azure-sql-server-vms"></a>Настройка прослушивателя ILB для групп доступности на виртуальных машинах Azure SQL Server
 > [!div class="op_single_selector"]
 > * [Внутренний прослушиватель](../classic/ps-sql-int-listener.md)
 > * [Внешний прослушиватель](../classic/ps-sql-ext-listener.md)
@@ -31,7 +32,7 @@ ms.locfileid: "70101911"
 ## <a name="overview"></a>Обзор
 
 > [!IMPORTANT]
-> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [развертывание с помощью Azure Resource Manager и классическая модель развертывания](../../../azure-resource-manager/resource-manager-deployment-model.md). В этой статье рассматривается использование классической модели развертывания. Для большинства новых развертываний рекомендуется использовать модель Resource Manager.
+> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель Azure Resource Manager и классическая модель](../../../azure-resource-manager/resource-manager-deployment-model.md). В этой статье рассматривается использование классической модели развертывания. Для большинства новых развертываний рекомендуется использовать модель Resource Manager.
 
 Дополнительные сведения о настройке прослушивателя для группы доступности AlwaysOn в модели Resource Manager см. в [этой статье](../sql/virtual-machines-windows-portal-sql-alwayson-int-listener.md).
 
@@ -155,7 +156,7 @@ ms.locfileid: "70101911"
 4. Повторите предыдущие действия для каждой виртуальной машины.  
     Этот скрипт настраивает ресурс IP-адреса путем установки IP-адреса облачной службы и прочих параметров, таких как порт зонда. После подключения ресурс IP-адреса сможет отвечать на запросы, отправляемые на порт зонда из созданной ранее конечной точки балансировки нагрузки.
 
-## <a name="bring-the-listener-online"></a>Подключите прослушиватель.
+## <a name="bring-the-listener-online"></a>Подключение прослушивателя
 [!INCLUDE [Bring-Listener-Online](../../../../includes/virtual-machines-ag-listener-bring-online.md)]
 
 ## <a name="follow-up-items"></a>Дальнейшие действия
@@ -164,5 +165,5 @@ ms.locfileid: "70101911"
 ## <a name="test-the-availability-group-listener-within-the-same-virtual-network"></a>Проверка прослушивателя группы доступности (в пределах одной виртуальной сети)
 [!INCLUDE [Test-Listener-Within-VNET](../../../../includes/virtual-machines-ag-listener-test.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 [!INCLUDE [Listener-Next-Steps](../../../../includes/virtual-machines-ag-listener-next-steps.md)]
