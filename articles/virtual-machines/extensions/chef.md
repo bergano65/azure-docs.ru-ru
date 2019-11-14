@@ -1,5 +1,5 @@
 ---
-title: Расширение Chef для виртуальных машин Azure | Документация Майкрософт
+title: Расширение Chef для виртуальных машин Azure
 description: Сведения о развертывании клиента Chef на виртуальной машине, используя расширение Chef.
 services: virtual-machines-linux
 documentationcenter: ''
@@ -13,20 +13,20 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 09/21/2018
 ms.author: akjosh
-ms.openlocfilehash: e82a5fefcc7f582df65d945735d9840fc3e49829
-ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
+ms.openlocfilehash: 2b69a17c7f9de62187d9dc99f7c1d5c5b74c25ad
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71169145"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74073190"
 ---
 # <a name="chef-vm-extension-for-linux-and-windows"></a>Расширение Chef виртуальной машины для Linux и Windows
 
 Chef Software — это платформа автоматизации DevOps для Linux и Windows, которая позволяет управлять конфигурациями как физического, так и виртуального серверов. Chef — это расширение, которое включает среду Chef на виртуальной машине.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
-### <a name="operating-system"></a>Операционная система
+### <a name="operating-system"></a>операционная система
 
 Chef работает во всех [операционных системах, поддерживаемых расширением](https://support.microsoft.com/help/4078134/azure-extension-supported-operating-systems) в Azure.
 
@@ -67,26 +67,26 @@ Chef работает во всех [операционных системах, 
 
 ### <a name="core-property-values"></a>Значения свойств ядра
 
-| Название | Значение и пример | Тип данных
+| имя | Значение и пример | Тип данных
 | ---- | ---- | ----
-| apiVersion | `2017-12-01` | string (date) |
-| publisher | `Chef.Bootstrap.WindowsAzure` | string |
-| type | `LinuxChefClient` (Linux), `ChefClient` (Windows) | string |
-| typeHandlerVersion | `1210.12` | string (double) |
+| версия_API | `2017-12-01` | Строка (дата) |
+| publisher | `Chef.Bootstrap.WindowsAzure` | строка |
+| type | `LinuxChefClient` (Linux), `ChefClient` (Windows) | строка |
+| typeHandlerVersion | `1210.12` | Строка (двойная) |
 
-### <a name="settings"></a>Настройки
+### <a name="settings"></a>данных
 
-| Название | Значение и пример | Тип данных | Обязательный?
+| имя | Значение и пример | Тип данных | Обязательный?
 | ---- | ---- | ---- | ----
-| settings/bootstrap_options/chef_server_url | `https://api.chef.io/organizations/myorg` | string (url) | Д |
-| settings/bootstrap_options/validation_client_name | `myorg-validator` | string | Д |
-| settings/runlist | `recipe[mycookbook::default]` | string | Д |
+| settings/параметры_начальной_загрузки/URL-адрес_сервера_Chef | `https://api.chef.io/organizations/myorg` | Строка (URL-адрес) | Да |
+| settings/параметры_начальной_загрузки/имя_клиента_для_проверки | `myorg-validator` | строка | Да |
+| settings/runlist | `recipe[mycookbook::default]` | строка | Да |
 
 ### <a name="protected-settings"></a>Защищенные параметры
 
-| Название | Пример | Тип данных | Обязательный?
+| имя | Пример | Тип данных | Обязательный?
 | ---- | ---- | ---- | ---- |
-| protectedSettings/validation_key | `-----BEGIN RSA PRIVATE KEY-----\nKEYDATA\n-----END RSA PRIVATE KEY-----` | string | Д |
+| protectedSettings/ключ_проверки | `-----BEGIN RSA PRIVATE KEY-----\nKEYDATA\n-----END RSA PRIVATE KEY-----` | строка | Да |
 
 <!--
 ### Linux-specific settings
@@ -122,7 +122,7 @@ az vm extension set \
   --settings '{ "bootstrap_options": { "chef_server_url": "<chef_server_url>", "validation_client_name": "<validation_client_name>" }, "runlist": "<run_list>" }'
 ```
 
-## <a name="troubleshooting-and-support"></a>Поддержка и устранение неполадок
+## <a name="troubleshooting-and-support"></a>Устранение неполадок и поддержка
 
 Данные о состоянии развертывания расширения можно получить на портале Azure, а также использовав Azure CLI. Чтобы просмотреть состояние развертывания расширений для определенной виртуальной машины, выполните следующую команду в Azure CLI.
 
@@ -152,6 +152,6 @@ C:\Packages\Plugins\Chef.Bootstrap.WindowsAzure.ChefClient\
 
 Дополнительные сведения об устранении неполадок см. в [файле сведений о расширении Chef виртуальной машины](https://github.com/chef-partners/azure-chef-extension).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Если в любой момент при изучении этой статьи вам потребуется дополнительная помощь, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/forums/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните "Получить поддержку". Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).

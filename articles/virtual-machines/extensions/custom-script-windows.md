@@ -1,5 +1,5 @@
 ---
-title: Расширение пользовательских сценариев Azure в Windows | Документация Майкрософт
+title: Расширение пользовательских сценариев Azure для Windows
 description: Сведения об автоматизации задач настройки виртуальных машин Windows с помощью расширения пользовательских сценариев
 services: virtual-machines-windows
 manager: carmonm
@@ -10,12 +10,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 05/02/2019
 ms.author: robreed
-ms.openlocfilehash: c0c160d9fc2fcfb8da004d02baae1dd410620cbb
-ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
+ms.openlocfilehash: b3c355219fcbebc5fda38c33d6eb7f9126b3b2b8
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71204206"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74073825"
 ---
 # <a name="custom-script-extension-for-windows"></a>Расширение Custom Script в ОС Windows
 
@@ -23,7 +23,7 @@ ms.locfileid: "71204206"
 
 В этом документе объясняется, как использовать расширение пользовательских сценариев с помощью модуля Azure PowerShell и шаблонов Azure Resource Manager, а также подробно описываются действия по устранению неполадок в системах Windows.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 > [!NOTE]  
 > Не используйте расширение пользовательских сценариев для выполнения команды Update-AzVM на той же виртуальной машине, которая использовалась для параметра, так как команда выполнится через определенный период времени.  
@@ -52,7 +52,7 @@ ms.locfileid: "71204206"
 * Если имеется сценарий, который вызывает перезагрузку, а затем устанавливает приложения и запускает сценарии, можно запланировать перезагрузку с помощью запланированной задачи Windows или использовать такие средства, как расширения DSC, Chef или Puppet.
 * Расширение позволяет запустить скрипт только один раз. Если нужно выполнять скрипт при каждой загрузке, создайте запланированную задачу Windows с помощью расширения.
 * Чтобы запланировать время выполнения скрипта, необходимо создать запланированную задачу Windows с помощью расширения.
-* Во время выполнения скрипта вы увидите на портале Microsoft Azure или в CLI только переходное состояние расширения. Если требуются более частые обновления состояния выполняющегося скрипта, следует создать собственное решение.
+* Во время выполнения скрипта на портале Azure или в CLI отобразятся только сведения о переходном состоянии расширения. Если требуются более частые обновления состояния выполняющегося скрипта, следует создать собственное решение.
 * Расширение настраиваемых скриптов не имеет собственной поддержки прокси-серверов. Но можно использовать средство передачи файлов, которое поддерживает прокси-серверы в скрипте, например *Curl*.
 * Следует учитывать настраиваемые расположения каталогов, которые могут использоваться скриптами или командами, и иметь в распоряжении логику для обработки таких ситуаций.
 * Расширение пользовательских скриптов будет выполняться под учетной записью LocalSystem
@@ -106,22 +106,22 @@ ms.locfileid: "71204206"
 
 ### <a name="property-values"></a>Значения свойств
 
-| Название | Значение и пример | Тип данных |
+| имя | Значение и пример | Тип данных |
 | ---- | ---- | ---- |
-| apiVersion | 2015-06-15 | date |
-| publisher | Microsoft.Compute; | string |
-| type | CustomScriptExtension | string |
+| версия_API | 2015-06-15 | дата |
+| publisher | Microsoft.Compute; | строка |
+| type | CustomScriptExtension | строка |
 | typeHandlerVersion | 1.9 | int |
 | fileUris (пример) | https://raw.githubusercontent.com/Microsoft/dotnet-core-sample-templates/master/dotnet-core-music-windows/scripts/configure-music-app.ps1 | array |
-| timestamp (например) | 123456789 | 32-битное целое число |
-| commandToExecute (пример) | powershell -ExecutionPolicy Unrestricted -File configure-music-app.ps1 | string |
-| storageAccountName (пример) | examplestorageacct | string |
-| storageAccountKey (пример) | TmJK/1N3AbAZ3q/+hOXoi/l73zOqsaxXDhqa9Y83/v5UpXQp2DQIBuv2Tifp60cE/OaHsJZmQZ7teQfczQj8hg== | string |
+| метка времени (например) | 123456789 | 32-битное целое число |
+| commandToExecute (пример) | powershell -ExecutionPolicy Unrestricted -File configure-music-app.ps1 | строка |
+| storageAccountName (пример) | examplestorageacct | строка |
+| storageAccountKey (пример) | TmJK/1N3AbAZ3q/+hOXoi/l73zOqsaxXDhqa9Y83/v5UpXQp2DQIBuv2Tifp60cE/OaHsJZmQZ7teQfczQj8hg== | строка |
 
 >[!NOTE]
 >В именах свойств учитывается регистр. Чтобы избежать проблем с развертыванием, используйте имена, как показано ниже.
 
-#### <a name="property-value-details"></a>Сведения о значениях свойств
+#### <a name="property-value-details"></a>Сведения о значении свойства
 
 * `commandToExecute`: (**обязательное**, строка) выполняемый сценарий точки входа. Если команда содержит секретные данные, например пароли, или если значения fileUri являются конфиденциальным, используйте взамен это поле.
 * `fileUris`: (необязательное, строковый массив) URL-адреса файлов для скачивания.
@@ -141,7 +141,7 @@ ms.locfileid: "71204206"
 
 Расширения виртуальной машины Azure можно развернуть с помощью шаблонов Azure Resource Manager. Схема JSON, подробно описанная в предыдущем разделе, может использоваться в шаблоне Azure Resource Manager для запуска расширения пользовательского скрипта во время развертывания. Приведенные ниже примеры демонстрируют использование расширения пользовательских сценариев.
 
-* [Руководство. Развертывание расширений виртуальной машины с помощью шаблонов Azure Resource Manager](../../azure-resource-manager/resource-manager-tutorial-deploy-vm-extensions.md).
+* [Руководство. Развертывание расширений виртуальной машины с помощью шаблонов Azure Resource Manager](../../azure-resource-manager/resource-manager-tutorial-deploy-vm-extensions.md)
 * [Развертывание двухуровневого приложения в Windows и базе данных Azure SQL](https://github.com/Microsoft/dotnet-core-sample-templates/tree/master/dotnet-core-music-windows)
 
 ## <a name="powershell-deployment"></a>Развертывание с помощью PowerShell
@@ -161,7 +161,7 @@ Set-AzVMCustomScriptExtension -ResourceGroupName <resourceGroupName> `
 
 ### <a name="using-multiple-scripts"></a>Использование нескольких скриптов
 
-В этом примере имеется три скрипта, которые используются для построения сервера. **CommandToExecute** вызывает первый сценарий, а значит, у вас есть параметры вызова других. Например, можно создать главный сценарий, управляющий выполнением, с правильной обработкой ошибок, ведением журнала и управлением состоянием. Скрипты загружаются на локальный компьютер для выполнения. Например, в `1_Add_Tools.ps1` можно вызвать `2_Add_Features.ps1` , добавив `.\2_Add_Features.ps1` к скрипту, и повторить этот процесс для других скриптов, определенных в `$settings`.
+В этом примере имеется три скрипта, которые используются для построения сервера. **CommandToExecute** вызывает первый сценарий, а значит, у вас есть параметры вызова других. Например, можно создать главный сценарий, управляющий выполнением, с правильной обработкой ошибок, ведением журнала и управлением состоянием. Скрипты загружаются на локальный компьютер для выполнения. Например, в `1_Add_Tools.ps1` можно вызвать `2_Add_Features.ps1`, добавив `.\2_Add_Features.ps1` в скрипт, и повторить эту процедуру для других скриптов, определенных в `$settings`.
 
 ```powershell
 $fileUri = @("https://xxxxxxx.blob.core.windows.net/buildServer1/1_Add_Tools.ps1",
@@ -215,7 +215,7 @@ Set-AzVMExtension -ResourceGroupName <resourceGroupName> `
 
 ### <a name="using-invoke-webrequest"></a>Использование Invoke-WebRequest
 
-Если вы используете [Invoke-WebRequest](/powershell/module/microsoft.powershell.utility/invoke-webrequest) в скрипте, необходимо указать параметр `-UseBasicParsing` или при проверке подробного состояния появится следующая ошибка:
+Если в скрипте используется [командлет Invoke-WebRequest](/powershell/module/microsoft.powershell.utility/invoke-webrequest) , необходимо указать параметр `-UseBasicParsing` или иначе при проверке подробного состояния появится следующая ошибка:
 
 ```error
 The response content cannot be parsed because the Internet Explorer engine is not available, or Internet Explorer's first-launch configuration is not complete. Specify the UseBasicParsing parameter and try again.
@@ -225,7 +225,7 @@ The response content cannot be parsed because the Internet Explorer engine is no
 
 Чтобы развернуть расширение пользовательских сценариев на классических виртуальных машинах, можно использовать портал Azure или классические командлеты Azure PowerShell.
 
-### <a name="azure-portal"></a>портала Azure
+### <a name="azure-portal"></a>портале Azure
 
 Перейдите к классическому ресурсу виртуальной машины. В разделе **Параметры**выберите **расширения** .
 
@@ -277,13 +277,13 @@ C:\Packages\Plugins\Microsoft.Compute.CustomScriptExtension\1.*\Downloads\<n>
 
 При выполнении команды `commandToExecute` расширение устанавливает этот каталог (например, `...\Downloads\2`) в качестве текущего рабочего каталога. Этот процесс позволяет использовать относительные пути для поиска файлов, скачанных с помощью свойства `fileURIs`. Примеры приведены в следующей таблице.
 
-Так как со временем абсолютный путь для скачивания может измениться, в строке `commandToExecute` лучше указывать относительные пути к сценариям или файлам, когда это возможно. Пример:
+Так как со временем абсолютный путь для скачивания может измениться, в строке `commandToExecute` лучше указывать относительные пути к сценариям или файлам, когда это возможно. Например,
 
 ```json
 "commandToExecute": "powershell.exe . . . -File \"./scripts/myscript.ps1\""
 ```
 
-Сведения о пути после первого сегмента URI хранятся для файлов, скачанных с `fileUris` помощью списка свойств.  Как показано в следующей таблице, скачанные файлы распределяются по подкаталогам в соответствии со структурой значений `fileUris`.  
+Сведения о пути после того, как первый сегмент URI будет храниться для файлов, скачанных с помощью списка свойств `fileUris`.  Как показано в следующей таблице, скачанные файлы распределяются по подкаталогам в соответствии со структурой значений `fileUris`.  
 
 #### <a name="examples-of-downloaded-files"></a>Примеры скачанных файлов
 

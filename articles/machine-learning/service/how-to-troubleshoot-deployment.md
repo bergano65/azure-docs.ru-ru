@@ -11,12 +11,12 @@ ms.author: clauren
 ms.reviewer: jmartens
 ms.date: 10/25/2019
 ms.custom: seodec18
-ms.openlocfilehash: cb0f373000d09cb387fb73eec344997381fe45d1
-ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
+ms.openlocfilehash: dab79f1d63a20e12f148766db5fcc3fc313a1f3a
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73961660"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74076895"
 ---
 # <a name="troubleshooting-azure-machine-learning-azure-kubernetes-service-and-azure-container-instances-deployment"></a>Устранение неполадок Машинное обучение Azure службы Azure Kubernetes и развертывания экземпляров контейнеров Azure
 
@@ -164,12 +164,12 @@ b\'{"code":"InternalServerError","statusCode":500,"message":"An internal server 
 
 ## <a name="debug-locally"></a>Отладка в локальной среде
 
-Если возникли проблемы при развертывании модели в ACI или AKS, попробуйте развернуть ее как локальную. Использование локальных средств упрощает устранение неполадок. Образ DOCKER, содержащий модель, загружается и запускается в локальной системе.
+Если возникли проблемы при развертывании модели в ACI или AKS, попробуйте развернуть ее как локальную веб-службу. Использование локальной веб-службы упрощает устранение неполадок. Образ DOCKER, содержащий модель, загружается и запускается в локальной системе.
 
 > [!WARNING]
-> Локальные развертывания не поддерживаются в рабочих сценариях.
+> Локальные развертывания веб-служб не поддерживаются в рабочих сценариях.
 
-Чтобы выполнить развертывание локально, измените код, чтобы использовать `LocalWebservice.deploy_configuration()` для создания конфигурации развертывания. Затем используйте `Model.deploy()` для развертывания службы. В следующем примере модель развертывается (содержится в переменной `model`) как локальная:
+Чтобы выполнить развертывание локально, измените код, чтобы использовать `LocalWebservice.deploy_configuration()` для создания конфигурации развертывания. Затем используйте `Model.deploy()` для развертывания службы. В следующем примере выполняется развертывание модели (содержащейся в переменной `model`) в качестве локальной веб-службы:
 
 ```python
 from azureml.core.model import InferenceConfig, Model
@@ -180,14 +180,14 @@ inference_config = InferenceConfig(runtime="python",
                                    entry_script="score.py",
                                    conda_file="myenv.yml")
 
-# Create a local deployment, using port 8890 for the  endpoint
+# Create a local deployment, using port 8890 for the web service endpoint
 deployment_config = LocalWebservice.deploy_configuration(port=8890)
 # Deploy the service
 service = Model.deploy(
     ws, "mymodel", [model], inference_config, deployment_config)
 # Wait for the deployment to complete
 service.wait_for_deployment(True)
-# Display the port that the  is available on
+# Display the port that the web service is available on
 print(service.port)
 ```
 
@@ -297,7 +297,7 @@ def run(input_data):
     > [!IMPORTANT]
     > Это изменение не приводит к тому, что реплики будут создаваться *быстрее*. Вместо этого они создаются с меньшим пороговым значением использования. Вместо того чтобы ждать, пока служба не будет использоваться в 70%, изменение значения на 30% приведет к тому, что реплики будут созданы при наступлении 30%.
     
-    Если уже использует текущие максимальные реплики и вы по-прежнему видите коды состояния 503, увеличьте значение `autoscale_max_replicas`, чтобы увеличить максимальное число реплик.
+    Если веб-служба уже использует текущие максимальные реплики и вы по-прежнему видите коды состояния 503, увеличьте значение `autoscale_max_replicas`, чтобы увеличить максимальное число реплик.
 
 * Измените минимальное число реплик. Увеличение минимальных реплик предоставляет пул большего размера для обработки входящих пиков.
 
@@ -333,7 +333,7 @@ def run(input_data):
 > [!IMPORTANT]
 > Этот метод отладки не работает при использовании `Model.deploy()` и `LocalWebservice.deploy_configuration` для локального развертывания модели. Вместо этого необходимо создать образ с помощью класса [контаинеримаже](https://docs.microsoft.com/python/api/azureml-core/azureml.core.image.containerimage?view=azure-ml-py) . 
 
-Для локальных развертываний требуется работающая установка DOCKER в локальной системе. Дополнительные сведения об использовании DOCKER см. в [документации по DOCKER](https://docs.docker.com/).
+Для локальных развертываний веб-служб требуется работающая установка DOCKER в локальной системе. Дополнительные сведения об использовании DOCKER см. в [документации по DOCKER](https://docs.docker.com/).
 
 ### <a name="configure-development-environment"></a>Настройка среды разработки
 

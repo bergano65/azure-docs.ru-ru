@@ -9,35 +9,27 @@ ms.service: azure-functions
 ms.topic: reference
 ms.date: 01/14/2019
 ms.author: cshoe
-ms.openlocfilehash: 1ea7ec0444ba80d3494afba77ad9d7fdabd5f982
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 8dd5a4d9d869c879ed402c5450690f0a691e1d2c
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70086421"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74074400"
 ---
 # <a name="using-the-azure-function-return-value"></a>Использование возвращаемого значения функции Azure
 
 В этой статье объясняется, как возвращаемые значения работают внутри функции.
 
-В языках, имеющих возвращаемое значение, можно привязать выходную [привязку](./functions-triggers-bindings.md#binding-direction) функции к возвращаемому значению:
+В языках, имеющих возвращаемое значение, можно привязать [выходную привязку](./functions-triggers-bindings.md#binding-direction) функции к возвращаемому значению:
 
 * В библиотеке классов C# примените атрибут выходной привязки к возвращаемому значению метода.
-* В других языках задайте для свойства `name` значение `$return` в файле *function.json*.
+* В других языках задайте для свойства `name` значение *в файле*function.json`$return`.
 
 При наличии нескольких выходных привязок используйте возвращаемое значение только для одной из них.
 
 В C# и скрипте C# есть альтернативные способы отправки данных в привязку для вывода — с помощью параметров `out` и [объектов сборщика](functions-reference-csharp.md#writing-multiple-output-values).
 
-Ознакомьтесь с примером использования возвращаемого значения для требуемого языка:
-
-* [C#](#c-example)
-* [Скрипт C# (CSX)](#c-script-example)
-* [F#](#f-example)
-* [JavaScript](#javascript-example)
-* [Python](#python-example)
-
-## <a name="c-example"></a>Пример C#
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 Это код C#, который использует возвращаемое значение для выходной привязки, за которым следует пример асинхронной функции:
 
@@ -63,7 +55,7 @@ public static Task<string> Run([QueueTrigger("inputqueue")]WorkItem input, ILogg
 }
 ```
 
-## <a name="c-script-example"></a>Пример сценария C#
+# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
 
 Выходная привязка в файле *function.json*:
 
@@ -96,7 +88,7 @@ public static Task<string> Run(WorkItem input, ILogger log)
 }
 ```
 
-## <a name="f-example"></a>Пример F#
+# <a name="ftabfsharp"></a>[F#](#tab/fsharp)
 
 Выходная привязка в файле *function.json*:
 
@@ -118,7 +110,7 @@ let Run(input: WorkItem, log: ILogger) =
     json
 ```
 
-## <a name="javascript-example"></a>Пример JavaScript
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 Выходная привязка в файле *function.json*:
 
@@ -141,7 +133,7 @@ module.exports = function (context, input) {
 }
 ```
 
-## <a name="python-example"></a>Пример на Python
+# <a name="pythontabpython"></a>[Python](#tab/python)
 
 Выходная привязка в файле *function.json*:
 
@@ -164,7 +156,9 @@ def main(input: azure.functions.InputStream) -> str:
     })
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+---
+
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
 > [Обработчик ошибок привязки функций Azure](./functions-bindings-errors.md)

@@ -1,5 +1,5 @@
 ---
-title: Шифрование дисков Azure для Windows | Документация Майкрософт
+title: Шифрование дисков Azure для Windows
 description: Развертывание шифрования дисков Azure на виртуальной машине Windows с помощью расширения виртуальной машины.
 services: virtual-machines-windows
 documentationcenter: ''
@@ -13,20 +13,20 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 06/12/2018
 ms.author: ejarvi
-ms.openlocfilehash: 056bd1293e0593a7fb7f9909cfd85043577686c4
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: 8435663dcf92e2617ea2fe9218649e94243272d2
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72901334"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74073211"
 ---
 # <a name="azure-disk-encryption-for-windows-microsoftazuresecurityazurediskencryption"></a>Шифрование дисков Azure для Windows (Microsoft.Azure.Security.AzureDiskEncryption)
 
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
 
 При шифровании дисков Azure используется Bitlocker для полного шифрования диска на виртуальных машинах Azure под управлением Windows.  Шифрование дисков Azure интегрировано в Azure Key Vault, что позволяет управлять секретами и ключами шифрования дисков в подписке Key Vault. 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 Полный список необходимых компонентов см. в разделах [Шифрование дисков Azure для виртуальных машин Linux](../linux/disk-encryption-overview.md), в частности следующие разделы:
 
@@ -134,23 +134,23 @@ ms.locfileid: "72901334"
 
 ### <a name="property-values"></a>Значения свойств
 
-| Name | Значение и пример | Тип данных |
+| имя | Значение и пример | Тип данных |
 | ---- | ---- | ---- |
-| версия_API | 2015-06-15 | date |
-| publisher | Microsoft.Azure.Security | string |
-| Тип | AzureDiskEncryptionForLinux | string |
-| typeHandlerVersion | 1,1, 2,2 | string |
-| (схема 1,1) аадклиентид | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | GUID | 
-| (схема 1,1) AADClientSecret | пароль | string |
-| (схема 1,1) аадклиентцертификате | thumbprint | string |
+| версия_API | 2015-06-15 | дата |
+| publisher | Microsoft.Azure.Security | строка |
+| type | AzureDiskEncryptionForLinux | строка |
+| typeHandlerVersion | 1,1, 2,2 | строка |
+| (схема 1,1) аадклиентид | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | guid | 
+| (схема 1,1) AADClientSecret | password | строка |
+| (схема 1,1) аадклиентцертификате | thumbprint | строка |
 | DiskFormatQuery | {"dev_path":"","name":"","file_system":""} | Словарь JSON |
-| EncryptionOperation | EnableEncryption, EnableEncryptionFormatAll | string | 
-| KeyEncryptionAlgorithm | 'RSA-OAEP', 'RSA-OAEP-256', 'RSA1_5' | string |
-| KeyEncryptionKeyURL | URL-адрес | string |
-| KeyVaultURL | URL-адрес | string |
-| используемых Кодов | пароль | string | 
-| SequenceVersion | uniqueidentifier | string |
-| VolumeType | ОС, данные, все | string |
+| EncryptionOperation | EnableEncryption, EnableEncryptionFormatAll | строка | 
+| KeyEncryptionAlgorithm | 'RSA-OAEP', 'RSA-OAEP-256', 'RSA1_5' | строка |
+| KeyEncryptionKeyURL | url | строка |
+| KeyVaultURL | url | строка |
+| (необязательно) Passphrase | password | строка | 
+| SequenceVersion | uniqueidentifier | строка |
+| VolumeType | ОС, данные, все | строка |
 
 ## <a name="template-deployment"></a>Развертывание шаблона
 Пример шаблона развертывания см. в руководстве по [созданию зашифрованной виртуальной машины Windows из образа коллекции](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-create-new-vm-gallery-image).
@@ -169,5 +169,5 @@ ms.locfileid: "72901334"
 
 Если в любой момент при изучении этой статьи вам потребуется дополнительная помощь, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/community/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните "Получить поддержку". Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 См. дополнительные сведения о [расширениях и компонентах виртуальных машин Windows](features-windows.md).

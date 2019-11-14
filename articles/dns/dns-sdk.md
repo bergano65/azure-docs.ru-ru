@@ -1,10 +1,11 @@
 ---
-title: Создание зон и наборов записей DNS в Azure DNS с помощью пакета SDK для .NET | Документация Майкрософт
+title: Создание зон и наборов записей DNS с помощью пакета SDK для .NET
+titleSuffix: Azure DNS
 description: Здесь описывается, как создать зоны и наборы записей DNS в Azure DNS с помощью пакета SDK для .NET.
 services: dns
 documentationcenter: na
-author: vhorne
-manager: jeconnoc
+author: asudbring
+manager: kumudD
 ms.assetid: eed99b87-f4d4-4fbf-a926-263f7e30b884
 ms.service: dns
 ms.devlang: na
@@ -12,17 +13,17 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/19/2016
-ms.author: victorh
-ms.openlocfilehash: a06d629087e853c2578e6d35a2ea90c5a8eff840
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: allensu
+ms.openlocfilehash: b51dd4ea3b36a9d0420a60883ebc29276a7d6b8a
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60308949"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74076711"
 ---
 # <a name="create-dns-zones-and-record-sets-using-the-net-sdk"></a>Создание зон и наборов записей DNS с помощью пакета SDK для .NET
 
-Вы можете автоматизировать операции создания, удаления или обновления зон, наборов записей и записей DNS, используя пакет SDK для DNS и библиотеку управления DNS для .NET. Полный проект Visual Studio доступен [здесь](https://www.microsoft.com/en-us/download/details.aspx?id=47268&WT.mc_id=DX_MVP4025064&e6b34bbe-475b-1abd-2c51-b5034bcdd6d2=True).
+Вы можете автоматизировать операции создания, удаления или обновления зон, наборов записей и записей DNS, используя пакет SDK для DNS и библиотеку управления DNS для .NET. Полный проект Visual Studio доступен [здесь.](https://www.microsoft.com/en-us/download/details.aspx?id=47268&WT.mc_id=DX_MVP4025064&e6b34bbe-475b-1abd-2c51-b5034bcdd6d2=True)
 
 ## <a name="create-a-service-principal-account"></a>Создание учетной записи субъекта-службы
 
@@ -45,7 +46,7 @@ ms.locfileid: "60308949"
 2. Щелкните **Инструменты** **>** **Диспетчер пакетов NuGet** **>** **Управление пакетами NugGet для решения...** .
 3. Щелкните **Обзор**, установите флажок **Включить предварительные выпуски** и введите в поле поиска **Microsoft.Azure.Management.Dns**.
 4. Выберите пакет и щелкните **Установить** , чтобы добавить его в проект Visual Studio.
-5. Повторите процесс, описанный выше, чтобы также установить следующие пакеты: **Microsoft.Rest.ClientRuntime.Azure.Authentication** и **Microsoft.Azure.Management.ResourceManager**.
+5. Повторите всю процедуру, чтобы установить пакет **Microsoft.Rest.ClientRuntime.Azure.Authentication** и **Microsoft.Azure.Management.ResourceManager**.
 
 ## <a name="add-namespace-declarations"></a>Добавление объявлений пространств имен
 
@@ -145,7 +146,7 @@ recordSet = await dnsClient.RecordSets.CreateOrUpdateAsync(resourceGroupName, zo
 
 ## <a name="list-zones-and-record-sets"></a>Вывод списка зон и наборов записей
 
-Чтобы получить список зон, используйте методы *DnsManagementClient.Zones.List...* , которые поддерживают вывод списка всех зон в заданной группе ресурсов или подписке Azure (в группах ресурсов). Чтобы получить список наборов записей, используйте методы To list record sets, use *DnsManagementClient.RecordSets.List...* , которые поддерживают вывод списка всех наборов записей в данной зоне или только наборов записей определенного типа.
+Чтобы вывести список зон, используйте методы *DnsManagementClient. Zones. List...* , которые поддерживают перечисление всех зон в заданной группе ресурсов или всех зон в заданной подписке Azure (в группах ресурсов). Чтобы вывести список наборов записей, используйте методы *DnsManagementClient. recordsets. List...* , которые поддерживают либо перечисление всех наборов записей в данной зоне, либо только наборы записей определенного типа.
 
 Обратите внимание, что при выводе списка зон и наборов записей может быть применена разбивка на страницы.  В приведенном ниже примере показано, как выполнить итерацию по страницам результатов. (Для принудительного разбиения на страницы используется небольшой размер страницы "2". На практике этот параметр следует пропустить и использовать размер страницы по умолчанию.)
 
@@ -163,6 +164,6 @@ while (page.NextPageLink != null)
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Загрузите [пример проекта SDK .NET для Azure DNS](https://www.microsoft.com/en-us/download/details.aspx?id=47268&WT.mc_id=DX_MVP4025064&e6b34bbe-475b-1abd-2c51-b5034bcdd6d2=True), который содержит дополнительные примеры использования пакета SDK .NET для Azure DNS, а также примеры других типов записей DNS.

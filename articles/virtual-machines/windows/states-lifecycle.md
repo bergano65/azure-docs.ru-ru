@@ -1,5 +1,5 @@
 ---
-title: Жизненный цикл и состояния виртуальной машины Windows в Azure | Документация Майкрософт
+title: Жизненный цикл и состояния виртуальной машины Windows в Azure
 description: В этой статье приведен обзор жизненного цикла виртуальной машины Windows в Azure, включая описание различных состояний, в которых виртуальная машина может находиться в любой момент.
 services: virtual-machines-windows
 documentationcenter: ''
@@ -13,18 +13,18 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/09/2018
 ms.author: vashan
-ms.openlocfilehash: 12ef055c94c25d27414e910a1ec1f53f6252d623
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: f7823d0e34fb6a79e79e9feab8eea77785b3d0da
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70101805"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74068226"
 ---
 # <a name="virtual-machines-lifecycle-and-states"></a>Жизненный цикл и состояния виртуальных машин
 
 [!INCLUDE [virtual-machines-common-states-lifecycle](../../../includes/virtual-machines-common-states-lifecycle.md)]
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения см. в статье [Мониторинг виртуальных машин в Azure](monitor.md).

@@ -1,7 +1,7 @@
 ---
 title: Поиск GIF-изображений с использованием API Bing для поиска изображений
 titleSuffix: Azure Cognitive Services
-description: Используйте API Bing для поиска изображений, чтобы выполнять поиск GIF-изображений в Интернете.
+description: API Bing для поиска изображений позволяет также искать по всему Интернету наиболее релевантные GIF-изображения.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -11,22 +11,22 @@ ms.topic: conceptual
 ms.date: 04/24/2018
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: a8c9afa618df468e038c80f72713b12c7f6ee226
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: ad33b5a28728a8e7f9c0a70ff81ea5a9e65624bd
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68882290"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74072644"
 ---
 # <a name="search-for-gif-images"></a>Поиск GIF-изображений 
 
-API Bing для поиска изображений позволяет также искать по всему Интернету наиболее релевантные GIF-изображения.  Разработчики могут интегрировать привлекательные GIF-файлы в различные сценарии общения. 
+API Bing для поиска изображений позволяет также искать по всему Интернету наиболее релевантные GIF-изображения.  Разработчики могут интегрировать привлекательные GIF в различные сценарии беседы. 
 
 Приведенный ниже URL-адрес является запросом анимационных GIF-изображений.
 ```
 https://api.cognitive.microsoft.com/bing/v7.0/images/search?q=interesting&imageType=AnimatedGif&mkt=en-us
 ```
-Параметр [q](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#query) указывает условия поиска.  С помощью параметра фильтра [imageType](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#imagetype) в этом запросе также указывается тип содержимого — `animatedGif`.
+Параметр [q](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#query) указывает условия поиска.  С помощью параметра фильтра `animatedGif`imageType[ в этом запросе также указывается тип содержимого — ](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#imagetype).
 
 Чтобы просмотреть примеры результатов, используйте приведенный ниже URL-адрес для поиска через bing.com.
 ```
@@ -207,6 +207,6 @@ class SearchResults{
 
 ```
 
-## <a name="next-steps"></a>Следующие шаги
-- [Краткое руководство для C#](quickstarts/csharp.md)
+## <a name="next-steps"></a>Дополнительная информация
+- [Краткое руководство — C#](quickstarts/csharp.md)
 - [Руководство по одностраничным веб-приложениям](tutorial-bing-image-search-single-page-app.md)

@@ -1,7 +1,7 @@
 ---
 title: Сброс TCP-подключений Load Balancer при простое в Azure
-titlesuffix: Azure Load Balancer
-description: Load Balancer с двунаправленными TCP-пакетами RST при истечении времени ожидания простоя
+titleSuffix: Azure Load Balancer
+description: В этой статье содержатся сведения о Azure Load Balancer с двунаправленными пакетами TCP RST при ожидании простоя.
 services: load-balancer
 documentationcenter: na
 author: asudbring
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/03/2019
 ms.author: allensu
-ms.openlocfilehash: 8485f4b6e8d4ff55de4930b3cfb7a07802cf1d41
-ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
+ms.openlocfilehash: b37253f37043d902d33504b99401781eb1c761c5
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68274161"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74075937"
 ---
 # <a name="load-balancer-with-tcp-reset-on-idle-public-preview"></a>Load Balancer со сбросом TCP-подключений при простое (общедоступная предварительная версия)
 
@@ -76,7 +76,7 @@ ms.locfileid: "68274161"
 - С помощью портала нельзя настраивать или просматривать состояние функции сброса TCP-подключений.  Вместо этого используйте шаблоны, REST API, Azure CLI 2.0 или PowerShell.
 - TCP RST отправлен только во время TCP-соединения в УСТАНОВЛЕНном состоянии.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 - Сведения о [Load Balancer ценовой категории "Стандартный"](load-balancer-standard-overview.md).
 - Сведения о [правилах для исходящих подключений](load-balancer-outbound-rules-overview.md).

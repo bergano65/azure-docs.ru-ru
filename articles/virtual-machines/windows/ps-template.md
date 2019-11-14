@@ -1,5 +1,5 @@
 ---
-title: Создание виртуальной машины Windows с помощью шаблона в Azure | Документация Майкрософт
+title: Создание виртуальной машины Windows на основе шаблона в Azure
 description: Простое создание виртуальной машины Windows с помощью шаблона Resource Manager и PowerShell.
 services: virtual-machines-windows
 documentationcenter: ''
@@ -15,18 +15,18 @@ ms.topic: article
 ms.date: 03/22/2019
 ms.author: cynthn
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 7e1f50753f155d1583de3a1e8426975e1b0d6aee
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 99e292930414ae027c9cbbf3a901d550041899d2
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70102519"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74065546"
 ---
 # <a name="create-a-windows-virtual-machine-from-a-resource-manager-template"></a>Создание виртуальной машины Windows с использованием шаблона Resource Manager
 
 Узнайте, как создать виртуальную машину Windows с помощью шаблона Azure Resource Manager и Azure PowerShell из Azure Cloud Shell. Шаблон, используемый в этой статье, развертывает одну виртуальную машину под Windows Server в новой виртуальной сети с одной подсетью. Сведения о создании виртуальной машины Linux см. [в статье Создание виртуальной машины Linux с помощью шаблонов Azure Resource Manager](../linux/create-ssh-secured-vm-from-template.md).
 
-## <a name="create-a-virtual-machine"></a>Создать виртуальную машину
+## <a name="create-a-virtual-machine"></a>Создание виртуальной машины
 
 Создание виртуальной машины Azure обычно включает в себя два этапа:
 
@@ -65,14 +65,14 @@ New-AzResourceGroupDeployment `
 Ниже приведены некоторые дополнительные ресурсы.
 
 - Чтобы узнать, как создавать шаблоны Resource Manager, ознакомьтесь с [документацией по Azure Resource Manager](/azure/azure-resource-manager/).
-- Схемы виртуальных машин Azure см. в справочнике по [шаблонам Azure](/azure/templates/microsoft.compute/allversions).
+- Схемы виртуальных машин Azure см. в [справочнике по шаблонам Azure](/azure/templates/microsoft.compute/allversions).
 - Дополнительные примеры шаблонов виртуальных машин см. в статье [шаблоны](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Compute&pageNumber=1&sort=Popular)быстрого запуска Azure.
 
 ## <a name="connect-to-the-virtual-machine"></a>Подключение к виртуальной машине
 
 Последняя команда PowerShell из предыдущего скрипта показывает имя виртуальной машины. Чтобы подключиться к виртуальной машине, см. раздел [как подключиться к виртуальной машине Azure под Windows и войти](./connect-logon.md)в нее.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Если возникнут проблемы с развертыванием, см. статью [Устранение распространенных ошибок развертывания в Azure с помощью Azure Resource Manager](../../resource-manager-common-deployment-errors.md).
 - Сведения о создании виртуальной машины и управлении ею см. в статье [Создание виртуальных машин Windows и управление ими с помощью модуля Azure PowerShell](tutorial-manage-vm.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).

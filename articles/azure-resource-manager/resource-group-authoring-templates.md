@@ -6,18 +6,18 @@ ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 11/12/2019
 ms.author: tomfitz
-ms.openlocfilehash: 065f392f3089f4d6872cd39c6aaab2098afc6c90
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: 8fe665ed9a9c580f5ce7d7bf43e71b9672a2bc5b
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74012181"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74075032"
 ---
 # <a name="understand-the-structure-and-syntax-of-azure-resource-manager-templates"></a>Описание структуры и синтаксиса шаблонов Azure Resource Manager
 
 В этой статье описана структура шаблона Azure Resource Manager. Статья содержит информацию о разных разделах шаблона и свойствах, которые доступны в этих разделах.
 
-Эта статья предназначена для пользователей, знакомых с шаблонами диспетчер ресурсов. Он предоставляет подробные сведения о структуре шаблона. Если вы хотите ознакомиться с созданием шаблона, см. раздел [Azure Resource Manager Templates](template-deployment-overview.md).
+Эта статья предназначена для пользователей, знакомых с шаблонами диспетчер ресурсов. Он предоставляет подробные сведения о структуре шаблона. Пошаговые инструкции по созданию шаблона см. в разделе [учебник. Создание и развертывание первого шаблона Azure Resource Manager](template-tutorial-create-first-template.md).
 
 ## <a name="template-format"></a>Формат шаблона
 

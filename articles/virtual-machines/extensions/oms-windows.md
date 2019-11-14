@@ -1,5 +1,5 @@
 ---
-title: Расширение виртуальной машины Azure Monitor для Windows | Документация Майкрософт
+title: Расширение виртуальной машины Azure Monitor для Windows
 description: Развертывание агента Log Analytics на виртуальной машине Windows с помощью расширения виртуальной машины.
 services: virtual-machines-windows
 documentationcenter: ''
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/12/2019
 ms.author: akjosh
-ms.openlocfilehash: fe8bafcb63c1a27b905bdc339c07d30c9f0a5982
-ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
+ms.openlocfilehash: c9fd62e57d131fb21e657c53914f9cd5349107ec
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71168926"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74073673"
 ---
 # <a name="azure-monitor-virtual-machine-extension-for-windows"></a>Расширение виртуальной машины Azure Monitor для Windows
 
@@ -27,9 +27,9 @@ ms.locfileid: "71168926"
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../../includes/azure-monitor-log-analytics-rebrand.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
-### <a name="operating-system"></a>Операционная система
+### <a name="operating-system"></a>операционная система
 
 Дополнительные сведения о поддерживаемых операционных системах Windows см. в статье [Обзор агента log Analytics](../../azure-monitor/platform/log-analytics-agent.md#supported-windows-operating-systems) .
 
@@ -38,12 +38,12 @@ ms.locfileid: "71168926"
 
 | Log Analytics версии пакета агента Windows | Версия расширения виртуальной машины Windows Azure Monitor | Дата выпуска | Заметки о выпуске |
 |--------------------------------|--------------------------|--------------------------|--------------------------|
-| 10.20.18011 | 1.0.18011 | 2019 июля | <ul><li> Исправления незначительных ошибок и усовершенствования стабилизации </li><li> Увеличено Максекспрессиондепс до 10000 </li></ul> |
-| 10.20.18001 | 1.0.18001 | Июнь 2019 г. | <ul><li> Исправления незначительных ошибок и усовершенствования стабилизации </li><li> Добавлена возможность отключения учетных данных по умолчанию при создании прокси-соединения (поддержка WINHTTP_AUTOLOGON_SECURITY_LEVEL_HIGH). </li></ul>|
+| 10.20.18011 | 1.0.18011 | Июль 2019 г. | <ul><li> Исправления незначительных ошибок и усовершенствования стабилизации </li><li> Увеличено Максекспрессиондепс до 10000 </li></ul> |
+| 10.20.18001 | 1.0.18001 | Июнь 2019 г. | <ul><li> Исправления незначительных ошибок и усовершенствования стабилизации </li><li> Добавлена возможность отключения учетных данных по умолчанию при подключении прокси-сервера (поддержка WINHTTP_AUTOLOGON_SECURITY_LEVEL_HIGH). </li></ul>|
 | 10.19.13515 | 1.0.13515 | Март 2019 г. | <ul><li>Незначительные исправления стабилизации </li></ul> |
 | 10.19.10006 | Недоступно | Dec 2018 | <ul><li> Незначительные исправления стабилизации </li></ul> | 
 | 8.0.11136 | Недоступно | Сентябрь 2018 |  <ul><li> Добавлена поддержка обнаружения изменения идентификатора ресурса при перемещении виртуальной машины. </li><li> Добавлена поддержка для идентификатора ресурса отчетов при использовании установки без расширения. </li></ul>| 
-| 8.0.11103 | Недоступно |  Апрель 2018 г. | |
+| 8.0.11103 | Недоступно |  Апрель 2018 г. | |
 | 8.0.11081 | 1.0.11081 | 2017 ноября | | 
 | 8.0.11072 | 1.0.11072 | Сентябрь 2017 | |
 | 8.0.11049 | 1.0.11049 | Фев 2017 | |
@@ -84,13 +84,13 @@ ms.locfileid: "71168926"
 ```
 ### <a name="property-values"></a>Значения свойств
 
-| Название | Значение и пример |
+| имя | Значение и пример |
 | ---- | ---- |
-| apiVersion | 2015-06-15 |
+| версия_API | 2015-06-15 |
 | publisher | Microsoft.EnterpriseCloud.Monitoring |
 | type | MicrosoftMonitoringAgent |
 | typeHandlerVersion | 1.0 |
-| workspaceId (пример)* | 6f680a37-00c6-41c7-a93f-1437e3462574 |
+| workspaceID (пример)* | 6f680a37-00c6-41c7-a93f-1437e3462574 |
 | workspaceKey (пример) | z4bU3p1/GrnWpQkky4gdabWXAhbWSTz70hm4m2Xt92XI+rSRgE8qVvRhsGo9TXffbrTahyrwv35W0pOqQAU7uQ== |
 
 \* В API-интерфейсе Log Analytics параметр workspaceId называется consumerId.

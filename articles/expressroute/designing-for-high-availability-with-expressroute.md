@@ -1,21 +1,18 @@
 ---
-title: Проектирование для обеспечения высокой доступности с помощью Azure ExpressRoute | Документация Майкрософт
+title: 'Azure ExpressRoute: проектирование для обеспечения высокой доступности'
 description: На этой странице приведены рекомендации по архитектуре для обеспечения высокого уровня доступности при использовании Azure ExpressRoute.
-documentationcenter: na
-services: networking
+services: expressroute
 author: rambk
-manager: tracsman
 ms.service: expressroute
 ms.topic: article
-ms.workload: infrastructure-services
 ms.date: 06/28/2019
 ms.author: rambala
-ms.openlocfilehash: 4984b30daf6170873cad9472bfed2d879af57efe
-ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
+ms.openlocfilehash: 4c3c6ae5fbdd91e6e44438be7fef2a3a91564a34
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "67466644"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74076680"
 ---
 # <a name="designing-for-high-availability-with-expressroute"></a>Проектирование для обеспечения высокого уровня доступности с помощью ExpressRoute
 
@@ -80,16 +77,16 @@ ExpressRoute обеспечивает высокий уровень доступ
 
 ExpressRoute поддерживает БФД через частный пиринг. БФД сокращает время обнаружения сбоя по сети уровня 2 между Microsoft Enterprise (MSEE) и соседями BGP на локальной стороне от 3 минут (по умолчанию) до секунды. Время быстрого обнаружения сбоев помогает хастенинг восстановление после сбоя. Дополнительные сведения см. в разделе [Настройка бфд через ExpressRoute][BFD].
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 В этой статье мы рассмотрели разработку для обеспечения высокого уровня доступности подключения канала ExpressRoute. Пиринг канала ExpressRoute закрепляется в географическом расположении и поэтому может повлиять на выполнение катастрофического сбоя, влияющего на все расположение. 
 
 Рекомендации по проектированию для создания геоизбыточного сетевого подключения к магистрали Майкрософт, которые могут выдерживать катастрофические сбои, которые влияют на весь регион, см. [в разделе Разработка для аварийного восстановления с помощью частного пиринга ExpressRoute][DR].
 
 <!--Image References-->
-[1]: ./media/designing-for-high-availability-with-expressroute/exr-reco.png "рекомендуемый способ подключения с помощью ExpressRoute"
-[2]: ./media/designing-for-high-availability-with-expressroute/suboptimal-lastmile-connectivity.png "неоптимальное подключение в последнюю очередь"
-[3]: ./media/designing-for-high-availability-with-expressroute/nat-options.png "варианта NAT"
+[1]: ./media/designing-for-high-availability-with-expressroute/exr-reco.png "Рекомендуемый способ подключения с помощью ExpressRoute"
+[2]: ./media/designing-for-high-availability-with-expressroute/suboptimal-lastmile-connectivity.png "Неоптимальная Последняя миля с подключением"
+[3]: ./media/designing-for-high-availability-with-expressroute/nat-options.png "Параметры NAT"
 
 
 <!--Link References-->

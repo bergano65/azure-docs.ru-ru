@@ -7,13 +7,13 @@ manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 09/30/2019
-ms.openlocfilehash: 5a357a246f2ba6c294b107e447218f386623f5c5
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.date: 11/13/2019
+ms.openlocfilehash: 8967b61115d2e2e644dea93cb236f8a7cdfcfcbd
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74014176"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74072271"
 ---
 # <a name="how-to-configure-postman-for-azure-digital-twins"></a>Настройка Postman для Azure Digital Twins
 
@@ -58,14 +58,9 @@ ms.locfileid: "74014176"
 
     [утверждение согласия администратора ![](../../includes/media/digital-twins-permissions/aad-app-admin-consent.png)](../../includes/media/digital-twins-permissions/aad-app-admin-consent.png#lightbox)
 
+1. Настройте второй **URI перенаправления** для `https://www.getpostman.com/oauth2/callback`.
 
-1. Выберите **Манифест** , чтобы открыть манифест приложения для приложения. Для *oauth2AllowImplicitFlow* задайте значение `true`.
-
-    [неявный поток ![Azure Active Directory](media/how-to-configure-postman/implicit-flow.png)](media/how-to-configure-postman/implicit-flow.png#lightbox)
-
-1. В качестве **URL-адреса ответа** укажите `https://www.getpostman.com/oauth2/callback`.
-
-    [URL-адрес ответа ![Azure Active Directory](media/how-to-configure-postman/reply-url.png)](media/how-to-configure-postman/reply-url.png#lightbox)
+    [![добавить URI перенаправления POST](media/how-to-configure-postman/authentication-redirect-uri.png)](media/how-to-configure-postman/authentication-redirect-uri.png#lightbox)
 
 1. Скопируйте и сохраните **идентификатор приложения** Azure AD. Он используется в последующих шагах.
 
@@ -106,10 +101,6 @@ ms.locfileid: "74014176"
     [Пример клиента ![POST](media/how-to-configure-postman/postman-oauth-token.png)](media/how-to-configure-postman/postman-oauth-token.png#lightbox)
 
 1. Выберите **Request Token** (Токен запроса).
-
-    >[!TIP]
-    >Если вы получили сообщение об ошибке OAuth 2 couldn’t be completed (OAuth 2 не удалось завершить), попробуйте сделать следующее:
-    > * Чтобы повторить попытку, закройте Postman и снова откройте его.
   
 1. Прокрутите вниз и выберите **Use Token** (Использовать токен).
 
@@ -117,13 +108,13 @@ ms.locfileid: "74014176"
 
 После выполнения предыдущих шагов настройте Postman на выполнение аутентифицированного HTTP-запроса POST, состоящего из нескольких частей.
 
-1. На вкладке **Верхний колонтитул** добавьте ключ заголовка HTTP-запроса **Content-Type** со значением `multipart/mixed`.
+1. На вкладке **заголовки** добавьте **тип содержимого** "ключ заголовка HTTP-запроса" со значением `multipart/mixed`.
 
    [тип содержимого ![multipart/Mixed](media/how-to-configure-postman/content-type.png)](media/how-to-configure-postman/content-type.png#lightbox)
 
 1. Сериализируйте текстовые данные в файлы. Данные JSON будут сохранены в качестве JSON-файла.
 1. На вкладке **текст** выберите `form-data`. 
-1. Добавьте каждый файл, назначив имя **ключа** , выбрав `file`.
+1. Добавьте каждый файл, назначив имя **ключа** , выбрав `File`.
 1. Далее выберите каждый файл, используя кнопку **Выберите файл**.
 
    [Пример клиента ![POST](media/how-to-configure-postman/form-body.png)](media/how-to-configure-postman/form-body.png#lightbox)
@@ -133,7 +124,7 @@ ms.locfileid: "74014176"
    > * Необходимо указать эти заголовки для каждой части.
    > * Вы должны выбрать `multipart/mixed` или другой подходящий **Content-Type** для всего запроса.
 
-1. Наконец, выберите **Отправить** , чтобы отправить многокомпонентный запрос HTTP POST.
+1. Наконец, выберите **Отправить** , чтобы отправить многокомпонентный запрос HTTP POST. Код состояния `200` или `201` указывает на Успешный запрос. Также появится соответствующее ответное сообщение.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

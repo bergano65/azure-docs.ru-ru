@@ -1,17 +1,14 @@
 ---
 title: Расширение политики Azure для Visual Studio Code
 description: Узнайте, как использовать расширение политики Azure для Visual Studio Code поиска псевдонимов диспетчер ресурсов.
-author: DCtheGeek
-ms.author: dacoulte
 ms.date: 11/04/2019
 ms.topic: conceptual
-ms.service: azure-policy
-ms.openlocfilehash: 20af29c40ec13add90294e28d64f0166acc95319
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: cbc0e14ed70fbacc297126aef58cd722d2235a3d
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73514814"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74072036"
 ---
 # <a name="use-azure-policy-extension-for-visual-studio-code"></a>Использование расширения политики Azure для Visual Studio Code
 
@@ -24,11 +21,11 @@ ms.locfileid: "73514814"
 > [!NOTE]
 > Изменения, внесенные локально в политики, просмотренные в расширении политики Azure для Visual Studio Code, не синхронизируются с Azure.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 Для выполнения действий в этом руководстве необходимы такие компоненты:
 
-- Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+- Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/) , прежде чем начинать работу.
 - [Visual Studio Code](https://code.visualstudio.com).
 
 ## <a name="install-azure-policy-extension"></a>Установка расширения политики Azure
@@ -156,11 +153,11 @@ ms.locfileid: "73514814"
 
 В строке меню выберите **вид** > **Палитра команд**, а затем введите **Azure: выйти**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Просмотрите примеры в [примерах политики Azure](../samples/index.md).
 - Изучите статью о [структуре определения Политики Azure](../concepts/definition-structure.md).
-- Изучите [сведения о действии политик](../concepts/effects.md).
+- См. дополнительные сведения о [действиях политик](../concepts/effects.md).
 - Узнайте, как [программно создавать политики](programmatically-create.md).
 - Узнайте, как [исправлять несоответствующие ресурсы](remediate-resources.md).
 - Дополнительные сведения о группе управления см. в статье [Упорядочивание ресурсов с помощью групп управления Azure](../../management-groups/overview.md).

@@ -9,17 +9,18 @@ ms.topic: conceptual
 ms.date: 11/22/2018
 ms.author: dacurwin
 ms.asset: 0c4127f2-d936-48ef-b430-a9198e425d81
-ms.openlocfilehash: e9c7d5f79f2af77554122b607aeae470a1145954
-ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
+ms.openlocfilehash: 6f00b51cc5ac23aa8d1d39202ca79a9f5d762cbc
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71827296"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74074807"
 ---
 # <a name="release-notes-for-microsoft-azure-backup-server"></a>Заметки о выпуске Microsoft Azure Backup Server
+
 В этой статье представлены известные проблемы и их решения для Microsoft Azure Backup Server (MABS) версии 3.
 
-##  <a name="backup-and-recovery-fails-for-clustered-workloads"></a>Сбои резервного копирования и восстановления для кластеризованных рабочих нагрузок
+## <a name="backup-and-recovery-fails-for-clustered-workloads"></a>Сбои резервного копирования и восстановления для кластеризованных рабочих нагрузок
 
 **Описание.** Происходит сбой резервного копирования и восстановления для кластеризованных источников данных, например, таких как кластер Hyper-V, SQL (SQL Always On) или Exchange в группе доступности базы данных (DAG), после обновления с MABS версии 2 до MABS версии 3.
 
@@ -52,30 +53,29 @@ ms.locfileid: "71827296"
     GO
 ```
 
-
-##  <a name="upgrade-to-mabs-v3-fails-in-russian-locale"></a>Сбои при обновлении до MABS версии 3 в русском языковом стандарте
+## <a name="upgrade-to-mabs-v3-fails-in-russian-locale"></a>Сбои при обновлении до MABS версии 3 в русском языковом стандарте
 
 **Описание.** Обновление с MABS версии 2 до MABS версии 3 в русском языковом стандарте завершается сбоем с кодом ошибки **4387**.
 
 **Обходной путь.** Выполните следующие действия для обновления до MABS версии 3 с помощью русского пакета установки:
 
-1.  [Создайте резервную копию](https://docs.microsoft.com/sql/relational-databases/backup-restore/create-a-full-database-backup-sql-server?view=sql-server-2017#SSMSProcedure) базы данных SQL и удалите MABS версии 2 (выберите сохранение защищенных данных во время удаления).
-2.  Обновитесь до SQL 2017 (Enterprise) и удалите отчеты в рамках обновления.
+1. [Создайте резервную копию](https://docs.microsoft.com/sql/relational-databases/backup-restore/create-a-full-database-backup-sql-server?view=sql-server-2017#SSMSProcedure) базы данных SQL и удалите MABS версии 2 (выберите сохранение защищенных данных во время удаления).
+2. Обновитесь до SQL 2017 (Enterprise) и удалите отчеты в рамках обновления.
 3. [Установите](https://docs.microsoft.com/sql/reporting-services/install-windows/install-reporting-services?view=sql-server-2017#install-your-report-server) SQL Server Reporting Services (SSRS).
-4.  [Установите](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) SQL Server Management Studio (SSMS).
-5.  Настройте отчетность с использованием параметров, как описано в разделе о [настройке SSRS с помощью SQL 2017](https://docs.microsoft.com/azure/backup/backup-azure-microsoft-azure-backup#upgrade-mabs).
-6.  [Установите](backup-azure-microsoft-azure-backup.md) MABS версии 3.
+4. [Установите](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) SQL Server Management Studio (SSMS).
+5. Настройте отчетность с использованием параметров, как описано в разделе о [настройке SSRS с помощью SQL 2017](https://docs.microsoft.com/azure/backup/backup-azure-microsoft-azure-backup#upgrade-mabs).
+6. [Установите](backup-azure-microsoft-azure-backup.md) MABS версии 3.
 7. [Восстановите](https://docs.microsoft.com/sql/relational-databases/backup-restore/restore-a-database-backup-using-ssms?view=sql-server-2017) SQL с помощью SSMS и запустите средство DPM-Sync, как описано [здесь](https://docs.microsoft.com/previous-versions/system-center/data-protection-manager-2010/ff634215(v=technet.10)).
-8.  Обновите свойство DataBaseVersion в таблице dbo.tbl_DLS_GlobalSetting, используя следующую команду:
+8. Обновите свойство DataBaseVersion в таблице dbo.tbl_DLS_GlobalSetting, используя следующую команду:
+
 ```sql
         UPDATE dbo.tbl_DLS_GlobalSetting
         set PropertyValue = '13.0.415.0'
         where PropertyName = 'DatabaseVersion'
 ```
 
-9.  Запустите службу MSDPM.
+9. Запустите службу MSDPM.
 
-
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 [Новые возможности в Microsoft Azure Backup Server](backup-mabs-whats-new-mabs.md)

@@ -1,17 +1,14 @@
 ---
 title: Сведения о политике Azure для AKS Engine
 description: Узнайте, как политика Azure использует Кустомресаурцедефинитионс и открывает агент политики из привратника v3 для управления кластерами с помощью AKS Engine.
-author: DCtheGeek
-ms.author: dacoulte
 ms.date: 11/04/2019
 ms.topic: conceptual
-ms.service: azure-policy
-ms.openlocfilehash: 71f3f26b9ea7f24d674c911e18c785b0798a072c
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 904575680b62233ad5ec7422abbf66cf57dc4e11
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73512136"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74072063"
 ---
 # <a name="understand-azure-policy-for-aks-engine"></a>Общие сведения о политике Azure для AKS Engine
 
@@ -32,13 +29,13 @@ ms.locfileid: "73512136"
 - [Назначение определения политики для ядра AKS](#built-in-policies)
 - [Ожидание проверки](#validation-and-reporting-frequency)
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 Прежде чем устанавливать надстройку политики Azure или включить какие-либо функции службы, ваша подписка должна включить поставщик ресурсов **Microsoft. полициинсигхтс** и создать назначение роли для субъекта-службы кластера. 
 
 1. Чтобы включить поставщик ресурсов, выполните действия, описанные в разделе [поставщики ресурсов и типы](../../../azure-resource-manager/resource-manager-supported-services.md#azure-portal) , либо выполните команду Azure CLI или Azure PowerShell.
 
-   - Azure CLI
+   - Интерфейс командной строки Azure
 
      ```azurecli-interactive
      # Log in first with az login if you're not using Cloud Shell
@@ -279,11 +276,11 @@ kubectl logs gatekeeper-controller-manager-0 -n $NAMESPACE
 - Исключения и ошибки, обнаруженные надстройкой политики Azure во время установки агента при оценке политики
 - Число политик привратника, не установленных надстройкой политики Azure
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Просмотрите примеры в [примерах политики Azure](../samples/index.md).
 - См. дополнительные сведения о [структуре определения Политики Azure](definition-structure.md).
-- Изучите [сведения о действии политик](effects.md).
+- См. дополнительные сведения о [действиях политик](effects.md).
 - Узнайте, как [программно создавать политики](../how-to/programmatically-create.md).
 - Узнайте, как [получить данные о соответствии](../how-to/getting-compliance-data.md).
 - Узнайте, как [исправлять несоответствующие ресурсы](../how-to/remediate-resources.md).

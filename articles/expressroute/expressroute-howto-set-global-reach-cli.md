@@ -1,5 +1,5 @@
 ---
-title: 'Настройка ExpressRoute Global Reach: Azure CLI | Документация Майкрософт'
+title: 'Azure ExpressRoute: Настройка Global Reach ExpressRoute: CLI'
 description: В этой статье содержатся сведения о том, как связать каналы ExpressRoute, чтобы настроить частную сеть между локальными сетями и включить Global Reach.
 services: expressroute
 author: jaredr80
@@ -7,15 +7,14 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 12/12/2018
 ms.author: jaredro
-ms.custom: seodec18
-ms.openlocfilehash: 89ada41c5f3c9cf1ca7a2ac707363f57080c361d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: eda0011ea4d259d0e60cb894c2b42325ddfc2eb7
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64869978"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74076632"
 ---
-# <a name="configure-expressroute-global-reach-by-using-the-azure-cli"></a>Настройка ExpressRoute глобальным доступом с помощью Azure CLI
+# <a name="configure-expressroute-global-reach-by-using-the-azure-cli"></a>Настройка Global Reach ExpressRoute с помощью Azure CLI
 
 Эта статья поможет вам настроить Azure ExpressRoute Global Reach путем использования Azure CLI. См. дополнительные сведения об [ExpressRoute Global Reach](expressroute-global-reach.md).
  
@@ -48,13 +47,13 @@ az account set --subscription <your subscription ID>
 
 ### <a name="identify-your-expressroute-circuits-for-configuration"></a>Определение каналов ExpressRoute для конфигурации
 
-Вы можете включить ExpressRoute глобальным доступом между любые два канала ExpressRoute, пока они находятся в поддерживаемые страны или регионы и были созданы в разных местах пиринга. Если подписке принадлежат оба канала, вы можете выбрать канал для выполнения конфигурации, как описано далее в этой статье. Если два канала находятся в разных подписках Azure, вам необходимо будет выполнить авторизацию из одной подписки Azure и передать ключ авторизации при выполнении команды конфигурации в другой подписке Azure.
+Можно включить ExpressRoute Global Reach между любыми двумя каналами ExpressRoute, если они находятся в поддерживаемых странах и регионах и были созданы в различных расположениях пиринга. Если подписке принадлежат оба канала, вы можете выбрать канал для выполнения конфигурации, как описано далее в этой статье. Если два канала находятся в разных подписках Azure, вам необходимо будет выполнить авторизацию из одной подписки Azure и передать ключ авторизации при выполнении команды конфигурации в другой подписке Azure.
 
 ## <a name="enable-connectivity-between-your-on-premises-networks"></a>Настройка подключения между локальными сетями
 
 При выполнении команды для настройки подключения следует учитывать следующие требования для значений параметров:
 
-* Параметр *peer-circuit* должен представлять полный идентификатор ресурса. Пример:
+* Параметр *peer-circuit* должен представлять полный идентификатор ресурса. Например,
 
   > /subscriptions/{идентификатор_вашей_подписки}/resourceGroups/{ваша_группа_ресурсов}/providers/Microsoft.Network/expressRouteCircuits/{имя_вашего_канала}
 
@@ -149,7 +148,7 @@ az network express-route peering connection delete -g <ResourceGroupName> --circ
 
 После завершения этой операции вы потеряете подключение к локальным сетям через каналы ExpressRoute.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Получение дополнительных сведений об ExpressRoute Global Reach](expressroute-global-reach.md).
 * [Проверка подключения ExpressRoute](expressroute-troubleshooting-expressroute-overview.md).

@@ -1,5 +1,5 @@
 ---
-title: Шифрование дисков Azure для Linux | Документация Майкрософт
+title: Шифрование дисков Azure для Linux
 description: Развертывание шифрования дисков Azure на виртуальной машине Linux с помощью расширения виртуальной машины.
 services: virtual-machines-linux
 documentationcenter: ''
@@ -13,20 +13,20 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 06/10/2019
 ms.author: ejarvi
-ms.openlocfilehash: 1801ca8bd59153de81ef680253da229e2bd4a338
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.openlocfilehash: 4fa7f7d1419a8cd1006a632ba67587ab3434bf5a
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72597871"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74073811"
 ---
 # <a name="azure-disk-encryption-for-linux-microsoftazuresecurityazurediskencryptionforlinux"></a>Шифрование дисков Azure для Linux (Microsoft.Azure.Security.AzureDiskEncryptionForLinux)
 
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
 
 Шифрование дисков Azure использует подсистему dm-crypt в Linux для шифрования всего диска в [выбранных дистрибутивах Azure Linux](https://aka.ms/adelinux).  Решение интегрируется с Azure Key Vault, обеспечивая управление секретами и ключами шифрования диска.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 Полный список необходимых компонентов см. в разделах [Шифрование дисков Azure для виртуальных машин Linux](../linux/disk-encryption-overview.md), в частности следующие разделы:
 
@@ -132,23 +132,23 @@ ms.locfileid: "72597871"
 
 ### <a name="property-values"></a>Значения свойств
 
-| Name | Значение и пример | Тип данных |
+| имя | Значение и пример | Тип данных |
 | ---- | ---- | ---- |
-| версия_API | 2015-06-15 | date |
-| publisher | Microsoft.Azure.Security | string |
-| Тип | AzureDiskEncryptionForLinux | string |
-| typeHandlerVersion | 0,1, 1,1 | int |
-| (схема 0,1) аадклиентид | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | GUID | 
-| (схема 0,1) AADClientSecret | пароль | string |
-| (схема 0,1) аадклиентцертификате | thumbprint | string |
+| версия_API | 2015-06-15 | дата |
+| publisher | Microsoft.Azure.Security | строка |
+| type | AzureDiskEncryptionForLinux | строка |
+| typeHandlerVersion | 0.1, 1.1 | int |
+| (схема 0.1) AADClientID | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | guid | 
+| (схема 0,1) AADClientSecret | password | строка |
+| (схема 0,1) аадклиентцертификате | thumbprint | строка |
 | DiskFormatQuery | {"dev_path":"","name":"","file_system":""} | Словарь JSON |
-| EncryptionOperation | EnableEncryption, EnableEncryptionFormatAll | string | 
-| KeyEncryptionAlgorithm | 'RSA-OAEP', 'RSA-OAEP-256', 'RSA1_5' | string |
-| KeyEncryptionKeyURL | URL-адрес | string |
-| используемых кэйваултурл | URL-адрес | string |
-| Парольная фраза | пароль | string | 
-| SequenceVersion | uniqueidentifier | string |
-| VolumeType | ОС, данные, все | string |
+| EncryptionOperation | EnableEncryption, EnableEncryptionFormatAll | строка | 
+| KeyEncryptionAlgorithm | 'RSA-OAEP', 'RSA-OAEP-256', 'RSA1_5' | строка |
+| KeyEncryptionKeyURL | url | строка |
+| используемых KeyVaultURL | url | строка |
+| Парольная фраза | password | строка | 
+| SequenceVersion | uniqueidentifier | строка |
+| VolumeType | ОС, данные, все | строка |
 
 ## <a name="template-deployment"></a>Развертывание шаблона
 
@@ -168,6 +168,6 @@ ms.locfileid: "72597871"
 
 Если в любой момент при изучении этой статьи вам потребуется дополнительная помощь, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/community/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните "Получить поддержку". Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о расширениях виртуальных машин см. в обзоре [расширений и компонентов виртуальной машины для Linux](features-linux.md).

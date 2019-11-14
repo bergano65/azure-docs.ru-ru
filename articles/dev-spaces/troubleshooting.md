@@ -9,12 +9,12 @@ ms.date: 09/25/2019
 ms.topic: conceptual
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s '
-ms.openlocfilehash: 0afdc0ac246e4cacbd4f45cca36c3c57b1c26e02
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: 5d327dd1041172bc546b2e0cb5ec3a140f401d84
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74005994"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74072190"
 ---
 # <a name="troubleshooting-guide"></a>Руководство по устранению неполадок
 
@@ -94,9 +94,13 @@ azure-cli                         2.0.60 *
 
 Чтобы устранить эту проблему, обновите установку [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) до 2.0.63 или более поздней версии. Это обновление позволяет устранить сообщение об ошибке, полученное при запуске `az aks use-dev-spaces`. Кроме того, можно продолжить использовать текущую версию Azure CLI и CLI Azure Dev Spaces.
 
-### <a name="aks-clusters-with-api-server-authorized-ip-address-ranges-enabled"></a>Кластеры AKS с разрешенными диапазонами IP-адресов сервера API
+### <a name="error-unable-to-reach-kube-apiserver"></a>Ошибка "не удается связаться с KUBE-аписервер"
 
-Если для кластера AKS включены [Разрешенные диапазоны IP-адресов сервера API](../aks/api-server-authorized-ip-ranges.md) , необходимо также [создать](../aks/api-server-authorized-ip-ranges.md#create-an-aks-cluster-with-api-server-authorized-ip-ranges-enabled) или [Обновить](../aks/api-server-authorized-ip-ranges.md#update-a-clusters-api-server-authorized-ip-ranges) кластер, чтобы [разрешить дополнительные диапазоны на основе вашего региона](https://github.com/Azure/dev-spaces/tree/master/public-ips).
+Эта ошибка может появиться, когда Azure Dev Spaces не удается подключиться к серверу API кластера AKS. 
+
+Если доступ к серверу API кластера AKS заблокирован или у вас есть [Разрешенные диапазоны IP-адресов сервера API](../aks/api-server-authorized-ip-ranges.md) для кластера AKS, необходимо также [создать](../aks/api-server-authorized-ip-ranges.md#create-an-aks-cluster-with-api-server-authorized-ip-ranges-enabled) или [Обновить](../aks/api-server-authorized-ip-ranges.md#update-a-clusters-api-server-authorized-ip-ranges) кластер, чтобы [разрешить дополнительные диапазоны на основе вашего региона](https://github.com/Azure/dev-spaces/tree/master/public-ips).
+
+Убедитесь, что сервер API доступен, выполнив команды kubectl. Если сервер API недоступен, обратитесь в службу поддержки AKS и повторите попытку, когда сервер API будет работать.
 
 ## <a name="common-issues-when-preparing-your-project-for-azure-dev-spaces"></a>Распространенные проблемы при подготовке проекта к Azure Dev Spaces
 

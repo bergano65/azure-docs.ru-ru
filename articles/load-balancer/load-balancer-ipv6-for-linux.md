@@ -1,7 +1,7 @@
 ---
 title: Настройка DHCPv6 для виртуальных машин Linux
 titlesuffix: Azure Load Balancer
-description: Узнайте, как настроить DHCPv6 для виртуальных машин Linux.
+description: Из этой статьи вы узнаете, как настроить DHCPv6 для виртуальных машин Linux.
 services: load-balancer
 documentationcenter: na
 author: asudbring
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/22/2019
 ms.author: allensu
-ms.openlocfilehash: 3e987b6718ead6b7014ec302d1a186dabef11126
-ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
+ms.openlocfilehash: 1eea6d71b06bac47dcc4fdca9302ee937e0fd54d
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68274915"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74077033"
 ---
 # <a name="configure-dhcpv6-for-linux-vms"></a>Настройка DHCPv6 для виртуальных машин Linux
 
@@ -56,7 +56,7 @@ ms.locfileid: "68274915"
     ```
 Начиная с Ubuntu 17,10, механизмом сетевой конфигурации по умолчанию является [нетплан]( https://netplan.io).  При установке или создании экземпляра НЕТПЛАН считывает конфигурацию сети из файлов конфигурации YAML в этом расположении:/{Либ, т. е. Run}/нетплан/*. YAML.
 
-Для каждого интерфейса Ethernet в конфигурации необходимо включить инструкцию *dhcp6: true* .  Пример:
+Для каждого интерфейса Ethernet в конфигурации необходимо включить инструкцию *dhcp6: true* .  Например,
   
         network:
           version: 2
@@ -64,7 +64,7 @@ ms.locfileid: "68274915"
             eno1:
               dhcp6: true
 
-Во время раннего запуска нетплан "модуль подготовки отчетов" записывает конфигурацию в/Run для передачи управления устройствами в указанную сетевую управляющую программу для справочных сведений об НЕТПЛАН https://netplan.io/reference, см. в разделе.
+Во время раннего запуска нетплан "модуль подготовки отчетов" записывает конфигурацию в/Run для передачи управления устройствами в указанную сетевую управляющую программу для справочных сведений об НЕТПЛАН, см. https://netplan.io/reference.
  
 ## <a name="debian"></a>Debian
 

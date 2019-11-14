@@ -1,5 +1,5 @@
 ---
-title: 'Связывание виртуальной сети с каналом ExpressRoute — CLI: Azure | Документация Майкрософт'
+title: 'Azure ExpressRoute: связывание виртуальной сети с цепью: CLI'
 description: В этой статье показано, как связать виртуальные сети с каналами ExpressRoute с помощью модели развертывания Resource Manager и Azure CLI.
 services: expressroute
 author: cherylmc
@@ -7,14 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 05/21/2019
 ms.author: cherylmc
-ms.reviewer: anzaman
-ms.custom: seodec18
-ms.openlocfilehash: d858c83fb6669e5348b4256931e080656be0ebad
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: a8814030e6c4345227ec05ea1554104e0b21efbc
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67621056"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74076543"
 ---
 # <a name="connect-a-virtual-network-to-an-expressroute-circuit-using-cli"></a>Подключение виртуальной сети к каналу ExpressRoute с помощью CLI
 
@@ -58,7 +56,7 @@ az network vpn-connection create --name ERConnection --resource-group ExpressRou
 
 Канал ExpressRoute может совместно использоваться несколькими подписками. На рисунке ниже схематично показан способ совместного использования каналов ExpressRoute несколькими подписками.
 
-Каждое маленькое облако внутри большого облака представляет подписки, принадлежащие различным подразделениям одной организации. Любое подразделение в организации может использовать свою собственную подписку для развертывания служб. Кроме того, оно может совместно использовать один выделенный канал ExpressRoute для подключения к корпоративной сети. Владельцем канала ExpressRoute может выступать один отдел (в этом примере — отдел ИТ). Другие подписки в организации могут использовать канал ExpressRoute.
+Каждое маленькое облако внутри большого облака представляет подписки, принадлежащие различным подразделениям одной организации. Любое подразделение в организации может использовать свою собственную подписку для развертывания служб. Кроме того, оно может совместно использовать один выделенный канал ExpressRoute для подключения к корпоративной сети. Владельцем канала ExpressRoute может выступать одно подразделение (в данном примере — ИТ-подразделение). Другие подписки в организации могут использовать канал ExpressRoute.
 
 > [!NOTE]
 > Плата за подключение и использование пропускной способности выделенного канала взимается с владельца канала ExpressRoute. Полоса пропускания распределяется между всеми виртуальными сетями.
@@ -154,11 +152,11 @@ az network vpn-connection update --name ERConnection --resource-group ExpressRou
 
 Диапазон значений *RoutingWeight*: 0 до 32 000. Значение по умолчанию — 0.
 
-## <a name="configure-expressroute-fastpath"></a>Настройка ExpressRoute FastPath 
-Вы можете включить [ExpressRoute FastPath](expressroute-about-virtual-network-gateways.md) Если ваша цепь ExpressRoute находится на [ExpressRoute Direct](expressroute-erdirect-about.md) и шлюз виртуальной newtork максимальной производительностью или ErGw3AZ. FastPath улучшает данных о производительности пути данных, например пакетов в секунду и соединений в секунду между локальной сетью и виртуальной сети. 
+## <a name="configure-expressroute-fastpath"></a>Настройка Фастпас ExpressRoute 
+Вы можете включить [ExpressRoute фастпас](expressroute-about-virtual-network-gateways.md) , если канал expressroute включен в [expressroute Direct](expressroute-erdirect-about.md) , а виртуальный шлюз сеть — Ultra Performance или ErGw3AZ. Фастпас улучшает предсоответствие пути к данным, например количество пакетов в секунду и количество подключений в секунду между локальной сетью и виртуальной сетью. 
 
 > [!NOTE] 
-> Если вы уже есть подключение к виртуальной сети, но еще не включили FastPath необходимо удалить подключение виртуальной сети и создать новую. 
+> Если у вас уже есть подключение к виртуальной сети, но оно не включено Фастпас, необходимо удалить подключение к виртуальной сети и создать новое. 
 > 
 >  
 
@@ -167,6 +165,6 @@ az network vpn-connection create --name ERConnection --resource-group ExpressRou
 ```
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения об ExpressRoute см. в статье [Вопросы и ответы по ExpressRoute](expressroute-faqs.md).

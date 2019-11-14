@@ -1,6 +1,6 @@
 ---
-title: Создание подсистемы балансировки нагрузки с доступом в Интернет и поддержкой IPv6 с помощью PowerShell
-titlesuffix: Azure Load Balancer
+title: Создание балансировщика нагрузки с выходом в Интернет с использованием IPv6 — Azure PowerShell
+titleSuffix: Azure Load Balancer
 description: Узнайте, как создать балансировщик нагрузки для Интернета с поддержкой IPv6 с помощью PowerShell для Resource Manager.
 services: load-balancer
 documentationcenter: na
@@ -14,21 +14,21 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/25/2017
 ms.author: allensu
-ms.openlocfilehash: 9f2bd24955cc378deed5dbc0423488645632a958
-ms.sourcegitcommit: d47a30e54c5c9e65255f7ef3f7194a07931c27df
+ms.openlocfilehash: fb697003da8c0604b2ce1e8956fcd434014b5b82
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73025804"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74077055"
 ---
 # <a name="get-started-creating-an-internet-facing-load-balancer-with-ipv6-using-powershell-for-resource-manager"></a>Приступая к созданию балансировщика нагрузки для Интернета с поддержкой IPv6 с помощью PowerShell для Resource Manager
 
 > [!div class="op_single_selector"]
 > * [PowerShell](load-balancer-ipv6-internet-ps.md)
-> * [Azure CLI](load-balancer-ipv6-internet-cli.md)
+> * [Интерфейс командной строки Azure](load-balancer-ipv6-internet-cli.md)
 > * [Шаблон](load-balancer-ipv6-internet-template.md)
 
->[! Примечание. изменение рекомендаций для IPv6] в этой статье описывается вводная функция IPv6, позволяющая базовым подсистемам балансировки нагрузки предоставлять подключения IPv4 и IPv6.  Более комплексное подключение IPv6 теперь доступно с [IPv6 для Azure виртуальных сетей](../virtual-network/ipv6-overview.md) , которое интегрирует IPv6-подключения с виртуальными сетями и включает основные функции, такие как правила группы безопасности сети IPv6, определяемую пользователем маршрутизацию IPv6, IPv6 Basic и Стандартная балансировка нагрузки и многое другое.  Рекомендуется использовать IPv6 для Azure виртуальных сетей — рекомендуемый подход для приложений IPv6 в Azure. 
+>[! Примечание. изменение рекомендаций для IPv6] в этой статье описывается вводная функция IPv6, позволяющая базовым подсистемам балансировки нагрузки предоставлять подключения IPv4 и IPv6.  Более комплексное подключение IPv6 теперь доступно с [IPv6 для Azure виртуальных сетей](../virtual-network/ipv6-overview.md) , которое интегрирует IPv6-подключения с виртуальными сетями и включает основные функции, такие как правила группы безопасности сети IPv6, определяемую пользователем маршрутизацию IPv6, базовую и стандартную балансировку нагрузки, а также многое другое.  Рекомендуется использовать IPv6 для Azure виртуальных сетей — рекомендуемый подход для приложений IPv6 в Azure. 
 >См. раздел [IPv6 для развертывания Azure vnet PowerShell](../virtual-network/virtual-network-ipv4-ipv6-dual-stack-standard-load-balancer-powershell.md) 
 
 Azure Load Balancer является балансировщиком нагрузки 4-го уровня (TCP, UDP). Балансировщик нагрузки обеспечивает высокий уровень доступности, распределяя входящий трафик между работоспособными экземплярами службы в облачных службах или виртуальных машинах, определенных в наборе балансировщика нагрузки. Azure Load Balancer может также представить данные службы на нескольких портах, нескольких IP-адресах или обоими этими способами.
@@ -44,9 +44,9 @@ Azure Load Balancer является балансировщиком нагруз
 В этом сценарии вы создадите следующие ресурсы Azure:
 
 * балансировщик нагрузки для Интернета с общедоступными IPv4- и IPv6-адресами;
-* два правила балансировки нагрузки для сопоставления общедоступных виртуальных IP-адресов с частными конечными точками;
+* два правила балансировки нагрузки для сопоставления общедоступных виртуальных IP-адресов с частными конечными точками.
 * группу доступности, которая содержит две виртуальные машины;
-* две виртуальные машины.
+* две виртуальные машины;
 * виртуальный сетевой интерфейс для каждой виртуальной машины с назначенными IPv4 и IPv6-адресами.
 
 ## <a name="deploying-the-solution-using-the-azure-powershell"></a>Развертывание решения с помощью Azure PowerShell
@@ -81,7 +81,7 @@ Azure Load Balancer является балансировщиком нагруз
     Get-AzSubscription
     ```
 
-3. Выберите, какие подписки Azure будут использоваться.
+3. Выберите подписку Azure.
 
     ```azurepowershell-interactive
     Select-AzSubscription -SubscriptionId 'GUID of subscription'
