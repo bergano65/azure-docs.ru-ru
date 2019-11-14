@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 09/09/2019
+ms.date: 10/24/2019
 ms.author: jingwang
-ms.openlocfilehash: 424007c6bd34c0d582af8cd4df00ce7f5fc7fb0f
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 24a9450b63ba4ed68c9c68e5054e6b02ecf7e0d0
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73680147"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74075573"
 ---
 # <a name="copy-data-to-and-from-sql-server-by-using-azure-data-factory"></a>Копирование данных в SQL Server и из них с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите версию фабрики данных Azure, которую вы используете:"]
@@ -48,7 +48,7 @@ ms.locfileid: "73680147"
 >[!NOTE]
 >SQL Server [Always encrypted](https://docs.microsoft.com/sql/relational-databases/security/encryption/always-encrypted-database-engine?view=sql-server-2017) сейчас не поддерживается этим соединителем. Для решения этой проблемы можно использовать [универсальный соединитель ODBC](connector-odbc.md) и драйвер SQL Server ODBC. Следуйте указаниям [по](https://docs.microsoft.com/sql/connect/odbc/using-always-encrypted-with-the-odbc-driver?view=sql-server-2017) загрузке драйвера ODBC и настройке строки подключения.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 [!INCLUDE [data-factory-v2-integration-runtime-requirements](../../includes/data-factory-v2-integration-runtime-requirements.md)]
 
@@ -62,12 +62,12 @@ ms.locfileid: "73680147"
 
 Для связанной службы SQL Server поддерживаются следующие свойства:
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | ОПИСАНИЕ | обязательные |
 |:--- |:--- |:--- |
-| type | Для свойства type необходимо задать значение **SqlServer**. | Да |
-| connectionString |Укажите сведения о **ConnectionString** , необходимые для подключения к SQL Server базе данных с помощью проверки подлинности SQL или Windows. Ознакомьтесь с приведенными ниже примерами.<br/>Пометьте это поле как **SecureString** , чтобы безопасно хранить его в фабрике данных Azure. Вы также можете добавить пароль в Azure Key Vault. Если это проверка подлинности SQL, вытяните конфигурацию `password` из строки подключения. Дополнительные сведения см. в примере JSON, который следует за таблицей, и [Храните учетные данные в Azure Key Vault](store-credentials-in-key-vault.md). |Да |
+| type | Для свойства type необходимо задать значение **SqlServer**. | Yes |
+| connectionString |Укажите сведения о **ConnectionString** , необходимые для подключения к SQL Server базе данных с помощью проверки подлинности SQL или Windows. Ознакомьтесь с приведенными ниже примерами.<br/>Пометьте это поле как **SecureString** , чтобы безопасно хранить его в фабрике данных Azure. Вы также можете добавить пароль в Azure Key Vault. Если это проверка подлинности SQL, вытяните конфигурацию `password` из строки подключения. Дополнительные сведения см. в примере JSON, который следует за таблицей, и [Храните учетные данные в Azure Key Vault](store-credentials-in-key-vault.md). |Yes |
 | userName |При использовании проверки подлинности Windows укажите имя пользователя. Например, **domainname\\username**. |Нет |
-| пароль |Укажите пароль для учетной записи пользователя, указанной для имени пользователя. Пометьте это поле как **SecureString** , чтобы безопасно хранить его в фабрике данных Azure. Или можно [сослаться на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). |Нет |
+| password |Укажите пароль для учетной записи пользователя, указанной для имени пользователя. Пометьте это поле как **SecureString** , чтобы безопасно хранить его в фабрике данных Azure. Или можно [сослаться на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). |Нет |
 | connectVia | Это [среда выполнения интеграции](concepts-integration-runtime.md) для подключения к хранилищу данных. Дополнительные сведения см. в разделе " [Предварительные требования](#prerequisites) ". Если значение не указано, используется среда выполнения интеграции Azure по умолчанию. |Нет |
 
 >[!TIP]
@@ -155,9 +155,9 @@ ms.locfileid: "73680147"
 
 Чтобы скопировать данные из SQL Server базу данных и в нее, поддерживаются следующие свойства:
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | ОПИСАНИЕ | обязательные |
 |:--- |:--- |:--- |
-| type | Свойство type для набора данных должно иметь значение **SqlServerTable**. | Да |
+| type | Свойство type для набора данных должно иметь значение **SqlServerTable**. | Yes |
 | schema | Имя схемы. |"Нет" для источника, "Да" для приемника  |
 | таблица | Имя таблицы или представления. |"Нет" для источника, "Да" для приемника  |
 | tableName | Имя таблицы или представления со схемой. Это свойство поддерживается для обеспечения обратной совместимости. Для новой рабочей нагрузки используйте `schema` и `table`. | "Нет" для источника, "Да" для приемника |
@@ -191,9 +191,9 @@ ms.locfileid: "73680147"
 
 Чтобы скопировать данные из SQL Server, задайте тип источника **SqlSource** в действии копирования. В разделе source для действия копирования поддерживаются следующие свойства.
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | ОПИСАНИЕ | обязательные |
 |:--- |:--- |:--- |
-| type | Свойство type для источника действия копирования должно иметь значение **SqlSource**. | Да |
+| type | Свойство type для источника действия копирования должно иметь значение **SqlSource**. | Yes |
 | sqlReaderQuery |Используйте пользовательский SQL-запрос для чтения данных. Например, `select * from MyTable`. |Нет |
 | sqlReaderStoredProcedureName |Это свойство содержит имя хранимой процедуры, которая считывает данные из исходной таблицы. Последней инструкцией SQL должна быть инструкция SELECT в хранимой процедуре. |Нет |
 | storedProcedureParameters |Это параметры для хранимой процедуры.<br/>Допустимые значения: пары имен или значений. Имена и регистр параметров должны совпадать с именами и регистром параметров хранимой процедуры. |Нет |
@@ -201,7 +201,7 @@ ms.locfileid: "73680147"
 **Примечания:**
 
 - Если для **SqlSource**указан **sqlReaderQuery** , действие копирования выполняет этот запрос к источнику SQL Server для получения данных. Есть и другой вариант: создать хранимую процедуру, указав ее имя в **sqlReaderStoredProcedureName** и параметры в **storedProcedureParameters**, если она принимает параметры.
-- Если не указать ни **sqlReaderQuery** , ни **sqlReaderStoredProcedureName**, то для создания запроса используются столбцы, определенные в разделе Structure набора данных JSON. Запрос `select column1, column2 from mytable` выполняется по отношению к SQL Server. Если в определении набора данных нет раздела structure, выбираются все столбцы из таблицы.
+- Если не указать ни **sqlReaderQuery** , ни **sqlReaderStoredProcedureName**, то для создания запроса используются столбцы, определенные в разделе Structure набора данных JSON. `select column1, column2 from mytable` запроса выполняется в SQL Server. Если в определении набора данных нет раздела structure, выбираются все столбцы из таблицы.
 
 **Пример. Использование SQL Query**
 
@@ -297,9 +297,9 @@ GO
 
 Чтобы скопировать данные в базу данных SQL Server, установите тип приемника **SqlSink** в действии копирования. В разделе sink для действия копирования поддерживаются следующие свойства.
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | ОПИСАНИЕ | обязательные |
 |:--- |:--- |:--- |
-| type | Свойство type для приемника действия копирования должно иметь значение **SqlSink**. | Да |
+| type | Свойство type для приемника действия копирования должно иметь значение **SqlSink**. | Yes |
 | writeBatchSize |Число строк, вставляемых в таблицу SQL для *каждого пакета*.<br/>Допустимые значения: целое число (количество строк). По умолчанию фабрика данных Azure динамически определяет соответствующий размер пакета в зависимости от размера строки. |Нет |
 | writeBatchTimeout |Это свойство определяет время ожидания при выполнении операции пакетной вставки, по истечении которого она считается не выполненной.<br/>Допустимые значения — для интервала времени. Например, "00:30:00" в течение 30 минут. Если значение не указано, время ожидания по умолчанию равно "02:00:00". |Нет |
 | preCopyScript |Это свойство задает SQL-запрос для выполнения действия копирования перед записью данных в SQL Server. Он вызывается однократно при каждом запуске копирования. Это свойство можно использовать для очистки предварительно загруженных данных. |Нет |
@@ -461,7 +461,7 @@ END
     )
     ```
 
-2. В своей базе данных определите хранимую процедуру с тем же именем, что и **SqlWriterStoredProcedureName**. Она обрабатывает входные данные из указанного источника и выполняет их слияние в выходную таблицу. Имя параметра типа таблицы в хранимой процедуре совпадает с именем **TableName** , определенным в наборе данных.
+2. В базе данных Определите хранимую процедуру с тем же именем, что и **sqlWriterStoredProcedureName**. Она обрабатывает входные данные из указанного источника и выполняет их слияние в выходную таблицу. Имя параметра типа таблицы в хранимой процедуре совпадает с именем **TableName** , определенным в наборе данных.
 
     ```sql
     CREATE PROCEDURE spOverwriteMarketing @Marketing [dbo].[MarketingType] READONLY, @category varchar(256)
@@ -483,9 +483,9 @@ END
     ```json
     "sink": {
         "type": "SqlSink",
-        "SqlWriterStoredProcedureName": "spOverwriteMarketing",
+        "sqlWriterStoredProcedureName": "spOverwriteMarketing",
         "storedProcedureTableTypeParameterName": "Marketing",
-        "SqlWriterTableType": "MarketingType",
+        "sqlWriterTableType": "MarketingType",
         "storedProcedureParameters": {
             "category": {
                 "value": "ProductA"
@@ -501,16 +501,16 @@ END
 | Типы данных SQL Server | Промежуточный тип данных Фабрики данных Azure |
 |:--- |:--- |
 | bigint |Int64 |
-| binary; |Byte[] |
-| bit |Логический |
-| char; |String, Char[] |
+| binary |Byte[] |
+| bit |Логическое значение. |
+| char |String, Char[] |
 | дата |DateTime |
 | Datetime |DateTime |
 | datetime2 |DateTime |
 | Datetimeoffset |Datetimeoffset |
 | DECIMAL |DECIMAL |
 | Атрибут FILESTREAM (varbinary(max)) |Byte[] |
-| Float |Double |
+| Float |Double, |
 | изображение |Byte[] |
 | int |Int32 |
 | money |DECIMAL |
@@ -518,16 +518,16 @@ END
 | ntext |String, Char[] |
 | numeric |DECIMAL |
 | nvarchar |String, Char[] |
-| real; |Single |
+| real |Single |
 | rowversion |Byte[] |
 | smalldatetime; |DateTime |
 | smallint |Int16 |
 | smallmoney |DECIMAL |
-| sql_variant |Объект |
+| sql_variant |Объект. |
 | text |String, Char[] |
 | time |TimeSpan |
 | Timestamp |Byte[] |
-| tinyint; |Int16 |
+| tinyint |Int16 |
 | uniqueidentifier |Guid |
 | varbinary; |Byte[] |
 | varchar. |String, Char[] |
@@ -563,5 +563,5 @@ END
 5. Создайте на компьютере **правило брандмауэра Windows** , чтобы разрешить входящий трафик через этот порт. 
 6. **Проверить подключение**. чтобы подключиться к SQL Server с помощью полного имени, используйте SQL Server Management Studio с другого компьютера. Например, `"<machine>.<domain>.corp.<company>.com,1433"`.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 Список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в Фабрике данных Azure см. в [этой таблице](copy-activity-overview.md##supported-data-stores-and-formats).

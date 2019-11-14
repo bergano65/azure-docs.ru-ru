@@ -1,26 +1,26 @@
 ---
-title: Настройка параметров роли ресурсов Azure в управление привилегированными пользователями-Azure Active Directory | Документация Майкрософт
+title: Настройка параметров роли ресурсов Azure в PIM — Azure AD | Документация Майкрософт
 description: Узнайте, как настроить параметры роли ресурсов Azure в Azure AD Privileged Identity Management (PIM).
 services: active-directory
 documentationcenter: ''
 author: curtand
-manager: mtillman
+manager: daveba
 ms.service: active-directory
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: pim
-ms.date: 10/23/2019
+ms.date: 11/08/2019
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5f322fed83f89fea64c8d834dd0c72ab9c279c11
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: a302e723aa898a62bc43ecb38343bcf026dc769e
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72895793"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74022936"
 ---
 # <a name="configure-azure-resource-role-settings-in-privileged-identity-management"></a>Настройка параметров роли ресурсов Azure в управление привилегированными пользователями
 
@@ -117,7 +117,7 @@ ms.locfileid: "72895793"
 
 1. После указания всех параметров роли выберите **Обновить** , чтобы сохранить изменения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Назначение ролей ресурсов Azure в управление привилегированными пользователями](pim-resource-roles-assign-roles.md)
 - [Настройка оповещений системы безопасности для ролей ресурсов Azure в управление привилегированными пользователями](pim-resource-roles-configure-alerts.md)

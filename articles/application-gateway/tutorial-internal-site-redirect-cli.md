@@ -1,23 +1,19 @@
 ---
-title: Создание шлюза приложений с внутренним перенаправлением при помощи Azure CLI | Документация Майкрософт
+title: Внутреннее перенаправление с помощью интерфейса командной строки
+titleSuffix: Azure Application Gateway
 description: Узнайте, как создать шлюз приложений, который перенаправляет внутренний веб-трафик в соответствующий пул с помощью Azure CLI.
 services: application-gateway
 author: vhorne
-manager: jpconnock
-editor: tysonn
 ms.service: application-gateway
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 7/14/2018
+ms.date: 11/14/2018
 ms.author: victorh
-ms.openlocfilehash: 6a4a47f93054c4c93043b5215371b5eea7244d46
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: eea3f4bb38b0a6a796bc2ba7c8652f20ce159735
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73834993"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74074473"
 ---
 # <a name="create-an-application-gateway-with-internal-redirection-using-the-azure-cli"></a>Создание шлюза приложений с перенаправлением внутреннего трафика при помощи Azure CLI
 
@@ -28,11 +24,11 @@ ms.locfileid: "73834993"
 > [!div class="checklist"]
 > * Настройка сети
 > * Создание шлюза приложений
-> * добавление прослушивателей и правила перенаправления;
+> * Добавление прослушивателей и правила перенаправления.
 > * создание масштабируемого набора виртуальных машин с внутренним пулом;
-> * создание записи CNAME в домене.
+> * Создание записи CNAME в домене.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -101,7 +97,7 @@ az network application-gateway create \
 
 ## <a name="add-listeners-and-rules"></a>Добавление прослушивателей и правил 
 
-Прослушиватель требуется для того, чтобы шлюз приложений правильно маршрутизировал трафик на внутренние пулы. В этом руководстве создаются два прослушивателя для двух ваших доменов. В этом примере прослушиватели создаются для доменов *www\.contoso.com* и *www\.contoso.org*.
+Прослушиватель требуется, чтобы шлюз приложений правильно маршрутизировал трафик в серверный пул. В этом руководстве создаются два прослушивателя для двух ваших доменов. В этом примере прослушиватели создаются для доменов *www\.contoso.com* и *www\.contoso.org*.
 
 Добавьте серверные прослушиватели, необходимые для маршрутизации трафика, при помощи команды [az network application-gateway http-listener create](/cli/azure/network/application-gateway).
 
@@ -197,7 +193,7 @@ az vmss extension set \
 
 ## <a name="create-cname-record-in-your-domain"></a>Создание записи CNAME в домене
 
-После создания шлюза приложений с общедоступным IP-адресом можно получить DNS-адрес и использовать его для создания записи CNAME в своем домене. С помощью команды [az network public-ip show](/cli/azure/network/public-ip) можно получить DNS-адрес шлюза приложений. Скопируйте значение *fqdn* для DNSSettings и используйте его в качестве значения создаваемой записи CNAME. Использование записей A не рекомендуется, так как виртуальный IP-адрес может измениться после перезапуска шлюза приложений.
+После создания шлюза приложений с общедоступным IP-адресом можно получить DNS-адрес и использовать его для создания записи CNAME в своем домене. С помощью команды [az network public-ip show](/cli/azure/network/public-ip) можно получить DNS-адрес шлюза приложений. Скопируйте значение *fqdn* для DNSSettings и используйте его в качестве значения создаваемой записи CNAME. Использовать записи A не рекомендуется, так как виртуальный IP-адрес может измениться после перезапуска шлюза приложений.
 
 ```azurecli-interactive
 az network public-ip show \
@@ -215,16 +211,16 @@ az network public-ip show \
 
 Измените адрес на другой домен, например http://www.contoso.org и вы увидите, что трафик был перенаправлен обратно в прослушиватель для www\.contoso.com.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Из этого руководства вы узнали, как выполнить следующие задачи:
 
 > [!div class="checklist"]
 > * Настройка сети
 > * Создание шлюза приложений
-> * добавление прослушивателей и правила перенаправления;
+> * Добавление прослушивателей и правила перенаправления.
 > * создание масштабируемого набора виртуальных машин с внутренним пулом;
-> * создание записи CNAME в домене.
+> * Создание записи CNAME в домене.
 
 > [!div class="nextstepaction"]
 > [Дополнительные сведения о возможностях шлюза приложений](./application-gateway-introduction.md)

@@ -1,18 +1,19 @@
 ---
-title: Устранение неполадок шлюза приложений Azure со службой приложений — перенаправление в URL-адрес службы приложений
+title: Устранение неполадок перенаправления в URL-адрес службы приложений
+titleSuffix: Azure Application Gateway
 description: В этой статье содержатся сведения о том, как устранить проблему перенаправления при использовании шлюза приложений Azure со службой приложений Azure.
 services: application-gateway
 author: abshamsft
 ms.service: application-gateway
 ms.topic: article
-ms.date: 07/19/2019
+ms.date: 11/14/2019
 ms.author: absha
-ms.openlocfilehash: ef2bbf8804e96a3e25f053d189c6d85bfa845b0b
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: d43efd6dbd344f666c23b1ad4414ceb29992e996
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73833175"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74074481"
 ---
 # <a name="troubleshoot-app-service-issues-in-application-gateway"></a>Устранение неполадок службы приложений в шлюзе приложений
 
@@ -142,6 +143,6 @@ Set-AzApplicationGateway -ApplicationGateway $gw
 
   X-Powered-By: ASP.NET
   ```
-  ## <a name="next-steps"></a>Дальнейшие действия
+  ## <a name="next-steps"></a>Дополнительная информация
 
 Если описанные выше действия не помогли устранить проблему, отправьте запрос в [службу поддержки](https://azure.microsoft.com/support/options/).

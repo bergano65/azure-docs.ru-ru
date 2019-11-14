@@ -16,12 +16,12 @@ ms.date: 04/04/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 04/04/2019
-ms.openlocfilehash: c9754c1d7fee5af13de6176dbf8a1ca6e57a71eb
-ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
+ms.openlocfilehash: 3aaa99caca461d4b8e339cf4c1f7847adef4027a
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71213150"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74076847"
 ---
 # <a name="diagnose-dropped-notifications-in-azure-notification-hubs"></a>Диагностика удаленных уведомлений в центрах уведомлений Azure
 
@@ -31,9 +31,9 @@ ms.locfileid: "71213150"
 
 ![Архитектура Центров уведомлений][0]
 
-В типичном потоке отправки уведомлений сообщение отправляется из *серверной части приложения* в Центры уведомлений. Центры уведомлений обрабатывают все регистрации. Он учитывает настроенные теги и выражения тегов для определения целевых объектов. Целевые объекты — это регистрации, которые должны получить push-уведомление. Эти регистрации могут охватывать любую из наших поддерживаемых платформ: Android, Baidu (устройства Android в Китае), пожарная ОС (Amazon) iOS, Windows и Windows Phone.
+В типичном потоке отправки уведомлений сообщение отправляется из *серверной части приложения* в Центры уведомлений. Центры уведомлений обрабатывают все регистрации. Он учитывает настроенные теги и выражения тегов для определения целевых объектов. Целевые объекты — это регистрации, которые должны получить push-уведомление. Эти регистрации могут охватывать любую из поддерживаемых платформ: Android, Baidu (устройства Android в Китае), пожарная ОС (Amazon) iOS, Windows и Windows Phone.
 
-Определив цели, Центры уведомлений отправляют сообщения в *службу push-уведомлений* для платформы устройства. В качестве примера можно привести службу push-уведомлений Apple (APNs) для Apple и Firebase Cloud Messaging (FCM) для Google. Центры уведомлений отправляют сообщения, разделенные по нескольким пакетам регистраций. Он выполняет проверку подлинности с помощью соответствующей службы push-уведомлений на основе учетных данных, установленных в портал Azure, в разделе **Настройка центра уведомлений**. Затем служба push-уведомлений пересылает уведомления на соответствующие *клиентские устройства*.
+Определив цели, Центры уведомлений отправляют сообщения в *службу push-уведомлений* для платформы устройства. Примеры включают службу push-уведомлений Apple (APNs) для iOS и macOS, а также Firebase Cloud Messaging (FCM) для устройств Android. Центры уведомлений отправляют сообщения, разделенные по нескольким пакетам регистраций. Он выполняет проверку подлинности с помощью соответствующей службы push-уведомлений на основе учетных данных, установленных в портал Azure, в разделе **Настройка центра уведомлений**. Затем служба push-уведомлений пересылает уведомления на соответствующие *клиентские устройства*.
 
 Последняя часть доставки уведомлений — это между службой push-уведомлений платформы и устройством. Доставка уведомлений может завершиться сбоем на любом из четырех этапов процесса push-уведомления (клиент, серверная часть приложения, центры уведомлений и Служба push-уведомлений платформы). Дополнительные сведения об архитектуре Центров уведомлений см. в [Концентраторы уведомлений Azure].
 
@@ -103,7 +103,7 @@ ms.locfileid: "71213150"
 
 В этом случае сбойная регистрация удаляется из базы данных. Затем мы повторяем попытку доставки уведомлений для остальных устройств в этом пакете.
 
-Чтобы получить дополнительные сведения об ошибке неудачной попытки доставки для регистрации, можно использовать для телеметрии сообщений интерфейсы API [для концентраторов уведомлений: Получение данных телеметрии](https://msdn.microsoft.com/library/azure/mt608135.aspx) сообщений уведомлений и [PNS отзывов](https://msdn.microsoft.com/library/azure/mt705560.aspx). Пример кода приведен в [репозитории примеров для отправки с помощью REST](https://github.com/Azure/azure-notificationhubs-dotnet/tree/master/Samples/SendRestExample/).
+Чтобы получить дополнительные сведения об ошибке неудачной попытки доставки для регистрации, можно использовать API-интерфейсы для интерфейсов RESTFUL для передачи сообщений [уведомлений](https://msdn.microsoft.com/library/azure/mt608135.aspx) и [PNS Отзывы](https://msdn.microsoft.com/library/azure/mt705560.aspx). Пример кода приведен в [репозитории примеров для отправки с помощью REST](https://github.com/Azure/azure-notificationhubs-dotnet/tree/master/Samples/SendRestExample/).
 
 ## <a name="push-notification-service-issues"></a>Проблемы службы push-уведомлений
 
@@ -125,9 +125,9 @@ ms.locfileid: "71213150"
 
 #### <a name="push-notification-service-developer-portal"></a>Портал разработчика службы push-уведомлений ####
 
-Проверьте учетные данные на соответствующем портале разработчика службы push-уведомлений (APNs, FCM, служба уведомлений Windows и т. д.). Дополнительные сведения см. в статье [Руководство отправке уведомлений в приложения универсальной платформы Windows с использованием Центров уведомлений Azure](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-windows-store-dotnet-get-started-wns-push-notification).
+Проверьте учетные данные на соответствующем портале разработчика службы push-уведомлений (APNs, FCM, служба уведомлений Windows и т. д.). Дополнительные сведения см. [в статье учебник. Отправка уведомлений в универсальная платформа Windows приложения с помощью центров уведомлений Azure](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-windows-store-dotnet-get-started-wns-push-notification).
 
-#### <a name="azure-portal"></a>портала Azure ####
+#### <a name="azure-portal"></a>портале Azure ####
 
 Чтобы проверить и сопоставить учетные данные с данными, полученными на портале разработчика службы push-уведомлений, перейдите на вкладку **политики доступа** в портал Azure.
 
@@ -145,22 +145,22 @@ ms.locfileid: "71213150"
 
 Щелкните правой кнопкой мыши Центр уведомлений в **Обозреватель сервера**и выберите пункт **Диагностика**. 
 
-![Обозреватель сервера Visual Studio: Меню диагностики](./media/notification-hubs-diagnosing/diagnose-menu.png)
+![Обозреватель сервера Visual Studio: меню "Диагностика"](./media/notification-hubs-diagnosing/diagnose-menu.png)
 
 Вы увидите следующую страницу:
 
-![Visual Studio. Диагностика страницы](./media/notification-hubs-diagnosing/diagnose-page.png)
+![Visual Studio: страница "Диагностика"](./media/notification-hubs-diagnosing/diagnose-page.png)
 
 Перейдите на страницу **регистрации устройств** .
 
-![Visual Studio. Регистрация устройств](./media/notification-hubs-diagnosing/VSRegistrations.png)
+![Visual Studio: регистрация устройств](./media/notification-hubs-diagnosing/VSRegistrations.png)
 
 Вы можете использовать страницу **Тестовая Отправка** для отправки тестового сообщения уведомления:
 
-![Visual Studio. Тестовая отправка](./media/notification-hubs-diagnosing/test-send-vs.png)
+![Visual Studio: Тестовая Отправка](./media/notification-hubs-diagnosing/test-send-vs.png)
 
 > [!NOTE]
-> Используйте Visual Studio для изменения регистраций только во время разработки или тестирования, а также с ограниченным количеством регистраций. Если вам необходимо выполнить небольшую правку регистрации, рассмотрите возможность использования функций регистрации экспорта и импорта, описанных [в статье как: Экспорт и изменение регистраций в групповой](https://msdn.microsoft.com/library/dn790624.aspx)операции.
+> Используйте Visual Studio для изменения регистраций только во время разработки или тестирования, а также с ограниченным количеством регистраций. Если вам необходимо выполнить многофункциональное изменение регистраций, рассмотрите возможность использования функций регистрации экспорта и импорта, описанных в статье [как выполнять операции экспорта и изменения регистраций](https://msdn.microsoft.com/library/dn790624.aspx).
 
 #### <a name="service-bus-explorer"></a>Service Bus Explorer ####
 
@@ -168,7 +168,7 @@ ms.locfileid: "71213150"
 
 ### <a name="verify-message-notifications"></a>Проверка уведомлений о сообщениях
 
-#### <a name="azure-portal"></a>портала Azure ####
+#### <a name="azure-portal"></a>портале Azure ####
 
 Чтобы отправить тестовые уведомления клиентам, не запуская серверную часть службы, в разделе **Поддержка и устранение неполадок** выберите **Тестовая отправка**.
 
@@ -183,7 +183,7 @@ ms.locfileid: "71213150"
 Дополнительные сведения об использовании Центров уведомлений с помощью обозревателя серверов в Visual Studio см. в следующих статьях:
 
 * [Просмотр регистраций устройств для концентраторов уведомлений](https://docs.microsoft.com/previous-versions/windows/apps/dn792122(v=win.10))
-* [Deep Dive: Visual Studio 2013 Update 2 RC and Azure SDK 2.3] (Подробный обзор. Релиз-кандидат Visual Studio 2013 с обновлением 2 и пакет Azure SDK 2.3)
+* [Подробный обзор релиз-кандидата Visual Studio 2013 с обновлением 2 и пакета Azure SDK 2.3]
 * [Объявление о выпуске Visual Studio 2013 с обновлением 3 и пакета Azure SDK 2.4]
 
 ### <a name="debug-failed-notifications-and-review-notification-outcome"></a>Уведомления о сбоях отладки и просмотр результатов уведомлений
@@ -196,7 +196,7 @@ ms.locfileid: "71213150"
 
 Информацию об ошибках службы push-уведомлений можно получить с помощью свойства [Сведения о свойстве EnableTestSend]. Оно автоматически включается при отправке тестового сообщения с портала или клиентского приложения Visual Studio Это свойство можно использовать для просмотра подробных сведений об отладке, а также через API. Сейчас его можно использовать в пакете SDK для .NET. В конечном итоге он будет добавлен во все клиентские пакеты SDK.
 
-Чтобы использовать свойство `EnableTestSend` с вызовом REST, добавьте параметр строки запроса с именем *test* в конце вызова отправки. Пример:
+Чтобы использовать свойство `EnableTestSend` с вызовом REST, добавьте параметр строки запроса с именем *test* в конце вызова отправки. Например,
 
 ```text
 https://mynamespace.servicebus.windows.net/mynotificationhub/messages?api-version=2013-10&test
@@ -229,7 +229,7 @@ Console.WriteLine(result.State);
     }
 ```
 
-#### <a name="sample-output"></a>Пример полученных результатов ####
+#### <a name="sample-output"></a>Пример выходных данных ####
 
 ```text
 DetailedStateAvailable
@@ -245,7 +245,7 @@ The Token obtained from the Token Provider is wrong
 
 ### <a name="review-telemetry"></a>Просмотр телеметрии ###
 
-#### <a name="azure-portal"></a>портала Azure ####
+#### <a name="azure-portal"></a>портале Azure ####
 
 На портале вы можете получить краткий обзор всех операций, выполняемых в Центре уведомлений.
 
@@ -291,7 +291,7 @@ The Token obtained from the Token Provider is wrong
 [Export and modify registrations in bulk]: https://msdn.microsoft.com/library/dn790624.aspx
 [Service Bus Explorer code]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a
 [View device registrations for notification hubs]: https://msdn.microsoft.com/library/windows/apps/xaml/dn792122.aspx
-[Deep Dive: Visual Studio 2013 Update 2 RC and Azure SDK 2.3]: https://azure.microsoft.com/blog/2014/04/09/deep-dive-visual-studio-2013-update-2-rc-and-azure-sdk-2-3/#NotificationHubs (Подробный обзор. Релиз-кандидат Visual Studio 2013 с обновлением 2 и пакет Azure SDK 2.3)
+[Подробный обзор релиз-кандидата Visual Studio 2013 с обновлением 2 и пакета Azure SDK 2.3]: https://azure.microsoft.com/blog/2014/04/09/deep-dive-visual-studio-2013-update-2-rc-and-azure-sdk-2-3/#NotificationHubs
 [Объявление о выпуске Visual Studio 2013 с обновлением 3 и пакета Azure SDK 2.4]: https://azure.microsoft.com/blog/2014/08/04/announcing-release-of-visual-studio-2013-update-3-and-azure-sdk-2-4/
 [Сведения о свойстве EnableTestSend]: https://docs.microsoft.com/dotnet/api/microsoft.azure.notificationhubs.notificationhubclient.enabletestsend?view=azure-dotnet
 [Programmatic telemetry access]: https://msdn.microsoft.com/library/azure/dn458823.aspx

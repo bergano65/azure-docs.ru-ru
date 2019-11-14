@@ -1,5 +1,5 @@
 ---
-title: Выполнение пользовательских сценариев на виртуальных машинах Linux в Azure | Документация Майкрософт
+title: Выполнение пользовательских скриптов на виртуальных машинах Linux в Azure
 description: Автоматизируйте задачи настройки виртуальных машин Linux с помощью расширения настраиваемых скриптов версии 2.
 services: virtual-machines-linux
 documentationcenter: ''
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 04/25/2018
 ms.author: akjosh
-ms.openlocfilehash: 86c05519e7027ec8b7434919bf43f9b4602b0300
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: 87826b5bec4294ce45355ab0cfc4df373895563b
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72789954"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74073224"
 ---
 # <a name="use-the-azure-custom-script-extension-version-2-with-linux-virtual-machines"></a>Использование расширения настраиваемых скриптов Azure версии 2 на виртуальных машинах Linux
 Расширение настраиваемых скриптов версии 2 скачивает и выполняет скрипты на виртуальных машинах Azure. Это расширение можно использовать для настройки после развертывания, установки программного обеспечения и других задач настройки или управления. Сценарии можно скачать из службы хранилища Azure или другого расположения, доступного из Интернета, или передать в среду выполнения расширения. 
@@ -49,7 +49,7 @@ ms.locfileid: "72789954"
 
 Если скрипт расположен на локальном сервере, вам по-прежнему может потребоваться открыть дополнительные порты брандмауэра или группы безопасности сети.
 
-### <a name="tips-and-tricks"></a>Советы и хитрости
+### <a name="tips-and-tricks"></a>Советы и рекомендации
 * Высокий процент сбоев этого расширения связан с синтаксическими ошибками в скрипте. Чтобы упростить поиск точки сбоя, протестируйте запуски скрипта без ошибок и включите в скрипт дополнительные возможности ведения журнала.
 * Пишите идемпотентные скрипты, чтобы их случайные повторные запуски не приводили к изменениям системы.
 * Выполняемые скрипты не должны запрашивать ввод данных пользователем.
@@ -106,19 +106,19 @@ ms.locfileid: "72789954"
 
 ### <a name="property-values"></a>Значения свойств
 
-| Name | Значение и пример | Тип данных | 
+| имя | Значение и пример | Тип данных | 
 | ---- | ---- | ---- |
-| версия_API | 2019-03-01 | date |
-| publisher | Microsoft.Compute.Extensions | string |
-| Тип | CustomScript | string |
-| typeHandlerVersion | 2.0 | int |
+| версия_API | 2019-03-01 | дата |
+| publisher | Microsoft.Compute.Extensions | строка |
+| type | CustomScript | строка |
+| typeHandlerVersion | 2,0 | int |
 | fileUris (пример) | https://github.com/MyProject/Archive/MyPythonScript.py | array |
-| commandToExecute (пример) | MyPythonScript.py Python \<> My-Param1 | string |
-| script | IyEvYmluL3NoCmVjaG8gIlVwZGF0aW5nIHBhY2thZ2VzIC4uLiIKYXB0IHVwZGF0ZQphcHQgdXBncmFkZSAteQo= | string |
-| skipDos2Unix (например) | false | Логическое |
+| commandToExecute (пример) | MyPythonScript.py Python \<> My-Param1 | строка |
+| script | IyEvYmluL3NoCmVjaG8gIlVwZGF0aW5nIHBhY2thZ2VzIC4uLiIKYXB0IHVwZGF0ZQphcHQgdXBncmFkZSAteQo= | строка |
+| skipDos2Unix (например) | нет | логическое значение |
 | метка времени (например) | 123456789 | 32-битное целое число |
-| storageAccountName (пример) | examplestorageacct | string |
-| storageAccountKey (пример) | TmJK/1N3AbAZ3q/+hOXoi/l73zOqsaxXDhqa9Y83/v5UpXQp2DQIBuv2Tifp60cE/OaHsJZmQZ7teQfczQj8hg== | string |
+| storageAccountName (пример) | examplestorageacct | строка |
+| storageAccountKey (пример) | TmJK/1N3AbAZ3q/+hOXoi/l73zOqsaxXDhqa9Y83/v5UpXQp2DQIBuv2Tifp60cE/OaHsJZmQZ7teQfczQj8hg== | строка |
 
 ### <a name="property-value-details"></a>Сведения о значении свойства
 * `skipDos2Unix` — (необязательное, логическое) пропустите преобразование dos2unix URL-адресов файла на основе сценария или скрипта.
@@ -235,7 +235,7 @@ cat script | gzip -9 | base64 -w 0
 >[!NOTE]
 >В именах свойств учитывается регистр. Чтобы избежать проблем с развертыванием, используйте имена, как показано ниже.
 
-## <a name="azure-cli"></a>Azure CLI
+## <a name="azure-cli"></a>Интерфейс командной строки Azure
 При использовании Azure CLI для выполнения расширения пользовательских сценариев создайте один или несколько файлов конфигурации. Как минимум, требуется "commandToExecute".
 
 ```azurecli
@@ -257,7 +257,7 @@ az vm extension set \
   --protected-settings '{"fileUris": ["https://raw.githubusercontent.com/Microsoft/dotnet-core-sample-templates/master/dotnet-core-music-linux/scripts/config-music.sh"],"commandToExecute": "./config-music.sh"}'
 ```
 
-### <a name="azure-cli-examples"></a>Примеры с использованием интерфейса командной строки Azure
+### <a name="azure-cli-examples"></a>Примеры использования интерфейса командной строки Azure
 
 #### <a name="public-configuration-with-script-file"></a>Открытая конфигурация с файлом сценария
 
@@ -328,7 +328,7 @@ az vm extension set \
   --protected-settings ./protected-config.json
 ```
 
-## <a name="troubleshooting"></a>Устранение неисправностей
+## <a name="troubleshooting"></a>Устранение неполадок
 Расширение пользовательских сценариев при выполнении создает или загружает сценарий в каталог, как показано в примере ниже. Выходные данные команды также сохраняются в этот каталог в файлах `stdout` и `stderr`.
 
 ```bash
@@ -412,6 +412,6 @@ data:    Microsoft.OSTCExtensions    Microsoft.Insights.VMDiagnosticsSettings  2
 info:    vm extension get command OK
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 Код, текущие проблемы и версии доступны в [репозитории расширения CustomScript](https://github.com/Azure/custom-script-extension-linux).
 

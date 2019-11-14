@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: dacurwin
-ms.openlocfilehash: 7d09e7839356c040e6632ef728cc579abaa17268
-ms.sourcegitcommit: b1c94635078a53eb558d0eb276a5faca1020f835
+ms.openlocfilehash: d9272aa4a46a5835558be8c695b62ec0770e3827
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2019
-ms.locfileid: "72968352"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74074059"
 ---
 # <a name="faq-about-sql-server-databases-that-are-running-on-an-azure-vm-backup"></a>Часто задаваемые вопросы о SQL Server базах данных, работающих в резервной копии виртуальной машины Azure
 
@@ -62,7 +62,7 @@ ms.locfileid: "72968352"
 
 ## <a name="can-i-protect-availability-groups-on-premises"></a>Можно ли защитить группы доступности локально?
 
-Нет. Azure Backup защищает базы данных SQL Server, работающие в Azure. Если группа доступности (AG) распределена между Azure и локальными компьютерами, то для нее можно использовать защиту, только если первичная реплика выполняется в Azure. Кроме того, Azure Backup защищает только узлы, работающие в том же регионе Azure, что и хранилище служб восстановления.
+Нет Azure Backup защищает базы данных SQL Server, работающие в Azure. Если группа доступности (AG) распределена между Azure и локальными компьютерами, то для нее можно использовать защиту, только если первичная реплика выполняется в Azure. Кроме того, Azure Backup защищает только узлы, работающие в том же регионе Azure, что и хранилище служб восстановления.
 
 ## <a name="can-i-protect-availability-groups-across-regions"></a>Можно ли защитить группы доступности в разных регионах?
 
@@ -70,11 +70,11 @@ ms.locfileid: "72968352"
 
 ## <a name="do-successful-backup-jobs-create-alerts"></a>Отправляются ли оповещения об успешно выполненных заданиях резервного копирования?
 
-Нет. Для успешно выполненных заданий резервного копирования не создаются оповещения. Оповещения отправляются только в случае сбоя. Подробное поведение оповещений портала описано [здесь](backup-azure-monitoring-built-in-monitor.md). Тем не менее, если вы заинтересованы в наличии оповещений даже для успешного выполнения заданий, можно использовать [мониторинг с помощью Azure Monitor](backup-azure-monitoring-use-azuremonitor.md).
+Нет Для успешно выполненных заданий резервного копирования не создаются оповещения. Оповещения отправляются только в случае сбоя. Подробное поведение оповещений портала описано [здесь](backup-azure-monitoring-built-in-monitor.md). Тем не менее, если вы заинтересованы в наличии оповещений даже для успешного выполнения заданий, можно использовать [мониторинг с помощью Azure Monitor](backup-azure-monitoring-use-azuremonitor.md).
 
 ## <a name="can-i-see-scheduled-backup-jobs-in-the-backup-jobs-menu"></a>Можно ли просмотреть запланированные задания резервного копирования в меню задания резервного копирования?
 
-В меню " **Задание архивации** " отображаются только задания резервного копирования с нерегламентированными правами. Для отслеживания использования запланированных заданий [с помощью Azure Monitor](backup-azure-monitoring-use-azuremonitor.md).
+В меню " **Задание архивации** " отображаются только задания архивации по запросу. Для отслеживания использования запланированных заданий [с помощью Azure Monitor](backup-azure-monitoring-use-azuremonitor.md).
 
 ## <a name="are-future-databases-automatically-added-for-backup"></a>Добавляются ли автоматически будущие базы данных в резервное копирование?
 
@@ -104,6 +104,6 @@ ms.locfileid: "72968352"
 
   ![Обнаружение вновь добавленной базы данных вручную](./media/backup-azure-sql-database/view-newly-added-database.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Узнайте, как [создать резервную копию базы данных SQL Server](backup-azure-sql-database.md) , которая работает на виртуальной машине Azure.

@@ -1,5 +1,6 @@
 ---
-title: Создание самозаверяющего сертификата шлюза приложений Azure с помощью пользовательского корневого ЦС
+title: Создание самозаверяющего сертификата с помощью пользовательского корневого ЦС
+titleSuffix: Azure Application Gateway
 description: Узнайте, как создать самозаверяющий сертификат шлюза приложений Azure с помощью пользовательского корневого ЦС.
 services: application-gateway
 author: vhorne
@@ -7,12 +8,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 07/23/2019
 ms.author: victorh
-ms.openlocfilehash: 84a46e66bb6c36950a84fbeb2dacc3a8d6bcc241
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: fb3d2e70d9485c63d6de156abe9d192afa818814
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73833369"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74075086"
 ---
 # <a name="generate-an-azure-application-gateway-self-signed-certificate-with-a-custom-root-ca"></a>Создание самозаверяющего сертификата шлюза приложений Azure с помощью пользовательского корневого ЦС
 
@@ -29,7 +30,7 @@ ms.locfileid: "73833369"
 - Создание самозаверяющего сертификата, подписанного пользовательским центром сертификации
 - Отправка самозаверяющего корневого сертификата в шлюз приложений для проверки подлинности внутреннего сервера
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 - **[OpenSSL](https://www.openssl.org/) на компьютере под управлением Windows или Linux** 
 
@@ -178,7 +179,7 @@ openssl s_client -connect localhost:443 -servername www.fabrikam.com -showcerts
 
 Чтобы отправить сертификат в шлюзе приложений, необходимо экспортировать CRT-сертификат в формате CER с кодировкой 64. Поскольку CRT уже содержит открытый ключ в формате Base-64, просто Переименуйте расширение файла с CRT на CER. 
 
-### <a name="azure-portal"></a>Портал Azure
+### <a name="azure-portal"></a>портале Azure
 
 Чтобы отправить доверенный корневой сертификат с портала, выберите **Параметры HTTP** и выберите протокол **HTTPS** .
 
@@ -268,7 +269,7 @@ Set-AzApplicationGateway -ApplicationGateway $gw
 
     ![Проверка HTTPS](media/self-signed-certificates/https-probe.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о ССЛ\ТЛС в шлюзе приложений см. в разделе [Общие сведения о завершении работы SSL и сквозном использовании SSL с помощью шлюза приложений](ssl-overview.md).
 

@@ -1,22 +1,23 @@
 ---
-title: Мониторинг журналов доступа, журналов производительности, работоспособности серверной части и метрик для Шлюза приложений Azure
+title: Журналы работоспособности и диагностики серверной части
+titleSuffix: Azure Application Gateway
 description: Узнайте, как включить журналы доступа и производительности для Шлюза приложений Azure и управлять ими.
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: article
-ms.date: 10/09/2019
+ms.date: 11/14/2019
 ms.author: victorh
-ms.openlocfilehash: fa930d4ab420708e6abfdf1765703afbe20fa25e
-ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
+ms.openlocfilehash: 448e5bf798f5b1c3006888f846722e54fec46ef8
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73958260"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74075304"
 ---
 # <a name="back-end-health-and-diagnostic-logs-for-application-gateway"></a>Журналы работоспособности и диагностики серверной части для шлюза приложений
 
-С помощью шлюза приложений Azure можно отслеживать ресурсы следующим образом:
+Вы можете отслеживать ресурсы шлюза приложений Azure следующими способами.
 
 * [Работоспособность серверной части.](#back-end-health) Шлюз приложений позволяет отслеживать работоспособность серверов во внутренних пулах с помощью портала Azure и PowerShell. Состояние работоспособности внутренних пулов можно также узнать из журналов диагностики производительности.
 

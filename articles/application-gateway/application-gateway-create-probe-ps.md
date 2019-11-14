@@ -1,26 +1,19 @@
 ---
-title: Создание пользовательской пробы для шлюза приложений Azure с помощью PowerShell | Документация Майкрософт
+title: Создание пользовательской пробы с помощью PowerShell
+titleSuffix: Azure Application Gateway
 description: Узнайте, как создать пользовательскую проверку для шлюза приложений с помощью PowerShell в диспетчере ресурсов.
 services: application-gateway
-documentationcenter: na
 author: vhorne
-manager: jpconnock
-editor: ''
-tags: azure-resource-manager
-ms.assetid: 68feb660-7fa4-4f69-a7e4-bdd7bdc474db
 ms.service: application-gateway
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 04/26/2017
+ms.date: 11/14/2019
 ms.author: victorh
-ms.openlocfilehash: acd70bacd23755cd764bc782a297d80db3622424
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1fef24f4065ca6fc749f35a07143487e049ee6ea
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66135248"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74075272"
 ---
 # <a name="create-a-custom-probe-for-azure-application-gateway-by-using-powershell-for-azure-resource-manager"></a>Создание пользовательской проверки для шлюза приложений с помощью PowerShell для диспетчера ресурсов Azure
 
@@ -51,7 +44,7 @@ ms.locfileid: "66135248"
    Get-AzSubscription
    ```
 
-1. Выберите, какие подписки Azure будут использоваться.
+1. Выберите подписку Azure.
 
    ```powershell
    Select-AzSubscription -Subscriptionid '{subscriptionGuid}'
@@ -63,7 +56,7 @@ ms.locfileid: "66135248"
    New-AzResourceGroup -Name appgw-rg -Location 'West US'
    ```
 
-Диспетчер ресурсов Azure требует, чтобы все группы ресурсов указывали расположение. Это расположение используется в качестве расположения по умолчанию для всех ресурсов данной группы. Убедитесь, что во всех командах для создания шлюза приложений используется одна группа ресурсов.
+В диспетчере ресурсов Azure для всех групп ресурсов должно быть указано расположение. Это расположение используется в качестве расположения по умолчанию для всех ресурсов данной группы. Убедитесь, что во всех командах для создания шлюза приложений используется одна группа ресурсов.
 
 В примере выше мы создали группу ресурсов **appgw-RG** в **западной части США**.
 
@@ -202,7 +195,7 @@ DnsSettings              : {
                             }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-Узнайте, как настроить разгрузку SSL, посетив страницу: [Настройка разгрузки SSL](application-gateway-ssl-arm.md)
+Сведения о настройке разгрузки SSL см. в статье [Настройка шлюза приложений для разгрузки SSL с помощью диспетчера ресурсов Azure](application-gateway-ssl-arm.md)
 

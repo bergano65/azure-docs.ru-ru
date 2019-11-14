@@ -8,15 +8,15 @@ ms.topic: include
 ms.date: 11/06/2019
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 6fa1912e80a98c98f058931708e191d0fff5bc66
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: 345822847ddd60794cd912ccb52c14f6e240cd66
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73800087"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74075413"
 ---
 ### <a name="is-custom-ipsecike-policy-supported-on-all-azure-vpn-gateway-skus"></a>Поддерживается ли политика IPsec/IKE во всех номерах SKU VPN-шлюзов Azure?
-Политика IPsec/IKE поддерживается в VPN-шлюзах Azure класса **VpnGw1, VpnGw2, VpnGw3, Standard** и **HighPerformance**. SKU уровня **Базовый** **не** поддерживается.
+Пользовательская политика IPsec/IKE поддерживается во всех SKU Azure, за исключением номера SKU "базовый".
 
 ### <a name="how-many-policies-can-i-specify-on-a-connection"></a>Сколько политик можно указать для подключения?
 Можно указать только ***одну*** комбинацию политик для каждого подключения.
@@ -27,22 +27,22 @@ ms.locfileid: "73800087"
 ### <a name="what-are-the-algorithms-and-key-strengths-supported-in-the-custom-policy"></a>Какие алгоритмы и уровни стойкости ключей поддерживает настраиваемая политика?
 В таблице ниже перечислены поддерживаемые алгоритмы шифрования и уровни стойкости ключей, которые могут настроить клиенты. Необходимо выбрать один вариант для каждого поля.
 
-| **IPsec/IKEv1, IKEv2**  | **Варианты**                                                                   |
-| ---                     | ---                                                                           |
-| IKEv1, шифрование IKEv2 | AES256, AES192, AES128, DES3, DES                                             |
-| IKEv1, целостность IKEv2  | SHA384, SHA256, SHA1, MD5                                                     |
-| Группа DH                | DHGroup24, ECP384, ECP256, DHGroup14 (DHGroup2048), DHGroup2, DHGroup1, нет  |
-| Шифрование IPsec        | GCMAES256, GCMAES192, GCMAES128, AES256, AES192, AES128, DES3, DES, нет      |
-| Целостность IPsec         | GCMAES256, GCMAES192, GCMAES128, SHA256, SHA1, MD5                            |
-| Группа PFS               | PFS24, ECP384, ECP256, PFS2048, PFS2, PFS1, нет                              |
-| Время существования QM SA          | Секунды (целое число, **минимум 300**, по умолчанию — 27 000 с)<br>Килобайты (целое число, **минимум 1024**, по умолчанию — 102 400 000 КБ) |
-| Селектор трафика        | UsePolicyBasedTrafficSelectors ($True/$False; по умолчанию — $False)                 |
-|                         |                                                                               |
+| **IPsec/IKEv2**  | **Варианты**                                                                   |
+| ---              | ---                                                                           |
+| Шифрование IKEv2 | AES256, AES192, AES128, DES3, DES                                             |
+| Проверка целостности IKEv2  | SHA384, SHA256, SHA1, MD5                                                     |
+| Группа DH         | DHGroup24, ECP384, ECP256, DHGroup14 (DHGroup2048), DHGroup2, DHGroup1, нет |
+| Шифрование IPsec | GCMAES256, GCMAES192, GCMAES128, AES256, AES192, AES128, DES3, DES, нет      |
+| Целостность IPsec  | GCMAES256, GCMAES192, GCMAES128, SHA256, SHA1, MD5                            |
+| Группа PFS        | PFS24, ECP384, ECP256, PFS2048, PFS2, PFS1, нет                              |
+| Время существования QM SA   | Секунды (целое число, **минимум 300**, по умолчанию — 27 000 с)<br>Килобайты (целое число, **минимум 1024**, по умолчанию — 102 400 000 КБ)           |
+| Селектор трафика | UsePolicyBasedTrafficSelectors ($True/$False; по умолчанию — $False)                 |
+|                  |                                                                               |
 
 > [!IMPORTANT]
 > 1. DHGroup2048 и PFS2048 — это такие же группы, как и группа Диффи-Хелмана **14** в протоколе IKE и IPsec PFS. Полное сопоставление см. в разделе о [группах Диффи — Хелмана](#DH).
 > 2. В алгоритмах GCMAES необходимо указать одинаковую длину ключа и алгоритма для шифрования и целостности данных IPsec.
-> 3. Срок действия SA в основном режиме для IKEv1 и IKEv2 исключается через 28 800 секунд на VPN-шлюзах Azure.
+> 3. Время жизни SA в основном режиме зафиксировано в 28 800 секунд на VPN-шлюзах Azure.
 > 4. Время существования QM SA указывать необязательно. Если эти значения не указаны, по умолчанию используются значения 27 000 с (7,5 ч) и 102 400 000 КБ (102 ГБ).
 > 5. UsePolicyBasedTrafficSelector — это необязательный параметр при подключении. Чтобы получить информацию о параметре UsePolicyBasedTrafficSelectors, см. следующий вопрос и ответ.
 
@@ -74,7 +74,7 @@ ms.locfileid: "73800087"
 | ---                       | ---                      | ---          | ---            |
 | 1                         | DHGroup1                 | PFS1         | MODP (768 бит)   |
 | 2                         | DHGroup2                 | PFS2         | MODP (1024 бит)  |
-| 14.                        | DHGroup14<br>DHGroup2048 | PFS2048      | MODP (2048 бит)  |
+| 14                        | DHGroup14<br>DHGroup2048 | PFS2048      | MODP (2048 бит)  |
 | 19                        | ECP256                   | ECP256       | ECP (256 бит)    |
 | 20                        | ECP384                   | ECP384       | ECP (384 бит)    |
 | 24                        | DHGroup24                | PFS24        | MODP (2048 бит)  |
@@ -101,7 +101,7 @@ ms.locfileid: "73800087"
 Да. Туннель подключения между виртуальными сетями состоит из двух ресурсов Azure: для каждого направления используется один ресурс. Обоим ресурсам подключения следует назначить одну и ту же политику, иначе подключение между виртуальными сетями не будет установлено.
 
 ### <a name="does-custom-ipsecike-policy-work-on-expressroute-connection"></a>Работает ли настраиваемая политика IPsec/IKE для подключения ExpressRoute?
-Нет. Политика IPsec/IKE работает только для VPN-подключений типа "сеть — сеть" или "виртуальная сеть — виртуальная сеть" через VPN-шлюзы Azure.
+Нет Политика IPsec/IKE работает только для VPN-подключений типа "сеть — сеть" или "виртуальная сеть — виртуальная сеть" через VPN-шлюзы Azure.
 
 ### <a name="how-do-i-create-connections-with-ikev1-or-ikev2-protocol-type"></a>Разделы справки создать подключения с использованием типа протокола IKEv1 или IKEv2?
 Подключения IKEv1 могут создаваться для всех номеров SKU типа RouteBased VPN, за исключением номера SKU "базовый". При создании подключений можно указать тип протокола соединения IKEv1 или IKEv2. Если тип протокола соединения не указан, по умолчанию используется протокол IKEv2. Дополнительные сведения см. в документации по [командлетам PowerShell](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetworkgatewayconnection?) . Сведения о типах SKU и поддержке IKEv1/IKEv2 см. [в статье Подключение шлюзов к VPN-устройствам на основе политик](../articles/vpn-gateway/vpn-gateway-connect-multiple-policybased-rm-ps.md).
@@ -110,10 +110,10 @@ ms.locfileid: "73800087"
 Да. Поддерживается транзитное соединение между IKEv1 и IKEv2.
 
 ### <a name="can-i-have-ikev1-site-to-site-connections-on-basic-skus-of-routebased-vpn-type"></a>Могу ли я использовать для подключения типа "сеть — сеть" на уровне "базовый" RouteBased VPN?
-Нет. Все RouteBased VPN-SKU, за исключением основных номеров SKU на основе маршрутов, поддерживают подключения IKEv1 для типа "сеть — сеть".
+Нет Все RouteBased VPN-SKU, за исключением основных номеров SKU на основе маршрутов, поддерживают подключения IKEv1 для типа "сеть — сеть".
 
 ### <a name="can-i-change-the-connection-protocol-type-after-the-connection-is-created-ikev1-to-ikev2-and-vice-versa"></a>Можно ли изменить тип протокола подключения после создания подключения (IKEv1 в IKEv2 и наоборот)?
-Нет. После создания соединения невозможно изменить протоколы IKEv1/IKEv2. Необходимо удалить и повторно создать новое соединение с требуемым типом протокола.
+Нет После создания соединения невозможно изменить протоколы IKEv1/IKEv2. Необходимо удалить и повторно создать новое соединение с требуемым типом протокола.
 
 ### <a name="where-can-i-find-more-configuration-information-for-ipsec"></a>Где можно найти дополнительные сведения о конфигурации для IPsec?
 См. раздел [Настройка политики IPsec/IKE для подключений типа "сеть — сеть" или "виртуальная сеть — виртуальная сеть"](../articles/vpn-gateway/vpn-gateway-ipsecikepolicy-rm-powershell.md).

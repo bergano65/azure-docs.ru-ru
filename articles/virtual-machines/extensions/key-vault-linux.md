@@ -1,5 +1,5 @@
 ---
-title: Расширение виртуальной машины Azure Key Vault для Linux | Документация Майкрософт
+title: Расширение виртуальной машины Azure Key Vault для Linux
 description: Развертывание агента, выполняющего автоматическое обновление сертификатов Key Vault на виртуальных машинах с помощью расширения виртуальной машины.
 services: virtual-machines-linux
 author: msmbaldwin
@@ -7,12 +7,12 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.date: 09/23/2018
 ms.author: mbaldwin
-ms.openlocfilehash: 5991d3d2197822b239b946de66f020dd258f835a
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 2de8a072aec66c2c087541ed9620f3dbdc137ee9
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73584381"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74073002"
 ---
 # <a name="key-vault-virtual-machine-extension-for-linux"></a>Расширение виртуальной машины Key Vault для Linux
 
@@ -61,12 +61,12 @@ ms.locfileid: "73584381"
 > [!NOTE]
 > Наблюдаемые URL-адреса сертификатов должны иметь форму `https://myVaultName.vault.azure.net/secrets/myCertName`.
 > 
-> Это обусловлено тем, что путь `/secrets` возвращает полный сертификат, включая закрытый ключ, а путь `/certificates` — нет. Дополнительные сведения о сертификатах можно найти здесь: [Key Vault Certificates](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates#key-vault-certificates) .
+> Это связано с тем, что `/secrets` путь возвращает полный сертификат, включая закрытый ключ, а `/certificates` путь — нет. Дополнительные сведения о сертификатах можно найти здесь: [Key Vault Certificates](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates#key-vault-certificates) .
 
 
 ### <a name="property-values"></a>Значения свойств
 
-| Имя | Значение и пример | Тип данных |
+| имя | Значение и пример | Тип данных |
 | ---- | ---- | ---- |
 | версия_API | 2019-07-01 | дата |
 | publisher | Microsoft.Azure.KeyVault.Edp | строка |
@@ -74,9 +74,9 @@ ms.locfileid: "73584381"
 | typeHandlerVersion | 1.0 | int |
 | pollingIntervalInS | 3600 | строка |
 | certificateStoreName | MY | строка |
-| линконреневал | нет | Логическое |
+| линконреневал | нет | логическое значение |
 | certificateStoreLocation  | LocalMachine | строка |
-| рекуирединитиалсинк | Да | Логическое |
+| рекуирединитиалсинк | true | логическое значение |
 | observedCertificates  | ["https://myvault.vault.azure.net/secrets/mycertificate"] | массив строк
 
 
@@ -84,7 +84,7 @@ ms.locfileid: "73584381"
 
 Расширения виртуальной машины Azure можно развернуть с помощью шаблонов Azure Resource Manager. Шаблоны идеально подходят для развертывания одной или нескольких виртуальных машин, требующих обновления сертификатов, выполняемого после развертывания. Расширение можно развернуть на отдельных виртуальных машинах или в масштабируемых наборах виртуальных машин. Для обоих типов шаблонов используются общие схема и конфигурация. 
 
-Конфигурация JSON для расширения виртуальной машины должна быть вложена в фрагмент ресурса виртуальной машины шаблона, в частности `"resources": []` для шаблона виртуальной машины, а в случае масштабируемого набора виртуальных машин — с помощью объекта `"virtualMachineProfile":"extensionProfile":{"extensions" :[]`.
+Конфигурация JSON для расширения виртуальной машины должна быть вложена в фрагмент ресурса виртуальной машины шаблона, в частности `"resources": []` объект для шаблона виртуальной машины и в случае масштабируемого набора виртуальных машин в разделе `"virtualMachineProfile":"extensionProfile":{"extensions" :[]` объект.
 
 ```json
     {
@@ -201,7 +201,7 @@ Azure CLI можно использовать для развертывания 
 Get-AzVMExtension -VMName <vmName> -ResourceGroupname <resource group name>
 ```
 
-## <a name="azure-cli"></a>Azure CLI
+## <a name="azure-cli"></a>Интерфейс командной строки Azure
 ```azurecli
  az vm get-instance-view --resource-group <resource group name> --name  <vmName> --query "instanceView.extensions"
 ```

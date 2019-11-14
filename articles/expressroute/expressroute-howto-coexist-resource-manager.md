@@ -1,5 +1,5 @@
 ---
-title: 'Настройка подключения ExpressRoute и VPN-подключений типа "сеть — сеть" с существованием PowerShell: Azure | Документация Майкрософт'
+title: 'Настройка параллельных подключений ExpressRoute и S2S VPN: Azure PowerShell'
 description: Узнайте, как настроить параллельные подключения ExpressRoute и VPN-подключений типа "сеть — сеть" для модели развертывания с помощью Resource Manager, используя PowerShell.
 services: expressroute
 author: charwen
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 07/01/2019
 ms.author: charwen
 ms.custom: seodec18
-ms.openlocfilehash: 8a89c5121d5010245ce16cade921bb96346fcbf5
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: e25d6ff0bf0c27926040fcfe190724a666713a05
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73748315"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74031748"
 ---
 # <a name="configure-expressroute-and-site-to-site-coexisting-connections-using-powershell"></a>Настройка параллельных подключений "сеть — сеть" и ExpressRoute с помощью PowerShell
 > [!div class="op_single_selector"]
@@ -264,5 +264,5 @@ VPN-подключение типа "сеть-сеть" можно настро�
 
 Дополнительные сведения см. в статье [Настройка подключения типа "точка — сеть" к виртуальной сети с помощью PowerShell](../vpn-gateway/vpn-gateway-howto-point-to-site-rm-ps.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 Дополнительные сведения об ExpressRoute см. в статье [Вопросы и ответы по ExpressRoute](expressroute-faqs.md).

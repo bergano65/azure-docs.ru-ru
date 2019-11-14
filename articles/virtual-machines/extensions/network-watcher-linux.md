@@ -1,5 +1,5 @@
 ---
-title: Расширение виртуальной машины агента Наблюдателя за сетями Azure для Linux | Документация Майкрософт
+title: Расширение виртуальной машины агента наблюдателя за сетями Azure для Linux
 description: Развертывание агента Наблюдателя за сетями на виртуальной машине Linux с помощью расширения виртуальной машины.
 services: virtual-machines-linux
 documentationcenter: ''
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 02/14/2017
 ms.author: dennisg
-ms.openlocfilehash: b59e4c570032bdd3341dc7d519f23f4cd86984c7
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: c04b27ab4a8ea53e09ca3a133d6aef6457fe1526
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70084450"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74073034"
 ---
 # <a name="network-watcher-agent-virtual-machine-extension-for-linux"></a>Расширение виртуальной машины агента Наблюдателя за сетями для Linux
 
@@ -29,22 +29,22 @@ ms.locfileid: "70084450"
 
 В этой статье подробно описаны поддерживаемые платформы и параметры развертывания для расширения виртуальной машины для агента службы "Наблюдатель за сетями" для Linux. Установка агента не прерывает работу и не требует перезагрузки виртуальной машины. Расширение можно развернуть на развертываемой виртуальной машине. Если виртуальная машина развернута службой Azure, необходимо проверить документацию службы на наличие разрешения на установку расширения для виртуальной машины.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
-### <a name="operating-system"></a>Операционная система
+### <a name="operating-system"></a>операционная система
 
 Расширение виртуальной машины для агента службы "Наблюдатель за сетями" можно настроить для следующих дистрибутивов Linux.
 
-| Распространение | Version |
+| Дистрибутив | Версия |
 |---|---|
 | Ubuntu | 12+ |
 | Debian | 7 и 8 |
 | Red Hat | 6 и 7 |
-| Oracle Linux | 6.8+ и 7 |
+| Oracle Linux | 6.8 и выше и 7 |
 | SUSE Linux Enterprise Server | 11 и 12 |
-| OpenSUSE Leap | 42.3+ |
-| CentOS | 6.5+ и 7 |
-| CoreOS | 899.17.0+ |
+| OpenSUSE Leap | 42.3 или выше |
+| CentOS | 6.5 и выше и 7 |
+| CoreOS | 899.17.0 и выше |
 
 
 ### <a name="internet-connectivity"></a>Подключение к Интернету
@@ -75,9 +75,9 @@ ms.locfileid: "70084450"
 
 ### <a name="property-values"></a>Значения свойств
 
-| Название | Значение и пример |
+| имя | Значение и пример |
 | ---- | ---- |
-| apiVersion | 2015-06-15 |
+| версия_API | 2015-06-15 |
 | publisher | Microsoft.Azure.NetworkWatcher |
 | type | NetworkWatcherAgentLinux |
 | typeHandlerVersion | 1.4 |
@@ -103,7 +103,7 @@ azure vm extension set myVM1 NetworkWatcherAgentLinux Microsoft.Azure.NetworkWat
 az vm extension set --resource-group myResourceGroup1 --vm-name myVM1 --name NetworkWatcherAgentLinux --publisher Microsoft.Azure.NetworkWatcher --version 1.4
 ```
 
-## <a name="troubleshooting-and-support"></a>Поддержка и устранение неполадок
+## <a name="troubleshooting-and-support"></a>Устранение неполадок и поддержка
 
 ### <a name="troubleshooting"></a>Устранение неполадок
 

@@ -9,12 +9,12 @@ ms.service: backup
 ms.topic: troubleshooting
 ms.date: 07/05/2019
 ms.author: dacurwin
-ms.openlocfilehash: b344af71eac04cc355ba157e18d9de9d84a9cc63
-ms.sourcegitcommit: b1c94635078a53eb558d0eb276a5faca1020f835
+ms.openlocfilehash: 50db82206bbc0b98dcc80bd504022799011697d4
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2019
-ms.locfileid: "72969085"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74074134"
 ---
 # <a name="troubleshoot-azure-backup-failure-issues-with-the-agent-or-extension"></a>Устранение неполадок службы Azure Backup. Проблемы с агентом или расширением
 
@@ -29,7 +29,7 @@ ms.locfileid: "72969085"
 
 Возможно, агент виртуальной машины Azure остановлен, устарел, находится в нестабильном состоянии или не установлен, а служба Azure Backup не может активировать моментальные снимки.  
 
-- Если агент виртуальной машины остановлен или находится в нестабильном состоянии, **перезапустите агент** и повторите операцию резервного копирования (попробуйте выполнить прямое резервное копирование). Действия по перезапуску агента см. в статье [виртуальные машины Windows](https://docs.microsoft.com/azure/backup/backup-azure-troubleshoot-vm-backup-fails-snapshot-timeout#the-agent-installed-in-the-vm-but-unresponsive-for-windows-vms) или [Linux](https://docs.microsoft.com/azure/virtual-machines/linux/update-agent).
+- Если агент виртуальной машины остановлен или находится в нестабильном состоянии, **перезапустите агент** и повторите операцию резервного копирования (попробуйте выполнить резервное копирование по запросу). Действия по перезапуску агента см. в инструкциях для [виртуальных машин Windows](https://docs.microsoft.com/azure/backup/backup-azure-troubleshoot-vm-backup-fails-snapshot-timeout#the-agent-installed-in-the-vm-but-unresponsive-for-windows-vms) или [виртуальных машин Linux](https://docs.microsoft.com/azure/virtual-machines/linux/update-agent).
 - Если агент виртуальной машины не установлен или устарел, установите или обновите агент виртуальной машины и повторите операцию резервного копирования. Инструкции по установке и обновлению агента см. в статье [виртуальные машины Windows](https://docs.microsoft.com/azure/virtual-machines/extensions/agent-windows) или [виртуальные машины Linux](https://docs.microsoft.com/azure/virtual-machines/linux/update-agent).  
 
 ## <a name="guestagentsnapshottaskstatuserror---could-not-communicate-with-the-vm-agent-for-snapshot-status"></a>GuestAgentSnapshotTaskStatusError — не удалось запросить состояние моментального снимка в агенте виртуальной машины
@@ -173,7 +173,7 @@ ms.locfileid: "72969085"
 
    Если нужный процесс не запущен, выполните следующие команды для его перезапуска:
 
-   - Для Ubuntu: `service walinuxagent start`.
+   - Для Ubuntu: `service walinuxagent start`
    - Для других дистрибутивов: `service waagent start`.
 
 3. [Настройте автоматический перезапуск агента](https://github.com/Azure/WALinuxAgent/wiki/Known-Issues#mitigate_agent_crash).
@@ -239,15 +239,15 @@ ms.locfileid: "72969085"
 
 Чтобы очистить точки восстановления, воспользуйтесь любым из этих методов:<br>
 
-- [Очистка коллекции точек восстановления путем запуска нерегламентированного резервного копирования](#clean-up-restore-point-collection-by-running-ad-hoc-backup)<br>
+- [Очистка коллекции точек восстановления путем запуска резервного копирования по запросу](#clean-up-restore-point-collection-by-running-on-demand-backup)<br>
 - [Очистка коллекции точек восстановления на портале Azure](#clean-up-restore-point-collection-from-azure-portal)<br>
 
-#### <a name="clean-up-restore-point-collection-by-running-ad-hoc-backup"></a>Очистка коллекции точек восстановления путем запуска нерегламентированного резервного копирования
+#### <a name="clean-up-restore-point-collection-by-running-on-demand-backup"></a>Очистка коллекции точек восстановления путем запуска резервного копирования по запросу
 
-После удаления блокировки активируйте нерегламентированную или ручную архивацию. Это обеспечит автоматическую очистку точек восстановления. Ожидание нерегламентированного или ручного выполнения при первом сбое; Однако это обеспечит автоматическую очистку вместо удаления точек восстановления вручную. После очистки следующее запланированное резервное копирование должно быть выполнено успешно.
+После удаления блокировки активируйте резервную копию по запросу. Это обеспечит автоматическую очистку точек восстановления. Эта операция по требованию должна завершаться сбоем в первый раз; Однако это обеспечит автоматическую очистку вместо удаления точек восстановления вручную. После очистки следующее запланированное резервное копирование должно быть выполнено успешно.
 
 > [!NOTE]
-> Автоматическая очистка произойдет через несколько часов после запуска нерегламентированного или ручного резервного копирования. Если запланированное резервное копирование по-прежнему дает сбой, попробуйте вручную удалить коллекцию точек восстановления, выполнив действия, перечисленные [здесь](#clean-up-restore-point-collection-from-azure-portal).
+> Автоматическая очистка произойдет через несколько часов после запуска резервного копирования по запросу. Если запланированное резервное копирование по-прежнему дает сбой, попробуйте вручную удалить коллекцию точек восстановления, выполнив действия, перечисленные [здесь](#clean-up-restore-point-collection-from-azure-portal).
 
 #### <a name="clean-up-restore-point-collection-from-azure-portal">Очистка коллекции точек восстановления на портале Azure</a> <br>
 

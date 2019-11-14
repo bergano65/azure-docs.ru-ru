@@ -1,19 +1,19 @@
 ---
-title: Шаблоны Azure Resource Manager
-description: Описывает использование шаблонов Azure Resource Manager для развертывания ресурсов.
+title: Общие сведения о шаблонах Azure Resource Manager
+description: Описание преимуществ использования шаблонов Azure Resource Manager для развертывания ресурсов.
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 09/25/2019
 ms.author: tomfitz
-ms.openlocfilehash: 96f140cfa5e6151ad53ca242d1fc87ba3397316e
-ms.sourcegitcommit: 6eecb9a71f8d69851bc962e2751971fccf29557f
+ms.openlocfilehash: 956450e5a47e4d0e16de44b6bc72c6cb24d05889
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "71300154"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74074385"
 ---
-# <a name="azure-resource-manager-templates"></a>Шаблоны Azure Resource Manager
+# <a name="azure-resource-manager-templates-overview"></a>Общие сведения о шаблонах Azure Resource Manager
 
 При переходе в облако многие группы приняли гибкие методы разработки. Эти команды быстро проходят итерацию. Они должны постоянно развертывать свои решения в облаке и знать, что их инфраструктура находится в надежном состоянии. После того как инфраструктура стала частью итеративного процесса, подразделение между операциями и разработкой исчезло. Группам необходимо управлять инфраструктурой и кодом приложения с помощью единого процесса.
 
@@ -123,7 +123,8 @@ REQUEST BODY
 
 Дополнительные сведения см. в статье [Использование связанных шаблонов в Azure Resource Manager](resource-group-linked-templates.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
+* Пошаговые инструкции по созданию шаблона см. в разделе [учебник. Создание и развертывание первого шаблона Azure Resource Manager](template-tutorial-create-first-template.md).
 * Сведения о свойствах в файлах шаблонов см. в разделе сведения о [структуре и синтаксисе шаблонов Azure Resource Manager](resource-group-authoring-templates.md).
 * Дополнительные сведения об экспорте шаблонов см. в разделе [Краткое руководство. Создание и развертывание шаблонов Azure Resource Manager с помощью портал Azure](./resource-manager-quickstart-create-templates-use-the-portal.md).

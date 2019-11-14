@@ -1,19 +1,19 @@
 ---
-title: Настройка политики SSL в шлюзе приложений Azure с помощью PowerShell
+title: Настройка политики SSL с помощью PowerShell
+titleSuffix: Azure Application Gateway
 description: В этой статье содержатся инструкции по настройке политики SSL на шлюзе приложений Azure
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: article
-ms.workload: infrastructure-services
-ms.date: 12/3/2018
+ms.date: 11/14/2019
 ms.author: victorh
-ms.openlocfilehash: 5c881a42cdd6fd76c591cf12b341fd777d18baea
-ms.sourcegitcommit: 71db032bd5680c9287a7867b923bf6471ba8f6be
+ms.openlocfilehash: 105b0b3e40e6e9433ee456914cd5babc1d17d036
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71018250"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74075237"
 ---
 # <a name="configure-ssl-policy-versions-and-cipher-suites-on-application-gateway"></a>Настройка версий политики SSL и комплектов шифров на шлюзе приложений
 
@@ -108,7 +108,7 @@ CipherSuites:
 
 ## <a name="configure-a-custom-ssl-policy"></a>Настройка пользовательской политики SSL
 
-При настройке пользовательской политики SSL, передаются следующие параметры: PolicyType, MinProtocolVersion, CipherSuite и ApplicationGateway. Если вы попытаетесь передать другие параметры, поступит сообщение об ошибке создания или обновления шлюза приложений. 
+При настройке пользовательской политики SSL передаются следующие параметры: PolicyType, MinProtocolVersion, CipherSuite и ApplicationGateway. Если вы попытаетесь передать другие параметры, поступит сообщение об ошибке создания или обновления шлюза приложений. 
 
 Ниже представлен пример задания пользовательской политики SSL на шлюзе приложений. В качестве минимальной версии протокола она задает версию `TLSv1_1` и включает следующие комплекты шифров.
 
@@ -215,6 +215,6 @@ $AppGw = get-Azapplicationgateway -Name $AppGWname -ResourceGroupName $RG
 $SetGW = Set-AzApplicationGateway -ApplicationGateway $AppGW
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о перенаправлении трафика HTTP на конечную точку HTTPS см. в статье [Общие сведения о перенаправлении для шлюза приложений](application-gateway-redirect-overview.md).

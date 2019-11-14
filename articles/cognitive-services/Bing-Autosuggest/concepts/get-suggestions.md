@@ -1,7 +1,7 @@
 ---
 title: Предложение условий поиска с помощью API автозаполнения Bing
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как использовать API автозаполнения Bing.
+description: В этой статье рассматривается понятие предложения запроса с использованием API автозаполнения Bing и влияние длины запроса на релевантность.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: bing-autosuggest
 ms.topic: conceptual
 ms.date: 02/20/2019
 ms.author: aahi
-ms.openlocfilehash: cee4f68b734f0c2bec9fd629986ba7f6559f207e
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 060dbd29ee4ddb78e8ae9b2ed4e7814da3c4eebf
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68882442"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74072891"
 ---
 # <a name="suggesting-query-terms"></a>Предложение терминов запроса
 
@@ -55,6 +55,6 @@ Host: api.cognitive.microsoft.com
 
 Если пользователь выбирает из раскрывающегося списка предложенный запрос, используйте условие запроса из поля `query`, чтобы вызвать раздел [Документация по API Bing для поиска в Интернете](../../bing-web-search/search-the-web.md) и отобразить полученные результаты. Или вы можете использовать URL-адрес из поля `url`, чтобы переадресовать пользователя на страницу результатов поиска Bing.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Что такое API автозаполнения Bing?](../get-suggested-search-terms.md)

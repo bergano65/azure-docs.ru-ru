@@ -1,7 +1,7 @@
 ---
-title: Настройка времени ожидания в режиме простоя TCP в подсистеме балансировки нагрузки Azure
-titlesuffix: Azure Load Balancer
-description: Описывается настройка времени ожидания простоя TCP для балансировщика нагрузки.
+title: Настройка времени ожидания простоя TCP в подсистеме балансировки нагрузки в Azure
+titleSuffix: Azure Load Balancer
+description: Из этой статьи вы узнаете, как настроить Azure Load Balancer время ожидания простоя TCP.
 services: load-balancer
 documentationcenter: na
 author: asudbring
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/25/2017
 ms.author: allensu
-ms.openlocfilehash: b3df1ead7a3164ffd9a4b4acf8820d0f5b82cee3
-ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
+ms.openlocfilehash: 530bfbe85a564b3dd517e14df819586dee332a78
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68274168"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74076969"
 ---
 # <a name="configure-tcp-idle-timeout-settings-for-azure-load-balancer"></a>Настройка параметров времени ожидания простоя TCP для Azure Load Balancer
 
@@ -76,7 +76,7 @@ Get-AzureVM -ServiceName "mySvc" -Name "MyVM1" | Add-AzureEndpoint -Name "HttpIn
 
 ## <a name="set-the-tcp-timeout-on-a-load-balanced-endpoint-set"></a>Настройка времени ожидания TCP для набора конечных точек с балансировкой нагрузки
 
-Если набор балансировки нагрузки для конечных точек содержит конечные точки, для него следует установить время ожидания TCP. Пример:
+Если набор балансировки нагрузки для конечных точек содержит конечные точки, для него следует установить время ожидания TCP. Например,
 
 ```powershell
 Set-AzureLoadBalancedEndpoint -ServiceName "MyService" -LBSetName "LBSet1" -Protocol tcp -LocalPort 80 -ProbeProtocolTCP -ProbePort 8080 -IdleTimeoutInMinutes 15
@@ -115,7 +115,7 @@ Set-AzureLoadBalancedEndpoint -ServiceName "MyService" -LBSetName "LBSet1" -Prot
 
 Можно настроить время ожидания простоя TCP с помощью API управления службами. Убедитесь, что для заголовка `x-ms-version` задана версия `2014-06-01` или более поздняя. Обновите конфигурацию указанных конечных точек ввода с балансировкой нагрузки для всех виртуальных машин в развертывании.
 
-### <a name="request"></a>Запрос
+### <a name="request"></a>Request
 
     POST https://management.core.windows.net/<subscription-id>/services/hostedservices/<cloudservice-name>/deployments/<deployment-name>
 
@@ -152,7 +152,7 @@ Set-AzureLoadBalancedEndpoint -ServiceName "MyService" -LBSetName "LBSet1" -Prot
 </LoadBalancedEndpointList>
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 [Обзор внутренней подсистемы балансировки нагрузки](load-balancer-internal-overview.md)
 

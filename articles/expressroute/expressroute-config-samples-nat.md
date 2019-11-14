@@ -1,5 +1,5 @@
 ---
-title: Примеры конфигурации маршрутизатора NAT в Azure ExpressRoute | Документация Майкрософт
+title: Azure ExpressRoute. примеры конфигурации маршрутизатора — NAT
 description: Эта страница содержит примеры конфигурации для маршрутизаторов серий Cisco ASA и Juniper MX.
 services: expressroute
 author: cherylmc
@@ -7,13 +7,12 @@ ms.service: expressroute
 ms.topic: article
 ms.date: 12/06/2018
 ms.author: cherylmc
-ms.custom: seodec18
-ms.openlocfilehash: ccee0f0c01119ebbfb5ba9c5980ee006a555a399
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: ef2fd40db422c459ca966e802344ef45f7ec01de
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60367614"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74072115"
 ---
 # <a name="router-configuration-samples-to-set-up-and-manage-nat"></a>Примеры конфигурации маршрутизатора для настройки и управления NAT
 
@@ -57,7 +56,7 @@ ms.locfileid: "60367614"
     Source Interface (where the traffic enters the ASA): inside
     Destination Interface (where the traffic exits the ASA): outside
 
-**Конфигурация:**
+**Конфигурация.**
 
 Пул преобразования сетевых адресов:
 
@@ -83,7 +82,7 @@ ms.locfileid: "60367614"
 
 
 ## <a name="juniper-srx-series-routers"></a>Маршрутизаторы серии Juniper SRX
-### <a name="1-create-redundant-ethernet-interfaces-for-the-cluster"></a>1. Создайте избыточные интерфейсы Ethernet для кластера.
+### <a name="1-create-redundant-ethernet-interfaces-for-the-cluster"></a>1. создание избыточных интерфейсов Ethernet для кластера
     interfaces {
         reth0 {
             description "To Internal Network";
@@ -115,7 +114,7 @@ ms.locfileid: "60367614"
     }
 
 
-### <a name="2-create-two-security-zones"></a>2. Создайте две зоны безопасности.
+### <a name="2-create-two-security-zones"></a>2. Создание двух зон безопасности
 * Доверенная зона предназначена для внутренней сети, а недоверенная зона — для внешней сети, направленной на граничные маршрутизаторы.
 * Назначьте соответствующие интерфейсы зонам.
 * Включите службы для интерфейсов.
@@ -123,7 +122,7 @@ ms.locfileid: "60367614"
     security {       zones {           security-zone Trust {               host-inbound-traffic {                   system-services {                       ping;                   }                   protocols {                       bgp;                   }               }               interfaces {                   reth0.100;               }           }           security-zone Untrust {               host-inbound-traffic {                   system-services {                       ping;                   }                   protocols {                       bgp;                   }               }               interfaces {                   reth1.100;               }           }       }   }
 
 
-### <a name="3-create-security-policies-between-zones"></a>3. Создайте политики безопасности между зонами.
+### <a name="3-create-security-policies-between-zones"></a>3. Создание политик безопасности между зонами
     security {
         policies {
             from-zone Trust to-zone Untrust {
@@ -154,7 +153,7 @@ ms.locfileid: "60367614"
     }
 
 
-### <a name="4-configure-nat-policies"></a>4. Настройте политики NAT.
+### <a name="4-configure-nat-policies"></a>4. Настройка политик NAT
 * Создайте два пула NAT. Один будет использоваться для исходящего трафика NAT в Майкрософт, а второй — для трафика от Майкрософт клиенту.
 * Создайте правила для преобразования сетевых адресов соответствующего трафика.
   
@@ -213,10 +212,10 @@ ms.locfileid: "60367614"
            }
        }
 
-### <a name="5-configure-bgp-to-advertise-selective-prefixes-in-each-direction"></a>5. Настройки BGP для использования выборочных префиксов в каждом направлении
-Обратитесь к примерам на [примеры настройки маршрутизации](expressroute-config-samples-routing.md) страницы.
+### <a name="5-configure-bgp-to-advertise-selective-prefixes-in-each-direction"></a>5. Настройка BGP для объявления выборочных префиксов в каждом направлении
+См. примеры на странице образцов [конфигурации маршрутизации](expressroute-config-samples-routing.md) .
 
-### <a name="6-create-policies"></a>6. Создайте политики.
+### <a name="6-create-policies"></a>6. Создание политик
     routing-options {
                   autonomous-system <Customer-ASN>;
     }
@@ -311,6 +310,6 @@ ms.locfileid: "60367614"
         }
     }
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 Дополнительные сведения см. в разделе [Вопросы и ответы по ExpressRoute](expressroute-faqs.md).
 

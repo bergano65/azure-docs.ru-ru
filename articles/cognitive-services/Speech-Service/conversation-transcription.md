@@ -1,7 +1,7 @@
 ---
 title: Что такое запись разговора (Предварительная версия) — служба речи
 titleSuffix: Azure Cognitive Services
-description: Запись разговора — это решение для преобразования речи в текст, объединяющее распознавание речи, идентификацию докладчика и соотнесение предложений для каждого динамика (также известного как диаризатион), чтобы обеспечить в режиме реального времени и (или) асинхронную транскрипцию любого разговора. Запись разговора делает беседу инклюзивной для всех, например участников с потерей слуха.
+description: Запись разговора — это решение для преобразования речи в текст, объединяющее распознавание речи, идентификацию докладчика и соотнесение предложений для каждого динамика (также известного как диаризатион), чтобы обеспечить в режиме реального времени и (или) асинхронную транскрипцию любого разговора.
 services: cognitive-services
 author: markamos
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: erhopf
-ms.openlocfilehash: f4b7591d5ddb138db0abbdb673cadc6afd71f315
-ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+ms.openlocfilehash: 0c15b053028bd707159a632c98faaea8b9954a9b
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73608033"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74075847"
 ---
 # <a name="what-is-conversation-transcription-preview"></a>Что такое запись разговора (Предварительная версия)?
 
@@ -75,7 +75,7 @@ ms.locfileid: "73608033"
 
 В настоящее время запись разговора поддерживает "en-US" и "zh-CN" в следующих регионах: *centralus* и *eastasia*. Если требуется дополнительная поддержка языковых стандартов, обратитесь к [функции записи сообщений сотрудников](mailto:CTSFeatureCrew@microsoft.com).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
 > [Транскрипция беседы в режиме реального времени](how-to-use-conversation-transcription-service.md)

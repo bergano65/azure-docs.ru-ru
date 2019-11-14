@@ -1,5 +1,5 @@
 ---
-title: Размеры виртуальных машин Azure для Windows, оптимизированные для памяти | Документация Майкрософт
+title: Размеры виртуальных машин Azure для Windows-Memory
 description: Список различных размеров виртуальных машин Windows в Azure, оптимизированных для памяти. Сведения о количестве виртуальных ЦП, дисков данных и сетевых адаптеров, а также о пропускной способности хранилища и сети для размеров виртуальных машин этой серии.
 services: virtual-machines-windows
 documentationcenter: ''
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 11/06/2019
 ms.author: jonbeck
-ms.openlocfilehash: 57f1e88a47fbd12013f9315a611ace5189ca79d5
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: 9b2f62418c824e707992b558a1119a4bd7b1deb8
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73719049"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74065418"
 ---
 # <a name="memory-optimized-virtual-machine-sizes"></a>Размеры виртуальных машин, оптимизированных для операций в памяти
 
@@ -37,5 +37,5 @@ ms.locfileid: "73719049"
 - [Для высокопроизводительных вычислений](sizes-hpc.md)
 - [Предыдущие поколения](sizes-previous-gen.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 Узнайте больше о том, как с помощью [единиц вычислений Azure (ACU)](acu.md) сравнить производительность вычислений для различных номеров SKU Azure.

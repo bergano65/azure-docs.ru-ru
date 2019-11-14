@@ -1,18 +1,19 @@
 ---
-title: Настройка завершения SSL с использованием Key Vault сертификатов с помощью Azure PowerShell
+title: Настройка завершения SSL с помощью сертификатов Key Vault — PowerShell
+titleSuffix: Azure Application Gateway
 description: Узнайте, как интегрировать шлюз приложений Azure с Key Vault для сертификатов сервера, подключенных к прослушивателям с поддержкой HTTPS.
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: article
-ms.date: 4/22/2019
+ms.date: 11/14/2019
 ms.author: victorh
-ms.openlocfilehash: b7408d6169e1cf42bcda8855a19076c739d086dd
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.openlocfilehash: c40c4cf9f25ce17bc7042191324aeb864696995f
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "71001008"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74074582"
 ---
 # <a name="configure-ssl-termination-with-key-vault-certificates-by-using-azure-powershell"></a>Настройка завершения SSL с использованием Key Vault сертификатов с помощью Azure PowerShell
 
@@ -22,11 +23,11 @@ ms.locfileid: "71001008"
 
 В этой статье показано, как использовать скрипт Azure PowerShell для интеграции хранилища ключей с шлюзом приложений для сертификатов завершения SSL.
 
-Для работы с этой статьей требуется Azure PowerShell Module версии 1.0.0 или более поздней. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Чтобы выполнить команды в этой статье, необходимо также создать подключение к Azure, выполнив `Connect-AzAccount`команду.
+Для работы с этой статьей требуется Azure PowerShell Module версии 1.0.0 или более поздней. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Чтобы выполнить команды в этой статье, необходимо также создать подключение к Azure, запустив `Connect-AzAccount`.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 Перед началом необходимо установить модуль Манажедсервицеидентити:
 
@@ -138,6 +139,6 @@ $appgw = New-AzApplicationGateway -Name $appgwName -Identity $appgwIdentity -Res
   -SslCertificates $sslCert01 -AutoscaleConfiguration $autoscaleConfig
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 [Дополнительные сведения о завершении SSL](ssl-overview.md)

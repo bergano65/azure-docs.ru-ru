@@ -1,5 +1,5 @@
 ---
-title: Общие сведения об использовании OpenShift в Azure | Документация Майкрософт
+title: Обзор OpenShift в Azure
 description: Общие сведения об использовании OpenShift в Azure.
 services: virtual-machines-linux
 documentationcenter: virtual-machines
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 05/7/2019
 ms.author: haroldw
-ms.openlocfilehash: 2293eac45da6f53b0cd29fda68b0ddc76aea1a6c
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: 021ebe010a27fa155de861121e1972466c800f4a
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72390636"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74035424"
 ---
 # <a name="openshift-in-azure"></a>Использование OpenShift в Azure
 
@@ -47,7 +47,7 @@ OpenShift Container Platform — это [коммерческая версия](
 
 OKD — это высокоуровневый проект OpenShift с [открытым кодом](https://www.okd.io/), который поддерживается сообществом. OKD можно установить в ОС CentOS или Red Hat Enterprise Linux (RHEL).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Общие предварительные требования для OpenShift в Azure](./openshift-container-platform-3x-prerequisites.md)
 - [Развертывание платформы OpenShift Container Platform](./openshift-container-platform-3x.md)

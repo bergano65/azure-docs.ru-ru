@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 11/11/2019
-ms.openlocfilehash: 8aeef72c23f3ed40a7f187c976c67c2ae117189a
-ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
+ms.openlocfilehash: 38fb45fd339b5e2c7cab6f66a1ed6c0df73fb29e
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73958495"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74069629"
 ---
 # <a name="high-availability-services-supported-by-azure-hdinsight"></a>Службы высокого уровня доступности, поддерживаемые Azure HDInsight
 
@@ -123,7 +123,7 @@ Apache обеспечивает высокий уровень доступнос
 
 Кластеры HDInsight на основе Apache Hadoop 2,4 или более поздней версии поддерживают высокий уровень доступности YARN ResourceManager. Существует два ResourceManager, RM1 и RM2, которые выполняются в головного узла 0 и головного узла 1 соответственно. Как и NameNode, ResourceManager YARN также настроен для автоматического перехода на другой ресурс. Другой ResourceManager автоматически выбирается в активном состоянии при отключении или отклике текущего активного ResourceManager.
 
-ResourceManager YARN использует внедренный *активестандбелектор* в качестве средства обнаружения сбоев и лидера електор. В отличие от HDFS NodeManager, для YARN ResourceManager не требуется отдельная управляющая программа ЗКФК. Активный ResourceManager записывает свои состояния в Apache Zookeeper.
+ResourceManager YARN использует внедренный *активестандбелектор* в качестве средства обнаружения сбоев и лидера електор. В отличие от HDFS NameNode, для YARN ResourceManager не требуется отдельная управляющая программа ЗКФК. Активный ResourceManager записывает свои состояния в Apache Zookeeper.
 
 Высокий уровень доступности ResourceManager YARN не зависит от NameNode и других служб с высоким уровнем доступности HDInsight. Активный ResourceManager может не работать на активном головного узла или головного узла, где запущен активный NameNode. Дополнительные сведения о высокой доступности YARN ResourceManager см. в статье [высокий уровень доступности ResourceManager](https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/ResourceManagerHA.html).
 

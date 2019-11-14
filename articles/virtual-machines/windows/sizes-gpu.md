@@ -1,5 +1,5 @@
 ---
-title: Размеры виртуальных машин Windows в Azure, оптимизированных для рабочих нагрузок GPU | Документация Майкрософт
+title: Размеры виртуальных машин Windows в Azure — GPU
 description: Список различных размеров виртуальных машин Windows в Azure, оптимизированных для графического процессора. Сведения о количестве виртуальных ЦП, дисков данных и сетевых адаптеров, а также о пропускной способности хранилища и сети для размеров виртуальных машин этой серии.
 services: virtual-machines-windows
 documentationcenter: ''
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 06/11/2019
 ms.author: jonbeck
-ms.openlocfilehash: 0e809690f0453806402c27773ad0029fc5f64be2
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 5b2da3076f3970d2f11301b3ea412ce52c257111
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70102342"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74075346"
 ---
 # <a name="gpu-optimized-virtual-machine-sizes"></a>Размеры виртуальных машин, оптимизированных для GPU
 
@@ -43,6 +43,6 @@ ms.locfileid: "70102342"
 - [Оптимизированные для хранилища](sizes-storage.md)
 - [Предыдущие поколения](sizes-previous-gen.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 Узнайте больше о том, как с помощью [единиц вычислений Azure (ACU)](acu.md) сравнить производительность вычислений для различных номеров SKU Azure.
 

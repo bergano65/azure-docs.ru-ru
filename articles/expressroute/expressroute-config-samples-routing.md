@@ -1,5 +1,5 @@
 ---
-title: Примеры конфигурации маршрутизатора в Azure ExpressRoute | Документация Майкрософт
+title: 'Azure ExpressRoute: примеры конфигурации маршрутизатора'
 description: Эта страница содержит примеры конфигурации для маршрутизаторов серий Cisco ASA и Juniper MX.
 services: expressroute
 author: cherylmc
@@ -7,13 +7,12 @@ ms.service: expressroute
 ms.topic: article
 ms.date: 12/06/2018
 ms.author: cherylmc
-ms.custom: seodec18
-ms.openlocfilehash: 2d7fb060896de8df266489451a11ba343760c747
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 2c37dadeb669fb88f858b5487379828a8dddec6c
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60367478"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74076665"
 ---
 # <a name="router-configuration-samples-to-set-up-and-manage-routing"></a>Примеры конфигурации маршрутизатора для настройки и управления маршрутизацией
 Эта страница содержит примеры конфигурации интерфейса и маршрутизации для маршрутизаторов серий Cisco IOS-XE и Juniper MX при работе с ExpressRoute. Эти примеры имеют только справочный характер и не должны использоваться как есть. Подходящие конфигурации для своей сети можно выработать совместно с поставщиком. 
@@ -33,7 +32,7 @@ ms.locfileid: "60367478"
 ## <a name="cisco-ios-xe-based-routers"></a>Маршрутизаторы на основе Cisco IOS-XE
 Примеры из этого раздела можно применить к любому маршрутизатору, работающем под управлением ОС семейства IOS-XE.
 
-### <a name="1-configuring-interfaces-and-sub-interfaces"></a>1. Настройка интерфейсов и дочерние интерфейсы
+### <a name="1-configuring-interfaces-and-sub-interfaces"></a>1. Настройка интерфейсов и подинтерфейсов
 Вам потребуются дочерние интерфейсы для каждого пиринга в каждом маршрутизаторе при подключении к Microsoft. Дочерний интерфейс можно идентифицировать с помощью идентификатора виртуальной локальной сети или с помощью накопленной пары идентификаторов виртуальных сетей и IP-адреса.
 
 **Определение интерфейса Dot1Q**
@@ -64,7 +63,7 @@ ms.locfileid: "60367478"
      exit-address-family
     !
 
-### <a name="3-setting-up-prefixes-to-be-advertised-over-the-bgp-session"></a>3. Настройка префиксов, объявляемых в сеансе BGP
+### <a name="3-setting-up-prefixes-to-be-advertised-over-the-bgp-session"></a>3. Настройка префиксов для объявления в сеансе BGP
 Маршрутизатор можно настроить для объявления выбранных префиксов в Майкрософт. Это можно сделать с помощью примера ниже.
 
     router bgp <Customer_ASN>
@@ -77,7 +76,7 @@ ms.locfileid: "60367478"
      exit-address-family
     !
 
-### <a name="4-route-maps"></a>4. Карты маршрутизации
+### <a name="4-route-maps"></a>4. карты маршрутов
 Для фильтрации префиксов, распространяемых в сети, можно использовать карты маршрутизации и списки префиксов. Для выполнения этой задачи можно использовать следующий пример. Убедитесь, что вы задали соответствующие настройки списков префиксов.
 
     router bgp <Customer_ASN>
@@ -98,7 +97,7 @@ ms.locfileid: "60367478"
 ## <a name="juniper-mx-series-routers"></a>Маршрутизаторы серии Juniper MX
 Примеры из этого раздела можно применять ко всем маршрутизаторам серии Juniper MX.
 
-### <a name="1-configuring-interfaces-and-sub-interfaces"></a>1. Настройка интерфейсов и дочерние интерфейсы
+### <a name="1-configuring-interfaces-and-sub-interfaces"></a>1. Настройка интерфейсов и подинтерфейсов
 
 **Определение интерфейса Dot1Q**
 
@@ -149,7 +148,7 @@ ms.locfileid: "60367478"
         }                                   
     }
 
-### <a name="3-setting-up-prefixes-to-be-advertised-over-the-bgp-session"></a>3. Настройка префиксов, объявляемых в сеансе BGP
+### <a name="3-setting-up-prefixes-to-be-advertised-over-the-bgp-session"></a>3. Настройка префиксов для объявления в сеансе BGP
 Маршрутизатор можно настроить для объявления выбранных префиксов в Майкрософт. Это можно сделать с помощью примера ниже.
 
     policy-options {
@@ -174,7 +173,7 @@ ms.locfileid: "60367478"
     }
 
 
-### <a name="4-route-maps"></a>4. Карты маршрутизации
+### <a name="4-route-maps"></a>4. карты маршрутов
 Для фильтрации префиксов, распространяемых в сети, можно использовать карты маршрутизации и списки префиксов. Для выполнения этой задачи можно использовать следующий пример. Убедитесь, что вы задали соответствующие настройки списков префиксов.
 
     policy-options {
@@ -204,6 +203,6 @@ ms.locfileid: "60367478"
         }                                   
     }
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения см. в разделе [Вопросы и ответы по ExpressRoute](expressroute-faqs.md).
 

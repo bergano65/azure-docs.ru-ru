@@ -1,7 +1,7 @@
 ---
 title: Выбор устройства ввода звука с помощью речевого пакета SDK — служба речи
 titleSuffix: Azure Cognitive Services
-description: Дополнительные сведения о выборе аудиоустройства ввода в пакете SDK для распознавания речи.
+description: Узнайте, как выбрать устройства звукового ввода в речевомC++пакете C#SDK (,, Python, цели-C, Java, JavaScript), получая идентификаторы звуковых устройств, подключенных к системе.
 services: cognitive-services
 author: chlandsi
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: chlandsi
-ms.openlocfilehash: 8324f9fccbe46cf6fc0ce297aac29b0d8025b078
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 967e4fbc5484c152867fe5558040631d21e6c0b3
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68562733"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74072434"
 ---
 # <a name="select-an-audio-input-device-with-the-speech-sdk"></a>Выбор аудиоустройства ввода с помощью пакета SDK для распознавания речи
 
@@ -46,7 +46,8 @@ audioConfig = AudioConfiguration.fromMicrophoneInput("<device id>");
 ```JavaScript
 audioConfig = AudioConfiguration.fromMicrophoneInput("<device id>");
 ```
->[!Note]
+
+> [!Note]
 > Использование микрофона недоступно для JavaScript, выполняющегося в Node.js
 
 ## <a name="audio-device-ids-on-windows-for-desktop-applications"></a>Идентификаторы аудиоустройств в Windows для настольных приложений
@@ -376,7 +377,7 @@ CFArrayRef CreateInputDeviceArray()
 
 В JavaScript метод [MediaDevices.enumerateDevices()](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/enumerateDevices) можно использовать для перечисления устройств мультимедиа и поиска идентификаторов устройств для их передачи `fromMicrophone(...)`.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
 > [Примеры на сайте GitHub](https://aka.ms/csspeech/samples)

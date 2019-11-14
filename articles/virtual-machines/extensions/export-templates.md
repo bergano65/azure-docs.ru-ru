@@ -1,5 +1,5 @@
 ---
-title: Экспорт групп ресурсов Azure, которые содержат расширения виртуальной машины | Документация Майкрософт
+title: Экспорт групп ресурсов Azure, содержащих расширения ВМ
 description: Экспорт шаблонов Resource Manager, которые включают расширения виртуальной машины.
 services: virtual-machines-windows
 documentationcenter: ''
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 12/05/2016
 ms.author: akjosh
-ms.openlocfilehash: 652ed732a7fe8f08e48aba6fc4bd1b52164d1fa0
-ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
+ms.openlocfilehash: 79991dad96742109817d579b951082d1a30e3951
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71169065"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74073124"
 ---
 # <a name="exporting-resource-groups-that-contain-vm-extensions"></a>Экспорт групп ресурсов, которые содержат расширения виртуальной машины
 
@@ -41,7 +41,7 @@ ms.locfileid: "71169065"
 | Агент BMC CTM для Linux | Dynatrace для Linux | Site 24x7 для сервера Linux |
 | Агент BMC CTM для Windows | Dynatrace для Windows | Site 24x7 для сервера Windows Server |
 | Клиент Chef | Защитник приложений HPE Security | Trend Micro DSA |
-| Настраиваемый скрипт | Защита от вредоносных программ IaaS | Trend Micro DSA для Linux |
+| Custom Script | Защита от вредоносных программ IaaS | Trend Micro DSA для Linux |
 | Расширение пользовательских сценариев | Диагностика IaaS | VM Access для Linux |
 | Custom Script для Linux | Клиент Chef для Linux | VM Access для Linux |
 | Агент Datadog для Linux | Диагностика Linux | Моментальный снимок виртуальной машины |

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 03/15/2019
 ms.author: dacurwin
 ms.assetid: 57854626-91f9-4677-b6a2-5d12b6a866e1
-ms.openlocfilehash: 34a8b27442fc3f755cbe33f61857aa13d3be700b
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: 85d6b9e00798926bee2d5050767ba47512fc9e86
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74012819"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74074118"
 ---
 # <a name="back-up-and-restore-sql-databases-in-azure-vms-with-powershell"></a>Резервное копирование и восстановление баз данных SQL на виртуальных машинах Azure с помощью PowerShell
 
@@ -460,7 +460,7 @@ $endDate = (Get-Date).AddDays(60).ToUniversalTime()
 Backup-AzRecoveryServicesBackupItem -Item $bkpItem -BackupType Full -EnableCompression -VaultId $targetVault.ID -ExpiryDateTimeUTC $endDate
 ````
 
-Команда нерегламентированного резервного копирования возвращает задание, которое необходимо отвести.
+Команда Backup по запросу возвращает задание, которое необходимо отвести.
 
 ````powershell
 WorkloadName     Operation            Status               StartTime                 EndTime                   JobID
@@ -541,13 +541,13 @@ $SQLContainer = Get-AzRecoveryServicesBackupContainer -ContainerType AzureVMAppC
 
 Важно отметить, что Azure Backup отслеживает только активируемые пользователем задания в резервной копии SQL. Запланированные резервные копии (включая резервные копии журналов) не отображаются на портале или в PowerShell. Однако при сбое запланированных заданий создается [оповещение о резервном копировании](backup-azure-monitoring-built-in-monitor.md#backup-alerts-in-recovery-services-vault) , которое отображается на портале. [Используйте Azure Monitor](backup-azure-monitoring-use-azuremonitor.md) для трассировки всех запланированных заданий и других важных сведений.
 
-Пользователи могут отслеживанию нерегламентированных или пользовательских операций, активируемых пользователем, с JobID, возвращаемым в [выходных данных](#on-demand-backup) асинхронных заданий, таких как Backup. Используйте командлет [Get-азрековерисервицесбаккупжобдетаил](https://docs.microsoft.com/powershell/module/az.recoveryservices/Get-AzRecoveryServicesBackupJobDetail) PS для трассировки задания и его сведений.
+Пользователи могут контролировать операции, активируемые по запросу или пользователем, с помощью JobID, который возвращается в [выходных данных](#on-demand-backup) асинхронных заданий, таких как Backup. Используйте командлет [Get-азрековерисервицесбаккупжобдетаил](https://docs.microsoft.com/powershell/module/az.recoveryservices/Get-AzRecoveryServicesBackupJobDetail) PS для трассировки задания и его сведений.
 
 ````powershell
  Get-AzRecoveryServicesBackupJobDetails -JobId 2516bb1a-d3ef-4841-97a3-9ba455fb0637 -VaultId $targetVault.ID
 ````
 
-Чтобы получить список нерегламентированных заданий и их состояний из Azure Backup службы, используйте командлет [Get-азрековерисервицесбаккупжоб](https://docs.microsoft.com/powershell/module/az.recoveryservices/Get-AzRecoveryServicesBackupJob?view=azps-1.5.0) PS. В следующем примере возвращаются все выполняющиеся задания SQL.
+Чтобы получить список заданий по запросу и их состояний из Azure Backup службы, используйте командлет [Get-азрековерисервицесбаккупжоб](https://docs.microsoft.com/powershell/module/az.recoveryservices/Get-AzRecoveryServicesBackupJob?view=azps-1.5.0) PS. В следующем примере возвращаются все выполняющиеся задания SQL.
 
 ```powershell
 Get-AzRecoveryServicesBackupJob -Status InProgress -BackupManagementType AzureWorkload
@@ -570,4 +570,4 @@ Get-AzRecoveryServicesBackupJob -Status InProgress -BackupManagementType AzureWo
 
 SQL-Server-0, SQL-Server-1 также будет отображаться как "Азуревмаппконтаинер" при [отображении контейнеров резервного копирования](https://docs.microsoft.com/powershell/module/az.recoveryservices/Get-AzRecoveryServicesBackupContainer?view=azps-1.5.0).
 
-Просто извлеките соответствующую базу данных SQL, чтобы [включить резервное копирование](#configuring-backup) , и командлеты [нерегламентированного резервного копирования](#on-demand-backup) и [восстановления PowerShell](#restore-sql-dbs) идентичны.
+Просто извлеките соответствующую базу данных SQL, чтобы [включить резервное копирование](#configuring-backup) , и [командлеты Backup и RESTORE PowerShell](#restore-sql-dbs) [по запросу](#on-demand-backup) идентичны.

@@ -1,5 +1,5 @@
 ---
-title: Создание моментального снимка виртуального жесткого диска в Azure | Документация Майкрософт
+title: Создание моментального снимка виртуального жесткого диска в Azure
 description: Узнайте, как создать копию виртуальной машины Azure в качестве резервной копии или для устранения неполадок.
 documentationcenter: ''
 author: roygara
@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 10/08/2018
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: 74ef55fe9a0a6603bd43d68b6b8557dce1bca921
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: b564e20ca8aa5acd7fbd4ea69ac2b1cd72e66d5e
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73749146"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74075335"
 ---
 # <a name="create-a-snapshot"></a>Создание моментального снимка
 
@@ -29,7 +29,7 @@ ms.locfileid: "73749146"
 
 ## <a name="use-the-azure-portal"></a>Использование портала Azure 
 
-1. Войдите на [портал Azure](https://portal.azure.com).
+1. Войдите на [портале Azure](https://portal.azure.com).
 2. В меню слева выберите **Создать ресурс**, а затем найдите и выберите **моментальный снимок**.
 3. В окне **Моментальный снимок** нажмите кнопку **Создать**. Откроется окно **Создание моментального снимка**.
 4. Заполните поле **Имя** для моментального снимка.
@@ -84,6 +84,6 @@ ms.locfileid: "73749146"
    ```
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Создайте виртуальную машину из моментального снимка, преобразовав его в управляемый диск, а затем подключив этот диск как диск ОС. Дополнительные сведения см. в статье [Создание виртуальной машины из моментального снимка с помощью PowerShell](./../scripts/virtual-machines-windows-powershell-sample-create-vm-from-snapshot.md?toc=%2fpowershell%2fmodule%2ftoc.json).

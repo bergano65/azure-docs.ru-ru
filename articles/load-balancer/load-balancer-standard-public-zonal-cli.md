@@ -1,5 +1,5 @@
 ---
-title: Load Balancer (цен. категория "Стандартный") с зональные интерфейсной Azure CLI
+title: Load Balancer (цен. категория "Стандартный") с общедоступным IP-адресом зональные-Azure CLI
 titleSuffix: Azure Load Balancer
 description: Сведения о создании общедоступной подсистемы Load Balancer (цен. категория "Стандартный") с зональным внешним интерфейсом с общедоступным IP-адресом с помощью Azure CLI
 services: load-balancer
@@ -13,14 +13,14 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/26/2018
 ms.author: allensu
-ms.openlocfilehash: 5e6dd06cf43b0eb5389597dcedbc323f4c035333
-ms.sourcegitcommit: b1a8f3ab79c605684336c6e9a45ef2334200844b
+ms.openlocfilehash: b9c3a88df6801566bc927cfc18fda0adfa05a5ae
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74048343"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74076028"
 ---
-#  <a name="create-a-standard-load-balancer-with-zonal-frontend-using-azure-cli"></a>Создание экземпляра Load Balancer (цен. категория "Стандартный") с зональным интерфейсным сервером с помощью Azure CLI
+#  <a name="create-a-standard-load-balancer-with-zonal-public-ip-address-frontend-using-azure-cli"></a>Создание Load Balancer (цен. категория "Стандартный") с общедоступным IP-адресом зональные с помощью Azure CLI
 
 В этой статье приведены действия по созданию общедоступного экземпляра [Load Balancer (цен. категория "Стандартный")](https://aka.ms/azureloadbalancerstandard) с зональным внешним интерфейсом и с использованием общедоступного стандартного IP-адреса. В этом сценарии нужно указать определенную зону для серверных и интерфейсных экземпляров, чтобы сопоставить ваш путь к данным и ресурсы с определенной зоной.
 

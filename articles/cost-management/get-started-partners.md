@@ -10,16 +10,16 @@ ms.topic: conceptual
 ms.service: cost-management
 manager: aparnag
 ms.custom: secdec18
-ms.openlocfilehash: 611b3e608d9b0de9423c861ec70e9fc2e7ad67d5
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: cd3efbea7b194da54bc1d9bebd1cc77987bd9dea
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73720750"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74072352"
 ---
 # <a name="get-started-with-azure-cost-management-for-partners"></a>Приступая к работе со службой "Управление затратами Azure" для партнеров
 
-Служба "Управление затратами Azure" изначально доступна для партнеров, которые применяют клиентов к Соглашению Майкрософт. В этой статье объясняется, как партнеры используют функции [управления затратами Azure](https://docs.microsoft.com/azure/cost-management/) . Здесь также описывается, как партнеры обеспечивают доступ к управлению затратами для своих клиентов. Клиенты могут использовать функции управления затратами при включении их партнером CSP.
+Служба управления затратами Azure изначально доступна для партнеров, которые приобретают своих клиентов к соглашению с клиентами Майкрософт и приобрели план Azure. В этой статье объясняется, как партнеры используют функции [управления затратами Azure](https://docs.microsoft.com/azure/cost-management/) . Здесь также описывается, как партнеры обеспечивают доступ к управлению затратами для своих клиентов. Клиенты могут использовать функции управления затратами при включении их партнером CSP.
 
 Партнеры CSP используют управление затратами для:
 
@@ -37,7 +37,7 @@ ms.locfileid: "73720750"
 
 Все функциональные возможности, доступные в службе "Управление затратами Azure", также доступны с помощью интерфейсов API. Используйте API для автоматизации задач управления затратами.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 Служба управления затратами Azure требует доступа на чтение к учетной записи выставления счетов или к подписке. Доступ может предоставляться на любом уровне выше ресурсов, от учетной записи выставления счетов или группы управления до отдельных групп ресурсов, в которых вы управляете приложениями. Дополнительные сведения о включении и назначении доступа к службе "Управление затратами Azure" для счета выставления счетов см. в разделе [назначение ролей и разрешений пользователей](/partner-center/permissions-overview). Роли **глобального администратора** и **агента администратора** могут управлять затратами на выставление счетов.
 
@@ -84,9 +84,9 @@ ms.locfileid: "73720750"
 
 - Конкретный отфильтрованный счет
 - Клиент
-- Подписка
+- подписку
 - Группа ресурсов
-- Ресурс
+- Resource (Ресурс)
 - Служба Azure
 - средство измерения.
 - ResellerMPNID
@@ -151,7 +151,7 @@ ms.locfileid: "73720750"
 
 Следующие поля находятся в файлах сведений об использовании и API-интерфейсах управления затратами. Для анализа затрат по нескольким полям можно использовать функции Filter и Group By в анализе затрат. Полный список полей см. в разделе [поля данных управления затратами](understand-cost-mgt-data.md#cost-management-data-fields).
 
-| Имя поля | Description (Описание) |
+| Имя поля | ОПИСАНИЕ |
 | --- | --- |
 | кустомертенантид | Идентификатор клиента Azure Active Directory подписки клиента&#39;. |
 | CustomerName | Имя клиента Azure Active Directory для подписки клиента&#39;. |
@@ -286,7 +286,7 @@ GET https://management.azure.com/Microsoft.Billing/billingAccounts/{billingAccou
 POST https://management.azure.com/providers/Microsoft.Billing/BillingAccounts/{billingAccountName}/billingProfiles/{billingProfileID}/pricesheet/default/download?api-version=2019-10-01-preview&format=csv" -verbose
 ```
 
-Затем вызовите значение свойства асинхронной операции. Например:
+Затем вызовите значение свойства асинхронной операции. Например,
 
 ```
 GET https://management.azure.com/providers/Microsoft.Billing/billingAccounts/{billingAccountName}/billingProfiles/{billingProfileID}/pricesheetDownloadOperations/{operation}?sessiontoken=0:11186&api-version=2019-10-01-preview
@@ -320,6 +320,6 @@ https://management.azure.com/providers/Microsoft.Billing/billingAccounts/{billin
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 - [Начать анализ затрат](quick-acm-cost-analysis.md) в управлении затратами
 - [Создание бюджетов и управление ими](tutorial-acm-create-budgets.md) в управлении затратами

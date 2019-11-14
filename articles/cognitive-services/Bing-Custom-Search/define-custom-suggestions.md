@@ -1,7 +1,7 @@
 ---
 title: Определение пользовательских предложений автозаполнения (Пользовательский поиск Bing)
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как настроить пользовательское автозаполнение с использованием пользовательских предложений
+description: Функция пользовательского автозаполнения возвращает список предлагаемых строк поисковых запросов, которые могут быть связаны с операцией поиска.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: bing-custom-search
 ms.topic: conceptual
 ms.date: 02/12/2019
 ms.author: maheshb
-ms.openlocfilehash: b08eb49b0c4f9655326d2ab09ce39210205e28a9
-ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
+ms.openlocfilehash: 5b2b8871d868e827532f23c7ef4f14fb00afb5bc
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68405107"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74072806"
 ---
 # <a name="configure-your-custom-autosuggest-experience"></a>Настройка пользовательского автозаполнения
 
@@ -83,10 +83,10 @@ GET https://api.cognitive.microsoft.com/bingcustomsearch/v7.0/Suggestions
 
 Каждое из предложений содержит поля `displayText` и `query`. Поле `displayText` содержит предлагаемые строки запросов, которые вы можете поместить в раскрывающийся список для поля поиска.
 
-Если пользователь выберет предложенную строку запроса из раскрывающегося списка, то при вызове [API пользовательского поиска Bing](overview.md) будет использована строка запроса из поля `query`.
+Если пользователь выберет предложенную строку запроса из раскрывающегося списка, то при вызове `query`API пользовательского поиска Bing[ будет использована строка запроса из поля ](overview.md).
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Get custom suggestion](./get-custom-suggestions.md) (Получение пользовательских предложений)
 - [Search your custom instance](./search-your-custom-view.md) (Поиск в пользовательском экземпляре)

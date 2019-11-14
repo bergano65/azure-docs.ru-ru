@@ -1,6 +1,6 @@
 ---
-title: Создание подсистемы балансировки нагрузки с зональным внешним интерфейсом — Azure CLI
-titlesuffix: Azure Load Balancer
+title: Создание подсистемы балансировки нагрузки с интерфейсной Azure CLI зональные
+titleSuffix: Azure Load Balancer
 description: Узнайте, как создать экземпляр Load Balancer (цен. категория "Стандартный") с зональным интерфейсным сервером с помощью Azure CLI
 services: load-balancer
 documentationcenter: na
@@ -13,18 +13,18 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/26/2018
 ms.author: allensu
-ms.openlocfilehash: 663567f6e3b078c1cb2afc60c3aaa9fcfb7af4dd
-ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
+ms.openlocfilehash: 620e4456e86a8610819495bd490353a3a5681738
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68275245"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74076086"
 ---
 #  <a name="create-a-standard-load-balancer-with-zonal-frontend-using-azure-cli"></a>Создание экземпляра Load Balancer (цен. категория "Стандартный") с зональным интерфейсным сервером с помощью Azure CLI
 
 В этой статье приведены действия по созданию общедоступного [Load Balancer (цен. категория "Стандартный")](https://aka.ms/azureloadbalancerstandard) с зональным внешним интерфейсом. Наличие зонального внешнего интерфейса означает, что любой входящий и исходящий поток обслуживается одной зоной в регионе. Вы можете создать подсистему балансировки нагрузки с зональным внешним интерфейсом путем использования зонального общедоступного IP-адреса уровня "Стандартный" в конфигурации внешнего интерфейса. Чтобы понять, как работают зоны доступности с Load Balancer уровня "Стандартный", ознакомьтесь со статьей [Azure Load Balancer уровня "Стандартный" и зоны доступности](load-balancer-standard-availability-zones.md). 
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -77,7 +77,7 @@ az network lb rule create --resource-group myResourceGroupZLB --lb-name myLoadBa
   --backend-pool-name myBackEndPool --probe-name myHealthProbe
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 - Дополнительные сведения см. в статье [Azure Load Balancer уровня "Стандартный" и зоны доступности](load-balancer-standard-availability-zones.md).
 
 

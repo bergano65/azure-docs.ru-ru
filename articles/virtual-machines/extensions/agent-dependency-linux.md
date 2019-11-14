@@ -1,5 +1,5 @@
 ---
-title: Расширение виртуальной машины Azure Monitor зависимостей для Linux | Документация Майкрософт
+title: Расширение виртуальной машины зависимостей Azure Monitor для Linux
 description: Развертывание агента зависимостей Azure Monitor на виртуальной машине Linux с помощью расширения виртуальной машины.
 services: virtual-machines-linux
 documentationcenter: ''
@@ -14,20 +14,20 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 03/29/2019
 ms.author: magoedte
-ms.openlocfilehash: 416b0c89105f97514efdfcc859a630d78f7ba7f5
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 46b0ddeeb70e263723b657ef3150dc5548fcc742
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70084834"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74073873"
 ---
 # <a name="azure-monitor-dependency-virtual-machine-extension-for-linux"></a>Расширение виртуальной машины зависимостей Azure Monitor для Linux
 
 Функция схемы в Azure Monitor для виртуальных машин получает данные от Microsoft Dependency Agent. Расширение виртуальной машины агента зависимостей Azure для Linux Опубликовано и поддерживается корпорацией Майкрософт. Расширение устанавливает агент зависимостей на виртуальных машинах Azure. В этом документе подробно описаны поддерживаемые платформы, конфигурации и варианты развертывания для расширения виртуальной машины агента зависимостей виртуальных машин Azure для Linux.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
-### <a name="operating-system"></a>Операционная система
+### <a name="operating-system"></a>операционная система
 
 Расширение агента зависимостей виртуальной машины Azure для Linux можно выполнить для поддерживаемых операционных систем, перечисленных в разделе " [Поддерживаемые операционные системы](../../azure-monitor/insights/vminsights-enable-overview.md#supported-operating-systems) " статьи о развертывании Azure Monitor для виртуальных машин.
 
@@ -73,12 +73,12 @@ ms.locfileid: "70084834"
 
 ### <a name="property-values"></a>Значения свойств
 
-| Название | Значение/пример |
+| имя | Значение/пример |
 | ---- | ---- |
-| apiVersion | 2015-01-01 |
+| версия_API | 2015-01-01 |
 | publisher | Microsoft.Azure.Monitoring.DependencyAgent |
 | type | DependencyAgentLinux |
-| typeHandlerVersion | 9.5 |
+| typeHandlerVersion | 9,5 |
 
 ## <a name="template-deployment"></a>Развертывание шаблона
 
@@ -86,7 +86,7 @@ ms.locfileid: "70084834"
 
 JSON для расширения виртуальной машины можно вложить в ресурс виртуальной машины. Вы также можете поместить его на корневом или верхнем уровне шаблона диспетчер ресурсов JSON. Размещение JSON влияет на значения имени и типа ресурса. Дополнительные сведения см. в разделе [Указание имени и типа дочернего ресурса в шаблоне Resource Manager](../../azure-resource-manager/child-resource-name-type.md).
 
-В следующем примере предполагается, что расширение агента зависимостей вложено в ресурс виртуальной машины. При вложении ресурса расширения JSON помещается в `"resources": []` объект виртуальной машины.
+В следующем примере предполагается, что расширение агента зависимостей вложено в ресурс виртуальной машины. При вложении ресурса расширения JSON помещается в объект `"resources": []` виртуальной машины.
 
 
 ```json

@@ -1,5 +1,5 @@
 ---
-title: Расширение виртуальной машины Azure Monitor зависимостей для Windows | Документация Майкрософт
+title: Расширение виртуальной машины зависимостей Azure Monitor для Windows
 description: Развертывание агента зависимостей Azure Monitor на виртуальной машине Windows с помощью расширения виртуальной машины.
 services: virtual-machines-windows
 documentationcenter: ''
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 03/29/2019
 ms.author: magoedte
-ms.openlocfilehash: b2a86ffab0286559cfcce89252c889c530f00871
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: 858aba2a45a6b8cf133e6f94bac45e721535ab25
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73750116"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74073269"
 ---
 # <a name="azure-monitor-dependency-virtual-machine-extension-for-windows"></a>Расширение виртуальной машины зависимостей Azure Monitor для Windows
 
@@ -71,7 +71,7 @@ ms.locfileid: "73750116"
 
 ### <a name="property-values"></a>Значения свойств
 
-| Имя | Значение/пример |
+| имя | Значение/пример |
 | ---- | ---- |
 | версия_API | 2015-01-01 |
 | publisher | Microsoft.Azure.Monitoring.DependencyAgent |

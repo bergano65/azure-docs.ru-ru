@@ -1,5 +1,5 @@
 ---
-title: Создание виртуальных машин Windows в Azure с помощью Python и управление ими | Документация Майкрософт
+title: Создание виртуальной машины Windows в Azure и управление ею с помощью Python
 description: Сведения об использовании Python для создания виртуальных машин Windows в Azure с помощью Python и управления ими.
 services: virtual-machines-windows
 documentationcenter: ''
@@ -14,24 +14,24 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 06/22/2017
 ms.author: cynthn
-ms.openlocfilehash: fcbf4e054359534f924b401f2f42e1d4c33890be
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 1686e86600fb28165ae44e7ca6c0c406dfa26d72
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70102476"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74065604"
 ---
 # <a name="create-and-manage-windows-vms-in-azure-using-python"></a>Развертывание виртуальной машины Azure с помощью Python
 
-[Виртуальной машине Azure](overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) требуется несколько вспомогательных ресурсов Azure. В этой статье описывается создание, управление и удаление ресурсов виртуальной машины с помощью Python. Вы узнаете, как выполнять следующие задачи:
+[Виртуальной машине Azure](overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) требуется несколько вспомогательных ресурсов Azure. В этой статье описывается создание, управление и удаление ресурсов виртуальной машины с помощью Python. Вы узнаете, как выполнять такие задачи.
 
 > [!div class="checklist"]
 > * Создание проекта Visual Studio
 > * Установка пакетов.
-> * Создание учетных данных
-> * Создание ресурсов.
-> * Выполнение задач управления.
-> * Удаление ресурсов.
+> * Создание учетных данных.
+> * Создание ресурсов
+> * Выполнение задач управления
+> * Удаление ресурсов
 > * Выполнение приложения
 
 На выполнение этих действий требуется примерно 20 минут.
@@ -42,7 +42,7 @@ ms.locfileid: "70102476"
 2. После установки и запуска Visual Studio щелкните **Файл** > **Создать** > **Проект**.
 3. В разделе **Шаблоны** > **Python** > **Приложение Python** укажите имя *myPythonProject* и расположение проекта, а затем нажмите кнопку **ОК**.
 
-## <a name="install-packages"></a>Установка пакетов
+## <a name="install-packages"></a>Установка пакетов.
 
 1. В обозревателе решений в разделе *myPythonProject* щелкните правой кнопкой мыши **Python Environments** (Среды Python) и выберите **Add virtual environment** (Добавление виртуальной среды).
 2. На странице добавления виртуальной среды примите имя по умолчанию *env*, убедитесь, что в качестве базового интерпретатора выбран *Python 3.6 (64-разрядная версия)* и нажмите кнопку **Создать**.
@@ -50,7 +50,7 @@ ms.locfileid: "70102476"
 
 В окнах вывода вы увидите, что пакеты Аzure успешно установлены. 
 
-## <a name="create-credentials"></a>Создание учетных данных
+## <a name="create-credentials"></a>Создание учетных данных.
 
 Прежде чем выполнить этот шаг, убедитесь, что у вас есть [субъект-служба Active Directory](../../active-directory/develop/howto-create-service-principal-portal.md). Кроме того, необходимо записать идентификатор приложения, ключ проверки подлинности и идентификатор клиента, которые понадобятся позже.
 
@@ -361,7 +361,7 @@ compute_client = ComputeManagementClient(
     input('Press enter to continue...')
     ```
 
-## <a name="perform-management-tasks"></a>Выполнение задач управления.
+## <a name="perform-management-tasks"></a>Выполнение задач управления
 
 В течение жизненного цикла виртуальной машины можно выполнять задачи управления, такие как запуск, остановка или удаление виртуальной машины. Кроме того, можно создавать код для автоматизации повторяющихся или сложных задач.
 
@@ -542,7 +542,7 @@ compute_client = ComputeManagementClient(
     input('Press enter to continue...')
     ```
 
-## <a name="delete-resources"></a>Удаление ресурсов.
+## <a name="delete-resources"></a>Удаление ресурсов
 
 Так как за использование ресурсов Azure взимается плата, рекомендуется всегда удалять ресурсы, которые больше не нужны. Если вы хотите удалить виртуальные машины и все вспомогательные ресурсы, достаточно удалить группу ресурсов.
 
@@ -570,7 +570,7 @@ compute_client = ComputeManagementClient(
     На полное выполнение этого консольного приложения потребуется примерно 5 минут. После закрытия приложения на удаление ресурсов и групп ресурсов может потребоваться несколько минут.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 - При наличии проблем с развертыванием ознакомьтесь с информацией об [устранении неполадок развертываний групп ресурсов с помощью портала Azure](../../resource-manager-troubleshoot-deployments-portal.md).
 - Узнайте больше о [библиотеке Azure для Python](https://docs.microsoft.com/python/api/overview/azure/?view=azure-python).

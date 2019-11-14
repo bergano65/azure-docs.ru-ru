@@ -1,5 +1,5 @@
 ---
-title: Собирайте сведения обо всех виртуальных машинах в подписке с помощью PowerShell | Документация Майкрософт
+title: Получение сведений обо всех виртуальных машинах в подписке с помощью PowerShell
 description: Получение сведений обо всех виртуальных машинах в подписке с помощью PowerShell
 services: virtual-machines-windows
 documentationcenter: virtual-machines
@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 07/01/2019
 ms.author: v-miegge
 ms.custom: mvc
-ms.openlocfilehash: dc5dc187bf23c9391108b24df9836645756fd62c
-ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
+ms.openlocfilehash: d3931d2affd77ce53b6ace9cc043e0272eaaf954
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70165295"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74040079"
 ---
 # <a name="collect-details-about-all-vms-in-a-subscription-with-powershell"></a>Получение сведений обо всех виртуальных машинах в подписке с помощью PowerShell
 
@@ -72,14 +72,14 @@ $report | Export-CSV "$home/$reportName"
 ## <a name="script-explanation"></a>Описание скрипта
 Этот сценарий использует следующие команды для создания экспорта CSV-файла сведений о виртуальных машинах в подписке. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-|Command|Примечания|
+|Команда|Примечания|
 |-|-|
 |[SELECT-Азсубскриптион](https://docs.microsoft.com/powershell/module/Az.Accounts/Set-AzContext)|Задает клиент, подписку и среду для командлетов, используемых в текущем сеансе.|
 |[Get-AzVM](https://docs.microsoft.com/powershell/module/Az.Compute/Get-AzVM)|Возвращает свойства виртуальной машины.|
 |[Get-AzPublicIpAddress](https://docs.microsoft.com/powershell/module/Az.Network/Get-AzPublicIpAddress)|Возвращает общедоступный IP-адрес.|
 |[Get-Азнетворкинтерфаце](https://docs.microsoft.com/powershell/module/Az.Network/Get-AzNetworkInterface)|Возвращает сетевой интерфейс.|
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о модуле Azure PowerShell см. в [документации по Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview).
 

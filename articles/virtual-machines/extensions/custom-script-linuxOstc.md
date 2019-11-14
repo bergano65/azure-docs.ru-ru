@@ -1,5 +1,5 @@
 ---
-title: Выполнение пользовательских сценариев на виртуальных машинах Linux в Azure | Документация Майкрософт
+title: Выполнение пользовательских скриптов на виртуальных машинах Linux в Azure
 description: Автоматизируйте задачи настройки виртуальных машин Linux с помощью расширения настраиваемых скриптов версии 1
 services: virtual-machines-linux
 documentationcenter: ''
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 08/14/2018
 ms.author: danis
-ms.openlocfilehash: e5ef1bde9420104b596c22837048b054f918b3cc
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: b7dbabf5be8b1f223f6e39f294b9d7022b83c4f8
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70092632"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74073181"
 ---
 # <a name="use-the-azure-custom-script-extension-version-1-with-linux-virtual-machines"></a>Использование расширения настраиваемых скриптов Azure версии 1 на виртуальных машинах Linux
 
@@ -31,7 +31,7 @@ ms.locfileid: "70092632"
 
 В этой статье показано, как применять пользовательское расширение сценариев из Azure CLI и как выполнять расширения с помощью шаблона Azure Resource Manager. В этой статье также показаны шаги по устранению неполадок в системах Linux.
 
-Имеется два расширения настраиваемых скриптов Linux:
+Существует два расширения настраиваемых скриптов Linux:
 
 * Версия 1 — Microsoft.OSTCExtensions.CustomScriptForLinux
 
@@ -54,7 +54,7 @@ ms.locfileid: "70092632"
 
 ### <a name="script-location"></a>Расположение сценария
 
-С помощью расширения можно получить доступ к хранилищу BLOB-объектов Azure с помощью учетных данных службы хранилища BLOB-объектов Azure. Кроме того, скрипт может находиться в любом расположении при условии, что виртуальная машина может осуществлять маршрутизацию в эту конечную точку, такую как GitHub, внутренний файловый сервер и т. д.
+Вы можете использовать расширение, чтобы получить доступ к хранилищу BLOB-объектов Azure с помощью учетных данных службы хранилища BLOB-объектов Azure. Кроме того, скрипт может находиться в любом расположении при условии, что виртуальная машина может осуществлять маршрутизацию в эту конечную точку, такую как GitHub, внутренний файловый сервер и т. д.
 
 ### <a name="internet-connectivity"></a>Подключение к Интернету
 
@@ -69,10 +69,10 @@ ms.locfileid: "70092632"
 * Выполняемые скрипты не должны запрашивать ввод данных пользователем.
 * На выполнение скрипта отводится 90 минут. Более продолжительное действие вызовет сбой подготовки расширения.
 * Не следует помещать перезагрузки в скрипт, так как будут возникать проблемы с другими устанавливаемыми расширениями и после перезагрузки расширение прекратит работать. 
-* Если у вас есть скрипт, приводящий к перезагрузке, установите приложения и запустите скрипты и т. д. Необходимо запланировать перезагрузку с помощью задания Cron или таких средств, как расширения DSC, Chef, Puppet.
+* Если у вас есть сценарий, который приведет к перезагрузке, установите приложения и запустите сценарии и т. д. Следует запланировать перезагрузку с помощью задания cron или таких средств, как DSC или Chef, расширения Puppet.
 * Расширение будет запускать скрипт только один раз. Чтобы запускать скрипт при каждой загрузке, можно воспользоваться [образом cloud-init](../linux/using-cloud-init.md) и модулем [скриптов при загрузке](https://cloudinit.readthedocs.io/en/latest/topics/modules.html#scripts-per-boot). Кроме того, можно использовать скрипт для создания единицы службы Systemd.
 * Чтобы запланировать время выполнения скрипта, необходимо создать задание Cron с помощью расширения.
-* Во время выполнения скрипта вы увидите на портале Microsoft Azure или в CLI только переходное состояние расширения. Если требуются более частые обновления состояния выполняющегося скрипта, следует создать собственное решение.
+* Во время выполнения скрипта на портале Azure или в CLI отобразятся только сведения о переходном состоянии расширения. Если нужно чаще обновлять состояние выполняющегося скрипта, создайте собственное решение.
 * Расширение настраиваемых скриптов не имеет собственной поддержки прокси-серверов, однако можно использовать средство передачи файлов, которое поддерживает прокси-серверы в скрипте, например *Curl*.
 * Следует учитывать настраиваемые расположения каталогов, которые могут использоваться скриптами или командами, и иметь в распоряжении логику для обработки таких случаев.
 
@@ -118,19 +118,19 @@ ms.locfileid: "70092632"
 
 ### <a name="property-values"></a>Значения свойств
 
-| Название | Значение и пример | Тип данных |
+| имя | Значение и пример | Тип данных |
 | ---- | ---- | ---- |
-| apiVersion | 2015-06-15 | date |
-| publisher | Microsoft.OSTCExtensions | string |
-| type | CustomScriptForLinux | string |
+| версия_API | 2015-06-15 | дата |
+| publisher | Microsoft.OSTCExtensions | строка |
+| type | CustomScriptForLinux | строка |
 | typeHandlerVersion | 1.5 | int |
 | fileUris (пример) | https://github.com/MyProject/Archive/MyPythonScript.py | array |
-| commandToExecute (пример) | python MyPythonScript.py \<my-param1\> | string |
-| enableInternalDNSCheck | true | boolean |
-| storageAccountName (пример) | examplestorageacct | string |
-| storageAccountKey (пример) | TmJK/1N3AbAZ3q/+hOXoi/l73zOqsaxXDhqa9Y83/v5UpXQp2DQIBuv2Tifp60cE/OaHsJZmQZ7teQfczQj8hg== | string |
+| commandToExecute (пример) | python MyPythonScript.py \<my-param1\> | строка |
+| enableInternalDNSCheck | true | логическое значение |
+| storageAccountName (пример) | examplestorageacct | строка |
+| storageAccountKey (пример) | TmJK/1N3AbAZ3q/+hOXoi/l73zOqsaxXDhqa9Y83/v5UpXQp2DQIBuv2Tifp60cE/OaHsJZmQZ7teQfczQj8hg== | строка |
 
-### <a name="property-value-details"></a>Сведения о значениях свойств
+### <a name="property-value-details"></a>Сведения о значении свойства
 
 * `fileUris`: (необязательное, массив строк) список URI скриптов.
 * `enableInternalDNSCheck`: (необязательное, логическое) по умолчанию имеет значение True; установите значение False, чтобы отключить проверку DNS.
@@ -182,9 +182,9 @@ ms.locfileid: "70092632"
 >[!NOTE]
 >В именах свойств учитывается регистр. Чтобы избежать проблем с развертыванием, используйте имена, как показано ниже.
 
-## <a name="azure-cli"></a>Azure CLI
+## <a name="azure-cli"></a>Интерфейс командной строки Azure
 
-При использовании Azure CLI для выполнения расширения пользовательских сценариев создайте один или несколько файлов конфигурации. Как минимум, требуется commandToExecute.
+При использовании Azure CLI для выполнения расширения пользовательских сценариев создайте один или несколько файлов конфигурации. Как минимум, требуется "commandToExecute".
 
 ```azurecli
 az vm extension set -n VMAccessForLinux \
@@ -295,7 +295,7 @@ az vm extension set
 
 1. Enable — означает момент запуска команды.
 1. Download — относится к скачиванию пакета расширения CustomScript из Azure, а не файлов скрипта, указанных в fileUris.
-1. Вы также можете увидеть, в какой файл журнала выполняется запись.`/var/log/azure/Microsoft.OSTCExtensions.CustomScriptForLinux/1.5.2.2/extension.log`
+1. Вы также можете увидеть, в какой файл журнала записывается `/var/log/azure/Microsoft.OSTCExtensions.CustomScriptForLinux/1.5.2.2/extension.log`
 
 Далее нужно проверить файл журнала, имеющий следующий формат:
 
@@ -353,6 +353,6 @@ Name                  ProvisioningState    Publisher                   Version  
 CustomScriptForLinux  Succeeded            Microsoft.OSTCExtensions        1.5  True
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Код, текущие проблемы и версии доступны в [репозитории расширения CustomScript](https://github.com/Azure/azure-linux-extensions/tree/master/CustomScript).
