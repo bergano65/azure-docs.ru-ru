@@ -229,8 +229,6 @@
       href: migrate-v1-v2.md
 - name: Справочные материалы
   items:
-    - name: Правила CRS
-      href: application-gateway-crs-rulegroups-rules.md
     - name: Входящий трафик для заметок AKS
       href: ingress-controller-annotations.md
     - name: Инфраструктура CLI Azure

@@ -114,6 +114,8 @@
           href: key-vault-group-permissions-for-apps.md
     - name: Маршрутизация уведомлений о хранилище ключей с помощью службы "Сетка событий"
       href: event-grid-tutorial.md
+    - name: Интеграция со службой "Поиск Azure"
+      href: azure-policy.md
     - name: Ведение журнала Azure Key Vault
       href: key-vault-logging.md
     - name: Доступ за брандмауэрами

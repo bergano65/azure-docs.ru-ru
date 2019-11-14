@@ -109,7 +109,7 @@
     - name: Защита содержимого
       items:
         - name: Динамическое шифрование и доставка ключей
-          displayName: 'content protection, streaming protocols, encryption types, content protection, PlayReady, Widevine, FairPlay'
+          displayName: 'content protection, streaming protocols, encryption types, PlayReady, Widevine, FairPlay, custom'
           href: content-protection-overview.md
         - name: Разработка системы с несколькими подсистемами DRM
           displayName: 'drm, access control'
@@ -138,6 +138,8 @@
         - name: Сдвиг по времени и преобразование данных трансляции в VOD
           displayName: 'archive, dvr'
           href: live-event-cloud-dvr.md
+        - name: Транскрибирование в реальном времени
+          href: live-transcription.md
         - name: Сравнение возможностей
           href: live-event-types-comparison.md
         - name: Состояния и выставление счетов

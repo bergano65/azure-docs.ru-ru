@@ -367,8 +367,6 @@
               href: sql-database-temporal-tables-retention-policy.md
             - name: Аутентификация приложения
               href: sql-database-client-id-keys.md
-            - name: Сообщения об ошибках
-              href: sql-database-develop-error-messages.md
             - name: Пакетная обработка для повышения производительности
               href: sql-database-use-batching-to-improve-performance.md
             - name: Руководство по настройке подключений
@@ -835,8 +833,6 @@
       href: 'https://azure.microsoft.com/roadmap/'
     - name: Открытые наборы данных
       href: sql-database-public-data-sets.md
-    - name: Устранение неполадок с подключением
-      href: 'https://support.microsoft.com/help/10085/troubleshooting-connectivity-issues-with-microsoft-azure-sql-database'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/sql-database/'
     - name: Форум MSDN

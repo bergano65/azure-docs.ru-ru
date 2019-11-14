@@ -206,12 +206,16 @@
       items:
         - name: Очереди (версия 11.x)
           href: /dotnet/api/microsoft.azure.storage.queue
+        - name: Очереди (версия 12.x)
+          href: /dotnet/api/azure.storage.queues
         - name: Поставщик ресурсов хранилища
           href: /dotnet/api/overview/azure/storage/management
     - name: Java
       items:
         - name: Очереди (версия 8.x)
           href: /java/api/com.microsoft.azure.storage.queue
+        - name: Очереди (версия 12.x)
+          href: 'https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-queue/12.0.0/index.html'
         - name: Поставщик ресурсов хранилища
           href: /java/api/overview/azure/storage/management
     - name: JavaScript (версия 12.x)
@@ -267,11 +271,11 @@
       items:
         - name: "Microsoft.Azure.Storage.Common (версия\_11.x)"
           href: 'https://www.nuget.org/packages/Microsoft.Azure.Storage.Common/'
-        - name: "Azure.Storage.Common (12.x\_— предварительная версия)"
+        - name: "Azure.Storage.Common (версия\_12.x)"
           href: 'https://www.nuget.org/packages/Azure.Storage.Common/'
         - name: "Microsoft.Azure.Storage.Queue (версия\_11.x)"
           href: 'https://www.nuget.org/packages/Microsoft.Azure.Storage.Queue/'
-        - name: "Azure.Storage.Queue (12.x\_— предварительная версия)"
+        - name: "Azure.Storage.Queue (версия\_12.x)"
           href: 'https://www.nuget.org/packages/Azure.Storage.Queues/'
         - name: Диспетчер конфигураций Azure
           href: 'https://www.nuget.org/packages/Microsoft.Azure.ConfigurationManager/'
@@ -283,7 +287,7 @@
           items:
             - name: Клиентская библиотека службы хранилища Azure
               items:
-                - name: "Версия\_12.x (предварительная версия)"
+                - name: Версия 12.x
                   href: 'https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/storage'
                 - name: "Версия\_11. x и более ранние версии"
                   href: 'https://github.com/Azure/azure-storage-net'
@@ -293,7 +297,7 @@
               href: 'https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/storage/Microsoft.Azure.Management.Storage'
         - name: Java
           items:
-            - name: "Клиентская библиотека службы хранилища Azure версии\_12.x (предварительная версия)"
+            - name: "Клиентская библиотека службы хранилища Azure версии\_12.x"
               href: 'https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/storage'
             - name: "Большие двоичные объекты, очереди и файлы (версия\_8)"
               href: 'https://docs.microsoft.com/java/api/overview/azure/storage?view=azure-java-legacy'
@@ -301,13 +305,13 @@
               href: 'https://github.com/Azure/azure-storage-java'
         - name: Node.js
           items:
-            - name: "Клиентская библиотека службы хранилища Azure версии\_12.x (предварительная версия)"
+            - name: "Клиентская библиотека службы хранилища Azure версии\_12.x"
               href: 'https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage'
             - name: "Клиентская библиотека службы хранилища Azure версии\_10.x"
               href: 'https://github.com/Azure/azure-storage-node'
         - name: Python
           items:
-            - name: "Клиентская библиотека службы хранилища Azure версии\_12.x (предварительная версия)"
+            - name: "Клиентская библиотека службы хранилища Azure версии\_12.x"
               href: 'https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage'
             - name: "Клиентская библиотека службы хранилища Azure версии\_2.1"
               href: 'https://github.com/Azure/azure-storage-python'

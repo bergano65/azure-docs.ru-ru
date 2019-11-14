@@ -482,6 +482,8 @@
               href: service-fabric-tutorial-deploy-api-management.md
             - name: Управление секретами приложений
               href: service-fabric-application-secret-management.md
+            - name: Использование хранилища секретов Service Fabric
+              href: service-fabric-application-secret-store.md
               items:
                 - name: Настройка шифрования секретов и сертификата шифрования в Windows
                   href: service-fabric-application-secret-management-windows.md

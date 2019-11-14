@@ -8,7 +8,7 @@
   items:
     - name: Создание подключения "сеть — сеть"
       href: virtual-wan-site-to-site-portal.md
-    - name: "Создание подключений \"точка\_— сеть\""
+    - name: "Создание пользовательских VPN-подключений (точка\_— сеть)"
       href: virtual-wan-point-to-site-portal.md
     - name: Создание подключения ExpressRoute
       href: virtual-wan-expressroute-portal.md
@@ -20,36 +20,38 @@
       href: virtual-wan-ipsec.md
     - name: Архитектура
       items:
+        - name: Переход на Виртуальную глобальную сеть
+          href: migrate-from-hub-spoke-topology.md
         - name: Архитектура глобальной транзитной сети
           href: virtual-wan-global-transit-network-architecture.md
         - name: Уровень управления Office 365 в Виртуальной глобальной сети
           href: virtual-wan-office365-overview.md
 - name: Руководства
   items:
-    - name: Обновление номера SKU Виртуальной глобальной сети
-      href: upgrade-virtual-wan.md
-    - name: Переход на Виртуальную глобальную сеть
-      href: migrate-from-hub-spoke-topology.md
-    - name: Создание VPN-подключения с помощью частного пиринга ExpressRoute
-      href: vpn-over-expressroute.md
     - name: Подключение шлюза виртуальной сети к Виртуальной глобальной сети
       href: connect-virtual-network-gateway-vwan.md
     - name: Настройка глобального пиринга виртуальных сетей
       href: global-peering-vnet.md
+    - name: Создание VPN-подключения с помощью ExpressRoute
+      href: vpn-over-expressroute.md
+    - name: Обновление номера SKU Виртуальной глобальной сети
+      href: upgrade-virtual-wan.md
     - name: Настройка пользовательской политики IPsec
       href: virtual-wan-custom-ipsec-portal.md
-    - name: Настройка сертификатов для VPN пользователя
+    - name: "Настройка сертификатов для пользовательского VPN-подключения (точка\_— сеть)"
       href: certificates-point-to-site.md
-    - name: Маршрутизация трафика из виртуального концентратора в виртуальный сетевой модуль
-      items:
-        - name: Портал Azure
-          href: virtual-wan-route-table-portal.md
-        - name: Azure PowerShell
-          href: virtual-wan-route-table.md
-    - name: Просмотр фактических маршрутов виртуального концентратора
-      href: effective-routes-virtual-hub.md
-    - name: Автоматизация для партнеров Виртуальной глобальной сети
+    - name: Настройка автоматизации (участники Виртуальной глобальной сети)
       href: virtual-wan-configure-automation-providers.md
+    - name: Настройка маршрутизации
+      items:
+        - name: Маршрутизация трафика из виртуального концентратора в виртуальный сетевой модуль
+          items:
+            - name: Портал Azure
+              href: virtual-wan-route-table-portal.md
+            - name: Azure PowerShell
+              href: virtual-wan-route-table.md
+        - name: Просмотр фактических маршрутов виртуального концентратора
+          href: effective-routes-virtual-hub.md
 - name: Справочные материалы
   items:
     - name: Azure PowerShell
