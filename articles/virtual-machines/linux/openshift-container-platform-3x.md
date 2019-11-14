@@ -1,5 +1,5 @@
 ---
-title: Развертывание платформы контейнеров OpenShift 3,11 в Azure | Документация Майкрософт
+title: Развертывание платформы контейнеров OpenShift 3,11 в Azure
 description: Развертывание платформы контейнеров OpenShift 3,11 в Azure.
 services: virtual-machines-linux
 documentationcenter: virtual-machines
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 10/14/2019
 ms.author: haroldw
-ms.openlocfilehash: 4320105c5411e8a01ff6c69bf7d87057c786d092
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: 56607de57939be769b1951f0eee9078c46d610c0
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72392752"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74035450"
 ---
 # <a name="deploy-openshift-container-platform-311-in-azure"></a>Развертывание платформы контейнеров OpenShift 3,11 в Azure
 
@@ -248,9 +248,9 @@ ms.locfileid: "72392752"
 
 ### <a name="azuredeployparametersjson-file-explained"></a>azuredeploy. Описание файла parameters. JSON
 
-| Свойство | Описание | Допустимые параметры | Значение по умолчанию |
+| Свойство | ОПИСАНИЕ | Допустимые параметры | Значение по умолчанию |
 |----------|-------------|---------------|---------------|
-| `_artifactsLocation`  | URL-адрес для артефактов (JSON, сценарии и т. д.) |  |  HTTPS: \//RAW. гисубусерконтент. com/Microsoft/openshift-Container-Platform/Master  |
+| `_artifactsLocation`  | URL-адрес для артефактов (JSON, сценарии и т. д.) |  |  HTTPS:\//raw.githubusercontent.com/Microsoft/openshift-container-platform/master  |
 | `location` | Регион Azure для развертывания ресурсов |  |  |
 | `masterVmSize` | Размер главной виртуальной машины. Выберите один из разрешенных размеров виртуальных машин, перечисленных в файле azuredeploy. JSON. |  | Standard_E2s_v3 |
 | `infraVmSize` | Размер инфраструктуры виртуальной машины. Выберите один из разрешенных размеров виртуальных машин, перечисленных в файле azuredeploy. JSON. |  | Standard_D4s_v3 |
@@ -269,9 +269,9 @@ ms.locfileid: "72392752"
 | `dataDiskSize` | Размер диска данных для присоединения к узлам для тома DOCKER (в ГБ) | 32, 64, 128, 256, 512, 1024, 2048 | 64 |
 | `cnsGlusterDiskSize` | Размер диска данных для присоединения к узлам CNS для использования глустерфс (в ГБ | 32, 64, 128, 256, 512, 1024, 2048 | 128 |
 | `adminUsername` | Имя администратора для входа в ОС (ВМ) и начального пользователя OpenShift |  | окпадмин |
-| `enableMetrics` | Включите метрики. Метрики нуждаются в дополнительных ресурсах, поэтому выберите подходящий размер для инфраструктуры виртуальной машины | true <br> false | false |
-| `enableLogging` | Включить ведение журнала. для модуля elasticsearch требуется 8 ГБ ОЗУ, поэтому выберите подходящий размер для инфраструктуры виртуальной машины. | true <br> false | false |
-| `enableCNS` | Включение собственного хранилища контейнера | true <br> false | false |
+| `enableMetrics` | Включите метрики. Метрики нуждаются в дополнительных ресурсах, поэтому выберите подходящий размер для инфраструктуры виртуальной машины | true <br> нет | нет |
+| `enableLogging` | Включить ведение журнала. для модуля elasticsearch требуется 8 ГБ ОЗУ, поэтому выберите подходящий размер для инфраструктуры виртуальной машины. | true <br> нет | нет |
+| `enableCNS` | Включение собственного хранилища контейнера | true <br> нет | нет |
 | `rhsmUsernameOrOrgId` | Имя пользователя или идентификатор организации для диспетчера подписки Red Hat |  |  |
 | `rhsmPoolId` | Идентификатор пула диспетчера подписки Red Hat, который содержит ваши права OpenShift для вычислений узлов. |  |  |
 | `rhsmBrokerPoolId` | Идентификатор пула диспетчера подписок Red Hat, который содержит ваши права на OpenShift для главных и бесузелных узлов. Если у вас нет других идентификаторов пула, укажите идентификатор пула "Рхсмпулид". |  |
@@ -279,15 +279,15 @@ ms.locfileid: "72392752"
 | `keyVaultSubscriptionId` | Идентификатор подписки, которая содержит Key Vault |  |  |
 | `keyVaultResourceGroup` | Имя группы ресурсов, которая содержит Key Vault |  |  |
 | `keyVaultName` | Имя созданного Key Vault |  |  |
-| `enableAzure` | Включение поставщика облачных служб Azure | true <br> false | true |
+| `enableAzure` | Включение поставщика облачных служб Azure | true <br> нет | true |
 | `aadClientId` | Идентификатор клиента Azure Active Directory также известен как идентификатор приложения для субъекта-службы |  |  |
-| `domainName` | Имя пользовательского доменного имени, которое будет использоваться (если применимо). Если не развертывать полностью частный кластер, задайте значение "нет". |  | Нет |
+| `domainName` | Имя пользовательского доменного имени, которое будет использоваться (если применимо). Если не развертывать полностью частный кластер, задайте значение "нет". |  | None |
 | `masterClusterDnsType` | Тип домена для веб-консоли OpenShift. "default" будет использовать DNS-метку для основного общедоступного IP-адреса. "Custom" позволяет определить собственное имя | по умолчанию <br> настройки | по умолчанию |
 | `masterClusterDns` | Настраиваемое DNS-имя, используемое для доступа к OpenShift Web Console, если вы выбрали "Custom" для `masterClusterDnsType` |  | console.contoso.com |
 | `routingSubDomainType` | Если задано значение "нипио", `routingSubDomain` будет использовать nip.io.  Используйте "Custom", если у вас есть собственный домен, который вы хотите использовать для маршрутизации. | нипио <br> настройки | нипио |
 | `routingSubDomain` | DNS-имя с подстановочными знаками, которое вы хотите использовать для маршрутизации, если вы выбрали "Custom" для `routingSubDomainType` |  | apps.contoso.com |
-| `virtualNetworkNewOrExisting` | Укажите, следует ли использовать существующую виртуальную сеть или создать виртуальную сеть | существующий <br> Новинка! | Новинка! |
-| `virtualNetworkResourceGroupName` | Имя группы ресурсов для новой виртуальной сети, если для `virtualNetworkNewOrExisting` выбрано значение "создать" |  | resourceGroup (). имя |
+| `virtualNetworkNewOrExisting` | Укажите, следует ли использовать существующую виртуальную сеть или создать виртуальную сеть | существующий <br> new | new |
+| `virtualNetworkResourceGroupName` | Имя группы ресурсов для новой виртуальной сети, если вы выбрали "создать" для `virtualNetworkNewOrExisting` |  | resourceGroup (). имя |
 | `virtualNetworkName` | Имя создаваемой виртуальной сети, если вы выбрали "создать" для `virtualNetworkNewOrExisting` |  | опеншифтвнет |
 | `addressPrefixes` | Префикс адреса новой виртуальной сети |  | 10.0.0.0/14 |
 | `masterSubnetName` | Имя главной подсети |  | мастерсубнет |
@@ -349,7 +349,7 @@ $ ssh clusteradmin@bastiondns4hawllzaavu6g.eastus.cloudapp.azure.com
 az group delete --name openshiftrg
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Задачи, выполняемые после развертывания](./openshift-container-platform-3x-post-deployment.md)
 - [Устранение неполадок с развертыванием OpenShift в Azure](./openshift-container-platform-3x-troubleshooting.md)

@@ -1,5 +1,5 @@
 ---
-title: Управление доступностью виртуальных машин Windows в Azure | Документация Майкрософт
+title: Управление доступностью виртуальных машин Windows в Azure
 description: Описывается, как использовать несколько виртуальных машин для обеспечения высокой доступности приложения Windows в Azure.
 services: virtual-machines-windows
 documentationcenter: ''
@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 03/27/2018
 ms.author: cynthn
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: c7de139c83128f92c9c28fbdb002246f6dbbf0ec
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 44db2b0b42175f7968852ad9a0f7769b05e2c008
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70079249"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74038182"
 ---
 # <a name="manage-the-availability-of-windows-virtual-machines-in-azure"></a>Управление доступностью виртуальных машин Windows в Azure 
 
@@ -30,6 +30,6 @@ ms.locfileid: "70079249"
 
 [!INCLUDE [virtual-machines-common-manage-availability](../../../includes/virtual-machines-common-manage-availability.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 Чтобы больше узнать о балансировке нагрузки виртуальных машин, ознакомьтесь с разделом [Балансировка нагрузки виртуальных машин](tutorial-load-balancer.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 

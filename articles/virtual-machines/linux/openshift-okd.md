@@ -1,5 +1,5 @@
 ---
-title: Развертывание OKD в Azure | Документация Майкрософт
+title: Развертывание OKD в Azure
 description: Развертывание OKD в Azure.
 services: virtual-machines-linux
 documentationcenter: virtual-machines
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 10/15/2019
 ms.author: haroldw
-ms.openlocfilehash: 66d17fb2a96bbb5b1dcb51151242f014b4116b86
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: 6ecae09b0efbc0e35e591b31dbb54fb49ce101b3
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72390527"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74035408"
 ---
 # <a name="deploy-okd-in-azure"></a>Развертывание OKD в Azure
 
@@ -40,7 +40,7 @@ ms.locfileid: "72390527"
 
 [Шаблон OKD](https://github.com/Microsoft/openshift-origin) содержит несколько ветвей, доступных для разных версий OKD.  В соответствии с потребностями вы можете выполнять развертывание непосредственно из репозитория или создать вилку репозитория, чтобы вносить изменения перед развертыванием.
 
-Используйте для параметра `aadClientId` значение `appId` из созданного ранее субъекта-службы.
+Используйте для параметра `appId` значение `aadClientId` из созданного ранее субъекта-службы.
 
 Следующий примере создает файл параметров с именем azuredeploy.parameters.json, который содержит все необходимые входные данные.
 
@@ -134,7 +134,7 @@ az group deployment create -g openshiftrg --name myOpenShiftCluster \
       --parameters @./azuredeploy.parameters.json
 ```
 
-Развертывание длится не менее 30 минут в зависимости от общего количества развертываемых узлов. После завершения развертывания в терминале появятся сведения об URL-адресе консоли OpenShift, а также DNS-имя основного кластера OpenShift. Также можно просмотреть раздел выходных данных для развертывания на портале Azure.
+Развертывание длится не менее 30 минут в зависимости от общего количества развертываемых узлов. После завершения развертывания в терминале отобразятся URL-адрес консоли OpenShift и DNS-имя главного узла OpenShift. Также можно просмотреть раздел выходных данных для развертывания на портале Azure.
 
 ```json
 {
@@ -161,7 +161,7 @@ $ ssh -p 2200 clusteradmin@myopenshiftmaster.cloudapp.azure.com
 az group delete --name openshiftrg
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Задачи, выполняемые после развертывания](./openshift-container-platform-3x-post-deployment.md)
 - [Устранение неполадок с развертыванием OpenShift](./openshift-container-platform-3x-troubleshooting.md)

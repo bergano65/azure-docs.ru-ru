@@ -1,5 +1,5 @@
 ---
-title: Установка драйвера GPU серии N для Linux | Документация Майкрософт
+title: Установка драйвера GPU для Azure серии N для Linux
 description: Как установить драйверы NVIDIA GPU для виртуальных машин серии N под управлением Linux в Azure
 services: virtual-machines-linux
 documentationcenter: ''
@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 01/09/2019
 ms.author: cynthn
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 3abc221295a90dfbf7e46e3bd5bff1c8c0937162
-ms.sourcegitcommit: f9e81b39693206b824e40d7657d0466246aadd6e
+ms.openlocfilehash: 6ebc991d54ef902eb653cf2d99b2f74f18551568
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72035016"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74035623"
 ---
 # <a name="install-nvidia-gpu-drivers-on-n-series-vms-running-linux"></a>Установка драйверов GPU NVIDIA на виртуальные машины серии N под управлением Linux
 
@@ -155,7 +155,7 @@ sudo reboot
 
 ![Состояние устройства NVIDIA](./media/n-series-driver-setup/smi.png)
 
-## <a name="rdma-network-connectivity"></a>Сетевое подключение RDMA
+## <a name="rdma-network-connectivity"></a>Сетевое подключение к RDMA
 
 Сетевое подключение RDMA можно включить на виртуальных машинах серии N с поддержкой RDMA, таких как NC24r, развернутых в одной группе доступности или в одной группе размещения в масштабируемом наборе виртуальных машин. Сеть RDMA поддерживает трафик MPI (Message Passing Interface) для приложений, использующих Intel MPI 5.x или более поздней версии. Дополнительные требования приведены ниже.
 
@@ -190,7 +190,7 @@ sudo reboot
    
    sudo apt-get install linux-azure -y
    ```
-3. Отключите драйвер ядра Nouveau, который несовместим с драйвером NVIDIA. (На виртуальных машинах NV или NVv2 используйте только драйвер NVIDIA.) Для этого создайте файл в `/etc/modprobe.d` с именем `nouveau.conf` со следующим содержимым:
+3. Отключите драйвер ядра Nouveau, который несовместим с драйвером NVIDIA. (Используйте драйвер NVIDIA только на виртуальных машинах NV или NVv2.) Для этого создайте файл в `/etc/modprobe.d` с именем `nouveau.conf` со следующим содержимым:
 
    ```
    blacklist nouveau
@@ -230,7 +230,7 @@ sudo reboot
    EnableUI=FALSE
    ```
    
-9. Удалите следующий объект из `/etc/nvidia/gridd.conf`, если он имеется:
+9. Удалите следующие `/etc/nvidia/gridd.conf`, если она есть:
  
    ```
    FeatureType=0
@@ -254,7 +254,7 @@ sudo reboot
    sudo yum install hyperv-daemons
    ```
 
-2. Отключите драйвер ядра Nouveau, который несовместим с драйвером NVIDIA. (На виртуальных машинах NV или NV2 используйте только драйвер NVIDIA.) Для этого создайте файл в `/etc/modprobe.d` с именем `nouveau.conf` со следующим содержимым:
+2. Отключите драйвер ядра Nouveau, который несовместим с драйвером NVIDIA. (Используйте драйвер NVIDIA только на виртуальных машинах NV или NV2.) Для этого создайте файл в `/etc/modprobe.d` с именем `nouveau.conf` со следующим содержимым:
 
    ```
    blacklist nouveau
@@ -302,7 +302,7 @@ sudo reboot
    IgnoreSP=FALSE
    EnableUI=FALSE 
    ```
-9. Удалите следующий объект из `/etc/nvidia/gridd.conf`, если он имеется:
+9. Удалите следующие `/etc/nvidia/gridd.conf`, если она есть:
  
    ```
    FeatureType=0
@@ -364,6 +364,6 @@ fi
 * Когда необходимо запрашивать карты, для быстрого получения выходных данных команды можно задать режим сохранения с помощью команды `nvidia-smi`. Чтобы задать режим сохранения, выполните `nvidia-smi -pm 1`. Обратите внимание, что в случае перезапуска виртуальной машины настройка режима не сохранится. Всегда можно написать сценарий настройки режима для выполнения при запуске.
 * Если вы обновили драйверы NVIDIA CUDA до последней версии и обнаружите, что RDMA коннективЦити больше не работает, [переустановите драйверы RDMA](https://docs.microsoft.com/azure/virtual-machines/linux/n-series-driver-setup#rdma-network-connectivity) , чтобы реистаблиш это подключение. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 * Чтобы записать образ виртуальной машины Linux с установленными драйверами NVIDIA, см. статью [Как подготовить к работе и записать образ виртуальной машины Linux](capture-image.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
