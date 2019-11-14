@@ -1,5 +1,5 @@
 ---
-title: Многофакторная идентификация (MFA) и управление привилегированными пользователями-Azure Active Directory | Документация Майкрософт
+title: MFA, 2FA и управление привилегированными пользователями — Azure AD | Документация Майкрософт
 description: Узнайте, как Azure AD Privileged Identity Management (PIM) проверяет многофакторную проверку подлинности (MFA).
 services: active-directory
 documentationcenter: ''
@@ -10,16 +10,16 @@ ms.service: active-directory
 ms.topic: conceptual
 ms.workload: identity
 ms.subservice: pim
-ms.date: 08/31/2018
+ms.date: 11/08/2019
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2aa58c354198e648227b9b0b43d1f60546f87d32
-ms.sourcegitcommit: f7f70c9bd6c2253860e346245d6e2d8a85e8a91b
+ms.openlocfilehash: 6df593909c3ae5962e413eb84e64196fade0326b
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73063061"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74022139"
 ---
 # <a name="multi-factor-authentication-and-privileged-identity-management"></a>Многофакторная идентификация и управление привилегированными пользователями
 
@@ -38,7 +38,7 @@ ms.locfileid: "73063061"
 
 Кроме того, если пользователи проходят аутентификацию в локальной среде, поставщик удостоверений может отвечать за многофакторную идентификацию. Например, если службы федерации AD требуют проверку подлинности на основе смарт-карты для доступа к Azure AD, можете воспользоваться инструкциями по настройке AD FS для отправки утверждений в Azure AD, приведенными в разделе [Защита облачных ресурсов с помощью Многофакторной идентификации Azure и AD FS](../authentication/howto-mfa-adfs.md). Когда пользователь пытается активировать роль, управление привилегированными пользователями принимает, что многофакторная проверка подлинности уже была проверена для пользователя после получения соответствующих утверждений.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Настройка параметров роли Azure AD в управление привилегированными пользователями](pim-how-to-change-default-settings.md)
 - [Настройка параметров роли ресурсов Azure в управление привилегированными пользователями](pim-resource-roles-configure-role-settings.md)

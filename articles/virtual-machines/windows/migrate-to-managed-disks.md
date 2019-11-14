@@ -1,5 +1,5 @@
 ---
-title: Миграция виртуальных машин Azure на Управляемые диски | Документация Майкрософт
+title: Перенос виртуальных машин Azure на управляемые диски
 description: Миграция виртуальных машин Azure, созданных с помощью неуправляемых дисков в учетных записях хранения, на Управляемые диски.
 author: roygara
 ms.service: virtual-machines-windows
@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/30/2019
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: 7487d53195b45664b094ccc3a8418bd0c700e052
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: 7b907cf5bf64aa1a8a458a8d2b42c30dffd0dfd1
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68693495"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74029793"
 ---
 # <a name="migrate-azure-vms-to-managed-disks-in-azure"></a>Миграция виртуальных машин Azure на Управляемые диски Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "68693495"
 |Преобразование всех виртуальных машин в виртуальной сети из классической модели в диспетчер ресурсов на управляемых дисках     |[Перенос ресурсов IaaS из классической модели в модель Azure Resource Manager с помощью Azure PowerShell](migration-classic-resource-manager-ps.md), затем [Convert a VM from unmanaged disks to managed disks](convert-unmanaged-to-managed-disks.md) (Преобразование виртуальной машины с неуправляемыми дисками для использования управляемых дисков)         |
 |Обновление виртуальных машин с использованием стандартных неуправляемых дисков на виртуальных машинах с управляемыми дисками уровня "Премиум"     | Сначала [преобразуйте виртуальную машину Windows с неуправляемыми дисками на управляемые диски](convert-unmanaged-to-managed-disks.md). Затем [Обновите тип хранилища управляемого диска](convert-disk-storage.md).         |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 - Узнайте больше об [Управляемых дисках](managed-disks-overview.md).
 - Ознакомьтесь с [ценами на Управляемые диски](https://azure.microsoft.com/pricing/details/managed-disks/).

@@ -1,23 +1,18 @@
 ---
-title: Создание шлюза приложений с несколькими сайтами с помощью Azure CLI | Документация Майкрософт
+title: Размещение нескольких сайтов с помощью интерфейса командной строки — шлюз приложений Azure
 description: Узнайте, как создать шлюз приложений, на котором размещено несколько сайтов, с помощью Azure CLI.
 services: application-gateway
 author: vhorne
-manager: jpconnock
-editor: tysonn
 ms.service: application-gateway
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 7/14/2018
+ms.date: 11/14/2019
 ms.author: victorh
-ms.openlocfilehash: ce5701d4125123798c6b6a654e4fa4a4887778a3
-ms.sourcegitcommit: a52f17307cc36640426dac20b92136a163c799d0
+ms.openlocfilehash: 5edc2e5228146aee913027a83e495d94c003e237
+ms.sourcegitcommit: b1a8f3ab79c605684336c6e9a45ef2334200844b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68717263"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74047337"
 ---
 # <a name="create-an-application-gateway-with-multiple-site-hosting-using-the-azure-cli"></a>Создание шлюза приложений с несколькими сайтами с помощью Azure CLI
 
@@ -30,17 +25,17 @@ ms.locfileid: "68717263"
 > * Создание шлюза приложений
 > * создание прослушивателей и правил маршрутизации;
 > * создание масштабируемых наборов виртуальных машин с внутренними пулами.
-> * создание записи CNAME в домене.
+> * Создание записи CNAME в домене.
 
 ![Пример маршрутизации нескольких сайтов](./media/tutorial-multisite-cli/scenario.png)
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 Если вы решили установить и использовать CLI локально, для выполнения инструкций в этом руководстве вам понадобится Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
 
-## <a name="create-a-resource-group"></a>Создать группу ресурсов
+## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
 Группа ресурсов — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими. Создайте группу ресурсов, используя команду [az group create](/cli/azure/group).
 
@@ -117,7 +112,7 @@ az network application-gateway address-pool create \
 
 ### <a name="add-listeners"></a>Добавление прослушивателей
 
-Прослушиватель требуется для того, чтобы шлюз приложений правильно маршрутизировал трафик на внутренние пулы. В этом руководстве создаются два прослушивателя для двух ваших доменов. В этом примере создаются прослушиватели для доменов *www.contoso.com* и *www.fabrikam.com*. 
+Прослушиватель требуется, чтобы шлюз приложений правильно маршрутизировал трафик в серверный пул. В этом руководстве создаются два прослушивателя для двух ваших доменов. В этом примере создаются прослушиватели для доменов *www.contoso.com* и *www.fabrikam.com*. 
 
 Добавьте прослушиватели с именами *contosoListener* и *fabrikamListener*, необходимые для маршрутизации трафика, с помощью команды [az network application-gateway http-listener create](/cli/azure/network/application-gateway).
 
@@ -211,7 +206,7 @@ for i in `seq 1 2`; do
 done
 ```
 
-## <a name="create-a-cname-record-in-your-domain"></a>создание записи CNAME в домене.
+## <a name="create-a-cname-record-in-your-domain"></a>Создание записи CNAME в домене.
 
 После создания шлюза приложений с общедоступным IP-адресом можно получить DNS-адрес и использовать его для создания записи CNAME в своем домене. С помощью команды [az network public-ip show](/cli/azure/network/public-ip) можно получить DNS-адрес шлюза приложений. Скопируйте значение *fqdn* для DNSSettings и используйте его в качестве значения создаваемой записи CNAME. 
 
@@ -235,16 +230,16 @@ az network public-ip show \
 
 ![Проверка сайта fabrikam в шлюзе приложений](./media/tutorial-multisite-cli/application-gateway-nginxtest2.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
-В этом руководстве вы узнали, как:
+Из этого руководства вы узнали, как выполнить следующие задачи:
 
 > [!div class="checklist"]
 > * Настройка сети
 > * Создание шлюза приложений
 > * создание прослушивателей и правил маршрутизации;
 > * создание масштабируемых наборов виртуальных машин с внутренними пулами.
-> * создание записи CNAME в домене.
+> * Создание записи CNAME в домене.
 
 > [!div class="nextstepaction"]
 > [Дополнительные сведения о возможностях шлюза приложений](application-gateway-introduction.md)

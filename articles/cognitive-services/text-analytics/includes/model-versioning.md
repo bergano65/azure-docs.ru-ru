@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 10/25/2019
 ms.author: aahi
-ms.openlocfilehash: 5a06e26e5f1640024e343c714db3df134422115c
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 29850cb9cb40eae0829b5d8c2b58b5f9518f18d5
+ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73488652"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74021171"
 ---
 Версия 3 API анализа текста позволяет выбрать модель Анализа текста для данных. Используйте необязательный параметр `model-version` для выбора версии модели в запросах. Если этот параметр не указан, интерфейс API по умолчанию использует значение `latest`, то есть последнюю стабильную версию модели.
 
@@ -25,8 +25,8 @@ ms.locfileid: "73488652"
 
 ```json
 {
-    “documents”: […]
-    “errors”: []
-    “model-version”: “2019-10-01”
+    "documents": […]
+    "errors": []
+    "model-version": "2019-10-01"
 }
 ```

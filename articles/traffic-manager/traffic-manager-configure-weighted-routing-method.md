@@ -1,5 +1,5 @@
 ---
-title: Настройка метода взвешенной маршрутизации трафика с циклическим перебором с помощью диспетчера трафика Azure | Документация Майкрософт
+title: Настройка взвешенного циклического перебора трафика для диспетчера трафика Azure
 description: В этой статье объясняется, как балансировать нагрузку трафика методом циклического перебора в диспетчере трафика.
 services: traffic-manager
 documentationcenter: ''
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/20/2017
 ms.author: allensu
-ms.openlocfilehash: 4ca43bf958606a71911bf5d35f31e4fe0b342601
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 0bfed558ec8db0ef715dad044c3965c1b1d8052b
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67071284"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74040333"
 ---
 # <a name="configure-the-weighted-traffic-routing-method-in-traffic-manager"></a>Настройка метода взвешенной маршрутизации трафика в диспетчере трафика
 
@@ -45,7 +45,7 @@ ms.locfileid: "67071284"
 
 ![Настройка метода взвешенной маршрутизации трафика с помощью диспетчера трафика][1]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Узнайте больше о [методе маршрутизации по приоритету](traffic-manager-configure-priority-routing-method.md).
 - Узнайте больше о [методе маршрутизации по производительности](traffic-manager-configure-performance-routing-method.md).

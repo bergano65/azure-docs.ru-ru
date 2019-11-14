@@ -1,18 +1,18 @@
 ---
-title: Настройка правил брандмауэра веб-приложения в шлюзе приложений Azure — портал Azure
+title: Настройка правил с помощью портала — брандмауэр веб-приложения Azure
 description: В этой статье содержатся сведения о том, как настроить правила брандмауэра веб-приложения в шлюзе приложений с помощью портал Azure.
 services: web-application-firewall
 author: vhorne
 ms.service: web-application-firewall
-ms.date: 10/24/2019
+ms.date: 11/14/2019
 ms.author: victorh
 ms.topic: article
-ms.openlocfilehash: ab2722ed4a4aa4fe95be15cd536bfd5d959f9139
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: c4635333614ee1c0fd0322c29a659380fb4315c9
+ms.sourcegitcommit: b1a8f3ab79c605684336c6e9a45ef2334200844b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73516933"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74048382"
 ---
 # <a name="customize-web-application-firewall-rules-using-the-azure-portal"></a>Настройка правил брандмауэра веб-приложения с помощью портал Azure
 
@@ -63,7 +63,7 @@ ms.locfileid: "73516933"
 
 * Порог входящего индекса аномалий превышает пороговое значение
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 После настройки с отключением правил вы можете узнать, как просматривать журналы WAF. Дополнительные сведения см. в разделе [Журналы диагностики](../../application-gateway/application-gateway-diagnostics.md#diagnostic-logging).
 

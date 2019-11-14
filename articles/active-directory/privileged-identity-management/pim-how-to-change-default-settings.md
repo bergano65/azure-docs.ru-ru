@@ -1,25 +1,25 @@
 ---
-title: Настройка параметров роли Azure AD в управление привилегированными пользователями-Azure Active Directory | Документация Майкрософт
+title: Настройка параметров роли Azure AD в PIM — Azure AD | Документация Майкрософт
 description: Узнайте, как настроить параметры роли Azure AD в Azure AD Privileged Identity Management (PIM).
 services: active-directory
 documentationcenter: ''
 author: curtand
-manager: mtillman
+manager: daveba
 editor: ''
 ms.service: active-directory
 ms.topic: conceptual
 ms.workload: identity
 ms.subservice: pim
-ms.date: 10/22/2019
+ms.date: 11/08/2019
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cff298e24ac185767e6290e396818ccece7b9b55
-ms.sourcegitcommit: ec2b75b1fc667c4e893686dbd8e119e7c757333a
+ms.openlocfilehash: ee99a8e75fe8da85b1cf82623ed110991db24b66
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72809153"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74021796"
 ---
 # <a name="configure-azure-ad-role-settings-in-privileged-identity-management"></a>Настройка параметров роли Azure AD в управление привилегированными пользователями
 
@@ -57,7 +57,7 @@ ms.locfileid: "72809153"
 
 - администратор привилегированных ролей;
 - Администратор безопасности
-- Глобальный администратор.
+- Глобальный администратор
 
 Дополнительные сведения см. [в разделе уведомления по электронной почте в Управление привилегированными пользователями](pim-email-notifications.md).
 
@@ -76,12 +76,12 @@ ms.locfileid: "72809153"
   - Администратор выставления счетов
   - Администратор облачных приложений
   - администратор соответствия требованиям.
-  - Администратор условного доступа
+  - администратор условного доступа;
   - Администратор Dynamics 365
   - лицо, утверждающее доступ клиентов к LockBox;
   - создатели каталогов;
   - администратор Exchange;
-  - Глобальный администратор.
+  - Глобальный администратор
   - Администратор Intune
   - Администратор Power BI
   - администратор привилегированных ролей;
@@ -112,7 +112,7 @@ ms.locfileid: "72809153"
 
 <!--PLACEHOLDER: Need an explanation of what the temporary Global Administrator setting is for.-->
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Назначение ролей Azure AD в управление привилегированными пользователями](pim-how-to-add-role-to-user.md)
 - [Настройка оповещений системы безопасности для ролей Azure AD в управление привилегированными пользователями](pim-how-to-configure-security-alerts.md)

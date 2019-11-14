@@ -1,18 +1,18 @@
 ---
-title: Настройка правил брандмауэра веб-приложения в шлюзе приложений Azure — Azure CLI
+title: Настройка правил с помощью интерфейса командной строки — брандмауэр веб-приложения Azure
 description: В этой статье содержатся сведения о том, как настроить правила брандмауэра веб-приложения в шлюзе приложений с помощью Azure CLI.
 services: web-application-firewall
 author: vhorne
 ms.service: web-application-firewall
-ms.date: 08/23/2019
+ms.date: 11/14/2019
 ms.author: victorh
 ms.topic: article
-ms.openlocfilehash: 58cc339e8f849a71fb01973e99dba936f6b53a8c
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 8e8aaa9458619bc937c5bb11c450f3197b92f451
+ms.sourcegitcommit: b1a8f3ab79c605684336c6e9a45ef2334200844b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73516946"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74048533"
 ---
 # <a name="customize-web-application-firewall-rules-using-the-azure-cli"></a>Настройка правил брандмауэра веб-приложения с помощью Azure CLI
 
@@ -135,7 +135,7 @@ az network application-gateway waf-config set --resource-group AdatumAppGatewayR
 
 * Порог входящего индекса аномалий превышает пороговое значение
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 После настройки с отключением правил вы можете узнать, как просматривать журналы WAF. Дополнительные сведения см. в разделе [Журналы диагностики](../../application-gateway/application-gateway-diagnostics.md#diagnostic-logging).
 

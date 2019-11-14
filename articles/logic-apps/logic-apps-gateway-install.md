@@ -9,12 +9,12 @@ ms.author: estfan
 ms.reviewer: arthii, LADocs
 ms.topic: article
 ms.date: 11/06/2019
-ms.openlocfilehash: a8deb7933bb19745bbe4c3b3a209c19c9cc712bd
-ms.sourcegitcommit: 018e3b40e212915ed7a77258ac2a8e3a660aaef8
+ms.openlocfilehash: 6daf9351e48603824aa6cec30adb4a6b82349784
+ms.sourcegitcommit: b1a8f3ab79c605684336c6e9a45ef2334200844b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73796305"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74049037"
 ---
 # <a name="install-on-premises-data-gateway-for-azure-logic-apps"></a>Установка локального шлюза данных для Azure Logic Apps
 
@@ -22,14 +22,14 @@ ms.locfileid: "73796305"
 
 * [Локальный шлюз данных](https://powerbi.microsoft.com/documentation/powerbi-gateway-onprem/)
 * [Локальный шлюз данных Microsoft Power Apps](https://powerapps.microsoft.com/tutorials/gateway-management/)
-* [Power Автоматизируйте локальный шлюз данных](https://flow.microsoft.com/documentation/gateway-manage/)
+* [Power Автоматизируйте локальный шлюз данных](/power-automate/gateway-reference)
 * [Локальный шлюз данных](../analysis-services/analysis-services-gateway.md)
 
 В этой статье показано, как скачать, установить и настроить локальный шлюз данных, чтобы получить доступ к локальным источникам данных из Azure Logic Apps. Дополнительные сведения о [работе шлюза данных см](#gateway-cloud-service) . Далее в этом разделе. Дополнительные сведения о шлюзе см. [в статье что такое локальный шлюз](https://docs.microsoft.com/data-integration/gateway/service-gateway-onprem)?
 
 <a name="requirements"></a>
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 * Учетная запись и подписка Azure. Если у вас нет учетной записи Azure с подпиской, зарегистрируйтесь, чтобы [получить бесплатную учетную запись Azure](https://azure.microsoft.com/free/).
 
@@ -274,7 +274,7 @@ ms.locfileid: "73796305"
 * [Устранение неполадок локального шлюза данных](https://docs.microsoft.com/data-integration/gateway/service-gateway-tshoot)
 * [Мониторинг и оптимизация производительности шлюза](https://docs.microsoft.com/data-integration/gateway/service-gateway-performance)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Подключение к локальным данным из приложений логики](../logic-apps/logic-apps-gateway-connection.md)
 * [Возможности интеграции Enterprise](../logic-apps/logic-apps-enterprise-integration-overview.md)

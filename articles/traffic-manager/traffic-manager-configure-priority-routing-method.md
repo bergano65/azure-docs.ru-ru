@@ -1,10 +1,10 @@
 ---
-title: Настройка метода маршрутизации трафика по приоритету с помощью диспетчера трафика Azure | Документация Майкрософт
+title: Настройка маршрутизации трафика с приоритетом — диспетчер трафика Azure
 description: В этой статье объясняется, как настроить метод маршрутизации трафика по приоритету с помощью диспетчера трафика Azure.
 services: traffic-manager
 documentationcenter: ''
 author: asudbring
-manager: twooley
+manager: kumudD
 ms.service: traffic-manager
 ms.devlang: na
 ms.topic: article
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/20/2017
 ms.author: allensu
-ms.openlocfilehash: 259457a604727cba6e6964851ec4fcf4b13a20a6
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: f9954c7733c30efaea4a74e04949556a3a8617fd
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67048487"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74040355"
 ---
 # <a name="configure-priority-traffic-routing-method-in-traffic-manager"></a>Настройка метода маршрутизации трафика по приоритету в диспетчере трафика
 
@@ -49,7 +49,7 @@ ms.locfileid: "67048487"
 
 ![Настройка метода маршрутизации трафика по приоритету с помощью диспетчера трафика][1]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 
 - Узнайте о [методе взвешенной маршрутизации трафика](traffic-manager-configure-weighted-routing-method.md).

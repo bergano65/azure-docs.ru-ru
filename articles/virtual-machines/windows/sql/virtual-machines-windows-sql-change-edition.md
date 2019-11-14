@@ -1,5 +1,5 @@
 ---
-title: Выполнение обновления на месте SQL Server выпуска на виртуальной машине Azure | Документация Майкрософт
+title: Обновление SQL Server выпуска на месте
 description: Узнайте, как изменить выпуск SQL Server виртуальной машины в Azure.
 services: virtual-machines-windows
 documentationcenter: na
@@ -13,12 +13,13 @@ ms.workload: iaas-sql-server
 ms.date: 06/26/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: eec2e588b1c2b03e9880dad0848b8213bf5fa449
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.custom: seo-lt-2019
+ms.openlocfilehash: 1db45097b0416b680571cb47ec1d9b52f9275c43
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70100504"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74022219"
 ---
 # <a name="perform-an-in-place-upgrade-of-a-sql-server-edition-on-an-azure-vm"></a>Выполнение обновления на месте SQL Server выпуска на виртуальной машине Azure
 
@@ -28,7 +29,7 @@ ms.locfileid: "70100504"
 
 Если вы обновили выпуск SQL Server с помощью установочного носителя после регистрации в поставщике ресурсов виртуальной машины SQL, то чтобы соответствующим образом обновить выставление счетов в Azure, необходимо задать свойство выпуска SQL Server для ресурса виртуальной машины SQL следующим образом:
 
-1. Войдите на [портале Azure](https://portal.azure.com). 
+1. Войдите на [портал Azure](https://portal.azure.com). 
 1. Перейдите к ресурсу SQL Server виртуальной машины. 
 1. В разделе **Параметры**выберите **настроить**. Затем выберите нужный выпуск SQL Server из раскрывающегося списка в разделе **выпуск**. 
 
@@ -38,7 +39,7 @@ ms.locfileid: "70100504"
 1. Нажмите кнопку **Применить** , чтобы применить изменения метаданных выпуска. 
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 Чтобы выполнить изменение выпуска SQL Server на месте, вам потребуется следующее: 
 
@@ -89,7 +90,7 @@ ms.locfileid: "70100504"
 - Возможность изменения выпуска является компонентом поставщика ресурсов виртуальной машины SQL. Развертывание образа Azure Marketplace с помощью портал Azure автоматически регистрирует SQL Server виртуальную машину с помощью поставщика ресурсов. Тем не менее клиенты, которые самостоятельно устанавливают SQL Server, должны вручную [зарегистрировать свои виртуальные машины SQL Server](virtual-machines-windows-sql-register-with-resource-provider.md).
 - Для добавления SQL Server виртуальной машины в группу доступности необходимо повторно создать виртуальную машину. Все виртуальные машины, добавленные в группу доступности, будут возвращаться к выпуску по умолчанию, а выпуск потребуется изменить снова.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения см. в следующих статьях: 
 

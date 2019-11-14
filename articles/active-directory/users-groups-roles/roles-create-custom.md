@@ -1,24 +1,24 @@
 ---
-title: Создание и назначение пользовательской роли в управлении доступом на основе ролей в Azure AD — Azure Active Directory | Документация Майкрософт
+title: Создание настраиваемых ролей в управлении доступом на основе ролей в Azure AD | Документация Майкрософт
 description: Создание и назначение пользовательских ролей Azure AD с областью действия ресурса для Azure Active Directory ресурсов.
 services: active-directory
 author: curtand
-manager: mtillman
+manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: article
-ms.date: 09/04/2019
+ms.date: 11/08/2019
 ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b1a5aee1be7580956c32947e9bda7e2928a006c3
-ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
+ms.openlocfilehash: c2cb19c82f8c19bf87eeef755adb5756b2452512
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72026399"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74025273"
 ---
 # <a name="create-and-assign-a-custom-role-in-azure-active-directory"></a>Создание и назначение пользовательской роли в Azure Active Directory
 
@@ -30,8 +30,8 @@ ms.locfileid: "72026399"
 
 ### <a name="create-a-new-custom-role-to-grant-access-to-manage-app-registrations"></a>Создание новой настраиваемой роли для предоставления доступа для управления регистрацией приложений
 
-1. Войдите в [центр администрирования Azure ad](https://aad.portal.azure.com) with с правами администратора привилегированных ролей или разрешения глобального администратора в Организации Azure AD.
-1. Выберите **Azure Active Directory** > **ролей и администраторов** > **Новая настраиваемая роль**.
+1. Войдите в [центр администрирования Azure ad](https://aad.portal.azure.com) с правами администратора привилегированных ролей или глобального администратора в Организации Azure AD.
+1. Выберите **Azure Active Directory** > **ролей и администраторов** > **новой пользовательской роли**.
 
    ![Создание или изменение ролей на странице "роли и Администраторы"](./media/roles-create-custom/new-custom-role.png)
 
@@ -44,7 +44,7 @@ ms.locfileid: "72026399"
 
       ![Выберите разрешения для пользовательской роли на вкладке разрешения.](./media/roles-create-custom/permissions-tab.png)
 
-   1. Затем в строке поиска введите "Basic", выберите разрешение `microsoft.directory/applications/basic/update`, а затем нажмите кнопку **Далее**.
+   1. Затем в строке поиска введите "Basic", выберите разрешение `microsoft.directory/applications/basic/update` и нажмите кнопку **Далее**.
 1. На вкладке " **Проверка и создание** " Проверьте разрешения и нажмите кнопку " **создать**".
 
 Ваша настраиваемая роль отобразится в списке доступных ролей для назначения.
@@ -116,13 +116,13 @@ $roleAssignment = New-AzureADMSRoleAssignment -ResourceScope $resourceScope -Rol
 
     HTTP-запрос на создание пользовательского определения роли.
 
-    ПОМЕСТИТЬ
+    ПУБЛИКАЦИЯ
 
     ``` HTTP
     https://graph.microsoft.com/beta/roleManagement/directory/roleDefinitions
     ```
 
-    Body
+    Текст
 
     ``` HTTP
    {
@@ -145,13 +145,13 @@ $roleAssignment = New-AzureADMSRoleAssignment -ResourceScope $resourceScope -Rol
 
     HTTP-запрос на создание пользовательского определения роли.
 
-    ПОМЕСТИТЬ
+    ПУБЛИКАЦИЯ
 
     ``` HTTP
     https://graph.microsoft.com/beta/roleManagement/directory/roleAssignments
     ```
 
-    Body
+    Текст
 
     ``` HTTP
    {
@@ -176,7 +176,7 @@ $roleAssignment = New-AzureADMSRoleAssignment -ResourceScope $resourceScope -Rol
 1. Выберите роль, чтобы открыть страницу **назначения** .
 1. Выберите **добавить назначение** , чтобы добавить пользователя. Пользователю будут предоставлены любые разрешения только для выбранной регистрации приложения.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 - Вы можете оставить комментарий на [форуме об административных ролях Azure AD](https://feedback.azure.com/forums/169401-azure-active-directory?category_id=166032).
 - Дополнительные сведения о ролях и назначении роли администратора см. в разделе [Назначение ролей администратора](directory-assign-admin-roles.md).

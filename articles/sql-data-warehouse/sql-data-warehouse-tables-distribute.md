@@ -11,12 +11,12 @@ ms.date: 04/17/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: f05e732e11fb9cd88d4671528d551c68e448a8d7
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 025c60485625a4ab4d2e29b1e81d8574f6187b93
+ms.sourcegitcommit: b1a8f3ab79c605684336c6e9a45ef2334200844b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73685466"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74049119"
 ---
 # <a name="guidance-for-designing-distributed-tables-in-azure-sql-data-warehouse"></a>Руководство по проектированию распределенных таблиц в хранилище данных SQL Azure
 Рекомендации по проектированию хэш-распределенных таблиц и таблиц с распределением методом циклического перебора в хранилище данных SQL Azure.
@@ -60,7 +60,7 @@ ms.locfileid: "73685466"
 
 - если это простая отправная точка для начала работы, так как используется по умолчанию;
 - если отсутствует очевидный ключ соединения;
-- если отсутствует подходящий для хэш-распределения таблицы столбец;
+- Если нет хорошего столбца кандидатов для распределения хэша таблицы
 - если таблица не использует общий ключ соединения с другими таблицами;
 - Если соединение менее важно, чем других соединения в запросе.
 - если таблица является временной.
@@ -213,7 +213,7 @@ RENAME OBJECT [dbo].[FactInternetSales] TO [FactInternetSales_ProductKey];
 RENAME OBJECT [dbo].[FactInternetSales_CustomerKey] TO [FactInternetSales];
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Чтобы создать распределенную таблицу, воспользуйтесь одной из следующих инструкций:
 

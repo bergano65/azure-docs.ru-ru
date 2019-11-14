@@ -1,27 +1,27 @@
 ---
-title: Изменение назначений лицензий для пользователей и групп — Azure Active Directory | Документация Майкрософт
-description: Описание рекомендуемого процесса миграции пользователей в группе в разные лицензии на обслуживание (Office 365 Enterprise E1 и E3) с помощью групповой лицензии.
+title: Изменение планов лицензирования для пользователей и групп в Azure AD | Документация Майкрософт
+description: Как перенести пользователей из группы в различные планы обслуживания с помощью группового лицензирования в Azure Active Directory
 services: active-directory
 keywords: Лицензирование Azure AD
 documentationcenter: ''
 author: curtand
-manager: mtillman
+manager: daveba
 editor: ''
 ms.service: active-directory
 ms.topic: article
 ms.workload: identity
 ms.subservice: users-groups-roles
-ms.date: 09/27/2019
+ms.date: 11/08/2019
 ms.author: curtand
 ms.reviewer: sumitp
 ms.custom: it-pro;seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b7212983470e71ff6d7c1c33de142767ecf38d1f
-ms.sourcegitcommit: f9e81b39693206b824e40d7657d0466246aadd6e
+ms.openlocfilehash: bf2f04e1728f94c89bddcc31c287cc017a79020f
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72034006"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74025904"
 ---
 # <a name="change-license-assignments-for-a-user-or-group-in-azure-active-directory"></a>Изменение назначений лицензий для пользователя или группы в Azure Active Directory
 
@@ -61,7 +61,7 @@ Azure AD применяет новые лицензии и удаляет ста
 ## <a name="change-group-license-assignments"></a>Изменение назначений лицензий группы
 
 1. Войдите в [портал Azure](https://portal.azure.com/) с помощью учетной записи администратора лицензий в вашей организации Azure AD.
-1. Выберите **Azure Active Directory** **группы** > , а затем откройте страницу **обзора** для группы.
+1. Выберите **Azure Active Directory** > **группы**, а затем откройте страницу **обзора** для группы.
 1. Выберите **Лицензии**.
 1. Выберите команду **назначения** , чтобы изменить назначение лицензии для пользователя или группы.
 1. Установите флажок для Office 366 E3. Чтобы обеспечить непрерывность обслуживания, убедитесь, что выбраны все службы E1, которые уже назначены пользователю.
@@ -73,7 +73,7 @@ Azure AD применяет новые лицензии и удаляет ста
 
 Чтобы обеспечить непрерывность обслуживания, Azure AD применяет новые лицензии и удаляет старые лицензии одновременно для всех пользователей в группе.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о сценариях управления лицензиями с помощью групп см. в следующих статьях:
 

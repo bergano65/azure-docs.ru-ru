@@ -1,25 +1,25 @@
 ---
-title: Выполните проверку доступа к ролям Azure AD в PIM-Azure Active Directory | Документация Майкрософт
+title: Завершение проверки доступа к ролям Azure AD в PIM — Azure AD | Документация Майкрософт
 description: Узнайте, как выполнить проверку доступа к ролям Azure AD в Azure AD Privileged Identity Management (PIM) и просмотреть результаты.
 services: active-directory
 documentationcenter: ''
 author: curtand
-manager: mtillman
+manager: daveba
 editor: ''
 ms.service: active-directory
 ms.topic: conceptual
 ms.workload: identity
 ms.subservice: pim
-ms.date: 10/22/2019
+ms.date: 11/08/2019
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 197abc0642d6abf1278a75c2101c195cafeb53b2
-ms.sourcegitcommit: ec2b75b1fc667c4e893686dbd8e119e7c757333a
+ms.openlocfilehash: fe2d85d605b9ee418a5709ddcdb448c56be1d918
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72809141"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74022279"
 ---
 # <a name="complete-an-access-review-of-azure-ad-roles-in-privileged-identity-management"></a>Выполните проверку доступа к ролям Azure AD в управление привилегированными пользователями
 
@@ -41,7 +41,7 @@ ms.locfileid: "72809141"
 
 Если проверка доступа настроена таким образом, что пользователи проверяют сами себя, то кнопка **Напомнить** отправляет уведомление.
 
-### <a name="stop"></a>Остановить
+### <a name="stop"></a>Stop
 
 Все проверки доступа имеют дату окончания, но можно воспользоваться кнопкой **Остановить** , чтобы завершить их выполнение раньше. Если к этому моменту еще не все пользователи были проверены, то они уже не смогут пройти проверку после ее остановки. Нельзя перезапустить проверку после ее остановки.
 
@@ -49,18 +49,18 @@ ms.locfileid: "72809141"
 
 После того, как проверка доступа завершается из-за достижения даты окончания или из-за остановки вручную, реализовать результат проверки можно с помощью кнопки **Применить** . Если в процессе проверки пользователю было отказано в доступе, то этот шаг приведет к удалению назначенной пользователю роли.  
 
-### <a name="export"></a>Экспортировать
+### <a name="export"></a>экспорт.
 
 Если вы хотите применить результаты проверки доступа вручную, можно экспортировать проверку. При нажатии кнопки **Экспорт** будет скачан CSV-файл. Открыть этот файл можно в Excel или в других программах, поддерживающих CSV-файлы.
 
-### <a name="delete"></a>Удаление
+### <a name="delete"></a>Удалить
 
 Если проверка вам больше не нужна, удалите ее. Кнопка **Удалить** удаляет проверку из службы Управление привилегированными пользователями.
 
 > [!IMPORTANT]
 > Вам не потребуется подтверждать это изменение, поэтому убедитесь, что вы хотите удалить эту проверку.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Запуск проверки доступа для ролей Azure AD в управление привилегированными пользователями](pim-how-to-start-security-review.md)
 - [Выполните проверку доступа к моим ролям Azure AD в управление привилегированными пользователями](pim-how-to-perform-security-review.md)

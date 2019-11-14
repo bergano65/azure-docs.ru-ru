@@ -1,19 +1,20 @@
 ---
-title: Создание шлюза приложений для размещения нескольких веб-сайтов с помощью Azure CLI
+title: Размещение нескольких веб-сайтов с помощью интерфейса командной строки
+titleSuffix: Azure Application Gateway
 description: Узнайте, как создать шлюз приложений, на котором размещено несколько веб-сайтов, с помощью Azure CLI.
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: article
-ms.date: 07/31/2019
+ms.date: 11/13/2019
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: eceb380112002ef951d6d5e74998d944da01bd7a
-ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
+ms.openlocfilehash: 0a92d0f7d17f6bb83efbe94434c25072975dbe57
+ms.sourcegitcommit: b1a8f3ab79c605684336c6e9a45ef2334200844b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68688231"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74047359"
 ---
 # <a name="create-an-application-gateway-that-hosts-multiple-web-sites-using-the-azure-cli"></a>Создание шлюза приложений, на котором размещено несколько веб-сайтов, с помощью Azure CLI
 
@@ -27,19 +28,19 @@ ms.locfileid: "68688231"
 > * Создание серверных прослушивателей
 > * Создание правил маршрутизации
 > * создание масштабируемых наборов виртуальных машин с внутренними пулами.
-> * создание записи CNAME в домене.
+> * Создание записи CNAME в домене.
 
 ![Пример маршрутизации нескольких сайтов](./media/tutorial-multiple-sites-cli/scenario.png)
 
 При необходимости эти инструкции можно выполнить с помощью [Azure PowerShell](tutorial-multiple-sites-powershell.md).
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 Если вы решили установить и использовать CLI локально, для работы с этой статьей требуется Azure CLI версии 2.0.4 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
 
-## <a name="create-a-resource-group"></a>Создать группу ресурсов
+## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
 Группа ресурсов — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими. Создайте группу ресурсов, используя команду [az group create](/cli/azure/group).
 
@@ -219,7 +220,7 @@ for i in `seq 1 2`; do
 done
 ```
 
-## <a name="create-a-cname-record-in-your-domain"></a>создание записи CNAME в домене.
+## <a name="create-a-cname-record-in-your-domain"></a>Создание записи CNAME в домене.
 
 После создания шлюза приложений с общедоступным IP-адресом можно получить DNS-адрес и использовать его для создания записи CNAME в своем домене. С помощью команды [az network public-ip show](/cli/azure/network/public-ip#az-network-public-ip-show) можно получить DNS-адрес шлюза приложений. Скопируйте значение *fqdn* для DNSSettings и используйте его в качестве значения создаваемой записи CNAME. 
 
@@ -245,12 +246,12 @@ az network public-ip show \
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-При необходимости вы можете удалить группу ресурсов, шлюз приложений и все связанные ресурсы.
+Можно удалить группу ресурсов, шлюз приложений и все связанные с ними ресурсы, если они больше не требуются.
 
 ```azurecli-interactive
 az group delete --name myResourceGroupAG
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 [Создание шлюза приложений с правилами маршрутизации на основе URL-путей](./tutorial-url-route-cli.md)

@@ -1,26 +1,26 @@
 ---
-title: Утверждение или отклонение запросов ролей ресурсов Azure в управление привилегированными пользователями-Azure Active Directory | Документация Майкрософт
+title: Утверждение запросов для ролей ресурсов Azure в PIM — Azure AD | Документация Майкрософт
 description: Узнайте, как подтвердить или отклонить запросы для ролей ресурсов в Azure AD Privileged Identity Management (PIM).
 services: active-directory
 documentationcenter: ''
 author: curtand
-manager: mtillman
+manager: daveba
 ms.service: active-directory
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: pim
-ms.date: 10/23/2019
+ms.date: 11/08/2019
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c436a529ebaf15a3024f935c1b28327230da0ac0
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: e779f633efccf7b594c193e165a584d22b1d653b
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72895903"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74021967"
 ---
 # <a name="approve-or-deny-requests-for-azure-resource-roles-in-privileged-identity-management"></a>Утверждение или отклонение запросов ролей ресурсов Azure в управление привилегированными пользователями
 
@@ -32,7 +32,7 @@ ms.locfileid: "72895903"
 
 При наличии запроса роли ресурса Azure, ожидающего вашего утверждения, вы, как делегированное утверждающее лицо, получите уведомление по электронной почте. Эти ожидающие запросы можно просмотреть в управление привилегированными пользователями.
 
-1. Войдите на [портале Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 
 1. Откройте страницу **Azure AD Privileged Identity Management**.
 
@@ -76,7 +76,7 @@ ms.locfileid: "72895903"
 >[!Note]
 >Администратор ресурсов, который считает, что одобренный пользователь не должен быть активным, может удалить назначение активной роли в управление привилегированными пользователями. Хотя администраторы ресурсов не получают уведомления о ожидающих запросах, если они не являются утверждающими, они могут просматривать и отменять ожидающие запросы для всех пользователей, просматривая ожидающие запросы в управление привилегированными пользователями.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Расширение или продление ролей ресурсов Azure в управление привилегированными пользователями](pim-resource-roles-renew-extend.md)
 - [Уведомления по электронной почте в управление привилегированными пользователями](pim-email-notifications.md)

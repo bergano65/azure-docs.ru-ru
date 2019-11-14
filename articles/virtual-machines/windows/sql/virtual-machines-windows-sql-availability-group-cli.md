@@ -1,5 +1,5 @@
 ---
-title: Настройка группы доступности Always On для SQL Server на виртуальной машине Azure с помощью Azure CLI
+title: Настройка группы доступности (Azure CLI)
 description: Используйте Azure CLI для создания отказоустойчивого кластера Windows, прослушивателя группы доступности и внутренней подсистемы балансировки нагрузки на виртуальной машине SQL Server в Azure.
 services: virtual-machines-windows
 documentationcenter: na
@@ -13,17 +13,18 @@ ms.workload: iaas-sql-server
 ms.date: 02/12/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 58174704051709a720950ac51591a1d53b9d01bb
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.custom: seo-lt-2019
+ms.openlocfilehash: a6600af353daf2bfa7b49196f48ba5b60e6c45fb
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70100562"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74022368"
 ---
 # <a name="use-the-azure-cli-to-configure-an-always-on-availability-group-for-sql-server-on-an-azure-vm"></a>Настройка группы доступности Always On для SQL Server на виртуальной машине Azure с помощью Azure CLI
 В этой статье описывается, как использовать [Azure CLI](/cli/azure/sql/vm?view=azure-cli-latest/) для развертывания отказоустойчивого кластера Windows, добавления SQL Server виртуальных машин в кластер и создания внутренней подсистемы балансировки нагрузки и прослушивателя для Always on группы доступности. Развертывание группы доступности Always On по-прежнему выполняется вручную с помощью SQL Server Management Studio (SSMS). 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 Чтобы автоматизировать настройку Always On группы доступности с помощью Azure CLI, необходимо выполнить следующие предварительные требования. 
 - [Подписка Azure](https://azure.microsoft.com/free/).
 - Группа ресурсов с контроллером домена. 
@@ -34,10 +35,10 @@ ms.locfileid: "70100562"
 ## <a name="permissions"></a>Разрешения
 Для настройки группы доступности Always On с помощью Azure CLI необходимы следующие разрешения учетной записи: 
 
-- Существующая учетная запись пользователя домена, имеющая разрешение на **Создание объекта Computer** в домене. Например, учетная запись администратора домена обычно имеет достаточные разрешения (например account@domain.com,). _Эта учетная запись также должна входить в группу локальных администраторов на каждой виртуальной машине для создания кластера._
+- Существующая учетная запись пользователя домена, имеющая разрешение на **Создание объекта Computer** в домене. Например, учетная запись администратора домена обычно имеет достаточные разрешения (например, account@domain.com). _Эта учетная запись также должна входить в группу локальных администраторов на каждой виртуальной машине для создания кластера._
 - Учетная запись пользователя домена, управляющая службой SQL Server. 
  
-## <a name="step-1-create-a-storage-account-as-a-cloud-witness"></a>Шаг 1. Создание учетной записи хранения в качестве облачного следящего сервера
+## <a name="step-1-create-a-storage-account-as-a-cloud-witness"></a>Шаг 1. Создание учетной записи хранения в качестве облачного следящего сервера
 Кластеру требуется учетная запись хранения, которая будет использоваться в качестве облачного следящего сервера. Вы можете использовать любую существующую учетную запись хранения или создать новую. Если вы хотите использовать существующую учетную запись хранения, перейдите к следующему разделу. 
 
 В следующем фрагменте кода создается учетная запись хранения: 
@@ -51,9 +52,9 @@ az storage account create -n <name> -g <resource group name> -l <region ex:eastu
 ```
 
 >[!TIP]
-> Если вы используете устаревшую `az sql: 'vm' is not in the 'az sql' command group` версию Azure CLI, может появиться сообщение об ошибке. Скачайте [последнюю версию Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli-windows?view=azure-cli-latest) , чтобы устранить эту ошибку.
+> Если вы используете устаревшую версию Azure CLI, может появиться сообщение об ошибке `az sql: 'vm' is not in the 'az sql' command group`. Скачайте [последнюю версию Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli-windows?view=azure-cli-latest) , чтобы устранить эту ошибку.
 
-## <a name="step-2-define-windows-failover-cluster-metadata"></a>Шаг 2. Определение метаданных отказоустойчивого кластера Windows
+## <a name="step-2-define-windows-failover-cluster-metadata"></a>Шаг 2. Определение метаданных отказоустойчивого кластера Windows
 Группа команд Azure CLI [AZ SQL VM Group](https://docs.microsoft.com/cli/azure/sql/vm/group?view=azure-cli-latest) управляет метаданными службы отказоустойчивого кластера Windows Server (WSFC), в которой размещается группа доступности. Метаданные кластера включают домен Active Directory, учетные записи кластера, учетные записи хранения, которые будут использоваться в качестве облака-свидетеля, и SQL Server версии. Для определения метаданных для WSFC, чтобы при добавлении первой SQL Server виртуальной машины был создан кластер, используйте команду [AZ SQL VM Group Create](https://docs.microsoft.com/cli/azure/sql/vm/group?view=azure-cli-latest#az-sql-vm-group-create) . 
 
 В следующем фрагменте кода определяются метаданные для кластера.
@@ -73,8 +74,8 @@ az sql vm group create -n <cluster name> -l <region ex:eastus> -g <resource grou
   --storage-account '<ex:https://cloudwitness.blob.core.windows.net/>'
 ```
 
-## <a name="step-3-add-sql-server-vms-to-the-cluster"></a>Шаг 3. Добавление SQL Server виртуальных машин в кластер
-Добавление первой SQL Server виртуальной машины в кластер создает кластер. Команда [AZ SQL VM Add-to-Group](https://docs.microsoft.com/cli/azure/sql/vm?view=azure-cli-latest#az-sql-vm-add-to-group) создает кластер с указанным ранее именем, устанавливает роль кластера на SQL Server виртуальных машинах и добавляет их в кластер. При последующем использовании `az sql vm add-to-group` команды добавьте дополнительные SQL Server виртуальные машины в созданный кластер. 
+## <a name="step-3-add-sql-server-vms-to-the-cluster"></a>Шаг 3. Добавление SQL Server виртуальных машин в кластер
+Добавление первой SQL Server виртуальной машины в кластер создает кластер. Команда [AZ SQL VM Add-to-Group](https://docs.microsoft.com/cli/azure/sql/vm?view=azure-cli-latest#az-sql-vm-add-to-group) создает кластер с указанным ранее именем, устанавливает роль кластера на SQL Server виртуальных машинах и добавляет их в кластер. Последующие применения команды `az sql vm add-to-group` добавляют дополнительные SQL Server виртуальные машины в созданный кластер. 
 
 Следующий фрагмент кода создает кластер и добавляет в него первую виртуальную машину SQL Server: 
 
@@ -90,15 +91,15 @@ az sql vm add-to-group -n <VM1 Name> -g <Resource Group Name> --sqlvm-group <clu
 az sql vm add-to-group -n <VM2 Name> -g <Resource Group Name> --sqlvm-group <cluster name> `
   -b <bootstrap account password> -p <operator account password> -s <service account password>
 ```
-Используйте эту команду, чтобы добавить в кластер любые другие SQL Server виртуальные машины. Измените только `-n` параметр для SQL Server имя виртуальной машины. 
+Используйте эту команду, чтобы добавить в кластер любые другие SQL Server виртуальные машины. Измените только параметр `-n` для имени виртуальной машины SQL Server. 
 
-## <a name="step-4-create-the-availability-group"></a>Шаг 4. Создание группы доступности
+## <a name="step-4-create-the-availability-group"></a>Шаг 4. Создание группы доступности
 Вручную создайте группу доступности, как обычно, с помощью [SQL Server Management Studio](/sql/database-engine/availability-groups/windows/use-the-availability-group-wizard-sql-server-management-studio), [PowerShell](/sql/database-engine/availability-groups/windows/create-an-availability-group-sql-server-powershell)или [Transact-SQL](/sql/database-engine/availability-groups/windows/create-an-availability-group-transact-sql). 
 
 >[!IMPORTANT]
 > *Не* создавайте прослушиватель в данный момент, так как это выполняется с помощью Azure CLI в следующих разделах.  
 
-## <a name="step-5-create-the-internal-load-balancer"></a>Шаг 5. Создание внутренней подсистемы балансировки нагрузки
+## <a name="step-5-create-the-internal-load-balancer"></a>Шаг 5. создание внутренней подсистемы балансировки нагрузки
 
 Прослушивателю группы доступности Always On требуется внутренний экземпляр Azure Load Balancer. Внутренний балансировщик нагрузки предоставляет "плавающий" IP-адрес для прослушивателя группы доступности, который обеспечивает более быструю отработку отказа и повторное подключение. Если SQL Server виртуальные машины в группе доступности входят в одну группу доступности, можно использовать базовую подсистему балансировки нагрузки. В противном случае необходимо использовать стандартный балансировщик нагрузки.  
 
@@ -117,19 +118,19 @@ az network lb create --name sqlILB -g <resource group name> --sku Standard `
 ```
 
 >[!IMPORTANT]
-> Ресурс общедоступного IP-адреса для каждой SQL Server виртуальной машины должен иметь стандартный SKU, совместимый с подсистемой балансировки нагрузки уровня "Стандартный". Чтобы определить номер SKU ресурса общедоступного IP-адреса виртуальной машины, перейдите в раздел **Группа ресурсов**, выберите ресурс общедоступного **IP-адрес** для нужной виртуальной машины SQL Server и найдите значение в поле **SKU** в области **Обзор** .  
+> Ресурс общедоступного IP-адреса для каждой SQL Server виртуальной машины должен иметь стандартный SKU, совместимый с подсистемой балансировки нагрузки уровня "Стандартный". Чтобы определить номер SKU ресурса общедоступного IP-адреса виртуальной машины, перейдите в раздел **Группа ресурсов**, выберите ресурс **общедоступного IP-адрес** для нужной виртуальной машины SQL Server и найдите значение в поле **SKU** в области **Обзор** .  
 
 ## <a name="step-6-create-the-availability-group-listener"></a>Шаг 6. Создание прослушивателя группы доступности
 После создания группы доступности вручную можно создать прослушиватель с помощью команды [AZ SQL VM AG-Listener](/cli/azure/sql/vm/group/ag-listener?view=azure-cli-latest#az-sql-vm-group-ag-listener-create). 
 
-*Идентификатор ресурса подсети* — это значение `/subnets/<subnetname>` , добавляемое к идентификатору ресурса виртуальной сети. Чтобы задать идентификатор ресурса подсети, выполните следующие действия.
+*Идентификатор ресурса подсети* — это значение `/subnets/<subnetname>` добавляется к идентификатору ресурса виртуальной сети. Чтобы задать идентификатор ресурса подсети, выполните следующие действия.
    1. Перейдите к группе ресурсов в [портал Azure](https://portal.azure.com). 
    1. Выберите ресурс виртуальной сети. 
    1. На панели **Параметры** выберите **Свойства** . 
-   1. Найдите идентификатор ресурса для виртуальной сети и добавьте `/subnets/<subnetname>` его в конец, чтобы создать идентификатор ресурса подсети. Пример:
-      - Идентификатор ресурса виртуальной сети:`/subscriptions/a1a1-1a11a/resourceGroups/SQLVM-RG/providers/Microsoft.Network/virtualNetworks/SQLVMvNet`
-      - Имя вашей подсети:`default`
-      - Таким образом, идентификатор ресурса подсети:`/subscriptions/a1a1-1a11a/resourceGroups/SQLVM-RG/providers/Microsoft.Network/virtualNetworks/SQLVMvNet/subnets/default`
+   1. Найдите идентификатор ресурса для виртуальной сети и добавьте `/subnets/<subnetname>` к его концу, чтобы создать идентификатор ресурса подсети. Например,
+      - Идентификатор ресурса виртуальной сети: `/subscriptions/a1a1-1a11a/resourceGroups/SQLVM-RG/providers/Microsoft.Network/virtualNetworks/SQLVMvNet`
+      - Имя вашей подсети: `default`
+      - Таким образом, идентификатор ресурса подсети: `/subscriptions/a1a1-1a11a/resourceGroups/SQLVM-RG/providers/Microsoft.Network/virtualNetworks/SQLVMvNet/subnets/default`
 
 
 В следующем фрагменте кода создается прослушиватель группы доступности:
@@ -211,7 +212,7 @@ az sql vm group ag-listener create -n <listener name> -g <resource group name> `
 az sql vm group ag-listener delete --group-name <cluster name> --name <listener name > --resource-group <resource group name>
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения см. в следующих статьях: 
 

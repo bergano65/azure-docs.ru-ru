@@ -1,6 +1,6 @@
 ---
-title: Устранение ошибки «Вы невозможно добраться отсюда туда» — Azure Active Directory | Документация Майкрософт
-description: Сведения о том, как устранить потенциальные причины получения сообщения об отказе в доступе.
+title: Исправления для "ошибка не удается получить отсюда" — Azure AD
+description: Найдите возможные исправления, по которым вы получаете сообщение об ошибке "не удается получить отсюда".
 services: active-directory
 author: eross-msft
 manager: daveba
@@ -14,14 +14,15 @@ ms.author: lizross
 ms.reviewer: jairoc
 ms.custom: user-help, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a317680a39d4594aacdf84ccdf963bb84bfbf07b
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 3d6385343ed26e5043e1491529fd2454caff4d04
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60473809"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74028558"
 ---
-# <a name="potential-reasons-for-the-you-cant-get-there-from-here-error-message"></a>Возможные причины сообщения об отказе в доступе
+# <a name="possible-fixes-for-the-you-cant-get-there-from-here-error-message"></a>Возможные исправления для сообщения об ошибке "не удается получить отсюда"
+
 При попытке доступа к внутренним веб-приложениям или службам организации вы можете получить сообщение об **отказе в доступе**. Это сообщение означает, что организация применила политику, которая препятствует доступу вашего устройства к ресурсам организации. Хотя вам может понадобиться обратиться в службу поддержки, чтобы исправить эту проблему, можно попробовать сначала выполнить некоторые действия.
 
 ## <a name="make-sure-youre-using-a-supported-browser"></a>Проверка использования поддерживаемой версии браузера
@@ -50,7 +51,7 @@ ms.locfileid: "60473809"
 ![Сообщение об ошибке, связанное с подключением к сети](media/user-help-device-remediation/network-version.png)
 
 ### <a name="to-check-whether-your-device-is-joined-to-your-network"></a>Чтобы проверить, подключено ли устройство к сети, сделайте следующее:
-1. Войдите в Windows с помощью рабочей или учебной учетной записи. Например, alain@contoso.com.
+1. Войдите в Windows с помощью рабочей или учебной учетной записи. Пример: alain@contoso.com.
 
 2. Подключитесь к корпоративной сети через виртуальную частную сеть (VPN) или DirectAccess.
 
@@ -67,7 +68,7 @@ ms.locfileid: "60473809"
 
 - **Зарегистрировать личное устройство для работы.** Регистрация персонального устройства (в роли которого может выступать телефон или планшет) в сети организации. После регистрации устройства с него можно получать доступ к ограниченным ресурсам организации. Дополнительные сведения и пошаговые инструкции см. в статье [Регистрация персонального устройства в сети организации](user-help-register-device-on-network.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 - [Что такое портал MyApps?](active-directory-saas-access-panel-introduction.md)
 
 - [Вход с использованием телефона вместо ввода пароля](user-help-auth-app-sign-in.md)

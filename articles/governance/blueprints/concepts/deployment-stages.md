@@ -1,14 +1,14 @@
 ---
 title: Этапы развертывания схемы
 description: Сведения о действиях, которые выполняет Azure Blueprintные службы во время развертывания.
-ms.date: 03/14/2019
+ms.date: 11/13/2019
 ms.topic: conceptual
-ms.openlocfilehash: d0d97ed01c4ae2ef96da151e1ab4ddc13a4b1d3e
-ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
+ms.openlocfilehash: b329613e4e4954a1ea1452017a6e6c8b7343f2d3
+ms.sourcegitcommit: b1a8f3ab79c605684336c6e9a45ef2334200844b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73960522"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74048610"
 ---
 # <a name="stages-of-a-blueprint-deployment"></a>Этапы развертывания схемы
 
@@ -25,7 +25,7 @@ ms.locfileid: "73960522"
 
 ## <a name="blueprints-granted-owner-rights"></a>Схемы, получившие права владельца
 
-Субъекту-службе схем Azure предоставляются права владельца для назначенной подписки или подписок. Предоставленная роль позволяет проектам создавать и позднее отменять [назначенное системой управляемое удостоверение](../../../active-directory/managed-identities-azure-resources/overview.md).
+Субъекту-службе схем Azure предоставляются права владельца для назначенной подписки или подписок, если используется управляемое системой удостоверение управляемого [удостоверения](../../../active-directory/managed-identities-azure-resources/overview.md) . Предоставленная роль позволяет проектам создавать и позднее отменять **назначенное системой** управляемое удостоверение. При использовании **назначенного пользователем** управляемого удостоверения субъект-служба схем Azure не получает и не требует прав владельца для подписки.
 
 Права предоставляются автоматически, если назначение выполняется на портале. Однако, если назначение выполняется с помощью REST API, предоставление прав необходимо выполнять с помощью отдельного вызова API. Идентификатор AppId Azure Blueprint `f71766dc-90d9-4b7d-bd9d-4499c4331c3f`, но субъект-служба зависит от клиента. Для получения субъекта-службы используйте [Azure Active Directory API Graph](../../../active-directory/develop/active-directory-graph-api.md) и конечную точку RESTful [Свойства serviceprincipals](/graph/api/resources/serviceprincipal) . Затем предоставьте роль _владельца_ в Azure на [портале](../../../role-based-access-control/role-assignments-portal.md), [Azure CLI](../../../role-based-access-control/role-assignments-cli.md), [Azure PowerShell](../../../role-based-access-control/role-assignments-powershell.md), [REST API](../../../role-based-access-control/role-assignments-rest.md)или [шаблоне диспетчер ресурсов](../../../role-based-access-control/role-assignments-template.md).
 
@@ -35,7 +35,7 @@ ms.locfileid: "73960522"
 
 Пользователь, группа или субъект-служба назначает проект для подписки. Объект назначения существует на уровне подписки, где был назначен проект. Ресурсы, созданные при развертывании, не выполняются в контексте сущности развертывания.
 
-При создании назначения схемы выбирается тип [управляемого удостоверения](../../../active-directory/managed-identities-azure-resources/overview.md) . Значение по умолчанию — управляемое **системой** удостоверение. Можно выбрать **назначаемое пользователем** управляемое удостоверение. При использовании управляемого удостоверения, **назначенного пользователем** , его необходимо определить и предоставить разрешения перед созданием назначения схемы.
+При создании назначения схемы выбирается тип [управляемого удостоверения](../../../active-directory/managed-identities-azure-resources/overview.md) . Значение по умолчанию — управляемое **системой** удостоверение. Можно выбрать **назначаемое пользователем** управляемое удостоверение. При использовании управляемого удостоверения, **назначенного пользователем** , его необходимо определить и предоставить разрешения перед созданием назначения схемы. Роли " [владелец](../../../role-based-access-control/built-in-roles.md#owner) " и " [оператор](../../../role-based-access-control/built-in-roles.md#blueprint-operator) построения" имеют необходимые разрешения `blueprintAssignment/write` для создания назначения, которое использует управляемое **пользователем** удостоверение.
 
 ## <a name="optional---blueprints-creates-system-assigned-managed-identity"></a>Необязательные — схемы создание управляемого удостоверения, назначенного системой
 

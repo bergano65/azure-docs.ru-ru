@@ -1,26 +1,26 @@
 ---
-title: Выполните проверку доступа к ролям ресурсов Azure в управление привилегированными пользователями-Azure Active Directory | Документация Майкрософт
-description: Узнайте, как выполнить проверку доступа к ролям ресурсов Azure в Azure AD Privileged Identity Management (PIM).
+title: Завершение проверки доступа к ролям ресурсов Azure в PIM — Azure AD | Документация Майкрософт
+description: Узнайте, как выполнить проверку доступа к ролям ресурсов Azure управление привилегированными пользователями в Azure Active Directory.
 services: active-directory
 documentationcenter: ''
 author: curtand
-manager: mtillman
+manager: daveba
 ms.service: active-directory
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: pim
-ms.date: 10/23/2019
+ms.date: 11/08/2019
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6761d1d6aea796e0cca708676f69c47328642cc2
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: 9e45249245aaab97070b7e774d4b6bab6827bdc9
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72895809"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74021983"
 ---
 # <a name="complete-an-access-review-of-azure-resource-roles-in-privileged-identity-management"></a>Выполните проверку доступа к ролям ресурсов Azure в управление привилегированными пользователями
 
@@ -44,19 +44,19 @@ ms.locfileid: "72895809"
 
 ![Параметры для управления проверкой — "отключить", "сбросить", "Применить", "Удалить"](media/pim-resource-roles-complete-access-review/rbac-access-review-menu.png)
 
-### <a name="stop"></a>Остановить
+### <a name="stop"></a>Stop
 
 Все проверки доступа имеют дату окончания. Нажмите кнопку " **завершить** ", чтобы завершить его раньше. Все пользователи, которые еще не завершили проверку на этот раз, не смогут завершить их после того, как вы завершите проверку. Нельзя перезапустить проверку после ее остановки.
 
 ### <a name="reset"></a>Reset
 
-Вы можете сбросить проверку доступа, чтобы удалить все соответствующие решения. После сброса проверки доступа все пользователи будут отмечены как непросмотренные.
+Вы можете сбросить проверку доступа, чтобы удалить все соответствующие решения. После сброса проверки доступа все пользователи помечаются как непроверенные.
 
 ### <a name="apply"></a>Применить
 
 После завершения проверки доступа нажмите кнопку **Применить** , чтобы реализовать результат проверки. Если в процессе проверки пользователю было отказано в доступе, то это приведет к удалению назначенной пользователю роли.  
 
-### <a name="delete"></a>Удаление
+### <a name="delete"></a>Удалить
 
 Если проверка вам больше не нужна, удалите ее. Выберите **Удалить** Yo удалить проверку из службы Управление привилегированными пользователями.
 
@@ -72,7 +72,7 @@ ms.locfileid: "72895809"
 
 ![Список страниц рецензентов и имя участника-пользователя](media/pim-resource-roles-complete-access-review/rbac-access-review-reviewers.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Запуск проверки доступа для ролей ресурсов Azure в управление привилегированными пользователями](pim-resource-roles-start-access-review.md)
 - [Выполните проверку доступа к моим ролям ресурсов Azure в управление привилегированными пользователями](pim-resource-roles-perform-access-review.md)

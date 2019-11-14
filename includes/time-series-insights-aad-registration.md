@@ -9,24 +9,16 @@ author: deepakpalled
 ms.author: dpalled
 manager: cshankar
 ms.date: 09/24/2019
-ms.openlocfilehash: 7e67b9e1c611d14b78db53f8662fb4e1f493a8df
-ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
+ms.openlocfilehash: 1ed57e30273c9ba3feb110e0e5acbd3bcc7ffd40
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72990193"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74062919"
 ---
-> [!IMPORTANT]
-> * С мая 2019 г. новая колонка **Azure Active Directory** > **Регистрация приложений** заменяет прежнюю колонку **Azure Active Directory** > **Регистрация приложений (прежняя версия)** .
-> * Регистрация приложений, созданная или отображенная в прежней колонке, автоматически появится в новой.
-> * Подробную информацию о переходе на новый интерфейс регистрации приложений Azure см. в статьях [Training guide: App registrations in the Azure portal](https://docs.microsoft.com/azure/active-directory/develop/app-registrations-training-guide) (Учебное руководство. Регистрация приложений на портале Azure) и [Краткое руководство. Регистрация приложения с помощью платформы удостоверений Майкрософт](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app).
-
 1. На [портале Azure](https://ms.portal.azure.com/) последовательно выберите **Azure Active Directory** > **Регистрация приложений** > **Новая регистрация**.
 
    [![Регистрация нового приложения в Azure Active Directory](media/time-series-insights-aad-registration/active-directory-new-application-registration.png)](media/time-series-insights-aad-registration/active-directory-new-application-registration.png#lightbox)
-
-   > [!TIP]
-   > С помощью новой панели регистрации приложения Azure Active Directory можно выполнить фильтрацию отображаемых приложений, выбрав параметр **Собственные приложения**.
 
     Приложение будет указано здесь после его регистрации.
 
@@ -51,7 +43,7 @@ ms.locfileid: "72990193"
 
    [![Создание секрета клиента](media/time-series-insights-aad-registration/active-directory-auth-blade.png)](media/time-series-insights-aad-registration/active-directory-auth-blade.png#lightbox)
 
-   В нижней части страницы нажмите кнопку **Save**.
+   Выберите команду **Сохранить**.
 
 1. Щелкните **Сертификаты и секреты** и **Создать секрет клиента**, чтобы создать пароль приложения, который клиент сможет использовать для подтверждения подлинности.
 

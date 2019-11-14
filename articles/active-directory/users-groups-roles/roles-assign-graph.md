@@ -1,5 +1,5 @@
 ---
-title: Назначение и удаление ролей настраиваемых администраторов с помощью Microsoft Graph API-Azure Active Directory | Документация Майкрософт
+title: Назначение ролей администратора Azure AD с помощью Microsoft Graph API | Документация Майкрософт
 description: Назначение и удаление ролей администратора Azure AD с помощью API Graph в Azure Active Directory
 services: active-directory
 author: curtand
@@ -8,17 +8,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: article
-ms.date: 07/31/2019
+ms.date: 11/08/2019
 ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 898f444e868a469aed5358f49f48f5bcbfab4450
-ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
+ms.openlocfilehash: 2f5be5829843e9857239ca5ea9a7395f569f563a
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68707582"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74025344"
 ---
 # <a name="assign-custom-admin-roles-using-graph-api-in-azure-active-directory"></a>Назначение пользовательских ролей администратора с помощью API Graph в Azure Active Directory 
 
@@ -32,13 +32,13 @@ ms.locfileid: "68707582"
 
 HTTP-запрос на создание назначения роли между пользователем и определением роли.
 
-ПОМЕСТИТЬ
+ПУБЛИКАЦИЯ
 
 ``` HTTP
 https://graph.windows.net/<tenantDomain-or-tenantId>/roleAssignments?api-version=1.61-internal
 ```
 
-Body
+Текст
 
 ``` HTTP
 {
@@ -48,7 +48,7 @@ Body
 }
 ```
 
-Отклик
+Ответ
 
 ``` HTTP
 HTTP/1.1 201 Created
@@ -56,13 +56,13 @@ HTTP/1.1 201 Created
 
 HTTP-запрос на создание назначения роли, в котором не существует субъект или определение роли
 
-ПОМЕСТИТЬ
+ПУБЛИКАЦИЯ
 
 ``` HTTP
 https://graph.windows.net/<tenantDomain-or-tenantId>/roleAssignments?api-version=1.61-internal
 ```
 
-Body
+Текст
 
 ``` HTTP
 {
@@ -72,7 +72,7 @@ Body
 }
 ```
 
-Отклик
+Ответ
 
 ``` HTTP
 HTTP/1.1 404 Not Found
@@ -83,13 +83,13 @@ HTTP-запрос на создание одного назначения рол
 > [!NOTE] 
 > В настоящее время встроенные роли имеют ограничение, где их можно ограничить только областью "/" всей организации или областью "/Ау/*". Область одного ресурса не работает для встроенных ролей, но работает для пользовательских ролей.
 
-ПОМЕСТИТЬ
+ПУБЛИКАЦИЯ
 
 ``` HTTP
 https://graph.windows.net/<tenantDomain-or-tenantId>/roleAssignments?api-version=1.61-internal
 ```
 
-Body
+Текст
 
 ``` HTTP
 {
@@ -99,7 +99,7 @@ Body
 }
 ```
 
-Отклик
+Ответ
 
 ``` HTTP
 HTTP/1.1 400 Bad Request
@@ -127,13 +127,13 @@ HTTP/1.1 400 Bad Request
 
 HTTP-запрос на получение назначения роли для данного участника
 
-GET
+ПОЛУЧЕНИЕ
 
 ``` HTTP
 https://graph.windows.net/<tenantDomain-or-tenantId>/roleAssignments?api-version=1.61-internal&$filter=principalId eq ‘<object-id-of-principal>’
 ```
 
-Отклик
+Ответ
 
 ``` HTTP
 HTTP/1.1 200 OK
@@ -153,13 +153,13 @@ HTTP/1.1 200 OK
 
 HTTP-запрос на получение назначения роли для заданного определения роли.
 
-GET
+ПОЛУЧЕНИЕ
 
 ``` HTTP
 https://graph.windows.net/<tenantDomain-or-tenantId>/roleAssignments?api-version=1.61-internal&$filter=roleDefinitionId eq ‘<object-id-or-template-id-of-role-definition>’
 ```
 
-Отклик
+Ответ
 
 ``` HTTP
 HTTP/1.1 200 OK
@@ -173,13 +173,13 @@ HTTP/1.1 200 OK
 
 HTTP-запрос на получение назначения роли по ИДЕНТИФИКАТОРу.
 
-GET
+ПОЛУЧЕНИЕ
 
 ``` HTTP
 https://graph.windows.net/<tenantDomain-or-tenantId>/roleAssignments/<id-of-role-assignment>?api-version=1.61-internal
 ```
 
-Отклик
+Ответ
 
 ``` HTTP
 HTTP/1.1 200 OK
@@ -195,26 +195,26 @@ HTTP/1.1 200 OK
 
 HTTP-запрос на удаление назначения роли между пользователем и определением роли.
 
-DELETE
+УДАЛИТЬ
 
 ``` HTTP
 https://graph.windows.net/<tenantDomain-or-tenantId>/roleAssignments/<id-of-role-assignment>?api-version=1.61-internal
 ```
 
-Отклик
+Ответ
 ``` HTTP
 HTTP/1.1 204 No Content
 ```
 
 HTTP-запрос на удаление назначения роли, которое больше не существует
 
-DELETE
+УДАЛИТЬ
 
 ``` HTTP
 https://graph.windows.net/<tenantDomain-or-tenantId>/roleAssignments/<id-of-role-assignment>?api-version=1.61-internal
 ```
 
-Отклик
+Ответ
 
 ``` HTTP
 HTTP/1.1 404 Not Found
@@ -222,13 +222,13 @@ HTTP/1.1 404 Not Found
 
 HTTP-запрос на удаление назначения роли между самои встроенным определением роли
 
-DELETE
+УДАЛИТЬ
 
 ``` HTTP
 https://graph.windows.net/<tenantDomain-or-tenantId>/roleAssignments/<id-of-role-assignment>?api-version=1.61-internal
 ```
 
-Отклик
+Ответ
 
 ``` HTTP
 HTTP/1.1 400 Bad Request
@@ -246,7 +246,7 @@ HTTP/1.1 400 Bad Request
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 * Вы можете оставить комментарий на [форуме об административных ролях Azure AD](https://feedback.azure.com/forums/169401-azure-active-directory?category_id=166032).
 * Дополнительные сведения о ролях и назначении роли администратора см. в разделе [Назначение ролей администратора](directory-assign-admin-roles.md).

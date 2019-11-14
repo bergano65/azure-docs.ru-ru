@@ -5,12 +5,12 @@ author: uhabiba04
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: v-umha
-ms.openlocfilehash: ab0d3aac6944e331223d91eb98b50b3308be12c3
-ms.sourcegitcommit: 018e3b40e212915ed7a77258ac2a8e3a660aaef8
+ms.openlocfilehash: 567110b2e0429930720abf6af5f2727e4ad9d3bb
+ms.sourcegitcommit: b1a8f3ab79c605684336c6e9a45ef2334200844b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73797638"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74048276"
 ---
 # <a name="troubleshooting"></a>Устранение неполадок
 
@@ -251,7 +251,7 @@ ms.locfileid: "73797638"
 
 **Это означает**, что конфигурация регистрации приложения Azure AD не была выполнена должным образом.  
 
-**Корректирующее действие**. обратитесь к ИТ-администратору (у которого есть доступ на чтение клиента), чтобы использовать наш [сценарий](https://aka.ms/PPCreateAADappregistration) для создания регистрации приложения Azure AD. Этот сценарий также будет автоматически выполнять действия по настройке. тех  
+**Корректирующее действие**. обратитесь к ИТ-администратору (у которого есть доступ на чтение клиента), чтобы использовать наш [сценарий](https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect/tree/master/AppCreationScripts) для создания регистрации приложения Azure AD. Этот сценарий также будет автоматически выполнять действия по настройке.
 
 **Ошибка**: не удалось создать новое приложение Active Directory "думминаме" в этом клиенте: другой объект с таким же значением для URI идентификатора свойства уже существует
 
@@ -278,6 +278,6 @@ ms.locfileid: "73797638"
 2.  Выберите службу приложений.  
 3.  Перейдите к разделу Увеличение масштаба (план службы приложений) и выберите соответствующую [ценовую категорию](https://azure.microsoft.com/pricing/details/app-service/windows/) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Если вы по-прежнему сталкиваетесь с проблемами, свяжитесь с нами на нашем [форуме поддержки](https://social.msdn.microsoft.com/Forums/home?forum=ProjectFarmBeats).

@@ -1,33 +1,33 @@
 ---
-title: Пригласите гостей и назначьте роли ресурсов Azure в управление привилегированными пользователями-Azure Active Directory | Документация Майкрософт
+title: Назначение ролей ресурсов Azure гостям в PIM в Azure AD | Документация Майкрософт
 description: Узнайте, как пригласить внешних гостевых пользователей и назначить роли ресурсов Azure в Azure AD Privileged Identity Management (PIM).
 services: active-directory
 documentationcenter: ''
 author: curtand
-manager: mtillman
+manager: daveba
 ms.service: active-directory
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: pim
-ms.date: 10/23/2019
+ms.date: 11/08/2019
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 08c2ef1695d118c248abfc500025479d1186eb05
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: 2efcf77d65fa2f9e203ed805cd7d78b9802ee3aa
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72895646"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74021938"
 ---
 # <a name="invite-guest-users-and-assign-azure-resource-roles-in-privileged-identity-management"></a>Приглашение гостевых пользователей и назначение ролей ресурсов Azure в управление привилегированными пользователями
 
 Гостевые пользователи Azure Active Directory (Azure AD) являются частью возможностей совместной работы B2B в Azure AD, что позволяет управлять внешними гостевыми пользователями и поставщиками в качестве гостевых в Azure AD. При объединении службы совместной работы B2B с Azure AD Privileged Identity Management (PIM) вы можете расширить требования к соответствию и управлению гостями. Например, эти управление привилегированными пользователями функции можно использовать для задач Azure Identity с гостями.
 
 - назначение доступа к определенным ресурсам Azure;
-- Включение JIT-доступа
+- включение JIT-доступа;
 - выбор длительности и даты окончания назначения;
 - Требовать многофакторную проверку подлинности при активном назначении или активации
 - выполнение проверок доступа;
@@ -163,7 +163,7 @@ ms.locfileid: "72895646"
 
     ![Журнал аудита каталогов: Дата, цель, инициировано и действие](./media/pim-resource-roles-external-users/audit-directory.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Назначение ролей администратора Azure AD в управление привилегированными пользователями](pim-how-to-add-role-to-user.md)
 - [Что такое доступ гостевых пользователей в службе совместной работы Azure AD B2B?](../b2b/what-is-b2b.md)

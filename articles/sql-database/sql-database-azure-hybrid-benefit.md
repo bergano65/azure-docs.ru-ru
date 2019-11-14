@@ -8,20 +8,22 @@ ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: sashan, moslake, carlrab
-ms.date: 10/08/2019
-ms.openlocfilehash: 17252f6544ee56647315dc44ace4db3e3abe9726
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.date: 11/13/2019
+ms.openlocfilehash: 4aab699ff0141b648066fae0de445c4467be7509
+ms.sourcegitcommit: b1a8f3ab79c605684336c6e9a45ef2334200844b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73821868"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74048396"
 ---
 # <a name="azure-hybrid-benefit"></a>Преимущество гибридного использования Azure
 
-В подготовленной среде вычислений для модели приобретения на основе виртуальное ядро вы можете обмениваться существующими лицензиями по тарифам со скидкой в базе данных SQL с помощью [преимущество гибридного использования Azure для SQL Server](https://azure.microsoft.com/pricing/hybrid-benefit/). Это преимущество Azure позволяет сэкономить до 30% в базе данных SQL Azure, используя локальные лицензии SQL Server с Software Assurance.
+В подготовленной среде вычислений для модели приобретения на основе виртуальное ядро вы можете обмениваться существующими лицензиями по тарифам со скидкой в базе данных SQL с помощью [преимущество гибридного использования Azure для SQL Server](https://azure.microsoft.com/pricing/hybrid-benefit/). Это преимущество Azure позволяет сэкономить до 30% в базе данных SQL Azure, используя локальные лицензии SQL Server с Software Assurance. 
+
+> [!NOTE]
+> Переход на Преимущество гибридного использования Azure не требует времени простоя.
 
 ![цены](./media/sql-database-service-tiers/pricing.png)
-
 
 ## <a name="choose-a-license-model"></a>Выбор модели лицензии
 
@@ -45,14 +47,12 @@ ms.locfileid: "73821868"
 
 - Чтобы задать или обновить тип лицензии с помощью REST API:
 
-  - [Базы данных: создание или обновление](https://docs.microsoft.com/rest/api/sql/databases/createorupdate)
+  - [Создание или обновление баз данных](https://docs.microsoft.com/rest/api/sql/databases/createorupdate)
   - [Базы данных: обновление](https://docs.microsoft.com/rest/api/sql/databases/update)
   - [Управляемые экземпляры. Создание или обновление](https://docs.microsoft.com/rest/api/sql/managedinstances/createorupdate)
   - [Управляемые экземпляры. Обновление](https://docs.microsoft.com/rest/api/sql/managedinstances/update)
 
-
-
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Сведения о выборе между вариантами развертывания базы данных SQL см. [в разделе Выбор правильного развертывания в SQL Azure](sql-database-paas-vs-sql-server-iaas.md).
 - Сравнение функций базы данных SQL см. в статье [функции базы данных SQL Azure](sql-database-features.md).

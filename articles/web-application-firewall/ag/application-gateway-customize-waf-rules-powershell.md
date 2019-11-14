@@ -1,20 +1,21 @@
 ---
-title: Настройка правил брандмауэра веб-приложения в шлюзе приложений Azure с PowerShell
+title: Настройка правил с помощью PowerShell
+titleSuffix: Azure Web Application Firewall
 description: В этой статье содержатся сведения о том, как настроить правила брандмауэра веб-приложения в шлюзе приложений с помощью PowerShell.
 services: web-application-firewall
 author: vhorne
 ms.service: web-application-firewall
-ms.date: 08/23/2019
+ms.date: 11/14/2019
 ms.author: victorh
 ms.topic: article
-ms.openlocfilehash: 2930204cd322f3a8ba25eb6f3455a51f1d3d2ee9
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 55eea15da8c3a10b0421ff1576082d6b42fc7c56
+ms.sourcegitcommit: b1a8f3ab79c605684336c6e9a45ef2334200844b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73516959"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74048511"
 ---
-# <a name="customize-web-application-firewall-rules-through-powershell"></a>Настройка правил брандмауэра веб-приложения с помощью PowerShell
+# <a name="customize-web-application-firewall-rules-using-powershell"></a>Настройка правил брандмауэра веб-приложения с помощью PowerShell
 
 Брандмауэр веб-приложения шлюза приложений Azure (WAF) обеспечивает защиту для веб-приложений. с помощью основного набора правил (CRS) открытого проекта безопасности веб-приложений (OWASP). Некоторые правила могут приводить к ложным срабатываниям и блокировке реального трафика. Поэтому шлюз приложений предоставляет возможность настроить правила и группы правил. Дополнительные сведения о конкретных группах правил и правилах см. в разделе [список групп правил и правил брандмауэра веб-приложения](application-gateway-crs-rulegroups-rules.md).
 
@@ -105,7 +106,7 @@ Set-AzApplicationGateway -ApplicationGateway $gw
 
 * Порог входящего индекса аномалий превышает пороговое значение
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 После настройки с отключением правил вы можете узнать, как просматривать журналы WAF. Дополнительные сведения см. в разделе [Журналы диагностики](../../application-gateway/application-gateway-diagnostics.md#diagnostic-logging).
 
