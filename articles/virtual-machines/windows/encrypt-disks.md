@@ -1,5 +1,5 @@
 ---
-title: Шифрование дисков на виртуальной машине Windows в Azure | Документы Майкрософт
+title: Шифрование дисков на виртуальной машине Windows в Azure
 description: Шифрование виртуальных дисков на виртуальной машине Windows для улучшения уровня безопасности с помощью Azure PowerShell
 services: virtual-machines-windows
 documentationcenter: ''
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 10/30/2018
 ms.author: cynthn
-ms.openlocfilehash: 73f38760153a6e1db5621801282c71216b3e8560
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: 096fe779c077424b01df3ead5965cb799866a03b
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73749437"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74033527"
 ---
 # <a name="encrypt-virtual-disks-on-a-windows-vm"></a>Шифрование виртуальных дисков на виртуальной машине Windows
 Для улучшения уровня безопасности и соответствия требованиям виртуальной машины содержание виртуальных дисков в Azure можно зашифровать. Диски, зашифрованные с использованием криптографических ключей, защищенных в Azure Key Vault. Вы будете управлять этими криптографическими ключами и проводить аудит их использования. В этой статье описывается, как с помощью Azure PowerShell шифровать диски на виртуальной машине Windows. Вы также можете [шифровать виртуальные машины Linux](../linux/disk-encryption-overview.md).
@@ -34,7 +34,7 @@ ms.locfileid: "73749437"
 1. Создайте криптографический ключ в хранилище ключей Azure.
 1. Настройте криптографический ключ таким образом, чтобы его можно было использовать для шифрования дисков.
 1. Включите шифрование для виртуальных дисков.
-1. Из Azure Key Vault запрашиваются необходимые ключи шифрования.
+1. Необходимые ключи шифрования запрашиваются из Azure Key Vault.
 1. Виртуальные диски зашифровываются с использованием предоставленного криптографического ключа.
 
 
@@ -144,6 +144,6 @@ OsVolumeEncryptionSettings : Microsoft.Azure.Management.Compute.Models.DiskEncry
 ProgressMessage            : OsVolume: Encrypted, DataVolumes: Encrypted
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 * Дополнительные сведения об управлении Azure Key Vault см. в статье [Настройка хранилища ключей для виртуальных машин в Azure Resource Manager](key-vault-setup.md).
 * Дополнительные сведения о шифровании дисков, а именно о подготовке зашифрованной настраиваемой виртуальной машины к передаче в Azure, см. в статье [Дисковое шифрование Azure для виртуальных машин IaaS под управлением Windows и Linux](../../security/fundamentals/encryption-overview.md).

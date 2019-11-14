@@ -1,5 +1,5 @@
 ---
-title: Создание виртуальной машины Azure и управление ею с помощью Java | Документация Майкрософт
+title: Создание виртуальной машины Azure и управление ею с помощью Java
 description: Развертывание виртуальной машины и всех ее вспомогательных ресурсов с помощью Java и Azure Resource Manager.
 services: virtual-machines-windows
 documentationcenter: ''
@@ -14,24 +14,24 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 07/17/2017
 ms.author: cynthn
-ms.openlocfilehash: fa6c5115663d770f561764356129448af878668b
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: bf0f2928bd7cbac08a2a887481f19b3acb99f6fa
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70103026"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74039718"
 ---
 # <a name="create-and-manage-windows-vms-in-azure-using-java"></a>Создание виртуальных машин Windows в Azure и управление ими с помощью Java
 
-[Виртуальной машине Azure](overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) требуется несколько вспомогательных ресурсов Azure. В этой статье описывается создание, управление и удаление ресурсов виртуальной машины с помощью Java. Вы узнаете, как выполнять следующие задачи:
+[Виртуальной машине Azure](overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) требуется несколько вспомогательных ресурсов Azure. В этой статье описывается создание, управление и удаление ресурсов виртуальной машины с помощью Java. Вы узнаете, как выполнять такие задачи.
 
 > [!div class="checklist"]
 > * Создание проекта Maven
 > * Добавление зависимостей
-> * Создание учетных данных
-> * Создание ресурсов.
-> * Выполнение задач управления.
-> * Удаление ресурсов.
+> * Создание учетных данных.
+> * Создание ресурсов
+> * Выполнение задач управления
+> * Удаление ресурсов
 > * Выполнение приложения
 
 На выполнение этих действий требуется примерно 20 минут.
@@ -114,7 +114,7 @@ ms.locfileid: "70103026"
 
 3. Сохраните файл.
 
-## <a name="create-credentials"></a>Создание учетных данных
+## <a name="create-credentials"></a>Создание учетных данных.
 
 Прежде чем выполнить этот шаг, убедитесь в наличии доступа к [субъекту-службе Active Directory](../../active-directory/develop/howto-create-service-principal-portal.md). Кроме того, необходимо записать идентификатор приложения, ключ проверки подлинности и идентификатор клиента, которые понадобятся позже.
 
@@ -140,7 +140,7 @@ ms.locfileid: "70103026"
 
 ### <a name="create-the-management-client"></a>Создание клиента управления
 
-1. В папке `src\main\java\com\fabrikam` откройте файл `App.java` и убедитесь, что этот оператор statement находится в верхней части:
+1. В папке `App.java` откройте файл `src\main\java\com\fabrikam` и убедитесь, что этот оператор statement находится в верхней части:
 
     ```java
     package com.fabrikam.testAzureApp;
@@ -184,7 +184,7 @@ ms.locfileid: "70103026"
 
     ```
 
-## <a name="create-resources"></a>Создать ресурсы
+## <a name="create-resources"></a>Создание ресурсов
 
 ### <a name="create-the-resource-group"></a>Создание группы ресурсов
 
@@ -444,7 +444,7 @@ System.out.println("Press enter to delete resources...");
 input.nextLine();
 ```
 
-## <a name="delete-resources"></a>Удаление ресурсов.
+## <a name="delete-resources"></a>Удаление ресурсов
 
 Так как за использование ресурсов Azure взимается плата, рекомендуется всегда удалять ресурсы, которые больше не нужны. Если вы хотите удалить виртуальные машины и все вспомогательные ресурсы, достаточно удалить группу ресурсов.
 
@@ -470,6 +470,6 @@ input.nextLine();
 2. Прежде чем нажать клавишу **ВВОД** и начать удаление ресурсов, потратьте несколько минут и проверьте на портале Azure, созданы ли эти ресурсы. Щелкните состояние развертывания, чтобы просмотреть сведения о развертывании.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 * Дополнительные сведения об использовании библиотек Azure для Java см. в [этой статье](https://docs.microsoft.com/java/azure/java-sdk-azure-overview).
 

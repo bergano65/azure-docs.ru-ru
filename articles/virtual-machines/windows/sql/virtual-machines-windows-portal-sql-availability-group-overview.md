@@ -1,5 +1,5 @@
 ---
-title: Обзор групп доступности SQL Server и виртуальных машин Azure | Документация Майкрософт
+title: Обзор групп доступности
 description: В этой статье рассматриваются группы доступности SQL Server на виртуальных машинах Azure.
 services: virtual-machines
 documentationCenter: na
@@ -14,14 +14,15 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 01/13/2017
 ms.author: mikeray
-ms.openlocfilehash: d89e25b6a39649bb8421fd32b8842c3c76807268
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.custom: seo-lt-2019
+ms.openlocfilehash: 8119990ab4ab4a918e325976092100086a547aa4
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70102169"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74037496"
 ---
-# <a name="introducing-sql-server-always-on-availability-groups-on-azure-virtual-machines"></a>Введение в группы доступности AlwaysOn SQL Server на виртуальных машинах Azure #
+# <a name="introducing-sql-server-availability-groups-on-azure-virtual-machines"></a>Введение SQL Server групп доступности на виртуальных машинах Azure
 
 В этой статье рассматриваются группы доступности SQL Server на виртуальных машинах Azure. 
 
@@ -39,10 +40,10 @@ ms.locfileid: "70102169"
 
 |  | Версия Windows Server | Версия SQL Server | Выпуск SQL Server | Конфигурация кворума WSFC | Аварийное восстановление с несколькими регионами | Поддержка нескольких подсетей | Поддержка существующего AD | Аварийное восстановление с несколькими зонами в разных регионах | Расп — поддержка группы доступности без домена AD | Расп — поддержка группы доступности без кластера |  
 | :------ | :-----| :-----| :-----| :-----| :-----| :-----| :-----| :-----| :-----| :-----|
-| [ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ SQL VM](virtual-machines-windows-sql-availability-group-cli.md) | 2016 | 2017 </br>2016   | ENT | Облако-свидетель | Нет | Да | Да | Да | Нет | Нет |
-| [Шаблоны быстрого запуска](virtual-machines-windows-sql-availability-group-quickstart-template.md) | 2016 | 2017</br>2016  | ENT | Облако-свидетель | Нет | Да | Да | Да | Нет | Нет |
+| [ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ SQL VM](virtual-machines-windows-sql-availability-group-cli.md) | 2016 | 2017 </br>2016   | ENT | Облако-свидетель | Нет | Yes | Yes | Yes | Нет | Нет |
+| [Шаблоны быстрого запуска](virtual-machines-windows-sql-availability-group-quickstart-template.md) | 2016 | 2017</br>2016  | ENT | Облако-свидетель | Нет | Yes | Yes | Yes | Нет | Нет |
 | [Шаблон портала](virtual-machines-windows-portal-sql-alwayson-availability-groups.md) | 2016 </br>2012 R2 | 2016</br>2014 | ENT | Общая папка | Нет | Нет | Нет | Нет | Нет | Нет |
-| [Вручную](virtual-machines-windows-portal-sql-availability-group-prereq.md) | Все | Все | Все | Все | Да | Да | Да | Да | Да | Да |
+| [Вручную](virtual-machines-windows-portal-sql-availability-group-prereq.md) | Все | Все | Все | Все | Yes | Yes | Yes | Yes | Yes | Yes |
 | &nbsp; | &nbsp; |&nbsp; |&nbsp; |&nbsp; |&nbsp; |&nbsp; |&nbsp; |&nbsp; |&nbsp; |&nbsp; |
 
 Когда все будет готово к созданию группы доступности SQL Server на виртуальных машинах Azure, обратитесь к этим руководствам.
@@ -71,6 +72,6 @@ ms.locfileid: "70102169"
 
 - [Создание группы доступности AlwaysOn для улучшения доступности и аварийного восстановления](virtual-machines-windows-portal-sql-availability-group-tutorial.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 [Настройка группы доступности AlwaysOn на виртуальных машинах Azure в разных регионах](virtual-machines-windows-portal-sql-availability-group-dr.md)

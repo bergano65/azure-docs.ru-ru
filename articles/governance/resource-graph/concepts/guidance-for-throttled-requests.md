@@ -3,12 +3,12 @@ title: Руководство по регулируемым запросам
 description: Узнайте, как создавать более совершенные запросы, чтобы избежать регулирования запросов к графу ресурсов Azure.
 ms.date: 10/18/2019
 ms.topic: conceptual
-ms.openlocfilehash: 46af11bfea47e37b97fa9492f71be8b5fe1817e3
-ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
+ms.openlocfilehash: 651a5daa9e7e19a5dc157ba0cfa17da2c8abe3db
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73959206"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74038324"
 ---
 # <a name="guidance-for-throttled-requests-in-azure-resource-graph"></a>Руководство по регулируемым запросам в графе ресурсов Azure
 
@@ -215,11 +215,11 @@ async Task ExecuteQueries(IEnumerable<string> queries)
   При использовании Azure CLI или Azure PowerShell запросы к графу ресурсов Azure автоматически размещаются, чтобы получить не более 5000 записей. Результаты запроса возвращают объединенный список записей из всех вызовов с разбивкой на страницы. В этом случае, в зависимости от числа записей в результатах запроса, один запрос разбивки на страницы может использовать более одной квоты запроса. Например, в приведенном ниже примере один запуск запроса может использовать до пяти квот запросов:
 
   ```azurecli-interactive
-  az graph query -q 'Resources | project id, name, type' -top 5000
+  az graph query -q 'Resources | project id, name, type' --first 5000
   ```
 
   ```azurepowershell-interactive
-  Search-AzGraph -Query 'Resources | project id, name, type' -Top 5000
+  Search-AzGraph -Query 'Resources | project id, name, type' -First 5000
   ```
 
 ## <a name="still-get-throttled"></a>Все еще регулируется?

@@ -1,5 +1,5 @@
 ---
-title: Приступая к работе с Cloud Foundry в Microsoft Azure | Документация Майкрософт
+title: начало работы с Cloud Foundry на Microsoft Azure
 description: Запуск OSS или Pivotal Cloud Foundry в Microsoft Azure
 services: virtual-machines-linux
 documentationcenter: ''
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 01/19/2017
 ms.author: seanmck
-ms.openlocfilehash: d91ad0bea7f79dd67edd4f0bb9e06a37a0f86bea
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 447550d2f6bca570869c9fa93724e4dbaba02132
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70091923"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74036819"
 ---
 # <a name="cloud-foundry-on-azure"></a>Cloud Foundry в Azure
 
@@ -28,7 +28,7 @@ Cloud Foundry — это платформа как услуга (PaaS) с от�
 
 ## <a name="cloud-foundry-offerings"></a>Предложения Cloud Foundry
 
-Для запуска в Azure доступны две разновидности Cloud Foundry: Cloud Foundry с открытым кодом (OSS CF) и Pivotal Cloud Foundry (PCF). OSS CF является версией Cloud Foundry с полностью [открытым кодом](https://github.com/cloudfoundry), которой управляет Cloud Foundry Foundation. Сводная Cloud Foundry — это корпоративное распределение Cloud Foundry из сводного программного обеспечения Inc. Мы рассмотрим некоторые различия между этими предложениями.
+Для запуска в Azure доступны две разновидности Cloud Foundry: Cloud Foundry с открытым кодом (OSS CF) и Pivotal Cloud Foundry (PCF). OSS CF является версией Cloud Foundry с полностью [открытым кодом](https://github.com/cloudfoundry), которой управляет Cloud Foundry Foundation. Pivotal Cloud Foundry является корпоративным дистрибутивом Cloud Foundry от Pivotal Software Inc. Мы рассмотрим некоторые различия между этими двумя предложениями.
 
 ### <a name="open-source-cloud-foundry"></a>Cloud Foundry с открытым кодом
 
@@ -63,7 +63,7 @@ Cloud Foundry придерживается методики [12-факторно
 
 Cloud Foundry идеально подходит для гибкой разработки программного обеспечения, включая использование непрерывной интеграции (CI) и непрерывной доставки (CD). Если вы используете Azure DevOps Services для управления проектами и хотите установить конвейер CI/CD, нацеленный на Cloud Foundry, то можете использовать [расширение для сборки Cloud Foundry для Azure DevOps Services](https://marketplace.visualstudio.com/items?itemName=ms-vsts.cloud-foundry-build-extension). Этот подключаемый модуль упрощает настройку и автоматизацию развертываний на платформе Cloud Foundry, работающей в Azure или в другой среде.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Pivotal Cloud Foundry on Microsoft Azure](https://azure.microsoft.com/marketplace/partners/pivotal/pivotal-cloud-foundryazure-pcf/) (Pivotal Cloud Foundry в Microsoft Azure)
 - [Развертывание первого приложения в Cloud Foundry в Microsoft Azure](./cloudfoundry-deploy-your-first-app.md)

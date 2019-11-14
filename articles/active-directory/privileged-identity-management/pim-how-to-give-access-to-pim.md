@@ -1,25 +1,25 @@
 ---
-title: Предоставление другим администраторам права на управление PIM-Azure Active Directory | Документация Майкрософт
+title: Предоставление доступа для управления PIM-Azure Active Directory | Документация Майкрософт
 description: Узнайте, как предоставить доступ к управлению Azure AD Privileged Identity Management (PIM) другим администраторам.
 services: active-directory
 documentationcenter: ''
 author: curtand
-manager: mtillman
+manager: daveba
 editor: ''
 ms.service: active-directory
 ms.topic: conceptual
 ms.workload: identity
 ms.subservice: pim
-ms.date: 10/22/2019
+ms.date: 11/08/2019
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 60c0e1bfd457137ddfb8f3ae81fc9044098c1f8d
-ms.sourcegitcommit: ec2b75b1fc667c4e893686dbd8e119e7c757333a
+ms.openlocfilehash: 7424e92f8520d13137b6ac8787523095058a005f
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72809068"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74022113"
 ---
 # <a name="grant-access-to-other-administrators-to-manage-privileged-identity-management"></a>Предоставление другим администраторам доступа для управления управление привилегированными пользователями
 
@@ -32,7 +32,7 @@ ms.locfileid: "72809068"
 
 ## <a name="grant-access-to-manage-pim"></a>Предоставление доступа для управления PIM
 
-1. Войдите на [портале Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 
 1. В Azure AD откройте **Управление привилегированными пользователями**.
 
@@ -70,7 +70,7 @@ ms.locfileid: "72809068"
 
 Прежде чем удалить кого-либо из роли администратора привилегированных ролей, всегда проверяйте, остается ли хотя бы два пользователя, которым назначена эта роль.
 
-1. Войдите на [портале Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 
 1. Откройте страницу **Azure AD Privileged Identity Management**.
 
@@ -86,6 +86,6 @@ ms.locfileid: "72809068"
 
 1. Когда появится запрос на подтверждение удаления члена роли, выберите **Да**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Начните использовать управление привилегированными пользователями](pim-getting-started.md)

@@ -8,12 +8,12 @@ ms.date: 10/16/2019
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
-ms.openlocfilehash: 78482b5d7013ffa3bbb0a34dd04c8c48626dc77a
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 0c1b09fbc425a80fe1f8d075c5a83455167073c3
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72926653"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74029988"
 ---
 # <a name="azcopy-copy"></a>azcopy copy
 
@@ -33,6 +33,13 @@ ms.locfileid: "72926653"
   - AWS S3 (ключ доступа) — > блочный BLOB-объект Azure (проверка подлинности SAS или OAuth)
 
 Дополнительные сведения см. в примерах.
+
+## <a name="related-conceptual-articles"></a>Связанные концептуальные статьи
+
+- [Get started with AzCopy](storage-use-azcopy-v10.md) (Начало работы с AzCopy)
+- [Перенос данных с помощью AzCopy и хранилища BLOB-объектов](storage-use-azcopy-blobs.md)
+- [Transfer data with AzCopy and file storage](storage-use-azcopy-files.md) (Передача данных с помощью AzCopy и хранилища файлов)
+- [Configure, optimize, and troubleshoot AzCopy](storage-use-azcopy-configure.md) (Настройка, оптимизация и устранение неполадок с AzCopy)
 
 ## <a name="advanced"></a>Расширенная
 
@@ -138,27 +145,27 @@ azcopy copy [source] [destination] [flags]
 
 - azcopy CP "https://[сркаккаунт]. BLOB. Core. Windows. NET? [SAS] "" https://[дестаккаунт]. BLOB. Core. Windows. NET? [SAS] "--recursive = true
 
-Копирование одного объекта в хранилище BLOB-объектов из Amazon Web Services (AWS) S3 с помощью ключа доступа и маркера SAS. Сначала задайте переменные среды AWS_ACCESS_KEY_ID и AWS_SECRET_ACCESS_KEY для AWS S3 Source.
+Копирование одного объекта в хранилище BLOB-объектов из Amazon Web Services (AWS) S3 с помощью ключа доступа и маркера SAS. Сначала задайте переменную среды AWS_ACCESS_KEY_ID и AWS_SECRET_ACCESS_KEY для источника S3 AWS.
   
-- azcopy CP "https://s3.amazonaws.com/ [сегмент]/[объект]" "https://[дестаккаунт]. BLOB. Core. Windows. NET/[контейнер]/[путь/к/большой двоичный объект]? [SAS] "
+- azcopy CP "https://s3.amazonaws.com/[сегмент]/[объект]" "https://[дестаккаунт]. BLOB. Core. Windows. NET/[контейнер]/[путь/к/большой двоичный объект]? [SAS] "
 
-Скопируйте весь каталог в хранилище BLOB-объектов из AWS S3 с помощью ключа доступа и маркера SAS. Сначала задайте переменные среды AWS_ACCESS_KEY_ID и AWS_SECRET_ACCESS_KEY для AWS S3 Source.
+Скопируйте весь каталог в хранилище BLOB-объектов из AWS S3 с помощью ключа доступа и маркера SAS. Сначала задайте переменную среды AWS_ACCESS_KEY_ID и AWS_SECRET_ACCESS_KEY для источника S3 AWS.
 
-- azcopy CP "https://s3.amazonaws.com/ [контейнер]/[Папка]" "https://[дестаккаунт]. BLOB. Core. Windows. NET/[контейнер]/[путь/папка]? [SAS] "--recursive = true
+- azcopy CP "https://s3.amazonaws.com/[контейнер]/[Папка]" "https://[дестаккаунт]. BLOB. Core. Windows. NET/[контейнер]/[путь/папка]? [SAS] "--recursive = true
 
 Дополнительные сведения о заполнителье [Folder] см. в https://docs.aws.amazon.com/AmazonS3/latest/user-guide/using-folders.html.
 
-Скопируйте все контейнеры в хранилище BLOB-объектов из Amazon Web Services (AWS) с помощью ключа доступа и маркера SAS. Сначала задайте переменные среды AWS_ACCESS_KEY_ID и AWS_SECRET_ACCESS_KEY для AWS S3 Source.
+Скопируйте все контейнеры в хранилище BLOB-объектов из Amazon Web Services (AWS) с помощью ключа доступа и маркера SAS. Сначала задайте переменную среды AWS_ACCESS_KEY_ID и AWS_SECRET_ACCESS_KEY для источника S3 AWS.
 
-- azcopy CP "https://s3.amazonaws.com/ " "https://[дестаккаунт]. BLOB. Core. Windows. NET? [SAS] "--recursive = true
+- azcopy CP "https://s3.amazonaws.com/" "https://[дестаккаунт]. BLOB. Core. Windows. NET? [SAS] "--recursive = true
 
-Скопируйте все контейнеры в хранилище BLOB-объектов из области Amazon Web Services (AWS) с помощью ключа доступа и маркера SAS. Сначала задайте переменные среды AWS_ACCESS_KEY_ID и AWS_SECRET_ACCESS_KEY для AWS S3 Source.
+Скопируйте все контейнеры в хранилище BLOB-объектов из области Amazon Web Services (AWS) с помощью ключа доступа и маркера SAS. Сначала задайте переменную среды AWS_ACCESS_KEY_ID и AWS_SECRET_ACCESS_KEY для источника S3 AWS.
 
-- azcopy CP "https://s3- [регион]. амазонавс. com/" "https://[дестаккаунт]. BLOB. Core. Windows. NET? [SAS] "--recursive = true
+- azcopy CP "https://s3-[регион]. амазонавс. com/" "https://[дестаккаунт]. BLOB. Core. Windows. NET? [SAS] "--recursive = true
 
-Скопируйте подмножество контейнеров, используя символ-шаблон (*) в имени контейнера. Как и в предыдущих примерах, вам потребуется ключ доступа и маркер SAS. Обязательно задайте переменные среды AWS_ACCESS_KEY_ID и AWS_SECRET_ACCESS_KEY для AWS S3 Source.
+Скопируйте подмножество контейнеров, используя символ-шаблон (*) в имени контейнера. Как и в предыдущих примерах, вам потребуется ключ доступа и маркер SAS. Убедитесь, что задана переменная среды AWS_ACCESS_KEY_ID и AWS_SECRET_ACCESS_KEY для источника S3 AWS.
 
-- azcopy CP "https://s3.amazonaws.com/ [имя контейнера]/" "https://[дестаккаунт]. BLOB. Core. Windows. NET? [SAS] "--recursive = true
+- azcopy CP "https://s3.amazonaws.com/[имя контейнера]/" "https://[дестаккаунт]. BLOB. Core. Windows. NET? [SAS] "--recursive = true
 
 ## <a name="options"></a>Параметры
 
@@ -234,6 +241,6 @@ azcopy copy [source] [destination] [flags]
 
 **--выходной** формат строки выходных данных команды. Среди вариантов: Text, JSON. Значение по умолчанию — Text. ("текст" по умолчанию)
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также
 
 - [azcopy](storage-ref-azcopy.md)

@@ -1,5 +1,5 @@
 ---
-title: Обслуживание и обновления для виртуальных машин Windows в Azure | Документация Майкрософт
+title: Обслуживание и обновления для виртуальных машин Windows в Azure
 description: Общие сведения об обслуживании и обновлении виртуальных машин Windows, работающих в Azure.
 services: virtual-machines-windows
 documentationcenter: ''
@@ -13,17 +13,17 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 04/30/2019
 ms.author: shants
-ms.openlocfilehash: 4fafca61fdee33a947f26203b39c8e681abfca12
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: c9d71eae0975c4cd799376588d933357222a417d
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70079202"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74038197"
 ---
 # <a name="maintenance-for-virtual-machines-in-azure"></a>Обслуживание виртуальных машин Linux в Azure
 
 [!INCLUDE [virtual-machines-common-planned-maintenance](../../../includes/virtual-machines-common-planned-maintenance.md)]
 
-## <a name="next-steps"></a>Следующие шаги 
+## <a name="next-steps"></a>Дополнительная информация 
 
 Дополнительные сведения об управлении плановым обслуживанием, влияющим на виртуальные машины, см. в статье [Обработка плановых уведомлений по обслуживанию для виртуальных машин Windows](maintenance-notifications.md).

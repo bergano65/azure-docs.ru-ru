@@ -1,5 +1,5 @@
 ---
-title: Общие сведения о выделенных узлах Azure для виртуальных машин | Документация Майкрософт
+title: Общие сведения о выделенных узлах Azure для виртуальных машин
 description: Узнайте больше о том, как можно использовать выделенные узлы Azure для развертывания виртуальных машин.
 services: virtual-machines-linux
 documentationcenter: virtual-machines
@@ -13,14 +13,14 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 07/25/2019
 ms.author: cynthn
-ms.openlocfilehash: 5f2b34b3acb559d74414ea622fba2769ede7f0a7
-ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
+ms.openlocfilehash: f4a5e78afdf774af056d7c9b8a108c3418c2caa4
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68976634"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74036396"
 ---
-# <a name="preview-azure-dedicated-hosts"></a>Предварительный просмотр: Выделенные узлы Azure
+# <a name="preview-azure-dedicated-hosts"></a>Предварительная версия: выделенные узлы Azure
 
 Выделенный узел Azure — это служба, которая предоставляет физические серверы — возможность размещения одной или нескольких виртуальных машин, выделенных для одной подписки Azure. Выделенные узлы — это те же физические серверы, которые используются в наших центрах обработки данных, предоставляемые в качестве ресурса. Вы можете подготавливать выделенные узлы в регионе, зоне доступности и домене сбоя. Затем можно разместить виртуальные машины непосредственно в подготовленных узлах в любой конфигурации, которая лучше всего соответствует вашим потребностям.
 
@@ -31,7 +31,7 @@ ms.locfileid: "68976634"
 
 virtual-machines-common-dedicated-hosts-preview.md
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 - Выделенный узел можно развернуть с помощью [Azure CLI](dedicated-hosts-cli.md), [портала](dedicated-hosts-portal.md)и [PowerShell](../windows/dedicated-hosts-powershell.md).
 

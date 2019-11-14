@@ -1,5 +1,5 @@
 ---
-title: Подключение управляемого диска данных к виртуальной машине Windows в Azure | Документация Майкрософт
+title: Подключение управляемого диска данных к виртуальной машине Windows в Azure
 description: Как подключить управляемый диск данных к виртуальной машине Windows с помощью портала Azure.
 author: roygara
 ms.service: virtual-machines-windows
@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/08/2018
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: ece7cbe76cd744302362b8c59f100e23f1b74dff
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: d98fdab6dcd0abb70967d1e17d138a860a31da5f
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68699836"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74039315"
 ---
 # <a name="attach-a-managed-data-disk-to-a-windows-vm-by-using-the-azure-portal"></a>Подключение управляемого диска данных к виртуальной машине Windows с помощью портала Azure
 
@@ -45,7 +45,7 @@ ms.locfileid: "68699836"
 9. Вы получите предупреждение о том, что при форматировании дисков будут стерты все данные. Нажмите кнопку **ОК**.
 10. После завершения форматирования щелкните **ОК**.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 - Вы также можете [подключить диск данных с помощью PowerShell](attach-disk-ps.md).
 - Если вашему приложению нужно использовать диск *D:* для хранения данных, вы можете [изменить букву временного диска Windows](change-drive-letter.md?toc=%2fazure%2fvirtual-machines%2fwindows%2fclassic%2ftoc.json).

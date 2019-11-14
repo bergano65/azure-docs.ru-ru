@@ -1,5 +1,5 @@
 ---
-title: Развертывание выделенных узлов Azure с помощью Azure PowerShell | Документация Майкрософт
+title: Развертывание выделенных узлов Azure с помощью Azure PowerShell
 description: Развертывание виртуальных машин на выделенных узлах с помощью Azure PowerShell.
 services: virtual-machines-windows
 author: cynthn
@@ -12,14 +12,14 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 08/01/2019
 ms.author: cynthn
-ms.openlocfilehash: 1dcea4f56d778b0e6320634286a25d478c78a5bc
-ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
+ms.openlocfilehash: 92dca6f4f41ff426aebcb8e580653afaa71afff8
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71261695"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74033370"
 ---
-# <a name="preview-deploy-vms-to-dedicated-hosts-using-the-azure-powershell"></a>Предварительный просмотр: Развертывание виртуальных машин на выделенных узлах с помощью Azure PowerShell
+# <a name="preview-deploy-vms-to-dedicated-hosts-using-the-azure-powershell"></a>Предварительная версия: развертывание виртуальных машин на выделенных узлах с помощью Azure PowerShell
 
 В этой статье рассказывается, как создать [выделенный узел](dedicated-hosts.md) Azure для размещения виртуальных машин. 
 
@@ -72,7 +72,7 @@ $hostGroup = New-AzHostGroup `
 
 ## <a name="create-a-host"></a>Создание узла
 
-Теперь создадим выделенный узел в группе узлов. Помимо имени узла, необходимо указать номер SKU для узла. Номер SKU узла фиксирует поддерживаемую серию виртуальных машин, а также создание оборудования для выделенного узла.  В рамках предварительной версии будут поддерживаться следующие значения номера SKU узла: DSv3_Type1 и ESv3_Type1.
+Теперь создадим выделенный узел в группе узлов. Помимо имени узла, необходимо указать номер SKU для узла. Номер SKU узла фиксирует поддерживаемую серию виртуальных машин, а также создание оборудования для выделенного узла.  В ходе предварительной версии будут поддерживаться следующие значения номера SKU узла: DSv3_Type1 и ESv3_Type1.
 
 
 Дополнительные сведения о номерах SKU узла и ценах см. на странице [цен на выделенный узел Azure](https://aka.ms/ADHPricing).
@@ -215,7 +215,7 @@ Remove-AzResourceGroup -Name $rgName
 ```
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Здесь](https://github.com/Azure/azure-quickstart-templates/blob/master/201-vm-dedicated-hosts/README.md)приведен пример шаблона, который использует зоны и домены сбоя для максимальной устойчивости в регионе.
 

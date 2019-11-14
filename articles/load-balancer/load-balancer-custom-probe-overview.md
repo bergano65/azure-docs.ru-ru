@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/17/2019
 ms.author: allensu
-ms.openlocfilehash: 78e085aae97114e6848b736c40b16c755256d0cd
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: d9873c4d8d4ca2b74532706f079c7384bf38db42
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73571116"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74033818"
 ---
 # <a name="load-balancer-health-probes"></a>Пробы работоспособности Load Balancer
 
@@ -160,7 +160,7 @@ ms.locfileid: "73571116"
 
 Проба гостевого агента представляет собой проверку гостевого агента внутри виртуальной машины. Затем она ожидает передачу данных и передает ответ HTTP с кодом 200 (ОК) только в том случае, если экземпляр находится в состоянии готовности. (Другие возможные состояния: занято, перезапуск или остановлено.)
 
-Дополнительные сведения см. в статьях [Azure Service Configuration Schema (.cscfg File)](https://msdn.microsoft.com/library/azure/ee758710.aspx) (Схема конфигурации службы Azure (CSCFG-файл)) и [Приступая к работе по созданию общедоступного балансировщика нагрузки для облачных служб](load-balancer-get-started-internet-classic-cloud.md#check-load-balancer-health-status-for-cloud-services).
+Дополнительные сведения см. в статьях [Azure Service Configuration Schema (.cscfg File)](https://msdn.microsoft.com/library/azure/ee758710.aspx) (Схема конфигурации службы Azure (CSCFG-файл)) и [Приступая к работе по созданию общедоступного балансировщика нагрузки для облачных служб](https://docs.microsoft.com/azure/load-balancer/load-balancer-get-started-internet-classic-cloud#check-load-balancer-health-status-for-cloud-services).
 
 Если гостевой агент не отправляет ответ HTTP с кодом 200 (ОК), подсистема балансировки нагрузки отмечает экземпляр как неработоспособный. Затем он прекращает отправлять потоки к этому экземпляру. Подсистема балансировки нагрузки продолжит проверять связь с этим экземпляром. 
 
@@ -251,7 +251,7 @@ UDP не требует соединения, поэтому состояние 
 - Пробы HTTPS не поддерживают взаимную проверку подлинности с помощью сертификата клиента.
 - Если отметка времени TCP включена, Ассумеххеалс зонды завершатся ошибкой.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Узнайте больше об [Azure Load Balancer уровня "Стандартный"](load-balancer-standard-overview.md).
 - [Краткое руководство. Создание общедоступной подсистемы балансировки нагрузки с помощью Azure PowerShell](load-balancer-get-started-internet-arm-ps.md)

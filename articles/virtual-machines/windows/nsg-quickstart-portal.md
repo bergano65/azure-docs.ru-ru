@@ -1,5 +1,5 @@
 ---
-title: Открытие портов для виртуальной машины Linux с помощью портала Azure | Документация Майкрософт
+title: Открытие портов для виртуальной машины с помощью портал Azure
 description: Узнайте, как открыть порт или создать конечную точку для виртуальной машины Windows, используя модель развертывания с помощью Resource Manager и портал Azure.
 services: virtual-machines-windows
 documentationcenter: ''
@@ -13,18 +13,18 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 09/27/2018
 ms.author: cynthn
-ms.openlocfilehash: f9edee7a0ff19a536d0ea719ede6d0cd2e9d6ac7
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: fe9b0f590dbb728a54ac66fcaa49bf3d00417e41
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70102638"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74033107"
 ---
 # <a name="how-to-open-ports-to-a-virtual-machine-with-the-azure-portal"></a>Как открыть порты для виртуальной машины Windows с помощью портала Azure
 [!INCLUDE [virtual-machines-common-nsg-quickstart](../../../includes/virtual-machines-common-nsg-quickstart.md)]
 
 
-## <a name="sign-in-to-azure"></a>Войдите в Azure
+## <a name="sign-in-to-azure"></a>Вход в Azure
 Войдите на портал Azure по адресу https://portal.azure.com.
 
 ## <a name="create-a-network-security-group"></a>Создание группы безопасности сети
@@ -73,7 +73,7 @@ ms.locfileid: "70102638"
 
     Любые виртуальные машины, подключаемые к этой подсети, будут доступны через порт 80.
 
-## <a name="additional-information"></a>Дополнительные сведения
+## <a name="additional-information"></a>Дополнительная информация
 
 См. статью [Как открыть порты и конечные точки для виртуальной машины в Azure с помощью PowerShell](nsg-quickstart-powershell.md), чтобы выполнить эти действия.
 
@@ -81,7 +81,7 @@ ms.locfileid: "70102638"
 
 Для веб-приложений с высокой доступностью необходимо поместить виртуальную машину за подсистемой балансировки нагрузки Azure. Балансировщик нагрузки распределяет трафик между виртуальными машинами с группой безопасности сети, обеспечивающей фильтрацию трафика. Подробные сведения см. в статье [Руководство. Балансировка нагрузки виртуальных машин Windows в Azure для создания высокодоступного приложения с помощью Azure PowerShell](tutorial-load-balancer.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 В этой статье вы создали группу безопасности сети, создали правило для входящих подключений, которое пропускает трафик HTTP через порт 80 и связали это правило с подсетью. 
 
 Информацию о создании более детализированных сред можно найти в следующих статьях.

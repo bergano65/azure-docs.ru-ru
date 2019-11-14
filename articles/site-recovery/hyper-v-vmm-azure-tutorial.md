@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/12/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: fdf6d9674305ca13af51f3f7b97e0a40568738b6
-ms.sourcegitcommit: 44c2a964fb8521f9961928f6f7457ae3ed362694
+ms.openlocfilehash: 0c570702e4c3899ef2847883e6fc8649e603a787
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73953969"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74039688"
 ---
 # <a name="set-up-disaster-recovery-of-on-premises-hyper-v-vms-in-vmm-clouds-to-azure"></a>Настройка аварийного восстановления в Azure для локальных виртуальных машин Hyper-V в облаках VMM
 
@@ -32,8 +32,6 @@ ms.locfileid: "73953969"
 > [!NOTE]
 > В учебниках описан самый простой способ развертывания для определенного сценария. В них везде, где возможно, используются значения по умолчанию, и описаны не все возможные параметры и пути. Подробные инструкции см. в разделе **Практические руководства** в [документации по Site Recovery](https://docs.microsoft.com/azure/site-recovery).
 
-> [!WARNING]
-> Поддержка аварийного восстановления виртуальных машин Hyper-V с помощью System Center VMM будет прекращена в ближайшем будущем. Перед продолжением рекомендуется прочитать сведения об [устаревании](scvmm-site-recovery-deprecation.md) .
 
 
 ## <a name="before-you-begin"></a>Перед началом работы

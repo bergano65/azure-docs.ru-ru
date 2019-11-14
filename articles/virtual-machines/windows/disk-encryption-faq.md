@@ -1,5 +1,5 @@
 ---
-title: Часто задаваемые вопросы о шифровании дисков Azure для виртуальных машин Windows | Документация Майкрософт
+title: Часто задаваемые вопросы о шифровании дисков Azure для виртуальных машин Windows
 description: В этой статье содержатся ответы на часто задаваемые вопросы о Microsoft Azure шифровании дисков для виртуальных машин IaaS Windows.
 author: msmbaldwin
 ms.service: security
@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 06/05/2019
 ms.custom: seodec18
-ms.openlocfilehash: b6cd7e93451de9c5761db22024ac82abaaa0949e
-ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
+ms.openlocfilehash: 98ab9ea67ceb1d965e248c93d27cb801ab8c7483
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72245270"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74033321"
 ---
 # <a name="azure-disk-encryption-for-windows-vms-faq"></a>Часто задаваемые вопросы о шифровании дисков Azure для виртуальных машин Windows
 
@@ -111,7 +111,7 @@ Azure Backup предоставляет механизм резервного к
 
 Задать вопрос или оставить отзыв можно на [форуме по шифрованию дисков Azure](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureDiskEncryption).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 Из этого документа вы получили ответы на самые распространенные вопросы, связанные с шифрованием дисков Azure. Дополнительные сведения об этой службе см. в следующих статьях:
 
 - [Шифрование дисков Azure для виртуальных машин IaaS](disk-encryption-overview.md)

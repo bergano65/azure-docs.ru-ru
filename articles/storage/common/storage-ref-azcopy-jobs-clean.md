@@ -8,20 +8,27 @@ ms.date: 10/16/2019
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
-ms.openlocfilehash: 31529155ee44b2bcfad90e8634053403dfe8fc8c
-ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
+ms.openlocfilehash: 7ae14c3606dfe6bffa8481682843f3f2e85c2131
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72518516"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74033719"
 ---
-# <a name="azcopy-jobs-clean"></a>Очистка заданий azcopy
+# <a name="azcopy-jobs-clean"></a>azcopy jobs clean
 
 Удалить все файлы журналов и планов для всех заданий
 
 ```
 azcopy jobs clean [flags]
 ```
+
+## <a name="related-conceptual-articles"></a>Связанные концептуальные статьи
+
+- [Get started with AzCopy](storage-use-azcopy-v10.md) (Начало работы с AzCopy)
+- [Перенос данных с помощью AzCopy и хранилища BLOB-объектов](storage-use-azcopy-blobs.md)
+- [Transfer data with AzCopy and file storage](storage-use-azcopy-files.md) (Передача данных с помощью AzCopy и хранилища файлов)
+- [Configure, optimize, and troubleshoot AzCopy](storage-use-azcopy-configure.md) (Настройка, оптимизация и устранение неполадок с AzCopy)
 
 ## <a name="examples"></a>Примеры
 
@@ -41,6 +48,6 @@ azcopy jobs clean [flags]
 
 **--выходной** формат строки выходных данных команды. Среди вариантов: Text, JSON. Значение по умолчанию — Text. ("текст" по умолчанию)
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также
 
 - [задания azcopy](storage-ref-azcopy-jobs.md)

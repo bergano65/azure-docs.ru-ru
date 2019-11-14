@@ -1,5 +1,5 @@
 ---
-title: Настройка VPN типа "сеть — сеть" через пиринговый канал Майкрософт ExpressRoute в Azure | Документация Майкрософт
+title: 'Azure ExpressRoute: Настройка S2S VPN через пиринг Майкрософт'
 description: Настройка подключения IPsec/IKE к Azure через пиринговый канал Майкрософт ExpressRoute с использованием VPN-шлюза типа "сеть — сеть".
 services: expressroute
 author: cherylmc
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 02/25/2019
 ms.author: cherylmc
 ms.custom: seodec18
-ms.openlocfilehash: d26210ab226f8e907aa845d51dca94f59badd6a3
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: 89c7e398e24fb48c1829dbaa2811f440c5485a60
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73748076"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74038107"
 ---
 # <a name="configure-a-site-to-site-vpn-over-expressroute-microsoft-peering"></a>Настройка VPN типа "сеть — сеть" через пиринговый канал Майкрософт ExpressRoute
 
@@ -707,7 +707,7 @@ RPKI validation codes: V valid, I invalid, N Not found
 Total number of prefixes 2
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Настройка решения "Монитор производительности сети" для ExpressRoute](how-to-npm.md)
 

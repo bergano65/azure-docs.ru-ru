@@ -1,6 +1,6 @@
 ---
 title: Примеры Azure PowerShell для диспетчера трафика | Документация Майкрософт
-description: Примеры Azure PowerShell для диспетчера трафика.
+description: В этом примере используйте Azure PowerShell для развертывания и настройки диспетчера трафика Azure.
 services: traffic-manager
 documentationcenter: traffic-manager
 author: asudbring
@@ -12,18 +12,18 @@ ms.tgt_pltfrm: ''
 ms.workload: infrastructure
 ms.date: 10/23/2018
 ms.author: allensu
-ms.openlocfilehash: b82cfe77ceead51dd78fc595eb0d504d91c7780d
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 0ad345e8fb72c0068a507318c0954a0f9512188e
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67051022"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74037230"
 ---
-# <a name="azure-powershell-samples-for-traffic-manager"></a>Примеры Azure PowerShell для диспетчера трафика
+# <a name="azure-powershell-samples-for-traffic-manager"></a>Примеры Azure PowerShell для диспетчера трафика.
 
 В следующей таблице приведены ссылки на сценарии для диспетчера трафика, созданные с помощью Azure PowerShell.
 
-|Название  |Описание |
+|Название  |ОПИСАНИЕ |
 |---------|---------|
 |[Направление трафика через несколько регионов для обеспечения высокого уровня доступности приложений](./scripts/traffic-manager-powershell-websites-high-availability.md)   |    Создание двух планов службы приложений, двух веб-приложений, а также профиля и двух конечных точек диспетчера трафика.     |
 |    |         |

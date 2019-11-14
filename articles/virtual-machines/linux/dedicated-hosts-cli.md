@@ -1,5 +1,5 @@
 ---
-title: Развертывание выделенных узлов Azure с помощью интерфейса командной строки | Документация Майкрософт
+title: Развертывание выделенных узлов Azure с помощью интерфейса командной строки
 description: Развертывание виртуальных машин на выделенных узлах с помощью Azure CLI.
 services: virtual-machines-linux
 documentationcenter: virtual-machines
@@ -13,19 +13,19 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 07/29/2019
 ms.author: cynthn
-ms.openlocfilehash: 0c060e2ab94c0a57d4d4dc897702e115cfabd9a0
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: ece9967321cfca44b102d78722f0df3d8f980bdb
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68827288"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74036401"
 ---
-# <a name="preview-deploy-vms-to-dedicated-hosts-using-the-azure-cli"></a>Предварительный просмотр: Развертывание виртуальных машин на выделенных узлах с помощью Azure CLI
+# <a name="preview-deploy-vms-to-dedicated-hosts-using-the-azure-cli"></a>Предварительная версия: развертывание виртуальных машин на выделенных узлах с помощью Azure CLI
  
 
-В этой статье рассказывается, как создать выделенный [узел](dedicated-hosts.md) Azure для размещения виртуальных машин. 
+В этой статье рассказывается, как создать [выделенный узел](dedicated-hosts.md) Azure для размещения виртуальных машин. 
 
-Убедитесь, что установлен Azure CLI версии 2.0.70 или более поздней, и войдите в учетную запись Azure с `az login`помощью. 
+Убедитесь, что установлен Azure CLI версии 2.0.70 или более поздней, и войдите в учетную запись Azure с помощью `az login`. 
 
 > [!IMPORTANT]
 > Выделенные узлы Azure в настоящее время находятся в общедоступной предварительной версии.
@@ -86,7 +86,7 @@ az vm host group create \
  
 ## <a name="create-a-host"></a>Создание узла 
 
-Теперь создадим выделенный узел в группе узлов. Помимо имени узла, необходимо указать номер SKU для узла. Номер SKU узла фиксирует поддерживаемую серию виртуальных машин, а также создание оборудования для выделенного узла.  В рамках предварительной версии будут поддерживаться следующие значения номера SKU узла: DSv3_Type1 и ESv3_Type1.
+Теперь создадим выделенный узел в группе узлов. Помимо имени узла, необходимо указать номер SKU для узла. Номер SKU узла фиксирует поддерживаемую серию виртуальных машин, а также создание оборудования для выделенного узла.  В ходе предварительной версии будут поддерживаться следующие значения номера SKU узла: DSv3_Type1 и ESv3_Type1.
 
 
 Дополнительные сведения о номерах SKU узла и ценах см. на странице [цен на выделенный узел Azure](https://aka.ms/ADHPricing).
@@ -104,7 +104,7 @@ az vm host create \
 
 
  
-## <a name="create-a-virtual-machine"></a>Создать виртуальную машину 
+## <a name="create-a-virtual-machine"></a>Создание виртуальной машины 
 Создайте виртуальную машину в выделенном узле с помощью команды [AZ VM Create](/cli/azure/vm#az-vm-create). Если при создании группы узлов была указана зона доступности, то при создании виртуальной машины необходимо будет использовать ту же зону.
 
 ```bash
@@ -239,7 +239,7 @@ az vm host get-instance-view \
 az group export --name myDHResourceGroup > myDHResourceGroup.json 
 ```
 
-С помощью этой команды в текущем рабочем каталоге создается файл `myDHResourceGroup.json`. При создании среды на основе этого шаблона запрашиваются все имена ресурсов. Эти имена можно указать в файле шаблона, добавив параметр `--include-parameter-default-value` в команду `az group export`. Измените шаблон JSON, чтобы указать имена ресурсов, или создайте файл Parameters. JSON, в котором указываются имена ресурсов.
+С помощью этой команды в текущем рабочем каталоге создается файл `myDHResourceGroup.json` . При создании среды на основе этого шаблона запрашиваются все имена ресурсов. Эти имена можно указать в файле шаблона, добавив параметр `--include-parameter-default-value` в команду `az group export`. Измените шаблон JSON, чтобы указать имена ресурсов, или создайте файл Parameters. JSON, в котором указываются имена ресурсов.
  
 Чтобы создать среду из шаблона, используйте команду [AZ Group Deployment Create](/cli/azure/group/deployment#az-group-deployment-create).
 
@@ -278,7 +278,7 @@ az vm host group delete -g myDHResourceGroup --host-group myHostGroup
 az group delete -n myDHResourceGroup 
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 - Дополнительные сведения см. в разделе Общие сведения о [выделенных узлах](dedicated-hosts.md) .
 

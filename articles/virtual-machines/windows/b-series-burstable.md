@@ -1,5 +1,5 @@
 ---
-title: Размеры виртуальных машин Windows в Azure, серии B | Документация Майкрософт
+title: Размеры виртуальных машин Windows в Azure серии B
 description: В этой статье описываются размеры виртуальных машин Azure серии B с накапливаемыми ресурсами.
 services: virtual-machines-windows
 documentationcenter: ''
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 09/07/2017
 ms.author: ayshak
-ms.openlocfilehash: 1757b513d7b5451cd22b82bedef7c4ec48906edf
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: f5493cbfa0b325f7cd731fb1d3774fd1eb4a574f
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70103266"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74039264"
 ---
 # <a name="b-series-burstable-virtual-machine-sizes"></a>Размеры виртуальных машин Azure серии B с накапливаемыми ресурсами
 
@@ -34,5 +34,5 @@ ms.locfileid: "70103266"
 - [Оптимизированные для GPU](sizes-gpu.md)
 - [Для высокопроизводительных вычислений](sizes-hpc.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 Узнайте больше о том, как с помощью [единиц вычислений Azure (ACU)](acu.md) сравнить производительность вычислений для различных номеров SKU Azure.

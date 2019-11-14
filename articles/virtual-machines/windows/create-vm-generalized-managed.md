@@ -1,5 +1,5 @@
 ---
-title: Создание виртуальной машины из управляемого образа в Azure | Документация Майкрософт
+title: Создание виртуальной машины из управляемого образа в Azure
 description: Создание виртуальной машины Windows из универсального управляемого образа с использованием Azure PowerShell или портала Azure в модели развертывания с помощью Resource Manager.
 services: virtual-machines-windows
 documentationcenter: ''
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 09/17/2018
 ms.author: cynthn
-ms.openlocfilehash: 016b53660499b86de13855cfa994c84d6d9bc702
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: 17100769bac2e7af08e0bcba6ca2eb129b621013
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73749508"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74037533"
 ---
 # <a name="create-a-vm-from-a-managed-image"></a>Создание виртуальной машины из управляемого образа
 
@@ -65,6 +65,6 @@ New-AzVm `
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 [Руководство. Создание и администрирование виртуальных машин Windows с помощью Azure PowerShell](tutorial-manage-vm.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
 

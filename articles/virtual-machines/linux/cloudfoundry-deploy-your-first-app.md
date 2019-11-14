@@ -1,5 +1,5 @@
 ---
-title: Развертывание первого приложения в Cloud Foundry в Microsoft Azure | Документация Майкрософт
+title: Развертывание первого приложения в Cloud Foundry в Microsoft Azure
 description: Сведения о развертывании приложения в Cloud Foundry в Azure
 services: virtual-machines-linux
 documentationcenter: ''
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 06/14/2017
 ms.author: seanmck
-ms.openlocfilehash: c4088e593ca7d48a3e7a5c1a6699f316b57fff31
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: b1f9ab5289a41aacb5514e954f1ca01f6ad66152
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70083942"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74036826"
 ---
 # <a name="deploy-your-first-app-to-cloud-foundry-on-microsoft-azure"></a>Развертывание первого приложения в Cloud Foundry в Microsoft Azure
 
@@ -87,7 +87,7 @@ git clone https://github.com/cloudfoundry-samples/hello-spring-cloud
 cd hello-spring-cloud
 ```
 
-### <a name="build-the-application"></a>Создание приложения
+### <a name="build-the-application"></a>создание приложения;
 
 Создайте приложение с помощью [Apache Maven](https://maven.apache.org).
 
@@ -112,7 +112,7 @@ cf push
 ![Пользовательский интерфейс по умолчанию для приложения Hello Spring Cloud][hello-spring-cloud-basic]
 
 > [!NOTE] 
-> Дополнительные сведения о том, что происходит `cf push`во время, см. в разделе [размещение приложений][cf-push-docs] в Cloud Foundryной документации.
+> Дополнительные сведения о том, что происходит во время `cf push`, см. в разделе [размещение приложений][cf-push-docs] в Cloud Foundryной документации.
 
 ## <a name="view-application-logs"></a>Просмотр журналов приложения
 
@@ -141,7 +141,7 @@ cf scale -i 2 hello-spring-cloud
 Если выполнить команду `cf app` в приложении, мы увидим, что Cloud Foundry создает другой экземпляр приложения. После запуска приложения Cloud Foundry автоматически запускает балансировку нагрузки по трафику к нему.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Ознакомьтесь с документацией по Cloud Foundry][cloudfoundry-docs]
 - [Настройка подключаемого модуля Azure DevOps Services для Cloud Foundry][vsts-plugin]

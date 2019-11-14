@@ -1,6 +1,6 @@
 ---
 title: Использование PowerShell для управления диспетчером трафика в Azure
-description: Использование PowerShell для диспетчера трафика в Azure Resource Manager
+description: По этому пути обучения приступайте к использованию Azure PowerShell для диспетчера трафика.
 services: traffic-manager
 documentationcenter: na
 author: asudbring
@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/16/2017
 ms.author: allensu
-ms.openlocfilehash: a2065ba51b74d7f55464a22df0f55cac4c6defcb
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: f8dd01f22dec58c3345798b391c1c37c968d1025
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67071028"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74038122"
 ---
 # <a name="using-powershell-to-manage-traffic-manager"></a>Использование PowerShell для управления диспетчером трафика
 
@@ -59,13 +59,13 @@ $TmProfile = New-AzTrafficManagerProfile -Name MyProfile -ResourceGroupName MyRG
 
 В следующей таблице описаны параметры.
 
-| Параметр | Описание |
+| Параметр | ОПИСАНИЕ |
 | --- | --- |
-| Name |Имя ресурса профиля диспетчера трафика. У профилей в одной группе ресурсов должны быть уникальные имена. Это имя отличается от имени DNS, которое используется в запросах DNS. |
+| имя |Имя ресурса профиля диспетчера трафика. У профилей в одной группе ресурсов должны быть уникальные имена. Это имя отличается от имени DNS, которое используется в запросах DNS. |
 | ResourceGroupName |Имя группы ресурсов, которая содержит ресурс профиля. |
 | TrafficRoutingMethod |Задает метод маршрутизации трафика, который определяет конечную точку, возвращаемую в ответ на запрос DNS. Возможные значения: Performance (производительность), Weighted (взвешенный) и Priority (приоритетный). |
 | RelativeDnsName |Задает часть DNS-имени с именем узла, которое предоставляется этим профилем диспетчера трафика. Это значение объединяется с DNS-именем домена, с помощью которого диспетчер трафика Azure формирует полное доменное имя профиля. Например, если задать значение contoso, полное доменное имя будет contoso.trafficmanager.net. |
-| TTL |Задает срок жизни запроса DNS в секундах. Это значение срока жизни дает локальным сопоставителям DNS и DNS-клиентам понять, в течение какого срока нужно хранить в кэше ответы DNS для этого профиля диспетчера трафика. |
+| Срок жизни |Задает срок жизни запроса DNS в секундах. Это значение срока жизни дает локальным сопоставителям DNS и DNS-клиентам понять, в течение какого срока нужно хранить в кэше ответы DNS для этого профиля диспетчера трафика. |
 | MonitorProtocol |Задает протокол, который следует использовать для контроля работоспособности конечных точек. Допустимые значения: HTTP и HTTPS. |
 | MonitorPort |Задает порт TCP, который следует использовать для контроля работоспособности конечных точек. |
 | MonitorPath |Задает путь относительно доменного имени конечной точки, который используется для проверки ее работоспособности. |
@@ -125,7 +125,7 @@ Set-AzTrafficManagerProfile -TrafficManagerProfile $TmProfile
 * Указывать Weight необязательно. Параметр Weight используется только в том случае, если профиль настроен для использования взвешенного (weighted) метода маршрутизации трафика. В остальных случаях этот параметр игнорируется. Если этот параметр указывается, его значение должно быть числом в диапазоне от 1 до 1000. Значение по умолчанию — 1.
 * Указывать Priority необязательно. Параметр Priority используется только в том случае, если профиль настроен для использования приоритетного (priority) метода маршрутизации. В остальных случаях этот параметр игнорируется. Допускаются значения от 1 до 1000 (чем меньше число, тем выше приоритет). Если приоритет указан для одной конечной точки, он должен указываться и для всех остальных конечных точек. Если значения не указаны, конечным точкам в порядке очереди присваиваются значения по умолчанию: 1 и т. д.
 
-### <a name="example-1-adding-app-service-endpoints-using-add-aztrafficmanagerendpointconfig"></a>Пример 1 Добавление конечных точек службы приложений с помощью `Add-AzTrafficManagerEndpointConfig`
+### <a name="example-1-adding-app-service-endpoints-using-add-aztrafficmanagerendpointconfig"></a>Пример 1. Добавление конечных точек службы приложений с помощью `Add-AzTrafficManagerEndpointConfig`
 
 В этом примере мы создадим профиль диспетчера трафика и добавим две конечные точки службы приложений с помощью командлета `Add-AzTrafficManagerEndpointConfig`.
 
@@ -137,7 +137,7 @@ $webapp2 = Get-AzWebApp -Name webapp2
 Add-AzTrafficManagerEndpointConfig -EndpointName webapp2ep -TrafficManagerProfile $TmProfile -Type AzureEndpoints -TargetResourceId $webapp2.Id -EndpointStatus Enabled
 Set-AzTrafficManagerProfile -TrafficManagerProfile $TmProfile
 ```
-### <a name="example-2-adding-a-publicipaddress-endpoint-using-new-aztrafficmanagerendpoint"></a>Пример 2 Добавление конечной точки publicIpAddress с помощью командлета `New-AzTrafficManagerEndpoint`
+### <a name="example-2-adding-a-publicipaddress-endpoint-using-new-aztrafficmanagerendpoint"></a>Пример 2. Добавление конечной точки publicIpAddress с помощью командлета `New-AzTrafficManagerEndpoint`
 
 В этом примере мы добавляем в профиль диспетчера трафика ресурс с общедоступным IP-адресом. Общедоступный IP-адрес должен включать DNS-имя и может быть привязан к сетевому адаптеру виртуальной машины или к балансировщику нагрузки.
 
@@ -156,7 +156,7 @@ New-AzTrafficManagerEndpoint -Name MyIpEndpoint -ProfileName MyProfile -Resource
 * EndpointLocation является обязательным параметром, если используется метод маршрутизации трафика Performance. В противном случае этот параметр является необязательным. Его значением должно быть [допустимое имя региона Azure](https://azure.microsoft.com/regions/).
 * Параметры Weight и Priority являются необязательными.
 
-### <a name="example-1-adding-external-endpoints-using-add-aztrafficmanagerendpointconfig-and-set-aztrafficmanagerprofile"></a>Пример 1 Добавление внешних конечных точек с помощью командлетов `Add-AzTrafficManagerEndpointConfig` и `Set-AzTrafficManagerProfile`
+### <a name="example-1-adding-external-endpoints-using-add-aztrafficmanagerendpointconfig-and-set-aztrafficmanagerprofile"></a>Пример 1. Добавление внешних конечных точек с помощью командлетов `Add-AzTrafficManagerEndpointConfig` и `Set-AzTrafficManagerProfile`
 
 В этом примере мы создаем профиль диспетчера трафика, добавляем в него две внешние конечные точки и фиксируем изменения.
 
@@ -167,7 +167,7 @@ Add-AzTrafficManagerEndpointConfig -EndpointName us-endpoint -TrafficManagerProf
 Set-AzTrafficManagerProfile -TrafficManagerProfile $TmProfile
 ```
 
-### <a name="example-2-adding-external-endpoints-using-new-aztrafficmanagerendpoint"></a>Пример 2 Добавление внешних конечных точек с помощью командлета `New-AzTrafficManagerEndpoint`
+### <a name="example-2-adding-external-endpoints-using-new-aztrafficmanagerendpoint"></a>Пример 2. Добавление внешних конечных точек с помощью командлета `New-AzTrafficManagerEndpoint`
 
 В этом примере мы добавляем внешнюю конечную точку в существующий профиль. Профиль указывается с помощью имени профиля и имени группы ресурсов.
 
@@ -186,7 +186,7 @@ New-AzTrafficManagerEndpoint -Name eu-endpoint -ProfileName MyProfile -ResourceG
 * Параметры Weight и Priority для конечных точек Azure являются необязательными.
 * Параметр MinChildEndpoints является необязательным. Значение по умолчанию — 1. Если количество доступных конечных точек опускается ниже этого значения, родительский профиль будет рассматривать дочерний профиль как профиль более низкого уровня, направляя трафик к другим конечным точкам родительского профиля.
 
-### <a name="example-1-adding-nested-endpoints-using-add-aztrafficmanagerendpointconfig-and-set-aztrafficmanagerprofile"></a>Пример 1 Добавление вложенных конечных точек с помощью командлетов `Add-AzTrafficManagerEndpointConfig` и `Set-AzTrafficManagerProfile`
+### <a name="example-1-adding-nested-endpoints-using-add-aztrafficmanagerendpointconfig-and-set-aztrafficmanagerprofile"></a>Пример 1. Добавление вложенных конечных точек с помощью командлетов `Add-AzTrafficManagerEndpointConfig` и `Set-AzTrafficManagerProfile`
 
 В этом примере мы создаем новые дочерний и родительский профили диспетчера трафика, добавляем дочерний профиль как вложенный в родительский профиль и фиксируем изменения.
 
@@ -199,7 +199,7 @@ Set-AzTrafficManagerProfile -TrafficManagerProfile $parent
 
 Для краткости мы не добавляли другие конечные точки в родительский и дочерний профили.
 
-### <a name="example-2-adding-nested-endpoints-using-new-aztrafficmanagerendpoint"></a>Пример 2 Добавление вложенных конечных точек с помощью командлета `New-AzTrafficManagerEndpoint`
+### <a name="example-2-adding-nested-endpoints-using-new-aztrafficmanagerendpoint"></a>Пример 2. Добавление вложенных конечных точек с помощью командлета `New-AzTrafficManagerEndpoint`
 
 В этом примере мы добавляем существующий дочерний профиль как вложенную конечную точку в существующий родительский профиль. Профиль указывается с помощью имени профиля и имени группы ресурсов.
 
@@ -210,7 +210,7 @@ New-AzTrafficManagerEndpoint -Name child-endpoint -ProfileName parent -ResourceG
 
 ## <a name="adding-endpoints-from-another-subscription"></a>Добавление конечных точек из другой подписки
 
-Диспетчер трафика может работать с конечными точками из нескольких подписок. Вам нужно переключиться на подписку с конечной точкой, которую вы хотите добавить для получения необходимых входных данных для диспетчера трафика. Затем необходимо переключиться на подписки с профилем диспетчера трафика и добавить конечную точку к нему. В примере ниже показано, как это сделать с помощью общедоступного IP-адреса.
+Диспетчер трафика может работать с конечными точками из нескольких подписок. Вам нужно переключиться на подписку с конечной точкой, которую вы хотите добавить для получения необходимых входных данных для диспетчера трафика. Затем необходимо переключиться на подписки с помощью профиля диспетчера трафика и добавить в нее конечную точку. В примере ниже показано, как это сделать с помощью общедоступного IP-адреса.
 
 ```powershell
 Set-AzContext -SubscriptionId $EndpointSubscription
@@ -227,7 +227,7 @@ New-AzTrafficManagerEndpoint -Name $EndpointName -ProfileName $ProfileName -Reso
 1. Получить профиль диспетчера трафика с помощью командлета `Get-AzTrafficManagerProfile`, обновить свойства конечной точки в профиле и зафиксировать изменения с помощью `Set-AzTrafficManagerProfile`. Этот метод удобен тем, что позволяет в ходе одной операции обновления изменить настройки нескольких конечных точек.
 2. Получить конечную точку диспетчера трафика с помощью командлета `Get-AzTrafficManagerEndpoint`, обновить свойства конечной точки и зафиксировать изменения с помощью командлета `Set-AzTrafficManagerEndpoint`. Этот метод проще, так как он не требует индексации массива конечных точек в профиле.
 
-### <a name="example-1-updating-endpoints-using-get-aztrafficmanagerprofile-and-set-aztrafficmanagerprofile"></a>Пример 1 Обновление конечных точек с помощью командлетов `Get-AzTrafficManagerProfile` и `Set-AzTrafficManagerProfile`
+### <a name="example-1-updating-endpoints-using-get-aztrafficmanagerprofile-and-set-aztrafficmanagerprofile"></a>Пример 1. Обновление конечных точек с помощью командлетов `Get-AzTrafficManagerProfile` и `Set-AzTrafficManagerProfile`
 
 В этом примере мы изменим приоритет двух конечных точек в существующем профиле.
 
@@ -238,7 +238,7 @@ $TmProfile.Endpoints[1].Priority = 1
 Set-AzTrafficManagerProfile -TrafficManagerProfile $TmProfile
 ```
 
-### <a name="example-2-updating-an-endpoint-using-get-aztrafficmanagerendpoint-and-set-aztrafficmanagerendpoint"></a>Пример 2 Обновление конечной точки с помощью командлетов `Get-AzTrafficManagerEndpoint` и `Set-AzTrafficManagerEndpoint`
+### <a name="example-2-updating-an-endpoint-using-get-aztrafficmanagerendpoint-and-set-aztrafficmanagerendpoint"></a>Пример 2. Обновление конечной точки с помощью командлетов `Get-AzTrafficManagerEndpoint` и `Set-AzTrafficManagerEndpoint`
 
 В этом примере мы изменим вес одной конечной точки в существующем профиле.
 
@@ -253,7 +253,7 @@ Set-AzTrafficManagerEndpoint -TrafficManagerEndpoint $endpoint
 Диспетчер трафика позволяет включать и отключать как отдельные конечные точки, так и целые профили.
 Для этого нужно получить, обновить и зафиксировать ресурсы конечной точки или профиля. Для упрощения этих стандартных операций существуют специальные командлеты.
 
-### <a name="example-1-enabling-and-disabling-a-traffic-manager-profile"></a>Пример 1 Включение и отключение профиля диспетчера трафика
+### <a name="example-1-enabling-and-disabling-a-traffic-manager-profile"></a>Пример 1. Включение и отключение профиля диспетчера трафика
 
 Для включения профиля диспетчера трафика используйте командлет `Enable-AzTrafficManagerProfile`. Профиль можно указать с помощью объекта профиля. Объект профиля можно передать по конвейеру или с помощью параметра -TrafficManagerProfile. В этом примере мы укажем профиль с помощью имени профиля и имени группы ресурсов.
 
@@ -269,7 +269,7 @@ Disable-AzTrafficManagerProfile -Name MyProfile -ResourceGroupName MyResourceGro
 
 Командлет Disable-AzTrafficManagerProfile запрашивает подтверждение. Этот запрос можно скрыть с помощью параметра -Force.
 
-### <a name="example-2-enabling-and-disabling-a-traffic-manager-endpoint"></a>Пример 2 Включение и отключение конечной точки диспетчера трафика
+### <a name="example-2-enabling-and-disabling-a-traffic-manager-endpoint"></a>Пример 2. Включение и отключение конечной точки диспетчера трафика
 
 Для включения конечной точки диспетчера трафика используйте командлет `Enable-AzTrafficManagerEndpoint`. Задать конечную точку можно двумя способами:
 
@@ -321,7 +321,7 @@ Remove-AzTrafficManagerProfile -TrafficManagerProfile $TmProfile [-Force]
 Get-AzTrafficManagerProfile -Name MyProfile -ResourceGroupName MyRG | Remove-AzTrafficManagerProfile [-Force]
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 [Мониторинг диспетчера трафика](traffic-manager-monitoring.md)
 

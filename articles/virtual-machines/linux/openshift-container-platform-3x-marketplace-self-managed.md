@@ -1,5 +1,5 @@
 ---
-title: Развертывание решения для самостоятельного управления 3,11 платформой OpenShift Container в Azure | Документация Майкрософт
+title: Развертывание решения для самостоятельного управления платформой OpenShift Container 3,11 в Azure
 description: Развертывание OpenShift контейнера Platform 3,11 с самостоятельно управляемым предложением Marketplace в Azure.
 services: virtual-machines-linux
 documentationcenter: virtual-machines
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 10/14/2019
 ms.author: haroldw
-ms.openlocfilehash: d5028ff6378fec5939aee3218071fe6f4eb1e843
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: 20a17e52064c5beb09ce4db5815ddd6faf7cbcba
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72791616"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74035518"
 ---
 # <a name="configure-prerequisites"></a>Настройка необходимых компонентов
 
@@ -67,9 +67,9 @@ ms.locfileid: "72791616"
 |-----------------------|-----------------|
 | Имя пользователя администратора виртуальной машины | Пользователь с правами администратора, который будет создан на всех экземплярах виртуальных машин |
 | Открытый ключ SSH для пользователя с правами администратора | Открытый ключ SSH, используемый для входа на виртуальную машину, не должен иметь парольную фразу |
-| Subscription | Подписка Azure для развертывания кластера |
-| Группа ресурсов | Создайте новую группу ресурсов или выберите существующую пустую группу ресурсов для ресурсов кластера. |
-| Location | Регион Azure для развертывания кластера |
+| подписку | Подписка Azure для развертывания кластера |
+| resource group | Создайте новую группу ресурсов или выберите существующую пустую группу ресурсов для ресурсов кластера. |
+| Место проведения | Регион Azure для развертывания кластера |
 
    ![Колонка основы предложения](media/openshift-marketplace-self-managed/ocp-basics.png)  
 <br>
@@ -203,7 +203,7 @@ $ ssh clusteradmin@bastiondns4hawllzaavu6g.eastus.cloudapp.azure.com
 az group delete --name openshiftrg
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Задачи, выполняемые после развертывания](./openshift-container-platform-3x-post-deployment.md)
 - [Устранение неполадок с развертыванием OpenShift в Azure](./openshift-container-platform-3x-troubleshooting.md)

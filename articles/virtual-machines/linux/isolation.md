@@ -1,5 +1,5 @@
 ---
-title: Изоляция для виртуальных машин Linux в Azure | Документация Майкрософт
+title: Изоляция для виртуальных машин Linux в Azure
 description: Узнайте, как работает изоляция виртуальных машин в Azure.
 services: virtual-machines-linux
 documentationcenter: ''
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 09/18/2019
 ms.author: ayshak
-ms.openlocfilehash: 1448e982458e022535307484e2a056c145b75616
-ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
+ms.openlocfilehash: 320c07b4168825100eec93f43f1282518ba38c4a
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71123958"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74035969"
 ---
 # <a name="virtual-machine-isolation-in-azure"></a>Изоляция виртуальных машин в Azure
 
@@ -26,6 +26,6 @@ ms.locfileid: "71123958"
 
 [!INCLUDE [virtual-machines-common-isolation](../../../includes/virtual-machines-common-isolation-migration.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 - Выделенный узел можно развернуть с помощью [Azure CLI](dedicated-hosts-cli.md), [портала](dedicated-hosts-portal.md)и [Azure PowerShell](../windows/dedicated-hosts-powershell.md). Дополнительные сведения см. в разделе Общие сведения о [выделенных узлах](dedicated-hosts.md) .

@@ -1,5 +1,5 @@
 ---
-title: Создание образов виртуальных машин Windows в Azure с помощью Packer | Документация Майкрософт
+title: Создание образов виртуальных машин Windows с помощью пакета Pack в Azure
 description: Сведения об использовании Packer для создания образов виртуальных машин Windows в Azure
 services: virtual-machines-windows
 documentationcenter: virtual-machines
@@ -14,20 +14,20 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 02/22/2019
 ms.author: cynthn
-ms.openlocfilehash: 905f330af7052b7d39058b5d84fb51a70311248d
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: b2ff9869b0de7a0285644bea462101cd1dc80b99
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67719324"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74039221"
 ---
 # <a name="how-to-use-packer-to-create-windows-virtual-machine-images-in-azure"></a>Использование Packer для создания образов виртуальных машин Windows в Azure
 Каждая виртуальная машина в Azure создается из образа, который определяет дистрибутив Windows и версию операционной системы. Образы могут содержать предварительно установленные приложения и конфигурации. Azure Marketplace предоставляет большое количество образов Майкрософт и сторонних разработчиков для наиболее распространенных операционных систем и приложений. Кроме того, вы можете создать собственные настраиваемые образы, отвечающие конкретным потребностям. В этой статье описывается определение и создание пользовательских образов в Azure с использованием инструмента с открытым кодом [Packer](https://www.packer.io/).
 
-В этой статье проверки на 2/21/2019 г. с помощью [модуль Az PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps) версии 1.3.0 и [Packer](https://www.packer.io/docs/install/index.html) версии 1.3.4.
+Последняя версия этой статьи была проведена на 2/21/2019 с помощью команды [AZ PowerShell Module](https://docs.microsoft.com/powershell/azure/install-az-ps) 1.3.0 и [Pack](https://www.packer.io/docs/install/index.html) версии 1.3.4.
 
 > [!NOTE]
-> Теперь Azure есть служба, Azure Image Builder (Предварительная версия), для определения и создания пользовательских образов. Azure Image Builder лежит Packer, поэтому можно даже использовать ваши существующие сценарии средства подготовки Packer оболочек с ним. Чтобы приступить к работе с Azure Image Builder, см. в разделе [создать виртуальную Машину Windows с Azure Image Builder](image-builder.md).
+> Azure теперь имеет службу, Azure Image Builder (Предварительная версия) для определения и создания собственных пользовательских образов. Построитель образов Azure создан на основе пакета Pack, поэтому вы можете даже использовать существующие сценарии подготовки оболочки упаковки. Чтобы приступить к работе с построителем образов Azure, см. статью [Создание виртуальной машины Windows с помощью Azure Image Builder](image-builder.md).
 
 ## <a name="create-azure-resource-group"></a>Создание группы ресурсов Azure
 В процессе сборки исходной виртуальной машины Packer создает временные ресурсы Azure. Чтобы сохранить эту исходную виртуальную машину для использования в качестве образа, необходимо определить группу ресурсов. Выходные данные процесса сборки Packer хранятся в этой группе ресурсов.
@@ -41,9 +41,9 @@ New-AzResourceGroup -Name $rgName -Location $location
 ```
 
 ## <a name="create-azure-credentials"></a>Создание учетных данных Azure
-Packer выполняет проверку подлинности с помощью субъекта-службы Azure. Субъект-служба Azure является удостоверением безопасности, которое можно использовать с приложениями, службами и средствами автоматизации, такими как Packer. Вы можете определять разрешения на то, какие операции может выполнять субъект-служба в Azure, и управлять ими.
+Packer выполняет проверку подлинности с помощью субъекта-службы Azure. Субъект-служба Azure является удостоверением безопасности, которое можно использовать с приложениями, службами и средствами автоматизации, такими как Packer. Вы можете управлять разрешениями на то, какие операции может выполнять субъект-служба в Azure, и определять их.
 
-Создайте субъект-службу с помощью командлета [New-AzADServicePrincipal](https://docs.microsoft.com/powershell/module/az.resources/new-azadserviceprincipal) и назначьте ей разрешения на создание ресурсов и управление ими с помощью [New-AzRoleAssignment](https://docs.microsoft.com/powershell/module/az.resources/new-azroleassignment). Значение `-DisplayName` должно быть уникальным; замените собственными значениями, при необходимости.  
+Создайте субъект-службу с помощью командлета [New-AzADServicePrincipal](https://docs.microsoft.com/powershell/module/az.resources/new-azadserviceprincipal) и назначьте ей разрешения на создание ресурсов и управление ими с помощью [New-AzRoleAssignment](https://docs.microsoft.com/powershell/module/az.resources/new-azroleassignment). Значение для `-DisplayName` должно быть уникальным; Замените на собственное значение по мере необходимости.  
 
 ```azurepowershell
 $sp = New-AzADServicePrincipal -DisplayName "PackerServicePrincipal"
@@ -52,7 +52,7 @@ $plainPassword = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR
 New-AzRoleAssignment -RoleDefinitionName Contributor -ServicePrincipalName $sp.ApplicationId
 ```
 
-Экспортируйте идентификатор пароля и приложения.
+Затем выводится пароль и идентификатор приложения.
 
 ```powershell
 $plainPassword
@@ -75,7 +75,7 @@ Get-AzSubscription
 | Параметр                           | Где можно получить |
 |-------------------------------------|----------------------------------------------------|
 | *client_id*                         | Просмотрите идентификатор субъекта-службы с помощью `$sp.applicationId` |
-| *client_secret*                     | Представление, автоматически сгенерированный пароль с помощью `$plainPassword` |
+| *client_secret*                     | Просмотр автоматически созданного пароля с `$plainPassword` |
 | *tenant_id*                         | Выходные данные команды `$sub.TenantId` |
 | *subscription_id*                   | Выходные данные команды `$sub.SubscriptionId` |
 | *managed_image_resource_group_name* | Имя группы ресурсов, созданной на первом шаге |
@@ -130,7 +130,7 @@ Get-AzSubscription
 ## <a name="build-packer-image"></a>Создание образа Packer
 Если средство Packer еще не установлено на локальном компьютере, [следуйте инструкциям по его установке](https://www.packer.io/docs/install/index.html).
 
-Создайте образ, открытие командной строки и указав Packer файл шаблона следующим образом:
+Создайте образ, открыв командную строку и указав файл шаблона пакета следующим образом:
 
 ```
 ./packer build windows.json
@@ -248,5 +248,5 @@ Get-AzPublicIPAddress `
 ![Сайт IIS по умолчанию](./media/build-image-with-packer/iis.png) 
 
 
-## <a name="next-steps"></a>Следующие шаги
-Можно также использовать существующие сценарии средства подготовки Packer с [Azure Image Builder](image-builder.md).
+## <a name="next-steps"></a>Дополнительная информация
+Вы также можете использовать существующие скрипты подготовки пакета с помощью [Azure Image Builder](image-builder.md).

@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: rajanaki
-ms.openlocfilehash: 444868f1716ae55f1851e50c057b172f5e3eb3d1
-ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
+ms.openlocfilehash: 4a1b5f804986d2bda85980d01cdaaa130d86b50d
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73961393"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74039733"
 ---
 # <a name="run-a-dr-drill-for-hyper-v-vms-to-a-secondary-site"></a>Выполнение тестирования аварийного восстановления виртуальных машин Hyper-V на дополнительный сайт
 
@@ -22,7 +22,7 @@ ms.locfileid: "73961393"
 Тестовая отработка отказа выполняется для проверки стратегии репликации и анализа работы системы аварийного восстановления без потери данных или простоя. Тестовая отработка отказа никак не влияет на текущую репликацию или рабочую среду. 
 
 > [!WARNING]
-> Обратите внимание, что поддержка ASR для использования конфигурации SCVMM скоро станет устаревшей, поэтому мы рекомендуем ознакомиться со сведениями об [устаревании](scvmm-site-recovery-deprecation.md) , прежде чем продолжать.
+> Обратите внимание, что поддержка ASR для использования конфигурации SCVMM скоро станет устаревшей, поэтому мы рекомендуем ознакомиться со сведениями об [устаревании](site-to-site-deprecation.md) , прежде чем продолжать.
 
 
 ## <a name="how-do-test-failovers-work"></a>Как работает тестовая отработка отказа

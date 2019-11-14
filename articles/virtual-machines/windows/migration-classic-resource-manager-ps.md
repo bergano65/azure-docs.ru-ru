@@ -1,5 +1,5 @@
 ---
-title: Миграция в Resource Manager с помощью PowerShell | Документация Майкрософт
+title: Переход на диспетчер ресурсов с помощью PowerShell
 description: В этой статье последовательно описывается поддерживаемый платформой перенос ресурсов IaaS (виртуальных машин, виртуальных сетей и учетных записей хранения) из классической модели в модель Azure Resource Manager (ARM) с помощью команд Azure PowerShell.
 services: virtual-machines-windows
 documentationcenter: ''
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 03/30/2017
 ms.author: kasing
-ms.openlocfilehash: 01d5670add82291cb91264ab41fcd312a338840c
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: 99650b090a84fd417fca5bbeb1ce3f58d32729bb
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73749322"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74033210"
 ---
 # <a name="migrate-iaas-resources-from-classic-to-azure-resource-manager-by-using-azure-powershell"></a>Перенос ресурсов IaaS из классической модели в модель Azure Resource Manager с помощью Azure PowerShell
 Ниже последовательно описано, как использовать команды Azure PowerShell для переноса ресурсов IaaS из классической модели развертывания в модель развертывания с помощью Azure Resource Manager.
@@ -33,7 +33,7 @@ ms.locfileid: "73749322"
 <br>
 Ниже приведена блок-схема с последовательностью действий во время переноса.
 
-![Screenshot that shows the migration steps](media/migration-classic-resource-manager/migration-flow.png)
+![Снимок экрана с последовательностью операций переноса](media/migration-classic-resource-manager/migration-flow.png)
 
  
 
@@ -342,7 +342,7 @@ Get-AzVMUsage -Location "West US"
         Move-AzureStorageAccount -Commit -StorageAccountName $storageAccountName
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 * [Обзор поддерживаемого платформой переноса ресурсов IaaS из классической модели в модель Azure Resource Manager](migration-classic-resource-manager-overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
 * [Техническое руководство по поддерживаемому платформой переносу из классической модели в модель Azure Resource Manager](migration-classic-resource-manager-deep-dive.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
 * [Planning for migration of IaaS resources from classic to Azure Resource Manager](migration-classic-resource-manager-plan.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) (Планирование переноса ресурсов IaaS из классической модели в модель Azure Resource Manager)

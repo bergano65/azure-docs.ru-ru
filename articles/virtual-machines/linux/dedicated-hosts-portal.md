@@ -1,5 +1,5 @@
 ---
-title: Развертывание выделенных узлов Azure с помощью портал Azure | Документация Майкрософт
+title: Развертывание выделенных узлов Azure с помощью портал Azure
 description: Развертывание виртуальных машин на выделенных узлах с помощью портал Azure.
 services: virtual-machines-linux
 author: cynthn
@@ -12,16 +12,16 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 07/25/2019
 ms.author: cynthn
-ms.openlocfilehash: 03d8b5353a2dc9840c8231978243e7f94a5bff56
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: 296c43c7c1345c67cc5b83749272e56c122ee535
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68700396"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74036425"
 ---
-# <a name="preview-deploy-vms-to-dedicated-hosts-using-the-portal"></a>Предварительный просмотр: Развертывание виртуальных машин на выделенных узлах с помощью портала
+# <a name="preview-deploy-vms-to-dedicated-hosts-using-the-portal"></a>Предварительная версия: развертывание виртуальных машин на выделенных узлах с помощью портала
 
-В этой статье рассказывается, как создать выделенный [узел](dedicated-hosts.md) Azure для размещения виртуальных машин. 
+В этой статье рассказывается, как создать [выделенный узел](dedicated-hosts.md) Azure для размещения виртуальных машин. 
 
 [!INCLUDE [virtual-machines-common-dedicated-hosts-portal](../../../includes/virtual-machines-common-dedicated-hosts-portal.md)]
 
@@ -37,15 +37,15 @@ ms.locfileid: "68700396"
 
     ![Учетная запись администратора](./media/quick-create-portal/administrator-account.png)
 
-1. В разделе >  **правила входящих портов** **открытые входящие порты**выберите **Разрешить выбранные порты** , а затем в раскрывающемся списке выберите **SSH (22)** . 
+1. В разделе **правила для входящих портов** > **общедоступные входящие порты**, выберите **Разрешить выбранные порты** , а затем в раскрывающемся списке выберите **SSH (22)** . 
 1. В верхней части страницы перейдите на вкладку **Дополнительно** и в разделе **узел** выберите *Михостграуп* для **группы узлов** и *михост* для **узла**. 
-    ![Выбор группы узлов и узла](./media/dedicated-hosts-portal/advanced.png)
+    ![выбрать группу узлов и](./media/dedicated-hosts-portal/advanced.png) узла
 1. Оставьте остальные значения по умолчанию и нажмите кнопку **Просмотр и создание**, расположенную в нижней части страницы.
 1. Когда появится сообщение о том, что проверка прошла успешно, выберите **создать**.
 
 Развертывание виртуальной машины может занять несколько минут.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 - Дополнительные сведения см. в разделе Общие сведения о [выделенных узлах](dedicated-hosts.md) .
 

@@ -8,18 +8,23 @@ ms.topic: conceptual
 ms.date: 09/20/2019
 ms.author: bwren
 ms.subservice: logs
-ms.openlocfilehash: 8a1802f0f24ba5ccad3ec1c45f3baa29dfe6909f
-ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
+ms.openlocfilehash: 306f6cb0b50b7befcbf51e6164a5da887d35616e
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71262561"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74030874"
 ---
 # <a name="archive-azure-resource-logs-to-storage-account"></a>Архивация журналов ресурсов Azure в учетную запись хранения
 [Журналы ресурсов](resource-logs-overview.md) в Azure предоставляют широкие и часто встречающиеся данные о внутренней работе ресурса Azure. В этой статье описывается сбор журналов ресурсов в учетную запись хранения Azure для хранения данных для архивирования.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 Если у вас еще нет [учетной записи хранения Azure](../../storage/common/storage-quickstart-create-account.md) , ее необходимо создать. Учетная запись хранения не обязательно должна находиться в той же подписке, что и журнал, отправляющий журналы, если пользователь, настроив параметр, имеет соответствующий доступ RBAC к обеим подпискам.
+
+
+> [!IMPORTANT]
+> Учетные записи Azure Data Lake Storage 2-го поколения в настоящее время не поддерживаются в качестве места назначения для параметров диагностики, хотя они могут быть указаны в портал Azure в качестве допустимого параметра.
+
 
 Не следует использовать существующую учетную запись хранения, в которой хранятся другие данные, не относящиеся к мониторингу, чтобы лучше управлять доступом к данным мониторинга. Если вы также заархивирование [журнала действий](activity-logs-overview.md) в учетную запись хранения, вы можете использовать эту же учетную запись хранения для централизованного хранения всех данных мониторинга.
 
@@ -58,7 +63,7 @@ insights-logs-networksecuritygrouprulecounter/resourceId=/SUBSCRIPTIONS/xxxxxxxx
 > [!NOTE]
 > Журналы платформы записываются в хранилище BLOB-объектов с помощью [строк JSON](http://jsonlines.org/), где каждое событие является линией, а символ новой строки обозначает новое событие. Этот формат был реализован в ноябре 2018. До этой даты журналы были записаны в хранилище BLOB-объектов в виде массива записей JSON, как описано в разделе [Подготовка к изменению формата для Azure Monitor журналов платформы, архивов которых является учетная запись хранения](resource-logs-blob-format.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Скачайте большие двоичные объекты для анализа](../../storage/blobs/storage-quickstart-blobs-dotnet.md).
 * [Архивируйте журналы Azure Active Directory с Azure Monitor](../../active-directory/reports-monitoring/quickstart-azure-monitor-route-logs-to-storage-account.md).

@@ -1,5 +1,5 @@
 ---
-title: Обработка уведомлений по обслуживанию для виртуальных машин Windows в Azure | Документация Майкрософт
+title: Обработка уведомлений об обслуживании для виртуальных машин Windows в Azure
 description: Просмотрите уведомления по обслуживанию для виртуальных машин Windows, запущенных в Azure, и запустите самостоятельное обслуживание.
 services: virtual-machines-windows
 documentationcenter: ''
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 04/30/2019
 ms.author: shants
-ms.openlocfilehash: 2e7f51ecb948764f6ac4c3e7a52dc14ef5d00741
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: 6e269e9b21fe16a1d77b4e1f714517f91fa531d4
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73749367"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74039191"
 ---
 # <a name="handling-planned-maintenance-notifications-for-windows-virtual-machines"></a>Обработка плановых уведомлений по обслуживанию для виртуальных машин Windows
 
@@ -88,7 +88,7 @@ Get-AzVM -ResourceGroupName rgName -Name vmName -Status
 
 В разделе MaintenanceRedeployStatus возвращаются следующие свойства: 
 
-| Значение | Description (Описание)   |
+| Значение | ОПИСАНИЕ   |
 |-------|---------------|
 | IsCustomerInitiatedMaintenanceAllowed | Указывает, можно ли сейчас запустить обслуживание на виртуальной машине |
 | PreMaintenanceWindowStartTime         | Начало периода самообслуживания, когда можно инициировать обслуживание на виртуальной машине |
@@ -158,7 +158,7 @@ Restart-AzureVM -InitiateMaintenance -ServiceName <service name> -Name <VM name>
 ```
 
 
-## <a name="faq"></a>Вопросы и ответы
+## <a name="faq"></a>часто задаваемые вопросы
 
 
 **Вопрос. Зачем вам нужно перезагружать сейчас мою виртуальную машину?**
@@ -211,6 +211,6 @@ Restart-AzureVM -InitiateMaintenance -ServiceName <service name> -Name <VM name>
 4.  Вы настроили **автоматическое завершение работы** для виртуальной машины.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Узнайте, как зарегистрироваться для событий обслуживания прямо из виртуальной машины с помощью функции [запланированных событий](scheduled-events.md).

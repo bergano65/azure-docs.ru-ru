@@ -1,5 +1,5 @@
 ---
-title: Группы доступности SQL Server, виртуальные машины Azure и аварийное восстановление | Документация Майкрософт
+title: Настройка группы доступности в разных регионах
 description: В этой статье описывается, как настроить группу доступности SQL Server на виртуальных машинах Azure с репликой, расположенной в другом регионе.
 services: virtual-machines
 documentationCenter: na
@@ -9,20 +9,20 @@ editor: monicar
 tags: azure-service-management
 ms.assetid: 388c464e-a16e-4c9d-a0d5-bb7cf5974689
 ms.service: virtual-machines-sql
-ms.custom: na
+ms.custom: seo-lt-2019
 ms.topic: article
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 05/02/2017
 ms.author: mikeray
-ms.openlocfilehash: 9949c389ad0511c3ed5923e0451bc96e7063621f
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 96b7c3cf59f947d1476ad840ae81695356d869b6
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73159747"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74037537"
 ---
-# <a name="configure-an-always-on-availability-group-on-azure-virtual-machines-in-different-regions"></a>Настройка группы доступности AlwaysOn на виртуальных машинах Azure в разных регионах
+# <a name="configure-an-availability-group-on-azure-sql-server-virtual-machines-in-different-regions"></a>Настройка группы доступности на виртуальных машинах Azure SQL Server в разных регионах
 
 В этой статье описывается, как настроить группу доступности AlwaysOn SQL Server на виртуальных машинах Azure в удаленном регионе Azure. Эту конфигурацию можно использовать для поддержки аварийного восстановления.
 
@@ -164,11 +164,11 @@ ms.locfileid: "73159747"
 
 После проверки подключения верните первичную реплику в основной центр обработки данных и восстановите обычные рабочие параметры режима доступности. В таблице ниже приведены обычные рабочие параметры для архитектуры, описанной в этом документе.
 
-| Location | Экземпляр сервера | Роль | Режим доступности | Режим отработки отказа
+| Место проведения | Экземпляр сервера | Роль | Режим доступности | Режим отработки отказа
 | ----- | ----- | ----- | ----- | -----
-| Основной центр обработки данных | SQL-1 | Первичная | Синхронный | Автоматический
-| Основной центр обработки данных | SQL-2 | Вторичная | Синхронный | Автоматический
-| Дополнительный или удаленный центр обработки данных | SQL-3 | Вторичная | Асинхронный | Manual
+| Основной центр обработки данных | SQL-1 | Главный | Синхронный | Автоматический
+| Основной центр обработки данных | SQL-2 | Второстепенный | Синхронный | Автоматический
+| Дополнительный или удаленный центр обработки данных | SQL-3 | Второстепенный | Асинхронный | Руководство
 
 
 ### <a name="more-information-about-planned-and-forced-manual-failover"></a>Дополнительные сведения о плановой и принудительной отработке отказа вручную

@@ -1,5 +1,5 @@
 ---
-title: Подключение хранилища файлов Azure на виртуальных машинах Linux с помощью протокола SMB | Документация Майкрософт
+title: Подключение хранилища файлов Azure на виртуальных машинах Linux с помощью протокола SMB
 description: Как подключить хранилище файлов Azure на виртуальных машинах Linux, используя протокол SMB и Azure CLI
 services: virtual-machines-linux
 documentationcenter: virtual-machines-linux
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 06/28/2018
 ms.author: cynthn
-ms.openlocfilehash: effe1169fb531abd3fe8a206f2baf83380fcd28f
-ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
+ms.openlocfilehash: 0918cfda81be93982c1ca6eccce0c116ac65ca28
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71828399"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74035657"
 ---
 # <a name="mount-azure-file-storage-on-linux-vms-using-smb"></a>Подключение хранилища файлов Azure на виртуальных машинах Linux с помощью протокола SMB
 
@@ -31,7 +31,7 @@ ms.locfileid: "71828399"
 Для работы с этим руководством требуется Azure CLI версии 2.0.4 или более поздней. Чтобы узнать версию, выполните команду **az --version**. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli). 
 
 
-## <a name="create-a-resource-group"></a>Создать группу ресурсов
+## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
 Создайте группу ресурсов с именем *myResourceGroup* в расположении *Восточная часть США*.
 
@@ -39,9 +39,9 @@ ms.locfileid: "71828399"
 az group create --name myResourceGroup --location eastus
 ```
 
-## <a name="create-a-storage-account"></a>Создать учетную запись хранения
+## <a name="create-a-storage-account"></a>Создайте учетную запись хранения
 
-Создайте учетную запись хранения в созданной вами группе ресурсов с помощью команды [az storage account create](/cli/azure/storage/account). В этом примере создается учетная запись хранения с именем *mySTORAGEACCT @ no__t-1random number >* и в переменной **STORAGEACCT**помещается имя этой учетной записи хранения. Имена учетных записей хранения должны быть уникальными. Для этого используйте команду `$RANDOM`, которая добавляет к нему номер.
+Создайте учетную запись хранения в созданной вами группе ресурсов с помощью команды [az storage account create](/cli/azure/storage/account). В этом примере создается учетная запись хранения с именем *mySTORAGEACCT\<случайное число >* и помещается имя этой учетной записи хранения в переменную **STORAGEACCT**. Имена учетных записей хранения должны быть уникальными. Для этого используйте команду `$RANDOM`, которая добавляет к нему номер.
 
 ```bash
 STORAGEACCT=$(az storage account create \
@@ -111,7 +111,7 @@ sudo mount -t cifs //$STORAGEACCT.file.core.windows.net/myshare /mnt/MyAzureFile
 ```
 Для обеспечения безопасности в рабочих средах следует хранить учетные данные за пределами fstab.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Настройка виртуальной машины Linux во время создания с помощь cloud-init](using-cloud-init.md)
 - [Добавление диска к виртуальной машине Linux](add-disk.md)

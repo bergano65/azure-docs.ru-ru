@@ -1,5 +1,5 @@
 ---
-title: Развертывание OpenShift контейнера платформы 4. x в Azure | Документация Майкрософт
+title: Развертывание OpenShift контейнера платформы 4. x в Azure
 description: Разверните OpenShift Container Platform 4. x в Azure.
 services: virtual-machines-linux
 documentationcenter: virtual-machines
@@ -14,19 +14,19 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 10/14/2019
 ms.author: haroldw
-ms.openlocfilehash: 9f807823b1d0d8079c43b2ba0e074a1c8a91b458
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: 213c02b76f822d134729ebc4c0e6bff40f62089f
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72392687"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74035434"
 ---
 # <a name="deploy-openshift-container-platform-4x-in-azure"></a>Развертывание OpenShift контейнера платформы 4. x в Azure
 
 Развертывание платформы контейнеров OpenShift (OCP) 4,2 теперь поддерживается в Azure с помощью модели подготовки к установке инфраструктуры (IPI) для установщика.  Целевая страница для попытки OpenShift 4 — [try.openshift.com](https://try.openshift.com/). Чтобы установить OCP 4,2 в Azure, посетите страницу [диспетчера кластеров Red Hat OpenShift](https://cloud.redhat.com/openshift/install/azure/installer-provisioned) .  Для доступа к этому сайту требуются учетные данные Red Hat.
 
 
-## <a name="notes"></a>Заметки 
+## <a name="notes"></a>Примечания 
 
  - Для установки и запуска OCP 4. x в Azure требуется субъект-служба Azure Active Directory (AAD).
      - SP должно быть предоставлено разрешение API **Application. ReadWrite. овнедби** для Azure Active Directory Graph
@@ -37,12 +37,12 @@ ms.locfileid: "72392687"
 
 | Описание проблемы | Точка контакта |
 |-------------------|---------------|
-| Проблемы, связанные с Azure (AAD, SP, подписка Azure и т. д.)                              | Майкрософт |
+| Проблемы, связанные с Azure (AAD, SP, подписка Azure и т. д.)                              | Microsoft |
 | Проблемы, связанные с OpenShift (сбои при установке и ошибки, подписка Red Hat и т. д.) |  Red Hat  |
 
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Overview](https://docs.openshift.com) (Обзор)

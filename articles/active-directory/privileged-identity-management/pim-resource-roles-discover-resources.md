@@ -1,25 +1,25 @@
 ---
-title: Обнаружение ресурсов Azure для управления в управление привилегированными пользователями Azure Active Directory | Документация Майкрософт
+title: Обнаружение ресурсов Azure для управления в PIM — Azure AD | Документация Майкрософт
 description: Узнайте, как обнаруживать ресурсы Azure и управлять ими с помощью управления привилегированными пользователями (PIM).
 services: active-directory
 documentationcenter: ''
 author: curtand
-manager: mtillman
+manager: daveba
 ms.service: active-directory
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: pim
-ms.date: 10/23/2019
+ms.date: 11/08/2019
 ms.author: curtand
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e7e401426e1c9448caaae28648abce481f426d38
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: 87da43100c7494937ddc842e0f903ba3a360959e
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72895688"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74022890"
 ---
 # <a name="discover-azure-resources-to-manage-in-privileged-identity-management"></a>Обнаружение ресурсов Azure для управления в управление привилегированными пользователями
 
@@ -29,7 +29,7 @@ ms.locfileid: "72895688"
 
 ## <a name="discover-resources"></a>Обнаружение ресурсов
 
-1. Войдите на [портале Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 
 1. Откройте страницу **Azure AD Privileged Identity Management**.
 
@@ -64,7 +64,7 @@ ms.locfileid: "72895688"
 
     ![Сообщение, подтверждающее подключение выбранных ресурсов для управления](./media/pim-resource-roles-discover-resources/discovery-manage-resource-message.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Настройка параметров роли ресурсов Azure в управление привилегированными пользователями](pim-resource-roles-configure-role-settings.md)
 - [Назначение ролей ресурсов Azure в управление привилегированными пользователями](pim-resource-roles-assign-roles.md)

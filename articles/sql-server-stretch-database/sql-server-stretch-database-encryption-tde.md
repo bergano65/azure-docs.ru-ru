@@ -1,5 +1,5 @@
 ---
-title: Включение прозрачного шифрования данных для Stretch Database в Azure | Документация Майкрософт
+title: Включение прозрачное шифрование данных для Stretch Database
 description: Включение прозрачного шифрования данных (TDE) для SQL Server Stretch Database в Azure
 services: sql-server-stretch-database
 documentationcenter: ''
@@ -13,12 +13,13 @@ author: blazem-msft
 ms.author: blazem
 ms.reviewer: jroth
 manager: jroth
-ms.openlocfilehash: 61f556476958484b78b9c3dff2583eb6db043637
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.custom: seo-lt-2019
+ms.openlocfilehash: 465338bb793ad7b4fc406e9d1c073b9dc0dc06c8
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "66003040"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74034015"
 ---
 # <a name="enable-transparent-data-encryption-tde-for-stretch-database-on-azure"></a>Включение прозрачного шифрования данных (TDE) для Stretch Database в Azure
 > [!div class="op_single_selector"]
@@ -34,7 +35,7 @@ ms.locfileid: "66003040"
 ## <a name="enabling-encryption"></a>Включение шифрования
 Чтобы включить прозрачное шифрование для базы данных Azure, где хранятся данные, перенесенные из Базы данных SQL Server Stretch, выполните следующее.
 
-1. Откройте базу данных на [Портал Azure](https://portal.azure.com)
+1. Откройте базу данных на [портале Azure](https://portal.azure.com)
 2. В колонке базы данных нажмите кнопку **Параметры** .
 3. Выберите параметр **Прозрачное шифрование данных** . ![][1]
 4. Выберите параметр **Включить**, а затем — **Сохранить**
@@ -43,7 +44,7 @@ ms.locfileid: "66003040"
 ## <a name="disabling-encryption"></a>Отключение шифрования
 Чтобы отключить прозрачное шифрование для базы данных Azure, где хранятся данные, перенесенные из Базы данных SQL Server Stretch, выполните следующее.
 
-1. Откройте базу данных на [Портал Azure](https://portal.azure.com)
+1. Откройте базу данных на [портале Azure](https://portal.azure.com)
 2. В колонке базы данных нажмите кнопку **Параметры** .
 3. Выберите параметр **Прозрачное шифрование данных** .
 4. Выберите параметр **Отключить**, а затем — **Сохранить**.

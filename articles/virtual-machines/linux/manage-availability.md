@@ -1,5 +1,5 @@
 ---
-title: Управление доступностью виртуальных машин Linux в Azure | Документация Майкрософт
+title: Управление доступностью виртуальных машин Linux в Azure
 description: Описывается, как использовать несколько виртуальных машин для обеспечения высокой доступности приложения Linux в Azure.
 services: virtual-machines-linux
 documentationcenter: ''
@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 03/27/2018
 ms.author: cynthn
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: ab269bcd56a5e60fdc8434a58b61163cb8769763
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 5742ed346c6761dd443d6252e5c9e457fa952b87
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70082908"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74035901"
 ---
 # <a name="manage-the-availability-of-linux-virtual-machines"></a>Управление доступностью виртуальных машин Linux
 
@@ -30,6 +30,6 @@ ms.locfileid: "70082908"
 
 [!INCLUDE [virtual-machines-common-manage-availability](../../../includes/virtual-machines-common-manage-availability.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 Чтобы больше узнать о балансировке нагрузки виртуальных машин, ознакомьтесь с разделом [Балансировка нагрузки виртуальных машин](../virtual-machines-linux-load-balance.md).
 

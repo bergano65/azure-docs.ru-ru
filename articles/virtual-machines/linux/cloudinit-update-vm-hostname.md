@@ -1,5 +1,5 @@
 ---
-title: Задание имени узла с помощью cloud-init для виртуальной машины Linux в Azure | Документация Майкрософт
+title: Задание имени узла для виртуальной машины Linux в Azure с помощью Cloud-init
 description: Как с помощью cloud-init и Azure CLI настроить создаваемую виртуальную машину Linux
 services: virtual-machines-linux
 documentationcenter: ''
@@ -14,12 +14,12 @@ ms.devlang: azurecli
 ms.topic: article
 ms.date: 11/29/2017
 ms.author: rclaus
-ms.openlocfilehash: 1e437200ec6af22d104f9878e7bdfd20141759fb
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: adac9dc41aaba7ce6bfd9f01917d647174b41282
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67668203"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74036715"
 ---
 # <a name="use-cloud-init-to-set-hostname-for-a-linux-vm-in-azure"></a>Задание имени узла с помощью cloud-init для виртуальной машины Linux в Azure
 В этой статье показано, как с помощью [cloud-init](https://cloudinit.readthedocs.io) настроить определенное имя узла на виртуальной машине или в масштабируемом наборе виртуальных машин при подготовке в Azure. Эти скрипты cloud-init выполняются при первой загрузке, если в Azure подготовлены все нужные ресурсы. Дополнительные сведения о встроенной поддержке cloud-init в Azure и поддерживаемых дистрибутивах Linux см. в [обзоре cloud-init](using-cloud-init.md).
@@ -27,7 +27,7 @@ ms.locfileid: "67668203"
 ## <a name="set-the-hostname-with-cloud-init"></a>Указание имени узла с помощью cloud-init
 По умолчанию имя узла совпадает с именем виртуальной машины при ее создании в Azure.  Для выполнения скрипта cloud-init, чтобы изменить имя узла по умолчанию при создании виртуальной машины в Azure с помощью команды [az vm create](/cli/azure/vm), укажите файл cloud-init с параметром `--custom-data`.  
 
-Чтобы увидеть процесс обновления в действии, создайте файл с именем *cloud_init_hostname.txt* в текущей оболочке и вставьте в него конфигурацию, приведенную ниже. Для этого примера создайте файл в Cloud Shell (не на локальном компьютере). Вы можете использовать любой редактор. Введите `sensible-editor cloud_init_hostname.txt`, чтобы создать файл и просмотреть список доступных редакторов. Выберите первый пункт, чтобы использовать редактор **nano**. Убедитесь, что весь файл cloud-init скопирован правильно, особенно первая строка.  
+Чтобы увидеть процесс обновления в действии, создайте файл с именем *cloud_init_hostname.txt* в текущей оболочке и вставьте в него конфигурацию, приведенную ниже. Для этого примера создайте файл в Cloud Shell, не на локальном компьютере. Вы можете использовать любой редактор. Введите `sensible-editor cloud_init_hostname.txt`, чтобы создать файл и просмотреть список доступных редакторов. Выберите первый пункт, чтобы использовать редактор **nano**. Убедитесь, что весь файл cloud-init скопирован правильно, особенно первая строка.  
 
 ```yaml
 #cloud-config
@@ -69,8 +69,8 @@ hostname
 myhostname
 ```
 
-## <a name="next-steps"></a>Следующие шаги
-Дополнительные примеры изменения конфигурации с помощью cloud-init см. в следующих статьях:
+## <a name="next-steps"></a>Дополнительная информация
+Дополнительные примеры изменения конфигураций с помощью cloud-init см. в следующих статьях.
  
 - [Добавление пользователя Linux к виртуальной машине](cloudinit-add-user.md)
 - [Запуск диспетчера пакетов для обновления существующих пакетов при первой загрузке](cloudinit-update-vm.md)

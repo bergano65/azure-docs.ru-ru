@@ -7,19 +7,19 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/12/2019
 ms.author: raynew
-ms.openlocfilehash: 716f8e053ad05ba701b3415946cd8d3a56044e62
-ms.sourcegitcommit: 44c2a964fb8521f9961928f6f7457ae3ed362694
+ms.openlocfilehash: f7fa5d7ef68613301c30e26d21f69a80559dbcb9
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73953977"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74030012"
 ---
 # <a name="architecture---hyper-v-replication-to-a-secondary-site"></a>Архитектура: репликация Hyper-V на дополнительный сайт
 
 В этой статье описываются компоненты и процессы, задействованные при репликации локальных виртуальных машин Hyper-V в облаках System Center Virtual Machine Manager (VMM) на дополнительный сайт VMM с помощью службы [Azure Site Recovery](site-recovery-overview.md) на портале Azure.
 
 > [!WARNING]
-> Обратите внимание, что поддержка ASR для использования конфигурации SCVMM скоро станет устаревшей, поэтому мы рекомендуем ознакомиться со сведениями об [устаревании](scvmm-site-recovery-deprecation.md) , прежде чем продолжать.
+> Обратите внимание, что поддержка ASR для использования конфигурации SCVMM скоро станет устаревшей, поэтому мы рекомендуем ознакомиться со сведениями об [устаревании](site-to-site-deprecation.md) , прежде чем продолжать.
 
 ## <a name="architectural-components"></a>Компоненты архитектуры
 

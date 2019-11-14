@@ -1,5 +1,5 @@
 ---
-title: Руководство по подготовке виртуальных машин SQL Server на платформе Windows на портале Azure | Документация Майкрософт
+title: Инициализация виртуальной машины с помощью портал Azure
 description: В этом руководстве описаны варианты создания виртуальных машин Windows SQL Server 2017 на портале Azure.
 services: virtual-machines-windows
 documentationcenter: na
@@ -14,12 +14,13 @@ ms.workload: infrastructure-services
 ms.date: 05/04/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 1e0bc4647476cd5c6aa0f38456ef8890b4ddcaa5
-ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
+ms.custom: seo-lt-2019
+ms.openlocfilehash: 68fda45038da48660da0c29787b3a86e00d9b129
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71828788"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74033585"
 ---
 # <a name="how-to-provision-a-windows-sql-server-virtual-machine-in-the-azure-portal"></a>Как подготовить виртуальную машину SQL Server на платформе Windows на портале Azure
 
@@ -30,7 +31,7 @@ ms.locfileid: "71828788"
 > [!TIP]
 > Если у вас есть вопросы по виртуальным машинам SQL Server, см. раздел [часто задаваемых вопросов](virtual-machines-windows-sql-server-iaas-faq.md).
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу.
 
 ## <a id="select"></a> Образы из коллекции виртуальных машин SQL Server
 
@@ -38,7 +39,7 @@ ms.locfileid: "71828788"
 
 1. На портале Azure в меню слева выберите **Azure SQL**. Если **SQL Azure** отсутствует в списке, выберите **все службы**, а затем введите Azure SQL в поле поиска. (Необязательно) Щелкните звезду рядом с **Azure SQL**, чтобы добавить этот элемент в избранное и область навигации слева. 
 1. Щелкните **+ Добавить**, чтобы открыть страницу **Выбор варианта развертывания SQL**. Чтобы просмотреть дополнительные сведения, выберите **Показать подробности**. 
-1. Введите `2017` в поле поиска образа SQL Server на плитке **виртуальные машины SQL** , а затем выберите **Free SQL Server Лицензия: SQL Server 2017 Developer в Windows Server 2016 @ no__t-0 из раскрывающегося списка. 
+1. Введите `2017` в поле поиска изображений SQL Server на плитке **виртуальные машины SQL** , а затем выберите **бесплатную SQL Server лицензия: SQL Server 2017 Developer на Windows Server 2016** из раскрывающегося списка. 
 
 
    ![Выбор образа виртуальной машины SQL](media/virtual-machines-windows-portal-sql-server-provision/select-sql-vm-image-portal.png)
@@ -55,7 +56,7 @@ ms.locfileid: "71828788"
 1. Нажмите кнопку **Создать**.
 
 
-## <a name="1-configure-basic-settings"></a>1. Настройка базовых параметров
+## <a name="1-configure-basic-settings"></a>1. Настройка основных параметров
 
 
 На вкладке **Основные сведения** укажите следующую информацию.
@@ -63,7 +64,7 @@ ms.locfileid: "71828788"
 * В разделе **сведения о проекте**убедитесь, что выбрана правильная подписка. 
 *  В разделе **Группа ресурсов** либо выберите существующую группу ресурсов из списка, либо щелкните **создать** , чтобы создать новую группу ресурсов. Группа ресурсов — это коллекция связанных ресурсов в Azure (виртуальные машины, учетные записи хранения, виртуальные сети и т. д.). 
 
-    ![Подписка](media/quickstart-sql-vm-create-portal/basics-project-details.png)
+    ![подписку](media/quickstart-sql-vm-create-portal/basics-project-details.png)
 
   > [!NOTE]
   > Рекомендуется использовать новую группу ресурсов для тестирования или изучения процесса развертывания SQL Server в Azure. После завершения теста удалите группу ресурсов, чтобы автоматически удалить виртуальную машину и все ресурсы, связанные с этой группой ресурсов. Дополнительные сведения о группах ресурсов см. в статье [Общие сведения об Azure Resource Manager](../../../azure-resource-manager/resource-group-overview.md).
@@ -73,7 +74,7 @@ ms.locfileid: "71828788"
     1. Введите уникальное **имя виртуальной машины**.  
     1. Выберите расположение для параметра **Регион**. 
     1. В этом разделе **параметрам доступности** присвоено значение _не требуется избыточность инфраструктуры_. См. подробнее о [регионах и доступности виртуальных машин в Azure](../../windows/availability.md). 
-    1. В списке **Образ** выберите _Free SQL Server License: SQL Server 2017 Developer on Windows Server 2016_ (Бесплатная лицензия на SQL Server: SQL Server 2017 Developer на базе Windows Server 2016).  
+    1. В списке **образов** выберите _бесплатная лицензия SQL Server: SQL Server 2017 Developer на Windows Server 2016_.  
     1. Выберите **Изменить размер** для параметра **Размер** виртуальной машины, а затем выберите предложение **A2 Basic**. Обязательно очистите ресурсы после завершения работы с ними, чтобы предотвратить любые непредвиденные расходы. Для рабочих нагрузок изучите рекомендации по размерам машин SQL Server и их настройке в статье [Рекомендации по оптимизации производительности SQL Server в виртуальных машинах Azure](virtual-machines-windows-sql-performance.md).
 
     ![Подробности об экземпляре](media/quickstart-sql-vm-create-portal/basics-instance-details.png)
@@ -87,12 +88,12 @@ ms.locfileid: "71828788"
 
 * В разделе **Правила входящего порта** щелкните **Разрешить выбранные порты**, а затем выберите **RDP (3389)** из раскрывающегося списка. 
 
-   ![Правила входящего порта](media/quickstart-sql-vm-create-portal/basics-inbound-port-rules.png)
+   ![Правила для входящих портов](media/quickstart-sql-vm-create-portal/basics-inbound-port-rules.png)
 
 
-## <a name="2-configure-optional-features"></a>2. Настроить дополнительные возможности
+## <a name="2-configure-optional-features"></a>2. Настройка дополнительных функций
 
-### <a name="disks"></a>Диски
+### <a name="disks"></a>диски;
 
 На вкладке **диски** настройте параметры диска. 
 
@@ -105,7 +106,7 @@ ms.locfileid: "71828788"
 ![Параметры диска виртуальной машины SQL](media/virtual-machines-windows-portal-sql-server-provision/azure-sqlvm-disks.png)
   
   
-### <a name="networking"></a>Сети
+### <a name="networking"></a>Сеть
 
 На вкладке **Сетевые подключения** настройте параметры сети. 
 
@@ -117,11 +118,11 @@ ms.locfileid: "71828788"
 
 ![Параметры сети виртуальной машины SQL](media/virtual-machines-windows-portal-sql-server-provision/azure-sqlvm-networking.png)
 
-#### <a name="monitoring"></a>Отслеживание
+#### <a name="monitoring"></a>Мониторинг
 
 На вкладке **мониторинг** Настройте мониторинг и автоматическое завершение работы. 
 
-* Azure включает **диагностику загрузки** по умолчанию с той же учетной записью хранения, которая НАЗНАЧЕНА виртуальной машине. Эти параметры можно изменить здесь, а также включить диагностику **гостевых ОС**. 
+* Azure включает **диагностику загрузки** по умолчанию с той же учетной записью хранения, которая НАЗНАЧЕНА виртуальной машине. Эти параметры можно изменить здесь, а также включить **диагностику гостевых ОС**. 
 * Также можно включить **управляемое системой удостоверение** и автоматическое **Завершение работы** на этой вкладке. 
 
 ![Параметры управления виртуальной машиной SQL](media/virtual-machines-windows-portal-sql-server-provision/azure-sqlvm-management.png)
@@ -131,10 +132,10 @@ ms.locfileid: "71828788"
 
 На вкладке **параметры SQL Server** настройте определенные параметры и оптимизации для SQL Server. Ниже приведены параметры, которые можно настроить для SQL Server.
 
-| Параметр |
+| Настройка |
 | --- |
 | [Соединение](#connectivity) |
-| [Authentication](#authentication) |
+| [Аутентификация](#authentication) |
 | [Интеграция с хранилищем ключей Azure](#azure-key-vault-integration) |
 | [Конфигурация хранилища](#storage-configuration) |
 | [Автоматическое исправление](#automated-patching) |
@@ -142,7 +143,7 @@ ms.locfileid: "71828788"
 | [Службы R Services (Расширенная аналитика)](#r-services-advanced-analytics) |
 
 
-### <a name="connectivity"></a>Подключение
+### <a name="connectivity"></a>Соединение
 
 В разделе **Подключение SQL**укажите необходимый тип доступа к экземпляру SQL Server на этой виртуальной машине. В рамках этого пошагового руководства выберите **Общедоступный (Интернет)** для подключения к SQL Server с компьютеров или из служб в Интернете. Если выбран этот параметр, Azure автоматически настроит брандмауэр и группу безопасности сети, чтобы разрешить трафик по выбранному порту.
 
@@ -166,7 +167,7 @@ ms.locfileid: "71828788"
 
 Если требуется SQL Server проверка подлинности, щелкните **включить** в разделе **Проверка подлинности SQL** на вкладке **параметры SQL Server** .
 
-![Проверка подлинности SQL Server](./media/virtual-machines-windows-portal-sql-server-provision/azure-sqlvm-authentication.png)
+![проверка подлинности SQL Server](./media/virtual-machines-windows-portal-sql-server-provision/azure-sqlvm-authentication.png)
 
 > [!NOTE]
 > Если вы планируете предоставить доступ к SQL Server через Интернет (т. е. включаете параметр общедоступного подключения), включите аутентификацию SQL здесь. Для общего доступа к SQL Server необходимо использовать проверку подлинности SQL.
@@ -176,20 +177,20 @@ ms.locfileid: "71828788"
 Если проверка подлинности SQL Server не включена, подключиться к экземпляру SQL Server можно с помощью локальной учетной записи администратора на виртуальной машине.
 
 
-### <a name="azure-key-vault-integration"></a>Интеграция Azure Key Vault
+### <a name="azure-key-vault-integration"></a>Интеграция с хранилищем ключей Azure
 
 Чтобы сохранить секреты безопасности в Azure для шифрования, выберите **параметры SQL Server**и прокрутите вниз до пункта **Интеграция хранилища ключей Azure**. Выберите **включить** и введите запрошенные сведения. 
 
-![Интеграция Azure Key Vault](media/virtual-machines-windows-portal-sql-server-provision/azure-sqlvm-akv.png)
+![Интеграция с хранилищем ключей Azure](media/virtual-machines-windows-portal-sql-server-provision/azure-sqlvm-akv.png)
 
 В следующей таблице перечислены параметры, необходимые для настройки интеграции с хранилищем ключей Azure.
 
 | ПАРАМЕТР | ОПИСАНИЕ | ПРИМЕР |
 | --- | --- | --- |
-| **URL-адрес хранилища ключей** |Расположение хранилища ключей. |HTTPS:\//contosokeyvault.Vault.Azure.NET/ |
+| **URL-адрес хранилища ключей** |Расположение хранилища ключей. |HTTPS:\//contosokeyvault.vault.azure.net/ |
 | **Имя субъекта** |Имя субъекта-службы Azure Active Directory. Этот имя также называется идентификатором клиента. |fde2b411-33d5-4e11-af04eb07b669ccf2 |
 | **Секрет субъекта** |Секрет субъекта-службы Azure Active Directory. Этот секрет также называется секретом клиента. |9VTJSQwzlFepD8XODnzy8n2V01Jd8dAjwm/azF1XDKM= |
-| **Имя учетных данных** |**Учетное имя**. Интеграция AKV создает учетные данные в рамках SQL Server, с помощью которых VM будет получать доступ к хранилищу ключей. Выберите имя для этих учетных данных. |mycred1 |
+| **Имя учетных данных** |**Учетное имя**: интеграция AKV создает учетные данные в рамках SQL Server, позволяя виртуальной машине иметь доступ к хранилищу ключей. Выберите имя для этих учетных данных. |mycred1 |
 
 Дополнительные сведения см. в статье [Настройка интеграции хранилища ключей Azure для SQL Server на виртуальных машинах Azure (Resource Manager)](virtual-machines-windows-ps-sql-keyvault.md).
 
@@ -201,7 +202,7 @@ ms.locfileid: "71828788"
 
 В разделе **Storage optimized for**(Оптимизация хранилища) выберите один из следующих вариантов.
 
-* **Общая** — это значение по умолчанию, которое поддерживает большинство рабочих нагрузок.
+* **Общая** — значение по умолчанию, которое поддерживает большинство рабочих нагрузок.
 * **Обработка транзакций** оптимизирует хранилище для традиционных рабочих нагрузок OLTP базы данных.
 * **Хранилище данных** оптимизирует хранилище для рабочих нагрузок аналитики и отчетов.
 
@@ -209,7 +210,7 @@ ms.locfileid: "71828788"
 
 Можно оставить значения по умолчанию или вручную изменить топологию хранилища в соответствии с вашими потребностями в операциях ввода-вывода. Дополнительные сведения см. в разделе [Storage Configuration](virtual-machines-windows-sql-server-storage-configuration.md). 
 
-### <a name="sql-server-license"></a>Лицензия SQL Server
+### <a name="sql-server-license"></a>Лицензия SQL Server
 Если вы являетесь клиентом Software Assurance, вы можете использовать [преимущество гибридного использования Azure](https://azure.microsoft.com/pricing/hybrid-benefit/) , чтобы получить собственную лицензию SQL Server и сэкономить на ресурсах. 
 
 ![Лицензия на виртуальную машину SQL](media/virtual-machines-windows-portal-sql-server-provision/azure-sqlvm-license.png)
@@ -246,7 +247,7 @@ ms.locfileid: "71828788"
 Имеется возможность включить [SQL Server R Services (Расширенная аналитика)](/sql/advanced-analytics/r/sql-server-r-services/). Этот параметр позволяет использовать в SQL Server 2017 расширенные средства аналитики. Выберите **включить** в окне **параметры SQL Server** .
 
 
-## <a name="4-review--create"></a>4. Отзыв и создание
+## <a name="4-review--create"></a>4. Проверка и создание
 
 На вкладке **Отзыв и создание** просмотрите сводные данные и выберите **Создать**, чтобы создать SQL Server, группу ресурсов и ресурсы, указанные для этой виртуальной машины.
 
@@ -280,6 +281,6 @@ ms.locfileid: "71828788"
   > В этом примере используется общий порт 1433. Однако это значение потребуется изменить, если во время развертывания SQL Server виртуальной машины был указан другой порт (например, 1401). 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения об использовании SQL Server в Azure см. в статье [Приступая к работе с SQL Server в виртуальных машинах Azure](virtual-machines-windows-sql-server-iaas-overview.md) и [Часто задаваемые вопросы об SQL Server в виртуальных машинах Azure](virtual-machines-windows-sql-server-iaas-faq.md).

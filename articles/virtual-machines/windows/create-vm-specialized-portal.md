@@ -1,5 +1,5 @@
 ---
-title: Создание виртуальной машины Windows с помощью специализированного виртуального жесткого диска на портале Azure | Документация Майкрософт
+title: Создание виртуальной машины Windows на основе специализированного виртуального жесткого диска в портал Azure
 description: Создание виртуальной машины Windows из виртуального жесткого диска на портале Azure.
 services: virtual-machines-windows
 documentationcenter: ''
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 01/18/2019
 ms.author: cynthn
-ms.openlocfilehash: d79cefa9adec403ebbb5105351d2909eac9d02a4
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: 587acd37f465dda7e514b595f8451afe3d259dea
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72390506"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74039141"
 ---
 # <a name="create-a-vm-from-a-vhd-by-using-the-azure-portal"></a>Создание виртуальной машины из виртуального жесткого диска с помощью портала Azure
 
@@ -77,7 +77,7 @@ ms.locfileid: "72390506"
 12. Если конфигурация виртуальной машины пройдет проверку, щелкните **Создать**, чтобы начать развертывание.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Можно также использовать PowerShell для [отправки VHD в Azure и создания специализированной виртуальной машины](create-vm-specialized.md).
 

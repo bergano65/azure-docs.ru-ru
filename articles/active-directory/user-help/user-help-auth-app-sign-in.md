@@ -1,5 +1,5 @@
 ---
-title: 'Вход в учетные записи с помощью приложения Microsoft Authenticator: Azure Active Directory | Документация Майкрософт'
+title: Вход с помощью приложения Microsoft Authenticator — Azure AD
 description: Используйте приложение Microsoft Authenticator для входа в рабочую или учебную учетную запись, личную учетную запись или отличную от Майкрософт с помощью двухфакторной проверки подлинности или входа на телефоне.
 services: active-directory
 author: eross-msft
@@ -12,12 +12,12 @@ ms.date: 01/24/2019
 ms.author: lizross
 ms.reviewer: olhaun
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9af3549984bd29a6e896e498bf4a2e6c67d7e0e2
-ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
+ms.openlocfilehash: 4cf9b92793d6c769751590dd0a375cbc8894759c
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69616014"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74028971"
 ---
 # <a name="sign-in-to-your-accounts-using-the-microsoft-authenticator-app"></a>Вход в учетные записи с помощью приложения Microsoft Authenticator
 
@@ -32,7 +32,7 @@ ms.locfileid: "69616014"
   >[!Important]
   >Этот метод входа на телефоне работает только с вашей рабочей или учебной и личной учетной записью Майкрософт. Учетные записи, отличные от Майкрософт, требуют от вас использовать в процессе стандартную двухфакторную проверку подлинности.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 Прежде чем использовать приложение Microsoft Authenticator, вам необходимо:
 
@@ -120,7 +120,7 @@ ms.locfileid: "69616014"
 | Почему я не могу использовать больше одной рабочей или учебной учетной записи для входа с помощью телефона? | Телефон необходимо зарегистрировать в одной рабочей или учебной учетной записи. Если необходимо включить вход на телефоне для разных рабочих или учебных учетных записей, нужно сначала отменить регистрацию старого устройства на странице **Параметры**. |
 | Можно ли войти на мой компьютер с помощью телефона? | Мы рекомендуем выполнять вход на компьютер с помощью Windows Hello в Windows 10. Windows Hello позволяет использовать для входа ваше лицо, отпечатки пальцев или ПИН-код. |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 - Если у вас возникли проблемы с получением кода проверки для личного учетная запись Майкрософт, см. раздел **Устранение неполадок с кодом проверки** в [учетная запись Майкрософт сведения о безопасности & коды проверки](https://support.microsoft.com/help/12428/microsoft-account-security-info-verification-codes) .
 
