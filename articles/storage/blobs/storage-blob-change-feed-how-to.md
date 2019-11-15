@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: storage
 ms.subservice: blobs
 ms.reviewer: sadodd
-ms.openlocfilehash: 90b7d79cd2a0e215af17856796bcdda2fbabb43f
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 00805d6284c166d0ec03b9fe88482377a9488314
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73693635"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74084849"
 ---
 # <a name="process-change-feed-in-azure-blob-storage-preview"></a>Обработка канала изменений в хранилище BLOB-объектов Azure (Предварительная версия)
 
@@ -26,7 +26,7 @@ ms.locfileid: "73693635"
 
 ## <a name="get-the-blob-change-feed-processor-library"></a>Получение библиотеки обработчика канала изменений больших двоичных объектов
 
-1. В Visual Studio добавьте URL-адрес `https://azuresdkartifacts.blob.core.windows.net/azure-sdk-for-net/index.json` в источники пакетов NuGet. 
+1. В Visual Studio добавьте URL-адрес `https://azuresdkartifacts.blob.core.windows.net/azuresdkpartnerdrops/index.json` в источники пакетов NuGet. 
 
    Дополнительные сведения см. в разделе [источники пакетов](https://docs.microsoft.com/nuget/consume-packages/install-use-packages-visual-studio#package-sources).
 
@@ -369,6 +369,6 @@ private async Task<bool> IsSegmentConsumableAsync(ChangeFeed changeFeed, ChangeF
 >[!TIP]
 > Сегмент может иметь журналы веб-канала изменений в одном или нескольких *чункфилепас*. В случае нескольких *чункфилепас* система внутренним образом разделяет записи на несколько сегментов, чтобы управлять пропускной способностью публикации. Гарантируется, что каждая секция сегмента будет содержать изменения взаимоисключающих больших двоичных объектов и может обрабатываться независимо, без нарушения порядка. Класс **чанжефидсегментшардреадер** можно использовать для перебора записей на уровне сегментов, если это наиболее эффективно для вашего сценария.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о журналах веб-канала изменений. См. [веб-канал изменений в хранилище BLOB-объектов Azure (Предварительная версия)](storage-blob-change-feed.md)

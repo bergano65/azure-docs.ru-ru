@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 08/31/2019
 ms.author: victorh
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 63c3f2080a74142f3f9a68852092cbc527c4483b
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: f2cf69b456aeccd6da5ac393b88171fb3bb03cf2
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73470068"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74082550"
 ---
 # <a name="frequently-asked-questions-about-application-gateway"></a>Часто задаваемые вопросы о шлюзе приложений
 
@@ -21,7 +21,7 @@ ms.locfileid: "73470068"
 
 Ниже приведены часто задаваемые вопросы о шлюзе приложений Azure.
 
-## <a name="general"></a>Общие сведения
+## <a name="general"></a>Общие
 
 ### <a name="what-is-application-gateway"></a>Что такое шлюз приложений?
 
@@ -91,7 +91,7 @@ ms.locfileid: "73470068"
 
 Да. В дополнение к нескольким экземплярам данного развертывания шлюза приложений можно предоставить другой уникальный ресурс шлюза приложений для существующей подсети, содержащей другой ресурс шлюза приложений.
 
-Одна подсеть не поддерживает одновременно Standard_v2 и стандартный шлюз приложений.
+Одна подсеть не может одновременно поддерживать как Standard_v2, так и стандартный шлюз приложений.
 
 ### <a name="does-application-gateway-support-x-forwarded-for-headers"></a>Поддерживает ли Шлюз приложений заголовки X-Forwarded-For?
 
@@ -105,7 +105,7 @@ ms.locfileid: "73470068"
 
 ### <a name="can-i-use-exchange-server-as-a-backend-with-application-gateway"></a>Можно ли использовать сервер Exchange Server в качестве серверного шлюза?
 
-Нет. Шлюз приложений не поддерживает такие протоколы электронной почты, как SMTP, IMAP и POP3. 
+Нет Шлюз приложений не поддерживает такие протоколы электронной почты, как SMTP, IMAP и POP3. 
 
 ## <a name="performance"></a>Производительность
 
@@ -125,7 +125,7 @@ SKU шлюза приложений версии 1 поддерживает сц
 
 ### <a name="does-manual-scale-up-or-scale-down-cause-downtime"></a>Происходит ли ручное увеличение или уменьшение масштаба по причине простоя?
 
-Нет. Экземпляры распределяются через домены обновления и домены сбоя.
+Нет Экземпляры распределяются через домены обновления и домены сбоя.
 
 ### <a name="does-application-gateway-support-connection-draining"></a>Поддерживает ли Шлюз приложений фильтрацию подключений?
 
@@ -135,7 +135,7 @@ SKU шлюза приложений версии 1 поддерживает сц
 
 Да. Azure распределяет экземпляры между доменами обновления и сбоя, чтобы гарантировать, что экземпляры не будут завершаться сбоем одновременно. Шлюз приложений поддерживает масштабирование путем добавления нескольких экземпляров одного шлюза для распределения нагрузки.
 
-## <a name="configuration"></a>Конфигурация
+## <a name="configuration"></a>Параметр Configuration
 
 ### <a name="is-application-gateway-always-deployed-in-a-virtual-network"></a>Всегда ли Шлюз приложений развертывается в виртуальной сети?
 
@@ -147,7 +147,7 @@ SKU шлюза приложений версии 1 поддерживает сц
 
 ### <a name="can-i-deploy-anything-else-in-the-application-gateway-subnet"></a>Можно ли развернуть еще что-нибудь в подсети шлюза приложений?
 
-Нет. Но вы можете развернуть другие шлюзы приложений в подсети.
+Нет Но вы можете развернуть другие шлюзы приложений в подсети.
 
 ### <a name="are-network-security-groups-supported-on-the-application-gateway-subnet"></a>Поддерживаются ли группы безопасности сети в подсети шлюза приложений?
 
@@ -179,7 +179,7 @@ SKU шлюза приложений версии 1 поддерживает сц
 
 ### <a name="do-custom-probes-support-wildcards-or-regex-on-response-data"></a>Поддерживают ли пользовательские зонды подстановочные знаки или регулярные выражения в ответных данных?
 
-Нет. 
+Нет 
 
 ### <a name="how-are-routing-rules-processed-in-application-gateway"></a>Как правила маршрутизации обрабатываются в шлюзе приложений?
 
@@ -195,7 +195,7 @@ SKU шлюза приложений версии 1 поддерживает сц
 
 ### <a name="can-i-use-the-same-port-for-both-public-facing-and-private-facing-listeners"></a>Можно ли использовать один и тот же порт как для общедоступных, так и для частных прослушивателей?
 
-Нет.
+Нет
 
 ### <a name="is-there-guidance-available-to-migrate-from-the-v1-sku-to-the-v2-sku"></a>Доступны ли рекомендации для перехода с SKU версии v1 на SKU v2?
 
@@ -290,17 +290,13 @@ SKU шлюза приложений версии 1 поддерживает сц
 
 Да. WAF поддерживает все функции SKU "Стандартный".
 
-### <a name="which-crs-versions-does-application-gateway-support"></a>Какие версии CR поддерживают шлюз приложений?
-
-Шлюз приложений поддерживает [2.2.9](application-gateway-crs-rulegroups-rules.md#owasp229) и CRS [3.0](application-gateway-crs-rulegroups-rules.md#owasp30).
-
 ### <a name="how-do-i-monitor-waf"></a>Как выполнять мониторинг WAF?
 
 Мониторинг WAF с помощью ведения журнала диагностики. Дополнительные сведения см. в разделе [ведение журнала диагностики и метрики для шлюза приложений](application-gateway-diagnostics.md).
 
 ### <a name="does-detection-mode-block-traffic"></a>Блокируется ли трафик в режиме обнаружения?
 
-Нет. Режим обнаружения только регистрирует трафик, который запускает правило WAF.
+Нет Режим обнаружения только регистрирует трафик, который запускает правило WAF.
 
 ### <a name="can-i-customize-waf-rules"></a>Могу ли я настроить правила WAF?
 
@@ -308,7 +304,7 @@ SKU шлюза приложений версии 1 поддерживает сц
 
 ### <a name="what-rules-are-currently-available-for-waf"></a>Какие правила в настоящее время доступны для WAF?
 
-В настоящее время WAF поддерживает CR [2.2.9](application-gateway-crs-rulegroups-rules.md#owasp229) и [3,0](application-gateway-crs-rulegroups-rules.md#owasp30). Эти правила обеспечивают безопасность на основе большинства первых 10 уязвимостей, в которых открытый проект безопасности веб-приложений (OWASP) определяет: 
+В настоящее время WAF поддерживает запросы CR [2.2.9](../web-application-firewall/ag/application-gateway-crs-rulegroups-rules.md#owasp229), [3,0](../web-application-firewall/ag/application-gateway-crs-rulegroups-rules.md#owasp30)и [3,1](../web-application-firewall/ag/application-gateway-crs-rulegroups-rules.md#owasp31). Эти правила обеспечивают безопасность на основе большинства первых 10 уязвимостей, в которых открытый проект безопасности веб-приложений (OWASP) определяет: 
 
 * Защита от внедрения кода SQL.
 * Защита от межсайтовых сценариев
@@ -386,6 +382,6 @@ Kubernetes позволяет создавать ресурсы `deployment` и 
 - У вас есть NSG в подсети шлюза приложений
 - Вы включили журналы потоков NSG на этом NSG
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о шлюзе приложений см. в статье [что такое шлюз приложений Azure?](overview.md).

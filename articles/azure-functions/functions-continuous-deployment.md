@@ -1,21 +1,19 @@
 ---
-title: Непрерывное развертывание для Функций Azure | Документация Майкрософт
+title: Непрерывное развертывание для Функций Azure
 description: Используйте функции непрерывного развертывания службы приложений Azure для публикации функций.
-services: functions
-documentationcenter: na
 author: ggailey777
-manager: jeconnoc
+manager: gwallace
 ms.assetid: 361daf37-598c-4703-8d78-c77dbef91643
 ms.service: azure-functions
 ms.topic: conceptual
-ms.date: 09/25/2016
+ms.date: 09/25/2019
 ms.author: glenga
-ms.openlocfilehash: fb3cd885c0a16b3dc3a79150043b25cb271040bd
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: dae75153cffbf2f0e836e1a28b78a9f05f54e6e0
+ms.sourcegitcommit: a170b69b592e6e7e5cc816dabc0246f97897cb0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70097100"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74091179"
 ---
 # <a name="continuous-deployment-for-azure-functions"></a>Непрерывное развертывание для Функций Azure
 
@@ -35,11 +33,14 @@ ms.locfileid: "70097100"
 
 [!INCLUDE [functions-folder-structure](../../includes/functions-folder-structure.md)]
 
+>[!NOTE]  
+> Непрерывное развертывание пока не поддерживается для приложений Linux, работающих в плане потребления. 
+
 ## <a name="credentials"></a>Настройка непрерывного развертывания
 
 Чтобы настроить непрерывное развертывание для существующего приложения функции, выполните следующие действия. Шаги демонстрируют интеграцию с репозиторием GitHub, но аналогичные действия применяются для Azure Repos или других репозиториев исходного кода.
 
-1. В приложении функции в [портал Azure](https://portal.azure.com)выберите пункт **компоненты** > платформы**центр развертывания**.
+1. В приложении функции в [портал Azure](https://portal.azure.com)выберите **функции платформы** > **центр развертывания**.
 
     ![Открыть центр развертывания](./media/functions-continuous-deployment/platform-features.png)
 
@@ -55,8 +56,8 @@ ms.locfileid: "70097100"
 
 4. Выберите один из следующих поставщиков сборки:
 
-    * **Служба сборок службы приложений**: Лучше, если сборка не нужна или если требуется универсальная сборка.
-    * **Azure pipelines (Предварительная версия)** : Лучше, когда требуется больший контроль над сборкой. Сейчас этот поставщик находится на этапе предварительной версии.
+    * **Служба сборок службы приложений**: лучше, если сборка не нужна или если требуется универсальная сборка.
+    * **Azure pipelines (Предварительная версия)** . рекомендуется, если требуется больший контроль над сборкой. Сейчас этот поставщик находится на этапе предварительной версии.
 
     ![Выбор поставщика сборки](./media/functions-continuous-deployment/build.png)
 
@@ -66,7 +67,7 @@ ms.locfileid: "70097100"
 
 6. Просмотрите все сведения, а затем нажмите кнопку **Готово** , чтобы завершить настройку развертывания.
 
-    ![Сводка](./media/functions-continuous-deployment/summary.png)
+    ![summary](./media/functions-continuous-deployment/summary.png)
 
 По завершении процесса весь код из указанного источника развертывается в приложении. В этот момент изменения в источнике развертывания активируют развертывание этих изменений в приложении-функции в Azure.
 
@@ -83,7 +84,7 @@ ms.locfileid: "70097100"
 > [!NOTE]
 > После настройки непрерывной интеграции вы больше не сможете изменять исходные файлы на портале функций.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Рекомендации по функциям Azure](functions-best-practices.md)
+> [Рекомендации по Функциям Azure](functions-best-practices.md)

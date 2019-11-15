@@ -1,5 +1,5 @@
 ---
-title: 'Сброс пиринга цепи — ExpressRoute: Azure | Документация Майкрософт'
+title: 'Azure ExpressRoute: сброс пиринга цепи'
 description: Практическое руководство по отключению и включению пиринга канала ExpressRoute.
 services: expressroute
 author: charwen
@@ -7,13 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 10/25/2019
 ms.author: charwen
-ms.custom: seodec18
-ms.openlocfilehash: 2258bfbf2a1bf6a8dccf9d274e6e89e4c53a978a
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: 2810dfc4cb41dcf11eb59ce3c87e6f7d6b2d5f65
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73748229"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74083497"
 ---
 # <a name="reset-expressroute-circuit-peerings"></a>Сброс пиринга канала ExpressRoute
 
@@ -142,7 +141,7 @@ ms.locfileid: "73748229"
    ```
    Теперь пиринг должен находиться в состоянии, установленном пользователем. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 Дополнительные сведения об устранении проблем с ExpressRoute можно получить в следующих статьях.
 * [Проверка подключения ExpressRoute](expressroute-troubleshooting-expressroute-overview.md)
 * [Устранение проблем с производительностью сети](expressroute-troubleshooting-network-performance.md)

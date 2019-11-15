@@ -1,5 +1,5 @@
 ---
-title: Добавление сценария в план восстановления для аварийного восстановления с помощью Azure Site Recovery | Документация Майкрософт
+title: Добавление скрипта в план восстановления в Azure Site Recovery
 description: Узнайте, как добавить сценарий VMM в план восстановления для аварийного восстановления виртуальных машин Hyper-V в облаках VMM.
 author: rajani-janaki-ram
 manager: rochakm
@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: rajanaki
-ms.openlocfilehash: ea6d969ed6612f947e3c73c438738bd98ac2bb30
-ms.sourcegitcommit: 1289f956f897786090166982a8b66f708c9deea1
+ms.openlocfilehash: 6902876e066649ae4dff4134fb8cc462f30dd0b7
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "64700467"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74084871"
 ---
 # <a name="add-a-vmm-script-to-a-recovery-plan"></a>Добавление скрипта VMM в план восстановления
 
@@ -20,7 +20,7 @@ ms.locfileid: "64700467"
 
 Комментарии или вопросы можно добавить в конце этой статьи или на [форуме по службам восстановления Azure](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 В планах восстановления можно использовать скрипты PowerShell. Чтобы он был доступен в плане восстановления, этот скрипт необходимо создать и поместить в библиотеку VMM. При создании скрипта необходимо учитывать следующее.
 
@@ -51,7 +51,7 @@ ms.locfileid: "64700467"
 
      a. Откройте консоль **PowerShell 64-разрядной версии Windows** с правами администратора.
      
-     2\. Введите **Set-executionpolicy bypass**. Дополнительные сведения см. в статье [Библиотека технической информации для Windows Server](https://technet.microsoft.com/library/ee176961.aspx).
+     Б. Введите **Set-executionpolicy bypass**. Дополнительные сведения см. в статье [Библиотека технической информации для Windows Server](https://technet.microsoft.com/library/ee176961.aspx).
 
      > [!IMPORTANT]
      > Задайте командлет **Set-executionpolicy bypass** только для 64-разрядной консоли PowerShell. Если задать его для 32-разрядной консоли PowerShell, скрипты не выполняются.
@@ -76,6 +76,6 @@ ms.locfileid: "64700467"
 1. Чтобы убедиться в исправной работе скрипта, выполните тестовую отработку отказа плана восстановления.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 * [Дополнительные сведения](site-recovery-failover.md) о выполнении отработки отказа.
 

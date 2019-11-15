@@ -10,13 +10,13 @@ ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: genemi
-ms.date: 02/07/2019
-ms.openlocfilehash: af657d28bc3052ebefe25ea54891b8d3555692c9
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.date: 11/14/2019
+ms.openlocfilehash: 26aa9948a44727ff4c8092eb5131b1c054bf5442
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73825836"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74082436"
 ---
 # <a name="sql-database-application-development-overview"></a>Обзор разработки приложений базы данных SQL
 
@@ -32,7 +32,7 @@ ms.locfileid: "73825836"
 
 Вы можете использовать инструменты с открытым кодом, такие как [cheetah](https://github.com/wunderlist/cheetah), [sql-cli](https://www.npmjs.com/package/sql-cli) и [VS Code](https://code.visualstudio.com/). Кроме того, база данных SQL Azure поддерживает инструменты Майкрософт, например [Visual Studio](https://www.visualstudio.com/downloads/) и [SQL Server Management Studio](https://msdn.microsoft.com/library/ms174173.aspx). Кроме того, портал Azure, PowerShell и интерфейсы REST API дополнительно упростят вам работу.
 
-## <a name="authentication"></a>Аутентификация
+## <a name="authentication"></a>Проверка подлинности
 
 Доступ к Базе данных SQL Azure защищен с помощью механизмов входа в систему и брандмауэров. База данных SQL Azure поддерживает пользователей и имена для входа при аутентификации с помощью SQL Server и [Azure Active Directory](sql-database-aad-authentication.md). Имена входа Azure Active Directory доступны только в Управляемом экземпляре. 
 
@@ -48,7 +48,7 @@ ms.locfileid: "73825836"
 
 ## <a name="resiliency"></a>Устойчивость
 
-База данных SQL Azure — это облачная служба, где в базовой инфраструктуре или при обмене данными между облачными объектами могут происходить временные ошибки. Хотя База данных SQL Azure устойчива к транзитивным сбоям инфраструктуры, они могут повлиять на ваше подключение. Ваш код должен предусматривать возможность [повторного вызова](sql-database-connectivity-issues.md), если при подключении к Базе данных SQL возникает временная ошибка. В коде повторного вызова мы рекомендуем применять логику отсрочки, которая защищает базу данных SQL от перегрузки из-за одновременных повторных вызовов от нескольких клиентов. Логика повторных попыток зависит от [сообщений об ошибках для клиентских программ Базы данных SQL](sql-database-develop-error-messages.md).
+База данных SQL Azure — это облачная служба, где в базовой инфраструктуре или при обмене данными между облачными объектами могут происходить временные ошибки. Хотя База данных SQL Azure устойчива к транзитивным сбоям инфраструктуры, они могут повлиять на ваше подключение. Ваш код должен предусматривать возможность [повторного вызова](sql-database-connectivity-issues.md), если при подключении к Базе данных SQL возникает временная ошибка. В коде повторного вызова мы рекомендуем применять логику отсрочки, которая защищает базу данных SQL от перегрузки из-за одновременных повторных вызовов от нескольких клиентов. Логика повторных попыток зависит от [сообщений об ошибках для клиентских программ Базы данных SQL](troubleshoot-connectivity-issues-microsoft-azure-sql-database.md).
 
 Дополнительные сведения о подготовке к запланированным событиям по обслуживанию базы данных SQL Azure см. в статье [Планирование событий обслуживания Azure в Базе данных SQL Azure](sql-database-planned-maintenance.md).
 
@@ -59,6 +59,6 @@ ms.locfileid: "73825836"
 - Клиентские подключения к базе данных SQL Azure иногда обходят прокси-сервер и взаимодействуют непосредственно с базой данных. Порты, отличные от 1433, становятся важными. Дополнительные сведения см. в статьях [Архитектура подключений к базе данных SQL Azure](sql-database-connectivity-architecture.md) и [Порты для ADO.NET 4.5, отличные от порта 1433](sql-database-develop-direct-route-ports-adonet-v12.md).
 - Сведения о конфигурации сети для управляемого экземпляра см. в разделе [Сетевая конфигурация для управляемых экземпляров](sql-database-howto-managed-instance.md#network-configuration).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Вы можете изучить все [возможности Базы данных SQL](sql-database-technical-overview.md).

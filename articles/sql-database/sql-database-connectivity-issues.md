@@ -12,13 +12,13 @@ author: dalechen
 manager: dcscontentpm
 ms.author: ninarn
 ms.reviewer: carlrab
-ms.date: 06/14/2019
-ms.openlocfilehash: a943ade4bfc46083fe84274640d979928357a492
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.date: 11/14/2019
+ms.openlocfilehash: c25fa3f378c1e5a0f8bc26e4fb8c6f4ec752b43c
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73826811"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74082495"
 ---
 # <a name="working-with-sql-database-connection-issues-and-transient-errors"></a>Работа с проблемами подключения Базы данных SQL и временными ошибками
 
@@ -30,7 +30,7 @@ ms.locfileid: "73826811"
 
 Временные ошибки (или временные сбои) возникают из-за причин, которые вскоре устраняются автоматически. Иногда временная ошибка возникает потому, что система Azure быстро сменяет аппаратные ресурсы, чтобы лучше распределить нагрузку, связанную с разными рабочими нагрузками. Большинство этих событий перенастройки завершаются менее чем за 60 секунд. Когда выполняется эта перенастройка, могут возникнуть ошибки подключения к базе данных SQL. При разработке приложений, подключающихся к базе данных SQL Azure, следует учитывать возможность возникновения этих временных ошибок и предусматривать их обработку путем реализации логики повторных попыток в коде вместо вывода пользователю сообщений об ошибках приложения.
 
-Если клиентская программа использует пакет ADO.NET, ваша программа получает исключение **SqlException** и таким образом узнает о временной ошибке. Значение свойства **Number** можно сверить со списком временных ошибок в начале статьи [Коды ошибок SQL для клиентских приложений базы данных SQL: ошибки подключения к базе данных и другие проблемы](sql-database-develop-error-messages.md).
+Если клиентская программа использует пакет ADO.NET, ваша программа получает исключение **SqlException** и таким образом узнает о временной ошибке. 
 
 <a id="connection-versus-command" name="connection-versus-command"></a>
 
@@ -275,7 +275,7 @@ TCP port 1433 (ms-sql-s service): LISTENING
 
 Ниже приведены некоторые Transact-SQL-инструкции SELECT, которые запрашивают в журналах сведения об ошибках и прочую информацию.
 
-| Запрос у журнала | Description (Описание) |
+| Запрос у журнала | ОПИСАНИЕ |
 |:--- |:--- |
 | `SELECT e.*`<br/>`FROM sys.event_log AS e`<br/>`WHERE e.database_name = 'myDbName'`<br/>`AND e.event_category = 'connectivity'`<br/>`AND 2 >= DateDiff`<br/>&nbsp;&nbsp;`(hour, e.end_time, GetUtcDate())`<br/>`ORDER BY e.event_category,`<br/>&nbsp;&nbsp;`e.event_type, e.end_time;` |В представлении [sys.event_log](https://msdn.microsoft.com/library/dn270018.aspx) приводятся сведения об отдельных событиях, включая те, которые могут привести к временным ошибкам или проблемам с подключением.<br/><br/>В идеале значения **start_time** или **end_time** можно сопоставить с временем возникновения ошибок в клиентской программе.<br/><br/>Для выполнения этого запроса необходимо подключиться к базе данных *master*. |
 | `SELECT c.*`<br/>`FROM sys.database_connection_stats AS c`<br/>`WHERE c.database_name = 'myDbName'`<br/>`AND 24 >= DateDiff`<br/>&nbsp;&nbsp;`(hour, c.end_time, GetUtcDate())`<br/>`ORDER BY c.end_time;` |Представление [sys.database_connection_stats](https://msdn.microsoft.com/library/dn269986.aspx) отображает суммарное количество событий каждого типа, что также бывает полезно при дополнительной диагностике.<br/><br/>Для выполнения этого запроса необходимо подключиться к базе данных *master*. |
@@ -442,7 +442,7 @@ public bool IsTransient(Exception ex)
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Сведения об устранении других распространенных неполадок, возникающих при подключении к базе данных SQL, см. в статье [Устранение неполадок подключения к базе данных SQL Azure](sql-database-troubleshoot-common-connection-issues.md).
 - [Библиотеки подключений для Базы данных SQL и SQL Server](sql-database-libraries.md)

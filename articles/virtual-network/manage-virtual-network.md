@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/10/2019
 ms.author: kumud
-ms.openlocfilehash: 242cdcc07821151503dc6765f820187c0c3dfc53
-ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
+ms.openlocfilehash: 2c2994c310369a0a6fe26ccc2c1e2e5de6680349
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72515571"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74084697"
 ---
 # <a name="create-change-or-delete-a-virtual-network"></a>Создание, изменение или удаление виртуальной сети
 
@@ -35,11 +35,11 @@ ms.locfileid: "72515571"
 - При использовании команд интерфейса командной строки Azure (CLI) для работы с этой статьей выполняйте их в [Azure Cloud Shell](https://shell.azure.com/bash) или в интерфейсе командной строки на своем компьютере. Для этого руководства требуется Azure CLI 2.0.31 или более поздней версии. Выполните командлет `az --version`, чтобы узнать установленную версию. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli). Если Azure CLI запущен локально, необходимо также выполнить командлет `az login`, чтобы создать подключение к Azure.
 - Учетной записи, в которую вы входите или с помощью которой подключаетесь к Azure, должна быть назначена роль [Участник сетей](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor) или [пользовательская роль](../role-based-access-control/custom-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json), которой назначены соответствующие действия, перечисленные в таблице [Разрешения](#permissions).
 
-## <a name="create-a-virtual-network"></a>Создание виртуальной сети
+## <a name="create-a-virtual-network"></a>Создать виртуальную сеть
 
 1. Щелкните **+Создать ресурс** > **Сети** > **Виртуальная сеть**.
 2. Введите или выберите значения описанных ниже параметров, а затем щелкните **Создать**.
-   - **Имя.** Имя должно быть уникальным в пределах [группы ресурсов](../azure-glossary-cloud-terminology.md?toc=%2fazure%2fvirtual-network%2ftoc.json#resource-group), выбранной для создания виртуальной сети. Имя невозможно изменить после создания виртуальной сети. Со временем вы сможете создать несколько виртуальных сетей. Рекомендации по именованию см. в статье, посвященной [соглашениям об именовании](/azure/cloud-adoption-framework/ready/considerations/naming-and-tagging#resource-naming). Придерживаясь соглашений об именовании, вы сможете упростить управление несколькими виртуальными сетями.
+   - **Имя.** Имя должно быть уникальным в пределах [группы ресурсов](../azure-glossary-cloud-terminology.md?toc=%2fazure%2fvirtual-network%2ftoc.json#resource-group), выбранной для создания виртуальной сети. Имя невозможно изменить после создания виртуальной сети. Со временем вы сможете создать несколько виртуальных сетей. Рекомендации по именованию см. в статье, посвященной [соглашениям об именовании](/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging#naming-and-tagging-resources). Придерживаясь соглашений об именовании, вы сможете упростить управление несколькими виртуальными сетями.
    - **Адресное пространство**. Адресное пространство виртуальной сети состоит из одного или нескольких неперекрывающихся диапазонов адресов, указанных в нотации CIDR. Определяемый диапазон адресов может быть общедоступным или частным (RFC 1918). Независимо от того, какой диапазон адресов вы укажете (общедоступный или частный), он будет доступен только внутри виртуальной сети, из взаимосвязанных виртуальных сетей и из всех локальных сетей, подключенных к виртуальной сети. Невозможно добавить следующий диапазон адресов:
      - 224.0.0.0/4 (многоадресная рассылка)
      - 255.255.255.255/32 (широковещательный адрес)
@@ -171,13 +171,13 @@ ms.locfileid: "72515571"
 
 Для выполнения задач в виртуальных сетях учетной записи должна быть назначена роль [Участник сети](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor) или [пользовательская](../role-based-access-control/custom-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json) роль, которой назначены соответствующие действия, перечисленные в следующей таблице.
 
-| Действия                                  |   Name                                |
+| Действие                                  |   имя                                |
 |---------------------------------------- |   --------------------------------    |
 |Microsoft.Network/virtualNetworks/read   |   Чтение виртуальной сети.              |
 |Microsoft.Network/virtualNetworks/write  |   Создание или обновление виртуальной сети.  |
 |Microsoft.Network/virtualNetworks/delete |   Удаление виртуальной сети            |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Создайте виртуальную сеть с помощью примеров сценариев [PowerShell](powershell-samples.md) или [Azure CLI](cli-samples.md) либо на основе [шаблонов Azure Resource Manager](template-samples.md).
-- Создание и применение [политики Azure](policy-samples.md) для виртуальных сетей
+- Создайте и примените [политику Azure](policy-samples.md) для виртуальных сетей.

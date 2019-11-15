@@ -1,5 +1,5 @@
 ---
-title: Включение репликации для диска, добавленного в виртуальную машину Azure, реплицируемую с помощью Azure Site Recovery | Документация Майкрософт
+title: Включение репликации для добавленного диска виртуальной машины Azure в Azure Site Recovery
 description: В этой статье описывается, как включить репликацию для диска, добавленного в виртуальную машину Azure, для которой включено аварийное восстановление с помощью Azure Site Recovery
 services: site-recovery
 author: asgang
@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 04/29/2019
 ms.author: asgang
-ms.openlocfilehash: 068464b8a3919d833418c8f3916ccf5c54835c6f
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 6cbe71d67417ce817d317b65f27d0e6ceabec983
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68934546"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74084990"
 ---
 # <a name="enable-replication-for-a-disk-added-to-an-azure-vm"></a>Включение репликации для диска, добавленного в виртуальную машину Azure
 
@@ -32,9 +32,9 @@ ms.locfileid: "68934546"
 
 
 
-## <a name="before-you-start"></a>Перед началом
+## <a name="before-you-start"></a>Перед началом работы
 
-В этой статье предполагается, что вы уже настроили аварийное восстановление для виртуальной машины, в которую добавляется диск. Если вы этого не сделали, следуйте указаниям в руководстве по аварийному восстановлению из [Azure в Azure](azure-to-azure-tutorial-enable-replication.md). 
+В этой статье предполагается, что вы уже настроили аварийное восстановление для виртуальной машины, в которую добавляется диск. Если вы этого не сделали, следуйте указаниям в [руководстве по аварийному восстановлению из Azure в Azure](azure-to-azure-tutorial-enable-replication.md). 
 
 ## <a name="enable-replication-for-an-added-disk"></a>Включение репликации для добавленного диска 
 
@@ -50,6 +50,6 @@ ms.locfileid: "68934546"
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о выполнении тестовой отработки отказа см. в [этой статье](site-recovery-test-failover-to-azure.md).

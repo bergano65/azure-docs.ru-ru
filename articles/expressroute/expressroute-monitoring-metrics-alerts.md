@@ -1,5 +1,5 @@
 ---
-title: Мониторинг, метрики и оповещения в Azure ExpressRoute | Документация Майкрософт
+title: 'Azure ExpressRoute: мониторинг, метрики и оповещения'
 description: Эта страница содержит сведения о мониторинге в ExpressRoute
 services: expressroute
 author: mialdrid
@@ -7,13 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 08/22/2019
 ms.author: cherylmc
-ms.custom: seodec18
-ms.openlocfilehash: 40e5561c9a55595340568ec660cbc6dd6e1eab51
-ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
+ms.openlocfilehash: 95083809f8fcfe42ae76faa0af507c7ce4acd709
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2019
-ms.locfileid: "71672046"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74083428"
 ---
 # <a name="expressroute-monitoring-metrics-and-alerts"></a>Мониторинг, метрики и оповещения в ExpressRoute
 
@@ -32,16 +31,16 @@ ms.locfileid: "71672046"
 ### <a name="available-metrics"></a>Доступные метрики
 |**Метрика**|**Категория**|**Измерения (s)**|**Функции**|
 | --- | --- | --- | --- |
-|Доступность ARP|Доступность|<ui><li>Одноранговый (основной или дополнительный маршрутизатор ExpressRoute)</ui></li><ui><li> Тип пиринга (частный, общедоступный/Майкрософт)</ui></li>|ExpressRoute|
+|Доступность ARP|Доступность|<ui><li>Одноранговый (основной или дополнительный маршрутизатор ExpressRoute)</ui></li><ui><li> Тип пиринга (частный/открытый/Майкрософт)</ui></li>|ExpressRoute|
 |Доступность BGP|Доступность|<ui><li> Одноранговый (основной или дополнительный маршрутизатор ExpressRoute)</ui></li><ui><li> Тип пиринга</ui></li>|ExpressRoute|
-|BitsInPerSecond|Трафик|<ui><li> Тип пиринга (ExpressRoute)</ui></li><ui><li>Ссылка (с ExpressRoute Direct)</ui></li>| <li> ExpressRoute</li><li>ExpressRoute Direct|
-|BitsOutPerSecond|Трафик| <ui><li>Тип пиринга (ExpressRoute)</ui></li><ui><li> Ссылка (с ExpressRoute Direct) | <ui><li>ExpressRoute<ui><li>Непосредственный ExpressRoute</ui></li> |
-|глобалреачбитсинперсеконд|Трафик|<ui><li>Скэйная цепь (ключ службы)</ui></li>|Global Reach|
-|глобалреачбитсаутперсеконд|Трафик|<ui><li>Скэйная цепь (ключ службы)</ui></li>|Global Reach|
-|админстате|Физическое подключение|Ссылка|ExpressRoute Direct|
-|линепротокол|Физическое подключение|Ссылка|ExpressRoute Direct|
-|ркслигхтлевел|Физическое подключение|<ui><li>Ссылку</ui></li><ui><li>Lane</ui></li>|ExpressRoute Direct|
-|ткслигхтлевел|Физическое подключение|<ui><li>Ссылку</ui></li><ui><li>Lane</ui></li>|ExpressRoute Direct|
+|BitsInPerSecond|Трафик|<ui><li> Тип пиринга (ExpressRoute)</ui></li><ui><li>Ссылка (ExpressRoute Direct)</ui></li>| <li> ExpressRoute</li><li>ExpressRoute Direct|
+|BitsOutPerSecond|Трафик| <ui><li>Тип пиринга (ExpressRoute)</ui></li><ui><li> Ссылка (с ExpressRoute Direct) | <ui><li><ui> ExpressRoute<li>Прямой</ui> ExpressRoute</li> |
+|глобалреачбитсинперсеконд|Трафик|<ui><li></ui> с одноранговым каналом (Скэй ключ службы)</li>|Global Reach|
+|глобалреачбитсаутперсеконд|Трафик|<ui><li></ui> с одноранговым каналом (Скэй ключ службы)</li>|Global Reach|
+|админстате|Физическое подключение|Ссылка|ExpressRoute Direct|
+|линепротокол|Физическое подключение|Ссылка|ExpressRoute Direct|
+|ркслигхтлевел|Физическое подключение|<ui><li>Ссылка</ui></li><ui><li></ui> Lane</li>|ExpressRoute Direct|
+|ткслигхтлевел|Физическое подключение|<ui><li>Ссылка</ui></li><ui><li></ui> Lane</li>|ExpressRoute Direct|
 >[!NOTE]
 >Использование *глобалглобалреачбитсинперсеконд* и *глобалглобалреачбитсаутперсеконд* будет видимым, только если установлено хотя бы одно Global REACH соединение.
 >
@@ -112,11 +111,11 @@ ms.locfileid: "71672046"
 
 1. Чтобы настроить оповещения, перейдите к **Azure Monitor** и щелкните **Оповещения**.
 
-   ![оповещений](./media/expressroute-monitoring-metrics-alerts/eralertshowto.jpg)
+   ![оповещения](./media/expressroute-monitoring-metrics-alerts/eralertshowto.jpg)
 
 2. Щелкните **+Select Target** (Выбрать целевой объект) и выберите ресурс подключения шлюза ExpressRoute.
 
-   ![target;]( ./media/expressroute-monitoring-metrics-alerts/alerthowto2.jpg)
+   ![target]( ./media/expressroute-monitoring-metrics-alerts/alerthowto2.jpg)
 3. Указание сведений для оповещения.
 
    ![группа действий](./media/expressroute-monitoring-metrics-alerts/alerthowto3.jpg)
@@ -135,10 +134,10 @@ ms.locfileid: "71672046"
 
   ![другое](./media/expressroute-monitoring-metrics-alerts/alertshowto6activitylog.jpg)
   
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Настройте подключение ExpressRoute.
   
-  * [Создание и изменение канала](expressroute-howto-circuit-arm.md)
-  * [Создание и изменение конфигурации пиринга](expressroute-howto-routing-arm.md)
+  * [Создание и изменение канала ExpressRoute с помощью PowerShell](expressroute-howto-circuit-arm.md)
+  * [Создание и изменение пиринга для канала ExpressRoute с помощью PowerShell](expressroute-howto-routing-arm.md)
   * [Связывание виртуальной сети с каналом ExpressRoute](expressroute-howto-linkvnet-arm.md)

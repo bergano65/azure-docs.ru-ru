@@ -10,20 +10,20 @@ ms.topic: conceptual
 author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: vanto, genemi
-ms.date: 08/27/2019
-ms.openlocfilehash: f171181aa56287561aba3159f5039f70165dc8ab
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.date: 11/14/2019
+ms.openlocfilehash: faf3573178693ec806000eb89ce7a975955d61b9
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73807518"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74084119"
 ---
 # <a name="use-virtual-network-service-endpoints-and-rules-for-database-servers"></a>Использование конечных точек служб и правил виртуальной сети для серверов базы данных
 
 *Правила виртуальной сети* — это одна из функций безопасности брандмауэра, которая контролирует то, обеспечивает ли сервер отдельной базы данных и эластичного пула в [Базе данных SQL](sql-database-technical-overview.md) Azure или базы данных в [Хранилище данных SQL](../sql-data-warehouse/sql-data-warehouse-overview-what-is.md) обмен данными с определенными подсетями в виртуальных сетях. В этой статье объясняется, почему правила виртуальной сети иногда являются лучшим вариантом для защиты подключений к базе данных SQL Azure и хранилищу данных SQL.
 
 > [!IMPORTANT]
-> Эта статья относится к Azure SQL Server, а также к базам данных SQL и хранилища данных SQL, создаваемым на сервере SQL Azure. Для простоты база данных SQL используется как для базы данных SQL, так и для хранилища данных SQL. Эта статья *не* применяется к развертыванию **управляемого экземпляра** в Базе данных SQL Azure, так как с ним не связана конечная точка службы.
+> Эта статья относится к Azure SQL Server, а также к базам данных SQL и хранилища данных SQL, создаваемым на сервере SQL Azure. Для простоты база данных SQL используется как для базы данных SQL, так и для хранилища данных SQL. Эта статья *не* применяется к развертыванию **управляемого экземпляра** в Базе данных SQL Azure, так как с ним не связана конечная точка службы.
 
 Чтобы создать правило виртуальной сети, сначала необходимо указать [конечную точку службы виртуальной сети][vm-virtual-network-service-endpoints-overview-649d] , на которую будет ссылаться правило.
 
@@ -112,7 +112,7 @@ When searching for blogs about ASM, you probably need to use this old and now-fo
 
 PolyBase часто используют для загрузки данных в Хранилище данных SQL Azure из учетных записей службы хранилища Azure. Если учетная запись службы хранилища Azure, из которой загружаются данные, предоставляет доступ только к набору подсетей виртуальной сети, подключение из PolyBase к учетной записи будет прервано. Чтобы обеспечить возможность импорта и экспорта PolyBase в Хранилище данных SQL Azure, подключенное к службе хранилища Azure, прикрепленной к виртуальной сети, сделайте следующее:
 
-#### <a name="prerequisites"></a>Предварительные требования
+#### <a name="prerequisites"></a>предварительным требованиям
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -203,8 +203,6 @@ PolyBase часто используют для загрузки данных в
 
 *Устранение ошибки.* Введите IP-адрес клиента в качестве правила IP-адреса. Это следует сделать в области "Брандмауэр" на портале Azure.
 
-Список некоторых сообщений об ошибках базы данных SQL описан [здесь][sql-database-develop-error-messages-419g].
-
 <a name="anchor-how-to-by-using-firewall-portal-59j" />
 
 ## <a name="portal-can-create-a-virtual-network-rule"></a>Портал может создать правило виртуальной сети
@@ -226,7 +224,7 @@ PolyBase часто используют для загрузки данных в
 
 - [Правила виртуальной сети: операции][rest-api-virtual-network-rules-operations-862r]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 Необходима подсеть, помеченная определенным *именем типа* конечной точки службы для виртуальной сети, относящимся к базе данных SQL Azure.
 
@@ -237,7 +235,7 @@ PolyBase часто используют для загрузки данных в
 
 ## <a name="azure-portal-steps"></a>Инструкции для портала Azure
 
-1. Войдите на [портал Azure][http-azure-portal-link-ref-477t].
+1. Войдите на [портале Azure][http-azure-portal-link-ref-477t].
 
 2. Выберите **Серверы SQL Server** &gt; **Брандмауэр или виртуальные сети**.
 
@@ -280,7 +278,7 @@ PolyBase часто используют для загрузки данных в
 
 Функция правила виртуальной сети для Базы данных SQL Azure стала доступной в конце сентября 2017 г.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - [С помощью PowerShell создайте конечную точку службы виртуальной сети, а затем правило виртуальной сети для базы данных SQL Azure.][sql-db-vnet-service-endpoint-rule-powershell-md-52d]
 - [Правила виртуальной сети. операции][rest-api-virtual-network-rules-operations-862r] с помощью API-ИНТЕРФЕЙСов RESTful
@@ -302,8 +300,6 @@ PolyBase часто используют для загрузки данных в
 [rbac-what-is-813s]:../role-based-access-control/overview.md
 
 [sql-db-firewall-rules-config-715d]: sql-database-firewall-configure.md
-
-[sql-database-develop-error-messages-419g]: sql-database-develop-error-messages.md
 
 [sql-db-vnet-service-endpoint-rule-powershell-md-52d]: sql-database-vnet-service-endpoint-rule-powershell.md
 

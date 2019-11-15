@@ -5,15 +5,15 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: include
-ms.date: 11/04/2019
+ms.date: 11/12/2019
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 75152fabfc33dda0494d871fbdf9a388f4260c0d
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 8087025810214f3edbb74e628698eb69558f3500
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73495757"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74085271"
 ---
 Во время создания шлюза виртуальной сети нужно указать SKU шлюза, который вы хотите использовать. Выберите номер SKU, который соответствует требованиям, в зависимости от типов рабочих нагрузок, пропускной способности, функций и соглашений об уровне обслуживания. Сведения о SKU шлюзов виртуальной сети в Зоны доступности Azure см. в разделе [номера SKU шлюзов зоны доступности Azure](../articles/vpn-gateway/about-zone-redundant-vnet-gateways.md).
 
@@ -21,7 +21,11 @@ ms.locfileid: "73495757"
 
 [!INCLUDE [Aggregated throughput by SKU](./vpn-gateway-table-gwtype-aggtput-include.md)]
 
-[!INCLUDE [classic SKU](./vpn-gateway-classic-sku-support-include.md)]
+> [!NOTE]
+> Номера SKU VpnGw (VpnGw1, VpnGw1AZ, VpnGw2, VpnGw2AZ, VpnGw3, VpnGw3AZ, VpnGw4, VpnGw4AZ, VpnGw5 и VpnGw5AZ) поддерживаются только для модели развертывания диспетчер ресурсов. В классических виртуальных сетях следует и дальше использовать старые номера SKU (прежних версий).
+>  * Сведения о работе со старыми номерами SKU шлюза ("Базовый", "Стандартный" и HighPerformance) см. в статье [Работа со SKU шлюза виртуальной сети (старые версии SKU)](../articles/vpn-gateway/vpn-gateway-about-skus-legacy.md).
+>  * Номера SKU для шлюзов ExpressRoute см. в статье статью [Сведения о шлюзах виртуальных сетей ExpressRoute](../articles/expressroute/expressroute-about-virtual-network-gateways.md).
+>
 
 ###  <a name="feature"></a>Номера SKU шлюза с использованием набора функций
 
@@ -30,7 +34,7 @@ ms.locfileid: "73495757"
 | **SKU**| **Функции**|
 | ---    | ---         |
 |**Basic** (\*\*).   | **VPN на основе маршрутов**: 10 туннелей для S2S и подключений; без аутентификации RADIUS для подключения типа "точка — сеть"; без протокола IKEv2 для подключения типа "точка — сеть".<br>**VPN на основе политики**: (IKEv1): 1 туннель S2S и тоннель подключения; без P2S.|
-| **Все номера SKU Generation1 и Generation2, кроме Basic** | **VPN на основе маршрутов:** до 30 туннелей (*), P2S, BGP, режим "активный — активный", пользовательские политики IPsec и IKE, совместимость ExpressRoute с VPN. |
+| **Все номера SKU Generation1 и Generation2, кроме Basic** | **VPN на основе маршрутов:** до 30 туннелей (\*), P2S, BGP, режим "активный — активный", пользовательские политики IPsec и IKE, совместимость ExpressRoute с VPN. |
 |        |             |
 
 (*) Вы можете настроить "PolicyBasedTrafficSelectors" для подключения VPN-шлюза на основе маршрутов к нескольким локальным устройствам брандмауэра на основе политик. См. дополнительные сведения о [подключении VPN-шлюзов к нескольким локальным VPN-устройствам на основе политик с помощью PowerShell](../articles/vpn-gateway/vpn-gateway-connect-multiple-policybased-rm-ps.md).

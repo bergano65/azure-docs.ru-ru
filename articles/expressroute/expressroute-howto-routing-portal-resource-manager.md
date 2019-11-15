@@ -1,5 +1,5 @@
 ---
-title: 'Настройка пиринга для канала — ExpressRoute: Azure | Документация Майкрософт'
+title: 'Azure ExpressRoute: Настройка пиринга'
 description: В этой статье описаны действия по созданию и подготовке частного и пиринга Майкрософт для ExpressRoute. В этой статье также показано, как проверить состояние, обновить или удалить пиринга для канала.
 services: expressroute
 author: mialdrid
@@ -7,22 +7,21 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 06/28/2019
 ms.author: mialdrid
-ms.custom: seodec18
-ms.openlocfilehash: 30b330d60d75896406cbdf2d1eb41537960c5be5
-ms.sourcegitcommit: c4700ac4ddbb0ecc2f10a6119a4631b13c6f946a
+ms.openlocfilehash: 5fb728cccd77d0cefd10c124cb7215dc3b880fe3
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2019
-ms.locfileid: "72965284"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74083524"
 ---
 # <a name="create-and-modify-peering-for-an-expressroute-circuit"></a>Создание и изменение пиринга для канала ExpressRoute
 
 Эта статья поможет вам создать конфигурацию маршрутизации для канала ExpressRoute Azure Resource Manager (ARM) и управлять ею с помощью портал Azure. Вы также сможете проверить состояние, обновить, удалить и отозвать пиринги для канала ExpressRoute. Если вы хотите использовать для работы с каналом другой метод, выберите подходящую статью из списка ниже.
 
 > [!div class="op_single_selector"]
-> * [Портал Azure](expressroute-howto-routing-portal-resource-manager.md)
+> * [портал Azure](expressroute-howto-routing-portal-resource-manager.md)
 > * [PowerShell](expressroute-howto-routing-arm.md)
-> * [Azure CLI](howto-routing-cli.md)
+> * [Интерфейс командной строки Azure](howto-routing-cli.md)
 > * [Видео — частный пиринг](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-set-up-azure-private-peering-for-your-expressroute-circuit)
 > * [Видео — общедоступный пиринг](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-set-up-azure-public-peering-for-your-expressroute-circuit)
 > * [Видео — пиринг Майкрософт](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-set-up-microsoft-peering-for-your-expressroute-circuit)
@@ -33,8 +32,8 @@ ms.locfileid: "72965284"
 
 ## <a name="configuration-prerequisites"></a>Предварительные требования для настройки
 
-* Прежде чем приступать к настройке, обязательно изучите [предварительные требования](expressroute-prerequisites.md), [требования к маршрутизации](expressroute-routing.md) и [рабочие процессы](expressroute-workflows.md).
-* Вам потребуется активный канал ExpressRoute. Приступая к работе, [создайте канал ExpressRoute](expressroute-howto-circuit-portal-resource-manager.md); он должен быть затем включен на стороне поставщика услуг подключения. Для настройки пиринга (-ов) канал ExpressRoute должен быть подготовлен и включен. 
+* Прежде чем приступить к настройке, обязательно изучите [предварительные требования](expressroute-prerequisites.md), [требования к маршрутизации](expressroute-routing.md) и [рабочие процессы](expressroute-workflows.md).
+* Вам потребуется активный канал ExpressRoute. Приступая к работе, [создайте канал ExpressRoute](expressroute-howto-circuit-portal-resource-manager.md) ; он должен быть затем включен на стороне поставщика услуг подключения. Для настройки пиринга (-ов) канал ExpressRoute должен быть подготовлен и включен. 
 * Если вы планируете использовать общий ключ или хэш MD5, обязательно используйте его на обеих сторонах туннеля и Ограничьте число цифр, состоящего из буквенно-цифровых символов, до 25. Специальные символы не поддерживаются. 
 
 Эти инструкции распространяются только на каналы от поставщиков, предоставляющих услуги подключения второго уровня. Если ваш поставщик услуг подключения предлагает услуги третьего уровня (обычно это IPVPN, например MPLS), он выполнит настройку маршрутизации и управление ею. 
@@ -122,7 +121,7 @@ ms.locfileid: "72965284"
 
 1. Настройте канал ExpressRoute. Прежде чем продолжить, убедитесь, что канал полностью подготовлен поставщиком услуг подключения. 
 
-   Если поставщик услуг подключения предоставляет управляемые службы уровня 3, он может включить для вас частный пиринг Azure. В этом случае вам не потребуется выполнять инструкции, перечисленные в следующих разделах. Однако если поставщик услуг подключения не управляет маршрутизацией за вас, то после создания канала перейдите к следующим шагам.
+   Если поставщик услуг подключения оказывает услуги третьего уровня, он может включить для вас частный пиринг Azure. В этом случае вам не потребуется выполнять инструкции, перечисленные в следующих разделах. Однако если поставщик услуг подключения не управляет маршрутизацией за вас, то после создания канала перейдите к следующим шагам.
 
    **Состояние поставщика канала: не подготовлено**
 
@@ -193,7 +192,7 @@ ms.locfileid: "72965284"
 
 Удалите конфигурацию пиринга, щелкнув значок Удалить.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Следующий шаг — [связывание виртуальной сети с каналом ExpressRoute](expressroute-howto-linkvnet-portal-resource-manager.md).
 * Дополнительную информацию о рабочих процессах ExpressRoute см. в статье [Процедуры ExpressRoute для подготовки каналов и состояний каналов](expressroute-workflows.md).

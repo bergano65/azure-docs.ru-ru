@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/17/2017
-ms.openlocfilehash: e0490913029efc17d12139378369646c286a276c
-ms.sourcegitcommit: b03516d245c90bca8ffac59eb1db522a098fb5e4
+ms.openlocfilehash: e5988bf1955502d89cc31bcc30672de983a399ec
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71145707"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74083341"
 ---
 # <a name="use-caffe-on-azure-hdinsight-spark-for-distributed-deep-learning"></a>Использование Caffe в кластере Azure HDInsight Spark для распределенного глубокого обучения
 
@@ -21,7 +21,7 @@ ms.locfileid: "71145707"
 
 Глубокое обучение используется во всех отраслях, начиная от здравоохранения и заканчивая сферой транспортировки и производством. Компании используют глубокое обучение для решения сложных проблем, таких так [классификация образов](https://blogs.microsoft.com/next/2015/12/10/microsoft-researchers-win-imagenet-computer-vision-challenge/), [распознавание речи](https://googleresearch.blogspot.jp/2015/08/the-neural-networks-behind-google-voice.html), распознавание объектов и машинный перевод.
 
-Существует [множество популярных платформ](https://en.wikipedia.org/wiki/Comparison_of_deep_learning_software), в том числе [Microsoft Cognitive Toolkit](https://www.microsoft.com/en-us/research/product/cognitive-toolkit/), [Tensorflow](https://www.tensorflow.org/), [Apache MXNet](https://mxnet.apache.org/), Theano и т. д. [Caffe](https://caffe.berkeleyvision.org/) — это самая известная платформа изучения нейронных сетей, работающая на уровне машинных команд. Она широко используется во многих областях, в том числе в компьютерном зрении. Кроме того, [CaffeOnSpark](https://yahoohadoop.tumblr.com/post/139916563586/caffeonspark-open-sourced-for-distributed-deep) объединяет Caffe с Apache Spark. В этом случае глубокое обучение можно легко использовать в существующем кластере Hadoop. Глубокое обучение можно использовать с конвейерами Spark ETL, чтобы уменьшить сложность системы и задержку для полного обучения решения.
+Существует [множество популярных платформ](https://en.wikipedia.org/wiki/Comparison_of_deep_learning_software), включая [Microsoft Cognitive Toolkit](https://www.microsoft.com/en-us/research/product/cognitive-toolkit/), [Tensorflow](https://www.tensorflow.org/), [Apache MXNet](https://mxnet.apache.org/), Theano и т. д. [Caffe](https://caffe.berkeleyvision.org/) — одна из наиболее известных несимвольных (императивных) платформ нейронных сетей и широко используется во многих областях, включая компьютерное зрение. Кроме того, [CaffeOnSpark](https://github.com/yahoo/CaffeOnSpark) объединяет Caffe с Apache Spark. В этом случае глубокое обучение можно легко использовать в существующем кластере Hadoop. Глубокое обучение можно использовать с конвейерами Spark ETL, чтобы уменьшить сложность системы и задержку для полного обучения решения.
 
 [HDInsight](https://azure.microsoft.com/services/hdinsight/) — это облачное предложение Apache Hadoop, предоставляющее оптимизированные аналитические кластеры с открытым кодом для Apache Spark, Apache Hive, Apache Hadoop, Apache HBase, Apache Storm, Apache Kafka и Служб машинного обучения. Платформа HDInsight поддерживает соглашение об уровне обслуживания на 99,9 %. Каждую из этих технологий больших данных и каждое из этих приложений от независимых поставщиков программного обеспечения можно с легкостью развернуть в качестве управляемых кластеров, обеспечив при этом безопасность и мониторинг для предприятий.
 
@@ -36,7 +36,7 @@ ms.locfileid: "71145707"
 
 HDInsight — это платформа PaaS, предоставляющая расширенные функции, которые упрощают выполнение некоторых заданий. Одна из функций, используемая при выполнении действий, описанных в этой записи блога, называется [Script Action](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux) (Действие скрипта). Она позволяет выполнять команды оболочки, необходимые для настройки узлов кластера (головного, рабочего или граничного).
 
-## <a name="step-1--install-the-required-dependencies-on-all-the-nodes"></a>Шаг 1.  Установка необходимых зависимостей на всех узлах.
+## <a name="step-1--install-the-required-dependencies-on-all-the-nodes"></a>Этап 1. Установка необходимых зависимостей на всех узлах
 
 Чтобы начать работу, нужно установить необходимые зависимости. На сайте Caffe и [сайте CaffeOnSpark](https://github.com/yahoo/CaffeOnSpark/wiki/GetStarted_yarn) предлагается несколько полезных вики-сайтов об установке зависимостей для Spark в режиме YARN. HDInsight также использует Spark в режиме YARN. Тем не менее необходимо добавить несколько дополнительных зависимостей для платформы HDInsight. Для этого воспользуйтесь приведенным ниже действием сценария и выполните его на всех головных и рабочих узлах. Его выполнение занимает примерно 20 минут, так как эти зависимости также зависят от других пакетов. Это действие скрипта следует разместить в доступном для кластера HDInsight расположении, например в репозитории GitHub или в учетной записи хранилища BLOB-объектов по умолчанию.
 
@@ -66,7 +66,7 @@ HDInsight — это платформа PaaS, предоставляющая р
 
 ![Действия скриптов для установки зависимостей](./media/apache-spark-deep-learning-caffe/submit-script-action.png)
 
-## <a name="step-2-build-caffe-on-apache-spark-for-hdinsight-on-the-head-node"></a>Шаг 2. Создание Caffe в Apache Spark для Azure HDInsight на головном узле
+## <a name="step-2-build-caffe-on-apache-spark-for-hdinsight-on-the-head-node"></a>Этап 2. Создание Caffe в Apache Spark для Azure HDInsight на головном узле
 
 Второй этап заключается в создании Caffe на головном узле и развертывании скомпилированных библиотек на всех рабочих узлах. На этом шаге необходимо [установить SSH-подключение к головному узлу](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-linux-use-ssh-unix). После этого необходимо следовать [процедуре сборки CaffeOnSpark](https://github.com/yahoo/CaffeOnSpark/wiki/GetStarted_yarn). Ниже приведен сценарий, который можно использовать для выполнения сборки CaffeOnSpark с несколькими дополнительными действиями.
 
@@ -112,7 +112,7 @@ HDInsight — это платформа PaaS, предоставляющая р
 - Отправка наборов данных в хранилище BLOB-объектов, которое находится в общем расположении, доступном для всех рабочих узлов (для последующего использования).
 - Отправка скомпилированных библиотек Caffe в хранилище BLOB-объектов и копирование этих библиотек во все узлы с помощью действий сценария, чтобы сократить время компиляции.
 
-### <a name="troubleshooting-an-ant-buildexception-has-occurred-exec-returned-2"></a>Устранение неполадок: An Ant BuildException has occurred: exec returned: 2
+### <a name="troubleshooting-an-ant-buildexception-has-occurred-exec-returned-2"></a>Устранение неполадок, связанных с ошибкой "An Ant BuildException has occured: exec returned: 2".
 
 При первом создании CaffeOnSpark может отобразиться следующее сообщение об ошибке:
 
@@ -120,7 +120,7 @@ HDInsight — это платформа PaaS, предоставляющая р
 
 Чтобы устранить эту проблему, очистите репозиторий кода, используя команду make clean, а затем выполните команду make build (при условии, что вы установили правильные зависимости).
 
-### <a name="troubleshooting-maven-repository-connection-time-out"></a>Устранение неполадок: ошибка времени ожидания подключения к репозиторию Maven
+### <a name="troubleshooting-maven-repository-connection-time-out"></a>Устранение неполадок, связанных с ошибкой времени ожидания подключения к репозиторию Maven
 
 Иногда при подключении к Maven возникает ошибка времени ожидания подключения. Пример фрагмента этой ошибки представлен ниже.
 
@@ -131,7 +131,7 @@ HDInsight — это платформа PaaS, предоставляющая р
 
 Необходимо повторить попытку через несколько минут.
 
-### <a name="troubleshooting-test-failure-for-caffe"></a>Устранение неполадок: ошибка тестирования для Caffe
+### <a name="troubleshooting-test-failure-for-caffe"></a>Устранение неполадок, связанных со сбоем тестирования Caffe
 
 При выполнении окончательной проверки CaffeOnSpark может возникнуть ошибка тестирования. Скорее всего, это связано с кодировкой UTF-8, но эта ошибка не влияет на использование Caffe.
 
@@ -141,7 +141,7 @@ HDInsight — это платформа PaaS, предоставляющая р
     Tests: succeeded 6, failed 1, canceled 0, ignored 0, pending 0
     *** 1 TEST FAILED ***
 
-## <a name="step-3-distribute-the-required-libraries-to-all-the-worker-nodes"></a>Шаг 3. Развертывание необходимых библиотек на всех рабочих узлах.
+## <a name="step-3-distribute-the-required-libraries-to-all-the-worker-nodes"></a>Этап 3. Развертывание необходимых библиотек на всех рабочих узлах.
 
 Следующий этап заключается в развертывании библиотек (в основном они расположены в каталоге CaffeOnSpark/caffe-public/distribute/lib/ и CaffeOnSpark/caffe-distri/distribute/lib/) на всех узлах. На этапе 2 вы поместили эти библиотеки в хранилище BLOB-объектов. Теперь с помощью действий сценария это хранилище необходимо скопировать на все головные и рабочие узлы.
 
@@ -154,7 +154,7 @@ HDInsight — это платформа PaaS, предоставляющая р
 
 На этапе 2 вы поместили это действие скрипта в хранилище BLOB-объектов, доступное для всех узлов, поэтому сейчас его нужно скопировать на все узлы.
 
-## <a name="step-4-compose-a-caffe-model-and-run-it-in-a-distributed-manner"></a>Шаг 4. Разработка модели Caffe и ее распределенный запуск
+## <a name="step-4-compose-a-caffe-model-and-run-it-in-a-distributed-manner"></a>Шаг 4. Разработка модели Caffe и ее распределенный запуск
 
 Компонент Caffe устанавливается после выполнения предыдущих шагов. Следующий этап заключается в написании модели Caffe. 
 
@@ -164,7 +164,7 @@ Caffe использует "выразительную" архитектуру, 
 
 Эта система предоставляет несколько образцов сетевых топологий для обучения MNIST. Она предоставляет эффективную модель разбиения и оптимизации сетевой инфраструктуры (топология сети). В этом случае вам потребуется два указанных ниже файла.
 
-Файл "алгоритма решения" (${CAFFE_ON_SPARK}/data/lenet_memory_solver.prototxt) используется для отслеживания оптимизаций и создания обновлений параметров. Например, он определяет, следует ли использовать ЦП или GPU, а также определяет динамику, число итераций и т. д. Кроме того, он определяет, какую топологию нейронных сетей должна использовать программа (в этом случае вам нужен второй файл). Дополнительные сведения об алгоритме решения см. в [документации по Caffe](https://caffe.berkeleyvision.org/tutorial/solver.html).
+Файл "алгоритма решения" (${CAFFE_ON_SPARK}/data/lenet_memory_solver.prototxt) используется для отслеживания оптимизаций и создания обновлений параметров. Например, он определяет, используется ли ЦП или GPU, какова нагрузка, сколько итераций и т. д. Он также определяет топологию сети нейрона, которая должна использоваться программой (это второй файл, который вам нужен). Дополнительные сведения об алгоритме решения см. в [документации по Caffe](https://caffe.berkeleyvision.org/tutorial/solver.html).
 
 Так как вы используете ЦП, а не графический процессор, измените последнюю строку следующим образом:
 
@@ -285,12 +285,12 @@ Caffe использует "выразительную" архитектуру, 
 
 ## <a name="seealso"></a>Дополнительные материалы
 
-* [Apache Spark в Azure HDInsight](apache-spark-overview.md)
+* [Обзор: Apache Spark в Azure HDInsight](apache-spark-overview.md)
 
 ### <a name="scenarios"></a>Сценарии
 
-* [Использование Apache Spark MLlib для Создание приложения машинного обучения Apache Spark в HDInsight](apache-spark-ipython-notebook-machine-learning.md)
-* [Использование Apache Spark MLlib для создания приложения машинного обучения и анализа набора данных](apache-spark-machine-learning-mllib-ipython.md)
+* [Использование Apache Spark с машинным обучением. Использование Spark в HDInsight для анализа температуры в здании на основе данных системы кондиционирования](apache-spark-ipython-notebook-machine-learning.md)
+* [Apache Spark и Машинное обучение. Прогнозирование результатов проверки пищевых продуктов с помощью Spark в HDInsight](apache-spark-machine-learning-mllib-ipython.md)
 
 ### <a name="manage-resources"></a>Управление ресурсами
 

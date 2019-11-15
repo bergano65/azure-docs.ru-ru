@@ -1,5 +1,5 @@
 ---
-title: Управление обменом сообщений облачного устройства Центра Интернета вещей Azure с помощью средств Интернета вещей Azure для Visual Studio Code | Документация Майкрософт
+title: Использование средств Azure IoT для VSCode для обмена сообщениями в центре ИТ-центра
 description: Узнайте, как использовать средства Интернета вещей Azure для Visual Studio Code для мониторинга и отправки сообщений между облаком и устройством в Центре Интернета вещей Azure.
 author: formulahendry
 ms.service: iot-hub
@@ -8,16 +8,16 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 01/18/2019
 ms.author: junhan
-ms.openlocfilehash: 1289e9c8f8cfc9360c9b2325507b43bab3a69028
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
+ms.openlocfilehash: 785c6f2b36396558cc21ce6c025be59c456ff32d
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67838507"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74083259"
 ---
 # <a name="use-azure-iot-tools-for-visual-studio-code-to-send-and-receive-messages-between-your-device-and-iot-hub"></a>Обмен сообщениями между устройством и Центром Интернета вещей с помощью расширения набора средств Центра Интернета вещей Azure для Visual Studio Code
 
-![Комплексная схема](./media/iot-hub-vscode-iot-toolkit-cloud-device-messaging/e-to-e-diagram.png)
+![Сквозная схема](./media/iot-hub-vscode-iot-toolkit-cloud-device-messaging/e-to-e-diagram.png)
 
 [Средства Интернета вещей Azure](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit) — это полезное расширение Visual Studio Code, которое упрощает управление Центром Интернета вещей и разработку приложений Интернета вещей. В этой статье рассматривается обмен сообщениями между устройством и Центром Интернета вещей с помощью средств Интернета вещей Azure для Visual Studio Code.
 
@@ -41,9 +41,9 @@ ms.locfileid: "67838507"
 
 * [Visual Studio Code](https://code.visualstudio.com/)
 
-* [Средства Интернета вещей Azure для VS Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools) или [открыть эту ссылку в Visual Studio Code](vscode:extension/vsciot-vscode.azure-iot-tools).
+* [Средства Azure IOT для VS Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools) или [открыть эту ссылку в Visual Studio Code](vscode:extension/vsciot-vscode.azure-iot-tools).
 
-## <a name="sign-in-to-access-your-iot-hub"></a>Вход в систему для получения доступа к Центру Интернета вещей
+## <a name="sign-in-to-access-your-iot-hub"></a>Войдите в систему для получения доступа к Центру Интернета вещей
 
 1. В представлении VS Code **Проводник** разверните раздел **Azure IoT Hub Devices** (Устройства Центра Интернета вещей Azure) в нижнем левом углу.
 
@@ -56,17 +56,17 @@ ms.locfileid: "67838507"
 5. Через несколько секунд на вкладке **Azure IoT Hub Devices** (Устройства Центра Интернета вещей Azure) отобразится список устройств.
 
    > [!Note]
-   > Можно также завершить настройку выбрав **Установка строки подключения Центра Интернета вещей**. Введите **iothubowner** политики строку подключения для центра Интернета вещей, к которому подключается ваше устройство Интернета вещей для во всплывающем окне.
+   > Можно также завершить настройку выбрав **Установка строки подключения Центра Интернета вещей**. Введите строку подключения политики **iothubowner** для центра Интернета вещей, к которому подключается устройство IOT во всплывающем окне.
 
 ## <a name="monitor-device-to-cloud-messages"></a>Отслеживание сообщений, отправляемых с устройства в облако
 
 Чтобы отслеживать сообщения, отправляемые в Центр Интернета вещей с устройства, выполните следующие действия.
 
-1. Щелкните устройство правой кнопкой мыши и выберите **начать мониторинг встроенную событий конечную точку**.
+1. Щелкните устройство правой кнопкой мыши и выберите команду **начать мониторинг встроенной конечной точки события**.
 
 2. Отслеживаемые сообщения будут отображаться в представлении **Выходные данные** > **Azure IoT Hub Toolkit** (Набор средств Центра Интернета вещей Azure).
 
-3. Чтобы остановить мониторинг, щелкните правой кнопкой мыши **выходные данные** просматривать и выбирать **Остановить мониторинг встроенную событий конечную точку**.
+3. Чтобы отключить мониторинг, щелкните правой кнопкой мыши представление **выходных данных** и выберите пункт **закончить мониторинг встроенной конечной точки события**.
 
 ## <a name="send-cloud-to-device-messages"></a>Отправка сообщений из облака на устройство
 
@@ -78,7 +78,7 @@ ms.locfileid: "67838507"
 
 3. Результаты отобразятся в представлении **Выходные данные** > **Azure IoT Hub Toolkit** (Набор средств Центра Интернета вещей Azure).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Вы узнали, как отслеживать сообщения, отправляемые из устройства Интернета вещей в облако Центра Интернета вещей, и отправлять сообщения из этого облака на устройство.
 

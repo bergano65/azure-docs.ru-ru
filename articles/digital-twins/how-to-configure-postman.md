@@ -8,12 +8,12 @@ ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
 ms.date: 11/13/2019
-ms.openlocfilehash: 8967b61115d2e2e644dea93cb236f8a7cdfcfcbd
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: 6a001d6b501a22b4b07599792a64af735c5d4d9b
+ms.sourcegitcommit: a170b69b592e6e7e5cc816dabc0246f97897cb0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/14/2019
-ms.locfileid: "74072271"
+ms.locfileid: "74090477"
 ---
 # <a name="how-to-configure-postman-for-azure-digital-twins"></a>Настройка Postman для Azure Digital Twins
 
@@ -61,6 +61,12 @@ ms.locfileid: "74072271"
 1. Настройте второй **URI перенаправления** для `https://www.getpostman.com/oauth2/callback`.
 
     [![добавить URI перенаправления POST](media/how-to-configure-postman/authentication-redirect-uri.png)](media/how-to-configure-postman/authentication-redirect-uri.png#lightbox)
+
+1. Чтобы убедиться, что [приложение зарегистрировано как **общедоступный клиент**](https://docs.microsoft.com/azure/active-directory/develop/scenario-desktop-app-registration), откройте панель **аутентификации** для регистрации приложения и прокрутите эту область вниз. В разделе **Тип клиента по умолчанию** выберите **Да** для **рассматривать приложение как общедоступный клиент**и нажмите кнопку **сохранить**.
+
+    Проверьте **маркеры доступа** , чтобы включить параметр **Oauth2AllowImplicitFlow** в файле manifest. JSON.
+
+    [![параметр конфигурации общедоступного клиента](../../includes/media/digital-twins-permissions/aad-public-client.png)](../../includes/media/digital-twins-permissions/aad-public-client.png#lightbox)
 
 1. Скопируйте и сохраните **идентификатор приложения** Azure AD. Он используется в последующих шагах.
 

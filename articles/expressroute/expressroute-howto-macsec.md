@@ -1,5 +1,5 @@
 ---
-title: 'Настройка Максек-ExpressRoute: Azure | Документация Майкрософт'
+title: 'Azure ExpressRoute: Настройка Максек'
 description: Эта статья поможет вам настроить Максек для защиты подключений между граничным маршрутизатором и граничным маршрутизатором Майкрософт.
 services: expressroute
 author: cherylmc
@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 10/22/2019
 ms.author: cherylmc
-ms.openlocfilehash: 081c448ff09148668dbe5e244e80421a47d77152
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: 626302845dfb4b19deb921675601818b35ab8edb
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73748278"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74083547"
 ---
 # <a name="configure-macsec-on-expressroute-direct-ports"></a>Настройка Максек для прямого порта ExpressRoute
 
@@ -134,7 +134,7 @@ Set-AzExpressRoutePort -ExpressRoutePort $erDirect
 ### <a name="test-connectivity"></a>Проверка подключения
 После настройки Максек (включая обновление ключа Максек) на портах с прямым подключением ExpressRoute [Проверьте](expressroute-troubleshooting-expressroute-overview.md) , работают ли сеансы BGP для каналов. Если у вас еще нет канала, создайте его сначала и настройте частный пиринг Azure или пиринг Майкрософт. Если Максек настроен неправильно, в том числе несовпадение ключей Максек, между сетевыми устройствами и сетевыми устройствами Майкрософт, разрешение ARP не будет отображаться на уровне 2 и на компьютере с установленным BGP на уровне 3. Если все настроено правильно, вы должны увидеть маршруты BGP, объявляемые правильно в обоих направлениях, и поток данных приложения в соответствии с ExpressRoute.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 1. [Создание канала ExpressRoute в ExpressRoute Direct](expressroute-howto-erdirect.md)
 2. [Подключение виртуальной сети к каналу ExpressRoute](expressroute-howto-linkvnet-arm.md).
 3. [Проверка подключения ExpressRoute](expressroute-troubleshooting-expressroute-overview.md).
