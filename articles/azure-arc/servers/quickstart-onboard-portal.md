@@ -10,12 +10,12 @@ keywords: служба автоматизации Azure, DSC, PowerShell, нас
 ms.date: 08/25/2019
 ms.custom: mvc
 ms.topic: quickstart
-ms.openlocfilehash: b014f6015b3e13a603cf3893062bd0463eb110ee
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 2ae7c8545286baebc83077276e356cd2e41f0dc3
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73488200"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73668678"
 ---
 # <a name="quickstart-connect-machines-to-azure-using-azure-arc-for-servers---portal"></a>Краткое руководство. Подключение компьютеров к Azure с помощью Azure Arc для серверов на портале
 
@@ -27,7 +27,7 @@ ms.locfileid: "73488200"
 
 ## <a name="generate-the-agent-install-script-using-the-azure-portal"></a>Создание скрипта установки агента с помощью портала Azure
 
-1. Запустите [https://aka.ms/hybridmachineportal ][aka_hybridmachineportal].
+1. Запустите [https://aka.ms/hybridmachineportal](https://aka.ms/hybridmachineportal)
 1. Щелкните **+Добавить**.
 1. Выполните все указания мастера.
 1. На последней странице создается скрипт, который можно скопировать (или скачать).
@@ -64,6 +64,29 @@ ms.locfileid: "73488200"
 
 1. Выберите компьютер на [портале](https://aka.ms/hybridmachineportal), щелкните многоточие (`...`) и выберите команду **Удалить**.
 1. Удалите агент с компьютера.
+
+   В Windows для удаления агента можно использовать панель управления "Приложения и возможности".
+  
+  ![Приложения и возможности](./media/quickstart-onboard/apps-and-features.png)
+
+   Если для удаления вам нужен скрипт, используйте приведенный ниже пример, который получает **PackageId**, и удалите агент с помощью команды `msiexec /X`.
+
+   Откройте раздел реестра `HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall` и найдите параметр **PackageId**. Затем можно удалить агент с помощью команды `msiexec`.
+
+   В приведенном ниже примере показано удаление агента.
+
+   ```powershell
+   Get-ChildItem -Path HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall | `
+   Get-ItemProperty | `
+   Where-Object {$_.DisplayName -eq "Azure Connected Machine Agent"} | `
+   ForEach-Object {MsiExec.exe /Quiet /X "$($_.PsChildName)"}
+   ```
+
+   В Linux выполните приведенную ниже команду, чтобы удалить агент.
+
+   ```bash
+   sudo apt purge hybridagent
+   ```
 
 ## <a name="next-steps"></a>Дополнительная информация
 

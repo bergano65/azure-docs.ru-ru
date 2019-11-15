@@ -10,16 +10,18 @@ ms.subservice: computer-vision
 ms.topic: tutorial
 ms.date: 09/04/2019
 ms.author: pafarley
-ms.openlocfilehash: 7caf4493db32201a8e83ffb3722c80c5e9b41a8f
-ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
+ms.openlocfilehash: ac292f020bb64c7c70ce3ea5c7f66fe9e9ed1bb7
+ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71057727"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73604652"
 ---
 # <a name="tutorial-use-computer-vision-to-generate-image-metadata-in-azure-storage"></a>Руководство по Создание метаданных изображений в службе хранилища Azure с помощью API компьютерного зрения
 
-В этом руководстве вы узнаете, как интегрировать службу API компьютерного зрения Azure в веб-приложение для создания метаданных для переданных изображений. Руководство по всему приложению можно найти на странице о [службе хранилища Azure и лаборатории Cognitive Services](https://github.com/Microsoft/computerscience/blob/master/Labs/Azure%20Services/Azure%20Storage/Azure%20Storage%20and%20Cognitive%20Services%20(MVC).md) на GitHub, а это руководство в основном охватывает упражнение 5 лаборатории. Вы можете создать сквозное приложение, следуя каждому шагу, но если вам просто интересно, как API компьютерного зрения можно интегрировать в существующее веб-приложение, прочтите об этом здесь.
+В этом руководстве вы узнаете, как интегрировать службу Azure "Компьютерное зрение" в веб-приложение для создания метаданных для переданных изображений. Это полезно для сценариев [управления цифровыми активами (DAM)](../Home.md#computer-vision-for-digital-asset-management), например, если компании нужно быстро создать для всех изображений описательные субтитры или ключевые слова с возможностью поиска.
+
+Руководство по всему приложению можно найти на странице о [службе хранилища Azure и лаборатории Cognitive Services](https://github.com/Microsoft/computerscience/blob/master/Labs/Azure%20Services/Azure%20Storage/Azure%20Storage%20and%20Cognitive%20Services%20(MVC).md) на GitHub, а это руководство в основном охватывает упражнение 5 лаборатории. Вы можете создать сквозное приложение, следуя каждому шагу, но если вам просто интересно, как API компьютерного зрения можно интегрировать в существующее веб-приложение, прочтите об этом здесь.
 
 В этом учебнике описаны следующие процедуры.
 

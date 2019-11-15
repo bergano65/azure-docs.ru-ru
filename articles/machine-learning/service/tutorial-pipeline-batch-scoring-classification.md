@@ -10,12 +10,12 @@ author: trevorbye
 ms.author: trbye
 ms.reviewer: trbye
 ms.date: 11/04/2019
-ms.openlocfilehash: f693a80726c9185bbd75d5fb99eb7e5f3ccad987
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: ccd29952693ecbc1db5927d5deabae874b6e9933
+ms.sourcegitcommit: 018e3b40e212915ed7a77258ac2a8e3a660aaef8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73493499"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73796691"
 ---
 # <a name="build--use-an-azure-machine-learning-pipeline-for-batch-scoring"></a>Создание и использование конвейеров Машинного обучения Azure для пакетной оценки
 
@@ -480,7 +480,7 @@ published_pipeline
 
 Проверка подлинности субъекта-службы включает в себя создание *регистрации приложения* в *Azure Active Directory*. Сначала необходимо создать секрет клиента, а затем предоставить субъекту-службе *доступ роли* к вашей рабочей области машинного обучения. Используйте класс [`ServicePrincipalAuthentication`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.authentication.serviceprincipalauthentication?view=azure-ml-py) для управления потоком проверки подлинности. 
 
-`InteractiveLoginAuthentication` и `ServicePrincipalAuthentication` наследуются от `AbstractAuthentication`. В обоих случаях используйте функцию `get_authentication_header()` для извлечения заголовка:
+[`InteractiveLoginAuthentication`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.authentication.interactiveloginauthentication?view=azure-ml-py) и `ServicePrincipalAuthentication` наследуются от `AbstractAuthentication`. В обоих случаях используйте функцию [`get_authentication_header()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.authentication.abstractauthentication?view=azure-ml-py#get-authentication-header--) для извлечения заголовка:
 
 ```python
 from azureml.core.authentication import InteractiveLoginAuthentication
@@ -522,7 +522,7 @@ RunDetails(published_pipeline_run).show()
 
 Не выполняйте инструкции из этого раздела, если вы собираетесь изучать другие руководства по Машинному обучению Azure.
 
-### <a name="stop-the-compute-instance"></a>Остановка экземпляра для вычислений
+### <a name="stop-the-notebook-vm"></a>Остановка работы виртуальной машины для записных книжек
 
 [!INCLUDE [aml-stop-server](../../../includes/aml-stop-server.md)]
 

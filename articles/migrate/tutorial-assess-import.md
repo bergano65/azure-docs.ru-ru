@@ -7,14 +7,17 @@ ms.service: azure-migrate
 ms.topic: tutorial
 ms.date: 10/23/2019
 ms.author: raynew
-ms.openlocfilehash: 86d61dbd75363f68ee4651bfb36f940810909c00
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 856f7f7735435579ac14918ee8026f27b222773e
+ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73509948"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73715508"
 ---
 # <a name="assess-servers-using-imported-data"></a>Оценка серверов по импортированным данным
+
+> [!NOTE]
+> Если эта функция отсутствует на портале миграции Azure, подождите. Предположительно, она появится в течение следующей недели.
 
 В этой статье описывается, как оценивать локальные серверы с помощью средства [Оценка серверов в службе "Миграция Azure"](migrate-services-overview.md#azure-migrate-server-assessment-tool) путем импорта метаданных сервера с использованием CSV-файла. Такой метод оценки позволяет обойтись без настройки модуля службы "Миграция Azure" для создания оценки. Это полезно в следующих случаях: 
 
@@ -267,7 +270,7 @@ Application 2 name, Application 2 type, Application 2 version, Application 2 lic
 
 ### <a name="review-azure-readiness"></a>Проверка готовности к работе в Azure
 
-1. В разделе **Готовность к работе в Azure** проверьте, готовы ли виртуальные машины к миграции в Azure.
+1. В разделе **Готовность к работе в Azure** проверьте, готовы ли серверы к миграции в Azure.
 2. Проверьте состояние.
     - **Готово к работе в Azure**: служба "Миграция Azure" рекомендует размер и стоимость виртуальных машин в оценке.
     - **Готово при выполнении условий**: отображает проблемы и предлагаемые способы исправления.

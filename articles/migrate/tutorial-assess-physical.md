@@ -7,14 +7,18 @@ ms.service: azure-migrate
 ms.topic: tutorial
 ms.date: 10/23/2019
 ms.author: raynew
-ms.openlocfilehash: 1165021ba602b85f47ff53dc14a2992f43be25bf
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 7574e80101784961448ff3c3b5a49d9e2c2f9807
+ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73521324"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73720227"
 ---
 # <a name="assess-physical-servers-with-azure-migrate-server-assessment"></a>Оценка готовности физических серверов с помощью службы "Миграция Azure": Оценка сервера
+
+> [!NOTE]
+> Если эта функция отсутствует на портале миграции Azure, подождите. Предположительно, она появится в течение следующей недели.
+ 
 
 В этой статье описывается, как оценивать готовность локальных физических серверов с помощью службы "Миграция Azure": службы "Миграция Azure".
 
@@ -182,7 +186,7 @@ ms.locfileid: "73521324"
 
 ### <a name="verify-servers-in-the-portal"></a>Проверка серверов на портале
 
-После обнаружения вы можете убедиться, что серверы отображаются на портале Azure.
+После обнаружения можно проверить, отображаются ли серверы на портале Azure.
 
 1. Откройте панель мониторинга службы "Миграция Azure".
 2. На странице **Azure Migrate — Servers** > **Azure Migrate: Server Assessment** (Миграция Azure — серверы > Миграция Azure: оценка сервера) щелкните значок, отображающий количество **обнаруженных серверов**.

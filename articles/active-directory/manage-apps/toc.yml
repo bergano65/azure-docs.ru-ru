@@ -24,6 +24,8 @@
 - name: Основные понятия
   expanded: true
   items:
+    - name: Рекомендации по управлению приложениями
+      href: application-management-fundamentals.md
     - name: Облачные приложения и единый вход
       items:
         - name: Планирование интеграции облачных приложений

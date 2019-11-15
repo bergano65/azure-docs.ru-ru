@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: overview
 ms.date: 04/04/2019
 ms.author: aahi
-ms.openlocfilehash: d8d2aed16b5af60c44501e6d72332783a164ff91
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 19421788eea59ea250efbaa656266da49dc3b42f
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67478393"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73742735"
 ---
 # <a name="example-user-scenarios-for-the-text-analytics-api"></a>Примеры пользовательских сценариев для API Анализа текста
 
@@ -48,4 +48,4 @@ API Преобразования текста в речь, Анализа тон
 ## <a name="next-steps"></a>Дополнительная информация
 
 * [Что такое API "Анализ текста"?](overview.md)
-* [Краткое руководство. Вызов службы "Анализ текста" с помощью пакета SDK для .NET и C#](quickstarts/csharp.md)
+* [Quickstart: Use the Text Analytics client library for detecting language](quickstarts/text-analytics-sdk.md) (Краткое руководство. Вызов клиентской библиотеки "Анализ текста" для определения языка)

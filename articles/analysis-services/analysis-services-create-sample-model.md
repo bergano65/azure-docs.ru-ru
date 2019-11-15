@@ -1,18 +1,18 @@
 ---
-title: Руководство. Добавление образца модели для сервера Azure Analysis Services | Документация Майкрософт
+title: Учебник по добавлению образца модели (Azure Analysis Services) | Документация Майкрософт
 description: Это руководство содержит сведения о том, как добавить образец модели в службах Azure Analysis Services.
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: tutorial
-ms.date: 10/16/2019
+ms.date: 10/30/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: c6679e8075afd2f25e4baf73c79c35907ded4e2b
-ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
+ms.openlocfilehash: f76ec20da73c778d024feea9df113de9e4aa0fe9
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72512871"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73573086"
 ---
 # <a name="tutorial-add-a-sample-model-from-the-portal"></a>Руководство. Добавление образца модели с портала
 

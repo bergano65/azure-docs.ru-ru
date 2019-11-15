@@ -1,26 +1,26 @@
 ---
 title: Краткое руководство. Создание проекта
 titleSuffix: Azure Cognitive Services
-description: ПОДЛЕЖИТ УТОЧНЕНИЮ
+description: В этом кратком руководстве показано, как создать пустой проект на предпочитаемом языке программирования для обучения или разработки приложения.
 services: cognitive-services
 author: erhopf
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 10/28/2019
+ms.date: 11/04/2019
 ms.author: erhopf
 zone_pivot_groups: programming-languages-set-three
-ms.openlocfilehash: 25d6e8f7642db05663082414f013b2b11bff46da
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 276dbcdfe3f40122b6a7a14e78aeee4d6ab2fbe9
+ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73506182"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73721009"
 ---
-# <a name="quickstart-create-an-empty-project"></a>Краткое руководство. Создайте пустой проект.
+# <a name="quickstart-create-a-project"></a>Краткое руководство. Создание проекта
 
-В этом руководстве показано, как создать пустой проект для использования в других кратких руководствах.
+В этом кратком руководстве показано, как создать пустой проект на предпочитаемом языке программирования для обучения или разработки приложения.
 
 ::: zone pivot="programming-language-csharp"
 **Выберите целевую среду**
@@ -54,6 +54,9 @@ ms.locfileid: "73506182"
 ::: zone-end
 
 ::: zone pivot="programming-language-python"
+
+Для кратких руководств с использованием Python достаточно создать файл с именем `helloworld.py` в любом текстовом редакторе или IDE.
+
 ::: zone-end
 
 ## <a name="next-steps"></a>Дополнительная информация
@@ -63,4 +66,3 @@ ms.locfileid: "73506182"
 - [Краткое руководство по переводу речи в текст](translate-speech-to-text.md)
 - [Краткое руководство по синтезированию речи в текст](text-to-speech.md)
 - [Краткое руководство по распознаванию намерений](intent-recognition.md)
-

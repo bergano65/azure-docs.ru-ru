@@ -1,20 +1,21 @@
 ---
-title: Перенос локальных пользователей и групп Windows, настроенных для SQL Server, в управляемый экземпляр Базы данных SQL Azure с использованием синтаксиса T-SQL DDL | Документация Майкрософт
+title: Перенос пользователей и групп Windows, настроенных для SQL Server, в управляемый экземпляр с помощью T-SQL
 description: Сведения о том, как перенести локальных пользователей и группы Windows, настроенных для SQL Server, в управляемый экземпляр
 services: sql-database
 ms.service: sql-database
 ms.subservice: security
+ms.custom: seo-lt-2019
 ms.topic: tutorial
 author: GitHubMirek
 ms.author: mireks
 ms.reviewer: vanto
-ms.date: 10/22/2019
-ms.openlocfilehash: ca0997010fef40c0927960c04588c031dd85fff8
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.date: 10/30/2019
+ms.openlocfilehash: 3ed4e4b1d37a9705378281ca74b53a6b60713d97
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72795065"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73807177"
 ---
 # <a name="tutorial-migrate-sql-server-on-premises-windows-users-and-groups-to-azure-sql-database-managed-instance-using-t-sql-ddl-syntax"></a>Руководство по Перенос локальных пользователей и групп Windows, настроенных для SQL Server, в управляемый экземпляр Базы данных SQL Azure с использованием синтаксиса T-SQL DDL
 
@@ -41,6 +42,8 @@ ms.locfileid: "72795065"
 - доступ к Active Directory для создания пользователей и групп;
 - SQL Server в локальной среде;
 - управляемый экземпляр. См. [Краткое руководство. Создание управляемого экземпляра Базы данных SQL Azure](sql-database-managed-instance-get-started.md).
+  - Для создания имен входа Azure AD необходимо использовать `sysadmin` в управляемом экземпляре.
+- [Предоставление администратора Azure Active Directory для управляемого экземпляра](sql-database-aad-authentication-configure.md#provision-an-azure-active-directory-administrator-for-your-managed-instance).
 - Вы можете подключиться к управляемому экземпляру из локальной сети. Дополнительные сведения см. в следующих статьях: 
     - [Connect your application to Azure SQL Database managed instance](sql-database-managed-instance-connect-app.md) (Подключение приложения к управляемому экземпляру Базы данных SQL Azure)
     - [Краткое руководство Настройка подключения "точка — сеть" к Управляемому экземпляру Базы данных SQL Azure с локального компьютера](sql-database-managed-instance-configure-p2s.md)
@@ -212,9 +215,12 @@ go
 
 ## <a name="part-4-migrate-users-to-managed-instance"></a>Часть 4. Перенос пользователей в управляемый экземпляр
 
+> [!NOTE]
+> Изменились функции, доступные после создания администратору Azure AD для управляемого экземпляра. Дополнительные сведения см. в разделе [Новые функции администратора Azure AD для MI](sql-database-aad-authentication-configure.md#new-azure-ad-admin-functionality-for-mi).
+
 Выполните команду ALTER USER, чтобы завершить миграцию в управляемом экземпляре.
 
-1. Подключитесь к управляемому экземпляру с учетной записью администратора SQL. Затем создайте в управляемом экземпляре имя для входа в AAD, используя следующий синтаксис:
+1. Подключитесь к управляемому экземпляру с учетной записью администратора AAD. Затем создайте в управляемом экземпляре имя для входа в AAD, используя следующий синтаксис. Дополнительные сведения см. в статье [Руководство. Обеспечение безопасности управляемого экземпляра в Базе данных SQL Azure с помощью субъектов сервера (имен для входа) Azure AD](sql-database-managed-instance-aad-security-tutorial.md).
 
     ```sql
     use master 

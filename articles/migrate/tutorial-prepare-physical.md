@@ -5,19 +5,23 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: azure-migrate
 ms.topic: tutorial
-ms.date: 10/23/2019
+ms.date: 11/07/2019
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: bf1b9859bf3dc4b8ac14d01b2bb6c8cf9c9899ca
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: df425f723aa6a5e261ed6dcd15abfe87b367ad68
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73520872"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73747971"
 ---
 # <a name="prepare-for-assessment-and-migration-of-physical-servers-to-azure"></a>Подготовка физических компьютеров к оценке и миграции в Azure
 
 В этой статье описывается, как подготовить к оценке локальные физические серверы с помощью службы [Миграция Azure](migrate-services-overview.md).
+
+
+> [!NOTE]
+> Если некоторые из этих функций отсутствуют на портале миграции Azure, подождите. Предположительно, они появятся в течение следующей недели.
 
 Служба [Миграция Azure](migrate-overview.md) объединяет в себе инструменты, которые используются для поиска, оценки и переноса приложений, инфраструктуры и рабочих нагрузок в Microsoft Azure. Она включает в себя инструменты Миграции Azure и предложения независимых поставщиков программного обеспечения. 
 

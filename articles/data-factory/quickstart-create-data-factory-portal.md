@@ -1,5 +1,5 @@
 ---
-title: Создание фабрики данных Azure с помощью пользовательского интерфейса службы "Фабрика данных Azure" | Документация Майкрософт
+title: Создание фабрики данных Azure с помощью пользовательского интерфейса службы "Фабрика данных Azure"
 description: Создайте фабрику данных с конвейером, в котором данные копируются из одного расположения в хранилище BLOB-объектов Azure в другое.
 services: data-factory
 documentationcenter: ''
@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: quickstart
 ms.date: 06/20/2018
 ms.author: jingwang
-ms.openlocfilehash: 3dee054f6c382a00a55e4acf07e2a188c5cc6a07
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 642039e99df19939def5ac850f1abccca0e67222
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73490663"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73684478"
 ---
 # <a name="quickstart-create-a-data-factory-by-using-the-azure-data-factory-ui"></a>Краткое руководство. Создание фабрики данных с помощью пользовательского интерфейса службы "Фабрика данных Azure"
 

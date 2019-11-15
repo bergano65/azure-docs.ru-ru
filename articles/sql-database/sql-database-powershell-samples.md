@@ -1,5 +1,5 @@
 ---
-title: Примеры скриптов Azure PowerShell для базы данных SQL | Документация Майкрософт
+title: Примеры скриптов Azure PowerShell.
 description: Примеры скриптов Azure PowerShell помогут вам создать серверы Базы данных SQL Azure, эластичные пулы, базы данных и брандмауэры, а также помогут управлять ими.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 03/25/2019
-ms.openlocfilehash: 998497d3e790ba501ac5cdeb4974bf7ee9ea6a54
-ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
+ms.openlocfilehash: dd16753a9b057e441884b0a6a019701766aaa321
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71059258"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73821399"
 ---
 # <a name="azure-powershell-samples-for-azure-sql-database"></a>Примеры Azure PowerShell для Базы данных SQL Azure
 
@@ -41,6 +41,7 @@ ms.locfileid: "71059258"
 | [Настройка активной георепликации для базы данных SQL Azure в пуле с помощью PowerShell](scripts/sql-database-setup-geodr-and-failover-pool-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Этот скрипт PowerShell настраивает активную георепликацию для базы данных SQL Azure в эластичном пуле SQL и выполняет для нее отработку отказа во вторичную реплику. |
 |**Настройка группы отработки отказа**||
 | [Настройка группы отработки отказа для отдельной базы данных](scripts/sql-database-add-single-db-to-failover-group-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json) | Этот скрипт PowerShell создает базу данных и группу отработки отказа, добавляет базу данных в эту группу и тестирует отработку отказа на сервер-получатель. | 
+| [Use PowerShell to add an Azure SQL Database elastic pool to a failover group](scripts/sql-database-add-elastic-pool-to-failover-group-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json) (Добавление эластичного пула Базы данных SQL Azure в группу отработки отказа с помощью PowerShell) | Этот скрипт PowerShell создает базу данных, добавляет ее в эластичный пул, добавляет эластичный пул в группу отработки отказа и тестирует отработку отказа на сервер-получатель. | 
 |**Масштабирование отдельной базы данных и эластичного пула**||
 | [Масштабирование отдельной базы данных](scripts/sql-database-monitor-and-scale-database-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json) | Этот сценарий PowerShell отслеживает метрики производительности базы данных SQL Azure, увеличивает объем ее вычислительных ресурсов и создает правило генерации оповещений для одной из метрик производительности. |
 | [Масштабирование эластичного пула](scripts/sql-database-monitor-and-scale-pool-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json) | Этот сценарий PowerShell отслеживает метрики производительности эластичного пула Базы данных SQL Azure, увеличивает его вычислительную мощность и создает правило генерации оповещений для одной из метрик производительности. |
@@ -70,6 +71,8 @@ ms.locfileid: "71059258"
 | [Восстановление базы данных в управляемый экземпляр в другом географическом регионе](scripts/sql-managed-instance-restore-geo-backup.md) | Этот скрипт PowerShell восстанавливает резервную копию базы данных в другом регионе. Такой сценарий называется аварийным геовосстановлением. |
 | **Настройка прозрачного шифрования данных (TDE)**||
 | [Управление прозрачным шифрованием данных в Управляемом экземпляре с использованием собственного ключа из Azure Key Vault](scripts/transparent-data-encryption-byok-sql-managed-instance-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Этот скрипт PowerShell позволяет настроить прозрачное шифрование данных (TDE) в сценарии создания собственных ключей для Управляемого экземпляра SQL Azure с помощью ключа из Azure Key Vault.|
+|**Настройка группы отработки отказа**||
+| [Настройка группы отработки отказа для управляемого экземпляра](scripts/sql-database-add-managed-instance-to-failover-group-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json) | Этот скрипт PowerShell создает два управляемых экземпляра, добавляет их в группу отработки отказа, а затем проверяет отработку отказа с основного на дополнительный управляемый экземпляр. | 
 |||
 
 См. дополнительные сведения об [API управления Управляемыми экземплярами с помощью Azure PowerShell](sql-database-managed-instance-create-manage.md#powershell-create-and-manage-managed-instances).

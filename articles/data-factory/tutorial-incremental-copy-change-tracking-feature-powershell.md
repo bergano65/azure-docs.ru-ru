@@ -1,5 +1,5 @@
 ---
-title: Добавочное копирование данных с помощью решения "Отслеживание изменений" | Документация Майкрософт
+title: 'Добавочное копирование данных с помощью решения "Отслеживание изменений" и службы "Фабрика данных Azure" '
 description: 'В этом руководстве вы создадите конвейер фабрики данных Azure, который пошагово копирует разностные данные из нескольких таблиц в локальной базе данных SQL Server в базу данных SQL Azure. '
 services: data-factory
 documentationcenter: ''
@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: yexu
-ms.openlocfilehash: 36a160ad3c6b925931c6274a44cfb5492d6a562a
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: feab54128a00d587ea9b68d8db5df59bd3615ee2
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70140645"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73683478"
 ---
 # <a name="incrementally-load-data-from-azure-sql-database-to-azure-blob-storage-using-change-tracking-information"></a>Добавочная загрузка данных из базы данных SQL Azure в хранилище BLOB-объектов Azure с использованием сведений об отслеживания изменений 
 Из этого руководстве вы узнаете, как создать фабрику данных Azure с конвейером, который копирует разностные данные на основе сведений об **отслеживании изменений** в базе данных-источнике SQL Azure в хранилище BLOB-объектов Azure.  
@@ -234,7 +234,7 @@ ms.locfileid: "70140645"
 ### <a name="create-azure-sql-database-linked-service"></a>Создание связанной службы Базы данных SQL Azure
 На этом шаге вы свяжете базу данных SQL Azure с фабрикой данных.
 
-1. Создайте JSON-файл с именем **AzureSQLDatabaseLinkedService.json** в папке **C:\ADFTutorials\IncCopyChangeTrackingTutorial** и добавьте в него следующее. Вместо значений server, database **, &lt;user id&gt; и &lt;password&gt;** укажите имя сервера, имя базы данных, идентификатор пользователя и пароль SQL Azure, прежде чем сохранить файл. 
+1. Создайте JSON-файл с именем **AzureSQLDatabaseLinkedService.json** в папке **C:\ADFTutorials\IncCopyChangeTrackingTutorial** и добавьте в него следующее. Вместо значений **&lt;server&gt;, &lt;database **, &lt;user id&gt; и &lt;password&gt;** укажите имя сервера, имя базы данных, идентификатор пользователя и пароль SQL Azure, прежде чем сохранить файл. 
 
     ```json
     {

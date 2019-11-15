@@ -2,19 +2,19 @@
 title: Краткое руководство. Создание индекса службы "Поиск" в Node.js с помощью интерфейсов REST API
 titleSuffix: Azure Cognitive Search
 description: Пример для службы "Когнитивный поиск Azure" на Node.js, который демонстрирует создание, загрузку данных и выполнение запросов из JavaScript.
-author: lobrien
+author: HeidiSteen
 manager: nitinme
-ms.author: laobri
+ms.author: heidist
 ms.devlang: nodejs
 ms.service: cognitive-search
 ms.topic: quickstart
 ms.date: 11/04/2019
-ms.openlocfilehash: 20a5af5ac7163c182ea01a9a9442d3c99614442d
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: 8b7308b5289ba747dba90716b495ca1ba6afb209
+ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72787429"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73719988"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-index-in-nodejs-using-rest-apis"></a>Краткое руководство. Создание индекса службы "Когнитивный поиск Azure" в Node.js с помощью REST API
 > [!div class="op_single_selector"]
@@ -680,7 +680,7 @@ async queryAsync(searchTerm) {
 
 В этом примере используется небольшой объем данных о гостиницах, который позволяет продемонстрировать основные возможности по созданию индекса службы "Когнитивный поиск Azure" и отправке запросов к нему.
 
-Класс **AzureSearchClient** инкапсулирует конфигурацию, URL-адреса и базовые HTTP-запросы для службы поиска. Файл **index.js** загружает данные конфигурации для службы "Когнитивный поиск Azure" и данные о гостиницах, которые будут использоваться для индексирования, в функциях `run`, для заказов и других операций.
+Класс **AzureSearchClient** инкапсулирует конфигурацию, URL-адреса и базовые HTTP-запросы для службы поиска. Файл **index.js** загружает данные конфигурации для службы "Когнитивный поиск Azure", данные о гостиницах, которые будут отправлены на индексирование, и данные о заказах (в функции `run`), а затем выполняет другие операции.
 
 Общее поведение функции `run` заключается в том, чтобы удалить индекс службы "Когнитивный поиск Azure", если он существует, затем создать индекс, добавить данные и выполнить несколько запросов.  
 

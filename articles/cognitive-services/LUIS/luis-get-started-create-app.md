@@ -9,16 +9,18 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: quickstart
-ms.date: 10/23/2019
+ms.date: 11/04/2019
 ms.author: diberry
-ms.openlocfilehash: 4acf6e4df978ffee6e0f8320bafbb64994aa0639
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 22a37dbd0b76710a14183aec1795639614207d16
+ms.sourcegitcommit: b2fb32ae73b12cf2d180e6e4ffffa13a31aa4c6f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73495270"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73613721"
 ---
 # <a name="quickstart-use-prebuilt-home-automation-app"></a>Краткое руководство. Использование предварительно созданного приложения для системы домашней автоматики
+
+[!INCLUDE [Uses preview portal](./includes/uses-portal-preview.md)]
 
 В этом кратком руководстве описано, как создать приложение LUIS, которое использует предварительно созданную предметную область `HomeAutomation` для включения и отключения освещения и устройств. Эта предварительно созданная предметная область предоставляет для использования намерения, сущности и фразы. Когда все будет готово, вы получите работающую в облаке конечную точку LUIS.
 
@@ -28,6 +30,8 @@ ms.locfileid: "73495270"
 
 [!INCLUDE [Sign in to LUIS](./includes/sign-in-process.md)]
 
+[!INCLUDE [Select authoring resource](./includes/select-authoring-resource.md)]
+
 ## <a name="create-a-new-app"></a>Создание нового приложения
 Создавать и администрировать приложения можно на странице **Мои приложения**. 
 
@@ -35,7 +39,7 @@ ms.locfileid: "73495270"
 
     ![На портале LUIS в списке "Мои приложения" щелкните "+ Создать".](./media/create-app-in-portal.png)
 
-1. В диалоговом окне введите имя приложения `Home Automation` и нажмите кнопку **Готово**. LUIS создает приложение.
+1. В диалоговом окне введите имя приложения `Home Automation` и нажмите кнопку **Готово**. LUIS создает приложение. Указывать описание необязательно. Оно не используется для разработки и прогнозирования. Ресурс прогнозирования также необязателен при создании приложения LUIS. Публикуя приложение в рабочей среде, необходимо назначить ресурс прогнозирования, чтобы приложение могло обрабатывать множество запросов.  
 
     ![В диалоговом окне присвойте приложению имя Home Automation.](./media/create-new-app-details.png)
 
@@ -65,7 +69,7 @@ ms.locfileid: "73495270"
 
 ## <a name="train-the-luis-app"></a>Обучение приложения LUIS
 
-[!INCLUDE [LUIS How to Train steps](../../../includes/cognitive-services-luis-tutorial-how-to-train.md)]
+[!INCLUDE [LUIS How to Train steps](includes/howto-train.md)]
 
 ## <a name="test-your-app"></a>Тестирование приложения
 После обучения можно выполнить тестирование приложения. Выберите **Тест**. Введите тестовый речевой фрагмент, например `Turn off the lights`, в области интерактивного тестирования и нажмите клавишу ВВОД. 
@@ -114,7 +118,25 @@ Turn off the lights
             "topIntent": "HomeAutomation.TurnOff",
             "intents": {
                 "HomeAutomation.TurnOff": {
-                    "score": 0.967174649
+                    "score": 0.984315455
+                },
+                "HomeAutomation.QueryState": {
+                    "score": 0.009912962
+                },
+                "HomeAutomation.TurnDown": {
+                    "score": 0.00626645749
+                },
+                "HomeAutomation.TurnUp": {
+                    "score": 0.00572059769
+                },
+                "HomeAutomation.SetDevice": {
+                    "score": 0.00379381469
+                },
+                "HomeAutomation.TurnOn": {
+                    "score": 0.00366983772
+                },
+                "None": {
+                    "score": 0.000623856
                 }
             },
             "entities": {
@@ -138,7 +160,7 @@ Turn off the lights
                             "text": "living room",
                             "startIndex": 13,
                             "length": 11,
-                            "score": 0.9494325,
+                            "score": 0.907323956,
                             "modelTypeId": 1,
                             "modelType": "Entity Extractor",
                             "recognitionSources": [

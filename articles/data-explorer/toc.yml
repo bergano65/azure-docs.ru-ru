@@ -180,6 +180,8 @@
       items:
         - name: Фабрика данных Azure
           items:
+            - name: Интеграция со службой "Фабрика данных"
+              href: data-factory-integration.md
             - name: Массовое копирование данных с помощью шаблона Фабрики данных Azure
               href: data-factory-template.md
             - name: Выполнение команд управления с использованием Фабрики данных Azure

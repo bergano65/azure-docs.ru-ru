@@ -1,5 +1,5 @@
 ---
-title: Создание конвейера фабрики данных с помощью портала Azure | Документация Майкрософт
+title: Создание конвейера фабрики данных с помощью портала Azure
 description: В этом руководстве описано, как с помощью портала Azure создать фабрику данных с конвейером. Этот конвейер использует действие копирования для копирования данных из хранилища BLOB-объектов Azure в базу данных SQL.
 services: data-factory
 documentationcenter: ''
@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.date: 06/21/2018
 ms.author: jingwang
-ms.openlocfilehash: 9a2ad8070c0406446f53c1bcaa6d341cdca0bb2a
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: ba348cdd478b1d66d7b7286ba0a54adfd98137e2
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70140714"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73683618"
 ---
 # <a name="copy-data-from-azure-blob-storage-to-a-sql-database-by-using-azure-data-factory"></a>Копирование данных из хранилища BLOB-объектов Azure в базу данных SQL Azure с помощью фабрики данных Azure
 В этом руководстве вы создадите фабрику данных с помощью пользовательского интерфейса фабрики данных Azure. Конвейер этой фабрики данных копирует данные из хранилища BLOB-объектов Azure в базу данных SQL. Шаблон конфигурации в этом руководстве применяется к копированию из файлового в реляционное хранилище данных. Список хранилищ данных, которые поддерживаются в качестве источников и приемников, см. в таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats).

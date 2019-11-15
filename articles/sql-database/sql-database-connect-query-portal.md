@@ -1,5 +1,5 @@
 ---
-title: Портал Azure. Запрос базы данных SQL Azure с помощью редактора запросов | Документация Майкрософт
+title: 'Портал Azure: отправка запроса с помощью редактора запросов'
 description: Узнайте, как подключиться к базе данных SQL на портале Azure с помощью редактора SQL-запросов. и выполнении инструкций Transact-SQL (T-SQL) для запроса и изменения данных.
 keywords: подключение к базе данных sql, портал azure, портал, редактор запросов
 services: sql-database
@@ -12,12 +12,12 @@ author: Ninarn
 ms.author: ninarn
 ms.reviewer: carlrab
 ms.date: 10/24/2019
-ms.openlocfilehash: 433f2a190cf24a7e59dcd1d5a5aba0d3aa4e8588
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 3990d7ec63c312d38168fe76269e1a920f1a6817
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73492079"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73827109"
 ---
 # <a name="quickstart-use-the-azure-portals-sql-query-editor-to-connect-and-query-data"></a>Краткое руководство. Использование редактора SQL-запросов на портале Azure для подключения к данным и их запроса
 

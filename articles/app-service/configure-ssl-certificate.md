@@ -13,12 +13,12 @@ ms.date: 10/25/2019
 ms.author: cephalin
 ms.reviewer: yutlin
 ms.custom: seodec18
-ms.openlocfilehash: 683ea55bdc9eb878f7bcbe832d5364d50a6b23e2
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 12b8d6dff571c074d1f1422f75e33a8b12761bd9
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/04/2019
-ms.locfileid: "73509008"
+ms.locfileid: "73572157"
 ---
 # <a name="add-an-ssl-certificate-in-azure-app-service"></a>Добавление SSL-сертификата в Службу приложений Azure
 
@@ -65,6 +65,7 @@ ms.locfileid: "73509008"
 
 Бесплатный управляемый сертификат Службы приложений — это полноценное решение для защиты настраиваемого DNS-имени в Службе приложений. Это полностью функциональный SSL-сертификат, который управляется Службой приложений и обновляется автоматически. Бесплатный сертификат имеет следующие ограничения:
 
+- Не поддерживает групповые сертификаты.
 - не поддерживает незащищенные домены;
 - не может быть экспортирован.
 
@@ -281,7 +282,7 @@ openssl pkcs12 -export -out myserver.pfx -inkey <private-key-file> -in <merged-c
 
 ![Передача открытого сертификата в Службу приложений](./media/configure-ssl-certificate/upload-public-cert.png)
 
-После передачи сертификата скопируйте отпечаток сертификата и ознакомьтесь с разделом [Использование SSL-сертификата в коде приложения службы приложений Azure](configure-ssl-certificate-in-code.md#load-the-certificate).
+После передачи сертификата скопируйте отпечаток сертификата и ознакомьтесь с разделом [Использование SSL-сертификата в коде приложения службы приложений Azure](configure-ssl-certificate-in-code.md#make-the-certificate-accessible).
 
 ## <a name="manage-app-service-certificates"></a>Управление сертификатами Службы приложений
 

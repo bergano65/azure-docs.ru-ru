@@ -1,5 +1,5 @@
 ---
-title: Пошаговое копирование данных с помощью фабрики данных Azure | Документация Майкрософт
+title: 'Добавочное копирование данных с помощью службы "Фабрика данных Azure" '
 description: В этих руководствах описывается добавочное копирование данных из исходного в целевое хранилище данных. В первом руководстве данные копируются из одной таблицы.
 services: data-factory
 documentationcenter: ''
@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: yexu
-ms.openlocfilehash: 15ff84bf8a194c6172864601e3aefe78f9cc13a3
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: 9cbe9dfea116df30f49b89e2e59886f2f112487c
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70140584"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73683359"
 ---
 # <a name="incrementally-load-data-from-a-source-data-store-to-a-destination-data-store"></a>Добавочная загрузка данных из исходного хранилища данных в целевое
 
@@ -54,7 +54,7 @@ ms.locfileid: "70140584"
 - [Копирование новых файлов с использованием параметра LastModifiedDate](solution-template-copy-new-files-lastmodifieddate.md)
 
 ## <a name="loading-new-files-only-by-using-time-partitioned-folder-or-file-name"></a>Загрузка новых файлов только с использованием имен папок или файлов, секционированных по времени
-Можно скопировать только новые файлы или папки, если они секционированы по времени и информация о временной секции указана в имени файла или папки (например, /yyyy/mm/dd/file.csv). Это самый оптимальный с точки зрения производительности подход к поэтапной загрузке новых файлов. 
+Можно скопировать только новые файлы или папки, если они секционированы по времени и информация о временной секции указана в имени файла или папки (например, /yyyy/mm/dd/file.csv). Это самый оптимальный с точки зрения производительности подход к добавочной загрузке новых файлов. 
 
 Пошаговые инструкции представлены в следующем руководстве: <br/>
 - [Incrementally copy new files based on time partitioned file name by using the Copy Data tool](tutorial-incremental-copy-partitioned-file-name-copy-data-tool.md) (Добавочное копирование новых файлов на основе имени файла, секционированного по времени, с помощью средства "Копирование данных")

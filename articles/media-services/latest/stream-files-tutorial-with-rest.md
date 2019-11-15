@@ -10,14 +10,14 @@ ms.service: media-services
 ms.workload: ''
 ms.topic: tutorial
 ms.custom: mvc
-ms.date: 10/21/2019
+ms.date: 11/05/2019
 ms.author: juliako
-ms.openlocfilehash: 3f065f77c6843b135554e61f5887655114571b08
-ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
+ms.openlocfilehash: 128513c3af5ce6c0853b63d86959e4c3c35de93c
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72750246"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73685111"
 ---
 # <a name="tutorial-encode-a-remote-file-based-on-url-and-stream-the-video---rest"></a>Руководство по Кодирование удаленного файла на основе URL-адреса и потоковой передачи видео с помощью REST
 
@@ -258,34 +258,36 @@ ms.locfileid: "72750246"
 
 ### <a name="create-a-streaming-locator"></a>Создание указателя потоковой передачи
 
-Выполнив задание кодирования необходимо сделать видео в выходном **ресурсе** доступным для воспроизведения клиентами. Это можно сделать в два этапа. Сначала создайте [указатель потоковой передачи](https://docs.microsoft.com/rest/api/media/streaminglocators), а затем URL-адреса потоковой передачи, которые клиенты могут использовать. 
+Выполнив задание кодирования необходимо сделать видео в выходном **ресурсе** доступным для воспроизведения клиентами. Это можно сделать в два этапа. Сначала создайте [StreamingLocator](https://docs.microsoft.com/rest/api/media/streaminglocators), а затем URL-адреса потоковой передачи, которые клиенты могут использовать. 
 
-Процесс создания **указателя потоковой передачи** называется публикацией. По умолчанию **указатель потоковой передачи** допустим сразу после выполнения вызова API и действует, пока не будет удален, если не настроить дополнительное начальное и конечное время. 
+Процесс создания указателя потоковой передачи называется публикацией. По умолчанию указатель потоковой передачи допустим сразу после выполнения вызова API и действует, пока не будет удален, если начальное и конечное время не настроены отдельно. 
 
-При создании [указателя потоковой передачи](https://docs.microsoft.com/rest/api/media/streaminglocators) необходимо указать желаемое имя **StreamingPolicyName**. В этом примере выполняется потоковая передача незашифрованного содержимого, поэтому используется предварительно определенная политика прозрачной потоковой передачи Predefined_ClearStreamingOnly.
+При создании [StreamingLocator](https://docs.microsoft.com/rest/api/media/streaminglocators) необходимо указать желаемое имя **StreamingPolicyName**. В этом примере выполняется потоковая передача незашифрованного содержимого, поэтому используется предварительно определенная политика прозрачной потоковой передачи Predefined_ClearStreamingOnly.
 
 > [!IMPORTANT]
 > При использовании пользовательской политики [StreamingPolicy](https://docs.microsoft.com/rest/api/media/streamingpolicies) следует разработать ограниченный набор таких политик для учетной записи Служб мультимедиа и повторно использовать их для StreamingLocators всякий раз, когда требуются те же параметры шифрования и протоколы. 
 
-У вашей учетной записи служб мультимедиа есть квота на количество входов в **политику потоковой передачи**. Вам не нужно создавать новую **политику потоковой передачи** для каждого **указателя потоковой передачи**.
+У вашей учетной записи служб мультимедиа есть квота на количество входов в **политику потоковой передачи**. Вам не нужно создавать новую **политику потоковой передачи** для каждого указателя потоковой передачи.
 
-1. В левом окне приложения Postman выберите Streaming Policies (Политики потоковой передачи).
-2. Затем выберите Создать указатель потоковой передачи.
+1. В левом окне приложения Postman выберите Streaming Policies and Locators (Политики и указатели потоковой передачи).
+2. Затем щелкните "Create a Streaming Locator (clear)" (Создать указатель потоковой передачи (чистый)).
 3. Нажмите кнопку **Отправить**.
 
     * Это действие отправляет следующую операцию **PUT**.
 
         ```
-        https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaServices/:accountName/streamingPolicies/:streamingPolicyName?api-version={{api-version}}
+        https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaServices/:accountName/streamingLocators/:streamingLocatorName?api-version={{api-version}}
         ```
     * Эта операция включает следующий текст:
 
         ```json
         {
-            "properties":{
-            "assetName": "{{assetName}}",
-            "streamingPolicyName": "{{streamingPolicyName}}"
-            }
+          "properties": {
+            "streamingPolicyName": "Predefined_ClearStreamingOnly",
+            "assetName": "testAsset1",
+            "contentKeys": [],
+            "filters": []
+         }
         }
         ```
 

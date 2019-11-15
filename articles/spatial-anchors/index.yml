@@ -27,6 +27,7 @@ sections:
           - html: <a href="/azure/spatial-anchors/concepts/anchor-relationships-way-finding">Связи между привязками и поиск пути.</a>
           - html: <a href="/azure/spatial-anchors/concepts/guidelines-effective-anchor-experiences">Рекомендации по работе.</a>
           - html: <a href="/azure/spatial-anchors/concepts/logging-diagnostics">Ведение журнала и диагностика.</a>
+          - html: <a href="/azure/spatial-anchors/concepts/coarse-reloc">Простое уточнение расположения.</a>
   - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph

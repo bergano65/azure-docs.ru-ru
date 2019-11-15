@@ -6,12 +6,12 @@ ms.author: dacoulte
 ms.date: 10/01/2019
 ms.topic: sample
 ms.service: blueprints
-ms.openlocfilehash: 64af398ec4829a0336294b33fef102392b9a4099
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 6549cf030772d805b063510b9931968027639511
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73163877"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73583144"
 ---
 # <a name="recommendation-mapping-of-the-cis-microsoft-azure-foundations-benchmark-blueprint-sample"></a>Сопоставление рекомендаций из примера проекта теста производительности CIS для платформ Microsoft Azure
 
@@ -356,11 +356,11 @@ ms.locfileid: "73163877"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Теперь, когда вы ознакомились с сопоставлением элементов управления в схеме теста производительности CIS для платформ Microsoft Azure, перейдите к следующей статье, чтобы узнать о схеме, или посетите раздел "Политика Azure" на портале Azure, чтобы назначить инициативу:
+Теперь, когда вы ознакомились с сопоставлением элементов управления в схеме теста производительности CIS для платформ Microsoft Azure, перейдите к следующим статьям, чтобы изучить эту схему, или посетите раздел "Политика Azure" на портале Azure, чтобы назначить инициативу:
 
 > [!div class="nextstepaction"]
-> [Схема теста производительности CIS для платформ Microsoft Azure. Общие сведения](./index.md)
-> [портал Azure](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyMenuBlade/Definitions)
+> [CIS Microsoft Azure Foundations Benchmark blueprint — обзор](./index.md)
+> [CIS Microsoft Azure Foundations Benchmark blueprint — шаги развертывания](./deploy.md)
 
 Дополнительные статьи о схемах и способах их использования:
 

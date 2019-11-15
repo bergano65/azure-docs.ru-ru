@@ -1,24 +1,24 @@
 ---
-title: Настройка платформы разработки
+title: Краткое руководство. Настройка платформы разработки
 titleSuffix: Azure Cognitive Services
-description: ПОДЛЕЖИТ УТОЧНЕНИЮ
+description: Из этого краткого руководства вы узнаете, как установить пакет SDK службы "Речь" для выбранных вами платформы и языка программирования.
 services: cognitive-services
 author: erhopf
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 10/28/2019
+ms.date: 11/04/2019
 ms.author: erhopf
 zone_pivot_groups: programming-languages-set-three
-ms.openlocfilehash: 3c6a89f107052641aeef313541237f7562e30a3e
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: ad1806daa1fc00d5b14f9c6a30027f278f53e892
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73506366"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73826962"
 ---
-# <a name="quickstart-setup-development-environment"></a>Краткое руководство. Настройка среды разработки.
+# <a name="quickstart-setup-development-environment"></a>Краткое руководство. Настройка среды разработки
 
 ::: zone pivot="programming-language-csharp"
 **Выберите целевую среду**
@@ -59,4 +59,3 @@ ms.locfileid: "73506366"
 ::: zone pivot="programming-language-python"
 [!INCLUDE [python](../includes/quickstarts/platform/python.md)]
 ::: zone-end
-

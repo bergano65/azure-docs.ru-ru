@@ -9,12 +9,12 @@ ms.custom: mvc
 ms.service: iot-pnp
 services: iot-pnp
 manager: philmea
-ms.openlocfilehash: b890fe1a9ef30e18a54ced9f48015bed39298807
-ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
+ms.openlocfilehash: b7b9cd1040accda4d39af4d0a18940b56a45f929
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70858882"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73569887"
 ---
 # <a name="tutorial-create-and-test-a-device-capability-model-using-visual-studio-code"></a>Руководство по созданию и тестированию модели возможностей устройства с помощью Visual Studio Code
 
@@ -43,14 +43,9 @@ ms.locfileid: "70858882"
 
 Для создания кода на языке C для этого учебника в среде ОС Windows вам потребуется следующее.
 
-* [Visual Studio (Community, Professional или Enterprise)](https://visualstudio.microsoft.com/downloads/). При установке Visual Studio обязательно добавьте компонент **Диспетчер пакетов NuGet** и рабочую нагрузку **Разработка классических приложений на C++** .
+* [Средства сборки для Visual Studio](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=BuildTools&rel=16) с рабочими нагрузками **средств сборки C++** и **компонентов диспетчера пакетов NuGet**. Допускается также [Visual Studio (Community, Professional или Enterprise)](https://visualstudio.microsoft.com/downloads/) 2019, 2017 или 2015 с теми же рабочими нагрузками.
 * [Git](https://git-scm.com/download)
 * [CMake](https://cmake.org/download/).
-* Локальная копия пакета SDK на языке C для Azure IoT:
-
-    ```cmd
-    git clone https://github.com/Azure/azure-iot-sdk-c.git --recursive -b public-preview
-    ```
 
 Для проверки кода устройства в этом руководстве вам потребуется следующее.
 
@@ -176,7 +171,7 @@ ms.locfileid: "70858882"
           "commandType": "synchronous"
         }
       ],
-      "@context": "http://azureiot.com/v1/contexts/Interface.json"
+      "@context": "http://azureiot.com/v1/contexts/IoTModel.json"
     }
     ```
 
@@ -310,9 +305,11 @@ ms.locfileid: "70858882"
 
 1. Выберите язык **ANSI C**.
 
-1. Выберите целевой объект **Проект CMake**.
-
 1. Выберите способ подключения **Via IoT Hub device connection string** (Через строку подключения к устройству Центра Интернета вещей).
+
+1. Выберите **Проект CMake в Windows** в качестве шаблона проекта.
+
+1. Выберите **Через Vcpkg** как способ включения пакета SDK для устройства.
 
 VS Code создаст каркас кода на языке C и сохранит полученные файлы в папке **sensorbox_app** в папке **modelcode**. Затем VS Code откроет новое окно с созданным кодом.
 

@@ -1,19 +1,19 @@
 ---
-title: Создание Azure HPC Cache (предварительная версия)
+title: Создание Azure HPC Cache
 description: Создание экземпляра Azure HPC Cache
 author: ekpgh
 ms.service: hpc-cache
 ms.topic: tutorial
-ms.date: 10/01/2019
+ms.date: 10/30/2019
 ms.author: rohogue
-ms.openlocfilehash: 7052b88a24ff5353656a71a7bfb044922ae1415c
-ms.sourcegitcommit: d4c9821b31f5a12ab4cc60036fde00e7d8dc4421
+ms.openlocfilehash: 1b9d2d3c46aab2096dd9208e0bea7f7776c0e429
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71709976"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73582708"
 ---
-# <a name="create-an-azure-hpc-cache-preview"></a>Создание Azure HPC Cache (предварительная версия)
+# <a name="create-an-azure-hpc-cache"></a>Создание Azure HPC Cache
 
 Кэш создается на портале Azure.
 
@@ -23,7 +23,7 @@ ms.locfileid: "71709976"
 
 ![снимок экрана: страница со сведениями о проекте на портале Azure](media/hpc-cache-create-basics.png)
 
-В области **Сведения о проекте** выберите подписку и группу ресурсов, в которых будет размещаться кэш. Убедитесь, что подписка находится в списке [доступа к предварительной версии](hpc-cache-prereqs.md#azure-subscription).
+В области **Сведения о проекте** выберите подписку и группу ресурсов, в которых будет размещаться кэш. Убедитесь, что подписка находится в [списке доступа](hpc-cache-prereqs.md#azure-subscription).
 
 В области **Сведения о службе** задайте имя кэша и следующие атрибуты:
 

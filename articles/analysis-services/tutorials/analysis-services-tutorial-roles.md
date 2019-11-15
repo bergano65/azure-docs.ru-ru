@@ -1,20 +1,20 @@
 ---
-title: Руководство. Настройка ролей администратора и пользователя для служб Azure Analysis Services | Документация Майкрософт
-description: Узнайте, как настроить роли в Azure Analysis Services.
+title: Руководство. Настройка ролей для служб Azure Analysis Services | Документация Майкрософт
+description: Узнайте, как настроить роли администратора и пользователя в Azure Analysis Services с помощью портала Azure или SQL Server Management Studio.
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: tutorial
-ms.date: 01/09/2019
+ms.date: 10/30/2019
 ms.author: owend
 ms.reviewer: owend
-ms.openlocfilehash: b70d1502985a1ffc0ebdf6fcb487cda3992d1c19
-ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
+ms.openlocfilehash: 3abcfe61f365c3c96dfb6b8eb2ca6cc9e5d3797e
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2019
-ms.locfileid: "72294435"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73572373"
 ---
-# <a name="tutorial-configure-server-administrator-and-user-roles"></a>Руководство. Настройка ролей администратора и пользователя сервера
+# <a name="tutorial-configure-server-administrator-and-user-roles"></a>Руководство по Настройка ролей администратора и пользователя сервера
 
  При работе с этим руководством вы с помощью SQL Server Management Studio (SSMS) подключитесь к серверу в Azure и настроите роли администратора сервера и шаблона базы данных. Также мы ознакомитесь с [языком TMSL](https://docs.microsoft.com/analysis-services/tabular-model-programming-compatibility-level-1200/tabular-model-programming-for-compatibility-level-1200). Язык написания скриптов TMSL основывается на формате JSON и предназначен для табличных моделей на уровнях совместимости 1200 и выше. Он позволяет автоматизировать многие задачи табличного моделирования. TMSL часто используется с PowerShell, но в этом руководстве мы ограничимся редактором запросов XMLA в среде SSMS. При работе с этим руководством вы выполните следующие задачи: 
   

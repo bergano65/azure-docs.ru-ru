@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 09/04/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: aecbaab1ed29a1acfdcb4eec53b88fc266bbab09
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.openlocfilehash: 07e91abc1130505abc84f6687be7edd04522fa76
+ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70309410"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73720168"
 ---
 # <a name="migrate-vmware-vms-to-azure-agent-based"></a>Миграция виртуальных машин VMware в Azure (на основе агента)
 
@@ -424,7 +424,19 @@ ms.locfileid: "70309410"
 
 ## <a name="post-migration-best-practices"></a>Рекомендации, выполняемые после миграции
 
-- Для повышения устойчивости:
+- Локальная система
+    - Переместите трафик приложения в приложение, работающее на экземпляре перенесенной виртуальной машины Azure.
+    - Удалите локальные виртуальные машины из списка локальных виртуальных машин.
+    - Удалите локальные виртуальные машины из локальных заданий резервного копирования.
+    - Обновите внутренние документы и отразите в них новое расположение и IP-адреса виртуальных машин Azure.
+- Настройка параметров виртуальных машин Azure после миграции.
+    - [Агент виртуальной машины Azure](../virtual-machines/extensions/agent-windows.md) управляет взаимодействием виртуальной машины с контроллером Azure Fabric. Это обязательно для некоторых служб Azure, таких как Azure Backup, Site Recovery и служба безопасности Azure. При миграции виртуальных машин VMware с использованием агента, установщик Mobility Service устанавливает на компьютерах Windows агент виртуальной машины Azure. Для виртуальных машин Linux мы рекомендуем установить этот агент после отработки отказа.
+    - После миграции вручную удалите службу мобильности из виртуальной машины Azure.
+    - После миграции вручную удалите средства VMware.
+- В Azure выполните следующее.
+    - Выполните любые действия по настройке после миграции приложения, такие как обновление строк подключения к базе данных и конфигурация веб-сервера.
+    - Выполните приемочное тестирование конечного приложения и миграции на перенесенном приложении, работающем в Azure.
+- Непрерывность бизнес-процессов, аварийное восстановление
     - Обеспечьте безопасность данных путем резервного копирования виртуальных машин Azure с помощью службы Azure Backup. [Узнайте больше](../backup/quick-backup-vm-portal.md).
     - Обеспечьте непрерывную работу и постоянную доступность рабочих нагрузок за счет репликации виртуальных машин Azure в дополнительный регион с помощью Site Recovery. [Узнайте больше](../site-recovery/azure-to-azure-tutorial-enable-replication.md).
 - Для повышения уровня безопасности:
@@ -433,9 +445,11 @@ ms.locfileid: "70309410"
     - Разверните [шифрование дисков Azure](https://docs.microsoft.com/azure/security/azure-security-disk-encryption-overview), чтобы обеспечить безопасность дисков и защитить данные от кражи и несанкционированного доступа.
     - Ознакомьтесь с дополнительными сведениями о [защите ресурсов IaaS](https://azure.microsoft.com/services/virtual-machines/secure-well-managed-iaas/) и посетите [центр безопасности Azure](https://azure.microsoft.com/services/security-center/).
 - Для мониторинга и управления:
--  Рассмотрите возможность развертывания [службы "Управление затратами Azure"](https://docs.microsoft.com/azure/cost-management/overview) для мониторинга использования ресурсов и затрат.
+    - Рассмотрите возможность развертывания [службы "Управление затратами Azure"](https://docs.microsoft.com/azure/cost-management/overview) для мониторинга использования ресурсов и затрат.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+
+
+ ## <a name="next-steps"></a>Дополнительная информация
 
 Проанализируйте процесс [миграции в облако](https://docs.microsoft.com/azure/architecture/cloud-adoption/getting-started/migrate) в Azure Cloud Adoption Framework.

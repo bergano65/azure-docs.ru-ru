@@ -1,7 +1,7 @@
 ---
 title: Краткое руководство. Клиентская библиотека для разработки Распознавания речи (LUIS) для Python
 titleSuffix: Azure Cognitive Services
-description: Начните работу с клиентской библиотекой LUIS для Python. Выполните приведенные здесь действия, чтобы установить пакет и протестировать пример кода для выполнения базовых задач.  Распознавание речи (LUIS) позволяет применять пользовательскую аналитику машинного обучения к тексту пользователя в разговорном стиле и на естественном языке, чтобы предсказать общий смысл и извлечь соответствующую подробную информацию.
+description: Начните работу с клиентской библиотекой LUIS для Python. Выполните приведенные здесь действия, чтобы установить пакет и протестировать пример кода для выполнения базовых задач.
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: language-understanding
 ms.topic: quickstart
 ms.date: 08/07/2019
 ms.author: diberry
-ms.openlocfilehash: f8149372e0a96cda81ef38558ee0bcf87eb53bb3
-ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
+ms.openlocfilehash: 1b586af569a9406d7fe9fa3d05c198f62f32744f
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70258768"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73672003"
 ---
 # <a name="quickstart-language-understanding-luis-authoring-client-library-for-python"></a>Краткое руководство. Клиентская библиотека для разработки Распознавания речи (LUIS) для Python
 

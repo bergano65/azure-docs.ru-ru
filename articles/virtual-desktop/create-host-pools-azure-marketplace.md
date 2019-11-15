@@ -1,5 +1,5 @@
 ---
-title: Создание пула узлов Виртуального рабочего стола Windows с помощью Azure Marketplace в Azure
+title: Пул узлов Виртуального рабочего стола Windows в Azure Marketplace — Azure
 description: Сведения о том, как создать пул узлов Виртуального рабочего стола Windows с помощью Azure Marketplace.
 services: virtual-desktop
 author: Heidilohr
@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: tutorial
 ms.date: 08/30/2019
 ms.author: helohr
-ms.openlocfilehash: 76cb2e0378cc7a005232304174c1de887adfe387
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: e5be2490ebf756c030e6a53b226f91c49c7bccaf
+ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73482231"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73605585"
 ---
 # <a name="tutorial-create-a-host-pool-by-using-the-azure-marketplace"></a>Руководство по Создание пула узлов с использованием Azure Marketplace
 
@@ -73,7 +73,9 @@ Add-RdsAccount -DeploymentUrl "https://rdbroker.wvd.microsoft.com"
 В колонке **Параметры виртуальной машины** сделайте следующее:
 
 >[!NOTE]
-> Если вы присоединяете виртуальные машины к среде доменных служб Active Directory (Azure AD DS), убедитесь, что пользователь, который присоединяется к домену, также является участником [группы администраторов AAD DC](../active-directory-domain-services/tutorial-create-instance-advanced.md#configure-an-administrative-group).
+> Если вы присоединяете виртуальные машины к среде доменных служб Active Directory (Azure AD DS), убедитесь, что пользователь, присоединяющийся к домену, является участником [группы администраторов AAD DC](../active-directory-domain-services/tutorial-create-instance-advanced.md#configure-an-administrative-group).
+>
+> Учетная запись также должна относиться к управляемому домену Azure AD DS или клиенту Azure AD. Учетные записи из внешних каталогов, связанных с клиентом Azure AD, не смогут пройти проверку подлинности в процессе присоединения к домену. 
 
 1. Выберите **Источник образа** и введите соответствующую информацию о том, как его искать и хранить. Если вы решили не использовать управляемые диски, выберите учетную запись хранения, содержащую VHD-файл.
 2. Введите имя участника-пользователя и пароль для учетной записи домена, с использованием которой виртуальные машины будут присоединены к домену Active Directory. Эти же имя пользователя и пароль будут созданы на виртуальных машинах в качестве локальной учетной записи. Позже вы сможете сбросить эти локальные учетные записи.

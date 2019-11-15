@@ -1,20 +1,20 @@
 ---
-title: Обеспечение безопасности управляемого экземпляра Базы данных SQL Azure с помощью субъектов сервера (имен для входа) Azure AD | Документация Майкрософт
+title: Защита управляемого экземпляра с помощью субъектов сервера (имен для входа) Azure AD
 description: Узнайте о методах и функциях, применяемых для защиты управляемого экземпляра в Базе данных SQL Azure, и использовании субъектов сервера (имен для входа) Azure AD
 services: sql-database
 ms.service: sql-database
 ms.subservice: security
 ms.topic: tutorial
-author: VanMSFT
-ms.author: vanto
-ms.reviewer: carlrab
-ms.date: 02/20/2019
-ms.openlocfilehash: 37098411f465c611dc9d2e2443f369e01d6e338c
-ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
+author: GitHubMirek
+ms.author: mireks
+ms.reviewer: vanto
+ms.date: 11/06/2019
+ms.openlocfilehash: bd65a21c2aa21643c76966410931949db7d17ad6
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70231005"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73822791"
 ---
 # <a name="tutorial-managed-instance-security-in-azure-sql-database-using-azure-ad-server-principals-logins"></a>Руководство по Обеспечение безопасности управляемого экземпляра в Базе данных SQL Azure с помощью субъектов сервера (имен для входа) Azure AD
 
@@ -35,9 +35,6 @@ ms.locfileid: "70231005"
 > - использование олицетворения с пользователями Azure AD;
 > - использование межбазовых запросов с пользователями Azure AD;
 > - узнаете о функциях безопасности, таких как защита от угроз, аудит, маскирование данных и шифрование.
-
-> [!NOTE]
-> Субъекты сервера (имена для входа) управляемых экземпляров Azure AD находятся на этапе **общедоступной предварительной версии**.
 
 Дополнительные сведения см. в статьях [Управляемый экземпляр Базы данных SQL Azure](sql-database-managed-instance-index.yml) и [Использование Управляемого экземпляра Базы данных SQL с виртуальными сетями и почти полной совместимостью](sql-database-managed-instance.md).
 
@@ -64,15 +61,14 @@ ms.locfileid: "70231005"
 
 ## <a name="create-an-azure-ad-server-principal-login-for-a-managed-instance-using-ssms"></a>Создание субъекта сервера (имени для входа) Azure AD для управляемого экземпляра с помощью SSMS
 
-Первый субъект сервера (имя для входа) Azure AD должен быть создан с помощью стандартной учетной записи SQL Server (не Azure AD), то есть `sysadmin`. Примеры подключения к управляемому экземпляру см. в следующих статьях:
+Первый субъект сервера Azure AD (имя входа) может быть создан стандартной учетной записью SQL Server (не Azure AD), которая является `sysadmin`, или администратором Azure AD для управляемого экземпляра, созданного в процессе подготовки. Дополнительные сведения см. в разделе [Подготовка администратора Azure Active Directory для управляемого экземпляра](sql-database-aad-authentication-configure.md#provision-an-azure-active-directory-administrator-for-your-managed-instance). Эта функция изменилась с тех пор, как появилась [общедоступная версия субъектов сервера Azure AD](sql-database-aad-authentication-configure.md#new-azure-ad-admin-functionality-for-mi).
+
+Примеры подключения к управляемому экземпляру см. в следующих статьях:
 
 - [Краткое руководство Настройка виртуальной машины Azure для подключения к Управляемому экземпляру Базы данных SQL Azure](sql-database-managed-instance-configure-vm.md)
 - [Краткое руководство Настройка соединения "точка — сеть" с помощью управляемого экземпляра базы данных SQL Azure](sql-database-managed-instance-configure-p2s.md)
 
-> [!IMPORTANT]
-> Учетную запись администратора Azure AD, используемую для настройки управляемого экземпляра, нельзя применять для создания субъекта сервера (имени для входа) Azure AD в управляемом экземпляре. Необходимо создать первый субъект сервера (имя для входа) Azure AD с помощью учетной записи SQL Server — `sysadmin`. Это временное ограничение, которое будет устранено, как только субъекты сервера (имена для входа) Azure AD станут общедоступными. При попытке использования учетной записи администратора Azure AD для создания имени для входа отобразится следующая ошибка: `Msg 15247, Level 16, State 1, Line 1 User does not have permission to perform this action.`
-
-1. Войдите в управляемый экземпляр с помощью стандартной учетной записи SQL Server (не Azure AD) (`sysadmin`), используя [SQL Server Management Studio](sql-database-managed-instance-configure-p2s.md#use-ssms-to-connect-to-the-managed-instance).
+1. Войдите в управляемый экземпляр с помощью стандартной учетной записи SQL Server (не Azure AD), который является `sysadmin` или администратором Azure AD для MI, используя [SQL Server Management Studio](sql-database-managed-instance-configure-p2s.md#use-ssms-to-connect-to-the-managed-instance).
 
 2. В **обозревателе объектов** щелкните сервер правой кнопкой мыши и выберите **Создать запрос**.
 
@@ -125,7 +121,7 @@ ms.locfileid: "70231005"
 
 Чтобы присвоить имени для входа роль сервера `sysadmin`, сделайте следующее:
 
-1. Войдите в управляемый экземпляр еще раз или используйте имеющееся подключение к субъекту SQL (`sysadmin`).
+1. Войдите в управляемый экземпляр еще раз или используйте имеющееся подключение к администратору Azure AD или субъекту SQL (`sysadmin`).
 
 1. В **обозревателе объектов** щелкните сервер правой кнопкой мыши и выберите **Создать запрос**.
 
@@ -425,7 +421,7 @@ ms.locfileid: "70231005"
 
     Вы должны увидеть результаты таблицы **TestTable2**.
 
-## <a name="additional-scenarios-supported-for-azure-ad-server-principals-logins-public-preview"></a>Дополнительные скрипты, поддерживаемые для субъектов сервера (имен для входа) Azure AD (общедоступная предварительная версия) 
+## <a name="additional-scenarios-supported-for-azure-ad-server-principals-logins"></a>Дополнительные скрипты, поддерживаемые для субъектов сервера (имен для входа) Azure AD
 
 - Субъекты сервера (имена для входа) Azure AD поддерживают выполнение заданий и управление агентом SQL Server.
 - Операции резервного копирования и восстановления базы данных могут быть выполнены с помощью субъектов сервера (имен для входа) Azure AD.

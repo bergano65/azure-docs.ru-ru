@@ -1,6 +1,6 @@
 ---
-title: Руководство по копированию данных в хранилище BLOB-объектов Azure Data Box с помощью REST API | Документация Майкрософт
-description: Узнайте, как копировать данные в хранилище BLOB-объектов Azure Data Box с помощью REST API
+title: Учебник по копированию данных в хранилище BLOB-объектов Azure Data Box Heavy с помощью REST API | Документация Майкрософт
+description: Узнайте, как копировать данные в хранилище BLOB-объектов Azure Data Box Heavy с помощью REST API
 services: databox
 author: alkohli
 ms.service: databox
@@ -8,12 +8,12 @@ ms.subservice: heavy
 ms.topic: tutorial
 ms.date: 07/03/2019
 ms.author: alkohli
-ms.openlocfilehash: 2c66b94cbcfa4688d9dc45d99688abe76fa55d17
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.openlocfilehash: adc48acbadaef56958587dc79be377b76a21fdc0
+ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67595803"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73606294"
 ---
 # <a name="tutorial-copy-data-to-azure-data-box-blob-storage-via-rest-apis"></a>Руководство по Копирование данных в хранилище BLOB-объектов Azure Data Box с помощью REST API  
 
@@ -228,7 +228,7 @@ ms.locfileid: "67595803"
     --recursive \
     --exclude-older
 
-#### <a name="windows"></a> Windows
+#### <a name="windows"></a>Windows
 
     AzCopy /Source:C:\myfolder /Dest:https://data-box-heavy-storage-account-name.blob.device-serial-no.microsoftdatabox.com/container-name/files/ /DestKey:<key> /S /XO
 

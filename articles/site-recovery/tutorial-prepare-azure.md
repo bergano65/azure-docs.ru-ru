@@ -1,5 +1,5 @@
 ---
-title: Подготовка Azure для аварийного восстановления локальных компьютеров с помощью Azure Site Recovery
+title: Подготовка Azure к аварийному восстановлению в локальной среде с помощью Azure Site Recovery
 description: Узнайте, как подготовить Azure для аварийного восстановления локальных компьютеров с помощью Azure Site Recovery.
 services: site-recovery
 author: rayne-wiselman
@@ -8,14 +8,14 @@ ms.topic: tutorial
 ms.date: 09/09/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 32aa2c8f4c97f247bfcff5fc82a3f810b8005591
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 1ec668fac087773001ca401eefb5ca8bc10ea2b8
+ms.sourcegitcommit: 6c2c97445f5d44c5b5974a5beb51a8733b0c2be7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73488543"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73620593"
 ---
-# <a name="prepare-azure-resources-for-disaster-recovery-of-on-premises-machines"></a>Подготовка ресурсов Azure для аварийного восстановления локальных компьютеров
+# <a name="prepare-azure-for-on-premises-disaster-recovery-to-azure"></a>Подготовка Azure к локальному аварийному восстановлению в Azure
 
 В этой статье описывается подготовка ресурсов и компонентов Azure таким образом, чтобы вы могли настроить аварийное восстановление локальных виртуальных машин VMware, виртуальных машин Hyper-V или физических серверов Windows/Linux в Azure с помощью службы [Azure Site Recovery](site-recovery-overview.md).
 

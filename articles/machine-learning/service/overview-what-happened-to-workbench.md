@@ -1,7 +1,7 @@
 ---
-title: Что случилось с Machine Learning Workbench?
+title: Что произошло с Workbench?
 titleSuffix: Azure Machine Learning
-description: Узнайте о том, что произошло с приложением Machine Learning Workbench, об изменениях в Машинном обучении Azure и о графике поддержки.
+description: Узнайте о возможностях, доступных без использования приложения Workbench, и сроках поддержки.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -9,14 +9,14 @@ ms.topic: overview
 ms.reviewer: jmartens
 author: j-martens
 ms.author: jmartens
-ms.date: 05/14/2019
+ms.date: 11/05/2019
 ms.custom: seodec18
-ms.openlocfilehash: 3c98da50d0c50a7fdb94f579444f3c09c1096d18
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 835024f7c8d77d67a2f6321df658c2f5c2007e62
+ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73476416"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73647102"
 ---
 # <a name="what-happened-to-azure-machine-learning-workbench"></a>Что случилось с Azure Machine Learning Workbench?
 
@@ -64,12 +64,6 @@ ms.locfileid: "73476416"
 
 Начните обучать свои модели и отслеживать журналы выполнения, используя новый интерфейс командной строки и новый пакет SDK. Чтобы узнать, как это сделать, см. руководство по[обучению моделей с помощью Машинного обучения Azure](tutorial-train-models-with-aml.md).
 
-## <a name="can-i-still-prep-data"></a>Можно ли по-прежнему готовить данные?
-
-Уже существующие файлы подготовки данных нельзя перенести в последнюю версию, так как приложение Machine Learning Workbench больше не поддерживается. Но по-прежнему вы можете подготовить набор данных любого размера для моделирования.
-
-Для наборов данных любых размеров можно использовать [пакет подготовки данных для Машинного обучения Azure](https://aka.ms/data-prep-sdk), позволяющий быстро создать код Python для подготовки данных перед моделированием.
-
 ## <a name="will-projects-persist"></a>Сохранятся ли проекты?
 
 Никакой код и никакие наработки не будут потеряны. В более ранней версии проекты являются объектами облака с локальным каталогом. В последней версии локальные каталоги связываются с рабочей областью Машинного обучения Azure с помощью локального файла конфигурации. Ознакомьтесь со [схемой актуальной архитектуры](concept-azure-machine-learning-architecture.md).
@@ -97,22 +91,6 @@ run = exp.submit(source_directory=script_folder,
 Дополнительные сведения см. в следующих статьях:
 + [Развертывание моделей с помощью Службы машинного обучения Azure](how-to-deploy-and-where.md)
 + [Руководство. Развертывание моделей с помощью Машинного обучения Azure](tutorial-deploy-models-with-aml.md)
-
-## <a name="what-about-the-old-sdk-and-cli"></a>Что будет со старым пакетом SDK и интерфейсом командной строки?
-
-См. описанный выше [график](#timeline). Мы рекомендуем уже сейчас создавать эксперименты и модели с помощью последнего пакета SDK или интерфейса командной строки.
-
-Пакет SDK для Python из последнего выпуска позволяет взаимодействовать с Машинным обучением Azure в любой среде Python. Узнайте, как установить последний пакет <a href="https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py" target="_blank">SDK</a>. Для взаимодействия со службой в любой среде командной строки, включая среду Cloud Shell портала Azure, можно также использовать [обновленное расширение машинного обучения интерфейса командной строки Azure](reference-azure-machine-learning-cli.md) с богатым набором команд `az ml`.
-
-## <a name="what-about-visual-studio-code-tools-for-ai"></a>Что будет с Visual Studio Code Tools for AI?
-
-В этом последнем выпуске расширение было переименовано в Машинное обучение Azure для Visual Studio Code, в нем были реализованы доработки и улучшения, чтобы обеспечить работу с вышеописанными новыми функциями.
-
-[![Машинное обучение Azure для Visual Studio Code](./media/overview-what-happened-to-workbench/vscode.png)](./media/overview-what-happened-to-workbench/vscode-big.png#lightbox)
-
-## <a name="what-about-domain-packages"></a>Что будет с пакетами домена?
-
-Пакеты домена для компьютерного зрения, анализа текста и прогнозирования нельзя использовать с последней версией Службы машинного обучения Azure. Но вы по-прежнему можете создавать и обучать модели компьютерного зрения, текста и прогнозирования, используя последний <a href="https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py" target="_blank">пакет SDK</a> для Python Службы машинного обучения Azure.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

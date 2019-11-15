@@ -10,13 +10,13 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: article
-ms.date: 10/18/2019
-ms.openlocfilehash: e1120abb06ec2c777114703cfe3fc7334477aecc
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.date: 11/06/2019
+ms.openlocfilehash: 556fb2c1caf9c763cf5a63b71d3dd1e522104e1d
+ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72592940"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73646965"
 ---
 # <a name="tutorial-migrate-sql-server-to-an-azure-sql-database-managed-instance-online-using-dms"></a>Руководство по Перенос баз данных SQL Server в управляемый экземпляр Базы данных SQL Azure по сети с помощью DMS
 
@@ -33,8 +33,8 @@ Azure Database Migration Service можно использовать для пе
 > * Когда будете готовы, выполните прямую миграцию.
 
 > [!IMPORTANT]
-> Чтобы выполнить миграцию по сети из SQL Server в управляемый экземпляр Базы данных SQL Azure с помощью Azure Database Migration Service, поместите полную резервную копию и последующие резервные копии журналов в сетевую папку SMB, которые служба может использовать для миграции баз данных. Azure Database Migration Service не инициирует создание резервных копий, но вместо этого использует для миграции существующие резервные копии, которые уже могли быть созданы в рамках плана аварийного восстановления.
-> Выбирайте [резервные копии, используя параметр WITH CHECKSUM](https://docs.microsoft.com/sql/relational-databases/backup-restore/enable-or-disable-backup-checksums-during-backup-or-restore-sql-server?view=sql-server-2017). Также убедитесь, что не добавили несколько резервных копий (например, полную копию и журнал транзакций) на один носитель резервных копий. Сохраняйте каждую резервную копию в отдельный файл.
+> Чтобы выполнить миграцию по сети из SQL Server в управляемый экземпляр Базы данных SQL Azure с помощью Azure Database Migration Service, поместите полную резервную копию и последующие резервные копии журналов в сетевую папку SMB, которые служба может использовать для миграции баз данных. Azure Database Migration Service не инициирует создание резервных копий, вместо этого он использует для миграции существующие резервные копии, которые уже могли быть созданы в рамках плана аварийного восстановления.
+> Выбирайте [резервные копии, используя параметр WITH CHECKSUM](https://docs.microsoft.com/sql/relational-databases/backup-restore/enable-or-disable-backup-checksums-during-backup-or-restore-sql-server?view=sql-server-2017). Также убедитесь, что не добавили несколько резервных копий (например, полную копию и журнал транзакций) на один носитель резервных копий. Сохраняйте каждую резервную копию в отдельный файл. Наконец, чтобы снизить вероятность возникновения потенциальных проблем, связанных с миграцией больших объемов резервных копий, можно использовать сжатые резервные копии.
 
 > [!NOTE]
 > Чтобы выполнить сетевую миграцию с помощью Azure Database Migration Service, требуется создать экземпляр ценовой категории "Премиум".
@@ -44,7 +44,7 @@ Azure Database Migration Service можно использовать для пе
 
 [!INCLUDE [online-offline](../../includes/database-migration-service-offline-online.md)]
 
-В этой статье описывается перенос данных из SQL Server в управляемый экземпляр Базы данных SQL Azure по сети. Сведения о переносе в автономном режиме см. в руководстве по [переносу SQL Server в Управляемый экземпляр Базы данных SQL Azure с помощью DMS в автономном режиме](tutorial-sql-server-to-managed-instance.md).
+В этой статье описывается перенос данных из SQL Server в управляемый экземпляр Базы данных SQL Azure по сети. Сведения о переносе в автономном режиме см. в руководстве [Перенос SQL Server в Управляемый экземпляр Базы данных SQL Azure с помощью DMS в автономном режиме](tutorial-sql-server-to-managed-instance.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -59,7 +59,9 @@ Azure Database Migration Service можно использовать для пе
     > * конечную точку службы хранилища;
     > * конечную точку служебной шины.
     >
-    > Эта настройка необходима, потому что у Azure Database Migration Service нет подключения к Интернету.
+    > Такая конфигурация вызвана тем, что у Azure Database Migration Service нет подключения к Интернету.
+    >
+    >Если у вас нет подключения типа "сеть — сеть" между локальной сетью и Azure, или если пропускная способность подключения "сеть — сеть" ограничена, рекомендуется использовать Azure Database Migration Service в гибридном режиме (Предварительная версия). Гибридный режим использует локальный рабочий процесс миграции вместе с экземпляром Azure Database Migration Service, который работает в облаке. Сведения о создании экземпляра Azure Database Migration Service в гибридном режиме см. в статье [Создание экземпляра Azure Database Migration Service в гибридном режиме с помощью портала Azure](https://aka.ms/dms-hybrid-create).
 
     > [!IMPORTANT]
     > В отношении учетной записи хранения, используемой в процессе миграции, необходимо:
@@ -79,7 +81,7 @@ Azure Database Migration Service можно использовать для пе
 * Создайте идентификатор приложения Azure Active Directory, создающего ключ идентификатора приложения, который может использоваться службой DMS для подключения к целевому управляемому экземпляру Базы данных SQL Azure и контейнеру службы хранилища Azure. Дополнительные сведения см. в статье [Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal).
 
   > [!NOTE]
-  > DMS необходимо разрешение участника в подписке для указанного идентификатора приложения. Мы активно работаем, чтобы снизить требования к этим разрешениям.
+  > DMS необходимо разрешение участника в подписке для указанного идентификатора приложения. Кроме того, вы можете создать пользовательские роли, предоставляющие определенные разрешения, которые требует Azure Database Migration Service. Пошаговые инструкции по использованию пользовательских ролей см. в статье [Custom roles for SQL Server to SQL Database managed instance online migrations](https://docs.microsoft.com/azure/dms/resource-custom-roles-sql-db-managed-instance) (Пользовательские роли для миграций SQL Server к управляемому экземпляру базы данных SQL в сети).
 
 * Создайте и запишите учетную запись хранения Azure с **уровнем производительности "Стандартный"** , которая позволяет службе DMS передавать файлы резервной копии базы данных и использовать их для переноса баз данных.  Убедитесь, что учетная запись хранения Azure создана в том же регионе, что и экземпляр службы DMS.
 

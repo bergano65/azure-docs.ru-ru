@@ -1,5 +1,5 @@
 ---
-title: Создание фабрики данных Azure с помощью шаблона Resource Manager | Документация Майкрософт
+title: Создание фабрики данных Azure с помощью шаблона Resource Manager
 description: Работая с этим руководством, вы создадите образец конвейера фабрики данных Azure с помощью шаблона Azure Resource Manager.
 services: data-factory
 documentationcenter: ''
@@ -11,12 +11,12 @@ ms.date: 02/20/2019
 author: djpmsft
 ms.author: daperlov
 manager: craigg
-ms.openlocfilehash: 8766ff461227a749a432771dfe7dbe96a291109a
-ms.sourcegitcommit: a819209a7c293078ff5377dee266fa76fd20902c
+ms.openlocfilehash: 6bba764060c243417711205083bf02f84a68fed1
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71008706"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73684525"
 ---
 # <a name="tutorial-create-an-azure-data-factory-using-azure-resource-manager-template"></a>Руководство по Создание фабрики данных Azure с помощью шаблона Azure Resource Manager
 
@@ -47,7 +47,7 @@ ms.locfileid: "71008706"
 
 ## <a name="data-factory-json"></a>JSON-файл фабрики данных
 
-Создайте JSON файл под названием ADFTutorialARM.json в папке C:\ADFTutorial (Создайте папку ADFTutorial, если она еще не существует) со следующим содержимым:
+Создайте в папке **C:\ADFTutorial** (если такой папки не существует, создайте ее) JSON-файл под названием **ADFTutorialARM.json** со следующим содержимым:
 
 ```json
 {  

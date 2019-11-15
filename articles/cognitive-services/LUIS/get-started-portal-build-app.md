@@ -1,26 +1,25 @@
 ---
 title: Краткое руководство. Создание приложения на портале LUIS
 titleSuffix: Azure Cognitive Services
-description: С помощью этого краткого руководства вы создадите приложение на портале LUIS. Вы создадите основные части приложения, намерения и сущности, а также протестируете приложение, предоставив образец пользовательского речевого фрагмента на интерактивной тестовой панели, чтобы получить прогнозируемое намерение. Создание приложения является бесплатным; для этого не требуется подписка Azure.
+description: В этом кратком руководстве описывается создание основных компонентов приложения, намерений и сущностей, а также тестирование с примером речевого фрагмента на портале LUIS.
 services: cognitive-services
 author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: quickstart
-ms.date: 09/04/2019
+ms.date: 11/04/2019
 ms.author: diberry
-ms.openlocfilehash: 6888c53122e649d6a0e91f8ece30101f051c08e8
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 087b3a61902c533648b5d6e1b4b763f88ee5d794
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73488742"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73669676"
 ---
 # <a name="quickstart-create-a-new-app-in-the-luis-portal"></a>Краткое руководство. Создание приложения на портале LUIS
 
-
-[!INCLUDE [Waiting for LUIS portal refresh](./includes/wait-v3-upgrade.md)]
+[!INCLUDE [Uses preview portal](./includes/uses-portal-preview.md)]
 
 В этом кратком руководстве описывается, как создать приложение на [портале LUIS](https://www.luis.ai). Сначала вы создадите основные части приложения, **намерения** и **сущности**. Затем вы протестируете приложение, предоставив образец пользовательского речевого фрагмента на интерактивной тестовой панели, чтобы получить прогнозируемое намерение.
 
@@ -32,7 +31,7 @@ ms.locfileid: "73488742"
 
 1. Выберите **+ Создать** на контекстной панели инструментов.
 
-   [![Создание приложения в LUIS](./media/get-started-portal-build-app/create-app-in-portal.png)](./media/get-started-portal-build-app/create-app-in-portal.png#lightbox)
+   [![Создание приложения в LUIS](./media/create-app-in-portal.png)](./media/create-app-in-portal.png#lightbox)
 
 1. Во всплывающем окне настройте приложение со следующими параметрами, а затем выберите **Готово**.
 
@@ -40,8 +39,8 @@ ms.locfileid: "73488742"
    |--|--|--|
    |ИМЯ|`myEnglishApp`|Уникальное имя приложения LUIS<br>обязательно|
    |Язык и региональные параметры|**English**|Язык пользовательских речевых фрагментов, **en-us**<br>обязательно|
-   |ОПИСАНИЕ|`App made with LUIS Portal`|Описание приложения.<br>необязательный|
-   | | | |
+   |Описание (необязательно)|`App made with LUIS Portal`|Описание приложения.<br>необязательный|
+   |Ресурс прогнозирования (необязательно) |-  |Не выбирайте. LUIS предоставляет бесплатный ключ для начала разработки и 1000 запросов к конечным точкам прогнозирования. |
 
    ![Ввести новые настройки приложения](./media/get-started-portal-build-app/create-new-app-settings.png)
 
@@ -61,13 +60,11 @@ ms.locfileid: "73488742"
 
 Чтобы создать намерения, сделайте следующее:
 
-1. После создания приложения вы находитесь на странице **Намерения** раздела **Сборка**. Выберите **Create new intent**. (Создать намерение).
+1. После создания приложения вы находитесь на странице **Намерения** раздела **Сборка**. Нажмите кнопку **Создать**.
 
-   [![Нажмите кнопку "Создать новое намерение"](./media/get-started-portal-build-app/create-new-intent-button.png)](./media/get-started-portal-build-app/create-new-intent-button.png#lightbox)
+   [![Нажмите кнопку "Создать", чтобы добавить новое намерение](./media/get-started-portal-build-app/create-new-intent-button.png)](./media/get-started-portal-build-app/create-new-intent-button.png#lightbox)
 
 1. Введите имя намерения `FindForm` и нажмите кнопку **Готово**.
-
-   ![Введите имя намерения FindForm](./media/get-started-portal-build-app/create-new-intent-dialog.png)
 
 ## <a name="add-an-example-utterance"></a>Добавьте пример высказывания.
 
@@ -113,13 +110,16 @@ ms.locfileid: "73488742"
 
 1. Выберите **Сущности** в меню слева.
 
-1. Нажмите кнопку **Создать сущность** на странице **Сущности**.
+1. Нажмите кнопку **Создать** на странице **Сущности**.
 
-1. Введите имя `Human Resources Form Number`,выберите тип сущности **Regex**, а затем введите регулярное выражение, `hrf-[0-9]{6}`. Эта запись соответствует буквенным знакам `hrf-` и допускает ровно 6 цифр.
+1. Введите имя `Human Resources Form Number`, выберите тип сущности **Regex**, а затем нажмите кнопку **Далее**.
 
-   ![Введите сведения о сущности для этой сущности регулярных выражений](./media/get-started-portal-build-app/create-regular-expression-entity.png)
+   ![Создание сущности регулярного выражения](./media/get-started-portal-build-app/create-regular-expression-entity.png)
 
-1. Нажмите кнопку **Готово**.
+1. Введите следующее регулярное выражение (**RegEx**): `hrf-[0-9]{6}`. Эта запись соответствует буквенным знакам `hrf-` и допускает ровно 6 цифр. Теперь нажмите кнопку **Создать**.
+
+   ![Ввод регулярного выражения для сущности](./media/get-started-portal-build-app/create-regular-expression-entity-with-expression.png)
+
 
 ## <a name="add-example-utterances-to-the-none-intent"></a>Добавление примеров речевых фрагментов в намерение None
 
@@ -137,11 +137,11 @@ ms.locfileid: "73488742"
    |Закажи пиццу|
    |Пингвины в океане|
 
-   Для этого приложения отдела кадров эти примеры речевых фрагментов находятся за пределами домена. Если ваш домен отдела кадров охватывает примеры с животными, едой или океаном, тогда используйте другие примеры речевых фрагментов для намерения **None**.
+   Эти примеры речевых фрагментов не связаны с назначением данного приложения. Если ваш домен связан с животными, едой или океаном, то следует использовать другие примеры речевых фрагментов для намерения **None**.
 
 ## <a name="train-the-app"></a>Обучение приложения
 
-В меню в верхнем правом углу выберите **Обучение**, чтобы применить изменения намерения и модели сущности к текущей версии приложения.
+[!INCLUDE [LUIS How to Train steps](includes/howto-train.md)]
 
 ## <a name="look-at-the-regular-expression-entity-in-the-example-utterances"></a>Рассмотрим сущность регулярного выражения в примерах речевых фрагментов
 
@@ -168,8 +168,6 @@ ms.locfileid: "73488742"
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 Если вы изучили это краткое руководство и не переходите к следующему, выберите **Мои приложения** в меню навигации сверху. Затем установите флажок слева от имени приложения в списке и щелкните **Удалить** в контекстном меню над списком.
-
-[![Удаление приложения из списка "Мои приложения"](./media/get-started-portal-build-app/delete-app.png)](./media/get-started-portal-build-app/delete-app.png#lightbox)
 
 ## <a name="next-steps"></a>Дополнительная информация
 

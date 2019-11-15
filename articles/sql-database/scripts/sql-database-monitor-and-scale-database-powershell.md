@@ -1,5 +1,5 @@
 ---
-title: Пример для CLI. Мониторинг и масштабирование отдельной базы данных SQL Azure | Документация Майкрософт
+title: Пример для PowerShell. Мониторинг и масштабирование отдельной базы данных SQL Azure
 description: Пример сценария Azure PowerShell для отслеживания и масштабирования отдельной базы данных SQL Azure.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: juliemsft
 ms.author: jrasnick
 ms.reviewer: carlrab
 ms.date: 03/12/2019
-ms.openlocfilehash: c900f34be16070e4666737a5a5c3673ffa149550
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: b1c2630d8038596590cc1ae9e67cf7e14c6c00f0
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68569903"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73691663"
 ---
 # <a name="use-powershell-to-monitor-and-scale-a-single-sql-database"></a>Мониторинг и масштабирование отдельной базы данных SQL с помощью PowerShell
 

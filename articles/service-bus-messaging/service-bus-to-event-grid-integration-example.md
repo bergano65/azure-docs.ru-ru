@@ -1,6 +1,6 @@
 ---
-title: Примеры интеграции служебной шины Azure со службой "Сетка событий" | Документация Майкрософт
-description: В статье представлены примеры интеграции обмена сообщениями через служебную шину с Сеткой событий.
+title: Руководство по Примеры интеграции служебной шины Azure со службой "Сетка событий"
+description: Руководство по В статье представлены примеры интеграции обмена сообщениями через служебную шину с Сеткой событий.
 services: service-bus-messaging
 documentationcenter: .net
 author: spelluru
@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: multiple
 ms.topic: tutorial
-ms.date: 05/14/2019
+ms.date: 11/05/2019
 ms.author: spelluru
-ms.openlocfilehash: f31e014cf242675577bedd29a3a79332ede32bf5
-ms.sourcegitcommit: 770b060438122f090ab90d81e3ff2f023455213b
+ms.openlocfilehash: d3f523bbc0236536734f21870474492a61532ada
+ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68304238"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73719020"
 ---
-# <a name="respond-to-azure-service-bus-events-received-via-azure-event-grid-by-using-azure-functions-and-azure-logic-apps"></a>Реагирование на события служебной шины Azure, получаемые через Сетку событий Azure с помощью Функций Azure и Azure Logic Apps
+# <a name="tutorial-respond-to-azure-service-bus-events-received-via-azure-event-grid-by-using-azure-functions-and-azure-logic-apps"></a>Руководство по Реагирование на события служебной шины Azure, получаемые через Сетку событий Azure с помощью Функций Azure и Azure Logic Apps
 Узнайте, как отвечать на события служебной шины Azure, получаемые через Сетку событий Azure с помощью Функций Azure и Azure Logic Apps. Вы сделаете следующее:
  
 - Создадите функцию проверки Azure для отладки и просмотра начального потока событий из Сетки событий.

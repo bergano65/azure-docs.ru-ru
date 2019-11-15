@@ -10,12 +10,12 @@ author: trevorbye
 ms.author: trbye
 ms.reviewer: trbye
 ms.date: 11/04/2019
-ms.openlocfilehash: b5b3ca127aba62b39bd7236412d4c6a542347db3
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 11eaafec750b2ca35933b431866def51c25e8961
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/04/2019
-ms.locfileid: "73476194"
+ms.locfileid: "73582480"
 ---
 # <a name="tutorial-train-your-first-ml-model"></a>Руководство по обучению модели Машинного обучения
 
@@ -197,7 +197,7 @@ best_run.download_file(name="model_alpha_0.1.pkl")
 
 Не выполняйте инструкции из этого раздела, если вы собираетесь изучать другие руководства по Машинному обучению Azure.
 
-### <a name="stop-the-compute-instance"></a>Остановка экземпляра для вычислений
+### <a name="stop-the-notebook-vm"></a>Остановка работы виртуальной машины для записных книжек
 
 [!INCLUDE [aml-stop-server](../../../includes/aml-stop-server.md)]
 

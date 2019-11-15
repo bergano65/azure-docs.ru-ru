@@ -57,6 +57,20 @@
           href: how-tos/create-locate-anchors-cpp-ndk.md
         - name: В C++/WinRT
           href: how-tos/create-locate-anchors-cpp-winrt.md
+    - name: Использование датчиков устройств для обнаружения ближайших привязок
+      items:
+        - name: 'В C# для Unity'
+          href: how-tos/set-up-coarse-reloc-unity.md
+        - name: В Objective-C
+          href: how-tos/set-up-coarse-reloc-objc.md
+        - name: В Swift
+          href: how-tos/set-up-coarse-reloc-swift.md
+        - name: В Java
+          href: how-tos/set-up-coarse-reloc-java.md
+        - name: В C++/NDK
+          href: how-tos/set-up-coarse-reloc-cpp-ndk.md
+        - name: В C++/WinRT
+          href: how-tos/set-up-coarse-reloc-cpp-winrt.md
 - name: Примеры
   items:
     - name: Примеры пространственных привязок Azure (GitHub)
@@ -71,6 +85,8 @@
       href: concepts/guidelines-effective-anchor-experiences.md
     - name: Ведение журнала и диагностика
       href: concepts/logging-diagnostics.md
+    - name: Простое уточнение расположения
+      href: concepts/coarse-reloc.md
 - name: Справочники
   items:
     - name: Пакет SDK для Unity

@@ -1,20 +1,17 @@
 ---
 title: Привязка кэша Azure для Redis к приложению Azure Spring Cloud | Документация Майкрософт
 description: Узнайте, как привязать кэш Azure для Redis к приложению Azure Spring Cloud
-services: spring-cloud
-author: v-vasuke
-manager: gwallace
-editor: ''
+author: jpconnock
 ms.service: spring-cloud
-ms.topic: quickstart
-ms.date: 10/06/2019
-ms.author: v-vasuke
-ms.openlocfilehash: d8fa31207baecc80674fb11b492927800676b8a2
-ms.sourcegitcommit: d773b5743cb54b8cbcfa5c5e4d21d5b45a58b081
+ms.topic: tutorial
+ms.date: 10/31/2019
+ms.author: jeconnoc
+ms.openlocfilehash: a901e4194909df85f53799d5937515e42ea87a69
+ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72038243"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73607571"
 ---
 # <a name="tutorial-bind-azure-services-to-your-azure-spring-cloud-application-azure-cache-for-redis"></a>Руководство по Привяжите службы Azure к приложению Azure Spring Cloud: Кэш Redis для Azure
 
@@ -26,14 +23,7 @@ ms.locfileid: "72038243"
 * Экземпляр службы кэша Azure для Redis
 * Расширение Azure Spring Cloud для Azure CLI
 
-При необходимости установите расширение Azure Spring Cloud для Azure CLI с помощью следующей команды:
-
-```azurecli
-az extension add -y --source https://azureclitemp.blob.core.windows.net/spring-cloud/spring_cloud-0.1.0-py2.py3-none-any.whl
-```
-
->[!TIP]
-> Azure Cloud Shell — это бесплатная интерактивная оболочка, с помощью которой можно выполнять действия, описанные в этой статье.  Она содержит предварительно установленные общие инструменты Azure вместе с новейшими версиями Git, JDK, Maven и Azure CLI. Если вы вошли в подписку Azure, запустите [Azure Cloud Shell](https://shell.azure.com) на сайте shell.azure.com.  Дополнительные сведения об Azure Cloud Shell см. в [нашей документации](../cloud-shell/overview.md)
+Если у вас еще не развернут экземпляр Azure Spring Cloud, выполните процедуру в [этом кратком руководстве](spring-cloud-quickstart-launch-app-portal.md), чтобы развернуть первое приложение Spring Cloud.
 
 ## <a name="bind-azure-cache-for-redis"></a>Привязка кэша Azure для Redis
 

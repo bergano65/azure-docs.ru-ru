@@ -5,15 +5,15 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: azure-migrate
 ms.topic: tutorial
-ms.date: 09/04/2019
+ms.date: 11/04/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 9b1944cdad67f9f1b74c8dae95bc9d8409e56f54
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.openlocfilehash: ffa072f593a06a38e6e3d121fb76806e41bf568e
+ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70309468"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73605548"
 ---
 # <a name="migrate-physical-or-virtualized-servers-to-azure"></a>Перенос физических и виртуализированных серверов в Azure 
 
@@ -135,7 +135,7 @@ ms.locfileid: "70309468"
 - **Сервер конфигурации** Сервер конфигурации используется для управления обменом данными между локальным источником и Azure, а также репликацией данных.
 - **Сервер обработки** Сервер обработки выступает в качестве шлюза репликации. Он получает данные репликации, оптимизирует их путем кэширования, сжатия и шифрования и отправляет их в учетную запись хранения кэша Azure. 
 
-Перед началом необходимо подготовить компьютер под управлением Windows Server 2016 для размещения устройства репликации. Компьютер должен соответствовать [таким требованиям](migrate-support-matrix-vmware.md#agent-based-migration-replication-appliance-requirements).
+Перед началом необходимо подготовить компьютер под управлением Windows Server 2016 для размещения устройства репликации. Компьютер должен соответствовать [таким требованиям](migrate-support-matrix-vmware.md#agent-based-migration-replication-appliance-requirements). Устройство не должно быть установлено на исходном компьютере, который вы намерены защитить.
 
 
 ## <a name="add-the-azure-migrate-server-migration-tool"></a>Добавление средства "Миграция сервера" службы "Миграция Azure"

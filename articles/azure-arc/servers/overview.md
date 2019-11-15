@@ -10,12 +10,12 @@ keywords: служба автоматизации Azure, DSC, PowerShell, нас
 ms.date: 11/04/2019
 ms.custom: mvc
 ms.topic: overview
-ms.openlocfilehash: 0178f27c39c065399208e7fc5afe7352ba4f8e30
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 57dbfa0c2063c2059955294ccc1337bb76b72614
+ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73488220"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73606084"
 ---
 # <a name="what-is-azure-arc-for-servers"></a>Что собой представляет Azure Arc для серверов
 
@@ -34,7 +34,7 @@ Azure Arc для серверов позволяет управлять комп
 
 В общедоступной предварительной версии поддерживается:
 
-- Windows Server 2012 R2 и более поздней версии;
+- Windows Server 2012 R2 и более поздних версий
 - Ubuntu 16.04 и 18.04.
 
 Выпуск общедоступной предварительной версии предназначен для ознакомления, и его не следует использовать для управления критически важными рабочими ресурсами.
@@ -83,7 +83,7 @@ Linux:
 
 ## <a name="register-the-required-resource-providers"></a>Регистрация необходимых поставщиков ресурсов
 
-После утверждения регистрации флага компонента необходимо зарегистрировать необходимые поставщики ресурсов.
+Чтобы использовать Azure Arc для серверов, вы должны зарегистрировать необходимых поставщиков ресурсов.
 
 * **Microsoft.HybridCompute**
 * **Microsoft.GuestConfiguration**

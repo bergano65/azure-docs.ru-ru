@@ -75,6 +75,8 @@
           href: key-vault-access.md
         - name: Развертывание с использованием управляемого удостоверения
           href: publish-managed-identity.md
+        - name: Развертывание с использованием уведомлений
+          href: publish-notifications.md
     - name: Потребители
       items:
         - name: Мониторинг управляемого приложения

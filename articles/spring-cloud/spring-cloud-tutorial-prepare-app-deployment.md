@@ -1,20 +1,17 @@
 ---
 title: Подготовка приложения Spring к развертыванию в Azure Spring Cloud | Документация Майкрософт
 description: В рамках этого краткого руководства вы подготовите приложение Java Spring для развертывания.
-services: spring-cloud
-author: v-vasuke
-manager: jeconnoc
-editor: ''
+author: jpconnock
 ms.service: spring-cloud
-ms.topic: quickstart
+ms.topic: tutorial
 ms.date: 10/06/2019
-ms.author: v-vasuke
-ms.openlocfilehash: 98d9f3f656cff84cec8d223ed535255157155bd2
-ms.sourcegitcommit: d773b5743cb54b8cbcfa5c5e4d21d5b45a58b081
+ms.author: jeconnoc
+ms.openlocfilehash: 6c3048fd27c3d3d4fdba0841fb4ab21bd10e15fe
+ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72038333"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73721252"
 ---
 # <a name="tutorial-prepare-a-java-spring-application-for-deployment-in-azure-spring-cloud"></a>Руководство по подготовке приложения Java Spring для развертывания в Azure Spring Cloud
 
@@ -93,27 +90,27 @@ Azure Spring Cloud размещает компоненты Spring Cloud, так�
 
 Версия Spring Boot | Версия Spring Cloud | Версия Azure Spring Cloud
 ---|---|---
-2.0.x | Finchley.RELEASE | 2.0.0-SNAPSHOT
-2.1.x | Greenwich.RELEASE | 2.1.0-SNAPSHOT
+2.0.x | Finchley.RELEASE | 2.0.x
+2.1.x | Greenwich.RELEASE | 2.1.x
 
-Добавьте этот фрагмент кода в файл `pom.xml` с правильной версией Azure Spring Cloud в раздел dependency:
+Включите один из представленных ниже фрагментов в `pom.xml`.  Выберите тот фрагмент кода, у которого версия совпадает с используемой вами.
 
+### <a name="version-20x"></a>Версия 2.0.x:
 ```xml
-    <repositories>
-        <repository>
-            <id>nexus-snapshots</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
-    
-    <dependency>
+<dependency>
         <groupId>com.microsoft.azure</groupId>
         <artifactId>spring-cloud-starter-azure-spring-cloud-client</artifactId>
-        <version>2.1.0-SNAPSHOT</version>
-    </dependency>
+        <version>2.0.0</version>
+</dependency>
+```
+
+### <a name="version-21x"></a>Версия 2.1.x:
+```xml
+<dependency>
+        <groupId>com.microsoft.azure</groupId>
+        <artifactId>spring-cloud-starter-azure-spring-cloud-client</artifactId>
+        <version>2.1.0</version>
+</dependency>
 ```
 
 ## <a name="other-required-dependencies"></a>Другие необходимые зависимости

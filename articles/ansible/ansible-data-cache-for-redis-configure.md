@@ -1,6 +1,6 @@
 ---
 title: Руководство по настройке кэшей в Кэше Azure для Redis с использованием Ansible
-description: Дополнительные сведения о том, как использовать Ansible для создания, масштабирования и перезапуска Кэша Azure для Redis
+description: Сведения о том, как использовать Ansible для создания, масштабирования и перезапуска Кэша Azure для Redis, а также для создания правил брандмауэра
 keywords: ansible, azure, devops, bash, playbook, cache, redis
 ms.topic: tutorial
 ms.service: ansible
@@ -8,12 +8,12 @@ author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.date: 04/30/2019
-ms.openlocfilehash: 92592dffb3a9094ae74328e8819cafc9469c2ac7
-ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
+ms.openlocfilehash: 95b42bc9539c36a533eb528c3c26ade89e99290b
+ms.sourcegitcommit: b2fb32ae73b12cf2d180e6e4ffffa13a31aa4c6f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72241790"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73614364"
 ---
 # <a name="tutorial-configure-caches-in-azure-cache-for-redis-using-ansible"></a>Руководство по Настройка кэшей в Кэше Azure для Redis с использованием Ansible
 
