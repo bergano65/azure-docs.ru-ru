@@ -1,0 +1,14 @@
+- name: Azure
+  tocHref: /azure
+  topicHref: /azure/index
+  items:
+    - name: Система управления
+      tocHref: /azure/governance
+      topicHref: /azure/governance
+      items:
+        - name: Политика
+          tocHref: /azure/lighthouse
+          topicHref: /azure/governance/policy
+        - name: Политика
+          tocHref: /azure/azure-monitor
+          topicHref: /azure/governance/policy
