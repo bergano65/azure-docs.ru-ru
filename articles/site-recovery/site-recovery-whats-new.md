@@ -1,18 +1,18 @@
 ---
 title: Новые возможности Azure Site Recovery
-description: Содержит сводку новых функций, появившихся в Azure Site Recovery
+description: Содержит сводку новых функций и последних обновлений в службе Azure Site Recovery.
 services: site-recovery
 author: rayne-wiselman
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 10/31/2019
+ms.date: 11/14/2019
 ms.author: raynew
-ms.openlocfilehash: 19bf79cdb6bcdc0c20d47c698647383b758338db
-ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
+ms.openlocfilehash: af1b531ac1b38921a99284aad2108e4027d97f4c
+ms.sourcegitcommit: a170b69b592e6e7e5cc816dabc0246f97897cb0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73961331"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74091701"
 ---
 # <a name="whats-new-in-site-recovery"></a>Новые возможности в Site Recovery
 

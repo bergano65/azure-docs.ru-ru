@@ -1,5 +1,5 @@
 ---
-title: 'Настройка Global Reach-ExpressRoute: Azure | Документация Майкрософт'
+title: 'Azure ExpressRoute: Настройка Global Reach'
 description: В этой статье содержатся сведения о том, как связать каналы ExpressRoute, чтобы настроить частную сеть между локальными сетями и включить Global Reach.
 services: expressroute
 author: jaredr80
@@ -7,13 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 02/25/2019
 ms.author: jaredro
-ms.custom: seodec18
-ms.openlocfilehash: 64abf820a502db0ee0033ce52ed148bae6b8ffc2
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: 76de7a8854a58deb924cbbe3177ad5a7b5fd57a2
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73748170"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74083467"
 ---
 # <a name="configure-expressroute-global-reach"></a>Настройка ExpressRoute Global Reach
 
@@ -125,7 +124,7 @@ Set-AzExpressRouteCircuit -ExpressRouteCircuit $ckt_1
 
 После завершения предыдущей операции вы потеряете подключение к локальной сети через каналы ExpressRoute.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 1. [Получение дополнительных сведений об ExpressRoute Global Reach](expressroute-global-reach.md).
 2. [Проверка подключения ExpressRoute](expressroute-troubleshooting-expressroute-overview.md).
 3. [Подключение виртуальной сети к каналу ExpressRoute](expressroute-howto-linkvnet-arm.md).

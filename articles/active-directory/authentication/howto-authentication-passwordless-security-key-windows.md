@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: librown, aakapo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9b57fe9241a6a29e6f5ce12b7a1412455df4a001
-ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+ms.openlocfilehash: 7b3aa2add128cfc11a638fe6c7e03cfb25189afc
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73603477"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74081565"
 ---
 # <a name="enable-passwordless-security-key-sign-in-to-windows-10-devices-preview"></a>Включение входа с помощью ключа безопасности без пароля на устройствах Windows 10 (Предварительная версия)
 
@@ -60,7 +60,7 @@ ms.locfileid: "73603477"
 
 ### <a name="enable-with-intune"></a>Включение с помощью Intune
 
-1. Войдите на [портал Azure](https://portal.azure.com).
+1. Войдите на [портале Azure](https://portal.azure.com).
 1. Перейдите к **Microsoft Intune** > **регистрации устройств** > **регистрации Windows** > **Свойства** **Windows Hello для бизнеса** > .
 1. В разделе **Параметры** установите для параметра **Вход использовать ключи безопасности** значение **включено**.
 
@@ -70,7 +70,7 @@ ms.locfileid: "73603477"
 
 Чтобы включить поставщик учетных данных для конкретных групп устройств, используйте следующие пользовательские параметры через Intune.
 
-1. Войдите на [портал Azure](https://portal.azure.com).
+1. Войдите на [портале Azure](https://portal.azure.com).
 1. Перейдите в **Microsoft Intune** > **Конфигурация устройства** > **Профили** > **создать профиль**.
 1. Настройте новый профиль со следующими параметрами.
    1. Имя: ключи безопасности для входа в Windows
@@ -88,12 +88,12 @@ ms.locfileid: "73603477"
 
 ### <a name="enable-with-a-provisioning-package"></a>Включить с помощью пакета подготовки
 
-Для устройств, не управляемых Intune, можно установить пакет подготовки, чтобы включить функциональные возможности. Приложение "конструктор конфигураций Windows" можно установить из [Microsoft Store](https://www.microsoft.com/store/apps/9nblggh4tx22).
+Для устройств, не управляемых Intune, можно установить пакет подготовки, чтобы включить функциональные возможности. Приложение "конструктор конфигураций Windows" можно установить из [Microsoft Store](https://www.microsoft.com/en-us/p/windows-configuration-designer/9nblggh4tx22).
 
 1. Запустите конструктор конфигураций Windows.
 1. Выберите **файл** > **Новый проект**.
 1. Присвойте проекту имя и запишите путь, по которому создан проект.
-1. Щелкните **Далее**.
+1. Нажмите кнопку **Далее**.
 1. Оставьте выбранный в качестве **рабочего процесса проекта** **пакет подготовки** и нажмите кнопку **Далее**.
 1. Выберите **все выпуски Windows Desktop** в разделе **Выбор параметров для просмотра и настройки** и нажмите кнопку **Далее**.
 1. Выберите **Готово**.
@@ -154,7 +154,7 @@ ms.locfileid: "73603477"
 
 Вы можете удалить ключи из портал Azure, перейдя на страницу сведений о безопасности и удалив ключ безопасности.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 [Дополнительные сведения о регистрации устройств](../devices/overview.md)
 

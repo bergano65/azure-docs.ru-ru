@@ -1,18 +1,19 @@
 ---
-title: Импорт и экспорт файла доменной зоны в Azure DNS с помощью Azure CLI | Документы Майкрософт
+title: Импорт и экспорт файла зоны домена — Azure CLI
+titleSuffix: Azure DNS
 description: Узнайте, как импортировать файл зоны DNS в Azure DNS и экспортировать его оттуда с помощью интерфейса командной строки Azure.
 services: dns
-author: vhorne
+author: asudbring
 ms.service: dns
 ms.date: 4/3/2019
-ms.author: victorh
+ms.author: allensu
 ms.topic: conceptual
-ms.openlocfilehash: b65b70e7a994d7d49b2282d7e193fe6e7b84cfca
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: 036486ed15c9d6502b5e1655bdab4643128bca4b
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67612772"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74082901"
 ---
 # <a name="import-and-export-a-dns-zone-file-using-the-azure-cli"></a>Импорт и экспорт файла зоны DNS с помощью Azure CLI
 
@@ -154,7 +155,7 @@ az network dns zone import -g <resource group> -n <zone name> -f <zone file name
 
 ## <a name="export-a-dns-zone-file-from-azure-dns"></a>Экспорт файла зоны DNS из Azure DNS
 
-Команды Azure CLI для экспорта зону DNS выглядит следующим образом:
+Формат команды Azure CLI для экспорта зоны DNS:
 
 ```azurecli
 az network dns zone export -g <resource group> -n <zone name> -f <zone file name>
@@ -176,7 +177,7 @@ az network dns zone export -g <resource group> -n <zone name> -f <zone file name
 az network dns zone export -g myresourcegroup -n contoso.com -f contoso.com.txt
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 * Узнайте, как [управлять наборами записей и записями](dns-getstarted-create-recordset-cli.md) в зоне DNS.
 

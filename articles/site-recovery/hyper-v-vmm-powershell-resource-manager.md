@@ -1,5 +1,5 @@
 ---
-title: Настройка аварийного восстановления виртуальных машин Hyper-V в облаках VMM на дополнительный сайт с помощью Azure Site Recovery и PowerShell | Документация Майкрософт
+title: Настройка аварийного восстановления Hyper-V (с VMM) на дополнительный сайт с помощью Azure Site Recovery или PowerShell
 description: В этой статье описана настройка аварийного восстановления виртуальных машин Hyper-V в облаках VMM на дополнительный сайт VMM с помощью Azure Site Recovery и PowerShell.
 services: site-recovery
 author: sujayt
@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 11/27/2018
 ms.author: sutalasi
-ms.openlocfilehash: 78bd077b5491b093510b9c55bf7b5a42ee9cb578
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 2fc66514bdf33611f9e6266d35a2d537fe3b9261
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60362362"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74084906"
 ---
 # <a name="set-up-disaster-recovery-of-hyper-v-vms-to-a-secondary-site-by-using-powershell-resource-manager"></a>Настройка аварийного восстановления виртуальных машин Hyper-V на дополнительный сайт с помощью PowerShell (Resource Manager)
 
@@ -21,15 +21,15 @@ ms.locfileid: "60362362"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 - Ознакомьтесь с [архитектурой и компонентами сценария](hyper-v-vmm-architecture.md).
-- [Ознакомьтесь](site-recovery-support-matrix-to-sec-site.md) с требованиями поддержки для всех компонентов.
+- Ознакомьтесь с [требованиями поддержки ](site-recovery-support-matrix-to-sec-site.md) для всех компонентов.
 - Убедитесь, что серверы Virtual Machine Manager и узлы Hyper-V соответствуют [требованиям поддержки](site-recovery-support-matrix-to-sec-site.md).
 - Убедитесь, что виртуальные машины, которые следует реплицировать, соответствуют [требованиям поддержки реплицируемых машин](site-recovery-support-matrix-to-sec-site.md).
 
 
-## <a name="prepare-for-network-mapping"></a>Подготовка к сопоставлению сетей
+## <a name="prepare-for-network-mapping"></a>Выполнить подготовку к сетевому сопоставлению
 
 [Сопоставление сетей](hyper-v-vmm-network-mapping.md) происходит между локальными сетями виртуальных машин Virtual Machine Manager в исходном и целевом облаках. Это предоставляет следующие возможности:
 
@@ -77,7 +77,7 @@ ms.locfileid: "60362362"
 
         $vault = New-AzRecoveryServicesVault -Name #vaultname -ResourceGroupName #ResourceGroupName -Location #location
    
-    Объект хранилища можно получить после ее создания с помощью командлета Get-AzRecoveryServicesVault.
+    Объект хранилища можно получить после его создания с помощью командлета Get-Азрековерисервицесваулт.
 
 ## <a name="set-the-vault-context"></a>Задание контекста хранилища
 1. Получите имеющееся хранилище.
@@ -276,6 +276,6 @@ ms.locfileid: "60362362"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 [Узнайте больше](/powershell/module/az.recoveryservices) об использовании командлетов PowerShell Resource Manager для службы Site Recovery.

@@ -1,18 +1,18 @@
 ---
-title: О сетевом сопоставлении для виртуальных машин Hyper-V (с VMM) аварийное восстановление в Azure с помощью Site Recovery
+title: Сведения о сетевом сопоставлении Hyper-V (с VMM) с Site Recovery
 description: В этой статье описано, как настроить сетевое сопоставление для аварийного восстановления виртуальных машин Hyper-V (управляемых в облаках VMM) в Azure с помощью Azure Site Recovery.
 author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 09/09/2019
+ms.date: 11/14/2019
 ms.author: raynew
-ms.openlocfilehash: 637f327b40341ac04f37baf9e43f136a0315b17f
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: 6b68b4c943ec96620427978c2309f27e1fb1f217
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70813670"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74082560"
 ---
 # <a name="prepare-network-mapping-for-hyper-v-vm-disaster-recovery-to-azure"></a>Подготовка сетевого сопоставления для аварийного восстановления виртуальных машин Hyper-V в Azure
 
@@ -53,12 +53,12 @@ ms.locfileid: "70813670"
 
 Следующий пример иллюстрирует этот механизм. Рассмотрим организацию с двумя филиалами в Нью-Йорке и Чикаго.
 
-**Location** | **Сервер VMM** | **Сети виртуальных машин** | **Сопоставление**
+**Местоположение.** | **Сервер VMM** | **Сети виртуальных машин** | **Сопоставление**
 ---|---|---|---
-Нью Йорк | VMM-NewYork| VMNetwork1-NewYork | Сопоставляется с VMNetwork1-Chicago
- |  | VMNetwork2-NewYork | Не сопоставлено
+Нью-Йорк | VMM-NewYork| VMNetwork1-NewYork | Сопоставляется с VMNetwork1-Chicago
+ |  | VMNetwork2-NewYork | Не сопоставлена
 Чикаго | VMM-Chicago| VMNetwork1-Chicago | Сопоставляется с VMNetwork1-NewYork
- | | VMNetwork2-Chicago | Не сопоставлено
+ | | VMNetwork2-Chicago | Не сопоставлена
 
 В данном примере:
 
@@ -73,14 +73,14 @@ ms.locfileid: "70813670"
 ---|---|---
 GoldCloud1 | GoldCloud2 |
 SilverCloud1| SilverCloud2 |
-GoldCloud2 | <p>Н/Д</p><p></p> | <p>LogicalNetwork1-NewYork</p><p>LogicalNetwork1-Chicago</p>
-SilverCloud2 | <p>Н/Д</p><p></p> | <p>LogicalNetwork1-NewYork</p><p>LogicalNetwork1-Chicago</p>
+GoldCloud2 | <p>—</p><p></p> | <p>LogicalNetwork1-NewYork</p><p>LogicalNetwork1-Chicago</p>
+SilverCloud2 | <p>—</p><p></p> | <p>LogicalNetwork1-NewYork</p><p>LogicalNetwork1-Chicago</p>
 
 ### <a name="logical-and-vm-network-settings"></a>Параметры логической сети и сети виртуальных машин
 
-**Location** | **Логические сети** | **Связанная сеть виртуальных машин**
+**Местоположение.** | **Логические сети** | **Связанная сеть виртуальных машин**
 ---|---|---
-Нью Йорк | LogicalNetwork1-NewYork | VMNetwork1-NewYork
+Нью-Йорк | LogicalNetwork1-NewYork | VMNetwork1-NewYork
 Чикаго | LogicalNetwork1-Chicago | VMNetwork1-Chicago
  | LogicalNetwork2Chicago | VMNetwork2-Chicago
 
@@ -88,12 +88,12 @@ SilverCloud2 | <p>Н/Д</p><p></p> | <p>LogicalNetwork1-NewYork</p><p>LogicalNet
 
 В следующей таблице показаны варианты, доступные при выборе целевой сети виртуальных машин, для этих параметров.
 
-**Выбор** | **Защищенное облако** | **Защита облака** | **Доступная целевая сеть**
+**Select** | **Защищенное облако** | **Защита облака** | **Доступная целевая сеть**
 ---|---|---|---
 VMNetwork1-Chicago | SilverCloud1 | SilverCloud2 | Доступна
- | GoldCloud1 | GoldCloud2 | Доступно
-VMNetwork2-Chicago | SilverCloud1 | SilverCloud2 | Недоступен
- | GoldCloud1 | GoldCloud2 | Доступно
+ | GoldCloud1 | GoldCloud2 | Доступна
+VMNetwork2-Chicago | SilverCloud1 | SilverCloud2 | Недоступно
+ | GoldCloud1 | GoldCloud2 | Доступна
 
 
 Если целевая сеть включает несколько подсетей и одна из этих подсетей имеет то же имя, что и подсеть, в которой размещается исходная виртуальная машина, то после отработки отказа реплика виртуальной машины будет подключена к этой целевой подсети. Если нет подсетей с таким же именем, виртуальная машина будет подключена к первой подсети в сети.
@@ -106,7 +106,7 @@ VMNetwork2-Chicago | SilverCloud1 | SilverCloud2 | Недоступен
 
 **Виртуальная машина** | **Подключенная сеть виртуальных машин**
 ---|---
-ВМ1 | VMNetwork1-Network
+VM1 | VMNetwork1-Network
 VM2 (реплика VM1) | VMNetwork1-Chicago
 
 Приняв эти параметры, рассмотрим, что происходит в нескольких возможных сценариях.
@@ -120,7 +120,7 @@ VM2 (реплика VM1) | VMNetwork1-Chicago
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Set up IP addressing to connect to a secondary on-premises site after failover](hyper-v-vmm-networking.md) (Настройка назначения IP-адресов для подключения к дополнительному локальному сайту после отработки отказа).
 - [Подробнее](concepts-on-premises-to-azure-networking.md) о настройке назначения IP-адресов после отработки отказа в Azure.

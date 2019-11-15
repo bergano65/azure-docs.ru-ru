@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 06/08/2018
 ms.author: dacurwin
-ms.openlocfilehash: a9a72a9b9df18462c1a4dfe470c7c7393cf356d4
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: a7a1b088868add308f128c5a51d8cce4339c637c
+ms.sourcegitcommit: a170b69b592e6e7e5cc816dabc0246f97897cb0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/14/2019
-ms.locfileid: "74074285"
+ms.locfileid: "74091724"
 ---
 # <a name="back-up-a-sharepoint-farm-to-azure-with-mabs"></a>Резервное копирование фермы SharePoint в Azure с помощью MABS
 
@@ -239,7 +239,7 @@ Azure Backup Server работает под учетной записью LocalS
     ![MABS SharePoint Protection13](./media/backup-azure-backup-sharepoint/dpm-sharepoint-protection15.png)
 5. Выполните процедуру восстановления, описанную ранее в этой статье, чтобы восстановить базу данных содержимого SharePoint с диска.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 См. статью [Резервное копирование сервера Exchange Server в службу Azure Backup с помощью Azure Backup Server](backup-azure-exchange-mabs.md).
 См. статью [Резервное копирование баз данных SQL Server в Azure с помощью Azure Backup Server](backup-azure-sql-mabs.md).

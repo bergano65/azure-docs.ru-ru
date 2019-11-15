@@ -1,5 +1,5 @@
 ---
-title: 'Изменение канала ExpressRoute с помощью PowerShell: классическая модель Azure | Документация Майкрософт'
+title: 'Azure ExpressRoute: изменение цепи: PowerShell: классическая модель'
 description: В этой статье описывается, как выполнить проверку состояния, обновление, удаление или отмену подготовки канала классической модели развертывания ExpressRoute.
 services: expressroute
 author: cherylmc
@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 11/05/2019
 ms.author: cherylmc
-ms.openlocfilehash: 9f1c05b85fac6dd0168d9c2b2944326800e90493
-ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
+ms.openlocfilehash: a2a3bdeb0ee454185c92c6e49a17bda7e4e5d5f0
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73643670"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74083582"
 ---
 # <a name="modify-an-expressroute-circuit-using-powershell-classic"></a>Изменение канала ExpressRoute с помощью PowerShell (классическая модель)
 
@@ -20,7 +20,7 @@ ms.locfileid: "73643670"
 > * [портал Azure](expressroute-howto-circuit-portal-resource-manager.md)
 > * [PowerShell](expressroute-howto-circuit-arm.md)
 > * [Интерфейс командной строки Azure](howto-circuit-cli.md)
-> * [Шаблон диспетчера ресурсов Azure](expressroute-howto-circuit-resource-manager-template.md)
+> * [Шаблон Azure Resource Manager](expressroute-howto-circuit-resource-manager-template.md)
 > * [Видео — портал Azure](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-create-an-expressroute-circuit)
 > * [PowerShell (классическая модель)](expressroute-howto-circuit-classic.md)
 >
@@ -35,7 +35,7 @@ ms.locfileid: "73643670"
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-Установите последние версии модулей PowerShell управления службами Azure (SM) и модуля ExpressRoute. Среду Azure CloudShell нельзя использовать для запуска модулей SM.
+Установите последние версии модулей PowerShell для управления службами Azure и модуль ExpressRoute. Среду Azure CloudShell нельзя использовать для запуска модулей SM.
 
 1. Используйте инструкции из статьи [Установка модуля управления службами](/powershell/azure/servicemanagement/install-azure-ps) для установки модуля управления службами Azure. Если модуль az или RM уже установлен, обязательно используйте параметр-AllowClobber.
 2. Импортируйте установленные модули. При использовании следующего примера измените путь в соответствии с расположением установленных модулей PowerShell.

@@ -7,12 +7,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/16/2019
 ms.author: aelnably
-ms.openlocfilehash: 8decf4622c4043cbac0f2e2f6e2ad59f1b5baaae
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: 681d7a5eab3306a4067ea49bcf8a038e8627f60e
+ms.sourcegitcommit: a170b69b592e6e7e5cc816dabc0246f97897cb0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/14/2019
-ms.locfileid: "74074011"
+ms.locfileid: "74091381"
 ---
 # <a name="continuous-delivery-by-using-github-action"></a>Непрерывная поставка с помощью действия GitHub
 
@@ -215,7 +215,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Чтобы просмотреть полный рабочий процесс. YAML, ознакомьтесь с одним из файлов в [репозитории примеров рабочих процессов Azure GitHub](https://github.com/Azure/actions-workflow-samples) , которые имеют `functionapp` в имени. Эти примеры можно использовать в качестве отправной точки для рабочего процесса.
+Чтобы просмотреть полный рабочий процесс. YAML, ознакомьтесь с одним из файлов в [репозитории примеров рабочих процессов Azure GitHub](https://aka.ms/functions-actions-samples) , которые имеют `functionapp` в имени. Эти примеры можно использовать в качестве отправной точки для рабочего процесса.
 
 > [!div class="nextstepaction"]
 > [Дополнительные сведения о действиях GitHub](https://help.github.com/en/articles/about-github-actions)

@@ -10,13 +10,13 @@ ms.topic: conceptual
 author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein
-ms.date: 01/25/2019
-ms.openlocfilehash: 5773ea37585bb5c63736aaa4432243dc1d41f7bc
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.date: 11/14/2019
+ms.openlocfilehash: e45baba74d7bf752718e5e36a148a91987cd3ffb
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73811179"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74082430"
 ---
 # <a name="how-to-use-azure-sql-database"></a>Использование Базы данных SQL Azure
 
@@ -72,7 +72,6 @@ ms.locfileid: "73811179"
 - [Соединение](sql-database-libraries.md)
 - [Использование соединителя Spark](sql-database-spark-connector.md)
 - [Аутентификация приложения](sql-database-client-id-keys.md)
-- [Сообщения об ошибках](sql-database-develop-error-messages.md)
 - [Использование пакетной обработки для лучшей производительности](sql-database-use-batching-to-improve-performance.md)
 - [Руководство по настройке подключений](sql-database-connectivity-issues.md)
 - [Псевдонимы DNS](dns-alias-overview.md)
@@ -93,7 +92,7 @@ ms.locfileid: "73811179"
 - [Индексатор видео SaaS](saas-tenancy-video-index-wingtip-brk3120-20171011.md)
 - [Безопасность приложений SaaS](saas-tenancy-elastic-tools-multi-tenant-row-level-security.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Использование Управляемого экземпляра](sql-database-howto-managed-instance.md).
 - [Использование отдельной базы данных](sql-database-howto-single-database.md).

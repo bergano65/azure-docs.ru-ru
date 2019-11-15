@@ -15,19 +15,17 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
 ms.reviewer: milanga
-ms.openlocfilehash: a546df73f316b4eb6c215a6f52d68f87ad09c1a2
-ms.sourcegitcommit: 7efb2a638153c22c93a5053c3c6db8b15d072949
+ms.openlocfilehash: da397c180b6ccaf91084a0ec22210c7bcc88a5dc
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72881692"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74084800"
 ---
 # <a name="use-azure-media-video-thumbnails-to-create-a-video-summarization"></a>Использование Azure Media Video Thumbnail для формирования сводных данных видео  
+ 
+## <a name="overview"></a>Обзор
 
-> [!IMPORTANT]
-> Ознакомьтесь с [планами выбытия](media-services-analytics-overview.md#retirement-plans) некоторых процессоров мультимедиа.
-
-## <a name="overview"></a>Краткое описание
 Обработчик мультимедиа **Azure Media Video Thumbnail** позволяет создавать сводку видео, которая предоставляет пользователям предварительный просмотр сводки длинного видео. Например, пользователи хотят просмотреть короткую "сводку видео", когда они наводят указатель мыши на эскиз. Настроив параметры **Azure Media Video Thumbnail** в предустановке конфигурации, вы можете использовать технологию обнаружения и объединения кадров обработчика мультимедиа для создания описательного миниклипа.  
 
 Сейчас обработчик мультимедиа **Azure Media Video Thumbnail** доступен в предварительной версии.
@@ -58,7 +56,7 @@ ms.locfileid: "72881692"
 
 В ней можно изменить следующие параметры.
 
-| Параметр | Описание |
+| Параметр | ОПИСАНИЕ |
 | --- | --- |
 | outputAudio |Указывает, есть ли в итоговом видео аудио. <br/>Допустимые значения: True или False. Значение по умолчанию — True. |
 | fadeInFadeOut |Указывает, используются ли плавные переходы при перемещении отдельных эскизов.  <br/>Допустимые значения: True или False.  Значение по умолчанию — True. |
@@ -102,7 +100,7 @@ ms.locfileid: "72881692"
             }
     ```
 
-3. Скачивание выходных файлов. 
+3. Загрузить выходные файлы. 
 
 #### <a name="create-and-configure-a-visual-studio-project"></a>Создание и настройка проекта Visual Studio
 
@@ -286,7 +284,7 @@ ms.locfileid: "72881692"
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отправить отзыв
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="related-links"></a>Связанные ссылки

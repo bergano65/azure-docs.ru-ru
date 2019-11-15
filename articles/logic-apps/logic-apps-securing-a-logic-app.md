@@ -9,12 +9,12 @@ ms.author: estfan
 ms.reviewer: klam, LADocs
 ms.topic: conceptual
 ms.date: 10/11/2019
-ms.openlocfilehash: 57bea93fd03dc19caa1ce29a34a40bc3cff06209
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: c9dfc4ed6fce186fea9474222875a072edb32f59
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74039059"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74084726"
 ---
 # <a name="secure-access-and-data-in-azure-logic-apps"></a>Безопасный доступ и данные в Azure Logic Apps
 
@@ -659,7 +659,7 @@ POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group
 | Свойство (конструктор) | Свойство (JSON) | обязательные | Значение | ОПИСАНИЕ |
 |---------------------|-----------------|----------|-------|-------------|
 | **Аутентификация** | `type` | Yes | **Сертификат клиента** <br>или <br>`ClientCertificate` | Тип аутентификации, используемый для сертификатов клиента Secure Sockets Layer (SSL). Хотя самозаверяющие сертификаты поддерживаются, они не допускаются для SSL. |
-| **Сохраняется** | `pfx` | Yes | <*с кодировкой-PFX-File-содержимое*> | Содержимое файла обмена личной информацией (PFX-файла) с кодировкой base64. |
+| **Сохраняется** | `pfx` | Yes | <*с кодировкой-PFX-File-содержимое*> | Содержимое файла обмена личной информацией (PFX-файла) с кодировкой base64. <p><p>Чтобы преобразовать PFX-файл в формат в кодировке Base64, можно использовать PowerShell, выполнив следующие действия. <p>1. Сохраните содержимое сертификата в переменную: <p>   `$pfx_cert = get-content 'c:\certificate.pfx' -Encoding Byte` <p>2. Преобразуйте содержимое сертификата с помощью функции `ToBase64String()` и сохраните содержимое в текстовый файл: <p>   `[System.Convert]::ToBase64String($pfx_cert) | Out-File 'pfx-encoded-bytes.txt'` |
 | **Пароль** | `password`| См. Описание | <*пароль для файла pfx*> | Пароль для доступа к PFX-файлу. <p><p>**Примечание**. это значение свойства является обязательным при работе в конструкторе приложений логики и *не* является обязательным при работе в представлении кода. |
 |||||
 

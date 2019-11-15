@@ -15,19 +15,17 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
 ms.reviewer: milanga
-ms.openlocfilehash: 6fa2495ee580bb8e74a0d026533fa90f20743510
-ms.sourcegitcommit: 7efb2a638153c22c93a5053c3c6db8b15d072949
+ms.openlocfilehash: b6cbca454d1463ffe6e73d7021ea563e7121b7be
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72881763"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74084626"
 ---
 # <a name="detect-face-and-emotion-with-azure-media-analytics"></a>Обнаружение лиц и определение эмоций с помощью медиа-аналитики Azure
 
-> [!IMPORTANT]
-> Ознакомьтесь с [планами выбытия](media-services-analytics-overview.md#retirement-plans) некоторых процессоров мультимедиа.
+## <a name="overview"></a>Обзор
 
-## <a name="overview"></a>Краткое описание
 Обработчик мультимедиа (MP) **Azure Media Face Detector (детектор лиц мультимедиа Azure)** позволяет подсчитывать и отслеживать движения и даже определять заинтересованность и реакции людей с помощью выражений лиц. В этой службе реализованы две функции: 
 
 * **Обнаружение лиц**
@@ -80,9 +78,9 @@ API обнаружения и отслеживания лиц обеспечив
 ```
 
 #### <a name="attribute-descriptions"></a>Описания атрибутов
-| Имя атрибута | Описание |
+| Имя атрибута | ОПИСАНИЕ |
 | --- | --- |
-| Mode |Fast: быстрая скорость обработки, но с меньшей точностью (по умолчанию).|
+| Режим |Fast: быстрая скорость обработки, но с меньшей точностью (по умолчанию).|
 
 ### <a name="json-output"></a>Выходные данные JSON
 Следующий пример выходных данных JSON был сокращен.
@@ -155,9 +153,9 @@ API обнаружения и отслеживания лиц обеспечив
 
 
 #### <a name="attribute-descriptions"></a>Описания атрибутов
-| Имя атрибута | Описание |
+| Имя атрибута | ОПИСАНИЕ |
 | --- | --- |
-| Mode |Faces: только обнаружение лиц.<br/>PerFaceEmotion: эмоции возвращаются отдельно для каждого обнаружения лиц.<br/>AggregateEmotion. Возвращаются средние значения эмоций для всех лиц в кадре. |
+| Режим |Faces: только обнаружение лиц.<br/>PerFaceEmotion: эмоции возвращаются отдельно для каждого обнаружения лиц.<br/>AggregateEmotion. Возвращаются средние значения эмоций для всех лиц в кадре. |
 | AggregateEmotionWindowMs |Используется, если выбран режим AggregateEmotion. Указывает длину видео для получения каждого совокупного результата в миллисекундах. |
 | AggregateEmotionIntervalMs |Используется, если выбран режим AggregateEmotion. Указывает частоту для получения совокупных результатов. |
 
@@ -521,7 +519,7 @@ namespace FaceDetection
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отправить отзыв
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="related-links"></a>Связанные ссылки

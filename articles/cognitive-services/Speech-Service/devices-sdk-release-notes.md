@@ -8,18 +8,29 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 07/10/2019
+ms.date: 11/13/2019
 ms.author: wellsi
-ms.openlocfilehash: 9421f730ea6480c9e4223dd9ddbd15852b1fce8f
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: 3a74f3eb9aece3535f5505d69833a074c2dd0ed2
+ms.sourcegitcommit: a170b69b592e6e7e5cc816dabc0246f97897cb0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/14/2019
-ms.locfileid: "74072605"
+ms.locfileid: "74091201"
 ---
 # <a name="release-notes-speech-devices-sdk"></a>Заметки о выпуске: пакет SDK для речевых устройств
 
 В следующих разделах перечислены изменения в последних выпусках.
+
+## <a name="speech-devices-sdk-170"></a>1\.7.0 пакета SDK для речевых устройств:
+
+*   Поддержка ARM для Linux теперь поддерживается.
+*   Предоставляются исходные двоичные файлы для Roobov2 (Linux ARM64).
+*   Пользователи Windows могут использовать Аудиоконфиг. Фромдефаултмикрофонеинпут () или Аудиоконфиг. Фроммикрофонеинпут (deviceName) для указания используемого микрофона.
+*   Размер библиотеки оптимизирован.
+*   Поддержка многофакторного распознавания с помощью одного объекта распознавателя речи и намерения.
+*   Устранение случайного зависания, которое может произойти при прекращении распознавания.
+*   Примеры приложений теперь содержат пример файла участников. Properties для демонстрации формата файла.
+*   Обновлен компонент [речевого пакета SDK](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk-reference) до версии 1.7.0. Дополнительные сведения см. в [заметках о выпуске](https://aka.ms/csspeech/whatsnew).
 
 ## <a name="speech-devices-sdk-160"></a>1\.6.0 пакета SDK для речевых устройств:
 

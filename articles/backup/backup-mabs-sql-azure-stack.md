@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 06/08/2018
 ms.author: dacurwin
-ms.openlocfilehash: 28d4ad1a94cea6f21d1fe75483357d8788524b88
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: 397de7d1de9acc657fa0fd0cb93bd6e26e5606e2
+ms.sourcegitcommit: a170b69b592e6e7e5cc816dabc0246f97897cb0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73747225"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74090889"
 ---
 # <a name="back-up-sql-server-on-azure-stack"></a>Резервное копирование SQL Server в Azure Stack
 
@@ -156,7 +156,7 @@ ms.locfileid: "73747225"
 
     По завершении процесса восстановленная база данных будет согласована с приложением.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 См. в статье [Файлы резервной копии и приложение](backup-mabs-files-applications-azure-stack.md).
 См. в статье [SharePoint резервного копирования на Azure Stack](backup-mabs-sharepoint-azure-stack.md).

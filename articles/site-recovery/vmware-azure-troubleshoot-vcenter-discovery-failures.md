@@ -1,20 +1,20 @@
 ---
-title: Устранение неполадок при восстановлении размещения в локальной среде во время аварийного восстановления виртуальной машины VMware в Azure с помощью Azure Site Recovery
-description: В этой статье описываются способы устранения неполадок восстановления размещения и повторного включения защиты в процессе аварийного восстановления виртуальных машин VMware в Azure с помощью Azure Site Recovery.
+title: Устранение ошибок обнаружения VMware vCenter в Azure Site Recovery
+description: В этой статье описывается устранение сбоев обнаружения VMware vCenter в Azure Site Recovery.
 author: mayurigupta13
 manager: rochakm
 ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 10/29/2019
 ms.author: mayg
-ms.openlocfilehash: e9213637f45a4761af60de9dfac7add6324f6b96
-ms.sourcegitcommit: 87efc325493b1cae546e4cc4b89d9a5e3df94d31
+ms.openlocfilehash: f00c7b12accde9df9a5708a2b8b378d70428318d
+ms.sourcegitcommit: a170b69b592e6e7e5cc816dabc0246f97897cb0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73053853"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74091251"
 ---
-# <a name="troubleshoot-vcenter-discovery-failures"></a>Устранять неполадок обнаружения vCenter
+# <a name="troubleshoot-vcenter-server-discovery-failures"></a>Устранение ошибок обнаружения vCenter Server
 
 Эта статья поможет вам устранить неполадки, возникающие из-за сбоев при обнаружении VMware vCenter.
 
@@ -34,7 +34,7 @@ ms.locfileid: "73053853"
 
 - Укажите виртуальную машину и присвойте ей числовое значение (параметры изменения виртуальной машины в vCenter).
 
-или
+Или
 
 - Обновите сервер конфигурации до версии 9,20 или более поздней.
 
@@ -60,7 +60,7 @@ ms.locfileid: "73053853"
 
 1. Откройте IE в контексте пользователя системы с помощью средства PsExec.
     
-    PsExec-s-i "%Програмфилес%\интернет Explorer\iexplore.exe"
+    psexec -s -i "%programfiles%\Internet Explorer\iexplore.exe"
 
 2. Измените параметры прокси в Internet Explorer, чтобы обойти IP-адрес vCenter.
 3. Перезапустите службу тманссвк.
@@ -77,6 +77,6 @@ ms.locfileid: "73053853"
 
 4. Перезапустите службу поставщика DRA.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 [Управление сервером конфигурации для аварийного восстановления виртуальной машины VMware](https://docs.microsoft.com/azure/site-recovery/vmware-azure-manage-configuration-server#refresh-configuration-server) 

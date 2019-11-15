@@ -1,20 +1,20 @@
 ---
-title: Переопределение режима HTTP с помощью Azure CDN от Verizon Premium обработчика правил | Документация Майкрософт
-description: Обработчик правил позволяет настраивать способ обработки HTTP-запросов с Azure CDN от Verizon уровня "премиум", например блокировать доставку определенных типов содержимого, определение политики кэширования и изменение заголовков HTTP.
+title: Переопределение поведения HTTP с помощью обработчика правил Azure CDN-Verizon Premium
+description: Обработчик правил позволяет настроить обработку HTTP-запросов с помощью Azure CDN Verizon Premium, таких как блокировка доставки определенных типов содержимого, определение политики кэширования и изменение заголовков HTTP.
 services: cdn
 author: mdgattuso
 ms.service: azure-cdn
 ms.topic: article
 ms.date: 05/31/2019
 ms.author: magattus
-ms.openlocfilehash: fa08f59f3b69395d548649bb131e04c5071c053d
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.openlocfilehash: aa0606eafb8fe4c517b0c18e0137058a120115ba
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67593186"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74082957"
 ---
-# <a name="override-http-behavior-using-the-azure-cdn-from-verizon-premium-rules-engine"></a>Переопределение режима HTTP с помощью Azure CDN от Verizon Premium обработчика правил
+# <a name="override-http-behavior-using-the-azure-cdn-from-verizon-premium-rules-engine"></a>Переопределение поведения HTTP с помощью Azure CDN из обработчика правил Verizon Premium
 
 [!INCLUDE [cdn-premium-feature](../../includes/cdn-premium-feature.md)]
 
@@ -22,7 +22,7 @@ ms.locfileid: "67593186"
 
 Обработчик правил Azure CDN позволяет настраивать процесс обработки запросов HTTP. Например, можно блокировать доставку определенных типов содержимого, определять политику кэширования и изменять заголовок HTTP. В этом руководстве описано, как создать правило, которое изменяет схему кэширования ресурсов CDN. Дополнительные сведения о синтаксисе обработчика правил см. в разделе [Обработчик правил Azure CDN](cdn-verizon-premium-rules-engine-reference.md).
 
-## <a name="access"></a>Access
+## <a name="access"></a>Доступ
 
 Чтобы получить доступ к обработчику правил, сначала необходимо получить доступ к странице управление Azure CDN. Это можно сделать, выбрав **Управление** в верхней части страницы **профиля CDN**. В зависимости от того, была ли конечная точка оптимизирована для динамического ускорения сайтов (DSA), вы получаете доступ к обработчику правил с набором правил, подходящих для вашего типа конечной точки.
 
@@ -40,7 +40,7 @@ ms.locfileid: "67593186"
 
     ![Обработчик правил для DSA](./media/cdn-rules-engine/cdn-dsa-rules-engine.png)
 
-## <a name="tutorial"></a>Учебник
+## <a name="tutorial"></a>Руководство
 
 1. На странице **профиля CDN** выберите **Управление**.
    
@@ -96,8 +96,8 @@ ms.locfileid: "67593186"
 ## <a name="see-also"></a>См. также
 
 - [Общие сведения о сети доставки содержимого Azure](cdn-overview.md)
-- [Справочник по обработчику правил](cdn-verizon-premium-rules-engine-reference.md)
-- [Условия соответствия для обработчика правил](cdn-verizon-premium-rules-engine-reference-match-conditions.md)
-- [Условные выражения обработчика правил](cdn-verizon-premium-rules-engine-reference-conditional-expressions.md)
-- [Возможности обработчика правил](cdn-verizon-premium-rules-engine-reference-features.md)
-- [Пятница с Azure: Мощные новые функции уровня "премиум" Azure CDN](https://azure.microsoft.com/documentation/videos/azure-cdns-powerful-new-premium-features/) (видео)
+- [Обработчик правил Azure CDN](cdn-verizon-premium-rules-engine-reference.md)
+- [Условия соответствия обработчика правил](cdn-verizon-premium-rules-engine-reference-match-conditions.md)
+- [Условные выражения обработчика правил Azure CDN](cdn-verizon-premium-rules-engine-reference-conditional-expressions.md)
+- [Функции обработчика правил Azure CDN](cdn-verizon-premium-rules-engine-reference-features.md)
+- [Пятничный видеоролик об Azure. Azure CDN's powerful new Premium Features](https://azure.microsoft.com/documentation/videos/azure-cdns-powerful-new-premium-features/) (Новые возможности Azure CDN уровня "Премиум")

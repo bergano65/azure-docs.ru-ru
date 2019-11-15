@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 06/26/2019
 ms.author: brendm
 ms.custom: seodec18
-ms.openlocfilehash: 8f6fb9737d3d8dad93a95f31d566f7cc4706ded3
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: e63d8f03b26c9039fe4093cf15b13522dbb49af9
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73886049"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74081469"
 ---
 # <a name="configure-a-linux-java-app-for-azure-app-service"></a>Настройка приложения Java для Linux для службы приложений Azure
 
@@ -239,9 +239,9 @@ public int getServerPort()
 
 Чтобы внедрить эти секреты в файл конфигурации весны или Tomcat, используйте синтаксис внедрения переменных среды (`${MY_ENV_VAR}`). Дополнительные сведения о файлах конфигурации пружины см. в этой документации по [внешним конфигурациям](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html).
 
-## <a name="using-the-java-key-store"></a>Использование хранилища ключей Java
+### <a name="using-the-java-key-store"></a>Использование хранилища ключей Java
 
-По умолчанию все общедоступные или частные сертификаты, [Отправленные в службу приложений Linux](../configure-ssl-certificate.md) , будут загружены в хранилище ключей Java при запуске контейнера. Это означает, что отправленные сертификаты будут доступны в контексте подключения при создании исходящих TLS подключений.
+По умолчанию все общедоступные или частные сертификаты, [Отправленные в службу приложений Linux](../configure-ssl-certificate.md) , будут загружены в хранилище ключей Java при запуске контейнера. Это означает, что отправленные сертификаты будут доступны в контексте подключения при создании исходящих TLS подключений. После отправки сертификата необходимо перезапустить службу приложений, чтобы она загрузилась в хранилище ключей Java.
 
 Вы можете взаимодействовать или отлаживать инструмент для работы с ключами Java, [открыв SSH-подключение](app-service-linux-ssh-support.md) к службе приложений и выполнив команду `keytool`. Список команд см. в [документации по основным средствам](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/keytool.html) . Сертификаты хранятся в расположении файлов хранилища ключей Java по умолчанию, `$JAVA_HOME/jre/lib/security/cacerts`.
 
@@ -251,7 +251,7 @@ public int getServerPort()
 - [SQL Server](https://docs.microsoft.com/sql/connect/jdbc/connecting-with-ssl-encryption?view=sql-server-ver15)
 - [MySQL](https://dev.mysql.com/doc/connector-j/5.1/en/connector-j-reference-using-ssl.html)
 
-### <a name="manually-initialize-and-load-the-key-store"></a>Инициализация и загрузка хранилища ключей вручную
+#### <a name="manually-initialize-and-load-the-key-store"></a>Инициализация и загрузка хранилища ключей вручную
 
 Вы можете инициализировать хранилище ключей и добавить сертификаты вручную. Создайте параметр приложения `SKIP_JAVA_KEYSTORE_LOAD`со значением `1`, чтобы отключить автоматическую загрузку сертификатов в хранилище ключей службой приложений. Все общедоступные сертификаты, отправленные в службу приложений через портал Azure, хранятся в `/var/ssl/certs/`. Частные сертификаты хранятся в разделе `/var/ssl/private/`.
 

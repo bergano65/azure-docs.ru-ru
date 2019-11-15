@@ -1,5 +1,5 @@
 ---
-title: Прогнозирование погоды с помощью машинного обучения Azure на основе данных Центра Интернета вещей | Документация Майкрософт
+title: Прогноз погоды с использованием Машинное обучение Azure с данными центра Интернета вещей
 description: Используйте машинное обучение Azure, чтобы прогнозировать вероятность дождя на основе данных о температуре и влажности, которые собираются от датчиков в Центре Интернета вещей.
 author: robinsh
 manager: philmea
@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 04/11/2018
 ms.author: robinsh
-ms.openlocfilehash: d7b71a6aa17e8eeae55fd6c8c6e9a5aa9e0ce524
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: e7114febe85af4acaf94ef7fe64fe47988fd6321
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73498884"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74079261"
 ---
 # <a name="weather-forecast-using-the-sensor-data-from-your-iot-hub-in-azure-machine-learning"></a>Прогнозирование погоды в машинном обучении Azure с помощью данных от датчиков Центра Интернета вещей
 
@@ -29,7 +29,7 @@ ms.locfileid: "73498884"
 
 Вы узнаете, как применить машинное обучение Azure для прогнозирования погоды (вероятности дождя) на основе данных о температуре и влажности, собранных в Центре Интернета вещей. Вероятность дождя вычисляется по заранее подготовленной модели прогнозирования погоды. Эта модель создается на основе исторических данных и применяется для оценки вероятности дождя, исходя из данных о температуре и влажности.
 
-## <a name="what-you-do"></a>В рамках этого руководства мы:
+## <a name="what-you-do"></a>Что нужно сделать
 
 - Развернем модель прогнозирования погоды как веб-службу.
 - Добавить группу потребителей, чтобы обеспечить доступ к данным в Центре Интернета вещей.
@@ -89,7 +89,7 @@ ms.locfileid: "73498884"
 
    ![Создание задания Stream Analytics в Azure](media/iot-hub-weather-forecast-machine-learning/7_create-stream-analytics-job-azure.png)
 
-1. Щелкните **Создать**.
+1. Нажмите кнопку **Создать**.
 
 ### <a name="add-an-input-to-the-stream-analytics-job"></a>Добавление входных данных в задание Stream Analytics
 
@@ -105,7 +105,7 @@ ms.locfileid: "73498884"
 
    ![Добавление входных данных в задание Stream Analytics в Azure](media/iot-hub-weather-forecast-machine-learning/8_add-input-stream-analytics-job-azure.png)
 
-1. Щелкните **Создать**.
+1. Нажмите кнопку **Создать**.
 
 ### <a name="add-an-output-to-the-stream-analytics-job"></a>Добавление выходных данных в задание Stream Analytics
 
@@ -124,7 +124,7 @@ ms.locfileid: "73498884"
 
    ![Добавление выходных данных в задание Stream Analytics в Azure](media/iot-hub-weather-forecast-machine-learning/9_add-output-stream-analytics-job-azure.png)
 
-1. Щелкните **Создать**.
+1. Нажмите кнопку **Создать**.
 
 ### <a name="add-a-function-to-the-stream-analytics-job-to-call-the-web-service-you-deployed"></a>Добавление в задание Stream Analytics функции для вызова развернутой веб-службы
 
@@ -143,7 +143,7 @@ ms.locfileid: "73498884"
 
    ![Добавление функции в задание Stream Analytics в Azure](media/iot-hub-weather-forecast-machine-learning/10_add-function-stream-analytics-job-azure.png)
 
-1. Щелкните **Создать**.
+1. Нажмите кнопку **Создать**.
 
 ### <a name="configure-the-query-of-the-stream-analytics-job"></a>Настройка запроса задания Stream Analytics
 
@@ -163,7 +163,7 @@ ms.locfileid: "73498884"
 
    Замените значение `[YourOutputAlias]` значением псевдонима выходных данных задания.
 
-1. Щелкните **Сохранить**.
+1. Выберите команду **Сохранить**.
 
 ### <a name="run-the-stream-analytics-job"></a>Выполнение задания Stream Analytics
 
@@ -184,7 +184,7 @@ ms.locfileid: "73498884"
 
    ![Получение прогноза погоды с помощью машинного обучения Azure](media/iot-hub-weather-forecast-machine-learning/12_get-weather-forecast-result-azure-machine-learning.png)
 
-## <a name="summary"></a>Сводка
+## <a name="summary"></a>summary
 
 Итак, вы успешно применили машинное обучение Azure, чтобы прогнозировать вероятность дождя на основе данных о температуре и влажности, которые получает Центр Интернета вещей.
 

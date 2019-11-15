@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 12/15/2017
 ms.author: glenga
 ms.reviewer: sunayv
-ms.openlocfilehash: 2ed154d15176ed6706a69f0a6be4c60159d478c2
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: b12d1fec9b7852835d3d5b5346d64868d2ee8c46
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70087694"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74082850"
 ---
 # <a name="exporting-an-azure-hosted-api-to-powerapps-and-microsoft-flow"></a>Экспорт размещенного в Azure API в PowerApps и Microsoft Flow
 
@@ -30,7 +30,7 @@ ms.locfileid: "70087694"
 Перед экспортом API нужно описать его с помощью определения OpenAPI (ранее называвшегося файлом [Swagger](https://swagger.io/)). Это определение содержит сведения о доступных операция в API и о том, как необходимо структурировать данные запросов и ответов для API. С помощью PowerApps и Microsoft Flow можно создать настраиваемые соединители для любого определения OpenAPI 2.0. Функции Azure и служба приложений Azure имеют встроенную поддержку создания и размещения определений OpenAPI, а также управления ими. Дополнительные сведения см. в статье [Размещение API-интерфейсов RESTful с поддержкой CORS в службе приложений Azure](../app-service/app-service-web-tutorial-rest-api.md).
 
 > [!NOTE]
-> Также можно создать настраиваемые соединители в пользовательских интерфейсах PowerApps и Microsoft Flow без использования определения OpenAPI. Дополнительные сведения см. в статьях [Регистрация и использование настраиваемых соединителей в PowerApps](https://powerapps.microsoft.com/tutorials/register-custom-api/) и [Регистрация и использование настраиваемых соединителей в Microsoft Flow](https://flow.microsoft.com/documentation/register-custom-api/).
+> Также можно создать настраиваемые соединители в пользовательских интерфейсах PowerApps и Microsoft Flow без использования определения OpenAPI. Дополнительные сведения см. в статьях [Регистрация и использование настраиваемых соединителей в PowerApps](https://powerapps.microsoft.com/tutorials/register-custom-api/) и [Регистрация и использование настраиваемых соединителей в Microsoft Flow](/power-automate/developer/register-custom-api).
 
 Чтобы экспортировать определение API, выполните такие действия:
 
@@ -68,7 +68,7 @@ ms.locfileid: "70087694"
 
 2. Используйте настройки, указанные в таблице.
 
-    |Параметр|Описание|
+    |Настройка|ОПИСАНИЕ|
     |--------|------------|
     |**Среда**|Выберите среду, в которую нужно сохранить настраиваемый соединитель. Дополнительные сведения см. в статье [Обзор сред](https://powerapps.microsoft.com/tutorials/environments-overview/).|
     |**Имя пользовательского API**|Введите имя, которое разработчики PowerApps and Microsoft Flow увидят в своих списках соединителей.|
@@ -97,7 +97,7 @@ ms.locfileid: "70087694"
 
 Чтобы импортировать определение API в PowerApps и Microsoft Flow, выполните такие действия:
 
-1. Откройте сайт [powerapps.com](https://web.powerapps.com) или [flow.microsoft.com](https://flow.microsoft.com).
+1. Перейдите по адресу [powerapps.com](https://web.powerapps.com) или [flow.microsoft.com](https://flow.microsoft.com).
 
 2. В правом верхнем углу нажмите значок шестеренки и выберите **Настраиваемые соединители**.
 
@@ -127,7 +127,7 @@ ms.locfileid: "70087694"
 
 7. Щелкните **Create connector** (Создать соединитель) в верхней части страницы.
 
-Теперь можно подключиться к настраиваемому соединителю в PowerApps и Microsoft Flow. Дополнительные сведения о создании соединителей на порталах PowerApps и Microsoft Flow см. в статье [Регистрация настраиваемого соединителя (PowerApps)](https://powerapps.microsoft.com/tutorials/register-custom-api/#register-your-custom-connector) и [Регистрация настраиваемого соединителя (Microsoft Flow)](https://flow.microsoft.com/documentation/register-custom-api/#register-your-custom-connector).
+Теперь можно подключиться к настраиваемому соединителю в PowerApps и Microsoft Flow. Дополнительные сведения о создании соединителей на порталах PowerApps и Microsoft Flow см. в статье [Регистрация настраиваемого соединителя (PowerApps)](https://powerapps.microsoft.com/tutorials/register-custom-api/#register-your-custom-connector) и [Регистрация настраиваемого соединителя (Microsoft Flow)](/power-automate/get-started-flow-dev#create-a-custom-connector).
 
 <a name="auth"></a>
 ## <a name="specify-authentication-type"></a>Укажите тип аутентификации
@@ -158,7 +158,7 @@ PowerApps и Microsoft Flow поддерживают коллекцию пост
 
 - Чтобы настроить регистрацию для соединителя, выполните действия, описанные в разделе [Добавление приложения](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications). Регистрации требуется делегированный доступ к вашему API и URL-адресу ответа из `https://msmanaged-na.consent.azure-apim.net/redirect`. 
 
-Дополнительные сведения см. в примерах регистрации Azure AD для [PowerApps](https://powerapps.microsoft.com/tutorials/customapi-azure-resource-manager-tutorial/) и [Microsoft Flow](https://flow.microsoft.com/documentation/customapi-azure-resource-manager-tutorial/). В этих примерах в качестве API используется Azure Resource Manager. Замените свой API при выполнении этих шагов.
+Дополнительные сведения см. в примерах регистрации Azure AD для [PowerApps](https://powerapps.microsoft.com/tutorials/customapi-azure-resource-manager-tutorial/) и [Microsoft Flow](https://docs.microsoft.com/connectors/custom-connectors/azure-active-directory-authentication). В этих примерах в качестве API используется Azure Resource Manager. Замените свой API при выполнении этих шагов.
 
 Требуются следующие значения конфигурации:
 - **Идентификатор клиента.** Идентификатор клиента регистрации соединителя Azure AD.

@@ -1,5 +1,5 @@
 ---
-title: Настройка аварийного восстановления виртуальных машин Hyper-V в Azure с помощью PowerShell и Azure Resource Manager | Документация Майкрософт
+title: Аварийное восстановление виртуальных машин Hyper-V с помощью Azure Site Recovery и PowerShell
 description: Автоматизируйте аварийное восстановление виртуальных машин Hyper-V в Azure с помощью службы Azure Site Recovery, используя PowerShell и Azure Resource Manager.
 author: sujayt
 manager: rochakm
@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 06/18/2019
 ms.author: sutalasi
-ms.openlocfilehash: 1779a33e4ac021c1807ce10dc224e0b8c8c53ebb
-ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
+ms.openlocfilehash: 73f5f64a64ab28cdb4b57d0904911f62c2020cf0
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71200532"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74082678"
 ---
 # <a name="set-up-disaster-recovery-to-azure-for-hyper-v-vms-using-powershell-and-azure-resource-manager"></a>Настройка аварийного восстановления виртуальных машин Hyper-V в Azure с помощью PowerShell и Azure Resource Manager
 
@@ -34,22 +34,22 @@ Azure PowerShell предоставляет командлеты для упра
 >
 >
 
-## <a name="before-you-start"></a>Перед началом
+## <a name="before-you-start"></a>Перед началом работы
 Убедитесь, что выполнены следующие предварительные требования.
 
-* Учетная запись [Microsoft Azure](https://azure.microsoft.com/) . Начните с [бесплатной пробной версии](https://azure.microsoft.com/pricing/free-trial/). Также вы можете ознакомиться с [расценками на использование менеджера Azure Site Recovery](https://azure.microsoft.com/pricing/details/site-recovery/).
-* Установите Azure PowerShell. Сведения об этом выпуске и его установке см. в разделе [install Azure PowerShell](/powershell/azure/install-az-ps).
+* Учетная запись [Microsoft Azure](https://azure.microsoft.com/) . Вы можете начать с [бесплатной пробной версии](https://azure.microsoft.com/pricing/free-trial/). Также вы можете ознакомиться с [расценками на использование менеджера Azure Site Recovery](https://azure.microsoft.com/pricing/details/site-recovery/).
+* Azure PowerShell. Сведения об этом выпуске и его установке см. в разделе [install Azure PowerShell](/powershell/azure/install-az-ps).
 
 К тому же конкретный пример, описанный в этой статье, требует следующих компонентов:
 
 * Узел Hyper-V под управлением Windows Server 2012 R2 или Microsoft Hyper-V Server 2012 R2, содержащий одну или несколько виртуальных машин. Серверы Hyper-V должны быть подключены к Интернету напрямую или через прокси-сервер.
 * Виртуальные машины, которые вы хотите реплицировать, должны соответствовать [этим условиям](hyper-v-azure-support-matrix.md#replicated-vms).
 
-## <a name="step-1-sign-in-to-your-azure-account"></a>Шаг 1. Вход в учетную запись Azure
+## <a name="step-1-sign-in-to-your-azure-account"></a>Шаг 1. Вход в учетную запись Azure
 
-1. Откройте консоль PowerShell и выполните следующую команду, чтобы войти в учетную запись Azure. Этот командлет открывает веб-станицу, на которой пользователю предлагается ввести данные для входа в учетную запись — **Connect-азаккаунт**.
+1. Откройте консоль PowerShell и выполните следующую команду, чтобы войти в учетную запись Azure. Командлет открывает веб-страницу с приглашением ввести учетные данные учетной записи: **Connect-азаккаунт**.
     - Кроме того, учетные данные можно добавить в качестве параметра в командлет **Connect-AzAccount**, используя параметр **-Credential**.
-    - Если вы — партнер-поставщик облачных услуг, работающий от имени клиента, вам потребуется указать заказчика в качестве клиента. Для этого нужно ввести идентификатор или основное доменное имя клиента. Пример: **Connect-AzAccount-Tenant "fabrikam.com"**
+    - Если вы — партнер-поставщик облачных услуг, работающий от имени клиента, вам потребуется указать заказчика в качестве клиента. Для этого нужно ввести идентификатор или основное доменное имя клиента. Например: **Connect-азаккаунт-клиент "fabrikam.com"**
 2. Свяжите подписку, которую собираетесь использовать, с учетной записью, так как последняя может иметь несколько подписок:
 
     `Select-AzSubscription -SubscriptionName $SubscriptionName`
@@ -66,7 +66,7 @@ Azure PowerShell предоставляет командлеты для упра
 
     `Get-AzResourceProvider -ProviderNamespace  Microsoft.RecoveryServices`
 
-## <a name="step-2-set-up-the-vault"></a>Шаг 2. Настройка хранилища
+## <a name="step-2-set-up-the-vault"></a>Шаг 2. Настройка хранилища
 
 1. Создайте группу ресурсов для Azure Resource Manager, которой необходимо создать хранилища, или воспользуйтесь существующими группами ресурсов. Создайте группу ресурсов следующим образом. Переменная $ResourceGroupName содержит имя создаваемой группы ресурсов, а переменная $Geo — регион Azure, в котором ее необходимо создать (например, Южная часть Бразилии).
 
@@ -80,13 +80,13 @@ Azure PowerShell предоставляет командлеты для упра
     Список существующих хранилищ можно получить с помощью командлета **Get-азрековерисервицесваулт** .
 
 
-## <a name="step-3-set-the-recovery-services-vault-context"></a>Шаг 3. Настройка контекста для хранилища Служб восстановления
+## <a name="step-3-set-the-recovery-services-vault-context"></a>Шаг 3. Настройка контекста для хранилища служб восстановления
 
 Задайте контекст хранилища следующим образом:
 
 `Set-AsrVaultSettings -Vault $vault`
 
-## <a name="step-4-create-a-hyper-v-site"></a>Шаг 4. Создание сайта Hyper-V
+## <a name="step-4-create-a-hyper-v-site"></a>Шаг 4. Создание узла Hyper-V
 
 1. Создайте сайт Hyper-V следующим образом:
 
@@ -104,7 +104,7 @@ Azure PowerShell предоставляет командлеты для упра
 
 5. Скопируйте скачанный ключ на узел Hyper-V. Этот ключ вам потребуется, чтобы зарегистрировать узел Hyper-V на сайте.
 
-## <a name="step-5-install-the-provider-and-agent"></a>Шаг 5. Установка поставщика и агента
+## <a name="step-5-install-the-provider-and-agent"></a>Шаг 5. Установка поставщика и агента
 
 1. Скачайте установщик последней версии поставщика с веб-сайта [корпорации Майкрософт](https://aka.ms/downloaddra).
 2. Запустите установщик на узле Hyper-V.
@@ -115,8 +115,8 @@ Azure PowerShell предоставляет командлеты для упра
         $server =  Get-AsrFabric -Name $siteName | Get-AsrServicesProvider -FriendlyName $server-friendlyname
 
 Если вы используете основной сервер Hyper-V, скачайте файл установки и сделайте следующее:
-1. Извлеките файлы из Азуреситерековерипровидер. exe в локальный каталог, выполнив следующую команду:```AzureSiteRecoveryProvider.exe /x:. /q```
-2. Результаты ```.\setupdr.exe /i``` выполнения регистрируются в%програмдата%\асрлогс\драсетупвизард.лог.
+1. Извлеките файлы из Азуреситерековерипровидер. exe в локальный каталог, выполнив следующую команду: ```AzureSiteRecoveryProvider.exe /x:. /q```
+2. Результаты выполнения ```.\setupdr.exe /i``` записываются в%Програмдата%\асрлогс\драсетупвизард.лог.
 
 3. Зарегистрируйте сервер с помощью следующей команды:
 
@@ -203,5 +203,5 @@ Azure PowerShell предоставляет командлеты для упра
 
         $TFjob = Start-AsrTestFailoverCleanupJob -ReplicationProtectedItem $rpi -Comment "TFO done"
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 [Узнайте больше](https://docs.microsoft.com/powershell/module/az.recoveryservices) об использовании командлетов PowerShell инструмента Azure Resource Manager для службы Azure Site Recovery.

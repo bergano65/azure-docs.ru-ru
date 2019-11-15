@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 09/24/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 2585b47d049047cc191bfc284c4486361917f1ed
-ms.sourcegitcommit: 4f3f502447ca8ea9b932b8b7402ce557f21ebe5a
+ms.openlocfilehash: c4c8f123eb8c32362219f21dc70d137f2cc9b4b1
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71802056"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74078825"
 ---
 # <a name="azure-ad-b2c-use-the-azure-ad-graph-api"></a>Azure AD B2C. Использование API Graph Azure AD
 
@@ -33,7 +33,7 @@ ms.locfileid: "71802056"
 >[!IMPORTANT]
 > Для управления пользователями в каталоге Azure AD B2C **необходимо** использовать [API Graph Azure AD](../active-directory/develop/active-directory-graph-api-quickstart.md) . API Graph Azure AD отличается от Microsoft Graph API. Дополнительные сведения см. в этой записи блога MSDN: [Microsoft Graph или Azure AD Graph](https://blogs.msdn.microsoft.com/aadgraphteam/2016/07/08/microsoft-graph-or-azure-ad-graph/).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 Перед созданием приложений или пользователей вам потребуется клиент Azure AD B2C. [Создайте клиент Azure Active Directory B2C](tutorial-create-tenant.md), если он еще не создан.
 
@@ -77,7 +77,7 @@ ms.locfileid: "71802056"
 
 Пример кода — это консольное приложение .NET, которое использует [Библиотека проверки подлинности Active Directory (ADAL)](../active-directory/develop/active-directory-authentication-libraries.md) для взаимодействия с Azure AD API Graph. В его коде показано, как вызывать API для программного управления пользователями в клиенте Azure AD B2C.
 
-Вы можете [скачать пример архива](https://github.com/AzureADQuickStarts/B2C-GraphAPI-DotNet/archive/master.zip) (\*ZIP-файл) или клонировать репозиторий GitHub:
+Вы можете [скачать пример архива](https://github.com/AzureADQuickStarts/B2C-GraphAPI-DotNet/archive/master.zip) (\*. zip) или клонировать репозиторий GitHub:
 
 ```cmd
 git clone https://github.com/AzureADQuickStarts/B2C-GraphAPI-DotNet.git
@@ -87,7 +87,7 @@ git clone https://github.com/AzureADQuickStarts/B2C-GraphAPI-DotNet.git
 
 1. Откройте решение `B2CGraphClient\B2CGraphClient.sln` в Visual Studio.
 1. В проекте **B2CGraphClient** откройте файл *app. config* .
-1. `<appSettings>` Замените раздел следующим XML-кодом. Затем замените `{your-b2c-tenant}` именем своего клиента `{Client secret}` и `{Application ID}` значениями, записанными ранее.
+1. Замените раздел `<appSettings>` следующим XML-кодом. Затем замените `{your-b2c-tenant}` именем своего клиента, а `{Application ID}` и `{Client secret}` значениями, записанными ранее.
 
     ```xml
     <appSettings>
@@ -99,29 +99,29 @@ git clone https://github.com/AzureADQuickStarts/B2C-GraphAPI-DotNet.git
 
 1. Выполните сборку решения. Щелкните правой кнопкой мыши решение **B2CGraphClient** в Обозреватель решений и выберите **Перестроить решение**.
 
-Если сборка выполнена успешно, `B2C.exe` консольное приложение можно найти в. `B2CGraphClient\bin\Debug`
+Если сборка выполнена успешно, `B2C.exe` консольное приложение можно найти в `B2CGraphClient\bin\Debug`.
 
 ## <a name="review-the-sample-code"></a>Просмотр примера кода
 
-Чтобы использовать B2CGraphClient, откройте командную строку (`cmd.exe`) и перейдите в `Debug` каталог проекта. Затем выполните `B2C Help` команду.
+Чтобы использовать B2CGraphClient, откройте командную строку (`cmd.exe`) и перейдите в каталог `Debug` проекта. Затем выполните команду `B2C Help`.
 
 ```cmd
 cd B2CGraphClient\bin\Debug
 B2C Help
 ```
 
-`B2C Help` Команда отображает краткое описание доступных подкоманд. Каждый раз при вызове одной из ее подкоманд `B2CGraphClient` отправляется запрос на API Graph Azure AD.
+Команда `B2C Help` отображает краткое описание доступных подкоманд. Каждый раз при вызове одной из ее подкоманд `B2CGraphClient` отправляет запрос API Graph Azure AD.
 
 В следующих разделах описывается, как код приложения выполняет вызовы API Graph Azure AD.
 
 ### <a name="get-an-access-token"></a>Получение маркера доступа
 
-Любой запрос к API Graph Azure AD требует маркера доступа для проверки подлинности. `B2CGraphClient`использует Библиотека проверки подлинности Active Directory с открытым кодом (ADAL) для помощи при получении маркеров доступа. ADAL делает получение маркера проще, предоставляя вспомогательный API и принимая во внимание несколько важных сведений, таких как кэширование маркеров доступа. Однако не нужно использовать ADAL для получения маркеров. Вместо этого можно получить токены, вручную создав HTTP-запросы.
+Любой запрос к API Graph Azure AD требует маркера доступа для проверки подлинности. `B2CGraphClient` использует Библиотека проверки подлинности Active Directory с открытым кодом (ADAL) для помощи при получении маркеров доступа. ADAL делает получение маркера проще, предоставляя вспомогательный API и принимая во внимание несколько важных сведений, таких как кэширование маркеров доступа. Однако не нужно использовать ADAL для получения маркеров. Вместо этого можно получить токены, вручную создав HTTP-запросы.
 
 > [!NOTE]
 > Для получения маркеров доступа, которые можно использовать с API Graph Azure AD, необходимо использовать ADAL v2 или более поздней версии. Нельзя использовать ADAL v1.
 
-При `B2CGraphClient` выполнении создается экземпляр `B2CGraphClient` класса. Конструктор для этого класса настраивает формирование шаблонов проверки подлинности ADAL:
+При выполнении `B2CGraphClient` создается экземпляр класса `B2CGraphClient`. Конструктор для этого класса настраивает формирование шаблонов проверки подлинности ADAL:
 
 ```csharp
 public B2CGraphClient(string clientId, string clientSecret, string tenant)
@@ -140,9 +140,9 @@ public B2CGraphClient(string clientId, string clientSecret, string tenant)
 }
 ```
 
-Давайте воспользуемся `B2C Get-User` командой в качестве примера.
+Давайте воспользуемся командой `B2C Get-User` в качестве примера.
 
-Когда `B2C Get-User` вызывается без дополнительных аргументов, приложение `B2CGraphClient.GetAllUsers()` вызывает метод. `GetAllUsers()`затем вызывает `B2CGraphClient.SendGraphGetRequest()`метод, который отправляет запрос HTTP GET в API Graph Azure AD. Перед `B2CGraphClient.SendGraphGetRequest()` отправкой запроса GET он сначала получает маркер доступа с помощью ADAL:
+Если `B2C Get-User` вызывается без дополнительных аргументов, приложение вызывает метод `B2CGraphClient.GetAllUsers()`. затем `GetAllUsers()` вызывает `B2CGraphClient.SendGraphGetRequest()`, который отправляет запрос HTTP GET в API Graph Azure AD. Прежде чем `B2CGraphClient.SendGraphGetRequest()` отправляет запрос GET, он сначала получает маркер доступа с помощью ADAL:
 
 ```csharp
 public async Task<string> SendGraphGetRequest(string api, string query)
@@ -157,7 +157,7 @@ public async Task<string> SendGraphGetRequest(string api, string query)
 
 ### <a name="read-users"></a>Чтение пользователей
 
-Если требуется получить список пользователей или получить конкретного пользователя из API Graph Azure AD, можно отправить HTTP- `GET` запрос `/users` в конечную точку. Для всех пользователей клиента запрос будет выглядеть следующим образом:
+Если вы хотите получить список пользователей или получить конкретного пользователя из API Graph Azure AD, вы можете отправить запрос HTTP `GET` в конечную точку `/users`. Для всех пользователей клиента запрос будет выглядеть следующим образом:
 
 ```HTTP
 GET https://graph.windows.net/contosob2c.onmicrosoft.com/users?api-version=1.6
@@ -172,7 +172,7 @@ Authorization: Bearer eyJhbGciOiJSUzI1NiIsIng1dCI6IjdkRC1nZWNOZ1gxWmY3R0xrT3ZwT0
 
 При этом необходимо обратить внимание на два важных момента.
 
-* Маркер доступа, полученный с помощью ADAL, добавляется `Authorization` в заголовок с `Bearer` помощью схемы.
+* Маркер доступа, полученный с помощью ADAL, добавляется в заголовок `Authorization` с помощью схемы `Bearer`.
 * Для клиентов B2C необходимо использовать параметр запроса `api-version=1.6`.
 
 Оба фрагмента сведений обрабатываются в методе `B2CGraphClient.SendGraphGetRequest()` .
@@ -200,9 +200,9 @@ public async Task<string> SendGraphGetRequest(string api, string query)
 
 ### <a name="create-consumer-user-accounts"></a>Создание учетных записей пользователей-клиентов
 
-При создании учетных записей пользователей в клиенте B2C можно отправить HTTP- `POST` запрос `/users` в конечную точку. Следующий HTTP- `POST` запрос показывает пример пользователя, который будет создан в клиенте.
+При создании учетных записей пользователей в клиенте B2C можно отправить запрос HTTP `POST` в конечную точку `/users`. Следующий запрос HTTP `POST` показывает пример пользователя, который будет создан в клиенте.
 
-Для создания пользователей-потребителей требуется большая часть свойств в следующем запросе. `//` Комментарии были включены для иллюстрации — не включайте их в фактический запрос.
+Для создания пользователей-потребителей требуется большая часть свойств в следующем запросе. Для иллюстрации были включены `//` комментарии. не включайте их в фактический запрос.
 
 ```HTTP
 POST https://graph.windows.net/contosob2c.onmicrosoft.com/users?api-version=1.6
@@ -238,22 +238,22 @@ B2C Create-User ..\..\..\usertemplate-email.json
 B2C Create-User ..\..\..\usertemplate-username.json
 ```
 
-`Create-User` Команда принимает в качестве входного параметра JSON-файл, содержащий представление JSON объекта пользователя. В примере кода есть два примера JSON файлов: `usertemplate-email.json` и. `usertemplate-username.json` Вы можете изменить эти файлы с учетом своих требований. В дополнение к обязательным полям, приведенным выше, в файлы включаются несколько необязательных полей.
+Команда `Create-User` принимает в качестве входного параметра JSON-файл, содержащий представление JSON объекта пользователя. В примере кода есть два примера JSON файлов: `usertemplate-email.json` и `usertemplate-username.json`. Вы можете изменить эти файлы с учетом своих требований. В дополнение к обязательным полям, приведенным выше, в файлы включаются несколько необязательных полей.
 
 Дополнительные сведения о обязательных и необязательных полях см. в разделе [Справочник по сущностям и сложным типам | Ссылка на API Graph](/previous-versions/azure/ad/graph/api/entity-and-complex-type-reference).
 
-Вы можете увидеть, как создается запрос POST в `B2CGraphClient.SendGraphPostRequest()`.
+В `B2CGraphClient.SendGraphPostRequest()`можно увидеть, как создается запрос POST.
 
 * Сначала добавляется маркер доступа в заголовок `Authorization` запроса.
 * Затем задается параметр `api-version=1.6`.
 * После чего добавляется объект пользователя JSON в текст запроса.
 
 > [!NOTE]
-> Если учетные записи, которые требуется перенести из существующего хранилища пользователей, имеют более низкую стойкость паролей, чем [усиленный](active-directory-b2c-reference-password-complexity.md)пароль, установленный Azure AD B2C, можно отключить требование надежного пароля, используя `DisableStrongPassword` значение в `passwordPolicies`свойство. Например, можно изменить предыдущий запрос на создание пользователя следующим образом: `"passwordPolicies": "DisablePasswordExpiration, DisableStrongPassword"`.
+> Если учетные записи, которые требуется перенести из существующего хранилища пользователей, имеют более низкую стойкость паролей, чем [усиленный пароль, принудительно](active-directory-b2c-reference-password-complexity.md)установленный Azure AD B2C, можно отключить требование надежного пароля, используя значение `DisableStrongPassword` в свойстве `passwordPolicies`. Например, можно изменить предыдущий запрос на создание пользователя следующим образом: `"passwordPolicies": "DisablePasswordExpiration, DisableStrongPassword"`.
 
 ### <a name="update-consumer-user-accounts"></a>Обновление учетных записей пользователей-клиентов
 
-При обновлении объектов пользователя процесс аналогичен тому, который используется для создания объектов-пользователей, но использует метод HTTP `PATCH` :
+При обновлении объектов пользователя процесс аналогичен тому, который используется для создания объектов-пользователей, но использует метод HTTP `PATCH`:
 
 ```HTTP
 PATCH https://graph.windows.net/contosob2c.onmicrosoft.com/users/<user-object-id>?api-version=1.6
@@ -266,7 +266,7 @@ Content-Length: 37
 }
 ```
 
-Попробуйте обновить пользователя, изменив некоторые значения в файлах JSON, а затем используйте `B2CGraphClient` для запуска одной из следующих команд:
+Попробуйте обновить пользователя, изменив некоторые значения в файлах JSON, а затем используйте `B2CGraphClient` для выполнения одной из следующих команд:
 
 ```cmd
 B2C Update-User <user-object-id> ..\..\..\usertemplate-email.json
@@ -277,10 +277,11 @@ B2C Update-User <user-object-id> ..\..\..\usertemplate-username.json
 
 ### <a name="search-users"></a>Поиск пользователей
 
-Поиск пользователей в клиенте B2C можно выполнить двумя способами:
+Поиск пользователей в клиенте B2C можно выполнить следующими способами:
 
 * Ссылка на **идентификатор объекта**пользователя.
-* Сослаться на идентификатор входа, `signInNames` свойство.
+* Сослаться на идентификатор входа, свойство `signInNames`.
+* Сослаться на любой из допустимых параметров OData, например givenName, фамилия, displayName и т. д.
 
 Выполните одну из следующих команд, чтобы найти пользователя:
 
@@ -289,16 +290,19 @@ B2C Get-User <user-object-id>
 B2C Get-User <filter-query-expression>
 ```
 
-Пример:
+Например,
 
 ```cmd
 B2C Get-User 2bcf1067-90b6-4253-9991-7f16449c2d91
 B2C Get-User $filter=signInNames/any(x:x/value%20eq%20%27consumer@fabrikam.com%27)
+B2C get-user $filter=givenName%20eq%20%27John%27
+B2C get-user $filter=surname%20eq%20%27Doe%27
+B2C get-user $filter=displayName%20eq%20%27John%20Doe%27
 ```
 
 ### <a name="delete-users"></a>Удаление пользователей
 
-Чтобы удалить пользователей, используйте метод HTTP `DELETE` и создайте URL-адрес с идентификатором объекта пользователя:
+Чтобы удалить пользователей, используйте метод HTTP `DELETE` и создайте URL-адрес с ИДЕНТИФИКАТОРом объекта пользователя:
 
 ```HTTP
 DELETE https://graph.windows.net/contosob2c.onmicrosoft.com/users/<user-object-id>?api-version=1.6
@@ -328,7 +332,7 @@ B2C Get-B2C-Application
 B2C Get-Extension-Attribute <object-id-in-the-output-of-the-above-command>
 ```
 
-В выходных данных раскрываются подробные сведения о каждом настраиваемом атрибуте. Пример:
+В выходных данных раскрываются подробные сведения о каждом настраиваемом атрибуте. Например,
 
 ```json
 {
@@ -352,7 +356,7 @@ B2C Get-Extension-Attribute <object-id-in-the-output-of-the-above-command>
 B2C Update-User <object-id-of-user> <path-to-json-file>
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Использование `B2CGraphClient`позволяет получить приложение-службу, которое обеспечивает управление пользователями клиента B2C программным путем. `B2CGraphClient` проходит аутентификацию в API Graph Azure AD по собственному удостоверению приложения. Кроме того, B2CGraphClient получает маркеры, используя секрет клиента.
 

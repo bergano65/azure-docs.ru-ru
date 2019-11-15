@@ -1,5 +1,5 @@
 ---
-title: Azure Site Recovery исключение дисков во время репликации виртуальных машин Azure с помощью Azure PowerShell | Документация Майкрософт
+title: Исключите диски виртуальной машины Azure из репликации с Azure Site Recovery и Azure PowerShell
 description: Узнайте, как исключить диски виртуальных машин Azure во время Azure Site Recovery с помощью Azure PowerShell.
 author: asgang
 manager: rochakm
@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 02/18/2019
 ms.author: asgang
-ms.openlocfilehash: 317a8ba48851ebf65fe52e79f6cf9d9c45786f6f
-ms.sourcegitcommit: 87efc325493b1cae546e4cc4b89d9a5e3df94d31
+ms.openlocfilehash: beb4ee6fcf6413634d7d728e3f070294e8ce3787
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73053410"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74084970"
 ---
 # <a name="exclude-disks-from-powershell-replication-of-azure-vms"></a>Исключение дисков из репликации PowerShell для виртуальных машин Azure
 
@@ -21,7 +21,7 @@ ms.locfileid: "73053410"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 Перед началом работы:
 
@@ -136,6 +136,6 @@ $TempASRJob = New-ASRReplicationProtectedItem -AzureToAzure -AzureVmId $VM.Id -N
 
 После завершения начальной репликации репликация переходит на фазу разностной синхронизации. На этом этапе виртуальная машина защищена. Выберите защищенную виртуальную машину, чтобы проверить, не исключены ли какие либо диски.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о [выполнении тестовой отработки отказа](site-recovery-test-failover-to-azure.md).

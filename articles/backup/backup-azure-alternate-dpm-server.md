@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 07/09/2019
 ms.author: dacurwin
-ms.openlocfilehash: 4635fe92f4ffa72d7a759b852f4d54264aa66279
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: 5742aaebe0a1314b229a2a0d33b1de51d5b6d4f4
+ms.sourcegitcommit: a170b69b592e6e7e5cc816dabc0246f97897cb0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74012209"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74091142"
 ---
 # <a name="recover-data-from-azure-backup-server"></a>Восстановление данных с сервера Azure Backup Server
 
@@ -81,7 +81,7 @@ ms.locfileid: "74012209"
 
     ![Удалить внешний сервер DPM](./media/backup-azure-alternate-dpm-server/clear-external-dpm.png)
 
-## <a name="troubleshooting-error-messages"></a>Сообщения об ошибках при устранении неполадок
+## <a name="troubleshooting-error-messages"></a>Устранение неполадок сообщений об ошибках
 
 | Нет | Сообщение об ошибке | Действия по устранению неполадок |
 |:---:|:--- |:--- |

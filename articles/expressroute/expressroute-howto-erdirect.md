@@ -1,5 +1,5 @@
 ---
-title: Настройка Azure ExpressRoute Direct в Azure | Документация Майкрософт
+title: 'Azure ExpressRoute: Настройка Direct ExpressRoute'
 description: Эта страница поможет настроить функцию ExpressRoute Direct.
 services: expressroute
 author: jaredr80
@@ -7,13 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 05/20/2019
 ms.author: jaredro
-ms.custom: seodec18
-ms.openlocfilehash: 9dcefb2d47b6862466b64b3568e1a530a2fdb8cb
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: ba7bddb2f11732f7de5f1dfa68b66be1204722cc
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73161601"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74083488"
 ---
 # <a name="how-to-configure-expressroute-direct"></a>Настройка Direct для ExpressRoute
 
@@ -270,6 +269,6 @@ ExpressRoute Direct дает возможность подключения не�
   GatewayManagerEtag     
   ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения см. в разделе [About ExpressRoute Direct](expressroute-erdirect-about.md) (Общие сведения о подключении ExpressRoute Direct).

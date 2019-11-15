@@ -1,19 +1,18 @@
 ---
-title: Создание и изменение канала ExpressRoute в Azure CLI | Документация Майкрософт
+title: 'Создание и изменение канала ExpressRoute: Azure CLI'
 description: В этой статье описывается создание, подготовка, проверка, обновление, удаление и отзыв канала ExpressRoute с помощью CLI.
 services: expressroute
 author: cherylmc
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 12/07/2018
+ms.date: 11/13/2019
 ms.author: cherylmc
-ms.reviewer: anzaman
-ms.openlocfilehash: e42190814b9365c7db054eb2b5f1842581b64009
-ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
+ms.openlocfilehash: 75729811b63e8de3047e45e9b90f5fa3ec657901
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67657065"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74083220"
 ---
 # <a name="create-and-modify-an-expressroute-circuit-using-cli"></a>Создание и изменение канала ExpressRoute с помощью CLI
 
@@ -56,9 +55,9 @@ az account list
 az account set --subscription "<subscription ID>"
 ```
 
-### <a name="2-get-the-list-of-supported-providers-locations-and-bandwidths"></a>2. Получение списка поддерживаемых поставщиков, расположений и значений пропускной способности
+### <a name="2-get-the-list-of-supported-providers-locations-and-bandwidths"></a>2. получите список поддерживаемых поставщиков, расположений и пропускной способности.
 
-Перед созданием канала ExpressRoute потребуется список поддерживаемых поставщиков услуг подключения, расположений и вариантов пропускной способности. Команды CLI `az network express-route list-service-providers` возвращает эти сведения, которые будут использоваться на последующих этапах:
+Перед созданием канала ExpressRoute потребуется список поддерживаемых поставщиков услуг подключения, расположений и вариантов пропускной способности. Команда CLI `az network express-route list-service-providers` возвращает эти сведения, которые будут использоваться в последующих шагах:
 
 ```azurecli-interactive
 az network express-route list-service-providers
@@ -119,7 +118,7 @@ az network express-route list-service-providers
 
 Проверьте, указан ли в ответе ваш поставщик услуг подключения. Запишите следующие сведения, которые потребуются при создании канала:
 
-* ИМЯ
+* имя
 * PeeringLocations
 * BandwidthsOffered
 
@@ -142,8 +141,8 @@ az group create -n ExpressRouteResourceGroup -l "West US"
 
 Убедитесь, что указаны правильный уровень SKU и семейство SKU:
 
-* Уровень SKU определяет, какая надстройка включена — ExpressRoute Standard или ExpressRoute Premium. Укажите Standard, чтобы получить SKU "Стандартный", или Premium, чтобы получить надстройку "Премиум".
-* Семейство SKU определяет тип выставления счетов. Выберите Metereddata для тарифного плана с оплатой за трафик или Unlimiteddata для безлимитного тарифного плана. Тип выставления счетов можно изменить с Metereddata на Unlimiteddata, но не наоборот.
+* Уровень SKU определяет, является ли канал ExpressRoute [локальным](expressroute-faqs.md#expressroute-local), стандартным или [Premium](expressroute-faqs.md#expressroute-premium). Можно указать *Local*, *Standard* или *Premium*.
+* Семейство SKU определяет тип выставления счетов. Выберите *Metereddata* для тарифного плана с оплатой за трафик или *Unlimiteddata* для безлимитного тарифного плана. Тип выставления счетов можно изменить с *Metereddata* на *Unlimiteddata* но не наоборот. *Unlimiteddata* для *Metereddata* *Локальный* канал — только *Unlimiteddata* .
 
 
 Выставление счетов за использование ExpressRoute начинается после получения ключа службы. Ниже приведен пример запроса нового ключа службы:
@@ -154,9 +153,9 @@ az network express-route create --bandwidth 200 -n MyCircuit --peering-location 
 
 Ответ будет содержать ключ службы.
 
-### <a name="4-list-all-expressroute-circuits"></a>4. Получение списка всех каналов ExpressRoute
+### <a name="4-list-all-expressroute-circuits"></a>4. Вывод списка всех каналов ExpressRoute
 
-Чтобы получить список всех созданных вами каналов ExpressRoute, выполните `az network express-route list` команды. Вы можете получить эти сведения в любое время с помощью этой команды. Чтобы получить список всех каналов, сделайте вызов без параметров.
+Чтобы получить список всех созданных каналов ExpressRoute, выполните команду `az network express-route list`. Вы можете получить эти сведения в любое время с помощью этой команды. Чтобы получить список всех каналов, сделайте вызов без параметров.
 
 ```azurecli-interactive
 az network express-route list
@@ -199,7 +198,7 @@ az network express-route list
 az network express-route list -h
 ```
 
-### <a name="5-send-the-service-key-to-your-connectivity-provider-for-provisioning"></a>5. Отправка ключа службы поставщику услуг подключения для подготовки
+### <a name="5-send-the-service-key-to-your-connectivity-provider-for-provisioning"></a>5. Отправьте ключ службы поставщику услуг подключения для подготовки
 
 Параметр ServiceProviderProvisioningState предоставляет сведения о текущем состоянии подготовки на стороне поставщика услуг. Параметр Status предоставляет состояние на стороне Майкрософт. Дополнительные сведения см. в разделе [Состояния подготовки канала ExpressRoute](expressroute-workflows.md#expressroute-circuit-provisioning-states).
 
@@ -224,7 +223,7 @@ az network express-route list -h
 "circuitProvisioningState": "Enabled
 ```
 
-### <a name="6-periodically-check-the-status-and-the-state-of-the-circuit-key"></a>6. Периодическая проверка состояния и статуса ключа канала
+### <a name="6-periodically-check-the-status-and-the-state-of-the-circuit-key"></a>6. периодически проверяйте состояние и состояние ключа канала
 
 Проверка состояния и состояния ключа канала позволит вам узнать, когда поставщик активирует ваш канал. После настройки канала значение параметра ServiceProviderProvisioningState изменится на Provisioned, как показано в примере ниже:
 
@@ -360,7 +359,7 @@ az network express-route update -n MyCircuit -g ExpressRouteResourceGroup --sku-
 az network express-route delete  -n MyCircuit -g ExpressRouteResourceGroup
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 После создания канала обязательно выполните задачи, описанные в следующих статьях:
 

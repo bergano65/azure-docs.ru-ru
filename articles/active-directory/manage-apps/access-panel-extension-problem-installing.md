@@ -16,12 +16,12 @@ ms.date: 05/04/2018
 ms.author: mimart
 ms.reviewer: japere,asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 598a69593046354e83fe35b7b2ecfb0745e8b637
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 580207bb10680e84cfda7d4b1874f2b460602973
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66388331"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74082163"
 ---
 # <a name="install-the-access-panel-browser-extension"></a>Установка расширения браузера для панели доступа
 
@@ -63,7 +63,7 @@ ms.locfileid: "66388331"
 Вы также можете скачать расширение для Chrome и Microsoft Edge отсюда:
 
 - [Расширение для Chrome](https://chrome.google.com/webstore/detail/access-panel-extension/ggjhpefgjjfobnfoldnjipclpcfbgbhl)
-- [Расширение для Microsoft Edge](https://www.microsoft.com/store/apps/9pc9sckkzk84)
+- [Расширение для Microsoft Edge](https://www.microsoft.com/en-us/p/my-apps-secure-sign-in-extension/9pc9sckkzk84)
 - [Расширение Firefox](https://addons.mozilla.org/en-US/firefox/addon/access-panel-extension/)
 
 ## <a name="use-the-my-apps-secure-sign-in-extension"></a>Использование расширения защищенного входа на странице "Мои приложения"
@@ -127,5 +127,5 @@ ms.locfileid: "66388331"
 -   часовой пояс и время или интервал времени, когда произошла ошибка;
 -   трассировки Fiddler.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](what-is-single-sign-on.md)
