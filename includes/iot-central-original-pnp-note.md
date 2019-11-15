@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 07/01/2019
 ms.author: dobett
 ms.custom: include file
-ms.openlocfilehash: 2ae663ffb06b2d323144814170e1f10a00d790c6
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 4ee3489ec9218411106fe28e6a747dffd3e007c2
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72930261"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73884492"
 ---
 > [!NOTE]
-> Сейчас вы просматриваете исходную версию документации по IoT Central. Обновленную документацию по _предварительным версиям функций_ см. в [этой статье об IoT Central](../articles/iot-central/core/overview-iot-central-pnp.md?toc=/azure/iot-central/core-pnp/toc.json&bc=/azure/iot-central/core-pnp/breadcrumb/toc.json).
+> В настоящее время вы просматриваете документацию по IoT Central, [посвященную шаблонам приложений, использующим общедоступные функции](../articles/iot-central/core/concepts-app-templates.md#preview-templates). Чтобы просмотреть документацию по [шаблонам приложений, которые используют функции предварительной версии](../articles/iot-central/core/concepts-app-templates.md#preview-templates), перейдите к статье [Что такое IoT Central Azure (предварительные версии функций)?](../articles/iot-central/preview/overview-iot-central.md).

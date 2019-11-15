@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 09/18/2019
 ms.author: banders
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 325de36f3aa480847bc647827260f7f65765b5d7
-ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
+ms.openlocfilehash: beef37b0ece9cf57c86927b9f57d85ad4a25dbd1
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71103754"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73746319"
 ---
 # <a name="transfer-billing-ownership-of-an-azure-subscription-to-another-account"></a>Передача прав владения на выставление счетов для подписки Azure другой учетной записи
 
@@ -202,6 +202,10 @@ ms.locfileid: "71103754"
 ### <a name="can-i-use-a-different-payment-method"></a>Могу ли я использовать другой метод оплаты?
 
 Да. Принимая запрос на перенос, вы можете выбрать любой существующий метод оплаты, связанный с вашей учетной записью, или добавить новый метод оплаты.
+
+### <a name="how-can-i-transfer-ownership-of-my-enterprise-agreement-ea-subscription-account-ownership-if-the-original-account-owner-is-no-longer-with-the-organization"></a>Как можно передать права владения учетной записью подписки в рамках Соглашения Enterprise (EA), если исходный владелец учетной записи больше не работает в организации?
+
+Администратор предприятия может обновить права владения учетной записью для любой учетной записи, даже если исходный владелец учетной записи больше не работает в организации. Он может сделать это, выполнив инструкции по [передаче прав владения учетной записью для всех подписок](https://ea.azure.com/helpdocs/changeAccountOwnerForASubscription) на EA Portal.
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 

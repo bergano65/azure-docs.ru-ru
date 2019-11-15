@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Создание Хранилища данных SQL Azure с помощью Azure PowerShell | Документация Майкрософт
+title: Краткое руководство. Создание хранилища с помощью Azure PowerShell
 description: Узнайте, как быстро создать логический сервер базы данных SQL, правило брандмауэра на уровне сервера и хранилище данных с помощью Azure PowerShell.
 services: sql-data-warehouse
 author: XiaoyuMSFT
@@ -10,12 +10,13 @@ ms.subservice: development
 ms.date: 4/11/2019
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: f5ee4227b0aeb53be4512dafc91f814468b50c12
-ms.sourcegitcommit: 5ded08785546f4a687c2f76b2b871bbe802e7dae
+ms.custom: seo-lt-2019
+ms.openlocfilehash: cfc427b11944cb81d8bc3d12d13668d53be698b7
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69574903"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73693099"
 ---
 # <a name="quickstart-create-and-query-an-azure-sql-data-warehouse-with-azure-powershell"></a>Краткое руководство. Создание Хранилища данных SQL Azure и его запрос с помощью Azure PowerShell
 
@@ -119,7 +120,7 @@ New-AzSqlDatabase `
 
 Ниже перечислены необходимые параметры.
 
-* **RequestedServiceObjectiveName**: количество запрашиваемых [единиц хранилища данных](what-is-a-data-warehouse-unit-dwu-cdwu.md). Увеличение этого количества приведет к повышению стоимости вычислений. Список поддерживаемых значений см. в статье [Ограничения параллелизма и памяти для хранилища данных SQL Azure](memory-and-concurrency-limits.md).
+* **RequestedServiceObjectiveName**: количество запрашиваемых [единиц хранилища данных](what-is-a-data-warehouse-unit-dwu-cdwu.md). Увеличение этого количества приведет к повышению стоимости вычислений. Список поддерживаемых значений см. в статье [Ограничения параллелизма и памяти для хранилища данных SQL Azure](memory-concurrency-limits.md).
 * **DatabaseName**: имя создаваемого Хранилища данных SQL.
 * **ServerName**: имя сервера, который используется для создания.
 * **ResourceGroupName**: используемая группа ресурсов. Чтобы найти доступные группы ресурсов, входящие в вашу подписку, используйте командлет Get-AzureResource.

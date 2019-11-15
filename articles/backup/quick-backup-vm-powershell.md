@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство по Azure. Резервное копирование виртуальной машины с помощью PowerShell
-description: Узнайте, как создавать резервные копии виртуальных машин с помощью Azure PowerShell
+description: В этом кратком руководстве вы узнаете, как выполнять резервное копирование виртуальных машин Azure с помощью модуля Azure PowerShell.
 author: dcurwin
 manager: carmonm
 ms.service: backup
@@ -9,16 +9,16 @@ ms.topic: quickstart
 ms.date: 04/16/2019
 ms.author: dacurwin
 ms.custom: mvc
-ms.openlocfilehash: ea4f982409f339487cd570230ebbb75682f409ec
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: 268cac453ed68903c73b597ffeff2569c13e9db7
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69874602"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73747089"
 ---
 # <a name="back-up-a-virtual-machine-in-azure-with-powershell"></a>Резервное копирование виртуальной машины в Azure с помощью PowerShell
 
-Модуль [Azure PowerShell AZ](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-1.4.0) используется для создания и администрирования ресурсов Azure с помощью командной строки или скриптов. 
+Модуль [Azure PowerShell AZ](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-1.4.0) используется для создания и администрирования ресурсов Azure с помощью командной строки или скриптов.
 
 [Azure Backup](backup-overview.md) создает резервные копии локальных компьютеров, приложений и виртуальных машин Azure. В этой статье показано, как создать резервную копию виртуальной машины Azure с помощью модуля AZ. Кроме того, вы можете выполнить резервное копирование виртуальной машины с помощью [Azure CLI](quick-backup-vm-cli.md) или на [портале Azure](quick-backup-vm-portal.md).
 
@@ -35,12 +35,12 @@ ms.locfileid: "69874602"
     ```powershell
     Connect-AzAccount
     ```
+
 2. При первом использовании службы Azure Backup зарегистрируйте поставщик служб восстановления Azure в своей подписке с помощью команды [Register-AzResourceProvider](/powershell/module/az.Resources/Register-azResourceProvider) следующим образом:
 
     ```powershell
     Register-AzResourceProvider -ProviderNamespace "Microsoft.RecoveryServices"
     ```
-
 
 ## <a name="create-a-recovery-services-vault"></a>Создание хранилища служб восстановления
 
@@ -53,7 +53,6 @@ ms.locfileid: "69874602"
 - Azure Backup автоматически обрабатывает хранилище для резервных копий данных. По умолчанию используется [геоизбыточное хранилище (GRS)](../storage/common/storage-redundancy-grs.md). Геоизбыточность гарантирует, что данные резервного копирования реплицируются во вторичный регион, который находится в сотнях километров от основного.
 
 Теперь создайте хранилище:
-
 
 1. Чтобы создать хранилище, используйте командлет [New-AzRecoveryServicesVault](/powershell/module/az.recoveryservices/new-azrecoveryservicesvault):
 
@@ -72,11 +71,12 @@ ms.locfileid: "69874602"
     ```
 
 3. Измените конфигурацию избыточности хранилища (LRS/GRS) с помощью командлета [Set-AzRecoveryServicesBackupProperty](https://docs.microsoft.com/powershell/module/az.recoveryservices/Set-AzRecoveryServicesBackupProperty) следующим образом.
-    
+
     ```powershell
     Get-AzRecoveryServicesVault `
         -Name "myRecoveryServicesVault" | Set-AzRecoveryServicesBackupProperty -BackupStorageRedundancy LocallyRedundant/GeoRedundant
     ```
+
     > [!NOTE]
     > Избыточность хранилища можно изменить только в том случае, если в хранилище нет защищенных резервных копий.
 
@@ -85,7 +85,7 @@ ms.locfileid: "69874602"
 Включите резервное копирование для виртуальной машины Azure и укажите политику резервного копирования.
 
 - Политика определяет время запуска резервного копирования и время хранения точек восстановления, созданных при этой операции.
-- Согласно политике защиты по умолчанию резервное копирование выполняется каждый день, а точки восстановления хранятся в течение 30 дней. Вы можете использовать политику по умолчанию, чтобы быстро защитить виртуальную машину. 
+- Согласно политике защиты по умолчанию резервное копирование выполняется каждый день, а точки восстановления хранятся в течение 30 дней. Вы можете использовать политику по умолчанию, чтобы быстро защитить виртуальную машину.
 
 Включите резервное копирование следующим образом:
 
@@ -112,7 +112,8 @@ ms.locfileid: "69874602"
 - Во всех заданиях после начального резервного копирования создаются добавочные точки восстановления.
 - Добавочные точки восстановления требуют мало места и времени, так как они позволяют передать только изменения, внесенные с момента последнего резервного копирования.
 
-Чтобы выполнить внеплановое резервное копирование, используйте командлет [Backup-AzRecoveryServicesBackupItem](/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupitem). 
+Чтобы выполнить внеплановое резервное копирование, используйте командлет [Backup-AzRecoveryServicesBackupItem](/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupitem).
+
 - Укажите контейнер в хранилище, которое содержит данные резервного копирования, с помощью командлета [Get-AzRecoveryServicesBackupContainer](/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupcontainer).
 - Каждая виртуальная машина для резервного копирования обрабатывается как элемент. Чтобы запустить задание резервного копирования, получите сведения о виртуальной машине с помощью командлета [Get-AzRecoveryServicesBackupItem](/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupitem).
 
@@ -134,7 +135,6 @@ ms.locfileid: "69874602"
 
 2. Процесс может занять до 20 минут, так как в ходе первого задания резервного копирования создается точка полного восстановления. Отслеживайте ход выполнения задания, как описано в следующей процедуре.
 
-
 ## <a name="monitor-the-backup-job"></a>Мониторинг задания резервного копирования
 
 1. Выполните [Get-AzRecoveryservicesBackupJob](/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupjob) для проверки состояния задания.
@@ -142,6 +142,7 @@ ms.locfileid: "69874602"
     ```powershell
     Get-AzRecoveryservicesBackupJob
     ```
+
     В результате вы получите приблизительно следующие выходные данные. Они указывают на то, что задание **выполняется**:
 
     ```output
@@ -153,10 +154,10 @@ ms.locfileid: "69874602"
 
 2. Когда задание находится в состоянии **Завершено**, виртуальная машина защищена и для нее создана точка полного восстановления.
 
-
 ## <a name="clean-up-the-deployment"></a>Очистка развертывания
 
 Если вам больше не требуется резервная копия виртуальной машины, ее можно удалить.
+
 - Если вы хотите попытаться восстановить виртуальною машину, пропустите удаление.
 - Если вы использовали имеющуюся виртуальную машину, можете пропустить последний командлет [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup), чтобы оставить группу ресурсов и виртуальную машину.
 
@@ -169,10 +170,9 @@ Remove-AzRecoveryServicesVault -Vault $vault
 Remove-AzResourceGroup -Name "myResourceGroup"
 ```
 
-
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом кратком руководстве вы создали хранилище служб восстановления, включили защиту на виртуальной машине и создали начальную точку восстановления. 
+В этом кратком руководстве вы создали хранилище служб восстановления, включили защиту на виртуальной машине и создали начальную точку восстановления.
 
 - [Узнайте, как](tutorial-backup-vm-at-scale.md) создать резервные копии виртуальных машин на портале Azure.
 - [Узнайте, как](tutorial-restore-disk.md) быстро восстановить виртуальную машину.

@@ -4,21 +4,21 @@ ms.service: data-factory
 ms.topic: include
 ms.date: 11/19/2018
 ms.author: jingwang
-ms.openlocfilehash: 0c381cc6e2e2957c946207491c666667821184ad
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 3ead267ee11cba65e20f3df2fb76d9138a080bfb
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185753"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73850470"
 ---
 | Категория | Хранилище данных | Поддерживается в качестве источника | Поддерживается в качестве приемника |
 |:--- |:--- |:--- |:--- |
-| **Таблицы Azure** |[хранилище BLOB-объектов Azure](../articles/data-factory/v1/data-factory-azure-blob-connector.md) |✓ |✓ |
+| **Таблицы Azure** |[Хранилище BLOB-объектов Azure](../articles/data-factory/v1/data-factory-azure-blob-connector.md) |✓ |✓ |
 | &nbsp; |[Azure Cosmos DB (SQL API)](../articles/data-factory/v1/data-factory-azure-documentdb-connector.md) |✓ |✓ |
 | &nbsp; |[Хранилище Azure Data Lake Gen1](../articles/data-factory/v1/data-factory-azure-datalake-connector.md) |✓ |✓ |
 | &nbsp; |[база данных SQL Azure;](../articles/data-factory/v1/data-factory-azure-sql-connector.md) |✓ |✓ |
 | &nbsp; |[Хранилище данных Azure SQL](../articles/data-factory/v1/data-factory-azure-sql-data-warehouse-connector.md) |✓ |✓ |
-| &nbsp; |[Индекс службы поиска Azure](../articles/data-factory/v1/data-factory-azure-search-connector.md) | |✓ |
+| &nbsp; |[Индекс Когнитивного поиска Azure](../articles/data-factory/v1/data-factory-azure-search-connector.md) | |✓ |
 | &nbsp; |[Хранилище таблиц Azure](../articles/data-factory/v1/data-factory-azure-table-connector.md) |✓ |✓ |
 | **Базы данных** |[Amazon Redshift](../articles/data-factory/v1/data-factory-amazon-redshift-connector.md) |✓ | |
 | &nbsp; |[DB2](../articles/data-factory/v1/data-factory-onprem-db2-connector.md)* |✓ | |
