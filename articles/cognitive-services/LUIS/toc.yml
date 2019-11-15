@@ -337,8 +337,6 @@
           href: 'https://go.microsoft.com/fwlink/?linkid=2092087'
         - name: "Интерфейсы REST API для прогнозирования версии\_2"
           href: 'https://go.microsoft.com/fwlink/?linkid=2092356'
-        - name: "REST API конечной точки версии\_3"
-          href: 'https://go.microsoft.com/fwlink/?linkid=2092356'
         - name: Коды HTTP
           displayName: '400, 401, 403, 409, 410, 414, 429'
           href: luis-reference-response-codes.md

@@ -4,7 +4,7 @@ title: Документация по API Поиска новостей Bing
 metadata:
   title: 'Документация по API Поиска новостей Bing. Руководства, краткие руководства и справочники по API'
   titleSuffix: Azure Cognitive Services
-  description: 'Узнайте, как с помощью API Поиска новостей Bing искать новости в Интернете.'
+  description: API Поиска новостей Bing позволяет интегрировать возможности поиска новостей Bing в свои приложения.
   services: cognitive-services
   author: aahill
   manager: nitinme
