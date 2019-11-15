@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 06/20/2019
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: c9dbc24aa93b1f2c89b23120abb018c920835d8d
-ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
+ms.openlocfilehash: 612da322e0d248f9b0000c8f0006893b87b74e44
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69896979"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74084644"
 ---
 # <a name="introduction-to-azure-storage"></a>Общие сведения о службе хранилища Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "69896979"
 
 Доступ ко всем службам осуществляется с помощью учетной записи хранения. Чтобы приступить к работе, [создайте такую учетную запись](storage-quickstart-create-account.md).
 
-## <a name="blob-storage"></a>Хранилище больших двоичных объектов
+## <a name="blob-storage"></a>Хранилище BLOB-объектов
 
 Хранилище BLOB-объектов Azure — это решение корпорации Майкрософт для хранения объектов в облаке. Хранилище BLOB-объектов оптимизировано для хранения больших объемов неструктурированных данных, например текстовых или двоичных данных. 
 
@@ -78,13 +78,13 @@ ms.locfileid: "69896979"
 
 Дополнительные сведения о хранилище очередей Azure см. в статье [Общие сведения об очередях](../queues/storage-queues-introduction.md).
 
-## <a name="table-storage"></a>Табличное хранилище
+## <a name="table-storage"></a>Хранилище таблиц
 
 Хранилище таблиц Azure уровня "Стандартный" теперь включено в Cosmos DB. См. дополнительные сведения о [хранилище таблиц Azure](../tables/table-storage-overview.md). Наряду с существующей службой хранилища таблиц Azure теперь доступна новое решение API таблиц Azure Cosmos DB. Для него предусмотрены оптимизированные для пропускной способности таблицы, глобальное распределение и автоматическое вторичное индексирование. См. дополнительные сведения о решении [API таблиц Azure Cosmos DB](https://aka.ms/premiumtables) и его возможностях уровня "Премиум".
 
 Дополнительные сведения о хранилище таблиц см. в статье [Обзор табличного хранилища](../tables/table-storage-overview.md).
 
-## <a name="disk-storage"></a>Хранилище дисков
+## <a name="disk-storage"></a>Дисковый накопитель
 
 Управляемый диск Azure — это виртуальный жесткий диск (VHD). Его можно представить как физический диск на локальном сервере, но который является виртуализированным. Управляемые диски Azure хранятся в виде страничных BLOB-объектов, которые являются произвольным объектом хранения ввода-вывода в Azure. Эти диски называются управляемыми, так как это абстракция на основе страничных BLOB-объектов, а также контейнеров больших двоичных объектов и учетных записей хранения Azure. В случае с управляемыми дисками вам нужно только подготовить диск к работе, а Azure позаботится об остальном.
 
@@ -143,7 +143,7 @@ ms.locfileid: "69896979"
 - [REST API службы хранилища Azure](https://docs.microsoft.com/rest/api/storageservices/)
 - [Клиентская библиотека службы хранилища Azure для .NET](https://docs.microsoft.com/dotnet/api/overview/azure/storage)
 - [Клиентская библиотека службы хранилища Azure для Java/Android](https://docs.microsoft.com/java/api/overview/azure/storage)
-- [Клиентская библиотека службы хранилища Azure для Node. js](https://docs.microsoft.com/javascript/api/azure-storage)
+- [Клиентская библиотека службы хранилища Azure для Node. js](https://docs.microsoft.com/javascript/api/overview/azure/storage)
 - [Клиентская библиотека службы хранилища Azure для Python](https://github.com/Azure/azure-storage-python)
 - [Клиентская библиотека службы хранилища Azure для PHP](https://github.com/Azure/azure-storage-php)
 - [Клиентская библиотека службы хранилища Azure для Ruby](https://github.com/Azure/azure-storage-ruby)
@@ -169,6 +169,6 @@ ms.locfileid: "69896979"
 - [Клиентские инструменты службы хранилища Azure](../storage-explorers.md)
 - [Средства для разработчиков Azure](https://azure.microsoft.com/tools/)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Чтобы начать работу со службой хранилища Azure, см. дополнительные сведения о [создании учетной записи хранения](storage-quickstart-create-account.md).

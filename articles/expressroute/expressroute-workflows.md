@@ -1,5 +1,5 @@
 ---
-title: 'Рабочий процесс настройки канала ExpressRoute: Azure | Документация Майкрософт'
+title: 'Azure ExpressRoute: рабочие процессы настройки канала'
 description: На этой странице описана процедура настройки канала ExpressRoute и пирингов.
 services: expressroute
 author: cherylmc
@@ -7,13 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 09/18/2018
 ms.author: cherylmc
-ms.custom: seodec18
-ms.openlocfilehash: 1e0f4d356bb6addf735bf148a80e6be3ca550c8f
-ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
+ms.openlocfilehash: ae6c2b7257ee6a8184f3a5bb002f24cb75a86d67
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71123383"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74083320"
 ---
 # <a name="expressroute-workflows-for-circuit-provisioning-and-circuit-states"></a>Процедуры ExpressRoute для подготовки каналов и состояний каналов
 На этой странице описаны процедуры подготовки служб и настройки маршрутизации на высоком уровне.
@@ -43,7 +42,7 @@ ms.locfileid: "71123383"
 У каждого канала ExpressRoute имеется два состояния.
 
 * Состояние подготовки поставщика услуг
-* Сообщение о состоянии
+* Состояние
 
 Состояние указывает на состояние подготовки Майкрософт. При создании канала Expressroute это свойство имеет значение "Включен".
 
@@ -104,10 +103,10 @@ ms.locfileid: "71123383"
 > 
 > 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 * Настройте подключение ExpressRoute.
   
-  * [Создайте канал ExpressRoute.](expressroute-howto-circuit-arm.md)
+  * [Создание канала ExpressRoute](expressroute-howto-circuit-arm.md)
   * [Настройка маршрутизации](expressroute-howto-routing-arm.md)
   * [Связывание виртуальной сети с каналом ExpressRoute](expressroute-howto-linkvnet-arm.md)
 

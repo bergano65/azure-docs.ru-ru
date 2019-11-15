@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 11/08/2019
 ms.author: cherylmc
-ms.openlocfilehash: 0a918c4276ced878bb3cbfc4362817cd975b99d7
-ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
+ms.openlocfilehash: 397e4215e32ee5d9bf5eced60b456c26fa80c901
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2019
-ms.locfileid: "73901627"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74083401"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Партнеры и одноранговые расположения ExpressRoute
 
@@ -239,7 +239,7 @@ ms.locfileid: "73901627"
 | **[CloudXpress](https://www2.telenet.be/fr/business/produits-services/internet/cloudxpress/)** | Equinix | Амстердам | 
 | **[Телекоммуникации CMC](https://cmctelecom.vn/san-pham/value-added-service-and-it/cmc-telecom-cloud-express-en/)** | Equinix | Сингапур | 
 | **[Технологии аптум](https://aptum.com/services/cloud/managed-azure/)**| Equinix | Монреаль, Торонто |
-| **[кореазуре](https://coreazure.com/expressroute)**| Equinix | Лондон |
+| **[кореазуре](http://www.coreazure.com/expressroute/)**| Equinix | Лондон |
 | **[Cox Business](https://www.cox.com/business/networking/cloud-connectivity.html)**| Equinix | Даллас, Кремниевая долина, Вашингтон, округ Колумбия |
 | **[Самые Castle](https://fiber.crowncastle.com/solutions/added/cloud-connect)**| Equinix | Атланта, Чикаго, Далласе, Лос-Анджелес, Нью-Йорк, Вашингтон (округ Колумбия) |
 | **[Data Foundry](https://www.datafoundry.com/services/cloud-connect)** | Megaport | Даллас |
@@ -336,7 +336,7 @@ ms.locfileid: "73901627"
 | **[Orange Networks](https://orange-networks.com/blog/88-azureexpressroute)** | Европа |
 | **[Perficient](https://www.perficient.com/Partners/Microsoft/Cloud/Azure-ExpressRoute)** | Северная Америка |
 | **[Presidio](https://info.presidio.com/microsoft-azure-expressroute)** | Северная Америка |
-| **[sol-tec](https://www.sol-tec.com/services)** | Европа |
+| **[sol-tec](https://www.sol-tec.com/what-we-do/)** | Европа |
 | **[Venha Pra Nuvem](https://venhapranuvem.com.br/)** | Северная Америка |
 | **[Vigilant.IT](https://vigilant.it/expressroute)** | Австралия |
 

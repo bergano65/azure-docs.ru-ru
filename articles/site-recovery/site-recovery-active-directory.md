@@ -1,20 +1,18 @@
 ---
-title: Настройка аварийного восстановления для Active Directory и DNS с помощью Azure Site Recovery | Документация Майкрософт
+title: Настройка аварийного восстановления Active Directory и DNS с помощью Azure Site Recovery
 description: В этой статье описывается, как реализовать решение аварийного восстановления для Active Directory и DNS с помощью Azure Site Recovery.
-services: site-recovery
-documentationcenter: ''
 author: mayurigupta13
 manager: rochakm
 ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 4/9/2019
 ms.author: mayg
-ms.openlocfilehash: 58e360bb355c7faf9608b00dd65b14f27aca4367
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 8c1f85217db12b60cdcd8ea0bdb65792b8d02648
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61038843"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74084580"
 ---
 # <a name="set-up-disaster-recovery-for-active-directory-and-dns"></a>Настройка аварийного восстановления для Active Directory и DNS
 
@@ -24,10 +22,10 @@ ms.locfileid: "61038843"
 
 Из этой статьи вы узнаете, как создать решение аварийного восстановления для Active Directory. Здесь указаны предварительные требования и инструкции по отработке отказа. Перед началом работы необходимо ознакомиться с Active Directory и Site Recovery.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 * Если выполняется репликация в Azure, [подготовьте ресурсы Azure](tutorial-prepare-azure.md), включая подписку, виртуальную сеть Azure, учетную запись хранения и хранилище служб восстановления.
-* [Ознакомьтесь](site-recovery-support-matrix-to-azure.md) с требованиями поддержки для всех компонентов.
+* Ознакомьтесь с [требованиями поддержки ](site-recovery-support-matrix-to-azure.md) для всех компонентов.
 
 ## <a name="replicate-the-domain-controller"></a>Репликация контроллера домена
 
@@ -106,9 +104,9 @@ Site Recovery можно использовать для защиты вирту
 Начиная с Windows Server 2012 в [Active Directory Domain Services (AD DS) предусмотрены дополнительные меры безопасности](https://technet.microsoft.com/windows-server-docs/identity/ad-ds/introduction-to-active-directory-domain-services-ad-ds-virtualization-level-100). Эти меры безопасности помогают защитить виртуализированные контроллеры домена от откатов USN при условии, что базовая платформа низкоуровневой оболочки поддерживает **VM-GenerationID**. Azure поддерживает **VM-GenerationID**. А это значит, что контроллеры доменов, которые работают под управлением Windows Server 2012 или более поздних версий на виртуальных машинах Azure, будут защищены дополнительными мерами безопасности.
 
 
-Когда выполняется сброс **VM-GenerationID**, значение **InvocationID** базы данных AD DS также сбрасывается. Кроме того удаляется пул RID, и папки sysvol помечается как не заслуживающий. Дополнительные сведения см. в документах, посвященных [знакомству с виртуализацией доменных служб Active Directory](https://technet.microsoft.com/windows-server-docs/identity/ad-ds/introduction-to-active-directory-domain-services-ad-ds-virtualization-level-100) и [безопасной виртуализации DFSR](https://blogs.technet.microsoft.com/filecab/2013/04/05/safely-virtualizing-dfsr/).
+Когда выполняется сброс **VM-GenerationID**, значение **InvocationID** базы данных AD DS также сбрасывается. Кроме того, пул RID отбрасывается, а папка SYSVOL помечается как не заслуживающий доверия. Дополнительные сведения см. в документах, посвященных [знакомству с виртуализацией доменных служб Active Directory](https://technet.microsoft.com/windows-server-docs/identity/ad-ds/introduction-to-active-directory-domain-services-ad-ds-virtualization-level-100) и [безопасной виртуализации DFSR](https://blogs.technet.microsoft.com/filecab/2013/04/05/safely-virtualizing-dfsr/).
 
-Отработка отказа в Azure может привести к сбросу **VM-GenerationID**. Сброс **VM-GenerationID** запускает дополнительные меры безопасности при запуске виртуальной машины с контроллером домена в Azure. Это может привести к *значительная задержка* в не может выполнить вход виртуальную машину контроллера домена.
+Отработка отказа в Azure может привести к сбросу **VM-GenerationID**. Сброс **VM-GenerationID** запускает дополнительные меры безопасности при запуске виртуальной машины с контроллером домена в Azure. Это может привести к *значительной задержке* при входе на виртуальную машину контроллера домена.
 
 Так как этот контроллер домена будет использоваться только для тестовой отработки отказа, меры безопасности виртуализации не обязательны. Чтобы значение **VM-GenerationID** виртуальной машины с контроллером домена не изменялось, присвойте следующему параметру DWORD на локальном контроллере домена значение **4**.
 
@@ -128,11 +126,11 @@ Site Recovery можно использовать для защиты вирту
 
     ![Изменение идентификатора вызова](./media/site-recovery-active-directory/Event1109.png)
 
-* Папки SYSVOL и Netlogon недоступны.
+* Папка SYSVOL и общие папки NETLOGON недоступны.
 
-    ![Общей папке SYSVOL](./media/site-recovery-active-directory/sysvolshare.png)
+    ![Общая папка SYSVOL](./media/site-recovery-active-directory/sysvolshare.png)
 
-    ![Папки sysvol NtFrs](./media/site-recovery-active-directory/Event13565.png)
+    ![Папка NtFrs SYSVOL](./media/site-recovery-active-directory/Event13565.png)
 
 * Базы данных DFSR удалены.
 
@@ -146,7 +144,7 @@ Site Recovery можно использовать для защиты вирту
 >
 >
 
-1. В командной строке выполните следующую команду, чтобы проверить, являются ли папки sysvol и NETLOGON папку общими:
+1. В командной строке выполните следующую команду, чтобы проверить, являются ли папка SYSVOL и папка NETLOGON общими:
 
     `NET SHARE`
 
@@ -165,8 +163,8 @@ Site Recovery можно использовать для защиты вирту
 1. Выполните заслуживающее доверия восстановление контроллера домена. Примите во внимание указанные ниже сведения.
     * Несмотря на то, что мы не рекомендуем [репликацию FRS](https://blogs.technet.microsoft.com/filecab/2014/06/25/the-end-is-nigh-for-frs/), при ее использовании выполните действия для заслуживающего доверия восстановления. Процесс описан в статье об [использовании раздела реестра BurFlags для повторной инициализации службы репликации файлов](https://support.microsoft.com/kb/290762).
 
-        Дополнительные сведения о BurFlags см. в записи блога [D2 and D4: What is it for?](https://blogs.technet.microsoft.com/janelewis/2006/09/18/d2-and-d4-what-is-it-for/) (D2 и D4: для чего они используются).
-    * Если используется репликация DFSR, выполните действия для заслуживающего доверия восстановления. Этот процесс описан в [провести принудительную синхронизацию полномочное и неполномочное для папки папки sysvol с репликацией DFSR (как «D4/D2» для FRS)](https://support.microsoft.com/kb/2218556).
+        Дополнительные сведения о BurFlags см. в этой [записи блога](https://blogs.technet.microsoft.com/janelewis/2006/09/18/d2-and-d4-what-is-it-for/).
+    * Если используется репликация DFSR, выполните действия для заслуживающего доверия восстановления. Процесс описан в разделе [Принудительная и неофициальная синхронизация для реплицированной папки SYSVOL (например, D4/D2 для FRS)](https://support.microsoft.com/kb/2218556).
 
         Вы можете также использовать функции PowerShell. Дополнительные сведения см. в статье [DFSR-SYSVOL Authoritative / Non-Authoritative Restore Powershell Functions](https://blogs.technet.microsoft.com/thbouche/2013/08/28/dfsr-sysvol-authoritative-non-authoritative-restore-powershell-functions/) (Функции PowerShell заслуживающие и не заслуживающего доверия восстановления DFSR SYSVOL).
 
@@ -174,7 +172,7 @@ Site Recovery можно использовать для защиты вирту
 
     `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NTDS\Parameters\Repl Perform Initial Synchronizations`
 
-    Дополнительные сведения см. в статье [Устранение неполадок DNS код события: 4013: DNS-серверу не удалось загрузить зон DNS, интегрированных с AD](https://support.microsoft.com/kb/2001093).
+    Дополнительные сведения см. в статье [Troubleshoot DNS Event ID 4013: The DNS server was unable to load AD integrated DNS zones](https://support.microsoft.com/kb/2001093) (Устранение события DNS с идентификатором 4013: DNS-серверу не удалось загрузить зоны DNS, интегрированные с AD).
 
 3. Отключите требование, чтобы сервер глобального каталога был доступен для проверки входа пользователя. Для этого в локальном контроллере домена присвойте следующему разделу реестра значение **1**. Если параметр DWORD не существует, его можно создать в узле **Lsa**.
 
@@ -209,5 +207,5 @@ Site Recovery можно использовать для защиты вирту
 
     `dnscmd /config contoso.com /allowupdate 1`
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 Узнайте больше о [защите корпоративных приложений с помощью службы Azure Site Recovery](site-recovery-workload.md).

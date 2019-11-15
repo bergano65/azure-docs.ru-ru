@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 06/08/2018
 ms.author: dacurwin
-ms.openlocfilehash: 1394ea03874db5e05831100ef7bfec5187f3f4e4
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: c15f3f899b856cb715406bf0e2f95914cd58cca0
+ms.sourcegitcommit: a170b69b592e6e7e5cc816dabc0246f97897cb0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/14/2019
-ms.locfileid: "74074149"
+ms.locfileid: "74091667"
 ---
 # <a name="back-up-a-sharepoint-farm-on-azure-stack"></a>Резервное копирование фермы SharePoint на Azure Stack
 
@@ -243,7 +243,7 @@ Azure Backup Server работает под учетной записью LocalS
 В. Можно ли восстановить базу данных SharePoint в исходное расположение, если SharePoint настроен с использованием SQL AlwaysOn?<br>
 О. Так как базы данных SharePoint настраиваются в SQL AlwaysOn, их нельзя изменить, не удалив группу доступности. В связи с этим сервер MABS не может восстанавливать базы данных в исходное расположение. Вы можете восстановить базу данных SQL Server в другой экземпляр SQL Server.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 См. в статье [Файлы резервной копии и приложение](backup-mabs-files-applications-azure-stack.md).
 См. статью [Резервное копирование SQL Server на Azure Stack](backup-mabs-sql-azure-stack.md).
