@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Использование Python для создания запросов к Базе данных SQL Azure
+title: Краткое руководство. Использование Python для отправки запросов
 description: В этой статье показано, как использовать Python для создания программы, которая подключается к базе данных SQL Azure, и создавать к ней запросы с помощью инструкций Transact-SQL.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 03/25/2019
-ms.openlocfilehash: 32861fa8f8756c4e8d30c055582789d41a92fe7c
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.openlocfilehash: 42d5b500a48e427aad2372710597e0266b2e80aa
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72331855"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73826999"
 ---
 # <a name="quickstart-use-python-to-query-an-azure-sql-database"></a>Краткое руководство. Использование Python для создания запросов к базе данных SQL Azure
 

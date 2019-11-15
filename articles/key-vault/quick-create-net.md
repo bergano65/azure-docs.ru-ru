@@ -1,19 +1,19 @@
 ---
-title: Краткое руководство по использованию клиентской библиотеки Azure Key Vault для .NET
-description: Сведения о критериях, применяемых к формату и содержимому для создания кратких руководств по клиентским библиотекам Azure SDK.
+title: Краткое руководство по использованию клиентской библиотеки Azure Key Vault для .NET (версии 4)
+description: Узнайте, как создавать, извлекать и удалять секреты в Azure Key Vault с помощью клиентской библиотеки .NET (версии 4).
 author: msmbaldwin
 ms.author: mbaldwin
 ms.date: 05/20/2019
 ms.service: key-vault
 ms.topic: quickstart
-ms.openlocfilehash: 4faf889755b6f3e5f8fc6ef08cb69b4265fec355
-ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
+ms.openlocfilehash: c789d48656173721432779aeaba0530950527fa1
+ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72755796"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73646922"
 ---
-# <a name="quickstart-azure-key-vault-client-library-for-net"></a>Краткое руководство. Клиентская библиотека Azure Key Vault для .NET
+# <a name="quickstart-azure-key-vault-client-library-for-net-sdk-v4"></a>Краткое руководство. Использование клиентской библиотеки Azure Key Vault для .NET (пакет SDK версии 4)
 
 Начало работы с клиентской библиотекой Azure Key Vault для .NET. Чтобы установить пакет и испробовать пример кода для выполнения базовых задач, выполните описанные ниже шаги.
 
@@ -25,7 +25,7 @@ ms.locfileid: "72755796"
 - Упрощение и автоматизация задач, связанных с SSL- и TLS-сертификатами.
 - Используйте модули HSM, отвечающие стандартам FIPS 140-2 уровня 2.
 
-[Справочная документация по API](/dotnet/api/overview/azure/key-vault?view=azure-dotnet) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/keyvault) | [Пакет (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.KeyVault/).
+[Справочная документация по API](/dotnet/api/overview/azure/key-vault?view=azure-dotnet) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/keyvault) | [Пакет (NuGet)](https://www.nuget.org/packages/Azure.Security.KeyVault.Secrets/).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -45,7 +45,7 @@ ms.locfileid: "72755796"
 
 
 ```console
-dotnet new console -n akvdotnet
+dotnet new console -n key-vault-console-app
 ```
 
 Измените каталог на созданную папку приложения. Чтобы создать приложение, выполните следующую команду:
@@ -67,15 +67,13 @@ Build succeeded.
 Через окно консоли установите клиентскую библиотеку Azure Key Vault для .NET:
 
 ```console
-dotnet add package Microsoft.Azure.KeyVault
+dotnet add package Azure.Security.KeyVault.Secrets --version 4.0.0
 ```
 
 Для этого краткого руководства вам также понадобится установить следующие пакеты:
 
 ```console
-dotnet add package System.Threading.Tasks
-dotnet add package Microsoft.IdentityModel.Clients.ActiveDirectory
-dotnet add package Microsoft.Azure.Management.ResourceManager.Fluent
+dotnet add package Azure.Identity --version 1.0.0
 ```
 
 ### <a name="create-a-resource-group-and-key-vault"></a>Создание группы ресурсов и хранилища ключей
@@ -118,7 +116,7 @@ az ad sp create-for-rbac -n "http://mySP" --sdk-auth
 }
 ```
 
-Запишите значения clientId и clientSecret, так как они нам потребуются на шаге [Проверка подлинности в хранилище ключей](#authenticate-to-your-key-vault).
+Запишите значение clientId, clientSecret и tenantId, так как мы будем использовать их в следующих шагах.
 
 #### <a name="give-the-service-principal-access-to-your-key-vault"></a>Предоставление субъекту-службе доступа к хранилищу ключей
 
@@ -128,11 +126,29 @@ az ad sp create-for-rbac -n "http://mySP" --sdk-auth
 az keyvault set-policy -n <your-unique-keyvault-name> --spn <clientId-of-your-service-principal> --secret-permissions delete get list set --key-permissions create decrypt delete encrypt get list unwrapKey wrapKey
 ```
 
+#### <a name="set-environmental-variables"></a>Настройка переменных среды
+
+Метод DefaultAzureCredential в нашем приложении использует три переменные среды: `AZURE_CLIENT_ID`, `AZURE_CLIENT_SECRET` и `AZURE_TENANT_ID`. Присвойте этим переменным значения clientId, clientSecret и tenantId, записанные на шаге [создания субъекта-службы](#create-a-service-principal) ранее.
+
+Кроме того, необходимо будет сохранить имя хранилища ключей как переменную среды `KEY_VAULT_NAME`.
+
+```console
+setx AZURE_CLIENT_ID <your-clientID>
+
+setx AZURE_CLIENT_SECRET <your-clientSecret>
+
+setx AZURE_TENANT_ID <your-tenantId>
+
+setx KEY_VAULT_NAME <your-key-vault-name>
+````
+
+При каждом вызове `setx` вы будете получать ответ об успешном выполнении "SUCCESS: Specified value was saved." (Указанное значение сохранено.)
+
 ## <a name="object-model"></a>Объектная модель
 
-Клиентская библиотека Azure Key Vault для .NET позволяет управлять ключами и связанными с ними ресурсами, такими как сертификаты и секреты. В приведенных ниже примерах кода показано, как задать секрет и получить секретный код.
+Клиентская библиотека Azure Key Vault для .NET позволяет управлять ключами и связанными с ними ресурсами, такими как сертификаты и секреты. В приведенных ниже примерах кода показано, как создать клиент, а также как задать, извлечь и удалить секрет.
 
-Полный текст консольного приложения доступен по адресу https://github.com/Azure-Samples/key-vault-dotnet-core-quickstart/tree/master/akvdotnet.
+Полный текст консольного приложения доступен по адресу https://github.com/Azure-Samples/key-vault-dotnet-core-quickstart/tree/master/key-vault-console-app.
 
 ## <a name="code-examples"></a>Примеры кода
 
@@ -140,31 +156,19 @@ az keyvault set-policy -n <your-unique-keyvault-name> --spn <clientId-of-your-se
 
 Добавьте в верхнюю часть кода следующие директивы:
 
-[!code-csharp[Directives](~/samples-key-vault-dotnet-quickstart/akvdotnet/Program.cs?name=directives)]
+[!code-csharp[Directives](~/samples-key-vault-dotnet-quickstart/key-vault-console-app/Program.cs?name=directives)]
 
-### <a name="authenticate-to-your-key-vault"></a>Проверка подлинности в хранилище ключей
+### <a name="authenticate-and-create-a-client"></a>Аутентификация и создание клиента
 
-В этом кратком руководстве по .NET используются переменные среды для хранения учетных данных, которые нельзя размещать в коде. 
+Аутентификация в хранилище ключей и создание клиента хранилища ключей зависят от переменных среды, приведенных на шаге [настройки переменные среды](#set-environmental-variables) выше. Имя хранилища ключей расширяется до универсального кода ресурса (URI) хранилища ключей в формате "https://<имя_хранилища_ключей>.vault.azure.net".
 
-Перед сборкой и запуском приложения выполните команду `setx`, чтобы задать переменные среды `akvClientId`, `akvClientSecret`, `akvTenantId` и `akvSubscriptionId` с записанными выше значениями.
-
-```console
-setx akvClientId <your-clientID>
-
-setx akvClientSecret <your-clientSecret>
-````
-
-При каждом вызове `setx` вы будете получать ответ об успешном выполнении "SUCCESS: Specified value was saved." (Указанное значение сохранено.)
-
-Укажите эти переменные среды в строках кода, а затем выполните для приложения проверку подлинности, передавая переменные в [класс KeyVaultClient](/dotnet/api/microsoft.azure.keyvault.keyvaultclient):
-
-[!code-csharp[Authentication](~/samples-key-vault-dotnet-quickstart/akvdotnet/Program.cs?name=authentication)]
+[!code-csharp[Directives](~/samples-key-vault-dotnet-quickstart/key-vault-console-app/Program.cs?name=authenticate)]
 
 ### <a name="save-a-secret"></a>Сохранение секрета
 
-Теперь, когда приложение прошло проверку подлинности, вы можете разместить секрет в хранилище ключей с помощью [метода SetSecretAsync](/dotnet/api/microsoft.azure.keyvault.keyvaultclientextensions.setsecretasync). Для этого вам нужен URL-адрес хранилища ключей в формате `https://<your-unique-keyvault-name>.vault.azure.net/secrets/`. Также потребуется имя секрета — в нашем примере это "mySecret".  Вы можете сохранить эти строковые значения в переменные, чтобы использовать их повторно.
+Теперь, когда приложение прошло аутентификацию, вы можете разместить секрет в хранилище ключей с помощью [метода client.SetSecret](/dotnet/api/microsoft.azure.keyvault.keyvaultclientextensions.setsecretasync). Для этого нужно указать имя секрета — в данном примере это mySecret.  
 
-[!code-csharp[Set secret](~/samples-key-vault-dotnet-quickstart/akvdotnet/Program.cs?name=setsecret)]
+[!code-csharp[Set secret](~/samples-key-vault-dotnet-quickstart/key-vault-console-app/Program.cs?name=setsecret)]
 
 Команда [az keyvault secret show](/cli/azure/keyvault/secret?view=azure-cli-latest#az-keyvault-secret-show) позволяет убедиться, что секрет задан успешно:
 
@@ -174,11 +178,23 @@ az keyvault secret show --vault-name <your-unique-keyvault-name> --name mySecret
 
 ### <a name="retrieve-a-secret"></a>Получение секрета
 
-Теперь вы можете получить ранее заданное значение с помощью [метода GetSecretAsync](/dotnet/api/microsoft.azure.keyvault.keyvaultclientextensions.getsecretasync).
+Теперь вы можете получить ранее заданное значение с помощью [метода client.GetSecret](/dotnet/api/microsoft.azure.keyvault.keyvaultclientextensions.getsecretasync).
 
-[!code-csharp[Get secret](~/samples-key-vault-dotnet-quickstart/akvdotnet/Program.cs?name=getsecret)]
+[!code-csharp[Get secret](~/samples-key-vault-dotnet-quickstart/key-vault-console-app/Program.cs?name=getsecret)]
 
-Секрет теперь сохраняется как `keyvaultSecret.Value;`.
+Секрет теперь сохраняется как `secret.Value`.
+
+### <a name="delete-a-secret"></a>Удаление секрета.
+
+Наконец, давайте удалим секрет из хранилища ключей с помощью [метода client.DeleteSecret](/dotnet/api/microsoft.azure.keyvault.keyvaultclientextensions.getsecretasync).
+
+[!code-csharp[Delete secret](~/samples-key-vault-dotnet-quickstart/key-vault-console-app/Program.cs?name=deletesecret)]
+
+Команда [az keyvault secret show](/cli/azure/keyvault/secret?view=azure-cli-latest#az-keyvault-secret-show) позволяет убедиться, что секрет успешно удален.
+
+```azurecli
+az keyvault secret show --vault-name <your-unique-keyvault-name> --name mySecret
+```
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -192,9 +208,61 @@ az group delete -g "myResourceGroup" -l "EastUS"
 Remove-AzResourceGroup -Name "myResourceGroup"
 ```
 
+## <a name="sample-code"></a>Пример кода
+
+```csharp
+using System;
+using Azure.Identity;
+using Azure.Security.KeyVault.Secrets;
+
+namespace key_vault_console_app
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string secretName = "mySecret";
+
+            string keyVaultName = Environment.GetEnvironmentVariable("KEY_VAULT_NAME");
+            var kvUri = "https://" + keyVaultName + ".vault.azure.net";
+
+            var client = new SecretClient(new Uri(kvUri), new DefaultAzureCredential());
+
+            Console.Write("Input the value of your secret > ");
+            string secretValue = Console.ReadLine();
+
+            Console.Write("Creating a secret in " + keyVaultName + " called '" + secretName + "' with the value '" + secretValue + "` ...");
+
+            client.SetSecret(secretName, secretValue);
+
+            Console.WriteLine(" done.");
+
+            Console.WriteLine("Forgetting your secret.");
+            secretValue = "";
+            Console.WriteLine("Your secret is '" + secretValue + "'.");
+
+            Console.WriteLine("Retrieving your secret from " + keyVaultName + ".");
+
+            KeyVaultSecret secret = client.GetSecret(secretName);
+
+            Console.WriteLine("Your secret is '" + secret.Value + "'.");
+
+            Console.Write("Deleting your secret from " + keyVaultName + " ...");
+
+            client.StartDeleteSecret(secretName);
+
+            System.Threading.Thread.Sleep(5000);
+            Console.WriteLine(" done.");
+
+        }
+    }
+}
+```
+
+
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом кратком руководстве вы создали хранилище ключей, сохранили в нем секрет и извлекли его. Полный текст консольного приложения доступен [на сайте GitHub](https://github.com/Azure-Samples/key-vault-dotnet-core-quickstart/tree/master/akvdotnet).
+В этом кратком руководстве вы создали хранилище ключей, сохранили в нем секрет и извлекли его. Полный текст консольного приложения доступен [на сайте GitHub](https://github.com/Azure-Samples/key-vault-dotnet-core-quickstart/tree/master/key-vault-console-app).
 
 Чтобы получить дополнительные сведения о Key Vault и его интеграции в приложения, ознакомьтесь с перечисленными ниже статьями.
 

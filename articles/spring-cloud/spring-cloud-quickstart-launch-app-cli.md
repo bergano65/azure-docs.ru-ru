@@ -1,20 +1,17 @@
 ---
-title: Запуск приложения Java Spring с помощью Azure CLI
+title: Краткое руководство. Запуск приложения Java Spring с помощью Azure CLI
 description: Из этого краткого руководства вы узнаете, как развернуть приложение в Azure Spring Cloud с помощью Azure CLI.
-services: spring-cloud
-author: v-vasuke
-manager: jeconnoc
-editor: ''
+author: jpconnock
 ms.service: spring-cloud
 ms.topic: quickstart
-ms.date: 10/04/2019
-ms.author: v-vasuke
-ms.openlocfilehash: 6d399f04015140477af17f718c3e2205b8c3855f
-ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
+ms.date: 11/04/2019
+ms.author: jeconnoc
+ms.openlocfilehash: 3bc1bfcf58d622151f0af9c6da693c5533bcf966
+ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72170555"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73721612"
 ---
 # <a name="quickstart-launch-a-java-spring-application-using-the-azure-cli"></a>Краткое руководство. Запуск приложения Java Spring с помощью Azure CLI
 
@@ -34,8 +31,7 @@ Azure Spring Cloud позволяет легко запустить прилож
 ## <a name="prerequisites"></a>Предварительные требования
 
 >[!Note]
-> Прежде чем приступить к работе с этим кратким руководством, убедитесь, что ваша подписка Azure имеет доступ к Azure Spring Cloud.  Так как служба находится на этапе предварительной версии, свяжитесь с нами, чтобы мы добавили вашу подписку в список разрешенных.  Если вы хотите изучить возможности Azure Spring Cloud, [заполните эту форму](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR-LA2geqX-ZLhi-Ado1LD3tUNDk2VFpGUzYwVEJNVkhLRlcwNkZFUFZEUS4u
-).
+> Azure Spring Cloud в настоящее время предлагается в качестве общедоступной предварительной версии. Предложения общедоступной предварительной версии позволяют клиентам поэкспериментировать с новыми функциями до официального выпуска.  Функции и службы общедоступной предварительной версии не предназначены для использования в рабочей среде.  Чтобы получить дополнительные сведения о поддержке на этапе использования предварительных версий, ознакомьтесь с разделом [Вопросы и ответы](https://azure.microsoft.com/support/faq/) или оформите [запрос на поддержку](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request).
 
 >[!TIP]
 > Azure Cloud Shell — это бесплатная интерактивная оболочка, с помощью которой можно выполнять действия, описанные в этой статье.  Она содержит предварительно установленные общие инструменты Azure вместе с новейшими версиями Git, JDK, Maven и Azure CLI. Если вы вошли в подписку Azure, запустите [Azure Cloud Shell](https://shell.azure.com) на сайте shell.azure.com.  Дополнительные сведения об Azure Cloud Shell см. в [нашей документации](../cloud-shell/overview.md)
@@ -45,7 +41,7 @@ Azure Spring Cloud позволяет легко запустить прилож
 1. [установите Git](https://git-scm.com/);
 2. [установите JDK версии 8](https://docs.microsoft.com/java/azure/jdk/?view=azure-java-stable);
 3. [установите Maven 3.0 или более поздней версии](https://maven.apache.org/download.cgi);
-4. [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)
+4. [установите Azure CLI (версии 2.0.67 или выше)](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest);
 5. [зарегистрируйтесь для получения подписки Azure](https://azure.microsoft.com/free/).
 
 ## <a name="install-the-azure-cli-extension"></a>Установка расширения Azure CLI
@@ -53,7 +49,7 @@ Azure Spring Cloud позволяет легко запустить прилож
 Установите расширение Azure Spring Cloud для Azure CLI с помощью следующей команды:
 
 ```azurecli
-az extension add -y --source https://azureclitemp.blob.core.windows.net/spring-cloud/spring_cloud-0.1.0-py2.py3-none-any.whl
+az extension add --name spring-cloud
 ```
 
 ## <a name="provision-a-service-instance-on-the-azure-cli"></a>Подготовка экземпляра службы к работе в Azure CLI
@@ -110,7 +106,7 @@ az spring-cloud config-server git set -n <your-service-name> --uri https://githu
 2. Перейдите в каталог и выполните сборку проекта.
 
     ```azurecli
-        cd PiggyMetrics
+        cd piggymetrics
         mvn clean package -D skipTests
     ```
 
@@ -125,9 +121,6 @@ az spring-cloud app create --name gateway
 az spring-cloud app create --name auth-service
 az spring-cloud app create --name account-service
 ```
-
->[!NOTE]
-> Для правильной работы указанного сервера конфигурации имена приложений должны точно соответствовать именам JAR-файлов.
 
 ## <a name="deploy-applications-and-set-environment-variables"></a>Развертывание приложений и задание переменных среды
 

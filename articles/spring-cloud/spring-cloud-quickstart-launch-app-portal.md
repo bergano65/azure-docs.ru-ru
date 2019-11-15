@@ -1,26 +1,23 @@
 ---
-title: Запуск приложения Azure Spring Cloud с помощью портала Azure
+title: Краткое руководство. Запуск приложения Azure Spring Cloud с помощью портала Azure
 description: Развертывание примера приложения в Azure Spring Cloud с помощью портала Azure.
-services: spring-cloud
-author: v-vasuke
-manager: jeconnoc
-editor: ''
+author: jpconnock
 ms.service: spring-cloud
 ms.topic: quickstart
-ms.date: 10/04/2019
-ms.author: v-vasuke
-ms.openlocfilehash: 59770bccec57220560eeb5a5204e574ce172fc80
-ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
+ms.date: 11/4/2019
+ms.author: jeconnoc
+ms.openlocfilehash: bc8b834e0dd128457910c46cc1a62382bbc28ee1
+ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2019
-ms.locfileid: "72296482"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73721574"
 ---
 # <a name="quickstart-launch-an-azure-spring-cloud-application-using-the-azure-portal"></a>Краткое руководство. Запуск приложения Azure Spring Cloud с помощью портала Azure
 
 Azure Spring Cloud позволяет легко выполнять приложения микрослужб Spring Cloud в Azure.
 
-В этом кратком руководстве описано, как развернуть имеющееся приложение Spring Cloud в Azure. [Ниже приведена ссылка](https://github.com/Azure-Samples/PiggyMetrics) на пример кода приложения, используемого в этом учебнике. После завершения работы предоставленный пример приложения будет доступен в сети и готов к управлению с помощью портала Azure.
+В этом кратком руководстве описано, как развернуть имеющееся приложение Spring Cloud в Azure.  Пример кода приложения, используемый в этом руководстве, можно найти в [репозитории примеров GitHub](https://github.com/Azure-Samples/PiggyMetrics). После завершения работы предоставленный пример приложения будет доступен в сети и готов к управлению с помощью портала Azure.
 
 Из этого руководства вы узнаете, как выполнить следующие задачи:
 
@@ -34,7 +31,7 @@ Azure Spring Cloud позволяет легко выполнять прилож
 ## <a name="prerequisites"></a>Предварительные требования
 
 >[!Note]
-> Прежде чем приступить к работе с этим кратким руководством, убедитесь, что ваша подписка Azure имеет доступ к Azure Spring Cloud.  Так как служба находится на этапе предварительной версии, свяжитесь с нами, чтобы мы добавили вашу подписку в список разрешенных.  Если вы хотите изучить возможности Azure Spring Cloud, свяжитесь с нами по электронной почте: azure-spring-cloud@service.microsoft.com.
+> Azure Spring Cloud в настоящее время предлагается в качестве общедоступной предварительной версии. Предложения общедоступной предварительной версии позволяют клиентам поэкспериментировать с новыми функциями до официального выпуска.  Функции и службы общедоступной предварительной версии не предназначены для использования в рабочей среде.  Чтобы получить дополнительные сведения о поддержке на этапе использования предварительных версий, ознакомьтесь с разделом [Вопросы и ответы](https://azure.microsoft.com/support/faq/) или оформите [запрос на поддержку](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request).
 
 >[!TIP]
 > Azure Cloud Shell — это бесплатная интерактивная оболочка, с помощью которой можно выполнять действия, описанные в этой статье.  Она содержит предварительно установленные общие инструменты Azure вместе с новейшими версиями Git, JDK, Maven и Azure CLI. Если вы вошли в подписку Azure, запустите [Azure Cloud Shell](https://shell.azure.com) на сайте shell.azure.com.  Дополнительные сведения об Azure Cloud Shell см. в [нашей документации](../cloud-shell/overview.md)
@@ -44,7 +41,7 @@ Azure Spring Cloud позволяет легко выполнять прилож
 1. [установите Git](https://git-scm.com/);
 2. [установите JDK версии 8](https://docs.microsoft.com/java/azure/jdk/?view=azure-java-stable);
 3. [установите Maven 3.0 или более поздней версии](https://maven.apache.org/download.cgi);
-4. [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)
+4. [установите Azure CLI (версии 2.0.67 или выше)](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest);
 5. [зарегистрируйтесь для получения подписки Azure](https://azure.microsoft.com/free/).
 
 ## <a name="install-the-azure-cli-extension"></a>Установка расширения Azure CLI
@@ -52,14 +49,12 @@ Azure Spring Cloud позволяет легко выполнять прилож
 Установите расширение Azure Spring Cloud для Azure CLI с помощью следующей команды:
 
 ```Azure CLI
-az extension add -y --source https://azureclitemp.blob.core.windows.net/spring-cloud/spring_cloud-0.1.0-py2.py3-none-any.whl
+az extension add --name spring-cloud
 ```
 
 ## <a name="provision-a-service-instance-on-the-azure-portal"></a>Подготовка экземпляра службы к работе на портале Azure
 
-1. В веб-браузере откройте [эту ссылку на Azure Spring Cloud на портале Azure](https://ms.portal.azure.com/?microsoft_azure_marketplace_ItemHideKey=AppPlatformExtension#blade/Microsoft_Azure_Marketplace/MarketplaceOffersBlade/selectedMenuItemId/home/searchQuery/Azure%20Spring%20Cloud).
-
-    ![Снимок экрана, где отображается окно портала ASC](media/spring-cloud-quickstart-launch-app-portal/goto-portal.png)
+1. В веб-браузере откройте [эту ссылку на Azure Spring Cloud на портале Azure](https://ms.portal.azure.com/#create/Microsoft.AppPlatform).
 
 1. Выберите **Spring Cloud для Azure**, чтобы перейти на страницу обзора. Чтобы начать, нажмите кнопку **Создать**.
 
@@ -75,28 +70,30 @@ az extension add -y --source https://azureclitemp.blob.core.windows.net/spring-c
 
 1. Перейдите на страницу **Обзор** службы и выберите **Config Server** (Сервер конфигурации).
 
-1. В разделе **Репозиторий по умолчанию** задайте для параметра **URI** значение https://github.com/Azure-Samples/piggymetrics, для параметра **Метки** значение config и щелкните **Применить**, чтобы сохранить изменения.
+1. В разделе **Репозиторий по умолчанию** задайте для параметра **URI** значение "https\://github.com/Azure-Samples/piggymetrics", для параметра **Метка** — значение "config" и щелкните **Применить**, чтобы сохранить изменения.
 
-    ![Снимок экрана, где отображается окно портала ASC](media/spring-cloud-quickstart-launch-app-portal/portal-config.png)
+    ![Снимок экрана, где отображается окно портала ASC](media/spring-cloud-tutorial-config-server/portal-config-server.png)
 
 ## <a name="build-and-deploy-microservice-applications"></a>Создание и развертывание приложений микрослужб
 
-1. Откройте окно терминала и выполните следующую команду, чтобы клонировать репозиторий с примером приложения на локальный компьютер.
+1. Откройте [Azure Cloud Shell](https://shell.azure.com) и клонируйте репозиторий с примером приложения на локальный компьютер.  Перед клонированием приложения мы создадим на нем временный каталог `source-code`.
 
-    ```cli
+    ```azurecli
+    mkdir source-code
+    cd source-code
     git clone https://github.com/Azure-Samples/piggymetrics
     ```
 
-1. Создайте проект, выполнив приведенную ниже команду.
+1. Выполните сборку клонированного пакета.
 
-    ```cli
-    cd PiggyMetrics
+    ```azurecli
+    cd piggymetrics
     mvn clean package -DskipTests
     ```
 
 1. Вход в Azure CLI и настройка активной подписки.
 
-    ```cli
+    ```azurecli
     # Login to Azure CLI
     az login
 
@@ -123,7 +120,7 @@ az extension add -y --source https://azureclitemp.blob.core.windows.net/spring-c
 
 1. Следуя той же схеме, создайте приложения `account-service` и `auth-service`, и выполните развертывание их файлов JAR.
 
-    ```cli
+    ```azurecli
     az spring-cloud app create -n account-service
     az spring-cloud app deploy -n account-service --jar-path ./account-service/target/account-service.jar
     az spring-cloud app create -n auth-service
@@ -135,8 +132,10 @@ az extension add -y --source https://azureclitemp.blob.core.windows.net/spring-c
 ## <a name="assign-a-public-endpoint-to-gateway"></a>Назначение общедоступной конечной точки шлюзу
 
 1. В меню слева откройте вкладку **Приложения**.
-2. Выберите приложение `gateway`, чтобы отобразить страницу **Обзор**.
-3. Выберите **Назначить домен**, чтобы назначить общедоступную конечную точку шлюзу. Для этого может потребоваться несколько минут.
+
+1. Выберите приложение `gateway`, чтобы отобразить страницу **Обзор**.
+
+1. Выберите **Назначить домен**, чтобы назначить общедоступную конечную точку шлюзу. Для этого может потребоваться несколько минут.
 
     ![Снимок экрана, где отображается окно портала ASC](media/spring-cloud-quickstart-launch-app-portal/portal-endpoint.png)
 

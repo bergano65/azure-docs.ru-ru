@@ -1,5 +1,5 @@
 ---
-title: VS Code. Подключение и запрос данных в базе данных SQL Azure | Документация Майкрософт
+title: Использование VS Code для подключения и отправки запросов
 description: Сведения о подключении к базе данных SQL в Azure с помощью Visual Studio Code и выполнении инструкций Transact-SQL (T-SQL) для запроса и изменения данных.
 keywords: подключение к базе данных SQL
 services: sql-database
@@ -12,12 +12,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 03/25/2019
-ms.openlocfilehash: d8f12e699c17787d897a7f5ed23eccdbf3659921
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 28b35f273783b2e4d0b8f59c5bc5be384b933ba2
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68569129"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73826895"
 ---
 # <a name="quickstart-use-visual-studio-code-to-connect-and-query-an-azure-sql-database"></a>Краткое руководство. Подключение и запрос базы данных SQL Azure с помощью Visual Studio Code
 

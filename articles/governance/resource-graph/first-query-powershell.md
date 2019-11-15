@@ -6,12 +6,12 @@ ms.author: dacoulte
 ms.date: 10/18/2019
 ms.topic: quickstart
 ms.service: resource-graph
-ms.openlocfilehash: a7d65d975d43a63a38863721273debab46115045
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: 9e41ca2e7c6d789b3d18fa98c4845118fa6538ef
+ms.sourcegitcommit: 6c2c97445f5d44c5b5974a5beb51a8733b0c2be7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72389710"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73622553"
 ---
 # <a name="quickstart-run-your-first-resource-graph-query-using-azure-powershell"></a>Краткое руководство. Выполните первый запрос графика ресурсов с помощью Azure PowerShell
 
@@ -106,9 +106,10 @@ Uninstall-Module -Name 'Az.ResourceGraph'
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Получите более подробную информацию о [языке запросов](./concepts/query-language.md)
-- Подробнее о [просмотре ресурсов](./concepts/explore-resources.md)
-- Выполните первый запрос с помощью [Azure CLI](first-query-azurecli.md)
-- См. примеры в разделе [начальных запросов](./samples/starter.md)
-- Изучите примеры в разделе [Усложненные запросы](./samples/advanced.md).
-- Оставьте отзыв о [UserVoice](https://feedback.azure.com/forums/915958-azure-governance)
+- Получите более подробную информацию о [языке запросов](./concepts/query-language.md).
+- Узнайте больше о том, как [изучать ресурсы](./concepts/explore-resources.md).
+- Выполните свой первый запрос с помощью [портала Azure](first-query-portal.md).
+- Выполните первый запрос с помощью [Azure CLI](first-query-azurecli.md).
+- Ознакомьтесь с примерами [начальных запросов](./samples/starter.md).
+- Ознакомьтесь с примерами [усложненных запросов](./samples/advanced.md).
+- Оставьте отзыв с помощью [UserVoice](https://feedback.azure.com/forums/915958-azure-governance).

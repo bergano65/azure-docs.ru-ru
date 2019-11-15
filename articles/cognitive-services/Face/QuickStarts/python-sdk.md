@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство. Клиентская библиотека API Распознавания лиц для Python | Документация Майкрософт
-description: Начало работы с клиентской библиотекой API Распознавания лиц для Python.
+description: Эта статья поможет вам приступить к работе с клиентской библиотекой Распознавания лиц для Python, чтобы выполнять распознавание, поиск похожих лиц, идентификацию, проверку и многое другое.
 services: cognitive-services
 author: PatrickFarley
 manager: nitinme
@@ -9,12 +9,12 @@ ms.subservice: face-api
 ms.topic: quickstart
 ms.date: 07/26/2019
 ms.author: pafarley
-ms.openlocfilehash: b265ec68039f03c09d45c9605965de8ce0baba99
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 9728ff86de8561c463886847494ecc4c1c007851
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72935871"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73743196"
 ---
 # <a name="quickstart-face-client-library-for-python"></a>Краткое руководство. Клиентская библиотека API Распознавания лиц для Python
 

@@ -6,18 +6,18 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.devlang: python
 ms.topic: quickstart
-ms.date: 05/21/2019
+ms.date: 11/03/2019
 ms.author: sngun
 ms.custom:
 - seodec18
 - seo-javascript-september2019
 - seo-python-october2019
-ms.openlocfilehash: 9a5e826fd4de3641c4c5ce8ae728d354cb7ba8f7
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 82426c0093550864b421d7acc35780c4173895a8
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73495199"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73824736"
 ---
 # <a name="quickstart-build-a-python-application-using-an-azure-cosmos-db-sql-api-account"></a>Краткое руководство. Создание приложения Python с использованием учетной записи API SQL для Azure Cosmos DB
 
@@ -33,13 +33,13 @@ ms.locfileid: "73495199"
 
 Azure Cosmos DB — это глобально распределенная многомодельная служба базы данных Майкрософт. Можно быстро создавать и запрашивать документы, пары "ключ-значение", широкие столбцы и графовые базы данных. Все эти операции используют преимущества распределения и масштабирования Azure Cosmos DB.
 
-В этом кратком руководстве используется версия 3.0 [пакета SDK для Python](https://pypi.org/project/azure-cosmos).
+В рамках этого краткого руководства используется версия 4 [пакета SDK для Python](https://pypi.org/project/azure-cosmos/#history).
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)] [!INCLUDE [cosmos-db-emulator-docdb-api](../../includes/cosmos-db-emulator-docdb-api.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* [Python 3.6](https://www.python.org/downloads/) с исполняемым файлом `python` в `PATH`.
+* [Python 3.6 или более поздней версии](https://www.python.org/downloads/) с исполняемым файлом `python` в `PATH`.
 * [Visual Studio Code](https://code.visualstudio.com/)
 * [Расширение Python для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-python.python#overview)
 
@@ -90,92 +90,50 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Теперь вернитесь на портал Azure, чтобы получить данные строки подключения. Скопируйте эти данные в приложение.
 
-1. На [портале Azure](https://portal.azure.com/) в учетной записи Azure Cosmos выберите **Ключи** в области навигации слева. На следующем шаге используйте кнопку копирования в правой части экрана, чтобы скопировать **универсальный код ресурса (URI)** и **первичный ключ** в файл `CosmosGetStarted.py`.
+1. На [портале Azure](https://portal.azure.com/) в учетной записи Azure Cosmos выберите **Ключи** в области навигации слева. На следующем шаге используйте кнопку копирования в правой части экрана, чтобы скопировать **универсальный код ресурса (URI)** и **первичный ключ** в файл `cosmos_get_started.py`.
 
     ![Получение ключа доступа и URI в параметрах ключа на портале Azure](./media/create-sql-api-dotnet/access-key-and-uri-in-keys-settings-in-the-azure-portal.png)
 
-2. Откройте файл `CosmosGetStarted.py` из \git-samples\azure-cosmos-db-python-getting-started в Visual Studio Code.
+2. Откройте файл `cosmos_get_started.py` из \git-samples\azure-cosmos-db-python-getting-started в Visual Studio Code.
 
-3. Скопируйте значение **универсального кода ресурса (URI)** на портале (с помощью кнопки копирования) и добавьте его в качестве значения параметра ключа **конечной точки** в файле ``CosmosGetStarted.py``. 
+3. Скопируйте значение **универсального кода ресурса (URI)** на портале (с помощью кнопки копирования) и добавьте его в качестве значения переменной **endpoint** (конечная точка) в файл ``cosmos_get_started.py``. 
 
-    `'ENDPOINT': 'https://FILLME.documents.azure.com',`
+    `endpoint = 'https://FILLME.documents.azure.com',`
 
-4. Затем скопируйте значение **ПЕРВИЧНОГО КЛЮЧА** с портала и добавьте его в качестве значения параметра **config.PRIMARYKEY** в файле ``CosmosGetStarted.py``. Теперь приложение со всеми сведениями, необходимыми для взаимодействия с Azure Cosmos DB, обновлено. 
+4. Затем скопируйте значение **первичного ключа** с портала и добавьте его в качестве значения **key** (ключ) в файл ``cosmos_get_started.py``. Теперь приложение со всеми сведениями, необходимыми для взаимодействия с Azure Cosmos DB, обновлено. 
 
-    `'PRIMARYKEY': 'FILLME',`
+    `key = 'FILLME'`
 
-5. Сохраните файл ``CosmosGetStarted.py``.
+5. Сохраните файл ``cosmos_get_started.py``.
 
 ## <a name="review-the-code"></a>Просмотр кода
 
 Этот шаг не является обязательным. Узнайте о ресурсах базы данных, созданных в коде, или сразу перейдите к разделу [Обновление строки подключения](#update-your-connection-string).
 
-Обратите внимание, что если вам знакома предыдущая версия пакета SDK для Python, вы уже видели термины "коллекция" и "документ". Так как Azure Cosmos DB поддерживает несколько моделей API, пакет SDK для Python версии 3.0+ использует общий термин "контейнер", который может быть коллекцией, графом или таблицей, и термин "элемент" для описания содержимого контейнера.
+Приведенные ниже фрагменты кода взяты из файла `cosmos_get_started.py`.
 
-Приведенные ниже фрагменты кода взяты из файла `CosmosGetStarted.py`.
+* Инициализация экземпляра CosmosClient. Обязательно обновите значения "endpoint" (конечная точка) и "key" (ключ), как описано в разделе об [обновлении строки подключения](#update-your-connection-string). 
 
-* Инициализация экземпляра CosmosClient. Обязательно обновите значения "Endpoint" (конечная точка) и "master key" (главный ключ), как описано в разделе [Обновление строки подключения](#update-your-connection-string). 
-
-    ```python
-    # Initialize the Cosmos client
-    client = cosmos_client.CosmosClient(url_connection=config['ENDPOINT'], auth={'masterKey': config['MASTERKEY']})
-    ```
+    [!code-python[](~/azure-cosmos-db-python-getting-started/cosmos_get_started.py?name=create_cosmos_client)]
 
 * Создание базы данных.
 
-    ```python
-    # Create a database
-    db = client.CreateDatabase({ 'id': config['DATABASE'] })
-    ```
+    [!code-python[](~/azure-cosmos-db-python-getting-started/cosmos_get_started.py?name=create_database_if_not_exists)]
 
-* Создание контейнера.
+* Будет создан контейнер с [подготовленной пропускной способностью](request-units.md) в 400 единиц запросов в секунду. Мы выбрали значение `lastName` для параметра [partition key](partitioning-overview.md#choose-partitionkey) (ключ секции), что позволяет эффективно выполнять запросы с фильтрацией по этому свойству. 
 
-    ```python
-    # Create container options
-    options = {
-        'offerThroughput': 400
-    }
+    [!code-python[](~/azure-cosmos-db-python-getting-started/cosmos_get_started.py?name=create_container_if_not_exists)]
 
-    # Create a container
-    container = client.CreateContainer(db['_self'], container_definition, options)
-    ```
+* Некоторые элементы добавляются в контейнер. Контейнеры — это коллекции элементов (документов JSON) с переменными схемами. Вспомогательные методы ```get_[name]_family_item``` возвращают представления семейства, которые хранятся в Azure Cosmos DB в виде документов JSON.
 
-* Некоторые элементы добавляются в контейнер.
+    [!code-python[](~/azure-cosmos-db-python-getting-started/cosmos_get_started.py?name=create_item)]
 
-    ```python
-    # Create and add some items to the container
-    item1 = client.CreateItem(container['_self'], {
-        'serverId': 'server1',
-        'Web Site': 0,
-        'Cloud Service': 0,
-        'Virtual Machine': 0,
-        'message': 'Hello World from Server 1!'
-        }
-    )
+* Точечные операции чтения (поиск по ключу) выполняются с помощью метода `read_item`. Мы выводим сведения о [стоимости в ЕЗ](request-units.md) для каждой операции.
+    [!code-python[](~/azure-cosmos-db-python-getting-started/cosmos_get_started.py?name=read_item)]
 
-    item2 = client.CreateItem(container['_self'], {
-        'serverId': 'server2',
-        'Web Site': 1,
-        'Cloud Service': 0,
-        'Virtual Machine': 0,
-        'message': 'Hello World from Server 2!'
-        }
-    )
-    ```
+* Запрос выполняется с помощью синтаксиса SQL. Так как мы используем в предложении WHERE значения ключа секции ```lastName```, Azure Cosmos DB будет эффективно маршрутизировать этот запрос к соответствующим секциям, что повышает производительность.
 
-* Выполнение запросов с помощью SQL
-
-    ```python
-    query = {'query': 'SELECT * FROM server s'}
-
-    options = {}
-    options['enableCrossPartitionQuery'] = True
-    options['maxItemCount'] = 2
-
-    result_iterable = client.QueryItems(container['_self'], query, options)
-    for item in iter(result_iterable):
-        print(item['message'])
-    ```
+    [!code-python[](~/azure-cosmos-db-python-getting-started/cosmos_get_started.py?name=query_items)]
    
 ## <a name="run-the-app"></a>Запуск приложения
 
@@ -196,20 +154,48 @@ Azure Cosmos DB — это глобально распределенная мн
 5. Выполните следующую команду, чтобы установить пакет azure-cosmos. 
 
     ```python
-    pip3 install azure-cosmos
+    pip install --pre azure-cosmos
     ```
 
     Если при попытке установить пакет azure-cosmos появляется ошибка отказа в доступе, необходимо [запустить Visual Studio Code от имени администратора](https://stackoverflow.com/questions/37700536/visual-studio-code-terminal-how-to-run-a-command-with-administrator-rights).
 
-6. Выполните следующую команду, чтобы запустить пример, а также создать и сохранить документы в Azure Cosmos DB.
+6. Выполните приведенную ниже команду, чтобы выполнить пример, а также создать и сохранить документы в Azure Cosmos DB.
 
     ```python
-    python CosmosGetStarted.py
+    python cosmos_get_started.py
     ```
 
-7. Чтобы убедиться в том, что элементы созданы и сохранены, на портале Azure выберите **Обозреватель данных**, разверните **coll**, затем **Документы** и выберите документ **server1**. Содержимое документа server1 соответствует содержимому, отображаемому в интегрированном окне терминала. 
+7. Чтобы убедиться в том, что элементы созданы и сохранены, выберите на портале Azure **Обозреватель данных** > **AzureSampleFamilyDatabase** > **Элементы**. Проверьте, есть ли здесь созданные элементы. Ниже приведен пример документа JSON для семейства Андерсен:
 
-    ![Просмотр новых документов на портале Azure](./media/create-sql-api-python/azure-cosmos-db-confirm-documents.png)
+```json
+{
+    "id": "Andersen-1569479288379",
+    "lastName": "Andersen",
+    "district": "WA5",
+    "parents": [
+        {
+            "familyName": null,
+            "firstName": "Thomas"
+        },
+        {
+            "familyName": null,
+            "firstName": "Mary Kay"
+        }
+    ],
+    "children": null,
+    "address": {
+        "state": "WA",
+        "county": "King",
+        "city": "Seattle"
+    },
+    "registered": true,
+    "_rid": "8K5qAIYtZXeBhB4AAAAAAA==",
+    "_self": "dbs/8K5qAA==/colls/8K5qAIYtZXc=/docs/8K5qAIYtZXeBhB4AAAAAAA==/",
+    "_etag": "\"a3004d78-0000-0800-0000-5d8c5a780000\"",
+    "_attachments": "attachments/",
+    "_ts": 1569479288
+}
+```
 
 ## <a name="review-slas-in-the-azure-portal"></a>Просмотр соглашений об уровне обслуживания на портале Azure
 

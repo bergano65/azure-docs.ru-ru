@@ -1,18 +1,18 @@
 ---
-title: Краткое руководство. Создание сервера Azure Analysis Services с помощью портала Azure  | Документы Майкрософт
-description: Узнайте, как создать экземпляр сервера служб Analysis Services в Azure.
+title: Краткое руководство. Создание сервера Azure Analysis Services на портале Azure  | Документация Майкрософт
+description: Узнайте, как быстро создать экземпляр сервера Azure Analysis Services с помощью портал Azure.
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: quickstart
-ms.date: 07/02/2019
+ms.date: 10/30/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: e6973ee311f1d3f5ba19714695f67bd321d953b7
-ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
+ms.openlocfilehash: cfd624ce49add0f8fd04bfccca9d6b7c3f1f71bd
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2019
-ms.locfileid: "72295038"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73573069"
 ---
 # <a name="quickstart-create-a-server---portal"></a>Краткое руководство. Создание сервера с помощью портала
 
@@ -45,7 +45,7 @@ ms.locfileid: "72295038"
    * **Backup Storage setting** (Настройка хранилища резервных копий). Необязательный элемент. Если у вас уже есть [учетная запись хранения](../storage/common/storage-introduction.md), вы можете указать ее как резервную копию шаблона базы данных по умолчанию. Вы также можете указать [параметры резервного копирования и восстановления](analysis-services-backup.md) позже.
    * **Срок действия ключа хранилища**. Необязательный элемент. Укажите период истечения срока хранения ключа.
 
-Создание сервера обычно занимает меньше минуты. Если был выбран параметр **Add to Portal** (Добавить на портал), перейдите на портал, чтобы просмотреть новый сервер. Или перейдите по меню **Все службы** > **Analysis Services**, чтобы проверить, готов ли ваш сервер. Серверы поддерживают табличные модели на уровне совместимости 1200 и выше. Уровень совместимости модели указывается в SSDT или SSMS.
+Создание сервера обычно занимает меньше минуты. Если был выбран параметр **Add to Portal** (Добавить на портал), перейдите на портал, чтобы просмотреть новый сервер. Или перейдите по меню **Все службы** > **Analysis Services**, чтобы проверить, готов ли ваш сервер. Серверы поддерживают табличные модели на уровне совместимости 1200 и выше. Уровень совместимости модели указывается в Visual Studio или SSMS.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

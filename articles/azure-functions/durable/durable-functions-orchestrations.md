@@ -9,12 +9,12 @@ ms.service: azure-functions
 ms.topic: overview
 ms.date: 09/08/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 82c4a27ac2491e668c1d99e2a14b870e82ec5665
-ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
+ms.openlocfilehash: 4e11070f4e766f83b0e7ead7757c675de3fef33f
+ms.sourcegitcommit: b2fb32ae73b12cf2d180e6e4ffffa13a31aa4c6f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70935422"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73614775"
 ---
 # <a name="durable-orchestrations"></a>Устойчивые оркестрации
 
@@ -64,7 +64,7 @@ ms.locfileid: "70935422"
 ```csharp
 [FunctionName("E1_HelloSequence")]
 public static async Task<List<string>> Run(
-    [OrchestrationTrigger] DurableOrchestrationContext context)
+    [OrchestrationTrigger] IDurableOrchestrationContext context)
 {
     var outputs = new List<string>();
 
@@ -133,7 +133,7 @@ module.exports = df.orchestrator(function*(context) {
 
 * **PartitionKey.** Содержит идентификатор экземпляра оркестрации.
 * **EventType.** Предоставляет тип события. Принимается один из следующих типов:
-  * **OrchestrationStarted.** Функция оркестратора, которая возобновлена после состояния ожидания или выполняется впервые. Столбец `Timestamp` используется, чтобы заполнить детерминированное значение для API [CurrentUtcDateTime](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html#Microsoft_Azure_WebJobs_DurableOrchestrationContext_CurrentUtcDateTime).
+  * **OrchestrationStarted.** Функция оркестратора, которая возобновлена после состояния ожидания или выполняется впервые. Столбец `Timestamp` используется, чтобы заполнить детерминированное значение для интерфейсов API `CurrentUtcDateTime` (.NET) и `currentUtcDateTime` (JavaScript).
   * **ExecutionStarted.** Функция оркестратора, которая начала выполнение впервые. Это событие также содержит входные данные функции в столбце `Input`.
   * **TaskScheduled.** Функция действия была запланирована. Имя функции действия сохраняется в столбце `Name`.
   * **TaskCompleted.** Функция действия выполнена. Результаты функции находятся в столбце `Result`.
@@ -186,7 +186,7 @@ module.exports = df.orchestrator(function*(context) {
 
 Дополнительные сведения и примеры см. в статье [Handling errors in Durable Functions (Azure Functions)](durable-functions-error-handling.md) (Обработка ошибок в устойчивых функциях (Функции Azure)).
 
-### <a name="critical-sections"></a>Критические секции
+### <a name="critical-sections-durable-functions-2x"></a>Критические разделы (Устойчивые функции 2.x)
 
 Экземпляры оркестрации являются однопотоковыми, поэтому нет необходимости беспокоиться о состоянии гонки *внутри* оркестрации. Однако условия гонки возможны, когда оркестрации взаимодействуют с внешними системами. Чтобы устранить состояние гонки при взаимодействии с внешними системами, функции оркестратора могут определять *критические секции* с помощью метода `LockAsync` в .NET.
 
@@ -212,7 +212,7 @@ public static async Task Synchronize(
 > [!NOTE]
 > Критические секции доступны в Устойчивых функциях версии 2.0 и выше. В настоящее время только оркестрации .NET реализуют эту функцию.
 
-### <a name="calling-http-endpoints"></a>Вызов конечных точек HTTP
+### <a name="calling-http-endpoints-durable-functions-2x"></a>Вызов конечных точек HTTP (Устойчивые функции 2.x)
 
 Функциям оркестратора не разрешено выполнять операции ввода-вывода, как описано в [ограничениях кода функции оркестратора](durable-functions-code-constraints.md). Типичным обходным решением для этого ограничения является перенос любого кода, который должен выполнять операции ввода-вывода, в функцию действия. Оркестрации, которые взаимодействуют с внешними системами, часто используют функции действий для выполнения вызовов HTTP и возврата результата в оркестрацию.
 
@@ -236,10 +236,22 @@ public static async Task CheckSiteAvailable(
 }
 ```
 
+```javascript
+const df = require("durable-functions");
+
+module.exports = df.orchestrator(function*(context) {
+    const url = context.df.getInput();
+    var res = yield context.df.callHttp("GET", url);
+    if (res.statusCode >= 400) {
+        // handling of error codes goes here
+    }
+});
+```
+
 Дополнительные сведения и подробные примеры см. в статье [HTTP Features](durable-functions-http-features.md) (Функции HTTP).
 
 > [!NOTE]
-> Вызов конечных точек HTTP напрямую из функций оркестратора доступен в Устойчивых функциях версии 2.0 и выше. В настоящее время только оркестрации .NET реализуют эту функцию.
+> Вызов конечных точек HTTP напрямую из функций оркестратора доступен в Устойчивых функциях версии 2.0 и выше.
 
 ### <a name="passing-multiple-parameters"></a>Передача нескольких параметров
 
@@ -250,7 +262,7 @@ public static async Task CheckSiteAvailable(
 ```csharp
 [FunctionName("GetCourseRecommendations")]
 public static async Task<object> RunOrchestrator(
-    [OrchestrationTrigger] DurableOrchestrationContext context)
+    [OrchestrationTrigger] IDurableOrchestrationContext context)
 {
     string major = "ComputerScience";
     int universityYear = context.GetInput<int>();
@@ -262,7 +274,7 @@ public static async Task<object> RunOrchestrator(
 }
 
 [FunctionName("CourseRecommendations")]
-public static async Task<object> Mapper([ActivityTrigger] DurableActivityContext inputs)
+public static async Task<object> Mapper([ActivityTrigger] IDurableActivityContext inputs)
 {
     // parse input for student's major and year in university
     (string Major, int UniversityYear) studentInfo = inputs.GetInput<(string, int)>();

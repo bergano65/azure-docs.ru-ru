@@ -1,6 +1,6 @@
 ---
-title: 'Общие сведения о добавлении учетных записей в приложение Microsoft Authenticator: Azure Active Directory | Документация Майкрософт'
-description: Общие сведения о том, как добавить рабочие и личные учетные записи в приложение Microsoft Authenticator для двухфакторной проверки подлинности.
+title: Общие сведения о добавлении учетных записей в приложение Authenticator в Azure AD
+description: Ссылки на статьи о том, как добавить рабочие и личные учетные записи в приложение Microsoft Authenticator для двухфакторной проверки подлинности.
 services: active-directory
 author: eross-msft
 manager: daveba
@@ -12,12 +12,12 @@ ms.topic: overview
 ms.date: 01/24/2019
 ms.author: lizross
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d16699729e62953cb2369f39ecfe759aab663caf
-ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
+ms.openlocfilehash: 16244be7dee9faaa15105f9dc0ac6c074230d243
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68382644"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73820276"
 ---
 # <a name="overview-about-adding-accounts-to-the-microsoft-authenticator-app"></a>Общие сведения о добавлении учетных записей в приложение Microsoft Authenticator
 
@@ -43,7 +43,7 @@ ms.locfileid: "68382644"
 | Рабочие или учебные учетные записи | Учетная запись, предоставленная вашей компанией или учебным заведением, например alain@contoso.com. |
 | Личные учетные записи | Учетные записи Майкрософт или сторонних компаний, которые вы открыли лично, такие как Outlook.com, Xbox LIVE, Google, Facebook и многие другие. |
 
-## <a name="in-this-section"></a>В этом разделе
+## <a name="articles-about-how-to-add-different-accounts"></a>Статьи о том, как добавить разные учетные записи
 
 | Статья |ОПИСАНИЕ |
 | ------|------------|

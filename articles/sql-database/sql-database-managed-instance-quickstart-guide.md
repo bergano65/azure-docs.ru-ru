@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Управляемый экземпляр Базы данных SQL Azure | Документация Майкрософт
+title: Краткое руководство по управляемому экземпляру SQL
 description: Узнайте, как быстро приступить к работе с управляемым экземпляром Базы данных SQL Azure
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein, carlr
 ms.date: 07/11/2019
-ms.openlocfilehash: 65b6b503d107b36813d1716348ce5f11fa840cc0
-ms.sourcegitcommit: f2d9d5133ec616857fb5adfb223df01ff0c96d0a
+ms.openlocfilehash: 602de3e23eb5419958f84b071e2220550d1d04d0
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71937213"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73821719"
 ---
 # <a name="getting-started-with-azure-sql-database-managed-instance"></a>Начало работы с управляемым экземпляром Базы данных SQL Azure
 

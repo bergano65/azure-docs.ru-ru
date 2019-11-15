@@ -1,364 +1,357 @@
 ---
-title: Создание большого двоичного объекта в службе хранилища Azure для Node. js
-description: Создайте учетную запись хранения и контейнер в хранилище объектов (больших двоичных объектов). Затем с помощью клиентской библиотеки Службы хранилища Azure для Node.js версии 2 передайте BLOB-объект в Службу хранилища Azure, скачайте его и перечислите все BLOB-объекты в контейнере.
+title: Краткое руководство. Использование библиотеки хранилища BLOB-объектов Azure версии 12 для JavaScript
+description: В этом кратком руководстве вы узнаете, как использовать клиентскую библиотеку службы хранилища BLOB-объектов Azure версии 12 для JavaScript для создания контейнера и большого двоичного объекта в хранилище BLOB-объектов. Далее вы узнаете, как скачать большой двоичный объект на локальный компьютер и как получить список всех больших двоичных объектов в контейнере.
 author: mhopkins-msft
 ms.author: mhopkins
-ms.date: 02/04/2019
+ms.date: 11/05/2019
 ms.service: storage
 ms.subservice: blobs
-ms.topic: conceptual
-ms.custom: seo-javascript-september2019
-ms.openlocfilehash: 8d0afc5a224e752bdd745ab4df0473a134b4180b
-ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
-ms.translationtype: MT
+ms.topic: quickstart
+ms.openlocfilehash: 28a75158b161e680f857b986bcb754f1f99e8fab
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2019
-ms.locfileid: "71671346"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73825303"
 ---
-# <a name="upload-download-and-list-blobs-using-the-client-library-for-nodejs"></a>Отправка, скачивание и перечисление больших двоичных объектов с помощью клиентской библиотеки для Node. js
+# <a name="quickstart-azure-blob-storage-client-library-v12-for-javascript"></a>Краткое руководство. Использование клиентской библиотеки хранилища BLOB-объектов Azure версии 12 для JavaScript
 
-Из этого руководства вы узнаете, как использовать клиентскую библиотеку для Node.js версии 2 для передачи, скачивания и перечисления больших двоичных объектов в хранилище BLOB-объектов Azure.
+Приступите к работе с клиентской библиотекой хранилища BLOB-объектов Azure версии 12 для JavaScript. Хранилище BLOB-объектов Azure — это решение корпорации Майкрософт для хранения объектов в облаке. Чтобы установить пакет и испробовать пример кода для выполнения базовых задач, выполните приведенные здесь действия. Хранилище BLOB-объектов оптимизировано для хранения больших объемов неструктурированных данных.
 
-> [!TIP]
-> Последняя версия клиентской библиотеки службы хранилища для Node.js — версия 10. Корпорация Майкрософт рекомендует по возможности использовать последнюю версию клиентской библиотеки. Чтобы начать работу с использованием версии 10, перейдите к [краткому руководству по передаче, скачиванию, перечислению и удалению больших двоичных объектов с использованием клиентской библиотеки службы хранилища Azure для JavaScript версии 10 (предварительная версия)](storage-quickstart-blobs-nodejs-v10.md).
+> [!NOTE]
+> Чтобы приступить к работе с предыдущей версией пакета SDK, обратитесь к разделу [Краткое руководство. Клиентская библиотека хранилища BLOB-объектов Azure для JavaScript](storage-quickstart-blobs-nodejs-v10.md).
+
+Клиентскую библиотеку хранилища BLOB-объектов Azure версии 12 для JavaScript можно использовать для выполнения следующих задач:
+
+* Создание контейнера
+* передача большого двоичного объекта в хранилище Azure;
+* перечисление всех больших двоичных объектов в контейнере;
+* скачивание большого двоичного объекта на локальный компьютер;
+* Удаление контейнера
+
+[Справочная документация по API](/javascript/api/@azure/storage-blob) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-blob) | [Пакет (Node Package Manager)](https://www.npmjs.com/package/@azure/storage-blob/v/12.0.0) | [Примеры](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-blob/samples)
+
+[!INCLUDE [storage-multi-protocol-access-preview](../../../includes/storage-multi-protocol-access-preview.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+* Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Учетная запись хранения Azure — [создайте такую учетную запись](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account).
+* Последняя версия [Node.js](https://nodejs.org/en/download/) для вашей операционной системы.
 
-Создайте на [портале Azure](https://portal.azure.com/#create/Microsoft.StorageAccount-ARM) учетную запись хранения Azure. Инструкции по созданию учетной записи хранения см. в статье [Создайте учетную запись хранения](../common/storage-quickstart-create-account.md).
+## <a name="setting-up"></a>Настройка
 
-## <a name="download-the-sample-application"></a>Загрузка примера приложения
+В этом разделе рассматривается подготовка проекта для работы с клиентской библиотекой хранилища BLOB-объектов Azure версии 12 для JavaScript.
 
-[Пример приложения](https://github.com/Azure-Samples/storage-blobs-node-quickstart.git) — это простое консольное приложение Node.js. Чтобы начать работу, клонируйте репозиторий на компьютер, используя следующую команду.
+### <a name="create-the-project"></a>Создание проекта
 
-```bash
-git clone https://github.com/Azure-Samples/storage-blobs-node-quickstart.git
-```
+Создайте приложение JavaScript с именем *blob-quickstart-v12*.
 
-Чтобы открыть приложение, найдите папку *storage-blobs-node-quickstart* и откройте ее в избранной среде редактирования кода.
+1. В окне консоли (командная строка, PowerShell или Bash) создайте каталог для проекта.
 
-[!INCLUDE [storage-copy-connection-string-portal](../../../includes/storage-copy-connection-string-portal.md)]
+    ```console
+    mkdir blob-quickstart-v12
+    ```
 
-## <a name="configure-your-storage-connection-string"></a>Настройка строки подключения хранилища
+1. Перейдите в только что созданный каталог *blob-quickstart-v12*.
 
-Перед запуском приложения укажите строку подключения для учетной записи хранения. Образец репозитория включает в себя файл с именем *.env.example*. Вы можете переименовать этот файл, удалив расширение *.example*, после чего в названии файла будет расширение *.env*. Внутри файла формата *ENV* добавьте значение строки подключения после ключа *AZURE_STORAGE_CONNECTION_STRING*.
+    ```console
+    cd blob-quickstart-v12
+    ```
 
-## <a name="install-required-packages"></a>Установка необходимых пакетов
+1. Создайте текстовый файл *package.json*. Этот файл определяет проект Node.js. Сохраните этот файл в каталоге *blob-quickstart-v12*. Ниже приведено содержимое файла.
 
-В каталоге приложения выполните команду *npm install*, чтобы установить необходимые пакеты для приложения.
+    ```json
+    {
+        "name": "blob-quickstart-v12",
+        "version": "1.0.0",
+        "description": "Use the @azure/storage-blob SDK version 12 to interact with Azure Blob storage",
+        "main": "blob-quickstart-v12.js",
+        "scripts": {
+            "start": "node blob-quickstart-v12.js"
+        },
+        "author": "Your Name",
+        "license": "MIT",
+        "dependencies": {
+            "@azure/storage-blob": "^12.0.0",
+            "@types/dotenv": "^4.0.3",
+            "dotenv": "^6.0.0"
+        }
+    }
+    ```
+    
+    Вы можете указать собственное имя в поле `author`, если хотите.
+   
+### <a name="install-the-package"></a>Установка пакета
 
-```bash
+Оставаясь в каталоге *blob-quickstart-v12*, установите клиентскую библиотеку хранилища BLOB-объектов Azure для пакета JavaScript с помощью команды `npm install`. Эта команда считывает файл *package.json* и устанавливает клиентскую библиотеку хранилища BLOB-объектов Azure версии 12 для пакета JavaScript и все библиотеки, от которых она зависит.
+
+```console
 npm install
 ```
 
-## <a name="run-the-sample"></a>Запуск примера
-После установки зависимостей вы можете запустить пример, выполнив следующую команду.
+### <a name="set-up-the-app-framework"></a>Настройка платформы приложения
 
-```bash
-npm start
+Из каталога проекта:
+
+1. Откройте другой новый текстовый файл в редакторе кода.
+1. Добавьте в него вызовы `require` для загрузки модулей Azure и Node.js.
+1. Создайте структуру программы, включая самую простую обработку исключений.
+
+    Вот этот код:
+
+    ```javascript
+    const { BlobServiceClient } = require('@azure/storage-blob');
+    const uuidv1 = require('uuid/v1');
+    
+    async function main() {
+        console.log('Azure Blob storage v12 - Javascript quickstart sample');
+        // Quick start code goes here
+    }
+    
+    main().then(() => console.log('Done')).catch((ex) => console.log(ex.message));
+    ```
+
+1. Сохраните новый файл как *blob-quickstart-v12.js* в каталоге *blob-quickstart-v12*.
+
+### <a name="copy-your-credentials-from-the-azure-portal"></a>Копирование учетных данных с портала Azure
+
+Когда пример приложения выполняет запрос к службе хранилища Azure, он должен быть авторизован. Для авторизации запроса добавьте в приложение учетные данные учетной записи хранения в виде строки подключения. Чтобы просмотреть учетные данные учетной записи хранения, выполните следующие действия:
+
+1. Войдите на [портале Azure](https://portal.azure.com).
+2. Перейдите к учетной записи хранения.
+3. В разделе **Параметры** учетной записи хранения выберите параметр **Ключи доступа**. На этой странице вы увидите ключи доступа к учетной записи и полную строку подключения для каждого ключа.
+4. Найдите значение для параметра **Строка подключения** в разделе **Key1** и нажмите кнопку **Скопировать**, чтобы скопировать строку подключения. На следующем этапе вы добавите значение строки подключения в переменную среды.
+
+    ![Снимок экрана, на котором показано, как скопировать строку подключения с портала Azure](../../../includes/media/storage-copy-connection-string-portal/portal-connection-string.png)
+
+### <a name="configure-your-storage-connection-string"></a>Настройка строки подключения хранилища
+
+После копирования строки подключения запишите ее в переменной среды на локальном компьютере, где выполняется приложение. Чтобы задать переменную среды, откройте окно консоли и следуйте инструкциям для используемой операционной системы. Замените `<yourconnectionstring>` фактической строкой подключения.
+
+#### <a name="windows"></a>Windows
+
+```cmd
+setx CONNECT_STR "<yourconnectionstring>"
 ```
 
-Результат этого сценария будет аналогичен следующему:
+После добавления переменной среды в Windows вам необходимо запустить новый экземпляр командного окна.
+
+#### <a name="linux"></a>Linux
 
 ```bash
-Containers:
- - container-one
- - container-two
-Container "demo" is created
-Blob "quickstart.txt" is uploaded
-Local file "./readme.md" is uploaded
-Blobs in "demo" container:
- - quickstart.txt
- - readme.md
-Blob downloaded blob content: "hello Blob SDK"
-Blob "quickstart.txt" is deleted
-Container "demo" is deleted
-Done
+export CONNECT_STR="<yourconnectionstring>"
 ```
 
-Если вы используете новую учетную запись хранения, в списке *Containers* может не быть ни одного имени контейнера.
+#### <a name="macos"></a>macOS
 
-## <a name="understanding-the-code"></a>Основные сведения о коде
-Первое выражение используется, чтобы загружать значения в переменные среды.
+```bash
+export CONNECT_STR="<yourconnectionstring>"
+```
+
+#### <a name="restart-programs"></a>Перезапуск программ
+
+После добавления переменной среды перезапустите все запущенные программы, которым может понадобиться считать переменную среды. Например, перезапустите среду разработки или редактор, прежде чем продолжить.
+
+## <a name="object-model"></a>Объектная модель
+
+Хранилище BLOB-объектов Azure оптимизировано для хранения больших объемов неструктурированных данных. Неструктурированные данные — это данные, которые не соответствуют определенной модели данных или определению, например текстовых или двоичных данных. В хранилище BLOB-объектов предлагается три типа ресурсов:
+
+* учетная запись хранения;
+* контейнер в учетной записи хранения;
+* большой двоичный объект в контейнере.
+
+На следующей схеме показана связь между этими ресурсами.
+
+![Схема архитектуры службы хранилища BLOB-объектов](./media/storage-blob-introduction/blob1.png)
+
+Используйте следующие классы JavaScript для взаимодействия с этими ресурсами.
+
+* [BlobServiceClient](/javascript/api/@azure/storage-blob/blobserviceclient). Класс `BlobServiceClient` позволяет управлять ресурсами службы хранилища Azure и контейнерами больших двоичных объектов.
+* [ContainerClient](/javascript/api/@azure/storage-blob/containerclient). Класс `ContainerClient` позволяет управлять контейнерами службы хранилища Azure и содержащимися в них большими двоичными объектами.
+* [BlobClient](/javascript/api/@azure/storage-blob/blobclient). Класс `BlobClient` позволяет управлять большими двоичными объектами службы хранилища Azure.
+
+## <a name="code-examples"></a>Примеры кода
+
+В этих примерах фрагментов кода показано, как выполнять следующие действия с помощью клиентской библиотеки хранилища BLOB-объектов Azure для JavaScript:
+
+* [Получение строки подключения](#get-the-connection-string)
+* [Создание контейнера](#create-a-container)
+* [отправка больших двоичных объектов в контейнер](#upload-blobs-to-a-container);
+* [перечисление больших двоичных объектов в контейнере](#list-the-blobs-in-a-container);
+* [скачивание больших двоичных объектов](#download-blobs);
+* [Удаление контейнера](#delete-a-container)
+
+### <a name="get-the-connection-string"></a>Получение строки подключения
+
+Приведенный ниже код извлекает строку подключения для учетной записи хранения из переменной среды, созданной в разделе [Настройка строки подключения хранилища](#configure-your-storage-connection-string).
+
+Добавьте этот код в функцию `main`.
 
 ```javascript
-if (process.env.NODE_ENV !== 'production') {
-    require('dotenv').load();
+// Retrieve the connection string for use with the application. The storage
+// connection string is stored in an environment variable on the machine
+// running the application called CONNECT_STR. If the environment variable is
+// created after the application is launched in a console or with Visual Studio,
+// the shell or application needs to be closed and reloaded to take the
+// environment variable into account.
+const CONNECT_STR = process.env.CONNECT_STR;
+```
+
+### <a name="create-a-container"></a>Создание контейнера
+
+Выберите имя нового контейнера. Приведенный ниже код добавляет к имени контейнера значение UUID, чтобы сделать это имя уникальным.
+
+> [!IMPORTANT]
+> Имена контейнеров должны состоять из знаков нижнего регистра. Дополнительные сведения об именовании контейнеров и больших двоичных объектов см. в статье [Naming and Referencing Containers, Blobs, and Metadata](/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata) (Именование контейнеров, больших двоичных объектов и метаданных и ссылка на них).
+
+Создайте экземпляр класса [BlobServiceClient](/javascript/api/@azure/storage-blob/blobserviceclient), вызвав метод [fromConnectionString](/javascript/api/@azure/storage-blob/blobserviceclient#fromconnectionstring-string--newpipelineoptions-). Затем вызовите метод [getContainerClient](/javascript/api/@azure/storage-blob/blobserviceclient#getcontainerclient-string-), чтобы получить ссылку на контейнер. Наконец, вызовите метод [create](/javascript/api/@azure/storage-blob/containerclient#create-containercreateoptions-), чтобы создать контейнер в учетной записи хранения.
+
+Добавьте следующий код в конец функции `main`.
+
+```javascript
+// Create the BlobServiceClient object which will be used to create a container client
+const blobServiceClient = await new BlobServiceClient.fromConnectionString(CONNECT_STR);
+
+// Create a unique name for the container
+const containerName = 'quickstart' + uuidv1();
+
+console.log('\nCreating container...');
+console.log('\t', containerName);
+
+// Get a reference to a container
+const containerClient = await blobServiceClient.getContainerClient(containerName);
+
+// Create the container
+await containerClient.create();
+```
+
+### <a name="upload-blobs-to-a-container"></a>Отправка больших двоичных объектов в контейнер
+
+Приведенный ниже фрагмент кода:
+
+1. Создает текстовую строку для передачи в большой двоичный объект.
+1. Получает ссылку на объект [BlockBlobClient](/javascript/api/@azure/storage-blob/blockblobclient), вызывая метод [getBlockBlobClient](/javascript/api/@azure/storage-blob/containerclient#getblockblobclient-string-) для [ContainerClient](/javascript/api/@azure/storage-blob/containerclient) из раздела [Создание контейнера](#create-a-container).
+1. Передает данные текстовой строки в большой двоичный объект, вызывая метод [upload](/javascript/api/@azure/storage-blob/blockblobclient#upload-httprequestbody--number--blockblobuploadoptions-).
+
+Добавьте следующий код в конец функции `main`.
+
+```javascript
+// Create a unique name for the blob
+const blobName = 'quickstart' + uuidv1() + '.txt';
+
+// Get a block blob client
+const blockBlobClient = containerClient.getBlockBlobClient(blobName);
+
+console.log('\nUploading to Azure Storage as blob:\n\t', blobName);
+
+// Upload data to the blob
+const data = 'Hello, World!';
+await blockBlobClient.upload(data, data.length);
+```
+
+### <a name="list-the-blobs-in-a-container"></a>Перечисление BLOB-объектов в контейнере
+
+Выведите список больших двоичных объектов в контейнере, вызвав метод [listBlobsFlat](/javascript/api/@azure/storage-blob/containerclient#listblobsflat-containerlistblobsoptions-). В этом случае в контейнер был добавлен лишь один большой двоичный объект, поэтому операция перечисления возвращает только его.
+
+Добавьте следующий код в конец функции `main`.
+
+```javascript
+console.log('\nListing blobs...');
+
+// List the blob(s) in the container.
+for await (const blob of containerClient.listBlobsFlat()) {
+    console.log('\t', blob.name);
 }
 ```
 
-Модуль *dotenv* загружает переменные среды, если приложение запущено в локальной среде с целью отладки. Значения определяются в файле с именем *.env* и загружаются в текущий контекст выполнения. В производственных контекстах конфигурация сервера предоставляет эти значения, и именно поэтому этот код запускается только тогда, когда сценарий выполняется не в контексте "production".
+### <a name="download-blobs"></a>Скачивание больших двоичных объектов
+
+Скачайте созданный ранее большой двоичный объект, вызвав метод [download](/javascript/api/@azure/storage-blob/blockblobclient#download-undefined---number--undefined---number--blobdownloadoptions-). В примере кода имеется вспомогательная функция `streamToString`, которая используется для чтения потока Node.js в строку.
+
+Добавьте следующий код в конец функции `main`.
 
 ```javascript
-const path = require('path');
-const storage = require('azure-storage');
+// Get blob content from position 0 to the end
+// In Node.js, get downloaded data by accessing downloadBlockBlobResponse.readableStreamBody
+// In browsers, get downloaded data by accessing downloadBlockBlobResponse.blobBody
+const downloadBlockBlobResponse = await blockBlobClient.download(0);
+console.log('\nDownloaded blob content...');
+console.log('\t', await streamToString(downloadBlockBlobResponse.readableStreamBody));
 ```
 
-Ниже представлены сведения о предназначении каждого модуля. 
-
-файл с именем *.env* в текущем контексте выполнения
-- *path* требуется, чтобы определить абсолютный путь к файлу для передачи в хранилище BLOB-объектов.
-- *azure-storage* — это модуль [клиентской библиотеки службы хранилища Azure](https://docs.microsoft.com/javascript/api/azure-storage) для Node.js.
-
-Затем переменная **blobService** инициализируется как новый экземпляр службы BLOB-объектов Azure.
+Добавьте эту вспомогательную функцию *после* функции `main`.
 
 ```javascript
-const blobService = storage.createBlobService();
-```
-
-В следующей реализации каждая из функций *blobService* упакована в *Promise*, что позволяет получить доступ к функции JavaScript *async* и оператору *await*, чтобы упростить характер обратного вызова [API службы хранилища Azure](/javascript/api/azure-storage/azurestorage.services.blob.blobservice.blobservice?view=azure-node-latest). Если для каждой функции возвращается ответ об успешном выполнении, объект promise разрешает соответствующие данные вместе с сообщением, связанным с действием.
-
-### <a name="list-containers"></a>Перечисление контейнеров
-
-Функция *listContainers* вызывает [listContainersSegmented](/javascript/api/azure-storage/azurestorage.services.blob.blobservice.blobservice?view=azure-node-latest), которая возвращает коллекции контейнеров в группах.
-
-```javascript
-const listContainers = async () => {
-    return new Promise((resolve, reject) => {
-        blobService.listContainersSegmented(null, (err, data) => {
-            if (err) {
-                reject(err);
-            } else {
-                resolve({ message: `${data.entries.length} containers`, containers: data.entries });
-            }
-        });
+// A helper function used to read a Node.js readable stream into a string
+async function streamToString(readableStream) {
+  return new Promise((resolve, reject) => {
+    const chunks = [];
+    readableStream.on("data", (data) => {
+      chunks.push(data.toString());
     });
-};
-```
-
-Размер групп можно настроить с помощью [ListContainersOptions](/javascript/api/azure-storage/azurestorage.services.blob.blobservice.blobservice.listcontaineroptions?view=azure-node-latest). Вызов *listContainersSegmented* возвращает метаданные большого двоичного объекта в виде массива экземпляров [ContainerResult](/javascript/api/azure-storage/azurestorage.services.blob.blobservice.blobservice.containerresult?view=azure-node-latest). Результаты возвращаются в 5000 пакетов увеличения (сегментов). Если в контейнере имеется более чем 5000 больших двоичных объектов, то результаты включают в себя значение для маркера *continuationToken*. Чтобы вывести список последующих сегментов из контейнера больших двоичных объектов, можно передать маркер продолжения обратно в *listContainersSegment* в качестве второго аргумента.
-
-### <a name="create-a-container"></a>Создать контейнер
-
-Функция *CreateContainer* вызывает команду [createContainerIfNotExists](/javascript/api/azure-storage/azurestorage.services.blob.blobservice.blobservice?view=azure-node-latest) и задает соответствующий уровень доступа для большого двоичного объекта.
-
-```javascript
-const createContainer = async (containerName) => {
-    return new Promise((resolve, reject) => {
-        blobService.createContainerIfNotExists(containerName, { publicAccessLevel: 'blob' }, err => {
-            if (err) {
-                reject(err);
-            } else {
-                resolve({ message: `Container '${containerName}' created` });
-            }
-        });
+    readableStream.on("end", () => {
+      resolve(chunks.join(""));
     });
-};
-```
-
-Второй параметр (*options*) для **createContainerIfNotExists** принимает значение параметра [publicAccessLevel](https://docs.microsoft.com/javascript/api/azure-storage/azurestorage.services.blob.blobservice.blobservice?view=azure-node-latest). Значение *blob* для *publicAccessLevel* указывает, что данные конкретного большого двоичного объекта доступны из общей сети. Этот параметр отличается от уровня доступа *контейнера*, который предоставляет возможность составить список содержимого контейнера.
-
-Применение команды **createContainerIfNotExists** позволяет приложению выполнить команду *createContainer* несколько раз, не возвращая ошибки, если контейнер уже существует. В рабочей среде команда **createContainerIfNotExists** часто вызывается только один раз, так как в приложении используется один и тот же контейнер. В таких случаях контейнер можно создать заранее на портале или с помощью Azure CLI.
-
-### <a name="upload-text"></a>Передача текста
-
-Функция *uploadString* вызывает [createBlockBlobFromText](/javascript/api/azure-storage/azurestorage.services.blob.blobservice.blobservice?view=azure-node-latest), чтобы записать (или перезаписать) произвольную строку в контейнер больших двоичных объектов.
-
-```javascript
-const uploadString = async (containerName, blobName, text) => {
-    return new Promise((resolve, reject) => {
-        blobService.createBlockBlobFromText(containerName, blobName, text, err => {
-            if (err) {
-                reject(err);
-            } else {
-                resolve({ message: `Text "${text}" is written to blob storage` });
-            }
-        });
-    });
-};
-```
-### <a name="upload-a-local-file"></a>Передача локального файла
-
-Функция *uploadLocalFile* использует [createBlockBlobFromLocalFile](/javascript/api/azure-storage/azurestorage.services.blob.blobservice.blobservice?view=azure-node-latest#createblockblobfromlocalfile-string--string--string--errororresult-blobresult--) для передачи и записи (или перезаписи) файла из файловой системы в хранилище BLOB-объектов. 
-
-```javascript
-const uploadLocalFile = async (containerName, filePath) => {
-    return new Promise((resolve, reject) => {
-        const fullPath = path.resolve(filePath);
-        const blobName = path.basename(filePath);
-        blobService.createBlockBlobFromLocalFile(containerName, blobName, fullPath, err => {
-            if (err) {
-                reject(err);
-            } else {
-                resolve({ message: `Local file "${filePath}" is uploaded` });
-            }
-        });
-    });
-};
-```
-Другие методы, доступные для передачи содержимого в большие двоичные объекты, включают в себя работу с [текстом](/javascript/api/azure-storage/azurestorage.services.blob.blobservice.blobservice?view=azure-node-latest-string--string--string---buffer--errororresult-blobresult--) и [потоками данных](/javascript/api/azure-storage/azurestorage.services.blob.blobservice.blobservice?view=azure-node-latest#createblockblobfromstream-string--string--stream-readable--number--errororresult-blobresult--). Чтобы проверить, передан ли файл в хранилище BLOB-объектов, можно использовать [Обозреватель службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/) для просмотра данных в учетной записи.
-
-### <a name="list-the-blobs"></a>Список BLOB-объектов
-
-Функция *listBlobs* вызывает метод [listBlobsSegmented](/javascript/api/azure-storage/azurestorage.services.blob.blobservice.blobservice?view=azure-node-latest#listblobssegmented-string--continuationtoken--errororresult-listblobsresult--), чтобы получить список метаданных большого двоичного объекта в контейнере. 
-
-```javascript
-const listBlobs = async (containerName) => {
-    return new Promise((resolve, reject) => {
-        blobService.listBlobsSegmented(containerName, null, (err, data) => {
-            if (err) {
-                reject(err);
-            } else {
-                resolve({ message: `${data.entries.length} blobs in '${containerName}'`, blobs: data.entries });
-            }
-        });
-    });
-};
-```
-
-Вызов *listBlobsSegmented* возвращает метаданные большого двоичного объекта в качестве массива экземпляров [BlobResult](https://docs.microsoft.com/javascript/api/azure-storage/azurestorage.services.blob.blobservice.blobservice.blobresult?view=azure-node-latest). Результаты возвращаются в 5000 пакетов увеличения (сегментов). Если в контейнере имеется более чем 5000 больших двоичных объектов, то результаты включают в себя значение для маркера **continuationToken**. Чтобы вывести список последующих сегментов из контейнера больших двоичных объектов, можно передать маркер продолжения обратно в **listBlobSegmented** в качестве второго аргумента.
-
-### <a name="download-a-blob"></a>Загрузка BLOB-объектов
-
-Функция *downloadBlob* использует команду [getBlobToText](/javascript/api/azure-storage/azurestorage.services.blob.blobservice.blobservice?view=azure-node-latest), чтобы скачать содержимое большого двоичного объекта в заданный абсолютный путь файла.
-
-```javascript
-const downloadBlob = async (containerName, blobName) => {
-    const dowloadFilePath = path.resolve('./' + blobName.replace('.txt', '.downloaded.txt'));
-    return new Promise((resolve, reject) => {
-        blobService.getBlobToText(containerName, blobName, (err, data) => {
-            if (err) {
-                reject(err);
-            } else {
-                resolve({ message: `Blob downloaded "${data}"`, text: data });
-            }
-        });
-    });
-};
-```
-Показанная здесь реализация изменяет источник, который возвращает содержимое большого двоичного объекта в виде строки. Также можно загружать большой двоичный объект как [поток данных](/javascript/api/azure-storage/azurestorage.services.blob.blobservice.blobservice?view=azure-node-latest), а также напрямую в [локальный файл](/javascript/api/azure-storage/azurestorage.services.blob.blobservice.blobservice?view=azure-node-latest).
-
-### <a name="delete-a-blob"></a>Удаление большого двоичного объекта
-
-Функция *deleteBlob* вызывает функцию [deleteBlobIfExists](/javascript/api/azure-storage/azurestorage.services.blob.blobservice.blobservice?view=azure-node-latest#deleteblobifexists-string--string--errororresult-boolean--). Как и предполагает ее имя, эта функция не возвращает ошибку, если большой двоичный объект уже удален.
-
-```javascript
-const deleteBlob = async (containerName, blobName) => {
-    return new Promise((resolve, reject) => {
-        blobService.deleteBlobIfExists(containerName, blobName, err => {
-            if (err) {
-                reject(err);
-            } else {
-                resolve({ message: `Block blob '${blobName}' deleted` });
-            }
-        });
-    });
-};
+    readableStream.on("error", reject);
+  });
+}
 ```
 
 ### <a name="delete-a-container"></a>Удаление контейнера
 
-Контейнеры удаляются путем вызова метода *deleteContainer* службы BLOB-объектов и передачей в него имени контейнера.
+Следующий код очищает созданные приложением ресурсы, полностью удаляя контейнер с помощью метода [delete](/javascript/api/@azure/storage-blob/containerclient#delete-containerdeletemethodoptions-). Кроме того, при необходимости можно удалить локальные файлы.
+
+Добавьте следующий код в конец функции `main`.
 
 ```javascript
-const deleteContainer = async (containerName) => {
-    return new Promise((resolve, reject) => {
-        blobService.deleteContainer(containerName, err => {
-            if (err) {
-                reject(err);
-            } else {
-                resolve({ message: `Container '${containerName}' deleted` });
-            }
-        });
-    });
-};
+console.log('\nDeleting container...');
+
+// Delete container
+await containerClient.delete();
 ```
 
-### <a name="calling-code"></a>Код вызова
+## <a name="run-the-code"></a>Выполнение кода
 
-Для поддержки синтаксиса JavaScript *async/await* весь код вызова упакован в функцию с именем *execute*. Затем execute вызывается и обрабатывается как обещание.
+Это приложение создает текстовую строку и передает ее в хранилище BLOB-объектов. Затем пример выводит список больших двоичных объектов в контейнере, скачивает большой двоичный объект и отображает скачанные данные.
 
-```javascript
-async function execute() {
-    // commands 
-}
+В окне консоли перейдите в каталог, содержащий файл *blob-quickstart-v12.py*, а затем выполните указанную команду `node`, чтобы запустить приложение.
 
-execute().then(() => console.log("Done")).catch((e) => console.log(e));
-```
-Весь следующий код выполняется внутри функции execute, где размещается комментарий `// commands`.
-
-Сперва объявляются соответствующие переменные для назначения имен, примера содержимого и указания локального файла для передачи в хранилище BLOB-объектов.
-
-```javascript
-const containerName = "demo";
-const blobName = "quickstart.txt";
-const content = "hello Node SDK";
-const localFilePath = "./readme.md";
-let response;
+```console
+node blob-quickstart-v12.js
 ```
 
-Чтобы перечислить контейнеры в учетной записи хранения, вызывается функция listContainers, и возвращаемый список контейнеров регистрируется в окне вывода.
+Вы должны увидеть выходные данные приложения, как показано ниже.
 
-```javascript
-console.log("Containers:");
-response = await listContainers();
-response.containers.forEach((container) => console.log(` -  ${container.name}`));
+```output
+Azure Blob storage v12 - JavaScript quickstart sample
+
+Creating container...
+         quickstart4a0780c0-fb72-11e9-b7b9-b387d3c488da
+
+Uploading to Azure Storage as blob:
+         quickstart4a3128d0-fb72-11e9-b7b9-b387d3c488da.txt
+
+Listing blobs...
+         quickstart4a3128d0-fb72-11e9-b7b9-b387d3c488da.txt
+
+Downloaded blob content...
+         Hello, World!
+
+Deleting container...
+Done
 ```
 
-После того как список контейнеров стал доступен, вы можете использовать метод массива *findIndex*, чтобы увидеть, существует ли контейнер, который вы хотите создать. Если контейнер не существует — он будет создан.
+Пошагово выполните код в отладчике и просматривайте результаты на портале Azure. Проверьте, создан ли контейнер. Вы можете открыть большой двоичный объект в контейнере и просмотреть его содержимое.
 
-```javascript
-const containerDoesNotExist = response.containers.findIndex((container) => container.name === containerName) === -1;
+## <a name="next-steps"></a>Дополнительная информация
 
-if (containerDoesNotExist) {
-    await createContainer(containerName);
-    console.log(`Container "${containerName}" is created`);
-}
-```
-Затем строка и локальный файл передаются в хранилище BLOB-объектов.
+В этом кратком руководстве вы узнали, как передавать и скачивать большие двоичные объекты, а также выводить их список с помощью JavaScript.
 
-```javascript
-await uploadString(containerName, blobName, content);
-console.log(`Blob "${blobName}" is uploaded`);
-
-response = await uploadLocalFile(containerName, localFilePath);
-console.log(response.message);
-```
-Процесс перечисления больших двоичных объектов аналогичен процессу перечисления контейнеров. Вызов *listBlobs* возвращает массив больших двоичных объектов в контейнере и регистрируется в окне вывода.
-
-```javascript
-console.log(`Blobs in "${containerName}" container:`);
-response = await listBlobs(containerName);
-response.blobs.forEach((blob) => console.log(` - ${blob.name}`));
-```
-
-Чтобы загрузить большой двоичный объект, для доступа к значению этого объекта захватывается и используется отклик. Из отклика readableStreamBody преобразуется в строку и выводится в окно вывода.
-
-```javascript
-response = await downloadBlob(containerName, blobName);
-console.log(`Downloaded blob content: "${response.text}"`);
-```
-
-В результате большой двоичный объект и контейнер удаляются из учетной записи хранения.
-
-```javascript
-await deleteBlob(containerName, blobName);
-console.log(`Blob "${blobName}" is deleted`);
-
-await deleteContainer(containerName);
-console.log(`Container "${containerName}" is deleted`);
-```
-
-## <a name="clean-up-resources"></a>Очистка ресурсов
-Все данные, записанные в учетную запись хранения, автоматически удаляются в конце примера кода. 
-
-## <a name="resources-for-developing-nodejs-applications-with-blobs"></a>Ресурсы для разработки приложений Node.js с большими двоичными объектами
-
-Ознакомьтесь со следующими дополнительными ресурсами для разработки Node.js с использованием хранилища BLOB-объектов.
-
-### <a name="binaries-and-source-code"></a>Двоичные файлы и исходный код
-
-- Просмотрите и установите [исходный код клиентской библиотеки Node.js](https://github.com/Azure/azure-storage-node) для службы хранилища Azure на сайте GitHub.
-
-### <a name="client-library-reference-and-samples"></a>Справочник по клиентской библиотеке и примеры
-
-- Подробные сведения о клиентской библиотеке Node.js см. в [справочнике по API-интерфейсу Node.js](https://docs.microsoft.com/javascript/api/overview/azure/storage).
-- Изучите [примеры для хранилища BLOB-объектов](https://azure.microsoft.com/resources/samples/?sort=0&service=storage&platform=nodejs&term=blob), написанные с использованием клиентской библиотеки Node.js.
-
-## <a name="next-steps"></a>Следующие шаги
-
-Из этой статьи вы узнали, как передавать файл между локальным диском и хранилищем BLOB-объектов Azure с помощью Node.js. Дополнительные сведения о работе с хранилищем BLOB-объектов см. в соответствующем репозитории GitHub.
+Чтобы просмотреть примеры приложений для хранилища BLOB-объектов, перейдите к следующему разделу:
 
 > [!div class="nextstepaction"]
-> [Microsoft Azure Storage SDK for Node.js and JavaScript for Browsers](https://github.com/Azure/azure-storage-node) (Пакет SDK службы хранилища Azure для Node.js и JavaScript для браузеров).
+> [Примеры для пакета SDK хранилища BLOB-объектов Azure версии 12 для JavaScript](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/azure-storage-blob/samples)
+
+* Чтобы узнать больше, ознакомьтесь с [пакетом SDK Azure для JavaScript](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-blob/README.md).
+* Руководства, примеры, краткие руководства и другую документацию можно найти на странице [Документация по пакету SDK для JavaScript](/azure/javascript/).

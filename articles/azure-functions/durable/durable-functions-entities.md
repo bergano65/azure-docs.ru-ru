@@ -7,22 +7,22 @@ manager: jeconnoc
 keywords: ''
 ms.service: azure-functions
 ms.topic: overview
-ms.date: 08/31/2019
+ms.date: 11/02/2019
 ms.author: azfuncdf
-ms.openlocfilehash: e3a83730e47686e9d4757f057d2e8da4629fdd7a
-ms.sourcegitcommit: 9dec0358e5da3ceb0d0e9e234615456c850550f6
+ms.openlocfilehash: 62ca71e1b42e000f7528a2963793f9bf40663bf3
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2019
-ms.locfileid: "72312138"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73818501"
 ---
-# <a name="entity-functions-preview"></a>Функции сущностей (предварительная версия)
+# <a name="entity-functions"></a>Функции сущностей
 
 Функции сущностей определяют операции чтения и обновления мелких частей состояния, известных как *устойчивые сущности*. Как и функции оркестратора, функции сущностей — это функции с особым типом триггера, *триггером сущности*. В отличие от функций оркестрации, функции сущностей управляют состоянием сущности явным образом, а не отображают состояние с помощью потока управления.
 Сущности предоставляют средства для масштабирования приложений путем распределения задач между несколькими сущностями сравнительно небольших размеров.
 
 > [!NOTE]
-> Функции сущностей и связанные функции доступны только в Устойчивых функциях версии 2.0 и более поздних версиях. Сейчас Функции сущностей доступны в общедоступной предварительной версии.
+> Функции сущностей и связанные функции доступны только в Устойчивых функциях версии 2.0 и более поздних версиях.
 
 ## <a name="general-concepts"></a>Общие концепции
 
@@ -58,7 +58,7 @@ ms.locfileid: "72312138"
 
 **Синтаксис на основе классов**, в котором сущности и операции представлены классами и методами, соответственно. Этот синтаксис позволяет получить более удобочитаемый код и вызывать операции типобезопасным способом. Синтаксис на основе классов представляет собой тонкий слой, реализованный на базе синтаксиса на основе функций, и вы можете применять оба варианта одновременно в одном приложении.
 
-### <a name="example-function-based-syntax"></a>Пример: Синтаксис на основе функций
+### <a name="example-function-based-syntax---c"></a>Пример: Синтаксис на основе функций: C#
 
 Приведенный ниже код является примером простой сущности *Counter*, реализованной в формате устойчивой функции. Эта функция определяет три операции: `add`, `reset` и `get`, каждая из которых изменяет целочисленное значение состояния.
 
@@ -75,7 +75,7 @@ public static void Counter([EntityTrigger] IDurableEntityContext ctx)
             ctx.SetState(0);
             break;
         case "get":
-            ctx.Return(ctx.GetState<int>()));
+            ctx.Return(ctx.GetState<int>());
             break;
     }
 }
@@ -83,7 +83,7 @@ public static void Counter([EntityTrigger] IDurableEntityContext ctx)
 
 Дополнительные сведения о синтаксисе на основе функций и его использовании см. в [этой статье](durable-functions-dotnet-entities.md#function-based-syntax).
 
-### <a name="example-class-based-syntax"></a>Пример: Синтаксис на основе классов
+### <a name="example-class-based-syntax---c"></a>Пример: Синтаксис на основе классов: C#
 
 Следующий пример представляет собой эквивалентную реализацию сущности `Counter` с помощью классов и методов.
 
@@ -109,6 +109,45 @@ public class Counter
 Состояние этой сущности представлено объектом типа `Counter`, который содержит поле с текущим значением счетчика. Чтобы сохранить этот объект в хранилище, он сериализуется и десериализуется библиотекой [Json.NET](https://www.newtonsoft.com/json). 
 
 Дополнительные сведения о синтаксисе на основе классов и его использовании см. в [этой статье](durable-functions-dotnet-entities.md#defining-entity-classes).
+
+### <a name="example-javascript-entity"></a>Пример: Сущность JavaScript
+
+Устойчивые сущности доступны в JavaScript начиная с версии **1.3.0** пакета npm `durable-functions`. Приведенный ниже код является примером сущности *Counter*, реализованной в виде устойчивой функции на JavaScript.
+
+**function.json**
+```json
+{
+  "bindings": [
+    {
+      "name": "context",
+      "type": "entityTrigger",
+      "direction": "in"
+    }
+  ],
+  "disabled": false
+}
+```
+
+**index.js**
+```javascript
+const df = require("durable-functions");
+
+module.exports = df.entity(function(context) {
+    const currentValue = context.df.getState(() => 0);
+    switch (context.df.operationName) {
+        case "add":
+            const amount = context.df.getInput();
+            context.df.setState(currentValue + amount);
+            break;
+        case "reset":
+            context.df.setState(0);
+            break;
+        case "get":
+            context.df.return(currentValue);
+            break;
+    }
+});
+```
 
 ## <a name="accessing-entities"></a>Доступ к сущностям
 
@@ -145,6 +184,16 @@ public static Task Run(
 }
 ```
 
+```javascript
+const df = require("durable-functions");
+
+module.exports = async function (context) {
+    const client = df.getClient(context);
+    const entityId = new df.EntityId("Counter", "myCounter");
+    await context.df.signalEntity(entityId, "add", 1);
+};
+```
+
 *Сигнализация* означает, что вызов API сущности является односторонним и асинхронным. *Клиентская функция* не может получить информацию о том, когда сущность обработала операцию. Также клиентская функция не может получить результирующие значения и (или) исключения. 
 
 ### <a name="example-client-reads-an-entity-state"></a>Пример: клиент считывает состояние сущности
@@ -163,6 +212,16 @@ public static async Task<HttpResponseMessage> Run(
 }
 ```
 
+```javascript
+const df = require("durable-functions");
+
+module.exports = async function (context) {
+    const client = df.getClient(context);
+    const entityId = new df.EntityId("Counter", "myCounter");
+    return context.df.readEntityState(entityId);
+};
+```
+
 Запросы о состоянии объектов отправляются в хранилище отслеживания Устойчивых сущностей и возвращают последнее *сохраненное* состояние сущности. Это состояние всегда является "фиксированным", то есть не может быть временным состоянием на период выполнения операции. Но возвращаемое состояние может быть устаревшим по сравнению с текущим состоянием сущности, сохраненным в памяти. Только оркестрации могут считывать состояние сущности в памяти, как описано в разделе ниже.
 
 ### <a name="example-orchestration-signals-and-calls-an-entity"></a>Пример: сигнал и вызов сущности из оркестрации
@@ -176,7 +235,7 @@ public static async Task Run(
 {
     var entityId = new EntityId(nameof(Counter), "myCounter");
 
-   // Two-way call to the entity which returns a value - awaits the response
+    // Two-way call to the entity which returns a value - awaits the response
     int currentValue = await context.CallEntityAsync<int>(entityId, "Get");
     if (currentValue < 10)
     {
@@ -184,6 +243,21 @@ public static async Task Run(
         context.SignalEntity(entityId, "Add", 1);
     }
 }
+```
+
+```javascript
+const df = require("durable-functions");
+
+module.exports = df.orchestrator(function*(context){
+    const entityId = new df.EntityId("Counter", "myCounter");
+
+    // Two-way call to the entity which returns a value - awaits the response
+    currentValue = yield context.df.callEntity(entityId, "get");
+    if (currentValue < 10) {
+        // One-way signal to the entity which updates the value - does not await a response
+        yield context.df.signalEntity(entityId, "add", 1);
+    }
+});
 ```
 
 Только оркестрации могут вызывать сущности и получать ответ, который может быть либо возвращаемым значением, либо исключением. Клиентские функции, [использующие клиентскую привязку](durable-functions-bindings.md#entity-client), могут сигнализировать только *сущностям*.
@@ -198,82 +272,33 @@ public static async Task Run(
 
 ```csharp
    case "add":
+        var currentValue = ctx.GetState<int>();
         var amount = ctx.GetInput<int>();
         if (currentValue < 100 && currentValue + amount >= 100)
         {
             ctx.SignalEntity(new EntityId("MonitorEntity", ""), "milestone-reached", ctx.EntityKey);
         }
-        currentValue += amount;
+
+        ctx.SetState(currentValue + amount);
         break;
 ```
 
-В следующем фрагменте кода показано, как встроить внедренную службу в класс сущностей.
-
-```csharp
-public class HttpEntity
-{
-    private readonly HttpClient client;
-
-    public HttpEntity(IHttpClientFactory factory)
-    {
-        this.client = factory.CreateClient();
-    }
-
-    public async Task<int> GetAsync(string url)
-    {
-        using (var response = await this.client.GetAsync(url))
-        {
-            return (int)response.StatusCode;
+```javascript
+    case "add":
+        const amount = context.df.getInput();
+        if (currentValue < 100 && currentValue + amount >= 100) {
+            const entityId = new df.EntityId("MonitorEntity", "");
+            context.df.signalEntity(entityId, "milestone-reached", context.df.instanceId);
         }
-    }
-
-    // The function entry point must be declared static
-    [FunctionName(nameof(HttpEntity))]
-    public static Task Run([EntityTrigger] IDurableEntityContext ctx)
-        => ctx.DispatchAsync<HttpEntity>();
-}
+        context.df.setState(currentValue + amount);
+        break;
 ```
-
-> [!NOTE]
-> В отличие от внедрения конструктора в обычных Функциях Azure .NET, метод точки входа функций для сущностей на основе класса *необходимо* объявить `static`. Объявление нестатической точки входа функции может привести к конфликтам между обычным инициализатором объектов Функций Azure и инициализатором объектов Устойчивых сущностей.
-
-### <a name="bindings-in-entity-classes-net"></a>Привязки в классах сущностей (.NET)
-
-В отличие от обычных функций, методы классов сущностей не имеют прямого доступа к входным и выходным привязкам. Вместо этого данные привязки должны быть записаны в объявлении функции точки входа, а затем переданы в метод `DispatchAsync<T>`. Любые объекты, передаваемые в `DispatchAsync<T>`, будут автоматически переданы в конструктор класса сущностей в виде аргумента.
-
-В следующем примере показано, как можно сделать ссылку `CloudBlobContainer` из [входной привязки BLOB-объекта](../functions-bindings-storage-blob.md#input) доступной для сущности на основе класса.
-
-```csharp
-public class BlobBackedEntity
-{
-    private readonly CloudBlobContainer container;
-
-    public BlobBackedEntity(CloudBlobContainer container)
-    {
-        this.container = container;
-    }
-
-    // ... entity methods can use this.container in their implementations ...
-    
-    [FunctionName(nameof(BlobBackedEntity))]
-    public static Task Run(
-        [EntityTrigger] IDurableEntityContext context,
-        [Blob("my-container", FileAccess.Read)] CloudBlobContainer container)
-    {
-        // passing the binding object as a parameter makes it available to the
-        // entity class constructor
-        return context.DispatchAsync<BlobBackedEntity>(container);
-    }
-}
-```
-
-Дополнительные сведения о привязках в Функциях Azure см. в статье[Azure Functions triggers and bindings concepts](../functions-triggers-bindings.md) (Основные понятия триггеров и привязок в Функциях Azure).
 
 ## <a name="entity-coordination"></a>Координация сущностей
 
 Иногда приходится координировать операции между несколькими сущностями. Например, в приложении для банковских операций могут быть сущности, представляющие отдельные банковские счета. При передаче средств из одной учетной записи в другую необходимо убедиться, что на _исходном счете_ имеется достаточно средств, и что как _исходный счет_, так и _целевой_ обновляются в транзакционно согласованном виде.
 
-### <a name="example-transfer-funds"></a>Пример: Передача средств
+### <a name="example-transfer-funds-c"></a>Пример: передача средств (C#)
 
 Следующий пример кода перемещает средства между двумя сущностями _счетов_ с помощью функции оркестрации. Для координации обновлений сущностей необходимо использовать метод `LockAsync`, чтобы создать _критическую секцию_ в оркестрации:
 
@@ -322,7 +347,7 @@ public static async Task<bool> TransferFundsAsync(
 
 В .NET `LockAsync` возвращает `IDisposable`, который завершает критическую секцию при удалении. Этот результат `IDisposable` можно использовать вместе с блоком `using`, чтобы получить синтаксическое представление критической секции.
 
-В предыдущем примере функция оркестрации передала средства из _исходной_ сущности в _целевую_. Метод `LockAsync` заблокировал сущности _исходного_ и _целевого_ счета. Такая блокировка гарантирует, что никакой другой клиент не сможет запросить или изменить состояние любого счета, пока логика оркестрации не выйдет из _критической секции_ в конце инструкции `using`. Это эффективно препятствует возможности перерасхода из _исходного_ счета.
+В предыдущем примере функция оркестрации передала средства из _исходной_ сущности в _целевую_. Метод `LockAsync` заблокировал сущности _исходного_ и _целевого_ счета. Такая блокировка гарантирует, что никакой другой клиент не сможет запросить или изменить состояние любого счета, пока логика оркестрации не выйдет из _критической секции_ в конце инструкции `using`. Такое поведение эффективно препятствует возможности перерасхода с _исходного_ счета.
 
 > [!NOTE] 
 > Когда оркестрация завершается (нормально или с ошибкой), все критические секции процесса завершаются неявным образом, а все блокировки освобождаются.

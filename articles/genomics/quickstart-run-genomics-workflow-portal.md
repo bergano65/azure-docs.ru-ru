@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Запуск рабочего процесса
+title: Краткое руководство. Запуск рабочего процесса в Microsoft Genomics
 description: В этом кратком руководстве объясняется, как загрузить входные данные в хранилище BLOB-объектов и запустить рабочий процесс в службе Microsoft Genomics.
 services: genomics
 author: grhuynh
@@ -8,12 +8,12 @@ ms.author: grhuynh
 ms.service: genomics
 ms.topic: quickstart
 ms.date: 01/11/2019
-ms.openlocfilehash: e7c90cc0ce85f2a90cc2ddc2cd086fd2626f4d96
-ms.sourcegitcommit: 961468fa0cfe650dc1bec87e032e648486f67651
+ms.openlocfilehash: 47043b9f4416ec61cf25ea92504c0c653b7d5408
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72248535"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73819200"
 ---
 # <a name="quickstart-run-a-workflow-through-the-microsoft-genomics-service"></a>Краткое руководство. Запуск рабочего процесса в службе Microsoft Genomics
 
@@ -30,7 +30,7 @@ ms.locfileid: "72248535"
 
 Чтобы создать учетную запись Microsoft Genomics, перейдите на [портал Azure](https://portal.azure.com/#create/Microsoft.Genomics). Если у вас нет подписки Azure, создайте ее, прежде чем создавать учетную запись Microsoft Genomics. 
 
-![Microsoft Genomics на портале Azure](./media/quickstart-run-genomics-workflow-portal/genomics-create-blade.png "Microsoft Genomics on Azure portal")
+![Microsoft Genomics на портале Azure](./media/quickstart-run-genomics-workflow-portal/genomics-create-blade.png "Microsoft Genomics на портале Azure")
 
 
 
@@ -39,15 +39,15 @@ ms.locfileid: "72248535"
  |**Параметр**          |  **Рекомендуемое значение**  | **Описание поля** |
  |:-------------       |:-------------         |:----------            |
  |Subscription         | Имя вашей подписки|Это единица выставления счетов для служб Azure. Дополнительные сведения см. на странице [подписок](https://account.azure.com/Subscriptions) |      
- |группа ресурсов.       | MyResourceGroup       |  Группы ресурсов позволяют объединить несколько ресурсов Azure (учетная запись хранения, учетная запись Genomics и т. д.) в одну группу для простоты управления. Дополнительные сведения см. в разделе [Группы ресурсов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview#resource-groups). Допустимые имена групп ресурсов см. в статье [Соглашения об именовании](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions). |
- |Имя учетной записи         | MyGenomicsAccount     |Выберите уникальный идентификатор учетной записи. Допустимые имена см. в статье [Соглашения об именовании](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions). |
+ |группа ресурсов.       | MyResourceGroup       |  Группы ресурсов позволяют объединить несколько ресурсов Azure (учетная запись хранения, учетная запись Genomics и т. д.) в одну группу для простоты управления. Дополнительные сведения см. в разделе [Группы ресурсов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview#resource-groups). Допустимые имена групп ресурсов см. в статье [Соглашения об именовании](/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging). |
+ |Имя учетной записи         | MyGenomicsAccount     |Выберите уникальный идентификатор учетной записи. Допустимые имена см. в статье [Соглашения об именовании](/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging). |
  |Location                   | Западный регион США 2                    |    Служба доступна в таких регионах: западная часть США 2, Западная Европа и Юго-Восточная Азия. |
 
 
 
 
 В строке меню вверху выберите пункт "Уведомления", чтобы отслеживать процесс развертывания.
-![Уведомления Microsoft Genomics](./media/quickstart-run-genomics-workflow-portal/genomics-notifications-box.png "Microsoft Genomics Notifications")
+![Уведомления Microsoft Genomics](./media/quickstart-run-genomics-workflow-portal/genomics-notifications-box.png "MУведомления Microsoft Genomics)
 
 
 
@@ -90,13 +90,13 @@ pip install msgen
 Чтобы протестировать клиент Microsoft Genomics, скачайте файл конфигурации из своей учетной записи Genomics. Чтобы перейти к учетной записи Genomics, выберите пункт **Все службы** в левом верхнем углу, отфильтруйте службы и выберите учетную запись Genomics.
 
 
-![Фильтр для Microsoft Genomics на портале Azure](./media/quickstart-run-genomics-workflow-portal/genomics-filter-box.png "Filter for Microsoft Genomics on Azure portal")
+![Фильтр для Microsoft Genomics на портале Azure](./media/quickstart-run-genomics-workflow-portal/genomics-filter-box.png "Фильтр для Microsoft Genomics на портале Azure")
 
 
 
 Выберите учетную запись Genomics, которую вы только что создали, откройте раздел **Ключи доступа** и скачайте файл конфигурации.
 
-![Скачивание файла конфигурации из Microsoft Genomics](./media/quickstart-run-genomics-workflow-portal/genomics-mygenomicsaccount-box.png "Download config file from Microsoft Genomics")
+![Скачать файл конфигурации из Microsoft Genomics](./media/quickstart-run-genomics-workflow-portal/genomics-mygenomicsaccount-box.png "Скачивание файла конфигурации из Microsoft Genomics")
 
 
 Протестируйте работу клиента Microsoft Genomics Python с помощью следующей команды:
@@ -110,7 +110,7 @@ msgen list -f “<full path where you saved the config file>”
 Служба Microsoft Genomics ожидает входные файлы в виде блочных BLOB-объектов в учетной записи хранения Azure. Она также записывает выходные файлы как блочные BLOB-объекты в определенный пользователем контейнер в учетной записи хранения Azure. Входные и выходные файлы могут находиться в разных учетных записях хранения.
 Если в вашей учетной записи хранения Azure уже есть данные, вам нужно только убедиться, что она находится в том же расположении, что и учетная запись Genomics. Иначе при запуске службы Genomics вы будете оплачивать исходящие данные. Если у вас еще нет учетной записи хранения Microsoft Azure, необходимо создать ее и отправить туда данные. Дополнительные сведения об учетных записях хранения Azure см. [здесь](https://docs.microsoft.com/azure/storage/common/storage-create-storage-account). Из этой статьи вы узнаете, что такое учетная запись хранения и для чего она нужна. Чтобы создать учетную запись хранения Microsoft Azure, перейдите на [портал Azure](https://portal.azure.com/#create/Microsoft.StorageAccount-ARM ).  
 
-![Колонка создания учетной записи хранения](./media/quickstart-run-genomics-workflow-portal/genomics-storage-create-blade.png "Storage account create blade")
+![Колонка "Создание хранилища"](./media/quickstart-run-genomics-workflow-portal/genomics-storage-create-blade.png "Колонка "Создание хранилища"")
 
 Настройте учетную запись хранения, указав следующую информацию, как показано на предыдущем рисунке. Используйте стандартные параметры для учетной записи хранения. Укажите только, что она не является учетной записью общего назначения, а предназначена для хранилища BLOB-объектов. В хранилище BLOB-объектов операции скачивания или отправки могут выполняться в 2–5 раз быстрее.  Рекомендуется модель развертывания по умолчанию (Azure Resource Manager).  
 
@@ -118,8 +118,8 @@ msgen list -f “<full path where you saved the config file>”
  |**Параметр**          |  **Рекомендуемое значение**  | **Описание поля** |
  |:-------------------------       |:-------------         |:----------            |
  |Subscription         | Ваша подписка Azure. |Дополнительные сведения о подписках см. [здесь](https://account.azure.com/Subscriptions). |      
- |группа ресурсов.       | MyResourceGroup       |  Можно выбрать группу ресурсов, к которой относится учетная запись Genomics. Допустимые имена групп ресурсов см. в статье [Соглашения об именовании](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions). |
- |Имя учетной записи хранения         | MyStorageAccount     |Выберите уникальный идентификатор учетной записи. Допустимые имена см. в статье [Соглашения об именовании](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions). |
+ |группа ресурсов.       | MyResourceGroup       |  Можно выбрать группу ресурсов, к которой относится учетная запись Genomics. Допустимые имена групп ресурсов см. в статье [Соглашения об именовании](/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging). |
+ |Имя учетной записи хранения         | MyStorageAccount     |Выберите уникальный идентификатор учетной записи. Допустимые имена см. в статье [Соглашения об именовании](/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging). |
  |Location                  | Западный регион США 2                  | Используйте то же расположение, что и для учетной записи Genomics, для сокращения расходов на исходящие данные и уменьшения задержки при передаче данных.  | 
  |Производительность                  | Стандартная                   | По умолчанию используется уровень "Стандартный". Дополнительные сведения об учетных записях хранения уровня "Стандартный" и "Премиум" см. в статье [Введение в хранилище Microsoft Azure](https://docs.microsoft.com/azure/storage/common/storage-introduction).    |
  |Тип учетной записи       | Хранилище BLOB-объектов       |  В хранилище BLOB-объектов операции скачивания или отправки могут выполняться в 2–5 раз быстрее, чем в хранилище общего назначения. |
@@ -149,7 +149,7 @@ msgen list -f “<full path where you saved the config file>”
 Откройте файл config.txt, скачанный из учетной записи Genomics. Разделы, которые необходимо указать: ключ подписки и шесть элементов в конце файла (имя учетной записи хранения, ключ и имя контейнера для входных данных, имя учетной записи хранения, ключ и имя контейнера для выходных данных). Чтобы найти эти сведения, перейдите на портале в раздел **Ключи доступа** вашей учетной записи хранения или непосредственно в обозреватель службы хранилища Azure.  
 
 
-![Конфигурация Genomics](./media/quickstart-run-genomics-workflow-portal/genomics-config.png "Genomics config")
+![Конфигурация Genomics](./media/quickstart-run-genomics-workflow-portal/genomics-config.png "Конфигурация Genomics")
 
 
 Если необходимо запустить GATK4, установите значение `gatk4` для параметра `process_name`.

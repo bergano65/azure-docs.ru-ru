@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: overview
-ms.date: 08/26/2019
+ms.date: 11/07/2019
 ms.author: aahi
-ms.openlocfilehash: 8c5df8461c74d48c0712ab1947e29813e7e1ea3f
-ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
+ms.openlocfilehash: 0f16c687f9816e99e05c2495a05596bd988ca9d2
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70032679"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73827320"
 ---
 # <a name="what-is-the-text-analytics-api"></a>Что такое API "Анализ текста"?
 
@@ -25,7 +25,7 @@ API — это компонент [Microsoft Cognitive Services](https://docs.m
 
 > [!VIDEO https://channel9.msdn.com/Shows/AI-Show/Understanding-Text-using-Cognitive-Services/player]
 
-Анализ текста может иметь различные значения, но Cognitive Services API анализа текста предоставляет четыре типа анализа, описанные ниже. Эти функции можно использовать с [REST API](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-V2-1/) или с клиентской библиотекой для [.NET](quickstarts/csharp.md), [Python](quickstarts/python-sdk.md), [Node.js](quickstarts/nodejs-sdk.md), [Go](quickstarts/go-sdk.md) или [Ruby](quickstarts/ruby-sdk.md).
+Анализ текста может иметь различные значения, но Cognitive Services API анализа текста предоставляет четыре типа анализа, описанные ниже. Эти функции можно использовать с [REST API](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-V2-1/) или [клиентской библиотекой](quickstarts/text-analytics-sdk.md).
 
 ## <a name="sentiment-analysis"></a>Анализ тональности
 Используйте [анализ тональности высказываний](how-tos/text-analytics-how-to-sentiment-analysis.md), чтобы узнать, что клиенты думают о вашем бренде или торговой марке, анализируя необработанный текст для получения сведений о тональности выражений (положительная или отрицательная). Этот API возвращает оценку тональности (0 или 1) для каждого документа, где 1 означает положительную тональность.<br /> Модели анализа предварительно обучены с использованием обширного набора текстов и технологий естественного языка корпорации Майкрософт. Для [выбранных языков](text-analytics-supported-languages.md) API может анализировать и оценивать любой необработанный текст, напрямую возвращая результаты вызывающему приложению.
@@ -110,7 +110,7 @@ API анализа текста использует кодировку Юник
 
 + [Создайте ресурс Azure](../cognitive-services-apis-create-account.md) для Анализа текста, чтобы получить ключ и конечную точку для своих приложений.
 
-+ Просмотрите [краткое руководство](quickstarts/csharp.md). Это пошаговое руководство по вызовам REST API на C#. Узнайте, как отправить текст, выбрать анализ и просмотреть результаты с минимальным объемом кода. При желании вы можете начать с [краткого руководства по Python](quickstarts/python.md).
++ Следуйте инструкциям в [кратком руководстве](quickstarts/text-analytics-sdk.md), чтобы начать отправку вызовов API. Узнайте, как отправить текст, выбрать анализ и просмотреть результаты с минимальным объемом кода.
 
 + Сведения о новых выпусках и возможностях см. в статье [What's new in the Text Analytics API?](whats-new.md) (Новые возможности API "Анализ текста").
 

@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Приостановка и возобновление вычислений в хранилище данных SQL Azure — PowerShell | Документация Майкрософт
+title: 'Краткое руководство. Приостановка и возобновление вычислений с помощью PowerShell '
 description: Используйте PowerShell, чтобы приостановить вычисления в хранилище данных SQL Azure для снижения расходов. Возобновите вычисления, когда вы готовы к использованию хранилища данных.
 services: sql-data-warehouse
 author: kevinvngo
@@ -10,12 +10,13 @@ ms.subservice: manage
 ms.date: 03/20/2019
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: da9c3d42919bba6ce04fc54bafc2fb5d245379f5
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.custom: seo-lt-2019
+ms.openlocfilehash: 2ad83e51a11e08373f2132e861ec1c8f3ac20458
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70306089"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73686010"
 ---
 # <a name="quickstart-pause-and-resume-compute-in-azure-sql-data-warehouse-with-azure-powershell"></a>Краткое руководство. Приостановка и возобновление вычислений в Хранилище данных SQL Azure с помощью Azure PowerShell
 

@@ -1,7 +1,7 @@
 ---
 title: 'Пример: Использование функции увеличения масштаба (API распознавания лиц)'
 titleSuffix: Azure Cognitive Services
-description: Использование функции увеличения масштаба в API распознавания лиц.
+description: В этом руководстве описывается, как перейти от существующих объектов PersonGroup и FaceList к более крупным объектам LargePersonGroup и LargeFaceList.
 services: cognitive-services
 author: SteveMSFT
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: face-api
 ms.topic: sample
 ms.date: 05/01/2019
 ms.author: sbowles
-ms.openlocfilehash: d8ecfb53b78277e4b0e4a85d60fb6712d0bc2292
-ms.sourcegitcommit: 8e1fb03a9c3ad0fc3fd4d6c111598aa74e0b9bd4
+ms.openlocfilehash: 976baaef11251715218ecea71986f08ec5f72996
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70114832"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73743728"
 ---
 # <a name="example-use-the-large-scale-feature"></a>Пример: Использование функции для увеличения масштаба
 

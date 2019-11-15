@@ -1,5 +1,5 @@
 ---
-title: Отправка запросов к службе "База данных SQL Azure" с помощью сценария R в Службах машинного обучения
+title: Отправка запросов с помощью R в Службах машинного обучения
 titleSuffix: Azure SQL Database Machine Learning Services (preview)
 description: В этой статье показано, как с помощью сценария R в Службах машинного обучения службы "База данных SQL Azure" подключиться к базе данных SQL Azure и отправлять к ней запросы, используя инструкции Transact-SQL.
 services: sql-database
@@ -13,12 +13,12 @@ ms.author: garye
 ms.reviewer: davidph, carlrab
 manager: cgronlun
 ms.date: 05/29/2019
-ms.openlocfilehash: ff38346a9b3bd14db51383c116240b030d3ee42a
-ms.sourcegitcommit: f5cc71cbb9969c681a991aa4a39f1120571a6c2e
+ms.openlocfilehash: a54b538247f81ea3bb0ea70a2af374158bd9e2ff
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68514864"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73826970"
 ---
 # <a name="quickstart-use-r-with-machine-learning-services-to-query-an-azure-sql-database-preview"></a>Краткое руководство. Отправка запросов к базе данных SQL Azure с помощью сценария R в Службах машинного обучения (предварительная версия)
 

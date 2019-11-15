@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 06/25/2019
 ms.author: glenga
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 52f682f7c7f06056be122b33d27592a55a01be94
-ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
+ms.openlocfilehash: fbde3c939a23e4023c0403c27433717a11762b08
+ms.sourcegitcommit: 6c2c97445f5d44c5b5974a5beb51a8733b0c2be7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70744070"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73622058"
 ---
 # <a name="create-your-first-function-using-visual-studio-code"></a>Создание функции в Azure с помощью Visual Studio Code
 
@@ -26,7 +26,7 @@ ms.locfileid: "70744070"
 
 ![Код функций Azure в проекте Visual Studio](./media/functions-create-first-function-vs-code/functions-vscode-intro.png)
 
-Сейчас это расширение поддерживает функции C#, JavaScript, Java и Python. Шаги, описанные этой и следующей статьях, предназначены лишь для функций JavaScript и C#. Сведения о создании и публикации функций Python с помощью Visual Studio Code см. в статье [Deploy Python to Azure Functions](https://code.visualstudio.com/docs/python/tutorial-azure-functions) (Развертывание Python в Функции Azure). Сведения о создании и публикации функций PowerShell с помощью Visual Studio Code см. в статье [Создание первой функции PowerShell в Azure (предварительная версия)](functions-create-first-function-powershell.md). 
+Сейчас это расширение поддерживает функции C#, JavaScript, Java и Python. Шаги, описанные этой и следующей статьях, предназначены лишь для функций JavaScript и C#. Чтобы узнать, как создать и опубликовать функции Python с помощью Visual Studio Code, ознакомьтесь со статьей [Создание и развертывание бессерверных функций Azure на языке Python с помощью Visual Studio Code](/azure/python/tutorial-vs-code-serverless-python-01). Сведения о создании и публикации функций PowerShell с помощью Visual Studio Code см. в статье [Создание первой функции PowerShell в Azure (предварительная версия)](functions-create-first-function-powershell.md). 
 
 Расширение сейчас доступно в режиме предварительной версии. Дополнительные сведения см. в разделе [Расширение "Функции Azure" для Visual Studio Code].
 

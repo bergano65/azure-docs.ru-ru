@@ -1,0 +1,49 @@
+---
+title: Арендаторы, роли и пользователи в сценариях Azure Lighthouse
+description: Изучите принципы действия арендаторов, пользователей и ролей Azure Active Directory, а также узнайте о том, как их можно использовать в сценариях Azure Lighthouse.
+author: JnHs
+ms.service: lighthouse
+ms.author: jenhayes
+ms.date: 11/05/2019
+ms.topic: overview
+manager: carmonm
+ms.openlocfilehash: b87ef8534dab2c8f08aa8cdee9d939e2d1a3a0e7
+ms.sourcegitcommit: b2fb32ae73b12cf2d180e6e4ffffa13a31aa4c6f
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73616042"
+---
+# <a name="tenants-roles-and-users-in-azure-lighthouse-scenarios"></a>Арендаторы, роли и пользователи в сценариях Azure Lighthouse
+
+Прежде чем подключать клиентов для [делегированного управления ресурсами Azure](azure-delegated-resource-management.md), важно понять, как работают арендаторы, пользователи и роли Azure Active Directory (Azure AD) и как их можно использовать в сценариях Azure Lighthouse.
+
+*Арендатор* — это выделенный и доверенный экземпляр Azure AD. Как правило, арендатор представляет отдельную организацию. Делегированное управление ресурсами Azure позволяет логически проецировать ресурсы одного арендатора на другого. Это позволяет пользователям в управляющем арендаторе (например, принадлежащем поставщику услуг) обращаться к делегированным ресурсам в арендаторе клиента или позволяет [предприятиям с несколькими арендаторами централизовать операции управления](enterprise.md).
+
+Для обеспечения этой логической проекции подписка (либо одна или несколько групп ресурсов в подписке) в арендаторе клиента должна быть *подключена* для управления делегированными ресурсами Azure. Этот процесс подключения можно выполнить либо [с помощью шаблонов Azure Resource Manager](../how-to/onboard-customer.md), либо посредством [публикации общедоступного или частного предложения в Azure Marketplace](../how-to/publish-managed-services-offers.md).
+
+Какой бы метод подключения ни был выбран, необходимо определить *авторизации*. Каждая авторизация указывает учетную запись пользователя в управляющем арендаторе, которая будет иметь доступ к делегированным ресурсам, и встроенную роль, которая задает разрешения, предоставляемые каждому из этих пользователей для данных ресурсов.
+
+## <a name="role-support-for-azure-delegated-resource-management"></a>Поддержка ролей для делегированного управления ресурсами Azure
+
+При определении авторизации каждой учетной записи пользователя должна быть назначена одна из встроенных ролей [управления доступом на основе ролей (RBAC)](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles). Пользовательские роли и [роли классического администратора подписки](https://docs.microsoft.com/azure/role-based-access-control/classic-administrators) не поддерживаются.
+
+В настоящее время поддерживаются все [встроенные роли](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles) для управления делегированными ресурсами Azure, за исключением следующих:
+
+- Роль [Владелец](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner) не поддерживается.
+- Любые встроенные роли с разрешением [DataActions](https://docs.microsoft.com/azure/role-based-access-control/role-definitions#dataactions) не поддерживаются.
+- Встроенная роль [Администратор доступа пользователей](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#user-access-administrator) поддерживается, но только для [назначения ролей для управляемого удостоверения в арендаторе клиента](../how-to/deploy-policy-remediation.md#create-a-user-who-can-assign-roles-to-a-managed-identity-in-the-customer-tenant). Никакие другие разрешения, обычно предоставляемые этой ролью, применяться не будут. При определении пользователя с этой ролью необходимо также указать встроенные роли, которые этот пользователь может назначить управляемым удостоверениям.
+
+## <a name="best-practices-for-defining-users-and-roles"></a>Рекомендации по определению пользователей и ролей
+
+При создании авторизаций рекомендуется следующее.
+
+- В большинстве случаев разрешения необходимо назначить группе пользователей или субъекту-службе Azure AD, а не ряду отдельных учетных записей пользователей. В этом случае вы сможете добавлять или удалять доступ для отдельных пользователей, не обновляя и повторно публикуя план при изменении требований к доступу.
+- Обязательно следуйте принципам минимальных привилегий, чтобы у пользователей были только разрешения, необходимые для выполнения их заданий. Это помогает снизить вероятность непреднамеренных ошибок. Дополнительные сведения см. в статье [Recommended security practices](../concepts/recommended-security-practices.md) (Рекомендации по безопасности).
+- Добавьте пользователя с ролью [Managed Services Registration Assignment Delete](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#managed-services-registration-assignment-delete-role) (Удаление назначенных регистраций управляемых служб), чтобы можно было при необходимости [удалить доступ к делегированию](../how-to/onboard-customer.md#remove-access-to-a-delegation) позже. Если эта роль не назначена, делегированные ресурсы могут быть удалены только пользователем в арендаторе клиента.
+- Убедитесь, что любой пользователь, которому нужно [просматривать страницу "Мои клиенты" на портале Azure](../how-to/view-manage-customers.md), имеет роль [Читатель](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#reader) (или другую встроенную роль, которая предоставляет доступ для чтения).
+
+## <a name="next-steps"></a>Дополнительная информация
+
+- Узнайте больше о [рекомендациях по обеспечению безопасности для делегированного управления ресурсами Azure](recommended-security-practices.md).
+- Подключите клиентов к делегированному управлению ресурсами Azure с помощью [шаблонов Azure Resource Manager](../how-to/onboard-customer.md) или путем [публикации предложения частных или общедоступных управляемых служб в Azure Marketplace](../how-to/publish-managed-services-offers.md).

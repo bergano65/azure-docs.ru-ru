@@ -1,5 +1,5 @@
 ---
-title: Восстановление резервной копии в Управляемый экземпляр Базы данных SQL Azure | Документация Майкрософт
+title: Восстановление резервной копии в управляемый экземпляр
 description: Восстановление резервной копии базы данных в Управляемый экземпляр Базы данных SQL Azure с помощью SSMS.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: srdan-bozovic-msft
 ms.author: srbozovi
 ms.reviewer: sstein, carlrab, bonova
 ms.date: 12/14/2018
-ms.openlocfilehash: ca0dcc850b2db513c8d85d43ad76bc75053c0d04
-ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
+ms.openlocfilehash: 37f7366d6622356017e458fb8f893b0be0851335
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72514008"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73825692"
 ---
 # <a name="quickstart-restore-a-database-to-a-managed-instance"></a>Краткое руководство. Восстановление базы данных в Управляемый экземпляр
 
@@ -35,12 +35,12 @@ ms.locfileid: "72514008"
 - Используйте ресурсы из статьи [Краткое руководство. Создание Управляемого экземпляра Базы данных SQL Azure](sql-database-managed-instance-get-started.md).
 - Необходимо, чтобы на вашем компьютере была установлена последняя версия [SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/sql-server-management-studio-ssms).
 - SSMS используется для подключения к Управляемому экземпляру. Ознакомьтесь с этими краткими руководствами по подключению.
+  - [Включение общедоступной конечной точки](sql-database-managed-instance-public-endpoint-configure.md) в Управляемом экземпляре. Рекомендуется использовать этот подход для работы с данным руководством.
   - [Connect to an Azure SQL Database Managed Instance from an Azure VM](sql-database-managed-instance-configure-vm.md) (Подключение к Управляемому экземпляру Базы данных SQL Azure с виртуальной машины Azure).
   - [Краткое руководство. Настройка подключения "точка — сеть" к Управляемому экземпляру Базы данных SQL Azure с локального компьютера](sql-database-managed-instance-configure-p2s.md).
-- Требует наличия учетной записи хранилища BLOB-объектов Azure (например, Standard_LRS V2) с **общедоступным IP-адресом**, защищенным **учетными данными SAS** с разрешением `rw`. [Частные IP-адреса для хранилища BLOB-объектов, защищенные брандмауэром,](https://docs.microsoft.com/azure/storage/common/storage-network-security) и конечные точки службы хранилища BLOB-объектов Azure в настоящее время не поддерживаются.
 
 > [!NOTE]
-> Дополнительные сведения о резервном копировании и восстановлении базы данных SQL Server при помощи хранилища BLOB-объектов Azure и [ключа подписанного URL-адреса (SAS)](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1) см. в статье [Краткое руководство. Восстановление резервной копии базы данных в Управляемый экземпляр Базы данных SQL Azure](https://docs.microsoft.com/en-us/sql/relational-databases/backup-restore/sql-server-backup-to-url?view=sql-server-2017).
+> Дополнительные сведения о резервном копировании и восстановлении базы данных SQL Server при помощи хранилища BLOB-объектов Azure и [ключа подписанного URL-адреса (SAS)](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1) см. в статье [Краткое руководство. Восстановление резервной копии базы данных в Управляемый экземпляр Базы данных SQL Azure](https://docs.microsoft.com/sql/relational-databases/backup-restore/sql-server-backup-to-url?view=sql-server-2017).
 
 ## <a name="restore-the-database-from-a-backup-file"></a>Восстановление базы данных из файла резервной копии
 
@@ -86,7 +86,11 @@ ms.locfileid: "72514008"
    WHERE r.command in ('BACKUP DATABASE','RESTORE DATABASE')
    ```
 
-7. По завершении восстановления просмотрите восстановленную базу данных в обозревателе объектов.
+7. По завершении восстановления просмотрите базу данных в обозревателе объектов. Чтобы убедиться, что восстановление базы данных завершено, используйте представление [sys.dm_operation_status](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-operation-status-azure-sql-database).
+
+> [!NOTE]
+> Операция восстановления базы данных является асинхронной и повторяемой. В случае разрыва подключения или истечения времени ожидания в SQL Server Management Studio может возникнуть ошибка. База данных SQL Azure будет пытаться восстановить базу данных в фоновом режиме, и вы сможете отслеживать ход восстановления с помощью представлений [sys.dm_exec_requests](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql) и [sys.dm_operation_status](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-operation-status-azure-sql-database).
+> На некоторых этапах процесса восстановления в системных представлениях вместо фактического имени базы данных будет отображаться ее уникальный идентификатор. [Узнайте больше](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-transact-sql-information#restore-statement) о различиях в поведении инструкции `RESTORE`.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

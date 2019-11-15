@@ -1,6 +1,6 @@
 ---
 title: Что собой представляет OPC Vault — Azure | Документация Майкрософт
-description: Общие сведения о хранилище OPC
+description: В статье представлены общие сведения об OPC Vault. OPC Vault дает возможность настраивать и регистрировать сертификаты приложений OPC UA в облаке, а также управлять их жизненным циклом.
 author: dominicbetts
 ms.author: dobett
 ms.date: 11/26/2018
@@ -8,12 +8,12 @@ ms.topic: overview
 ms.service: industrial-iot
 services: iot-industrialiot
 manager: philmea
-ms.openlocfilehash: 44315790116545dd888aed533731bbf01abe801d
-ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
+ms.openlocfilehash: 66a322d4f60d9553a68207136ae609c1f9b50dbc
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69997308"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73826215"
 ---
 # <a name="what-is-opc-vault"></a>Что собой представляет OPC Vault?
 

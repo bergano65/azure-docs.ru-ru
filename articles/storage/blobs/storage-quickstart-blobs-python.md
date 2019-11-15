@@ -1,226 +1,338 @@
 ---
-title: Краткое руководство. Создание BLOB-объекта в хранилище BLOB-объектов Azure с помощью Python
-description: В рамках этого краткого руководства вы создадите учетную запись хранения и контейнер в хранилище объектов (больших двоичных объектов). Затем используйте клиентскую библиотеку службы хранилища для языка Python, чтобы отправить большой двоичный объект в службу хранилища Azure, скачать его и составить список больших двоичных объектов в контейнере.
+title: Краткое руководство. Использование библиотеки хранилища BLOB-объектов Azure версии 12 для Python
+description: В этом кратком руководстве вы узнаете, как использовать клиентскую библиотеку службы хранилища BLOB-объектов Azure версии 12 для Python для создания контейнера и большого двоичного объекта в хранилище BLOB-объектов. Далее вы узнаете, как скачать большой двоичный объект на локальный компьютер и как получить список всех больших двоичных объектов в контейнере.
 author: mhopkins-msft
 ms.author: mhopkins
-ms.date: 09/11/2019
+ms.date: 11/05/2019
 ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
-ms.custom: seo-python-october2019
-ms.openlocfilehash: 8a3f8b5f8944552c92ac5a1c1d5fb2eabffad2c9
-ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
+ms.openlocfilehash: 397464a70164ef06642a991fb8470ddfa2922647
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72430152"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73809926"
 ---
-# <a name="quickstart-upload-download-and-list-blobs-in-azure-blob-storage-with-python"></a>Краткое руководство. Отправка, скачивание и перечисление BLOB-объектов в хранилище BLOB-объектов Azure с помощью Python
+# <a name="quickstart-azure-blob-storage-client-library-v12-for-python"></a>Краткое руководство. Использование клиентской библиотеки хранилища BLOB-объектов Azure версии 12 для Python
 
-Из этой статьи вы узнаете, как использовать Python для отправки, скачивания и перечисления блочных BLOB-объектов в контейнере в хранилище BLOB-объектов Azure. Большие двоичные объекты — это объекты, которые могут содержать большие объемы текстовых или двоичных данных, включая изображения, документы, потоковую передачу мультимедиа и архивные данные. Большие двоичные объекты в службе хранилища Azure отличаются от файловых ресурсов, таблиц без схемы и очередей сообщений.  Дополнительную информацию см. в разделе [Общие сведения о службе хранилища Azure](/azure/storage/common/storage-introduction).
+Приступите к работе с клиентской библиотекой хранилища BLOB-объектов Azure версии 12 для Python. Хранилище BLOB-объектов Azure — это решение корпорации Майкрософт для хранения объектов в облаке. Чтобы установить пакет и испробовать пример кода для выполнения базовых задач, выполните приведенные здесь действия. Хранилище BLOB-объектов оптимизировано для хранения больших объемов неструктурированных данных.
+
+> [!NOTE]
+> Чтобы приступить к работе с предыдущей версией пакета SDK, обратитесь к разделу [Краткое руководство. Клиентская библиотека хранилища BLOB-объектов Azure для Python](storage-quickstart-blobs-python-legacy.md).
+
+Клиентскую библиотеку хранилища BLOB-объектов Azure можно использовать для выполнения таких задач:
+
+* Создание контейнера
+* передача большого двоичного объекта в хранилище Azure;
+* перечисление всех больших двоичных объектов в контейнере;
+* скачивание большого двоичного объекта на локальный компьютер;
+* Удаление контейнера
+
+[Справочная документация по API](/python/api/azure-storage-blob) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-blob) | [Пакет (Python Package Index)](https://pypi.org/project/azure-storage-blob/) | [Примеры](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-blob/samples)
 
 [!INCLUDE [storage-multi-protocol-access-preview](../../../includes/storage-multi-protocol-access-preview.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-[!INCLUDE [storage-quickstart-prereq-include](../../../includes/storage-quickstart-prereq-include.md)]
+* Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Учетная запись хранения Azure — [создайте такую учетную запись](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account).
+* [Python](https://www.python.org/downloads/) 2.7, Python 3.5 или более поздней версии для вашей операционной системы.
 
-Прежде чем приступить к работе, убедитесь, что у вас установлены следующие дополнительные компоненты:
+## <a name="setting-up"></a>Настройка
 
-* [Python](https://www.python.org/downloads/)
+В этом разделе рассматривается подготовка проекта для работы с клиентской библиотекой хранилища BLOB-объектов Azure версии 12 для Python.
 
-* [Пакет SDK службы хранилища Azure для Python](https://github.com/Azure/azure-sdk-for-python)
+### <a name="create-the-project"></a>Создание проекта
 
-## <a name="download-the-sample-application"></a>Загрузка примера приложения
+Создайте приложение Python с именем *blob-quickstart-v12*.
 
-[Пример приложения](https://github.com/Azure-Samples/storage-blobs-python-quickstart.git), используемый в этом кратком руководстве, является простым приложением Python.  
+1. В окне консоли (командная строка, PowerShell или Bash) создайте каталог для проекта.
 
-Используйте следующую команду [git](https://git-scm.com/), чтобы скачать приложение в среду разработки. 
+    ```console
+    mkdir blob-quickstart-v12
+    ```
 
-```bash
-git clone https://github.com/Azure-Samples/storage-blobs-python-quickstart.git 
+1. Перейдите в только что созданный каталог *blob-quickstart-v12*.
+
+    ```console
+    cd blob-quickstart-v12
+    ```
+
+1. В каталоге *blob-quickstart-v12* создайте каталог *data*. Это каталог для создания и хранения файлов данных больших двоичных объектов.
+
+    ```console
+    mkdir data
+    ```
+
+### <a name="install-the-package"></a>Установка пакета
+
+Оставаясь в каталоге приложения, установите клиентскую библиотеку хранилища BLOB-объектов Azure для пакета Python с помощью команды `pip install`.
+
+```console
+pip install azure-storage-blob
 ```
 
-Чтобы проверить программу Python, откройте файл *example.py* в корне репозитория.  
+Эта команда устанавливает клиентскую библиотеку хранилища BLOB-объектов Azure для пакета Python и все библиотеки, от которых она зависит. В данном случае это только основная библиотека Azure для Python.
 
-[!INCLUDE [storage-copy-account-key-portal](../../../includes/storage-copy-account-key-portal.md)]
+### <a name="set-up-the-app-framework"></a>Настройка платформы приложения
 
-## <a name="configure-your-storage-connection-string"></a>Настройка строки подключения хранилища
+Из каталога проекта:
 
-В приложении нужно указать имя и ключ учетной записи хранения, чтобы создать объект `BlockBlobService`.
+1. Откройте новый текстовый файл в редакторе кода.
+1. Добавьте в него операторы `import`.
+1. Создайте структуру программы, включая самую простую обработку исключений.
 
-1. Откройте файл *example.py* с помощью обозревателя решений в IDE.
-
-1. Замените значения `accountname` и `accountkey` именем и ключом учетной записи хранения.
+    Вот этот код:
 
     ```python
-    block_blob_service = BlockBlobService(
-        account_name='accountname', account_key='accountkey')
+    import os, uuid
+    from azure.storage.blob import BlobServiceClient, BlobClient, ContainerClient
+
+    try:
+        print("Azure Blob storage v12 - Python quickstart sample")
+        # Quick start code goes here
+    except Exception as ex:
+        print('Exception:')
+        print(ex)
     ```
 
-1. Сохраните и закройте файл.
+1. Сохраните новый файл как *blob-quickstart-v12.py* в каталоге *blob-quickstart-v12*.
 
-## <a name="run-the-sample"></a>Запуск примера
+### <a name="copy-your-credentials-from-the-azure-portal"></a>Копирование учетных данных с портала Azure
 
-Пример программы создает тестовый файл в папке *Документы*, отправляет файл в хранилище BLOB-объектов, выводит список BLOB-объектов в файле и скачивает файл с новым именем.
+Когда пример приложения выполняет запрос к службе хранилища Azure, он должен быть авторизован. Для авторизации запроса добавьте в приложение учетные данные учетной записи хранения в виде строки подключения. Чтобы просмотреть учетные данные учетной записи хранения, выполните следующие действия:
 
-1. Установка зависимостей:
+1. Войдите на [портале Azure](https://portal.azure.com).
+2. Перейдите к учетной записи хранения.
+3. В разделе **Параметры** учетной записи хранения выберите параметр **Ключи доступа**. На этой странице вы увидите ключи доступа к учетной записи и полную строку подключения для каждого ключа.
+4. Найдите значение для параметра **Строка подключения** в разделе **Key1** и нажмите кнопку **Скопировать**, чтобы скопировать строку подключения. На следующем этапе вы добавите значение строки подключения в переменную среды.
 
-    ```console
-    pip install azure-storage-blob
-    ```
+    ![Снимок экрана, на котором показано, как скопировать строку подключения с портала Azure](../../../includes/media/storage-copy-connection-string-portal/portal-connection-string.png)
 
-1. Перейдите к примеру приложения:
+### <a name="configure-your-storage-connection-string"></a>Настройка строки подключения хранилища
 
-    ```console
-    cd storage-blobs-python-quickstart
-    ```
+После копирования строки подключения запишите ее в переменной среды на локальном компьютере, где выполняется приложение. Чтобы задать переменную среды, откройте окно консоли и следуйте инструкциям для используемой операционной системы. Замените `<yourconnectionstring>` фактической строкой подключения.
 
-1. Запустите пример:
+#### <a name="windows"></a>Windows
 
-    ```console
-    python example.py
-    ```
-
-    Результат будет выглядеть примерно так:
-  
-    ```output
-    Temp file = C:\Users\azureuser\Documents\QuickStart_9f4ed0f9-22d3-43e1-98d0-8b2c05c01078.txt
-
-    Uploading to Blob storage as blobQuickStart_9f4ed0f9-22d3-43e1-98d0-8b2c05c01078.txt
-
-    List blobs in the container
-             Blob name: QuickStart_9f4ed0f9-22d3-43e1-98d0-8b2c05c01078.txt
-
-    Downloading blob to     C:\Users\azureuser\Documents\QuickStart_9f4ed0f9-22d3-43e1-98d0-8b2c05c01078_DOWNLOADED.txt
-    ```
-
-1. Прежде чем продолжить, проверьте наличие двух файлов в папке *Документы*.
-
-    * *QuickStart_\<universally-unique-identifier\>*
-    * *QuickStart_\<universally-unique-identifier\>DOWNLOADED*
-
-1. Вы можете открыть их и убедиться, что они идентичны.
-
-    Также можно воспользоваться таким средством, как [Обозреватель службы хранилища Azure](https://storageexplorer.com). Это удобно для просмотра файлов в хранилище BLOB-объектов. Обозреватель службы хранилища Azure — это бесплатное кроссплатформенное средство для доступа к данным учетной записи хранения. 
-
-1. После проверки файлов нажмите любую клавишу для завершения демонстрации и удаления тестовых файлов.
-
-## <a name="learn-about-the-sample-code"></a>Посмотреть сведения о примере кода
-
-Теперь вы знаете, что делает этот пример. Давайте откроем файл *example.py* и изучим его код.
-
-### <a name="get-references-to-the-storage-objects"></a>Получение ссылок на объекты хранилища
-
-В этом разделе вы создадите экземпляры объектов и контейнер, а затем зададите для контейнера разрешения на общий доступ к BLOB-объектам. Вы вызываете контейнер `quickstartblobs`. 
-
-```python
-# Create the BlockBlockService that the system uses to call the Blob service for the storage account.
-block_blob_service = BlockBlobService(
-    account_name='accountname', account_key='accountkey')
-
-# Create a container called 'quickstartblobs'.
-container_name = 'quickstartblobs'
-block_blob_service.create_container(container_name)
-
-# Set the permission so the blobs are public.
-block_blob_service.set_container_acl(
-    container_name, public_access=PublicAccess.Container)
+```cmd
+setx CONNECT_STR "<yourconnectionstring>"
 ```
 
-Сначала создайте ссылки на объекты, используемые для доступа к хранилищу BLOB-объектов и управления им. Эти объекты зависят друг от друга, и каждый из них используется следующим в списке объектом.
+После добавления переменной среды в Windows вам необходимо запустить новый экземпляр командного окна.
 
-* Создайте экземпляр объекта **BlockBlobService**, указывающий на службу BLOB-объектов в учетной записи хранения. 
+#### <a name="linux"></a>Linux
 
-* Создайте объект **CloudBlobContainer**, представляющий контейнер, к которому выполняется доступ. Система использует контейнеры для организации больших двоичных объектов аналогично папкам для упорядочения файлов на компьютере.
+```bash
+export CONNECT_STR="<yourconnectionstring>"
+```
 
-Теперь у вас есть облачный контейнер BLOB-объектов. Вы можете создать объект **CloudBlockBlob**, который указывает на конкретный интересующий вас BLOB-объект, и выполнять с ним различные операции: отправку, скачивание или копирование.
+#### <a name="macos"></a>macOS
 
-> [!IMPORTANT]
-> Имена контейнеров должны состоять из знаков нижнего регистра. Дополнительные сведения об именовании контейнеров и больших двоичных объектов см. в статье [Naming and Referencing Containers, Blobs, and Metadata](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata) (Именование контейнеров, больших двоичных объектов и метаданных и ссылка на них).
+```bash
+export CONNECT_STR="<yourconnectionstring>"
+```
 
-### <a name="upload-blobs-to-the-container"></a>Отправка BLOB-объектов в контейнер
+#### <a name="restart-programs"></a>Перезапуск программ
 
-Хранилище BLOB-объектов поддерживает блочные, добавочные и страничные BLOB-объекты. Блочные BLOB-объекты могут иметь размер 4,7 ТБ и представлять собой любые объекты, начиная от электронных таблиц Excel до больших видеофайлов. Вы можете использовать добавочные большие двоичные объекты для ведения журнала, например, если требуется выполнять запись в файл и добавлять дополнительные сведения. Страничные BLOB-объекты в основном используются для файлов виртуального жесткого диска (VHD), которые поддерживают виртуальные машины с инфраструктурой как услугой (ВМ IaaS). Чаще всего используются блочные BLOB-объекты. В этом кратком руководстве используются блочные BLOB-объекты.
+После добавления переменной среды перезапустите все запущенные программы, которым может понадобиться считать переменную среды. Например, перезапустите среду разработки или редактор, прежде чем продолжить.
 
-Чтобы отправить файл в большой двоичный объект, получите полный путь к файлу, соединив имя каталога и имя файла на локальном диске. Затем вы можете передать файл по указанному пути, используя метод `create_blob_from_path`. 
+## <a name="object-model"></a>Объектная модель
 
-Этот пример кода создает локальный файл, который система использует для отправки и скачивания. Он сохраняет отправляемый системой файл в переменной *full_path_to_file*, а имя BLOB-объекта — в переменной *local_file_name*. Этот пример файла отправляется в контейнер с именем `quickstartblobs`:
+Хранилище BLOB-объектов Azure оптимизировано для хранения больших объемов неструктурированных данных. Неструктурированные данные — это данные, которые не соответствуют определенной модели данных или определению, например текстовых или двоичных данных. В хранилище BLOB-объектов предлагается три типа ресурсов:
+
+* учетная запись хранения;
+* контейнер в учетной записи хранения;
+* большой двоичный объект в контейнере.
+
+На следующей схеме показана связь между этими ресурсами.
+
+![Схема архитектуры службы хранилища BLOB-объектов](./media/storage-blob-introduction/blob1.png)
+
+Используйте следующие классы Python для взаимодействия с этими ресурсами.
+
+* [BlobServiceClient](/python/api/azure-storage-blob/azure.storage.blob.blobserviceclient). Класс `BlobServiceClient` позволяет управлять ресурсами службы хранилища Azure и контейнерами больших двоичных объектов.
+* [ContainerClient](/python/api/azure-storage-blob/azure.storage.blob.containerclient). Класс `ContainerClient` позволяет управлять контейнерами службы хранилища Azure и содержащимися в них большими двоичными объектами.
+* [BlobClient](/python/api/azure-storage-blob/azure.storage.blob.blobclient). Класс `BlobClient` позволяет управлять большими двоичными объектами службы хранилища Azure.
+
+## <a name="code-examples"></a>Примеры кода
+
+В этих примерах фрагментов кода показано, как выполнять следующие действия с помощью клиентской библиотеки хранилища BLOB-объектов Azure для Python:
+
+* [Получение строки подключения](#get-the-connection-string)
+* [Создание контейнера](#create-a-container)
+* [отправка больших двоичных объектов в контейнер](#upload-blobs-to-a-container);
+* [перечисление больших двоичных объектов в контейнере](#list-the-blobs-in-a-container);
+* [скачивание больших двоичных объектов](#download-blobs);
+* [Удаление контейнера](#delete-a-container)
+
+### <a name="get-the-connection-string"></a>Получение строки подключения
+
+Приведенный ниже код извлекает строку подключения для учетной записи хранения из переменной среды, созданной в разделе [Настройка строки подключения хранилища](#configure-your-storage-connection-string).
+
+Добавьте этот код в блок `try`.
 
 ```python
-# Create a file in Documents to test the upload and download.
-local_path = os.path.expanduser("~\Documents")
-local_file_name = "QuickStart_" + str(uuid.uuid4()) + ".txt"
-full_path_to_file = os.path.join(local_path, local_file_name)
+# Retrieve the connection string for use with the application. The storage
+# connection string is stored in an environment variable on the machine
+# running the application called CONNECT_STR. If the environment variable is
+# created after the application is launched in a console or with Visual Studio,
+# the shell or application needs to be closed and reloaded to take the
+# environment variable into account.
+connect_str = os.getenv('CONNECT_STR')
+```
 
-# Write text to the file.
-file = open(full_path_to_file, 'w')
+### <a name="create-a-container"></a>Создание контейнера
+
+Выберите имя нового контейнера. Приведенный ниже код добавляет к имени контейнера значение UUID, чтобы сделать это имя уникальным.
+
+> [!IMPORTANT]
+> Имена контейнеров должны состоять из знаков нижнего регистра. Дополнительные сведения об именовании контейнеров и больших двоичных объектов см. в статье [Naming and Referencing Containers, Blobs, and Metadata](/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata) (Именование контейнеров, больших двоичных объектов и метаданных и ссылка на них).
+
+Создайте экземпляр класса [BlobServiceClient](/python/api/azure-storage-blob/azure.storage.blob.blobserviceclient), вызвав метод [from_connection_string](/python/api/azure-storage-blob/azure.storage.blob.blobserviceclient#from-connection-string-conn-str--credential-none----kwargs-). Затем вызовите метод [create_container](/python/api/azure-storage-blob/azure.storage.blob.blobserviceclient#create-container-name--metadata-none--public-access-none----kwargs-), чтобы создать контейнер в учетной записи хранения.
+
+Добавьте следующий код в конец блока `try`.
+
+```python
+# Create the BlobServiceClient object which will be used to create a container client
+blob_service_client = BlobServiceClient.from_connection_string(connect_str)
+
+# Create a unique name for the container
+container_name = "quickstart" + str(uuid.uuid4())
+
+# Create the container
+container_client = blob_service_client.create_container(container_name)
+```
+
+### <a name="upload-blobs-to-a-container"></a>Отправка больших двоичных объектов в контейнер
+
+Приведенный ниже фрагмент кода:
+
+1. Создает текстовый файл в локальном каталоге.
+1. Возвращает ссылку на объект [BlobClient](/python/api/azure-storage-blob/azure.storage.blob.blobclient), вызывая метод [get_blob_client](/python/api/azure-storage-blob/azure.storage.blob.containerclient#get-blob-client-blob--snapshot-none-) для [BlobServiceClient](/python/api/azure-storage-blob/azure.storage.blob.blobserviceclient) из раздела [Создание контейнера](#create-a-container).
+1. Передает локальный текстовый файл в большой двоичный объект, вызывая метод [upload_blob](/python/api/azure-storage-blob/azure.storage.blob.blobclient#upload-blob-data--blob-type--blobtype-blockblob---blockblob----length-none--metadata-none----kwargs-).
+
+Добавьте следующий код в конец блока `try`.
+
+```python
+# Create a file in local Documents directory to upload and download
+local_path = "./data"
+local_file_name = "quickstart" + str(uuid.uuid4()) + ".txt"
+upload_file_path = os.path.join(local_path, local_file_name)
+
+# Write text to the file
+file = open(upload_file_path, 'w')
 file.write("Hello, World!")
 file.close()
 
-print("Temp file = " + full_path_to_file)
-print("\nUploading to Blob storage as blob" + local_file_name)
+# Create a blob client using the local file name as the name for the blob
+blob_client = blob_service_client.get_blob_client(container=container_name, blob=local_file_name)
 
-# Upload the created file, use local_file_name for the blob name.
-block_blob_service.create_blob_from_path(
-    container_name, local_file_name, full_path_to_file)
+print("\nUploading to Azure Storage as blob:\n\t" + local_file_name)
+
+# Upload the created file
+with open(upload_file_path, "rb") as data:
+    blob_client.upload_blob(data)
 ```
-
-Существует несколько методов отправки, которые можно использовать с хранилищем BLOB-объектов. Например, если у вас есть поток памяти, вы можете использовать метод `create_blob_from_stream`, а не `create_blob_from_path`. 
 
 ### <a name="list-the-blobs-in-a-container"></a>Перечисление BLOB-объектов в контейнере
 
-Следующий код создает `generator` для метода `list_blobs`. Код просматривает список больших двоичных объектов в контейнере и выводит их имена в консоль.
+Выведите список больших двоичных объектов в контейнере, вызвав метод [list_blobs](/python/api/azure-storage-blob/azure.storage.blob.containerclient#list-blobs-name-starts-with-none--include-none----kwargs-). В этом случае в контейнер был добавлен лишь один большой двоичный объект, поэтому операция перечисления возвращает только его.
+
+Добавьте следующий код в конец блока `try`.
 
 ```python
-# List the blobs in the container.
-print("\nList blobs in the container")
-generator = block_blob_service.list_blobs(container_name)
-for blob in generator:
-    print("\t Blob name: " + blob.name)
+print("\nListing blobs...")
+
+# List the blobs in the container
+blob_list = container_client.list_blobs()
+for blob in blob_list:
+    print("\t" + blob.name)
 ```
 
-### <a name="download-the-blobs"></a>Скачивание больших двоичных объектов
+### <a name="download-blobs"></a>Скачивание больших двоичных объектов
 
+Скачайте созданный ранее большой двоичный объект, вызвав метод [download_blob](/python/api/azure-storage-blob/azure.storage.blob.blobclient#download-blob-offset-none--length-none----kwargs-). Пример кода добавляет суффикс "DOWNLOAD" к имени файла, чтобы в локальной файловой системе можно было просмотреть оба файла.
 
-Чтобы скачать большие двоичные объекты на локальный диск, используйте метод `get_blob_to_path`.
-Следующий код скачивает BLOB-объект, который мы передали в предыдущем разделе. К имени BLOB-объекта система добавляет *_DOWNLOADED*, поэтому на локальном диске присутствуют оба файла.
+Добавьте следующий код в конец блока `try`.
 
 ```python
-# Download the blob(s).
-# Add '_DOWNLOADED' as prefix to '.txt' so you can see both files in Documents.
-full_path_to_file2 = os.path.join(local_path, local_file_name.replace(
-   '.txt', '_DOWNLOADED.txt'))
-print("\nDownloading blob to " + full_path_to_file2)
-block_blob_service.get_blob_to_path(
-    container_name, local_file_name, full_path_to_file2)
+# Download the blob to a local file
+# Add 'DOWNLOAD' before the .txt extension so you can see both files in Documents
+download_file_path = os.path.join(local_path, str.replace(local_file_name ,'.txt', 'DOWNLOAD.txt'))
+print("\nDownloading blob to \n\t" + download_file_path)
+
+with open(download_file_path, "wb") as download_file:
+    download_file.write(blob_client.download_blob().readall())
 ```
 
-### <a name="clean-up-resources"></a>Очистка ресурсов
-Если большие двоичные объекты, отправленные при работе с этим руководством, больше не нужны, удалите весь контейнер с помощью метода `delete_container`. Для удаления отдельных файлов используйте метод `delete_blob`.
+### <a name="delete-a-container"></a>Удаление контейнера
+
+Следующий код очищает созданные приложением ресурсы, полностью удаляя контейнер с помощью метода [delete_container](/python/api/azure-storage-blob/azure.storage.blob.containerclient#delete-container---kwargs-). Кроме того, при необходимости можно удалить локальные файлы.
+
+Приложение приостанавливается для ввода пользователя, вызывая `input()`, перед удалением большого двоичного объекта, контейнера и локальных файлов. Это хорошая возможность проверить правильность создания ресурсов перед их удалением.
+
+Добавьте следующий код в конец блока `try`.
 
 ```python
-# Clean up resources. This includes the container and the temp files.
-block_blob_service.delete_container(container_name)
-os.remove(full_path_to_file)
-os.remove(full_path_to_file2)
+# Clean up
+print("\nPress the Enter key to begin clean up")
+input()
+
+print("Deleting blob container...")
+container_client.delete_container()
+
+print("Deleting the local source and downloaded files...")
+os.remove(upload_file_path)
+os.remove(download_file_path)
+
+print("Done")
 ```
 
-## <a name="resources-for-developing-python-applications-with-blobs"></a>Ресурсы для разработки приложений Python с большими двоичными объектами
+## <a name="run-the-code"></a>Выполнение кода
 
-Ознакомьтесь со следующими дополнительными ресурсами для разработки Python с использованием хранилища BLOB-объектов:
+В этом приложении тестовый файл создается в локальной папке, а затем передается в хранилище BLOB-объектов. После этого выводится список больших двоичных объектов в контейнере, а затем файл загружается с новым именем, чтобы можно было сравнить старый и новый файлы.
 
-### <a name="binaries-and-source-code"></a>Двоичные файлы и исходный код
+Перейдите в каталог, содержащий файл *blob-quickstart-v12.py*, а затем выполните указанную команду `python`, чтобы запустить приложение.
 
-- Просматривайте, скачивайте и устанавливайте [исходный код клиентской библиотеки Python](https://github.com/Azure/azure-storage-python) для службы хранилища Azure в GitHub.
+```console
+python blob-quickstart-v12.py
+```
 
-### <a name="client-library-reference-and-samples"></a>Справочник по клиентской библиотеке и примеры
+Вы должны увидеть выходные данные приложения, как показано ниже.
 
-- Дополнительные сведения о клиентской библиотеке Python см. в разделе [Библиотеки службы хранилища Azure для Python](https://docs.microsoft.com/python/api/overview/azure/storage).
-- Изучите [примеры для хранилища BLOB-объектов](https://azure.microsoft.com/resources/samples/?sort=0&service=storage&platform=python&term=blob), написанные с использованием клиентской библиотеки Python.
+```output
+Azure Blob storage v12 - Python quickstart sample
+
+Uploading to Azure Storage as blob:
+        quickstartcf275796-2188-4057-b6fb-038352e35038.txt
+
+Listing blobs...
+        quickstartcf275796-2188-4057-b6fb-038352e35038.txt
+
+Downloading blob to
+        ./data/quickstartcf275796-2188-4057-b6fb-038352e35038DOWNLOAD.txt
+
+Press the Enter key to begin clean up
+
+Deleting blob container...
+Deleting the local source and downloaded files...
+Done
+```
+
+Прежде чем начать удаление, проверьте наличие двух файлов в папке *Documents*. Вы можете открыть их и убедиться, что они идентичны.
+
+После проверки файлов нажмите клавишу **ВВОД**, чтобы завершить работу с демонстрационной версией и удалить тестовые файлы.
 
 ## <a name="next-steps"></a>Дополнительная информация
- 
-Из этого краткого руководства вы узнали, как передавать файлы между локальным диском и хранилищем BLOB-объектов Azure с помощью Python. 
 
-Дополнительные сведения об Обозревателе службы хранилища и BLOB-объектах см. в статье [Управление ресурсами хранилища BLOB-объектов Azure с помощью обозревателя хранилищ](../../vs-azure-tools-storage-explorer-blobs.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).
+В этом кратком руководстве вы узнали, как передавать и скачивать большие двоичные объекты, а также выводить их список с помощью Python.
+
+Чтобы просмотреть примеры приложений для хранилища BLOB-объектов, перейдите к следующему разделу:
+
+> [!div class="nextstepaction"]
+> [Примеры для пакета SDK хранилища BLOB-объектов Azure версии 12 для Python](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-blob/samples)
+
+* Чтобы узнать больше, ознакомьтесь с [пакетом SDK Azure для Python](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-blob/README.md).
+* Руководства, примеры, краткие руководства и другую документацию можно найти на странице [Azure для разработчиков Python](/azure/python/).

@@ -1,6 +1,6 @@
 ---
 title: Архитектура OPC Twin — Azure | Документация Майкрософт
-description: Архитектура двойника OPC
+description: В этой статье представлены общие сведения об архитектуре OPC Twin. В ней описывается обнаружение, активация, просмотр и мониторинг сервера.
 author: dominicbetts
 ms.author: dobett
 ms.date: 11/26/2018
@@ -8,12 +8,12 @@ ms.topic: overview
 ms.service: industrial-iot
 services: iot-industrialiot
 manager: philmea
-ms.openlocfilehash: 6ce9394f3d454bda5ead51f2c77a47db137a5136
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: b8d4424c92ff24c36650e34a5d050bdc5f0f9091
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67606181"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73819859"
 ---
 # <a name="opc-twin-architecture"></a>Архитектура двойника OPC
 

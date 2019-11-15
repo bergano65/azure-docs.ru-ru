@@ -1,19 +1,19 @@
 ---
-title: Обзор предварительной версии Azure HPC Cache
+title: Общие сведения об Azure HPC Cache
 description: Сведения об Azure HPC Cache, решения для быстрого доступа к файлам для высокопроизводительных вычислений
 author: ekpgh
 ms.service: hpc-cache
 ms.topic: overview
-ms.date: 09/24/2019
+ms.date: 10/30/2019
 ms.author: rohogue
-ms.openlocfilehash: bfbbcd2d7d1bb44e260bedda54ca38ed6860ea67
-ms.sourcegitcommit: 1c2659ab26619658799442a6e7604f3c66307a89
+ms.openlocfilehash: 2a008d22de5df8d091e868153205697b4bb343ee
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72254484"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73582128"
 ---
-# <a name="what-is-azure-hpc-cache-preview"></a>Что такое Azure HPC Cache? (предварительная версия)
+# <a name="what-is-azure-hpc-cache"></a>Что такое Azure HPC Cache?
 
 Azure HPC Cache ускоряет доступ к данным для задач высокопроизводительных вычислений (HPC). Azure HPC Cache обеспечивает масштабируемость облачных вычислений для имеющегося рабочего процесса благодаря кэшированию файлов в Azure. Эту службу можно использовать даже для рабочих процессов, в которых данные хранятся в каналах глобальной сети, например в локальной среде запоминающих устройств, подключаемых к сети, центра обработки данных.
 
@@ -54,13 +54,17 @@ Azure HPC Cache доступен в следующих регионах Azure:
 * Северная Европа
 * Западная Европа
 * Юго-Восточная Азия
+* Сидней
 * Западный регион США 2
+* Центральная Корея
 
 Последние сведения о доступности см. на [странице продукта "Azure HPC Cache "](https://azure.microsoft.com/services/hpc-cache).
 
-## <a name="preview-availability"></a>Доступность предварительной версии
+## <a name="service-availability"></a>Доступность службы
 
-Доступ к общедоступной предварительной версии Azure HPC Cache ограничен в целях обеспечения качества обслуживания. Запросите доступ, заполнив [эту форму](https://aka.ms/onboard-hpc-cache). После добавления подписки в список доступа можно создать тестовые кэши.
+Необходимо запросить доступ для каждой подписки, которая будет использоваться с Azure HPC Cache. Это ограничение помогает обеспечить качество обслуживания в первые месяцы после выпуска общедоступной версии.
+
+Запросите доступ, заполнив [эту форму](https://aka.ms/onboard-hpc-cache). После добавления подписки в список доступа можно создать кэши.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

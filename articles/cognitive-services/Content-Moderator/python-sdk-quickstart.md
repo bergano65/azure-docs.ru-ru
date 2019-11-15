@@ -1,20 +1,21 @@
 ---
 title: Краткое руководство. Клиентская библиотека Content Moderator для Python | Документация Майкрософт
-description: Начало работы с клиентской библиотекой Content Moderator для Python
+titleSuffix: Azure Cognitive Services
+description: Узнайте, как приступить к работе с клиентской библиотекой Content Moderator для Azure Cognitive Services для Python.
 services: cognitive-services
 author: PatrickFarley
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
 ms.topic: quickstart
-ms.date: 07/24/2019
+ms.date: 10/25/2019
 ms.author: pafarley
-ms.openlocfilehash: 62407467e3c63b1752ee6816325f097ad9a1f09e
-ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
+ms.openlocfilehash: 3978b4ec302bf4dd2390f2390c967ca6e12e67d5
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72755253"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73744409"
 ---
 # <a name="quickstart-content-moderator-client-library-for-python"></a>Краткое руководство. Клиентская библиотека Content Moderator для Python
 
@@ -295,7 +296,7 @@ This text contains the terms "term1" and "term2".
 
 ## <a name="create-a-review"></a>Создание проверки
 
-С помощью пакета SDK Python для Content Moderator можно передать содержимое в [средство проверки](https://contentmoderator.cognitive.microsoft.com) для его проверки человеком. См. также о [средстве проверки](./review-tool-user-guide/human-in-the-loop.md).
+С помощью пакета SDK Python для Content Moderator можно передать содержимое в [средство проверки](https://contentmoderator.cognitive.microsoft.com) для его проверки человеком. Чтобы узнать больше о средстве проверки, ознакомьтесь с разделом [Средство проверки Content Moderator](./review-tool-user-guide/human-in-the-loop.md).
 
 В следующем коде класс [ReviewsOperations](https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-contentmoderator/azure.cognitiveservices.vision.contentmoderator.operations.reviewsoperations?view=azure-python) используется для создания проверки, получения ее идентификатора и уточнения сведений о ней после выполнения действий пользователем-модератором на веб-портале средства проверки.
 
@@ -312,7 +313,7 @@ This text contains the terms "term1" and "term2".
 
 ### <a name="get-review-details"></a>Получение сведений о проверке
 
-Используйте следующий код для уточнении сведений о проверке. После создания проверки вы можете открыть средство проверки для непосредственного взаимодействия с содержимым. По завершении вы можете снова запустить этот код, чтобы получить результаты проверки.
+Используйте следующий код для уточнении сведений о проверке. После создания проверки вы можете открыть средство проверки для непосредственного взаимодействия с содержимым. Дополнительные сведения о том, как это сделать, приведены в [практическом руководстве по проверкам](https://docs.microsoft.com/azure/cognitive-services/content-moderator/review-tool-user-guide/review-moderated-images). По завершении вы можете снова запустить этот код, чтобы получить результаты проверки.
 
 [!code-python[](~/cognitive-services-quickstart-code/python/ContentModerator/ContentModeratorQuickstart.py?name=snippet_imagereview_getdetails)]
 

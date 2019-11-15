@@ -1,33 +1,35 @@
 ---
-title: Краткое руководство. Клиентская библиотека хранилища BLOB-объектов Azure для .NET
-description: В этом кратком руководстве вы узнаете, как использовать клиентскую библиотеку службы хранилища BLOB-объектов Azure для .NET для создания контейнера и большого двоичного объекта в хранилище BLOB-объектов. Далее вы узнаете, как скачать большой двоичный объект на локальный компьютер и как получить список всех больших двоичных объектов в контейнере.
+title: Краткое руководство. Использование библиотеки хранилища BLOB-объектов Azure версии 12 для .NET
+description: В этом кратком руководстве вы узнаете, как использовать клиентскую библиотеку службы хранилища BLOB-объектов Azure версии 12 для .NET для создания контейнера и большого двоичного объекта в хранилище BLOB-объектов. Далее вы узнаете, как скачать большой двоичный объект на локальный компьютер и как получить список всех больших двоичных объектов в контейнере.
 author: mhopkins-msft
 ms.author: mhopkins
-ms.date: 07/20/2019
+ms.date: 11/05/2019
 ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
-ms.openlocfilehash: 27ae562d38ee8734201299e10dbe6ac4be3cb2ee
-ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
+ms.openlocfilehash: 18f4053a2f8b1b5c880b46cf6eeb46c0dbf97f15
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71947651"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73825394"
 ---
-# <a name="quickstart-azure-blob-storage-client-library-for-net"></a>Краткое руководство. Клиентская библиотека хранилища BLOB-объектов Azure для .NET
+# <a name="quickstart-azure-blob-storage-client-library-v12-for-net"></a>Краткое руководство. Использование библиотеки хранилища BLOB-объектов Azure версии 12 для .NET
 
-Приступите к работе с клиентской библиотекой хранилища BLOB-объектов Azure для .NET. Хранилище BLOB-объектов Azure — это решение корпорации Майкрософт для хранения объектов в облаке. Чтобы установить пакет и испробовать пример кода для выполнения базовых задач, выполните приведенные здесь действия. Хранилище BLOB-объектов оптимизировано для хранения больших объемов неструктурированных данных.
+Приступите к работе с клиентской библиотекой хранилища BLOB-объектов Azure версии 12 для .NET. Хранилище BLOB-объектов Azure — это решение корпорации Майкрософт для хранения объектов в облаке. Чтобы установить пакет и испробовать пример кода для выполнения базовых задач, выполните приведенные здесь действия. Хранилище BLOB-объектов оптимизировано для хранения больших объемов неструктурированных данных.
 
-Клиентскую библиотеку хранилища BLOB-объектов Azure для .NET можно использовать для выполнения таких задач:
+> [!NOTE]
+> Чтобы приступить к работе с предыдущей версией пакета SDK, обратитесь к разделу [Краткое руководство. Клиентская библиотека хранилища BLOB-объектов Azure для .NET](storage-quickstart-blobs-dotnet-legacy.md).
+
+Клиентскую библиотеку хранилища BLOB-объектов Azure версии 12 для .NET можно использовать для выполнения таких задач:
 
 * Создание контейнера
-* установка разрешений для контейнера;
-* создание большого двоичного объекта в службе хранилища Azure;
-* скачивание большого двоичного объекта на локальный компьютер;
+* передача большого двоичного объекта в хранилище Azure;
 * перечисление всех больших двоичных объектов в контейнере;
+* скачивание большого двоичного объекта на локальный компьютер;
 * Удаление контейнера
 
-[Справочная документация по API](https://docs.microsoft.com/dotnet/api/overview/azure/storage?view=azure-dotnet) | [исходный код библиотеки](https://github.com/Azure/azure-storage-net/tree/master/Blob) | [пакет (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.Storage.Blob/) | [примеры](https://azure.microsoft.com/resources/samples/?sort=0&service=storage&platform=dotnet&term=blob)
+[Справочная документация по API](/dotnet/api/azure.storage.blobs) | [исходный код библиотеки](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/storage/Azure.Storage.Blobs) | [пакет (NuGet)](https://www.nuget.org/packages/Azure.Storage.Blobs/12.0.0) | [примеры](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/storage/Azure.Storage.Blobs/samples)
 
 [!INCLUDE [storage-multi-protocol-access-preview](../../../includes/storage-multi-protocol-access-preview.md)]
 
@@ -39,51 +41,36 @@ ms.locfileid: "71947651"
 
 ## <a name="setting-up"></a>Настройка
 
-В этом разделе рассматривается подготовка проекта для работы с клиентской библиотекой хранилища BLOB-объектов Azure для .NET.
+В этом разделе рассматривается подготовка проекта для работы с клиентской библиотекой хранилища BLOB-объектов Azure версии 12 для .NET.
 
 ### <a name="create-the-project"></a>Создание проекта
 
-Сначала создайте приложение .NET Core с именем *blob-quickstart*.
+Создайте приложение .NET Core с именем *BlobQuickstartV12*.
 
-1. В окне консоли (cmd, PowerShell или Bash) выполните команду `dotnet new`, чтобы создать консольное приложение с именем *blob-quickstart*. Эта команда создает простой проект Hello World на языке C# с одним файлом исходного кода: *Program.cs*.
-
-   ```console
-   dotnet new console -n blob-quickstart
-   ```
-
-2. Перейдите в только что созданную папку *blob-quickstart*, скомпилируйте приложение и убедитесь, что все прошло правильно.
+1. В окне консоли (командная строка, PowerShell или Bash) выполните команду `dotnet new`, чтобы создать консольное приложение *BlobQuickstartV12*. Эта команда создает простой проект Hello World на языке C# с одним файлом исходного кода: *Program.cs*.
 
    ```console
-   cd blob-quickstart
+   dotnet new console -n BlobQuickstartV12
    ```
+
+1. Переключитесь на только что созданный каталог *BlobQuickstartV12*.
 
    ```console
-   dotnet build
+   cd BlobQuickstartV12
    ```
 
-Ожидаемые выходные данные сборки будут выглядеть примерно следующим образом:
+1. В каталоге *BlobQuickstartV12* создайте каталог *data*. Это каталог для создания и хранения файлов данных больших двоичных объектов.
 
-```output
-C:\QuickStarts\blob-quickstart> dotnet build
-Microsoft (R) Build Engine version 16.0.450+ga8dc7f1d34 for .NET Core
-Copyright (C) Microsoft Corporation. All rights reserved.
-
-  Restore completed in 44.31 ms for C:\QuickStarts\blob-quickstart\blob-quickstart.csproj.
-  blob-quickstart -> C:\QuickStarts\blob-quickstart\bin\Debug\netcoreapp2.1\blob-quickstart.dll
-
-Build succeeded.
-    0 Warning(s)
-    0 Error(s)
-
-Time Elapsed 00:00:03.08
-```
+    ```console
+    mkdir data
+    ```
 
 ### <a name="install-the-package"></a>Установка пакета
 
 Оставаясь в каталоге приложения, установите клиентскую библиотеку хранилища BLOB-объектов Azure для пакета .NET с помощью команды `dotnet add package`.
 
 ```console
-dotnet add package Microsoft.Azure.Storage.Blob
+dotnet add package Azure.Storage.Blobs
 ```
 
 ### <a name="set-up-the-app-framework"></a>Настройка платформы приложения
@@ -91,36 +78,25 @@ dotnet add package Microsoft.Azure.Storage.Blob
 Из каталога проекта:
 
 1. Откройте файл *Program.cs* в редакторе.
-2. Удалите инструкцию `Console.WriteLine`.
-3. Добавьте директивы `using`.
-4. Создайте метод `ProcessAsync`, где будет размещаться основной код для примера.
-5. Выполните асинхронный вызов метода `ProcessAsync` из `Main`.
+1. Удалите инструкцию `Console.WriteLine("Hello World!");`.
+1. Добавьте директивы `using`.
+1. Обновите объявление метода `Main` для поддержки асинхронного кода.
 
 Вот этот код:
 
 ```csharp
+using Azure.Storage;
+using Azure.Storage.Blobs;
+using Azure.Storage.Blobs.Models;
 using System;
 using System.IO;
 using System.Threading.Tasks;
-using Microsoft.Azure.Storage;
-using Microsoft.Azure.Storage.Blob;
 
-namespace blob_quickstart
+namespace BlobQuickstartV12
 {
     class Program
     {
-        public static void Main()
-        {
-            Console.WriteLine("Azure Blob Storage - .NET quickstart sample\n");
-
-            // Run the examples asynchronously, wait for the results before proceeding
-            ProcessAsync().GetAwaiter().GetResult();
-
-            Console.WriteLine("Press any key to exit the sample application.");
-            Console.ReadLine();
-        }
-
-        private static async Task ProcessAsync()
+        static async Task Main()
         {
         }
     }
@@ -131,7 +107,7 @@ namespace blob_quickstart
 
 Когда пример приложения выполняет запрос к службе хранилища Azure, он должен быть авторизован. Для авторизации запроса добавьте в приложение учетные данные учетной записи хранения в виде строки подключения. Чтобы просмотреть учетные данные учетной записи хранения, выполните следующие действия:
 
-1. Перейдите на [портал Azure](https://portal.azure.com).
+1. Войдите на [портале Azure](https://portal.azure.com).
 2. Перейдите к учетной записи хранения.
 3. В разделе **Параметры** учетной записи хранения выберите параметр **Ключи доступа**. На этой странице вы увидите ключи доступа к учетной записи и полную строку подключения для каждого ключа.
 4. Найдите значение для параметра **Строка подключения** в разделе **Key1** и нажмите кнопку **Скопировать**, чтобы скопировать строку подключения. На следующем этапе вы добавите значение строки подключения в переменную среды.
@@ -156,11 +132,13 @@ setx CONNECT_STR "<yourconnectionstring>"
 export CONNECT_STR="<yourconnectionstring>"
 ```
 
-#### <a name="macos"></a>MacOS
+#### <a name="macos"></a>macOS
 
 ```bash
 export CONNECT_STR="<yourconnectionstring>"
 ```
+
+#### <a name="restart-programs"></a>Перезапуск программ
 
 После добавления переменной среды перезапустите все запущенные программы, которым может понадобиться считать переменную среды. Например, перезапустите среду разработки или редактор, прежде чем продолжить.
 
@@ -174,174 +152,154 @@ export CONNECT_STR="<yourconnectionstring>"
 
 На следующей схеме показана связь между этими ресурсами.
 
-![Схема архитектуры службы хранилища BLOB-объектов](./media/storage-quickstart-blobs-dotnet/blob1.png)
+![Схема архитектуры службы хранилища BLOB-объектов](./media/storage-blob-introduction/blob1.png)
 
 Используйте следующие классы .NET для взаимодействия с этими ресурсами:
 
-* [CloudStorageAccount](/dotnet/api/microsoft.azure.storage.cloudstorageaccount). Класс `CloudStorageAccount` представляет учетную запись хранения Azure. Этот класс используется для авторизации доступа к хранилищу BLOB-объектов с помощью ключей доступа к учетной записи.
-* [CloudBlobClient](/dotnet/api/microsoft.azure.storage.blob.cloudblobclient). Класс `CloudBlobClient` предоставляет точку доступа к службе BLOB-объектов в коде.
-* [CloudBlobContainer](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer). Класс `CloudBlobContainer` представляет контейнер больших двоичных объектов в коде.
-* [CloudBlockBlob](/dotnet/api/microsoft.azure.storage.blob.cloudblockblob). Объект `CloudBlockBlob` представляет блочный BLOB-объект в коде. Блочные большие двоичные объекты состоят из блоков данных, которыми можно управлять отдельно.
+* [BlobServiceClient](/dotnet/api/azure.storage.blobs.blobserviceclient). Класс `BlobServiceClient` позволяет управлять ресурсами службы хранилища Azure и контейнерами больших двоичных объектов.
+* [BlobContainerClient](/dotnet/api/azure.storage.blobs.blobcontainerclient). Класс `BlobContainerClient` позволяет управлять контейнерами службы хранилища Azure и содержащимися в них большими двоичными объектами.
+* [BlobClient](/dotnet/api/azure.storage.blobs.blobclient). Класс `BlobClient` позволяет управлять большими двоичными объектами службы хранилища Azure.
+* [BlobDownloadInfo](/dotnet/api/azure.storage.blobs.models.blobdownloadinfo). Класс `BlobDownloadInfo` представляет свойства и содержимое, возвращаемое при скачивании большого двоичного объекта.
 
 ## <a name="code-examples"></a>Примеры кода
 
 В этих примерах фрагментов кода показано, как выполнять следующие действия с помощью клиентской библиотеки хранилища BLOB-объектов Azure для .NET:
 
-   * [аутентификация клиента](#authenticate-the-client);
-   * [Создание контейнера](#create-a-container)
-   * [установка разрешений для контейнера](#set-permissions-on-a-container);
-   * [отправка больших двоичных объектов в контейнер](#upload-blobs-to-a-container);
-   * [перечисление больших двоичных объектов в контейнере](#list-the-blobs-in-a-container);
-   * [скачивание больших двоичных объектов](#download-blobs);
-   * [Удаление контейнера](#delete-a-container)
+* [Получение строки подключения](#get-the-connection-string)
+* [Создание контейнера](#create-a-container)
+* [отправка больших двоичных объектов в контейнер](#upload-blobs-to-a-container);
+* [перечисление больших двоичных объектов в контейнере](#list-the-blobs-in-a-container);
+* [скачивание больших двоичных объектов](#download-blobs);
+* [Удаление контейнера](#delete-a-container)
 
-### <a name="authenticate-the-client"></a>Аутентификация клиента
+### <a name="get-the-connection-string"></a>Получение строки подключения
 
-В приведенном ниже коде проверяется, содержит ли переменная среды строку подключения, которую можно проанализировать, чтобы создать объект [CloudStorageAccount](/dotnet/api/microsoft.azure.storage.cloudstorageaccount?view=azure-dotnet), указывающий на учетную запись хранения. Чтобы проверить, допустима ли строка подключения, используйте метод [TryParse](/dotnet/api/microsoft.azure.storage.cloudstorageaccount.tryparse?view=azure-dotnet). Если результаты выполнения метода `TryParse` успешны, он инициализирует переменную `storageAccount` и возвращает значение `true`.
+Приведенный ниже код извлекает строку подключения для учетной записи хранения из переменной среды, созданной в разделе [Настройка строки подключения хранилища](#configure-your-storage-connection-string).
 
-Добавьте этот код в метод `ProcessAsync`.
+Добавьте этот код в метод `Main`.
 
 ```csharp
-// Retrieve the connection string for use with the application. The storage 
-// connection string is stored in an environment variable on the machine 
-// running the application called CONNECT_STR. If the 
-// environment variable is created after the application is launched in a 
+Console.WriteLine("Azure Blob storage v12 - .NET quickstart sample\n");
+
+// Retrieve the connection string for use with the application. The storage
+// connection string is stored in an environment variable on the machine
+// running the application called CONNECT_STR. If the
+// environment variable is created after the application is launched in a
 // console or with Visual Studio, the shell or application needs to be closed
 // and reloaded to take the environment variable into account.
-string storageConnectionString = Environment.GetEnvironmentVariable("CONNECT_STR");
-
-// Check whether the connection string can be parsed.
-CloudStorageAccount storageAccount;
-if (CloudStorageAccount.TryParse(storageConnectionString, out storageAccount))
-{
-    // If the connection string is valid, proceed with operations against Blob
-    // storage here.
-    // ADD OTHER OPERATIONS HERE
-}
-else
-{
-    // Otherwise, let the user know that they need to define the environment variable.
-    Console.WriteLine(
-        "A connection string has not been defined in the system environment variables. " +
-        "Add an environment variable named 'CONNECT_STR' with your storage " +
-        "connection string as a value.");
-    Console.WriteLine("Press any key to exit the application.");
-    Console.ReadLine();
-}
+string connectionString = Environment.GetEnvironmentVariable("CONNECT_STR");
 ```
-
-> [!NOTE]
-> Чтобы выполнить все остальные операции в этой статье, замените `// ADD OTHER OPERATIONS HERE` в приведенном выше коде на фрагменты кода в следующих разделах.
 
 ### <a name="create-a-container"></a>Создание контейнера
 
-Для создания контейнера необходимо сначала создать экземпляр объекта [CloudBlobClient](/dotnet/api/microsoft.azure.storage.blob.cloudblobclient), указывающий на хранилище BLOB-объектов в учетной записи хранения. Затем создайте экземпляр объекта [CloudBlobContainer](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer). А после этого можно создать контейнер.
-
-В этом случае для создания контейнера код вызывает метод [CreateAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.createasync). Чтобы сделать имя контейнера уникальным, к нему добавляется значение GUID. В рабочей среде для создания контейнера (если он не имеется) предпочтительнее использовать метод [CreateIfNotExistsAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.createifnotexistsasync).
+Выберите имя нового контейнера. Приведенный ниже код добавляет к имени контейнера значение GUID, чтобы сделать это имя уникальным.
 
 > [!IMPORTANT]
-> Имена контейнеров должны состоять из знаков нижнего регистра. Дополнительные сведения об именовании контейнеров и больших двоичных объектов см. в статье [Naming and Referencing Containers, Blobs, and Metadata](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata) (Именование контейнеров, больших двоичных объектов и метаданных и ссылка на них).
+> Имена контейнеров должны состоять из знаков нижнего регистра. Дополнительные сведения об именовании контейнеров и больших двоичных объектов см. в статье [Naming and Referencing Containers, Blobs, and Metadata](/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata) (Именование контейнеров, больших двоичных объектов и метаданных и ссылка на них).
+
+Создайте экземпляр класса [BlobServiceClient](/dotnet/api/azure.storage.blobs.blobserviceclient). Затем вызовите метод [CreateBlobContainerAsync](/dotnet/api/azure.storage.blobs.blobserviceclient.createblobcontainerasync), чтобы создать контейнер в своей учетной записи хранения.
+
+Добавьте следующий код в конец метода `Main`.
 
 ```csharp
-// Create the CloudBlobClient that represents the 
-// Blob storage endpoint for the storage account.
-CloudBlobClient cloudBlobClient = storageAccount.CreateCloudBlobClient();
+// Create a BlobServiceClient object which will be used to create a container client
+BlobServiceClient blobServiceClient = new BlobServiceClient(connectionString);
 
-// Create a container called 'quickstartblobs' and 
-// append a GUID value to it to make the name unique.
-CloudBlobContainer cloudBlobContainer = 
-    cloudBlobClient.GetContainerReference("quickstartblobs" + 
-        Guid.NewGuid().ToString());
-await cloudBlobContainer.CreateAsync();
-```
+//Create a unique name for the container
+string containerName = "quickstartblobs" + Guid.NewGuid().ToString();
 
-### <a name="set-permissions-on-a-container"></a>Установка разрешений для контейнера
-
-Задайте разрешения для контейнера таким образом, чтобы все большие двоичные объекты в контейнере были общедоступными. Если большой двоичный объект общедоступен, к нему может получить анонимный доступ любой клиент.
-
-```csharp
-// Set the permissions so the blobs are public.
-BlobContainerPermissions permissions = new BlobContainerPermissions
-{
-    PublicAccess = BlobContainerPublicAccessType.Blob
-};
-await cloudBlobContainer.SetPermissionsAsync(permissions);
+// Create the container and return a container client object
+BlobContainerClient containerClient = await blobServiceClient.CreateBlobContainerAsync(containerName);
 ```
 
 ### <a name="upload-blobs-to-a-container"></a>Отправка больших двоичных объектов в контейнер
 
-Следующий фрагмент кода получает ссылку на объект `CloudBlockBlob`, вызвав метод [GetBlockBlobReference](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.getblockblobreference) для созданного ранее контейнера. После этого он передает локальный файл в большой двоичный объект, вызвав метод [UploadFromFileAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblockblob.uploadfromfileasync). С помощью этого метода создается большой двоичный объект, если он не был создан ранее, или же, если он имеется, происходит его замещение.
+Приведенный ниже фрагмент кода:
+
+1. Создает текстовый файл в локальном каталоге *data*.
+1. Возвращает ссылку на объект [BlobClient](/dotnet/api/azure.storage.blobs.blobclient), вызывая метод [GetBlobClient](/dotnet/api/azure.storage.blobs.blobcontainerclient.getblobclient) для контейнера из раздела [Создание контейнера](#create-a-container).
+1. Передает локальный текстовый файл в большой двоичный объект, вызывая метод [UploadAsync](/dotnet/api/azure.storage.blobs.blobclient.uploadasync). С помощью этого метода создается большой двоичный объект, если он не был создан ранее, или же, если он имеется, происходит его замещение.
+
+Добавьте следующий код в конец метода `Main`.
 
 ```csharp
-// Create a file in your local MyDocuments folder to upload to a blob.
-string localPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-string localFileName = "QuickStart_" + Guid.NewGuid().ToString() + ".txt";
-string sourceFile = Path.Combine(localPath, localFileName);
-// Write text to the file.
-File.WriteAllText(sourceFile, "Hello, World!");
+// Create a local file in the ./data/ directory for uploading and downloading
+string localPath = "./data/";
+string fileName = "quickstart" + Guid.NewGuid().ToString() + ".txt";
+string localFilePath = Path.Combine(localPath, fileName);
 
-Console.WriteLine("Temp file = {0}", sourceFile);
-Console.WriteLine("Uploading to Blob storage as blob '{0}'", localFileName);
+// Write text to the file
+await File.WriteAllTextAsync(localFilePath, "Hello, World!");
 
-// Get a reference to the blob address, then upload the file to the blob.
-// Use the value of localFileName for the blob name.
-CloudBlockBlob cloudBlockBlob = cloudBlobContainer.GetBlockBlobReference(localFileName);
-await cloudBlockBlob.UploadFromFileAsync(sourceFile);
+// Get a reference to a blob
+BlobClient blobClient = containerClient.GetBlobClient(fileName);
+
+Console.WriteLine("Uploading to Blob storage as blob:\n\t {0}\n", blobClient.Uri);
+
+// Open the file and upload its data
+using FileStream uploadFileStream = File.OpenRead(localFilePath);
+await blobClient.UploadAsync(uploadFileStream);
+uploadFileStream.Close();
 ```
 
 ### <a name="list-the-blobs-in-a-container"></a>Перечисление BLOB-объектов в контейнере
 
-Выведите список больших двоичных объектов в контейнере с помощью метода [ListBlobsSegmentedAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.listblobssegmentedasync). В этом случае в контейнер был добавлен лишь один большой двоичный объект, поэтому операция перечисления возвращает только его.
+Выведите список больших двоичных объектов в контейнере, вызвав метод [GetBlobsAsync](/dotnet/api/azure.storage.blobs.blobcontainerclient.getblobsasync). В этом случае в контейнер был добавлен лишь один большой двоичный объект, поэтому операция перечисления возвращает только его.
 
-Если больших двоичных объектов для возвращения в одном вызове слишком много (по умолчанию свыше 5000), метод `ListBlobsSegmentedAsync` возвращает сегмент общего результирующего набора и маркер продолжения. Чтобы извлечь следующий сегмент больших двоичных объектов, укажите маркер продолжения, возвращенный предыдущим вызовом. Продолжайте делать это до тех пор, пока значение маркера не будет равно NULL. Маркер продолжения со значением NULL указывает на то, что все большие двоичные объекты были получены. Код показывает, как использовать маркер продолжения.
+Добавьте следующий код в конец метода `Main`.
 
 ```csharp
-// List the blobs in the container.
-Console.WriteLine("List blobs in container.");
-BlobContinuationToken blobContinuationToken = null;
-do
-{
-    var results = await cloudBlobContainer.ListBlobsSegmentedAsync(null, blobContinuationToken);
-    // Get the value of the continuation token returned by the listing call.
-    blobContinuationToken = results.ContinuationToken;
-    foreach (IListBlobItem item in results.Results)
-    {
-        Console.WriteLine(item.Uri);
-    }
-} while (blobContinuationToken != null); // Loop while the continuation token is not null.
+Console.WriteLine("Listing blobs...");
 
+// List all blobs in the container
+await foreach (BlobItem blobItem in containerClient.GetBlobsAsync())
+{
+    Console.WriteLine("\t" + blobItem.Name);
+}
 ```
 
 ### <a name="download-blobs"></a>Скачивание больших двоичных объектов
 
-Скачайте созданный ранее большой двоичный объект в локальную файловую систему с помощью метода [DownloadToFileAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblob.downloadtofileasync). Пример кода добавляет суффикс _DOWNLOADED в имя большого двоичного объекта, чтобы можно было просмотреть оба файла в локальной файловой системе.
+Скачайте созданный ранее большой двоичный объект, вызвав метод [DownloadAsync](/dotnet/api/azure.storage.blobs.specialized.blobbaseclient.downloadasync). Пример кода добавляет суффикс "DOWNLOADED" к имени файла, чтобы в локальной файловой системе можно было просмотреть оба файла.
+
+Добавьте следующий код в конец метода `Main`.
 
 ```csharp
-// Download the blob to a local file, using the reference created earlier.
-// Append the string "_DOWNLOADED" before the .txt extension so that you 
-// can see both files in MyDocuments.
-string destinationFile = sourceFile.Replace(".txt", "_DOWNLOADED.txt");
-Console.WriteLine("Downloading blob to {0}", destinationFile);
-await cloudBlockBlob.DownloadToFileAsync(destinationFile, FileMode.Create);
+// Download the blob to a local file
+// Append the string "DOWNLOAD" before the .txt extension so you can see both files in MyDocuments
+string downloadFilePath = localFilePath.Replace(".txt", "DOWNLOAD.txt");
+
+Console.WriteLine("\nDownloading blob to\n\t{0}\n", downloadFilePath);
+
+// Download the blob's contents and save it to a file
+BlobDownloadInfo download = await blobClient.DownloadAsync();
+
+using FileStream downloadFileStream = File.OpenWrite(downloadFilePath);
+await download.Content.CopyToAsync(downloadFileStream);
+downloadFileStream.Close();
 ```
 
 ### <a name="delete-a-container"></a>Удаление контейнера
 
-Следующий код очищает созданные приложением ресурсы, полностью удаляя контейнер с помощью метода [CloudBlobContainer.DeleteAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.deleteasync). Кроме того, при необходимости можно удалить локальные файлы.
+Следующий код очищает созданные приложением ресурсы, полностью удаляя контейнер с помощью метода [DeleteAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.deleteasync). Он также удаляет локальные файлы, созданные приложением.
+
+Приложение приостанавливается для ввода пользователя, вызывая `Console.ReadLine`, перед удалением большого двоичного объекта, контейнера и локальных файлов. Это хорошая возможность проверить правильность создания ресурсов перед их удалением.
+
+Добавьте следующий код в конец метода `Main`.
 
 ```csharp
-Console.WriteLine("Press the 'Enter' key to delete the example files, " +
-    "example container, and exit the application.");
+// Clean up
+Console.Write("Press any key to begin clean up");
 Console.ReadLine();
-// Clean up resources. This includes the container and the two temp files.
-Console.WriteLine("Deleting the container");
-if (cloudBlobContainer != null)
-{
-    await cloudBlobContainer.DeleteIfExistsAsync();
-}
-Console.WriteLine("Deleting the source, and downloaded files");
-File.Delete(sourceFile);
-File.Delete(destinationFile);
+
+Console.WriteLine("Deleting blob container...");
+await containerClient.DeleteAsync();
+
+Console.WriteLine("Deleting the local source and downloaded files...");
+File.Delete(localFilePath);
+File.Delete(downloadFilePath);
+
+Console.WriteLine("Done");
 ```
 
 ## <a name="run-the-code"></a>Выполнение кода
@@ -358,40 +316,38 @@ dotnet build
 dotnet run
 ```
 
-Выходные данные в этом примере приложения будут выглядеть примерно так:
+Вы должны увидеть выходные данные приложения, как показано ниже.
 
 ```output
-Azure Blob storage - .NET Quickstart example
+Azure Blob storage v12 - .NET quickstart sample
 
-Created container 'quickstartblobs33c90d2a-eabd-4236-958b-5cc5949e731f'
+Uploading to Blob storage as blob:
+         https://mystorageacct.blob.core.windows.net/quickstartblobs60c70d78-8d93-43ae-954d-8322058cfd64/quickstart2fe6c5b4-7918-46cb-96f4-8c4c5cb2fd31.txt
 
-Temp file = C:\Users\myusername\Documents\QuickStart_c5e7f24f-a7f8-4926-a9da-96
-97c748f4db.txt
-Uploading to Blob storage as blob 'QuickStart_c5e7f24f-a7f8-4926-a9da-9697c748f
-4db.txt'
+Listing blobs...
+        quickstart2fe6c5b4-7918-46cb-96f4-8c4c5cb2fd31.txt
 
-Listing blobs in container.
-https://storagesamples.blob.core.windows.net/quickstartblobs33c90d2a-eabd-4236-
-958b-5cc5949e731f/QuickStart_c5e7f24f-a7f8-4926-a9da-9697c748f4db.txt
+Downloading blob to
+        ./data/quickstart2fe6c5b4-7918-46cb-96f4-8c4c5cb2fd31DOWNLOADED.txt
 
-Downloading blob to C:\Users\myusername\Documents\QuickStart_c5e7f24f-a7f8-4926
--a9da-9697c748f4db_DOWNLOADED.txt
-
-Press any key to delete the example files and example container.
+Press any key to begin clean up
+Deleting blob container...
+Deleting the local source and downloaded files...
+Done
 ```
 
-Если нажать клавишу **ВВОД**, приложение удалит контейнер хранилища и файлы. Перед удалением проверьте наличие двух файлов в папке *MyDocuments*. Вы можете открыть их и убедиться, что они идентичны. Скопируйте URL-адрес большого двоичного объекта из окна консоли и вставьте его в адресную строку браузера, чтобы просмотреть содержимое большого двоичного объекта.
+Прежде чем начать удаление, проверьте наличие двух файлов в папке *MyDocuments*. Вы можете открыть их и убедиться, что они идентичны.
 
-После проверки файлов нажмите любую клавишу для завершения демонстрации и удаления тестовых файлов.
+После проверки файлов нажмите клавишу **ВВОД**, чтобы завершить работу с демонстрационной версией и удалить тестовые файлы.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 В этом кратком руководстве вы узнали, как передавать, загружать и перечислять файлы в большие двоичные объекты с помощью .NET.
 
-Сведения о создании веб-приложения, которое передает образ в хранилище BLOB-объектов, см. в этой статье:
+Чтобы просмотреть примеры приложений для хранилища BLOB-объектов, перейдите к следующему разделу:
 
 > [!div class="nextstepaction"]
-> [Передача и обработка образа](storage-upload-process-images.md)
+> [Примеры для пакета SDK хранилища BLOB-объектов Azure версии 12 для .NET](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/storage/Azure.Storage.Blobs/samples)
 
+* Руководства, примеры, краткие руководства и другую документацию можно найти на странице [Azure для разработчиков .NET и .NET Core](/dotnet/azure/).
 * Дополнительные сведения о .NET Core см. в статье [Get started with .NET in 10 minutes](https://www.microsoft.com/net/learn/get-started/) (Быстрое начало работы с .NET).
-* Пример приложения, которое можно развернуть из Visual Studio для Windows, см. в записи блога [.NET Photo Gallery Web Application Sample with Azure Blob Storage](https://azure.microsoft.com/resources/samples/storage-blobs-dotnet-webapp/) (Пример веб-приложения .NET "Фотоальбом" с хранилищем BLOB-объектов Azure).

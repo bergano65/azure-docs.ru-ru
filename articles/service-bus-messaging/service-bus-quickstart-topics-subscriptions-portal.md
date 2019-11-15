@@ -1,19 +1,19 @@
 ---
-title: Краткое руководство. Создание разделов и подписок служебной шины на портале Azure | Документация Майкрософт
-description: Из этого краткого руководства вы узнаете, как создать раздел служебной шины и подписки на этот раздел с помощью портала Azure.
+title: Краткое руководство. Создание раздела служебной шины и подписок на него с помощью портала Azure
+description: Краткое руководство. Из этого краткого руководства вы узнаете, как создать раздел служебной шины и подписки на этот раздел с помощью портала Azure.
 services: service-bus-messaging
 author: spelluru
 manager: timlt
 ms.service: service-bus-messaging
 ms.topic: quickstart
-ms.date: 04/15/2019
+ms.date: 11/05/2019
 ms.author: spelluru
-ms.openlocfilehash: a392f8b11a7ab1ad72f4da289c54e34b022f1ea6
-ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
+ms.openlocfilehash: 6788bf43ef97daf5ef2f823a502c223d718abaac
+ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65990314"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73718861"
 ---
 # <a name="quickstart-use-the-azure-portal-to-create-a-service-bus-topic-and-subscriptions-to-the-topic"></a>Краткое руководство. Создание раздела служебной шины и подписок на него с помощью портала Azure
 В этом кратком руководстве с помощью портала Azure вы создадите раздел служебной шины, а затем создадите подписки на этот раздел. 

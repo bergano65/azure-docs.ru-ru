@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 09/25/2019
 ms.author: abpati
 ms.custom: aaddev
-ms.openlocfilehash: 241935afa023162a35559cd3c46206efa7a7835f
-ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
+ms.openlocfilehash: d9349391ad9af1a4ec1c84b586f825f3f7632ff8
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72240178"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73815754"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-a-python-web-app"></a>Краткое руководство. Добавление возможности входа в веб-приложение Python с помощью учетной записи Майкрософт
 
@@ -74,6 +74,13 @@ ms.locfileid: "72240178"
 >      - Выберите срок действия ключа**в 1 год**.
 >      - При нажатии кнопки **Добавить** будет отображаться значение ключа.
 >      - Скопируйте значение ключа. Оно понадобится вам позднее.
+> 1. Выберите раздел **Разрешения API**.
+>
+>      - Нажмите кнопку **Добавить разрешение**.
+>      - Убедитесь, что вкладка **API Майкрософт** выбрана.
+>      - В разделе *Часто используемые интерфейсы API Microsoft* щелкните **Microsoft Graph**.
+>      - В разделе **Делегированные разрешения** убедитесь, что выбраны нужные разрешения: **User.ReadBasic.All**. При необходимости используйте поле поиска.
+>      - Нажмите кнопку **Добавить разрешения**.
 >
 > [!div class="sxs-lookup" renderon="portal"]
 >
@@ -83,9 +90,10 @@ ms.locfileid: "72240178"
 >
 > 1. Добавьте URL-адрес для ответа как`http://localhost:5000/getAToken`.
 > 1. Создание Секрета клиента.
+> 1. Добавьте делегированное разрешение API Microsoft Graph User.ReadBasic.All.
 >
 > > [!div renderon="portal" id="makechanges" class="nextstepaction"]
-> > [Внести это изменение для меня]()
+> > [Внести эти изменения для меня]()
 > > [!div id="appconfigured" class="alert alert-info"]
 > > ![Уже настроено](media/quickstart-v2-aspnet-webapp/green-check.png) Ваше приложение настроено с использованием этого атрибута
 
@@ -100,8 +108,9 @@ ms.locfileid: "72240178"
 1. Откройте файл **app_config.py**, который можно найти в корневой папке, и замените его следующим фрагментом кода:
 
 ```python
-CLIENT_SECRET = "Enter_the_Client_Secret_Here"
 CLIENT_ID = "Enter_the_Application_Id_here"
+CLIENT_SECRET = "Enter_the_Client_Secret_Here"
+AUTHORITY = "https://login.microsoftonline.com/Enter_the_Tenant_Name_Here"
 ```
 
 > [!div renderon="docs"]
@@ -109,6 +118,7 @@ CLIENT_ID = "Enter_the_Application_Id_here"
 >
 > - `Enter_the_Application_Id_here` — идентификатор регистрируемого приложения.
 > - `Enter_the_Client_Secret_Here` — это **Секрет клиента**, созданного вами в пункте **Сертификаты и Секреты** для зарегистрированного приложения.
+> - `Enter_the_Tenant_Name_Here` — это значение **Идентификатор каталога (клиента)** приложения, которое вы зарегистрировали.
 
 #### <a name="step-4-run-the-code-sample"></a>Шаг 4. Запуск примера кода
 
@@ -123,6 +133,25 @@ CLIENT_ID = "Enter_the_Application_Id_here"
    ```Shell
    python app.py
    ```
+   > [!IMPORTANT]
+   > В этом кратком руководстве приложение использует секрет клиента для собственной идентификации в качестве конфиденциального клиента. Так как секрет клиента добавляется в качестве обычного текста в файлы проекта, из соображениям безопасности рекомендуется использовать сертификат вместо секрета клиента, прежде чем использовать приложение в качестве рабочего. Дополнительные сведения о том, как использовать сертификат, можно найти в [этих инструкциях](https://docs.microsoft.com/azure/active-directory/develop/active-directory-certificate-credentials).
+
+## <a name="more-information"></a>Дополнительные сведения
+
+### <a name="getting-msal"></a>Получение MSAL
+MSAL — это библиотека, используемая для выполнения входа пользователей и запроса маркеров, которые нужны для доступа к API, защищенному платформой удостоверений Майкрософт.
+MSAL для Python можно добавить в приложение с помощью Pip.
+
+```Shell
+pip install msal
+```
+
+### <a name="msal-initialization"></a>Инициализация MSAL
+Вы можете добавить ссылку на MSAL для Python, добавив следующий код в начало файла, в котором будет использоваться MSAL:
+
+```Python
+import msal
+```
 
 ## <a name="next-steps"></a>Дополнительная информация
 

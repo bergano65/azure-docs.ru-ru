@@ -10,12 +10,12 @@ ms.topic: overview
 ms.date: 08/07/2019
 ms.author: cgillum
 ms.reviewer: azfuncdf
-ms.openlocfilehash: a917a823d47d6a072cf5a3ee5d636b432913df9a
-ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
+ms.openlocfilehash: 0b85d6fbe8e66b94bad372ccb29e5489dd81587b
+ms.sourcegitcommit: b2fb32ae73b12cf2d180e6e4ffffa13a31aa4c6f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71299444"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73614785"
 ---
 # <a name="what-are-durable-functions"></a>Что такое Устойчивые функции?
 
@@ -57,7 +57,7 @@ ms.locfileid: "71299444"
 ```csharp
 [FunctionName("Chaining")]
 public static async Task<object> Run(
-    [OrchestrationTrigger] DurableOrchestrationContext context)
+    [OrchestrationTrigger] IDurableOrchestrationContext context)
 {
     try
     {
@@ -73,7 +73,7 @@ public static async Task<object> Run(
 }
 ```
 
-#### <a name="javascript-functions-2x-only"></a>JavaScript (только для решения "Функции" версии 2.x)
+#### <a name="javascript-functions-20-only"></a>JavaScript (только Функции 2.0)
 
 ```javascript
 const df = require("durable-functions");
@@ -88,7 +88,7 @@ module.exports = df.orchestrator(function*(context) {
 
 В этом примере значения `F1`, `F2`, `F3` и `F4` являются именами других функций в приложении-функции. Поток управления можно реализовать с помощью обычных принудительных конструкций программирования. Код выполняется сверху вниз. Код может включать в себя имеющуюся семантику языка потока управления, такую ​​как условные обозначения и циклы. Вы можете включить логику обработки ошибок в блоках `try`/`catch`/`finally`.
 
-Вы можете использовать параметр `context` DurableOrchestrationContext \(.NET\) и объект `context.df` (JavaScript) для вызова других функций по имени, передачи параметров и возврата выходных данных функции. Каждый раз, когда код вызывает `await` (C#) или `yield` (JavaScript), платформа Устойчивых функций создает контрольные точки выполнения текущего экземпляра функции. Если процесс или виртуальная машина перезапускается во время выполнения, экземпляр функции возобновляется из предыдущего вызова `await` или `yield`. Этот процесс описан в следующем разделе Шаблон 2: развертывание и объединение.
+Вы можете использовать параметр `context` [IDurableOrchestrationContext] \(.NET\) и объект `context.df` (JavaScript) для вызова других функций по имени, передачи параметров и возврата выходных данных функции. Каждый раз, когда код вызывает `await` (C#) или `yield` (JavaScript), платформа Устойчивых функций создает контрольные точки выполнения текущего экземпляра функции. Если процесс или виртуальная машина перезапускается во время выполнения, экземпляр функции возобновляется из предыдущего вызова `await` или `yield`. Этот процесс описан в следующем разделе Шаблон 2: развертывание и объединение.
 
 > [!NOTE]
 > Объект `context` в JavaScript представляет не только параметр [DurableOrchestrationContext], а весь [контекст функции](../functions-reference-node.md#context-object).
@@ -108,7 +108,7 @@ module.exports = df.orchestrator(function*(context) {
 ```csharp
 [FunctionName("FanOutFanIn")]
 public static async Task Run(
-    [OrchestrationTrigger] DurableOrchestrationContext context)
+    [OrchestrationTrigger] IDurableOrchestrationContext context)
 {
     var parallelTasks = new List<Task<int>>();
 
@@ -128,7 +128,7 @@ public static async Task Run(
 }
 ```
 
-#### <a name="javascript-functions-2x-only"></a>JavaScript (только для решения "Функции" версии 2.x)
+#### <a name="javascript-functions-20-only"></a>JavaScript (только Функции 2.0)
 
 ```javascript
 const df = require("durable-functions");
@@ -204,7 +204,7 @@ Content-Type: application/json
 
 ![Схема шаблона мониторинга](./media/durable-functions-concepts/monitor.png)
 
-Благодаря нескольким строкам кода можно использовать Устойчивые функции, чтобы создать несколько мониторингов, которые наблюдают за произвольными конечными точками. Работа мониторингов может приостановиться, если выполнено условие, или ее можно завершить с помощью параметра [DurableOrchestrationClient](durable-functions-instance-management.md). Можно изменить интервал мониторинга `wait` в зависимости от определенного условия (например, экспоненциальной задержки). 
+Благодаря нескольким строкам кода можно использовать Устойчивые функции, чтобы создать несколько мониторингов, которые наблюдают за произвольными конечными точками. Работа мониторов может приостановиться, если выполнено условие, или ее можно завершить с помощью параметра `IDurableOrchestrationClient`. Можно изменить интервал мониторинга `wait` в зависимости от определенного условия (например, экспоненциальной задержки). 
 
 В следующем коде реализуется простой мониторинг:
 
@@ -213,7 +213,7 @@ Content-Type: application/json
 ```csharp
 [FunctionName("MonitorJobStatus")]
 public static async Task Run(
-    [OrchestrationTrigger] DurableOrchestrationContext context)
+    [OrchestrationTrigger] IDurableOrchestrationContext context)
 {
     int jobId = context.GetInput<int>();
     int pollingInterval = GetPollingInterval();
@@ -238,7 +238,7 @@ public static async Task Run(
 }
 ```
 
-#### <a name="javascript-functions-2x-only"></a>JavaScript (только для решения "Функции" версии 2.x)
+#### <a name="javascript-functions-20-only"></a>JavaScript (только Функции 2.0)
 
 ```javascript
 const df = require("durable-functions");
@@ -285,7 +285,7 @@ module.exports = df.orchestrator(function*(context) {
 ```csharp
 [FunctionName("ApprovalWorkflow")]
 public static async Task Run(
-    [OrchestrationTrigger] DurableOrchestrationContext context)
+    [OrchestrationTrigger] IDurableOrchestrationContext context)
 {
     await context.CallActivityAsync("RequestApproval", null);
     using (var timeoutCts = new CancellationTokenSource())
@@ -307,7 +307,7 @@ public static async Task Run(
 }
 ```
 
-#### <a name="javascript-functions-2x-only"></a>JavaScript (только для решения "Функции" версии 2.x)
+#### <a name="javascript-functions-20-only"></a>JavaScript (только Функции 2.0)
 
 ```javascript
 const df = require("durable-functions");
@@ -331,13 +331,13 @@ module.exports = df.orchestrator(function*(context) {
 
 Для создания устойчивого таймера вызовите `context.CreateTimer` (.NET) или `context.df.createTimer` (JavaScript). Уведомление поступает событию `context.WaitForExternalEvent` (.NET) или `context.df.waitForExternalEvent` (JavaScript). Затем `Task.WhenAny` (.NET) или `context.df.Task.any` (JavaScript) вызывается для того, чтобы решить, следует ли ускорить процесс (сначала время ожидания истечет) или утвердить процесс (утверждение получено до истечения времени ожидания).
 
-Внешний клиент может доставить уведомление о событии функции оркестратора, находящейся в состоянии ожидания, как через [встроенные API-интерфейсы HTTP](durable-functions-http-api.md#raise-event), так и с помощью API [DurableOrchestrationClient.RaiseEventAsync](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClient.html#Microsoft_Azure_WebJobs_DurableOrchestrationClient_RaiseEventAsync_System_String_System_String_System_Object_) из другой функции:
+Внешний клиент может доставить уведомление о событии в функцию оркестратора, находящуюся в состоянии ожидания, как через [встроенные интерфейсы API HTTP](durable-functions-http-api.md#raise-event), так и с помощью метода `RaiseEventAsync` (.NET) или `raiseEvent` (JavaScript) из другой функции.
 
 ```csharp
 [FunctionName("RaiseEventToOrchestration")]
 public static async Task Run(
     [HttpTrigger] string instanceId,
-    [OrchestrationClient] DurableOrchestrationClient client)
+    [DurableClient] IDurableOrchestrationClient client)
 {
     bool isApproved = true;
     await client.RaiseEventAsync(instanceId, "ApprovalEvent", isApproved);
@@ -358,7 +358,7 @@ module.exports = async function (context) {
 curl -d "true" http://localhost:7071/runtime/webhooks/durabletask/instances/{instanceId}/raiseEvent/ApprovalEvent -H "Content-Type: application/json"
 ```
 
-### <a name="aggregator"></a>Шаблон 6. Агрегатор (предварительная версия)
+### <a name="aggregator"></a>Шаблон 6. Агрегатор
 
 Шестой шаблон заключается в статистической обработке данных событий за определенный период времени в одну доступную для адресации *сущность*. В этом шаблоне данные, для которых выполняется агрегирование, могут поступать из нескольких источников, могут быть доставлены пакетами или разбросаны по длительным временным периодам. Агрегатору может потребоваться выполнить действия над данными событий по мере их поступления, а внешним клиентам может потребоваться запросить агрегированные данные.
 
@@ -366,33 +366,50 @@ curl -d "true" http://localhost:7071/runtime/webhooks/durabletask/instances/{ins
 
 Сложности при реализации этого шаблона с обычными функциями без отслеживания состояния заключаются в том, что управление параллелизмом крайне усложняется. Нужно не только беспокоиться о том, что несколько потоков одновременно изменяют одни и те же данные, также важно и то, чтобы агрегатор одновременно выполнялся только на одной виртуальной машине.
 
-Используя [функцию устойчивой сущности](durable-functions-preview.md#entity-functions), можно легко реализовать этот шаблон как единую функцию.
+[Устойчивые сущности](durable-functions-entities.md) можно использовать, чтобы легко реализовать этот шаблон как отдельную функцию.
 
 ```csharp
 [FunctionName("Counter")]
 public static void Counter([EntityTrigger] IDurableEntityContext ctx)
 {
     int currentValue = ctx.GetState<int>();
-
     switch (ctx.OperationName.ToLowerInvariant())
     {
         case "add":
             int amount = ctx.GetInput<int>();
-            currentValue += amount;
+            ctx.SetState(currentValue + amount);
             break;
         case "reset":
-            currentValue = 0;
+            ctx.SetState(0);
             break;
         case "get":
             ctx.Return(currentValue);
             break;
     }
-
-    ctx.SetState(currentValue);
 }
 ```
 
-Устойчивые сущности также можно моделировать как классы .NET. Эта модель может быть полезной, если список операций является фиксированным и становится большим. Следующий пример представляет собой эквивалентную реализацию сущности `Counter` с помощью классов и методов .NET.
+```javascript
+const df = require("durable-functions");
+
+module.exports = df.entity(function(context) {
+    const currentValue = context.df.getState(() => 0);
+    switch (context.df.operationName) {
+        case "add":
+            const amount = context.df.getInput();
+            context.df.setState(currentValue + amount);
+            break;
+        case "reset":
+            context.df.setState(0);
+            break;
+        case "get":
+            context.df.return(currentValue);
+            break;
+    }
+});
+```
+
+Устойчивые сущности можно также моделировать как классы в .NET. Эта модель может быть полезной, если список операций является фиксированным и становится большим. Следующий пример представляет собой эквивалентную реализацию сущности `Counter` с помощью классов и методов .NET.
 
 ```csharp
 public class Counter
@@ -418,7 +435,7 @@ public class Counter
 [FunctionName("EventHubTriggerCSharp")]
 public static async Task Run(
     [EventHubTrigger("device-sensor-events")] EventData eventData,
-    [OrchestrationClient] IDurableOrchestrationClient entityClient)
+    [DurableClient] IDurableOrchestrationClient entityClient)
 {
     var metricType = (string)eventData.Properties["metric"];
     var delta = BitConverter.ToInt32(eventData.Body, eventData.Body.Offset);
@@ -429,10 +446,21 @@ public static async Task Run(
 }
 ```
 
-Динамически создаваемые прокси-серверы также доступны для сигнализации сущностям типобезопасным способом. Кроме сигнализации, клиенты также могут запрашивать состояние функции сущности с помощью [типобезопасных методов](durable-functions-bindings.md#entity-client-usage) в привязке клиента оркестрации.
-
 > [!NOTE]
-> Функции сущностей на данный момент доступны только в .NET как часть [Устойчивых функций версии 2.0 (предварительная версия)](durable-functions-preview.md).
+> Динамически создаваемые прокси-серверы также доступны в .NET для сигнализации сущностям типобезопасным способом. Кроме сигнализации, клиенты также могут запрашивать состояние функции сущности с помощью [типобезопасных методов](durable-functions-bindings.md#entity-client-usage) в привязке клиента оркестрации.
+
+
+```javascript
+const df = require("durable-functions");
+
+module.exports = async function (context) {
+    const client = df.getClient(context);
+    const entityId = new df.EntityId("Counter", "myCounter");
+    await context.df.signalEntity(entityId, "add", 1);
+};
+```
+
+Функции сущности доступны в [Устойчивых функциях 2.0](durable-functions-versions.md) и более поздних версиях.
 
 ## <a name="the-technology"></a>Технология
 

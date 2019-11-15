@@ -1,6 +1,6 @@
 ---
-title: Подключение примера устройства IoT Plug and Play (предварительная версия) к Центру Интернета вещей | Документация Майкрософт
-description: Создайте и запустите пример кода устройства IoT Plug and Play (предварительная версия), который подключается к Центру Интернета вещей. С помощью обозревателя Интернета вещей Azure просматривайте сведения, отправленные устройством в центр.
+title: Подключение примера кода устройства IoT Plug and Play (предварительная версия) в Windows к Центру Интернета вещей | Документация Майкрософт
+description: Создайте и запустите пример кода устройства IoT Plug and Play (предварительная версия) в Windows, который подключается к Центру Интернета вещей. С помощью обозревателя Интернета вещей Azure просматривайте сведения, отправленные устройством в центр.
 author: ChrisGMsft
 ms.author: chrisgre
 ms.date: 08/02/2019
@@ -8,14 +8,14 @@ ms.topic: quickstart
 ms.service: iot-pnp
 services: iot-pnp
 ms.custom: mvc
-ms.openlocfilehash: 4802c120f4722796fcad4ea99f25adad368451fd
-ms.sourcegitcommit: b8578b14c8629c4e4dea4c2e90164e42393e8064
+ms.openlocfilehash: 2dd5d197851b0090ac1af7bbde5a1ad1b951c785
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70806534"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73569911"
 ---
-# <a name="quickstart-connect-a-sample-iot-plug-and-play-preview-device-application-to-iot-hub"></a>Краткое руководство. Подключение примера приложения IoT Plug and Play (предварительная версия) к Центру Интернета вещей
+# <a name="quickstart-connect-a-sample-iot-plug-and-play-preview-device-application-running-on-windows-to-iot-hub"></a>Краткое руководство. Подключение примера приложения устройства IoT Plug and Play (предварительная версия) в Windows к Центру Интернета вещей
 
 В этом кратком руководстве показано, как создать пример приложения устройства IoT Plug and Play, подключить его к Центру Интернета вещей и с помощью обозревателя IoT Azure просмотреть сведения, отправляемые в Центр. Пример приложения написан на языке C и включен в пакет SDK для устройств Azure IoT для C. Разработчик решения может использовать обозреватель IoT Azure, чтобы ознакомиться с возможностями устройства IoT Plug and Play, не просматривая код устройства.
 
@@ -23,7 +23,7 @@ ms.locfileid: "70806534"
 
 Для выполнения инструкций, указанных в этом кратком руководстве, вам необходимо установить на локальный компьютер следующее программное обеспечение:
 
-* [Visual Studio (Community, Professional или Enterprise)](https://visualstudio.microsoft.com/downloads/). При установке Visual Studio обязательно добавьте компонент **Диспетчер пакетов NuGet** и рабочую нагрузку **Разработка классических приложений на C++** .
+* [Средства сборки для Visual Studio](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=BuildTools&rel=16) с рабочими нагрузками **средств сборки C++** и **компонентов диспетчера пакетов NuGet**. Допускается также [Visual Studio 2019, Visual Studio 2017 или Visual Studio 2015 (выпуски Community, Professional или Enterprise)](https://visualstudio.microsoft.com/downloads/) с теми же рабочими нагрузками.
 * [Git](https://git-scm.com/download/).
 * [CMake](https://cmake.org/download/).
 
@@ -38,7 +38,7 @@ ms.locfileid: "70806534"
 Для выполнения инструкций, приведенных в этом кратком руководстве, также необходим Центр Интернета вещей Azure в подписке Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 > [!NOTE]
-> На этапе общедоступной предварительной версии функции IoT Plug and Play доступны только в центрах Интернета вещей, созданных в таких регионах, как **центральная часть США**, **Северная Европа** и **Восточная Япония**.
+> На этапе общедоступной предварительной версии функции IoT Plug and Play доступны только в центрах Интернета вещей, созданных в таких регионах, как **Центральная часть США**, **Северная Европа** и **Восточная Япония**.
 
 Добавьте расширение Интернета вещей Microsoft Azure в интерфейсе командной строки Azure:
 

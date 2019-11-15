@@ -1,20 +1,20 @@
 ---
-title: Передача, скачивание, составление списков и удаление больших двоичных объектов с помощью пакета SDK версии 10 службы хранилища Azure для JavaScript
-description: Создание, передача и удаление больших двоичных объектов и контейнеров в Node.js с помощью службы хранилища Azure
+title: Краткое руководство. Использование клиентской библиотеки хранилища BLOB-объектов Azure версии 10 для JavaScript
+description: Создание, передача и удаление больших двоичных объектов и контейнеров в Node.js с помощью клиентской библиотеки службы хранилища Azure версии 10 для JavaScript.
 author: mhopkins-msft
 ms.author: mhopkins
 ms.date: 09/24/2019
 ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
-ms.openlocfilehash: f8c7de63f2bd4b7329e8ae6a53123c9c1ea035af
-ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
+ms.openlocfilehash: b909da5da0d7352d4086222fe0411ac37668bd92
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71240445"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73825328"
 ---
-# <a name="quickstart-upload-download-list-and-delete-blobs-using-azure-storage-v10-sdk-for-javascript"></a>Краткое руководство. Передача, скачивание, составление списков и удаление больших двоичных объектов с помощью пакета SDK версии 10 службы хранилища Azure для JavaScript
+# <a name="quickstart-azure-blob-storage-client-library-v10-for-javascript"></a>Краткое руководство. Использование клиентской библиотеки хранилища BLOB-объектов Azure версии 10 для JavaScript
 
 Из этого краткого руководства вы узнаете, как использовать [пакет SDK версии 10 службы хранилища Azure для JavaScript](https://github.com/Azure/azure-sdk-for-js) в Node.js для передачи, загрузки, составления списков и удаления больших двоичных объектов и управления контейнерами.
 

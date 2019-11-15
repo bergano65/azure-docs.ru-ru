@@ -1,5 +1,5 @@
 ---
-title: Создание функции, активируемой HTTP, в Azure
+title: Создание функции Python, активируемой HTTP, в Azure
 description: Узнайте, как создать первую функцию Python в Azure с помощью Azure Functions Core Tools и Azure CLI.
 author: ggailey777
 ms.author: glenga
@@ -9,14 +9,14 @@ ms.service: azure-functions
 ms.custom: mvc
 ms.devlang: python
 manager: gwallace
-ms.openlocfilehash: f2602e5a13f83090291656e7062c74c245bc6568
-ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
+ms.openlocfilehash: 791348088d909785b36934c3b9a2ae00fc0acbb7
+ms.sourcegitcommit: 6c2c97445f5d44c5b5974a5beb51a8733b0c2be7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72693347"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73622032"
 ---
-# <a name="create-an-http-triggered-function-in-azure"></a>Создание функции, активируемой HTTP, в Azure
+# <a name="create-an-http-triggered-python-function-in-azure"></a>Создание функции Python, активируемой HTTP, в Azure
 
 В этой статье показано, как использовать программы командной строки для создания проекта Python, выполняющегося в решении "Функции Azure". Вы также создаете функцию, запускаемую по HTTP-запросу. Наконец, вы опубликуете проект для выполнения в качестве [независимой от сервера функции](functions-scale.md#consumption-plan) в Azure.
 

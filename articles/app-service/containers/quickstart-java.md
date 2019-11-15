@@ -16,12 +16,12 @@ ms.topic: quickstart
 ms.date: 03/27/2019
 ms.author: msangapu
 ms.custom: mvc, seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: 2d486a5e181e9131ef7a1e91f52018fb2be82dc1
-ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
+ms.openlocfilehash: 3b011d3d7dc881d44fdcafb29efacf9548866d7a
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71105249"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73747727"
 ---
 # <a name="quickstart-create-a-java-app-on-azure-app-service-on-linux"></a>Краткое руководство. Создание приложения Java в Службе приложений Azure в Linux
 
@@ -47,44 +47,23 @@ mvn archetype:generate -DgroupId=example.demo -DartifactId=helloworld -Darchetyp
 
 ## <a name="configure-the-maven-plugin"></a>Настройка подключаемого модуля Maven
 
-Для развертывания из Maven используйте редактор кода в Cloud Shell, чтобы открыть проект файла `pom.xml` в каталоге `helloworld`. 
-
-```bash
-code pom.xml
-```
-
-Затем добавьте следующее определение подключаемого модуля в элемент `<build>` файла `pom.xml`.
-
-```xml
-<plugins>
-    <!--*************************************************-->
-    <!-- Deploy to Tomcat in App Service Linux           -->
-    <!--*************************************************-->
-    <plugin>
-        <groupId>com.microsoft.azure</groupId>
-        <artifactId>azure-webapp-maven-plugin</artifactId>
-        <version>1.7.0</version>       
-    </plugin>
-</plugins>
-```
-
 В процессе развертывания для Службы приложений Azure используются данные учетной записи из Azure CLI. Прежде чем продолжить, [войдите с помощью Azure CLI](/cli/azure/authenticate-azure-cli?view=azure-cli-latest).
 
 ```azurecli
 az login
 ```
 
-Затем можно настроить развертывание, выполнить в командной строке команду Maven `mvn azure-webapp:config` и использовать конфигурации по умолчанию, нажимая клавишу **ВВОД**, пока не появится строка **Confirm (Y/N)** (Подтверждение (Д/Н)), затем нажмите клавишу **Y** и завершите настройку.
+Затем можно настроить развертывание, выполнить в командной строке команду Maven `mvn com.microsoft.azure:azure-webapp-maven-plugin:1.8.0:config` и использовать конфигурации по умолчанию, нажимая клавишу **ВВОД**, пока не появится строка **Confirm (Y/N)** (Подтверждение (Д/Н)), затем нажмите клавишу **Y** и завершите настройку.
 
 ```cmd
-~@Azure:~/helloworld$ mvn azure-webapp:config
+~@Azure:~/helloworld$ mvn com.microsoft.azure:azure-webapp-maven-plugin:1.8.0:config
 [INFO] Scanning for projects...
 [INFO]
 [INFO] ----------------------< example.demo:helloworld >-----------------------
 [INFO] Building helloworld Maven Webapp 1.0-SNAPSHOT
 [INFO] --------------------------------[ war ]---------------------------------
 [INFO]
-[INFO] --- azure-webapp-maven-plugin:1.7.0:config (default-cli) @ helloworld ---
+[INFO] --- azure-webapp-maven-plugin:1.8.0:config (default-cli) @ helloworld ---
 [WARNING] The plugin may not work if you change the os of an existing webapp.
 Define value for OS(Default: Linux):
 1. linux [*]
@@ -92,14 +71,13 @@ Define value for OS(Default: Linux):
 3. docker
 Enter index to use:
 Define value for javaVersion(Default: jre8):
-1. jre8 [*]
-2. java11
+1. Java 11
+2. Java 8 [*]
 Enter index to use:
 Define value for runtimeStack(Default: TOMCAT 8.5):
 1. TOMCAT 9.0
-2. jre8
-3. TOMCAT 8.5 [*]
-4. WILDFLY 14
+2. TOMCAT 8.5 [*]
+3. WILDFLY 14
 Enter index to use:
 Please confirm webapp properties
 AppName : helloworld-1558400876966
@@ -122,7 +100,7 @@ Confirm (Y/N)? : Y
 `<schemaVersion>` | false | Указывает версию схемы конфигурации. Поддерживаемые значения: `v1` и `v2`. | 1.5.2
 `<resourceGroup>` | Да | Группа ресурсов Azure для вашего веб-приложения. | Версия 0.1.0 и выше
 `<appName>` | Да | Название вашего веб-приложения. | Версия 0.1.0 и выше
-[`<region>`](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme#region) | Да | Указывает регион, в котором будет размещено ваше веб-приложение (значение по умолчанию: **westus**). Определить допустимые регионы можно в разделе [Поддерживаемые регионы](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme#region). | Версия 0.1.0 и выше
+[`<region>`](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme#region) | Да | Указывает регион, в котором будет размещено ваше веб-приложение (значение по умолчанию: **westeurope**). Определить допустимые регионы можно в разделе [Поддерживаемые регионы](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme#region). | Версия 0.1.0 и выше
 [`<pricingTier>`](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme##pricingtier) | false | Ценовая категория веб-приложения. Значение по умолчанию: **P1V2**.| Версия 0.1.0 и выше
 [`<runtime>`](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme#runtimesetting) | Да | Конфигурация среды выполнения. Дополнительные сведения см. [здесь](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme#runtimesetting). | Версия 0.1.0 и выше
 [`<deployment>`](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme#deploymentsetting) | Да | Конфигурация развертывания. Дополнительные сведения см. [здесь](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme#deploymentsetting). | Версия 0.1.0 и выше

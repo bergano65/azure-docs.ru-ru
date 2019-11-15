@@ -14,12 +14,12 @@ ms.tgt_pltfrm: ASP.NET Core
 ms.workload: tbd
 ms.date: 04/19/2019
 ms.author: yegu
-ms.openlocfilehash: d7a9f365c9e2b6039451375f4ad50a7ce04cdd5b
-ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
+ms.openlocfilehash: 1a3d917775f6ba5b0b7f62d19de2b970a8b36838
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72029731"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73571215"
 ---
 # <a name="quickstart-add-feature-flags-to-an-aspnet-core-app"></a>Краткое руководство. Добавление флагов функций в приложение ASP.NET Core
 
@@ -32,7 +32,7 @@ ms.locfileid: "72029731"
 - Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 - [пакет SDK для .NET Core](https://dotnet.microsoft.com/download);
 
-## <a name="create-an-app-configuration-store"></a>Создание хранилища Конфигурации приложений
+## <a name="create-an-app-configuration-store"></a>Создание хранилища конфигураций приложений
 
 [!INCLUDE [azure-app-configuration-create](../../includes/azure-app-configuration-create.md)]
 
@@ -79,7 +79,7 @@ ms.locfileid: "72029731"
 
 1. Сохраните файл.
 
-## <a name="connect-to-an-app-configuration-store"></a>Подключение к хранилищу Конфигурации приложений
+## <a name="connect-to-an-app-configuration-store"></a>Подключение к хранилищу конфигураций приложений
 
 1. Добавьте ссылку на пакеты NuGet `Microsoft.Azure.AppConfiguration.AspNetCore` и `Microsoft.FeatureManagement.AspNetCore`, выполнив следующие команды.
 
@@ -115,6 +115,11 @@ ms.locfileid: "72029731"
     ```
 
 1. Обновите метод `CreateWebHostBuilder`, чтобы использовать службу "Конфигурация приложений", путем вызова метода `config.AddAzureAppConfiguration()`.
+    
+    > [!IMPORTANT]
+    > `CreateHostBuilder` заменяет `CreateWebHostBuilder` в .NET Core 3.0.  Выберите правильный синтаксис в зависимости от среды.
+
+    ### <a name="update-createwebhostbuilder-for-net-core-2x"></a>Обновите `CreateWebHostBuilder` для .NET Core 2.x
 
     ```csharp
     public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
@@ -124,11 +129,27 @@ ms.locfileid: "72029731"
                 var settings = config.Build();
                 config.AddAzureAppConfiguration(options => {
                     options.Connect(settings["ConnectionStrings:AppConfig"])
-                           .UseFeatureFlags();
+                            .UseFeatureFlags();
                 });
             })
             .UseStartup<Startup>();
     ```
+
+    ### <a name="update-createhostbuilder-for-net-core-3x"></a>Обновите `CreateHostBuilder` для .NET Core 3.x
+
+    ```csharp
+    public static IHostBuilder CreateHostBuilder(string[] args) =>
+        Host.CreateDefaultBuilder(args)
+        .ConfigureWebHostDefaults(webBuilder =>
+        webBuilder.ConfigureAppConfiguration((hostingContext, config) =>
+        {
+            var settings = config.Build();
+            config.AddAzureAppConfiguration(settings["ConnectionStrings:AppConfig"])
+                .UseFeatureFlags();
+        })
+        .UseStartup<Startup>());
+    ```
+
 
 1. Откройте файл *Startup.cs* и добавьте в него ссылки на диспетчер функций .NET Core.
 

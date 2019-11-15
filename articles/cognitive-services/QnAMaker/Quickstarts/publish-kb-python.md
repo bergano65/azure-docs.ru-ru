@@ -1,7 +1,7 @@
 ---
 title: Краткое руководство. Публикация базы знаний QnA Maker с использованием REST и Python
 titleSuffix: Azure Cognitive Services
-description: В этом кратком руководстве описано, как опубликовать базу знаний с использованием REST и Python. При этом последняя версия протестированной базы знаний будет передана в выделенный индекс Поиска Azure, представляющий опубликованную базу знаний. Кроме того, создается конечная точка, которая может быть вызвана в приложении или чат-боте.
+description: В этом кратком руководстве по началу работы с Python и REST описывается, как опубликовать базу знаний и создать конечную точку, которую можно вызвать в приложении или чат-боте.
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -11,16 +11,16 @@ ms.subservice: qna-maker
 ms.topic: quickstart
 ms.date: 10/01/2019
 ms.author: diberry
-ms.openlocfilehash: 09523bb6c9c8a58f5f7bd102d2ac30ad77f28d1c
-ms.sourcegitcommit: 15e3bfbde9d0d7ad00b5d186867ec933c60cebe6
+ms.openlocfilehash: 87913d4b1a6a01b91a74d7c4b0c41a66557b86f1
+ms.sourcegitcommit: 018e3b40e212915ed7a77258ac2a8e3a660aaef8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71840189"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73794062"
 ---
 # <a name="quickstart-publish-a-knowledge-base-in-qna-maker-using-python"></a>Краткое руководство. Публикация базы знаний в QnA Maker с использованием Python
 
-В этом кратком руководстве по REST описано, как программным способом опубликовать базу знаний. В процессе публикации последняя версия базы знаний отправляется в индекс выделенной службы "Поиск Azure" и создается конечная точка, которую можно вызывать в приложении или чат-боте.
+В этом кратком руководстве по REST описано, как программным способом опубликовать базу знаний. В процессе публикации последняя версия базы знаний передается в индекс выделенной службы "Когнитивный поиск Azure" и создается конечная точка, которую можно вызывать в приложении или чат-боте.
 
 В этом кратком руководстве демонстрируется вызов REST API службы QnA Maker:
 * [Публикация.](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/publish) При использовании этого API в тексте запроса не нужно указывать какие-либо сведения.

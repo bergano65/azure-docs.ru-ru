@@ -15,6 +15,10 @@
   items:
     - name: Использование API Индексатора видео
       href: video-indexer-use-apis.md
+- name: Примеры
+  items:
+    - name: Анализ потоков данных в реальном времени
+      href: live-stream-analysis.md
 - name: Основные понятия
   items:
     - name: Обзор

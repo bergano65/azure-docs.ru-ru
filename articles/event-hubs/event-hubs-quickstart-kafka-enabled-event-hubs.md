@@ -1,21 +1,21 @@
 ---
-title: Потоковая передача данных с помощью Центров событий Azure и протокола Kafka | Документация Майкрософт
-description: В этой статье объясняется, как реализовать потоковую передачу в службу "Центры событий Azure" с использованием протокола Kafka и API-интерфейсов.
+title: Краткое руководство. Потоковая передача данных с помощью Центров событий Azure и протокола Kafka
+description: Краткое руководство. В этой статье объясняется, как реализовать потоковую передачу в службу "Центры событий Azure" с использованием протокола Kafka и API-интерфейсов.
 services: event-hubs
 author: ShubhaVijayasarathy
 ms.author: shvija
 ms.service: event-hubs
 ms.topic: quickstart
 ms.custom: seodec18
-ms.date: 05/06/2019
-ms.openlocfilehash: ebe3dc39cf135f09c084a8325d380b9bc9ef48dc
-ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
+ms.date: 11/05/2019
+ms.openlocfilehash: 2222345054982799f9f9e0b84961271a3cc04ddf
+ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72554971"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73717818"
 ---
-# <a name="data-streaming-with-event-hubs-using-the-kafka-protocol"></a>Потоковая передача данных с помощью Центров событий Azure и протокола Kafka
+# <a name="quickstart-data-streaming-with-event-hubs-using-the-kafka-protocol"></a>Краткое руководство. Потоковая передача данных с помощью Центров событий Azure и протокола Kafka
 В этом кратком руководстве показано, как выполнять потоковую передачу данных в Центры событий с поддержкой Kafka без необходимости менять клиенты протоколов или запускать собственные кластеры. Вы узнаете, как обеспечить взаимодействие отправителей и объектов-получателей с Центрами событий с поддержкой Kafka, изменив конфигурацию в приложениях. Центры событий Azure поддерживают [Apache Kafka 1.0.](https://kafka.apache.org/10/documentation.html)
 
 > [!NOTE]

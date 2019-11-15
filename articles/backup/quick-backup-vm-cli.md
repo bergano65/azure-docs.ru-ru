@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство по Azure. Резервное копирование виртуальной машины с помощью Azure CLI
-description: Узнайте, как создавать резервные копии виртуальных машин с помощью Azure CLI
+description: В этом кратком руководстве вы узнаете, как создать хранилище Служб восстановления, включить защиту на виртуальной машине и создать начальную точку восстановления с помощью Azure CLI.
 author: dcurwin
 manager: carmonm
 tags: azure-resource-manager, virtual-machine-backup
@@ -10,24 +10,25 @@ ms.topic: quickstart
 ms.date: 01/31/2019
 ms.author: dacurwin
 ms.custom: mvc
-ms.openlocfilehash: 0a0718387962f677184df85ef95d303a128d9166
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: 0d16237e0d5dc0e2176a2a9f600ca0be96328717
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69874694"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73747142"
 ---
 # <a name="back-up-a-virtual-machine-in-azure-with-the-cli"></a>Резервное копирование виртуальной машины в Azure с помощью интерфейса командной строки
+
 Azure CLI используется для создания ресурсов Azure и управления ими из командной строки или с помощью скриптов. Для защиты данных можно создавать архивы с регулярным интервалом. Служба Azure Backup создает точки восстановления, которые могут храниться в геоизбыточных хранилищах служб восстановления. В этой статье объясняется, как создать резервную копию виртуальной машины в Azure с помощью Azure CLI. Эти действия также можно выполнить с помощью [Azure PowerShell](quick-backup-vm-powershell.md) или [портала Azure](quick-backup-vm-portal.md).
 
 В этом руководстве объясняется, как включить резервное копирование существующей виртуальной машины Azure. Если вам необходимо создать виртуальную машину, см. статью [о создании виртуальной машины с помощью Azure CLI](../virtual-machines/linux/quick-create-cli.md).
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Чтобы установить и использовать интерфейс командной строки локально, необходимо использовать Azure CLI версии 2.0.18 или более поздней. Чтобы получить необходимую версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli). 
-
+Чтобы установить и использовать интерфейс командной строки локально, необходимо использовать Azure CLI версии 2.0.18 или более поздней. Чтобы получить необходимую версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli).
 
 ## <a name="create-a-recovery-services-vault"></a>Создание хранилища служб восстановления
+
 Хранилище служб восстановления — это логический контейнер, в котором хранятся данные резервного копирования для каждого защищенного ресурса, например виртуальных машин Azure. Когда выполняется задание резервного копирования для защищенного ресурса, в хранилище служб восстановления создается точка восстановления. Позже вы сможете использовать одну из этих точек восстановления, чтобы восстановить данные до определенной точки во времени.
 
 Создайте хранилище служб восстановления с помощью команды [az backup vault create](https://docs.microsoft.com/cli/azure/backup/vault#az-backup-vault-create). Укажите те же группу ресурсов и расположение, что и для виртуальной машины, которую необходимо защитить. Если вы создали виртуальную машину по [этому краткому руководству](../virtual-machines/linux/quick-create-cli.md), вы имеете следующее:
@@ -36,7 +37,7 @@ Azure CLI используется для создания ресурсов Azur
 - виртуальную машину с именем *myVM*;
 - ресурсы в расположении *eastus*.
 
-```azurecli-interactive 
+```azurecli-interactive
 az backup vault create --resource-group myResourceGroup \
     --name myRecoveryServicesVault \
     --location eastus
@@ -48,14 +49,14 @@ az backup vault create --resource-group myResourceGroup \
 az backup vault backup-properties set \
     --name myRecoveryServicesVault  \
     --resource-group myResourceGroup \
-    --backup-storage-redundancy "LocallyRedundant/GeoRedundant" 
+    --backup-storage-redundancy "LocallyRedundant/GeoRedundant"
 ```
 
-
 ## <a name="enable-backup-for-an-azure-vm"></a>Включение резервного копирования для виртуальной машины Azure
+
 Создайте политику защиты, чтобы определить, когда выполнять задание резервного копирования и как долго хранить точку восстановления. Согласно политике защиты по умолчанию задание резервного копирования выполняется каждый день, а точки восстановления хранятся в течение 30 дней. Вы можете использовать значения политики по умолчанию, чтобы быстро защитить виртуальную машину. Чтобы включить резервное копирование для виртуальной машины, выполните команду [az backup protection enable-for-vm](https://docs.microsoft.com/cli/azure/backup/protection#az-backup-protection-enable-for-vm). Укажите группу ресурсов и виртуальную машину, которые нужно защитить, и выберите необходимую политику:
 
-```azurecli-interactive 
+```azurecli-interactive
 az backup protection enable-for-vm \
     --resource-group myResourceGroup \
     --vault-name myRecoveryServicesVault \
@@ -66,7 +67,7 @@ az backup protection enable-for-vm \
 > [!NOTE]
 > Если виртуальная машина размещена не в той же группе ресурсов, что и хранилище, myResourceGroup относится к группе ресурсов, в которой создано хранилище. Вместо имени виртуальной машины введите ее идентификатор, как указано ниже.
 
-```azurecli-interactive 
+```azurecli-interactive
 az backup protection enable-for-vm \
     --resource-group myResourceGroup \
     --vault-name myRecoveryServicesVault \
@@ -78,6 +79,7 @@ az backup protection enable-for-vm \
 > При использовании CLI для одновременного резервного копирования нескольких виртуальных машин убедитесь, что с одной политикой связано не более 100 виртуальных машин. Это [рекомендуемый метод](https://docs.microsoft.com/azure/backup/backup-azure-vm-backup-faq#is-there-a-limit-on-number-of-vms-that-can-beassociated-with-a-same-backup-policy). В настоящее время клиент PS не выполняет явную блокировку при наличии более 100 виртуальных машин, но в будущем планируется добавить проверку.
 
 ## <a name="start-a-backup-job"></a>Запуск задания резервного копирования
+
 Чтобы начать резервное копирование сейчас, а не ждать задания, которое запустится в запланированное время согласно политике по умолчанию, используйте команду [az backup protection backup-now](https://docs.microsoft.com/cli/azure/backup/protection#az-backup-protection-backup-now). В ходе первого задания резервного копирования создается точка полного восстановления. Во всех заданиях после начального резервного копирования создаются добавочные точки восстановления. Добавочные точки восстановления требуют мало места и времени, так как они позволяют передать только изменения, внесенные с момента последнего резервного копирования.
 
 Для резервного копирования виртуальной машины используются следующие параметры:
@@ -88,7 +90,7 @@ az backup protection enable-for-vm \
 
 В следующем примере создается резервная копия виртуальной машины *myVM* и в качестве даты окончания срока действия для точки восстановления задается 18 октября 2017 г.
 
-```azurecli-interactive 
+```azurecli-interactive
 az backup protection backup-now \
     --resource-group myResourceGroup \
     --vault-name myRecoveryServicesVault \
@@ -97,11 +99,11 @@ az backup protection backup-now \
     --retain-until 18-10-2017
 ```
 
-
 ## <a name="monitor-the-backup-job"></a>Мониторинг задания резервного копирования
+
 Чтобы отслеживать состояние заданий резервного копирования, используйте команду [az backup job list](https://docs.microsoft.com/cli/azure/backup/job#az-backup-job-list):
 
-```azurecli-interactive 
+```azurecli-interactive
 az backup job list \
     --resource-group myResourceGroup \
     --vault-name myRecoveryServicesVault \
@@ -119,13 +121,13 @@ fe5d0414  ConfigureBackup  Completed   myvm         2017-09-19T03:03:57  0:00:31
 
 Если в столбце *Status* (Состояние) задания резервного копирования отображается значение *Completed* (Выполнено), это означает, что виртуальная машина защищена с помощью служб восстановления и для нее сохранена точка полного восстановления.
 
-
 ## <a name="clean-up-deployment"></a>Очистка развертывания
+
 Если защита больше не нужна, вы можете отключить ее на виртуальной машине, удалить точки восстановления и хранилище служб восстановления, а затем удалить группу ресурсов и связанные ресурсы виртуальной машины. Если вы использовали существующую виртуальную машину, можете пропустить последнюю команду [az group delete](/cli/azure/group?view=azure-cli-latest#az-group-delete), чтобы оставить группу ресурсов и виртуальную машину.
 
-Если вы хотите ознакомиться с руководством по резервному копированию, в котором объясняется, как восстанавливать данные виртуальной машины, перейдите к [дальнейшим действиям](#next-steps). 
+Если вы хотите ознакомиться с руководством по резервному копированию, в котором объясняется, как восстанавливать данные виртуальной машины, перейдите к [дальнейшим действиям](#next-steps).
 
-```azurecli-interactive 
+```azurecli-interactive
 az backup protection disable \
     --resource-group myResourceGroup \
     --vault-name myRecoveryServicesVault \
@@ -138,8 +140,8 @@ az backup vault delete \
 az group delete --name myResourceGroup
 ```
 
-
 ## <a name="next-steps"></a>Дополнительная информация
+
 В этом кратком руководстве вы создали хранилище служб восстановления, включили защиту на виртуальной машине и создали начальную точку восстановления. Дополнительные сведения о службе Azure Backup и службах восстановления см. в соответствующих руководствах.
 
 > [!div class="nextstepaction"]

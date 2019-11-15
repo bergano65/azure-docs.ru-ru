@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Горизонтальное масштабирование вычислительных ресурсов в Хранилище данных SQL Azure с помощью T-SQL | Документация Майкрософт
+title: 'Краткое руководство. Масштабирование вычислительных ресурсов с помощью T-SQL '
 description: Масштабируйте вычислительные ресурсы в хранилище данных SQL Azure с помощью T-SQL и SQL Server Management Studio. Масштабируйте вычислительные ресурсы, чтобы повысить производительность, или выполняйте обратное масштабирование, чтобы сократить расходы.
 services: sql-data-warehouse
 author: Antvgski
@@ -10,12 +10,13 @@ ms.subservice: implement
 ms.date: 04/17/2018
 ms.author: anvang
 ms.reviewer: igorstan
-ms.openlocfilehash: 9a2a11c2263500970e2f4294dd5d3711a57be349
-ms.sourcegitcommit: 5ded08785546f4a687c2f76b2b871bbe802e7dae
+ms.custom: seo-lt-2019
+ms.openlocfilehash: 6729552262d7bea619948ddba406418b80cf69dc
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69574578"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73685939"
 ---
 # <a name="quickstart-scale-compute-in-azure-sql-data-warehouse-using-t-sql"></a>Краткое руководство. Масштабирование вычислительных ресурсов в Хранилище данных SQL Azure с помощью T-SQL
 

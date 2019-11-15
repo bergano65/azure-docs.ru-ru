@@ -1,27 +1,34 @@
 ---
 title: Краткое руководство. Запуск приложения с помощью Maven в Azure Spring Cloud
-description: Запуск примера приложения с помощью Maven
-services: spring-cloud
-author: v-vasuke
-manager: jeconnoc
-editor: ''
+description: Запуск примера приложения с помощью Maven.
+author: jpconnock
 ms.service: spring-cloud
 ms.topic: quickstart
-ms.date: 10/05/2019
-ms.author: v-vasuke
-ms.openlocfilehash: e773b997cca3fa9a1f11fec2ac449e1fc11c5364
-ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
+ms.date: 11/04/2019
+ms.author: jeconnoc
+ms.openlocfilehash: cb6032938379b632b743827153c61fd3e18c1cfe
+ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72554556"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73721586"
 ---
-# <a name="quickstart-launch-an-azure-spring-cloud-app-by-using-the-maven-plug-in"></a>Краткое руководство. Запуск приложения Azure Spring Cloud с помощью подключаемого модуля Maven
+# <a name="quickstart-launch-an-azure-spring-cloud-app-using-the-maven-plug-in"></a>Краткое руководство. Запуск приложения Azure Spring Cloud с помощью подключаемого модуля Maven
 
-С помощью подключаемого модуля Maven Azure Spring Cloud можно легко создавать и обновлять приложения службы Azure Spring Cloud. Предварительно определив конфигурацию, можно развернуть приложения в имеющейся службе Azure Spring Cloud. В этой статье на примере приложения PiggyMetrics вы изучите эту функцию.
+С помощью подключаемого модуля Maven для Azure Spring Cloud можно легко создавать и обновлять приложения Azure Spring Cloud. Предварительно определив конфигурацию, можно развернуть приложения в имеющейся службе Azure Spring Cloud. В этой статье на примере приложения PiggyMetrics вы изучите эту функцию.
+
+Из этого руководства вы узнаете, как выполнить следующие задачи:
+
+> [!div class="checklist"]
+> * подготовка экземпляра службы к работе;
+> * настройка сервера конфигурации для экземпляра;
+> * локальное клонирование и выполнение сборки приложения для микрослужб;
+> * развертывание каждой микрослужбы;
+> * назначение общедоступной конечной точки для приложения.
 
 >[!Note]
-> Прежде чем приступить к работе с этим кратким руководством, убедитесь, что ваша подписка Azure имеет доступ к Azure Spring Cloud. Так как служба находится на этапе предварительной версии, свяжитесь с нами, чтобы мы добавили вашу подписку в список разрешенных. Если вы хотите изучить возможности Azure Spring Cloud, заполните и отправьте [форму интересов Azure Spring Cloud (закрытая предварительная версия)](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR-LA2geqX-ZLhi-Ado1LD3tUNDk2VFpGUzYwVEJNVkhLRlcwNkZFUFZEUS4u).
+> Azure Spring Cloud в настоящее время предлагается в качестве общедоступной предварительной версии. Предложения общедоступной предварительной версии позволяют клиентам поэкспериментировать с новыми функциями до официального выпуска.  Функции и службы общедоступной предварительной версии не предназначены для использования в рабочей среде.  Чтобы получить дополнительные сведения о поддержке на этапе использования предварительных версий, ознакомьтесь с разделом [Вопросы и ответы](https://azure.microsoft.com/support/faq/) или оформите [запрос на поддержку](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request).
+
 
 >[!TIP]
 > Azure Cloud Shell — это бесплатная интерактивная оболочка, с помощью которой можно выполнять команды, описанные в этой статье. Она содержит предварительно установленные общие инструменты Azure вместе с новейшими версиями Git, комплект разработчика Java (JDK), Maven и Azure CLI. Если вы вошли в подписку Azure, запустите [Azure Cloud Shell](https://shell.azure.com). Дополнительные сведения см. в [обзоре Azure Cloud Shell](../cloud-shell/overview.md).
@@ -31,7 +38,7 @@ ms.locfileid: "72554556"
 1. [Установка Git](https://git-scm.com/).
 2. [Установите JDK версии 8](https://docs.microsoft.com/java/azure/jdk/?view=azure-java-stable).
 3. [Установите Maven 3.0 или более поздней версии](https://maven.apache.org/download.cgi).
-4. [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+4. [Установите Azure CLI (версии 2.0.67 или выше)](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 5. [Подпишитесь на бесплатную версию Azure](https://azure.microsoft.com/free/).
 
 ## <a name="install-the-azure-cli-extension"></a>Установка расширения Azure CLI
@@ -39,32 +46,39 @@ ms.locfileid: "72554556"
 Установите расширение Azure Spring Cloud для Azure CLI с помощью следующей команды:
 
 ```Azure CLI
-az extension add -y --source https://azureclitemp.blob.core.windows.net/spring-cloud/spring_cloud-0.1.0-py2.py3-none-any.whl
+az extension add --name spring-cloud
 ```
 
 ## <a name="provision-a-service-instance-on-the-azure-portal"></a>Подготовка экземпляра службы к работе на портале Azure
 
-1. Откройте в браузере [портал Azure](https://portal.azure.com) и войдите в свою учетную запись.
+1. В веб-браузере откройте [эту ссылку на Azure Spring Cloud на портале Azure](https://ms.portal.azure.com/#create/Microsoft.AppPlatform) и войдите со своей учетной записью.
 
-1. Найдите и выберите **Azure Spring Cloud**. 
-1. На странице обзора выберите **Создать** и выполните следующие действия.  
+1. На странице **Обзор** выберите **Создать**, чтобы открыть диалоговое окно создания.
 
-    a. В поле **Имя службы** укажите имя экземпляра службы. Его длина должна быть от 4 до 32 знаков. Имя может содержать только строчные буквы, цифры и дефисы. Первым символом в имени службы должна быть буква, а последним — буква или цифра.  
+1. Укажите **сведения о проекте** для примера приложения, как показано ниже.
 
-    b. В раскрывающемся списке **Подписка** выберите подписку, на которую будет выставляться счет за этот ресурс. Убедитесь, что эта подписка добавлена в наш список разрешений для Azure Spring Cloud.  
+    1. Выберите **подписку**, с которой будет связано приложение.
+    1. Выберите или создайте группу ресурсов для приложения. Рекомендуется создать новую группу ресурсов.  В примере ниже показана новая группа ресурсов `myspringservice`.
+    1. Укажите имя новой службы Azure Spring Cloud.  Его длина должна быть от 4 до 32 знаков. Имя может содержать только строчные буквы, цифры и дефисы. Первым символом в имени службы должна быть буква, а последним — буква или цифра.  Служба в приведенном ниже примере называется `contosospringcloud`.
+    1. Выберите расположение приложения из предложенного списка.  В нашем примере это `East US`.
+    1. Выберите **Просмотр и создание**, чтобы просмотреть сводку по новой службе.  Если все выглядит правильно, выберите **Создать**.
 
-    c. В поле **Группа ресурсов** создайте группу ресурсов. Советуем создавать группы ресурсов для новых ресурсов.  
+    > [!div class="mx-imgBorder"]
+    > ![Выбор "Просмотр и создание"](media/maven-qs-review-create.jpg)
 
-    d. В раскрывающемся списке **Расположение** выберите расположение для экземпляра службы. В настоящее время поддерживаются следующие расположения: восточная часть США, западная часть США 2, Западная Европа и Юго-Восточная Азия.
-    
-Развертывание службы занимает около 5 минут. После развертывания службы появится страница **Обзор** для экземпляра службы.
+Развертывание службы занимает около 5 минут. После развертывания службы выберите **Перейти к ресурсу**. Отобразится страница **Обзор** для экземпляра службы.
 
 ## <a name="set-up-your-configuration-server"></a>Настройка сервера конфигурации
 
 1. На странице **Обзор** службы выберите **Config Server** (Сервер конфигурации).
 1. В разделе **Репозиторий по умолчанию** задайте для параметра **URI** значение **https://github.com/Azure-Samples/piggymetrics** , для параметра **Метки** значение **config** и щелкните **Применить**, чтобы сохранить изменения.
 
+    > [!div class="mx-imgBorder"]
+    > ![Определение и применение параметров конфигурации](media/maven-qs-apply-config.jpg)
+
 ## <a name="clone-and-build-the-sample-application-repository"></a>Клонирование и сборка репозитория примера приложения
+
+1. Запустите [Azure Cloud Shell](https://shell.azure.com).
 
 1. Клонируйте репозиторий Git, выполнив следующую команду:
 
@@ -75,34 +89,16 @@ az extension add -y --source https://azureclitemp.blob.core.windows.net/spring-c
 1. Перейдите в каталог и создайте проект, выполнив следующую команду:
 
     ```azurecli
-    cd PiggyMetrics
+    cd piggymetrics
     mvn clean package -DskipTests
     ```
 
-## <a name="generate-and-deploy-the-azure-spring-cloud-configuration"></a>Создание и развертывание конфигурации Azure Spring Cloud
+## <a name="generate-configurations-and-deploy-to-the-azure-spring-cloud"></a>Создание и развертывание конфигураций в Azure Spring Cloud
 
-1. Добавьте следующий фрагмент кода в файл *pom.xml* или *settings.xml*, чтобы разрешить Maven работу с Azure Spring Cloud.
-
-    ```xml
-    <pluginRepositories>
-      <pluginRepository>
-        <id>maven.snapshots</id>
-        <name>Maven Central Snapshot Repository</name>
-        <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-        <releases>
-          <enabled>false</enabled>
-        </releases>
-        <snapshots>
-          <enabled>true</enabled>
-        </snapshots>
-      </pluginRepository>
-    </pluginRepositories>
-    ```
-
-1. Создайте конфигурацию, выполнив следующую команду:
+1. Создайте конфигурации, выполнив приведенную ниже команду в корневой папке PiggyMetrics, содержащей родительский файл POM.
 
     ```azurecli
-    mvn com.microsoft.azure:azure-spring-cloud-maven-plugin:0.1.0-SNAPSHOT:config
+    mvn com.microsoft.azure:azure-spring-cloud-maven-plugin:1.0.0:config
     ```
 
     a. Выберите модули `gateway`, `auth-service` и `account-service`.
@@ -113,13 +109,13 @@ az extension add -y --source https://azureclitemp.blob.core.windows.net/spring-c
     
     d. Подтвердите конфигурацию.
 
-1. Разверните приложения с помощью следующей команды:
+1. Теперь файл POM содержит зависимости и конфигурации подключаемого модуля. Разверните приложения с помощью следующей команды.
 
    ```azurecli
-   mvn com.microsoft.azure:azure-spring-cloud-maven-plugin:0.1.0-SNAPSHOT:deploy
+   mvn azure-spring-cloud:deploy
    ```
 
-1. Доступ к PiggyMetrics можно получить с помощью URL-адреса, который указан в выходных данных предыдущей команды.
+1. После завершения развертывания доступ к PiggyMetrics можно будет получить с помощью URL-адреса, который указан в выходных данных предыдущей команды.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
@@ -127,3 +123,4 @@ az extension add -y --source https://azureclitemp.blob.core.windows.net/spring-c
 
 > [!div class="nextstepaction"]
 > [Подготовка приложения Azure Spring Cloud к развертыванию](spring-cloud-tutorial-prepare-app-deployment.md)
+> [Дополнительные сведения о подключаемых модулях Maven для Azure](https://github.com/microsoft/azure-maven-plugin)

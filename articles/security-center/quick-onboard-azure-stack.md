@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство по работе с Центром безопасности Azure. Подключение виртуальных машин Azure Stack к Центру безопасности | Документация Майкрософт
+title: Подключение виртуальных машин Azure Stack к Центру безопасности Azure
 description: В этом кратком руководстве объясняется, как подготовить расширение виртуальной машины "Azure Monitor, Update and Configuration Management" на виртуальных машинах Azure Stack.
 services: security-center
 documentationcenter: na
@@ -14,14 +14,14 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/02/2019
 ms.author: fiseraci
-ms.openlocfilehash: 1772fd34a2d79b725b2b5ccaa66adb0b251b7e1d
-ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
+ms.openlocfilehash: c186dcb2d7d7d423f5c001bdb4d3f3503beebd9c
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71202849"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73686520"
 ---
-# <a name="quickstart--onboard-your-azure-stack-virtual-machines-to-security-center"></a>Краткое руководство.  Подключение виртуальных машин Azure Stack к Центру безопасности
+# <a name="quickstart-onboard-your-azure-stack-virtual-machines-to-security-center"></a>Краткое руководство. Подключение виртуальных машин Azure Stack к Центру безопасности
 После подключения подписки Azure можете включить Центр безопасности, чтобы защитить виртуальные машины, работающие в Azure Stack, добавив расширение виртуальной машины **Azure Monitor, Update and Configuration Management** из Azure Stack Marketplace.
 
 В этом кратком руководстве объясняется, как добавить расширение виртуальной машины **Azure Monitor, Update and Configuration Management** на виртуальной машине (поддерживаются Linux и Windows), работающей в Azure Stack.
@@ -69,7 +69,7 @@ ms.locfileid: "71202849"
 > Если расширение **Azure Monitor, Update and Configuration Management** отсутствует в marketplace, обратитесь к оператору Azure Stack, чтобы получить это расширение.
 
 6. В колонке конфигурации **Установить расширение** вставьте **идентификатор рабочей области** и **ключ рабочей области (первичный ключ)** , скопированные в Блокнот в ходе предыдущей процедуры.
-7.  Указав все необходимые параметры конфигурации, нажмите кнопку **ОК**.
+7. Указав все необходимые параметры конфигурации, нажмите кнопку **ОК**.
 8. После завершения установки для расширения будет отображаться состояние **Подготовка успешно завершена**. Виртуальная машина отобразится на портале Центра безопасности в течение часа.
 
 Дополнительные сведения об установке и настройке агента для Windows см. в разделе [Подключение компьютеров Windows](../azure-monitor/platform/agent-windows.md#install-the-agent-using-setup-wizard).

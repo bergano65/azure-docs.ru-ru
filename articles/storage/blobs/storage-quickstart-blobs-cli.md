@@ -1,20 +1,19 @@
 ---
 title: Краткое руководство Azure. Создание большого двоичного объекта в хранилище объектов с помощью Azure CLI | Документация Майкрософт
-description: В рамках этого краткого руководства вы используете Azure CLI в хранилище объектов (больших двоичных объектов). отправите большой двоичный объект в службу хранилища Azure, скачаете его и составите список больших двоичных объектов в контейнере с помощью Azure CLI.
+description: В этом кратком руководстве вы узнаете, как с помощью Azure CLI передать большой двоичный объект в службу хранилища Azure, скачать большой двоичный объект и вывести список больших двоичных объектов в контейнере.
 services: storage
 author: tamram
 ms.custom: mvc
 ms.service: storage
 ms.topic: quickstart
-ms.date: 11/14/2018
+ms.date: 11/06/2019
 ms.author: tamram
-ms.reviewer: seguler
-ms.openlocfilehash: 6a0aef9b2fc7a99183ebd6991691245731e00200
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 1f3143eced90f97c090c0005375ef50fe48c5f5f
+ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68565949"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73747920"
 ---
 # <a name="quickstart-upload-download-and-list-blobs-using-the-azure-cli"></a>Краткое руководство. Передача, скачивание и составление списка больших двоичных объектов с помощью Azure CLI
 
@@ -39,30 +38,26 @@ Azure CLI — это интерфейс командной строки Azure д
 Создайте контейнер для хранения больших двоичных объектов с помощью команды [az storage container create](/cli/azure/storage/container).
 
 ```azurecli-interactive
-az storage container create --name mystoragecontainer
+az storage container create --name sample-container
 ```
 
 ## <a name="upload-a-blob"></a>Передача больших двоичных объектов
 
-Хранилище BLOB-объектов поддерживает блочные, добавочные и страничные BLOB-объекты. Большинство файлов, находящихся в хранилище BLOB-объектов, хранятся как блочные BLOB-объекты. Добавочные BLOB-объекты используются, когда данные необходимо добавить в имеющийся большой двоичный объект без изменения его текущего содержимого, например для ведения журнала. Страничные BLOB-объекты содержат файлы VHD виртуальных машин IaaS.
+Хранилище BLOB-объектов поддерживает блочные, добавочные и страничные BLOB-объекты. В примерах в этом кратком руководстве показано, как работать с блочными BLOB-объектами.
 
-Сначала создайте файл для передачи большого двоичного объекта.
-Если вы используете Azure Cloud Shell, создайте файл, выполнив следующие инструкции: введите `vi helloworld` при открытии файла, нажмите клавишу **INSERT**, введите "Hello world", а затем нажмите клавишу **ESC**, введите `:x` и нажмите клавишу **ВВОД**.
+Сначала создайте файл для передачи в блочный BLOB-объект. Если вы используете Azure Cloud Shell, создайте этот файл с помощью следующей команды.
 
-В этом примере большой двоичный объект отправляется в контейнер, созданный на последнем шаге, с помощью команды [az storage blob upload](/cli/azure/storage/blob).
-
-```azurecli-interactive
-az storage blob upload \
-    --container-name mystoragecontainer \
-    --name blobName \
-    --file ~/path/to/local/file
+```bash
+vi helloworld
 ```
 
-Если вы использовали описанный выше метод,чтобы создать файл в Azure Cloud Shell, вместо этого можно применить следующую команду CLI (обратите внимание, что вам не нужно было указывать путь к файлу, так как файл был создан в базовом каталоге, — в других ситуациях путь потребуется указать):
+Когда файл откроется, щелкните **Вставить**. Введите *Hello World*, а затем нажмите клавишу **ESC**. Затем введите *:x* и нажмите клавишу **ВВОД**.
+
+В этом примере большой двоичный объект отправляется в контейнер, созданный на последнем шаге, с помощью команды [az storage blob upload](/cli/azure/storage/blob). Нет необходимости указывать путь к файлу, так как файл был создан в корневом каталоге.
 
 ```azurecli-interactive
 az storage blob upload \
-    --container-name mystoragecontainer \
+    --container-name sample-container \
     --name helloworld \
     --file helloworld
 ```
@@ -77,7 +72,7 @@ az storage blob upload \
 
 ```azurecli-interactive
 az storage blob list \
-    --container-name mystoragecontainer \
+    --container-name sample-container \
     --output table
 ```
 
@@ -87,8 +82,8 @@ az storage blob list \
 
 ```azurecli-interactive
 az storage blob download \
-    --container-name mystoragecontainer \
-    --name blobName \
+    --container-name sample-container \
+    --name helloworld \
     --file ~/destination/path/for/file
 ```
 
@@ -96,27 +91,27 @@ az storage blob download \
 
 Программа [AzCopy](../common/storage-use-azcopy-linux.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) является дополнительным способом высокопроизводительной передачи данных с поддержкой сценариев для хранилища Azure. AzCopy можно использовать для передачи данных из хранилища BLOB-объектов, таблиц и файлов и обратно.
 
-В качестве краткого примера здесь приводится команда AzCopy для отправки файла *myfile.txt* в контейнер *mystoragecontainer*.
+В следующем примере используется AzCopy для передачи файла *myfile.txt* в контейнер *sample-container*. Не забудьте заменить значения заполнителей в угловых скобках собственными значениями.
 
 ```bash
 azcopy \
     --source /mnt/myfiles \
-    --destination https://mystorageaccount.blob.core.windows.net/mystoragecontainer \
-    --dest-key <storage-account-access-key> \
+    --destination https://<account-name>.blob.core.windows.net/sample-container \
+    --dest-key <account-key> \
     --include "myfile.txt"
 ```
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Если вам больше не нужны какие-либо ресурсы в группе ресурсов, включая учетную запись хранения, созданную в рамках этого краткого руководства, удалите группу ресурсов с помощью команды [az group delete](/cli/azure/group).
+Если вам больше не нужны какие-либо ресурсы в группе ресурсов, включая учетную запись хранения, созданную в рамках этого краткого руководства, удалите группу ресурсов с помощью команды [az group delete](/cli/azure/group). Не забудьте заменить значения заполнителей в угловых скобках собственными значениями.
 
 ```azurecli-interactive
-az group delete --name myResourceGroup
+az group delete --name <resource-group-name>
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом кратком руководстве вы узнали, как передавать файлы между локальным диском и контейнером в хранилище BLOB-объектов Azure. Дополнительные сведения о работе с большими двоичными объектами в службе хранилища Azure см. в руководстве по работе с хранилищем BLOB-объектов Azure.
+В этом кратком руководстве вы узнали, как передавать файлы между локальной файловой системой и контейнером в хранилище BLOB-объектов Azure. Дополнительные сведения о работе с большими двоичными объектами в службе хранилища Azure см. в руководстве по работе с хранилищем BLOB-объектов Azure.
 
 > [!div class="nextstepaction"]
 > [How to: Краткое руководство по передаче, скачиванию и составлению списка больших двоичных объектов с помощью Azure CLI](storage-how-to-use-blobs-cli.md)

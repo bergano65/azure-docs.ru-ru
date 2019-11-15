@@ -2,19 +2,19 @@
 title: Краткое руководство. Создание большого двоичного объекта в службе хранилища Azure с помощью JavaScript и HTML в браузере
 description: Узнайте, как выполнять загрузку и удаление, а также получать список больших двоичных объектов с помощью JavaScript на странице HTML.
 services: storage
-author: KarlErickson
+author: mhopkins-msft
 ms.custom: mvc
 ms.service: storage
-ms.author: karler
+ms.author: mhopkins
 ms.date: 08/29/2019
 ms.topic: quickstart
 ms.subservice: blobs
-ms.openlocfilehash: fc6ccaae698043db631c7724c6aabbca16f4328f
-ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
+ms.openlocfilehash: 3eb6f68a443e29a7d4c7b4dedad38783f838dee5
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70172834"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73686673"
 ---
 <!-- Customer intent: As a web application developer I want to interface with Azure Blob storage entirely on the client so that I can build a SPA application that is able to upload and delete files on blob storage. -->
 
@@ -173,7 +173,7 @@ npx http-server
 Затем вставьте приведенный ниже код HTML в *index.html* после закрывающего тега `</body>`, заменив заполняющий комментарий.
 
 ```html
-<script src="azure-storage.blob.js" charset="utf-8"></script>
+<script src="azure-storage-blob.js" charset="utf-8"></script>
 
 <script>
 // You'll add code here in the following sections.

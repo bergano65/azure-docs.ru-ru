@@ -1,23 +1,23 @@
 ---
-title: Краткое руководство. Запуск приложения с пружинным облаком из исходного кода
-description: Узнайте, как запустить облачное приложение Azure весны непосредственно из исходного кода.
+title: Краткое руководство. Запуск приложения Spring Cloud из исходного кода
+description: Сведения о запуске приложения Azure Spring Cloud непосредственно из исходного кода
 author: jpconnock
 ms.service: spring-cloud
-ms.topic: conceptual
+ms.topic: quickstart
 ms.date: 10/30/2019
 ms.author: jeconnoc
-ms.openlocfilehash: 573baa242c06868326568a82bc358e136f1ece2c
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
-ms.translationtype: MT
+ms.openlocfilehash: 7ca80966ccab83991246f0ed7ea35cf2c9524b1d
+ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73177970"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73721289"
 ---
-# <a name="launch-your-spring-cloud-application-from-source-code"></a>Запуск приложения с пружинным облаком из исходного кода
+# <a name="launch-your-spring-cloud-application-from-source-code"></a>Запуск приложения Spring Cloud из исходного кода
 
 Azure Spring Cloud позволяет легко выполнять приложения микрослужб Spring Cloud в Azure.
 
-Azure Веснного облака позволяет запускать приложение непосредственно из исходного кода Java или из предварительно созданного JAR-файла. В этой статье описаны необходимые шаги.
+Azure Spring Cloud позволяет запускать приложение непосредственно из исходного кода Java или из предварительно созданного JAR-файла. В этой статье описаны шаги, которые необходимо для этого выполнить.
 
 Из этого руководства вы узнаете, как выполнить следующие задачи:
 
@@ -28,10 +28,10 @@ Azure Веснного облака позволяет запускать при
 > * развертывание каждой микрослужбы;
 > * назначение общедоступной конечной точки для приложения.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 >[!Note]
-> Прежде чем приступить к работе с этим кратким руководством, убедитесь, что ваша подписка Azure имеет доступ к Azure Spring Cloud.  Так как служба находится на этапе предварительной версии, свяжитесь с нами, чтобы мы добавили вашу подписку в список разрешенных.  Если вы хотите изучить возможности Azure Spring Cloud, [заполните эту форму](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR-LA2geqX-ZLhi-Ado1LD3tUNDk2VFpGUzYwVEJNVkhLRlcwNkZFUFZEUS4u).  Хотя Предварительная версия Azure "пружинное облако" доступна в режиме предварительного просмотра, корпорация Майкрософт предлагает ограниченную поддержку без соглашения об уровне  Дополнительные сведения о поддержке во время предварительных версий см. в [разделе часто задаваемые вопросы о поддержке](https://azure.microsoft.com/support/faq/).
+> Azure Spring Cloud в настоящее время предлагается в качестве общедоступной предварительной версии. Предложения общедоступной предварительной версии позволяют клиентам поэкспериментировать с новыми функциями до официального выпуска.  Функции и службы общедоступной предварительной версии не предназначены для использования в рабочей среде.  Чтобы получить дополнительные сведения о поддержке на этапе использования предварительных версий, ознакомьтесь с разделом [Вопросы и ответы](https://azure.microsoft.com/support/faq/) или оформите [запрос на поддержку](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request).
 
 Прежде чем начать, убедитесь, что подписка Azure имеет необходимые зависимости:
 
@@ -46,13 +46,13 @@ Azure Веснного облака позволяет запускать при
 
 ## <a name="install-the-azure-cli-extension"></a>Установка расширения Azure CLI
 
-Установите расширение Azure Веснного облака для Azure CLI с помощью следующей команды.
+Установите расширение Azure Spring Cloud для Azure CLI с помощью следующей команды:
 
 ```Azure CLI
-az extension add -y --source https://azureclitemp.blob.core.windows.net/spring-cloud/spring_cloud-0.1.0-py2.py3-none-any.whl
+az extension add --name spring-cloud
 ```
 
-## <a name="provision-a-service-instance-using-the-azure-cli"></a>Подготавливает экземпляр службы с помощью Azure CLI
+## <a name="provision-a-service-instance-using-the-azure-cli"></a>Подготовка экземпляра службы к работе с помощью Azure CLI
 
 Войдите в Azure CLI и выберите активную подписку. Выбранная активная подписка должна быть добавлена в список разрешений для Azure Spring Cloud.
 
@@ -62,7 +62,7 @@ az account list -o table
 az account set --subscription
 ```
 
-Откройте окно Azure CLI и выполните приведенные ниже команды, чтобы подготавливать экземпляр Azure Spring Cloud к работе. Обратите внимание, что вы также указываете Azure Веснное облако, чтобы назначить общедоступный домен.
+Откройте окно Azure CLI и выполните приведенные ниже команды, чтобы подготавливать экземпляр Azure Spring Cloud к работе. Обратите внимание, что на этом этапе Azure Spring Cloud требуется назначить общедоступный домен.
 
 ```azurecli
     az spring-cloud create -n <resource name> -g <resource group name> --is-public true
@@ -77,29 +77,29 @@ az configure --defaults group=<service group name>
 az configure --defaults spring-cloud=<service instance name>
 ```
 
-## <a name="create-the-spring-cloud-application"></a>Создание приложения с пружинным облаком
+## <a name="create-the-spring-cloud-application"></a>Создание приложения Spring Cloud
 
-Следующая команда создает приложение с пружинным облаком в подписке.  Будет создана пустая высокопружинная облачная служба, в которую мы можем передать наше приложение.
+Следующая команда создает в подписке приложение Spring Cloud.  При этом создается пустая служба Spring Cloud, в которую можно передать приложение.
 
 ```azurecli
 az spring-cloud app create -n <app-name>
 ```
 
-## <a name="deploy-your-spring-cloud-application"></a>Развертывание приложения с пружинным облаком
+## <a name="deploy-your-spring-cloud-application"></a>Развертывание приложения Spring Cloud
 
-Приложение можно развернуть из предварительно созданного JAR-файла или из репозитория Gradle или Maven.  Найдите инструкции для каждого варианта ниже.
+Приложение можно развернуть из предварительно созданного JAR-файла либо из репозитория Gradle или Maven.  Инструкции для каждого варианта приведены ниже.
 
-### <a name="deploy-a-built-jar"></a>Развертывание созданного JAR-файла
+### <a name="deploy-a-built-jar"></a>Развертывание из созданного JAR-файла
 
-Чтобы выполнить развертывание из JAR-файла, созданного на локальном компьютере, убедитесь, что сборка создает [файл JAR](https://docs.spring.io/spring-boot/docs/current/reference/html/howto-build.html#howto-create-an-executable-jar-with-maven).
+Чтобы выполнить развертывание из JAR-файла, созданного на локальном компьютере, при сборке должен создаваться [расширенный JAR-файл](https://docs.spring.io/spring-boot/docs/current/reference/html/howto-build.html#howto-create-an-executable-jar-with-maven).
 
-Развертывание файла FAT-JAR в активном развертывании
+Развертывание расширенного JAR-файла в активном развертывании
 
 ```azurecli
 az spring-cloud app deploy -n <app-name> --jar-path <path-to-fat-JAR>
 ```
 
-Развертывание файла FAT-JAR в определенном развертывании
+Развертывание расширенного JAR-файла в конкретном развертывании
 
 ```azurecli
 az spring-cloud app deployment create --app <app-name> -n <deployment-name> --jar-path <path-to-built-jar>
@@ -107,19 +107,19 @@ az spring-cloud app deployment create --app <app-name> -n <deployment-name> --ja
 
 ### <a name="deploy-from-source-code"></a>Развертывание из исходного кода
 
-Azure Веснного облака использует [кпакк](https://github.com/pivotal/kpack) для создания проекта.  Вы можете использовать Azure CLI для передачи исходного кода, сборки проекта с помощью кпакк и его развертывания в целевом приложении.
+Для сборки проекта Azure Spring Cloud использует [kpack](https://github.com/pivotal/kpack).  Вы можете использовать Azure CLI для передачи исходного кода, выполнить сборку проекта с помощью kpack и развернуть его в целевом приложении.
 
 > [!WARNING]
-> Проект должен создать только один JAR-файл с записью `main-class` в `MANIFEST.MF` в `target` (для развертываний Maven или `build/libs` (для развертываний Gradle).  Несколько JAR-файлов с записями `main-class` приведут к сбою развертывания.
+> Проект должен создать только один JAR-файл с записью `main-class` в `MANIFEST.MF` в `target` (для развертываний Maven) или `build/libs` (для развертываний Gradle).  Несколько JAR-файлов с записями `main-class` приведут к сбою развертывания.
 
-Для одного модуля Maven/Gradle:
+Для проектов с одним модулем Maven или Gradle:
 
 ```azurecli
 cd <path-to-maven-or-gradle-source-root>
 az spring-cloud app deploy -n <app-name>
 ```
 
-Для проектов Maven/Gradle с несколькими модулями повторите эти действия для каждого модуля:
+Для проектов Maven или Gradle с несколькими модулями повторите эти действия для каждого модуля:
 
 ```azurecli
 cd <path-to-maven-or-gradle-source-root>
@@ -128,14 +128,14 @@ az spring-cloud app deploy -n <app-name> --target-module <relative-path-to-modul
 
 ### <a name="show-deployment-logs"></a>Отображение журналов развертывания
 
-Проверьте журналы сборки кпакк с помощью следующей команды:
+Проверьте журналы сборки kpack с помощью следующей команды:
 
 ```azurecli
 az spring-cloud app show-deploy-log -n <app-name> [-d <deployment-name>]
 ```
 
 > [!NOTE]
-> В журналах кпакк будет отображаться только Последнее развертывание, если это развертывание было создано из источника с помощью кпакк.
+> В журналах kpack будет отображаться только последнее развертывание, если оно создано из исходного кода с помощью kpack.
 
 ## <a name="assign-a-public-endpoint-to-gateway"></a>Назначение общедоступной конечной точки шлюзу
 
@@ -144,7 +144,7 @@ az spring-cloud app show-deploy-log -n <app-name> [-d <deployment-name>]
 3. Выберите **Назначить домен**, чтобы назначить общедоступную конечную точку шлюзу. Для этого может потребоваться несколько минут. 
 4. Введите назначенный общедоступный IP-адрес в браузере, чтобы просмотреть работающее приложение.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Из этого руководства вы узнали, как выполнить следующие действия:
 
@@ -153,8 +153,8 @@ az spring-cloud app show-deploy-log -n <app-name> [-d <deployment-name>]
 > * задание сервера конфигурации для экземпляра;
 > * локальное выполнение сборки приложения для микрослужб;
 > * развертывание каждой микрослужбы;
-> * Изменение переменных среды для приложений
-> * Назначение общедоступного IP-адреса для шлюза приложений
+> * Измерение переменных среды для приложений
+> * Назначение общедоступного IP-адреса для шлюза приложения
 
 > [!div class="nextstepaction"]
 > [Подготовка приложения Azure Spring Cloud к развертыванию](spring-cloud-tutorial-prepare-app-deployment.md)

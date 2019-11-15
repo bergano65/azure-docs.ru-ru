@@ -1,6 +1,6 @@
 ---
 title: Общие сведения о промышленном Интернете вещей Azure | Документация Майкрософт
-description: Общие сведения о промышленном Интернете вещей
+description: В этой статье представлены общие сведения о промышленном Интернете вещей. В ней рассматриваются подключенная фабрика, возможности подключения на производственной площадке и компоненты безопасности в промышленном Интернете вещей (IIoT).
 author: dominicbetts
 ms.author: dobett
 ms.date: 11/26/2018
@@ -8,12 +8,12 @@ ms.topic: overview
 ms.service: industrial-iot
 services: iot-industrialiot
 manager: philmea
-ms.openlocfilehash: 3c3a54d469d3dcbe04c11aa049906b551d68022f
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: c5d70e5a8784e88d3f2906d500768735dced1ee0
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67606201"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73828126"
 ---
 # <a name="what-is-industrial-iot-iiot"></a>Что собой представляет промышленный Интернет вещей (ПИВ)
 

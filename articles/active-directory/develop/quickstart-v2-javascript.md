@@ -1,5 +1,6 @@
 ---
-title: Краткое руководство. Использование приложений JavaScript с платформой удостоверений Майкрософт в Azure
+title: Вход пользователей и получение маркера доступа в SPA JavaScript | Azure
+titleSuffix: Microsoft identity platform
 description: Узнайте, как приложения JavaScript могут вызывать API, которому необходимы маркеры доступа от платформы удостоверений Майкрософт.
 services: active-directory
 documentationcenter: dev-center-name
@@ -8,7 +9,7 @@ manager: CelesteDG
 editor: ''
 ms.service: active-directory
 ms.subservice: develop
-ms.custom: aaddev, identityplatformtop40
+ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:JavaScript
 ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
@@ -16,14 +17,14 @@ ms.workload: identity
 ms.date: 04/11/2019
 ms.author: nacanuma
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c41dedf6b4fe52ba3250ada14b0cca6bbeb636af
-ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
+ms.openlocfilehash: 5ca9a8b87713508a581a833f60fbe863fd93919a
+ms.sourcegitcommit: 018e3b40e212915ed7a77258ac2a8e3a660aaef8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71827109"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73795610"
 ---
-# <a name="quickstart-sign-in-users-and-acquire-an-access-token-from-a-javascript-single-page-application"></a>Краткое руководство. Выполнение входа пользователей и получение маркера доступа от одностраничного приложения JavaScript
+# <a name="quickstart-sign-in-users-and-get-an-access-token-in-a-javascript-spa"></a>Краткое руководство. Вход пользователей и получение маркера доступа в SPA JavaScript
 
 В этом кратком руководстве описано, как с помощью примера кода можно узнать, как одностраничное приложение (SPA) JavaScript может выполнять вход с помощью личных, рабочих и учебных учетных записей. Одностраничное приложение JavaScript также может получить маркер доступа для вызова API Microsoft Graph или любого веб-API. (Иллюстрацию см. в разделе [Как работает этот пример](#how-the-sample-works).)
 
@@ -79,12 +80,11 @@ ms.locfileid: "71827109"
 
 * (Необязательно.) [Скачайте проект Visual Studio](https://github.com/Azure-Samples/active-directory-javascript-graphapi-v2/archive/vsquickstart.zip), чтобы запустить его с помощью сервера IIS. Извлеките ZIP-файл в локальную папку (например, *C:\Azure-Samples*).
 
-#### <a name="step-3-configure-your-javascript-app"></a>Шаг 3. Настройка приложения JavaScript
-
 > [!div renderon="docs"]
+> #### <a name="step-3-configure-your-javascript-app"></a>Шаг 3. Настройка приложения JavaScript
 > В папке *JavaScriptSPA* измените файл *index.html* и установите значения `clientID` и `authority` в разделе `msalConfig`.
 
-> [!div class="sxs-lookup" renderon="portal"]
+> [!div renderon="docs"]
 > В папке *JavaScriptSPA* измените файл *index.html* и замените `msalConfig` следующим кодом:
 
 ```javascript
@@ -101,10 +101,6 @@ var msalConfig = {
 };
 
 ```
-> [!div renderon="portal"]
-> > [!NOTE]
-> > В этом кратком руководстве поддерживается Enter_the_Supported_Account_Info_Here.
-
 
 > [!div renderon="docs"]
 >
@@ -119,7 +115,12 @@ var msalConfig = {
 > > Чтобы найти значения параметров **Идентификатор приложения (клиента)** , **Идентификатор каталога (клиента)** и **Поддерживаемые типы учетных записей**, на портале Azure перейдите на страницу **Обзор**.
 >
 
-#### <a name="step-4-run-the-project"></a>Шаг 4. Запуск проекта
+> [!div class="sxs-lookup" renderon="portal"]
+> #### <a name="step-3-your-app-is-configured-and-ready-to-run"></a>Шаг 3. Приложение настроено и готово к запуску
+> Мы настроили проект, указав значения свойств приложения. 
+
+> [!div renderon="docs"]
+> #### <a name="step-4-run-the-project"></a>Шаг 4. Запуск проекта
 
 * Если вы используете [Node.js](https://nodejs.org/en/download/), сделайте следующее:
 

@@ -7,20 +7,19 @@ author: cynthn
 manager: gwallace
 editor: tysonn
 tags: azure-resource-manager
-ms.assetid: ''
 ms.service: virtual-machines-linux
 ms.topic: quickstart
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 8/20/2019
+ms.date: 11/05/2019
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 0c05eb59c42700394f755f226405f16a47edc73c
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 8dbe8e43122fb7fa00129dec0d9961bd70e5a784
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70091550"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73693290"
 ---
 # <a name="quickstart-create-a-linux-virtual-machine-in-the-azure-portal"></a>Краткое руководство. Создание виртуальной машины Linux на портале Azure
 
@@ -50,15 +49,14 @@ ms.locfileid: "70091550"
 
 ## <a name="create-virtual-machine"></a>Создание виртуальной машины
 
-1. Щелкните **Создать ресурс** в верхнем левом углу окна портала Azure.
-
-1. В области **Популярное** выберите **Ubuntu Server 18.04 LTS**.
-
-1. На вкладке **Основные сведения** в разделе **Сведения о проекте** убедитесь, что выбрана правильная подписка и при необходимости щелкните **Создать** под полем **Группы ресурсов**. Введите *myResourceGroup* в качестве имени группы ресурсов и нажмите кнопку **ОК**. 
+1. В поле поиска введите **виртуальные машины**.
+1. В разделе **Службы** выберите **Виртуальные машины**.
+1. На странице **Виртуальные машины** выберите **Добавить**. Откроется страница **Создание виртуальной машины**.
+1. На вкладке **Основные сведения** в разделе **Сведения о проекте** убедитесь, что выбрана правильная подписка, и при необходимости щелкните **Создать** для группы ресурсов. Введите имя *myResourceGroup*. 
 
     ![Создание группы ресурсов для виртуальной машины](./media/quick-create-portal/project-details.png)
 
-1. В разделе **Подробности об экземпляре** введите *myVM* в поле **Имя виртуальной машины** и выберите *Восточная часть США* в поле **Регион**. Оставьте другие значения по умолчанию.
+1. В разделе **Подробности об экземпляре** введите *myVM* в поле **Имя виртуальной машины**, выберите *Восточная часть США* в поле **Регион** и выберите *Ubuntu 18.04 LTS* в поле **Образ**. Оставьте другие значения по умолчанию.
 
     ![Раздел "Подробности об экземпляре"](./media/quick-create-portal/instance-details.png)
 
