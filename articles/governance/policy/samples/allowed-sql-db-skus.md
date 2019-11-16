@@ -1,17 +1,14 @@
 ---
 title: 'Пример: допустимые номера SKU базы данных SQL'
 description: В этом примере определения политики требуется, чтобы для баз данных SQL использовались утвержденные номера SKU. Несоответствующие требованиям новые ресурсы отклоняются.
-author: DCtheGeek
-ms.service: azure-policy
-ms.topic: sample
 ms.date: 01/23/2019
-ms.author: dacoulte
-ms.openlocfilehash: 812ba137bad052e9ee784504151d2a52f99fb9a8
-ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
+ms.topic: sample
+ms.openlocfilehash: 0365de32cd2b6d52b236f2105912e0969f9b7a18
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72244192"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74076376"
 ---
 # <a name="sample---allowed-sql-database-skus"></a>Пример: допустимые номера SKU базы данных SQL
 

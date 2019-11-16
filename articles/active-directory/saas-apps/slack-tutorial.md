@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 08/23/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b94607691b662dcfcf0e166cd5c339b00ed0573d
-ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
+ms.openlocfilehash: 6ac464593e14a712cf0f137b5f3522d018d5874d
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71326681"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73884541"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-slack"></a>Руководство по интеграции единого входа Azure Active Directory со Slack
 
@@ -46,7 +46,7 @@ ms.locfileid: "71326681"
 
 * Slack поддерживает единый вход, инициированный **поставщиком услуг**.
 * Slack поддерживает **JIT**-подготовку пользователей.
-* Slack поддерживает [**автоматическую** подготовку пользователей](https://docs.microsoft.com/en-gb/azure/active-directory/saas-apps/slack-provisioning-tutorial).
+* Slack поддерживает [**автоматическую** подготовку пользователей](slack-provisioning-tutorial.md).
 
 > [!NOTE]
 > Идентификатор этого приложения является фиксированным строковым значением, поэтому в одном клиенте можно настроить только один экземпляр.

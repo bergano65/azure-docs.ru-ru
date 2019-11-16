@@ -3,16 +3,16 @@ title: Руководство по Визуализация данных из Az
 description: В этом руководстве вы узнаете, как подключиться к обозревателю данных Azure с помощью Power BI и визуализировать ваши данные.
 author: orspod
 ms.author: orspodek
-ms.reviewer: mblythe
+ms.reviewer: gabil
 ms.service: data-explorer
 ms.topic: tutorial
 ms.date: 09/24/2018
-ms.openlocfilehash: 70a06b75db9ff49222c2de4aa78519b32d863478
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: ec1579792a6e247bf49946bb8609a626154fbd46
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59049886"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74037360"
 ---
 # <a name="tutorial-visualize-data-from-azure-data-explorer-in-power-bi"></a>Руководство по Визуализация данных из Azure Data Explorer в Power BI
 
@@ -219,7 +219,7 @@ ms.locfileid: "59049886"
 
 1. В разделе **Моя рабочая область** прокрутите вниз до раздела **Отчеты** и найдите **storm-events**.
 
-1. Нажмите кнопку с многоточием (**...**) рядом с полем **storm-events**, а затем выберите **УДАЛИТЬ**.
+1. Нажмите кнопку с многоточием ( **...** ) рядом с полем **storm-events**, а затем выберите **УДАЛИТЬ**.
 
     ![Удаление отчета](media/visualize-power-bi/remove-report.png)
 

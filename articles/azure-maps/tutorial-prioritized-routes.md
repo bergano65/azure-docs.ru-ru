@@ -1,22 +1,22 @@
 ---
-title: Использование нескольких маршрутов с помощью службы "Карты Azure" | Документация Майкрософт
-description: Поиск маршрутов для различных способов перемещения с помощью службы "Карты Azure"
+title: Руководство по Несколько маршрутов с Azure Maps
+description: Руководство по Поиск маршрутов для различных способов перемещения с помощью службы "Карты Azure"
 author: walsehgal
 ms.author: v-musehg
-ms.date: 03/07/2019
+ms.date: 11/12/2019
 ms.topic: tutorial
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 664a2a77203ae1bebd95391fa6a4ae906121465a
-ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
+ms.openlocfilehash: 07391633436931a8f7cc46c430387f5877d10674
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70916309"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74106703"
 ---
-# <a name="find-routes-for-different-modes-of-travel-using-azure-maps"></a>Поиск маршрутов для различных способов перемещения с помощью службы "Карты Azure"
+# <a name="tutorial-find-routes-for-different-modes-of-travel-using-azure-maps"></a>Руководство по Поиск маршрутов для различных способов перемещения с помощью службы "Карты Azure"
 
 В этом руководстве показано, как использовать учетную запись службы "Карты Azure" и службу построения маршрутов, чтобы найти маршрут к объекту с учетом приоритета способа перемещения. На карте отображается два разных маршрута: один для легковых автомобилей, а другой для грузовиков, маршрут которых может ограничиваться из-за высоты, веса или опасного груза. Из этого руководства вы узнаете, как выполнять следующие задачи:
 

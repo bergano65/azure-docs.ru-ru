@@ -8,12 +8,12 @@ ms.author: rgarcia
 ms.date: 04/03/2019
 ms.topic: tutorial
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 499b08dbdc8e798a884b721bcba51be1f6973df6
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 6386ef775f897ca56d2660adf72a885672c8dfd2
+ms.sourcegitcommit: a170b69b592e6e7e5cc816dabc0246f97897cb0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68562387"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74092067"
 ---
 # <a name="tutorial-step-by-step-instructions-to-create-a-new-android-app-using-azure-spatial-anchors"></a>Руководство по Пошаговые инструкции по созданию нового приложения Android с использованием Пространственных привязок Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "68562387"
 
 Чтобы протестировать новое приложение, подключите устройство с поддержкой функций разработки к локальному компьютеру разработки с помощью кабеля USB. Щелкните **Run** (Запуск) ->**Run 'app'** (Запустить приложение). В окне **Select Deployment Target** (Выбор цели развертывания) выберите подключенное устройство и щелкните **ОК**. Android Studio установит приложение на подключенном устройстве и запустит его. Вы увидите сообщение "Hello World!" в окне приложения, которое откроется на устройстве. Щелкните **Run** (Запуск) ->**Stop 'app'** (Остановить приложение).
 
-## <a name="integrating-arcore"></a>Интеграция _ARCore_
+## <a name="integrating-_arcore_"></a>Интеграция _ARCore_
 
 <a href="https://developers.google.com/ar/discover/" target="_blank">_ARCore_</a> — это платформа Google для создания функций дополненной реальности, которая позволяет устройству отслеживать положение в пространстве и генерировать собственное представление о реальном мире.
 
@@ -62,12 +62,12 @@ ms.locfileid: "68562387"
 ```
 dependencies {
     ...
-    implementation 'com.google.ar:core:1.8.0'
+    implementation 'com.google.ar:core:1.11.0'
     ...
 }
 ```
 
-## <a name="integrating-sceneform"></a>Интеграция _Sceneform_
+## <a name="integrating-_sceneform_"></a>Интеграция _Sceneform_
 
 <a href="https://developers.google.com/ar/develop/java/sceneform/" target="_blank">_Sceneform_</a> упрощает отрисовку реалистичных объемных сцен в приложениях дополненной реальности, не требуя при этом изучать OpenGL.
 
@@ -85,7 +85,7 @@ android {
 
 dependencies {
     ...
-    implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.8.0'
+    implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.11.0'
     ...
 }
 ```

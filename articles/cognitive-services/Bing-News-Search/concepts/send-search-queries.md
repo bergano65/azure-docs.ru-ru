@@ -1,7 +1,7 @@
 ---
 title: Отправка запросов в API Bing для поиска новостей
 titleSuffix: Azure Cognitive Services
-description: Сведения об отправке поисковых запросов в API Bing для поиска новостей.
+description: API Bing для поиска новостей позволяет искать в Интернете новостей на соответствующие темы. Из этой статьи вы узнаете больше об отправке поисковых запросов к API.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: bing-news-search
 ms.topic: quickstart
 ms.date: 06/27/2019
 ms.author: aahi
-ms.openlocfilehash: cfa9cd23e19788d847fd9177d70ee2af89c69272
-ms.sourcegitcommit: 198c3a585dd2d6f6809a1a25b9a732c0ad4a704f
+ms.openlocfilehash: 6be3d95c06862529881be2cbf2e4d74b44908e67
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68423830"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74111516"
 ---
 # <a name="sending-queries-to-the-bing-news-search-api"></a>Отправка запросов в API Bing для поиска новостей
 

@@ -1,17 +1,14 @@
 ---
 title: 'Пример: разрешенные SKU для шлюзов приложений'
 description: В этом примере определения политики необходимо, чтобы шлюзы приложений использовали утвержденные номера SKU.
-author: DCtheGeek
-ms.service: azure-policy
-ms.topic: sample
 ms.date: 01/23/2019
-ms.author: dacoulte
-ms.openlocfilehash: 217666ac89a6a27a0f18d0d620338fbb31fb48ec
-ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
+ms.topic: sample
+ms.openlocfilehash: 1d146fbe4966e3ba2d99077280f02253ae4af02d
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71977760"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74076532"
 ---
 # <a name="sample---allowed-application-gateway-skus"></a>Пример: разрешенные SKU для шлюзов приложений
 

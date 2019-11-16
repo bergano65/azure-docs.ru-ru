@@ -1,17 +1,14 @@
 ---
 title: 'Пример: разрешение использования только некоторых образов платформы виртуальной машины'
 description: В этом примере определения политики требуется, чтобы виртуальные машины использовали определенную версию UbuntuServer.
-author: DCtheGeek
-ms.service: azure-policy
-ms.topic: sample
 ms.date: 01/23/2019
-ms.author: dacoulte
-ms.openlocfilehash: 5999594f81d66be8eb98257f7f1554038583db89
-ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
+ms.topic: sample
+ms.openlocfilehash: 1826940bf878141d09812d72a66d076e42d4fe9a
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71977853"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74076568"
 ---
 # <a name="sample---only-allow-a-certain-vm-platform-image"></a>Пример: разрешение использования только некоторых образов платформы виртуальной машины
 

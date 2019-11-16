@@ -9,12 +9,12 @@ ms.author: mhopkins
 ms.date: 08/29/2019
 ms.topic: quickstart
 ms.subservice: blobs
-ms.openlocfilehash: 3eb6f68a443e29a7d4c7b4dedad38783f838dee5
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 018a0405215d084962f6c107a607c8f82fae2500
+ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73686673"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74132002"
 ---
 <!-- Customer intent: As a web application developer I want to interface with Azure Blob storage entirely on the client so that I can build a SPA application that is able to upload and delete files on blob storage. -->
 
@@ -254,7 +254,7 @@ createContainerButton.addEventListener("click", createContainer);
 deleteContainerButton.addEventListener("click", deleteContainer);
 ```
 
-Этот код вызывает функции [create](https://docs.microsoft.com/javascript/api/@azure/storage-blob/ContainerURL#create-aborter--icontainercreateoptions-) и [delete](https://docs.microsoft.com/javascript/api/@azure/storage-blob/ContainerURL#delete-aborter--icontainerdeletemethodoptions-) экземпляра ContainerURL без использования экземпляра [Aborter](https://docs.microsoft.com/javascript/api/@azure/storage-blob/aborter). Для упрощения кода в этом кратком руководстве предполагается, что ваша учетная запись хранения создана и включена. В рабочей среде следует использовать экземпляр Aborter, чтобы добавить функцию времени ожидания.
+Этот код вызывает функции [create](https://docs.microsoft.com/javascript/api/@azure/storage-blob/containerclient#create-containercreateoptions-) и [delete](https://docs.microsoft.com/javascript/api/@azure/storage-blob/containerclient#delete-containerdeletemethodoptions-) экземпляра ContainerURL без использования экземпляра [Aborter](https://docs.microsoft.com/javascript/api/@azure/storage-blob/aborter). Для упрощения кода в этом кратком руководстве предполагается, что ваша учетная запись хранения создана и включена. В рабочей среде следует использовать экземпляр Aborter, чтобы добавить функцию времени ожидания.
 
 ### <a name="list-blobs"></a>Отображение списка больших двоичных объектов
 
@@ -290,7 +290,7 @@ const listFiles = async () => {
 listButton.addEventListener("click", listFiles);
 ```
 
-Этот код вызывает функцию [ContainerURL.listBlobFlatSegment](https://docs.microsoft.com/javascript/api/@azure/storage-blob/ContainerURL?view=azure-node-preview#listblobflatsegment-aborter--undefined---string--icontainerlistblobssegmentoptions-) в цикле, чтобы гарантировать получение всех сегментов. Для каждого сегмента код циклически проходит по списку содержащихся в этом сегменте элементов больших двоичных объектов и обновляет список **Files**.
+Этот код вызывает функцию [ContainerURL.listBlobFlatSegment](https://docs.microsoft.com/javascript/api/@azure/storage-blob/containerclient#listblobsflat-containerlistblobsoptions-) в цикле, чтобы гарантировать получение всех сегментов. Для каждого сегмента код циклически проходит по списку содержащихся в этом сегменте элементов больших двоичных объектов и обновляет список **Files**.
 
 ### <a name="upload-blobs"></a>Отправка больших двоичных объектов
 
@@ -318,7 +318,7 @@ selectButton.addEventListener("click", () => fileInput.click());
 fileInput.addEventListener("change", uploadFiles);
 ```
 
-Этот код связывает кнопку **Select and upload files** (Выбрать и передать файлы) со скрытым элементом `file-input`. Таким образом событие кнопки `click` активирует событие ввода файла `click` и отображает средство выбора файлов. После выбора файлов и закрытия диалогового окна происходит событие `input` и вызывается функция `uploadFiles`. Эта функция вызывает браузерную функцию [uploadBrowserDataToBlockBlob](https://docs.microsoft.com/javascript/api/@azure/storage-blob/#uploadbrowserdatatoblockblob-aborter--blob---arraybuffer---arraybufferview--blockbloburl--iuploadtoblockbloboptions-) для каждого файла, который вы выбрали. Каждый вызов возвращает обещание, которое добавляется в список, чтобы они могли ожидать передачи вместе, что позволяет передавать файлы в параллельном режиме.
+Этот код связывает кнопку **Select and upload files** (Выбрать и передать файлы) со скрытым элементом `file-input`. Таким образом событие кнопки `click` активирует событие ввода файла `click` и отображает средство выбора файлов. После выбора файлов и закрытия диалогового окна происходит событие `input` и вызывается функция `uploadFiles`. Эта функция вызывает браузерную функцию [uploadBrowserDataToBlockBlob](https://docs.microsoft.com/javascript/api/@azure/storage-blob/blockblobclient#uploadbrowserdata-blob---arraybuffer---arraybufferview--blockblobparalleluploadoptions-) для каждого файла, который вы выбрали. Каждый вызов возвращает обещание, которое добавляется в список, чтобы они могли ожидать передачи вместе, что позволяет передавать файлы в параллельном режиме.
 
 ### <a name="delete-blobs"></a>Удаление blob-объектов
 

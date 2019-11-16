@@ -11,12 +11,12 @@ ms.date: 05/28/2019
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 46b413d3fb2a27e724bcb2faa3306416e7f5abc7
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: a9a68e9d71324ba05e24ba98802863211a569689
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/08/2019
-ms.locfileid: "73824848"
+ms.locfileid: "73839927"
 ---
 # <a name="quickstart-create-and-query-an-azure-sql-data-warehouse-in-the-azure-portal"></a>Краткое руководство. Создание Хранилища данных SQL Azure на портале Azure и выполнение запроса к нему
 
@@ -53,7 +53,7 @@ ms.locfileid: "73824848"
     | :------ | :-------------- | :---------- |
     | **Database name** (Имя базы данных) | mySampleDataWarehouse | Допустимые имена баз данных см. в статье об [идентификаторах базы данных](/sql/relational-databases/databases/database-identifiers). Обратите внимание на то, что хранилище данных относится к типу базы данных.|
     | **подписка** | Ваша подписка | Дополнительные сведения о подписках см. [здесь](https://account.windowsazure.com/Subscriptions). |
-    | **Группа ресурсов** | myResourceGroup | Допустимые имена групп ресурсов см. в статье о [правилах и ограничениях именования](/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging). |
+    | **Группа ресурсов** | myResourceGroup | Допустимые имена групп ресурсов см. в статье о [правилах и ограничениях именования](/azure/architecture/best-practices/resource-naming). |
     | **Выбрать источник** | Образец | Указывает загрузку примера базы данных. Обратите внимание, что хранилище данных — это один из типов базы данных. |
     | **Выберите пример** | AdventureWorksDW | Указывает загрузку примера базы данных AdventureWorksDW. |
     ||||
@@ -64,7 +64,7 @@ ms.locfileid: "73824848"
 
     | Параметр | Рекомендуемое значение | ОПИСАНИЕ |
     | :------ | :-------------- | :---------- |
-    | **Server name** (Имя сервера) | Любое глобально уникальное имя | Допустимые имена серверов см. в статье о [правилах и ограничениях именования](/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging). |
+    | **Server name** (Имя сервера) | Любое глобально уникальное имя | Допустимые имена серверов см. в статье о [правилах и ограничениях именования](/azure/architecture/best-practices/resource-naming). |
     | **Имя для входа администратора сервера** | Любое допустимое имя | Допустимые имена входа см. в статье об [идентификаторах базы данных](https://docs.microsoft.com/sql/relational-databases/databases/database-identifiers).|
     | **Пароль** | Любой допустимый пароль | Длина пароля должна составлять минимум 8 символов. Пароль должен содержать символы трех категорий из перечисленных: прописные буквы, строчные буквы, цифры и специальные символы. |
     | **Местоположение.** | Любое допустимое расположение | Дополнительные сведения о регионах Azure см. [здесь](https://azure.microsoft.com/regions/). |

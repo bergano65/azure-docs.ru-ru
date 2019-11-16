@@ -8,12 +8,12 @@ author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.date: 04/30/2019
-ms.openlocfilehash: 5ababe9eb1f680378e882970df2d0b008287a7c4
-ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
+ms.openlocfilehash: 6aa721ee6cf6680518a28d050c22d8649f0f531f
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72241713"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73833168"
 ---
 # <a name="quickstart-deploy-the-ansible-solution-template-for-azure-to-centos"></a>Краткое руководство. Развертывание шаблона решения Ansible для Azure в CentOS
 
@@ -59,7 +59,7 @@ ms.locfileid: "72241713"
        - [Высокопроизводительное хранилище класса Premium и управляемые диски для виртуальных машин Azure](/azure/virtual-machines/windows/premium-storage)
        - [Управляемые диски SSD уровня "Стандартный" для рабочих нагрузок виртуальной машины Azure](/azure/virtual-machines/windows/disks-standard-ssd)
    - **Общедоступный IP-адрес** — укажите этот параметр, если вы хотите взаимодействовать с виртуальной машиной за ее пределами. По умолчанию используется новый общедоступный IP-адрес с именем `ansible-pip`. Чтобы указать другой IP-адрес, щелкните стрелку, укажите атрибуты, такие как имя, номер SKU и назначения этого IP-адреса. 
-   - **Метка доменного имени** — введите общедоступное доменное имя виртуальной машины. Имя должно быть уникальным и соответствовать требованиям к именованию. Дополнительные сведения об указании имени для виртуальной машины см. в статье [Соглашения об именовании для ресурсов Azure](/azure/architecture/best-practices/naming-conventions).
+   - **Метка доменного имени** — введите общедоступное доменное имя виртуальной машины. Имя должно быть уникальным и соответствовать требованиям к именованию. Дополнительные сведения об указании имени для виртуальной машины см. в статье [Соглашения об именовании для ресурсов Azure](/azure/architecture/best-practices/resource-naming).
    - **Ansible version** (Версия Ansible) — укажите номер версии либо значение `latest` для развертывания последней версии. Щелкните значок сведений рядом с параметром **Ansible version** (Версия Ansible), чтобы просмотреть подробные сведения о доступных версий.
 
      ![Вкладка дополнительных параметров Ansible на портале Azure](./media/ansible-quick-deploy-solution-template/portal-ansible-setup-tab-2.png)

@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
-ms.openlocfilehash: 28a75158b161e680f857b986bcb754f1f99e8fab
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 2e5a5f2a4de4e01d2e4fa66f819e55839959afd0
+ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73825303"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74130692"
 ---
 # <a name="quickstart-azure-blob-storage-client-library-v12-for-javascript"></a>Краткое руководство. Использование клиентской библиотеки хранилища BLOB-объектов Azure версии 12 для JavaScript
 
@@ -205,7 +205,7 @@ const CONNECT_STR = process.env.CONNECT_STR;
 > [!IMPORTANT]
 > Имена контейнеров должны состоять из знаков нижнего регистра. Дополнительные сведения об именовании контейнеров и больших двоичных объектов см. в статье [Naming and Referencing Containers, Blobs, and Metadata](/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata) (Именование контейнеров, больших двоичных объектов и метаданных и ссылка на них).
 
-Создайте экземпляр класса [BlobServiceClient](/javascript/api/@azure/storage-blob/blobserviceclient), вызвав метод [fromConnectionString](/javascript/api/@azure/storage-blob/blobserviceclient#fromconnectionstring-string--newpipelineoptions-). Затем вызовите метод [getContainerClient](/javascript/api/@azure/storage-blob/blobserviceclient#getcontainerclient-string-), чтобы получить ссылку на контейнер. Наконец, вызовите метод [create](/javascript/api/@azure/storage-blob/containerclient#create-containercreateoptions-), чтобы создать контейнер в учетной записи хранения.
+Создайте экземпляр класса [BlobServiceClient](/javascript/api/@azure/storage-blob/blobserviceclient), вызвав метод [fromConnectionString](/javascript/api/@azure/storage-blob/blobserviceclient#fromconnectionstring-string--storagepipelineoptions-). Затем вызовите метод [getContainerClient](/javascript/api/@azure/storage-blob/blobserviceclient#getcontainerclient-string-), чтобы получить ссылку на контейнер. Наконец, вызовите метод [create](/javascript/api/@azure/storage-blob/containerclient#create-containercreateoptions-), чтобы создать контейнер в учетной записи хранения.
 
 Добавьте следующий код в конец функции `main`.
 
@@ -351,7 +351,7 @@ Done
 Чтобы просмотреть примеры приложений для хранилища BLOB-объектов, перейдите к следующему разделу:
 
 > [!div class="nextstepaction"]
-> [Примеры для пакета SDK хранилища BLOB-объектов Azure версии 12 для JavaScript](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/azure-storage-blob/samples)
+> [Примеры для пакета SDK хранилища BLOB-объектов Azure версии 12 для JavaScript](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-blob/samples)
 
 * Чтобы узнать больше, ознакомьтесь с [пакетом SDK Azure для JavaScript](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-blob/README.md).
 * Руководства, примеры, краткие руководства и другую документацию можно найти на странице [Документация по пакету SDK для JavaScript](/azure/javascript/).

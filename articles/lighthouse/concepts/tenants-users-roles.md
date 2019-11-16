@@ -1,18 +1,14 @@
 ---
 title: Арендаторы, роли и пользователи в сценариях Azure Lighthouse
 description: Изучите принципы действия арендаторов, пользователей и ролей Azure Active Directory, а также узнайте о том, как их можно использовать в сценариях Azure Lighthouse.
-author: JnHs
-ms.service: lighthouse
-ms.author: jenhayes
 ms.date: 11/05/2019
 ms.topic: overview
-manager: carmonm
-ms.openlocfilehash: b87ef8534dab2c8f08aa8cdee9d939e2d1a3a0e7
-ms.sourcegitcommit: b2fb32ae73b12cf2d180e6e4ffffa13a31aa4c6f
+ms.openlocfilehash: 73c5cd592f07a23edaad23796e498ea9243c5d26
+ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73616042"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74131342"
 ---
 # <a name="tenants-roles-and-users-in-azure-lighthouse-scenarios"></a>Арендаторы, роли и пользователи в сценариях Azure Lighthouse
 

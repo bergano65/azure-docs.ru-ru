@@ -1,18 +1,14 @@
 ---
 title: Что собой представляет Azure Lighthouse?
 description: Azure Lighthouse позволяет поставщикам служб доставлять клиентам управляемые службы с высоким уровнем автоматизации и эффективностью в масштабе.
-author: JnHs
-ms.author: jenhayes
-ms.date: 08/22/2019
+ms.date: 11/11/2019
 ms.topic: overview
-ms.service: lighthouse
-manager: carmonm
-ms.openlocfilehash: 05fa16504e25a6bf0f6aa1c0a348284abba6e1ed
-ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
+ms.openlocfilehash: 0551bbcbc9609809b0b28eb56a0a3b848debcaae
+ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70011907"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74132197"
 ---
 # <a name="what-is-azure-lighthouse"></a>Что собой представляет Azure Lighthouse?
 
@@ -39,9 +35,6 @@ Azure Lighthouse содержит несколько способов оптим
 - **Шаблоны Azure Resource Manager**. Упрощенное выполнение задач управления, включая подключение клиентов к делегированному управлению ресурсами Azure. Дополнительные сведения см. в нашем [репозитории с примерами](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/Azure-Delegated-Resource-Management/templates) и статье [Onboard a customer to Azure delegated resource management](how-to/onboard-customer.md) (Подключение клиента к системе делегированного управления ресурсами Azure).
 - **Managed services offers in Azure Marketplace** (Предложения управляемых служб в Azure Marketplace). Предоставьте клиентам службы через частные или общедоступные предложения и автоматически применяйте их к делегированному управлению ресурсами Azure в качестве альтернативы для подключения с помощью шаблонов Azure Resource Manager. Дополнительные сведения см. в статье [Managed services offers in Azure Marketplace](./concepts/managed-services-offers.md) (Предложения управляемых служб в Azure Marketplace)
 - **Управляемые приложения Azure**. Создавайте пакет приложений и отправляйте приложения, которые клиенты смогут легко развертывать и использовать в собственных подписках. Приложение развертывается в группу ресурсов, доступ к которой выполняется с помощью арендатора, позволяя управлять службой в рамках общей работы Azure Lighthouse. Дополнительные сведения см. в [Azure managed applications overview](https://docs.microsoft.com/azure/managed-applications/overview) (Общие сведения об управляемых приложениях Azure).
-
-> [!NOTE]
-> Описанные выше возможности в настоящее время доступны в общедоступных облаках. Сведения о доступности продуктов по регионам см. на странице [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

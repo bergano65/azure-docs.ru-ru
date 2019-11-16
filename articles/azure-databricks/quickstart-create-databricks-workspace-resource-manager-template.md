@@ -10,12 +10,12 @@ ms.workload: big-data
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 07/12/2019
-ms.openlocfilehash: 3af9c5e728bd119ce6c5546c8dc6556967cd1eda
-ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+ms.openlocfilehash: 83dc18424bc8606eff9a735b76cdaa09e381d588
+ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73606105"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74129355"
 ---
 # <a name="quickstart-run-a-spark-job-on-azure-databricks-using-the-azure-resource-manager-template"></a>Краткое руководство. Запуск задания Spark в Azure Databricks с помощью шаблона Azure Resource Manager
 
@@ -81,7 +81,7 @@ ms.locfileid: "73606105"
 
    Выберите **Create cluster** (Создать кластер). После запуска кластера можно вложить записные книжки в кластер и запустить задания Spark.
 
-Дополнительные сведения о создании кластеров см. в статье [о создании кластера Spark в Azure Databricks](/azure/databricks/user-guide/clusters/create).
+Дополнительные сведения о создании кластеров см. в статье [о создании кластера Spark в Azure Databricks](/azure/databricks/clusters/create).
 
 ## <a name="run-a-spark-sql-job"></a>Выполнение задания Spark SQL
 
@@ -126,7 +126,7 @@ ms.locfileid: "73606105"
      Сведения о том, как получить ключ учетной записи хранения, см. в разделе [Управление учетной записью хранения](../storage/common/storage-account-manage.md#access-keys).
 
    > [!NOTE]
-   > Вы также можете воспользоваться Azure Data Lake Store с кластером Spark в Azure Databricks. Дополнительные сведения см. в разделе [Azure Data Lake Store](/azure/databricks/data/data-sources/azure/azure-datalake-gen2.html).
+   > Вы также можете воспользоваться Azure Data Lake Store с кластером Spark в Azure Databricks. Дополнительные сведения см. в разделе [Azure Data Lake Store](/azure/databricks/data/data-sources/azure/azure-datalake-gen2).
 
 4. Выполните инструкцию SQL для создания временной таблицы, используя данные образца файла данных JSON, **small_radio_json.json**. В указанном ниже фрагменте кода замените значения заполнителя именем контейнера и учетной записи хранения. Вставьте фрагмент кода в ячейку кода в записной книжке, а затем нажмите сочетание клавиш SHIFT + ВВОД. Во фрагменте кода `path` обозначает расположение примера файла JSON, который вы передали в учетную запись хранения Azure.
 
@@ -186,7 +186,7 @@ ms.locfileid: "73606105"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этой статье вы создали кластер Spark в Azure Databricks и запустили задание Spark, используя данные в хранилище Azure. Вы также можете просмотреть [источники данных Spark](/azure/databricks/data/data-sources/index.html), чтобы узнать, как импортировать данные из источников данных в Azure Databricks. Можно также ознакомиться с шаблоном Resource Manager для [создания рабочей области Azure Databricks с настраиваемым адресом виртуальной сети](https://github.com/Azure/azure-quickstart-templates/tree/master/101-databricks-workspace-with-custom-vnet-address). Синтаксис и свойства JSON, используемые в шаблоне, см. в справочнике по шаблону [Microsoft.Databricks/workspaces](/azure/templates/microsoft.databricks/workspaces).
+В этой статье вы создали кластер Spark в Azure Databricks и запустили задание Spark, используя данные в хранилище Azure. Вы также можете просмотреть [источники данных Spark](/azure/databricks/data/data-sources/index), чтобы узнать, как импортировать данные из источников данных в Azure Databricks. Можно также ознакомиться с шаблоном Resource Manager для [создания рабочей области Azure Databricks с настраиваемым адресом виртуальной сети](https://github.com/Azure/azure-quickstart-templates/tree/master/101-databricks-workspace-with-custom-vnet-address). Синтаксис и свойства JSON, используемые в шаблоне, см. в справочнике по шаблону [Microsoft.Databricks/workspaces](/azure/templates/microsoft.databricks/workspaces).
 
 Перейдите к следующей статье, чтобы узнать, как выполнять операции ETL (извлечения, преобразование и загрузка данных) с помощью Azure Databricks.
 

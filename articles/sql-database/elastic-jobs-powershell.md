@@ -11,12 +11,12 @@ author: johnpaulkee
 ms.author: joke
 ms.reviwer: sstein
 ms.date: 03/13/2019
-ms.openlocfilehash: 9724e54b03e5de065b8b39cb57c6a9880cf37cc6
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: e9ef939d46a02b8aa6b0b7f481fec9e30edf53fc
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/08/2019
-ms.locfileid: "73827192"
+ms.locfileid: "73839207"
 ---
 # <a name="create-an-elastic-job-agent-using-powershell"></a>Создание агента заданий обработки эластичных баз данных с помощью PowerShell
 
@@ -72,7 +72,7 @@ Get-Module Az.Sql
 
 *Следующий скрипт позволяет создать группу ресурсов, сервер и базу данных, которые можно использовать в базе данных заданий. Следующий сценарий также создает второй сервер с двумя пустыми базами данных для выполнения заданий.*
 
-Для задания обработки эластичных баз данных нет особых требований к именованию, поэтому можно использовать любые соглашения об именовании (при условии, что они соответствуют всем [требованиям Azure](/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging)).
+Для задания обработки эластичных баз данных нет особых требований к именованию, поэтому можно использовать любые соглашения об именовании (при условии, что они соответствуют всем [требованиям Azure](/azure/architecture/best-practices/resource-naming)).
 
 ```powershell
 # Sign in to your Azure account

@@ -1,22 +1,22 @@
 ---
-title: Реализация пространственной аналитики Интернета вещей с помощью Azure Maps | Документация Майкрософт
-description: Интеграция Центра Интернета вещей с API-интерфейсами службы Azure Maps.
+title: Руководство по Реализация пространственной аналитики Интернета вещей с помощью Azure Maps
+description: Руководство по Интеграция Центра Интернета вещей с API-интерфейсами службы Azure Maps.
 author: walsehgal
 ms.author: v-musehg
-ms.date: 08/13/2019
+ms.date: 11/12/2019
 ms.topic: tutorial
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: 618931c3a45fcb25b2a9221ea3f6069e9ff11de5
-ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
+ms.openlocfilehash: b876b27d0eb24a9eabcffe0d131ea0ef5bb79bad
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70933202"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74107043"
 ---
-# <a name="implement-iot-spatial-analytics-using-azure-maps"></a>Реализация пространственной аналитики Интернета вещей с помощью Azure Maps
+# <a name="tutorial-implement-iot-spatial-analytics-using-azure-maps"></a>Руководство по Реализация пространственной аналитики Интернета вещей с помощью Azure Maps
 
 Отслеживание и сбор важных событий по определенному пространству и времени является типичным сценарием для Интернета вещей. Примеры таких сценариев: управление автопарком, отслеживание ресурсов, приложения мобильности и умного города. В этом руководстве описывается шаблон решения, в котором API-интерфейсы Azure Maps применяются для важных событий, собранных в Центре Интернета вещей, на основе модели подписки на события в службе "Сетка событий".
 

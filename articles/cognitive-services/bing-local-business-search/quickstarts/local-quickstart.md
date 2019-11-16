@@ -1,7 +1,7 @@
 ---
 title: Краткое руководство. Отправка запроса в API Поиска местных компаний Bing с помощью C#
 titleSuffix: Azure Cognitive Services
-description: Из этой статьи вы узнаете, как использовать API Bing Local Business Search с помощью C#.
+description: С помощью этого краткого руководства вы сможете начать отправку запросов в Bing Local Business Search API в Cognitive Services.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: bing-local-business
 ms.topic: quickstart
 ms.date: 04/26/2019
 ms.author: rosh
-ms.openlocfilehash: 163a85a7fb7521054ebec58fb9ac86373963f2b9
-ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
+ms.openlocfilehash: d14e9dd8d02db7ca0131927682804fe81b750d97
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69906316"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74072324"
 ---
 # <a name="quickstart-send-a-query-to-the-bing-local-business-search-api-in-c"></a>Краткое руководство. Отправка запроса в API Bing Local Business Search с помощью C#
 

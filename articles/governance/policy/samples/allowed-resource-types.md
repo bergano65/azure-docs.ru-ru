@@ -1,17 +1,14 @@
 ---
 title: 'Пример: допустимые типы ресурсов'
 description: В этом примере определения политики обеспечивается развертывание только утвержденных типов ресурсов.
-author: DCtheGeek
-ms.service: azure-policy
-ms.topic: sample
 ms.date: 01/23/2019
-ms.author: dacoulte
-ms.openlocfilehash: 91a5b7b44b12ee581488d5aa0d3d9eca8c4dce83
-ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
+ms.topic: sample
+ms.openlocfilehash: 16f941cfca419b3fce86101bf8df1b6850858cc9
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71980622"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74076424"
 ---
 # <a name="sample---allowed-resource-types"></a>Пример: допустимые типы ресурсов
 
