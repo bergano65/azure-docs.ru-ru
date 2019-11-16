@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/26/2019
 ms.author: jeedes
-ms.openlocfilehash: 1cdc4420758b67dc3a578b9530fb7039ed53ee66
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: fcd12b0c47dc587153df51d4d30eb2abe4cc2657
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67092803"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74081953"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-reward-gateway"></a>Руководство. Интеграция Azure Active Directory с Reward Gateway
 
@@ -124,7 +124,7 @@ ms.locfileid: "67092803"
     | `https://<companyname>.rewardgateway.com.au/Authentication/EndLogin?idp=<Unique Id>`|
 
     > [!NOTE]
-    > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, запустите настройку интеграции на портале Reward Manager. Дополнительные сведения можно найти по адресу https://success.rewardgateway.com/authentication-integrations/microsoft-azure-for-authentication.
+    > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, запустите настройку интеграции на портале Reward Manager. Дополнительные сведения можно найти по адресу https://success.rewardgateway.com/hc/en-us/articles/360038650573-Microsoft-Azure-for-Authentication.
 
 5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
 
@@ -142,7 +142,7 @@ ms.locfileid: "67092803"
 
 ### <a name="configure-reward-gateway-single-sign-on"></a>Настройка единого входа для Reward Gateway
 
-Чтобы настроить единый вход на стороне **Reward Gateway**, запустите настройку интеграции на портале Reward Manager. С помощью этих скачанных метаданных получите сертификат для подписи и отправьте его во время настройки. Дополнительные сведения можно найти по адресу https://success.rewardgateway.com/authentication-integrations/microsoft-azure-for-authentication.
+Чтобы настроить единый вход на стороне **Reward Gateway**, запустите настройку интеграции на портале Reward Manager. С помощью этих скачанных метаданных получите сертификат для подписи и отправьте его во время настройки. Дополнительные сведения можно найти по адресу https://success.rewardgateway.com/hc/en-us/articles/360038650573-Microsoft-Azure-for-Authentication.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -211,4 +211,4 @@ ms.locfileid: "67092803"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

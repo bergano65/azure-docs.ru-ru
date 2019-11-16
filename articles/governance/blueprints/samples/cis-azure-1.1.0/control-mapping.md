@@ -1,17 +1,14 @@
 ---
 title: Пример схемы теста производительности CIS для платформ Microsoft Azure. Сопоставление рекомендаций
 description: Сопоставление рекомендаций из примера проекта теста производительности CIS для платформ Microsoft Azure с Политикой Azure.
-author: DCtheGeek
-ms.author: dacoulte
 ms.date: 10/01/2019
 ms.topic: sample
-ms.service: blueprints
-ms.openlocfilehash: 6549cf030772d805b063510b9931968027639511
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 7974a5f9e5ccca41cdaa838cf05e3861dbae1b8d
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73583144"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74038426"
 ---
 # <a name="recommendation-mapping-of-the-cis-microsoft-azure-foundations-benchmark-blueprint-sample"></a>Сопоставление рекомендаций из примера проекта теста производительности CIS для платформ Microsoft Azure
 

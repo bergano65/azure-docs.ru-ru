@@ -1,5 +1,5 @@
 ---
-title: Создание приложения аналитики в магазине в Azure IoT Central | Документация Майкрософт
+title: Руководство по Создание приложения аналитики в магазине в Azure IoT Central
 description: В этом учебнике показано, как создать приложение для розничной торговли в магазине в IoT Central. Вы создадите его, настроите и добавите устройства-датчики.
 services: iot-central
 ms.service: iot-central
@@ -10,13 +10,13 @@ ms.custom:
 - iot-p0-scenario
 ms.author: timlt
 author: timlt
-ms.date: 10/03/2019
-ms.openlocfilehash: a662201823808c9e2e34e9210096cb081e1b9430
-ms.sourcegitcommit: b2fb32ae73b12cf2d180e6e4ffffa13a31aa4c6f
+ms.date: 11/12/2019
+ms.openlocfilehash: 071d432ba2769705213cb98cee644b64e9e81b6e
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73615313"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74112901"
 ---
 # <a name="tutorial-create-an-in-store-analytics-application-in-azure-iot-central"></a>Руководство по Создание приложения аналитики в магазине в Azure IoT Central
 
@@ -75,7 +75,7 @@ ms.locfileid: "73615313"
 
 1. Если у вас есть подписка Azure, укажите *каталог, подписку Azure и регион*. Если у вас нет подписки, вы можете включить **семидневную бесплатную пробную версию** и указать необходимые контактные данные.  
 
-    Дополнительные сведения о каталогах и подписках см. в статье [Создание приложения Azure IoT Central](../core/quick-deploy-iot-central-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json).
+    Дополнительные сведения о каталогах и подписках см. в статье [Создание приложения Azure IoT Central](../preview/quick-deploy-iot-central.md).
 
 1. Нажмите кнопку **Создать**.
 
@@ -160,7 +160,7 @@ ms.locfileid: "73615313"
 
 В-третьих, можно настраивать шаблоны устройств, создавая пользовательские представления. Они позволяют операторам визуализировать данные телеметрии и метаданные устройств, такие как метрики и работоспособность устройств.
 
-Здесь мы используем два первых способа настроить шаблон устройства для датчиков RuuviTag. Сведения о создании представлений для датчиков см. в кратком руководстве [Добавление имитированного устройства в приложение IoT Central](../core/quick-create-pnp-device-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json).
+Здесь мы используем два первых способа настроить шаблон устройства для датчиков RuuviTag. Сведения о создании представлений для датчиков см. в кратком руководстве [Добавление имитированного устройства в приложение IoT Central](../preview/quick-create-pnp-device.md).
 
 Чтобы настроить встроенные интерфейсы шаблона устройства RuuviTag, выполните следующие действия.
 
@@ -227,8 +227,8 @@ ms.locfileid: "73615313"
 
 Выполните действия, описанные в следующих двух статьях, чтобы подключить настоящие шлюз Rigado и датчики RuuviTag. Закончив, вернитесь к этому учебнику. Так как вы уже создали шаблоны устройств в этом учебнике, их не нужно создавать повторно в следующем наборе инструкций.
 
-- Сведения о подключении шлюза Rigado см. в статье [Подключение Rigado Cascade 500 к приложению Azure IoT Central](../core/howto-connect-rigado-cascade-500-pnp.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json).
-- Сведения о подключении датчиков RuuviTag см. в статье [Подключение RuuviTag к приложению Azure IoT Central](../core/howto-connect-ruuvi-pnp.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json). Эти инструкции также можно использовать для создания двух имитированных датчиков, если это необходимо.
+- Сведения о подключении шлюза Rigado см. в статье [Подключение Rigado Cascade 500 к приложению Azure IoT Central](../preview/howto-connect-rigado-cascade-500.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json).
+- Сведения о подключении датчиков RuuviTag см. в статье [Подключение RuuviTag к приложению Azure IoT Central](../preview/howto-connect-ruuvi.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json). Эти инструкции также можно использовать для создания двух имитированных датчиков, если это необходимо.
 
 ## <a name="add-rules-and-actions"></a>Добавление правил и действий
 В рамках использования датчиков в приложении Azure IoT Central для мониторинга условий можно создать правила для запуска действий при выполнении определенных условий. Правило связывается с шаблоном устройства и одним устройством или несколькими, а также содержит условия, которые должны быть выполнены на основе данных телеметрии или событий устройства. Правило также имеет одно связанное действие или несколько. Действия могут включать отправку уведомлений по электронной почте или активацию действия веб-перехватчика для отправки данных в другие службы. Шаблон приложения **Аналитика в магазине — оформление заказов** содержит ряд предопределенных правил для устройств в приложении.

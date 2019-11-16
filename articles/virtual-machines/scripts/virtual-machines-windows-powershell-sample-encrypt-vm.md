@@ -1,5 +1,5 @@
 ---
-title: Пример сценария Azure PowerShell. Шифрование виртуальной машины Windows | Документация Майкрософт
+title: Пример сценария Azure PowerShell для шифрования виртуальной машины Windows.
 description: Пример сценария Azure PowerShell для шифрования виртуальной машины Windows.
 services: virtual-machines-windows
 documentationcenter: virtual-machines
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 12/12/2017
 ms.author: cynthn
-ms.openlocfilehash: b97292fb0a832f6eec1096d2274556d162e67ca7
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: c16c212cdf5854110a3fae1bf7fbb01592137629
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73748648"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74038903"
 ---
 # <a name="encrypt-a-windows-virtual-machine-with-azure-powershell"></a>Шифрование виртуальной машины Windows с помощью Azure PowerShell
 

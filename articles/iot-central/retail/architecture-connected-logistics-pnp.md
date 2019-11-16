@@ -7,12 +7,12 @@ ms.service: iot-central
 ms.subservice: iot-central-retail
 ms.topic: overview
 ms.date: 10/20/2019
-ms.openlocfilehash: 1940f02fdf9badcf99ef85a2ab02ac9099cc1775
-ms.sourcegitcommit: b2fb32ae73b12cf2d180e6e4ffffa13a31aa4c6f
+ms.openlocfilehash: 797488632f04af9a170f05590154e50310570b28
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73615378"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73890721"
 ---
 # <a name="architecture-of-iot-central-connected-logistics-application-template"></a>Архитектура шаблона приложения интеллектуальной логистики для IoT Central
 
@@ -47,4 +47,4 @@ Azure IoT Central — это платформа для разработки ре
 ## <a name="next-steps"></a>Дополнительная информация
 * Узнайте, как развернуть [шаблон решения для подключенной логистики](./tutorial-iot-central-connected-logistics-pnp.md).
 * Узнайте больше о [шаблонах IoT Central для розничной торговли](./overview-iot-central-retail-pnp.md).
-* См. сведения об [IoT Central](../core/overview-iot-central-pnp.md).
+* См. сведения об [IoT Central](../preview/overview-iot-central.md).

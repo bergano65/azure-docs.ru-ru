@@ -9,14 +9,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: tutorial
-ms.date: 10/14/2019
+ms.date: 11/11/2019
 ms.author: diberry
-ms.openlocfilehash: 43ad6558b685d3959562be720f7494b3d2a7334e
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: c118a74e273e153746240465692b1c712bd25f47
+ms.sourcegitcommit: 44c2a964fb8521f9961928f6f7457ae3ed362694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73499426"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73953606"
 ---
 # <a name="tutorial-extract-free-form-data-with-patternany-entity"></a>Руководство по Извлечение неструктурированных данных с использованием сущности Pattern.any
 
@@ -138,7 +138,7 @@ ms.locfileid: "73499426"
 
 ## <a name="using-an-explicit-list"></a>Использование явного списка
 
-Если ваш шаблон, который включает сущность Pattern.any, извлекает сущности неправильно, используйте [явный список](luis-concept-patterns.md#explicit-lists), чтобы решить эту проблему.
+Если ваш шаблон, который включает сущность Pattern.any, извлекает сущности неправильно, используйте [явный список](reference-pattern-syntax.md#explicit-lists), чтобы решить эту проблему.
 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов

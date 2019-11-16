@@ -1,17 +1,14 @@
 ---
 title: 'Пример: конкретная группа безопасности сети для каждой подсети.'
 description: В этом примере определения политики необходимо, чтобы определенная группа безопасности сети использовалась для каждой виртуальной подсети.
-author: DCtheGeek
-ms.service: azure-policy
-ms.topic: sample
 ms.date: 01/23/2019
-ms.author: dacoulte
-ms.openlocfilehash: 977deba4ee083fae5cbf24905cee84a3a0d020c4
-ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
+ms.topic: sample
+ms.openlocfilehash: 5e86bb60490fa6f32d3313e7c3fcf751057b3a52
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71981329"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74069845"
 ---
 # <a name="sample---network-security-group-x-on-every-subnet"></a>Пример группы безопасности сети в каждой подсети
 

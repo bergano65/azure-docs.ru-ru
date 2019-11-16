@@ -1,7 +1,7 @@
 ---
 title: Краткое руководство. Отправка запроса в API Поиска местных компаний Bing с помощью Node.js
 titleSuffix: Azure Cognitive Services
-description: Из этой статьи вы узнаете, как использовать API Bing Local Business Search с помощью Node.
+description: С помощью этого краткого руководства вы сможете начать отправку запросов в Bing Local Business Search API в Cognitive Services.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: bing-local-business
 ms.topic: quickstart
 ms.date: 09/13/2019
 ms.author: aahi
-ms.openlocfilehash: 02513d0596588b4e6ba05edf5342769e78c24242
-ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
+ms.openlocfilehash: 925e3bfb4a89832d5cde7e35d5ce5e3be3a5bcbb
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70996657"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74075628"
 ---
 # <a name="quickstart-send-a-query-to-the-bing-local-business-search-api-using-nodejs"></a>Краткое руководство. Отправка запроса в API Bing Local Business Search с помощью Node.js
 

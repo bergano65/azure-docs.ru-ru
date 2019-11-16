@@ -1,17 +1,14 @@
 ---
 title: 'Пример: проверка параметров аудита SQL Server'
 description: В этом примере определения политики выполняется проверка параметров аудита SQL Server с помощью auditIfNotExists.
-author: DCtheGeek
-ms.service: azure-policy
-ms.topic: sample
 ms.date: 01/23/2019
-ms.author: dacoulte
-ms.openlocfilehash: c548d1e0e9f21f482a0cfc4b19c482e040d7f298
-ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
+ms.topic: sample
+ms.openlocfilehash: 5a0d758bd96937ca443d434b76d22aaefc618687
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71980375"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74069795"
 ---
 # <a name="sample---audit-sql-server-audit-settings"></a>Пример проверки параметров аудита SQL Server
 

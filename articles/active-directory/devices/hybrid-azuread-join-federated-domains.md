@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4335b8251e31f151e3d965481bead01303ab7420
-ms.sourcegitcommit: 39d95a11d5937364ca0b01d8ba099752c4128827
+ms.openlocfilehash: 14565c7e499b04b9c41184111d6ddcc88fffac80
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69562264"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73883006"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-join-for-federated-domains"></a>Руководство по Настройка гибридного присоединения к Azure Active Directory для федеративных доменов
 
@@ -40,7 +40,7 @@ ms.locfileid: "69562264"
    `/adfs/services/trust/13/certificatemixed` 
 
 > [!WARNING] 
-> Также нужно включить **adfs/services/trust/2005/windowstransport** или **adfs/services/trust/13/windowstransport**, но только в качестве конечных точек с подключением к интрасети. Их НЕЛЬЗЯ предоставлять как конечные точки с подключением к экстрасети через прокси-сервер веб-приложения. Дополнительные сведения см. в статье об [отключении конечных точек WS-Trust в Windows на прокси-сервере](https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/deployment/best-practices-securing-ad-fs#disable-ws-trust-windows-endpoints-on-the-proxy-ie-from-extranet). В разделе **Служба** > **Конечные точки** вы можете увидеть, какие конечные точки активированы в консоли управления AD FS.
+> Также нужно включить **adfs/services/trust/2005/windowstransport** или **adfs/services/trust/13/windowstransport**, но только в качестве конечных точек с подключением к интрасети. Их НЕЛЬЗЯ предоставлять как конечные точки с подключением к экстрасети через прокси-сервер веб-приложения. Дополнительные сведения см. в статье об [отключении конечных точек WS-Trust в Windows на прокси-сервере](https://docs.microsoft.com/windows-server/identity/ad-fs/deployment/best-practices-securing-ad-fs#disable-ws-trust-windows-endpoints-on-the-proxy-ie-from-extranet). В разделе **Служба** > **Конечные точки** вы можете увидеть, какие конечные точки активированы в консоли управления AD FS.
 
 В этом руководстве описано, как настроить гибридное присоединение к Azure AD для компьютеров, подключенных к домену Active Directory в федеративной среде, с помощью AD FS.
 

@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 07/05/2019
 ms.author: travisw
-ms.openlocfilehash: 1de9283e1ad609a1f81d7e8a6d8171cc8052e3ae
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 58bc33c54a7bd878d717b2c6e44d9ac8657c245f
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73506214"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74111790"
 ---
 # <a name="quickstart-create-a-voice-assistant-in-java-on-android-by-using-the-speech-sdk"></a>Краткое руководство. Создание голосового помощника в Java на Android с помощью пакета SDK службы "Речь"
 
@@ -30,9 +30,9 @@ ms.locfileid: "73506214"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Ключ подписки Azure для служб "Речь". [Получите бесплатно](get-started.md) или создайте его на [портале Azure](https://portal.azure.com).
-* Ранее созданный бот, настроенный с помощью[канала "Речь Direct Line"](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directlinespeech).
-* [Android Studio](https://developer.android.com/studio/) версии 3.3 или более поздней.
+- Ключ подписки Azure для служб "Речь". [Получите бесплатно](get-started.md) или создайте его на [портале Azure](https://portal.azure.com).
+- Ранее созданный бот, настроенный с помощью[канала "Речь Direct Line"](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directlinespeech).
+- [Android Studio](https://developer.android.com/studio/) версии 3.3 или более поздней.
 
     > [!NOTE]
     > Ознакомьтесь со [списком поддерживаемых регионов для голосовых помощников](regions.md#voice-assistants) и убедитесь, что ваши ресурсы развернуты в одном из этих регионов.
@@ -96,9 +96,9 @@ ms.locfileid: "73506214"
 
 Этот XML-файл определяет простой пользовательский интерфейс для взаимодействия с ботом.
 
-* Элемент `button` инициирует взаимодействие и вызывает метод `onBotButtonClicked` при щелчке.
-* Элемент `recoText` будет отображать результаты преобразования речи в текст при разговоре с ботом.
-* Элемент `activityText` будет отображать полезные данные JSON для последнего действия Bot Framework от бота.
+- Элемент `button` инициирует взаимодействие и вызывает метод `onBotButtonClicked` при щелчке.
+- Элемент `recoText` будет отображать результаты преобразования речи в текст при разговоре с ботом.
+- Элемент `activityText` будет отображать полезные данные JSON для последнего действия Bot Framework от бота.
 
 Теперь текстовая и графическая версии пользовательского интерфейса должны выглядеть следующим образом:
 

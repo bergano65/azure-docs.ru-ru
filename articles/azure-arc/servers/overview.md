@@ -10,12 +10,12 @@ keywords: служба автоматизации Azure, DSC, PowerShell, нас
 ms.date: 11/04/2019
 ms.custom: mvc
 ms.topic: overview
-ms.openlocfilehash: 57dbfa0c2063c2059955294ccc1337bb76b72614
-ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+ms.openlocfilehash: 7a2e9d39629e4fdb349652c9c48d0084d051f9f8
+ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73606084"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74122840"
 ---
 # <a name="what-is-azure-arc-for-servers"></a>Что собой представляет Azure Arc для серверов
 
@@ -132,7 +132,7 @@ az provider register --namespace 'Microsoft.GuestConfiguration'
 
 - На компьютерах, на которых уже установлен агент MMA, будут доступны функции **Azure Arc**, включенные с помощью обновленных пакетов управления.
 - Для интеграции Azure Arc для серверов требуется [агент MMA версии 10.20.18011 или более поздней](https://docs.microsoft.com/azure/virtual-machines/extensions/oms-windows#agent-and-vm-extension-version).
-- При запросе данных журнала в [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/log-query-overview#log-queries) возвращаемая схема данных будет содержать гибридный **ResourceId** в форме `/subscriptions/<SubscriptionId/resourceGroups/<ResourceGroup>/providers/Microsoft.HybridCompute/machines/<MachineName>`.
+- При запросе данных журнала в [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/log-query-overview) возвращаемая схема данных будет содержать гибридный **ResourceId** в форме `/subscriptions/<SubscriptionId/resourceGroups/<ResourceGroup>/providers/Microsoft.HybridCompute/machines/<MachineName>`.
 
 Дополнительные сведения см. в статье [Начало работы с Log Analytics в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-portal).
 

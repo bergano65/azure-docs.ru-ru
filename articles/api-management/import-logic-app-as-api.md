@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 08/01/2019
 ms.author: apimpm
-ms.openlocfilehash: 57965b0326171f37d33aeae02080c8887c3acf23
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 4077187fe04e3be914a6f7fba84c03df1b79d06a
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70072077"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74108393"
 ---
 # <a name="import-a-logic-app-as-an-api"></a>импорт приложения логики в виде API;
 
@@ -59,7 +59,7 @@ ms.locfileid: "70072077"
 
 7. Нажмите кнопку **Создать**.
 
-## <a name="test-the-imported-api-in-the-azure-portal"></a>Тестирование импортированного API на портале Azure
+## <a name="test-the-api-in-the-azure-portal"></a>проверка API на портале Azure;
 
 Операции можно вызывать непосредственно на портале Azure. Это удобный способ просмотра и проверки операций API.
 
@@ -72,22 +72,6 @@ ms.locfileid: "70072077"
 4. Нажмите кнопку **Отправить**.
 
     Служба серверной части вернет ответ **200 — ОК** и другие данные.
-
-## <a name="call-operation"> </a>Вызов операции с портала разработчика
-
-Также операции можно вызвать через **портал разработчиков**, чтобы проверить API.
-
-1. Выберите API, который вы создали на шаге "Импорт и публикация API серверной части".
-2. Щелкните **Портал разработчика**.
-
-    Откроется сайт портала разработчика.
-
-3. Выберите созданный **API**.
-4. Выберите операцию, которую необходимо проверить.
-5. Щелкните **Попробовать**.
-6. Нажмите кнопку **Отправить**.
-
-    После вызова операции портал разработчика отображает **состояние ответа**, **заголовки ответа** и **содержимое ответа**.
 
 [!INCLUDE [api-management-navigate-to-instance.md](../../includes/api-management-append-apis.md)]
 

@@ -1,17 +1,14 @@
 ---
 title: 'Пример: допустимые SKU учетных записей хранения'
 description: Необходимо, чтобы учетные записи хранения использовали допустимый номер SKU в этом примере определения политики.
-author: DCtheGeek
-ms.service: azure-policy
-ms.topic: sample
 ms.date: 01/23/2019
-ms.author: dacoulte
-ms.openlocfilehash: b1da45176384474ed7ff138d2bdca8de3d336beb
-ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
+ms.topic: sample
+ms.openlocfilehash: 34f6e15bb89a74855462ce9426cd05cd78340f9e
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71977684"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74071659"
 ---
 # <a name="sample---allowed-storage-account-skus"></a>Пример: допустимые SKU учетных записей хранения
 

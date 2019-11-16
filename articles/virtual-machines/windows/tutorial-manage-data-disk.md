@@ -1,5 +1,5 @@
 ---
-title: Руководство. Управление дисками Azure с помощью Azure PowerShell | Документация Майкрософт
+title: Руководство по управлению дисками Azure с помощью Azure PowerShell
 description: В этом руководстве объясняется, как создать и администрировать диски Azure для виртуальных машин с помощью PowerShell
 services: virtual-machines-windows
 documentationcenter: virtual-machines
@@ -16,12 +16,12 @@ ms.date: 11/29/2018
 ms.author: cynthn
 ms.custom: mvc
 ms.subservice: disks
-ms.openlocfilehash: f44ea76ed22ab4feacc6ee37b165bbc33f7ddafc
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 7c68299e4df187b1e9006d9ee1f2f70a13df3c52
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70101596"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74064783"
 ---
 # <a name="tutorial---manage-azure-disks-with-azure-powershell"></a>Руководство по управлению дисками Azure с помощью Azure PowerShell
 

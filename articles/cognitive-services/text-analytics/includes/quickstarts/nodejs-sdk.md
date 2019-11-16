@@ -4,16 +4,16 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 10/28/2019
 ms.author: aahi
-ms.openlocfilehash: 5c5c2ed6b7806095dada40cc921a773d28421424
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: 54aadd22b8f2bbccaa4c5e4f1444aa08279a4773
+ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73750159"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74125587"
 ---
 <a name="HOLTop"></a>
 
-[Справочная документация](https://docs.microsoft.com/javascript/api/azure-cognitiveservices-textanalytics) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-node/tree/master/lib/services/cognitiveServicesTextAnalytics) | [Пакет (NPM)](https://www.npmjs.com/package/azure-cognitiveservices-textanalytics) | [Примеры](https://github.com/Azure-Samples/cognitive-services-node-sdk-samples/)
+[Справочная документация](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-textanalytics) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-node/tree/master/lib/services/cognitiveServicesTextAnalytics) | [Пакет (NPM)](https://www.npmjs.com/package/azure-cognitiveservices-textanalytics) | [Примеры](https://github.com/Azure-Samples/cognitive-services-node-sdk-samples/)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -62,7 +62,7 @@ npm install @azure/cognitiveservices-textanalytics @azure/ms-rest-js
 
 ## <a name="object-model"></a>Объектная модель
 
-Клиент Анализа текста — это объект [TextAnalyticsClient](https://docs.microsoft.com/javascript/api/azure-cognitiveservices-textanalytics/textanalyticsclient?view=azure-node-latest), который выполняет проверку подлинности в Azure с использованием ключа. Этот клиент предоставляет несколько методов для анализа текста по отдельным строкам или пакетам строк.
+Клиент Анализа текста — это объект [TextAnalyticsClient](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-textanalytics/textanalyticsclient), который выполняет проверку подлинности в Azure с использованием ключа. Этот клиент предоставляет несколько методов для анализа текста по отдельным строкам или пакетам строк.
 
 Текст отправляется в API в формате списка `documents` объектов `dictionary`, содержащих комбинации атрибутов `id`, `text` и `language` в зависимости от используемого метода. Атрибут `text` содержит текст для анализа в источнике `language`, а `id` может иметь любое значение. 
 
@@ -79,14 +79,14 @@ npm install @azure/cognitiveservices-textanalytics @azure/ms-rest-js
 
 ## <a name="authenticate-the-client"></a>Аутентификация клиента
 
-Создайте объект [TextAnalyticsClient](https://docs.microsoft.com/javascript/api/azure-cognitiveservices-textanalytics/textanalyticsclient?view=azure-node-latest), используя `credentials` и `endpoint` в качестве параметров.
+Создайте объект [TextAnalyticsClient](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-textanalytics/textanalyticsclient), используя `credentials` и `endpoint` в качестве параметров.
 
 [!code-javascript[Authentication and client creation](~/cognitive-services-node-sdk-samples/Samples/textAnalytics.js?name=authentication)]
 
 
 ## <a name="sentiment-analysis"></a>Анализ мнений
 
-Создайте список объектов словарей, содержащих документ, который необходимо проанализировать. Вызовите метод [тональности()](https://docs.microsoft.com/javascript/api/azure-cognitiveservices-textanalytics/textanalyticsclient?view=azure-node-latest#sentiment-object-) клиента и получите возвращенный [SentimentBatchResult](https://docs.microsoft.com/javascript/api/azure-cognitiveservices-textanalytics/sentimentbatchresult?view=azure-node-latest). Выполните итерацию результатов и выведите идентификатор каждого документа и оценку тональности. Оценка, близкая к 0, указывает на негативную тональность, а оценка, близкая к 1, — на позитивную.
+Создайте список объектов словарей, содержащих документ, который необходимо проанализировать. Вызовите метод [тональности()](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-textanalytics/textanalyticsclient#sentiment-models-textanalyticsclientsentimentoptionalparams-) клиента и получите возвращенный [SentimentBatchResult](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-textanalytics/sentimentbatchresult). Выполните итерацию результатов и выведите идентификатор каждого документа и оценку тональности. Оценка, близкая к 0, указывает на негативную тональность, а оценка, близкая к 1, — на позитивную.
 
 [!code-javascript[Sentiment analysis](~/cognitive-services-node-sdk-samples/Samples/textAnalytics.js?name=sentimentAnalysis)]
 
@@ -103,7 +103,7 @@ npm install @azure/cognitiveservices-textanalytics @azure/ms-rest-js
 
 ## <a name="language-detection"></a>Определение языка
 
-Создайте список объектов словарей, содержащих документы. Вызовите метод [detectLanguage()](https://docs.microsoft.com/javascript/api/azure-cognitiveservices-textanalytics/textanalyticsclient?view=azure-node-latest#detectlanguage-object-) клиента и получите возвращенный [LanguageBatchResult](https://docs.microsoft.com/javascript/api/azure-cognitiveservices-textanalytics/languagebatchresult?view=azure-node-latest). Затем выполните итерацию результатов и выведите идентификатор каждого документа и язык.
+Создайте список объектов словарей, содержащих документы. Вызовите метод [detectLanguage()](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-textanalytics/textanalyticsclient#detectlanguage-models-textanalyticsclientdetectlanguageoptionalparams-) клиента и получите возвращенный [LanguageBatchResult](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-textanalytics/languagebatchresult). Затем выполните итерацию результатов и выведите идентификатор каждого документа и язык.
 
 [!code-javascript[Language detection](~/cognitive-services-node-sdk-samples/Samples/textAnalytics.js?name=languageDetection)]
 
@@ -119,7 +119,7 @@ Document ID: 3 , Language: Chinese_Simplified
 
 ## <a name="entity-recognition"></a>Распознавание сущностей
 
-Создайте список объектов, содержащих документы. Вызовите метод[сущностей()](https://docs.microsoft.com/javascript/api/azure-cognitiveservices-textanalytics/textanalyticsclient?view=azure-node-latest#entities-object-) клиента и получите объект [EntitiesBatchResult](https://docs.microsoft.com/javascript/api/azure-cognitiveservices-textanalytics/entitiesbatchresult?view=azure-node-latest). Выполните итерацию списка результатов и выведите идентификатор каждого документа. Для каждой обнаруженной сущности распечатайте его имя в Википедии, тип и подтипы (если они есть), а также расположение в исходном тексте.
+Создайте список объектов, содержащих документы. Вызовите метод[сущностей()](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-textanalytics/textanalyticsclient#entities-models-textanalyticscliententitiesoptionalparams-) клиента и получите объект [EntitiesBatchResult](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-textanalytics/entitiesbatchresult). Выполните итерацию списка результатов и выведите идентификатор каждого документа. Для каждой обнаруженной сущности распечатайте его имя в Википедии, тип и подтипы (если они есть), а также расположение в исходном тексте.
 
 [!code-javascript[Entity recognition](~/cognitive-services-node-sdk-samples/Samples/textAnalytics.js?name=entityRecognition)]
 
@@ -157,7 +157,7 @@ Document ID: 2
 
 ## <a name="key-phrase-extraction"></a>Извлечение ключевой фразы
 
-Создайте список объектов, содержащих документы. Вызовите метод [keyPhrases()](https://docs.microsoft.com/javascript/api/azure-cognitiveservices-textanalytics/textanalyticsclient?view=azure-node-latest#keyphrases-object-) клиента и получите возвращенный объект [KeyPhraseBatchResult](https://docs.microsoft.com/javascript/api/azure-cognitiveservices-textanalytics/keyphrasebatchresult?view=azure-node-latest). Выполните итерацию результатов и выведите идентификатор каждого документа и все обнаруженные ключевые фразы.
+Создайте список объектов, содержащих документы. Вызовите метод [keyPhrases()](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-textanalytics/textanalyticsclient#keyphrases-models-textanalyticsclientkeyphrasesoptionalparams-) клиента и получите возвращенный объект [KeyPhraseBatchResult](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-textanalytics/keyphrasebatchresult). Выполните итерацию результатов и выведите идентификатор каждого документа и все обнаруженные ключевые фразы.
 
 [!code-javascript[Key phrase extraction](~/cognitive-services-node-sdk-samples/Samples/textAnalytics.js?name=keyPhraseExtraction)]
 

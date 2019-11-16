@@ -1,17 +1,14 @@
 ---
 title: 'Пример: проверка на предмет отсутствия приложений на виртуальных машинах Linux'
 description: Этот пример инициативы и определений гостевой конфигурации Политики проверяет, установлены ли указанные приложения на виртуальных машинах Linux.
-author: DCtheGeek
-ms.service: azure-policy
-ms.topic: sample
 ms.date: 05/02/2019
-ms.author: dacoulte
-ms.openlocfilehash: 5f4d4f4c1102c4409d891bb20b54788dc8ed40ee
-ms.sourcegitcommit: 1c2659ab26619658799442a6e7604f3c66307a89
+ms.topic: sample
+ms.openlocfilehash: 0789b7f408c1f3eea000bfb2fc21ddf5feff790c
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72255745"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74076225"
 ---
 # <a name="sample---audit-if-specified-applications-arent-installed-inside-linux-vms"></a>Пример. Выполнение аудита в случае, если заданные приложения не установлены на виртуальных машинах Linux
 

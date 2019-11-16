@@ -1,5 +1,5 @@
 ---
-title: Пример сценария Azure PowerShell для IIS с использованием DSC | Документация Майкрософт
+title: Пример сценария Azure PowerShell для IIS с использованием DSC
 description: Пример сценария Azure PowerShell для IIS с использованием DSC
 services: virtual-machines-windows
 documentationcenter: virtual-machines
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 12/12/2017
 ms.author: cynthn
-ms.openlocfilehash: d9da17bc35afc3de4b0deac8ebc90faca94f5026
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: 3b8ab8c14935554e74c562346e0bd88eb5e3ad49
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73749829"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74037183"
 ---
 # <a name="create-an-iis-vm-with-powershell"></a>Создание виртуальной машины IIS с помощью PowerShell
 

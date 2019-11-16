@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 10/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 75f0669a474c24647e71eae8b5e0e0830b7c0bef
-ms.sourcegitcommit: 6eecb9a71f8d69851bc962e2751971fccf29557f
+ms.openlocfilehash: b46ac34db21576c7e2de2271a468e3e782ff6aa9
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72533097"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73885350"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-check-point-cloudguard-dome9-arc"></a>Руководство по интеграции единого входа Azure Active Directory с Check Point CloudGuard Dome9 Arc
 
@@ -107,7 +107,7 @@ ms.locfileid: "72533097"
     | memberof | user.assignedroles |
 
     >[!NOTE]
-    >Перейдите по [этой ссылке](https://docs.microsoft.com/en-us/azure/active-directory/saas-apps/apptio-tutorial), чтобы понять, как создать роли в Azure AD.
+    >Перейдите по [этой ссылке](https://docs.microsoft.com/azure/active-directory/saas-apps/apptio-tutorial), чтобы понять, как создать роли в Azure AD.
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите пункт **Сертификат (Base64)** и щелкните **Скачать**, чтобы скачать сертификат. Сохраните этот сертификат на компьютере.
 

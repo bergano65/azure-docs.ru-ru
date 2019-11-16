@@ -14,12 +14,12 @@ ms.devlang: nodejs
 ms.topic: quickstart
 ms.date: 11/05/2019
 ms.author: aschhab
-ms.openlocfilehash: 40543f55dc0cb56f6bc575f926456faf2d0ae5a3
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: c82edde98242ffe130c2022c428c86de80e3b034
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73719208"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74111783"
 ---
 # <a name="quickstart-how-to-use-service-bus-topics-and-subscriptions-with-nodejs-and-the-azure-sb-package"></a>Краткое руководство. Использование разделов и подписок служебной шины с Node.js и пакетом azure/sb
 > [!div class="op_multi_selector" title1="Язык программирования" title2="Пакет Node.js"]
@@ -41,7 +41,7 @@ ms.locfileid: "73719208"
 Дополнительные сведения о разделах и подписках см. в разделе [Дальнейшие действия](#next-steps).
 
 ## <a name="prerequisites"></a>Предварительные требования
-- Подписка Azure. Для работы с этим учебником требуется учетная запись Azure. Вы можете [активировать преимущества подписчика Visual Studio или MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A85619ABF) или [зарегистрироваться для получения бесплатной учетной записи](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
+- Подписка Azure. Для работы с этим учебником требуется учетная запись Azure. Вы можете активировать [преимущества подписчика Visual Studio или MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A85619ABF) или зарегистрироваться для получения [бесплатной учетной записи](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
 - Выполните шаги из [краткого руководства по созданию раздела Служебной шины и подписок на него с помощью портала Azure](service-bus-quickstart-topics-subscriptions-portal.md), чтобы создать **пространство имен** Служебной шины и получить **строку подключения**.
 
     > [!NOTE]
@@ -150,7 +150,7 @@ var serviceBusService = azure.createServiceBusService().withFilter(retryOperatio
 > [!NOTE]
 > По умолчанию подписки являются постоянными и существуют либо до их удаления, либо до удаления раздела, с которым они связаны. Если приложение содержит логику для создания подписки, она сначала должна проверить, существует ли подписка, используя метод `getSubscription`.
 >
-> Вы можете удалять подписки автоматически, задав [свойство AutoDeleteOnIdle](https://docs.microsoft.com/javascript/api/azure-arm-sb/sbsubscription?view=azure-node-latest#autodeleteonidle).
+> Вы можете удалять подписки автоматически, задав [свойство AutoDeleteOnIdle](https://docs.microsoft.com/javascript/api/@azure/arm-servicebus/sbsubscription?view=azure-node-latest#autodeleteonidle).
 
 ### <a name="create-a-subscription-with-the-default-matchall-filter"></a>Создание подписки с фильтром по умолчанию (MatchAll)
 Фильтр **MatchAll** является фильтром по умолчанию при создании подписки. Если используется фильтр **MatchAll**, все сообщения, опубликованные в разделе, помещаются в виртуальную очередь подписки. В следующем примере создается подписка AllMessages и используется фильтр по умолчанию **MatchAll**.
@@ -314,7 +314,7 @@ serviceBusService.receiveSubscriptionMessage('MyTopic', 'HighMessages', { isPeek
 Если в приложении происходит сбой после обработки сообщения, но перед вызовом метода `deleteMessage`, сообщение будет повторно доставлено в приложение после его перезапуска. Такая реакция на событие часто называется *по крайней мере одна обработка*. Это значит, что каждое приложение обрабатывается по крайней мере один раз, но в некоторых случаях одно и то же сообщение может быть доставлено повторно. Если повторная обработка недопустима, необходимо добавить логику для обработки повторной доставки сообщения. Для этого можно использовать свойство сообщения **MessageId**, которое остается постоянным в ходе разных попыток доставки.
 
 ## <a name="delete-topics-and-subscriptions"></a>Удаление разделов и подписок
-Если не задано [свойство AutoDeleteOnIdle](https://docs.microsoft.com/javascript/api/azure-arm-sb/sbsubscription?view=azure-node-latest#autodeleteonidle), разделы и подписки хранятся постоянно, и их нужно удалять явным образом на [портале Azure][Azure portal] или с помощью программных средств.
+Если не задано [свойство AutoDeleteOnIdle](https://docs.microsoft.com/javascript/api/@azure/arm-servicebus/sbsubscription?view=azure-node-latest#autodeleteonidle), разделы и подписки хранятся постоянно, и их нужно удалять явным образом на [портале Azure][Azure portal] или с помощью программных средств.
 В следующем примере показано, как удалить раздел с именем `MyTopic`.
 
 ```javascript

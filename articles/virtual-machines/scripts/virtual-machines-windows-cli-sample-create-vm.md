@@ -1,5 +1,5 @@
 ---
-title: Пример скрипта Azure CLI. Создание виртуальной машины Windows Server | Документация Майкрософт
+title: Пример скрипта Azure CLI. Создание виртуальной машины Windows Server
 description: Пример скрипта Azure CLI. Создание виртуальной машины Windows Server
 services: virtual-machines-Windows
 documentationcenter: virtual-machines
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-Windows
 ms.workload: infrastructure
 ms.date: 02/23/2017
 ms.author: rclaus
-ms.openlocfilehash: 14675497bf0e042cfdf6a6548181e3a6adfd278a
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 3c0710f75df4cdd1cdf015c0acc374a3d06652b7
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67708192"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74039873"
 ---
 # <a name="create-a-virtual-machine-with-the-azure-cli"></a>Создание виртуальной машины с помощью Azure CLI
 
