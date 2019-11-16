@@ -11,12 +11,12 @@ ms.topic: overview
 ms.date: 04/09/2018
 ms.author: glenga
 ms.custom: mvc
-ms.openlocfilehash: b131a6fd5bb39ee5ec672a8ffb75cb22087a38af
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.openlocfilehash: e599ff280481549f68822d96f97b85f2516b1593
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72597440"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74082744"
 ---
 # <a name="what-are-microsoft-flow-logic-apps-functions-and-webjobs"></a>Что такое Microsoft Flow, Logic Apps, Функции и Веб-задания?
 
@@ -123,12 +123,12 @@ Microsoft Flow и Logic Apps спроектированы в рамках под
 * [Leveraging Azure Functions & Azure App Service for integration scenarios by Christopher Anderson](https://www.biztalk360.com/integrate-2016-resources/leveraging-azure-functions-azure-app-service-integration-scenarios/) (Использование функций Azure и службы приложений Azure в сценариях интеграции. Автор: Кристофер Андерсон (Christopher Anderson))
 * [Integrations Made Simple by Charles Lamanna](https://www.biztalk360.com/integrate-2016-resources/integrations-made-simple/) (Упрощенные возможности интеграции. Автор: Чарльз Ламанна (Charles Lamanna))
 * [Запись веб-трансляции по Logic Apps](https://aka.ms/logicappslive)
-* [Часто задаваемые вопросы о Microsoft Flow](https://flow.microsoft.com/documentation/frequently-asked-questions/)
+* [Часто задаваемые вопросы о Microsoft Flow](/power-automate/frequently-asked-questions)
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 Начните работу с создания потока, приложения логики или приложения-функции. Выберите любую из следующих ссылок:
 
-* [Начало работы с Microsoft Flow](https://flow.microsoft.com/en-us/documentation/getting-started/)
+* [Начало работы с Microsoft Flow](/power-automate/getting-started)
 * [Создайте приложение логики](../logic-apps/quickstart-create-first-logic-app-workflow.md)
 * [Создание первой функции Azure](functions-create-first-azure-function.md)

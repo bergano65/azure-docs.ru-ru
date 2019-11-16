@@ -1,17 +1,14 @@
 ---
 title: 'Пример: аудит параметров обнаружения угроз на уровне базы данных'
 description: В этом примере определения политики проверяется, имеют ли политики оповещения системы безопасности для базы данных SQL указанное состояние.
-author: DCtheGeek
-ms.service: azure-policy
-ms.topic: sample
 ms.date: 01/23/2019
-ms.author: dacoulte
-ms.openlocfilehash: 7c8c5f4530f6f34cfe94143fa03c89647369f5b7
-ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
+ms.topic: sample
+ms.openlocfilehash: 77a3865c04ee9bc5a1cab9b51f503f71daf74435
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71977550"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74071490"
 ---
 # <a name="sample---audit-db-level-threat-detection-setting"></a>Пример: аудит параметров обнаружения угроз на уровне базы данных
 

@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 07/11/2019
 author: mlearned
 monikerRange: vsts
-ms.openlocfilehash: 1c16368990148406fbacdde2981c10fab0b2d405
-ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
+ms.openlocfilehash: 229b4b9f53ea3866dce1169645f6d6da20827271
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2019
-ms.locfileid: "71969661"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73888902"
 ---
 # <a name="deploy-nodejs-apps-powered-by-azure-cosmos-db-with-devops-projects"></a>Развертывания приложений Node.js на платформе Azure Cosmos DB с помощью DevOps Projects
 
@@ -169,6 +169,6 @@ DevOps Projects автоматически создает и настраива�
 > * фиксация изменений в Git и их автоматическое развертывание в Azure;
 > * Очистка ресурсов
 
-Подробную информацию и описание дальнейших шагов см. в статье [Define your multi-stage continuous deployment (CD) pipeline](https://docs.microsoft.com/en-us/azure/devops/pipelines/release/define-multistage-release-process?view=azure-devops&viewFallbackFrom=vsts) (Настройка многоэтапного конвейера для непрерывного развертывания).
+Подробную информацию и описание дальнейших шагов см. в статье [Define your multi-stage continuous deployment (CD) pipeline](https://docs.microsoft.com/azure/devops/pipelines/release/define-multistage-release-process?view=azure-devops&viewFallbackFrom=vsts) (Настройка многоэтапного конвейера для непрерывного развертывания).
 
 

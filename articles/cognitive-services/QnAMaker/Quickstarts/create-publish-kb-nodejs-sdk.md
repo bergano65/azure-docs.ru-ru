@@ -10,12 +10,12 @@ ms.subservice: qna-maker
 ms.topic: quickstart
 ms.date: 09/26/2019
 ms.author: diberry
-ms.openlocfilehash: ab3fa02f7285fdbde918f9e365d1ee96ba5e71a1
-ms.sourcegitcommit: 4f3f502447ca8ea9b932b8b7402ce557f21ebe5a
+ms.openlocfilehash: 7650dce9a3ef494815b8d7a326eb07e1e25f2da2
+ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71802994"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74123091"
 ---
 # <a name="quickstart-qna-maker-client-library-for-nodejs"></a>Краткое руководство. Клиентская библиотека QnA Maker для Node.js
 
@@ -27,7 +27,7 @@ ms.locfileid: "71802994"
 * Управление базой знаний
 * Публикация базы знаний
 
-[Справочная документация](https://docs.microsoft.com/javascript/api/azure-cognitiveservices-textanalytics) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/Knowledge.QnAMaker) | [Пакет (NPM)](https://www.npmjs.com/package/@azure/cognitiveservices-qnamaker) | [Примеры Node.js](https://github.com/Azure-Samples/cognitive-services-qnamaker-nodejs/blob/master/documentation-samples/quickstarts/knowledgebase_quickstart/knowledgebase_quickstart.js)
+[Справочная документация](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-textanalytics) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/Knowledge.QnAMaker) | [Пакет (NPM)](https://www.npmjs.com/package/@azure/cognitiveservices-qnamaker) | [Примеры Node.js](https://github.com/Azure-Samples/cognitive-services-qnamaker-nodejs/blob/master/documentation-samples/quickstarts/knowledgebase_quickstart/knowledgebase_quickstart.js)
 
 [!INCLUDE [Custom subdomains notice](../../../../includes/cognitive-services-custom-subdomains-note.md)]
 

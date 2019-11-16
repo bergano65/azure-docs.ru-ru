@@ -8,12 +8,12 @@ ms.author: grhuynh
 ms.service: genomics
 ms.topic: quickstart
 ms.date: 01/11/2019
-ms.openlocfilehash: 47043b9f4416ec61cf25ea92504c0c653b7d5408
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: eab5714cb43816c617190fc394f6156ab08ff51d
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/08/2019
-ms.locfileid: "73819200"
+ms.locfileid: "73838727"
 ---
 # <a name="quickstart-run-a-workflow-through-the-microsoft-genomics-service"></a>Краткое руководство. Запуск рабочего процесса в службе Microsoft Genomics
 
@@ -39,8 +39,8 @@ ms.locfileid: "73819200"
  |**Параметр**          |  **Рекомендуемое значение**  | **Описание поля** |
  |:-------------       |:-------------         |:----------            |
  |Subscription         | Имя вашей подписки|Это единица выставления счетов для служб Azure. Дополнительные сведения см. на странице [подписок](https://account.azure.com/Subscriptions) |      
- |группа ресурсов.       | MyResourceGroup       |  Группы ресурсов позволяют объединить несколько ресурсов Azure (учетная запись хранения, учетная запись Genomics и т. д.) в одну группу для простоты управления. Дополнительные сведения см. в разделе [Группы ресурсов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview#resource-groups). Допустимые имена групп ресурсов см. в статье [Соглашения об именовании](/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging). |
- |Имя учетной записи         | MyGenomicsAccount     |Выберите уникальный идентификатор учетной записи. Допустимые имена см. в статье [Соглашения об именовании](/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging). |
+ |группа ресурсов.       | MyResourceGroup       |  Группы ресурсов позволяют объединить несколько ресурсов Azure (учетная запись хранения, учетная запись Genomics и т. д.) в одну группу для простоты управления. Дополнительные сведения см. в разделе [Группы ресурсов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview#resource-groups). Допустимые имена групп ресурсов см. в статье [Соглашения об именовании](/azure/architecture/best-practices/resource-naming). |
+ |Имя учетной записи         | MyGenomicsAccount     |Выберите уникальный идентификатор учетной записи. Допустимые имена см. в статье [Соглашения об именовании](/azure/architecture/best-practices/resource-naming). |
  |Location                   | Западный регион США 2                    |    Служба доступна в таких регионах: западная часть США 2, Западная Европа и Юго-Восточная Азия. |
 
 
@@ -118,8 +118,8 @@ msgen list -f “<full path where you saved the config file>”
  |**Параметр**          |  **Рекомендуемое значение**  | **Описание поля** |
  |:-------------------------       |:-------------         |:----------            |
  |Subscription         | Ваша подписка Azure. |Дополнительные сведения о подписках см. [здесь](https://account.azure.com/Subscriptions). |      
- |группа ресурсов.       | MyResourceGroup       |  Можно выбрать группу ресурсов, к которой относится учетная запись Genomics. Допустимые имена групп ресурсов см. в статье [Соглашения об именовании](/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging). |
- |Имя учетной записи хранения         | MyStorageAccount     |Выберите уникальный идентификатор учетной записи. Допустимые имена см. в статье [Соглашения об именовании](/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging). |
+ |группа ресурсов.       | MyResourceGroup       |  Можно выбрать группу ресурсов, к которой относится учетная запись Genomics. Допустимые имена групп ресурсов см. в статье [Соглашения об именовании](/azure/architecture/best-practices/resource-naming). |
+ |Имя учетной записи хранения         | MyStorageAccount     |Выберите уникальный идентификатор учетной записи. Допустимые имена см. в статье [Соглашения об именовании](/azure/architecture/best-practices/resource-naming). |
  |Location                  | Западный регион США 2                  | Используйте то же расположение, что и для учетной записи Genomics, для сокращения расходов на исходящие данные и уменьшения задержки при передаче данных.  | 
  |Производительность                  | Стандартная                   | По умолчанию используется уровень "Стандартный". Дополнительные сведения об учетных записях хранения уровня "Стандартный" и "Премиум" см. в статье [Введение в хранилище Microsoft Azure](https://docs.microsoft.com/azure/storage/common/storage-introduction).    |
  |Тип учетной записи       | Хранилище BLOB-объектов       |  В хранилище BLOB-объектов операции скачивания или отправки могут выполняться в 2–5 раз быстрее, чем в хранилище общего назначения. |

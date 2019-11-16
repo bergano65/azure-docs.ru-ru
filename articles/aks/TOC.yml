@@ -216,6 +216,8 @@
         - name: "Использование RBAC Kubernetes при интеграции с Azure\_AD"
           href: azure-ad-rbac.md
           maintainContext: true
+        - name: Ротация сертификатов
+          href: certificate-rotation.md
     - name: Мониторинг и ведение журнала
       items:
         - name: Azure Monitor для контейнеров

@@ -9,12 +9,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: v-masebo
 ms.date: 07/29/2019
-ms.openlocfilehash: 97e603e6daa64bb70edefe06b52a7c45f90787f3
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: d3fecd54e36c8a3dd43c88f5aa4e4233057c3f91
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/08/2019
-ms.locfileid: "73818301"
+ms.locfileid: "73838595"
 ---
 # <a name="tutorial-design-a-relational-database-in-a-single-database-within-azure-sql-database-using-ssms"></a>Руководство по Проектирование отдельной реляционной базы данных в службе "База данных SQL Azure" с помощью SQL Server Management Studio
 
@@ -63,14 +63,14 @@ ms.locfileid: "73818301"
     | ------------ | ------------------ | ------------------------------------------------- |
     | **Database name** (Имя базы данных) | *yourDatabase* | Допустимые имена баз данных см. в статье [Идентификаторы баз данных](/sql/relational-databases/databases/database-identifiers). |
     | **подписка** | *yourSubscription*  | Дополнительные сведения о подписках см. [здесь](https://account.windowsazure.com/Subscriptions). |
-    | **группа ресурсов** | *yourResourceGroup* | Допустимые имена групп ресурсов см. в статье о [правилах и ограничениях именования](/azure/architecture/best-practices/naming-conventions). |
+    | **группа ресурсов** | *yourResourceGroup* | Допустимые имена групп ресурсов см. в статье о [правилах и ограничениях именования](/azure/architecture/best-practices/resource-naming). |
     | **Выбрать источник** | Пустая база данных | Указывает, что должна быть создана пустая база данных. |
 
 4. Щелкните **Сервер**, чтобы использовать имеющийся сервер базы данных или создать и настроить новый сервер базы данных. Выберите существующий сервер или нажмите кнопку **Создать сервер** и заполните форму **Новый сервер**, указав следующие сведения.
 
     | Параметр       | Рекомендуемое значение | ОПИСАНИЕ |
     | ------------ | ------------------ | ------------------------------------------------- |
-    | **Server name** (Имя сервера) | Любое глобально уникальное имя | Допустимые имена серверов см. в статье о [правилах и ограничениях именования](/azure/architecture/best-practices/naming-conventions). |
+    | **Server name** (Имя сервера) | Любое глобально уникальное имя | Допустимые имена серверов см. в статье о [правилах и ограничениях именования](/azure/architecture/best-practices/resource-naming). |
     | **Имя для входа администратора сервера** | Любое допустимое имя | Сведения о допустимых именах для входа см. в статье [Идентификаторы базы данных](/sql/relational-databases/databases/database-identifiers). |
     | **Пароль** | Любой допустимый пароль | Длина пароля должна составлять минимум восемь символов. В пароле должны использоваться символы трех категорий из перечисленных: прописные буквы, строчные буквы, цифры и специальные символы. |
     | **Местоположение.** | Любое допустимое расположение | Дополнительные сведения о регионах Azure см. [здесь](https://azure.microsoft.com/regions/). |

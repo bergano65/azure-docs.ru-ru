@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
 manager: eliotgra
-ms.openlocfilehash: b0f3a486edb0c650a4a14e5e60b4459f758a64d4
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 40e850bcbd177b15c91e57ec369c6b04963ffb84
+ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73499941"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74132282"
 ---
 # <a name="tutorial-build-a-power-bi-provider-dashboard"></a>Руководство по Создание панели мониторинга для поставщика Power BI
 
@@ -51,7 +51,7 @@ ms.locfileid: "73499941"
 * Учетная запись службы Power BI. Если у вас ее еще нет, можно [создать бесплатную пробную учетную запись для службы Power BI](https://app.powerbi.com/). Если вы еще не работали с Power BI, вам может пригодиться руководство [Начало работы с Power BI](https://docs.microsoft.com/power-bi/service-get-started).
 
 ## <a name="set-up-a-continuous-data-export-to-azure-event-hubs"></a>Настройка непрерывного экспорта данных в Центры событий Azure
-Для начала необходимо настроить непрерывный экспорт данных из шаблона приложения Azure IoT Central в Центр событий Azure, размещенный в вашей подписке. Для этого можно выполнить действия, описанные в руководстве по [экспорту в Центры событий](https://docs.microsoft.com/azure/iot-central/core/howto-export-data-pnp) для Azure IoT Central. Экспортировать придется только те данные телеметрии, которые нужны для работы с этим руководством.
+Для начала необходимо настроить непрерывный экспорт данных из шаблона приложения Azure IoT Central в Центр событий Azure, размещенный в вашей подписке. Для этого можно выполнить действия, описанные в руководстве по [экспорту в Центры событий](https://docs.microsoft.com/azure/iot-central/preview/howto-export-data) для Azure IoT Central. Экспортировать придется только те данные телеметрии, которые нужны для работы с этим руководством.
 
 ## <a name="create-a-power-bi-streaming-dataset"></a>Создание набора данных для потоковой передачи в Power BI
 
@@ -91,7 +91,7 @@ ms.locfileid: "73499941"
 ## <a name="stream-data-to-power-bi-from-your-logic-app"></a>Потоковая передача данных в Power BI из приложения логики
 Следующим шагом будет анализ данных, поступающих из Центра событий, для последующей потоковой передачи в созданные ранее наборы данных Power BI.
 
-1. Чтобы это выполнить, вам нужно разобраться в формате полезных данных JSON, которые передаются с устройства в Центр событий. Для этого изучите [этот пример схемы](https://docs.microsoft.com/azure/iot-central/core/howto-export-data-pnp#telemetry) и измените его в соответствии со своем схемой или изучите сообщения с помощью [обозревателя служебной шины](https://github.com/paolosalvatori/ServiceBusExplorer). Если вы используете приложения для непрерывного мониторинга состояния пациентов, сообщения будут выглядеть следующим образом:
+1. Чтобы это выполнить, вам нужно разобраться в формате полезных данных JSON, которые передаются с устройства в Центр событий. Для этого изучите [этот пример схемы](https://docs.microsoft.com/azure/iot-central/preview/howto-export-data#telemetry) и измените его в соответствии со своем схемой или изучите сообщения с помощью [обозревателя служебной шины](https://github.com/paolosalvatori/ServiceBusExplorer). Если вы используете приложения для непрерывного мониторинга состояния пациентов, сообщения будут выглядеть следующим образом:
 
 **Данные телеметрии Smart Vitals Patch**
 

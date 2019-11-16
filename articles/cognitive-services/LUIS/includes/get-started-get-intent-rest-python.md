@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 10/18/2019
 ms.author: diberry
-ms.openlocfilehash: 491d97411cec65d4f747495a6246b4c62d33e973
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: b2c840b9de25ff6997037c284c60390e7afa03ec
+ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73499580"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74125597"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -63,7 +63,7 @@ ms.locfileid: "73499580"
 
 1. Замените следующие значения:
 
-    * `YOUR-KEY` на ключ для начала разработки.
+    * `YOUR-KEY` на ключ для начала работы.
     * `YOUR-ENDPOINT` на конечную точку, например `westus2.api.cognitive.microsoft.com`.
 
 1. Для установки зависимостей введите следующие команды в консоли:
@@ -138,4 +138,4 @@ ms.locfileid: "73499580"
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Добавление высказываний и обучение](../luis-get-started-python-add-utterance.md)
+> [Добавление высказываний и обучение](../get-started-get-model-rest-apis.md)

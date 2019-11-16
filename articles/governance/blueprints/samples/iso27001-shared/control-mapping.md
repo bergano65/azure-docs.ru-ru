@@ -1,17 +1,14 @@
 ---
 title: 'Пример схем "ISO 27001: общие службы" — сопоставление элементов управления'
 description: 'Сопоставление элементов управления на примере схемы "ISO 27001: общие службы". Каждый элемент управления сопоставляется с одной или несколькими политиками Azure, которые помогают выполнять оценку.'
-author: DCtheGeek
-ms.author: dacoulte
 ms.date: 03/14/2019
 ms.topic: sample
-ms.service: blueprints
-ms.openlocfilehash: c43b2d2cf1eac4e8254fee78e8979bb163b3a9a4
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: e3bba30ddffe85a067d091a328ae4cc4de7258df
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73162061"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74037372"
 ---
 # <a name="control-mapping-of-the-iso-27001-shared-services-blueprint-sample"></a>Сопоставление элементов управления образца схемы "ISO 27001: общие службы"
 

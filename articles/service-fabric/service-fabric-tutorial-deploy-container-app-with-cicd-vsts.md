@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 08/29/2018
 ms.author: atsenthi
 ms.custom: mvc
-ms.openlocfilehash: b686ceace3679d1541e8f1a74bca7e99b81ba932
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.openlocfilehash: a2dc6aeb7dc2a62c543a58c322c23c9661c6940a
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68598894"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73832739"
 ---
 # <a name="tutorial-deploy-a-container-application-with-cicd-to-a-service-fabric-cluster"></a>Руководство по Развертывание приложения-контейнера с помощью CI/CD в кластере Service Fabric
 
@@ -147,7 +147,7 @@ ms.locfileid: "68598894"
 
 Чтобы создать выпуск вручную, последовательно выберите **+Выпуск** -> **Создать выпуск** -> **Создать**. Ход создания можно отслеживать на вкладке **Выпуски**.
 
-Убедитесь, что развертывание выполнено успешно и приложение выполняется в кластере.  Откройте браузер и перейдите по ссылке [http://mysftestcluster.southcentralus.cloudapp.azure.com:19080/Explorer/](http://mysftestcluster.southcentralus.cloudapp.azure.com:19080/Explorer/).  Обратите внимание на версию приложения, в данном случае "1.0.0.20170616.3".
+Убедитесь, что развертывание выполнено успешно и приложение выполняется в кластере.  Откройте браузер и перейдите по ссылке `http://mysftestcluster.southcentralus.cloudapp.azure.com:19080/Explorer/`.  Обратите внимание на версию приложения, в данном случае "1.0.0.20170616.3".
 
 ## <a name="commit-and-push-changes-trigger-a-release"></a>Фиксация и отправка изменений, создание выпуска
 
@@ -167,7 +167,7 @@ ms.locfileid: "68598894"
 
 Чтобы проверить ход сборки, перейдите на вкладку **Сборки** в **Team Explorer** в Visual Studio.  Проверив, что сборка запускается успешно, создайте определение выпуска, которое развертывает приложение в кластер.
 
-Убедитесь, что развертывание выполнено успешно и приложение выполняется в кластере.  Откройте браузер и перейдите по ссылке [http://mysftestcluster.southcentralus.cloudapp.azure.com:19080/Explorer/](http://mysftestcluster.southcentralus.cloudapp.azure.com:19080/Explorer/).  Обратите внимание на версию приложения, в этом случае — 1.0.0.20170815.3.
+Убедитесь, что развертывание выполнено успешно и приложение выполняется в кластере.  Откройте браузер и перейдите по ссылке `http://mysftestcluster.southcentralus.cloudapp.azure.com:19080/Explorer/`.  Обратите внимание на версию приложения, в этом случае — 1.0.0.20170815.3.
 
 ![Service Fabric Explorer][sfx1]
 

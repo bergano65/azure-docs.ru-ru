@@ -10,12 +10,12 @@ ms.workload: big-data
 ms.topic: quickstart
 ms.date: 05/08/2019
 ms.custom: mvc
-ms.openlocfilehash: 16de2054864a42d978d149353a89d65e8de7d155
-ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+ms.openlocfilehash: 004557ab3eb73f3f793b0514913260a414645d40
+ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73605690"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74129368"
 ---
 # <a name="quickstart-run-a-spark-job-on-azure-databricks-using-the-azure-portal"></a>Краткое руководство. Запуск задания Spark в Azure Databricks с помощью портала Azure
 
@@ -164,7 +164,7 @@ ms.locfileid: "73605690"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этой статье вы создали кластер Spark в Azure Databricks и запустили задание Spark, используя данные платформы "Открытые наборы данных Azure". Вы также можете просмотреть [источники данных Spark](/azure/databricks/data/data-sources/index.html), чтобы узнать, как импортировать данные из источников данных в Azure Databricks. Перейдите к следующей статье, чтобы узнать, как выполнять операции ETL (извлечения, преобразование и загрузка данных) с помощью Azure Databricks.
+В этой статье вы создали кластер Spark в Azure Databricks и запустили задание Spark, используя данные платформы "Открытые наборы данных Azure". Вы также можете просмотреть [источники данных Spark](/azure/databricks/data/data-sources/index), чтобы узнать, как импортировать данные из источников данных в Azure Databricks. Перейдите к следующей статье, чтобы узнать, как выполнять операции ETL (извлечения, преобразование и загрузка данных) с помощью Azure Databricks.
 
 > [!div class="nextstepaction"]
 >[Извлечение, преобразование и загрузка данных с помощью Azure Databricks](databricks-extract-load-sql-data-warehouse.md)

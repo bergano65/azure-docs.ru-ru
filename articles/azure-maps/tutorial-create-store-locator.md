@@ -1,22 +1,22 @@
 ---
-title: Создание указателя магазинов с помощью Azure Maps | Документация Майкрософт
-description: Создание указателя магазинов с помощью Azure Maps.
+title: Руководство по Создание указателя магазинов с помощью Azure Maps
+description: Руководство по Создание указателя магазинов с помощью Azure Maps.
 author: walsehgal
 ms.author: v-musehg
-ms.date: 11/15/2018
+ms.date: 11/12/2019
 ms.topic: tutorial
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: bf30e805a06222bf8c74429df54565073d7d919b
-ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
+ms.openlocfilehash: 52deb1cf872176b69975d550dd89d870b34d9bf0
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70933069"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74107086"
 ---
-# <a name="create-a-store-locator-by-using-azure-maps"></a>Создание указателя магазинов с помощью Azure Maps
+# <a name="tutorial-create-a-store-locator-by-using-azure-maps"></a>Руководство по Создание указателя магазинов с помощью Azure Maps
 
 Это руководство поможет вам создать простой указатель магазинов с помощью Azure Maps. Указатели магазинов сейчас используются довольно широко. Большинство принципов, реализованных в приложении этого типа, применимы и ко многим другим приложениям. Указатели магазинов являются обязательным условием для множества предприятий, занимающихся прямой продажей потребителям. Из этого руководства вы узнаете, как выполнять следующие задачи:
     

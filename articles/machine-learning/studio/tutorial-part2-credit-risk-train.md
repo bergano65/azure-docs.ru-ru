@@ -1,6 +1,6 @@
 ---
 title: Руководство 2. Обучение моделей кредитных рисков
-titleSuffix: ML Studio (classic) Azure
+titleSuffix: ML Studio (classic) - Azure
 description: Подробное руководство по созданию решения прогнозной аналитики для оценки кредитных рисков в классической версии Студии машинного обучения Azure. Это руководство представляет собой вторую часть серии, состоящей из трех частей. В нем объясняется, как обучать и оценивать модели.
 keywords: кредитный риск, решение прогнозной аналитики, оценка рисков
 author: sdgilley
@@ -10,12 +10,12 @@ ms.service: machine-learning
 ms.subservice: studio
 ms.topic: tutorial
 ms.date: 02/11/2019
-ms.openlocfilehash: 375fdf9b64afcce2d521008d353949e650f9df5e
-ms.sourcegitcommit: 6c2c97445f5d44c5b5974a5beb51a8733b0c2be7
+ms.openlocfilehash: b3f0ebe2cad68759e7feeb7a7cc3dadbbd03ee7e
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73622073"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73838660"
 ---
 # <a name="tutorial-2-train-credit-risk-models---azure-machine-learning-studio-classic"></a>Руководство 2. Обучение моделей кредитных рисков в Студии машинного обучения Azure (классическая версия)
 

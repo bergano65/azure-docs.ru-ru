@@ -7,12 +7,12 @@ ms.service: iot-central
 ms.subservice: iot-central-retail
 ms.topic: overview
 ms.date: 10/20/2019
-ms.openlocfilehash: 8360db3e31899dc7ca0a2b502d0036358f0858d6
-ms.sourcegitcommit: b2fb32ae73b12cf2d180e6e4ffffa13a31aa4c6f
+ms.openlocfilehash: d72636265ff3ac654faba91d1420b502b35d3192
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73615225"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73889008"
 ---
 # <a name="tutorial-deploy-and-walk-through-a-smart-inventory-management-application-template"></a>Руководство по развертыванию шаблона приложения для интеллектуального управления запасами для IoT Central и его использованию
 
@@ -109,4 +109,4 @@ ms.locfileid: "73615225"
 ## <a name="next-steps"></a>Дополнительная информация
 * Узнайте больше об интеллектуальном управлении запасами и его [принципах](./architecture-smart-inventory-management-pnp.md).
 * Узнайте больше о других [шаблонах IoT Central для розничной торговли](./overview-iot-central-retail-pnp.md).
-* См. сведения об [IoT Central](../core/overview-iot-central-pnp.md).
+* См. сведения об [IoT Central](../preview/overview-iot-central.md).
