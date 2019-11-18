@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: reference
-ms.date: 03/29/2018
+ms.date: 11/14/2019
 ms.author: swmachan
-ms.openlocfilehash: c07673e7b170170de4723a1232d2e7281feaaf99
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: 172bf452cc5197db95e0e1e55c7c687971194899
+ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73888093"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74123064"
 ---
 # <a name="translator-text-api-v30"></a>API перевода текстов v3.0
 
@@ -165,3 +165,21 @@ Authorization: Bearer <Base64-access_token>
 | 500000| Произошла непредвиденная ошибка. Если ошибка сохраняется, передайте отчет о ней, включив следующие данные: дата и время ошибки, идентификатор запроса из заголовка ответа X-RequestId и идентификатор клиента из заголовка запроса X-ClientTraceId.|
 | 503000| Служба временно недоступна. Повторите попытку. Если ошибка сохраняется, передайте отчет о ней, включив следующие данные: дата и время ошибки, идентификатор запроса из заголовка ответа X-RequestId и идентификатор клиента из заголовка запроса X-ClientTraceId.|
 
+## <a name="metrics"></a>Метрики 
+Метрики позволяют просматривать сведения об использовании и доступности транслятора в портал Azure в разделе метрики, как показано на снимке экрана ниже. Дополнительные сведения см. в статье [метрики данных и платформы](https://docs.microsoft.com/azure/azure-monitor/platform/data-platform-metrics).
+
+![Метрики переводчиков](../media/translatormetrics.png)
+
+В этой таблице перечислены доступные метрики с описанием того, как они используются для отслеживания вызовов API перевода.
+
+| Метрики | ОПИСАНИЕ |
+|:----|:-----|
+| TotalCalls| Общее число вызовов API.|
+| TotalTokenCalls| Общее число вызовов API через службу маркеров с использованием токена проверки подлинности.|
+| SuccessfulCalls| Число успешных вызовов.|
+| TotalErrors| Количество вызовов с ошибочным ответом.|
+| BlockedCalls| Число вызовов, превысивших ограничение скорости или квоты.|
+| ServerErrors| Количество вызовов с внутренней ошибкой сервера (5XX).|
+| ClientErrors| Количество вызовов с ошибкой на стороне клиента (4XX).|
+| Задержка| Длительность выполнения запроса в миллисекундах.|
+| CharactersTranslated| Общее количество символов во входящем текстовом запросе.|

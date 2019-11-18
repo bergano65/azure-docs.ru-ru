@@ -1,5 +1,5 @@
 ---
-title: Сопоставления полей для автоматического индексирования с помощью индексаторов
+title: Сопоставление полей в индексаторах
 titleSuffix: Azure Cognitive Search
 description: Настройте сопоставления полей в индексаторе, чтобы учитывать различия в именах полей и представлениях данных.
 manager: nitinme
@@ -9,12 +9,12 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: cc863ee3dc7f2dc8049fcd22189acac94a855352
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: 72623787cdb27c568fe2b4ec075010674a3996ef
+ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72786974"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74123994"
 ---
 # <a name="field-mappings-and-transformations-using-azure-cognitive-search-indexers"></a>Сопоставления полей и преобразования с помощью индексаторов Когнитивный поиск Azure
 
@@ -175,15 +175,18 @@ api-key: [admin key]
 
 #### <a name="base64-encoding-options"></a>параметры кодировки Base64
 
-Когнитивный поиск Azure поддерживает две различные кодировки Base64: **токен URL-адреса HttpServerUtility**и **URL-шифрование в кодировке Base64 без заполнения**. Строка, которая кодируется в кодировке Base64 во время индексирования, должна быть впоследствии декодирована с использованием одних и тех же параметров кодировки, иначе результат не будет совпадать с исходным.
+Azure Когнитивный поиск поддерживает URL-шифрование в кодировке Base64 и обычную кодировку Base64. Строка, которая кодируется в Base64 во время индексирования, должна быть декодирована позже с теми же параметрами кодировки, иначе результат не будет совпадать с исходным.
 
-Если параметры `useHttpServerUtilityUrlTokenEncode` или `useHttpServerUtilityUrlTokenDecode` для кодирования и декодирования соответственно имеют значение `true`, то `base64Encode` ведет себя как [HttpServerUtility. UrlTokenEncode](https://msdn.microsoft.com/library/system.web.httpserverutility.urltokenencode.aspx) и `base64Decode` ведет себя как [HttpServerUtility. урлтокендекоде](https://msdn.microsoft.com/library/system.web.httpserverutility.urltokendecode.aspx).
+Если параметры `useHttpServerUtilityUrlTokenEncode` или `useHttpServerUtilityUrlTokenDecode` для кодирования и декодирования соответственно имеют значение `true`, то `base64Encode` ведет себя как [HttpServerUtility.UrlTokenEncode](https://msdn.microsoft.com/library/system.web.httpserverutility.urltokenencode.aspx) и `base64Decode` ведет себя как [HttpServerUtility.UrlTokenDecode](https://msdn.microsoft.com/library/system.web.httpserverutility.urltokendecode.aspx).
 
-Если вы не используете полную .NET Framework (то есть вы используете .NET Core или другую платформу) для создания значений ключей для эмуляции поведения Когнитивный поиск Azure, необходимо установить `useHttpServerUtilityUrlTokenEncode` и `useHttpServerUtilityUrlTokenDecode` в `false`. В зависимости от используемой библиотеки функции кодирования и декодирования Base64 могут отличаться от используемых в Azure Когнитивный поиск.
+> [!WARNING]
+> Если для создания значений ключа используется `base64Encode`, `useHttpServerUtilityUrlTokenEncode` должны иметь значение true. Для значений ключей можно использовать только URL-шифрование в формате Base64. Полный набор ограничений на символы в значениях ключа см. в статье [правила &#40;именования когнитивный поиск&#41; Azure](https://docs.microsoft.com/rest/api/searchservice/naming-rules) .
+
+В библиотеках .NET в Azure Когнитивный поиск предполагается полная .NET Framework, которая обеспечивает встроенную кодировку. Параметры `useHttpServerUtilityUrlTokenEncode` и `useHttpServerUtilityUrlTokenDecode` используют этот встроенный функциональности. При использовании .NET Core или другой платформы рекомендуется задать эти параметры для `false` и вызова функций кодирования и декодирования вашей платформы напрямую.
 
 В следующей таблице сравниваются различные кодировки Base64 строки `00>00?00`. Чтобы определить требуемую дополнительную обработку (при наличии) для функций Base64, примените функцию кодировки библиотеки в строке `00>00?00` и сравните выходные данные с ожидаемыми выходными данными `MDA-MDA_MDA`.
 
-| Сервис кодирования | Выводные данные кодировки Base64 | Дополнительная обработка после кодирования библиотеки | Дополнительная обработка перед кодированием библиотеки |
+| Кодирование | Выводные данные кодировки Base64 | Дополнительная обработка после кодирования библиотеки | Дополнительная обработка перед кодированием библиотеки |
 | --- | --- | --- | --- |
 | Base64 с заполнением | `MDA+MDA/MDA=` | Использовать безопасные знаки URL-адреса и удалить заполнение | Использовать стандартные знаки Base64 и добавить заполнение |
 | Base64 без заполнения | `MDA+MDA/MDA` | Использовать безопасные знаки URL-адреса | Использовать стандартные знаки Base64 |

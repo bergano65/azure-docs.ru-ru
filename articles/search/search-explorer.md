@@ -1,5 +1,5 @@
 ---
-title: Использование средства обозревателя поиска для запроса данных в портал Azure
+title: Средство запроса обозревателя поиска в портал Azure
 titleSuffix: Azure Cognitive Search
 description: Обозреватель поиска встроен в портал Azure, что полезно для изучения содержимого и проверки запросов в Когнитивный поиск Azure. Введите строки для поиска терминов или фраз или полные выражения поиска с расширенным синтаксисом.
 manager: nitinme
@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 0bb50bd50c58b85f1d5de100c34d00d114a9ed77
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: ff2986c4e90cb997df250d647bdfbd068d70e51f
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72792963"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74112098"
 ---
 # <a name="use-search-explorer-in-the-azure-portal-for-querying-documents-in-azure-cognitive-search"></a>Использование обозревателя поиска в портал Azure для запросов к документам в Azure Когнитивный поиск 
 
@@ -138,18 +138,18 @@ ms.locfileid: "72792963"
 
 + Результаты возвращаются в виде подробных документов JSON, чтобы можно было полностью просмотреть структуру и содержимое документа. Можно использовать выражения запросов, как показано в примерах, чтобы ограничить возвращаемые поля.
 
-+ Документы содержат все поля, помеченные как **Доступный для получения** в индексе. Чтобы просмотреть атрибуты индекса на портале, на странице "Общие сведения о поиске" в списке **Индексы** щелкните *realestate-us-sample*.
++ Документы содержат все поля, помеченные как **Доступный для получения** в индексе. Чтобы просмотреть атрибуты индекса на портале, на странице "Общие сведения о поиске" в списке *Индексы* щелкните **realestate-us-sample**.
 
 + Запросы в свободной форме, аналогичные вводимым в коммерческом веб-браузере, можно использовать для тестирования взаимодействия с пользователем. Например, при использовании встроенного примера индекса недвижимости, можно ввести "Seattle apartments lake washington", а затем с помощью клавиш CTRL-F искать условия в результатах поиска. 
 
 + Выражения запросов и фильтров должны быть сформулированы в синтаксисе, поддерживаемом Когнитивный поиск Azure. По умолчанию используется [простой синтаксис](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search), но при необходимости можно использовать [полный запрос Lucene](https://docs.microsoft.com/rest/api/searchservice/lucene-query-syntax-in-azure-search), чтобы создавать более эффективные запросы. Для [выражений фильтров](https://docs.microsoft.com/rest/api/searchservice/odata-expression-syntax-for-azure-search) используется синтаксис OData.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о синтаксисе запросов и примеры см. в следующих ресурсах.
 
- + [Синтаксис простых запросов](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search) 
+ + [Простой синтаксис запросов](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search) 
  + [Синтаксис запросов Lucene](https://docs.microsoft.com/rest/api/searchservice/lucene-query-syntax-in-azure-search) 
  + [Примеры запросов Lucene](search-query-lucene-examples.md) 
  + [OData Expression Syntax for Azure Search](https://docs.microsoft.com/rest/api/searchservice/odata-expression-syntax-for-azure-search) (Синтаксис выражений OData для службы поиска Azure) 

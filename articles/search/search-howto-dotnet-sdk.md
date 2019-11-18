@@ -1,5 +1,5 @@
 ---
-title: Использование Когнитивный поиск Azure из приложения .NET
+title: Использование Когнитивный поиск Azure в .NET
 titleSuffix: Azure Cognitive Search
 description: Узнайте, как использовать Когнитивный поиск Azure в приложении .NET с помощью C# и пакета SDK для .NET. Задачи на основе кода включают подключение к службе, индексирование содержимого и запрос индекса.
 manager: nitinme
@@ -9,12 +9,12 @@ ms.devlang: dotnet
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: e1903b3b33e1dde5178fadbc37feee191a2eaacd
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: 54fcd1fb936b5dd41715798408b604106a24bcf9
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72792123"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74112589"
 ---
 # <a name="how-to-use-azure-cognitive-search-from-a-net-application"></a>Использование Когнитивный поиск Azure из приложения .NET
 
@@ -61,7 +61,7 @@ ms.locfileid: "72792123"
 
 В следующем примере кода показан каждый из этих сценариев. Вы можете использовать фрагменты кода в собственном приложении.
 
-### <a name="overview"></a>Краткое описание
+### <a name="overview"></a>Обзор
 Образец приложения, который мы будем рассматривать, создает новый индекс с именем hotels, заполняет его несколькими документами, а затем выполняет некоторые поисковые запросы. Вот основная программа, показывающая общий поток.
 
 ```csharp
@@ -752,7 +752,7 @@ WriteDocuments(results);
 
 На этом руководство заканчивается, но вам не стоит останавливаться. \* * Дальнейшие действия предоставляют дополнительные ресурсы для изучения Когнитивный поиск Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 * Изучите справочную информацию о [пакете SDK для .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.search) и [REST API](https://docs.microsoft.com/rest/api/searchservice/).
 * Изучите [соглашения о наименовании](https://docs.microsoft.com/rest/api/searchservice/Naming-rules) , чтобы узнать правила именования различных объектов.
 * Проверьте [Поддерживаемые типы данных](https://docs.microsoft.com/rest/api/searchservice/Supported-data-types) в Azure когнитивный Поиск.

@@ -11,12 +11,12 @@ ms.author: clauren
 ms.reviewer: jmartens
 ms.date: 10/25/2019
 ms.custom: seodec18
-ms.openlocfilehash: dab79f1d63a20e12f148766db5fcc3fc313a1f3a
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: 1dc66ae0f69c19524b32b55c654f7c8fd2d32762
+ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74076895"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74123207"
 ---
 # <a name="troubleshooting-azure-machine-learning-azure-kubernetes-service-and-azure-container-instances-deployment"></a>Устранение неполадок Машинное обучение Azure службы Azure Kubernetes и развертывания экземпляров контейнеров Azure
 
@@ -56,7 +56,7 @@ ms.locfileid: "74076895"
 
 Если возникнут какие-либо проблемы, прежде всего следует разбить задачу развертывания (описанную ранее) на отдельные шаги, чтобы установить причину проблемы.
 
-Разбиение развертывания на задачи полезно, если вы используете API [WebService. deploy ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice%28class%29?view=azure-ml-py#deploy-workspace--name--model-paths--image-config--deployment-config-none--deployment-target-none-) или [WebService. deploy_from_model ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice%28class%29?view=azure-ml-py#deploy-from-model-workspace--name--models--image-config--deployment-config-none--deployment-target-none-) , так как обе эти функции выполняют вышеупомянутые действия как одно действие. Обычно эти интерфейсы API удобны, но это позволяет разбиваться на действия при устранении неполадок, заменяя их приведенными ниже вызовами API.
+Разбиение развертывания на задачи полезно, если вы используете API [WebService. deploy ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice%28class%29?view=azure-ml-py#deploy-workspace--name--model-paths--image-config--deployment-config-none--deployment-target-none--overwrite-false-) или [WebService. deploy_from_model ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice%28class%29?view=azure-ml-py#deploy-from-model-workspace--name--models--image-config--deployment-config-none--deployment-target-none--overwrite-false-) , так как обе эти функции выполняют вышеупомянутые действия как одно действие. Обычно эти интерфейсы API удобны, но это позволяет разбиваться на действия при устранении неполадок, заменяя их приведенными ниже вызовами API.
 
 1. Регистрация модели. Ниже приведен пример кода.
 

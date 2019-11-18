@@ -1,7 +1,7 @@
 ---
 title: Справочник по операторам сравнения OData
 titleSuffix: Azure Cognitive Search
-description: Операторы сравнения OData, EQ, NE, gt, lt, GE и Le в запросах Когнитивный поиск Azure.
+description: Справочная документация по синтаксису и Справочнику по использованию операторов сравнения OData (EQ, NE, gt, lt, GE и Le) в запросах Когнитивный поиск Azure.
 manager: nitinme
 author: brjohnstmsft
 ms.author: brjohnst
@@ -19,12 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 068e2ec822f0a292ac83b3e48049830eb77b49f6
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: 62c8c93e07326e776cbe089042abc481544794bc
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72793391"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74113221"
 ---
 # <a name="odata-comparison-operators-in-azure-cognitive-search---eq-ne-gt-lt-ge-and-le"></a>Операторы сравнения OData в Azure Когнитивный поиск — `eq`, `ne`, `gt`, `lt`, `ge`и `le`
 
@@ -81,13 +81,13 @@ comparison_operator ::= 'gt' | 'lt' | 'ge' | 'le' | 'eq' | 'ne'
 | --- | --- | --- |
 | `Edm.Double` | `Edm.Double` | Для сравнения применяются [специальные правила для `NaN`](#special-case-nan) |
 | `Edm.Double` | `Edm.Int64` | Константа преобразуется в `Edm.Double`, что приводит к утере точности для значений большой величины |
-| `Edm.Double` | `Edm.Int32` | Н/Д |
+| `Edm.Double` | `Edm.Int32` | Недоступно |
 | `Edm.Int64` | `Edm.Double` | Сравнение с `NaN`, `-INF`или `INF` не разрешено |
-| `Edm.Int64` | `Edm.Int64` | Н/Д |
+| `Edm.Int64` | `Edm.Int64` | Недоступно |
 | `Edm.Int64` | `Edm.Int32` | Константа преобразуется в `Edm.Int64` перед сравнением |
 | `Edm.Int32` | `Edm.Double` | Сравнение с `NaN`, `-INF`или `INF` не разрешено |
-| `Edm.Int32` | `Edm.Int64` | Н/Д |
-| `Edm.Int32` | `Edm.Int32` | Н/Д |
+| `Edm.Int32` | `Edm.Int64` | Недоступно |
+| `Edm.Int32` | `Edm.Int32` | Недоступно |
 
 Для недопустимых сравнений, например для сравнения поля типа `Edm.Int64` с `NaN`, REST API Когнитивный поиск Azure будет возвращать ошибку "HTTP 400: недопустимый запрос".
 
@@ -154,7 +154,7 @@ comparison_operator ::= 'gt' | 'lt' | 'ge' | 'le' | 'eq' | 'ne'
 
     Rooms/any(room: room/Type eq 'Deluxe Room')
 
-## <a name="next-steps"></a>Дальнейшие действия  
+## <a name="next-steps"></a>Дополнительная информация  
 
 - [Фильтры в Когнитивный поиск Azure](search-filters.md)
 - [Общие сведения о языке выражений OData для Azure Когнитивный поиск](query-odata-filter-orderby-syntax.md)

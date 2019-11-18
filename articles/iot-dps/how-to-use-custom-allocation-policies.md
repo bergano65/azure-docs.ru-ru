@@ -3,17 +3,17 @@ title: Как использовать пользовательские поли
 description: Как использовать пользовательские политики выделения со Службой подготовки устройств к добавлению в Центр Интернета вещей Azure.
 author: wesmc7777
 ms.author: wesmc
-ms.date: 04/10/2019
+ms.date: 11/14/2019
 ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 manager: philmea
-ms.openlocfilehash: 11872f8efcebf39edef2f97cd30c225edbe74bb4
-ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
+ms.openlocfilehash: 8f9cc48384e6e1e85a92b3f23c3a362db0df98e0
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2019
-ms.locfileid: "73903569"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74108147"
 ---
 # <a name="how-to-use-custom-allocation-policies"></a>Как использовать пользовательские политики выделения
 
@@ -42,125 +42,141 @@ ms.locfileid: "73903569"
 
 ## <a name="prerequisites"></a>предварительным требованиям
 
-* Выполните процедуру, описанную в кратком руководстве по [настройке Службы подготовки устройств к добавлению в Центр Интернета вещей на портале Azure](./quick-setup-auto-provision.md).
 * [Visual Studio 2015](https://visualstudio.microsoft.com/vs/) или более поздней версии с включенной рабочей нагрузкой [Разработка классических приложений на C++](https://www.visualstudio.com/vs/support/selecting-workloads-visual-studio-2017/).
 * Установите последнюю версию [Git](https://git-scm.com/download/).
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-## <a name="create-two-divisional-iot-hubs"></a>Создание Центров Интернета вещей для двух отделов
+## <a name="create-the-provisioning-service-and-two-divisional-iot-hubs"></a>Создание службы подготовки и двух центров выпусков IoT
 
-В этом разделе описано, как с помощью Azure Cloud Shell создать два новых центра Интернета вещей, представляющих **подразделение** и **подразделение "теплообменники**Contoso".
+В этом разделе описано, как использовать Azure Cloud Shell для создания службы подготовки и двух центров Интернета вещей, представляющих **подразделение** и подразделение " **теплообменники**Contoso".
+
+> [!TIP]
+> Команды, используемые в этой статье, создают службу подготовки и другие ресурсы в расположении "Западная часть США". Рекомендуется создавать ресурсы в ближайшем для вас регионе, поддерживающем службу подготовки устройств. Чтобы просмотреть список доступных расположений, выполните команду `az provider show --namespace Microsoft.Devices --query "resourceTypes[?resourceType=='ProvisioningServices'].locations | [0]" --out table`, или перейдите на страницу [Состояние Azure](https://azure.microsoft.com/status/) и введите в строке поиска "Служба подготовки устройств". В командах расположения могут быть указаны в одном или нескольких форматах слов. Например: westus, Западная часть США, Западная часть США и т. д. В значении регистр не учитывается. Если для указания расположения вы используете несколько слов, укажите значение поиска в кавычках, например `-- location "West US"`.
+>
 
 1. В Azure Cloud Shell создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az-group-create). Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими.
 
-    В следующем примере создается группа ресурсов с именем *contoso-us-resource-group* в регионе *eastus*. Рекомендуется использовать эту группу для всех ресурсов, созданных в рамках этой статьи. Этот подход упростит очистку после завершения работы.
+    В следующем примере создается группа ресурсов с именем *contoso-US-Resource-Group* в регионе *westus* . Рекомендуется использовать эту группу для всех ресурсов, созданных в рамках этой статьи. Этот подход упростит очистку после завершения работы.
 
     ```azurecli-interactive 
-    az group create --name contoso-us-resource-group --location eastus
+    az group create --name contoso-us-resource-group --location westus
     ```
 
-2. В Azure Cloud Shell создайте Центр Интернета вещей **отдела тостеров Contoso** с помощью команды [az iot hub create](/cli/azure/iot/hub#az-iot-hub-create). Этот Центр Интернета вещей будет добавлен в группу *contoso-us-resource-group*.
+2. Используйте Azure Cloud Shell, чтобы создать службу подготовки устройств с помощью команды [AZ IOT DP Create](/cli/azure/iot/dps#az-iot-dps-create) . Служба подготовки будет добавлена в *contoso-US-Resource-Group*.
 
-    В следующем примере создается Центр Интернета вещей *contoso-toasters-hub-1098* в расположении *eastus*. Необходимо использовать уникальное имя концентратора. Придумайте собственный суффикс в имени центра вместо **1098**. В примере кода для пользовательской политики выделения требуется наличие слова `-toasters-` в имени центра.
+    В следующем примере создается служба подготовки с именем *contoso-подготовка-Service-1098* в расположении *westus* . Необходимо использовать уникальное имя службы. Создайте собственный суффикс в имени службы вместо **1098**.
 
     ```azurecli-interactive 
-    az iot hub create --name contoso-toasters-hub-1098 --resource-group contoso-us-resource-group --location eastus --sku S1
+    az iot dps create --name contoso-provisioning-service-1098 --resource-group contoso-us-resource-group --location westus
     ```
 
     Выполнение этой команды может занять несколько минут.
 
-3. В Azure Cloud Shell создайте Центр Интернета вещей **отдела тепловых насосов Contoso** с помощью команды [az iot hub create](/cli/azure/iot/hub#az-iot-hub-create). Этот Центр Интернета вещей также будет добавлен в группу *contoso-us-resource-group*.
+3. В Azure Cloud Shell создайте Центр Интернета вещей **отдела тостеров Contoso** с помощью команды [az iot hub create](/cli/azure/iot/hub#az-iot-hub-create). Этот Центр Интернета вещей будет добавлен в группу *contoso-us-resource-group*.
 
-    В следующем примере создается Центр Интернета вещей *contoso-heatpumps-hub-1098* в расположении *eastus*. Необходимо использовать уникальное имя концентратора. Придумайте собственный суффикс в имени центра вместо **1098**. В примере кода для пользовательской политики выделения требуется наличие слова `-heatpumps-` в имени центра.
+    В следующем примере создается центр Интернета вещей с именем *contoso-Names-Hub-1098* в расположении *westus* . Необходимо использовать уникальное имя концентратора. Придумайте собственный суффикс в имени центра вместо **1098**. В примере кода для пользовательской политики выделения требуется наличие слова `-toasters-` в имени центра.
 
     ```azurecli-interactive 
-    az iot hub create --name contoso-heatpumps-hub-1098 --resource-group contoso-us-resource-group --location eastus --sku S1
+    az iot hub create --name contoso-toasters-hub-1098 --resource-group contoso-us-resource-group --location westus --sku S1
     ```
 
-    Выполнение этой команды также может занять несколько минут.
+    Выполнение этой команды может занять несколько минут.
 
-## <a name="create-the-enrollment"></a>Создание регистрации
+4. В Azure Cloud Shell создайте Центр Интернета вещей **отдела тепловых насосов Contoso** с помощью команды [az iot hub create](/cli/azure/iot/hub#az-iot-hub-create). Этот Центр Интернета вещей также будет добавлен в группу *contoso-us-resource-group*.
 
-В этом разделе вы создадите новую группу регистрации, которая использует пользовательскую политику распределения. Для удобства в этой статье используется [аттестация симметричного ключа](concepts-symmetric-key-attestation.md) с регистрацией. В качестве более безопасного решения рекомендуется использовать [аттестацию сертификатов X.509](concepts-security.md#x509-certificates) с цепочкой доверия.
+    В следующем примере создается центр Интернета вещей с именем *contoso-хеатпумпс-Hub-1098* в расположении *westus* . Необходимо использовать уникальное имя концентратора. Придумайте собственный суффикс в имени центра вместо **1098**. В примере кода для пользовательской политики выделения требуется наличие слова `-heatpumps-` в имени центра.
 
-1. Войдите на [портал Azure](https://portal.azure.com) и перейдите к своему экземпляру службы подготовки устройств.
+    ```azurecli-interactive 
+    az iot hub create --name contoso-heatpumps-hub-1098 --resource-group contoso-us-resource-group --location westus --sku S1
+    ```
 
-2. Выберите вкладку **Управление регистрациями**, а затем нажмите кнопку **Добавить группу регистрации** в верхней части страницы. 
+    Выполнение этой команды может занять несколько минут.
 
-3. В разделе **Добавление группы регистрации** введите приведенные ниже сведения, а затем нажмите кнопку **Сохранить**.
+## <a name="create-the-custom-allocation-function"></a>Создание пользовательской функции выделения
 
-    **Имя группы**: введите **contoso-custom-allocated-devices**.
+В этом разделе вы создадите функцию Azure, которая реализует пользовательскую политику распределения. Эта функция определяет, какой центр Интернета вещей должен быть зарегистрирован, в зависимости от того, содержит ли его идентификатор регистрации строку **-contoso-тстрсд-007** или **-contoso-хпсд-088**. Он также задает начальное состояние двойникаа устройства в зависимости от того, является ли устройство тостерным или теплоотводом.
 
-    **Тип аттестации**: выберите **Симметричный ключ**.
+1. Войдите на [портале Azure](https://portal.azure.com). На домашней странице выберите **+ создать ресурс**.
 
-    **Автоматически создавать ключи**: этот флажок должен быть уже установлен.
+2. В поле *Поиск в Marketplace* введите "приложение-функция". В раскрывающемся списке выберите **приложение-функция**и нажмите кнопку **создать**.
 
-    **Выберите способ назначения устройств для Центров**: выберите **Custom (Use Azure Function)** (Пользовательский (функция Azure)).
+3. На странице **приложение-функция** создать на вкладке **Основные сведения** введите следующие параметры для нового приложения-функции и выберите Проверка и **Создание**:
 
-    ![Добавление группы регистрации пользовательского выделения для аттестации симметричного ключа](./media/how-to-use-custom-allocation-policies/create-custom-allocation-enrollment.png)
+    **Группа ресурсов**. Выберите **contoso-US-Resource-Group** , чтобы все ресурсы, созданные в этой статье, были объединены.
 
-4. На странице **Добавление группы регистрации** щелкните **Link a new IoT hub** (Привязать новый Центр Интернета вещей), чтобы привязать Центры Интернета вещей обоих отделов. 
+    **Имя приложение-функция**: введите уникальное имя приложения-функции. В этом примере используется **contoso-Function-App-1098**.
 
-    Выполните этот шаг для обоих центров разукомплектованного центра Интернета вещей.
+    **Публикация**: Убедитесь, что выбран **код** .
 
-    **Подписка**: если у вас несколько подписок, выберите подписку, в которой вы создали Центры Интернета вещей для отделов.
+    **Стек среды выполнения**: выберите **.NET Core** в раскрывающемся списке.
 
-    **Центр Интернета вещей**: выберите один из созданных центров отделов.
+    **Регион**: выберите тот же регион, что и для группы ресурсов. В этом примере используется **Западная часть США**.
 
-    **Политика доступа**: выберите **iothubowner**.
+    > [!NOTE]
+    > По умолчанию Application Insights включена. Application Insights не является обязательным для этой статьи, но она может помочь понять и исследовать проблемы, возникающие при работе с пользовательским выделением. При желании можно отключить Application Insights, выбрав вкладку **мониторинг** и выбрав **нет** для параметра **включить Application Insights**.
 
-    ![Связывание Центров Интернета вещей отделов со службой подготовки](./media/how-to-use-custom-allocation-policies/link-divisional-hubs.png)
+    ![Создание приложение-функция Azure для размещения пользовательской функции выделения](./media/how-to-use-custom-allocation-policies/create-function-app.png)
 
-5. После связывания Центров Интернета вещей обоих отделов необходимо на странице **Добавление группы регистрации** выбрать их в качестве группы Центров Интернета вещей для группы регистрации, как показано ниже.
+4. На странице **Сводка** выберите **создать** , чтобы создать приложение-функцию. Развертывание может занять несколько минут. По завершении выберите **Переход к ресурсу**.
 
-    ![Создание группы центров отделов для регистрации](./media/how-to-use-custom-allocation-policies/enrollment-divisional-hub-group.png)
+5. В левой области страницы **Обзор** приложения-функции выберите **+** **рядом с функцией, чтобы** добавить новую функцию.
 
-6. Прокрутите страницу **Добавление группы регистрации** вниз до раздела **Select Azure Function** (Выбор функции Azure) и щелкните **Create a new function app** (Создание приложения-функции).
+    ![Добавление функции в приложение-функция](./media/how-to-use-custom-allocation-policies/create-function.png)
 
-7. На открывшейся странице создания **приложения-функции** введите приведенные ниже параметры новой функции и нажмите кнопку **Создать**.
+6. На странице " **функции Azure для .NET — Приступая к работе** " для шага **Выбор среды развертывания** выберите плитку **на портале** , а затем нажмите кнопку **продолжить**.
 
-    **Имя приложения**: введите уникальное имя приложения-функции. В качестве примера показано имя **contoso-function-app-1098**.
+    ![Выбор среды разработки портала](./media/how-to-use-custom-allocation-policies/function-choose-environment.png)
 
-    **Группа ресурсов**: выберите **Использовать существующий** и **contoso-us-resource-group**, чтобы все ресурсы, созданные в рамках этой статьи, хранились вместе.
+7. На следующей странице для шага **Создание функции** выберите плитку **веб-перехватчик + API** , а затем щелкните **создать**. Будет создана функция с именем **HttpTrigger1** , и на портале отобразится содержимое файла **Run. CSX** .
 
-    **Application Insights**. в этом упражнении вы можете отключить эту функцию.
+8. Требуется ссылка на пакеты NuGet. Чтобы создать первоначальное двойника устройства, пользовательская функция выделения использует классы, определенные в двух пакетах NuGet, которые должны быть загружены в среду размещения. С помощью функций Azure вы указываете на пакеты NuGet, используя файл *функции. Host* . На этом шаге вы сохраняете и отправляете файл *функции. Host* .
 
-    ![Создание приложения-функции](./media/how-to-use-custom-allocation-policies/function-app-create.png)
+    1. Скопируйте приведенные ниже строки в свой любимый редактор и сохраните файл на своем компьютере в виде *функции. Host*.
 
-8. Вернувшись на страницу **Добавление группы регистрации**, убедитесь, что выбрано новое приложение-функция. Возможно, потребуется повторно выбрать подписку, чтобы обновить список приложений функций.
+        ```xml
+        <Project Sdk="Microsoft.NET.Sdk">  
+            <PropertyGroup>  
+                <TargetFramework>netstandard2.0</TargetFramework>  
+            </PropertyGroup>  
+            <ItemGroup>  
+                <PackageReference Include="Microsoft.Azure.Devices.Provisioning.Service" Version="1.5.0" />  
+                <PackageReference Include="Microsoft.Azure.Devices.Shared" Version="1.16.0" />  
+            </ItemGroup>  
+        </Project>
+        ```
 
-    Выбрав новое приложение-функцию, щелкните **Create a new function** (Создать функцию).
+    2. В функции **HttpTrigger1** разверните вкладку **Просмотр файлов** в правой части окна.
 
-    ![Создание приложения-функции](./media/how-to-use-custom-allocation-policies/click-create-new-function.png)
+        ![Открыть файлы представления](./media/how-to-use-custom-allocation-policies/function-open-view-files.png)
 
-    Откроется новое приложение-функция.
+    3. Выберите **Отправить**, перейдите к файлу **Function. proj** и выберите **Открыть** , чтобы передать файл.
 
-9. В приложении-функции щелкните **+** , чтобы создать новую функцию.
+        ![Выбор отправки файла](./media/how-to-use-custom-allocation-policies/function-choose-upload-file.png)
 
-    ![Создание приложения-функции](./media/how-to-use-custom-allocation-policies/new-function.png)
-
-    Используйте параметры по умолчанию для новой функции, чтобы создать **веб-перехватчик с API** с помощью языка **CSharp**. Щелкните **Create this function** (Создать эту функцию).
-
-    Будет создана функция C# с именем **HttpTriggerCSharp1**.
-
-10. Замените код этой функции C# приведенным ниже кодом и щелкните **Сохранить**.
+9. Замените код функции **HttpTrigger1** следующим кодом и выберите **сохранить**:
 
     ```csharp
     #r "Newtonsoft.Json"
+
     using System.Net;
-    using System.Text;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.Extensions.Primitives;
     using Newtonsoft.Json;
 
-    public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceWriter log)
+    using Microsoft.Azure.Devices.Shared;               // For TwinCollection
+    using Microsoft.Azure.Devices.Provisioning.Service; // For TwinState
+
+    public static async Task<IActionResult> Run(HttpRequest req, ILogger log)
     {
-        // Just some diagnostic logging
-        log.Info("C# HTTP trigger function processed a request.");
-        log.Info("Request.Content:...");
-        log.Info(req.Content.ReadAsStringAsync().Result);
+        log.LogInformation("C# HTTP trigger function processed a request.");
 
         // Get request body
-        dynamic data = await req.Content.ReadAsAsync<object>();
+        string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+        dynamic data = JsonConvert.DeserializeObject(requestBody);
+
+        log.LogInformation("Request.Body:...");
+        log.LogInformation(requestBody);
 
         // Get registration ID of the device
         string regId = data?.deviceRuntimeContext?.registrationId;
@@ -172,7 +188,7 @@ ms.locfileid: "73903569"
         if (regId == null)
         {
             message = "Registration ID not provided for the device.";
-            log.Info("Registration ID : NULL");
+            log.LogInformation("Registration ID : NULL");
             fail = true;
         }
         else
@@ -183,7 +199,7 @@ ms.locfileid: "73903569"
             if (hubs == null)
             {
                 message = "No hub group defined for the enrollment.";
-                log.Info("linkedHubs : NULL");
+                log.LogInformation("linkedHubs : NULL");
                 fail = true;
             }
             else
@@ -201,8 +217,23 @@ ms.locfileid: "73903569"
                     if (obj.iotHubHostName == null)
                     {
                         message = "No toasters hub found for the enrollment.";
-                        log.Info(message);
+                        log.LogInformation(message);
                         fail = true;
+                    }
+                    else
+                    {
+                        // Specify the initial tags for the device.
+                        TwinCollection tags = new TwinCollection();
+                        tags["deviceType"] = "toaster";
+
+                        // Specify the initial desired properties for the device.
+                        TwinCollection properties = new TwinCollection();
+                        properties["state"] = "ready";
+                        properties["darknessSetting"] = "medium";
+
+                        // Add the initial twin state to the response.
+                        TwinState twinState = new TwinState(tags, properties);
+                        obj.initialTwin = twinState;
                     }
                 }
                 // This is a Contoso Heat pump Model 008
@@ -218,8 +249,23 @@ ms.locfileid: "73903569"
                     if (obj.iotHubHostName == null)
                     {
                         message = "No heat pumps hub found for the enrollment.";
-                        log.Info(message);
+                        log.LogInformation(message);
                         fail = true;
+                    }
+                    else
+                    {
+                        // Specify the initial tags for the device.
+                        TwinCollection tags = new TwinCollection();
+                        tags["deviceType"] = "heatpump";
+
+                        // Specify the initial desired properties for the device.
+                        TwinCollection properties = new TwinCollection();
+                        properties["state"] = "on";
+                        properties["temperatureSetting"] = "65";
+
+                        // Add the initial twin state to the response.
+                        TwinState twinState = new TwinState(tags, properties);
+                        obj.initialTwin = twinState;
                     }
                 }
                 // Unrecognized device.
@@ -227,41 +273,67 @@ ms.locfileid: "73903569"
                 {
                     fail = true;
                     message = "Unrecognized device registration.";
-                    log.Info("Unknown device registration");
+                    log.LogInformation("Unknown device registration");
                 }
             }
         }
 
-        return (fail)
-            ? req.CreateResponse(HttpStatusCode.BadRequest, message)
-            : new HttpResponseMessage(HttpStatusCode.OK)
-            {
-                Content = new StringContent(JsonConvert.SerializeObject(obj, Formatting.Indented), Encoding.UTF8, "application/json")
-            };
-    }
+        log.LogInformation("\nResponse");
+        log.LogInformation((obj.iotHubHostName != null) ? JsonConvert.SerializeObject(obj) : message);
 
-    public class DeviceTwinObj
-    {
-        public string deviceId {get; set;}
+        return (fail)
+            ? new BadRequestObjectResult(message) 
+            : (ActionResult)new OkObjectResult(obj);
     }
 
     public class ResponseObj
     {
         public string iotHubHostName {get; set;}
-        public string IoTHub {get; set;}
-        public DeviceTwinObj initialTwin {get; set;}
-        public string[] linkedHubs {get; set;}
-        public string enrollment {get; set;}
+        public TwinState initialTwin {get; set;}
     }
     ```
 
-11. Вернувшись на страницу **Добавление группы регистрации**, убедитесь, что эта новая функция выбрана. Может потребоваться повторно выбрать приложение функции, чтобы обновить список функций.
+## <a name="create-the-enrollment"></a>Создание регистрации
 
-    После выбора новой функции щелкните **Сохранить**, чтобы сохранить группу регистрации.
+В этом разделе вы создадите новую группу регистрации, которая использует пользовательскую политику распределения. Для удобства в этой статье используется [аттестация симметричного ключа](concepts-symmetric-key-attestation.md) с регистрацией. В качестве более безопасного решения рекомендуется использовать [аттестацию сертификатов X.509](concepts-security.md#x509-certificates) с цепочкой доверия.
 
-    ![Наконец, сохраните группу регистрации.](./media/how-to-use-custom-allocation-policies/save-enrollment.png)
+1. По-прежнему на [портал Azure](https://portal.azure.com)откройте службу подготовки.
 
-12. После сохранения регистрации снова откройте ее и запомните или запишите **первичный ключ**. Для формирования ключей необходимо сначала сохранить регистрацию. Этот ключ будет позднее использоваться для создания уникальных ключей устройства для имитированных устройств.
+2. Выберите **Управление регистрациями** в левой области, а затем нажмите кнопку **Добавить группу регистрации** в верхней части страницы.
+
+3. На странице **Добавление группы регистрации**введите следующие сведения и нажмите кнопку **сохранить** .
+
+    **Имя группы**: введите **contoso-custom-allocated-devices**.
+
+    **Тип аттестации**: выберите **Симметричный ключ**.
+
+    **Автоматически создавать ключи**: этот флажок должен быть уже установлен.
+
+    **Выберите способ назначения устройств для Центров**: выберите **Custom (Use Azure Function)** (Пользовательский (функция Azure)).
+
+    ![Добавление группы регистрации пользовательского выделения для аттестации симметричного ключа](./media/how-to-use-custom-allocation-policies/create-custom-allocation-enrollment.png)
+
+4. В меню **Добавить группу регистрации**выберите **связать новый центр Интернета вещей** , чтобы связать оба новых центра Интернета вещей.
+
+    Выполните этот шаг для обоих центров разукомплектованного центра Интернета вещей.
+
+    **Подписка**: если у вас несколько подписок, выберите подписку, в которой вы создали Центры Интернета вещей для отделов.
+
+    **Центр Интернета вещей**: выберите один из созданных центров отделов.
+
+    **Политика доступа**: выберите **iothubowner**.
+
+    ![Связывание Центров Интернета вещей отделов со службой подготовки](./media/how-to-use-custom-allocation-policies/link-divisional-hubs.png)
+
+5. После связывания Центров Интернета вещей обоих отделов необходимо на странице **Добавление группы регистрации** выбрать их в качестве группы Центров Интернета вещей для группы регистрации, как показано ниже.
+
+    ![Создание группы центров отделов для регистрации](./media/how-to-use-custom-allocation-policies/enrollment-divisional-hub-group.png)
+
+6. В разделе **Добавление группы регистрации**перейдите к разделу **Выбор функции Azure** и выберите приложение функции, созданное в предыдущем разделе. Затем выберите созданную функцию и нажмите кнопку Сохранить, чтобы сохранить группу регистрации.
+
+    ![Выберите функцию и сохраните группу регистрации](./media/how-to-use-custom-allocation-policies/save-enrollment.png)
+
+7. После сохранения регистрации снова откройте ее и запомните или запишите **первичный ключ**. Для формирования ключей необходимо сначала сохранить регистрацию. Этот ключ будет позднее использоваться для создания уникальных ключей устройства для имитированных устройств.
 
 ## <a name="derive-unique-device-keys"></a>Получение производных уникальных ключей
 
@@ -298,7 +370,7 @@ ms.locfileid: "73903569"
     mainbuilding167-contoso-hpsd-088 : 6uejA9PfkQgmYylj8Zerp3kcbeVrGZ172YLa7VSnJzg=
     ```
 
-### <a name="windows-based-workstations"></a>Рабочие станции для Windows
+### <a name="windows-based-workstations"></a>Рабочие станции на основе Windows
 
 Если вы используете рабочую станцию под управлением Windows, вы можете создать ключ производного устройства с помощью PowerShell, как показано в следующем примере.
 
@@ -390,7 +462,7 @@ ms.locfileid: "73903569"
 2. В Visual Studio откройте файл решения **azure_iot_sdks.sln**, который был создан ранее в результате запуска CMake. Файл решения должен находиться в следующем расположении:
 
     ```
-    \azure-iot-sdk-c\cmake\azure_iot_sdks.sln
+    azure-iot-sdk-c\cmake\azure_iot_sdks.sln
     ```
 
 3. В окне *Обозреватель решений* Visual Studio перейдите в папку **Provision\_Samples**. Разверните пример проекта с именем **prov\_dev\_client\_sample**. Разверните **исходные файлы** и откройте **prov\_dev\_client\_sample.c**.
@@ -410,7 +482,7 @@ ms.locfileid: "73903569"
     hsm_type = SECURE_DEVICE_TYPE_SYMMETRIC_KEY;
     ```
 
-6. Щелкните проект **prov\_dev\_client\_sample** правой кнопкой мыши и выберите пункт **Назначить запускаемым проектом**. 
+6. Щелкните проект **prov\_dev\_client\_sample** правой кнопкой мыши и выберите пункт **Назначить запускаемым проектом**.
 
 ### <a name="simulate-the-contoso-toaster-device"></a>Имитация устройства toaster Contoso
 
@@ -430,12 +502,12 @@ ms.locfileid: "73903569"
 
     Сохраните файл.
 
-2. В меню Visual Studio выберите **Отладка** > **Запуск без отладки**, чтобы запустить решение. При появлении запроса перестроить проект щелкните **Да**, чтобы перестроить его перед запуском.
+2. В меню Visual Studio выберите **Отладка** > **Запуск без отладки**, чтобы запустить решение. В командной строке для перестроения проекта выберите **Да**, чтобы перестроить проект перед запуском.
 
     Ниже приведен пример, в котором виртуальное устройство Тостер успешно загрузилось и подключается к экземпляру службы подготовки, чтобы он был назначен для центра Интернета вещей с помощью настраиваемой политики выделения.
 
     ```cmd
-    Provisioning API Version: 1.2.9
+    Provisioning API Version: 1.3.6
 
     Registering Device
 
@@ -459,12 +531,12 @@ ms.locfileid: "73903569"
 
     Сохраните файл.
 
-2. В меню Visual Studio выберите **Отладка** > **Запуск без отладки**, чтобы запустить решение. В командной строке для перестроения проекта нажмите кнопку **Да** , чтобы перестроить проект перед выполнением.
+2. В меню Visual Studio выберите **Отладка** > **Запуск без отладки**, чтобы запустить решение. В командной строке для перестроения проекта выберите **Да** , чтобы перестроить проект перед запуском.
 
     Ниже приведен пример, в котором виртуальное устройство теплоотвода успешно загружается и подключается к экземпляру службы подготовки, который назначается настраиваемой политикой распределения для центра Интернета вещей "тепло-насоса".
 
     ```cmd
-    Provisioning API Version: 1.2.9
+    Provisioning API Version: 1.3.6
 
     Registering Device
 
@@ -502,13 +574,13 @@ ms.locfileid: "73903569"
 
 Удаление группы ресурсов по имени.
 
-1. Войдите на [портал Azure](https://portal.azure.com) и щелкните **Группы ресурсов**.
+1. Войдите в портал [Azure](https://portal.azure.com) и выберите**Группы ресурсов**.
 
 2. Введите в текстовое поле **Фильтровать по имени...** имя вашей группы ресурсов: **contoso-us-resource-group**. 
 
 3. Справа от своей группы ресурсов в списке результатов щелкните **...** , а затем выберите **Удалить группу ресурсов**.
 
-4. Вам будет предложено подтвердить удаление группы ресурсов. Еще раз введите имя группы ресурсов для подтверждения и нажмите кнопку **Удалить**. Через некоторое время группа ресурсов и все ее ресурсы будут удалены.
+4. Вам будет предложено подтвердить удаление группы ресурсов. Снова введите имя группы ресурсов, которую необходимо удалить, и щелкните **Удалить**. Через некоторое время группа ресурсов и все ее ресурсы будут удалены.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

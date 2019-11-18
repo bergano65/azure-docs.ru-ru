@@ -1,25 +1,17 @@
 ---
-title: Устранение неполадок, связанных с кэшем Azure для Redis на стороне клиента | Документация Майкрософт
+title: Устранение неполадок, связанных с кэшем Azure для Redis на стороне клиента
 description: Узнайте, как устранять распространенные проблемы на стороне клиента с помощью кэша Azure для Redis.
-services: cache
-documentationcenter: ''
 author: yegu-ms
-manager: maiye
-editor: ''
-ms.assetid: ''
 ms.service: cache
-ms.workload: tbd
-ms.tgt_pltfrm: cache
-ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 10/18/2019
 ms.author: yegu
-ms.openlocfilehash: 18fb2f7c5a411ff2026437b647be56812b4d2521
-ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
+ms.openlocfilehash: a4fdbe9c0943e77719a9ee9da7dc358696284d99
+ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72819626"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74122617"
 ---
 # <a name="troubleshoot-azure-cache-for-redis-client-side-issues"></a>Устранение неполадок, связанных с кэшем Azure для Redis на стороне клиента
 
@@ -68,7 +60,7 @@ ms.locfileid: "72819626"
 Отслеживайте загрузку ЦП на уровне системы клиента с помощью метрик, доступных в портал Azure или с помощью счетчиков производительности на компьютере. Следите за тем, чтобы не отслеживать ЦП *процесса* , поскольку один процесс может иметь низкую загрузку ЦП, но может быть высокий уровень ЦП на уровне системы. Понаблюдайте за пиками загрузки ЦП, которые соответствуют времени ожидания. Высокая загрузка ЦП может также привести к увеличению количества `in: XXX` значений в `TimeoutException` сообщениях об ошибках, как описано в разделе « [пакет трафика](#traffic-burst) ».
 
 > [!NOTE]
-> В StackExchange.Redis 1.1.603 и более поздней версии в сообщениях об ошибках `TimeoutException` содержится метрика `local-cpu`. Убедитесь, что вы используете последнюю версию [пакета NuGet для StackExchange.Redis](https://www.nuget.org/packages/StackExchange.Redis/). Это важно, так как ошибки в коде постоянно исправляют, что позволяет обеспечить надежность в отношении времени ожидания.
+> В StackExchange.Redis 1.1.603 и более поздней версии в сообщениях об ошибках `local-cpu` содержится метрика `TimeoutException`. Убедитесь, что вы используете последнюю версию [пакета NuGet для StackExchange.Redis](https://www.nuget.org/packages/StackExchange.Redis/). Это важно, так как ошибки в коде постоянно исправляют, что позволяет обеспечить надежность в отношении времени ожидания.
 >
 
 Чтобы устранить высокую загрузку ЦП клиентом, выполните следующие действия.
@@ -110,7 +102,7 @@ ms.locfileid: "72819626"
 1. Увеличьте число объектов подключения, используемых приложением.
     - Используйте метод циклического перебора, чтобы выполнять запросы через различные объекты соединения.
 
-## <a name="additional-information"></a>Дополнительные сведения
+## <a name="additional-information"></a>Дополнительная информация
 
 - [Устранение неполадок в кэше Azure для Redis неполадок на стороне сервера](cache-troubleshoot-server.md)
 - [Как измерить и протестировать производительность моего кэша?](cache-faq.md#how-can-i-benchmark-and-test-the-performance-of-my-cache)

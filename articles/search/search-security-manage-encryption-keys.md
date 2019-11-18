@@ -1,5 +1,5 @@
 ---
-title: Шифрование неактивных с помощью управляемых клиентом ключей в Azure Key Vault (Предварительная версия)
+title: Шифрование неактивных с помощью управляемых клиентом ключей (Предварительная версия)
 titleSuffix: Azure Cognitive Search
 description: Дополнительное шифрование на стороне сервера по индексам и картам синонимов в Azure Когнитивный поиск с помощью ключей, которые вы создаете и управляете в Azure Key Vault. Эта функция сейчас доступна в виде общедоступной предварительной версии.
 manager: nitinme
@@ -8,17 +8,17 @@ ms.author: natinimn
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 05/02/2019
-ms.openlocfilehash: 1521abfa327c69648b38f02d1d6313baa369f304
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: 4f78b4b7b38c6e67aa8aebf04e3a8ef0fdbd000f
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73721753"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74112938"
 ---
-# <a name="content-encryption-of-azure-cognitive-search-using-customer-managed-keys-in-azure-key-vault"></a>Шифрование содержимого Когнитивный поиск Azure с помощью управляемых клиентом ключей в Azure Key Vault
+# <a name="encryption-at-rest-of-content-in-azure-cognitive-search-using-customer-managed-keys-in-azure-key-vault"></a>Шифрование неактивных содержимого в Azure Когнитивный поиск с помощью ключей, управляемых клиентом, в Azure Key Vault
 
 > [!IMPORTANT] 
-> Поддержка шифрования неактивных компонентов сейчас доступна в общедоступной предварительной версии. Функции предварительной версии предоставляются без соглашения об уровне обслуживания и не рекомендуются для рабочих нагрузок. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Эта функция доступна для [REST API версии 2019-05-06-Preview](search-api-preview.md) и [пакета SDK для .NET версии 8,0-Preview](search-dotnet-sdk-migration-version-9.md) . В настоящее время портал не поддерживается.
+> Поддержка шифрования неактивных компонентов сейчас доступна в общедоступной предварительной версии. Для предварительной версии функции соглашение об уровне обслуживания не предусмотрено. Мы не рекомендуем использовать ее в рабочей среде. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Эта функция доступна для [REST API версии 2019-05-06-Preview](search-api-preview.md) и [пакета SDK для .NET версии 8,0-Preview](search-dotnet-sdk-migration-version-9.md) . В настоящее время портал не поддерживается.
 
 По умолчанию Azure Когнитивный поиск шифрует неактивных пользовательских данных с помощью [ключей, управляемых службой](https://docs.microsoft.com/azure/security/fundamentals/encryption-atrest#data-encryption-models). Шифрование по умолчанию можно расширить с помощью дополнительного уровня шифрования, используя ключи, которые вы создаете и управляете в Azure Key Vault. В этой статье описаны шаги.
 
@@ -28,11 +28,11 @@ ms.locfileid: "73721753"
 
 Вы можете использовать разные ключи из разных хранилищ ключей. Это означает, что одна служба поиска может размещать несколько зашифрованных карт индексес\синоним, каждая из которых может использовать другой ключ, управляемый клиентом, наряду с картами индексес\синоним, которые не шифруются с помощью управляемых клиентом ключей. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 В этом примере используются следующие службы. 
 
-+ [Создайте службу когнитивный Поиск Azure](search-create-service-portal.md) или [найдите существующую службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) в текущей подписке. Вы можете использовать бесплатную службу для выполнения инструкций, описанных в этом учебнике.
++ [Создайте службу "Когнитивный поиск Azure"](search-create-service-portal.md) или [найдите имеющуюся службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) в рамках текущей подписки. Вы можете использовать бесплатную службу для выполнения инструкций, описанных в этом учебнике.
 
 + [Создайте Azure Key Vault ресурс](https://docs.microsoft.com/azure/key-vault/quick-create-portal#create-a-vault) или найдите существующее хранилище в подписке.
 
@@ -231,7 +231,7 @@ az keyvault update -n <vault_name> -g <resource_group> --enable-soft-delete --en
 > При изменении приложения AAD или его ключа проверки подлинности любой индекс Когнитивный поиск Azure или схема синонимов, которая использует это приложение, должна сначала быть обновлена для использования нового приложения Ид\кэй **перед** удалением предыдущего приложения или его авторизации. и перед отзывом Key Vault доступа к нему.
 > Если не выполнить это действие, будет отображена схема индекса или синонима, которую нельзя использовать, так как она не сможет расшифровать содержимое после потери доступа к ключу.   
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Если вы не знакомы с архитектурой безопасности Azure, ознакомьтесь с [документацией по безопасности Azure](https://docs.microsoft.com/azure/security/)и в частности, в этой статье:
 

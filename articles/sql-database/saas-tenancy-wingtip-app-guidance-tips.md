@@ -11,22 +11,22 @@ author: MightyPen
 ms.author: genemi
 ms.reviewer: sstein
 ms.date: 12/18/2018
-ms.openlocfilehash: 3589310ff93aca3cec735d6b2f1609ee3d1d2e68
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 162d1f269c65ad98afa30e8e96370bbdceca99bd
+ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73825786"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74132293"
 ---
 # <a name="general-guidance-for-working-with-wingtip-tickets-sample-saas-apps"></a>Общие рекомендации по работе с примерами приложений SaaS Wingtip Tickets
 
-Эта статья содержит общие рекомендации по запуску примеров приложений SaaS Wingtip Tickets, использующих Базу данных SQL Azure. 
+Эта статья содержит общие рекомендации по запуску примеров приложений SaaS Wingtip Tickets, использующих Базу данных SQL Azure.
 
 ## <a name="download-and-unblock-the-wingtip-tickets-saas-scripts"></a>Скачивание и разблокирование сценариев SaaS Wingtip Tickets
 
 Исполняемое содержимое (скрипты, библиотеки DLL) может быть заблокировано Windows, в то время как ZIP-файлы можно загрузить с внешнего источника, а затем извлечь их содержимое. При извлечении скриптов из ZIP-файла **выполните указанные ниже действия, чтобы разблокировать ZIP-файл перед извлечением**. После этого скрипты можно выполнять.
 
-1. Перейдите в репозиторий SaaS Wingtip Tickets на сайте GitHub, в котором хранится шаблон аренды базы данных, который вы хотите просмотреть. 
+1. Перейдите в репозиторий SaaS Wingtip Tickets на сайте GitHub, в котором хранится шаблон аренды базы данных, который вы хотите просмотреть.
     - [WingtipTicketsSaaS-StandaloneApp](https://github.com/Microsoft/WingtipTicketsSaaS-StandaloneApp)
     - [WingtipTicketsSaaS-DbPerTenant](https://github.com/Microsoft/WingtipTicketsSaaS-DbPerTenant)
     - [WingtipTicketsSaaS-MultiTenantDb](https://github.com/Microsoft/WingtipTicketsSaaS-MultiTenantDb)
@@ -37,18 +37,18 @@ ms.locfileid: "73825786"
 6. Нажмите кнопку **ОК**.
 7. Извлеките файлы.
 
-Файлы сценариев находятся в папке *..\\Learning Modules*.
+Файлы скриптов находятся в папке *..\\Learning Modules*.
 
 
 ## <a name="working-with-the-wingtip-tickets-powershell-scripts"></a>Работа со сценариями PowerShell для приложения Wingtip Tickets
 
-Чтобы использовать пример с максимальной пользой, необходимо детально изучить приведенные скрипты. Используйте точки останова и пошагово выполните сценарии, изучив особенности реализации различных шаблонов SaaS. Для легкого пошагового выполнения указанных скриптов и прохождения модулей мы рекомендуем использовать [интегрированную среду сценариев PowerShell](https://msdn.microsoft.com/powershell/scripting/core-powershell/ise/introducing-the-windows-powershell-ise).
+Чтобы использовать пример с максимальной пользой, необходимо детально изучить приведенные скрипты. Используйте точки останова и пошагово выполните сценарии, изучив особенности реализации различных шаблонов SaaS. Для легкого пошагового выполнения указанных скриптов и прохождения модулей мы рекомендуем использовать [интегрированную среду сценариев PowerShell](https://docs.microsoft.com/powershell/scripting/components/ise/introducing-the-windows-powershell-ise).
 
 ### <a name="update-the-configuration-file-for-your-deployment"></a>Обновление файла конфигурации для развертывания
 
 Измените файл **UserConfig.psm1**, используя имя группы ресурсов и значение пользователя, заданные во время развертывания:
 
-1. Откройте *интегрированную среду сценариев PowerShell* и загрузите файл \\Learning Modules\\*UserConfig.psm1*. 
+1. Откройте *интегрированную среду сценариев PowerShell* и загрузите файл \\Learning Modules\\*UserConfig.psm1*.
 2. В полях *ResourceGroupName* и *Name* введите специфические для развертывания значения (только в строках 10 и 11).
 3. Сохраните изменения.
 
@@ -76,7 +76,7 @@ ms.locfileid: "73825786"
 
 Используйте [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) для подключения и просмотра серверов и баз данных приложения.
 
-В развертывании изначально указаны клиенты и серверы Базы данных SQL каталога для подключения. Схема именования серверов зависит от шаблона аренды базы данных (ниже приведены точные сведения). 
+В развертывании изначально указаны клиенты и серверы Базы данных SQL каталога для подключения. Схема именования серверов зависит от шаблона аренды базы данных (ниже приведены точные сведения).
 
    - **Изолированное приложение:** серверы для каждого клиента (например, сервер *contosoconcerthall-&lt;Пользователь&gt;* ) и *catalog-sa-&lt;Пользователь&gt;* .
    - **Однотенантная база данных:** серверы *tenants1-dpt-&lt;Пользователь&gt;*  и *catalog-dpt-&lt;Пользователь&gt;* .
@@ -86,19 +86,19 @@ ms.locfileid: "73825786"
 
 
 1. Откройте среду *SSMS* и подключитесь к клиентам. Имя сервера зависит от выбранного шаблона аренды базы данных (ниже приведены точные сведения).
-    - **Изолированное приложение:** серверы отдельных клиентов (например, *contosoconcerthall-&lt;Пользователь&gt;.database.windows.net*). 
+    - **Изолированное приложение:** серверы отдельных клиентов (например, *contosoconcerthall-&lt;Пользователь&gt;.database.windows.net*).
     - **Однотенантная база данных:** *tenants1-dpt-&lt;Пользователь&gt;.database.windows.net*.
-    - **Мультитенантная база данных:** *tenants1-mt-&lt;Пользователь&gt;.database.windows.net*. 
+    - **Мультитенантная база данных:** *tenants1-mt-&lt;Пользователь&gt;.database.windows.net*.
 2. Щелкните **Подключить** > **Компонент ядра СУБД…** :
 
    ![сервер каталога](media/saas-tenancy-wingtip-app-guidance-tips/connect.png)
 
 3. Демонстрационные учетные данные: имя входа = *разработчик*, пароль = *P\@ssword1*
 
-    На следующем рисунке показано имя для входа для шаблона *однотенантной базы данных*. 
+    На следующем рисунке показано имя для входа для шаблона *однотенантной базы данных*.
     ![подключение](media/saas-tenancy-wingtip-app-guidance-tips/tenants1-connect.png)
-    
-   
+
+
 
 4. Повторите шаги 2–3 и подключитесь к серверу каталога (ниже указаны имена конкретных серверов на основе выбранного шаблона аренды базы данных).
     - **Изолированное приложение:** *catalog-sa-&lt;Пользователь&gt;.database.windows.net*.
@@ -114,8 +114,8 @@ ms.locfileid: "73825786"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 - [Развертывание изолированного приложения SaaS Wingtip Tickets](saas-standaloneapp-get-started-deploy.md)
-- [Развертывание приложения SaaS Wingtip Tickets для однотенантной базы данных](saas-dbpertenant-get-started-deploy.md)
+- [Развертывание SaaS-приложения Wingtip Tickets c однотенантной базой данных](saas-dbpertenant-get-started-deploy.md)
 - [Развертывание приложения SaaS Wingtip Tickets для мультитенантной базы данных](saas-multitenantdb-get-started-deploy.md)
 

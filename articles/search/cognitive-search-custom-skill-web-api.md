@@ -1,5 +1,5 @@
 ---
-title: Пользовательский навык веб-API в конвейере обогащения
+title: Пользовательский навык веб-API в навыков
 titleSuffix: Azure Cognitive Search
 description: Расширьте возможности Azure Когнитивный поиск навыков, вызывая веб-API. Используйте пользовательский навык веб-API для интеграции пользовательского кода.
 manager: nitinme
@@ -8,12 +8,12 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 24b0d0caa9deb43bc198b3c09836ac94777cf154
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: defe6711049e191ada1a2f6e46d6643debdca86e
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73466736"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74113794"
 ---
 # <a name="custom-web-api-skill-in-an-azure-cognitive-search-enrichment-pipeline"></a>Пользовательский навык веб-API в конвейере Когнитивный поиск обогащения Azure
 
@@ -34,9 +34,9 @@ Microsoft.Skills.Custom.WebApiSkill
 
 Параметры зависят от регистра.
 
-| Имя параметра     | Description (Описание) |
+| Имя параметра     | ОПИСАНИЕ |
 |--------------------|-------------|
-| uri | Универсальный код ресурса (URI) веб-API, в который будут отправляться полезные данные _JSON_ . Допускается только схема URI **HTTPS**. |
+| URI | Универсальный код ресурса (URI) веб-API, в который будут отправляться полезные данные _JSON_ . Допускается только схема URI **HTTPS**. |
 | httpMethod | Метод, используемый при отправке полезных данных. Допустимые методы: `PUT` или `POST`. |
 | httpHeaders | Коллекция пар "ключ — значение", в которой ключи представляют имена заголовков, а значения — значения заголовков, которые будут отправляться в веб-API вместе с полезными данными. В этой коллекции запрещены следующие заголовки: `Accept`, `Accept-Charset`, `Accept-Encoding`, `Content-Length`, `Content-Type`, `Cookie`, `Host`, `TE`, `Upgrade`, `Via`. |
 | timeout | (Необязательно.) Если указано, означает время ожидания вызова API HTTP-клиента. Значение должно быть отформатировано как значение dayTimeDuration XSD (ограниченное подмножество значения [продолжительности ISO 8601](https://www.w3.org/TR/xmlschema11-2/#dayTimeDuration) ). Например, `PT60S` для 60 секунд. Если не задано, выбирается значение по умолчанию — 30 секунд. Время ожидания может быть не более 230 секунд и не менее 1 секунды. |
@@ -201,7 +201,7 @@ Microsoft.Skills.Custom.WebApiSkill
 
 В тех случаях, когда веб-API недоступен или возвращает ошибку HTTP, в журнал выполнения индексатора будет добавлено понятное сообщение об ошибке с доступными сведениями об ошибке HTTP.
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также
 
 + [Определение набора навыков](cognitive-search-defining-skillset.md)
 + [Добавление пользовательского навыка в конвейер обогащения искусственного интеллекта](cognitive-search-custom-skill-interface.md)

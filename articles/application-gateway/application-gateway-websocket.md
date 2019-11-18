@@ -1,18 +1,18 @@
 ---
-title: Поддержка WebSocket в шлюзе приложений Azure| Документация Майкрософт
-description: Здесь представлен обзор поддержки WebSocket в шлюзе приложений.
+title: Поддержка WebSocket в шлюзе приложений Azure
+description: Шлюз приложений обеспечивает встроенную поддержку WebSocket независимо от размера. Нет настраиваемых параметров пользователя.
 author: vhorne
 ms.author: amsriva
 ms.service: application-gateway
+services: application-gateway
 ms.topic: conceptual
-ms.workload: infrastructure-services
-ms.date: 03/18/2019
-ms.openlocfilehash: a48f1b6e4410820d40ba6563d431c690ab791ff0
-ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
+ms.date: 11/16/2019
+ms.openlocfilehash: baa02c4d946a121f26f421af99835ae2bea18847
+ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71097244"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74130328"
 ---
 # <a name="overview-of-websocket-support-in-application-gateway"></a>Общие сведения о поддержке WebSocket в шлюзе приложений
 
@@ -121,6 +121,6 @@ ms.locfileid: "71097244"
 
 Другой причиной является то, что проверка работоспособности серверного шлюза приложений поддерживает только протоколы HTTP и HTTPS. Если внутренний сервер не отвечает на проверки по протоколу HTTP или HTTPS, он удаляется из внутреннего пула.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Ознакомившись с поддержкой протокола WebSocket, приступите к [созданию шлюза приложений](quick-create-powershell.md) , чтобы начать работу с веб-приложением с поддержкой WebSocket.

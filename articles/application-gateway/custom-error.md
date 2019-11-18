@@ -1,18 +1,18 @@
 ---
 title: Создание пользовательских страниц ошибок с помощью службы "Шлюз приложений Azure"
-description: В этой статье показано, как создавать пользовательские страницы ошибок с помощью службы "Шлюз приложений".
+description: В этой статье показано, как создавать пользовательские страницы ошибок с помощью службы "Шлюз приложений". На пользовательской странице ошибок вы можете использовать собственные символику и макет.
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: article
-ms.date: 2/14/2019
+ms.date: 11/16/2019
 ms.author: victorh
-ms.openlocfilehash: abfe33ff679bef125d9bf5b78e1790a1a4c64863
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ff11f686287498fe12b31d15a630178bb12035ad
+ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60832053"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74129860"
 ---
 # <a name="create-application-gateway-custom-error-pages"></a>Создание пользовательских страниц ошибок с помощью службы "Шлюз приложений"
 
@@ -73,6 +73,6 @@ ms.locfileid: "60832053"
 
 Дополнительные сведения см. в статьях о командлетах [Add-AzApplicationGatewayCustomError](https://docs.microsoft.com/powershell/module/az.network/add-azapplicationgatewaycustomerror?view=azps-1.2.0) и [Add-AzApplicationGatewayHttpListenerCustomError](https://docs.microsoft.com/powershell/module/az.network/add-azapplicationgatewayhttplistenercustomerror?view=azps-1.3.0).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Сведения о диагностике службы "Шлюз приложений" см. в статье [Работоспособность серверной части, журналы диагностики и метрики для шлюза приложений](application-gateway-diagnostics.md).

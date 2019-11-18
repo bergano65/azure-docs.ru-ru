@@ -9,12 +9,12 @@ ms.author: robreed
 ms.date: 06/28/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 360fa750da054f9b126a8694f3dd2ce4b0b417b7
-ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
+ms.openlocfilehash: 8e497d18e39a199f34ff76b11b0e6c2c213f35fb
+ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71240298"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74129847"
 ---
 # <a name="deploy-a-linux-hybrid-runbook-worker"></a>Развертывание гибридной рабочей роли Runbook для Linux
 
@@ -54,7 +54,7 @@ ms.locfileid: "71240298"
 |Python-ctypes | Требуется Python 2. x |
 |PAM | Подключаемые модули аутентификации|
 | **Дополнительный пакет** | **Описание** | **Минимальная версия**|
-| PowerShell Core | Для запуска модулей runbook необходимо установить PowerShell (дополнительные сведения об установке см. в статье [Установка PowerShell Core в Linux](/powershell/scripting/setup/installing-powershell-core-on-linux)).  | 6.0.0 |
+| PowerShell Core | Для запуска модулей runbook необходимо установить PowerShell (дополнительные сведения об установке см. в статье [Установка PowerShell Core в Linux](/powershell/scripting/install/installing-powershell-core-on-linux)).  | 6.0.0 |
 
 ### <a name="installation"></a>Установка
 
@@ -86,7 +86,7 @@ ms.locfileid: "71240298"
 1. После завершения выполнения команды на странице **Группы гибридных рабочих ролей** на портале Azure отображается новая группа и количество элементов. Если указать имеющуюся группу, количество элементов в ней увеличивается. Вы можете выбрать группу из списка на странице **Группы гибридных рабочих ролей** и щелкнуть плитку **Гибридные рабочие роли**. На странице **Гибридные рабочие роли** отображается список элементов группы.
 
 > [!NOTE]
-> Если вы используете Azure Monitor расширение виртуальной машины для Linux для виртуальной машины Azure, мы рекомендуем задать `autoUpgradeMinorVersion` значение false, так как автоматическое обновление версий может вызвать проблемы гибридной рабочей роли Runbook. Сведения об обновлении расширения вручную см. в разделе [Azure CLI Deployment ](../virtual-machines/extensions/oms-linux.md#azure-cli-deployment).
+> Если вы используете Azure Monitor расширение виртуальной машины для Linux для виртуальной машины Azure, рекомендуется установить `autoUpgradeMinorVersion` в значение false, так как автоматическое обновление версий может вызвать проблемы гибридной рабочей роли Runbook. Сведения об обновлении расширения вручную см. в разделе [Azure CLI Deployment ](../virtual-machines/extensions/oms-linux.md#azure-cli-deployment).
 
 ## <a name="turning-off-signature-validation"></a>Отключение проверки подписи
 
@@ -106,7 +106,7 @@ ms.locfileid: "71240298"
 * PowerShell
 
   > [!NOTE]
-  > Модули runbook PowerShell требуют установки PowerShell Core на компьютере Linux. Подробные сведения об установке см. в статье [Установка PowerShell Core в Linux](/powershell/scripting/setup/installing-powershell-core-on-linux).
+  > Модули runbook PowerShell требуют установки PowerShell Core на компьютере Linux. Подробные сведения об установке см. в статье [Установка PowerShell Core в Linux](/powershell/scripting/install/installing-powershell-core-on-linux).
 
 В гибридной рабочей роли Linux не поддерживаются следующие типы Runbook:
 
@@ -114,7 +114,7 @@ ms.locfileid: "71240298"
 * Графический
 * графический модуль рабочего процесса PowerShell.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 * Чтобы узнать, как настроить модули runbook для автоматизации процессов в локальном центре обработки данных или другой облачной среде, см. статью [Запуск модулей runbook в гибридной рабочей роли Runbook](automation-hrw-run-runbooks.md).
 * Инструкции по удалению гибридных рабочих ролей Runbook см. в разделе [Удаление гибридных рабочих ролей Runbook в службе автоматизации Azure](automation-hybrid-runbook-worker.md#remove-a-hybrid-runbook-worker) статьи "Автоматизация ресурсов в центре обработки данных или облаке с помощью гибридной рабочей роли Runbook".

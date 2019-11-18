@@ -7,12 +7,12 @@ ms.reviewer: daperlov
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 10/17/2019
-ms.openlocfilehash: aae502b350f2cf2e98849b2b6e25543516a0c547
-ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
+ms.openlocfilehash: 1e9315195ceae435447739055105a66ee81e2a6a
+ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73961842"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74122925"
 ---
 # <a name="join-transformation-in-mapping-data-flow"></a>Преобразование «соединение» в потоке данных сопоставления
 
@@ -68,7 +68,7 @@ ms.locfileid: "73961842"
 
 При тестировании преобразований «соединение» с предварительным просмотром данных в режиме отладки используйте небольшой набор известных данных. При выборке строк из большого набора данных нельзя предсказать, какие строки и ключи будут считываться для тестирования. Результат является недетерминированным, то есть условия объединения не могут возвращать совпадения.
 
-## <a name="data-flow-script"></a>Сценарий потока данных
+## <a name="data-flow-script"></a>Скрипт потока данных
 
 ### <a name="syntax"></a>Синтаксис
 
@@ -83,7 +83,7 @@ ms.locfileid: "73961842"
 
 ### <a name="inner-join-example"></a>Пример внутреннего объединения
 
-Ниже приведен пример преобразования «соединение» с именем `JoinMatchedData`, которое принимает левый поток `TripData` и правый поток `TripFare`.  Условие Join — это `hack_license == { hack_license} && TripData@medallion == TripFare@medallion && vendor_id == { vendor_id} && pickup_datetime == { pickup_datetime}` выражения, которое возвращает значение true, если столбцы `hack_license`, `medallion`, `vendor_id`и `pickup_datetime` в каждом потоке совпадают. Значение `joinType` равно `'inner'`. Включение вещания выполняется только в левом потоке, поэтому `broadcast` имеет значение `'left'`.
+Ниже приведен пример преобразования «соединение» с именем `JoinMatchedData`, которое принимает левый поток `TripData` и правый поток `TripFare`.  Условие Join — это `hack_license == { hack_license} && TripData@medallion == TripFare@medallion && vendor_id == { vendor_id} && pickup_datetime == { pickup_datetime}` выражения, которое возвращает значение true, если столбцы `hack_license`, `medallion`, `vendor_id`и `pickup_datetime` в каждом потоке совпадают. `joinType` `'inner'`. Включение вещания выполняется только в левом потоке, поэтому `broadcast` имеет значение `'left'`.
 
 В интерфейсе фабрики данных это преобразование выглядит как на изображении ниже:
 
@@ -105,7 +105,7 @@ TripData, TripFare
 
 ### <a name="cross-join-example"></a>Пример перекрестного объединения
 
-Ниже приведен пример преобразования «соединение» с именем `CartesianProduct`, которое принимает левый поток `TripData` и правый поток `TripFare`. Это преобразование принимает два потока и возвращает декартово произведение их строк. Условием объединения является `true()`, так как выводится полное декартово произведение. `joinType` в `cross`. Включение вещания выполняется только в левом потоке, поэтому `broadcast` имеет значение `'left'`.
+Ниже приведен пример преобразования «соединение» с именем `CartesianProduct`, которое принимает левый поток `TripData` и правый поток `TripFare`. Это преобразование принимает два потока и возвращает декартово произведение их строк. Условием объединения является `true()`, так как выводится полное декартово произведение. `joinType` `cross`. Включение вещания выполняется только в левом потоке, поэтому `broadcast` имеет значение `'left'`.
 
 В интерфейсе фабрики данных это преобразование выглядит как на изображении ниже:
 

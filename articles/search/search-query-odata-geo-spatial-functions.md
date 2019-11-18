@@ -1,7 +1,7 @@
 ---
 title: Справочник по геопространственной функции OData
 titleSuffix: Azure Cognitive Search
-description: Геопространственные функции OData, Geo. Distance и Geo. intersects в запросах Когнитивный поиск Azure.
+description: Документация по синтаксису и справочной документации по использованию геопространственных функций OData, Geo. Distance и Geo. intersects в запросах Когнитивный поиск Azure.
 manager: nitinme
 author: brjohnstmsft
 ms.author: brjohnst
@@ -19,12 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 09034423e16c652cf6994b38f8d92574abc0ce55
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: 902996c1813931638012c78f81bd65c400bee7a1
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72793339"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74113176"
 ---
 # <a name="odata-geo-spatial-functions-in-azure-cognitive-search---geodistance-and-geointersects"></a>Геопространственные функции OData в Azure Когнитивный поиск — `geo.distance` и `geo.intersects`
 
@@ -121,7 +121,7 @@ lon_lat_list ::= lon_lat(',' lon_lat)*
 
     search.score() desc,rating desc,geo.distance(location, geography'POINT(-122.131577 47.678581)') asc
 
-## <a name="next-steps"></a>Дальнейшие действия  
+## <a name="next-steps"></a>Дополнительная информация  
 
 - [Фильтры в Когнитивный поиск Azure](search-filters.md)
 - [Общие сведения о языке выражений OData для Azure Когнитивный поиск](query-odata-filter-orderby-syntax.md)

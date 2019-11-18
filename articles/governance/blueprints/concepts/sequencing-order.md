@@ -1,14 +1,14 @@
 ---
 title: Сведения о порядке последовательности развертывания
-description: Сведения о жизненном цикле, который проходит определение схемы, и сведения о каждом этапе.
+description: Узнайте о порядке по умолчанию, в котором развертываются артефакты схемы во время назначения схемы и настройки порядка развертывания.
 ms.date: 08/22/2019
 ms.topic: conceptual
-ms.openlocfilehash: 87eff48f977f0308fea563090a44ff0b301909a9
-ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
+ms.openlocfilehash: 51026862c989f15acf6d3e21702cfcfc8b2b27b0
+ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73960438"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74128819"
 ---
 # <a name="understand-the-deployment-sequence-in-azure-blueprints"></a>Сведения о последовательности развертывания в Azure Blueprint
 

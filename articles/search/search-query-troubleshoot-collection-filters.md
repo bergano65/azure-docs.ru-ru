@@ -1,7 +1,7 @@
 ---
 title: Устранение неполадок фильтров коллекции OData
 titleSuffix: Azure Cognitive Search
-description: Устранение ошибок фильтра коллекции OData в запросах Когнитивный поиск Azure.
+description: Узнайте о подходах к устранению ошибок фильтров коллекции OData в запросах Когнитивный поиск Azure.
 manager: nitinme
 author: brjohnstmsft
 ms.author: brjohnst
@@ -19,12 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 0af2525a15618c6bfd9022b4388c547209ee957b
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: e82fa00226c964d5ba774cdf06f5b0f3898bdc55
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72793191"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74113082"
 ---
 # <a name="troubleshooting-odata-collection-filters-in-azure-cognitive-search"></a>Устранение неполадок фильтров коллекции OData в Azure Когнитивный поиск
 
@@ -64,7 +64,7 @@ ms.locfileid: "72793191"
 В лямбда-выражениях для коллекций строк можно использовать только `eq` и `ne`ые операторы сравнения.
 
 > [!NOTE]
-> Когнитивный поиск Azure не поддерживает `lt`/`le`/`gt`,/операторы для строк, вне зависимости от лямбда-выражения или за его пределами.
+> Когнитивный поиск Azure не поддерживает `lt`/`le`/`gt`, /операторы для строк, вне зависимости от лямбда-выражения или за его пределами.`ge`
 
 Текст `any` может проверять на равенство только в том случае, если текст `all` может проверяться на неравенство.
 
@@ -171,10 +171,10 @@ ms.locfileid: "72793191"
 
     и хотя это выражение разрешено, оно не полезно, поскольку условия перекрываются:
     - `ratings/any(r: r ne 5 or r gt 7)`
-  - Простые выражения сравнения, включающие `eq`, `lt`, `le`, `gt`или `ge`, можно сочетать с `and`/`or`. Пример.
+  - Простые выражения сравнения, включающие `eq`, `lt`, `le`, `gt`или `ge`, можно сочетать с `and`/`or`. Например,
     - `ratings/any(r: r gt 2 and r le 5)`
     - `ratings/any(r: r le 5 or r gt 7)`
-  - Выражения сравнения, Объединенные с `and` (объединения), можно объединять с помощью `or`. Эта форма известна в логической логике как "[Дисжунктиве обычная форма](https://en.wikipedia.org/wiki/Disjunctive_normal_form)" (ДНФ). Пример.
+  - Выражения сравнения, Объединенные с `and` (объединения), можно объединять с помощью `or`. Эта форма известна в логической логике как "[Дисжунктиве обычная форма](https://en.wikipedia.org/wiki/Disjunctive_normal_form)" (ДНФ). Например,
     - `ratings/any(r: (r gt 2 and r le 5) or (r gt 7 and r lt 10))`
 - Правила для `all`:
   - Простые выражения равенства не могут быть полезны вместе с другими выражениями. Например, это выражение разрешено:
@@ -185,10 +185,10 @@ ms.locfileid: "72793191"
 
     и хотя это выражение разрешено, оно не полезно, поскольку условия перекрываются:
     - `ratings/all(r: r eq 5 and r le 7)`
-  - Простые выражения сравнения, включающие `ne`, `lt`, `le`, `gt`или `ge`, можно сочетать с `and`/`or`. Пример.
+  - Простые выражения сравнения, включающие `ne`, `lt`, `le`, `gt`или `ge`, можно сочетать с `and`/`or`. Например,
     - `ratings/all(r: r gt 2 and r le 5)`
     - `ratings/all(r: r le 5 or r gt 7)`
-  - Выражения сравнения, Объединенные с `or` (дизъюнкции), можно объединять с помощью `and`. Эта форма известна в логической логике как "[был соединительным обычная форма](https://en.wikipedia.org/wiki/Conjunctive_normal_form)" (cnf). Пример.
+  - Выражения сравнения, Объединенные с `or` (дизъюнкции), можно объединять с помощью `and`. Эта форма известна в логической логике как "[был соединительным обычная форма](https://en.wikipedia.org/wiki/Conjunctive_normal_form)" (cnf). Например,
     - `ratings/all(r: (r le 2 or gt 5) and (r lt 7 or r ge 10))`
 
 <a name="bkmk_complex"></a>
@@ -223,7 +223,7 @@ ms.locfileid: "72793191"
 
 Если вы часто пишете фильтры и понимаете, что правила из первых принципов могли бы помочь вам больше, чем просто запомнить их, см. раздел [Общие сведения о фильтрах коллекции OData в когнитивный Поиск Azure](search-query-understand-collection-filters.md).
 
-## <a name="next-steps"></a>Дальнейшие действия  
+## <a name="next-steps"></a>Дополнительная информация  
 
 - [Основные сведения о фильтрах коллекции OData в Azure Когнитивный поиск](search-query-understand-collection-filters.md)
 - [Фильтры в Когнитивный поиск Azure](search-filters.md)

@@ -9,12 +9,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 03/21/2018
 ms.author: mamccrea
-ms.openlocfilehash: 932031f545ccc75cb12f368f5c7894c1b5e454cd
-ms.sourcegitcommit: a170b69b592e6e7e5cc816dabc0246f97897cb0c
+ms.openlocfilehash: 80ec9b2bbf10d8f500e7f9e0369faca3b9663633
+ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74091685"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74129384"
 ---
 # <a name="connect-to-data-sources-from-azure-databricks"></a>Подключение к источникам данных из Azure Databricks
 
@@ -43,7 +43,7 @@ ms.locfileid: "74091685"
 
     Здесь представлены инструкции по использованию [соединителя Azure Cosmos DB Spark](https://github.com/Azure/azure-cosmosdb-spark) из Databricks Azure для доступа к данным в Azure Cosmos DB.
 
-- [Центры событий Azure](/azure/databricks/data/data-sources/azure/eventhubs-connector)
+- [Центры событий Azure](/azure/event-hubs/event-hubs-spark-connector)
 
     Здесь представлены инструкции по использованию [соединителя Spark для Центров событий Azure](https://github.com/Azure/azure-event-hubs-spark) из Databricks Azure для доступа к данным в Центрах событий Azure.
 

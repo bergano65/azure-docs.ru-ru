@@ -1,25 +1,17 @@
 ---
-title: Удаление TLS 1,0 и 1,1 из использования с кэшем Azure для Redis | Документация Майкрософт
+title: Удаление TLS 1,0 и 1,1 из использования с кэшем Azure для Redis
 description: Узнайте, как удалить TLS 1,0 и 1,1 из приложения при взаимодействии с кэшем Azure для Redis
-services: cache
-documentationcenter: ''
 author: yegu-ms
-manager: maiye
-editor: ''
-ms.assetid: ''
 ms.service: cache
-ms.workload: tbd
-ms.tgt_pltfrm: cache
-ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 10/22/2019
 ms.author: yegu
-ms.openlocfilehash: 638ce4b07201453d0bb00d3610cb695b72b6d698
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 585828855cdbd3a585ced1aa6803482c3f26f0f4
+ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73806759"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74121576"
 ---
 # <a name="remove-tls-10-and-11-from-use-with-azure-cache-for-redis"></a>Удаление TLS 1,0 и 1,1 из использования с кэшем Azure для Redis
 
@@ -48,7 +40,7 @@ ms.locfileid: "73806759"
 
 Клиенты Redis .NET Core по умолчанию используют последнюю версию TLS.
 
-### <a name="java"></a>Java
+### <a name="java"></a>Java:
 
 Клиенты Redis Java используют протокол TLS 1,0 в Java версии 6 или более ранней. Jedis, салат и Радиссон не могут подключиться к кэшу Azure для Redis, если TLS 1,0 отключен в кэше. В настоящее время нет известных обходных путей.
 

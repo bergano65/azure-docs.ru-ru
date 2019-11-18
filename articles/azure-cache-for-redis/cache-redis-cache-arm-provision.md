@@ -1,25 +1,18 @@
 ---
-title: Подготовка кэша Redis для Azure с помощью Azure Resource Manager | Документация Майкрософт
+title: Подготавливает кэш Azure для Redis с помощью Azure Resource Manager
 description: Используйте шаблон Azure Resource Manager для развертывания кэша Redis для Azure.
 services: app-service
-documentationcenter: ''
 author: yegu-ms
-manager: jhubbard
-editor: ''
-ms.assetid: ce6f5372-7038-4655-b1c5-108f7c148282
 ms.service: cache
-ms.workload: web
-ms.tgt_pltfrm: cache
-ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 01/23/2017
 ms.author: yegu
-ms.openlocfilehash: 5bdad61df732f0aeb1a758aacb5844204387e19b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f215cb79adc02da857f7aa93d8933bd12c06818a
+ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66132812"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74121782"
 ---
 # <a name="create-an-azure-cache-for-redis-using-a-template"></a>Создание экземпляра кэша Redis для Azure с помощью шаблона
 
@@ -38,7 +31,7 @@ ms.locfileid: "66132812"
 > 
 > * [Создание кэша Redis для Azure уровня "Премиум" с кластеризацией](https://azure.microsoft.com/resources/templates/201-redis-premium-cluster-diagnostics/)
 > * [Создание кэша Redis для Azure уровня "Премиум" с сохранением данных](https://azure.microsoft.com/resources/templates/201-redis-premium-persistence/)
-> * [Создание кэша Redis уровня "премиум", развернутая в виртуальной сети](https://azure.microsoft.com/resources/templates/201-redis-premium-vnet/)
+> * [Создание кэша Premium Redis, развернутого в виртуальной сети](https://azure.microsoft.com/resources/templates/201-redis-premium-vnet/)
 > 
 > Чтобы узнать о новых шаблонах, обратитесь к статье [Шаблоны быстрого запуска Azure](https://azure.microsoft.com/documentation/templates/) и выполните поиск по критерию `Azure Cache for Redis`.
 > 
@@ -51,7 +44,7 @@ ms.locfileid: "66132812"
 
 [![Развертывание в Azure](./media/cache-redis-cache-arm-provision/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-redis-cache%2Fazuredeploy.json)
 
-## <a name="parameters"></a>Параметры
+## <a name="parameters"></a>parameters
 С помощью диспетчера ресурсов Azure можно определить параметры значений, которые должны указываться на этапе развертывания шаблона. В шаблоне есть раздел "Параметры", содержащий все значения параметров.
 Для этих значений необходимо определить параметры, которые будут зависеть от развертываемого проекта либо от среды, в которой выполняется развертывание. Не определяйте параметры для значений, которые не меняются. Значение каждого параметра в шаблоне определяет развертываемые ресурсы. 
 
@@ -133,7 +126,7 @@ ms.locfileid: "66132812"
 
     New-AzResourceGroupDeployment -TemplateUri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-redis-cache/azuredeploy.json -ResourceGroupName ExampleDeployGroup -redisCacheName ExampleCache
 
-### <a name="azure-cli"></a>Инфраструктура CLI Azure
+### <a name="azure-cli"></a>Интерфейс командной строки Azure
     azure group deployment create --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-redis-cache/azuredeploy.json -g ExampleDeployGroup
 
 

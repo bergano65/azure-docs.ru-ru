@@ -5,12 +5,12 @@ author: uhabiba04
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: v-umha
-ms.openlocfilehash: 232ade55350ad1ac85612cf8c69117c19cb20d0c
-ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
+ms.openlocfilehash: 788ffd9e7036996f6ac1bc7fcbc33137aca40ee2
+ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73927799"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74132022"
 ---
 # <a name="imagery-partner-integration"></a>Интеграция с партнерскими решениями для получения снимков
 
@@ -42,7 +42,7 @@ API-интерфейсы содержат техническую докумен�
 
 ## <a name="authentication"></a>Проверка подлинности
 
-Фармбеатс использует [Active Directory]((https://docs.microsoft.com/azure/app-service/overview-authentication-authorization))Microsoft Azure. Служба приложений Azure для проверки подлинности предоставляет встроенную поддержку проверки подлинности и авторизации. 
+Фармбеатс использует [Active Directory](https://docs.microsoft.com/azure/app-service/overview-authentication-authorization)Microsoft Azure. Служба приложений Azure предоставляет встроенную поддержку проверки подлинности и авторизации. 
 
 Дополнительные сведения о см. в разделе [Azure Active Directory](https://docs.microsoft.com/azure/app-service/overview-authentication-authorization).   
 

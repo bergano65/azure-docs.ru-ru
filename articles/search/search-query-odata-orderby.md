@@ -1,7 +1,7 @@
 ---
 title: Порядок сортировки по Справочнику OData
 titleSuffix: Azure Cognitive Search
-description: Справочник по языку OData для запроса синтаксиса в запросах Когнитивный поиск Azure.
+description: Справочная документация по синтаксису и языку для использования предложения ORDER-BY в запросах Когнитивный поиск Azure.
 manager: nitinme
 author: brjohnstmsft
 ms.author: brjohnst
@@ -19,12 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: e3ca19b5696b9a7ad9b68b180313753a5c9de912
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: 99ec639b88f3334530243242aadfa0ab52a40df0
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72793300"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74113147"
 ---
 # <a name="odata-orderby-syntax-in-azure-cognitive-search"></a>Синтаксис $orderby OData в Azure Когнитивный поиск
 
@@ -56,7 +56,7 @@ sortable_function ::= geo_distance_call | 'search.score()'
 
 Вы можете определить несколько условий сортировки. Порядок выражений определяет окончательный порядок сортировки. Например, чтобы отсортировать по убыванию по показателям, за которыми следует оценка, синтаксис будет `$orderby=search.score() desc,Rating desc`.
 
-Синтаксис для `geo.distance` в **$orderby** такой же, как и в **$filter**. При использовании функции `geo.distance` в **$orderby** поле, к которому она применяется, должно быть сортируемым (`sortable`) и иметь тип `Edm.GeographyPoint`.
+Синтаксис для `geo.distance` в **$orderby** такой же, как и в **$filter**. При использовании функции `geo.distance` в **$orderby** поле, к которому она применяется, должно быть сортируемым (`Edm.GeographyPoint`) и иметь тип `sortable`.
 
 Синтаксис для `search.score` в **$orderby** — `search.score()`. Функция `search.score` не принимает никаких параметров.
 
@@ -78,7 +78,7 @@ sortable_function ::= geo_distance_call | 'search.score()'
 
     $orderby=search.score() desc,Rating desc,geo.distance(Location, geography'POINT(-122.131577 47.678581)') asc
 
-## <a name="next-steps"></a>Дальнейшие действия  
+## <a name="next-steps"></a>Дополнительная информация  
 
 - [Работа с результатами поиска в Azure Когнитивный поиск](search-pagination-page-layout.md)
 - [Общие сведения о языке выражений OData для Azure Когнитивный поиск](query-odata-filter-orderby-syntax.md)

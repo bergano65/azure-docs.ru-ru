@@ -1,21 +1,17 @@
 ---
-title: Отработка отказа и исправление — кэш Azure для Redis | Документация Майкрософт
+title: Отработка отказа и исправление — кэш Azure для Redis
 description: Сведения об отработке отказа, установке исправлений и процессе обновления кэша Azure для Redis.
-services: cache
 author: asasine
-ms.assetid: 928b9b9c-d64f-4252-884f-af7ba8309af6
 ms.service: cache
-ms.workload: tbd
-ms.tgt_pltfrm: cache
 ms.topic: conceptual
 ms.date: 10/18/2019
 ms.author: adsasine
-ms.openlocfilehash: 22c48441795e8aff9aba6540f15130452bcec2f7
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 6ff33bd594181aabc4fd7d55ce33f780a0d06086
+ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73819173"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74122188"
 ---
 # <a name="failover-and-patching-for-azure-cache-for-redis"></a>Отработка отказа и исправление для кэша Azure для Redis
 
@@ -86,7 +82,7 @@ ms.locfileid: "73819173"
 
 Такие изменения могут вызвать проблемы с подключением, которая длится менее одной минуты. Возможно, клиентское приложение потеряет подключение к другим внешним сетевым ресурсам в дополнение к кэшу Azure для службы Redis.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Запланируйте обновление](cache-administration.md#schedule-updates) кэша.
 - Протестируйте устойчивость приложения с помощью [перезагрузки](cache-administration.md#reboot).

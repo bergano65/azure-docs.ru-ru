@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 72bf461dc882b9a097e59e8ecf40b0f71b2cc1f2
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: c2d69d21eb46d502a45c9df1dfaaa947d26ef7c4
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73163137"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74108795"
 ---
 # <a name="configure-dns-for-name-resolution-for-private-cloud-vcenter-access-from-on-premises-workstations"></a>Настройка DNS для разрешения имен для доступа к службе v-Center для частного облака с локальных рабочих станций
 
@@ -46,7 +46,7 @@ ms.locfileid: "73163137"
 Например, для конфигурации сервера привязки по умолчанию измените файл/ЕТК/намед.конф на DNS-сервере и добавьте следующие сведения о зоне.
 
 ```
-zone "cloudsimple.io"
+zone "az.cloudsimple.io"
 {
     type stub;
     masters { IP address of DNS servers; };
@@ -87,7 +87,7 @@ zone "cloudsimple.io"
 Например, для конфигурации сервера привязки по умолчанию измените файл/ЕТК/намед.конф на DNS-сервере и добавьте следующие данные условной пересылки.
 
 ```
-zone "cloudsimple.io" {
+zone "az.cloudsimple.io" {
     type forward;
     forwarders { IP address of DNS servers; };
 };

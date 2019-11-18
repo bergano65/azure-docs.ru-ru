@@ -1,5 +1,5 @@
 ---
-title: Ссылки на входные и выходные данные в конвейере обогащения искусственного интеллекта
+title: Ссылки на входные и выходные данные в навыков
 titleSuffix: Azure Cognitive Search
 description: Описание синтаксиса аннотации и ссылки на заметку во входных и выходных данных набора навыков в конвейере обогащения искусственного интеллекта в Azure Когнитивный поиск.
 manager: nitinme
@@ -8,12 +8,12 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: fe81ccb5324d75212763e20ac2514ade9ce50496
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: e27f61239c0631fb248217777a311b13ee48a3f9
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72787783"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74113865"
 ---
 # <a name="how-to-reference-annotations-in-an-azure-cognitive-search-skillset"></a>Как ссылаться на аннотации в наборе навыков Когнитивный поиск Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "72787783"
 
 Перед рассмотрением синтаксиса давайте обсудим несколько важных концепций, чтобы лучше понимать примеры, приведенные далее в этой статье.
 
-| Срок действия | Описание |
+| Термин | ОПИСАНИЕ |
 |------|-------------|
 | Обогащенный документ | Обогащенный документ — это внутренняя структура, которая создается и используется конвейером для хранения всех аннотаций, связанных с документом. Обогащенный документ можно представить в виде дерева аннотаций. Как правило, аннотация, созданная из предыдущей аннотации, становится дочерней для нее.<p/>Обогащенные документы существуют только при выполнении набора навыков. Когда произойдет сопоставление содержимого с индексом поиска, обогащенный документ больше не будет нужен. Несмотря на то, что вы не взаимодействуете с обогащенными документами напрямую, полезно иметь когнитивную модель документов при создании набора навыков. |
 | Контекст обогащения | Контекст, в котором происходит обогащение, в рамках которого обогащается элемент. По умолчанию контекст обогащения находится на уровне `"/document"` с отдельными документами. При запуске навыка его выходные данные становятся [свойствами определенного контекста](#example-2).|
@@ -120,8 +120,8 @@ ms.locfileid: "72787783"
 
 
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также
 + [How to add a custom skill to a cognitive search pipeline](cognitive-search-custom-skill-interface.md) (Как добавить пользовательский навык в конвейер когнитивного поиска)
-+ [How to define a skillset](cognitive-search-defining-skillset.md) (Определение набора навыков)
-+ [Create Skillset](https://docs.microsoft.com/rest/api/searchservice/create-skillset) (Создание набора навыков)
-+ [How to map enriched fields to an index](cognitive-search-output-field-mapping.md) (Сопоставление обогащенных полей с индексом)
++ [Определение набора навыков](cognitive-search-defining-skillset.md)
++ [Создание набора навыков (REST)](https://docs.microsoft.com/rest/api/searchservice/create-skillset)
++ [How to map enriched fields to an index](cognitive-search-output-field-mapping.md) (Как сопоставить обогащенные поля с индексом)

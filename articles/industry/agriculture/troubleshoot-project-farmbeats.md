@@ -5,12 +5,12 @@ author: uhabiba04
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: v-umha
-ms.openlocfilehash: 567110b2e0429930720abf6af5f2727e4ad9d3bb
-ms.sourcegitcommit: b1a8f3ab79c605684336c6e9a45ef2334200844b
+ms.openlocfilehash: ad1cb3b08f92923ef45b48d79ad8bbdc3277d370
+ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74048276"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74131977"
 ---
 # <a name="troubleshooting"></a>Устранение неполадок
 

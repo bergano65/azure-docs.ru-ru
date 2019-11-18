@@ -1,5 +1,5 @@
 ---
-title: Как задать исходный язык для распознавания речи в текстовой службе
+title: Указание языка исходного текста для перевода речи в текст
 titleSuffix: Azure Cognitive Services
 description: Пакет SDK для распознавания речи позволяет указать исходный язык при преобразовании речи в текст. В этой статье описывается, как использовать методы Фромконфиг и Саурцелангуажеконфиг, чтобы служба распознавания речи знала исходный язык и предоставил настраиваемый целевой объект модели.
 services: cognitive-services
@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 10/26/2019
 ms.author: qiohu
 zone_pivot_groups: programming-languages-set-two
-ms.openlocfilehash: 3c2503d2f341b4cdf90f7f7690fed897412a9614
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 94b8fb026b61b52e8096cf54e1db30a6c260c04b
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73506904"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74109951"
 ---
 # <a name="specify-source-language-for-speech-to-text"></a>Укажите исходный язык для перевода речи в текст
 
@@ -174,10 +174,10 @@ speechConfig.endpointId = @"The Endpoint ID for your custom model.";
 
 ::: zone-end
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также
 
 * Список поддерживаемых языков и языковых стандартов для распознавания речи в тексте см. в разделе [Поддержка языков](language-support.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Справочная документация по пакету SDK для распознавания речи](speech-sdk.md)

@@ -1,5 +1,5 @@
 ---
-title: Подключение виртуальной машины Azure SQL к виртуальной машине для индексирования поиска
+title: Подключение к виртуальной машине SQL Azure для индексирования поиска
 titleSuffix: Azure Cognitive Search
 description: Включите шифрование подключений и настройте брандмауэр, чтобы разрешить подключения к SQL Server на виртуальной машине Azure из индексатора в Azure Когнитивный поиск.
 manager: nitinme
@@ -8,16 +8,16 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 57bea41d95b8859af55be777b17189861a445a12
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: 426ec57b3dbce884e55ef7a11ccca32ed295d70d
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72792150"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74111893"
 ---
 # <a name="configure-a-connection-from-an-azure-cognitive-search-indexer-to-sql-server-on-an-azure-vm"></a>Настройка подключения из индексатора Когнитивный поиск Azure для SQL Server на виртуальной машине Azure
 
-Как указано в [подсоединении базы данных SQL Azure к azure когнитивный Поиск с помощью индексаторов](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md#faq), Azure когнитивный Поиск поддерживает создание индексаторов для **SQL Server на виртуальных машинах azure** (или **SQL Azure виртуальных машин** ). Предварительные требования для обеспечения безопасности, которые необходимо принять во внимание. 
+Как указано в статье [Подключение базы данных SQL Azure к azure когнитивный Поиск с помощью индексаторов](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md#faq), Azure когнитивный Поиск поддерживает создание индексаторов для **SQL Server на виртуальных машинах azure** (или **SQL Azure виртуальных машин** ), но есть несколько предварительных условий, связанных с безопасностью. 
 
 Подключения из Azure Когнитивный поиск к SQL Server на виртуальной машине — это общедоступное подключение к Интернету. Все меры безопасности, которые необходимо выполнить для этих подключений, также применяются здесь.
 
@@ -87,6 +87,6 @@ ms.locfileid: "72792150"
 #### <a name="include-the-azure-cognitive-search-portal-ip-addresses"></a>Включение IP-адресов портала Когнитивный поиск Azure
 Если вы используете портал Azure для создания индексатора, логике портала Когнитивный поиск Azure также требуется доступ к виртуальной машине SQL Azure во время создания. IP-адреса портала Когнитивный поиск Azure можно найти с помощью команды ping `stamp2.search.ext.azure.com`.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 После настройки вы можете указать SQL Server на виртуальной машине Azure в качестве источника данных для индексатора Azure Когнитивный поиск. Дополнительные сведения см. [в статье подключение базы данных SQL Azure к azure когнитивный Поиск с помощью индексаторов](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md) .
 

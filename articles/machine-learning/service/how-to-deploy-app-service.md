@@ -10,12 +10,12 @@ ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
 ms.date: 08/27/2019
-ms.openlocfilehash: b0d7286d96d2fbfa35eb7ce9079413dfd186288c
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 52c65bced1d78a4fdad1fbfd59c7a8d6d99d0c4a
+ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73496964"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74123281"
 ---
 # <a name="deploy-a-machine-learning-model-to-azure-app-service-preview"></a>Развертывание модели машинного обучения в службе приложений Azure (Предварительная версия)
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -36,7 +36,7 @@ ms.locfileid: "73496964"
 > [!IMPORTANT]
 > Если требуется возможность регистрировать данные оценки, используемые в развернутой модели, или результаты оценки, следует развернуть в службе Azure Kubernetes. Дополнительные сведения см. [в разделе Получение данных в рабочих моделях](how-to-enable-data-collection.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 * Рабочая область машинного обучения Azure. Дополнительные сведения см. в статье [Создание рабочей области](how-to-manage-workspace.md) .
 * [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
@@ -97,7 +97,7 @@ ms.locfileid: "73496964"
 
 ## <a name="create-the-image"></a>Создание образа
 
-Чтобы создать образ DOCKER, развернутый в службе приложений Azure, используйте [модель. Package](https://docs.microsoft.com//python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#package-workspace--models--inference-config--generate-dockerfile-false-). В следующем фрагменте кода показано, как создать новый образ из модели и конфигурации вывода:
+Чтобы создать образ DOCKER, развернутый в службе приложений Azure, используйте [модель. Package](https://docs.microsoft.com//python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#package-workspace--models--inference-config-none--generate-dockerfile-false-). В следующем фрагменте кода показано, как создать новый образ из модели и конфигурации вывода:
 
 > [!NOTE]
 > В фрагменте кода предполагается, что `model` содержит зарегистрированную модель и `inference_config` содержит конфигурацию для среды вывода. Дополнительные сведения см. в разделе [Развертывание моделей с помощью машинное обучение Azure](how-to-deploy-and-where.md).
@@ -264,7 +264,7 @@ print(response.elapsed)
 print(response.json())
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * Узнайте, как настроить веб-приложение в [службе приложений](/azure/app-service/containers/) в документации по Linux.
 * Дополнительные сведения о масштабировании см. в статье [Приступая к работе с автомасштабированием в Azure](/azure/azure-monitor/platform/autoscale-get-started?toc=%2fazure%2fapp-service%2ftoc.json).

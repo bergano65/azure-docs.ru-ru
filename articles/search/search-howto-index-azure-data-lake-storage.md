@@ -1,5 +1,5 @@
 ---
-title: Индексирование документов в Azure Data Lake Storage 2-го поколения (Предварительная версия)
+title: Поиск Azure Data Lake Storage 2-го поколения (Предварительная версия)
 titleSuffix: Azure Cognitive Search
 description: Узнайте, как индексировать содержимое и метаданные в Azure Data Lake Storage 2-го поколения. Сейчас эта функция доступна в общедоступной предварительной версии
 manager: nitinme
@@ -9,17 +9,17 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 390f45ce874e4e64d3a7b9a6c3944983e0ba9028
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: 628b8bb5c3cb83ae6038a7150420893d7abe61d5
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73719919"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74112280"
 ---
 # <a name="indexing-documents-in-azure-data-lake-storage-gen2"></a>Индексирование документов в Azure Data Lake Storage 2-го поколения
 
 > [!IMPORTANT] 
-> Поддержка Azure Data Lake Storage 2-го поколения в настоящее время доступна в общедоступной предварительной версии. Функции предварительной версии предоставляются без соглашения об уровне обслуживания и не рекомендуются для рабочих нагрузок. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Вы можете запросить доступ к предварительным просмотрам, заполнив [эту форму](https://aka.ms/azure-cognitive-search/indexer-preview). Эта функция предоставляется в [версии REST API 2019-05-06-Preview](search-api-preview.md). В настоящее время нет поддержки портала или пакета SDK для .NET.
+> Поддержка Azure Data Lake Storage 2-го поколения в настоящее время доступна в общедоступной предварительной версии. Для предварительной версии функции соглашение об уровне обслуживания не предусмотрено. Мы не рекомендуем использовать ее в рабочей среде. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Вы можете запросить доступ к предварительным просмотрам, заполнив [эту форму](https://aka.ms/azure-cognitive-search/indexer-preview). Эта функция предоставляется в [версии REST API 2019-05-06-Preview](search-api-preview.md). В настоящее время нет поддержки портала или пакета SDK для .NET.
 
 
 При настройке учетной записи хранения Azure можно включить [Иерархическое пространство имен](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-namespace). Это позволяет организовать сбор содержимого в учетной записи в иерархию каталогов и вложенных подкаталогов. Включив иерархическое пространство имен, вы включаете [Azure Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-introduction).

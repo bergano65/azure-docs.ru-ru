@@ -1,7 +1,7 @@
 ---
-title: Конечные точки API Поиска новостей Bing
+title: Конечные точки API Bing для поиска новостей
 titleSuffix: Azure Cognitive Services
-description: Сводные сведения о конечной точке API для поиска новостей.
+description: В этой статье содержится сводка конечных точек API поиска новостей. Новости, лучшие новости и тенденции.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -10,18 +10,18 @@ ms.subservice: bing-news-search
 ms.topic: conceptual
 ms.date: 1/10/2019
 ms.author: aahi
-ms.openlocfilehash: 82e37e8fa47b467e7c2fe98f801482675809a266
-ms.sourcegitcommit: 198c3a585dd2d6f6809a1a25b9a732c0ad4a704f
+ms.openlocfilehash: dc7d16fe809e3e324f384b0d9e088dd7e6ab261c
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68423785"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74111488"
 ---
 # <a name="bing-news-search-api-endpoints"></a>Конечные точки API Bing для поиска новостей
 
 **API для поиска новостей** возвращает новостные статьи, веб-страницы, изображения, видео и [сущности](https://docs.microsoft.com/azure/cognitive-services/bing-entities-search/search-the-web). Сущности содержат сводные данные о человеке, месте или теме.
 
-## <a name="endpoints"></a>Конечные точки
+## <a name="endpoints"></a>конечные точки;
 
 Чтобы получить результаты поиска новостей с помощью API Bing для поиска новостей, отправьте запрос `GET` на одну из конечных точек, приведенных ниже. Заголовки и параметры URL-адреса определяют дополнительные спецификации.
 
@@ -49,9 +49,9 @@ GET https://api.cognitive.microsoft.com/bing/v7.0/news/trendingtopics
 
 Возвращает темы новостей, которые в данный момент набирают популярности в социальных сетях. Когда параметр `/trendingtopics` включен, поиск Bing игнорирует некоторые другие параметры, такие как `freshness` и `?q=""`. Сведения о доступности см. в разделе [Поддерживаемые страны, регионы и рынки](language-support.md#supported-markets-for-news-trending-endpoint).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о заголовках, параметрах, кодах рынков, объектах ответов, ошибках и т. п. вы найдете в справочнике [по API Bing для поиска новостей версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference).
 
-Полные сведения о параметрах, поддерживаемых каждой конечной точкой, приведены в справочной документации по каждому типу.
+Полные сведения о параметрах, поддерживаемых каждой конечной точкой, см. в справочной документации по каждому типу.
 Простые примеры запросов к API для поиска новостей см. в [кратких руководствах по поиску новостей Bing](https://docs.microsoft.com/azure/cognitive-services/bing-news-search).

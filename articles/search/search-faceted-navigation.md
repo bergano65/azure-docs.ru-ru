@@ -1,19 +1,19 @@
 ---
-title: Реализация аспектной навигации в иерархии категорий
+title: Добавить иерархию категорий навигации с аспектами
 titleSuffix: Azure Cognitive Search
-description: Добавьте навигацию по аспектам в приложения, которые интегрируются с Azure Когнитивный поиск, облачной службой поиска на Microsoft Azure.
+description: Добавление аспектной навигации для самостоятельной фильтрации в приложениях поиска, которые интегрируются с Azure Когнитивный поиск.
 manager: nitinme
 author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: d10a049f7a4c7da7a75054acd442269adc74b948
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 927f57ae3ca90f5701791022b68c4bf0d91d4e7d
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73496516"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74112084"
 ---
 # <a name="how-to-implement-faceted-navigation-in-azure-cognitive-search"></a>Как реализовать аспектную навигацию в Azure Когнитивный поиск
 

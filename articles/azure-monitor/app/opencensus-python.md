@@ -8,25 +8,25 @@ author: reyang
 ms.author: reyang
 ms.date: 10/11/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: 7fb436ef8d915898bc8f36dd10766e71f63e4a59
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: ca34a92dc69cb500efb55f575420d47607cd1a46
+ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73575571"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74132210"
 ---
 # <a name="set-up-azure-monitor-for-your-python-application-preview"></a>Настройка Azure Monitor для приложения Python (Предварительная версия)
 
 Azure Monitor поддерживает распределенную трассировку, сбор метрик и ведение журнала приложений Python с помощью интеграции с [опенценсус](https://opencensus.io). В этой статье описывается процесс настройки Опенценсус для Python и отправки данных мониторинга в Azure Monitor.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
-- Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+- Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/) , прежде чем начинать работу.
 - Установка Python. В этой статье используется [Python 3.7.0](https://www.python.org/downloads/), хотя более ранние версии, скорее всего, будут работать с незначительными изменениями.
 
-## <a name="sign-in-to-the-azure-portal"></a>Выполните вход на портал Azure.
+## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
-Войдите на [портал Azure](https://portal.azure.com/).
+Войдите на [портале Azure](https://portal.azure.com/).
 
 ## <a name="create-an-application-insights-resource-in-azure-monitor"></a>Создание Application Insights ресурса в Azure Monitor
 
@@ -38,11 +38,11 @@ Azure Monitor поддерживает распределенную трасси
 
 1. Появится окно конфигурации. Используйте следующую таблицу для заполнения полей ввода.
 
-   | Настройка        | Значение           | Description (Описание)  |
+   | Настройка        | Значение           | ОПИСАНИЕ  |
    | ------------- |:-------------|:-----|
    | **имя**      | Глобальное уникальное значение | Имя, идентифицирующее отслеживаемое приложение |
    | **Группа ресурсов**     | myResourceGroup      | Имя новой группы ресурсов для размещения данных Application Insights |
-   | **Расположение** | Восток США | Расположение рядом с вами или рядом с размещением приложения |
+   | **Местоположение.** | Восточная часть США | Расположение рядом с вами или рядом с размещением приложения |
 
 1. Нажмите кнопку **Создать**.
 
@@ -109,7 +109,6 @@ python -m pip install opencensus-ext-azure
     tracer = Tracer(
         exporter=AzureExporter(
             connection_string='InstrumentationKey=00000000-0000-0000-0000-000000000000'),
-        ),
         sampler=ProbabilitySampler(1.0),
     )
 
@@ -126,7 +125,7 @@ python -m pip install opencensus-ext-azure
         main()
     ```
 
-4. Теперь при запуске скрипта Python вам по-прежнему будет предложено ввести значения, но только значение будет напечатано в оболочке. Созданный `SpanData` будет отправлен на Azure Monitor. Выпущенные данные span можно найти в `dependencies`.
+4. Теперь при запуске скрипта Python вам по-прежнему будет предложено ввести значения, но только значение будет напечатано в оболочке. Созданный `SpanData` будет отправлен на Azure Monitor. Выпущенные данные span можно найти в разделе `dependencies`.
 
 5. Сведения о выборке в Опенценсус см. [в подборке в опенценсус](https://docs.microsoft.com/azure/azure-monitor/app/sampling#configuring-fixed-rate-sampling-in-opencensus-python).
 
@@ -215,7 +214,7 @@ python -m pip install opencensus-ext-azure
     # TODO: replace the all-zero GUID with your instrumentation key.
     exporter = metrics_exporter.new_metrics_exporter(
         connection_string='InstrumentationKey=00000000-0000-0000-0000-000000000000')
-    )
+
     view_manager.register_exporter(exporter)
 
     def prompt():
@@ -298,30 +297,6 @@ python -m pip install opencensus-ext-azure
 
 5. Дополнительные сведения о том, как расширить журналы с помощью данных контекста трассировки, см. в разделе [Интеграция журналов](https://docs.microsoft.com/azure/azure-monitor/app/correlation#logs-correlation)опенценсус Python.
 
-## <a name="start-monitoring-in-the-azure-portal"></a>Запуск мониторинга на портале Azure
-
-1. Теперь можно снова открыть панель **обзор** Application Insights в портал Azure, чтобы просмотреть сведения о работающем в данный момент приложении. Выберите **Live Metrics Stream**.
-
-   ![Снимок экрана панели "Обзор" с "Live Metrics Stream", выбранным в красном поле](./media/opencensus-python/0005-overview-live-metrics-stream.png)
-
-2. Вернитесь к панели **Обзор** . Выберите **схема сопоставления приложений** для визуального макета отношений зависимости и времени вызова между компонентами приложения.
-
-   ![Снимок экрана: Базовая схема приложения](./media/opencensus-python/0007-application-map.png)
-
-   Так как мы выполняли трассировку только одного вызова метода, наша схема приложения не интересна. Но схема приложения может масштабироваться для визуализации гораздо более распределенных приложений:
-
-   ![Схема сопоставления приложений](media/opencensus-python/application-map.png)
-
-3. Выберите **исследовать производительность** , чтобы подробно проанализировать производительность и определить основную причину снижения производительности.
-
-   ![Снимок экрана с подробными сведениями о производительности](./media/opencensus-python/0008-performance.png)
-
-4. Чтобы открыть сквозную среду для сведений о транзакции, выберите **образцы**, а затем выберите любой из образцов, отображаемых на правой панели. 
-
-   Хотя в нашем примере приложения отображается только одно событие, более сложное приложение позволяет исследовать сквозную транзакцию до уровня стека вызовов отдельного события.
-
-   ![Снимок экрана с сквозным интерфейсом транзакций](./media/opencensus-python/0009-end-to-end-transaction.png)
-
 ## <a name="view-your-data-with-queries"></a>Просмотр данных с помощью запросов
 
 Данные телеметрии, отправленные из приложения, можно просмотреть на вкладке **журналы (аналитика)** .
@@ -345,7 +320,7 @@ python -m pip install opencensus-ext-azure
 * [Интеграция MySQL](https://github.com/census-instrumentation/opencensus-python/tree/master/contrib/opencensus-ext-mysql)
 * [PostgreSQL](https://github.com/census-instrumentation/opencensus-python/tree/master/contrib/opencensus-ext-postgresql)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Сопоставление приложений](./../../azure-monitor/app/app-map.md)
 * [Поиск и диагностика проблем производительности с помощью Azure Application Insights](./../../azure-monitor/learn/tutorial-performance.md)

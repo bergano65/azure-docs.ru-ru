@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.service: azure-databricks
 ms.topic: conceptual
 ms.date: 10/10/2019
-ms.openlocfilehash: 5eded3217e96ccc45951acae004d1424e16cb098
-ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+ms.openlocfilehash: 3894904575d545aed0dbfce470247afb145b7590
+ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73605663"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74129309"
 ---
 # <a name="deploy-azure-databricks-in-your-virtual-network"></a>Развертывание Azure Databricks в виртуальной сети
 
@@ -37,7 +37,7 @@ ms.locfileid: "73605663"
 
 Виртуальная сеть, в которой развертывается Рабочая область Azure Databricks, должна соответствовать следующим требованиям.
 
-### <a name="location"></a>Расположение
+### <a name="location"></a>Место проведения
 
 Виртуальная сеть должна находиться в том же расположении, что и Рабочая область Azure Databricks.
 
@@ -57,11 +57,11 @@ ms.locfileid: "73605663"
 
 Весь исходящий и входящий трафик между подсетями и плоскостью управления Azure Databricks должен быть список разрешений.
 
-## <a name="create-an-azure-databricks-workspace"></a>Создание рабочей области Azure Databricks.
+## <a name="create-an-azure-databricks-workspace"></a>Создание рабочей области Azure Databricks
 
 В этом разделе описано, как создать рабочую область Azure Databricks в портал Azure и развернуть ее в существующей виртуальной сети. Azure Databricks обновляет виртуальную сеть с двумя новыми подсетями и группами безопасности сети, используя предоставленные вами диапазоны CIDR, добавляются входящий и исходящий трафик подсети и развертывает рабочую область в обновленной виртуальной сети.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 Необходимо наличие виртуальной сети, в которой будет развернута рабочая область Azure Databricks. Вы можете использовать существующую виртуальную сеть или создать новую, но виртуальная сеть должна находиться в том же регионе, что и Рабочая область Azure Databricks, которую планируется создать. Для виртуальной сети требуется диапазон CIDR от/16-/24.
 
@@ -105,7 +105,7 @@ ms.locfileid: "73605663"
 
 При использовании этого шаблона не нужно выполнять никаких ручных список разрешений трафика подсети.
 
-### <a name="virtual-network"></a>Виртуальная сеть
+### <a name="virtual-network"></a>виртуальную сеть
 
 Чтобы создать виртуальную сеть с правильными общедоступными и частными подсетями, используйте [шаблон виртуальной сети для внедрения VNet](https://azure.microsoft.com/resources/templates/101-databricks-vnet-for-vnet-injection)в виртуальную сеть.
 
@@ -119,7 +119,7 @@ ms.locfileid: "73605663"
 
 ## <a name="whitelisting-subnet-traffic"></a>Трафик подсети список разрешений
 
-Если вы не используете шаблоны [портал Azure](/azure/databricks/administration-guide/cloud-configurations/azure/vnet-inject#vnet-inject-portal) или [Azure Resource Manager](/azure/databricks/administration-guide/cloud-configurations/azure/vnet-inject.html#vnet-inject-advanced) для создания групп безопасности сети, необходимо вручную список разрешений следующий трафик в подсети.
+Если вы не используете шаблоны [портал Azure](/azure/databricks/administration-guide/cloud-configurations/azure/vnet-inject#vnet-inject-portal) или [Azure Resource Manager](/azure/databricks/administration-guide/cloud-configurations/azure/vnet-inject#vnet-inject-advanced) для создания групп безопасности сети, необходимо вручную список разрешений следующий трафик в подсети.
 
 |Направление|Протокол|Источник|Исходный порт|Место назначения|Конечный порт|
 |---------|--------|------|-----------|-----------|----------------|
@@ -133,12 +133,12 @@ ms.locfileid: "73605663"
 
 Список разрешений трафика подсети с помощью следующих IP-адресов. Для SQL (хранилище метаданных) и хранилища (артефакты и хранилища журналов) следует использовать [теги службы](https://docs.microsoft.com/azure/virtual-network/security-overview#service-tags)SQL и хранилища.
 
-|Регион Azure Databricks|служба|Общедоступный IP-адрес|
+|Регион Azure Databricks|Служба|Общедоступный IP-адрес|
 |-----------------------|-------|---------|
-|Восток США|Управление NAT на плоскости управления </br></br>Webapp|23.101.152.95/32 </br></br>40.70.58.221/32|
+|Восточная часть США|Управление NAT на плоскости управления </br></br>Webapp|23.101.152.95/32 </br></br>40.70.58.221/32|
 |Восток США 2|Управление NAT на плоскости управления </br></br>Webapp|23.101.152.95/32 </br></br>40.70.58.221/32|
 |Центрально-северная часть США|Управление NAT на плоскости управления </br></br>Webapp|23.101.152.95/32 </br></br>40.70.58.221/32|
-|Центральный регион США|Управление NAT на плоскости управления </br></br>Webapp|23.101.152.95/32 </br></br>40.70.58.221/32|
+|Central US|Управление NAT на плоскости управления </br></br>Webapp|23.101.152.95/32 </br></br>40.70.58.221/32|
 |Центрально-южная часть США|Управление NAT на плоскости управления </br></br>Webapp|40.83.178.242/32 </br></br>40.118.174.12/32|
 |Запад США|Управление NAT на плоскости управления </br></br>Webapp|40.83.178.242/32 </br></br>40.118.174.12/32|
 |Западный регион США 2|Управление NAT на плоскости управления </br></br>Webapp|40.83.178.242/32 </br></br>40.118.174.12/32|
@@ -196,7 +196,7 @@ ms.locfileid: "73605663"
 
 Возможная причина: трафик от рабочих ролей к Azure Databricks webapp заблокирован. Исправьте их, убедившись в том, что правила безопасности для исходящего трафика соответствуют требованиям.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
 > [Извлечение, преобразование и загрузка данных с помощью Azure Databricks](databricks-extract-load-sql-data-warehouse.md)

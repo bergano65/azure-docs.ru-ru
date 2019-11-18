@@ -11,12 +11,12 @@ author: allenwux
 ms.author: xiwu
 ms.reviewer: carlrab
 ms.date: 12/20/2018
-ms.openlocfilehash: 031482fc0b87e095fcb19046564e15642050f261
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 0ed0bd3544fff89c8230267e3d6d8826c5ae3c7c
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73820799"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74114616"
 ---
 # <a name="monitor-sql-data-sync-with-azure-monitor-logs"></a>Мониторинг синхронизация данных SQL с помощью журналов Azure Monitor 
 
@@ -61,7 +61,7 @@ ms.locfileid: "73820799"
 
 -   [Представление Azure Monitor синхронизации данных](https://github.com/Microsoft/sql-server-samples/blob/master/samples/features/sql-data-sync/DataSyncLogOmsView.omsview)
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>предварительным требованиям
 
 Настройте следующие компоненты:
 
@@ -135,9 +135,9 @@ ms.locfileid: "73820799"
 
 1.  На портале Azure выберите **Поиск по журналу**.
 
-2.  Создайте запрос, чтобы выбрать ошибки и предупреждения по группе синхронизации в течение выбранного интервала. Например:
+2.  Создайте запрос, чтобы выбрать ошибки и предупреждения по группе синхронизации в течение выбранного интервала. Например,
 
-    `DataSyncLog_CL | where TimeGenerated > ago(60m) | where LogLevel_s != "Success" | summarize count() by SyncGroupName_s`
+    `DataSyncLog_CL | where LogLevel_s != "Success" | summarize AggregatedValue = count() by bin(TimeGenerated,60m),SyncGroupName_s`
 
 3.  После выполнения запроса щелкните значок в виде колокольчика, сигнализирующий об **оповещении**.
 
@@ -149,7 +149,7 @@ ms.locfileid: "73820799"
 
 5.  В разделе **Действия** задайте для параметра **Уведомление по электронной почте** значение "Да". Введите необходимые электронные адреса получателей.
 
-6.  Щелкните **Сохранить**. Теперь при возникновении ошибок заданные получатели будут получать уведомления по электронной почте.
+6.  Выберите команду **Сохранить**. Теперь при возникновении ошибок заданные получатели будут получать уведомления по электронной почте.
 
 ## <a name="create-an-azure-monitor-view-for-monitoring"></a>Создание представления Azure Monitor для мониторинга
 
@@ -197,10 +197,10 @@ ms.locfileid: "73820799"
 
 -   [Представление Azure Monitor синхронизации данных](https://github.com/Microsoft/sql-server-samples/blob/master/samples/features/sql-data-sync/DataSyncLogOmsView.omsview)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 Дополнительные сведения о синхронизации данных SQL:
 
--   Обзор: [Синхронизация данных в нескольких облачных и локальных базах данных с помощью функции синхронизации данных SQL Azure](sql-database-sync-data.md).
+-   Обзор: [Синхронизация данных в нескольких облачных и локальных базах данных с помощью синхронизации данных SQL](sql-database-sync-data.md).
 -   Настройка синхронизации данных
     - На портале: [Руководство по настройке синхронизации данных SQL между базой данных SQL Azure и локальной базой данных SQL Server](sql-database-get-started-sql-data-sync.md).
     - С помощью PowerShell

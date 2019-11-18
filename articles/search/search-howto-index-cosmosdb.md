@@ -1,5 +1,5 @@
 ---
-title: Индексирование источника данных Azure Cosmos DB
+title: Поиск по Azure Cosmos DBным данным
 titleSuffix: Azure Cognitive Search
 description: Выполняет сканирование источника данных Azure Cosmos DB и прием данных в полнотекстовом индексе с возможностью поиска в Когнитивный поиск Azure. Индексаторы автоматизируют прием данных из выбранных источников, таких как Azure Cosmos DB.
 author: mgottein
@@ -9,18 +9,18 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 0657d3d5aec414b867e85b627fcf77174c8ce789
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: 7e4d51701fd8614831585aac03f2c8a909b2b847
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73889899"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74112743"
 ---
 # <a name="how-to-index-cosmos-db-data-using-an-indexer-in-azure-cognitive-search"></a>Индексирование Cosmos DB данных с помощью индексатора в Azure Когнитивный поиск 
 
 > [!IMPORTANT] 
 > API SQL общедоступен.
-> API MongoDB, API Gremlin и поддержка API Cassandra в настоящее время доступны в общедоступной предварительной версии. Функции предварительной версии предоставляются без соглашения об уровне обслуживания и не рекомендуются для рабочих нагрузок. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Вы можете запросить доступ к предварительным просмотрам, заполнив [эту форму](https://aka.ms/azure-cognitive-search/indexer-preview). [REST API версия 2019-05-06-Preview](search-api-preview.md) предоставляет функции предварительной версии. В настоящее время поддерживается ограниченная поддержка портала и поддержка пакета SDK для .NET.
+> API MongoDB, API Gremlin и поддержка API Cassandra в настоящее время доступны в общедоступной предварительной версии. Для предварительной версии функции соглашение об уровне обслуживания не предусмотрено. Мы не рекомендуем использовать ее в рабочей среде. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Вы можете запросить доступ к предварительным просмотрам, заполнив [эту форму](https://aka.ms/azure-cognitive-search/indexer-preview). [Версия REST API 2019-05-06-Preview](search-api-preview.md) предоставляет предварительные версии функций. Сейчас доступна ограниченная поддержка портала. Поддержка пакета SDK для .NET пока не реализована.
 
 В этой статье показано, как настроить [индексатор](search-indexer-overview.md) Azure Cosmos DB для извлечения содержимого и сделать его поиском в Azure когнитивный Поиск. Этот рабочий процесс создает индекс Azure Когнитивный поиск и загружает его с помощью существующего текста, извлеченного из Azure Cosmos DB. 
 

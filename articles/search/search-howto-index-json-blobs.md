@@ -1,5 +1,5 @@
 ---
-title: Индексирование больших двоичных объектов JSON из индексатора больших двоичных объектов Azure для полнотекстового поиска
+title: Поиск по большим двоичным объектам JSON
 titleSuffix: Azure Cognitive Search
 description: Сканирование больших двоичных объектов Azure JSON для текстового содержимого с помощью индексатора больших двоичных объектов Azure Когнитивный поиск. Индексаторы автоматизируют прием данных из выбранных источников, таких как хранилище BLOB-объектов Azure.
 manager: nitinme
@@ -9,12 +9,12 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 81e652b90831af0e1e20e716842b4e79f5606d05
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: 18f3ed9cb2ef0f700e33e8b643b5e7d167d656a5
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73889866"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74112722"
 ---
 # <a name="how-to-index-json-blobs-using-a-blob-indexer-in-azure-cognitive-search"></a>Индексация больших двоичных объектов JSON с помощью индексатора больших двоичных объектов в Azure Когнитивный поиск
 

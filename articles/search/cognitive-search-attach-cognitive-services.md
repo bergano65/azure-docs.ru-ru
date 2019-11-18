@@ -1,5 +1,5 @@
 ---
-title: Присоединение Cognitive Services ресурса к набору навыков
+title: Присоединение Cognitive Services к набору навыков
 titleSuffix: Azure Cognitive Search
 description: Инструкции по присоединению Cognitive Services "все в одной" к конвейеру обогащения искусственного интеллекта в Azure Когнитивный поиск.
 manager: nitinme
@@ -8,16 +8,16 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 11ca5f71cb0d08a4bebf72407035a9557c794f9f
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: d65b9b60ce93656c9acdc76c77291114468d345a
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72788035"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74113931"
 ---
 # <a name="attach-a-cognitive-services-resource-to-a-skillset-in-azure-cognitive-search"></a>Подключение Cognitive Services ресурса к набору навыков в Azure Когнитивный поиск 
 
-Алгоритмы искусственного интеллекта используют [конвейеры обогащения](cognitive-search-concept-intro.md) , используемые для преобразования содержимого в когнитивный Поиск Azure. Эти алгоритмы основаны на ресурсах Azure Cognitive Services, включая [компьютерное зрение](https://azure.microsoft.com/services/cognitive-services/computer-vision/) для анализа изображений и оптического распознавания символов (OCR), а также [анализ текста](https://azure.microsoft.com/services/cognitive-services/text-analytics/) для распознавания сущностей, извлечения ключевых фраз и других дополнений. . Как используется Когнитивный поиск Azure для обогащения документов, алгоритмы упаковываются внутри *навыка*, размещаются в наборе *навыков*и на которые ссылается *индексатор* во время индексирования.
+Алгоритмы искусственного интеллекта используют [конвейеры обогащения](cognitive-search-concept-intro.md) , используемые для преобразования содержимого в когнитивный Поиск Azure. Эти алгоритмы основаны на ресурсах Azure Cognitive Services, включая [компьютерное зрение](https://azure.microsoft.com/services/cognitive-services/computer-vision/) для анализа изображений и оптического распознавания символов (OCR), а также [анализ текста](https://azure.microsoft.com/services/cognitive-services/text-analytics/) для распознавания сущностей, извлечения ключевых фраз и других дополнений. Как используется Когнитивный поиск Azure для обогащения документов, алгоритмы упаковываются внутри *навыка*, размещаются в наборе *навыков*и на которые ссылается *индексатор* во время индексирования.
 
 Можно бесплатно освободить ограниченное число документов. Или можно присоединить оплачиваемый Cognitive Servicesный ресурс к набору *навыков* для более крупных и часто используемых рабочих нагрузок. В этой статье вы узнаете, как присоединить оплачиваемый Cognitive Services ресурс к расширению документов во время [индексирования](search-what-is-an-index.md)Azure когнитивный Поиск.
 
@@ -158,8 +158,8 @@ Content-Type: application/json
 
 Поместив все вместе, вы платите примерно $57,00, чтобы принять 1 000 PDF-документов этого типа с описанным набором навыков.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 + [Страница цен на Когнитивный поиск Azure](https://azure.microsoft.com/pricing/details/search/)
-+ [How to define a skillset](cognitive-search-defining-skillset.md) (Определение набора навыков)
-+ [Create Skillset](https://docs.microsoft.com/rest/api/searchservice/create-skillset) (Создание набора навыков)
++ [Определение набора навыков](cognitive-search-defining-skillset.md)
++ [Создание набора навыков (REST)](https://docs.microsoft.com/rest/api/searchservice/create-skillset)
 + [Сопоставление обогащенных полей](cognitive-search-output-field-mapping.md)

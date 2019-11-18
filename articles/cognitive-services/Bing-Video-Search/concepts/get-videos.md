@@ -1,7 +1,7 @@
 ---
 title: Поиск видео с помощью API Bing для поиска видео
 titleSuffix: Azure Cognitive Services
-description: Сведения об отправке поисковых запросов в API Поиска видео Bing.
+description: Поиск видео Bing Апифиндс и возвращает соответствующие видеоматериалы из Интернета, она предоставляет несколько функций для интеллектуального и специализированного извлечения видео в Интернете.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: bing-video-search
 ms.topic: conceptual
 ms.date: 06/24/2019
 ms.author: aahi
-ms.openlocfilehash: e3314efe0ea0367eb852fd17aadece17026ff4bb
-ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
+ms.openlocfilehash: 5add9597924aa77ede875d0056e83eceb4f99598
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72512421"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74111438"
 ---
 # <a name="search-for-videos-with-the-bing-video-search-api"></a>Поиск видео с помощью API Поиска видео Bing
 
@@ -37,7 +37,7 @@ Host: api.cognitive.microsoft.com
 
 Все запросы должны быть выполнены на сервере.
 
-Если вы впервые вызовете любой из интерфейсов API Bing, не включайте заголовок идентификатора клиента. Идентификатор клиента следует включать, только если вы ранее вызывали API Bing, а Bing вернул идентификатор клиента для определенной комбинации пользователей и устройств.
+Если вы впервые вызовете любой из API-интерфейсов Bing, не включайте заголовок идентификатора клиента. Включите идентификатор клиента, только если вы ранее вызывали API Bing, а Bing возвратил идентификатор клиента для комбинации пользователей и устройств.
 
 Чтобы получить видео с определенного домена, используйте оператор запроса [site:](https://msdn.microsoft.com/library/ff795613.aspx).
 

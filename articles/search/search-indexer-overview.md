@@ -1,5 +1,5 @@
 ---
-title: Индексаторы для обхода содержимого источников данных во время индексирования
+title: Индексаторы для обхода данных при импорте
 titleSuffix: Azure Cognitive Search
 description: Просканировать базу данных SQL Azure, Azure Cosmos DB или службу хранилища Azure, чтобы извлечь данные для поиска и заполнить индекс Azure Когнитивный поиск.
 manager: nitinme
@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 5e5d43909dc0e65c12c053515ba534ce5cfa121f
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: 1fd667e14501355f2567712d13b10dd7fbc7ee19
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72793660"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74112689"
 ---
 # <a name="indexers-in-azure-cognitive-search"></a>Индексаторы в Azure Когнитивный поиск
 
@@ -31,7 +31,7 @@ ms.locfileid: "72793660"
 
 * [Мастер импорта данных > портала](search-import-data-portal.md)
 * [API REST службы](https://docs.microsoft.com/rest/api/searchservice/Indexer-operations)
-* [ПАКЕТ SDK .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.iindexersoperations)
+* [Пакет SDK для .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.iindexersoperations)
 
 Изначально новый индексатор объявляется в качестве предварительной версии функции. Предварительные версии функций добавляют в API (REST и .NET), а затем после выхода общедоступной версии интегрируются на портале. При оценке нового индексатора следует запланировать написание кода.
 
@@ -46,7 +46,7 @@ ms.locfileid: "72793660"
 Данные о сканировании, выполненном индексаторами, хранятся в Azure.
 
 * [Хранилище BLOB-объектов Azure](search-howto-indexing-azure-blob-storage.md)
-* [хранилище таблиц Azure](search-howto-indexing-azure-tables.md)
+* [Хранилище таблиц Azure](search-howto-indexing-azure-tables.md)
 * [Azure Cosmos DB](search-howto-index-cosmosdb.md)
 * [база данных SQL Azure;](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
 * [SQL Server на виртуальных машинах Azure](search-howto-connecting-azure-sql-iaas-to-azure-search-using-indexers.md)
@@ -123,12 +123,12 @@ ms.locfileid: "72793660"
 
 История выполнения включает не более 50 последних завершенных выполнений, которые сортируются в обратном хронологическом порядке (то есть в ответе первым отображается последнее выполнение).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 Теперь, когда вы ознакомились с основной идеей, можно переходить к изучению требований и задач, связанных с каждым типом источника данных.
 
 * [База данных Azure SQL (или SQL Server на виртуальных машинах Azure);](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
 * [Azure Cosmos DB](search-howto-index-cosmosdb.md)
 * [Хранилище BLOB-объектов Azure](search-howto-indexing-azure-blob-storage.md)
-* [хранилище таблиц Azure](search-howto-indexing-azure-tables.md)
+* [Хранилище таблиц Azure](search-howto-indexing-azure-tables.md)
 * [Индексирование больших двоичных объектов CSV с помощью индексатора больших двоичных объектов Azure Когнитивный поиск](search-howto-index-csv-blobs.md)
 * [Индексирование больших двоичных объектов JSON с помощью индексатора BLOB-объектов Когнитивный поиск Azure](search-howto-index-json-blobs.md)
