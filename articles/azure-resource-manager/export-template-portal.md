@@ -1,17 +1,14 @@
 ---
-title: Экспорт шаблона диспетчер ресурсов портал Azure
+title: Экспорт шаблона в портал Azure
 description: Используйте портал Azure, чтобы экспортировать шаблон Azure Resource Manager из ресурсов в подписке.
-author: tfitzmac
-ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 10/11/2019
-ms.author: tomfitz
-ms.openlocfilehash: 0605e24590fa2d702a1385429a7808a7e1226809
-ms.sourcegitcommit: 6eecb9a71f8d69851bc962e2751971fccf29557f
+ms.openlocfilehash: 6e05a8bff27e56bc5942a7c16ab63921c489f44c
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72532343"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74149867"
 ---
 # <a name="single-and-multi-resource-export-to-a-template-in-azure-portal"></a>Экспорт одного и нескольких ресурсов в шаблон в портал Azure
 
@@ -110,7 +107,7 @@ ms.locfileid: "72532343"
 
    ![Выбор шаблона](./media/export-template-portal/show-template-from-history.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Узнайте, как экспортировать шаблоны с помощью [Azure CLI](manage-resource-groups-cli.md#export-resource-groups-to-templates), [Azure PowerShell](manage-resource-groups-powershell.md#export-resource-groups-to-templates)или [REST API](/rest/api/resources/resourcegroups/exporttemplate).
 - Сведения о синтаксисе шаблона диспетчер ресурсов см. в разделе [Общие сведения о структуре и синтаксисе шаблонов Azure Resource Manager](./resource-group-authoring-templates.md).

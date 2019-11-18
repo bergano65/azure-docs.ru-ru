@@ -1,23 +1,17 @@
 ---
-title: Повторное использование шаблонов в нескольких облаках Azure Resource Manager
+title: Повторное использование шаблонов в облаках
 description: Разработка шаблонов Azure Resource Manager, которые согласованно работают в разных облачных средах. Создание или обновление существующих шаблонов для Azure Stack.
-services: azure-resource-manager
-documentationcenter: na
 author: marcvaneijk
-ms.service: azure-resource-manager
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
 ms.date: 12/09/2018
 ms.author: mavane
 ms.custom: seodec18
-ms.openlocfilehash: 38da6d39d095ce27cdd26719d9b8b752d2921bc0
-ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
+ms.openlocfilehash: 2964bb4365a2c153e7bc82c3292545ad4de985eb
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70164763"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74143772"
 ---
 # <a name="develop-azure-resource-manager-templates-for-cloud-consistency"></a>Разработка шаблонов Azure Resource Manager для обеспечения согласованности с облаком
 
@@ -445,7 +439,7 @@ Get-AzureRmResourceProvider | select-object ProviderNamespace -ExpandProperty Re
 * Строки подключения (MySql, SQLServer, SQLAzure, Custom, NotificationHub, ServiceBus, EventHub, ApiHub, DocDb, RedisCache, PostgreSQL)
 * Диспетчер трафика
 * domainNameLabel для общедоступного IP-адреса
-* Облачные службы
+* Облачных служб
 
 Как правило, не рекомендуется использовать жестко заданные конечные точки в шаблоне. Лучше всего использовать функцию шаблона reference для динамического получения конечных точек. К распространенным примерам жестко задаваемой конечной точки относится пространство имен конечной точки для учетных записей хранения. Каждой учетной записи хранения назначается уникальное полное доменное имя, сформированное путем объединения имени учетной записи хранения с пространством имен конечной точки. Учетная запись хранения BLOB-объектов с именем mystorageaccount1 получает разные полные доменные имена в зависимости от облака:
 
@@ -493,7 +487,7 @@ Azure предоставляет широкий выбор образов вир
 az vm image list -all
 ```
 
-Тот же список можно получить с помощью командлета Azure PowerShell [Get-AzureRmVMImagePublisher](/powershell/module/az.compute/get-azvmimagepublisher), указав расположение с помощью параметра `-Location`. Пример:
+Тот же список можно получить с помощью командлета Azure PowerShell [Get-AzureRmVMImagePublisher](/powershell/module/az.compute/get-azvmimagepublisher), указав расположение с помощью параметра `-Location`. Например,
 
 ```azurepowershell-interactive
 Get-AzureRmVMImagePublisher -Location "West Europe" | Get-AzureRmVMImageOffer | Get-AzureRmVMImageSku | Get-AzureRmVMImage
@@ -596,7 +590,7 @@ Get-AzureRmVMSize -Location "West Europe"
 az vm extension image list --location myLocation
 ```
 
-Вы также можете выполнить командлет Azure PowerShell [Get-AzureRmVmImagePublisher](/powershell/module/az.compute/get-azvmimagepublisher) и использовать `-Location` для указания расположения образа виртуальной машины. Пример:
+Вы также можете выполнить командлет Azure PowerShell [Get-AzureRmVmImagePublisher](/powershell/module/az.compute/get-azvmimagepublisher) и использовать `-Location` для указания расположения образа виртуальной машины. Например,
 
 ```azurepowershell-interactive
 Get-AzureRmVmImagePublisher -Location myLocation | Get-AzureRmVMExtensionImageType | Get-AzureRmVMExtensionImage | Select Type, Version
@@ -671,7 +665,7 @@ Get-AzureRmVMExtensionImage -Location myLocation -PublisherName Microsoft.PowerS
 * Имейте в виду, что некоторые тесты могут выполняться без подключения к Azure Resource Manager. Другие, такие как тестирование развертывания шаблона, требуют выполнения некоторых действий со стороны Resource Manager, которые не могут происходить в автономном режиме.
 * Тестирование шаблона развертывания с использованием API проверки не тождественно фактическому развертыванию. Кроме того, даже при развертывании шаблона из локального файла все ссылки на вложенные шаблоны в шаблоне извлекаются Resource Manager напрямую, а артефакты, на которые ссылаются расширения виртуальной машины, извлекаются агентом виртуальной машины, работающим на развернутой виртуальной машине.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Рекомендации по использованию шаблона Azure Resource Manager](/azure-stack/user/azure-stack-develop-templates)
 * [Рекомендации по работе с шаблонами Azure Resource Manager](resource-group-authoring-templates.md)

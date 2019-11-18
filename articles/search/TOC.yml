@@ -223,8 +223,6 @@
           href: search-howto-connecting-azure-sql-iaas-to-azure-search-using-indexers.md
         - name: Монитор индексаторов
           href: search-howto-monitor-indexers.md
-        - name: Устранение распространенных неполадок
-          href: search-indexer-troubleshooting.md
     - name: Расширение возможностей с помощью ИИ
       items:
         - name: Вложение ресурса Cognitive Services
@@ -249,7 +247,7 @@
               href: cognitive-search-create-custom-skill-example.md
             - name: "Пример\_— контейнеры"
               href: 'https://go.microsoft.com/fwlink/?linkid=2089500'
-        - name: Советы по устранению неполадок
+        - name: Советы по проектированию
           href: cognitive-search-concept-troubleshooting.md
         - name: Ссылки на документацию
           href: cognitive-search-resources-documentation.md
@@ -261,8 +259,6 @@
               href: knowledge-store-view-storage-explorer.md
             - name: Подключение с помощью Power BI
               href: knowledge-store-connect-power-bi.md
-        - name: Устранение проблем с обогащением
-          href: cognitive-search-common-errors-warnings.md
     - name: Запрос документов
       items:
         - name: Типы запросов и составление запросов
@@ -307,6 +303,12 @@
           href: search-manage-powershell.md
         - name: Отслеживание действий и ведение журнала
           href: search-monitor-usage.md
+    - name: Устранение неполадок
+      items:
+        - name: Проблемы с индексатором
+          href: search-indexer-troubleshooting.md
+        - name: 'Ошибки и предупреждения, касающиеся индексатора'
+          href: cognitive-search-common-errors-warnings.md
 - name: Справочные материалы
   items:
     - name: Azure CLI

@@ -13,14 +13,15 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/29/2018
 ms.author: tomfitz
-ms.openlocfilehash: 3036e5882e236dbbb9cf4f9aae17617822422a82
-ms.sourcegitcommit: d060947aae93728169b035fd54beef044dbe9480
+ms.openlocfilehash: c1b4791f2ec80eba25a00e22cb4298b4c97da4de
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68742103"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74151078"
 ---
 # <a name="microsoftcomputecredentialscombo-ui-element"></a>Элемент пользовательского интерфейса Microsoft.Compute.CredentialsCombo
+
 Группа элементов управления со встроенной проверкой паролей и открытых ключей SSH для Windows и Linux.
 
 ## <a name="ui-sample"></a>Пример элемента пользовательского интерфейса
@@ -37,7 +38,8 @@ ms.locfileid: "68742103"
 
 ![Microsoft.Compute.CredentialsCombo для ключа Linux](./media/managed-application-elements/microsoft.compute.credentialscombo-linux-key.png)
 
-## <a name="schema"></a>Схема
+## <a name="schema"></a>SCHEMA (Схема)
+
 Если вы работаете с Windows, используйте следующую схему:
 
 ```json
@@ -95,14 +97,8 @@ ms.locfileid: "68742103"
 }
 ```
 
-## <a name="remarks"></a>Примечания
-- Необходимо задать значение для параметра `osPlatform` (**Windows** или **Linux**).
-- Если для параметра `constraints.required` задано значение **true**, то текстовые поля для пароля и открытого ключа SSH должны содержать значения, чтобы пройти проверку. Значение по умолчанию — **true**.
-- Если для параметра `options.hideConfirmation` задано значение **true**, второе текстовое поле для подтверждения пароля скрыто. Значение по умолчанию — **false**.
-- Если для параметра `options.hidePassword` задано значение **true**, возможность использования проверки пароля скрыта. Его можно использовать только тогда, когда параметр `osPlatform` имеет значение **Linux**. Значение по умолчанию — **false**.
-- Дополнительные ограничения на разрешенные пароли можно реализовать с помощью свойства `customPasswordRegex`. Строка в `customValidationMessage` отображается, если пароль не прошел пользовательскую проверку. Значение по умолчанию для обоих свойств — **null**.
-
 ## <a name="sample-output"></a>Пример выходных данных
+
 Если параметр `osPlatform` имеет значение **Windows** или параметр `osPlatform` — значение **Linux** и пользователь указал пароль вместо открытого ключа SSH, элемент управления возвращает следующие выходные данные:
 
 ```json
@@ -121,6 +117,15 @@ ms.locfileid: "68742103"
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="remarks"></a>Примечания
+
+- Необходимо задать значение для параметра `osPlatform` (**Windows** или **Linux**).
+- Если для параметра `constraints.required` задано значение **true**, то текстовые поля для пароля и открытого ключа SSH должны содержать значения, чтобы пройти проверку. Значение по умолчанию — **true**.
+- Если для параметра `options.hideConfirmation` задано значение **true**, второе текстовое поле для подтверждения пароля скрыто. Значение по умолчанию — **false**.
+- Если для параметра `options.hidePassword` задано значение **true**, возможность использования проверки пароля скрыта. Его можно использовать только тогда, когда параметр `osPlatform` имеет значение **Linux**. Значение по умолчанию — **false**.
+- Дополнительные ограничения на разрешенные пароли можно реализовать с помощью свойства `customPasswordRegex`. Строка в `customValidationMessage` отображается, если пароль не прошел пользовательскую проверку. Значение по умолчанию для обоих свойств — **null**.
+
+## <a name="next-steps"></a>Дополнительная информация
+
 * Общие сведения о создании определений пользовательского интерфейса см. в статье [Начало работы с CreateUiDefinition](create-uidefinition-overview.md).
 * Дополнительные сведения об общих свойствах элементов пользовательского интерфейса см. в статье [Элементы CreateUiDefinition](create-uidefinition-elements.md).

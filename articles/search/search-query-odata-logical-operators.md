@@ -1,7 +1,7 @@
 ---
 title: Справочник по логическому оператору OData
 titleSuffix: Azure Cognitive Search
-description: Логические операторы OData, и, или, а не в запросах Когнитивный поиск Azure.
+description: Справочная документация по синтаксису и использованию логических операторов OData, и, или, а не в запросах Azure Когнитивный поиск.
 manager: nitinme
 author: brjohnstmsft
 ms.author: brjohnst
@@ -19,12 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 4e016047d66e49f17c08d4b92a1c865f4b63e39b
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: 2d3952f7d2adc26892cbebcd962f2ea25b86de7d
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72793325"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74113187"
 ---
 # <a name="odata-logical-operators-in-azure-cognitive-search---and-or-not"></a>Логические операторы OData в Azure Когнитивный поиск — `and`, `or`, `not`
 
@@ -72,7 +72,7 @@ logical_expression ::=
 
 Большинство логических выражений, таких как функции и сравнения, не могут формировать `null` значений, а логические операторы не могут применяться к литералу `null` напрямую (например, `x and null` не разрешено). Однако логические поля можно `null`, поэтому необходимо знать, как работают операторы `and`, `or`и `not` при наличии значения NULL. Это приводится в следующей таблице, где `b` является полем типа `Edm.Boolean`:
 
-| Expression | Результат, когда `b` `null` |
+| Выражение | Результат, когда `b` `null` |
 | --- | --- |
 | `b` | `false` |
 | `not b` | `true` |
@@ -107,7 +107,7 @@ logical_expression ::=
 
     Address/City eq 'Vancouver' and Address/Country eq 'Canada' and Rooms/any(room: room/Type eq 'Deluxe Room' and room/BaseRate lt 160)
 
-## <a name="next-steps"></a>Дальнейшие действия  
+## <a name="next-steps"></a>Дополнительная информация  
 
 - [Фильтры в Когнитивный поиск Azure](search-filters.md)
 - [Общие сведения о языке выражений OData для Azure Когнитивный поиск](query-odata-filter-orderby-syntax.md)

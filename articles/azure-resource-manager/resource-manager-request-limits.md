@@ -1,18 +1,15 @@
 ---
-title: Ограничения и регулирование запросов Azure Resource Manager
+title: Ограничения запросов и регулирование
 description: В данной статье описывается использование регулирования запросов Azure Resource Manager при достижении ограничений подписки.
-author: tfitzmac
-ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 10/26/2019
-ms.author: tomfitz
 ms.custom: seodec18
-ms.openlocfilehash: 7d53e5749385499113d0dc5261398561d82347a0
-ms.sourcegitcommit: c4700ac4ddbb0ecc2f10a6119a4631b13c6f946a
+ms.openlocfilehash: b47943d69d209f5a0406c293b5a24c6ac0ad0c10
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2019
-ms.locfileid: "72965568"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74150469"
 ---
 # <a name="throttling-resource-manager-requests"></a>Регулирование запросов Resource Manager
 
@@ -28,11 +25,11 @@ ms.locfileid: "72965568"
 
 Ограничения по умолчанию для регулирования в час показаны в следующей таблице.
 
-| Область действия | Operations | Ограничение |
+| Область | Операции | Ограничение |
 | ----- | ---------- | ------- |
-| Subscription | операции чтения | 12000 |
-| Subscription | стирают | 15 000 |
-| Subscription | дает | 1200 |
+| подписку | операции чтения | 12000 |
+| подписку | стирают | 15 000 |
+| подписку | дает | 1200 |
 | Клиент | операции чтения | 12000 |
 | Клиент | дает | 1200 |
 
@@ -87,7 +84,7 @@ ms.locfileid: "72965568"
 
 Количество оставшихся запросов можно определить, проверяя заголовки ответов. Запросы на чтение возвращают значение в заголовке для количества оставшихся запросов на чтение. Запросы на запись включают значение числа оставшихся запросов на запись. В приведенной ниже таблице описаны заголовки ответов, в которых можно проверить эти значения.
 
-| Заголовок ответа | Описание |
+| Заголовок ответа | ОПИСАНИЕ |
 | --- | --- |
 | x-ms-ratelimit-remaining-subscription-reads |Оставшееся число запросов на чтение для подписки. Это значение возвращается при операциях чтения. |
 | x-ms-ratelimit-remaining-subscription-writes |Оставшееся число запросов на запись для подписки. Это значение возвращается при операциях записи. |
@@ -196,7 +193,7 @@ msrest.http_logger :     'Expires': '-1'
 msrest.http_logger :     'x-ms-ratelimit-remaining-subscription-writes': '1199'
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * Полный пример для PowerShell см. в разделе [Проверьте ограничения Resource Manager для подписки](https://github.com/Microsoft/csa-misc-utils/tree/master/psh-GetArmLimitsViaAPI).
 * Дополнительные сведения об ограничениях и квотах см. в статье [Подписка Azure, границы, квоты и ограничения службы](../azure-subscription-service-limits.md).

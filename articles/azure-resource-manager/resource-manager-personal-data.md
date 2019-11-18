@@ -1,17 +1,14 @@
 ---
-title: Персональные данные Azure Resource Manager | Документация Майкрософт
+title: Персональные данные
 description: Узнайте, как управлять персональными данными, связанными с операциями Azure Resource Manager.
-author: tfitzmac
-ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 05/14/2018
-ms.author: tomfitz
-ms.openlocfilehash: cc8400a3b6d51bacd55d3c711700a1d07266f528
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: 2b1f97fa4f831235fe04c18b1ed33e729ed2326b
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67206279"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74149499"
 ---
 # <a name="manage-personal-data-associated-with-azure-resource-manager"></a>Управление персональными данными, связанными с Azure Resource Manager
 
@@ -33,7 +30,7 @@ ms.locfileid: "67206279"
 
 Чтобы удалить **развертывания** из журнала, используйте:
 
-* [Удаление](/rest/api/resources/deployments/delete)
+* [Удалить](/rest/api/resources/deployments/delete)
 * [Remove-AzResourceGroupDeployment](/powershell/module/az.resources/Remove-AzResourceGroupDeployment)
 * [az group deployment delete](/cli/azure/group/deployment#az-group-deployment-delete).
 
@@ -49,7 +46,7 @@ ms.locfileid: "67206279"
 
 Для удаления **групп ресурсов** используйте:
 
-* [Удаление](/rest/api/resources/resourcegroups/delete)
+* [Удалить](/rest/api/resources/resourcegroups/delete)
 * [Remove-AzResourceGroup](/powershell/module/az.resources/Remove-AzResourceGroup)
 * [az group delete](/cli/azure/group#az-group-delete)
 
@@ -65,9 +62,9 @@ ms.locfileid: "67206279"
 
 Для удаления **тегов** используйте:
 
-* [Удаление](/rest/api/resources/tags/delete)
+* [Удалить](/rest/api/resources/tags/delete)
 * [Remove-AzTag](/powershell/module/az.resources/Remove-AzTag)
 * [az tag delete](/cli/azure/tag#az-tag-delete).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 * Общие сведения об Azure Resource Manager см. в [этой статье](resource-group-overview.md).

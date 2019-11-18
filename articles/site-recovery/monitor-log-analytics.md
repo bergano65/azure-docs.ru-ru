@@ -5,14 +5,14 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 11/12/2019
+ms.date: 11/15/2019
 ms.author: raynew
-ms.openlocfilehash: b5bf568e03d4949b8798dd2e0f4c2d8cbcbbe0c7
-ms.sourcegitcommit: 44c2a964fb8521f9961928f6f7457ae3ed362694
+ms.openlocfilehash: f20d0d38a7fbd831d3e97a69373bac04b9b330aa
+ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73936090"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74133415"
 ---
 # <a name="monitor-site-recovery-with-azure-monitor-logs"></a>Мониторинг Site Recovery с помощью журналов Azure Monitor
 
@@ -28,7 +28,7 @@ ms.locfileid: "73936090"
 Использование журналов Azure Monitor с Site Recovery поддерживается для репликации **Azure в Azure** , а также для репликации **виртуальных машин и физических серверов VMware в Azure** .
 
 > [!NOTE]
-> Журналы данных об обработке и журналы скорости передачи доступны только для виртуальных машин Azure, реплицируемых в дополнительный регион Azure.
+> Для получения журналов обработанных данных и журналов скорости передачи для VMware и физических компьютеров необходимо установить Microsoft Monitoring Agent на сервере обработки. Этот агент отправляет журналы реплицируемых компьютеров в рабочую область. Эта возможность доступна только для версии агента мобильности 9,30.
 
 ## <a name="before-you-start"></a>Перед началом работы
 
@@ -54,6 +54,24 @@ ms.locfileid: "73936090"
     ![Выбор рабочей области](./media/monitoring-log-analytics/select-workspace.png)
 
 Журналы Site Recovery начинается с перевода в таблицу (**AzureDiagnostics**) в выбранной рабочей области.
+
+## <a name="configure-microsoft-monitoring-agent-on-the-process-server-to-send-churn-and-upload-rate-logs"></a>Настройте Microsoft Monitoring Agent на сервере обработки для отправки журналов обновлений и скорости отправки
+
+Вы можете записывать сведения о скорости обработки данных и скорости отправки исходных данных для виртуальных машин VMware или физических компьютеров в локальной среде. Чтобы это сделать, на сервере обработки должен быть установлен агент наблюдения (Майкрософт).
+
+1. Перейдите в рабочую область Log Analytics и щелкните **Дополнительные параметры**.
+2. Щелкните страницу **подключенные источники** и выберите **серверы Windows**.
+3. Скачайте агент Windows (64 bit) на сервере обработки. 
+4. [Получение идентификатора и ключа рабочей области](../azure-monitor/platform/agent-windows.md#obtain-workspace-id-and-key)
+5. [Настройка агента для использования TLS 1,2](../azure-monitor/platform/agent-windows.md#configure-agent-to-use-tls-12)
+6. [Завершите установку агента](../azure-monitor/platform/agent-windows.md#install-the-agent-using-setup-wizard) , указав полученный идентификатор и ключ рабочей области.
+7. После завершения установки перейдите в Log Analytics рабочую область и щелкните **Дополнительные параметры**. Перейдите на страницу **данные** и щелкните **счетчики производительности Windows**еще больше. 
+8. Щелкните **"+"** , чтобы добавить следующие два счетчика с интервалом выборки в 300 секунд:
+
+        ASRAnalytics(*)\SourceVmChurnRate 
+        ASRAnalytics(*)\SourceVmThrpRate 
+
+Данные о скорости обработки и передачи начнут поступать в рабочую область.
 
 
 ## <a name="query-the-logs---examples"></a>Запрос журналов — примеры
@@ -174,12 +192,9 @@ AzureDiagnostics  
 ```
 ![Запросить ЦЕЛЕВое значение Machine](./media/monitoring-log-analytics/example2.png)
 
-### <a name="query-data-change-rate-churn-for-a-vm"></a>Частота запросов на изменение данных (обновление) для виртуальной машины
+### <a name="query-data-change-rate-churn-and-upload-rate-for-an-azure-vm"></a>Скорость изменения данных запроса (обновление) и скорость передачи для виртуальной машины Azure
 
-> [!NOTE] 
-> Сведения об обработке доступны только для виртуальных машин Azure, реплицируемых в дополнительный регион Azure.
-
-Этот запрос строит диаграмму тренда для конкретной виртуальной машины Azure (ContosoVM123), которая отслеживает скорость изменения данных (байт в секунду) и скорость передачи данных. 
+Этот запрос строит диаграмму тренда для конкретной виртуальной машины Azure (ContosoVM123), которая представляет скорость изменения данных (байт в секунду) и скорость передачи данных. 
 
 ```
 AzureDiagnostics   
@@ -193,6 +208,23 @@ Category contains "Upload", "UploadRate", "none") 
 | render timechart  
 ```
 ![Изменение данных запроса](./media/monitoring-log-analytics/example3.png)
+
+### <a name="query-data-change-rate-churn-and-upload-rate-for-a-vmware-or-physical-machine"></a>Скорость изменения данных запросов (обновление) и скорость передачи для VMware или физического компьютера
+
+> [!Note]
+> Убедитесь, что на сервере обработки настроен агент мониторинга для выборки этих журналов. [Инструкции по настройке агента мониторинга](#configure-microsoft-monitoring-agent-on-the-process-server-to-send-churn-and-upload-rate-logs)см. в статье.
+
+Этот запрос строит диаграмму тренда для конкретного диска **disk0** реплицированного элемента **Win-9r7sfh9qlru**, который представляет скорость изменения данных (записи в байтах в секунду) и скорость передачи данных. Вы можете найти **в колонке** имя диска в реплицированном элементе в хранилище служб восстановления. Имя экземпляра, используемое в запросе, — это DNS-имя компьютера, за которым следует имя диска, как в этом примере.
+
+```
+Perf
+| where ObjectName == "ASRAnalytics"
+| where InstanceName contains "win-9r7sfh9qlru_disk0"
+| where TimeGenerated >= ago(4h) 
+| project TimeGenerated ,CounterName, Churn_MBps = todouble(CounterValue)/5242880 
+| render timechart
+```
+Сервер обработки отправляет эти данные каждые 5 минут в Log Analytics рабочую область. Эти точки данных представляют среднее значение, вычисленное в течение 5 минут.
 
 ### <a name="query-disaster-recovery-summary-azure-to-azure"></a>Запрос сводки аварийного восстановления (Azure в Azure)
 

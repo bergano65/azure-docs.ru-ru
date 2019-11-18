@@ -1,43 +1,35 @@
 ---
-title: Администрирование кэша Redis для Azure | Документация Майкрософт
+title: Администрирование кэша Redis для Azure
 description: Узнайте, как выполнять задачи администрирования, такие как перезагрузка и планирование обновлений кэша Redis для Azure.
-services: cache
-documentationcenter: na
 author: yegu-ms
-manager: jhubbard
-editor: tysonn
-ms.assetid: 8c915ae6-5322-4046-9938-8f7832403000
 ms.service: cache
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: cache
-ms.workload: tbd
+ms.topic: conceptual
 ms.date: 07/05/2017
 ms.author: yegu
-ms.openlocfilehash: afb48c18f9690e77a5478956e1147acf850290ab
-ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
+ms.openlocfilehash: 69686cad20bc4ce70bff2a92a216c9430522c301
+ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72756617"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74122534"
 ---
 # <a name="how-to-administer-azure-cache-for-redis"></a>Администрирование кэша Redis для Azure
 В этом разделе описывается выполнение задач администрирования, таких как [перезагрузка](#reboot) и [планирование обновлений](#schedule-updates) для экземпляров кэша Redis для Azure.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="reboot"></a>Reboot
+## <a name="reboot"></a>Перезагрузка
 Колонка **Перезагрузка** позволяет перезагрузить один или несколько узлов кэша. Функция перезагрузки дает возможность протестировать приложение на устойчивость в случае сбоя узла кэша.
 
-![Reboot](./media/cache-administration/redis-cache-administration-reboot.png)
+![Перезагрузка](./media/cache-administration/redis-cache-administration-reboot.png)
 
 Выберите узлы, которые нужно перезагрузить, и щелкните **Перезагрузить**.
 
-![Reboot](./media/cache-administration/redis-cache-reboot.png)
+![Перезагрузка](./media/cache-administration/redis-cache-reboot.png)
 
 Если у вас кэш уровня "Премиум" с включенной кластеризацией, то вы можете выбрать сегменты кэша для перезагрузки.
 
-![Reboot](./media/cache-administration/redis-cache-reboot-cluster.png)
+![Перезагрузка](./media/cache-administration/redis-cache-reboot-cluster.png)
 
 Чтобы перезагрузить один или несколько узлов кэша, выберите необходимые узлы и нажмите кнопку **Перезагрузить**. Если у вас кэш уровня "Премиум" с включенной кластеризацией, то выберите сегменты, требующие перезагрузки, и нажмите кнопку **Перезагрузить**. Через несколько минут выбранные узлы перезагружаются, а еще через несколько минут — возобновляют работу.
 
@@ -105,6 +97,6 @@ ms.locfileid: "72756617"
 * [New-AzRedisCacheScheduleEntry](/powershell/module/az.rediscache/new-azrediscachescheduleentry);
 * [Remove-AzRedisCachePatchSchedule](/powershell/module/az.rediscache/remove-azrediscachepatchschedule).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 * Узнайте больше о возможностях [кэша Redis для Azure ценовой категории "Премиум"](cache-premium-tier-intro.md).
 

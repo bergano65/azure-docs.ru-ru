@@ -1,23 +1,20 @@
 ---
-title: Рекомендации по работе с шаблонами Azure Resource Manager
+title: Рекомендации по работе с шаблонами
 description: Описание рекомендуемых подходов для разработки шаблонов Azure Resource Manager. Содержит рекомендации, как избежать распространенных проблем при использовании шаблонов.
-author: tfitzmac
-ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 09/12/2019
-ms.author: tomfitz
-ms.openlocfilehash: bd3167b7f0daf7ebd595b2c33b1147140415c3de
-ms.sourcegitcommit: 909ca340773b7b6db87d3fb60d1978136d2a96b0
+ms.openlocfilehash: 7e1b6496302af3edde4d888c67ec3e461d300a5a
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70983830"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74150296"
 ---
 # <a name="azure-resource-manager-template-best-practices"></a>Рекомендации по работе с шаблонами Azure Resource Manager
 
 В этой статье представлены рекомендации о том, как создать шаблон Resource Manager. Эти рекомендации помогут избежать распространенных проблем при использовании шаблона для развертывания решения.
 
-Рекомендации по управлению подписками Azure см. в статье [Корпоративный каркас Azure: рекомендуемая система управления подписками](/azure/architecture/cloud-adoption/appendix/azure-scaffold?toc=%2Fen-us%2Fazure%2Fazure-resource-manager%2Ftoc.json&bc=%2Fen-us%2Fazure%2Fbread%2Ftoc.json).
+Рекомендации по управлению подписками Azure см. в статье [Azure Enterprise: руководство по созданию подписок](/azure/architecture/cloud-adoption/appendix/azure-scaffold?toc=%2Fen-us%2Fazure%2Fazure-resource-manager%2Ftoc.json&bc=%2Fen-us%2Fazure%2Fbread%2Ftoc.json).
 
 Рекомендации о том, как создавать шаблоны, которые работают во всех облачных средах Azure, см. в статье [Разработка шаблонов Azure Resource Manager для обеспечения согласованности с облаком](templates-cloud-consistency.md).
 
@@ -41,7 +38,7 @@ ms.locfileid: "70983830"
 
 Если регион группы ресурсов временно недоступен, вы не сможете обновить ресурсы в группе ресурсов, так как недоступны их метаданные. Ресурсы в других регионах будут работать должным образом, но обновить их не получится. Чтобы свести риск к минимуму, размещайте группу ресурсов и ресурсы в одном регионе.
 
-## <a name="parameters"></a>Параметры
+## <a name="parameters"></a>parameters
 
 [Здесь](template-parameters.md) приведены некоторые рекомендации по работе с параметрами.
 
@@ -143,7 +140,7 @@ ms.locfileid: "70983830"
 
 * Для ресурсов, которые недоступны во всех расположениях, используйте отдельный параметр или укажите литеральное значение расположения.
 
-## <a name="variables"></a>Переменные
+## <a name="variables"></a>variables
 
 Ниже приведены некоторые рекомендации по работе с [переменными](template-variables.md).
 
@@ -297,7 +294,7 @@ ms.locfileid: "70983830"
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 * Дополнительные сведения о структуре файла шаблона Resource Manager см. в статье [Описание структуры и синтаксиса шаблонов Azure Resource Manager](resource-group-authoring-templates.md).
 * Рекомендации о том, как создавать шаблоны, которые работают во всех облачных средах Azure, см. в статье [Разработка шаблонов Azure Resource Manager для обеспечения согласованности с облаком](templates-cloud-consistency.md).

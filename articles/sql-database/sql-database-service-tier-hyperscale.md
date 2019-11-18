@@ -11,12 +11,12 @@ author: dimitri-furman
 ms.author: dfurman
 ms.reviewer: ''
 ms.date: 10/01/2019
-ms.openlocfilehash: 3a448147390ff2dd6a8049e8338a4cbf2bd94ce3
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: c71fb8a7e18439817023874146e22c29a5af3b12
+ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73821114"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74123683"
 ---
 # <a name="hyperscale-service-tier"></a>Уровень служб "Гипермасштабирование"
 
@@ -114,7 +114,7 @@ ms.locfileid: "73821114"
 
 Базу данных ценовой категории "Гипермасштабирование" можно создать с использованием [портала Azure](https://portal.azure.com), [T-SQL](https://docs.microsoft.com/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-current), [PowerShell](https://docs.microsoft.com/powershell/module/azurerm.sql/new-azurermsqldatabase) или [интерфейса командной строки](https://docs.microsoft.com/cli/azure/sql/db#az-sql-db-create). Базы данных ценовой категории "Гипермасштабирование"доступны только при использовании [модели приобретения на основе виртуальных ядер](sql-database-service-tiers-vcore.md).
 
-Следующая команда T-SQL создает базу данных ценовой категории "Гипермасштабирование". Необходимо указать целевые выпуск и службу в инструкции `CREATE DATABASE`. Список допустимых целей обслуживания см. в разделе [ограничения ресурсов](https://docs.microsoft.com/azure/sql-database/sql-database-vcore-resource-limits-single-databases#hyperscale-service-tier-for-provisioned-compute) .
+Следующая команда T-SQL создает базу данных ценовой категории "Гипермасштабирование". Необходимо указать целевые выпуск и службу в инструкции `CREATE DATABASE`. Список допустимых целей обслуживания см. в разделе [ограничения ресурсов](https://docs.microsoft.com/azure/sql-database/sql-database-vcore-resource-limits-single-databases#hyperscale---provisioned-compute---gen5) .
 
 ```sql
 -- Create a HyperScale Database
@@ -170,11 +170,11 @@ Server=tcp:<myserver>.database.windows.net;Database=<mydatabase>;ApplicationInte
 - Юго-Восточная часть Австралии
 - Южная Бразилия
 - Центральная Канада
-- Центральный регион США
+- Central US
 - Восточный Китай 2
 - Северный Китай 2
 - Восточная Азия
-- Восток США
+- Восточная часть США
 - Восточная часть США 2
 - Центральная Франция
 - Восточная часть Японии
@@ -183,7 +183,7 @@ Server=tcp:<myserver>.database.windows.net;Database=<mydatabase>;ApplicationInte
 - Южная Корея
 - Центрально-северная часть США
 - Северная Европа
-- Северная часть ЮАР
+- Северная часть ЮАР;
 - Центрально-южная часть США
 - Юго-Восточная Азия
 - Южная часть Великобритании
@@ -236,7 +236,7 @@ Server=tcp:<myserver>.database.windows.net;Database=<mydatabase>;ApplicationInte
 ## <a name="known-limitations"></a>Известные ограничения
 Это текущие ограничения для уровня службы "линейка" в общедоступной версии.  Мы активно работаем над удалением максимально возможного множества этих ограничений.
 
-| Проблема | Description (Описание) |
+| Проблема | ОПИСАНИЕ |
 | :---- | :--------- |
 | Панель "Управление резервными копиями" для логического сервера не показывает, что базы данных с таким масштабированием будут отфильтрованы из SQL Server  | У меня есть отдельный метод для управления резервными копиями, и, как это долгосрочное хранение и параметры хранения резервных копий на момент времени, не применяются или становятся недействительными. Следовательно, базы данных ценовой категории "Гипермасштабирование" не отображаются в области "Управление резервными копиями". |
 | Восстановление до точки во времени | После переноса базы данных на уровень службы "масштабирование" восстановление до точки во времени до миграции не поддерживается.|
@@ -252,7 +252,7 @@ Server=tcp:<myserver>.database.windows.net;Database=<mydatabase>;ApplicationInte
 | Интеграция TDE и AKV | Прозрачное шифрование базы данных с помощью Azure Key Vault (которое обычно называется "TDE" с собственным ключом или BYOK) еще не поддерживается для функции масштабирования базы данных SQL Azure, однако с ключами, управляемыми службой, полностью поддерживается. |
 |Интеллектуальные функции баз данных | За исключением параметра "принудительный план", все остальные параметры автоматической настройки еще не поддерживаются в функции "масштабирование": возможно, параметры будут включены, но никакие рекомендации и действия не будут выполнены. |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Вопросы и ответы о ценовой категории "Гипермасштабирование" приведены в разделе [часто задаваемых вопросов о ценовой категории "Гипермасштабирование"](sql-database-service-tier-hyperscale-faq.md).
 - Сведения об уровнях служб см. в статье [Ресурсы и модели приобретения для базы данных SQL Azure](sql-database-service-tiers.md).

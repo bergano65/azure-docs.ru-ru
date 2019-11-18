@@ -1,17 +1,14 @@
 ---
-title: Создание файла параметров Azure Resource Manager
+title: Создание файла параметров
 description: Создание файла параметров для передачи значений во время развертывания шаблона Azure Resource Manager
-author: tfitzmac
-ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 08/21/2019
-ms.author: tomfitz
-ms.openlocfilehash: 4305213d272172cb89bfdd207b6c8106af3f4939
-ms.sourcegitcommit: 909ca340773b7b6db87d3fb60d1978136d2a96b0
+ms.openlocfilehash: 7333e33af90ff7883b53a24bacdc63b42bf107ee
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70983933"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74149453"
 ---
 # <a name="create-resource-manager-parameter-file"></a>Создание файла параметров диспетчер ресурсов
 
@@ -202,7 +199,7 @@ ms.locfileid: "70983933"
 
 Если шаблон содержит параметр, имя которого совпадает с именем одного из параметров в команде PowerShell, параметр из шаблон отображается с постфиксом **FromTemplate**. Предположим, что параметр **ResourceGroupName** в шаблоне конфликтует с параметром **ResourceGroupName** в командлете [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment). Будет предложено указать значение для параметра **ResourceGroupNameFromTemplate**. Эту путаницу можно избежать, используя имена параметров, которые не используются для команд развертывания.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 - Сведения о том, как определить параметры в шаблоне, см. в разделе [Параметры в Azure Resource Manager Templates](template-parameters.md).
 - Дополнительные сведения об использовании значений из хранилища ключей см. в разделе [использование Azure Key Vault для передачи безопасного значения параметра во время развертывания](resource-manager-keyvault-parameter.md).

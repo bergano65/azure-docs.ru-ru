@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 11/04/2019
+ms.date: 11/15/2019
 ms.author: dapine
-ms.openlocfilehash: efb2fd8fd6b77a27130b834c2b192c1e88eec97c
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 4170db596d3d4f4b197120770afa2f6e8b0f8a1c
+ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73578384"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74132598"
 ---
 # <a name="install-and-run-speech-service-containers"></a>Установка и запуск контейнеров речевых служб
 
@@ -28,18 +28,18 @@ ms.locfileid: "73578384"
 
 | Функция | Функции | Последняя |
 |--|--|--|
-| Преобразование речи в текст | Расшифровывает непрерывных речевых или пакетных звуковых записей в режиме реального времени в текст с промежуточными результатами. | 2.0.0 |
+| Преобразование речи в текст. | Расшифровывает непрерывных речевых или пакетных звуковых записей в режиме реального времени в текст с промежуточными результатами. | 2.0.0 |
 | Пользовательское распознавание речи к тексту | Используя настраиваемую модель на [портале пользовательское распознавание речи](https://speech.microsoft.com/customspeech), расшифровывает непрерывную голосовую или пакетную звукозапись в режиме реального времени в текст с промежуточными результатами. | 2.0.0 |
 | Преобразование текста в речь | Преобразует текст в голосовую речь с помощью обычного текстового ввода или языка разметки речи (SSML). | 1.3.0 |
 | Пользовательский текст в речь | С помощью настраиваемой модели [пользовательского голосового портала](https://aka.ms/custom-voice-portal)преобразует текст в голосовую речь с помощью обычного текстового ввода или языка разметки речи (SSML). | 1.3.0 |
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 Перед использованием речевых контейнеров выполните следующие предварительные требования.
 
-| Обязательно | Назначение |
+| обязательные | Назначение |
 |--|--|
 | Модуль Docker | На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду Docker в ОС [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). См. [общие сведения о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> **В ОС Windows** для Docker нужно также настроить поддержку контейнеров Linux.<br><br> |
 | Опыт работы с Docker | Требуется базовое представление о понятиях Docker, включая реестры, репозитории, контейнеры и образы контейнеров, а также знание основных команд `docker`. |
@@ -77,7 +77,7 @@ grep -q avx2 /proc/cpuinfo && echo AVX2 supported || echo No AVX2 support detect
 
 | Контейнер | Минимальная | Рекомендуется |
 |-----------|---------|-------------|
-| Преобразование речи в текст | 2 ядра, 2 ГБ памяти | 4 ядра, 4 ГБ памяти |
+| Преобразование речи в текст. | 2 ядра, 2 ГБ памяти | 4 ядра, 4 ГБ памяти |
 
 # <a name="custom-speech-to-texttabcstt"></a>[Пользовательское распознавание речи к тексту](#tab/cstt)
 
@@ -114,7 +114,7 @@ grep -q avx2 /proc/cpuinfo && echo AVX2 supported || echo No AVX2 support detect
 
 | Контейнер | Репозиторий |
 |-----------|------------|
-| Преобразование речи в текст | `containerpreview.azurecr.io/microsoft/cognitive-services-speech-to-text:latest` |
+| Преобразование речи в текст. | `containerpreview.azurecr.io/microsoft/cognitive-services-speech-to-text:latest` |
 
 # <a name="custom-speech-to-texttabcstt"></a>[Пользовательское распознавание речи к тексту](#tab/cstt)
 
@@ -151,7 +151,7 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-speech-to-t
 ```
 
 > [!IMPORTANT]
-> Тег `latest` извлекает языковой стандарт `en-US` и `jessarus` голоса. Дополнительные языковые стандарты см. [в разделе языки и речь](#speech-to-text-locales).
+> Тег `latest` извлекает языковой стандарт `en-US`. Дополнительные языковые стандарты см. [в разделе языки и речь](#speech-to-text-locales).
 
 #### <a name="speech-to-text-locales"></a>Языки перевода речи в текст
 
@@ -167,7 +167,7 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-speech-to-t
 2.0.0-amd64-en-us-preview
 ```
 
-Для всех поддерживаемых языковых стандартов в версии 2.0.0 контейнера, посвященной **распознаванию речи** , можно просмотреть столбец **поддержки контейнеров** в таблице [поддержки языков преобразования речи в текст](language-support.md#speech-to-text) .
+Сведения о всех поддерживаемых языковых стандартах контейнера **для преобразования речи** в текст см. в статье [теги изображений](../containers/container-image-tags.md#speech-to-text).
 
 # <a name="custom-speech-to-texttabcstt"></a>[Пользовательское распознавание речи к тексту](#tab/cstt)
 
@@ -209,7 +209,7 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-text-to-spe
 1.3.0-amd64-en-us-jessarus-preview
 ```
 
-Для всех поддерживаемых языковых стандартов и соответствующих голосов в 1.3.0 версии контейнера преобразования **текста в речь** см. столбец **Поддержка контейнеров** в таблице [поддержки по стандартным голосовым языкам](language-support.md#standard-voices) .
+Все поддерживаемые языковые стандарты и соответствующие **голоса контейнера преобразования текста в речь см** . в разделе [теги изображений текста в речь](../containers/container-image-tags.md#text-to-speech).
 
 > [!IMPORTANT]
 > При создании стандартного HTTP-запроса POST *для преобразования текста в речь* для сообщения [SSML (язык разметки речи)](speech-synthesis-markup.md) требуется элемент `voice` с атрибутом `name`. Значение представляет собой соответствующий языковой стандарт контейнера и голоса, также называемый ["коротким именем"](language-support.md#standard-voices). Например, тег `latest` будет иметь имя голоса `en-US-JessaRUS`.
@@ -273,7 +273,7 @@ ApiKey={API_KEY}
 
 В следующей таблице представлены различные параметры `docker run` и их соответствующие описания.
 
-| Параметр | Description (Описание) |
+| Параметр | ОПИСАНИЕ |
 |---------|---------|
 | `{VOLUME_MOUNT}` | Узел [тома](https://docs.docker.com/storage/volumes/)главного компьютера, который DOCKER использует для сохранения настраиваемой модели. Например, *к:\кустомспич* , где *диск C* находится на хост-компьютере. |
 | `{MODEL_ID}` | **Идентификатор модели** пользовательское распознавание речи на странице **обучения** пользовательского речевого портала. |
@@ -335,7 +335,7 @@ ApiKey={API_KEY}
 
 В следующей таблице представлены различные параметры `docker run` и их соответствующие описания.
 
-| Параметр | Description (Описание) |
+| Параметр | ОПИСАНИЕ |
 |---------|---------|
 | `{VOLUME_MOUNT}` | Узел [тома](https://docs.docker.com/storage/volumes/)главного компьютера, который DOCKER использует для сохранения настраиваемой модели. Например, *к:\кустомспич* , где *диск C* находится на хост-компьютере. |
 | `{MODEL_ID}` | **Идентификатор модели** пользовательское распознавание речи на странице " **обучение** " настраиваемого голоса Portal. |
@@ -373,7 +373,7 @@ ApiKey={API_KEY}
 
 | Контейнер | Конечная точка | Протокол |
 |--|--|--|
-| Преобразование речи в текст | `ws://localhost:5000/speech/recognition/dictation/cognitiveservices/v1` | WS |
+| Преобразование речи в текст. | `ws://localhost:5000/speech/recognition/dictation/cognitiveservices/v1` | WS |
 | Пользовательское распознавание речи к тексту | `ws://localhost:5000/speech/recognition/dictation/cognitiveservices/v1` | WS |
 | Преобразование текста в речь | `http://localhost:5000/speech/synthesize/cognitiveservices/v1` | HTTP |
 | Пользовательский текст в речь | `http://localhost:5000/speech/synthesize/cognitiveservices/v1` | HTTP |
@@ -416,7 +416,7 @@ ApiKey={API_KEY}
 
 [!INCLUDE [Discoverability of more container information](../../../includes/cognitive-services-containers-discoverability.md)]
 
-## <a name="summary"></a>Сводка
+## <a name="summary"></a>summary
 
 В этой статье вы узнали основные понятия и рабочий процесс по скачиванию, установке и запуску речевых контейнеров. Краткая сводка.
 
@@ -433,7 +433,7 @@ ApiKey={API_KEY}
 > [!IMPORTANT]
 >  Контейнеры Cognitive Services не лицензируются для запуска без подключения к Azure для отслеживания использования. Клиенты должны разрешить контейнерам непрерывную передачу данных для выставления счетов в службу контроля потребления. Контейнеры Cognitive Services не отправляют в корпорацию Майкрософт данные клиента (например, анализируемые изображения или тексты).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * Проверьте настройки [контейнеров](speech-container-configuration.md) на наличие параметров конфигурации.
 * Узнайте, как [использовать контейнеры службы речи с Kubernetes и Helm](speech-container-howto-on-premises.md)

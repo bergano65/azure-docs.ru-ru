@@ -1,17 +1,14 @@
 ---
 title: Перемещение ресурсов службы приложений Azure
 description: Используйте Azure Resource Manager, чтобы переместить ресурсы службы приложений в новую группу ресурсов или подписку.
-author: tfitzmac
-ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 07/09/2019
-ms.author: tomfitz
-ms.openlocfilehash: 04ddf644c58434531dde708ee3b6432b1fce8f91
-ms.sourcegitcommit: 6eecb9a71f8d69851bc962e2751971fccf29557f
+ms.openlocfilehash: dca9b3a8f328192683cfde586f0ccdb01e84dc16
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72533582"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74150894"
 ---
 # <a name="move-guidance-for-app-service-resources"></a>Руководство по перемещению ресурсов службы приложений
 
@@ -35,7 +32,7 @@ ms.locfileid: "72533582"
     - Веб-приложения
     - Планы службы приложений
     - отправленные или импортированные SSL-сертификаты;
-    - Среды службы приложений
+    - среда службы приложений.
 - Все ресурсы службы приложений в группе ресурсов необходимо перемещать вместе.
 - Ресурсы службы приложений можно перемещать только из группы ресурсов, в которой они были созданы. Если ресурс службы приложений больше не находится в исходной группе ресурсов, переместите его обратно в исходную группу ресурсов. Затем переместите ресурс по подпискам.
 
@@ -53,7 +50,7 @@ ms.locfileid: "72533582"
 
 Вы увидите Рекомендуемые действия, которые необходимо выполнить перед перемещением ресурсов. Эти сведения включают в себя исходную группу ресурсов для веб-приложения.
 
-![Рекомендации](./media/app-service-move-limitations/recommendations.png)
+![рекомендации](./media/app-service-move-limitations/recommendations.png)
 
 ## <a name="move-app-service-certificate"></a>Переместить Сертификаты службы приложений
 
@@ -64,10 +61,10 @@ ms.locfileid: "72533582"
 Чтобы определить, какие ресурсы службы приложений можно переместить, см. раздел состояние поддержки перемещения для:
 
 - [Microsoft. AppService](../move-support-resources.md#microsoftappservice)
-- [Microsoft. Цертификатерегистратион](../move-support-resources.md#microsoftcertificateregistration)
-- [Microsoft. Домаинрегистратион](../move-support-resources.md#microsoftdomainregistration)
+- [Microsoft.CertificateRegistration](../move-support-resources.md#microsoftcertificateregistration)
+- [Microsoft.DomainRegistration](../move-support-resources.md#microsoftdomainregistration)
 - [Microsoft.Web](../move-support-resources.md#microsoftweb)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Команды для перемещения ресурсов см. в статье [Перемещение ресурсов в новую группу ресурсов или подписку](../resource-group-move-resources.md).

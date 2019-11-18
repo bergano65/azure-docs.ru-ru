@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 01/03/2019
 ms.author: tomfitz
 ms.custom: seodec18
-ms.openlocfilehash: 196aeb69a1948a44afb8170fa5f48d42b978854d
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 2af3ec61537dc28ab652b669ff46500db19ab307
+ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70070462"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74130601"
 ---
 # <a name="guidance-on-deploying-web-apps-by-using-azure-resource-manager-templates"></a>Руководство по развертыванию веб-приложений с помощью шаблонов Azure Resource Manager
 
@@ -46,7 +46,7 @@ ms.locfileid: "70070462"
 **Уровень 3**
 * Система управления версиями — зависит от веб-приложения.
 * Расширение сайта MSDeploy — зависит от веб-приложения.
-* Экземпляр Application Insights, предназначенный для фермы серверов, — зависит от веб-приложения.
+* Экземпляр Application Insights Azure, предназначенный для веб-приложения, зависит от веб-приложения.
 
 **Уровень 4**
 * Сертификат службы приложений — зависит от системы управления версиями или MSDeploy (если не имеется одной из этих служб). В противном случае зависит от веб-приложения.
@@ -87,7 +87,7 @@ ms.locfileid: "70070462"
 }
 ```
 
-Готовый пример с показанным выше кодом см. [в этом репозитории](https://github.com/Azure/azure-quickstart-templates/tree/master/umbraco-webapp-simple).
+Готовый пример с показанным выше кодом см. [здесь](https://github.com/Azure/azure-quickstart-templates/tree/master/umbraco-webapp-simple).
 
 ## <a name="find-information-about-msdeploy-errors"></a>Поиск сведений об ошибках MSDeploy
 
@@ -130,13 +130,13 @@ Set-AzKeyVaultAccessPolicy `
 
 В хранилище Key Vault выберите **Сертификаты** и нажмите **Создать или импортировать**, чтобы отправить сертификат.
 
-![Импортировать сертификат](media/web-sites-rm-template-guidance/import-certificate.png)
+![Импорт сертификата](media/web-sites-rm-template-guidance/import-certificate.png)
 
 В шаблоне укажите имя сертификата для `keyVaultSecretName`.
 
 Пример шаблона см. в разделе [Развертывание сертификата веб-приложения из секрета Key Vault и его использование для создания SSL-привязки](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-certificate-from-key-vault).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 * Руководство по развертыванию веб-приложений с помощью шаблона см. [здесь](deploy-complex-application-predictably.md).
 * Сведения о синтаксисе JSON и свойствах типов ресурсов в шаблонах см. в статье [Define resources in Azure Resource Manager templates](/azure/templates/) (Определение ресурсов в шаблонах Azure Resource Manager).

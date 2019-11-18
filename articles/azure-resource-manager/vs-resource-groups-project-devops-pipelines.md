@@ -1,17 +1,14 @@
 ---
-title: CI/CD с шаблонами Azure Pipelines и диспетчер ресурсов
+title: CI/CD с Azure Pipelines и шаблонами
 description: В этой статье описывается настройка непрерывной интеграции в Azure Pipelines с помощью проектов развертывания группы ресурсов Azure в Visual Studio для развертывания шаблонов диспетчер ресурсов.
-author: tfitzmac
-ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 10/17/2019
-ms.author: tomfitz
-ms.openlocfilehash: 9306ff8787a4e2b873cb11458a4cf9a10589bf6b
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.openlocfilehash: 51122e314ebd0a97647fc4026b1f49619950c351
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72597515"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74143751"
 ---
 # <a name="integrate-resource-manager-templates-with-azure-pipelines"></a>Интеграция шаблонов диспетчер ресурсов с Azure Pipelines
 
@@ -82,14 +79,14 @@ steps:
 - task: AzurePowerShell@4
 ```
 
-Для `azureSubscription` укажите имя созданного подключения к службе.
+Для `azureSubscription`укажите имя созданного подключения к службе.
 
 ```yaml
 inputs:
     azureSubscription: '<your-connection-name>'
 ```
 
-Для `scriptPath` укажите относительный путь от файла конвейера к скрипту. Чтобы увидеть путь, можно просмотреть репозиторий.
+Для `scriptPath`укажите относительный путь от файла конвейера к скрипту. Чтобы увидеть путь, можно просмотреть репозиторий.
 
 ```yaml
 ScriptPath: '<your-relative-path>/<script-file-name>.ps1'
@@ -157,13 +154,13 @@ ScriptArguments: -ResourceGroupName '<resource-group-name>' -ResourceGroupLocati
     sasTokenTimeOutInMinutes: '240'
 ```
 
-Существует несколько частей этой задачи для пересмотра вашей среды. @No__t_0 указывает расположение артефактов относительно файла конвейера. В этом примере файлы находятся в папке с именем `AzureResourceGroup1`, которая была именем проекта.
+Существует несколько частей этой задачи для пересмотра вашей среды. `SourcePath` указывает расположение артефактов относительно файла конвейера. В этом примере файлы находятся в папке с именем `AzureResourceGroup1`, которая была именем проекта.
 
 ```yaml
 SourcePath: '<path-to-artifacts>'
 ```
 
-Для `azureSubscription` укажите имя созданного подключения к службе.
+Для `azureSubscription`укажите имя созданного подключения к службе.
 
 ```yaml
 azureSubscription: '<your-connection-name>'
@@ -197,7 +194,7 @@ ContainerName: '<container-name>'
 
 Существует несколько частей этой задачи для пересмотра вашей среды.
 
-- `deploymentScope`. Выберите область развертывания в области Параметры: `Management Group`, `Subscription` и `Resource Group`. Используйте **группу ресурсов** в этом пошаговом руководстве. Дополнительные сведения об областях см. в разделе [области развертывания](./resource-group-template-deploy-rest.md#deployment-scope).
+- `deploymentScope`. Выберите область развертывания в области Параметры: `Management Group`, `Subscription` и `Resource Group`. Используйте **группу ресурсов** в этом пошаговом руководстве. Дополнительные сведения об областях см. в разделе [Области развертывания](./resource-group-template-deploy-rest.md#deployment-scope).
 
 - `ConnectedServiceName`. Укажите имя созданного подключения к службе.
 
@@ -262,6 +259,6 @@ ContainerName: '<container-name>'
 
 Вы можете выбрать выполняющийся в данный момент конвейер для просмотра сведений о задачах. По завершении вы увидите результаты для каждого шага.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Пошаговый процесс использования Azure Pipelines с шаблонами диспетчер ресурсов см. в разделе [учебник. Непрерывная интеграция шаблонов Azure Resource Manager с Azure pipelines](resource-manager-tutorial-use-azure-pipelines.md).

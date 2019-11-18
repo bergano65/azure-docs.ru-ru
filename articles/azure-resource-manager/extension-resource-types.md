@@ -1,17 +1,14 @@
 ---
-title: Типы ресурсов расширения Azure
+title: Типы ресурсов расширения
 description: Список типов ресурсов Azure, используемых для расширения возможностей других типов ресурсов.
-author: tfitzmac
-ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 10/24/2019
-ms.author: tomfitz
-ms.openlocfilehash: 00e8efaaa81ec0ce189d8cfe8a78285ded445c68
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: 16dcd4cccea4445b6839ac639094d18e29ed49a9
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72901928"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74147035"
 ---
 # <a name="resource-types-that-extend-capabilities-of-other-resources"></a>Типы ресурсов, расширяющие возможности других ресурсов
 
@@ -74,7 +71,7 @@ ms.locfileid: "72901928"
 - Microsoft. Костманажемент/отчеты
 - Microsoft. Костманажемент/представления
 - Microsoft. Костманажемент/Шовбаккрулес
-- Microsoft. Кустомпровидерс/Associations
+- Microsoft.CustomProviders/associations
 - Microsoft.EventGrid/eventSubscriptions
 - Microsoft.EventGrid/extensionTopics
 - Microsoft. Гуестконфигуратион/Конфигуратионпрофилеассигнментс
@@ -151,7 +148,7 @@ ms.locfileid: "72901928"
 - Microsoft. WorkloadMonitor/monitors
 - Microsoft. WorkloadMonitor/Нотификатионсеттингс
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Чтобы получить идентификатор ресурса для расширения ресурса в шаблоне Azure Resource Manager, используйте [екстенсионресаурцеид](resource-group-template-functions-resource.md#extensionresourceid).
 - Пример создания ресурса расширения в шаблоне см. в разделе подписки на [События сетки событий](/azure/templates/microsoft.eventgrid/2019-06-01/eventsubscriptions).

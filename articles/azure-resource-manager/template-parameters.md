@@ -1,17 +1,14 @@
 ---
-title: Параметры в шаблонах Azure Resource Manager
+title: Параметры в шаблонах
 description: Описывает, как определить параметры в шаблоне Azure Resource Manager.
-author: tfitzmac
-ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 09/05/2019
-ms.author: tomfitz
-ms.openlocfilehash: 4947b00d6fad5007751cd97d43ad6aca8d775330
-ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
+ms.openlocfilehash: 3ef87a6f24f99564d0c55ae0bc496045b7011eea
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70383267"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74150271"
 ---
 # <a name="parameters-in-azure-resource-manager-templates"></a>Параметры в шаблонах Azure Resource Manager
 
@@ -155,13 +152,13 @@ ms.locfileid: "70383267"
 
 В следующих примерах демонстрируются сценарии использования параметров.
 
-|Шаблон  |Описание  |
+|шаблона  |ОПИСАНИЕ  |
 |---------|---------|
 |[Использование параметров с функциями для определения значений по умолчанию](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/parameterswithfunctions.json) | Демонстрирует, как можно применить функции шаблонов при определении значений по умолчанию для параметров. Шаблон не развертывает ресурсы. Он только создает значения параметров и возвращает их. |
 |[Объект параметров](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/parameterobject.json) | Демонстрирует использование объекта в качестве параметра. Шаблон не развертывает ресурсы. Он только создает значения параметров и возвращает их. |
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 * Дополнительные сведения о доступных свойствах параметров см. в разделе Общие сведения о [структуре и синтаксисе шаблонов Azure Resource Manager](resource-group-authoring-templates.md).
 * Дополнительные сведения о передаче значений параметров в виде файла см. в разделе [Create диспетчер ресурсов Parameter File](resource-manager-parameter-files.md).

@@ -58,8 +58,6 @@
       href: ../azure-resource-manager/resource-manager-keyvault-parameter.md
     - name: Настройка смены ключей и аудита
       href: key-vault-key-rotation-log-monitoring.md
-    - name: Мониторинг событий Key Vault с помощью службы "Сетка событий"
-      href: event-grid-overview.md
 - name: Примеры
   items:
     - name: Примеры кода
@@ -114,6 +112,8 @@
           href: key-vault-group-permissions-for-apps.md
     - name: Маршрутизация уведомлений о хранилище ключей с помощью службы "Сетка событий"
       href: event-grid-tutorial.md
+    - name: Получение уведомлений с помощью Сетки событий и Logic Apps
+      href: event-grid-logicapps.md
     - name: Интеграция со службой "Поиск Azure"
       href: azure-policy.md
     - name: Ведение журнала Azure Key Vault

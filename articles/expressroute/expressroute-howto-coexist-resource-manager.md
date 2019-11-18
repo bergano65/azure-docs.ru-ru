@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 07/01/2019
 ms.author: charwen
 ms.custom: seodec18
-ms.openlocfilehash: e25d6ff0bf0c27926040fcfe190724a666713a05
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 84c4d466a820616b8f8dfa69cfa149cb86006f49
+ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74031748"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74132853"
 ---
 # <a name="configure-expressroute-and-site-to-site-coexisting-connections-using-powershell"></a>Настройка параллельных подключений "сеть — сеть" и ExpressRoute с помощью PowerShell
 > [!div class="op_single_selector"]
@@ -38,7 +38,7 @@ ms.locfileid: "74031748"
 ## <a name="limits-and-limitations"></a>Квоты и ограничения
 * **Транзитная маршрутизация не поддерживается.** Нельзя настроить маршрутизацию (через Azure) между локальной сетью, подключенной к VPN типа "сеть — сеть", и локальной сетью, подключенной к ExpressRoute.
 * **Номера SKU класса "Базовый" для шлюза не поддерживаются.** Используйте для [ExpressRoute](expressroute-about-virtual-network-gateways.md) и [VPN-шлюза](../vpn-gateway/vpn-gateway-about-vpngateways.md) номера SKU другого класса.
-* **Поддерживается только VPN-шлюз на основе маршрутов.** Необходимо использовать [VPN-шлюз](../vpn-gateway/vpn-gateway-about-vpngateways.md) на основе маршрутов.
+* **Поддерживается только VPN-шлюз на основе маршрутов.** Необходимо использовать [VPN-шлюз](../vpn-gateway/vpn-gateway-about-vpngateways.md)на основе маршрутов. Также вы можете использовать VPN-шлюз на основе маршрутов с VPN-подключением, настроенным для "селекторы трафика на основе политик", как описано в разделе [Подключение к нескольким VPN-устройствам на основе политик](../vpn-gateway/vpn-gateway-connect-multiple-policybased-rm-ps.md).
 * **Для VPN-шлюза необходимо настроить статический маршрут.** Если локальная сеть подключена и к ExpressRoute, и к VPN типа "сеть — сеть", необходимо использовать статический маршрут, настроенный в локальной сети для маршрутизации VPN-подключения типа "сеть — сеть" к Интернету.
 * **По умолчанию используется VPN-шлюз ASN 65515, если другой явно не указан.** VPN-шлюз Azure поддерживает протокол маршрутизации BGP. Для этой виртуальной сети вы можете указать ASN (номер AS), добавив параметр -Asn. Если не указать этот параметр, номер AS по умолчанию равен 65515. Вы можете использовать любой ASN для конфигурации, но если выбрать отличный от 65515, необходимо сбросить шлюз, чтобы параметр вступил в силу.
 

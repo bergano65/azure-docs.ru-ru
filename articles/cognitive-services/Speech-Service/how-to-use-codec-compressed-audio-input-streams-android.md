@@ -1,5 +1,5 @@
 ---
-title: Потоковая передача сжатого аудио-кодека с помощью речевого пакета SDK на Android — служба речевого ввода
+title: Потоковая передача сжатого аудио кодека с помощью пакета SDK для распознавания речи в Android
 titleSuffix: Azure Cognitive Services
 description: Узнайте, как выполнять потоковую передачу сжатых аудио в службы речевого обучения Azure с помощью речевого пакета SDK на Android.
 services: cognitive-services
@@ -10,14 +10,14 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 09/20/2019
 ms.author: amishu
-ms.openlocfilehash: 2e741e8a8df2cebff167a381cef41351ead4c6cf
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 76a4b010dd54a9cc6224432adf615814520ef4fd
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73464371"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74109907"
 ---
-# <a name="using-codec-compressed-audio-input-with-the-speech-sdk-on-android"></a>Использование сжатых звуковых данных кодеков с пакетом SDK для распознавания речи в Android
+# <a name="how-to-use-codec-compressed-audio-input-with-the-speech-sdk-on-android"></a>Как использовать сжатый аудиокодек с пакетом SDK для Android
 
 Сжатый аудио-API-интерфейс пакета речевого **ввода** предоставляет способ потоковой передачи сжатого звука в службу распознавания речи с помощью Пуллстреам или пушстреам.
 
@@ -25,7 +25,7 @@ ms.locfileid: "73464371"
 > В настоящее время поддерживается потоковая передача сжатых аудио-данных [ C++в, C#и Java в Linux (Ubuntu 16,04, Ubuntu 18,04, Debian 9)](how-to-use-codec-compressed-audio-input-streams.md). Она также поддерживается для Java в Android и [цели-C на платформе iOS](how-to-use-codec-compressed-audio-input-streams-ios.md) .
 > Требуется пакет SDK для распознавания речи версии 1.7.0 или выше.
 
-Сведения о WAV/PCM см. в документации по магистрали.  За пределами WAV/PCM поддерживаются следующие сжатые форматы входных данных кодеков:
+Сведения о WAV/PCM см. в документации по магистрали. За пределами WAV/PCM поддерживаются следующие сжатые форматы входных данных кодеков:
 
 - MP3
 - ОПУС/OGG
@@ -35,7 +35,7 @@ ms.locfileid: "73464371"
 
 ## <a name="prerequisites-to-using-codec-compressed-audio-input-on-android"></a>Предварительные требования для использования сжатого звукового ввода кодеков в Android
 
-Сжатый аудиокодек реализован с помощью [гстреамер](https://gstreamer.freedesktop.org). В целях лицензирования двоичные файлы Гстреамер не компилируются вместе с пакетом SDK. Вам потребуется использовать предварительно созданные двоичные файлы для Android. Сведения о загрузке предварительно созданных библиотек см. в разделе [Установка для разработки Android](https://gstreamer.freedesktop.org/documentation/installing/for-android-development.html?gi-language=c). 
+Сжатый аудиокодек реализован с помощью [гстреамер](https://gstreamer.freedesktop.org). В целях лицензирования двоичные файлы Гстреамер не компилируются вместе с пакетом SDK. Вам потребуется использовать предварительно созданные двоичные файлы для Android. Сведения о загрузке предварительно созданных библиотек см. в разделе [Установка для разработки Android](https://gstreamer.freedesktop.org/documentation/installing/for-android-development.html?gi-language=c).
 
 требуется `libgstreamer_android.so`. Убедитесь, что подключаемые модули Гстреамер связаны в `libgstreamer_android.so`.
 
@@ -129,7 +129,7 @@ ndk-build -C $(pwd)/gstreamer "NDK_APPLICATION_MK=Application.mk" APP_ABI=armeab
 #ndk-build -C $(pwd)/gstreamer "NDK_APPLICATION_MK=Application.mk" APP_ABI=x86 NDK_LIBS_OUT=$(pwd)
 ```
 
-Когда общий объект (libgstreamer_android. so) будет создан разработчиком приложения, необходимо поместить общий объект в приложение Android, чтобы его можно было загрузить с помощью речевого пакета SDK.
+После создания общего объекта (libgstreamer_android. so) разработчику приложения необходимо разместить общий объект в приложении Android, чтобы его можно было загрузить с помощью речевого пакета SDK.
 
 ## <a name="example-code-using-codec-compressed-audio-input"></a>Пример кода, использующий сжатые звуковые входные кодеки
 
@@ -157,7 +157,7 @@ SpeechRecognitionResult result = recognizer.recognizeOnceAsync().get()
 String text = result.getText();
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-- [Получение пробной подписки на службу "Речь"](https://azure.microsoft.com/try/cognitive-services/)
-* [Узнайте, как распознать речь в Java](~/articles/cognitive-services/Speech-Service/quickstarts/speech-to-text-from-microphone.md?pivots=programming-language-java)
+- [Получение пробной версии службы "Речь"](https://azure.microsoft.com/try/cognitive-services/)
+- [Узнайте, как распознать речь в Java](~/articles/cognitive-services/Speech-Service/quickstarts/speech-to-text-from-microphone.md?pivots=programming-language-java)

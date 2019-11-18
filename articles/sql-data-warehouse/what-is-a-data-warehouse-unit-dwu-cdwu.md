@@ -11,12 +11,12 @@ ms.date: 11/04/2019
 ms.author: martinle
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: f3415522a6ae80723500ba2d38867322fdef0dd7
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: caa23d3e86fba86aa45e677f7ab85859cda6ddce
+ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73685331"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74133164"
 ---
 # <a name="data-warehouse-units-dwus-and-compute-data-warehouse-units-cdwus"></a>Единицы использования хранилища данных (DWU) и вычислительные единицы использования хранилища данных (cDWU)
 
@@ -101,7 +101,7 @@ SQL Analytics — это масштабируемая система, котор
 
 Встроенные роли для ресурсов Azure, такие как участник базы данных SQL и участник SQL Server, позволяют изменять параметры DWU.
 
-## <a name="view-current-dwu-settings"></a>для просмотра текущих параметров DWU;
+## <a name="view-current-dwu-settings"></a>Просмотр текущих параметров DWU
 
 Чтобы просмотреть текущие параметры DWU, сделайте следующее:
 
@@ -120,7 +120,7 @@ JOIN    sys.databases                     AS db ON ds.database_id = db.database_
 
 ## <a name="change-data-warehouse-units"></a>Изменение единиц использования хранилища данных
 
-### <a name="azure-portal"></a>Портал Azure
+### <a name="azure-portal"></a>портале Azure
 
 Чтобы изменить единицы DWU или cDWU, сделайте следующее:
 
@@ -128,7 +128,7 @@ JOIN    sys.databases                     AS db ON ds.database_id = db.database_
 
 2. В колонке **Масштаб** передвиньте ползунок влево или вправо, чтобы изменить число единиц DWU.
 
-3. Щелкните **Сохранить**. Появится сообщение с подтверждением. Щелкните **Да** для подтверждения или **Нет** для отмены.
+3. Выберите команду **Сохранить**. Появится сообщение с подтверждением. Щелкните **Да** для подтверждения или **Нет** для отмены.
 
 ### <a name="powershell"></a>PowerShell
 
@@ -159,7 +159,7 @@ MODIFY (SERVICE_OBJECTIVE = 'DW1000')
 
 ### <a name="rest-apis"></a>Интерфейсы API REST
 
-Чтобы изменить число DWU, используйте REST API [создания или обновления базы данных](/rest/api/sql/databases/createorupdate). В следующем примере устанавливается цель уровня обслуживания DW1000 для базы данных MySQLDW, которая размещается на сервере MyServer. Сервер находится в группе ресурсов Azure с именем ResourceGroup1.
+Чтобы изменить число единиц DWU, используйте REST API для [создания или обновления базы данных](/rest/api/sql/databases/createorupdate) . В следующем примере устанавливается цель уровня обслуживания DW1000 для базы данных MySQLDW, которая размещается на сервере MyServer. Сервер находится в группе ресурсов Azure с именем ResourceGroup1.
 
 ```
 PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Sql/servers/{server-name}/databases/{database-name}?api-version=2014-04-01-preview HTTP/1.1
@@ -204,7 +204,7 @@ Content-Type: application/json; charset=UTF-8
     ;
     ```
     
-Это динамическое административное представление возвращает сведения о различных операциях управления в пуле SQL, таких как операция и состояние операции, которая либо IN_PROGRESS, либо ЗАВЕРШИЛась.
+Это динамическое административное представление возвращает сведения о различных операциях управления в пуле SQL, таких как операция и состояние операции, которая либо IN_PROGRESS, либо завершена.
 
 ## <a name="the-scaling-workflow"></a>Масштабирование рабочего процесса
 
@@ -213,6 +213,6 @@ Content-Type: application/json; charset=UTF-8
 - Для операции масштабирования система отсоединяет все расчетные узлы, подготавливает дополнительные расчетные узлы, а затем повторно подключается к уровню хранилища.
 - Для операции уменьшения масштаба система отсоединяет все расчетные узлы, а затем повторно подключает только необходимые узлы к уровню хранилища.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-Дополнительные сведения об управлении производительностью см. в разделе [классы ресурсов для управления рабочими нагрузками](resource-classes-for-workload-management.md) и [ограничения памяти и параллелизма] память-параллелизм — limits.md).
+Дополнительные сведения об управлении производительностью см. в статьях [Классы ресурсов для управления рабочими нагрузками](resource-classes-for-workload-management.md) и [Memory and concurrency limits for Azure SQL Data Warehouse](memory-concurrency-limits.md) (Ограничения памяти и параллелизма для хранилища данных SQL Azure).

@@ -8,14 +8,14 @@ ms.topic: article
 ms.date: 08/16/2018
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 40fb44857126c3562e01585c3131afec87f01e42
-ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
+ms.openlocfilehash: 7064496b89143f467ea63fe38233724a7b0af96d
+ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72430064"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74131017"
 ---
-# <a name="using-azure-powershell-with-azure-storage"></a>Использование Azure PowerShell с хранилищем Azure
+# <a name="using-azure-powershell-with-azure-storage"></a>Использование Azure PowerShell со службой хранилища Azure
 
 PowerShell используется для создания ресурсов Azure и управления ими с помощью командной строки PowerShell или сценариев. Для службы хранилища Azure эти командлеты делятся на две категории — уровня управления и уровня данных. Командлеты уровня управления используются для операций управления учетной записью хранения: создания и удаления учетных записей хранения, установки свойств, смены ключей доступа и т. д. Командлеты уровня данных используются для операций управления данными *в* учетной записи хранения: отправки больших двоичных объектов, создания общих файловых ресурсов и добавления сообщений в очередь.
 
@@ -24,7 +24,7 @@ PowerShell используется для создания ресурсов Azu
 > [!div class="checklist"]
 > * Вывод списка учетных записей хранения.
 > * Получение ссылки на имеющуюся учетную запись хранения.
-> * Создание учетной записи хранилища
+> * Создайте учетную запись хранения
 > * Настройка свойств учетной записи хранения.
 > * Получение и повторное создание ключей доступа.
 > * Защита доступа к учетной записи хранения
@@ -32,17 +32,17 @@ PowerShell используется для создания ресурсов Azu
 
 В этой статье приводятся ссылки на несколько других статей об использовании PowerShell со службой хранилища Azure. В них описывается, как включать Аналитику Службы хранилища и обращаться к ней, как использовать командлеты плоскости данных и как обращаться к независимым облакам Azure для Китая и Германии, а также к облаку для государственных организаций.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу.
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 Для работы с этим упражнением требуется модуль Az Azure PowerShell версии 0.7 или более поздней. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить установку или обновление, см. статью [об установке модуля Azure PowerShell](/powershell/azure/install-Az-ps).
 
-Для этого упражнения команды можно вводить в обычное окно PowerShell или в редактор [интегрированной среды сценариев Windows PowerShell (ISE)](/powershell/scripting/getting-started/fundamental/windows-powershell-integrated-scripting-environment--ise-), а затем протестировать одну или несколько из них во время выполнения этих примеров. Вы можете выделить строки, которые необходимо выполнить, и щелкнуть Run Selected (Запустить выделенные), чтобы выполнить эти команды.
+Для этого упражнения команды можно вводить в обычное окно PowerShell или в редактор [интегрированной среды сценариев Windows PowerShell (ISE)](/powershell/scripting/components/ise/exploring-the-windows-powershell-ise), а затем протестировать одну или несколько из них во время выполнения этих примеров. Вы можете выделить строки, которые необходимо выполнить, и щелкнуть Run Selected (Запустить выделенные), чтобы выполнить эти команды.
 
 Дополнительные сведения об учетных записях хранения см. в статьях [Введение в хранилище Microsoft Azure](storage-introduction.md) и [Об учетных записях хранения Azure](storage-create-storage-account.md).
 
-## <a name="sign-in-to-azure"></a>Войдите в Azure
+## <a name="sign-in-to-azure"></a>Вход в Azure
 
 Войдите в подписку Azure с помощью команды `Connect-AzAccount` и следуйте инструкциям на экране.
 
@@ -76,7 +76,7 @@ $storageAccount = Get-AzStorageAccount -ResourceGroupName $resourceGroup `
 
 Теперь у вас есть переменная $storageAccount, указывающая на имеющуюся учетную запись хранения.
 
-### <a name="create-a-storage-account"></a>Создание учетной записи хранилища
+### <a name="create-a-storage-account"></a>Создайте учетную запись хранения
 
 В следующем сценарии показано, как создать учетную запись хранения общего назначения с помощью команды [New-AzStorageAccount](/powershell/module/az.storage/New-azStorageAccount). После создания учетной записи извлеките ее контекст, который можно использовать в последующих командах вместо указания аутентификации при каждом вызове.
 
@@ -131,7 +131,7 @@ $ctx = $storageAccount.Context
 
 * **Теги**, присвоенные учетной записи хранения. Теги часто используются для классификации ресурсов в целях выставления счетов.
 
-* **SKU** — это параметр репликации для учетной записи хранения (как, например, LRS для локально избыточного хранилища). Например, можно изменить Standard\_LRS на Standard\_GRS или Standard\_RAGRS. Обратите внимание, что нельзя изменить стандартные @ no__t-0ZRS, Standard @ no__t-1GZRS, Standard @ no__t-2RAGZRS или Premium @ no__t-3LRS на другие номера SKU или изменить другие номера SKU.
+* **SKU** — это параметр репликации для учетной записи хранения (как, например, LRS для локально избыточного хранилища). Например, можно изменить Standard\_LRS на Standard\_GRS или Standard\_RAGRS. Обратите внимание, что нельзя изменить стандартные\_ZRS, Стандартный\_ГЗРС, Стандартный\_РАГЗРС или Premium\_LRS на другие номера SKU или изменить другие номера SKU.
 
 * **Уровень доступа** для учетных записей хранилища BLOB-объектов. Для уровня доступа задано значение **Горячий** или **Холодный**, что позволяет свести к минимуму затраты, выбрав уровень доступа, соответствующий использованию учетной записи хранения. Дополнительные сведения см. в статье [Хранилище BLOB-объектов Azure: "горячий", "холодный" и архивный (предварительная версия) уровни](../blobs/storage-blob-storage-tiers.md).
 
@@ -185,7 +185,7 @@ Remove-AzStorageAccount -ResourceGroup $resourceGroup -AccountName $storageAccou
 * [Update-AzStorageAccountNetworkRuleSet](/powershell/module/az.storage/update-azstorageaccountnetworkruleset)
 * [Remove-AzStorageAccountNetworkRule](https://docs.microsoft.com/powershell/module/az.storage/remove-azstorageaccountnetworkrule)
 
-## <a name="use-storage-analytics"></a>Использование Аналитики Службы хранилища  
+## <a name="use-storage-analytics"></a>Использование Аналитики Службы хранилища
 
 [Решение "Аналитика Службы хранилища Azure"](storage-analytics.md) состоит из [метрик](/rest/api/storageservices/about-storage-analytics-metrics) и [ведения журнала](/rest/api/storageservices/about-storage-analytics-logging) аналитики службы хранилища.
 
@@ -222,9 +222,9 @@ API таблицы Azure Cosmos DB предоставляет расширенн
 
 Большинство людей используют общедоступное облако Azure для глобального развертывания Azure. Но есть и независимые развертывания Microsoft Azure для обеспечения автономности и других целей. Такие независимые развертывания называются средами. Эти доступные среды включают:
 
-* [Облако Azure для государственных организаций](https://azure.microsoft.com/features/gov/).
+* [Облако Azure для государственных организаций](https://azure.microsoft.com/features/gov/)
 * [Облако Azure Китая 21Vianet, управляемое 21Vianet, в Китае](http://www.windowsazure.cn/)
-* [Облако Azure для Германии](../../germany/germany-welcome.md).
+* [Облако Azure для Германии](../../germany/germany-welcome.md)
 
 Дополнительные сведения о доступе к эти облакам и связанным службам хранилища с помощью PowerShell см. в руководстве по [управлению службой хранилища в независимых облаках Azure с помощью PowerShell](storage-powershell-independent-clouds.md).
 
@@ -235,14 +235,14 @@ API таблицы Azure Cosmos DB предоставляет расширенн
 ```powershell
 Remove-AzResourceGroup -Name $resourceGroup
 ```
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 В этом практическом руководстве описаны стандартные операции с использованием командлетов уровня управления для учетных записей хранения. Вы научились выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Вывод списка учетных записей хранения.
 > * Получение ссылки на имеющуюся учетную запись хранения.
-> * Создание учетной записи хранилища
+> * Создайте учетную запись хранения
 > * Настройка свойств учетной записи хранения.
 > * Получение и повторное создание ключей доступа.
 > * Защита доступа к учетной записи хранения
@@ -252,4 +252,4 @@ Remove-AzResourceGroup -Name $resourceGroup
 
 * [AzureRM.Storage](/powershell/module/az.storage/)
 * [Azure.Storage](/powershell/module/azure.storage/)
-* [Справочник по Windows PowerShell](/powershell/scripting/developer/windows-powershell)
+* [Справочник по Windows PowerShell](/powershell/scripting/overview)

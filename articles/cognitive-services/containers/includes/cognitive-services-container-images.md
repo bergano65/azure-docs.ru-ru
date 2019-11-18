@@ -6,27 +6,27 @@ manager: nitinme
 description: Две таблицы, представляющие реестры контейнеров, репозитории и имена образов для всех предложений службы.
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 11/11/2019
+ms.date: 11/15/2019
 ms.author: dapine
-ms.openlocfilehash: ae11fe785237a02652af1f16aaba1f1bac5ecd62
-ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
+ms.openlocfilehash: 2058dd6e52ddb417e24368b27384df9a222c378e
+ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73961904"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74142216"
 ---
 ### <a name="container-repositories-and-images"></a>Репозитории и образы контейнеров
 
-В таблицах ниже приведен полный список доступных образов контейнеров, предлагаемых Cognitive Services Azure.
+Приведенные ниже таблицы представляют собой список доступных образов контейнеров, предлагаемых Azure Cognitive Services. Полный список доступных имен образов контейнеров и их доступных тегов см. в разделе [Cognitive Services Теги образа контейнера](../container-image-tags.md).
 
 #### <a name="public-ungated-container-registry-mcrmicrosoftcom"></a>Общедоступный "неусловный" (реестр контейнеров: `mcr.microsoft.com`)
 
-В реестре контейнеров Microsoft размещены все общедоступные контейнеры с неконтролируемыми разворотами для Cognitive Services.
+Реестр контейнеров (Майкрософт) (мкр) синдикации все общедоступные контейнеры с неконтролируемым доступом для Cognitive Services. Они также доступны непосредственно из [центра DOCKER](https://hub.docker.com/_/microsoft-azure-cognitive-services).
 
 | Служба | Контейнер | Реестр контейнеров, имя репозитория или образа |
 |--|--|--|
 | [LUIS](../../LUIS/luis-container-howto.md) | LUIS | `mcr.microsoft.com/azure-cognitive-services/luis` |
-| [Анализ текста](../../text-analytics/how-tos/text-analytics-how-to-install-containers.md) | Извлечение ключевых фраз | `mcr.microsoft.com/azure-cognitive-services/keyphrase` |
+| [Анализ текста](../../text-analytics/how-tos/text-analytics-how-to-install-containers.md) | Извлечение ключевой фразы | `mcr.microsoft.com/azure-cognitive-services/keyphrase` |
 | [Анализ текста](../../text-analytics/how-tos/text-analytics-how-to-install-containers.md) | Распознавание языка | `mcr.microsoft.com/azure-cognitive-services/language` |
 | [Анализ текста](../../text-analytics/how-tos/text-analytics-how-to-install-containers.md) | Анализ тональности | `mcr.microsoft.com/azure-cognitive-services/sentiment` |
 
@@ -37,8 +37,8 @@ ms.locfileid: "73961904"
 | Служба | Контейнер | Реестр контейнеров, имя репозитория или образа |
 |--|--|--|
 | [Детектор аномалий](../../anomaly-detector/anomaly-detector-container-howto.md) | Детектор аномалий | `containerpreview.azurecr.io/microsoft/cognitive-services-anomaly-detector` |
-| [Компьютерное зрение](../../Computer-vision/computer-vision-how-to-install-containers.md) | Чтение | `containerpreview.azurecr.io/microsoft/cognitive-services-read` |
-| [Распознавание лиц](../../face/face-how-to-install-containers.md) | Распознавание лиц | `containerpreview.azurecr.io/microsoft/cognitive-services-face` |
+| [Компьютерное зрение](../../Computer-vision/computer-vision-how-to-install-containers.md) | чтение | `containerpreview.azurecr.io/microsoft/cognitive-services-read` |
+| [Распознавание лиц](../../face/face-how-to-install-containers.md) | API распознавания лиц | `containerpreview.azurecr.io/microsoft/cognitive-services-face` |
 | [Распознаватель форм](https://go.microsoft.com/fwlink/?linkid=2083826&clcid=0x409) | Распознаватель документов | `containerpreview.azurecr.io/microsoft/cognitive-services-form-recognizer` |
 | [API службы "Речь"](../../speech-service/speech-container-howto.md?tab=stt) | Преобразование речи в текст. | `containerpreview.azurecr.io/microsoft/cognitive-services-speech-to-text` |
 | [API службы "Речь"](../../speech-service/speech-container-howto.md?tab=cstt) | Пользовательское распознавание речи к тексту | `containerpreview.azurecr.io/microsoft/cognitive-services-custom-speech-to-text` |

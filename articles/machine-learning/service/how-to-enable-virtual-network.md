@@ -9,13 +9,13 @@ ms.topic: conceptual
 ms.reviewer: larryfr
 ms.author: aashishb
 author: aashishb
-ms.date: 10/25/2019
-ms.openlocfilehash: 5ac741579562b41678c4aeb59bb5ebb425d8405c
-ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
+ms.date: 11/13/2019
+ms.openlocfilehash: c5d0c517e7a3d4c011d66925b8db0c4d09dd34ca
+ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73932090"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74123595"
 ---
 # <a name="secure-azure-ml-experimentation-and-inference-jobs-within-an-azure-virtual-network"></a>Защита заданий экспериментирования и вывода машинного обучения Azure в виртуальной сети Azure
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -79,7 +79,7 @@ ms.locfileid: "73932090"
 >
 > Учетная запись хранения по умолчанию автоматически подготавливается при создании рабочей области.
 >
-> Для учетных записей хранения, отличных от по умолчанию, параметр `storage_account` в [функции`Workspace.create()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace(class)?view=azure-ml-py#create-name--auth-none--subscription-id-none--resource-group-none--location-none--create-resource-group-true--friendly-name-none--storage-account-none--key-vault-none--app-insights-none--container-registry-none--default-cpu-compute-target-none--default-gpu-compute-target-none--exist-ok-false--show-output-true-) позволяет указать настраиваемую учетную запись хранения по идентификатору ресурса Azure.
+> Для учетных записей хранения, отличных от по умолчанию, параметр `storage_account` в [функции`Workspace.create()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace(class)?view=azure-ml-py#create-name--auth-none--subscription-id-none--resource-group-none--location-none--create-resource-group-true--sku--basic---friendly-name-none--storage-account-none--key-vault-none--app-insights-none--container-registry-none--default-cpu-compute-target-none--default-gpu-compute-target-none--exist-ok-false--show-output-true-) позволяет указать настраиваемую учетную запись хранения по идентификатору ресурса Azure.
 
 ## <a name="use-a-key-vault-instance-with-your-workspace"></a>Использование экземпляра хранилища ключей с рабочей областью
 
@@ -198,7 +198,7 @@ ms.locfileid: "73932090"
 
     a. В качестве __конфигурации сети__выберите __Дополнительно__.
 
-    Б. В раскрывающемся списке __Группа ресурсов__ выберите группу ресурсов, содержащую виртуальную сеть.
+    b. В раскрывающемся списке __Группа ресурсов__ выберите группу ресурсов, содержащую виртуальную сеть.
 
     c. В раскрывающемся списке __Виртуальная сеть__ выберите виртуальную сеть, содержащую подсеть.
 
@@ -244,8 +244,18 @@ except ComputeTargetException:
 
 По завершении процесса создания вы обучите модель с помощью кластера в эксперименте. Дополнительные сведения вы найдете в статье [Настройка целевых объектов вычислений для обучения моделей](how-to-set-up-training-targets.md).
 
-<a id="vmorhdi"></a>
+## <a name="use-azure-databricks"></a>Использование Azure Databricks
 
+Чтобы использовать Azure Databricks Azure в виртуальной сети с рабочей областью, должны выполняться следующие требования.
+
+> [!div class="checklist"]
+> * Виртуальная сеть должна находиться в той же подписке и регионе, что и Рабочая область Машинное обучение Azure.
+> * Если учетные записи хранения Azure для рабочей области также защищены в виртуальной сети, они должны находиться в той же виртуальной сети, что и кластер Azure Databricks.
+> * В дополнение к __модулям "данные — частные__ " и " __кирпичы" — общедоступные__ подсети, используемые Azure Databricks, также требуется подсеть __по умолчанию__ , созданная для виртуальной сети.
+
+Конкретные сведения об использовании Azure Databricks с виртуальной сетью см. в статье [развертывание Azure Databricks в виртуальной сети Azure](https://docs.azuredatabricks.net/administration-guide/cloud-configurations/azure/vnet-inject.html).
+
+<a id="vmorhdi"></a>
 
 ## <a name="use-a-virtual-machine-or-hdinsight-cluster"></a>Использование виртуальной машины или кластера HDInsight
 

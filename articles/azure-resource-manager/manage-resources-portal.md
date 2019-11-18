@@ -1,19 +1,16 @@
 ---
-title: Управление ресурсами Azure с помощью портал Azure | Документация Майкрософт
+title: Управление ресурсами — портал Azure
 description: Используйте портал Azure и Azure Resource Manager для управления ресурсами. Показывает, как развертывать и удалять ресурсы.
-services: azure-resource-manager,azure-portal
-documentationcenter: ''
 author: mumian
-ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 02/11/2019
 ms.author: jgao
-ms.openlocfilehash: c52d54ca02436f7224346a65048244a5ec8d104c
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: 5c0e09930ee53733b36e987356cef2963416006f
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72390392"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74149824"
 ---
 # <a name="manage-azure-resources-by-using-the-azure-portal"></a>Управление ресурсами Azure с помощью портал Azure
 
@@ -63,7 +60,7 @@ ms.locfileid: "72390392"
 
 На снимке экрана показаны параметры управления для виртуальной машины Azure. Вы можете выполнять такие операции, как запуск, перезапуск и остановка виртуальной машины.
 
-## <a name="delete-resources"></a>Удаление ресурсов.
+## <a name="delete-resources"></a>Удаление ресурсов
 
 1. Откройте ресурс на портале. Инструкции см. в разделе [Открытие ресурсов](#open-resources).
 2. Нажмите кнопку **Удалить**. На следующем снимке экрана показаны параметры управления для виртуальной машины.
@@ -119,7 +116,7 @@ ms.locfileid: "72390392"
 
 [Управление доступом на основе ролей (RBAC)](../role-based-access-control/overview.md) — это способ управления доступом к ресурсам в Azure. Дополнительные сведения см. в статье [Управление доступом с помощью RBAC и портала Azure](../role-based-access-control/role-assignments-portal.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Сведения о Azure Resource Manager см. в разделе [Общие сведения о Azure Resource Manager](./resource-group-overview.md).
 - Сведения о синтаксисе шаблона диспетчер ресурсов см. в разделе [Общие сведения о структуре и синтаксисе шаблонов Azure Resource Manager](./resource-group-authoring-templates.md).

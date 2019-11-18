@@ -8,13 +8,13 @@ ms.service: time-series-insights
 author: deepakpalled
 ms.author: dpalled
 manager: cshankar
-ms.date: 09/24/2019
-ms.openlocfilehash: 1ed57e30273c9ba3feb110e0e5acbd3bcc7ffd40
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.date: 11/14/2019
+ms.openlocfilehash: fa6921f8c4309f17cbd63e242a5416e7e81bb6c3
+ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74062919"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74133609"
 ---
 1. На [портале Azure](https://ms.portal.azure.com/) последовательно выберите **Azure Active Directory** > **Регистрация приложений** > **Новая регистрация**.
 
@@ -39,7 +39,7 @@ ms.locfileid: "74062919"
         * Для приложений, размещенных в локальной среде разработки, выберите **Public client (mobile & desktop)** (Общедоступный клиент (мобильный и классический)). Убедитесь, что для параметра **Тип клиента по умолчанию** установлено значение "Да".
         * Для одностраничных приложений, размещенных в Службе приложений Azure, выберите **Веб**.
 
-    1. Включите поток неявного предоставления разрешения, проверив **маркеры идентификации**.
+    1. Включите неявный поток предоставления разрешений, проверив **маркеры доступа** или **маркеры идентификации**.
 
    [![Создание секрета клиента](media/time-series-insights-aad-registration/active-directory-auth-blade.png)](media/time-series-insights-aad-registration/active-directory-auth-blade.png#lightbox)
 

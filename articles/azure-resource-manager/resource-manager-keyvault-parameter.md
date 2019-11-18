@@ -1,17 +1,14 @@
 ---
-title: Секрет Key Vault в шаблоне Azure Resource Manager | Документация Майкрософт
+title: Key Vaultный секрет с помощью шаблона
 description: Демонстрирует передачу секретного кода из хранилища ключей в виде параметра при развертывании.
-author: tfitzmac
-ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 05/09/2019
-ms.author: tomfitz
-ms.openlocfilehash: 489b09d2523393ae67668ed13c651c9b7b0217b4
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.openlocfilehash: 37d21e295eca2b40e91f92d65d6e927ee6857d0e
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "70998893"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74149490"
 ---
 # <a name="use-azure-key-vault-to-pass-secure-parameter-value-during-deployment"></a>Использование Azure Key Vault для передачи защищенного значения параметра во время развертывания
 
@@ -19,7 +16,7 @@ ms.locfileid: "70998893"
 
 ## <a name="deploy-key-vaults-and-secrets"></a>Развертывание хранилищ Key Vault и секретов
 
-Чтобы получить доступ к хранилищу ключей во время развертывания `enabledForTemplateDeployment` шаблона, задайте для `true`хранилища ключей значение.
+Чтобы получить доступ к хранилищу ключей во время развертывания шаблона, задайте для `enabledForTemplateDeployment` хранилища ключей значение `true`.
 
 В следующих примерах Azure CLI и Azure PowerShell показано, как создать хранилище ключей и добавить секрет.
 
@@ -72,7 +69,7 @@ Set-AzKeyVaultAccessPolicy `
 
 ## <a name="grant-access-to-the-secrets"></a>Предоставление доступа к секретам
 
-Пользователь, который развертывает шаблон, должен иметь `Microsoft.KeyVault/vaults/deploy/action` разрешение на доступ к области группы ресурсов и хранилища ключей. Оно имеется у ролей [Владелец](../role-based-access-control/built-in-roles.md#owner) и [Участник](../role-based-access-control/built-in-roles.md#contributor). Если вы создали хранилище ключей, вы являетесь владельцем и имеете разрешение.
+Пользователь, который развертывает шаблон, должен иметь разрешение `Microsoft.KeyVault/vaults/deploy/action` для области группы ресурсов и хранилища ключей. Оно имеется у ролей [Владелец](../role-based-access-control/built-in-roles.md#owner) и [Участник](../role-based-access-control/built-in-roles.md#contributor). Если вы создали хранилище ключей, вы являетесь владельцем и имеете разрешение.
 
 Ниже показано, как создать роль с минимальным разрешением и назначить пользователя
 
@@ -124,7 +121,7 @@ Set-AzKeyVaultAccessPolicy `
 
 ![Диаграмма статического идентификатора интеграции хранилища ключей Resource Manager](./media/resource-manager-keyvault-parameter/statickeyvault.png)
 
-[Учебник. Интеграция с Azure Key Vault при развертывании шаблона Resource Manager](./resource-manager-tutorial-use-key-vault.md) использует этот метод.
+[Учебник. интеграция Azure Key Vault в диспетчер ресурсов шаблоны развертывания](./resource-manager-tutorial-use-key-vault.md) использует этот метод.
 
 Следующий шаблон развертывает сервер SQL Server, который содержит пароль администратора. В качестве параметра пароля задается защищенная строка. Но шаблон не указывает, откуда берется это значение.
 
@@ -343,7 +340,7 @@ New-AzResourceGroupDeployment `
   -vaultName $keyVaultName -vaultResourceGroupName $keyVaultResourceGroupName -secretName $secretName
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 - Дополнительные сведения о хранилищах ключей см. в статье [Что такое хранилище ключей Azure?](../key-vault/key-vault-overview.md)
 - Полные примеры использования ссылок на секреты ключей приведены [здесь](https://github.com/rjmax/ArmExamples/tree/master/keyvaultexamples).

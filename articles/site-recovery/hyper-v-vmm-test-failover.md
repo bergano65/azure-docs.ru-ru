@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: rajanaki
-ms.openlocfilehash: 4a1b5f804986d2bda85980d01cdaaa130d86b50d
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 0363911574a076b13cb72591fb2564364e096c76
+ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74039733"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74132941"
 ---
 # <a name="run-a-dr-drill-for-hyper-v-vms-to-a-secondary-site"></a>Выполнение тестирования аварийного восстановления виртуальных машин Hyper-V на дополнительный сайт
 
@@ -20,10 +20,6 @@ ms.locfileid: "74039733"
 В этой статье описывается, как с помощью [Azure Site Recovery](site-recovery-overview.md) выполнить тестирование аварийного восстановления виртуальных машин Hyper-V, управление которыми осуществляется в облаках System Center Virtual Machine Manager (VMM), на локальный дополнительный сайт.
 
 Тестовая отработка отказа выполняется для проверки стратегии репликации и анализа работы системы аварийного восстановления без потери данных или простоя. Тестовая отработка отказа никак не влияет на текущую репликацию или рабочую среду. 
-
-> [!WARNING]
-> Обратите внимание, что поддержка ASR для использования конфигурации SCVMM скоро станет устаревшей, поэтому мы рекомендуем ознакомиться со сведениями об [устаревании](site-to-site-deprecation.md) , прежде чем продолжать.
-
 
 ## <a name="how-do-test-failovers-work"></a>Как работает тестовая отработка отказа
 

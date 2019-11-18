@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/06/2018
 ms.author: shvija
-ms.openlocfilehash: 442ceab68851dc108d327cdf212dcf58d5b31084
-ms.sourcegitcommit: a819209a7c293078ff5377dee266fa76fd20902c
+ms.openlocfilehash: 17906a7d0953d8b320301d74cda81d14c9ad340f
+ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71008568"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74123433"
 ---
 # <a name="capture-events-through-azure-event-hubs-in-azure-blob-storage-or-azure-data-lake-storage"></a>Сбор событий из Центров событий Azure в хранилище BLOB-объектов Azure или Azure Data Lake Storage
 Центры событий Azure позволяют автоматически записывать определенный объем потоковых данных из Центров событий в учетную запись [хранилища BLOB-объектов Azure](https://azure.microsoft.com/services/storage/blobs/) или [Azure Data Lake Storage](https://azure.microsoft.com/services/data-lake-store/) с указанным интервалом времени и размера. Настройка функции "Сбор" выполняется быстро, ее использование не влечет дополнительных административных расходов, а масштабирование осуществляется автоматически на основе [единиц пропускной способности](event-hubs-scalability.md#throughput-units) Центров событий. Функция "Сбор" в Центрах событий — это самый удобный способ передачи потоковых данных в Azure. Он позволяет сосредоточиться на обработке данных, а не на их записи.
@@ -81,7 +81,7 @@ https://mystorageaccount.blob.core.windows.net/mycontainer/mynamespace/myeventhu
 
 Доступна встроенная поддержка хранилища BLOB-объектов Azure, которая упрощает запрос данных в файле Avro, как описано в документации:
 
-[Apache Drill. Подключаемый модуль хранилища BLOB-объектов Azure][Apache Drill: Azure Blob Storage Plugin]
+[Переход на Apache: подключаемый модуль хранилища BLOB-объектов Azure][Apache Drill: Azure Blob Storage Plugin]
 
 Чтобы облегчить запрос захваченных файлов, вы можете создать и запустить виртуальную машину с включенной Apache Drill через контейнер для доступа к хранилищу BLOB-объектов Azure.
 
@@ -89,14 +89,14 @@ https://github.com/yorek/apache-drill-azure-blob
 
 Полный законченный пример доступен в потоковой передаче масштабируемого репозитория.
 
-[Streaming at Scale with Event Hubs Capture] (Потоковая передача в нужном масштабе с помощью функции "Сбор" в Центрах событий)
+[Потоковая передача в масштабе: запись концентраторов событий]
 
 ### <a name="use-apache-spark"></a>Использование Apache Spark
 
 [Apache Spark][Apache Spark] — это «единый модуль аналитики для обработки крупномасштабных данных». Он поддерживает разные языки, включая SQL, и может легко связываться с хранилищем BLOB-объектов Azure. Существует два варианта для запуска Apache Spark в Azure, и оба обеспечивают легкий доступ к хранилищу BLOB-объектов Azure.
 
-- [HDInsight. Адресные файлы в службе хранилища Azure][HDInsight: Address files in Azure storage]
-- [Azure Databricks. Хранилище BLOB-объектов Azure][Azure Databricks: Azure Blob Storage]
+- [HDInsight: файлы адресов в службе хранилища Azure][HDInsight: Address files in Azure storage]
+- [Azure Databricks: хранилище BLOB-объектов Azure][Azure Databricks: Azure Blob Storage]
 
 ### <a name="use-avro-tools"></a>Использование средств Avro
 
@@ -139,9 +139,9 @@ Apache Avro содержит полный начало работы руково
 
 ## <a name="integration-with-event-grid"></a>Интеграция со службой "Сетка событий" 
 
-Можно создать подписку на Сетку событий Azure с пространством имен Центров событий в качестве источника. Сведения о том, как создать подписку на Сетку событий с помощью концентратора событий в качестве источника и приложения Функций Azure в качестве приемника, см. в руководстве [Обработка и перемещение записанных данных из концентраторов событий в Хранилище данных SQL с помощью служб "Сетка событий" и "Функции Azure"](store-captured-data-data-warehouse.md).
+Можно создать подписку на Сетку событий Azure с пространством имен Центров событий в качестве источника. Сведения о том, как создать подписку на Сетку событий с помощью концентратора событий в качестве источника и приложения Функций Azure в качестве приемника, см. в руководстве [Обработка и перемещение записанных данных из концентраторов событий в хранилище данных SQL с помощью служб "Сетка событий" и "Функции Azure"](store-captured-data-data-warehouse.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Функция "Сбор" в Центрах событий — это самый быстрый способ передать данные в Azure. С помощью знакомых средств и платформ (Azure Data Lake, фабрики данных Azure и Azure HDInsight) можно выполнять необходимую пакетную обработку и другие операции анализа в любом масштабе.
 
@@ -160,7 +160,7 @@ Apache Avro содержит полный начало работы руково
 [Java]: https://avro.apache.org/docs/current/gettingstartedjava.html
 [Python]: https://avro.apache.org/docs/current/gettingstartedpython.html
 [Event Hubs overview]: event-hubs-what-is-event-hubs.md
-[HDInsight: Address files in Azure storage]:https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-use-blob-storage#address-files-in-azure-storage
+[HDInsight: Address files in Azure storage]:https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-use-blob-storage
 [Azure Databricks: Azure Blob Storage]:https://docs.databricks.com/spark/latest/data-sources/azure/azure-storage.html
 [Apache Drill: Azure Blob Storage Plugin]:https://drill.apache.org/docs/azure-blob-storage-plugin/
-[Streaming at Scale with Event Hubs Capture]: https://github.com/yorek/streaming-at-scale/tree/master/event-hubs-capture (Потоковая передача в нужном масштабе с помощью функции "Сбор" в Центрах событий)
+[Потоковая передача в масштабе: запись концентраторов событий]: https://github.com/yorek/streaming-at-scale/tree/master/event-hubs-capture

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 11/07/2019
 ms.author: radeltch
-ms.openlocfilehash: 910ffc1a94b78fec259dcf30a3c7284716809355
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: e8205497262c2c7a500769f32a473d628974220c
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73832584"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74151801"
 ---
 # <a name="high-availability-for-sap-netweaver-on-azure-vms-on-suse-linux-enterprise-server-with-azure-netapp-files-for-sap-applications"></a>Высокий уровень доступности SAP NetWeaver на виртуальных машинах Azure на SUSE Linux Enterprise Server с Azure NetApp Files для приложений SAP
 
@@ -172,11 +172,10 @@ SAP NetWeaver требует общее хранилище для каталог
 
 При рассмотрении Azure NetApp Files для архитектуры с высоким уровнем доступности SAP NetWeaver в SUSE учитывайте следующие важные моменты.
 
-- Пул минимальных мощностей — 4 тиб. Размер пула ресурсов должен быть кратен 4 тиб.
+- Пул минимальных мощностей — 4 тиб. Размер пула емкости можно увеличить с шагом в 1 тиб.
 - Минимальный том — 100 гиб
 - Azure NetApp Files и все виртуальные машины, где Azure NetApp Files тома будут подключены, должны находиться в одной виртуальной сети Azure или в [одноранговой виртуальной сети](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview) в том же регионе. Сейчас поддерживается доступ к Azure NetApp Files через пиринг виртуальных сетей в том же регионе. Доступ к NetApp Azure через Глобальный пиринг пока не поддерживается.
 - Выбранная виртуальная сеть должна иметь подсеть, делегированную Azure NetApp Files.
-- В настоящее время Azure NetApp Files поддерживает только NFSv3 
 - Azure NetApp Files предлагает [политику экспорта](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-configure-export-policy). Вы можете управлять разрешенными клиентами, типом доступа (чтение & запись, доступ только для чтения и т. д.). 
 - Azure NetApp Filesная функция еще не поддерживает зоны. В настоящее время Azure NetApp Files функция не развернута во всех зонах доступности в регионе Azure. Учитывайте возможные последствия задержки в некоторых регионах Azure. 
 
@@ -403,7 +402,7 @@ SAP NetWeaver требует общее хранилище для каталог
    </code></pre>
    
    > [!NOTE]
-   > В настоящее время Azure NetApp Files поддерживает только NFSv3. Не указывайте параметр нфсверс = 3.
+   > При подключении томов обязательно установите соответствие версии протокола NFS Azure NetApp Files томов. В этом примере Azure NetApp Files тома были созданы как тома NFSv3.  
    
    Перезапустите `autofs`, чтобы подключить новые общие папки
     <pre><code>
@@ -1341,7 +1340,7 @@ SAP NetWeaver требует общее хранилище для каталог
         rsc_sap_QAS_ERS01  (ocf::heartbeat:SAPInstance):   Started anftstsapcl1
    </code></pre>
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Планирование и реализация виртуальных машин Azure для SAP][planning-guide]
 * [Развертывание виртуальных машин Azure для SAP][deployment-guide]

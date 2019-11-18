@@ -13,14 +13,15 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/27/2018
 ms.author: tomfitz
-ms.openlocfilehash: 288ea7e887a170c8560b0126fa53c9132da35db6
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.openlocfilehash: f3a8426856e1345306acff69946beb4860d5f905
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72332668"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74151532"
 ---
 # <a name="microsoftcomputesizeselector-ui-element"></a>Элемент пользовательского интерфейса Microsoft.Compute.SizeSelector
+
 Элемент управления для выбора размера одного или нескольких экземпляров виртуальной машины.
 
 ## <a name="ui-sample"></a>Пример элемента пользовательского интерфейса
@@ -34,6 +35,7 @@ ms.locfileid: "72332668"
 ![Развернутый элемент Microsoft.Compute.SizeSelector](./media/managed-application-elements/microsoft.compute.sizeselector-expanded.png)
 
 ## <a name="schema"></a>SCHEMA (Схема)
+
 ```json
 {
   "name": "element1",
@@ -65,7 +67,14 @@ ms.locfileid: "72332668"
 }
 ```
 
+## <a name="sample-output"></a>Пример выходных данных
+
+```json
+"Standard_D1"
+```
+
 ## <a name="remarks"></a>Примечания
+
 - В `recommendedSizes` должен быть указан по меньшей мере один размер. По умолчанию используется первый рекомендуемый размер. Список доступных размеров не отсортирован по столбцу "Рекомендуемое состояние". Для сортировки по этому столбцу его нужно щелкнуть.
 - Если в выбранном расположении рекомендуемый размер недоступен, он автоматически пропускается. Вместо него используется следующий рекомендуемый размер.
 - Параметры `constraints.allowedSizes` и `constraints.excludedSizes` являются необязательными. При этом их нельзя использовать одновременно. Сведения о получении списка доступных размеров виртуальных машин для подписки см. в [этой статье](/rest/api/compute/virtualmachines/virtualmachines-list-sizes-region). Любой размер, не указанный в параметре `constraints.allowedSizes`, скрыт. При этом любой размер, не указанный в параметре `constraints.excludedSizes`, отображается.
@@ -75,11 +84,7 @@ ms.locfileid: "72332668"
 - Параметру `numAvailabilityZonesRequired` можно установить значение 1, 2 или 3.
 - Значение параметра `hideDiskTypeFilter` по умолчанию — **false**. Фильтр по типу диска позволяет пользователю просматривать все типы дисков или только SSD.
 
-## <a name="sample-output"></a>Пример выходных данных
-```json
-"Standard_D1"
-```
+## <a name="next-steps"></a>Дополнительная информация
 
-## <a name="next-steps"></a>Дальнейшие действия
 * Общие сведения о создании определений пользовательского интерфейса см. в статье [Начало работы с CreateUiDefinition](create-uidefinition-overview.md).
 * Дополнительные сведения об общих свойствах элементов пользовательского интерфейса см. в статье [Элементы CreateUiDefinition](create-uidefinition-elements.md).

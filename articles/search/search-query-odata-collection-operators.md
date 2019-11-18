@@ -1,7 +1,7 @@
 ---
 title: Справочник по операторам коллекции OData
 titleSuffix: Azure Cognitive Search
-description: Операторы коллекции OData, любые и все лямбда-выражения в Azure Когнитивный поиск запросы.
+description: При создании выражений фильтров в запросах Когнитивный поиск в Azure используйте операторы "Any" и "ALL" в лямбда-выражениях, если фильтр находится в поле коллекции или сложной коллекции.
 manager: nitinme
 author: brjohnstmsft
 ms.author: brjohnst
@@ -19,12 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: fdb250a844b70cef4f6941debbb1fa7450874932
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: 54ddc8222816831b5b436297bbb1b40d03230f0c
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72793401"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74113233"
 ---
 # <a name="odata-collection-operators-in-azure-cognitive-search---any-and-all"></a>Операторы коллекции OData в Azure Когнитивный поиск — `any` и `all`
 
@@ -92,7 +92,7 @@ lambda_expression ::= identifier ':' boolean_expression
 
 Дополнительные сведения об этих ограничениях, а также примеры см. [в разделе Устранение неполадок фильтров сбора в Azure когнитивный Поиск](search-query-troubleshoot-collection-filters.md). Более подробные сведения о том, почему эти ограничения существуют, см. в разделе [Основные сведения о фильтрах коллекций в когнитивный Поиск Azure](search-query-understand-collection-filters.md).
 
-## <a name="next-steps"></a>Дальнейшие действия  
+## <a name="next-steps"></a>Дополнительная информация  
 
 - [Фильтры в Когнитивный поиск Azure](search-filters.md)
 - [Общие сведения о языке выражений OData для Azure Когнитивный поиск](query-odata-filter-orderby-syntax.md)

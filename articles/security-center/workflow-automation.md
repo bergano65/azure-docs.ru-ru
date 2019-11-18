@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: memildin
-ms.openlocfilehash: 74a33edb358f9b9bf9322c652c0696ef87182725
-ms.sourcegitcommit: 3f8017692169bd75483eefa96c225d45cd497f06
+ms.openlocfilehash: 1abfd8af7e0ef18d4e7bcf05b4726c5d0bcb0a84
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73521583"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74151691"
 ---
 # <a name="workflow-automation-preview"></a>Автоматизация рабочих процессов (Предварительная версия)
 
@@ -76,7 +76,7 @@ ms.locfileid: "73521583"
 
     ![Обновить](media/workflow-automation/refresh-the-list-of-logic-apps.png)
 
-1. Выберите приложение логики и сохраните автоматизацию.
+1. Выберите приложение логики и сохраните автоматизацию. Обратите внимание, что в раскрывающемся списке приложение логики отображается только Logic Apps с поддержкой соединителей центра безопасности, упомянутых выше.
 
 
 ## <a name="manually-trigger-a-logic-app"></a>Запуск приложения логики вручную
@@ -88,7 +88,7 @@ ms.locfileid: "73521583"
 [![запускать приложение логики вручную](media/workflow-automation/manually-trigger-logic-app.png)](media/workflow-automation/manually-trigger-logic-app.png#lightbox)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 В этой статье вы узнали о создании Logic Apps, запуске их вручную в центре безопасности и автоматизации их выполнения. 
 

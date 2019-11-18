@@ -1,73 +1,89 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Документация по Реестру контейнеров Azure
+summary: Реестр контейнеров Azure позволяет создавать, хранить и администрировать образы и артефакты контейнеров в частном реестре для всех типов развертываний контейнеров. Используйте реестры контейнеров Azure с существующими конвейерами разработки и развертывания контейнеров. С помощью Задач Реестра контейнеров Azure вы можете создавать образы контейнеров в Azure по требованию или автоматизировать сборки, активируемые обновлениями исходного кода, обновлениями базового образа контейнера или таймерами.
 metadata:
-  title: Документация по Реестру контейнеров Azure. Руководства | Документация Майкрософт
-  description: 'Реестр контейнеров Azure позволяет создавать, хранить и администрировать образы для всех типов развертываний контейнеров. Узнайте, как использовать Реестр контейнеров Azure с помощью наших кратких руководств, учебников и примеров.'
+  title: Документация по Реестру контейнеров Azure
+  description: Сведения о службе частного реестра Azure для размещения образов контейнеров Docker и связанных с ними артефактов. Кроме того, служба "Реестр контейнеров Azure" поддерживает Задачи ACR. Это набор служб для создания, администрирования и исправления образов контейнеров.
   services: container-registry
-  author: georgewallace
-  manager: gwallace
   ms.service: container-registry
+  ms.subservice: subservice
   ms.topic: landing-page
-  ms.date: 07/26/2017
-  ms.author: gwallace
-abstract:
-  description: 'Реестр контейнеров Azure позволяет создавать, хранить и администрировать образы для всех типов развертываний контейнеров. Узнайте, как использовать Реестр контейнеров Azure с помощью наших кратких руководств, учебников и примеров.'
-sections:
-  - title: Пятиминутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: 'Узнайте, как развернуть реестр контейнеров Azure.'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_cligeneric.svg'
-            text: Azure CLI
-            href: /azure/container-registry/container-registry-get-started-azure-cli
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_portal.svg'
-            text: Портал Azure
-            href: /azure/container-registry/container-registry-get-started-portal
-          - image:
-              src: 'https://docs.microsoft.com/media/logos/logo_powershell.svg'
-            text: Azure PowerShell
-            href: /azure/container-registry/container-registry-get-started-powershell
-  - title: Пошаговые инструкции
-    items:
-      - type: paragraph
-        text: 'Узнайте из этих руководств, как использовать Реестр контейнеров Azure.'
-      - type: list
-        style: unordered
-        className: spaced noBullet
-        items:
-          - html: <a href="/azure/container-registry/container-registry-tutorial-quick-build">Создание образов контейнеров с помощью Задач ACR</a>
-          - html: <a href="/azure/container-registry/container-registry-tutorial-prepare-registry">Георепликация реестра контейнеров</a>
-          - html: <a href="/azure/container-instances/container-instances-tutorial-prepare-app">Использование реестра контейнеров со службой "Экземпляры контейнеров Azure"</a>
-          - html: <a href="/azure/aks/tutorial-kubernetes-prepare-app">Использование реестра контейнеров со Службой Azure Kubernetes (AKS)</a>
-          - html: <a href="/azure/service-fabric/service-fabric-tutorial-create-container-images">Реестр контейнеров с Service Fabric</a>
-  - title: Развитие навыков с помощью Microsoft Learn
-    items:
-      - type: list
-        style: cards
-        className: cardsFTitle
-        items:
-          - title: Создание и хранение образов контейнеров с помощью службы "Реестр контейнеров Azure"
-            href: /learn/modules/build-and-store-container-images/
-            image:
-              src: /learn/achievements/build-and-store-container-images.svg
-              href: /learn/modules/build-and-store-container-images/
-      - type: paragraph
-        text: <a href="/learn/browse/?products=azure-container-registry">Другие интерактивные руководства</a>
-  - title: Справочные материалы
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: Командная строка
-            html: <p><a href="/cli/azure/acr">Azure CLI</a></p><p><a href="/powershell/module/az.containerregistry">PowerShell</a></p>
-          - title: Языки
-            html: <p><a href="/dotnet/api/overview/azure/containerregistry">.NET</a></p><p><a href="/python/api/overview/azure/container-registry">Python</a></p><p><a href="/java/api/overview/azure/containerregistry">Java</a></p><p><a href="/javascript/api/overview/azure/container-registry">Node.js</a></p>
-          - title: REST
-            html: <p><a href="/rest/api/containerregistry">Справочник по REST API</a></p><p><a href="/azure/templates/microsoft.containerregistry/registries">Шаблон Resource Manager</a></p><p><a href="/azure/container-registry/container-registry-webhook-reference">Схема веб-перехватчика</a></p>
+  ms.collection: collection
+  author: dlepow
+  ms.author: danlep
+  ms.date: 11/08/2019
+  ms.openlocfilehash: ace70edef26be143d8e2367818a3c4cc15bd769e
+  ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 11/17/2019
+  ms.locfileid: "74150085"
+landingContent:
+- title: Сведения о Реестре контейнеров Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Общие сведения о службе реестра контейнеров Azure
+      url: container-registry-intro.md
+    - text: Реестры, репозитории и образы
+      url: container-registry-concepts.md
+- title: Начало работы
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Развертывание реестра контейнеров — CLI
+      url: container-registry-get-started-azure-cli.md
+    - text: Развертывание реестра контейнеров — портал
+      url: container-registry-get-started-portal.md
+    - text: Отправка и извлечение образа с помощью Docker
+      url: container-registry-get-started-docker-cli.md
+  - linkListType: concept
+    links:
+    - text: Уровни службы
+      url: container-registry-skus.md
+  - linkListType: learn
+    links:
+    - text: Создание и хранение образов контейнеров с помощью службы "Реестр контейнеров Azure"
+      url: https://docs.microsoft.com/learn/modules/build-and-store-container-images/
+  - linkListType: video
+    links:
+    - text: Видео о Реестре контейнеров Azure
+      url: https://azure.microsoft.com/resources/videos/index/?services=container-registry&sort=newest
+- title: Управление реестрами
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Просмотр репозиториев и тегов
+      url: container-registry-repositories.md
+    - text: Импорт образов
+      url: container-registry-import-images.md
+    - text: Блокировка образов
+      url: container-registry-image-lock.md
+    - text: Удаление изображений
+      url: container-registry-delete.md
+  - linkListType: concept
+    links:
+    - text: Георепликация
+      url: container-registry-geo-replication.md
+    - text: Аутентификация
+      url: container-registry-authentication.md
+    - text: Рекомендации
+      url: container-registry-best-practices.md
+    - text: Часто задаваемые вопросы
+      url: container-registry-faq.md
+- title: Задачи ACR
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Сведения о Задачах ACR
+      url: container-registry-tasks-overview.md
+    - text: Многошаговые задачи
+      url: container-registry-tasks-multi-step.md
+  - linkListType: quickstart
+    links:
+    - text: Создание образа в облаке — CLI
+      url: container-registry-quickstart-task-cli.md
+  - linkListType: tutorial
+    links:
+    - text: Автоматизация сборок образов
+      url: container-registry-tutorial-quick-task.md

@@ -1,27 +1,22 @@
 ---
-title: 'Документация по кэшу Azure для Redis: руководства и справочник по API | Документация Майкрософт'
-description: Узнайте, как использовать кэш Azure для Redis — защищенный кэш данных и брокер обмена сообщениями, который обеспечивает быстрый доступ приложений к данным. Руководства, справочники по API и другие документы.
-services: cache
+title: 'Документация по кэшу Azure для Redis: руководства и справочник по API'
+description: Узнайте, как использовать кэш Redis для Azure — защищенный кэш данных и брокер обмена сообщениями, который обеспечивает быстрый доступ приложений к данным. Учебники, справочники по API и другие документы.
 author: yegu-ms
-manager: jubbard
 layout: LandingPage
-ms.assetid: ''
 ms.service: cache
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: landing-page
 ms.date: 01/23/2017
 ms.author: yegu
-ms.openlocfilehash: c5de77f3862f3ca315c586e1ec1cbfc7b5b453a1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 02d28874d18debc73054ad47fe1604e21dd44d85
+ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60829944"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74122544"
 ---
-# <a name="azure-cache-for-redis-documentation"></a>Документация по кэшу Azure для Redis
+# <a name="azure-cache-for-redis-documentation"></a>Документация по кэшу Redis для Azure
 
-Узнайте, как использовать кэш Azure для Redis — защищенный кэш данных и брокер обмена сообщениями, который обеспечивает высокую пропускную способность и низкую задержку при обращении приложений к данным. Руководства, справочники по API и другая документация, в которой показано, как пользоваться кэшем Azure для Redis из любого приложения в Azure.
+Узнайте, как использовать кэш Redis для Azure — защищенный кэш данных и брокер обмена сообщениями, который обеспечивает высокую пропускную способность и низкую задержку при обращении приложений к данным. Руководства, справочники по API и другая документация, в которой показано, как пользоваться кэшем Redis для Azure из любого приложения в Azure.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -35,7 +30,7 @@ ms.locfileid: "60829944"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Подробнее о кэше Azure для Redis (цен. категория "Премиум")</h3>
+                        <h3>Подробнее о кэше Redis для Azure (цен. категория "Премиум")</h3>
                     </div>
                 </div>
             </div>
@@ -52,7 +47,7 @@ ms.locfileid: "60829944"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Библиотека видео по кэшу Azure для Redis</h3>
+                        <h3>Библиотека видео по кэшу Redis для Azure</h3>
                     </div>
                 </div>
             </div>
@@ -70,7 +65,7 @@ ms.locfileid: "60829944"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Начало работы с кэшем Azure для Redis (.NET)</h3>
+                        <h3>Начало работы с кэшем Redis для Azure (.NET)</h3>
                     </div>
                 </div>
             </div>
@@ -88,7 +83,7 @@ ms.locfileid: "60829944"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Начало работы с кэшем Azure для Redis (ASP.NET MVC)</h3>
+                        <h3>Начало работы с кэшем Redis для Azure (ASP.NET MVC)</h3>
                     </div>
                 </div>
             </div>
@@ -106,7 +101,7 @@ ms.locfileid: "60829944"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Начало работы с кэшем Azure для Redis (Node.js)</h3>
+                        <h3>Начало работы с кэшем Redis для Azure (Node.js)</h3>
                     </div>
                 </div>
             </div>
@@ -124,7 +119,7 @@ ms.locfileid: "60829944"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Начало работы с кэшем Azure для Redis (Java)</h3>
+                        <h3>Начало работы с кэшем Redis для Azure (Java)</h3>
                     </div>
                 </div>
             </div>
@@ -142,7 +137,7 @@ ms.locfileid: "60829944"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Начало работы с кэшем Azure для Redis (Python)</h3>
+                        <h3>Начало работы с кэшем Redis для Azure (Python)</h3>
                     </div>
                 </div>
             </div>
@@ -184,7 +179,7 @@ ms.locfileid: "60829944"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Работа с изменяемыми и частичными данными в кэше Azure для Redis</h3>
+                        <h3>Работа с изменяемыми и частичными данными в кэше Redis для Azure</h3>
                     </div>
                 </div>
             </div>
@@ -206,7 +201,7 @@ ms.locfileid: "60829944"
                     <div class="cardText">
                         <h3>Командная строка</h3>
                         <p><a href="/powershell/module/az.rediscache">PowerShell</a></p>
-                        <p><a href="/cli/azure/redis">Интерфейс командной строки Azure</a></p>
+                        <p><a href="/cli/azure/redis">Azure CLI</a></p>
                     </div>
                 </div>
             </div>
@@ -217,7 +212,7 @@ ms.locfileid: "60829944"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-                        <h3>Languages</h3>
+                        <h3>Языки</h3>
                         <p><a href="/dotnet/api/microsoft.azure.management.redis">.NET</a></p>
                         <p><a href="/java/api/com.microsoft.azure.management.redis.rediscache">Java</a></p>
                         <p><a href="https://redis.io/clients">Клиенты Redis</a></p>
@@ -233,7 +228,7 @@ ms.locfileid: "60829944"
                 <div class="card">
                     <div class="cardText">
                         <h3>REST</h3>
-                        <p><a href="https://docs.microsoft.com/rest/api/redis/">справочник по API REST</a></p>
+                        <p><a href="https://docs.microsoft.com/rest/api/redis/">Справочник по REST API</a></p>
                     </div>
                 </div>
             </div>

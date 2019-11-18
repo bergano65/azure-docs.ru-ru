@@ -14,12 +14,12 @@ ms.date: 04/08/2019
 ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: seo-lt-2019
-ms.openlocfilehash: d1b3961b61d45718e726b31ec406445b202a0adf
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 6b2546226d31334592034cfe0455fc32644a3900
+ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74034174"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74132772"
 ---
 # <a name="extend-support-for-sql-server-2008-and-sql-server-2008-r2-with-azure"></a>Расширение поддержки SQL Server 2008 и SQL Server 2008 R2 с помощью Azure
 
@@ -64,7 +64,7 @@ SQL Server развертываний с оплатой по мере испол
 
 Решения аварийного восстановления для SQL Server EOS на виртуальной машине Azure приведены ниже.
 
-- **Резервные копии SQL Server**: используйте Azure Backup, чтобы помочь защитить SQL Server EOS от атак, случайного удаления и повреждения. Сейчас решение находится на этапе предварительной версии для EOS SQL Server и поддерживает SQL Server 2008 и 2008 R2 под Windows 2008 R2 с пакетом обновления 1 (SP1). Дополнительные сведения см. в [этой статье](https://docs.microsoft.com/azure/backup/backup-azure-sql-database#support-for-sql-server-2008-and-sql-server-2008-r2).
+- **Резервные копии SQL Server**: используйте Azure Backup, чтобы помочь защитить SQL Server EOS от атак, случайного удаления и повреждения. Сейчас решение находится на этапе предварительной версии для EOS SQL Server и поддерживает SQL Server 2008 и 2008 R2 под Windows 2008 R2 с пакетом обновления 1 (SP1). Дополнительные сведения см. в [этой статье](https://docs.microsoft.com/azure/backup/backup-azure-sql-database#scenario-support).
 - **Доставка журналов**. реплику доставки журналов можно создать в другой зоне или регионе Azure с непрерывным восстановлением, чтобы снизить значение RTO. Необходимо вручную настроить доставку журналов.
 - **Azure Site Recovery**. виртуальную машину можно реплицировать между зонами и регионами с помощью Azure Site Recovery репликации. SQL Server требует, чтобы моментальные снимки, согласованные с приложениями, гарантированно были восстановлены в случае аварии. Azure Site Recovery обеспечивает минимальную 1-часовую RPO и 2-часовую (плюс SQL Server время восстановления) RTO для EOS SQL Server аварийного восстановления.
 

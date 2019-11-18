@@ -1,5 +1,5 @@
 ---
-title: Записи пакетов VPN-шлюза Azure | Документация Майкрософт
+title: 'VPN-шлюз Azure: Настройка записи пакетов'
 description: Сведения о функциях записи пакетов, которые можно использовать на VPN-шлюзах.
 services: vpn-gateway
 author: radwiv
@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 10/15/2019
 ms.author: radwiv
-ms.openlocfilehash: 0957fabf58a68efe9e215b390d28dbf160574963
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 41c36d302605bb619899131a8ace649b0f1439b2
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73517440"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74151855"
 ---
 # <a name="configure-packet-captures-for-vpn-gateways"></a>Настройка записи пакетов для VPN-шлюзов
 
@@ -64,6 +64,6 @@ Stop-AzVirtualNetworkGatewayConnectionPacketCapture -ResourceGroupName "YourReso
 - Рекомендуемая минимальная длительность записи пакетов составляет 600 секунд. Наличие более короткой длительности записи пакетов может не предоставлять полные данные из-за синхронизации проблем между несколькими компонентами по пути.
 - Файлы данных записи пакетов создаются в форматах ПКАП или ETL. Для понимания данных может потребоваться анализатор Netmon.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о VPN-шлюзе см. в статье [о VPN-шлюзе](vpn-gateway-about-vpngateways.md) .

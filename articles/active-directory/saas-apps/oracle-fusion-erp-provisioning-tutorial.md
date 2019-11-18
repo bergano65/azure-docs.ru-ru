@@ -14,29 +14,29 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 07/26/2019
-ms.author: zhchia
-ms.openlocfilehash: 4ecb0189736ca2787f0725fb471ef8a22252185c
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.author: Zhchia
+ms.openlocfilehash: 73991efa2e98ff033987f1ce172d24fe3ecddb96
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642050"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74144581"
 ---
-# <a name="tutorial-configure-oracle-fusion-erp-for-automatic-user-provisioning"></a>Учебник. Настройка Oracle Fusion ERP для автоматической подготовки пользователей
+# <a name="tutorial-configure-oracle-fusion-erp-for-automatic-user-provisioning"></a>Руководство по настройке системы ERP Fusion в Oracle для автоматической подготовки пользователей
 
 Цель этого учебника — продемонстрировать шаги, которые необходимо выполнить в Oracle Fusion ERP и Azure Active Directory (Azure AD), чтобы настроить Azure AD для автоматической инициализации и отзыва пользователей и (или) групп в Oracle Fusion ERP.
 
 > [!NOTE]
 >  В этом руководстве рассматривается соединитель, созданный на базе службы подготовки пользователей Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../manage-apps/user-provisioning.md).
 >
-> Сейчас этот соединитель находится на этапе предварительной версии. Дополнительные сведения об общих Microsoft Azure условиях использования предварительных версий функций см. в разделе Дополнительные [условия использования для предварительного просмотра Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)
+> Сейчас этот соединитель доступен в режиме предварительной версии. Дополнительные сведения об общих Microsoft Azure условиях использования предварительных версий функций см. в разделе Дополнительные [условия использования для предварительного просмотра Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
 * клиент Azure AD;
-* [Клиентское ERP-слияние Oracle](https://www.oracle.com/applications/erp/).
+* [Клиент ERP слиянием Oracle](https://www.oracle.com/applications/erp/).
 * Учетная запись пользователя в Oracle Fusion ERP с разрешениями администратора.
 
 ## <a name="assign-users-to-oracle-fusion-erp"></a>Назначение пользователей для ERP слиянием Oracle 
@@ -52,7 +52,7 @@ Azure Active Directory использует концепцию, называем
 
 * При назначении пользователя в Oracle Fusion ERP необходимо выбрать в диалоговом окне назначения любую допустимую роль конкретного приложения (если она доступна). Пользователи с ролью доступа по умолчанию исключаются из подготовки.
 
-## <a name="setup-oracle-fusion-erp-for-provisioning"></a>Настройка Oracle Fusion ERP для подготовки
+## <a name="set-up-oracle-fusion-erp-for-provisioning"></a>Настройка Oracle Fusion ERP для подготовки
 
 Перед настройкой Oracle Fusion ERP для автоматической подготовки пользователей с помощью Azure AD необходимо включить подготовку SCIM в Oracle Fusion ERP.
 
@@ -76,7 +76,7 @@ Azure Active Directory использует концепцию, называем
 
 1. В **[портал Azure](https://portal.azure.com)** на панели навигации слева выберите **Azure Active Directory**.
 
-    ![Кнопка Azure Active Directory](common/select-azuread.png)
+    ![Кнопка "Azure Active Directory"](common/select-azuread.png)
 
 2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
@@ -84,7 +84,7 @@ Azure Active Directory использует концепцию, называем
 
 3. Чтобы добавить новое приложение, нажмите кнопку **новое приложение** в верхней части области.
 
-    ![Кнопка "Создать приложение"](common/add-new-app.png)
+    ![Кнопка "Новое приложение"](common/add-new-app.png)
 
 4. В поле поиска введите **Oracle Fusion ERP**, выберите **Oracle Fusion ERP** на панели результатов.
 
@@ -95,7 +95,10 @@ Azure Active Directory использует концепцию, называем
 В этом разделе описано, как настроить службу подготовки Azure AD для создания, обновления и отключения пользователей и групп в ERP-данных Azure Fusion на основе назначений пользователей и (или) групп.
 
 > [!TIP]
-> Вы также можете включить единый вход на основе SAML для Oracle Fusion ERP, следуя инструкциям, приведенным в руководстве по единому [входу в систему Oracle Fusion ERP](oracle-fusion-erp-tutorial.md). Единый вход можно настроить независимо от автоматической подготовки пользователей, хотя эти две возможности дополняют друг друга.
+> Вы также можете включить единый вход на основе SAML для Oracle Fusion ERP, следуя инструкциям в [руководстве по единому входу в систему Oracle Fusion ERP](oracle-fusion-erp-tutorial.md). Единый вход можно настроить независимо от автоматической подготовки пользователей, хотя эти две функции дополняют друг друга.
+
+> [!NOTE]
+> Дополнительные сведения о конечной точке SCIM в ERP слиянием Oracle см. в статье [REST API для общих функций в облаке приложений Oracle](https://docs.oracle.com/en/cloud/saas/applications-common/18b/farca/index.html).
 
 ### <a name="to-configure-automatic-user-provisioning-for-fuze-in-azure-ad"></a>Чтобы настроить автоматическую подготовку учетных записей пользователей для Fuze в Azure AD, сделайте следующее:
 
@@ -115,7 +118,7 @@ Azure Active Directory использует концепцию, называем
 
     ![Вкладка "подготовка"](common/provisioning-automatic.png)
 
-5. В разделе **учетные данные администратора** введите `https://ejlv.fa.em2.oraclecloud.com/hcmRestApi/scim/` **URL-адрес клиента**. Введите имя пользователя и пароль администратора, полученные ранее, в поля **имя пользователя** и **пароль** администратора. Щелкните **Проверка подключения** между Azure AD и ERP Fusion в Oracle. 
+5. В разделе **учетные данные администратора** введите `https://ejlv.fa.em2.oraclecloud.com/hcmRestApi/scim/` в поле **URL-адрес клиента**. Введите имя пользователя и пароль администратора, полученные ранее, в поля **имя пользователя** и **пароль** администратора. Щелкните **Проверка подключения** между Azure AD и ERP Fusion в Oracle. 
 
     ![Добавление SCIM в Oracle Fusion ERP](media/oracle-fusion-erp-provisioning-tutorial/admin.png)
 
@@ -123,39 +126,53 @@ Azure Active Directory использует концепцию, называем
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Нажмите кнопку **Сохранить**.
+7. Выберите команду **Сохранить**.
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с Oracle Fusion ERP**.
 
     ![Добавление SCIM в Oracle Fusion ERP](media/oracle-fusion-erp-provisioning-tutorial/user-mapping.png)
-    
-9. Проверьте пользовательские атрибуты, которые синхронизированы из Azure AD в Oracle Fusion ERP в разделе " **сопоставление атрибутов** ". Атрибуты, выбранные как свойства Matching, используются для сопоставления учетных записей пользователей в Oracle Fusion ERP для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+
+9. Проверьте пользовательские атрибуты, которые синхронизированы из Azure AD в Oracle Fusion ERP в разделе " **сопоставление атрибутов** ". Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в Oracle Fusion ERP для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
     ![Добавление SCIM в Oracle Fusion ERP](media/oracle-fusion-erp-provisioning-tutorial/user-attribute.png)
 
-10. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../manage-apps/define-conditional-rules-for-provisioning-user-accounts.md).
+10. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory группы с Oracle Fusion ERP**.
 
-11. Чтобы включить службу подготовки Azure AD для ERP слияний Oracle, измените значение параметра **состояние подготовки** на **включено** в разделе **Параметры** .
+    ![Сопоставления групп ERP слияний Oracle](media/oracle-fusion-erp-provisioning-tutorial/groupmappings.png)
 
-    ![Состояние подготовки выключено](common/provisioning-toggle-on.png)
+11. Проверьте атрибуты группы, которые синхронизированы из Azure AD в Oracle Fusion ERP в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления групп в Oracle Fusion ERP для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-12. Определите пользователей и (или) группы, которые вы хотите подготавливать в Oracle Fusion ERP, выбрав нужные значения в **области** в разделе **Параметры** .
+    ![Атрибуты группы ERP Fusion для Oracle](media/oracle-fusion-erp-provisioning-tutorial/groupattributes.png)
 
-    ![Область подготовки](common/provisioning-scope.png)
+12. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../manage-apps/define-conditional-rules-for-provisioning-user-accounts.md).
 
-13. Когда будете готовы выполнить подготовку, нажмите кнопку **Сохранить**.
+13. Чтобы включить службу подготовки Azure AD для ERP слияний Oracle, измените значение параметра **состояние подготовки** на **включено** в разделе **Параметры** .
 
-    ![Идет сохранение конфигурации подготовки](common/provisioning-configuration-save.png)
+    ![Состояние подготовки "Включено"](common/provisioning-toggle-on.png)
+
+14. Определите пользователей и (или) группы, которые вы хотите подготавливать в Oracle Fusion ERP, выбрав нужные значения в **области** в разделе **Параметры** .
+
+    ![Область действия подготовки](common/provisioning-scope.png)
+
+15. Когда будете готовы выполнить подготовку, нажмите кнопку **Сохранить**.
+
+    ![Сохранение конфигурации подготовки](common/provisioning-configuration-save.png)
 
     После этого начнется начальная синхронизация пользователей и (или) групп, определенных в поле **Область** раздела **Параметры**. Начальная синхронизация занимает больше времени, чем последующие операции синхронизации. Если служба запущена, они выполняются примерно каждые 40 минут. В разделе **сведения о синхронизации** можно отслеживать ход выполнения и переходить по ссылкам для просмотра отчетов по подготовке, в которых описаны все действия, выполняемые службой подготовки Azure AD в Oracle Fusion ERP.
 
-    Дополнительные сведения о том, как читать журналы подготовки Azure AD, см. в разделе [Создание отчетов об автоматической подготовке учетных записей пользователей](../manage-apps/check-status-user-account-provisioning.md) .
+    Дополнительные сведения о чтении журналов подготовки Azure AD см. в руководстве по [отчетам об автоматической подготовке учетных записей](../manage-apps/check-status-user-account-provisioning.md).
+
+## <a name="connector-limitations"></a>Ограничения соединителя
+
+* В Oracle Fusion ERP поддерживается только обычная проверка подлинности для конечной точки SCIM.
+* ERP Fusion в Oracle не поддерживает подготовку групп.
+* Роли в Oracle Fusion ERP сопоставляются с группами в Azure AD. Чтобы назначить роли пользователям в Oracle Fusion ERP из Azure AD, вам потребуется назначить пользователям нужные группы Azure AD, имена которых указаны после ролей в Oracle Fusion ERP.
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
 * [Управление подготовкой учетных записей пользователей для корпоративных приложений](../manage-apps/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)

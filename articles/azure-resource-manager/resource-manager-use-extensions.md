@@ -1,29 +1,22 @@
 ---
-title: Настройка Azure после развертывания с помощью расширений
+title: Настройка после развертывания с помощью расширений
 description: Узнайте, как использовать расширения шаблона Azure Resource Manager для предоставления конфигураций после развертывания.
-services: azure-resource-manager
-documentationcenter: na
 author: mumian
-editor: ''
-ms.service: azure-resource-manager
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
 ms.date: 12/14/2018
 ms.author: jgao
-ms.openlocfilehash: ccac91553d43a98bdef20abe451e7abec139dbaf
-ms.sourcegitcommit: 6eecb9a71f8d69851bc962e2751971fccf29557f
+ms.openlocfilehash: c7896efb453cac478202efedb268c4bc838aef3a
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72533746"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74150369"
 ---
 # <a name="provide-post-deployment-configurations-by-using-extensions"></a>Предоставление конфигураций после развертывания с помощью расширений
 
 Расширения шаблона — это небольшие приложения, которые выполняют задачи конфигурации и автоматизации после развертывания ресурсов Azure. Самые популярные — расширения виртуальных машин. Ознакомьтесь со статьей [Обзор расширений и компонентов виртуальной машины под управлением Windows](../virtual-machines/extensions/features-windows.md) или [Обзор расширений и компонентов виртуальных машин под управлением Linux](../virtual-machines/extensions/features-linux.md).
 
-## <a name="extensions"></a>расширения.
+## <a name="extensions"></a>Расширения
 
 Ниже приведены имеющиеся расширения:
 
@@ -40,7 +33,7 @@ ms.locfileid: "72533746"
 - [Руководство. развертывание расширений виртуальной машины с помощью шаблонов Azure Resource Manager](./resource-manager-tutorial-deploy-vm-extensions.md).
 - [Учебник. импорт BACPAC-файлов SQL с помощью шаблонов Azure Resource Manager](./resource-manager-tutorial-deploy-sql-extensions-bacpac.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
 > [Руководство. Развертывание расширений виртуальной машины с помощью шаблонов Azure Resource Manager](./resource-manager-tutorial-deploy-vm-extensions.md)

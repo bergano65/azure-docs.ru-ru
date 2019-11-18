@@ -13,21 +13,24 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/15/2018
 ms.author: tomfitz
-ms.openlocfilehash: 67ae05c2ec7b36d76e49f26d5765bbc68b952292
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.openlocfilehash: 3a72aaaa15b55b2f0fbc0a227c36a4b2f624d43b
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72331689"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74151324"
 ---
 # <a name="microsoftcommoninfobox-ui-element"></a>Элемент пользовательского интерфейса Microsoft.Common.InfoBox
+
 Элемент управления, который добавляет поле сведений. Поле содержит важный текст или предупреждения, которые помогают пользователям понять, какие значения нужно указать. Он также может быть связан с URI, по которому можно получить более подробную информацию.
 
 ## <a name="ui-sample"></a>Пример элемента пользовательского интерфейса
+
 ![Microsoft.Common.InfoBox](./media/managed-application-elements/microsoft.common.infobox.png)
 
 
 ## <a name="schema"></a>SCHEMA (Схема)
+
 ```json
 {
   "name": "text1",
@@ -41,17 +44,18 @@ ms.locfileid: "72331689"
 }
 ```
 
-## <a name="remarks"></a>Примечания
-
-* Установите для параметра `icon` одно из следующих значений: **Нет**, **Сведения**, **Предупреждение** или **Ошибка**.
-* Свойство `uri` необязательное.
-
 ## <a name="sample-output"></a>Пример выходных данных
 
 ```json
 "Nullam eros mi, mollis in sollicitudin non, tincidunt sed enim. Sed et felis metus, rhoncus ornare nibh. Ut at magna leo."
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="remarks"></a>Примечания
+
+* Установите для параметра `icon` одно из следующих значений: **Нет**, **Сведения**, **Предупреждение** или **Ошибка**.
+* Свойство `uri` необязательное.
+
+## <a name="next-steps"></a>Дополнительная информация
+
 * Общие сведения о создании определений пользовательского интерфейса см. в статье [Начало работы с CreateUiDefinition](create-uidefinition-overview.md).
 * Дополнительные сведения об общих свойствах элементов пользовательского интерфейса см. в статье [Элементы CreateUiDefinition](create-uidefinition-elements.md).

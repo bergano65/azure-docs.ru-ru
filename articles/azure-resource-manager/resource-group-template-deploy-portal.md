@@ -1,17 +1,14 @@
 ---
-title: Развертывание ресурсов Azure с помощью портала Azure | Документация Майкрософт
+title: Развертывание ресурсов с помощью портал Azure
 description: Используйте портал Azure и управление ресурсами Azure для развертывания ресурсов в группе ресурсов в подписке.
-author: tfitzmac
-ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 06/27/2019
-ms.author: tomfitz
-ms.openlocfilehash: 197bd14c425d80a814f370a2050c085b1eef143d
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 6a8842a9fbda11bf48d45152c167d7b072f38119
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73579017"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74150767"
 ---
 # <a name="deploy-resources-with-resource-manager-templates-and-azure-portal"></a>Развертывание ресурсов с использованием шаблонов Resource Manager и портала Azure
 
@@ -125,7 +122,7 @@ ms.locfileid: "73579017"
 
 1. Щелкните **Приобрести**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Сведения о просмотре журналов аудита см. в статье [Операции аудита с помощью Resource Manager](./resource-group-audit.md).
 - Сведения об устранении неполадок развертывания см. в статье [Просмотр операций развертывания с помощью Azure Resource Manager](./resource-manager-deployment-operations.md).

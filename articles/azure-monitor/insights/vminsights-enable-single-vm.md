@@ -6,13 +6,13 @@ ms.subservice: ''
 ms.topic: conceptual
 author: mgoedtel
 ms.author: magoedte
-ms.date: 05/09/2019
-ms.openlocfilehash: 1182f48d2d05c90cc90b1832f9305001dd2d1211
-ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
+ms.date: 11/14/2019
+ms.openlocfilehash: 3ab3164db7702566e62b2eedf2a9a03e9f7fb55c
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72553824"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74109125"
 ---
 # <a name="enable-azure-monitor-for-vms-preview-for-evaluation"></a>Включение Azure Monitor для виртуальных машин (Предварительная версия) для оценки
 
@@ -33,7 +33,7 @@ ms.locfileid: "72553824"
 
 1. На странице **Аналитические сведения (предварительная версия)** выберите **Попробовать**.
 
-    ![Включение Azure Monitor для виртуальной машины](./media/vminsights-enable-single-vm/enable-vminsights-vm-portal-01.png)
+    ![Включение Azure Monitor для виртуальной машины](./media/vminsights-enable-single-vm/enable-vminsights-vm-portal.png)
 
 1. Если имеющаяся рабочая область Log Analytics расположена в той же подписке, что и кластер, выберите ее из раскрывающегося списка на странице **Azure Monitor Insights Onboarding** (Подключение к службе аналитических сведений Azure Monitor).  
 
@@ -62,7 +62,7 @@ ms.locfileid: "72553824"
 
     В списке будет выбрана рабочая область по умолчанию и расположение, в которое развертывается виртуальная машина в подписке. 
 
-    ![Включение Azure Monitor для виртуальных машин для масштабируемого набора виртуальных машин](./media/vminsights-enable-single-vm/enable-vminsights-vmss-portal-01.png)
+    ![Включение Azure Monitor для виртуальных машин для масштабируемого набора виртуальных машин](./media/vminsights-enable-single-vm/enable-vminsights-vmss-portal.png)
 
     >[!NOTE]
     >Сведения о создании новой рабочей области Log Analytics для хранения данных мониторинга из масштабируемого набора виртуальных машин см. в разделе [создание log Analytics рабочей области](../learn/quick-create-workspace.md). Ваша рабочая область Log Analytics должна находиться в одном из [поддерживаемых регионов](vminsights-enable-overview.md#log-analytics).
@@ -76,8 +76,7 @@ ms.locfileid: "72553824"
 
 Теперь, когда вы включили мониторинг для виртуальной машины или масштабируемого набора виртуальных машин, данные мониторинга доступны для анализа в Azure Monitor для виртуальных машин. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-* Сведения об использовании функции работоспособности см. в статье [сведения о работоспособности Azure Monitor виртуальных машин](vminsights-health.md). 
 * Чтобы просмотреть зависимости обнаруженных приложений, см. статью [использование Azure Monitor для виртуальных машин Map](vminsights-maps.md). 
 * Чтобы определить узкие места, общее использование и производительность виртуальной машины, см. статью [Просмотр производительности виртуальной машины Azure](vminsights-performance.md).

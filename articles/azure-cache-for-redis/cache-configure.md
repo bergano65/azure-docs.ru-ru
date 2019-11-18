@@ -1,25 +1,17 @@
 ---
-title: Настройка кэша Azure для Redis | Документация Майкрософт
+title: Настройка кэша Azure для Redis
 description: Обзор конфигурации Redis по умолчанию для кэша Azure для Redis и описание способов настройки экземпляров кэша Azure для Redis
-services: cache
-documentationcenter: na
 author: yegu-ms
-manager: jhubbard
-editor: tysonn
-ms.assetid: d0bf2e1f-6a26-4e62-85ba-d82b35fc5aa6
 ms.service: cache
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: cache
-ms.workload: tbd
+ms.topic: conceptual
 ms.date: 08/22/2017
 ms.author: yegu
-ms.openlocfilehash: 6bc4b69122df7d29a611571a750229f47337015c
-ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
+ms.openlocfilehash: 7c0642377e75e621e1774936262ffddd166ff06d
+ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72756800"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74122874"
 ---
 # <a name="how-to-configure-azure-cache-for-redis"></a>Настройка кэша Azure для Redis
 В этом разделе описаны конфигурации, доступные для экземпляров кэша Azure для Redis. В этом разделе также описывается конфигурация сервера Redis по умолчанию для экземпляров кэша Azure для Redis.
@@ -43,7 +35,7 @@ ms.locfileid: "72756800"
 * [Управление доступом (IAM)](#access-control-iam)
 * [Теги](#tags)
 * [Диагностика и решение проблем](#diagnose-and-solve-problems)
-* [Параметры](#settings)
+* [Настройки](#settings)
     * [Ключи доступа](#access-keys)
     * [Дополнительные параметры](#advanced-settings)
     * [Помощник по кэшу Azure для Redis](#azure-cache-for-redis-advisor)
@@ -57,10 +49,10 @@ ms.locfileid: "72756800"
     * [Свойства](#properties)
     * [Блокировки](#locks)
     * [Сценарий автоматизации](#automation-script)
-* Администрирование
+* Administration
     * [Импорт данных](#importexport)
     * [Экспорт данных](#importexport)
-    * [Перезагрузка](#reboot)
+    * [Reboot](#reboot)
 * [Мониторинг](#monitoring)
     * [Метрики Redis](#redis-metrics)
     * [Правила оповещения](#alert-rules)
@@ -70,7 +62,7 @@ ms.locfileid: "72756800"
     * [Новый запрос в службу поддержки](#new-support-request)
 
 
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
 
 В разделе **Обзор** содержатся основные сведения о кэше, такие как имя, порты, ценовая категория, и выбранные метрики кэша.
 
@@ -93,7 +85,7 @@ ms.locfileid: "72756800"
 
 
 
-## <a name="settings"></a>Настройки
+## <a name="settings"></a>данных
 В разделе **Параметры** можно открыть и настроить следующие параметры кэша.
 
 * [Ключи доступа](#access-keys)
@@ -177,17 +169,17 @@ ms.locfileid: "72756800"
 ## <a name="azure-cache-for-redis-advisor"></a>Помощник по кэшу Azure для Redis
 В колонке **Azure Cache for Redis Advisor** (Помощник по кэшу Azure для Redis) отображаются рекомендации для кэша. Во время обычной работы не отображается никаких рекомендаций. 
 
-![Рекомендации](./media/cache-configure/redis-cache-no-recommendations.png)
+![рекомендации](./media/cache-configure/redis-cache-no-recommendations.png)
 
 При возникновении во время работы кэша любого из таких условий, как интенсивное использование памяти, пропускной способности сети или сервера, в колонке **Azure Cache for Redis** (Кэш Azure для Redis) отображается предупреждение.
 
-![Рекомендации](./media/cache-configure/redis-cache-recommendations-alert.png)
+![рекомендации](./media/cache-configure/redis-cache-recommendations-alert.png)
 
 Дополнительные сведения можно найти в колонке **Рекомендации** .
 
-![Рекомендации](./media/cache-configure/redis-cache-recommendations.png)
+![рекомендации](./media/cache-configure/redis-cache-recommendations.png)
 
-Эти метрики можно отслеживать в колонке **Azure Cache for Redis** (Кэш Azure для Redis) в разделах [Monitoring charts](cache-how-to-monitor.md#monitoring-charts) (Диаграммы мониторинга) и [Usage charts](cache-how-to-monitor.md#usage-charts) (Диаграммы использования).
+Эти метрики можно отслеживать в колонке [Azure Cache for Redis](cache-how-to-monitor.md#monitoring-charts) (Кэш Azure для Redis) в разделах [Monitoring charts](cache-how-to-monitor.md#usage-charts) (Диаграммы мониторинга) и **Usage charts** (Диаграммы использования).
 
 Каждая ценовая категория имеет различные ограничения для количества клиентских подключений, памяти и пропускной способности. Если в течение продолжительного периода времени кэш приближается к максимальной емкости для этих метрик, создается рекомендация. Дополнительные сведения о метриках и ограничениях, используемых инструментом **Рекомендации**, см. в следующей таблице:
 
@@ -201,7 +193,7 @@ ms.locfileid: "72756800"
 Чтобы обновить кэш, нажмите кнопку **Обновить сейчас**. При этом будут изменены ценовая категория и [размер](#scale) кэша. Дополнительные сведения о выборе ценовой категории кэша см. в разделе [What Azure Cache for Redis offering and size should I use?](cache-faq.md#what-azure-cache-for-redis-offering-and-size-should-i-use) (Какое предложение и размер кэша Azure для Redis мне следует использовать?)
 
 
-### <a name="scale"></a>Масштабирование
+### <a name="scale"></a>Масштаб
 Щелкните **Масштаб**, чтобы просмотреть или изменить ценовую категорию для кэша. Дополнительные сведения о масштабировании см. в статье [Масштабирование кэша Azure для Redis](cache-how-to-scale.md).
 
 ![Ценовая категория кэша Azure для Redis](./media/cache-configure/pricing-tier.png)
@@ -221,7 +213,7 @@ ms.locfileid: "72756800"
 Чтобы изменить размер кластера, воспользуйтесь ползунком или введите число от 1 до 10 в текстовом поле **Shard count** (Количество сегментов), а затем нажмите кнопку **ОК** для сохранения изменений.
 
 > [!IMPORTANT]
-> Кластеризация Redis доступна только для кэша категории «Премиум». Дополнительные сведения см. в статье [How to configure clustering for a Premium Azure Cache for Redis](cache-how-to-premium-clustering.md) (Настройка кластеризации для кэша Azure для Redis категории "Премиум").
+> Кластеризация Redis доступна только для кэша категории «Премиум». Дополнительные сведения см. в статье [How to configure clustering for a Premium Azure Cache for Redis](cache-how-to-premium-clustering.md) (Настройка кластеризации кэша Azure для Redis категории "Премиум").
 > 
 > 
 
@@ -229,7 +221,7 @@ ms.locfileid: "72756800"
 ### <a name="redis-data-persistence"></a>Сохраняемость данных Redis
 Щелкните **Сохраняемость данных Redis** , чтобы включить, отключить или настроить сохраняемость данных кэша категории «Премиум». Кэш Azure для Redis обеспечивает сохраняемость Redis на основе [RDB](cache-how-to-premium-persistence.md#configure-rdb-persistence) или [AOF](cache-how-to-premium-persistence.md#configure-aof-persistence).
 
-Дополнительные сведения см. в статье [How to configure persistence for a Premium Azure Cache for Redis](cache-how-to-premium-persistence.md) (Настройка постоянного хранения для кэша Azure для Redis категории "Премиум").
+Дополнительные сведения см. в статье [How to configure persistence for a Premium Azure Cache for Redis](cache-how-to-premium-persistence.md) (Как настроить сохраняемость для кэша Azure для Redis категории "Премиум").
 
 
 > [!IMPORTANT]
@@ -286,7 +278,7 @@ ms.locfileid: "72756800"
 > 
 > 
 
-### <a name="properties"></a>properties
+### <a name="properties"></a>свойства
 Щелкните **Свойства** , чтобы отобразить сведения о кэше, включая конечную точку и порты кэша.
 
 ![Свойства кэша Azure для Redis](./media/cache-configure/redis-cache-properties.png)
@@ -301,14 +293,14 @@ ms.locfileid: "72756800"
 ## <a name="administration-settings"></a>Параметры администрирования
 Параметры в разделе **Администрирование** позволяют выполнить следующие задачи администрирования для кэша. 
 
-![Администрирование](./media/cache-configure/redis-cache-administration.png)
+![Administration](./media/cache-configure/redis-cache-administration.png)
 
 * [Импорт данных](#importexport)
 * [Экспорт данных](#importexport)
-* [Перезагрузка](#reboot)
+* [Reboot](#reboot)
 
 
-### <a name="importexport"></a>Импорт или экспорт
+### <a name="importexport"></a>Импорт и экспорт
 Функция импорта и экспорта является операцией управления данными в кэше Azure для Redis, которая позволяет импортировать данные в кэш и экспортировать их оттуда путем импорта и экспорта моментального снимка базы данных кэша Azure для Redis (RDB) из кэша категории "Премиум" в страничный BLOB-объект в учетной записи службы хранилища Azure. Функция импорта и экспорта дает возможность переключаться между различными экземплярами кэша Azure для Redis или заполнять кэш данными перед использованием.
 
 Импорт можно использовать для переноса RDB-файлов, совместимых с Redis, с сервера Redis, запущенного в любом облаке или любой среде, включая Redis в Linux, Windows, или у любого поставщика облачных служб, такого как Amazon Web Services или другого. Импорт данных позволяет легко создать кэш, предварительно заполненный данными. Во время импорта кэш Azure для Redis загружает RDB-файлы из службы хранилища Azure в память, а затем вставляет в кэш ключи.
@@ -320,14 +312,14 @@ ms.locfileid: "72756800"
 > 
 > 
 
-### <a name="reboot"></a>Reboot
+### <a name="reboot"></a>Перезагрузка
 Колонка **Перезагрузка** позволяет перезагрузить узлы кэша. Функция перезагрузки дает возможность протестировать приложение на устойчивость в случае сбоя узла кэша.
 
-![Reboot](./media/cache-configure/redis-cache-reboot.png)
+![Перезагрузка](./media/cache-configure/redis-cache-reboot.png)
 
 Если у вас кэш уровня "Премиум" с включенной кластеризацией, то вы можете выбрать сегменты кэша для перезагрузки.
 
-![Reboot](./media/cache-configure/redis-cache-reboot-cluster.png)
+![Перезагрузка](./media/cache-configure/redis-cache-reboot-cluster.png)
 
 Чтобы перезагрузить один или несколько узлов кэша, выберите необходимые узлы и нажмите кнопку **Перезагрузить**. Если у вас кэш уровня "Премиум" с включенной кластеризацией, выберите сегменты для перезагрузки и нажмите кнопку **Перезагрузить**. Через несколько минут выбранные узлы перезагрузятся, а еще через несколько минут — возобновят работу.
 
@@ -341,7 +333,7 @@ ms.locfileid: "72756800"
 
 В разделе **Мониторинг** можно настроить диагностику и мониторинг для кэша Azure для Redis. Дополнительные сведения о мониторинге и диагностике кэша Azure для Redis см. в статье [How to monitor Azure Cache for Redis](cache-how-to-monitor.md) (Как отслеживать кэш Azure для Redis).
 
-![Диагностика:](./media/cache-configure/redis-cache-diagnostics.png)
+![Диагностика](./media/cache-configure/redis-cache-diagnostics.png)
 
 * [Метрики Redis](#redis-metrics)
 * [Правила оповещения](#alert-rules)
@@ -350,13 +342,13 @@ ms.locfileid: "72756800"
 ### <a name="redis-metrics"></a>Метрики Redis
 Щелкните **Метрики Redis**, чтобы [просмотреть метрики](cache-how-to-monitor.md#view-cache-metrics) кэша.
 
-### <a name="alert-rules"></a>Правила генерации оповещений
+### <a name="alert-rules"></a>правила генерации оповещений
 
 Щелкните **Правила оповещения**, чтобы настроить оповещения на основе метрик кэша Azure для Redis. Дополнительные сведения см. в статье [Как отслеживать кэш Redis для Azure](cache-how-to-monitor.md#alerts).
 
-### <a name="diagnostics"></a>Диагностика:
+### <a name="diagnostics"></a>Диагностика
 
-По умолчанию в Azure Monitor метрики кэша [хранятся в течение 30 дней](../azure-monitor/platform/data-platform-metrics.md), а затем удаляются. Чтобы сохранить метрики кэша дольше, чем на 30 дней, щелкните **Диагностика**, чтобы [настроить учетную запись хранения](cache-how-to-monitor.md#export-cache-metrics), используемую для хранения диагностических данных кэша.
+По умолчанию в Azure Monitor метрики кэша [хранятся в течение 30 дней](../azure-monitor/platform/data-platform-metrics.md), а затем удаляются. Чтобы сохранить метрики кэша дольше, чем на 30 дней, щелкните **Диагностика**, чтобы [настроить учетную запись хранения](cache-how-to-monitor.md#export-cache-metrics), используемую для хранения диагностических данных кэша.
 
 >[!NOTE]
 >Помимо архивации метрик кэша в хранилище, их также можно передать [в концентратор событий или отправить в журналы Azure Monitor](../azure-monitor/platform/stream-monitoring-data-event-hubs.md).
@@ -371,7 +363,7 @@ ms.locfileid: "72756800"
 * [Работоспособность ресурса](#resource-health)
 * [Новый запрос в службу поддержки](#new-support-request)
 
-### <a name="resource-health"></a>Работоспособность ресурсов
+### <a name="resource-health"></a>Работоспособность ресурса
 Служба **работоспособности ресурсов** отслеживает ресурс и сообщает, работает ли он как ожидалось. Дополнительные сведения о службе работоспособности ресурсов Azure см. [здесь](../resource-health/resource-health-overview.md).
 
 > [!NOTE]
@@ -398,7 +390,7 @@ ms.locfileid: "72756800"
 > 
 > 
 
-| Параметр | Значение по умолчанию | Описание |
+| Настройка | Значение по умолчанию | ОПИСАНИЕ |
 | --- | --- | --- |
 | `databases` |16 |Количество баз данных по умолчанию — 16. Тем не менее можно указать другое количество в зависимости от ценовой категории<sup>1</sup>. По умолчанию используется база данных DB 0. Вы можете выбрать другую базу данных для отдельных подключений с помощью `connection.GetDatabase(dbid)`, где `dbid` — это число от `0` до `databases - 1`. |
 | `maxclients` |Зависит от ценовой категории.<sup>2</sup> |Это значение представляет собой максимально допустимое количество одновременно подключенных клиентов. После достижения предела Redis закрывает все новые подключения, возвращая сообщение об ошибке "max number of clients reached" (достигнуто максимальное количество клиентов). |
@@ -406,7 +398,7 @@ ms.locfileid: "72756800"
 | `maxmemory-samples` |3 |Для экономии памяти алгоритмы LRU и минимальный TTL являются не точными, а аппроксимированными алгоритмами. По умолчанию Redis проверяет три ключа и выбирает один, использовавшийся наиболее давно. |
 | `lua-time-limit` |5 000 |Максимальное время выполнения сценария Lua в миллисекундах. При достижении максимального времени выполнения Redis делает запись в журнале о нахождении данного сценария в процессе выполнения по истечении максимально допустимого времени и начинает отвечать на запросы ошибкой. |
 | `lua-event-limit` |500 |Максимальный размер очереди событий сценариев. |
-| `client-output-buffer-limit` `normalclient-output-buffer-limit` `pubsub` |0 0 032mb 8mb 60 |Ограничения буферов вывода клиентов можно использовать для принудительного отключения клиентов, по каким-либо причинам недостаточно быстро считывающим данные с сервера (распространенной причиной является неспособность клиента Pub/Sub поглощать сообщения так же быстро, как их производит издатель). Дополнительные сведения см. в [https://redis.io/topics/clients](https://redis.io/topics/clients). |
+| `client-output-buffer-limit` `normalclient-output-buffer-limit` `pubsub` |0 0 032mb 8mb 60 |Ограничения буферов вывода клиентов можно использовать для принудительного отключения клиентов, по каким-либо причинам недостаточно быстро считывающим данные с сервера (распространенной причиной является неспособность клиента Pub/Sub поглощать сообщения так же быстро, как их производит издатель). Дополнительные сведения можно найти здесь: [https://redis.io/topics/clients](https://redis.io/topics/clients). |
 
 <a name="databases"></a>
 <sup>1</sup> Для различных ценовых категорий кэша Azure для Redis предельное значение `databases` будет разным. Его можно указать при создании кэша. Если при создании кэша значение `databases` не указано, то используется значение по умолчанию — 16.
@@ -516,6 +508,6 @@ shard1>get myKey
 
 Сведения о перемещении ресурсов из одной группы ресурсов в другую, а также из одной подписки в другую см. в статье [Перемещение ресурсов в новую группу ресурсов или подписку](../azure-resource-manager/resource-group-move-resources.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 * Дополнительные сведения о работе с командами Redis см. в разделе [Как выполнять команды Redis?](cache-faq.md#how-can-i-run-redis-commands)
 

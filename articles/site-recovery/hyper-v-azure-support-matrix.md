@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/12/2019
 ms.author: raynew
-ms.openlocfilehash: 9c0ed5a28f865d5dd53b01f22eb69c7d1b332ecf
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: db334b873358fdab6671877dd66e7f49c334ac44
+ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74030098"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74133032"
 ---
 # <a name="support-matrix-for-disaster-recovery-of-on-premises-hyper-v-vms-to-azure"></a>Таблица поддержки аварийного восстановления локальных виртуальных машин Hyper-V в Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "74030098"
 
 **Сценарий** | **Дополнительные сведения**
 --- | ---
-Hyper-V с Virtual Machine Manager <br> **Этот сценарий имеет следующий путь.** <br>| Вы можете выполнять аварийное восстановление в Azure для виртуальных машин, работающих на узлах Hyper-V под управлением структуры System Center Virtual Machine Manager.<br/><br/> Этот сценарий можно развернуть с помощью портала Azure или PowerShell.<br/><br/> Если узлами Hyper-V управляет Virtual Machine Manager, вы можете также выполнять аварийное восстановление на вторичный локальный сайт. Дополнительные сведения об этом сценарии см. в [этом руководстве](hyper-v-vmm-disaster-recovery.md).
+Hyper-V с Virtual Machine Manager <br> <br>| Вы можете выполнять аварийное восстановление в Azure для виртуальных машин, работающих на узлах Hyper-V под управлением структуры System Center Virtual Machine Manager.<br/><br/> Этот сценарий можно развернуть с помощью портала Azure или PowerShell.<br/><br/> Если узлами Hyper-V управляет Virtual Machine Manager, вы можете также выполнять аварийное восстановление на вторичный локальный сайт. Дополнительные сведения об этом сценарии см. в [этом руководстве](hyper-v-vmm-disaster-recovery.md).
 Hyper-V без Virtual Machine Manager | Вы можете выполнять аварийное восстановление в Azure для виртуальных машин, работающих на узлах Hyper-V без управления Virtual Machine Manager.<br/><br/> Этот сценарий можно развернуть с помощью портала Azure или PowerShell.
 
 ## <a name="on-premises-servers"></a>Локальные серверы
@@ -134,7 +134,7 @@ Blob-блоки | Нет | Нет
 Хранилище уровня "Премиум" | Yes | Yes
 Служба импорта и экспорта | Нет | Нет
 Учетные записи хранения Azure с включенным брандмауэром | Да. Для целевого хранилища и кэша. | Да. Для целевого хранилища и кэша.
-Изменение учетной записи хранения | Нет. Невозможно изменить целевую учетную запись хранения Azure после включения репликации. Чтобы изменить, отключите и снова включите аварийное восстановление. | Нет
+Изменение учетной записи хранения | Нет Невозможно изменить целевую учетную запись хранения Azure после включения репликации. Чтобы изменить, отключите и снова включите аварийное восстановление. | Нет
 
 
 ## <a name="azure-compute-features"></a>Вычислительные компоненты Azure

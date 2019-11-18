@@ -10,12 +10,12 @@ ms.author: jmartens
 author: j-martens
 ms.date: 11/04/2019
 ms.custom: seodec18
-ms.openlocfilehash: 986e146e2129d26aa6accd747c89e12462d46667
-ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
+ms.openlocfilehash: cf9a57b58740d1a759e00f10f6f327d605e91148
+ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73931140"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74123644"
 ---
 # <a name="azure-machine-learning-release-notes"></a>Заметки о выпуске Машинное обучение Azure
 
@@ -228,7 +228,7 @@ ms.locfileid: "73931140"
     + Добавлена псутил как зависимость от `automl` и включена псутил как зависимость conda в амлкомпуте.
     + Исправлена проблема с эвристическими задержками и размерами окон для прогнозирования, в которых задаются некоторые ряды, которые могут вызвать ошибки линейной передвижения.
       + В тестовых запусках, которые были эвристически определены, добавлен параметр вывести на печать.
-  + **[azureml-от участников сообщества-пересмещение](https://docs.microsoft.com/python/api/azureml-contrib-datadrift)**
+  + **azureml-от участников сообщества-пересмещение**
     + Добавлена защита при создании метрик выходных данных, если смещение на уровне набора данных не находится в первом разделе.
   + **azureml-от участников сообщества-интерпретировать**
     + пакет azureml-от участников сообщества-объяснить-Model переименован в azureml-от участников сообщества-интерпретировать
@@ -280,16 +280,16 @@ ms.locfileid: "73931140"
         experiment2 = Experiment(workspace, "Active Experiment")
         experiment1.reactivate(new_name="Previous Active Experiment")
         ```
-        Список статических методов [()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment#list-workspace--experiment-name-none--view-type--activeonly--) в эксперименте может принимать фильтр имен и ViewType. Значения ViewType: "ACTIVE_ONLY", "ARCHIVED_ONLY" и "ALL". Пример: 
+        Список статических методов [()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment#list-workspace--experiment-name-none--view-type--activeonly---tags-none-) в эксперименте может принимать фильтр имен и ViewType. Значения ViewType: "ACTIVE_ONLY", "ARCHIVED_ONLY" и "ALL". Пример: 
         
         ```py
         archived_experiments = Experiment.list(workspace, view_type="ARCHIVED_ONLY")
         all_first_experiments = Experiment.list(workspace, name="First Experiment", view_type="ALL")
         ```
     + Поддержка использования среды для развертывания модели и обновления службы.
-  + **[azureml-смещение](https://docs.microsoft.com/python/api/azureml-contrib-datadrift)**
-    + Атрибут "показывать" класса [датадрифтдетектор](https://docs.microsoft.com/python/api/azureml-contrib-datadrift/azureml.contrib.datadrift.datadriftdetector.datadriftdetector) больше не поддерживает дополнительный аргумент "with_details". Атрибут Показать будет представлять собой только коэффициент смещения данных и вклад данных в столбцы компонентов.
-    + Изменения в поведении [get_output](https://docs.microsoft.com/python/api/azureml-contrib-datadrift/azureml.contrib.datadrift.datadriftdetector.datadriftdetector#get-output-start-time--end-time--run-id-none--daily-latest-only-true-) функции датадрифтдетектор:
+  + **[azureml-смещение](https://docs.microsoft.com/python/api/azureml-datadrift)**
+    + Атрибут "показывать" класса [датадрифтдетектор](https://docs.microsoft.com/python/api/azureml-datadrift/azureml.datadrift.datadriftdetector.datadriftdetector) больше не поддерживает дополнительный аргумент "with_details". Атрибут Показать будет представлять собой только коэффициент смещения данных и вклад данных в столбцы компонентов.
+    + Функция Датадрифтдетектор [get_output]https://docs.microsoft.com/python/api/azureml-datadrift/azureml.datadrift.datadriftdetector.datadriftdetector#get-output-start-time-none--end-time-none--run-id-none-) изменения поведения:
       + Входной параметр start_time, end_time являются необязательными, а не обязательными;
       + Входные start_time и (или) end_time с конкретными run_id в одном вызове приведут к возникновению исключения ошибки значения, так как они являются взаимоисключающими. 
       + При вводе конкретных start_time и (или) end_time возвращаются только результаты запланированных выполнений. 
@@ -909,7 +909,7 @@ ms.locfileid: "73931140"
 + **Функции предварительной версии**
     + Интеграция с отслеживанием [млфлов](https://mlflow.org) 1.0.0 с помощью пакета azureml-млфлов ([примеры записных книжек](https://aka.ms/azureml-mlflow-examples)).
     + Отправка записной книжки Jupyter в качестве запуска. [Справочная документация по API](https://docs.microsoft.com/python/api/azureml-contrib-notebook/azureml.contrib.notebook?view=azure-ml-py)
-    + Общедоступная Предварительная версия [детектора](https://docs.microsoft.com/python/api/azureml-contrib-datadrift/azureml.contrib.datadrift?view=azure-ml-py) расхождения данных с помощью пакета azureml-от участников сообщества-данные ([примеры записных книжек](https://aka.ms/azureml-datadrift-example)). Смещение данных — одна из основных причин снижения точности модели с течением времени. Это происходит, когда данные, которые передается в модель в рабочей среде, отличаются от данных, на которых была обучена модель. Средство обнаружения смещения данных AML помогает клиенту отслеживать смещение данных и отправлять предупреждения при каждом обнаружении смещения. 
+    + Общедоступная Предварительная версия [детектора](https://docs.microsoft.com/python/api/azureml-datadrift/azureml.datadrift.datadriftdetector(class)) расхождения данных с помощью пакета azureml-от участников сообщества-данные ([примеры записных книжек](https://aka.ms/azureml-datadrift-example)). Смещение данных — одна из основных причин снижения точности модели с течением времени. Это происходит, когда данные, которые передается в модель в рабочей среде, отличаются от данных, на которых была обучена модель. Средство обнаружения смещения данных AML помогает клиенту отслеживать смещение данных и отправлять предупреждения при каждом обнаружении смещения. 
 
 + **Критические изменения**
 

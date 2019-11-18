@@ -1,19 +1,15 @@
 ---
-title: Устранение распространенных ошибок развертывания в Azure | Документация Майкрософт
+title: Устранение стандартных ошибок развертывания
 description: Описывается устранение распространенных ошибок при развертывании ресурсов в Azure с помощью Azure Resource Manager.
 tags: top-support-issue
-author: tfitzmac
-keywords: ошибка развертывания, развертывание Azure, развернуть в Azure
-ms.service: azure-resource-manager
 ms.topic: troubleshooting
 ms.date: 10/04/2019
-ms.author: tomfitz
-ms.openlocfilehash: bba59d024e253c8d05aa75123be5e3f13699f72e
-ms.sourcegitcommit: b4665f444dcafccd74415fb6cc3d3b65746a1a31
+ms.openlocfilehash: 27f3b9db40e00ea0a00e50333fe86248906d8560
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72263036"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74150650"
 ---
 # <a name="troubleshoot-common-azure-deployment-errors-with-azure-resource-manager"></a>Устранение распространенных ошибок развертывания в Azure с помощью Azure Resource Manager | Microsoft Azure
 
@@ -168,7 +164,7 @@ New-AzResourceGroupDeployment `
 
 Эти сведения помогут определить, правильно ли задано то или иное значение в шаблоне.
 
-### <a name="azure-cli"></a>Инфраструктура CLI Azure
+### <a name="azure-cli"></a>Интерфейс командной строки Azure
 
 В настоящее время Azure CLI не поддерживает ведение журнала отладки, но вы можете его получить.
 
@@ -250,8 +246,8 @@ az group deployment operation list \
 Или Предположим, что вы получаете ошибки развертывания, которые, по вашему мнению, связаны с неправильной настройкой зависимостей. Проверьте шаблон, разбив его на более простые шаблоны. Сначала создайте шаблон, который развертывает только один ресурс (например, SQL Server). Если вы уверены, что ресурс правильно определен, добавьте зависящий от него ресурс (например, базу данных SQL). Проверив правильность определения этих двух ресурсов, добавьте другие зависимые ресурсы (например, политики аудита). В перерывах между тестовыми развертываниями удаляйте группу ресурсов, чтобы гарантировать адекватную проверку зависимостей.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
-* Руководство по устранению неполадок см. в разделе [Tutorial: Troubleshoot Resource Manager template deployments](./resource-manager-tutorial-troubleshoot.md) (Руководство. Устранение неполадок развертывания шаблонов Resource Manager)
+* Инструкции по устранению неполадок см. в разделе [учебник. Устранение неполадок при развертывании шаблонов диспетчер ресурсов](./resource-manager-tutorial-troubleshoot.md)
 * Сведения о действиях аудита см. в статье [Операции аудита с помощью Resource Manager](resource-group-audit.md).
 * Дополнительные сведения об определении ошибок во время развертывания см. в статье [Просмотр операций развертывания с помощью портала Azure](resource-manager-deployment-operations.md).

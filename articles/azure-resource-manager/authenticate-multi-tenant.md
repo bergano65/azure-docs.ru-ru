@@ -1,17 +1,14 @@
 ---
-title: Аутентификация в клиентах — Azure Resource Manager
+title: Аутентификация в клиентах
 description: В этой статье описывается, как Azure Resource Manager обрабатывает запросы на аутентификацию в разных клиентах.
-author: tfitzmac
-ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 10/11/2019
-ms.author: tomfitz
-ms.openlocfilehash: b85ed32ac333402caeca4901e4d91bbe4d1d112c
-ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
+ms.openlocfilehash: 1dccfc522179cd88e69bc5a58307b343aaef8f9e
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2019
-ms.locfileid: "72300348"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74149981"
 ---
 # <a name="authenticate-requests-across-tenants"></a>Запросы на аутентификацию в разных клиентах
 
@@ -21,10 +18,10 @@ ms.locfileid: "72300348"
 
 Запрос содержит следующие значения заголовков аутентификации.
 
-| Имя заголовка | Описание | Пример значения |
+| Имя заголовка | ОПИСАНИЕ | Пример значения |
 | ----------- | ----------- | ------------ |
-| Authorization | Основной токен | Bearer &lt;основной_токен&gt; |
-| x-ms-authorization-auxiliary | Вспомогательные токены | Bearer &lt;auxiliary-токен1 @ no__t-1, Енкриптедбеарер &lt;auxiliary-токен2 @ no__t-3, Bearer &lt;auxiliary-token3 @ no__t-5 |
+| Авторизация | Основной токен | Bearer &lt;основной_токен&gt; |
+| x-ms-authorization-auxiliary | Вспомогательные токены | Носитель &lt;вспомогательная токен1&gt;, Енкриптедбеарер &lt;вспомогательная токен2&gt;, Bearer &lt;вспомогательная token3&gt; |
 
 Дополнительный заголовок может содержать до трех вспомогательных токенов. 
 
@@ -36,7 +33,7 @@ ms.locfileid: "72300348"
 
 Если запрос ссылается на ресурс из другого клиента, Resource Manager проверяет вспомогательные токены, чтобы определить, может ли запрос быть обработан. Все вспомогательные токены в заголовке должны быть допустимыми и действующими. Если срок действия токена истек, Resource Manager возвращает код отклика 401. Ответ включает идентификатор клиента и идентификатор арендатора токена, который недопустим. Если дополнительный заголовок содержит допустимый для клиента токен, запрос между клиентами обрабатывается.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 * Дополнительные сведения о запросах проверки подлинности см. в разделе [потоки проверки подлинности и сценарии приложений](../active-directory/develop/authentication-flows-app-scenarios.md).
 * Дополнительные сведения о токенах см. в статье [Маркеры доступа в Azure Active Directory](../active-directory/develop/access-tokens.md).

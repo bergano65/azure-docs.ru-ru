@@ -3,29 +3,31 @@ title: Атрибуты журнала сущностей Academic Knowledge API
 titlesuffix: Azure Cognitive Services
 description: Изучите атрибуты, которые можно использовать совместно с сущностью журнала в Academic Knowledge API в Cognitive Services.
 services: cognitive-services
-author: alch-msft
-manager: nitinme
+author: darrine
+manager: kuansanw
 ms.service: cognitive-services
 ms.subservice: academic-knowledge
 ms.topic: conceptual
-ms.date: 03/23/2017
-ms.author: alch
+ms.date: 11/14/2019
+ms.author: darrine
 ROBOTS: NOINDEX
-ms.openlocfilehash: 93868bb014809693e7614e74bde7db864de95c04
-ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
+ms.openlocfilehash: 72c3cc0a86b3d79cef9d8e9af5846817566fe904
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68704961"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74143892"
 ---
 # <a name="journal-entity"></a>Сущность журнала
 
-<sub> *Следующие атрибуты относятся к сущностям журнала. (Ty = '2') </sub>
+> [!NOTE]
+> Следующие атрибуты относятся к сущности журнала. (Ty = ' 2 ')
 
-Название    |Описание                            |Type       | Операции
-------- | ------------------------------------- | --------- | ----------------------------
-Id      |Идентификатор сущности                              |Int64      |Равно
-DJN     |Нормализованное имя журнала                |Строковое     |none
-JN      |Отображаемое имя журнала                   |Строковое     |Равно
-Копия      |Общий показатель цитируемости журнала           |Int32      |none  
-ECC     |Общий расчетный показатель цитируемости журнала |Int32      |none
+имя | ОПИСАНИЕ | введите | Операции
+--- | --- | --- | ---
+CC      |Общий показатель цитируемости журнала           |Int32      |Нет  
+DJN     |Отображаемое имя журнала               |Строка,     |Нет
+ECC     |Общий расчетный показатель цитируемости журнала |Int32      |Нет
+JN      |Нормализованное имя журнала                    |Строка,     |Равно
+id      |Идентификатор сущности                              |Int64      |Равно
+PC    |Общее число публикаций в журнале | Int32 | Нет

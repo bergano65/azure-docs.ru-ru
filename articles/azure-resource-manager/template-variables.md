@@ -1,17 +1,14 @@
 ---
-title: Переменные в шаблонах Azure Resource Manager
+title: Переменные в шаблонах
 description: Описывает определение переменных в шаблоне Azure Resource Manager.
-author: tfitzmac
-ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 09/05/2019
-ms.author: tomfitz
-ms.openlocfilehash: 5ed6bb58f2f45de557f2127fdc8abd5cdf2ef965
-ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
+ms.openlocfilehash: 5bd7acd759c553e629febdb141aefd63cfa4dd4b
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70384038"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74149086"
 ---
 # <a name="variables-in-azure-resource-manager-template"></a>Переменные в шаблоне Azure Resource Manager
 
@@ -31,7 +28,7 @@ ms.locfileid: "70384038"
 
 Нельзя использовать функцию [Reference](resource-group-template-functions-resource.md#reference) или любую из функций [List](resource-group-template-functions-resource.md#list) в разделе Variables. Эти функции получают состояние среды выполнения ресурса и не могут быть выполнены до развертывания при разрешении переменных.
 
-## <a name="use-variable"></a>Использовать переменную
+## <a name="use-variable"></a>Использование переменной
 
 В шаблоне ссылка на значение параметра осуществляется с помощью функции [Variables](resource-group-template-functions-deployment.md#variables) . В следующем примере показано, как использовать переменную для свойства ресурса.
 
@@ -88,13 +85,13 @@ ms.locfileid: "70384038"
 
 В следующих примерах демонстрируются сценарии использования переменных.
 
-|Шаблон  |Описание  |
+|шаблона  |ОПИСАНИЕ  |
 |---------|---------|
 | [variable definitions](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/variables.json) | Демонстрирует различные типы переменных. Шаблон не развертывает ресурсы. При его помощи только создаются и возвращаются значения переменных. |
 | [configuration variable](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/variablesconfigurations.json) | Демонстрирует использование переменной, определяющей значения конфигурации. Шаблон не развертывает ресурсы. При его помощи только создаются и возвращаются значения переменных. |
 | [network security rules](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/multipleinstance/multiplesecurityrules.json) и [parameter file](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/multipleinstance/multiplesecurityrules.parameters.json) | Отвечает за создание массива в правильном формате для назначения правил безопасности в группе безопасности сети. |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 * Дополнительные сведения о доступных свойствах переменных см. в разделе Общие сведения о [структуре и синтаксисе шаблонов Azure Resource Manager](resource-group-authoring-templates.md).
 * Рекомендации по созданию переменных см. в разделе рекомендации [— переменные](template-best-practices.md#variables).

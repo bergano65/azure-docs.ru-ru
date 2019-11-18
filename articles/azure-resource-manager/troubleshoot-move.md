@@ -1,17 +1,14 @@
 ---
-title: Устранение ошибок при перемещении — Azure Resource Manager
+title: Устранение ошибок при перемещении
 description: Перемещайте ресурсы в новую группу ресурсов или новую подписку с помощью Azure Resource Manager.
-author: tfitzmac
-ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 08/27/2019
-ms.author: tomfitz
-ms.openlocfilehash: 383098ab227013119bca668b42035c93334c8464
-ms.sourcegitcommit: 6eecb9a71f8d69851bc962e2751971fccf29557f
+ms.openlocfilehash: 46fedeb8b50b19a0adc34b2099e7e76b888821f6
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72533356"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74149106"
 ---
 # <a name="troubleshoot-moving-azure-resources-to-new-resource-group-or-subscription"></a>Устранение неполадок при перемещении ресурсов Azure в новую группу ресурсов или подписку
 
@@ -49,6 +46,6 @@ ms.locfileid: "72533356"
 
 При возникновении этой ошибки у вас есть два варианта. Либо переместите ресурсы в группу ресурсов без виртуальной сети, либо [обратитесь в службу поддержки](../azure-supportability/how-to-create-azure-support-request.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Команды для перемещения ресурсов см. в статье [Перемещение ресурсов в новую группу ресурсов или подписку](resource-group-move-resources.md).

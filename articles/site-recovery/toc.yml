@@ -361,8 +361,8 @@
               href: hyper-v-azure-failback.md
         - name: Управление
           items:
-            - name: 'Прекращение поддержки аварийного восстановления между сайтами, принадлежащим клиентам'
-              href: site-to-site-deprecation.md
+            - name: Объявление шифрования данных Site Recovery нерекомендуемым
+              href: encryption-feature-deprecation.md
             - name: 'Обновление серверов с Windows, настроенных с помощью Site Recovery'
               href: upgrade-2012R2-to-2016.md
             - name: Удаление серверов и отключение защиты

@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/06/2019
 ms.author: raynew
-ms.openlocfilehash: 76b34e11bba00105792ac5163c5163184c185e09
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 1126a85ed22ee17879767a93ca75dc76dd04b747
+ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74039627"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74132964"
 ---
 # <a name="support-matrix-for-disaster-recovery-of-hyper-v-vms-to-a-secondary-site"></a>Матрица поддержки аварийного восстановления виртуальных машин Hyper-V на дополнительный сайт
 
@@ -20,9 +20,6 @@ ms.locfileid: "74039627"
 
 > [!NOTE]
 > Вы можете выполнить репликацию на дополнительный сайт, только если управление узлами Hyper-V осуществляется в облаках VMM.
-
-> [!WARNING]
-> Обратите внимание, что поддержка ASR для использования конфигурации SCVMM скоро станет устаревшей, поэтому мы рекомендуем ознакомиться со сведениями об [устаревании](site-to-site-deprecation.md) , прежде чем продолжать.
 
 
 ## <a name="host-servers"></a>Серверы узлов
@@ -67,7 +64,7 @@ Windows Server 2012 R2 | Любая операционная система на
 Гостевая виртуальная машина — несколько сетевых адаптеров | Yes
 
 
-## <a name="storage"></a>служба хранилища.
+## <a name="storage"></a>Служба хранилища
 
 ### <a name="host-storage"></a>Хранилище узла
 

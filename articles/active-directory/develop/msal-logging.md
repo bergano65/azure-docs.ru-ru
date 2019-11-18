@@ -13,17 +13,17 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 10/31/2019
+ms.date: 11/11/2019
 ms.author: twhitney
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e9045fd6c1f5dcc4587b6ff85d567584f02421ba
-ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
+ms.openlocfilehash: 97ea1c5260d1082619d59a2b8614a0ba7e9181a8
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2019
-ms.locfileid: "73902903"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74145169"
 ---
 # <a name="logging-in-msal-applications"></a>Ведение журнала в приложениях MSAL
 
@@ -41,6 +41,10 @@ MSAL предоставляет несколько уровней детализ
 ## <a name="personal-and-organizational-data"></a>Персональные данные и данные организации
 
 По умолчанию средство ведения журнала MSAL не захватывает данные личного или организационного уровня. В библиотеке предусмотрен параметр для включения ведения журнала личных данных и организации, если вы решите это сделать.
+
+Чтобы получить подробные сведения о ведении журнала MSAL на определенном языке, выберите вкладку, соответствующую вашему языку:
+
+## <a name="nettabdotnet"></a>[.NET](#tab/dotnet)
 
 ## <a name="logging-in-msalnet"></a>Ведение журнала в MSAL.NET
 
@@ -80,6 +84,8 @@ class Program
   }
  }
  ```
+
+## <a name="androidtabandroid"></a>[Android](#tab/android)
 
 ## <a name="logging-in-msal-for-android-using-java"></a>Вход в MSAL для Android с помощью Java
 
@@ -123,7 +129,7 @@ Logger.getInstance().setEnablePII(false);
 Logger.getInstance().setEnableLogcatLog(true);
 ```
 
-## <a name="logging-in-msaljs"></a>Ведение журнала в MSAL.js
+## <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
  Включите ведение журнала в MSAL. js (JavaScript), передав объект средства ведения журнала во время настройки для создания экземпляра `UserAgentApplication`. Этот объект средства ведения журнала имеет следующие свойства.
 
@@ -155,7 +161,9 @@ var msalConfig = {
 var UserAgentApplication = new Msal.UserAgentApplication(msalConfig);
 ```
 
-## <a name="logging-in-msal-for-ios-and-macos"></a>Вход в MSAL для iOS и macOS
+## <a name="objective-ctabobjc"></a>[Objective-C](#tab/objc)
+
+## <a name="msal-for-ios-and-macos-logging-objc"></a>MSAL для iOS и macOS Logging-ObjC
 
 Настройте обратный вызов для записи журнала MSAL и его включения в журнал своего приложения. Сигнатура для обратного вызова выглядит следующим образом:
 
@@ -176,7 +184,6 @@ typedef void (^MSALLogCallback)(MSALLogLevel level, NSString *message, BOOL cont
 
 Например,
 
-Objective-C
 ```objc
 [MSALGlobalConfig.loggerConfig setLogCallback:^(MSALLogLevel level, NSString *message, BOOL containsPII)
     {
@@ -190,7 +197,71 @@ Objective-C
     }];
 ```
 
-Swift
+### <a name="personal-data"></a>Персональные данные
+
+По умолчанию MSAL не собирает и не регистрирует личные данные (PII). Библиотека позволяет разработчикам приложений включать это через свойство в классе Мсаллогжер. При включении `pii.Enabled`приложение отвечает за безопасную обработку данных с высоким уровнем конфиденциальности и соблюдение нормативных требований.
+
+```objc
+// By default, the `MSALLogger` doesn't capture any PII
+
+// PII will be logged
+MSALGlobalConfig.loggerConfig.piiEnabled = YES;
+
+// PII will NOT be logged
+MSALGlobalConfig.loggerConfig.piiEnabled = NO;
+```
+
+### <a name="logging-levels"></a>Уровни ведения журнала
+
+Чтобы задать уровень ведения журнала при использовании MSAL для iOS и macOS, используйте одно из следующих значений:
+
+|уровень  |ОПИСАНИЕ |
+|---------|---------|
+| `MSALLogLevelNothing`| Отключить ведение журнала |
+| `MSALLogLevelError` | Уровень по умолчанию, выводит сведения только при возникновении ошибок |
+| `MSALLogLevelWarning` | Предупреждения |
+| `MSALLogLevelInfo` |  Точки входа библиотеки с параметрами и различными операциями цепочки ключей |
+|`MSALLogLevelVerbose`     |  Трассировка API |
+
+Например,
+
+```objc
+MSALGlobalConfig.loggerConfig.logLevel = MSALLogLevelVerbose;
+ ```
+
+ ### <a name="log-message-format"></a>Формат сообщения журнала
+
+Часть сообщения журнала MSAL имеет формат `TID = <thread_id> MSAL <sdk_ver> <OS> <OS_ver> [timestamp - correlation_id] message`
+
+Например,
+
+`TID = 551563 MSAL 0.2.0 iOS Sim 12.0 [2018-09-24 00:36:38 - 36764181-EF53-4E4E-B3E5-16FE362CFC44] acquireToken returning with error: (MSALErrorDomain, -42400) User cancelled the authorization session.`
+
+Предоставление идентификаторов корреляции и отметок времени полезно для отслеживания проблем. Сведения о метке времени и ИДЕНТИФИКАТОРе корреляции доступны в сообщении журнала. Единственное надежное место для извлечения — это MSAL сообщения ведения журнала.
+
+## <a name="swifttabswift"></a>[Swift](#tab/swift)
+
+## <a name="msal-for-ios-and-macos-logging-swift"></a>Журналы MSAL для iOS и macOS — SWIFT
+
+Настройте обратный вызов для записи журнала MSAL и его включения в журнал своего приложения. Сигнатура (представленная в цели-C) для обратного вызова выглядит следующим образом:
+
+```objc
+/*!
+    The LogCallback block for the MSAL logger
+ 
+    @param  level           The level of the log message
+    @param  message         The message being logged
+    @param  containsPII     If the message might contain Personally Identifiable Information (PII)
+                            this will be true. Log messages possibly containing PII will not be
+                            sent to the callback unless PIllLoggingEnabled is set to YES on the
+                            logger.
+
+ */
+typedef void (^MSALLogCallback)(MSALLogLevel level, NSString *message, BOOL containsPII);
+```
+
+Например,
+
 ```swift
 MSALGlobalConfig.loggerConfig.setLogCallback { (level, message, containsPII) in
     if let message = message, !containsPII
@@ -207,18 +278,6 @@ MSALGlobalConfig.loggerConfig.setLogCallback { (level, message, containsPII) in
 
 По умолчанию MSAL не собирает и не регистрирует личные данные (PII). Библиотека позволяет разработчикам приложений включать это через свойство в классе Мсаллогжер. При включении `pii.Enabled`приложение отвечает за безопасную обработку данных с высоким уровнем конфиденциальности и соблюдение нормативных требований.
 
-Objective-C
-```objc
-// By default, the `MSALLogger` doesn't capture any PII
-
-// PII will be logged
-MSALGlobalConfig.loggerConfig.piiEnabled = YES;
-
-// PII will NOT be logged
-MSALGlobalConfig.loggerConfig.piiEnabled = NO;
-```
-
-Swift
 ```swift
 // By default, the `MSALLogger` doesn't capture any PII
 
@@ -243,12 +302,6 @@ MSALGlobalConfig.loggerConfig.piiEnabled = false
 
 Например,
 
-Objective-C
-```objc
-MSALGlobalConfig.loggerConfig.logLevel = MSALLogLevelVerbose;
- ```
- 
- Swift
 ```swift
 MSALGlobalConfig.loggerConfig.logLevel = .verbose
  ```
@@ -263,9 +316,11 @@ MSALGlobalConfig.loggerConfig.logLevel = .verbose
 
 Предоставление идентификаторов корреляции и отметок времени полезно для отслеживания проблем. Сведения о метке времени и ИДЕНТИФИКАТОРе корреляции доступны в сообщении журнала. Единственное надежное место для извлечения — это MSAL сообщения ведения журнала.
 
-## <a name="logging-in-msal-for-java"></a>Вход в MSAL для Java
+## <a name="javatabjava"></a>[Java](#tab/java)
 
-MSAL for Java (MSAL4J) позволяет использовать библиотеку ведения журналов, которая уже используется в приложении, при условии, что оно совместимо с SLF4J. MSAL4j использует [Простое ведение журнала фасад для Java](http://www.slf4j.org/) (SLF4J) в качестве простой фасадной или абстракции для различных платформ ведения журналов, таких как [Java. util. Logging](https://docs.oracle.com/javase/7/docs/api/java/util/logging/package-summary.html), [Logback](http://logback.qos.ch/) и [log4j](https://logging.apache.org/log4j/2.x/). SLF4J позволяет конечному пользователю подключаться к нужной инфраструктуре ведения журналов во время развертывания.
+## <a name="msal-for-java-logging"></a>MSAL для ведения журнала Java
+
+MSAL for Java (MSAL4J) позволяет использовать библиотеку ведения журналов, которая уже используется в приложении, при условии, что оно совместимо с SLF4J. MSAL4j использует [Простое ведение журнала фасад для Java](http://www.slf4j.org/) (SLF4J) в качестве простой фасадной или абстракции для различных платформ ведения журналов, таких как [Java. util. Logging](https://docs.oracle.com/javase/7/docs/api/java/util/logging/package-summary.html), [Logback](http://logback.qos.ch/) и [log4j](https://logging.apache.org/log4j/2.x/). SLF4J позволяет пользователю подключаться к нужной инфраструктуре ведения журналов во время развертывания.
 
 Например, чтобы использовать Logback в качестве платформы ведения журнала в приложении, добавьте зависимость Logback в файл Maven POM для вашего приложения:
 
@@ -310,3 +365,35 @@ PublicClientApplication app2 = PublicClientApplication.builder(PUBLIC_CLIENT_ID)
         .logPii(true)
         .build();
 ```
+
+## <a name="pythontabpython"></a>[Python](#tab/python)
+
+## <a name="msal-for-python-logging"></a>MSAL для ведения журнала Python
+
+Ведение журнала в MSAL Python использует стандартный механизм ведения журнала Python, например `logging.info("msg")` можно настроить ведение журнала MSAL следующим образом (и увидеть его в действии в [username_password_sample](https://github.com/AzureAD/microsoft-authentication-library-for-python/blob/1.0.0/sample/username_password_sample.py#L31L32)):
+
+### <a name="enable-debug-logging-for-all-modules"></a>Включить ведение журнала отладки для всех модулей
+
+По умолчанию ведение журнала в любом сценарии Python отключено. Если вы хотите включить ведение журнала отладки для всех модулей во всем сценарии Python, используйте:
+
+```python
+logging.basicConfig(level=logging.DEBUG)
+```
+
+### <a name="silence-only-msal-logging"></a>Ведение журнала MSAL только бездействия
+
+Чтобы безвозвратно вести журнал MSAL Library и включить ведение журнала отладки во всех остальных модулях скрипта Python, отключите средство ведения журнала, используемое MSAL Python:
+
+```Python
+logging.getLogger("msal").setLevel(logging.WARN)
+```
+
+### <a name="personal-and-organizational-data-in-python"></a>Личные и организационные данные в Python
+
+MSAL для Python не регистрирует персональные данные или данные Организации. Отсутствует свойство для включения или отключения ведения журнала личных данных или организации.
+
+Вы можете использовать стандартное ведение журнала Python, чтобы заносить в журнал любые нужные данные, но вы несете ответственность за безопасную обработку конфиденциальных данных и соблюдение нормативных требований.
+
+Дополнительные сведения о ведении журнала в Python см. в статье [Практическое руководство по ведению журнала](https://docs.python.org/3/howto/logging.html#logging-basic-tutorial)Python.
+
+---

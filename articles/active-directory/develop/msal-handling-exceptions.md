@@ -13,16 +13,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 09/08/2019
+ms.date: 11/13/2019
 ms.author: twhitney
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: fe8483bd6055acb0a2c741192ec80211b9969a16
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.openlocfilehash: 5bfc5e6471d768b89a66610a2618bc1a44cf709d
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73175872"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74145931"
 ---
 # <a name="handle-msal-exceptions-and-errors"></a>Обработку исключений и ошибок MSAL
 
@@ -40,7 +40,7 @@ ms.locfileid: "73175872"
 
 Полный список ошибок содержится в [перечислении мсалеррор](https://github.com/AzureAD/microsoft-authentication-library-for-objc/blob/master/MSAL/src/public/MSALError.h#L128).
 
-Все ошибки, вызванные MSAL, возвращаются с доменом `MSALErrorDomain`. 
+Все ошибки, вызванные MSAL, возвращаются с доменом `MSALErrorDomain`.
 
 Для системных ошибок MSAL возвращает исходный `NSError` из системного API. Например, если получение маркера завершается неудачей из-за нехватки сетевого подключения, MSAL возвращает ошибку с доменом `NSURLErrorDomain` и `NSURLErrorNotConnectedToInternet` кодом.
 
@@ -242,6 +242,17 @@ Swift
     application.acquireTokenSilent(with: silentParameters, completionBlock: completionBlock)
 ```
 
+## <a name="msal-for-python-error-handling"></a>MSAL для обработки ошибок Python
+
+В MSAL для Python большинство ошибок передаются как возвращаемое значение из вызова API. Эта ошибка представлена в виде словаря, содержащего ответ JSON от платформы Microsoft Identity.
+
+* Успешный ответ содержит ключ `"access_token"`. Формат ответа определяется протоколом OAuth2. Дополнительные сведения см. в статье [5,1 (успешный ответ](https://tools.ietf.org/html/rfc6749#section-5.1) ).
+* Ответ об ошибке содержит `"error"` и обычно `"error_description"`. Формат ответа определяется протоколом OAuth2. Дополнительные сведения см. в разделе [5,2. ответ об ошибке](https://tools.ietf.org/html/rfc6749#section-5.2)
+
+При возвращении ошибки ключ `"error_description"` содержит удобное для чтения сообщение. который, в свою очередь, обычно содержит код ошибки платформы Microsoft Identity. Дополнительные сведения о различных кодах ошибок см. в разделе [коды ошибок проверки подлинности и авторизации](https://docs.microsoft.com/azure/active-directory/develop/reference-aadsts-error-codes).
+
+В MSAL для Python исключения редки, поскольку большинство ошибок обрабатывается возвратом значения ошибки. Исключение `ValueError` возникает только в том случае, если возникла ошибка при попытке использования библиотеки, например, если параметры API имеют неправильный формат.
+
 ## <a name="net-exceptions"></a>Исключения .NET
 
 При обработке исключений вы можете различать их по типам исключений и элементу `ErrorCode`. `ErrorCode` значения являются константами типа [мсалеррор](/dotnet/api/microsoft.identity.client.msalerror?view=azure-dotnet).
@@ -275,7 +286,7 @@ Swift
 
 MSAL предоставляет поле `Classification`, которое можно прочитать, чтобы обеспечить более удобный пользовательский интерфейс, например сообщить пользователю о том, что срок действия пароля истек или что ему нужно предоставить согласие на использование некоторых ресурсов. Поддерживаемые значения являются частью перечисления `UiRequiredExceptionClassification`.
 
-| классификация;    | Значение           | Рекомендуемая обработка |
+| Классификация    | Значение           | Рекомендуемая обработка |
 |-------------------|-------------------|----------------------|
 | басикактион | Условие может быть разрешено путем взаимодействия с пользователем во время интерактивного потока проверки подлинности. | Вызовите Аккуиретокенинтерактивели (). |
 | аддитионалактион | Условие может быть разрешено дополнительным удаленным носителем с системой за пределами интерактивного потока проверки подлинности. | Вызовите Аккуиретокенинтерактивели (), чтобы отобразить сообщение с объяснением действия по воссозданию носителя. Вызывающее приложение может скрыть потоки, требующие additional_action, если пользователь вряд ли будет выполнять действие по восвыполнению. |
@@ -344,7 +355,6 @@ catch (MsalUiRequiredException ex) when (ex.ErrorCode == MsalError.InvalidGrantE
  }
 }
 ```
-
 
 ## <a name="javascript-errors"></a>Ошибки JavaScript
 

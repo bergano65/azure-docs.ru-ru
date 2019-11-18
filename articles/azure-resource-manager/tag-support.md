@@ -1,17 +1,14 @@
 ---
-title: Поддержка тегов Azure Resource Manager для ресурсов
+title: Поддержка тегов для ресурсов
 description: В этой статье описываются типы ресурсов Azure, поддерживающие теги, а также приводятся сведения о всех службах Azure.
-author: tfitzmac
-ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 10/27/2019
-ms.author: tomfitz
-ms.openlocfilehash: 6b64eb955476a8ab5307b7d508484c290fd7660a
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: c0f36568bbbf824285cfaa3385d2225e0a989639
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73162173"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74149212"
 ---
 # <a name="tag-support-for-azure-resources"></a>Поддержка тегов для ресурсов Azure
 В этой статье приводятся сведения о поддержке типом ресурса функции [тегов](resource-group-using-tags.md). Столбец с подписью **поддерживает теги** . указывает, имеет ли тип ресурса свойство для тега. Столбец с меткой **тег в отчете о затратах** указывает, передает ли этот тип ресурса тег в отчет о затратах.
@@ -20,162 +17,162 @@ ms.locfileid: "73162173"
 
 Переход к пространству имен поставщика ресурсов:
 > [!div class="op_single_selector"]
-> - [Microsoft. AAD](#microsoftaad)
-> - [Надстройки Microsoft.](#microsoftaddons)
-> - [Microsoft. Адхибридхеалссервице](#microsoftadhybridhealthservice)
-> - [Microsoft. Advisor](#microsoftadvisor)
-> - [Microsoft. Алертсманажемент](#microsoftalertsmanagement)
-> - [Microsoft. AnalysisServices](#microsoftanalysisservices)
+> - [Microsoft.AAD](#microsoftaad)
+> - [Microsoft.Addons](#microsoftaddons)
+> - [Microsoft.ADHybridHealthService](#microsoftadhybridhealthservice)
+> - [Microsoft.Advisor](#microsoftadvisor)
+> - [Microsoft.AlertsManagement](#microsoftalertsmanagement)
+> - [Microsoft.AnalysisServices](#microsoftanalysisservices)
 > - [Microsoft.ApiManagement](#microsoftapimanagement)
-> - [Microsoft. Аппконфигуратион](#microsoftappconfiguration)
+> - [Microsoft.AppConfiguration](#microsoftappconfiguration)
 > - [Microsoft. Аппплатформ](#microsoftappplatform)
-> - [Microsoft. Аттестация](#microsoftattestation)
+> - [Microsoft.Attestation](#microsoftattestation)
 > - [Microsoft.Authorization](#microsoftauthorization)
 > - [Microsoft.Automation](#microsoftautomation)
-> - [Microsoft. Азконфиг](#microsoftazconfig)
-> - [Microsoft. Azure. Geneva](#microsoftazuregeneva)
-> - [Microsoft. AzureActiveDirectory](#microsoftazureactivedirectory)
-> - [Microsoft. Азуредата](#microsoftazuredata)
-> - [Microsoft. AzureStack](#microsoftazurestack)
-> - [Microsoft. Batch](#microsoftbatch)
-> - [Microsoft. выставление счетов](#microsoftbilling)
-> - [Microsoft. BingMaps](#microsoftbingmaps)
-> - [Microsoft. Блокчейн](#microsoftblockchain)
-> - [Microsoft. чертеж](#microsoftblueprint)
-> - [Microsoft. Ботсервице](#microsoftbotservice)
+> - [Microsoft.Azconfig](#microsoftazconfig)
+> - [Microsoft.Azure.Geneva](#microsoftazuregeneva)
+> - [Microsoft.AzureActiveDirectory](#microsoftazureactivedirectory)
+> - [Microsoft.AzureData](#microsoftazuredata)
+> - [Microsoft.AzureStack](#microsoftazurestack)
+> - [Microsoft.Batch](#microsoftbatch)
+> - [Microsoft.Billing](#microsoftbilling)
+> - [Microsoft.BingMaps](#microsoftbingmaps)
+> - [Microsoft.Blockchain](#microsoftblockchain)
+> - [Microsoft.Blueprint](#microsoftblueprint)
+> - [Microsoft.BotService](#microsoftbotservice)
 > - [Microsoft.Cache](#microsoftcache)
-> - [Microsoft. Capacity](#microsoftcapacity)
+> - [Microsoft.Capacity](#microsoftcapacity)
 > - [Microsoft.Cdn](#microsoftcdn)
-> - [Microsoft. Цертификатерегистратион](#microsoftcertificateregistration)
-> - [Microsoft. ClassicCompute](#microsoftclassiccompute)
-> - [Microsoft. КлассиЦинфраструктуремиграте](#microsoftclassicinfrastructuremigrate)
-> - [Microsoft. ClassicNetwork](#microsoftclassicnetwork)
-> - [Microsoft. Классикстораже](#microsoftclassicstorage)
-> - [Microsoft. CognitiveServices](#microsoftcognitiveservices)
-> - [Microsoft. Commerce](#microsoftcommerce)
-> - [Microsoft. COMPUTE](#microsoftcompute)
-> - [Microsoft. потребление](#microsoftconsumption)
-> - [Microsoft. Контаинеринстанце](#microsoftcontainerinstance)
+> - [Microsoft.CertificateRegistration](#microsoftcertificateregistration)
+> - [Microsoft.ClassicCompute](#microsoftclassiccompute)
+> - [Microsoft.ClassicInfrastructureMigrate](#microsoftclassicinfrastructuremigrate)
+> - [Microsoft.ClassicNetwork](#microsoftclassicnetwork)
+> - [Microsoft.ClassicStorage](#microsoftclassicstorage)
+> - [Microsoft.CognitiveServices](#microsoftcognitiveservices)
+> - [Microsoft.Commerce](#microsoftcommerce)
+> - [Microsoft.Compute](#microsoftcompute)
+> - [Microsoft.Consumption](#microsoftconsumption)
+> - [Microsoft.ContainerInstance](#microsoftcontainerinstance)
 > - [Microsoft.ContainerRegistry](#microsoftcontainerregistry)
 > - [Microsoft.ContainerService](#microsoftcontainerservice)
-> - [Microsoft. Кортанааналитикс](#microsoftcortanaanalytics)
-> - [Microsoft. Костманажемент](#microsoftcostmanagement)
-> - [Microsoft. Кустомерлоккбокс](#microsoftcustomerlockbox)
-> - [Microsoft. Кустомпровидерс](#microsoftcustomproviders)
-> - [Microsoft. Датабокс](#microsoftdatabox)
-> - [Microsoft. Датабокседже](#microsoftdataboxedge)
-> - [Microsoft. кирпичы](#microsoftdatabricks)
-> - [Каталог Microsoft.](#microsoftdatacatalog)
+> - [Microsoft.CortanaAnalytics](#microsoftcortanaanalytics)
+> - [Microsoft.CostManagement](#microsoftcostmanagement)
+> - [Microsoft.CustomerLockbox](#microsoftcustomerlockbox)
+> - [Microsoft.CustomProviders](#microsoftcustomproviders)
+> - [Microsoft.DataBox](#microsoftdatabox)
+> - [Microsoft.DataBoxEdge](#microsoftdataboxedge)
+> - [Microsoft.Databricks](#microsoftdatabricks)
+> - [Microsoft.DataCatalog](#microsoftdatacatalog)
 > - [Microsoft.DataFactory](#microsoftdatafactory)
 > - [Microsoft.DataLakeAnalytics](#microsoftdatalakeanalytics)
 > - [Microsoft.DataLakeStore](#microsoftdatalakestore)
-> - [Microsoft. Перенос](#microsoftdatamigration)
-> - [Общая папка Microsoft.](#microsoftdatashare)
-> - [Microsoft. Дбформариадб](#microsoftdbformariadb)
-> - [Microsoft. Дбформискл](#microsoftdbformysql)
-> - [Microsoft. Дбфорпостгрескл](#microsoftdbforpostgresql)
-> - [Microsoft. Деплойментманажер](#microsoftdeploymentmanager)
-> - [Microsoft. Десктопвиртуализатион](#microsoftdesktopvirtualization)
+> - [Microsoft.DataMigration](#microsoftdatamigration)
+> - [Microsoft.DataShare](#microsoftdatashare)
+> - [Microsoft.DBforMariaDB](#microsoftdbformariadb)
+> - [Microsoft.DBforMySQL](#microsoftdbformysql)
+> - [Microsoft.DBforPostgreSQL](#microsoftdbforpostgresql)
+> - [Microsoft.DeploymentManager](#microsoftdeploymentmanager)
+> - [Microsoft.DesktopVirtualization](#microsoftdesktopvirtualization)
 > - [Microsoft.Devices](#microsoftdevices)
-> - [Microsoft. DevOps](#microsoftdevops)
-> - [Microsoft. Девспацес](#microsoftdevspaces)
+> - [Microsoft.DevOps](#microsoftdevops)
+> - [Microsoft.DevSpaces](#microsoftdevspaces)
 > - [Microsoft.DevTestLab](#microsoftdevtestlab)
 > - [Microsoft.DocumentDB](#microsoftdocumentdb)
-> - [Microsoft. Домаинрегистратион](#microsoftdomainregistration)
-> - [Microsoft. Динамикслкс](#microsoftdynamicslcs)
-> - [Microsoft. Ентерприсекновледжеграф](#microsoftenterpriseknowledgegraph)
-> - [Microsoft. EventGrid](#microsofteventgrid)
+> - [Microsoft.DomainRegistration](#microsoftdomainregistration)
+> - [Microsoft.DynamicsLcs](#microsoftdynamicslcs)
+> - [Microsoft.EnterpriseKnowledgeGraph](#microsoftenterpriseknowledgegraph)
+> - [Microsoft.EventGrid](#microsofteventgrid)
 > - [Microsoft.EventHub](#microsofteventhub)
-> - [Microsoft. Features](#microsoftfeatures)
-> - [Коллекция Microsoft. Gallery](#microsoftgallery)
-> - [Microsoft. Genomics](#microsoftgenomics)
-> - [Microsoft. Гуестконфигуратион](#microsoftguestconfiguration)
-> - [Microsoft. Ханаоназуре](#microsofthanaonazure)
-> - [Microsoft. Хардваресекуритимодулес](#microsofthardwaresecuritymodules)
+> - [Microsoft.Features](#microsoftfeatures)
+> - [Microsoft.Gallery](#microsoftgallery)
+> - [Microsoft.Genomics](#microsoftgenomics)
+> - [Microsoft.GuestConfiguration](#microsoftguestconfiguration)
+> - [Microsoft.HanaOnAzure](#microsofthanaonazure)
+> - [Microsoft.HardwareSecurityModules](#microsofthardwaresecuritymodules)
 > - [Microsoft.HDInsight](#microsofthdinsight)
-> - [Microsoft. Хеалскареапис](#microsofthealthcareapis)
-> - [Microsoft. Хибридкомпуте](#microsofthybridcompute)
-> - [Microsoft. Хибриддата](#microsofthybriddata)
-> - [Microsoft. Hydra](#microsofthydra)
-> - [Microsoft. ImportExport](#microsoftimportexport)
-> - [Microsoft. Intune](#microsoftintune)
-> - [Microsoft. Иотцентрал](#microsoftiotcentral)
-> - [Microsoft. Иотспацес](#microsoftiotspaces)
+> - [Microsoft.HealthcareApis](#microsofthealthcareapis)
+> - [Microsoft.HybridCompute](#microsofthybridcompute)
+> - [Microsoft.HybridData](#microsofthybriddata)
+> - [Microsoft.Hydra](#microsofthydra)
+> - [Microsoft.ImportExport](#microsoftimportexport)
+> - [Microsoft.Intune](#microsoftintune)
+> - [Microsoft.IoTCentral](#microsoftiotcentral)
+> - [Microsoft.IoTSpaces](#microsoftiotspaces)
 > - [Microsoft.KeyVault](#microsoftkeyvault)
-> - [Microsoft. Kusto](#microsoftkusto)
-> - [Microsoft. Лабсервицес](#microsoftlabservices)
+> - [Microsoft.Kusto](#microsoftkusto)
+> - [Microsoft.LabServices](#microsoftlabservices)
 > - [Microsoft.Logic](#microsoftlogic)
-> - [Microsoft. MachineLearning](#microsoftmachinelearning)
-> - [Microsoft. Мачинелеарнингсервицес](#microsoftmachinelearningservices)
-> - [Microsoft. ManagedIdentity](#microsoftmanagedidentity)
-> - [Microsoft. ManagedServices](#microsoftmanagedservices)
-> - [Microsoft. Management](#microsoftmanagement)
-> - [Microsoft. Maps](#microsoftmaps)
-> - [Microsoft. Marketplace](#microsoftmarketplace)
-> - [Microsoft. Маркетплацеаппс](#microsoftmarketplaceapps)
-> - [Microsoft. Маркетплацеордеринг](#microsoftmarketplaceordering)
+> - [Microsoft.MachineLearning](#microsoftmachinelearning)
+> - [Microsoft.MachineLearningServices](#microsoftmachinelearningservices)
+> - [Microsoft.ManagedIdentity](#microsoftmanagedidentity)
+> - [Microsoft.ManagedServices](#microsoftmanagedservices)
+> - [Microsoft.Management](#microsoftmanagement)
+> - [Microsoft.Maps](#microsoftmaps)
+> - [Microsoft.Marketplace](#microsoftmarketplace)
+> - [Microsoft.MarketplaceApps](#microsoftmarketplaceapps)
+> - [Microsoft.MarketplaceOrdering](#microsoftmarketplaceordering)
 > - [Microsoft.Media](#microsoftmedia)
-> - [Microsoft. Microservices4Spring](#microsoftmicroservices4spring)
-> - [Microsoft. migrate](#microsoftmigrate)
-> - [Microsoft. Микседреалити](#microsoftmixedreality)
-> - [Microsoft. NetApp](#microsoftnetapp)
-> - [Microsoft. Network](#microsoftnetwork)
+> - [Microsoft.Microservices4Spring](#microsoftmicroservices4spring)
+> - [Microsoft.Migrate](#microsoftmigrate)
+> - [Microsoft.MixedReality](#microsoftmixedreality)
+> - [Microsoft.NetApp](#microsoftnetapp)
+> - [Microsoft.Network](#microsoftnetwork)
 > - [Microsoft.NotificationHubs](#microsoftnotificationhubs)
 > - [Microsoft. Обжектсторе](#microsoftobjectstore)
-> - [Microsoft. Оффазуре](#microsoftoffazure)
-> - [Microsoft. OperationalInsights](#microsoftoperationalinsights)
-> - [Microsoft. OperationsManagement](#microsoftoperationsmanagement)
-> - [Microsoft. пиринг](#microsoftpeering)
+> - [Microsoft.OffAzure](#microsoftoffazure)
+> - [Microsoft.OperationalInsights](#microsoftoperationalinsights)
+> - [Microsoft.OperationsManagement](#microsoftoperationsmanagement)
+> - [Microsoft.Peering](#microsoftpeering)
 > - [Microsoft.PolicyInsights](#microsoftpolicyinsights).
-> - [Microsoft. Portal](#microsoftportal)
-> - [Microsoft. PowerBI](#microsoftpowerbi)
-> - [Microsoft. Повербидедикатед](#microsoftpowerbidedicated)
+> - [Microsoft.Portal](#microsoftportal)
+> - [Microsoft.PowerBI](#microsoftpowerbi)
+> - [Microsoft.PowerBIDedicated](#microsoftpowerbidedicated)
 > - [Microsoft.RecoveryServices](#microsoftrecoveryservices)
-> - [Microsoft. Relay](#microsoftrelay)
-> - [Microsoft. RemoteApp](#microsoftremoteapp)
-> - [Microsoft. Ресаурцеграф](#microsoftresourcegraph)
-> - [Microsoft. Ресаурцехеалс](#microsoftresourcehealth)
+> - [Microsoft.Relay](#microsoftrelay)
+> - [Microsoft.RemoteApp](#microsoftremoteapp)
+> - [Microsoft.ResourceGraph](#microsoftresourcegraph)
+> - [Microsoft.ResourceHealth](#microsoftresourcehealth)
 > - [Microsoft.Resources](#microsoftresources)
-> - [Microsoft. SaaS](#microsoftsaas)
+> - [Microsoft.SaaS](#microsoftsaas)
 > - [Microsoft.Scheduler](#microsoftscheduler)
 > - [Microsoft.Search](#microsoftsearch)
 > - [Microsoft.Security](#microsoftsecurity)
-> - [Microsoft. Секуритиграф](#microsoftsecuritygraph)
-> - [Microsoft. Секуритинсигхтс](#microsoftsecurityinsights)
+> - [Microsoft.SecurityGraph](#microsoftsecuritygraph)
+> - [Microsoft.SecurityInsights](#microsoftsecurityinsights)
 > - [Microsoft.ServiceBus](#microsoftservicebus)
 > - [Microsoft.ServiceFabric](#microsoftservicefabric)
-> - [Microsoft. Сервицефабрикмеш](#microsoftservicefabricmesh)
-> - [Microsoft. Services](#microsoftservices)
-> - [Microsoft. Сигналрсервице](#microsoftsignalrservice)
-> - [Microsoft. SiteRecovery](#microsoftsiterecovery)
-> - [Microsoft. Софтвареплан](#microsoftsoftwareplan)
-> - [Microsoft. Solutions](#microsoftsolutions)
+> - [Microsoft.ServiceFabricMesh](#microsoftservicefabricmesh)
+> - [Microsoft.Services](#microsoftservices)
+> - [Microsoft.SignalRService](#microsoftsignalrservice)
+> - [Microsoft.SiteRecovery](#microsoftsiterecovery)
+> - [Microsoft.SoftwarePlan](#microsoftsoftwareplan)
+> - [Microsoft.Solutions](#microsoftsolutions)
 > - [Microsoft. SQL](#microsoftsql)
-> - [Microsoft. Склвиртуалмачине](#microsoftsqlvirtualmachine)
+> - [Microsoft.SqlVirtualMachine](#microsoftsqlvirtualmachine)
 > - [Microsoft.Storage](#microsoftstorage)
-> - [Microsoft. Сторажекаче](#microsoftstoragecache)
-> - [Microsoft. Сторажерепликатион](#microsoftstoragereplication)
-> - [Microsoft. StorageSync](#microsoftstoragesync)
-> - [Microsoft. Сторажесинкдев](#microsoftstoragesyncdev)
-> - [Microsoft. СторажесинЦинт](#microsoftstoragesyncint)
-> - [Microsoft. StorSimple](#microsoftstorsimple)
-> - [Microsoft. StreamAnalytics](#microsoftstreamanalytics)
-> - [Microsoft. Subscription](#microsoftsubscription)
-> - [Microsoft. TimeSeriesInsights](#microsofttimeseriesinsights)
-> - [Microsoft. Вмвареклаудсимпле](#microsoftvmwarecloudsimple)
+> - [Microsoft.StorageCache](#microsoftstoragecache)
+> - [Microsoft.StorageReplication](#microsoftstoragereplication)
+> - [Microsoft.StorageSync](#microsoftstoragesync)
+> - [Microsoft.StorageSyncDev](#microsoftstoragesyncdev)
+> - [Microsoft.StorageSyncInt](#microsoftstoragesyncint)
+> - [Microsoft.StorSimple](#microsoftstorsimple)
+> - [Microsoft.StreamAnalytics](#microsoftstreamanalytics)
+> - [Microsoft.Subscription](#microsoftsubscription)
+> - [Microsoft.TimeSeriesInsights](#microsofttimeseriesinsights)
+> - [Microsoft.VMwareCloudSimple](#microsoftvmwarecloudsimple)
 > - [Microsoft.Web](#microsoftweb)
-> - [Microsoft. WindowsDefenderATP](#microsoftwindowsdefenderatp)
-> - [Microsoft. Виндовсиот](#microsoftwindowsiot)
-> - [Microsoft. WorkloadMonitor](#microsoftworkloadmonitor)
+> - [Microsoft.WindowsDefenderATP](#microsoftwindowsdefenderatp)
+> - [Microsoft.WindowsIoT](#microsoftwindowsiot)
+> - [Microsoft.WorkloadMonitor](#microsoftworkloadmonitor)
 
 ## <a name="microsoftaad"></a>Microsoft.AAD
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | DomainServices | ДА | ДА |
+> | DomainServices | Yes | Yes |
 > | DomainServices/oucontainer | Нет | Нет |
-> | DomainServices/Репликасетс | ДА | ДА |
+> | DomainServices/Репликасетс | Yes | Yes |
 
 ## <a name="microsoftaddons"></a>Microsoft.Addons
 
@@ -215,14 +212,14 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | actionRules | ДА | ДА |
+> | actionRules | Yes | Yes |
 > | оповещения | Нет | Нет |
 > | alertsList | Нет | Нет |
 > | алертсметадата | Нет | Нет |
 > | alertsSummary | Нет | Нет |
 > | alertsSummaryList | Нет | Нет |
 > | Оставлять | Нет | Нет |
-> | smartDetectorAlertRules | ДА | ДА |
+> | smartDetectorAlertRules | Yes | Yes |
 > | smartDetectorRuntimeEnvironments | Нет | Нет |
 > | smartGroups | Нет | Нет |
 
@@ -231,7 +228,7 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | серверы | ДА | ДА |
+> | servers | Yes | Yes |
 
 ## <a name="microsoftapimanagement"></a>Microsoft.ApiManagement
 
@@ -239,7 +236,7 @@ ms.locfileid: "73162173"
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
 > | reportFeedback | Нет | Нет |
-> | Служба | ДА | ДА |
+> | Служба | Yes | Yes |
 > | validateServiceName | Нет | Нет |
 
 ## <a name="microsoftappconfiguration"></a>Microsoft. Аппконфигуратион
@@ -247,7 +244,7 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | конфигуратионсторес | ДА | ДА |
+> | конфигуратионсторес | Yes | Yes |
 > | Конфигуратионсторес/Евентгридфилтерс | Нет | Нет |
 
 ## <a name="microsoftappplatform"></a>Microsoft. Аппплатформ
@@ -255,7 +252,7 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | Spring | ДА | ДА |
+> | Spring | Yes | Yes |
 
 ## <a name="microsoftattestation"></a>Microsoft.Attestation
 
@@ -288,10 +285,10 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | automationAccounts | ДА | ДА |
-> | automationAccounts/configurations | ДА | ДА |
+> | automationAccounts | Yes | Yes |
+> | automationAccounts/configurations | Yes | Yes |
 > | automationAccounts/jobs | Нет | Нет |
-> | automationAccounts/runbooks | ДА | ДА |
+> | automationAccounts/runbooks | Yes | Yes |
 > | automationAccounts/softwareUpdateConfigurations | Нет | Нет |
 > | automationAccounts/webhooks | Нет | Нет |
 
@@ -300,7 +297,7 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | конфигуратионсторес | ДА | ДА |
+> | конфигуратионсторес | Yes | Yes |
 > | Конфигуратионсторес/Евентгридфилтерс | Нет | Нет |
 
 ## <a name="microsoftazuregeneva"></a>Microsoft.Azure.Geneva
@@ -318,7 +315,7 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | b2cDirectories | ДА | Нет |
+> | b2cDirectories | Yes | Нет |
 > | b2ctenants | Нет | Нет |
 
 ## <a name="microsoftazuredata"></a>Microsoft. Азуредата
@@ -326,11 +323,11 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | хибриддатаманажерс | ДА | ДА |
-> | постгресинстанцес | ДА | ДА |
-> | склбигдатаклустерс | ДА | ДА |
-> | склинстанцес | ДА | ДА |
-> | склсерверрегистратионс | ДА | ДА |
+> | хибриддатаманажерс | Yes | Yes |
+> | постгресинстанцес | Yes | Yes |
+> | склбигдатаклустерс | Yes | Yes |
+> | склинстанцес | Yes | Yes |
+> | склсерверрегистратионс | Yes | Yes |
 > | Склсерверрегистратионс и sqlServer | Нет | Нет |
 
 ## <a name="microsoftazurestack"></a>Microsoft.AzureStack
@@ -338,7 +335,7 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | registrations | ДА | ДА |
+> | registrations | Yes | Yes |
 > | registrations/customerSubscriptions | Нет | Нет |
 > | registrations/products | Нет | Нет |
 
@@ -347,7 +344,7 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | batchAccounts | ДА | ДА |
+> | batchAccounts | Yes | Yes |
 
 ## <a name="microsoftbilling"></a>Microsoft.Billing
 
@@ -440,7 +437,7 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | mapApis | ДА | ДА |
+> | mapApis | Yes | Yes |
 > | updateCommunicationPreference | Нет | Нет |
 
 ## <a name="microsoftblockchain"></a>Microsoft.Blockchain
@@ -448,9 +445,9 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | блоккчаинмемберс | ДА | ДА |
-> | кордамемберс | ДА | ДА |
-> | наблюдатели | ДА | ДА |
+> | блоккчаинмемберс | Yes | Yes |
+> | кордамемберс | Yes | Yes |
+> | наблюдатели | Yes | Yes |
 
 ## <a name="microsoftblueprint"></a>Microsoft.Blueprint
 
@@ -470,7 +467,7 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | botServices | ДА | ДА |
+> | botServices | Yes | Yes |
 > | botServices/channels | Нет | Нет |
 > | botServices/connections | Нет | Нет |
 > | языки | Нет | Нет |
@@ -481,7 +478,7 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | Redis | ДА | ДА |
+> | Redis | Yes | Yes |
 > | RedisConfigDefinition | Нет | Нет |
 
 ## <a name="microsoftcapacity"></a>Microsoft.Capacity
@@ -495,7 +492,7 @@ ms.locfileid: "73162173"
 > | калкулатепурчасеприце | Нет | Нет |
 > | catalogs | Нет | Нет |
 > | commercialReservationOrders | Нет | Нет |
-> | exchange | Нет | Нет |
+> | обмен валюты | Нет | Нет |
 > | плацепурчасеордер | Нет | Нет |
 > | reservationOrders | Нет | Нет |
 > | reservationOrders/calculateRefund | Нет | Нет |
@@ -515,10 +512,10 @@ ms.locfileid: "73162173"
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
 > | кднвебаппликатионфиреваллманажедрулесетс | Нет | Нет |
-> | кднвебаппликатионфиреваллполиЦиес | ДА | ДА |
+> | кднвебаппликатионфиреваллполиЦиес | Yes | Yes |
 > | edgenodes | Нет | Нет |
-> | профили | ДА | ДА |
-> | profiles/endpoints | ДА | ДА |
+> | профили | Yes | Yes |
+> | profiles/endpoints | Yes | Yes |
 > | profiles/endpoints/customdomains | Нет | Нет |
 > | profiles/endpoints/origins | Нет | Нет |
 > | validateProbe | Нет | Нет |
@@ -528,7 +525,7 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | certificateOrders | ДА | ДА |
+> | certificateOrders | Yes | Yes |
 > | certificateOrders/certificates | Нет | Нет |
 > | validateCertificateRegistrationInformation | Нет | Нет |
 
@@ -611,7 +608,7 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | accounts | ДА | ДА |
+> | accounts | Yes | Yes |
 
 ## <a name="microsoftcommerce"></a>Microsoft.Commerce
 
@@ -626,29 +623,29 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | availabilitySets | ДА | ДА |
-> | дискенкриптионсетс | ДА | ДА |
-> | disks | ДА | ДА |
-> | galleries | ДА | ДА |
+> | availabilitySets | Yes | Yes |
+> | дискенкриптионсетс | Yes | Yes |
+> | disks | Yes | Yes |
+> | galleries | Yes | Yes |
 > | коллекции и приложения | Нет | Нет |
 > | коллекции, приложения и версии | Нет | Нет |
 > | galleries/images | Нет | Нет |
 > | galleries/images/versions | Нет | Нет |
-> | хостграупс | ДА | ДА |
-> | Хостграупс и узлы | ДА | ДА |
-> | images | ДА | ДА |
-> | проксимитиплацементграупс | ДА | ДА |
-> | restorePointCollections | ДА | ДА |
+> | хостграупс | Yes | Yes |
+> | Хостграупс и узлы | Yes | Yes |
+> | images | Yes | Yes |
+> | проксимитиплацементграупс | Yes | Yes |
+> | restorePointCollections | Yes | Yes |
 > | restorePointCollections/restorePoints | Нет | Нет |
-> | шаредвмекстенсионс | ДА | ДА |
+> | шаредвмекстенсионс | Yes | Yes |
 > | Шаредвмекстенсионс и версии | Нет | Нет |
-> | sharedVMImages | ДА | ДА |
+> | sharedVMImages | Yes | Yes |
 > | sharedVMImages/versions | Нет | Нет |
-> | snapshots | ДА | ДА |
-> | virtualMachines | ДА | ДА |
-> | virtualMachines/extensions | ДА | ДА |
+> | snapshots | Yes | Yes |
+> | virtualMachines | Yes | Yes |
+> | virtualMachines/extensions | Yes | Yes |
 > | virtualMachines/metricDefinitions | Нет | Нет |
-> | virtualMachineScaleSets | ДА | ДА |
+> | virtualMachineScaleSets | Yes | Yes |
 > | virtualMachineScaleSets/extensions | Нет | Нет |
 > | virtualMachineScaleSets/networkInterfaces | Нет | Нет |
 > | virtualMachineScaleSets/publicIPAddresses | Нет | Нет |
@@ -662,7 +659,7 @@ ms.locfileid: "73162173"
 > | ------------- | ----------- | ----------- |
 > | AggregatedCost | Нет | Нет |
 > | сведения о балансе. | Нет | Нет |
-> | Расходы | Нет | Нет |
+> | Бюджеты | Нет | Нет |
 > | Расходы | Нет | Нет |
 > | CostTags | Нет | Нет |
 > | credits | Нет | Нет |
@@ -686,7 +683,7 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | containerGroups | ДА | ДА |
+> | containerGroups | Yes | Yes |
 > | serviceAssociationLinks | Нет | Нет |
 
 ## <a name="microsoftcontainerregistry"></a>Microsoft.ContainerRegistry
@@ -694,11 +691,11 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | registries | ДА | ДА |
+> | registries | Yes | Yes |
 > | registries/builds | Нет | Нет |
 > | registries/builds/cancel | Нет | Нет |
 > | registries/builds/getLogLink | Нет | Нет |
-> | registries/buildTasks | ДА | ДА |
+> | registries/buildTasks | Yes | Yes |
 > | registries/buildTasks/steps | Нет | Нет |
 > | registries/eventGridFilters | Нет | Нет |
 > | реестры и Женератекредентиалс | Нет | Нет |
@@ -708,15 +705,15 @@ ms.locfileid: "73162173"
 > | registries/queueBuild | Нет | Нет |
 > | registries/regenerateCredential | Нет | Нет |
 > | registries/regenerateCredentials | Нет | Нет |
-> | registries/replications | ДА | ДА |
+> | registries/replications | Yes | Yes |
 > | registries/runs | Нет | Нет |
 > | registries/runs/cancel | Нет | Нет |
 > | registries/scheduleRun | Нет | Нет |
 > | реестры и Скопемапс | Нет | Нет |
-> | registries/tasks | ДА | ДА |
+> | registries/tasks | Yes | Yes |
 > | реестры и маркеры | Нет | Нет |
 > | registries/updatePolicies | Нет | Нет |
-> | registries/webhooks | ДА | ДА |
+> | registries/webhooks | Yes | Yes |
 > | registries/webhooks/getCallbackConfig | Нет | Нет |
 > | registries/webhooks/ping | Нет | Нет |
 
@@ -725,16 +722,16 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | containerServices | ДА | ДА |
-> | managedClusters | ДА | ДА |
-> | опеншифтманажедклустерс | ДА | ДА |
+> | containerServices | Yes | Yes |
+> | managedClusters | Yes | Yes |
+> | опеншифтманажедклустерс | Yes | Yes |
 
 ## <a name="microsoftcortanaanalytics"></a>Microsoft.CortanaAnalytics
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | accounts | ДА | ДА |
+> | accounts | Yes | Yes |
 
 ## <a name="microsoftcostmanagement"></a>Microsoft.CostManagement
 
@@ -743,9 +740,9 @@ ms.locfileid: "73162173"
 > | ------------- | ----------- | ----------- |
 > | Оповещения | Нет | Нет |
 > | BillingAccounts | Нет | Нет |
-> | Расходы | Нет | Нет |
+> | Бюджеты | Нет | Нет |
 > | клаудконнекторс | Нет | Нет |
-> | Коннекторы | ДА | ДА |
+> | Соединители | Yes | Yes |
 > | Departments | Нет | Нет |
 > | Измерения | Нет | Нет |
 > | EnrollmentAccounts | Нет | Нет |
@@ -765,9 +762,9 @@ ms.locfileid: "73162173"
 > | регистрация | Нет | Нет |
 > | Reportconfigs | Нет | Нет |
 > | Отчеты | Нет | Нет |
-> | Настройки | Нет | Нет |
+> | данных | Нет | Нет |
 > | шовбаккрулес | Нет | Нет |
-> | Представления | Нет | Нет |
+> | Views | Нет | Нет |
 
 ## <a name="microsoftcustomerlockbox"></a>Microsoft. Кустомерлоккбокс
 
@@ -782,28 +779,28 @@ ms.locfileid: "73162173"
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
 > | связи | Нет | Нет |
-> | ресаурцепровидерс | ДА | ДА |
+> | ресаурцепровидерс | Yes | Yes |
 
 ## <a name="microsoftdatabox"></a>Microsoft.DataBox
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | jobs | ДА | ДА |
+> | jobs | Yes | Yes |
 
 ## <a name="microsoftdataboxedge"></a>Microsoft.DataBoxEdge
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | DataBoxEdgeDevices | ДА | ДА |
+> | DataBoxEdgeDevices | Yes | Yes |
 
 ## <a name="microsoftdatabricks"></a>Microsoft.Databricks
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | workspaces | ДА | Нет |
+> | workspaces | Yes | Нет |
 > | workspaces/virtualNetworkPeerings | Нет | Нет |
 
 ## <a name="microsoftdatacatalog"></a>Microsoft.DataCatalog
@@ -811,8 +808,8 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | catalogs | ДА | ДА |
-> | каталоги | ДА | ДА |
+> | catalogs | Yes | Yes |
+> | каталоги | Yes | Yes |
 > | каталоги данных и источники данных | Нет | Нет |
 > | каталоги данных, источники данных и проверки | Нет | Нет |
 > | каталоги данных/DataSources/scans/DataSets | Нет | Нет |
@@ -823,11 +820,11 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | dataFactories | ДА | Нет |
+> | dataFactories | Yes | Нет |
 > | dataFactories/diagnosticSettings | Нет | Нет |
 > | dataFactories/metricDefinitions | Нет | Нет |
 > | dataFactorySchema | Нет | Нет |
-> | factories | ДА | Нет |
+> | factories | Yes | Нет |
 > | factories/integrationRuntimes | Нет | Нет |
 
 ## <a name="microsoftdatalakeanalytics"></a>Microsoft.DataLakeAnalytics
@@ -835,7 +832,7 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | accounts | ДА | ДА |
+> | accounts | Yes | Yes |
 > | accounts/dataLakeStoreAccounts | Нет | Нет |
 > | accounts/storageAccounts | Нет | Нет |
 > | accounts/storageAccounts/containers | Нет | Нет |
@@ -846,7 +843,7 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | accounts | ДА | ДА |
+> | accounts | Yes | Yes |
 > | accounts/eventGridFilters | Нет | Нет |
 > | accounts/firewallRules | Нет | Нет |
 
@@ -863,7 +860,7 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | accounts | ДА | ДА |
+> | accounts | Yes | Yes |
 > | учетные записи и общие папки | Нет | Нет |
 > | учетные записи, общие ресурсы и наборы данных | Нет | Нет |
 > | учетные записи, общие ресурсы и приглашения | Нет | Нет |
@@ -879,7 +876,7 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | серверы | ДА | ДА |
+> | servers | Yes | Yes |
 > | servers/advisors | Нет | Нет |
 > | серверы и Приватиндпоинтконнектионпроксиес | Нет | Нет |
 > | серверы и Приватиндпоинтконнектионс | Нет | Нет |
@@ -895,7 +892,7 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | серверы | ДА | ДА |
+> | servers | Yes | Yes |
 > | servers/advisors | Нет | Нет |
 > | серверы и Приватиндпоинтконнектионпроксиес | Нет | Нет |
 > | серверы и Приватиндпоинтконнектионс | Нет | Нет |
@@ -911,8 +908,8 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | серверграупс | ДА | ДА |
-> | серверы | ДА | ДА |
+> | серверграупс | Yes | Yes |
+> | servers | Yes | Yes |
 > | servers/advisors | Нет | Нет |
 > | servers/keys | Нет | Нет |
 > | серверы и Приватиндпоинтконнектионпроксиес | Нет | Нет |
@@ -923,45 +920,45 @@ ms.locfileid: "73162173"
 > | servers/topQueryStatistics | Нет | Нет |
 > | servers/virtualNetworkRules | Нет | Нет |
 > | servers/waitStatistics | Нет | Нет |
-> | serversv2 | ДА | ДА |
+> | serversv2 | Yes | Yes |
 
 ## <a name="microsoftdeploymentmanager"></a>Microsoft.DeploymentManager
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | артифактсаурцес | ДА | ДА |
-> | rollouts | ДА | ДА |
-> | сервицетопологиес | ДА | ДА |
-> | Сервицетопологиес и службы | ДА | ДА |
-> | Сервицетопологиес/Services/Сервицеунитс | ДА | ДА |
-> | steps | ДА | ДА |
+> | артифактсаурцес | Yes | Yes |
+> | rollouts | Yes | Yes |
+> | сервицетопологиес | Yes | Yes |
+> | Сервицетопологиес и службы | Yes | Yes |
+> | Сервицетопологиес/Services/Сервицеунитс | Yes | Yes |
+> | steps | Yes | Yes |
 
 ## <a name="microsoftdesktopvirtualization"></a>Microsoft. Десктопвиртуализатион
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | аппликатионграупс | ДА | ДА |
+> | аппликатионграупс | Yes | Yes |
 > | аппликатионграупс и приложения | Нет | Нет |
 > | аппликатионграупс и настольные системы | Нет | Нет |
 > | аппликатионграупс/стартменуитемс | Нет | Нет |
-> | хостпулс | ДА | ДА |
+> | хостпулс | Yes | Yes |
 > | хостпулс/сессионхостс | Нет | Нет |
 > | хостпулс/сессионхостс/усерсессионс | Нет | Нет |
 > | хостпулс/усерсессионс | Нет | Нет |
-> | workspaces | ДА | ДА |
+> | workspaces | Yes | Yes |
 
 ## <a name="microsoftdevices"></a>Microsoft.Devices
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | еластикпулс | ДА | ДА |
-> | Еластикпулс/Иосубтенантс | ДА | ДА |
-> | IotHubs | ДА | ДА |
+> | еластикпулс | Yes | Yes |
+> | Еластикпулс/Иосубтенантс | Yes | Yes |
+> | IotHubs | Yes | Yes |
 > | IotHubs/eventGridFilters | Нет | Нет |
-> | ProvisioningServices | ДА | ДА |
+> | ProvisioningServices | Yes | Yes |
 > | usages | Нет | Нет |
 
 ## <a name="microsoftdevops"></a>Microsoft. DevOps
@@ -969,26 +966,26 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | Конвейеров | ДА | ДА |
+> | конвейеров | Yes | Yes |
 
 ## <a name="microsoftdevspaces"></a>Microsoft.DevSpaces
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | controllers | ДА | ДА |
+> | controllers | Yes | Yes |
 
 ## <a name="microsoftdevtestlab"></a>Microsoft.DevTestLab
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | labcenters | ДА | ДА |
-> | labs | ДА | ДА |
-> | лаборатории и среды | ДА | ДА |
-> | labs/serviceRunners | ДА | ДА |
-> | labs/virtualMachines | ДА | ДА |
-> | schedules | ДА | ДА |
+> | labcenters | Yes | Yes |
+> | labs | Yes | Yes |
+> | лаборатории и среды | Yes | Yes |
+> | labs/serviceRunners | Yes | Yes |
+> | labs/virtualMachines | Yes | Yes |
+> | schedules | Yes | Yes |
 
 ## <a name="microsoftdocumentdb"></a>Microsoft.DocumentDB
 
@@ -996,14 +993,14 @@ ms.locfileid: "73162173"
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
 > | databaseAccountNames | Нет | Нет |
-> | databaseAccounts | ДА | ДА |
+> | databaseAccounts | Yes | Yes |
 
 ## <a name="microsoftdomainregistration"></a>Microsoft.DomainRegistration
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | domains | ДА | ДА |
+> | domains | Yes | Yes |
 > | domains/domainOwnershipIdentifiers | Нет | Нет |
 > | generateSsoRequest | Нет | Нет |
 > | topLevelDomains | Нет | Нет |
@@ -1023,18 +1020,18 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | services; | ДА | ДА |
+> | services; | Yes | Yes |
 
 ## <a name="microsofteventgrid"></a>Microsoft.EventGrid
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | domains | ДА | ДА |
+> | domains | Yes | Yes |
 > | domains/topics | Нет | Нет |
 > | eventSubscriptions | Нет | Нет |
 > | extensionTopics | Нет | Нет |
-> | topics | ДА | ДА |
+> | topics | Yes | Yes |
 > | topicTypes | Нет | Нет |
 
 ## <a name="microsofteventhub"></a>Microsoft.EventHub
@@ -1042,8 +1039,8 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | clusters | ДА | ДА |
-> | namespaces | ДА | ДА |
+> | clusters | Yes | Yes |
+> | namespaces | Yes | Yes |
 > | namespaces/authorizationrules | Нет | Нет |
 > | namespaces/disasterrecoveryconfigs | Нет | Нет |
 > | namespaces/eventhubs | Нет | Нет |
@@ -1056,7 +1053,7 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | эластичной базы данных | Нет | Нет |
+> | features | Нет | Нет |
 > | providers | Нет | Нет |
 
 ## <a name="microsoftgallery"></a>Microsoft.Gallery
@@ -1082,14 +1079,14 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | accounts | ДА | ДА |
+> | accounts | Yes | Yes |
 
 ## <a name="microsoftguestconfiguration"></a>Microsoft.GuestConfiguration
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | аутоманажедвмконфигуратионпрофилес | ДА | ДА |
+> | аутоманажедвмконфигуратионпрофилес | Yes | Yes |
 > | конфигуратионпрофилеассигнментс | Нет | Нет |
 > | guestConfigurationAssignments | Нет | Нет |
 > | software | Нет | Нет |
@@ -1101,22 +1098,22 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | hanaInstances | ДА | ДА |
-> | сапмониторс | ДА | ДА |
+> | hanaInstances | Yes | Yes |
+> | сапмониторс | Yes | Yes |
 
 ## <a name="microsofthardwaresecuritymodules"></a>Microsoft.HardwareSecurityModules
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | дедикатедхсмс | ДА | ДА |
+> | дедикатедхсмс | Yes | Yes |
 
 ## <a name="microsofthdinsight"></a>Microsoft.HDInsight
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | clusters | ДА | ДА |
+> | clusters | Yes | Yes |
 > | clusters/applications | Нет | Нет |
 
 ## <a name="microsofthealthcareapis"></a>Microsoft. Хеалскареапис
@@ -1124,37 +1121,37 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | services; | ДА | ДА |
+> | services; | Yes | Yes |
 
 ## <a name="microsofthybridcompute"></a>Microsoft. Хибридкомпуте
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | виртуальных | ДА | ДА |
-> | Компьютеры и расширения | ДА | ДА |
+> | виртуальных | Yes | Yes |
+> | Компьютеры и расширения | Yes | Yes |
 
 ## <a name="microsofthybriddata"></a>Microsoft.HybridData
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | Диспетчеры | ДА | ДА |
+> | Диспетчеры | Yes | Yes |
 
 ## <a name="microsofthydra"></a>Microsoft. Hydra
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | components | ДА | ДА |
-> | нетворкскопес | ДА | ДА |
+> | components | Yes | Yes |
+> | нетворкскопес | Yes | Yes |
 
 ## <a name="microsoftimportexport"></a>Microsoft.ImportExport
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | jobs | ДА | ДА |
+> | jobs | Yes | Yes |
 
 ## <a name="microsoftintune"></a>Microsoft.Intune
 
@@ -1170,14 +1167,14 @@ ms.locfileid: "73162173"
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
 > | апптемплатес | Нет | Нет |
-> | IoTApps | ДА | ДА |
+> | IoTApps | Yes | Yes |
 
 ## <a name="microsoftiotspaces"></a>Microsoft.IoTSpaces
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | Граф | ДА | ДА |
+> | График | Yes | Yes |
 
 ## <a name="microsoftkeyvault"></a>Microsoft.KeyVault
 
@@ -1185,8 +1182,8 @@ ms.locfileid: "73162173"
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
 > | deletedVaults | Нет | Нет |
-> | хсмпулс | ДА | ДА |
-> | vaults | ДА | ДА |
+> | хсмпулс | Yes | Yes |
+> | vaults | Yes | Yes |
 > | vaults/accessPolicies | Нет | Нет |
 > | хранилища и Евентгридфилтерс | Нет | Нет |
 > | vaults/secrets | Нет | Нет |
@@ -1196,7 +1193,7 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | clusters | ДА | ДА |
+> | clusters | Yes | Yes |
 > | кластеры/аттачеддатабасеконфигуратионс | Нет | Нет |
 > | clusters/databases | Нет | Нет |
 > | clusters/databases/dataconnections | Нет | Нет |
@@ -1208,36 +1205,36 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | labaccounts | ДА | ДА |
-> | пользователей | Нет | Нет |
+> | labaccounts | Yes | Yes |
+> | пользователи | Нет | Нет |
 
 ## <a name="microsoftlogic"></a>Microsoft.Logic
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | hostingEnvironments | ДА | ДА |
-> | integrationAccounts | ДА | ДА |
-> | интегратионсервицеенвиронментс | ДА | ДА |
-> | Интегратионсервицеенвиронментс/Манажедапис | ДА | ДА |
-> | исолатеденвиронментс | ДА | ДА |
-> | workflows | ДА | ДА |
+> | hostingEnvironments | Yes | Yes |
+> | integrationAccounts | Yes | Yes |
+> | интегратионсервицеенвиронментс | Yes | Yes |
+> | Интегратионсервицеенвиронментс/Манажедапис | Yes | Yes |
+> | исолатеденвиронментс | Yes | Yes |
+> | workflows | Yes | Yes |
 
 ## <a name="microsoftmachinelearning"></a>Microsoft.MachineLearning
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | commitmentPlans | ДА | ДА |
-> | webServices | ДА | ДА |
-> | Рабочие области | ДА | ДА |
+> | commitmentPlans | Yes | Yes |
+> | webServices | Yes | Yes |
+> | Рабочие области | Yes | Yes |
 
 ## <a name="microsoftmachinelearningservices"></a>Microsoft.MachineLearningServices
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | workspaces | ДА | ДА |
+> | workspaces | Yes | Yes |
 > | workspaces/computes | Нет | Нет |
 > | рабочие области и Евентгридфилтерс | Нет | Нет |
 
@@ -1247,7 +1244,7 @@ ms.locfileid: "73162173"
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
 > | Identities | Нет | Нет |
-> | userAssignedIdentities | ДА | ДА |
+> | userAssignedIdentities | Yes | Yes |
 
 ## <a name="microsoftmanagedservices"></a>Microsoft. ManagedServices
 
@@ -1274,7 +1271,7 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | accounts | ДА | ДА |
+> | accounts | Yes | Yes |
 > | accounts/eventGridFilters | Нет | Нет |
 
 ## <a name="microsoftmarketplace"></a>Microsoft.Marketplace
@@ -1301,7 +1298,7 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | classicDevServices | ДА | ДА |
+> | classicDevServices | Yes | Yes |
 > | updateCommunicationPreference | Нет | Нет |
 
 ## <a name="microsoftmarketplaceordering"></a>Microsoft.MarketplaceOrdering
@@ -1317,19 +1314,19 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | mediaservices | ДА | ДА |
+> | mediaservices | Yes | Yes |
 > | mediaservices/accountFilters | Нет | Нет |
 > | mediaservices/assets | Нет | Нет |
 > | mediaservices/assets/assetFilters | Нет | Нет |
 > | mediaservices/contentKeyPolicies | Нет | Нет |
 > | mediaservices/eventGridFilters | Нет | Нет |
 > | mediaservices/liveEventOperations | Нет | Нет |
-> | mediaservices/liveEvents | ДА | ДА |
+> | mediaservices/liveEvents | Yes | Yes |
 > | mediaservices/liveEvents/liveOutputs | Нет | Нет |
 > | mediaservices/liveOutputOperations | Нет | Нет |
 > | mediaservices/Медиаграфс | Нет | Нет |
 > | mediaservices/streamingEndpointOperations | Нет | Нет |
-> | mediaservices/streamingEndpoints | ДА | ДА |
+> | mediaservices/streamingEndpoints | Yes | Yes |
 > | mediaservices/streamingLocators | Нет | Нет |
 > | mediaservices/streamingPolicies | Нет | Нет |
 > | mediaservices/transforms | Нет | Нет |
@@ -1340,58 +1337,58 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | аппклустерс | ДА | ДА |
+> | аппклустерс | Yes | Yes |
 
 ## <a name="microsoftmigrate"></a>Microsoft.Migrate
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | ассессментпрожектс | ДА | ДА |
-> | migrateprojects | ДА | ДА |
-> | projects | ДА | ДА |
+> | ассессментпрожектс | Yes | Yes |
+> | migrateprojects | Yes | Yes |
+> | projects | Yes | Yes |
 
 ## <a name="microsoftmixedreality"></a>Microsoft. Микседреалити
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | холографиксброадкастаккаунтс | ДА | ДА |
-> | обжектундерстандингаккаунтс | ДА | ДА |
-> | ремотерендерингаккаунтс | ДА | ДА |
-> | спатиаланчорсаккаунтс | ДА | ДА |
-> | сурфацереконструктионаккаунтс | ДА | ДА |
+> | холографиксброадкастаккаунтс | Yes | Yes |
+> | обжектундерстандингаккаунтс | Yes | Yes |
+> | ремотерендерингаккаунтс | Yes | Yes |
+> | спатиаланчорсаккаунтс | Yes | Yes |
+> | сурфацереконструктионаккаунтс | Yes | Yes |
 
 ## <a name="microsoftnetapp"></a>Microsoft.NetApp
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | нетаппаккаунтс | ДА | ДА |
-> | Нетаппаккаунтс/БаккупполиЦиес | ДА | ДА |
-> | Нетаппаккаунтс/КапаЦитипулс | ДА | ДА |
-> | Нетаппаккаунтс/КапаЦитипулс/тома | ДА | ДА |
+> | нетаппаккаунтс | Yes | Yes |
+> | Нетаппаккаунтс/БаккупполиЦиес | Yes | Yes |
+> | Нетаппаккаунтс/КапаЦитипулс | Yes | Yes |
+> | Нетаппаккаунтс/КапаЦитипулс/тома | Yes | Yes |
 > | Нетаппаккаунтс/КапаЦитипулс/тома/резервные копии | Нет | Нет |
-> | Нетаппаккаунтс/КапаЦитипулс/Volumes/Маунттаржетс | ДА | ДА |
-> | Нетаппаккаунтс/КапаЦитипулс/тома/моментальные снимки | ДА | ДА |
+> | Нетаппаккаунтс/КапаЦитипулс/Volumes/Маунттаржетс | Yes | Yes |
+> | Нетаппаккаунтс/КапаЦитипулс/тома/моментальные снимки | Yes | Yes |
 > | Нетаппаккаунтс и хранилища | Нет | Нет |
 ## <a name="microsoftnetwork"></a>Microsoft.Network.
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | applicationGateways | ДА | ДА |
-> | аппликатионгатевайвебаппликатионфиреваллполиЦиес | ДА | ДА |
-> | applicationSecurityGroups | ДА | ДА |
+> | applicationGateways | Yes | Yes |
+> | аппликатионгатевайвебаппликатионфиреваллполиЦиес | Yes | Yes |
+> | applicationSecurityGroups | Yes | Yes |
 > | azureFirewallFqdnTags | Нет | Нет |
-> | azureFirewalls | ДА | Нет |
-> | бастионхостс | ДА | ДА |
+> | azureFirewalls | Yes | Нет |
+> | бастионхостс | Yes | Yes |
 > | bgpServiceCommunities | Нет | Нет |
-> | connections | ДА | ДА |
-> | ddosCustomPolicies | ДА | ДА |
-> | ddosProtectionPlans | ДА | ДА |
+> | connections | Yes | Yes |
+> | ddosCustomPolicies | Yes | Yes |
+> | ddosProtectionPlans | Yes | Yes |
 > | dnsOperationStatuses | Нет | Нет |
-> | dnszones | ДА | ДА |
+> | dnszones | Yes | Yes |
 > | dnszones/A | Нет | Нет |
 > | dnszones/AAAA | Нет | Нет |
 > | dnszones/all | Нет | Нет |
@@ -1404,31 +1401,31 @@ ms.locfileid: "73162173"
 > | dnszones/SOA | Нет | Нет |
 > | dnszones/SRV | Нет | Нет |
 > | dnszones/TXT | Нет | Нет |
-> | expressRouteCircuits | ДА | ДА |
-> | expressRouteCrossConnections | ДА | ДА |
-> | експрессраутегатевайс | ДА | ДА |
-> | експрессраутепортс | ДА | ДА |
+> | expressRouteCircuits | Yes | Yes |
+> | expressRouteCrossConnections | Yes | Yes |
+> | експрессраутегатевайс | Yes | Yes |
+> | експрессраутепортс | Yes | Yes |
 > | expressRouteServiceProviders | Нет | Нет |
-> | фиреваллполиЦиес | ДА | ДА |
-> | frontdoors | Да, но ограничено (см. [Примечание ниже](#frontdoor)) | ДА |
+> | фиреваллполиЦиес | Yes | Yes |
+> | frontdoors | Да, но ограничено (см. [Примечание ниже](#frontdoor)) | Yes |
 > | фронтдурвебаппликатионфиреваллманажедрулесетс | Да, но ограничено (см. [Примечание ниже](#frontdoor)) | Нет |
-> | frontdoorWebApplicationFirewallPolicies | Да, но ограничено (см. [Примечание ниже](#frontdoor)) | ДА |
+> | frontdoorWebApplicationFirewallPolicies | Да, но ограничено (см. [Примечание ниже](#frontdoor)) | Yes |
 > | getDnsResourceReference | Нет | Нет |
 > | internalNotify | Нет | Нет |
-> | loadBalancers | ДА | Нет |
-> | localNetworkGateways | ДА | ДА |
-> | natGateways | ДА | ДА |
-> | networkIntentPolicies | ДА | ДА |
-> | networkInterfaces | ДА | ДА |
-> | networkProfiles | ДА | ДА |
-> | networkSecurityGroups | ДА | ДА |
-> | networkWatchers | ДА | Нет |
-> | networkWatchers/connectionMonitors | ДА | Нет |
-> | networkWatchers/lenses | ДА | Нет |
-> | networkWatchers/pingMeshes | ДА | Нет |
-> | p2sVpnGateways | ДА | ДА |
+> | loadBalancers | Yes | Нет |
+> | localNetworkGateways | Yes | Yes |
+> | natGateways | Yes | Yes |
+> | networkIntentPolicies | Yes | Yes |
+> | networkInterfaces | Yes | Yes |
+> | networkProfiles | Yes | Yes |
+> | networkSecurityGroups | Yes | Yes |
+> | networkWatchers | Yes | Нет |
+> | networkWatchers/connectionMonitors | Yes | Нет |
+> | networkWatchers/lenses | Yes | Нет |
+> | networkWatchers/pingMeshes | Yes | Нет |
+> | p2sVpnGateways | Yes | Yes |
 > | приватеднсоператионстатусес | Нет | Нет |
-> | приватеднсзонес | ДА | ДА |
+> | приватеднсзонес | Yes | Yes |
 > | Приватеднсзонес/A | Нет | Нет |
 > | Приватеднсзонес/AAAA | Нет | Нет |
 > | Приватеднсзонес/все | Нет | Нет |
@@ -1438,26 +1435,26 @@ ms.locfileid: "73162173"
 > | Приватеднсзонес/SOA | Нет | Нет |
 > | Приватеднсзонес/SRV | Нет | Нет |
 > | Приватеднсзонес/TXT | Нет | Нет |
-> | Приватеднсзонес/Виртуалнетворклинкс | ДА | ДА |
-> | приватиндпоинтс | ДА | ДА |
-> | privateLinkServices | ДА | ДА |
-> | publicIPAddresses | ДА | ДА |
-> | publicIPPrefixes | ДА | ДА |
-> | routeFilters | ДА | ДА |
-> | routeTables | ДА | ДА |
-> | serviceEndpointPolicies | ДА | ДА |
+> | Приватеднсзонес/Виртуалнетворклинкс | Yes | Yes |
+> | приватиндпоинтс | Yes | Yes |
+> | privateLinkServices | Yes | Yes |
+> | publicIPAddresses | Yes | Yes |
+> | publicIPPrefixes | Yes | Yes |
+> | routeFilters | Yes | Yes |
+> | routeTables | Yes | Yes |
+> | serviceEndpointPolicies | Yes | Yes |
 > | trafficManagerGeographicHierarchies | Нет | Нет |
-> | trafficmanagerprofiles | ДА | ДА |
+> | trafficmanagerprofiles | Yes | Yes |
 > | trafficmanagerprofiles/heatMaps | Нет | Нет |
 > | траффикманажерусерметрикскэйс | Нет | Нет |
-> | virtualHubs | ДА | ДА |
-> | virtualNetworkGateways | ДА | ДА |
-> | virtualNetworks | ДА | ДА |
-> | virtualNetworkTaps | ДА | ДА |
-> | virtualWans | ДА | ДА |
-> | vpnGateways | ДА | Нет |
-> | vpnSites | ДА | ДА |
-> | webApplicationFirewallPolicies | ДА | ДА |
+> | virtualHubs | Yes | Yes |
+> | virtualNetworkGateways | Yes | Yes |
+> | virtualNetworks | Yes | Yes |
+> | virtualNetworkTaps | Yes | Yes |
+> | virtualWans | Yes | Yes |
+> | vpnGateways | Yes | Нет |
+> | vpnSites | Yes | Yes |
+> | webApplicationFirewallPolicies | Yes | Yes |
 
 <a id="frontdoor" />
 
@@ -1470,36 +1467,36 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | namespaces | ДА | Нет |
-> | namespaces/notificationHubs | ДА | Нет |
+> | namespaces | Yes | Нет |
+> | namespaces/notificationHubs | Yes | Нет |
 
 ## <a name="microsoftobjectstore"></a>Microsoft. Обжектсторе
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | оснамеспацес | ДА | ДА |
+> | оснамеспацес | Yes | Yes |
 
 ## <a name="microsoftoffazure"></a>Microsoft.OffAzure
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | хипервситес | ДА | ДА |
-> | импортситес | ДА | ДА |
-> | серверситес | ДА | ДА |
-> | вмвареситес | ДА | ДА |
+> | хипервситес | Yes | Yes |
+> | импортситес | Yes | Yes |
+> | серверситес | Yes | Yes |
+> | вмвареситес | Yes | Yes |
 
 ## <a name="microsoftoperationalinsights"></a>Microsoft.OperationalInsights
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | clusters | ДА | ДА |
+> | clusters | Yes | Yes |
 > | устройства | Нет | Нет |
 > | linkTargets | Нет | Нет |
 > | storageInsightConfigs | Нет | Нет |
-> | workspaces | ДА | ДА |
+> | workspaces | Yes | Yes |
 > | workspaces/dataSources | Нет | Нет |
 > | workspaces/linkedServices | Нет | Нет |
 > | workspaces/query | Нет | Нет |
@@ -1510,9 +1507,9 @@ ms.locfileid: "73162173"
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
 > | managementassociations | Нет | Нет |
-> | managementconfigurations | ДА | ДА |
-> | solutions | ДА | ДА |
-> | узел "Представления" | ДА | ДА |
+> | managementconfigurations | Yes | Yes |
+> | solutions | Yes | Yes |
+> | узел "Представления" | Yes | Yes |
 
 ## <a name="microsoftpeering"></a>Microsoft. пиринг
 
@@ -1521,9 +1518,9 @@ ms.locfileid: "73162173"
 > | ------------- | ----------- | ----------- |
 > | легаципирингс | Нет | Нет |
 > | пираснс | Нет | Нет |
-> | пиринги | ДА | ДА |
+> | пиринги | Yes | Yes |
 > | пирингсервицепровидерс | Нет | Нет |
-> | пирингсервицес | ДА | ДА |
+> | пирингсервицес | Yes | Yes |
 
 ## <a name="microsoftpolicyinsights"></a>Microsoft.PolicyInsights
 
@@ -1542,7 +1539,7 @@ ms.locfileid: "73162173"
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
 > | consoles | Нет | Нет |
-> | dashboards | ДА | ДА |
+> | dashboards | Yes | Yes |
 > | userSettings | Нет | Нет |
 
 ## <a name="microsoftpowerbi"></a>Microsoft.PowerBI
@@ -1550,14 +1547,14 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | workspaceCollections | ДА | ДА |
+> | workspaceCollections | Yes | Yes |
 
 ## <a name="microsoftpowerbidedicated"></a>Microsoft.PowerBIDedicated
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | capacities | ДА | ДА |
+> | capacities | Yes | Yes |
 
 ## <a name="microsoftrecoveryservices"></a>Microsoft.RecoveryServices
 
@@ -1565,14 +1562,14 @@ ms.locfileid: "73162173"
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
 > | backupProtectedItems | Нет | Нет |
-> | vaults | ДА | ДА |
+> | vaults | Yes | Yes |
 
 ## <a name="microsoftrelay"></a>Microsoft.Relay
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | namespaces | ДА | ДА |
+> | namespaces | Yes | Yes |
 > | namespaces/authorizationrules | Нет | Нет |
 > | namespaces/hybridconnections | Нет | Нет |
 > | namespaces/hybridconnections/authorizationrules | Нет | Нет |
@@ -1585,7 +1582,7 @@ ms.locfileid: "73162173"
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
 > | accounts | Нет | Нет |
-> | Семейства | ДА | ДА |
+> | семейства | Yes | Yes |
 > | коллекции и приложения | Нет | Нет |
 > | Collections/секуритипринЦипалс | Нет | Нет |
 > | темплатеимажес | Нет | Нет |
@@ -1595,7 +1592,7 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | запросы | ДА | ДА |
+> | Запросы | Yes | Yes |
 > | ресаурцечанжедетаилс | Нет | Нет |
 > | ресаурцечанжес | Нет | Нет |
 > | ресурсов | Нет | Нет |
@@ -1620,14 +1617,14 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | deployments | ДА | Нет |
+> | deployments | Yes | Нет |
 > | deployments/operations | Нет | Нет |
-> | deploymentScripts | ДА | ДА |
+> | deploymentScripts | Yes | Yes |
 > | deploymentScripts и журналы | Нет | Нет |
 > | links | Нет | Нет |
 > | notifyResourceJobs | Нет | Нет |
 > | providers | Нет | Нет |
-> | resourceGroups | ДА | Нет |
+> | resourceGroups | Yes | Нет |
 > | ресурсов | Нет | Нет |
 > | subscriptions | Нет | Нет |
 > | subscriptions/providers | Нет | Нет |
@@ -1643,7 +1640,7 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | приложений | ДА | ДА |
+> | веб-масштабированием; | Yes | Yes |
 > | saasresources | Нет | Нет |
 
 ## <a name="microsoftscheduler"></a>Microsoft.Scheduler
@@ -1651,7 +1648,7 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | jobcollections | ДА | ДА |
+> | jobcollections | Yes | Yes |
 
 ## <a name="microsoftsearch"></a>Microsoft.Search
 
@@ -1659,7 +1656,7 @@ ms.locfileid: "73162173"
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
 > | resourceHealthMetadata | Нет | Нет |
-> | searchServices | ДА | ДА |
+> | searchServices | Yes | Yes |
 
 ## <a name="microsoftsecurity"></a>Microsoft.Security
 
@@ -1673,7 +1670,7 @@ ms.locfileid: "73162173"
 > | applicationWhitelistings | Нет | Нет |
 > | ассессментметадата | Нет | Нет |
 > | оценки | Нет | Нет |
-> | инструментах автоматизации Composer | ДА | ДА |
+> | инструментах автоматизации Composer | Yes | Yes |
 > | AutoProvisioningSettings | Нет | Нет |
 > | Compliances | Нет | Нет |
 > | dataCollectionAgents | Нет | Нет |
@@ -1681,13 +1678,13 @@ ms.locfileid: "73162173"
 > | discoveredSecuritySolutions | Нет | Нет |
 > | externalSecuritySolutions | Нет | Нет |
 > | InformationProtectionPolicies | Нет | Нет |
-> | иотсекуритисолутионс | ДА | ДА |
+> | иотсекуритисолутионс | Yes | Yes |
 > | Иотсекуритисолутионс/Аналитиксмоделс | Нет | Нет |
 > | Иотсекуритисолутионс/Аналитиксмоделс/Аггрегатедалертс | Нет | Нет |
 > | Иотсекуритисолутионс/Аналитиксмоделс/Аггрегатедрекоммендатионс | Нет | Нет |
 > | jitNetworkAccessPolicies | Нет | Нет |
 > | networkData | Нет | Нет |
-> | плайбукконфигуратионс | ДА | ДА |
+> | плайбукконфигуратионс | Yes | Yes |
 > | политики | Нет | Нет |
 > | pricings | Нет | Нет |
 > | регулаторикомплианцестандардс | Нет | Нет |
@@ -1734,7 +1731,7 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | namespaces | ДА | Нет |
+> | namespaces | Yes | Нет |
 > | namespaces/authorizationrules | Нет | Нет |
 > | namespaces/disasterrecoveryconfigs | Нет | Нет |
 > | namespaces/eventgridfilters | Нет | Нет |
@@ -1752,30 +1749,30 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | приложений | ДА | ДА |
-> | clusters | ДА | ДА |
+> | веб-масштабированием; | Yes | Yes |
+> | clusters | Yes | Yes |
 > | clusters/applications | Нет | Нет |
-> | containerGroups | ДА | ДА |
-> | контаинерграупсетс | ДА | ДА |
-> | edgeclusters | ДА | ДА |
+> | containerGroups | Yes | Yes |
+> | контаинерграупсетс | Yes | Yes |
+> | edgeclusters | Yes | Yes |
 > | еджеклустерс и приложения | Нет | Нет |
-> | networks | ДА | ДА |
-> | secretstores | ДА | ДА |
+> | networks | Yes | Yes |
+> | secretstores | Yes | Yes |
 > | секретсторес и сертификаты | Нет | Нет |
 > | секретсторес/секреты | Нет | Нет |
-> | volumes. | ДА | ДА |
+> | volumes. | Yes | Yes |
 
 ## <a name="microsoftservicefabricmesh"></a>Microsoft.ServiceFabricMesh
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | приложений | ДА | ДА |
-> | containerGroups | ДА | ДА |
-> | gateways | ДА | ДА |
-> | networks | ДА | ДА |
-> | секретные коды | ДА | ДА |
-> | volumes. | ДА | ДА |
+> | веб-масштабированием; | Yes | Yes |
+> | containerGroups | Yes | Yes |
+> | gateways | Yes | Yes |
+> | networks | Yes | Yes |
+> | секретные коды | Yes | Yes |
+> | volumes. | Yes | Yes |
 
 ## <a name="microsoftservices"></a>Microsoft. Services
 
@@ -1784,14 +1781,14 @@ ms.locfileid: "73162173"
 > | ------------- | ----------- | ----------- |
 > | providerRegistrations | Нет | Нет |
 > | Провидеррегистратионс/Ресаурцетиперегистратионс | Нет | Нет |
-> | rollouts | ДА | ДА |
+> | rollouts | Yes | Yes |
 
 ## <a name="microsoftsignalrservice"></a>Microsoft.SignalRService
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | SignalR | ДА | ДА |
+> | SignalR | Yes | Yes |
 > | SignalR/Евентгридфилтерс | Нет | Нет |
 
 ## <a name="microsoftsiterecovery"></a>Microsoft.SiteRecovery
@@ -1799,7 +1796,7 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | SiteRecoveryVault | ДА | ДА |
+> | SiteRecoveryVault | Yes | Yes |
 
 ## <a name="microsoftsoftwareplan"></a>Microsoft. Софтвареплан
 
@@ -1813,17 +1810,17 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | applicationDefinitions | ДА | ДА |
-> | приложений | ДА | ДА |
-> | jitRequests | ДА | ДА |
+> | applicationDefinitions | Yes | Yes |
+> | веб-масштабированием; | Yes | Yes |
+> | jitRequests | Yes | Yes |
 
 ## <a name="microsoftsql"></a>Microsoft.SQL
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | managedInstances | ДА | ДА |
-> | managedInstances/databases | Да (см. [Примечание ниже](#sqlnote)) | ДА |
+> | managedInstances | Yes | Yes |
+> | managedInstances/databases | Да (см. [Примечание ниже](#sqlnote)) | Yes |
 > | managedInstances/databases/backupShortTermRetentionPolicies | Нет | Нет |
 > | managedInstances/databases/schemas/tables/columns/sensitivityLabels | Нет | Нет |
 > | managedInstances/databases/vulnerabilityAssessments | Нет | Нет |
@@ -1832,10 +1829,10 @@ ms.locfileid: "73162173"
 > | managedInstances/keys | Нет | Нет |
 > | managedInstances/restorableDroppedDatabases/backupShortTermRetentionPolicies | Нет | Нет |
 > | managedInstances/vulnerabilityAssessments | Нет | Нет |
-> | серверы | ДА | ДА |
+> | servers | Yes | Yes |
 > | servers/administrators | Нет | Нет |
 > | servers/communicationLinks | Нет | Нет |
-> | servers/databases | Да (см. [Примечание ниже](#sqlnote)) | ДА |
+> | servers/databases | Да (см. [Примечание ниже](#sqlnote)) | Yes |
 > | servers/encryptionProtector | Нет | Нет |
 > | servers/firewallRules | Нет | Нет |
 > | servers/keys | Нет | Нет |
@@ -1854,16 +1851,16 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | SqlVirtualMachineGroups | ДА | ДА |
+> | SqlVirtualMachineGroups | Yes | Yes |
 > | SqlVirtualMachineGroups/AvailabilityGroupListeners | Нет | Нет |
-> | SqlVirtualMachines | ДА | ДА |
+> | SqlVirtualMachines | Yes | Yes |
 
 ## <a name="microsoftstorage"></a>Microsoft.Storage;
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | storageAccounts | ДА | ДА |
+> | storageAccounts | Yes | Yes |
 > | storageAccounts/blobServices | Нет | Нет |
 > | storageAccounts/fileServices | Нет | Нет |
 > | storageAccounts/queueServices | Нет | Нет |
@@ -1877,7 +1874,7 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | кэширует | ДА | ДА |
+> | кэширует | Yes | Yes |
 > | кэши/Сторажетаржетс | Нет | Нет |
 > | усажемоделс | Нет | Нет |
 
@@ -1893,7 +1890,7 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | storageSyncServices | ДА | ДА |
+> | storageSyncServices | Yes | Yes |
 > | storageSyncServices/registeredServers | Нет | Нет |
 > | storageSyncServices/syncGroups | Нет | Нет |
 > | storageSyncServices/syncGroups/cloudEndpoints | Нет | Нет |
@@ -1905,7 +1902,7 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | storageSyncServices | ДА | ДА |
+> | storageSyncServices | Yes | Yes |
 > | storageSyncServices/registeredServers | Нет | Нет |
 > | storageSyncServices/syncGroups | Нет | Нет |
 > | storageSyncServices/syncGroups/cloudEndpoints | Нет | Нет |
@@ -1917,7 +1914,7 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | storageSyncServices | ДА | ДА |
+> | storageSyncServices | Yes | Yes |
 > | storageSyncServices/registeredServers | Нет | Нет |
 > | storageSyncServices/syncGroups | Нет | Нет |
 > | storageSyncServices/syncGroups/cloudEndpoints | Нет | Нет |
@@ -1929,14 +1926,14 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | managers | ДА | ДА |
+> | managers | Yes | Yes |
 
 ## <a name="microsoftstreamanalytics"></a>Microsoft.StreamAnalytics
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | streamingjobs | Да (см. примечание ниже) | ДА |
+> | streamingjobs | Да (см. примечание ниже) | Yes |
 
 > [!NOTE]
 > Невозможно добавить тег при выполнении streamingjobs. Остановите ресурс, чтобы добавить тег.
@@ -1949,7 +1946,7 @@ ms.locfileid: "73162173"
 > | Отмена | Нет | Нет |
 > | CreateSubscription | Нет | Нет |
 > | enable | Нет | Нет |
-> | Имени | Нет | Нет |
+> | имени | Нет | Нет |
 > | SubscriptionDefinitions | Нет | Нет |
 > | SubscriptionOperations | Нет | Нет |
 
@@ -1958,19 +1955,19 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | environments | ДА | Нет |
+> | environments | Yes | Нет |
 > | environments/accessPolicies | Нет | Нет |
-> | environments/eventsources | ДА | Нет |
-> | environments/referenceDataSets | ДА | Нет |
+> | environments/eventsources | Yes | Нет |
+> | environments/referenceDataSets | Yes | Нет |
 
 ## <a name="microsoftvmwarecloudsimple"></a>Microsoft. Вмвареклаудсимпле
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | дедикатедклауднодес | ДА | ДА |
-> | дедикатедклаудсервицес | ДА | ДА |
-> | virtualMachines | ДА | ДА |
+> | дедикатедклауднодес | Yes | Yes |
+> | дедикатедклаудсервицес | Yes | Yes |
+> | virtualMachines | Yes | Yes |
 
 ## <a name="microsoftweb"></a>Microsoft.Web
 
@@ -1988,28 +1985,28 @@ ms.locfileid: "73162173"
 > | apiManagementAccounts/connectionAcls | Нет | Нет |
 > | apiManagementAccounts/connections | Нет | Нет |
 > | billingMeters | Нет | Нет |
-> | certificates | ДА | ДА |
-> | connectionGateways | ДА | ДА |
-> | connections | ДА | ДА |
-> | customApis | ДА | ДА |
+> | certificates | Yes | Yes |
+> | connectionGateways | Yes | Yes |
+> | connections | Yes | Yes |
+> | customApis | Yes | Yes |
 > | deletedSites | Нет | Нет |
-> | функции | Нет | Нет |
-> | hostingEnvironments | ДА | ДА |
+> | functions | Нет | Нет |
+> | hostingEnvironments | Yes | Yes |
 > | hostingEnvironments/multiRolePools | Нет | Нет |
 > | hostingEnvironments/workerPools | Нет | Нет |
 > | publishingUsers | Нет | Нет |
 > | к просмотру фильмов | Нет | Нет |
 > | resourceHealthMetadata | Нет | Нет |
 > | runtimes | Нет | Нет |
-> | serverFarms | ДА | ДА |
+> | serverFarms | Yes | Yes |
 > | serverFarms/Евентгридфилтерс | Нет | Нет |
-> | sites | ДА | ДА |
+> | sites | Yes | Yes |
 > | сайты и конфигурация  | Нет | Нет |
 > | Sites/Евентгридфилтерс | Нет | Нет |
 > | sites/hostNameBindings | Нет | Нет |
 > | Sites/файл networkconfig | Нет | Нет |
-> | sites/premieraddons | ДА | ДА |
-> | sites/slots | ДА | ДА |
+> | sites/premieraddons | Yes | Yes |
+> | sites/slots | Yes | Yes |
 > | сайты/слоты/Евентгридфилтерс | Нет | Нет |
 > | sites/slots/hostNameBindings | Нет | Нет |
 > | сайты/слоты/файл networkconfig | Нет | Нет |
@@ -2030,7 +2027,7 @@ ms.locfileid: "73162173"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | DeviceServices | ДА | ДА |
+> | DeviceServices | Yes | Yes |
 
 ## <a name="microsoftworkloadmonitor"></a>Microsoft.WorkloadMonitor
 
@@ -2044,6 +2041,6 @@ ms.locfileid: "73162173"
 > | monitors | Нет | Нет |
 > | notificationSettings | Нет | Нет |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Сведения о том, как применить теги к ресурсам, см. в статье, посвященной [использованию тегов для организации ресурсов Azure](resource-group-using-tags.md).

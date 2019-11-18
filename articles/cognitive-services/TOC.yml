@@ -17,6 +17,8 @@
   items:
     - name: Поддержка контейнеров
       href: cognitive-services-container-support.md
+    - name: Теги образа контейнера
+      href: ./containers/container-image-tags.md
     - name: Вопросы и ответы по контейнерам
       href: ./containers/container-faq.md
     - name: Инструкции по работе с контейнерами

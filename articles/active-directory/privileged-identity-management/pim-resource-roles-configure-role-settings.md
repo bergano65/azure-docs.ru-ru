@@ -15,12 +15,12 @@ ms.date: 11/08/2019
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a302e723aa898a62bc43ecb38343bcf026dc769e
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: abb6c2212549c3d92f9c1dbc42c31f838a704af2
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74022936"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74144298"
 ---
 # <a name="configure-azure-resource-role-settings-in-privileged-identity-management"></a>Настройка параметров роли ресурсов Azure в управление привилегированными пользователями
 
@@ -48,11 +48,19 @@ ms.locfileid: "74022936"
 
     ![Страница сведений о параметрах ролей со списком нескольких параметров назначения и активации](./media/pim-resource-roles-configure-role-settings/resources-role-setting-details.png)
 
-1. Выберите **изменить** , чтобы открыть область Параметры роли.
+1. Выберите **изменить** , чтобы открыть область **Параметры роли** . Первая вкладка позволяет обновить конфигурацию для активации роли в управление привилегированными пользователями.
 
-    ![Страница «Изменение параметров роли» с параметрами для обновления параметров назначения и активации](./media/pim-resource-roles-configure-role-settings/resources-role-settings-edit.png)
+    ![Страница «Изменение параметров роли» с открытой вкладкой «активация»](./media/pim-resource-roles-configure-role-settings/role-settings-activation-tab.png)
 
-    На панели для каждой роли есть ряд параметров, которые можно настроить.
+1. Перейдите на вкладку **назначение** или нажмите кнопку **Далее: назначение** в нижней части страницы, чтобы открыть вкладку Настройка назначения. Эти параметры управляют назначениями ролей, сделанными внутри интерфейса управление привилегированными пользователями.
+
+    ![Вкладка «Назначение ролей» на странице «Параметры роли»](./media/pim-resource-roles-configure-role-settings/role-settings-assignment-tab.png)
+
+1. Используйте вкладку **уведомление** или кнопку **Далее: Активация** в нижней части страницы, чтобы перейти на вкладку Параметры уведомлений для этой роли. Эти параметры управляют всеми уведомлениями по электронной почте, относящимися к этой роли.
+
+    ![Вкладка "уведомления роли" на странице "Параметры роли"](./media/pim-resource-roles-configure-role-settings/role-settings-notification-tab.png)
+
+1. Нажмите кнопку **Обновить** в любое время, чтобы обновить параметры роли.
 
 ## <a name="assignment-duration"></a>Длительность назначений
 

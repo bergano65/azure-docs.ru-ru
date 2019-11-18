@@ -1,17 +1,14 @@
 ---
-title: Просмотр журналов действий Azure для наблюдения за ресурсами | Документация Майкрософт
+title: Просмотр журналов действий Azure для мониторинга ресурсов
 description: Просмотр действий пользователя и ошибок с помощью журналов действий. Показывает портал Azure PowerShell, Azure CLI и RESTFUL.
-author: tfitzmac
-ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 05/13/2019
-ms.author: tomfitz
-ms.openlocfilehash: 25bce613ab45f20f7060447bcfc47f452f4d70f2
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.openlocfilehash: 3ac407fa4cfef1530cb6bbfde2ec666b5a07e324
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72329436"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74150860"
 ---
 # <a name="view-activity-logs-to-monitor-actions-on-resources"></a>Просмотр журналов действий для отслеживания действий с ресурсами
 
@@ -29,7 +26,7 @@ ms.locfileid: "72329436"
 
 Сведения из журналов действий можно получить с помощью портала, PowerShell, интерфейса командной строки Azure, API REST Insights или с помощью [библиотеки .NET для Insights](https://www.nuget.org/packages/Microsoft.Azure.Insights/).
 
-## <a name="azure-portal"></a>портала Azure
+## <a name="azure-portal"></a>портале Azure
 
 1. Чтобы просмотреть журналы действий на портале, выберите **Монитор**.
 
@@ -139,7 +136,7 @@ Get-AzLog -ResourceGroup ExampleGroup | Where-Object {$_.OperationName.value -eq
 
 Диаграмму ресурсов можно использовать для просмотра журнала изменений ресурса. Дополнительные сведения см. в разделе [Получение изменений ресурсов](../governance/resource-graph/how-to/get-resource-changes.md).
 
-## <a name="azure-cli"></a>Azure CLI
+## <a name="azure-cli"></a>Интерфейс командной строки Azure
 
 Чтобы получить записи журнала, выполните команду [az monitor activity-log list](/cli/azure/monitor/activity-log#az-monitor-activity-log-list) со смещением, чтобы указать на диапазон времени.
 
@@ -185,11 +182,11 @@ az monitor activity-log list -g ExampleGroup --offset 1d --query "[?operationNam
 
 Диаграмму ресурсов можно использовать для просмотра журнала изменений ресурса. Дополнительные сведения см. в разделе [Получение изменений ресурсов](../governance/resource-graph/how-to/get-resource-changes.md).
 
-## <a name="rest-api"></a>REST API
+## <a name="rest-api"></a>Интерфейс REST API
 
 Операции REST для работы с журналом действий включены в интерфейс [REST API Insights](/rest/api/monitor/). Получение событий журнала действий описано в статье [Список событий управления в подписке](/rest/api/monitor/activitylogs).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * Чтобы получить больше информации о действиях в вашей подписке, можно использовать журналы аудита Azure совместно с Power BI. Дополнительные сведения см. в записи блога [View and analyze Azure Audit Logs in Power BI and more](https://azure.microsoft.com/blog/analyze-azure-audit-logs-in-powerbi-more/) (Журналы аудита Azure в Power BI: просмотр, анализ и другие возможности).
 * Дополнительные сведения о настройке политик безопасности см. в статье о [контроле доступа на основе ролей Azure](../role-based-access-control/role-assignments-portal.md).

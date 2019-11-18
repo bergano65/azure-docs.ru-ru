@@ -1,17 +1,14 @@
 ---
 title: Перемещение виртуальных машин Azure в новую подписку или группу ресурсов
 description: Используйте Azure Resource Manager, чтобы переместить виртуальные машины в новую группу ресурсов или подписку.
-author: tfitzmac
-ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 10/10/2019
-ms.author: tomfitz
-ms.openlocfilehash: faeba1c0d7342a4c00f19d4cee8d67b8dbde8e6a
-ms.sourcegitcommit: f29fec8ec945921cc3a89a6e7086127cc1bc1759
+ms.openlocfilehash: b03e9618e621216f74cb02828183df7ee6b502ea
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72528432"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74150930"
 ---
 # <a name="move-guidance-for-virtual-machines"></a>Перемещение руководств для виртуальных машин
 
@@ -42,6 +39,6 @@ ms.locfileid: "72528432"
 * После завершения удаления можно переместить хранилище и виртуальную машину в целевую подписку. После перемещения можно продолжить резервное копирование без потери данных.
 * Сведения о перемещении хранилищ служб восстановления для резервного копирования см. в разделе [Ограничения служб восстановления](../../backup/backup-azure-move-recovery-services-vault.md?toc=/azure/azure-resource-manager/toc.json).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Команды для перемещения ресурсов см. в статье [Перемещение ресурсов в новую группу ресурсов или подписку](../resource-group-move-resources.md).

@@ -1,17 +1,14 @@
 ---
 title: Перемещение ресурсов классической модели развертывания Azure
 description: Используйте Azure Resource Manager для перемещения ресурсов классического развертывания в новую группу ресурсов или подписку.
-author: tfitzmac
-ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 07/09/2019
-ms.author: tomfitz
-ms.openlocfilehash: 783fcdca7637f3f67cf146bb827760cb4cdd7cbe
-ms.sourcegitcommit: 6eecb9a71f8d69851bc962e2751971fccf29557f
+ms.openlocfilehash: b97496e4abfdf248b9f5010417e9284c643a74ad
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72533481"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74150850"
 ---
 # <a name="move-guidance-for-classic-deployment-model-resources"></a>Перемещение руководств по ресурсам классической модели развертывания
 
@@ -97,7 +94,7 @@ ms.locfileid: "72533481"
 
 Операция может занять несколько минут.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Если у вас возникли проблемы с перемещением классических ресурсов, обратитесь в [службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview).
 

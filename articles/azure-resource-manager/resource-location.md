@@ -1,17 +1,14 @@
 ---
-title: Расположение ресурса шаблона Azure Resource Manager
+title: Расположение ресурса шаблона
 description: Описывает, как задать расположение ресурса в шаблоне Azure Resource Manager.
-author: tfitzmac
-ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 09/04/2019
-ms.author: tomfitz
-ms.openlocfilehash: 6af5d82766533ef7bbacab04381db9a37502923e
-ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
+ms.openlocfilehash: 1e711b2cfeb42c33dbfa68b1fbdabd42cbd46d10
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70294208"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74150622"
 ---
 # <a name="set-resource-location-in-resource-manager-template"></a>Задание расположения ресурса в шаблоне диспетчер ресурсов
 
@@ -41,7 +38,7 @@ az provider show \
 
 ## <a name="use-location-parameter"></a>Использовать параметр location
 
-Чтобы обеспечить гибкость при развертывании шаблона, используйте параметр, чтобы указать расположение ресурсов. Задайте для `resourceGroup().location`параметра значение по умолчанию.
+Чтобы обеспечить гибкость при развертывании шаблона, используйте параметр, чтобы указать расположение ресурсов. Задайте для параметра значение по умолчанию `resourceGroup().location`.
 
 В следующем примере показана учетная запись хранения, которая развертывается в расположении, указанном как параметр:
 
@@ -96,7 +93,7 @@ az provider show \
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 * Полный список функций шаблонов см. в статье [Функции шаблонов диспетчера ресурсов Azure](resource-group-template-functions.md).
 * Дополнительные сведения о файлах шаблонов см. [в разделе сведения о структуре и синтаксисе шаблонов Azure Resource Manager](resource-group-authoring-templates.md).

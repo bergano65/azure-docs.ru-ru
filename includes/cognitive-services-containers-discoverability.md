@@ -1,26 +1,26 @@
 ---
 author: IEvangelist
 ms.author: dapine
-ms.date: 06/25/2019
+ms.date: 11/15/2019
 ms.service: cognitive-services
 ms.topic: include
-ms.openlocfilehash: e36e65b90d560d7953992f875d390c123c8ae7f4
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: c414bfed40385c2bad6eaaff6b391f57c8d898cb
+ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67704313"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74125588"
 ---
 ## <a name="blog-posts"></a>Записи блога
 
 * [Запуск контейнеров Cognitive Services](https://azure.microsoft.com/blog/running-cognitive-service-containers/)
-* [Начало работы с контейнером LUIS в Cognitive Services](https://azure.microsoft.com/blog/getting-started-with-cognitive-services-language-understanding-container/)
+* [Azure Cognitive Services](https://azure.microsoft.com/blog/topics/cognitive-services/)
 
 ## <a name="developer-samples"></a>Примеры для разработчиков
 
 Примеры для разработчиков доступны в нашем [репозитории GitHub](https://github.com/Azure-Samples/cognitive-services-containers-samples).
 
-## <a name="view-webinar"></a>Просмотреть вебинар 
+## <a name="view-webinar"></a>Просмотреть вебинар
 
 Присоединяйтесь к [вебинару](https://info.microsoft.com/AP-AZUREPLAT-WBNR-FY19-03Mar-20-Seamlesslyintegrateapplicationsdataandprocesses-MCW0012283_02OnDemandRegistration-ForminBody.html), чтобы узнать:
 

@@ -1,17 +1,14 @@
 ---
-title: Перемещение сетевых ресурсов Azure в новую подписку или группу ресурсов | Документация Майкрософт
+title: Перемещение сетевых ресурсов Azure в новую подписку или группу ресурсов
 description: Используйте Azure Resource Manager для перемещения виртуальных сетей и других сетевых ресурсов в новую группу ресурсов или подписку.
-author: tfitzmac
-ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 10/16/2019
-ms.author: tomfitz
-ms.openlocfilehash: 14a7cb326a3017b1bdbcad21c8483eaaacd54674
-ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
+ms.openlocfilehash: c4e6acb52f6342c57fb1db9fc3e83d90d6d01285
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72437805"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74150827"
 ---
 # <a name="move-guidance-for-networking-resources"></a>Руководство по перемещению сетевых ресурсов
 
@@ -33,6 +30,6 @@ ms.locfileid: "72437805"
 
 Виртуальную сеть невозможно переместить в другую подписку, если эта сеть содержит подсеть со ссылками перехода к ресурсам. Например, если ресурс кэша Azure для Redis развернут в подсеть, эта подсеть содержит ссылку навигации по ресурсам.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Команды для перемещения ресурсов см. в статье [Перемещение ресурсов в новую группу ресурсов или подписку](../resource-group-move-resources.md).

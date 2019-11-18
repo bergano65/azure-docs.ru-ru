@@ -6,22 +6,22 @@ author: dlepow
 manager: gwallace
 ms.service: container-registry
 ms.topic: article
-ms.date: 11/04/2019
+ms.date: 08/14/2019
 ms.author: danlep
-ms.openlocfilehash: 4fb9eb8a3ef937ce5ed222c7814a8f191e3874f2
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 6841bf18f57f514455f7680126c3cc58e7ebd7b1
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73803602"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74148933"
 ---
 # <a name="automatically-purge-images-from-an-azure-container-registry"></a>Автоматическая очистка образов из реестра контейнеров Azure
 
 При использовании реестра контейнеров Azure в рамках рабочего процесса разработки реестр может быстро заполняться образами или другими артефактами, которые не нужны после короткого периода. Может потребоваться удалить все теги, которые старше определенной длительности или соответствуют указанному фильтру имен. Чтобы быстро удалить несколько артефактов, в этой статье описывается команда `acr purge`, которую можно запустить в качестве задачи контроля доступа по запросу или по [расписанию](container-registry-tasks-scheduled.md) . 
 
-В настоящее время команда `acr purge` распространяется в общедоступном образе контейнера (`mcr.microsoft.com/acr/acr-cli:0.1`), созданного на основе исходного кода в репозитории записей [контроля доступа CLI](https://github.com/Azure/acr-cli) в GitHub. В задаче записи контроля доступа выполните команду, используя [псевдоним](container-registry-tasks-reference-yaml.md#aliases)`acr purge`.
+В настоящее время команда `acr purge` распространяется в общедоступном образе контейнера (`mcr.microsoft.com/acr/acr-cli:0.1`), созданного на основе исходного кода в репозитории записей [контроля доступа CLI](https://github.com/Azure/acr-cli) в GitHub.
 
-Для выполнения примеров задач записи контроля доступа в этой статье можно использовать Azure Cloud Shell или локальную установку Azure CLI. Если вы хотите использовать его локально, требуется версия 2.0.76 или более поздняя. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install]. 
+Для выполнения примеров задач записи контроля доступа в этой статье можно использовать Azure Cloud Shell или локальную установку Azure CLI. Если вы хотите использовать его локально, требуется версия 2.0.69 или более поздняя. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install]. 
 
 > [!IMPORTANT]
 > Эта функция в настоящее время находится на стадии предварительной версии. Предварительные версии предоставляются при условии, что вы принимаете [дополнительные условия использования][terms-of-use]. Некоторые аспекты этой функции могут быть изменены до выхода общедоступной версии.
@@ -40,7 +40,7 @@ ms.locfileid: "73803602"
 
 `acr purge` предназначен для выполнения в виде команды контейнера в [задаче записи контроля](container-registry-tasks-overview.md)доступа, поэтому она автоматически проходит проверку подлинности с реестром, в котором выполняется задача. 
 
-Как минимум, при запуске `acr purge` необходимо указать следующее:
+Как минимум, при запуске `acr purge`необходимо указать следующее:
 
 * `--registry` — реестр контейнеров Azure, в котором выполняется команда. 
 * `--filter` — репозиторий и *регулярное выражение* для фильтрации тегов в репозитории. Примеры: `--filter "hello-world:.*"` соответствует всем тегам в репозитории `hello-world`, а `--filter "hello-world:^1.*"` соответствует тегам, начинающимся с `1`. Передайте несколько параметров `--filter` для очистки нескольких репозиториев.
@@ -63,8 +63,8 @@ ms.locfileid: "73803602"
 
 ```azurecli
 # Environment variable for container command line
-PURGE_CMD="acr purge --registry \$Registry \
-  filter 'hello-world:.*' --untagged --ago 1d"
+PURGE_CMD="mcr.microsoft.com/acr/acr-cli:0.1 purge \
+  --registry {{.Run.Registry}} --filter 'hello-world:.*' --untagged --ago 1d"
 
 az acr run \
   --cmd "$PURGE_CMD" \
@@ -78,8 +78,8 @@ az acr run \
 
 ```azurecli
 # Environment variable for container command line
-PURGE_CMD="acr purge --registry \$Registry \
-  --filter 'hello-world:.*' --ago 7d"
+PURGE_CMD="mcr.microsoft.com/acr/acr-cli:0.1 purge \
+  --registry {{.Run.Registry}} --filter 'hello-world:.*' --ago 7d"
 
 az acr task create --name purgeTask \
   --cmd "$PURGE_CMD" \
@@ -98,8 +98,8 @@ az acr task create --name purgeTask \
 
 ```azurecli
 # Environment variable for container command line
-PURGE_CMD="acr purge --registry \$Registry \
-  --filter 'hello-world:.*' --ago 1d --untagged"
+PURGE_CMD="mcr.microsoft.com/acr/acr-cli:0.1 purge \
+  --registry {{.Run.Registry}} --filter 'hello-world:.*' --ago 1d --untagged"
 
 az acr run \
   --cmd "$PURGE_CMD" \
@@ -120,7 +120,8 @@ az acr run \
 
 ```azurecli
 # Environment variable for container command line
-PURGE_CMD="acr purge --registry \$Registry \
+PURGE_CMD="mcr.microsoft.com/acr/acr-cli:0.1 purge \
+  --registry {{.Run.Registry}} \
   --filter 'samples/devimage1:.*' --filter 'samples/devimage2:.*' \
   --ago 0d --untagged --dry-run"
 
@@ -160,7 +161,8 @@ Number of deleted manifests: 4
 
 ```azurecli
 # Environment variable for container command line
-PURGE_CMD="acr purge --registry $Registry \
+PURGE_CMD="mcr.microsoft.com/acr/acr-cli:0.1 purge \
+  --registry {{.Run.Registry}} \
   --filter 'samples/devimage1:.*' --filter 'samples/devimage2:.*' \
   --ago 0d --untagged"
 
@@ -173,7 +175,7 @@ az acr task create --name weeklyPurgeTask \
 
 Выполните команду [AZ запись контроля][az-acr-task-show] доступа, чтобы увидеть, что триггер таймера настроен.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Узнайте о других вариантах [удаления данных образа](container-registry-delete.md) в реестре контейнеров Azure.
 

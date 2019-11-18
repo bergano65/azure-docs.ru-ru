@@ -1,7 +1,7 @@
 ---
 title: Справочник по функциям search.in OData
 titleSuffix: Azure Cognitive Search
-description: Функция search.in OData в запросах Когнитивный поиск Azure.
+description: Документация по синтаксису и справочной документации по использованию функции search.in в запросах Когнитивный поиск Azure.
 manager: nitinme
 author: brjohnstmsft
 ms.author: brjohnst
@@ -19,12 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: f641e50554e720d273735fd20032e60444cb198a
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: b43c46599cbacaf40bc9583e364d088fa27a3ac9
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72793278"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74113120"
 ---
 # <a name="odata-searchin-function-in-azure-cognitive-search"></a>Функция `search.in` OData в Azure Когнитивный поиск
 
@@ -70,7 +70,7 @@ search_in_call ::=
 
 Параметры определены в следующей таблице.
 
-| Имя параметра | Тип | Описание |
+| Имя параметра | введите | ОПИСАНИЕ |
 | --- | --- | --- |
 | `variable` | `Edm.String` | Ссылка на строковое поле (или переменная диапазона для поля коллекции строк в случае, когда `search.in` используется в выражении `any` или `all`). |
 | `valueList` | `Edm.String` | Строка, содержащая список значений с разделителями для сопоставления с параметром `variable`. Если параметр `delimiters` не указан, разделителями по умолчанию являются пробел и запятая. |
@@ -104,7 +104,7 @@ search_in_call ::=
 
     Tags/all(tag: not search.in(tag, 'motel, cabin'))
 
-## <a name="next-steps"></a>Дальнейшие действия  
+## <a name="next-steps"></a>Дополнительная информация  
 
 - [Фильтры в Когнитивный поиск Azure](search-filters.md)
 - [Общие сведения о языке выражений OData для Azure Когнитивный поиск](query-odata-filter-orderby-syntax.md)

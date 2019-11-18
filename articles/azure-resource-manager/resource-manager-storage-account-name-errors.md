@@ -1,24 +1,14 @@
 ---
-title: Ошибки имени учетной записи хранения Azure | Документация Майкрософт
+title: Ошибки имени учетной записи хранения
 description: Описание ошибок, которые могут возникнуть при указании имени учетной записи хранения.
-services: azure-resource-manager
-documentationcenter: ''
-author: tfitzmac
-manager: timlt
-editor: ''
-ms.service: azure-resource-manager
-ms.workload: multiple
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 03/09/2018
-ms.author: tomfitz
-ms.openlocfilehash: c3d4d764b1076c8705cfa64d6c0b38e3b8c1a801
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6af75470ebab61a1eaf7afd0bf946564c5300611
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64716385"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74149423"
 ---
 # <a name="resolve-errors-for-storage-account-names"></a>Устранение ошибок имен учетной записи хранения
 
@@ -45,7 +35,7 @@ Message=The storage account named mystorage is already taken.
 
 ## <a name="cause"></a>Причина:
 
-Имя учетной записи хранения должно содержать от 3 до 24 символов и состоять только из цифр и букв нижнего регистра. Оно должно быть уникальным.
+Имя учетной записи хранения должно содержать от 3 до 24 символов и состоять только из цифр и букв нижнего регистра. Имя должно быть уникальным.
 
 ## <a name="solution"></a>Решение
 

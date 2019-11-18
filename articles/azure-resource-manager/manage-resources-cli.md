@@ -1,19 +1,16 @@
 ---
-title: Управление ресурсами Azure с помощью Azure CLI | Документация Майкрософт
+title: Управление ресурсами — Azure CLI
 description: Используйте Azure CLI и Azure Resource Manager для управления ресурсами. Показывает, как развертывать и удалять ресурсы.
-services: azure-resource-manager
-documentationcenter: ''
 author: mumian
-ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 02/11/2019
 ms.author: jgao
-ms.openlocfilehash: d3c3ca4a95cff8b9a81be8e75b011ca83799dcaa
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: a9148ada37886d8d9ee6d8e314b36f9b259082d8
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72390386"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74146777"
 ---
 # <a name="manage-azure-resources-by-using-azure-cli"></a>Управление ресурсами Azure с помощью Azure CLI
 
@@ -65,7 +62,7 @@ az group deployment create --resource-group $resourceGroupName --template-uri "h
 
 Обычно развертывание всех ресурсов в шаблоне выполняется в отдельную группу ресурсов. Тем не менее возможны ситуации, когда необходимо развернуть набор ресурсов одновременно, но при этом разместить их в отдельных подписках или группах ресурсов. Дополнительные сведения см. [в статье Развертывание ресурсов Azure в нескольких подписках или группах ресурсов](./resource-manager-cross-resource-group-deployment.md).
 
-## <a name="delete-resources"></a>Удаление ресурсов.
+## <a name="delete-resources"></a>Удаление ресурсов
 
 В следующем сценарии показано, как удалить учетную запись хранения.
 
@@ -141,7 +138,7 @@ az lock delete --ids $lockId
 
 [Управление доступом на основе ролей (RBAC)](../role-based-access-control/overview.md) — это способ управления доступом к ресурсам в Azure. Дополнительные сведения см. в разделе [Управление доступом с помощью RBAC и Azure CLI](../role-based-access-control/role-assignments-cli.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Сведения о Azure Resource Manager см. в разделе [Общие сведения о Azure Resource Manager](./resource-group-overview.md).
 - Сведения о синтаксисе шаблона диспетчер ресурсов см. в разделе [Общие сведения о структуре и синтаксисе шаблонов Azure Resource Manager](./resource-group-authoring-templates.md).

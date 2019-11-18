@@ -1,19 +1,16 @@
 ---
-title: Добавление тегов к ресурсам Azure для их логической организации | Документация Майкрософт
+title: Теги ресурсов для логической организации
 description: Здесь описано, как применить теги, чтобы организовать ресурсы Azure для выставления счетов и управления.
-author: tfitzmac
-ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 10/30/2019
-ms.author: tomfitz
-ms.openlocfilehash: e7763889ecf69231b7a4daf31e6899b33f3e2b36
-ms.sourcegitcommit: fa5ce8924930f56bcac17f6c2a359c1a5b9660c9
+ms.openlocfilehash: b332ae86e714d4b642f921d217d80e802fa60572
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73199150"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74149587"
 ---
-# <a name="use-tags-to-organize-your-azure-resources"></a>Организация ресурсов Azure с помощью тегов
+# <a name="use-tags-to-organize-your-azure-resources"></a>Использование тегов для организации ресурсов в Azure
 
 [!INCLUDE [resource-manager-governance-tags](../../includes/resource-manager-governance-tags.md)]
 
@@ -31,7 +28,7 @@ ms.locfileid: "73199150"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Чтобы просмотреть существующие теги для *группы ресурсов*, используйте этот командлет:
+Чтобы просмотреть имеющиеся теги для *группы ресурсов*, используйте:
 
 ```azurepowershell-interactive
 (Get-AzResourceGroup -Name examplegroup).Tags
@@ -78,7 +75,7 @@ Environment                    Test
 
 Каждый раз, когда вы добавляете теги к ресурсу или группе ресурсов, вы перезаписываете существующие теги в этом ресурсе или группе. Поэтому необходимо использовать другой подход, исходя из того, имеются ли теги в ресурсе или в группе ресурсов.
 
-Чтобы добавить теги в *группу ресурсов без тегов*, используйте этот командлет:
+Чтобы добавить теги в *группу ресурсов без тегов*, используйте:
 
 ```azurepowershell-interactive
 Set-AzResourceGroup -Name examplegroup -Tag @{ Dept="IT"; Environment="Test" }
@@ -92,7 +89,7 @@ $tags.Add("Status", "Approved")
 Set-AzResourceGroup -Tag $tags -Name examplegroup
 ```
 
-Чтобы добавить теги в *ресурс без тегов*, используйте этот командлет:
+Чтобы добавить теги в *ресурс без тегов*, используйте:
 
 ```azurepowershell-interactive
 $r = Get-AzResource -ResourceName examplevnet -ResourceGroupName examplegroup
@@ -151,9 +148,9 @@ if ($null -ne $group.Tags) {
 Set-AzResourceGroup -Tag @{} -Name examplegroup
 ```
 
-## <a name="azure-cli"></a>Azure CLI
+## <a name="azure-cli"></a>Интерфейс командной строки Azure
 
-Чтобы просмотреть существующие теги для *группы ресурсов*, используйте этот командлет:
+Чтобы просмотреть имеющиеся теги для *группы ресурсов*, используйте:
 
 ```azurecli
 az group show -n examplegroup --query tags
@@ -194,13 +191,13 @@ az resource list --tag Dept=Finance
 
 Каждый раз, когда вы добавляете теги к ресурсу или группе ресурсов, вы перезаписываете существующие теги в этом ресурсе или группе. Поэтому необходимо использовать другой подход, исходя из того, имеются ли теги в ресурсе или в группе ресурсов.
 
-Чтобы добавить теги в *группу ресурсов без тегов*, используйте этот командлет:
+Чтобы добавить теги в *группу ресурсов без тегов*, используйте:
 
 ```azurecli
 az group update -n examplegroup --set tags.Environment=Test tags.Dept=IT
 ```
 
-Чтобы добавить теги в *ресурс без тегов*, используйте этот командлет:
+Чтобы добавить теги в *ресурс без тегов*, используйте:
 
 ```azurecli
 az resource tag --tags Dept=IT Environment=Test -g examplegroup -n examplevnet --resource-type "Microsoft.Network/virtualNetworks"
@@ -393,11 +390,11 @@ done
 }
 ```
 
-## <a name="portal"></a>Microsoft Azure
+## <a name="portal"></a>Портал
 
 [!INCLUDE [resource-manager-tag-resource](../../includes/resource-manager-tag-resources.md)]
 
-## <a name="rest-api"></a>REST API
+## <a name="rest-api"></a>Интерфейс REST API
 
 Портал Azure и PowerShell используют [интерфейс REST API диспетчера ресурсов Resource Manager](https://docs.microsoft.com/rest/api/resources/). Если вам нужно интегрировать теги в другую среду, их можно получить с помощью метода **GET** по идентификатору ресурса и обновить набор тегов с помощью вызова метода **PATCH**.
 
@@ -409,7 +406,7 @@ done
 
 Подробнее об операциях REST API см. в [справочнике по REST API для выставления счетов Azure](/rest/api/billing/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * Не все типы ресурсов поддерживают теги. Сведения о возможности применения тегов к типу ресурса см. в статье о [поддержке тегов ресурсами Azure](tag-support.md).
 * Общие сведения об использовании портала см. в статье [Управление ресурсами Azure через портал](manage-resource-groups-portal.md).  

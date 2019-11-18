@@ -1,17 +1,14 @@
 ---
-title: Откат к ошибке при успешном развертывании Azure
+title: Откат к ошибке при успешном развертывании
 description: Укажите, что неудачное развертывание должно выполнить откат к успешному развертыванию.
-author: tfitzmac
-ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 10/04/2019
-ms.author: tomfitz
-ms.openlocfilehash: 035b684bb9f5fbc10eb13e642c3fd5945b85c561
-ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
+ms.openlocfilehash: 0978d2547e23a9ac6f920c76be3e877ec236d9ed
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2019
-ms.locfileid: "71975450"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74150331"
 ---
 # <a name="rollback-on-error-to-successful-deployment"></a>Откат к ошибке при успешном развертывании
 
@@ -45,7 +42,7 @@ New-AzResourceGroupDeployment -Name ExampleDeployment02 `
   -RollBackDeploymentName ExampleDeployment01
 ```
 
-## <a name="azure-cli"></a>Инфраструктура CLI Azure
+## <a name="azure-cli"></a>Интерфейс командной строки Azure
 
 Чтобы выполнить повторно последнее успешное развертывание, добавьте параметр `--rollback-on-error` в качестве флага.
 
@@ -69,7 +66,7 @@ az group deployment create \
   --rollback-on-error ExampleDeployment01
 ```
 
-## <a name="rest-api"></a>REST API
+## <a name="rest-api"></a>Интерфейс REST API
 
 Чтобы повторно выполнить последнее успешное развертывание, если текущее развертывание завершается сбоем, используйте следующий код:
 
@@ -116,7 +113,7 @@ az group deployment create \
 
 Указанное развертывание должно быть успешным.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 - Для безопасного развертывания службы в нескольких регионах обратитесь к статье о [диспетчере развертывания Azure](deployment-manager-overview.md).
 - Сведения о том, как указать способ обработки ресурсов, которые существуют в группе ресурсов, но не определены в шаблоне, см. в [описании режимов развертывания с помощью Azure Resource Manager](deployment-modes.md).

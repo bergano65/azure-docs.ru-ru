@@ -7,17 +7,17 @@
 - name: Краткие руководства
   expanded: true
   items:
-    - name: Создание приложения ASP.NET
+    - name: Приложение ASP.NET
       href: cache-web-app-howto.md
-    - name: Создание приложения NET
-      href: cache-dotnet-how-to-use-azure-redis-cache.md
-    - name: Создание приложения .NET Core
+    - name: Приложение .NET Core
       href: cache-dotnet-core-quickstart.md
-    - name: Создание приложения Node.js
-      href: cache-nodejs-get-started.md
-    - name: Создание приложения Java
+    - name: Приложение .NET
+      href: cache-dotnet-how-to-use-azure-redis-cache.md
+    - name: Приложение Java
       href: cache-java-get-started.md
-    - name: Создание приложения Python
+    - name: Приложение Node.js
+      href: cache-nodejs-get-started.md
+    - name: Приложение Python
       href: cache-python-get-started.md
 - name: Учебники
   items:
@@ -33,10 +33,10 @@
       href: cli-samples.md
 - name: Основные понятия
   items:
-    - name: Рекомендации
-      href: cache-best-practices.md
     - name: Отработка отказа и установка исправлений
       href: cache-failover.md
+    - name: Рекомендации
+      href: cache-best-practices.md
     - name: Рекомендации по архитектуре для кэширования
       href: 'https://docs.microsoft.com/azure/architecture/best-practices/caching?toc=%2Fazure%2Fredis-cache%2Ftoc.json'
 - name: Руководства
@@ -45,12 +45,14 @@
       items:
         - name: Выбор уровня кэша
           href: 'cache-faq.md#what-redis-cache-offering-and-size-should-i-use'
+        - name: Распределение кэша с помощью кластеризации
+          href: cache-how-to-premium-clustering.md
         - name: Сохранение кэша с помощью функции сохраняемости данных Redis
           href: cache-how-to-premium-persistence.md
         - name: Защита кэша с помощью виртуальной сети
           href: cache-how-to-premium-vnet.md
-        - name: Распределение кэша с помощью кластеризации
-          href: cache-how-to-premium-clustering.md
+        - name: Настройка георепликации
+          href: cache-how-to-geo-replication.md
         - name: Перенос из управляемой службы кэша
           href: cache-migrate-to-redis.md
     - name: Автоматизация
@@ -79,8 +81,6 @@
       items:
         - name: Настройка на портале Azure
           href: cache-configure.md
-        - name: Настройка георепликации
-          href: cache-how-to-geo-replication.md
         - name: Импорт и экспорт данных
           href: cache-how-to-import-export-data.md
         - name: Перезагрузка

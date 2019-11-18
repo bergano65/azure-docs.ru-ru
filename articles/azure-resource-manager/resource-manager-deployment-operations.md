@@ -1,66 +1,63 @@
 ---
-title: Журнал развертывания с помощью Azure Resource Manager | Документация Майкрософт
+title: Журнал развертывания
 description: Сведения о просмотре операций развертывания Azure Resource Manager с помощью портала, PowerShell, Azure CLI и REST API.
 tags: top-support-issue
-author: tfitzmac
-ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 05/13/2019
-ms.author: tomfitz
-ms.openlocfilehash: 58d22e3fcae5c30e5d7dcc39b317afeef4a693ee
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d8daf7191bb22f7c7057f6ef6b220a18868872cc
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65606000"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74149570"
 ---
 # <a name="view-deployment-history-with-azure-resource-manager"></a>Просмотр журнала развертывания с помощью Azure Resource Manager
 
-Azure Resource Manager позволяет просматривать историю развертывания и проверки определенных операций в выполнении развертываний в прошлом. См. в ресурсах, которые были развернуты и получить сведения об ошибках.
+Azure Resource Manager позволяет просматривать журнал развертывания и проверять конкретные операции в прошлых развертываниях. Можно просмотреть развернутые ресурсы и получить сведения об ошибках.
 
 Сведения об устранении некоторых ошибок развертывания см. в статье об [устранении распространенных ошибок при развертывании ресурсов в Azure с помощью Azure Resource Manager](resource-manager-common-deployment-errors.md).
 
 ## <a name="portal"></a>Портал
 
-Чтобы получить сведения о развертывании из журнала развертывания.
+Для получения сведений о развертывании из журнала развертывания.
 
-1. Выберите группу ресурсов, которую вы хотите проанализировать.
+1. Выберите группу ресурсов, которую необходимо проверить.
 
-1. Щелкните ссылку под **развертываний**.
+1. Выберите ссылку в разделе **развертывания**.
 
    ![Выбор журнала развертывания](./media/resource-manager-deployment-operations/select-deployment-history.png)
 
 1. Выберите одно из развертываний из журнала развертывания.
 
-   ![Выберите развертывание](./media/resource-manager-deployment-operations/select-details.png)
+   ![Выбор развертывания](./media/resource-manager-deployment-operations/select-details.png)
 
-1. Отображается сводка по развертыванию, включая список развернутых ресурсов.
+1. Отобразится сводка развертывания, включая список развернутых ресурсов.
 
     ![Сводка по развертыванию](./media/resource-manager-deployment-operations/view-deployment-summary.png)
 
-1. Чтобы просмотреть шаблон, используемый для развертывания, выберите **шаблона**. Вы можете скачать шаблон для повторного использования.
+1. Чтобы просмотреть шаблон, используемый для развертывания, выберите **шаблон**. Вы можете скачать шаблон, чтобы использовать его повторно.
 
     ![Отображение шаблона](./media/resource-manager-deployment-operations/show-template-from-history.png)
 
-1. Если произошел сбой развертывания, вы увидите сообщение об ошибке. Выберите сообщение об ошибке для получения дополнительных сведений.
+1. Если развертывание завершилось сбоем, отображается сообщение об ошибке. Выберите сообщение об ошибке для получения дополнительных сведений.
 
-    ![Просмотр неудачного развертывания](./media/resource-manager-deployment-operations/show-error.png)
+    ![Просмотр невыполненного развертывания](./media/resource-manager-deployment-operations/show-error.png)
 
-1. Подробное сообщение об ошибке отображается.
+1. Отображается подробное сообщение об ошибке.
 
     ![Просмотреть сведения об ошибке](./media/resource-manager-deployment-operations/show-details.png)
 
-1. Идентификатор корреляции используется для отслеживания связанных событий и может быть полезным при работе с технической поддержкой для устранения проблемы развертывания.
+1. Идентификатор корреляции используется для наблюдения за связанными событиями и может быть полезен при работе с технической поддержкой для устранения неполадок при развертывании.
 
     ![Получить идентификатор корреляции](./media/resource-manager-deployment-operations/get-correlation-id.png)
 
-1. Дополнительные сведения о шагах, в котором произошел сбой, выберите **сведения об операции**.
+1. Чтобы узнать больше о том, на каком шаге произошел сбой, выберите **сведения об операции**.
 
-    ![Выберите операции развертывания](./media/resource-manager-deployment-operations/select-deployment-operations.png)
+    ![Выбор операций развертывания](./media/resource-manager-deployment-operations/select-deployment-operations.png)
 
-1. Отобразятся сведения для этого этапа развертывания.
+1. Вы увидите сведения об этом шаге развертывания.
 
-    ![Показать сведения об операции](./media/resource-manager-deployment-operations/show-operation-details.png)
+    ![Отобразить сведения об операции](./media/resource-manager-deployment-operations/show-operation-details.png)
 
 ## <a name="powershell"></a>PowerShell
 
@@ -78,7 +75,7 @@ Get-AzResourceGroupDeployment -ResourceGroupName ExampleGroup
 Get-AzResourceGroupDeployment -ResourceGroupName ExampleGroup | Where-Object ProvisioningState -eq Failed
 ```
 
-Идентификатор корреляции используется для отслеживания связанных событий и может быть полезным при работе с технической поддержкой для устранения проблемы развертывания. Чтобы получить идентификатор корреляции, используйте:
+Идентификатор корреляции используется для наблюдения за связанными событиями и может быть полезен при работе с технической поддержкой для устранения неполадок при развертывании. Чтобы получить идентификатор корреляции, используйте:
 
 ```azurepowershell-interactive
 (Get-AzResourceGroupDeployment -ResourceGroupName ExampleGroup -DeploymentName azuredeploy).CorrelationId
@@ -124,7 +121,7 @@ targetResource        : @{id=/subscriptions/{guid}/resourceGroups/ExampleGroup/p
                        resourceType=Microsoft.Network/publicIPAddresses; resourceName=myPublicIP}
 ```
 
-Обратите внимание на значения serviceRequestId и trackingId операции. serviceRequestId может быть полезным при работе с технической поддержкой для устранения проблемы развертывания. TrackingId используется на следующем шаге сосредоточиться на конкретной операции.
+Обратите внимание на значения serviceRequestId и trackingId операции. serviceRequestId может быть полезным при работе с технической поддержкой для устранения проблемы развертывания. Вы будете использовать trackingId на следующем шаге, чтобы сосредоточиться на определенной операции.
 
 Чтобы получить сообщение о состоянии конкретной завершившейся сбоем операции, используйте следующую команду:
 
@@ -140,7 +137,7 @@ code           message                                                          
 DnsRecordInUse DNS record dns.westus.cloudapp.azure.com is already used by another public IP. {}
 ```
 
-Каждая операция развертывания в Azure включает в себя содержимое запроса и ответа. Во время развертывания, можно использовать **DeploymentDebugLogLevel** параметр, чтобы указать, что вошли запроса или ответа.
+Каждая операция развертывания в Azure включает в себя содержимое запроса и ответа. Во время развертывания можно использовать параметр **DeploymentDebugLogLevel** , чтобы указать, что запрос и/или ответ записываются в журнал.
 
 Получить эту информацию из журнала и сохранить ее локально можно с помощью следующих команд PowerShell:
 
@@ -150,15 +147,15 @@ DnsRecordInUse DNS record dns.westus.cloudapp.azure.com is already used by anoth
 (Get-AzResourceGroupDeploymentOperation -DeploymentName "TestDeployment" -ResourceGroupName "Test-RG").Properties.response | ConvertTo-Json |  Out-File -FilePath <PathToFile>
 ```
 
-## <a name="azure-cli"></a>Инфраструктура CLI Azure
+## <a name="azure-cli"></a>Интерфейс командной строки Azure
 
-Чтобы получить общее состояние развертывания, используйте **azure группы развертывания show** команды.
+Чтобы получить общее состояние развертывания, используйте команду **Azure Group Deployment демонстрация** .
 
 ```azurecli-interactive
 az group deployment show -g ExampleGroup -n ExampleDeployment
 ```
   
-Идентификатор корреляции используется для отслеживания связанных событий и может быть полезным при работе с технической поддержкой для устранения проблемы развертывания.
+Идентификатор корреляции используется для наблюдения за связанными событиями и может быть полезен при работе с технической поддержкой для устранения неполадок при развертывании.
 
 ```azurecli-interactive
 az group deployment show -g ExampleGroup -n ExampleDeployment --query properties.correlationId
@@ -172,7 +169,7 @@ az group deployment operation list -g ExampleGroup -n ExampleDeployment
 
 ## <a name="rest"></a>REST
 
-Чтобы получить сведения о развертывании, используйте [получение сведений о шаблоне-развертывании](https://docs.microsoft.com/rest/api/resources/deployments) операции.
+Чтобы получить сведения о развертывании, используйте операцию [получения сведений о развертывании шаблона](https://docs.microsoft.com/rest/api/resources/deployments) .
 
 ```
 GET https://management.azure.com/subscriptions/{subscription-id}/resourcegroups/{resource-group-name}/providers/microsoft.resources/deployments/{deployment-name}?api-version={api-version}
@@ -195,7 +192,7 @@ GET https://management.azure.com/subscriptions/{subscription-id}/resourcegroups/
 }
 ```
 
-Чтобы получить сведения о развертываниях, используйте [вывод списка всех операций развертывания шаблона](https://docs.microsoft.com/rest/api/resources/deployments). 
+Чтобы получить сведения о развертываниях, используйте [список всех операций развертывания шаблона](https://docs.microsoft.com/rest/api/resources/deployments). 
 
 ```
 GET https://management.azure.com/subscriptions/{subscription-id}/resourcegroups/{resource-group-name}/providers/microsoft.resources/deployments/{deployment-name}/operations?$skiptoken={skiptoken}&api-version={api-version}
@@ -228,7 +225,7 @@ GET https://management.azure.com/subscriptions/{subscription-id}/resourcegroups/
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 * Сведения об устранении некоторых ошибок развертывания см. в статье об [устранении распространенных ошибок при развертывании ресурсов в Azure с помощью Azure Resource Manager](resource-manager-common-deployment-errors.md).
 * Дополнительные сведения об использовании журналов действий для мониторинга других типов действий см. в статье [Операции аудита с помощью диспетчера ресурсов](resource-group-audit.md).
 * Чтобы проверить развернутую службу перед ее выполнением, ознакомьтесь со статьей [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell](resource-group-template-deploy.md).

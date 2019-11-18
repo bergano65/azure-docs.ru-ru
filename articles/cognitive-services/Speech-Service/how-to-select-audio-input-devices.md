@@ -1,5 +1,5 @@
 ---
-title: Выбор устройства ввода звука с помощью речевого пакета SDK — служба речи
+title: Как выбрать аудиоустройство ввода с помощью пакета SDK для распознавания речи
 titleSuffix: Azure Cognitive Services
 description: Узнайте, как выбрать устройства звукового ввода в речевомC++пакете C#SDK (,, Python, цели-C, Java, JavaScript), получая идентификаторы звуковых устройств, подключенных к системе.
 services: cognitive-services
@@ -10,18 +10,16 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: chlandsi
-ms.openlocfilehash: 967e4fbc5484c152867fe5558040631d21e6c0b3
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: 9891cdb59c757035afd17339b052d5587ac99b0c
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74072434"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74109973"
 ---
-# <a name="select-an-audio-input-device-with-the-speech-sdk"></a>Выбор аудиоустройства ввода с помощью пакета SDK для распознавания речи
+# <a name="how-to-select-an-audio-input-device-with-the-speech-sdk"></a>Как выбрать устройство ввода звука с помощью пакета SDK для распознавания речи
 
-Пакет SDK версии 1.3.0 для служб "Речь" предоставляет API для выбора аудиовхода.
-В этой статье описывается, как получить идентификаторы звуковых устройств, подключенных к системе.
-Они могут затем использоваться в пакете SDK для распознавания речи путем настройки звукового устройства с помощью объекта `AudioConfig`:
+Пакет SDK версии 1.3.0 для служб "Речь" предоставляет API для выбора аудиовхода. В этой статье описывается, как получить идентификаторы звуковых устройств, подключенных к системе. Они могут затем использоваться в пакете SDK для распознавания речи путем настройки звукового устройства с помощью объекта `AudioConfig`:
 
 ```C++
 audioConfig = AudioConfig.FromMicrophoneInput("<device id>");
@@ -53,6 +51,7 @@ audioConfig = AudioConfiguration.fromMicrophoneInput("<device id>");
 ## <a name="audio-device-ids-on-windows-for-desktop-applications"></a>Идентификаторы аудиоустройств в Windows для настольных приложений
 
 Строки [идентификаторов конечной точки аудиоустройства](/windows/desktop/CoreAudio/endpoint-id-strings) можно извлечь из объекта [`IMMDevice`](/windows/desktop/api/mmdeviceapi/nn-mmdeviceapi-immdevice) в Windows для настольных приложений.
+
 В следующем образце кода показано, как использовать его для перечисления аудиоустройств в C++:
 
 ```cpp
@@ -177,6 +176,7 @@ namespace ConsoleApp
 ## <a name="audio-device-ids-on-uwp"></a>Идентификатор аудиоустройства в UWP
 
 На универсальной платформе Windows (UWP) аудиоустройства для входа можно получить с помощью свойства `Id()` соответствующего объекта [`DeviceInformation`](/uwp/api/windows.devices.enumeration.deviceinformation).
+
 В приведенных ниже фрагментах кода показано, как это сделать в C++ и C#:
 
 ```cpp
@@ -227,13 +227,16 @@ namespace helloworld {
 ## <a name="audio-device-ids-on-linux"></a>Идентификаторы аудиоустройств в Linux
 
 Идентификаторы устройств выбираются с использованием стандартных идентификаторов устройств ALSA.
+
 Идентификаторы средств ввода, подключенных к системе, содержатся в выходных данных команды `arecord -L`.
 Кроме того, их можно получить с помощью [библиотеки ALSA для C](https://www.alsa-project.org/alsa-doc/alsa-lib/).
+
 Примеры идентификаторов: `hw:1,0` и `hw:CARD=CC,DEV=0`.
 
 ## <a name="audio-device-ids-on-macos"></a>Идентификаторы аудиоустройств на macOS
 
 Следующая функция, реализованная в Objective-C, создает список имен и идентификаторов аудиоустройств, подключенных к Mac.
+
 Строка `deviceUID` используется для идентификации устройства в пакете SDK для распознавания речи для macOS.
 
 ```objc
@@ -362,8 +365,8 @@ CFArrayRef CreateInputDeviceArray()
 
 ## <a name="audio-device-ids-on-ios"></a>Идентификатор аудиоустройства в iOS
 
-Выбор аудиоустройства с помощью пакета SDK для распознавания речи не поддерживается на устройствах iOS.
-Тем не менее, с помощью пакета SDK приложения могут повлиять на маршрутизацию аудио через платформу [`AVAudioSession`](https://developer.apple.com/documentation/avfoundation/avaudiosession?language=objc).
+Выбор аудиоустройства с помощью пакета SDK для распознавания речи не поддерживается на устройствах iOS. Тем не менее, с помощью пакета SDK приложения могут повлиять на маршрутизацию аудио через платформу [`AVAudioSession`](https://developer.apple.com/documentation/avfoundation/avaudiosession?language=objc).
+
 Например, инструкция
 
 ```objc

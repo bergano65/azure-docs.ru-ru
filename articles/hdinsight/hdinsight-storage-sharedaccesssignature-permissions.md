@@ -2,18 +2,18 @@
 title: Ограничение доступа с использованием подписанных URL-адресов в Azure HDInsight
 description: Узнайте, как использовать подписанные URL-адреса для ограничения доступа HDInsight к данным, хранящимся в хранилищах BLOB-объектов.
 author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 04/29/2019
-ms.author: hrasheed
-ms.openlocfilehash: 031498119eb4f9feb92046d7d7a86cfd77f8f368
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.date: 11/13/2019
+ms.openlocfilehash: 725bdfd4efe3be600c993e568f1a5c7edccc6952
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73498123"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74148227"
 ---
 # <a name="use-azure-storage-shared-access-signatures-to-restrict-access-to-data-in-hdinsight"></a>Использование подписанных URL-адресов хранилища Azure для ограничения доступа к данным в HDInsight
 
@@ -25,7 +25,7 @@ HDInsight имеет полный доступ к данным в учетных
 > [!WARNING]  
 > HDInsight следует предоставить полный доступ к хранилищу по умолчанию для кластера.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 * Подписка Azure.
 
@@ -33,7 +33,7 @@ HDInsight имеет полный доступ к данным в учетных
 
 * Существующий [контейнер хранилища](../storage/blobs/storage-quickstart-blobs-portal.md).  
 
-* При использовании PowerShell потребуется [модуль AZ](https://docs.microsoft.com/powershell/azure/overview).
+* При использовании PowerShell вам потребуется [модуль AZ](https://docs.microsoft.com/powershell/azure/overview).
 
 * Если вы хотите использовать Azure CLI и вы еще не установили его, см. статью [установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
 
@@ -41,7 +41,7 @@ HDInsight имеет полный доступ к данным в учетных
 
 * Если используется C#, Visual Studio должна быть версии 2013 или более поздней.
 
-* [Схема универсального кода ресурса (URI)](./hdinsight-hadoop-linux-information.md#URI-and-scheme) для вашей учетной записи хранения. Для службы хранилища Azure это будет `wasb://`, для Azure Data Lake Storage 2-го поколения — `abfs://` или `adl://` для Azure Data Lake Storage 1-го поколения. Если для службы хранилища Azure включено безопасное перемещение, URI будет `wasbs://`. См. также [безопасное перемещение](../storage/common/storage-require-secure-transfer.md).
+* [Схема универсального кода ресурса (URI)](./hdinsight-hadoop-linux-information.md#URI-and-scheme) для вашей учетной записи хранения. Для службы хранилища Azure это будет `wasb://`, для Azure Data Lake Storage 2-го поколения — `abfs://` или `adl://` для Azure Data Lake Storage 1-го поколения. Если для службы хранилища Azure включено безопасное перемещение, URI будет таким: `wasbs://`. См. также сведения о [безопасной передаче](../storage/common/storage-require-secure-transfer.md).
 
 * Существующий кластер HDInsight, в который добавляется подписанный URL-доступ. Если нет, создайте кластер с помощью Azure PowerShell и добавьте подписанный URL-адрес в процессе создания кластера.
 
@@ -69,7 +69,7 @@ HDInsight имеет полный доступ к данным в учетных
     * Истек интервал времени.
     * Хранимая политика доступа изменилась, чтобы время окончания срока действия оказалось в прошлом. При изменении времени окончания срока действия отменяется подписанный URL-адрес.
 
-3. Удаляется хранимая политика доступа, на которую ссылается подпись, что является другим способом отозвать подпись общего доступа. Если вы снова создадите хранимую политику доступа с таким же именем, к ней будут применены все маркеры SAS предыдущей политики (если не истек срок действия соответствующих SAS). Если вы намерены отозвать SAS, обязательно используйте другое имя при повторном создании политики доступа, срок действия которой еще не истек.
+3. Удаляется хранимая политика доступа, на которую ссылается подпись, что является другим способом отозвать подпись общего доступа. При повторном создании хранимой политики доступа с тем же именем все маркеры SAS для предыдущей политики будут действительны (если время окончания срока действия SAS не прошло). Если вы намерены отозвать SAS, обязательно используйте другое имя при повторном создании политики доступа, срок действия которой еще не истек.
 
 4. Повторно создается ключ учетной записи, который был использован для создания подписи общего доступа. Это приведет к тому, что все приложения, использующие прежний ключ, не смогут пройти аутентификацию. Предоставьте всем компонентам новый ключ.
 
@@ -234,7 +234,6 @@ Set-AzStorageblobcontent `
 Замените `CLUSTERNAME`, `RESOURCEGROUP`, `DEFAULTSTORAGEACCOUNT`, `STORAGECONTAINER`, `STORAGEACCOUNT`и `TOKEN` соответствующими значениями. Введите команды PowerShell:
 
 ```powershell
-
 $clusterName = 'CLUSTERNAME'
 $resourceGroupName = 'RESOURCEGROUP'
 
@@ -285,11 +284,10 @@ $defaultStorageContext = New-AzStorageContext `
                                 -StorageAccountName $defaultStorageAccountName `
                                 -StorageAccountKey $defaultStorageAccountKey
 
-
 # Create a blob container. This holds the default data store for the cluster.
 New-AzStorageContainer `
     -Name $clusterName `
-    -Context $defaultStorageContext 
+    -Context $defaultStorageContext
 
 # Cluster login is used to secure HTTPS services hosted on the cluster
 $httpCredential = Get-Credential `
@@ -302,9 +300,9 @@ $sshCredential = Get-Credential `
     -UserName "sshuser"
 
 # Create the configuration for the cluster
-$config = New-AzHDInsightClusterConfig 
+$config = New-AzHDInsightClusterConfig
 
-$config = $config | Add-AzHDInsightConfigValues `
+$config = $config | Add-AzHDInsightConfigValue `
     -Spark2Defaults @{} `
     -Core @{"fs.azure.sas.$SASContainerName.$SASStorageAccountName.blob.core.windows.net"=$SASToken}
 
@@ -358,29 +356,29 @@ Remove-AzResourceGroup `
 
 1. Откройте веб-интерфейс Ambari для вашего кластера. Адрес этой страницы: `https://YOURCLUSTERNAME.azurehdinsight.net`. При появлении запроса пройдите проверку подлинности, указав имя пользователя и пароль администратора, которые использовались при создании кластера.
 
-2. В левой части экрана пользовательского веб-интерфейса Ambari выберите **HDFS**, затем вкладку щелкните **Configs** (Конфигурации) посередине страницы.
+1. Перейдите к **HDFS** > **configs** > **Расширенный** > **Настраиваемый Core-site**.
 
-3. Откройте вкладку **Advanced** (Дополнительно) и прокрутите экран до раздела **Custom core-site** (Настройка файла core-site).
+1. Разверните раздел **пользовательское ядро — сайт** , прокрутите до конца и выберите **Добавить свойство...** . Используйте следующие значения для **ключа** и **значения**:
 
-4. Разверните раздел **Custom core-site** (Настройка файла core-site), прокрутите экран до конца и щелкните ссылку **Add property...** (Добавить свойство...). В полях **Key** (Ключ) и **Value** (Значение) укажите следующие значения.
+    * **Ключ**: `fs.azure.sas.CONTAINERNAME.STORAGEACCOUNTNAME.blob.core.windows.net`
+    * **Значение**: SAS, возвращенный одним из методов, выполненных ранее.
 
-   * **Ключ**: `fs.azure.sas.CONTAINERNAME.STORAGEACCOUNTNAME.blob.core.windows.net`
-   * **Значение**: SAS, возвращенный одним из методов, выполненных ранее.
+    Замените `CONTAINERNAME` именем контейнера, который использовался в приложении C# или SAS. Замените `STORAGEACCOUNTNAME` именем учетной записи хранения, которую вы использовали.
 
-     Замените `CONTAINERNAME` именем контейнера, который использовался в приложении C# или SAS. Замените `STORAGEACCOUNTNAME` именем учетной записи хранения, которую вы использовали.
+    Выберите **Добавить** , чтобы сохранить этот ключ и значение
 
-5. Нажмите кнопку **Add** (Добавить), чтобы сохранить этот ключ и значение, а затем кнопку **Save** (Сохранить), чтобы сохранить изменения в конфигурации. При появлении запроса добавьте описание внесенного изменения (например, "Добавление доступа к хранилищу SAS") и нажмите кнопку **Сохранить**.
+1. Нажмите кнопку **сохранить** , чтобы сохранить изменения конфигурации. При появлении запроса добавьте описание изменения (например, "Добавление доступа к хранилищу SAS") и нажмите кнопку **сохранить**.
 
-    Закончив вносить изменения, нажмите кнопку **ОК** .
+    После завершения изменений нажмите кнопку **ОК** .
 
    > [!IMPORTANT]  
    > Чтобы изменения вступили в силу, необходимо перезапустить несколько служб.
 
-6. В пользовательском веб-интерфейсе Ambari выберите **HDFS** в списке слева, а затем щелкните **Restart All Affected** (Перезапустить все затронутые) в раскрывающемся списке **Service Actions** (Действия службы) справа. Когда появится запрос, выберите __Conform Restart All__ (Подтвердить перезапуск всех).
+1. Появится раскрывающийся список **Перезагрузка** . Выберите **перезапустить все затронутые** в раскрывающемся списке и __Подтвердите перезагрузка__.
 
-    Повторите эту процедуру для MapReduce2 и YARN.
+    Повторите эту процедуру для **MapReduce2** и **YARN**.
 
-7. Перезапустив службы, выберите одну из них и отключите режим обслуживания в раскрывающемся списке **Учетные записи обслуживания**.
+1. Перезапустив службы, выберите одну из них и отключите режим обслуживания в раскрывающемся списке **Учетные записи обслуживания**.
 
 ## <a name="test-restricted-access"></a>Тестирование ограниченного доступа
 
@@ -405,7 +403,7 @@ Remove-AzResourceGroup `
 3. Проверьте, можете ли вы прочитать содержимое файла, выполнив следующую команду: Замените `SASCONTAINER` и `SASACCOUNTNAME`, как в предыдущем шаге. Замените `sample.log` именем файла, отображаемого в предыдущей команде:
 
     ```bash
-    hdfs dfs -text wasb://SASCONTAINER@SASACCOUNTNAME.blob.core.windows.net/sample.log
+    hdfs dfs -text wasbs://SASCONTAINER@SASACCOUNTNAME.blob.core.windows.net/sample.log
     ```
 
     Эта команда выводит содержимое файла.
@@ -436,11 +434,9 @@ Remove-AzResourceGroup `
 
     На этот раз операция должна завершиться успешно.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-Теперь, когда вы узнали, как добавить хранилище с ограниченным доступом в кластер HDInsight, ознакомьтесь с другими способами работы с данными в вашем кластере:
+Теперь, когда вы узнали, как добавить хранилище с ограниченным доступом в кластер HDInsight, Узнайте о других способах работы с данными в кластере:
 
 * [Использование Hive и HiveQL с Hadoop в HDInsight для анализа примера файла Apache log4j](hadoop/hdinsight-use-hive.md)
-* [Использование Pig с Hadoop в HDInsight](hadoop/hdinsight-use-pig.md)
 * [Использование MapReduce с HDInsight](hadoop/hdinsight-use-mapreduce.md)
-

@@ -3,19 +3,19 @@ title: Общие сведения об Azure Advisor | Документация
 description: Использование Azure Advisor для оптимизации развернутых служб Azure.
 services: advisor
 documentationcenter: NA
-author: kasparks
+author: sagupt
 ms.service: advisor
 ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 02/01/2019
-ms.author: kasparks
-ms.openlocfilehash: 2ccac3bf9a882dc021c6c969946ad9d439a7cf5d
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: sagupt
+ms.openlocfilehash: 1a1ed13697d838041d1ac98b966695e24c06edbe
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67069683"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74145370"
 ---
 # <a name="introduction-to-azure-advisor"></a>Общие сведения об Azure Advisor
 
@@ -33,10 +33,11 @@ ms.locfileid: "67069683"
 
 Панель мониторинга Помощника отображает персонализированные рекомендации для всех ваших подписок.  Вы можете применить фильтры, чтобы рекомендации отображались для определенных подписок и типов ресурсов.  Эти рекомендации разделены на четыре категории. 
 
-* **Высокий уровень доступности** — предназначены обеспечить и улучшить непрерывную работу критически важных бизнес-приложений. Дополнительные сведения см. в разделе [Рекомендации Azure Advisor по высокой доступности](advisor-high-availability-recommendations.md).
-* **Безопасность** — предназначены для выявления угроз и уязвимостей, которые могут привести к бреши в системе безопасности. Дополнительные сведения см. в разделе [Рекомендации Azure Advisor по безопасности](advisor-security-recommendations.md).
-* **Производительность** — предназначены для повышения скорости работы ваших приложений. Дополнительные сведения см. в разделе [Рекомендации Azure Advisor по производительности](advisor-performance-recommendations.md).
-* **Затраты** — предназначены оптимизировать и сократить общие расходы на Azure. Дополнительные сведения см. в разделе [Рекомендации Azure Advisor по затратам](advisor-cost-recommendations.md).
+* **Высокий уровень доступности** — предназначены обеспечить и улучшить непрерывную работу критически важных бизнес-приложений. Дополнительные сведения см. в разделе [Рекомендации Azure Advisor по высокой доступности](advisor-high-availability-recommendations.md).
+* **Безопасность** — предназначены для выявления угроз и уязвимостей, которые могут привести к нарушениям безопасности. Дополнительные сведения см. в разделе [Рекомендации Azure Advisor по безопасности](advisor-security-recommendations.md).
+* **Производительность** — предназначены для повышения скорости работы ваших приложений. Дополнительные сведения см. в разделе [Рекомендации Azure Advisor по производительности](advisor-performance-recommendations.md).
+* **Стоимость** — предназначены оптимизировать и сократить общие издержки на Azure. Дополнительные сведения см. в разделе [Рекомендации Azure Advisor по затратам](advisor-cost-recommendations.md).
+* **Эффективное эксплуатация**: помогает достичь эффективности процессов и рабочих процессов, рекомендации по управлению ресурсами и развертыванию. . Дополнительные сведения см. в разделе [рекомендации по оперативной работе с помощником](advisor-operational-excellence-recommendations.md).
 
   ![Типы рекомендаций Advisor](./media/advisor-overview/advisor-dashboard.png)
 
@@ -63,13 +64,13 @@ ms.locfileid: "67069683"
 
 Помощник предлагает рекомендации для Application Gateway, App Services, группы доступности, Azure Cache, Azure Data Factory, Azure Database for MySQL, Azure Database for PostgreSQL, Azure Database for MariaDB, Azure ExpressRoute, Azure Cosmos DB, Azure public IP-адреса, SQL Data Warehouse, серверов SQL Server, учетные записи хранения, профили диспетчера трафика и виртуальных машин.
 
-Помощник по Azure также включает рекомендации из [центра безопасности](https://docs.microsoft.com/azure/security-center/security-center-recommendations) в том числе рекомендации по дополнительные типы ресурсов.
+Помощник Azure также включает рекомендации из [центра безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-recommendations) , которые могут включать рекомендации для дополнительных типов ресурсов.
 
 ### <a name="can-i-postpone-or-dismiss-a-recommendation"></a>Можно ли отложить или закрыть рекомендацию?
 
 Чтобы отложить или закрыть рекомендацию, щелкните ссылку **Отложить**. Можно указать период времени, на который откладывается рекомендация, или выбрать значение **Никогда**, чтобы закрыть ее.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Чтобы узнать больше о рекомендациях Помощника, ознакомьтесь с приведенными ниже материалами.
 

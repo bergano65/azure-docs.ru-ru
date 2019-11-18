@@ -1,6 +1,6 @@
 ---
 title: Примеры шаблонов Azure Resource Manager для службы "Экземпляры контейнеров Azure"
-description: Примеры шаблонов Azure Resource Manager для службы "Экземпляры контейнеров Azure"
+description: Поиск образцов шаблонов Azure Resource Manager для развертывания экземпляров контейнеров Azure в различных конфигурациях
 services: container-instances
 author: dlepow
 manager: gwallace
@@ -8,18 +8,18 @@ ms.service: container-instances
 ms.topic: article
 ms.date: 03/07/2019
 ms.author: danlep
-ms.openlocfilehash: 2089f024e1de2e92f6e401549c5876e26db17ebb
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: 7dead5cc83717a011120ef6c17b9268bd78ed171
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68325699"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74150157"
 ---
 # <a name="azure-resource-manager-templates-for-azure-container-instances"></a>Шаблоны Azure Resource Manager для службы "Экземпляры контейнеров Azure"
 
 Следующие примеры шаблонов развертывают экземпляры контейнеров в различных конфигурациях.
 
-Варианты развертывания см. в разделе [Развертывание](#deployment). Если вы хотите создать собственные шаблоны, службы "экземпляры контейнеров Azure" [Диспетчер ресурсов шаблон][ref] "сведения об образце шаблона" и доступные свойства.
+Варианты развертывания см. в разделе [Развертывание](#deployment). Если вы хотите создать собственные шаблоны, службы "экземпляры контейнеров Azure" диспетчер ресурсов шаблон "сведения об [образце][ref] шаблона" и доступные свойства.
 
 ## <a name="sample-templates"></a>Примеры шаблонов
 
@@ -49,7 +49,7 @@ ms.locfileid: "68325699"
 
 [портал Azure][deploy-portal]
 
-[REST API][deploy-rest]
+[ИНТЕРФЕЙС REST API][deploy-rest]
 
 <!-- LINKS - External -->
 [app-nav]: https://github.com/Azure/azure-quickstart-templates/tree/master/101-aci-dynamicsnav

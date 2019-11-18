@@ -1,17 +1,14 @@
 ---
-title: Поставщики ресурсов Azure Resource Manager службами Azure
+title: Поставщики ресурсов по службам Azure
 description: Выводит список всех пространств имен поставщиков ресурсов для Azure Resource Manager и отображает службу Azure для этого пространства имен.
-author: tfitzmac
-ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 11/11/2019
-ms.author: tomfitz
-ms.openlocfilehash: 203c28b89cc62b494e8edf04f7fbc4c13f6b4b9f
-ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
+ms.openlocfilehash: d569fcc7855beaf3f728b2a766c093e7ff3938c7
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73929089"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74149952"
 ---
 # <a name="resource-providers-for-azure-services"></a>Поставщики ресурсов для служб Azure
 
