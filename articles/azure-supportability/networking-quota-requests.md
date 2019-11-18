@@ -7,12 +7,12 @@ ms.date: 06/19/2019
 ms.topic: article
 ms.service: azure-supportability
 ms.assetid: ce37c848-ddd9-46ab-978e-6a1445728a3b
-ms.openlocfilehash: 278e9ff68fa20a0a99a6447bb4cf7ac7fddbfb7b
-ms.sourcegitcommit: 961468fa0cfe650dc1bec87e032e648486f67651
+ms.openlocfilehash: 5cadd0479a6ddc97cc7ee7d9b5aee1bbffba02bb
+ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72249111"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74120968"
 ---
 # <a name="networking-limit-increase"></a>Увеличение лимита сети
 
@@ -20,11 +20,14 @@ ms.locfileid: "72249111"
 
 Вы можете запросить увеличение через колонку **Справка и поддержка** или колонку **использование и квота** на портале.
 
+> [!Note]
+> Чтобы изменить размер по умолчанию для префикса общедоступного IP-адреса, выберите в раскрывающемся списке значение "минимальная длина префикса сети общедоступного IP-адреса".
+
 ## <a name="request-networking-quota-increase-at-subscription-level-using-the-help--support-blade"></a>Запрос увеличения квоты сети на уровне подписки с помощью колонки " **Справка и поддержка** "
 
 Следуйте приведенным ниже инструкциям, чтобы создать запрос на поддержку через колонку "Справка и поддержка" Azure, доступную в портал Azure. 
 
-1. В https://portal.azure.com выберите **Справка и поддержка**.
+1. В https://portal.azure.comвыберите **Справка и поддержка**.
 
     ![Справка и поддержка](./media/resource-manager-core-quotas-request/helpsupport.png)
  

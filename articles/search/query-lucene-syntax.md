@@ -1,7 +1,7 @@
 ---
-title: Синтаксис запросов Lucene
+title: синтаксис запросов Lucene
 titleSuffix: Azure Cognitive Search
-description: Справочник по полному синтаксису Lucene, который используется с Azure Когнитивный поиск.
+description: Справочник по полному синтаксису запросов Lucene, используемому в Azure Когнитивный поиск для подстановочных знаков, нечетких поисков, регулярных выражений и других расширенных конструкций запросов.
 manager: nitinme
 author: brjohnstmsft
 ms.author: brjohnst
@@ -19,12 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 1b94a1bbab810345ab222be9e7aba2fef0f52549
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: 0bb8474b30c05e21a62ded1fa2cb8a6df8e4e321
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72786281"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74112183"
 ---
 # <a name="lucene-query-syntax-in-azure-cognitive-search"></a>Синтаксис запроса Lucene в Azure Когнитивный поиск
 
@@ -169,7 +169,7 @@ POST /indexes/hotels/docs/search?api-version=2019-05-06
 >  Символ "*" или "?" не может находиться в начале поискового запроса.  
 >  Анализ текста для поисковых запросов с использованием подстановочных знаков не выполняется. Во время выполнения запроса термины запроса с подстановочным знаком сравниваются с проанализированными терминами в индексе поиска и расширяются.
 
-## <a name="see-also"></a>Дополнительные материалы  
+## <a name="see-also"></a>См. также  
 
 + [Поиск документов](https://docs.microsoft.com/rest/api/searchservice/Search-Documents)
 + [Синтаксис выражений OData для предложений фильтрации и упорядочивания в службе "Поиск Azure"](query-odata-filter-orderby-syntax.md)   

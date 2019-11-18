@@ -1,7 +1,7 @@
 ---
 title: Основные сведения о фильтрах коллекции OData
 titleSuffix: Azure Cognitive Search
-description: Общие сведения о работе фильтров коллекции OData в Когнитивный поиск запросах Azure.
+description: Узнайте, как работают фильтры коллекции OData в запросах Когнитивный поиск Azure, включая ограничения и поведения, уникальные для коллекций.
 manager: nitinme
 author: brjohnstmsft
 ms.author: brjohnst
@@ -19,12 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 9a57e1d16b13d822b6f5b541a7f838b0dd3a69ad
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: f6e8ed5baef9b8594bb1fe03942e831fd8264a56
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72794392"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74113074"
 ---
 # <a name="understanding-odata-collection-filters-in-azure-cognitive-search"></a>Основные сведения о фильтрах коллекции OData в Azure Когнитивный поиск
 
@@ -87,7 +87,7 @@ ms.locfileid: "72794392"
 | Термин в `Rooms/Type` | Идентификаторы документов |
 | --- | --- |
 | Обучающий | 1, 2 |
-| Standard | 1 |
+| standard | 1 |
 
 Как `Rooms/Description` хранится для полнотекстового поиска:
 
@@ -99,11 +99,11 @@ ms.locfileid: "72794392"
 | достаточ | 1 |
 | мотель | 2 |
 | залах | 1, 2 |
-| Standard | 1 |
+| standard | 1 |
 | Suite | 1 |
-| показать | 1 |
+| view | 1 |
 
-Таким образом, в отличие от приведенного выше фильтра, который по сути говорит «сопоставление документов, в которых комната `Type` равна «Deluxe Room» и **что** `BaseRate` менее 100», поисковый запрос говорит «соответствие документов, где `Rooms/Type` имеет термин «Deluxe» и `Rooms/Description` содержит фразу «представление города». Нет концепции отдельных комнат, поля которых можно связать в последнем случае.
+Поэтому, в отличие от приведенного выше фильтра, по сути говорит: "сопоставление документов, в которых комната `Type` равна" Deluxe Room ", и **что в одной комнате** `BaseRate` менее 100", поисковый запрос говорит: "искать документы, где `Rooms/Type` имеет термин" Deluxe ", а `Rooms/Description` содержит фразу" представление города ". Нет концепции отдельных комнат, поля которых можно связать в последнем случае.
 
 > [!NOTE]
 > Если вы хотите увидеть поддержку коррелированного поиска, добавленного в Когнитивный поиск Azure, проголосуйте за [этот пользовательский голосовый элемент](https://feedback.azure.com/forums/263029-azure-search/suggestions/37735060-support-correlated-search-on-complex-collections).
@@ -138,7 +138,7 @@ ms.locfileid: "72794392"
 
 Значения поля `seasons` хранятся в структуре, которая называется **инвертированным индексом**, которая выглядит примерно так:
 
-| Срок действия | Идентификаторы документов |
+| Термин | Идентификаторы документов |
 | --- | --- |
 | Весна | 1, 2 |
 | Лето | 1 |
@@ -186,7 +186,7 @@ ms.locfileid: "72794392"
 
 Конкретные примеры того, какие виды фильтров разрешены, а какие нет, см. [в разделе как записать допустимые фильтры коллекции](search-query-troubleshoot-collection-filters.md#bkmk_examples).
 
-## <a name="next-steps"></a>Дальнейшие действия  
+## <a name="next-steps"></a>Дополнительная информация  
 
 - [Устранение неполадок фильтров коллекции OData в Azure Когнитивный поиск](search-query-troubleshoot-collection-filters.md)
 - [Фильтры в Когнитивный поиск Azure](search-filters.md)

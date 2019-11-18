@@ -1,5 +1,5 @@
 ---
-title: Пример. Создание собственного пользовательского навыка с помощью API Bing для поиска сущностей
+title: Пример пользовательской квалификации с использованием API Bing для поиска сущностей
 titleSuffix: Azure Cognitive Search
 description: Демонстрируется использование службы Поиск сущностей Bing в пользовательском навыке, сопоставленном с ИСКУССТВЕНным конвейером индексирования в Azure Когнитивный поиск.
 manager: nitinme
@@ -8,18 +8,18 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 1f134ac360b6c5bd04c0e141da52b6dad950e208
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 2994c55b39d30ff16a0ca135e93a116784feb201
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73466817"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74113823"
 ---
 # <a name="example-create-a-custom-skill-using-the-bing-entity-search-api"></a>Пример. Создание пользовательского навыка с помощью API Bing для поиска сущностей
 
 В этом примере вы узнаете, как создать пользовательский навык веб-API. Этот навык будет принимать местоположения, общедоступные рисунки и организации и возвращать их описания. В примере используется [функция Azure](https://azure.microsoft.com/services/functions/) для заключения [API Bing для поиска сущностей](https://azure.microsoft.com/services/cognitive-services/bing-entity-search-api/) , чтобы она реализовала пользовательский интерфейс квалификации.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 + Ознакомьтесь со статьей о [пользовательском интерфейсе навыков](cognitive-search-custom-skill-interface.md) , если вы не знакомы с интерфейсом ввода-вывода, который должен быть реализован в пользовательском навыке.
 
@@ -325,7 +325,7 @@ namespace SampleSkills
 POST https://localhost:7071/api/EntitySearch
 ```
 
-### <a name="request-body"></a>Тело запроса
+### <a name="request-body"></a>Текст запроса
 ```json
 {
     "values": [
@@ -475,7 +475,7 @@ POST https://[your-entity-search-app-name].azurewebsites.net/api/EntitySearch?co
 },
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 Поздравляем! Вы создали свой первый пользовательский навык. Теперь вы можете использовать ту же схему для добавления пользовательских функций. Чтобы получить дополнительные сведения, перейдите по следующим ссылкам.
 
 + [Power Skills: репозиторий пользовательских навыков](https://github.com/Azure-Samples/azure-search-power-skills)
