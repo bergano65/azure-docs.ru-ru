@@ -15,10 +15,6 @@
   items:
     - name: Использование API Индексатора видео
       href: video-indexer-use-apis.md
-- name: Примеры
-  items:
-    - name: Анализ потоков данных в реальном времени
-      href: live-stream-analysis.md
 - name: Основные понятия
   items:
     - name: Обзор
@@ -29,6 +25,8 @@
       href: manage-multiple-tenants.md
     - name: Модель идентификации языка
       href: language-identification-model.md
+    - name: Анализ потоков данных в реальном времени
+      href: live-stream-analysis.md
     - name: Настройка моделей содержимого
       items:
         - name: Обзор
