@@ -173,6 +173,9 @@
           href: howto-add-prebuilt-models.md
         - name: Добавление метки к сущности в речевом фрагменте
           href: label-entity-example-utterance.md
+        - name: Добавление дескриптора
+          displayName: 'synonym, interchange, phrase list, descriptor'
+          href: luis-how-to-add-features.md
         - name: С использованием REST API
           items:
             - name: Создание приложения программным способом с помощью Node.js
@@ -190,9 +193,6 @@
         - name: Использование панели мониторинга
           displayName: 'dashboard, analytics, charts, data, unclear predictions, incorrect predictions, imbalance, endpoint hits, status, evaluation, accuracy, active version, problematic intents, nearest rival, usage'
           href: luis-how-to-use-dashboard.md
-        - name: Добавление дескриптора
-          displayName: 'synonym, interchange, phrase list, descriptor'
-          href: luis-how-to-add-features.md
         - name: Просмотр речевых фрагментов конечной точки
           displayName: active learning
           href: luis-how-to-review-endpoint-utterances.md
