@@ -7,14 +7,14 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 10/18/2019
+ms.date: 10/30/2019
 ms.author: iainfou
-ms.openlocfilehash: 2ed488f5f4380c44772d63d208e2c7a68934aca8
-ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
+ms.openlocfilehash: 7bafcb1508cdb01c4fe27a9d02db63c4f00efd74
+ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72757650"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73172564"
 ---
 # <a name="tutorial-create-and-configure-an-azure-active-directory-domain-services-instance-with-advanced-configuration-options"></a>Руководство по созданию и настройке экземпляра доменных служб Azure Active Directory с помощью расширенных параметров конфигурации
 
@@ -88,7 +88,11 @@ ms.locfileid: "72757650"
 Заполните поля в окне *Основные данные* на портале Azure, чтобы создать экземпляр Azure AD DS.
 
 1. Введите **доменное имя DNS** для управляемого домена, учитывая описанные выше ограничения.
-1. Выберите **расположение** Azure, в котором необходимо создать управляемый домен.
+1. Выберите **расположение** Azure, в котором необходимо создать управляемый домен. Если вы выбрали регион, который поддерживает зоны доступности, ресурсы Azure AD DS распределяются между зонами для дополнительной избыточности.
+
+    Зоны доступности — уникальные физические расположения в пределах одного региона Azure. Каждая зона состоит из одного или нескольких центров обработки данных, оснащенных независимыми системами электроснабжения, охлаждения и сетевого взаимодействия. Чтобы обеспечить отказоустойчивость, во всех включенных регионах используются минимум три отдельные зоны.
+
+    Вы не можете настроить распределение Azure AD DS между зонами. Платформа Azure автоматически обрабатывает распределение ресурсов зоны. Дополнительные сведения о зонах доступности и регионах см. в статье [Что такое зоны доступности в Azure?][availability-zones].
 
     ![Настройка базовых параметров для экземпляра доменных служб Azure AD](./media/tutorial-create-instance-advanced/basics-window.png)
 
@@ -167,7 +171,7 @@ ms.locfileid: "72757650"
 
     ![Состояние доменных служб после успешного завершения подготовки](./media/tutorial-create-instance-advanced/successfully-provisioned.png)
 
-В процессе подготовки Azure AD DS создает в вашем каталоге два корпоративных приложения с именами *Domain Controller Services* и *AzureActiveDirectoryDomainControllerServices*. Эти корпоративные приложения нужны для обслуживания управляемого домена. Крайне важно ни в коем случае не удалять эти приложения.
+Управляемый домен связан с вашим клиентом Azure AD. В процессе подготовки Azure AD DS создает в вашем клиенте Azure AD два корпоративных приложения с именами *Domain Controller Services* и *AzureActiveDirectoryDomainControllerServices*. Эти корпоративные приложения нужны для обслуживания управляемого домена. Не удаляйте эти приложения.
 
 ## <a name="update-dns-settings-for-the-azure-virtual-network"></a>Обновление настроек DNS для виртуальной сети Azure
 
@@ -238,6 +242,7 @@ ms.locfileid: "72757650"
 [on-prem-sync]: tutorial-configure-password-hash-sync.md
 [configure-sspr]: ../active-directory/authentication/quickstart-sspr.md
 [password-hash-sync-process]: ../active-directory/hybrid/how-to-connect-password-hash-synchronization.md#password-hash-sync-process-for-azure-ad-domain-services
+[availability-zones]: ../availability-zones/az-overview.md
 
 <!-- EXTERNAL LINKS -->
 [naming-prefix]: /windows-server/identity/ad-ds/plan/selecting-the-forest-root-domain#selecting-a-prefix
