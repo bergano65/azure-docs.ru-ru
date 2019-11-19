@@ -1,18 +1,18 @@
 ---
 title: Примеры журналов в Azure Firewall для анализа
-description: Примеры журналов в Azure Firewall для анализа
+description: Журналы Azure Monitor можно использовать для анализа брандмауэра Azure. Пример файла создается в конструкторе представлений Azure Monitor.
 services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: article
-ms.date: 09/17/2019
+ms.date: 11/19/2019
 ms.author: victorh
-ms.openlocfilehash: a4ab1263abac67714357594e5bd87a4b910953b1
-ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
+ms.openlocfilehash: 714054b8e538b2fb1bfb3fb4f2293636802f3bc4
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71033986"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74168888"
 ---
 # <a name="azure-firewall-log-analytics-samples"></a>Примеры журналов в Azure Firewall для анализа
 
@@ -26,11 +26,11 @@ ms.locfileid: "71033986"
 
 Чтобы добавить представление в рабочую область Log Analytics, выполните следующие действия:
 
-1. Откройте рабочую область Log Analytics на портале Azure.
+1. Откройте рабочую область Log Analytics в портал Azure.
 2. Откройте **Конструктор представлений** под разделом **Общие**.
 3. Щелкните **Импорт**.
 4. Найдите и выберите файл **AzureFirewall.omsview**, который вы скачали ранее.
-5. Нажмите кнопку **Сохранить**.
+5. Выберите команду **Сохранить**.
 
 Вот как выглядит представление данных из журнала правил приложений:
 
@@ -166,6 +166,6 @@ AzureDiagnostics
 | sort by TimeGenerated desc | project TimeGenerated, msg_s, Protocol, SourceIP,SourcePort,TargetIP,TargetPort,Action,Message
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
-Дополнительные сведения о мониторинге и диагностике брандмауэра Azure [см. в разделе Учебник. Мониторинг журналов и метрик](tutorial-diagnostics.md)брандмауэра Azure.
+Дополнительные сведения см. в [руководстве по мониторингу журналов и метрик Брандмауэра Azure](tutorial-diagnostics.md).

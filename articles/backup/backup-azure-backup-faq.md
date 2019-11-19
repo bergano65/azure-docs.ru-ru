@@ -1,18 +1,14 @@
 ---
-title: Ответы на часто задаваемые вопросы о Azure Backupных функциях
+title: Ответы на часто задаваемые вопросы
 description: 'Ответы на часто задаваемые вопросы о возможностях службы Azure Backup, в частности о хранилищах служб восстановления, объектах, для которых можно создавать резервные копии, принципе работы, шифровании и ограничениях. '
-author: dcurwin
-manager: carmonm
-ms.service: backup
 ms.topic: conceptual
 ms.date: 07/07/2019
-ms.author: dacurwin
-ms.openlocfilehash: efd2959547e13872bfa73a0a8e4b9fda62ea5728
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: f95a4e7e9084c304838b01bdfaceee261d8151cf
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74074316"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74173231"
 ---
 # <a name="azure-backup---frequently-asked-questions"></a>Часто задаваемые вопросы по Azure Backup
 
@@ -58,7 +54,7 @@ ms.locfileid: "74074316"
 - Восстановление на уровне элементов поддерживается для виртуальных машин Azure, резервные копии которых были созданы с помощью соответствующей функции Azure. Дополнительные сведения см. в [статье](backup-azure-restore-files-from-vm.md)
 - ILR не поддерживается для точек оперативного восстановления локальных виртуальных машин, резервное копирование которых осуществляется с помощью Azure Backup Server или System Center DPM.
 
-## <a name="azure-backup-agent"></a>Агент Azure Backup
+## <a name="azure-backup-agent"></a>Агент службы архивации Azure
 
 ### <a name="where-can-i-find-common-questions-about-the-azure-backup-agent-for-azure-vm-backup"></a>Где мне найти вопросы и ответы об агенте Azure Backup для резервного копирования виртуальных машин Azure?
 
@@ -96,6 +92,8 @@ Windows Storage Server 2012 R2, 64-разрядная версия | Standard, W
 Windows Storage Server 2012, 64-разрядная версия | Standard, Workgroup | Со всеми последними пакетами и обновлениями.
 Windows Server 2008 R2 с пакетом обновления 1, 64-разрядная версия | Standard, Enterprise, Datacenter, Foundation | Со всеми последними обновлениями.
 Windows Server 2008, 64-разрядная версия | Standard, Enterprise, Datacenter | Со всеми последними обновлениями.
+
+Azure Backup не поддерживает 32-разрядные операционные системы.
 
 Для резервного копирования виртуальных машин Azure под управлением Linux служба Azure Backup поддерживает весь [список дистрибутивов, рекомендуемых для использования в Azure](../virtual-machines/linux/endorsed-distros.md), за исключением CoreOS Linux и 32-разрядной операционной системы. Вы можете использовать и другие дистрибутивы Linux. Они должны работать нормально, если для ОС есть агент виртуальной машины и включена поддержка Python.
 

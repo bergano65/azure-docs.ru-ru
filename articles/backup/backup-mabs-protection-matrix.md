@@ -1,19 +1,14 @@
 ---
 title: Что можно защищать с помощью Azure Backup Server
 description: В этой статье приводится матрица поддержки, в которой перечислены все рабочие нагрузки, типы данных и установки, которые защищает Azure Backup Server.
-author: dcurwin
-ms.service: backup
-keywords: ''
 ms.date: 11/13/2018
 ms.topic: conceptual
-ms.author: dacurwin
-manager: carmonm
-ms.openlocfilehash: 37f284f9a3dfe06e4d306b8d56a63d4b18d6cc2e
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: b375dd5869da85f09a58c77742b7246c5c25c605
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74012086"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74172292"
 ---
 # <a name="azure-backup-server-protection-matrix"></a>Таблица защиты посредством Azure Backup Server
 

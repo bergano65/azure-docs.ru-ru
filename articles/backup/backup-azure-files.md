@@ -1,18 +1,14 @@
 ---
 title: Резервное копирование и восстановление общих папок Azure
 description: В этой статье описывается, как создавать резервные копии и восстанавливать файловые ресурсы Azure, а также объясняются задачи управления.
-author: dcurwin
-ms.author: dacurwin
 ms.date: 07/29/2019
-ms.topic: tutorial
-ms.service: backup
-manager: carmonm
-ms.openlocfilehash: 6f1a793432fa6403639726dbe4340bae6804fb9f
-ms.sourcegitcommit: a170b69b592e6e7e5cc816dabc0246f97897cb0c
-ms.translationtype: HT
+ms.topic: conceptual
+ms.openlocfilehash: 59dd46c42cdf94f06709d95f68cfb8d8693b9cce
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74091095"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74173099"
 ---
 # <a name="back-up-and-restore-azure-file-shares"></a>Резервное копирование и восстановление файловых ресурсов Azure
 
@@ -47,7 +43,7 @@ ms.locfileid: "74091095"
 
 ## <a name="configuring-backup-for-an-azure-file-share"></a>Настройка резервного копирования для файлового ресурса Azure
 
-В этом руководстве предполагается, что у вас уже есть файловый ресурс Azure. Чтобы создать резервную копию файлового ресурса Azure, сделайте вот что:
+В этой статье предполагается, что у вас уже есть файловый ресурс Azure. Чтобы создать резервную копию файлового ресурса Azure, сделайте вот что:
 
 1. Создайте хранилище служб восстановления в регионе вашего файлового ресурса. Если у вас уже есть хранилище, откройте страницу обзора хранилища и щелкните **Резервное копирование**.
 

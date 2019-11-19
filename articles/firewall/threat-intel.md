@@ -1,22 +1,22 @@
 ---
 title: Фильтрация на основе анализа угроз в брандмауэре Azure
-description: Сведения о фильтрации аналитики угроз в брандмауэре Azure
+description: Фильтрация на основе Microsoft Threat Intelligence может быть включена в брандмауэре с целю создания оповещений и запрета трафика, поступающего с известных вредоносных IP-адресов и доменов, а также передающегося на них.
 services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: article
-ms.date: 11/05/2019
+ms.date: 11/19/2019
 ms.author: victorh
-ms.openlocfilehash: f6a60d7c29fc7e482e32233aa86d65a801e3f55c
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: c291dbe9c1eb37e68174a2353e296a376c7d0896
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73582257"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74168675"
 ---
 # <a name="azure-firewall-threat-intelligence-based-filtering"></a>Фильтрация на основе интеллектуального анализа угроз в брандмауэре Azure
 
-Фильтрация на основе Microsoft Threat Intelligence может быть включена в брандмауэре с целю создания оповещений и запрета трафика, поступающего с известных вредоносных IP-адресов и доменов, а также передающегося на них. IP-адреса и домены также передаются из канала Microsoft Threat Intelligence. [Intelligent Security Graph](https://www.microsoft.com/en-us/security/operations/intelligence) включает аналитику угроз Майкрософт и используется несколькими службами, включая центр безопасности Azure.
+Фильтрация на основе Microsoft Threat Intelligence может быть включена в брандмауэре с целю создания оповещений и запрета трафика, поступающего с известных вредоносных IP-адресов и доменов, а также передающегося на них. IP-адреса и домены также передаются из канала Microsoft Threat Intelligence. [Intelligent Security Graph](https://www.microsoft.com/en-us/security/operations/intelligence) поддерживает Microsoft Threat Intelligence и используется во множестве служб, включая Центр безопасности Azure.
 
 ![Аналитика угроз брандмауэра](media/threat-intel/firewall-threat.png)
 
@@ -50,7 +50,7 @@ ms.locfileid: "73582257"
 
 - **Проверка входящего** трафика. Вы можете видеть предупреждения по входящему трафику, если в брандмауэре настроены правила ДНаТ. Это справедливо, даже если в правиле ДНаТ разрешены только определенные источники, и трафик в противном случае отклоняется. Брандмауэр Azure не предупреждает о всех известных сканерах портов. только для сканеров, которые также известны как вредоносные действия.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - См. [примеры log Analytics брандмауэре Azure](log-analytics-samples.md)
 - Узнайте, как [развернуть и настроить брандмауэр Azure](tutorial-firewall-deploy-portal.md)

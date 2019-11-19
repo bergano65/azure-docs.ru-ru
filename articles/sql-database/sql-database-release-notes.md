@@ -9,12 +9,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: sstein
-ms.openlocfilehash: 56830e20b190958c1c411f5daa1d2a7e928f0f3d
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 5c70d1d7d62b41965d4c81e8bbe0e5b2dc3cbb92
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73821198"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74166257"
 ---
 # <a name="sql-database-release-notes"></a>Заметки о выпуске базы данных SQL
 
@@ -24,7 +24,7 @@ ms.locfileid: "73821198"
 
 ### <a name="single-databasetabsingle-database"></a>[Отдельная база данных](#tab/single-database)
 
-| Функция | Сведения |
+| Функция | Подробная информация |
 | ---| --- |
 | Новые поколения оборудования серии серия fsv2 и M| Дополнительные сведения см. в разделе [поколения оборудования](sql-database-service-tiers-vcore.md#hardware-generations).|
 | [Частная ссылка Azure](https://azure.microsoft.com/updates/private-link-now-available-in-preview/)| Служба "Приватный канал" упрощает сетевую архитектуру и гарантирует безопасность подключения между конечными точками в Azure благодаря тому, что данные хранятся в сети Azure и не попадают в общедоступный Интернет. Кроме того, эта служба позволяет создавать и предоставлять собственные службы в Azure. |
@@ -44,7 +44,7 @@ ms.locfileid: "73821198"
 
 ### <a name="managed-instancetabmanaged-instance"></a>[Управляемый экземпляр](#tab/managed-instance)
 
-| Функция | Сведения |
+| Функция | Подробная информация |
 | ---| --- |
 | <a href="/azure/sql-database/sql-database-managed-instance-connectivity-architecture#service-aided-subnet-configuration-public-preview-in-east-us-and-west-us">Конфигурация подсети с разавтоматизированной службой</a> | Безопасный и удобный способ управления конфигурацией подсети. |
 | <a href="/azure/sql-database/sql-database-instance-pools">Пулы экземпляров</a> | Удобный и экономичный способ переноса небольших экземпляров SQL в облако. |
@@ -79,8 +79,10 @@ ms.locfileid: "73821198"
 ## <a name="fixed-known-issues"></a>Исправлены известные проблемы
 
 - **2019 августа** — автономные базы данных полностью поддерживаются в управляемом экземпляре.
+- **2019** . Встроенное восстановление базы данных на момент времени с уровня критически важный для бизнеса на уровень общего назначения не будет выполнено, если база данных-источник содержит объекты OLTP в памяти.
+- **Ноя 2019** — проверка согласованности базы данных производится с помощью `DBCC CHECKDB` после восстановления базы данных из хранилища BLOB-объектов Azure.
 
-## <a name="updates"></a>Обновления
+## <a name="updates"></a>обновлениях
 
 Список обновлений и улучшений базы данных SQL см. в статье [обновления службы базы данных SQL](https://azure.microsoft.com/updates/?product=sql-database).
 

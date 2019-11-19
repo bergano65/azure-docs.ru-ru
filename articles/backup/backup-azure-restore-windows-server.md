@@ -1,19 +1,15 @@
 ---
-title: Восстановление данных в Azure на Azure Backup Windows Server
+title: Восстановление данных в Azure на сервере Windows Server
 description: Из этой статьи вы узнаете, как восстановить данные, хранящиеся в Azure, на компьютере Windows Server или Windows с помощью агента Службы восстановления Microsoft Azure (MARS).
 ms.reviewer: saurse
-author: dcurwin
-manager: carmonm
-ms.service: backup
 ms.topic: conceptual
 ms.date: 09/07/2018
-ms.author: dacurwin
-ms.openlocfilehash: 4d9ab47d83caadda9046481c15dfb6af18aee146
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: 4d663739f25762723fc3a8f566c4b5ef3f957338
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74012195"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74172789"
 ---
 # <a name="restore-files-to-windows-by-using-the-azure-resource-manager-deployment-model"></a>Восстановление файлов в Windows с помощью модели развертывания Azure Resource Manager
 

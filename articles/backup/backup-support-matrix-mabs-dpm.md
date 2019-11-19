@@ -1,18 +1,14 @@
 ---
-title: Матрица поддержки System Center DPM для Microsoft Azure Backup Server &
-description: В этой статье приведены сведения о поддержке Azure Backup при использовании Microsoft Azure Backup Server или System Center DPM для резервного копирования локальных ресурсов и ресурсов виртуальных машин Azure.
-author: dcurwin
-ms.service: backup
+title: Матрица поддержки MABS & System Center DPM
+description: В этой статье приводится сводка Azure Backup поддержки при использовании Microsoft Azure Backup Server (MABS) или System Center DPM для резервного копирования локальных и ресурсов виртуальной машины Azure.
 ms.date: 02/17/2019
 ms.topic: conceptual
-ms.author: dacurwin
-manager: carmonm
-ms.openlocfilehash: d9c55773772b4f331de95bd98b1973225357c0cd
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: 2bec2818eaabaa2d2d74ab7181db0eabcba092ec
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74012793"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74172053"
 ---
 # <a name="support-matrix-for-backup-with-microsoft-azure-backup-server-or-system-center-dpm"></a>Таблица поддержки для резервного копирования с помощью Microsoft Azure Backup Server или System Center DPM
 

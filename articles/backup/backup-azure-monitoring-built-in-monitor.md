@@ -1,21 +1,15 @@
 ---
-title: 'Azure Backup: мониторинг защищенных рабочих нагрузок Azure Backup'
+title: Мониторинг Azure Backup защищенных рабочих нагрузок
 description: В этой статье вы узнаете о возможностях мониторинга и уведомления для Azure Backup рабочих нагрузок с помощью портал Azure.
-ms.reviewer: pullabhk
-author: dcurwin
-manager: carmonm
-keywords: Azure Backup; Уведомление
-ms.service: backup
 ms.topic: conceptual
 ms.date: 03/05/2019
-ms.author: dacurwin
 ms.assetid: 86ebeb03-f5fa-4794-8a5f-aa5cbbf68a81
-ms.openlocfilehash: cd9e4e14771744b6275bb1dfe0a96bbef475a123
-ms.sourcegitcommit: a170b69b592e6e7e5cc816dabc0246f97897cb0c
+ms.openlocfilehash: ea5102a95a9bef17f25219e00dec4654bf7f06d6
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74090956"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74172866"
 ---
 # <a name="monitoring-azure-backup-workloads"></a>Мониторинг рабочих нагрузок Azure Backup
 
@@ -63,7 +57,7 @@ Azure Backup предоставляет встроенные возможнос�
 
 Приведенные выше исключения предназначены для понимания того, что результат этих операций (в основном пользователь инициируется) немедленно отображается на клиентах Portal/PS/CLI. Таким образом, пользователь сразу же знает и не нуждается в уведомлении.
 
-### <a name="alerts-from-the-following-azure-backup-solutions-are-shown-here"></a>Оповещения из следующих Azure Backupных решений показаны здесь:
+### <a name="alerts-from-the-following-azure-backup-solutions-are-shown-here"></a>Здесь показаны оповещения из следующих Azure Backup решений
 
 - Резервное копирование виртуальных машин Azure
 - Резервное копирование файлов Azure

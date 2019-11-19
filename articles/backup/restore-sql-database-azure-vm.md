@@ -1,18 +1,14 @@
 ---
-title: Восстановление баз данных SQL Server на виртуальной машине Azure с помощью Azure Backup
+title: Восстановление баз данных SQL Server на виртуальной машине Azure
 description: В этой статье описывается, как восстановить SQL Server базы данных, работающие на виртуальной машине Azure и резервные копии которых Azure Backup.
-author: dcurwin
-manager: carmonm
-ms.service: backup
 ms.topic: conceptual
 ms.date: 05/22/2019
-ms.author: dacurwin
-ms.openlocfilehash: 878658135bdb8844c5c86bc207db580ccd7ff63f
-ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
+ms.openlocfilehash: 0dbf5c48884dc665355d2806ff343facfbeffc29
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2019
-ms.locfileid: "73903604"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74171906"
 ---
 # <a name="restore-sql-server-databases-on-azure-vms"></a>Восстановление баз данных SQL Server на виртуальных машинах Azure
 

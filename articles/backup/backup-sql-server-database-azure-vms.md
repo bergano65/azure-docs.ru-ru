@@ -1,19 +1,15 @@
 ---
-title: Резервное копирование SQL Server баз данных на виртуальных машинах Azure | Документация Майкрософт
+title: Создание резервных копий баз данных SQL Server на виртуальных машинах Azure
 description: Из этой статьи вы узнаете, как выполнять резервное копирование SQL Server баз данных на виртуальных машинах Azure с Azure Backup.
 ms.reviewer: vijayts
-author: dcurwin
-manager: carmonm
-ms.service: backup
 ms.topic: conceptual
 ms.date: 09/11/2019
-ms.author: dacurwin
-ms.openlocfilehash: a6752ffcf434b81c3013a2bd43c784bc92a8c1fe
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: 3d6875d8c466400da79e1b749d11914b3bf77d86
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73747171"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74172098"
 ---
 # <a name="back-up-sql-server-databases-in-azure-vms"></a>Создание резервных копий баз данных SQL Server на виртуальных машинах Azure
 
@@ -29,7 +25,7 @@ SQL Server базы данных — это критически важные р
 > * Обнаружение баз данных и Настройка резервных копий.
 > * настройка автоматической защиты для баз данных.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 Перед созданием резервной копии SQL Server базы данных проверьте следующие критерии.
 
@@ -263,7 +259,7 @@ SQL Server базы данных — это критически важные р
 
 ![Отключить автоматическую защиту для этого экземпляра](./media/backup-azure-sql-database/disable-auto-protection.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Вы узнаете, как выполнять следующие задачи:
 

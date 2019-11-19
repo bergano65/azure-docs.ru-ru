@@ -1,19 +1,19 @@
 ---
-title: Реагирование на события службы Azure SignalR
-description: Используйте службу "Сетка событий Azure" для подписки на события службы Azure SignalR.
+title: Реагирование на события службы SignalR Azure
+description: Используйте службу "Сетка событий Azure" для подписки на события службы Azure SignalR. Эти события могут активировать другие подчиненные службы.
 services: azure-signalr,event-grid
 author: chenyl
 ms.author: chenyl
 ms.reviewer: zhshang
-ms.date: 06/12/2019
+ms.date: 11/13/2019
 ms.topic: conceptual
 ms.service: signalr
-ms.openlocfilehash: a3d0669a1a89f2fc5aaca0a96e00b731d2d40830
-ms.sourcegitcommit: a8b638322d494739f7463db4f0ea465496c689c6
+ms.openlocfilehash: a8e25907b40b910f2b91884d355b6ac85eeaa250
+ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68296836"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74158190"
 ---
 # <a name="reacting-to-azure-signalr-service-events"></a>Реагирование на события службы Azure SignalR
 
@@ -29,7 +29,7 @@ ms.locfileid: "68296836"
 ## <a name="available-azure-signalr-service-events"></a>Доступные события службы SignalR Azure
 Сетка событий использует [подписки на события](../event-grid/concepts.md#event-subscriptions) для маршрутизации сообщений о событиях подписчикам. Подписки на события службы Azure SignalR поддерживают два типа событий:  
 
-|Название мероприятия|Описание|
+|Название мероприятия|ОПИСАНИЕ|
 |----------|-----------|
 |`Microsoft.SignalRService.ClientConnectionConnected`|Возникает при подключении клиентского подключения.|
 |`Microsoft.SignalRService.ClientConnectionDisconnected`|Возникает при отключении клиентского соединения.|
@@ -58,10 +58,10 @@ ms.locfileid: "68296836"
 
 Дополнительные сведения см. в статье [схема событий службы SignalR](../event-grid/event-schema-azure-signalr.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о службе "Сетка событий Azure" и предоставление им событий службы SignalR см. в этой статье.
 
 > [!div class="nextstepaction"]
-> [Попробуйте использовать пример интеграции сетки событий со службой "служба Azure SignalR](./signalr-howto-event-grid-integration.md)
-> " о службе "[Сетка событий](../event-grid/overview.md) "
+> [Попробуйте использовать пример интеграции сетки событий со службой Azure signalr](./signalr-howto-event-grid-integration.md)
+> о службе " [Сетка событий](../event-grid/overview.md) "

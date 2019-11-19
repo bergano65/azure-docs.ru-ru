@@ -11,12 +11,12 @@ ms.author: sanpil
 author: sanpil
 ms.date: 11/12/2019
 ms.custom: seodec18
-ms.openlocfilehash: f87d835973410a7d8e134c676530a9476cd3c2fe
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: 9e731ff55aa4b37d0777cf9eefb14bb111b73070
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74012731"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74173990"
 ---
 # <a name="create-and-run-machine-learning-pipelines-with-azure-machine-learning-sdk"></a>Создание и запуск конвейеров машинного обучения с помощью пакета SDK для Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -404,7 +404,7 @@ pipeline_run1.wait_for_completion()
  
 1. Выберите конкретный конвейер, чтобы просмотреть результаты его запуска.
 
-## <a name="github-tracking-and-integration"></a>Отслеживание и интеграция GitHub
+## <a name="git-tracking-and-integration"></a>Отслеживание и интеграция Git
 
 При запуске обучающего запуска, в котором исходный каталог является локальным репозиторием Git, сведения о репозитории хранятся в журнале выполнения. Дополнительные сведения см. в статье [Интеграция Git для машинное обучение Azure](concept-train-model-git-integration.md).
 
@@ -459,6 +459,39 @@ response = requests.post(published_pipeline1.endpoint,
                                "ParameterAssignments": {"pipeline_arg": 20}})
 ```
 
+## <a name="create-a-versioned-pipeline-endpoint"></a>Создание конечной точки конвейера с версией
+Вы можете создать конечную точку конвейера с несколькими опубликованными конвейерами. Это можно использовать как опубликованный конвейер, но предоставляет фиксированную конечную точку RESTFUL при итерации и обновлении конвейеров машинного обучения.
+
+```python
+from azureml.pipeline.core import PipelineEndpoint
+
+published_pipeline = PublishedPipeline.get(workspace="ws", name="My_Published_Pipeline")
+pipeline_endpoint = PipelineEndpoint.publish(workspace=ws, name="PipelineEndpointTest",
+                                            pipeline=published_pipeline, description="Test description Notebook")
+```
+
+### <a name="submit-a-job-to-a-pipeline-endpoint"></a>Отправка задания в конечную точку конвейера
+Вы можете отправить задание в версию по умолчанию конечной точки конвейера:
+```python
+pipeline_endpoint_by_name = PipelineEndpoint.get(workspace=ws, name="PipelineEndpointTest")
+run_id = pipeline_endpoint_by_name.submit("PipelineEndpointExperiment")
+print(run_id)
+```
+Вы также можете отправить задание в определенную версию:
+```python
+run_id = pipeline_endpoint_by_name.submit("PipelineEndpointExperiment", pipeline_version="0")
+print(run_id)
+```
+
+То же самое можно сделать с помощью REST API:
+```python
+rest_endpoint = pipeline_endpoint_by_name.endpoint
+response = requests.post(rest_endpoint, 
+                         headers=aad_token, 
+                         json={"ExperimentName": "PipelineEndpointExperiment",
+                               "RunSource": "API",
+                               "ParameterAssignments": {"1": "united", "2":"city"}})
+```
 
 ### <a name="use-published-pipelines-in-the-studio"></a>Использование опубликованных конвейеров в студии
 

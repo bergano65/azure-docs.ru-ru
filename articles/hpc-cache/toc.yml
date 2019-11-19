@@ -40,6 +40,8 @@
   items:
     - name: Открытие запроса в службу поддержки
       href: hpc-cache-support-ticket.md
+    - name: Обход параметров брандмауэра для учетной записи хранения больших двоичных объектов
+      href: hpc-cache-blob-firewall-fix.md
     - name: Восстановление после регионального сбоя
       href: hpc-region-recovery.md
     - name: Использование Azure NetApp Files с Azure HPC Cache

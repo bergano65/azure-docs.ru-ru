@@ -1,19 +1,14 @@
 ---
-title: Модель данных для Azure Backup
+title: Модель данных Power BI
 description: В этой статье представлены сведения о модели данных Power BI для отчетов Azure Backup.
-ms.reviewer: adigan
-author: dcurwin
-manager: carmonm
-ms.service: backup
 ms.topic: conceptual
 ms.date: 06/26/2017
-ms.author: dacurwin
-ms.openlocfilehash: f3db0e6a78eada52f2b5936f5194138d97ebcca6
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: a2f06da16280070448d7b42dc5e1dcfc46354cfa
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74074894"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74172806"
 ---
 # <a name="data-model-for-azure-backup-reports"></a>Модель данных для отчетов Azure Backup
 
@@ -158,7 +153,7 @@ Power BI предоставляет возможности настройки, �
 | ProtectedServerName |текст |Имя защищенного сервера, к которому принадлежит архивируемый элемент |
 | RegisteredContainerId |текст |Идентификатор контейнера, зарегистрированного для резервного копирования |
 
-### <a name="storage"></a>служба хранилища.
+### <a name="storage"></a>Служба хранилища
 
 В этой таблице представлены основные поля и агрегаты для различных полей, связанных с хранилищем.
 

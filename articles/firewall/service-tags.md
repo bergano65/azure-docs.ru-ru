@@ -1,18 +1,18 @@
 ---
 title: Общие сведения о тегах службы Брандмауэра Azure
-description: Эта статья содержит общие сведения о тегах службы Брандмауэра Azure.
+description: Тег службы представляет группу префиксов IP-адресов, чтобы упростить создание правила безопасности.
 services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: article
-ms.date: 6/27/2019
+ms.date: 11/19/2019
 ms.author: victorh
-ms.openlocfilehash: d0ac36e415c056dffc9c75d00968ff74c2156e63
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: ec9fb3c9b27d21ac65888379f59d51ecc8042eb0
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67450167"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74168691"
 ---
 # <a name="azure-firewall-service-tags"></a>Теги службы Брандмауэра Azure
 
@@ -22,8 +22,8 @@ ms.locfileid: "67450167"
 
 ## <a name="supported-service-tags"></a>Поддерживаемые теги службы
 
-См. в разделе [группы безопасности](../virtual-network/security-overview.md#service-tags) список теги служб, которые доступны для использования в правилах брандмауэра Azure сети.
+Список тегов служб, доступных для использования в правилах сети брандмауэра Azure, см. в разделе [группы безопасности](../virtual-network/security-overview.md#service-tags) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о правилах Брандмауэра Azure см. в статье [Логика обработки правил Брандмауэра Azure](rule-processing.md).

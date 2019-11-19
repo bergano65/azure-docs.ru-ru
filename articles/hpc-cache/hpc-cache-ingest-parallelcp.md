@@ -6,40 +6,40 @@ ms.service: hpc-cache
 ms.topic: conceptual
 ms.date: 10/30/2019
 ms.author: rohogue
-ms.openlocfilehash: 0bb74dcd683145fbae22cf0b6d2827ad9e16de0e
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 90e05ad3d42b1009b631630fe476669a9f418d33
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73582692"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74166894"
 ---
 # <a name="azure-hpc-cache-data-ingest---parallel-copy-script-method"></a>Метод создания скрипта копирования данных кэша HPC Azure
 
 В этой статье приводятся инструкции по созданию сценария ``parallelcp`` и его использованию для перемещения данных в контейнер хранилища BLOB-объектов для использования с кэшем HPC Azure.
 
-Дополнительные сведения о перемещении данных в хранилище BLOB-объектов для кэша HPC Azure см. в статье [Перемещение данных в хранилище BLOB-объектов Azure для кэша HPC Azure](hpc-cache-ingest.md).
+Дополнительные сведения о перемещении данных в хранилище BLOB-объектов для кэша HPC Azure см. в статье [Перемещение данных в хранилище BLOB-объектов Azure](hpc-cache-ingest.md).
 
 ## <a name="create-the-parallelcp-script"></a>Создание скрипта параллелкп
 
 Приведенный ниже сценарий добавит исполняемый файл `parallelcp`. (Этот сценарий предназначен для Ubuntu. Если используется другой дистрибутив, необходимо установить ``parallel`` отдельно.)
 
 ```bash
-sudo touch /usr/bin/parallelcp && sudo chmod 755 /usr/bin/parallelcp && sudo sh -c "/bin/cat >/usr/bin/parallelcp" <<EOM 
+sudo touch /usr/bin/parallelcp && sudo chmod 755 /usr/bin/parallelcp && sudo sh -c "/bin/cat >/usr/bin/parallelcp" <<EOM
 #!/bin/bash
 
-display_usage() { 
-    echo -e "\nUsage: \$0 SOURCE_DIR DEST_DIR\n" 
-} 
+display_usage() {
+    echo -e "\nUsage: \$0 SOURCE_DIR DEST_DIR\n"
+}
 
-if [  \$# -le 1 ] ; then 
+if [  \$# -le 1 ] ; then
     display_usage
     exit 1
-fi 
- 
-if [[ ( \$# == "--help") ||  \$# == "-h" ]] ; then 
+fi
+
+if [[ ( \$# == "--help") ||  \$# == "-h" ]] ; then
     display_usage
     exit 0
-fi 
+fi
 
 SOURCE_DIR="\$1"
 DEST_DIR="\$2"
@@ -75,7 +75,7 @@ EOM
 
 ## <a name="parallel-copy-example"></a>Пример параллельного копирования
 
-В этом примере используется скрипт параллельного копирования для компиляции ``glibc`` с использованием исходных файлов в кэше Azure HPC.
+В этом примере используется скрипт параллельного копирования для компиляции ``glibc`` с использованием исходных файлов в кэше HPC Azure.
 
 Исходные файлы кэшируются в точке подключения кэша HPC Azure, а объектные файлы хранятся на локальном жестком диске.
 

@@ -329,8 +329,16 @@
       items:
         - name: Назначения
           href: /dotnet/api/microsoft.azure.management.resourcemanager.models.policyassignment
-        - name: Определения службы "Политика Azure"
+        - name: Определения политик
           href: /dotnet/api/microsoft.azure.management.resourcemanager.models.policydefinition
+    - name: SDK Azure для Python
+      items:
+        - name: Политика
+          href: /python/api/azure-mgmt-resource/azure.mgmt.resource.policy
+        - name: Клиент политики
+          href: /python/api/azure-mgmt-resource/azure.mgmt.resource.policyclient
+        - name: Анализ политик
+          href: /python/api/azure-mgmt-policyinsights/azure.mgmt.policyinsights
     - name: REST
       items:
         - name: События

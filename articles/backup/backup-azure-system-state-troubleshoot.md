@@ -1,20 +1,15 @@
 ---
-title: Устранение неполадок резервного копирования состояния системы с Azure Backup
+title: Устранение неполадок резервного копирования состояния системы
 description: Из этой статьи вы узнаете, как устранять неполадки в резервном копировании состояния системы для локальных серверов Windows.
 ms.reviewer: srinathv
-author: dcurwin
-manager: carmonm
-keywords: Резервное копирование; Резервное копирование состояния системы
-ms.service: backup
 ms.topic: conceptual
 ms.date: 07/22/2019
-ms.author: dacurwin
-ms.openlocfilehash: 5901cbe1e30eb1ce2334a7b935a3629c66c24b8a
-ms.sourcegitcommit: a170b69b592e6e7e5cc816dabc0246f97897cb0c
+ms.openlocfilehash: 116f8f40193ea276c6150452b0aa6f2d2ce5bc6c
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74091591"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74172619"
 ---
 # <a name="troubleshoot-system-state-backup"></a>Устранение неполадок резервного копирования состояния системы
 

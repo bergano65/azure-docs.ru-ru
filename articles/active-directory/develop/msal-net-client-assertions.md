@@ -13,19 +13,20 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 07/16/2019
+ms.date: 11/18/2019
 ms.author: jmprieur
 ms.reviewer: ''
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fcf11ac8dc39dcb1d70b932dbe870687f5446a52
-ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
+ms.openlocfilehash: 66ff02e4c95594f0155ab31e3c99a0eb269626d9
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72802852"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74168121"
 ---
 # <a name="confidential-client-assertions"></a>Конфиденциальные утверждения клиентов
+
 Чтобы доказать свою личность, конфиденциальные клиентские приложения обмениваются секретом с Azure AD. Секрет может быть следующим:
 - Секрет клиента (пароль приложения).
 - Сертификат, который используется для создания подписанного утверждения, содержащего стандартные утверждения.
@@ -37,6 +38,9 @@ MSAL.NET состоит из четырех методов предоставл�
 - `.WithCertificate()`
 - `.WithClientAssertion()`
 - `.WithClientClaims()`
+
+> [!NOTE]
+> Хотя можно использовать `WithClientAssertion()` API для получения маркеров для конфиденциального клиента, мы не рекомендуем использовать его по умолчанию, так как он более сложный и предназначен для работы с очень специфичными сценариями, которые не являются общими. Использование `.WithCertificate()` API позволит MSAL.NET справиться с этим. Этот API предлагает возможность настройки запроса проверки подлинности, если это необходимо, но утверждение по умолчанию, созданное `.WithCertificate()`, достаточно для большинства сценариев проверки подлинности. Этот API также можно использовать в качестве обходного решения в некоторых случаях, когда MSAL.NET не может выполнить операцию подписывания внутренним образом.
 
 ### <a name="signed-assertions"></a>Подписанные утверждения
 
@@ -51,7 +55,7 @@ app = ConfidentialClientApplicationBuilder.Create(config.ClientId)
 
 Утверждения, ожидаемые Azure AD:
 
-Тип утверждения | Value | Описание
+Тип утверждения | Значение | ОПИСАНИЕ
 ---------- | ---------- | ----------
 aud | https://login.microsoftonline.com/{tenantId}/v2.0 | Утверждение "AUD" (аудитория) определяет получателей, для которых предназначено JWT (здесь Azure AD), см. [RFC 7519, раздел 4.1.3]
 exp | Четверг Июн 27 2019 15:04:17 GMT + 0200 (Романское время (лето)) | Утверждение "exp" (время окончания срока действия) указывает время окончания срока действия или время, после которого маркер JWT НЕ ДОЛЖЕН приниматься в обработку. См. [RFC 7519, раздел 4.1.4]
@@ -66,9 +70,9 @@ sub | ClientID | Утверждение "подсистема" (тема) опр
 private static IDictionary<string, string> GetClaims()
 {
       //aud = https://login.microsoftonline.com/ + Tenant ID + /v2.0
-      string aud = "https://login.microsoftonline.com/72f988bf-86f1-41af-hd4m-2d7cd011db47/v2.0";
+      string aud = $"https://login.microsoftonline.com/{tenantId}/v2.0";
 
-      string ConfidentialClientID = "61dab2ba-145d-4b1b-8569-bf4b9aed5dhb" //client id
+      string ConfidentialClientID = "00000000-0000-0000-0000-000000000000" //client id
       const uint JwtToAadLifetimeInSeconds = 60 * 10; // Ten minutes
       DateTime validFrom = DateTime.UtcNow;
       var nbf = ConvertToTimeT(validFrom);
@@ -105,11 +109,11 @@ string Encode(byte[] arg)
     return s;
 }
 
-string GetAssertion()
+string GetSignedClientAssertion()
 {
     //Signing with SHA-256
     string rsaSha256Signature = "http://www.w3.org/2001/04/xmldsig-more#rsa-sha256";
-    X509Certificate2 certificate = ReadCertificate(config.CertificateName);
+     X509Certificate2 certificate = new X509Certificate2("Certificate.pfx", "Password", X509KeyStorageFlags.EphemeralKeySet);
 
     //Create RSACryptoServiceProvider
     var x509Key = new X509AsymmetricSecurityKey(certificate);
@@ -129,9 +133,55 @@ string GetAssertion()
     string token = Encode(Encoding.UTF8.GetBytes(JObject.FromObject(header).ToString())) + "." + Encode(Encoding.UTF8.GetBytes(JObject.FromObject(GetClaims())));
 
     string signature = Encode(rsa.SignData(Encoding.UTF8.GetBytes(token), new SHA256Cng()));
-    string SignedAssertion = string.Concat(token, ".", signature);
-    return SignedAssertion;
+    string signedClientAssertion = string.Concat(token, ".", signature);
+    return signedClientAssertion;
 }
+```
+
+### <a name="alternative-method"></a>Альтернативный метод
+
+Вы также можете использовать [Microsoft. IdentityModel. токены jsonwebtoken](https://www.nuget.org/packages/Microsoft.IdentityModel.JsonWebTokens/) , чтобы создать утверждение. Код будет более элегантным, как показано в следующем примере:
+
+```CSharp
+        string GetSignedClientAssertion()
+        {
+            var cert = new X509Certificate2("Certificate.pfx", "Password", X509KeyStorageFlags.EphemeralKeySet);
+
+            //aud = https://login.microsoftonline.com/ + Tenant ID + /v2.0
+            string aud = $"https://login.microsoftonline.com/{tenantID}/v2.0";
+
+            // client_id
+            string confidentialClientID = "00000000-0000-0000-0000-000000000000";
+
+            // no need to add exp, nbf as JsonWebTokenHandler will add them by default.
+            var claims = new Dictionary<string, object>()
+            {
+                { "aud", aud },
+                { "iss", confidentialClientID },
+                { "jti", Guid.NewGuid().ToString() },
+                { "sub", confidentialClientID }
+            };
+
+            var securityTokenDescriptor = new SecurityTokenDescriptor
+            {
+                Claims = claims,
+                SigningCredentials = new X509SigningCredentials(cert)
+            };
+
+            var handler = new JsonWebTokenHandler();
+            var signedClientAssertion = handler.CreateToken(securityTokenDescriptor);
+        }
+```
+
+После подписанного утверждения клиента его можно использовать с API-интерфейсами MSAL, как показано ниже.
+
+```CSharp
+            string signedClientAssertion = GetSignedClientAssertion();
+
+            var confidentialApp = ConfidentialClientApplicationBuilder
+                .Create(ConfidentialClientID)
+                .WithClientAssertion(signedClientAssertion)
+                .Build();
 ```
 
 ### <a name="withclientclaims"></a>висклиентклаимс

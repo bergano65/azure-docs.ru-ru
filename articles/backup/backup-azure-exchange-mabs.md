@@ -1,25 +1,21 @@
 ---
-title: Резервное копирование сервера Exchange Server в Azure Backup с Azure Backup Server
+title: Резервное копирование сервера Exchange Server с помощью Azure Backup Server
 description: Узнайте, как выполнить резервное копирование сервера Exchange Server в службу Azure Backup с помощью Azure Backup Server.
 ms.reviewer: kasinh
-author: dcurwin
-manager: carmonm
-ms.service: backup
 ms.topic: conceptual
 ms.date: 03/24/2017
-ms.author: dacurwin
-ms.openlocfilehash: ed88f069c110795c2c5561196c41d3d75640bd53
-ms.sourcegitcommit: b1c94635078a53eb558d0eb276a5faca1020f835
+ms.openlocfilehash: 73dcc190446a71498dee3f12a5225a56c9f4ddc7
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2019
-ms.locfileid: "72968465"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74173127"
 ---
 # <a name="back-up-an-exchange-server-to-azure-with-azure-backup-server"></a>Резервное копирование сервера Exchange Server в Azure с помощью Azure Backup Server
 
 В этой статье описывается, как настроить Microsoft Azure Backup Server (MABS) для резервного копирования сервера Microsoft Exchange Server в Azure.  
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 Прежде чем продолжить, убедитесь, что Azure Backup Server [установлен и подготовлен](backup-azure-microsoft-azure-backup.md).
 
@@ -72,10 +68,10 @@ ms.locfileid: "72968465"
 11. Проверьте, есть ли на диске свободное место, и нажмите кнопку **Далее**.
 12. Выберите время создания сервером MABS начальной репликации и нажмите кнопку **Далее**.
 13. Выберите параметры проверки согласованности и нажмите кнопку **Далее**.
-14. Выберите базу данных для резервного копирования в Azure и нажмите кнопку **Далее**. Пример.
+14. Выберите базу данных для резервного копирования в Azure и нажмите кнопку **Далее**. Например,
 
     ![Выбор оперативной защиты данных](./media/backup-azure-backup-exchange-server/specify-online-protection-data.png)
-15. Определите расписание для **службы архивации Azure** и нажмите кнопку **Далее**. Пример.
+15. Определите расписание для **службы архивации Azure** и нажмите кнопку **Далее**. Например,
 
     ![Выбор расписания оперативного резервного копирования](./media/backup-azure-backup-exchange-server/specify-online-backup-schedule.png)
 
@@ -109,6 +105,6 @@ ms.locfileid: "72968465"
 
     ![Выбор оперативной репликации](./media/backup-azure-backup-exchange-server/choose-online-replication.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Часто задаваемые вопросы о службе архивации Azure](backup-azure-backup-faq.md)

@@ -1,25 +1,21 @@
 ---
-title: Резервное копирование сервера Exchange Server в Azure Backup через System Center DPM
+title: Резервное копирование сервера Exchange с помощью System Center DPM
 description: Узнайте, как выполнить резервное копирование Exchange Server в службу архивации Azure с помощью System Center 2012 R2 DPM
 ms.reviewer: kasinh
-author: dcurwin
-manager: carmonm
-ms.service: backup
 ms.topic: conceptual
 ms.date: 01/31/2019
-ms.author: dacurwin
-ms.openlocfilehash: 21f38105913e03adfbf400e82d3572e6e5084538
-ms.sourcegitcommit: b1c94635078a53eb558d0eb276a5faca1020f835
+ms.openlocfilehash: b2231fcadc3e0cb591302ba47572627ae3a17e58
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2019
-ms.locfileid: "72968507"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74173277"
 ---
 # <a name="back-up-an-exchange-server-to-azure-backup-with-system-center-2012-r2-dpm"></a>Резервное копирование Exchange Server в службу архивации Azure с помощью System Center 2012 R2 DPM
 
 В этой статье описывается настройка Data Protection Manager (DPM) в System Center 2012 R2 для резервного копирования Microsoft Exchange Server в службу архивации Azure.  
 
-## <a name="updates"></a>Обновления
+## <a name="updates"></a>обновлениях
 
 Для успешной регистрации сервера DPM в службе архивации Azure вам потребуется установить последний накопительный пакет обновления для System Center 2012 R2 DPM и последнюю версию агента резервного копирования Azure. Скачать последний накопительный пакет обновления можно из [каталога Microsoft](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=System%20Center%202012%20R2%20Data%20protection%20manager).
 
@@ -28,7 +24,7 @@ ms.locfileid: "72968507"
 >
 >
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 Прежде чем продолжить, выполните все [предварительные требования](backup-azure-dpm-introduction.md#prerequisites-and-limitations) по использованию Microsoft Azure Backup для защиты рабочих нагрузок. Список предварительных требований:
 
@@ -87,10 +83,10 @@ ms.locfileid: "72968507"
 11. Проверьте, есть ли на диске свободное место, и нажмите кнопку **Далее**.
 12. Выберите время создания сервером DPM начальной репликации и нажмите кнопку **Далее**.
 13. Выберите параметры проверки согласованности и нажмите кнопку **Далее**.
-14. Выберите базу данных для резервного копирования в Azure и нажмите кнопку **Далее**. Пример.
+14. Выберите базу данных для резервного копирования в Azure и нажмите кнопку **Далее**. Например,
 
     ![Выбор оперативной защиты данных](./media/backup-azure-backup-exchange-server/specify-online-protection-data.png)
-15. Определите расписание для **службы архивации Azure** и нажмите кнопку **Далее**. Пример.
+15. Определите расписание для **службы архивации Azure** и нажмите кнопку **Далее**. Например,
 
     ![Выбор расписания оперативного резервного копирования](./media/backup-azure-backup-exchange-server/specify-online-backup-schedule.png)
 
@@ -124,6 +120,6 @@ ms.locfileid: "72968507"
 
     ![Выбор оперативной репликации](./media/backup-azure-backup-exchange-server/choose-online-replication.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Часто задаваемые вопросы о службе архивации Azure](backup-azure-backup-faq.md)

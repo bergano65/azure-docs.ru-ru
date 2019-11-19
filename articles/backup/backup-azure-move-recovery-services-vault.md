@@ -2,18 +2,14 @@
 title: Как переместить Azure Backup хранилища служб восстановления
 description: Инструкции по перемещению хранилища служб восстановления между подписками Azure и группами ресурсов.
 ms.reviewer: sogup
-author: dcurwin
-manager: carmonm
-ms.service: backup
 ms.topic: conceptual
 ms.date: 04/08/2019
-ms.author: dacurwin
-ms.openlocfilehash: fb98ba8c393d28e7cdfb0b53cdd9ba11c171726f
-ms.sourcegitcommit: b1c94635078a53eb558d0eb276a5faca1020f835
+ms.openlocfilehash: 7d0a6c47fa08774161d3a2b7507cdfecaf8c7197
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2019
-ms.locfileid: "72969152"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74172891"
 ---
 # <a name="move-a-recovery-services-vault-across-azure-subscriptions-and-resource-groups"></a>Перемещение хранилища служб восстановления между подписками Azure и группами ресурсов
 
@@ -139,7 +135,7 @@ az resource move --destination-group <destinationResourceGroupName> --ids <Vault
 1. Задайте или проверьте элементы управления доступом для групп ресурсов.  
 2. После завершения перемещения для хранилища необходимо еще раз настроить отчеты службы Backup и функцию мониторинга. Во время операции перемещения будет утеряна предыдущая конфигурация.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Вы можете перемещать разные типы ресурсов между группами ресурсов и подписками.
 

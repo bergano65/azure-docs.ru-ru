@@ -1,21 +1,15 @@
 ---
-title: Azure Backup. Создание политики резервного копирования с помощью REST API
+title: Создание политик архивации с помощью REST API
 description: В этой статье вы узнаете, как создавать политики резервного копирования и управлять ими (расписанием и хранением) с помощью REST API.
-ms.reviewer: pullabhk
-author: dcurwin
-manager: carmonm
-keywords: REST API; Azure VM backup; Azure VM restore;
-ms.service: backup
 ms.topic: conceptual
 ms.date: 08/21/2018
-ms.author: dacurwin
 ms.assetid: 5ffc4115-0ae5-4b85-a18c-8a942f6d4870
-ms.openlocfilehash: 7d44f99a9f2a5bfb3d3a04fe5355f7b1dc13c404
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: b6e665b5c71dc5f2e8ebc22e00e1a71237f48bfc
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73747590"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74173436"
 ---
 # <a name="create-azure-recovery-services-backup-policies-using-rest-api"></a>Создание политик резервного копирования Служб восстановления Azure с помощью REST API
 
@@ -50,10 +44,10 @@ PUT https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{
 
 Например, чтобы создать политику для восстановления диска из резервной копии виртуальной машины Azure, выполните компоненты текста запроса.
 
-|Имя  |Обязательно  |Тип  |Description (Описание)  |
+|имя  |обязательные  |введите  |ОПИСАНИЕ  |
 |---------|---------|---------|---------|
-|properties     |   Да      |  ProtectionPolicy:[AzureIaaSVMProtectionPolicy](https://docs.microsoft.com/rest/api/backup/protectionpolicies(2019-05-13)/createorupdate#azureiaasvmprotectionpolicy)      | Свойства ProtectionPolicyResource        |
-|tags     |         | Объект        |  Теги ресурсов       |
+|properties     |   True,      |  ProtectionPolicy:[AzureIaaSVMProtectionPolicy](https://docs.microsoft.com/rest/api/backup/protectionpolicies(2019-05-13)/createorupdate#azureiaasvmprotectionpolicy)      | Свойства ProtectionPolicyResource        |
+|Теги     |         | Объект.        |  Теги ресурсов       |
 
 Полный список определений в тексте запроса см. в [документе REST API о политике резервного копирования](https://docs.microsoft.com/rest/api/backup/protectionpolicies(2019-05-13)/createorupdate).
 
@@ -158,7 +152,7 @@ PUT https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{
 
 Он возвращает два ответа: 202 (принято) при создании другой операции, а затем 200 (ОК) после завершения этой операции.
 
-|Имя  |Тип  |Description (Описание)  |
+|имя  |введите  |ОПИСАНИЕ  |
 |---------|---------|---------|
 |200 ОК     |    [ProtectionPolicyResource](https://docs.microsoft.com/rest/api/backup/protectionpolicies(2019-05-13)/createorupdate#protectionpolicyresource)     |  ОК       |
 |202 — принято     |         |     Принято    |
@@ -185,7 +179,7 @@ Location: https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000
 X-Powered-By: ASP.NET
 ```
 
-Отследите итоговую операцию, используя заголовки location или Azure-AsyncOperation с помощью простой команды *GET*.
+Затем отследите итоговую операцию, используя заголовок location или Azure-AsyncOperation с помощью простой команды *GET*.
 
 ```http
 GET https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/SwaggerTestRg/providers/Microsoft.RecoveryServices/vaults/testVault/backupPolicies/testPolicy1/operationResults/00000000-0000-0000-0000-000000000000?api-version=2019-05-13
@@ -281,7 +275,7 @@ GET https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000
 
 Если политика уже используется для защиты элемента, любое обновление в политике приведет к [изменению защиты](backup-azure-arm-userestapi-backupazurevms.md#changing-the-policy-of-protection) всех связанных элементов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 [Включите защиту для незащищенной виртуальной машины Azure](backup-azure-arm-userestapi-backupazurevms.md).
 

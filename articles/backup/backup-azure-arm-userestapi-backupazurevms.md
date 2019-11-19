@@ -1,21 +1,15 @@
 ---
-title: Azure Backup. Резервное копирование виртуальных машин Azure с помощью REST API
+title: Резервное копирование виртуальных машин Azure с помощью REST API
 description: Из этой статьи вы узнаете, как настраивать, инициировать и администрировать операции резервного копирования виртуальной машины Azure с помощью REST API.
-ms.reviewer: pullabhk
-author: dcurwin
-manager: carmonm
-keywords: REST API; Azure VM backup; Azure VM restore;
-ms.service: backup
 ms.topic: conceptual
 ms.date: 08/03/2018
-ms.author: dacurwin
 ms.assetid: b80b3a41-87bf-49ca-8ef2-68e43c04c1a3
-ms.openlocfilehash: 6f64f45aca6948665c088279002d3d8054ef8d80
-ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
+ms.openlocfilehash: c929f820862f5d041b4a63a1ca9c083abf1a1e4c
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73929172"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74173449"
 ---
 # <a name="back-up-an-azure-vm-using-azure-backup-via-rest-api"></a>Резервное копирование виртуальных машин Azure с помощью службы Azure Backup и REST API
 

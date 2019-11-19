@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c016ce349acdfff6145286d9fc07e08db4ed9516
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: 5a188349e15c5e4c486d37daed9f8b611a325dcf
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73882815"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74167329"
 ---
 # <a name="how-to-plan-your-hybrid-azure-active-directory-join-implementation"></a>Руководство. Планирование реализации гибридного Azure Active Directory Join
 
@@ -93,7 +93,8 @@ ms.locfileid: "73882815"
 - Чтобы предотвратить регистрацию устройства, присоединенного к домену, в Azure AD, добавьте следующий раздел реестра — Хклм\софтваре\полиЦиес\микрософт\виндовс\воркплацежоин, "Блоккаадворкплацежоин" = DWORD: 00000001.
 - В Windows 10 1803, если настроена Windows Hello для бизнеса, пользователю необходимо повторно настроить Windows Hello для бизнеса после очистки двойного состояния. Эта проблема устранена с помощью KB4512509
 
-
+> [!NOTE]
+> Зарегистрированное устройство Azure AD не будет автоматически удалено, если оно управляется Intune.
 
 ## <a name="review-controlled-validation-of-hybrid-azure-ad-join"></a>Проверка управляемой проверки гибридного присоединение к Azure AD
 
@@ -129,7 +130,7 @@ ms.locfileid: "73882815"
 > [!NOTE]
 > Azure AD не поддерживает смарт-карты и сертификаты в управляемых доменах.
 
-Начиная с версии 1.1.819.0, Azure AD Connect предоставляет мастер для настройки гибридного присоединения устройств к Azure AD. Мастер позволяет значительно упростить процесс конфигурации. Если установка нужной версии Azure AD Connect для вас не подходит, перейдите к [руководству по настройке гибридного присоединения устройств к Azure AD вручную](hybrid-azuread-join-manual.md). 
+Начиная с версии 1.1.819.0, Azure AD Connect предоставляет мастер для настройки гибридного присоединения устройств к Azure AD. Этот мастер позволяет значительно упростить настройку. Если установка нужной версии Azure AD Connect для вас не подходит, перейдите к [руководству по настройке гибридного присоединения устройств к Azure AD вручную](hybrid-azuread-join-manual.md). 
 
 На основе сценария, соответствующего вашей инфраструктуре идентификации, см.:
 

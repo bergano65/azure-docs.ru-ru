@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: lahugh
-ms.openlocfilehash: 7747d1b5e2b18ddf02403ad21fe875c498e43820
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 02ab7cdcbf0f150157eb44ef5e28e8284621b813
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74036053"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74173959"
 ---
 # <a name="support-for-generation-2-vms-on-azure"></a>Поддержка виртуальных машин поколения 2 в Azure
 
@@ -91,7 +91,7 @@ ms.locfileid: "74036053"
 | Диск ОС > 2 ТБ                    | :x:                | :heavy_check_mark: |
 | Пользовательский диск, образ или ОС замены         | :heavy_check_mark: | :heavy_check_mark: |
 | Поддержка масштабируемого набора виртуальных машин | :heavy_check_mark: | :heavy_check_mark: |
-| Azure Site Recovery               | :heavy_check_mark: | :x:                |
+| Azure Site Recovery               | :heavy_check_mark: | :heavy_check_mark: |
 | Резервное копирование и восстановление                    | :heavy_check_mark: | :heavy_check_mark: |
 | Коллекция общих образов              | :heavy_check_mark: | :heavy_check_mark: |
 | Шифрование дисков Azure             | :heavy_check_mark: | :x:                |
@@ -150,7 +150,7 @@ Get-AzVMImageSku -Location westus2 -PublisherName MicrosoftWindowsServer -Offer 
     Да. Но не все [размеры виртуальных машин поколения 2](#generation-2-vm-sizes) доступны в каждом регионе. Доступность виртуальной машины поколения 2 зависит от доступности размера виртуальной машины.
 
 * **Есть ли разница в ценах между виртуальными машинами поколения 1 и 2?**  
-    Нет.
+    Нет
 
 * **У меня есть VHD-файл из локальной виртуальной машины поколения 2. Можно ли использовать этот VHD-файл для создания виртуальной машины поколения 2 в Azure?**
   Да, вы можете перенести VHD-файл версии 2 в Azure и использовать его для создания виртуальной машины поколения 2. Для этого выполните следующие действия.

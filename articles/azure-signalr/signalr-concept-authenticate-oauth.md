@@ -1,17 +1,17 @@
 ---
-title: Руководство по проверке подлинности клиентов служба Azure SignalR
-description: В этом руководстве вы узнаете, как аутентифицировать клиентов, служба Azure SignalR
+title: Инструкции по проверке подлинности клиентов службы Azure SignalR
+description: Узнайте, как реализовать собственную проверку подлинности и интегрировать ее со службой Azure SignalR Service, выполнив пример E2E.
 author: sffamily
 ms.service: signalr
 ms.topic: conceptual
-ms.date: 03/01/2019
+ms.date: 11/13/2019
 ms.author: zhshang
-ms.openlocfilehash: 7660e1405598676599cab30467d22ac979438deb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: cc955adffbe7df5809f9c4c860877ad22df3e99b
+ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66128320"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74158280"
 ---
 # <a name="azure-signalr-service-authentication"></a>Аутентификация в Службе Azure SignalR
 
@@ -27,7 +27,7 @@ ms.locfileid: "66128320"
 
 Вы можете использовать любой редактор кода для выполнения шагов в этом руководстве. Однако [Visual Studio Code](https://code.visualstudio.com/) является отличным вариантом, доступным на платформах Windows, MacOS и Linux.
 
-Код для этого учебника доступен для скачивания в [репозитории примеров AzureSignalR на GitHub](https://github.com/aspnet/AzureSignalR-samples/tree/master/samples/GitHubChat).
+Код для этого руководства доступен для скачивания в [репозитории примеров AzureSignalR на GitHub](https://github.com/aspnet/AzureSignalR-samples/tree/master/samples/GitHubChat).
 
 ![Размещение всего OAuth в Azure](media/signalr-concept-authenticate-oauth/signalr-oauth-complete-azure.png)
 
@@ -40,14 +40,14 @@ ms.locfileid: "66128320"
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 Для работы с этим руководством необходимо следующее:
 
 * Учетная запись, созданная в [GitHub](https://github.com/)
-* [Git](https://git-scm.com/)
+* [Git.](https://git-scm.com/)
 * [Базовый пакет SDK для .NET](https://www.microsoft.com/net/download/windows)
-* [Настроенный Azure Cloud Shell.](https://docs.microsoft.com/azure/cloud-shell/quickstart)
+* [Настроенный Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/quickstart)
 * Скачанный или клонированный репозиторий [примеров AzureSignalR](https://github.com/aspnet/AzureSignalR-samples), доступный в репозитории GitHub.
 
 ## <a name="create-an-oauth-app"></a>Создание приложения OAuth
@@ -58,12 +58,12 @@ ms.locfileid: "66128320"
 
 3. Для нового приложения OAuth используйте следующие параметры, а затем щелкните **Регистрация приложения**.
 
-    | Имя параметра | Рекомендуемое значение | Описание |
+    | Имя параметра | Рекомендуемое значение | ОПИСАНИЕ |
     | ------------ | --------------- | ----------- |
     | имя приложения; | *Чат SignalR Azure* | Скорее всего, пользователи GitHub смогут распознать и довериться приложению, с которым они проходят аутентификацию.   |
     | URL-адрес домашней страницы | `http://localhost:5000/home` | |
     | Описание приложения | *Пример использования службы Azure SignalR в комнате чата с помощью аутентификации GitHub* | Полезное описание приложения, которое поможет пользователям приложения распознать содержимое используемой аутентификации. |
-    | URL-адрес обратного вызова авторизации | `http://localhost:5000/signin-github` | Этот параметр является самым важным параметром для приложения OAuth. Он является URL-адресом обратного вызова, который GitHub возвращает пользователю, после успешной аутентификации. В этом руководстве по умолчанию необходимо использовать URL-адрес обратного вызова для пакета *AspNet.Security.OAuth.GitHub*, */signin-github*.  |
+    | URL-адрес обратного вызова проверки подлинности | `http://localhost:5000/signin-github` | Этот параметр является самым важным параметром для приложения OAuth. Он является URL-адресом обратного вызова, который GitHub возвращает пользователю, после успешной аутентификации. В этом руководстве по умолчанию необходимо использовать URL-адрес обратного вызова для пакета *AspNet.Security.OAuth.GitHub*, */signin-github*.  |
 
 4. После завершения регистрации нового приложения OAuth добавьте *Идентификатор клиента* и *Секрет клиента* в менеджер секретов с помощью следующих команд. Замените *Your_GitHub_Client_Id* и *Your_GitHub_Client_Secret* на значения из собственного приложения OAuth.
 
@@ -339,7 +339,7 @@ ms.locfileid: "66128320"
 
 5. Сохраните изменения.
 
-## <a name="build-and-run-the-app-locally"></a>Локальное создание и запуск приложения
+## <a name="build-and-run-the-app-locally"></a>Локально создавайте и запускайте приложение
 
 1. Сохраните изменения для всех файлов.
 
@@ -347,7 +347,7 @@ ms.locfileid: "66128320"
 
         dotnet build
 
-3. После того как создание завершится, чтобы запустить веб приложение локально, выполните следующую команду:
+3. После того как создание завершится, чтобы запустить веб-приложение локально, выполните следующую команду:
 
         dotnet run
 
@@ -377,7 +377,7 @@ ms.locfileid: "66128320"
 
 ## <a name="deploy-the-app-to-azure"></a>Развертывание приложения в Azure
 
-В этом разделе будет использовать интерфейс командной строки Azure (CLI) из Azure Cloud Shell для создания нового веб-приложения в [службе приложений Azure](https://docs.microsoft.com/azure/app-service/) для размещения приложения ASP.NET в Azure. Веб-приложение будет настроено на использование развертывания локальной системы Git. Также веб-приложение будет настроено с помощью строки соединения SignalR, секретов приложения OAuth GitHub и пользователя развертывания.
+В этом разделе вы будете использовать интерфейс командной строки Azure (CLI) из Azure Cloud Shell для создания нового веб-приложения в [службе приложений Azure](https://docs.microsoft.com/azure/app-service/) для размещения приложения ASP.NET в Azure. Веб-приложение будет настроено на использование развертывания локальной системы Git. Также веб-приложение будет настроено с помощью строки соединения SignalR, секретов приложения OAuth GitHub и пользователя развертывания.
 
 В этом разделе используется расширение *signalr* для Azure CLI. Выполните следующую команду, чтобы установить расширение *signalr* для Azure:
 
@@ -412,9 +412,9 @@ az webapp create --name $WebAppName --resource-group $ResourceGroupName \
     --plan $WebAppPlan
 ```
 
-| Параметр | Описание |
+| Параметр | ОПИСАНИЕ |
 | -------------------- | --------------- |
-| ResourceGroupName | Это имя группы ресурсов было предложено в предыдущих руководствах. Рекомендуется группировать все ресурсы, используемые в этих руководствах, вместе. Используйте ту же группу ресурсов, которую вы использовали в предыдущих руководствах. |
+| ResourceGroupName | Это имя группы ресурсов было предложено в предыдущих уроках. Рекомендуется группировать все ресурсы, используемые в этих руководствах, вместе. Используйте ту же группу ресурсов, что и в предыдущих руководствах. |
 | WebAppPlan | Введите новое, уникальное имя плана служб приложений. |
 | WebAppName | Это станет именем нового веб-приложения и частью URL-адреса. Укажите уникальное имя. Например, signalrtestwebapp22665120.   |
 
@@ -460,7 +460,7 @@ az webapp config appsettings set --name $WebAppName \
     --settings "GitHubClientSecret=$GitHubClientSecret"
 ```
 
-| Параметр | Описание |
+| Параметр | ОПИСАНИЕ |
 | -------------------- | --------------- |
 | GitHubClientId | Назначьте этой переменной идентификатор секрета клиента для приложения OAuth GitHub. |
 | GitHubClientSecret | Назначьте этой переменной секретный пароль для приложения OAuth GitHub. |
@@ -495,7 +495,7 @@ az webapp deployment source config-local-git --name $WebAppName \
     --query [url] -o tsv
 ```
 
-| Параметр | Описание |
+| Параметр | ОПИСАНИЕ |
 | -------------------- | --------------- |
 | DeploymentUserName | Выберите новое имя пользователя развертывания. |
 | DeploymentUserPassword | Выберите пароль для нового пользователя развертывания. |
@@ -543,10 +543,10 @@ az webapp deployment source config-local-git --name $WebAppName \
 
 2. Щелкните приложение аутентификации и обновите **URL-адрес домашней страницы** и **URL-адрес обратного вызова авторизации**, как показано ниже.
 
-    | Параметр | Пример |
+    | Настройка | Пример |
     | ------- | ------- |
     | URL-адрес домашней страницы | https://signalrtestwebapp22665120.azurewebsites.net/home |
-    | URL-адрес обратного вызова авторизации | https://signalrtestwebapp22665120.azurewebsites.net/signin-github |
+    | URL-адрес обратного вызова проверки подлинности | https://signalrtestwebapp22665120.azurewebsites.net/signin-github |
 
 3. Перейдите к URL-адресу веб-приложения и протестируйте приложение.
 
@@ -563,15 +563,15 @@ az webapp deployment source config-local-git --name $WebAppName \
 
 Войдите на [портал Azure](https://portal.azure.com) и щелкните **Группы ресурсов**.
 
-Введите имя группы ресурсов в текстовое поле **Фильтровать по имени...** . В инструкциях в этой статье использовалась группа ресурсов с именем *SignalRTestResources*. В своей группе ресурсов в списке результатов щелкните **...** , а затем **Удалить группу ресурсов**.
+Введите имя группы ресурсов в текстовое поле **Фильтровать элементы…** . В инструкциях в этой статье использовалась группа ресурсов с именем *SignalRTestResources*. В своей группе ресурсов в списке результатов щелкните **...** , а затем **Удалить группу ресурсов**.
 
-![Delete (Удалить)](./media/signalr-concept-authenticate-oauth/signalr-delete-resource-group.png)
+![Удалить](./media/signalr-concept-authenticate-oauth/signalr-delete-resource-group.png)
 
 Подтвердите операцию удаления группы ресурсов. Введите имя группы ресурсов и нажмите кнопку **Удалить**.
 
 Через некоторое время группа ресурсов и все ее ресурсы будут удалены.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 В этом руководстве вы научились добавлять аутентификацию с помощью OAuth, чтобы улучшить подход к аутентификации службы Azure SignalR. Чтобы узнать больше об использовании сервера Azure SignalR, перейдите к примерам Azure CLI для службы SignalR.
 

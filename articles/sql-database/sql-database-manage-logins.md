@@ -12,12 +12,12 @@ author: VanMSFT
 ms.author: vanto
 ms.reviewer: carlrab
 ms.date: 03/26/2019
-ms.openlocfilehash: a33c653199ae21b551acadfb4503eae029ddc5e4
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: e9934f868fb62f9b1a19ef408dab69ab8a2c0e29
+ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73822829"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74159152"
 ---
 # <a name="controlling-and-granting-database-access-to-sql-database-and-sql-data-warehouse"></a>Контроль и предоставление доступа к базе данных SQL и хранилищу данных SQL
 
@@ -54,6 +54,9 @@ ms.locfileid: "73822829"
 - Могут создавать, изменять и удалять базы данных, имена для входа, пользователей в базе данных master и правила брандмауэра для IP-адресов на уровне сервера.
 - Могут добавлять и удалять членов в ролях `dbmanager` и `loginmanager`.
 - Могут просматривать системную таблицу `sys.sql_logins`.
+- Не может быть переименован.
+- Чтобы изменить учетную запись администратора Azure AD, используйте портал или Azure CLI.
+- После этого невозможно изменить учетную запись администратора сервера.
 
 ### <a name="configuring-the-firewall"></a>Настройка брандмауэра
 
@@ -216,7 +219,7 @@ EXEC sp_addrolemember 'db_owner', 'Mary';
 - Если владелец роли базы данных пытается добавить или удалить другого пользователя базы данных в роль или из роли базы данных, может произойти следующая ошибка: **В этой базе данных не существует пользователь или роль "Имя".** Эта ошибка возникает, поскольку данный пользователь не является видимым для владельца. Чтобы устранить эту проблему, предоставьте владельцу роли разрешение `VIEW DEFINITION` по отношению к данному пользователю. 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Общие сведения о правилах брандмауэра см. в статье [Обзор правил брандмауэра Базы данных SQL Azure](sql-database-firewall-configure.md).
 - Обзор всех функций защиты в базе данных SQL см. в [этой статье](sql-database-security-overview.md).

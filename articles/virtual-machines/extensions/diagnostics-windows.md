@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 12/15/2015
 ms.author: saurabh
-ms.openlocfilehash: d43859de71b6e41d5df444716b5504ca6b78400b
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: 09aaa998bf011561bd73ad87eda6a2e211ffaa72
+ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74073138"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74158941"
 ---
 # <a name="use-powershell-to-enable-azure-diagnostics-in-a-virtual-machine-running-windows"></a>Включение системы диагностики Azure на виртуальной машине под управлением Windows с помощью PowerShell
 
@@ -71,9 +71,9 @@ ms.locfileid: "74073138"
 
 Чтобы включить расширение диагностики на существующей виртуальной машине, созданной с помощью классической модели развертывания, сначала используйте командлет [Get-AzureVM](https://docs.microsoft.com/powershell/module/servicemanagement/azure/get-azurevm) , который позволит получить конфигурацию виртуальной машины. Затем обновите конфигурацию виртуальной машины, чтобы активировать расширение диагностики, с помощью командлета [Set-AzureVMDiagnosticsExtension](https://docs.microsoft.com/powershell/module/servicemanagement/azure/set-azurevmdiagnosticsextension) . И, наконец, примените обновленную конфигурацию к виртуальной машине с помощью командлета [Update-AzureVM](https://docs.microsoft.com/powershell/module/servicemanagement/azure/update-azurevm).
 
-    $VM = Get-AzVM -ServiceName $Service_Name -Name $VM_Name
-    $VM_Update = Set-AzVMDiagnosticsExtension -DiagnosticsConfigurationPath $Config_Path -VM $VM -StorageContext $Storage_Context
-    Update-AzVM -ServiceName $Service_Name -Name $VM_Name -VM $VM_Update.VM
+    $VM = Get-AzureVM -ServiceName $Service_Name -Name $VM_Name
+    $VM_Update = Set-AzureVMDiagnosticsExtension  -DiagnosticsConfigurationPath $Config_Path -VM $VM -StorageContext $Storage_Context
+    Update-AzureVM -ServiceName $Service_Name -Name $VM_Name -VM $VM_Update.VM
 
 ## <a name="sample-diagnostics-configuration"></a>Пример конфигурации диагностики
 Представленный ниже XML-код можно использовать для открытой конфигурации диагностики с применением описанных выше сценариев. Конфигурация в данном примере передает в учетную запись хранения диагностических данных различные счетчики производительности вместе с ошибками из журналов приложений, событий безопасности и системных каналов в Windows, а также из журналов инфраструктуры диагностики.

@@ -1,18 +1,14 @@
 ---
 title: Часто задаваемые вопросы о резервном копировании файлов Azure
 description: В этой статье вы найдете ответы на часто задаваемые вопросы о защите общих папок Azure с помощью службы Azure Backup.
-author: dcurwin
-ms.author: dacurwin
 ms.date: 07/29/2019
-ms.topic: tutorial
-ms.service: backup
-manager: carmonm
-ms.openlocfilehash: 9cb5d3ae02cb0d4a6e293207a736dced56ed8538
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
-ms.translationtype: HT
+ms.topic: conceptual
+ms.openlocfilehash: bf04458d859601de7ca0e9d07f6a3dbf506a51e6
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73747461"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74173107"
 ---
 # <a name="questions-about-backing-up-azure-files"></a>Вопросы о резервном копировании файлов Azure
 
@@ -127,9 +123,9 @@ ms.locfileid: "73747461"
 
 Если к файловым ресурсам применяется новая политика, также применяется ее расписание и период хранения. Если период хранения продлевается, существующие точки восстановления отмечаются для хранения в соответствии с новой политикой. Если период хранения сокращается, они помечаются для удаления при следующей очистке, а затем удаляются.
 
-## <a name="see-also"></a>См. также
+## <a name="next-steps"></a>Дополнительная информация
 
-Здесь представлены сведения только о резервном копировании файлов Azure. Чтобы узнать больше о других областях службы Azure Backup, см. следующие разделы с часто задаваемыми вопросами.
+Чтобы узнать больше о других областях службы Azure Backup, см. следующие разделы с часто задаваемыми вопросами:
 
 - [Часто задаваемые вопросы о службах восстановления](backup-azure-backup-faq.md).
 - [Часто задаваемые вопросы о резервном копировании виртуальных машин Azure](backup-azure-vm-backup-faq.md).

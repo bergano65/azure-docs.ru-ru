@@ -11,12 +11,12 @@ ms.author: jovanpop
 ms.reviewer: sstein, carlrab, bonova
 ms.date: 11/04/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: 3518404b76625e2557aaefdc6ab5ad7353683984
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
-ms.translationtype: MT
+ms.openlocfilehash: 3283cfe9455ba29679d7c741941aa8863c47b1c0
+ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73823323"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74158297"
 ---
 # <a name="managed-instance-t-sql-differences-limitations-and-known-issues"></a>Различия в T-SQL управляемого экземпляра, ограничения и известные проблемы
 
@@ -48,7 +48,7 @@ ms.locfileid: "73823323"
 - [DROP AVAILABILITY GROUP](/sql/t-sql/statements/drop-availability-group-transact-sql);
 - Предложение [Set HADR](/sql/t-sql/statements/alter-database-transact-sql-set-hadr) инструкции [ALTER DATABASE](/sql/t-sql/statements/alter-database-transact-sql)
 
-### <a name="backup"></a>Архивация
+### <a name="backup"></a>Azure Backup
 
 Управляемые экземпляры имеют автоматическое резервное копирование, поэтому пользователи могут создавать полные резервные копии базы данных `COPY_ONLY`. Разностные резервные копии, журналы и моментальные снимки файлов не поддерживаются.
 
@@ -95,7 +95,7 @@ ms.locfileid: "73823323"
 - Предоставляется новый синтаксис `TO URL`, который можно использовать для указания URL-адреса контейнера хранилища больших двоичных объектов Azure, в который помещаются файлы `.xel`.
 - Синтаксис `TO FILE` не поддерживается, так как управляемый экземпляр не может получить доступ к общим файловым ресурсам Windows.
 
-Дополнительные сведения можно найти в разделе 
+Дополнительные сведения см. в следующих источниках. 
 
 - [CREATE SERVER AUDIT (Transact-SQL)](/sql/t-sql/statements/create-server-audit-transact-sql) 
 - [ALTER SERVER AUDIT (Transact-SQL)](/sql/t-sql/statements/alter-server-audit-transact-sql)
@@ -184,7 +184,7 @@ WITH PRIVATE KEY (<private_key_options>)
 - [Резервное копирование главного ключа службы](/sql/t-sql/statements/backup-service-master-key-transact-sql) не поддерживается (управляется службой базы данных SQL).
 - [Восстановление главного ключа службы](/sql/t-sql/statements/restore-service-master-key-transact-sql) не поддерживается (управляется службой базы данных SQL).
 
-## <a name="configuration"></a>Конфигурация
+## <a name="configuration"></a>Параметр Configuration
 
 ### <a name="buffer-pool-extension"></a>Расширение буферного пула
 
@@ -565,16 +565,6 @@ SQL Server и Управляемый экземпляр [не позволяют
 
 **Решение**. Дождитесь завершения процесса восстановления или отмените процесс восстановления, если операция создания или обновления уровня службы имеет более высокий приоритет.
 
-### <a name="missing-validations-in-restore-process"></a>Отсутствующие проверки в процессе восстановления
-
-**Дата:** Sep 2019
-
-Инструкция `RESTORE` и встроенное восстановление на момент времени не выполняют некоторые проверки нессекари для восстановленной базы данных:
-- Инструкция **DBCC CHECKDB** - `RESTORE` не выполняет `DBCC CHECKDB` в восстановленной базе данных. Если исходная база данных повреждена или файл резервной копии поврежден во время копирования в хранилище BLOB-объектов Azure, автоматическое резервное копирование не будет выполнено, и служба поддержки Azure свяжется с клиентом. 
-- Встроенный процесс восстановления на момент времени не проверяет, содержит ли автоматизированное резервное копирование из критически важный для бизнеса экземпляра объекты выполняющейся [в памяти OLTP](sql-database-in-memory.md#in-memory-oltp). 
-
-**Обходное решение**. перед созданием резервной копии убедитесь, что выполняется `DBCC CHECKDB` в базе данных-источнике, и используйте параметр `WITH CHECKSUM` в Backup, чтобы избежать возможных повреждений, которые могут быть восстановлены на управляемом экземпляре. Убедитесь, что база данных-источник не содержит [объекты OLTP в памяти](sql-database-in-memory.md#in-memory-oltp) , если вы восстанавливаете ее на общего назначения уровне.
-
 ### <a name="resource-governor-on-business-critical-service-tier-might-need-to-be-reconfigured-after-failover"></a>Resource Governor на уровне служб критически важный для бизнеса может потребоваться перенастроить после отработки отказа
 
 **Дата:** Sep 2019
@@ -697,7 +687,7 @@ using (var scope = new TransactionScope())
 
 **Обходной путь:** По возможности используйте контекстные соединения в модуле CLR.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Дополнительные сведения об управляемых экземплярах см [. в разделе понятие управляемого экземпляра.](sql-database-managed-instance.md)
 - Список функций и сравнительных списков см. в статье [Сравнение функций базы данных SQL Azure](sql-database-features.md).

@@ -1,25 +1,20 @@
 ---
-title: Резервное копирование и восстановление файлов Azure с помощью Azure Backup и PowerShell
+title: Резервное копирование и восстановление файлов Azure с помощью PowerShell
 description: В этой статье вы узнаете, как выполнять резервное копирование и восстановление файлов Azure с помощью службы Azure Backup и PowerShell.
-author: dcurwin
-manager: carmonm
-ms.service: backup
 ms.topic: conceptual
 ms.date: 08/20/2019
-ms.author: dacurwin
-ms.reviewer: pullabhk
-ms.openlocfilehash: 4642549dcdd455c97ea3e8fd8a8b5440779b923c
-ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
+ms.openlocfilehash: 18c7340d1cb782ba41c472156259170f37139a74
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2019
-ms.locfileid: "73903616"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74173479"
 ---
 # <a name="back-up-and-restore-azure-files-with-powershell"></a>Резервное копирование и восстановление файлов Azure с помощью PowerShell
 
 В этой статье описывается, как использовать Azure PowerShell для резервного копирования и восстановления файлового ресурса службы файлов Azure с помощью хранилища служб восстановления [Azure Backup](backup-overview.md) .
 
-В этом учебнике объясняется, как выполнить такие задачи:
+В этой статье описано, как:
 
 > [!div class="checklist"]
 >

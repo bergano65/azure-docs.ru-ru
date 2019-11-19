@@ -1,25 +1,21 @@
 ---
-title: Часто задаваемые вопросы о резервном копировании виртуальных машин Azure с помощью Azure Backup
+title: Часто задаваемые вопросы о резервном копировании виртуальных машин Azure
 description: В этой статье вы найдете ответы на часто задаваемые вопросы о резервном копировании виртуальных машин Azure с помощью службы Azure Backup.
 ms.reviewer: sogup
-author: dcurwin
-manager: carmonm
-ms.service: backup
 ms.topic: conceptual
 ms.date: 09/17/2019
-ms.author: dacurwin
-ms.openlocfilehash: ad5e715de2f3467d4530759cbb2acec0358e5597
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: 30036d6cf241e1ac840b2be67ca78fbda6c60061
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73747281"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74172561"
 ---
 # <a name="frequently-asked-questions-back-up-azure-vms"></a>Часто задаваемые вопросы. Резервное копирование виртуальных машин Azure
 
 В этой статье содержатся ответы на часто задаваемые вопросы о резервном копировании виртуальных машин Azure со службой [Azure Backup](backup-introduction-to-azure-backup.md) .
 
-## <a name="backup"></a>Архивация
+## <a name="backup"></a>Azure Backup
 
 ### <a name="which-vm-images-can-be-enabled-for-backup-when-i-create-them"></a>Какие образы виртуальных машин можно включить для резервного копирования при их создании?
 
@@ -27,7 +23,7 @@ ms.locfileid: "73747281"
 
 ### <a name="is-the-backup-cost-included-in-the-vm-cost"></a>Стоимость резервного копирования включена в стоимость виртуальной машины?
 
-Нет. Затраты на резервное копирование отделены от затрат на виртуальную машину. Дополнительные сведения о [ценах на Azure Backup](https://azure.microsoft.com/pricing/details/backup/).
+Нет Затраты на резервное копирование отделены от затрат на виртуальную машину. Дополнительные сведения о [ценах на Azure Backup](https://azure.microsoft.com/pricing/details/backup/).
 
 ### <a name="which-permissions-are-required-to-enable-backup-for-a-vm"></a>Какие разрешения требуются для включения резервного копирования виртуальной машины?
 
@@ -47,7 +43,7 @@ ms.locfileid: "73747281"
 
 ### <a name="does-an-on-demand-backup-job-use-the-same-retention-schedule-as-scheduled-backups"></a>Применяется ли к заданию резервного копирования по запросу то же расписание сохранения, что и к плановым заданиям резервного копирования?
 
-Нет. Укажите диапазон хранения для задания резервного копирования по запросу. По умолчанию задание будет храниться в течение 30 дней после активации на портале.
+Нет Укажите диапазон хранения для задания резервного копирования по запросу. По умолчанию задание будет храниться в течение 30 дней после активации на портале.
 
 ### <a name="i-recently-enabled-azure-disk-encryption-on-some-vms-will-my-backups-continue-to-work"></a>Недавно на некоторых виртуальных машинах было включено шифрование дисков Azure. Будет ли после этого работать резервное копирование?
 

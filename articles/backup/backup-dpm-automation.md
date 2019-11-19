@@ -1,19 +1,14 @@
 ---
-title: 'Azure Backup: использование PowerShell для архивации рабочих нагрузок DPM'
+title: Использование PowerShell для резервного копирования рабочих нагрузок DPM
 description: Узнайте о том, как развернуть службу архивации Azure для Data Protection Manager (DPM) и управлять ей с помощью PowerShell
-ms.reviewer: adigan
-author: dcurwin
-manager: carmonm
-ms.service: backup
 ms.topic: conceptual
 ms.date: 01/23/2017
-ms.author: dacurwin
-ms.openlocfilehash: ef20de40433542c1ed0780f198b10d6a1fb78789
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: d3a8b2ff95957b69bab4932ce8a7e5a1ab4bfa44
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73162135"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74172408"
 ---
 # <a name="deploy-and-manage-backup-to-azure-for-data-protection-manager-dpm-servers-using-powershell"></a>Развертывание резервного копирования в Azure для серверов Data Protection Manager (DPM) и управление им с помощью PowerShell
 
@@ -106,7 +101,6 @@ SubscriptionId    : 1234-567f-8910-abc
 Properties        : Microsoft.Azure.Commands.RecoveryServices.ARSVaultProperties
 ```
 
-
 ## <a name="installing-the-azure-backup-agent-on-a-dpm-server"></a>Установка агента службы архивации Azure на сервер DPM
 
 Прежде чем устанавливать агент службы архивации Azure, необходимо загрузить установщик и разместить его в системе Windows Server. Последнюю версию установщика можно загрузить в [центре загрузки Майкрософт](https://aka.ms/azurebackup_agent) или на странице панели мониторинга для хранилища служб восстановления. Сохраните установщик в удобном для вас месте, например в папке *C:\Downloads\*.
@@ -125,7 +119,7 @@ MARSAgentInstaller.exe /q
 
 ### <a name="installation-options"></a>Параметры установки
 
-Чтобы просмотреть все доступные в командной строке параметры, используйте следующую команду:
+Чтобы просмотреть все параметры, доступные через командную строку, используйте следующую команду:
 
 ```powershell
 MARSAgentInstaller.exe /?
@@ -133,7 +127,7 @@ MARSAgentInstaller.exe /?
 
 Доступны следующие параметры.
 
-| Вариант | Сведения | значение по умолчанию |
+| Параметр | Подробная информация | значение по умолчанию |
 | --- | --- | --- |
 | /q |Позволяет выполнить тихую установку. |- |
 | /p:"расположение" |Путь к папке установки для агента архивации Azure. |C:\Program Files\Microsoft Azure Recovery Services Agent |
@@ -189,7 +183,7 @@ $setting = Get-DPMCloudSubscriptionSetting -DPMServerName "TestingServer"
 Set-DPMCloudSubscriptionSetting -DPMServerName "TestingServer" -SubscriptionSetting $setting -Commit
 ```
 
-## <a name="networking"></a>Работа в сети
+## <a name="networking"></a>Сеть
 
 Если компьютер DPM подключен к службе архивации Azure в Интернете через прокси-сервер, для успешного резервного копирования следует указать параметры прокси-сервера. Для этого используются параметры ```-ProxyServer```, ```-ProxyPort```, ```-ProxyUsername``` и ```ProxyPassword``` для командлета [Set-DPMCloudSubscriptionSetting](https://technet.microsoft.com/library/jj612791). В нашем случае прокси-сервер не используется, поэтому мы явным образом удаляем все данные прокси-сервера.
 
@@ -392,6 +386,6 @@ Restore-DPMRecoverableItem -RecoverableItem $RecoveryPoints[0] -RecoveryOption $
 
 Команды можно с легкостью расширить для любого типа источника данных.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * Дополнительные сведения о службе архивации Azure для DPM см. в статье [Подготовка к архивированию рабочих нагрузок в Azure с помощью DPM](backup-azure-dpm-introduction.md).

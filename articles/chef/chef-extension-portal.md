@@ -2,27 +2,23 @@
 title: Установка клиента Chef с портала Azure
 description: Узнайте, как развернуть клиент Chef и настроить его с портала Azure
 keywords: azure, chef, devops, client, install, portal
-ms.service: virtual-machines-linux
-author: tomarchermsft
-manager: jeconnoc
-ms.author: tarcher
 ms.date: 05/15/2018
 ms.topic: article
-ms.openlocfilehash: cf7afb50006fb273b4d685f9e4259be1cb60fe4e
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: f8707c2fe39fb794381af298c24d27704b1ec255
+ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60563893"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74158256"
 ---
 # <a name="install-the-chef-client-from-the-azure-portal"></a>Установка клиента Chef с портала Azure
 Вы можете добавить расширение клиента Chef непосредственно на компьютере под управлением Windows или Linux на портале Azure. В этой статье процесс добавления рассматривается с использованием новой виртуальной машины Linux.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
-- **Подписка Azure.** Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) , прежде чем начинать работу.
+- **Подписка Azure**. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.
 
-- **Chef**. Если у вас нет активной учетной записи Chef, зарегистрируйтесь [здесь](https://manage.chef.io/signup), чтобы получить бесплатную пробную версию размещенного клиента Chef. Чтобы следовать инструкциям этой статьи, вам потребуются следующие значения из учетной записи Chef:
+- **Chef**. Если у вас нет активной учетной записи Chef, зарегистрируйтесь, чтобы получить [бесплатную пробную версию размещенного клиента Chef](https://manage.chef.io/signup). Чтобы следовать инструкциям этой статьи, вам потребуются следующие значения из учетной записи Chef:
   - ключ проверки организации;
   - RB-файл;
   - список запуска.
@@ -106,6 +102,6 @@ ms.locfileid: "60563893"
 
 ![Установка сервера Chef на виртуальной машине Linux](./media/chef-extension-portal/resource-created.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Автоматизация развертывания виртуальной машины Azure с помощью Chef](/azure/virtual-machines/windows/chef-automation)

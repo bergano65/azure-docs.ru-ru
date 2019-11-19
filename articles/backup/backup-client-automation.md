@@ -1,19 +1,14 @@
 ---
 title: Использование PowerShell для архивации Windows Server в Azure
 description: В этой статье описано, как использовать PowerShell для настройки Azure Backup в Windows Server или клиенте Windows, а также для управления резервным копированием и восстановлением.
-ms.reviewer: shivamg
-author: dcurwin
-manager: carmonm
-ms.service: backup
 ms.topic: conceptual
 ms.date: 08/20/2019
-ms.author: dacurwin
-ms.openlocfilehash: bf79957bec4b330ca9acce3f8b92aab1a0944440
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: 6285b7fc6493090ab0bead5f00124a6eaa02dc7e
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74074862"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74172451"
 ---
 # <a name="deploy-and-manage-backup-to-azure-for-windows-serverwindows-client-using-powershell"></a>Развертывание резервного копирования в Azure для Windows Server или клиента Windows и управление им с помощью PowerShell
 

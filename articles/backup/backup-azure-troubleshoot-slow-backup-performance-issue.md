@@ -1,19 +1,15 @@
 ---
-title: Устранение неполадок, связанных с низкой производительностью архивации файлов и папок в службе архивации Azure
+title: Устранение незначительного резервного копирования файлов и папок
 description: В этой статье представлены инструкции по устранению неполадок, которые помогут вам диагностировать причины проблем с производительностью службы архивации Azure.
 ms.reviewer: saurse
-author: dcurwin
-manager: carmonm
-ms.service: backup
 ms.topic: troubleshooting
 ms.date: 07/05/2019
-ms.author: dacurwin
-ms.openlocfilehash: c56ddf04b98cc2b38e023714fcb0ffc5452236f2
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: 2b7b8903da0d8dd83591b260bacb496b0c253ae3
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74074914"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74172586"
 ---
 # <a name="troubleshoot-slow-backup-of-files-and-folders-in-azure-backup"></a>Устранение неполадок, связанных с низкой производительностью архивации файлов и папок в службе архивации Azure
 

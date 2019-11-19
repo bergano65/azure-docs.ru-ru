@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 03/27/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4d4c08802b9a19398e7968901974cad86d9d946a
-ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
+ms.openlocfilehash: beaa8561028a9e21d0623c0eb8e19592f3cad055
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74120322"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74167866"
 ---
 # <a name="tutorial-configure-g-suite-for-automatic-user-provisioning"></a>Руководство по настройке G Suite для автоматической подготовки пользователей
 
@@ -32,7 +32,7 @@ ms.locfileid: "74120322"
 > [!NOTE]
 > Соединитель G Suite был недавно обновлен в 2019 октября. В соединитель G Suite внесены следующие изменения:
 - Добавлена поддержка дополнительных атрибутов пользователей и групп G Suite. 
-- Обновлены имена целевых атрибутов G Suite в соответствии с определенным [здесь](/azure/active-directory/manage-apps/customize-application-attributes).
+- Обновлены имена целевых атрибутов G Suite в соответствии с определенным [здесь](https://developers.google.com/admin-sdk/directory).
 - Обновлены сопоставления атрибутов по умолчанию.
 
 ## <a name="prerequisites"></a>предварительным требованиям
@@ -129,6 +129,9 @@ Azure Active Directory использует концепцию, называем
 > [!TIP]
 > Вы также можете включить единый вход на основе SAML для G Suite, следуя инструкциям, приведенным в [руководстве по единому входу g Suite](https://docs.microsoft.com/azure/active-directory/saas-apps/google-apps-tutorial). Единый вход можно настроить независимо от автоматической подготовки пользователей, хотя эти две возможности дополняют друг друга.
 
+> [!NOTE]
+> Дополнительные сведения о конечной точке API каталога G Suite см. в разделе [API каталога](https://developers.google.com/admin-sdk/directory).
+
 ### <a name="to-configure-automatic-user-provisioning-for-g-suite-in-azure-ad"></a>Чтобы настроить автоматическую подготовку пользователей для G Suite в Azure AD, сделайте следующее:
 
 1. Войдите на [портале Azure](https://portal.azure.com). Выберите **корпоративные приложения**, а затем выберите **все приложения**.
@@ -196,15 +199,6 @@ Azure Active Directory использует концепцию, называем
 После этого начнется начальная синхронизация пользователей и (или) групп, определенных в поле **Область** раздела **Параметры**. Начальная синхронизация занимает больше времени, чем последующие операции синхронизации. Если служба запущена, они выполняются примерно каждые 40 минут. В разделе **сведения о синхронизации** можно отслеживать ход выполнения и переходить по ссылкам для просмотра отчетов по подготовке, в которых описаны все действия, выполняемые службой подготовки Azure AD в G Suite.
 
 Дополнительные сведения о чтении журналов подготовки Azure AD см. в руководстве по [отчетам об автоматической подготовке учетных записей](../manage-apps/check-status-user-account-provisioning.md).
-
-> [!NOTE]
-> Другим возможным вариантом автоматизации подготовки пользователей к G Suite является использование [Google Cloud Directory Sync](https://support.google.com/a/answer/106368?hl=en). Этот параметр обеспечивает подготовку локальных удостоверений Active Directory к G Suite.
-
-## <a name="common-issues"></a>Распространенные проблемы
-* G Suite требует, чтобы все подготовленные пользователи были проверены в доменах. Убедитесь, что любой пользователь, который вы хотите подготавливать, имеет имя участника-пользователя из проверенного домена в G Suite. Если пользователь из непроверенного домена находится в области для подготовки, вы увидите ошибку в [журналах подготовки](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-provisioning-logs) , например "гуглеаппсинвалиддомаин". Можно предотвратить эти ошибки и убедиться, что пользователи из непроверенных доменов выходят за пределы области действия с помощью [фильтра области](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts).
-    * Целевой атрибут: userPrincipalName
-    * Оператор: соответствие РЕГУЛЯРНОго выражения или не соответствует регулярному выражению
-    * Значение:. *@domain.com
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

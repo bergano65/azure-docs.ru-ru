@@ -1,19 +1,15 @@
 ---
 title: Использование Chef в Azure
 description: Общие сведения о настройке и проверке инфраструктуры Azure с помощью Chef
-ms.service: virtual-machines-linux
 keywords: azure, chef, devops, virtual machines, overview, automate
-author: tomarchermsft
-manager: jeconnoc
-ms.author: tarcher
 ms.date: 05/15/2018
 ms.topic: article
-ms.openlocfilehash: 5c4e20177c1b334a34f7ce9328dfaa7bd8c66d3d
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 4ad8b79b42c9d8d7942f391223c052f63579b11b
+ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60656580"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74158011"
 ---
 # <a name="using-chef-with-azure"></a>Использование Chef в Azure
 [Chef](https://www.chef.io) — это мощная платформа автоматизации, которая преобразует инфраструктуру виртуальной машины Azure в код. Chef автоматизирует настройку и развертывание инфраструктуры, а также управление ею в сети независимо от ее размера.
@@ -42,6 +38,6 @@ ms.locfileid: "60656580"
 ## <a name="test-drive-chef-automate-on-azure"></a>Тестовый выпуск Chef Automate в Azure
 [Решение Chef Automate в Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/chef-software.chef-automate), поддерживаемое платформой Chef, позволяет создавать и развертывать инфраструктуру и приложения, а также управлять ими совместно с другими пользователями. Одним щелчком мыши вы можете мгновенно получить доступ ко всем коммерческим функциям Chef Automate, визуализировать все свои устройства, обеспечить непрерывное соответствие требованиям и управлять всеми изменениями с помощью унифицированного рабочего процесса.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Автоматизация развертывания виртуальной машины Azure с помощью Chef](/azure/virtual-machines/windows/chef-automation)

@@ -62,6 +62,8 @@
               href: ./ag/tutorial-restrict-web-traffic-powershell.md
             - name: Инфраструктура CLI Azure
               href: ./ag/tutorial-restrict-web-traffic-cli.md
+        - name: Перенос политики WAF
+          href: ./ag/migrate-policy.md
         - name: Настройка правил WAF
           items:
             - name: Портал Azure

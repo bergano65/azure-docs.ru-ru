@@ -1,18 +1,18 @@
 ---
 title: Развертывание Брандмауэра Azure с помощью шаблона
-description: Развертывание Брандмауэра Azure с помощью шаблона
+description: Развертывание брандмауэра Azure с помощью шаблона. В созданной сети есть одна виртуальная сеть с тремя подсетями. Две, две-ядерные виртуальные машины Windows Server развернуты.
 services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: article
-ms.date: 7/9/2018
+ms.date: 11/19/2019
 ms.author: victorh
-ms.openlocfilehash: c0a6cda54a58e3cc03ba31e221fb57fc725dd779
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: b9e82998283bf44eede88148a12d88aae521b1ca
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73839388"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74169203"
 ---
 # <a name="deploy-azure-firewall-using-a-template"></a>Развертывание Брандмауэра Azure с помощью шаблона
 
@@ -29,7 +29,7 @@ ms.locfileid: "73839388"
 
 ## <a name="use-the-template-to-deploy-azure-firewall"></a>Использование шаблона для развертывания брандмауэра Azure
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу.
 
 **Установка и развертывание брандмауэра Azure с помощью шаблона**
 
@@ -65,7 +65,7 @@ Remove-AzResourceGroup -Name MyResourceGroup
 ```
 Не удаляйте группу ресурсов и брандмауэр, если планируете перейти к изучению руководства по отслеживанию брандмауэра. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Также вы можете изучить журналы брандмауэра Azure.
 

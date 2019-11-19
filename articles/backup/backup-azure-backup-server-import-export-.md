@@ -1,19 +1,15 @@
 ---
-title: Azure Backup. Автономное резервное копирование для DPM и Azure Backup Server
+title: Автономное резервное копирование с помощью DPM и Azure Backup Server
 description: Azure Backup позволяет отправить данные из сети с помощью службы импорта и экспорта Azure. В этой статье описывается рабочий процесс автономного резервного копирования для DPM и Azure Backup Server (MABS).
 ms.reviewer: saurse
-author: dcurwin
-manager: carmonm
-ms.service: backup
 ms.topic: conceptual
 ms.date: 05/08/2018
-ms.author: dacurwin
-ms.openlocfilehash: 0763cbd4345dca39f37b77a0f3d991a7d77e30c4
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: 4c62fed98a37a821907a889e45d582c452961203
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74074302"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74173248"
 ---
 # <a name="offline-backup-workflow-for-dpm-and-azure-backup-server"></a>Автономное резервное копирование для DPM и Azure Backup Server
 
@@ -108,7 +104,7 @@ ms.locfileid: "74074302"
 
 Служебная программа *AzureOfflineBackupDiskPrep* используется для подготовки дисков SATA, которые отправляются в ближайший центр обработки данных Azure. Эта служебная программа находится в каталоге установки агента служб восстановления по следующему пути:
 
-*\\агент Службы восстановления Microsoft Azure\\utils\\*
+    *\\Microsoft Azure Recovery Services Agent\\Utils\\*
 
 1. Перейдите по этому пути и скопируйте каталог **AzureOfflineBackupDiskPrep** на компьютер копирования, к которому присоединены подготавливаемые диски SATA. Убедитесь, что компьютер копирования соответствует следующим требованиям.
 

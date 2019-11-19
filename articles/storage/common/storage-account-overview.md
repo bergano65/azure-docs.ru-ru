@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 06/07/2019
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 308809a9b78de9d3c0e77ed6028e62c42ff4e1c5
-ms.sourcegitcommit: 7efb2a638153c22c93a5053c3c6db8b15d072949
+ms.openlocfilehash: f1b2bdcecac0aade21c6c770b2495a1e15ba9bc5
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72882561"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74174002"
 ---
 # <a name="azure-storage-account-overview"></a>Общие сведения об учетной записи хранения
 
@@ -30,8 +30,9 @@ ms.locfileid: "72882561"
 Учетные записи хранения общего назначения версии 2 поддерживают последние возможности службы хранилища Azure и содержат все функции учетных записей общего назначения версии 1 и учетных записей хранилища BLOB-объектов. Учетные записи общего назначения версии 2 отличаются наименьшей ориентировочной платой за каждый гигабайт для службы хранилища Azure, а также конкурентоспособными в отрасли ценами на транзакции. Учетные записи хранения общего назначения версии 2 поддерживают эти службы хранилища Azure:
 
 - большие двоичные объекты (все типы: блочные, добавочные, страничные);
+- Data Lake Gen2
 - Файлы
-- Диски
+- диски;
 - Очереди
 - Таблицы
 
@@ -48,7 +49,7 @@ ms.locfileid: "72882561"
 
 - большие двоичные объекты (все типы);
 - Файлы
-- Диски
+- диски;
 - Очереди
 - Таблицы
 
@@ -185,7 +186,7 @@ AzCopy — это программа командной строки Windows, п
 
 [!INCLUDE [storage-account-billing-include](../../../includes/storage-account-billing-include.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * Чтобы узнать, как создать учетную запись хранения Azure общего назначения, см. раздел [Создание учетной записи хранения](storage-quickstart-create-account.md).
 * Сведения о создании учетной записи Блоккблобстораже см. в статье [Создание учетной записи хранилища блочных BLOB-объектов](../blobs/storage-blob-create-account-block-blob.md).

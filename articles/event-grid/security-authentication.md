@@ -1,6 +1,6 @@
 ---
 title: 'Сетка событий Azure: безопасность и проверка подлинности'
-description: В статье описываются сетка событий Azure и ее основные понятия.
+description: В статье описываются служба "Сетка событий Azure" и ее основные понятия.
 services: event-grid
 author: banisadr
 manager: timlt
@@ -8,12 +8,12 @@ ms.service: event-grid
 ms.topic: conceptual
 ms.date: 05/22/2019
 ms.author: babanisa
-ms.openlocfilehash: 8fe85685a41e05b5132157453a6dcbc81c2399af
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: dfa53acaf392e225873a40b05b8517de2f9780dc
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73825773"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74169580"
 ---
 # <a name="event-grid-security-and-authentication"></a>Сетка событий: безопасность и проверка подлинности 
 
@@ -102,6 +102,11 @@ ms.locfileid: "73825773"
 
 ### <a name="event-delivery-security"></a>Защита доставки событий
 
+#### <a name="azure-ad"></a>Azure AD
+
+Вы можете защитить конечную точку веб-перехватчика с помощью Azure Active Directory для проверки подлинности и авторизации сетки событий, чтобы опубликовать события в конечных точках. Вам потребуется создать приложение Azure Active Directory, создать роль и субъект-службу в приложении, которое будет выполнять авторизацию в службе "Сетка событий", и настроить подписку на события для использования приложения Azure AD. [Узнайте, как настроить AAD с помощью сетки событий](secure-webhook-delivery.md).
+
+#### <a name="query-parameters"></a>Параметры запроса
 Защитить конечную точку веб-перехватчика можно путем добавления параметров запроса для URL-адреса веб-перехватчика при создании подписки на события. Задайте один из этих параметров запроса в качестве секрета, например [маркер доступа](https://en.wikipedia.org/wiki/Access_token). С его помощью веб-перехватчик сможет распознавать событие, поступающее из Сетки событий с допустимыми разрешениями. Сетка событий будет включать эти параметры в каждую доставку событий для веб-перехватчика.
 
 При изменении подписки на событие, если в [интерфейсе командной строки](https://docs.microsoft.com/cli/azure/eventgrid/event-subscription?view=azure-cli-latest#az-eventgrid-event-subscription-show) Azure не используется параметр [--include-full-endpoint-url](https://docs.microsoft.com/cli/azure?view=azure-cli-latest), параметры запроса не отображаются и не возвращаются.
@@ -344,6 +349,6 @@ static string BuildSharedAccessSignature(string resource, DateTime expirationUtc
 
 Пользовательские роли можно создавать с помощью [PowerShell](../role-based-access-control/custom-roles-powershell.md), [Azure CLI](../role-based-access-control/custom-roles-cli.md) и [REST](../role-based-access-control/custom-roles-rest.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * Общие сведения о сетке событий см. в статье [Сведения о сетке событий](overview.md)

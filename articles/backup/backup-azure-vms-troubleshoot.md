@@ -1,19 +1,15 @@
 ---
-title: Устранение неполадок при резервном копировании виртуальных машин Azure
+title: Устранение ошибок резервного копирования с помощью виртуальных машин Azure
 description: Из этой статьи вы узнаете, как устранять ошибки, возникающие при резервном копировании и восстановлении виртуальных машин Azure.
 ms.reviewer: srinathv
-author: dcurwin
-manager: carmonm
-ms.service: backup
 ms.topic: conceptual
 ms.date: 08/30/2019
-ms.author: dacurwin
-ms.openlocfilehash: 0be9973aed1aaf5074c3b61d6249b95e8fd45a64
-ms.sourcegitcommit: a170b69b592e6e7e5cc816dabc0246f97897cb0c
+ms.openlocfilehash: e5ee0e06d444db809ce3e168f8883048eaf45e27
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74090903"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74172463"
 ---
 # <a name="troubleshooting-backup-failures-on-azure-virtual-machines"></a>Устранение ошибок резервного копирования на виртуальных машинах Azure
 

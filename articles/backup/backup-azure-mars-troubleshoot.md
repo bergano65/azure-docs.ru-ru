@@ -2,18 +2,14 @@
 title: Устранение неполадок агента Azure Backup
 description: Из этой статьи вы узнаете, как устранить неполадки установки и регистрации агента Azure Backup.
 ms.reviewer: saurse
-author: dcurwin
-manager: carmonm
-ms.service: backup
 ms.topic: conceptual
 ms.date: 07/15/2019
-ms.author: dacurwin
-ms.openlocfilehash: abd4e91b8fd3332191b58acf38daed06d03801be
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: 4f1d93a6ba36821832c945db2e5cc19bf7e9d232
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74012836"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74172940"
 ---
 # <a name="troubleshoot-the-microsoft-azure-recovery-services-mars-agent"></a>Устранение неполадок агента Службы восстановления Microsoft Azure (MARS)
 

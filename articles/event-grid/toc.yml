@@ -27,6 +27,8 @@
           href: custom-event-quickstart-powershell.md
         - name: Портал
           href: custom-event-quickstart-portal.md
+    - name: Функции Azure в качестве обработчика событий
+      href: custom-event-to-function.md
     - name: Хранилище очередей в качестве обработчика событий
       href: custom-event-to-queue-storage.md
     - name: Центры событий в качестве обработчика событий
@@ -111,6 +113,8 @@
       href: post-to-custom-topic.md
     - name: Получение событий в конечной точке HTTP
       href: receive-events.md
+    - name: Защита веб-перехватчика с помощью AAD
+      href: secure-webhook-delivery.md
     - name: Обработка недоставленных сообщений и повторные попытки
       href: manage-event-delivery.md
     - name: События фильтра

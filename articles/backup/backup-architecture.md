@@ -1,18 +1,14 @@
 ---
-title: Архитектура службы Azure Backup
+title: Общие сведения об архитектуре
 description: Обзор архитектуры, компонентов и процессов, используемых службой Azure Backup.
-author: dcurwin
-manager: carmonm
-ms.service: backup
 ms.topic: conceptual
 ms.date: 02/19/2019
-ms.author: dacurwin
-ms.openlocfilehash: d914c2988b5f28940021de24dcfe1183c68b15cc
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: ae7b0c2b81bd3d393b7e749e077a6f5fa0379562
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74074350"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74173524"
 ---
 # <a name="azure-backup-architecture-and-components"></a>Архитектура и компоненты Azure Backup
 
@@ -96,7 +92,7 @@ Azure Backup предоставляет разные агенты резервн
 
 В следующей таблице перечислены поддерживаемые функции для различных типов резервного копирования.
 
-**Компонент** | **Локальные компьютеры Windows Server (Direct)** | **Виртуальные машины Azure** | **Компьютеры или приложения с DPM/MABS**
+**Компонент** | **Непосредственная Архивация файлов и папок (с помощью агента MARS)** | **Резервное копирование виртуальных машин Azure** | **Компьютеры или приложения с DPM/MABS**
 --- | --- | --- | ---
 Резервное копирование в хранилище | ![Yes][green] | ![Yes][green] | ![Yes][green]
 Резервное копирование на диск DPM/MABS, затем в Azure | | | ![Yes][green]
@@ -106,7 +102,7 @@ Azure Backup предоставляет разные агенты резервн
 
 ![Ключ таблицы](./media/backup-architecture/table-key.png)
 
-## <a name="architecture-direct-backup-of-azure-vms"></a>Архитектура: непосредственная Архивация виртуальных машин Azure
+## <a name="architecture-built-in-azure-vm-backup"></a>Архитектура: Встроенная резервная копия виртуальных машин Azure
 
 1. При включении резервного копирования для виртуальной машины Azure резервная копия выполняется в соответствии с указанным расписанием.
 1. Во время первой архивации на виртуальной машине устанавливается расширение резервного копирования, если виртуальная машина запущена.

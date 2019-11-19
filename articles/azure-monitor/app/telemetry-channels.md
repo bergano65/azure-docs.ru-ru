@@ -8,12 +8,12 @@ author: cijothomas
 ms.author: cithomas
 ms.date: 05/14/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: cb7b9047e1036a2ab4bfd94cca88589dcdcd0ca3
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: cef8a06fb7e4cfb713d6531f23df9ae9c5836b68
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72899553"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74173611"
 ---
 # <a name="telemetry-channels-in-application-insights"></a>Каналы телеметрии в Application Insights
 
@@ -120,9 +120,9 @@ TelemetryConfiguration.Active.TelemetryChannel = serverTelemetryChannel;
 
 Полный список настраиваемых параметров для каждого канала см. в следующих статьях:
 
-* [InMemoryChannel](https://github.com/microsoft/ApplicationInsights-dotnet/blob/develop/src/Microsoft.ApplicationInsights/Channel/InMemoryChannel.cs)
+* [InMemoryChannel](https://github.com/microsoft/ApplicationInsights-dotnet/blob/develop/BASE/src/Microsoft.ApplicationInsights/Channel/InMemoryChannel.cs)
 
-* [сервертелеметричаннел](https://github.com/microsoft/ApplicationInsights-dotnet/blob/develop/src/ServerTelemetryChannel/ServerTelemetryChannel.cs)
+* [сервертелеметричаннел](https://github.com/microsoft/ApplicationInsights-dotnet/blob/develop/BASE/src/ServerTelemetryChannel/ServerTelemetryChannel.cs)
 
 Ниже приведены наиболее часто используемые параметры для `ServerTelemetryChannel`.
 
@@ -168,7 +168,7 @@ TelemetryConfiguration.Active.TelemetryChannel = serverTelemetryChannel;
 ## <a name="open-source-sdk"></a>Пакет SDK с открытым исходным кодом
 Как и каждый пакет SDK для Application Insights, каналы являются открытым кодом. Прочтите и отучите код или сообщите о проблемах в [официальном репозитории GitHub](https://github.com/Microsoft/ApplicationInsights-dotnet).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Выборка](../../azure-monitor/app/sampling.md)
 * [Устранение неполадок пакета SDK](../../azure-monitor/app/asp-net-troubleshoot-no-data.md)

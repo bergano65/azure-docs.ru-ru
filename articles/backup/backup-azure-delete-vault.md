@@ -1,18 +1,14 @@
 ---
-title: Удаление хранилища служб восстановления Microsoft Azure Backup
+title: Удаление хранилища Службы восстановления Microsoft Azure
 description: Из этой статьи вы узнаете, как удалить зависимости, а затем удалить хранилище служб восстановления Microsoft Azure Backup (MARS).
-author: dcurwin
-manager: carmonm
-ms.service: backup
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.author: dacurwin
-ms.openlocfilehash: 469d6532449df8327389b8117904b078d9340e5b
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: 23e0d2874229616037c44800639411f66bc4d1b6
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73747571"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74173172"
 ---
 # <a name="delete-an-azure-backup-recovery-services-vault"></a>Удаление хранилища служб восстановления Azure Backup
 
@@ -62,7 +58,7 @@ ms.locfileid: "73747571"
 
         ![Область "завершение архивации".](./media/backup-azure-delete-vault/stop-backup-item.png)
 
-    - Если появится область **Удаление данных резервного копирования** , введите имя элемента резервного копирования (с учетом регистра), а затем выберите причину из раскрывающегося меню. Введите свои комментарии, если они есть. Затем выберите **Удалить**.
+    - Если появится область **Удаление данных резервного копирования** , введите имя элемента резервного копирования (с учетом регистра), а затем выберите причину из раскрывающегося меню. Введите свои комментарии, если они есть. Затем нажмите кнопку **Удалить**.
 
          ![Панель удаление данных резервной копии.](./media/backup-azure-delete-vault/stop-backup-blade-delete-backup-data.png)
 
@@ -351,7 +347,7 @@ ms.locfileid: "73747571"
 
 3. В портал Azure убедитесь, что хранилище удалено.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 [Сведения о хранилищах служб восстановления](backup-azure-recovery-services-vault-overview.md)<br/>
 [Сведения о мониторинге хранилищ служб восстановления и управлении ими](backup-azure-manage-windows-server.md)

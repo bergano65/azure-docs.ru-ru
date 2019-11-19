@@ -573,10 +573,10 @@
             - name: Загрузка данных
               href: /azure/databricks/spark/latest/spark-sql/language-manual/load-data
               maintainContext: true
-            - name: Команда Merge Into (Delta Lake на Azure Databricks)
+            - name: Merge Into (Delta Lake на Azure Databricks)
               href: /azure/databricks/spark/latest/spark-sql/language-manual/merge-into
               maintainContext: true
-            - name: Команда Optimize (Delta Lake на Azure Databricks)
+            - name: Optimize (Delta Lake на Azure Databricks)
               href: /azure/databricks/spark/latest/spark-sql/language-manual/optimize
               maintainContext: true
             - name: Обновление таблицы
@@ -714,7 +714,7 @@
             - name: Расширенный пример MLlib
               href: /azure/databricks/applications/machine-learning/mllib/advanced-mllib
               maintainContext: true
-        - name: Автоматизированное машинное обучение
+        - name: AutoML
           items:
             - name: Общие сведения об автоматизированном машинном обучении
               href: /azure/databricks/applications/machine-learning/automl/index
@@ -859,7 +859,7 @@
             - name: Обучение модели scikit-learn
               href: /azure/databricks/applications/mlflow/tracking-ex-scikit
               maintainContext: true
-            - name: Обучение моделей PyTorch
+            - name: Обучение модели PyTorch
               href: /azure/databricks/applications/mlflow/tracking-ex-pytorch
               maintainContext: true
             - name: Обучение модели PySpark и сохранение в формате MLeap
@@ -1209,7 +1209,7 @@
             - name: Не удалось обнаружить кодировку в JSON
               href: /azure/databricks/kb/data-sources/json-unicode
               maintainContext: true
-            - name: Не удается прочитать файлы в WASB
+            - name: Не удается считать файлы в WASB
               href: /azure/databricks/kb/data-sources/wasb-check-blob-types
               maintainContext: true
         - name: Файловая система Databricks
@@ -1256,7 +1256,7 @@
             - name: Настройка уровня ведения журнала исполнителя
               href: /azure/databricks/kb/execution/set-executor-log-level
               maintainContext: true
-            - name: Слишком большая сериализованная задача
+            - name: Слишком большая cериализованная задача
               href: /azure/databricks/kb/execution/spark-serialized-task-is-too-large
               maintainContext: true
         - name: Задания
@@ -1609,6 +1609,12 @@
               items:
                 - name: Поддерживаемые выпуски среды выполнения
                   href: /azure/databricks/release-notes/runtime/supported
+                  maintainContext: true
+                - name: "Databricks Runtime\_6.2"
+                  href: /azure/databricks/release-notes/runtime/6.2
+                  maintainContext: true
+                - name: "Databricks Runtime\_6.2 ML"
+                  href: /azure/databricks/release-notes/runtime/6.2ml
                   maintainContext: true
                 - name: Databricks Runtime 6.1
                   href: /azure/databricks/release-notes/runtime/6.1

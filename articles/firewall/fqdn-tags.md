@@ -1,18 +1,18 @@
 ---
 title: Общие сведения о тегах FQDN для Брандмауэра Azure
-description: Сведения о тегах FQDN в Брандмауэре Azure
+description: Тег FQDN — это группа полных доменных имен (FQDN), связанных с известными службами Майкрософт.
 services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: article
-ms.date: 4/23/2019
+ms.date: 11/19/2019
 ms.author: victorh
-ms.openlocfilehash: d78f67b96776fa3fb1d13fbf7b385e41ca3aa59a
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 6396f8292a4c54f7fce237439f37c3e8156d59e8
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73665558"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74169050"
 ---
 # <a name="fqdn-tags-overview"></a>Общие сведения о тегах FQDN
 
@@ -28,7 +28,7 @@ ms.locfileid: "73665558"
 
 ## <a name="current-fqdn-tags"></a>Текущие теги полного доменного имени
 
-|Тег FQDN  |Description (Описание)  |
+|Тег FQDN  |ОПИСАНИЕ  |
 |---------|---------|
 |Центр обновления Windows     |Разрешает исходящий доступ к Центру обновления Майкрософт, как описано в разделе [Настройка брандмауэра для обновлений программного обеспечения](https://technet.microsoft.com/library/bb693717.aspx).|
 |диагностика Windows.|Разрешает исходящий доступ ко всем [конечным точкам диагностики Windows](https://docs.microsoft.com/windows/privacy/configure-windows-diagnostic-data-in-your-organization#endpoints).|
@@ -40,6 +40,6 @@ ms.locfileid: "73665558"
 > [!NOTE]
 > При выборе тега FQDN в правиле приложения поле protocol:port должно иметь значение **https**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 См. дополнительные сведения о том, как [развернуть и настроить Брандмауэр Azure с помощью портала Azure](tutorial-firewall-deploy-portal.md).

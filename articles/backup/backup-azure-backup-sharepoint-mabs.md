@@ -1,19 +1,14 @@
 ---
-title: Резервное копирование фермы SharePoint в облако Azure с помощью Azure Backup Server
+title: Резервное копирование фермы SharePoint в Azure с помощью MABS
 description: Резервное копирование данных SharePoint с помощью Azure Backup Server. Эта статья содержит информацию о настройке фермы SharePoint для сохранения нужных данных в Azure. Защищенные данные SharePoint можно восстановить с диска или из Azure.
-ms.reviewer: kasinh
-author: dcurwin
-manager: carmonm
-ms.service: backup
 ms.topic: conceptual
 ms.date: 06/08/2018
-ms.author: dacurwin
-ms.openlocfilehash: a7a1b088868add308f128c5a51d8cce4339c637c
-ms.sourcegitcommit: a170b69b592e6e7e5cc816dabc0246f97897cb0c
+ms.openlocfilehash: a48afd84f6c4e1ec80015696dc4b14beea8ebfa4
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74091724"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74173210"
 ---
 # <a name="back-up-a-sharepoint-farm-to-azure-with-mabs"></a>Резервное копирование фермы SharePoint в Azure с помощью MABS
 

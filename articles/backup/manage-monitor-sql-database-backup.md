@@ -1,18 +1,14 @@
 ---
-title: Мониторинг SQL Server баз данных на виртуальной машине Azure и управление ими — Azure Backup
+title: Мониторинг SQL Server баз данных на виртуальной машине Azure и управление ими
 description: В этой статье описывается, как управлять и отслеживать SQL Server базы данных, работающие на виртуальной машине Azure.
-author: dcurwin
-manager: carmonm
-ms.service: backup
 ms.topic: conceptual
 ms.date: 09/11/2019
-ms.author: dacurwin
-ms.openlocfilehash: 1aba8777a5b0f5851922e292004a74d74065eabf
-ms.sourcegitcommit: a170b69b592e6e7e5cc816dabc0246f97897cb0c
+ms.openlocfilehash: 4daf068e97a08d1a611ef64cb64569cacd5d7420
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74090531"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74172159"
 ---
 # <a name="manage-and-monitor-backed-up-sql-server-databases"></a>Мониторинг резервных копий баз данных SQL Server и управление ими
 

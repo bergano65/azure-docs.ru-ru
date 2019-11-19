@@ -9,26 +9,26 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: conceptual
-ms.date: 09/24/2019
+ms.date: 11/18/2019
 ms.author: dapine
-ms.openlocfilehash: b3c064ae2dbc37858ca6fe89742161e0dda1784f
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: 97b1fd27e91823594d972bdd49184d2b0f5d320b
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73743272"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74171692"
 ---
 # <a name="install-and-run-face-containers"></a>Установка и запуск контейнеров лиц
 
 Лицо Cognitive Services Azure предоставляет стандартизированный контейнер Linux для DOCKER, который обнаруживает людей в образах. Он также определяет атрибуты, которые включают ориентиры для лиц, такие как нос и глаза, пол, возраст и другие функции, прогнозируемые с точки зрения машинного лица. Кроме обнаружения, лицо может проверить, совпадают ли два лица в одном или разных изображениях с помощью оценки достоверности. Кроме того, лицо может сравнить лица с базой данных, чтобы узнать, существует ли уже похожий или аналогичный лицом. Он также может организовывать схожие лица в группы с помощью общих визуальных характеристик.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 Прежде чем использовать контейнеры API распознавания лиц, необходимо выполнить следующие предварительные требования.
 
-|Обязательно|Назначение|
+|обязательные|Назначение|
 |--|--|
 |Модуль Docker| Подсистема DOCKER должна быть установлена на [главном компьютере](#the-host-computer). Docker предоставляет пакеты, которые настраивают среду Docker в ОС [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). См. [общие сведения о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> В Windows DOCKER также должен быть настроен для поддержки контейнеров Linux.<br><br>|
 |Опыт работы с Docker | Вам потребуется базовое понимание концепций DOCKER, таких как реестры, репозитории, контейнеры и образы контейнеров. Также необходимо знание основных `docker`ных команд.| 
@@ -50,7 +50,7 @@ ms.locfileid: "73743272"
 
 | Контейнер | Минимальная | Рекомендуется | Транзакций в секунду<br>(Минимум, максимум)|
 |-----------|---------|-------------|--|
-|Распознавание лиц | 1 ядро, 2 ГБ памяти | 1 ядро, 4 ГБ памяти |10, 20|
+|API распознавания лиц | 1 ядро, 2 ГБ памяти | 1 ядро, 4 ГБ памяти |10, 20|
 
 * Каждое ядро должно иметь частоту не менее 2,6 ГГц или быстрее.
 * Количество транзакций в секунду (TPS).
@@ -63,7 +63,7 @@ ms.locfileid: "73743272"
 
 | Контейнер | Репозиторий |
 |-----------|------------|
-| Распознавание лиц | `containerpreview.azurecr.io/microsoft/cognitive-services-face:latest` |
+| API распознавания лиц | `containerpreview.azurecr.io/microsoft/cognitive-services-face:latest` |
 
 [!INCLUDE [Tip for using docker list](../../../includes/cognitive-services-containers-docker-list-tip.md)]
 
@@ -142,7 +142,7 @@ ApiKey={API_KEY}
 
 [!INCLUDE [Discoverability of more container information](../../../includes/cognitive-services-containers-discoverability.md)]
 
-## <a name="summary"></a>Сводка
+## <a name="summary"></a>summary
 
 В этой статье вы узнали основные понятия и рабочий процесс загрузки, установки и запуска контейнеров API распознавания лиц. Краткая сводка.
 
@@ -154,7 +154,7 @@ ApiKey={API_KEY}
 > [!IMPORTANT]
 > Cognitive Services контейнеры не лицензированы для запуска без подключения к Azure для измерения. Клиенты должны включить контейнеры для передачи сведений о выставлении счетов в службу контроля использования в любое время. Контейнеры Cognitive Services не отправляют в корпорацию Майкрософт данные клиента, например анализируемые изображения или тексты.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * Параметры конфигурации см. в разделе [Configure Containers](face-resource-container-config.md).
 * Дополнительные сведения об обнаружении и определении лиц см. в разделе [Обзор лиц](Overview.md).

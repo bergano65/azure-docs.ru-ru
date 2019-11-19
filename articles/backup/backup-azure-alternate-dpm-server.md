@@ -1,19 +1,14 @@
 ---
 title: 'Для восстановления данных с сервера Azure Backup Server сделайте следующее:'
 description: Восстановление данных, защищенных в службах восстановления Microsoft Azure, с любого сервера Azure Backup Server, зарегистрированного в этом хранилище.
-ms.reviewer: kasinh
-author: dcurwin
-manager: carmonm
-ms.service: backup
 ms.topic: conceptual
 ms.date: 07/09/2019
-ms.author: dacurwin
-ms.openlocfilehash: 5742aaebe0a1314b229a2a0d33b1de51d5b6d4f4
-ms.sourcegitcommit: a170b69b592e6e7e5cc816dabc0246f97897cb0c
+ms.openlocfilehash: 2a89697899fc244848854978de4b25e79ef6f184
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74091142"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74173500"
 ---
 # <a name="recover-data-from-azure-backup-server"></a>Восстановление данных с сервера Azure Backup Server
 
