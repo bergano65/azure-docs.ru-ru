@@ -15,12 +15,12 @@ ms.date: 11/08/2019
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: abb6c2212549c3d92f9c1dbc42c31f838a704af2
-ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
+ms.openlocfilehash: 8c9acc1487fcbf8398b7a556c63f97963b264451
+ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74144298"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74182712"
 ---
 # <a name="configure-azure-resource-role-settings-in-privileged-identity-management"></a>Настройка параметров роли ресурсов Azure в управление привилегированными пользователями
 
@@ -57,6 +57,9 @@ ms.locfileid: "74144298"
     ![Вкладка «Назначение ролей» на странице «Параметры роли»](./media/pim-resource-roles-configure-role-settings/role-settings-assignment-tab.png)
 
 1. Используйте вкладку **уведомление** или кнопку **Далее: Активация** в нижней части страницы, чтобы перейти на вкладку Параметры уведомлений для этой роли. Эти параметры управляют всеми уведомлениями по электронной почте, относящимися к этой роли.
+
+    > [!NOTE]
+    > В настоящее время пользовательский интерфейс уведомлений находится в разных регионах и подписках Azure. Если вы не можете настроить эти детализированные уведомления, вернитесь в один или два дня.
 
     ![Вкладка "уведомления роли" на странице "Параметры роли"](./media/pim-resource-roles-configure-role-settings/role-settings-notification-tab.png)
 

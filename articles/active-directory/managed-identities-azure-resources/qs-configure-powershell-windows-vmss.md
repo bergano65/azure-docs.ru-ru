@@ -1,5 +1,5 @@
 ---
-title: Как настроить управляемые удостоверения для ресурсов Azure в масштабируемом наборе виртуальных машин с помощью PowerShell
+title: Настройка управляемых удостоверений в масштабируемых наборах виртуальных машин с помощью PowerShell — Azure AD
 description: Пошаговые инструкции по настройке управляемых удостоверений, назначаемых системой и назначаемых пользователем, в масштабируемом наборе виртуальных машин с помощью PowerShell.
 services: active-directory
 documentationcenter: ''
@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 09/26/2019
 ms.author: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5fa3100cae9b1a2c9ca320776cc357f3720b3473
-ms.sourcegitcommit: 0486aba120c284157dfebbdaf6e23e038c8a5a15
+ms.openlocfilehash: a09780ae117beb1a8d601b8fd88d43191321854f
+ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71310001"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74183979"
 ---
 # <a name="configure-managed-identities-for-azure-resources-on-virtual-machine-scale-sets-using-powershell"></a>Настройка управляемых удостоверений для ресурсов Azure в масштабируемых наборах виртуальных машин с помощью PowerShell
 
@@ -34,7 +34,7 @@ ms.locfileid: "71310001"
 
 [!INCLUDE [az-powershell-update](../../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 - Если вы не работали с управляемыми удостоверениями для ресурсов Azure, изучите [общие сведения](overview.md). **Обратите внимание на [различие между управляемыми удостоверениями, назначаемыми системой и назначаемыми пользователями](overview.md#how-does-it-work)** .
 - Если у вас нет учетной записи Azure, [зарегистрируйтесь для получения бесплатной пробной учетной записи](https://azure.microsoft.com/free/), прежде чем продолжать.
@@ -144,7 +144,7 @@ Update-AzVmss -ResourceGroupName myResourceGroup -Name myVmss -IdentityType None
 Update-AzVmss -ResourceGroupName myResourceGroup -Name myVmss -IdentityType "SystemAssigned"
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Обзор управляемых удостоверений для ресурсов Azure](overview.md).
 - Ниже приведены комплексные краткие руководства по созданию виртуальных машин Azure:

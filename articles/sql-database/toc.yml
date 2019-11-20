@@ -278,6 +278,8 @@
                   href: sql-database-xevent-code-ring-buffer.md
         - name: Диагностика производительности при гипермасштабировании
           href: sql-database-hyperscale-performance-diagnostics.md
+        - name: Управление ресурсами в сжатых эластичных пулах
+          href: sql-database-elastic-pool-resource-management.md
     - name: Масштабируемость
       items:
         - name: Документация по масштабируемости

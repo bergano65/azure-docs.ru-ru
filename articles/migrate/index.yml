@@ -1,21 +1,21 @@
 ### YamlMime:Landing
 title: Документация по службе "Миграция Azure"
-summary: Используйте службу "Миграция Azure" для перехода в облако Azure. Миграция Azure — это центр управления для обнаружения, оценки и переноса локальных рабочих нагрузок в Azure. В этом центре представлены инструменты службы "Миграция Azure", а также интегрированные средства от независимых поставщиков программного обеспечения.
+summary: Служба "Миграция Azure" — это центр средств для обнаружения, оценки и переноса локальных рабочих нагрузок в Azure.
 metadata:
   title: Документация по службе "Миграция Azure"
-  description: Используйте службу "Миграция Azure" для перехода в облако Azure. Миграция Azure — это центр управления для обнаружения, оценки и переноса локальных рабочих нагрузок в Azure. В этом центре представлены инструменты службы "Миграция Azure", а также интегрированные средства от независимых поставщиков программного обеспечения.
+  description: Используйте службу "Миграция Azure" для переноса локальных рабочих нагрузок в Azure.
   ms.service: azure-migrate
   ms.topic: landing-page
   ms.collection: collection
   author: rayne-wiselman
   ms.author: raynew
-  ms.date: 10/07/2019
-  ms.openlocfilehash: 494bb2f7ec6076bbc7b3b891cd0cb525ae53c5d1
-  ms.sourcegitcommit: be344deef6b37661e2c496f75a6cf14f805d7381
+  ms.date: 11/19/2019
+  ms.openlocfilehash: e49bfdefe08b3a8f4598e809fd44b57f3f93de67
+  ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 10/07/2019
-  ms.locfileid: "72001138"
+  ms.lasthandoff: 11/19/2019
+  ms.locfileid: "74185835"
 landingContent:
 - title: Сведения о службе "Миграция Azure"
   linkLists:
@@ -35,6 +35,10 @@ landingContent:
       url: ./tutorial-prepare-vmware.md
     - text: Оценка виртуальных машин Hyper-V с помощью решения оценки серверов
       url: ./tutorial-prepare-hyper-v.md
+    - text: Оценка готовности физических серверов с помощью функции оценки серверов
+      url: ./tutorial-prepare-physical.md
+    - text: Оценка серверов по импортированным данным
+      url: tutorial-assess-import.md
     - text: Перенос виртуальных машин VMware с помощью средства переноса серверов
       url: ./server-migrate-overview.md
     - text: Перенос виртуальных машин Hyper-V с помощью средства переноса серверов
@@ -52,13 +56,19 @@ landingContent:
     - text: Обзор матрицы поддержки службы "Миграция Azure"
       url: migrate-support-matrix.md
     - text: Обзор матрицы поддержки VMware
-      url: migrate-support-matrix-vmware.md
+      url: ./migrate-support-matrix-vmware.md
     - text: Обзор матрицы поддержки Hyper-V
-      url: migrate-support-matrix-hyper-v.md
+      url: ./migrate-support-matrix-hyper-v.md
+    - text: Обзор матрицы поддержки физического сервера
+      url: ./migrate-support-matrix-physical.md
 - title: Управление
   linkLists:
   - linkListType: how-to-guide
     links:
+    - text: Добавление средств оценки
+      url: ./how-to-assess.md
+    - text: Обнаружение имеющихся приложений
+      url: ./how-to-discover-applications.md
     - text: Добавление средств миграции
       url: ./how-to-migrate.md
     - text: Оценка масштабируемости VMware
@@ -71,9 +81,9 @@ landingContent:
   linkLists:
   - linkListType: learn
     links:
-    - text: Архитектура миграции на основе агента VMware
+    - text: Сведения о миграции на основе агентов VMware и физических серверов
       url: ./agent-based-migration-architecture.md
-    - text: Архитектура миграции для Hyper-V
+    - text: Сведения о миграции Hyper-V
       url: ./hyper-v-migration-architecture.md
     - text: Дополнительные сведения об оценках
       url: ./concepts-assessment-calculation.md

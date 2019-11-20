@@ -1,10 +1,10 @@
 ---
-title: Добавление или удаление сетевых интерфейсов виртуальных машин Azure | Документация Майкрософт
+title: Добавление или удаление сетевых интерфейсов на виртуальных машинах Azure
 description: Узнайте, как добавлять и удалять сетевые интерфейсы виртуальных машин.
 services: virtual-network
 documentationcenter: na
 author: KumudD
-manager: twooley
+manager: mtillman
 editor: ''
 tags: azure-resource-manager
 ms.assetid: ''
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/15/2017
 ms.author: kumud
-ms.openlocfilehash: 24f4b7435c2736527d033aa5ca7a65ad35a3a705
-ms.sourcegitcommit: d47a30e54c5c9e65255f7ef3f7194a07931c27df
+ms.openlocfilehash: a55bf014a2da10069e4e6a5f6f4eb4b8cd9ff205
+ms.sourcegitcommit: 8e31a82c6da2ee8dafa58ea58ca4a7dd3ceb6132
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022184"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74196760"
 ---
 # <a name="add-network-interfaces-to-or-remove-network-interfaces-from-virtual-machines"></a>Добавление и удаление сетевых интерфейсов виртуальных машин
 
@@ -49,7 +49,7 @@ ms.locfileid: "73022184"
 
 |Средство|Команда|
 |---|---|
-|CLI|[az vm create](/cli/azure/vm?toc=%2fazure%2fvirtual-network%2ftoc.json)|
+|Интерфейс командной строки|[az vm create](/cli/azure/vm?toc=%2fazure%2fvirtual-network%2ftoc.json)|
 |PowerShell|[New-AzVM](/powershell/module/az.compute/new-azvm?toc=%2fazure%2fvirtual-network%2ftoc.json)|
 
 ## <a name="vm-add-nic"></a>Добавление сетевого интерфейса к имеющейся виртуальной машине
@@ -72,7 +72,7 @@ ms.locfileid: "73022184"
 ### <a name="commands"></a>Команды
 |Средство|Команда|
 |---|---|
-|CLI|az vm nic add — см. [раздел руководства](/cli/azure/vm/nic?toc=%2fazure%2fvirtual-network%2ftoc.json) или [подробные инструкции](../virtual-machines/linux/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#add-a-nic-to-a-vm)|
+|Интерфейс командной строки|az vm nic add — см. [раздел руководства](/cli/azure/vm/nic?toc=%2fazure%2fvirtual-network%2ftoc.json) или [подробные инструкции](../virtual-machines/linux/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#add-a-nic-to-a-vm)|
 |PowerShell|[Add-азвмнетворкинтерфаце](/powershell/module/az.compute/add-azvmnetworkinterface?toc=%2fazure%2fvirtual-network%2ftoc.json) (ссылка) или [подробные инструкции](../virtual-machines/windows/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#add-a-nic-to-an-existing-vm)|
 
 ## <a name="view-network-interfaces-for-a-vm"></a>Просмотр сетевых интерфейсов для виртуальной машины
@@ -88,7 +88,7 @@ ms.locfileid: "73022184"
 
 |Средство|Команда|
 |---|---|
-|CLI|[az vm show](/cli/azure/vm?toc=%2fazure%2fvirtual-network%2ftoc.json)|
+|Интерфейс командной строки|[az vm show](/cli/azure/vm?toc=%2fazure%2fvirtual-network%2ftoc.json)|
 |PowerShell|[Get-AzVM](/powershell/module/az.compute/get-azvm?toc=%2fazure%2fvirtual-network%2ftoc.json)|
 
 ## <a name="remove-a-network-interface-from-a-vm"></a>Удаление сетевого интерфейса из виртуальной машины
@@ -107,7 +107,7 @@ ms.locfileid: "73022184"
 
 |Средство|Команда|
 |---|---|
-|CLI|az vm nic remove — см. [раздел руководства](/cli/azure/vm/nic?toc=%2fazure%2fvirtual-network%2ftoc.json) или [подробные инструкции](../virtual-machines/linux/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#remove-a-nic-from-a-vm)|
+|Интерфейс командной строки|az vm nic remove — см. [раздел руководства](/cli/azure/vm/nic?toc=%2fazure%2fvirtual-network%2ftoc.json) или [подробные инструкции](../virtual-machines/linux/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#remove-a-nic-from-a-vm)|
 |PowerShell|[Remove-азвмнетворкинтерфаце](/powershell/module/az.compute/remove-azvmnetworkinterface?toc=%2fazure%2fvirtual-network%2ftoc.json) (Reference) или [подробные инструкции](../virtual-machines/windows/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#remove-a-nic-from-an-existing-vm)|
 
 ## <a name="constraints"></a>Ограничения
@@ -124,10 +124,10 @@ ms.locfileid: "73022184"
 - При удалении виртуальной машины подключенные к ней сетевые интерфейсы не удаляются. Если вы удалите виртуальную машину, сетевые интерфейсы отключатся от нее. Вы можете добавить эти сетевые интерфейсы в другие виртуальные машины или удалить их.
 - Как и в случае с IPv6, вы не можете подключить сетевой интерфейс с включенной ускоренной сетью к виртуальной машине после ее создания. Кроме того, чтобы воспользоваться преимуществами ускоренной сети, вы должны выполнить шаги в ОС виртуальной машины. Дополнительные сведения об ускоренной сети и ограничениях см. в разделах об ускорении работы в сети для виртуальных машин [Windows](create-vm-accelerated-networking-powershell.md) или [Linux](create-vm-accelerated-networking-cli.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 Чтобы создать виртуальную машину с несколькими сетевыми интерфейсами или IP-адресами, см. следующие статьи:
 
-|Задача|Средство|
+|Задача.|Средство|
 |---|---|
 |Создание виртуальной машины с несколькими сетевыми адаптерами|[Интерфейс командной строки](../virtual-machines/linux/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json), [PowerShell](../virtual-machines/windows/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json)|
 |Создание виртуальной машины с одним сетевым адаптером, которому назначено несколько IPv4-адресов|[Интерфейс командной строки](virtual-network-multiple-ip-addresses-cli.md), [PowerShell](virtual-network-multiple-ip-addresses-powershell.md)|

@@ -225,9 +225,9 @@
           items:
             - name: "Новые возможности HDInsight\_4.0"
               href: ./hdinsight-version-release.md
-            - name: "Полные заметки о выпуске HDInsight\_4.0"
+            - name: Заметки о выпуске
               href: ./hdinsight-release-notes.md
-            - name: "Полные заметки о выпуске HDInsight\_3.6"
+            - name: Архивные заметки о выпуске Azure HDInsight
               href: ./hdinsight-release-notes-archive.md
         - name: Часто задаваемые вопросы
           href: ./hdinsight-faq.md
@@ -837,6 +837,8 @@
           href: ./hdinsight-plan-virtual-network-deployment.md
         - name: Необходимые IP-адреса для групп безопасности сети и определяемых пользователем маршрутов
           href: ./hdinsight-management-ip-addresses.md
+        - name: Теги службы для Брандмауэра Azure
+          href: ./hdinsight-service-tags.md
     - name: Практическое руководство
       items:
         - name: Создание кластеров ESP и синхронизация с локальными средами

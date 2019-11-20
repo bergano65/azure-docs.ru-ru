@@ -13,12 +13,12 @@ ms.devlang: ne
 ms.topic: article
 ms.date: 11/12/2019
 ms.author: juliako
-ms.openlocfilehash: 8d7db428d7f71383abf5425d7cc1ddbbab3b7a52
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 7e3d0f4ba178ef2cf44b9c5c3dd5b8c212f1c133
+ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74037870"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74186188"
 ---
 # <a name="live-streaming-with-azure-media-services-v3"></a>Потоковая трансляция в Службах мультимедиа Azure версии 3
 
@@ -63,7 +63,7 @@ ms.locfileid: "74037870"
 
 При использовании кодирования в облаке с помощью служб мультимедиа вы настроите локальный динамический кодировщик для отправки односкоростного видео в качестве веб-канала вклада (32Mbps Aggregate) в Live Event (с использованием RTMP или фрагментированного входного протокола MP4). Событие Live переводит входящий поток с одной скоростью в [несколько видеопотоков](https://en.wikipedia.org/wiki/Adaptive_bitrate_streaming) с различной скоростью, чтобы улучшить доставку и сделать ее доступной для доставки на устройства воспроизведения через стандартные протоколы, такие как MPEG-тире, Apple HTTP Live Streaming (HLS) и Microsoft Smooth Streaming. 
 
-### <a name="live-transcription"></a>Динамическая транскрипция
+### <a name="live-transcription-preview"></a>Динамическая транскрипция (Предварительная версия)
 
 Транскрипция в реальном времени — это функция, которую можно использовать с динамическими событиями, поддерживающими сквозную или динамическую кодировку. Дополнительные сведения см. в разделе [Динамическая транскрипция](live-transcription.md). Если эта функция включена, служба использует функцию преобразования [речи в текст](../../cognitive-services/speech-service/speech-to-text.md) Cognitive Services, чтобы транскрипция слова во входящем звуке в текст. Этот текст затем становится доступным для доставки, а также видео и аудио в протоколах MPEG-ТИРЕ и HLS.
 

@@ -1,5 +1,5 @@
 ---
-title: Настройка правила ограничения IP-адресов с помощью правила брандмауэра веб-приложения для службы "Передняя дверь" Azure
+title: Настройка правила WAF ограничений IP-адресов для службы "Передняя дверь" Azure
 description: Узнайте, как настроить правило брандмауэра веб-приложения, чтобы ограничить IP-адреса для существующей конечной точки службы передней дверцы Azure.
 services: web-application-firewall
 author: vhorne
@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 08/21/2019
 ms.author: victorh
 ms.reviewer: tyao
-ms.openlocfilehash: d0a32c4d59d580cb82ad6174c57ebbf677ac75b3
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 2917b2f04e7c5a4896c52861ab7eab4e0eb00b5d
+ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73517167"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74186687"
 ---
 # <a name="configure-an-ip-restriction-rule-with-a-web-application-firewall-for-azure-front-door-service"></a>Настройка правила ограничения IP-адресов с брандмауэром веб-приложения для службы "Передняя дверь" Azure
 В этой статье показано, как настроить правила ограничения IP-адресов в брандмауэре веб-приложения (WAF) для службы "Передняя дверь" Azure с помощью Azure CLI, Azure PowerShell или шаблона Azure Resource Manager.
@@ -24,7 +24,7 @@ ms.locfileid: "73517167"
 
 ## <a name="configure-a-waf-policy-with-the-azure-cli"></a>Настройка политики WAF с помощью Azure CLI
 
-### <a name="prerequisites"></a>Технические условия
+### <a name="prerequisites"></a>предварительным требованиям
 Прежде чем приступить к настройке политики ограничения IP-адресов, настройте среду CLI и создайте профиль службы передней дверцы Azure.
 
 #### <a name="set-up-the-azure-cli-environment"></a>Настройка среды Azure CLI
@@ -34,7 +34,7 @@ ms.locfileid: "73517167"
 #### <a name="create-an-azure-front-door-service-profile"></a>Создание профиля службы "Передняя дверца Azure"
 Создайте профиль службы "Передняя дверца Azure", следуя инструкциям, описанным в разделе [Краткое руководство. Создание передней дверцы для глобального веб-приложения высокой доступности](../../frontdoor/quickstart-create-front-door.md).
 
-### <a name="create-a-waf-policy"></a>Создание политики WAF
+### <a name="create-a-waf-policy"></a>создание политики WAF;
 
 Создайте политику WAF с помощью команды [AZ Network Front-дверь WAF-Policy Create](/cli/azure/ext/front-door/network/front-door/waf-policy?view=azure-cli-latest#ext-front-door-az-network-front-door-waf-policy-create) . В следующем примере замените имя политики *ипалловполициексамплекли* на уникальное имя политики.
 
@@ -101,7 +101,7 @@ az network front-door waf-policy rule match-condition add\
 
 ## <a name="configure-a-waf-policy-with-azure-powershell"></a>Настройка политики WAF с Azure PowerShell
 
-### <a name="prerequisites"></a>Технические условия
+### <a name="prerequisites"></a>предварительным требованиям
 Прежде чем приступить к настройке политики ограничения IP-адресов, настройте среду PowerShell и создайте профиль службы передней дверцы Azure.
 
 #### <a name="set-up-your-powershell-environment"></a>Настройка среды PowerShell
@@ -182,6 +182,6 @@ $IPAllowRule = New-AzFrontDoorCustomRuleObject `
 Чтобы просмотреть шаблон, который создает политику службы "Передняя дверца Azure" и политику WAF с настраиваемыми правилами ограничения IP-адресов, перейдите на сайт [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/201-front-door-waf-clientip).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Узнайте, как [создать профиль службы "Передняя дверца Azure](../../frontdoor/quickstart-create-front-door.md)".

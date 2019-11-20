@@ -798,12 +798,14 @@
               items:
                 - name: Общие сведения о включении мониторинга
                   href: insights/container-insights-onboard.md
-                - name: Включение для нового кластера
+                - name: Включение для нового кластера AKS
                   href: insights/container-insights-enable-new-cluster.md
-                - name: Включение для существующего кластера
+                - name: Включение для существующего кластера AKS
                   href: insights/container-insights-enable-existing-clusters.md
                 - name: Включение для гибридного кластера
                   href: insights/container-insights-hybrid-setup.md
+                - name: Включение для Azure Red Hat OpenShift
+                  href: insights/container-insights-azure-redhat-setup.md
                 - name: Сопоставления регионов
                   href: insights/container-insights-region-mapping.md
             - name: Мониторинг производительности

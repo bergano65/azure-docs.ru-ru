@@ -1,5 +1,5 @@
 ---
-title: Как использовать управляемые удостоверения для ресурсов Azure на виртуальной машине Azure для входа
+title: Использование управляемых удостоверений на виртуальной машине Azure для входа в Azure AD
 description: Пошаговые инструкции с примерами использования субъекта-службы управляемых удостоверений для ресурсов Azure на виртуальной машине Azure для входа и доступа к ресурсам из клиентского сценария.
 services: active-directory
 documentationcenter: ''
@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 12/01/2017
 ms.author: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 43aa0859fa67cc6b2f5c5974f072e7b6d4b29527
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: e3d6d128677d2e82f4750a7771885474bf284fb1
+ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66112966"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74184220"
 ---
 # <a name="how-to-use-managed-identities-for-azure-resources-on-an-azure-vm-for-sign-in"></a>Как использовать управляемые удостоверения для ресурсов Azure на виртуальной машине Azure для входа 
 
@@ -29,7 +29,7 @@ ms.locfileid: "66112966"
 
 [!INCLUDE [az-powershell-update](../../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 [!INCLUDE [msi-qs-configure-prereqs](../../../includes/active-directory-msi-qs-configure-prereqs.md)]
 
@@ -48,7 +48,7 @@ ms.locfileid: "66112966"
 
 Благодаря управляемым удостоверениям для ресурсов Azure вашему клиенту сценария больше не требуется делать ни то, ни другое, так как он может войти с помощью субъекта-службы управляемых удостоверений для ресурсов Azure. 
 
-## <a name="azure-cli"></a>Инфраструктура CLI Azure
+## <a name="azure-cli"></a>Интерфейс командной строки Azure
 
 Следующий сценарий демонстрирует, как:
 
@@ -86,8 +86,8 @@ ms.locfileid: "66112966"
 
 Такие ответы могут обозначать, что управляемые удостоверения для ресурсов Azure на виртуальной машины настроены неправильно:
 
-- PowerShell: *Invoke-WebRequest. Невозможно соединиться с удаленным сервером*.
-- CLI: *MSI: Не удалось получить маркер от `http://localhost:50342/oauth2/token` ошибка ' HTTPConnectionPool (узла = 'localhost', порт = 50342)* 
+- PowerShell: *Invoke-WebRequest : Unable to connect to the remote server* (Invoke-WebRequest: Unable to connect to the remote server)
+- CLI: *MSI: не удалось получить маркер из `http://localhost:50342/oauth2/token` с ошибкой "HTTPConnectionPool (узел =" localhost ", порт = 50342)* 
 
 Если вы встретите любую из этих ошибок, найдите виртуальную машину Azure на [портале Azure](https://portal.azure.com) и выполните на ней следующие действия:
 
@@ -96,7 +96,7 @@ ms.locfileid: "66112966"
 
 Если какое-либо из условий не выполнено, может потребоваться повторно развернуть управляемые удостоверения для ресурсов Azure для ресурса или устранить неполадки развертывания. Если вам нужна помощь с конфигурацией виртуальной машины, ознакомьтесь с разделом [Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине с помощью портала Azure](qs-configure-portal-windows-vm.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Чтобы включить управляемые удостоверения для ресурсов Azure на виртуальной машине Azure, обратитесь к статье [Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине Azure с помощью PowerShell](qs-configure-powershell-windows-vm.md) или [Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине Azure с помощью Azure CLI](qs-configure-cli-windows-vm.md).
 

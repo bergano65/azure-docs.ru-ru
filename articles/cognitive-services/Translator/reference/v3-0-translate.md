@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: reference
-ms.date: 10/16/2019
+ms.date: 11/12/2019
 ms.author: swmachan
-ms.openlocfilehash: b4daa04a4dbf87006147fb0d44d7b128a6d8ecf4
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: d58383b20e4311f8ab9490dc241722eee2e44ad6
+ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73835785"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74184806"
 ---
 # <a name="translator-text-api-30-translate"></a>API перевода текстов 3.0: Translate
 
@@ -23,7 +23,7 @@ ms.locfileid: "73835785"
 
 ## <a name="request-url"></a>Request URL (URL-адрес запроса)
 
-Отправьте запрос `POST` на следующий адрес.
+Отправьте запрос `POST` на адрес:
 
 ```HTTP
 https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
@@ -31,29 +31,38 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
 
 ## <a name="request-parameters"></a>Параметры запроса
 
-В таблице ниже приведены параметры, которые передаются в строке запроса.
+В этой строке запроса передаются следующие параметры запроса:
+
+### <a name="required-parameters"></a>Необходимые параметры
 
 <table width="100%">
   <th width="20%">Параметр запроса</th>
-  <th>Description (Описание)</th>
+  <th>ОПИСАНИЕ</th>
   <tr>
     <td>api-version</td>
     <td><em>Обязательный параметр</em>.<br/>Версия API, запрошенная клиентом. Этот параметр должен содержать значение <code>3.0</code>.</td>
   </tr>
   <tr>
-    <td>from</td>
-    <td><em>Необязательный параметр.</em><br/>Определяет язык оригинального текста. Чтобы просмотреть, какие языки доступны для перевода, выполните поиск <a href="./v3-0-languages.md">поддерживаемых языков</a>, используя область <code>translation</code>. Если параметр <code>from</code> не указан, исходный язык определяется автоматически. <br/><br/>При использовании функции <a href="https://docs.microsoft.com/azure/cognitive-services/translator/dynamic-dictionary">динамического словаря</a> необходимо использовать параметр <code>from</code>, а не автоматическое обнаружение.</td>
-  </tr>
-  <tr>
     <td>значение</td>
     <td><em>Обязательный параметр</em>.<br/>Определяет язык выходного текста. Целевой язык должен быть одним из <a href="./v3-0-languages.md">поддерживаемых языков</a>, включенных в область <code>translation</code>. Например, используйте параметр <code>to=de</code>, чтобы перевести на немецкий.<br/>Вы можете одновременно переводить на различные языки, использовав этот параметр в строке запроса несколько раз. Например, используйте параметр <code>to=de&to=it</code>, чтобы перевести на немецкий и итальянский.</td>
   </tr>
+</table>
+
+### <a name="optional-parameters"></a>Необязательные параметры
+
+<table width="100%">
+  <th width="20%">Параметр запроса</th>
+  <th>ОПИСАНИЕ</th>
+  <tr>
+    <td>from</td>
+    <td><em>Необязательный параметр.</em><br/>Определяет язык вводимого текста. Чтобы просмотреть, какие языки доступны для перевода, выполните поиск <a href="./v3-0-languages.md">поддерживаемых языков</a>, используя область <code>translation</code>. Если параметр <code>from</code> не указан, исходный язык определяется автоматически. <br/><br/>При использовании функции <a href="https://docs.microsoft.com/azure/cognitive-services/translator/dynamic-dictionary">динамического словаря</a> необходимо использовать параметр <code>from</code>, а не автоматическое обнаружение.</td>
+  </tr>  
   <tr>
     <td>textType</td>
     <td><em>Необязательный параметр.</em><br/>Определяет, является ли текст перевода обычным или HTML-текстом. Любой код HTML должен быть полным элементом с правильным форматом. Возможные значения: <code>plain</code> (по умолчанию) или <code>html</code>.</td>
   </tr>
   <tr>
-    <td>category</td>
+    <td>категория</td>
     <td><em>Необязательный параметр.</em><br/>Строка, где указано категорию (домен) перевода. Этот параметр позволяет получить переводы из пользовательской системы, созданной с помощью <a href="../customization.md">Custom Translator</a>. Добавьте идентификатор категории из <a href="https://docs.microsoft.com/azure/cognitive-services/translator/custom-translator/how-to-create-project#view-project-details">сведений о проекте</a> пользовательского переводчика в этот параметр, чтобы использовать развернутую настроенную систему. Значение по умолчанию: <code>general</code>.</td>
   </tr>
   <tr>
@@ -95,7 +104,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
 
 <table width="100%">
   <th width="20%">Заголовки</th>
-  <th>Description (Описание)</th>
+  <th>ОПИСАНИЕ</th>
   <tr>
     <td>Заголовки проверки подлинности</td>
     <td><em>Обязательный заголовок запроса</em>.<br/>См. <a href="https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication">описание доступных способов аутентификации</a>.</td>
@@ -110,11 +119,11 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
   </tr>
   <tr>
     <td>X-ClientTraceId</td>
-    <td><em>Необязательно</em>.<br/>Созданный клиентом идентификатор GUID, позволяющий уникально идентифицировать запрос. Этот заголовок можно опустить, если в строке запроса указан идентификатор трассировки в параметре с именем <code>ClientTraceId</code>.</td>
+    <td><em>Необязательный</em>.<br/>Созданный клиентом идентификатор GUID, позволяющий уникально идентифицировать запрос. Этот заголовок можно опустить, если в строке запроса указан идентификатор трассировки в параметре с именем <code>ClientTraceId</code>.</td>
   </tr>
 </table> 
 
-## <a name="request-body"></a>Тело запроса
+## <a name="request-body"></a>Текст запроса
 
 Текст запроса является массивом в формате JSON. Каждый элемент этого массива представляет собой объект JSON со строковым свойством `Text`, который являет собой строку для перевода.
 
@@ -127,17 +136,17 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
 Действительны следующие ограничения.
 
 * Массив может содержать не более 100 элементов.
-* Общий объем текста запроса не должен превышать 5000 символов, в том числе пробелы.
+* Общий объем текста запроса не должен превышать 5000 символов, включая пробелы.
 
 ## <a name="response-body"></a>Тело ответа
 
-Успешный ответ возвращается в формиате массива JSON с одним результатом для каждой строки входного массива. Объект результатов содержит следующие свойства.
+Успешный ответ возвращается в формате массива JSON с одним результатом для каждого элемента входного массива. Объект результатов содержит следующие свойства.
 
   * `detectedLanguage` — объект, описывающий распознанный язык с помощью следующих свойств:
 
       * `language` — строку, которая представляет код обнаруженного языка.
 
-      * `score` — значение с плавающей запятой, обозначающее достоверность результата. Может принимать ноль или единицу, где низкая оценка обозначает низкую достоверность.
+      * `score` — значение с плавающей запятой, обозначающее достоверность результата. Может принимать значения от нуля до единицы, где низкая оценка обозначает низкую достоверность.
 
     Свойство `detectedLanguage` присутствует в объекте результатов только при запросе автоматического распознавания языка.
 
@@ -173,7 +182,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
 
 <table width="100%">
   <th width="20%">Заголовки</th>
-  <th>Description (Описание)</th>
+  <th>ОПИСАНИЕ</th>
     <tr>
     <td>X-RequestId</td>
     <td>Сформированное службой значение для идентификации запроса. Оно используется для устранения неполадок.</td>
@@ -190,14 +199,14 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
 
 <table width="100%">
   <th width="20%">Код состояния</th>
-  <th>Description (Описание)</th>
+  <th>ОПИСАНИЕ</th>
   <tr>
     <td>200</td>
     <td>Успешно.</td>
   </tr>
   <tr>
     <td>400</td>
-    <td>Один из параметров запроса отсутствует или имеет недопустимое значение. Исправьте параметры запроса и повторите попытку.</td>
+    <td>Один из параметров запроса отсутствует или является недопустимым. Исправьте параметры запроса и повторите попытку.</td>
   </tr>
   <tr>
     <td>401</td>
@@ -381,7 +390,7 @@ curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-versio
   </tr>
 </table> 
 
-Например:
+Например,
 
 ```curl
 curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=de&profanityAction=Marked" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json; charset=UTF-8" -d "[{'Text':'This is a freaking good idea.'}]"

@@ -1,21 +1,21 @@
 ### YamlMime:Landing
 title: Документация по Azure Site Recovery
-summary: Используйте Azure Site Recovery для аварийного восстановления данных локальных компьютеров и рабочих нагрузок в Azure, а также восстановления виртуальных машин Azure в дополнительном регионе Azure. При использовании репликации в Azure вы можете управлять отработкой отказа в случае возникновения сбоев и сохранить доступ к рабочим нагрузкам и приложениям в Azure. Когда основное расположение снова станет доступным, вы сможете восстановить размещение при необходимости.
+summary: Используйте Azure Site Recovery для аварийного восстановления локальных рабочих нагрузок и виртуальных машин Azure.
 metadata:
   title: Документация по Azure Site Recovery
-  description: Используйте Azure Site Recovery для аварийного восстановления данных локальных компьютеров и рабочих нагрузок в Azure, а также восстановления виртуальных машин Azure в дополнительном регионе Azure. При использовании репликации в Azure вы можете управлять отработкой отказа в случае возникновения сбоев и сохранить доступ к рабочим нагрузкам и приложениям в Azure. Когда основное расположение снова станет доступным, вы сможете восстановить размещение при необходимости.
+  description: Настройте аварийное восстановление в Azure для локальных рабочих нагрузок и виртуальных машин Azure.
   ms.service: site-recovery
   ms.topic: landing-page
   ms.collection: collection
   author: rayne-wiselman
   ms.author: raynew
-  ms.date: 10/07/2019
-  ms.openlocfilehash: 0d4405e447c7624e4d6cc714209ffc86451a74bd
-  ms.sourcegitcommit: be344deef6b37661e2c496f75a6cf14f805d7381
+  ms.date: 11/19/2019
+  ms.openlocfilehash: ccbc4c92a6d0db9d5baf8a226ba79405a2b824ff
+  ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 10/07/2019
-  ms.locfileid: "72001094"
+  ms.lasthandoff: 11/19/2019
+  ms.locfileid: "74186581"
 landingContent:
 - title: Сведения о службе Site Recovery
   linkLists:

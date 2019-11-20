@@ -11,12 +11,12 @@ author: oslake
 ms.author: moslake
 ms.reviewer: ninarn, carlrab
 ms.date: 08/06/2019
-ms.openlocfilehash: 1b3ee75d1b24cab8211337cf1cdbd053327e16b8
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: ba309b864056b10fe6540e85ffbc4c013af00455
+ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73823828"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74186472"
 ---
 # <a name="elastic-pools-help-you-manage-and-scale-multiple-azure-sql-databases"></a>Управление несколькими базами данных SQL Azure и их масштабирование с помощью эластичных пулов
 
@@ -116,7 +116,7 @@ ms.locfileid: "73823828"
 
 1. Оцените количество единиц eDTU или виртуальных ядер, необходимых для пула, следующим образом:
 
-   Для модели приобретения на основе единиц DTU: MAX(&lt;*общее число баз данных* X *среднее использование DTU на базу данных*&gt;,<br>  
+   Для модели приобретения на основе единиц DTU: MAX(<*общее число баз данных* X *среднее использование DTU на базу данных*>,<br>  
    < *количество баз данных с одновременными пиками* X *пиковое использование единиц DTU на базу данных* )
 
    Для модели приобретения на основе виртуальных ядер: MAX(&lt;*общее число баз данных* X *среднее использование виртуальных ядер на базу данных*&gt;,<br>  
@@ -220,9 +220,10 @@ ms.locfileid: "73823828"
 
    Daxko/CSI использует эластичные пулы с базой данных SQL Azure для ускорения цикла разработки и улучшения служб и производительности клиентов.   
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Чтобы масштабировать эластичные пулы, см. разделы [Масштабирование эластичных пулов](sql-database-elastic-pool-scale.md) и [Масштабирование эластичного пула — пример кода](scripts/sql-database-monitor-and-scale-pool-powershell.md)
 - Мы рекомендуем просмотреть [видеокурс о возможностях эластичной базы данных SQL Azure на сайте Microsoft Virtual Academy](https://mva.microsoft.com/training-courses/elastic-database-capabilities-with-azure-sql-db-16554).
 - Дополнительные сведения о шаблонах разработки для приложений SaaS, использующих пулы эластичных БД, см. в статье [Шаблоны разработки для мультитенантных приложений SaaS с использованием Базы данных Azure SQL](sql-database-design-patterns-multi-tenancy-saas-applications.md).
 - Дополнительные сведения об эластичных пулах см. в статье [Общие сведения о приложении SaaS Wingtip](sql-database-wtp-overview.md).
+- Сведения об управлении ресурсами в эластичных пулах с множеством баз данных см. в статье [Управление ресурсами в пулах эластичных БД](sql-database-elastic-pool-resource-management.md).

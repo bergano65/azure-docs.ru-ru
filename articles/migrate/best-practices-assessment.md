@@ -1,17 +1,17 @@
 ---
-title: Рекомендации по созданию оценки с помощью Azure Migrate Server — Оценка серверов
-description: Содержит советы по созданию оценок с оценкой сервера "миграция Azure".
+title: Рекомендации по оценке для оценки сервера в Azure
+description: Советы по созданию оценок с оценкой сервера "миграция Azure".
 author: rayne-wiselman
 ms.service: azure-migrate
 ms.topic: conceptual
-ms.date: 09/16/2019
+ms.date: 11/19/2019
 ms.author: raynew
-ms.openlocfilehash: e235116ab77159a0e2e9c66ad09cdb86ce6da1e9
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: de6953b6648613595bc9975b17941b3a453a6d60
+ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73466931"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74185978"
 ---
 # <a name="best-practices-for-creating-assessments"></a>Рекомендации по созданию оценок
 
@@ -96,7 +96,7 @@ ms.locfileid: "73466931"
 - Несколько виртуальных машин были созданы после запуска обнаружения в решении "Оценка сервера". Например, вы создаете оценку для журнала производительности за последний месяц, при этом несколько виртуальных машин были созданы всего неделю назад. В этом случает данные о производительности новых машин будут недоступны для всего периода анализа, а рейтинг достоверности будет низким.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Узнайте](concepts-assessment-calculation.md) , как рассчитываются оценки.
 - [Узнайте](how-to-modify-assessment.md) , как настроить оценку.

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
-ms.openlocfilehash: 6bf8c8690977ef1036c853d8c1c01a3a366b50df
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: 377ed8f17cfcf67f10cbdec77199c69c606afa3e
+ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74011478"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74180690"
 ---
 # <a name="azure-api-management-developer-portal-overview"></a>Обзор портала разработчика управления API Azure
 
@@ -142,6 +142,14 @@ API описан в [разделе вики репозитория GitHub][2]. 
     </expose-headers>
 </cors>
 ```
+
+> [!NOTE]
+> 
+> Если применить политику CORS в области продукта вместо области API, а API использует проверку подлинности ключа подписки через заголовок, консоль не будет работать.
+>
+> Браузер автоматически выдает HTTP-запрос OPTIONS, который не содержит заголовок с ключом подписки. Из-за отсутствующего ключа подписки службе управления API не удается связать параметры вызова с продуктом, поэтому невозможно применить политику CORS.
+>
+> В качестве обходного решения можно передать ключ подписки в параметре запроса.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

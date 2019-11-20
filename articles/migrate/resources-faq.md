@@ -1,23 +1,23 @@
 ---
 title: Распространенные вопросы о службе "миграция Azure"
-description: Устранение распространенных и часто задаваемых вопросов о службе "миграция Azure"
+description: Получите ответы на часто задаваемые вопросы о службе "миграция Azure".
 author: snehaamicrosoft
 ms.service: azure-migrate
 ms.topic: conceptual
-ms.date: 10/22/2019
+ms.date: 11/19/2019
 ms.author: snehaa
-ms.openlocfilehash: 1663e1d418610bcfa2ada28770944bfc8cbf908f
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: a622a5793e817be2445e60d925354ab37bb8e331
+ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73480075"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74185783"
 ---
 # <a name="azure-migrate-common-questions"></a>Служба "миграция Azure": распространенные вопросы
 
 В этой статье содержатся ответы на распространенные вопросы о службе "миграция Azure". При наличии дальнейших запросов после прочтения этой статьи опубликуйте их на [форуме по миграции Azure](https://aka.ms/AzureMigrateForum).
 
-## <a name="general"></a>Общие сведения
+## <a name="general"></a>Общие
 
 ### <a name="which-azure-geographies-are-supported"></a>Какие географические области Azure поддерживаются?
 
@@ -82,7 +82,7 @@ ms.locfileid: "73480075"
 
 ### <a name="can-i-connect-the-same-appliance-to-multiple-vcenter-server-instances"></a>Можно ли подключить одно устройство к нескольким экземплярам vCenter Server?
 
-Нет. Между устройством и vCenter Serverом существует однозначное сопоставление. Для обнаружения виртуальных машин на нескольких экземплярах vCenter Server необходимо развернуть несколько устройств.
+Нет Между устройством и vCenter Serverом существует однозначное сопоставление. Для обнаружения виртуальных машин на нескольких экземплярах vCenter Server необходимо развернуть несколько устройств.
 
 
 ### <a name="machine-size-changed-can-i-run-the-assessment-again"></a>Размер компьютера изменен. Можно ли запустить оценку еще раз?
@@ -167,7 +167,7 @@ ms.locfileid: "73480075"
 > Визуализация зависимостей недоступна в Azure для государственных организаций.
 
 ### <a name="do-i-need-to-pay-to-use-dependency-visualization"></a>Нужно ли платить за использование визуализации зависимостей?
-Нет. [Дополнительные сведения](https://azure.microsoft.com/pricing/details/azure-migrate/) о ценах на службу "Миграция Azure".
+Нет [Дополнительные сведения](https://azure.microsoft.com/pricing/details/azure-migrate/) о ценах на службу "Миграция Azure".
 
 ### <a name="do-i-need-to-install-anything-for-dependency-visualization"></a>Нужно ли устанавливать дополнительные программы для визуализации зависимостей?
 
@@ -201,7 +201,7 @@ ms.locfileid: "73480075"
 - Просмотрите список [операционных систем Linux, ПОДДЕРЖИВАЕМЫХ MMA](https://docs.microsoft.com/azure/log-analytics/log-analytics-concept-hybrid#supported-linux-operating-systems).
 
 ### <a name="can-i-visualize-dependencies-for-more-than-an-hour"></a>Можно ли визуализировать зависимости более часа?
-Нет. Можно визуализировать зависимости до часа. Вы можете вернуться к определенной дате в журнале, как и до конца месяца, но максимальная продолжительность визуализации — это час. Например, можно использовать длительность времени в сопоставлении зависимостей для просмотра зависимостей за вчерашний период, но можно просмотреть зависимости только в течение одного часового периода. Однако можно использовать журналы Azure Monitor для [запроса данных зависимости](https://docs.microsoft.com/azure/migrate/how-to-create-group-machine-dependencies) в течение более длительного времени.
+Нет Можно визуализировать зависимости до часа. Вы можете вернуться к определенной дате в журнале, как и до конца месяца, но максимальная продолжительность визуализации — это час. Например, можно использовать длительность времени в сопоставлении зависимостей для просмотра зависимостей за вчерашний период, но можно просмотреть зависимости только в течение одного часового периода. Однако можно использовать журналы Azure Monitor для [запроса данных зависимости](https://docs.microsoft.com/azure/migrate/how-to-create-group-machine-dependencies) в течение более длительного времени.
 
 ### <a name="can-i-use-dependency-visualization-for-groups-of-more-than-10-vms"></a>Можно ли использовать визуализацию зависимостей для групп с более чем 10 виртуальными машинами?
 Можно [визуализировать зависимости](https://docs.microsoft.com/azure/migrate/how-to-create-group-dependencies) для групп, содержащих до 10 виртуальных машин. Если у вас есть группа с более чем 10 виртуальными машинами, рекомендуется разбить группу на группы меньшего размера, а затем визуализировать зависимости.
@@ -214,5 +214,5 @@ ms.locfileid: "73480075"
 - Для миграции виртуальных машин Hyper-V, физических серверов и виртуальных машин VMware на основе агентов миграция Azure Migration Server использует Azure Site Recovery подсистему репликации.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 Ознакомьтесь с [обзором службы "миграция Azure](migrate-services-overview.md)".

@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: ravenn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ec7730dc1143586eb4c5c05fd475b8412546b7a6
-ms.sourcegitcommit: ec2b75b1fc667c4e893686dbd8e119e7c757333a
-ms.translationtype: MT
+ms.openlocfilehash: f593d5ea621ad450eb82388416534e40df36e2d5
+ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72809254"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74184196"
 ---
 # <a name="azure-active-directory-device-management-faq"></a>Часто задаваемые вопросы об управлении устройствами в Azure Active Directory
 
@@ -69,7 +69,7 @@ ms.locfileid: "72809254"
 
 ---
 
-### <a name="q-i-disabled-or-deleted-my-device-in-the-azure-portal-or-by-using-windows-powershell-but-the-local-state-on-the-device-says-its-still-registered-what-should-i-do"></a>Вопрос. я отключил или удалил устройство в портал Azure или с помощью Windows PowerShell. Но локальное состояние на устройстве говорит о том, что оно все еще зарегистрировано. Что мне делать?
+### <a name="q-i-disabled-or-deleted-my-device-in-the-azure-portal-or-by-using-windows-powershell-but-the-local-state-on-the-device-says-its-still-registered-what-should-i-do"></a>Вопрос. я отключил или удалил устройство в портал Azure или с помощью Windows PowerShell. Но локальное состояние на устройстве говорит о том, что оно все еще зарегистрировано. Что делать?
 
 Ответ **.** Эта операция выполняется по проекту. В этом случае устройство не имеет доступа к ресурсам в облаке. Администраторы могут выполнять это действие для устаревших, потерянных или украденных устройств, чтобы предотвратить несанкционированный доступ. Если это действие было выполнено непреднамеренно, необходимо повторно включить или повторно зарегистрировать устройство, как описано ниже.
 
@@ -119,7 +119,7 @@ ms.locfileid: "72809254"
 
 ### <a name="q-does-windows-10-device-registration-in-azure-ad-support-tpms-in-fips-mode"></a>Вопрос. поддерживает ли служба регистрации устройств Windows 10 в режиме FIPS модули поддержки Azure AD?
 
-Ответ **.** Нет, в настоящее время регистрация устройств в Windows 10 для всех состояний устройств — гибридное присоединение к Azure AD, присоединение к Azure AD и регистрация Azure AD — не поддерживает доверенные платформенные модули в режиме FIPS. Для успешного подключения или регистрации в Azure AD необходимо отключить режим FIPS для доверенных платформенных устройств.
+Ответ **.** Регистрация устройств Windows 10 поддерживается только для FIPS-совместимого доверенного платформенного модуля 2,0 и не поддерживается для TPM 1,2. Если на устройствах установлен совместимый с FIPS доверенный платформенный модуль 1,2, необходимо отключить их, прежде чем продолжить присоединение к Azure AD или гибридное присоединение к Azure AD. Обратите внимание, что корпорация Майкрософт не предоставляет средств для отключения режима FIPS для доверенных платформенных модулей, так как он зависит от производителя доверенного платформенного модуля. Обратитесь за поддержкой к ИЗГОТОВИТЕЛю оборудования. 
 
 ---
 
@@ -316,7 +316,7 @@ ms.locfileid: "72809254"
 - Во время первой попытки доступа пользователям предлагается зарегистрировать устройство с помощью корпоративного портала.
 
 ---
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Подробнее о [зарегистрированных устройствах в Azure AD](concept-azure-ad-register.md)
 - Подробнее о [присоединенных к Azure AD устройствах](concept-azure-ad-join.md)

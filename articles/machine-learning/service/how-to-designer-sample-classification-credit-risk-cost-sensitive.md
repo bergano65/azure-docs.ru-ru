@@ -1,7 +1,7 @@
 ---
-title: 'Конструктор: прогнозируемый кредитный риск (с учетом стоимости)'
+title: 'Конструктор: пример прогнозируемого кредитного риска'
 titleSuffix: Azure Machine Learning
-description: В этой статье показано, как создать сложный конвейер машинного обучения с помощью конструктора (Предварительная версия). Вы узнаете, как реализовать пользовательские скрипты Python и сравнить несколько моделей, чтобы выбрать наилучший вариант.
+description: Создание классификатора и использование пользовательских скриптов Python для прогнозирования кредитных рисков с помощью Машинное обучение Azure конструктора.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,14 +10,17 @@ author: xiaoharper
 ms.author: zhanxia
 ms.reviewer: peterlu
 ms.date: 11/04/2019
-ms.openlocfilehash: 7af0ee31c7d7e5dae4a38db7f6c74ff3e5f964bb
-ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
-ms.translationtype: MT
+ms.openlocfilehash: 0bf69683fc5afe24e0e7977b05892c3c10b0cd46
+ms.sourcegitcommit: 8e31a82c6da2ee8dafa58ea58ca4a7dd3ceb6132
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73647984"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74196094"
 ---
-# <a name="sample-4---classification-with-custom-python-script-predict-credit-risk"></a>Пример 4. Классификация с помощью пользовательского скрипта Python: прогнозируемый кредитный риск
+# <a name="build-a-classifier--use-python-scripts-to-predict-credit-risk-using-azure-machine-learning-designer"></a>Создание классификатора & использование скриптов Python для прогнозирования кредитных рисков с помощью конструктора Машинное обучение Azure
+
+**Конструктор (Предварительная версия) — пример 4**
+
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-enterprise-sku.md)]
 
 В этой статье показано, как создать сложный конвейер машинного обучения с помощью конструктора (Предварительная версия). Вы узнаете, как реализовать пользовательскую логику с помощью скриптов Python и сравнить несколько моделей, чтобы выбрать наилучший вариант.
@@ -28,7 +31,7 @@ ms.locfileid: "73647984"
 
 [![граф конвейера](media/how-to-ui-sample-classification-predict-credit-risk-cost-sensitive/graph.png)](media/how-to-ui-sample-classification-predict-credit-risk-cost-sensitive/graph.png#lightbox)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 [!INCLUDE [aml-ui-prereq](../../../includes/aml-ui-prereq.md)]
 
@@ -155,7 +158,7 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
 
 [!INCLUDE [aml-ui-cleanup](../../../includes/aml-ui-cleanup.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Изучите другие примеры, доступные для конструктора:
 

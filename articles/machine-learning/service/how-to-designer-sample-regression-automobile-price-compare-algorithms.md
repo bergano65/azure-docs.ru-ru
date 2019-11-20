@@ -1,7 +1,7 @@
 ---
-title: 'Конструктор: Прогнозирование цен на автомобиль (регрессия)'
+title: 'Конструктор: пример прогноза цен на автомобиль (дополнительно)'
 titleSuffix: Azure Machine Learning
-description: В этой статье показано, как создать сложный конвейер машинного обучения без написания единой строки кода с помощью конструктора (Предварительная версия). Узнайте, как обучить и сравнивать несколько моделей регрессии для прогнозирования цены автомобиля на основе технических характеристик.
+description: Сборка & Сравните несколько моделей регрессии машинного обучения с целью прогнозирования цены автомобиля на основе технических функций с помощью конструктора Машинное обучение Azure.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,14 +10,17 @@ author: xiaoharper
 ms.author: zhanxia
 ms.reviewer: peterlu
 ms.date: 11/04/2019
-ms.openlocfilehash: d73f6d67afff13696de78d026ff65228fd68fb28
-ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
-ms.translationtype: MT
+ms.openlocfilehash: 5eb701af90125e2654d6f908b28512aba3ad37aa
+ms.sourcegitcommit: 8e31a82c6da2ee8dafa58ea58ca4a7dd3ceb6132
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73647955"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74196068"
 ---
-# <a name="sample-2---regression-predict-price-and-compare-algorithms"></a>Пример 2. регрессия. Прогнозирование цен и алгоритмов сравнения
+# <a name="train--compare-multiple-regression-models-to-predict-car-prices-with-azure-machine-learning-designer"></a>Обучение & сравнение нескольких моделей регрессии для прогнозирования цен автомобилей с помощью конструктора Машинное обучение Azure
+
+**Конструктор (Предварительная версия) — пример 2**
+
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-enterprise-sku.md)]
 
 Узнайте, как создать конвейер машинного обучения без написания единой строки кода с помощью конструктора (Предварительная версия). В этом примере описывается обучение и сравнение нескольких моделей регрессии для прогнозирования цены автомобиля на основе ее технических характеристик. Мы предоставим смысл для вариантов, сделанных в этом конвейере, чтобы вы могли справиться с собственными проблемами машинного обучения.
@@ -28,7 +31,7 @@ ms.locfileid: "73647955"
 
 [![граф конвейера](media/how-to-ui-sample-regression-predict-automobile-price-compare-algorithms/graph.png)](media/how-to-ui-sample-classification-predict-credit-risk-cost-sensitive/graph.png#lightbox)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 [!INCLUDE [aml-ui-prereq](../../../includes/aml-ui-prereq.md)]
 
@@ -85,7 +88,7 @@ ms.locfileid: "73647955"
 
 [!INCLUDE [aml-ui-cleanup](../../../includes/aml-ui-cleanup.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Изучите другие примеры, доступные для конструктора:
 

@@ -6,12 +6,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 03/25/2019
 ms.author: ramamill
-ms.openlocfilehash: f1a96302d180f3b4b179f42013232f3b48d4e2b0
-ms.sourcegitcommit: df7942ba1f28903ff7bef640ecef894e95f7f335
+ms.openlocfilehash: a2f4bdb96b8d1ecb23ddcec844726439ec46fff2
+ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69016369"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74186449"
 ---
 # <a name="prepare-source-machine-for-push-installation-of-mobility-agent"></a>Подготовка исходного компьютера к принудительной установке агента Mobility Service
 
@@ -32,7 +32,7 @@ ms.locfileid: "69016369"
    ![Параметры брандмауэра](./media/vmware-azure-install-mobility-service/mobility1.png)
 
 4. Добавьте учетную запись, созданную в CSPSConfigtool. Чтобы сделать это, войдите на сервер конфигурации.
-5. Запустите файл **cspsconfigtool.exe**. Доступ к нему можно получить, щелкнув ярлык на рабочем столе, или перейдя в папку %ProgramData%\home\svsystems\bin.
+5. Запустите файл **cspsconfigtool.exe**. Он доступен в виде ярлыка на рабочем столе и в папке%Програмдата%\аср\хоме\свсистемс\бин.
 6. На вкладке **Управление учетными записями** щелкните **Добавить учетную запись**.
 7. Добавьте созданную учетную запись.
 8. Введите учетные данные, используемые при включении репликации для компьютера.
@@ -55,7 +55,7 @@ ms.locfileid: "69016369"
 
 8. Перезапустите службу **SSHD**.
 9. Добавьте учетную запись, созданную в CSPSConfigtool. Чтобы сделать это, войдите на сервер конфигурации.
-10. Запустите файл **cspsconfigtool.exe**. Доступ к нему можно получить, щелкнув ярлык на рабочем столе, или перейдя в папку %ProgramData%\home\svsystems\bin.
+10. Запустите файл **cspsconfigtool.exe**. Он доступен в качестве ярлыка на рабочем столе и расположен в папке %ProgramData%\home\svsystems\bin.
 11. На вкладке **Управление учетными записями** щелкните **Добавить учетную запись**.
 12. Добавьте созданную учетную запись.
 13. Введите учетные данные, используемые при включении репликации для компьютера.
@@ -64,7 +64,7 @@ ms.locfileid: "69016369"
 
 Если на компьютерах, которые нужно реплицировать, запущено антивирусное ПО, обязательно исключите установочную папку службы Mobility в список исключений из антивирусной проверки (*C:\ProgramData\ASR\agent*). Это обеспечит правильную работу репликации.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 После установки службы Mobility Service на портале Azure выберите **+ Репликация**, чтобы приступить к защите виртуальных машин. Дополнительные сведения о включении репликации для [виртуальных машин VMware](vmware-azure-enable-replication.md) и [физических серверов](physical-azure-disaster-recovery.md#enable-replication).
 

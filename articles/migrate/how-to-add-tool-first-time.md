@@ -1,17 +1,17 @@
 ---
-title: Добавление средства оценки и миграции в первый раз в службе "миграция Azure" | Документация Майкрософт
+title: Добавление средства оценки и миграции в службу "миграция Azure"
 description: Описание процесса создания проекта службы "миграция Azure" и добавления средства оценки и миграции.
 author: rayne-wiselman
 ms.service: azure-migrate
 ms.topic: article
-ms.date: 11/06/2019
+ms.date: 11/19/2019
 ms.author: raynew
-ms.openlocfilehash: a4e66175b20552e632702cb2ba46d0ae6c0956d4
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: 319d97d96bd054aed90079777e2ff83d0e308e5e
+ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73720243"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74185949"
 ---
 # <a name="add-an-assessmentmigration-tool-for-the-first-time"></a>Добавление средства оценки и миграции в первый раз
 
@@ -81,6 +81,6 @@ ms.locfileid: "73720243"
 3. В разделе **Параметры**выберите **щелкните здесь, чтобы создать новый проект**.
 4. Создайте новый проект и добавьте новое средство, как описано в предыдущей процедуре.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Узнайте, как добавить дополнительные средства [оценки](how-to-assess.md) и [миграции](how-to-migrate.md) . 

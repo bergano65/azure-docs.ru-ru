@@ -1,5 +1,5 @@
 ---
-title: Развертывание и настройка Брандмауэра Azure в гибридной сети с помощью Azure PowerShell
+title: Развертывание & Настройка брандмауэра Azure в гибридной сети с помощью PowerShell
 description: Из этой статьи вы узнаете, как развернуть и настроить брандмауэр Azure с помощью Azure PowerShell.
 services: firewall
 author: vhorne
@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 10/18/2019
 ms.author: victorh
 customer intent: As an administrator, I want to control network access from an on-premises network to an Azure virtual network.
-ms.openlocfilehash: a5a008a795b88dbcb72ed9fba869e5251fd93567
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: d198ee2e1fa8d3afeacda53c2ad6b91d69abca2a
+ms.sourcegitcommit: 8e31a82c6da2ee8dafa58ea58ca4a7dd3ceb6132
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73163538"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74195765"
 ---
 # <a name="deploy-and-configure-azure-firewall-in-a-hybrid-network-using-azure-powershell"></a>Развертывание и настройка Брандмауэра Azure в гибридной сети с помощью Azure PowerShell
 
@@ -36,18 +36,18 @@ ms.locfileid: "73163538"
 > * Создание центральной виртуальной сети с брандмауэром
 > * Создание периферийной виртуальной сети
 > * Создание локальной виртуальной сети
-> * Настройка и развертывание брандмауэра
+> * Настройка и развертывание брандмауэра.
 > * Создание и подключение шлюзов VPN
 > * Настройка пиринга между центральной и периферийной виртуальными сетями
 > * Создание маршрутов.
 > * Создание виртуальных машин
-> * Тестирование брандмауэра
+> * тестирование брандмауэра.
 
 Если вместо работы с этим руководством вы хотите использовать портал Azure, см. [руководство по развертыванию и настройке брандмауэра Azure в гибридной сети с помощью портал Azure](tutorial-hybrid-portal.md).
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 Для работы с этой статьей необходимо запустить PowerShell локально. Необходимо установить модуль Azure PowerShell. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-Az-ps). После проверки версии PowerShell выполните командлет `Login-AzAccount`, чтобы создать подключение к Azure.
 
@@ -71,7 +71,7 @@ ms.locfileid: "73163538"
 
 Связанную справочную документацию по Azure PowerShell см. [здесь](https://docs.microsoft.com/powershell/module/az.network/new-azfirewall).
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу.
 
 ## <a name="declare-the-variables"></a>Объявление переменных
 
@@ -185,7 +185,7 @@ $VNetOnprem = New-AzVirtualNetwork -Name $VNetnameOnprem -ResourceGroupName $RG1
   -Location $Location1 -AllocationMethod Dynamic
 ```
 
-## <a name="configure-and-deploy-the-firewall"></a>Настройка и развертывание брандмауэра
+## <a name="configure-and-deploy-the-firewall"></a>Настройка и развертывание брандмауэра.
 
 Теперь разверните брандмауэр в центральной виртуальной сети.
 
@@ -203,7 +203,7 @@ $AzfwPrivateIP
 
 ```
 
-### <a name="configure-network-rules"></a>настройка правил сети;
+### <a name="configure-network-rules"></a>Настройка правил сети
 
 <!--- $Rule3 = New-AzFirewallNetworkRule -Name "AllowPing" -Protocol ICMP -SourceAddress $SNOnpremPrefix `
    -DestinationAddress $VNetSpokePrefix -DestinationPort *--->
@@ -452,7 +452,7 @@ New-AzVm `
     -Size "Standard_DS2"
 ```
 
-## <a name="test-the-firewall"></a>Тестирование брандмауэра
+## <a name="test-the-firewall"></a>тестирование брандмауэра.
 
 Сначала получите и запишите частный IP-адрес для виртуальной машины **VM-spoke-01**.
 
@@ -493,7 +493,7 @@ Set-AzFirewall -AzureFirewall $azfw
 
 Вы можете сохранить ресурсы брандмауэра для следующего руководства или, если он больше не нужен, удалить группу ресурсов **FW-Hybrid-Test**, чтобы удалить ресурсы, связанные с брандмауэром.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Теперь вы можете отследить журналы Брандмауэра Azure.
 

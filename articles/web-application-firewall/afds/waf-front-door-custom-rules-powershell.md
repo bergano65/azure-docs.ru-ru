@@ -1,5 +1,5 @@
 ---
-title: Настройка политики брандмауэра веб-приложения (WAF) с настраиваемыми правилами и набором Русе по умолчанию для Front дверь — Azure PowerShell
+title: Настройка настраиваемых правил WAF & наборе правил по умолчанию для передней дверцы Azure
 description: Узнайте, как настроить политику WAF, включающую как настраиваемые, так и управляемые правила для существующей конечной точки передней дверцы.
 services: web-application-firewall
 author: vhorne
@@ -7,21 +7,21 @@ ms.service: web-application-firewall
 ms.topic: article
 ms.date: 09/05/2019
 ms.author: victorh
-ms.openlocfilehash: fec1ed5d51c4afe43df513b54595b4ce1e2f4bbb
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 493ed1a31a23366a90b80d3ab510218c8dce0e9c
+ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73512552"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74186634"
 ---
 # <a name="configure-a-web-application-firewall-policy-using-azure-powershell"></a>Настройка политики брандмауэра веб-приложения с помощью Azure PowerShell
 
 Политика брандмауэра веб-приложения Azure (WAF) определяет проверки, необходимые при поступлении запроса на переднюю дверцу.
 В этой статье показано, как настроить политику WAF, состоящую из некоторых настраиваемых правил, с включенным набором правил по умолчанию, управляемым Azure.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 Прежде чем приступить к настройке политики ограничения скорости, настройте среду PowerShell и создайте профиль передней дверцы.
 
@@ -110,7 +110,7 @@ $myWAFPolicy=New-AzFrontDoorWafPolicy -Name $policyName -ResourceGroupName $reso
 > [!NOTE]
 > Свойство *вебаппликатионфиреваллполицилинк* необходимо установить только один раз, чтобы связать политику безопасности с внешним интерфейсом передней дверцы. Последующие обновления политики автоматически применяются к интерфейсной части.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Дополнительные сведения о [передней дверце](../../frontdoor/front-door-overview.md) 
 - Дополнительные сведения о [WAF с помощью передней дверцы](afds-overview.md)

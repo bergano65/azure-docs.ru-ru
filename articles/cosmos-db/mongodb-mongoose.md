@@ -5,24 +5,24 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-mongo
 ms.devlang: nodejs
 ms.topic: conceptual
-ms.date: 12/26/2018
+ms.date: 11/18/2019
 author: sivethe
 ms.author: sivethe
 ms.custom: seodec18
-ms.openlocfilehash: 3955b84df401e5832668fa091274caea9af2466e
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: be3fd42f33fd66fe2bf5a773eafafba5d6982706
+ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69876602"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74184785"
 ---
 # <a name="connect-a-nodejs-mongoose-application-to-azure-cosmos-db"></a>Подключение приложения Mongoose Node.js к Azure Cosmos DB
 
 Это руководство содержит сведения об использовании [платформы Mongoose](https://mongoosejs.com/) при сохранении данных в Cosmos DB. В этом пошаговом руководстве используется API Azure Cosmos DB для MongoDB. Для тех из вас, кто еще не знаком с Mongoose, — это платформа объектного моделирования для MongoDB в Node.js, которая представляет собой простое решение на основе схемы для моделирования данных приложения.
 
-Cosmos DB — это глобально распределенная многомодельная служба базы данных Майкрософт. Вы можете быстро создавать и запрашивать документы, пары "ключ — значение" и базы данных графов, используя преимущества возможностей глобального распределения и горизонтального масштабирования базы данных Cosmos DB.
+Cosmos DB — это глобально распределенная многомодельная служба базы данных Майкрософт. Вы можете быстро создавать и запрашивать документы, пары "ключ-значение" и графовые базы данных, используя преимущества глобального распределения и горизонтального масштабирования Cosmos DB.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
@@ -61,21 +61,25 @@ Cosmos DB — это глобально распределенная мног�
 
 1. Импортируйте зависимости в файл index.js.
     ```JavaScript
-    var mongoose = require('mongoose');
-    var env = require('dotenv').load();    //Use the .env file to load the variables
+   var mongoose = require('mongoose');
+   var env = require('dotenv').config();   //Use the .env file to load the variables
     ```
 
 1. Добавьте строку подключения и имя Cosmos DB в файл ```.env```. Замените заполнители {Cosmos-Account-Name} и {dbname} собственным именем учетной записи Cosmos и именем базы данных, без символов фигурных скобок.
 
     ```JavaScript
-    COSMOSDB_CONNSTR=mongodb://{cosmos-account-name}.documents.azure.com:10255/{dbname}
-    COSMODDB_USER=cosmos-account-name
-    COSMOSDB_PASSWORD=cosmos-secret
+   # You can get the following connection details from the Azure portal. You can find the details on the Connection string pane of your Azure Cosmos account.
+
+   COSMODDB_USER = "<Azure Cosmos account's user name>"
+   COSMOSDB_PASSWORD = "<Azure Cosmos account passowrd>"
+   COSMOSDB_DBNAME = "<Azure Cosmos database name>"
+   COSMOSDB_HOST= "<Azure Cosmos Host name>"
+   COSMOSDB_PORT=10255
     ```
 
 1. Подключитесь к Cosmos DB с помощью платформы Mongoose, добавив следующий код в конец файла index.js.
     ```JavaScript
-    mongoose.connect(process.env.COSMOSDB_CONNSTR+"?ssl=true&replicaSet=globaldb", {
+   mongoose.connect("mongodb://"+process.env.COSMOSDB_HOST+":"+process.env.COSMOSDB_PORT+"/"+process.env.COSMOSDB_DBNAME+"?ssl=true&replicaSet=globaldb", {
       auth: {
         user: process.env.COSMODDB_USER,
         password: process.env.COSMOSDB_PASSWORD
@@ -214,7 +218,7 @@ Mongoose также использует концепцию, называему�
     const commonModel = mongoose.model('Common', new mongoose.Schema({}, baseConfig));
     ```
 
-1. Теперь определите модель Family. Обратите внимание, что вместо ```mongoose.model``` используется ```commonModel.discriminator```. Кроме того, к схеме Mongoose добавлена базовая конфигурация. Итак, ```FamilyType``` — это ключ дискриминатора.
+1. Теперь определите модель Family. Обратите внимание, что вместо ```commonModel.discriminator``` используется ```mongoose.model```. Кроме того, к схеме Mongoose добавлена базовая конфигурация. Итак, ```FamilyType``` — это ключ дискриминатора.
 
     ```JavaScript
     const Family_common = commonModel.discriminator('FamilyType', new     mongoose.Schema({
@@ -306,11 +310,11 @@ Mongoose также использует концепцию, называему�
 
 [!INCLUDE [cosmosdb-delete-resource-group](../../includes/cosmos-db-delete-resource-group.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
-- Узнайте, как [использовать Studio 3T](mongodb-mongochef.md) с API Azure Cosmos DB для MongoDB.
-- Узнайте, как [использовать Robo 3T](mongodb-robomongo.md) с API Azure Cosmos DB для MongoDB.
-- Ознакомьтесь с [примерами](mongodb-samples.md) MongoDB с API Azure Cosmos DB для MongoDB.
+- Узнайте, как [использовать Studio 3T](mongodb-mongochef.md) с API Azure Cosmos DB для MongoDB.
+- Узнайте, как [использовать Robo 3T](mongodb-robomongo.md) с API Azure Cosmos DB для MongoDB.
+- Ознакомьтесь с [примерами](mongodb-samples.md) MongoDB с API Azure Cosmos DB для MongoDB.
 
 [alldata]: ./media/mongodb-mongoose/mongo-collections-alldata.png
 [multiple-coll]: ./media/mongodb-mongoose/mongo-mutliple-collections.png

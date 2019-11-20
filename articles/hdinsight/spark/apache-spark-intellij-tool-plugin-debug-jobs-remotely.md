@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/28/2017
-ms.openlocfilehash: ac8ef620948048ae26ef6f408b4bc86b2a2bfbdc
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 5fede76fbc97b31cbbcdaec1b17f838100d35511
+ms.sourcegitcommit: 8e31a82c6da2ee8dafa58ea58ca4a7dd3ceb6132
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73494573"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74195833"
 ---
 # <a name="use-azure-toolkit-for-intellij-to-debug-apache-spark-applications-remotely-in-hdinsight-through-vpn"></a>Удаленная отладка приложений Apache Spark в HDInsight через VPN с помощью Azure Toolkit for IntelliJ
 
@@ -27,7 +27,7 @@ ms.locfileid: "73494573"
 1. Создание приложения Scala в IntelliJ IDEA и его настройка для удаленной отладки.
 1. Запуск и отладка приложения.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 * **Подписка Azure**. Чтобы узнать больше, ознакомьтесь с [получением бесплатной пробной учетной записи Azure](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 * **Кластер Apache Spark в HDInsight**. Инструкции см. в статье [Начало работы. Создание кластера Apache Spark в HDInsight на платформе Linux и выполнение интерактивных запросов с помощью SQL Spark](apache-spark-jupyter-spark-sql.md).
@@ -69,7 +69,7 @@ ms.locfileid: "73494573"
 
 1. Добавьте IP-адрес и имя головного узла в файл **hosts** на компьютер, на котором вы собираетесь выполнять и удаленно отлаживать задание Spark. Это обеспечит обмен данными с головным узлом с помощью IP-адреса и имени узла.
 
-   а. Откройте Блокнот с повышенным уровнем разрешений. В меню **Файл** выберите **Открыть** и найдите папку с файлом hosts. На компьютере Windows это папка **C:\Windows\System32\Drivers\etc\hosts**.
+   a. Откройте Блокнот с повышенным уровнем разрешений. В меню **Файл** выберите **Открыть** и найдите папку с файлом hosts. На компьютере Windows это папка **C:\Windows\System32\Drivers\etc\hosts**.
 
    b. Добавьте в файл **hosts** следующие данные.
 
@@ -98,9 +98,9 @@ ms.locfileid: "73494573"
 
     ![Выбор шаблона нового проекта в IntelliJ IDEA](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/create-hdi-scala-app.png)
 
-    а. Выберите **HDInsight** > **Spark on HDInsight (Scala)** (Spark в HDInsight (Scala)).
+    a. Выберите **HDInsight** > **Spark on HDInsight (Scala)** (Spark в HDInsight (Scala)).
 
-    b. Щелкните **Далее**.
+    b. Нажмите кнопку **Далее**.
 1. В следующем диалоговом окне **New Project** (Новый проект) выполните приведенные ниже действия, после чего щелкните **Finish** (Готово).
 
     - Введите имя и расположение проекта.
@@ -113,7 +113,7 @@ ms.locfileid: "73494573"
   
 1. Проект Spark автоматически создаст артефакт. Чтобы просмотреть артефакт, сделайте следующее:
 
-    а. В меню **File** (Файл) выберите **Project Structure** (Структура проекта).
+    a. В меню **File** (Файл) выберите **Project Structure** (Структура проекта).
 
     b. В диалоговом окне **Project Structure** (Структура проекта) щелкните **артефакты**, чтобы просмотреть созданный по умолчанию артефакт. Вы также можете создать собственный артефакт, щелкнув значок "плюс" ( **+** ).
 
@@ -121,7 +121,7 @@ ms.locfileid: "73494573"
 
 1. Добавьте библиотеки в проект. Чтобы добавить библиотеку, выполните следующее.
 
-    а. Щелкните правой кнопкой мыши имя проекта в дереве проектов и выберите **Open Module Settings** (Открыть параметры модуля).
+    a. Щелкните правой кнопкой мыши имя проекта в дереве проектов и выберите **Open Module Settings** (Открыть параметры модуля).
 
     b. В диалоговом окне **Project Structure** (Структура проекта) выберите **Libraries** (Библиотеки), щелкните символ ( **+** ), а затем выберите **From Maven** (Из Maven).
 
@@ -149,7 +149,7 @@ ms.locfileid: "73494573"
 
 1. Обновите файл `core-site.xml`, чтобы внести описанные ниже изменения.
 
-   а. Замените зашифрованный ключ. Файл `core-site.xml` содержит зашифрованный ключ учетной записи хранения, связанной с кластером. В файле `core-site.xml`, добавленном в проект, замените зашифрованный ключ фактическим ключом к хранилищу данных, связанным с учетной записью хранения, используемой по умолчанию. Дополнительные сведения см. в разделе [Управление ключами доступа к хранилищу](../../storage/common/storage-account-manage.md#access-keys).
+   a. Замените зашифрованный ключ. Файл `core-site.xml` содержит зашифрованный ключ учетной записи хранения, связанной с кластером. В файле `core-site.xml`, добавленном в проект, замените зашифрованный ключ фактическим ключом к хранилищу данных, связанным с учетной записью хранения, используемой по умолчанию. Дополнительные сведения см. в разделе [Управление ключами доступа к хранилищу](../../storage/common/storage-account-manage.md#access-keys).
 
     ```xml
     <property>
@@ -203,9 +203,9 @@ ms.locfileid: "73494573"
                             "wasb:///HVACOut")
         }
     }
-        ```
+    ```
 
-1. Repeat steps 8 and 9 to add a new Scala object called `*SparkSample`. Add the following code to this class. This code reads the data from the HVAC.csv (available in all HDInsight Spark clusters). It retrieves the rows that only have one digit in the seventh column in the CSV file, and then writes the output to **/HVACOut** under the default storage container for the cluster.
+1. Повторите шаги 8 и 9, чтобы добавить новый объект Scala с именем `*SparkSample`. Добавьте в этот класс приведенный ниже код. Этот код считывает данные из файла HVAC.csv (доступного для всех кластеров HDInsight Spark). Он извлекает строки, содержащие только одну цифру в седьмом столбце CSV-файла, и записывает результат в **/HVACOut** в используемом по умолчанию контейнере хранилища для кластера.
 
     ```scala
     import org.apache.spark.SparkContext
@@ -305,7 +305,7 @@ ms.locfileid: "73494573"
 
 ### <a name="demo"></a>Демонстрация
 
-* Создание проекта Scala (видео): [создание приложений Scala Apache Spark](https://channel9.msdn.com/Series/AzureDataLake/Create-Spark-Applications-with-the-Azure-Toolkit-for-IntelliJ)
+* Создание проекта Scala (видео): [создание приложений Apache Spark Scala](https://channel9.msdn.com/Series/AzureDataLake/Create-Spark-Applications-with-the-Azure-Toolkit-for-IntelliJ)
 * Удаленная отладка (видео): [Use Azure Toolkit for IntelliJ to debug Spark applications remotely on an HDInsight cluster](https://channel9.msdn.com/Series/AzureDataLake/Debug-HDInsight-Spark-Applications-with-Azure-Toolkit-for-IntelliJ) (Удаленная отладка приложений Apache Spark в кластере HDInsight с помощью Azure Toolkit for IntelliJ)
 
 ### <a name="scenarios"></a>Сценарии
@@ -313,7 +313,7 @@ ms.locfileid: "73494573"
 * [Руководство. Анализ данных Apache Spark с использованием Power BI в HDInsight](apache-spark-use-bi-tools.md)
 * [Apache Spark и Машинное обучение. Анализ температуры в здании на основе данных системы кондиционирования с помощью Spark в HDInsight](apache-spark-ipython-notebook-machine-learning.md)
 * [Apache Spark и Машинное обучение. Прогнозирование результатов проверки пищевых продуктов с помощью Spark в HDInsight](apache-spark-machine-learning-mllib-ipython.md)
-* [Анализ журнала веб-сайта с использованием Apache Spark в HDInsight](../hdinsight-apache-spark-custom-library-website-log-analysis.md)
+* [Анализ журналов веб-сайтов с помощью Apache Spark в HDInsight](../hdinsight-apache-spark-custom-library-website-log-analysis.md)
 
 ### <a name="create-and-run-applications"></a>Создание и запуск приложений
 
@@ -324,7 +324,7 @@ ms.locfileid: "73494573"
 
 * [Создание приложений Apache Spark для кластера HDInsight с помощью Azure Toolkit for IntelliJ](apache-spark-intellij-tool-plugin.md)
 * [Удаленная или локальная отладка приложений Spark в кластере HDInsight с помощью Azure Toolkit for IntelliJ через SSH](apache-spark-intellij-tool-debug-remotely-through-ssh.md)
-* [Использование средств HDInsight в Azure Toolkit for Eclipse для создания приложений Apache Spark](../hdinsight-apache-spark-eclipse-tool-plugin.md)
+* [Создание приложений Spark для кластера HDInsight с помощью Azure Toolkit for Eclipse](../hdinsight-apache-spark-eclipse-tool-plugin.md)
 * [Использование записных книжек Zeppelin с кластером Apache Spark в Azure HDInsight](apache-spark-zeppelin-notebook.md)
 * [Ядра для записной книжки Jupyter в кластерах Spark в Azure HDInsight](apache-spark-jupyter-notebook-kernels.md)
 * [Использование внешних пакетов с записными книжками Jupyter](apache-spark-jupyter-notebook-use-external-packages.md)

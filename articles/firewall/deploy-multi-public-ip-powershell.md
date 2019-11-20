@@ -1,18 +1,18 @@
 ---
-title: Развертывание брандмауэра Azure с несколькими общедоступными IP-адресами с помощью Azure PowerShell
+title: Развертывание брандмауэра Azure с несколькими общедоступными IP-адресами с помощью PowerShell
 description: Из этой статьи вы узнаете, как развернуть брандмауэр Azure с несколькими общедоступными IP-адресами с помощью Azure PowerShell.
 services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: article
-ms.date: 07/19/2019
+ms.date: 11/19/2019
 ms.author: victorh
-ms.openlocfilehash: ba2736ae69d0bf7feff5f852da2446bfa7a722a6
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: ad54b60d8f15e36636f887015d97967740123669
+ms.sourcegitcommit: 8e31a82c6da2ee8dafa58ea58ca4a7dd3ceb6132
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68325232"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74195862"
 ---
 # <a name="deploy-an-azure-firewall-with-multiple-public-ip-addresses-using-azure-powershell"></a>Развертывание брандмауэра Azure с несколькими общедоступными IP-адресами с помощью Azure PowerShell
 
@@ -21,7 +21,7 @@ ms.locfileid: "68325232"
 - **DNAT**. Позволяет преобразовать несколько стандартных экземпляров порта для внутренних серверов. Например, если существует два общедоступных IP-адреса, то для обоих IP-адреса можно преобразовать TCP-порт 3389 (RDP).
 - **SNAT**. Дополнительные порты доступны для исходящих SNAT подключений, что снижает вероятность нехватки SNAT портов. На данный момент Брандмауэр Azure случайно выбирает общедоступные IP-адреса источника, которые можно использовать для подключения. Если в сети установлена любая фильтрация, необходимо разрешить все публичные IP-адреса, которые связанные с брандмауэром.
  
-Брандмауэр Azure с несколькими общедоступными IP-адресами можно получить с помощью портал Azure, Azure PowerShell, Azure CLI, RESTFUL и шаблонов. Вы можете развернуть брандмауэр Azure, содержащий до 100 общедоступных IP-адресов.
+Портал Azure, Azure PowerShell, Azure CLI, REST и шаблоны позволяют использовать брандмауэр Azure с несколькими общедоступными IP-адресами. Вы можете развернуть брандмауэр Azure, содержащий до 100 общедоступных IP-адресов.
 
 В следующих примерах Azure PowerShell показано, как можно настроить, добавить и удалить общедоступные IP-адреса для брандмауэра Azure.
 
@@ -30,7 +30,7 @@ ms.locfileid: "68325232"
 
 ## <a name="create-a-firewall-with-two-or-more-public-ip-addresses"></a>Создание брандмауэра с двумя или более общедоступными IP-адресами
 
-В этом примере создается брандмауэр, подключенный к виртуальной сети *виртуальных сетей с* двумя общедоступными IP-адресами.
+В этом примере создается брандмауэр, подключенный к *виртуальной сети виртуальных сетей с* двумя общедоступными IP-адресами.
 
 ```azurepowershell
 $rgName = "resourceGroupName"
@@ -100,6 +100,6 @@ $azFw.RemovePublicIpAddress($pip)
 $azFw | Set-AzFirewall
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
-* [Учебник. Мониторинг журналов и метрик Брандмауэра Azure](./tutorial-diagnostics.md)
+* [Руководство по мониторингу журналов Брандмауэра Azure](./tutorial-diagnostics.md)

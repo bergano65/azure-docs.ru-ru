@@ -1,5 +1,5 @@
 ---
-title: Настройка правила ограничения скорости брандмауэра веб-приложения для передней дверцы — Azure PowerShell
+title: Настройка правила ограничения скорости WAF для передней дверцы — Azure PowerShell
 description: Узнайте, как настроить правило ограничения скорости для существующей конечной точки передней дверцы.
 author: vhorne
 ms.service: web-application-firewall
@@ -7,20 +7,20 @@ ms.topic: article
 services: web-application-firewall
 ms.date: 08/21/2019
 ms.author: victorh
-ms.openlocfilehash: ce9ace445d87479da4047da205b59e79402ece07
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 831d0876c67aa36248a54f3935e5ce7884c736ef
+ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73517141"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74186626"
 ---
 # <a name="configure-a-web-application-firewall-rate-limit-rule-using-azure-powershell"></a>Настройка правила ограничения скорости брандмауэра веб-приложения с помощью Azure PowerShell
 Правило предельного числа подвижности брандмауэра веб-приложения Azure (WAF) для передней дверцы Azure определяет количество запросов, разрешенных с одного IP-адреса клиента в течение одной минутной длительности.
 В этой статье показано, как настроить правило ограничения скорости WAF, которое управляет количеством запросов, разрешенных от одного клиента к веб-приложению, которое содержит */промо* в URL-адресе с помощью Azure PowerShell.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 Прежде чем приступить к настройке политики ограничения скорости, настройте среду PowerShell и создайте профиль передней дверцы.
 ### <a name="set-up-your-powershell-environment"></a>Настройка среды PowerShell
 В Azure PowerShell доступен набор командлетов, которые используют модель [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview) для управления ресурсами Azure. 
@@ -102,7 +102,7 @@ Install-Module -Name Az.FrontDoor
 > [!NOTE]
 > Свойство *вебаппликатионфиреваллполицилинк* необходимо установить только один раз, чтобы связать политику безопасности с внешним интерфейсом передней дверцы. Последующие обновления политики автоматически применяются к интерфейсной части.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Дополнительные сведения о [передней дверце](../../frontdoor/front-door-overview.md). 
 

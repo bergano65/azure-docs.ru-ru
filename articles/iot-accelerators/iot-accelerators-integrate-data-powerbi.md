@@ -1,6 +1,6 @@
 ---
 title: Визуализация данных удаленного мониторинга с помощью Power BI в Azure | Документация Майкрософт
-description: В этом руководстве используется Power BI Desktop и Cosmos DB для интеграции данных из решения для удаленного мониторинга в пользовательскую визуализацию. Таким образом, пользователи могут создавать собственные настраиваемые панели мониторинга и делиться ими с другими пользователями вне решения.
+description: В этом руководстве используется Power BI Desktop и Cosmos DB для интеграции данных из решения удаленного мониторинга в настраиваемую визуализацию. Таким образом, пользователи могут создавать собственные настраиваемые панели мониторинга и делиться ими с другими пользователями вне решения.
 author: dominicbetts
 manager: hegate
 ms.author: dobett
@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 05/01/2018
 ms.topic: conceptual
-ms.openlocfilehash: 13b10aa4f40b7c4b62b35e8580c2826c10e6683f
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
-ms.translationtype: HT
+ms.openlocfilehash: 8b0f395936c8628ff7b8dab601168538f97ccdb7
+ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/19/2019
-ms.locfileid: "74166295"
+ms.locfileid: "74184243"
 ---
 # <a name="visualize-remote-monitoring-data-using-power-bi"></a>Визуализация данных удаленного мониторинга с помощью Power BI
 
@@ -22,13 +22,13 @@ ms.locfileid: "74166295"
 ## <a name="prerequisites"></a>предварительным требованиям
 
 - У вас должно быть запущено решение для удаленного мониторинга.
-- У вас должен быть доступ к [порталу Azure](https://portal.azure.com) и подписка, в которой выполняется Центр Интернета вещей и решение.
+- Необходимо иметь доступ к [портал Azure](https://portal.azure.com) и подписке, в которой работают центр Интернета вещей и решение
 - Необходимо иметь установленный [Power BI Desktop](https://powerbi.microsoft.com) (любой версии).
 
 
-## <a name="information-needed-from-azure-portal"></a>Необходимая информация с портала Azure
+## <a name="information-needed-from-azure-portal"></a>Сведения, необходимые из портал Azure
 
-1. Перейдите на [портал Azure](https://portal.azure.com) и при необходимости выполните вход.
+1. Перейдите к [портал Azure](https://portal.azure.com) и войдите в систему, если это необходимо.
 
 2. В области слева щелкните "Группы ресурсов".
 

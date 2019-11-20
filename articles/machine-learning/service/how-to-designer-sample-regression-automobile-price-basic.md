@@ -1,7 +1,7 @@
 ---
-title: 'Конструктор: Прогнозируемая цена (регрессия)'
+title: 'Конструктор: пример прогноза цен на автомобиль (базовый)'
 titleSuffix: Azure Machine Learning
-description: Узнайте, как создать модель машинного обучения для прогнозирования цены автомобиля без написания единой строки кода.
+description: Создайте модель регрессии машинного обучения для прогнозирования цены автомобиля без написания единой строки кода с помощью конструктора Машинное обучение Azure.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,14 +10,17 @@ author: xiaoharper
 ms.author: zhanxia
 ms.reviewer: peterlu
 ms.date: 11/04/2019
-ms.openlocfilehash: 0cdf2d0b632368a5a5bc24e092783c979f7c26bc
-ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
-ms.translationtype: MT
+ms.openlocfilehash: ab922733133856409e7c91ee7b216fdc5a341c06
+ms.sourcegitcommit: 8e31a82c6da2ee8dafa58ea58ca4a7dd3ceb6132
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73647158"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74196142"
 ---
-# <a name="sample-1---regression-predict-price"></a>Пример 1. регрессия: прогнозная цена
+# <a name="use-regression-to-predict-car-prices-with-azure-machine-learning-designer"></a>Использование регрессии для прогнозирования цен автомобилей с помощью конструктора Машинное обучение Azure
+
+**Конструктор (Предварительная версия) — Пример 1**
+
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-enterprise-sku.md)]
 
 Узнайте, как создать модель регрессии машинного обучения без написания единой строки кода с помощью конструктора (Предварительная версия).
@@ -35,7 +38,7 @@ ms.locfileid: "73647158"
 
 ![Граф конвейера](media/how-to-ui-sample-regression-predict-automobile-price-basic/overall-graph.png)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 [!INCLUDE [aml-ui-prereq](../../../includes/aml-ui-prereq.md)]
 
@@ -80,7 +83,7 @@ ms.locfileid: "73647158"
 
 [!INCLUDE [aml-ui-cleanup](../../../includes/aml-ui-cleanup.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Изучите другие примеры, доступные для конструктора:
 

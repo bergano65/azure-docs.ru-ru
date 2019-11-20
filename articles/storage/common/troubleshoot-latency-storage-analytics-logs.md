@@ -4,15 +4,18 @@ description: Выявление и устранение проблем с зад
 author: v-miegge
 ms.topic: troubleshooting
 ms.author: kartup
+manager: dcscontentpm
 ms.date: 10/21/2019
 ms.service: storage
 ms.subservice: common
-ms.openlocfilehash: f8ec8e3f27e74f442f314d4c812908888598244c
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+services: storage
+tags: ''
+ms.openlocfilehash: 2197a149235c0dca98a24a57549538b2a4cbb1c8
+ms.sourcegitcommit: 8e31a82c6da2ee8dafa58ea58ca4a7dd3ceb6132
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73180632"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74196509"
 ---
 # <a name="troubleshoot-latency-using-storage-analytics-logs"></a>Устранение задержки с помощью журналов Аналитика Службы хранилища
 
@@ -96,10 +99,10 @@ ms.locfileid: "73180632"
 
    |   |Состоянии RequestStatus =<br>Успешно|Состоянии RequestStatus =<br>ЖЕСТКИХ NetworkError|Рекомендации|
    |---|---|---|---|
-   |GetBlob|ДА|Нет|[**Операция с большим двоичным объектом:** Состоянии RequestStatus = успешное завершение](#getblob-operation-requeststatus--success)|
-   |GetBlob|Нет|ДА|[**Операция с большим двоичным объектом:** Состоянии RequestStatus = (SAS) NetworkError](#getblob-operation-requeststatus--sasnetworkerror)|
-   |PutBlob|ДА|Нет|[**Операция размещения:** Состоянии RequestStatus = успешное завершение](#put-operation-requeststatus--success)|
-   |PutBlob|Нет|ДА|[**Операция размещения:** Состоянии RequestStatus = (SAS) NetworkError](#put-operation-requeststatus--sasnetworkerror)|
+   |GetBlob|Yes|Нет|[**Операция с большим двоичным объектом:** Состоянии RequestStatus = успешное завершение](#getblob-operation-requeststatus--success)|
+   |GetBlob|Нет|Yes|[**Операция с большим двоичным объектом:** Состоянии RequestStatus = (SAS) NetworkError](#getblob-operation-requeststatus--sasnetworkerror)|
+   |PutBlob|Yes|Нет|[**Операция размещения:** Состоянии RequestStatus = успешное завершение](#put-operation-requeststatus--success)|
+   |PutBlob|Нет|Yes|[**Операция размещения:** Состоянии RequestStatus = (SAS) NetworkError](#put-operation-requeststatus--sasnetworkerror)|
 
 ## <a name="status-results"></a>Результаты состояния
 
@@ -113,7 +116,7 @@ ms.locfileid: "73180632"
 
 В **операции большого двоичного объекта** с **состоянии RequestStatus = Success**, если **Максимальное время** тратится на **задержку клиента**, это означает, что служба хранилища Azure тратит большой объем времени на запись данных клиенту. Эта задержка обозначает проблемы на стороне клиента.
 
-**Рекомендация**.
+**Рекомендация.**
 
 * Исследуйте код в клиенте.
 * Используйте Wireshark, анализатор сообщений Майкрософт или Tcping, чтобы исследовать проблемы с сетевым подключением от клиента. 
@@ -128,7 +131,7 @@ ms.locfileid: "73180632"
 
 В **операции большого двоичного объекта** с **состоянии REQUESTSTATUS = (SAS) NetworkError**, если **Максимальное время** тратится на **задержку клиента**, наиболее распространенной проблемой является отключение клиента до истечения времени ожидания в службе хранилища.
 
-**Рекомендация**.
+**Рекомендация.**
 
 * Изучите код клиента, чтобы понять, когда и почему клиент отключается от службы хранилища.
 * Используйте Wireshark, анализатор сообщений Майкрософт или Tcping, чтобы исследовать проблемы с сетевым подключением от клиента. 
@@ -143,7 +146,7 @@ ms.locfileid: "73180632"
 
 В **операции размещения** с **состоянии RequestStatus = Success**, если **Максимальное время** тратится на **задержку клиента**, это означает, что клиенту требуется больше времени для отправки данных в службу хранилища Azure. Эта задержка обозначает проблемы на стороне клиента.
 
-**Рекомендация**.
+**Рекомендация.**
 
 * Исследуйте код в клиенте.
 * Используйте Wireshark, анализатор сообщений Майкрософт или Tcping, чтобы исследовать проблемы с сетевым подключением от клиента. 
@@ -158,7 +161,7 @@ ms.locfileid: "73180632"
 
 В **операции PutBlob** с **состоянии REQUESTSTATUS = (SAS) NetworkError**, если **Максимальное время** тратится на **задержку клиента**, наиболее распространенной проблемой является то, что клиент отключается до истечения времени ожидания в службе хранилища.
 
-**Рекомендация**.
+**Рекомендация.**
 
 * Изучите код клиента, чтобы понять, когда и почему клиент отключается от службы хранилища.
 * Используйте Wireshark, анализатор сообщений Майкрософт или Tcping, чтобы исследовать проблемы с сетевым подключением от клиента.

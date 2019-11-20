@@ -10,12 +10,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 03/25/2019
 ms.author: cshoe
-ms.openlocfilehash: 250d470e2450820f57720e0e1a6d274291cf162c
-ms.sourcegitcommit: ec2b75b1fc667c4e893686dbd8e119e7c757333a
-ms.translationtype: MT
+ms.openlocfilehash: 3c826cd32b38676bcbfe1bec79f580e17a509145
+ms.sourcegitcommit: 8e31a82c6da2ee8dafa58ea58ca4a7dd3ceb6132
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72809631"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74195973"
 ---
 # <a name="strategies-for-testing-your-code-in-azure-functions"></a>Методика тестирования кода с помощью Функций Azure
 
@@ -35,7 +35,7 @@ ms.locfileid: "72809631"
 
 ![Тестирование Функций Azure с помощью C# в Visual Studio](./media/functions-test-a-function/azure-functions-test-visual-studio-xunit.png)
 
-### <a name="setup"></a>Настройка
+### <a name="setup"></a>Setup
 
 Чтобы настроить среду, создайте функцию и протестируйте приложение. Описанные ниже действия помогут создать приложения и функции, необходимые для поддержки тестов.
 
@@ -220,7 +220,7 @@ namespace Functions.Tests
         public async void Http_trigger_should_return_known_string()
         {
             var request = TestFactory.CreateHttpRequest("name", "Bill");
-            var response = (OkObjectResult)await HttpFunction.Run(request, logger);
+            var response = (OkObjectResult)await HttpTrigger.Run(request, logger);
             Assert.Equal("Hello, Bill", response.Value);
         }
 
@@ -229,7 +229,7 @@ namespace Functions.Tests
         public async void Http_trigger_should_return_known_string_from_member_data(string queryStringKey, string queryStringValue)
         {
             var request = TestFactory.CreateHttpRequest(queryStringKey, queryStringValue);
-            var response = (OkObjectResult)await HttpFunction.Run(request, logger);
+            var response = (OkObjectResult)await HttpTrigger.Run(request, logger);
             Assert.Equal($"Hello, {queryStringValue}", response.Value);
         }
 
@@ -246,7 +246,7 @@ namespace Functions.Tests
 ```
 В этом классе реализованы следующие элементы.
 
-- **Http_trigger_should_return_known_string**: этот тест создает запрос со значениями строки запроса `name=Bill` функции HTTP и проверяет, возвращен ли ожидаемый ответ.
+- **Http_trigger_should_return_known_string**: этот тест создает запрос со значениями строки запроса `name=Bill` в функцию HTTP и проверяет, возвращен ли ожидаемый ответ.
 
 - **Http_trigger_should_return_string_from_member_data**: в этом тесте используются атрибуты xUnit для предоставления демонстрационных данных функции HTTP.
 
@@ -270,7 +270,7 @@ namespace Functions.Tests
 
 ![Тестирование Функций Azure с помощью JavaScript в VS Code](./media/functions-test-a-function/azure-functions-test-vs-code-jest.png)
 
-### <a name="setup"></a>Настройка
+### <a name="setup"></a>Setup
 
 Для настройки среды инициализируйте новое приложение Node.js в пустой папке, запустив `npm init`.
 
@@ -375,7 +375,7 @@ npm test
 
 Затем в тесте установите точку останова и нажмите клавишу **F5**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Теперь, когда вы узнали, как записывать автоматизированные тесты для функций, изучите следующие ресурсы.
 - [Запуск функции, не активируемой HTTP-запросом, вручную](./functions-manually-run-non-http.md)

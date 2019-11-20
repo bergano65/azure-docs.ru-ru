@@ -1,10 +1,10 @@
 ---
-title: Ограничение сетевого доступа к ресурсам PaaS с помощью Azure CLI | Документация Майкрософт
+title: Ограничение сетевого доступа к ресурсам PaaS — Azure CLI
 description: Из этой статьи вы узнаете, как ограничить сетевой доступ к ресурсам Azure, таким как служба хранилища Azure и служба "База данных SQL Azure", с помощью конечных точек служб для виртуальной сети и Azure CLI.
 services: virtual-network
 documentationcenter: virtual-network
 author: KumudD
-manager: twooley
+manager: mtillman
 editor: ''
 tags: azure-resource-manager
 Customer intent: I want only resources in a virtual network subnet to access an Azure PaaS resource, such as an Azure Storage account.
@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 03/14/2018
 ms.author: kumud
 ms.custom: ''
-ms.openlocfilehash: e52829723b41f9274251ebe7432aa659251c0da4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f2dcc714bc9052dd51f114e24f0b9bd74b87480c
+ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64695116"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74186404"
 ---
 # <a name="restrict-network-access-to-paas-resources-with-virtual-network-service-endpoints-using-the-azure-cli"></a>Ограничение сетевого доступа к ресурсам PaaS посредством конечных точек служб для виртуальной сети с помощью Azure CLI
 
@@ -35,7 +35,7 @@ ms.locfileid: "64695116"
 * Подтверждение прав доступа к ресурсу из подсети.
 * Подтверждение запрета доступа к ресурсу из подсети и Интернета.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -120,7 +120,7 @@ az network nsg rule create \
   --destination-port-range "*"
 ```
 
-Каждой группе безопасности сети содержит несколько [правила безопасности по умолчанию](security-overview.md#default-security-rules). Приведенное ниже правило переопределяет правило безопасности по умолчанию, которое разрешает исходящий доступ для всех общедоступных IP-адресов. `destination-address-prefix "Internet"` Параметр запрещает исходящий доступ для всех общедоступных IP-адресов. Предыдущее правило переопределяет это правило ввиду более высокого приоритета. Оно предоставляет доступ к общедоступным IP-адресам службы хранилища Azure.
+Каждая группа безопасности сети содержит несколько [правил безопасности по умолчанию](security-overview.md#default-security-rules). Следующее правило переопределяет правило безопасности по умолчанию, разрешающее исходящий доступ ко всем общедоступным IP-адресам. Параметр `destination-address-prefix "Internet"` запрещает исходящий доступ ко всем общедоступным IP-адресам. Предыдущее правило переопределяет это правило ввиду более высокого приоритета. Оно предоставляет доступ к общедоступным IP-адресам службы хранилища Azure.
 
 ```azurecli-interactive
 az network nsg rule create \
@@ -137,7 +137,7 @@ az network nsg rule create \
   --destination-port-range "*"
 ```
 
-Приведенное ниже правило разрешает трафик SSH для подсети входящий из любого места. Это правило переопределяет правило безопасности по умолчанию, запрещающее весь входящий трафик из Интернета. Таким образом, чтобы в дальнейшем можно протестировать подключение SSH может быть подсети.
+Следующее правило разрешает входящий трафик SSH в подсеть из любого места. Это правило переопределяет правило безопасности по умолчанию, запрещающее весь входящий трафик из Интернета. Для подсети разрешено использование SSH, чтобы можно было протестировать подключение на более позднем этапе.
 
 ```azurecli-interactive
 az network nsg rule create \
@@ -158,7 +158,7 @@ az network nsg rule create \
 
 Действия, необходимые для ограничения сетевого доступа к ресурсам, созданным с помощью служб Azure, использующих конечные точки службы, отличаются в зависимости службы. Ознакомьтесь с документацией по отдельным службам, чтобы получить точные инструкции для них. В оставшейся части этой статьи в качестве примера приведены инструкции по ограничению сетевого доступа для учетной записи хранения Azure.
 
-### <a name="create-a-storage-account"></a>Создание учетной записи хранения
+### <a name="create-a-storage-account"></a>Создайте учетную запись хранения
 
 Создайте учетную запись хранения Azure с помощью команды [az storage account create](/cli/azure/storage/account). Замените `<replace-with-your-unique-storage-account-name>` именем, которое является уникальным для всех расположений Azure, содержащим только цифры и строчные буквы (длиной от 3 до 24 знаков).
 
@@ -272,7 +272,7 @@ az vm create \
 
 ## <a name="confirm-access-to-storage-account"></a>Подтверждение прав доступа к учетной записи хранения
 
-Подключитесь к виртуальной машине *myVmPrivate* по протоколу SSH. Замените  *\<publicIpAddress >* общедоступный IP-адресом вашего *myVmPrivate* виртуальной Машины.
+Подключитесь к виртуальной машине *myVmPrivate* по протоколу SSH. Замените *\<publicIpAddress >* общедоступным IP-адресом виртуальной машины *myVmPrivate* .
 
 ```bash 
 ssh <publicIpAddress>
@@ -344,7 +344,7 @@ az storage share list \
 az group delete --name myResourceGroup --yes
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 В рамках этой статьи вы включили конечную точку службы для подсети виртуальной сети. Вы узнали, что конечные точки службы можно включать для ресурсов, развернутых несколькими службами Azure. Вы создали учетную запись хранения Azure и ограничили сетевой доступ к учетной записи хранения ресурсами одной подсети в виртуальной сети. См. дополнительные сведения о [конечных точках службы](virtual-network-service-endpoints-overview.md) и [управляемых подсетях](virtual-network-manage-subnet.md).
 

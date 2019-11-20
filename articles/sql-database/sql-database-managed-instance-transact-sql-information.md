@@ -11,12 +11,12 @@ ms.author: jovanpop
 ms.reviewer: sstein, carlrab, bonova
 ms.date: 11/04/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: 3283cfe9455ba29679d7c741941aa8863c47b1c0
-ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
-ms.translationtype: HT
+ms.openlocfilehash: 636fd5fd17838c729cdbc9e2a322c1f991d93948
+ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74158297"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74186439"
 ---
 # <a name="managed-instance-t-sql-differences-limitations-and-known-issues"></a>Различия в T-SQL управляемого экземпляра, ограничения и известные проблемы
 
@@ -572,14 +572,6 @@ SQL Server и Управляемый экземпляр [не позволяют
 [Resource Governor](/sql/relational-databases/resource-governor/resource-governor) функция, которая позволяет ограничить ресурсы, назначенные пользовательской рабочей нагрузке, может неправильно классифицировать определенную рабочую нагрузку пользователя после отработки отказа или изменения уровня служб (например, изменение максимального Виртуальное ядро или максимального экземпляра). Размер хранилища).
 
 Инструкции по **решению**: запустите `ALTER RESOURCE GOVERNOR RECONFIGURE` периодически или в рамках задания агента SQL Server, которое ВЫПОЛНЯЕТ задачу SQL при запуске экземпляра, если используется [Resource Governor](/sql/relational-databases/resource-governor/resource-governor).
-
-### <a name="cannot-authenticate-to-external-mail-servers-using-secure-connection-ssl"></a>Не удается выполнить проверку подлинности на внешних почтовых серверах с помощью безопасного соединения (SSL)
-
-**Дата:** Авг 2019
-
-Компонент Database Mail, [настроенный с помощью безопасного подключения (SSL)](/sql/relational-databases/database-mail/configure-database-mail) , не может пройти проверку подлинности на некоторых серверах электронной почты за пределами Azure. Это проблема конфигурации безопасности, которая будет устранена в ближайшее время.
-
-**Обходной путь:** Временное удаление безопасного подключения (SSL) из конфигурации компонента Database Mail до устранения проблемы. 
 
 ### <a name="cross-database-service-broker-dialogs-must-be-re-initialized-after-service-tier-upgrade"></a>После обновления уровня службы необходимо повторно инициализировать диалоговые окна межбазовых Service Broker
 

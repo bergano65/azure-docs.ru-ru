@@ -10,16 +10,16 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 11/05/2019
 ms.author: travisw
-ms.openlocfilehash: bd808c0c71e02483b4c4b06e612720c1802869a0
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 403768bc81b476dd144d5e4496f3501a3001da8a
+ms.sourcegitcommit: 8e31a82c6da2ee8dafa58ea58ca4a7dd3ceb6132
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73577979"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74195935"
 ---
 # <a name="about-voice-assistants"></a>О помощниках
 
-Речевые помощники, использующие службы распознавания речи Azure, позволяют разработчикам создавать естественные, человеческие в своем опыте интерфейсы общения для своих приложений и работы.
+Голосовые помощники, использующие службы распознавания речи Azure, позволяют разработчикам создавать естественные и привычные для человека разговорные функции для своих приложений и интерфейсов.
 
 Служба голосового помощника обеспечивает быстрое и надежное взаимодействие между устройством и реализацией помощника, которая использует либо (1) прямой канал речевого перевода строки, либо (2) интегрированную службу настраиваемых команд (Предварительная версия) для завершения задач.
 
@@ -39,7 +39,8 @@ ms.locfileid: "73577979"
 Если вы еще не уверены, что вы хотите, чтобы ваш помощник работал, рекомендуется [направить речевой](direct-line-speech.md) ввод в качестве лучшего значения по умолчанию. Она обеспечивает интеграцию с обширным набором инструментов и средств разработки, таких как [решение виртуального помощника и шаблон предприятия](https://docs.microsoft.com/azure/bot-service/bot-builder-enterprise-template-overview) , а также [службы QnA Maker](https://docs.microsoft.com/azure/cognitive-services/QnAMaker/Overview/overview) для создания общих шаблонов и использования существующих источников знаний.
 
 [Пользовательские команды (Предварительная версия)](custom-commands.md) предоставляют возможности упрощенного создания и размещения, специально адаптированные для команд и сценариев управления на естественном языке.
-   ![Сравнение решений для помощников](media/voice-assistants/assistant-solution-comparison.png "CompАрисон, появляющиеся решениями помощника ")
+
+   ![Сравнение решений для помощников](media/voice-assistants/assistant-solution-comparison.png "Сравнение решений для помощников")
 
 ## <a name="core-features"></a>Основные компоненты
 
@@ -55,17 +56,17 @@ ms.locfileid: "73577979"
 
 Мы предлагаем краткие руководства, предназначенные для выполнения кода менее чем через 10 минут. В этой таблице содержится список кратких руководств по голосовым помощникам, упорядоченных по языку.
 
-| Быстрый запуск | Платформа | Справочник по API |
+| Быстрый запуск | платформа | Справочник по API |
 |------------|----------|---------------|
 | C#, UWP | Windows | [Обзор](https://aka.ms/csspeech/csharpref) |
-| Java | Windows, macOS, Linux | [Обзор](https://aka.ms/csspeech/javaref) |
-| Java | Android | [Обзор](https://aka.ms/csspeech/javaref) |
+| Java: | Windows, macOS, Linux | [Обзор](https://aka.ms/csspeech/javaref) |
+| Java: | Android | [Обзор](https://aka.ms/csspeech/javaref) |
 
 ## <a name="sample-code"></a>Пример кода
 
 Пример кода для создания речевого помощника доступен на сайте GitHub. Эти примеры охватывают клиентское приложение для подключения к помощнику на нескольких популярных языках программирования.
 
-* [Образцы для голоса (SDK)](https://aka.ms/csspeech/samples)
+* [Примеры голосового помощника (SDK)](https://aka.ms/csspeech/samples)
 * [Учебник. Включение помощника в речь с помощью голосового пакета SDKC#](tutorial-voice-enable-your-bot-speech-sdk.md)
 
 ## <a name="tutorial"></a>Учебник
@@ -84,7 +85,7 @@ ms.locfileid: "73577979"
 * [пакет SDK для службы "Речь"](speech-sdk-reference.md);
 * [Служба Azure Bot](https://docs.microsoft.com/azure/bot-service/?view=azure-bot-service-4.0)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Получите ключ подписки для Служб речи бесплатно](get-started.md)
 * [Получение пакета SDK для распознавания речи](speech-sdk.md)

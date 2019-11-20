@@ -1,17 +1,17 @@
 ---
-title: Настройка устройства для миграции и оценки серверов в Azure миграция для виртуальных машин VMware | Документация Майкрософт
-description: Описание настройки устройства для обнаружения, оценки и переноса без агента виртуальных машин VMware с помощью функции "миграция и миграция серверов Azure".
+title: Настройка устройства "миграция Azure" для VMware
+description: Узнайте, как настроить устройство "миграция Azure" для оценки и миграции виртуальных машин VMware.
 author: rayne-wiselman
 ms.service: azure-migrate
 ms.topic: article
 ms.date: 11/18/2019
 ms.author: raynew
-ms.openlocfilehash: 086d5bf2e0e2bd1e4c1db5960d402a8e1b129e94
-ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
-ms.translationtype: HT
+ms.openlocfilehash: 1489d29f854b02cf493493fe022c73dc050e2615
+ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74158597"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74185859"
 ---
 # <a name="set-up-an-appliance-for-vmware-vms"></a>Настройка устройства для виртуальных машин VMware
 

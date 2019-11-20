@@ -7,18 +7,19 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 11/14/2019
 ms.author: alzam
-ms.openlocfilehash: 3f407ecfcbfdff72b79bfe6b5bc3e6b7606b1cf0
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.openlocfilehash: 1b506f8439deabd110daaefab36442140e20d0d4
+ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/19/2019
-ms.locfileid: "74174633"
+ms.locfileid: "74185359"
 ---
 # <a name="enable-multi-factor-authentication-mfa-for-vpn-users"></a>Включение многофакторной проверки подлинности (MFA) для VPN-пользователей
 
 Вы можете включить MFA для пользователей в клиенте Azure AD, чтобы пользователям было предложено выполнить вторую проверку подлинности перед предоставлением доступа.
 
-> [! Предварительные требования] вы настроили клиент Azure AD, как описано в документе "Настройка клиента".
+> [!NOTE]
+> Предварительные требования. вы настроили клиент Azure AD, как описано в документе "Настройка клиента".
 >
 
 ### <a name="tenant"></a>1. Войдите в портал Azure и перейдите к **Azure Active Directory** , **всем пользователям** и щелкните **многофакторную идентификацию** .

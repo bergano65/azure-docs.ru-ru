@@ -1,7 +1,7 @@
 ---
-title: 'Конструктор: классификация, прогнозирование обновлений'
+title: 'Конструктор: пример изменения прогноза'
 titleSuffix: Azure Machine Learning
-description: В этом образце конвейера конструктора (Предварительная версия) показана обработка двоичных классификаторов обновлений, типичная задача для управления отношениями с клиентами (CRM).
+description: Используйте этот пример классификации для прогнозирования обновлений с помощью Машинное обучение Azure конструктора & увеличивающихся деревьев принятия решений.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,14 +10,17 @@ author: xiaoharper
 ms.author: zhanxia
 ms.reviewer: sgilley
 ms.date: 11/04/2019
-ms.openlocfilehash: a09060e16b877df4412b785edbb60930cb4122bc
-ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
-ms.translationtype: MT
+ms.openlocfilehash: 5cf61d3446f960b65eb85538be9ea020671cced2
+ms.sourcegitcommit: 8e31a82c6da2ee8dafa58ea58ca4a7dd3ceb6132
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73647172"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74196037"
 ---
-# <a name="sample-5---classification-predict-churn"></a>Пример 5. Классификация: обработка прогнозов
+# <a name="use-boosted-decision-tree-to-predict-churn-with-azure-machine-learning-designer"></a>Использование увеличивающегося дерева принятия решений для прогнозирования обновлений с помощью Машинное обучение Azure конструктора
+
+**Конструктор (Предварительная версия) — пример 5**
+
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-enterprise-sku.md)]
 
 Узнайте, как создать сложный конвейер машинного обучения без написания единой строки кода с помощью конструктора (Предварительная версия).
@@ -30,7 +33,7 @@ ms.locfileid: "73647172"
 
 ![Граф конвейера](./media/how-to-ui-sample-classification-predict-churn/pipeline-graph.png)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 [!INCLUDE [aml-ui-prereq](../../../includes/aml-ui-prereq.md)]
 
@@ -74,7 +77,7 @@ ms.locfileid: "73647172"
 
 [!INCLUDE [aml-ui-cleanup](../../../includes/aml-ui-cleanup.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Изучите другие примеры, доступные для конструктора:
 

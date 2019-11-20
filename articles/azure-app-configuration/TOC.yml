@@ -17,8 +17,8 @@
           href: quickstart-dotnet-core-app.md
         - name: .NET Framework
           href: quickstart-dotnet-app.md
-        - name: Использование Функций Azure в .NET Core
-          href: quickstart-azure-function-csharp.md
+        - name: "Использование Функций Azure в .NET\_Core"
+          href: quickstart-azure-functions-csharp.md
         - name: Java Spring
           href: quickstart-java-spring-app.md
     - name: Управление функциями
@@ -37,6 +37,8 @@
       href: enable-dynamic-configuration-dotnet-core.md
     - name: Включение динамической конфигурации в .NET Framework
       href: enable-dynamic-configuration-dotnet.md
+    - name: Включение динамической конфигурации в Функциях Azure
+      href: enable-dynamic-configuration-azure-functions-csharp.md
     - name: Использование флагов компонентов в приложении .NET Core
       href: use-feature-flags-dotnet-core.md
     - name: Использование флагов компонентов в приложении Spring Boot
@@ -67,7 +69,7 @@
           href: concept-disaster-recovery.md
 - name: Руководства
   items:
-    - name: Интеграция с функцией "Управляемое удостоверение службы Azure"
+    - name: Интеграции с управляемыми удостоверениями Azure
       href: howto-integrate-azure-managed-service-identity.md
     - name: Импорт и экспорт данных конфигурации
       href: howto-import-export-data.md

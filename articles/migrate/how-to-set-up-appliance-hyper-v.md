@@ -1,17 +1,17 @@
 ---
-title: Настройка устройства для миграции и оценки серверов в Azure миграция для виртуальных машин Hyper-V | Документация Майкрософт
-description: Описание настройки устройства для обнаружения, оценки и переноса без агента виртуальных машин Hyper-V с помощью функции "миграция и миграция серверов Azure".
+title: Настройка устройства "миграция Azure" для Hyper-V
+description: Узнайте, как настроить устройство миграции Azure для оценки и миграции виртуальных машин Hyper-V.
 author: rayne-wiselman
 ms.service: azure-migrate
 ms.topic: article
-ms.date: 07/08/2019
+ms.date: 11/19/2019
 ms.author: raynew
-ms.openlocfilehash: 00473519ad324d34d1fd595b2fb08408ad991f4c
-ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
-ms.translationtype: HT
+ms.openlocfilehash: 1676ad3dde5a97d2afdb64595d51f5502f9dcc3d
+ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74158623"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74185936"
 ---
 # <a name="set-up-an-appliance-for-hyper-v-vms"></a>Настройка устройства для виртуальных машин Hyper-V
 

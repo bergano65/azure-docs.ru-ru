@@ -974,21 +974,19 @@
       items:
         - name: Восстановление данных из резервной копии
           href: how-to-backup-and-restore.md
-    - name: Ведение журналов
+    - name: Мониторинг
       items:
-        - name: Ведение журнала диагностики
-          href: logging.md
+        - name: "Мониторинг Cosmos\_DB"
+          href: monitor-cosmos-db.md
+        - name: Azure Monitor для Cosmos (предварительная версия)
+          href: ../azure-monitor/insights/cosmosdb-insights-overview.md?toc=/azure/cosmos-db/toc.json
+        - name: "Просмотр метрик с использованием учетной записи Cosmos\_DB"
+          href: use-metrics.md
         - name: Вход в приложения с помощью Logic Apps
           href: /azure/logic-apps/logic-apps-scenario-error-and-exception-handling
           maintainContext: true
-    - name: Мониторинг с помощью метрик
-      items:
-        - name: "Просмотр метрик с использованием учетной записи Cosmos\_DB"
-          href: use-metrics.md
-        - name: Просмотр метрик с использованием Azure Monitor
-          href: cosmos-db-azure-monitor-metrics.md
-        - name: Мониторинг соглашений об уровне обслуживания
-          href: monitor-accounts.md
+        - name: Справочник по данным мониторинга
+          href: monitor-cosmos-db-reference.md
     - name: Разработка в локальной среде
       items:
         - name: Использование эмулятора

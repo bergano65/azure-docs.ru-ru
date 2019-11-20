@@ -1,6 +1,7 @@
 ---
-title: Фильтрация, упорядочение и подкачка сущностей служб мультимедиа в Azure | Документация Майкрософт
-description: В этой статье рассматриваются фильтрация, упорядочение и разбиение по страницам сущностей Служб мультимедиа Azure.
+title: Фильтрация, упорядочение и разбиение на страницы объектов служб мультимедиа
+titleSuffix: Azure Media Services
+description: Сведения о фильтрации, упорядочении и разбиении на страницы сущностей служб мультимедиа Azure.
 services: media-services
 documentationcenter: ''
 author: Juliako
@@ -12,12 +13,12 @@ ms.topic: article
 ms.date: 10/11/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: d13ff3944e53f103c03a92e03d217b0066bc97df
-ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
+ms.openlocfilehash: 22b8c4e2454d6130ebcaf85346b767c843fbc1f0
+ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72693311"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74186250"
 ---
 # <a name="filtering-ordering-and-paging-of-media-services-entities"></a>Фильтрация, упорядочение и разбиение на страницы объектов служб мультимедиа
 
@@ -41,7 +42,7 @@ ms.locfileid: "72693311"
 
 - `gt`. проверяет *, превышает ли* поле постоянное значение.
 - `lt`: проверяет, меньше ли поле, *чем* постоянное значение.
-- `ge`: Проверка того, что поле *больше или равно* константе. value
+- `ge`: Проверка того, что поле *больше или равно* значению константы.
 - `le`: Проверка того, что поле *меньше или равно* значению константы.
 
 ## <a name="filter"></a>Фильтр
@@ -59,11 +60,11 @@ GET https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000
 ```csharp
 var odataQuery = new ODataQuery<Asset>("properties/created lt 2018-05-11T17:39:08.387Z");
 var firstPage = await MediaServicesArmClient.Assets.ListAsync(CustomerResourceGroup, CustomerAccountName, odataQuery);
-```    
+```
 
 ## <a name="order-by"></a>Упорядочить по
 
-Используйте `$orderby`, чтобы отсортировать возвращенные объекты по указанному параметру. Пример.    
+Используйте `$orderby`, чтобы отсортировать возвращенные объекты по указанному параметру. Например,  
 
 ```
 GET https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/mediaresources/providers/Microsoft.Media/mediaServices/amstestaccount/assets?api-version=2018-07-01$orderby=properties/created%20gt%202018-05-11T17:39:08.387Z
@@ -77,7 +78,7 @@ GET https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000
 
 В службах мультимедиа v3 нельзя настроить размер страницы. Размер страницы зависит от типа сущности. Дополнительные сведения см. в следующих разделах.
 
-Если при разбиении по коллекциям создаются или удаляются сущности, изменения отражаются в возвращенных результатах (если эти изменения находятся в части коллекции, которая не была загружена). 
+Если при разбиении по коллекциям создаются или удаляются сущности, изменения отражаются в возвращенных результатах (если эти изменения находятся в той части коллекции, которая еще не была загружена).
 
 > [!TIP]
 > Следует всегда использовать `nextLink` для перечисления коллекции и не зависеть от конкретного размера страницы.
@@ -155,31 +156,31 @@ client.Jobs.List(config.ResourceGroup, config.AccountName, VideoAnalyzerTransfor
 
 В следующей таблице показано, как можно применить параметры фильтрации и упорядочивания к разным сущностям.
 
-|Имя сущности|Имя свойства|Фильтр|Заказ|
+|Имя сущности|Имя свойства|Фильтр|Порядок|
 |---|---|---|---|
-|[Ресурсы](https://docs.microsoft.com/rest/api/media/assets/)|name|`eq`, `gt`, `lt`, `ge`, `le`|`asc` и `desc`|
+|[Ресурсы](https://docs.microsoft.com/rest/api/media/assets/)|Имя|`eq`, `gt`, `lt`, `ge`, `le`|`asc` и `desc`|
 ||properties.alternateId |`eq`||
 ||properties.assetId |`eq`||
 ||properties.created| `eq`, `gt`, `lt`| `asc` и `desc`|
-|[Политики ключей содержимого](https://docs.microsoft.com/rest/api/media/contentkeypolicies)|name|`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` и `desc`|
+|[Политики ключей содержимого](https://docs.microsoft.com/rest/api/media/contentkeypolicies)|Имя|`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` и `desc`|
 ||properties.created    |`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` и `desc`|
 ||properties.description    |`eq`, `ne`, `ge`, `le`, `gt`, `lt`||
 ||properties.lastModified|`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` и `desc`|
 ||properties.policyId|`eq`, `ne`||
-|[Задания](https://docs.microsoft.com/rest/api/media/jobs)| name  | `eq`            | `asc` и `desc`|
+|[Задания](https://docs.microsoft.com/rest/api/media/jobs)| Имя  | `eq`            | `asc` и `desc`|
 ||properties.state        | `eq`, `ne`        |                         |
 ||properties.created      | `gt`, `ge`, `lt`, `le`| `asc` и `desc`|
 ||properties.lastModified | `gt`, `ge`, `lt`, `le` | `asc` и `desc`| 
-|[Указатели потоковой передачи](https://docs.microsoft.com/rest/api/media/streaminglocators)|name|`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` и `desc`|
+|[Указатели потоковой передачи](https://docs.microsoft.com/rest/api/media/streaminglocators)|Имя|`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` и `desc`|
 ||properties.created    |`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` и `desc`|
 ||properties.endTime    |`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` и `desc`|
-|[Политики потоковой передачи](https://docs.microsoft.com/rest/api/media/streamingpolicies)|name|`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` и `desc`|
+|[Политики потоковой передачи](https://docs.microsoft.com/rest/api/media/streamingpolicies)|Имя|`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` и `desc`|
 ||properties.created    |`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` и `desc`|
-|[Преобразования](https://docs.microsoft.com/rest/api/media/transforms)| name | `eq`            | `asc` и `desc`|
+|[Преобразования](https://docs.microsoft.com/rest/api/media/transforms)| Имя | `eq`            | `asc` и `desc`|
 || properties.created      | `gt`, `ge`, `lt`, `le`| `asc` и `desc`|
 || properties.lastModified | `gt`, `ge`, `lt`, `le`| `asc` и `desc`|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Список ресурсов](https://docs.microsoft.com/rest/api/media/assets/list)
 * [Список политик ключей содержимого](https://docs.microsoft.com/rest/api/media/contentkeypolicies/list)

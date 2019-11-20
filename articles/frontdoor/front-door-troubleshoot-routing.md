@@ -1,5 +1,5 @@
 ---
-title: Устранение неполадок в конфигурации Azure Front Door Service | Документация Майкрософт
+title: Устранение проблем с конфигурацией службы "Передняя дверь" Azure
 description: В этом руководстве вы узнаете, как самостоятельно устранить некоторые из распространенных проблем, с которыми вы можете столкнуться при использовании Front Door.
 services: frontdoor
 documentationcenter: ''
@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/22/2018
 ms.author: sharadag
-ms.openlocfilehash: 420d7afe0d825da9149f2cb2ae1540a2805b357c
-ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
+ms.openlocfilehash: c0d6303620b92368e422b54beab4f9c346d022a5
+ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68335879"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74184561"
 ---
 # <a name="troubleshooting-common-routing-issues"></a>Устранение распространенных проблем маршрутизации
 В этой статье описывается, как устранять некоторые распространенные проблемы маршрутизации, которые могут возникнуть при использовании конфигурации Azure Front Door Service. 

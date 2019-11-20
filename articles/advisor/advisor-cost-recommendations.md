@@ -8,12 +8,12 @@ ms.service: advisor
 ms.topic: article
 ms.date: 01/29/2019
 ms.author: sagupt
-ms.openlocfilehash: cae16430ce933b8d071696377b22f10c15b5eae5
-ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
+ms.openlocfilehash: 9f074c8077f41392fa9d45022a6a7a537964afa9
+ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74145395"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74180587"
 ---
 # <a name="reduce-service-costs-using-azure-advisor"></a>Снижение затрат на обслуживание с помощью средства "Помощник по Azure"
 
@@ -63,7 +63,7 @@ Advisor определяет общедоступные IP-адреса, кот�
 Чтобы узнать больше о рекомендациях Помощника, ознакомьтесь с приведенными ниже материалами.
 * [Общие сведения об Azure Advisor](advisor-overview.md)
 * [Начало работы](advisor-get-started.md)
-* [Рекомендации Azure Advisor по производительности](advisor-cost-recommendations.md)
-* [Рекомендации Azure Advisor по высокой доступности](advisor-cost-recommendations.md)
-* [Рекомендации Azure Advisor по безопасности](advisor-cost-recommendations.md)
+* [Рекомендации Azure Advisor по производительности](advisor-performance-recommendations.md)
+* [Рекомендации Azure Advisor по высокой доступности](advisor-high-availability-recommendations.md)
+* [Рекомендации Azure Advisor по безопасности](advisor-security-recommendations.md)
 * [Рекомендации для оперативной работы Advisor](advisor-operational-excellence-recommendations.md)

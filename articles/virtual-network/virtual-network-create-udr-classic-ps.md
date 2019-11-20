@@ -1,5 +1,5 @@
 ---
-title: Контроль маршрутизации в виртуальной сети Azure с помощью PowerShell (классическая модель) | Документация Майкрософт
+title: Управление маршрутизацией в Azure VNet-PowerShell-Classic
 description: Сведения об управлении маршрутизацией в виртуальных сетях с помощью PowerShell | классическая модель
 services: virtual-network
 documentationcenter: na
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/02/2016
 ms.author: genli
-ms.openlocfilehash: f2f2c17740bd94629209c2bffb82689ecc931fc8
-ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
+ms.openlocfilehash: 4170418b4f53277a8f4306fe2835286c8ac99dee
+ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71058770"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74186353"
 ---
 # <a name="control-routing-and-use-virtual-appliances-classic-using-powershell"></a>Управление маршрутизацией и использование виртуальных модулей (классический режим) с помощью PowerShell
 
@@ -33,7 +33,7 @@ ms.locfileid: "71058770"
 [!INCLUDE [virtual-network-create-udr-intro-include.md](../../includes/virtual-network-create-udr-intro-include.md)]
 
 > [!IMPORTANT]
-> Прежде чем приступить к работе с ресурсами Azure, обратите внимание на то, что в сейчас в Azure доступно две модели развертывания: развертывание с помощью Azure Resource Manager и классическая модель развертывания. Обязательно изучите [модели и инструменты развертывания](../azure-resource-manager/resource-manager-deployment-model.md) , прежде чем приступить к работе с какими бы то ни было ресурсами Azure. Для просмотра документации о различных средствах выберите соответствующий параметр в верхней части данной статьи. В этой статье рассматривается классическая модель развертывания.
+> Прежде чем приступить к работе с ресурсами Azure, обратите внимание на то, что в настоящее время в Azure существует две модели развертывания: классическая модель развертывания и модель развертывания с помощью Azure Resource Manager. Обязательно изучите [модели и инструменты развертывания](../azure-resource-manager/resource-manager-deployment-model.md) , прежде чем приступить к работе с какими бы то ни было ресурсами Azure. Для просмотра документации о различных средствах выберите соответствующий параметр в верхней части данной статьи. В этой статье рассматривается классическая модель развертывания.
 > 
 
 [!INCLUDE [virtual-network-create-udr-scenario-include.md](../../includes/virtual-network-create-udr-scenario-include.md)]

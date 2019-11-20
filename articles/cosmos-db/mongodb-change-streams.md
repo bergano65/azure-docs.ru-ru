@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-mongo
 ms.topic: conceptual
 ms.date: 11/16/2019
 ms.author: srchi
-ms.openlocfilehash: b32eb7a7236871a06e1fbed5b9f1aac91675c6f3
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
-ms.translationtype: HT
+ms.openlocfilehash: fbfce1c107fcf4b6f7d0b5f590a8ddfa64e69190
+ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/19/2019
-ms.locfileid: "74174737"
+ms.locfileid: "74184735"
 ---
 # <a name="change-streams-in-azure-cosmos-dbs-api-for-mongodb"></a>Изменение потоков в API-интерфейсе Azure Cosmos DB для MongoDB
 
@@ -35,7 +35,7 @@ while (!cursor.isExhausted()) {
 }
 ```
 
-В следующем примере показано, как получить изменения элементов в одном сегменте, например сегмент "a", имеющий элементы со значением "1".
+В следующем примере показано, как получить изменения элементов одного сегмента. Этот пример возвращает изменения элементов, у которых ключ сегмента равен "a", а значение ключа сегмента равно "1".
 
 ```javascript
 var cursor = db.coll.watch(

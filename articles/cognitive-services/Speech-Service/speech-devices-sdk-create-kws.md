@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 07/05/2019
+ms.date: 11/18/2019
 ms.author: erhopf
-ms.openlocfilehash: bf9afb66163532b4095e0d30b1167010320abbf8
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 9a5b5de71ee290b39603968cf4309171689e22e4
+ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73490960"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74184829"
 ---
 # <a name="create-a-custom-keyword-by-using-the-speech-service"></a>Создание пользовательского ключевого слова с помощью службы распознавания речи
 
@@ -46,7 +46,7 @@ ms.locfileid: "73490960"
 
 ## <a name="create-your-keyword"></a>Создание ключевого слова
 
-Прежде чем использовать настраиваемое ключевое слово для устройства, необходимо создать ключевое слово с помощью службы создания пользовательских ключевых слов Майкрософт. После предоставления ключевого слова служба создает файл, который развертывается в комплекте разработки, чтобы включить ключевое слово на устройстве.
+Прежде чем использовать пользовательское ключевое слово, необходимо создать ключевое слово, используя страницу [настраиваемого ключевого слова](https://aka.ms/sdsdk-wakewordportal) в [Speech Studio](https://aka.ms/sdsdk-speechportal). После предоставления ключевого слова он создает файл, который развертывается на устройстве.
 
 1. Перейдите в [Speech Studio](https://aka.ms/sdsdk-speechportal) и **Войдите в систему** или, если у вас еще нет подписки на речь, выберите [**создать подписку**](https://go.microsoft.com/fwlink/?linkid=2086754).
 
@@ -62,8 +62,8 @@ ms.locfileid: "73490960"
 
     ![Скачать ключевое слово](media/speech-devices-sdk/custom-kws-portal-download-keyword.png)
 
-1. Сохраните ZIP-файл на компьютер. Этот файл потребуется для развертывания пользовательского ключевого слова в пакете средств разработки.
+1. Сохраните ZIP-файл на компьютер. Этот файл потребуется для развертывания настраиваемого ключевого слова на устройстве.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Протестируйте настраиваемое ключевое слово с помощью [пакета SDK для речевых устройств](https://aka.ms/sdsdk-quickstart).

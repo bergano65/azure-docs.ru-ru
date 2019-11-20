@@ -3,12 +3,12 @@ title: Поддержка тегов для ресурсов
 description: В этой статье описываются типы ресурсов Azure, поддерживающие теги, а также приводятся сведения о всех службах Azure.
 ms.topic: conceptual
 ms.date: 11/18/2019
-ms.openlocfilehash: aa8736310a5c18a1f94d3920a4f88632212c7af4
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
-ms.translationtype: MT
+ms.openlocfilehash: 2799784ad449304a7790ad5f83d8ed1c94dd3547
+ms.sourcegitcommit: 8e31a82c6da2ee8dafa58ea58ca4a7dd3ceb6132
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/19/2019
-ms.locfileid: "74173553"
+ms.locfileid: "74194985"
 ---
 # <a name="tag-support-for-azure-resources"></a>Поддержка тегов для ресурсов Azure
 В этой статье приводятся сведения о поддержке типом ресурса функции [тегов](resource-group-using-tags.md). Столбец с подписью **поддерживает теги** . указывает, имеет ли тип ресурса свойство для тега. Столбец с меткой **тег в отчете о затратах** указывает, передает ли этот тип ресурса тег в отчет о затратах.
@@ -1818,7 +1818,7 @@ ms.locfileid: "74173553"
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
 > | managedInstances | Yes | Yes |
-> | managedInstances/databases | Да (см. [Примечание ниже](#sqlnote)) | Yes |
+> | managedInstances/databases | Нет | Нет |
 > | managedInstances/databases/backupShortTermRetentionPolicies | Нет | Нет |
 > | managedInstances/databases/schemas/tables/columns/sensitivityLabels | Нет | Нет |
 > | managedInstances/databases/vulnerabilityAssessments | Нет | Нет |

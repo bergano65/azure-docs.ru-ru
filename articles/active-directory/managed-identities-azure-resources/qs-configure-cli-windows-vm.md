@@ -1,5 +1,5 @@
 ---
-title: Как настроить управляемые удостоверения, назначаемые системой и назначаемые пользователем, на виртуальной машине Azure с помощью Azure CLI
+title: Настройка управляемых удостоверений на виртуальной машине Azure с помощью Azure CLI Azure AD
 description: Пошаговые инструкции по настройке управляемых удостоверений, назначаемых системой и назначаемых пользователем, на виртуальной машине Azure с помощью Azure CLI.
 services: active-directory
 documentationcenter: ''
@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 09/26/2019
 ms.author: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 272315346091bacb15aef02184e1cc72d64ed49d
-ms.sourcegitcommit: 0486aba120c284157dfebbdaf6e23e038c8a5a15
+ms.openlocfilehash: ca02505ba9b7d93cac4216916909a8c6df7fdd05
+ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71309801"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74184050"
 ---
 # <a name="configure-managed-identities-for-azure-resources-on-an-azure-vm-using-azure-cli"></a>Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине Azure с помощью Azure CLI
 
@@ -33,7 +33,7 @@ ms.locfileid: "71309801"
 - Включение и отключение управляемого удостоверения, назначаемого системой, на виртуальной машине Azure
 - Добавление и удаление управляемого удостоверения, назначаемого пользователем, в виртуальной машине Azure
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 - Если вы не работали с управляемыми удостоверениями для ресурсов Azure, изучите [общие сведения](overview.md). **Обратите внимание на [различие между управляемыми удостоверениями, назначаемыми системой и назначаемыми пользователями](overview.md#how-does-it-work)** .
 - Если у вас нет учетной записи Azure, [зарегистрируйтесь для получения бесплатной пробной учетной записи](https://azure.microsoft.com/free/), прежде чем продолжать.
@@ -123,7 +123,7 @@ az vm update -n myVM -g myResourceGroup --set identity.type="none"
    az group create --name <RESOURCE GROUP> --location <LOCATION>
    ```
 
-2. Создайте управляемое удостоверение, назначаемое пользователем, с помощью команды [az identity create](/cli/azure/identity#az-identity-create).  Параметр `-g` указывает группу ресурсов, в которой создается управляемое удостоверение, назначаемое пользователем, а параметр `-n` — его имя.    
+2. Создайте назначаемое пользователем управляемое удостоверение с помощью команды [az identity create](/cli/azure/identity#az-identity-create).  Параметр `-g` указывает группу ресурсов, в которой создается назначаемое пользователем управляемое удостоверение, а параметр `-n` — его имя.    
     
    [!INCLUDE [ua-character-limit](~/includes/managed-identity-ua-character-limits.md)]
 
@@ -213,7 +213,7 @@ az vm update -n myVM -g myResourceGroup --set identity.type="none" identity.user
 az vm update -n myVM -g myResourceGroup --set identity.type='SystemAssigned' identity.userAssignedIdentities=null 
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 - [Обзор управляемых удостоверений для ресурсов Azure](overview.md).
 - Ниже приведены комплексные краткие руководства по созданию виртуальных машин Azure: 
   - [Создание виртуальной машины Windows с помощью Azure CLI](../../virtual-machines/windows/quick-create-cli.md)  

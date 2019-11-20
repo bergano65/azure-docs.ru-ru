@@ -6,16 +6,16 @@ author: rothja
 manager: jeffreyg
 tags: billing
 ms.assetid: 60d848f9-ff26-496e-a5ec-ccf92ad7d125
-ms.service: billing
+ms.service: azure-policy
 ms.topic: article
 ms.date: 05/30/2019
 ms.author: byvinyal
-ms.openlocfilehash: f9fe540611b1b773867e1f92439e13df91ad4bd3
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
-ms.translationtype: MT
+ms.openlocfilehash: b6ce20196b6ffdcd6699611998260dc981cc4f44
+ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73818353"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74185043"
 ---
 # <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Подписка Azure, границы, квоты и ограничения службы
 В этом документе указаны некоторые из наиболее распространенных ограничений Microsoft Azure, которые иногда называются квотами. Этот документ на текущий момент охватывает не все службы Azure. Со временем список будет развернут и обновлен, чтобы охватить больше служб.
@@ -47,7 +47,7 @@ ms.locfileid: "73818353"
 * [Шлюз приложений](#application-gateway-limits)
 * [Служба автоматизации](#automation-limits)
 * [Кэш Azure для Redis](#azure-cache-for-redis-limits)
-* [Oблачныe службы Azure2}
+* [Облачные службы Azure](#azure-cloud-services-limits)
 * [Когнитивный поиск Azure](#azure-cognitive-search-limits)
 * [Azure Cognitive Services](#azure-cognitive-services-limits)
 * [Azure Cosmos DB](#azure-cosmos-db-limits)
@@ -57,8 +57,8 @@ ms.locfileid: "73818353"
 * [Брандмауэр Azure](#azure-firewall-limits)
 * [Функции Azure](#functions-limits)
 * [Служба Azure Kubernetes (AKS)](#azure-kubernetes-service-limits)
-* [Машинное обучение Azure](#azure-machine-learning-limits)
-* [Azure Maps](#azure-maps-limits)
+* [машинное обучение Azure](#azure-machine-learning-limits)
+* [служба "Карты Azure"](#azure-maps-limits);
 * [Azure Monitor](#azure-monitor-limits)
 * [Политика Azure](#azure-policy-limits)
 * [Служба Azure SignalR](#azure-signalr-service-limits)
@@ -92,7 +92,7 @@ ms.locfileid: "73818353"
   * [Балансировщик нагрузки](#load-balancer)
   * [Наблюдатель за сетями](#network-watcher-limits)
   * [Общедоступный IP-адрес](#publicip-address)
-  * [Частная ссылка](#private-link-limits)
+  * [Приватный канал](#private-link-limits)
   * [Диспетчер трафика](#traffic-manager-limits)
   * [Виртуальная сеть](#networking-limits)
   * [Виртуальная глобальная сеть](#virtual-wan-limits)
@@ -106,7 +106,7 @@ ms.locfileid: "73818353"
 * [Хранилище данных SQL](#sql-data-warehouse-limits)
 * [Хранилище](#storage-limits)
 * [StorSimple System](#storsimple-system-limits)
-* [Stream Analytics](#stream-analytics-limits)
+* [Анализ потока](#stream-analytics-limits)
 * [Подписка](#subscription-limits)
 * [Виртуальные машины](#virtual-machines-limits)
 * [Масштабируемые наборы виртуальных машин](#virtual-machine-scale-sets-limits)
@@ -402,7 +402,7 @@ ms.locfileid: "73818353"
 ### <a name="sql-data-warehouse-limits"></a>Ограничения хранилища данных SQL
 Ограничения для хранилища данных SQL см. в статье [ограничения ресурсов хранилища данных](sql-data-warehouse/sql-data-warehouse-service-capacity-limits.md)SQL.
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также
 - [Общие сведения об ограничениях и росте Azure](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/)
 - [Размеры виртуальных машин и облачных служб для Azure](virtual-machines/linux/sizes.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 - [Размеры для облачных служб Azure](cloud-services/cloud-services-sizes-specs.md)

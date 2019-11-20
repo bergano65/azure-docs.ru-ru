@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 07/23/2019
-ms.openlocfilehash: 61b929756cbc4cf13103faa67a667128eaffeec8
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
-ms.translationtype: MT
+ms.openlocfilehash: 8d89031a3b27742149d450ab79c9febf0aaef1ff
+ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73498165"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74185623"
 ---
 # <a name="plan-a-virtual-network-for-azure-hdinsight"></a>Планирование виртуальной сети для Azure HDInsight
 
@@ -221,7 +221,7 @@ Azure предоставляет разрешение имен для служб
 
 1. Определите регион Azure, который планируется использовать для HDInsight.
 
-2. Определите IP-адреса, необходимые для HDInsight. Дополнительные сведения см. в статье [HDInsight management IP addresses](hdinsight-management-ip-addresses.md) (IP-адреса управления HDInsight).
+2. Найдите теги службы, необходимые HDInsight для вашего региона. Дополнительные сведения см. в статье [теги службы группы безопасности сети (NSG) для Azure HDInsight](hdinsight-service-tags.md).
 
 3. Создайте или измените группы безопасности сети для подсети, в которую планируется установить HDInsight.
 
@@ -249,11 +249,11 @@ Azure предоставляет разрешение имен для служб
 
 Дополнительные сведения о правилах межсетевого экрана для виртуальных модулей см. в документе [Сценарий использования виртуальных устройств](../virtual-network/virtual-network-scenario-udr-gw-nva.md).
 
-## <a name="load-balancing"></a>Балансировка нагрузки
+## <a name="load-balancing"></a>Балансировка нагрузки.
 
 При создании кластера HDInsight также создается балансировщик нагрузки. Тип этой подсистемы балансировки нагрузки — это [уровень SKU "базовый](../load-balancer/load-balancer-overview.md#skus) ", имеющий определенные ограничения. Одно из этих ограничений заключается в том, что если у вас есть две виртуальные сети в разных регионах, вы не сможете подключиться к базовым подсистемам балансировки нагрузки. Дополнительные сведения см. [в статье вопросы и ответы по виртуальным сетям: ограничения для пиринга глобальной виртуальной](../virtual-network/virtual-networks-faq.md#what-are-the-constraints-related-to-global-vnet-peering-and-load-balancers)сети.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * Примеры кода и примеры создания виртуальных сетей Azure см. в статье [Создание виртуальных сетей для кластеров Azure HDInsight](hdinsight-create-virtual-network.md).
 * Полный пример настройки HDInsight для подключения к локальной сети см. в статье [Подключение HDInsight к локальной сети](./connect-on-premises-network.md).

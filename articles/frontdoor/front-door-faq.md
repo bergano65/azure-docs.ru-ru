@@ -1,5 +1,5 @@
 ---
-title: Служба "Передняя дверца Azure" — часто задаваемые вопросы о передней дверце | Документация Майкрософт
+title: Служба "Передняя дверца Azure" — часто задаваемые вопросы
 description: На этой странице приведены ответы на часто задаваемые вопросы о службе "Передняя дверца Azure".
 services: frontdoor
 documentationcenter: ''
@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/08/2019
 ms.author: sharadag
-ms.openlocfilehash: 4001b3ed8d7a92d8a751486ab4fd3a097d032373
-ms.sourcegitcommit: ec2b75b1fc667c4e893686dbd8e119e7c757333a
+ms.openlocfilehash: c8f95a1de85fd2eb00b0525fca8e62ade87dd57f
+ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72809735"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74184645"
 ---
 # <a name="frequently-asked-questions-for-azure-front-door-service"></a>Часто задаваемые вопросы о службе "Передняя дверь" Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "72809735"
 2. [Служба передней дверцы Azure UserVoice](https://feedback.azure.com/forums/217313-networking?category_id=345025).
 3. **Служба поддержки Майкрософт:** Чтобы создать новый запрос на поддержку, в портал Azure на вкладке **Справка** нажмите кнопку **Справка и поддержка** , а затем выберите **новый запрос в службу поддержки**.
 
-## <a name="general"></a>Общие сведения
+## <a name="general"></a>Общие
 
 ### <a name="what-is-azure-front-door-service"></a>Что такое Azure Front Door Service?
 
@@ -124,7 +124,7 @@ IP-адрес недоступности переднего плана для п
 
 Примечание. для глобального развертывания обновлений SSL-сертификатов требуется около 30 минут.
 
-## <a name="configuration"></a>Настройка
+## <a name="configuration"></a>Параметр Configuration
 
 ### <a name="can-azure-front-door-load-balance-or-route-traffic-within-a-virtual-network"></a>Может ли балансировка нагрузки для передней дверцы Azure или маршрутизация трафика в виртуальной сети?
 
@@ -134,7 +134,7 @@ IP-адрес недоступности переднего плана для п
 
 Ознакомьтесь с задокументированными [временами ожидания и ограничениями для службы "Передняя дверца Azure](https://docs.microsoft.com/azure/azure-subscription-service-limits#azure-front-door-service-limits)".
 
-## <a name="performance"></a>Ориентированное на производительность
+## <a name="performance"></a>Производительность
 
 ### <a name="how-does-azure-front-door-service-support-high-availability-and-scalability"></a>Как служба "Передняя дверца Azure" поддерживает высокий уровень доступности и масштабируемость?
 
@@ -211,7 +211,7 @@ IP-адрес недоступности переднего плана для п
 
 Да, служба "Передняя дверца Azure" не поддерживает оповещения. Оповещения настраиваются на основе метрик. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Дополнительные сведения о [создании Front Door](quickstart-create-front-door.md).
 - Дополнительные сведения о том, [как работает Front Door](front-door-routing-architecture.md).

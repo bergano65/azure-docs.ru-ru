@@ -5,13 +5,13 @@ author: kromerm
 ms.author: makromer
 ms.service: data-factory
 ms.topic: conceptual
-ms.date: 09/30/2019
-ms.openlocfilehash: 872c7ce6a0c39ab19165a5f16ea3e4f6ef8bd6a5
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.date: 11/17/2019
+ms.openlocfilehash: 3664a7c311e15ce3aa61fc71f98a46e3f2618143
+ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72388051"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74184671"
 ---
 # <a name="mapping-data-flow-expression-builder"></a>Построитель выражений потока данных сопоставления
 
@@ -78,6 +78,40 @@ regex_replace('100 and 200', '(\\d+)', 'digits')
 При наличии имен столбцов, содержащих специальные символы или пробелы, заключите имя в фигурные скобки.
 * ```{[dbo].this_is my complex name$$$}```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="keyboard-shortcuts"></a>Сочетания клавиш
+
+* ```Ctrl-K Ctrl-C```: все строки комментариев
+* ```Ctrl-K Ctrl-U```: раскомментировать
+* ```F1```: предоставление команд справки по редактору
+* ```Alt-Down Arrow```: перемещение текущей строки вниз
+* ```Alt-Up Arrow```: переместить текущую строку вверх
+* ```Cntrl-Space```: отображение контекстной справки
+
+## <a name="manual-comments"></a>Комментарии вручную
+
+* ```/* This is my comment */```
+
+* ```/* This is a```
+*   ```multi-line comment */```
+   
+* ```// This is a single line comment```
+
+Если вы поместили комментарий в верхней части выражения, он появится в текстовом поле преобразование, чтобы документировать выражения преобразования:
+
+![Комментарии](media/data-flow/comments2.png "Комментарии")
+
+## <a name="convert-to-dates-or-timestamps"></a>Преобразовать в даты или метки времени
+
+```toString(toTimestamp('12/31/2016T00:12:00', 'MM/dd/yyyy\'T\'HH:mm:ss'), 'MM/dd /yyyy\'T\'HH:mm:ss')```
+
+Обратите внимание, что для включения строковых литералов в выходные данные отметок времени необходимо заключить преобразование внутрь метода toString ().
+
+## <a name="handling-column-names-with-special-characters"></a>Обработка имен столбцов с помощью специальных символов
+
+При наличии имен столбцов, содержащих специальные символы или пробелы, заключите имя в фигурные скобки.
+
+```{[dbo].this_is my complex name$$$}```
+
+## <a name="next-steps"></a>Дополнительная информация
 
 [Начало создания выражений преобразования данных](data-flow-expression-functions.md)

@@ -1,7 +1,7 @@
 ---
-title: 'Конструктор: классификация, прогноз дохода'
+title: 'Конструктор: пример классификации, прогнозирования дохода'
 titleSuffix: Azure Machine Learning
-description: Узнайте, как создать классификатор машинного обучения, не написав ни одной строки кода с помощью конструктора (Предварительная версия).
+description: Ниже приведен пример создания классификатора без кода для прогнозирования дохода с помощью Машинное обучение Azure Designer.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,14 +10,17 @@ author: xiaoharper
 ms.author: zhanxia
 ms.reviewer: peterlu
 ms.date: 11/04/2019
-ms.openlocfilehash: 383cbc11955598505730a4613c50536afac75f95
-ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
-ms.translationtype: MT
+ms.openlocfilehash: 527db89be85cc5b095d33ba89c776a077119f08a
+ms.sourcegitcommit: 8e31a82c6da2ee8dafa58ea58ca4a7dd3ceb6132
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73647966"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74196049"
 ---
-# <a name="sample-3---classification-with-feature-selection-income-prediction"></a>Пример 3. Классификация с выбором компонентов: прогноз дохода
+# <a name="build-a-classifier--use-feature-selection-to-predict-income-with-azure-machine-learning-designer"></a>Создание классификатора & использование выбора компонентов для прогнозирования дохода с помощью конструктора Машинное обучение Azure
+
+**Конструктор (Предварительная версия) — пример 3**
+
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-enterprise-sku.md)]
 
 Узнайте, как создать классификатор машинного обучения, не написав ни одной строки кода с помощью конструктора (Предварительная версия). В этом примере описывается обучение **многоклассового дерева принятия решений** для прогнозирования дохода от взрослых переписей (> = 50 000 или < = 50 000).
@@ -28,7 +31,7 @@ ms.locfileid: "73647966"
 
 ![Граф конвейера](media/how-to-ui-sample-classification-predict-income/overall-graph.png)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 [!INCLUDE [aml-ui-prereq](../../../includes/aml-ui-prereq.md)]
 
@@ -70,7 +73,7 @@ ms.locfileid: "73647966"
 
 [!INCLUDE [aml-ui-cleanup](../../../includes/aml-ui-cleanup.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Изучите другие примеры, доступные для конструктора:
 

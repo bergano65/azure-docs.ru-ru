@@ -10,12 +10,12 @@ ms.subservice: video-indexer
 ms.topic: article
 ms.date: 11/13/2019
 ms.author: juliako
-ms.openlocfilehash: 4766d48a748fedd82532f2ac49223ab0460b9ef7
-ms.sourcegitcommit: fa41a56357de487b10e54711fbbdbd4a373fa67c
-ms.translationtype: HT
+ms.openlocfilehash: 89d0254fc758834c437f347e6ecb7bcafc1fe467
+ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74153558"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74185995"
 ---
 # <a name="live-stream-analysis-with-video-indexer"></a>Интерактивный анализ потоков с помощью индексатора видео
 
@@ -27,7 +27,7 @@ ms.locfileid: "74153558"
 
 *Рис. 1. пример проигрывателя, отображающий метаданные индексатора видео в потоке в реальном времени*
 
-[Решение Streaming для анализа потоков](https://github.com/Azure-Samples/media-services-dotnet-functions-integration/blob/master/media-functions-for-logic-app/LiveStreamAnalysis.md) использует функции Azure и две Logic Apps для обработки динамической программы из динамического канала в службах мультимедиа Azure с помощью индексатора видео и отображает результат с проигрыватель мультимедиа Azure отображения потока, полученного практически в реальном времени.
+[Решение Streaming для анализа потоков](https://aka.ms/livestreamanalysis) использует функции Azure и две Logic Apps для обработки динамической программы из динамического канала в службах мультимедиа Azure с помощью индексатора видео и отображает результат с проигрыватель мультимедиа Azure отображения потока, полученного практически в реальном времени.
 
 На высоком уровне он состоит из двух основных этапов. Первый шаг выполняется каждые 60 секунд и принимает подклип последних 60 секунд, который воспроизводился, создает ресурс-контейнер и индексирует его через индексатор видео. Затем второй шаг вызывается после завершения индексирования. Захваченные аналитические данные обрабатываются, отправляются в Azure Cosmos DB, а индексируемый индекс удаляется.
 

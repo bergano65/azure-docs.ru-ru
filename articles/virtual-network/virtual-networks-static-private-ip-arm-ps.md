@@ -1,6 +1,6 @@
 ---
-title: Создание виртуальной Машины со статическим частным IP-адрес адресом — Azure PowerShell | Документация Майкрософт
-description: Узнайте, как создать виртуальную машину с помощью частного IP-адреса, с помощью PowerShell.
+title: Создание виртуальной машины со статическим частным IP-адресом — Azure PowerShell
+description: Узнайте, как создать виртуальную машину с частным IP-адресом с помощью PowerShell.
 services: virtual-network
 documentationcenter: na
 author: KumudD
@@ -16,18 +16,18 @@ ms.workload: infrastructure-services
 ms.date: 02/07/2019
 ms.author: kumud
 ms.custom: ''
-ms.openlocfilehash: 9115386b0543e1ac840aec29fc7f57e7c98c03bb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1745ca176fac18b4903686cb556670531ee40a1a
+ms.sourcegitcommit: 8e31a82c6da2ee8dafa58ea58ca4a7dd3ceb6132
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64685333"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74196593"
 ---
-# <a name="create-a-virtual-machine-with-a-static-private-ip-address-using-powershell"></a>Создание виртуальной машины статический частный IP-адрес, с помощью PowerShell
+# <a name="create-a-virtual-machine-with-a-static-private-ip-address-using-powershell"></a>Создание виртуальной машины со статическим частным IP-адресом с помощью PowerShell
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Статический частный IP-адрес можно создать виртуальную машину (ВМ). Назначьте статический частный IP-адрес, а не динамический адрес, если вы хотите выбрать, какой адрес из подсети, назначаемый виртуальной Машине. Дополнительные сведения о [статические частные IP-адреса](virtual-network-ip-addresses-overview-arm.md#allocation-method). Чтобы изменить частный IP-адрес, назначенный существующей виртуальной Машины с динамического на статический, или для работы с общедоступных IP-адресов, см. в разделе [Добавление, изменение и удаление IP-адреса](virtual-network-network-interface-addresses.md).
+Вы можете создать виртуальную машину со статическим частным IP-адресом. Назначьте статический частный IP-адрес, а не динамический адрес, если вы хотите выбрать адрес из подсети, назначенный виртуальной машине. Дополнительные сведения о [статических частных IP-адресах](virtual-network-ip-addresses-overview-arm.md#allocation-method). Чтобы изменить частный IP-адрес, назначенный существующей виртуальной машине из динамического в статический, или для работы с общедоступными IP-адресами, см. раздел [Добавление, изменение или удаление IP-адресов](virtual-network-network-interface-addresses.md).
 
 ## <a name="create-a-virtual-machine"></a>Создание виртуальной машины
 
@@ -42,7 +42,7 @@ ms.locfileid: "64685333"
    New-AzResourceGroup -Name $RgName -Location $Location
    ```
 
-3. Создайте конфигурацию подсети и виртуальной сети с помощью [New AzVirtualNetworkSubnetConfig](/powershell/module/az.network/new-azvirtualnetworksubnetconfig) и [New AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork) команды:
+3. Создайте конфигурацию подсети и виртуальную сеть с помощью команд [New-азвиртуалнетворксубнетконфиг](/powershell/module/az.network/new-azvirtualnetworksubnetconfig) и [New-азвиртуалнетворк](/powershell/module/az.network/new-azvirtualnetwork) :
 
    ```azurepowershell-interactive
    # Create a subnet configuration
@@ -62,7 +62,7 @@ ms.locfileid: "64685333"
    $Subnet = Get-AzVirtualNetworkSubnetConfig -Name $SubnetConfig.Name -VirtualNetwork $VNet
    ```
 
-4. Создайте сетевой интерфейс в виртуальной сети и назначить частный IP-адрес из подсети сетевой интерфейс с [New AzNetworkInterfaceIpConfig](/powershell/module/Az.Network/New-AzNetworkInterfaceIpConfig) и [New AzNetworkInterface](/powershell/module/az.network/new-aznetworkinterface) команды:
+4. Создайте сетевой интерфейс в виртуальной сети и назначьте ему частный IP-адрес из подсети к сетевому интерфейсу с помощью команд [New-азнетворкинтерфацеипконфиг](/powershell/module/Az.Network/New-AzNetworkInterfaceIpConfig) и [New-азнетворкинтерфаце](/powershell/module/az.network/new-aznetworkinterface) .
 
    ```azurepowershell-interactive
    $IpConfigName1 = "IPConfig-1"
@@ -79,7 +79,7 @@ ms.locfileid: "64685333"
      -IpConfiguration $IpConfig1
    ```
 
-5. Создайте конфигурацию виртуальной Машины с [New AzVMConfig](/powershell/module/Az.Compute/New-AzVMConfig), а затем создайте виртуальную Машину с [командлета New-AzVM](/powershell/module/az.Compute/New-azVM). При запросе укажите имя пользователя и пароль для использования в качестве подписи в учетных данных для виртуальной Машины:
+5. Создайте конфигурацию виртуальной машины с помощью [New-азвмконфиг](/powershell/module/Az.Compute/New-AzVMConfig), а затем создайте виртуальную машину с помощью [New-AzVM](/powershell/module/az.Compute/New-azVM). При появлении запроса введите имя пользователя и пароль, которые будут использоваться в качестве учетных данных для входа для виртуальной машины.
 
    ```azurepowershell-interactive
    $VirtualMachine = New-AzVMConfig -VMName MyVM -VMSize "Standard_DS3"
@@ -90,13 +90,13 @@ ms.locfileid: "64685333"
    ```
 
 > [!WARNING]
-> Если вы можете добавить параметры частного IP-адресов в операционную систему, мы рекомендуем не делать это до и после прочтения [добавить частный IP-адрес для операционной системы](virtual-network-network-interface-addresses.md#private).
+> Несмотря на то, что в операционную систему можно добавить параметры частного IP-адреса, мы рекомендуем не делать это до тех пор, пока не прочтите [Добавление частного IP-адреса в операционную систему](virtual-network-network-interface-addresses.md#private).
 > 
 > 
 > <a name = "change-the-allocation-method-for-a-private-ip-address-assigned-to-a-network-interface"></a>
 > 
 > [!IMPORTANT]
-> Для доступа к виртуальной Машине из Интернета, необходимо назначить общедоступный IP-адрес к виртуальной Машине. Можно также изменить динамический частный назначение IP-адресов для назначения статического. Дополнительные сведения см. в разделе [Добавление или изменение IP-адреса](virtual-network-network-interface-addresses.md). Кроме того рекомендуется ограничить сетевой трафик к виртуальной Машине, связав группу безопасности сети сетевому интерфейсу или подсети, к которой вы создали в сетевом интерфейсе. Дополнительные сведения см. в разделе [Управление группами безопасности сети](manage-network-security-group.md).
+> Чтобы получить доступ к виртуальной машине из Интернета, необходимо назначить виртуальной машине общедоступный IP-адрес. Можно также изменить назначение динамического частного IP-адреса на статическое назначение. Дополнительные сведения см. в разделе [Добавление или изменение IP-адресов](virtual-network-network-interface-addresses.md). Кроме того, рекомендуется ограничить сетевой трафик к виртуальной машине, связав сетевую группу безопасности с сетевым интерфейсом, подсетью, в которой был создан сетевой интерфейс, или и то, и другое. Дополнительные сведения см. в разделе [Управление группами безопасности сети](manage-network-security-group.md).
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -106,7 +106,7 @@ ms.locfileid: "64685333"
 Remove-AzResourceGroup -Name myResourceGroup -Force
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-- Дополнительные сведения о [частные IP-адреса](virtual-network-ip-addresses-overview-arm.md#private-ip-addresses) и назначение [статический частный IP-адрес](virtual-network-network-interface-addresses.md#add-ip-addresses) к виртуальной машине Azure.
-- Дополнительные сведения о создании [Linux](../virtual-machines/windows/tutorial-manage-vm.md?toc=%2fazure%2fvirtual-network%2ftoc.json) и [Windows](../virtual-machines/windows/tutorial-manage-vm.md?toc=%2fazure%2fvirtual-network%2ftoc.json) виртуальных машин.
+- Узнайте больше о [частных IP-](virtual-network-ip-addresses-overview-arm.md#private-ip-addresses) адресах и назначении [статического частного IP-адреса](virtual-network-network-interface-addresses.md#add-ip-addresses) виртуальной машине Azure.
+- Дополнительные сведения о создании виртуальных машин [Linux](../virtual-machines/windows/tutorial-manage-vm.md?toc=%2fazure%2fvirtual-network%2ftoc.json) и [Windows](../virtual-machines/windows/tutorial-manage-vm.md?toc=%2fazure%2fvirtual-network%2ftoc.json) .

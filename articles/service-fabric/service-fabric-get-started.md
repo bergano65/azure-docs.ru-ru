@@ -12,14 +12,14 @@ ms.devlang: dotNet
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 10/03/2019
+ms.date: 11/18/2019
 ms.author: atsenthi
-ms.openlocfilehash: cc77995e12d756c5878ee62ef6dd0f0229506d4c
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.openlocfilehash: 1eb8e5893d93ef0261d68df4629b072876096711
+ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72333071"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74185681"
 ---
 # <a name="prepare-your-development-environment-on-windows"></a>Настройка среды разработки для Windows
 > [!div class="op_single_selector"]
@@ -31,15 +31,15 @@ ms.locfileid: "72333071"
 
 Чтобы создать и запустить [приложения Service Fabric Azure][1] на компьютере разработки Windows, установите среду выполнения Service Fabric, пакет SDK и средства. Вам также нужно [включить выполнение сценариев Windows PowerShell](#enable-powershell-script-execution), включенных в пакет SDK.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 ### <a name="supported-operating-system-versions"></a>Поддерживаемые версии операционных систем
 Для разработки поддерживаются следующие операционные системы:
 
 * Windows 7
 * Windows 8 и Windows 8.1;
-* Windows Server 2012 R2
+* Windows Server 2012 R2
 * Windows Server 2016
-* Windows 10
+* Windows 10
 
 > [!NOTE]
 > Поддержка Windows 7:
@@ -69,11 +69,8 @@ ms.locfileid: "72333071"
 * [Установите пакет SDK для Microsoft Azure Service Fabric][core-sdk]
 
 Текущие версии:
-* Service Fabric SDK и средства 3.4.676
-* 6\.5.676 среды выполнения Service Fabric
-* Средства Service Fabric для Visual Studio 2015 2.5.20615.1
-* среда Visual Studio 2017 15.9, которая включает в себя Средства Service Fabric для Visual Studio 2.4.11024.1. 
-* Visual Studio 2019 16,1 включает Средства Service Fabric для Visual Studio 2.5.20423.3
+* Service Fabric SDK и средства 4.0.457
+* 7\.0.457 среды выполнения Service Fabric
 
 Список поддерживаемых версий см. в статье [Поддерживаемые версии Service Fabric](service-fabric-versions.md).
 
@@ -89,7 +86,7 @@ Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force -Scope CurrentUser
 ## <a name="install-docker-optional"></a>Установка Docker (необязательно)
 [Service Fabric — это оркестратор контейнеров](service-fabric-containers-overview.md) для развертывания микрослужб в кластере компьютеров. Для запуска приложений контейнера Windows на локальном кластере разработки необходимо сначала установить Docker для Windows. Скачайте [Docker CE для Windows (стабильная версия)](https://store.docker.com/editions/community/docker-ce-desktop-windows?tab=description). После установки и запуска Docker щелкните правой кнопкой мыши значок в области уведомлений и выберите **Switch to Windows containers** (Переключиться на контейнеры Windows). Это необходимо для запуска образов Docker на базе Windows.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 Среда разработки настроена, и вы готовы к созданию и запуску собственных приложений.
 
 * [Узнайте, как создавать, развертывать и администрировать приложения](service-fabric-tutorial-create-dotnet-app.md)

@@ -1,5 +1,5 @@
 ---
-title: Центр безопасности Azure и реестр контейнеров Azure | Документация Майкрософт
+title: Центр безопасности Azure и реестр контейнеров Azure
 description: Сведения об интеграции центра безопасности Azure с реестром контейнеров Azure
 services: security-center
 documentationcenter: na
@@ -10,22 +10,22 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/04/2019
+ms.date: 11/19/2019
 ms.author: memildin
-ms.openlocfilehash: f0de56f968488f0e5d551ad705cc6f8ca6e7bc47
-ms.sourcegitcommit: 3f8017692169bd75483eefa96c225d45cd497f06
-ms.translationtype: MT
+ms.openlocfilehash: f2a07774fa23173738bc33907dd00017ca260fd9
+ms.sourcegitcommit: 8e31a82c6da2ee8dafa58ea58ca4a7dd3ceb6132
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73521869"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74196382"
 ---
 # <a name="azure-container-registry-integration-with-security-center-preview"></a>Интеграция реестра контейнеров Azure с центром безопасности (Предварительная версия)
 
 Реестр контейнеров Azure (запись контроля доступа) — это управляемая частная служба реестра DOCKER, которая хранит образы контейнеров для развертываний Azure и управляет ими в центральном реестре. Он основан на реестре DOCKER с открытым кодом 2,0.
 
-При использовании записи контроля доступа с уровнем "Стандартный" центра безопасности Azure (см. [цены](security-center-pricing.md)) вы получаете более глубокое представление об уязвимостях реестра и образов.
+Для более глубокого ознакомления с уязвимостями реестра и образов пользователи уровня "Стандартный" центра безопасности Azure могут включить дополнительный пакет реестров контейнеров. Дополнительные сведения см. на странице [цен](security-center-pricing.md). При включенном наборе центр безопасности автоматически сканирует изображения в службе контроля учетных записей каждый раз, когда в реестр помещается образ. По завершении проверки (обычно через 10 минут) результаты поиска доступны в центре безопасности по следующим рекомендациям:
 
-[![рекомендации по реестру контейнеров Azure (записи контроля доступа) в центре безопасности Azure](media/azure-container-registry-integration/container-security-acr-page.png)](media/azure-container-registry-integration/container-security-acr-page.png#lightbox)
+[![пример рекомендации центра безопасности Azure об уязвимостях, обнаруженных в размещенном образе реестра контейнеров Azure (записи контроля доступа)](media/azure-container-registry-integration/container-security-acr-page.png)](media/azure-container-registry-integration/container-security-acr-page.png#lightbox)
 
 ## <a name="benefits-of-integration"></a>Преимущества интеграции
 
@@ -37,7 +37,7 @@ ms.locfileid: "73521869"
 
 ![Общий обзор центра безопасности Azure и реестра контейнеров Azure (записи контроля доступа)](./media/azure-container-registry-integration/aks-acr-integration-detailed.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о функциях безопасности контейнеров центра безопасности см. в следующих статьях:
 

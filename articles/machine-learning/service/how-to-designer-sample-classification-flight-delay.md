@@ -1,7 +1,7 @@
 ---
-title: 'Конструктор: классификация, прогнозирование задержек рейсов'
+title: 'Конструктор: пример прогноза задержки рейса'
 titleSuffix: Azure Machine Learning
-description: В этой статье показано, как создать модель машинного обучения для прогнозирования задержек рейсов с помощью конструктора перетаскивания и пользовательского кода R.
+description: Создание классификатора и использование пользовательского кода R для прогнозирования задержек рейсов с помощью конструктора Машинное обучение Azure.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,14 +10,17 @@ author: xiaoharper
 ms.author: zhanxia
 ms.reviewer: peterlu
 ms.date: 11/04/2019
-ms.openlocfilehash: 10b3b78b4878eeddf2f786fda90ab9709e4bd2b4
-ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
-ms.translationtype: MT
+ms.openlocfilehash: 06d158fb228ea82e61e785407fc0c59d66c2de15
+ms.sourcegitcommit: 8e31a82c6da2ee8dafa58ea58ca4a7dd3ceb6132
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73647196"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74196022"
 ---
-# <a name="sample-6---classification-predict-flight-delays-using-r"></a>Пример 6. Классификация: прогнозирование задержек рейсов с помощью языка R
+# <a name="build-a-classifier--use-r-to-predict-flight-delays-with-azure-machine-learning-designer"></a>Создание классификатора & использование R для прогнозирования задержек рейсов с помощью конструктора Машинное обучение Azure
+
+**Конструктор (Предварительная версия) — пример 6**
+
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-enterprise-sku.md)]
 
 Этот конвейер использует исторические и погодные данные для прогнозирования того, что запланированный перелет пассажиров будет задержан более чем на 15 минут. Эта проблема может быть вызвана проблемой классификации, предсказанием двух классов: отложенным или вовремя.
@@ -26,7 +29,7 @@ ms.locfileid: "73647196"
 
 [![граф конвейера](media/how-to-ui-sample-classification-predict-flight-delay/pipeline-graph.png)](media/how-to-ui-sample-classification-predict-credit-risk-cost-sensitive/graph.png#lightbox)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 [!INCLUDE [aml-ui-prereq](../../../includes/aml-ui-prereq.md)]
 
@@ -113,7 +116,7 @@ ms.locfileid: "73647196"
 
  ![evaluate](media/how-to-ui-sample-classification-predict-flight-delay/evaluate.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Изучите другие примеры, доступные для конструктора:
 

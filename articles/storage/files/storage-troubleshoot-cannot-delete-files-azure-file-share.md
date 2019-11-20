@@ -4,15 +4,18 @@ description: Выявление и устранение неполадок пр�
 author: v-miegge
 ms.topic: troubleshooting
 ms.author: kartup
+manager: dcscontentpm
 ms.date: 10/25/2019
 ms.service: storage
 ms.subservice: common
-ms.openlocfilehash: b535578328e7ca77f1071187b6ac761bc7076ac1
-ms.sourcegitcommit: f7f70c9bd6c2253860e346245d6e2d8a85e8a91b
+services: storage
+tags: ''
+ms.openlocfilehash: d3a3763a8964810626bcdc47da230a9ee406f1f8
+ms.sourcegitcommit: 8e31a82c6da2ee8dafa58ea58ca4a7dd3ceb6132
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73065981"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74196479"
 ---
 # <a name="azure-file-share--failed-to-delete-files-from-azure-file-share"></a>Файловый ресурс Azure — не удалось удалить файлы из файлового ресурса Azure
 
@@ -33,11 +36,11 @@ ms.locfileid: "73065981"
 
 Ошибка 1816 возникает при достижении верхнего предела одновременных открытых дескрипторов, разрешенных для файла, на компьютере, на котором размонтируется общая папка. Дополнительные сведения см. в статье [Контрольный список производительности и масштабируемости службы хранилища Azure](https://docs.microsoft.com/azure/storage/blobs/storage-performance-checklist).
 
-## <a name="resolution"></a>Разрешение
+## <a name="resolution"></a>Способы устранения:
 
 Сократите число параллельно открытых дескрипторов, закрыв некоторые дескрипторы.
 
-## <a name="prerequisite"></a>Необходимое условие
+## <a name="prerequisite"></a>Предварительные требования
 
 ### <a name="install-the-latest-azure-powershell-module"></a>Установите последнюю версию модуля Azure PowerShell
 
@@ -69,7 +72,7 @@ $Context = New-AzStorageContext -StorageAccountName "StorageAccountName" -Storag
 
 ## <a name="example-result"></a>Пример результата:
 
-|хандлеид|Путь|clientIp|клиентпорт|опентиме|ластреконнекттиме|ИД|ParentId|SessionId|
+|хандлеид|Путь|ClientIp|клиентпорт|опентиме|ластреконнекттиме|ИД|ParentId|SessionId|
 |---|---|---|---|---|---|---|---|---|
 |259101229083|---|10.222.10.123|62758|2019-10-05|12:16:50Z|0|0|9507758546259807489|
 |259101229131|---|10.222.10.123|62758|2019-10-05|12:36:20Z|0|0|9507758546259807489|
@@ -85,7 +88,7 @@ $Context = New-AzStorageContext -StorageAccountName "StorageAccountName" -Storag
 # Close-AzStorageFileHandle -Context $Context -ShareName "FileShareName" -Path 'New folder/test.zip' -CloseAll
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Устранение неполадок службы файлов Azure в Windows](storage-troubleshoot-windows-file-connection-problems.md)
 * [Устранение неполадок службы файлов Azure в Linux](storage-troubleshoot-linux-file-connection-problems.md)

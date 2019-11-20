@@ -1,25 +1,23 @@
 ---
-title: Матрица поддержки службы "миграция Azure" для оценки физического сервера и миграции
-description: Суммирует параметры и ограничения для оценки физического сервера и миграции с помощью службы "миграция Azure".
+title: Поддержка оценки физических серверов и миграции с помощью службы "миграция Azure"
+description: Содержит сводку по поддержке оценки физических серверов и миграции с помощью службы "миграция Azure".
 author: rayne-wiselman
 manager: carmonm
 ms.service: azure-migrate
 ms.topic: conceptual
-ms.date: 10/23/2019
+ms.date: 11/19/2019
 ms.author: raynew
-ms.openlocfilehash: 55ada93e6a77dd7e31640988bad95034f77c90dd
-ms.sourcegitcommit: a170b69b592e6e7e5cc816dabc0246f97897cb0c
+ms.openlocfilehash: b5b5da6282b1df6c70fd58dcf8c417250de81b73
+ms.sourcegitcommit: 8e31a82c6da2ee8dafa58ea58ca4a7dd3ceb6132
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74091894"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74196348"
 ---
 # <a name="support-matrix-for-physical-server-assessment-and-migration"></a>Таблица поддержки для оценки и переноса физических серверов
 
 [Службу "миграция Azure](migrate-overview.md) " можно использовать для оценки и миграции компьютеров в облако Microsoft Azure. В этой статье перечислены параметры поддержки и ограничения для оценки и миграции локальных физических серверов.
 
-> [!NOTE]
-> Если упомянутые здесь компоненты еще не отображаются на портале службы "миграция Azure", зависает. Они будут отображаться на следующей неделе.
 
 
 ## <a name="physical-server-scenarios"></a>Сценарии физического сервера
@@ -42,7 +40,7 @@ ms.locfileid: "74091894"
 
   **География** | **Место хранения метаданных**
   --- | ---
-  Azure для государственных организаций | Правительство штата Вирджиния
+  Azure Government | Правительство штата Вирджиния
   Азиатско-Тихоокеанский регион | Восточная Азия или Юго-Восточная Азия
   Австралия | Юго-Восточная часть Восточная Австралия или Австралии
   Бразилия | Южная Бразилия
