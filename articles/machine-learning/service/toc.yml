@@ -298,8 +298,8 @@
           displayName: score scoring asynchronous consume pipeline parallelrunstep inference
           href: how-to-run-batch-predictions.md
         - name: Пакетное прогнозирование с помощью конструктора
-          displayName: score scoring asynchronous consume pipeline parallelrunstep inference
-          href: how-to-run-batch-predictions-ui.md
+          displayName: score scoring asynchronous consume pipeline parallelrunstep inference designer
+          href: how-to-run-batch-predictions-designer.md
     - name: Мониторинг моделей
       items:
         - name: Сбор и оценка данных модели

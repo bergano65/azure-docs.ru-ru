@@ -183,6 +183,8 @@
           href: storage-sync-files-troubleshoot.md
         - name: Устранение неполадок при удалении Файлов Azure
           href: storage-troubleshoot-cannot-delete-files-azure-file-share.md
+        - name: Восстановление удаленной учетной записи хранения.
+          href: storage-how-to-recover-deleted-account.md
 - name: Справочные материалы
   items:
     - name: Azure PowerShell

@@ -1,23 +1,23 @@
 ---
 layout: LandingPage
-title: Документация по выставлению счетов и управлению затратами в Azure
+title: Документация по выставлению счетов и управлению затратами в Azure | Документация Майкрософт
 description: Узнайте, как расшифровывать счета Azure, отслеживать и контролировать использование и расходы, а также управлять учетными записями и подписками.
 services: billing
 author: cwatson-cat
 manager: dougeby
 ms.assetid: ''
-ms.service: billing
+ms.service: cost-management-billing
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: landing-page
 ms.date: 02/19/2019
 ms.author: banders
-ms.openlocfilehash: e150525b6f5fd1814f13595fbd4ea7e3bccde4fc
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 67ce495767f31f7e7d39d34af4939d5d1c719b7c
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60368545"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74222581"
 ---
 # <a name="azure-billing-and-cost-management-documentation"></a>Документация по выставлению счетов и управлению затратами в Azure
 
@@ -132,9 +132,9 @@ ms.locfileid: "60368545"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-                        <h3>Экономия средств за счет использования Azure Reserved VM Instances</h3>
+                        <h3>Экономия средств за счет использования резервирований в Azure</h3>
                         <p>
-                        <a href="/azure/billing/billing-save-compute-costs-reservations">Общие сведения об Azure Reserved VM Instances</a> <br/>
+                        <a href="/azure/billing/billing-save-compute-costs-reservations">Основные сведения о резервировании в Azure</a> <br/>
                         <a href="/azure/virtual-machines/windows/prepay-reserved-vm-instances?toc=/azure/billing/TOC.json">Приобретение зарезервированного экземпляра виртуальной машины</a><br/>
                         <a href="/azure/sql-database/sql-database-reserved-capacity?toc=/azure/billing/TOC.json">Покупка резервной мощности Базы данных SQL</a><br/>
                         <a href="/azure/billing/billing-understand-vm-reservation-charges">Применение скидок на виртуальные машины</a><br/>

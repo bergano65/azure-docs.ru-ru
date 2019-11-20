@@ -198,6 +198,8 @@
               href: sap-high-availability-installation-wsfc-shared-disk.md
             - name: Использование Windows с общей папкой SOFS для экземпляра (A)SCS
               href: sap-high-availability-installation-wsfc-file-share.md
+            - name: Обеспечение высокого уровня доступности для SAP NetWeaver в Windows с использованием Azure NetApp Files (SMB)
+              href: high-availability-guide-windows-netapp-files-smb.md
             - name: Использование SUSE Linux с NFS для экземпляра (A)SCS
               href: high-availability-guide-suse.md
             - name: Использование SUSE Linux с NFS для экземпляра (A)SCS с Azure NetApp Files
