@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 02/28/2018
-ms.openlocfilehash: fbd595c7de0bde4e8ba8b7aaa9a65aa5880c1165
-ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
+ms.openlocfilehash: a2a1fb5f84612630d4168c8af908ed86330938c7
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74151910"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74213125"
 ---
 # <a name="backup-and-restore-in-azure-database-for-mysql"></a>Резервное копирование и восстановление в службе "База данных Azure для MySQL"
 
@@ -19,11 +19,11 @@ ms.locfileid: "74151910"
 
 ## <a name="backups"></a>Резервные копии
 
-База данных Azure для MySQL выполняет резервное копирование файлов данных и журнала транзакций. В зависимости от поддерживаемого максимального размера хранилища мы будем использовать полные и разностные резервные копии (максимум 4 ТБ серверов хранения) или резервные копии моментальных снимков (до 16 ТБ серверов хранилища). При помощи этих резервных копий вы можете восстановить сервер до любой точки во времени в пределах заданного срока хранения резервных копий. По умолчанию срок хранения резервных копий составляет 7 дней. При [необходимости можно настроить его](howto-restore-server-portal.md#set-backup-configuration) до 35 дней. Все резервные копии шифруются с помощью 256-битового шифрования AES.
+Azure Database for MySQL takes backups of the data files and the transaction log. Depending on the supported maximum storage size, we either take full and differential backups (4 TB max storage servers) or snapshot backups (up to 16-TB max storage servers). При помощи этих резервных копий вы можете восстановить сервер до любой точки во времени в пределах заданного срока хранения резервных копий. По умолчанию срок хранения резервных копий составляет 7 дней. You can [optionally configure it](howto-restore-server-portal.md#set-backup-configuration) up to 35 days. Все резервные копии шифруются с помощью 256-битового шифрования AES.
 
 ### <a name="backup-frequency"></a>Частота резервного копирования
 
-Как правило, полное резервное копирование выполняется еженедельно, а разностное резервное копирование выполняется дважды в день для серверов с максимальным поддерживаемым объемом хранения в 4 ТБ. Резервное копирование моментальных снимков выполняется по крайней мере один раз в день для серверов, которые поддерживают до 16 ТБ хранилища. Резервные копии журналов транзакций в обоих случаях происходят каждые пять минут. Первый моментальный снимок полной резервной копии планируется сразу же после создания сервера. Начальная полная архивация может занять больше времени на большом восстановленном сервере. Самая ранняя точка во времени, до которой можно восстановить новый сервер, — это время, в которое завершилось создание полной резервной копии. Так как моментальные снимки являются инстантаниаус, серверы с поддержкой до 16 ТБ хранилища можно восстановить вплоть до момента создания.
+Generally, full backups occur weekly, differential backups occur twice a day for servers with a max supported storage of 4 TB. Snapshot backups happen at least once a day for servers that support up to 16 TB of storage. Transaction log backups in both cases occur every five minutes. The first snapshot of full backup is scheduled immediately after a server is created. The initial full backup can take longer on a large restored server. Самая ранняя точка во времени, до которой можно восстановить новый сервер, — это время, в которое завершилось создание полной резервной копии. As snapshots are instantanious, servers with support up to 16 TB of storage can be restored all the way back to the create time.
 
 ### <a name="backup-redundancy-options"></a>Типы избыточности для резервного копирования
 
@@ -62,7 +62,7 @@ ms.locfileid: "74151910"
 
 ### <a name="geo-restore"></a>Геовосстановление
 
-Вы можете восстановить сервер в другом регионе Azure, где доступна служба, если вы настроили для сервера геоизбыточное хранилище. Для серверов, поддерживающих до 16 ТБ хранилища, георезервные копии можно восстановить только в регионах, поддерживающих серверы размером 16 ТБ. Ознакомьтесь со списком поддерживаемых регионов для [ценовых категорий базы данных Azure для MySQL](concepts-pricing-tiers.md) . 
+Вы можете восстановить сервер в другом регионе Azure, где доступна служба, если вы настроили для сервера геоизбыточное хранилище. Servers that support up to 4 TB of storage can be restored to the geo-paired region, or to any region that supports up to 16 TB of storage. For servers that support up to 16 TB of storage, geo-backups can be restored in any region that support 16 TB servers as well. Review [Azure Database for MySQL pricing tiers](concepts-pricing-tiers.md) for the list of supported regions.
 
 Геовосстановление используется по умолчанию, когда сервер недоступен из-за аварии в регионе, в котором он размещен. Если из-за масштабной аварии в регионе приложение базы данных станет недоступным, сервер можно будет восстановить из геоизбыточных резервных копий на сервер в любом другом регионе. Между созданием резервной копии и ее репликацией в другом регионе может пройти некоторое время. Эта задержка может длиться до часа, поэтому в случае аварии возможна потеря данных за час или менее.
 
@@ -77,7 +77,7 @@ ms.locfileid: "74151910"
 - Убедитесь, что заданы соответствующие данные для входа и разрешений уровня базы данных.
 - Настройте оповещения соответствующим образом.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о непрерывности бизнес-процессов см. в  [этой статье](concepts-business-continuity.md).
 - Сведения о восстановлении базы данных до точки во времени с помощью портала Azure см. в  [этой статье](howto-restore-server-portal.md).

@@ -13,12 +13,12 @@ ms.workload: infrastructure
 ms.date: 07/12/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 4fa0fe072fe98d565ad9d6f947540b7e1b039732
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 36f0b78f563bb4dda76f192259541d1c2b1fa060
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70101157"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74224673"
 ---
 # <a name="sap-hana-large-instances-deployment"></a>Развертывание SAP HANA (крупные экземпляры) 
 
@@ -36,7 +36,7 @@ ms.locfileid: "70101157"
 - Для каждого региона развертывания Azure:
     - диапазон IP-адресов с маской /29 для подключений ER-P2P между виртуальными сетями Azure и крупными экземплярами HANA;
     - блок CIDR с маской /24 (используется для пула IP-адресов серверов крупных экземпляров HANA).
-    - Необязательно. при использовании [Global REACH ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-global-reach) для прямой маршрутизации между единицами крупных экземпляров Hana или между единицами крупных экземпляров Hana в разных регионах Azure необходимо зарезервировать еще один или 29 диапазон IP-адресов. Этот диапазон может не перекрываться с любыми другими диапазонами IP-адресов, определенными ранее.
+    - Optional when using [ExpressRoute Global Reach](https://docs.microsoft.com/azure/expressroute/expressroute-global-reach) to enable direct routing from on-premises to HANA Large Instance units or routing between HANA Large Instance units in different Azure regions, you need to reserve another /29 IP address range. This particular range may not overlap with any of the other IP address ranges you defined before.
 - Значения диапазона IP-адресов, используемые в атрибуте адресного пространства виртуальной сети, каждой виртуальной сети Azure, которая будет подключаться к крупным экземплярам HANA.
 - Данные для каждой системы крупных экземпляров HANA:
   - Требуемое имя узла (в идеале с полным доменным именем).

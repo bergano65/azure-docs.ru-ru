@@ -1,20 +1,16 @@
 ---
 title: Центры задач в устойчивых функциях — Azure
-description: Сведения о том, что такое центр задач в расширении устойчивых функций для Функций Azure. Узнайте, как настроить центры задач.
-services: functions
+description: Сведения о том, что такое центр задач в расширении устойчивых функций для Функций Azure. Learn how to configure task hubs.
 author: cgillum
-manager: jeconnoc
-keywords: ''
-ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 11/03/2019
 ms.author: azfuncdf
-ms.openlocfilehash: b42294fdcf60add8496116bd1f83bf64f54a5f63
-ms.sourcegitcommit: b2fb32ae73b12cf2d180e6e4ffffa13a31aa4c6f
+ms.openlocfilehash: 38c7da8a1de57ed5acf3248fc6a71431de0bd1e2
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73614721"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74232794"
 ---
 # <a name="task-hubs-in-durable-functions-azure-functions"></a>Центры задач в устойчивых функциях (Функции Azure)
 
@@ -33,15 +29,15 @@ ms.locfileid: "73614721"
 * Одна таблица журнала.
 * одна таблица экземпляров.
 * Один контейнер хранилища, содержащий один или несколько арендуемых больших двоичных объектов.
-* Контейнер хранилища, содержащий полезные данные больших сообщений, если применимо.
+* A storage container containing large message payloads, if applicable.
 
-Все эти ресурсы создаются автоматически в учетной записи хранения Azure по умолчанию при выполнении или запланированном запуске функций Orchestrator, Entity или Activity. В статье [Производительность и масштабирование в устойчивых функциях (Функции Azure)](durable-functions-perf-and-scale.md) объясняется, как используются эти ресурсы.
+All of these resources are created automatically in the default Azure Storage account when orchestrator, entity, or activity functions run or are scheduled to run. В статье [Производительность и масштабирование в устойчивых функциях (Функции Azure)](durable-functions-perf-and-scale.md) объясняется, как используются эти ресурсы.
 
 ## <a name="task-hub-names"></a>Имена центров задач
 
 Центры задач определяются по имени, объявленном в файле *host.json*, как показано в следующем примере:
 
-### <a name="hostjson-functions-20"></a>Host. JSON (функции 2,0)
+### <a name="hostjson-functions-20"></a>host.json (Functions 2.0)
 
 ```json
 {
@@ -64,9 +60,9 @@ ms.locfileid: "73614721"
 }
 ```
 
-Концентраторы задач можно также настроить с помощью параметров приложения, как показано в следующем `host.json` примере файла:
+Task hubs can also be configured using app settings, as shown in the following `host.json` example file:
 
-### <a name="hostjson-functions-10"></a>Host. JSON (функции 1,0)
+### <a name="hostjson-functions-10"></a>host.json (Functions 1.0)
 
 ```json
 {
@@ -76,7 +72,7 @@ ms.locfileid: "73614721"
 }
 ```
 
-### <a name="hostjson-functions-20"></a>Host. JSON (функции 2,0)
+### <a name="hostjson-functions-20"></a>host.json (Functions 2.0)
 
 ```json
 {
@@ -100,7 +96,7 @@ ms.locfileid: "73614721"
 }
 ```
 
-Следующий код является предварительно скомпилированным C# примером того, как написать функцию, которая использует [привязку клиента оркестрации](durable-functions-bindings.md#orchestration-client) для работы с центром задач, настроенным в качестве параметра приложения:
+The following code is a precompiled C# example of how to write a function that uses the [orchestration client binding](durable-functions-bindings.md#orchestration-client) to work with a task hub that is configured as an App Setting:
 
 ### <a name="c"></a>C#
 
@@ -123,7 +119,7 @@ public static async Task<HttpResponseMessage> Run(
 ```
 
 > [!NOTE]
-> Предыдущий C# пример — для устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать `DurableOrchestrationContext` вместо `IDurableOrchestrationContext`. Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
+> The previous C# example is for Durable Functions 2.x. For Durable Functions 1.x, you must use `DurableOrchestrationContext` instead of `IDurableOrchestrationContext`. For more information about the differences between versions, see the [Durable Functions versions](durable-functions-versions.md) article.
 
 ### <a name="javascript"></a>JavaScript
 
@@ -138,19 +134,19 @@ public static async Task<HttpResponseMessage> Run(
 }
 ```
 
-Имена центра задач должны начинаться с буквы и содержать только буквы и цифры. Если значение не указано, будет использоваться имя центра задач по умолчанию, как показано в следующей таблице.
+Имена центра задач должны начинаться с буквы и содержать только буквы и цифры. If not specified, a default task hub name will be used as shown in the following table:
 
-| Версия устойчивого расширения | Имя центра задач по умолчанию |
+| Durable extension version | Default task hub name |
 | - | - |
-| 2.x | При развертывании в Azure имя центра задач является производным от имени _приложения-функции_. При работе вне Azure имя центра задач по умолчанию — `TestHubName`. |
-| 1.x | Имя центра задач по умолчанию для всех окружений — `DurableFunctionsHub`. |
+| 2.x | When deployed in Azure, the task hub name is derived from the name of the _function app_. When running outside of Azure, the default task hub name is `TestHubName`. |
+| 1.x | The default task hub name for all environments is `DurableFunctionsHub`. |
 
-Дополнительные сведения о различиях между версиями расширений см. в статье [устойчивые функции версии](durable-functions-versions.md) .
+For more information about the differences between extension versions, see the [Durable Functions versions](durable-functions-versions.md) article.
 
 > [!NOTE]
-> Имя — это то, что отличает один центр задач от другого, если в общей учетной записи хранения таких центров несколько. Если общую учетную запись хранения используют несколько приложений-функций, вам нужно задать разные имена для каждого центра задач в файлах *host.json*. В противном случае несколько приложений функций будут конкурировать друг с другом для сообщений, что может привести к неопределенному поведению, в том числе оркестрации в `Pending` или `Running` состоянии.
+> Имя — это то, что отличает один центр задач от другого, если в общей учетной записи хранения таких центров несколько. Если общую учетную запись хранения используют несколько приложений-функций, вам нужно задать разные имена для каждого центра задач в файлах *host.json*. Otherwise the multiple function apps will compete with each other for messages, which could result in undefined behavior, including orchestrations getting unexpectedly "stuck" in the `Pending` or `Running` state.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Узнайте, как управлять управлением версиями оркестрации](durable-functions-versioning.md)
+> [Learn how to handle orchestration versioning](durable-functions-versioning.md)

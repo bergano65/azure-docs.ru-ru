@@ -1,29 +1,25 @@
 ---
 title: Справочник по файлу host.json для службы "Функции Azure" версии 2.x
 description: Справочная документация по файлу host.json для Функций Azure в среде выполнения версии V2.
-author: ggailey777
-manager: gwallace
-ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/08/2018
-ms.author: glenga
-ms.openlocfilehash: 222ca8781ae9532f10ed7d113b93eac78c6a3bba
-ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
+ms.openlocfilehash: 1acf92d736fad952831835100d2bdd6d01942cfd
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74129080"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74226947"
 ---
 # <a name="hostjson-reference-for-azure-functions-2x"></a>Справочник по файлу host.json для службы "Функции Azure" версии 2.x  
 
-> [!div class="op_single_selector" title1="Выберите версию используемой среды выполнения функций Azure: "]
+> [!div class="op_single_selector" title1="Select the version of the Azure Functions runtime you are using: "]
 > * [Версия 1](functions-host-json-v1.md)
 > * [Версия 2](functions-host-json.md)
 
 Файл метаданных *host.json* содержит параметры глобальной конфигурации, влияющие на все функции приложения-функции. В этой статье перечислены параметры, которые доступны для среды выполнения версии V2.  
 
 > [!NOTE]
-> Эта статья предназначена для службы "Функции Azure" версии 2.x.  Чтобы получить дополнительные сведения о файле host.json в Функции 1.x, см. статью [host.json reference for Azure Functions 1.x](functions-host-json-v1.md)(Справочник по файлу host.json для службы "Функции Azure" версии 1.x.).
+> Эта статья предназначена для службы "Функции Azure" версии 2.x.  Сведения о файле host.json в Функциях Azure версии 1.x см. в [этой статье](functions-host-json-v1.md).
 
 В [параметрах приложения](functions-app-settings.md) можно управлять другими настройками приложения-функции.
 
@@ -115,13 +111,13 @@ ms.locfileid: "74129080"
 > [!NOTE]
 > Выборка журналов может привести к тому, что некоторые выполнения не будут отображаться в колонке монитора Application Insights.
 
-|Свойство  |значение по умолчанию | ОПИСАНИЕ |
+|Свойство  |значение по умолчанию | Описание |
 |---------|---------|---------| 
 |isEnabled|true|Включает или отключает выборку.| 
 |maxTelemetryItemsPerSecond|20|Пороговое значение, при котором начинается выборка.| 
-|енаблеливеметрикс |true|Включает сбор динамических метрик.|
-|енабледепенденцитраккинг|true|Включает отслеживание зависимостей.|
-|енаблеперформанцекаунтерсколлектион|true|Включает сбор счетчиков производительности KUDU.|
+|EnableLiveMetrics |true|Enables live metrics collection.|
+|EnableDependencyTracking|true|Enables dependency tracking.|
+|EnablePerformanceCountersCollection|true|Enables Kudu performance counters collection.|
 
 ## <a name="cosmosdb"></a>СosmosDB
 
@@ -139,13 +135,13 @@ ms.locfileid: "74129080"
 
 Свойство, которое возвращает объект, содержащий все параметры определенной привязки, такие как [http](#http) и [eventHub](#eventhub).
 
-## <a name="extensionbundle"></a>екстенсионбундле 
+## <a name="extensionbundle"></a>extensionBundle 
 
-Пакеты расширений позволяют добавить совместимый набор функций расширений привязки к приложению-функции. Дополнительные сведения см. в разделе [пакеты расширений для локальной разработки](functions-bindings-register.md#extension-bundles).
+Extension bundles lets you add a compatible set of Functions binding extensions to your function app. To learn more, see [Extension bundles for local development](functions-bindings-register.md#extension-bundles).
 
 [!INCLUDE [functions-extension-bundles-json](../../includes/functions-extension-bundles-json.md)]
 
-## <a name="functions"></a>functions
+## <a name="functions"></a>функции
 
 Список функций, которые выполняют узел заданий. Пустой массив означает выполнение всех функций. Предназначен для использования только при [локальном выполнении](functions-run-local.md). Чтобы отключить определенные функции в приложениях-функциях Azure, выполните следующие действия в разделе [Способы отключения функций в решении "Функции Azure"](disable-function.md) вместо использования этого параметра.
 
@@ -157,8 +153,8 @@ ms.locfileid: "74129080"
 
 ## <a name="functiontimeout"></a>functionTimeout
 
-Указывает время ожидания для всех функций. Он соответствует формату строки TimeSpan. В бессерверных планах потребления допускается диапазон от 1 секунды до 10 минут, а значение по умолчанию — 5 минут.  
-В выделенном плане (службе приложений) нет общего ограничения, а значение по умолчанию — 30 минут. Значение `-1` указывает на неограниченное выполнение.
+Указывает время ожидания для всех функций. It follows the timespan string format. В бессерверных планах потребления допускается диапазон от 1 секунды до 10 минут, а значение по умолчанию — 5 минут.  
+In a Dedicated (App Service) plan, there is no overall limit, and the default value is 30 minutes. A value of `-1` indicates unbounded execution.
 
 ```json
 {
@@ -182,7 +178,7 @@ ms.locfileid: "74129080"
 }
 ```
 
-|Свойство  |значение по умолчанию | ОПИСАНИЕ |
+|Свойство  |значение по умолчанию | Описание |
 |---------|---------|---------| 
 |включено|true|Указывает, включена ли функция. | 
 |healthCheckInterval|10 с|Интервал времени между периодическими фоновыми проверками работоспособности. | 
@@ -214,12 +210,12 @@ ms.locfileid: "74129080"
 }
 ```
 
-|Свойство  |значение по умолчанию | ОПИСАНИЕ |
+|Свойство  |значение по умолчанию | Описание |
 |---------|---------|---------|
 |fileLoggingMode|debugOnly|Определяет, какой уровень журнала файла включен.  Доступны следующие параметры: `never`, `always` и `debugOnly`. |
-|LogLevel|Недоступно|Объект, который определяет фильтрацию категорий журналов для функций в приложении. Версия 2.x соответствует макету ASP.NET Core для фильтрации категорий журналов. Это позволяет фильтровать ведения журнала определенных функций. Дополнительные сведения см. в документации по использованию ASP.NET Core [Фильтрация журнала](https://docs.microsoft.com/aspnet/core/fundamentals/logging/?view=aspnetcore-2.1#log-filtering). |
-|console|Недоступно| Параметр ведения журнала [консоли](#console). |
-|applicationInsights|Недоступно| Параметр [applicationInsights](#applicationinsights). |
+|LogLevel|Н/Д|Объект, который определяет фильтрацию категорий журналов для функций в приложении. Версия 2.x соответствует макету ASP.NET Core для фильтрации категорий журналов. Это позволяет фильтровать ведения журнала определенных функций. Дополнительные сведения см. в документации по использованию ASP.NET Core [Фильтрация журнала](https://docs.microsoft.com/aspnet/core/fundamentals/logging/?view=aspnetcore-2.1#log-filtering). |
+|console|Н/Д| Параметр ведения журнала [консоли](#console). |
+|applicationInsights|Н/Д| Параметр [applicationInsights](#applicationinsights). |
 
 ## <a name="console"></a>console
 
@@ -237,13 +233,13 @@ ms.locfileid: "74129080"
 }
 ```
 
-|Свойство  |значение по умолчанию | ОПИСАНИЕ |
+|Свойство  |значение по умолчанию | Описание |
 |---------|---------|---------| 
-|isEnabled|нет|Включает или отключает ведение журнала консоли.| 
+|isEnabled|false|Включает или отключает ведение журнала консоли.| 
 
-## <a name="manageddependency"></a>манажеддепенденци
+## <a name="manageddependency"></a>managedDependency
 
-Управляемая зависимость — это функция, которая в настоящее время поддерживается только функциями на основе PowerShell. Это позволяет автоматически управлять зависимостями службой. Если для свойства `enabled` задано значение `true`, `requirements.psd1` файл обрабатывается. Зависимости обновляются при выпуске любых дополнительных версий. Дополнительные сведения см. в разделе [управляемая зависимость](functions-reference-powershell.md#dependency-management) в статье PowerShell.
+Managed dependency is a feature that is currently only supported with PowerShell based functions. It enables dependencies to be automatically managed by the service. When the `enabled` property is set to `true`, the `requirements.psd1` file is processed. Dependencies are updated when any minor versions are released. For more information, see [Managed dependency](functions-reference-powershell.md#dependency-management) in the PowerShell article.
 
 ```json
 {
@@ -281,13 +277,13 @@ ms.locfileid: "74129080"
 }
 ```
 
-|Свойство  |значение по умолчанию | ОПИСАНИЕ |
+|Свойство  |значение по умолчанию | Описание |
 |---------|---------|---------| 
 |lockPeriod|00:00:15|Период времени, на который применяются блокировки уровня функции. Эти блокировки возобновляются автоматически.| 
 |listenerLockPeriod|00:01:00|Период времени, на который применяются блокировки прослушивателя.| 
 |listenerLockRecoveryPollingInterval|00:01:00|Интервал времени, используемый для восстановления блокировки прослушивателя, если блокировку прослушивателя не удалось получить при запуске.| 
 |lockAcquisitionTimeout|00:01:00|Максимальный период времени, за который среда выполнения будет пытаться получить блокировку.| 
-|lockAcquisitionPollingInterval|Недоступно|Интервал между попытками получения блокировки.| 
+|lockAcquisitionPollingInterval|Н/Д|Интервал между попытками получения блокировки.| 
 
 ## <a name="version"></a>версия
 
@@ -303,7 +299,7 @@ ms.locfileid: "74129080"
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Узнайте, как обновить файл host.json](functions-reference.md#fileupdate)

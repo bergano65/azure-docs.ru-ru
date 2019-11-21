@@ -1,7 +1,7 @@
 ---
 title: Настройка режима распределения Azure Load Balancer
-titlesuffix: Azure Load Balancer
-description: Сведения о том, как настроить режим распределения Azure Load Balancer для поддержки соответствия исходному IP-адресу.
+titleSuffix: Azure Load Balancer
+description: In this article, get started configuring the distribution mode for Azure Load Balancer to support source IP affinity.
 services: load-balancer
 documentationcenter: na
 author: asudbring
@@ -11,14 +11,14 @@ ms.topic: article
 ms.custom: seodec18
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 09/25/2017
+ms.date: 11/19/2019
 ms.author: allensu
-ms.openlocfilehash: 0d3ddf2e005338a19972cfcdef025579764f7f23
-ms.sourcegitcommit: 8e1fb03a9c3ad0fc3fd4d6c111598aa74e0b9bd4
+ms.openlocfilehash: ddccd02e7157792d942309ae4f74933322f246f9
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70114716"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74225378"
 ---
 # <a name="configure-the-distribution-mode-for-azure-load-balancer"></a>Настройка режима распределения для Azure Load Balancer
 
@@ -26,24 +26,33 @@ ms.locfileid: "70114716"
 
 ## <a name="hash-based-distribution-mode"></a>Режим распространения на основе хэша
 
-По умолчанию в качестве режима распределения Azure Load Balancer используется хэш с 5 кортежами. Кортеж состоит из исходного IP-адреса, исходного порта, целевого IP-адреса, конечного порта и типа протокола. Хэш используется для сопоставления трафика с доступными серверами, а алгоритм позволяет закреплять IP-адреса только в рамках сеанса транспорта. Пакеты в рамках одного сеанса будут направляться на один экземпляр IP-адреса центра обработки данных в конечной точке с балансировкой нагрузки. Когда клиент начинает новый сеанс с того же исходного IP-адреса, порт источника изменяется и перенаправляет трафик к другой конечной точке IP-адреса центра обработки данных.
+The default distribution mode for Azure Load Balancer is a five-tuple hash. 
 
-![Режим распространения на основе хэша с 5 кортежами](./media/load-balancer-distribution-mode/load-balancer-distribution.png)
+The tuple is composed of the:
+* **Source IP**
+* **Source port**
+* **Destination IP**
+* **Destination port**
+* **Protocol type**
+
+The hash is used to map traffic to the available servers. The algorithm provides stickiness only within a transport session. Packets that are in the same session are directed to the same datacenter IP behind the load-balanced endpoint. When the client starts a new session from the same source IP, the source port changes and causes the traffic to go to a different datacenter endpoint.
+
+![Five-tuple hash-based distribution mode](./media/load-balancer-distribution-mode/load-balancer-distribution.png)
 
 ## <a name="source-ip-affinity-mode"></a>Режим сходства исходного IP-адреса
 
-Для Load Balancer также можно настроить режим распределения соответствия исходному IP-адресу. Он также известен как соответствие сеансу или соответствие клиентскому IP-адресу. Этот режим использует хэш 2 кортежей (исходный IP-адрес, конечный порт) или хэш 3 кортежей (исходный IP-адрес, конечный порт и тип протокола) для сопоставления трафика с доступными серверами. При использовании сходства исходного IP-адреса подключения, запущенные с одного клиентского компьютера, отправляются на одну и ту же конечную точку DIP.
+The load balancer can also be configured by using the source IP affinity distribution mode. Он также известен как соответствие сеансу или соответствие клиентскому IP-адресу. The mode uses a two-tuple (source IP and destination IP) or three-tuple (source IP, destination IP, and protocol type) hash to map traffic to the available servers. By using source IP affinity, connections that are started from the same client computer go to the same datacenter endpoint.
 
-Конфигурация двухкортежного распределения представлена на следующем рисунке. Обратите внимание, как 2 кортежа передаются через подсистему балансировки нагрузки на виртуальную машину 1 (VM1). Затем VM1 архивируется на виртуальных машинах VM2 и VM3.
+The following figure illustrates a two-tuple configuration. Notice how the two-tuple runs through the load balancer to virtual machine 1 (VM1). Затем VM1 архивируется на виртуальных машинах VM2 и VM3.
 
-![Режим двухкортежного распределения соответствия сеансу](./media/load-balancer-distribution-mode/load-balancer-session-affinity.png)
+![Two-tuple session affinity distribution mode](./media/load-balancer-distribution-mode/load-balancer-session-affinity.png)
 
 Режим соответствия исходному IP-адресу позволяет устранить несовместимость Azure Load Balancer и шлюза удаленных рабочих столов. С помощью этого режима можно создать ферму шлюза удаленных рабочих столов в одной облачной службе.
 
 Другой сценарий использования — передача мультимедиа. В этом случае передача данных осуществляется по протоколу UDP, а управление — по протоколу TCP.
 
-* Клиент запускает сеанс TCP для общедоступного адреса с балансировкой нагрузки и направляется на конкретный DIP. Сам канал остается активным, чтобы контролировать состояние подключения.
-* С того же клиентского компьютера для той же общедоступной конечной точки с балансировкой нагрузки инициируется новый сеанс UDP. Подключение направляется на ту же конечную точку DIP, что и предыдущее TCP-подключение. Таким образом можно передавать мультимедиа с более высокой пропускной способностью, поддерживая при этом канал управления по TCP.
+* A client starts a TCP session to the load-balanced public address and is directed to a specific DIP. Сам канал остается активным, чтобы контролировать состояние подключения.
+* A new UDP session from the same client computer is started to the same load-balanced public endpoint. Подключение направляется на ту же конечную точку DIP, что и предыдущее TCP-подключение. Таким образом можно передавать мультимедиа с более высокой пропускной способностью, поддерживая при этом канал управления по TCP.
 
 > [!NOTE]
 > При изменении набора балансировки нагрузки (при добавлении или удалении виртуальной машины) распределение запросов клиента вычисляется заново. Нельзя полагаться на то, что новые подключения от существующих клиентов будут направлены на один сервер. Кроме того, использование режима распределения соответствия исходному IP-адресу может привести к неравномерному распределению трафика. Клиенты, работающие на прокси-серверах, могут рассматриваться как одно уникальное клиентское приложение.
@@ -52,22 +61,22 @@ ms.locfileid: "70114716"
 
 ### <a name="azure-portal"></a>портала Azure
 
-Можно изменить конфигурацию режима распределения, изменив правило балансировки нагрузки на портале.
+You can change the configuration of the distribution mode by modifying the load-balancing rule in the portal.
 
-1. Войдите в портал Azure и выберите группу ресурсов, содержащую подсистему балансировки нагрузки, которую вы хотите изменить, щелкнув **группы ресурсов**.
-2. В колонке обзора подсистемы балансировки нагрузки щелкните **правила балансировки нагрузки** в разделе **Параметры**.
-3. В колонке правила балансировки нагрузки выберите правило балансировки нагрузки, которое необходимо изменить в режиме распространения.
-4. В правиле режим распределения изменяется путем изменения раскрывающегося списка **сохраняемость сеанса** .  Доступны следующие варианты:
+1. Sign in to the Azure portal and locate the Resource Group containing the load balancer you wish to change by clicking on **Resource Groups**.
+2. In the load balancer overview screen, click on **Load-balancing rules** under **Settings**.
+3. In the load-balancing rules screen, click on the load-balancing rule that you wish to change the distribution mode.
+4. Under the rule, the distribution mode is changed by changing the **Session persistence** drop down box.  Доступны следующие варианты:
     
-    * **Нет (на основе хэша)** . указывает, что последовательные запросы от одного клиента могут обрабатываться любой виртуальной машиной.
-    * **IP-адрес клиента (сопоставление ИСХОДНОГО IP-адреса 2 — кортеж)** . указывает, что последовательные запросы с одного и того же IP-адресов клиента будут обрабатываться одной и той же виртуальной машиной.
-    * **IP-адрес клиента и протокол (сходство исходного IP-адреса 3 — кортеж)** . указывает, что последовательные запросы с одинаковой КОМБИНАЦИЕЙ IP-адресов и протоколов клиента будут обрабатываться одной и той же виртуальной машиной.
+    * **None (hash-based)** - Specifies that successive requests from the same client may be handled by any virtual machine.
+    * **Client IP (source IP affinity 2-tuple)** - Specifies that successive requests from the same client IP address will be handled by the same virtual machine.
+    * **Client IP and protocol (source IP affinity 3-tuple)** - Specifies that successive requests from the same client IP address and protocol combination will be handled by the same virtual machine.
 
-5. Выберите режим распространения и нажмите кнопку **сохранить**.
+5. Choose the distribution mode and then click **Save**.
 
 ### <a name="azure-powershell"></a>Azure PowerShell
 
-Для виртуальных машин, развернутых с диспетчер ресурсов, используйте PowerShell, чтобы изменить параметры распределения балансировки нагрузки в существующем правиле балансировки нагрузки. Следующая команда обновляет режим распределения: 
+For virtual machines deployed with Resource Manager, use PowerShell to change the load-balancer distribution settings on an existing load-balancing rule. The following command updates the distribution mode: 
 
 ```azurepowershell-interactive
 $lb = Get-AzLoadBalancer -Name MyLb -ResourceGroupName MyLbRg
@@ -81,7 +90,7 @@ Set-AzLoadBalancer -LoadBalancer $lb
 Get-AzureVM -ServiceName mySvc -Name MyVM1 | Add-AzureEndpoint -Name HttpIn -Protocol TCP -PublicPort 80 -LocalPort 8080 –LoadBalancerDistribution sourceIP | Update-AzureVM
 ```
 
-Установите для элемента `LoadBalancerDistribution` значение необходимого объема балансировки нагрузки. Укажите значение sourceIP для балансировки нагрузки по двум кортежам (исходный IP-адрес, конечный IP-адрес). Укажите sourceIPProtocol для балансировки нагрузки по трем кортежам (исходный IP-адрес, конечный IP-адрес, тип протокола). Укажите none для поведения по умолчанию (балансировка нагрузки по пяти кортежам).
+Set the value of the `LoadBalancerDistribution` element for the amount of load balancing required. Specify sourceIP for two-tuple (source IP and destination IP) load balancing. Specify sourceIPProtocol for three-tuple (source IP, destination IP, and protocol type) load balancing. Specify none for the default behavior of five-tuple load balancing.
 
 Получите конфигурацию режима распределения балансировщика нагрузки для конечной точки с помощью этих параметров:
 
@@ -105,7 +114,7 @@ Get-AzureVM -ServiceName mySvc -Name MyVM1 | Add-AzureEndpoint -Name HttpIn -Pro
     IdleTimeoutInMinutes : 15
     LoadBalancerDistribution : sourceIP
 
-`LoadBalancerDistribution` Если элемент отсутствует, Azure Load Balancer использует алгоритм с 5 кортежами по умолчанию.
+When the `LoadBalancerDistribution` element isn't present, Azure Load Balancer uses the default five-tuple algorithm.
 
 ### <a name="configure-distribution-mode-on-load-balanced-endpoint-set"></a>Настройка режима распределения для набора балансировки нагрузки для конечных точек
 
@@ -170,9 +179,9 @@ Set-AzureLoadBalancedEndpoint -ServiceName MyService -LBSetName LBSet1 -Protocol
       </InputEndpoint>
     </LoadBalancedEndpointList>
 
-Как описано выше, установите для элемента `LoadBalancerDistribution` значение sourceIP для соответствия по двум кортежам; sourceIPProtocol для соответствия по трем кортежам; none для отсутствия соответствия (соответствие по пяти кортежам).
+As previously described, set the `LoadBalancerDistribution` element to sourceIP for two-tuple affinity, sourceIPProtocol for three-tuple affinity, or none for no affinity (five-tuple affinity).
 
-#### <a name="response"></a>Отклик
+#### <a name="response"></a>Ответ
 
     HTTP/1.1 202 Accepted
     Cache-Control: no-cache
@@ -182,7 +191,7 @@ Set-AzureLoadBalancedEndpoint -ServiceName MyService -LBSetName LBSet1 -Protocol
     x-ms-request-id: 9c7bda3e67c621a6b57096323069f7af
     Date: Thu, 16 Oct 2014 22:49:21 GMT
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Обзор внутренней подсистемы балансировки нагрузки](load-balancer-internal-overview.md)
 * [Создание балансировщика нагрузки для Интернета в Resource Manager с помощью PowerShell](load-balancer-get-started-internet-arm-ps.md)

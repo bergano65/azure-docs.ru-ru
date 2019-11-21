@@ -1,25 +1,19 @@
 ---
-title: Создание функции Azure с использованием Java и IntelliJ | Документация Майкрософт
+title: Create an Azure function with Java and IntelliJ
 description: Сведения о создание и публикации простого независимого HTTP-приложения в Azure с использованием функций Java и IntelliJ.
-services: functions
-documentationcenter: na
 author: jeffhollan
-manager: jpconnock
-keywords: azure functions, functions, event processing, compute, serverless architecture, java
-ms.service: azure-functions
 ms.topic: conceptual
-ms.devlang: java
 ms.date: 07/01/2018
 ms.author: jehollan
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 5aa0763206289305e98960b6e03ad903eb4547ae
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 1d3dd0f4f1da4d3815d4d879dd13ed5882f39e8f
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70743982"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74230727"
 ---
-# <a name="create-your-first-azure-function-with-java-and-intellij"></a>Создание первой функции Azure с помощью Java и IntelliJ
+# <a name="create-your-first-azure-function-with-java-and-intellij"></a>Create your first Azure function with Java and IntelliJ
 
 Из этой статьи можно получить следующие сведения.
 - Как создать функцию проекта [serverless](https://azure.microsoft.com/overview/serverless-computing/) с помощью IntelliJ IDEA и Apache Maven
@@ -37,7 +31,7 @@ ms.locfileid: "70743982"
 - [Java Developer Kit (JDK) версии 8](https://www.azul.com/downloads/zulu/)
 - [Apache Maven 3.0](https://maven.apache.org) или более поздней версии
 - [IntelliJ IDEA](https://www.jetbrains.com/idea/download), версия Community или Ultimate с Maven
-- [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure)
+- [Azure CLI](https://docs.microsoft.com/cli/azure)
 
 > [!IMPORTANT]
 > Чтобы завершить выполнение шагов из этой статьи, переменной среде JAVA_HOME необходимо присвоить расположение установки JDK.
@@ -52,8 +46,8 @@ ms.locfileid: "70743982"
 1. Заполните следующие поля в окне **Add Archetype** (Добавить архетип).
     - _GroupId_: com.microsoft.azure
     - _ArtifactId_: azure-functions-archetype
-    - _Версия._ Использование последней версии **1,22** из [центрального репозитория](https://mvnrepository.com/artifact/com.microsoft.azure/azure-functions-archetype)
-    ![создание проекта Maven из архетипа в идее IntelliJ](media/functions-create-first-java-intellij/functions-create-intellij.png)  
+    - _Version_: Use the latest version **1.22** from [the central repository](https://mvnrepository.com/artifact/com.microsoft.azure/azure-functions-archetype)
+    ![Create a Maven project from archetype in IntelliJ IDEA](media/functions-create-first-java-intellij/functions-create-intellij.png)  
 1. Нажмите кнопку **ОК**, а затем щелкните **Создать**.
 1. Введите подробные сведения и выберите **Готово**.
 
@@ -93,7 +87,7 @@ Maven создает файлы проекта в новой папке с им�
 
 ## <a name="deploy-the-function-to-azure"></a>Развертывание функции для Azure
 
-1. Прежде чем можно будет развернуть функцию в Azure, необходимо [выполнить вход с помощью Azure CLI](/cli/azure/authenticate-azure-cli?view=azure-cli-latest).
+1. Before you can deploy your function to Azure, you must [sign in by using the Azure CLI](/cli/azure/authenticate-azure-cli?view=azure-cli-latest).
 
    ``` azurecli
    az login
@@ -115,7 +109,7 @@ Maven создает файлы проекта в новой папке с им�
    [INFO] ------------------------------------------------------------------------
    ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о разработке функции Java см. в статье [Azure Functions Java developer guide](functions-reference-java.md) (Руководство разработчика Java для Функций Azure).
 - Добавьте в проект дополнительные функции с помощью различных триггеров целевого объекта Maven`azure-functions:add`.

@@ -1,29 +1,29 @@
 ---
-title: Отключение сетевых политик для частных конечных точек в Azure
-description: Узнайте, как отключить политики сети для частных конечных точек.
+title: Disable network policies for private endpoints in Azure
+description: Learn how to disable network policies for private endpoints.
 services: private-link
-author: KumudD
+author: asudbring
 ms.service: private-link
 ms.topic: article
 ms.date: 09/16/2019
-ms.author: kumud
-ms.openlocfilehash: 3eec2d208e97cc33c318e4a45ae85074fbc2583c
-ms.sourcegitcommit: b45ee7acf4f26ef2c09300ff2dba2eaa90e09bc7
+ms.author: allensu
+ms.openlocfilehash: ef9dafd97b3d9889714a321ad00d98a87c3665d6
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73101620"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74224811"
 ---
-# <a name="disable-network-policies-for-private-endpoints"></a>Отключение сетевых политик для частных конечных точек
+# <a name="disable-network-policies-for-private-endpoints"></a>Disable network policies for private endpoints
 
-Сетевые политики, такие как группы безопасности сети (NSG), не поддерживаются для частных конечных точек. Чтобы развернуть закрытую конечную точку в заданной подсети, для этой подсети требуется явный параметр отключения. Этот параметр применим только к закрытой конечной точке. Для других ресурсов в подсети управление доступом осуществляется на основе определения правил безопасности группы безопасности сети (NSG). 
+Network policies like network security groups (NSG) are not supported for private endpoints. In order to deploy a Private Endpoint on a given subnet, an explicit disable setting is required on that subnet. This setting is only applicable for the Private Endpoint. For other resources in the subnet, access is controlled based on Network Security Groups (NSG) security rules definition. 
  
-При использовании портала для создания частной конечной точки этот параметр автоматически отключается в рамках процесса создания. Развертывание с использованием других клиентов требует дополнительного шага для изменения этого параметра. Вы можете отключить этот параметр с помощью Cloud Shell из портал Azure или локальной установки Azure PowerShell, Azure CLI или использовать шаблоны Azure Resource Manager.  
+When using the portal to create a private endpoint, this setting is automatically disabled as part of the create process. Deployment using other clients requires an additional step to change this setting. You can disable the setting using cloud shell from the Azure portal, or local installations of Azure PowerShell, Azure CLI, or use Azure Resource Manager templates.  
  
-В следующих примерах описано, как отключить `PrivateEndpointNetworkPolicies` для виртуальной сети с именем *myVirtualNetwork* и подсетью *по умолчанию* , размещенной в группе ресурсов с именем *myResourceGroup*.
+The following examples describe how to disable `PrivateEndpointNetworkPolicies` for a virtual network named *myVirtualNetwork* with a *default* subnet hosted in a resource group named *myResourceGroup*.
 
 ## <a name="using-azure-powershell"></a>Использование Azure PowerShell
-В этом разделе описывается, как отключить политики частной конечной точки подсети с помощью Azure PowerShell.
+This section describes how to disable subnet private endpoint policies using Azure PowerShell.
 
 ```azurepowershell
 $virtualNetwork= Get-AzVirtualNetwork `
@@ -35,7 +35,7 @@ $virtualNetwork= Get-AzVirtualNetwork `
 $virtualNetwork | Set-AzVirtualNetwork 
 ```
 ## <a name="using-azure-cli"></a>Использование Azure CLI
-В этом разделе описывается, как отключить политики частной конечной точки подсети с помощью Azure CLI.
+This section describes how to disable subnet private endpoint policies using Azure CLI.
 ```azurecli
 az network vnet subnet update \ 
   --name default \ 
@@ -44,7 +44,7 @@ az network vnet subnet update \
   --disable-private-endpoint-network-policies true
 ```
 ## <a name="using-a-template"></a>Использование шаблона
-В этом разделе описывается, как отключить политики частной конечной точки подсети с помощью шаблона Azure Resource Manager.
+This section describes how to disable subnet private endpoint policies using Azure Resource Manager Template.
 ```json
 { 
           "name": "myVirtualNetwork", 
@@ -70,5 +70,5 @@ az network vnet subnet update \
 } 
 ```
 ## <a name="next-steps"></a>Дальнейшие действия
-- Дополнительные сведения о [частной конечной точке Azure](private-endpoint-overview.md)
+- Learn more about [Azure private endpoint](private-endpoint-overview.md)
  

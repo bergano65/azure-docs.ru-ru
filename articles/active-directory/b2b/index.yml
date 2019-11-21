@@ -5,19 +5,19 @@ metadata:
   title: Документация по управлению приложениями
   description: Узнайте, как с помощью функции совместной работы Azure AD B2B (бизнес-бизнес) обеспечить безопасность общего доступа к приложениям и службам вашей компании для гостевых пользователей и внешних партнеров из любой организации, контролируя при этом собственные корпоративные данные.
   ms.service: active-directory
-  ms.subservice: manage-apps
+  ms.subservice: B2B
   ms.workload: identity
   ms.topic: landing-page
   ms.date: 08/27/2019
   author: msmimart
   ms.author: mimart
   manager: celested
-  ms.openlocfilehash: a1822b3bd6ec7950bc3c0ab9304ea2f60a7127e4
-  ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+  ms.openlocfilehash: 2c0f418249d470c1454474012fb25e6670630108
+  ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 08/28/2019
-  ms.locfileid: "70125158"
+  ms.lasthandoff: 11/21/2019
+  ms.locfileid: "74272701"
 landingContent:
 - title: Совместная работа B2B
   linkLists:

@@ -3,7 +3,7 @@ title: Управление зонами DNS в службе DNS Azure — по
 description: Зонами DNS можно управлять с помощью портала Azure. В этой статье описывается, как обновлять, удалять и создавать зоны DNS в службе DNS Azure.
 services: dns
 documentationcenter: na
-author: vhorne
+author: asudbring
 manager: timlt
 ms.service: dns
 ms.devlang: na
@@ -11,21 +11,21 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/18/2017
-ms.author: victorh
-ms.openlocfilehash: d0a20de8738e8c7b2719a9de85d5fd16aa5778cf
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: allensu
+ms.openlocfilehash: 5d4cc57c4cb5db7f04d604c8ccbc408df1a3e707
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60926344"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74211911"
 ---
 # <a name="how-to-manage-dns-zones-in-the-azure-portal"></a>Как управлять зонами DNS с помощью портала Azure
 
 > [!div class="op_single_selector"]
-> * [Портал](dns-operations-dnszones-portal.md)
+> * [Microsoft Azure](dns-operations-dnszones-portal.md)
 > * [PowerShell](dns-operations-dnszones.md)
 > * [Классический Azure CLI](dns-operations-dnszones-cli-nodejs.md)
-> * [Интерфейс командной строки Azure](dns-operations-dnszones-cli.md)
+> * [Azure CLI](dns-operations-dnszones-cli.md)
 
 В этой статье объясняется, как управлять зонами DNS с помощью портала Azure. Зонами DNS также можно управлять с помощью кроссплатформенного [Azure CLI](dns-operations-dnszones-cli.md) или Azure [PowerShell](dns-operations-dnszones.md).
 
@@ -39,12 +39,12 @@ ms.locfileid: "60926344"
 4. В колонке **Создание зоны DNS** введите следующие значения, а затем щелкните **Создать**.
 
 
-   | **Параметр** | **Значение** | **Сведения** |
+   | **Параметр** | **Значение** | **Дополнительные сведения** |
    |---|---|---|
    |**Имя**|contoso.com|Имя зоны DNS.|
-   |**Подписка**|[Ваша подписка]|Выберите подписку для создания зоны DNS.|
-   |**Группа ресурсов**|**Создать:** contosoDNSRG|Создайте группу ресурсов. Имя группы ресурсов должно быть уникальным в пределах выбранной подписки. Дополнительные сведения о группах ресурсов см. в разделе [Группы ресурсов](../azure-resource-manager/resource-group-overview.md?toc=%2fazure%2fdns%2ftoc.json#resource-groups) статьи "Общие сведения об Azure Resource Manager".|
-   |**Location**|Запад США||
+   |**подписка**|[Ваша подписка]|Выберите подписку для создания зоны DNS.|
+   |**группа ресурсов**|**Создать:** contosoDNSRG|Создайте группу ресурсов. Имя группы ресурсов должно быть уникальным в пределах выбранной подписки. Дополнительные сведения о группах ресурсов см. в разделе [Группы ресурсов](../azure-resource-manager/resource-group-overview.md?toc=%2fazure%2fdns%2ftoc.json#resource-groups) статьи "Общие сведения об Azure Resource Manager".|
+   |**Расположение**|Западная часть США||
 
 > [!NOTE]
 > Этот параметр относится к расположению группы ресурсов и никак не влияет на расположение зоны DNS. Расположение зоны DNS всегда является "глобальным" и не отображается.

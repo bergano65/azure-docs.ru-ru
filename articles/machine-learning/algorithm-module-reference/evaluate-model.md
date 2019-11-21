@@ -1,129 +1,128 @@
 ---
-title: 'Вычисление модели: ссылка на модуль'
+title: 'Evaluate Model: Module Reference'
 titleSuffix: Azure Machine Learning
-description: Узнайте, как использовать модуль оценки модели в Машинное обучение Azure для измерения точности обученной модели.
+description: Learn how to use the Evaluate Model module in Azure Machine Learning to measure the accuracy of a trained model.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: reference
 author: xiaoharper
 ms.author: zhanxia
-ms.date: 05/06/2019
-ms.openlocfilehash: ddc6a35d5959a2d1f85c151a6f229223db9ba566
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.date: 11/19/2019
+ms.openlocfilehash: 192aae4da4d9b07804f473ec6e98615f46e2ee86
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73497916"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74214573"
 ---
-# <a name="evaluate-model-module"></a>Вычисление модуля модели
+# <a name="evaluate-model-module"></a>Evaluate Model module
 
-В этой статье описывается модуль в Машинное обучение Azure Designer (Предварительная версия).
+This article describes a module in Azure Machine Learning designer (preview).
 
-Используйте этот модуль для измерения точности обученной модели. Вы предоставляете набор данных, содержащий оценки, сформированные из модели, а модуль « **Анализ модели** » вычисляет набор метрик оценки, стандартных для отрасли.
+Use this module to measure the accuracy of a trained model. You provide a dataset containing scores generated from a model, and the **Evaluate Model** module computes a set of industry-standard evaluation metrics.
   
- Метрики, возвращаемые функцией " **вычислить модель** ", зависят от типа модели, которую вы оцениваете:  
+ The metrics returned by **Evaluate Model** depend on the type of model that you are evaluating:  
   
--   **Модели классификации**    
--   **Модели регрессии**    
-
+-   **Classification Models**    
+-   **Regression Models**    
 
 
 > [!TIP]
-> Если вы не знакомы с оценкой модели, мы рекомендуем использовать серию видео Dr. Стивен Elston) в рамках [курса машинного обучения](https://blogs.technet.microsoft.com/machinelearning/2015/09/08/new-edx-course-data-science-machine-learning-essentials/) из EdX. 
+> If you are new to model evaluation, we recommend the video series by Dr. Stephen Elston, as part of the [machine learning course](https://blogs.technet.microsoft.com/machinelearning/2015/09/08/new-edx-course-data-science-machine-learning-essentials/) from EdX. 
 
 
-Существует три способа использования модуля « **Анализ модели** »:
+There are three ways to use the **Evaluate Model** module:
 
-+ Создание оценок для обучающих данных и оценка модели на основе этих оценок
-+ Создание оценок для модели, но сравнение этих оценок с показателями в зарезервированном проверочном наборе
-+ Сравнение оценок для двух различных, но связанных моделей с использованием одного набора данных
++ Generate scores over your training data, and evaluate the model based on these scores
++ Generate scores on the model, but compare those scores to scores on a reserved testing set
++ Compare scores for two different but related models, using the same set of data
 
-## <a name="use-the-training-data"></a>Использование обучающих данных
+## <a name="use-the-training-data"></a>Use the training data
 
-Чтобы оценить модель, необходимо подключить набор данных, содержащий набор входных столбцов и оценок.  Если другие данные недоступны, можно использовать исходный набор данных.
+To evaluate a model, you must connect a dataset that contains a set of input columns and scores.  If no other data is available, you can use your original dataset.
 
-1. Соедините выходные данные оцененной [модели](./score-model.md) оценки с входными **данными для** **вычисления модели**. 
-2. Щелкните **оценить модуль модели** и запустите конвейер, чтобы создать оценки оценки.
+1. Connect the **Scored dataset** output of the [Score Model](./score-model.md) to the input of **Evaluate Model**. 
+2. Click **Evaluate Model** module, and run the pipeline to generate the evaluation scores.
 
-## <a name="use-testing-data"></a>Использование данных тестирования
+## <a name="use-testing-data"></a>Use testing data
 
-Распространенный сценарий в машинном обучении заключается в разделении исходного набора данных на обучающие и проверочные наборы, с помощью модуля [Split](./split-data.md) или модуля [Partition и Sample](./partition-and-sample.md) . 
+A common scenario in machine learning is to separate your original data set into training and testing datasets, using the [Split](./split-data.md) module, or the [Partition and Sample](./partition-and-sample.md) module. 
 
-1. Соедините выходные данные оцененной [модели](score-model.md) оценки с входными **данными для** **вычисления модели**. 
-2. Соедините выходные данные модуля Split Data (разделение данных), содержащего проверочные данные, с верным входом **оценки модели**.
-2. Щелкните пункт **вычислить модуль модели** и выберите **Выполнить выбранное** , чтобы создать оценки.
+1. Connect the **Scored dataset** output of the [Score Model](score-model.md) to the input of **Evaluate Model**. 
+2. Connect the output of the Split Data module that contains the testing data to the right-hand input of **Evaluate Model**.
+2. Click **Evaluate Model** module, and select **Run selected** to generate the evaluation scores.
 
-## <a name="compare-scores-from-two-models"></a>Сравнение оценок из двух моделей
+## <a name="compare-scores-from-two-models"></a>Compare scores from two models
 
-Можно также подключить второй набор оценок для **оценки модели**.  Оценки могут быть общим набором вычислений, которые имеют известные результаты, или набором результатов из другой модели для одних и тех же данных.
+You can also connect a second set of scores to **Evaluate Model**.  The scores might be a shared evaluation set that has known results, or a set of results from a different model for the same data.
 
-Эта функция полезна, поскольку вы можете легко сравнивать результаты из двух разных моделей на одних и тех же данных. Также можно сравнить результаты двух разных запусков по одному и тому же данным с разными параметрами.
+This feature is useful because you can easily compare results from two different models on the same data. Or, you might compare scores from two different runs over the same data with different parameters.
 
-1. Соедините выходные данные оцененной [модели](score-model.md) оценки с входными **данными для** **вычисления модели**. 
-2. Соедините выход модуля оценки модели для второй модели с верным входом **оценки модели**.
-3. Щелкните правой кнопкой мыши пункт **Вычисление модели**и выберите команду **выполнить** , чтобы создать оценки.
+1. Connect the **Scored dataset** output of the [Score Model](score-model.md) to the input of **Evaluate Model**. 
+2. Connect the output of the Score Model module for the second model to the right-hand input of **Evaluate Model**.
+3. Right-click **Evaluate Model**, and select **Run selected** to generate the evaluation scores.
 
 ## <a name="results"></a>Результаты
 
-После выполнения **оценки модели**щелкните правой кнопкой мыши модуль и выберите **результаты оценки** , чтобы просмотреть результаты. Вы сможете:
+After you run **Evaluate Model**, right-click the module and select **Evaluation results** to see the results. Вы сможете:
 
-+ Сохранение результатов в виде набора данных для упрощения анализа с помощью других средств
-+ Создание визуализации в конструкторе
++ Save the results as a dataset, for easier analysis with other tools
++ Generate a visualization in the designer
 
-Если вы подключаете наборы данных к обоим входам для **вычисления модели**, результаты будут содержать метрики для обоих наборов или обеих моделей.
-Модель или данные, присоединенные к левому порту, сначала отображаются в отчете, за которыми следуют метрики набора данных или модель, присоединенная к нужному порту.  
+If you connect datasets to both inputs of **Evaluate Model**, the results will contain metrics for both set of data, or both models.
+The model or data attached to the left port is presented first in the report, followed by the metrics for the dataset, or model attached on the right port.  
 
-Например, на следующем рисунке представлено сравнение результатов из двух моделей кластеризации, созданных на основе одних и тех же данных, но с разными параметрами.  
+For example, the following image represents a comparison of results from two clustering models that were built on the same data, but with different parameters.  
 
 ![AML&#95;Comparing2Models](media/module/aml-comparing2models.png "AML_Comparing2Models")  
 
-Поскольку это модель кластеризации, результаты оценки отличаются от результатов при сравнении показателей двух моделей регрессии или сравнении двух моделей классификации. Однако общая презентация одинакова. 
+Because this is a clustering model, the evaluation results are different than if you compared scores from two regression models, or compared two classification models. However, the overall presentation is the same. 
 
 ## <a name="metrics"></a>Метрики
 
-В этом разделе описываются метрики, возвращаемые для конкретных типов моделей, поддерживаемых для использования с **моделью Evaluate**.
+This section describes the metrics returned for the specific types of models supported for use with **Evaluate Model**:
 
-+ [модели классификации](#bkmk_classification)
-+ [модели регрессии](#bkmk_regression)
++ [classification models](#bkmk_classification)
++ [regression models](#bkmk_regression)
 
-###  <a name="bkmk_classification"></a>Метрики для моделей классификации
+###  <a name="bkmk_classification"></a> Metrics for classification models
 
-При оценке моделей классификации выводятся следующие метрики. При сравнении моделей они будут ранжированы по метрике, выбранному для оценки.  
+The following metrics are reported when evaluating classification models. If you compare models, they are ranked by the metric you select for evaluation.  
   
--   **Точность** измеряет значение эффективности модели классификации, как пропорции истинных результатов для общего числа вариантов.  
+-   **Accuracy** measures the goodness of a classification model as the proportion of true results to total cases.  
   
--   **Точность** — это пропорция истинных результатов по всем положительным результатам.  
+-   **Precision** is the proportion of true results over all positive results.  
   
--   **Отзыв** — это часть всех правильных результатов, возвращаемых моделью.  
+-   **Recall** is the fraction of all correct results returned by the model.  
   
--   **F-Оценка** вычисляется как взвешенное среднее значение точности и может быть получено между 0 и 1, где идеальным значением F-Score является 1.  
+-   **F-score** is computed as the weighted average of precision and recall between 0 and 1, where the ideal F-score value is 1.  
   
--   **AUC** измеряет область под кривой, построенную на истинных положительных значениях по оси y, и ложные срабатывания по оси x. Эта метрика полезна, так как она предоставляет одно число, которое позволяет сравнивать модели различных типов.  
+-   **AUC** measures the area under the curve plotted with true positives on the y axis and false positives on the x axis. This metric is useful because it provides a single number that lets you compare models of different types.  
   
-- **Средняя вероятность потери журнала** — это единственная оценка, используемая для выведения штрафа за неверные результаты. Он вычисляется как разница между двумя распределениями вероятностей — значением true и значением в модели.  
+- **Average log loss** is a single score used to express the penalty for wrong results. It is calculated as the difference between two probability distributions – the true one, and the one in the model.  
   
-- **Курс обучения** — это единственная оценка, которая представляет преимущества классификатора по случайному прогнозу. Потери журнала измеряют неопределенность модели, сравнивая вероятности, которые она выводит к известным значениям (Земля-правда) в метках. Необходимо максимально сокращать потери журнала для модели в целом.
+- **Training log loss** is a single score that represents the advantage of the classifier over a random prediction. The log loss measures the uncertainty of your model by comparing the probabilities it outputs to the known values (ground truth) in the labels. You want to minimize log loss for the model as a whole.
 
-##  <a name="bkmk_regression"></a>Метрики для моделей регрессии
+##  <a name="bkmk_regression"></a> Metrics for regression models
  
-Метрики, возвращаемые для моделей регрессии, обычно предназначены для оценки объема ошибок.  Модель считается подгонку для данных, если разница между наблюдаемыми и прогнозируемыми значениями невелика. Однако при просмотре шаблона остатков (разница между любой прогнозируемой точкой и соответствующим фактическим значением) может сообщить о потенциальном смещении в модели.  
+The metrics returned for regression models are designed to estimate the amount of error.  A model is considered to fit the data well if the difference between observed and predicted values is small. However, looking at the pattern of the residuals (the difference between any one predicted point and its corresponding actual value) can tell you a lot about potential bias in the model.  
   
- Для вычисления моделей регрессии выводятся следующие метрики. При сравнении моделей они ранжированы по метрике, выбранному для оценки.  
+ The following metrics are reported for evaluating regression models. When you compare models, they are ranked by the metric you select for evaluation.  
   
-- **Средняя абсолютная ошибка (MAE)** измеряет, насколько близки прогнозы к фактическим результатам; Таким же показателем является более низкий показатель.  
+- **Mean absolute error (MAE)** measures how close the predictions are to the actual outcomes; thus, a lower score is better.  
   
-- **Средняя квадратная ошибка (Корень среднеквадратичной погрешности)** создает одно значение, которое суммирует ошибку в модели. Изменяя разницу, метрика не учитывает разницу между чрезмерным прогнозированием и прогнозированием.  
+- **Root mean squared error (RMSE)** creates a single value that summarizes the error in the model. By squaring the difference, the metric disregards the difference between over-prediction and under-prediction.  
   
-- **Относительная абсолютная ошибка (рае)** — это относительная абсолютная разница между ожидаемыми и фактическими значениями; относительный, поскольку средняя разница делится на арифметическое среднее значение.  
+- **Relative absolute error (RAE)** is the relative absolute difference between expected and actual values; relative because the mean difference is divided by the arithmetic mean.  
   
-- **Относительная квадратная ошибка (РСЕ)** аналогично нормализует общую квадратную ошибку прогнозируемых значений путем деления на общую квадратную ошибку фактических значений.  
+- **Relative squared error (RSE)** similarly normalizes the total squared error of the predicted values by dividing by the total squared error of the actual values.  
   
-- **Равна нулю одна ошибка (мзое)** указывает, был ли прогноз правильным.  Другими словами: `ZeroOneLoss(x,y) = 1` при `x!=y`; в противном случае `0`.
+- **Mean Zero One Error (MZOE)** indicates whether the prediction was correct or not.  In other words: `ZeroOneLoss(x,y) = 1` when `x!=y`; otherwise `0`.
   
-- **Коэффициент определения**, часто называемый R<sup>2</sup>, представляет прогнозируемую мощность модели в виде значения от 0 до 1. Ноль означает, что модель является случайной (ничего не объясняет); 1 означает, что вполне подходит. Однако следует соблюдать осторожность при интерпретации значений R<sup>2</sup> , так как низкие значения могут быть полностью нормальны, а высокие значения могут быть подозрительными.
+- **Coefficient of determination**, often referred to as R<sup>2</sup>, represents the predictive power of the model as a value between 0 and 1. Zero means the model is random (explains nothing); 1 means there is a perfect fit. However, caution should be used in interpreting  R<sup>2</sup> values, as low values can be entirely normal and high values can be suspect.
   
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-См. [набор модулей, доступных](module-reference.md) для машинное обучение Azure. 
+See the [set of modules available](module-reference.md) to Azure Machine Learning. 

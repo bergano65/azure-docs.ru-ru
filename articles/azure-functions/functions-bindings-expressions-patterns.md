@@ -1,24 +1,20 @@
 ---
-title: Выражения и шаблоны привязок функций Azure
-description: Научитесь создавать различные выражения привязки функций Azure на основе общих шаблонов.
-services: functions
-documentationcenter: na
+title: Azure Functions bindings expressions and patterns
+description: Learn to create different Azure Functions binding expressions based on common patterns.
 author: craigshoemaker
-manager: gwallace
-ms.service: azure-functions
 ms.topic: reference
 ms.date: 02/18/2019
 ms.author: cshoe
-ms.openlocfilehash: db6f4f938b1555091dc51e310d4d31f96f93200c
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: f00637ff2c8cf39b683056b041fe0e991276a065
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70097351"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74227221"
 ---
-# <a name="azure-functions-binding-expression-patterns"></a>Шаблоны выражений привязки функций Azure
+# <a name="azure-functions-binding-expression-patterns"></a>Azure Functions binding expression patterns
 
-Одной из самых эффективных функций триггеров [и привязок](./functions-triggers-bindings.md) являются *выражения привязки*. В файле *function.json* и в параметрах функции и коде можно использовать выражения, которые разрешаются в значения из различных источников.
+One of the most powerful features of [triggers and bindings](./functions-triggers-bindings.md) is *binding expressions*. В файле *function.json* и в параметрах функции и коде можно использовать выражения, которые разрешаются в значения из различных источников.
 
 Большинство выражений определяются путем их заключения в фигурные скобки. Например, в функции триггера очереди `{queueTrigger}` разрешается в текст сообщения очереди. Если свойство `path` для выходной привязки большого двоичного объекта — `container/{queueTrigger}`, а функция активируется сообщением очереди `HelloWorld`, создается большой двоичный объект с именем `HelloWorld`.
 
@@ -71,7 +67,7 @@ public static void Run(
 }
 ```
 
-## <a name="trigger-file-name"></a>Имя файла триггера
+## <a name="trigger-file-name"></a>Trigger file name
 
 `path` для триггера большого двоичного объекта может быть шаблоном, который позволяет ссылаться на имя большого двоичного объекта, активирующего триггер, в других привязках и коде функции. Шаблон может также включать критерии фильтрации, которые определяют, какие большие двоичные объекты могут активировать вызов функции.
 
@@ -146,7 +142,7 @@ public static void Run(
 * QueueTrigger (содержимое активирующего сообщения, если строка допустима)
 * DequeueCount
 * ExpirationTime
-* Id
+* Идентификатор
 * InsertionTime
 * NextVisibleTime
 * PopReceipt
@@ -173,7 +169,7 @@ public static void Run(
 
 Сведения о свойствах метаданных для каждого триггера приведены в соответствующих статьях документации. Пример см. в разделе [о метаданных триггера очередей](functions-bindings-storage-queue.md#trigger---message-metadata). Документация доступна также на портале на вкладке **Интегрировать** в разделе **Документация** под областью конфигурации привязки.  
 
-## <a name="json-payloads"></a>Полезные данные JSON
+## <a name="json-payloads"></a>JSON payloads
 
 Если полезные данные представлены в виде JSON, на его свойства можно ссылаться в конфигурации других привязок в той же функции и ее коде.
 
@@ -309,6 +305,6 @@ public class BlobName
 
 В C# и других языках .NET можно использовать шаблон императивной привязки, которая отличается от декларативной привязки в файле *function.json* или в атрибутах. Императивную привязку удобно использовать, когда параметры привязки должны вычисляться не при проектировании, а во время выполнения. Дополнительные сведения см. в [справочнике разработчика C#](functions-dotnet-class-library.md#binding-at-runtime) и [справочнике разработчика скриптов C#](functions-reference-csharp.md#binding-at-runtime).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 > [!div class="nextstepaction"]
-> [Использование возвращаемого значения функции Azure](./functions-bindings-return-value.md)
+> [Using the Azure Function return value](./functions-bindings-return-value.md)

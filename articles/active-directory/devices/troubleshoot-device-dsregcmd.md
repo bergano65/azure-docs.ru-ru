@@ -1,6 +1,6 @@
 ---
-title: Устранение неполадок устройств с помощью команды dsregcmd Azure Active Directory
-description: Использование выходных данных из dsregcmd для понимания состояния устройств в Azure AD
+title: Troubleshooting devices using the dsregcmd command - Azure Active Directory
+description: Using the output from dsregcmd to understand the state of devices in Azure AD
 services: active-directory
 ms.service: active-directory
 ms.subservice: devices
@@ -11,37 +11,37 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: spunukol
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4aa8f9a7c6807a2f9505559ea13fb0b4f410346d
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: c2769210b40b011a35973e48eebce60526f6fc10
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68987174"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74207165"
 ---
-# <a name="troubleshooting-devices-using-the-dsregcmd-command"></a>Устранение неполадок устройств с помощью команды dsregcmd
+# <a name="troubleshooting-devices-using-the-dsregcmd-command"></a>Troubleshooting devices using the dsregcmd command
 
-Служебную программу dsregcmd/Status следует запускать от имени учетной записи пользователя домена.
+The dsregcmd /status utility must be run as a domain user account.
 
 ## <a name="device-state"></a>Состояние устройства
 
-В этом разделе перечислены параметры состояния присоединение к устройству. В следующей таблице перечислены критерии для устройства, находящиеся в различных состояниях объединения.
+This section lists the device join state parameters. The table below lists the criteria for the device to be in various join states.
 
-| AzureAdJoined | ентерприсежоинед | домаинжоинед | Состояние устройства |
+| AzureAdJoined | EnterpriseJoined | DomainJoined | Состояние устройства |
 | ---   | ---   | ---   | ---   |
-| да | НЕТ | НЕТ | Присоединено к Azure AD |
-| НЕТ | НЕТ | да | Присоединено к домену |
-| да | НЕТ | да | Гибридное присоединение к AD |
-| НЕТ | да | да | Локальная DRS присоединена |
+| ДА | НЕТ | НЕТ | Azure AD Joined |
+| НЕТ | НЕТ | ДА | Domain Joined |
+| ДА | НЕТ | ДА | Hybrid AD Joined |
+| НЕТ | ДА | ДА | On-premises DRS Joined |
 
 > [!NOTE]
-> Состояние Workplace Join (Azure AD Registered) отображается в разделе "пользовательское состояние"
+> Workplace Join (Azure AD registered) state is displayed in the "User State" section
 
-- **AzureAdJoined:** — задайте значение "Да", если устройство присоединено к Azure AD. В противном случае — нет.
-- **Ентерприсежоинед:** — задайте значение "Да", если устройство присоединено к локальной DRS. Устройство не может одновременно Ентерприсежоинед и AzureAdJoined.
-- **Домаинжоинед:** — задайте значение "Да", если устройство присоединено к домену (AD).
-- **Имя_домена:** — укажите имя домена, если устройство присоединено к домену.
+- **AzureAdJoined:** - Set to “YES” if the device is Joined to Azure AD. “NO” otherwise.
+- **EnterpriseJoined:** - Set to “YES” if the device is Joined to an on-premises DRS. A device cannot be both EnterpriseJoined and AzureAdJoined.
+- **DomainJoined:** - Set to “YES” if the device is joined to a domain (AD).
+- **DomainName:** - Set to the name of the domain if the device is joined to a domain.
 
-### <a name="sample-device-state-output"></a>Пример выходных данных состояния устройства
+### <a name="sample-device-state-output"></a>Sample device state output
 
 ```
 +----------------------------------------------------------------------+
@@ -56,16 +56,16 @@ ms.locfileid: "68987174"
 
 ## <a name="device-details"></a>Сведения об устройстве
 
-Отображается только в том случае, если устройство присоединено к Azure AD или присоединено к гибридной службе Azure AD (не зарегистрирована в Azure AD). В этом разделе перечислены сведения об устройстве, идентифицирующие данные, хранящиеся в облаке.
+Displayed only when the device is Azure AD joined or hybrid Azure AD joined (not Azure AD registered). This section lists device identifying details stored in the cloud.
 
-- **DeviceID:** уникальный идентификатор устройства в клиенте Azure AD.
-- **Отпечаток:** -отпечаток сертификата устройства 
-- **Девицецертификатевалидити:** — действительность сертификата устройства.
-- **Кэйконтаинерид:** -ContainerId закрытого ключа устройства, связанного с сертификатом устройства
-- **Кэйпровидер:** -Кэйпровидер (оборудование или программное обеспечение), используемое для хранения закрытого ключа устройства.
-- **Тпмпротектед:** -"Да", если закрытый ключ устройства хранится в аппаратном доверенном платформенном модуле.
+- **DeviceId:** - Unique ID of the device in the Azure AD tenant
+- **Thumbprint:** - Thumbprint of the device certificate 
+- **DeviceCertificateValidity:** - Validity of the device certificate
+- **KeyContainerId:** - ContainerId of the device private key associated with the device certificate
+- **KeyProvider:** - KeyProvider (Hardware/Software) used to store the device private key.
+- **TpmProtected:** - “YES” if the device private key is stored in a Hardware TPM.
 
-### <a name="sample-device-details-output"></a>Вывод сведений об образце устройства
+### <a name="sample-device-details-output"></a>Sample device details output
 
 ```
 +----------------------------------------------------------------------+
@@ -81,14 +81,17 @@ ms.locfileid: "68987174"
 +----------------------------------------------------------------------+
 ```
 
-## <a name="tenant-details"></a>Сведения о клиенте
+## <a name="tenant-details"></a>Tenant details
 
-Отображается только в том случае, если устройство присоединено к Azure AD или присоединено к гибридной службе Azure AD (не зарегистрирована в Azure AD). В этом разделе перечислены общие сведения о клиенте при присоединении устройства к Azure AD.
+Displayed only when the device is Azure AD joined or hybrid Azure AD joined (not Azure AD registered). This section lists the common tenant details when a device is joined to Azure AD.
 
 > [!NOTE]
-> Даже если вы видите URL-адреса MDM, это не означает, что устройство управляется MDM. Сведения отображаются, если у клиента есть конфигурация MDM для автоматической регистрации, даже если само устройство не управляется. 
+> If the MDM URLs in this section are empty, it indicates that the MDM was either not configured or current user is not in scope of MDM enrollment. Check the Mobility settings in Azure AD to review your MDM configuration.
 
-### <a name="sample-tenant-details-output"></a>Пример выходных данных о клиенте
+> [!NOTE]
+> Even if you see MDM URLs this does not mean that the device is managed by an MDM. The information is displayed if the tenant has MDM configuration for auto-enrollment even if the device itself is not managed. 
+
+### <a name="sample-tenant-details-output"></a>Sample tenant details output
 
 ```
 +----------------------------------------------------------------------+
@@ -121,22 +124,22 @@ ms.locfileid: "68987174"
 
 ## <a name="user-state"></a>состояние пользователя;
 
-В этом разделе перечислены сведения о состоянии различных атрибутов для пользователя, который в данный момент вошел в систему на устройстве.
+This section lists the status of various attributes for the user currently logged into the device.
 
 > [!NOTE]
-> Чтобы получить допустимое состояние, команда должна быть запущена в контексте пользователя.
+> The command must run in a user context to retrieve valid status.
 
-- **Нгксет:** — задайте значение "Да", если для текущего пользователя, выполнившего вход, задан ключ Windows Hello.
-- **Нгккэйид:** — идентификатор ключа Windows Hello, если он задан для текущего вошедшего в систему пользователя.
-- **Канресет:** — указывает, можно ли сбросить ключ Windows Hello пользователем. 
-- **Возможные значения:** -Деструктивеонли, Нондеструктивеонли, Деструктивеанднондеструктиве или Unknown при ошибке. 
-- **Воркплацежоинед:** — задайте значение "Да", если зарегистрированные учетные записи Azure AD были добавлены на устройство в текущем контексте NTuser.
-- **Вамдефаултсет:** — задайте значение "Да", если для вошедшего в систему пользователя создана учетная запись WAM по умолчанию. В этом поле может отображаться сообщение об ошибке, если дсрег/Status выполняется в контексте администратора. 
-- **Вамдефаултаусорити:** — значение "Организации" для Azure AD.
-- **Вамдефаултид:** -Always "https://login.microsoft.com" для Azure AD.
-- **WamDefaultGUID:** — GUID поставщика WAM (Azure AD/учетная запись Майкрософт) для учетной записи WAM по умолчанию. 
+- **NgcSet:** - Set to “YES” if a Windows Hello key is set for the current logged on user.
+- **NgcKeyId:** - ID of the Windows Hello key if one is set for the current logged on user.
+- **CanReset:** - Denotes if the Windows Hello key can be reset by the user. 
+- **Possible values:** - DestructiveOnly, NonDestructiveOnly, DestructiveAndNonDestructive, or Unknown if error. 
+- **WorkplaceJoined:** - Set to “YES” if Azure AD registered accounts have been added to the device in the current NTUSER context.
+- **WamDefaultSet:** - Set to “YES” if a WAM default WebAccount is created for the logged in user. This field could display an error if dsreg /status is run in admin context. 
+- **WamDefaultAuthority:** - Set to “organizations” for Azure AD.
+- **WamDefaultId:** - Always “https://login.microsoft.com” for Azure AD.
+- **WamDefaultGUID:** - The WAM provider’s (Azure AD/Microsoft account) GUID for the default WAM WebAccount. 
 
-### <a name="sample-user-state-output"></a>Пример выходных данных пользовательского состояния
+### <a name="sample-user-state-output"></a>Sample user state output
 
 ```
 +----------------------------------------------------------------------+
@@ -155,23 +158,23 @@ ms.locfileid: "68987174"
 +----------------------------------------------------------------------+
 ```
 
-## <a name="sso-state"></a>Состояние единого входа
+## <a name="sso-state"></a>SSO state
 
-Этот раздел можно игнорировать для зарегистрированных устройств Azure AD.
+This section can be ignored for Azure AD registered devices.
 
 > [!NOTE]
-> Команда должна выполняться в контексте пользователя, чтобы получить допустимое состояние для этого пользователя.
+> The command must run in a user context to retrieve valid status for that user.
 
-- **Азуреадпрт:** — задайте значение "Да", если на устройстве есть PRT для вошедшего в систему пользователя.
-- **Азуреадпртупдатетиме:** — задайте время в формате UTC при последнем обновлении PRT.
-- **Азуреадпртекспиритиме:** — задайте время в формате UTC, если срок действия PRT истекает, если он не продлен.
-- **Азуреадпртаусорити:** — URL-адрес центра Azure AD
-- **Ентерприсепрт:** — задайте значение "Да", если устройство имеет PRT из локальных служб ADFS. Для гибридных устройств, присоединенных к Azure AD, устройство могло бы PRT одновременно как из Azure AD, так и из локальной службы AD. Локальные подключенные устройства будут иметь только корпоративный PRT.
-- **Ентерприсепртупдатетиме:** — задайте время в формате UTC при последнем обновлении корпоративного PRT.
-- **Ентерприсепртекспиритиме:** — задайте время в формате UTC, если срок действия PRT истекает, если он не продлен.
-- **Ентерприсепртаусорити:** URL-адрес центра ADFS
+- **AzureAdPrt:** - Set to “YES” if a PRT is present on the device for the logged-on user.
+- **AzureAdPrtUpdateTime:** - Set to the time in UTC when the PRT was last updated.
+- **AzureAdPrtExpiryTime:** - Set to the time in UTC when the PRT is going to expire if it is not renewed.
+- **AzureAdPrtAuthority:** - Azure AD authority URL
+- **EnterprisePrt:** - Set to “YES” if the device has PRT from on-premises ADFS. For hybrid Azure AD joined devices the device could have PRT from both Azure AD and on-premises AD simultaneously. On-premises joined devices will only have an Enterprise PRT.
+- **EnterprisePrtUpdateTime:** - Set to the time in UTC when the Enterprise PRT was last updated.
+- **EnterprisePrtExpiryTime:** - Set to the time in UTC when the PRT is going to expire if it is not renewed.
+- **EnterprisePrtAuthority:** - ADFS authority URL
 
-### <a name="sample-sso-state-output"></a>Пример выходных данных состояния единого входа
+### <a name="sample-sso-state-output"></a>Sample SSO state output
 
 ```
 +----------------------------------------------------------------------+
@@ -192,35 +195,35 @@ ms.locfileid: "68987174"
 
 ## <a name="diagnostic-data"></a>Диагностические данные
 
-### <a name="pre-join-diagnostics"></a>Диагностика перед соединением
+### <a name="pre-join-diagnostics"></a>Pre-join diagnostics
 
-Этот раздел отображается только в том случае, если устройство присоединено к домену и не может выполнить гибридное присоединение к Azure AD.
+This section is displayed only if the device is domain joined and is unable to hybrid Azure AD join.
 
-В этом разделе выполняются различные тесты, помогающие диагностировать сбои при соединении. В этом разделе также содержатся сведения о предыдущем (?). Эти сведения включают в себя фазу ошибки, код ошибки, идентификатор запроса сервера, состояние ответа сервера HTTP, сообщение об ошибке ответа сервера.
+This section performs various tests to help diagnose join failures. This section also includes the details of the previous (?). This information includes the error phase, the error code, the server request ID, server response http status, server response error message.
 
-- **Контекст пользователя:** — контекст, в котором выполняется диагностика. Возможные значения: СИСТЕМНЫЙ, непривилегированный пользователь, пользователь с ПОВЫШЕНными привилегиями. 
+- **User Context:** - The context in which the diagnostics are run. Possible values: SYSTEM, UN-ELEVATED User, ELEVATED User. 
 
    > [!NOTE]
-   > Поскольку фактическое соединение выполняется в СИСТЕМном контексте, выполнение диагностики в контексте системы наиболее близко к сценарию фактического объединения. Чтобы запустить диагностику в контексте системы, команда dsregcmd/Status должна быть запущена из командной строки с повышенными привилегиями.
+   > Since the actual join is performed in SYSTEM context, running the diagnostics in SYSTEM context is closest to the actual join scenario. To run diagnostics in SYSTEM context, the dsregcmd /status command must be run from an elevated command prompt.
 
-- **Время клиента:** — системное время в формате UTC.
-- **Проверка подключения Active Directory:** -Test выполняет проверку подключения к контроллеру домена. Ошибка в этом тесте, скорее всего, приведет к ошибкам соединения на этапе предварительной проверки.
-- **Проверка конфигурации Active Directory:** -Test считывает и проверяет, правильно ли НАСТРОЕН объект SCP в локальном лесу AD. Ошибки в этом тесте, скорее всего, приведут к ошибкам соединения на этапе обнаружения с кодом ошибки 0x801c001d.
-- **Тест обнаружения DRS:** -Test получает конечные точки DRS из конечной точки метаданных обнаружения и выполняет запрос области пользователя. Ошибки в этом тесте, скорее всего, приведут к ошибкам соединения на этапе обнаружения.
-- **Тест подключения DRS:** -Test выполняет базовый тест подключения к КОНЕЧНОЙ точке DRS.
-- **Проверка получения маркера:** -Test пытается получить маркер проверки подлинности Azure AD, если клиент пользователя является федеративным. Ошибки в этом тесте, скорее всего, приведут к ошибкам соединения на этапе проверки подлинности. Если при выполнении операции проверки подлинности не удается выполнить синхронизацию, будет предпринята попытка выполнить откат, если только откат явно не отключен с ключом реестра.
-- **Откат к синхронизации — соединение:** задайте значение "включено", если раздел реестра, чтобы предотвратить синхронизацию резервных данных с ошибками проверки подлинности, отсутствует. Этот параметр доступен в Windows 10 1803 и более поздних версиях.
-- **Предыдущая регистрация:** время, когда была выполнена предыдущая попыток объединения. Регистрируются только неудачные попытки объединения.
-- **Фаза ошибки:** — этап соединения, в котором он был прерван. Возможные значения: Предварительная проверка, обнаружение, проверка подлинности, соединение.
-- **ErrorCode клиента:** возвращен код ошибки клиента (HRESULT).
-- **ErrorCode сервера:** — код ошибки сервера, если запрос был отправлен на сервер, а сервер вернул ответ с кодом ошибки. 
-- **Сообщение сервера:** — сообщение сервера возвращено вместе с кодом ошибки.
-- **Состояние HTTPS:** — состояние HTTP, возвращенное сервером.
-- **Идентификатор запроса:** — запрос клиента, отправленный на сервер. Полезно для сопоставления с журналами на стороне сервера.
+- **Client Time:** - The system time in UTC.
+- **AD Connectivity Test:** - Test performs a connectivity test to the domain controller. Error in this test will likely result in Join errors in pre-check phase.
+- **AD Configuration Test:** - Test reads and verifies whether the SCP object is configured properly in the on-premises AD forest. Errors in this test would likely result in Join errors in the discover phase with the error code 0x801c001d.
+- **DRS Discovery Test:** - Test gets the DRS endpoints from discovery metadata endpoint and performs a user realm request. Errors in this test would likely result in Join errors in the discover phase.
+- **DRS Connectivity Test:** - Test performs basic connectivity test to the DRS endpoint.
+- **Token acquisition Test:** - Test tries to get an Azure AD authentication token if the user tenant is federated. Errors in this test would likely result in Join errors in the auth phase. If auth fails sync join will be attempted as fallback, unless fallback is explicitly disabled with a registry key.
+- **Fallback to Sync-Join:** - Set to “Enabled” if the registry key, to prevent the fallback to sync join with auth failures, is NOT present. This option is available from Windows 10 1803 and later.
+- **Previous Registration:** - Time the previous Join attempt occurred. Only failed Join attempts are logged.
+- **Error Phase:** - The stage of the join in which it was aborted. Possible values are pre-check, discover, auth, join.
+- **Client ErrorCode:** - Client error code returned (HRESULT).
+- **Server ErrorCode:** - Server error code if a request was sent to the server and server responded back with an error code. 
+- **Server Message:** - Server message returned along with the error code.
+- **Https Status:** - Http status returned by the server.
+- **Request ID:** - The client requestId sent to the server. Useful to correlate with server-side logs.
 
-### <a name="sample-pre-join-diagnostics-output"></a>Пример выходных данных диагностики перед соединением
+### <a name="sample-pre-join-diagnostics-output"></a>Sample pre-join diagnostics output
 
-В следующем примере показан сбой теста диагностики с ошибкой обнаружения.
+The following example shows diagnostics test failing with a discovery error.
 
 ```
 +----------------------------------------------------------------------+
@@ -244,7 +247,7 @@ ms.locfileid: "68987174"
 +----------------------------------------------------------------------+
 ```
 
-В следующем примере показана передача диагностических тестов, но попытка регистрации завершилась ошибкой каталога, которая ожидается при соединении с синхронизацией. После завершения задания синхронизации Azure AD Connect устройство сможет присоединиться.
+The following example shows diagnostics tests are passing but the registration attempt failed with a directory error, which is expected for sync join. Once the Azure AD Connect synchronization job completes, the device will be able to join.
 
 ```
 +----------------------------------------------------------------------+
@@ -273,14 +276,14 @@ ms.locfileid: "68987174"
 +----------------------------------------------------------------------+
 ```
 
-### <a name="post-join-diagnostics"></a>Диагностика после объединения
+### <a name="post-join-diagnostics"></a>Post-join diagnostics
 
-В этом разделе отображаются выходные данные проверок работоспособности, выполненных на устройстве, присоединенном к облаку.
+This section displays the output of sanity checks performed on a device joined to the cloud.
 
-- **Аадрековеренаблед.** Если выбрано значение "Да", ключи, хранящиеся на устройстве, не будут использоваться и устройство будет отмечено для восстановления. Следующий вход запустит поток восстановления и повторно зарегистрирует устройство.
-- **Кэйсигнтест:** — если "передано", ключи устройства имеют хорошую работоспособность. В случае сбоя Кэйсигнтест устройство обычно будет отмечено для восстановления. Следующий вход запустит поток восстановления и повторно зарегистрирует устройство. Для гибридных устройств, присоединенных к Azure AD, восстановление происходит в автоматическом режиме. При присоединении Azure AD или регистрации Azure AD устройства будут запрашивать проверку подлинности пользователя для восстановления и повторной регистрации устройства при необходимости. **Для Кэйсигнтест требуются повышенные привилегии.**
+- **AadRecoveryEnabled:** - If “YES”, the keys stored in the device are not usable and the device is marked for recovery. The next sign in will trigger the recovery flow and re-register the device.
+- **KeySignTest:** - If “PASSED” the device keys are in good health. If KeySignTest fails, the device will usually be marked for recovery. The next sign in will trigger the recovery flow and re-register the device. For hybrid Azure AD joined devices the recovery is silent. While Azure AD joined or Azure AD registered, devices will prompt for user authentication to recover and re-register the device if necessary. **The KeySignTest requires elevated privileges.**
 
-#### <a name="sample-post-join-diagnostics-output"></a>Пример выходных данных диагностики после подключения
+#### <a name="sample-post-join-diagnostics-output"></a>Sample post-join diagnostics output
 
 ```
 +----------------------------------------------------------------------+
@@ -292,14 +295,14 @@ ms.locfileid: "68987174"
 +----------------------------------------------------------------------+
 ```
 
-## <a name="ngc-prerequisite-check"></a>Проверка готовности NGC
+## <a name="ngc-prerequisite-check"></a>NGC prerequisite check
 
-В этом разделе выполняется проверка изначальных для подготовки ключа NGC. 
+This section performs the perquisite checks for the provisioning of an NGC key. 
 
 > [!NOTE]
-> Если пользователь уже успешно настроил учетные данные NGC, вы можете увидеть сведения о предварительных требованиях NGC в dsregcmd/Status.
+> You may not see NGC pre-requisite check details in dsregcmd /status if the user already successfully configured NGC credentials.
 
-### <a name="sample-ngc-prerequisite-check-output"></a>Пример выходных данных проверки готовности к установке NGC
+### <a name="sample-ngc-prerequisite-check-output"></a>Sample NGC prerequisite check output
 
 ```
 +----------------------------------------------------------------------+
@@ -320,6 +323,6 @@ ms.locfileid: "68987174"
 +----------------------------------------------------------------------+
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ответы на вопросы можно найти в статье [Azure Active Directory device management FAQ](faq.md) (Часто задаваемые вопросы по управлению устройствами Azure Active Directory).

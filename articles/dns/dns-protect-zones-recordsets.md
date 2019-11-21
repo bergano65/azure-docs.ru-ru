@@ -1,18 +1,18 @@
 ---
-title: Защита зон и записей Azure DNS.
-description: Как защитить зоны и наборы записей DNS в службе DNS Microsoft Azure.
+title: Protecting DNS Zones and Records - Azure DNS
+description: In this learning path, get started protecting DNS zones and record sets in Microsoft Azure DNS.
 services: dns
-author: vhorne
+author: asudbring
 ms.service: dns
 ms.topic: article
 ms.date: 12/4/2018
-ms.author: victorh
-ms.openlocfilehash: 9340a43eb88b4be03c0f0ccc0d07a32f22a9001c
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: allensu
+ms.openlocfilehash: b84ba055dd8214ae18e76004671e3922e6f3b878
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66121455"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74211450"
 ---
 # <a name="how-to-protect-dns-zones-and-records"></a>Как защитить зоны и записи DNS
 
@@ -22,7 +22,7 @@ ms.locfileid: "66121455"
 
 В этой статье объясняется, как с помощью службы DNS Azure защитить зоны и записи DNS от таких изменений.  Мы применяем две эффективные функции безопасности, предоставляемые Azure Resource Manager: [управление доступом на основе ролей](../role-based-access-control/overview.md) и [блокировки ресурсов](../azure-resource-manager/resource-group-lock-resources.md).
 
-## <a name="role-based-access-control"></a>Контроль доступа на основе ролей
+## <a name="role-based-access-control"></a>Управление доступом на основе ролей
 
 Управление доступом на основе ролей (RBAC) Azure обеспечивает точное управление доступом для пользователей, групп и ресурсов Azure. С помощью RBAC вы можете с высокой точностью предоставлять пользователям доступ, необходимый для выполнения поставленных перед ними задач. Дополнительные сведения о том, как RBAC помогает управлять доступом, см. в статье [Начало работы с управлением доступом на портале Azure](../role-based-access-control/overview.md).
 
@@ -160,7 +160,7 @@ azure role create -inputfile <file path>
 
 Помимо функции RBAC Azure Resource Manager поддерживает и другой тип защиты — возможность "блокировать" ресурсы. Если правила RBAC позволяют контролировать действия определенных пользователей и групп, то блокировки ресурсов применяются к конкретному ресурсу и действуют для всех пользователей и ролей. Дополнительные сведения см. в статье [Блокировка ресурсов с помощью диспетчера ресурсов Azure](../azure-resource-manager/resource-group-lock-resources.md).
 
-Поддерживаются два типа блокировки ресурсов. **CanNotDelete** (Запрет удаления) и **ReadOnly** (Только для чтения). Они могут применяться к зоне DNS или к отдельному набору записей.  Следующие разделы описывают несколько распространенных сценариев и способы их поддержки с помощью блокировок ресурсов.
+There are two types of resource lock: **CanNotDelete** and **ReadOnly**. Они могут применяться к зоне DNS или к отдельному набору записей.  Следующие разделы описывают несколько распространенных сценариев и способы их поддержки с помощью блокировок ресурсов.
 
 ### <a name="protecting-against-all-changes"></a>Защита от любых изменений
 

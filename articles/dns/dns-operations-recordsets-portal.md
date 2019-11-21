@@ -2,17 +2,17 @@
 title: Управление наборами записей и записями DNS с помощью службы DNS Azure
 description: Служба DNS Azure предоставляет возможность управлять наборами записей и записями DNS при размещении домена.
 services: dns
-author: vhorne
+author: asudbring
 ms.service: dns
 ms.topic: article
 ms.date: 10/6/2018
-ms.author: victorh
-ms.openlocfilehash: 891adfacde6e46b1d8fe8e2f6b5fb39c90ce27a0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: allensu
+ms.openlocfilehash: 6d0b917c72b1ebb6f1156df269908fb9af3657ed
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61296472"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74211786"
 ---
 # <a name="manage-dns-records-and-record-sets-by-using-the-azure-portal"></a>Управление записями и наборами записей DNS с помощью портала Azure
 

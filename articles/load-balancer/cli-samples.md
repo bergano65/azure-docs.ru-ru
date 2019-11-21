@@ -1,6 +1,6 @@
 ---
 title: Примеры Azure CLI для Load Balancer
-titlesuffix: Azure Load Balancer
+titleSuffix: Azure Load Balancer
 description: Примеры Azure CLI
 services: load-balancer
 documentationcenter: load-balancer
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: ''
 ms.workload: infrastructure
 ms.date: 06/14/2018
 ms.author: allensu
-ms.openlocfilehash: 9567dc1425ea74a9f46912532c5b8e4e4afc2fdb
-ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
+ms.openlocfilehash: f35007bc3c47aeec9bcdd8a418983b95f6f20ad6
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68275695"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74225421"
 ---
 # <a name="azure-cli-samples-for-load-balancer"></a>Примеры Azure CLI для Load Balancer
 

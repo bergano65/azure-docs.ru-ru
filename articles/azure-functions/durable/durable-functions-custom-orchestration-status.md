@@ -1,20 +1,15 @@
 ---
 title: Состояние пользовательской оркестрации в устойчивых функциях — Azure
 description: Сведения о том, как настроить и использовать состояние пользовательских оркестраций для устойчивых функций.
-services: functions
-author: ggailey777
-manager: jeconnoc
-keywords: ''
-ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 11/02/2019
 ms.author: azfuncdf
-ms.openlocfilehash: d3b3ee1fabf59ae3b87185c4c9eb2f85aa8acd91
-ms.sourcegitcommit: b2fb32ae73b12cf2d180e6e4ffffa13a31aa4c6f
+ms.openlocfilehash: 22242a40a29a1a014a7ab88ed705c7ca3e5ba288
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73614922"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74232954"
 ---
 # <a name="custom-orchestration-status-in-durable-functions-azure-functions"></a>Состояние пользовательской оркестрации в устойчивых функциях (Функции Azure)
 
@@ -23,7 +18,7 @@ ms.locfileid: "73614922"
 ## <a name="sample-use-cases"></a>Примеры вариантов использования
 
 > [!NOTE]
-> В следующих примерах показано, как использовать пользовательскую функцию C# состояния в и JavaScript. C# Примеры написаны для устойчивые функции 2. x и не совместимы с устойчивые функции 1. x. Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
+> The following samples show how to use custom status feature in C# and JavaScript. The C# examples are written for Durable Functions 2.x and are not compatible with Durable Functions 1.x. For more information about the differences between versions, see the [Durable Functions versions](durable-functions-versions.md) article.
 
 ### <a name="visualize-progress"></a>Визуализация прогресса
 
@@ -56,7 +51,7 @@ public static string SayHello([ActivityTrigger] string name)
 }
 ```
 
-#### <a name="javascript-functions-20-only"></a>JavaScript (только функции 2,0)
+#### <a name="javascript-functions-20-only"></a>JavaScript (только Функции 2.0)
 
 ```javascript
 const df = require("durable-functions");
@@ -117,7 +112,7 @@ public static async Task<HttpResponseMessage> Run(
 }
 ```
 
-#### <a name="javascript-functions-20-only"></a>JavaScript (только функции 2,0)
+#### <a name="javascript-functions-20-only"></a>JavaScript (только Функции 2.0)
 
 ```javascript
 const df = require("durable-functions");
@@ -191,7 +186,7 @@ public static void Run(
 }
 ```
 
-#### <a name="javascript-functions-20-only"></a>JavaScript (только функции 2,0)
+#### <a name="javascript-functions-20-only"></a>JavaScript (только Функции 2.0)
 
 ```javascript
 const df = require("durable-functions");
@@ -256,7 +251,7 @@ public static async Task<bool> Run(
 }
 ```
 
-#### <a name="javascript-functions-20-only"></a>JavaScript (только функции 2,0)
+#### <a name="javascript-functions-20-only"></a>JavaScript (только Функции 2.0)
 
 ```javascript
 const df = require("durable-functions");
@@ -283,7 +278,7 @@ module.exports = df.orchestrator(function*(context) {
 });
 ```
 
-## <a name="sample"></a>Образец
+## <a name="sample"></a>Пример
 
 В следующем примере пользовательское состояние показано первым.
 
@@ -302,7 +297,7 @@ public static async Task SetStatusTest([OrchestrationTrigger] IDurableOrchestrat
 }
 ```
 
-### <a name="javascript-functions-20-only"></a>JavaScript (только функции 2,0)
+### <a name="javascript-functions-20-only"></a>JavaScript (только Функции 2.0)
 
 ```javascript
 const df = require("durable-functions");
@@ -338,9 +333,9 @@ GET /runtime/webhooks/durabletask/instances/instance123
 ```
 
 > [!WARNING]
-> Полезные данные настраиваемого значения состояния не должны превышать 16 КБ JSON-текста в кодировке UTF-16, так как они должны поместиться в столбец Хранилища таблиц Azure. Если требуются большие полезные данные, рекомендуется использовать внешнее хранилище.
+> Полезные данные настраиваемого значения состояния не должны превышать 16 КБ JSON-текста в кодировке UTF-16, так как они должны поместиться в столбец хранилища таблиц Azure. We recommend you use external storage if you need a larger payload.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Сведения о устойчивых таймерах](durable-functions-timers.md)
+> [Learn about durable timers](durable-functions-timers.md)

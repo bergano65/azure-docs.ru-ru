@@ -8,20 +8,20 @@ ms.date: 03/12/2019
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: b9b1be699190f6dc6f4771411c22f376d51637ec
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: a2836f40b55a71e080288fce7e48275747962c16
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67477453"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74231535"
 ---
 # <a name="troubleshoot-errors-with-shared-resources"></a>Устранение неполадок c общими ресурсами
 
 В этой статье рассматриваются способы устранения неполадок, которые могут возникнуть при использовании общих ресурсов службы автоматизации Azure.
 
-## <a name="modules"></a>модули
+## <a name="modules"></a>Модули
 
-### <a name="module-stuck-importing"></a>Сценарий. Задержка при импорте модуля
+### <a name="module-stuck-importing"></a>Сценарий: задержка при импорте модуля
 
 #### <a name="issue"></a>Проблема
 
@@ -29,9 +29,9 @@ ms.locfileid: "67477453"
 
 #### <a name="cause"></a>Причина:
 
-Импорт модулей PowerShell — это сложный многоэтапный процесс. При этом существует вероятность, что модуль не будет импортирован правильно. В таком случае импортируемый модуль может застопориться в переходном состоянии. Дополнительные сведения об этом процессе см. в статье [Importing a PowerShell Module]( /powershell/developer/module/importing-a-powershell-module#the-importing-process) (Импорт модуля PowerShell).
+Импорт модулей PowerShell — это сложный многоэтапный процесс. При этом существует вероятность, что модуль не будет импортирован правильно. В таком случае импортируемый модуль может застопориться в переходном состоянии. Дополнительные сведения об этом процессе см. в статье [Importing a PowerShell Module](/powershell/scripting/developer/module/importing-a-powershell-module#the-importing-process) (Импорт модуля PowerShell).
 
-#### <a name="resolution"></a>Способы устранения:
+#### <a name="resolution"></a>Разрешение
 
 Чтобы устранить эту проблему, необходимо удалить модуль, застопорившийся в состоянии **Импорт**, с помощью командлета [Remove-AzureRmAutomationModule](/powershell/module/azurerm.automation/remove-azurermautomationmodule). Затем можно повторить импорт модуля.
 
@@ -39,11 +39,11 @@ ms.locfileid: "67477453"
 Remove-AzureRmAutomationModule -Name ModuleName -ResourceGroupName ExampleResourceGroup -AutomationAccountName ExampleAutomationAccount -Force
 ```
 
-### <a name="update-azure-modules-importing"></a>Сценарий. Модули AzureRM застряли импорт через их обновлении
+### <a name="update-azure-modules-importing"></a>Scenario: AzureRM modules are stuck importing after trying to update them
 
 #### <a name="issue"></a>Проблема
 
-Баннер со следующим сообщением остается в вашей учетной записи после обновлении модулей AzureRM:
+A banner with the following message stays in your account after trying to update your AzureRM modules:
 
 ```error
 Azure modules are being updated
@@ -51,13 +51,13 @@ Azure modules are being updated
 
 #### <a name="cause"></a>Причина:
 
-Имеется известная проблема с обновлением модулей AzureRM в учетную запись службы автоматизации, который находится в группу ресурсов с помощью числовое имя, которое начинается с 0.
+There is a known issue with updating the AzureRM modules in an Automation Account that is in a resource group with a numeric name that starts with 0.
 
-#### <a name="resolution"></a>Способы устранения:
+#### <a name="resolution"></a>Разрешение
 
-Чтобы обновить модули Azure в учетной записи службы автоматизации, он должен быть в группе ресурсов с буквенно-цифровое имя. Группы ресурсов, числовой, имена которых начинаются с 0 — не удалось обновить модули AzureRM в данный момент.
+To update your Azure modules in your Automation Account, it must be in a resource group that has an alphanumeric name. Resource groups with numeric names starting with 0 are unable to update AzureRM modules at this time.
 
-### <a name="module-fails-to-import"></a>Сценарий. не удается импортировать модуль, или после импорта не выполняются командлеты
+### <a name="module-fails-to-import"></a>Сценарий: не удается импортировать модуль или после импорта не выполняются командлеты
 
 #### <a name="issue"></a>Проблема
 
@@ -72,15 +72,15 @@ Azure modules are being updated
 * В папке отсутствуют зависимости модуля.
 * Командлет `New-AzureRmAutomationModule` используется для передачи модуля, при этом полный путь для хранения не указан или модуль не загружен с помощью общедоступного URL-адреса.
 
-#### <a name="resolution"></a>Способы устранения:
+#### <a name="resolution"></a>Разрешение
 
 Эту проблему можно устранить одним из следующих способов.
 
-* Убедитесь, что модуль имеет следующий формат: ModuleName.Zip **->** имя_модуля или номер версии **->** (имя_модуля.psm1, имя_модуля.psd1).
+* Убедитесь, что модуль имеет следующий формат: имя_модуля.Zip **->** имя_модуля или номер_версии **->** (ModuleName.psm1, ModuleName.psd1).
 * Откройте файл PSD1 и проверьте, есть ли у модуля зависимости. Если зависимости есть, отправьте эти модули в учетную запись службы автоматизации.
 * Убедитесь, что все указанные библиотеки DLL находятся в папке модуля.
 
-### <a name="all-modules-suspended"></a>Сценарий. Update-AzureModule.ps1 приостанавливается при обновлении модулей
+### <a name="all-modules-suspended"></a>Scenario: Update-AzureModule.ps1 suspends when updating modules
 
 #### <a name="issue"></a>Проблема
 
@@ -90,7 +90,7 @@ Azure modules are being updated
 
 Значение по умолчанию для определения количества одновременно обновляемых модулей — 10 при использовании сценария `Update-AzureModule.ps1`. Процесс обновления подвержен ошибкам, если одновременно обновляются слишком много модулей.
 
-#### <a name="resolution"></a>Способы устранения:
+#### <a name="resolution"></a>Разрешение
 
 Очень редко все модули AzureRM требуются в одной учетной записи службы автоматизации. Мы рекомендуем импортировать только необходимые модули AzureRM.
 
@@ -118,7 +118,7 @@ Azure modules are being updated
 
 ## <a name="run-as-accounts"></a>Учетная запись запуска от имени
 
-### <a name="unable-create-update"></a>Сценарий. Не удается создать или обновить учетную запись запуска от имени
+### <a name="unable-create-update"></a>Scenario: You're unable to create or update a Run As account
 
 #### <a name="issue"></a>Проблема
 
@@ -132,17 +132,17 @@ You do not have permissions to create…
 
 У вас нет разрешений, необходимых для создания или обновления учетной записи запуска от имени, или ресурс заблокирован на уровне группы ресурсов.
 
-#### <a name="resolution"></a>Способы устранения:
+#### <a name="resolution"></a>Разрешение
 
 Чтобы создать или обновить учетную запись запуска от имени, необходимо иметь соответствующие разрешения на различные ресурсы, используемые для запуска. Дополнительные сведения о разрешениях, необходимых для создания или обновления учетной записи запуска от имени, см. в разделе [Разрешения для запуска от имени учетной записи](../manage-runas-account.md#permissions).
 
 Если проблема связана с блокировкой, убедитесь, что ее можно удалить. Затем перейдите к ресурсу, который заблокирован, щелкните блокировку правой кнопкой мыши и выберите **Удалить**, чтобы снять блокировку.
 
-### <a name="iphelper"></a>Сценарий. При возникновении ошибки «Не удалось найти точку входа с именем «GetPerAdapterInfo» в DLL «iplpapi.dll»» при выполнении модуля runbook.
+### <a name="iphelper"></a>Scenario: You receive the error "Unable to find an entry point named 'GetPerAdapterInfo' in DLL 'iplpapi.dll'" when executing a runbook.
 
 #### <a name="issue"></a>Проблема
 
-При выполнении модуля runbook может появиться следующее исключение:
+When executing a runbook you receive the following exception:
 
 ```error
 Unable to find an entry point named 'GetPerAdapterInfo' in DLL 'iplpapi.dll'
@@ -150,11 +150,11 @@ Unable to find an entry point named 'GetPerAdapterInfo' in DLL 'iplpapi.dll'
 
 #### <a name="cause"></a>Причина:
 
-Эта ошибка вероятнее всего из-за неверной настройкой [Run As Account](../manage-runas-account.md).
+This error is most likely caused by an incorrectly configured [Run As Account](../manage-runas-account.md).
 
-#### <a name="resolution"></a>Способы устранения:
+#### <a name="resolution"></a>Разрешение
 
-Убедитесь, что ваш [Run As Account](../manage-runas-account.md) настроен правильно. Если настроен правильно, убедитесь, что у вас есть правильный код для проверки подлинности в Azure в модуле runbook. Приведенный ниже показан фрагмент кода для проверки подлинности в Azure в модуле runbook с помощью Run As Account.
+Make sure your [Run As Account](../manage-runas-account.md) is properly configured. Once it is configured correctly, ensure you have the proper code in your runbook to authenticate with Azure. The following example shows a snippet of code to authenticate to Azure in a runbook using a Run As Account.
 
 ```powershell
 $connection = Get-AutomationConnection -Name AzureRunAsConnection

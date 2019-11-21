@@ -1,80 +1,80 @@
 ---
-title: Переход с версии v1 на версию 2. шлюз приложений Azure
-description: В этой статье показано, как перенести шлюз приложений Azure и брандмауэр веб-приложения с версии v1 на v2.
+title: Migrate from v1 to v2 - Azure Application Gateway
+description: This article shows you how to migrate Azure Application Gateway and Web Application Firewall from v1 to v2
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: article
 ms.date: 11/14/2019
 ms.author: victorh
-ms.openlocfilehash: 75d041f8ef0d6593a5ff1c696777b68c5f513bf5
-ms.sourcegitcommit: b1a8f3ab79c605684336c6e9a45ef2334200844b
+ms.openlocfilehash: 719686cb123355359391c5cb1e517ff9cfd88371
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74047619"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74231728"
 ---
-# <a name="migrate-azure-application-gateway-and-web-application-firewall-from-v1-to-v2"></a>Перенос шлюза приложений Azure и брандмауэра веб-приложения с версии v1 на v2
+# <a name="migrate-azure-application-gateway-and-web-application-firewall-from-v1-to-v2"></a>Migrate Azure Application Gateway and Web Application Firewall from v1 to v2
 
-Теперь доступен [шлюз приложений Azure и брандмауэр веб-приложения (WAF) версии 2](application-gateway-autoscaling-zone-redundant.md) , предлагающий дополнительные функции, такие как Автомасштабирование и доступность — избыточность зоны. При этом существующие шлюзы версии 1 автоматически не обновляются до версии 2. Если вы хотите выполнить миграцию с версии v1 на версию 2, выполните действия, описанные в этой статье.
+[Azure Application Gateway and Web Application Firewall (WAF) v2](application-gateway-autoscaling-zone-redundant.md) is now available, offering additional features such as autoscaling and availability-zone redundancy. При этом существующие шлюзы версии 1 автоматически не обновляются до версии 2. If you want to migrate from v1 to v2, follow the steps in this article.
 
-Миграция состоит из двух этапов:
+There are two stages in a migration:
 
-1. Перенос конфигурации
-2. Перенос клиентского трафика
+1. Migrate the configuration
+2. Migrate the client traffic
 
-В этой статье рассматривается миграция конфигурации. Миграция трафика клиента зависит от конкретной среды. Однако некоторые общие рекомендации [предоставляются](#migrate-client-traffic)на высоком уровне.
+This article covers configuration migration. Client traffic migration varies depending on your specific environment. However, some high-level, general recommendations [are provided](#migrate-client-traffic).
 
-## <a name="migration-overview"></a>Общие сведения о переносе
+## <a name="migration-overview"></a>Общие сведения о процессе миграции
 
-Доступен сценарий Azure PowerShell, который выполняет следующие действия:
+An Azure PowerShell script is available that does the following:
 
-* Создает новый Standard_v2 или WAF_v2 шлюз в указанной подсети виртуальной сети.
-* Без проблем копирует конфигурацию, связанную с WAF или шлюзом v1, на вновь созданный Standard_V2 или WAF_V2.
+* Creates a new Standard_v2 or WAF_v2 gateway in a virtual network subnet that you specify.
+* Seamlessly copies the configuration associated with the v1 Standard or WAF gateway to the newly created Standard_V2 or WAF_V2 gateway.
 
-### <a name="caveatslimitations"></a>кавеатс\лимитатионс
+### <a name="caveatslimitations"></a>Caveats\Limitations
 
-* Новый шлюз v2 содержит новые общедоступные и частные IP-адреса. Невозможно легко переместить IP-адреса, связанные с существующим шлюзом v1, в версии 2. Однако можно выделить существующий (нераспределенный) общедоступный или частный IP-адрес для нового шлюза v2.
-* Необходимо указать пространство IP-адресов для другой подсети в виртуальной сети, где находится шлюз v1. Скрипт не может создать шлюз v2 в существующих подсетях, где уже есть шлюз v1. Тем не менее, если у существующей подсети уже есть шлюз v2, это может работать при наличии достаточного пространства IP-адресов.
-* Чтобы перенести конфигурацию SSL, необходимо указать все SSL-сертификаты, используемые в шлюзе v1.
-* Если для шлюза v1 включен режим FIPS, он не будет перенесен на новый шлюз v2. Режим FIPS не поддерживается в версии 2.
-* Версия 2 не поддерживает IPv6, поэтому отключенные шлюзы IPv6 не переносятся. Если запустить сценарий, он может не завершиться.
-* Если шлюз V1 имеет только частный IP-адрес, сценарий создает общедоступный IP-адрес и частный IP-адрес для нового шлюза v2. в настоящее время шлюзы v2 не поддерживают только частные IP-адреса.
+* The new v2 gateway has new public and private IP addresses. It isn't possible to move the IP addresses associated with the existing v1 gateway seamlessly to v2. However, you can allocate an existing (unallocated) public or private IP address to the new v2 gateway.
+* You must provide an IP address space for another subnet within your virtual network where your v1 gateway is located. The script can't create the v2 gateway in any existing subnets that already have a v1 gateway. However, if the existing subnet already has a v2 gateway, that may still work provided there's enough IP address space.
+* To  migrate an SSL configuration, you must specify all the SSL certs used in your v1 gateway.
+* If you have FIPS mode enabled for your V1 gateway, it won’t be migrated to your new v2 gateway. FIPS mode isn't supported in v2.
+* v2 doesn't support IPv6, so IPv6 enabled v1 gateways aren't migrated. If you run the script, it may not complete.
+* If the v1 gateway has only a private IP address, the script creates a public IP address and a private IP address for the new v2 gateway. v2 gateways currently don't support only private IP addresses.
 
-## <a name="download-the-script"></a>Скачивание скрипта
+## <a name="download-the-script"></a>Download the script
 
-Скачайте скрипт миграции из [коллекция PowerShell](https://www.powershellgallery.com/packages/AzureAppGWMigration).
+Download the migration script from the  [PowerShell Gallery](https://www.powershellgallery.com/packages/AzureAppGWMigration).
 
-## <a name="use-the-script"></a>Использование скрипта
+## <a name="use-the-script"></a>Use the script
 
-В зависимости от настроек и настроек локальной среды PowerShell существует два варианта.
+There are two options for you depending on your local PowerShell environment setup and preferences:
 
-* Если вы не установили модули Azure az или не хотите удалять модули Azure AZ, лучшим вариантом будет использование параметра `Install-Script` для запуска скрипта.
-* Если вам нужно разместить модули Azure AZ, лучше скачать сценарий и запустить его напрямую.
+* If you don’t have the Azure Az modules installed, or don’t mind uninstalling the Azure Az modules, the best option is to use the `Install-Script` option to run the script.
+* If you need to keep the Azure Az modules, your best bet is to download the script and run it directly.
 
-Чтобы определить, установлены ли модули Azure AZ, запустите `Get-InstalledModule -Name az`. Если вы не видите ни одного установленного модуля AZ, то можете использовать метод `Install-Script`.
+To determine if you have the Azure Az modules installed, run `Get-InstalledModule -Name az`. If you don't see any installed Az modules, then you can use the `Install-Script` method.
 
-### <a name="install-using-the-install-script-method"></a>Установка с помощью метода Install-Script
+### <a name="install-using-the-install-script-method"></a>Install using the Install-Script method
 
-Чтобы использовать этот параметр, на компьютере не должны быть установлены модули Azure AZ. Если они установлены, следующая команда выводит сообщение об ошибке. Можно либо удалить модули Azure AZ, либо воспользоваться другим параметром, чтобы скачать скрипт вручную и запустить его.
+To use this option, you must not have the Azure Az modules installed on your computer. If they're installed, the following command displays an error. You can either uninstall the Azure Az modules, or use the other option to download the script manually and run it.
   
 Выполните следующую команду, чтобы запустить сценарий.
 
 `Install-Script -Name AzureAppGWMigration`
 
-Эта команда также устанавливает необходимые модули AZ.  
+This command also installs the required Az modules.  
 
-### <a name="install-using-the-script-directly"></a>Установка непосредственно с помощью скрипта
+### <a name="install-using-the-script-directly"></a>Install using the script directly
 
-Если у вас установлены некоторые модули Azure AZ и их невозможно удалить (или не хотите удалять их), можно вручную скачать скрипт, используя вкладку **Загрузка вручную** в ссылке Загрузить скрипт. Скрипт загружается как необработанный файл nupkg. Сведения об установке скрипта из этого файла nupkg см. в разделе [Загрузка пакета вручную](https://docs.microsoft.com/powershell/gallery/how-to/working-with-packages/manual-download).
+If you do have some Azure Az modules installed and can't uninstall them (or don't want to uninstall them), you can manually download the script using the **Manual Download** tab in the script download link. The script is downloaded as a raw nupkg file. To install the script from this nupkg file, see [Manual Package Download](/powershell/scripting/gallery/how-to/working-with-packages/manual-download).
 
 Выполните следующее, чтобы запустить этот сценарий.
 
-1. Используйте `Connect-AzAccount` для подключения к Azure.
+1. Use `Connect-AzAccount` to connect to Azure.
 
-1. Для импорта модулей AZ используйте `Import-Module Az`.
+1. Use `Import-Module Az` to import the Az modules.
 
-1. Запустите `Get-Help AzureAppGWMigration.ps1`, чтобы проверить необходимые параметры:
+1. Run `Get-Help AzureAppGWMigration.ps1` to examine the required parameters:
 
    ```
    AzureAppGwMigration.ps1
@@ -88,21 +88,21 @@ ms.locfileid: "74047619"
     -validateMigration -enableAutoScale
    ```
 
-   Параметры для скрипта:
-   * **resourceId: [строка]: required** — это идентификатор ресурса Azure для существующего шлюза Standard v1 или WAF v1. Чтобы найти это строковое значение, перейдите к портал Azure, выберите свой шлюз приложений или ресурс WAF и щелкните ссылку **Свойства** для шлюза. Идентификатор ресурса находится на этой странице.
+   Parameters for the script:
+   * **resourceId: [String]: Required** - This is the Azure Resource ID for your existing Standard v1 or WAF v1 gateway. To find this string value,  navigate to the Azure portal, select your application gateway or WAF resource, and click the **Properties** link for the gateway. The Resource ID is located on that page.
 
-     Чтобы получить идентификатор ресурса, можно также выполнить следующие Azure PowerShell команды:
+     You can also run the following Azure PowerShell commands to get the Resource ID:
 
      ```azurepowershell
      $appgw = Get-AzApplicationGateway -Name <v1 gateway name> -ResourceGroupName <resource group Name> 
      $appgw.Id
      ```
 
-   * **субнетаддрессранже: [строка]: обязательно** — это пространство IP-адресов, выделенное (или которое требуется выделить) для новой подсети, содержащей новый шлюз v2. Он должен быть указан в нотации CIDR. Например: 10.0.0.0/24. Вам не нужно создавать эту подсеть заранее. Скрипт создаст его, если он не существует.
-   * **аппгвнаме: [строка]: необязательный**. Это строка, которую вы укажете для использования в качестве имени нового Standard_v2 или шлюза WAF_v2. Если этот параметр не указан, имя существующего шлюза v1 будет использоваться с суффиксом *_v2* добавлен.
-   * **сслцертификатес: [псаппликатионгатевайсслцертификате]: необязательный**.  Разделенный запятыми список объектов Псаппликатионгатевайсслцертификате, которые создаются для представления сертификатов SSL из шлюза версии v1, должен быть передан в новый шлюз v2. Для каждого SSL-сертификата, настроенного для шлюза Standard v1 или WAF v1, можно создать новый объект Псаппликатионгатевайсслцертификате с помощью команды `New-AzApplicationGatewaySslCertificate`, показанной здесь. Вам потребуется путь к файлу SSL-сертификата и паролю.
+   * **subnetAddressRange: [String]:  Required** - This is the IP address space that you've allocated (or want to allocate) for a new subnet that contains your new v2 gateway. This must be specified in the CIDR notation. For example: 10.0.0.0/24. You don't need to create this subnet in advance. The script creates it for you if it doesn't exist.
+   * **appgwName: [String]: Optional**. This is a string you specify to use as the name for the new Standard_v2 or WAF_v2 gateway. If this parameter isn't supplied, the name of your existing v1 gateway will be used with the suffix *_v2* appended.
+   * **sslCertificates: [PSApplicationGatewaySslCertificate]: Optional**.  A comma-separated list of PSApplicationGatewaySslCertificate objects that you create to represent the SSL certs from your v1 gateway must be uploaded to the new v2 gateway. For each of your SSL certs configured for your Standard v1 or WAF v1 gateway, you can create a new PSApplicationGatewaySslCertificate object via the `New-AzApplicationGatewaySslCertificate` command shown here. You need the path to your SSL Cert file and the password.
 
-       Этот параметр является обязательным только в том случае, если прослушиватели HTTPS не настроены для шлюза v1 или WAF. При наличии хотя бы одной установки прослушивателя HTTPS необходимо указать этот параметр.
+       This parameter is only optional if you don’t have HTTPS listeners configured for your v1 gateway or WAF. If you have at least one HTTPS listener setup, you must specify this parameter.
 
       ```azurepowershell  
       $password = ConvertTo-SecureString <cert-password> -AsPlainText -Force
@@ -114,16 +114,16 @@ ms.locfileid: "74047619"
         -Password $password
       ```
 
-      Можно передать `$mySslCert1, $mySslCert2` (разделенные запятыми) в предыдущем примере в качестве значений для этого параметра в скрипте.
-   * **трустедрутцертификатес: [псаппликатионгатевайтрустедрутцертификате]: необязательный**. Разделенный запятыми список объектов Псаппликатионгатевайтрустедрутцертификате, которые создаются для представления [доверенных корневых сертификатов](ssl-overview.md) для проверки подлинности экземпляров серверной части из шлюза v2.  
+      You can pass in `$mySslCert1, $mySslCert2` (comma-separated) in the previous example as values for this parameter in the script.
+   * **trustedRootCertificates: [PSApplicationGatewayTrustedRootCertificate]: Optional**. A comma-separated list of PSApplicationGatewayTrustedRootCertificate objects that you create to represent the [Trusted Root certificates](ssl-overview.md) for authentication of your backend instances from your v2 gateway.  
 
-      Чтобы создать список объектов Псаппликатионгатевайтрустедрутцертификате, см. раздел [New-азаппликатионгатевайтрустедрутцертификате](https://docs.microsoft.com/powershell/module/Az.Network/New-AzApplicationGatewayTrustedRootCertificate?view=azps-2.1.0&viewFallbackFrom=azps-2.0.0).
-   * **privateIpAddress: [строка]: необязательный**. Конкретный частный IP-адрес, который необходимо связать с новым шлюзом v2.  Это должно быть из той же виртуальной сети, которую вы выделили для нового шлюза v2. Если этот параметр не указан, сценарий выделяет частный IP-адрес для шлюза v2.
-    * **публиЦипресаурцеид: [строка]: необязательный**. ResourceId для ресурса общедоступного IP-адреса (SKU "Стандартный") в подписке, которую нужно выделить новому шлюзу v2. Если этот параметр не указан, сценарий выделяет новый общедоступный IP-адрес в той же группе ресурсов. Имя — это имя шлюза v2 с добавленным параметром *-IP* .
-   * **валидатемигратион: [Switch]: необязательный параметр**. Используйте этот параметр, если требуется, чтобы скрипт выполнял некоторые базовые проверки сравнения конфигураций после создания шлюза v2 и копии конфигурации. По умолчанию проверка не выполняется.
-   * **enableAutoScale: [Switch]: необязательный параметр**. Используйте этот параметр, если вы хотите, чтобы сценарий включил автоматическое масштабирование в новом шлюзе v2 после его создания. По умолчанию автоматическое масштабирование отключено. Вы всегда можете вручную включить его позже на вновь созданном шлюзе v2.
+      To create a list of PSApplicationGatewayTrustedRootCertificate objects, see [New-AzApplicationGatewayTrustedRootCertificate](https://docs.microsoft.com/powershell/module/Az.Network/New-AzApplicationGatewayTrustedRootCertificate?view=azps-2.1.0&viewFallbackFrom=azps-2.0.0).
+   * **privateIpAddress: [String]: Optional**. A specific private IP address that you want to associate to your new v2 gateway.  This must be from the same VNet that you allocate for your new v2 gateway. If this isn't specified, the script allocates a private IP address for your v2 gateway.
+    * **publicIpResourceId: [String]: Optional**. The resourceId of a public IP address (standard SKU) resource in your subscription that you want to allocate to the new v2 gateway. If this isn't specified, the script allocates a new public IP in the same resource group. The name is the v2 gateway’s name with *-IP* appended.
+   * **validateMigration: [switch]: Optional**. Use this parameter if you want the script to do some basic configuration comparison validations after the v2 gateway creation and the configuration copy. By default, no validation is done.
+   * **enableAutoScale: [switch]: Optional**. Use this parameter if you want the script to enable AutoScaling on the new v2 gateway after it's created. By default, AutoScaling is disabled. You can always manually enable it later on the newly created v2 gateway.
 
-1. Запустите скрипт, используя соответствующие параметры. Для завершения может потребоваться от 5 до семи минут.
+1. Run the script using the appropriate parameters. It may take five to seven minutes to finish.
 
     **Пример**
 
@@ -139,59 +139,59 @@ ms.locfileid: "74047619"
       -validateMigration -enableAutoScale
    ```
 
-## <a name="migrate-client-traffic"></a>Перенос клиентского трафика
+## <a name="migrate-client-traffic"></a>Migrate client traffic
 
-Сначала убедитесь, что сценарий успешно создал новый шлюз v2 с точной конфигурацией, перенесенной из шлюза v1. Это можно проверить в портал Azure.
+First, double check that the script successfully created a new v2 gateway with the exact configuration migrated over from your v1 gateway. You can verify this from the Azure portal.
 
-Кроме того, можно отправить небольшой объем трафика через шлюз v2 в качестве ручного теста.
+Also, send a small amount of traffic through the v2 gateway as a manual test.
   
-Вот несколько сценариев, в которых текущий шлюз приложений (стандартный) может получать трафик клиента, и наши рекомендации по каждому из них:
+Here are a few scenarios where your current application gateway (Standard) may receive client traffic, and our recommendations for each one:
 
-* **Пользовательская зона DNS (например, contoso.com), указывающая на внешний IP-адрес (с помощью записи A), связанную со стандартным шлюзом v1 или WAF v1**.
+* **A custom DNS zone (for example, contoso.com) that points to the frontend IP address (using an A record) associated with your Standard v1 or WAF v1 gateway**.
 
-    Вы можете обновить запись DNS, чтобы она указывала на интерфейсный IP-адрес или метку DNS, связанную с шлюзом приложений Standard_v2. В зависимости от срока жизни, настроенного для записи DNS, может потребоваться некоторое время для миграции клиентского трафика на новый шлюз v2.
-* **Пользовательская зона DNS (например, contoso.com), указывающая на метку DNS (например, *myappgw.eastus.cloudapp.Azure.com* с помощью записи CNAME), связанную с шлюзом v1**.
+    You can update your DNS record to point to the frontend IP or DNS label associated with your Standard_v2 application gateway. Depending on the TTL configured on your DNS record, it may take a while for all your client traffic to migrate to your new v2 gateway.
+* **A custom DNS zone (for example, contoso.com) that points to the DNS label (for example: *myappgw.eastus.cloudapp.azure.com* using a CNAME record) associated with your v1 gateway**.
 
-   У вас есть два варианта:
+   You have two choices:
 
-  * При использовании общедоступных IP-адресов в шлюзе приложений можно выполнить контролируемую детальную миграцию с помощью профиля диспетчера трафика, чтобы постепенно маршрутизировать трафик (метод маршрутизации трафика с взвешенным трафиком) к новому шлюзу v2.
+  * If you use public IP addresses on your application gateway, you can do a controlled, granular migration using a Traffic Manager profile to incrementally route traffic (weighted traffic routing method) to the new v2 gateway.
 
-    Это можно сделать, добавив метки DNS для шлюзов приложений v1 и v2 в [профиль диспетчера трафика](../traffic-manager/traffic-manager-routing-methods.md#weighted-traffic-routing-method), а также запишите собственную запись DNS (например, `www.contoso.com`) в домен диспетчера трафика (например, contoso.trafficmanager.NET).
-  * Вы также можете обновить запись DNS личного домена, чтобы она указывала на DNS-метку нового шлюза приложений v2. В зависимости от срока жизни, настроенного для записи DNS, может потребоваться некоторое время для миграции клиентского трафика на новый шлюз v2.
-* **Ваши клиенты подключаются к интерфейсному IP-адресу шлюза приложений**.
+    You can do this by adding the DNS labels of both the v1 and v2 application gateways to the [Traffic Manager profile](../traffic-manager/traffic-manager-routing-methods.md#weighted-traffic-routing-method), and CNAMEing your custom DNS record (for example, `www.contoso.com`) to the Traffic Manager domain (for example, contoso.trafficmanager.net).
+  * Or, you can update your custom domain DNS record to point to the DNS label of the new v2 application gateway. Depending on the TTL configured on your DNS record, it may take a while for all your client traffic to migrate to your new v2 gateway.
+* **Your clients connect to the frontend IP address of your application gateway**.
 
-   Обновите клиенты, чтобы использовать IP-адреса, связанные с созданным шлюзом приложений v2. Рекомендуется не использовать IP-адреса напрямую. Рассмотрите возможность использования метки DNS-имени (например, yourgateway.eastus.cloudapp.azure.com), связанной с вашим шлюзом приложений, которые можно использовать для записи CNAME в собственную зону DNS (например, contoso.com).
+   Update your clients to use the IP address(es) associated with the newly created v2 application gateway. We recommend that you don't use IP addresses directly. Consider using the DNS name label (for example, yourgateway.eastus.cloudapp.azure.com) associated with your application gateway that you can CNAME to your own custom DNS zone (for example, contoso.com).
 
 ## <a name="common-questions"></a>Часто задаваемые вопросы
 
-### <a name="are-there-any-limitations-with-the-azure-powershell-script-to-migrate-the-configuration-from-v1-to-v2"></a>Существуют ли какие либо ограничения в сценарии Azure PowerShell для переноса конфигурации с версии v1 на версию 2?
+### <a name="are-there-any-limitations-with-the-azure-powershell-script-to-migrate-the-configuration-from-v1-to-v2"></a>Are there any limitations with the Azure PowerShell script to migrate the configuration from v1 to v2?
 
-Да. См. раздел [предостережения/ограничения](#caveatslimitations).
+Да. See [Caveats/Limitations](#caveatslimitations).
 
-### <a name="is-this-article-and-the-azure-powershell-script-applicable-for-application-gateway-waf-product-as-well"></a>Является ли эта статья и Azure PowerShell сценарий, применимый к продукту WAF для шлюза приложений? 
+### <a name="is-this-article-and-the-azure-powershell-script-applicable-for-application-gateway-waf-product-as-well"></a>Is this article and the Azure PowerShell script applicable for Application Gateway WAF product as well? 
 
 Да.
 
-### <a name="does-the-azure-powershell-script-also-switch-over-the-traffic-from-my-v1-gateway-to-the-newly-created-v2-gateway"></a>Также будет ли сценарий Azure PowerShell переключать трафик из шлюза v1 на только что созданный шлюз v2?
+### <a name="does-the-azure-powershell-script-also-switch-over-the-traffic-from-my-v1-gateway-to-the-newly-created-v2-gateway"></a>Does the Azure PowerShell script also switch over the traffic from my v1 gateway to the newly created v2 gateway?
 
-Нет. Сценарий Azure PowerShell только переносит конфигурацию. Фактический перенос трафика несет ответственность за ваш контроль.
+Нет. The Azure PowerShell script only migrates the configuration. Actual traffic migration is your responsibility and in your control.
 
-### <a name="is-the-new-v2-gateway-created-by-the-azure-powershell-script-sized-appropriately-to-handle-all-of-the-traffic-that-is-currently-served-by-my-v1-gateway"></a>Был ли новый шлюз v2, созданный Azure PowerShellным сценарием, соответствующим образом обрабатывать весь трафик, обслуживаемый моим шлюзом v1?
+### <a name="is-the-new-v2-gateway-created-by-the-azure-powershell-script-sized-appropriately-to-handle-all-of-the-traffic-that-is-currently-served-by-my-v1-gateway"></a>Is the new v2 gateway created by the Azure PowerShell script sized appropriately to handle all of the traffic that is currently served by my v1 gateway?
 
-Сценарий Azure PowerShell создает новый шлюз v2 с соответствующим размером для управления трафиком в существующем шлюзе v1. Автоматическое масштабирование отключено по умолчанию, но можно включить Автомасштабирование при запуске скрипта.
+The Azure PowerShell script creates a new v2 gateway with an appropriate size to handle the traffic on your existing v1 gateway. Autoscaling is disabled by default, but you can enable AutoScaling when you run the script.
 
-### <a name="i-configured-my-v1-gateway--to-send-logs-to-azure-storage-does-the-script-replicate-this-configuration-for-v2-as-well"></a>Я настроил мой шлюз v1 для отправки журналов в службу хранилища Azure. Также выполняет ли скрипт репликацию этой конфигурации для версии 2?
+### <a name="i-configured-my-v1-gateway--to-send-logs-to-azure-storage-does-the-script-replicate-this-configuration-for-v2-as-well"></a>I configured my v1 gateway  to send logs to Azure storage. Does the script replicate this configuration for v2 as well?
 
-Нет. Скрипт не реплицирует эту конфигурацию для версии 2. Конфигурацию журнала необходимо добавить отдельно для перенесенного шлюза v2.
+Нет. The script doesn't  replicate this configuration for v2. You must add the log configuration separately to the migrated v2 gateway.
 
-### <a name="does-this-script-support-certificates-uploaded-to-azure-keyvault-"></a>Этот сценарий поддерживает сертификаты, отправленные в Azure KeyVault?
+### <a name="does-this-script-support-certificates-uploaded-to-azure-keyvault-"></a>Does this script support certificates uploaded to Azure KeyVault ?
 
-Нет. В настоящее время скрипт не поддерживает сертификаты в KeyVault. Однако это относится к будущей версии.
+Нет. Currently the script does not support certificates in KeyVault. However, this is being considered for a future version.
 
-### <a name="i-ran-into-some-issues-with-using-this-script-how-can-i-get-help"></a>При использовании этого сценария возникли проблемы. Как получить помощь?
+### <a name="i-ran-into-some-issues-with-using-this-script-how-can-i-get-help"></a>I ran into some issues with using this script. How can I get help?
   
-Вы можете отправить электронное письмо по адресу appgwmigrationsup@microsoft.com, открыть обращение в службу поддержки Azure или выполнить оба действия.
+You can send an email to appgwmigrationsup@microsoft.com, open a support case with Azure Support, or do both.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-[Дополнительные сведения о шлюзе приложений версии 2](application-gateway-autoscaling-zone-redundant.md)
+[Learn about Application Gateway v2](application-gateway-autoscaling-zone-redundant.md)

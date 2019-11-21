@@ -1,6 +1,6 @@
 ---
-title: Выбор правильного протокола Федерации для приложения с несколькими клиентами
-description: Руководство для независимых поставщиков программного обеспечения при интеграции с Azure Active Directory
+title: Choose right federation protocol for multi-tenant application
+description: Guidance for independent software vendors on integrating with Azure Active Directory
 services: active-directory
 author: barbaraselden
 manager: CelesteDG
@@ -12,55 +12,55 @@ ms.date: 05/22/2019
 ms.author: baselden
 ms.reviewer: jeeds
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ede458e7d4c1cb1a8d7e3f2e2c9df54d5925d6d8
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.openlocfilehash: c05ad3eace1219e19e0bfb117d3ec8de68a756f9
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73175970"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74232291"
 ---
-# <a name="choose-the-right-federation-protocol-for-your-multi-tenant-application"></a>Выбор правильного протокола Федерации для приложения с несколькими клиентами
+# <a name="choose-the-right-federation-protocol-for-your-multi-tenant-application"></a>Choose the right federation protocol for your multi-tenant application
 
-При разработке приложения SaaS необходимо выбрать протокол Федерации, который наилучшим образом соответствует потребностям ваших клиентов. Это решение основано на вашей платформе разработки, а ваше желание интегрироваться с данными, доступными в Office 365 и экосистеме Azure AD.
+When you develop your software as a service (SaaS) application, you must select the federation protocol that best meets your and your customers’ needs. This decision is based on your development platform, and your desire to integrate with data available within your customers’ Office 365 and Azure AD ecosystem.
 
-См. полный список [протоколов, доступных для интеграции единого входа](what-is-single-sign-on.md) с Azure Active Directory.
-В следующей таблице сравниваются 
-* Открытая проверка подлинности 2,0 (OAuth 2,0)
+See the complete list of [protocols available for SSO integrations](what-is-single-sign-on.md) with Azure Active Directory.
+The following table compares 
+* Open Authentication 2.0 (OAuth 2.0)
 * Open ID Connect (OIDC)
 * Security Assertion Markup Language (SAML)
 * Web Services Federation (WSFed)
 
-| Возможность| OAuth/OIDC| SAML/WSFed |
+| Возможность| OAuth / OIDC| SAML / WSFed |
 | - |-|-|
-| Единый вход на основе веб-сайта| √| √ |
-| Единый выход через Интернет| √| √ |
-| Единый вход на основе мобильных устройств| √| √ |
-| Единый выход на основе мобильных устройств| √| √ |
-| Политики условного доступа для мобильных приложений| √| X |
-| Простой интерфейс MFA для мобильных приложений| √| X |
-| Microsoft Graph доступа| √| X |
+| Web-based Single sign-on| √| √ |
+| Web-based Single sign-out| √| √ |
+| Mobile-based Single sign-on| √| √* |
+| Mobile-based Single sign-out| √| √* |
+| Conditional Access policies for mobile applications| √| X |
+| Seamless MFA experience for mobile applications| √| X |
+| Access Microsoft Graph| √| X |
 
-\* Возможно, но корпорация Майкрософт не предоставляет примеры или рекомендации.
+*Possible, but Microsoft doesn't provide samples or guidance.
 
-## <a name="oauth-20-and-open-id-connect"></a>OAuth 2,0 и Open ID Connect
+## <a name="oauth-20-and-open-id-connect"></a>OAuth 2.0 and Open ID Connect
 
-OAuth 2,0 является [стандартным промышленным](https://oauth.net/2/) протоколом для авторизации. OIDC (OpenID Connect Connect) — это [стандартный](https://openid.net/connect/) уровень проверки подлинности идентификации на основе протокола Oath 2,0.
+OAuth 2.0 is an [industry-standard](https://oauth.net/2/) protocol for authorization. OIDC (OpenID Connect) is an [industry standard](https://openid.net/connect/) identity authentication layer built on top of the Oath 2.0 protocol.
 
 ### <a name="benefits"></a>Преимущества
 
-Корпорация Майкрософт рекомендует использовать OIDC/OAuth 2,0, так как они имеют встроенную проверку подлинности и авторизацию для протоколов. При использовании SAML необходимо дополнительно реализовать авторизацию.
+Microsoft recommends using OIDC/OAuth 2.0 as they have authentication and authorization built in to the protocols. With SAML, you must additionally implement authorization.
 
-Авторизация, реализованная в этих протоколах, позволяет приложению получать доступ к данным с богатыми данными пользователя и Организации через API Microsoft Graph и интегрировать их с ними.
+The authorization inherent in these protocols enables your application to access and integrate with rich user and organizational data through the Microsoft Graph API.
 
-Использование OAuth 2,0 и OIDC упрощает работу пользователей с конечными пользователями при внедрении единого входа для вашего приложения. Вы можете легко определить необходимые наборы разрешений, которые затем автоматически представлены администратором или конечным пользователем.
+Using OAuth 2.0 and OIDC simplifies your customers’ end-user experience when adopting SSO for your application. You can easily define the permission sets necessary, which are then automatically represented to the administrator or end user consenting.
 
-Кроме того, использование этих протоколов позволяет клиентам использовать политики условного доступа и MFA для управления доступом к приложениям. Корпорация Майкрософт предоставляет библиотеки и [примеры кода на различных технологических платформах](https://github.com/AzureAD/microsoft-authentication-library-for-js/wiki/Samples) , чтобы помочь в разработке.  
+Additionally, using these protocols enables your customers to use Conditional Access and MFA policies to control access to the applications. Microsoft provides libraries and [code samples across multiple technology platforms](https://github.com/AzureAD/microsoft-authentication-library-for-js/wiki/Samples) to aid your development.  
 
 ### <a name="implementation"></a>Реализация
 
-Вы регистрируете приложение с помощью удостоверения Майкрософт, которое является поставщиком OAuth 2,0. Затем вы можете зарегистрировать приложение на основе OAuth 2,0 с любым другим поставщиком удостоверений, с которым вы хотите интегрировать. 
+You register your application with Microsoft Identity, which is an OAuth 2.0 provider. You could then also register your OAuth 2.0-based application with any other Identity Provider that you wish to integrate with. 
 
-Сведения о регистрации приложения и реализации этих протоколов для единого входа в веб-приложения см. в разделе [авторизация доступа к веб-приложениям с помощью OpenID Connect Connect и Azure Active Directory](../develop/sample-v2-code.md).  Сведения о том, как реализовать эти протоколы для единого входа в мобильных приложениях, см. в следующих статьях: 
+For information on how to register your application and implement these protocols for SSO to web apps, see [Authorize access to web applications using OpenID Connect and Azure Active Directory](../develop/sample-v2-code.md).  For information on how to implement these protocols for SSO in mobile apps, see the following: 
 
 * [Android](../develop/quickstart-v2-android.md)
 
@@ -68,34 +68,34 @@ OAuth 2,0 является [стандартным промышленным](htt
 
 * [Универсальная платформа Windows](../develop/quickstart-v2-uwp.md)
 
-## <a name="saml-20-and-wsfed"></a>SAML 2,0 и WSFed
+## <a name="saml-20-and-wsfed"></a>SAML 2.0 and WSFed
 
-Язык разметки зявлений системы безопасности (SAML) (SAML) обычно используется для веб-приложений. Общие сведения см. [в статье Использование протокола SAML в Azure](../develop/active-directory-saml-protocol-reference.md) . 
+Security Assertion Markup Language (SAML) is usually used for web applications. See [How Azure uses the SAML protocol](../develop/active-directory-saml-protocol-reference.md) for an overview. 
 
-Web Services Federation (WSFed) — это [промышленный стандарт](https://docs.oasis-open.org/wsfed/federation/v1.2/ws-federation.html) , который обычно используется для веб-приложений, разработанных с помощью платформы .NET.
+Web Services Federation (WSFed) is an [industry standard](https://docs.oasis-open.org/wsfed/federation/v1.2/ws-federation.html) generally used for web applications that are developed using the .Net platform.
 
 ### <a name="benefits"></a>Преимущества
 
-SAML 2,0 — это зрелый стандарт и большинство технологических платформ поддерживают библиотеки с открытым исходным кодом для SAML 2,0. Вы можете предоставить своим клиентам интерфейс администрирования для настройки единого входа SAML. Они могут настроить единый вход SAML для Microsoft Azure AD и любого другого поставщика удостоверений, поддерживающего SAML 2.
+SAML 2.0 is a mature standard and most technology platforms support open-source libraries for SAML 2.0. You can provide your customers an administration interface to configure SAML SSO. They can configure SAML SSO for Microsoft Azure AD,  and any other identity provider that supports SAML 2
 
 ### <a name="trade-offs"></a>Компромиссы
 
-При использовании протоколов SAML 2,0 или WSFed для мобильных приложений некоторые политики условного доступа, включая многофакторную проверку подлинности (MFA), будут работать с пониженной производительностью. Кроме того, если требуется получить доступ к Microsoft Graph, необходимо реализовать авторизацию с помощью OAuth 2,0 для создания необходимых токенов. 
+When using SAML 2.0 or WSFed protocols for mobile applications, certain Conditional Access policies including Multi-factor Authentication (MFA) will have a degraded experience. Additionally, if you want to access the Microsoft Graph, you will need to implement authorization through OAuth 2.0 to generate necessary tokens. 
 
 ### <a name="implementation"></a>Реализация
 
-Корпорация Майкрософт не предоставляет библиотеки для реализации SAML или рекомендации по конкретным библиотекам. Доступно множество библиотек с открытым исходным кодом.
+Microsoft does not provide libraries for SAML implementation or recommend specific libraries. There are many open-source libraries available.
 
-## <a name="sso-and-using-microsoft-graph-rest-api"></a>Единый вход и использование Microsoft Graph API 
+## <a name="sso-and-using-microsoft-graph-rest-api"></a>SSO and Using Microsoft Graph Rest API 
 
-Microsoft Graph — это структура данных для всех Microsoft 365, включая Office 365, Windows 10 и Корпоративная мобильность и безопасность, а также дополнительные продукты, такие как Dynamics 365. Сюда входят основные схемы сущностей, таких как пользователи, группы, календарь, почта, файлы и многое другое, что повышает производительность пользователей. Microsoft Graph предлагает три интерфейса для разработчиков: API на основе RESTFUL, Microsoft Graph подключения к данным и соединители, позволяющие разработчикам добавлять собственные данные в Microsoft Graph.  
+Microsoft Graph is the data fabric across all of Microsoft 365, including Office 365, Windows 10 and Enterprise Mobility and Security, and additional products such as Dynamics 365. This includes the core schemas of the entities such as Users, Groups, Calendar, Mail, Files, and more, that drive user productivity. Microsoft Graph offers three interfaces for developers a REST based API, Microsoft Graph data connect, and Connectors that allow developers to add their own data into the Microsoft Graph.  
 
-Использование любого из приведенных выше протоколов для единого входа позволяет приложению получить доступ к расширенным данным через REST API Microsoft Graph. Это позволяет клиентам получать больше ценности из инвестиций в Microsoft 365. Например, приложение может вызвать API Microsoft Graph, чтобы интегрироваться с экземпляром Office 365 и пользователями Surface Microsoft Office и элементами SharePoint в приложении. 
+Using any of the above protocols for SSO enables your application’s access to the rich data available through the Microsoft Graph REST API. This  enables your customers  to get more value from their investment in Microsoft 365. For example,  your application can call the Microsoft Graph API to integrate with your customers’ Office 365 instance and surface users’ Microsoft Office and SharePoint items within your application. 
 
-Если для проверки подлинности используется открытая ИДЕНТИФИКАЦИя Connect, то процесс разработки будет непростым, так как вы будете использовать OAuth2, фундамент открытого идентификатора Connect, чтобы получить маркеры, которые можно использовать для вызова Microsoft Graph API. Если приложение использует SAML или WSFed, необходимо добавить дополнительный код в приложение, чтобы получить эти OAuth2 для получения маркеров, необходимых для вызова Microsoft Graph API. 
+If you are using Open ID Connect  to authenticate, then your development experience is seamless  because you will use OAuth2, the foundation of Open ID Connect, to acquire tokens can be used for invoking Microsoft Graph APIs. If your application is using SAML or WSFed, you must add additional code within your application to get these OAuth2 to acquire the tokens  required to  invoking Microsoft Graph APIs. 
 
 ## <a name="next-steps"></a>Следующие шаги
 
-[Включение единого входа для приложения с несколькими клиентами](isv-sso-content.md)
+[Enable SSO for your multi-tenant application](isv-sso-content.md)
 
-[Создание документации для приложения с несколькими клиентами](isv-create-sso-documentation.md)
+[Create documentation for your multi-tenant application](isv-create-sso-documentation.md)

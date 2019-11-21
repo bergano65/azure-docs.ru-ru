@@ -1,29 +1,29 @@
 ---
-title: Настройка балансировки нагрузки и правил исходящего трафика с помощью Azure PowerShell
-titlesuffix: Azure Load Balancer
-description: В этой статье показано, как настроить балансировку нагрузки и правила исходящего трафика в Load Balancer (цен. категория "Стандартный") с помощью Azure PowerShell.
+title: Configure load balancing and outbound rules by using Azure PowerShell
+titleSuffix: Azure Load Balancer
+description: This article shows how to configure load balancing and outbound rules in Standard Load Balancer by using Azure PowerShell.
 services: load-balancer
 author: asudbring
 ms.service: load-balancer
 ms.topic: article
 ms.date: 09/24/2019
 ms.author: allensu
-ms.openlocfilehash: b621d56a76a51f9ce9df10f88f5c3f2f4babfc03
-ms.sourcegitcommit: 80da36d4df7991628fd5a3df4b3aa92d55cc5ade
+ms.openlocfilehash: 5fd68f4559420ca688b3f4d6f6d66ee52db5191e
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71816024"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74225441"
 ---
-# <a name="configure-load-balancing-and-outbound-rules-in-standard-load-balancer-by-using-azure-powershell"></a>Настройка балансировки нагрузки и правил исходящего трафика в Load Balancer (цен. категория "Стандартный") с помощью Azure PowerShell
+# <a name="configure-load-balancing-and-outbound-rules-in-standard-load-balancer-by-using-azure-powershell"></a>Configure load balancing and outbound rules in Standard Load Balancer by using Azure PowerShell
 
-В этой статье показано, как настроить правила исходящего трафика в Load Balancer (цен. категория "Стандартный") с помощью Azure PowerShell.  
+This article shows you how to configure outbound rules in Standard Load Balancer by using Azure PowerShell.  
 
-По завершении работы с этой статьей в ресурсе балансировщика нагрузки будут содержаться два внешних интерфейса и связанные с ними правила. У вас есть один внешний интерфейс для входящего трафика и другой внешний интерфейс для исходящего трафика.  
+When you finish this article's scenario, the load balancer resource contains two front ends and their associated rules. You have one front end for inbound traffic and another front end for outbound traffic.  
 
-Каждый внешний интерфейс ссылается на общедоступный IP-адрес. В этом сценарии общедоступный IP-адрес для входящего трафика отличается от адреса для исходящего трафика.   Правило балансировки нагрузки обеспечивает только входящую балансировку нагрузки. Правило исходящего трафика управляет преобразованием исходящего сетевого адреса (NAT) для виртуальной машины.  
+Each front end references a public IP address. In this scenario, the public IP address for inbound traffic is different from the address for outbound traffic.   The load-balancing rule provides only inbound load balancing. The outbound rule controls the outbound network address translation (NAT) for the VM.  
 
-В сценарии используются два внутренних пула: один для входящего трафика и один для исходящего трафика. Эти пулы иллюстрируют возможности и обеспечивают гибкость для сценария.
+The scenario uses two back-end pools: one for inbound traffic and one for outbound traffic. These pools illustrate capability and provide flexibility for the scenario.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)] 
 
@@ -35,17 +35,17 @@ ms.locfileid: "71816024"
 ```azurepowershell-interactive
 Connect-AzAccount
 ```
-## <a name="create-a-resource-group"></a>Создать группу ресурсов
+## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Создайте группу ресурсов с помощью команды [New-азресаурцеграуп](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup?view=azps-2.6.0). Группа ресурсов Azure — это логический контейнер, в котором развертываются ресурсы Azure. Затем ресурсы управляются из группы.
+Create a resource group by using [New-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup?view=azps-2.6.0). An Azure resource group is a logical container into which Azure resources are deployed. The resources are then managed from the group.
 
 В следующем примере создается группа ресурсов с именем *myresourcegroupoutbound* в расположении *eastus2*.
 
 ```azurepowershell-interactive
 New-AzResourceGroup -Name myresourcegroupoutbound -Location eastus
 ```
-## <a name="create-a-virtual-network"></a>Создать виртуальную сеть
-Создайте виртуальную сеть с именем *мивнетаутбаунд*. Присвойте имя подсети *мисубнетаутбаунд*. Поместите его в *миресаурцеграупаутбаунд* с помощью [New-азвиртуалнетворк](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetwork?view=azps-2.6.0) и [New-азвиртуалнетворксубнетконфиг](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetworksubnetconfig?view=azps-2.6.0).
+## <a name="create-a-virtual-network"></a>Создание виртуальной сети
+Create a virtual network named *myvnetoutbound*. Name its subnet *mysubnetoutbound*. Place it in *myresourcegroupoutbound* by using [New-AzVirtualNetwork](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetwork?view=azps-2.6.0) and [New-AzVirtualNetworkSubnetConfig](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetworksubnetconfig?view=azps-2.6.0).
 
 ```azurepowershell-interactive
 $subnet = New-AzVirtualNetworkSubnetConfig -Name mysubnetoutbound -AddressPrefix "192.168.0.0/24"
@@ -53,19 +53,19 @@ $subnet = New-AzVirtualNetworkSubnetConfig -Name mysubnetoutbound -AddressPrefix
 New-AzVirtualNetwork -Name myvnetoutbound -ResourceGroupName myresourcegroupoutbound -Location eastus -AddressPrefix "192.168.0.0/16" -Subnet $subnet
 ```
 
-## <a name="create-an-inbound-public-ip-address"></a>Создание входящего общедоступного IP-адреса 
+## <a name="create-an-inbound-public-ip-address"></a>Create an inbound public IP address 
 
-Для доступа к веб-приложению в Интернете необходим общедоступный IP-адрес для балансировщика нагрузки. Load Balancer (цен. категория "Стандартный") поддерживает только стандартные общедоступные IP-адреса. 
+To access your web app on the internet, you need a public IP address for the load balancer. Standard Load Balancer supports only standard public IP addresses. 
 
-Используйте [New-азпублиЦипаддресс](https://docs.microsoft.com/powershell/module/az.network/new-azpublicipaddress?view=azps-2.6.0) , чтобы создать стандартный общедоступный IP-адрес с именем *мипублиЦипинбаунд* в *миресаурцеграупаутбаунд*.
+Use [New-AzPublicIpAddress](https://docs.microsoft.com/powershell/module/az.network/new-azpublicipaddress?view=azps-2.6.0) to create a standard public IP address named *mypublicipinbound* in *myresourcegroupoutbound*.
 
 ```azurepowershell-interactive
 $pubIPin = New-AzPublicIpAddress -ResourceGroupName myresourcegroupoutbound -Name mypublicipinbound -AllocationMethod Static -Sku Standard -Location eastus
 ```
 
-## <a name="create-an-outbound-public-ip-address"></a>Создание исходящего общедоступного IP-адреса 
+## <a name="create-an-outbound-public-ip-address"></a>Create an outbound public IP address 
 
-Создайте стандартный IP-адрес для конфигурации исходящего трафика балансировщика нагрузки с помощью команды [New-азпублиЦипаддресс](https://docs.microsoft.com/powershell/module/az.network/new-azpublicipaddress?view=azps-2.6.0).
+Create a standard IP address for the load balancer's front-end outbound configuration by using [New-AzPublicIpAddress](https://docs.microsoft.com/powershell/module/az.network/new-azpublicipaddress?view=azps-2.6.0).
 
 ```azurepowershell-interactive
 $pubIPout = New-AzPublicIpAddress -ResourceGroupName myresourcegroupoutbound -Name mypublicipoutbound -AllocationMethod Static -Sku Standard -Location eastus
@@ -73,37 +73,37 @@ $pubIPout = New-AzPublicIpAddress -ResourceGroupName myresourcegroupoutbound -Na
 
 ## <a name="create-an-azure-load-balancer"></a>Создание Azure Load Balancer
 
-В этом разделе объясняется, как создать и настроить следующие компоненты балансировщика нагрузки:
-  - Интерфейсный IP-адрес, который получает входящий сетевой трафик в подсистеме балансировки нагрузки
-  - Серверный пул, в котором интерфейсный IP-адрес отправляет сетевой трафик с балансировкой нагрузки.
-  - Пул серверной части для исходящего подключения
-  - Зонд работоспособности, определяющий работоспособность экземпляров серверной виртуальной машины
-  - Правило входящего трафика балансировщика нагрузки, определяющее способ передачи трафика на виртуальные машины
-  - Правило исходящего трафика балансировщика нагрузки, которое определяет, как трафик распределяется из виртуальных машин.
+This section explains how to create and configure the following components of the load balancer:
+  - A front-end IP that receives the incoming network traffic on the load balancer
+  - A back-end pool where the front-end IP sends the load-balanced network traffic
+  - A back-end pool for outbound connectivity
+  - A health probe that determines the health of the back-end VM instances
+  - A load-balancer inbound rule that defines how traffic is distributed to the VMs
+  - A load-balancer outbound rule that defines how traffic is distributed from the VMs
 
-### <a name="create-an-inbound-front-end-ip"></a>Создание входящего внешнего IP-адреса
-Создайте конфигурацию входящего внешнего IP-адреса для подсистемы балансировки нагрузки с помощью команды [New-азлоадбаланцерфронтендипконфиг](https://docs.microsoft.com/powershell/module/az.network/new-azloadbalancerfrontendipconfig?view=azps-2.6.0). Подсистема балансировки нагрузки должна включать в себя входящую конфигурацию IP-адресов для входящего внешнего интерфейса с именем *мифронтендинбаунд*. Свяжите эту конфигурацию с общедоступным IP-адресом *мипублиЦипинбаунд*.
+### <a name="create-an-inbound-front-end-ip"></a>Create an inbound front-end IP
+Create the inbound front-end IP configuration for the load balancer by using [New-AzLoadBalancerFrontendIpConfig](https://docs.microsoft.com/powershell/module/az.network/new-azloadbalancerfrontendipconfig?view=azps-2.6.0). The load balancer should include an inbound front-end IP configuration named *myfrontendinbound*. Associate this configuration with the public IP address *mypublicipinbound*.
 
 ```azurepowershell-interactive
 $frontendIPin = New-AzLoadBalancerFrontendIPConfig -Name "myfrontendinbound" -PublicIpAddress $pubIPin
 ```
-### <a name="create-an-outbound-front-end-ip"></a>Создание исходящего IP-адреса внешнего интерфейса
-Создайте конфигурацию исходящего внешнего IP-адреса для балансировщика нагрузки с помощью команды [New-азлоадбаланцерфронтендипконфиг](https://docs.microsoft.com/powershell/module/az.network/new-azloadbalancerfrontendipconfig?view=azps-2.6.0). Эта подсистема балансировки нагрузки должна включать в себя исходящую IP-конфигурацию внешнего интерфейса с именем *мифронтендаутбаунд*. Свяжите эту конфигурацию с общедоступным IP-адресом *мипублиЦипаутбаунд*.
+### <a name="create-an-outbound-front-end-ip"></a>Create an outbound front-end IP
+Create the outbound front-end IP configuration for the load balancer by using [New-AzLoadBalancerFrontendIpConfig](https://docs.microsoft.com/powershell/module/az.network/new-azloadbalancerfrontendipconfig?view=azps-2.6.0). This load balancer should include an outbound front-end IP configuration named *myfrontendoutbound*. Associate this configuration with the public IP address *mypublicipoutbound*.
 
 ```azurepowershell-interactive
 $frontendIPout = New-AzLoadBalancerFrontendIPConfig -Name "myfrontendoutbound" -PublicIpAddress $pubIPout
 ```
-### <a name="create-an-inbound-back-end-pool"></a>Создание входящего пула серверной части
-Создайте сервер входящего пула для подсистемы балансировки нагрузки с помощью команды [New-азлоадбаланцербаккендаддресспулконфиг](https://docs.microsoft.com/powershell/module/az.network/new-azloadbalancerbackendaddresspoolconfig?view=azps-2.6.0). Назовите пул *бепулинбаунд*.
+### <a name="create-an-inbound-back-end-pool"></a>Create an inbound back-end pool
+Create the back-end inbound pool for the load balancer by using [New-AzLoadBalancerBackendAddressPoolConfig](https://docs.microsoft.com/powershell/module/az.network/new-azloadbalancerbackendaddresspoolconfig?view=azps-2.6.0). Name the pool *bepoolinbound*.
 
 ```azurepowershell-interactive
 $bepoolin = New-AzLoadBalancerBackendAddressPoolConfig -Name bepoolinbound
 ``` 
 
-### <a name="create-an-outbound-back-end-pool"></a>Создание исходящего пула серверной части
-Используйте следующую команду, чтобы создать другой пул внутренних адресов для определения исходящих подключений для пула виртуальных машин с помощью [New-азлоадбаланцербаккендаддресспулконфиг](https://docs.microsoft.com/powershell/module/az.network/new-azloadbalancerbackendaddresspoolconfig?view=azps-2.6.0). Назовите этот пул *бепулаутбаунд*. 
+### <a name="create-an-outbound-back-end-pool"></a>Create an outbound back-end pool
+Use the following command to create another back-end address pool to define outbound connectivity for a pool of VMs by using [New-AzLoadBalancerBackendAddressPoolConfig](https://docs.microsoft.com/powershell/module/az.network/new-azloadbalancerbackendaddresspoolconfig?view=azps-2.6.0). Name this pool *bepooloutbound*. 
 
-Создавая отдельный исходящий пул, вы предоставляете максимальную гибкость. Но вы можете опустить этот шаг и использовать только входящий *бепулинбаунд* , если предпочитаете.  
+By creating a separate outbound pool, you provide maximum flexibility. But you can omit this step and use only the inbound *bepoolinbound* if you prefer.  
 
 ```azurepowershell-interactive
 $bepoolout = New-AzLoadBalancerBackendAddressPoolConfig -Name bepooloutbound
@@ -111,56 +111,56 @@ $bepoolout = New-AzLoadBalancerBackendAddressPoolConfig -Name bepooloutbound
 
 ### <a name="create-a-health-probe"></a>Создание пробы работоспособности
 
-Зонд работоспособности проверяет все экземпляры виртуальной машины, чтобы убедиться, что они могут передавать сетевой трафик. Экземпляр виртуальной машины, который не проходит проверки зонда, удаляется из подсистемы балансировки нагрузки, пока не вернется в режим «в сети», а проверка проверки определит, что она работоспособна. 
+A health probe checks all VM instances to make sure they can send network traffic. The VM instance that fails the probe checks is removed from the load balancer until it goes back online and a probe check determines that it's healthy. 
 
-Чтобы отслеживать работоспособность виртуальных машин, создайте пробу работоспособности с помощью команды [New-азлоадбаланцерпробеконфиг](https://docs.microsoft.com/powershell/module/az.network/new-azloadbalancerprobeconfig?view=azps-2.6.0). 
+To monitor the health of the VMs, create a health probe by using [New-AzLoadBalancerProbeConfig](https://docs.microsoft.com/powershell/module/az.network/new-azloadbalancerprobeconfig?view=azps-2.6.0). 
 
 ```azurepowershell-interactive
 $probe = New-AzLoadBalancerProbeConfig -Name http -Protocol "http" -Port 80 -IntervalInSeconds 15 -ProbeCount 2 -RequestPath /
 ```
-### <a name="create-a-load-balancer-rule"></a>Создание правила подсистемы балансировки нагрузки
+### <a name="create-a-load-balancer-rule"></a>Create a load-balancer rule
 
-Правило подсистемы балансировки нагрузки определяет конфигурацию внешнего IP-адреса для входящего трафика и пула внутренних серверов для получения трафика. Он также определяет требуемый исходный и конечный порты. 
+A load-balancer rule defines the front-end IP configuration for the incoming traffic and the back-end pool to receive the traffic. It also defines the required source and destination port. 
 
-Создайте правило подсистемы балансировки нагрузки с именем *минбаундлбруле* с помощью [New-азлоадбаланцеррулеконфиг](https://docs.microsoft.com/powershell/module/az.network/new-azloadbalancerruleconfig?view=azps-2.6.0). Это правило будет прослушивать порт 80 в интерфейсном пуле *мифронтендинбаунд*. Он также будет использовать порт 80 для отправки сетевого трафика с балансировкой нагрузки на серверный пул адресов *бепулинбаунд*. 
+Create a load-balancer rule named *myinboundlbrule* by using [New-AzLoadBalancerRuleConfig](https://docs.microsoft.com/powershell/module/az.network/new-azloadbalancerruleconfig?view=azps-2.6.0). This rule will listen to port 80 in the front-end pool *myfrontendinbound*. It will also use port 80 to send load-balanced network traffic to the back-end address pool *bepoolinbound*. 
 
 ```azurepowershell-interactive
 $inboundRule = New-AzLoadBalancerRuleConfig -Name inboundlbrule -FrontendIPConfiguration $frontendIPin -BackendAddressPool $bepoolin -Probe $probe -Protocol "Tcp" -FrontendPort 80 -BackendPort 80 -IdleTimeoutInMinutes 15 -EnableFloatingIP -LoadDistribution SourceIP -DisableOutboundSNAT
 ```
 
 >[!NOTE]
->Это правило балансировки нагрузки отключает автоматическую исходящую исходящий трафик NAT (SNAT), так как параметр **-disableoutboundsnat.** . Исходящий трафик NAT предоставляется только правилом исходящего трафика.
+>This load-balancing rule disables automatic outbound secure NAT (SNAT) because of the **-DisableOutboundSNAT** parameter. Outbound NAT is provided only by the outbound rule.
 
 ### <a name="create-an-outbound-rule"></a>Создайте правило для исходящего трафика.
 
-Правило для исходящего трафика определяет интерфейсный общедоступный IP-адрес, который представляется внешним интерфейсом *мифронтендаутбаунд*. Этот внешний интерфейс будет использоваться для всего исходящего трафика NAT, а также для пула внутренних серверных ресурсов, к которому применяется это правило.  
+An outbound rule defines the front-end public IP, which is represented by the front-end *myfrontendoutbound*. This front end will be used for all outbound NAT traffic as well as the back-end pool to which the rule applies.  
 
-Используйте следующую команду, чтобы создать правило исходящего трафика *мйоутбаундруле* для исходящего преобразования сети всех виртуальных машин (в IP-конфигурациях NIC) в пуле серверной части *пула* .  Команда изменяет время исходящего простоя с 4 до 15 минут. Он выделяет порты 10 000 SNAT вместо 1 024. Дополнительные сведения см. в разделе [New-азлоадбаланцераутбаундрулеконфиг](https://docs.microsoft.com/powershell/module/az.network/new-azloadbalanceroutboundruleconfig?view=azps-2.7.0).
+Use the following command to create an outbound rule *myoutboundrule* for outbound network translation of all VMs (in NIC IP configurations) in the *bepool* back-end pool.  The command changes the outbound idle time-out from 4 to 15 minutes. It allocates 10,000 SNAT ports instead of 1,024. For more information, see [New-AzLoadBalancerOutboundRuleConfig](https://docs.microsoft.com/powershell/module/az.network/new-azloadbalanceroutboundruleconfig?view=azps-2.7.0).
 
 ```azurepowershell-interactive
  $outboundRule = New-AzLoadBalancerOutBoundRuleConfig -Name outboundrule -FrontendIPConfiguration $frontendIPout -BackendAddressPool $bepoolout -Protocol All -IdleTimeoutInMinutes 15 -AllocatedOutboundPort 10000
 ```
-Если вы не хотите использовать отдельный исходящий пул, можно изменить аргумент пула адресов в предыдущей команде, указав вместо этого *$bepoolin* .  Мы рекомендуем использовать отдельные пулы, чтобы сделать конечную конфигурацию гибкой и удобочитаемой.
+If you don't want to use a separate outbound pool, you can change the address pool argument in the preceding command to specify *$bepoolin* instead.  We recommend using separate pools to make the resulting configuration flexible and readable.
 
 ### <a name="create-a-load-balancer"></a>Создание балансировщика нагрузки
 
-Используйте следующую команду, чтобы создать подсистему балансировки нагрузки для входящего IP-адреса с помощью [New-азлоадбаланцер](https://docs.microsoft.com/powershell/module/az.network/new-azloadbalancer?view=azps-2.6.0). Назовите подсистему *балансировки нагрузки.* Он должен включать в себя конфигурацию входящего IP-адреса внешнего интерфейса. Его серверный пул *бепулинбаунд* должен быть связан с общедоступным IP-адресом *мипублиЦипинбаунд* , созданным на предыдущем шаге.
+Use the following command to create a load balancer for the inbound IP address by using [New-AzLoadBalancer](https://docs.microsoft.com/powershell/module/az.network/new-azloadbalancer?view=azps-2.6.0). Name the load balancer *lb*. It should include an inbound front-end IP configuration. Its back-end pool *bepoolinbound* should be associated with the public IP address *mypublicipinbound* that you created in the preceding step.
 
 ```azurepowershell-interactive
 New-AzLoadBalancer -Name lb -Sku Standard -ResourceGroupName myresourcegroupoutbound -Location eastus -FrontendIpConfiguration $frontendIPin,$frontendIPout -BackendAddressPool $bepoolin,$bepoolout -Probe $probe -LoadBalancingRule $inboundrule -OutboundRule $outboundrule 
 ```
 
-На этом этапе можно продолжить добавление виртуальных машин в пулы внутренних *бепулинбаунд* и *бепулаутбаунд* , обновив IP-конфигурацию соответствующих ресурсов сетевых карт. Обновите конфигурацию ресурсов с помощью команды [Add-азнетворкинтерфацеипконфиг](https://docs.microsoft.com/cli/azure/network/lb/rule?view=azure-cli-latest).
+At this point, you can continue adding your VMs to both *bepoolinbound* and *bepooloutbound* back-end pools by updating the IP configuration of the respective NIC resources. Update the resource configuration by using [Add-AzNetworkInterfaceIpConfig](https://docs.microsoft.com/cli/azure/network/lb/rule?view=azure-cli-latest).
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Если группа ресурсов, подсистема балансировки нагрузки и связанные ресурсы больше не требуются, их можно удалить с помощью [Remove-азресаурцеграуп](https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcegroup?view=azps-2.7.0).
+When you no longer need the resource group, load balancer, and related resources, you can remove them by using [Remove-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcegroup?view=azps-2.7.0).
 
 ```azurepowershell-interactive 
   Remove-AzResourceGroup -Name myresourcegroupoutbound
 ```
 
-## <a name="next-steps"></a>Следующие шаги
-В этой статье вы создали стандартную подсистему балансировки нагрузки, настроенную для входящих и исходящих правил трафика балансировщика нагрузки, и настроили проверку работоспособности для виртуальных машин в пуле серверной части. 
+## <a name="next-steps"></a>Дальнейшие действия
+In this article, you created a standard load balancer, configured both inbound and outbound load-balancer traffic rules, and configured a health probe for the VMs in the back-end pool. 
 
-Чтобы узнать больше, перейдите к [руководствам для Azure Load Balancer](tutorial-load-balancer-standard-public-zone-redundant-portal.md).
+To learn more, continue to the [tutorials for Azure Load Balancer](tutorial-load-balancer-standard-public-zone-redundant-portal.md).

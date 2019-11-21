@@ -1,29 +1,23 @@
 ---
-title: Выполнение задачи очистки базы данных с помощью Функций Azure | Документы Майкрософт
+title: Use Azure Functions to perform a database clean up task
 description: С помощью Функций Azure можно запланировать задачу, которая периодически подключается к базе данных SQL Azure для очистки строк.
-services: functions
-documentationcenter: na
-author: ggailey777
-manager: jeconnoc
 ms.assetid: 076f5f95-f8d2-42c7-b7fd-6798856ba0bb
-ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 10/02/2019
-ms.author: glenga
-ms.openlocfilehash: 469e0149a3b9dce22f0590240a053ee3b183c7b9
-ms.sourcegitcommit: 80da36d4df7991628fd5a3df4b3aa92d55cc5ade
+ms.openlocfilehash: f70b5b83561e7c580dd7192850c8eb50be5aac0a
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71815984"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74230378"
 ---
 # <a name="use-azure-functions-to-connect-to-an-azure-sql-database"></a>Подключение к базе данных SQL Azure с помощью Функций Azure
 
-В этой статье показано, как создать запланированное задание, которое подключается к базе данных SQL Azure или Управляемый экземпляр Azure SQL, с помощью функций Azure. Код функции очищает строки в таблице базы данных. Новая C# функция создается на основе предварительно определенного шаблона триггера таймера в Visual Studio 2019. Для выполнения этого сценария необходимо также задать строку подключения к базе данных как параметр приложений в приложении-функции. Для Azure SQL Управляемый экземпляр необходимо [включить общедоступную конечную точку](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-public-endpoint-configure) , чтобы иметь возможность подключения из функций Azure. В этом сценарии к базе данных применяется массовая операция. 
+This article shows you how to use Azure Functions to create a scheduled job that connects to an Azure SQL Database or Azure SQL Managed Instance. Код функции очищает строки в таблице базы данных. The new C# function is created based on a pre-defined timer trigger template in Visual Studio 2019. Для выполнения этого сценария необходимо также задать строку подключения к базе данных как параметр приложений в приложении-функции. For Azure SQL Managed Instance you need to [enable public endpoint](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-public-endpoint-configure) to be able to connect from Azure Functions. В этом сценарии к базе данных применяется массовая операция. 
 
 Если вы впервые работаете с Функциями C#, обратитесь к статье [Справочник разработчика C# по функциям Azure](functions-dotnet-class-library.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 + Выполните шаги, приведенные в статье [Создание первой функции с помощью Visual Studio](functions-create-your-first-function-visual-studio.md), чтобы создать локальное приложение-функцию, предназначенное для среды выполнения версии 2.x. Кроме того, опубликуйте свой проект в приложении-функции в Azure.
 
@@ -39,7 +33,7 @@ ms.locfileid: "71815984"
 
 1. В меню слева выберите пункт **Базы данных SQL** и на странице **Базы данных SQL** выберите имя своей базы данных.
 
-1. Щелкните **Строки подключения** в разделе **Параметры** и полностью скопируйте строку подключения **ADO.NET**. Для службы SQL Azure Управляемый экземпляр Копировать строку подключения для общедоступной конечной точки.
+1. Щелкните **Строки подключения** в разделе **Параметры** и полностью скопируйте строку подключения **ADO.NET**. For Azure SQL Managed Instance copy connection string for public endpoint.
 
     ![Скопируйте строку подключения ADO.NET.](./media/functions-scenario-database-table-cleanup/adonet-connection-string.png)
 
@@ -49,7 +43,7 @@ ms.locfileid: "71815984"
 
 Вы должны были ранее опубликовать свое приложение в Azure. Если вы еще этого не сделали, выполните инструкции, приведенные в разделе [Публикация в Azure](functions-develop-vs.md#publish-to-azure).
 
-1. В обозревателе решений щелкните правой кнопкой мыши проект приложения-функции и выберите **Публикация** > **Управление параметрами приложения...** Выберите **Добавить параметр**, а затем в окне **Имя нового параметра приложения** введите `sqldb_connection` и щелкните **ОК**.
+1. In Solution Explorer, right-click the function app project and choose **Publish** > **Manage application settings...** . Select **Add setting**, in **New app setting name**, type `sqldb_connection`, and select **OK**.
 
     ![Параметры приложения-функции](./media/functions-scenario-database-table-cleanup/functions-app-service-add-setting.png)
 
@@ -63,7 +57,7 @@ ms.locfileid: "71815984"
 
 Вам необходимо добавить пакет NuGet, содержащий библиотеку SqlClient. Эта библиотека доступа к данным требуется для подключения к базе данных SQL.
 
-1. Откройте проект локального приложения функции в Visual Studio 2019.
+1. Open your local function app project in Visual Studio 2019.
 
 1. В обозревателе решений щелкните правой кнопкой мыши проект приложения-функции и выберите **Управление пакетами NuGet**.
 
@@ -128,7 +122,7 @@ ms.locfileid: "71815984"
 
 Если вы планируете [опубликовать эту функцию](functions-develop-vs.md#publish-to-azure), не забудьте указать для атрибута `TimerTrigger` другое [расписание в формате выражения Cron](functions-bindings-timer.md#ncrontab-expressions) (выполнение каждые 15 секунд).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как использовать Функции с Logic Apps для интеграции с другими службами.
 
@@ -140,4 +134,4 @@ ms.locfileid: "71815984"
 + [Справочник разработчика по функциям Azure](functions-reference.md)  
   Справочник программиста по созданию функций, а также определению триггеров и привязок.
 + [Testing Azure Functions](functions-test-a-function.md)  
-  (Тестирование функций Azure) Описание различных средств и методов тестирования функций.  
+  Описание различных средств и методов тестирования функций.  

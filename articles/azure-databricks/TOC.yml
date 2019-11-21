@@ -1717,7 +1717,9 @@
       href: 'https://azure.microsoft.com/roadmap/?category=analytics'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/databricks/'
-    - name: Stack Overflow
+    - name: "Задать вопрос\_— форум MSDN"
+      href: 'https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureDatabricks'
+    - name: "Задать вопрос\_— Stack Overflow"
       href: 'https://stackoverflow.com/questions/tagged/azure-databricks'
     - name: Доступность по регионам
       href: 'https://azure.microsoft.com/regions/services/'

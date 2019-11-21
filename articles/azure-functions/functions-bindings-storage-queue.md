@@ -1,22 +1,17 @@
 ---
 title: Привязки хранилища очередей Azure для службы "Функции Azure"
 description: Узнайте, как использовать триггер службы хранилища очередей Azure и выходную привязку в службе "Функции Azure".
-services: functions
-documentationcenter: na
 author: craigshoemaker
-manager: gwallace
-keywords: функции azure, функции, обработка событий, динамические вычисления, независимая архитектура
-ms.service: azure-functions
 ms.topic: reference
 ms.date: 09/03/2018
 ms.author: cshoe
 ms.custom: cc996988-fb4f-47
-ms.openlocfilehash: c7f143f5d026b2fa6fa34c75d3616b05c3e97092
-ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
+ms.openlocfilehash: 3c27ff06237336d37ad1b5bed1b90aaa6b076f0b
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2019
-ms.locfileid: "72294293"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74230999"
 ---
 # <a name="azure-queue-storage-bindings-for-azure-functions"></a>Привязки хранилища очередей Azure для службы "Функции Azure"
 
@@ -38,7 +33,7 @@ ms.locfileid: "72294293"
 
 [!INCLUDE [functions-package-v2](../../includes/functions-package-v2.md)]
 
-## <a name="encoding"></a>Кодирование
+## <a name="encoding"></a>Сервис кодирования
 Функции ожидают строку в кодировке *base64*. Любая корректировка типа кодирования (для подготовки данных в виде строки в кодировке *base64*) должна быть реализована в вызывающей службе.
 
 ## <a name="trigger"></a>Триггер
@@ -50,7 +45,7 @@ ms.locfileid: "72294293"
 Языковой пример см. в разделах:
 
 * [C#](#trigger---c-example)
-* [Скрипт C# (CSX)](#trigger---c-script-example)
+* [Сценарий C# (CSX)](#trigger---c-script-example)
 * [JavaScript](#trigger---javascript-example)
 * [Java](#trigger---java-example)
 * [Python](#trigger---python-example)
@@ -190,9 +185,9 @@ module.exports = async function (context, message) {
 
 ### <a name="trigger---python-example"></a>Пример Python: триггер
 
-В следующем примере показано, как прочитать сообщение очереди, переданное в функцию через триггер.
+The following example demonstrates how to read a queue message passed to a function via a trigger.
 
-Триггер очереди хранилища определен в *Function. JSON* , где *type* имеет значение `queueTrigger`.
+A Storage queue trigger is defined in *function.json* where *type* is set to `queueTrigger`.
 
 ```json
 {
@@ -209,7 +204,7 @@ module.exports = async function (context, message) {
 }
 ```
 
-Код  *_\_init_\_.py* объявляет параметр как `func.ServiceBusMessage`, что позволяет считывать сообщение очереди в функции.
+The code *_\_init_\_.py* declares a parameter as `func.ServiceBusMessage` which allows you to read the queue message in your function.
 
 ```python
 import logging
@@ -298,9 +293,9 @@ def main(msg: func.QueueMessage):
 
 |свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
-|**type** | Недоступно| Нужно задать значение `queueTrigger`. Это свойство задается автоматически при создании триггера на портале Azure.|
-|**direction**| Недоступно | Только в файле *function.json*. Нужно задать значение `in`. Это свойство задается автоматически при создании триггера на портале Azure. |
-|**name** | Недоступно |Имя переменной, содержащей полезные данные элемента очереди в коде функции.  |
+|**type** | Н/Д| Нужно задать значение `queueTrigger`. Это свойство задается автоматически при создании триггера на портале Azure.|
+|**direction**| Н/Д | Только в файле *function.json*. Нужно задать значение `in`. Это свойство задается автоматически при создании триггера на портале Azure. |
+|**name** | Н/Д |Имя переменной, содержащей полезные данные элемента очереди в коде функции.  |
 |**queueName** | **QueueName**| Имя очереди для опроса. |
 |**подключение** | **Connection** |Имя параметра приложения, содержащего строку подключения к службе хранилища, используемой для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если задать для `connection` значение MyStorage, среда выполнения службы "Функции" будет искать параметр приложения с именем AzureWebJobsMyStorage. Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.|
 
@@ -323,7 +318,7 @@ def main(msg: func.QueueMessage):
 
 Триггер очереди предоставляет несколько [свойств метаданных](./functions-bindings-expressions-patterns.md#trigger-metadata). Эти свойства можно использовать как часть выражений привязки в других привязках или как параметры в коде. Эти свойства относятся к классу [CloudQueueMessage](https://docs.microsoft.com/dotnet/api/microsoft.azure.storage.queue.cloudqueuemessage).
 
-|Свойство|type|Описание|
+|Свойство|Тип|Описание|
 |--------|----|-----------|
 |`QueueTrigger`|`string`|Полезные данные очереди (если это допустимая строка). Если полезные данные очереди сообщений представлены в виде строки, значение `QueueTrigger` совпадает со значением переменной, имя которой назначено свойством `name` в файле *function.json*.|
 |`DequeueCount`|`int`|Количество раз, когда сообщение было выведено из очереди.|
@@ -353,9 +348,9 @@ def main(msg: func.QueueMessage):
 
 ## <a name="trigger---hostjson-properties"></a>Свойства host.json в триггере
 
-В файле [host.json](functions-host-json.md#queues) содержатся параметры, управляющие поведением очереди триггера. Дополнительные сведения о доступных параметрах см. в разделе [Параметры Host. JSON](#hostjson-settings) .
+В файле [host.json](functions-host-json.md#queues) содержатся параметры, управляющие поведением очереди триггера. See the [host.json settings](#hostjson-settings) section for details regarding available settings.
 
-## <a name="output"></a>Output
+## <a name="output"></a>Выходные данные
 
 Используйте выходную привязку хранилища очередей Azure, чтобы записать сообщения в очередь.
 
@@ -364,7 +359,7 @@ def main(msg: func.QueueMessage):
 Языковой пример см. в разделах:
 
 * [C#](#output---c-example)
-* [Скрипт C# (CSX)](#output---c-script-example)
+* [Сценарий C# (CSX)](#output---c-script-example)
 * [JavaScript](#output---javascript-example)
 * [Java](#output---java-example)
 * [Python](#output---python-example)
@@ -518,9 +513,9 @@ module.exports = function(context) {
 
 ### <a name="output---python-example"></a>Пример Python: выходные данные
 
-В следующем примере показано, как вывести одно и несколько значений в очереди хранилища. Конфигурация, необходимая для *Function. JSON* , такая же, как и та же.
+The following example demonstrates how to output single and multiple values to storage queues. The configuration needed for *function.json* is the same either way.
 
-Привязка очереди хранилища определяется в *Function. JSON* , где *type* имеет значение `queue`.
+A Storage queue binding is defined in *function.json* where *type* is set to `queue`.
 
 ```json
 {
@@ -552,7 +547,7 @@ module.exports = function(context) {
 }
 ```
 
-Чтобы задать отдельное сообщение в очереди, необходимо передать одно значение в метод `set`.
+To set a individual message on the queue, you pass a single value to the `set` method.
 
 ```python
 import azure.functions as func
@@ -566,7 +561,7 @@ def main(req: func.HttpRequest, msg: func.Out[str]) -> func.HttpResponse:
     return 'OK'
 ```
 
-Чтобы создать несколько сообщений в очереди, объявите параметр в качестве соответствующего типа списка и передайте массив значений (который соответствует типу списка) в метод `set`.
+To create multiple messages on the queue, declare a parameter as the appropriate list type and pass an array of values (that match the list type) to the `set` method.
 
 ```python
 import azure.functions as func
@@ -615,9 +610,9 @@ public static string Run([HttpTrigger] dynamic input,  ILogger log)
 
 |свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
-|**type** | Недоступно | Нужно задать значение `queue`. Это свойство задается автоматически при создании триггера на портале Azure.|
-|**direction** | Недоступно | Нужно задать значение `out`. Это свойство задается автоматически при создании триггера на портале Azure. |
-|**name** | Недоступно | Имя переменной, представляющей очередь в коде функции. Задайте значение `$return`, ссылающееся на возвращаемое значение функции.|
+|**type** | Н/Д | Нужно задать значение `queue`. Это свойство задается автоматически при создании триггера на портале Azure.|
+|**direction** | Н/Д | Нужно задать значение `out`. Это свойство задается автоматически при создании триггера на портале Azure. |
+|**name** | Н/Д | Имя переменной, представляющей очередь в коде функции. Задайте значение `$return`, ссылающееся на возвращаемое значение функции.|
 |**queueName** |**QueueName** | Имя очереди. |
 |**подключение** | **Connection** |Имя параметра приложения, содержащего строку подключения к службе хранилища, используемой для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если задать для `connection` значение MyStorage, среда выполнения службы "Функции" будет искать параметр приложения с именем AzureWebJobsMyStorage. Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.|
 
@@ -644,9 +639,9 @@ public static string Run([HttpTrigger] dynamic input,  ILogger log)
 
 ## <a name="exceptions-and-return-codes"></a>Исключения и коды возврата
 
-| Привязка |  Ссылка |
+| Привязка |  Справочные материалы |
 |---|---|
-| Очередь | [Коды ошибок очередей](https://docs.microsoft.com/rest/api/storageservices/queue-service-error-codes) |
+| Очереди | [Коды ошибок очередей](https://docs.microsoft.com/rest/api/storageservices/queue-service-error-codes) |
 | Большой двоичный объект, таблица, очередь | [Коды ошибок хранилища](https://docs.microsoft.com/rest/api/storageservices/fileservices/common-rest-api-error-codes) |
 | Большой двоичный объект, таблица, очередь |  [Устранение неполадок](https://docs.microsoft.com/rest/api/storageservices/fileservices/troubleshooting-api-operations) |
 
@@ -654,10 +649,10 @@ public static string Run([HttpTrigger] dynamic input,  ILogger log)
 
 ## <a name="hostjson-settings"></a>Параметры файла host.json
 
-В этом разделе описываются глобальные параметры конфигурации, доступные для этой привязки в версии 2.x. В приведенном ниже примере файла host.json содержатся только параметры версии 2.x для этой привязки. Дополнительные сведения о глобальных настройках конфигурации в версии 2.x смотрите в статье [Справочник по файлу host.json для Функций Azure](functions-host-json.md).
+В этом разделе описываются глобальные параметры конфигурации, доступные для этой привязки в версии 2.x. В приведенном ниже примере файла host.json содержатся только параметры версии 2.x для этой привязки. Дополнительные сведения о глобальных параметрах конфигурации в версии 2.x см. в статье [Справочник по файлу host.json для Функций Azure](functions-host-json.md).
 
 > [!NOTE]
-> Чтобы получить дополнительные сведения о файле host.json в Функции 1.x, см. статью [host.json reference for Azure Functions 1.x](functions-host-json-v1.md)(Справочник по файлу host.json для службы "Функции Azure" версии 1.x.).
+> Сведения о файле host.json в Функциях Azure версии 1.x см. в [этой статье](functions-host-json-v1.md).
 
 ```json
 {
@@ -675,15 +670,15 @@ public static string Run([HttpTrigger] dynamic input,  ILogger log)
 ```
 
 
-|Свойство  |Значение по умолчанию | Описание |
+|Свойство  |значение по умолчанию | Описание |
 |---------|---------|---------|
-|maxPollingInterval|00:00:01|Максимальный интервал между опросами очереди. Минимальное значение — 00:00:00.100 (100 мс) и увеличивается до 00:01:00 (1 мин.).  В 1. x тип данных равен миллисекундам, а в 2. x — интервал времени.|
+|maxPollingInterval|00:00:01|Максимальный интервал между опросами очереди. Minimum is 00:00:00.100 (100 ms) and increments up to 00:01:00 (1 min).  In 1.x the data type is milliseconds, and in 2.x it is a TimeSpan.|
 |visibilityTimeout|00:00:00|Интервал времени между повторными попытками, когда при обработке сообщения возникает сбой. |
 |batchSize|16|Количество сообщений очереди, которые среда выполнения функций одновременно получает и обрабатывает в параллельном режиме. Когда число обрабатываемых сообщений достигает `newBatchThreshold`, среда выполнения получает следующий пакет и начинает обработку содержащихся в нем сообщений. Поэтому максимальное количество сообщений, одновременно обрабатываемых каждой функцией, равно `batchSize` плюс `newBatchThreshold`. Это ограничение применяется отдельно к каждой функции, активируемой с помощью очереди. <br><br>Если вы не хотите, чтобы сообщения из одной очереди обрабатывались параллельно, можно установить для `batchSize` значение 1. Тем не менее этот параметр позволяет исключить параллелизм только при условии, что приложение-функция выполняется на одной виртуальной машине. Если приложение-функция развернуто на нескольких виртуальных машинах, каждая машина может запускать один экземпляр каждой функции, активируемой с помощью очереди.<br><br>Максимальное значение `batchSize` — 32. |
 |maxDequeueCount|5|Число повторных попыток обработки сообщения, прежде чем поместить его в очередь подозрительных сообщений.|
 |newBatchThreshold|batchSize/2|Каждый раз, когда количество сообщений, обрабатываемых параллельно, достигает этого числа, среда выполнения получает другой пакет.|
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md)
 

@@ -1,23 +1,18 @@
 ---
 title: Триггеры таймера для службы "Функции Azure"
 description: Узнайте, как использовать триггеры с таймерами в функциях Azure.
-services: functions
-documentationcenter: na
 author: craigshoemaker
-manager: gwallace
-keywords: функции azure, функции, обработка событий, динамические вычисления, независимая архитектура
 ms.assetid: d2f013d1-f458-42ae-baf8-1810138118ac
-ms.service: azure-functions
 ms.topic: reference
 ms.date: 09/08/2018
 ms.author: cshoe
 ms.custom: ''
-ms.openlocfilehash: 439e5ab4bf943293ff4ed20ed477bc98bb683836
-ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
-ms.translationtype: MT
+ms.openlocfilehash: ebe7916900ded20dc6555c9c28277dea889539a3
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2019
-ms.locfileid: "72299330"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74230968"
 ---
 # <a name="timer-trigger-for-azure-functions"></a>Триггеры таймера для службы "Функции Azure" 
 
@@ -42,7 +37,7 @@ ms.locfileid: "72299330"
 Языковой пример см. в разделах:
 
 * [C#](#c-example)
-* [Скрипт C# (CSX)](#c-script-example)
+* [Сценарий C# (CSX)](#c-script-example)
 * [F#](#f-example)
 * [Java](#java-example)
 * [JavaScript](#javascript-example)
@@ -50,7 +45,7 @@ ms.locfileid: "72299330"
 
 ### <a name="c-example"></a>Пример C#
 
-В следующем примере показана [ C# функция](functions-dotnet-class-library.md) , которая выполняется каждый раз, когда в минутах имеется значение, кратное пяти (например, если функция начинается в 18:57:00, следующая производительность будет составлять 19:00:00). Объект [`TimerInfo`](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions/Extensions/Timers/TimerInfo.cs) передается в функцию.
+The following example shows a [C# function](functions-dotnet-class-library.md) that is executed each time the minutes have a value divisible by five (eg if the function starts at 18:57:00, the next performance will be at 19:00:00). The [`TimerInfo`](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions/Extensions/Timers/TimerInfo.cs) object is passed into the function.
 
 ```cs
 [FunctionName("TimerTriggerCSharp")]
@@ -66,7 +61,7 @@ public static void Run([TimerTrigger("0 */5 * * * *")]TimerInfo myTimer, ILogger
 
 ### <a name="c-script-example"></a>Пример сценария C#
 
-В следующем примере показаны привязка триггера таймера в файле *function.json* и [функция сценария C#](functions-reference-csharp.md), которая использует эту привязку. Эта функция выполняет запись в журнал, указывая, когда ее вызов выполняется из-за пропущенного запуска по расписанию. Объект [`TimerInfo`](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions/Extensions/Timers/TimerInfo.cs) передается в функцию.
+В следующем примере показаны привязка триггера таймера в файле *function.json* и [функция сценария C#](functions-reference-csharp.md), которая использует эту привязку. Эта функция выполняет запись в журнал, указывая, когда ее вызов выполняется из-за пропущенного запуска по расписанию. The [`TimerInfo`](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions/Extensions/Timers/TimerInfo.cs) object is passed into the function.
 
 Данные привязки в файле *function.json*:
 
@@ -94,7 +89,7 @@ public static void Run(TimerInfo myTimer, ILogger log)
 
 ### <a name="f-example"></a>Пример F#
 
-В следующем примере показаны привязка триггера таймера в файле *function.json* и [функция сценария F#](functions-reference-fsharp.md), которая использует эту привязку. Эта функция выполняет запись в журнал, указывая, когда ее вызов выполняется из-за пропущенного запуска по расписанию. Объект [`TimerInfo`](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions/Extensions/Timers/TimerInfo.cs) передается в функцию.
+В следующем примере показаны привязка триггера таймера в файле *function.json* и [функция сценария F#](functions-reference-fsharp.md), которая использует эту привязку. Эта функция выполняет запись в журнал, указывая, когда ее вызов выполняется из-за пропущенного запуска по расписанию. The [`TimerInfo`](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions/Extensions/Timers/TimerInfo.cs) object is passed into the function.
 
 Данные привязки в файле *function.json*:
 
@@ -134,7 +129,7 @@ public void keepAlive(
 
 ### <a name="javascript-example"></a>Пример JavaScript
 
-В следующем примере показаны привязка триггера таймера в файле *function.json* и [функция JavaScript](functions-reference-node.md), которая использует эту привязку. Эта функция выполняет запись в журнал, указывая, когда ее вызов выполняется из-за пропущенного запуска по расписанию. [Объект Timer](#usage) передается в функцию.
+В следующем примере показаны привязка триггера таймера в файле *function.json* и [функция JavaScript](functions-reference-node.md), которая использует эту привязку. Эта функция выполняет запись в журнал, указывая, когда ее вызов выполняется из-за пропущенного запуска по расписанию. A [timer object](#usage) is passed into the function.
 
 Данные привязки в файле *function.json*:
 
@@ -165,7 +160,7 @@ module.exports = function (context, myTimer) {
 
 ### <a name="python-example"></a>Пример на Python
 
-В следующем примере используется привязка триггера таймера, конфигурация которой описана в файле *Function. JSON* . Фактическая [функция Python](functions-reference-python.md) , использующая привязку, описана в файле  *__init__. корректировки* . Объект, переданный в функцию, имеет тип [Azure. functions. тимеррекуест](/python/api/azure-functions/azure.functions.timerrequest). Логика функции записывает в журналы, указывающие, вызван ли текущий вызов из-за пропущенного события расписания. 
+The following example uses a timer trigger binding whose configuration is described in the *function.json* file. The actual [Python function](functions-reference-python.md) that uses the binding is described in the *__init__.py* file. The object passed into the function is of type [azure.functions.TimerRequest object](/python/api/azure-functions/azure.functions.timerrequest). The function logic writes to the logs indicating whether the current invocation is due to a missed schedule occurrence. 
 
 Данные привязки в файле *function.json*:
 
@@ -215,27 +210,27 @@ public static void Run([TimerTrigger("0 */5 * * * *")]TimerInfo myTimer, ILogger
 }
 ```
 
-## <a name="configuration"></a>Конфигурация
+## <a name="configuration"></a>Настройка
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `TimerTrigger`.
 
 |свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
-|**type** | Недоступно | Этому свойству необходимо присвоить значение "timerTrigger". Это свойство задается автоматически при создании триггера на портале Azure.|
-|**direction** | Недоступно | Для этого свойства необходимо задать значение "in". Это свойство задается автоматически при создании триггера на портале Azure. |
-|**name** | Недоступно | Имя переменной, представляющей объект таймера в коде функции. | 
+|**type** | Н/Д | Этому свойству необходимо присвоить значение "timerTrigger". Это свойство задается автоматически при создании триггера на портале Azure.|
+|**direction** | Н/Д | Для этого свойства необходимо задать значение "in". Это свойство задается автоматически при создании триггера на портале Azure. |
+|**name** | Н/Д | Имя переменной, представляющей объект таймера в коде функции. | 
 |**schedule**|**ScheduleExpression**|Значение [выражения CRON](#ncrontab-expressions) или [TimeSpan](#timespan). `TimeSpan` можно использовать только для приложения-функции, которая работает в плане службы приложений. Вы можете поместить выражение расписания в параметр приложения и присвоить этому свойству имя параметра приложения, заключенное в знаки **%** , например: "%ScheduleAppSetting%". |
-|**runOnStartup**|**RunOnStartup**|Если настроено значение `true`, функция вызывается при запуске среды выполнения. Например, среда выполнения запускается, когда приложение-функция выходит из спящего режима (в который она перешла из-за отсутствия активности), когда приложение-функция перезапускается из-за изменения функции или когда приложение-функция масштабируется. Поэтому **runOnStartup** редко следует задавать `true`, если стоит делать это вообще, — особенно в рабочей среде. |
-|**useMonitor**|**UseMonitor**|Установите значение `true` или`false`, чтобы указать, следует ли отслеживать расписание. При мониторинге расписания его экземпляры сохраняются, чтобы обеспечить его корректную обработку даже при перезапуске экземпляров приложения-функции. Если не задано явно, значение по умолчанию — `true` для расписаний с интервалом повторений больше или равным 1 минуте. Для расписаний, выполняющихся чаще одного раза в минуту, значением по умолчанию является `false`.
+|**runOnStartup**|**RunOnStartup**|Если настроено значение `true`, функция вызывается при запуске среды выполнения. Например, среда выполнения запускается, когда приложение-функция выходит из спящего режима (в который она перешла из-за отсутствия активности), when the function app restarts due to function changes, and when the function app scales out. So **runOnStartup** should rarely if ever be set to `true`, especially in production. |
+|**useMonitor**|**UseMonitor**|Установите значение `true` или`false`, чтобы указать, следует ли отслеживать расписание. При мониторинге расписания его экземпляры сохраняются, чтобы обеспечить его корректную обработку даже при перезапуске экземпляров приложения-функции. If not set explicitly, the default is `true` for schedules that have a recurrence interval greater than or equal to 1 minute. Для расписаний, выполняющихся чаще одного раза в минуту, значением по умолчанию является `false`.
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
 > [!CAUTION]
-> Мы не рекомендуем задавать параметр **runOnStartup** для `true` в рабочей среде. Использование этого параметра заставляет код выполняться в очень непредсказуемое время. В определенных рабочих ситуациях эти дополнительные выполнения могут привести значительно более высоким затратам для приложений, размещенных в планах потребления. Например, при включенном параметре **рунонстартуп** триггер вызывается при каждом масштабировании приложения-функции. Убедитесь, что вы полностью понимаете рабочее поведение своих функций перед включением **runOnStartup** в рабочей среде.   
+> Мы не рекомендуем задавать параметр **runOnStartup** для `true` в рабочей среде. Использование этого параметра заставляет код выполняться в очень непредсказуемое время. В определенных рабочих ситуациях эти дополнительные выполнения могут привести значительно более высоким затратам для приложений, размещенных в планах потребления. For example, with **runOnStartup** enabled the trigger is invoked whenever your function app is scaled. Убедитесь, что вы полностью понимаете рабочее поведение своих функций перед включением **runOnStartup** в рабочей среде.   
 
 ## <a name="usage"></a>Использование
 
-При вызове функции триггера таймера в функцию передается объект Timer. Далее представлен JSON в качестве примера объекта таймера.
+When a timer trigger function is invoked, a timer object is passed into the function. Далее представлен JSON в качестве примера объекта таймера.
 
 ```json
 {
@@ -252,15 +247,15 @@ public static void Run([TimerTrigger("0 */5 * * * *")]TimerInfo myTimer, ILogger
 
 Значение свойства `IsPastDue` — `true`, когда текущая функция вызывается позже запланированного. Например перезапуск приложения-функции может привести к тому, что вызов будет пропущен.
 
-## <a name="ncrontab-expressions"></a>Выражения НКРОНТАБ 
+## <a name="ncrontab-expressions"></a>NCRONTAB expressions 
 
-Функции Azure используют библиотеку [нкронтаб](https://github.com/atifaziz/NCrontab) для интерпретации выражений нкронтаб. НКРОНТАБ експпрессион аналогичен выражению CRON, за исключением того, что он включает в начале использования для точности времени в секундах дополнительное шестое поле.
+Azure Functions uses the [NCronTab](https://github.com/atifaziz/NCrontab) library to interpret NCRONTAB expressions. An NCRONTAB exppression is similar to a CRON expression except that it includes an additional sixth field at the beginning to use for time precision in seconds:
 
 `{second} {minute} {hour} {day} {month} {day-of-week}`
 
 Каждое поле может принимать значение одного из следующих типов:
 
-|Type  |Пример  |Когда активируется  |
+|Тип  |Пример  |Когда активируется  |
 |---------|---------|---------|
 |Определенное значение |<nobr>"0 5 * * * *"</nobr>|в hh:05:00, где hh — каждый час (один раз в час)|
 |Все значения (`*`)|<nobr>"0 * 5 * * *"</nobr>|в 5:mm:00 каждый день, где mm — каждая минута часа (60 раз в день)|
@@ -270,9 +265,9 @@ public static void Run([TimerTrigger("0 */5 * * * *")]TimerInfo myTimer, ILogger
 
 [!INCLUDE [functions-cron-expressions-months-days](../../includes/functions-cron-expressions-months-days.md)]
 
-### <a name="ncrontab-examples"></a>Примеры НКРОНТАБ
+### <a name="ncrontab-examples"></a>NCRONTAB examples
 
-Ниже приведены некоторые примеры выражений НКРОНТАБ, которые можно использовать для триггера таймера в функциях Azure.
+Here are some examples of NCRONTAB expressions you can use for the timer trigger in Azure Functions.
 
 |Пример|Когда активируется  |
 |---------|---------|
@@ -285,19 +280,19 @@ public static void Run([TimerTrigger("0 */5 * * * *")]TimerInfo myTimer, ILogger
 |`"0 30 9 * Jan Mon"`|в 9:30 каждый понедельник в январе|
 
 
-### <a name="ncrontab-time-zones"></a>Часовые пояса НКРОНТАБ
+### <a name="ncrontab-time-zones"></a>NCRONTAB time zones
 
 Числа в выражении CRON представляют собой время и дату, а не временной интервал. Например, значение 5 в поле `hour` означает 5:00, а не каждые 5 часов.
 
 Часовой пояс по умолчанию, используемый с выражениями CRON — время в формате UTC. Если нужно использовать другой часовой пояс в выражении CRON, создайте параметр приложения с именем `WEBSITE_TIME_ZONE` для приложения-функции. В качестве значения задайте имя нужного часового пояса, как показано в статье [Microsoft Time Zone Index](https://technet.microsoft.com/library/cc749073) (Индексы часовых поясов Майкрософт). 
 
-Например, *восточное поясное время* — UTC-05:00. Чтобы триггер таймера активировался в 10:00 часа EST ежедневно, используйте следующее выражение НКРОНТАБ, которое используется для часового пояса UTC:
+Например, *восточное поясное время* — UTC-05:00. To have your timer trigger fire at 10:00 AM EST every day, use the following NCRONTAB expression that accounts for UTC time zone:
 
 ```
 "0 0 15 * * *"
 ``` 
 
-Или создайте параметр приложения с именем `WEBSITE_TIME_ZONE` для приложения-функции и задайте **Восточное время США** в качестве значения.  Затем использует следующее выражение НКРОНТАБ: 
+Или создайте параметр приложения с именем `WEBSITE_TIME_ZONE` для приложения-функции и задайте **Восточное время США** в качестве значения.  Then uses the following NCRONTAB expression: 
 
 ```
 "0 0 10 * * *"
@@ -305,47 +300,47 @@ public static void Run([TimerTrigger("0 */5 * * * *")]TimerInfo myTimer, ILogger
 
 Если используется `WEBSITE_TIME_ZONE`, настраивается изменение времени в соответствии с определенным часовым поясом, например с переходом на летнее время. 
 
-## <a name="timespan"></a>TimeSpan
+## <a name="timespan"></a>Интервал времени
 
  `TimeSpan` можно использовать только для приложения-функции, которая работает в плане службы приложений.
 
 В отличие от выражения CRON значение `TimeSpan` задает интервал времени между каждым вызовом функции. Если функция будет выполняться дольше заданного временного интервала, она немедленно будет активирована таймером.
 
-Когда значения выражения `hh` в виде стоки меньше 24, `TimeSpan` будет использовать формат `hh:mm:ss`. Когда первые две цифры больше или равны 24, будет использован следующий формат `dd:hh:mm`. Далее приводятся некоторые примеры.
+Когда значения выражения `hh` в виде стоки меньше 24, `TimeSpan` будет использовать формат `hh:mm:ss`. Когда первые две цифры больше или равны 24, будет использован следующий формат `dd:hh:mm`. Ниже приведены некоторые примеры:
 
 |Пример |Когда активируется  |
 |---------|---------|
 |"01:00:00" | каждый час        |
 |"00:01:00"|каждую минуту         |
-|"24:00:00" | каждые 24 часа        |
-|"1,00:00:00" | Каждый день        |
+|"24:00:00" | every 24 hours        |
+|"1.00:00:00" | every day        |
 
-## <a name="scale-out"></a>Горизонтальное масштабирование
+## <a name="scale-out"></a>Расширение
 
 Если приложение-функция будет развернуто на несколько экземпляров, то только один из экземпляров активируемой по таймеру функции выполняется для всех экземпляров.
 
 ## <a name="function-apps-sharing-storage"></a>Совместное использование хранилища приложениями-функциями
 
-При совместном использовании учетных записей хранения в приложениях функций, которые не развернуты в службе приложений, может потребоваться явно назначить идентификатор узла каждому приложению.
+If you are sharing storage accounts across function apps that are not deployed to app service, you might need to explicitly assign host ID to each app.
 
 | Версия службы "Функции" | Параметр                                              |
 | ----------------- | ---------------------------------------------------- |
-| 2.x               | `AzureFunctionsWebHost__hostid` переменная среды |
-| 1.x               | `id` в *Host. JSON*                                  |
+| 2.x               | `AzureFunctionsWebHost__hostid` environment variable |
+| 1.x               | `id` in *host.json*                                  |
 
-Можно опустить идентифицирующее значение или вручную задать для каждой идентифицирующей конфигурации приложения-функции другое значение.
+You can omit the identifying value or manually set each function app's identifying configuration to a different value.
 
-Триггер таймера использует блокировку хранилища, чтобы гарантировать наличие только одного экземпляра таймера, когда приложение-функция масштабируется до нескольких экземпляров. Если два приложения-функции совместно используют одну и ту же идентифицирующую конфигурацию, и каждый из них использует триггер таймера, запускается только один таймер.
+The timer trigger uses a storage lock to ensure that there is only one timer instance when a function app scales out to multiple instances. If two function apps share the same identifying configuration and each uses a timer trigger, only one timer runs.
 
 ## <a name="retry-behavior"></a>Поведение при повторе
 
 В отличие от триггера очереди триггер таймера не осуществляет повторную попытку после того, как произошла ошибка выполнения функции. Когда функция возвращает ошибку, следующий раз она будет вызвана только по расписанию.
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Устранение неисправностей
 
 Дополнительные сведения о том, что делать, когда триггер таймера неисправен, см. в разделе [Расследование проблем, когда функции, вызываемые таймером, не срабатывают](https://github.com/Azure/azure-functions-host/wiki/Investigating-and-reporting-issues-with-timer-triggered-functions-not-firing).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Перейдите к краткому руководству по использованию триггера таймера](functions-create-scheduled-function.md)

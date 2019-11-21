@@ -7,27 +7,27 @@ author: bandersmsft
 ms.author: banders
 ms.date: 11/12/2019
 ms.topic: conceptual
-ms.service: cost-management
+ms.service: cost-management-billing
 manager: adwise
 ms.custom: seodec18
-ms.openlocfilehash: c4de8b0d78d66709d13526c69f9d33b16dbad1dc
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: edb46bc361c515439a93d9c3d0b9987bebe4b1b1
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74010220"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74229880"
 ---
 # <a name="tutorial-create-and-manage-azure-budgets"></a>Руководство. Создание и управление бюджетами Azure
 
 Бюджеты в службе "Управление затратами" помогают планировать и отслеживать отчетность на уровне организации. С бюджетами вы можете учитывать службы Azure, которые используете или на которые подписываетесь в течение определенного периода. Они помогают сообщать другим пользователям о своих расходах, чтобы эффективно управлять затратами и контролировать то, как они возрастают с течением времени. Когда созданные вами пороговые значения бюджета превышены, активируются только уведомления. Ни один из ваших ресурсов не затронут а потребление не остановлено. Анализируя затраты, можно использовать бюджеты для их сравнения и отслеживания.
 
-Данные о затратах и использовании обычно доступны в течение 12-16 часов, а бюджеты оцениваются по этим затратам каждые четыре часа. Уведомления по электронной почте обычно получаются в течение 12-16 часов.
+Cost and usage data is typically available within 12-16 hours and budgets are evaluated against these costs every four hours. Email notifications are normally received within 12-16 hours.
 
 В конце периода (ежемесячно, ежеквартально или ежегодно) бюджеты автоматически сбрасываются до той же суммы, когда вы выбираете следующую дату истечения срока. Так как сбрасывание происходит при той же сумме бюджета, вам нужно создать отдельные бюджеты в том случае если сумма бюджета в валюте отличается от последующих периодов.
 
 Примеры в этом руководстве помогут вам при создании и редактировании бюджета для подписки по соглашению Enterprise (EA) для Azure.
 
-Посмотрите, [как создать бюджет для отслеживания расходов с помощью видео службы управления затратами Azure](https://www.youtube.com/watch?v=ExIVG_Gr45A) , чтобы увидеть, как можно создавать бюджеты в Azure для отслеживания расходов.
+Watch the [How to create a budget to monitor your spending with Azure Cost Management](https://www.youtube.com/watch?v=ExIVG_Gr45A) video to see how you can create budgets in Azure to monitor spending.
 
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
@@ -36,13 +36,13 @@ ms.locfileid: "74010220"
 > * Создание бюджета на портале Azure
 > * Изменение бюджета
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
-Бюджеты поддерживаются для различных типов учетных записей Azure. Полный список поддерживаемых типов учетных записей см. в статье [Understand Cost Management data](understand-cost-mgt-data.md) (Интерпретация данных службы "Управление затратами"). Чтобы просмотреть данные о бюджете, вам нужен как минимум доступ на чтение для учетной записи Azure.
+Бюджеты поддерживаются для различных типов учетных записей Azure. Полный список поддерживаемых типов учетных записей см. в статье [Интерпретация данных службы "Управление затратами"](understand-cost-mgt-data.md). Чтобы просмотреть данные о бюджете, вам нужен как минимум доступ на чтение для учетной записи Azure.
 
  Для подписок Azure EA вам необходимо иметь доступ на чтение для просмотра данных о бюджете. А для создания и администрирования бюджетов требуется разрешение уровня участника. Вы можете создать отдельные бюджеты для подписок EA и групп ресурсов. Однако вы не можете создать бюджеты для учетных записей выставления счетов EA.
 
-Следующие разрешения или области Azure поддерживаются на подписку для бюджетов по пользователям и группам. См. [основные сведения об областях и работе с ними](understand-work-scopes.md).
+The following Azure permissions, or scopes, are supported per subscription for budgets by user and group. См. [основные сведения об областях и работе с ними](understand-work-scopes.md).
 
 - Владелец может создавать, изменять или удалять бюджеты для подписки.
 - Участник и участник службы "Управление затратами" может создавать, изменять или удалять свои собственные бюджеты. Можно изменить сумму бюджета для бюджетов, созданных другими пользователями.
@@ -50,37 +50,37 @@ ms.locfileid: "74010220"
 
 Дополнительные сведения о назначении разрешений на доступ к данным службы "Управление затратами" см. в [этой статье](assign-access-acm-data.md).
 
-## <a name="sign-in-to-azure"></a>Вход в Azure
+## <a name="sign-in-to-azure"></a>Войдите в Azure
 
 - Войдите на портал Azure по адресу https://portal.azure.com.
 
 ## <a name="create-a-budget-in-the-azure-portal"></a>Создание бюджета на портале Azure
 
-Бюджет подписки Azure можно создать на месячный, квартальный или годовой период. Содержимое навигации в портал Azure определяет, создается ли бюджет для подписки или для группы управления.
+Бюджет подписки Azure можно создать на месячный, квартальный или годовой период. Your navigational content in the Azure portal determines whether you create a budget for a subscription or for a management group.
 
-Чтобы создать или просмотреть бюджет, откройте нужную область в портал Azure и выберите **бюджеты** в меню. Например, перейдите к разделу **подписки**, выберите подписку из списка, а затем выберите в меню пункт **бюджеты** . Используйте **область** пилюля для переключения на другую область, например в группу управления, в бюджетах. См. [основные сведения об областях и работе с ними](understand-work-scopes.md).
+To create or view a budget, open the desired scope in the Azure portal and select **Budgets** in the menu. For example, navigate to **Subscriptions**, select a subscription from the list, and then select **Budgets** in the menu. Use the **Scope** pill to switch to a different scope, like a management group, in Budgets. См. [основные сведения об областях и работе с ними](understand-work-scopes.md).
 
 После создания бюджетов вы увидите упрощенную схему текущих затрат.
 
-Нажмите кнопку **Добавить**.
+Щелкните **Добавить**.
 
-![Пример, в котором показан список уже созданных бюджетов](./media/tutorial-acm-create-budgets/budgets01.png)
+![Example showing a list of budgets already created](./media/tutorial-acm-create-budgets/budgets01.png)
 
-В окне **Создание бюджета** убедитесь, что указана правильная область. Выберите Фильтры, которые требуется добавить. Фильтры позволяют создавать бюджеты по конкретным затратам, таким как группы ресурсов в подписке или службе, например виртуальные машины. Любой фильтр, который можно использовать в анализе затрат, также можно применить к бюджету.
+In the **Create budget** window, make sure that the scope shown is correct. Choose any filters that you want to add. Filters allow you to create budgets on specific costs, such as resource groups in a subscription or a service like virtual machines. Any filter you can use in cost analysis can also be applied to a budget.
 
-Определив область и фильтры, введите имя бюджета. Затем выберите месячный, квартальный или ежегодный период сброса бюджета. Этот период сброса определяет окно времени, проанализированное бюджетом. Стоимость, оцененная бюджетом, начинается с нуля в начале каждого нового периода. Создание квартального бюджета происходит таким же образом, как и создание ежемесячного бюджета. Разница заключается в том, что сумма ежеквартального бюджета равномерно распределяется по трем месяцам. Годовая сумма бюджета равномерно распределяется между всеми 12 месяцами календарного года.
+After you've identified your scope and filters, type a budget name. Then, choose a monthly, quarterly or annual budget reset period. This reset period determines the time window that's analyzed by the budget. The cost evaluated by the budget starts at zero at the beginning of each new period. Создание квартального бюджета происходит таким же образом, как и создание ежемесячного бюджета. Разница заключается в том, что сумма ежеквартального бюджета равномерно распределяется по трем месяцам. An annual budget amount is evenly divided among all 12 months of the calendar year.
 
-Если у вас есть подписка с оплатой по мере использования, подписка MSDN или подписка Visual Studio, ваш период выставления счетов может не совпадать с календарным месяцем. Для этих типов подписок и групп ресурсов можно создать бюджет, который будет согласовываться с вашим периодом счета или с календарными месяцами. Чтобы создать бюджет, выравниваемая по расчетному периоду, выберите период сброса **месяца выставления**счета, **квартал выставления счетов**или **год выставления счетов**. Чтобы создать бюджет, выравниваемая по календарному месяцу, выберите период сброса: **ежемесячно**, **ежеквартально**или **ежегодно**.
+Если у вас есть подписка с оплатой по мере использования, подписка MSDN или подписка Visual Studio, ваш период выставления счетов может не совпадать с календарным месяцем. For those subscription types and resource groups, you can create a budget that's aligned to your invoice period or to calendar months. To create a budget aligned to your invoice period, select a reset period of **Billing month**, **Billing quarter**, or **Billing year**. To create a budget aligned to the calendar month, select a reset period of **Monthly**, **Quarterly**, or **Annually**.
 
-Затем найдите дату окончания срока действия, когда бюджет станет недействительным, и остановите оценку затрат.
+Next, identify the expiration date when the budget becomes invalid and stops evaluating your costs.
 
-На основе полей, выбранных в бюджете до сих пор, отображается диаграмма, помогающая выбрать пороговое значение, которое будет использоваться для бюджета. Предлагаемый бюджет основан на наивысшей прогнозируемой стоимости, которая может возникнуть в будущих периодах. Можно изменить сумму бюджета.
+Based on the fields chosen in the budget so far, a graph is shown to help you select a threshold to use for your budget. The suggested budget is based on the highest forecasted cost that you might incur in future periods. You can change the budget amount.
 
-![Пример, демонстрирующий создание бюджета с использованием данных о месячных затратах ](./media/tutorial-acm-create-budgets/monthly-budget01.png)
+![Example showing budget creation with monthly cost data ](./media/tutorial-acm-create-budgets/monthly-budget01.png)
 
-После настройки суммы бюджета нажмите кнопку **Далее** , чтобы настроить оповещения бюджета. Для бюджета требуется указать как минимум одно пороговое значение (% бюджета) и соответствующий адрес электронной почты. При необходимости можно добавить не более пяти пороговых значений и пяти адресов электронной почты в один бюджет. По достижении порога бюджета уведомления по электронной почте обычно получают менее 20 часов. Дополнительные сведения об уведомлениях см. в статье [Use cost alerts to monitor usage and spending](cost-mgt-alerts-monitor-usage-spending.md) (Мониторинг использования и расходов с помощью уведомлений о затратах). В приведенном ниже примере оповещение по электронной почте создается при достижении 90% от бюджета. При создании бюджета с помощью API бюджетов можно также назначать роли пользователям для получения оповещений. Назначение ролей пользователям не поддерживается в портал Azure. Дополнительные сведения об API бюджетов Azure см. в разделе [API бюджетов](/rest/api/consumption/budgets).
+After you configure the budget amount, click **Next** to configure budget alerts. Для бюджета требуется указать как минимум одно пороговое значение (% бюджета) и соответствующий адрес электронной почты. При необходимости можно добавить не более пяти пороговых значений и пяти адресов электронной почты в один бюджет. When a budget threshold is met, email notifications are normally received in less than 20 hours. Дополнительные сведения об уведомлениях см. в статье [Use cost alerts to monitor usage and spending](cost-mgt-alerts-monitor-usage-spending.md) (Мониторинг использования и расходов с помощью уведомлений о затратах). In the example below, an email alert gets generated when 90% of the budget is reached. If you create a budget with the Budgets API, you can also assign roles to people to receive alerts. Assigning roles to people isn't supported in the Azure portal. For more about the Azure budgets API, see [Budgets API](/rest/api/consumption/budgets).
 
-![Пример отображения условий оповещения](./media/tutorial-acm-create-budgets/monthly-budget-alert.png)
+![Example showing alert conditions](./media/tutorial-acm-create-budgets/monthly-budget-alert.png)
 
 После создания бюджета, отображается анализ затрат. Просмотр бюджета по отношению к вашей тенденции расходов является одним из первых шагов при начале [анализа затраты и расходов](quick-acm-cost-analysis.md).
 
@@ -88,35 +88,35 @@ ms.locfileid: "74010220"
 
 В приведенном выше примере вы создали бюджет для подписки. Тем не менее можно также создать бюджет для группы ресурсов. Если вы хотите создать бюджет для группы ресурсов, перейдите к **Управление затратами + выставление счетов** &gt; **Подписки** &gt; выберите подписку > **Группа ресурсов** > выберите группу ресурсов > **Бюджеты** > и затем **Добавить** бюджет.
 
-## <a name="trigger-an-action-group"></a>Активация группы действий
+## <a name="trigger-an-action-group"></a>Trigger an action group
 
-При создании или изменении бюджета для области подписки или группы ресурсов можно настроить ее для вызова группы действий. Группа действий может выполнять различные действия при достижении порогового значения бюджета. Группы действий в настоящее время поддерживаются только для областей подписок и групп ресурсов. Дополнительные сведения о группах действий см. [в разделе Создание групп действий и управление ими в портал Azure](../azure-monitor/platform/action-groups.md). Дополнительные сведения об использовании автоматизации на основе бюджета с группами действий см. в статье [Управление затратами с помощью бюджетов Azure](../billing/billing-cost-management-budget-scenario.md).
-
-
-
-Чтобы создать или изменить группы действий, щелкните **Управление группами действий** во время создания или изменения бюджета.
-
-![Пример создания бюджета для отображения групп действий управления](./media/tutorial-acm-create-budgets/manage-action-groups01.png)
+When you create or edit a budget for a subscription or resource group scope, you can configure it to call an action group. The action group can perform a variety of different actions when your budget threshold is met. Action Groups are currently only supported for subscription and resource group scopes. For more information about Action Groups, see [Create and manage action groups in the Azure portal](../azure-monitor/platform/action-groups.md). For more information about using budget-based automation with action groups, see [Manage costs with Azure budgets](../billing/billing-cost-management-budget-scenario.md).
 
 
-Затем щелкните **Добавить группу действий** и создайте группу действий.
+
+To create or update action groups, click **Manage action groups** while you're creating or editing a budget.
+
+![Example of creating a budget to show Manage action groups](./media/tutorial-acm-create-budgets/manage-action-groups01.png)
 
 
-![Изображение поля "добавить группу действий"](./media/tutorial-acm-create-budgets/manage-action-groups02.png)
+Next, click **Add action group** and create the action group.
 
-После создания группы действий закройте поле, чтобы вернуться к вашему бюджету.
 
-Настройте бюджет на использование группы действий при достижении конкретного порогового значения. Поддерживается до пяти различных пороговых значений.
+![Image of the Add action group box](./media/tutorial-acm-create-budgets/manage-action-groups02.png)
 
-![Пример, демонстрирующий выбор группы действий для условия оповещения](./media/tutorial-acm-create-budgets/manage-action-groups03.png)
+After the action group is created, close the box to return to your budget.
 
-В следующем примере показаны пороговые значения бюджета, равные 50%, 75% и 100%. Каждый из них настроен для активации указанных действий в назначенной группе действий.
+Configure your budget to use your action group when an individual threshold is met. Up to five different thresholds are supported.
 
-![Пример, в котором показаны условия предупреждений, настроенные с различными группами действий и типами действий](./media/tutorial-acm-create-budgets/manage-action-groups04.png)
+![Example showing action group selection for an alert condition](./media/tutorial-acm-create-budgets/manage-action-groups03.png)
 
-Интеграция бюджета с группами действий работает только для групп действий, для которых отключена общая схема предупреждений. Дополнительные сведения об отключении схемы см [. в разделе разделы справки включить общую схему оповещений?](../azure-monitor/platform/alerts-common-schema.md#how-do-i-enable-the-common-alert-schema)
+The following example shows budget thresholds set to 50%, 75% and 100%. Each is configured to trigger the specified actions within the designated action group.
 
-## <a name="next-steps"></a>Дополнительная информация
+![Example showing alert conditions configured with various action groups and type of actions](./media/tutorial-acm-create-budgets/manage-action-groups04.png)
+
+Budget integration with action groups only works for action groups that have the common alert schema disabled. For more information about disabling the schema, see [How do I enable the common alert schema?](../azure-monitor/platform/alerts-common-schema.md#how-do-i-enable-the-common-alert-schema)
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как выполнить следующие задачи:
 

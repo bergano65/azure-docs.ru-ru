@@ -1,20 +1,14 @@
 ---
 title: Публикации устойчивых функций в службе "Сетка событий Azure" (предварительная версия)
 description: Узнайте, как настроить автоматическую публикацию в службе "Сетка событий Azure" для устойчивых функций.
-services: functions
-author: ggailey777
-manager: jeconnoc
-keywords: ''
-ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 03/14/2019
-ms.author: glenga
-ms.openlocfilehash: 4e1a714a6d46a9422fb298749cfe30ac70ffc8c3
-ms.sourcegitcommit: b2fb32ae73b12cf2d180e6e4ffffa13a31aa4c6f
+ms.openlocfilehash: f0fbb46320b896008b6a1343357f016a9f57b0fe
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73614909"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74231446"
 ---
 # <a name="durable-functions-publishing-to-azure-event-grid-preview"></a>Публикации устойчивых функций в службе "Сетка событий Azure" (предварительная версия)
 
@@ -22,7 +16,7 @@ ms.locfileid: "73614909"
 
 Ниже приведены некоторые сценарии, где эта функция полезна:
 
-* **DevOps такие сценарии, как развертывание со синим/зеленым**цветом: перед реализацией [стратегии параллельного развертывания](durable-functions-versioning.md#side-by-side-deployments)может потребоваться выяснить, выполняются ли какие-либо задачи.
+* **DevOps scenarios like blue/green deployments**: You might want to know if any tasks are running before implementing the [side-by-side deployment strategy](durable-functions-versioning.md#side-by-side-deployments).
 
 * **Поддержка расширенного мониторинга и диагностики**. Вы можете отслеживать сведения о состоянии оркестрации во внешнем хранилище, оптимизированном для запросов, например базы данных SQL или Cosmos DB.
 
@@ -30,22 +24,22 @@ ms.locfileid: "73614909"
 
 [!INCLUDE [v1-note](../../../includes/functions-durable-v1-tutorial-note.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
-* Установите [Microsoft. Azure. веб-jobs. Extensions. DurableTask](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.DurableTask) в проекте устойчивые функции.
+* Install [Microsoft.Azure.WebJobs.Extensions.DurableTask](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.DurableTask) in your Durable Functions project.
 * Установите [эмулятор хранения Azure](../../storage/common/storage-use-emulator.md).
 * Установите [Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest) или используйте [Azure Cloud Shell](../../cloud-shell/overview.md).
 
-## <a name="create-a-custom-event-grid-topic"></a>Создание пользовательского раздела сетки событий
+## <a name="create-a-custom-event-grid-topic"></a>Create a custom event grid topic
 
-Создайте раздел "Сетка событий" для отправки событий из Устойчивые функции. Ниже показано, как создать раздел с помощью Azure CLI. Сведения о том, как сделать это с помощью PowerShell или портала Azure, см. в следующих статьях:
+Create an event grid topic for sending events from Durable Functions. Ниже показано, как создать раздел с помощью Azure CLI. Сведения о том, как сделать это с помощью PowerShell или портала Azure, см. в следующих статьях:
 
 * [Создание и перенаправление пользовательских событий с помощью службы Azure PowerShell и "Сетка событий"](../../event-grid/custom-event-quickstart-powershell.md)
 * [Создание и перенаправление пользовательских событий с помощью портала Azure и службы "Сетка событий"](../../event-grid/custom-event-quickstart-portal.md)
 
 ### <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Создайте группу ресурсов с помощью команды `az group create`. Сейчас служба "Сетка событий Azure" не поддерживает все регионы. Сведения о поддерживаемых регионах см. в статье [Общие сведения о службе "Сетка событий Azure](../../event-grid/overview.md)".
+Создайте группу ресурсов с помощью команды `az group create`. Currently, Azure Event Grid doesn't support all regions. For information about which regions are supported, see the [Azure Event Grid overview](../../event-grid/overview.md).
 
 ```bash
 az group create --name eventResourceGroup --location westus2
@@ -53,7 +47,7 @@ az group create --name eventResourceGroup --location westus2
 
 ### <a name="create-a-custom-topic"></a>Создание пользовательской темы
 
-В разделе "Сетка событий" представлена определяемая пользователем конечная точка, в которую следует поместить событие. Замените `<topic_name>` уникальным именем для вашей темы. Имя раздела должно быть уникальным, так как оно становится записью службы доменных имен (DNS).
+An event grid topic provides a user-defined endpoint that you post your event to. Замените `<topic_name>` уникальным именем для вашей темы. Имя раздела должно быть уникальным, так как оно становится записью службы доменных имен (DNS).
 
 ```bash
 az eventgrid topic create --name <topic_name> -l westus2 -g eventResourceGroup
@@ -90,7 +84,7 @@ az eventgrid topic key list --name <topic_name> -g eventResourceGroup --query "k
 }
 ```
 
-Возможные свойства конфигурации службы "Сетка событий Azure" можно найти в [документации Host. JSON](../functions-host-json.md#durabletask). После настройки файла `host.json` приложение функции отправляет события жизненного цикла в сетку событий. Это работает при запуске приложения функции как локально, так и в Azure. ' ' '
+The possible Azure Event Grid configuration properties can be found in the [host.json documentation](../functions-host-json.md#durabletask). After you configure the `host.json` file, your function app sends lifecycle events to the event grid topic. This works when you run your function app both locally and in Azure.```
 
 Установите параметр приложения для ключа раздела в приложении-функции и `local.setting.json`. Следующий код JSON является примером `local.settings.json` для локальной отладки. Замените `<topic_key>` на ключ раздела.  
 
@@ -109,9 +103,9 @@ az eventgrid topic key list --name <topic_name> -g eventResourceGroup --query "k
 
 ## <a name="create-functions-that-listen-for-events"></a>Создание функций, которые прослушивают события
 
-Создайте приложение-функцию. Его лучше размещать в том же регионе, что и сетка событий.
+Создайте приложение-функцию. It's best to locate it in the same region as the event grid topic.
 
-### <a name="create-an-event-grid-trigger-function"></a>Создание функции триггера сетки событий
+### <a name="create-an-event-grid-trigger-function"></a>Create an event grid trigger function
 
 Создайте функцию для получения событий жизненного цикла. Выберите **Пользовательская функция**.
 
@@ -149,11 +143,11 @@ public static void Run(JObject eventGridEvent, ILogger log)
 }
 ```
 
-Выберите `Add Event Grid Subscription`. Эта операция добавляет подписку на сетку событий для созданного раздела сетки событий. Дополнительные сведения см. в разделе [Основные понятия в службе "Сетка событий Azure"](https://docs.microsoft.com/azure/event-grid/concepts).
+Выберите `Add Event Grid Subscription`. This operation adds an event grid subscription for the event grid topic that you created. Дополнительные сведения см. в разделе [Основные понятия в службе "Сетка событий Azure"](https://docs.microsoft.com/azure/event-grid/concepts).
 
 ![Выберите ссылку на триггер сетки событий.](./media/durable-functions-event-publishing/eventgrid-trigger-link.png)
 
-Выберите `Event Grid Topics` в качестве **типа раздела**. Выберите группу ресурсов, созданную для статьи "Сетка событий". Затем выберите экземпляр статьи "Сетка событий". Нажмите кнопку `Create`.
+Выберите `Event Grid Topics` в качестве **типа раздела**. Select the resource group that you created for the event grid topic. Then select the instance of the event grid topic. Нажмите кнопку `Create`.
 
 ![создание подписки в службе "Сетка событий";](./media/durable-functions-event-publishing/eventsubscription.png)
 
@@ -217,7 +211,7 @@ namespace LifeCycleEventSpike
 ```
 
 > [!NOTE]
-> Предыдущий код предназначен для Устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать `DurableOrchestrationContext` вместо `IDurableOrchestrationContext`, `OrchestrationClient` атрибут, а не `DurableClient` атрибут, а вместо `DurableOrchestrationClient` следует использовать тип параметра `IDurableOrchestrationClient`. Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
+> The previous code is for Durable Functions 2.x. For Durable Functions 1.x, you must use `DurableOrchestrationContext` instead of `IDurableOrchestrationContext`, `OrchestrationClient` attribute instead of the `DurableClient` attribute, and you must use the `DurableOrchestrationClient` parameter type instead of `IDurableOrchestrationClient`. For more information about the differences between versions, see the [Durable Functions versions](durable-functions-versions.md) article.
 
 Устойчивые функции начнут отправлять события жизненного цикла, если вы вызовите `Sample_HttpStart` с помощью Postman или браузера. Конечная точка для локальной отладки обычно такая: `http://localhost:7071/api/Sample_HttpStart`.
 
@@ -267,19 +261,19 @@ namespace LifeCycleEventSpike
 
 В приведенном ниже списке описана схема событий жизненного цикла:
 
-* **`id`** : уникальный идентификатор для события сетки событий.
-* **`subject`** : путь к теме события. `durable/orchestrator/{orchestrationRuntimeStatus}`. `{orchestrationRuntimeStatus}` будет `Running`, `Completed`, `Failed` и `Terminated`.  
-* **`data`** : устойчивые функции определенные параметры.
-  * **`hubName`** : [таскхуб](durable-functions-task-hubs.md) имя.
-  * **`functionName`** : имя функции Orchestrator.
-  * **`instanceId`** : устойчивые функции InstanceId.
-  * **`reason`** : дополнительные данные, связанные с событием отслеживания. Дополнительные сведения см. в статье [Диагностика в устойчивых функциях (Функции Azure)](durable-functions-diagnostics.md).
-  * **`runtimeStatus`** : состояние среды выполнения оркестрации. "Running", "Completed", "Failed", "Canceled".
-* **`eventType`** : "орчестраторевент"
-* **`eventTime`** : время события (UTC).
-* **`dataVersion`** : версия схемы событий жизненного цикла.
-* **`metadataVersion`** : версия метаданных.
-* **`topic`** : ресурс раздела сетки событий.
+* **`id`** : Unique identifier for the event grid event.
+* **`subject`** : Path to the event subject. `durable/orchestrator/{orchestrationRuntimeStatus}`. `{orchestrationRuntimeStatus}` будет `Running`, `Completed`, `Failed` и `Terminated`.  
+* **`data`** : Durable Functions Specific Parameters.
+  * **`hubName`** : [TaskHub](durable-functions-task-hubs.md) name.
+  * **`functionName`** : Orchestrator function name.
+  * **`instanceId`** : Durable Functions instanceId.
+  * **`reason`** : Additional data associated with the tracking event. Дополнительные сведения см. в статье [Диагностика в устойчивых функциях (Функции Azure)](durable-functions-diagnostics.md).
+  * **`runtimeStatus`** : Orchestration Runtime Status. "Running", "Completed", "Failed", "Canceled".
+* **`eventType`** : "orchestratorEvent"
+* **`eventTime`** : Event time (UTC).
+* **`dataVersion`** : Version of the lifecycle event schema.
+* **`metadataVersion`** :  Version of the metadata.
+* **`topic`** : Event grid topic resource.
 
 ## <a name="how-to-test-locally"></a>Локальное тестирование
 

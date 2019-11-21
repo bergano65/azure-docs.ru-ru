@@ -1,5 +1,5 @@
 ---
-title: Практическое руководство Azure. Использование разных механизмов аттестации с клиентским пакетом SDK для службы подготовки устройств в Azure
+title: Use different attestation mechanisms with the Azure IoT Hub Device Provisioning Service Client SDK
 description: Практическое руководство Azure. Использование разных механизмов аттестации с клиентским пакетом SDK для службы подготовки устройств в Azure
 author: robinsh
 ms.author: robinsh
@@ -8,18 +8,18 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 ms.custom: mvc
-ms.openlocfilehash: fd974ad81a641afb1c93fffb0a12a147c55b3a73
-ms.sourcegitcommit: acffa72239413c62662febd4e39ebcb6c6c0dd00
+ms.openlocfilehash: 0cde591d2ec8c6f2f51c83b3f263c188c8cf2605
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68951896"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74228272"
 ---
 # <a name="how-to-use-different-attestation-mechanisms-with-device-provisioning-service-client-sdk-for-c"></a>Использование разных механизмов аттестации с клиентским пакетом SDK для службы подготовки устройств в Azure для С
 
-В этой статье объясняется, как использовать разные [механизмы аттестации](concepts-security.md#attestation-mechanism) с помощью клиентского пакета SDK для C для службы подготовки устройств. Вы можете использовать физическое устройство или симулятор. Служба подготовки поддерживает проверку подлинности для двух типов механизмов аттестации: X. 509 и доверенный платформенный модуль (TPM) (TPM).
+В этой статье объясняется, как использовать разные [механизмы аттестации](concepts-security.md#attestation-mechanism) с помощью клиентского пакета SDK для C для службы подготовки устройств. Вы можете использовать физическое устройство или симулятор. The provisioning service supports authentication for two types of attestation mechanisms: X.509 and Trusted Platform Module (TPM).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Подготовьте среду разработки в соответствии с инструкциями в разделе "Подготовка среды разработки" руководства по [созданию и подготовке имитированного устройства](./quick-create-simulated-device.md).
 
@@ -27,19 +27,19 @@ ms.locfileid: "68951896"
 
 Производителю устройства прежде всего необходимо выбрать механизм аттестации с учетом одного из поддерживаемых типов. Сейчас [клиентский пакет SDK для C для службы подготовки устройств](https://github.com/Azure/azure-iot-sdk-c/tree/master/provisioning_client) поддерживает следующие механизмы аттестации: 
 
-- [Доверенный платформенный модуль (TPM) (доверенный платформенный модуль)](https://en.wikipedia.org/wiki/Trusted_Platform_Module): Доверенный платформенный модуль (TPM) является установленным стандартом для большинства платформ устройств на базе Windows, а также нескольких устройств на базе Linux и Ubuntu. Производитель устройства может выбрать этот механизм аттестации, если устройства работают под управлением любой из этих операционных систем, а также если необходим установленный стандарт. С микросхемами доверенного платформенного модуля (TPM) можно только регистрировать каждое устройство отдельно в службе подготовки устройств. В целях разработки можно использовать симулятор доверенного платформенного модуля на компьютере разработки Windows или Linux.
+- [Доверенный платформенный модуль (TPM)](https://en.wikipedia.org/wiki/Trusted_Platform_Module) является установленным стандартом для большинства платформ устройств на базе Windows, а также некоторых устройств на базе Linux и Ubuntu. Производитель устройства может выбрать этот механизм аттестации, если устройства работают под управлением любой из этих операционных систем, а также если необходим установленный стандарт. С микросхемами доверенного платформенного модуля (TPM) можно только регистрировать каждое устройство отдельно в службе подготовки устройств. В целях разработки можно использовать симулятор доверенного платформенного модуля на компьютере разработки Windows или Linux.
 
-- [X.509](https://cryptography.io/en/latest/x509/). Сертификаты X. 509 могут храниться в относительно новых микросхемах, называемых [аппаратными модулями безопасности (HSM)](concepts-security.md#hardware-security-module). Корпорация Майкрософт также работает над микросхемами RIoT и DICE, в которых реализуются сертификаты X.509. С помощью микросхем X.509 можно выполнять массовую регистрацию устройств на портале. Они также поддерживают некоторые операционные системы, отличные от Windows, такие как embedOS. В целях разработки клиентский пакет SDK службы подготовки устройств поддерживает симулятор устройств X.509. 
+- [X.509](https://cryptography.io/en/latest/x509/): сертификаты X.509, могут храниться в относительно новых микросхемах, которые называются [аппаратными модулями безопасности (HSM)](concepts-security.md#hardware-security-module). Корпорация Майкрософт также работает над микросхемами RIoT и DICE, в которых реализуются сертификаты X.509. С помощью микросхем X.509 можно выполнять массовую регистрацию устройств на портале. Они также поддерживают некоторые операционные системы, отличные от Windows, такие как embedOS. В целях разработки клиентский пакет SDK службы подготовки устройств поддерживает симулятор устройств X.509. 
 
 См. дополнительные сведения о [защите, обеспечиваемой службой "Подготовка устройств к добавлению в Центр Интернета вещей"](concepts-security.md) и [автоматической подготовке](/azure/iot-dps/concepts-auto-provisioning).
 
 ## <a name="enable-authentication-for-supported-attestation-mechanisms"></a>Включение аутентификации для поддерживаемых механизмов аттестации
 
-Перед регистрацией в портал Azure необходимо включить режим проверки подлинности пакета SDK (X. 509 или TPM) для физического устройства или симулятора. Сначала перейдите в корневую папку для azure-iot-sdk-c. Затем выполните указанную команду в соответствии с выбранным режимом аутентификации.
+The SDK authentication mode (X.509 or TPM) must be enabled for the physical device or simulator before they can be enrolled in the Azure portal. Сначала перейдите в корневую папку для azure-iot-sdk-c. Затем выполните указанную команду в соответствии с выбранным режимом аутентификации.
 
-### <a name="use-x509-with-simulator"></a>Использование X. 509 с симулятором
+### <a name="use-x509-with-simulator"></a>Use X.509 with simulator
 
-Служба подготовки поставляется с эмулятором механизма композиции удостоверений устройств (КОСТей), который создает сертификат **X. 509** для проверки подлинности устройства. Чтобы включить проверку подлинности **X. 509** , выполните следующую команду: 
+The provisioning service ships with a Device Identity Composition Engine (DICE) emulator that generates an **X.509** certificate for authenticating the device. To enable **X.509** authentication, run the following command: 
 
 ```
 cmake -Ddps_auth_type=x509 ..
@@ -47,9 +47,9 @@ cmake -Ddps_auth_type=x509 ..
 
 Сведения, касающиеся оборудования с DICE, можно найти [здесь](https://azure.microsoft.com/blog/azure-iot-supports-new-security-hardware-to-strengthen-iot-security/).
 
-### <a name="use-x509-with-hardware"></a>Использование X. 509 с оборудованием
+### <a name="use-x509-with-hardware"></a>Use X.509 with hardware
 
-Службу подготовки можно использовать с **X. 509** на другом оборудовании. Для обмена данными между оборудованием и пакетом SDK требуется интерфейс. Сведения об интерфейсе можно получить у производителя HSM.
+The provisioning service can be used with **X.509** on other hardware. Для обмена данными между оборудованием и пакетом SDK требуется интерфейс. Сведения об интерфейсе можно получить у производителя HSM.
 
 ### <a name="use-tpm"></a>Использование TPM
 
@@ -148,8 +148,8 @@ cmake -Ddps_auth_type=tpm_simulator ..
       ./azure-iot-sdk-c/dps_client/tools/x509_device_provision/x509_device_provision.exe
       ```
 2. Войдите на портал Azure, нажмите кнопку **Все ресурсы** в меню слева и откройте службу подготовки устройств.
-   - **Отдельная регистрация X. 509**: В колонке сводки службы подготовки выберите **Управление регистрациями**. На вкладке **Отдельные регистрации** и нажмите кнопку **Добавить** сверху. Выберите **X. 509** в качестве *механизма*аттестации удостоверений, отправьте конечный сертификат в соответствии с требованиями колонки. Затем нажмите кнопку **Сохранить**. 
-   - **Регистрация группы X. 509**: В колонке сводки службы подготовки выберите **Управление регистрациями**. Выберите вкладку **Групповые регистрации** и нажмите кнопку **Добавить** вверху. Выберите в качестве *механизма*аттестации удостоверений **X. 509** , введите имя группы и имя сертификации, а затем отправьте сертификат или промежуточный ЦС в соответствии с требованиями колонки. Затем нажмите кнопку **Сохранить**. 
+   - **X.509 Individual Enrollment**: On the provisioning service summary blade, select **Manage enrollments**. На вкладке **Отдельные регистрации** и нажмите кнопку **Добавить** сверху. Select **X.509** as the identity attestation *Mechanism*, upload the leaf certificate as required by the blade. После завершения нажмите кнопку **Сохранить**. 
+   - **X.509 Group Enrollment**: On the provisioning service  summary blade, select **Manage enrollments**. Выберите вкладку **Групповые регистрации** и нажмите кнопку **Добавить** вверху. Select **X.509** as the identity attestation *Mechanism*, enter a group name and certification name, upload the CA/Intermediate certificate as required by the blade. После завершения нажмите кнопку **Сохранить**. 
 
 ## <a name="enable-authentication-for-devices-using-a-custom-attestation-mechanism-optional"></a>Включение аутентификации для устройств с помощью пользовательских механизмов аттестации (необязательно)
 
@@ -181,7 +181,7 @@ cmake -Ddps_auth_type=tpm_simulator ..
 
 ## <a name="connecting-to-iot-hub-after-provisioning"></a>Подключение к Центру Интернета вещей после подготовки
 
-После подготовки устройства с помощью службы подготовки этот API использует указанный режим проверки подлинности (**X. 509** или доверенный платформенный модуль) для подключения к центру Интернета вещей: 
+Once the device has been provisioned with the provisioning service, this API uses the specified authentication mode (**X.509** or TPM) to connect with IoT Hub: 
   ```
   IOTHUB_CLIENT_LL_HANDLE handle = IoTHubClient_LL_CreateFromDeviceAuth(iothub_uri, device_id, iothub_transport);
   ```

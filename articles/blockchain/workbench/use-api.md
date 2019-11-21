@@ -1,6 +1,6 @@
 ---
 title: Использование REST API Azure Blockchain Workbench
-description: Сценарии использования предварительной версии Azure Блокчейн Workbench REST API
+description: Scenarios for how to use the Azure Blockchain Workbench Preview REST API
 services: azure-blockchain
 keywords: ''
 author: PatAltimore
@@ -10,16 +10,16 @@ ms.topic: article
 ms.service: azure-blockchain
 ms.reviewer: zeyadr
 manager: femila
-ms.openlocfilehash: 2f751cc4f0037b8d60034636a0c512989113e441
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.openlocfilehash: 457c09aa2b235f30bd1f995c90429bdf9acb85ba
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72328869"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74222295"
 ---
-# <a name="using-the-azure-blockchain-workbench-preview-rest-api"></a>Использование предварительной версии Azure Блокчейн Workbench REST API
+# <a name="using-the-azure-blockchain-workbench-preview-rest-api"></a>Using the Azure Blockchain Workbench Preview REST API
 
-Azure Блокчейн Workbench Preview REST API предоставляет разработчикам и информационным работникам способ создания богатой интеграции с приложениями блокчейн. В этом документе рассматриваются несколько основных методов REST API Workbench. Например, предположим, что разработчику необходимо создать пользовательский клиент на базе блокчейна. Этот клиент на базе блокчейна разрешает зарегистрированным пользователям просматривать назначенные блокчейн-приложения и взаимодействовать с ними. Клиент позволяет пользователям просматривать экземпляры контрактов и выполнять действия со смарт-контрактами. Клиент использует REST API Workbench в контексте зарегистрированного пользователя для выполнения таких действий:
+Azure Blockchain Workbench Preview REST API provides developers and information workers a way to build rich integrations to blockchain applications. В этом документе рассматриваются несколько основных методов REST API Workbench. Например, предположим, что разработчику необходимо создать пользовательский клиент на базе блокчейна. Этот клиент на базе блокчейна разрешает зарегистрированным пользователям просматривать назначенные блокчейн-приложения и взаимодействовать с ними. Клиент позволяет пользователям просматривать экземпляры контрактов и выполнять действия со смарт-контрактами. Клиент использует REST API Workbench в контексте зарегистрированного пользователя для выполнения таких действий:
 
 * Список приложений
 * Вывести список рабочих процессов для приложения.
@@ -28,6 +28,19 @@ Azure Блокчейн Workbench Preview REST API предоставляет р�
 * Выполнить действия для контракта.
 
 Примеры блокчейн-приложений, используемых в этих сценариях, можно [скачать с портала GitHub](https://github.com/Azure-Samples/blockchain).
+
+## <a name="blockchain-workbench-api-endpoint"></a>Blockchain Workbench API endpoint
+
+Blockchain Workbench APIs are accessed through an endpoint for your deployment. To get the API endpoint URL for your deployment:
+
+1. Войдите на [портале Azure](https://portal.azure.com).
+1. In the left-hand navigation pane, select **Resource groups**.
+1. Choose the resource group name your deployed Blockchain Workbench.
+1. Щелкните заголовок столбца **Тип**, чтобы отсортировать список в алфавитном порядке.
+1. Существует два ресурса с типом **Служба приложений**. Select the resource of type **App Service** *with* the "-api" suffix.
+1. In the App Service **Overview**, copy the **URL** value, which represents the API endpoint URL to your deployed Blockchain Workbench.
+
+    ![App service API endpoint URL](media/use-api/app-service-api.png)
 
 ## <a name="list-applications"></a>Список приложений
 

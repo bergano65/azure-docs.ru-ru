@@ -1,6 +1,6 @@
 ---
-title: Решение VMware для Azure, Клаудсимпле — использование сайта частного облака для размещения инфраструктуры виртуальных рабочих столов с использованием горизонта VMware
-description: В этой статье описывается, как можно использовать сайт частного облака Клаудсимпле для размещения инфраструктуры виртуальных рабочих столов с помощью горизонта VMware.
+title: Azure VMware Solution by CloudSimple - Use Private Cloud site to host a virtual desktop infrastructure using VMware Horizon
+description: Describes how you can use your CloudSimple Private Cloud site to host a virtual desktop infrastructure using VMware Horizon
 author: sharaths-cs
 ms.author: b-shsury
 ms.date: 08/20/2019
@@ -8,136 +8,136 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 8e5aeb63c54bd9ad71d5eb179fb93972468af4c0
-ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
+ms.openlocfilehash: 0936de818303117797e1704f3cecb7f877a3935e
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69972753"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74206555"
 ---
-# <a name="use-cloudsimple-private-cloud-site-to-host-a-virtual-desktop-infrastructure-using-vmware-horizon"></a>Использование сайта Клаудсимпле частного облака для размещения инфраструктуры виртуальных рабочих столов с помощью горизонта VMware
+# <a name="use-cloudsimple-private-cloud-site-to-host-a-virtual-desktop-infrastructure-using-vmware-horizon"></a>Use CloudSimple Private Cloud site to host a virtual desktop infrastructure using VMware Horizon
 
-Вы можете использовать сайт частного облака Клаудсимпле для размещения инфраструктуры виртуальных рабочих столов (VDI) с помощью VMware горизонта 7. x. На следующем рисунке показана логическая архитектура решения для VDI.
+You can use your CloudSimple Private Cloud site to host a virtual desktop infrastructure (VDI) using VMware Horizon 7.x. The following figure shows the logical solution architecture for the VDI.
 
-![Развертывание горизонта](media/horizon-deployment.png)
+![Horizon deployment](media/horizon-deployment.png)
 
-С помощью этого решения вы получите полный контроль над диспетчером представлений и Томом приложения. Привычный интерфейс UI, API и интерфейса командной строки позволяет использовать существующие сценарии и средства.
+With this solution, you have full control over Horizon View Manager and App Volume. The familiar UI, API, and CLI interfaces enable use of your existing scripts and tools.
 
-Для решения Клаудсимпле необходимо выполнить следующие действия.
+The CloudSimple solution requires you to do the following:
 
-* Установка, Настройка и администрирование VMware горизонта 7. x в частном облаке.
-* Укажите собственные лицензии на горизонт.
+* Install, configure, and manage VMware Horizon 7.x in your Private Cloud.
+* Provide your own Horizon licenses.
 
 ## <a name="deploy-the-solution"></a>Развертывание решения
 
-В следующих разделах описывается развертывание решения VDI с использованием горизонта в частном облаке.
+The following sections describe how to deploy a VDI solution using Horizon in your Private Cloud.
 
-1. [Проверка совместимости версий продуктов VMware](#verify-that-vmware-product-versions-are-compatible)
-2. [Оценка размера среды рабочего стола](#estimate-the-size-of-your-desktop-environment)
-3. [Создание частного облака для своей среды](#create-a-private-cloud-for-your-environment)
-4. [Установка горизонта VMware в частном облаке](#install-vmware-horizon-in-your-private-cloud)
+1. [Verify that VMware product versions are compatible](#verify-that-vmware-product-versions-are-compatible)
+2. [Estimate the size of your desktop environment](#estimate-the-size-of-your-desktop-environment)
+3. [Create a Private Cloud for your environment](#create-a-private-cloud-for-your-environment)
+4. [Install VMware Horizon in your Private Cloud](#install-vmware-horizon-in-your-private-cloud)
 
-### <a name="verify-that-vmware-product-versions-are-compatible"></a>Проверка совместимости версий продуктов VMware
+### <a name="verify-that-vmware-product-versions-are-compatible"></a>Verify that VMware product versions are compatible
 
-* Убедитесь, что текущие и запланированные версии горизонта, тома приложений, унифицированный шлюз доступа и диспетчер среды пользователя совместимы друг с другом и с vCenter и PSC в частном облаке. Сведения о совместимости см. в разделе [Матрица совместимости VMware для горизонта 7,5](https://www.vmware.com/resources/compatibility/sim/interop_matrix.php#interop&260=2877&0=).
-* Чтобы узнать о текущих версиях vCenter и PSC в частном облаке, перейдите к разделу **ресурсы** на [портале клаудсимпле](access-cloudsimple-portal.md), выберите ваше частное облако и перейдите на вкладку **сеть управления vSphere** .
+* Verify that your current and planned versions of Horizon, App Volumes, Unified Access Gateway, and User Environment Manager are compatible with each other and with vCenter and PSC in the Private Cloud. For compatibility information, see [VMware Compatibility Matrix for Horizon 7.5](https://www.vmware.com/resources/compatibility/sim/interop_matrix.php#interop&260=2877&0=).
+* To find out the current versions of vCenter and PSC in your Private Cloud, go to **Resources** in the [CloudSimple portal](access-cloudsimple-portal.md), select your Private Cloud, and click the **vSphere Management Network** tab.
 
-![версии vCenter и PSC](media/private-cloud-vsphere-versions.png)
+![vCenter and PSC versions](media/private-cloud-vsphere-versions.png)
 
-### <a name="estimate-the-size-of-your-desktop-environment"></a>Оценка размера среды рабочего стола
+### <a name="estimate-the-size-of-your-desktop-environment"></a>Estimate the size of your desktop environment
 
-* Убедитесь, что указанная конфигурация находится в пределах операционных ограничений VMware.
-* Оцените ресурсы, необходимые для защиты вашей локальной среды на сайте аварийного восстановления.
+* Verify that your identified configuration is within VMware operational limits.
+* Estimate the resources that are needed in your DR site to protect your on-premises environment.
 
-### <a name="create-a-private-cloud-for-your-environment"></a>Создание частного облака для своей среды
+### <a name="create-a-private-cloud-for-your-environment"></a>Create a Private Cloud for your environment
 
-1. Создайте частное облако на портале Клаудсимпле, следуя инструкциям в разделе [Настройка среды частного облака](quickstart-create-private-cloud.md).  Клаудсимпле создает пользователя vCenter по умолчанию с именем "клаудовнер" в каждом созданном частном облаке. Дополнительные сведения о модели пользователя и разрешения частного облака по умолчанию см. в [статье изучение модели разрешений частного облака](learn-private-cloud-permissions.md).
-2. Создайте виртуальную ЛС в частном облаке для плоскости управления горизонта и назначьте ей подсеть CIDR. Инструкции см. в статье [Создание виртуальных ЛС и подсетей и управление ими](create-vlan-subnet.md). Это сеть, в которой будут установлены все компоненты решения (шлюз унифицированного доступа, сервер подключения, сервер тома приложений и серверы диспетчера пользовательской среды).
-3. Решите, хотите ли вы использовать внешний поставщик удостоверений с частным облаком vCenter. Если да, выберите один из следующих вариантов:
-    * Используйте локальную Active Directory в качестве внешнего поставщика удостоверений. Инструкции см. в разделе [источники удостоверений vCenter](set-vcenter-identity.md).
-    * Настройте сервер Active Directory в частном облаке в виртуальной ЛС на плоскости управления для использования в качестве внешнего поставщика удостоверений. Инструкции см. в разделе [источники удостоверений vCenter](set-vcenter-identity.md).
-    * Настройка DHCP-и DNS-сервера в плоскости управления горизонта VLAN в частном облаке. Инструкции см. [в разделе Настройка приложений и рабочих нагрузок DNS и DHCP в частном облаке клаудсимпле](dns-dhcp-setup.md).
-4. Настройте пересылку DNS на DNS-сервере, установленном в частном облаке. Инструкции см. [в разделе Создание сервера условной пересылки](on-premises-dns-setup.md#create-a-conditional-forwarder).
+1. Create a Private Cloud from the CloudSimple portal by following the instructions in [Configure a Private Cloud environment](quickstart-create-private-cloud.md).  CloudSimple creates a default vCenter user named 'cloudowner' in every newly created Private Cloud. For details on the default Private Cloud user and permission model, see [Learn the Private Cloud permissions model](learn-private-cloud-permissions.md).
+2. Create a VLAN in your Private Cloud for the Horizon management plane and assign it a subnet CIDR. For instructions, see [Create and manage VLANs/Subnets](create-vlan-subnet.md). This is the network where all the solution components (Unified Access Gateway, Connection Server, App Volume Server, and User Environment Manager servers) will be installed.
+3. Decide if you want to use an external identity provider with your Private Cloud vCenter. If yes, choose one of these options:
+    * Use your on-premises Active Directory as the external identity provider. For instructions, see [vCenter Identity Sources](set-vcenter-identity.md).
+    * Set up an Active Directory server in the Private Cloud in Horizon management plane VLAN to use as your external identity provider. For instructions, see [vCenter Identity Sources](set-vcenter-identity.md).
+    * Set up a DHCP and DNS server in Horizon management plane VLAN in the Private Cloud. For instructions, see [Set up DNS and DHCP applications and workloads in your CloudSimple Private Cloud](dns-dhcp-setup.md).
+4. Configure DNS forwarding on the DNS server installed in the Private Cloud. For instructions, see [Create a Conditional Forwarder](on-premises-dns-setup.md#create-a-conditional-forwarder).
 
-### <a name="install-vmware-horizon-in-your-private-cloud"></a>Установка горизонта VMware в частном облаке
+### <a name="install-vmware-horizon-in-your-private-cloud"></a>Install VMware Horizon in your Private Cloud
 
-На следующей схеме развертывания показано решение горизонта, развернутое в частном облаке. Шлюз унифицированного доступа, AD, DC, представление и сервер томов приложений устанавливаются в созданную пользователем виртуальную ЛС 234. Шлюз единого доступа имеет назначенный общедоступный IP-адрес, доступный через Интернет. Виртуальные машины пула рабочих столов для настольных компьютеров развертываются в виртуальной ЛС 235 для обеспечения дополнительной изоляции и безопасности.
+The following deployment diagram depicts a Horizon solution deployed in a Private Cloud. Unified Access Gateway, AD/DC, View, and App Volume Server are installed in user-created VLAN 234. Unified Access Gateway has an assigned public IP address that is reachable from the Internet. Horizon desktop pool VMs are deployed in VLAN 235 to provide additional isolation and security.
 
-![Развертывание горизонта в частном облаке](media/horizon-private-cloud.png)
+![Horizon deployment in the Private Cloud](media/horizon-private-cloud.png)
 
-В следующих разделах приведены инструкции по настройке развертывания, как показано на рисунке. Перед началом убедитесь, что у вас есть следующее:
+The following sections outline the instructions to set up a deployment similar to the one that is depicted in the figure. Before you begin, verify that you have the following:
 
-* Частное облако, созданное с помощью портала Клаудсимпле и имеющее достаточную емкость для запуска пулов рабочих столов.
-* Достаточная пропускная способность между локальной средой и средой частного облака для поддержки сетевого трафика для настольных систем.
-* Туннель VPN типа "сеть — сеть", настроенный между локальным центром обработки данных и частным облаком.
-* Доступность IP-адресов из подсетей конечных пользователей в локальной среде в подсети частного облака Клаудсимпле.
-* AD/DHCP/DNS, установленные для частного облака.
+* A Private Cloud created using the CloudSimple portal with sufficient capacity to run your desktop pools.
+* Sufficient bandwidth between your on-premises environment and the Private Cloud environment to support the network traffic for your desktops.
+* A Site-to-Site VPN tunnel set up between your on-premises datacenter and the Private Cloud.
+* IP reachability from end-user subnets in your on-premises environment to the CloudSimple Private Cloud subnets.
+* AD/DHCP/DNS installed for your Private Cloud.
 
-#### <a name="cloudsimple-portal-create-a-dedicated-vlansubnet-for-desktop-pools"></a>Портал Клаудсимпле: Создание выделенной виртуальной ЛС или подсети для пулов рабочих столов
+#### <a name="cloudsimple-portal-create-a-dedicated-vlansubnet-for-desktop-pools"></a>CloudSimple portal: Create a dedicated VLAN/subnet for desktop pools
 
-Создайте виртуальную ЛС для пулов настольных систем горизонта и назначьте ей подсеть CIDR. Инструкции см. в статье [Создание виртуальных ЛС и подсетей и управление ими](create-vlan-subnet.md). Это сеть, в которой будут выполняться все настольные виртуальные машины.
+Create a VLAN for the Horizon desktop pools and assign it a subnet CIDR. For instructions, see [Create and manage VLANs/Subnets](create-vlan-subnet.md). This is the network where all the desktop virtual machines will run.
 
-Используйте стандартные рекомендации по обеспечению безопасности для защиты развертывания горизонта:
+Follow standard security best practices to secure your Horizon deployment:
 
-* Разрешите виртуальным машинам настольных компьютеров только настольные пакеты RDP или трафик SSH.
-* Разрешить только трафик управления между виртуальной ЛС и пулом рабочих столов в плоскости управления горизонта.
-* Разрешить только трафик управления из локальной сети.
+* Allow only desktop RDP traffic / SSH traffic to your desktop VMs.
+* Allow only management traffic between Horizon management plane VLAN and desktop pool VLAN.
+* Allow only management traffic from on-premises network.
 
-Эти рекомендации можно применить, настроив [правила брандмауэра](firewall.md) на портале клаудсимпле.
+You can enforce these best practices by configuring [firewall rules](firewall.md) from the CloudSimple portal.
 
-#### <a name="cloudsimple-portal-configure-firewall-rules-to-secure-horizon-management-plane"></a>Портал Клаудсимпле: Настройка правил брандмауэра для защиты плоскости управления горизонта
+#### <a name="cloudsimple-portal-configure-firewall-rules-to-secure-horizon-management-plane"></a>CloudSimple portal: Configure firewall rules to secure Horizon management plane
 
-Настройте следующие правила на портале Клаудсимпле. Инструкции см. в разделе [Настройка таблиц и правил брандмауэра](firewall.md).
+Set up the following rules in the CloudSimple portal. For instructions, see [Set up firewall tables and rules](firewall.md).
 
-1. Настройте правила брандмауэра в брандмауэре Клаудсимпле N-S, чтобы разрешить обмен данными между локальными подсетями и виртуальной ЛС управления горизонтом, чтобы были разрешены только сетевые порты, перечисленные в [списке портов](https://docs.vmware.com/en/VMware-Horizon-7/7.1/com.vmware.horizon-client-agent.security.doc/GUID-52807839-6BB0-4727-A9C7-EA73DE61ADAB.html) в документе VMware.
+1. Configure firewall rules in the CloudSimple N-S firewall to allow communication between on-premises subnets and Horizon management VLAN so that only the network ports listed in the VMware document [Horizon port list](https://docs.vmware.com/en/VMware-Horizon-7/7.1/com.vmware.horizon-client-agent.security.doc/GUID-52807839-6BB0-4727-A9C7-EA73DE61ADAB.html) are allowed.
 
-2. Создание правил брандмауэра E-W между ВИРТУАЛЬНОЙ ЛС управления горизонтом и пулом настольных компьютеров в частном облаке.
+2. Create E-W firewall rules between the Horizon management VLAN and desktop pool VLAN in the Private Cloud.
 
-#### <a name="cloudsimple-portal-create-a-public-ip-address-for-unified-access-gateway"></a>Портал Клаудсимпле: Создание общедоступного IP-адреса для шлюза единого доступа
+#### <a name="cloudsimple-portal-create-a-public-ip-address-for-unified-access-gateway"></a>CloudSimple portal: Create a public IP address for Unified Access Gateway
 
-Создайте общедоступный IP-адрес для устройства шлюза унифицированного доступа, чтобы разрешить клиентские подключения к настольным системам из Интернета. Инструкции см. в разделе [выделение общедоступных IP-адресов](public-ips.md).
+Create a public IP address for the Unified Access Gateway appliance to enable desktop client connections from the internet. For instructions, see [Allocate public IP addresses](public-ips.md).
 
-После завершения установки общедоступный IP-адрес назначается и указывается на странице общедоступные адреса.
+When the setup is complete, the public IP address is assigned and listed on the Public IPs page.
 
-#### <a name="cloudsimple-portal-escalate-privileges"></a>Портал Клаудсимпле: Эскалация привилегий
+#### <a name="cloudsimple-portal-escalate-privileges"></a>CloudSimple portal: Escalate privileges
 
-Пользователь по умолчанию "клаудовнер" не имеет достаточных привилегий в частном облаке vCenter для установки горизонта, поэтому привилегии пользователя vCenter должны быть расширены. Дополнительные сведения см. в разделе [эскалация привилегий](escalate-private-cloud-privileges.md).
+The default 'cloudowner' user doesn't have sufficient privileges in the Private Cloud vCenter to install Horizon, so the user's vCenter privileges must be escalated. For more information, see [Escalate privileges](escalate-private-cloud-privileges.md).
 
-#### <a name="vcenter-ui-create-a-user-in-private-cloud-for-horizon-installation"></a>Пользовательский интерфейс vCenter: Создание пользователя в частном облаке для установки горизонта
+#### <a name="vcenter-ui-create-a-user-in-private-cloud-for-horizon-installation"></a>vCenter UI: Create a user in Private Cloud for Horizon installation
 
-1. Войдите в vCenter, используя учетные данные пользователя "клаудовнер".
-2. Создайте нового пользователя "Горизонт-солн-Admin" в vCenter и добавьте пользователя в группу администраторов в vCenter.
-3. Выйдите из vCenter в качестве пользователя "клаудовнер" и войдите в систему как пользователь "Горизонт-солн-Admin".
+1. Sign in to vCenter using the 'cloudowner' user credentials.
+2. Create a new user, 'horizon-soln-admin', in vCenter and add the user to the administrators group in vCenter.
+3. Sign out of vCenter as the 'cloudowner' user and sign in as the 'horizon-soln-admin' user.
 
-#### <a name="vcenter-ui-install-vmware-horizon"></a>Пользовательский интерфейс vCenter: Установка горизонта VMware
+#### <a name="vcenter-ui-install-vmware-horizon"></a>vCenter UI: Install VMware Horizon
 
-Как упоминалось в разделе, посвященном предыдущей логической архитектуре, решение горизонта имеет следующие компоненты:
+As mentioned in the earlier logical architecture section, Horizon solution has the following components:
 
-* Представление горизонта VMware
-* Шлюз унифицированного доступа VMware
-* Диспетчер томов приложений VMware
-* Диспетчер пользовательской среды VMware
+* VMware Horizon View
+* VMware Unified Access Gateway
+* VMware App Volume Manager
+* VMware User Environment Manager
 
-Установите компоненты следующим образом:
+Install the components as follows:
 
-1. Установите и настройте шлюз единого доступа, следуя инструкциям, приведенным в документе VMware [развертывание и Настройка шлюза унифицированного доступа VMware](https://docs.vmware.com/en/Unified-Access-Gateway/3.3.1/com.vmware.uag-331-deploy-config.doc/GUID-F5CE0D5E-BE85-4FA5-BBCF-0F86C9AB8A70.html).
+1. Install and configure Unified Access Gateway by following the instructions provided in the VMware document [Deploying and Configuring VMware Unified Access Gateway](https://docs.vmware.com/en/Unified-Access-Gateway/3.3.1/com.vmware.uag-331-deploy-config.doc/GUID-F5CE0D5E-BE85-4FA5-BBCF-0F86C9AB8A70.html).
 
-2. Установите представление горизонта в частном облаке, следуя инструкциям в разделе [Просмотр руководства по установке](https://docs.vmware.com/en/VMware-Horizon-7/7.4/horizon-installation/GUID-37D39B4F-5870-4188-8B11-B6C41AE9133C.html).
+2. Install Horizon View in the Private Cloud by following the instructions in [View Installation Guide](https://docs.vmware.com/en/VMware-Horizon-7/7.4/horizon-installation/GUID-37D39B4F-5870-4188-8B11-B6C41AE9133C.html).
 
-3. Установите диспетчер томов приложений, следуя инструкциям в [статье Установка и настройка томов приложений VMware](https://docs.vmware.com/en/VMware-App-Volumes/2.10/com.vmware.appvolumes.user.doc/GUID-5E8BAF8C-F5A6-412C-9424-266BA7109BA4.html).
+3. Install App Volume Manager by following the instructions in [Install and Configure VMware App Volumes](https://docs.vmware.com/en/VMware-App-Volumes/2.10/com.vmware.appvolumes.user.doc/GUID-5E8BAF8C-F5A6-412C-9424-266BA7109BA4.html).
 
-4. Установите и настройте диспетчер пользовательской среды, следуя инструкциям в статье [об установке и настройке диспетчера пользовательских сред VMware](https://docs.vmware.com/en/VMware-User-Environment-Manager/9.4/com.vmware.user.environment.manager-install-config/GUID-DBBC82E4-483F-4B28-9D49-4D28E08715BC.html).
+4. Install and configure User Environment Manager by following the instructions in [About Installing and Configuring VMware User Environment Manager](https://docs.vmware.com/en/VMware-User-Environment-Manager/9.4/com.vmware.user.environment.manager-install-config/GUID-DBBC82E4-483F-4B28-9D49-4D28E08715BC.html).
 
-#### <a name="file-a-support-request-to-upload-vmware-horizon-pre-packaged-app-volumes"></a>Отправьте запрос в службу поддержки для отправки предварительно упакованных томов приложений в процессе VMware
+#### <a name="file-a-support-request-to-upload-vmware-horizon-pre-packaged-app-volumes"></a>File a support request to upload VMware Horizon pre-packaged app volumes
 
-В рамках процесса установки Диспетчер томов приложений использует предварительно упакованные тома для подготовки стеков приложений и томов с возможностью записи. Эти тома служат шаблонами для стеков приложений и томов с возможностью записи.
+As a part of the installation process, App Volume Manager uses pre-packaged volumes to provision app stacks and writable volumes. These volumes serve as templates for app stacks and writable volumes.
 
-Для отправки томов в хранилище данных частного облака требуется пароль ESXi root. Для получения помощи отправьте [запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest). Подключите пакет установщика Аппволумес, чтобы персонал службы поддержки Клаудсимпле мог передать шаблоны в среду частного облака.
+Uploading the volumes to the Private Cloud datastore requires the ESXi root password. For assistance, submit a [support request](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest). Attach the AppVolumes installer bundle so that CloudSimple support personnel can upload the templates to your Private Cloud environment.
 
-#### <a name="cloudsimple-portal-de-escalate-privileges"></a>Портал Клаудсимпле: Отмена эскалации привилегий
+#### <a name="cloudsimple-portal-de-escalate-privileges"></a>CloudSimple portal: De-escalate privileges
 
-Теперь вы можете [отменить привилегии](escalate-private-cloud-privileges.md#de-escalate-privileges) пользователя "клаудовнер".
+You can now [de-escalate the privileges](escalate-private-cloud-privileges.md#de-escalate-privileges) of the 'cloudowner' user.
 
-## <a name="ongoing-management-of-your-horizon-solution"></a>Непрерывное управление решением горизонта
+## <a name="ongoing-management-of-your-horizon-solution"></a>Ongoing management of your Horizon solution
 
-Вы имеете полный контроль над программным обеспечением с горизонтом и диспетчером томов приложений в среде частного облака и должны выполнять необходимое управление жизненным циклом программного обеспечения. Перед обновлением или обновлением горизонта или тома приложения убедитесь, что все новые версии программного обеспечения совместимы с частным облаком vCenter и PSC.
+You have full control over Horizon and App Volume Manager software in your Private Cloud environment and are expected to perform the necessary software lifecycle management. Ensure that any new versions of software are compatible with the Private Cloud vCenter and PSC before updating or upgrading Horizon or App Volume.

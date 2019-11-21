@@ -1,219 +1,219 @@
 ---
-title: Архитектура устройства "миграция Azure"
-description: Содержит общие сведения об устройстве миграции Azure, используемом при оценке и миграции сервера.
+title: Azure Migrate appliance architecture
+description: Provides an overview of the Azure Migrate appliance used in server assessment and migration.
 author: rayne-wiselman
 ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 11/19/2019
 ms.author: raynew
-ms.openlocfilehash: bdc81820b1ac9867d45fd26e26d24c65e20641e4
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
-ms.translationtype: HT
+ms.openlocfilehash: 49545ca6c43c272c3fd84f8bee59b8617aae136d
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74185833"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74232569"
 ---
 # <a name="azure-migrate-appliance"></a>Устройство службы "Миграция Azure"
 
-В этой статье описывается устройство миграции Azure. Вы развертываете устройство при использовании средств оценки и миграции Azure для обнаружения, оценки и миграции приложений, инфраструктуры и рабочих нагрузок в Microsoft Azure. 
+This article describes the Azure Migrate appliance. You deploy the appliance when you use Azure Migrate Assessment and Migration tools to discover, assess and migrate apps, infrastructure, and workloads to Microsoft Azure. 
 
-Служба " [Миграция Azure](migrate-services-overview.md) " предоставляет центральный концентратор для наблюдения за обнаружением, оценкой и миграцией локальных приложений и рабочих нагрузок, а также виртуальных машин частного или общедоступного облака в Azure. Эта служба предоставляет инструменты для оценки и миграции, а также предложения сторонних независимых поставщиков программного обеспечения (ISV).
+[Azure Migrate](migrate-services-overview.md) provides a central hub to track discovery, assessment and migration of your on-premises apps and workloads, and private/public cloud VMs, to Azure. Эта служба предоставляет инструменты для оценки и миграции, а также предложения сторонних независимых поставщиков программного обеспечения (ISV).
 
 
 
-## <a name="appliance-overview"></a>Общие сведения об устройстве
+## <a name="appliance-overview"></a>Appliance overview
 
-Ниже перечислены типы и использование устройств для переноса Azure.
+The Azure Migrate appliance types and usage are as follows.
 
-**Развернуто как** | **Область использования** | **Дополнительные сведения**
+**Deployed as** | **Область использования** | **Дополнительные сведения**
 --- | --- |  ---
-Виртуальная машина VMware | Оценка виртуальных машин VMware с помощью средства оценки миграции Azure.<br/><br/> Миграция виртуальных машин VMware без агента с помощью средства миграции сервера Azure Migration Server | Скачайте шаблон OVA и импортируйте его в vCenter Server, чтобы создать виртуальную машину устройства.
-Виртуальная машина Hyper-V | Оценка виртуальных машин Hyper-V с помощью средства оценки миграции Azure. | Скачайте сжатый виртуальный жесткий диск и импортируйте его в Hyper-V, чтобы создать виртуальную машину устройства.
+Виртуальная машина VMware | VMware VM assessment with the Azure Migrate Assessment tool.<br/><br/> VMware VM agentless migration with the Azure Migrate Server Migration tool | Download OVA template and import to vCenter Server to create the appliance VM.
+Виртуальная машина Hyper-V | Hyper-V VM assessment with the Azure Migrate Assessment tool. | Download zipped VHD and import to Hyper-V to create the appliance VM.
 
-## <a name="appliance-access"></a>Доступ к устройству
+## <a name="appliance-access"></a>Appliance access
 
-После настройки устройства можно получить удаленный доступ к виртуальной машине устройства через TCP-порт 3389. Вы также можете удаленно получить доступ к приложению веб-управления для устройства через порт 44368 с URL-адресом: `https://<appliance-ip-or-name>:44368`.
+After you have configured the appliance, you can remotely access the appliance VM through TCP port 3389. You can also remotely access the web management app for the appliance, on port 44368 with URL: `https://<appliance-ip-or-name>:44368`.
 
-## <a name="appliance-license"></a>Лицензия на устройство
-Устройство поставляется с лицензией на ознакомительную версию Windows Server 2016, которая действительна в течение 180 дней. Если период оценки близок к истечению срока действия, рекомендуется скачать и развернуть новое устройство или активировать лицензию операционной системы виртуальной машины устройства.
+## <a name="appliance-license"></a>Appliance license
+The appliance comes with a Windows Server 2016 evaluation license, which is valid for 180 days. If the evaluation period is close to expiry, we recommend that you download and deploy a new appliance, or that you activate the operating system license of the appliance VM.
 
-## <a name="appliance-agents"></a>Агенты устройства
-На устройстве установлены эти агенты.
+## <a name="appliance-agents"></a>Appliance agents
+The appliance has these agents installed.
 
-**Agent** | **Дополнительные сведения**
+**Агент** | **Дополнительные сведения**
 --- | ---
-Агент обнаружения | Сбор данных конфигурации локальных виртуальных машин
-Агент оценки | Профили локальная среда для получения данных о производительности виртуальной машины.
-Адаптер миграции | Управляет репликацией виртуальных машин и координирует обмен данными между виртуальными машинами и Azure.
-Шлюз миграции | Отправляет реплицированные данные виртуальной машины в Azure.
+Discovery agent | Gathers configuration data of on-premises virtual machines
+Агент оценки | Profiles the on-premises environment to collect VM performance data.
+Migration adapter | Orchestrates VM replication, and coordinates communication between VMs and Azure.
+Migration gateway | Sends replicated VM data to Azure.
 
 
-## <a name="appliance-deployment-requirements"></a>Требования к развертыванию устройства
+## <a name="appliance-deployment-requirements"></a>Appliance deployment requirements
 
-- [Ознакомьтесь](migrate-support-matrix-vmware.md#assessment-appliance-requirements) с требованиями к развертыванию для устройства VMware и URL-адресами, к которым должно обращаться устройство.
-- [Ознакомьтесь](migrate-support-matrix-hyper-v.md#assessment-appliance-requirements) с требованиями к развертыванию для устройства Hyper-V и URL-адресами, к которым должно обращаться устройство.
+- [Review](migrate-support-matrix-vmware.md#assessment-appliance-requirements) the deployment requirements for a VMware appliance, and the URLs that the appliance needs to access.
+- [Review](migrate-support-matrix-hyper-v.md#assessment-appliance-requirements) the deployment requirements for a Hyper-V appliance, and the URLs that the appliance  needs to access.
 
 
-## <a name="collected-performance-data-vmware"></a>Собранные данные производительности — VMware
+## <a name="collected-performance-data-vmware"></a>Collected performance data-VMware
 
-Ниже приведены данные производительности виртуальной машины VMware, которые устройство собирает и отправляет в Azure.
+Here's the VMware VM performance data that the appliance collects and sends to Azure.
 
-**Данные** | **Счетчик** | **Влияние на оценку**
+**Данные** | **Счетчик** | **Assessment impact**
 --- | --- | ---
-загрузка ЦП; | cpu.usage.average | Рекомендуемый размер и стоимость виртуальной машины
-Использование памяти | mem.usage.average | Рекомендуемый размер и стоимость виртуальной машины
-Пропускная способность чтения с диска (МБ в секунду) | virtualDisk.read.average | Вычисление размера диска, стоимости хранилища, размера виртуальной машины
-Пропускная способность записи на диск (МБ в секунду) | virtualDisk.write.average | Вычисление размера диска, стоимости хранилища, размера виртуальной машины
-Количество операций чтения с диска в секунду | virtualDisk.numberReadAveraged.average | Вычисление размера диска, стоимости хранилища, размера виртуальной машины
-Операций записи на диск в секунду | virtualDisk.numberWriteAveraged.average  | Вычисление размера диска, стоимости хранилища, размера виртуальной машины
-Пропускная способность чтения сетевого адаптера (МБ в секунду) | net.received.average | Вычисление размера виртуальной машины
-Пропускная способность записи сетевого адаптера (МБ в секунду) | net.transmitted.average  |Вычисление размера виртуальной машины
+загрузка ЦП; | cpu.usage.average | Recommended VM size/cost
+Использование памяти | mem.usage.average | Recommended VM size/cost
+Disk read throughput (MB per second) | virtualDisk.read.average | Calculation for disk size, storage cost, VM size
+Disk write throughput (MB per second) | virtualDisk.write.average | Calculation for disk size, storage cost, VM size
+Disk read operations per second | virtualDisk.numberReadAveraged.average | Calculation for disk size, storage cost, VM size
+Disk write operations per second | virtualDisk.numberWriteAveraged.average  | Calculation for disk size, storage cost, VM size
+NIC read throughput (MB per second) | net.received.average | Calculation for VM size
+NIC write throughput (MB per second) | net.transmitted.average  |Calculation for VM size
 
 
-## <a name="collected-metadata-vmware"></a>Собранные метаданные — VMware
+## <a name="collected-metadata-vmware"></a>Collected metadata-VMware
 
 > [!NOTE]
-> Метаданные, обнаруженные устройством "миграция Azure", используются для того, чтобы масштабировать приложения по мере их переноса в Azure, выполнять анализ соответствия требованиям для Azure, анализ зависимостей приложений и планирование затрат. Корпорация Майкрософт не использует эти данные в отношении аудита соответствия лицензионным требованиям.
+> Metadata discovered by the Azure Migrate appliance is used to help you right-size your applications as you migrate them to Azure, perform Azure suitability analysis, application dependency analysis, and cost planning. Microsoft does not use this data in relation to any license compliance audit.
 
-Ниже приведен полный список метаданных виртуальных машин VMware, которые устройство собирает и отправляет в Azure.
+Here's the full list of VMware VM metadata that the appliance collects and sends to Azure.
 
 **Данные** | **Счетчик**
 --- | --- 
-**Сведения о компьютере** | 
+**Machine details** | 
 Идентификатор виртуальной машины | vm.Config.InstanceUuid 
-Имя виртуальной машины | vm.Config.Name
-Идентификатор vCenter Server | Вмвареклиент. instance. UUID
+имя виртуальной машины; | vm.Config.Name
+Идентификатор vCenter Server | VMwareClient.Instance.Uuid
 Описание виртуальной машины | vm.Summary.Config.Annotation
 Имя продукта лицензии | vm.Client.ServiceContent.About.LicenseProductName
-Тип операционной системы | машину. Суммариконфиг. Гуестфуллнаме
+Тип операционной системы | vm.SummaryConfig.GuestFullName
 Тип загрузки | vm.Config.Firmware
 Число ядер | vm.Config.Hardware.NumCPU
-Память (МБ) | vm.Config.Hardware.MemoryMB
-Количество дисков | машину. Файл config. Hardware. Device. ToList (). FindAll (x = > — VirtualDisk). Count
-Список размеров диска | машину. Файл config. Hardware. Device. ToList (). FindAll (x = > — VirtualDisk)
-Список сетевых адаптеров | машину. Файл config. Hardware. Device. ToList (). FindAll (x = > — Виртуалесернет). Count
+Memory (MB) | vm.Config.Hardware.MemoryMB
+Число дисков | vm.Config.Hardware.Device.ToList().FindAll(x => is VirtualDisk).count
+Список размеров диска | vm.Config.Hardware.Device.ToList().FindAll(x => is VirtualDisk)
+Список сетевых адаптеров | vm.Config.Hardware.Device.ToList().FindAll(x => is VirtualEthernet).count
 загрузка ЦП; | cpu.usage.average
 Использование памяти |mem.usage.average
-**Сведения о диске** | 
+**Per disk details** | 
 Значение ключа диска | disk.Key
-Номер дикунит | disk.UnitNumber
+Dikunit number | disk.UnitNumber
 Значение ключа контроллера диска | disk.ControllerKey.Value
 Подготовленных гигабайт | virtualDisk.DeviceInfo.Summary
-Имя диска | Значение, созданное с помощью диска. Унитнумбер, Disk. Ключ, диск. Контроллеркэй. VAlue
+Disk name | Value generated using disk.UnitNumber, disk.Key, disk.ControllerKey.VAlue
 Число операций чтения за секунду. | virtualDisk.numberReadAveraged.average
 Число операций записи за секунду. | virtualDisk.numberWriteAveraged.average
-Пропускная способность чтения (МБ в секунду) | virtualDisk.read.average
-Пропускная способность записи (МБ в секунду) | virtualDisk.write.average
-**Сведения для каждого сетевого адаптера** | 
+Read throughput (MB per second) | virtualDisk.read.average
+Write throughput (MB per second) | virtualDisk.write.average
+**Per NIC details** | 
 Имя сетевого адаптера | nic.Key
 MAC-адрес. | ((VirtualEthernetCard)nic).MacAddress
-IPv4-адреса | vm.Guest.Net
+IPv4 addresses | vm.Guest.Net
 IPv6-адреса | vm.Guest.Net
-Пропускная способность чтения (МБ в секунду) | net.received.average
-Пропускная способность записи (МБ в секунду) | net.transmitted.average
-**Сведения о пути инвентаризации** | 
-имя | container.GetType().Name
+Read throughput (MB per second) | net.received.average
+Write throughput (MB per second) | net.transmitted.average
+**Inventory path details** | 
+Name | container.GetType().Name
 Тип дочернего объекта | container.ChildType
 Справочные сведения | container.MoRef
 Сведения о родительском объекте | Container.Parent
-Сведения о папке на виртуальную машину | ((Folder)container).ChildEntity.Type
-Сведения о центре обработки данных на виртуальную машину | ((Datacenter)container).VmFolder
-Сведения о центре обработки данных на папку узлов | ((Datacenter)container).HostFolder
-Сведения о кластере на узле | ((Клустеркомпутересаурце) контейнер). Хост
-Сведения об узле на виртуальную машину | ((Хостсистем) контейнер). МАШИНУ
+Folder details per VM | ((Folder)container).ChildEntity.Type
+Datacenter details per VM | ((Datacenter)container).VmFolder
+Datacenter details per host folder | ((Datacenter)container).HostFolder
+Cluster details per host | ((ClusterComputeResource)container).Host
+Host details per VM | ((HostSystem)container).VM
 
 
 
-## <a name="collected-performance-data-hyper-v"></a>Собранные данные производительности — Hyper-V
+## <a name="collected-performance-data-hyper-v"></a>Collected performance data-Hyper-V
 
 > [!NOTE]
-> Метаданные, обнаруженные устройством "миграция Azure", используются для того, чтобы масштабировать приложения по мере их переноса в Azure, выполнять анализ соответствия требованиям для Azure, анализ зависимостей приложений и планирование затрат. Корпорация Майкрософт не использует эти данные в отношении аудита соответствия лицензионным требованиям.
+> Metadata discovered by the Azure Migrate appliance is used to help you right-size your applications as you migrate them to Azure, perform Azure suitability analysis, application dependency analysis, and cost planning. Microsoft does not use this data in relation to any license compliance audit.
 
-Ниже приведены данные о производительности виртуальной машины Hyper, которые устройство собирает и отправляет в Azure.
+Here's the Hyper VM performance data that the appliance collects and sends to Azure.
 
-**Класс счетчика производительности** | **Счетчик** | **Влияние на оценку**
+**Performance counter class** | **Счетчик** | **Assessment impact**
 --- | --- | ---
-Виртуальный процессор гипервизора Hyper-V | % Времени выполнения гостевой работы | Рекомендуемый размер и стоимость виртуальной машины
-Виртуальная машина Hyper-V динамическая память | Текущая нагрузка (%)<br/> Физическая доступная Гостевая память (МБ) | Рекомендуемый размер и стоимость виртуальной машины
-Виртуальное запоминающее устройство Hyper-V | Байтов чтения в секунду | Вычисление размера диска, стоимости хранилища, размера виртуальной машины
-Виртуальное запоминающее устройство Hyper-V | Записано байт в секунду | Вычисление размера диска, стоимости хранилища, размера виртуальной машины
-Виртуальный сетевой адаптер Hyper-V | Получено байт/сек | Вычисление размера виртуальной машины
-Виртуальный сетевой адаптер Hyper-V | Отправлено байтов в секунду | Вычисление размера виртуальной машины
+Hyper-V Hypervisor Virtual Processor | % Guest Run Time | Recommended VM size/cost
+Hyper-V Dynamic Memory VM | Current Pressure (%)<br/> Guest Visible Physical Memory (MB) | Recommended VM size/cost
+Hyper-V Virtual Storage Device | Read Bytes/Second | Calculation for disk size, storage cost, VM size
+Hyper-V Virtual Storage Device | Write Bytes/Second | Calculation for disk size, storage cost, VM size
+Hyper-V Virtual Network Adapter | Bytes Received/Second | Calculation for VM size
+Hyper-V Virtual Network Adapter | Bytes Sent/Second | Calculation for VM size
 
-- Загрузка ЦП — это сумма всех использований для всех виртуальных процессоров, подключенных к виртуальной машине.
-- Использование памяти — (текущее давление * видимая физическая память)/100.
-- Значения использования диска и сети собираются из перечисленных счетчиков производительности Hyper-V.
+- CPU utilization is the sum of all usage, for all virtual processors attached to a VM.
+- Memory utilization is (Current Pressure * Guest Visible Physical Memory) / 100.
+- Disk and network utilization values are collected from the listed Hyper-V performance counters.
 
-## <a name="collected-metadata-hyper-v"></a>Собранные метаданные — Hyper-V
+## <a name="collected-metadata-hyper-v"></a>Collected metadata-Hyper-V
 
-Ниже приведен полный список метаданных виртуальной машины Hyper-V, которые устройство собирает и отправляет в Azure.
+Here's the full list of Hyper-V VM metadata that the appliance collects and sends to Azure.
 
-**Данные** | **Класс WMI** | **Свойство класса WMI**
+**Данные** | **WMI class** | **WMI class property**
 --- | --- | ---
-**Сведения о компьютере** | 
-Серийный номер BIOS _ Msvm_BIOSElement | биоссериалнумбер
-Тип виртуальной машины (GEN 1 или 2) | Msvm_VirtualSystemSettingData | виртуалсистемсубтипе
-Отображаемое имя виртуальной машины | Msvm_VirtualSystemSettingData | ElementName
-Версия виртуальной машины | Msvm_ProcessorSettingData | виртуалкуантити
-Память (байт) | Msvm_MemorySettingData | виртуалкуантити
-Максимальный объем памяти, который может потребляться виртуальной машиной | Msvm_MemorySettingData | Ограничение
-Динамическая память включена | Msvm_MemorySettingData | динамикмеморенаблед
-Имя, версия или полное доменное название операционной системы | Msvm_KvpExchangeComponent | Данные имени Гуестинтринсицексчанжеитемс
-Состояние питания виртуальной машины | Msvm_ComputerSystem | Отличается
-**Сведения о диске** | 
-Идентификатор диска | Msvm_VirtualHardDiskSettingData | виртуалдискид
-Тип виртуального жесткого диска | Msvm_VirtualHardDiskSettingData | введите
-Размер виртуального жесткого диска | Msvm_VirtualHardDiskSettingData | максинтерналсизе
-Родительский элемент виртуального жесткого диска | Msvm_VirtualHardDiskSettingData | парентпас
-**Сведения для каждого сетевого адаптера** | 
-IP-адреса (синтетические сетевые карты) | Msvm_GuestNetworkAdapterConfiguration | IPAddresses
-DHCP включен (синтетические сетевые карты) | Msvm_GuestNetworkAdapterConfiguration | DHCPEnabled
-ИДЕНТИФИКАТОР сетевого адаптера (синтетические сетевые карты) | Msvm_SyntheticEthernetPortSettingData | InstanceID
-MAC-адрес NIC (синтетические сетевые карты) | Msvm_SyntheticEthernetPortSettingData | Адрес
-ИДЕНТИФИКАТОР сетевого адаптера (устаревшие сетевые карты) | Данные Мсвмемулатедесернетпортсеттинг | InstanceID
-MAC ID NIC (устаревшие сетевые карты) | Данные Мсвмемулатедесернетпортсеттинг | Адрес
+**Machine details** | 
+Serial number of BIOS _ Msvm_BIOSElement | BIOSSerialNumber
+VM type (Gen 1 or 2) | Msvm_VirtualSystemSettingData | VirtualSystemSubType
+VM display name | Msvm_VirtualSystemSettingData | ElementName
+VM version | Msvm_ProcessorSettingData | VirtualQuantity
+Memory (bytes) | Msvm_MemorySettingData | VirtualQuantity
+Maximum memory that can be consumed by VM | Msvm_MemorySettingData | Ограничение
+Dynamic memory enabled | Msvm_MemorySettingData | DynamicMemoryEnabled
+Operating system name/version/FQDN | Msvm_KvpExchangeComponent | GuestIntrinsicExchangeItems Name Data
+VM power status | Msvm_ComputerSystem | EnabledState
+**Per disk details** | 
+Disk identifier | Msvm_VirtualHardDiskSettingData | VirtualDiskId
+Virtual hard disk type | Msvm_VirtualHardDiskSettingData | Тип
+Virtual hard disk size | Msvm_VirtualHardDiskSettingData | MaxInternalSize
+Virtual hard disk parent | Msvm_VirtualHardDiskSettingData | ParentPath
+**Per NIC details** | 
+IP addresses (synthetic NICs) | Msvm_GuestNetworkAdapterConfiguration | IPAddresses
+DHCP enabled (synthetic NICs) | Msvm_GuestNetworkAdapterConfiguration | DHCPEnabled
+NIC ID (synthetic NICs) | Msvm_SyntheticEthernetPortSettingData | InstanceID
+NIC MAC address (synthetic NICs) | Msvm_SyntheticEthernetPortSettingData | Адрес
+NIC ID (legacy NICs) | MsvmEmulatedEthernetPortSetting Data | InstanceID
+NIC MAC ID (legacy NICs) | MsvmEmulatedEthernetPortSetting Data | Адрес
 
 
 
 
-## <a name="discovery-and-collection-process"></a>Процесс обнаружения и сбора
+## <a name="discovery-and-collection-process"></a>Discovery and collection process
 
-Устройство взаимодействует с серверами vCenter и узлами или кластером Hyper-V, используя следующий процесс.
+The appliance communicates with vCenter Servers and Hyper-V hosts/cluster using the following process.
 
 
-1. **Запустить обнаружение**:
-    - При запуске обнаружения на устройстве Hyper-V оно взаимодействует с узлами Hyper-V на портах WinRM 5985 (HTTP) и 5986 (HTTPS).
-    - При запуске обнаружения на устройстве VMware оно по умолчанию взаимодействует с сервером vCenter через TCP-порт 443. Если сервер vCenter Server прослушивает другой порт, его можно настроить в веб-приложении устройства.
-2. **Сбор данных о метаданных и производительности**:
-    - Устройство использует сеанс модель CIM (CIM) для сбора данных виртуальной машины Hyper-v с узла Hyper-V на портах 5985 и 5986.
-    - По умолчанию устройство взаимодействует с портом 443 для сбора данных виртуальной машины VMware из vCenter Server.
-3. **Send Data (отправить данные**). устройство отправляет собранные данные в Azure Migration Server оценок и выполняет миграцию сервера миграции Azure через порт SSL 443.
-    - Для данных производительности устройство собирает данные об использовании в режиме реального времени.
-        - Данные о производительности собираются каждые 20 секунд для VMware и каждые 30 секунд для Hyper-V для каждой метрики производительности.
-        - Собранные данные суммируются для создания одной точки данных в течение десяти минут.
-        - Значение пиковой загрузки выбирается во всех 20/30 секундных точках данных и отправляется в Azure для вычисления оценки.
-        - На основе значения процентиля, указанного в свойствах оценки (50/90/95 процентиль/99-м), точки с десятью минутами сортируются в возрастающем порядке, а соответствующее значение процентиля используется для вычисления оценки.
-    - Для миграции сервера устройство начинает сбор данных виртуальной машины и реплицирует их в Azure.
-4. **Оценка и миграция**. Теперь вы можете создавать оценки на основе метаданных, собранных устройством, с помощью функции "Миграция серверов Azure". Кроме того, можно также приступить к переносу виртуальных машин VMware с помощью миграции сервера миграция Azure для координации репликации виртуальных машин без агента.
+1. **Start discovery**:
+    - When you start the discovery on the Hyper-V appliance, it communicates with the Hyper-V hosts on WinRM ports 5985 (HTTP) and 5986 (HTTPS).
+    - When you start discovery on the VMware appliance, it communicates with the vCenter server on TCP port 443 by default. IF the vCenter server listens on a different port, you can configure it in the appliance web app.
+2. **Gather metadata and performance data**:
+    - The appliance uses a Common Information Model (CIM) session to gather Hyper-V VM data from the Hyper-V host on ports 5985 and 5986.
+    - The appliance communicates with port 443 by default, to gather VMware VM data from the vCenter Server.
+3. **Send data**: The appliance sends the collected data to Azure Migrate Server Assessment and Azure Migrate Server Migration over SSL port 443.
+    - For performance data, the appliance collects real-time utilization data.
+        - Performance data is collected every 20 seconds for VMware, and every 30 seconds for Hyper-V, for each performance metric.
+        - The collected data is rolled up to create a single data point for ten minutes.
+        - The peak utilization value is selected from all of the 20/30 second data points, and sent to Azure for assessment calculation.
+        - Based on the percentile value specified in the assessment properties (50th/90th/95th/99th), the ten-minute points are sorted in ascending order, and the appropriate percentile value is used to compute the assessment
+    - For Server Migration, the appliance starts collecting VM data, and replicates it to Azure.
+4. **Assess and migrate**: You can now create assessments from the metadata collected by the appliance using Azure Migrate Server Assessment. In addition, you can also start migrating VMware VMs using Azure Migrate Server Migration to orchestrate agentless VM replication.
 
 
 ![Архитектура](./media/migrate-appliance/architecture.png)
 
 
-## <a name="appliance-upgrades"></a>Обновление устройства
+## <a name="appliance-upgrades"></a>Appliance upgrades
 
-Устройство обновляется, так как агенты службы "миграция Azure", работающие на устройстве, обновляются.
+The appliance is upgraded as the Azure Migrate agents running on the appliance are updated.
 
-- Это происходит автоматически, так как автоматическое обновление включено на устройстве по умолчанию.
-- Вы можете изменить этот параметр по умолчанию, чтобы обновить агенты вручную.
-- Чтобы отключить автоматическое обновление, перейдите в редактор реестра > HKEY_LOCAL_MACHINE \Софтваре\микрософт\азуреапплианце и установите раздел реестра — "автоматическое обновление" в значение 0 (DWORD).
+- This happens automatically because the auto-update is enabled on the appliance by default.
+- You can change this default setting to update the agents manually.
+- To disable the auto-update, go to the Registry Editor>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\AzureAppliance and set the registry key- "AutoUpdate" to 0 (DWORD).
  
-### <a name="set-agent-updates-to-manual"></a>Установка обновлений агента вручную
+### <a name="set-agent-updates-to-manual"></a>Set agent updates to manual
 
-Для ручного обновления убедитесь, что одновременно обновляются все агенты на устройстве, с помощью кнопки **Обновить** для каждого устаревшего агента на устройстве. Вы можете в любое время переключить параметр обновления обратно на автоматические обновления.
+For manual updates, make sure that you update all the agents on the appliance at the same time, using the **Update** button for each outdated agent on the appliance. You can switch the update setting back to automatic updates at any time.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-[Узнайте, как](tutorial-assess-vmware.md#set-up-the-appliance-vm) настроить устройство для VMware.
-[Узнайте, как](tutorial-assess-hyper-v.md#set-up-the-appliance-vm) настроить устройство для Hyper-V.
+[Learn how](tutorial-assess-vmware.md#set-up-the-appliance-vm) to set up the appliance for VMware.
+[Learn how](tutorial-assess-hyper-v.md#set-up-the-appliance-vm) to set up the appliance for Hyper-V.
 

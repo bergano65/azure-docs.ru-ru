@@ -4,14 +4,8 @@ title: Документация по Записным книжкам Azure
 metadata:
   title: Документация по Записным книжкам Azure
   description: 'Узнайте, как создавать, запускать и совместно использовать записные книжки Jupyter через размещенную службу "Записные книжки Azure".'
-  services: notebooks
-  author: kraigb
-  manager: barbkess
-  ms.service: azure-notebooks
-  ms.tgt_pltfrm: na
   ms.topic: landing-page
   ms.date: 12/04/2018
-  ms.author: kraigb
 abstract:
   description: 'Записные книжки Azure — это бесплатная размещенная служба для разработки и запуска записных книжек Jupyter в облаке без их установки. Jupyter (прежнее название — IPython) — это проект с открытым кодом, который позволяет легко объединять текст с разметкой, исполняемый код (Python, R, и F#), хранимые данные, графики и визуализации на одном общем холсте, который называется записной книжкой.'
 sections:

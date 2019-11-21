@@ -1,5 +1,5 @@
 ---
-title: Настройка управляемых удостоверений для ресурсов Azure в масштабируемом наборе виртуальных машин с помощью шаблона
+title: Configure template to use managed identities on virtual machine scale sets - Azure AD
 description: Пошаговые инструкции по настройке управляемых удостоверений для ресурсов Azure в масштабируемом наборе виртуальных машин с помощью шаблона Azure Resource Manager.
 services: active-directory
 documentationcenter: ''
@@ -15,14 +15,14 @@ ms.workload: identity
 ms.date: 02/20/2018
 ms.author: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6ecbac8af86c3c2c76b7710eb61f71481b86291b
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: f80134620bd1db0a0d802aff94a701fd32bb0e9e
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66112493"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74232190"
 ---
-# <a name="configure-managed-identities-for-azure-resources-on-an-azure-virtual-machine-scale-using-a-template"></a>Настройка управляемого удостоверения для ресурсов Azure в масштабируемом виртуальной машины Azure с помощью шаблона
+# <a name="configure-managed-identities-for-azure-resources-on-an-azure-virtual-machine-scale-using-a-template"></a>Configure managed identities for Azure resources on an Azure virtual machine scale using a template
 
 [!INCLUDE [preview-notice](../../../includes/active-directory-msi-preview-notice.md)]
 
@@ -49,7 +49,7 @@ ms.locfileid: "66112493"
 
 Так же как портал Azure и сценарии, шаблоны [Azure Resource Manager](../../azure-resource-manager/resource-group-overview.md) предоставляют возможность развертывать новые или измененные ресурсы, определенные в группе ресурсов Azure. Доступно несколько способов редактирования и развертывания шаблона, локально и на портале, в том числе:
 
-   - С помощью [пользовательского шаблона из Azure Marketplace](../../azure-resource-manager/resource-group-template-deploy-portal.md#deploy-resources-from-custom-template), что позволяет создать шаблон с нуля, или основу имеющийся общий или [шаблон быстрого запуска](https://azure.microsoft.com/documentation/templates/).
+   - Using a [custom template from the Azure Marketplace](../../azure-resource-manager/resource-group-template-deploy-portal.md#deploy-resources-from-custom-template), which allows you to create a template from scratch, or base it on an existing common or [quickstart template](https://azure.microsoft.com/documentation/templates/).
    - Наследование от имеющейся группы ресурсов путем экспорта шаблона из [исходного развертывания](../../azure-resource-manager/manage-resource-groups-portal.md#export-resource-groups-to-templates) или от [текущего состояния развертывания](../../azure-resource-manager/manage-resource-groups-portal.md#export-resource-groups-to-templates).
    - Использование локального [редактора JSON (например, VS Code)](../../azure-resource-manager/resource-manager-create-first-template.md), а затем передача и развертывание с помощью PowerShell или интерфейса командной строки.
    - Использование [проекта группы ресурсов Azure](../../azure-resource-manager/vs-azure-tools-resource-groups-deployment-projects-create-deploy.md) Visual Studio для создания и развертывания шаблона.  
@@ -60,7 +60,7 @@ ms.locfileid: "66112493"
 
 В этом разделе вы узнаете, как включить и отключить управляемое удостоверение, назначаемое системой, с помощью шаблона Azure Resource Manager.
 
-### <a name="enable-system-assigned-managed-identity-during-creation-the-creation-of-a-virtual-machines-scale-set-or-an-existing-virtual-machine-scale-set"></a>Включить назначенный системой управляемого удостоверения во время создания Создание масштабируемого набора виртуальных машин или имеющийся масштабируемый набор виртуальных машин
+### <a name="enable-system-assigned-managed-identity-during-creation-the-creation-of-a-virtual-machines-scale-set-or-an-existing-virtual-machine-scale-set"></a>Enable system-assigned managed identity during creation the creation of a virtual machines scale set or an existing virtual machine scale set
 
 1. После входа в Azure локально или через портал Azure используйте учетную запись, связанную с подпиской Azure, которая содержит масштабируемый набор виртуальных машин.
 2. Чтобы включить управляемое удостоверение, назначаемое системой, загрузите шаблон в редактор, найдите интересующий ресурс `Microsoft.Compute/virtualMachinesScaleSets` в разделе ресурсов и добавьте свойство `identity` на том же уровне, что и свойство `"type": "Microsoft.Compute/virtualMachinesScaleSets"`. Используйте следующий синтаксис:
@@ -72,7 +72,7 @@ ms.locfileid: "66112493"
    ```
 
 > [!NOTE]
-> Можно также подготовить к работе управляемых удостоверений для ресурсов Azure масштабируемого набора виртуальных машин расширение, указав его в `extensionProfile` элемент шаблона. Этот шаг необязателен, так как для получения токенов можно также использовать конечную точку службы метаданных экземпляров Azure (IMDS).  Дополнительные сведения см. в разделе [перенос из расширения виртуальной Машины для Azure IMDS для проверки подлинности](howto-migrate-vm-extension.md).
+> You may optionally provision the managed identities for Azure resources virtual machine scale set extension by specifying it in the `extensionProfile` element of the template. Этот шаг необязателен, так как для получения маркеров можно также использовать конечную точку Службы метаданных экземпляров Azure (IMDS).  For more information, see [Migrate from VM extension to Azure IMDS for authentication](howto-migrate-vm-extension.md).
 
 
 4. Когда все будет готово, необходимо добавить следующие разделы в раздел ресурсов шаблона, который должен выглядеть следующим образом.
@@ -196,7 +196,7 @@ ms.locfileid: "66112493"
    }
    ``` 
 > [!NOTE]
-> Можно также подготовить к работе управляемых удостоверений для ресурсов Azure масштабируемого набора виртуальных машин расширение, указав его в `extensionProfile` элемент шаблона. Этот шаг необязателен, так как для получения токенов можно также использовать конечную точку службы метаданных экземпляров Azure (IMDS).  Дополнительные сведения см. в разделе [перенос из расширения виртуальной Машины для Azure IMDS для проверки подлинности](howto-migrate-vm-extension.md).
+> You may optionally provision the managed identities for Azure resources virtual machine scale set extension by specifying it in the `extensionProfile` element of the template. Этот шаг необязателен, так как для получения маркеров можно также использовать конечную точку Службы метаданных экземпляров Azure (IMDS).  For more information, see [Migrate from VM extension to Azure IMDS for authentication](howto-migrate-vm-extension.md).
 
 3. По завершении шаблон должен выглядеть следующим образом.
    

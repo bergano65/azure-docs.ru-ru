@@ -5,36 +5,37 @@ services: virtual-machines
 author: roygara
 ms.service: virtual-machines
 ms.topic: include
-ms.date: 11/04/2019
+ms.date: 11/18/2019
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: c847b110cb821ebe3ca7e706fcaec592dcc58fa8
-ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+ms.openlocfilehash: df488c2a3033015175943f7d092beaaa41e34046
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73600972"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260858"
 ---
-Сейчас у Ultra Disks есть дополнительные ограничения:
+For now, ultra disks have additional limitations, they are as follows:
 
-- Поддерживаются в следующих регионах с различным количеством зон доступности на регион:
-    - Восток США 2
-    - Восток США
-    - Западный регион США 2
-    - Юго-Восточная Азия
+- Are supported in the following regions, with a varying number of availability zones per region:
+    - Восточная часть США 2
+    - Восточная часть США
+    - Западная часть США 2
+    - SouthEast Asia
     - Северная Европа
     - Западная Европа
-    - Южная часть Великобритании 
+    - Южная часть Соединенного Королевства 
 - Можно использовать только с Зонами доступности (для групп доступности и развертываний одной виртуальной машины за пределами зон невозможно подключить диск SSD (цен. категория "Ультра")).
-- Поддерживаются только в следующей серии виртуальных машин:
+- Are only supported on the following VM series:
     - [ESv3](https://azure.microsoft.com/blog/introducing-the-new-dv3-and-ev3-vm-sizes/)
     - [DSv3](https://azure.microsoft.com/blog/introducing-the-new-dv3-and-ev3-vm-sizes/)
-    - Серия fsv2
+    - FSv2
     - [M](../articles/virtual-machines/workloads/sap/hana-vm-operations-storage.md)
     - [Mv2](../articles/virtual-machines/workloads/sap/hana-vm-operations-storage.md)
-- Не каждый размер виртуальной машины доступен в каждом поддерживаемом регионе с Ultra Disks.
+- Not every VM size is available in every supported region with ultra disks.
 - Доступны только как диски данных и поддерживают только физические секторы размером 4 КБ.  
 - Могут создаваться только как пустые диски.  
-- Пока не поддерживаются моментальные снимки дисков, образы виртуальных машин, группы доступности и шифрование дисков Azure.
-- Пока не поддерживают интеграцию с Azure Backup или Azure Site Recovery
-- Текущее максимальное ограничение для операций ввода-вывода в общедоступных виртуальных машинах — 80 000.
+- Do not yet support disk snapshots, VM images, availability sets, and Azure disk encryption
+- Do not yet support integration with Azure Backup or Azure Site Recovery
+- The current maximum limit for IOPS on GA VMs is 80,000.
+- If you would like to participate in a limited preview of a VM that can accomplish 160,000 IOPS with ultra disks, please email UltraDiskFeedback@microsoft .com

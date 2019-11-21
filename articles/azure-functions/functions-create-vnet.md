@@ -1,170 +1,168 @@
 ---
-title: Интеграция функций Azure с виртуальной сетью Azure
-description: Пошаговое руководство, в котором показано, как подключить функцию к виртуальной сети Azure
+title: Integrate Azure Functions with an Azure virtual network
+description: A step-by-step tutorial that shows you how to connect a function to an Azure virtual network
 author: alexkarcher-msft
-manager: gwallace
-ms.service: azure-functions
 ms.topic: article
 ms.date: 5/03/2019
 ms.author: alkarche
 ms.reviewer: glenga
-ms.openlocfilehash: bc6c87a28078d25a212a681206258d6d369f2867
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 12815d3ca0136cec8af294118ff192a4f31df6a0
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73575541"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74227081"
 ---
-# <a name="tutorial-integrate-functions-with-an-azure-virtual-network"></a>Руководство. Интеграция функций с виртуальной сетью Azure
+# <a name="tutorial-integrate-functions-with-an-azure-virtual-network"></a>Tutorial: integrate Functions with an Azure virtual network
 
-В этом руководстве показано, как использовать функции Azure для подключения к ресурсам в виртуальной сети Azure. Вы создадите функцию, которая имеет доступ как к Интернету, так и к виртуальной машине, где выполняется WordPress в виртуальной сети.
+This tutorial shows you how to use Azure Functions to connect to resources in an Azure virtual network. you'll create a function that has access to both the internet and to a VM running WordPress in virtual network.
 
 > [!div class="checklist"]
-> * Создание приложения-функции в плане Premium
-> * Развертывание сайта WordPress на виртуальной машине в виртуальной сети
-> * Подключение приложения функции к виртуальной сети
-> * Создание прокси-функции для доступа к ресурсам WordPress
-> * Запрос файла WordPress из виртуальной сети
+> * Create a function app in the Premium plan
+> * Deploy a WordPress site to VM in a virtual network
+> * Connect the function app to the virtual network
+> * Create a function proxy to access WordPress resources
+> * Request a WordPress file from inside the virtual network
 
 ## <a name="topology"></a>Топология
 
-На следующей схеме показана архитектура создаваемого решения.
+The following diagram shows the architecture of the solution that you create:
 
- ![Пользовательский интерфейс для интеграции виртуальной сети](./media/functions-create-vnet/topology.png)
+ ![UI for virtual network integration](./media/functions-create-vnet/topology.png)
 
-Функции, выполняемые в плане Premium, имеют те же возможности размещения, что и веб-приложения в службе приложений Azure, включая функцию интеграции с виртуальной сетью. Дополнительные сведения об интеграции виртуальной сети, включая устранение неполадок и расширенную конфигурацию, см. в статье [интеграция приложения с виртуальной сетью Azure](../app-service/web-sites-integrate-with-vnet.md).
+Functions running in the Premium plan have the same hosting capabilities as web apps in Azure App Service, which includes the VNet Integration feature. To learn more about VNet Integration, including troubleshooting and advanced configuration, see [Integrate your app with an Azure virtual network](../app-service/web-sites-integrate-with-vnet.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
-Для работы с этим руководством важно понимать, что это IP-адрес и подсети. Вы можете начать с [этой статьи, которая охватывает основы адресации и подсетей](https://support.microsoft.com/help/164015/understanding-tcp-ip-addressing-and-subnetting-basics). Многие статьи и видеоматериалы доступны в Интернете.
+For this tutorial, it's important that you understand IP addressing and subnetting. You can start with [this article that covers the basics of addressing and subnetting](https://support.microsoft.com/help/164015/understanding-tcp-ip-addressing-and-subnetting-basics). Many more articles and videos are available online.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="create-a-function-app-in-a-premium-plan"></a>Создание приложения-функции в плане Premium
+## <a name="create-a-function-app-in-a-premium-plan"></a>Create a function app in a Premium plan
 
-Сначала вы создадите приложение-функцию в [План Premium]. Этот план обеспечивает бессерверное масштабирование при поддержке интеграции с виртуальной сетью.
+First, you create a function app in the [Premium plan]. This plan provides serverless scale while supporting virtual network integration.
 
 [!INCLUDE [functions-premium-create](../../includes/functions-premium-create.md)]  
 
-Вы можете закрепить приложение-функцию на панели мониторинга, щелкнув значок закрепления в правом верхнем углу. Закрепление упрощает возврат к этому приложению функции после создания виртуальной машины.
+You can pin the function app to the dashboard by selecting the pin icon in the upper right-hand corner. Pinning makes it easier to return to this function app after you create your VM.
 
-## <a name="create-a-vm-inside-a-virtual-network"></a>Создание виртуальной машины в виртуальной сети
+## <a name="create-a-vm-inside-a-virtual-network"></a>Create a VM inside a virtual network
 
-Затем создайте предварительно настроенную виртуальную машину, которая будет запускать WordPress в виртуальной сети ([WordPress LEMP7 Max Performance](https://jetware.io/appliances/jetware/wordpress4_lemp7-170526/profile?us=azure) с жетваре). WordPress виртуальная машина используется из-за низкой стоимости и удобства. Такой же сценарий работает с любым ресурсом в виртуальной сети, например с интерфейсами API для остальных компонентов, средами службы приложений и другими службами Azure. 
+Next, create a preconfigured VM that runs WordPress inside a virtual network ([WordPress LEMP7 Max Performance](https://jetware.io/appliances/jetware/wordpress4_lemp7-170526/profile?us=azure) by Jetware). A WordPress VM is used because of its low cost and convenience. This same scenario works with any resource in a virtual network, such as REST APIs, App Service Environments, and other Azure services. 
 
-1. На портале выберите **+ создать ресурс** в области навигации слева, в поле поиска введите `WordPress LEMP7 Max Performance`и нажмите клавишу ВВОД.
+1. In the portal, choose **+ Create a resource** on the left navigation pane, in the search field type `WordPress LEMP7 Max Performance`, and press Enter.
 
-1. В результатах поиска выберите **WordPress LEMP Max Performance (максимальная производительность** ). Выберите план программного обеспечения **WordPress LEMP максимальная производительность для CentOS** в качестве **плана по** и нажмите кнопку **создать**.
+1. Choose **Wordpress LEMP Max Performance** in the search results. Select a software plan of **Wordpress LEMP Max Performance for CentOS** as the **Software Plan** and select **Create**.
 
-1. На вкладке **Основные сведения** используйте параметры виртуальной машины, как указано в таблице под изображением.
+1. In the **Basics** tab, use the VM settings as specified in the table below the image:
 
-    ![Вкладка "основы" для создания виртуальной машины](./media/functions-create-vnet/create-vm-1.png)
+    ![Basics tab for creating a VM](./media/functions-create-vnet/create-vm-1.png)
 
-    | Настройка      | Рекомендуемое значение  | Description (Описание)      |
+    | Параметр      | Рекомендуемое значение  | Описание      |
     | ------------ | ---------------- | ---------------- |
-    | **Подписка** | Ваша подписка | Подписка, в которой создаются ресурсы. | 
-    | **[Группа ресурсов](../azure-resource-manager/resource-group-overview.md)**  | myResourceGroup | Выберите `myResourceGroup`или группу ресурсов, созданную с помощью приложения функции. Использование той же группы ресурсов для приложения функции, виртуальной машины WordPress и плана размещения упрощает очистку ресурсов после завершения работы с этим руководством. |
-    | **Имя виртуальной машины** | Виртуальная сеть — WordPress | Имя виртуальной машины должно быть уникальным в группе ресурсов |
-    | **[Регионе](https://azure.microsoft.com/regions/)** | "Западная Европа" (Европа). | Выберите ближайший регион или рядом с функциями, которые обращаются к виртуальной машине. |
-    | **Размер** | B1s | Выберите **изменить размер** , а затем выберите стандартный образ B1s, который содержит 1 виртуальных ЦП и 1 ГБ памяти. |
-    | **Тип проверки подлинности** | Пароль | Чтобы использовать проверку подлинности с помощью пароля, необходимо также указать **имя пользователя**, защищенный **пароль**, а затем **подтвердить пароль**. В этом руководстве вам не потребуется входить в виртуальную машину, если не требуется устранение неполадок. |
+    | **подписка** | Ваша подписка | The subscription under which your resources are created. | 
+    | **[Resource group](../azure-resource-manager/resource-group-overview.md)**  | myResourceGroup | Choose `myResourceGroup`, or the resource group you created with your function app. Using the same resource group for the function app, WordPress VM, and hosting plan makes it easier to clean up resources when you are done with this tutorial. |
+    | **Имя виртуальной машины** | VNET-Wordpress | The VM name needs to be unique in the resource group |
+    | **[Region](https://azure.microsoft.com/regions/)** | "Западная Европа" (Европа). | Choose a region near you or near the functions that access the VM. |
+    | **Размер** | B1s | Choose **Change size** and then select the B1s standard image, which has 1 vCPU and 1 GB of memory. |
+    | **Тип проверки подлинности** | Пароль | To use password authentication, you must also specify a **Username**, a secure **Password**, and then **Confirm password**. For this tutorial, you won't need to sign in to the VM unless you need to troubleshoot. |
 
-1. Перейдите на вкладку **сеть** и в разделе Настройка виртуальных сетей выберите **создать**.
+1. Choose the **Networking** tab and under Configure virtual networks select **Create new**.
 
-1. В окне **Создание виртуальной сети**используйте параметры, приведенные в таблице под изображением.
+1. In **Create virtual network**, use the settings in the table below the image:
 
-    ![Вкладка "Сетевые подключения" для создания виртуальной машины](./media/functions-create-vnet/create-vm-2.png)
+    ![Networking tab of create VM](./media/functions-create-vnet/create-vm-2.png)
 
-    | Настройка      | Рекомендуемое значение  | Description (Описание)      |
+    | Параметр      | Рекомендуемое значение  | Описание      |
     | ------------ | ---------------- | ---------------- |
-    | **имя** | MyResourceGroup — виртуальная сеть | Вы можете использовать имя по умолчанию, созданное для виртуальной сети. |
-    | **Диапазон адресов** | 10.10.0.0/16 | Используйте один диапазон адресов для виртуальной сети. |
-    | **Имя подсети** | Учебник — NET | Имя подсети. |
-    | **Диапазон адресов** (подсеть) | 10.10.1.0/24   | Размер подсети определяет, сколько интерфейсов можно добавить в подсеть. Эта подсеть используется сайтом WordPress.  Подсеть `/24` предоставляет 254 адресов узлов. |
+    | **Имя** | myResourceGroup-vnet | You can use the default name generated for your virtual network. |
+    | **Диапазон адресов** | 10.10.0.0/16 | Use a single address range for the virtual network. |
+    | **Имя подсети** | Tutorial-Net | Name of the subnet. |
+    | **Address range** (subnet) | 10.10.1.0/24   | The subnet size defines how many interfaces can be added to the subnet. This subnet is used by the WordPress site.  A `/24` subnet provides 254 host addresses. |
 
-1. Нажмите кнопку **ОК** , чтобы создать виртуальную сеть.
+1. Select **OK** to create the virtual network.
 
-1. Вернитесь на вкладку **сеть** и выберите **нет** для **общедоступного IP-адреса**.
+1. Back in the **Networking** tab, choose **None** for **Public IP**.
 
-1. Перейдите на вкладку **Управление** , а затем в поле **диагностическая учетная запись хранения**выберите учетную запись хранения, созданную с помощью приложения функции.
+1. Choose the **Management** tab, then in **Diagnostics storage account**, choose the Storage account you created with your function app.
 
-1. Выберите **Review + create** (Просмотреть и создать). После завершения проверки выберите **создать**. Процесс создания виртуальной машины занимает несколько минут. Созданная виртуальная машина может получить доступ только к виртуальной сети.
+1. Выберите **Review + create** (Просмотреть и создать). After validation completes, select **Create**. The VM create process takes a few minutes. The created VM can only access the virtual network.
 
-1. После создания виртуальной машины выберите **Перейти к ресурсу** , чтобы просмотреть страницу для новой виртуальной машины, а затем выберите **сеть** в разделе **Параметры**.
+1. After the VM is created, choose **Go to resource** to view the page for your new VM, then choose **Networking** under **Settings**.
 
-1. Убедитесь, что **общедоступный IP-адрес**отсутствует. Запишите **частный IP-адрес**, который используется для подключения к виртуальной машине из приложения-функции.
+1. Verify that there's no **Public IP**. Make a note the **Private IP**, which you use to connect to the VM from your function app.
 
-    ![Параметры сети в виртуальной машине](./media/functions-create-vnet/vm-networking.png)
+    ![Networking settings in the VM](./media/functions-create-vnet/vm-networking.png)
 
-Теперь у вас есть сайт WordPress, полностью развернутый в виртуальной сети. Этот сайт недоступен из общедоступного Интернета.
+You now have a WordPress site deployed entirely within your virtual network. This site isn't accessible from the public internet.
 
-## <a name="connect-your-function-app-to-the-virtual-network"></a>Подключение приложения функции к виртуальной сети
+## <a name="connect-your-function-app-to-the-virtual-network"></a>Connect your function app to the virtual network
 
-Теперь, когда сайт WordPress работает на виртуальной машине в виртуальной сети, вы можете подключить приложение-функцию к этой виртуальной сети.
+With a WordPress site running in a VM in a virtual network, you can now connect your function app to that virtual network.
 
-1. В новом приложении функции выберите **функции платформы** > **сети**.
+1. In your new function app, select **Platform features** > **Networking**.
 
-    ![Выбор сети в приложении функции](./media/functions-create-vnet/networking-0.png)
+    ![Choose networking in the function app](./media/functions-create-vnet/networking-0.png)
 
-1. В разделе **Интеграция виртуальной сети**выберите **щелкните здесь, чтобы настроить**.
+1. Under **VNet Integration**, select **Click here to configure**.
 
-    ![Состояние настройки сетевого компонента](./media/functions-create-vnet/Networking-1.png)
+    ![Status for configuring a network feature](./media/functions-create-vnet/Networking-1.png)
 
-1. На странице интеграции с виртуальной сетью выберите **добавить виртуальную сеть (Предварительная версия)** .
+1. On the virtual network integration page, select **Add VNet (preview)** .
 
-    ![Добавление предварительной версии интеграции с виртуальной сетью](./media/functions-create-vnet/networking-2.png)
+    ![Add the VNet Integration preview](./media/functions-create-vnet/networking-2.png)
 
-1. В поле **состояние компонента сети**используйте параметры, приведенные в таблице под изображением.
+1. In **Network Feature Status**, use the settings in the table below the image:
 
-    ![Определение виртуальной сети приложения функции](./media/functions-create-vnet/networking-3.png)
+    ![Define the function app virtual network](./media/functions-create-vnet/networking-3.png)
 
-    | Настройка      | Рекомендуемое значение  | Description (Описание)      |
+    | Параметр      | Рекомендуемое значение  | Описание      |
     | ------------ | ---------------- | ---------------- |
-    | **Виртуальная сеть** | MyResourceGroup — виртуальная сеть | Это виртуальная сеть, созданная ранее. |
-    | **Подсеть** | Создание новой подсети | Создайте подсеть в виртуальной сети для использования приложением-функцией. Интеграция виртуальной сети должна быть настроена для использования пустой подсети. Не имеет значения, что функции используют подсеть, отличную от подсети виртуальной машины. Виртуальная сеть автоматически направляет трафик между двумя подсетями. |
-    | **Имя подсети** | Функция-net | Имя новой подсети. |
-    | **Блок адресов виртуальной сети** | 10.10.0.0/16 | Выберите тот же блок адресов, который используется сайтом WordPress. Должен быть определен только один блок адресов. |
-    | **Диапазон адресов** | 10.10.2.0/24   | Размер подсети позволяет ограничивать общее число экземпляров, на которые может масштабироваться приложение функции плана Premium. В этом примере используется подсеть `/24` с 254 доступных адресов узлов. Эта подсеть не подготовлена, но ее легко вычислить. |
+    | **Виртуальная сеть** | MyResourceGroup-vnet | This virtual network is the one you created earlier. |
+    | **Подсеть** | Create New Subnet | Create a subnet in the virtual network for your function app to use. VNet Integration must be configured to use an empty subnet. It doesn't matter that your functions use a different subnet than your VM. The virtual network automatically routes traffic between the two subnets. |
+    | **Имя подсети** | Function-Net | Имя новой подсети. |
+    | **Virtual network address block** | 10.10.0.0/16 | Choose the same address block used by the WordPress site. You should only have one address block defined. |
+    | **Диапазон адресов** | 10.10.2.0/24   | The subnet size restricts the total number of instances that your Premium plan function app can scale out to. This example uses a `/24` subnet with 254 available host addresses. This subnet is over-provisioned, but easy to calculate. |
 
-1. Нажмите кнопку **ОК** , чтобы добавить подсеть. Закройте страницы "Интеграция виртуальной сети" и "состояние компонентов сети", чтобы вернуться на страницу приложения-функции.
+1. Select **OK** to add the subnet. Close the VNet Integration and Network Feature Status pages to return to your function app page.
 
-Теперь приложение-функция может получить доступ к виртуальной сети, в которой работает сайт WordPress. Затем используйте [прокси-серверы функций Azure](functions-proxies.md) , чтобы вернуть файл с сайта WordPress.
+The function app can now access the virtual network where the WordPress site is running. Next, you use [Azure Functions Proxies](functions-proxies.md) to return a file from the WordPress site.
 
-## <a name="create-a-proxy-to-access-vm-resources"></a>Создание учетной записи-посредника для доступа к ресурсам виртуальной машины
+## <a name="create-a-proxy-to-access-vm-resources"></a>Create a proxy to access VM resources
 
-Если интеграция с виртуальной сетью включена, вы можете создать прокси-сервер в приложении функции, чтобы перенаправить запросы на виртуальную машину, работающую в виртуальной сети.
+With VNet Integration enabled, you can create a proxy in your function app to forward requests to the VM running in the virtual network.
 
-1. В приложении-функции выберите **прокси-серверы** >  **+** , а затем используйте параметры прокси-сервера в таблице под изображением.
+1. In your function app, select  **Proxies** >  **+** , then use the proxy settings in the table below the image:
 
-    ![Определение параметров прокси-сервера](./media/functions-create-vnet/create-proxy.png)
+    ![Define the proxy settings](./media/functions-create-vnet/create-proxy.png)
 
-    | Настройка  | Рекомендуемое значение  | Description (Описание)      |
+    | Параметр  | Рекомендуемое значение  | Описание      |
     | -------- | ---------------- | ---------------- |
-    | **имя** | Заводу | Имя может иметь любое значение. Он используется для обнаружения учетной записи-посредника. |
-    | **Шаблон маршрута** | /плант | Маршрут, сопоставляемый с ресурсом виртуальной машины. |
-    | **URL-адрес внутреннего сервера** | http://< YOUR_VM_IP >/ВП-контент/семес/твентисевентин/Ассетс/имажес/хеадер.ЖПГ | Замените `<YOUR_VM_IP>` IP-адресом созданной ранее виртуальной машины WordPress. Это сопоставление возвращает один файл с сайта. |
+    | **Имя** | Plant | The name can be any value. It's used to identify the proxy. |
+    | **Route Template** | /plant | Route that maps to a VM resource. |
+    | **Backend URL** | http://<YOUR_VM_IP>/wp-content/themes/twentyseventeen/assets/images/header.jpg | Replace `<YOUR_VM_IP>` with the IP address of your WordPress VM that you created earlier. This mapping returns a single file from the site. |
 
-1. Щелкните **создать** , чтобы добавить прокси-сервер в приложение-функцию.
+1. Select **Create** to add the proxy to your function app.
 
-## <a name="try-it-out"></a>Попробовать
+## <a name="try-it-out"></a>Попробуйте в деле
 
-1. В браузере попытайтесь получить доступ к URL-адресу, который использовался в качестве **URL-адреса внутреннего сервера**. Как и ожидалось, время ожидания запроса истекло. Время ожидания истекает, так как сайт WordPress подключен только к виртуальной сети, а не к Интернету.
+1. In your browser, try to access the URL you used as the **Backend URL**. As expected, the request times out. A timeout occurs because your WordPress site is connected only to your virtual network and not the internet.
 
-1. Скопируйте значение **URL-адреса прокси** из нового прокси-сервера и вставьте его в адресную строку браузера. Возвращенный образ находится на сайте WordPress, работающем в виртуальной сети.
+1. Copy the **Proxy URL** value from your new proxy and paste it into the address bar of your browser. The returned image is from the WordPress site running inside your virtual network.
 
-    ![Файл образа завода, возвращенный с сайта WordPress](./media/functions-create-vnet/plant.png)
+    ![Plant image file returned from the WordPress site](./media/functions-create-vnet/plant.png)
 
-Приложение-функция подключено как к Интернету, так и к виртуальной сети. Прокси-сервер получает запрос через общедоступный Интернет, а затем выступает в роли простого прокси-сервера HTTP для пересылки этого запроса в подключенную виртуальную сеть. Затем прокси-сервер передает ответ обратно в открытый Интернет.
+Your function app is connected to both the internet and your virtual network. The proxy is receiving a request over the public internet, and then acting as a simple HTTP proxy to forward that request to the connected virtual network. The proxy then relays the response back to you publicly over the internet.
 
 [!INCLUDE [clean-up-section-portal](../../includes/clean-up-section-portal.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом руководстве сайт WordPress выступает в качестве API, который вызывается в приложении-функции с помощью прокси. Этот сценарий дает хороший учебник, так как его легко настроить и визуализировать. Вы можете использовать любой другой API, развернутый в виртуальной сети. Можно также создать функцию с кодом, который вызывает API, развернутые в виртуальной сети. Более реалистичный сценарий — это функция, которая использует API-интерфейсы клиента данных для вызова экземпляра SQL Server, развернутого в виртуальной сети.
+In this tutorial, the WordPress site serves as an API that is called by using a proxy in the function app. This scenario makes a good tutorial because it's easy to set up and visualize. You could use any other API deployed within a virtual network. You could also have created a function with code that calls APIs deployed within the virtual network. A more realistic scenario is a function that uses data client APIs to call a SQL Server instance deployed in the virtual network.
 
-Функции, выполняемые в плане Premium, используют ту же базовую инфраструктуру службы приложений, что и веб-приложения в категории премиум v2 plans. Вся документация по [веб-приложениям в службе приложений Azure](../app-service/overview.md) относится к функциям плана Premium.
+Functions running in a Premium plan share the same underlying App Service infrastructure as web apps on PremiumV2 plans. All the documentation for [web apps in Azure App Service](../app-service/overview.md) applies to your Premium plan functions.
 
 > [!div class="nextstepaction"]
-> [Дополнительные сведения о параметрах сети в функциях](./functions-networking-options.md)
+> [Learn more about the networking options in Functions](./functions-networking-options.md)
 
-[План Premium]: functions-scale.md#premium-plan
+[Premium plan]: functions-scale.md#premium-plan

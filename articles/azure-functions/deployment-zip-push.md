@@ -1,20 +1,14 @@
 ---
-title: Развертывание из ZIP-файла для Функций Azure | Документация Майкрософт
+title: Непрерывное развертывание Функций Azure из ZIP-файла
 description: Публикация Функций Azure с помощью средств непрерывного развертывания службы развертывания Kudu из ZIP-файла.
-services: functions
-documentationcenter: na
-author: ggailey777
-manager: jeconnoc
-ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 08/12/2018
-ms.author: glenga
-ms.openlocfilehash: c411ff6b3a7152adaaf29045f4c3b3a3deb22d09
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 88455e85607c608757067cea9d54b60e30cacb50
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70087595"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74233066"
 ---
 # <a name="zip-deployment-for-azure-functions"></a>Развертывание Функций Azure из ZIP-файла
 
@@ -26,7 +20,7 @@ ms.locfileid: "70087595"
 
 + удаление файлов, оставшихся после предыдущих развертываний;
 + настройку развертывания, в том числе выполнение скриптов развертывания;
-+ журналы развертывания;
++ журналы развертывания.
 + синхронизацию триггеров функций в приложении-функции [План потребления](functions-scale.md).
 
 Дополнительные сведения см. в [справочнике по развертыванию из ZIP-файлов](https://github.com/projectkudu/kudu/wiki/Deploying-from-a-zip-file).
@@ -93,7 +87,7 @@ az functionapp deployment source config-zip  -g myResourceGroup -n \
 
 [!INCLUDE [app-service-deploy-zip-push-custom](../../includes/app-service-deploy-zip-push-custom.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Непрерывное развертывание для функций Azure](functions-continuous-deployment.md)

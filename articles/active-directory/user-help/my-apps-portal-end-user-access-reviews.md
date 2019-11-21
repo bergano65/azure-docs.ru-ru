@@ -1,6 +1,6 @@
 ---
-title: Выполнение проверки доступа на портале "Мои приложения" в Azure AD
-description: Узнайте, как просматривать и управлять доступом к безопасности для приложений и групп вашей организации.
+title: Manage your organization's access to apps & groups - Azure AD
+description: Learn how to perform an access review to manage security access for your organization's apps and groups from the My Apps portal.
 services: active-directory
 author: eross-msft
 manager: daveba
@@ -13,14 +13,14 @@ ms.author: lizross
 ms.reviewer: kasimpso
 ms.custom: user-help, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bf803027aac7c62ea500d1af104ae3234fadf8b5
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 232f4b6fde84b7e1cd706b62e0ba9a0998b4171e
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73804047"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74231835"
 ---
-# <a name="perform-an-access-review-from-the-my-apps-portal"></a>Выполнение проверки доступа на портале "Мои приложения"
+# <a name="perform-an-access-review-from-the-my-apps-portal"></a>Perform an access review from the My Apps portal
 
 На веб-портале **Мои приложения** можно использовать рабочую или учебную учетную запись, чтобы просматривать и запускать многие облачные приложения вашей организации, обновлять сведения о профиле и учетной записи, просматривать сведения о **группах** и выполнять **проверки доступа** к приложениям и группам. Если у вас нет доступа к порталу **Мои приложения**, обратитесь за разрешением в службу технической поддержки.
 
@@ -31,51 +31,51 @@ ms.locfileid: "73804047"
 
 ## <a name="manage-access-reviews"></a>Управление проверками доступа
 
-Если администратор предоставил вам разрешение на выполнение собственных проверок доступа, вы можете управлять доступом к группам или приложениям на плитке проверки **доступа** на странице портала " **Мои приложения** ".
+If your administrator has given you permission to perform your own access reviews, you can manage your groups or apps access from the **Access reviews** tile on the **My Apps** portal page.
 
 >[!Note]
->Если вы не видите плитку проверки **доступа** , это означает, что у вас нет разрешения на выполнение проверок доступа или у вас нет ожидающих проверок, ожидающих вашего утверждения. Если вы считаете, что у вас должен быть доступ к плитке, обратитесь за помощью в службу поддержки.
+>If you don't see the **Access reviews** tile it either means that you don't have permission to perform access reviews, or that you don't have any pending reviews waiting for your approval. If you think you should have access to the tile, contact your Help desk for assistance.
 
-### <a name="to-perform-your-access-reviews"></a>Выполнение проверок доступа
+### <a name="to-perform-your-access-reviews"></a>To perform your access reviews
 
 1. Войдите в рабочую или учебную учетную запись.
 
-2. Откройте веб-браузер и перейдите в https://myapps.microsoft.comили воспользуйтесь ссылкой, предоставленной вашей организацией. Например, вы можете направить на настроенную страницу Организации, например https://myapps.microsoft.com/contoso.com.
+2. Open your web browser and go to https://myapps.microsoft.com, or use the link provided by your organization. For example, you might be directed to a customized page for your organization, such as https://myapps.microsoft.com/contoso.com.
 
-    Откроется страница **приложения** , на которой показаны все облачные приложения, принадлежащие вашей организации и доступные для использования.
+    The **Apps** page appears, showing all the cloud-based apps owned by your organization and available for you to use.
 
-    ![Страница "приложения" на портале "Мои приложения"](media/my-apps-portal/my-apps-portal-apps-page-access-review-tile.png)
+    ![Apps page in the My Apps portal](media/my-apps-portal/my-apps-portal-apps-page-access-review-tile.png)
 
-3. Щелкните плитку проверки **доступа** , чтобы просмотреть список проверок доступа, ожидающих вашего утверждения.
+3. Select the **Access reviews** tile to see a list of access reviews waiting for your approval.
 
-    ![Страница "проверки доступа" с ожидающими проверками доступа для Организации](media/my-apps-portal/my-apps-portal-access-reviews-page.png)
+    ![Access reviews page with pending access reviews for the organization](media/my-apps-portal/my-apps-portal-access-reviews-page.png)
 
-4. Выберите **начать проверку** , чтобы начать проверку доступа.
+4. Select **Begin review** to start your access review.
 
-5. Проверьте доступ и убедитесь, что он все еще необходим.
+5. Review your access and determine whether it's still necessary.
 
-    ![Страница "Проверка доступа" с подробными сведениями об анализе](media/my-apps-portal/my-apps-portal-perform-access-reviews-page.png)
+    ![Access review page, showing the review details](media/my-apps-portal/my-apps-portal-perform-access-reviews-page.png)
 
     >[!Note]
-    >Если вы являетесь администратором и можете просмотреть доступ Организации к группам и приложениям, вы увидите другую страницу. Дополнительные сведения о проверке групп или приложений для организации см. в статье [Проверка доступа к группам или приложениям в проверках доступа Azure AD](https://docs.microsoft.com/azure/active-directory/governance/perform-access-review).
+    >If you're an administrator, and allowed to review your organization's access to groups and apps, you'll see a different page. For more information about reviewing groups or apps for your organization, see [Review access to groups or applications in Azure AD Access Reviews](https://docs.microsoft.com/azure/active-directory/governance/perform-access-review).
 
-6. Выберите **Да** , чтобы запретить доступ или **нет** для удаления доступа.
+6. Select **Yes** to keep your access or **No** to remove your access.
 
-    При выборе варианта **Да**может потребоваться указать обоснование в поле **Причина** .
+    If you select **Yes**, you might need to specify a justification in the **Reason** box.
 
-    ![Страница "Проверка доступа" с указанием поля "причина" с образцом текста](media/my-apps-portal/my-apps-portal-perform-access-reviews-reason-box.png)
+    ![Access review page, showing the Reason box with sample text](media/my-apps-portal/my-apps-portal-perform-access-reviews-reason-box.png)
 
 7. Нажмите кнопку **Submit** (Отправить).
 
-    Проверка доступа завершена, и вы вернетесь на портал " **Мои приложения** ".
+    Your access review is complete and you return to the **My Apps** portal.
 
     >[!Note]
-    >Вы можете изменить доступ в любое время, пока не завершится период проверки доступа. Если вы удалите доступ к приложению или группе, это не будет немедленно удалено. Удаление происходит, когда заканчивается период проверки доступа или когда администратор закрывает проверку.
+    >You can change your access at any time until your access review period ends. If you remove your access to an app or group, it's not removed immediately. The removal happens when the access review period ends or when an administrator closes the review.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Доступ к приложениям и их использование на портале "Мои приложения"](my-apps-portal-end-user-access.md).
+- [Access and use apps on the My Apps portal](my-apps-portal-end-user-access.md).
 
-- [Измените сведения о профиле](my-apps-portal-end-user-update-profile.md).
+- [Change your profile information](my-apps-portal-end-user-update-profile.md).
 
-- [Просмотр и обновление сведений, относящихся к группам](my-apps-portal-end-user-groups.md).
+- [View and update your groups-related information](my-apps-portal-end-user-groups.md).

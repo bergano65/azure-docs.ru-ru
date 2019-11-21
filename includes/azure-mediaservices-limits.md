@@ -1,60 +1,60 @@
 ---
 author: rothja
-ms.service: billing
+ms.service: cost-management-billing
 ms.topic: include
 ms.date: 11/09/2018
 ms.author: jroth
-ms.openlocfilehash: e61b804c20063e87c19df4484291f81fdbb03a7b
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.openlocfilehash: 49150daa783280f47cb9401434ebfab8f6204090
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72601099"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74224525"
 ---
 >[!NOTE]
->Для нефиксированных ресурсов откройте запрос в службу поддержки, чтобы запросить увеличение квот. Не создавайте дополнительные учетные записи служб мультимедиа Azure при попытке получить более высокие ограничения.
+>For resources that aren't fixed, open a support ticket to ask for an increase in the quotas. Don't create additional Azure Media Services accounts in an attempt to obtain higher limits.
 
 | Ресурс | Ограничение по умолчанию | 
 | --- | --- | 
-| Учетные записи служб мультимедиа Azure в одной подписке | 25 (фиксированное значение) |
-| Зарезервированные единицы мультимедиа на учетную запись служб мультимедиа |25 (S1)<br/>10 (S2, S3)<sup>1</sup> | 
+| Azure Media Services accounts in a single subscription | 25 (фиксированное значение) |
+| Media reserved units per Media Services account |25 (S1)<br/>10 (S2, S3)<sup>1</sup> | 
 | Число заданий на учетную запись платформы "Cлужбы мультимедиа" | 50 000<sup>2</sup> |
 | Цепных задач для задания | 30 (фиксированное значение) |
-| Учетная запись служб мультимедиа | 1 000 000|
+| Assets per Media Services account | 1 000 000|
 | 50 ресурсов на задачу | 50 |
 | Ресурсов на задание | 100 |
 | Уникальных указателей, связанных с ресурсом за один раз | 5<sup>4</sup> |
-| Динамические каналы на учетную запись служб мультимедиа |5|
+| Live channels per Media Services account |5|
 | Программ в остановленном состоянии на канал |50|
 | Программ в запущенном состоянии на канал |3|
-| Конечные точки потоковой передачи, остановленные или выполняемые для учетной записи служб мультимедиа|2|
+| Streaming endpoints that are stopped or running per Media Services account|2|
 | Единиц потоковой передачи на конечную точку потоковой передачи |10 |
 | Учетные записи хранения | 1000<sup>5</sup> (фиксированное значение) |
 | Политики | 1 000 000<sup>6</sup> |
-| Размер файла| В некоторых сценариях существует ограничение на максимальный размер файла, поддерживаемый при обработке в службах мультимедиа. <sup>7</sup> |
+| Размер файла| In some scenarios, there's a limit on the maximum file size supported for processing in Media Services.<sup>7</sup> |
 
-<sup>1</sup> Если изменить тип, например, с S2 на S1, то максимальные зарезервированные пределы единиц будут сброшены.
+<sup>1</sup>If you change the type, for example, from S2 to S1, the maximum reserved unit limits are reset.
 
-<sup>2</sup> Это число включает в себя поставленные в очередь, завершенные, активные и отмененные задания. Он не включает Удаленные задания. Старые задания можно удалять с помощью **IJob. Delete** или HTTP-запроса **Delete** .
+<sup>2</sup>This number includes queued, finished, active, and canceled jobs. It doesn't include deleted jobs. You can delete old jobs by using **IJob.Delete** or the **DELETE** HTTP request.
 
-Начиная с 1 апреля 2017, все записи заданий в учетной записи старше 90 дней автоматически удаляются вместе со связанными записями задач. Автоматическое удаление происходит, даже если общее число записей меньше максимальной квоты. Чтобы заархивировать задания и сведения о задачах, используйте код, описанный в разделе [Управление активами с помощью пакета SDK служб мультимедиа для .NET](../articles/media-services/previous/media-services-dotnet-manage-entities.md).
+As of April 1, 2017, any job record in your account older than 90 days is automatically deleted, along with its associated task records. Automatic deletion occurs even if the total number of records is below the maximum quota. To archive the job and task information, use the code described in [Manage assets with the Media Services .NET SDK](../articles/media-services/previous/media-services-dotnet-manage-entities.md).
 
-<sup>3</sup> При выполнении запроса на перечисление сущностей заданий на запрос возвращается не более 1 000 заданий. Чтобы контролировать все отправленные задания, используйте запросы Top или Skip, как описано в разделе [параметры запросов к системе OData](/previous-versions/dynamicscrm-2015/developers-guide/gg309461(v=crm.7)).
+<sup>3</sup>When you make a request to list job entities, a maximum of 1,000 jobs is returned per request. To keep track of all submitted jobs, use the top or skip queries as described in [OData system query options](/previous-versions/dynamicscrm-2015/developers-guide/gg309461(v=crm.7)).
 
-<sup>4</sup> Указатели не предназначены для управления доступом на уровне пользователей. Чтобы предоставить отдельным пользователям разные права доступа, используйте решения для управления цифровыми правами (DRM). Дополнительные сведения см. в статье [Защита содержимого с помощью служб мультимедиа Azure](../articles/media-services/previous/media-services-content-protection-overview.md).
+<sup>4</sup>Locators aren't designed for managing per-user access control. To give different access rights to individual users, use digital rights management (DRM) solutions. For more information, see [Protect your content with Azure Media Services](../articles/media-services/previous/media-services-content-protection-overview.md).
 
-<sup>5</sup> Учетные записи хранения должны быть в одной подписке Azure.
+<sup>5</sup>The storage accounts must be from the same Azure subscription.
 
-<sup>6</sup> Существует ограничение в 1 000 000 политик для различных политик служб мультимедиа. Например, для политики локатора или ContentKeyAuthorizationPolicy. 
+<sup>6</sup>There's a limit of 1,000,000 policies for different Media Services policies. An example is for the Locator policy or ContentKeyAuthorizationPolicy. 
 
 >[!NOTE]
-> Если вы всегда используете одни и те же дни и разрешения на доступ, используйте один и тот же идентификатор политики. Дополнительные сведения и пример см. [в разделе Управление ресурсами с помощью пакета SDK служб мультимедиа для .NET](../articles/media-services/previous/media-services-dotnet-manage-entities.md#limit-access-policies).
+> If you always use the same days and access permissions, use the same policy ID. For information and an example, see [Manage assets with the Media Services .NET SDK](../articles/media-services/previous/media-services-dotnet-manage-entities.md#limit-access-policies).
 
-<sup>7</sup> Максимальный размер, поддерживаемый для одного большого двоичного объекта, в настоящее время составляет до 5 ТБ в хранилище BLOB-объектов Azure. Дополнительные ограничения применяются в службах мультимедиа на основе размеров виртуальных машин, используемых службой. Ограничение размера применяется к отправляемым файлам, а также к файлам, которые создаются в результате обработки служб мультимедиа (кодирования или анализа). Если размер исходного файла превышает 260 ГБ, скорее всего, задание завершится ошибкой. 
+<sup>7</sup>The maximum size supported for a single blob is currently up to 5 TB in Azure Blob Storage. Additional limits apply in Media Services based on the VM sizes that are used by the service. The size limit applies to the files that you upload and also the files that get generated as a result of Media Services processing (encoding or analyzing). Если размер исходного файла превышает 260 ГБ, скорее всего, задание завершится ошибкой. 
 
-В следующей таблице показаны ограничения для зарезервированных единиц мультимедиа S1, S2 и S3. Если размер исходного файла превышает ограничения, определенные в таблице, задание кодирования завершается ошибкой. Если вы кодируете источники разрешения в 4 КБ в течение длительного времени, для достижения необходимой производительности необходимо использовать зарезервированные единицы мультимедиа S3. Если объем содержимого 4 КБ превышает ограничение в 260 ГБ на зарезервированных единицах мультимедиа S3, отправьте запрос в службу поддержки.
+The following table shows the limits on the media reserved units S1, S2, and S3. If your source file is larger than the limits defined in the table, your encoding job fails. If you encode 4K resolution sources of long duration, you're required to use S3 media reserved units to achieve the performance needed. If you have 4K content that's larger than the 260-GB limit on the S3 media reserved units, open a support ticket.
 
-|Тип зарезервированной единицы мультимедиа   |Максимальный размер входных данных (ГБ)|
+|Media reserved unit type   |Maximum input size (GB)|
 |---|---|
 |S1 |   26|
 |S2 | 60|

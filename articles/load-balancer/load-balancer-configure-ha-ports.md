@@ -1,6 +1,6 @@
 ---
 title: Настройка портов высокого уровня доступности для Azure Load Balancer
-titlesuffix: Azure Load Balancer
+titleSuffix: Azure Load Balancer
 description: Сведения о том, как использовать высокодоступные порты для балансировки нагрузки внутреннего трафика на всех портах.
 services: load-balancer
 documentationcenter: na
@@ -14,19 +14,19 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/21/2018
 ms.author: allensu
-ms.openlocfilehash: c0cf1eb62c8e01988c9014478ff72816e45ea64c
-ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
+ms.openlocfilehash: c2e787a1f81d9f3d31b981c31a0249dd362b7bb9
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68275613"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74225411"
 ---
 # <a name="configure-high-availability-ports-for-an-internal-load-balancer"></a>Настройка высокодоступных портов для внутренней подсистемы балансировки нагрузки
 
 Эта статья содержит пример развертывания высокодоступных портов для внутреннего балансировщика нагрузки. Сведения о конкретных конфигурациях виртуальных сетевых устройств (NVA) см. на веб-сайтах соответствующих поставщиков.
 
 >[!NOTE]
->Azure Load Balancer предлагается в двух ценовых категориях: "Базовый" и "Стандартный". В этой статье рассматривается Azure Load Balancer категории "Стандартный". Дополнительные сведения о Load Balancer категории "Базовый" см. в статье [Обзор балансировщика нагрузки Azure](load-balancer-overview.md).
+>Azure Load Balancer поддерживает два типа: категории "Базовый" и "Стандартный". В этой статье рассматривается Azure Load Balancer категории "Стандартный". Дополнительные сведения о Load Balancer категории "Базовый" см. в статье [Обзор балансировщика нагрузки Azure](load-balancer-overview.md).
 
 На рисунке приведена конфигурация для примера развертывания, описанного в этой статье:
 
@@ -101,6 +101,6 @@ lbrule = New-AzLoadBalancerRuleConfig -Name "HAPortsRule" -FrontendIpConfigurati
 azure network lb rule create --resource-group contoso-rg --lb-name contoso-ilb --name haportsrule --protocol all --frontend-port 0 --backend-port 0 --frontend-ip-name feilb --backend-address-pool-name beilb
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о [высокодоступных портах](load-balancer-ha-ports-overview.md).

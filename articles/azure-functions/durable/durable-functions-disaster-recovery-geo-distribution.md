@@ -1,24 +1,20 @@
 ---
 title: Аварийное восстановление и географическое распределение в устойчивых функциях — Azure
 description: Узнайте об аварийном восстановлении и географическом распределении в устойчивых функциях.
-services: functions
 author: MS-Santi
-manager: jeconnoc
-keywords: ''
-ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 04/25/2018
 ms.author: azfuncdf
-ms.openlocfilehash: f242a16bc89e6b229efa42b88ebd20ca174e2516
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: ba459d2d2f3aaf595c1d834e2b29a231e3b2bb12
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70098067"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74232943"
 ---
 # <a name="disaster-recovery-and-geo-distribution"></a>Аварийное восстановление и географическое распределение
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Краткое описание
 
 В Устойчивых функциях все состояния сохраняются в службе хранилища Azure. [Центр задач](durable-functions-task-hubs.md) — это логический контейнер для ресурсов службы хранилища Azure, которые используются для оркестрации. Функции оркестраторов и действий могут взаимодействовать друг с другом, только когда они принадлежат к одному центру задач.
 Описанные сценарии предлагают варианты развертывания для повышения уровня доступности и минимизации времени простоя в процессе аварийного восстановления.
@@ -87,6 +83,6 @@ ms.locfileid: "70098067"
 
 ![Схема, демонстрирующая сценарий 3.](./media/durable-functions-disaster-recovery-geo-distribution/durable-functions-geo-scenario03.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в статье [Проектирование высокодоступных приложений с использованием RA-GRS](../../storage/common/storage-designing-ha-apps-with-ragrs.md).

@@ -1,21 +1,16 @@
 ---
 title: Привязки мобильных приложений для службы "Функции Azure"
 description: Узнайте, как использовать привязки мобильных приложений Azure в функциях Azure.
-services: functions
-documentationcenter: na
 author: craigshoemaker
-manager: gwallace
-keywords: функции azure, функции, обработка событий, динамические вычисления, независимая архитектура
-ms.service: azure-functions
 ms.topic: reference
 ms.date: 11/21/2017
 ms.author: cshoe
-ms.openlocfilehash: 37192a25bff794ac019fd29b47e0e8ad161790c9
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 474cdc52d34d3f5e00dee69b7cc9861042cbcc04
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70097324"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74231131"
 ---
 # <a name="mobile-apps-bindings-for-azure-functions"></a>Привязки мобильных приложений для службы "Функции Azure" 
 
@@ -34,7 +29,7 @@ ms.locfileid: "70097324"
 
 [!INCLUDE [functions-package](../../includes/functions-package.md)]
 
-## <a name="input"></a>Ввод
+## <a name="input"></a>Входные данные
 
 Входная привязка мобильных приложений загружает запись из конечной точки мобильной таблицы и передает ее в функцию. В функциях C# и F# любые изменения, внесенные в запись, автоматически отправляются обратно в таблицу после успешного выхода из функции.
 
@@ -42,7 +37,7 @@ ms.locfileid: "70097324"
 
 Языковой пример см. в разделах:
 
-* [Скрипт C# (CSX)](#input---c-script-example)
+* [Сценарий C# (CSX)](#input---c-script-example)
 * JavaScript
 
 ### <a name="input---c-script-example"></a>Пример входных данных сценария C#
@@ -162,7 +157,7 @@ module.exports = function (context, myQueueItem) {
 
 В функциях C# и F# любые изменения, внесенные во входную запись (входной параметр), после успешного выхода из функции автоматически отправятся обратно в таблицу. Изменить запись в JavaScript невозможно.
 
-## <a name="output"></a>Вывод
+## <a name="output"></a>Выходные данные
 
 Используйте выходную привязку мобильных приложений, чтобы сделать новую запись в таблице мобильных приложений.  
 
@@ -171,7 +166,7 @@ module.exports = function (context, myQueueItem) {
 Языковой пример см. в разделах:
 
 * [C#](#output---c-example)
-* [Скрипт C# (CSX)](#output---c-script-example)
+* [Сценарий C# (CSX)](#output---c-script-example)
 * [JavaScript](#output---javascript-example)
 
 ### <a name="output---c-example"></a>Пример выходных данных C#
@@ -321,7 +316,7 @@ public static object Run(
 
 Для доступа к выходной записи в функциях Node.js используйте `context.bindings.<name>`.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md)

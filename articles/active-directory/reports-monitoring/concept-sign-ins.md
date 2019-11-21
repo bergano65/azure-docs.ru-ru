@@ -17,12 +17,12 @@ ms.date: 10/28/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 778353621491f912d3237900785e6dee17bf975e
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: 6e7b0c379783af2f9131d487f45c0f4e2009e258
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74014496"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74232146"
 ---
 # <a name="sign-in-activity-reports-in-the-azure-active-directory-portal"></a>Отчеты о действиях входа на портале Azure Active Directory
 
@@ -30,24 +30,24 @@ ms.locfileid: "74014496"
 
 - **Действие** 
     - **События входа**. Информация об использовании управляемых приложений и действиях входа пользователей.
-    - **Журналы аудита** - [журналы аудита](concept-audit-logs.md) предоставляют сведения о системных действиях для пользователей и управления группами, управляемых приложений и действий с каталогами.
-- **безопасность** 
-    - **Рискованные входы** . [рискованный вход](concept-risky-sign-ins.md) — это индикатор попытки входа, которая не является законным владельцем учетной записи пользователя.
+    - **Audit logs** - [Audit logs](concept-audit-logs.md) provide system activity information about users and group management, managed applications, and directory activities.
+- **Безопасность** 
+    - **Risky sign-ins** - A [risky sign-in](concept-risky-sign-ins.md) is an indicator for a sign-in attempt by someone who isn't the legitimate owner of a user account.
     - **Пользователи, находящиеся в группе риска**. [Пользователи, находящиеся в группе риска](concept-user-at-risk.md) означает, что конфиденциальность учетной записи пользователя, возможно, нарушена.
 
-В этой статье приводятся общие сведения о отчете о входе в систему.
+This article gives you an overview of the sign-ins report.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 ### <a name="who-can-access-the-data"></a>Кто может получить доступ к данным?
 
-* Пользователи в роли "администратор безопасности", "читатель безопасности" и "читатель отчетов"
+* Users in the Security Administrator, Security Reader, Global Reader, and Report Reader roles
 * Глобальные администраторы.
 * Любой пользователь (не администратор) может получить доступ к своим данным о действиях входа. 
 
 ### <a name="what-azure-ad-license-do-you-need-to-access-sign-in-activity"></a>Какие лицензии Azure AD требуются для доступа к действию входа?
 
-* Для просмотра отчета обо всех действиях входа с клиентом должна быть связана лицензия Azure AD Premium. Чтобы обновить выпуск Azure Active Directory, ознакомьтесь со статьей [Регистрация для работы с выпусками Azure Active Directory Premium](../fundamentals/active-directory-get-started-premium.md). Для отображения данных в отчетах после обновления до лицензии Premium без действий с данными до обновления может потребоваться несколько дней.
+* Для просмотра отчета обо всех действиях входа с клиентом должна быть связана лицензия Azure AD Premium. See [Getting started with Azure Active Directory Premium](../fundamentals/active-directory-get-started-premium.md) to upgrade your Azure Active Directory edition. It will take a couple of days for the data to show up in the reports after you upgrade to a premium license with no data activities before the upgrade.
 
 ## <a name="sign-ins-report"></a>Отчет о входе
 
@@ -57,9 +57,9 @@ ms.locfileid: "74014496"
 * Сколько пользователей входили в течение недели?
 * Каков статус их входа?
 
-Начните с [портал Azure](https://portal.azure.com). Чтобы получить доступ к отчету о событиях входа, выберите **входы**, перейдите к **мониторингу.** Для отображения некоторых записей входа на портале может потребоваться до двух часов.
+Start with [Azure portal](https://portal.azure.com). To access the sign-ins report select **Sign-ins**, continue to the **Monitoring.** It may take up to two hours for some sign-in records to show up in the portal.
 
-![Действие входа](./media/concept-sign-ins/reporting-azure-sign-in-screen.png "Действия при входе")
+![Sign-in activity](./media/concept-sign-ins/reporting-azure-sign-in-screen.png "Действия при входе")
 
 > [!IMPORTANT]
 > В отчете о событиях входа отображаются только **интерактивные** события входа, то есть когда пользователь выполняет вход вручную, указывая имя пользователя и пароль. В этом отчете не отображаются неинтерактивные события входа, такие как аутентификация между службами. 
@@ -68,36 +68,36 @@ ms.locfileid: "74014496"
 
 - дата входа;
 - пользователь;
-- Приложение, в которое пользователь выполнил вход
+- The application the user has signed in to
 - состояние входа;
 - состояние обнаружения риска;
 - состояние требования многофакторной проверки подлинности (MFA).
 
-![Действие входа](./media/concept-sign-ins/sign-in-activity.png "Действия при входе")
+![Sign-in activity](./media/concept-sign-ins/sign-in-activity.png "Действия при входе")
 
 Представление списка можно настроить, щелкнув **Столбцы** на панели инструментов.
 
-![Действие входа](./media/concept-sign-ins/19.png "Действия при входе")
+![Sign-in activity](./media/concept-sign-ins/19.png "Действия при входе")
 
-Отображение дополнительных полей или удаление уже отображаемых полей.
+Displays additional fields or remove fields that are already displayed.
 
-![Действие входа](./media/concept-sign-ins/02.png "Действия при входе")
+![Sign-in activity](./media/concept-sign-ins/02.png "Действия при входе")
 
 Чтобы получить более подробную информацию, выберите элемент в списке.
 
-![Действие входа](./media/concept-sign-ins/basic-sign-in.png "Действия при входе")
+![Sign-in activity](./media/concept-sign-ins/basic-sign-in.png "Действия при входе")
 
 > [!NOTE]
-> Теперь клиенты могут устранять неполадки политик условного доступа с помощью всех отчетов о входе в систему. Если щелкнуть вкладку **Условный доступ** для записи входа, клиенты смогут просматривать состояние условного доступа и подробно ознакомиться с политиками, применяемыми к входу и результату для каждой политики.
+> Customers can now troubleshoot Conditional Access policies through all sign-in reports. By clicking on the **Conditional Access** tab for a sign-in record, customers can review the Conditional Access status and dive into the details of the policies that applied to the sign-in and the result for each policy.
 > Дополнительные сведения см. в разделе [Часто задаваемые вопросы об отчетах Azure Active Directory](reports-faq.md#conditional-access).
 
 
 
 ## <a name="filter-sign-in-activities"></a>Фильтрация действий входа
 
-Во-первых, можно сократить данные, передаваемые в отчет, на уровень, который подходит для вас. Во-вторых, отфильтруйте данные входа с помощью поля "Дата" в качестве фильтра по умолчанию. Azure AD предоставляет широкий спектр дополнительных фильтров, которые можно задать.
+First, narrowing down the reported data to a level that works for you. Second, filter sign-ins data using date field as default filter. Azure AD provides you with a broad range of additional filters you can set.
 
-![Действие входа](./media/concept-sign-ins/04.png "Действия при входе")
+![Sign-in activity](./media/concept-sign-ins/04.png "Действия при входе")
 
 Фильтр по **пользователю** позволяет указать интересующее вас имя пользователя или имя участника-пользователя (UPN).
 
@@ -119,7 +119,7 @@ ms.locfileid: "74014496"
 Фильтр **дат** позволяет определить интервал времени для возвращаемых данных.  
 Возможные значения:
 
-- Один месяц
+- One month
 - 7 дней
 - 24 часа
 - Настраиваемый интервал
@@ -127,33 +127,33 @@ ms.locfileid: "74014496"
 При выборе пользовательского интервала времени можно настроить время начала и окончания.
 
 Если вы добавите дополнительные поля в представление входа, они автоматически добавляются в список фильтров. Например, добавив в свой список поле **клиентское приложение**, вы также получите еще один параметр фильтра, который позволит вам установить следующие фильтры:  
-![Действие входа](./media/concept-sign-ins/12.png "Действия при входе")
+![Sign-in activity](./media/concept-sign-ins/12.png "Действия при входе")
 
 - **"Обзор"**  
-    Этот фильтр показывает все события, в которых предпринимались попытки входа с помощью потоков браузера.
-- **Exchange ActiveSync (поддерживается)**  
-    Этот фильтр показывает все попытки входа, в которых была предпринята попытка использования протокола Exchange ActiveSync (EAS) на поддерживаемых платформах, таких как iOS, Android и Windows Phone.
-- **Exchange ActiveSync (не поддерживается)**  
-    Этот фильтр показывает все попытки входа, при которых протокол EAS попытался от неподдерживаемых платформ, таких как Linux дистрибутивов.
-- **Мобильные приложения и настольные клиенты** В фильтре отображаются все попытки входа, которые не использовали потоки браузера. Например, мобильные приложения с любой платформы, использующие любой протокол или Настольные клиентские приложения, например Office в Windows или MacOS.
+    This filter shows all events where sign-in attempts were attempted using browser flows.
+- **Exchange ActiveSync (supported)**  
+    This filter shows all sign-in attempts where the Exchange ActiveSync (EAS) protocol has been attempted from supported platforms like iOS, Android, and Windows Phone.
+- **Exchange ActiveSync (unsupported)**  
+    This filter shows all sign-in attempts where the EAS protocol has been attempted from unsupported platforms like, Linux distros.
+- **Mobile Apps and Desktop clients** The filter shows all sign-in attempts that were not using browser flows. For example, mobile apps from any platform using any protocol or from Desktop client apps like Office on Windows or MacOS.
   
-- **Другие клиенты**
-    - **ОШИБОЧ**  
-        Устаревший почтовый клиент, использующий IMAP для получения электронной почты.
-    - **ДЕЙСТВУЕТ**  
-        Office 2013, где ADAL включена и использует MAPI.
-    - **Старые клиенты Office**  
-        Office 2013 в конфигурации по умолчанию, в которой не включена библиотека ADAL и используется MAPI, или Office 2016, где ADAL отключено.
-    - **Рор**  
-        Устаревший почтовый клиент, использующий POP3 для получения электронной почты.
-    - **SMTP-**  
-        Устаревший почтовый клиент, использующий протокол SMTP для отправки электронной почты.
+- **Other clients**
+    - **IMAP**  
+        A legacy mail client using IMAP to retrieve email.
+    - **MAPI**  
+        Office 2013, where ADAL is enabled and it is using MAPI.
+    - **Old Office clients**  
+        Office 2013 in its default configuration where ADAL is not enabled and it is using MAPI, or Office 2016 where ADAL has been disabled.
+    - **POP**  
+        A legacy mail client using POP3 to retrieve email.
+    - **SMTP**  
+        A legacy mail client using SMTP to send email.
 
 ## <a name="download-sign-in-activities"></a>Скачивание данных о действиях входа
 
-Щелкните " **скачать** ", чтобы создать CSV-файл или формат JSON для последних 250 000 записей. Начните с [загрузки данных входа,](quickstart-download-sign-in-report.md) если вы хотите работать с ним за пределами портал Azure.  
+Click the **Download** option to create a CSV or JSON file of the most recent 250,000 records. Start with [download the sign-ins data](quickstart-download-sign-in-report.md) if you want to work with it outside the Azure portal.  
 
-![Загрузить](./media/concept-sign-ins/71.png "Скачивание")
+![Загрузить](./media/concept-sign-ins/71.png "Download (Скачать)")
 
 > [!IMPORTANT]
 > На число записей, которые можно скачать, влияют особенности [политики хранения отчетов Azure Active Directory](reference-reports-data-retention.md).  
@@ -161,18 +161,18 @@ ms.locfileid: "74014496"
 
 ## <a name="sign-ins-data-shortcuts"></a>Точки для получения данных о входе
 
-Azure AD и портал Azure предоставляют дополнительные точки входа для данных входа.
+Azure AD and the Azure portal both provide you with additional entry points to sign-ins data:
 
 - Обзор защиты удостоверений
-- Users
+- Пользователи
 - Группы
 - корпоративные приложения.
 
 ### <a name="users-sign-ins-data-in-identity-security-protection"></a>Данные событий входа пользователей в разделе защиты удостоверений
 
-На графе входа пользователя на странице обзора **Защита защиты удостоверений** отображаются еженедельные статистические выражения для входа в систему. Значение по умолчанию для периода времени составляет 30 дней.
+The user sign-in graph in the **Identity security protection** overview page shows weekly aggregations of sign-ins. The default for the time period is 30 days.
 
-![Действие входа](./media/concept-sign-ins/06.png "Действия при входе")
+![Sign-in activity](./media/concept-sign-ins/06.png "Действия при входе")
 
 Щелкнув день на графике входов, вы увидите обзор действий входа за этот день.
 
@@ -191,7 +191,7 @@ Azure AD и портал Azure предоставляют дополнитель
 - Идентификатор приложения
 - Приложение
 - Клиент
-- Место проведения
+- Location
 - IP-адрес
 - Дата
 - Требуется многофакторная идентификация
@@ -202,23 +202,23 @@ Azure AD и портал Azure предоставляют дополнитель
 
 На странице **Пользователи** можно получить полный обзор всех входов пользователей, щелкнув **Вход в систему** в разделе **Действия**.
 
-![Действие входа](./media/concept-sign-ins/08.png "Действия при входе")
+![Sign-in activity](./media/concept-sign-ins/08.png "Действия при входе")
 
 ## <a name="usage-of-managed-applications"></a>Использование управляемых приложений
 
 Представление данных входа, ориентированное на приложения, позволяет ответить на такие вопросы:
 
 * Кто использует мои приложения?
-* Каковы три основных приложения в Организации?
-* Как работает новейшее приложение?
+* What are the top three applications in your organization?
+* How is my newest application doing?
 
-Точкой входа для этих данных являются первые три приложения в Организации. Данные содержатся в отчете за последние 30 дней в разделе **Обзор** раздела **корпоративные приложения**.
+The entry point to this data is the top three applications in your organization. The data is contained within the last 30 days report in the **Overview** section under **Enterprise applications**.
 
-![Действие входа](./media/concept-sign-ins/10.png "Действия при входе")
+![Sign-in activity](./media/concept-sign-ins/10.png "Действия при входе")
 
-На диаграмме использования приложений еженедельно суммируются операции входа для трех ведущих приложений за определенный период времени. который по умолчанию составляет 30 дней.
+The app-usage graphs weekly aggregations of sign-ins for your top three applications in a given time period. который по умолчанию составляет 30 дней.
 
-![Действие входа](./media/concept-sign-ins/graph-chart.png "Действия при входе")
+![Sign-in activity](./media/concept-sign-ins/graph-chart.png "Действия при входе")
 
 Если нужно, вы можете переместить фокус на определенное приложение.
 
@@ -230,11 +230,11 @@ Azure AD и портал Azure предоставляют дополнитель
 
 ## <a name="office-365-activity-logs"></a>Журналы действий Office 365
 
-Журналы действий Office 365 можно просмотреть в [центре администрирования Microsoft 365](https://docs.microsoft.com/office365/admin/admin-overview/about-the-admin-center). Рассмотрим тот момент, когда действия Office 365 и журналы действий Azure AD совместно используют значительное количество ресурсов каталога. Полный обзор журналов действий Office 365 предоставляется только в центре администрирования Microsoft 365. 
+You can view Office 365 activity logs from the [Microsoft 365 admin center](https://docs.microsoft.com/office365/admin/admin-overview/about-the-admin-center). Consider the point  that, Office 365 activity and Azure AD activity logs share a significant number of the directory resources. Only the Microsoft 365 admin center provides a full view of the Office 365 activity logs. 
 
-Вы также можете получить доступ к журналам действий Office 365 программным путем с помощью [API-интерфейсов управления office 365](https://docs.microsoft.com/office/office-365-management-api/office-365-management-apis-overview).
+You can also access the Office 365 activity logs programmatically by using the [Office 365 Management APIs](https://docs.microsoft.com/office/office-365-management-api/office-365-management-apis-overview).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Коды ошибок в отчете о действиях входа](reference-sign-ins-error-codes.md)
 * [Политики хранения отчетов Azure Active Directory](reference-reports-data-retention.md)

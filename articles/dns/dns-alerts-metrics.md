@@ -1,32 +1,30 @@
 ---
-title: Метрики и оповещения Azure DNS | Документация Майкрософт
-description: Дополнительные сведения о метриках и оповещениях Azure DNS.
+title: Metrics and alerts - Azure DNS
+description: With this learning path, get started with Azure DNS metrics and alerts.
 services: dns
 documentationcenter: na
-author: vhorne
-manager: jennoc
-editor: ''
-ms.assetid: ''
+author: asudbring
+manager: kumudD
 ms.service: dns
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/17/2018
-ms.author: victorh
-ms.openlocfilehash: a9d8bc172eb5f5e0e119a0bde56fb167f7a0c2b2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: allensu
+ms.openlocfilehash: dc4d7de3d235fcdaf4a7f681065ba6e2857eb2ce
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64699155"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74212397"
 ---
 # <a name="azure-dns-metrics-and-alerts"></a>Метрики и оповещения Azure DNS
 Azure DNS является службой размещения доменов DNS, осуществляющей разрешение имен на базе инфраструктуры Microsoft Azure. В этой статье описываются метрики и оповещения службы Azure DNS.
 
 ## <a name="azure-dns-metrics"></a>Метрики Azure DNS
 
-Azure DNS предоставляет клиентские метрики, позволяющие им вести наблюдение за работой компонентов их зон DNS, размещенных в службе. Кроме того, с помощью метрик Azure DNS можно настроить и получать оповещения на основе интересующих условий. Метрики предоставляются через [службу Azure Monitor](../azure-monitor/index.yml). Azure DNS предоставляет следующие метрики через Azure Monitor для зон DNS.
+Azure DNS provides metrics for customers to enable them to monitor specific aspects of their DNS zones hosted in the service. Кроме того, с помощью метрик Azure DNS можно настроить и получать оповещения на основе интересующих условий. Метрики предоставляются через [службу Azure Monitor](../azure-monitor/index.yml). Azure DNS предоставляет следующие метрики через Azure Monitor для зон DNS.
 
 -   QueryVolume
 -   RecordSetCount
@@ -36,7 +34,7 @@ Azure DNS предоставляет клиентские метрики, поз
 >[!NOTE]
 > В настоящее время эти метрики доступны только для общедоступных зон DNS, размещенных в Azure DNS. При наличии в DNS Azure частных зон метрики не предоставляют данных по этим зонам. Кроме того, метрики и компоненты системы предупреждений поддерживаются только в общедоступном облаке Azure. В дальнейшем будет осуществляться поддержка частных облаков. 
 
-Наиболее детализированные элемент, вы можете просматривать метрики такое зона DNS. Метрики для отдельных записей ресурсов в пределах зоны не отображается в данный момент.
+The most granular element that you can see metrics for is a DNS zone. You cannot currently see metrics for individual resource records within a zone.
 
 ### <a name="query-volume"></a>Объем запросов
 

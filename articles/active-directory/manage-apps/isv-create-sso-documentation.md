@@ -1,6 +1,6 @@
 ---
-title: Создание и публикация документации единый вход для приложения
-description: Рекомендации для независимых поставщиков программного обеспечения на интеграцию с Azure Active Directory
+title: Create & publish single sign-on documentation for your application
+description: Guidance for independent software vendors on integrating with Azure Active Directory
 services: active-directory
 author: barbaraselden
 manager: CelesteDG
@@ -12,53 +12,53 @@ ms.date: 05/22/2019
 ms.author: baselden
 ms.reviewer: jeeds
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 53221343ac606b6076cc9cc3cff6e0f96c1a3ac3
-ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
+ms.openlocfilehash: cb223ec8ab7b5c053136c78d3b4ca30ad4da4e18
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67659597"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74232287"
 ---
-# <a name="create-and-publish-single-sign-on-documentation-for-your-application"></a>Создание и публикация документации единый вход для приложения   
+# <a name="create-and-publish-single-sign-on-documentation-for-your-application"></a>Create and publish single sign-on documentation for your application   
 
-## <a name="documentation-on-your-site"></a>Документация по веб-узла
+## <a name="documentation-on-your-site"></a>Documentation on your site
 
-Простота адаптации большую роль играет в решения корпоративного программного обеспечения. Очистите простой для понимания документации поддерживает клиентов в процессе их внедрения и сокращает затраты на поддержку. Работа с тысячами поставщиков программного обеспечения Майкрософт были выявлены, то, что работает.
+Ease of adoption is a significant factor in enterprise software decisions. Clear easy-to-follow documentation supports your customers in their adoption journey and reduces support costs. Working with thousands of software vendors, Microsoft has seen what works.
 
-Корпорация Майкрософт рекомендует включать что документации на сайте как минимум следующие элементы.
+We recommend that your documentation on your site at a minimum include the following items.
 
-* Общие сведения о вашей функции единого входа
+* Introduction to your SSO functionality
 
-  * Поддерживаемые протоколы
+  * Protocols supported
 
-  * Версии и номера SKU
+  * Version and SKU
 
-  * Список поддерживаемых поставщиков удостоверений с помощью ссылки на документацию
+  * Supported Identity Providers list with documentation links
 
-* Сведения о лицензировании для вашего приложения
+* Licensing information for your application
 
-* Управление доступом на основе ролей для настройки единого входа
+* Role-based access control for configuring SSO
 
-* Действия по настройке единого входа
+* SSO Configuration Steps
 
-  * Элементы конфигурации пользовательского интерфейса для SAML с ожидаемыми значениями от поставщика
+  * UI configuration elements for SAML with expected values from the provider
 
-  * Сведения о поставщике услуг должны быть переданы поставщиков удостоверений
+  * Service provider information to be passed to identity providers
 
-* Если OIDC/OAuth
+* If OIDC/OAuth
 
-  * Список разрешений, необходимых для согласия с делового обоснования
+  * List of permissions required for consent with business justifications
 
-* Этапы тестирования для пилотных пользователей
+* Testing steps for pilot users
 
-* Сведения об устранении неполадок, включая коды ошибок и сообщений
+* Troubleshooting information, including error codes and messages
 
-* Механизмы поддержки для клиентов
+* Support mechanisms for customers
 
-## <a name="documentation-on-the-microsoft-site"></a>Документация на сайте Microsoft
+## <a name="documentation-on-the-microsoft-site"></a>Documentation on the Microsoft Site
 
-При перечислении приложения с помощью коллекции Azure Active Directory приложение, которое также публикует приложение в Azure Marketplace, Майкрософт будет создавать документацию по нашим общим клиентам, объясняя пошаговый процесс. Вы увидите пример [здесь](https://aka.ms/appstutorial). Эта документация создан на основе заявку в коллекции, и можно легко обновить его при внесении изменений в приложение с помощью учетной записи GitHub.
+When you list your application with the Azure Active Directory Application Gallery, which also publishes your application in the Azure Marketplace, Microsoft will generate documentation for our mutual customers explaining the step-by-step process. You can see an example [here](https://aka.ms/appstutorial). This documentation is created based on your submission to the gallery, and you can easily update it if you make changes to your application using your GitHub account.
 
 ## <a name="next-steps"></a>Следующие шаги
 
-[Добавьте свое приложение в коллекции приложений Azure AD](https://microsoft.sharepoint.com/teams/apponboarding/Apps/SitePages/Default.aspx)
+[List your application in the Azure AD Application Gallery](https://microsoft.sharepoint.com/teams/apponboarding/Apps/SitePages/Default.aspx)

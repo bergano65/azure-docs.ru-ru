@@ -1,19 +1,16 @@
 ---
 title: Привязки Microsoft Graph для службы "Функции Azure"
 description: Узнайте, как использовать триггеры и привязки Microsoft Graph в решении "Функции Azure".
-services: functions
 author: craigshoemaker
-manager: gwallace
-ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 12/20/2017
 ms.author: cshoe
-ms.openlocfilehash: 1db929e3ec4b400113d04cb7dd1cd4b8d2e86a9a
-ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
+ms.openlocfilehash: f253aeb202671a3f90eabb1d04af95333540a239
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72176593"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74231150"
 ---
 # <a name="microsoft-graph-bindings-for-azure-functions"></a>Привязки Microsoft Graph для службы "Функции Azure"
 
@@ -87,7 +84,7 @@ ms.locfileid: "72176593"
 
 Языковой пример см. в разделах:
 
-* [Скрипт C# (CSX)](#auth-token---c-script-example)
+* [Сценарий C# (CSX)](#auth-token---c-script-example)
 * [JavaScript](#auth-token---javascript-example)
 
 #### <a name="auth-token---c-script-example"></a>Пример с маркером проверки подлинности: скрипт C#
@@ -213,7 +210,7 @@ module.exports = function (context, req) {
 |**name**||Обязательное. Имя переменной, используемое в коде функции для токена аутентификации. Дополнительные сведения см. в разделе [Использование входной привязки токена аутентификации в коде](#token-input-code).|
 |**type**||Обязательное. Необходимо задать значение `token`.|
 |**direction**||Обязательное. Необходимо задать значение `in`.|
-|**identity**|**Удостоверение**|Обязательное. Удостоверение, которое будет использоваться для выполнения действия. Может принимать одно из следующих значений:<ul><li><code>userFromRequest</code> — применяется только с [триггером HTTP]. Позволяет использовать удостоверение вызывающего пользователя.</li><li><code>userFromId</code> — позволяет использовать удостоверение пользователя, ранее вошедшего в систему, с указанным идентификатором. См. описание свойства <code>userId</code>.</li><li><code>userFromToken</code> — позволяет использовать удостоверение, представленное указанным токеном. См. описание свойства <code>userToken</code>.</li><li><code>clientCredentials</code> — позволяет использовать удостоверение приложения-функции.</li></ul>|
+|**identity**|**Удостоверение**|Обязательное. Удостоверение, которое будет использоваться для выполнения действия. Принимается одно из следующих значений:<ul><li><code>userFromRequest</code> — применяется только с [триггером HTTP]. Позволяет использовать удостоверение вызывающего пользователя.</li><li><code>userFromId</code> — позволяет использовать удостоверение пользователя, ранее вошедшего в систему, с указанным идентификатором. См. описание свойства <code>userId</code>.</li><li><code>userFromToken</code> — позволяет использовать удостоверение, представленное указанным токеном. См. описание свойства <code>userToken</code>.</li><li><code>clientCredentials</code> — позволяет использовать удостоверение приложения-функции.</li></ul>|
 |**userId**|**UserId**  |Требуется, только если для свойства _identity_ задано значение `userFromId`. Идентификатор субъекта-пользователя, связанный с пользователем, ранее вошедшим в систему.|
 |**userToken**|**UserToken**|Требуется, только если для свойства _identity_ задано значение `userFromToken`. Токен, предназначенный для приложения-функции. |
 |**Ресурс**|**resource**|Обязательное. URL-адрес ресурса Azure AD, для которого запрашивается маркер.|
@@ -245,7 +242,7 @@ module.exports = function (context, req) {
 
 Языковой пример см. в разделах:
 
-* [Скрипт C# (CSX)](#excel-input---c-script-example)
+* [Сценарий C# (CSX)](#excel-input---c-script-example)
 * [JavaScript](#excel-input---javascript-example)
 
 #### <a name="excel-input---c-script-example"></a>Пример со входной привязкой Excel: скрипт C#
@@ -348,7 +345,7 @@ module.exports = function (context, req) {
 |**name**||Обязательное. Имя переменной, используемое в коде функции для таблицы Excel. Дополнительные сведения см. в разделе [Использование входной привязки таблицы Excel в коде](#excel-input-code).|
 |**type**||Обязательное. Необходимо задать значение `excel`.|
 |**direction**||Обязательное. Необходимо задать значение `in`.|
-|**identity**|**Удостоверение**|Обязательное. Удостоверение, которое будет использоваться для выполнения действия. Может принимать одно из следующих значений:<ul><li><code>userFromRequest</code> — применяется только с [триггером HTTP]. Позволяет использовать удостоверение вызывающего пользователя.</li><li><code>userFromId</code> — позволяет использовать удостоверение пользователя, ранее вошедшего в систему, с указанным идентификатором. См. описание свойства <code>userId</code>.</li><li><code>userFromToken</code> — позволяет использовать удостоверение, представленное указанным токеном. См. описание свойства <code>userToken</code>.</li><li><code>clientCredentials</code> — позволяет использовать удостоверение приложения-функции.</li></ul>|
+|**identity**|**Удостоверение**|Обязательное. Удостоверение, которое будет использоваться для выполнения действия. Принимается одно из следующих значений:<ul><li><code>userFromRequest</code> — применяется только с [триггером HTTP]. Позволяет использовать удостоверение вызывающего пользователя.</li><li><code>userFromId</code> — позволяет использовать удостоверение пользователя, ранее вошедшего в систему, с указанным идентификатором. См. описание свойства <code>userId</code>.</li><li><code>userFromToken</code> — позволяет использовать удостоверение, представленное указанным токеном. См. описание свойства <code>userToken</code>.</li><li><code>clientCredentials</code> — позволяет использовать удостоверение приложения-функции.</li></ul>|
 |**userId**|**UserId**  |Требуется, только если для свойства _identity_ задано значение `userFromId`. Идентификатор субъекта-пользователя, связанный с пользователем, ранее вошедшим в систему.|
 |**userToken**|**UserToken**|Требуется, только если для свойства _identity_ задано значение `userFromToken`. Токен, предназначенный для приложения-функции. |
 |**path**|**Путь**|Обязательное. Путь к книге Excel в OneDrive.|
@@ -360,7 +357,7 @@ module.exports = function (context, req) {
 
 Для этой привязки требуются следующие разрешения Azure AD:
 
-|Resource|Разрешение|
+|Ресурс|Разрешение|
 |--------|--------|
 |Microsoft Graph|Чтение файлов пользователей|
 
@@ -394,7 +391,7 @@ module.exports = function (context, req) {
 
 Языковой пример см. в разделах:
 
-* [Скрипт C# (CSX)](#excel-output---c-script-example)
+* [Сценарий C# (CSX)](#excel-output---c-script-example)
 * [JavaScript](#excel-output---javascript-example)
 
 #### <a name="excel-output---c-script-example"></a>Пример с выходной привязкой Excel: скрипт C#
@@ -510,22 +507,22 @@ module.exports = function (context, req) {
 |**name**||Обязательное. Имя переменной, используемое в коде функции для токена аутентификации. Дополнительные сведения см. в разделе [Использование выходной привязки таблицы Excel в коде](#excel-output-code).|
 |**type**||Обязательное. Необходимо задать значение `excel`.|
 |**direction**||Обязательное. Необходимо задать значение `out`.|
-|**identity**|**Удостоверение**|Обязательное. Удостоверение, которое будет использоваться для выполнения действия. Может принимать одно из следующих значений:<ul><li><code>userFromRequest</code> — применяется только с [триггером HTTP]. Позволяет использовать удостоверение вызывающего пользователя.</li><li><code>userFromId</code> — позволяет использовать удостоверение пользователя, ранее вошедшего в систему, с указанным идентификатором. См. описание свойства <code>userId</code>.</li><li><code>userFromToken</code> — позволяет использовать удостоверение, представленное указанным токеном. См. описание свойства <code>userToken</code>.</li><li><code>clientCredentials</code> — позволяет использовать удостоверение приложения-функции.</li></ul>|
+|**identity**|**Удостоверение**|Обязательное. Удостоверение, которое будет использоваться для выполнения действия. Принимается одно из следующих значений:<ul><li><code>userFromRequest</code> — применяется только с [триггером HTTP]. Позволяет использовать удостоверение вызывающего пользователя.</li><li><code>userFromId</code> — позволяет использовать удостоверение пользователя, ранее вошедшего в систему, с указанным идентификатором. См. описание свойства <code>userId</code>.</li><li><code>userFromToken</code> — позволяет использовать удостоверение, представленное указанным токеном. См. описание свойства <code>userToken</code>.</li><li><code>clientCredentials</code> — позволяет использовать удостоверение приложения-функции.</li></ul>|
 |**UserId** |**userId** |Требуется, только если для свойства _identity_ задано значение `userFromId`. Идентификатор субъекта-пользователя, связанный с пользователем, ранее вошедшим в систему.|
 |**userToken**|**UserToken**|Требуется, только если для свойства _identity_ задано значение `userFromToken`. Токен, предназначенный для приложения-функции. |
 |**path**|**Путь**|Обязательное. Путь к книге Excel в OneDrive.|
 |**worksheetName**|**WorksheetName**|Лист, на котором находится таблица.|
 |**tableName**|**TableName**|Это имя таблицы. Если это свойство не указано, будет использоваться содержимое листа.|
-|**updateType**|**UpdateType**|Обязательное. Тип изменения, которое требуется внести в таблицу. Может принимать одно из следующих значений:<ul><li><code>update</code> — замена содержимого таблицы в OneDrive.</li><li><code>append</code> — добавление полезных данных в конец таблицы в OneDrive путем создания новых строк.</li></ul>|
+|**updateType**|**UpdateType**|Обязательное. Тип изменения, которое требуется внести в таблицу. Принимается одно из следующих значений:<ul><li><code>update</code> — замена содержимого таблицы в OneDrive.</li><li><code>append</code> — добавление полезных данных в конец таблицы в OneDrive путем создания новых строк.</li></ul>|
 
 <a name="excel-output-code"></a>
 ### <a name="excel-output---usage"></a>Использование выходной привязки Excel
 
 Для этой привязки требуются следующие разрешения Azure AD:
 
-|Resource|Разрешение|
+|Ресурс|Разрешение|
 |--------|--------|
-|Microsoft Graph|Получите полный доступ к файлам пользователя|
+|Microsoft Graph|Полный доступ к файлам пользователя|
 
 Привязка предоставляет следующие типы функций .NET:
 - string[][];
@@ -553,7 +550,7 @@ module.exports = function (context, req) {
 
 Языковой пример см. в разделах:
 
-* [Скрипт C# (CSX)](#file-input---c-script-example)
+* [Сценарий C# (CSX)](#file-input---c-script-example)
 * [JavaScript](#file-input---javascript-example)
 
 #### <a name="file-input---c-script-example"></a>Пример со входной привязкой файла: скрипт C#
@@ -656,7 +653,7 @@ module.exports = function (context, req) {
 |**name**||Обязательное. Имя переменной, используемое в коде функции для файла. Дополнительные сведения см. в разделе [Использование входной привязки файлов OneDrive в коде](#onedrive-input-code).|
 |**type**||Обязательное. Необходимо задать значение `onedrive`.|
 |**direction**||Обязательное. Необходимо задать значение `in`.|
-|**identity**|**Удостоверение**|Обязательное. Удостоверение, которое будет использоваться для выполнения действия. Может принимать одно из следующих значений:<ul><li><code>userFromRequest</code> — применяется только с [триггером HTTP]. Позволяет использовать удостоверение вызывающего пользователя.</li><li><code>userFromId</code> — позволяет использовать удостоверение пользователя, ранее вошедшего в систему, с указанным идентификатором. См. описание свойства <code>userId</code>.</li><li><code>userFromToken</code> — позволяет использовать удостоверение, представленное указанным токеном. См. описание свойства <code>userToken</code>.</li><li><code>clientCredentials</code> — позволяет использовать удостоверение приложения-функции.</li></ul>|
+|**identity**|**Удостоверение**|Обязательное. Удостоверение, которое будет использоваться для выполнения действия. Принимается одно из следующих значений:<ul><li><code>userFromRequest</code> — применяется только с [триггером HTTP]. Позволяет использовать удостоверение вызывающего пользователя.</li><li><code>userFromId</code> — позволяет использовать удостоверение пользователя, ранее вошедшего в систему, с указанным идентификатором. См. описание свойства <code>userId</code>.</li><li><code>userFromToken</code> — позволяет использовать удостоверение, представленное указанным токеном. См. описание свойства <code>userToken</code>.</li><li><code>clientCredentials</code> — позволяет использовать удостоверение приложения-функции.</li></ul>|
 |**userId**|**UserId**  |Требуется, только если для свойства _identity_ задано значение `userFromId`. Идентификатор субъекта-пользователя, связанный с пользователем, ранее вошедшим в систему.|
 |**userToken**|**UserToken**|Требуется, только если для свойства _identity_ задано значение `userFromToken`. Токен, предназначенный для приложения-функции. |
 |**path**|**Путь**|Обязательное. Путь к файлу в OneDrive.|
@@ -666,14 +663,14 @@ module.exports = function (context, req) {
 
 Для этой привязки требуются следующие разрешения Azure AD:
 
-|Resource|Разрешение|
+|Ресурс|Разрешение|
 |--------|--------|
 |Microsoft Graph|Чтение файлов пользователей|
 
 Привязка предоставляет следующие типы функций .NET:
 - byte[]
 - Поток
-- строка
+- string
 - Microsoft.Graph.DriveItem.
 
 
@@ -697,7 +694,7 @@ module.exports = function (context, req) {
 
 Языковой пример см. в разделах:
 
-* [Скрипт C# (CSX)](#file-output---c-script-example)
+* [Сценарий C# (CSX)](#file-output---c-script-example)
 * [JavaScript](#file-output---javascript-example)
 
 #### <a name="file-output---c-script-example"></a>Пример с выходной привязкой файла: скрипт C#
@@ -804,7 +801,7 @@ module.exports = function (context, req) {
 |**name**||Обязательное. Имя переменной, используемое в коде функции для файла. Дополнительные сведения см. в разделе [Использование выходной привязки файла OneDrive в коде](#onedrive-output-code).|
 |**type**||Обязательное. Необходимо задать значение `onedrive`.|
 |**direction**||Обязательное. Необходимо задать значение `out`.|
-|**identity**|**Удостоверение**|Обязательное. Удостоверение, которое будет использоваться для выполнения действия. Может принимать одно из следующих значений:<ul><li><code>userFromRequest</code> — применяется только с [триггером HTTP]. Позволяет использовать удостоверение вызывающего пользователя.</li><li><code>userFromId</code> — позволяет использовать удостоверение пользователя, ранее вошедшего в систему, с указанным идентификатором. См. описание свойства <code>userId</code>.</li><li><code>userFromToken</code> — позволяет использовать удостоверение, представленное указанным токеном. См. описание свойства <code>userToken</code>.</li><li><code>clientCredentials</code> — позволяет использовать удостоверение приложения-функции.</li></ul>|
+|**identity**|**Удостоверение**|Обязательное. Удостоверение, которое будет использоваться для выполнения действия. Принимается одно из следующих значений:<ul><li><code>userFromRequest</code> — применяется только с [триггером HTTP]. Позволяет использовать удостоверение вызывающего пользователя.</li><li><code>userFromId</code> — позволяет использовать удостоверение пользователя, ранее вошедшего в систему, с указанным идентификатором. См. описание свойства <code>userId</code>.</li><li><code>userFromToken</code> — позволяет использовать удостоверение, представленное указанным токеном. См. описание свойства <code>userToken</code>.</li><li><code>clientCredentials</code> — позволяет использовать удостоверение приложения-функции.</li></ul>|
 |**UserId** |**userId** |Требуется, только если для свойства _identity_ задано значение `userFromId`. Идентификатор субъекта-пользователя, связанный с пользователем, ранее вошедшим в систему.|
 |**userToken**|**UserToken**|Требуется, только если для свойства _identity_ задано значение `userFromToken`. Токен, предназначенный для приложения-функции. |
 |**path**|**Путь**|Обязательное. Путь к файлу в OneDrive.|
@@ -814,14 +811,14 @@ module.exports = function (context, req) {
 
 Для этой привязки требуются следующие разрешения Azure AD:
 
-|Resource|Разрешение|
+|Ресурс|Разрешение|
 |--------|--------|
-|Microsoft Graph|Получите полный доступ к файлам пользователя|
+|Microsoft Graph|Полный доступ к файлам пользователя|
 
 Привязка предоставляет следующие типы функций .NET:
 - byte[]
 - Поток
-- строка
+- string
 - Microsoft.Graph.DriveItem.
 
 
@@ -844,7 +841,7 @@ module.exports = function (context, req) {
 
 Языковой пример см. в разделах:
 
-* [Скрипт C# (CSX)](#outlook-output---c-script-example)
+* [Сценарий C# (CSX)](#outlook-output---c-script-example)
 * [JavaScript](#outlook-output---javascript-example)
 
 #### <a name="outlook-output---c-script-example"></a>Пример с выходной привязкой Outlook: скрипт C#
@@ -955,7 +952,7 @@ module.exports = function (context, req) {
 |**name**||Обязательное. Имя переменной, используемое в коде функции для сообщения электронной почты. Дополнительные сведения см. в разделе [Использование выходной привязки сообщений Outlook в коде](#outlook-output-code).|
 |**type**||Обязательное. Необходимо задать значение `outlook`.|
 |**direction**||Обязательное. Необходимо задать значение `out`.|
-|**identity**|**Удостоверение**|Обязательное. Удостоверение, которое будет использоваться для выполнения действия. Может принимать одно из следующих значений:<ul><li><code>userFromRequest</code> — применяется только с [триггером HTTP]. Позволяет использовать удостоверение вызывающего пользователя.</li><li><code>userFromId</code> — позволяет использовать удостоверение пользователя, ранее вошедшего в систему, с указанным идентификатором. См. описание свойства <code>userId</code>.</li><li><code>userFromToken</code> — позволяет использовать удостоверение, представленное указанным токеном. См. описание свойства <code>userToken</code>.</li><li><code>clientCredentials</code> — позволяет использовать удостоверение приложения-функции.</li></ul>|
+|**identity**|**Удостоверение**|Обязательное. Удостоверение, которое будет использоваться для выполнения действия. Принимается одно из следующих значений:<ul><li><code>userFromRequest</code> — применяется только с [триггером HTTP]. Позволяет использовать удостоверение вызывающего пользователя.</li><li><code>userFromId</code> — позволяет использовать удостоверение пользователя, ранее вошедшего в систему, с указанным идентификатором. См. описание свойства <code>userId</code>.</li><li><code>userFromToken</code> — позволяет использовать удостоверение, представленное указанным токеном. См. описание свойства <code>userToken</code>.</li><li><code>clientCredentials</code> — позволяет использовать удостоверение приложения-функции.</li></ul>|
 |**userId**|**UserId**  |Требуется, только если для свойства _identity_ задано значение `userFromId`. Идентификатор субъекта-пользователя, связанный с пользователем, ранее вошедшим в систему.|
 |**userToken**|**UserToken**|Требуется, только если для свойства _identity_ задано значение `userFromToken`. Токен, предназначенный для приложения-функции. |
 
@@ -964,14 +961,14 @@ module.exports = function (context, req) {
 
 Для этой привязки требуются следующие разрешения Azure AD:
 
-|Resource|Разрешение|
+|Ресурс|Разрешение|
 |--------|--------|
 |Microsoft Graph|Отправка почты от имени пользователя|
 
 Привязка предоставляет следующие типы функций .NET:
 - Microsoft.Graph.Message;
 - Newtonsoft.Json.Linq.JObject
-- строка
+- string
 - пользовательские типы объектов (указанные с помощью привязки структурной модели).
 
 
@@ -1009,7 +1006,7 @@ module.exports = function (context, req) {
 
 Языковой пример см. в разделах:
 
-* [Скрипт C# (CSX)](#webhook-trigger---c-script-example)
+* [Сценарий C# (CSX)](#webhook-trigger---c-script-example)
 * [JavaScript](#webhook-trigger---javascript-example)
 
 #### <a name="webhook-trigger---c-script-example"></a>Пример с триггером веб-перехватчика: скрипт C#
@@ -1087,7 +1084,7 @@ module.exports = function (context) {
 
 ### <a name="webhook-trigger---attributes"></a>Атрибуты триггера веб-перехватчика
 
-В [ C# библиотеках классов](functions-dotnet-class-library.md)используйте атрибут [GraphWebhookTrigger](https://github.com/Azure/azure-functions-microsoftgraph-extension/blob/master/src/MicrosoftGraphBinding/Bindings/GraphWebhookTriggerAttribute.cs) .
+In [C# class libraries](functions-dotnet-class-library.md), use the [GraphWebhookTrigger](https://github.com/Azure/azure-functions-microsoftgraph-extension/blob/master/src/MicrosoftGraphBinding/Bindings/GraphWebhookTriggerAttribute.cs) attribute.
 
 ### <a name="webhook-trigger---configuration"></a>Конфигурация триггера веб-перехватчика
 
@@ -1128,7 +1125,7 @@ module.exports = function (context) {
 
 Языковой пример см. в разделах:
 
-* [Скрипт C# (CSX)](#webhook-input---c-script-example)
+* [Сценарий C# (CSX)](#webhook-input---c-script-example)
 * [JavaScript](#webhook-input---javascript-example)
 
 #### <a name="webhook-input---c-script-example"></a>Пример со входной привязкой веб-перехватчика: скрипт C#
@@ -1239,7 +1236,7 @@ module.exports = function (context, req) {
 
 ### <a name="webhook-input---attributes"></a>Атрибуты входной привязки веб-перехватчика
 
-В [ C# библиотеках классов](functions-dotnet-class-library.md)используйте атрибут [GraphWebhookSubscription](https://github.com/Azure/azure-functions-microsoftgraph-extension/blob/master/src/MicrosoftGraphBinding/Bindings/GraphWebhookSubscriptionAttribute.cs) .
+In [C# class libraries](functions-dotnet-class-library.md), use the [GraphWebhookSubscription](https://github.com/Azure/azure-functions-microsoftgraph-extension/blob/master/src/MicrosoftGraphBinding/Bindings/GraphWebhookSubscriptionAttribute.cs) attribute.
 
 ### <a name="webhook-input---configuration"></a>Конфигурация входной привязки веб-перехватчика
 
@@ -1250,7 +1247,7 @@ module.exports = function (context, req) {
 |**name**||Обязательное. Имя переменной, используемое в коде функции для сообщения электронной почты. Дополнительные сведения см. в разделе [Использование выходной привязки сообщений Outlook в коде](#outlook-output-code).|
 |**type**||Обязательное. Необходимо задать значение `graphWebhookSubscription`.|
 |**direction**||Обязательное. Необходимо задать значение `in`.|
-|**filter**|**Фильтр**| Если задано значение `userFromRequest`, привязка будет получать только подписки, принадлежащие вызывающему пользователю (применяется только с [триггером HTTP]).| 
+|**filter**|**Filter**| Если задано значение `userFromRequest`, привязка будет получать только подписки, принадлежащие вызывающему пользователю (применяется только с [триггером HTTP]).| 
 
 ### <a name="webhook-input---usage"></a>Использование входной привязки веб-перехватчика
 
@@ -1279,7 +1276,7 @@ module.exports = function (context, req) {
 
 Языковой пример см. в разделах:
 
-* [Скрипт C# (CSX)](#webhook-output---c-script-example)
+* [Сценарий C# (CSX)](#webhook-output---c-script-example)
 * [JavaScript](#webhook-output---javascript-example)
 
 #### <a name="webhook-output---c-script-example"></a>Пример с выходной привязкой веб-перехватчика: скрипт C#
@@ -1380,7 +1377,7 @@ module.exports = function (context, req) {
 
 ### <a name="webhook-output---attributes"></a>Атрибуты выходной привязки веб-перехватчика
 
-В [ C# библиотеках классов](functions-dotnet-class-library.md)используйте атрибут [GraphWebhookSubscription](https://github.com/Azure/azure-functions-microsoftgraph-extension/blob/master/src/MicrosoftGraphBinding/Bindings/GraphWebhookSubscriptionAttribute.cs) .
+In [C# class libraries](functions-dotnet-class-library.md), use the [GraphWebhookSubscription](https://github.com/Azure/azure-functions-microsoftgraph-extension/blob/master/src/MicrosoftGraphBinding/Bindings/GraphWebhookSubscriptionAttribute.cs) attribute.
 
 ### <a name="webhook-output---configuration"></a>Конфигурация выходной привязки веб-перехватчика
 
@@ -1391,17 +1388,17 @@ module.exports = function (context, req) {
 |**name**||Обязательное. Имя переменной, используемое в коде функции для сообщения электронной почты. Дополнительные сведения см. в разделе [Использование выходной привязки сообщений Outlook в коде](#outlook-output-code).|
 |**type**||Обязательное. Необходимо задать значение `graphWebhookSubscription`.|
 |**direction**||Обязательное. Необходимо задать значение `out`.|
-|**identity**|**Удостоверение**|Обязательное. Удостоверение, которое будет использоваться для выполнения действия. Может принимать одно из следующих значений:<ul><li><code>userFromRequest</code> — применяется только с [триггером HTTP]. Позволяет использовать удостоверение вызывающего пользователя.</li><li><code>userFromId</code> — позволяет использовать удостоверение пользователя, ранее вошедшего в систему, с указанным идентификатором. См. описание свойства <code>userId</code>.</li><li><code>userFromToken</code> — позволяет использовать удостоверение, представленное указанным токеном. См. описание свойства <code>userToken</code>.</li><li><code>clientCredentials</code> — позволяет использовать удостоверение приложения-функции.</li></ul>|
+|**identity**|**Удостоверение**|Обязательное. Удостоверение, которое будет использоваться для выполнения действия. Принимается одно из следующих значений:<ul><li><code>userFromRequest</code> — применяется только с [триггером HTTP]. Позволяет использовать удостоверение вызывающего пользователя.</li><li><code>userFromId</code> — позволяет использовать удостоверение пользователя, ранее вошедшего в систему, с указанным идентификатором. См. описание свойства <code>userId</code>.</li><li><code>userFromToken</code> — позволяет использовать удостоверение, представленное указанным токеном. См. описание свойства <code>userToken</code>.</li><li><code>clientCredentials</code> — позволяет использовать удостоверение приложения-функции.</li></ul>|
 |**userId**|**UserId**  |Требуется, только если для свойства _identity_ задано значение `userFromId`. Идентификатор субъекта-пользователя, связанный с пользователем, ранее вошедшим в систему.|
 |**userToken**|**UserToken**|Требуется, только если для свойства _identity_ задано значение `userFromToken`. Токен, предназначенный для приложения-функции. |
-|**action**|**Действие**|Обязательное. Указывает действие, которое необходимо выполнить с помощью привязки. Может принимать одно из следующих значений:<ul><li><code>create</code> — регистрация новой подписки.</li><li><code>delete</code> — удаление указанной подписки.</li><li><code>refresh</code> — обновление указанной подписки. Позволяет предотвратить истечение срока действия.</li></ul>|
+|**action**|**Действие**|Обязательное. Указывает действие, которое необходимо выполнить с помощью привязки. Принимается одно из следующих значений:<ul><li><code>create</code> — регистрация новой подписки.</li><li><code>delete</code> — удаление указанной подписки.</li><li><code>refresh</code> — обновление указанной подписки. Позволяет предотвратить истечение срока действия.</li></ul>|
 |**subscriptionResource**|**subscriptionResource**|Требуется, только если для свойства _action_ задано значение `create`. Указывает ресурс Microsoft Graph, изменения которого будут отслеживаться. Дополнительные сведения см. в статье [Работа с веб-перехватчиками в Microsoft Graph]. |
 |**changeType**|**ChangeType**|Требуется, только если для свойства _action_ задано значение `create`. Указывает тип изменения в подписанном ресурсе, при внесении которого будет создано уведомление. Поддерживаются такие значения: `created`, `updated`, `deleted`. Можно объединить несколько значений, указав их через запятую.|
 
 ### <a name="webhook-output---usage"></a>Использование выходной привязки веб-перехватчика
 
 Привязка предоставляет следующие типы функций .NET:
-- строка
+- string
 - Microsoft.Graph.Subscription.
 
 
@@ -1412,7 +1409,7 @@ module.exports = function (context, req) {
 
 Существует два способа обновления подписок:
 
-- Использование удостоверения приложения для всех подписок. Для этого потребуется согласие администратора Azure Active Directory. Этот способ можно применять ко всем языкам, которые поддерживает решение "Функции Azure".
+- Использование удостоверения приложения для всех подписок. This will require consent from an Azure Active Directory admin. This can be used by all languages supported by Azure Functions.
 - Использование удостоверения, связанного с каждой подпиской, путем привязки каждого идентификатора пользователя вручную. В этом случае для выполнения привязки потребуется пользовательский код. Этот метод можно использовать только с функциями .NET.
 
 В этом разделе содержатся примеры для каждого из этих подходов:
@@ -1424,7 +1421,7 @@ module.exports = function (context, req) {
 
 Языковой пример см. в разделах:
 
-* [Скрипт C# (CSX)](#app-identity-refresh---c-script-example)
+* [Сценарий C# (CSX)](#app-identity-refresh---c-script-example)
 * JavaScript
 
 ### <a name="app-identity-refresh---c-script-example"></a>Пример обновления с использованием удостоверения приложения: скрипт C#
@@ -1586,7 +1583,7 @@ public class UserSubscription {
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md)

@@ -1,6 +1,6 @@
 ---
-title: Настройка сведений о безопасности (Предварительная версия) для использования электронной почты — Azure AD
-description: Настройка подтверждения личности с помощью адреса электронной почты в сведениях для защиты.
+title: Set up an email address as your authentication method - Azure AD
+description: How to set up the Security info page to verify your identity using an email address as your authentication method.
 services: active-directory
 author: eross-msft
 manager: daveba
@@ -12,14 +12,14 @@ ms.topic: conceptual
 ms.date: 02/13/2019
 ms.author: lizross
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a025005065174d5a6ca5fca27ee06ebb036b7b1d
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
-ms.translationtype: MT
+ms.openlocfilehash: 03b53760f27f853f34397ac9047f18a37e1bc845
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73820343"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74231783"
 ---
-# <a name="set-up-security-info-preview-to-use-your-email-address"></a>Настройка использования адреса электронной почты в сведениях для защиты (предварительная версия)
+# <a name="set-up-an-email-address-as-your-authentication-method-from-the-security-info-preview-page"></a>Set up an email address as your authentication method from the Security info (preview) page
 
 Чтобы добавить свой метод сброса пароля, выполните следующие действия. После первоначальной настройки вы можете вернуться к странице **Сведения для защиты**, чтобы добавить, обновить или удалить сведения для защиты.
 
@@ -86,7 +86,7 @@ ms.locfileid: "73820343"
 
 - **Звонок на мобильный или рабочий телефон.** Введите номер своего мобильного устройства, чтобы получить звонок с информацией для двухфакторной проверки подлинности или сброса пароля. Пошаговые инструкции о том, как подтвердить свою личность с помощью номера телефона, см. в статье о [настройке использования телефонных звонков в сведениях для защиты](security-info-setup-phone-number.md).
 
-- **Ключ безопасности.** Зарегистрируйте ключ безопасности, совместимый с Майкрософт, и используйте его вместе с ПИН-кодом для двухфакторной проверки подлинности или сброса пароля. Пошаговые инструкции по проверке удостоверения с помощью ключа безопасности см. [в разделе Настройка сведений о безопасности для использования ключа безопасности](security-info-setup-security-key.md).
+- **Security key.** Register your Microsoft-compatible security key and use it along with a PIN for two-step verification or password reset. For step-by-step instructions about how to verify your identity with a security key, see [Set up security info to use a security key](security-info-setup-security-key.md).
 
 - **Контрольные вопросы.** Ответьте на контрольные вопросы, созданные вашим администратором для организации. Этот параметр доступен только для сброса пароля, а не для двухфакторной проверки подлинности. Пошаговые инструкции по настройке контрольных вопросов в сведениях для защиты см. в [этой статье](security-info-setup-questions.md).
 

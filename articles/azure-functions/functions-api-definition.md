@@ -1,20 +1,16 @@
 ---
-title: Метаданные OpenAPI в Функциях Azure | Документация Майкрософт
+title: OpenAPI metadata in Azure Functions
 description: Обзор поддержки OpenAPI в Функциях Azure
-services: functions
 author: alexkarcher-msft
-manager: jeconnoc
-ms.assetid: ''
-ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 03/23/2017
 ms.author: alkarche
-ms.openlocfilehash: 00dedd069914384a1883a54bfb433857286fb49c
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: a80079574dc29c54de89f5275c65637b205742d7
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70097576"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74227416"
 ---
 # <a name="openapi-20-metadata-support-in-azure-functions-preview"></a>Поддержка метаданных OpenAPI 2.0 в Функциях Azure (предварительная версия)
 Поддержка метаданных OpenAPI 2.0 (прежнее название — Swagger) в Функциях Azure — это предварительная версия функции, которая предназначена для записи определения OpenAPI 2.0 в приложении-функции. Затем можно разместить этот файл с помощью приложения-функции.
@@ -44,7 +40,7 @@ ms.locfileid: "70097576"
 
 ### <a name="templates"></a>Доступные шаблоны
 
-|Название| Описание |
+|Name| Описание |
 |:-----|:-----|
 |Созданное определение|Определение OpenAPI с максимальным объемом информации, которую можно извлечь из имеющихся метаданных функции.|
 
@@ -55,8 +51,8 @@ ms.locfileid: "70097576"
 |Swagger.json|Пользовательский интерфейс портала|Function.json|
 |:----|:-----|:-----|
 |[Host](https://swagger.io/specification/#fixed-fields-15)|**Параметры приложения-функции** > **Параметры службы приложений** > **Обзор** > **URL-адрес**|*Отсутствует*
-|[Paths](https://swagger.io/specification/#paths-object-29)|**Интегрировать** > **Выбранные методы HTTP**|Привязки: Маршрут
-|[Path Item](https://swagger.io/specification/#path-item-object-32)|**Интегрировать** > **Шаблон маршрута**|Привязки: Методы
+|[Paths](https://swagger.io/specification/#paths-object-29)|**Интегрировать** > **Выбранные методы HTTP**|Bindings: Route
+|[Path Item](https://swagger.io/specification/#path-item-object-32)|**Интегрировать** > **Шаблон маршрута**|Bindings: Methods
 |[Безопасность](https://swagger.io/specification/#security-scheme-object-112)|**Ключи**|*Отсутствует*|
 |operationID*|**Маршрут + допустимые команды**|Маршрут + допустимые команды|
 
@@ -79,7 +75,7 @@ ms.locfileid: "70097576"
 
 Теперь изменения, внесенные в файл swagger.json в репозитории, размещаются приложением-функцией с использованием URL-адреса и ключа определения API, которые указаны на шаге 1.в.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Создание метаданных OpenAPI 2.0 (Swagger) для приложения-функции (предварительная версия)](functions-api-definition-getting-started.md). Попробуйте воспользоваться нашим пошаговым руководством, чтобы увидеть определения OpenAPI в действии.
 * [Репозиторий GitHub для Функций Azure](https://github.com/Azure/Azure-Functions/). Ознакомьтесь со сведениями о Функциях в репозитории и оставьте свои отзывы о предварительной версии средства поддержки определений API. Добавьте на GitHub сведения обо всех проблемах, которые необходимо устранить.
 * [Руководство для разработчиков по Функциям Azure](functions-reference.md). Сведения о написании кода функций и определении триггеров и привязок.

@@ -1,6 +1,6 @@
 ---
-title: Восстановление базы данных из резервной копии
-description: Узнайте о восстановлении до точки во времени, которое позволяет выполнить откат базы данных SQL Azure до 35 дней.
+title: Restore a database from a backup
+description: Learn about point-in-time restore, which enables you to roll back an Azure SQL database up to 35 days.
 services: sql-database
 ms.service: sql-database
 ms.subservice: backup-restore
@@ -11,196 +11,196 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab, danil
 ms.date: 09/26/2019
-ms.openlocfilehash: 1c8717614ec59ef210c7340f70ddedd7f7f86f88
-ms.sourcegitcommit: a170b69b592e6e7e5cc816dabc0246f97897cb0c
+ms.openlocfilehash: 3b0b5b02fa8f369bdfa03726bd5649b70b7bbd48
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74091983"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74228045"
 ---
-# <a name="recover-an-azure-sql-database-by-using-automated-database-backups"></a>Восстановление базы данных SQL Azure с помощью автоматически создаваемых резервных копий базы данных
+# <a name="recover-an-azure-sql-database-by-using-automated-database-backups"></a>Recover an Azure SQL database by using automated database backups
 
-По умолчанию резервные копии базы данных SQL Azure хранятся в геореплицированном хранилище BLOB-объектов (тип хранилища RA-GRS). Для восстановления базы данных доступны следующие параметры с помощью автоматически создаваемых [резервных копий базы данных](sql-database-automated-backups.md). Вы можете:
+By default, Azure SQL Database backups are stored in geo-replicated blob storage (RA-GRS storage type). The following options are available for database recovery by using [automated database backups](sql-database-automated-backups.md). Вы сможете:
 
-- Создайте новую базу данных на том же сервере базы данных SQL, восстановленную до указанной точки во времени в течение срока хранения.
-- Создайте базу данных на том же сервере базы данных SQL, восстановленную до времени удаления для удаленной базы данных.
-- Создайте новую базу данных на любом сервере базы данных SQL в том же регионе, восстановленном до момента последнего резервного копирования.
-- Создайте новую базу данных на любом сервере базы данных SQL в любом другом регионе, восстановленной до момента последнего реплицированного резервного копирования.
+- Create a new database on the same SQL Database server, recovered to a specified point in time within the retention period.
+- Create a database on the same SQL Database server, recovered to the deletion time for a deleted database.
+- Create a new database on any SQL Database server in the same region, recovered to the point of the most recent backups.
+- Create a new database on any SQL Database server in any other region, recovered to the point of the most recent replicated backups.
 
-Если вы настроили [долгосрочное хранение резервных копий](sql-database-long-term-retention.md), можно также создать новую базу данных на основе любой долгосрочной резервной копии хранения на любом сервере базы данных SQL.
+If you configured [backup long-term retention](sql-database-long-term-retention.md), you can also create a new database from any long-term retention backup on any SQL Database server.
 
 > [!IMPORTANT]
-> Невозможно перезаписать существующую базу данных во время восстановления.
+> You can't overwrite an existing database during restore.
 
-Если вы используете уровни служб "Стандартный" или "Премиум", восстановление базы данных может привести к дополнительным затратам на хранение. Дополнительные затраты создаются, если максимальный размер восстанавливаемой базы данных превышает объем хранилища, включенный в уровень служб и производительности целевой базы данных. Сведения о ценах на дополнительное хранилище см. на [странице цен на Базу данных SQL](https://azure.microsoft.com/pricing/details/sql-database/). Если фактический объем используемого пространства меньше, чем Включенный объем хранилища, можно избежать этой дополнительной платы, установив максимальный размер базы данных в включенном объеме.
+When you're using the Standard or Premium service tiers, your database restore might incur an extra storage cost. The extra cost is incurred when the maximum size of the restored database is greater than the amount of storage included with the target database's service tier and performance level. Сведения о ценах на дополнительное хранилище см. на [странице цен на Базу данных SQL](https://azure.microsoft.com/pricing/details/sql-database/). If the actual amount of used space is less than the amount of storage included, you can avoid this extra cost by setting the maximum database size to the included amount.
 
 ## <a name="recovery-time"></a>Время восстановления
 
-Время восстановления базы данных с помощью автоматически создаваемых резервных копий зависит от ряда факторов.
+The recovery time to restore a database by using automated database backups is affected by several factors:
 
-- Размер базы данных.
-- Размер вычислений базы данных.
-- Количество задействованных журналов транзакций.
-- Объем действий, которые необходимо воспроизвести для восстановления до точки восстановления.
-- Пропускная способность сети, если восстановление происходит в другой регион.
+- The size of the database.
+- The compute size of the database.
+- The number of transaction logs involved.
+- The amount of activity that needs to be replayed to recover to the restore point.
+- The network bandwidth if the restore is to a different region.
 - количество одновременных запросов на восстановление, обрабатываемых в целевом регионе.
 
-Для большой или очень активной базы данных восстановление может занять несколько часов. В случае длительного простоя в регионе может быть инициировано большое количество запросов геовосстановления для аварийного восстановления. При наличии большого числа запросов время восстановления отдельных баз данных может увеличиться. В большинстве случаев на восстановление базы данных требуется менее 12 часов.
+For a large or very active database, the restore might take several hours. If there is a prolonged outage in a region, it's possible that a high number of geo-restore requests will be initiated for disaster recovery. When there are many requests, the recovery time for individual databases can increase. В большинстве случаев на восстановление базы данных требуется менее 12 часов.
 
-Для одной подписки существуют ограничения на количество одновременных запросов на восстановление. Эти ограничения применяются к любому сочетанию восстановления на момент времени, георепликации и восстановления из резервной копии долгосрочного хранения.
+For a single subscription, there are limitations on the number of concurrent restore requests. These limitations apply to any combination of point-in-time restores, geo-restores, and restores from long-term retention backup.
 
 | | **Максимальное количество одновременно обрабатываемых запросов** | **Максимальное количество одновременно отправляемых запросов** |
 | :--- | --: | --: |
 |Отдельная база данных (на подписку)|10|60|
-|Эластичный пул (на пул)|4\.|200|
+|Эластичный пул (на пул)|4|200|
 ||||
 
-Нет встроенного метода для восстановления всего сервера. Пример выполнения этой задачи см. в статье [база данных SQL Azure: полное восстановление сервера](https://gallery.technet.microsoft.com/Azure-SQL-Database-Full-82941666).
+There isn't a built-in method to restore the entire server. For an example of how to accomplish this task, see [Azure SQL Database: Full Server Recovery](https://gallery.technet.microsoft.com/Azure-SQL-Database-Full-82941666).
 
 > [!IMPORTANT]
-> Для восстановления с помощью автоматически создаваемых резервных копий необходимо быть членом роли участника SQL Server в подписке или владельцем подписки. Дополнительные сведения см. [в разделе RBAC: встроенные роли](../role-based-access-control/built-in-roles.md). Восстановление можно выполнить с помощью портал Azure, PowerShell или REST API. Нельзя использовать Transact-SQL.
+> To recover by using automated backups, you must be a member of the SQL Server contributor role in the subscription, or be the subscription owner. For more information, see [RBAC: Built-in roles](../role-based-access-control/built-in-roles.md). You can recover by using the Azure portal, PowerShell, or the REST API. You can't use Transact-SQL.
 
 ## <a name="point-in-time-restore"></a>Восстановление до точки во времени
 
-Вы можете восстановить изолированную базу данных, которая находится в пуле или экземпляре, до более ранней точки во времени с помощью портал Azure, [PowerShell](https://docs.microsoft.com/powershell/module/az.sql/restore-azsqldatabase)или [REST API](https://docs.microsoft.com/rest/api/sql/databases). Запрос может указывать любой уровень служб или размер вычислений для восстанавливаемой базы данных. Убедитесь в наличии достаточного количества ресурсов на сервере, на котором выполняется восстановление базы данных. По завершении инструкция RESTORE создает новую базу данных на том же сервере, что и исходная база данных. В восстановленной базе данных оплаты начисляются по нормальным тарифам, исходя из уровня служб и размера вычислений. Плата не взимается, пока восстановление базы данных не будет завершено.
+You can restore a standalone, pooled, or instance database to an earlier point in time by using the Azure portal, [PowerShell](https://docs.microsoft.com/powershell/module/az.sql/restore-azsqldatabase), or the [REST API](https://docs.microsoft.com/rest/api/sql/databases). The request can specify any service tier or compute size for the restored database. Ensure that you have sufficient resources on the server to which you are restoring the database. When complete, the restore creates a new database on the same server as the original database. The restored database is charged at normal rates, based on its service tier and compute size. You don't incur charges until the database restore is complete.
 
-Обычно база данных восстанавливается до более ранней точки во времени. Восстановленную базу данных можно считать заменой исходной базы данных или использовать ее в качестве источника данных для обновления исходной базы данных.
+Обычно база данных восстанавливается до более ранней точки во времени. You can treat the restored database as a replacement for the original database, or use it as a data source to update the original database.
 
 - **Замена базы данных**
 
-  Если восстанавливаемая база данных планируется заменить исходной базой данных, следует указать размер вычислений и уровень служб исходной базы данных. Затем можно переименовать исходную базу данных и присвоить восстановленной базе данных исходное имя с помощью команды [ALTER DATABASE](/sql/t-sql/statements/alter-database-azure-sql-database) в T-SQL.
+  If you intend the restored database to be a replacement for the original database, you should specify the original database's compute size and service tier. You can then rename the original database, and give the restored database the original name by using the [ALTER DATABASE](/sql/t-sql/statements/alter-database-azure-sql-database) command in T-SQL.
 
 - **Восстановление данных**
 
-  Если планируется получение данных из восстановленной базы данных для восстановления после ошибки пользователя или приложения, необходимо написать и выполнить сценарий восстановления данных, который извлекает данные из восстановленной базы данных и применяется к исходной базе данных. Несмотря на то, что операция восстановления может занять много времени, восстанавливаемая база данных будет отображаться в списке баз данных на протяжении всего процесса. Если удалить базу данных во время восстановления, операция восстановления будет отменена, и не будет взиматься дополнительная стоимость базы данных, которая не выполнила восстановление.
+  If you plan to retrieve data from the restored database to recover from a user or application error, you need to write and execute a  data recovery script that extracts data from the restored database and applies to the original database. Несмотря на то, что операция восстановления может занять много времени, восстанавливаемая база данных будет отображаться в списке баз данных на протяжении всего процесса. If you delete the database during the restore, the restore operation will be canceled and you will not be charged for the database that did not complete the restore.
   
-### <a name="point-in-time-restore-by-using-azure-portal"></a>Восстановление до точки во времени с помощью портал Azure
+### <a name="point-in-time-restore-by-using-azure-portal"></a>Point-in-time restore by using Azure portal
 
-Вы можете восстановить отдельную базу данных SQL или базу данных экземпляра до точки во времени из колонки обзора базы данных, которую необходимо восстановить в портал Azure.
+You can recover a single SQL database or instance database to a point in time from the overview blade of the database you want to restore in the Azure portal.
 
-#### <a name="single-azure-sql-database"></a>Отдельная база данных SQL Azure
+#### <a name="single-azure-sql-database"></a>Single Azure SQL database
 
-Чтобы восстановить отдельную базу данных или в составе пула на момент времени с помощью портал Azure, откройте страницу Обзор базы данных и выберите **восстановить** на панели инструментов. Выберите источник резервного копирования и выберите точку резервного копирования на момент времени, из которой будет создана новая база данных. 
+To recover a single or pooled database to a point in time by using the Azure portal, open the database overview page, and select **Restore** on the toolbar. Choose the backup source, and select the point-in-time backup point from which a new database will be created. 
 
-  ![Снимок экрана параметров восстановления базы данных](./media/sql-database-recovery-using-backups/pitr-backup-sql-database-annotated.png)
+  ![Screenshot of database restore options](./media/sql-database-recovery-using-backups/pitr-backup-sql-database-annotated.png)
 
-#### <a name="managed-instance-database"></a>База данных управляемого экземпляра
+#### <a name="managed-instance-database"></a>Managed instance database
 
-Чтобы восстановить базу данных управляемого экземпляра до точки во времени с помощью портал Azure, откройте страницу Обзор базы данных и выберите **восстановить** на панели инструментов. Выберите точку резервного копирования на момент времени, из которой будет создана новая база данных. 
+To recover a managed instance database to a point in time by using the Azure portal, open the database overview page, and select **Restore** on the toolbar. Choose the point-in-time backup point from which a new database will be created. 
 
-  ![Снимок экрана параметров восстановления базы данных](./media/sql-database-recovery-using-backups/pitr-backup-managed-instance-annotated.png)
+  ![Screenshot of database restore options](./media/sql-database-recovery-using-backups/pitr-backup-managed-instance-annotated.png)
 
 > [!TIP]
-> Сведения о программном восстановлении базы данных из резервной копии см. в разделе [программное выполнение восстановления с помощью автоматических резервных копий](sql-database-recovery-using-backups.md)
+> To programmatically restore a database from a backup, see [Programmatically performing recovery using automated backups](sql-database-recovery-using-backups.md).
 
 ## <a name="deleted-database-restore"></a>Восстановление удаленной базы данных
 
-Можно восстановить удаленную базу данных до времени удаления или более ранней точки во времени на том же сервере базы данных SQL или в том же управляемом экземпляре. Это можно сделать с помощью портал Azure, [PowerShell](https://docs.microsoft.com/powershell/module/az.sql/restore-azsqldatabase)или [остальных (CreateMode = Restore)](https://docs.microsoft.com/rest/api/sql/databases/createorupdate). Чтобы восстановить удаленную базу данных, создайте новую базу данных из резервной копии.
+You can restore a deleted database to the deletion time, or an earlier point in time, on the same SQL Database server or the same managed instance. You can accomplish this through the Azure portal, [PowerShell](https://docs.microsoft.com/powershell/module/az.sql/restore-azsqldatabase), or the [REST (createMode=Restore)](https://docs.microsoft.com/rest/api/sql/databases/createorupdate). You restore a deleted database by creating a new database from the backup.
 
 > [!IMPORTANT]
-> При удалении сервера базы данных SQL Azure или управляемого экземпляра все его базы данных также удаляются и не могут быть восстановлены. Нельзя восстановить удаленный сервер или управляемый экземпляр.
+> If you delete an Azure SQL Database server or managed instance, all its databases are also deleted, and can't be recovered. You can't restore a deleted server or managed instance.
 
-### <a name="deleted-database-restore-by-using-the-azure-portal"></a>Восстановление базы данных удалено с помощью портал Azure
+### <a name="deleted-database-restore-by-using-the-azure-portal"></a>Deleted database restore by using the Azure portal
 
-Удаленные базы данных восстанавливаются из портал Azure из ресурса сервера и экземпляра.
+You restore deleted databases from the Azure portal from the server and instance resource.
 
-#### <a name="single-azure-sql-database"></a>Отдельная база данных SQL Azure
+#### <a name="single-azure-sql-database"></a>Single Azure SQL database
 
-Чтобы восстановить одну или только что удаленную базу данных с помощью портал Azure, откройте страницу Обзор сервера и выберите **Удаленные базы данных**. Выберите удаленную базу данных, которую требуется восстановить, и введите имя новой базы данных, которая будет создана с помощью данных, восстановленных из резервной копии.
+To recover a single or pooled deleted database to the deletion time by using the Azure portal, open the server overview page, and select **Deleted databases**. Select a deleted database that you want to restore, and type the name for the new database that will be created with data restored from the backup.
 
-  ![Снимок экрана: восстановление удаленной базы данных SQL Azure](./media/sql-database-recovery-using-backups/restore-deleted-sql-database-annotated.png)
+  ![Screenshot of restore deleted Azure SQL database](./media/sql-database-recovery-using-backups/restore-deleted-sql-database-annotated.png)
 
-#### <a name="managed-instance-database"></a>База данных управляемого экземпляра
+#### <a name="managed-instance-database"></a>Managed instance database
 
-Чтобы восстановить управляемую базу данных с помощью портал Azure, откройте страницу Обзор управляемого экземпляра и выберите **Удаленные базы данных**. Выберите удаленную базу данных, которую требуется восстановить, и введите имя новой базы данных, которая будет создана с помощью данных, восстановленных из резервной копии.
+To recover a managed database by using the Azure portal, open the managed instance overview page, and select **Deleted databases**. Select a deleted database that you want to restore, and type the name for the new database that will be created with data restored from the backup.
 
-  ![Снимок экрана: восстановление удаленной базы данных экземпляра SQL Azure](./media/sql-database-recovery-using-backups/restore-deleted-sql-managed-instance-annotated.png)
+  ![Screenshot of restore deleted Azure SQL instance database](./media/sql-database-recovery-using-backups/restore-deleted-sql-managed-instance-annotated.png)
 
-### <a name="deleted-database-restore-by-using-powershell"></a>Восстановление базы данных удалено с помощью PowerShell
+### <a name="deleted-database-restore-by-using-powershell"></a>Deleted database restore by using PowerShell
 
-Используйте приведенные ниже примеры сценариев для восстановления удаленной базы данных для базы данных SQL Azure и управляемого экземпляра с помощью PowerShell.
+Use the following sample scripts to restore a deleted database for Azure SQL Database and a managed instance by using PowerShell.
 
-#### <a name="single-azure-sql-database"></a>Отдельная база данных SQL Azure
+#### <a name="single-azure-sql-database"></a>Single Azure SQL database
 
-Пример сценария PowerShell, показывающий, как восстановить удаленную базу данных SQL Azure, см. в статье [Восстановление базы данных SQL с помощью PowerShell](scripts/sql-database-restore-database-powershell.md).
+For a sample PowerShell script showing how to restore a deleted Azure SQL database, see [Restore a SQL database using PowerShell](scripts/sql-database-restore-database-powershell.md).
 
-#### <a name="managed-instance-database"></a>База данных управляемого экземпляра
+#### <a name="managed-instance-database"></a>Managed instance database
 
-Пример сценария PowerShell, демонстрирующий восстановление удаленной базы данных экземпляра, см. в разделе [Восстановление удаленной базы данных на управляемом экземпляре с помощью PowerShell](https://blogs.msdn.microsoft.com/sqlserverstorageengine/20../../recreate-dropped-database-on-azure-sql-managed-instance). 
+For a sample PowerShell script showing how to restore a deleted instance database, see [Restore deleted database on managed instance using PowerShell](https://blogs.msdn.microsoft.com/sqlserverstorageengine/20../../recreate-dropped-database-on-azure-sql-managed-instance). 
 
 > [!TIP]
-> Сведения о программном восстановлении удаленной базы данных см. в разделе [программное выполнение восстановления с помощью автоматических резервных копий](sql-database-recovery-using-backups.md).
+> To programmatically restore a deleted database, see [Programmatically performing recovery using automated backups](sql-database-recovery-using-backups.md).
 
 ## <a name="geo-restore"></a>Геовосстановление
 
-Вы можете восстановить базу данных SQL на любой сервер в любом регионе Azure из последней геореплицированной резервной копии. При геовосстановлении используется геореплицированная резервная копия в качестве источника. Вы можете запрашивать геовосстановление, даже если база данных или Datacenter недоступны из-за сбоя.
+Вы можете восстановить базу данных SQL на любой сервер в любом регионе Azure из последней геореплицированной резервной копии. Geo-restore uses a geo-replicated backup as its source. You can request geo-restore even if the database or datacenter is inaccessible due to an outage.
 
-Геовосстановление является параметром восстановления по умолчанию, если база данных недоступна из-за инцидента в регионе размещения. Базу данных можно восстановить на сервере в любом другом регионе. Между созданием резервной копии и ее георепликацией в большой двоичный объект Azure в другом регионе существует задержка. В результате восстановленная база данных может иметь один час за исходной базой данных. На следующем рисунке показана восстановление базы данных из последней доступной резервной копии в другом регионе.
+Geo-restore is the default recovery option when your database is unavailable because of an incident in the hosting region. You can restore the database to a server in any other region. Между созданием резервной копии и ее георепликацией в большой двоичный объект Azure в другом регионе существует задержка. As a result, the restored database can be up to one hour behind the original database. The following illustration shows a database restore from the last available backup in another region.
 
-![Рисунок географического восстановления](./media/sql-database-geo-restore/geo-restore-2.png)
+![Graphic of geo-restore](./media/sql-database-geo-restore/geo-restore-2.png)
 
-### <a name="geo-restore-by-using-the-azure-portal"></a>Геовосстановление с помощью портал Azure
+### <a name="geo-restore-by-using-the-azure-portal"></a>Geo-restore by using the Azure portal
 
-На портал Azure создайте новую базу данных с одним или управляемым экземпляром и выберите доступную резервную копию геовосстановления. Созданная база данных содержит данные географической резервной копии.
+From the Azure portal, you create a new single or managed instance database, and select an available geo-restore backup. The newly created database contains the geo-restored backup data.
 
-#### <a name="single-azure-sql-database"></a>Отдельная база данных SQL Azure
+#### <a name="single-azure-sql-database"></a>Single Azure SQL database
 
-Чтобы выполнить геовосстановление отдельной базы данных SQL из портал Azure в выбранном регионе и сервере, выполните следующие действия.
+To geo-restore a single SQL database from the Azure portal in the region and server of your choice, follow these steps:
 
-1. На **панели мониторинга**выберите **Добавить** > **создать базу данных SQL**. На вкладке **основные** сведения введите необходимые данные.
-2. Выберите **Дополнительные параметры**.
-3. Для **использования существующих данных**выберите **резервное копирование**.
-4. В поле **резервное копирование**выберите резервную копию из списка доступных резервных копий геовосстановления.
+1. From **Dashboard**, select **Add** > **Create SQL Database**. On the **Basics** tab, enter the required information.
+2. Select **Additional settings**.
+3. For **Use existing data**, select **Backup**.
+4. For **Backup**, select a backup from the list of available geo-restore backups.
 
-    ![Снимок экрана: Создание параметров базы данных SQL](./media/sql-database-recovery-using-backups/geo-restore-azure-sql-database-list-annotated.png)
+    ![Screenshot of Create SQL Database options](./media/sql-database-recovery-using-backups/geo-restore-azure-sql-database-list-annotated.png)
 
-Завершите процесс создания новой базы данных из резервной копии. При создании отдельной базы данных SQL Azure она содержит восстановленную резервную копию геовосстановления.
+Complete the process of creating a new database from the backup. When you create the single Azure SQL database, it contains the restored geo-restore backup.
 
-#### <a name="managed-instance-database"></a>База данных управляемого экземпляра
+#### <a name="managed-instance-database"></a>Managed instance database
 
-Для геовосстановления базы данных управляемого экземпляра из портал Azure в существующий управляемый экземпляр в выбранном регионе выберите управляемый экземпляр, на котором нужно восстановить базу данных. Выполните следующие действия:
+To geo-restore a managed instance database from the Azure portal to an existing managed instance in a region of your choice, select a managed instance on which you want a database to be restored. Выполните следующие действия:
 
-1. Выберите **создать базу данных**.
-2. Введите имя нужной базы данных.
-3. В разделе **использовать существующие данные**выберите **резервное копирование**.
-4. Выберите резервную копию из списка доступных резервных копий геовосстановления.
+1. Select **New database**.
+2. Type a desired database name.
+3. Under **Use existing data**, select **Backup**.
+4. Select a backup from the list of available geo-restore backups.
 
-    ![Снимок экрана: параметры новой базы данных](./media/sql-database-recovery-using-backups/geo-restore-sql-managed-instance-list-annotated.png)
+    ![Screenshot of New database options](./media/sql-database-recovery-using-backups/geo-restore-sql-managed-instance-list-annotated.png)
 
-Завершите процесс создания новой базы данных. При создании базы данных экземпляра она содержит восстановленную резервную копию геовосстановления.
+Complete the process of creating a new database. When you create the instance database, it contains the restored geo-restore backup.
 
-### <a name="geo-restore-by-using-powershell"></a>Геовосстановление с помощью PowerShell
+### <a name="geo-restore-by-using-powershell"></a>Geo-restore by using PowerShell
 
-#### <a name="single-azure-sql-database"></a>Отдельная база данных SQL Azure
+#### <a name="single-azure-sql-database"></a>Single Azure SQL database
 
-Сценарий PowerShell, демонстрирующий выполнение геовосстановления для отдельной базы данных SQL, см. в статье [восстановление отдельной базы данных SQL Azure до более ранней точки во времени с помощью PowerShell](scripts/sql-database-restore-database-powershell.md).
+For a PowerShell script that shows how to perform geo-restore for a single SQL database, see [Use PowerShell to restore an Azure SQL single database to an earlier point in time](scripts/sql-database-restore-database-powershell.md).
 
-#### <a name="managed-instance-database"></a>База данных управляемого экземпляра
+#### <a name="managed-instance-database"></a>Managed instance database
 
-Сценарий PowerShell, который показывает, как выполнить геовосстановление для базы данных управляемого экземпляра, см. в статье [Использование PowerShell для восстановления базы данных управляемого экземпляра в другой географическую область](scripts/sql-managed-instance-restore-geo-backup.md).
+For a PowerShell script that shows how to perform geo-restore for a managed instance database, see [Use PowerShell to restore a managed instance database to another geo-region](scripts/sql-managed-instance-restore-geo-backup.md).
 
-### <a name="geo-restore-considerations"></a>Рекомендации относительно географического восстановления
+### <a name="geo-restore-considerations"></a>Geo-restore considerations
 
-Невозможно выполнить восстановление на момент времени в базе данных-получателе с георепликацией. Это можно сделать только в базе данных-источнике. Дополнительные сведения об использовании геовосстановления для восстановления после сбоя см. в статье [Восстановление базы данных SQL Azure или переход на базу данных-получатель при отказе](sql-database-disaster-recovery.md).
+You can't perform a point-in-time restore on a geo-secondary database. You can only do so on a primary database. Дополнительные сведения об использовании геовосстановления для восстановления после сбоя см. в статье [Восстановление базы данных SQL Azure или переход на базу данных-получатель при отказе](sql-database-disaster-recovery.md).
 
 > [!IMPORTANT]
-> Геовосстановление — это базовое решение для аварийного восстановления, доступное в базе данных SQL. Он использует автоматически созданные геореплицированные резервные копии с целевой точкой восстановления (RPO), равным 1 часу, и оценочным временем восстановления до 12 часов. Это не гарантирует, что целевой регион будет иметь емкость для восстановления баз данных после регионального сбоя, так как, скорее всего, будет резко возрастать потребность. Если приложение использует относительно небольшие базы данных и не является критически важным для бизнеса, геовосстановление является подходящим решением для аварийного восстановления. Для критически важных для бизнеса приложений, требующих больших баз данных и обеспечивающих непрерывность бизнес-процессов, используйте [группы автоматической отработки отказа](sql-database-auto-failover-group.md). Она предлагает более низкие целевые значения RPO и времени восстановления, и емкость всегда гарантирована. Дополнительные сведения о непрерывности бизнес-процессов см. в [обзоре обеспечения непрерывности бизнес-процессов](sql-database-business-continuity.md).
+> Geo-restore is the most basic disaster recovery solution available in SQL Database. It relies on automatically created geo-replicated backups with recovery point objective (RPO) equal to 1 hour, and the estimated recovery time of up to 12 hours. It doesn't guarantee that the target region will have the capacity to restore your databases after a regional outage, because a sharp increase of demand is likely. If your application uses relatively small databases and is not critical to the business, geo-restore is an appropriate disaster recovery solution. For business-critical applications that require large databases and must ensure business continuity, use [Auto-failover groups](sql-database-auto-failover-group.md). It offers a much lower RPO and recovery time objective, and the capacity is always guaranteed. Дополнительные сведения о непрерывности бизнес-процессов см. в [обзоре обеспечения непрерывности бизнес-процессов](sql-database-business-continuity.md).
 
-## <a name="programmatically-performing-recovery-by-using-automated-backups"></a>Программное выполнение восстановления с помощью автоматически создаваемых резервных копий
+## <a name="programmatically-performing-recovery-by-using-automated-backups"></a>Programmatically performing recovery by using automated backups
 
-Для восстановления можно также использовать Azure PowerShell или REST API. В приведенных ниже таблицах описан доступный для этого набор команд.
+You can also use Azure PowerShell or the REST API for recovery. В приведенных ниже таблицах описан доступный для этого набор команд.
 
 ### <a name="powershell"></a>PowerShell
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 > [!IMPORTANT]
-> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Эти командлеты см. в разделе [AzureRM. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле AZ и в модулях AzureRm находятся в отличном экстенте.
+> The PowerShell Azure Resource Manager module is still supported by Azure SQL Database, but all future development is for the Az.Sql module. For these cmdlets, see [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Arguments for the commands in the Az module and in AzureRm modules are to a great extent identical.
 
-#### <a name="single-azure-sql-database"></a>Отдельная база данных SQL Azure
+#### <a name="single-azure-sql-database"></a>Single Azure SQL database
 
-Сведения о восстановлении изолированной базы данных или в составе пула см. в разделе [RESTORE-азсклдатабасе](/powershell/module/az.sql/restore-azsqldatabase).
+To restore a standalone or pooled database, see [Restore-AzSqlDatabase](/powershell/module/az.sql/restore-azsqldatabase).
 
-  | Командлет | ОПИСАНИЕ |
+  | Командлет | Описание |
   | --- | --- |
   | [Get-AzSqlDatabase](/powershell/module/az.sql/get-azsqldatabase) |Получает одну или несколько баз данных. |
   | [Get-AzSqlDeletedDatabaseBackup](/powershell/module/az.sql/get-azsqldeleteddatabasebackup) | Получает удаленную базу данных, которую можно восстановить. |
@@ -208,42 +208,42 @@ ms.locfileid: "74091983"
   | [Restore-AzSqlDatabase](/powershell/module/az.sql/restore-azsqldatabase) |Восстанавливает базу данных SQL. |
 
   > [!TIP]
-  > Пример сценария PowerShell, который показывает, как выполнить восстановление базы данных на момент времени, см. в разделе [Восстановление базы данных SQL с помощью PowerShell](scripts/sql-database-restore-database-powershell.md).
+  > For a sample PowerShell script that shows how to perform a point-in-time restore of a database, see [Restore a SQL database using PowerShell](scripts/sql-database-restore-database-powershell.md).
 
-#### <a name="managed-instance-database"></a>База данных управляемого экземпляра
+#### <a name="managed-instance-database"></a>Managed instance database
 
-Сведения о восстановлении базы данных управляемого экземпляра см. в разделе [RESTORE-азсклинстанцедатабасе](/powershell/module/az.sql/restore-azsqlinstancedatabase).
+To restore a managed instance database, see [Restore-AzSqlInstanceDatabase](/powershell/module/az.sql/restore-azsqlinstancedatabase).
 
-  | Командлет | ОПИСАНИЕ |
+  | Командлет | Описание |
   | --- | --- |
-  | [Get-AzSqlInstance](/powershell/module/az.sql/get-azsqlinstance) |Возвращает один или несколько управляемых экземпляров. |
-  | [Get-Азсклинстанцедатабасе](/powershell/module/az.sql/get-azsqlinstancedatabase) | Возвращает базу данных экземпляра. |
-  | [Restore-AzSqlInstanceDatabase](/powershell/module/az.sql/restore-azsqlinstancedatabase) |Восстанавливает базу данных экземпляра. |
+  | [Get-AzSqlInstance](/powershell/module/az.sql/get-azsqlinstance) |Gets one or more managed instances. |
+  | [Get-AzSqlInstanceDatabase](/powershell/module/az.sql/get-azsqlinstancedatabase) | Gets an instance database. |
+  | [Restore-AzSqlInstanceDatabase](/powershell/module/az.sql/restore-azsqlinstancedatabase) |Restores an instance database. |
 
-### <a name="rest-api"></a>Интерфейс REST API
+### <a name="rest-api"></a>REST API
 
-Для восстановления отдельной базы данных или в составе пула с помощью REST API:
+To restore a single or pooled database by using the REST API:
 
-| API | ОПИСАНИЕ |
+| API | Описание |
 | --- | --- |
-| [REST (createMode=Recovery)](https://docs.microsoft.com/rest/api/sql/databases) |Восстанавливает базу данных. |
-| [Получение, создание или обновление состояния базы данных](https://docs.microsoft.com/rest/api/sql/operations) |Возвращает состояние во время операции восстановления. |
+| [REST (createMode=Recovery)](https://docs.microsoft.com/rest/api/sql/databases) |Restores a database. |
+| [Получение, создание или обновление состояния базы данных](https://docs.microsoft.com/rest/api/sql/operations) |Returns the status during a restore operation. |
 
-### <a name="azure-cli"></a>Интерфейс командной строки Azure
+### <a name="azure-cli"></a>Azure CLI
 
-#### <a name="single-azure-sql-database"></a>Отдельная база данных SQL Azure
+#### <a name="single-azure-sql-database"></a>Single Azure SQL database
 
-Инструкции по восстановлению отдельной базы данных или в составе пула с помощью Azure CLI см. в разделе [AZ SQL DB Restore](/cli/azure/sql/db#az-sql-db-restore).
+To restore a single or pooled database by using the Azure CLI, see [az sql db restore](/cli/azure/sql/db#az-sql-db-restore).
 
-#### <a name="managed-instance-database"></a>База данных управляемого экземпляра
+#### <a name="managed-instance-database"></a>Managed instance database
 
-Инструкции по восстановлению базы данных управляемого экземпляра с помощью Azure CLI см. в разделе [AZ SQL функция MidB Restore](/cli/azure/sql/midb#az-sql-midb-restore).
+To restore a managed instance database by using the Azure CLI, see [az sql midb restore](/cli/azure/sql/midb#az-sql-midb-restore).
 
-## <a name="summary"></a>summary
+## <a name="summary"></a>Резюме
 
 Создаваемые автоматически резервные копии позволяют защитить базы данных от ошибок пользователей и приложений, случайного удаления базы данных и длительных простоев. Эта встроенная возможность доступна для всех уровней служб и объемов вычислительных ресурсов.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие сведения о непрерывности бизнес-процессов](sql-database-business-continuity.md)
 - [Общие сведения об автоматическом резервном копировании базы данных SQL](sql-database-automated-backups.md)

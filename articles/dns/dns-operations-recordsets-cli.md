@@ -3,7 +3,7 @@ title: Управление записями DNS в Azure DNS с помощью 
 description: Управляйте наборами записей и записями DNS в службе Azure DNS при размещении вашего домена в Azure DNS.
 services: dns
 documentationcenter: na
-author: vhorne
+author: asudbring
 manager: jeconnoc
 ms.assetid: 5356a3a5-8dec-44ac-9709-0c2b707f6cb5
 ms.service: dns
@@ -13,19 +13,19 @@ ms.tgt_pltfrm: na
 ms.custom: H1Hack27Feb2017
 ms.workload: infrastructure-services
 ms.date: 05/15/2018
-ms.author: victorh
-ms.openlocfilehash: 4864a46b91b4e243ce6a2ae3d9d36df28fe74d8d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: allensu
+ms.openlocfilehash: a0316710f78afc8810f5f65e108638b08fae3da2
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61293360"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74211637"
 ---
 # <a name="manage-dns-records-and-recordsets-in-azure-dns-using-the-azure-cli"></a>Управление записями и наборами записей DNS в Azure DNS с помощью Azure CLI
 
 > [!div class="op_single_selector"]
-> * [портал Azure](dns-operations-recordsets-portal.md)
-> * [Интерфейс командной строки Azure](dns-operations-recordsets-cli.md)
+> * [портале Azure](dns-operations-recordsets-portal.md)
+> * [Azure CLI](dns-operations-recordsets-cli.md)
 > * [PowerShell](dns-operations-recordsets.md)
 
 В этой статье показано, как управлять записями DNS для зоны DNS с помощью кроссплатформенного Azure CLI, доступного для Windows, Mac и Linux. Записями DNS также можно управлять с помощью [Azure PowerShell](dns-operations-recordsets.md) или [портала Azure](dns-operations-recordsets-portal.md).
@@ -42,7 +42,7 @@ ms.locfileid: "61293360"
 
 ## <a name="create-a-dns-record"></a>Создание записи DNS
 
-Чтобы создать запись DNS, используйте команду `az network dns record-set <record-type> add-record` (где `<record-type>` — это тип записи, например a, srv, txt и т. д.). Чтобы получить справку, см. `az network dns record-set --help`.
+Чтобы создать запись DNS, используйте команду `az network dns record-set <record-type> add-record` (где `<record-type>` — это тип записи, например a, srv, txt, etc.) For help, see `az network dns record-set --help`.
 
 Создавая запись, вам нужно определить для нее имя группы ресурсов, имя зоны, имя набора записей, тип записей и сведения о создаваемой записи. Имя набора записей должно быть *относительным*, т. е. оно не должно содержать имя зоны.
 
@@ -68,7 +68,7 @@ az network dns record-set a add-record --resource-group myresourcegroup --zone-n
 
 Наборы записей создаются с помощью команды `az network dns record-set <record-type> create`. Чтобы получить справку, см. `az network dns record-set <record-type> create --help`.
 
-При создании набора записей можно явно указать его свойства, например [срок жизни](dns-zones-records.md#time-to-live) и метаданные. [Метаданные набора записей](dns-zones-records.md#tags-and-metadata) используются для связывания данных приложения с каждым набором записей в виде пар "ключ — значение".
+При создании набора записей можно явно указать его свойства, например [срок жизни](dns-zones-records.md#time-to-live) и метаданные. [Метаданные набора записей](dns-zones-records.md#tags-and-metadata) используются для связывания данных приложения с каждым набором записей в виде пар "ключ — значение".
 
 В следующем примере показано, как создать пустой набор записей типа А со сроком жизни 60 секунд. Для этого используется параметр `--ttl` (краткая форма `-l`).
 
@@ -226,7 +226,7 @@ az network dns record-set a remove-record --resource-group myresourcegroup --zon
 
 Вместо этого используйте `az network dns record-set cname set-record`, чтобы изменить запись типа CNAME. Чтобы получить справку, см. `az network dns record-set cname set-record --help`.
 
-В примере ниже показано изменение набора записей CNAME с именем *www* в зоне *contoso.com* в группе ресурсов *MyResourceGroup* таким образом, чтобы он указывал на 'www.fabrikam.net' вместо существующего значения.
+В примере ниже показано изменение набора записей CNAME с именем *www* в зоне *contoso.com* в группе ресурсов *MyResourceGroup* таким образом, чтобы он указывал на www.fabrikam.net вместо существующего значения.
 
 ```azurecli
 az network dns record-set cname set-record --resource-group myresourcegroup --zone-name contoso.com --record-set-name test-cname --cname www.fabrikam.net

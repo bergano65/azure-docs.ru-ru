@@ -69,6 +69,8 @@
       href: ddos-protection-overview.md
     - name: Расширение подсети
       href: subnet-extension.md
+    - name: Делегирование подсети
+      href: subnet-delegation-overview.md
     - name: Взаимодействие компонентов при подключении к серверной части
       items:
         - name: Вводная часть и сведения о настройке теста

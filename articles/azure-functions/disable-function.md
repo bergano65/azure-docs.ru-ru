@@ -1,39 +1,33 @@
 ---
 title: Способы отключения функций в решении "Функции Azure"
 description: Узнайте, как отключать и включать функции в решении "Функции Azure" версии 1.x и 2.x.
-services: functions
-documentationcenter: ''
-author: ggailey777
-manager: jeconnoc
-ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 08/05/2019
-ms.author: glenga
-ms.openlocfilehash: 498bb8c0f1e7bb674605d4a98f0be0f3e0b9a7c9
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.openlocfilehash: 7968580fcaa40575571a41f067fa74fbdc0a3a34
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69650500"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74233040"
 ---
 # <a name="how-to-disable-functions-in-azure-functions"></a>Способы отключения функций в решении "Функции Azure"
 
 В этой статье объясняется, как отключить функцию в решении "Функции Azure". *Отключить* функцию означает сделать так, чтобы среда выполнения игнорировала автоматический триггер, который определен для функции. Способ, с помощью которого вы это сделаете, зависит от версии среды выполнения и языка:
 
-* Функции 2. x:
+* Functions 2.x:
   * Один способ для всех языков.
   * Дополнительный способ для библиотек классов C#.
-* Функции 1. x:
+* Functions 1.x:
   * Языки сценариев.
   * Библиотеки классов C#.
 
 ## <a name="functions-2x---all-languages"></a>Функции 2.x — все языки
 
-В функциях 2. x вы отключаете функцию с помощью параметра приложения в формате `AzureWebJobs.<FUNCTION_NAME>.Disabled`. Вы можете создать и изменить этот параметр приложения несколькими способами, в том числе с помощью [Azure CLI](/cli/azure/) и вкладки " **Управление** " функции в [портал Azure](https://portal.azure.com). 
+In Functions 2.x, you disable a function by using an app setting in the format `AzureWebJobs.<FUNCTION_NAME>.Disabled`. You can create and modify this application setting in a number of ways, including by using the [Azure CLI](/cli/azure/) and from your function's **Manage** tab in the [Azure portal](https://portal.azure.com). 
 
-### <a name="azure-cli"></a>Azure CLI
+### <a name="azure-cli"></a>Azure CLI
 
-В Azure CLI используется [`az functionapp config appsettings set`](/cli/azure/functionapp/config/appsettings#az-functionapp-config-appsettings-set) команда для создания и изменения параметра приложения. Следующая команда отключает функцию с именем `QueueTrigger` , создавая параметр приложения с именем `AzureWebJobs.QueueTrigger.Disabled` и `true`присвоив ему значение. 
+In the Azure CLI, you use the [`az functionapp config appsettings set`](/cli/azure/functionapp/config/appsettings#az-functionapp-config-appsettings-set) command to create and modify the app setting. The following command disables a function named `QueueTrigger` by creating an app setting named `AzureWebJobs.QueueTrigger.Disabled` set it to `true`. 
 
 ```azurecli-interactive
 az functionapp config appsettings set --name <myFunctionApp> \
@@ -41,7 +35,7 @@ az functionapp config appsettings set --name <myFunctionApp> \
 --settings AzureWebJobs.QueueTrigger.Disabled=true
 ```
 
-Чтобы повторно включить функцию, повторно запустите ту же команду со значением `false`.
+To re-enable the function, rerun the same command with a value of `false`.
 
 ```azurecli-interactive
 az functionapp config appsettings set --name <myFunctionApp> \
@@ -49,9 +43,9 @@ az functionapp config appsettings set --name <myFunctionApp> \
 --settings AzureWebJobs.QueueTrigger.Disabled=false
 ```
 
-### <a name="portal"></a>Портал
+### <a name="portal"></a>Microsoft Azure
 
-Можно также использовать переключатель **состояния функции** на вкладке **Управление** для функции. Переключатель работает путем создания и удаления параметра приложения `AzureWebJobs.<FUNCTION_NAME>.Disabled`.
+You can also use the **Function State** switch on the function's **Manage** tab. The switch works by creating and deleting the `AzureWebJobs.<FUNCTION_NAME>.Disabled` app setting.
 
 ![Переключатель состояния функции](media/disable-function/function-state-switch.png)
 
@@ -77,7 +71,7 @@ az functionapp config appsettings set --name <myFunctionApp> \
     "disabled": true
 }
 ```
-или диспетчер конфигурации служб 
+или 
 
 ```json
     "bindings": [
@@ -88,7 +82,7 @@ az functionapp config appsettings set --name <myFunctionApp> \
 
 Во втором примере функция отключается, если имеется параметр приложения с именем IS_DISABLED и ему задано значение `true` или 1.
 
-Вы можете изменить файл на портале Azure или использовать переключатель **состояния функции** на вкладке **Управление** для функции. Переключатель на портале работает путем изменения файла *function.json*.
+You can edit the file in the Azure portal or use the **Function State** switch on the function's **Manage** tab. The portal switch works by changing the *function.json* file.
 
 ![Переключатель состояния функции](media/disable-function/function-state-switch.png)
 
@@ -135,6 +129,6 @@ public static class QueueFunctions
 >
 > Обратите также внимание, что портал может указывать, что функция отключена, когда это не так.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Эта статья посвящена отключению автоматических триггеров. Дополнительные сведения о триггерах см. в статье [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md).

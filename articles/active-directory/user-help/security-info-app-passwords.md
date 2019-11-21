@@ -1,6 +1,6 @@
 ---
-title: Создание паролей приложений в сведениях для защиты (Предварительная версия) — Azure AD
-description: Настройка автоматически генерируемых паролей (паролей приложения) для использования с любым корпоративным приложением, которое не выполняется в браузере или не поддерживает двухфакторную проверку подлинности. Пароли приложений используются отдельно от обычных паролей. Их можно настроить на странице сведений для защиты.
+title: Create app passwords from Security info (preview) page - Azure AD
+description: Create auto-generated passwords (app passwords) to use with any non-browser app, or any app that doesn't support two-factor verification, in your organization. Пароли приложений используются отдельно от обычных паролей. Их можно настроить на странице сведений для защиты.
 services: active-directory
 author: eross-msft
 manager: daveba
@@ -12,14 +12,14 @@ ms.topic: conceptual
 ms.date: 02/13/2018
 ms.author: lizross
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eb26d90772fc9e3e3e506946363c76cf02e6b2ef
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: ee9f6bc1986cb31b1e21a0678e59bf8269988426
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73820326"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74231811"
 ---
-# <a name="create-app-passwords-from-your-security-info-preview-page"></a>Создание паролей приложений на странице сведений о безопасности (Предварительная версия)
+# <a name="create-app-passwords-from-the-security-info-preview-page"></a>Create app passwords from the Security info (preview) page
 
 Некоторые приложения, например Outlook 2010, не поддерживают двухфакторную проверку подлинности. Это означает, что такое приложение не будет работать, если вы включите в организации двухфакторную проверку подлинности. Чтобы избежать этой проблемы, помимо обычного пароля, создайте автоматически сгенерированный пароль для использования с каждым внебраузерным приложением.
 
@@ -30,7 +30,7 @@ ms.locfileid: "73820326"
 
 При использовании паролей приложений необходимо помнить следующее:
 
-- Пароли приложений создаются автоматически и должны быть созданы и введены один раз для каждого приложения.
+- App passwords are auto-generated, and should be created and entered once per app.
 
 - Максимальное количество паролей на пользователя — 40. Если вы попытаетесь создать пароль после достижения этого предела, вам будет предложено удалить один из существующих паролей, чтобы создать новый.
 

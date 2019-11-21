@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 10/16/2018
 ms.author: srrengar
-ms.openlocfilehash: c2f953c98e41291951f07556bd0cd441d2793d1d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 8353c8846820aa996214e6b119a2f9027b8b6fe6
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60946598"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74232452"
 ---
 # <a name="azure-service-fabric-monitoring-partners"></a>Партнерские решения по мониторингу Azure Service Fabric
 
@@ -27,7 +27,7 @@ ms.locfileid: "60946598"
 
 ## <a name="dynatrace"></a>Dynatrace
 
-Интеграция с Dynatrace обеспечивает множество готовых возможностей для мониторинга кластеров Service Fabric. Установка агента Dynatrace OneAgent на экземпляры VMSS позволяет использовать счетчики производительности и топологию развертывания Service Fabric на уровне приложения. Dynatrace также является отличным решением для локального мониторинга. См. другие функции, перечисленные в [объявления](https://www.dynatrace.com/news/blog/automatic-end-to-end-service-fabric-monitoring-with-dynatrace/) и [инструкции](https://www.dynatrace.com/news/blog/automatic-end-to-end-service-fabric-monitoring-with-dynatrace/) для включения Dynatrace в кластере. 
+Интеграция с Dynatrace обеспечивает множество готовых возможностей для мониторинга кластеров Service Fabric. Установка агента Dynatrace OneAgent на экземпляры VMSS позволяет использовать счетчики производительности и топологию развертывания Service Fabric на уровне приложения. Dynatrace также является отличным решением для локального мониторинга. Check out more of the features listed in the [announcement](https://www.dynatrace.com/news/blog/automatic-end-to-end-service-fabric-monitoring-with-dynatrace/) and [instructions](https://www.dynatrace.com/news/blog/automatic-end-to-end-service-fabric-monitoring-with-dynatrace/) to enable Dynatrace on your cluster. 
 
 ## <a name="datadog"></a>Datadog
 
@@ -47,7 +47,7 @@ New Relic — это средство управления производит�
 
 ## <a name="humio"></a>Humio
 
-Humio — это служба сбора журналов, которое может собирать журналы из приложения и события из Service Fabric в облаке или на локальном компьютере в режиме реального времени. В дополнение к динамической наблюдаемость Humio предоставляет современные средства анализа и визуализации для просмотра и сбора аналитики из вашей системы диагностики. Humio имеет экономически эффективные тарифными планами и предназначено для масштабирования, сохраняя его счет быстрой скорости. Напрямую интегрируется с события платформы Service Fabric и данные телеметрии приложения. Дополнительные сведения об интеграции Humio и Service Fabric [здесь](https://github.com/humio/service-fabric-humio).
+Humio is a log collection service that can gather logs from your applications and events from Service Fabric in the cloud or on-premises in real time. In addition to live observability, Humio offers state of the art analysis and visualization capabilities for viewing and collecting insights from your diagnostics. Humio has cost effective pricing plans and is built to scale while retaining it's lightening fast speed. It directly integrates with Service Fabric platform events and Application telemetry. You can read more about the Humio and Service Fabric integration [here](https://github.com/humio/service-fabric-humio).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

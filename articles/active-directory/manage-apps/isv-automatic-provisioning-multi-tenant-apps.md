@@ -1,6 +1,6 @@
 ---
-title: Включение автоматической подготовки пользователей для Azure Active Directory приложений с несколькими клиентами
-description: Рекомендации для независимых поставщиков программного обеспечения для включения автоматической подготовки
+title: Enable automatic user provisioning for multi-tenant applications - Azure AD
+description: A guide for independent software vendors for enabling automated provisioning
 services: active-directory
 documentationcenter: azure
 author: BarbaraSelden
@@ -15,108 +15,108 @@ ms.date: 07/23/2019
 ms.author: baselden
 ms.reviewer: zhchia
 ms.collection: active-directory
-ms.openlocfilehash: 119c46ac2d1d34d86a6bfb9f75384f262f89219b
-ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
+ms.openlocfilehash: 74b991fce132c991ebd5fbd3789328e2a500da86
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72429449"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74232312"
 ---
-# <a name="enable-automatic-user-provisioning-for-your-multi-tenant-application"></a>Включение автоматической подготовки пользователей для приложения с несколькими клиентами
+# <a name="enable-automatic-user-provisioning-for-your-multi-tenant-application"></a>Enable automatic user provisioning for your multi-tenant application
 
-Автоматическая подготовка учетных записей пользователей — это процесс автоматизации создания, обслуживания и удаления удостоверений пользователей в целевых системах, таких как приложения программного обеспечения как услуги.
+Automatic user provisioning is the process of automating the creation, maintenance, and removal of user identities in target systems like your software-as-a-service applications.
 
-## <a name="why-enable-automatic-user-provisioning"></a>Зачем включать автоматическую подготовку пользователей?
+## <a name="why-enable-automatic-user-provisioning"></a>Why enable automatic user provisioning?
 
-Приложения, которым требуется запись пользователя в приложении перед первым входом пользователя в систему требует подготовки пользователей. У вас есть преимущества поставщика услуг и преимущества для клиентов.
+Applications that require that a user record is present in the application before a user’s first sign in require user provisioning. There are benefits to you as a service provider, and benefits to your customers.
 
-### <a name="benefits-to-you-as-the-service-provider"></a>Преимущества для поставщика услуг
+### <a name="benefits-to-you-as-the-service-provider"></a>Benefits to you as the service provider
 
-* Повышение безопасности приложения с помощью платформы Microsoft Identity.
+* Increase the security of your application by using the Microsoft identity platform.
 
-* Сократите реальные и наблюдаемые усилия клиентов, чтобы принять ваше приложение.
+* Reduce actual and perceived customer effort to adopt your application.
 
-* Сократите затраты на интеграцию с несколькими поставщиками удостоверений (поставщиков удостоверений) для автоматической подготовки пользователей с помощью системы для подготовки на основе управления идентификационными данными (SCIM).
+* Reduce your costs in integrating with multiple identity providers (IdPs) for automatic user provisioning by using System for Cross-Domain Identity Management (SCIM)-based provisioning.
 
-* Сократите затраты на поддержку за счет предоставления обширных журналов для помощи пользователям в устранении проблем, связанных с подготовкой пользователей.
+* Reduce support costs by providing rich logs to help customers troubleshoot user provisioning issues.
 
-* Увеличьте видимость приложения в [коллекции приложений Azure AD](https://azuremarketplace.microsoft.com/marketplace/apps).
+* Increase the visibility of your application in the [Azure AD app gallery](https://azuremarketplace.microsoft.com/marketplace/apps).
 
-* Получите список с приоритетом на странице учебников по приложению.
+* Get a prioritized listing in the App Tutorials page.
 
-### <a name="benefits-to-your-customers"></a>Преимущества для клиентов
+### <a name="benefits-to-your-customers"></a>Benefits to your customers
 
-* Повышение безопасности за счет автоматического удаления доступа к приложению для пользователей, которые меняют роли или оставляют Организации в приложении.
+* Increase security by automatically removing access to your application for users who change roles or leave the organization to your application.
 
-* Упростите управление пользователями для своего приложения, избегая ошибок и повторяющихся действий, связанных с подготовкой вручную.
+* Simplify user management for your application by avoiding human error and repetitive work associated with manual provisioning.
 
-* Сократите затраты на размещение и поддержку специально разработанных решений подготовки.
+* Reduce the costs of hosting and maintaining custom-developed provisioning solutions.
 
-## <a name="choose-a-provisioning-method"></a>Выбор метода подготовки
+## <a name="choose-a-provisioning-method"></a>Choose a provisioning method
 
-Azure AD предоставляет несколько путей интеграции, позволяющих включить автоматическую подготовку пользователей для приложения.
+Azure AD provides several integration paths to enable automatic user provisioning for your application.
 
-* [Служба подготовки Azure AD](https://docs.microsoft.com/azure/active-directory/manage-apps/user-provisioning) управляет подготовкой и отменой подготовки пользователей из Azure AD в ваше приложение (исходящая подготовка) и из приложения в Azure AD (входящая подготовка). Служба подключается к системе для конечных точек API управления пользовательским удостоверением (SCIM), предоставляемых вашим приложением.
+* The [Azure AD Provisioning Service](https://docs.microsoft.com/azure/active-directory/manage-apps/user-provisioning) manages the provisioning and deprovisioning of users from Azure AD to your application (outbound provisioning) and from your application to Azure AD (inbound provisioning). The service connects to the System for Cross-Domain Identity Management (SCIM) user management API endpoints provided by your application.
 
-* При использовании [Microsoft Graph](https://docs.microsoft.com/graph/)приложение управляет входящей и исходящей подготовкой пользователей и групп из Azure AD в приложение, запрашивая API Microsoft Graph.
+* When using the [Microsoft Graph](https://docs.microsoft.com/graph/), your application manages inbound and outbound provisioning of users and groups from Azure AD to your application by querying the Microsoft Graph API.
 
-* Подготовка пользователей в язык разметки зявлений системы безопасности (SAML) JIT (SAML JIT) может быть включена, если приложение использует SAML для Федерации. Он использует сведения о заявках, отправленные в токене SAML для предоставления пользователям.
+* The Security Assertion Markup Language Just in Time (SAML JIT) user provisioning can be enabled if your application is using SAML for federation. It uses claims information sent in the SAML token to provision users.
 
-Чтобы определить, какой вариант интеграции следует использовать для приложения, обратитесь к таблице высокого уровня сравнения и просмотрите более подробные сведения о каждом варианте.
+To help determine which integration option to use for your application, refer to the high-level comparison table, and then see the more detailed information on each option.
 
-| Возможности, включенные и улучшенные с помощью автоматической подготовки| Служба подготовки Azure AD (SCIM 2,0)| API Microsoft Graph (OData v 4.0)| SAML JIT |
+| Capabilities enabled or enhanced by Automatic Provisioning| Azure AD Provisioning Service (SCIM 2.0)| Microsoft Graph API (OData v4.0)| SAML JIT |
 |---|---|---|---|
-| Управление пользователями и группами в Azure AD| √| √| Только для пользователя |
-| Управление пользователями и группами, синхронизированными из локальной Active Directory| √| √| Только для пользователей * |
-| Доступ к данным за пределами пользователей и групп во время подготовки доступа к данным Office 365 (команды, SharePoint, электронная почта, календарь, документы и т. д.)| X +| √| X |
-| Создание, чтение и обновление пользователей на основе бизнес-правил| √| √| √ |
-| Удаление пользователей на основе бизнес-правил| √| √| X |
-| Управление автоматической подготовкой пользователей для всех приложений из портал Azure| √| X| √ |
-| Поддержка нескольких поставщиков удостоверений| √| X| √ |
-| Поддержка учетных записей гостей (B2B)| √| √| √ |
-| Поддержка некорпоративных учетных записей (B2C)| X| √| √ |
+| User and group management in Azure AD| √| √| User only |
+| Manage users and groups synced from on-premises Active Directory| √*| √*| User only* |
+| Access data beyond users and groups during provisioning Access to O365 data (Teams, SharePoint, Email, Calendar, Documents, etc.)| X+| √| X |
+| Create, read, and update users based on business rules| √| √| √ |
+| Delete users based on business rules| √| √| X |
+| Manage automatic user provisioning for all applications from the Azure portal| √| X| √ |
+| Support multiple identity providers| √| X| √ |
+| Support guest accounts (B2B)| √| √| √ |
+| Support non-enterprise accounts (B2C)| X| √| √ |
 
-<sup>*</sup> — для синхронизации пользователей из AD с Azure AD требуется настройка Azure AD Connect.  
-<sup>+</sup >— использование scim для подготовки не исключает возможность интеграции приложения с Microsoft Graph для других целей.
+<sup>*</sup> – Azure AD Connect setup is required to sync users from AD to Azure AD.  
+<sup>+</sup >– Using SCIM for provisioning does not preclude you from integrating your application with MIcrosoft Graph for other purposes.
 
-## <a name="azure-ad-provisioning-service-scim"></a>Служба подготовки Azure AD (SCIM)
+## <a name="azure-ad-provisioning-service-scim"></a>Azure AD Provisioning Service (SCIM)
 
-Службы подготовки Azure AD используют [scim](https://aka.ms/SCIMOverview), промышленный стандарт для подготовки, поддерживаемый многими поставщиками удостоверений (поставщиков удостоверений), а также приложениями (например, резервный элемент, g Suite, Dropbox). Мы рекомендуем использовать службу подготовки Azure AD, если вы хотите поддерживать поставщиков удостоверений в дополнение к Azure AD, так как любые SCIM, совместимые с IdP, могут подключаться к конечной точке SCIM. Создавая простую конечную точку/User, вы можете включить подготовку без необходимости поддерживать собственный модуль синхронизации. 
+The Azure AD provisioning services uses [SCIM](https://aka.ms/SCIMOverview), an industry standard for provisioning supported by many identity providers (IdPs) as well as applications (e.g. Slack, G Suite, Dropbox). We recommend you use the Azure AD provisioning service if you want to support IdPs in addition to Azure AD, as any SCIM-compliant IdP can connect to your SCIM endpoint. Building a simple /User endpoint, you can enable provisioning without having to maintain your own sync engine. 
 
-Дополнительные сведения о том, как пользователи службы подготовки Azure AD SCIM, см. в следующих статьях: 
+For more information on how the Azure AD Provisioning Service users SCIM, see: 
 
-* [Дополнительные сведения о стандарте SCIM](https://aka.ms/SCIMOverview)
+* [Learn more about the SCIM standard](https://aka.ms/SCIMOverview)
 
-* [Использование системы для управления междоменными удостоверениями (SCIM) для автоматической инициализации пользователей и групп из Azure Active Directory в приложения](https://docs.microsoft.com/azure/active-directory/manage-apps/use-scim-to-provision-users-and-groups)
+* [Using System for Cross-Domain Identity Management (SCIM) to automatically provision users and groups from Azure Active Directory to applications](https://docs.microsoft.com/azure/active-directory/manage-apps/use-scim-to-provision-users-and-groups)
 
-* [Общие сведения о реализации Azure AD SCIM](https://docs.microsoft.com/azure/active-directory/manage-apps/use-scim-to-provision-users-and-groups)
+* [Understand the Azure AD SCIM implementation](https://docs.microsoft.com/azure/active-directory/manage-apps/use-scim-to-provision-users-and-groups)
 
-## <a name="microsoft-graph-for-provisioning"></a>Microsoft Graph для подготовки
+## <a name="microsoft-graph-for-provisioning"></a>Microsoft Graph for Provisioning
 
-При использовании Microsoft Graph для подготовки предоставляется доступ ко всем пользовательским данным, доступным в Graph. Помимо сведений о пользователях и группах, можно также получить дополнительные сведения, такие как роли пользователя, диспетчер и прямые отчеты, принадлежащие и зарегистрированные устройства, а также сотни других элементов данных, доступных в [Microsoft Graph](https://docs.microsoft.com/graph/api/overview?view=graph-rest-1.0). 
+When you use Microsoft Graph for provisioning, you have access to all the rich user data available in Graph. In addition to the details of users and groups, you can also fetch additional information like the user’s roles, manager and direct reports, owned and registered devices, and hundreds of other data pieces available in the [Microsoft Graph](https://docs.microsoft.com/graph/api/overview?view=graph-rest-1.0). 
 
-Более 15 000 000 организаций и 90% компаний из списка Fortune 500 используют Azure AD при подписке на облачные службы Майкрософт, такие как Office 365, Microsoft Azure, Enterprise Mobility Suite или Microsoft 365. Microsoft Graph можно использовать для интеграции приложения с рабочими процессами администрирования, например для адаптации сотрудников (и завершения работы), обслуживания профиля и многого другого. 
+More than 15 million organizations, and 90% of fortune 500 companies use Azure AD while subscribing to Microsoft cloud services like Office 365, Microsoft Azure, Enterprise Mobility Suite, or Microsoft 365. You can use Microsoft Graph to integrate your app with administrative workflows, such as employee onboarding (and termination), profile maintenance, and more. 
 
-Дополнительные сведения об использовании Microsoft Graph для подготовки:
+Learn more about using Microsoft Graph for provisioning:
 
-* [Домашняя страница Microsoft Graph](https://developer.microsoft.com/graph)
+* [Microsoft Graph Home page](https://developer.microsoft.com/graph)
 
 * [Overview of Microsoft Graph (Обзор Microsoft Graph)](https://docs.microsoft.com/graph/overview)
 
-* [Обзор Microsoft Graph проверки подлинности](https://docs.microsoft.com/graph/auth/)
+* [Microsoft Graph Auth Overview](https://docs.microsoft.com/graph/auth/)
 
-* [Приступая к работе с Microsoft Graph](https://developer.microsoft.com/graph/get-started)
+* [Getting started with Microsoft Graph](https://developer.microsoft.com/graph/get-started)
 
-## <a name="using-saml-jit-for-provisioning"></a>Использование SAML JIT для подготовки
+## <a name="using-saml-jit-for-provisioning"></a>Using SAML JIT for provisioning
 
-Если вы хотите подготавливать пользователей только при первом входе в приложение и не хотите автоматически отменять предоставление пользователям, можно использовать SAML JIT. Приложение должно поддерживать SAML 2,0 в качестве протокола Федерации для использования SAML JIT.
+If you want to provision users only upon first sign in to your application, and do not need to automatically deprovision users, SAML JIT is an option. Your application must support SAML 2.0 as a federation protocol to use SAML JIT.
 
-SAML JIT использует сведения о заявках в токене SAML для создания и обновления сведений о пользователях в приложении. Клиенты могут настроить эти обязательные утверждения в приложении Azure AD по мере необходимости. Иногда необходимо включить JIT-подготовку на стороне приложения, чтобы клиент мог использовать эту функцию. SAML JIT удобен для создания и обновления пользователей, но не может удалять или деактивировать пользователей в приложении.
+SAML JIT uses the claims information in the SAML token to create and update user information in the application. Customers can configure these required claims in the Azure AD application as needed. Sometimes the JIT provisioning needs to be enabled from the application side so that customer can use this feature. SAML JIT is useful for creating and updating users, but it can't delete or deactivate the users in the application.
 
 ## <a name="next-steps"></a>Следующие шаги
 
-* [Включение единого входа для приложения](https://docs.microsoft.com/azure/active-directory/manage-apps/isv-sso-content)
+* [Enable Single Sign-on for your application](https://docs.microsoft.com/azure/active-directory/manage-apps/isv-sso-content)
 
-* [Отправьте список приложений](https://microsoft.sharepoint.com/teams/apponboarding/Apps/SitePages/Default.aspx) и партнеров корпорации Майкрософт для создания документации на сайте Майкрософт.
+* [Submit your application listing](https://microsoft.sharepoint.com/teams/apponboarding/Apps/SitePages/Default.aspx) and partner with Microsoft to create documentation on Microsoft’s site.
 
-* [Присоединяйтесь к Microsoft Partner Network (бесплатно) и создайте план перехода на рынке](https://partner.microsoft.com/en-us/explore/commercial).
+* [Join the Microsoft Partner Network (free) and create your go to market plan](https://partner.microsoft.com/en-us/explore/commercial).

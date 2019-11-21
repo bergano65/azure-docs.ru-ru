@@ -1,7 +1,7 @@
 ---
-title: Как использовать ключи разработки и среды выполнения — LUIS
+title: How to use authoring and runtime keys - LUIS
 titleSuffix: Azure Cognitive Services
-description: При первом использовании Language Understanding (LUIS) не нужно создавать ключ разработки. Если вы планируете опубликовать приложение, а затем используйте конечную точку среды выполнения, необходимо создать и назначить приложению ключ среды выполнения.
+description: When you first use Language Understanding (LUIS), you do not need to create an authoring key. When you intend to publish the app, then use your runtime endpoint, you need to create and assign the runtime key to the app.
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -9,137 +9,135 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 10/25/2019
+ms.date: 11/19/2019
 ms.author: diberry
-ms.openlocfilehash: 957b12ad00f53a5aed7ff2a1ecd4afd21e58eb93
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 876026b5399631728331c4a9e67482a34f9d0b2d
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73467457"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74225560"
 ---
-# <a name="using-authoring-and-runtime-resource-keys"></a>Использование ключей ресурсов для разработки и среды выполнения
+# <a name="using-authoring-and-runtime-resource-keys"></a>Using authoring and runtime resource keys
 
-Разработка и ресурсы среды выполнения обеспечивают проверку подлинности для приложения LUIS и конечной точки прогнозирования.
-
-[!INCLUDE [Waiting for LUIS portal refresh](./includes/wait-v3-upgrade.md)]
+Authoring and runtime resources provide authentication to your LUIS app and prediction endpoint.
 
 <a name="create-luis-service"></a>
 <a name="create-language-understanding-endpoint-key-in-the-azure-portal"></a>
 
-При входе на портал LUIS можно продолжить:
+When you sign in to the LUIS portal, you can choose to continue with:
 
-* Бесплатная [пробная версия ключа](#trial-key) — создание и несколько запросов к конечной точке прогнозирования.
-* ресурс Azure [Luis Authoring](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesLUISAllInOne) . 
+* a free [trial key](#trial-key) - providing authoring and a few prediction endpoint queries.
+* an Azure [LUIS authoring](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesLUISAllInOne) resource. 
 
 
 <a name="starter-key"></a>
 
-## <a name="sign-in-to-luis-portal-and-begin-authoring"></a>Войдите на портал LUIS и начните создание
+## <a name="sign-in-to-luis-portal-and-begin-authoring"></a>Sign in to LUIS portal and begin authoring
 
-1. Войдите на [портал Luis](https://www.luis.ai) и примите условия использования.
-1. Начните работу с приложения LUIS, выбрав тип LUISого ключа, который вы хотите использовать: бесплатный пробный ключ или новый ключ создания Azure LUIS. 
+1. Sign in to [LUIS portal](https://www.luis.ai) and agree to the terms of use.
+1. Begin your LUIS app by choosing which type of LUIS authoring key you would like to use: free trial key, or new Azure LUIS authoring key. 
 
     ![Выбор типа ресурса для разработки в службе "Распознавание речи"](./media/luis-how-to-azure-subscription/sign-in-create-resource.png)
 
-1. По завершении процесса выбора ресурсов [Создайте новое приложение](luis-how-to-start-new-app.md#create-new-app-in-luis). 
+1. When you are done with your resource selection process, [create a new app](luis-how-to-start-new-app.md#create-new-app-in-luis). 
 
-## <a name="trial-key"></a>Ключ пробной версии
+## <a name="trial-key"></a>Trial key
 
-Для вас предоставляется пробный ключ (начальная версия). Он используется в качестве ключа проверки подлинности для запроса среды выполнения прогнозирующих конечных точек, до 1000 запросов в месяц. 
+The trial (starter) key is provided for you. It is used as your authentication key to query the prediction endpoint runtime, up to 1000 queries a month. 
 
-Он отображается как на странице **параметров пользователя** , так и на страницах **ресурсов Azure "Управление >** " на портале Luis. 
+It is visible on both the **User Settings** page and the **Manage -> Azure resources** pages in the LUIS portal. 
 
-Когда вы будете готовы опубликовать конечную точку прогноза, создайте и назначьте ключи среды выполнения для создания и прогнозирования, чтобы заменить функциональность начального ключа. 
+When you are ready to publish your prediction endpoint, create and assign authoring and prediction runtime keys, to replace the starter key functionality. 
 
-## <a name="create-resources-in-the-azure-portal"></a>Создание ресурсов в портал Azure
+## <a name="create-resources-in-the-azure-portal"></a>Create resources in the Azure portal
 
-1. Используйте [эту ссылку](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesLUISAllInOne) , чтобы открыть портал Azure в для создания ресурсов.
-1. Выберите **оба** параметра, чтобы создать создание и ключ среды выполнения для конечной точки прогнозирования. 
-1. Введите сведения, необходимые для создания ресурса, а затем щелкните **создать** , чтобы завершить процесс.
+1. Use [this link](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesLUISAllInOne) to open the Azure portal at for resource creation.
+1. Select **Both** to create an authoring and a prediction endpoint runtime key. 
+1. Enter the information required to create the resource then select **Create** to finish the process.
 
-    ![Создание ресурса для понимания языка](./media/luis-how-to-azure-subscription/create-resource-in-azure.png)
+    ![Create the language understanding resource](./media/luis-how-to-azure-subscription/create-resource-in-azure.png)
 
-    |Имя|Назначение|
+    |Name|Цель|
     |--|--|
-    |Имя ресурса| Выбранное пользователем имя, используемое в качестве части URL-адреса для запросов конечной точки создания и прогнозирования.|
-    |Имя подписки| Подписка, для которой будет выставлен счет за ресурс.|
-    |Группа ресурсов| Имя настраиваемой группы ресурсов, которую вы выбираете или создаете. Группы ресурсов позволяют группировать ресурсы Azure для доступа и управления в одном регионе.|
-    |Место разработки|Регион, связанный с вашей моделью.|
-    |Ценовая категория создания|Ценовая категория определяет максимальное количество транзакций в секунду и месяц.|
-    |Расположение среды выполнения|Регион, связанный с опубликованной средой выполнения конечной точки прогнозирования.|
-    |Ценовая категория среды выполнения|Ценовая категория определяет максимальное количество транзакций в секунду и месяц.|
+    |Имя ресурса| A custom name you choose, used as part of the URL for your authoring and prediction endpoint queries.|
+    |Имя подписки| the subscription that will be billed for the resource.|
+    |группа ресурсов.| A custom resource group name you choose or create. Resource groups allow you to group Azure resources for access and management in the same region.|
+    |Место разработки|The region associated with your model.|
+    |Ценовая категория для разработки|The pricing tier determines the maximum transaction per second and month.|
+    |Расположение среды выполнения|The region associated with your published prediction endpoint runtime.|
+    |Ценовая категория среды выполнения|The pricing tier determines the maximum transaction per second and month.|
 
-    После создания обоих ресурсов Назначьте ресурсы на портале LUIS.
+    Once both resources are created, assign the resources in the LUIS portal.
 
-## <a name="create-resources-in-azure-cli"></a>Создание ресурсов в Azure CLI
+## <a name="create-resources-in-azure-cli"></a>Create resources in Azure CLI
 
-Используйте [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) , чтобы создать каждый ресурс по отдельности. 
+Use the [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) to create each resource individually. 
 
-`kind`ресурсов:
+Resource `kind`:
 
-* Создание: `LUIS.Authoring`
-* Прогноз: `LUIS` 
+* Authoring: `LUIS.Authoring`
+* Prediction: `LUIS` 
 
-1. Войдите в Azure CLI:
+1. Sign in to the Azure CLI:
 
     ```console
     az login
     ```
 
-    Откроется браузер, позволяющий выбрать правильную учетную запись и обеспечить проверку подлинности.
+    This opens a browser to allow you to select the correct account and provide authentication.
 
-1. Создайте **ресурс-Luis**для создания ресурсов типа `LUIS.Authoring`, именуемый `my-luis-authoring-resource` в _существующей_ группе ресурсов с именем `my-resource-group` для региона `westus`. 
+1. Create a **LUIS authoring resource**, of kind `LUIS.Authoring`, named `my-luis-authoring-resource` in the _existing_ resource group named `my-resource-group` for the `westus` region. 
 
     ```console
     az cognitiveservices account create -n my-luis-authoring-resource -g my-resource-group --kind LUIS.Authoring --sku F0 -l westus --yes
     ```
 
-1. Создайте **ресурс Luis прогнозирующих точек**типа `LUIS`с именем `my-luis-prediction-resource` в _существующей_ группе ресурсов с именем `my-resource-group` для региона `westus`. Если требуется более высокая пропускная способность, чем уровень Free, измените `F0` на `S0`. Дополнительные сведения о [ценовых категориях и пропускной способности](luis-boundaries.md#key-limits).
+1. Create a **LUIS prediction endpoint resource**, of kind `LUIS`, named `my-luis-prediction-resource` in the _existing_ resource group named `my-resource-group` for the `westus` region. If you want a higher throughput than the free tier, change `F0` to `S0`. Learn more about [pricing tiers and throughput](luis-boundaries.md#key-limits).
 
     ```console
     az cognitiveservices account create -n my-luis-prediction-resource -g my-resource-group --kind LUIS --sku F0 -l westus --yes
     ```
 
     > [!Note] 
-    > Эти ключи не используются порталом LUIS, пока они **не** назначены на ПОРТАЛе Luis в **ресурсах управления > Azure**.
+    > This keys are **not** used by the LUIS portal until they are assigned in the LUIS portal on the **Manage -> Azure resources**.
 
-## <a name="assign-an-authoring-resource-in-the-luis-portal-for-all-apps"></a>Назначение ресурса для разработки на портале LUIS для всех приложений
+## <a name="assign-an-authoring-resource-in-the-luis-portal-for-all-apps"></a>Assign an authoring resource in the LUIS portal for all apps
 
-Вы можете назначить ресурс для создания отдельного приложения или для всех приложений в LUIS. Следующая процедура назначает всем приложениям один ресурс для создания.
+You can assign an authoring resource for a single app or for all apps in LUIS. The following procedure assigns all apps to a single authoring resource.
 
-1. Войдите на [портал Luis](https://www.luis.ai).
-1. На верхней панели навигации справа выберите учетную запись пользователя, а затем щелкните **Параметры**.
-1. На странице **Параметры пользователя** выберите **Добавить ресурс для разработки** и выберите существующий ресурс разработки. Щелкните **Сохранить**. 
+1. Sign in to the [LUIS portal](https://www.luis.ai).
+1. At the top navigation bar, to the far right, select your user account, then select **Settings**.
+1. On the **User Settings** page, select **Add authoring resource** then select an existing authoring resource. Щелкните **Сохранить**. 
 
-## <a name="assign-a-resource-to-an-app"></a>Назначение ресурса для приложения
+## <a name="assign-a-resource-to-an-app"></a>Assign a resource to an app
 
-Можно назначить один ресурс, среду выполнения для создания или прогнозирования конечных точек в приложение, выполнив следующую процедуру.
+You can assign a single resource, authoring or prediction endpoint runtime, to an app with the following procedure.
 
-1. Войдите на [портал Luis](https://www.luis.ai), а затем выберите приложение из списка **Мои приложения** .
-1. Перейдите на страницу **Управление ресурсами Azure >** .
+1. Sign in to the [LUIS portal](https://www.luis.ai), then select an app from the **My apps** list.
+1. Navigate to the **Manage -> Azure resources** page.
 
-    ![Выберите ресурсы Azure "Управление >" на портале LUIS, чтобы назначить ресурс приложению.](./media/luis-how-to-azure-subscription/manage-azure-resources-prediction.png)
+    ![Select the Manage -> Azure resources in the LUIS portal to assign a resource to the app.](./media/luis-how-to-azure-subscription/manage-azure-resources-prediction.png)
 
-1. Выберите вкладку ресурс прогноза или разработки, а затем нажмите кнопку **Добавить прогнозирующий ресурс** или **Добавить ресурс для создания ресурса** . 
-1. Выберите поля в форме, чтобы найти правильный ресурс, а затем нажмите кнопку **сохранить**.  
+1. Select the Prediction or Authoring resource tab then select the **Add prediction resource** or **Add authoring resource** button. 
+1. Select the fields in the form to find the correct resource, then select **Save**.  
 
-### <a name="assign-runtime-resource-without-using-luis-portal"></a>Назначение ресурса среды выполнения без использования портала LUIS
+### <a name="assign-runtime-resource-without-using-luis-portal"></a>Assign runtime resource without using LUIS portal
 
-В целях автоматизации, таких как конвейер CI/CD, может потребоваться автоматизировать назначение ресурса среды выполнения LUIS приложению LUIS. Для этого необходимо выполнить указанные ниже действия.
+For automation purposes such as a CI/CD pipeline, you may want to automate the assignment of a LUIS runtime resource to a LUIS app. Для этого необходимо выполнить указанные ниже действия.
 
 1. Запросите маркер Azure Resource Manager с этого [веб-сайта](https://resources.azure.com/api/token?plaintext=true). Срок действия этого маркера ограничен, поэтому его следует использовать сразу. По запросу возвращается маркер Azure Resource Manager.
 
     ![Запрашивание и получение маркера Azure Resource Manager](./media/luis-manage-keys/get-arm-token.png)
 
-1. Используйте маркер, чтобы запросить ресурсы среды выполнения LUIS в подписках из [API-интерфейса получения Luis учетных записей Azure](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5be313cec181ae720aa2b26c), к которому имеет доступ ваша учетная запись пользователя. 
+1. Use the token to request the LUIS runtime resources across subscriptions, from the [Get LUIS azure accounts API](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5be313cec181ae720aa2b26c), which your user account has access to. 
 
     Этот API POST принимает указанные ниже параметры.
 
-    |Заголовок|Значение|
+    |Заголовок|Value|
     |--|--|
     |`Authorization`|Значение заголовка `Authorization` — `Bearer {token}`. Обратите внимание, что перед значением маркера должны находиться слово `Bearer` и пробел.| 
-    |`Ocp-Apim-Subscription-Key`|Ваш ключ разработки.|
+    |`Ocp-Apim-Subscription-Key`|Your authoring key.|
 
     Этот API возвращает массив объектов JSON ваших подписок LUIS, включая идентификатор подписки, группу ресурсов и имя ресурса, возвращаемое в виде имени учетной записи. Найдите в массиве один элемент, соответствующий ресурсу LUIS, который требуется назначить приложению LUIS. 
 
@@ -147,33 +145,33 @@ ms.locfileid: "73467457"
 
     Этот API POST принимает указанные ниже параметры.
 
-    |Тип|Настройка|Значение|
+    |Тип|Параметр|Value|
     |--|--|--|
     |Заголовок|`Authorization`|Значение заголовка `Authorization` — `Bearer {token}`. Обратите внимание, что перед значением маркера должны находиться слово `Bearer` и пробел.|
-    |Заголовок|`Ocp-Apim-Subscription-Key`|Ваш ключ разработки.|
+    |Заголовок|`Ocp-Apim-Subscription-Key`|Your authoring key.|
     |Заголовок|`Content-type`|`application/json`|
     |Строка запроса|`appid`|Идентификатор приложения LUIS. 
-    |Текст||{"AzureSubscriptionId":"ddda2925-af7f-4b05-9ba1-2155c5fe8a8e",<br>"ResourceGroup": "resourcegroup-2",<br>"AccountName": "luis-uswest-S0-2"}|
+    |текст||{"AzureSubscriptionId":"ddda2925-af7f-4b05-9ba1-2155c5fe8a8e",<br>"ResourceGroup": "resourcegroup-2",<br>"AccountName": "luis-uswest-S0-2"}|
 
     При успешном выполнении этого API возвращается состояние "201 - created". 
 
 ## <a name="unassign-resource"></a>Отменить присвоение ресурса
 
-1. Войдите на [портал Luis](https://www.luis.ai), а затем выберите приложение из списка **Мои приложения** .
-1. Перейдите на страницу **Управление ресурсами Azure >** .
-1. Выберите вкладку ресурс прогноза или разработки, а затем нажмите кнопку **Отменить назначение ресурса** для ресурса. 
+1. Sign in to the [LUIS portal](https://www.luis.ai), then select an app from the **My apps** list.
+1. Navigate to the **Manage -> Azure resources** page.
+1. Select the Prediction or Authoring resource tab then select the **Unassign resource** button for the resource. 
 
-При удалении ресурса он не удаляется из Azure. Он только потеряет связь из LUIS. 
+When you unassign a resource, it is not deleted from Azure. Он только потеряет связь из LUIS. 
 
 ## <a name="reset-authoring-key"></a>Сброс ключа разработки
 
-**Для [создания перенесенных приложений ресурсов](luis-migration-authoring.md)** . Если ваш ключ разработки скомпрометирован, сбросьте ключ в портал Azure на странице **ключи** для этого ресурса. 
+**For [authoring resource migrated](luis-migration-authoring.md) apps**: if your authoring key is compromised, reset the key in the Azure portal on the **Keys** page for that authoring resource. 
 
-**Для приложений, которые еще не перенесены**: ключ сброшен для всех приложений на портале Luis. Если вы разрабатываете приложения с помощью API-интерфейсов создания, необходимо изменить значение OCP-Apim-Subscription-Key на новый ключ.
+**For apps that have not migrated yet**: the key is reset on all your apps in the LUIS portal. If you author your apps via the authoring APIs, you need to change the value of Ocp-Apim-Subscription-Key to the new key.
 
-## <a name="regenerate-azure-key"></a>Повторное создание ключа Azure
+## <a name="regenerate-azure-key"></a>Regenerate Azure key
 
-Повторно создайте ключи Azure из портал Azure на странице **ключи** .
+Regenerate the Azure keys from the Azure portal, on the **Keys** page.
 
 ## <a name="delete-account"></a>Удаление учетной записи
 
@@ -191,21 +189,21 @@ ms.locfileid: "73467457"
     ![Проверьте ценовую категорию LUIS](./media/luis-usage-tiers/updated.png)
 1. Не забудьте [назначить этот ключ конечной точки](#assign-a-resource-to-an-app) на странице **публикации** и использовать его во всех запросах конечной точки. 
 
-## <a name="viewing-azure-resource-metrics"></a>Просмотр метрик ресурсов Azure
+## <a name="viewing-azure-resource-metrics"></a>Viewing Azure resource metrics
 
-### <a name="viewing-azure-resource-summary-usage"></a>Просмотр сводных сведений об использовании ресурсов Azure
+### <a name="viewing-azure-resource-summary-usage"></a>Viewing Azure resource summary usage
 Вы можете просмотреть сведения об использовании службы LUIS в Azure. На странице **Обзор** отображаются последние сводные сведения, включая вызовы и ошибки. При отправке запроса конечной точки LUIS сведения об использовании на **странице обзора** отображаются в течение пяти минут.
 
 ![Просмотр сводки использования](./media/luis-usage-tiers/overview.png)
 
-### <a name="customizing-azure-resource-usage-charts"></a>Настройка диаграмм использования ресурсов Azure
+### <a name="customizing-azure-resource-usage-charts"></a>Customizing Azure resource usage charts
 Метрики обеспечивают более подробное представление данных.
 
 ![Метрики по умолчанию](./media/luis-usage-tiers/metrics-default.png)
 
 Для диаграмм метрик можно настроить тип метрики и период времени. 
 
-![Настраиваемые метрики](./media/luis-usage-tiers/metrics-custom.png)
+![Пользовательские метрики](./media/luis-usage-tiers/metrics-custom.png)
 
 ### <a name="total-transactions-threshold-alert"></a>Оповещение о пороговом значении "Всего транзакций"
 Если вы хотите знать, когда будет достигнуто определенное пороговое значение транзакций (например, 10 000), вы можете создать оповещение. 
@@ -216,7 +214,7 @@ ms.locfileid: "73467457"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Узнайте [, как использовать версии](luis-how-to-manage-versions.md) для управления жизненным циклом приложения.
-* Изучите основные понятия, в том числе [ресурсы для разработки](luis-concept-keys.md#authoring-key) и [участников](luis-concept-keys.md#contributions-from-other-authors) этого ресурса.
-* Сведения [о создании](luis-how-to-azure-subscription.md) ресурсов разработки и среды выполнения
-* Переход на новый [ресурс создания](luis-migration-authoring.md) 
+* Learn [how to use versions](luis-how-to-manage-versions.md) to control your app life cycle.
+* Understand the concepts including the [authoring resource](luis-concept-keys.md#authoring-key) and [contributors](luis-concept-keys.md#contributions-from-other-authors) on that resource.
+* Learn [how to create](luis-how-to-azure-subscription.md) authoring and runtime resources
+* Migrate to the new [authoring resource](luis-migration-authoring.md) 

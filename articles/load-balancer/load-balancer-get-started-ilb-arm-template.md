@@ -1,6 +1,6 @@
 ---
 title: Создание внутренней подсистемы балансировки нагрузки на основе шаблона Azure
-titlesuffix: Azure Load Balancer
+titleSuffix: Azure Load Balancer
 description: Узнайте, как создать внутренний балансировщик нагрузки в диспетчере ресурсов с помощью шаблона.
 services: load-balancer
 documentationcenter: na
@@ -13,19 +13,19 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/25/2017
 ms.author: allensu
-ms.openlocfilehash: f05c90948fe95f204f268d84c01e1e8773bec468
-ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
+ms.openlocfilehash: bdc9a8079c46a05e5045d72cd6d7b07a9a457899
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68275383"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74215276"
 ---
 # <a name="create-an-internal-load-balancer-using-a-template"></a>Создайте внутренний балансировщик нагрузки с помощью шаблона
 
 > [!div class="op_single_selector"]
-> * [портал Azure](../load-balancer/load-balancer-get-started-ilb-arm-portal.md)
+> * [портале Azure](../load-balancer/load-balancer-get-started-ilb-arm-portal.md)
 > * [PowerShell](../load-balancer/load-balancer-get-started-ilb-arm-ps.md)
-> * [Интерфейс командной строки Azure](../load-balancer/load-balancer-get-started-ilb-arm-cli.md)
+> * [Azure CLI](../load-balancer/load-balancer-get-started-ilb-arm-cli.md)
 > * [Шаблон](../load-balancer/load-balancer-get-started-ilb-arm-template.md)
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
@@ -42,10 +42,10 @@ ms.locfileid: "68275383"
 
 Чтобы развернуть шаблон, загруженный с помощью PowerShell, выполните описанные ниже действия.
 
-1. Если вы ранее не использовали Azure PowerShell, следуйте указаниям в статье [Установка и настройка Azure PowerShell](/powershell/azure/overview) до этапа входа в Azure и выбора подписки.
+1. Если вы ранее не использовали Azure PowerShell, следуйте инструкциям в статье [Установка и настройка Azure PowerShell](/powershell/azure/overview) , чтобы выполнить вход в Azure и выбрать подписку.
 2. Скачайте файл параметров на локальный диск.
 3. Измените и сохраните файл.
-4. Выполните командлет **New-азресаурцеграупдеплоймент** , чтобы создать группу ресурсов с помощью шаблона.
+4. Run the **New-AzResourceGroupDeployment** cmdlet to create a resource group using the template.
 
     ```azurepowershell-interactive
     New-AzResourceGroupDeployment -Name TestRG -Location westus `
@@ -75,10 +75,10 @@ ms.locfileid: "68275383"
     azure group create --name TestRG --location westus --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-2-vms-internal-load-balancer/azuredeploy.json --parameters-file parameters.json
     ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Настройка режима распределения балансировщика нагрузки с помощью соответствия исходному IP-адресу](load-balancer-distribution-mode.md)
 
 [Настройка параметров времени ожидания простоя TCP для подсистемы балансировки нагрузки](load-balancer-tcp-idle-timeout.md)
 
-Синтаксис JSON и свойства подсистемы балансировки нагрузки в шаблоне см. в справочнике по шаблону для ресурса [Microsoft.Network/loadBalancers](/azure/templates/microsoft.network/loadbalancers).
+Синтаксис JSON и свойства подсистемы балансировки нагрузки в шаблоне, см. в разделе [Microsoft.Network/loadBalancers](/azure/templates/microsoft.network/loadbalancers).

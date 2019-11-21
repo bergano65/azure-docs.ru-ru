@@ -1,6 +1,6 @@
 ---
-title: Регистрация для сброса пароля в Azure AD
-description: Зарегистрируйте данные проверки подлинности для самостоятельного сброса пароля Azure AD, чтобы можно было сбросить свой пароль без помощи администратора.
+title: Register authentication info to reset your own password - Azure AD
+description: Register your authentication method information for Azure AD self-service password reset, so you can reset your own password without administrator help.
 services: active-directory
 author: eross-msft
 manager: daveba
@@ -13,14 +13,14 @@ ms.topic: conceptual
 ms.date: 01/11/2018
 ms.author: lizross
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 796702b2189dcfb001f72913e4a01c0ae01462ad
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
-ms.translationtype: MT
+ms.openlocfilehash: 01cae72ac4752d5d1f6135312d578eb1a277ccd9
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73820455"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74231900"
 ---
-# <a name="register-to-reset-your-own-password"></a>Регистрация для сброса пароля
+# <a name="register-your-authentication-method-info-to-reset-your-own-password"></a>Register your authentication method info to reset your own password
 
 > [!IMPORTANT]
 > Вы здесь из-за того, что не удается выполнить вход? Если да, то перейдите к статье [Сброс пароля к рабочей или учебной учетной записи](active-directory-passwords-update-your-own-password.md).

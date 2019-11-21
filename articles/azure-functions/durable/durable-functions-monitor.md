@@ -1,20 +1,15 @@
 ---
 title: Мониторы в устойчивых функциях — Azure
 description: Сведения о том, как реализовать монитор состояния с использованием расширения устойчивых функций для Функций Azure.
-services: functions
-author: ggailey777
-manager: jeconnoc
-keywords: ''
-ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 5cb4602ac0431e09208953122f13b30124ab77f5
-ms.sourcegitcommit: b2fb32ae73b12cf2d180e6e4ffffa13a31aa4c6f
+ms.openlocfilehash: 9c8edf5e8fb32160280a1ce9bff827c2e3fa14f8
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73614751"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74232857"
 ---
 # <a name="monitor-scenario-in-durable-functions---weather-watcher-sample"></a>Сценарий монитора в устойчивых функциях — пример наблюдателя за погодой
 
@@ -59,7 +54,7 @@ ms.locfileid: "73614751"
 * `E3_GetIsClear`: функция действия, которая проверяет текущие погодные условия для местоположения.
 * `E3_SendGoodWeatherAlert`: функция действия, которая отправляет SMS-сообщение через Twilio.
 
-В следующих разделах описывается конфигурация и код, используемые для C# написания сценариев и JavaScript. Код для разработки с помощью Visual Studio представлен в конце этой статьи.
+The following sections explain the configuration and code that is used for C# scripting and JavaScript. Код для разработки с помощью Visual Studio представлен в конце этой статьи.
 
 ## <a name="the-weather-monitoring-orchestration-visual-studio-code-and-azure-portal-sample-code"></a>Оркестрация мониторинга погоды (пример кода Visual Studio Code и портала Azure).
 
@@ -73,7 +68,7 @@ ms.locfileid: "73614751"
 
 [!code-csharp[Main](~/samples-durable-functions/samples/csx/E3_Monitor/run.csx)]
 
-### <a name="javascript-functions-20-only"></a>JavaScript (только функции 2,0)
+### <a name="javascript-functions-20-only"></a>JavaScript (только Функции 2.0)
 
 [!code-javascript[Main](~/samples-durable-functions/samples/javascript/E3_Monitor/index.js)]
 
@@ -84,13 +79,13 @@ ms.locfileid: "73614751"
 3. Вызывает **E3_GetIsClear**, чтобы определить, ясное ли небо в запрашиваемом местоположении.
 4. Если погода хорошая, вызывается **E3_SendGoodWeatherAlert**, чтобы отправить SMS-уведомление на запрошенный номер телефона.
 5. Создает устойчивый таймер для возобновления оркестрации во время следующего интервала опроса. Для краткости в образце используется жестко заданное значение.
-6. Продолжит выполнение до тех пор, пока `CurrentUtcDateTime` (.NET) или `currentUtcDateTime` (JavaScript) не пройдет срок действия монитора или не будет отправлено оповещение SMS.
+6. Continues running until the `CurrentUtcDateTime` (.NET) or `currentUtcDateTime` (JavaScript) passes the monitor's expiration time, or an SMS alert is sent.
 
 Несколько экземпляров оркестрации могут выполняться одновременно, отправляя несколько запросов **MonitorRequests**. Можно указать местоположение для мониторинга и номер телефона для отправки SMS-оповещения.
 
 ## <a name="strongly-typed-data-transfer-net-only"></a>Строго типизированная передача данных (только .NET)
 
-Orchestrator требует несколько фрагментов данных, поэтому [Общие объекты POCO](../functions-reference-csharp.md#reusing-csx-code) используются для строго типизированного обмена данными в C# скрипте и C# :  
+The orchestrator requires multiple pieces of data, so [shared POCO objects](../functions-reference-csharp.md#reusing-csx-code) are used for strongly-typed data transfer in C# and C# script:  
 [!code-csharp[Main](~/samples-durable-functions/samples/csx/shared/MonitorRequest.csx)]
 
 [!code-csharp[Main](~/samples-durable-functions/samples/csx/shared/Location.csx)]
@@ -109,7 +104,7 @@ Orchestrator требует несколько фрагментов данных
 
 [!code-csharp[Main](~/samples-durable-functions/samples/csx/E3_GetIsClear/run.csx)]
 
-### <a name="javascript-functions-20-only"></a>JavaScript (только функции 2,0)
+### <a name="javascript-functions-20-only"></a>JavaScript (только Функции 2.0)
 
 [!code-javascript[Main](~/samples-durable-functions/samples/javascript/E3_GetIsClear/index.js)]
 
@@ -123,7 +118,7 @@ Orchestrator требует несколько фрагментов данных
 
 [!code-csharp[Main](~/samples-durable-functions/samples/csx/E3_SendGoodWeatherAlert/run.csx)]
 
-### <a name="javascript-functions-20-only"></a>JavaScript (только функции 2,0)
+### <a name="javascript-functions-20-only"></a>JavaScript (только Функции 2.0)
 
 [!code-javascript[Main](~/samples-durable-functions/samples/javascript/E3_SendGoodWeatherAlert/index.js)]
 

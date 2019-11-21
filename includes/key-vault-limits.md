@@ -1,44 +1,44 @@
 ---
 author: rothja
-ms.service: billing
+ms.service: cost-management-billing
 ms.topic: include
 ms.date: 11/09/2018
 ms.author: jroth
-ms.openlocfilehash: 0b9d87fd7929607da8407ae5bbfb2f6dd6d69dab
-ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
+ms.openlocfilehash: 2d16febd4676ca7ba763eb7bc6dcecda4608ebb5
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "67185692"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74224575"
 ---
-#### <a name="key-transactions-maximum-transactions-allowed-in-10-seconds-per-vault-per-regionsup1sup"></a>Ключевые транзакции (максимальное число транзакций, разрешенных за 10 секунд, на хранилище на регион<sup>1</sup>):
+#### <a name="key-transactions-maximum-transactions-allowed-in-10-seconds-per-vault-per-regionsup1sup"></a>Key transactions (maximum transactions allowed in 10 seconds, per vault per region<sup>1</sup>):
 
-|Тип ключа|Ключ HSM<br>СОЗДАТЬ ключ|Ключ HSM<br>Все остальные транзакции|Ключ ПО<br>СОЗДАТЬ ключ|Ключ ПО<br>Все остальные транзакции|
+|Тип ключа|HSM key<br>CREATE key|HSM key<br>Все остальные транзакции|Ключ ПО<br>CREATE key|Ключ ПО<br>Все остальные транзакции|
 |:---|---:|---:|---:|---:|
-|RSA 2 048-bit|5|1000|10|2 000|
-|RSA 3 072-bit|5|250|10|500|
-|RSA 4 096-bit|5|125|10|250|
+|RSA 2,048-bit|5|1000|10|2 000|
+|RSA 3,072-bit|5|250|10|500|
+|RSA 4,096-bit|5|125|10|250|
 |ECC P-256|5|1000|10|2 000|
 |ECC P-384|5|1000|10|2 000|
 |ECC P-521|5|1000|10|2 000|
 |ECC SECP256K1|5|1000|10|2 000|
 
 > [!NOTE]
-> В предыдущей таблице показано, что для ключей программного обеспечения RSA 2 048-bit, 2 000 получение транзакций в течение 10 секунд разрешено. Для RSA 2 048-разрядных ключей HSM, 1 000 разрешено получение транзакций в течение 10 секунд.
+> In the previous table, we see that for RSA 2,048-bit software keys, 2,000 GET transactions per 10 seconds are allowed. For RSA 2,048-bit HSM-keys, 1,000 GET transactions per 10 seconds are allowed.
 >
-> Пороговые значения регулирования имеют взвешенное значение, и их сумма зависит от их суммы. Например, как показано в предыдущей таблице, при выполнении операций GET с HSM-ключами RSA следует использовать 4 096-битные ключи в сравнении с 2 048-битным ключом в восьми раз больше затрат. Это связано с тем, что 1000/125 = 8.
+> The throttling thresholds are weighted, and enforcement is on their sum. For example, as shown in the previous table, when you perform GET operations on RSA HSM-keys, it's eight times more expensive to use 4,096-bit keys compared to 2,048-bit keys. That's because 1,000/125 = 8.
 >
-> В течение заданного 10-секундного интервала Azure Key Vault клиент может выполнить *только одну* из следующих операций, прежде чем будет обнаружен `429` код состояния HTTP регулирования:
-> - 2 000. RSA 2 048-разрядный программный ключ — транзакции GET
-> - 1 000. RSA 2 048-разрядный HSM-ключ GET Transactions
-> - 125. RSA 4 096-разрядный HSM-ключ GET Transactions
-> - 124 транзакций получения ключа HSM RSA 4 096-bit и 8 RSA 2 048-bit
+> In a given 10-second interval, an Azure Key Vault client can do *only one* of the following operations before it encounters a `429` throttling HTTP status code:
+> - 2,000 RSA 2,048-bit software-key GET transactions
+> - 1,000 RSA 2,048-bit HSM-key GET transactions
+> - 125 RSA 4,096-bit HSM-key GET transactions
+> - 124 RSA 4,096-bit HSM-key GET transactions and 8 RSA 2,048-bit HSM-key GET transactions
 
-#### <a name="secrets-managed-storage-account-keys-and-vault-transactions"></a>Секреты, управляемые ключи учетной записи хранения и транзакции хранилища:
-| Тип транзакций | Максимальное число транзакций, разрешенное за 10 секунд, на хранилище на регион<sup>1</sup> |
+#### <a name="secrets-managed-storage-account-keys-and-vault-transactions"></a>Secrets, managed storage account keys, and vault transactions:
+| Тип транзакций | Maximum transactions allowed in 10 seconds, per vault per region<sup>1</sup> |
 | --- | --- |
 | Все транзакции |2 000 |
 
-Сведения о том, как управлять регулированием при превышении этих ограничений, см. в разделе [руководство по регулированию Azure Key Vault](../articles/key-vault/key-vault-ovw-throttling.md).
+For information on how to handle throttling when these limits are exceeded, see [Azure Key Vault throttling guidance](../articles/key-vault/key-vault-ovw-throttling.md).
 
-<sup>1</sup> ограничение в пределах подписки для всех типов транзакций составляет пять раз на ограничение хранилища ключей. Например, HSM-другие транзакции на подписку ограничены 5 000 транзакциями за 10 секунд на подписку.
+<sup>1</sup> A subscription-wide limit for all transaction types is five times per key vault limit. For example, HSM-other transactions per subscription are limited to 5,000 transactions in 10 seconds per subscription.

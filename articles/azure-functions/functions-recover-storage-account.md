@@ -1,22 +1,16 @@
 ---
 title: Способы устранения неполадок, связанных с недоступностью среды выполнения Функций Azure.
 description: Узнайте, как устранять неполадки, связанные с недопустимой учетной записью хранения.
-services: functions
-documentationcenter: ''
 author: alexkarcher-msft
-manager: cfowler
-editor: ''
-ms.service: azure-functions
-ms.workload: na
 ms.topic: article
 ms.date: 09/05/2018
 ms.author: alkarche
-ms.openlocfilehash: d5959acc7719e2b02d529bca8261bc09d5b93634
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 212f10bd33479e5a9f7244d5b2090c0324f937c2
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70085330"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74226764"
 ---
 # <a name="how-to-troubleshoot-functions-runtime-is-unreachable"></a>Способы устранения неполадок, связанных с недоступностью среды выполнения функций.
 
@@ -26,10 +20,10 @@ ms.locfileid: "70085330"
 
 `Error: Azure Functions Runtime is unreachable. Click here for details on storage configuration`
 
-### <a name="summary"></a>Сводка
+### <a name="summary"></a>Резюме
 Эта проблема возникает, когда среду выполнения Функций Azure не удается запустить. Наиболее распространенная причина возникновения этой ошибки связана с тем, что приложение-функция теряет доступ к учетной записи хранения. Дополнительные сведения см. в разделе [Требования к учетной записи хранения](https://docs.microsoft.com/azure/azure-functions/functions-create-function-app-portal#storage-account-requirements).
 
-### <a name="troubleshooting"></a>Устранение неполадок
+### <a name="troubleshooting"></a>Устранение неисправностей
 Мы рассмотрим четыре наиболее часто встречающиеся ошибки, метод их определения и способы устранения в каждом случае.
 
 1. Учетная запись хранения удалена.
@@ -54,7 +48,7 @@ ms.locfileid: "70085330"
 
 ### <a name="required-application-settings"></a>Необходимые параметры приложения
 
-* Обязательное значение
+* Обязательно для заполнения
     * [`AzureWebJobsStorage`](https://docs.microsoft.com/azure/azure-functions/functions-app-settings#azurewebjobsstorage)
 * Обязательные для Функций плана потребления:
     * [`WEBSITE_CONTENTAZUREFILECONNECTIONSTRING`](https://docs.microsoft.com/azure/azure-functions/functions-app-settings)
@@ -65,7 +59,7 @@ ms.locfileid: "70085330"
 ### <a name="guidance"></a>Руководство
 
 * Не устанавливайте флажок "Параметр слота" для любого из этих параметров. При переключении слотов развертывания Функция будет нарушена.
-* Не изменяйте эти параметры как часть автоматизированных развертываний.
+* Do not modify these settings as part of automated deployments.
 * Эти параметры должны быть указаны и допустимы во время создания. Если в автоматическом развертывании нет этих параметров, это приведет к неработоспособности приложения, даже если параметры будут добавлены позже.
 
 ## <a name="storage-account-credentials-invalid"></a>Недопустимые учетные данные учетной записи хранения
@@ -95,7 +89,7 @@ ms.locfileid: "70085330"
   Приступите к созданию первой функции с помощью быстрой настройки Функций Azure. 
 * [Справочник разработчика по функциям Azure](functions-reference.md)  
   Дополнительные технические сведения о среде выполнения Функций Azure, а также справочник по программированию функций и определению триггеров и привязок.
-* [Тестирование функций Azure](functions-test-a-function.md)  
+* [Testing Azure Functions](functions-test-a-function.md)  
   Описание различных средств и методов тестирования функций.
 * [Масштабирование функций Azure](functions-scale.md)  
   Обсуждение планов обслуживания, доступных для использования с функциями Azure (включая план потребления), а также выбор подходящего плана. 

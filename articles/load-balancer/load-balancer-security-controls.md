@@ -1,66 +1,66 @@
 ---
-title: Элементы управления безопасностью для Azure Load Balancer
-description: Контрольный список элементов управления безопасностью для оценки Load Balancer
+title: Security controls for Azure Load Balancer
+description: A checklist of security controls for evaluating Load Balancer
 services: load-balancer
-author: msmbaldwin
-manager: barbkess
+author: asudbring
+manager: KumudD
 ms.service: load-balancer
 ms.topic: conceptual
 ms.date: 09/04/2019
-ms.author: mbaldwin
-ms.openlocfilehash: e0be6635a0916183e1dfe776bef4c547578383dc
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.author: allensu
+ms.openlocfilehash: 6043e574697489b6566641c352bc21a2b6d87f51
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70886652"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74214899"
 ---
-# <a name="security-controls-for-azure-load-balancer"></a>Элементы управления безопасностью для Azure Load Balancer
+# <a name="security-controls-for-azure-load-balancer"></a>Security controls for Azure Load Balancer
 
-В этой статье описываются элементы управления безопасностью, встроенные в Azure Load Balancer.
+This article documents the security controls built into Azure Load Balancer.
 
 [!INCLUDE [Security controls Header](../../includes/security-controls-header.md)]
 
 ## <a name="network"></a>Network
 
-| Управление безопасностью | Да или нет | Примечания |
+| Security control | Да/нет | Заметки |
 |---|---|--|
-| Поддержка конечных точек службы| Н/Д | |
-| Поддержка внедрения виртуальной сети| Н/Д | |
-| Поддержка сетевой изоляции и брандмауэров| Н/Д |  |
-| Поддержка принудительного туннелирования| Н/Д | |
+| Service endpoint support| Н/Д | |
+| VNet injection support| Н/Д | |
+| Network Isolation and Firewalling support| Н/Д |  |
+| Forced tunneling support| Н/Д | |
 
-## <a name="monitoring--logging"></a>Мониторинг & ведения журнала
+## <a name="monitoring--logging"></a>Monitoring & logging
 
-| Управление безопасностью | Да или нет | Примечания|
+| Security control | Да/нет | Заметки|
 |---|---|--|
-| Поддержка мониторинга Azure (log Analytics, App Insights и т. д.)| Да | См. раздел [журналы Azure Monitor для общедоступной базовой Load Balancer](load-balancer-monitor-log.md). |
-| Ведение журнала и аудит в плоскости управления и управления| Да | См. раздел [журналы Azure Monitor для общедоступной базовой Load Balancer](load-balancer-monitor-log.md). |
-| Ведение журнала и аудит в плоскости данных | Н/Д |  |
+| Azure monitoring support (Log analytics, App insights, etc.)| ДА | See [Azure Monitor logs for public Basic Load Balancer](load-balancer-monitor-log.md). |
+| Control and management plane logging and audit| ДА | See [Azure Monitor logs for public Basic Load Balancer](load-balancer-monitor-log.md). |
+| Data plane logging and audit | Н/Д |  |
 
-## <a name="identity"></a>идентификации
+## <a name="identity"></a>Удостоверение
 
-| Управление безопасностью | Да или нет | Примечания|
+| Security control | Да/нет | Заметки|
 |---|---|--|
-| Проверка подлинности| Н/Д |  |
-| Authorization| Н/Д |  |
+| Authentication| Н/Д |  |
+| Авторизация| Н/Д |  |
 
 ## <a name="data-protection"></a>Защита данных
 
-| Управление безопасностью | Да или нет | Примечания |
+| Security control | Да/нет | Заметки |
 |---|---|--|
-| Шифрование неактивных на стороне сервера: Ключи, управляемые корпорацией Майкрософт | Н/Д | |
-| Шифрование при передаче (например, шифрование ExpressRoute, Шифрование виртуальной сети и шифрование виртуальной сети)| Н/Д | |
-| Шифрование неактивных на стороне сервера: ключи, управляемые клиентом (BYOK) | Н/Д | |
-| Шифрование на уровне столбцов (службы данных Azure)| Н/Д | |
-| Вызовы API в зашифрованном виде| Да | Через [Azure Resource Manager](../azure-resource-manager/index.yml). |
+| Server-side encryption at rest: Microsoft-managed keys | Н/Д | |
+| Encryption in transit (such as ExpressRoute encryption, in VNet encryption, and VNet-VNet encryption )| Н/Д | |
+| Server-side encryption at rest: customer-managed keys (BYOK) | Н/Д | |
+| Column level encryption (Azure Data Services)| Н/Д | |
+| Вызовы API в зашифрованном виде| ДА | Via the [Azure Resource Manager](../azure-resource-manager/index.yml). |
 
 ## <a name="configuration-management"></a>Управление конфигурацией
 
-| Управление безопасностью | Да или нет | Примечания|
+| Security control | Да/нет | Заметки|
 |---|---|--|
-| Поддержка управления конфигурацией (управление версиями конфигураций и т. д.)| Н/Д |  | 
+| Configuration management support (versioning of configuration, etc.)| Н/Д |  | 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения о [встроенных средствах управления безопасностью в службах Azure](../security/fundamentals/security-controls.md).
+- Learn more about the [built-in security controls across Azure services](../security/fundamentals/security-controls.md).

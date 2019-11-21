@@ -1,22 +1,17 @@
 ---
 title: Привязка Twilio для службы "Функции Azure"
 description: Узнайте, как использовать привязки Twilio с функциями Azure.
-services: functions
-documentationcenter: na
 author: craigshoemaker
-manager: gwallace
-keywords: функции azure, функции, обработка событий, динамические вычисления, независимая архитектура
-ms.service: azure-functions
 ms.topic: reference
 ms.date: 07/09/2018
 ms.author: cshoe
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 32f987caed915aff8c581b974dec7689fc90b007
-ms.sourcegitcommit: 8e1fb03a9c3ad0fc3fd4d6c111598aa74e0b9bd4
+ms.openlocfilehash: ee78234b43e94a5c537161556410ee6246e625ca
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70114352"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74230948"
 ---
 # <a name="twilio-binding-for-azure-functions"></a>Привязка Twilio для службы "Функции Azure"
 
@@ -41,7 +36,7 @@ ms.locfileid: "70114352"
 Языковой пример см. в разделах:
 
 * [C#](#c-example)
-* [Скрипт C# (CSX)](#c-script-example)
+* [Сценарий C# (CSX)](#c-script-example)
 * [JavaScript](#javascript-example)
 
 ### <a name="c-example"></a>Пример C#
@@ -394,7 +389,7 @@ public static CreateMessageOptions Run(
 
 Полный пример см. в разделе [Пример C#](#c-example).
 
-## <a name="configuration"></a>Конфигурация
+## <a name="configuration"></a>Настройка
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `TwilioSms`.
 
@@ -405,13 +400,13 @@ public static CreateMessageOptions Run(
 |**name**|**name**| Имя переменной, используемое в коде функции для текстового SMS-сообщения Twilio. |
 |**accountSid**|**accountSidSetting**| **AccountSidSetting**| Требуемое значение: имя параметра приложения, содержащего идентификатор безопасности учетной записи Twilio, например TwilioAccountSid. Если значение не задано, имя параметра приложения по умолчанию — AzureWebJobsTwilioAccountSid. |
 |**authToken**|**authTokenSetting**|**AuthTokenSetting**| Требуемое значение: имя параметра приложения, содержащего токен проверки подлинности Twilio, например TwilioAccountAuthToken. Если значение не задано, имя параметра приложения по умолчанию — AzureWebJobsTwilioAuthToken. |
-|**to**| Недоступно — указать в коде | **Задача**| Требуемое значение: номер телефона, на который отправляется текст SMS-сообщения.|
-|**From**|**From** | **From**| Требуемое значение: номер телефона, с которого отправляется текст SMS-сообщения.|
+|**to**| Недоступно — указать в коде | **To**| Требуемое значение: номер телефона, на который отправляется текст SMS-сообщения.|
+|**from**|**from** | **from**| Требуемое значение: номер телефона, с которого отправляется текст SMS-сообщения.|
 |**body**|**body** | **Текст**| Это значение можно использовать для жесткого кодирования текстового SMS-сообщения, если его не нужно задавать динамически в коде функции. |  
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md)

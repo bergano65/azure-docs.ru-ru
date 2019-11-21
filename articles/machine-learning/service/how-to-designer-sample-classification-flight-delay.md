@@ -1,7 +1,7 @@
 ---
-title: 'Конструктор: пример прогноза задержки рейса'
+title: 'Designer: Predict flight delay example'
 titleSuffix: Azure Machine Learning
-description: Создание классификатора и использование пользовательского кода R для прогнозирования задержек рейсов с помощью конструктора Машинное обучение Azure.
+description: Build a classifier and use custom R code to predict flight delays with Azure Machine Learning designer.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,119 +10,119 @@ author: xiaoharper
 ms.author: zhanxia
 ms.reviewer: peterlu
 ms.date: 11/04/2019
-ms.openlocfilehash: 06d158fb228ea82e61e785407fc0c59d66c2de15
-ms.sourcegitcommit: 8e31a82c6da2ee8dafa58ea58ca4a7dd3ceb6132
-ms.translationtype: HT
+ms.openlocfilehash: 23b763a69fc0ea3191150c6255cf358d69bc4b73
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74196022"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74213987"
 ---
-# <a name="build-a-classifier--use-r-to-predict-flight-delays-with-azure-machine-learning-designer"></a>Создание классификатора & использование R для прогнозирования задержек рейсов с помощью конструктора Машинное обучение Azure
+# <a name="build-a-classifier--use-r-to-predict-flight-delays-with-azure-machine-learning-designer"></a>Build a classifier & use R to predict flight delays with Azure Machine Learning designer
 
-**Конструктор (Предварительная версия) — пример 6**
+**Designer (preview) sample 6**
 
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-enterprise-sku.md)]
 
-Этот конвейер использует исторические и погодные данные для прогнозирования того, что запланированный перелет пассажиров будет задержан более чем на 15 минут. Эта проблема может быть вызвана проблемой классификации, предсказанием двух классов: отложенным или вовремя.
+This pipeline uses historical flight and weather data to predict if a scheduled passenger flight will be delayed by more than 15 minutes. This problem can be approached as a classification problem, predicting two classes: delayed, or on time.
 
-Вот итоговый граф конвейера для этого примера:
+Here's the final pipeline graph for this sample:
 
-[![граф конвейера](media/how-to-ui-sample-classification-predict-flight-delay/pipeline-graph.png)](media/how-to-ui-sample-classification-predict-credit-risk-cost-sensitive/graph.png#lightbox)
+[![Graph of the pipeline](media/how-to-designer-sample-classification-predict-flight-delay/pipeline-graph.png)](media/how-to-designer-sample-classification-predict-credit-risk-cost-sensitive/graph.png#lightbox)
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 [!INCLUDE [aml-ui-prereq](../../../includes/aml-ui-prereq.md)]
 
-4. Щелкните пример 6, чтобы открыть его.
+4. Click sample 6 to open it.
 
 ## <a name="get-the-data"></a>Получение данных
 
-В этом образце используется набор **данных «задержки рейсов»** . Он является частью сбора данных Транстатс из Департамента транспортировки США. Набор данных содержит сведения о задержке рейсов от апреля до октября 2013. Набор данных предварительно обработан следующим образом:
+This sample uses the **Flight Delays Data** dataset. It's part of the TranStats data collection from the U.S. Department of Transportation. The dataset contains flight delay information from April to October 2013. The dataset has been pre-processed as follows:
 
-* Отфильтрованы, чтобы включить 70 в континентальной частиные аэропорты в США.
-* Переметка отмененных авиарейсов была отложена более чем на 15 минут.
-* Отфильтрованные рейси.
-* Выбрано 14 столбцов.
+* Filtered to include the 70 busiest airports in the continental United States.
+* Relabeled canceled flights as delayed by more than 15 mins.
+* Filtered out diverted flights.
+* Selected 14 columns.
 
-Для дополнения данных рейсов используется **набор данных погоды** . Данные погоды содержат почасовые наблюдения погоды на основе земли из NOAA и представляют наблюдения на станциях погоды в аэропорту, охватывающие тот же период времени, что и набор данных рейсов. Она была предварительно обработана следующим образом:
+To supplement the flight data, the **Weather Dataset** is used. The weather data contains hourly, land-based weather observations from NOAA, and represents observations from airport weather stations, covering the same time period as the flights dataset. It has been pre-processed as follows:
 
-* Идентификаторы станции погоды сопоставлены с соответствующими идентификаторами аэропорта.
-* Удалены станции погоды, не связанные с 70, которые были загружены в аэропорту.
-* Столбец дат был разбит на отдельные столбцы: год, месяц и день.
-* Выбрано 26 столбцов.
+* Weather station IDs were mapped to corresponding airport IDs.
+* Weather stations not associated with the 70 busiest airports were removed.
+* The Date column was split into separate columns: Year, Month, and Day.
+* Selected 26 columns.
 
-## <a name="pre-process-the-data"></a>Предварительная обработка данных
+## <a name="pre-process-the-data"></a>Pre-process the data
 
-Прежде чем можно будет анализировать набор данных, обычно требуется предварительная обработка.
+A dataset usually requires some pre-processing before it can be analyzed.
 
-![процесс обработки и анализа данных](media/how-to-ui-sample-classification-predict-flight-delay/data-process.png)
+![data-process](media/how-to-designer-sample-classification-predict-flight-delay/data-process.png)
 
-### <a name="flight-data"></a>Данные рейсов
+### <a name="flight-data"></a>Flight data
 
-Столбцы **перевозчика**, **OriginAirportID**и **DestAirportID** сохраняются как целые числа. Однако они используют атрибуты категории, для преобразования их в категоризацию используется модуль **Редактирование метаданных** .
+The columns **Carrier**, **OriginAirportID**, and **DestAirportID** are saved as integers. However, they're  categorical attributes, use the **Edit Metadata** module to convert them to categorical.
 
-![изменение метаданных](media/how-to-ui-sample-classification-predict-flight-delay/edit-metadata.png)
+![edit-metadata](media/how-to-designer-sample-classification-predict-flight-delay/edit-metadata.png)
 
-Затем используйте модуль **Выбор столбцов** в наборе данных, чтобы исключить из столбцов набора данных возможные целевые утечки: **DepDelay**, **DepDel15**, **ArrDelay**, **Canceled**, **year**. 
+Then use the **Select Columns** in Dataset module to exclude from the dataset columns that are possible target leakers: **DepDelay**, **DepDel15**, **ArrDelay**, **Canceled**, **Year**. 
 
-Чтобы соединить записи о перелетах с почасовыми записями погоды, используйте запланированное время отправления как один из ключей объединения. Чтобы выполнить соединение, столбец Ксрдептиме должен быть округлен вниз до ближайшего часа, что выполняется в модуле **выполнить сценарий R** . 
+To join the flight records with the hourly weather records, use the scheduled departure time as one of the join keys. To do the join, the CSRDepTime column must be rounded down to the nearest hour, which is done by in the **Execute R Script** module. 
 
 ### <a name="weather-data"></a>Метеоданные
 
-Столбцы, имеющие большую долю отсутствующих значений, исключаются с помощью модуля **столбцы проекта** . Эти столбцы включают все столбцы со строковыми значениями: **валуефорвиндчарактер**, **ветбулбфаренхеит**, **ветбулбцелсиус**, **прессуретенденци**, **прессуречанже**, **SeaLevelPressure**и **StationPressure** .
+Columns that have a large proportion of missing values are excluded using the **Project Columns** module. These columns include all string-valued columns: **ValueForWindCharacter**, **WetBulbFarenheit**, **WetBulbCelsius**, **PressureTendency**, **PressureChange**, **SeaLevelPressure**, and **StationPressure**.
 
-Затем модуль **Clean Missing Data (очистка недостающих данных** ) применяется к оставшимся столбцам для удаления строк с отсутствующими данными.
+The **Clean Missing Data** module is then applied to the remaining columns to remove rows with missing data.
 
-Время наблюдения погоды округляется до ближайшего полного часа. Время запланированного рейса и время наблюдения погоды округляются в противоположных направлениях, чтобы гарантировать, что модель использует только Погода до времени рейса. 
+Weather observation times are rounded up to the nearest full hour. Scheduled flight times and the weather observation times are rounded in opposite directions to ensure the model uses only weather before the flight time. 
 
-Так как данные о погоде передаются в местное время, разница часовых поясов учитывается путем вычитания столбцов часовых поясов из запланированного времени отправления и времени наблюдения погоды. Эти операции выполняются с помощью модуля **выполнить сценарий R** .
+Since weather data is reported in local time, time zone differences are accounted for by subtracting the time zone columns from the scheduled departure time and the weather observation time. These operations are done using the **Execute R Script** module.
 
-### <a name="joining-datasets"></a>Соединение наборов данных
+### <a name="joining-datasets"></a>Joining Datasets
 
-Записи о рейсах соединяются с данными о погоде в источнике рейса (**OriginAirportID**) с помощью модуля **объединения данных** .
+Flight records are joined with weather data at origin of the flight (**OriginAirportID**) using the **Join Data** module.
 
- ![Присоединяйтесь к рейсу и погоду по источнику](media/how-to-ui-sample-classification-predict-flight-delay/join-origin.png)
+ ![join flight and weather by origin](media/how-to-designer-sample-classification-predict-flight-delay/join-origin.png)
 
 
-Записи о рейсах соединяются с данными погоды с помощью назначения рейса (**DestAirportID**).
+Flight records are joined with weather data using the destination of the flight (**DestAirportID**).
 
- ![Присоединяйтесь к рейсу и погоду по назначению](media/how-to-ui-sample-classification-predict-flight-delay/join-destination.png)
+ ![Join flight and weather by destination](media/how-to-designer-sample-classification-predict-flight-delay/join-destination.png)
 
-### <a name="preparing-training-and-test-samples"></a>Подготовка образцов для обучения и тестирования
+### <a name="preparing-training-and-test-samples"></a>Preparing Training and Test Samples
 
-Модуль **Split Data (разделение данных** ) разделяет данные на записи в апреле по сентябрьским материалам для обучения и в октябре для тестирования.
+The **Split Data** module splits the data into April through September records for training, and October records for test.
 
- ![Разделение обучающих и проверочных данных](media/how-to-ui-sample-classification-predict-flight-delay/split.png)
+ ![Split training and test data](media/how-to-designer-sample-classification-predict-flight-delay/split.png)
 
-Столбцы "год", "месяц" и "часовой пояс" удаляются из набора данных для обучения с помощью модуля выбор столбцов.
+Year, month, and timezone columns are removed from the training dataset using the Select Columns module.
 
 ## <a name="define-features"></a>Определение признаков
 
-В машинном обучении функции — это отдельные измеримые свойства чего-то, о чем вы заинтересованы. Для поиска строгого набора функций требуется экспериментирование и знание предметной области. Некоторые свойства лучше подходят для прогнозирования цели, чем другие. Кроме того, некоторые функции могут иметь надежную корреляцию с другими функциями и не будут добавлять в модель новые сведения. Эти функции можно удалить.
+In machine learning, features are individual measurable properties of something you’re interested in. Finding a strong set of features requires experimentation and domain knowledge. Некоторые свойства лучше подходят для прогнозирования цели, чем другие. Also, some features may have a strong correlation with other features, and won't add new information to the model. These features can be removed.
 
-Для построения модели можно использовать все доступные функции или выбрать подмножество функций.
+To build a model, you can use all the features available, or select a subset of the features.
 
 ## <a name="choose-and-apply-a-learning-algorithm"></a>Выбор и применение алгоритма обучения
 
-Создайте модель с помощью модуля **логистической регрессии с двумя классами** и обучите набор данных для обучения. 
+Create a model using the **Two-Class Logistic Regression** module and train it on the training dataset. 
 
-Результатом работы модуля **обучение модели** является обученная модель классификации, которую можно использовать для оценки новых образцов для создания прогнозов. Используйте проверочный набор для создания оценок из обученных моделей. Затем используйте модуль « **Анализ модели** » для анализа и сравнения качества моделей.
-конвейер после запуска конвейера можно просмотреть выходные данные модуля **Оценка модели** , щелкнув порт вывода и выбрав **визуализировать**. Выходные данные включают оцененные метки и вероятности для меток.
+The result of the **Train Model** module is a trained classification model that can be used to score new samples to make predictions. Use the test set to generate scores from the trained models. Then use the **Evaluate Model** module to analyze and compare the quality of the models.
+pipeline After you run the pipeline, you can view the output from the **Score Model** module by clicking the output port and selecting **Visualize**. The output includes the scored labels and the probabilities for the labels.
 
-Наконец, чтобы проверить качество результатов, добавьте модуль « **Оценка модели** » на холст конвейера и Соедините левый входной порт с выходными данными модуля оценки модели. Запустите конвейер и просмотрите выходные данные модуля **Анализ модели** , щелкнув порт вывода и выбрав **визуализировать**.
+Finally, to test the quality of the results, add the **Evaluate Model** module to the pipeline canvas, and connect the left input port to the output of the Score Model module. Run the pipeline and view the output of the **Evaluate Model** module, by clicking the output port and selecting **Visualize**.
 
-## <a name="evaluate"></a>Evaluate
-Модель логистической регрессии имеет AUC из 0,631 в тестовом наборе.
+## <a name="evaluate"></a>Оценка
+The logistic regression model has AUC of 0.631 on the test set.
 
- ![evaluate](media/how-to-ui-sample-classification-predict-flight-delay/evaluate.png)
+ ![evaluate](media/how-to-designer-sample-classification-predict-flight-delay/evaluate.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Изучите другие примеры, доступные для конструктора:
+Explore the other samples available for the designer:
 
-- [Пример 1. регрессия: прогнозирование цены автомобиля](how-to-designer-sample-regression-automobile-price-basic.md)
-- [Пример 2. регрессия. алгоритмы сравнения для прогнозирования цен автомобилей](how-to-designer-sample-regression-automobile-price-compare-algorithms.md)
-- [Пример 3. Классификация с выбором компонентов: прогноз дохода](how-to-designer-sample-classification-predict-income.md)
-- [Пример 4. Классификация: прогнозируемый кредитный риск (с учетом стоимости)](how-to-designer-sample-classification-credit-risk-cost-sensitive.md)
-- [Пример 5. Классификация: обработка прогнозов](how-to-designer-sample-classification-churn.md)
-- [Пример 7. Классификация текста: набор данных Википедии SP 500](how-to-designer-sample-text-classification.md)
+- [Sample 1 - Regression: Predict an automobile's price](how-to-designer-sample-regression-automobile-price-basic.md)
+- [Sample 2 - Regression: Compare algorithms for automobile price prediction](how-to-designer-sample-regression-automobile-price-compare-algorithms.md)
+- [Sample 3 - Classification with feature selection: Income Prediction](how-to-designer-sample-classification-predict-income.md)
+- [Sample 4 - Classification: Predict credit risk (cost sensitive)](how-to-designer-sample-classification-credit-risk-cost-sensitive.md)
+- [Sample 5 - Classification: Predict churn](how-to-designer-sample-classification-churn.md)
+- [Sample 7 - Text Classification: Wikipedia SP 500 Dataset](how-to-designer-sample-text-classification.md)

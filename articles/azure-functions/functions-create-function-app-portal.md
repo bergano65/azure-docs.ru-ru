@@ -1,23 +1,19 @@
 ---
-title: Создание приложения-функции на портале Azure | Документация Майкрософт
-description: Создание нового приложения-функции в Azure на портале.
-author: ggailey777
-manager: gwallace
-ms.service: azure-functions
+title: Create a function app from the Azure Portal
+description: Create a new function app in Azure from the portal.
 ms.topic: conceptual
 ms.date: 08/29/2019
-ms.author: glenga
 ms.custom: mvc
-ms.openlocfilehash: 93bce0404c9b3bf630416557726dca0c856528c3
-ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
+ms.openlocfilehash: 74eaa6837f362c849277a761da3ae79c3a8ac353
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70170787"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74230772"
 ---
 # <a name="create-a-function-app-from-the-azure-portal"></a>Создание приложения-функции на портале Azure
 
-В этом разделе показано, как использовать функции Azure для создания приложения-функции в портал Azure. Приложение-функция — это контейнер, в котором выполняются отдельные функции. 
+This topic shows you how to use Azure Functions to create a function app in the Azure portal. Приложение-функция — это контейнер, в котором выполняются отдельные функции. 
 
 ## <a name="create-a-function-app"></a>Создание приложения-функции
 
@@ -31,22 +27,22 @@ ms.locfileid: "70170787"
 
 ## <a name="service-plans"></a>Планы обслуживания
 
-Функции Azure имеют три разных плана обслуживания: План потребления, план Premium и выделенный план (служба приложений). При создании приложения-функции необходимо выбрать свой план обслуживания, который впоследствии невозможно изменить. Дополнительные сведения см. в разделе [Выбор правильного плана обслуживания для Функций Azure](functions-scale.md).
+Azure Functions has three different service plans: Consumption plan, Premium plan, and Dedicated (App Service) plan. You must choose your service plan when your function app is created, and it cannot subsequently be changed. Дополнительные сведения см. в разделе [Выбор правильного плана обслуживания для Функций Azure](functions-scale.md).
 
-Если вы планируете выполнять функции JavaScript для выделенного плана (службы приложений), следует выбрать план с меньшим числом ядер. Дополнительные сведения см. в разделе [обзора функций для JavaScript](functions-reference-node.md#choose-single-vcpu-app-service-plans).
+If you are planning to run JavaScript functions on a Dedicated (App Service) plan, you should choose a plan with fewer cores. Дополнительные сведения см. в разделе [обзора функций для JavaScript](functions-reference-node.md#choose-single-vcpu-app-service-plans).
 
 <a name="storage-account-requirements"></a>
 
 ## <a name="storage-account-requirements"></a>Требования к учетной записи хранения
 
-При создании приложения-функции необходимо создать или связать с учетной записью хранения Azure общего назначения, которая поддерживает хранилище BLOB-объектов, очередей и таблиц. Для внутренних операций, таких как управление триггерами и ведение журнала выполнения функций, Функции Azure используют службу хранилища. Некоторые учетные записи хранения не поддерживают очереди и таблицы. Например, это относится к учетным записям хранения только для больших двоичных объектов, службе хранилища Azure уровня "Премиум" и учетным записям хранения общего назначения с репликацией ZRS. Эти учетные записи будут отфильтрованы из колонки "Учетная запись хранения" при создании приложения-функции.
+When creating a function app, you must create or link to a general-purpose Azure Storage account that supports Blob, Queue, and Table storage. Для внутренних операций, таких как управление триггерами и ведение журнала выполнения функций, Функции Azure используют службу хранилища. Некоторые учетные записи хранения не поддерживают очереди и таблицы. Например, это относится к учетным записям хранения только для больших двоичных объектов, службе хранилища Azure уровня "Премиум" и учетным записям хранения общего назначения с репликацией ZRS. Эти учетные записи будут отфильтрованы из колонки "Учетная запись хранения" при создании приложения-функции.
 
 >[!NOTE]
 >При использовании плана потребления файлы кода и конфигурации привязок приложения-функции хранятся в хранилище файлов Azure в основной учетной записи хранения. При удалении основной учетной записи хранения это содержимое удаляется без возможности восстановления.
 
 Дополнительные сведения о типах учетных записей хранения см. в разделе [Введение в службы хранилища Azure](../storage/common/storage-introduction.md#azure-storage-services). 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Хотя портал Azure позволяет легко создать и опробовать функции, мы рекомендуем [локальную разработку](functions-develop-local.md). После создания приложения-функции на портале необходимо еще добавить функцию. 
 

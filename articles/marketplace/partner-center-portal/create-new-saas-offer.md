@@ -1,50 +1,50 @@
 ---
-title: Создание нового предложения SaaS в коммерческом магазине
-description: Как создать предложение SaaS (программное обеспечение как услуга) для перечисления или продажи в Azure Marketplace, AppSource или с помощью программы поставщика облачных решений (CSP), используя портал коммерческого рынка в центре партнеров Майкрософт.
+title: Create a new SaaS offer in the Commercial Marketplace
+description: How to create a new Software as a Service (SaaS) offer for listing or selling in the Azure Marketplace, AppSource, or through the Cloud Solution Provider (CSP) program using the Commercial Marketplace portal on Microsoft Partner Center.
 author: ChJenk
 manager: evansma
 ms.author: v-chjen
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-ms.date: 11/13/2019
-ms.openlocfilehash: a6694d094d185ad70cce8c546e12f48afb69f1ae
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.date: 11/19/2019
+ms.openlocfilehash: 12372c1f00e994382338adf9bd078018ba702da1
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74076945"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74213349"
 ---
-# <a name="create-a-new-saas-offer"></a>Создание нового предложения SaaS
+# <a name="create-a-new-saas-offer"></a>Create a new SaaS offer
 
-Чтобы приступить к созданию предложений "программное обеспечение как услуга" (SaaS), обязательно [Создайте учетную запись центра партнеров](./create-account.md) и откройте [панель мониторинга коммерческого рынка](https://partner.microsoft.com/dashboard/commercial-marketplace/offers), выбрав вкладку " **Обзор** ".
+To begin creating Software as a Service (SaaS) offers, ensure that you first [Create a Partner Center account](./create-account.md) and open the [Commercial Marketplace dashboard](https://partner.microsoft.com/dashboard/commercial-marketplace/offers), with the **Overview** tab selected.
 
-![Панель мониторинга коммерческого рынка в центре партнеров](./media/new-offer-overview.png)
+![Commercial Marketplace dashboard on Partner Center](./media/new-offer-overview.png)
 
 >[!Note]
-> После публикации предложения изменения, внесенные в предложение в центре партнеров, будут обновлены только в системе и сохранены перед повторной публикацией. После внесения изменений убедитесь, что вы отправили предложение для публикации.
+> Once an offer has been published, edits to the offer made in Partner Center will only be updated in the system and store fronts after re-publishing. Please ensure that you submit the offer for publication after you make changes.
 
-Выберите + **создать предложение...** и выберите пункт меню **программное обеспечение как услуга** . 
+Select the + **New offer…** button, then select the **Software as a Service** menu item. 
 
-Если выбрать другой тип предложения, возможно, вы будете перенаправлены на более старую [портал Cloud Partner](https://cloudpartner.azure.com/). В настоящее время на портале коммерческого рынка в центре партнеров доступны только предложения SaaS и Dynamics 365.
+If you select another offer type, you may be redirected to the older [Cloud Partner Portal](https://cloudpartner.azure.com/). Only SaaS and Dynamics 365 offers are available in the Commercial Marketplace portal on Partner Center at this time.
 
-![Создание окна предложения в центре партнеров](./media/new-offer-click.png)
+![Create offer window on Partner Center](./media/new-offer-click.png)
 
-Откроется диалоговое окно **новое предложение** . 
+The **New offer** dialog box is displayed. 
 
-![Диалоговое окно «Создание предложения»](./media/new-offer-popup.png)
+![New offer dialog box](./media/new-offer-popup.png)
 
-## <a name="offer-id-and-alias"></a>Идентификатор предложения и псевдоним
+## <a name="offer-id-and-alias"></a>Offer ID and alias
 
-- **Идентификатор предложения**: уникальный идентификатор для каждого предложения в вашей учетной записи. Этот идентификатор будет отображаться для клиентов в URL-адресе предложения Marketplace и шаблонов Azure Resource Manager (если применимо). Идентификатор предложения должен быть строчным, буквенно-цифровым (включая дефисы и знаки подчеркивания, но не содержать пробелов). Оно ограничено 50 символами и не может быть изменено после нажатия на кнопку " *создать*".  
-Пример: Test-Offer-1
-<br>Итоговый URL-адрес: `https://azuremarketplace.microsoft.com/marketplace/../test-offer-1`
+- **Offer ID**: Unique identifier for each offer in your account. This ID will be visible to customers in the URL address for the marketplace offer and Azure Resource Manager templates (if applicable). Offer ID must be lowercase, alphanumeric (including hyphens and underscores, but no whitespace). This is limited to 50 characters and can't be changed after you select *Create*.  
+Example: test-offer-1
+<br>Resulting in the URL: `https://azuremarketplace.microsoft.com/marketplace/../test-offer-1`
 
-- **Псевдоним предложения**: имя, используемое для ссылки на предложение на портале центра партнеров. Это имя не будет использоваться в Marketplace и отличается от *имени предложения* и других значений, которые будут отображаться для клиентов. Это значение нельзя изменить после нажатия *создать*.
+- **Offer alias**: The name used to refer to the offer within the Partner Center portal. This name won't be used in the marketplace and is different than the *Offer Name* and other values that will be shown to customers. This value can't be changed after you select *Create*.
 
-<br>Пример: тестовое предложение 1&#8482;
+<br>Example: Test Offer 1&#8482;
 
-Нажмите кнопку **Создать**.  Для этого предложения создается страница **обзора предложения** .  
+Нажмите кнопку **Создать**.  An **Offer overview** page is created for this offer.  
 
 <!---
 ![Offer overview on Partner Center](./media/commercial-marketplace-offer-overview.png)
@@ -52,167 +52,167 @@ ms.locfileid: "74076945"
 
 ## <a name="offer-overview"></a>Обзор предложения
 
-Страница **Обзор предложения** включает: 
+The **Offer overview** page includes: 
 
-- **Состояние публикации** отображает визуальное представление шагов, необходимых для публикации этого предложения, и время, необходимое для выполнения каждого шага. Незавершенные значки шагов публикации будут неактивны серым цветом. 
+- The **Publishing status** displays a visual representation of the steps required to publish this offer and how long each step will take to complete. Incomplete publishing step icons will be greyed out. 
 
-- Меню " **Обзор предложения** " содержит список ссылок для выполнения операций с этим предложением. Этот список операций изменится в зависимости от выбора, сделанного для предложения.  
-    - Если это предложение черновика-Delete 
-    - Если предложение действует в реальном времени, предложение продать 
-    - Если предложение находится в режиме предварительной версии — Go-Live 
-    - Если вы еще не завершили регистрацию издателя, отмените публикацию
+- The **Offer overview** menu contains a list of links for performing operations on this offer. This list of operations will change based on the selection you make for your offer.  
+    - If the offer is a draft - Delete draft 
+    - If the offer is live - Stop sell offer 
+    - If the offer is in preview - Go-live 
+    - If you haven't completed publisher sign out - Cancel publish
 
-## <a name="offer-setup"></a>Настройка предложения
+## <a name="offer-setup"></a>Offer setup
 
-На вкладке « **Настройка предложения** » запрашиваются следующие сведения. После завершения этих полей выберите **сохранить** .
+The **Offer setup** tab asks for the following information. Select **Save** after completing these fields.
 
-- **Вы хотите продать через корпорацию Майкрософт?** (Да/нет)
-    - **Да**, вы хотели бы продавать свое предложение в корпорации Майкрософт с помощью Майкрософт, разместив транзакции Marketplace от вашего имени; ни 
-    - **Нет**, вы бы хотели просто перечислить свое предложение через Marketplace, обрабатывая любые денежные транзакции независимо от корпорации Майкрософт.    
+- **Would you like to sell through Microsoft?** (Yes/No)
+    - **Yes**, you would like to sell your offer through Microsoft, with Microsoft hosting marketplace transactions on your behalf; or 
+    - **No**, you would prefer to just list your offer through the marketplaces, processing any monetary transactions independently of Microsoft.    
 
 ### <a name="sell-through-microsoft"></a>Продажа через корпорацию Майкрософт
 
-Продажи в корпорации Майкрософт обеспечивают лучшее обнаружение и приобретение клиентов, позволяя корпорации Майкрософт размещать транзакции Marketplace от вашего имени и пользоваться преимуществами глобально доступных коммерческих возможностей корпорации Майкрософт.
+Selling through Microsoft provides better customer discovery and acquisition, allows Microsoft to host marketplace transactions on your behalf, and takes advantage of Microsoft's globally available commerce capabilities.
 
-#### <a name="saas-offer-requirements"></a>Требования к предложению SaaS
+#### <a name="saas-offer-requirements"></a>SaaS offer requirements
 
-Чтобы получить список предложений программного обеспечения как услуги (SaaS) с коммерческим магазином в центре партнеров, должны выполняться следующие условия.
+In order to list Software as a Service (SaaS) offers with Commercial Marketplace on Partner Center, the following criteria must be met:
 
-- Для управления удостоверениями и аутентификацией ваше предложение должно использовать [Azure Active Directory (Azure AD)](https://azure.microsoft.com/services/active-directory/) .
-- Для интеграции с Azure Marketplace ваше предложение должно использовать [API-интерфейсы выполнения SaaS](https://docs.microsoft.com/azure/marketplace/partner-center-portal/pc-saas-fulfillment-api-v2) .
-- Более подробные требования см. в статье [рекомендации по публикации предложений SaaS](https://docs.microsoft.com/azure/marketplace/marketplace-saas-applications-technical-publishing-guide).
+- Your offer must use [Azure Active Directory (Azure AD)](https://azure.microsoft.com/services/active-directory/) for identity management and authentication.
+- Your offer must use [SaaS Fulfillment APIs](https://docs.microsoft.com/azure/marketplace/partner-center-portal/pc-saas-fulfillment-api-v2) to integrate with the Azure Marketplace.
+- For more extensive requirements, see the [SaaS Offer Publishing Guide](https://docs.microsoft.com/azure/marketplace/marketplace-saas-applications-technical-publishing-guide).
 
-#### <a name="saas-pricing-and-billing-options"></a>Цены на SaaS и варианты выставления счетов
-С помощью решений SaaS, работающих в подписке Azure издателя, платежи лицензий, оплаченные клиентами, включают стоимость инфраструктуры, на которой развернуто программное обеспечение. Управление использованием инфраструктуры Azure осуществляется и выставляется за вас, партнером напрямую. Фактическая стоимость использования инфраструктуры не видна пользователю. Издатели должны объединять сборы за использование инфраструктуры Azure в свои цены на лицензии на программное обеспечение. 
+#### <a name="saas-pricing-and-billing-options"></a>SaaS pricing and billing options
+With SaaS solutions running in the publisher's Azure subscription, license fees paid by customers include the cost of the infrastructure upon which the software is deployed. Azure infrastructure usage is managed and billed to you, the partner, directly. Фактическая стоимость использования инфраструктуры не видна пользователю. Publishers should bundle Azure infrastructure usage fees into their software license pricing. 
 
-SaaS поддерживает ежемесячный или ежегодный счет, основанный на фиксированной плате, на пользователя или расходах на потребление с помощью тарифной службы оплаты. Коммерческий магазин корпорации Майкрософт работает с моделью агентства, в которой издатели устанавливают цены, клиенты выставляются в корпорацию Майкрософт и корпорация Майкрософт оплачивает доход издателю при удержании оплаты агентств.
+SaaS offers support monthly or annual billing based on a flat fee, per user, or consumption charges using the metered billing service. Microsoft's commercial marketplace operates on an agency model, whereby publishers set prices, Microsoft bills customers, and Microsoft pays revenue to the publisher while withholding an agency fee.
 
-В следующей таблице показан пример разрыва затрат и выплатах для демонстрации модели агентства.
+The following table shows an example break down of costs and payouts to demonstrate the agency model.
 
-|**Стоимость лицензии**|**$100 в месяц**|
+|**Your license cost**|**$100 per month**|
 |:---|:---|
 |Стоимость использования Azure (D1 с 1 ядром)|Счета выставляются непосредственно издателю, а не клиенту.|
-|Счет за клиента взимается корпорацией Майкрософт|$100,00 в месяц (издатель должен учитывать любые вышедшие или транзитные затраты на инфраструктуру в рамках оплаты лицензии).|
+|Customer is billed by Microsoft|$100.00 per month (Publisher must account for any incurred or pass-through infrastructure costs in the license fee)|
 
-|**Майкрософт выставляет счет**|**$100 в месяц**|
+|**Майкрософт выставляет счет**|**$100 per month**|
 |:---|:---|
-|Корпорация Майкрософт оплачивает 80 % стоимости лицензии <br>**для квалифицированных приложений SaaS Корпорация Майкрософт оплачивает 90% стоимости лицензии* .|80,00 долл. США в месяц <br>*$* 90,00 в месяц *|
+|Корпорация Майкрософт оплачивает 80 % стоимости лицензии <br>**For qualified SaaS apps, Microsoft pays 90% of your license cost*|80,00 долл. США в месяц <br>*$* 90.00 per month*|
 
-- В этом примере Корпорация Майкрософт выставляет счет $100,00 клиенту для лицензии на программное обеспечение и выплачивает $80,00 на издатель.
-- Партнеры, имеющие квалифицированный **тариф на службу Marketplace** , будут видеть сниженные сборы за транзакции на основе предложений SaaS с 2019 мая до июня 2020. В этом сценарии Корпорация Майкрософт выставляет счета $100,00 для лицензии на программное обеспечение и выплачивает $90,00 на издатель.
-
-> [!NOTE]
-> **Сокращенная плата за обслуживание решений Marketplace**. для определенных предложений SaaS, опубликованных в нашем коммерческом магазине, корпорация Майкрософт сокращает плату за службу Marketplace с 20% (как описано в соглашении об издателе Microsoft Publisher) до 10%. Чтобы ваше предложение было квалифицировано, по крайней мере одно из ваших предложений должно быть назначено корпорацией Майкрософт как готовое к отправке IP-продаж, так и по приоритету совместной работы IP.  Право на выполнение должно выполняться по крайней мере за пять (5) рабочих дней до конца каждого календарного месяца, чтобы получить этот сокращенный тариф на службу Marketplace за месяц.  Сниженная плата за использование службы Marketplace не относится к виртуальным машинам, управляемым приложениям и другим продуктам, доступным в нашем коммерческом магазине.  Сниженная плата за использование службы Marketplace будет доступна только для квалифицированных предложений по лицензиям, собранным корпорацией Майкрософт между 1 мая 2019 г. и 30 июня 2020.  По истечении этого времени плата за службу Marketplace вернется к нормальной сумме. 
-
-### <a name="list-through-microsoft"></a>Перечислить в Майкрософт
-
-Создавайте списки Marketplace, чтобы повысить свой бизнес с помощью Microsoft. Выбор для перечисления только предложения, а не Transact с помощью Microsoft означает, что корпорация Майкрософт не участвует непосредственно в транзакциях лицензии на программное обеспечение. Нет связанной оплаты за транзакцию, и издатель сохраняет 100% всех плат лицензирования программного обеспечения, собранных от клиента. Однако издатель отвечает за поддержку всех аспектов транзакции лицензии на программное обеспечение, включая выполнение заказов, измерение, выставление счетов, выставляемые счета, оплату и сбор. 
-
-- **Как вы хотите, чтобы потенциальные клиенты могли взаимодействовать с этим предложением перечня?**
-
-##### <a name="get-it-now-free"></a>Получите сейчас (бесплатно)
-Перечислите свои предложения клиентам бесплатно, указав допустимый URL-адрес (начиная с *http* или *HTTPS*), где они могут получить доступ к вашему приложению.  Например: `https://contoso.com/saas-app`
-
-##### <a name="free-trial-listing"></a>Бесплатная пробная версия (листинг)
-Перечислите свои предложения клиентам со ссылкой на бесплатную пробную версию, указав допустимый URL-адрес (начиная с *http* или *HTTPS*), где они могут получить пробную версию с [помощью проверки подлинности одним щелчком, используя Azure Active Directory (Azure AD)](https://docs.microsoft.com/azure/marketplace/marketplace-saas-applications-technical-publishing-guide#using-azure-active-directory-to-enable-trials).  Например, `https://contoso.com/trial/saas-app`. Предложение. список бесплатных пробных версий создается, управляется и настраивается службой и не имеет подписок, управляемых корпорацией Майкрософт.
+- In this example, Microsoft bills $100.00 to the customer for your software license and pays out $80.00 to the publisher.
+- Partners who have qualified for the **Reduced Marketplace Service Fee** will see a reduced transaction fee on the SaaS offers from May 2019 until June 2020. In this scenario, Microsoft bills $100.00 for your software license and pays out $90.00 to the publisher.
 
 > [!NOTE]
-> Токены, которые приложение будет получать через пробную ссылку, можно использовать только для получения сведений о пользователях через Azure AD для автоматизации создания учетных записей в приложении. Учетные записи Майкрософт (MSA) не поддерживают проверку подлинности с помощью этого маркера.
+> **Reduced Marketplace Service Fee**: For certain SaaS offers that you have published on our Commercial Marketplace, Microsoft will reduce its Marketplace Service Fee from 20% (as described in the Microsoft Publisher Agreement) to 10%. In order for your offer to qualify, at least one of your offers must have been designated by Microsoft as being either IP co-sell ready or IP co-sell prioritized.  Eligibility must be met at least five (5) business days before the end of each calendar month in order to receive this reduced Marketplace Service Fee for the month.  The Reduced Marketplace Service Fee does not apply to VMs, Managed Apps or any other products made available through our Commercial Marketplace.  The Reduced Marketplace Service Fee will only be available to qualified offers for license charges collected by Microsoft between May 1, 2019 and June 30, 2020.  After this time, the Marketplace Service Fee will return to its normal amount. 
 
-##### <a name="contact-me"></a>Свяжитесь со мной
-Собирайте контактные данные клиента, подключив систему управления взаимоотношениями с клиентами (CRM). Клиент запросит разрешение на предоставление информации. Эти сведения о клиенте, а также имя предложения, идентификатор и источник Marketplace, где они были найдены, будут отправлены в настроенную Вами систему CRM. Дополнительные сведения о настройке CRM см. в разделе [Connect Lead Management](#connect-lead-management). 
+### <a name="list-through-microsoft"></a>List through Microsoft
 
-## <a name="example-marketplace-offer-listing"></a>Пример списка предложений Marketplace
+Promote your business with Microsoft by creating a marketplace listing. Selecting to list your offer only and not transact through Microsoft means that Microsoft doesn't participate directly in software license transactions. There is no associated transaction fee and the publisher keeps 100% of any software licensing fees collected from the customer. However, the publisher is responsible for supporting all aspects of the software license transaction, including but not limited to: order fulfillment, metering, billing, invoicing, payment, and collection. 
 
-![Пример списка предложений Marketplace с заметками](./media/marketplace-offer.svg)
+- **How do you want potential customers to interact with this listing offer?**
+
+##### <a name="get-it-now-free"></a>Get it now (free)
+List your offer to customers for free by providing a valid URL (beginning with *http* or *https*) where they can access your app.  Например: `https://contoso.com/saas-app`
+
+##### <a name="free-trial-listing"></a>Free trial (listing)
+List your offer to customers with a link to a free trial by providing a valid URL (beginning with *http* or *https*), where they can get a trial through [one-click authentication by using Azure Active Directory (Azure AD)](https://docs.microsoft.com/azure/marketplace/marketplace-saas-applications-technical-publishing-guide#using-azure-active-directory-to-enable-trials).  Например, `https://contoso.com/trial/saas-app`. Offer listing free trials are created, managed, and configured by your service and do not have subscriptions managed by Microsoft.
+
+> [!NOTE]
+> The tokens your application will receive through your trial link can only be used to obtain user information through Azure AD to automate account creation in your app. Microsoft Accounts (MSA) are not supported for authentication using this token.
+
+##### <a name="contact-me"></a>Связаться со мной
+Collect customer contact information by connecting your Customer Relationship Management (CRM) system. The customer will be asked for permission to share their information. These customer details, along with the offer name, ID, and marketplace source where they found your offer, will be sent to the CRM system that you've configured. For more information about configuring your CRM, see [Connect lead management](#connect-lead-management). 
+
+## <a name="example-marketplace-offer-listing"></a>Example marketplace offer listing
+
+![Example marketplace offer listing with notes](./media/marketplace-offer.svg)
 
 ## <a name="enable-a-test-drive"></a>Включение тестового выпуска
 
-Тестовый выпуск — это отличный способ продемонстрировать ваше предложение потенциальным клиентам, предоставляя им возможность "опробовать перед покупкой", что приведет к увеличению объема преобразований и созданию высокопроизводительных интересов. [Дополнительные сведения о тестовых дисках.](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/test-drive/what-is-test-drive)
+A test drive is a great way to showcase your offer to potential customers by giving them the option to 'try before you buy', resulting in increased conversion and the generation of highly qualified leads. [Learn more about test drives.](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/test-drive/what-is-test-drive)
 
-- **Включение тестового диска** (флажок)
+- **Enable a test drive** (checkbox)
 
-Включив тестовый выпуск, вам будет предложено настроить демонстрационную среду для клиентов в течение фиксированного периода времени. 
+By enabling test drive, you will be asked to configure a demonstration environment for customers to try your offer for a fixed period of time. 
 
-### <a name="type-of-test-drive"></a>Тип тестового диска
+### <a name="type-of-test-drive"></a>Type of test drive
 
-- **[Azure Resource Manager](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/test-drive/azure-resource-manager-test-drive)** : шаблон развертывания, который содержит все ресурсы Azure, составляющие ваше решение. Продукты, которые соответствуют этому сценарию, используют только ресурсы Azure.
-- **[Dynamics 365 для бизнеса Central](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cpp-business-central-offer)** . Корпорация Майкрософт размещает и обслуживает службу тестового диска (включая подготовку и развертывание) для корпоративной системы планирования ресурсов предприятия (финансы, операции, цепочки поставок, CRM и т. д.).  
-- **[Dynamics 365 для участия клиентов](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/dyn365ce/cpp-customer-engagement-offer)** : Корпорация Майкрософт размещает и обслуживает службу тестового диска (включая подготовку и развертывание) для системы взаимодействия с клиентами (продажи, службы, службы проектов, службы полей и т. д.).  
-- **[Dynamics 365 для операций](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cpp-dynamics-365-operations-offer)** : Корпорация Майкрософт размещает и обслуживает службу тестового диска (включая подготовку и развертывание) для финансовых и операционных систем планирования ресурсов предприятия (финансы, эксплуатация, производство, цепочка поставок и т. д.). 
-- **[Приложение логики](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/test-drive/logic-app-test-drive)** : шаблон развертывания, охватывающий все сложные архитектуры решения. Все пользовательские продукты должны использовать этот тип тестового диска.
-- **[Power BI](https://docs.microsoft.com/power-bi/service-template-apps-overview)** : внедренная ссылка на настраиваемую панель мониторинга. Продукты, которые хотят продемонстрировать интерактивный Power BI визуальный элемент, должны использовать этот тип тестового диска. Необходимо отправить всего лишь внедренный URL-адрес Power BI.
+- **[Azure Resource Manager](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/test-drive/azure-resource-manager-test-drive)** : A deployment template that contains all the Azure resources that comprise your solution. Products that fit this scenario use only Azure resources.
+- **[Dynamics 365 for Business Central](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cpp-business-central-offer)** : Microsoft hosts and maintains the test drive service (including provisioning and deployment) for a Business Central enterprise resource planning system (finance, operations, supply chain, CRM, etc.).  
+- **[Dynamics 365 for Customer Engagement](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/dyn365ce/cpp-customer-engagement-offer)** : Microsoft hosts and maintains the test drive service (including provisioning and deployment) for a Customer Engagement system (sales, service, project service, field service, etc.).  
+- **[Dynamics 365 for Operations](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cpp-dynamics-365-operations-offer)** : Microsoft hosts and maintains the test drive service (including provisioning and deployment) for a Finance and Operations enterprise resource planning system (finance, operations, manufacturing, supply chain, etc.). 
+- **[Logic app](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/test-drive/logic-app-test-drive)** : A deployment template encompassing all complex solution architectures. Any custom products should use this type of Test Drive.
+- **[Power BI](https://docs.microsoft.com/power-bi/service-template-apps-overview)** : An embedded link to a custom-built dashboard. Products that want to demonstrate an interactive Power BI visual should use this type of Test Drive. Необходимо отправить всего лишь внедренный URL-адрес Power BI.
 
-#### <a name="additional-test-drive-resources"></a>Дополнительные ресурсы для тестового диска
-- [Технические рекомендации по тестированию](https://github.com/Azure/AzureTestDrive/wiki/Test-Drive-Best-Practices)
-- [Рекомендации по маркетингу для тестирования](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/test-drive/marketing-and-best-practices)
-- [Обзор тестового диска один пейджер](https://assetsprod.microsoft.com/mpn/azure-marketplace-appsource-test-drives.pdf)
+#### <a name="additional-test-drive-resources"></a>Additional test drive resources
+- [Test Drive Technical Best Practices](https://github.com/Azure/AzureTestDrive/wiki/Test-Drive-Best-Practices)
+- [Test Drive Marketing Best Practices](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/test-drive/marketing-and-best-practices)
+- [Test Drive Overview One Pager](https://assetsprod.microsoft.com/mpn/azure-marketplace-appsource-test-drives.pdf)
 
-## <a name="connect-lead-management"></a>Подключение управления интересами
+## <a name="connect-lead-management"></a>Connect lead management
 
 [!INCLUDE [Connect lead management](./includes/connect-lead-management-a.md)]
 
-#### <a name="additional-lead-management-resources"></a>Дополнительные ресурсы по управлению интересами
-- [Вопросы и ответы по управлению интересами](https://docs.microsoft.com/azure/marketplace/lead-management-for-cloud-marketplace#frequently-asked-questions)
-- [Распространенные ошибки конфигурации интересов](https://docs.microsoft.com/azure/marketplace/lead-management-for-cloud-marketplace#common-lead-configuration-errors-during-publishing-on-cloud-partner-portal)
-- [Обзор управления интересами один пейджер](https://assetsprod.microsoft.com/mpn/cloud-marketplace-lead-management.pdf)
+#### <a name="additional-lead-management-resources"></a>Additional lead management resources
+- [Раздел часто задаваемых вопросов об управлении потенциальными клиентами](https://docs.microsoft.com/azure/marketplace/lead-management-for-cloud-marketplace#frequently-asked-questions)
+- [Распространенные ошибки конфигурации интересов во время публикации на Портале Cloud Partner](https://docs.microsoft.com/azure/marketplace/lead-management-for-cloud-marketplace#common-lead-configuration-errors-during-publishing-on-cloud-partner-portal)
+- [Lead Management Overview One Pager](https://assetsprod.microsoft.com/mpn/cloud-marketplace-lead-management.pdf)
 
-Не забудьте **сохранить** , прежде чем переходить к следующему разделу!
+Remember to **Save** before moving on to the next section!
 
-## <a name="properties"></a>свойства
-На вкладке **Свойства** предлагается определить категории и отрасли, используемые для группировки предложения в Marketplace, юридические контракты, поддерживающие Ваше предложение, и версию вашего приложения. 
+## <a name="properties"></a>properties
+The **Properties** tab asks you to define the categories and industries used to group your offer on the marketplaces, the legal contracts supporting your offer, and your app version. 
 
-После завершения этих полей выберите **сохранить** . 
+Select **Save** after completing these fields. 
 
 ### <a name="category"></a>Категория
-Выберите минимум один (1) и не более трех (3) категорий, используемых для группировки предложения в соответствующие области поиска Marketplace. Вызовите, как ваше предложение поддерживает эти категории в описании предложения. 
+Select a minimum of one (1) and a maximum of three (3) categories used for grouping your offer into the appropriate marketplace search areas. Please call out how your offer supports these categories in the offer description. 
 
 ### <a name="industry"></a>Отрасль
 
 [!INCLUDE [Industry Taxonomy](./includes/industry-taxonomy.md)]
 
 ### <a name="app-version"></a>версия приложения.
-Это необязательное поле, используемое в AppSource Marketplace для поиска номера версии вашего предложения. 
+This is an optional field used in the AppSource marketplace to identify the version number of your offer. 
 
 ### <a name="standard-contract"></a>Стандартный контракт
 
-- **Использовать стандартный контракт?**
+- **Use Standard Contract?**
 
-Чтобы упростить процесс приобретения клиентов и снизить юридическую сложность для поставщиков программного обеспечения, корпорация Майкрософт предлагает шаблон стандартного контракта для упрощения транзакции в Marketplace. 
+To simplify the procurement process for customers and reduce legal complexity for software vendors, Microsoft offers a Standard Contract template in order to help facilitate a transaction in the marketplace. 
 
-Вместо создания пользовательских условий, издатели Azure Marketplace могут предлагать программное обеспечение в соответствии со стандартным контрактом, который клиенты должны венесуэльскому и принимать только один раз. 
+Rather than crafting custom terms and conditions, Azure Marketplace publishers can choose to offer their software under the Standard Contract, which customers only need to vet and accept once. 
 
-Стандартный контракт можно найти здесь: https://go.microsoft.com/fwlink/?linkid=2041178.
+The Standard Contract can be found here: https://go.microsoft.com/fwlink/?linkid=2041178.
 
 #### <a name="terms-of-use"></a>Условия использования
 
-Если условия лицензии отличаются от стандартных контрактов, вы можете ввести свои условия использования здесь. Их можно ввести в виде обычного текста или в виде одного URL-адреса, связывающего с условиями лицензии.
+If your license terms are different from the Standard Contract, you can elect to enter your own legal terms of use here. These can be entered as plain text or as a single URL linking to your license terms.
 
 Клиентам будет предложено принять эти условия, прежде чем использовать это приложение. 
 
-Не забудьте **сохранить** , прежде чем переходить к следующему разделу!
+Remember to **Save** before moving on to the next section!
 
-## <a name="offer-listing"></a>Список предложений
+## <a name="offer-listing"></a>Offer listing
 
-На вкладке Список предложений отображаются языки (и рынки), где доступно предложение, в настоящее время английский (США) является единственным доступным расположением. Кроме того, на этой странице отображается состояние списка для конкретного языка и Дата и время добавления. Необходимо определить сведения о Marketplace (название, описание, условия поиска и т. д.) для каждого языка или рынка.
+The Offer listing tab displays the languages (and markets) where your offer is available, currently English (United States) is the only location available. Additionally, this page displays the status of the language-specific listing and the date/time that it was added. You will need to define the marketplace details (offer name, description, search terms, etc.) for each language / market.
 
 > [!NOTE]
-> На английском языке не обязательно указывать содержимое (например, описание предложения, документы, снимки экрана, условия использования и политику конфиденциальности), если описание предложения начинается с фразы «это приложение доступно только на языке, отличном от английского языка]». Также можно предоставить *полезный URL-адрес ссылки* , чтобы предложить содержимое на языке, отличном от того, который использовался в содержании предложения.
+> Offer listing content (such as offer description, documents, screenshots, terms of use and privacy policy) is not required to be in English as long as the offer description begins with the phrase, "This application is available only in [non-English language]." It is also acceptable to provide a *Useful Link URL* to offer content in a language other than the one used in the Offer listing content.
 
 ### <a name="offer-listings"></a>Списки предложений
 
-Укажите сведения для отображения в Marketplace, включая описания ваших предложений и маркетинговых активов.
+Provide details to be displayed in the marketplace, including descriptions of your offer and marketing assets.
 
-- **Имя** (обязательно). имя, определенное здесь, будет отображаться в качестве заголовка вашего предложения в выбранном магазине. Имя предварительно заполнено на основе предыдущей записи **нового предложения** .  Это может быть товарным знаком.  Они не должны содержать символы эмодзи (если они не являются товарными знаками и символами авторских прав) и не должны быть ограничены 50 символами.
-- **Сводка** (обязательно). Укажите краткое описание предложения, которое будет использоваться в результатах поиска в списке Marketplace. В этом поле можно указать до 100 символов текста.
-- **Описание** (обязательно). Введите описание предложения, которое будет отображаться в обзоре списков Marketplace. Рассмотрите возможность включения выгодного предложения, ключевых преимуществ, любых категорий или отраслевых связей, возможностей приобретения в приложении, любых требуемых раскрытия и ссылки для получения дополнительных сведений.
-В этом поле можно указать до 3 000 символов текста. Дополнительные советы см. в статье [Создание отличного описания приложения](https://docs.microsoft.com/windows/uwp/publish/write-a-great-app-description).
-- **Ключевые слова поиска**. Введите до трех ключевых слов поиска, которые клиенты могут использовать для поиска вашего предложения в Marketplace.
-- **Инструкции по началу работы** (обязательно): Объясните, как настроить и приступить к использованию приложения для потенциальных клиентов.  Это краткое руководство может содержать ссылки на более подробные интерактивные документы. В этом поле можно указать до 3 000 символов текста. 
+- **Name** (required): The name defined here will appear as the title of your offer listing on the marketplace(s) you have chosen. The name is prepopulated based on your previous **New offer** entry.  This may be trademarked.  This must not contain emojis (unless they are the trademark and copyright symbols) and must be limited to 50 characters.
+- **Summary** (required): Provide a short description of your offer to be used in marketplace listing(s) search results. Up to 100 characters of text can be entered in this field.
+- **Description** (required): Provide a description of your offer to be displayed in the marketplace listing(s) overview. Consider including a value proposition, key benefits, any category or industry associations, in-app purchase opportunities, any required disclosures, and a link to learn more.
+Up to 3,000 characters of text can be entered in this field. For additional tips, see the article [Write a great app description](https://docs.microsoft.com/windows/uwp/publish/write-a-great-app-description).
+- **Search keywords**: Enter up to three search keywords that customers can use to find your offer in the marketplace(s).
+- **Getting started instructions** (required): Explain how to configure and start using your app for potential customers.  This quickstart can contain links to more detailed online documentation. Up to 3,000 characters of text can be entered in this field. 
 
 #### <a name="description"></a>**Описание**
 
-Это обязательное поле. Элементы для включения в описание: 
+This is a required field. Items to include in the description: 
 
 * Четко укажите преимущества, предоставляемые вашим предложением, в начале описания.  
 * Имейте в виду, что первые несколько предложений могут отображаться в результатах поисковой системы.  
@@ -223,23 +223,23 @@ SaaS поддерживает ежемесячный или ежегодный �
 
 * Описание продукта. 
 * Тип пользователя, которому будет полезен продукт. 
-* Клиенты должны или покрасть их в адреса. 
+* Customer needs or pain that the product addresses. 
 
-Чтобы сделать описание предложения более привлекательным, можно использовать теги HTML для форматирования описания. 
+To make your offer description more engaging you can use HTML tags to format the description. 
 
-1. Если необходимо создать абзацы, добавьте `<p>` в беггинг текста и добавьте `</p>` в конце.
+1. If you want to create paragraphs, add `<p>` at the begging of the text and add `</p>` at the end.
 
     **Пример**: 
 
-    `<p>` это первый абзац. `</p>` <br>
-    `<p>` это второй абзац. `</p>` <br>
+    `<p>` This is my first paragraph. `</p>` <br>
+    `<p>` This is my second paragraph. `</p>` <br>
 
-    Приведенный выше параметр будет выглядеть следующим образом:
+    The above would look like this:
 
-    <p> Это мой первый абзац. </p>
-    <p> Это мой второй абзац. </p>
+    <p> This is my first paragraph. </p>
+    <p> This is my second paragraph. </p>
 
-1. Если вы хотите добавить **Маркированный список элементов**, поместите текст в теги `<li>` ниже. В тегах `<ul>` и `</ul>` можно копировать и вставлять элементы с дополнительными маркерами (элементы между тегами `<li>` и `</li>`). Убедитесь, что вы добавили `<ul></ul>`. 
+1. If you want to add a **bulleted list of items**, place your text within the `<li>` tags below. You can copy and paste more bulleted items (items between the `<li>` and `</li>` tags) within the `<ul>` and `</ul>` tags. Make sure you add the `<ul></ul>`. 
 
     **Пример**:
 
@@ -251,236 +251,236 @@ SaaS поддерживает ежемесячный или ежегодный �
     </ul> 
     ```
 
-    Приведенный выше параметр будет выглядеть следующим образом:
+    The above would look like this:
     <ul> 
-        <li>добавить текст</li> 
-        <li> добавить текст </li> 
-        <li> добавить текст </li> 
+        <li>add text here</li> 
+        <li> add text here </li> 
+        <li> add text here </li> 
     </ul> 
 
-1. Чтобы выделить содержимое **полужирным** шрифтом, добавьте `<b>` в начале текста, который необходимо выделять полужирным шрифтом, и добавьте `</b>` в конце текста, который нужно выделить жирным шрифтом. 
+1. To **bold** content, add `<b>` at the beginning of the text you want to bold and add `</b>` at the end of the text you want to bold. 
 
-    **Пример**: `<b>` бесплатной пробной версии `</b>`
+    **Example**: `<b>` FREE TRIAL `</b>`
     
-    Приведенное выше значение приведет к тому, что слова с бесплатной пробной версией будут выделены жирным шрифтом в описании предложения в витрине. 
+    The above would cause the words FREE TRIAL to be bolded in the description of the offer in the storefront. 
 
-    **БЕСПЛАТНАЯ ПРОБНАЯ ВЕРСИЯ**
+    **FREE TRIAL**
 
-1. Чтобы добавить **разрывы строк** между содержимым, добавьте `<br>` перед содержимым, которое нужно начать на новой строке. Если вы хотите оставить пробел и убедиться, что содержимое начинается на новой строке, добавьте `<br><br>` перед содержимым. 
-
-    **Пример**:
-
-    Это текстовая строка. `<br>` это текстовая строка, которая будет начинаться с новой строки. `<br><br>` это строка, которая будет начинаться с двух строк ниже. 
-
-    Приведенный выше параметр будет выглядеть следующим образом:
-
-    Это текстовая строка. <br> Это текстовая строка, которая будет начинаться с новой строки. <br><br> Это строка, которая будет начинаться с двух строк ниже. 
-
-1. Если вы хотите **увеличить размер текста**, сначала выберите размер текста. Используйте приведенные ниже примеры. После выбора размера текста добавьте соответствующие теги `<H*></H*>` в начало и конец текста. 
+1. To add **line breaks** between your content, add `<br>` before the content that you want to start on a new line. If you want to leave a space and make sure content starts on a new line, add `<br><br>` before the content. 
 
     **Пример**:
 
-    `<h1>`это заголовок 1`</h1>` <br>
-    `<h2>`это заголовок 2`</h2>` <br>
-    `<h3>`это заголовок 3`</h3>` <br>
-    `<h4>`это заголовок 4`</h4>` <br>
-    `<h5>`это заголовок 5`</h5>` <br>
-    `<h6>`это заголовок 6`</h6>` 
+    This is a text line. `<br>` This is a text line that will start in a new line. `<br><br>` This is a line that will start two lines below. 
 
-    Приведенный выше параметр будет выглядеть следующим образом:
+    The above would look like this:
 
-    ![Примеры заголовков](./media/heading.png)
+    This is a text line. <br> This is a text line that will start in a new line. <br><br> This is a line that will start two lines below. 
+
+1. If you want to **increase the size of the text**, first choose how big you want the text to be. Use the below examples. After you have selected the size of the text, add the corresponding `<H*></H*>` tags to the beginning and ending of the text. 
+
+    **Пример**:
+
+    `<h1>`This is heading 1`</h1>` <br>
+    `<h2>`This is heading 2`</h2>` <br>
+    `<h3>`This is heading 3`</h3>` <br>
+    `<h4>`This is heading 4`</h4>` <br>
+    `<h5>`This is heading 5`</h5>` <br>
+    `<h6>`This is heading 6`</h6>` 
+
+    The above would look like this:
+
+    ![Sample headings](./media/heading.png)
 
 #### <a name="links"></a>Ссылки
 
-- **Политика конфиденциальности** (обязательно): ссылка на политику конфиденциальности вашей организации. Вы несете ответственность за то, чтобы приложение отвечало законам о конфиденциальности и нормативам, а также для предоставления действительной политики конфиденциальности.
-- **Маркетинговые материалы по программе CSP** (необязательно). Если вы решили расширить свое предложение до программы [поставщика облачных решений (CSP)](https://docs.microsoft.com/azure/marketplace/cloud-solution-providers) , необходимо предоставить ссылку на маркетинговые материалы. CSP расширяет ваше предложение до более широкого спектра квалифицированных клиентов, позволяя партнерам CSP объединять, продавать и передавать свои предложения. Этим торговым посредникам потребуется доступ к материалам для получения маркетингового предложения. Дополнительные сведения см. [в разделе Услуги переходят на рынке](https://partner.microsoft.com/reach-customers/gtm).
-- **Полезные ссылки** (необязательно): дополнительные дополнительные интерактивные документы о приложении или связанных службах, предоставляемые с указанием **заголовка** и **URL-адреса**. Добавьте дополнительные полезные ссылки, щелкнув **+ Добавить URL-адрес**.
+- **Privacy Policy** (required): Link to your organization's privacy policy. You are responsible for ensuring your app complies with privacy laws and regulations, and for providing a valid privacy policy
+- **CSP Program Marketing Materials** (optional): You must provide a link to marketing materials if you choose to extend your offer to the [Cloud Solution Provider (CSP)](https://docs.microsoft.com/azure/marketplace/cloud-solution-providers) program. CSP extends your offer to a broader range of qualified customers by enabling CSP partners to bundle, market, and resell your offer. These resellers will need access to materials for marketing your offer. For more information, see [Go-To-Market Services](https://partner.microsoft.com/reach-customers/gtm).
+- **Useful Links** (optional): Optional supplemental online documents about your app or related services listed by providing a **Title**  and  **URL**. Add additional useful links by clicking  **+ Add a URL**.
 
 #### <a name="contact-information"></a>Контактные данные
 
-- **Контакты**: для каждого контакта клиента укажите **имя** сотрудника, **номер телефона**и адрес **электронной почты** .  (Они *не будут* отображаться в открытом виде). Для группы **контактов поддержки** также требуется **URL-адрес поддержки** .  (Эти сведения *будут* отображены в открытом виде).
+- **Contacts**: For each customer contact, provide an employee  **Name** ,  **Phone number**, and  **Email**  address.  (These *will not* be displayed publicly). A **Support URL**  is also required for the  **Support Contact**  group.  (This information *will* be displayed publicly).
 
-**Контакт службы поддержки** (обязательно): для получения общих вопросов о поддержке.
+**Support contact** (required): For general support questions.
 
-**Контактное лицо по проектированию** (обязательно): для получения технических вопросов.
+**Engineering contact** (required): For technical questions.
 
-**Контактное лицо диспетчера каналов** (обязательно). вопросы торгового посредника, связанные с программой CSP.
+**Channel Manager contact** (required): For reseller questions related to the CSP program.
 
-#### <a name="files-and-images"></a>Файлы и изображения
+#### <a name="files-and-images"></a>Files and Images
 
-- **Документы** (обязательно). Добавьте связанные маркетинговые документы для вашего предложения в формате PDF, предоставив минимум один (1) и максимум три (3) документа на предложение.
-- **Изображения** (необязательно). Существует несколько мест, где изображения логотипа вашего предложения могут отображаться в Marketplace, и для них требуется следующее количество: 48 x 48 пикселей _(обязательно),_ Medium: 90 x 90 пикселей, крупный: 216 x 216 пикселей _( обязательно),_ Wide: 255 x 115 пикселей и Hero: 815 x 290 пикселей. Все образы должны быть в. Формат PNG.
-- **Снимки экрана** (обязательные): Добавление снимков экрана, демонстрирующих ваше предложение. Можно добавить до пяти (5) снимков экрана, размер которых должен составлять 1280 x 720 пикселей. Все образы должны быть в. Формат PNG.
-- **Видео** (необязательно). Добавьте ссылки на видео, демонстрирующие ваше предложение. Можно использовать ссылки на видео YouTube и (или) Vimeo, которые будут отображаться клиентам вместе с вашим предложением. Также необходимо будет ввести эскиз видео, размер которого составляет 1280 x 720 пикселей в формате PNG. Для каждого предложения можно отобразить не более четырех видео.
+- **Documents** (required): Add related marketing documents for your offer, in PDF format, providing a minimum of one (1) and maximum of three (3) documents per offer.
+- **Images** (optional): There are multiple places where your offer's logo images may appear throughout the marketplace(s), requiring the following sizes -- Small: 48 x 48 pixels _(required),_ Medium: 90 x 90 pixels, Large: 216 x 216 pixels _(required),_ Wide: 255 x 115 pixels, and Hero: 815 x 290 pixels. All images must be in .PNG format.
+- **Screenshots** (required): Add screenshots demonstrating your offer. A maximum of five (5) screenshots may be added and should be sized at 1280 x 720 pixels. All images must be in .PNG format.
+- **Videos** (optional): Add links to videos demonstrating your offer. Можно использовать ссылки на видео YouTube и (или) Vimeo, которые будут отображаться клиентам вместе с вашим предложением. You will also need to enter a thumbnail image of the video, sized to 1280 x 720 pixels in PNG format. You can display a maximum of four videos per offer.
 
-Не забудьте **сохранить** , прежде чем переходить к следующему разделу!
+Remember to **Save** before moving on to the next section!
 
-#### <a name="additional-marketplace-listing-resources"></a>Материалы по дополнительным материалам Marketplace
+#### <a name="additional-marketplace-listing-resources"></a>Additional marketplace listing resources
 
-- [Рекомендации по использованию списков предложений Marketplace](https://docs.microsoft.com/azure/marketplace/gtm-offer-listing-best-practices)
+- [Best practices for marketplace offer listings](https://docs.microsoft.com/azure/marketplace/gtm-offer-listing-best-practices)
 
-## <a name="preview"></a>Предварительная версия
+## <a name="preview"></a>Preview (Предварительный просмотр)
 
-Вкладка **Предварительный просмотр** позволяет определить ограниченную **аудиторию предварительного просмотра** для выпуска предложения перед публикацией предложения в более широкой аудитории Marketplace.
+The **Preview** tab enables you to define a limited **Preview Audience** for releasing your offer prior to publishing your offer live to the broader marketplace audience.
 
 > [!IMPORTANT]
-> Прежде чем ваше предложение будет опубликовано в общедоступной аудитории Marketplace после проверки предложения в предварительной версии, необходимо выбрать вариант **"Go Live"** .
+> You must select **Go live** before your offer will be published live to the marketplace public audience after checking your offer in Preview.
 
-- **Определите аудиторию предварительного просмотра: добавьте один адрес электронной почты AAD/MSA в строку вместе с дополнительным описанием.**
+- **Define a Preview Audience: Add a single AAD/MSA account email per line, along with an optional description.**
 
-Добавьте до десяти (10) адресов электронной почты вручную или двадцать (20) при отправке CSV-файла, для существующей учетной записи Майкрософт (MSA) или учетных записей Azure Active Directory, чтобы помочь в проверке вашего предложения перед публикацией в реальном времени. Добавляя эти учетные записи, вы определяете аудиторию, которая будет разрешать доступ к вашему предложению для предварительного просмотра до публикации в Marketplace. Если ваше предложение уже активно, вы по-прежнему можете определить аудиторию предварительного просмотра для тестирования любых изменений или обновлений вашего предложения.
+Add up to ten (10) email addresses manually, or twenty (20) if uploading a CSV file, for existing Microsoft Account (MSA) or Azure Active Directory accounts to help with validating your offer before publishing live. By adding these accounts, you are defining an audience that will be allowed preview access to your offer before it is published to the marketplace(s). If your offer is already live, you may still define a preview audience for testing any changes or updates to your offer.
 
 > [!NOTE]
-> Аудитория предварительного просмотра отличается от личной аудитории. Аудитории предварительной версии предоставляется доступ к вашему предложению _до_ публикации в Marketplace. Вы также можете создать план и сделать его доступным только для личной аудитории. На вкладке « **список планов** » можно определить личную аудиторию с помощью флажка **частный план** . Затем можно определить закрытую аудиторию до 20 000 клиентов, использующих идентификаторы клиентов Azure.
+> The preview audience differs from a private audience. A preview audience is allowed access to your offer _prior_ to being published live in the marketplaces. You may also choose to create a plan and make it available only to a private audience. In the **plan listing** tab, you can define a private audience with the **This is a private plan** checkbox. You can then define a private audience of up to 20,000 customers using Azure Tenant IDs.
 
-## <a name="technical-configuration"></a>Техническая конфигурация
+## <a name="technical-configuration"></a>Technical configuration
 
-Вкладка **Техническая конфигурация** определяет технические сведения (путь URL-адреса, веб-перехватчик, идентификатор клиента и идентификатор приложения), которые используются для подключения к вашему предложению. Это подключение позволяет нам подготавливать ваше предложение для конечного клиента, если они решили получить его. Схемы, описывающие использование собранных полей, доступны в документации по [API-интерфейсам выполнения SaaS](https://docs.microsoft.com/azure/marketplace/partner-center-portal/pc-saas-fulfillment-api-v2).
+The **Technical configuration** tab defines the technical details (URL path, webhook, tenant ID, and app ID) used to connect to your offer. This connection enables us to provision your offer for the end customer if they choose to acquire it. Diagrams describing the usage of the collected fields are available in documentation for [SaaS fulfillment APIs](https://docs.microsoft.com/azure/marketplace/partner-center-portal/pc-saas-fulfillment-api-v2).
 
-- **URL-адрес целевой страницы** (обязательно): Определите URL-адрес сайта, по которому будут направляться клиенты после получения вашего предложения из Marketplace. Этот URL-адрес будет конечной точкой, получающей маркер, когда клиент направляется на страницу. Этот маркер можно использовать для обмена сведениями о подготовке с помощью функции разрешения в API-интерфейсах выполнения. Эти сведения и все прочие, которые вы соберете, можно использовать как часть интерактивной веб-страницы, созданной клиентом для завершения регистрации и активации приобретения.
+- **Landing page URL** (required): Define the site URL that customers will land on after acquiring your offer from the marketplace. This URL will be the endpoint that receives a token when a customer is routed to the page. That token can be exchanged for provisioning details using resolve in the fulfillment APIs. Those details and any others you collect can be used as part of a customer-interactive web page built in your experience to complete registration and activate their purchase.
 
-- **Веб-перехватчик подключения** (обязательно). для всех асинхронных событий, которые корпорация Майкрософт должна отправить вам от имени клиента (например, подписка SaaS недействительна), необходимо предоставить веб-перехватчик подключения. Если у вас еще нет системы веб-перехватчика, простейшей конфигурацией является наличие приложения логики HTTP-конечной точки, которое будет прослушивать все события, отправляемые в него, а затем соответствующим образом обрабатывает их (например, HTTPS:\//prod-1westus.logic.azure.com:443/work). Подробнее см. статью [Вызовы, срабатывания триггеров и создание вложенных рабочих процессов в приложениях логики](https://docs.microsoft.com/azure/logic-apps/logic-apps-http-endpoint).
+- **Connection webhook** (required): For all asynchronous events that Microsoft needs to send to you on behalf of the customer (example: SaaS Subscription has gone invalid), we require you to provide a connection webhook. If you don't already have a webhook system in place, the simplest configuration is to have an HTTP Endpoint Logic App that will listen for any events being posted to it and then handle them appropriately (e.g. https:\//prod-1westus.logic.azure.com:443/work). Подробнее см. статью [Вызовы, срабатывания триггеров и создание вложенных рабочих процессов в приложениях логики](https://docs.microsoft.com/azure/logic-apps/logic-apps-http-endpoint).
 
-- **Идентификатор клиента Azure AD** (обязательно). в портал Azure необходимо [создать приложение Azure Active Directory (AD)](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal) , чтобы можно было проверить подключение между двумя службами после проверки подлинности связи. Чтобы найти [идентификатор клиента](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in), перейдите к Azure Active Directory и выберите **свойства**, а затем найдите **идентификатор каталога** (например, 50c464d3-4930-494c-963c-1e951d15360e).
+- **Azure AD tenant ID** (required): Inside Azure portal, we require that you [create an Azure Active Directory (AD) app](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal) so that we can validate the connection between our two services is behind an authenticated communication. To find the [tenant ID](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in), go to your Azure Active Directory and select **Properties**, then look for the **Directory ID** number listed (e.g. 50c464d3-4930-494c-963c-1e951d15360e).
 
-- **Идентификатор приложения Azure AD** (обязательно). Вам также потребуется [идентификатор приложения](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in) и ключ проверки подлинности. Чтобы получить эти значения, перейдите к Azure Active Directory и выберите **Регистрация приложений**, а затем найдите **идентификатор приложения** в списке (например, 50c464d3-4930-494c-963c-1e951d15360e). Чтобы найти ключ проверки подлинности, перейдите в раздел **Параметры** и выберите **ключи**. Необходимо указать описание и длительность, после чего будет указано числовое значение.
+- **Azure AD app ID** (required): You also need your [application ID](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in) and an authentication key. To get those values, go to your Azure Active Directory and select **App registrations**, then look for the **Application ID** number listed (e.g. 50c464d3-4930-494c-963c-1e951d15360e). To find the authentication key, go to **Settings** and select **Keys**. You will need to provide a description and duration and will then be provided a number value.
 
- Обратите внимание, что идентификатор приложения Azure связан с ИДЕНТИФИКАТОРом издателя, поэтому убедитесь, что в ваших предложениях используется один и тот же идентификатор приложения.
+ Note that the Azure application ID is associated to your publisher ID, so make sure that the same application ID is used in all your offers.
 
-## <a name="plan-overview"></a>Общие сведения о плане
+## <a name="plan-overview"></a>Plan overview
 
-На вкладке **Обзор плана** можно указать различные параметры плана в рамках одного предложения. Эти планы (иногда называемые номерами SKU) могут отличаться с точки зрения версии, монетизацию или уровней обслуживания. Для продажи вашего предложения в Marketplace необходимо настроить по крайней мере один план.
+The **Plan overview** tab enables you to provide a variety of plan options within the same offer. These plans (sometimes referred to as SKUs) could differ in terms of version, monetization, or tiers of service. You must set up at least one plan in order to sell your offer in the marketplace.
 
-После создания вы увидите имена планов, идентификаторы, модели ценообразования, доступность (общедоступные или частные), текущее состояние публикации и все доступные действия.
+Once created, you will see your plan names, IDs, pricing models, availability (Public or Private), current publishing status, and any available actions.
 
-**Действия** , доступные в **обзоре плана** , зависят от текущего состояния плана и могут включать:
+**Actions** available in the **Plan overview** vary depending on the current status of your plan and may include:
 
-- Если план имеет состояние **черновик** — Удалить черновик
-- Если план находится в **режиме "динамический** " — "выпустить план продаж" или "синхронизировать частные аудитории"
+- If the plan status is **Draft** - Delete draft
+- If the plan status is **Live** - Stop sell plan or Sync private audience
 
-**Создать новый план** (минимум один план для тех, кто выбирает для продажи в корпорации Майкрософт)
+**Create new plan** (minimum of one plan for those who select to sell through Microsoft)
 
-- **Идентификатор плана:** Создайте уникальный идентификатор плана для каждого плана в этом предложении. Этот идентификатор будет отображаться для клиентов в URL-адресе продукта и шаблонах Azure Resource Manager (если применимо). Используйте только строчные, буквенно-цифровые символы, тире или символы подчеркивания. Для этого идентификатора плана разрешено не более 50 символов. Обратите внимание, что идентификатор нельзя изменить после нажатия кнопки Создать.
-- **Имя плана:** Клиенты увидят это имя при принятии решения о том, какой план выбрать в предложении. Создайте уникальное имя предложения для каждого плана в этом предложении. Имя плана используется для различения планов по, которые могут быть частью одного предложения (например, Имя предложения: Windows Server; планы: Windows Server 2016, Windows Server 2019.
+- **Plan ID:** Create a unique plan ID for each plan in this offer. This ID will be visible to customers in the product URL and Azure Resource Manager templates (if applicable). Use only lowercase, alphanumeric characters, dashes or underscores. A maximum of 50 characters are allowed for this plan ID. Note that the ID cannot be modified after selecting create.
+- **Plan name:** Customers will see this name when deciding which plan to select within your offer. Create a unique offer name for each plan in this offer. The plan name is used to differentiate software plans that may be a part of the same offer (E.g. Offer name: Windows Server; plans: Windows Server 2016, Windows Server 2019).
 
-### <a name="plan-listing"></a>Список планов
+### <a name="plan-listing"></a>Plan listing
 
-На вкладке **список планов** отображаются языки (и рынки), где доступен ваш план, в настоящее время английский (США) является единственным доступным расположением. Кроме того, на этой странице отображается состояние списка для конкретного языка и Дата и время добавления. Необходимо определить сведения о Marketplace (название, описание, условия поиска и т. д.) для каждого языка или рынка.
+The **plan listing** tab displays the languages (and markets) where your plan is available, currently English (United States) is the only location available. Additionally, this page displays the status of the language-specific listing and the date/time that it was added. You will need to define the marketplace details (offer name, description, search terms, etc.) for each language / market.
 
-#### <a name="plan-listing-details"></a>Сведения о списке планов
+#### <a name="plan-listing-details"></a>Plan listing details
 
-При выборе одного из языков планов отображается информация о **списке планов** , включая **имя** и **Описание.**
+Selecting one of the plan languages will display the **plan listing** information, including **Name** and **Description.**
 
-- **Имя**: предварительно заполнено на основе новой записи **плана** предварительного просмотра и будет отображаться как заголовок "плана программного обеспечения" для вашего предложения, отображаемого в Marketplace.
-- **Описание:** Это описание представляет собой возможность объяснить, что делает этот план программного обеспечения уникальным, и любые отличия от других планов по в рамках вашего предложения. Может содержать до 500 символов.
+- **Name**: Pre-populated based on your preview **New plan** entry and will appear as the title of your offer's "Software plan" displayed in the marketplace.
+- **Description:** This description is an opportunity to explain what makes this software plan unique and any differences from other software plans within your offer. May contain up to 500 characters.
 
-После завершения этих полей выберите **сохранить** .
+Select **Save** after completing these fields.
 
-#### <a name="plan-pricing-and-availability"></a>Планирование цен и доступности
+#### <a name="plan-pricing-and-availability"></a>Plan pricing and availability
 
-Вкладка **цены и доступность** позволяет настроить рынки, в которых будет доступен этот план, требуемую модель монетизацию, цену и срок выставления счетов. Кроме того, можно указать, следует ли сделать план видимым для всех или только для конкретных клиентов (частные аудитории).
+The **Pricing and availability** tab enables you to configure the markets that this plan will be available in, the desired monetization model, price, and billing term. In addition, you can indicate whether to make the plan visible to everyone or only to specific customers (a private audience).
 
-##### <a name="enabling-free-trials"></a>Идет включение бесплатных пробных версий
+##### <a name="enabling-free-trials"></a>Enabling Free Trials
 
-Предложения SaaS с помощью коммерческого рынка позволяют предоставить бесплатную пробную версию на один месяц при продаже через корпорацию Майкрософт. Для всех моделей и условий выставления счетов, за исключением планов с оплатой, поддерживаются бесплатные пробные версии. Этот вариант позволяет клиентам иметь низкую барьер в течение одного месяца бесплатного доступа.  Если вы решили включить бесплатную пробную версию планов в рамках вашего предложения, клиент не сможет преобразовать его в платную подписку до окончания начального периода в течение одного месяца.  В течение этого времени клиенты, приобретающие предложение, могут испытать все поддерживаемые планы с включенной бесплатной пробной версией и преобразовывать их.  Преобразование в платную подписку выполняется автоматически в конце срока.
-
->[!Note]
->Если клиент решил преобразовать план без бесплатных пробных испытаний, произойдет преобразование, но бесплатная пробная версия будет немедленно утрачена.  Кроме того, после того как клиент начинает платить за план, он больше не сможет получить бесплатную пробную версию в той же подписке, даже если они преобразовываются в SKU, поддерживающий бесплатные пробные версии.
-
-Возможность настройки бесплатной пробной версии доступна для каждого плана в предложении. Просто перейдите к ценам и доступности для каждого предложения и установите флажок, чтобы разрешить пробную версию на один месяц.
-
-![Флажок "Бесплатная пробная версия за один месяц"](./media/free-trial-enable.png)
+SaaS offers through the commercial marketplace enable you to provide a one-month free trial when selling through Microsoft. For all billing models and terms except metered plans, free trials are supported. This option allows customers to have a low-barrier to entry through one month of free access.  If you choose to enable a free trial for plans within your offer, the customer will not be able to convert to a paid subscription before the end of the initial one month period.  During this time, customers purchasing your offer can try out any of the supported plans that have the free trial enabled and convert between them.  The conversion to a paid subscription is done automatically at the end of the term.
 
 >[!Note]
->После публикации предложения с бесплатной пробной версией его нельзя отключить для этого плана. Убедитесь, что этот параметр указан правильно для первой публикации, чтобы избежать повторного создания плана.
+>If the customer chooses to convert to a plan without free trials, the conversion will happen, but the free trial will be lost immediately.  Also, once a customer starts paying for a plan, they can no longer get free trial on the same subscription again, even if they convert to a SKU that does support free trials.
 
-Чтобы получить сведения о подписках клиентов, участвующих в бесплатной пробной версии, используйте новое свойство API `isFreeTrial`, которое будет помечено как true или false. Дополнительные сведения см. в статье [API подписки SaaS Get](https://docs.microsoft.com/azure/marketplace/partner-center-portal/pc-saas-fulfillment-api-v2#get-subscription) .
+The ability to configure a free trial is available for each plan in your offer. Simply navigate to the Pricing and Availability for each offer and check the box to allow a one-month trial.
+
+![One month free trial checkbox](./media/free-trial-enable.png)
 
 >[!Note]
->Бесплатные пробные версии не поддерживаются для планов, использующих службу измерения Marketplace.
+>Once your transactable offer has been published with a free trial it cannot be disabled for that plan. Make sure this setting is correct for the first publish to avoid having to re-create the plan.
+
+To obtain information on customer subscriptions currently participating in a free trial, use the new API property `isFreeTrial`, which will be marked as true or false. See the [SaaS Get Subscription API](https://docs.microsoft.com/azure/marketplace/partner-center-portal/pc-saas-fulfillment-api-v2#get-subscription) for more information.
+
+>[!Note]
+>Free trials are not supported for plans that leverage the marketplace metering service.
 
 #### <a name="markets"></a>Рынки
 
-- **Изменить рынки** (необязательно)
+- **Edit markets** (optional)
 
-Каждый план должен быть доступен по крайней мере на одном рынке. Установите флажок для любого местоположения рынка, в котором вы хотите сделать этот план доступным. Поле поиска и кнопка для выбора «предъявленных к оплате налогов», в которых корпорация Майкрософт подберет на себя продажи и использование налогов от вашего имени.
+Every plan must be available in at least one market. Select the checkbox for any market location where you would like to make this plan available. A search box and button for selecting "Tax Remitted" countries, in which Microsoft remits sales and use tax on your behalf, are included to help.
 
-Если вы уже установили цены на план в США долларах (USD) и добавите еще одно расположение рынка, Цена нового рынка будет рассчитываться в соответствии с текущими курсами обмена. Перед публикацией всегда проверяйте стоимость каждого рынка. Цены можно просмотреть, воспользовавшись ссылкой "экспорт цен (XLSX)" после сохранения изменений.
+If you have already set prices for your plan in United States Dollars (USD) and add another market location, the price for the new market will be calculated according to the current exchange rates. You should always review the price for each market before publishing. Pricing can be reviewed by using the "Export prices (xlsx)" link after saving your changes.
 
-#### <a name="pricing"></a>Цены
+#### <a name="pricing"></a>Стоимость
 
-- **Модель ценообразования**: фиксированная ставка или на основе места на диске
+- **Pricing model**: Flat rate or Seat based
 
-**Фиксированная ставка:** Разрешите доступ к вашему предложению с использованием одной месячной или годовой цены с фиксированной ценой. Иногда это называется ценами на основе сайта. С помощью этой модели ценообразования можно дополнительно определить тарифные планы, которые используют API службы измерения Marketplace для оплаты клиентов в соответствии с нестандартными единицами.  Дополнительные сведения о лимитном выставлении счетов см. в разделе [лимитное выставление счетов с использованием службы измерения Marketplace](./saas-metered-billing.md).
+**Flat rate:** Enable access to your offer with a single monthly or annual price flat rate price. This is sometimes referred to as site-based pricing. With this pricing model, you can optionally define metered plans that use the marketplace metering service API to charge customers according to non-standard units.  For more information on metered billing, see [metered billing using the marketplace metering service](./saas-metered-billing.md).
 
-**На пользователя:** Включите доступ к вашему предложению с учетом цены на количество пользователей, обращающихся к предложению или занимающие рабочие места. Эта модель на основе пользователя позволяет задать минимальное и максимальное количество пользователей, разрешенных в зависимости от цены. Таким образом можно настроить различные ценовые точки на основе числа пользователей, настроив несколько планов.  Эти поля необязательные. Если не выбрано значение Left, число пользователей будет интерпретировано как не имеющее ограничений (минимум 1 и максимум, сколько может поддерживать система). Эти поля могут быть изменены в рамках обновления плана.
+**Per user:** Enable access to your offer with the price based on the number of users accessing the offer or occupying seats. This user-based model enables you to set the minimum and maximum number of users allowed based on the price. This way, different price points can be configured based on the number of users by configuring multiple plans.  Эти поля необязательные. If left unselected, the number of users will be interpreted as not having a limit (min of 1 and max of as many as the system can support). These fields may be edited as part of an update to your plan.
 
-После публикации невозможно изменить выбранную модель ценообразования для выставления счетов. Кроме того, все планы для одного предложения должны использовать одну и ту же модель ценообразования.
+Once published, the billing pricing model choice cannot be changed. In addition, all plans for the same offer must share the same pricing model.
 
-- **Условия выставления счетов**: ежемесячно или ежегодно
+- **Billing term**: Monthly or Annual
 
-Выберите частоту, с которой клиенты должны платить по указанной цене. Необходимо указать по крайней мере одну ежемесячную или годовую цену, либо оба варианта могут быть доступны клиентам.
+Select the frequency that customers must pay the price listed. At least one Monthly or Annual price must be provided, or both options can be made available to customers.
 
-- **Цена**: USD в месяц или USD в год
+- **Price**: USD per month or USD per year
 
-Цены, заданные в местной валюте (USD = США долларе), преобразуются в локальную валюту всех выбранных рынков, используя текущие курсы обмена, доступные во время установки. Проверяйте эти цены перед публикацией, экспортируя электронную таблицу цен и проверив цену на каждом рынке. Если вы хотите задать настраиваемые цены на отдельном рынке, измените и импортируйте электронную таблицу с ценами. Вы несете ответственность за проверку этой цены и применяя эти параметры.
-*\*Чтобы включить экспорт данных о ценах, необходимо сначала сохранить изменения цен.*
+Prices set in local currency (USD = United States Dollar) are converted into the local currency of all selected markets using the current exchange rates available during setup. Validate these prices before publishing by exporting the pricing spreadsheet and reviewing the price in each market. If you would like to set custom prices in an individual market, modify and import the pricing spreadsheet. You are responsible for validating this pricing and own these settings.
+*\*You must first save your pricing changes to enable export of pricing data.*
 
-Внимательно просматривайте свои цены перед публикацией, так как существуют некоторые ограничения на то, что может измениться после публикации плана.
+Review your prices carefully before publishing, as there are some restrictions on what can change after a plan is published:
 
-- После публикации плана невозможно изменить модель ценообразования.
-- После публикации условия выставления счетов для плана его нельзя удалить позже.
-- После публикации цены на рынке в плане ее нельзя будет изменить позже.
+- Once a plan is published, the pricing model can't be changed.
+- Once a billing term is published for a plan, it can't be removed later.
+- Once a price for a market in your plan is published, it can't be changed later.
 
-### <a name="plan-audience"></a>Аудитория плана
+### <a name="plan-audience"></a>Plan Audience
 
-Вы можете настроить отображение каждого плана для всех пользователей или только для конкретной аудитории по выбору пользователя. Членство в этой ограниченной аудитории можно назначить с помощью идентификатора клиента Azure AD.
+You have the option to configure each plan to be visible to everyone or to only a specific audience of your choosing. You can assign membership in this restricted audience using Azure AD tenant IDs.
 
 #### <a name="privacy"></a>Конфиденциальность
 
-- **Это частный план** (необязательный флажок)
+- **This is a private plan** (Optional checkbox)
 
-Установите этот флажок, чтобы сделать ваш план закрытым и видимым только для ограниченной аудитории по вашему выбору. После публикации в качестве частного плана можно обновить аудиторию или сделать план доступным для всех. После того как план опубликован как видимый для всех, он должен оставаться видимым для всех. (План нельзя настроить в качестве частного плана еще раз).
+Check this box to make your plan private and visible only to the restricted audience of your choosing. Once published as a private plan, you can update the audience or choose to make the plan available to everyone. Once a plan is published as visible to everyone, it must remain visible to everyone. (The plan cannot be configured as a private plan again).
 
-- **Ограниченная аудитория (идентификаторы клиентов)**
+- **Restricted Audience (Tenant IDs)**
 
-Назначьте аудиторию, которая будет иметь доступ к этому частному плану. Доступ назначается с помощью идентификаторов клиента с возможностью включения описания каждого назначенного идентификатора клиента. При импорте CSV-файла электронной таблицы можно добавить не более 10 идентификаторов клиентов или идентификаторы клиентов 20 000.
+Assign the audience that will have access to this private plan. Access is assigned using tenant IDs with the option to include a description of each tenant ID assigned. A maximum of 10 tenant IDs can be added, or 20,000 customers tenant IDs if importing a .csv spreadsheet file.
 
-Клиент — это представление Организации, идентификатор которого представлен в виде GUID (глобальный уникальный идентификатор, 128-разрядное целое число, используемое для идентификации ресурсов). Это выделенный экземпляр службы Azure AD, который организация или разработчик приложения получает после начала сотрудничества с корпорацией Майкрософт, то есть после регистрации в Azure, Microsoft Intune или Microsoft 365. Каждый клиент Azure AD отделен от остальных клиентов Azure AD. Чтобы проверить клиент, войдите в портал Azure с помощью учетной записи, которую вы хотите использовать для управления приложением. Если у вас есть клиент, вы автоматически войдете в него и сможете увидеть имя клиента непосредственно под своей учетной записью. Наведите указатель мыши на имя учетной записи в верхней правой части портала Azure, чтобы увидеть свое имя, адрес электронной почты, идентификатор каталога или клиента (GUID), а также домен. Если ваша учетная запись связана с несколькими клиентами, выберите имя учетной записи, чтобы открыть меню, где можно переключаться между клиентами. У каждого клиента есть свой идентификатор. Вы также можете найти идентификатор клиента своей организации, используя URL-адрес доменного имени в папке: [https://www.whatismytenantid.com](https://www.whatismytenantid.com).
+A tenant is a representation of an organization, with an ID represented as a GUID (Globally Unique Identifier, a 128-bit integer number used to identify resources). Это выделенный экземпляр службы Azure AD, который организация или разработчик приложения получает после начала сотрудничества с корпорацией Майкрософт, то есть после регистрации в Azure, Microsoft Intune или Microsoft 365. Каждый клиент Azure AD отделен от остальных клиентов Azure AD. To check the tenant, sign in to the Azure portal with the account you want to use to manage your application. Если у вас есть клиент, вы автоматически войдете в него и сможете увидеть имя клиента непосредственно под своей учетной записью. Наведите указатель мыши на имя учетной записи в верхней правой части портала Azure, чтобы увидеть свое имя, адрес электронной почты, идентификатор каталога или клиента (GUID), а также домен. Если ваша учетная запись связана с несколькими клиентами, выберите имя учетной записи, чтобы открыть меню, где можно переключаться между клиентами. У каждого клиента есть свой идентификатор. You can also look up your organization's tenant ID using a domain name URL at:  [https://www.whatismytenantid.com](https://www.whatismytenantid.com).
 
-В то время как SaaS предлагает использовать идентификаторы клиентов для определения частной аудитории, другие типы предложений могут использовать идентификаторы подписки Azure (которые также представляются в виде идентификаторов GUID).
+While SaaS offers use tenant IDs to define a private audience, other offer types may use Azure Subscription IDs (which are also represented as GUIDs).
 
 > [!NOTE]
-> Частная аудитория (или ограниченная аудитория) отличается от аудитории предварительной версии. На вкладке **[Предварительный просмотр](#preview)** можно определить аудиторию предварительного просмотра. Аудитории предварительной версии предоставляется доступ к вашему предложению *до* публикации предложения в Marketplace. В то время как частная аудитория применяется только к определенному плану, аудитория предварительного просмотра может просматривать все планы (частные или не), но только в течение ограниченного периода предварительной версии во время тестирования и проверки плана.
+> The private audience (or restricted audience) differs from a preview audience. In the **[Preview](#preview)** tab, you can define a preview audience. A preview audience is allowed access to your offer *prior* to the offer being published live in the marketplace. While the private audience designation only applies to a specific plan, the preview audience can view all plans (private or not), but only during the limited preview period while the plan is tested and validated.
 
-## <a name="example-list-of-plans-within-a-marketplace-offer"></a>Пример списка планов в предложении Marketplace
+## <a name="example-list-of-plans-within-a-marketplace-offer"></a>Example list of plans within a marketplace offer
 
-![Пример списка планов Marketplace с заметками](./media/marketplace-plan.svg)
+![Example marketplace plan listing with notes](./media/marketplace-plan.svg)
 
 ## <a name="test-drive"></a>Тестовый выпуск
 
 [!INCLUDE [Test drive content](./includes/commercial-marketplace-test-drive.md)]
 
-## <a name="cloud-solution-provider-csp-reseller-audience"></a>Аудитория поставщика облачных решений (CSP)
+## <a name="cloud-solution-provider-csp-reseller-audience"></a>Cloud Solution Provider (CSP) Reseller Audience
 
-Решение о том, как сделать ваше предложение доступным в программе CSP, позволяет поставщикам облачных решений продавать продукт как часть комплексного решения для своих клиентов. Дополнительные сведения см. в разделе [поставщик облачных решений (CSP)](https://docs.microsoft.com/azure/marketplace/cloud-solution-providers.md).
+Electing to make your offer available in the CSP program enables Cloud Solution Providers to sell your product as part of a bundled solution to their customers. For more information, see [Cloud Solution Providers](https://go.microsoft.com/fwlink/?linkid=2111109).
 
-## <a name="publish"></a>ОПУБЛИКОВАТЬ
+## <a name="publish"></a>Публикация
 
-Завершив все необходимые разделы предложения, выберите **опубликовать** в правом верхнем углу портала. Вы будете перенаправлены на страницу **проверки и публикации** .
+Once you have completed all the required sections of the offer, select **publish** in the top-right corner of the portal. You will be re-directed to the **Review and publish** page.
 
-#### <a name="submit-offer-to-preview"></a>Отправить предложение в предварительную версию
+#### <a name="submit-offer-to-preview"></a>Submit offer to preview
 
-Если вы впервые публикуете это предложение, вы можете:
+If this is your first time publishing this offer, you can:
 
-- См. сведения о состоянии завершения для каждого раздела предложения.
-    - *Не запущено* — означает, что раздел не был затронуты и должен быть завершен.
-    - *Неполное* — означает, что раздел содержит ошибки, которые необходимо исправить, или требуется предоставить дополнительные сведения. Вернитесь к разделам и обновите его.
-    - *Complete* — означает, что раздел завершен, были предоставлены все необходимые данные, а ошибки отсутствуют. Все разделы предложения должны находиться в полном состоянии, прежде чем вы сможете отправить предложение.
-- Предоставьте инструкции по тестированию для группы сертификации, чтобы убедиться, что приложение правильно проверено, а также какие-либо дополнительные заметки, полезные для понимания приложения.
-- Отправьте предложение для публикации, выбрав **Отправить**. Мы отправим вам сообщение электронной почты, которое позволит вам узнать, когда доступна предварительная версия предложения для просмотра и утверждения. Вы должны вернуться в центр партнеров и выбрать **"Go-Live** " для предложения, чтобы опубликовать предложение в общедоступной аудитории (или в частном предложении).
+- See the completion status for each section of the offer.
+    - *Not started* - means the section has not been touched and needs to be completed.
+    - *Incomplete* - means the section has errors that need to be fixed or requires more information to be provided. Please go back to the section(s) and update it.
+    - *Complete* - means the section is complete, all required data has been provided and there are no errors. All sections of the offer must be in a complete state before you can submit the offer.
+- Provide testing instructions to the certification team to ensure that your app is tested correctly, in addition to any supplementary notes helpful for understanding your app.
+- Submit the offer for publishing by selecting **Submit**. We will send you an email to let you know when a preview version of the offer is available for you to review and approve. You must return to Partner Center and select **Go-live** for the offer to publish your offer to the public (or if a private offer, to the private audience).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Обновление существующего предложения в коммерческом магазине](./update-existing-offer.md)
+- [Update an existing offer in the Commercial Marketplace](./update-existing-offer.md) (Обновление имеющегося предложения на коммерческой платформе Marketplace)

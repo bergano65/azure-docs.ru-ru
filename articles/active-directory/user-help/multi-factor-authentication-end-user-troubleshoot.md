@@ -1,6 +1,6 @@
 ---
-title: Устранение распространенных проблем с двухфакторной проверкой подлинности в Azure AD
-description: Узнайте о возможных решениях некоторых из наиболее распространенных проблем с двухфакторной проверкой подлинности.
+title: Common problems & solutions with account authentication - Azure AD
+description: Learn about potential problems and solutions for some of the more common two-factor verification problems and your work or school account.
 services: active-directory
 author: eross-msft
 manager: daveba
@@ -13,101 +13,101 @@ ms.date: 10/28/2019
 ms.author: lizross
 ms.reviewer: kexia
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f8d226d61f4b67541a6991fef3a435b4cfff500f
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 9d998fafbf6b3ba0547991de6c3a8e71b66d91f7
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73805300"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74231891"
 ---
-# <a name="troubleshoot-common-two-factor-verification-problems"></a>Устранение распространенных проблем с двухфакторной проверкой подлинности
+# <a name="common-problems-and-solutions-with-two-factor-verification-and-your-work-or-school-account"></a>Common problems and solutions with two-factor verification and your work or school account
 
-Ваша организация включила двухфакторную проверку, что означает, что для входа в рабочую или учебную учетную запись требуется сочетание имени пользователя, пароля, мобильного устройства или телефона. Дополнительная проверка обеспечивает более высокий уровень защиты, чем просто пароль, так как опирается на две формы проверки подлинности: то, что вы знаете, и то, что у вас есть. Двухфакторная проверка помогает не допустить выполнение злоумышленником входа от вашего имени, так как даже если у него есть ваш пароль, вероятнее всего, у него нет вашего мобильного устройства.
+Your organization has turned on two-factor verification, meaning that your work or school account sign-in now requires a combination of your user name, your password, and a mobile device or phone. Дополнительная проверка обеспечивает более высокий уровень защиты, чем просто пароль, так как опирается на две формы проверки подлинности: то, что вы знаете, и то, что у вас есть. Двухфакторная проверка помогает не допустить выполнение злоумышленником входа от вашего имени, так как даже если у него есть ваш пароль, вероятнее всего, у него нет вашего мобильного устройства.
 
-Существуют некоторые распространенные проблемы двухфакторной проверки, которые могут происходить чаще, чем любой из нас. Эта статья посвящена решению наиболее распространенных проблем и некоторых возможных исправлений.
+There are some common two-factor verification problems that seem to happen more frequently than any of us would like. We've put together this article hoping to address the most common problems and some possible fixes.
 
 >[!Important]
 >Эти материалы предназначены для пользователей. Администраторы могут найти дополнительные сведения о том, как настроить и контролировать среду Azure Active Directory (Azure AD), в [документации по Azure Active Directory](https://docs.microsoft.com/azure/active-directory).
 >
 >Это содержимое также предназначено для использования с рабочей или учебной учетной записью, или аккаунтом, предоставленным вашей организацией (например, alain@contoso.com). Если у вас возникли проблемы с двухфакторной проверкой и личной учетной записью Майкрософт (учетная запись, настроенная для себя), (например, danielle@outlook.com), см. раздел [Включение или отключение двухфакторной проверки для учетной записи Майкрософт](https://support.microsoft.com/help/4028586/microsoft-account-turning-two-step-verification-on-or-off).
 
-## <a name="i-forgot-my-mobile-device-at-home"></a>Я забыл мое мобильное устройство дома
+## <a name="i-forgot-my-mobile-device-at-home"></a>I forgot my mobile device at home
 
-Такое бывает. Вы оставили мобильное устройство дома, и теперь вы не можете использовать свой телефон для проверки того, что вы вы говорите. Если вы ранее добавили другой метод для входа в учетную запись, например рабочий телефон, вы сможете использовать этот метод сейчас. Если вы никогда не добавили дополнительный метод проверки, вам придется обратиться в службу технической поддержки и получить доступ к вашей учетной записи.
+It happens. You left your mobile device at home and now you can't use your phone to verify you are who you say you are. If you previously added another method to sign in to your account, such as your office phone, you should be able to use that method now. If you never added an additional verification method, you'll have to contact your Help desk and have them help you get back into your account.
 
-### <a name="to-sign-in-to-your-work-or-school-account-using-another-verification-method"></a>Вход в рабочую или учебную учетную запись с помощью другого метода проверки
+### <a name="to-sign-in-to-your-work-or-school-account-using-another-verification-method"></a>To sign in to your work or school account using another verification method
 
-1. Войдите в учетную запись обычным образом и выберите ссылку Войти по ссылке **другой путь** на странице **двухфакторной проверки** .
+1. Sign in to your account normally and choose the **Sign in another way** link on the **Two-factor verification** page.
 
     ![Изменение метода проверки при входе](./media/multi-factor-authentication-end-user-troubleshoot/two-factor-auth-signin-another-way.png)
 
     >[!Note]
     >Если вы не видите ссылку **войти другим способом**, это значит, что вы не настроили другие методы проверки. Для входа в учетную запись необходимо связаться с администратором.
 
-2. Выберите альтернативный метод проверки и выполните процедуру двухфакторной проверки подлинности.
+2. Choose your alternative verification method, and continue with the two-factor verification process.
 
-## <a name="i-lost-my-mobile-device-or-it-was-stolen"></a>Мое мобильное устройство потеряно или было украдено
+## <a name="i-lost-my-mobile-device-or-it-was-stolen"></a>I lost my mobile device or it was stolen
 
-Если вы потеряли или заиграли ваше мобильное устройство, вы можете войти с помощью другого метода или попросить службу поддержки очистить параметры. Мы настоятельно рекомендуем предоставить службе технической поддержки возможность определить, был ли ваш телефон потерян или украден, чтобы в вашу учетную запись могли быть внесены соответствующие обновления. После очистки параметров вам будет предложено [зарегистрироваться для двухфакторной проверки](multi-factor-authentication-end-user-first-time.md) при следующем входе в систему.
+If you've lost or had your mobile device stolen, you can either sign in using a different method or you can ask your Help desk to clear your settings. We strongly recommend letting your Help desk know if your phone was lost or stolen, so the appropriate updates can be made to your account. After your settings are cleared, you'll be prompted to [register for two-factor verification](multi-factor-authentication-end-user-first-time.md) the next time you sign in.
 
-## <a name="im-not-getting-the-verification-code-sent-to-my-mobile-device"></a>Я не получаю код проверки, отправляемый на мобильное устройство
+## <a name="im-not-getting-the-verification-code-sent-to-my-mobile-device"></a>I'm not getting the verification code sent to my mobile device
 
-Не получение кода проверки является распространенной проблемой, которая обычно связана с мобильным устройством и его параметрами. Попробуйте выполнить следующие действия.
+Not getting your verification code is a common problem and it's typically related to your mobile device and its settings. Some possible things to try:
 
-- **Перезапустите мобильное устройство.** Иногда устройство просто нуждается в обновлении. Перезапуск устройства завершает работу фоновых процессов или служб, которые в настоящее время выполняются, и может вызвать проблемы, а также обновление основных компонентов устройства, перезапуская их в случае сбоя в какой – то момент.
+- **Restart your mobile device.** Sometimes your device just needs a refresh. Restarting your device ends any background processes or services that are currently running and could cause problems, along with refreshing your device's core components, restarting them in case they crashed at some point.
 
-- **Проверьте правильность сведений о безопасности.** Убедитесь, что сведения о методе проверки безопасности являются точными, особенно ваши номера телефонов. Если вы помещаете неправильный номер телефона, все оповещения будут переходят на неправильный номер. К счастью, этот пользователь не сможет выполнять никаких действий с оповещениями, но он также не поможет войти в учетную запись. Чтобы убедиться, что информация правильная, см. инструкции в статье [Управление параметрами метода двухфакторной проверки подлинности](multi-factor-authentication-end-user-manage-settings.md) .
+- **Verify your security information is correct.** Make sure your security verification method information is accurate, especially your phone numbers. If you put in the wrong phone number, all of your alerts will go to that incorrect number. Fortunately, that user won't be able to do anything with the alerts, but it also won't help you sign in to your account. To make sure your information is correct, see the instructions in the [Manage your two-factor verification method settings](multi-factor-authentication-end-user-manage-settings.md) article.
 
-- **Убедитесь, что уведомления включены.** Убедитесь, что на мобильном устройстве включены уведомления и выбран метод уведомления, позволяющий телефонным звонкам, приложению проверки подлинности и приложению для обмена сообщениями (для текстовых сообщений) отправлять видимые уведомления о предупреждениях на мобильное устройство.
+- **Verify your notifications are turned on.** Make sure your mobile device has notifications turned on and that you've selected a notification method that allows phone calls, your authentication app, and your messaging app (for text messages) to send visible alert notifications to your mobile device.
 
-- **Убедитесь, что у вас есть сигнал устройства и подключение к Интернету.** Убедитесь, что телефонные звонки и текстовые сообщения передаются на мобильное устройство. Получив дружественный вызов, вы можете отправить вам текстовое сообщение, чтобы убедиться, что вы получили и то, и другое. Если этого не сделать, сначала убедитесь, что ваше мобильное устройство включено. Если устройство включено, но вы по-прежнему не получаете вызов или текст, скорее всего, проблема связана с сетью, и вам нужно будет обратиться к поставщику. Если часто возникают проблемы, связанные с сигналами, мы рекомендуем установить и использовать [приложение Microsoft Authenticator](user-help-auth-app-download-install.md) на мобильном устройстве. Приложение для проверки подлинности может создавать случайные коды безопасности для входа, не требуя сигнала ячейки или подключения к Интернету.
+- **Make sure you have a device signal and Internet connection.** Make sure your phone calls and text messages are getting through to your mobile device. Have a friend call you and send you a text message to make sure you receive both. If you don't, first check to make sure your mobile device is turned on. If your device is turned on, but you're still not getting the call or text, it's most likely a problem with your network and you'll need to talk to your provider. If you often have signal-related problems, we recommend you install and use the [Microsoft Authenticator app](user-help-auth-app-download-install.md) on your mobile device. The authenticator app can generate random security codes for sign-in, without requiring any cell signal or Internet connection.
 
-- **Отключить параметр "не беспокоить".** Убедитесь, что вы не включили функцию "не **беспокоить** " для мобильного устройства. Если эта функция включена, уведомления не могут оповещать вас о вашем мобильном устройстве. Инструкции по отключению этой функции см. в руководстве по мобильному устройству.
+- **Turn off Do not disturb.** Make sure you haven't turned on the **Do not disturb** feature for your mobile device. When this feature is turned on, notifications aren't allowed to alert you on your mobile device. Refer to your mobile device's manual for instructions about how to turn off this feature.
 
-- **Разблокировать номера телефонов** В США голосовой звонок от корпорации Майкрософт взят из следующих чисел: + 1 (866) 539 4191, + 1 (855) 330 8653 и + 1 (877) 668 6536.
+- **Unblock phone numbers** In the United States, voice calls from Microsoft come from the following numbers: +1 (866) 539 4191, +1 (855) 330 8653, and +1 (877) 668 6536.
 
-- **Проверьте параметры, связанные с батареей.** Это выглядит немного странно на поверхности, но если вы настроили оптимизацию аккумулятора, чтобы предотвратить использование менее используемых приложений в фоновом режиме, система уведомлений, скорее всего, повлияла. Чтобы устранить эту проблему, отключите оптимизацию аккумулятора для приложения проверки подлинности и приложения для обмена сообщениями, а затем повторите попытку входа в учетную запись.
+- **Check your battery-related settings.** This one seems a bit odd on the surface, but if you've set up your battery optimization to stop lesser-used apps from remaining active in the background, your notification system has most-likely been affected. To try to fix this problem, turn off battery optimization for your authentication app and your messaging app, and then try signing in to your account again.
 
-## <a name="im-not-getting-prompted-for-my-second-verification-information"></a>Я не получаю запрос на получение второй информации для проверки
+## <a name="im-not-getting-prompted-for-my-second-verification-information"></a>I'm not getting prompted for my second verification information
 
-Если вы выполнили вход в рабочую или учебную учетную запись, используя имя пользователя и пароль, но не получили запрос на дополнительные сведения о проверке безопасности, возможно, устройство еще не настроено. Мобильное устройство должно быть настроено для работы с дополнительным методом проверки безопасности. Чтобы убедиться, что вы включили мобильное устройство и что оно доступно для использования с методом проверки, см. статью [Управление параметрами метода двухфакторной проверки подлинности](multi-factor-authentication-end-user-manage-settings.md) . Если вы уверены, что вы не настроили устройство или учетную запись, то можете сделать это сейчас, выполнив действия, описанные в статье [Настройка учетной записи для двухфакторной проверки подлинности](multi-factor-authentication-end-user-first-time.md) .
+If you've signed in to your work or school account using your user name and password, but haven't been prompted about your additional security verification information, it might be that you haven't set up your device yet. Your mobile device must specifically be set up to work with your additional security verification method. To make sure you've turned on your mobile device and that it's available to use with your verification method, see the [Manage your two-factor verification method settings](multi-factor-authentication-end-user-manage-settings.md) article. If you know you haven't set up your device or your account, you can do it now by following the steps in the [Set up my account for two-step verification](multi-factor-authentication-end-user-first-time.md) article.
 
-## <a name="i-got-a-new-phone-number-how-do-i-change-it-for-two-factor-verification"></a>Я получил новый номер телефона, как изменить его для двухфакторной проверки подлинности?
+## <a name="i-got-a-new-phone-number-how-do-i-change-it-for-two-factor-verification"></a>I got a new phone number, how do I change it for two-factor verification?
 
-Если вы получили новый номер телефона, вам потребуется обновить сведения о методе проверки безопасности, чтобы запросы на подтверждение переходили в нужное расположение. Чтобы обновить метод проверки, выполните действия, описанные в разделе **Добавление или изменение номера телефона** статьи [Управление параметрами метода для двухфакторной проверки](multi-factor-authentication-end-user-manage-settings.md#add-or-change-your-phone-number) .
+If you've gotten a new phone number, you'll need to update your security verification method details so your verification prompts go to the right location. To do update your verification method, follow the steps in the **Add or change your phone number** section of the [Manage your two-factor verification method settings](multi-factor-authentication-end-user-manage-settings.md#add-or-change-your-phone-number) article.
 
-## <a name="i-got-a-new-mobile-device-how-do-i-add-it"></a>Я получил новое мобильное устройство, как его добавить?
+## <a name="i-got-a-new-mobile-device-how-do-i-add-it"></a>I got a new mobile device, how do I add it?
 
-Если вы получили новое мобильное устройство, необходимо настроить его для работы с двухфакторной проверкой подлинности. Это решение состоит из нескольких этапов:
+If you've gotten a new mobile device, you'll need to set it up to work with two-factor verification. This is a multi-step solution:
 
-1. Настройте устройство для работы с рабочей или учебной учетной записью, выполнив действия, описанные в статье [Настройка учетной записи для двухфакторной проверки подлинности](multi-factor-authentication-end-user-first-time.md) .
+1. Set up your device to work with your work or school account by following the steps in the [Set up my account for two-step verification](multi-factor-authentication-end-user-first-time.md) article.
 
-2. Обновите сведения об учетной записи и устройстве на странице " **Дополнительная проверка безопасности** ", удалив старое устройство и добавив новое. Дополнительные сведения см. в статье [Управление параметрами метода для двухфакторной проверки подлинности](multi-factor-authentication-end-user-manage-settings.md) .
+2. Update your account and device information in the **Additional security verification** page, deleting your old device and adding your new one. For more information, see the [Manage your two-factor verification method settings](multi-factor-authentication-end-user-manage-settings.md) article.
 
-3. необязательный параметр. Скачайте, установите и настройте приложение Microsoft Authenticator на мобильном устройстве, выполнив действия, описанные в статье [Загрузка и установка Microsoft Authenticator приложения](user-help-auth-app-download-install.md) .
+3. Необязательный элемент. Download, install, and set up the Microsoft Authenticator app on your mobile device by following the steps in the [Download and install the Microsoft Authenticator app](user-help-auth-app-download-install.md) article.
 
-4. необязательный параметр. Включите двухфакторную проверку подлинности для доверенных устройств, выполнив действия, описанные в разделе **Включение двухфакторной проверки подлинности на странице доверенное устройство** статьи [Управление параметрами метода для двухфакторной проверки](multi-factor-authentication-end-user-manage-settings.md#turn-on-two-factor-verification-prompts-on-a-trusted-device) .
+4. Необязательный элемент. Turn on two-factor verification for your trusted devices by following the steps in the **Turn on two-factor verification prompts on a trusted device** section of the [Manage your two-factor verification method settings](multi-factor-authentication-end-user-manage-settings.md#turn-on-two-factor-verification-prompts-on-a-trusted-device) article.
 
-## <a name="im-having-problems-signing-in-on-my-mobile-device-while-traveling"></a>Возникли проблемы при входе на мобильное устройство в поездках
+## <a name="im-having-problems-signing-in-on-my-mobile-device-while-traveling"></a>I'm having problems signing in on my mobile device while traveling
 
-Возможно, вам больше сложно использовать метод проверки, связанный с мобильными устройствами, например обмен текстовыми сообщениями, когда вы находитесь в международном расположении. Также возможно, что ваше мобильное устройство может повлечь за собой расходы на роуминг. В этой ситуации рекомендуется использовать приложение Microsoft Authenticator с возможностью подключения к хот-споту Wi/Fi. Дополнительные сведения о скачивании, установке и настройке Microsoft Authenticator приложения на мобильном устройстве см. в статье [скачивание и установка Microsoft Authenticator приложения](user-help-auth-app-download-install.md) .
+You might find it more difficult to use a mobile device-related verification method, like a text messaging, while you're in an international location. It's also possible that your mobile device can cause you to incur roaming charges. For this situation, we recommend you use the Microsoft Authenticator app, with the option to connect to a Wi-Fi hotspot. For more information about how to download, install, and set up the Microsoft Authenticator app on your mobile device, see the [Download and install the Microsoft Authenticator app](user-help-auth-app-download-install.md) article.
 
-## <a name="i-cant-get-my-app-passwords-to-work"></a>Я не могу заставить мои пароли приложений работать
+## <a name="i-cant-get-my-app-passwords-to-work"></a>I can't get my app passwords to work
 
-Пароли приложений заменяют обычные пароли для старых настольных приложений, которые не поддерживают двухфакторную проверку подлинности. Во-первых, убедитесь что пароль был правильно введен. Если это не устраняет проблему, попробуйте создать новый пароль приложения, выполнив действия, описанные в разделе **Создание и удаление паролей приложений с помощью портала "Мои приложения** " статьи [Управление паролями приложений для двухфакторной проверки подлинности](multi-factor-authentication-end-user-app-passwords.md#create-and-delete-app-passwords-from-the-additional-security-verification-page) .
+App passwords replace your normal password for older desktop applications that don't support two-factor verification. Во-первых, убедитесь что пароль был правильно введен. If that doesn't fix it, try creating a new app password for the app by following the steps in the **Create and delete app passwords using the My Apps portal** section of the [Manage app passwords for two-step verification](multi-factor-authentication-end-user-app-passwords.md#create-and-delete-app-passwords-from-the-additional-security-verification-page) article.
 
-## <a name="why-cant-i-turn-two-factor-verification-off"></a>Почему не удается отключить двухфакторную проверку подлинности?
+## <a name="why-cant-i-turn-two-factor-verification-off"></a>Why can't I turn two-factor verification off?
 
-Если вы используете двухфакторную проверку подлинности с рабочей или учебной учетной записью (например, alain@contoso.com), это, скорее всего, означает, что ваша организация решила использовать эту дополнительную функцию безопасности. Если решение об использовании этой функции принято на уровне организации, у вас нет возможности индивидуально отключить ее. Однако если вы используете двухфакторную проверку подлинности с личной учетной записью, например alain@outlook.com, вы можете включить и отключить эту функцию. Инструкции по управлению двухфакторной проверкой для личных учетных записей Майкрософт см. в разделе [Включение или отключение двухфакторной проверки подлинности для учетная запись Майкрософт](https://support.microsoft.com/help/4028586/microsoft-account-turning-two-step-verification-on-or-off).
+If you're using two-factor verification with your work or school account (for example, alain@contoso.com), it most likely means that your organization has decided you must use this added security feature. Если решение об использовании этой функции принято на уровне организации, у вас нет возможности индивидуально отключить ее. If, however, you're using two-factor verification with a personal account, like alain@outlook.com, you have the ability to turn the feature on and off. For instructions about how to control two-factor verification for your personal Microsoft accounts, see [Turning two-factor verification on or off for your Microsoft account](https://support.microsoft.com/help/4028586/microsoft-account-turning-two-step-verification-on-or-off).
 
 ## <a name="i-didnt-find-an-answer-to-my-problem"></a>Здесь нет решения моей проблемы
 
-Если вы выполнили эти действия, но по-прежнему используете проблемы, обратитесь за помощью в службу поддержки.
+If you've tried these steps but are still running into problems, contact your Help desk for assistance.
 
 ## <a name="related-articles"></a>Связанные статьи
 
 - [Управление параметрами метода двухфакторной проверки подлинности](multi-factor-authentication-end-user-manage-settings.md)
 
-- [Настройка учетной записи для двухфакторной проверки подлинности](multi-factor-authentication-end-user-first-time.md)
+- [Set up my account for two-step verification](multi-factor-authentication-end-user-first-time.md)
 
 - [Часто задаваемые вопросы о приложении Microsoft Authenticator](user-help-auth-app-faq.md)

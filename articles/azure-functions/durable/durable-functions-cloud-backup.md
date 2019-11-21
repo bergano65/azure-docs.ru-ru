@@ -1,20 +1,15 @@
 ---
 title: Сценарии развертывания и объединения в устойчивых функциях — Azure
 description: Сведения о том, как реализовать сценарии развертывания и объединения в расширении устойчивых функций для Функций Azure.
-services: functions
-author: ggailey777
-manager: jeconnoc
-keywords: ''
-ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 11/02/2019
 ms.author: azfuncdf
-ms.openlocfilehash: e2f1042fe1210fe51ae79b1152e51191e7fb066a
-ms.sourcegitcommit: b2fb32ae73b12cf2d180e6e4ffffa13a31aa4c6f
+ms.openlocfilehash: a87a4edd544c2f7d8ff9c6415df2f2dda125f2bf
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73615029"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74232996"
 ---
 # <a name="fan-outfan-in-scenario-in-durable-functions---cloud-backup-example"></a>Сценарии развертывания и объединения в устойчивых функциях. Пример резервного копирования в облако
 
@@ -28,9 +23,9 @@ ms.locfileid: "73615029"
 
 В этом образце функции рекурсивно отправляют все файлы в указанном каталоге в хранилище BLOB-объектов и подсчитывают общее число отправленных байтов.
 
-Можно написать одну функцию, которая отвечает за все. Основная проблема, которая может возникнуть, связана с выполнением **масштабируемости**. На одной виртуальной машине можно запустить выполнение только одной функции, поэтому пропускная способность будет ограничена пропускной способностью одной виртуальной машины. Следующая проблема заключается в **надежности**. В случае сбоя в посередине или если весь процесс занимает более 5 минут, резервное копирование может завершиться сбоем в частично завершенном состоянии. В таком случае его необходимо начать сначала.
+Можно написать одну функцию, которая отвечает за все. Основная проблема, которая может возникнуть, связана с выполнением **масштабируемости**. На одной виртуальной машине можно запустить выполнение только одной функции, поэтому пропускная способность будет ограничена пропускной способностью одной виртуальной машины. Следующая проблема заключается в **надежности**. If there's a failure midway through, or if the entire process takes more than 5 minutes, the backup could fail in a partially completed state. В таком случае его необходимо начать сначала.
 
-Более надежным подходом было бы записать две обычные функции: одна для перечисления файлов и добавления их имен в очередь, а другая для чтения из очереди и отправки файлов в хранилище BLOB-объектов. Этот подход лучше в плане пропускной способности и надежности, но он требует подготавливать очередь и управлять ею. Если требуется выполнить какое-либо действие (например, сообщить об общем количестве отправленных байтов), могут возникнуть значительные проблемы в контексте **управления состоянием** и **координацией**.
+Более надежным подходом было бы записать две обычные функции: одна для перечисления файлов и добавления их имен в очередь, а другая для чтения из очереди и отправки файлов в хранилище BLOB-объектов. This approach is better in terms of throughput and reliability, but it requires you to provision and manage a queue. Если требуется выполнить какое-либо действие (например, сообщить об общем количестве отправленных байтов), могут возникнуть значительные проблемы в контексте **управления состоянием** и **координацией**.
 
 Подход к устойчивым функциям обеспечивает получение всех упомянутых преимуществ с очень низкими издержками.
 
@@ -42,7 +37,7 @@ ms.locfileid: "73615029"
 * `E2_GetFileList`
 * `E2_CopyFileToBlob`
 
-В следующих разделах описывается конфигурация и код, используемые для C# создания скриптов. Код для разработки с помощью Visual Studio представлен в конце этой статьи.
+The following sections explain the configuration and code that is used for C# scripting. Код для разработки с помощью Visual Studio представлен в конце этой статьи.
 
 ## <a name="the-cloud-backup-orchestration-visual-studio-code-and-azure-portal-sample-code"></a>Оркестрация облачной резервной копии (пример кода Visual Studio Code и портала Azure)
 
@@ -56,11 +51,11 @@ ms.locfileid: "73615029"
 
 [!code-csharp[Main](~/samples-durable-functions/samples/csx/E2_BackupSiteContent/run.csx)]
 
-### <a name="javascript-functions-20-only"></a>JavaScript (только функции 2,0)
+### <a name="javascript-functions-20-only"></a>JavaScript (только Функции 2.0)
 
 [!code-javascript[Main](~/samples-durable-functions/samples/javascript/E2_BackupSiteContent/index.js)]
 
-Она выполняет следующие основные задачи:
+Эта функция оркестратора выполняет следующие задачи:
 
 1. Принимает значение `rootDirectory` в качестве входного параметра.
 2. Вызывает функцию для получения рекурсивного списка файлов в `rootDirectory`.
@@ -68,7 +63,7 @@ ms.locfileid: "73615029"
 4. Ожидает завершения всех передач.
 5. Возвращает сумму общего количества байтов, отправленных в хранилище BLOB-объектов Azure.
 
-Обратите внимание на строки `await Task.WhenAll(tasks);` (C#) и `yield context.df.Task.all(tasks);` (JavaScript). Все отдельные вызовы функции `E2_CopyFileToBlob` *не* ожидают, что позволяет выполнять их параллельно. При передаче массива задач в `Task.WhenAll` (C#) или `context.df.Task.all` (JavaScript) мы получаем задачу, которая не выполнится до *завершения всех операций копирования*. Если вы знакомы с библиотекой параллельных задач (TPL) в .NET или с [`Promise.all`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all) в JavaScript, то вы уже знаете об этой особенности. Разница заключается в том, что задачи могут выполняться на нескольких виртуальных машинах одновременно, а расширение устойчивых функций гарантирует, что комплексное выполнение устойчиво к перезапуску процессов.
+Обратите внимание на строки `await Task.WhenAll(tasks);` (C#) и `yield context.df.Task.all(tasks);` (JavaScript). All the individual calls to the `E2_CopyFileToBlob` function were *not* awaited, which allows them to run in parallel. При передаче массива задач в `Task.WhenAll` (C#) или `context.df.Task.all` (JavaScript) мы получаем задачу, которая не выполнится до *завершения всех операций копирования*. Если вы знакомы с библиотекой параллельных задач (TPL) в .NET или с [`Promise.all`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all) в JavaScript, то вы уже знаете об этой особенности. Разница заключается в том, что задачи могут выполняться на нескольких виртуальных машинах одновременно, а расширение устойчивых функций гарантирует, что комплексное выполнение устойчиво к перезапуску процессов.
 
 > [!NOTE]
 > Несмотря на то что задачи концептуально похожи на обещания JavaScript, функции оркестратора должны использовать `context.df.Task.all` и `context.df.Task.any` вместо `Promise.all` и `Promise.race` для управления параллелизацией задач.
@@ -87,7 +82,7 @@ ms.locfileid: "73615029"
 
 [!code-csharp[Main](~/samples-durable-functions/samples/csx/E2_GetFileList/run.csx)]
 
-### <a name="javascript-functions-20-only"></a>JavaScript (только функции 2,0)
+### <a name="javascript-functions-20-only"></a>JavaScript (только Функции 2.0)
 
 [!code-javascript[Main](~/samples-durable-functions/samples/javascript/E2_GetFileList/index.js)]
 
@@ -100,13 +95,13 @@ ms.locfileid: "73615029"
 
 [!code-json[Main](~/samples-durable-functions/samples/csx/E2_CopyFileToBlob/function.json)]
 
-C# Реализация также проста. Иногда используются некоторые дополнительные функции привязок Функций Azure (то есть параметр `Binder`). Но не нужно беспокоиться об этом в рамках нашего пошагового руководства.
+The C# implementation is also straightforward. Иногда используются некоторые дополнительные функции привязок Функций Azure (то есть параметр `Binder`). Но не нужно беспокоиться об этом в рамках нашего пошагового руководства.
 
 ### <a name="c"></a>C#
 
 [!code-csharp[Main](~/samples-durable-functions/samples/csx/E2_CopyFileToBlob/run.csx)]
 
-### <a name="javascript-functions-20-only"></a>JavaScript (только функции 2,0)
+### <a name="javascript-functions-20-only"></a>JavaScript (только Функции 2.0)
 
 В реализации JavaScript нет доступа к компоненту `Binder` решения "Функции Azure". Вместо этого используется [пакет SDK службы хранилища Azure для Node](https://github.com/Azure/azure-storage-node).
 
@@ -175,7 +170,7 @@ Content-Type: application/json; charset=utf-8
 Пример описанной оркестрации, реализованной в одном файле C# в проекте Visual Studio:
 
 > [!NOTE]
-> Для запуска примера кода ниже необходимо установить `Microsoft.Azure.WebJobs.Extensions.Storage` пакет NuGet.
+> You will need to install the `Microsoft.Azure.WebJobs.Extensions.Storage` NuGet package to run the sample code below.
 
 [!code-csharp[Main](~/samples-durable-functions/samples/precompiled/BackupSiteContent.cs)]
 

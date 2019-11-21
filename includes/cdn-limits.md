@@ -1,22 +1,22 @@
 ---
 author: mdgattuso
-ms.service: billing
+ms.service: cost-management-billing
 ms.topic: include
 ms.date: 04/29/2019
 ms.author: magattus
-ms.openlocfilehash: 0c989aa32c4f4defc9d22a2e510d85d7583ed1c8
-ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
+ms.openlocfilehash: f5cef027dfa38bfb68f24c990047719e540ff0a1
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "67185675"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74224454"
 ---
-| Resource | Ограничение по умолчанию |
+| Ресурс | Ограничение по умолчанию |
 | --- | --- |
-| Профили сети доставки содержимого Azure |25 |
-| Конечные точки сети доставки содержимого на профиль |25 |
+| Azure Content Delivery Network profiles |25 |
+| Content Delivery Network endpoints per profile |25 |
 | Количество личных доменов на конечную точку |25 |
 
-Подписка сети доставки содержимого может содержать один или несколько профилей сети доставки содержимого. Профиль сети доставки содержимого может содержать одну или несколько конечных точек сети доставки содержимого. Вы можете использовать несколько профилей для Организации конечных точек сети доставки содержимого по домену Интернета, веб-приложению или другим критериям. 
+A Content Delivery Network subscription can contain one or more Content Delivery Network profiles. A Content Delivery Network profile can contain one or more Content Delivery Network endpoints. You might want to use multiple profiles to organize your Content Delivery Network endpoints by internet domain, web application, or some other criteria. 
 
 

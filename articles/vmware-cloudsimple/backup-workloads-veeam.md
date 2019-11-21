@@ -1,6 +1,6 @@
 ---
-title: Решение VMware Azure с помощью Клаудсимпле — резервное копирование виртуальных машин в частном облаке с помощью Veeam
-description: В этой статье описывается, как создать резервную копию виртуальных машин, работающих в частном облаке Клаудсимпле на основе Azure, с помощью Veeam B & R 9,5.
+title: Azure VMware Solution by CloudSimple - Back up workload virtual machines on Private Cloud using Veeam
+description: Describes how you can back up your virtual machines that are running in an Azure-based CloudSimple Private Cloud using Veeam B&R 9.5
 author: sharaths-cs
 ms.author: b-shsury
 ms.date: 08/16/2019
@@ -8,171 +8,171 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 3414cc54e5023bdeebb2d5536c1408f981e68f19
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: 3262841efb9109b1de24fe501ea0a7bea0dd612d
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73891399"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74232364"
 ---
-# <a name="back-up-workload-vms-on-cloudsimple-private-cloud-using-veeam-br"></a>Резервное копирование виртуальных машин рабочей нагрузки в частном облаке Клаудсимпле с помощью Veeam B & R
+# <a name="back-up-workload-vms-on-cloudsimple-private-cloud-using-veeam-br"></a>Back up workload VMs on CloudSimple Private Cloud using Veeam B&R
 
-В этом руководство описано, как создать резервную копию виртуальных машин, работающих в частном облаке Клаудсимпле на основе Azure, с помощью Veeam B & R 9,5.
+This guide describes how you can back up your virtual machines that are running in an Azure-based CloudSimple Private Cloud by using Veeam B&R 9.5.
 
-## <a name="about-the-veeam-back-up-and-recovery-solution"></a>О решении резервного копирования и восстановления Veeam
+## <a name="about-the-veeam-back-up-and-recovery-solution"></a>About the Veeam back up and recovery solution
 
-Решение Veeam включает следующие компоненты.
+The Veeam solution includes the following components.
 
-**Резервный сервер**
+**Backup Server**
 
-Резервный сервер — это сервер Windows Server (VM), который выступает в качестве центра управления для Veeam и выполняет следующие функции: 
+The backup server is a Windows server (VM) that serves as the control center for Veeam and performs these functions: 
 
-* Координирует задачи резервного копирования, репликации, проверки и восстановления
-* Управляет планированием заданий и выделением ресурсов
-* Позволяет настраивать компоненты инфраструктуры резервного копирования и управлять ими, а также указывать глобальные параметры для инфраструктуры резервного копирования.
+* Coordinates backup, replication, recovery verification, and restore tasks
+* Controls job scheduling and resource allocation
+* Allows you to set up and manage backup infrastructure components and specify global settings for the backup infrastructure
 
-**Прокси-серверы**
+**Proxy Servers**
 
-Прокси-серверы устанавливаются между сервером Backup и другими компонентами инфраструктуры резервного копирования. Они управляют следующими функциями:
+Proxy servers are installed between the backup server and other components of the backup infrastructure. They manage the following functions:
 
-* Извлечение данных виртуальной машины из рабочего хранилища
+* Retrieval of VM data from the production storage
 * Сжатие
 * Дедупликация
 * Шифрование
-* Передача данных в репозиторий резервных копий
+* Transmission of data to the backup repository
 
-**Репозиторий резервных копий**
+**Backup repository**
 
-Репозиторий резервных копий — это место хранения, где Veeam сохраняет файлы резервных копий, копии виртуальных машин и метаданные для реплицированных виртуальных машин.  Репозиторий может быть сервером Windows или Linux с локальными дисками (или подключенным NFS/SMB) или устройством дедупликации аппаратного хранилища.
+The backup repository is the storage location where Veeam keeps backup files, VM copies, and metadata for replicated VMs.  The repository can be a Windows or Linux server with local disks (or mounted NFS/SMB) or a hardware storage deduplication appliance.
 
-### <a name="veeam-deployment-scenarios"></a>Сценарии развертывания Veeam
-Вы можете использовать Azure для предоставления резервного хранилища и целевого объекта хранилища для долгосрочного резервного копирования и архивации. Весь сетевой трафик резервного копирования между виртуальными машинами в частном облаке и репозиторием резервных копий в Azure перемещается по каналу высокой пропускной способности и низкой задержке. Трафик репликации между регионами перемещается по внутренней сети объединительной платы Azure, что снижает затраты на пропускную способность для пользователей.
+### <a name="veeam-deployment-scenarios"></a>Veeam deployment scenarios
+You can leverage Azure to provide a backup repository and a storage target for long term backup and archiving. All the backup network traffic between VMs in the Private Cloud and the backup repository in Azure travels over a high bandwidth, low latency link. Replication traffic across regions travels over the internal Azure backplane network, which lowers bandwidth costs for users.
 
-**Базовое развертывание**
+**Basic deployment**
 
-Для сред с менее чем 30 ТБ для резервного копирования Клаудсимпле рекомендует следующую конфигурацию:
+For environments with less than 30 TB to back up, CloudSimple recommends the following configuration:
 
-* Veeam Backup Server и прокси-сервер установлены на одной виртуальной машине в частном облаке.
-* Первичный репозиторий резервных копий на основе Linux в Azure, настроенный в качестве цели для заданий резервного копирования.
-* `azcopy`, используемые для копирования данных из основного репозитория резервных копий в контейнер больших двоичных объектов Azure, который реплицируется в другой регион.
+* Veeam backup server and proxy server installed on the same VM in the Private Cloud.
+* A Linux based primary backup repository in Azure configured as a target for backup jobs.
+* `azcopy` used to copy the data from the primary backup repository to an Azure blob container that is replicated to another region.
 
-![Основные сценарии развертывания](media/veeam-basicdeployment.png)
+![Basic deployment scenarios](media/veeam-basicdeployment.png)
 
-**Расширенное развертывание**
+**Advanced deployment**
 
-Для сред с более чем 30 ТБ резервного копирования Клаудсимпле рекомендует следующую конфигурацию:
+For environments with more than 30 TB to back up, CloudSimple recommends the following configuration:
 
-* Один прокси-сервер на узел в кластере vSAN, как рекомендуется для Veeam.
-* Основной репозиторий резервных копий на основе Windows в частном облаке для кэширования данных за пять дней для быстрого восстановления.
-* Резервное хранилище Linux в Azure в качестве целевого объекта для заданий резервного копирования для длительного хранения. Этот репозиторий следует настроить в качестве хранилища резервных копий с горизонтальным масштабированием.
-* `azcopy`, используемые для копирования данных из основного репозитория резервных копий в контейнер больших двоичных объектов Azure, который реплицируется в другой регион.
+* One proxy server per node in the vSAN cluster, as recommended by Veeam.
+* Windows based primary backup repository in the Private Cloud to cache five days of data for fast restores.
+* Linux backup repository in Azure as a target for backup copy jobs for longer duration retention. This repository should be configured as a scale-out backup repository.
+* `azcopy` used to copy the data from the primary backup repository to an Azure blob container that is replicated to another region.
 
-![Основные сценарии развертывания](media/veeam-advanceddeployment.png)
+![Basic deployment scenarios](media/veeam-advanceddeployment.png)
 
-На предыдущем рисунке обратите внимание, что прокси-сервер архивации — это виртуальная машина с горячим доступом к рабочей нагрузке дисков виртуальных машин в хранилище данных vSAN. Veeam использует транспортный режим прокси-сервера резервного копирования виртуальных устройств для vSAN.
+In the previous figure, notice that the backup proxy is a VM with Hot Add access to workload VM disks on the vSAN datastore. Veeam uses Virtual Appliance backup proxy transport mode for vSAN.
 
-## <a name="requirements-for-veeam-solution-on-cloudsimple"></a>Требования к решению Veeam в Клаудсимпле
+## <a name="requirements-for-veeam-solution-on-cloudsimple"></a>Requirements for Veeam solution on CloudSimple
 
-Для решения Veeam необходимо выполнить следующие действия.
+The Veeam solution requires you to do the following:
 
-* Предоставьте собственные лицензии Veeam.
-* Развертывание Veeam и управление ими для резервного копирования рабочих нагрузок, выполняемых в частном облаке Клаудсимпле.
+* Provide your own Veeam licenses.
+* Deploy and manage Veeam to backup the workloads running in the CloudSimple Private Cloud.
 
-Это решение предоставляет полный контроль над средством резервного копирования Veeam и предлагает возможность использовать собственный интерфейс Veeam или подключаемый модуль Veeam vCenter для управления заданиями резервного копирования виртуальных машин.
+This solution provides you with full control over the Veeam backup tool and offers the choice to use the native Veeam interface or the Veeam vCenter plug-in to manage VM backup jobs.
 
-Если вы являетесь существующим пользователем Veeam, вы можете пропустить раздел в разделе компоненты решения Veeam и напрямую перейти к [сценариям развертывания Veeam](#veeam-deployment-scenarios).
+If you are an existing Veeam user, you can skip the section on Veeam Solution Components and directly proceed to [Veeam Deployment Scenarios](#veeam-deployment-scenarios).
 
-## <a name="install-and-configure-veeam-backups-in-your-cloudsimple-private-cloud"></a>Установка и Настройка резервных копий Veeam в частном облаке Клаудсимпле
+## <a name="install-and-configure-veeam-backups-in-your-cloudsimple-private-cloud"></a>Install and configure Veeam backups in your CloudSimple Private Cloud
 
-В следующих разделах описано, как установить и настроить решение резервного копирования Veeam для частного облака Клаудсимпле.
+The following sections describe how to install and configure a Veeam backup solution for your CloudSimple Private Cloud.
 
-Процесс развертывания состоит из следующих этапов.
+The deployment process consists of these steps:
 
-1. [Пользовательский интерфейс vCenter: Настройка служб инфраструктуры в частном облаке](#vcenter-ui-set-up-infrastructure-services-in-your-private-cloud)
-2. [Портал Клаудсимпле: Настройка сети частного облака для Veeam](#cloudsimple-private-cloud-set-up-private-cloud-networking-for-veeam)
-3. [Портал Клаудсимпле: эскалация привилегий](#cloudsimple-private-cloud-escalate-privileges-for-cloudowner)
-4. [Портал Azure: подключение виртуальной сети к частному облаку](#azure-portal-connect-your-virtual-network-to-the-private-cloud)
-5. [Портал Azure: Создание репозитория резервных копий в Azure](#azure-portal-connect-your-virtual-network-to-the-private-cloud)
-6. [Портал Azure: Настройка хранилища BLOB-объектов Azure для долгосрочного хранения данных](#configure-azure-blob-storage-for-long-term-data-retention)
-7. [Пользовательский интерфейс vCenter частного облака: install Veeam B & R](#vcenter-console-of-private-cloud-install-veeam-br)
-8. [Консоль Veeam: Настройка программного обеспечения для восстановления Veeam Backup &](#veeam-console-install-veeam-backup-and-recovery-software)
-9. [Портал Клаудсимпле: Настройте права доступа Veeam и разэскалации.](#cloudsimple-portal-set-up-veeam-access-and-de-escalate-privileges)
+1. [vCenter UI: Set up infrastructure services in your Private Cloud](#vcenter-ui-set-up-infrastructure-services-in-your-private-cloud)
+2. [CloudSimple portal: Set up Private Cloud networking for Veeam](#cloudsimple-private-cloud-set-up-private-cloud-networking-for-veeam)
+3. [CloudSimple portal: Escalate Privileges](#cloudsimple-private-cloud-escalate-privileges-for-cloudowner)
+4. [Azure portal: Connect your virtual network to the Private Cloud](#azure-portal-connect-your-virtual-network-to-the-private-cloud)
+5. [Azure portal: Create a backup repository in Azure](#azure-portal-connect-your-virtual-network-to-the-private-cloud)
+6. [Azure portal: Configure Azure blob storage for long term data retention](#configure-azure-blob-storage-for-long-term-data-retention)
+7. [vCenter UI of Private Cloud: Install Veeam B&R](#vcenter-console-of-private-cloud-install-veeam-br)
+8. [Veeam Console: Configure Veeam Backup & Recovery software](#veeam-console-install-veeam-backup-and-recovery-software)
+9. [CloudSimple portal: Set up Veeam access and de-escalate privileges](#cloudsimple-portal-set-up-veeam-access-and-de-escalate-privileges)
 
 ### <a name="before-you-begin"></a>Перед началом работы
 
-Перед началом развертывания Veeam необходимо выполнить следующие условия.
+The following are required before you begin Veeam deployment:
 
-* Подписка Azure, принадлежащая вам
-* Предварительно созданная группа ресурсов Azure;
-* Виртуальная сеть Azure в подписке
+* An Azure subscription owned by you
+* A pre-created Azure resource group
+* An Azure virtual network in your subscription
 * Учетная запись хранения Azure.
-* [Частное облако](create-private-cloud.md) , созданное с помощью портала клаудсимпле.  
+* A [Private Cloud](create-private-cloud.md) created using the CloudSimple portal.  
 
-На этапе реализации необходимы следующие элементы:
+The following items are needed during the implementation phase:
 
-* Шаблоны VMware для Windows для установки Veeam (например, Windows Server 2012 R2-64 bit Image)
-* Для сети резервного копирования определена одна доступная виртуальная ЛС.
-* CIDR подсети для назначения резервной сети
-* Veeam 9,5 U3 (ISO), который можно загрузить в хранилище данных vSAN частного облака.
+* VMware templates for Windows to install Veeam (such as Windows Server 2012 R2 - 64 bit image)
+* One available VLAN identified for the backup network
+* CIDR of the subnet to be assigned to the backup network
+* Veeam 9.5 u3 installable media (ISO) uploaded to the vSAN datastore of the Private Cloud
 
-### <a name="vcenter-ui-set-up-infrastructure-services-in-your-private-cloud"></a>Пользовательский интерфейс vCenter: Настройка служб инфраструктуры в частном облаке
+### <a name="vcenter-ui-set-up-infrastructure-services-in-your-private-cloud"></a>vCenter UI: Set up infrastructure services in your Private Cloud
 
-Настройте службы инфраструктуры в частном облаке, чтобы упростить управление рабочими нагрузками и инструментами.
+Configure infrastructure services in the Private Cloud to make it easy to manage your workloads and tools.
 
-* Можно добавить внешний поставщик удостоверений, как описано в разделе [Настройка источников удостоверений vCenter для использования Active Directory](set-vcenter-identity.md) если выполняется одно из следующих условий:
+* You can add an external identity provider as described in [Set up vCenter identity sources to use Active Directory](set-vcenter-identity.md) if any of the following apply:
 
-  * Вы хотите опознать пользователей из локальной Active Directory (AD) в частном облаке.
-  * Вы хотите настроить AD в частном облаке для всех пользователей.
-  * Вы хотите использовать Azure AD.
-* Чтобы обеспечить поиск IP-адресов, управление IP-адресами и службы разрешения имен для рабочих нагрузок в частном облаке, настройте DHCP-и DNS-сервер, как описано в разделе [Настройка приложений и рабочих нагрузок DNS и DHCP в частном облаке клаудсимпле](dns-dhcp-setup.md).
+  * You want to identify users from your on-premises Active Directory (AD) in your Private Cloud.
+  * You want to set up an AD in your Private Cloud for all users.
+  * You want to use Azure AD.
+* To provide IP address lookup, IP address management, and name resolution services for your workloads in the Private Cloud, set up a DHCP and DNS server as described in [Set up DNS and DHCP applications and workloads in your CloudSimple Private Cloud](dns-dhcp-setup.md).
 
-### <a name="cloudsimple-private-cloud-set-up-private-cloud-networking-for-veeam"></a>Клаудсимпле частное облако: Настройка сети частного облака для Veeam
+### <a name="cloudsimple-private-cloud-set-up-private-cloud-networking-for-veeam"></a>CloudSimple Private Cloud: Set up Private Cloud networking for Veeam
 
-Доступ к порталу Клаудсимпле для настройки сети частного облака для решения Veeam.
+Access the CloudSimple portal to set up Private Cloud networking for the Veeam solution.
 
-Создайте виртуальную ЛС для резервной сети и назначьте ей подсеть CIDR. Инструкции см. в статье [Создание виртуальных ЛС и подсетей и управление ими](create-vlan-subnet.md).
+Create a VLAN for the backup network and assign it a subnet CIDR. For instructions, see [Create and manage VLANs/Subnets](create-vlan-subnet.md).
 
-Создайте правила брандмауэра между подсетью управления и резервной сетью, чтобы разрешить сетевой трафик на портах, используемых Veeam. См. раздел Veeam об [использовании портов](https://helpcenter.veeam.com/docs/backup/vsphere/used_ports.html?ver=95). Инструкции по созданию правил брандмауэра см. в разделе [Настройка таблиц и правил брандмауэра](firewall.md).
+Create firewall rules between the management subnet and the backup network to allow network traffic on ports used by Veeam. See the Veeam topic [Used Ports](https://helpcenter.veeam.com/docs/backup/vsphere/used_ports.html?ver=95). For instructions on firewall rule creation, see [Set up firewall tables and rules](firewall.md).
 
-В следующей таблице приводится список портов.
+The following table provides a port list.
 
-| Значок | ОПИСАНИЕ | Значок | ОПИСАНИЕ |
+| Значок | Описание | Значок | Описание |
 | ------------ | ------------- | ------------ | ------------- |
-| Backup Server  | vCenter  | HTTPS/TCP  | 443 |
-| Backup Server <br> *Требуется для развертывания Veeam резервного копирования & компонентов репликации* | Прокси-сервер резервного копирования  | TCP/UDP  | 135, 137 – 139 и 445 |
+| Backup Server  | vCenter  | HTTPS / TCP  | 443 |
+| Backup Server <br> *Required for deploying Veeam Backup & Replication components* | Backup Proxy  | TCP/UDP  | 135, 137 to 139 and 445 |
     | Backup Server   | DNS  | UDP  | 53  | 
-    | Backup Server   | Veeam обновление сервера уведомлений  | TCP  | 80  | 
-    | Backup Server   | Сервер обновлений лицензий Veeam  | TCP  | 443  | 
-    | Прокси-сервер резервного копирования   | vCenter |   |   | 
-    | Прокси-сервер резервного копирования  | Репозиторий резервных копий Linux   | TCP  | 22  | 
-    | Прокси-сервер резервного копирования  | Репозиторий резервных копий Windows  | TCP  | 49152-65535   | 
-    | Репозиторий резервных копий  | Прокси-сервер резервного копирования  | TCP  | 2500-5000  | 
-    | Исходный репозиторий резервных копий<br> *Используется для заданий резервного копирования*  | Целевой репозиторий резервных копий  | TCP  | 2500-5000  | 
+    | Backup Server   | Veeam Update Notification Server  | TCP  | 80  | 
+    | Backup Server   | Veeam License Update Server  | TCP  | 443  | 
+    | Backup Proxy   | vCenter |   |   | 
+    | Backup Proxy  | Linux Backup Repository   | TCP  | 22  | 
+    | Backup Proxy  | Windows Backup Repository  | TCP  | 49152 - 65535   | 
+    | Backup Repository  | Backup Proxy  | TCP  | 2500 -5000  | 
+    | Source Backup Repository<br> *Used for backup copy jobs*  | Target Backup Repository  | TCP  | 2500 - 5000  | 
 
-Создайте правила брандмауэра между подсетью рабочей нагрузки и резервной сетью, как описано в разделе [Настройка таблиц и правил брандмауэра](firewall.md).  Для резервного копирования и восстановления с учетом приложения на виртуальных машинах рабочей нагрузки, где размещаются определенные приложения, должны быть открыты [Дополнительные порты](https://helpcenter.veeam.com/docs/backup/vsphere/used_ports.html?ver=95) .
+Create firewall rules between the workload subnet and the backup network as described in [Set up firewall tables and rules](firewall.md).  For application aware backup and restore, [additional ports](https://helpcenter.veeam.com/docs/backup/vsphere/used_ports.html?ver=95) must be opened on the workload VMs that host specific applications.
 
-По умолчанию Клаудсимпле предоставляет ссылку 1Gbps ExpressRoute. Для более крупных размеров среды может потребоваться ссылка на более высокую пропускную способность. Обратитесь в службу поддержки Azure для получения дополнительных сведений о связях с большей пропускной способностью.
+By default, CloudSimple provides a 1Gbps ExpressRoute link. For larger environment sizes, a higher bandwidth link may be required. Contact Azure support for more information about higher bandwidth links.
 
-Чтобы продолжить установку, вам потребуется ключ авторизации и URI одноранговой цепи, а также доступ к своей подписке Azure.  Эти сведения доступны на странице подключения к виртуальной сети на портале Клаудсимпле. Инструкции см. [в статье Получение сведений о пиринга для виртуальной сети Azure в клаудсимпле Connection](virtual-network-connection.md). Если у вас возникли проблемы с получением сведений, [обратитесь в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
+To continue the setup, you need the authorization key and peer circuit URI and access to your Azure Subscription.  This information is available on the Virtual Network Connection page in the CloudSimple portal. For instructions, see [Obtain peering information for Azure virtual network to CloudSimple connection](virtual-network-connection.md). If you have any trouble obtaining the information, [contact support](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
 
-### <a name="cloudsimple-private-cloud-escalate-privileges-for-cloudowner"></a>Клаудсимпле частное облако: эскалация привилегий для клаудовнер
+### <a name="cloudsimple-private-cloud-escalate-privileges-for-cloudowner"></a>CloudSimple Private Cloud: Escalate privileges for cloudowner
 
-Пользователь по умолчанию "клаудовнер" не имеет достаточных привилегий в частном облаке vCenter для установки VEEAM, поэтому привилегии пользователя vCenter должны быть расширены. Дополнительные сведения см. в разделе [эскалация привилегий](escalate-private-cloud-privileges.md).
+The default 'cloudowner' user doesn't have sufficient privileges in the Private Cloud vCenter to install VEEAM, so the user's vCenter privileges must be escalated. For more information, see [Escalate privileges](escalate-private-cloud-privileges.md).
 
-### <a name="azure-portal-connect-your-virtual-network-to-the-private-cloud"></a>Портал Azure: подключение виртуальной сети к частному облаку
+### <a name="azure-portal-connect-your-virtual-network-to-the-private-cloud"></a>Azure portal: Connect your virtual network to the Private Cloud
 
-Подключите виртуальную сеть к частному облаку, следуя инструкциям в статье [Подключение к виртуальной сети Azure с помощью ExpressRoute](azure-expressroute-connection.md).
+Connect your virtual network to the Private Cloud by following the instructions in [Azure Virtual Network Connection using ExpressRoute](azure-expressroute-connection.md).
 
-### <a name="azure-portal-create-a-backup-repository-vm"></a>Портал Azure: создание виртуальной машины репозитория резервных копий
+### <a name="azure-portal-create-a-backup-repository-vm"></a>Azure portal: Create a backup repository VM
 
-1. Создайте стандартную виртуальную машину D2 v3 с (2 виртуальных ЦП и 8 ГБ памяти).
-2. Выберите образ на основе CentOS 7,4.
-3. Настройте группу безопасности сети (NSG) для виртуальной машины. Убедитесь, что виртуальная машина не имеет общедоступного IP-адреса и недоступна из общедоступного Интернета.
-4. Создайте учетную запись пользователя и пароль на основе пароля для новой виртуальной машины. Инструкции см. [в разделе Создание виртуальной машины Linux на портал Azure](../virtual-machines/linux/quick-create-portal.md).
-5. Создайте HDD 512 гиб Standard и подключите его к виртуальной машине репозитория.  Инструкции см. в разделе [Подключение управляемого диска данных к виртуальной машине Windows в портал Azure](../virtual-machines/windows/attach-managed-disk-portal.md).
-6. [Создайте том XFS на управляемом диске](https://www.digitalocean.com/docs/volumes/how-to/). Войдите на виртуальную машину, используя упомянутые выше учетные данные. Выполните следующий скрипт, чтобы создать логический том, добавить в него диск, создать [раздел](https://www.digitalocean.com/docs/volumes/how-to/partition/) файловой системы XFS и [подключить](https://www.digitalocean.com/docs/volumes/how-to/mount/) раздел по пути/backup1.
+1. Create a standard D2 v3 VM with (2 vCPUs and 8 GB memory).
+2. Select the CentOS 7.4 based image.
+3. Configure a network security group (NSG) for the VM. Verify that the VM does not have a public IP address and is not reachable from the public internet.
+4. Create a username and password based user account for the new VM. For instructions, see [Create a Linux virtual machine in the Azure portal](../virtual-machines/linux/quick-create-portal.md).
+5. Create 1x512 GiB standard HDD and attach it to the repository VM.  For instructions, see [How to attach a managed data disk to a Windows VM in the Azure portal](../virtual-machines/windows/attach-managed-disk-portal.md).
+6. [Create an XFS volume on the managed disk](https://www.digitalocean.com/docs/volumes/how-to/). Log in to the VM using the previously mentioned credentials. Execute the following script to create a logical volume, add the disk to it, create an XFS filesystem [partition](https://www.digitalocean.com/docs/volumes/how-to/partition/) and [mount](https://www.digitalocean.com/docs/volumes/how-to/mount/) the partition under the /backup1 path.
 
-    Пример скрипта:
+    Example script:
 
     ```
     sudo pvcreate /dev/sdc
@@ -185,18 +185,18 @@ ms.locfileid: "73891399"
     sudo mount -t xfs /dev/mapper/backup1-backup1 /backup1
     ```
 
-7. Предоставьте/backup1 в качестве точки подключения NFS к серверу резервного копирования Veeam, работающему в частном облаке. Инструкции см. в статье о цифровом океане [как настроить подключение NFS к CentOS 6](https://www.digitalocean.com/community/tutorials/how-to-set-up-an-nfs-mount-on-centos-6). Используйте это имя общего ресурса NFS при настройке репозитория резервного копирования на сервере Veeam Backup Server.
+7. Expose /backup1 as an NFS mount point to the Veeam backup server that is running in the Private Cloud. For instructions, see the Digital Ocean article [How To Set Up an NFS Mount on CentOS 6](https://www.digitalocean.com/community/tutorials/how-to-set-up-an-nfs-mount-on-centos-6). Use this NFS share name when you configure the backup repository in the Veeam backup server.
 
-8. Настройте правила фильтрации в NSG для виртуальной машины репозитория резервных копий, чтобы явно разрешить весь сетевой трафик к виртуальной машине и из нее.
+8. Configure filtering rules in the NSG for the backup repository VM to explicitly allow all network traffic to and from the VM.
 
 > [!NOTE]
-> Veeam Backup & репликации использует протокол SSH для взаимодействия с репозиториями резервных копий Linux и требует служебной программы SCP в репозиториях Linux. Убедитесь, что управляющая программа SSH правильно настроена и что эта точка подключения службы доступна на узле Linux.
+> Veeam Backup & Replication uses the SSH protocol to communicate with Linux backup repositories and requires the SCP utility on Linux repositories. Verify that the SSH daemon is properly configured and that SCP is available on the Linux host.
 
-### <a name="configure-azure-blob-storage-for-long-term-data-retention"></a>Настройка хранилища BLOB-объектов Azure для долгосрочного хранения данных
+### <a name="configure-azure-blob-storage-for-long-term-data-retention"></a>Configure Azure blob storage for long term data retention
 
-1. Создайте учетную запись хранения общего назначения (GPv2) типа "Стандартный" и контейнер больших двоичных объектов, как описано в [видеоначало работы Майкрософт со службой хранилища Azure](https://azure.microsoft.com/resources/videos/get-started-with-azure-storage).
-2. Создайте контейнер службы хранилища Azure, как описано в справочнике по [созданию контейнера](https://docs.microsoft.com/rest/api/storageservices/create-container) .
-2. Скачайте служебную программу командной строки `azcopy` для Linux от Майкрософт. Вы можете использовать следующие команды в оболочке bash в CentOS 7,5.
+1. Create a general purpose storage account (GPv2) of standard type and a blob container as described in the Microsoft video [Getting Started with Azure Storage](https://azure.microsoft.com/resources/videos/get-started-with-azure-storage).
+2. Create an Azure storage container, as described in the [Create Container](https://docs.microsoft.com/rest/api/storageservices/create-container) reference.
+2. Download the `azcopy` command line utility for Linux from Microsoft. You can use the following commands in the bash shell in CentOS 7.5.
 
     ```
     wget -O azcopy.tar.gz https://aka.ms/downloadazcopylinux64
@@ -206,100 +206,100 @@ ms.locfileid: "73891399"
     sudo yum -y install icu
     ```
 
-3. Используйте команду `azcopy`, чтобы скопировать файлы резервных копий в контейнер больших двоичных объектов и из него.  Подробные команды см. [в статье перенос данных с помощью AzCopy в Linux](../storage/common/storage-use-azcopy-linux.md) .
+3. Use the `azcopy` command to copy backup files to and from the blob container.  See [Transfer data with AzCopy on Linux](../storage/common/storage-use-azcopy-linux.md) for detailed commands.
 
-### <a name="vcenter-console-of-private-cloud-install-veeam-br"></a>консоль vCenter из частного облака: Установка Veeam B & R
+### <a name="vcenter-console-of-private-cloud-install-veeam-br"></a>vCenter console of Private Cloud: Install Veeam B&R
 
-Получите доступ к vCenter из частного облака, чтобы создать учетную запись службы Veeam, установите Veeam B & R 9,5 и настройте Veeam с помощью учетной записи службы.
+Access vCenter from your Private Cloud to create a Veeam service account, install Veeam B&R 9.5, and configure Veeam using the service account.
 
-1. Создайте новую роль с именем "Veeam роль резервного копирования" и назначьте ей необходимые разрешения, как это рекомендуется для Veeam. Дополнительные сведения см. в разделе Veeam [необходимые разрешения](https://helpcenter.veeam.com/docs/backup/vsphere/required_permissions.html?ver=95).
-2. Создайте группу "Veeam User Group" в vCenter и назначьте ей роль резервного копирования Veeam.
-3. Создайте нового пользователя "учетная запись службы Veeam" и добавьте его в группу пользователей Veeam.
+1. Create a new role named ‘Veeam Backup Role’ and assign it necessary permissions as recommended by Veeam. For details see the Veeam topic [Required Permissions](https://helpcenter.veeam.com/docs/backup/vsphere/required_permissions.html?ver=95).
+2. Create a new ‘Veeam User Group’ group in vCenter and assign it the ‘Veeam Backup Role’.
+3. Create a new ‘Veeam Service Account’ user and add it to the ‘Veeam User Group’.
 
-    ![Создание учетной записи службы Veeam](media/veeam-vcenter01.png)
+    ![Creating a Veeam service account](media/veeam-vcenter01.png)
 
-4. Создайте группу распределенных портов в vCenter с помощью резервной сетевой виртуальной ЛС. Дополнительные сведения см. в видеоролике VMware [Создание группы распределенных портов в веб-клиенте vSphere](https://www.youtube.com/watch?v=wpCd5ZbPOpA).
-5. Создайте виртуальные машины для резервных копий Veeam и прокси-серверов в vCenter в соответствии с [требованиями к системе Veeam](https://helpcenter.veeam.com/docs/backup/vsphere/system_requirements.html?ver=95). Можно использовать Windows 2012 R2 или Linux. Дополнительные сведения см. в статье [требования для использования резервных репозиториев Linux](https://www.veeam.com/kb2216).
-6. Подключите устанавливаемый ISO-образ Veeam в качестве устройства CDROM на виртуальной машине резервного сервера Veeam.
-7. Используя сеанс RDP для компьютера Windows 2012 R2 (целевой объект для установки Veeam), [установите Veeam B & R 9,5 U3](https://helpcenter.veeam.com/docs/backup/vsphere/install_vbr.html?ver=95) на виртуальной машине Windows 2012 R2.
-8. Найдите внутренний IP-адрес виртуальной машины Veeam Backup Server и настройте статический IP-адрес на DHCP-сервере. Конкретные действия, необходимые для этого, зависят от DHCP-сервера. Например, в статье Нетгате <a href="https://www.netgate.com/docs/pfsense/dhcp/dhcp-server.html" target="_blank">статическое сопоставление DHCP</a> объясняет, как настроить DHCP-сервер с помощью маршрутизатора пфсенсе.
+4. Create a distributed port group in vCenter using the backup network VLAN. For details, view the VMware video [Creating a Distributed Port Group in the vSphere Web Client](https://www.youtube.com/watch?v=wpCd5ZbPOpA).
+5. Create the VMs for the Veeam backup and proxy servers in vCenter as per the [Veeam system requirements](https://helpcenter.veeam.com/docs/backup/vsphere/system_requirements.html?ver=95). You can use Windows 2012 R2 or Linux. For more information see [Requirements for using Linux backup repositories](https://www.veeam.com/kb2216).
+6. Mount the installable Veeam ISO as a CDROM device in the Veeam backup server VM.
+7. Using an RDP session to the Windows 2012 R2 machine (the target for the Veeam installation), [install Veeam B&R 9.5u3](https://helpcenter.veeam.com/docs/backup/vsphere/install_vbr.html?ver=95) in a Windows 2012 R2 VM.
+8. Find the internal IP address of the Veeam backup server VM and configure the IP address to be static in the DHCP server. The exact steps required to do this depend on the DHCP server. As an example, the Netgate article <a href="https://www.netgate.com/docs/pfsense/dhcp/dhcp-server.html" target="_blank">static DHCP mappings</a> explains how to configure a DHCP server using a pfSense router.
 
-### <a name="veeam-console-install-veeam-backup-and-recovery-software"></a>Консоль Veeam: Установка программ резервного копирования и восстановления Veeam
+### <a name="veeam-console-install-veeam-backup-and-recovery-software"></a>Veeam console: Install Veeam backup and recovery software
 
-С помощью консоли Veeam настройте программное обеспечение для резервного копирования и восстановления Veeam. Дополнительные сведения см. в разделе [Veeam Backup & Replication V9 — Установка и развертывание](https://www.youtube.com/watch?v=b4BqC_WXARk).
+Using the Veeam console, configure Veeam backup and recovery software. For details, see [Veeam Backup & Replication v9 - Installation and Deployment](https://www.youtube.com/watch?v=b4BqC_WXARk).
 
-1. Добавьте VMware vSphere в качестве управляемой серверной среды. При появлении запроса введите учетные данные учетной записи службы Veeam, созданной в начале [консоли VCenter частного облака: install Veeam B & R](#vcenter-console-of-private-cloud-install-veeam-br).
+1. Add VMware vSphere as a managed server environment. When prompted, provide  the credentials of the Veeam Service Account that you created at the beginning of [vCenter Console of Private Cloud: Install Veeam B&R](#vcenter-console-of-private-cloud-install-veeam-br).
 
-    * Использовать параметры по умолчанию для управления загрузкой и дополнительных параметров по умолчанию.
-    * Задайте расположение сервера архивации в качестве расположения сервера.
-    * Измените расположение резервной копии конфигурации для сервера Veeam на удаленный репозиторий.
+    * Use default settings for load control and default advanced settings.
+    * Set the mount server location  to be the backup server.
+    * Change the configuration backup location for the Veeam server to the remote repository.
 
-2. Добавьте сервер Linux в Azure в качестве репозитория резервных копий.
+2. Add the Linux server in Azure as the backup repository.
 
-    * Используйте параметры по умолчанию для управления загрузкой и для дополнительных параметров. 
-    * Задайте расположение сервера архивации в качестве расположения сервера.
-    * Измените расположение резервной копии конфигурации для сервера Veeam на удаленный репозиторий.
+    * Use default settings for load control and for the advanced settings. 
+    * Set the mount server location to be the backup server.
+    * Change the configuration backup location for the Veeam server to the remote repository.
 
-3. Включите шифрование резервной копии конфигурации с помощью **параметров резервного копирования домашней >** .
+3. Enable encryption of configuration backup using **Home> Configuration Backup Settings**.
 
-4. Добавьте виртуальную машину Windows Server в качестве прокси-сервера для среды VMware. Используя правила трафика для прокси-сервера, зашифруйте данные резервных копий по сети.
+4. Add a Windows server VM as a proxy server for VMware environment. Using ‘Traffic Rules’ for a proxy, encrypt backup data over the wire.
 
-5. Настройка заданий резервного копирования.
-    * Чтобы настроить задания резервного копирования, следуйте инструкциям в разделе [Создание задания резервного копирования](https://www.youtube.com/watch?v=YHxcUFEss4M).
-    * Включите шифрование файлов резервных копий в разделе **Дополнительные параметры > хранилище**.
+5. Configure backup jobs.
+    * To configure backup jobs, follow the instructions in [Creating a Backup Job](https://www.youtube.com/watch?v=YHxcUFEss4M).
+    * Enable encryption of backup files under **Advanced Settings > Storage**.
 
-6. Настройка заданий резервного копирования.
+6. Configure backup copy jobs.
 
-    * Чтобы настроить задания резервного копирования, следуйте инструкциям в видео [Создание задания резервного](https://www.youtube.com/watch?v=LvEHV0_WDWI&t=2s)копирования.
-    * Включите шифрование файлов резервных копий в разделе **Дополнительные параметры > хранилище**.
+    * To configure backup copy jobs, follow the instructions in the video [Creating a Backup Copy Job](https://www.youtube.com/watch?v=LvEHV0_WDWI&t=2s).
+    * Enable encryption of backup files under **Advanced Settings > Storage**.
 
-### <a name="cloudsimple-portal-set-up-veeam-access-and-de-escalate-privileges"></a>Портал Клаудсимпле: Настройте права доступа Veeam и разэскалации.
-Создайте общедоступный IP-адрес для сервера резервного копирования и восстановления Veeam. Инструкции см. в разделе [выделение общедоступных IP-адресов](public-ips.md).
+### <a name="cloudsimple-portal-set-up-veeam-access-and-de-escalate-privileges"></a>CloudSimple portal: Set up Veeam access and de-escalate privileges
+Create a public IP address for the Veeam backup and recovery server. For instructions, see [Allocate public IP addresses](public-ips.md).
 
-Создайте правило брандмауэра, используя, чтобы позволить Veeam Backup Server создать исходящее подключение к веб-сайту Veeam для загрузки обновлений и исправлений на TCP порт 80. Инструкции см. в разделе [Настройка таблиц и правил брандмауэра](firewall.md).
+Create a firewall rule using to allow the Veeam backup server to create an outbound connection to Veeam website for downloading updates/patches on TCP port 80. For instructions, see [Set up firewall tables and rules](firewall.md).
 
-Сведения о том, как отменять привилегии, см. в разделе [de-эскалировать Privileges](escalate-private-cloud-privileges.md#de-escalate-privileges).
+To de-escalate privileges, see [De-escalate privileges](escalate-private-cloud-privileges.md#de-escalate-privileges).
 
 ## <a name="references"></a>Справочники
 
-### <a name="cloudsimple-references"></a>Ссылки Клаудсимпле
+### <a name="cloudsimple-references"></a>CloudSimple references
 
 * [Создание частного облака](create-private-cloud.md)
-* [Создание виртуальных ЛС и подсетей и управление ими](create-vlan-subnet.md)
-* [Источники удостоверений vCenter](set-vcenter-identity.md)
-* [Настройка DNS и DHCP рабочей нагрузки](dns-dhcp-setup.md)
-* [Эскалация привилегий](escalate-privileges.md)
-* [Настройка таблиц и правил брандмауэра](firewall.md)
-* [Разрешения частного облака](learn-private-cloud-permissions.md)
-* [Выделение общедоступных IP-адресов](public-ips.md)
+* [Create and manage VLANs/Subnets](create-vlan-subnet.md)
+* [vCenter Identity Sources](set-vcenter-identity.md)
+* [Workload DNS and DHCP Setup](dns-dhcp-setup.md)
+* [Escalate privileges](escalate-privileges.md)
+* [Set up firewall tables and rules](firewall.md)
+* [Private Cloud permissions](learn-private-cloud-permissions.md)
+* [Allocate public IP Addresses](public-ips.md)
 
-### <a name="veeam-references"></a>Ссылки Veeam
+### <a name="veeam-references"></a>Veeam References
 
-* [Используемые порты](https://helpcenter.veeam.com/docs/backup/vsphere/used_ports.html?ver=95)
-* [Необходимые разрешения](https://helpcenter.veeam.com/docs/backup/vsphere/required_permissions.html?ver=95)
-* [Требования к системе](https://helpcenter.veeam.com/docs/backup/vsphere/system_requirements.html?ver=95)
-* [Установка Veeam Backup & репликация](https://helpcenter.veeam.com/docs/backup/vsphere/install_vbr.html?ver=95)
-* [Необходимые модули и разрешения для поддержки ФЛР и репозиториев с несколькими операционными системами для Linux](https://www.veeam.com/kb2216)
-* [Veeam Backup & репликация V9 — Установка и развертывание — видео](https://www.youtube.com/watch?v=b4BqC_WXARk)
-* [Veeam V9 создание задания резервного копирования — видео](https://www.youtube.com/watch?v=YHxcUFEss4M)
-* [Veeam V9 создание задания резервного копирования — видео](https://www.youtube.com/watch?v=LvEHV0_WDWI&t=2s)
+* [Used Ports](https://helpcenter.veeam.com/docs/backup/vsphere/used_ports.html?ver=95)
+* [Required Permissions](https://helpcenter.veeam.com/docs/backup/vsphere/required_permissions.html?ver=95)
+* [System Requirements](https://helpcenter.veeam.com/docs/backup/vsphere/system_requirements.html?ver=95)
+* [Installing Veeam Backup & Replication](https://helpcenter.veeam.com/docs/backup/vsphere/install_vbr.html?ver=95)
+* [Required modules and permissions for Multi-OS FLR and Repository support for Linux](https://www.veeam.com/kb2216)
+* [Veeam Backup & Replication v9 - Installation and Deployment - Video](https://www.youtube.com/watch?v=b4BqC_WXARk)
+* [Veeam v9 Creating a Backup Job - Video](https://www.youtube.com/watch?v=YHxcUFEss4M)
+* [Veeam v9 Creating a Backup Copy Job - Video](https://www.youtube.com/watch?v=LvEHV0_WDWI&t=2s)
 
-### <a name="azure-references"></a>Ссылки Azure
+### <a name="azure-references"></a>Azure references
 
-* [Настройка шлюза виртуальной сети для ExpressRoute с помощью портал Azure](../expressroute/expressroute-howto-add-gateway-portal-resource-manager.md)
-* [Подключение виртуальной сети к другой подписке](../expressroute/expressroute-howto-linkvnet-portal-resource-manager.md#connect-a-vnet-to-a-circuit---different-subscription)
-* [Создание виртуальной машины Linux на портал Azure](../virtual-machines/linux/quick-create-portal.md)
-* [Как подключить управляемый диск данных к виртуальной машине Windows в портал Azure](../virtual-machines/windows/attach-managed-disk-portal.md)
-* [Начало работы с хранилищем Azure — видео](https://azure.microsoft.com/resources/videos/get-started-with-azure-storage)
-* [Создать контейнер](https://docs.microsoft.com/rest/api/storageservices/create-container)
+* [Configure a virtual network gateway for ExpressRoute using the Azure portal](../expressroute/expressroute-howto-add-gateway-portal-resource-manager.md)
+* [Connect a VNet to a circuit - different subscription](../expressroute/expressroute-howto-linkvnet-portal-resource-manager.md#connect-a-vnet-to-a-circuit---different-subscription)
+* [Create a Linux virtual machine in the Azure portal](../virtual-machines/linux/quick-create-portal.md)
+* [How to attach a managed data disk to a Windows VM in the Azure portal](../virtual-machines/windows/attach-managed-disk-portal.md)
+* [Getting Started with Azure Storage - Video](https://azure.microsoft.com/resources/videos/get-started-with-azure-storage)
+* [Create Container](https://docs.microsoft.com/rest/api/storageservices/create-container)
 * [Перенос данных с помощью AzCopy для Linux](../storage/common/storage-use-azcopy-linux.md)
 
-### <a name="vmware-references"></a>Ссылки на VMware
+### <a name="vmware-references"></a>VMware references
 
-* [Создание группы распределенных портов в веб-клиенте vSphere — видео](https://www.youtube.com/watch?v=wpCd5ZbPOpA)
+* [Creating a Distributed Port Group in the vSphere Web Client - Video](https://www.youtube.com/watch?v=wpCd5ZbPOpA)
 
 ### <a name="other-references"></a>Прочие ссылки
 
-* [Создание тома XFS на управляемом диске — RedHat](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide/ch-xfs)
-* [Настройка подключения NFS в CentOS 7 — Ховтофорже](https://www.howtoforge.com/nfs-server-and-client-on-centos-7)
-* [Настройка DHCP-сервера — Нетгате](https://www.netgate.com/docs/pfsense/dhcp/dhcp-server.html)
+* [Create an XFS volume on the managed disk - RedHat](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide/ch-xfs)
+* [How To Set Up an NFS Mount on CentOS 7 - HowToForge](https://www.howtoforge.com/nfs-server-and-client-on-centos-7)
+* [Configuring the DHCP Server - Netgate](https://www.netgate.com/docs/pfsense/dhcp/dhcp-server.html)

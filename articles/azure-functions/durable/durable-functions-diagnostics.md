@@ -1,20 +1,16 @@
 ---
 title: Диагностика в устойчивых функциях — Azure
 description: Сведения о том, как диагностировать неполадки в расширении устойчивых функций для Функций Azure.
-services: functions
 author: cgillum
-manager: jeconnoc
-keywords: ''
-ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 11/02/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 333ddbc15e3ff62b1cd46383c4e3be75fb3dbb88
-ms.sourcegitcommit: b2fb32ae73b12cf2d180e6e4ffffa13a31aa4c6f
+ms.openlocfilehash: 4cb832f8fe11ac2581e97d9cdcc777eaff702ee9
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73614934"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74231470"
 ---
 # <a name="diagnostics-in-durable-functions-in-azure"></a>Диагностика в Устойчивых функциях в Azure
 
@@ -24,15 +20,15 @@ ms.locfileid: "73614934"
 
 [Application Insights](../../azure-monitor/app/app-insights-overview.md) является рекомендуемым средством для выполнения диагностики и мониторинга в Функциях Azure. То же относится и к устойчивым функциям. Общие сведения об использовании Application Insights в приложении-функции см. в статье [Мониторинг Функций Azure](../functions-monitoring.md).
 
-Расширение устойчивых функций в службе "Функции Azure" также генерирует *события отслеживания* для выполнения трассировки на протяжении всего процесса оркестрации. Эти события отслеживания можно найти и запросить с помощью средства [Application Insights Analytics](../../azure-monitor/app/analytics.md) в портал Azure.
+Расширение устойчивых функций в службе "Функции Azure" также генерирует *события отслеживания* для выполнения трассировки на протяжении всего процесса оркестрации. These tracking events can be found and queried using the [Application Insights Analytics](../../azure-monitor/app/analytics.md) tool in the Azure portal.
 
 ### <a name="tracking-data"></a>Данные отслеживания
 
 Каждое событие жизненного цикла экземпляра оркестрации инициирует запись события отслеживания в коллекцию **трассировки** в Application Insights. Это событие содержит полезные данные **customDimensions** с несколькими полями.  Все имена полей указаны с префиксом `prop__`.
 
 * **hubName.** Имя центра задач, в котором выполняется оркестрация.
-* **appName.** Имя приложения-функции. Это поле полезно при наличии нескольких приложений-функций, совместно использующих один и тот же экземпляр Application Insights.
-* **slotName.** [Слот развертывания](../functions-deployment-slots.md), в котором выполняется текущее приложение-функция. Это поле полезно использовать при использовании слотов развертывания для управления версиями оркестрации.
+* **appName.** Имя приложения-функции. This field is useful when you have multiple function apps sharing the same Application Insights instance.
+* **slotName.** [Слот развертывания](../functions-deployment-slots.md), в котором выполняется текущее приложение-функция. This field is useful when you leverage deployment slots to version your orchestrations.
 * **functionName.** Имя оркестратора или функции действия.
 * **functionType.** Тип функции, например функция **оркестратора** или **действия**.
 * **InstanceId.** Уникальный идентификатор экземпляра оркестрации.
@@ -43,14 +39,14 @@ ms.locfileid: "73614934"
   * **Listening.** Оркестратор прослушивает уведомления о внешних событиях.
   * **Completed.** Функция успешно выполнена.
   * **Failed.** Выполнение функции завершилось ошибкой.
-* **reason.** Дополнительные данные, связанные с событием отслеживания. Например, если экземпляр ожидает уведомления о внешних событиях, это поле указывает имя события, которое он ожидает. Если функция не удалась, в этом поле будут содержаться сведения об ошибке.
+* **reason.** Дополнительные данные, связанные с событием отслеживания. Например, если экземпляр ожидает уведомления о внешних событиях, это поле указывает имя события, которое он ожидает. If a function has failed, this field will contain the error details.
 * **isReplay.** Логическое значение, указывающее, следует ли повторно выполнять событие отслеживания.
-* **extensionVersion.** Версия расширения устойчивых задач. Сведения о версии являются особенно важными данными при составлении отчетов о возможных ошибках в расширении. Долго выполняющиеся экземпляры могут сообщать о нескольких версиях, если возникает обновление при их выполнении.
+* **extensionVersion.** Версия расширения устойчивых задач. The version information is especially important data when reporting possible bugs in the extension. Долго выполняющиеся экземпляры могут сообщать о нескольких версиях, если возникает обновление при их выполнении.
 * **sequenceNumber**: порядковый номер выполнения события. В сочетании с меткой времени позволяет упорядочить события по времени выполнения. *Обратите внимание на то, что это число будет сброшено до нуля при перезапуске узла, когда экземпляр работает. Поэтому важно всегда сначала сортировать по метке времени, а затем по значению sequenceNumber.*
 
-Уровень детализации данных отслеживания, порожденных в Application Insights, можно настроить в разделе `logger` (функции 1. x) или `logging` (функции 2,0) файла `host.json`.
+The verbosity of tracking data emitted to Application Insights can be configured in the `logger` (Functions 1.x) or `logging` (Functions 2.0) section of the `host.json` file.
 
-#### <a name="functions-10"></a>Функции 1,0
+#### <a name="functions-10"></a>Functions 1.0
 
 ```json
 {
@@ -64,7 +60,7 @@ ms.locfileid: "73614934"
 }
 ```
 
-#### <a name="functions-20"></a>Функции 2,0
+#### <a name="functions-20"></a>Functions 2.0
 
 ```json
 {
@@ -78,9 +74,9 @@ ms.locfileid: "73614934"
 
 По умолчанию передаются все события отслеживания без ответа. Объем данных можно уменьшить, задав для `Host.Triggers.DurableTask` значение `"Warning"` или `"Error"`. В этом случае события отслеживания будут передаваться в исключительных ситуациях.
 
-Чтобы включить создание событий воспроизведения для оркестрации в режиме подробного протоколирования, вы можете задать для `LogReplayEvents` значение `true` в разделе `host.json` файла `durableTask`, как показано ниже:
+Чтобы включить создание событий воспроизведения для оркестрации в режиме подробного протоколирования, вы можете задать для `LogReplayEvents` значение `true` в разделе `durableTask` файла `host.json`, как показано ниже:
 
-#### <a name="functions-10"></a>Функции 1,0
+#### <a name="functions-10"></a>Functions 1.0
 
 ```json
 {
@@ -90,7 +86,7 @@ ms.locfileid: "73614934"
 }
 ```
 
-#### <a name="functions-20"></a>Функции 2,0
+#### <a name="functions-20"></a>Functions 2.0
 
 ```javascript
 {
@@ -154,7 +150,7 @@ traces
 
 ![Запрос Application Insights](./media/durable-functions-diagnostics/app-insights-single-summary-query.png)
 
-## <a name="logging"></a>Ведение журналов
+## <a name="logging"></a>Ведение журнала
 
 Очень важно помнить о поведении воспроизведения оркестратора при записи журналов непосредственно из функции оркестратора. Например, рассмотрим следующую функцию оркестратора:
 
@@ -193,7 +189,7 @@ public static async Task Run(
 }
 ```
 
-### <a name="javascript-functions-20-only"></a>JavaScript (только функции 2,0)
+### <a name="javascript-functions-20-only"></a>JavaScript (только Функции 2.0)
 
 ```javascript
 const df = require("durable-functions");
@@ -209,7 +205,7 @@ module.exports = df.orchestrator(function*(context){
 });
 ```
 
-Результирующие данные журнала будут выглядеть примерно так, как показано в следующем примере:
+The resulting log data is going to look something like the following example output:
 
 ```txt
 Calling F1.
@@ -264,7 +260,7 @@ public static async Task Run(
 }
 ```
 
-#### <a name="javascript-functions-20-only"></a>JavaScript (только функции 2,0)
+#### <a name="javascript-functions-20-only"></a>JavaScript (только Функции 2.0)
 
 ```javascript
 const df = require("durable-functions");
@@ -280,7 +276,7 @@ module.exports = df.orchestrator(function*(context){
 });
 ```
 
-Начиная с Устойчивые функции 2,0, функции .NET Orchestrator также могут создавать `ILogger`, которые автоматически отфильтровывают операторы журнала во время воспроизведения. Эта автоматическая фильтрация выполняется с помощью `IDurableOrchestrationContext.CreateReplaySafeLogger(ILogger)` API.
+Starting in Durable Functions 2.0, .NET orchestrator functions also have the option to create an `ILogger` that automatically filters out log statements during replay. This automatic filtering is done using the `IDurableOrchestrationContext.CreateReplaySafeLogger(ILogger)` API.
 
 ```csharp
 [FunctionName("FunctionChain")]
@@ -299,7 +295,7 @@ public static async Task Run(
 }
 ```
 
-С упомянутыми выше изменениями, выходные данные журнала выглядят следующим образом:
+With the previously mentioned changes, the log output is as follows:
 
 ```txt
 Calling F1.
@@ -309,7 +305,7 @@ Done!
 ```
 
 > [!NOTE]
-> Предыдущие C# примеры предназначены для устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать `DurableOrchestrationContext` вместо `IDurableOrchestrationContext`. Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
+> The previous C# examples are for Durable Functions 2.x. For Durable Functions 1.x, you must use `DurableOrchestrationContext` instead of `IDurableOrchestrationContext`. For more information about the differences between versions, see the [Durable Functions versions](durable-functions-versions.md) article.
 
 ## <a name="custom-status"></a>Настраиваемое значение состояния
 
@@ -332,9 +328,9 @@ public static async Task SetStatusTest([OrchestrationTrigger] IDurableOrchestrat
 ```
 
 > [!NOTE]
-> Предыдущий C# пример — для устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать `DurableOrchestrationContext` вместо `IDurableOrchestrationContext`. Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
+> The previous C# example is for Durable Functions 2.x. For Durable Functions 1.x, you must use `DurableOrchestrationContext` instead of `IDurableOrchestrationContext`. For more information about the differences between versions, see the [Durable Functions versions](durable-functions-versions.md) article.
 
-### <a name="javascript-functions-20-only"></a>JavaScript (только функции 2,0)
+### <a name="javascript-functions-20-only"></a>JavaScript (только Функции 2.0)
 
 ```javascript
 const df = require("durable-functions");
@@ -371,25 +367,25 @@ GET /admin/extensions/DurableTaskExtension/instances/instance123
 ```
 
 > [!WARNING]
-> Полезные данные настраиваемого значения состояния не должны превышать 16 КБ JSON-текста в кодировке UTF-16, так как они должны поместиться в столбец Хранилища таблиц Azure. Для полезных данных большего размера можно использовать внешнее хранилище.
+> Полезные данные настраиваемого значения состояния не должны превышать 16 КБ JSON-текста в кодировке UTF-16, так как они должны поместиться в столбец хранилища таблиц Azure. Для полезных данных большего размера можно использовать внешнее хранилище.
 
 ## <a name="debugging"></a>Отладка
 
 Функции Azure поддерживают сценарии отладки кода функции напрямую. Та же поддержка реализуется в устойчивых функциях, работающих в Azure или локально. Однако следует помнить о некоторых особенностях поведения при выполнении отладки.
 
-* **Воспроизведение**. функции Orchestrator регулярно [воспроизводятся](durable-functions-orchestrations.md#reliability) при получении новых входных данных. Такое поведение означает, что одно *логическое* выполнение функции Orchestrator может вызвать одну и ту же точку останова несколько раз, особенно если она задается на раннем этапе кода функции.
-* **Await**: всякий раз, когда в функции Orchestrator обнаруживается `await`, она передает управление диспетчеру платформы устойчивых задач. При первом обнаружении определенного `await` связанная задача *никогда* не возобновляется. Так как задача никогда не возобновляется, шаг *с заходом в* ожидание (F10 в Visual Studio) невозможен. Вы можете обойти это действие, только когда задание воспроизводится.
-* **Время ожидания обмена сообщениями**: устойчивые функции внутренне использует сообщения очереди для выполнения функций Orchestrator, Activity и Entity. В среде со множеством виртуальных машин прерывание отладки на длительное время может привести к тому, что другая виртуальная машина получит сообщение, из-за чего произойдет дублирующее выполнение. Это поведение также существует для обычных функций триггера очереди, но его очень важно отметить в этом контексте, так как очереди относятся к тонкостям реализации.
-* **Остановка и запуск**: сообщения в устойчивых функциях сохраняются между сеансами отладки. Если остановить отладку и завершить процесс локального узла во время выполнения устойчивой функции, эта функция может повторно выполняться автоматически в ходе следующего сеанса отладки. Такое поведение может показаться непредсказуемым. Очистка всех сообщений из [внутренних очередей хранилища](durable-functions-perf-and-scale.md#internal-queue-triggers) между сеансами отладки является одним из способов избежать такого поведения.
+* **Replay**: Orchestrator functions regularly [replay](durable-functions-orchestrations.md#reliability) when new inputs are received. This behavior means a single *logical* execution of an orchestrator function can result in hitting the same breakpoint multiple times, especially if it is set early in the function code.
+* **Await**: Whenever an `await` is encountered in an orchestrator function, it yields control back to the Durable Task Framework dispatcher. If it is the first time a particular `await` has been encountered, the associated task is *never* resumed. Because the task never resumes, stepping *over* the await (F10 in Visual Studio) is not possible. Вы можете обойти это действие, только когда задание воспроизводится.
+* **Messaging timeouts**: Durable Functions internally uses queue messages to drive execution of orchestrator, activity, and entity functions. В среде со множеством виртуальных машин прерывание отладки на длительное время может привести к тому, что другая виртуальная машина получит сообщение, из-за чего произойдет дублирующее выполнение. Это поведение также существует для обычных функций триггера очереди, но его очень важно отметить в этом контексте, так как очереди относятся к тонкостям реализации.
+* **Stopping and starting**: Messages in Durable functions persist between debug sessions. If you stop debugging and terminate the local host process while a durable function is executing, that function may re-execute automatically in a future debug session. This behavior can be confusing when not expected. Clearing all messages from the [internal storage queues](durable-functions-perf-and-scale.md#internal-queue-triggers) between debug sessions is one technique to avoid this behavior.
 
 > [!TIP]
-> При задании точек останова в функциях Orchestrator, если требуется только прерывание выполнения без воспроизведения, можно задать условную точку останова, которая будет прерываться, только если `IsReplaying` `false`.
+> When setting breakpoints in orchestrator functions, if you want to only break on non-replay execution, you can set a conditional breakpoint that breaks only if `IsReplaying` is `false`.
 
-## <a name="storage"></a>Хранилище
+## <a name="storage"></a>Storage
 
-По умолчанию устойчивые функции хранят состояние в службе хранилища Azure. Такое поведение означает, что вы можете проверить состояние оркестрации с помощью таких средств, как [Обозреватель службы хранилища Microsoft Azure](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer).
+По умолчанию устойчивые функции хранят состояние в службе хранилища Azure. This behavior means you can inspect the state of your orchestrations using tools such as [Microsoft Azure Storage Explorer](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer).
 
-![Снимок экрана Обозреватель службы хранилища Azure](./media/durable-functions-diagnostics/storage-explorer.png)
+![Azure Storage Explorer screenshot](./media/durable-functions-diagnostics/storage-explorer.png)
 
 Это полезно для отладки, так как вы можете увидеть точное состояние оркестрации. Сообщения в очередях можно также проверить, чтобы узнать, какое действие находится в состоянии ожидания (или в некоторых случаях могло зависнуть).
 
@@ -399,4 +395,4 @@ GET /admin/extensions/DurableTaskExtension/instances/instance123
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Дополнительные сведения о мониторинге в функциях Azure](../functions-monitoring.md)
+> [Learn more about monitoring in Azure Functions](../functions-monitoring.md)

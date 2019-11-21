@@ -1,99 +1,104 @@
 ---
-title: Справочник по данным мониторинга Azure Cosmos DB | Документация Майкрософт
-description: Справочник по журналам и метрикам для мониторинга данных из Azure Cosmos DB.
+title: Azure Cosmos DB monitoring data reference | Microsoft Docs
+description: Log and metrics reference for monitoring data from Azure Cosmos DB.
 author: bwren
 services: azure-monitor
 ms.service: azure-monitor
 ms.topic: reference
 ms.date: 11/11/2019
 ms.author: bwren
+ms.custom: subject-monitoring
 ms.subservice: logs
-ms.openlocfilehash: 5f46c9bf53d791eaec68763edc32996847e78ebd
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
-ms.translationtype: HT
+ms.openlocfilehash: 0f61057daf994fde284e9484e41c01ed2e8ae78c
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74186907"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74220212"
 ---
-# <a name="azure-cosmos-db-monitoring-data-reference"></a>Справочник по данным мониторинга Azure Cosmos DB
-В этой статье содержится ссылка на данные журнала и метрики, собранные для анализа производительности и доступности Azure Cosmos DB. Дополнительные сведения о сборе и анализе данных мониторинга для Azure Cosmos DB см. в разделе [мониторинг Cosmos DB](monitor-cosmos-db.md) .
+# <a name="azure-cosmos-db-monitoring-data-reference"></a>Azure Cosmos DB monitoring data reference
+This article provides a reference of log and metric data collected to analyze the performance and availability of Azure Cosmos DB. See [Monitoring Cosmos DB](monitor-cosmos-db.md) for details on collecting and analyzing monitoring data for Azure Cosmos DB.
 
 
 ## <a name="resource-logs"></a>Журналы ресурсов
-В следующей таблице перечислены свойства Azure Cosmos DB журналов ресурсов при их сборе в Azure Monitor журналах или службе хранилища Azure. В журналах Azure Monitor они собираются в таблицу **AzureDiagnostics** со значением **ResourceProvider** *Microsoft. DOCUMENTDB*.
+The following table lists the properties for Azure Cosmos DB resource logs when they're collected in Azure Monitor Logs or Azure Storage. In Azure Monitor Logs, they're collected in the **AzureDiagnostics** table with a **ResourceProvider** value of *MICROSOFT.DOCUMENTDB*. 
 
-| Поле или свойство службы хранилища Azure | Свойство журналов Azure Monitor | ОПИСАНИЕ |
+| Поле или свойство службы хранилища Azure | Azure Monitor Logs property | Описание |
 | --- | --- | --- |
 | **time** | **TimeGenerated** | Дата и время (UTC) выполнения операции. |
 | **resourceId** | **Ресурс** | Учетная запись Azure Cosmos DB, для которой включены журналы.|
 | **category** | **Категория** | Для журналов Azure Cosmos DB единственным доступным значением является **DataPlaneRequests**. |
 | **operationName** | **OperationName** | Имя операции. В качестве значения можно использовать любую из следующих операций: Create, Update, Read, ReadFeed, Delete, Replace, Execute, SqlQuery, Query, JSQuery, Head, HeadFeed или Upsert.   |
-| **properties** | Недоступно | Содержимое этого поля описано в строках, приведенных ниже. |
+| **properties** | Н/Д | Содержимое этого поля описано в строках, приведенных ниже. |
 | **activityId** | **activityId_g** | Уникальный идентификатор GUID регистрируемой операции. |
 | **userAgent** | **userAgent_s** | Строка, которая указывает агент пользователя клиента, выполняющий запрос. Формат: {имя_агента_пользователя} / {версия}.|
-| **рекуестресаурцетипе** | **requestResourceType_s** | Тип доступного ресурса. В качестве значения можно использовать любой из следующих типов ресурсов: Database, Container, Document, Attachment, User, Permission, StoredProcedure, Trigger, UserDefinedFunction или Offer. |
+| **requestResourceType** | **requestResourceType_s** | Тип доступного ресурса. В качестве значения можно использовать любой из следующих типов ресурсов: Database, Container, Document, Attachment, User, Permission, StoredProcedure, Trigger, UserDefinedFunction или Offer. |
 | **statusCode** | **statusCode_s** | Состояние ответа операции. |
 | **requestResourceId** | **ResourceId** | Идентификатор ресурса, который относится к запросу. В зависимости от выполняемой операции значение может указывать на databaseRid, collectionRid или documentRid.|
 | **clientIpAddress** | **clientIpAddress_s** | IP-адрес клиента. |
 | **requestCharge** | **requestCharge_s** | Количество ЕЗ, которые используются при операции. |
 | **collectionRid** | **collectionId_s** | Уникальный идентификатор коллекции.|
-| **duration** | **duration_s** | Длительность операции в миллисекундах. |
+| **duration** | **duration_s** | The duration of the operation, in milliseconds. |
 | **requestLength** | **requestLength_s** | Длина запроса в байтах. |
 | **responseLength** | **responseLength_s** | Длина ответа в байтах.|
 | **resourceTokenUserRid** | **resourceTokenUserRid_s** | Это свойство должно быть заполнено, если [маркеры ресурсов](https://docs.microsoft.com/azure/cosmos-db/secure-access-to-data#resource-tokens) используются для проверки подлинности. Значение указывает на идентификатор ресурса пользователя. |
 
+For a list of all Azure Monitor log categories and links to associated schemas, see [Azure Monitor Logs categories and schemas](../azure-monitor/platform/diagnostic-logs-schema.md). 
+
 ## <a name="metrics"></a>Метрики
-В следующих таблицах перечислены метрики платформы, собранные для Azure CosmOS DB. Все метрики хранятся в пространстве имен **Cosmos DB стандартных метриках**.
+The following tables list the platform metrics collected for Azure CosmOS DB. All metrics are stored in the namespace **Cosmos DB standard metrics**.
+
+For a list of all Azure Monitor support metrics (including CosmosDB), see [Azure Monitor supported metrics](../azure-monitor/platform/metrics-supported.md). 
 
 #### <a name="request-metrics"></a>Метрики запросов
             
-|Метрика (отображаемое имя метрики)|Единица (тип агрегирования) |ОПИСАНИЕ|Измерения| Степени детализации времени| Сопоставление метрик прежних версий | Использование |
+|Metric (Metric Display Name)|Unit (Aggregation Type) |Описание|Измерения| Степени детализации времени| Сопоставление метрик прежних версий | Использование |
 |---|---|---|---| ---| ---| ---|
-| TotalRequests (Всего запросов) | Количество (число) | Количество выполненных запросов| DatabaseName, CollectionName, Region, StatusCode| Все | TotalRequests, HTTP 2xx, HTTP 3xx, HTTP 400, HTTP 401, внутренняя ошибка сервера, служба недоступна, отрегулированные запросы, среднее число запросов в секунду | Используется для отслеживания запросов по коду состояния, контейнеру с поминутной гранулярностью. Чтобы получить среднее число запросов в секунду, используйте агрегат Count в минуту и разделите на 60. |
-| Метадатарекуестс (запросы метаданных) |Количество (число) | Количество запросов метаданных. Azure Cosmos DB поддерживает контейнер системных метаданных для каждой учетной записи, что позволяет перечислять коллекции, базы данных и т. д. и их конфигурации без оплаты. | DatabaseName, CollectionName, Region, StatusCode| Все| |Позволяет отслеживать регулирование из-за запросов метаданных.|
-| MongoRequests (запросы Mongo) | Количество (число) | Количество выполненных запросов Mongo | DatabaseName, CollectionName, Region, CommandName, ErrorCode| Все |Частота запросов на запрос Mongo, частота запросов на обновление Mongo, частота запросов на удаление Mongo, частота запросов на вставку Mongo, частота запросов на количество Mongo| Позволяет отслеживать ошибки запроса Mongo, использование каждого типа команды. |
+| TotalRequests (Total Requests) | Count (Count) | Количество выполненных запросов| DatabaseName, CollectionName, Region, StatusCode| Все | TotalRequests, HTTP 2xx, HTTP 3xx, HTTP 400, HTTP 401, внутренняя ошибка сервера, служба недоступна, отрегулированные запросы, среднее число запросов в секунду | Used to monitor requests per status code, container at a minute granularity. Чтобы получить среднее число запросов в секунду, используйте агрегат Count в минуту и разделите на 60. |
+| MetadataRequests (Metadata Requests) |Count (Count) | Количество запросов метаданных. Azure Cosmos DB maintains system metadata container for each account, that allows you to enumerate collections, databases, etc., and their configurations, free of charge. | DatabaseName, CollectionName, Region, StatusCode| Все| |Позволяет отслеживать регулирование из-за запросов метаданных.|
+| MongoRequests (Mongo Requests) | Count (Count) | Количество выполненных запросов Mongo | DatabaseName, CollectionName, Region, CommandName, ErrorCode| Все |Частота запросов на запрос Mongo, частота запросов на обновление Mongo, частота запросов на удаление Mongo, частота запросов на вставку Mongo, частота запросов на количество Mongo| Позволяет отслеживать ошибки запроса Mongo, использование каждого типа команды. |
 
 #### <a name="request-unit-metrics"></a>Метрики единиц запроса
 
-|Метрика (отображаемое имя метрики)|Единица (тип агрегирования)|ОПИСАНИЕ|Измерения| Степени детализации времени| Сопоставление метрик прежних версий | Использование |
+|Metric (Metric Display Name)|Unit (Aggregation Type)|Описание|Измерения| Степени детализации времени| Сопоставление метрик прежних версий | Использование |
 |---|---|---|---| ---| ---| ---|
-| Монгорекуестчарже (плата за запрос Mongo) | Количество (всего) |Использованные единицы запросов Mongo| DatabaseName, CollectionName, Region, CommandName, ErrorCode| Все |Расходы запросов на запрос Mongo, расходы запросов на обновление Mongo, расходы запросов на удаление Mongo, расходы запросов на вставку Mongo, расходы запросов на количество Mongo| Позволяет отслеживать единицы запросов ресурсов Mongo в минуту.|
-| Тоталрекуестунитс (общее количество единиц запросов)| Количество (всего) | Использованные единицы запросов| DatabaseName, CollectionName, Region, StatusCode |Все| TotalRequestUnits| Позволяет отслеживать использование общего количества единиц запросов со степенью детализации до минуты. Чтобы получить среднее число единиц запросов, потребленных в секунду, используйте общий объем агрегата в минуту и разделите на 60.|
-| Провисионедсраугхпут (подготовленная пропускная способность)| Количество (максимум) |Подготовленная пропускная способность на уровне гранулярности контейнера| DatabaseName, ContainerName| 5M| | Используется для мониторинга подготовленной пропускной способности для каждого контейнера.|
+| MongoRequestCharge (Mongo Request Charge) | Count (Total) |Использованные единицы запросов Mongo| DatabaseName, CollectionName, Region, CommandName, ErrorCode| Все |Расходы запросов на запрос Mongo, расходы запросов на обновление Mongo, расходы запросов на удаление Mongo, расходы запросов на вставку Mongo, расходы запросов на количество Mongo| Позволяет отслеживать единицы запросов ресурсов Mongo в минуту.|
+| TotalRequestUnits (Total Request Units)| Count (Total) | Использованные единицы запросов| DatabaseName, CollectionName, Region, StatusCode |Все| TotalRequestUnits| Позволяет отслеживать использование общего количества единиц запросов со степенью детализации до минуты. Чтобы получить среднее число единиц запросов, потребленных в секунду, используйте общий объем агрегата в минуту и разделите на 60.|
+| ProvisionedThroughput (Provisioned Throughput)| Count (Maximum) |Provisioned throughput at container granularity| DatabaseName, ContainerName| 5M| | Used to monitor provisioned throughput per container.|
 
 #### <a name="storage-metrics"></a>Метрики хранения
 
-|Метрика (отображаемое имя метрики)|Единица (тип агрегирования)|ОПИСАНИЕ|Измерения| Степени детализации времени| Сопоставление метрик прежних версий | Использование |
+|Metric (Metric Display Name)|Unit (Aggregation Type)|Описание|Измерения| Степени детализации времени| Сопоставление метрик прежних версий | Использование |
 |---|---|---|---| ---| ---| ---|
-| Аваилаблестораже (Доступное хранилище) |Байт (всего) | Общее Доступное хранилище, зарегистрированное в 5-минутном уровне детализации для региона| DatabaseName, CollectionName, Region| 5M| Доступная служба хранилища| Позволяет отслеживать доступную емкость хранилища (применимо только для фиксированных коллекций хранилища). Минимальная степень детализации должна составлять 5 минут.| 
-| Использование данных (использование) |Байт (всего) |Общее количество использованных данных в 5-минутном уровне на регион| DatabaseName, CollectionName, Region| 5M |Размер данных | Для мониторинга общего использования данных в контейнере и регионе минимальная степень детализации должна составлять 5 минут.|
-| Индексусаже (использование индекса) | Байт (всего) |Общее использование индекса получено в течение 5 минут на регион| DatabaseName, CollectionName, Region| 5M| Размер индексов| Для мониторинга общего использования данных в контейнере и регионе минимальная степень детализации должна составлять 5 минут. |
-| Документкуота (квота документа) | Байт (всего) | Общая квота хранилища сообщила об уровне детализации в 5 минут на регион.| DatabaseName, CollectionName, Region| 5M |Емкость хранилища| Используется для мониторинга общей квоты в контейнере и регионе, минимальная степень детализации должна составлять 5 минут.|
-| Документкаунт (число документов) | Количество (всего) |Общее число документов, сообщаемых с детализацией по 5 минутам на регион| DatabaseName, CollectionName, Region| 5M |Число документов|Используется для мониторинга количества документов в контейнере и регионе, минимальная степень детализации должна составлять 5 минут.|
+| AvailableStorage (Available Storage) |Bytes (Total) | Total available storage reported at 5-minutes granularity per region| DatabaseName, CollectionName, Region| 5M| Доступная служба хранилища| Позволяет отслеживать доступную емкость хранилища (применимо только для фиксированных коллекций хранилища). Минимальная степень детализации должна составлять 5 минут.| 
+| DataUsage (Data Usage) |Bytes (Total) |Total data usage reported at 5-minutes granularity per region| DatabaseName, CollectionName, Region| 5M |Размер данных | Used to monitor total data usage at container and region, minimum granularity should be 5 minutes.|
+| IndexUsage (Index Usage) | Bytes (Total) |Total Index usage reported at 5-minutes granularity per region| DatabaseName, CollectionName, Region| 5M| Размер индексов| Used to monitor total data usage at container and region, minimum granularity should be 5 minutes. |
+| DocumentQuota (Document Quota) | Bytes (Total) | Total storage quota reported at 5-minutes granularity per region.| DatabaseName, CollectionName, Region| 5M |Объем хранилища| Used to monitor total quota at container and region, minimum granularity should be 5 minutes.|
+| DocumentCount (Document Count) | Count (Total) |Total document count reported at 5-minutes granularity per region| DatabaseName, CollectionName, Region| 5M |Число документов|Used to monitor document count at container and region, minimum granularity should be 5 minutes.|
 
 #### <a name="latency-metrics"></a>Метрики задержки
 
-|Метрика (отображаемое имя метрики)|Единица (тип агрегирования)|ОПИСАНИЕ|Измерения| Степени детализации времени| Использование |
+|Metric (Metric Display Name)|Unit (Aggregation Type)|Описание|Измерения| Степени детализации времени| Использование |
 |---|---|---|---| ---| ---|
-| Репликатионлатенци (задержка репликации)| Миллисекунды (минимальное, максимальное, среднее) | Задержка репликации P99 между исходными и целевыми регионами для геореплицируемой учетной записи| SourceRegion, TargetRegion| Все | Позволяет отслеживать задержку репликации P99 между любыми двумя регионами для геореплицируемой учетной записи. |
+| ReplicationLatency (Replication Latency)| MilliSeconds (Minimum, Maximum, Average) | Задержка репликации P99 между исходными и целевыми регионами для геореплицируемой учетной записи| SourceRegion, TargetRegion| Все | Позволяет отслеживать задержку репликации P99 между любыми двумя регионами для геореплицируемой учетной записи. |
 
 
 #### <a name="availability-metrics"></a>Метрики доступности
 
-|Метрика (отображаемое имя метрики) |Единица (тип агрегирования)|ОПИСАНИЕ| Степени детализации времени| Сопоставление метрик прежних версий | Использование |
+|Metric (Metric Display Name) |Unit (Aggregation Type)|Описание| Степени детализации времени| Сопоставление метрик прежних версий | Использование |
 |---|---|---|---| ---| ---|
-| Сервицеаваилабилити (доступность службы)| Процент (минимум, максимум) | Доступность запросов учетной записи со степенью детализации до одного часа| 1 ч | Доступность службы | Представляет процент от общего числа переданных запросов. Запрос считается не удавшимся из-за ошибки системы, если код состояния — 410, 500 или 503. Позволяет отслеживать доступность учетной записи со степенью детализации до одного часа. |
+| ServiceAvailability (Service Availability)| Percent (Minimum, Maximum) | Доступность запросов учетной записи со степенью детализации до одного часа| 1 ч | Доступность службы | Represents the percent of total passed requests. Запрос считается не удавшимся из-за ошибки системы, если код состояния — 410, 500 или 503. Позволяет отслеживать доступность учетной записи со степенью детализации до одного часа. |
 
 
 #### <a name="cassandra-api-metrics"></a>Метрики по API Cassandra
 
-|Метрика (отображаемое имя метрики)|Единица (тип агрегирования)|ОПИСАНИЕ|Измерения| Степени детализации времени| Использование |
+|Metric (Metric Display Name)|Unit (Aggregation Type)|Описание|Измерения| Степени детализации времени| Использование |
 |---|---|---|---| ---| ---|
-| Кассандрарекуестс (запросы Cassandra) | Количество (число) | Количество сделанных запросов API Cassandra| DatabaseName, CollectionName, ErrorCode, Region, OperationType, ResourceType| Все| Позволяет отслеживать запросы Cassandra со степенью детализации до минуты. Чтобы получить среднее число запросов в секунду, используйте агрегат Count в минуту и разделите на 60.|
-| Кассандрарекуестчаржес (плата за запрос Cassandra) | Количество (SUM, min, Max, AVG) | Единицы запросов, потребленные запросами API Cassandra| DatabaseName, CollectionName, Region, OperationType, ResourceType| Все| Позволяет отслеживать единицы запросов, используемые в минуту учетной записью API Cassandra.|
-| Кассандраконнектионклосурес (замыкания на Cassandra подключения) |Количество (число) |Число закрытых подключений Cassandra| ClosureReason, Region| Все | Позволяет отслеживать возможность подключения между клиентами и API Cassandra для Azure Cosmos DB.|
+| CassandraRequests (Cassandra Requests) | Count (Count) | Количество сделанных запросов API Cassandra| DatabaseName, CollectionName, ErrorCode, Region, OperationType, ResourceType| Все| Позволяет отслеживать запросы Cassandra со степенью детализации до минуты. Чтобы получить среднее число запросов в секунду, используйте агрегат Count в минуту и разделите на 60.|
+| CassandraRequestCharges (Cassandra Request Charges) | Count (Sum, Min, Max, Avg) | Единицы запросов, потребленные запросами API Cassandra| DatabaseName, CollectionName, Region, OperationType, ResourceType| Все| Позволяет отслеживать единицы запросов, используемые в минуту учетной записью API Cassandra.|
+| CassandraConnectionClosures (Cassandra Connection Closures) |Count (Count) |Число закрытых подключений Cassandra| ClosureReason, Region| Все | Позволяет отслеживать возможность подключения между клиентами и API Cassandra для Azure Cosmos DB.|
 
 ## <a name="see-also"></a>См. также
 
-- Описание Azure Cosmos DB мониторинга см. в разделе [monitoring Azure Cosmos DB](monitor-cosmos-db.md) .
-- Дополнительные сведения о мониторинге ресурсов Azure см. в статье [мониторинг ресурсов Azure с помощью Azure Monitor](../azure-monitor/insights/monitor-azure-resource.md) .
+- See [Monitoring Azure Cosmos DB](monitor-cosmos-db.md) for a description of monitoring Azure Cosmos DB.
+- See [Monitoring Azure resources with Azure Monitor](../azure-monitor/insights/monitor-azure-resource.md) for details on monitoring Azure resources.

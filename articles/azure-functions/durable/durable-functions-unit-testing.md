@@ -1,27 +1,23 @@
 ---
 title: Модульное тестирование устойчивых функций Azure
 description: Информация о модульном тестировании устойчивых функций.
-author: ggailey777
-manager: gwallace
-ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 11/03/2019
-ms.author: glenga
-ms.openlocfilehash: 95c6afcb2f7e864da4b9b43235326a17bed785fa
-ms.sourcegitcommit: b2fb32ae73b12cf2d180e6e4ffffa13a31aa4c6f
+ms.openlocfilehash: 86733f8b5b80799bad3e52c643ed27465dfc7641
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73614535"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74231226"
 ---
 # <a name="durable-functions-unit-testing"></a>Модульное тестирование устойчивых функций
 
-Модульное тестирование является важной частью современных способов разработки программного обеспечения. Модульные тесты позволяют проверить поведение бизнес-логики и предотвратить внедрение незамеченных критических изменений в будущем. Степень сложности устойчивых функций может быстро увеличиться, поэтому использование модульных тестов поможет предотвращать внесение критических изменений. В следующих разделах объясняется, как выполнить модульное тестирование трех типов функций: клиент оркестрации, Orchestrator и функции действий.
+Модульное тестирование является важной частью современных способов разработки программного обеспечения. Модульные тесты позволяют проверить поведение бизнес-логики и предотвратить внедрение незамеченных критических изменений в будущем. Степень сложности устойчивых функций может быстро увеличиться, поэтому использование модульных тестов поможет предотвращать внесение критических изменений. The following sections explain how to unit test the three function types - Orchestration client, orchestrator, and activity functions.
 
 > [!NOTE]
-> В этой статье приводятся рекомендации по модульному тестированию для Устойчивые функции приложений, предназначенных для Устойчивые функции 1. x. Она еще не обновлена, чтобы учитывать изменения, появившиеся в Устойчивые функции 2. x. Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
+> This article provides guidance for unit testing for Durable Functions apps targeting Durable Functions 1.x. It has not yet been updated to account for changes introduced in Durable Functions 2.x. For more information about the differences between versions, see the [Durable Functions versions](durable-functions-versions.md) article.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для выполнения примеров в этой статье нужно ознакомиться со следующими понятиями и платформами.
 
@@ -35,7 +31,7 @@ ms.locfileid: "73614535"
 
 ## <a name="base-classes-for-mocking"></a>Базовые классы для имитации
 
-Макетирование поддерживается через три абстрактных класса в Устойчивые функции 1. x:
+Mocking is supported via three abstract classes in Durable Functions 1.x:
 
 * `DurableOrchestrationClientBase`
 
@@ -43,9 +39,9 @@ ms.locfileid: "73614535"
 
 * `DurableActivityContextBase`
 
-Эти классы являются базовыми классами для `DurableOrchestrationClient`, `DurableOrchestrationContext`и `DurableActivityContext`, определяющих клиент оркестрации, Orchestrator и методы действий. В процессе имитирования устанавливается ожидаемое поведение методов базового класса. Таким образом модульный тест может проверить бизнес-логику. При модульном тестировании бизнес-логики в клиенте оркестрации и оркестраторе выполняется двухэтапный рабочий процесс.
+These classes are base classes for `DurableOrchestrationClient`, `DurableOrchestrationContext`, and `DurableActivityContext` that define Orchestration Client, Orchestrator, and Activity methods. В процессе имитирования устанавливается ожидаемое поведение методов базового класса. Таким образом модульный тест может проверить бизнес-логику. При модульном тестировании бизнес-логики в клиенте оркестрации и оркестраторе выполняется двухэтапный рабочий процесс.
 
-1. Используйте базовые классы вместо конкретной реализации при определении сигнатур клиента оркестрации и функции Orchestrator.
+1. Use the base classes instead of the concrete implementation when defining orchestration client and orchestrator function signatures.
 2. Настройте модульные тесты, выполняющие имитирование поведения базовых классов и проверку бизнес-логики.
 
 Подробные сведения по функциям тестирования, использующим привязку клиента оркестрации и триггера оркестратора, изложены в следующих разделах.
@@ -56,9 +52,9 @@ ms.locfileid: "73614535"
 
 [!code-csharp[Main](~/samples-durable-functions/samples/precompiled/HttpStart.cs)]
 
-Модульному тесту необходимо проверить заголовок `Retry-After` в полезных данных ответа. Поэтому модульный тест будет подмакетирование некоторые из `DurableOrchestrationClientBase` методов, чтобы обеспечить предсказуемое поведение.
+Модульному тесту необходимо проверить заголовок `Retry-After` в полезных данных ответа. So the unit test will mock some of `DurableOrchestrationClientBase` methods to ensure predictable behavior.
 
-Во-первых, требуется макет базового класса `DurableOrchestrationClientBase`. Макет может быть новым классом, реализующим `DurableOrchestrationClientBase`. Однако, использование платформы имитированной реализации наподобие [moq](https://github.com/moq/moq4) упрощает данный процесс.
+First, a mock of the base class is required, `DurableOrchestrationClientBase`. The mock can be a new class that implements `DurableOrchestrationClientBase`. Однако, использование платформы имитированной реализации наподобие [moq](https://github.com/moq/moq4) упрощает данный процесс.
 
 ```csharp
     // Mock DurableOrchestrationClientBase
@@ -176,7 +172,7 @@ ms.locfileid: "73614535"
 
 [!code-csharp[Main](~/samples-durable-functions/samples/precompiled/HelloSequence.cs)]
 
-Кроме того, модульный тест позволяет проверить формат выходных данных. Модульные тесты могут использовать типы параметров непосредственно или макетирование `DurableActivityContextBase` класса:
+Кроме того, модульный тест позволяет проверить формат выходных данных. The unit tests can use the parameter types directly or mock `DurableActivityContextBase` class:
 
 [!code-csharp[Main](~/samples-durable-functions/samples/VSSample.Tests/HelloSequenceActivityTests.cs)]
 

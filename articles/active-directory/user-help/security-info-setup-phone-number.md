@@ -1,6 +1,6 @@
 ---
-title: Настройка сведений о безопасности (Предварительная версия) для телефонных звонков — Azure AD
-description: Настройка подтверждения личности с помощью телефонных звонков в сведениях для защиты.
+title: Set up your phone number as your authentication method - Azure AD
+description: How to set up the Security info page to verify your identity using your phone number and mobile device as your authentication method.
 services: active-directory
 author: eross-msft
 manager: daveba
@@ -12,14 +12,14 @@ ms.topic: conceptual
 ms.date: 02/13/2019
 ms.author: lizross
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a5dc5ec06e60112e69a31d1ce4c69e698576609f
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
-ms.translationtype: MT
+ms.openlocfilehash: 74a0c0d374e9a3bc58a62ba72a0c934ed0c6eff2
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73803805"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74233153"
 ---
-# <a name="set-up-security-info-preview-to-use-phone-calls"></a>Настройка использования звонков в сведениях для защиты (предварительная версия)
+# <a name="set-up-your-phone-number-as-your-authentication-method-from-the-security-info-preview-page"></a>Set up your phone number as your authentication method from the Security info (preview) page
 
 Чтобы добавить двухфакторную проверку и методы сброса пароля, выполните следующие действия. После первоначальной настройки вы можете вернуться к странице **Сведения для защиты**, чтобы добавить, обновить или удалить сведения для защиты.
 
@@ -80,7 +80,7 @@ ms.locfileid: "73803805"
 
 2. Выберите **Да** в окне подтверждения, чтобы удалить номер **телефона**. При этом номер телефона удаляется из сведений для защиты и со страницы **Сведения для защиты**. Если **телефон** был выбран как метод по умолчанию, вместо него будет автоматически выбран другой доступный метод.
 
-## <a name="change-your-default-security-info-method"></a>Изменение метода проверки сведений для защиты по умолчанию
+## <a name="change-your-default-security-info-method"></a>Изменение метода по умолчанию в сведениях для защиты
 
 Если вам нужно, чтобы телефонные звонки использовались по умолчанию при входе в рабочую или учебную учетную запись с применением двухфакторной проверки подлинности или для сброса пароля, вы можете настроить этот метод на странице **Сведения для защиты**.
 
@@ -92,7 +92,7 @@ ms.locfileid: "73803805"
 
 2. Выберите вариант **Phone - call (Телефон — вызов) ( *_номер_телефона_* )** из раскрывающегося списка доступных методов, а затем щелкните **Подтвердить**.
 
-    ![Выбор метода для входа по умолчанию](media/security-info/securityinfo-myprofile-phonecall-changeddefault.png)
+    ![Выбор метода входа по умолчанию](media/security-info/securityinfo-myprofile-phonecall-changeddefault.png)
 
     Теперь по умолчанию будет использоваться новый метод входа в систему: **Phone - call (Телефон — вызов) ( *_номер_телефона_* )** .
 
@@ -104,7 +104,7 @@ ms.locfileid: "73803805"
 
 - **Тестовое сообщение на мобильное устройство.** Введите номер своего мобильного устройства и получите сообщение с кодом, необходимым для двухфакторной проверки подлинности или сброса пароля. Пошаговые инструкции по проверке личности с помощью текстового сообщения (SMS) см. в статье о [настройке использования текстовых сообщений (SMS) в сведениях для защиты](security-info-setup-text-msg.md).
 
-- **Ключ безопасности.** Зарегистрируйте ключ безопасности, совместимый с Майкрософт, и используйте его вместе с ПИН-кодом для двухфакторной проверки подлинности или сброса пароля. Пошаговые инструкции по проверке удостоверения с помощью ключа безопасности см. [в разделе Настройка сведений о безопасности для использования ключа безопасности](security-info-setup-security-key.md).
+- **Security key.** Register your Microsoft-compatible security key and use it along with a PIN for two-step verification or password reset. For step-by-step instructions about how to verify your identity with a security key, see [Set up security info to use a security key](security-info-setup-security-key.md).
 
 - **Адрес электронной почты.** Введите рабочий или учебный адрес электронной почты, чтобы получить электронное письмо для сброса пароля. Этот вариант недоступен для двухфакторной проверки подлинности. Пошаговые инструкции о том, как настроить адрес электронной почты, см. в статье о [настройке использования электронной почты в сведениях для защиты](security-info-setup-email.md).
 

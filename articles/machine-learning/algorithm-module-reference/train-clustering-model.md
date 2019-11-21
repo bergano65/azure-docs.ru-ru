@@ -1,63 +1,61 @@
 ---
-title: 'Обучение модели кластеризации: ссылка на модуль'
+title: 'Train Clustering Model: Module Reference'
 titleSuffix: Azure Machine Learning
-description: Узнайте, как использовать модуль "обучение модели кластеризации" в Машинное обучение Azure для обучения моделей кластеризации.
+description: Learn how to use the Train Clustering Model module in Azure Machine Learning to train clustering models.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: reference
 author: xiaoharper
 ms.author: zhanxia
-ms.date: 05/06/2019
-ms.openlocfilehash: 1b26fc251aeb527041b1e648f19f9dd67f7701b7
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.date: 11/19/2019
+ms.openlocfilehash: 57cf5bab2afe58ed802ef5ec03c316f1ebec6673
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73490397"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74232590"
 ---
 # <a name="train-clustering-model"></a>Обучение модели кластеризации
 
-В этой статье описывается модуль в Машинное обучение Azure Designer (Предварительная версия).
+This article describes a module in Azure Machine Learning designer (preview).
 
-Используйте этот модуль для обучения модели кластеризации.
+Use this module to train a clustering model.
 
-Модуль принимает несмоделированную модель кластеризации, которая уже настроена с помощью модуля [кластеризации K-средних](k-means-clustering.md) , и обучает модель с помощью помеченного или непомеченного набора данных. Модуль создает как обученную модель, которую можно использовать для прогнозирования, так и набор назначений кластеров для каждого варианта в обучающих данных.
+The module takes an untrained clustering model that you have already configured using the [K-Means Clustering](k-means-clustering.md) module, and trains the model using a labeled or unlabeled data set. The module creates both a trained model that you can use for prediction, and a set of cluster assignments for each case in the training data.
 
 > [!NOTE]
-> Модель кластеризации не может быть обучена с помощью модуля [обучение модели](train-model.md) , который является универсальным модулем для обучения моделей машинного обучения. Это связано с тем, что [обучение модели](train-model.md) работает только с защищенными алгоритмами обучения. K-средние и другие алгоритмы кластеризации допускают неконтролируемое обучение. Это означает, что алгоритм может изучать непомеченные данные.  
+> A clustering model cannnot be trained using the [Train Model](train-model.md) module, which is the generic module for training machine learning models. That is because [Train Model](train-model.md) works only with supervised learning algorithms. K-means and other clustering algorithms allow unsupervised learning, meaning that the algorithm can learn from unlabeled data.  
   
-## <a name="how-to-use-train-clustering-model"></a>Как использовать модель кластеризации для обучения  
+## <a name="how-to-use-train-clustering-model"></a>How to use Train Clustering Model  
 
-1.  Добавьте модуль **обучение модели кластеризации** в конвейер в конструкторе. Модуль можно найти в разделе **модули машинное обучение**в категории **обучение** .  
+1.  Add the **Train Clustering Model** module to your pipeline in the designer. You can find the module under **Machine Learning Modules**, in the **Train** category.  
   
-2. Добавьте модуль [кластеризации K-средних](k-means-clustering.md) или другой настраиваемый модуль, который создает совместимую модель кластеризации, и задайте параметры модели кластеризации.  
+2. Add the [K-Means Clustering](k-means-clustering.md) module, or another custom module that creates a compatible clustering model, and set the parameters of the clustering model.  
     
-3.  Прикрепите набор данных для обучения к правому вводу для **обучения модели кластеризации**.
+3.  Attach a training dataset to the right-hand input of **Train Clustering Model**.
   
-5.  В **наборе столбцов**выберите столбцы из набора данных для использования при построении кластеров. Не забудьте выбрать столбцы, которые являются хорошими компонентами: например, не используйте идентификаторы или другие столбцы, имеющие уникальные значения, или столбцы с одинаковыми значениями.
+5.  In **Column Set**, select the columns from the dataset to use in building clusters. Be sure to select columns that make good features: for example, avoid using IDs or other columns that have unique values, or columns that have all the same values.
 
-    Если метка доступна, можно использовать ее как компонент или оставить ее.  
+    If a label is available, you can either use it as a feature, or leave it out.  
   
-6. Выберите параметр **проверять только добавление или снять флажок только для результатов**, если требуется выводить обучающие данные вместе с новой меткой кластера.
+6. Select the option, **Check for append or uncheck for result only**, if you want to output the training data together with the new cluster label.
 
-    Если отменить выбор этого параметра, будут выводиться только назначения кластера. 
+    If you deselect this option, only the cluster assignments are output. 
 
-7. Запустите конвейер или щелкните модуль **обучение модели кластеризации** и выберите **Выполнить выбранное**.  
+7. Run the pipeline, or click the **Train Clustering Model** module and select **Run Selected**.  
   
 ### <a name="results"></a>Результаты
 
-После завершения обучения:
+After training has completed:
 
 
-+  Чтобы просмотреть значения в наборе данных, щелкните правой кнопкой мыши модуль, выберите **результирующие наборы данных**и щелкните **визуализировать**.
++  To view the values in the dataset, right-click the module, select **Result datasets**, and click **Visualize**.
 
-+ Чтобы сохранить обученную модель для последующего повторного использования, щелкните модуль правой кнопкой мыши, выберите **обученная модель**и нажмите кнопку **Сохранить как обученную модель**.
++ To save the trained model for later reuse, right-click the module, select **Trained model**, and click **Save As Trained Model**.
 
-+ Чтобы создать оценки на основе модели, используйте [назначение данных кластерам](assign-data-to-clusters.md).
-
-
++ To generate scores from the model, use [Assign Data to Clusters](assign-data-to-clusters.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-См. [набор модулей, доступных](module-reference.md) для машинное обучение Azure. 
+See the [set of modules available](module-reference.md) to Azure Machine Learning. 

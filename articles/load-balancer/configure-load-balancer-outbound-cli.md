@@ -1,6 +1,6 @@
 ---
 title: Настройка правил балансировки нагрузки и правил для исходящего трафика с использованием Azure CLI
-titlesuffix: Azure Load Balancer
+titleSuffix: Azure Load Balancer
 description: В этой статье показано, как настраивать правила для балансировки нагрузки и правила для исходящего трафика в Load Balancer (цен. категория "Стандартный") с использованием Azure CLI.
 services: load-balancer
 documentationcenter: na
@@ -13,18 +13,18 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/01/2019
 ms.author: allensu
-ms.openlocfilehash: 503c8f71b7e26cfe6803a6df1d3fec9ef55cd5c3
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 7230b0c2b80137b068bbeacf43ab2133491a69b0
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73571134"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74225469"
 ---
 # <a name="configure-load-balancing-and-outbound-rules-in-standard-load-balancer-using-azure-cli"></a>Настройка правил балансировки нагрузки и правил для исходящего трафика в Load Balancer (цен. категория "Стандартный") с использованием Azure CLI
 
 Из этого краткого руководства вы узнаете, как с помощью Azure CLI настроить правила для исходящего трафика в Load Balancer (цен. категория "Стандартный").  
 
-Когда вы закончите работу с этим руководством, ваш ресурс Load Balancer будет содержать два внешних интерфейса и связанные с ними правила (одно для входящего трафика, а второе для исходящего).  Каждый внешний интерфейс содержит ссылку на общедоступный IP-адрес. В этом сценарии для входящего и исходящего трафика используются разные общедоступные IP-адреса.   Правило балансировки нагрузки обеспечивает балансировку нагрузки только входящего трафика, а правило для исходящего трафика управляет исходящим трафиком NAT, предоставленным для виртуальной машины.  В этом кратком руководстве используются два отдельных серверных пула: один для входящего и один для исходящего трафика, чтобы продемонстрировать возможности и обеспечить гибкость в этом сценарии.
+Когда вы закончите работу с этим руководством, ваш ресурс Load Balancer будет содержать два внешних интерфейса и связанные с ними правила (одно для входящего трафика, а второе для исходящего).  Каждый внешний интерфейс содержит ссылку на общедоступный IP-адрес. В этом сценарии для входящего и исходящего трафика используются разные общедоступные IP-адреса.   Правило балансировки нагрузки обеспечивает балансировку нагрузки только входящего трафика, а правило для исходящего трафика управляет исходящим трафиком NAT, предоставленным для виртуальной машины.  This quickstart uses two separate backend pools, one for inbound and one for outbound, to illustrate capability and allow for flexibility for this scenario.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)] 
 
@@ -73,15 +73,15 @@ ms.locfileid: "73571134"
 
 В этом разделе описано, как создать и настроить следующие компоненты подсистемы балансировки нагрузки:
   - интерфейсный IP-адрес, который получает входящий трафик в подсистеме балансировки нагрузки;
-  - Внутренний пул, в котором интерфейсный IP-адрес отправляет сетевой трафик с балансировкой нагрузки.
-  - Внутренний пул для исходящих подключений. 
+  - A backend pool where the frontend IP sends the load balanced network traffic.
+  - A backend pool for outbound connectivity. 
   - проверка работоспособности, определяющая работоспособность внутренних экземпляров виртуальной машины;
   - правило подсистемы балансировки нагрузки для входящего трафика, определяющее порядок распределения трафика между виртуальными машинами;
   - правило подсистемы балансировки нагрузки для исходящего трафика, определяющее порядок распределения трафика из виртуальных машин.
 
 ### <a name="create-load-balancer"></a>Создание балансировщика нагрузки
 
-Создайте Load Balancer с входящим IP-адресом, выполнив команду [AZ Network фунтов Create](https://docs.microsoft.com/cli/azure/network/lb?view=azure-cli-latest) именованной *балансировки нагрузки* , включающую внешнюю IP-конфигурацию входящего трафика и серверный пул *бепулинбаунд* , связанный с общедоступным IP-адресом *. мипублиЦипинбаунд* , созданный на предыдущем шаге.
+Create a Load Balancer with the inbound IP address using [az network lb create](https://docs.microsoft.com/cli/azure/network/lb?view=azure-cli-latest) named *lb* that includes an inbound frontend IP configuration and a backend pool *bepoolinbound* that is associated with the public IP address *mypublicipinbound* that you created in the preceding step.
 
 ```azurecli-interactive
   az network lb create \
@@ -94,9 +94,9 @@ ms.locfileid: "73571134"
     --public-ip-address mypublicipinbound   
   ```
 
-### <a name="create-outbound-pool"></a>Создать исходящий пул
+### <a name="create-outbound-pool"></a>Create outbound pool
 
-Создайте дополнительный внутренний пул адресов для определения исходящих подключений для пула виртуальных машин с помощью команды [AZ Network фунтов Address-Pool Create](https://docs.microsoft.com/cli/azure/network/lb?view=azure-cli-latest) с именем *бепулаутбаунд*.  Создание отдельного исходящего пула обеспечивает максимальную гибкость, но вы можете опустить этот шаг и использовать только входящие *бепулинбаунд* .
+Create an additional backend address pool to define outbound connectivity for a pool of VMs with [az network lb address-pool create](https://docs.microsoft.com/cli/azure/network/lb?view=azure-cli-latest) with the name *bepooloutbound*.  Creating a separate outbound pool provides maximum flexibility, but you can omit this step and only use the inbound *bepoolinbound* as well.
 
 ```azurecli-interactive
   az network lb address-pool create \
@@ -167,9 +167,9 @@ az network lb outbound-rule create \
  --address-pool bepooloutbound
 ```
 
-Если вы не хотите использовать отдельный исходящий пул, можно изменить аргумент пула адресов в предыдущей команде, указав вместо этого параметр *бепулинбаунд* .  Рекомендуется использовать отдельные пулы для обеспечения гибкости и удобочитаемости результирующей конфигурации.
+If you do not want to use a separate outbound pool, you can change the address pool argument in the preceding command to specify *bepoolinbound* instead.  We recommend to use separate pools for flexibility and readability of the resulting configuration.
 
-На этом этапе можно приступить к добавлению виртуальной машины в серверный пул *бепулинбаунд* __и__ *бепулаутбаунд* , обновив IP-конфигурацию соответствующих сетевых ресурсов с помощью команды [AZ Network NIC IP-config адрес-пул добавить](https://docs.microsoft.com/cli/azure/network/lb/rule?view=azure-cli-latest).
+At this point, you can proceed with adding your VM's to the backend pool *bepoolinbound* __and__ *bepooloutbound* by updating the IP configuration of the respective NIC resources using [az network nic ip-config address-pool add](https://docs.microsoft.com/cli/azure/network/lb/rule?view=azure-cli-latest).
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

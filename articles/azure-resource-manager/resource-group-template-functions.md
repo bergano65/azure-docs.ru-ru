@@ -2,17 +2,17 @@
 title: Функции шаблонов
 description: Описывает функции, используемые в шаблоне диспетчера ресурсов Azure для извлечения значений, работы со строками и числовыми значениями и получения сведений о развертывании.
 ms.topic: conceptual
-ms.date: 10/24/2019
-ms.openlocfilehash: a9501517672d3ea80a29979ce6b1439c4cc0010e
-ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
+ms.date: 11/19/2019
+ms.openlocfilehash: cf263bff72677778433d4ef2f3cee8135fe3ab06
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74150659"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74224180"
 ---
 # <a name="azure-resource-manager-template-functions"></a>Функции шаблонов диспетчера ресурсов Azure
 
-В этой статье описаны все функции, которые можно использовать в шаблоне Azure Resource Manager. Сведения об использовании функций в шаблоне см. в разделе [синтаксис шаблона](template-expressions.md).
+В этой статье описаны все функции, которые можно использовать в шаблоне Azure Resource Manager. For information about using functions in your template, see [template syntax](template-expressions.md).
 
 Для создания собственных функций см. раздел об [определяемых пользователем функциях](resource-group-authoring-templates.md#functions).
 
@@ -78,6 +78,7 @@ Resource Manager предоставляет ряд функций для вып�
 Диспетчер ресурсов предоставляет следующие функции для получения значений из разделов шаблонов и значений, связанных с развертыванием:
 
 * [deployment](resource-group-template-functions-deployment.md#deployment)
+* [environment](resource-group-template-functions-deployment.md#environment)
 * [parameters](resource-group-template-functions-deployment.md#parameters)
 * [variables](resource-group-template-functions-deployment.md#variables)
 
@@ -135,7 +136,7 @@ Resource Manager предоставляет для работы с логиче�
 ## <a name="resource-functions"></a>Функции для работы с ресурсами
 Диспетчер ресурсов предоставляет следующие функции для получения значений ресурсов:
 
-* [екстенсионресаурцеид](resource-group-template-functions-resource.md#extensionresourceid)
+* [extensionResourceId](resource-group-template-functions-resource.md#extensionresourceid)
 * [listAccountSas](resource-group-template-functions-resource.md#list)
 * [listKeys](resource-group-template-functions-resource.md#listkeys)
 * [listSecrets](resource-group-template-functions-resource.md#list)
@@ -144,9 +145,9 @@ Resource Manager предоставляет для работы с логиче�
 * [reference](resource-group-template-functions-resource.md#reference)
 * [resourceGroup](resource-group-template-functions-resource.md#resourcegroup)
 * [resourceId](resource-group-template-functions-resource.md#resourceid)
-* [Подписка](resource-group-template-functions-resource.md#subscription)
-* [субскриптионресаурцеид](resource-group-template-functions-resource.md#subscriptionresourceid)
-* [тенантресаурцеид](resource-group-template-functions-resource.md#tenantresourceid)
+* [subscription](resource-group-template-functions-resource.md#subscription)
+* [subscriptionResourceId](resource-group-template-functions-resource.md#subscriptionresourceid)
+* [tenantResourceId](resource-group-template-functions-resource.md#tenantresourceid)
 
 <a id="base64" aria-hidden="true" />
 <a id="base64tojson" aria-hidden="true" />
@@ -216,9 +217,9 @@ Resource Manager предоставляет для работы с логиче�
 * [uriComponentToString](resource-group-template-functions-string.md#uricomponenttostring)
 * [utcNow](resource-group-template-functions-string.md#utcnow)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Описание разделов в шаблоне Azure Resource Manager см. в статье [Создание шаблонов Azure Resource Manager](resource-group-authoring-templates.md).
 * Инструкции по объединению нескольких шаблонов см. в статье [Использование связанных шаблонов в Azure Resource Manager](resource-group-linked-templates.md).
 * Указания по выполнению заданного количества циклов итерации при создании типа см. в разделе [Создание нескольких экземпляров ресурсов в Azure Resource Manager](resource-group-create-multiple.md).
-* Сведения о развертывании созданного шаблона см. в разделе [развертывание приложения с помощью Azure Resource Manager шаблона](resource-group-template-deploy.md) .
+* To see how to deploy the template you've created, see [Deploy an application with Azure Resource Manager template](resource-group-template-deploy.md)

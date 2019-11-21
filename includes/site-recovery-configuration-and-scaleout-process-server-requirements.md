@@ -9,14 +9,14 @@ ms.topic: include
 ms.date: 06/10/2018
 ms.author: raynew
 ms.custom: include file
-ms.openlocfilehash: d77269c1e965d5bca1e32b756ef26e2c694e5c81
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: 7baa2dbd1583ebbccbf9b21df3531404bd839e10
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73747848"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260861"
 ---
-**Требования к конфигурации и серверу обработки**
+**Configuration and process server requirements**
 
 
 ## <a name="hardware-requirements"></a>Требования к оборудованию
@@ -25,7 +25,7 @@ ms.locfileid: "73747848"
 --- | ---
 Ядра ЦП | 8 
 ОЗУ | 16 ГБ
-Количество дисков | 3 (диск ОС, диск кэша сервера обработки, диск хранения (для восстановления размещения)) 
+Число дисков | 3 (диск ОС, диск кэша сервера обработки, диск хранения (для восстановления размещения)) 
 Свободное место на диске (кэш сервера обработки) | 600 ГБ
 Свободное место на диске (диск хранения) | 600 ГБ
  | 
@@ -34,49 +34,52 @@ ms.locfileid: "73747848"
 
 **Компонент** | **Требование** 
 --- | ---
-операционная система | Windows Server 2012 R2 <br> Windows Server 2016
+Операционная система | Windows Server 2012 R2 <br> Windows Server 2016
 Язык операционной системы | Английский (en-us)
 Роли Windows Server | Не включайте эти роли: <br> — доменные службы Active Directory; <br>— службы IIS; <br> — Hyper-V. 
-Групповые политики | Не включать эти групповые политики: <br> — запрет на использование командной строки; <br> — запрет на использование инструментов редактирования реестра; <br> — логика доверия для вложенных файлов; <br> — включение выполнения скриптов. <br> [Подробнее](https://technet.microsoft.com/library/gg176671(v=ws.10).aspx)
-IIS | — Нет ранее созданного веб-сайта по умолчанию. <br> — Веб-сайт или приложение не ожидают передачи данных через порт 443. <br>— Включить [анонимную проверку подлинности](https://technet.microsoft.com/library/cc731244(v=ws.10).aspx). <br> — Включить параметр [FastCGI](https://technet.microsoft.com/library/cc753077(v=ws.10).aspx) .
-| 
+Групповые политики | Не включать эти групповые политики: <br> — запрет на использование командной строки; <br> — запрет на использование инструментов редактирования реестра; <br> — логика доверия для вложенных файлов; <br> — включение выполнения скриптов. <br> [Дополнительные сведения](https://technet.microsoft.com/library/gg176671(v=ws.10).aspx)
+IIS | — Должен отсутствовать предварительно созданный веб-сайт по умолчанию. <br> — Должен отсутствовать предварительно созданный веб-сайт или приложение, ожидающее передачи данных на порте 443. <br>— включите [анонимную аутентификацию](https://technet.microsoft.com/library/cc731244(v=ws.10).aspx); <br> — включите параметр [FastCGI](https://technet.microsoft.com/library/cc753077(v=ws.10).aspx); 
+FIPS (Federal Information Processing Standards) | Do not enable FIPS mode
+|
 
 ## <a name="network-requirements"></a>Требования к сети
 
 **Компонент** | **Требование** 
 --- | --- 
-Тип IP-адреса | Статическое 
+Тип IP-адреса | Статические 
 порты; | 443 (оркестрация канала управления)<br>9443 (передача данных) 
-Тип сетевой карты | VMXNET3 (если сервер конфигурации является виртуальной машиной VMware)
+Тип сетевой карты | VMXNET3 (if the configuration server is a VMware VM)
  |
-**Доступ к Интернету** (серверу требуется доступ к следующим URL-адресам, напрямую или через прокси-сервер):|
+**Internet access**  (the server needs access to the following URLs, directly or via proxy):|
 \*.backup.windowsazure.com | Используется для передачи и координации реплицированных данных
 \*.store.core.windows.net | Используется для передачи и координации реплицированных данных
 \*.blob.core.windows.net | Используется для получения доступа к учетной записи хранения, в которой хранятся реплицируемые данные
 \*.hypervrecoverymanager.windowsazure.com | Используется для операций управления репликацией и координации
 https:\//management.azure.com | Используется для операций управления репликацией и координации 
-*.services.visualstudio.com | Используется в целях телеметрии (необязательно)
-time.nist.gov | Используется для проверки синхронизации времени между системой и глобальным временем
-time.windows.com | Используется для проверки синхронизации времени между системой и глобальным временем
-| <ul> <li> https:\//login.microsoftonline.com </li><li> https:\//secure.aadcdn.microsoftonline-p.com </li><li> HTTPS:\//login.live.com </li><li> HTTPS:\//graph.windows.net </li><li> https:\//login.windows.net </li><li> HTTPS:\//www.live.com </li><li> HTTPS:\//www.microsoft.com </li></ul> | Программе установки OVF требуется доступ к этим URL-адресам. Они используются для управления доступом и управления удостоверениями с Azure Active Directory.
-https:\//dev.mysql.com/get/Downloads/MySQLInstaller/mysql-installer-community-5.7.20.0.msi  | Для завершения загрузки MySQL. </br> В нескольких регионах загрузка может быть перенаправлена на URL-адрес CDN. При необходимости убедитесь, что URL-адрес CDN также список разрешений.
+*.services.visualstudio.com | Used for telemetry purposes (optional)
+time.nist.gov | Used to check time synchronization between system and global time
+time.windows.com | Used to check time synchronization between system and global time
+| <ul> <li> https:\//login.microsoftonline.com </li><li> https:\//secure.aadcdn.microsoftonline-p.com </li><li> https:\//login.live.com </li><li> https:\//graph.windows.net </li><li> https:\//login.windows.net </li><li> https:\//www.live.com </li><li> https:\//www.microsoft.com </li></ul> | OVF setup needs access to these URLs. They're used for access control and identity management by Azure Active Directory.
+https:\//dev.mysql.com/get/Downloads/MySQLInstaller/mysql-installer-community-5.7.20.0.msi  | To complete MySQL download. </br> In a few regions, the download might be redirected to the CDN URL. Ensure that the CDN URL is also whitelisted, if necessary.
 |
 
 ## <a name="required-software"></a>Необходимое программное обеспечение
 
 **Компонент** | **Требование** 
 --- | ---
-VMware vSphere PowerCLI | [PowerCLI версии 6,0](https://my.vmware.com/web/vmware/details?productId=491&downloadGroup=PCLI600R1) следует устанавливать, если сервер конфигурации работает на виртуальной машине VMware.
-MySQL | Должен быть установлен компонент MySQL. Можно установить вручную или Azure Site Recovery можно установить. (Дополнительные сведения см. в разделе [Настройка параметров](../articles/site-recovery/vmware-azure-deploy-configuration-server.md#configure-settings).)
+VMware vSphere PowerCLI | Если сервер конфигурации работает на виртуальной машине VMware, должен быть установлен компонент [PowerCLI версии 6.0](https://my.vmware.com/web/vmware/details?productId=491&downloadGroup=PCLI600R1).
+MySQL | Должен быть установлен компонент MySQL. Его можно установить вручную, или его может установить Site Recovery. (Дополнительные сведения см. в разделе, посвященном [настройке параметров](../articles/site-recovery/vmware-azure-deploy-configuration-server.md#configure-settings)).
+|
 
 ## <a name="sizing-and-capacity-requirements"></a>Требования к размеру и емкости
 
-В следующей таблице приведены требования к емкости для сервера конфигурации. При репликации нескольких виртуальных машин VMware ознакомьтесь с [вопросами планирования емкости](../articles/site-recovery/site-recovery-plan-capacity-vmware.md) и запустите [средство планировщик развертывания Azure Site Recovery](../articles/site-recovery/site-recovery-deployment-planner.md).
+В следующей таблице приведены требования к емкости для сервера конфигурации. If you're replicating multiple VMware VMs, review the [capacity planning considerations](../articles/site-recovery/site-recovery-plan-capacity-vmware.md) and run the [Azure Site Recovery Deployment Planner tool](../articles/site-recovery/site-recovery-deployment-planner.md).
 
 
 **ЦП** | **Память** | **Диск кэша** | **Частота изменения данных** | **Реплицируемые компьютеры**
 --- | --- | --- | --- | ---
-8 виртуальных ЦП<br/><br/> 2 сокета по 4 ядра с частотой \@ 2,5 ГГц | 16 ГБ | 300 ГБ | 500 ГБ или менее | < 100 компьютеров
-12 виртуальных ЦП<br/><br/> 2 сокета по 6 ядер с частотой \@ 2,5 ГГц | 18 ГБ | 600 ГБ | От 500 ГБ до 1 ТБ | От 100 до 150 компьютеров
-16 виртуальных ЦП<br/><br/> 2 сокета по 8 ядер с частотой \@ 2,5 ГГц | 32 ГБ | 1 TБ | от 1 до 2 ТБ | 150 – 200 компьютеров
+8 виртуальных ЦП<br/><br/> 2 сокета по 4 ядра с частотой \@ 2,5 ГГц | 16 ГБ | 300 ГБ | 500 ГБ или менее | < 100 компьютеров
+12 виртуальных ЦП<br/><br/> 2 сокета по 6 ядер с частотой \@ 2,5 ГГц | 18 ГБ | 600 ГБ | 500 ГБ — 1 ТБ | От 100 до 150 компьютеров
+16 виртуальных ЦП<br/><br/> 2 сокета по 8 ядер с частотой \@ 2,5 ГГц | 32 ГБ | 1 ТБ | 1-2 TБ | От 150 до 200 компьютеров
+|
 

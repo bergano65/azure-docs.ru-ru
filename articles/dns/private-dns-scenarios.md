@@ -1,20 +1,20 @@
 ---
-title: Сценарии частных зон Azure DNS
-description: Общие сведения о распространенных сценариях использования частных зон Azure DNS.
+title: Scenarios for Private Zones - Azure DNS
+description: In this article, learn about common scenarios for using Azure DNS Private Zones.
 services: dns
-author: vhorne
+author: asudbring
 ms.service: dns
 ms.topic: article
 ms.date: 10/05/2019
-ms.author: victorh
-ms.openlocfilehash: 3ac4db3a2d98e761183360c268d23efcc313cf09
-ms.sourcegitcommit: b1a8f3ab79c605684336c6e9a45ef2334200844b
+ms.author: allensu
+ms.openlocfilehash: 2eb7e9e4df5bdf0f8eb047cc8594bd862245770d
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74048502"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74210460"
 ---
-# <a name="azure-dns-private-zones-scenarios"></a>Сценарии использования частных зон Azure DNS
+# <a name="azure-dns-private-zones-scenarios"></a>Azure DNS Private zones scenarios
 
 Частные зоны Azure DNS обеспечивают разрешение имен внутри виртуальной сети и между виртуальными сетями. В этой статье мы рассмотрим несколько распространенных сценариев, которые можно реализовать с помощью этой функции.
 
@@ -47,7 +47,7 @@ ms.locfileid: "74048502"
 
 ![Разрешение имен с "расщеплением горизонта"](./media/private-dns-scenarios/split-brain-resolution.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения об использовании частных зон DNS см. в статье [Using Azure DNS for private domains](private-dns-overview.md) (Использование Azure DNS для частных доменов).
 
 Узнайте, как создать [частную зону DNS](./private-dns-getstarted-powershell.md) в Azure DNS.

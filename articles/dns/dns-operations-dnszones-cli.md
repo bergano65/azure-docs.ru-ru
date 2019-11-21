@@ -3,7 +3,7 @@ title: Управление зонами DNS в службе DNS Azure с пом
 description: Зонами DNS можно управлять с помощью Azure CLI. В этой статье показано, как обновлять, удалять и создавать зоны DNS в службе DNS Azure.
 services: dns
 documentationcenter: na
-author: vhorne
+author: asudbring
 manager: timlt
 ms.assetid: 8ab63bc4-5135-4ed8-8c0b-5f0712b9afed
 ms.service: dns
@@ -12,27 +12,27 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/27/2017
-ms.author: victorh
-ms.openlocfilehash: 14d0512a10329f36872d111825261ebc5ef71976
-ms.sourcegitcommit: 4d177e6d273bba8af03a00e8bb9fe51a447196d0
+ms.author: allensu
+ms.openlocfilehash: e1a3c401de32beb9757011ac306443334da8b867
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71959378"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74211925"
 ---
 # <a name="how-to-manage-dns-zones-in-azure-dns-using-the-azure-cli"></a>Как управлять зонами DNS в службе DNS Azure с помощью интерфейса командной строки Azure
 
 > [!div class="op_single_selector"]
-> * [Портал](dns-operations-dnszones-portal.md)
+> * [Microsoft Azure](dns-operations-dnszones-portal.md)
 > * [PowerShell](dns-operations-dnszones.md)
-> * [Интерфейс командной строки Azure](dns-operations-dnszones-cli.md)
+> * [Azure CLI](dns-operations-dnszones-cli.md)
 
 
 В этом руководстве показано, как управлять зонами DNS с помощью кроссплатформенного интерфейса командной строки Azure, доступного для Windows, Mac и Linux. Зонами DNS также можно управлять с помощью [Azure PowerShell](dns-operations-dnszones.md) или портала Azure.
 
 В этом руководстве рассматриваются именно общедоступные зоны DNS. Сведения об использовании Azure PowerShell для управления частным зонами в Azure DNS см. в статье о [начале работы с Частными зонами Azure DNS с помощью Azure CLI](private-dns-getstarted-cli.md).
 
-## <a name="introduction"></a>Введение
+## <a name="introduction"></a>Общие сведения
 
 [!INCLUDE [dns-create-zone-about](../../includes/dns-create-zone-about-include.md)]
 
@@ -68,13 +68,13 @@ az account list
 az account set --subscription "subscription name"
 ```
 
-### <a name="optional-to-installuse-azure-dns-private-zones-feature"></a>Необязательно: Установка и использование компонента Частные зоны Azure DNS
-Функция Azure DNS частной зоны доступна через расширение для Azure CLI. Установите расширение dns для Azure CLI: 
+### <a name="optional-to-installuse-azure-dns-private-zones-feature"></a>Optional: To install/use Azure DNS Private Zones feature
+The Azure DNS Private Zone feature is available via an extension to the Azure CLI. Установите расширение dns для Azure CLI: 
 ```
 az extension add --name dns
 ``` 
 
-### <a name="create-a-resource-group"></a>Создать группу ресурсов
+### <a name="create-a-resource-group"></a>Создание группы ресурсов
 
 Диспетчер ресурсов Azure требует, чтобы все группы ресурсов указывали расположение. Оно используется в качестве расположения по умолчанию для всех ресурсов данной группы. Но так как все ресурсы DNS глобальные, а не региональные, выбор расположения группы ресурсов не влияет на Azure DNS.
 
@@ -86,7 +86,7 @@ az group create --name myresourcegroup --location "West US"
 
 ## <a name="getting-help"></a>Получение справки
 
-Все команды Azure CLI, относящиеся к Azure DNS, начинаются с `az network dns`. Справку для каждой команды можно отобразить с помощью параметра `--help` (краткая форма: `-h`).  Пример:
+Все команды Azure CLI, относящиеся к Azure DNS, начинаются с `az network dns`. Справку для каждой команды можно отобразить с помощью параметра `--help` (краткая форма: `-h`).  Пример.
 
 ```azurecli
 az network dns --help
@@ -192,7 +192,7 @@ az network dns zone update --resource-group myresourcegroup --name contoso.com -
 az network dns zone delete --resource-group myresourcegroup --name contoso.com
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как [управлять наборами записей и записями](dns-getstarted-create-recordset-cli.md) в зоне DNS.
 

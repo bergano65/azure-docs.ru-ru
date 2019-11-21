@@ -1,5 +1,5 @@
 ---
-title: Подготовка устаревших устройств с использованием симметричных ключей в Службе подготовки устройств к добавлению в Центр Интернета вещей Azure | Документация Майкрософт
+title: Provision legacy devices using symmetric keys - Azure IoT Hub Device Provisioning Service
 description: Подготовка устаревших устройств с использованием симметричных ключей в экземпляре службы подготовки устройств.
 author: wesmc7777
 ms.author: wesmc
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 manager: philmea
-ms.openlocfilehash: 13e22d772ef9b90f415f10b65e4a4290a1f7bd81
-ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
+ms.openlocfilehash: 3e3b54592608f5c39d618f5ceda40747ad4fd0fe
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72434833"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74209919"
 ---
 # <a name="how-to-provision-legacy-devices-using-symmetric-keys"></a>Как подготовить устаревшие устройства с использованием симметричных ключей
 
@@ -28,7 +28,7 @@ ms.locfileid: "72434833"
 В этой статье описывается использование рабочей станции под управлением Windows. Тем не менее эти процедуры можно выполнить и на Linux. Пример для Linux см. в статье [Подготовка к мультитенантности](how-to-provision-multitenant.md).
 
 > [!NOTE]
-> Пример, используемый в этой статье, написан на языке C. Также доступен пример с [ C# симметричным ключом подготовки устройства](https://github.com/Azure-Samples/azure-iot-samples-csharp/tree/master/provisioning/Samples/device/SymmetricKeySample) . Чтобы использовать этот пример, скачайте или клонировать репозиторий [Azure-IOT-Samples-CSharp](https://github.com/Azure-Samples/azure-iot-samples-csharp) и следуйте инструкциям в примере кода. Чтобы создать группу регистрации симметричных ключей с помощью портала и найти область ИДЕНТИФИКАТОРов и первичный и вторичный ключи, необходимые для запуска примера, следуйте инструкциям, приведенным в этой статье. Можно также создать отдельные регистрации с помощью примера.
+> The sample used in this article is written in C. There is also a [C# device provisioning symmetric key sample](https://github.com/Azure-Samples/azure-iot-samples-csharp/tree/master/provisioning/Samples/device/SymmetricKeySample) available. To use this sample, download or clone the [azure-iot-samples-csharp](https://github.com/Azure-Samples/azure-iot-samples-csharp) repository and follow the in-line instructions in the sample code. You can follow the instructions in this article to create a symmetric key enrollment group using the portal and to find the ID Scope and enrollment group primary and secondary keys needed to run the sample. You can also create individual enrollments using the sample.
 
 ## <a name="overview"></a>Краткое описание
 
@@ -263,7 +263,7 @@ Jsm0lyGpjaVYVP2g3FnmnmG9dI/9qU24wNoykUmermc=
     Press enter key to exit:
     ```
 
-9. На портале перейдите к центру Интернета вещей, которому назначено имитируемое устройство, и перейдите на вкладку **устройства IOT** . При успешной подготовке имитации в концентраторе его идентификатор устройства отображается в колонке **устройства IOT** с *состоянием* **включено**. Возможно, вам потребуется нажать кнопку **Обновить** в верхней области. 
+9. In the portal, navigate to the IoT hub your simulated device was assigned to and click the **IoT Devices** tab. On successful provisioning of the simulated to the hub, its device ID appears on the **IoT Devices** blade, with *STATUS* as **enabled**. Возможно, вам потребуется нажать кнопку **Обновить** в верхней области. 
 
     ![Устройство зарегистрировано в Центре Интернета вещей](./media/how-to-legacy-device-symm-key/hub-registration.png) 
 
@@ -279,9 +279,9 @@ Jsm0lyGpjaVYVP2g3FnmnmG9dI/9qU24wNoykUmermc=
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Дополнительные сведения о повторной подготовке см. в статье [Основные понятия повторной инициализации устройств центра Интернета вещей](concepts-device-reprovision.md) . 
+* To learn more Reprovisioning, see [IoT Hub Device reprovisioning concepts](concepts-device-reprovision.md) 
 * [Краткое руководство по подготовке имитированного устройства с использованием симметричных ключей](quick-create-simulated-device-symm-key.md)
-* Дополнительные сведения об отмене подготовки см. в статье [как отменить подготовку устройств, которые были подготовлены ранее](how-to-unprovision-devices.md) . 
+* To learn more Deprovisioning, see [How to deprovision devices that were previously auto-provisioned](how-to-unprovision-devices.md) 
 
 
 

@@ -1,6 +1,6 @@
 ---
-title: Настройка сведений о безопасности (Предварительная версия) для приложения проверки подлинности — Azure AD
-description: Как настроить подтверждение личности с помощью приложения Microsoft Authenticator в сведениях для защиты.
+title: Set up the Microsoft Authenticator app as your authentication method - Azure AD
+description: How to set up your Security info to verify your identity using the Microsoft Authenticator app as your authentication method.
 services: active-directory
 author: eross-msft
 manager: daveba
@@ -12,14 +12,14 @@ ms.topic: conceptual
 ms.date: 02/13/2019
 ms.author: lizross
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 19f44f4df9e3c17c376830c6a404a21e8a5d67b2
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
-ms.translationtype: MT
+ms.openlocfilehash: 761c9d3ed4cb49a7dc95ea98ce6f884930185643
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73805083"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74233199"
 ---
-# <a name="set-up-security-info-preview-to-use-an-authenticator-app"></a>Настройка использования приложения аутентификации в сведениях для защиты (предварительная версия)
+# <a name="set-up-the-microsoft-authenticator-app-as-your-authentication-method-from-the-security-info-preview-page"></a>Set up the Microsoft Authenticator app as your authentication method from the Security info (preview) page
 
 Чтобы добавить двухфакторную проверку и методы сброса пароля, выполните следующие действия. После первоначальной настройки вы можете вернуться к странице **Сведения для защиты**, чтобы добавить, обновить или удалить сведения для защиты.
 
@@ -76,7 +76,7 @@ ms.locfileid: "73805083"
 
 8. Отсканируйте предоставленный код с помощью средства для считывания QR-кодов приложения Microsoft Authenticator, которое появилось на вашем мобильном устройстве после создания рабочей или учебной учетной записи на шаге 6.
 
-    Приложение для проверки подлинности должно успешно добавить вашу рабочую или учебную учетную запись, не требуя никакой дополнительной информации от вас. Однако, если средство считывания QR-кодов не может считать код, щелкните ссылку **Can't scan the QR code** (Невозможно сканировать QR-код) и вручную введите код и URL-адрес в приложение Microsoft Authenticator. Дополнительные сведения о вводе кода вручную см. в статье [Добавление учетной записи в приложение вручную](user-help-auth-app-add-account-manual.md).
+    Приложение для аутентификации должно успешно добавить вашу рабочую или учебную учетную запись, не требуя никакой дополнительной информации от вас. Однако, если средство считывания QR-кодов не может считать код, щелкните ссылку **Can't scan the QR code** (Невозможно сканировать QR-код) и вручную введите код и URL-адрес в приложение Microsoft Authenticator. Дополнительные сведения о вводе кода вручную см. в статье [Добавление учетной записи в приложение вручную](user-help-auth-app-add-account-manual.md).
 
 9. Щелкните **Далее** на странице **Сканирование QR-кода** на своем компьютере.
 
@@ -109,7 +109,7 @@ ms.locfileid: "73805083"
 
     Ваша учетная запись полностью удалена из приложения для аутентификации для запросов на двухфакторную проверку подлинности и смену пароля.
 
-## <a name="change-your-default-security-info-method"></a>Изменение метода проверки сведений для защиты по умолчанию
+## <a name="change-your-default-security-info-method"></a>Изменение метода по умолчанию в сведениях для защиты
 
 Если вам нужно, чтобы приложение для аутентификации использовалось по умолчанию при входе в рабочую или учебную учетную запись с использованием двухфакторной проверки подлинности или для сброса пароля, вы можете настроить его на странице **Сведения для защиты**.
 
@@ -121,7 +121,7 @@ ms.locfileid: "73805083"
 
 2. Выберите **Microsoft Authenticator — уведомление** в раскрывающемся списке доступных методов. Если вы не используете приложение Microsoft Authenticator, выберите параметр **Authenticator app or hardware token** (Токен оборудования или приложения Microsoft Authenticator).
 
-    ![Выбор метода для входа по умолчанию](media/security-info/securityinfo-myprofile-defaultauthapp.png)
+    ![Выбор метода входа по умолчанию](media/security-info/securityinfo-myprofile-defaultauthapp.png)
 
 3. Выберите **Подтвердить**.
 
@@ -135,7 +135,7 @@ ms.locfileid: "73805083"
 
 - **Звонок на мобильный или рабочий телефон.** Введите номер своего мобильного устройства, чтобы получить звонок с информацией для двухфакторной проверки подлинности или сброса пароля. Пошаговые инструкции о том, как подтвердить свою личность с помощью номера телефона, см. в статье о [настройке использования телефонных звонков в сведениях для защиты](security-info-setup-phone-number.md).
 
-- **Ключ безопасности.** Зарегистрируйте ключ безопасности, совместимый с Майкрософт, и используйте его вместе с ПИН-кодом для двухфакторной проверки подлинности или сброса пароля. Пошаговые инструкции по проверке удостоверения с помощью ключа безопасности см. [в разделе Настройка сведений о безопасности для использования ключа безопасности](security-info-setup-security-key.md).
+- **Security key.** Register your Microsoft-compatible security key and use it along with a PIN for two-step verification or password reset. For step-by-step instructions about how to verify your identity with a security key, see [Set up security info to use a security key](security-info-setup-security-key.md).
 
 - **Адрес электронной почты.** Введите рабочий или учебный адрес электронной почты, чтобы получить электронное письмо для сброса пароля. Этот вариант недоступен для двухфакторной проверки подлинности. Пошаговые инструкции о том, как настроить адрес электронной почты, см. в статье о [настройке использования электронной почты в сведениях для защиты](security-info-setup-email.md).
 
@@ -146,7 +146,7 @@ ms.locfileid: "73805083"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Выполните вход с помощью приложения Microsoft Authenticator, выполнив действия, описанные в разделе [Вход с использованием двухфакторной проверки подлинности или сведений о безопасности](security-info-setup-signin.md) .
+- Sign-in using the Microsoft Authenticator app, following steps in the [Sign in using two-step verification or security info](security-info-setup-signin.md) article.
 
 - Если вы забыли свой пароль, сбросьте его на [портале сброса пароля](https://passwordreset.microsoftonline.com/) или выполните действия, описанные в статье о [сбросе пароля рабочей или учебной учетной записи](active-directory-passwords-update-your-own-password.md).
 

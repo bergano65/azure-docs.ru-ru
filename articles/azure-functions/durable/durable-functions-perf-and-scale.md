@@ -1,20 +1,16 @@
 ---
 title: Производительность и масштабирование в устойчивых функциях — Azure
 description: Общие сведения о расширении устойчивых функций для Функций Azure.
-services: functions
 author: cgillum
-manager: jeconnoc
-keywords: ''
-ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 11/03/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 5efe571e2c7ff75ace584755324964003176b5f0
-ms.sourcegitcommit: b2fb32ae73b12cf2d180e6e4ffffa13a31aa4c6f
+ms.openlocfilehash: 15302eb4f89c854210d4fc1aba292c57d4757278
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73614713"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74231340"
 ---
 # <a name="performance-and-scale-in-durable-functions-azure-functions"></a>Производительность и масштабирование в устойчивых функциях (Функции Azure)
 
@@ -30,9 +26,9 @@ ms.locfileid: "73614713"
 
 ## <a name="instances-table"></a>Экземпляры таблицы
 
-Таблица **Instances** — это другая таблица службы хранилища Azure, которая содержит состояние всех объектов оркестрации и экземпляров сущностей в центре задач. При создании экземпляров в таблицу добавляются новые строки. Ключ секции этой таблицы — это идентификатор экземпляра оркестрации или ключ сущности, а ключ строки является фиксированной константой. Для каждого оркестрации или экземпляра сущности существует одна строка.
+The **Instances** table is another Azure Storage table that contains the statuses of all orchestration and entity instances within a task hub. При создании экземпляров в таблицу добавляются новые строки. The partition key of this table is the orchestration instance ID or entity key and the row key is a fixed constant. There is one row per orchestration or entity instance.
 
-Эта таблица используется для удовлетворения запросов экземпляров из интерфейсов API `GetStatusAsync` (.NET) и `getStatus` (JavaScript), а также для [запроса состояния HTTP API](durable-functions-http-api.md#get-instance-status). В конечном итоге она поддерживается в соответствии с содержанием таблицы **Журнала**, упомянутой ранее. Использование отдельных таблиц хранилища Azure для эффективного удовлетворения операций запроса экземпляров, является путем, обусловленным [шаблоном CQRS](https://docs.microsoft.com/azure/architecture/patterns/cqrs).
+This table is used to satisfy instance query requests from the `GetStatusAsync` (.NET) and `getStatus` (JavaScript) APIs as well as the [status query HTTP API](durable-functions-http-api.md#get-instance-status). В конечном итоге она поддерживается в соответствии с содержанием таблицы **Журнала**, упомянутой ранее. Использование отдельных таблиц хранилища Azure для эффективного удовлетворения операций запроса экземпляров, является путем, обусловленным [шаблоном CQRS](https://docs.microsoft.com/azure/architecture/patterns/cqrs).
 
 ## <a name="internal-queue-triggers"></a>Триггеры внутренней очереди
 
@@ -44,24 +40,24 @@ ms.locfileid: "73614713"
 
 ### <a name="control-queues"></a>Очередь управления
 
-В устойчивых функциях на каждый центр задач имеется несколько *очередей управления*. *Очередь управления* является более сложной, чем очередь рабочих элементов. Очереди управления используются для активации Orchestrator с отслеживанием состояния и функций сущностей. Поскольку экземпляры Orchestrator и Entity Function являются одиночными экземплярами с отслеживанием состояния, невозможно использовать конкурирующие модели потребителей для распределения нагрузки между виртуальными машинами. Вместо этого сообщения Orchestrator и Entity распределяются по очередям управления. Дополнительные сведения об этом поведении можно найти в последующих разделах.
+В устойчивых функциях на каждый центр задач имеется несколько *очередей управления*. *Очередь управления* является более сложной, чем очередь рабочих элементов. Control queues are used to trigger the stateful orchestrator and entity functions. Because the orchestrator and entity function instances are stateful singletons, it's not possible to use a competing consumer model to distribute load across VMs. Instead, orchestrator and entity messages are load-balanced across the control queues. Дополнительные сведения об этом поведении можно найти в последующих разделах.
 
 Очереди управления содержат различные типы сообщений жизненного цикла оркестрации. Примеры включают [сообщения об управлении оркестрацией](durable-functions-instance-management.md), сообщения *ответа* функции действия и сообщения таймера. За один опрос из очереди управления может быть удалено до 32 сообщений. Эти сообщения содержат полезные данные, а также метаданные, включая экземпляр оркестрации, для которого они предназначены. Если для одного и того же экземпляра оркестрации предназначены несколько сообщений удаленных из очереди, они будут обрабатываться как пакет.
 
-### <a name="queue-polling"></a>Опрос очередей
+### <a name="queue-polling"></a>Queue polling
 
-Расширение устойчивых задач реализует случайный алгоритм экспоненциального отката, чтобы снизить воздействие опроса на очередь бездействия на стоимость транзакций хранилища. При обнаружении сообщения среда выполнения немедленно проверяет наличие другого сообщения. Если сообщение не найдено, оно ждет некоторого времени, прежде чем повторить попытку. После последующей неудачной попытки получить сообщение очереди время ожидания продолжит увеличиваться до достижения максимального времени ожидания, которое по умолчанию равно 30 секундам.
+The durable task extension implements a random exponential back-off algorithm to reduce the effect of idle-queue polling on storage transaction costs. When a message is found, the runtime immediately checks for another message; when no message is found, it waits for a period of time before trying again. After subsequent failed attempts to get a queue message, the wait time continues to increase until it reaches the maximum wait time, which defaults to 30 seconds.
 
-Максимальная задержка опроса настраивается с помощью свойства `maxQueuePollingInterval` в [файле host. JSON](../functions-host-json.md#durabletask). Установка для этого свойства более высокого значения может привести к увеличению задержек при обработке сообщения. Более высокие задержки будут ожидаться только после периодов бездействия. Установка этого свойства в более низком значении может привести к увеличению затрат на хранение данных из-за повышенных транзакций хранилища.
+The maximum polling delay is configurable via the `maxQueuePollingInterval` property in the [host.json file](../functions-host-json.md#durabletask). Setting this property to a higher value could result in higher message processing latencies. Higher latencies would be expected only after periods of inactivity. Setting this property to a lower value could result in higher storage costs due to increased storage transactions.
 
 > [!NOTE]
-> При выполнении в планах использования и Premium для функций Azure [контроллер масштабирования функций Azure](../functions-scale.md#how-the-consumption-and-premium-plans-work) будет опрашивать каждый элемент управления и очередь рабочих элементов каждые 10 секунд. Этот дополнительный опрос необходим для определения времени активации экземпляров приложения-функции и принятия решений о масштабировании. На момент написания статьи этот интервал 10 секунд является постоянным и не может быть настроен.
+> When running in the Azure Functions Consumption and Premium plans, the [Azure Functions Scale Controller](../functions-scale.md#how-the-consumption-and-premium-plans-work) will poll each control and work-item queue once every 10 seconds. This additional polling is necessary to determine when to activate function app instances and to make scale decisions. At the time of writing, this 10 second interval is constant and cannot be configured.
 
 ## <a name="storage-account-selection"></a>Выбор учетной записи хранения
 
-Очереди, таблицы и BLOB-объекты, используемые Устойчивые функции, создаются в настроенной учетной записи хранения Azure. Используемую учетную запись можно указать с помощью параметра `durableTask/storageProvider/connectionStringName` (или `durableTask/azureStorageConnectionStringName` параметра в Устойчивые функции 1. x) в файле **Host. JSON** .
+The queues, tables, and blobs used by Durable Functions are created in a configured Azure Storage account. The account to use can be specified using the `durableTask/storageProvider/connectionStringName` setting (or `durableTask/azureStorageConnectionStringName` setting in Durable Functions 1.x) in the **host.json** file.
 
-### <a name="durable-functions-2x"></a>Устойчивые функции 2. x
+### <a name="durable-functions-2x"></a>Durable Functions 2.x
 
 ```json
 {
@@ -75,7 +71,7 @@ ms.locfileid: "73614713"
 }
 ```
 
-### <a name="durable-functions-1x"></a>Устойчивые функции 1. x
+### <a name="durable-functions-1x"></a>Durable Functions 1.x
 
 ```json
 {
@@ -91,9 +87,9 @@ ms.locfileid: "73614713"
 
 ## <a name="orchestrator-scale-out"></a>Развертывание оркестратора
 
-Функции действий не отслеживают состояние и автоматически масштабируются путем добавления виртуальных машин. Функции и сущности Orchestrator, с другой стороны, *секционированы* по одной или нескольким очередям управления. Число очередей управления определено в файле **host.json**. В следующем примере фрагмент кода Host. JSON задает свойство `durableTask/storageProvider/partitionCount` (или `durableTask/partitionCount` в Устойчивые функции 1. x) для `3`.
+Функции действий не отслеживают состояние и автоматически масштабируются путем добавления виртуальных машин. Orchestrator functions and entities, on the other hand, are *partitioned* across one or more control queues. Число очередей управления определено в файле **host.json**. The following example host.json snippet sets the `durableTask/storageProvider/partitionCount` property (or `durableTask/partitionCount` in Durable Functions 1.x) to `3`.
 
-### <a name="durable-functions-2x"></a>Устойчивые функции 2. x
+### <a name="durable-functions-2x"></a>Durable Functions 2.x
 
 ```json
 {
@@ -107,7 +103,7 @@ ms.locfileid: "73614713"
 }
 ```
 
-### <a name="durable-functions-1x"></a>Устойчивые функции 1. x
+### <a name="durable-functions-1x"></a>Durable Functions 1.x
 
 ```json
 {
@@ -121,7 +117,7 @@ ms.locfileid: "73614713"
 
 Центр задач может быть настроен в диапазоне от 1 до 16 секций. Если значение не задано, по умолчанию количеству секций соответствует значение **4**.
 
-При развертывании нескольких экземпляров узлов функции (обычно на разных виртуальных машинах) каждый экземпляр блокируется на одной из очередей управления. Эти блокировки реализуются внутренне как аренды хранилища BLOB-объектов и гарантируют, что экземпляр оркестрации или сущность выполняются только на одном экземпляре узла за раз. Если в центре задач настроено три очереди управления, то экземпляры оркестрации и сущности можно распределить по нескольким виртуальным машинам. Для повышения емкости выполнения функции действия можно добавить дополнительные виртуальные машины.
+При развертывании нескольких экземпляров узлов функции (обычно на разных виртуальных машинах) каждый экземпляр блокируется на одной из очередей управления. These locks are internally implemented as blob storage leases and ensure that an orchestration instance or entity only runs on a single host instance at a time. If a task hub is configured with three control queues, orchestration instances and entities can be load-balanced across as many as three VMs. Для повышения емкости выполнения функции действия можно добавить дополнительные виртуальные машины.
 
 На схеме ниже показано взаимодействие узла Функций Azure с сущностями хранилища в развернутой среде.
 
@@ -129,18 +125,18 @@ ms.locfileid: "73614713"
 
 Как показано на предыдущей схеме, все виртуальные машины могут конкурировать за сообщения в очереди рабочих элементов. Тем не менее получать сообщения из очередей управления могут только три виртуальные машины, и каждая из них блокирует одиночную очередь управления.
 
-Экземпляры и сущности оркестрации распределяются по всем экземплярам очереди управления. Распределение выполняется путем хэширования идентификатора экземпляра оркестрации или имени сущности и пары ключей. Идентификаторы экземпляров оркестрации по умолчанию — это случайные идентификаторы GUID, гарантирующие, что экземпляры равномерно распределяются по всем очередям управления.
+Orchestration instances and entities are distributed across all control queue instances. The distribution is done by hashing the instance ID of the orchestration or the entity name and key pair. Orchestration instance IDs by default are random GUIDs, ensuring that instances are equally distributed across all control queues.
 
-Как правило, функции оркестратора должны быть упрощенными, поэтому они не должны требовать больших вычислительных мощностей. Поэтому нет необходимости создавать большое количество разделов очереди управления, чтобы получить высокую пропускную способность для согласований. Большая часть работы должна выполняться в функциях действий без отслеживания состояния, которые можно масштабировать бесконечно.
+Как правило, функции оркестратора должны быть упрощенными, поэтому они не должны требовать больших вычислительных мощностей. It is therefore not necessary to create a large number of control queue partitions to get great throughput for orchestrations. Большая часть работы должна выполняться в функциях действий без отслеживания состояния, которые можно масштабировать бесконечно.
 
 ## <a name="auto-scale"></a>Автомасштабирование
 
-Как и во всех функциях Azure, выполняющихся в планах потребления и эластичных баз данных Premium, Устойчивые функции поддерживает автоматическое масштабирование через [контроллер масштабирования функций Azure](../functions-scale.md#runtime-scaling). Контроллер масштабирования занимается мониторингом задержки всех очередей, периодически выполняя команды _peek_. Основываясь на задержках просматриваемых сообщений, контроллер масштабирования будет решать, следует ли добавлять или удалять виртуальные машины.
+As with all Azure Functions running in the Consumption and Elastic Premium plans, Durable Functions supports auto-scale via the [Azure Functions scale controller](../functions-scale.md#runtime-scaling). Контроллер масштабирования занимается мониторингом задержки всех очередей, периодически выполняя команды _peek_. Основываясь на задержках просматриваемых сообщений, контроллер масштабирования будет решать, следует ли добавлять или удалять виртуальные машины.
 
 Если контроллер масштабирования определит что задержка от сообщения очереди управления слишком большая, он будет увеличивать количество экземпляров виртуальных машин пока она не вернется до приемлемого уровня или достигнет максимального количества разделов очереди управления. Аналогичным образом контроллер масштабирования будет непрерывно добавлять экземпляры виртуальных машин в случае если задержки в очереди на рабочих элементах слишком большие, независимо от количества разделов.
 
 > [!NOTE]
-> Начиная с Устойчивые функции 2,0, приложения-функции можно настроить для запуска в конечных точках службы, защищенных с помощью виртуальной сети, в плане эластичных баз данных Premium. В этой конфигурации Устойчивые функции триггеры запускают запросы на масштабирование вместо контроллера масштабирования.
+> Starting with Durable Functions 2.0, function apps can be configured to run within VNET-protected service endpoints in the Elastic Premium plan. In this configuration, the Durable Functions triggers initiate scale requests instead of the Scale Controller.
 
 ## <a name="thread-usage"></a>Использование потока
 
@@ -148,15 +144,15 @@ ms.locfileid: "73614713"
 
 Функции действий имеют такие же реакции на события, как и регулярные активируемые очередью функции. Они могут безопасно выполнять операции ввода-вывода, операции с интенсивным потреблением ЦП и использовать несколько потоков. Так как триггеры действия не отслеживают состояние, они могут свободно масштабироваться на неограниченное количество виртуальных машин.
 
-Функции сущностей также выполняются в одном потоке, и операции обрабатываются один раз во время. Однако функции сущностей не имеют ограничений на тип кода, который может быть выполнен.
+Entity functions are also executed on a single thread and operations are processed one-at-a-time. However, entity functions do not have any restrictions on the type of code that can be executed.
 
 ## <a name="concurrency-throttles"></a>Регулирование параллелизма
 
-Функции Azure поддерживают параллельное выполнение нескольких функций в рамках одного экземпляра приложения. Параллельное выполнение помогает улучшить параллелизм и минимизировать число холодного запуска, с которым со времени столкнется стандартное приложение. Однако высокая степень параллелизма может исчерпать системные ресурсы виртуальной машины, такие как сетевые подключения или доступная память. В зависимости от потребностей приложения функции, может потребоваться отрегулировать параллелизм для каждого экземпляра, чтобы избежать возможности исчерпания памяти в ситуациях с высокой нагрузкой.
+Функции Azure поддерживают параллельное выполнение нескольких функций в рамках одного экземпляра приложения. Параллельное выполнение помогает улучшить параллелизм и минимизировать число холодного запуска, с которым со времени столкнется стандартное приложение. However, high concurrency can exhaust per-VM system resources such network connections or available memory. В зависимости от потребностей приложения функции, может потребоваться отрегулировать параллелизм для каждого экземпляра, чтобы избежать возможности исчерпания памяти в ситуациях с высокой нагрузкой.
 
-Ограничения параллелизма действий, Orchestrator и функции сущности можно настроить в файле **Host. JSON** . Соответствующие параметры `durableTask/maxConcurrentActivityFunctions` для функций действий и `durableTask/maxConcurrentOrchestratorFunctions` для функций Orchestrator и Entity.
+Activity, orchestrator, and entity function concurrency limits can be configured in the **host.json** file. The relevant settings are `durableTask/maxConcurrentActivityFunctions` for activity functions and `durableTask/maxConcurrentOrchestratorFunctions` for both orchestrator and entity functions.
 
-### <a name="functions-20"></a>Функции 2,0
+### <a name="functions-20"></a>Functions 2.0
 
 ```json
 {
@@ -180,18 +176,18 @@ ms.locfileid: "73614713"
 }
 ```
 
-В предыдущем примере не более 10 Orchestrator или функций сущностей и 10 функций действий могут выполняться одновременно на одной виртуальной машине. Если значение не указано, количество одновременных операций, а также выполнения функций Orchestrator или Entity может быть ограничено в 10 раз количество ядер на виртуальной машине.
+In the previous example, a maximum of 10 orchestrator or entity functions and 10 activity functions can run on a single VM concurrently. If not specified, the number of concurrent activity and orchestrator or entity function executions is capped at 10X the number of cores on the VM.
 
 > [!NOTE]
-> Эти параметры полезны для управления памятью и использованием ЦП на одной виртуальной машине. Однако при масштабировании на нескольких виртуальных машинах каждая виртуальная машина имеет свой набор ограничений. Эти параметры нельзя использовать для управления параллелизмом на глобальном уровне.
+> Эти параметры полезны для управления памятью и использованием ЦП на одной виртуальной машине. However, when scaled out across multiple VMs, each VM has its own set of limits. These settings can't be used to control concurrency at a global level.
 
-## <a name="extended-sessions"></a>Расширенные сеансы
+## <a name="extended-sessions"></a>Extended sessions
 
-Расширенные сеансы — это параметр, который сохраняет согласованность и сущности в памяти даже после завершения обработки сообщений. Распространенным эффектом от включения расширенных сеансов является сокращение операций ввода-вывода с использованием учетной записи службы хранения Azure и повсеместное улучшение пропускной способности.
+Extended sessions is a setting that keeps orchestrations and entities in memory even after they finish processing messages. Распространенным эффектом от включения расширенных сеансов является сокращение операций ввода-вывода с использованием учетной записи службы хранения Azure и повсеместное улучшение пропускной способности.
 
-Вы можете включить расширенные сеансы, задав для параметра `durableTask/extendedSessionsEnabled` значение `true` в файле **Host. JSON** . Параметр `durableTask/extendedSessionIdleTimeoutInSeconds` может использоваться для управления длительностью бездействующего сеанса в памяти:
+You can enable extended sessions by setting `durableTask/extendedSessionsEnabled` to `true` in the **host.json** file. The `durableTask/extendedSessionIdleTimeoutInSeconds` setting can be used to control how long an idle session will be held in memory:
 
-**Функции 2,0**
+**Functions 2.0**
 ```json
 {
   "extensions": {
@@ -203,7 +199,7 @@ ms.locfileid: "73614713"
 }
 ```
 
-**Функции 1,0**
+**Functions 1.0**
 ```json
 {
   "durableTask": {
@@ -213,34 +209,34 @@ ms.locfileid: "73614713"
 }
 ```
 
-Существует два возможных недостатка этого параметра, которые следует учитывать:
+There are two potential downsides of this setting to be aware of:
 
-1. Это общее увеличение использования памяти приложением функции.
-2. При наличии большого количества одновременных, кратковременных или непродолжительных выполнений функций Orchestrator или Entity функция может привести к общему снижению пропускной способности.
+1. There's an overall increase in function app memory usage.
+2. There can be an overall decrease in throughput if there are many concurrent, short-lived orchestrator or entity function executions.
 
-Например, если `durableTask/extendedSessionIdleTimeoutInSeconds` имеет значение 30 секунд, то кратковременная функция Orchestrator или функции объекта, которая выполняется менее 1 секунды, по-прежнему занимает 30 секунд. Он также учитывает `durableTask/maxConcurrentOrchestratorFunctions` квоты, упомянутые ранее, что может препятствовать запуску других функций Orchestrator или Entity.
+As an example, if `durableTask/extendedSessionIdleTimeoutInSeconds` is set to 30 seconds, then a short-lived orchestrator or entity function episode that executes in less than 1 second still occupies memory for 30 seconds. It also counts against the `durableTask/maxConcurrentOrchestratorFunctions` quota mentioned previously, potentially preventing other orchestrator or entity functions from running.
 
-Конкретные эффекты расширенных сеансов в Orchestrator и функциях сущностей описаны в следующих разделах.
+The specific effects of extended sessions on orchestrator and entity functions are described in the next sections.
 
 ### <a name="orchestrator-function-replay"></a>Повторение функции оркестратора
 
-Как было упомянуто ранее, функции оркестратора воспроизводятся с помощью содержимого таблицы **Журнал**. По умолчанию код функции оркестратора воспроизводится каждый раз, когда пакет сообщений удаляется из очереди управления. Если расширенные сеансы включены, экземпляры функций Orchestrator удерживаются в памяти дольше, а новые сообщения могут обрабатываться без полного воспроизведения журнала.
+Как было упомянуто ранее, функции оркестратора воспроизводятся с помощью содержимого таблицы **Журнал**. По умолчанию код функции оркестратора воспроизводится каждый раз, когда пакет сообщений удаляется из очереди управления. When extended sessions are enabled, orchestrator function instances are held in memory longer and new messages can be processed without a full history replay.
 
-Повышение производительности расширенных сеансов чаще всего наблюдается в следующих ситуациях:
+The performance improvement of extended sessions is most often observed in the following situations:
 
-* При одновременном выполнении ограниченного числа экземпляров оркестрации.
-* Когда оркестрации имеет большое количество последовательных действий (например, сотни вызовов функций действий), которые выполняются быстро.
-* При развертывании и разрешении большого количества действий, которые выполняются одновременно.
-* Когда функции Orchestrator должны обрабатывать большие сообщения или выполнять обработку данных, интенсивно использующих ЦП.
+* When there are a limited number of orchestration instances running concurrently.
+* When orchestrations have large number of sequential actions (e.g. hundreds of activity function calls) that complete quickly.
+* When orchestrations fan-out and fan-in a large number of actions that complete around the same time.
+* When orchestrator functions need to process large messages or do any CPU-intensive data processing.
 
-Во всех остальных ситуациях обычно нет наблюдаемых улучшений производительности для функций Orchestrator.
+In all other situations, there is typically no observable performance improvement for orchestrator functions.
 
 > [!NOTE]
-> Эти параметры следует использовать только после того, как функция оркестратора будет полностью разработана и протестирована. Интенсивное поведение воспроизведения по умолчанию может пригодиться при обнаружении нарушений [ограничений кода функции Orchestrator](durable-functions-code-constraints.md) во время разработки, поэтому по умолчанию отключено.
+> Эти параметры следует использовать только после того, как функция оркестратора будет полностью разработана и протестирована. The default aggressive replay behavior can useful for detecting [orchestrator function code constraints](durable-functions-code-constraints.md) violations at development time, and is therefore disabled by default.
 
-### <a name="entity-function-unloading"></a>Выгрузка функции сущности
+### <a name="entity-function-unloading"></a>Entity function unloading
 
-Функции сущности обрабатывают до 20 операций в одном пакете. Как только сущность заканчивает обработку пакета операций, она сохраняет свое состояние и выгружает из памяти. Можно отложить выгрузку сущностей из памяти с помощью параметра Расширенные сеансы. Сущности продолжают сохранять свои изменения состояния, как и раньше, но остаются в памяти в течение заданного периода времени, чтобы сократить количество загрузок из службы хранилища Azure. Это сокращение нагрузки из службы хранилища Azure может повысить общую пропускную способность часто используемых сущностей.
+Entity functions process up to 20 operations in a single batch. As soon as an entity finishes processing a batch of operations, it persists its state and unloads from memory. You can delay the unloading of entities from memory using the extended sessions setting. Entities continue to persist their state changes as before, but remain in memory for the configured period of time to reduce the number of loads from Azure Storage. This reduction of loads from Azure Storage can improve the overall throughput of frequently accessed entities.
 
 ## <a name="performance-targets"></a>Цели анализа производительности
 
@@ -250,7 +246,7 @@ ms.locfileid: "73614713"
 * **Параллельное выполнение одного действия**. В этом сценарии описано действие оркестратора, которое выполняет множество функций действий параллельно, с помощью шаблона [развертывания, слияния](durable-functions-cloud-backup.md).
 * **Параллельная обработка ответа**. Этот сценарий является второй половиной шаблона [развертывания, слияния](durable-functions-cloud-backup.md). Этот раздел посвящен производительность слияния. Важно отметить, что в отличие от развертывания, слияние создается единым экземпляром функции а затем может быть запущено на единой виртуальной машине.
 * **Обработка внешних событий**. В этом сценарии представлено единый экземпляр функции оркестратора, который последовательно ожидает [внешних событий](durable-functions-external-events.md).
-* **Обработка операций сущности**. Этот сценарий проверяет, насколько быстро [сущность с одним счетчиком](durable-functions-entities.md) может обработать постоянный поток операций.
+* **Entity operation processing**: This scenario tests how quickly a _single_ [Counter entity](durable-functions-entities.md) can process a constant stream of operations.
 
 > [!TIP]
 > В отличие от развертывания, операции слияния могут размещаться только на одной виртуальной машине. Если ваше приложение использует шаблоны развертывания и слияния, и вы беспокоитесь через производительность развертывания, необходимо рассмотреть разделение действия функции развертывания на несколько [вложенных оркестраций](durable-functions-sub-orchestrations.md).
@@ -263,7 +259,7 @@ ms.locfileid: "73614713"
 | Параллельное выполнение одного действия (при развертывании) | 100 действий на экземпляр в секунду |
 | Параллельная обработка ответа (при слиянии) | 150 ответов на экземпляр в секунду |
 | Обработка внешних событий | 50 событий на экземпляр в секунду |
-| Обработка операций сущности | 64 операций в секунду |
+| Entity operation processing | 64 operations per second |
 
 > [!NOTE]
 > Эти номера являются текущими по сравнению с выпуском расширения устойчивых функций v1.4.0 (GA). Со временем эти числа могут изменятся (по мере роста функции и оптимизации).
@@ -273,4 +269,4 @@ ms.locfileid: "73614713"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Сведения об аварийном восстановлении и географическом распределении](durable-functions-disaster-recovery-geo-distribution.md)
+> [Learn about disaster recovery and geo-distribution](durable-functions-disaster-recovery-geo-distribution.md)

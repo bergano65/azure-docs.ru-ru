@@ -1,33 +1,33 @@
 ---
-title: Управление назначениями с помощью PowerShell
-description: Узнайте, как управлять назначениями схем с помощью официального модуля PowerShell для чертежей Azure, AZ. чертеж.
+title: How to manage assignments with PowerShell
+description: Learn how to manage blueprint assignments with the official Azure Blueprints PowerShell module, Az.Blueprint.
 ms.date: 09/30/2019
 ms.topic: conceptual
-ms.openlocfilehash: 98c2173568f65d029b00ca6c8b25d2195094a5e3
-ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
+ms.openlocfilehash: 00824ceed2e86683a86b172e529ba88704dbb050
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73961618"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74210318"
 ---
-# <a name="how-to-manage-assignments-with-powershell"></a>Управление назначениями с помощью PowerShell
+# <a name="how-to-manage-assignments-with-powershell"></a>How to manage assignments with PowerShell
 
-Назначение схемы можно управлять с помощью модуля **AZ. чертеж** Azure PowerShell. Модуль поддерживает выборку, создание, обновление и удаление назначений. Модуль также может получать сведения о существующих определениях схем. В этой статье описывается, как установить модуль и приступить к его использованию.
+A blueprint assignment can be managed using the **Az.Blueprint** Azure PowerShell module. The module supports fetching, creating, updating, and removing assignments. The module can also fetch details on existing blueprint definitions. This article covers how to install the module and start using it.
 
-## <a name="add-the-azblueprint-module"></a>Добавьте модуль AZ. чертеж
+## <a name="add-the-azblueprint-module"></a>Add the Az.Blueprint module
 
-Чтобы разрешить Azure PowerShell управлять назначениями схем, необходимо добавить модуль. Этот модуль можно использовать с локально установленной средой PowerShell, с [Azure Cloud Shell](https://shell.azure.com) либо с [образом Docker Azure PowerShell](https://hub.docker.com/r/azuresdk/azure-powershell/).
+To enable Azure PowerShell to manage blueprint assignments, the module must be added. Этот модуль можно использовать с локально установленной средой PowerShell, с [Azure Cloud Shell](https://shell.azure.com) либо с [образом Docker Azure PowerShell](https://hub.docker.com/r/azuresdk/azure-powershell/).
 
 ### <a name="base-requirements"></a>Основные требования
 
-Для модуля "проекты Azure" требуется следующее программное обеспечение:
+The Azure Blueprints module requires the following software:
 
-- Azure PowerShell 1.5.0 или более поздней версии. Если она еще не установлена, выполните [эти инструкции](/powershell/azure/install-az-ps).
-- Модуль PowerShellGet 2.0.1 или более поздней версии. Если он еще не установлен или не обновлен, выполните [эти инструкции](/powershell/gallery/installing-psget).
+- Azure PowerShell 1.5.0 or higher. Если она еще не установлена, выполните [эти инструкции](/powershell/azure/install-az-ps).
+- Модуль PowerShellGet 2.0.1 или более поздней версии. Если он еще не установлен или не обновлен, выполните [эти инструкции](/powershell/scripting/gallery/installing-psget).
 
 ### <a name="install-the-module"></a>Установка модуля
 
-Модуль чертежей для PowerShell — **AZ. чертеж**.
+The Blueprints module for PowerShell is **Az.Blueprint**.
 
 1. Запустите следующие команды из командной строки PowerShell **с правами администратора**.
 
@@ -37,21 +37,21 @@ ms.locfileid: "73961618"
    ```
 
    > [!NOTE]
-   > Если **AZ. Accounts** уже установлено, то для принудительной установки может потребоваться использовать `-AllowClobber`.
+   > If **Az.Accounts** is already installed, it may be necessary to use `-AllowClobber` to force the installation.
 
-1. Убедитесь, что модуль импортирован и является правильной версией (0.2.6):
+1. Validate that the module has been imported and is the correct version (0.2.6):
 
    ```azurepowershell-interactive
    # Get a list of commands for the imported Az.Blueprint module
    Get-Command -Module 'Az.Blueprint' -CommandType 'Cmdlet'
    ```
 
-## <a name="get-blueprint-definitions"></a>Получение определений схем
+## <a name="get-blueprint-definitions"></a>Get blueprint definitions
 
-Первый шаг для работы с назначением часто получает ссылку на определение схемы.
-Командлет `Get-AzBlueprint` возвращает одно или несколько определений схем. Командлет может получать определения схем из группы управления, используя `-ManagementGroupId {mgId}` или подписку с `-SubscriptionId {subId}`. Параметр **Name** получает определение схемы, но должен использоваться с **ManagementGroupId** или **SubscriptionId**. **Версию** можно использовать с **именем** , чтобы более явно определить, какое определение схемы возвращается. Вместо **версии**параметр `-LatestPublished` извлекает последнюю опубликованную версию.
+The first step to working with an assignment is often getting a reference to a blueprint definition.
+The `Get-AzBlueprint` cmdlet gets one or more blueprint definitions. The cmdlet can get blueprint definitions from a management group with `-ManagementGroupId {mgId}` or a subscription with `-SubscriptionId {subId}`. The **Name** parameter gets a blueprint definition, but must be used with **ManagementGroupId** or **SubscriptionId**. **Version** can be used with **Name** to be more explicit about which blueprint definition is returned. Instead of **Version**, the switch `-LatestPublished` grabs the most recently published version.
 
-В следующем примере используется `Get-AzBlueprint` для получения всех версий определения схемы с именем "101-чертежи-Definition-Subscription" из конкретной подписки, представленной в виде `{subId}`:
+The following example uses `Get-AzBlueprint` to get all versions of a blueprint definition named '101-blueprints-definition-subscription' from a specific subscription represented as `{subId}`:
 
 ```azurepowershell-interactive
 # Login first with Connect-AzAccount if not using Cloud Shell
@@ -63,7 +63,7 @@ $blueprints = Get-AzBlueprint -SubscriptionId '{subId}' -Name '101-blueprints-de
 $blueprints
 ```
 
-Пример выходных данных для определения схемы с несколькими версиями выглядит следующим образом:
+The example output for a blueprint definition with multiple versions looks like this:
 
 ```output
 Name                 : 101-blueprints-definition-subscription
@@ -78,7 +78,7 @@ Parameters           : {storageAccount_storageAccountType, storageAccount_locati
 ResourceGroups       : ResourceGroup
 ```
 
-[Параметры](../concepts/parameters.md#blueprint-parameters) схемы для определения схемы можно расширить, чтобы предоставить дополнительные сведения.
+The [blueprint parameters](../concepts/parameters.md#blueprint-parameters) on the blueprint definition can be expanded to provide more information.
 
 ```azurepowershell-interactive
 $blueprints.Parameters
@@ -93,11 +93,11 @@ allowedlocations_listOfAllowedLocations                Microsoft.Azure.Commands.
 [Usergrouporapplicationname]:Reader_RoleAssignmentName Microsoft.Azure.Commands.Blueprint.Models.PSParameterDefinition
 ```
 
-## <a name="get-blueprint-assignments"></a>Получение назначений схем
+## <a name="get-blueprint-assignments"></a>Get blueprint assignments
 
-Если назначение схемы уже существует, можно получить ссылку на него с помощью командлета `Get-AzBlueprintAssignment`. Командлет принимает **SubscriptionId** и **Name** как необязательные параметры. Если значение **SubscriptionId** не указано, используется текущий контекст подписки.
+If the blueprint assignment already exists, you can get a reference to it with the `Get-AzBlueprintAssignment` cmdlet. The cmdlet takes **SubscriptionId** and **Name** as optional parameters. If **SubscriptionId** isn't specified, the current subscription context is used.
 
-В следующем примере `Get-AzBlueprintAssignment` используется для получения одного назначения схемы с именем "назначение-блокировка-ресурс-группы" из конкретной подписки, представленной в виде `{subId}`:
+The following example uses `Get-AzBlueprintAssignment` to get a single blueprint assignment named 'Assignment-lock-resource-groups' from a specific subscription represented as `{subId}`:
 
 ```azurepowershell-interactive
 # Login first with Connect-AzAccount if not using Cloud Shell
@@ -109,7 +109,7 @@ $blueprintAssignment = Get-AzBlueprintAssignment -SubscriptionId '{subId}' -Name
 $blueprintAssignment
 ```
 
-Пример выходных данных для назначения схемы выглядит следующим образом:
+The example output for a blueprint assignment looks like this:
 
 ```output
 Name              : Assignment-lock-resource-groups
@@ -123,52 +123,52 @@ Parameters        :
 ResourceGroups    : ResourceGroup
 ```
 
-## <a name="create-blueprint-assignments"></a>Создание назначений схем
+## <a name="create-blueprint-assignments"></a>Create blueprint assignments
 
-Если назначение схемы еще не существует, его можно создать с помощью командлета `New-AzBlueprintAssignment`. Этот командлет использует следующие параметры:
+If the blueprint assignment doesn't exist yet, you can create it with the `New-AzBlueprintAssignment` cmdlet. This cmdlet uses the following parameters:
 
-- **Имя** [обязательный]
-  - Задает имя назначения схемы
-  - Должно быть уникальным и не существовать в **SubscriptionId**
-- **Чертеж** [обязательный]
-  - Указывает определение схемы для назначения
-  - Получение ссылочного объекта с помощью `Get-AzBlueprint`
-- **Расположение** [обязательный]
-  - Задает регион для назначаемого системой объекта развертывания управляемого удостоверения и подписки, который будет создан в
-- **Подписка** (необязательно)
-  - Указывает подписку, в которой развернуто назначение
-  - Если не указано, по умолчанию используется текущий контекст подписки
-- **Блокировка** (необязательно)
-  - Определяет [блокировку ресурсов](../concepts/resource-locking.md) схемы для использования в развернутых ресурсах
-  - Поддерживаемые параметры: _None_, _аллресаурцесреадонли_, _аллресаурцесдонотделете_
-  - Если не указано, по умолчанию используется значение _None_
-- **Системассигнедидентити** (необязательно)
-  - Выберите, чтобы создать управляемое системой удостоверение для назначения и развертывания ресурсов.
-  - Значение по умолчанию для набора параметров "Identity"
-  - Не может использоваться с **усерассигнедидентити**
-- **Усерассигнедидентити** (необязательно)
-  - Указывает назначаемое пользователем управляемое удостоверение, которое будет использоваться для назначения и развертывания ресурсов.
-  - Часть набора параметров "Identity"
-  - Не может использоваться с **системассигнедидентити**
-- **Параметр** (необязательно)
-  - [Хэш-таблица](/powershell/module/microsoft.powershell.core/about/about_hash_tables) пар "ключ-значение" для установки [динамических параметров](../concepts/parameters.md#dynamic-parameters) в назначении схемы
-  - Значение по умолчанию для динамического параметра — это **DefaultValue** в определении
-  - Если параметр не указан и не имеет **DefaultValue**, параметр не является обязательным.
+- **Name** [required]
+  - Specifies the name of the blueprint assignment
+  - Must be unique and not already exist in **SubscriptionId**
+- **Blueprint** [required]
+  - Specifies the blueprint definition to assign
+  - Use `Get-AzBlueprint` to get the reference object
+- **Location** [required]
+  - Specifies the region for the system-assigned managed identity and subscription deployment object to be created in
+- **Subscription** (optional)
+  - Specifies the subscription the assignment is deployed to
+  - If not provided, defaults to the current subscription context
+- **Lock** (optional)
+  - Defines the [blueprint resource locking](../concepts/resource-locking.md) to use for deployed resources
+  - Supported options: _None_, _AllResourcesReadOnly_, _AllResourcesDoNotDelete_
+  - If not provided, defaults to _None_
+- **SystemAssignedIdentity** (optional)
+  - Select to create a system-assigned managed identity for the assignment and to deploy the resources
+  - Default for the "identity" parameter set
+  - Can't be used with **UserAssignedIdentity**
+- **UserAssignedIdentity** (optional)
+  - Specifies the user-assigned managed identity to use for the assignment and to deploy the resources
+  - Part of the "identity" parameter set
+  - Can't be used with **SystemAssignedIdentity**
+- **Parameter** (optional)
+  - A [hash table](/powershell/module/microsoft.powershell.core/about/about_hash_tables) of key/value pairs for setting [dynamic parameters](../concepts/parameters.md#dynamic-parameters) on the blueprint assignment
+  - Default for a dynamic parameter is the **defaultValue** in the definition
+  - If a parameter isn't provided and has no **defaultValue**, the parameter isn't optional
 
     > [!NOTE]
-    > **Параметр** не поддерживает секурестрингс.
+    > **Parameter** doesn't support secureStrings.
 
-- **Ресаурцеграуппараметер** (необязательно)
-  - [Хэш-таблица](/powershell/module/microsoft.powershell.core/about/about_hash_tables) артефактов группы ресурсов
-  - Каждый заполнитель артефакта группы ресурсов имеет пары "ключ-значение" для динамического задания **имени** и **расположения** в этом артефакте группы ресурсов.
-  - Если параметр группы ресурсов не указан и не имеет **DefaultValue**, параметр группы ресурсов не является обязательным.
-- **Ассигнментфиле** (необязательно)
-  - Путь к представлению JSON-файла для назначения схемы
-  - Этот параметр является частью набора параметров PowerShell, который включает в себя только **имя**, **проект**и идентификатор **подписки**, а также общие параметры.
+- **ResourceGroupParameter** (optional)
+  - A [hash table](/powershell/module/microsoft.powershell.core/about/about_hash_tables) of resource group artifacts
+  - Each resource group artifact placeholder has key/value pairs for dynamically setting **Name** and **Location** on that resource group artifact
+  - If a resource group parameter isn't provided and has no **defaultValue**, the resource group parameter isn't optional
+- **AssignmentFile** (optional)
+  - The path to a JSON file representation of a blueprint assignment
+  - This parameter is part of a PowerShell parameter set that only includes **Name**, **Blueprint**, and **SubscriptionId**, plus the common parameters.
 
-### <a name="example-1-provide-parameters"></a>Пример 1. Указание параметров
+### <a name="example-1-provide-parameters"></a>Example 1: Provide parameters
 
-В следующем примере создается новое назначение версии "1,1" определения схемы "My-чертеж", полученного с `Get-AzBlueprint`, устанавливается расположение управляемого удостоверения и объекта назначения в "westus2", блокируются ресурсы с помощью _аллресаурцесреадонли_и задаются хэш-таблицы для **параметров** и **ресаурцеграуппараметер** в конкретной подписке, представленной как `{subId}`.
+The following example creates a new assignment of version '1.1' of the 'my-blueprint' blueprint definition fetched with `Get-AzBlueprint`, sets the managed identity and assignment object location to 'westus2', locks the resources with _AllResourcesReadOnly_, and sets the hash tables for both **Parameter** and **ResourceGroupParameter** on specific subscription represented as `{subId}`:
 
 ```azurepowershell-interactive
 # Login first with Connect-AzAccount if not using Cloud Shell
@@ -189,7 +189,7 @@ $bpAssignment = New-AzBlueprintAssignment -Name 'my-blueprint-assignment' -Bluep
     -Parameter $bpParameters -ResourceGroupParameter $bpRGParameters
 ```
 
-Пример выходных данных для создания назначения схемы выглядит следующим образом:
+The example output for creating a blueprint assignment looks like this:
 
 ```output
 Name              : my-blueprint-assignment
@@ -203,10 +203,10 @@ Parameters        : {storageAccount_storageAccountType}
 ResourceGroups    : ResourceGroup
 ```
 
-### <a name="example-2-use-a-json-assignment-definition-file"></a>Пример 2. Использование файла определения назначения JSON
+### <a name="example-2-use-a-json-assignment-definition-file"></a>Example 2: Use a JSON assignment definition file
 
-В следующем примере создается почти такое же назначение, как и в [примере 1](#example-1-provide-parameters).
-Вместо передачи параметров в командлет, в примере показано использование файла определения назначения JSON и параметра **ассигнментфиле** . Кроме того, свойство **ексклудедпринЦипалс** настраивается как часть **блокировок**. Отсутствует параметр PowerShell для **ексклудедпринЦипалс** , и свойство можно настроить только с помощью файла определения назначения JSON.
+The following example creates nearly the same assignment as [Example 1](#example-1-provide-parameters).
+Instead of passing parameters to the cmdlet, the example shows use of a JSON assignment definition file and the **AssignmentFile** parameter. Additionally, the **excludedPrincipals** property is configured as part of **locks**. There isn't a PowerShell parameter for **excludedPrincipals** and the property can only be configured by setting it through the JSON assignment definition file.
 
 ```json
 {
@@ -247,50 +247,50 @@ $bpAssignment = New-AzBlueprintAssignment -Name 'my-blueprint-assignment' -Subsc
     -AssignmentFile '.\assignment.json'
 ```
 
-## <a name="update-blueprint-assignments"></a>Обновление назначений схем
+## <a name="update-blueprint-assignments"></a>Update blueprint assignments
 
-Иногда необходимо обновить назначение схемы, которое уже было создано. Это действие обрабатывает командлет `Set-AzBlueprintAssignment`. Командлет принимает большинство тех же параметров, что и командлет `New-AzBlueprintAssignment`, что позволяет обновлять все, что было установлено в назначении. Исключениями являются _имя_, _проект_и идентификатор _подписки_. Обновляются только указанные значения.
+Sometimes it's necessary to update a blueprint assignment that has already been created. The `Set-AzBlueprintAssignment` cmdlet handles this action. The cmdlet takes most of the same parameters that the `New-AzBlueprintAssignment` cmdlet does, allowing anything that was set on the assignment to be updated. The exceptions are the _Name_, _Blueprint_, and _SubscriptionId_. Only the values provided are updated.
 
-Сведения о том, что происходит при обновлении назначения схемы, см. в разделе [правила обновления назначений](./update-existing-assignments.md#rules-for-updating-assignments).
+To understand what happens when updating a blueprint assignment, see [rules for updating assignments](./update-existing-assignments.md#rules-for-updating-assignments).
 
-- **Имя** [обязательный]
-  - Задает имя обновляемого назначения схемы
-  - Используется для нахождение назначения для обновления, а не для изменения назначения
-- **Чертеж** [обязательный]
-  - Задает определение схемы для назначения схемы
-  - Получение ссылочного объекта с помощью `Get-AzBlueprint`
-  - Используется для нахождение назначения для обновления, а не для изменения назначения
-- **Расположение** (необязательно)
-  - Задает регион для назначаемого системой объекта развертывания управляемого удостоверения и подписки, который будет создан в
-- **Подписка** (необязательно)
-  - Указывает подписку, в которой развернуто назначение
-  - Если не указано, по умолчанию используется текущий контекст подписки
-  - Используется для нахождение назначения для обновления, а не для изменения назначения
-- **Блокировка** (необязательно)
-  - Определяет [блокировку ресурсов](../concepts/resource-locking.md) схемы для использования в развернутых ресурсах
-  - Поддерживаемые параметры: _None_, _аллресаурцесреадонли_, _аллресаурцесдонотделете_
-- **Системассигнедидентити** (необязательно)
-  - Выберите, чтобы создать управляемое системой удостоверение для назначения и развертывания ресурсов.
-  - Значение по умолчанию для набора параметров "Identity"
-  - Не может использоваться с **усерассигнедидентити**
-- **Усерассигнедидентити** (необязательно)
-  - Указывает назначаемое пользователем управляемое удостоверение, которое будет использоваться для назначения и развертывания ресурсов.
-  - Часть набора параметров "Identity"
-  - Не может использоваться с **системассигнедидентити**
-- **Параметр** (необязательно)
-  - [Хэш-таблица](/powershell/module/microsoft.powershell.core/about/about_hash_tables) пар "ключ-значение" для установки [динамических параметров](../concepts/parameters.md#dynamic-parameters) в назначении схемы
-  - Значение по умолчанию для динамического параметра — это **DefaultValue** в определении
-  - Если параметр не указан и не имеет **DefaultValue**, параметр не является обязательным.
+- **Name** [required]
+  - Specifies the name of the blueprint assignment to update
+  - Used to locate the assignment to update, not to change the assignment
+- **Blueprint** [required]
+  - Specifies the blueprint definition of the blueprint assignment
+  - Use `Get-AzBlueprint` to get the reference object
+  - Used to locate the assignment to update, not to change the assignment
+- **Location** (optional)
+  - Specifies the region for the system-assigned managed identity and subscription deployment object to be created in
+- **Subscription** (optional)
+  - Specifies the subscription the assignment is deployed to
+  - If not provided, defaults to the current subscription context
+  - Used to locate the assignment to update, not to change the assignment
+- **Lock** (optional)
+  - Defines the [blueprint resource locking](../concepts/resource-locking.md) to use for deployed resources
+  - Supported options: _None_, _AllResourcesReadOnly_, _AllResourcesDoNotDelete_
+- **SystemAssignedIdentity** (optional)
+  - Select to create a system-assigned managed identity for the assignment and to deploy the resources
+  - Default for the "identity" parameter set
+  - Can't be used with **UserAssignedIdentity**
+- **UserAssignedIdentity** (optional)
+  - Specifies the user-assigned managed identity to use for the assignment and to deploy the resources
+  - Part of the "identity" parameter set
+  - Can't be used with **SystemAssignedIdentity**
+- **Parameter** (optional)
+  - A [hash table](/powershell/module/microsoft.powershell.core/about/about_hash_tables) of key/value pairs for setting [dynamic parameters](../concepts/parameters.md#dynamic-parameters) on the blueprint assignment
+  - Default for a dynamic parameter is the **defaultValue** in the definition
+  - If a parameter isn't provided and has no **defaultValue**, the parameter isn't optional
 
     > [!NOTE]
-    > **Параметр** не поддерживает секурестрингс.
+    > **Parameter** doesn't support secureStrings.
 
-- **Ресаурцеграуппараметер** (необязательно)
-  - [Хэш-таблица](/powershell/module/microsoft.powershell.core/about/about_hash_tables) артефактов группы ресурсов
-  - Каждый заполнитель артефакта группы ресурсов имеет пары "ключ-значение" для динамического задания **имени** и **расположения** в этом артефакте группы ресурсов.
-  - Если параметр группы ресурсов не указан и не имеет **DefaultValue**, параметр группы ресурсов не является обязательным.
+- **ResourceGroupParameter** (optional)
+  - A [hash table](/powershell/module/microsoft.powershell.core/about/about_hash_tables) of resource group artifacts
+  - Each resource group artifact placeholder has key/value pairs for dynamically setting **Name** and **Location** on that resource group artifact
+  - If a resource group parameter isn't provided and has no **defaultValue**, the resource group parameter isn't optional
 
-В следующем примере показано, как обновить назначение версии "1,1" определения схемы "My-чертеж", полученного с `Get-AzBlueprint`, изменив режим блокировки:
+The following example updates the assignment of version '1.1' of the 'my-blueprint' blueprint definition fetched with `Get-AzBlueprint` by changing the lock mode:
 
 ```azurepowershell-interactive
 # Login first with Connect-AzAccount if not using Cloud Shell
@@ -303,7 +303,7 @@ $bpAssignment = Set-AzBlueprintAssignment -Name 'my-blueprint-assignment' -Bluep
     -SubscriptionId '{subId}' -Lock AllResourcesDoNotDelete
 ```
 
-Пример выходных данных для создания назначения схемы выглядит следующим образом:
+The example output for creating a blueprint assignment looks like this:
 
 ```output
 Name              : my-blueprint-assignment
@@ -317,11 +317,11 @@ Parameters        : {storageAccount_storageAccountType}
 ResourceGroups    : ResourceGroup
 ```
 
-## <a name="remove-blueprint-assignments"></a>Удалить назначения чертежей
+## <a name="remove-blueprint-assignments"></a>Remove blueprint assignments
 
-Когда необходимо удалить назначение схемы, командлет `Remove-AzBlueprintAssignment` обрабатывает это действие. Командлет принимает либо **имя** , либо **InputObject** , чтобы указать назначение схемы для удаления. Идентификатор **SubscriptionId** является _обязательным_ и должен быть указан во всех случаях.
+When it's time for a blueprint assignment to be removed, the `Remove-AzBlueprintAssignment` cmdlet handles this action. The cmdlet takes either **Name** or **InputObject** to specify which blueprint assignment to remove. **SubscriptionId** is _required_ and must be provided in all cases.
 
-В следующем примере выполняется выборка существующего назначения схемы с `Get-AzBlueprintAssignment`, а затем она удаляется из конкретной подписки, представленной в виде `{subId}`.
+The following example fetches an existing blueprint assignment with `Get-AzBlueprintAssignment` and then removes it from the specific subscription represented as `{subId}`:
 
 ```azurepowershell-interactive
 # Login first with Connect-AzAccount if not using Cloud Shell
@@ -333,9 +333,9 @@ $blueprintAssignment = Get-AzBlueprintAssignment -Name 'Assignment-lock-resource
 Remove-AzBlueprintAssignment -InputObject $blueprintAssignment -SubscriptionId '{subId}'
 ```
 
-## <a name="end-to-end-code-example"></a>Пример сквозного кода
+## <a name="end-to-end-code-example"></a>End-to-end code example
 
-Выполнив все шаги вместе, в следующем примере получается определение схемы, затем создается, обновляется и удаляется назначение схемы в конкретной подписке, представленной в виде `{subId}`:
+Bringing all the steps together, the following example gets the blueprint definition, then creates, updates, and removes a blueprint assignment in the specific subscription represented as `{subId}`:
 
 ```azurepowershell-interactive
 # Login first with Connect-AzAccount if not using Cloud Shell
@@ -375,7 +375,7 @@ Remove-AzBlueprintAssignment -InputObject $bpAssignment -SubscriptionId '{subId}
 #endregion
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь со сведениями о [жизненном цикле схем](../concepts/lifecycle.md).
 - Узнайте, как использовать [статические и динамические параметры](../concepts/parameters.md).

@@ -448,12 +448,12 @@
           href: control-flow-get-metadata-activity.md
         - name: Действие условия If
           href: control-flow-if-condition-activity.md
-        - name: Действие переключения
-          href: control-flow-switch-activity.md
         - name: Действие поиска
           href: control-flow-lookup-activity.md
         - name: Действие задания переменной
           href: control-flow-set-variable-activity.md
+        - name: Действие переключения
+          href: control-flow-switch-activity.md
         - name: Действие Until
           href: control-flow-until-activity.md
         - name: Действие проверки
