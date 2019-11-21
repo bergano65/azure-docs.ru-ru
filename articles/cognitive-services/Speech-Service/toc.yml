@@ -468,6 +468,8 @@
   items:
     - name: Поддержка
       href: support.md
+    - name: Регионы
+      href: regions.md
     - name: Цены и ограничения
       href: 'https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/'
     - name: Соответствие нормативным требованиям
