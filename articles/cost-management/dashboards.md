@@ -7,15 +7,15 @@ author: bandersmsft
 ms.author: banders
 ms.date: 05/21/2019
 ms.topic: conceptual
-ms.service: cost-management
+ms.service: cost-management-billing
 manager: vitavor
 ms.custom: seodec18
-ms.openlocfilehash: b83368b913bf1303b49e3a56e3a15248af222cbe
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c0651dd006585e4ed5b8b888d6e55974c5c45a1d
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66002055"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74230074"
 ---
 # <a name="view-key-cost-metrics-with-dashboards"></a>Представление ключевых метрик затрат с помощью панелей мониторинга
 
@@ -204,7 +204,7 @@ ms.locfileid: "66002055"
 Это мини-приложение отображает количество запущенных экземпляров на основании тренда использования за последние 30 дней.
 - Щелкните мини-приложение, чтобы открыть отчет "Экземпляры за период времени".
 
-### <a name="disks"></a>диски;
+### <a name="disks"></a>Диски
 Это мини-приложение показывает общее количество и тома используемых и доступных дисков.
 - Щелкните мини-приложение, чтобы открыть отчет «Активные диски».
 

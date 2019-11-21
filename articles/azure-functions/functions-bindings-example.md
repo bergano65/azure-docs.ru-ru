@@ -1,24 +1,20 @@
 ---
-title: Пример триггера и привязки функций Azure
-description: Научитесь настраивать привязки функций Azure.
-services: functions
-documentationcenter: na
+title: Azure Functions trigger and binding example
+description: Learn to configure Azure Function bindings
 author: craigshoemaker
-manager: gwallace
-ms.service: azure-functions
 ms.topic: reference
 ms.date: 02/18/2019
 ms.author: cshoe
-ms.openlocfilehash: d1959792823e04cf34d65ab775ae8c51e741e293
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 8685c0fe02ad6c68918736e857c2015e2bfb4595
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70097471"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74227239"
 ---
-# <a name="azure-functions-trigger-and-binding-example"></a>Пример триггера и привязки функций Azure
+# <a name="azure-functions-trigger-and-binding-example"></a>Azure Functions trigger and binding example
 
-В этой статье показано, как настроить [триггер и привязки](./functions-triggers-bindings.md) в функции Azure.
+This article demonstrates how to configure a [trigger and bindings](./functions-triggers-bindings.md) in an Azure Function.
 
 Предположим, вам нужно, чтобы каждый раз, когда в хранилище очередей Azure появляется новое сообщение, создавалась строка в хранилище таблиц Azure. Этот сценарий можно реализовать с помощью триггера для хранилища очередей Azure и выходной привязки хранилища таблиц Azure. 
 
@@ -86,7 +82,7 @@ public class Person
 
 ## <a name="javascript-example"></a>Пример JavaScript
 
-Один и тот же файл *Function. JSON* можно использовать с функцией JavaScript:
+The same *function.json* file can be used with a JavaScript function:
 
 ```javascript
 // From an incoming queue message that is a JSON object, add fields and write to Table Storage
@@ -104,7 +100,7 @@ function generateRandomId() {
 }
 ```
 
-## <a name="class-library-example"></a>Пример библиотеки классов
+## <a name="class-library-example"></a>Class library example
 
 В библиотеке классов эта информация о триггере и привязке &mdash; имена очередей и таблиц, учетные записи хранения, входные и выходные параметры функции &mdash; передаются в виде атрибутов вместо файла function.json. Ниже приведен пример:
 
@@ -134,9 +130,9 @@ public class Person
 }
 ```
 
-Теперь у вас есть рабочая функция, активируемая очередью Azure, которая выводит данные в хранилище таблиц Azure.
+You now have a working function that is triggered by an Azure Queue and outputs data to Azure Table storage.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Шаблоны выражений привязки функций Azure](./functions-bindings-expressions-patterns.md)
+> [Azure Functions binding expression patterns](./functions-bindings-expressions-patterns.md)

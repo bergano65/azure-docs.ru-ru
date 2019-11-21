@@ -1,5 +1,5 @@
 ---
-title: Создание отказоустойчивой стратегии управления доступом — Azure Active Directory
+title: Create a resilient access control management strategy - Azure AD
 description: Этот документ содержит руководство о выборе организацией стратегий для уменьшения риска блокировки во время непредвиденных сбоев
 services: active-directory
 author: martincoetzer
@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 12/19/2018
 ms.author: martinco
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 675e970bbdaeb035273eb87394dda610e070aa39
-ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+ms.openlocfilehash: 478cccb3a8235291a4c4f0566cd130b4b75dbe6b
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70125107"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74208555"
 ---
 # <a name="create-a-resilient-access-control-management-strategy-with-azure-active-directory"></a>Создание устойчивой стратегии управления доступом с помощью Azure Active Directory
 
@@ -37,8 +37,8 @@ ms.locfileid: "70125107"
 В этом документе четыре основных вывода:
 
 * Избегайте блокировки администратора с помощью учетных записей доступа в чрезвычайных ситуациях.
-* Реализуйте MFA с помощью условного доступа (CA), а не для многопользовательского MFA.
-* Устранение блокировок пользователей с помощью нескольких элементов управления условным доступом (CA).
+* Implement MFA using Conditional Access (CA) rather than per-user MFA.
+* Mitigate user lockout by using multiple Conditional Access (CA) controls.
 * Уменьшите риск блокировки пользователя, подготовив множество методов проверки подлинности или эквиваленты для каждого пользователя.
 
 ## <a name="before-a-disruption"></a>Перед сбоем
@@ -49,8 +49,8 @@ ms.locfileid: "70125107"
 
  Удостоверение — это плоскость управления пользователей, обращающихся к приложениям и ресурсам. Ваше системное удостоверение контролирует, какие пользователи получают доступ к приложениям и при каких условиях (например, элементы управления доступом или требования к проверке подлинности) они это делают. Если пользователи не могут выполнить проверку подлинности в соответствии с одним или несколькими требованиями к аутентификации или управлению доступом из-за непредвиденных обстоятельств, организации могут столкнуться с одной или обеими из этих проблем:
 
-* **Блокировка администратора:** администраторы не могут управлять клиентом или службами.
-* **Блокировка пользователя:** пользователи не имеют доступ к приложениям или ресурсам.
+* **Administrator lockout:** Administrators can’t manage the tenant or services.
+* **User lockout:** Users can’t access apps or resources.
 
 ### <a name="administrator-lockout-contingency"></a>Непредвиденный случай блокировки администратора
 
@@ -58,11 +58,11 @@ ms.locfileid: "70125107"
 
 ### <a name="mitigating-user-lockout"></a>Уменьшение риска блокировки пользователя
 
- Чтобы снизить риск блокировки пользователей, используйте политики условного доступа с несколькими элементами управления, чтобы предоставить пользователям возможность выбора способа доступа к приложениям и ресурсам. Предоставляя пользователю выбор между, например, входом с MFA **или** входом с управляемого устройства **или** входом из корпоративной сети, если один из элементов управления доступом недоступен, у пользователя есть другие варианты, чтобы продолжить работу.
+ To mitigate the risk of user lockout, use Conditional Access policies with multiple controls to give users a choice of how they will access apps and resources. Предоставляя пользователю выбор между, например, входом с MFA **или** входом с управляемого устройства **или** входом из корпоративной сети, если один из элементов управления доступом недоступен, у пользователя есть другие варианты, чтобы продолжить работу.
 
 #### <a name="microsoft-recommendations"></a>Рекомендации корпорации Майкрософт
 
-Включите следующие элементы управления доступом в существующие политики условного доступа для Организации:
+Incorporate the following access controls in your existing Conditional Access policies for organization:
 
 1. Подготовьте для каждого пользователя несколько методов проверки подлинности, которые используют разные коммуникационные каналы, например приложение Microsoft Authenticator (онлайн), OATH-токен (генерированный на устройстве) и SMS (телефонный).
 2. Разверните Windows Hello для бизнеса на устройствах Windows 10, чтобы соответствовать требованиям MFA непосредственно после входа в систему.
@@ -77,23 +77,23 @@ ms.locfileid: "70125107"
 
 **Набор политик устранения рисков условного доступа:**
 
-* Политика 1: блокировка доступа для пользователей за пределами целевых групп
-  * Пользователи и группы: включает всех пользователей, исключает AppUsers, CoreAdmins и EmergencyAccess
-  * Облачные приложения: включает все приложения
-  * Условия: (нет)
-  * Предоставить управление: Заблокировать
-* Политика 2: предоставление доступа к AppUsers, требующее MFA ИЛИ доверенное устройство.
-  * Пользователи и группы: включает AppUsers, исключает CoreAdmins и EmergencyAccess
-  * Облачные приложения: включает все приложения
-  * Условия: (нет)
-  * Предоставить управление: предоставляет доступ, требует многофакторную проверку подлинности и совместимость устройства. Для нескольких элементов управления: требует один из выбранных элементов управления.
+* Policy 1: Block access to people outside target groups
+  * Users and Groups: Include all users. исключает AppUsers, CoreAdmins и EmergencyAccess
+  * Cloud Apps: Include all apps
+  * Conditions: (None)
+  * Grant Control: Block
+* Policy 2: Grant access to AppUsers requiring MFA OR trusted device.
+  * Users and Groups: Include AppUsers. исключает CoreAdmins и EmergencyAccess
+  * Cloud Apps: Include all apps
+  * Conditions: (None)
+  * Grant Control: Grant access, require multi-factor authentication, require device to be compliant. For multiple controls: Require one of the selected controls.
 
 ### <a name="contingencies-for-user-lockout"></a>Непредвиденные случаи для блокировки пользователя
 
 Кроме того, ваша организация может также создать политики на случай непредвиденных обстоятельств. Для создания политик на случай непредвиденных обстоятельств необходимо определить критерии компромисса между непрерывностью бизнеса, эксплуатационными затратами, финансовыми затратами и рисками безопасности. Например, вы можете активировать политику на случай непредвиденных обстоятельств только для подмножества пользователей, приложений, клиентов или из подмножества расположений. Политики на случай непредвиденных обстоятельств предоставят администраторам и пользователям доступ к приложениям и ресурсам во время сбоя, когда не был применен метод устранения рисков.
 Распознавание вашего воздействия во время сбоя помогает снизить риск и является критически важной частью вашего процесса планирования. Чтобы создать план на непредвиденные случаи, сначала определите следующие бизнес-требования вашей организации:
 
-1. Заранее определите ваши критически важные приложения. К каким приложениям вы должны предоставить доступ, даже с низким уровнем риска или состояния безопасности? Составьте список этих приложений и убедитесь, что все другие заинтересованные лица (бизнес, безопасность, юристы, руководство) согласны с тем, что если все управление доступом исчезнет, эти приложения все равно должны продолжать работу. В конечном итоге вы, скорее всего, получите такие категории:
+1. Determine your mission critical apps ahead of time: What are the apps that you must give access to, even with a lower risk/security posture? Составьте список этих приложений и убедитесь, что все другие заинтересованные лица (бизнес, безопасность, юристы, руководство) согласны с тем, что если все управление доступом исчезнет, эти приложения все равно должны продолжать работу. В конечном итоге вы, скорее всего, получите такие категории:
    * **Категория 1 — критически важные приложения**, которые не могут быть недоступны больше чем несколько минут, например приложения, которые напрямую влияют на доходы организации.
    * **Категория 2 — важные приложения**, которые должны быть доступны бизнесу в течение нескольких часов.
    * **Категория 3 — приложения с низким приоритетом**, которые могут выдержать сбой на несколько дней.
@@ -109,7 +109,7 @@ ms.locfileid: "70125107"
 
 #### <a name="microsoft-recommendations"></a>Рекомендации корпорации Майкрософт
 
-Политика условного доступа на непредвиденные случаи — это **отключенная политика** , которая не охватывает Azure MFA, сторонние MFA, основанные на рисках или элементы управления на устройствах. Затем, когда ваша организация решит активировать план на непредвиденные случаи, администраторы могут включить эту политику и отключить обычные политики на основе контроля.
+A contingency Conditional Access policy is a **disabled policy** that omits Azure MFA, third-party MFA, risk-based or device-based controls. Затем, когда ваша организация решит активировать план на непредвиденные случаи, администраторы могут включить эту политику и отключить обычные политики на основе контроля.
 
 >[!IMPORTANT]
 > Отключение политик, которые обеспечивают безопасность для ваших пользователей, даже временно, уменьшит ваше состояние безопасности, пока действует план на непредвиденные случаи.
@@ -117,13 +117,13 @@ ms.locfileid: "70125107"
 * Настройте набор резервных политик, если нарушение доступа к одному типу учетных данных или одному механизму контроля доступа влияет на доступ к вашим приложениям. Настройте политику в отключенном состоянии, которая требует присоединения к домену в качестве элемента управления, в качестве резервной копии для активной политики, для которой требуется сторонний поставщик MFA.
 * Снизьте риск того, что плохие субъекты будут угадывать пароли, когда не требуется MFA, следуя рекомендациям, изложенным в руководстве по паролями [здесь](https://aka.ms/passwordguidance).
 * Разверните [Самостоятельный сброс пароля (SSPR) в Azure AD](https://docs.microsoft.com/azure/active-directory/authentication/quickstart-sspr) и [Защита паролем Azure AD](https://docs.microsoft.com/azure/active-directory/authentication/howto-password-ban-bad-on-premises-deploy), чтобы убедиться, что пользователи не используют простой пароль и условия, которые вы запретили.
-* Если не достигнут определенный уровень проверки подлинности, используйте политики, которые ограничивают доступ в рамках приложения, вместо простого возврата к полному доступу. Пример:
+* Если не достигнут определенный уровень проверки подлинности, используйте политики, которые ограничивают доступ в рамках приложения, вместо простого возврата к полному доступу. Пример.
   * Настройте политику резервного копирования, которая отправляет утверждение ограниченного сеанса в Exchange и SharePoint.
   * Если ваша организация использует Microsoft Cloud App Security, рассмотрите возможность использования политики MCAS, и тогда MCAS разрешит доступ только для чтения, но не для передачи.
 * Присвойте имена политикам, чтобы их легко было найти во время сбоя. Включите следующие элементы в название политики.
   * *Номер метки* для политики.
-  * Текст для отображения этой политики только в аварийном режиме. Пример: **ВКЛЮЧИТЬ В АВАРИЙНОМ РЕЖИМЕ**.
-  * *Нарушение*, к которому оно относится. Пример: **Во время нарушения работы MFA**.
+  * Текст для отображения этой политики только в аварийном режиме. For example: **ENABLE IN EMERGENCY**
+  * *Нарушение*, к которому оно относится. For example: **During MFA Disruption**
   * *Порядковый номер* для отображения порядка активации политик.
   * *Приложения*, к которым он применяется.
   * *Элементы управления*, которые будут применены.
@@ -135,72 +135,72 @@ ms.locfileid: "70125107"
 EMnnn - ENABLE IN EMERGENCY: [Disruption][i/n] - [Apps] - [Controls] [Conditions]
 ```
 
-В следующем примере выполняются следующие действия: **Пример A — политика условного доступа на случай непредвиденных обстоятельств для восстановления доступа к критически важным приложениям для совместной работы** является обычным корпоративным непредвиденным случаем. В этом сценарии организации, как правило, требуется MFA для всего доступа к Exchange Online и SharePoint Online, и в этом случае нарушается работа поставщика MFA для клиента (например, Azure MFA, локальный поставщик MFA или сторонняя MFA). Эта политика устраняет сбой, предоставляя определенным целевым пользователям доступ к этим приложениям с доверенных устройств Windows только тогда, когда они обращаются к приложению из своей доверенной корпоративной сети. Она также исключит из этих ограничений учетные записи для экстренных ситуаций и основных администраторов. Затем целевые пользователи получат доступ к Exchange Online и SharePoint Online, тогда как другие пользователи по-прежнему не будут иметь доступ к приложениям из-за сбоя. В этом примере потребуется именованное расположение в сети **CorpNetwork** и группа безопасности **ContingencyAccess** с целевыми пользователями, группа с именем **CoreAdmins** с основными администраторами и группа с именем **EmergencyAccess** с учетными записями для аварийного доступа. На случай непредвиденных обстоятельств для обеспечения желаемого доступа необходимы четыре политики. 
+The following example: **Example A - Contingency CA policy to restore Access to mission-critical Collaboration Apps**, is a typical corporate contingency. В этом сценарии организации, как правило, требуется MFA для всего доступа к Exchange Online и SharePoint Online, и в этом случае нарушается работа поставщика MFA для клиента (например, Azure MFA, локальный поставщик MFA или сторонняя MFA). Эта политика устраняет сбой, предоставляя определенным целевым пользователям доступ к этим приложениям с доверенных устройств Windows только тогда, когда они обращаются к приложению из своей доверенной корпоративной сети. Она также исключит из этих ограничений учетные записи для экстренных ситуаций и основных администраторов. Затем целевые пользователи получат доступ к Exchange Online и SharePoint Online, тогда как другие пользователи по-прежнему не будут иметь доступ к приложениям из-за сбоя. В этом примере потребуется именованное расположение в сети **CorpNetwork** и группа безопасности **ContingencyAccess** с целевыми пользователями, группа с именем **CoreAdmins** с основными администраторами и группа с именем **EmergencyAccess** с учетными записями для аварийного доступа. На случай непредвиденных обстоятельств для обеспечения желаемого доступа необходимы четыре политики. 
 
 **Пример A — политики условного доступа на случай непредвиденных обстоятельств для восстановления доступа к критически важным приложениям для совместной работы:**
 
-* Политика 1: требуются присоединенные к домену устройства для Exchange и SharePoint
-  * Имя: EM001. ВКЛЮЧЕНИЕ В АВАРИЙНОМ РЕЖИМЕ. Нарушение работы MFA [1/4]. Exchange SharePoint. Требование гибридного присоединения Azure AD
-  * Пользователи и группы: включает ContingencyAccess, исключает CoreAdmins и EmergencyAccess
-  * Облачные приложения: Exchange Online и SharePoint Online
-  * Условия: Any
-  * Предоставить управление: требуется присоединение к домену
-  * Состояние: отключено
-* Политика 2: блокировка платформ, отличных от Windows
-  * Имя: EM002. ВКЛЮЧЕНИЕ В АВАРИЙНОМ РЕЖИМЕ. Нарушение работы MFA [2/4]. Exchange SharePoint. Блокировка доступа, кроме Windows
-  * Пользователи и группы: включает всех пользователей, исключает CoreAdmins и EmergencyAccess
-  * Облачные приложения: Exchange Online и SharePoint Online
-  * Условия: платформа устройства включает все платформы, кроме Windows
-  * Предоставить управление: Заблокировать
-  * Состояние: отключено
-* Политика 3: блокировка сетей, кроме CorpNetwork
-  * Имя: EM003. ВКЛЮЧЕНИЕ В АВАРИЙНОМ РЕЖИМЕ. Нарушение работы MFA [3/4]. Exchange SharePoint. Блокировка доступа, кроме корпоративной сети
-  * Пользователи и группы: включает всех пользователей, исключает CoreAdmins и EmergencyAccess
-  * Облачные приложения: Exchange Online и SharePoint Online
-  * Условия: расположения включают любое расположение, кроме CorpNetwork
-  * Предоставить управление: Заблокировать
-  * Состояние: отключено
-* Политика 4: явная блокировка EAS
-  * Имя: EM004. ВКЛЮЧЕНИЕ В АВАРИЙНОМ РЕЖИМЕ. Нарушение работы MFA [4/4]. Exchange. Блокировка EAS для всех пользователей
-  * Пользователи и группы: включает всех пользователей
-  * Облачные приложения: включает Exchange Online
-  * Условия: клиентские приложения: Exchange Active Sync
-  * Предоставить управление: Заблокировать
-  * Состояние: отключено
+* Policy 1: Require Domain Joined devices for Exchange and SharePoint
+  * Name: EM001 - ENABLE IN EMERGENCY: MFA Disruption[1/4] - Exchange SharePoint - Require Hybrid Azure AD Join
+  * Users and Groups: Include ContingencyAccess. исключает CoreAdmins и EmergencyAccess
+  * Cloud Apps: Exchange Online and SharePoint Online
+  * Conditions: Any
+  * Grant Control: Require Domain Joined
+  * State: Disabled
+* Policy 2: Block platforms other than Windows
+  * Name: EM002 - ENABLE IN EMERGENCY: MFA Disruption[2/4] - Exchange SharePoint - Block access except Windows
+  * Users and Groups: Include all users. исключает CoreAdmins и EmergencyAccess
+  * Cloud Apps: Exchange Online and SharePoint Online
+  * Conditions: Device Platform Include All Platforms, exclude Windows
+  * Grant Control: Block
+  * State: Disabled
+* Policy 3: Block networks other than CorpNetwork
+  * Name: EM003 - ENABLE IN EMERGENCY: MFA Disruption[3/4] - Exchange SharePoint - Block access except Corporate Network
+  * Users and Groups: Include all users. исключает CoreAdmins и EmergencyAccess
+  * Cloud Apps: Exchange Online and SharePoint Online
+  * Conditions: Locations Include any location, exclude CorpNetwork
+  * Grant Control: Block
+  * State: Disabled
+* Policy 4: Block EAS Explicitly
+  * Name: EM004 - ENABLE IN EMERGENCY: MFA Disruption[4/4] - Exchange - Block EAS for all users
+  * Users and Groups: Include all users
+  * Cloud Apps: Include Exchange Online
+  * Conditions: Client apps: Exchange Active Sync
+  * Grant Control: Block
+  * State: Disabled
 
 Порядок активации:
 
 1. Исключите ContingencyAccess, CoreAdmins и EmergencyAccess из существующей политики MFA. Убедитесь в том, что пользователь в ContingencyAccess может получить доступ к SharePoint Online и Exchange Online.
-2. Включение политики 1. Убедитесь в том, что пользователи подключенных к домену устройств, которые не входят группу "Исключить", имеют доступ к Exchange Online и SharePoint Online. Убедитесь в том, что пользователи группы "Исключить" могут получить доступ к SharePoint Online и Exchange с любого устройства.
-3. Включение политики 2. Убедитесь в том, что пользователи, не входящие в группу "Исключить", не могут получить доступ к SharePoint Online и Exchange Online со своих мобильных устройств. Убедитесь в том, что пользователи группы "Исключить" могут получить доступ к SharePoint и Exchange с любого устройства (Windows/iOS/Android).
-4. Включение политики 3. Убедитесь в том, что пользователи, не входящие в группы "Исключить", не могут получить доступ к SharePoint и Exchange вне корпоративной сети, даже с компьютером, подключенным к домену. Убедитесь в том, что пользователи группы "Исключить" могут получить доступ к SharePoint и Exchange с любой сети.
-5. Включение политики 4. Убедитесь в том, что все пользователи не могут получить Exchange Online из собственных почтовых приложений на мобильных устройствах.
+2. Enable Policy 1: Verify users on Domain Joined devices who are not in the exclude groups are able to access Exchange Online and SharePoint Online. Убедитесь в том, что пользователи группы "Исключить" могут получить доступ к SharePoint Online и Exchange с любого устройства.
+3. Enable Policy 2: Verify users who are not in the exclude group cannot get to SharePoint Online and Exchange Online from their mobile devices. Убедитесь в том, что пользователи группы "Исключить" могут получить доступ к SharePoint и Exchange с любого устройства (Windows/iOS/Android).
+4. Enable Policy 3: Verify users who are not in the exclude groups cannot access SharePoint and Exchange off the corporate network, even with a domain joined machine. Убедитесь в том, что пользователи группы "Исключить" могут получить доступ к SharePoint и Exchange с любой сети.
+5. Enable Policy 4: Verify all users cannot get Exchange Online from the native mail applications on mobile devices.
 6. Отключите существующую политику MFA для SharePoint Online и Exchange Online.
 
 В этом следующем примере **пример Б — политики условного доступа на случай непредвиденных обстоятельств, которые разрешают мобильный доступ к Salesforce** , восстанавливается доступ бизнес-приложения. В этом сценарии клиент обычно требует, чтобы его сотрудники отдела продаж имели доступ к Salesforce (настроенный для единого входа в Azure AD) с мобильных устройств, чтобы он был разрешен только со совместимых устройств. В этом случае сбой заключается в существовании проблемы с оценкой соответствия устройств и происходит в трудное время, когда отдел по продажам должен иметь доступ к Salesforce, чтобы закрыть сделки. Эти политики на случай непредвиденных обстоятельств предоставят доступ к Salesforce с мобильного устройства критическим пользователям, чтобы те могли продолжать закрывать сделки и не нарушать работу. В этом примере **SalesforceContingency** содержит всех сотрудников отдела продаж, которым необходимо сохранить доступ, а **SalesAdmins** — необходимых администраторов Salesforce.
 
 **Пример Б — политики условного доступа на случай непредвиденных обстоятельств:**
 
-* Политика 1: блокировка всех, кто не является частью команды SalesContingency
-  * Имя: EM001. ВКЛЮЧЕНИЕ В АВАРИЙНОМ РЕЖИМЕ. Нарушение соответствия устройства [1/2]. Salesforce. Блокировка всех пользователей, кроме SalesforceContingency
-  * Пользователи и группы: включает всех пользователей, исключает SalesAdmins и SalesforceContingency
-  * Облачные приложения: Salesforce.
-  * Условия: Отсутствуют
-  * Предоставить управление: Заблокировать
-  * Состояние: отключено
-* Политика 2: блокировка отдела продаж с любой платформы, кроме мобильной (чтобы уменьшить контактную зону атаки)
-  * Имя: EM002. ВКЛЮЧЕНИЕ В АВАРИЙНОМ РЕЖИМЕ. Нарушение соответствия устройства [2/2]. Salesforce. Блокировка всех платформ, за исключением iOS и Android
-  * Пользователи и группы: включает SalesforceContingency, исключает SalesAdmins
-  * Облачные приложения: Salesforce
-  * Условия: платформа устройства включает все платформы, кроме iOS и Android
-  * Предоставить управление: Заблокировать
-  * Состояние: отключено
+* Policy 1: Block everyone not in the SalesContingency team
+  * Name: EM001 - ENABLE IN EMERGENCY: Device Compliance Disruption[1/2] - Salesforce - Block All users except SalesforceContingency
+  * Users and Groups: Include all users. исключает SalesAdmins и SalesforceContingency
+  * Cloud Apps: Salesforce.
+  * Conditions: None
+  * Grant Control: Block
+  * State: Disabled
+* Policy 2: Block the Sales team from any platform other than mobile (to reduce surface area of attack)
+  * Name: EM002 - ENABLE IN EMERGENCY: Device Compliance Disruption[2/2] - Salesforce - Block All platforms except iOS and Android
+  * Users and Groups: Include SalesforceContingency. исключает SalesAdmins
+  * Cloud Apps: Salesforce
+  * Conditions: Device Platform Include All Platforms, exclude iOS and Android
+  * Grant Control: Block
+  * State: Disabled
 
 Порядок активации:
 
 1. Исключите SalesAdmins и SalesforceContingency из существующей политики соответствия устройств для Salesforce. Убедитесь в том, что пользователь группы SalesforceContingency имеет доступ к Salesforce.
-2. Включение политики 1. Убедитесь в том, что пользователи вне SalesContingency не могут получить доступ к Salesforce. Убедитесь в том, что пользователи SalesAdmins и SalesforceContingency могут получить доступ к Salesforce.
-3. Включение политики 2. Убедитесь в том, что пользователи группы SalesContingency не могут получить доступ к Salesforce со своих ноутбуков Windows или Mac, но могут получать доступ со своих мобильных устройств. Убедитесь в том, что SalesAdmin может получить доступ к Salesforce с любого устройства.
+2. Enable Policy 1: Verify users outside of SalesContingency cannot access Salesforce. Убедитесь в том, что пользователи SalesAdmins и SalesforceContingency могут получить доступ к Salesforce.
+3. Enable Policy 2: Verify users in the SalesContingency group cannot access Salesforce from their Windows/Mac laptops but can still access from their mobile devices. Убедитесь в том, что SalesAdmin может получить доступ к Salesforce с любого устройства.
 4. Отключите существующую политику соответствия устройств для Salesforce.
 
 ### <a name="deploy-password-hash-sync-even-if-you-are-federated-or-use-pass-through-authentication"></a>Развертывание синхронизации хэша пароля, даже если вы федеративны или используете сквозную проверку подлинности
@@ -232,7 +232,7 @@ EMnnn - ENABLE IN EMERGENCY: [Disruption][i/n] - [Apps] - [Controls] [Conditions
 1. Документировать каждое изменение и предыдущее состояние (как часть вашей стратегии управления изменениями), чтобы иметь возможность откатывать любые непредвиденные обстоятельства, которые вы внедрили, как только управление доступом будет полностью рабочим.
 2. Предполагать, что злоумышленники будут пытаться собрать пароли с помощью атаки путем распыления пароля или фишинговых атак, пока отключена MFA. Кроме того, у плохих субъектов уже могут быть пароли, которые ранее не давали доступ ни к какому ресурсу, который может выполняться в этом окне. Для критически важных пользователей, таких как руководители, вы можете частично снизить этот риск, сбросив перед отключением MFA их пароли.
 3. Архивировать все действия по входу в систему, чтобы определить, кто к чему имеет доступ при отключенной MFA.
-4. [Рассмотрение всех обнаружений рисков, о которых сообщается](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-sign-ins) в этом окне.
+4. [Triage all risk detections reported](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-sign-ins) during this window.
 
 ## <a name="after-a-disruption"></a>После сбоя
 
@@ -242,24 +242,24 @@ EMnnn - ENABLE IN EMERGENCY: [Disruption][i/n] - [Apps] - [Controls] [Conditions
 2. Отключите политики на случай непредвиденных обстоятельств. 
 3. Откатите любые другие изменения, которые вы сделали и задокументировали во время сбоя.
 4. Если вы использовали учетную запись для аварийного доступа, не забудьте повторно создать учетные данные и физически защитить детали новых учетных данных как часть процедур учетной записи для аварийного доступа.
-5. Продолжайте [рассмотрение всех обнаружений рисков, о которых сообщается](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-sign-ins) после прерывания подозрительных действий.
+5. Continue to [triage all risk detections reported](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-sign-ins) after the disruption for suspicious activity.
 6. Отмените все токены обновления, выпущенные [с помощью PowerShell](https://docs.microsoft.com/powershell/module/azuread/revoke-azureaduserallrefreshtoken?view=azureadps-2.0) для целевого набора пользователей. Отмена всех токенов обновления важна для привилегированных учетных записей, используемых во время сбоя. Это заставит их повторно пройти проверку подлинности и получить контроль над восстановленными политиками.
 
 ## <a name="emergency-options"></a>Параметры аварийного режима
 
- В случае аварии, в которой Организация ранее не реализовала план на устранение или на непредвиденные случаи, следуйте рекомендациям в разделе " [непредвиденные случаи блокировки пользователей](#contingencies-for-user-lockout) ", если они уже используют политики условного доступа для применения mfa.
+ In case of an emergency and your organization did not previously implement a mitigation or contingency plan, then follow the recommendations in the [Contingencies for user lockout](#contingencies-for-user-lockout) section if they already use Conditional Access policies to enforce MFA.
 Если ваша организация использует устаревшие политики MFA для каждого пользователя, вы можете рассмотреть следующую альтернативу:
 
 1. Если у вас есть исходящий IP-адрес корпоративной сети, вы можете добавить его в качестве доверенных IP-адресов, чтобы включить проверку подлинности только в корпоративной сети.
    1. Если у вас нет перечня исходящих IP-адресов или вам нужно включить доступ внутри и за пределами корпоративной сети, вы можете добавить все адресное пространство IPv4 в качестве доверенных IP-адресов, указав 0.0.0.0/1 и 128.0.0.0/1.
 
 >[!IMPORTANT]
- > Если вы расширили доверенные IP-адреса, чтобы разблокировать доступ, не будут создаваться определения рисков, связанные с IP-адресами (например, невозможность перемещения или незнакомое расположение).
+ > If you broaden the trusted IP addresses to unblock access, risk detections associated with IP addresses (for example, impossible travel or unfamiliar locations) will not be generated.
 
 >[!NOTE]
  > Настройка [доверенных IP-адресов](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-mfasettings) для MFA Azure доступна только с [лицензиями Azure AD Premium](https://docs.microsoft.com/azure/active-directory/authentication/concept-mfa-licensing).
 
-## <a name="learn-more"></a>Подробнее...
+## <a name="learn-more"></a>Дополнительные сведения
 
 * [Настройка сервера Многофакторной идентификации Azure для веб-приложений IIS](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfaserver-iis)
 * [Управление учетными записями администратора для аварийного доступа в Azure AD](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-emergency-access)
@@ -268,5 +268,5 @@ EMnnn - ENABLE IN EMERGENCY: [Disruption][i/n] - [Apps] - [Controls] [Conditions
 * [Как планировать гибридную реализацию присоединения к Azure Active Directory](https://docs.microsoft.com/azure/active-directory/devices/hybrid-azuread-join-plan)
 * [Руководство по развертыванию Windows Hello для бизнеса](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-deployment-guide)
   * [Password Guidance - Microsoft Research](https://research.microsoft.com/pubs/265143/microsoft_password_guidance.pdf) (Руководство о паролях — Microsoft Research)
-* [Что такое условия в Azure Active Directory условного доступа?](https://docs.microsoft.com/azure/active-directory/conditional-access/conditions)
-* [Что такое элементы управления доступом в Azure Active Directory условном доступе?](https://docs.microsoft.com/azure/active-directory/conditional-access/controls)
+* [What are conditions in Azure Active Directory Conditional Access?](https://docs.microsoft.com/azure/active-directory/conditional-access/conditions)
+* [What are access controls in Azure Active Directory Conditional Access?](https://docs.microsoft.com/azure/active-directory/conditional-access/controls)

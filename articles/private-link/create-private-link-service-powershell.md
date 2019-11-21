@@ -1,29 +1,29 @@
 ---
-title: Создание службы частной связи Azure с помощью Azure PowerShell | Документация Майкрософт
-description: Узнайте, как создать службу частной связи Azure с помощью Azure PowerShell
+title: Create an Azure private link service using Azure PowerShell| Microsoft Docs
+description: Learn how to create an Azure private link service using Azure PowerShell
 services: private-link
-author: KumudD
+author: asudbring
 ms.service: private-link
 ms.topic: article
 ms.date: 09/16/2019
-ms.author: kumud
-ms.openlocfilehash: d8d40ed83d7f8234092ca6354642a76aaa83bc12
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.author: allensu
+ms.openlocfilehash: c5910649127c4b2e78cfc12065a8f12a41f7309a
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73173073"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74229377"
 ---
-# <a name="create-a-private-link-service-using-azure-powershell"></a>Создание службы частной связи с помощью Azure PowerShell
-В этой статье показано, как создать службу частной связи в Azure с помощью Azure PowerShell.
+# <a name="create-a-private-link-service-using-azure-powershell"></a>Create a Private Link service using Azure PowerShell
+This article shows you how to create a private link service in Azure using Azure PowerShell.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать PowerShell локально, для работы с этой статьей потребуется последняя версия модуля Azure PowerShell. Выполните командлет `Get-Module -ListAvailable Az`, чтобы узнать установленную версию. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-Az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
+If you choose to install and use PowerShell locally, this article requires the latest Azure PowerShell module version. Выполните командлет `Get-Module -ListAvailable Az`, чтобы узнать установленную версию. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-Az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Перед созданием частной ссылки необходимо создать группу ресурсов с помощью [New-азресаурцеграуп](/powershell/module/az.resources/new-azresourcegroup). В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *WestCentralUS* :
+Before you can create your private link, you must create a resource group with [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). The following example creates a resource group named *myResourceGroup* in the *WestCentralUS* location:
 
 ```azurepowershell
 $location = "westcentralus"
@@ -33,7 +33,7 @@ New-AzResourceGroup `
   -Location $location
 ```
 ## <a name="create-a-virtual-network"></a>Создание виртуальной сети
-Создайте виртуальную сеть для частной ссылки с помощью [New-азвиртуалнетворк](/powershell/module/az.network/new-azvirtualnetwork). В следующем примере создается виртуальная сеть с именем *myvnet* с подсетью для интерфейсной части (*frontendSubnet*), серверная часть (*backendSubnet*), Частная ссылка (*otherSubnet*):
+Create a virtual network for your private link with [New-AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork). The following example creates a virtual network named *myvnet* with subnet for frontend (*frontendSubnet*), backend (*backendSubnet*), private link (*otherSubnet*):
 
 ```azurepowershell
 $virtualNetworkName = "myvnet"
@@ -62,8 +62,8 @@ $vnet = New-AzVirtualNetwork `
 -AddressPrefix "10.0.0.0/16" `
 -Subnet $frontendSubnet,$backendSubnet,$otherSubnet 
 ```
-## <a name="create-internal-load-balancer"></a>Создание внутренней Load Balancer
-Создайте внутренний Load Balancer (цен. категория "Стандартный") с помощью [New-азлоадбаланцер](/powershell/module/az.network/new-azloadbalancer). В следующем примере создается внутренняя Load Balancer (цен. категория "Стандартный") с использованием внешней IP-конфигурации, пробы, правила и серверного пула, созданного на предыдущих шагах:
+## <a name="create-internal-load-balancer"></a>Create Internal Load Balancer
+Create an internal Standard Load Balancer with [New-AzLoadBalancer](/powershell/module/az.network/new-azloadbalancer). The following example creates an internal Standard Load Balancer using the frontend IP configuration, probe, rule and backend pool  that you created in the preceding steps:
 
 ```azurepowershell
 
@@ -79,8 +79,8 @@ $probe = New-AzLoadBalancerProbeConfig -Name 'myHealthProbe' -Protocol Http -Por
 $rule = New-AzLoadBalancerRuleConfig -Name HTTP -FrontendIpConfiguration $frontendIP -BackendAddressPool  $beaddresspool -Probe $probe -Protocol Tcp -FrontendPort 80 -BackendPort 80
 $NRPLB = New-AzLoadBalancer -ResourceGroupName $rgName -Name $lbName -Location $location -FrontendIpConfiguration $frontendIP -BackendAddressPool $beAddressPool -Probe $probe -LoadBalancingRule $rule -Sku Standard 
 ```
-## <a name="create-a-private-link-service"></a>Создание службы частной связи
-Создайте службу частной связи с помощью [New-азпривателинксервице](/powershell/module/az.network/new-azloadbalancer).  В этом примере создается служба частной связи с именем *миплс* , использующая Load Balancer (цен. Категория "Стандартный") в группе ресурсов с именем *myResourceGroup*. 
+## <a name="create-a-private-link-service"></a>Create a private link service
+Create a private link service with [New-AzPrivateLinkService](/powershell/module/az.network/new-azloadbalancer).  This example creates a private link service named *myPLS* using Standard Load Balancer in resource group named *myResourceGroup*. 
 ```azurepowershell
 
 $plsIpConfigName = "PLS-ipconfig" 
@@ -102,20 +102,20 @@ $privateLinkService = New-AzPrivateLinkService `
 -IpConfiguration $IPConfig 
 ```
 
-### <a name="get-private-link-service"></a>Получение службы частной связи
-Получите сведения о службе Private Link с помощью [New-азпривателинксервице](/powershell/module/az.network/get-azprivatelinkservice) , как показано ниже.
+### <a name="get-private-link-service"></a>Get private link service
+Get details about your private link service with [New-AzPrivateLinkService](/powershell/module/az.network/get-azprivatelinkservice) as follows:
 
 ```azurepowershell
 $pls = Get-AzPrivateLinkService -Name $plsName -ResourceGroupName $rgName 
 ```
 
-На этом этапе служба закрытых ссылок успешно создана и готова к получению трафика. Обратите внимание, что в примере выше показано только создание службы Private Link с помощью PowerShell.  Мы не настроили серверные пулы подсистемы балансировки нагрузки или любое приложение в серверных пулах для прослушивания трафика. Если вы хотите просмотреть сквозные потоки трафика, настоятельно рекомендуем настроить приложение за стандартную подсистему балансировки нагрузки. 
+At this stage, your Private Link Service is successfully created and is ready to receive the traffic. Note that above example is only to demonstrate creating Private Link Service using PowerShell.  We haven't configured the load balancer backend pools or any application on the backend pools to listen to the traffic. If you want to see end to end traffic flows, you can strongly advised to configure your application behind your standard load balancer. 
 
-Далее мы продемонстрируем, как сопоставлять эту службу с частной конечной точкой в другой виртуальной сети с помощью PowerShell. Опять же, пример ограничен созданием частной конечной точки и подключением к службе закрытых ссылок, созданной выше. Вы можете создать виртуальные машины в виртуальной сети, чтобы отправлять и получать трафик в закрытую конечную точку для создания сценария. 
+Next we will demonstrate how to map this service to a private endpoint in different VNet using PowerShell. Again, the example is limited to creating the Private Endpoint and connecting to Private Link Service created above. You can create Virtual Machines in the Virtual Network to send/receive traffic to the private endpoint for building your scenario. 
 
 ## <a name="create-a-private-endpoint"></a>Создание частной конечной точки
 ### <a name="create-a-virtual-network"></a>Создание виртуальной сети
-Создайте виртуальную сеть для частной конечной точки с помощью [New-азвиртуалнетворк](/powershell/module/az.network/new-azvirtualnetwork). В этом примере создается виртуальная сеть с именем *внетпе* в группе ресурсов с именем *myResourceGroup*:
+Create a virtual network for your private endpoint with [New-AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork). This example creates a virtual network named *vnetPE* in resource group named *myResourceGroup*:
  
 ```azurepowershell
 $virtualNetworkNamePE = "vnetPE"
@@ -135,7 +135,7 @@ $vnetPE = New-AzVirtualNetwork `
 ```
 
 ### <a name="create-a-private-endpoint"></a>Создание частной конечной точки
-Создайте закрытую конечную точку для использования службы закрытых ссылок, созданной в виртуальной сети.
+Create a private endpoint for consuming private link service created above in your virtual network:
  
 ```azurepowershell
  
@@ -146,8 +146,8 @@ $plsConnection= New-AzPrivateLinkServiceConnection `
 $privateEndpoint = New-AzPrivateEndpoint -ResourceGroupName $rgName -Name $peName -Location $location -Subnet $vnetPE.subnets[0] -PrivateLinkServiceConnection $plsConnection -ByManualRequest 
 ```
  
-### <a name="get-private-endpoint"></a>Получение частной конечной точки
-Получите IP-адрес частной конечной точки с `Get-AzPrivateEndpoint` следующим образом:
+### <a name="get-private-endpoint"></a>Get private endpoint
+Get the IP address of the private endpoint with `Get-AzPrivateEndpoint` as follows:
 
 ```azurepowershell
 # Get Private Endpoint and its IP Address 
@@ -160,8 +160,8 @@ $pe.NetworkInterfaces[0].IpConfigurations[0].PrivateIpAddress
 
 ```
 
-### <a name="approve-the-private-endpoint-connection"></a>Утверждение подключения к частной конечной точке
-Утвердите подключение к частной конечной точке со службой закрытых ссылок с помощью команды "утвердить-Азприватиндпоинтконнектион".
+### <a name="approve-the-private-endpoint-connection"></a>Approve the private endpoint connection
+Approve the private end point connection to the private link service with 'Approve-AzPrivateEndpointConnection`.
 
 ```azurepowershell   
 
@@ -174,5 +174,5 @@ Approve-AzPrivateEndpointConnection -ResourceId $pls.PrivateEndpointConnections[
 ``` 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- Дополнительные сведения о [частной ссылке Azure](private-link-overview.md)
+- Learn more about [Azure private link](private-link-overview.md)
  

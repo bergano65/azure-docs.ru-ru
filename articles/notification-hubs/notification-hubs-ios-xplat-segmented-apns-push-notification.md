@@ -12,24 +12,24 @@ ms.workload: mobile
 ms.tgt_pltfrm: mobile-ios
 ms.devlang: objective-c
 ms.topic: article
-ms.date: 07/28/2019
+ms.date: 11/07/2019
 ms.author: sethm
 ms.reviewer: jowargo
-ms.lastreviewed: 07/28/2019
-ms.openlocfilehash: 8299725cf6977ca309d57b40f4792ff9b074a8cb
-ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
+ms.lastreviewed: 11/07/2019
+ms.openlocfilehash: 0cf593ce4ab9e0ba299d10b34422ee30661f38a9
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71213229"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74228176"
 ---
-# <a name="tutorial-push-notifications-to-specific-ios-devices-using-azure-notification-hubs"></a>Учебник. Отправка push-уведомлений на определенные устройства iOS с помощью службы "Центры уведомлений Azure"
+# <a name="tutorial-push-notifications-to-specific-ios-devices-using-azure-notification-hubs"></a>Отправка push-уведомлений на определенные устройства iOS с помощью службы "Центры уведомлений Azure"
 
 [!INCLUDE [notification-hubs-selector-breaking-news](../../includes/notification-hubs-selector-breaking-news.md)]
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Краткое описание
 
-В этом руководстве показано, как использовать службу "Центры уведомлений Azure" для рассылки уведомлений об экстренных новостях в приложение iOS. По завершении вы сможете зарегистрироваться в интересующих вас категориях экстренных новостей и получать push-уведомления только для этих категорий. Этот сценарий часто используется во многих приложениях, которые отправляют уведомления определенным группам пользователей, подтвердившим интерес к этим уведомлениям. Типичные примеры: средства чтения RSS, приложения для любителей музыки и т. д.
+В этом руководстве показано, как использовать службу "Центры уведомлений Azure" для рассылки уведомлений об экстренных новостях в приложение iOS. По завершении вы сможете зарегистрироваться в интересующих вас категориях экстренных новостей и получать push-уведомления только для этих категорий. Этот сценарий часто используется во многих приложениях, которые отправляют уведомления определенным группам пользователей, подтвердившим интерес к этим уведомлениям. Типичные примеры: программы чтения RSS, приложения для музыкальных фанатов и т. д.
 
 Широковещательные сценарии реализуются путем включения одного или нескольких *тегов* при создании регистрации в концентраторе уведомлений. Если уведомления отправляются по тегу, то их получают устройства, зарегистрированные для данного тега. Поскольку теги представляют собой обычные строки, их не нужно подготавливать заранее. Дополнительные сведения о тегах см. в статье [Маршрутизация и выражения тегов](notification-hubs-tags-segment-push-message.md).
 
@@ -41,9 +41,9 @@ ms.locfileid: "71213229"
 > * отправка уведомлений с устройства;
 > * Запуск приложения и создание уведомлений
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
-Материал данной статьи основан на приложении, созданном в статье [Руководство Push-уведомления в приложения iOS с помощью концентраторов][get-started]уведомлений Azure. Перед началом работы с данным руководством необходимо изучить статью [Руководство Push-уведомления в приложения iOS с помощью концентраторов][get-started]уведомлений Azure.
+This topic builds on the app you created in [Tutorial: Push notifications to iOS apps using Azure Notification Hubs][get-started]. Before starting this tutorial, you must have already completed [Tutorial: Push notifications to iOS apps using Azure Notification Hubs][get-started].
 
 ## <a name="add-category-selection-to-the-app"></a>Добавление возможности выбора категорий в приложение
 
@@ -61,6 +61,7 @@ ms.locfileid: "71213229"
      ![Конструктор интерфейса Xcode][3]
 
 2. В редакторе помощника создайте выходы для всех переключателей и назовите их WorldSwitch, PoliticsSwitch, BusinessSwitch, TechnologySwitch, ScienceSwitch, SportsSwitch.
+
 3. Создайте действие для кнопки `subscribe`. Ваш `ViewController.h` должен содержать следующий код.
 
     ```objc
@@ -176,7 +177,7 @@ ms.locfileid: "71213229"
 
     На этом этапе в методе `didRegisterForRemoteNotificationsWithDeviceToken` не должно быть никакого другого кода.
 
-10. Следующие методы уже должны присутствовать в `AppDelegate.m` учебнике начало работы [с центрами уведомлений][get-started] . В противном случае добавьте их.
+10. The following methods should already be present in `AppDelegate.m` from completing the [Get started with Notification Hubs][get-started] tutorial. В противном случае добавьте их.
 
     ```objc
     - (void)MessageBox:(NSString *)title message:(NSString *)messageText
@@ -246,13 +247,13 @@ ms.locfileid: "71213229"
 
 ## <a name="optional-send-tagged-notifications"></a>(Необязательно.) Отправка уведомлений с тегами
 
-Если у вас нет доступа к Visual Studio, можно перейти к следующему разделу и отправлять уведомления из самого приложения. Вы также можете отправлять правильные шаблонные уведомления с [портала Azure] с помощью вкладки "Отладка" для центра уведомлений.
+Если у вас нет доступа к Visual Studio, можно перейти к следующему разделу и отправлять уведомления из самого приложения. Вы также можете отправлять правильные шаблонные уведомления с [Портал Azure] с помощью вкладки "Отладка" для центра уведомлений.
 
 [!INCLUDE [notification-hubs-send-categories-template](../../includes/notification-hubs-send-categories-template.md)]
 
 ## <a name="optional-send-notifications-from-the-device"></a>(Необязательно.) Отправка уведомлений с устройства
 
-Как правило, уведомления отправляются серверной службой, но вы можете отправлять уведомления об экстренных новостях непосредственно из приложения. Для этого необходимо обновить `SendNotificationRESTAPI` метод, определенный в учебнике [Приступая к работе с центрами уведомлений][get-started] .
+Как правило, уведомления отправляются серверной службой, но вы можете отправлять уведомления об экстренных новостях непосредственно из приложения. To do so, you update the `SendNotificationRESTAPI` method that you defined in the [Get started with Notification Hubs][get-started] tutorial.
 
 1. В файле `ViewController.m` обновите метод `SendNotificationRESTAPI`, как показано ниже, чтобы он принимал параметр для тега категории и отправлял правильное [шаблонное](notification-hubs-templates-cross-platform-push-messages.md) уведомление.
 
@@ -350,12 +351,12 @@ ms.locfileid: "71213229"
 
 3. Каждое устройство с подпиской на экстренные новости получает отправленные вами уведомления об экстренных новостях.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы отправили широковещательные уведомления на конкретные устройства iOS, зарегистрированные для получения уведомлений по категориям. Чтобы узнать, как отправлять локализованные push-уведомления, перейдите к следующему руководству.
 
 > [!div class="nextstepaction"]
->[Отправка локализованных push-уведомлений](notification-hubs-ios-xplat-localized-apns-push-notification.md)
+>[Отправка локализованных push-уведомлений](notification-hubs-ios-xplat-localized-apns-push-notification.md).
 
 <!-- Images. -->
 [1]: ./media/notification-hubs-ios-send-breaking-news/notification-hub-breakingnews-subscribed.png
@@ -370,4 +371,4 @@ ms.locfileid: "71213229"
 [Notification Hubs Guidance]: https://msdn.microsoft.com/library/dn530749.aspx
 [Notification Hubs How-To for iOS]: https://msdn.microsoft.com/library/jj927168.aspx
 [get-started]: notification-hubs-ios-apple-push-notification-apns-get-started.md
-[портала Azure]: https://portal.azure.com
+[Портал Azure]: https://portal.azure.com

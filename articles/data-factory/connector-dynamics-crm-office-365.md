@@ -1,23 +1,24 @@
 ---
-title: Копирование данных из Dynamics CRM или Dynamics 365 (Common Data Service) и обратно с помощью фабрики данных Azure
+title: Copy data in Dynamics (Common Data Service)
 description: Узнайте, как копировать данные из Microsoft Dynamics CRM или Microsoft Dynamics 365 (Common Data Service) в поддерживаемые хранилища данных, используемые в качестве приемника, или из поддерживаемых исходных хранилищ данных в Dynamics CRM и Dynamics 365 с помощью действия копирования в конвейере фабрики данных.
 services: data-factory
 documentationcenter: ''
-author: linda33wj
-manager: craigg
-ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 10/25/2019
 ms.author: jingwang
-ms.openlocfilehash: c9adcf72eeec82fd4b8f1805fca1f284c0b953b7
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
-ms.translationtype: MT
+author: linda33wj
+manager: craigg
+ms.reviewer: douglasl
+ms.custom: seo-lt-2019
+ms.date: 10/25/2019
+ms.openlocfilehash: b2eb6f877daf2fddaa5a61a958254cc8222ac6db
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73680982"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74218585"
 ---
 # <a name="copy-data-from-and-to-dynamics-365-common-data-service-or-dynamics-crm-by-using-azure-data-factory"></a>Копирование данных из Dynamics 365 (Common Data Service) или Dynamics CRM и в эти решения с помощью фабрики данных Azure
 
@@ -25,20 +26,20 @@ ms.locfileid: "73680982"
 
 ## <a name="supported-capabilities"></a>Поддерживаемые возможности
 
-Этот соединитель поддерживается для следующих действий:
+This connector is supported for the following activities:
 
-- [Действие копирования](copy-activity-overview.md) с [поддерживаемой матрицей источника и приемника](copy-activity-overview.md)
+- [Copy activity](copy-activity-overview.md) with [supported source/sink matrix](copy-activity-overview.md)
 - [Действие поиска](control-flow-lookup-activity.md)
 
 Данные из Dynamics 365 (Common Data Service) или Dynamics CRM можно скопировать в любое хранилище данных, поддерживаемое в качестве приемника. В свою очередь, данные из любого хранилища данных, поддерживаемого в качестве источника, можно скопировать в Dynamics 365 (Common Data Service) или Dynamics CRM. Список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования, приведен в таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats).
 
-Этот соединитель Dynamics поддерживает версию Dynamics 7. x до 9. x как в сети, так и в локальной среде. В частности:
+This Dynamics connector supports Dynamics version 7.x to 9.x for both online or on-premises. В частности:
 
-- Версия 7. x сопоставляется с Dynamics CRM 2015
-- Версия 8. x сопоставляется с Dynamics CRM 2016 и ранней версией Dynamics 365
-- Версия 9. x сопоставляется с более поздней версией Dynamics 365
+- Version 7.x maps to Dynamics CRM 2015
+- Version 8.x maps to Dynamics CRM 2016 and the early version of Dynamics 365
+- Version 9.x maps to the later version of Dynamics 365
 
-В следующей таблице приведены поддерживаемые типы проверки подлинности и конфигурации для соответствующих версий и продуктов Dynamics. (IFD — сокращение от термина "развертывание с выходом в Интернет".)
+Refer to the following table on the supported authentication types and configurations for respective Dynamics versions/products. (IFD — сокращение от термина "развертывание с выходом в Интернет".)
 
 | Версии Dynamics | Типы проверки подлинности | Примеры связанной службы |
 |:--- |:--- |:--- |
@@ -49,18 +50,18 @@ ms.locfileid: "73680982"
 
 - Dynamics 365 for Sales;
 - Dynamics 365 for Customer Service;
-- Dynamics 365 for Field Service;
+- Dynamics 365 for Field Service
 - Dynamics 365 for Project Service Automation;
 - Dynamics 365 for Marketing.
 
 Другие типы приложений (например, Dynamics 365 for Finance and Operations, Dynamics 365 for Talent и т. д.) не поддерживаются в этом соединителе.
 
-Этот соединитель Dynamics построен на основе [инструментов Dynamics XRM](https://docs.microsoft.com/dynamics365/customer-engagement/developer/build-windows-client-applications-xrm-tools).
+This Dynamics connector is built on top of [Dynamics XRM tooling](https://docs.microsoft.com/dynamics365/customer-engagement/developer/build-windows-client-applications-xrm-tools).
 
 >[!TIP]
->**Соединитель Dynamics AX** также можно использовать для копирования данных из [Dynamics 365 Finance and Operations](connector-dynamics-ax.md).
+>[Соединитель Dynamics AX](connector-dynamics-ax.md) также можно использовать для копирования данных из **Dynamics 365 Finance and Operations**.
 
-## <a name="get-started"></a>Приступая к работе
+## <a name="get-started"></a>Начать
 
 [!INCLUDE [data-factory-v2-connector-get-started](../../includes/data-factory-v2-connector-get-started.md)]
 
@@ -72,14 +73,14 @@ ms.locfileid: "73680982"
 
 ### <a name="dynamics-365-and-dynamics-crm-online"></a>Dynamics 365 и Dynamics CRM Online
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Для свойства Type необходимо задать значение **Dynamics**, **динамикскрм**или **коммондатасервицефораппс**. | Да |
-| deploymentType | Тип развертывания для экземпляра Dynamics. Должен иметь значение **Online** для Dynamics Online. | Да |
-| serviceUri | URL-адрес вашего экземпляра службы Dynamics, например `https://adfdynamics.crm.dynamics.com`. | Да |
-| authenticationType | Тип проверки подлинности для подключения к серверу Dynamics. Укажите **Office365** для Dynamics Online. | Да |
-| Имя пользователя | Укажите имя пользователя для подключения к Dynamics. | Да |
-| пароль | Введите пароль для учетной записи пользователя, указанной для выбранного имени пользователя. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
+| Тип | The type property must be set to **Dynamics**, **DynamicsCrm**, or **CommonDataServiceForApps**. | ДА |
+| deploymentType | Тип развертывания для экземпляра Dynamics. Должен иметь значение **Online** для Dynamics Online. | ДА |
+| serviceUri | URL-адрес вашего экземпляра службы Dynamics, например `https://adfdynamics.crm.dynamics.com`. | ДА |
+| authenticationType | Тип проверки подлинности для подключения к серверу Dynamics. Укажите **Office365** для Dynamics Online. | ДА |
+| Имя пользователя | Укажите имя пользователя для подключения к Dynamics. | ДА |
+| пароль | Введите пароль для учетной записи пользователя, указанной для выбранного имени пользователя. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | ДА |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. | "Нет" для источника, "Да" для приемника, если связанная с источником служба не имеет среды выполнения интеграции |
 
 >[!NOTE]
@@ -115,16 +116,16 @@ ms.locfileid: "73680982"
 
 *hostName и port являются дополнительными свойствами по сравнению с Dynamics Online.*
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Для свойства Type необходимо задать значение **Dynamics**, **динамикскрм**или **коммондатасервицефораппс**. | Да |
-| deploymentType | Тип развертывания для экземпляра Dynamics. Для Dynamics (локальная версия) с IFD необходимо задать значение **OnPremisesWithIfd**.| Да |
-| hostName | Имя узла локального сервера Dynamics. | Да |
+| Тип | The type property must be set to **Dynamics**, **DynamicsCrm**, or **CommonDataServiceForApps**. | ДА |
+| deploymentType | Тип развертывания для экземпляра Dynamics. Для Dynamics (локальная версия) с IFD необходимо задать значение **OnPremisesWithIfd**.| ДА |
+| hostName | Имя узла локального сервера Dynamics. | ДА |
 | порт | Порт локального сервера Dynamics. | Нет, значение по умолчанию — 443 |
-| оrganizationName | Имя организации экземпляра Dynamics. | Да |
-| authenticationType | Тип проверки подлинности для подключения к серверу Dynamics. Укажите **Ifd** для Dynamics (локальная версия) с IFD. | Да |
-| Имя пользователя | Укажите имя пользователя для подключения к Dynamics. | Да |
-| пароль | Введите пароль для учетной записи пользователя, указанной для выбранного имени пользователя. Вы можете обозначить это поле как SecureString, чтобы безопасно хранить его в ADF, или сохранить пароль в Azure Key Vault и передавать его оттуда в действие копирования при фактическом копировании данных. Подробнее это описано в статье [о хранении учетных данных в Key Vault](store-credentials-in-key-vault.md). | Да |
+| оrganizationName | Имя организации экземпляра Dynamics. | ДА |
+| authenticationType | Тип проверки подлинности для подключения к серверу Dynamics. Укажите **Ifd** для Dynamics (локальная версия) с IFD. | ДА |
+| Имя пользователя | Укажите имя пользователя для подключения к Dynamics. | ДА |
+| пароль | Введите пароль для учетной записи пользователя, указанной для выбранного имени пользователя. Вы можете обозначить это поле как SecureString, чтобы безопасно хранить его в ADF, или сохранить пароль в Azure Key Vault и передавать его оттуда в действие копирования при фактическом копировании данных. Подробнее это описано в статье [о хранении учетных данных в Key Vault](store-credentials-in-key-vault.md). | ДА |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. | "Нет" для источника, "Да" для приемника |
 
 **Пример. Dynamics (локальная версия) с IFD с использованием проверки подлинности**
@@ -159,14 +160,14 @@ ms.locfileid: "73680982"
 
 Полный список разделов и свойств, доступных для определения наборов данных, см. в статье о [наборах данных](concepts-datasets-linked-services.md). В этом разделе содержится список свойств, поддерживаемых набором данных Dynamics.
 
-Для копирования данных из и в Dynamics поддерживаются следующие свойства.
+To copy data from and to Dynamics, the following properties are supported.
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Свойство Type набора данных должно иметь значение **DynamicsEntity**, **динамикскрментити**или **коммондатасервицефораппсентити**. |Да |
+| Тип | The type property of the dataset must be set to **DynamicsEntity**, **DynamicsCrmEntity**, or **CommonDataServiceForAppsEntity**. |ДА |
 | entityName | Логическое имя сущности, которое требуется получить. | "Нет" для источника (если свойство query указано в источнике действия), "Да" для приемника |
 
-**Пример**
+**Пример.**
 
 ```json
 {
@@ -191,21 +192,21 @@ ms.locfileid: "73680982"
 
 ### <a name="dynamics-as-a-source-type"></a>Dynamics в качестве источника данных
 
-Чтобы скопировать данные из Dynamics, в разделе **источник** действия копирования поддерживаются следующие свойства.
+To copy data from Dynamics, the following properties are supported in the copy activity **source** section.
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Свойство Type источника действия копирования должно иметь значение **DynamicsSource**, **динамикскрмсаурце**или **коммондатасервицефораппссаурце**. | Да |
-| запрос | FetchXML — это защищаемый язык запросов, используемый в Dynamics (Online и локальная версия). См. указанный ниже пример. Дополнительные сведения см. в статье [Создание запросов с помощью FetchXML](https://msdn.microsoft.com/library/gg328332.aspx). | "Нет" (если для набора данных задано свойство entityName) |
+| Тип | The type property of the copy activity source must be set to **DynamicsSource**, **DynamicsCrmSource**, or **CommonDataServiceForAppsSource**. | ДА |
+| query | FetchXML — это защищаемый язык запросов, используемый в Dynamics (Online и локальная версия). См. указанный ниже пример. To learn more, see [Build queries with FetchXML](https://msdn.microsoft.com/library/gg328332.aspx). | "Нет" (если для набора данных задано свойство entityName) |
 
 >[!NOTE]
 >Столбец первичного ключа будет копироваться всегда, даже если он отсутствует в проекции столбца, настроенной в запросе FetchXML.
 
 > [!IMPORTANT]
->- При копировании данных из Dynamics явное сопоставление столбцов из Dynamics с приемником является необязательным, но с высокой повторной назначением для обеспечения детерминированного результата копирования.
->- При импорте схемы в пользовательском интерфейсе ADF определяет схему, выполнив выборку первых строк из результата запроса Dynamics для инициализации списка исходных столбцов. в этом случае столбцы без значений в верхних строках будут опущены. Такое же поведение применяется к выполнению копирования, если нет явного сопоставления. В сопоставление можно проверить и добавить дополнительные столбцы, которые будут учитываться во время выполнения копирования.
+>- When you copy data from Dynamics, explicit column mapping from Dynamics to sink is optional but highly recommanded to ensure a deterministic copy result.
+>- When importing schema in authoring UI, ADF infers the schema by sampling the top rows from the Dynamics query result to initialize the source column list, in which case columns with no values in top rows will be omitted. The same behavior applies to copy executions if there is no explicit mapping. You can review and add more columns into the mapping, which will be honored during copy runtime.
 
-**Пример**
+**Пример.**
 
 ```json
 "activities":[
@@ -259,13 +260,13 @@ ms.locfileid: "73680982"
 
 ### <a name="dynamics-as-a-sink-type"></a>Dynamics в качестве типа приемника
 
-Чтобы скопировать данные в Dynamics, в разделе **приемника** действия копирования поддерживаются следующие свойства.
+To copy data to Dynamics, the following properties are supported in the copy activity **sink** section.
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Свойство Type приемника действия копирования должно иметь значение **DynamicsSink**, **динамикскрмсинк**или **коммондатасервицефораппссинк**. | Да |
-| writeBehavior | Поведение операции при записи.<br/>Допустимое значение: **Upsert**. | Да |
-| алтернатекэйнаме | Укажите альтернативное имя ключа, определенное в сущности, для выполнения "Upsert". | Нет |
+| Тип | The type property of the copy activity sink must be set to **DynamicsSink**, **DynamicsCrmSink**, or **CommonDataServiceForAppsSink**. | ДА |
+| writeBehavior | Поведение операции при записи.<br/>Допустимое значение: **Upsert**. | ДА |
+| alternateKeyName | Specify the alternate key name defined on your entity to perform "Upsert". | Нет |
 | writeBatchSize | Количество строк данных, записываемых в Dynamics в каждом пакете. | Нет (значение по умолчанию — 10) |
 | ignoreNullValues | Указывает, следует ли игнорировать значения NULL из входных данных (за исключением ключевых полей) во время операции записи.<br/>Допустимые значения: **true** и **false**.<br>- **True**: при выполнении операции upsert или update оставьте данные в целевом объекте неизменными. При выполнении операции вставки (insert) вставьте определенное значение по умолчанию.<br/>- **False**: при выполнении операции upsert или update обновите данные в целевом объекте до значения NULL. При выполнении операции вставки (insert) вставьте значение NULL. | Нет (по умолчанию используется значение false) |
 
@@ -274,9 +275,9 @@ ms.locfileid: "73680982"
 
 Для Dynamics 365 в сети существует ограничение на [2 одновременных пакетных вызова на организацию](https://msdn.microsoft.com/library/jj863631.aspx#Run-time%20limitations). Если этот предел превышен, возникает ошибка "сервер занят" до того, как будет выполнен первый запрос. Поддержание "writeBatchSize", меньшее или равное 10, позволит избежать такого регулирования количества одновременных вызовов.
 
-Оптимальное сочетание "**writeBatchSize**" и "**parallelCopies**" зависит от схемы сущности, например число столбцов, размер строк, число подключаемых модулей, рабочих процессов и действий рабочих процессов, подключенных к этим вызовам, и т. д. Значение по умолчанию 10 writeBatchSize * 10 parallelCopies является рекомендацией в соответствии со службой Dynamics, которая будет работать для большинства сущностей Dynamics, но может не быть лучшей производительностью. Вы можете настроить производительность путем корректировки комбинации в настройках активности копирования.
+The optimal combination of "**writeBatchSize**" and "**parallelCopies**" depends on the schema of your entity e.g. number of columns, row size, number of plugins/workflows/workflow activities hooked up to those calls, etc. The default setting of 10 writeBatchSize * 10 parallelCopies is the recommendation according to Dynamics service, which would work for most Dynamics entities though may not be best performance. Вы можете настроить производительность путем корректировки комбинации в настройках активности копирования.
 
-**Пример**
+**Пример.**
 
 ```json
 "activities":[
@@ -318,31 +319,31 @@ ms.locfileid: "73680982"
 
 | Тип данных Dynamics | Тип промежуточных данных фабрики данных | Поддерживается в качестве источника | Поддерживается в качестве приемника |
 |:--- |:--- |:--- |:--- |
-| AttributeTypeCode.BigInt | длинное целое | ✓ | ✓ |
+| AttributeTypeCode.BigInt | Длинные | ✓ | ✓ |
 | AttributeTypeCode.Boolean | Логический | ✓ | ✓ |
-| AttributeType.Customer | Guid | ✓ | |
-| AttributeType.DateTime | Datetime | ✓ | ✓ |
-| AttributeType.Decimal | DECIMAL | ✓ | ✓ |
-| AttributeType.Double | Double | ✓ | ✓ |
-| AttributeType.EntityName | string | ✓ | ✓ |
+| AttributeType.Customer | GUID | ✓ | |
+| AttributeType.DateTime | DateTime | ✓ | ✓ |
+| AttributeType.Decimal | Decimal | ✓ | ✓ |
+| AttributeType.Double | DOUBLE | ✓ | ✓ |
+| AttributeType.EntityName | Строка | ✓ | ✓ |
 | AttributeType.Integer | Int32 | ✓ | ✓ |
-| AttributeType.Lookup | Guid | ✓ | ✓ (связанный с одним объектом) |
+| AttributeType.Lookup | GUID | ✓ | ✓ (связанный с одним объектом) |
 | AttributeType.ManagedProperty | Логический | ✓ | |
-| AttributeType.Memo | string | ✓ | ✓ |
-| AttributeType.Money | DECIMAL | ✓ | ✓ |
-| AttributeType.Owner | Guid | ✓ | |
+| AttributeType.Memo | Строка | ✓ | ✓ |
+| AttributeType.Money | Decimal | ✓ | ✓ |
+| AttributeType.Owner | GUID | ✓ | |
 | AttributeType.Picklist | Int32 | ✓ | ✓ |
-| AttributeType.Uniqueidentifier | Guid | ✓ | ✓ |
-| AttributeType.String | string | ✓ | ✓ |
+| AttributeType.Uniqueidentifier | GUID | ✓ | ✓ |
+| AttributeType.String | Строка | ✓ | ✓ |
 | AttributeType.State | Int32 | ✓ | ✓ |
 | AttributeType.Status | Int32 | ✓ | ✓ |
 
 > [!NOTE]
-> Типы данных Dynamics AttributeType. CalendarRules, AttributeType. Мултиселектпикклист и AttributeType. PartyList не поддерживаются.
+> The Dynamics data types AttributeType.CalendarRules, AttributeType.MultiSelectPicklist and AttributeType.PartyList aren't supported.
 
-## <a name="lookup-activity-properties"></a>Свойства действия поиска
+## <a name="lookup-activity-properties"></a>Lookup activity properties
 
-Чтобы получить сведения о свойствах, проверьте [действие поиска](control-flow-lookup-activity.md).
+To learn details about the properties, check [Lookup activity](control-flow-lookup-activity.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 В таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных.

@@ -7,15 +7,15 @@ author: bandersmsft
 ms.author: banders
 ms.date: 05/21/2019
 ms.topic: conceptual
-ms.service: cost-management
+ms.service: cost-management-billing
 manager: alavital
 ms.custom: ''
-ms.openlocfilehash: f1bf62596b6edcc6fff6572e431f3a777be93f05
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4be484cdff2014f11c872da9a246ef8406447712
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66002089"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74230122"
 ---
 # <a name="use-cost-alerts-to-monitor-usage-and-spending"></a>Использование оповещений о затратах для мониторинга потребления и расходов
 
@@ -35,21 +35,21 @@ ms.locfileid: "66002089"
 
 Оповещения о квотах расходов отдела уведомляют вас, когда расходы отдела достигают фиксированного порогового значения квоты. Квоты затрат настраиваются на портале EA. Каждый раз, когда достигается пороговое значение, создается сообщение электронной почты для владельцев отделов и отображается в оповещениях о затратах. Например, 50 или 75 % квоты.
 
-## <a name="supported-alert-features-by-offer-categories"></a>Поддерживаемые функции предупреждений по категориям предложения
+## <a name="supported-alert-features-by-offer-categories"></a>Supported alert features by offer categories
 
-Поддержка для типов оповещений зависит от типа учетной записи Azure, что у вас есть (Microsoft предлагают). В следующей таблице показаны средства генерации оповещений, которые поддерживаются в различных предложениях Майкрософт. Можно просмотреть полный список предложений Microsoft в [данным Cost Management понять](understand-cost-mgt-data.md).
+Support for alert types depends on the type of Azure account that you have (Microsoft offer). The following table shows the alert features that are supported by various Microsoft offers. You can view the full list of Microsoft offers at [Understand Cost Management data](understand-cost-mgt-data.md).
 
-| Тип оповещения | Соглашение Enterprise | Клиентское соглашение Майкрософт | Web direct или оплаты мере-You-передавать |
+| Тип оповещения | Соглашение Enterprise | Клиентское соглашение Майкрософт | Web direct/Pay-As-You-Go |
 |---|---|---|---|
-| Бюджет | ✔ | ✔ | ✔ |
+| Budget | ✔ | ✔ | ✔ |
 | Материалы | ✔ |✘ | ✘ |
-| Квота расходов отдела | ✔ | ✘ | ✘ |
+| Department spending quota | ✔ | ✘ | ✘ |
 
 
 
 ## <a name="view-cost-alerts"></a>Просмотр оповещений о затратах
 
-Чтобы просмотреть оповещения затрат, откройте требуемой области в на портале Azure и выберите **бюджеты** в меню. Используйте **область** поглощений переключиться на другую область. Выберите **затрат оповещения** в меню. См. [основные сведения об областях и работе с ними](understand-work-scopes.md).
+To view cost alerts, open the desired scope in the Azure portal and select **Budgets** in the menu. Use the **Scope** pill to switch to a different scope. Select **Cost alerts** in the menu. См. [основные сведения об областях и работе с ними](understand-work-scopes.md).
 
 ![Пример изображения оповещений, показанных в Управлении затратами](./media/cost-mgt-alerts-monitor-usage-spending/budget-alerts-fullscreen.png)
 
@@ -67,6 +67,6 @@ ms.locfileid: "66002089"
 
 ![Пример изображения, на котором показано параметры отклонения и повторной активации](./media/cost-mgt-alerts-monitor-usage-spending/Dismiss-reactivate-options.png)
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>Дополнительные материалы
 
 - Если вы еще не создали бюджет или не настроили условия оповещений для бюджета, выполните действия, описанные в [этом руководстве](tutorial-acm-create-budgets.md).

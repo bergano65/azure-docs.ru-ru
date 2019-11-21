@@ -1,5 +1,5 @@
 ---
-title: Назначение доступа к данным управления затратами Azure
+title: Assign access to Azure Cost Management data
 description: В этой статье написано, как назначить разрешения на доступ к данным Управления затратами Azure для разных областей доступа.
 services: cost-management
 keywords: ''
@@ -7,23 +7,23 @@ author: bandersmsft
 ms.author: banders
 ms.date: 10/14/2019
 ms.topic: conceptual
-ms.service: cost-management
+ms.service: cost-management-billing
 manager: vitavor
 ms.custom: secdec18
-ms.openlocfilehash: ebc56d27b7adc8f1fea9eafabe1b211f3f0ad560
-ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
+ms.openlocfilehash: e3140ee990127db6815828314103a09dff7cf26e
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72375126"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74219848"
 ---
 # <a name="assign-access-to-cost-management-data"></a>Назначение доступа к данным службы "Управление затратами"
 
-Для пользователей c Соглашениями Enterprise Azure уровень доступа к данными Управления затратами Azure определяется сочетанием разрешений, предоставляемых на портале Azure и корпоративном портале. Для пользователей с другими типами учетных записей Azure определение уровня доступа пользователя к данным управления затратами упрощается с помощью управления доступом на основе ролей в Azure. В этой статье описано, как назначить доступ к данным Управления затратами. Назначив требуемые разрешения, пользователь сможет просматривать данные в Управлении затратами в пределах области, к которой у него есть доступ, и области, выбранной на портале Azure.
+Для пользователей c Соглашениями Enterprise Azure уровень доступа к данными Управления затратами Azure определяется сочетанием разрешений, предоставляемых на портале Azure и корпоративном портале. For users with other Azure account types, defining a user's level of access to Cost Management data is simpler by using Azure role-based access control. В этой статье описано, как назначить доступ к данным Управления затратами. Назначив требуемые разрешения, пользователь сможет просматривать данные в Управлении затратами в пределах области, к которой у него есть доступ, и области, выбранной на портале Azure.
 
 Выбранная пользователем область распространяется на всю среду Управления затратами, чтобы обеспечить консолидацию данных и ограничить доступ к сведениям о затратах. Пользователь не может выбрать сразу несколько областей. Вместо этого можно выбрать более обширную область, в которую входят дочерние области, а затем отфильтровать просматриваемые данные. Рекомендуется ознакомиться с концепцией консолидации данных, так как некоторым пользователям не нужно предоставлять доступ к родительской области, в которую входят дочерние области.
 
-Ознакомьтесь с [руководством по назначению доступа с помощью Azure Cost Management](https://www.youtube.com/watch?v=J997ckmwTa8) , чтобы узнать о назначении доступа для просмотра затрат и расходов с помощью управления доступом на основе ролей Azure.
+Watch the [How to assign access with Azure Cost Management](https://www.youtube.com/watch?v=J997ckmwTa8) video to learn about assigning access to view costs and charges with Azure role-based access control.
 
 >[!VIDEO https://www.youtube.com/embed/J997ckmwTa8]
 
@@ -64,7 +64,7 @@ ms.locfileid: "72375126"
 - группа управления;
 - группа ресурсов.
 
-Различные области доступны после того, как партнеры приносят клиентов к соглашению с клиентами Майкрософт. Клиенты CSP могут затем использовать функции управления затратами при включении их партнером CSP. Дополнительные сведения см. в статье Начало [работы со службой "Управление затратами Azure" для партнеров](get-started-partners.md).
+Various scopes are available after partners onboard customers to a Microsoft Customer Agreement. CSP customers can then use Cost Management features when enabled by their CSP partner. For more information, see [Get started with Azure Cost Management for partners](get-started-partners.md).
 
 ## <a name="enable-access-to-costs-in-the-ea-portal"></a>Включение доступа к затратам на портале EA
 
@@ -131,7 +131,7 @@ ms.locfileid: "72375126"
 
 ## <a name="assign-management-group-scope-access"></a>Назначение доступа к области группы управления
 
-Для просмотра области группы управления требуется по крайней мере разрешение читателя (или читатель) управления затратами. Разрешения для группы управления можно настроить на портале Azure. Чтобы разрешить доступ для других пользователей, нужно как минимум разрешение администратора доступа пользователей (или владельца) для группы управления. Для учетных записей Azure EA необходимо включить параметр **AO view charges** (Возможность просмотра затрат для владельца учетной записи) на портале EA.
+Access to view the management group scope requires at least the Cost Management Reader (or Reader) permission. Разрешения для группы управления можно настроить на портале Azure. Чтобы разрешить доступ для других пользователей, нужно как минимум разрешение администратора доступа пользователей (или владельца) для группы управления. Для учетных записей Azure EA необходимо включить параметр **AO view charges** (Возможность просмотра затрат для владельца учетной записи) на портале EA.
 
 1. Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
 2. Выберите на боковой панели **Все службы**, выполните поиск по фразе _группы управления_ и выберите **Группы управления**.
@@ -173,11 +173,11 @@ ms.locfileid: "72375126"
 8. Чтобы назначить доступ, найдите и выберите нужного пользователя.
 9. В нижней части страницы нажмите кнопку **Save**.
 
-## <a name="cross-tenant-authentication-issues"></a>Проблемы с проверкой подлинности между клиентами
+## <a name="cross-tenant-authentication-issues"></a>Cross-tenant authentication issues
 
-В настоящее время служба "Управление затратами Azure" имеет ограниченную поддержку проверки подлинности между клиентами. В некоторых случаях при попытке проверки подлинности в клиентах может возникнуть ошибка **отказа в доступе** в анализе затрат. Эта проблема может возникнуть, если вы настроили управление доступом на основе ролей (RBAC) для подписки другого клиента, а затем пытаетесь просмотреть данные о затратах.
+Currently, Azure Cost Management has limited support for cross-tenant authentication. In some circumstances when you try to authenticate across tenants, you may receive an **Access denied** error in cost analysis. This issue might occur if you configure role-based access control (RBAC) to another tenant's subscription and then try to view cost data.
 
-*Чтобы обойти эту проблему*: после настройки RBAC с разными клиентами подождите час. Затем попробуйте просмотреть затраты в анализе затрат или предоставить доступ к управлению затратам пользователям в обоих клиентах.  
+*To work around the problem*: After you configure cross-tenant RBAC, wait an hour. Then, try to view costs in cost analysis or grant Cost Management access to users in both tenants.  
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

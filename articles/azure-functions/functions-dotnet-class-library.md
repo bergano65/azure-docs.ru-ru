@@ -1,22 +1,14 @@
 ---
 title: Справочник разработчика C# по функциям Azure
 description: Узнайте, как разрабатывать Функции Azure с помощью C#.
-services: functions
-documentationcenter: na
-author: ggailey777
-manager: jeconnoc
-keywords: функции azure, функции, обработка событий, веб-перехватчики, динамические вычисления, независимая архитектура
-ms.service: azure-functions
-ms.devlang: dotnet
 ms.topic: reference
 ms.date: 09/12/2018
-ms.author: glenga
-ms.openlocfilehash: c3c13b7e28ef7c17fd45682d828f318de5326542
-ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
+ms.openlocfilehash: 20bbf31bc92e49106a94e7a85d3b1541aaa2a34b
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2019
-ms.locfileid: "72293871"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74230605"
 ---
 # <a name="azure-functions-c-developer-reference"></a>Справочник разработчика C# по функциям Azure
 
@@ -29,20 +21,20 @@ ms.locfileid: "72293871"
 В статье предполагается, что вы уже прочли следующие статьи:
 
 * [Руководство для разработчиков по Функциям Azure](functions-reference.md)
-* [Средства Visual Studio 2019 для функций Azure](functions-develop-vs.md)
+* [Azure Functions Visual Studio 2019 Tools](functions-develop-vs.md)
 
 ## <a name="supported-versions"></a>Поддерживаемые версии
 
-Среда выполнения функций Azure 2. x использует .NET Core 2,2. Код функции может использовать API-интерфейсы .NET Core 2,2, обновив параметры проекта Visual Studio. Шаблоны функций не являются стандартными для .NET Core 2,2, чтобы избежать негативного воздействия на клиентов, на которых не установлен .NET Core 2,2.
+The Azure Functions 2.x runtime uses .NET Core 2.2. Your function code can use .NET Core 2.2 APIs by updating the Visual Studio project settings. The Function templates do not default to .NET Core 2.2 to avoid adversely affecting customers that do not have .NET Core 2.2 installed.
 
 ## <a name="functions-class-library-project"></a>Проект библиотеки классов функций
 
 В Visual Studio шаблон проекта **Функции Azure** создает проект библиотеки классов C#, содержащий следующие файлы:
 
 * [host.json](functions-host-json.md) — хранит параметры конфигурации, которые влияют на все функции в проекте при выполнении в локальной среде или в Azure.
-* [local.settings.json](functions-run-local.md#local-settings-file) — хранит параметры приложений и строки подключения, которые используются при выполнении в локальной среде. Этот файл содержит секретные данные и не будет опубликован в приложении-функции в Azure. Вместо этого [добавьте параметры приложения в приложение функции](functions-develop-vs.md#function-app-settings).
+* [local.settings.json](functions-run-local.md#local-settings-file) — хранит параметры приложений и строки подключения, которые используются при выполнении в локальной среде. Этот файл содержит секретные данные и не будет опубликован в приложении-функции в Azure. Instead, [add app settings to your function app](functions-develop-vs.md#function-app-settings).
 
-При построении проекта структура папок, которая выглядит следующим образом, создается в выходном каталоге сборки:
+When you build the project, a folder structure that looks like the following example is generated in the build output directory:
 
 ```
 <framework.version>
@@ -77,7 +69,7 @@ public static class SimpleExample
 } 
 ```
 
-Атрибут `FunctionName` помечает метод как точку входа функции. Имя должно быть уникальным в пределах проекта, начинаться с буквы и содержать только буквы, цифры, `_` и `-`, длиной до 127 символов. Шаблоны проектов часто создают метод `Run`, но метод может иметь любое допустимое имя для метода C#.
+Атрибут `FunctionName` помечает метод как точку входа функции. The name must be unique within a project, start with a letter and only contain letters, numbers, `_`, and `-`, up to 127 characters in length. Шаблоны проектов часто создают метод `Run`, но метод может иметь любое допустимое имя для метода C#.
 
 Атрибут триггера указывает тип триггера и привязывает входные данные к параметру метода. Пример функции срабатывает по сообщению очереди, а сообщение очереди передается методу в параметре `myQueueItem`.
 
@@ -186,7 +178,7 @@ public static class BindingExpressionsExample
 </ItemGroup>
 ```
 
-К зависимостям пакетов `Sdk` относятся триггеры и привязки. Проект 1. x ссылается на триггеры и привязки 1. x, так как эти триггеры и привязки предназначены для .NET Framework, а триггеры и привязки 2. x предназначены для .NET Core.
+К зависимостям пакетов `Sdk` относятся триггеры и привязки. A 1.x project refers to 1.x triggers and bindings because those triggers and bindings target the .NET Framework, while 2.x triggers and bindings target .NET Core.
 
 Пакет `Sdk` также зависит от пакета [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json) и косвенно от пакета [WindowsAzure.Storage](https://www.nuget.org/packages/WindowsAzure.Storage). Эти зависимости гарантируют, что проект использует версии пакетов, совместимые с версией среды выполнения Функций, для которой он предназначен. Например, при использовании платформы .NET Framework 4.6.1 пакет `Newtonsoft.Json` имеет версию 11, но среда выполнения Функций, предназначенная для платформы .NET Framework 4.6.1, совместима только с пакетом `Newtonsoft.Json` версии 9.0.1. Поэтому код функции в этом проекте также должен использовать пакет `Newtonsoft.Json` версии 9.0.1.
 
@@ -349,7 +341,7 @@ public static class EnvironmentVariablesExample
   }
   ```
 
-  где `BindingTypeAttribute` — атрибут .NET, определяющий пользовательскую привязку, а `T` — входной или выходной тип, поддерживаемый этим типом привязки. `T` не может быть параметром типа `out` (например, `out JObject`). Например, выходная привязка таблицы мобильных приложений поддерживает [шесть выходных типов](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions.MobileApps/MobileTableAttribute.cs#L17-L22), но можно использовать только [ICollector @ no__t-2T >](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/ICollector.cs) или [IAsyncCollector @ no__t-4T поддерживается >](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/IAsyncCollector.cs) с императивной привязкой.
+  где `BindingTypeAttribute` — атрибут .NET, определяющий пользовательскую привязку, а `T` — входной или выходной тип, поддерживаемый этим типом привязки. `T` не может быть параметром типа `out` (например, `out JObject`). For example, the Mobile Apps table output binding supports [six output types](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions.MobileApps/MobileTableAttribute.cs#L17-L22), but you can only use [ICollector\<T>](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/ICollector.cs) or [IAsyncCollector\<T>](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/IAsyncCollector.cs) with imperative binding.
 
 ### <a name="single-attribute-example"></a>Пример с одним атрибутом
 
@@ -378,7 +370,7 @@ public static class IBinderExample
 
 ### <a name="multiple-attribute-example"></a>Пример с несколькими атрибутами
 
-В предыдущем примере код получает параметр приложения для строки подключения основной учетной записи хранения приложения-функции (т. е. `AzureWebJobsStorage`). Вы можете указать пользовательский параметр приложения, который следует использовать для учетной записи хранения. Для этого добавьте [StorageAccountAttribute](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/StorageAccountAttribute.cs) и передайте массив атрибутов в `BindAsync<T>()`. Используйте параметр `Binder`, а не `IBinder`.  Пример:
+В предыдущем примере код получает параметр приложения для строки подключения основной учетной записи хранения приложения-функции (т. е. `AzureWebJobsStorage`). Вы можете указать пользовательский параметр приложения, который следует использовать для учетной записи хранения. Для этого добавьте [StorageAccountAttribute](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/StorageAccountAttribute.cs) и передайте массив атрибутов в `BindAsync<T>()`. Используйте параметр `Binder`, а не `IBinder`.  Пример.
 
 ```cs
 public static class IBinderExampleMultipleAttributes
@@ -407,7 +399,7 @@ public static class IBinderExampleMultipleAttributes
 
 [!INCLUDE [Supported triggers and bindings](../../includes/functions-bindings.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Дополнительные сведения о триггерах и привязках](functions-triggers-bindings.md)

@@ -1,20 +1,15 @@
 ---
-title: Руководство по разработке для Функций Azure | Документация Майкрософт
+title: Guidance for developing Azure Functions
 description: Узнайте о концепциях и методах Функций Azure, необходимых для разработки функции в Azure, для всех языков программирования и привязок.
-author: ggailey777
-manager: gwallace
-keywords: руководство разработчика, Функции Azure, функции, обработка событий, объекты webhook, динамические вычисления, независимая архитектура
 ms.assetid: d8efe41a-bef8-4167-ba97-f3e016fcd39e
-ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 10/12/2017
-ms.author: glenga
-ms.openlocfilehash: c60fedfe855cc803ee2f4b1c463e2b0614239c04
-ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
+ms.openlocfilehash: 4aa42e8aef2e2205523be0536cb5aceafd1aa829
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69982639"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74226660"
 ---
 # <a name="azure-functions-developers-guide"></a>Руководство для разработчиков по Функциям Azure
 Некоторые из Функций Azure имеют ряд общих технических особенностей и компонентов вне зависимости от используемого языка или привязки. Прежде чем приступать к детальному изучению особенностей, характерных для определенного языка или привязки, ознакомьтесь с этими общими сведениями.
@@ -47,12 +42,12 @@ ms.locfileid: "69982639"
 
 | Свойство | Значения и типы | Комментарии |
 | --- | --- | --- |
-| `type` |строка |Тип привязки. Пример: `queueTrigger`. |
+| `type` |string |Тип привязки. Пример: `queueTrigger`. |
 | `direction` |"in", "out" |Указывает, служит ли привязка для получения данных в функции или для отправки их из функции. |
-| `name` |строка |Имя, используемое для связанных данных в функции. Для C# это имя аргумента, а для JavaScript — ключ в списке ключей и значений. |
+| `name` |string |Имя, используемое для связанных данных в функции. Для C# это имя аргумента, а для JavaScript — ключ в списке ключей и значений. |
 
-## <a name="function-app"></a>Приложение функций
-Приложение-функция предоставляет контекст выполнения в Azure, в котором выполняются функции. Таким образом, это единица развертывания и управления для ваших функций. Приложение-функция состоит из одной или нескольких независимых функций, которые управляются, развертываются и масштабируются вместе. Все функции в приложении-функции совместно используют один план ценообразования, метод развертывания и версию среды выполнения. Приложение-функцию можно рассматривать как способ упорядочения функций и совместного управления ими. Дополнительные сведения см. в разделе [Управление приложением-функцией](functions-how-to-use-azure-function-app-settings.md). 
+## <a name="function-app"></a>Приложение-функция
+Приложение-функция предоставляет контекст выполнения в Azure, в котором выполняются функции. As such, it is the unit of deployment and management for your functions. Приложение-функция состоит из одной или нескольких независимых функций, которые управляются, развертываются и масштабируются вместе. All of the functions in a function app share the same pricing plan, deployment method, and runtime version. Приложение-функцию можно рассматривать как способ упорядочения функций и совместного управления ими. To learn more, see [How to manage a function app](functions-how-to-use-azure-function-app-settings.md). 
 
 > [!NOTE]
 > Все функции в приложении-функции должны использовать один язык. Это не было обязательным в [предыдущих версиях](functions-versions.md) среды выполнения "Функции Azure".
@@ -100,10 +95,10 @@ ms.locfileid: "69982639"
 ## <a name="reporting-issues"></a>Создание отчетов о проблемах
 [!INCLUDE [Reporting Issues](../../includes/functions-reporting-issues.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Для получения дополнительных сведений см. следующие ресурсы:
 
-* [Azure Functions triggers and bindings (Триггеры и привязки в Функциях Azure)](functions-triggers-bindings.md)
+* [Триггеры и привязки в функциях Azure](functions-triggers-bindings.md)
 * [Как программировать и тестировать функции Azure в локальной среде](./functions-develop-local.md)
 * [Best Practices for Azure Functions](functions-best-practices.md) (Рекомендации по Функциям Azure)
 * [Справочник разработчика C# по функциям Azure](functions-dotnet-class-library.md)

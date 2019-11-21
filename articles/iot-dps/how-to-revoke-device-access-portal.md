@@ -1,5 +1,5 @@
 ---
-title: Практическое руководство по отзыву регистрации устройства из службы подготовки устройств к добавлению в Центр Интернета вещей Azure
+title: Disenroll device from Azure IoT Hub Device Provisioning Service
 description: Сведения о том, как отозвать регистрацию устройства, чтобы предотвратить его подготовку с помощью службы подготовки устройств к добавлению в Центр Интернета вещей Azure.
 author: wesmc7777
 ms.author: wesmc
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 manager: timlt
-ms.openlocfilehash: 0dadf0ec248dac01e5cc65779004477bf4afc823
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6efbc4483e4768014678822e82f4ca4178f51863
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62113583"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74228768"
 ---
 # <a name="how-to-disenroll-a-device-from-azure-iot-hub-device-provisioning-service"></a>Практическое руководство по отзыву регистрации устройства из службы подготовки устройств к добавлению в Центр Интернета вещей Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "62113583"
 
 ## <a name="blacklist-devices-by-using-an-individual-enrollment-entry"></a>Список блокировок устройств при использовании записей индивидуальной регистрации
 
-Индивидуальные регистрации относятся к конкретным устройствам и могут использовать в качестве механизмов аттестации сертификаты X.509 или токены SAS (в реальном или виртуальном доверенном платформенном модуле). (Устройства, использующие токены SAS в качестве механизма аттестации, можно подготовить только через индивидуальные регистрации.) Чтобы внести в список блокировок устройство, для которого существует индивидуальная регистрация, следует отключить или удалит 
+Индивидуальные регистрации относятся к конкретным устройствам и могут использовать в качестве механизмов аттестации сертификаты X.509 или токены SAS (в реальном или виртуальном доверенном платформенном модуле). (Devices that use SAS tokens as their attestation mechanism can be provisioned only through an individual enrollment.) To blacklist a device that has an individual enrollment, you can either disable or delete its enrollment entry. 
 
 Чтобы временно отключить устройство, достаточно отключить его запись регистрации: 
 

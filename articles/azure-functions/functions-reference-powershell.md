@@ -1,33 +1,29 @@
 ---
-title: Справочник разработчика PowerShell для функций Azure
-description: Узнайте, как разрабатывать функции с помощью PowerShell.
+title: PowerShell developer reference for Azure Functions
+description: Understand how to develop functions by using PowerShell.
 author: eamonoreilly
-manager: gwallace
-ms.service: azure-functions
-ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 04/22/2019
-ms.author: glenga
-ms.openlocfilehash: ae3b8294c7bd91bcd6a2e0e533f5903f44e8aaea
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.openlocfilehash: 26e52e8aa498c37bd4cef95fb2b54b2fe9322f90
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74173661"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74226681"
 ---
-# <a name="azure-functions-powershell-developer-guide"></a>Рекомендации для разработчиков по функциям Azure PowerShell
+# <a name="azure-functions-powershell-developer-guide"></a>Azure Functions PowerShell developer guide
 
-Эта статья содержит сведения о том, как вы пишете функции Azure с помощью PowerShell.
+This article provides details about how you write Azure Functions using PowerShell.
 
-Функция Azure PowerShell (функция) представляется в виде скрипта PowerShell, который выполняется при срабатывании. Каждый сценарий функции имеет связанный файл `function.json`, который определяет, как работает функция, например, как она запускается, а также ее входные и выходные параметры. Дополнительные сведения см. в [статье о триггерах и привязке](functions-triggers-bindings.md). 
+A PowerShell Azure function (function) is represented as a PowerShell script that executes when triggered. Each function script has a related `function.json` file that defines how the function behaves, such as how it's triggered and its input and output parameters. To learn more, see the [Triggers and binding article](functions-triggers-bindings.md). 
 
-Как и другие виды функций, функции скриптов PowerShell принимают параметры, соответствующие именам всех входных привязок, определенных в файле `function.json`. Также передается параметр `TriggerMetadata`, содержащий дополнительные сведения о триггере, который запустил функцию.
+Like other kinds of functions, PowerShell script functions take in parameters that match the names of all the input bindings defined in the `function.json` file. A `TriggerMetadata` parameter is also passed that contains additional information on the trigger that started the function.
 
-В этой статье предполагается, что вы уже прочли [руководство для разработчиков по Функциям Azure](functions-reference.md). Кроме того, для создания первой функции PowerShell необходимо завершить работу с [кратким руководством по функциям PowerShell](functions-create-first-function-powershell.md) .
+В этой статье предполагается, что вы уже прочли [руководство для разработчиков по Функциям Azure](functions-reference.md). You should have also completed the [Functions quickstart for PowerShell](functions-create-first-function-powershell.md) to create your first PowerShell function.
 
 ## <a name="folder-structure"></a>Структура папок
 
-Необходимая структура папок для проекта PowerShell выглядит следующим образом. Это значение по умолчанию можно изменить. Дополнительные сведения см. в разделе о [scriptFile](#configure-function-scriptfile) ниже.
+The required folder structure for a PowerShell project looks like the following. Это значение по умолчанию можно изменить. Дополнительные сведения см. в разделе о [scriptFile](#configure-function-scriptfile) ниже.
 
 ```
 PSFunctionApp
@@ -52,56 +48,56 @@ PSFunctionApp
  | - bin
 ```
 
-В корне проекта имеется общий файл [`host.json`](functions-host-json.md) , который можно использовать для настройки приложения-функции. У каждой функции есть папка с собственным файлом кода (PS1) и файл конфигурации привязки (`function.json`). Имя родительского каталога файла Function. JSON всегда является именем функции.
+At the root of the project, there's a shared [`host.json`](functions-host-json.md) file that can be used to configure the function app. Each function has a folder with its own code file (.ps1) and binding configuration file (`function.json`). The name of the function.json file's parent directory is always the name of your function.
 
-Для определенных привязок требуется наличие файла `extensions.csproj`. Расширения привязки, необходимые в [версии 2. x](functions-versions.md) среды выполнения функций, определяются в файле `extensions.csproj` с фактическими файлами библиотеки в папке `bin`. При локальной разработке необходимо [зарегистрировать расширения привязки](functions-bindings-register.md#extension-bundles). При разработке функций на портале Azure эта регистрация выполняется автоматически.
+Certain bindings require the presence of an `extensions.csproj` file. Binding extensions, required in [version 2.x](functions-versions.md) of the Functions runtime, are defined in the `extensions.csproj` file, with the actual library files in the `bin` folder. При локальной разработке необходимо [зарегистрировать расширения привязки](functions-bindings-register.md#extension-bundles). При разработке функций на портале Azure эта регистрация выполняется автоматически.
 
-В приложениях-функциях PowerShell при необходимости можно использовать `profile.ps1`, который выполняется при запуске приложения-функции (в противном случае это может быть " *[холодный" Запуск](#cold-start)* ). Дополнительные сведения см. в разделе [профиль PowerShell](#powershell-profile).
+In PowerShell Function Apps, you may optionally have a `profile.ps1` which runs when a function app starts to run (otherwise know as a *[cold start](#cold-start)* . For more information, see [PowerShell profile](#powershell-profile).
 
-## <a name="defining-a-powershell-script-as-a-function"></a>Определение скрипта PowerShell как функции
+## <a name="defining-a-powershell-script-as-a-function"></a>Defining a PowerShell script as a function
 
 По умолчанию среда выполнения Функций ищет функцию в файле `run.ps1`, где `run.ps1` использует тот же родительский каталог, что и соответствующий файл `function.json`.
 
-При выполнении скрипту передается ряд аргументов. Чтобы обрабатывал эти параметры, добавьте блок `param` в начало скрипта, как показано в следующем примере:
+Your script is passed a number of arguments on execution. To handle these parameters, add a `param` block to the top of your script as in the following example:
 
 ```powershell
 # $TriggerMetadata is optional here. If you don't need it, you can safely remove it from the param block
 param($MyFirstInputBinding, $MySecondInputBinding, $TriggerMetadata)
 ```
 
-### <a name="triggermetadata-parameter"></a>Тригжерметадата, параметр
+### <a name="triggermetadata-parameter"></a>TriggerMetadata parameter
 
-Параметр `TriggerMetadata` используется для предоставления дополнительных сведений о триггере. Дополнительные метаданные отличаются от привязки к привязке, но все они содержат свойство `sys`, которое содержит следующие данные:
+The `TriggerMetadata` parameter is used to supply additional information about the trigger. The additional metadata varies from binding to binding but they all contain a `sys` property that contains the following data:
 
 ```powershell
 $TriggerMetadata.sys
 ```
 
-| Свойство   | ОПИСАНИЕ                                     | введите     |
+| Свойство   | Описание                                     | Тип     |
 |------------|-------------------------------------------------|----------|
-| UtcNow     | Когда, в формате UTC, была активирована функция        | DateTime |
-| Имя_метода | Имя функции, которая была активирована     | строка   |
-| рандгуид   | уникальный идентификатор GUID для этого выполнения функции | строка   |
+| UtcNow     | When, in UTC, the function was triggered        | Дата и время |
+| MethodName | The name of the Function that was triggered     | string   |
+| RandGuid   | a unique guid to this execution of the function | string   |
 
-Каждый тип триггера имеет другой набор метаданных. Например, `$TriggerMetadata` для `QueueTrigger` содержит `InsertionTime`, `Id`, `DequeueCount`, помимо прочего. Дополнительные сведения о метаданных триггера очереди см. в [официальной документации по триггерам очереди](functions-bindings-storage-queue.md#trigger---message-metadata). Ознакомьтесь с документацией по [триггерам](functions-triggers-bindings.md) , с которыми вы работаете, чтобы узнать, что входит в метаданные триггера.
+Every trigger type has a different set of metadata. For example, the `$TriggerMetadata` for `QueueTrigger` contains the `InsertionTime`, `Id`, `DequeueCount`, among other things. For more information on the queue trigger's metadata, go to the [official documentation for queue triggers](functions-bindings-storage-queue.md#trigger---message-metadata). Check the documentation on the [triggers](functions-triggers-bindings.md) you're working with to see what comes inside the trigger metadata.
 
 ## <a name="bindings"></a>Привязки
 
-В PowerShell [привязки](functions-triggers-bindings.md) настраиваются и определяются в функции. JSON функции. Функции взаимодействуют с привязками несколькими способами.
+In PowerShell, [bindings](functions-triggers-bindings.md) are configured and defined in a function's function.json. Функции взаимодействуют с привязками несколькими способами.
 
 ### <a name="reading-trigger-and-input-data"></a>Чтение триггера и входных данных
 
-Привязки триггера и ввода считываются как параметры, передаваемые в функцию. Для входных привязок `direction` задано значение `in` в Function. JSON. Свойство `name`, определенное в `function.json`, является именем параметра в блоке `param`. Так как PowerShell использует именованные параметры для привязки, порядок параметров не имеет значения. Однако рекомендуется следовать порядку привязок, определенных в `function.json`.
+Trigger and input bindings are read as parameters passed to your function. Input bindings have a `direction` set to `in` in function.json. The `name` property defined in `function.json` is the name of the parameter, in the `param` block. Since PowerShell uses named parameters for binding, the order of the parameters doesn't matter. However, it's a best practice to follow the order of the bindings defined in the `function.json`.
 
 ```powershell
 param($MyFirstInputBinding, $MySecondInputBinding)
 ```
 
-### <a name="writing-output-data"></a>Запись выходных данных
+### <a name="writing-output-data"></a>Writing output data
 
-В функциях выходная привязка имеет `direction` задано `out` в Function. JSON. Запись в выходную привязку можно выполнить с помощью командлета `Push-OutputBinding`, который доступен для среды выполнения функций. Во всех случаях свойство `name` привязки, определенное в `function.json`, соответствует параметру `Name` командлета `Push-OutputBinding`.
+In Functions, an output binding has a `direction` set to `out` in the function.json. You can write to an output binding by using the `Push-OutputBinding` cmdlet, which is available to the Functions runtime. In all cases, the `name` property of the binding as defined in `function.json` corresponds to the `Name` parameter of the `Push-OutputBinding` cmdlet.
 
-Ниже показано, как вызвать `Push-OutputBinding` в скрипте функции:
+The following shows how to call `Push-OutputBinding` in your function script:
 
 ```powershell
 param($MyFirstInputBinding, $MySecondInputBinding)
@@ -109,7 +105,7 @@ param($MyFirstInputBinding, $MySecondInputBinding)
 Push-OutputBinding -Name myQueue -Value $myValue
 ```
 
-Можно также передать значение для конкретной привязки через конвейер.
+You can also pass in a value for a specific binding through the pipeline.
 
 ```powershell
 param($MyFirstInputBinding, $MySecondInputBinding)
@@ -117,25 +113,25 @@ param($MyFirstInputBinding, $MySecondInputBinding)
 Produce-MyOutputValue | Push-OutputBinding -Name myQueue
 ```
 
-`Push-OutputBinding` ведет себя по-разному в зависимости от значения, указанного для `-Name`:
+`Push-OutputBinding` behaves differently based on the value specified for `-Name`:
 
-* Если указанное имя не может быть разрешено в допустимую выходную привязку, возникает ошибка.
+* When the specified name cannot be resolved to a valid output binding, then an error     is thrown.
 
-* Когда выходная привязка принимает коллекцию значений, можно многократно вызывать `Push-OutputBinding` для отправки нескольких значений.
+* When the output binding accepts a collection of values, you can call `Push-OutputBinding` repeatedly to push multiple values.
 
-* Если выходная привязка принимает только одноэлементное значение, вызов `Push-OutputBinding` второй раз вызывает ошибку.
+* When the output binding only accepts a singleton value, calling `Push-OutputBinding` a second time raises an error.
 
-#### <a name="push-outputbinding-syntax"></a>синтаксис `Push-OutputBinding`
+#### <a name="push-outputbinding-syntax"></a>`Push-OutputBinding` syntax
 
-Ниже приведены допустимые параметры для вызова `Push-OutputBinding`.
+The following are valid parameters for calling `Push-OutputBinding`:
 
-| имя | введите | Позиция | ОПИСАНИЕ |
+| Name | Тип | Позиция | Описание |
 | ---- | ---- |  -------- | ----------- |
-| **`-Name`** | Строка, | 1 | Имя выходной привязки, которую необходимо задать. |
-| **`-Value`** | Объект. | 2 | Значение выходной привязки, которое необходимо задать, которое принимается из Бивалуе конвейера. |
-| **`-Clobber`** | SwitchParameter | именованная | Используемых При указании параметра устанавливает значение для заданной выходной привязки. | 
+| **`-Name`** | Строка | 1 | The name of the output binding you want to set. |
+| **`-Value`** | Объекты | 2 | The value of the output binding you want to set, which is accepted from the pipeline ByValue. |
+| **`-Clobber`** | SwitchParameter | именованная | (Optional) When specified, forces the value to be set for a specified output binding. | 
 
-Также поддерживаются следующие общие параметры: 
+The following common parameters are also supported: 
 * `Verbose`
 * `Debug`
 * `ErrorAction`
@@ -146,11 +142,11 @@ Produce-MyOutputValue | Push-OutputBinding -Name myQueue
 * `PipelineVariable`
 * `OutVariable` 
 
-Дополнительные сведения см. в разделе [About общиепараметры](https://go.microsoft.com/fwlink/?LinkID=113216).
+For more information, see [About CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-#### <a name="push-outputbinding-example-http-responses"></a>Push-Аутпутбиндинг пример: HTTP-ответы
+#### <a name="push-outputbinding-example-http-responses"></a>Push-OutputBinding example: HTTP responses
 
-Триггер HTTP возвращает ответ, используя выходную привязку с именем `response`. В следующем примере выходная привязка `response` имеет значение "Output #1":
+An HTTP trigger returns a response using an output binding named `response`. In the following example, the output binding of `response` has the value of "output #1":
 
 ```powershell
 PS >Push-OutputBinding -Name response -Value ([HttpResponseContext]@{
@@ -159,7 +155,7 @@ PS >Push-OutputBinding -Name response -Value ([HttpResponseContext]@{
 })
 ```
 
-Поскольку выходным данным является HTTP, которая принимает только одноэлементное значение, возникает ошибка, когда `Push-OutputBinding` вызывается второй раз.
+Because the output is to HTTP, which accepts a singleton value only, an error is thrown when `Push-OutputBinding` is called a second time.
 
 ```powershell
 PS >Push-OutputBinding -Name response -Value ([HttpResponseContext]@{
@@ -168,7 +164,7 @@ PS >Push-OutputBinding -Name response -Value ([HttpResponseContext]@{
 })
 ```
 
-Для выходов, которые принимают только одноэлементные значения, можно использовать параметр `-Clobber` для переопределения старого значения вместо попытки добавления в коллекцию. В следующем примере предполагается, что вы уже добавили значение. При использовании `-Clobber`ответ из следующего примера переопределяет существующее значение, чтобы вернуть значение "Output #3":
+For outputs that only accept singleton values, you can use the `-Clobber` parameter to override the old value instead of trying to add to a collection. The following example assumes that you have already added a value. By using `-Clobber`, the response from the following example overrides the existing value to return a value of "output #3":
 
 ```powershell
 PS >Push-OutputBinding -Name response -Value ([HttpResponseContext]@{
@@ -177,33 +173,33 @@ PS >Push-OutputBinding -Name response -Value ([HttpResponseContext]@{
 }) -Clobber
 ```
 
-#### <a name="push-outputbinding-example-queue-output-binding"></a>Пример Push-Аутпутбиндинг: Выходная привязка очереди
+#### <a name="push-outputbinding-example-queue-output-binding"></a>Push-OutputBinding example: Queue output binding
 
-`Push-OutputBinding` используется для отправки данных в выходные привязки, такие как [выходная привязка хранилища очередей Azure](functions-bindings-storage-queue.md#output). В следующем примере сообщение, записанное в очередь, имеет значение "Output #1":
+`Push-OutputBinding` is used to send data to output bindings, such as an [Azure Queue storage output binding](functions-bindings-storage-queue.md#output). In the following example, the message written to the queue has a value of "output #1":
 
 ```powershell
 PS >Push-OutputBinding -Name outQueue -Value "output #1"
 ```
 
-Выходная привязка для очереди хранилища принимает несколько выходных значений. В этом случае вызов следующего примера после первой записи в очередь списка с двумя элементами: "Output #1" и "Output #2".
+The output binding for a Storage queue accepts multiple output values. In this case, calling the following example after the first writes to the queue a list with two items: "output #1" and "output #2".
 
 ```powershell
 PS >Push-OutputBinding -Name outQueue -Value "output #2"
 ```
 
-В следующем примере, когда вызывается после двух предыдущих, в выходную коллекцию добавляется еще два значения:
+The following example, when called after the previous two, adds two more values to the output collection:
 
 ```powershell
 PS >Push-OutputBinding -Name outQueue -Value @("output #3", "output #4")
 ```
 
-При запись в очередь сообщение содержит следующие четыре значения: "Output #1", "Output #2", "Output #3" и "Output #4".
+When written to the queue, the message contains these four values: "output #1", "output #2", "output #3", and "output #4".
 
-#### <a name="get-outputbinding-cmdlet"></a>Командлет `Get-OutputBinding`
+#### <a name="get-outputbinding-cmdlet"></a>`Get-OutputBinding` cmdlet
 
-Можно использовать командлет `Get-OutputBinding` для получения значений, заданных в данный момент для выходных привязок. Этот командлет извлекает хэш-таблицу, содержащую имена выходных привязок с соответствующими значениями. 
+You can use the `Get-OutputBinding` cmdlet to retrieve the values currently set for your output bindings. This cmdlet retrieves a hashtable that contains the names of the output bindings with their respective values. 
 
-Ниже приведен пример использования `Get-OutputBinding` для возврата текущих значений привязки:
+The following is an example of using `Get-OutputBinding` to return current binding values:
 
 ```powershell
 Get-OutputBinding
@@ -216,7 +212,7 @@ MyQueue                        myData
 MyOtherQueue                   myData
 ```
 
-`Get-OutputBinding` также содержит параметр с именем `-Name`, который можно использовать для фильтрации возвращаемой привязки, как показано в следующем примере:
+`Get-OutputBinding` also contains a parameter called `-Name`, which can be used to filter the returned binding, as in the following example:
 
 ```powershell
 Get-OutputBinding -Name MyQ*
@@ -228,30 +224,30 @@ Name                           Value
 MyQueue                        myData
 ```
 
-В `Get-OutputBinding`поддерживаются подстановочные знаки (*).
+Wildcards (*) are supported in `Get-OutputBinding`.
 
-## <a name="logging"></a>Ведение журналов
+## <a name="logging"></a>Ведение журнала
 
-Ведение журнала в функциях PowerShell работает как обычное ведение журнала PowerShell. Командлеты ведения журнала можно использовать для записи в каждый выходной поток. Каждый командлет сопоставляется с уровнем ведения журнала, который используется функциями.
+Logging in PowerShell functions works like regular PowerShell logging. You can use the logging cmdlets to write to each output stream. Each cmdlet maps to a log level used by Functions.
 
-| Уровень ведения журнала функций | Командлет ведения журнала |
+| Functions logging level | Logging cmdlet |
 | ------------- | -------------- |
 | Ошибка | **`Write-Error`** |
 | Предупреждение | **`Write-Warning`**  | 
-| Информация | **`Write-Information`** <br/> **`Write-Host`** <br /> **`Write-Output`**      | Информация | Выполняет запись в журнал на уровне _информации_ . |
+| Информация | **`Write-Information`** <br/> **`Write-Host`** <br /> **`Write-Output`**      | Информация | Writes to _Information_ level logging. |
 | Отладка | **`Write-Debug`** |
 | Трассировка | **`Write-Progress`** <br /> **`Write-Verbose`** |
 
-Помимо этих командлетов, все данные, записанные в конвейер, перенаправляются на уровень журнала `Information` и отображаются с форматированием PowerShell по умолчанию.
+In addition to these cmdlets, anything written to the pipeline is redirected to the `Information` log level and displayed with the default PowerShell formatting.
 
 > [!IMPORTANT]
-> Использование командлетов `Write-Verbose` или `Write-Debug` недостаточно для просмотра подробных сведений и ведения журнала на уровне отладки. Кроме того, необходимо настроить пороговое значение уровня ведения журнала, которое объявляет, какой уровень журналов вы в действительности интересуют. Дополнительные сведения см. в статье [Настройка уровня ведения журнала приложения функции](#configure-the-function-app-log-level).
+> Using the `Write-Verbose` or `Write-Debug` cmdlets is not enough to see verbose and debug level logging. You must also configure the log level threshold, which declares what level of logs you actually care about. To learn more, see [Configure the function app log level](#configure-the-function-app-log-level).
 
-### <a name="configure-the-function-app-log-level"></a>Настройка уровня ведения журнала приложения функции
+### <a name="configure-the-function-app-log-level"></a>Configure the function app log level
 
-Функции Azure позволяют определить пороговый уровень, чтобы упростить управление способом записи функций в журналы. Чтобы задать пороговое значение для всех трассировок, записываемых на консоль `logging.logLevel.default` , используйте свойство [`host.json`в справочнике ][справочник по host. json]. Этот параметр применяется ко всем функциям в приложении-функции.
+Azure Functions lets you define the threshold level to make it easy to control the way Functions writes to the logs. To set the threshold for all traces written to the console, use the `logging.logLevel.default` property in the [`host.json` file][справочной статье о host.json]. Этот параметр применяется ко всем функциям в приложении-функции.
 
-В следующем примере устанавливается пороговое значение для включения подробного ведения журнала для всех функций, но устанавливается пороговое значение включения ведения журнала отладки для функции с именем `MyFunction`:
+The following example sets the threshold to enable verbose logging for all functions, but sets the threshold to enable debug logging for a function named `MyFunction`:
 
 ```json
 {
@@ -264,31 +260,31 @@ MyQueue                        myData
 }  
 ```
 
-Дополнительные сведения см. в [Справочник по Host. JSON].
+Дополнительные сведения см. в [справочной статье о host.json].
 
-### <a name="viewing-the-logs"></a>Просмотр журналов
+### <a name="viewing-the-logs"></a>Viewing the logs
 
-Если приложение-функция выполняется в Azure, можно использовать Application Insights для мониторинга. Дополнительные сведения о просмотре журналов функций и обращении к ним см. в статье [мониторинг Функций Azure](functions-monitoring.md).
+If your Function App is running in Azure, you can use Application Insights to monitor it. Дополнительные сведения о просмотре журналов функций и обращении к ним см. в статье [мониторинг Функций Azure](functions-monitoring.md).
 
-Если вы используете приложение-функция локально для разработки, ведет журнал по умолчанию в файловой системе. Чтобы просмотреть журналы в консоли, задайте для переменной среды `AZURE_FUNCTIONS_ENVIRONMENT` значение `Development` перед запуском приложение-функция.
+If you're running your Function App locally for development, logs default to the file system. To see the logs in the console, set the `AZURE_FUNCTIONS_ENVIRONMENT` environment variable to `Development` before starting the Function App.
 
-## <a name="triggers-and-bindings-types"></a>Типы триггеров и привязок
+## <a name="triggers-and-bindings-types"></a>Triggers and bindings types
 
-Существует ряд триггеров и привязок, которые можно использовать с приложением-функцией. Полный список триггеров и привязок [можно найти здесь](functions-triggers-bindings.md#supported-bindings).
+There are a number of triggers and bindings available to you to use with your function app. The full list of triggers and bindings [can be found here](functions-triggers-bindings.md#supported-bindings).
 
-Все триггеры и привязки представлены в коде как несколько реальных типов данных:
+All triggers and bindings are represented in code as a few real data types:
 
 * Хэш-таблицы
-* строка
+* string
 * byte[]
 * int
 * Double
 * HttpRequestContext
 * HttpResponseContext
 
-Первые пять типов в этом списке являются стандартными типами .NET. Последние два используются только [триггером HttpTrigger](#http-triggers-and-bindings).
+The first five types in this list are standard .NET types. The last two are used only by the [HttpTrigger trigger](#http-triggers-and-bindings).
 
-Каждый параметр привязки в функциях должен иметь один из этих типов.
+Each binding parameter in your functions must be one of these types.
 
 ### <a name="http-triggers-and-bindings"></a>Триггеры и привязки HTTP
 
@@ -296,35 +292,35 @@ MyQueue                        myData
 
 #### <a name="request-object"></a>Объект запроса
 
-Объект запроса, переданный в скрипт, имеет тип `HttpRequestContext`, который имеет следующие свойства:
+The request object that's passed into the script is of the type `HttpRequestContext`, which has the following properties:
 
-| Свойство  | ОПИСАНИЕ                                                    | введите                      |
+| Свойство  | Описание                                                    | Тип                      |
 |-----------|----------------------------------------------------------------|---------------------------|
-| **`Body`**    | Объект, содержащий текст запроса. `Body` сериализуется в лучший тип на основе данных. Например, если данные являются JSON, они передаются в виде хэш-таблицы. Если данные являются строкой, они передаются в виде строки. | object |
-| **`Headers`** | Словарь, содержащий заголовки запроса.                | Строка < словаря, строка ><sup>*</sup> |
-| **`Method`** | Метод HTTP, используемый для запроса.                                | строка                    |
-| **`Params`**  | Объект, содержащий параметры маршрутизации запроса. | Строка < словаря, строка ><sup>*</sup> |
-| **`Query`** | Объект, содержащий параметры запроса.                  | Строка < словаря, строка ><sup>*</sup> |
-| **`Url`** | URL-адрес запроса.                                        | строка                    |
+| **`Body`**    | Объект, содержащий текст запроса. `Body` is serialized into the best type based on the data. For example, if the data is JSON, it's passed in as a hashtable. If the data is a string, it's passed in as a string. | object |
+| **`Headers`** | A dictionary that contains the request headers.                | Dictionary<string,string><sup>*</sup> |
+| **`Method`** | Метод HTTP, используемый для запроса.                                | string                    |
+| **`Params`**  | Объект, содержащий параметры маршрутизации запроса. | Dictionary<string,string><sup>*</sup> |
+| **`Query`** | Объект, содержащий параметры запроса.                  | Dictionary<string,string><sup>*</sup> |
+| **`Url`** | URL-адрес запроса.                                        | string                    |
 
-<sup>*</sup> Все ключи `Dictionary<string,string>` не чувствительны к регистру.
+<sup>*</sup> All `Dictionary<string,string>` keys are case-insensitive.
 
 #### <a name="response-object"></a>Объект ответа
 
-Объект ответа, который необходимо отправить обратно, имеет тип `HttpResponseContext`, который имеет следующие свойства:
+The response object that you should send back is of the type `HttpResponseContext`, which has the following properties:
 
-| Свойство      | ОПИСАНИЕ                                                 | введите                      |
+| Свойство      | Описание                                                 | Тип                      |
 |---------------|-------------------------------------------------------------|---------------------------|
 | **`Body`**  | Объект, содержащий текст ответа.           | object                    |
-| **`ContentType`** | Короткий рукой для установки типа содержимого для ответа. | строка                    |
-| **`Headers`** | Объект, содержащий заголовок ответа.               | Словарь или хэш-таблица   |
+| **`ContentType`** | A short hand for setting the content type for the response. | string                    |
+| **`Headers`** | Объект, содержащий заголовок ответа.               | Dictionary or Hashtable   |
 | **`StatusCode`**  | Код состояния HTTP ответа.                       | строка или целое число             |
 
 #### <a name="accessing-the-request-and-response"></a>Доступ к запросу и ответу
 
-При работе с триггерами HTTP доступ к HTTP-запросу можно получить так же, как и с любой другой входной привязкой. Он находится в блоке `param`.
+When you work with HTTP triggers, you can access the HTTP request the same way you would with any other input binding. It's in the `param` block.
 
-Используйте объект `HttpResponseContext` для возврата ответа, как показано ниже:
+Use an `HttpResponseContext` object to return a response, as shown in the following:
 
 `function.json`
 
@@ -357,18 +353,18 @@ Push-OutputBinding -Name res -Value ([HttpResponseContext]@{
 })
 ```
 
-Результат вызова этой функции будет следующим:
+The result of invoking this function would be:
 
 ```
 PS > irm http://localhost:5001?Name=Functions
 Hello Functions!
 ```
 
-### <a name="type-casting-for-triggers-and-bindings"></a>Приведение типов для триггеров и привязок
+### <a name="type-casting-for-triggers-and-bindings"></a>Type-casting for triggers and bindings
 
-Для некоторых привязок, таких как привязка больших двоичных объектов, можно указать тип параметра.
+For certain bindings like the blob binding, you're able to specify the type of the parameter.
 
-Например, чтобы данные из хранилища BLOB-объектов передавались в виде строки, добавьте приведенный ниже тип в мой блок `param`:
+For example, to have data from Blob storage supplied as a string, add the following type cast to my `param` block:
 
 ```powershell
 param([string] $myBlob)
@@ -376,29 +372,29 @@ param([string] $myBlob)
 
 ## <a name="powershell-profile"></a>Профиль PowerShell
 
-В PowerShell есть понятие профиля PowerShell. Если вы не знакомы с профилями PowerShell, см. раздел [About Profiles](/powershell/module/microsoft.powershell.core/about/about_profiles).
+In PowerShell, there's the concept of a PowerShell profile. If you're not familiar with PowerShell profiles, see [About profiles](/powershell/module/microsoft.powershell.core/about/about_profiles).
 
-В функциях PowerShell скрипт профиля выполняется при запуске приложения функции. Приложения-функции запускаются при первом развертывании и после бездействия ([холодный запуск](#cold-start)).
+In PowerShell Functions, the profile script executes when the function app starts. Function apps start when first deployed and after being idled ([cold start](#cold-start)).
 
-При создании приложения-функции с помощью таких средств, как Visual Studio Code и Azure Functions Core Tools, создается `profile.ps1` по умолчанию. Профиль по умолчанию хранится [в репозитории основных средств](https://github.com/Azure/azure-functions-core-tools/blob/dev/src/Azure.Functions.Cli/StaticResources/profile.ps1) , который содержит:
+When you create a function app using tools, such as Visual Studio Code and Azure Functions Core Tools, a default `profile.ps1` is created for you. The default profile is maintained [on the Core Tools GitHub repository](https://github.com/Azure/azure-functions-core-tools/blob/dev/src/Azure.Functions.Cli/StaticResources/profile.ps1) and contains:
 
-* Автоматическая проверка подлинности MSI в Azure.
-* Возможность включения Azure PowerShell `AzureRM` псевдонимов PowerShell при желании.
+* Automatic MSI authentication to Azure.
+* The ability to turn on the Azure PowerShell `AzureRM` PowerShell aliases if you would like.
 
-## <a name="powershell-version"></a>Версия PowerShell
+## <a name="powershell-version"></a>PowerShell version
 
-В следующей таблице показана версия PowerShell, используемая каждой основной версией среды выполнения функций.
+The following table shows the PowerShell version used by each major version of the Functions runtime:
 
-| Версия службы "Функции" | Версия PowerShell                             |
+| Версия службы "Функции" | PowerShell version                             |
 |-------------------|------------------------------------------------|
-| 1.x               | Windows PowerShell 5,1 (заблокировано средой выполнения) |
+| 1.x               | Windows PowerShell 5.1 (locked by the runtime) |
 | 2.x               | PowerShell Core 6                              |
 
-Текущую версию можно просмотреть, выполнив печать `$PSVersionTable` из любой функции.
+You can see the current version by printing `$PSVersionTable` from any function.
 
 ## <a name="dependency-management"></a>Управление зависимостями
 
-Функции позволяют использовать [коллекцию PowerShell](https://www.powershellgallery.com) для управления зависимостями. С включенным управлением зависимостями файл требований. PSD1 используется для автоматического скачивания необходимых модулей. Это поведение можно включить, задав для свойства `managedDependency` значение `true` в корне [файла host. JSON](functions-host-json.md), как показано в следующем примере:
+Functions lets you leverage [PowerShell gallery](https://www.powershellgallery.com) for managing dependencies. With dependency management enabled, the requirements.psd1 file is used to automatically download required modules. You enable this behavior by setting the `managedDependency` property to `true` in the root of the [host.json file](functions-host-json.md), as in the following example:
 
 ```json
 {
@@ -408,7 +404,7 @@ param([string] $myBlob)
 }
 ```
 
-При создании нового проекта функций PowerShell управление зависимостями включается по умолчанию с включенным [модулем`Az`](/powershell/azure/new-azureps-module-az) Azure. Максимальное число модулей, поддерживаемое в настоящее время, равно 10. Поддерживаемый синтаксис — _`MajorNumber`_ `.*` или точную версию модуля, как показано в следующих требованиях. пример PSD1:
+When you create a new PowerShell functions project, dependency management is enabled by default, with the Azure [`Az` module](/powershell/azure/new-azureps-module-az) included. The maximum number of modules currently supported is 10. The supported syntax is _`MajorNumber`_ `.*` or exact module version as shown in the following requirements.psd1 example:
 
 ```powershell
 @{
@@ -417,43 +413,43 @@ param([string] $myBlob)
 }
 ```
 
-При обновлении файла требований. PSD1 обновленные модули устанавливаются после перезагрузки.
+When you update the requirements.psd1 file, updated modules are installed after a restart.
 
 > [!NOTE]
-> Управляемым зависимостям требуется доступ к www.powershellgallery.com для скачивания модулей. При локальном запуске убедитесь, что среда выполнения может получить доступ к этому URL-адресу, добавив необходимые правила брандмауэра. 
+> Managed dependencies requires access to www.powershellgallery.com to download modules. When running locally, make sure that the runtime can access this URL by adding any required firewall rules. 
 
-Следующие параметры приложения можно использовать для изменения способа загрузки и установки управляемых зависимостей. Обновление приложения начинается в пределах `MDMaxBackgroundUpgradePeriod`, и процесс обновления завершается примерно в `MDNewSnapshotCheckPeriod`.
+The following application settings can be used to change how the managed dependencies are downloaded and installed. Your app upgrade starts within `MDMaxBackgroundUpgradePeriod`, and the upgrade process completes within approximately the `MDNewSnapshotCheckPeriod`.
 
-| Параметр приложение-функция              | Значение по умолчанию             | ОПИСАНИЕ                                         |
+| Function App setting              | Значение по умолчанию             | Описание                                         |
 |   -----------------------------   |   -------------------     |  -----------------------------------------------    |
-| **`MDMaxBackgroundUpgradePeriod`**      | `7.00:00:00` (7 дней)     | Каждый рабочий процесс PowerShell инициирует проверку обновления модулей на коллекция PowerShell при запуске процесса и каждый `MDMaxBackgroundUpgradePeriod` после этого. Если в коллекция PowerShell доступна новая версия модуля, она устанавливается в файловую систему и становится доступной для рабочих ролей PowerShell. Уменьшение этого значения позволяет приложению-функции получать более новые версии модулей быстрее, но также увеличивает использование ресурсов приложения (сетевой ввод-вывод, ЦП, хранилище). Увеличение этого значения приводит к уменьшению использования ресурсов приложением, но может также задержать доставку новых версий модуля в приложение. | 
-| **`MDNewSnapshotCheckPeriod`**         | `01:00:00` (1 час)       | После установки новых версий модулей в файловой системе необходимо перезапустить каждый рабочий процесс PowerShell. Перезапуск рабочих ролей PowerShell влияет на доступность приложения, так как он может прерывать текущее выполнение функции. До тех пор пока все рабочие процессы PowerShell не будут перезапущены, вызовы функций могут использовать либо старые, либо новые версии модулей. Перезапуск всех рабочих ролей PowerShell завершен в `MDNewSnapshotCheckPeriod`. Увеличение этого значения снижает частоту прерываний, но также может увеличить период времени, в течение которого вызовы функций используют старую или новую версию модуля недетерминированно. |
-| **`MDMinBackgroundUpgradePeriod`**      | `1.00:00:00` (1 день)     | Чтобы избежать чрезмерного обновления модулей при частых перезапусках рабочих ролей, проверка обновления модулей не выполняется, когда любой рабочий процесс уже инициировал эту проверку в последней `MDMinBackgroundUpgradePeriod`. |
+| **`MDMaxBackgroundUpgradePeriod`**      | `7.00:00:00` (7 days)     | Each PowerShell worker process initiates checking for module upgrades on the PowerShell Gallery on process start and every `MDMaxBackgroundUpgradePeriod` after that. When a new module version is available in the PowerShell Gallery, it's installed to the file system and made available to PowerShell workers. Decreasing this value lets your function app get newer module versions sooner, but it also increases the app resource usage (network I/O, CPU, storage). Increasing this value decreases the app's resource usage, but it may also delay delivering new module versions to your app. | 
+| **`MDNewSnapshotCheckPeriod`**         | `01:00:00` (1 hour)       | After new module versions are installed to the file system, every PowerShell worker process must be restarted. Restarting PowerShell workers affects your app availability as it can interrupt current function execution. Until all PowerShell worker processes are restarted, function invocations may use either the old or the new module versions. Restarting all PowerShell workers complete within `MDNewSnapshotCheckPeriod`. Increasing this value decreases the frequency of interruptions, but may also increase the period of time when function invocations use either the old or the new module versions non-deterministically. |
+| **`MDMinBackgroundUpgradePeriod`**      | `1.00:00:00` (1 day)     | To avoid excessive module upgrades on frequent Worker restarts, checking for module upgrades isn't performed when any worker has already initiated that check in the last `MDMinBackgroundUpgradePeriod`. |
 
-Использование собственных пользовательских модулей немного отличается от того, как это можно сделать обычным образом.
+Leveraging your own custom modules is a little different than how you would do it normally.
 
-На локальном компьютере модуль устанавливается в одну из глобально доступных папок в `$env:PSModulePath`. При работе в Azure у вас нет доступа к модулям, установленным на вашем компьютере. Это означает, что `$env:PSModulePath` для приложения-функции PowerShell отличается от `$env:PSModulePath` в регулярном скрипте PowerShell.
+On your local computer, the module gets installed in one of the globally available folders in your `$env:PSModulePath`. When running in Azure, you don't have access to the modules installed on your machine. This means that the `$env:PSModulePath` for a PowerShell function app differs from `$env:PSModulePath` in a regular PowerShell script.
 
-В функциях `PSModulePath` содержит два пути:
+In Functions, `PSModulePath` contains two paths:
 
-* Папка `Modules`, которая находится в корне приложения-функции.
-* Путь к папке `Modules`, управляемой рабочим модулем PowerShell.
+* A `Modules` folder that exists at the root of your function app.
+* A path to a `Modules` folder that is controlled by the PowerShell language worker.
 
-### <a name="function-app-level-modules-folder"></a>Папка `Modules` уровня приложения-функции
+### <a name="function-app-level-modules-folder"></a>Function app-level `Modules` folder
 
-Чтобы использовать пользовательские модули, можно разместить модули, от которых зависит ваша функция, в папке `Modules`. Из этой папки модули автоматически становятся доступными для среды выполнения функций. Все функции в приложении функции могут использовать эти модули. 
+To use custom modules, you can place modules on which your functions depend in a `Modules` folder. From this folder, modules are automatically available to the functions runtime. Any function in the function app can use these modules. 
 
 > [!NOTE]
-> Модули, указанные в файле требований. PSD1, автоматически загружаются и включаются в путь, поэтому их не нужно включать в папку Modules. Они хранятся локально в папке `$env:LOCALAPPDATA/AzureFunctions` и в папке `/data/ManagedDependencies` при запуске в облаке.
+> Modules specified in the requirements.psd1 file are automatically downloaded and included in the path so you don't need to include them in the modules folder. These are stored locally in the `$env:LOCALAPPDATA/AzureFunctions` folder and in the `/data/ManagedDependencies` folder when run in the cloud.
 
-Чтобы воспользоваться функцией пользовательского модуля, создайте папку `Modules` в корне приложения-функции. Скопируйте модули, которые вы хотите использовать в функциях, в это расположение.
+To take advantage of the custom module feature, create a `Modules` folder in the root of your function app. Copy the modules you want to use in your functions to this location.
 
 ```powershell
 mkdir ./Modules
 Copy-Item -Path /mymodules/mycustommodule -Destination ./Modules -Recurse
 ```
 
-При наличии папки `Modules` приложение-функция должно иметь следующую структуру папок:
+With a `Modules` folder, your function app should have the following folder structure:
 
 ```
 PSFunctionApp
@@ -469,22 +465,22 @@ PSFunctionApp
  | - requirements.psd1
 ```
 
-При запуске приложения-функции языковой рабочий процесс PowerShell добавляет эту `Modules`ную папку в `$env:PSModulePath`, чтобы вы могли полагаться на автозагрузку модуля точно так же, как в обычном сценарии PowerShell.
+When you start your function app, the PowerShell language worker adds this `Modules` folder to the `$env:PSModulePath` so that you can rely on module autoloading just as you would in a regular PowerShell script.
 
-### <a name="language-worker-level-modules-folder"></a>Языковой `Modules` папка уровня рабочего процесса
+### <a name="language-worker-level-modules-folder"></a>Language worker level `Modules` folder
 
-Рабочие роли языка PowerShell обычно используют несколько модулей. Эти модули определяются в последнем положении `PSModulePath`. 
+Several modules are commonly used by the PowerShell language worker. These modules are defined in the last position of `PSModulePath`. 
 
-Текущий список модулей выглядит следующим образом:
+The current list of modules is as follows:
 
-* [Microsoft. PowerShell. Archive](https://www.powershellgallery.com/packages/Microsoft.PowerShell.Archive): модуль, используемый для работы с архивами, такими как `.zip`, `.nupkg`и другие.
-* **Среаджоб**: реализация API-интерфейсов задания PowerShell на основе потока.
+* [Microsoft.PowerShell.Archive](https://www.powershellgallery.com/packages/Microsoft.PowerShell.Archive): module used for working with archives, like `.zip`, `.nupkg`, and others.
+* **ThreadJob**: A thread-based implementation of the PowerShell job APIs.
 
-По умолчанию функции используют самые последние версии этих модулей. Чтобы использовать конкретную версию модуля, вставьте эту конкретную версию в папку `Modules` приложения-функции.
+By default, Functions uses the most recent version of these modules. To use a specific module version, put that specific version in the `Modules` folder of your function app.
 
 ## <a name="environment-variables"></a>Переменные среды
 
-В Функциях [параметры приложения](functions-app-settings.md), такие как строки подключения службы, доступны в виде переменных среды во время выполнения. Доступ к этим параметрам можно получить с помощью `$env:NAME_OF_ENV_VAR`, как показано в следующем примере:
+В Функциях [параметры приложения](functions-app-settings.md), такие как строки подключения службы, доступны в виде переменных среды во время выполнения. You can access these settings using `$env:NAME_OF_ENV_VAR`, as shown in the following example:
 
 ```powershell
 param($myTimer)
@@ -500,32 +496,32 @@ Write-Host $env:WEBSITE_SITE_NAME
 
 ## <a name="concurrency"></a>Параллелизм
 
-По умолчанию среда выполнения PowerShell для функций может обрабатывать только один вызов функции за раз. Однако этот уровень параллелизма может быть недостаточно в следующих ситуациях:
+By default, the Functions PowerShell runtime can only process one invocation of a function at a time. However, this concurrency level might not be sufficient in the following situations:
 
-* При одновременной обработке большого количества вызовов одновременно.
-* При наличии функций, которые вызывают другие функции в одном и том же приложении функции.
+* When you're trying to handle a large number of invocations at the same time.
+* When you have functions that invoke other functions inside the same function app.
 
-Это поведение можно изменить, задав для следующей переменной среды целочисленное значение:
+You can change this behavior by setting the following environment variable to an integer value:
 
 ```
 PSWorkerInProcConcurrencyUpperBound
 ```
 
-Эта переменная среды задается в [параметрах приложения](functions-app-settings.md) приложение-функция.
+You set this environment variable in the [app settings](functions-app-settings.md) of your Function App.
 
-### <a name="considerations-for-using-concurrency"></a>Рекомендации по использованию параллелизма
+### <a name="considerations-for-using-concurrency"></a>Considerations for using concurrency
 
-По умолчанию PowerShell является _отдельным потоковым_ языком сценариев. Однако параллелизм можно добавить с помощью нескольких пространств выполнения PowerShell в одном процессе. Объем созданных пространств выполнения будет соответствовать параметру приложения Псворкеринпрокконкурренциуппербаунд. На пропускную способность влияет объем ресурсов ЦП и памяти, доступный в выбранном плане.
+PowerShell is a _single threaded_ scripting language by default. However, concurrency can be added by using multiple PowerShell runspaces in the same process. The amount of runspaces created will match the PSWorkerInProcConcurrencyUpperBound application setting. The throughput will be impacted by the amount of CPU and memory available in the selected plan.
 
-Azure PowerShell использует некоторые контексты и состояния _уровня процесса_ , чтобы помочь сэкономить от чрезмерного ввода. Однако при включении параллелизма в приложении функции и вызове действий, изменяющих состояние, могут возникнуть состояния гонки. Эти состояния гонки трудно отлаживать, поскольку один вызов зависит от определенного состояния, а другой вызов изменил состояние.
+Azure PowerShell uses some _process-level_ contexts and state to help save you from excess typing. However, if you turn on concurrency in your function app and invoke actions that change state, you could end up with race conditions. These race conditions are difficult to debug because one invocation relies on a certain state and the other invocation changed the state.
 
-Во время параллелизма Azure PowerShell, так как некоторые операции могут занимать значительное количество времени. Однако следует соблюдать осторожность. Если вы считаете, что столкнулись с состоянием гонки, задайте для параметра приложения Псворкеринпрокконкурренциуппербаунд значение `1` и вместо этого используйте [изоляцию уровня языкового рабочего процесса](functions-app-settings.md#functions_worker_process_count) для параллелизма.
+There's immense value in concurrency with Azure PowerShell, since some operations can take a considerable amount of time. However, you must proceed with caution. If you suspect that you're experiencing a race condition, set the PSWorkerInProcConcurrencyUpperBound app setting to `1` and instead use [language worker process level isolation](functions-app-settings.md#functions_worker_process_count) for concurrency.
 
-## <a name="configure-function-scriptfile"></a>Настройка `scriptFile` функций
+## <a name="configure-function-scriptfile"></a>Configure function `scriptFile`
 
-По умолчанию функция PowerShell выполняется из `run.ps1`— файла, который использует тот же родительский каталог, что и соответствующий `function.json`.
+By default, a PowerShell function is executed from `run.ps1`, a file that shares the same parent directory as its corresponding `function.json`.
 
-Свойство `scriptFile` в `function.json` можно использовать для получения структуры папок, которая выглядит, как в следующем примере:
+The `scriptFile` property in the `function.json` can be used to get a folder structure that looks like the following example:
 
 ```
 FunctionApp
@@ -536,7 +532,7 @@ FunctionApp
  | | - PSFunction.ps1
 ```
 
-В этом случае `function.json` для `myFunction` содержит свойство `scriptFile`, ссылающееся на файл с выполняемой экспортированной функцией.
+In this case, the `function.json` for `myFunction` includes a `scriptFile` property referencing the file with the exported function to run.
 
 ```json
 {
@@ -547,14 +543,14 @@ FunctionApp
 }
 ```
 
-## <a name="use-powershell-modules-by-configuring-an-entrypoint"></a>Использование модулей PowerShell с помощью настройки точки входа
+## <a name="use-powershell-modules-by-configuring-an-entrypoint"></a>Use PowerShell modules by configuring an entryPoint
 
-В этой статье показаны функции PowerShell в файле сценария по умолчанию `run.ps1`, созданном шаблонами.
-Однако можно также включить функции в модули PowerShell. Вы можете ссылаться на код конкретной функции в модуле, используя поля `scriptFile` и `entryPoint` в файле конфигурации Function. JSON.
+This article has shown PowerShell functions in the default `run.ps1` script file generated by the templates.
+However, you can also include your functions in PowerShell modules. You can reference your specific function code in the module by using the `scriptFile` and `entryPoint` fields in the function.json` configuration file.
 
-В этом случае `entryPoint` — это имя функции или командлета в модуле PowerShell, на который ссылается `scriptFile`.
+In this case, `entryPoint` is the name of a function or cmdlet in the PowerShell module referenced in `scriptFile`.
 
-Рассмотрим следующую структуру папок:
+Consider the following folder structure:
 
 ```
 FunctionApp
@@ -565,7 +561,7 @@ FunctionApp
  | | - PSFunction.psm1
 ```
 
-Где `PSFunction.psm1` содержит:
+Where `PSFunction.psm1` contains:
 
 ```powershell
 function Invoke-PSTestFunc {
@@ -577,7 +573,7 @@ function Invoke-PSTestFunc {
 Export-ModuleMember -Function "Invoke-PSTestFunc"
 ```
 
-В этом примере конфигурация для `myFunction` включает свойство `scriptFile`, которое ссылается на `PSFunction.psm1`, который является модулем PowerShell в другой папке.  Свойство `entryPoint` ссылается на функцию `Invoke-PSTestFunc`, которая является точкой входа в модуле.
+In this example, the configuration for `myFunction` includes a `scriptFile` property that references `PSFunction.psm1`, which is a PowerShell module in another folder.  The `entryPoint` property references the `Invoke-PSTestFunc` function, which is the entry point in the module.
 
 ```json
 {
@@ -589,26 +585,26 @@ Export-ModuleMember -Function "Invoke-PSTestFunc"
 }
 ```
 
-В этой конфигурации `Invoke-PSTestFunc` выполняется точно так же, как `run.ps1`.
+With this configuration, the `Invoke-PSTestFunc` gets executed exactly as a `run.ps1` would.
 
-## <a name="considerations-for-powershell-functions"></a>Рекомендации по функциям PowerShell
+## <a name="considerations-for-powershell-functions"></a>Considerations for PowerShell functions
 
-При работе с функциями PowerShell учитывайте рекомендации в следующих разделах.
+When you work with PowerShell functions, be aware of the considerations in the following sections.
 
 ### <a name="cold-start"></a>Холодный запуск
 
-При разработке функций Azure в [модели размещения, не поддерживающей сервер](functions-scale.md#consumption-plan), холодный запуск — это реальность. *Холодный запуск* — это период времени, который требуется для запуска приложения-функции для обработки запроса. Холодный запуск чаще всего происходит в плане потребления, так как приложение-функция завершает работу в периоды бездействия.
+When developing Azure Functions in the [serverless hosting model](functions-scale.md#consumption-plan), cold starts are a reality. *Cold start* refers to period of time it takes for your function app to start running to process a request. Cold start happens more frequently in the Consumption plan because your function app gets shut down during periods of inactivity.
 
-### <a name="bundle-modules-instead-of-using-install-module"></a>Модули пакета вместо использования `Install-Module`
+### <a name="bundle-modules-instead-of-using-install-module"></a>Bundle modules instead of using `Install-Module`
 
-Сценарий выполняется при каждом вызове. Старайтесь не использовать `Install-Module` в скрипте. Вместо этого используйте `Save-Module` перед публикацией, чтобы функция не затратила время на загрузку модуля. Если холодный запуск влияет на ваши функции, рассмотрите возможность развертывания приложения-функции в [плане службы приложений](functions-scale.md#app-service-plan) со значением *Always on* или в [плане Premium](functions-scale.md#premium-plan).
+Your script is run on every invocation. Avoid using `Install-Module` in your script. Instead use `Save-Module` before publishing so that your function doesn't have to waste time downloading the module. If cold starts are impacting your functions, consider deploying your function app to an [App Service plan](functions-scale.md#app-service-plan) set to *always on* or to a [Premium plan](functions-scale.md#premium-plan).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Для получения дополнительных сведений см. следующие ресурсы:
 
-* [Рекомендации по Функциям Azure](functions-best-practices.md)
+* [Рекомендации по функциям Azure](functions-best-practices.md)
 * [Справочник разработчика по функциям Azure](functions-reference.md)
-* [Azure Functions triggers and bindings (Триггеры и привязки в Функциях Azure)](functions-triggers-bindings.md)
+* [Триггеры и привязки в функциях Azure](functions-triggers-bindings.md)
 
-[Справочник по Host. JSON]: functions-host-json.md
+[справочной статье о host.json]: functions-host-json.md

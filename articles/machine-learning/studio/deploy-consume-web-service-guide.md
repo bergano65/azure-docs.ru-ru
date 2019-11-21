@@ -1,7 +1,7 @@
 ---
 title: развертывание и использование
 titleSuffix: ML Studio (classic) - Azure
-description: Вы можете использовать Машинное обучение Azure Studio (классическая модель) для развертывания рабочих процессов и моделей машинного обучения в качестве веб-служб. Затем эти веб-службы можно использовать для вызова моделей машинного обучения из приложений в Интернете, чтобы делать прогнозы в режиме реального времени или в пакетном режиме.
+description: You can use Azure Machine Learning Studio (classic) to deploy machine learning workflows and models as web services. Затем эти веб-службы можно использовать для вызова моделей машинного обучения из приложений в Интернете, чтобы делать прогнозы в режиме реального времени или в пакетном режиме.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
@@ -10,46 +10,46 @@ author: xiaoharper
 ms.author: amlstudiodocs
 ms.custom: seodec18
 ms.date: 04/19/2017
-ms.openlocfilehash: 560158dce3c70049ad3faa11a5ffb9a1858aa445
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: 1c97fd4f4d5646b6654f5261abd99372c521c389
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73837674"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74228236"
 ---
-# <a name="azure-machine-learning-studio-classic-web-services-deployment-and-consumption"></a>Веб-службы Машинное обучение Azure Studio (классическая модель): развертывание и использование
+# <a name="azure-machine-learning-studio-classic-web-services-deployment-and-consumption"></a>Azure Machine Learning Studio (classic) Web Services: Deployment and consumption
 
-Вы можете использовать Машинное обучение Azure Studio (классическая модель) для развертывания рабочих процессов и моделей машинного обучения в качестве веб-служб. Затем эти веб-службы можно использовать для вызова моделей машинного обучения из приложений в Интернете, чтобы делать прогнозы в режиме реального времени или в пакетном режиме. Так как это веб-службы RESTful, их можно вызывать, используя различные языки программирования и платформы, например .NET и Java, а также приложения, например Microsoft Excel.
+You can use Azure Machine Learning Studio (classic) to deploy machine learning workflows and models as web services. Затем эти веб-службы можно использовать для вызова моделей машинного обучения из приложений в Интернете, чтобы делать прогнозы в режиме реального времени или в пакетном режиме. Так как это веб-службы RESTful, их можно вызывать, используя различные языки программирования и платформы, например .NET и Java, а также приложения, например Microsoft Excel.
 
 В следующих разделах представлены ссылки на пошаговые инструкции, код и документацию, которые помогут вам приступить к работе.
 
 ## <a name="deploy-a-web-service"></a>Развертывание веб-службы
 
-### <a name="with-azure-machine-learning-studio-classic"></a>С помощью Машинное обучение Azure Studio (классическая модель)
+### <a name="with-azure-machine-learning-studio-classic"></a>With Azure Machine Learning Studio (classic)
 
-Портал Studio (классическая модель) и портал веб-служб Машинное обучение Microsoft Azure помогают развертывать веб-службу и управлять ею без написания кода.
+The Studio (classic) portal and the Microsoft Azure Machine Learning Web Services portal help you deploy and manage a web service without writing code.
 
 В статьях по следующим ссылкам содержатся общие сведения о процессе развертывания новой веб-службы:
 
 * Общие сведения о развертывании новой веб-службы на основе Azure Resource Manager см. в статье [Развертывание новой веб-службы](deploy-a-machine-learning-web-service.md).
 * Пошаговое руководство по развертыванию веб-службы см. в статье [Развертывание веб-службы машинного обучения Azure](deploy-a-machine-learning-web-service.md).
-* Полное пошаговое руководство по созданию и развертыванию веб-службы см. в [руководстве 1. прогнозирование кредитного риска](tutorial-part1-credit-risk.md).
+* For a full walkthrough about how to create and deploy a web service, start with [Tutorial 1: Predict credit risk](tutorial-part1-credit-risk.md).
 * Конкретные примеры развертывания веб-службы см. в следующих статьях:
 
-  * [Учебник 3. Развертывание модели кредитных рисков](tutorial-part3-credit-risk-deploy.md)
-  * [Развертывание веб-службы в нескольких регионах](/azure/machine-learning/studio/publish-a-machine-learning-web-service#multi-region)
+  * [Tutorial 3: Deploy credit risk model](tutorial-part3-credit-risk-deploy.md)
+  * [Развертывание веб-службы в нескольких регионах](deploy-a-machine-learning-web-service.md#multi-region)
 
 ### <a name="with-web-services-resource-provider-apis-azure-resource-manager-apis"></a>С помощью интерфейсов API поставщика ресурсов веб-служб (интерфейсов API Azure Resource Manager)
 
-Классическая версия поставщика ресурсов Машинное обучение Azure Studio для веб-служб позволяет развертывать веб-службы и управлять ими с помощью вызовов REST API. Дополнительные сведения см. в статье [Azure Machine Learning Studio Management REST APIs](/rest/api/machinelearning/index) (REST API для управления Студией машинного обучения Azure).
+The classic version of Azure Machine Learning Studio resource provider for web services enables deployment and management of web services by using REST API calls. Дополнительные сведения см. в статье [Azure Machine Learning Studio Management REST APIs](/rest/api/machinelearning/index) (REST API для управления Студией машинного обучения Azure).
 
 <!-- [Machine Learning Web Service (REST)](https://msdn.microsoft.com/library/azure/mt767538.aspx) reference. -->
 
 ### <a name="with-powershell-cmdlets"></a>С помощью командлетов PowerShell
 
-Классическая версия поставщика ресурсов Машинное обучение Azure Studio для веб-служб позволяет развертывать веб-службы и управлять ими с помощью командлетов PowerShell.
+The classic version of Azure Machine Learning Studio resource provider for web services enables deployment and management of web services by using PowerShell cmdlets.
 
-Чтобы использовать командлеты, необходимо сначала войти в учетную запись Azure из среды PowerShell с помощью командлета [Connect-азаккаунт](/powershell/module/az.accounts/connect-azaccount) . Если вы не знакомы с вызовом команд PowerShell на основе Resource Manager, см. статью [Использование Azure PowerShell с Azure Resource Manager](../../azure-resource-manager/manage-resources-powershell.md).
+To use the cmdlets, you must first sign in to your Azure account from within the PowerShell environment by using the [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) cmdlet. Если вы не знакомы с вызовом команд PowerShell на основе Resource Manager, см. статью [Использование Azure PowerShell с Azure Resource Manager](../../azure-resource-manager/manage-resources-powershell.md).
 
 Чтобы экспортировать прогнозный эксперимент, используйте [этот пример кода](https://github.com/ritwik20/AzureML-WebServices). После создания EXE-файла из кода можно ввести следующую команду:
 
@@ -78,7 +78,7 @@ ms.locfileid: "73837674"
 
 Дополнительные сведения см. в следующих статьях и примерах кода:
 
-* Справочник по [командлетам машинное обучение Azure Studio (классическая модель)](https://docs.microsoft.com/powershell/module/az.machinelearning) на сайте MSDN
+* [Azure Machine Learning Studio (classic) Cmdlets](https://docs.microsoft.com/powershell/module/az.machinelearning) reference on MSDN
 * Пример [пошагового руководства](https://github.com/raymondlaghaeian/azureml-webservices-arm-powershell/blob/master/sample-commands.txt) на сайте GitHub.
 
 ## <a name="consume-the-web-services"></a>Использование веб-служб
@@ -89,7 +89,7 @@ ms.locfileid: "73837674"
 
 * [Развертывание новой веб-службы](deploy-a-machine-learning-web-service.md)
 * [Развертывание веб-службы машинного обучения Azure](deploy-a-machine-learning-web-service.md)
-* [Учебник 3. Развертывание модели кредитных рисков](tutorial-part3-credit-risk-deploy.md)
+* [Tutorial 3: Deploy credit risk model](tutorial-part3-credit-risk-deploy.md)
 
 ### <a name="from-excel"></a>Из Excel
 
@@ -100,4 +100,4 @@ ms.locfileid: "73837674"
 
 ### <a name="from-a-rest-based-client"></a>Из клиента на основе REST
 
-Веб-службы Машинного обучения Azure представляют собой интерфейсы API RESTful. Эти API можно использовать на различных платформах, таких как .NET, Python, R, Java и т. д. На странице **Использование** веб-службы на [портале веб-служб машинное обучение Microsoft Azure](https://services.azureml.net) есть пример кода, который поможет приступить к работе. Дополнительные сведения см. в статье [Как использовать веб-службу машинного обучения Azure, развернутую из эксперимента машинного обучения](consume-web-services.md).
+Веб-службы Машинного обучения Azure представляют собой интерфейсы API RESTful. You can consume these APIs from various platforms, such as .NET, Python, R, Java, etc. The **Consume** page for your web service on the [Microsoft Azure Machine Learning Web Services portal](https://services.azureml.net) has sample code that can help you get started. Дополнительные сведения см. в статье [Как использовать веб-службу машинного обучения Azure, развернутую из эксперимента машинного обучения](consume-web-services.md).

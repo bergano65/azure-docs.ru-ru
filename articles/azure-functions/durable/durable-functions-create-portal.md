@@ -1,21 +1,15 @@
 ---
 title: Создание Устойчивых функций с помощью портала Azure
 description: Сведения о том, как установить расширение Устойчивых функций для Функций Azure для разработки с помощью портала.
-services: functions
-author: ggailey777
-manager: jeconnoc
-keywords: ''
-ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 10/23/2018
-ms.author: glenga
 ms.reviewer: azfuncdf
-ms.openlocfilehash: 238969b320608c08491c3d3e85870d57f41c1589
-ms.sourcegitcommit: b2fb32ae73b12cf2d180e6e4ffffa13a31aa4c6f
+ms.openlocfilehash: eaa241eff6e1c359045a0ea3d8871fde6c60a059
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73614979"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74231483"
 ---
 # <a name="create-durable-functions-using-the-azure-portal"></a>Создание Устойчивых функций с помощью портала Azure
 
@@ -23,7 +17,7 @@ ms.locfileid: "73614979"
 
 > [!NOTE]
 > 
-> * Если вы разрабатываете устойчивые C#функции в, вместо этого следует подумать о [разработке Visual Studio 2019](durable-functions-create-first-csharp.md).
+> * If you are developing durable functions in C#, you should instead consider [Visual Studio 2019 development](durable-functions-create-first-csharp.md).
 > * Если вы разрабатываете Устойчивые функции на языке JavaScript, вместо этого рассмотрите возможность [разработки с помощью Visual Studio Code](./quickstart-js-vscode.md).
 
 ## <a name="create-a-function-app"></a>Создание приложения-функции

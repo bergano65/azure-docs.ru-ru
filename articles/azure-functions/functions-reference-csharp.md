@@ -2,18 +2,15 @@
 title: Справочник разработчика скриптов C# по функциям Azure
 description: Узнайте, как разрабатывать функции Azure с помощью скрипта C#.
 author: craigshoemaker
-manager: gwallace
-keywords: функции azure, функции, обработка событий, веб-перехватчики, динамические вычисления, независимая архитектура
-ms.service: azure-functions
 ms.topic: reference
 ms.date: 12/12/2017
 ms.author: cshoe
-ms.openlocfilehash: 8bbfef9d9873669120f792bce3e50e457791d4b0
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: 3b05b0a4a56332cce1068f53a23a7d118a2e6bfc
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72787197"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74230424"
 ---
 # <a name="azure-functions-c-script-csx-developer-reference"></a>Справочник разработчика скрипта C# (CSX) по решению "Функции Azure"
 
@@ -373,7 +370,7 @@ public static Task<HttpResponseMessage> Run(HttpRequestMessage req, ILogger log)
 Каталог, содержащий файл сценария функции, автоматически отслеживает изменения в сборках. Чтобы отслеживать изменения сборки в других каталогах, добавьте их в список `watchDirectories` в [host.json](functions-host-json.md).
 
 ## <a name="using-nuget-packages"></a>Использование пакетов NuGet
-Чтобы использовать пакеты NuGet в функции 2. x C# , передайте файл *Function. proj* в папку функции в файловой системе приложения-функции. Ниже приведен пример файла *function.proj*, который добавляет ссылку на *Microsoft.ProjectOxford.Face* версии *1.1.0*.
+To use NuGet packages in a 2.x C# function, upload a *function.proj* file to the function's folder in the function app's file system. Ниже приведен пример файла *function.proj*, который добавляет ссылку на *Microsoft.ProjectOxford.Face* версии *1.1.0*.
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -390,9 +387,9 @@ public static Task<HttpResponseMessage> Run(HttpRequestMessage req, ILogger log)
 Чтобы использовать настраиваемые веб-каналы NuGet, укажите веб-канал в файле *Nuget.Config* в корне приложения-функции. Дополнительные сведения см. в статье [Configuring NuGet behavior](/nuget/consume-packages/configuring-nuget-behavior) (Настройка поведения NuGet).
 
 > [!NOTE]
-> В функциях 1 C# . x ссылки на пакеты NuGet указываются в файле *Project. JSON* вместо файла *Function. proj* .
+> In 1.x C# functions, NuGet packages are referenced with a *project.json* file instead of a *function.proj* file.
 
-Для функций 1. x используйте вместо него файл *Project. JSON* . Ниже приведен пример файла *Project. JSON* .
+For 1.x functions, use a *project.json* file instead. Here is an example *project.json* file:
 
 ```json
 {
@@ -406,11 +403,11 @@ public static Task<HttpResponseMessage> Run(HttpRequestMessage req, ILogger log)
 }
 ```
 
-### <a name="using-a-functionproj-file"></a>Использование файла Function. proj
+### <a name="using-a-functionproj-file"></a>Using a function.proj file
 
 1. Откройте функцию на портале Azure. На вкладке "Журналы" отображаются выходные данные установки пакета.
-2. Чтобы передать файл *Function. proj* , используйте один из методов, описанных в статье [как обновить файлы приложения-функции](functions-reference.md#fileupdate) в справочнике разработчика по функциям Azure.
-3. После отправки файла *Function. proj* вы увидите в журнале потоковой передачи функции выходные данные, как в следующем примере:
+2. To upload a *function.proj* file, use one of the methods described in the [How to update function app files](functions-reference.md#fileupdate) in the Azure Functions developer reference topic.
+3. After the *function.proj* file is uploaded, you see output like the following example in your function's streaming log:
 
 ```
 2018-12-14T22:00:48.658 [Information] Restoring packages.
@@ -462,7 +459,7 @@ using (var output = await binder.BindAsync<T>(new BindingTypeAttribute(...)))
 }
 ```
 
-где `BindingTypeAttribute` — атрибут .NET, определяющий пользовательскую привязку, а `T` — входной или выходной тип, поддерживаемый этим типом привязки. `T` не может быть параметром типа `out` (например, `out JObject`). Например, выходная привязка таблицы мобильных приложений поддерживает [шесть выходных типов](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions.MobileApps/MobileTableAttribute.cs#L17-L22), но для `T`можно использовать только [ICollector\<t >](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/ICollector.cs) или [`IAsyncCollector<T>`](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/IAsyncCollector.cs) .
+где `BindingTypeAttribute` — атрибут .NET, определяющий пользовательскую привязку, а `T` — входной или выходной тип, поддерживаемый этим типом привязки. `T` не может быть параметром типа `out` (например, `out JObject`). For example, the Mobile Apps table output binding supports [six output types](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions.MobileApps/MobileTableAttribute.cs#L17-L22), but you can only use [ICollector\<T>](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/ICollector.cs) or [`IAsyncCollector<T>`](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/IAsyncCollector.cs) for `T`.
 
 ### <a name="single-attribute-example"></a>Пример с одним атрибутом
 

@@ -1,75 +1,72 @@
 ---
-title: Часто задаваемые вопросы о сети в службе "функции Azure"
-description: Ответы на некоторые наиболее распространенные вопросы и сценарии для работы в сети с помощью функций Azure.
-services: functions
+title: Frequently asked questions about networking in Azure Functions
+description: Answers to some of the most common questions and scenarios for networking with Azure Functions.
 author: alexkarcher-msft
-manager: jeconnoc
-ms.service: azure-functions
 ms.topic: troubleshooting
 ms.date: 4/11/2019
 ms.author: alkarche
 ms.reviewer: glenga
-ms.openlocfilehash: 6f363003dc24509bd0b80922d9e34560250cc7ed
-ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
+ms.openlocfilehash: 4534e20a1156f1d3550d247dfd15d9dc538e9d80
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68779301"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74226834"
 ---
-# <a name="frequently-asked-questions-about-networking-in-azure-functions"></a>Часто задаваемые вопросы о сети в службе "функции Azure"
+# <a name="frequently-asked-questions-about-networking-in-azure-functions"></a>Frequently asked questions about networking in Azure Functions
 
-В этой статье перечислены часто задаваемые вопросы о сетевых подключениях в функциях Azure. Более подробные сведения см. в разделе [функции сетевые подключения](functions-networking-options.md).
+This article lists frequently asked questions about networking in Azure Functions. For a more comprehensive overview, see [Functions networking options](functions-networking-options.md).
 
-## <a name="how-do-i-set-a-static-ip-in-functions"></a>Разделы справки задать статический IP-адрес в функциях?
+## <a name="how-do-i-set-a-static-ip-in-functions"></a>How do I set a static IP in Functions?
 
-Развертывание функции в Среда службы приложений в настоящее время является единственным способом получения статического входящего и исходящего IP-адреса для функции. Дополнительные сведения об использовании Среда службы приложений см. в статье [Создание и использование внутренней подсистемы балансировки нагрузки с среда службы приложений](../app-service/environment/create-ilb-ase.md).
+Deploying a function in an App Service Environment is currently the only way to have a static inbound and outbound IP for your function. For details on using an App Service Environment, start with the article [Create and use an internal load balancer with an App Service Environment](../app-service/environment/create-ilb-ase.md).
 
-## <a name="how-do-i-restrict-internet-access-to-my-function"></a>Разделы справки ограничить доступ к моей функции через Интернет?
+## <a name="how-do-i-restrict-internet-access-to-my-function"></a>How do I restrict internet access to my function?
 
-Ограничить доступ к Интернету можно несколькими способами.
+You can restrict internet access in a couple of ways:
 
-* [Ограничения IP-адресов](../app-service/app-service-ip-restrictions.md): Ограничьте входящий трафик к приложению-функции по диапазону IP.
-    * В разделе ограничения IP-адресов можно также настроить [конечные точки службы](../virtual-network/virtual-network-service-endpoints-overview.md), которые ограничивают функцию принимать входящий трафик только от конкретной виртуальной сети.
-* Удаление всех триггеров HTTP. Для некоторых приложений достаточно просто избежать триггеров HTTP и использовать любой другой источник событий для активации функции.
+* [IP restrictions](../app-service/app-service-ip-restrictions.md): Restrict inbound traffic to your function app by IP range.
+    * Under IP restrictions, you are also able to configure [Service Endpoints](../virtual-network/virtual-network-service-endpoints-overview.md), which restrict your Function to only accept inbound traffic from a particular virtual network.
+* Removal of all HTTP triggers. For some applications, it's enough to simply avoid HTTP triggers and use any other event source to trigger your function.
 
-Помните, что редактору портал Azure требуется прямой доступ к выполняемой функции. Любой код, внесенный с помощью портал Azure, потребует устройства, которое вы используете для просмотра портала, для его IP-список разрешений. Но вы все равно можете использовать любые элементы на вкладке функции платформы с ограничениями сети.
+Keep in mind that the Azure portal editor requires direct access to your running function. Any code changes through the Azure portal will require the device you're using to browse the portal to have its IP whitelisted. But you can still use anything under the platform features tab with network restrictions in place.
 
-## <a name="how-do-i-restrict-my-function-app-to-a-virtual-network"></a>Разделы справки ограничить мое приложение-функцию виртуальной сетью?
+## <a name="how-do-i-restrict-my-function-app-to-a-virtual-network"></a>How do I restrict my function app to a virtual network?
 
-Вы можете ограничить **входящий** трафик для приложения-функции в виртуальной сети с помощью конечных [точек службы](./functions-networking-options.md#private-site-access). Эта конфигурация позволяет приложению-функции выполнять исходящие вызовы к Интернету.
+You are able to restrict **inbound** traffic for a function app to a virtual network using [Service Endpoints](./functions-networking-options.md#private-site-access). This configuration still allows the function app to make outbound calls to the internet.
 
-Единственный способ полностью ограничить функцию таким образом, чтобы весь трафик проходил через виртуальную сеть, — использовать Среда службы приложений с балансировкой нагрузки. Этот параметр позволяет развернуть сайт в выделенной инфраструктуре в виртуальной сети и отправить все триггеры и трафик через виртуальную сеть. 
+The only way to totally restrict a function such that all traffic flows through a virtual network is to use an internally load-balanced App Service Environment. This option deploys your site on a dedicated infrastructure inside a virtual network and sends all triggers and traffic through the virtual network. 
 
-Дополнительные сведения об использовании Среда службы приложений см. в статье [Создание и использование внутренней подсистемы балансировки нагрузки с среда службы приложений](../app-service/environment/create-ilb-ase.md).
+For details on using an App Service Environment, start with the article [Create and use an internal load balancer with an App Service Environment](../app-service/environment/create-ilb-ase.md).
 
-## <a name="how-can-i-access-resources-in-a-virtual-network-from-a-function-app"></a>Как получить доступ к ресурсам в виртуальной сети из приложения-функции?
+## <a name="how-can-i-access-resources-in-a-virtual-network-from-a-function-app"></a>How can I access resources in a virtual network from a function app?
 
-Доступ к ресурсам в виртуальной сети можно получить из выполняемой функции с помощью интеграции с виртуальной сетью. Дополнительные сведения см. в статье [Интеграция виртуальной сети](functions-networking-options.md#virtual-network-integration).
+You can access resources in a virtual network from a running function by using virtual network integration. For more information, see [Virtual network integration](functions-networking-options.md#virtual-network-integration).
 
-## <a name="how-do-i-access-resources-protected-by-service-endpoints"></a>Разделы справки доступ к ресурсам, защищенным конечными точками службы?
+## <a name="how-do-i-access-resources-protected-by-service-endpoints"></a>How do I access resources protected by service endpoints?
 
-С помощью интеграции с виртуальной сетью можно получить доступ к ресурсам, защищенным конечной точкой службы, из выполняемой функции. Дополнительные сведения см. в статье [Интеграция виртуальной сети](functions-networking-options.md#virtual-network-integration).
+By using virtual network integration you can access service-endpoint-secured resources from a running function. For more information, see [virtual network integration](functions-networking-options.md#virtual-network-integration).
 
-## <a name="how-can-i-trigger-a-function-from-a-resource-in-a-virtual-network"></a>Как активировать функцию из ресурса в виртуальной сети?
+## <a name="how-can-i-trigger-a-function-from-a-resource-in-a-virtual-network"></a>How can I trigger a function from a resource in a virtual network?
 
-Вы можете разрешить вызывать триггеры HTTP из виртуальной сети с помощью [конечных точек службы](./functions-networking-options.md#private-site-access). 
+You are able to allow HTTP triggers to be called from a virtual network using [Service Endpoints](./functions-networking-options.md#private-site-access). 
 
-Вы также можете активировать функцию из ресурса в виртуальной сети, развернув приложение-функцию в Среда службы приложений. Дополнительные сведения об использовании Среда службы приложений см. в статье [Создание и использование внутренней подсистемы балансировки нагрузки с среда службы приложений](../app-service/environment/create-ilb-ase.md).
+You can also trigger a function from a resource in a virtual network by deploying your function app to an App Service Environment. For details on using an App Service Environment, see [Create and use an internal load balancer with an App Service Environment](../app-service/environment/create-ilb-ase.md).
 
-План обслуживания Premium и службы приложений поддерживают триггеры HTTP из виртуальной сети, но только среда службы приложений поддерживает все другие типы триггеров функций через виртуальную сеть.
+The Premium and App Service plan support HTTP triggers from a virtual network, but only an App Service environment support all other function trigger types through a virtual network.
 
-## <a name="how-can-i-deploy-my-function-app-in-a-virtual-network"></a>Как развернуть мое приложение-функцию в виртуальной сети?
+## <a name="how-can-i-deploy-my-function-app-in-a-virtual-network"></a>How can I deploy my function app in a virtual network?
 
-Развертывание в Среда службы приложений является единственным способом создания приложения-функции, которое полностью находится внутри виртуальной сети. Дополнительные сведения об использовании внутренней подсистемы балансировки нагрузки с Среда службы приложений см. в статье [Создание и использование внутренней подсистемы балансировки нагрузки с среда службы приложений](https://docs.microsoft.com/azure/app-service/environment/create-ilb-ase).
+Deploying to an App Service Environment is the only way to create a function app that's wholly inside a virtual network. For details on using an internal load balancer with an App Service Environment, start with the article [Create and use an internal load balancer with an App Service Environment](https://docs.microsoft.com/azure/app-service/environment/create-ilb-ase).
 
-Сценарии, в которых необходим только односторонний доступ к ресурсам виртуальной сети или менее полные сетевые изоляции, см. в статье [Общие сведения о функциях сети](functions-networking-options.md).
+For scenarios where you need only one-way access to virtual network resources, or less comprehensive network isolation, see the [Functions networking overview](functions-networking-options.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о работе в сети и функциях: 
+To learn more about networking and functions: 
 
-* [Следуйте указаниям в руководстве по началу работы с интеграцией виртуальной сети.](./functions-create-vnet.md)
-* [Дополнительные сведения о параметрах сети в функциях Azure](./functions-networking-options.md)
-* [Дополнительные сведения об интеграции виртуальной сети со службой приложений и функциями](../app-service/web-sites-integrate-with-vnet.md)
-* [Дополнительные сведения о виртуальных сетях в Azure](../virtual-network/virtual-networks-overview.md)
-* [Предоставление дополнительных сетевых функций и управление средами службы приложений](../app-service/environment/intro.md)
+* [Follow the tutorial about getting started with virtual network integration](./functions-create-vnet.md)
+* [Learn more about the networking options in Azure Functions](./functions-networking-options.md)
+* [Learn more about virtual network integration with App Service and Functions](../app-service/web-sites-integrate-with-vnet.md)
+* [Learn more about virtual networks in Azure](../virtual-network/virtual-networks-overview.md)
+* [Enable more networking features and control with App Service Environments](../app-service/environment/intro.md)

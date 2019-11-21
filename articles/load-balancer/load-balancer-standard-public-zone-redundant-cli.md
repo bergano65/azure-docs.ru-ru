@@ -1,6 +1,6 @@
 ---
 title: Балансировка нагрузки избыточных между зонами виртуальных машин с помощью Azure CLI
-titlesuffix: Azure Load Balancer
+titleSuffix: Azure Load Balancer
 description: Узнайте, как создать общедоступную подсистему Load Balancer (цен. категория "Стандартный") с избыточным зональным внешним интерфейсом с помощью Azure CLI
 services: load-balancer
 documentationcenter: na
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/09/2018
 ms.author: allensu
-ms.openlocfilehash: 6a22ac9a2727c537d98e692e67076637fe8cc457
-ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
+ms.openlocfilehash: af327f751a0af67b6d17330dbaeb717df8660bfd
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68274332"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74225270"
 ---
 #  <a name="load-balance-vms-across-all-availability-zones-using-azure-cli"></a>Балансировка нагрузки виртуальных машин по всем зонам доступности с помощью Azure CLI
 
@@ -49,7 +49,7 @@ az group create \
 ```
 
 ## <a name="create-a-zone-redundant-public-ip-standard"></a>Создание избыточного в пределах зоны общедоступного стандартного IP-адреса
-Для доступа к приложению через Интернет требуется общедоступный IP-адрес для балансировщика нагрузки. Внешний интерфейс с избыточностью между зонами обслуживается всеми зонами доступности в регионе одновременно. Создайте избыточный общедоступный IP-адрес в зоне с помощью команды [AZ Network public-IP Create](/cli/azure/network/public-ip#az-network-public-ip-create). При создании общедоступного стандартного IP-адреса он по умолчанию является избыточным в пределах зоны.
+Для доступа к приложению через Интернет требуется общедоступный IP-адрес для балансировщика нагрузки. Внешний интерфейс с избыточностью между зонами обслуживается всеми зонами доступности в регионе одновременно. Create a zone redundant public IP address with [az network public-ip create](/cli/azure/network/public-ip#az-network-public-ip-create). При создании общедоступного стандартного IP-адреса он по умолчанию является избыточным в пределах зоны.
 
 В следующем примере создается избыточный в пределах зоны общедоступный IP-адрес *myPublicIP* в группе ресурсов *myResourceGroupLoadBalancer*.
 
@@ -249,7 +249,7 @@ done
 
 Чтобы увидеть, как подсистема балансировки нагрузки распределяет трафик между виртуальными машинами во всех трех зонах, на которых выполняется приложение, остановите работу виртуальной машины в определенной зоны и обновите браузер.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Узнайте больше об [Azure Load Balancer уровня "Стандартный"](./load-balancer-standard-overview.md).
 
 

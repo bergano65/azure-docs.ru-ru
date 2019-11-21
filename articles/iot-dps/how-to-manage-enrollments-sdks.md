@@ -1,5 +1,5 @@
 ---
-title: Управление регистрациями устройств с помощью пакетов SDK службы подготовки устройств Azure | Документация Майкрософт
+title: Manage device enrollments using Azure DPS SDKs
 description: Узнайте, как управлять регистрацией устройств в службе подготовки устройств к добавлению в Центр Интернета вещей с помощью пакетов SDK для служб.
 author: robinsh
 ms.author: robinsh
@@ -7,24 +7,24 @@ ms.date: 04/04/2018
 ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
-ms.openlocfilehash: 438cb579180458fcdeb75516a7c98b3ab2886366
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 75a24fd6b8cafe03ae8090e6f8bf71a27459c7eb
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68883376"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74228801"
 ---
 # <a name="how-to-manage-device-enrollments-with-azure-device-provisioning-service-sdks"></a>Как управлять регистрациями устройств с помощью пакетов SDK службы подготовки устройств Azure
 При *регистрации устройства* создается запись одного устройства или группы устройств, которые можно в будущем зарегистрировать с помощью службы подготовки устройств. Запись регистрации содержит необходимую начальную конфигурацию устройств как часть регистрации, включая нужный Центр Интернета вещей. В этой статье показано, как управлять регистрацией устройств для подготовки службы программным способом с помощью пакетов SDK службы подготовки Интернета вещей Azure.  Пакеты SDK доступны в GitHub в том же хранилище, что и пакет SDK Интернета вещей Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 * Получите строку подключения из экземпляра службы подготовки устройств.
 * Получите артефакты безопасности устройства для используемого [механизма аттестации](concepts-security.md#attestation-mechanism).
     * [**Доверенный платформенный модуль(TPM)** ](/azure/iot-dps/concepts-security#trusted-platform-module).
         * Отдельная регистрация. Идентификатор регистрации и ключ подтверждения доверенного платформенного модуля (TPM) физического устройства или симулятора TPM.
         * Группа регистрации не применяется к аттестации TPM.
     * [**X.509**](/azure/iot-dps/concepts-security):
-        * Отдельная регистрация. [Конечный сертификат](/azure/iot-dps/concepts-security) с физического устройства или эмулятора [DICE](https://azure.microsoft.com/blog/azure-iot-supports-new-security-hardware-to-strengthen-iot-security/) в пакете SDK.
+        * Индивидуальная регистрация. [Конечный сертификат](/azure/iot-dps/concepts-security) с физического устройства или эмулятора [DICE](https://azure.microsoft.com/blog/azure-iot-supports-new-security-hardware-to-strengthen-iot-security/) в пакете SDK.
         * Группа регистрации. [Корневой сертификат или сертификат от ЦС](/azure/iot-dps/concepts-security#root-certificate), либо [промежуточный сертификат](/azure/iot-dps/concepts-security#intermediate-certificate), используемый для создания сертификата на физическом устройстве.  Сертификат можно сгенерировать с помощью эмулятора DICE в пакете SDK.
 * Точные вызовы API могут отличаться из-за различия языков. Ознакомьтесь с примерами, представленными на GitHub, чтобы получить подробные сведения:
    * [Samples for the Azure Provisioning Clients SDK for Java](https://github.com/Azure/azure-iot-sdk-java/tree/master/provisioning/provisioning-samples) (Примеры для пакета SDK клиента службы подготовки Azure для Java).

@@ -1,209 +1,207 @@
 ---
-title: Технологии развертывания в функциях Azure | Документация Майкрософт
-description: Узнайте о различных способах развертывания кода в функциях Azure.
+title: Deployment technologies in Azure Functions
+description: Learn the different ways you can deploy code to Azure Functions.
 author: ColbyTresness
-manager: gwallace
-ms.service: azure-functions
 ms.custom: vs-azure
 ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: cotresne
-ms.openlocfilehash: ce8287626b390d6eac4a3461d928c24f515f4023
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 0eeb9c0c938793bb13218c5407f2a3fa117880e7
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73576125"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74227008"
 ---
-# <a name="deployment-technologies-in-azure-functions"></a>Технологии развертывания в функциях Azure
+# <a name="deployment-technologies-in-azure-functions"></a>Deployment technologies in Azure Functions
 
-Вы можете использовать несколько различных технологий для развертывания кода проекта функций Azure в Azure. Эта статья содержит исчерпывающий список технологий, описывает, какие технологии доступны для каких разновидностей функций, объясняет, что происходит при использовании каждого метода, и предоставляет рекомендации для лучшего способа использования в различных сценариях. . Различные средства, поддерживающие развертывание в функции Azure, настроены на правильную технологию в зависимости от контекста. Как правило, развертывание ZIP является рекомендуемой технологией развертывания для функций Azure.
+You can use a few different technologies to deploy your Azure Functions project code to Azure. This article provides an exhaustive list of those technologies, describes which technologies are available for which flavors of Functions, explains what happens when you use each method, and provides recommendations for the best method to use in various scenarios. The various tools that support deploying to Azure Functions are tuned to the right technology based on their context. In general, zip deployment is the recommended deployment technology for Azure Functions.
 
-## <a name="deployment-technology-availability"></a>Доступность технологии развертывания
+## <a name="deployment-technology-availability"></a>Deployment technology availability
 
-Функции Azure поддерживают локальную разработку и размещение на разных платформах в Windows и Linux. Сейчас доступны три плана размещения:
+Azure Functions supports cross-platform local development and hosting on Windows and Linux. Currently, three hosting plans are available:
 
-+ [Затрат](functions-scale.md#consumption-plan)
++ [Consumption](functions-scale.md#consumption-plan)
 + [Премиальный](functions-scale.md#premium-plan)
-+ [Выделенная (служба приложений)](functions-scale.md#app-service-plan)
++ [Dedicated (App Service)](functions-scale.md#app-service-plan)
 
-Каждый план имеет разные поведения. Для каждой разновидности функций Azure доступны не все технологии развертывания. На следующей диаграмме показано, какие технологии развертывания поддерживаются для каждого сочетания операционной системы и плана размещения.
+Each plan has different behaviors. Not all deployment technologies are available for each flavor of Azure Functions. The following chart shows which deployment technologies are supported for each combination of operating system and hosting plan:
 
-| Технология развертывания | Использование Windows | Windows Premium | Выделенные Windows  | Использование Linux | Linux Premium | Выделенные Linux |
+| Deployment technology | Windows Consumption | Windows Premium | Windows Dedicated  | Linux Consumption | Linux Premium | Linux Dedicated |
 |-----------------------|:-------------------:|:-------------------------:|:------------------:|:---------------------------:|:-------------:|:---------------:|
-| URL-адрес внешнего пакета<sup>1</sup> |✔|✔|✔|✔|✔|✔|
-| ZIP-развертывание |✔|✔|✔|✔|✔|✔|
-| Контейнер DOCKER | | | | |✔|✔|
-| веб-развертывание |✔|✔|✔| | | |
+| External package URL<sup>1</sup> |✔|✔|✔|✔|✔|✔|
+| Zip deploy |✔|✔|✔|✔|✔|✔|
+| Контейнер Docker | | | | |✔|✔|
+| Web Deploy |✔|✔|✔| | | |
 | Система управления версиями |✔|✔|✔| |✔|✔|
-| Локальный Git<sup>1</sup> |✔|✔|✔| |✔|✔|
-| Синхронизация Cloud<sup>1</sup> |✔|✔|✔| |✔|✔|
+| Local Git<sup>1</sup> |✔|✔|✔| |✔|✔|
+| Cloud sync<sup>1</sup> |✔|✔|✔| |✔|✔|
 | FTP<sup>1</sup> |✔|✔|✔| |✔|✔|
-| Редактирование на портале |✔|✔|✔| |✔<sup>2</sup>|✔<sup>2</sup>|
+| Portal editing |✔|✔|✔| |✔<sup>2</sup>|✔<sup>2</sup>|
 
-<sup>1</sup> технология развертывания, требующая [синхронизации триггеров вручную](#trigger-syncing).  
-<sup>2</sup> редактирование на портале включено только для триггеров HTTP и таймера для функций в Linux, использующих Premium и выделенные планы.
+<sup>1</sup> Deployment technology that requires [manual trigger syncing](#trigger-syncing).  
+<sup>2</sup> Portal editing is enabled only for HTTP and Timer triggers for Functions on Linux using Premium and dedicated plans.
 
-## <a name="key-concepts"></a>Основные понятия
+## <a name="key-concepts"></a>Ключевые понятия
 
-Некоторые ключевые понятия важны для понимания работы развертываний в функциях Azure.
+Some key concepts are critical to understanding how deployments work in Azure Functions.
 
-### <a name="trigger-syncing"></a>Синхронизация триггеров
+### <a name="trigger-syncing"></a>Trigger syncing
 
-При изменении любого из триггеров инфраструктура функций должна учитывать изменения. Синхронизация происходит автоматически для многих технологий развертывания. Однако в некоторых случаях необходимо вручную синхронизировать триггеры. При развертывании обновлений путем ссылки на внешний URL-адрес пакета, локальный репозиторий Git, облачная синхронизация или FTP, необходимо вручную синхронизировать триггеры. Синхронизировать триггеры можно одним из трех способов:
+When you change any of your triggers, the Functions infrastructure must be aware of the changes. Synchronization happens automatically for many deployment technologies. However, in some cases, you must manually sync your triggers. When you deploy your updates by referencing an external package URL, local Git, cloud sync, or FTP, you must manually sync your triggers. You can sync triggers in one of three ways:
 
-* Перезапустите приложение функции в портал Azure
-* Отправка запроса HTTP POST в `https://{functionappname}.azurewebsites.net/admin/host/synctriggers?code=<API_KEY>` с помощью [главного ключа](functions-bindings-http-webhook.md#authorization-keys).
-* Отправьте запрос HTTP POST в `https://management.azure.com/subscriptions/<SUBSCRIPTION_ID>/resourceGroups/<RESOURCE_GROUP_NAME>/providers/Microsoft.Web/sites/<FUNCTION_APP_NAME>/syncfunctiontriggers?api-version=2016-08-01`. Замените заполнители ИДЕНТИФИКАТОРом подписки, именем группы ресурсов и именем приложения функции.
+* Restart your function app in the Azure portal
+* Send an HTTP POST request to `https://{functionappname}.azurewebsites.net/admin/host/synctriggers?code=<API_KEY>` using the [master key](functions-bindings-http-webhook.md#authorization-keys).
+* Send an HTTP POST request to `https://management.azure.com/subscriptions/<SUBSCRIPTION_ID>/resourceGroups/<RESOURCE_GROUP_NAME>/providers/Microsoft.Web/sites/<FUNCTION_APP_NAME>/syncfunctiontriggers?api-version=2016-08-01`. Replace the placeholders with your subscription ID, resource group name, and the name of your function app.
 
-### <a name="remote-build"></a>Удаленная сборка
+### <a name="remote-build"></a>Remote build
 
-Функции Azure могут автоматически выполнять сборки по коду, который он получает после развертывания ZIP. Эти сборки ведут себя немного иначе в зависимости от того, выполняется ли приложение в Windows или Linux. Удаленные сборки не выполняются, если приложение ранее было настроено для запуска в режиме [запуска из пакета](run-functions-from-deployment-package.md) . Чтобы узнать, как использовать удаленную сборку, перейдите к папке [ZIP Deploy](#zip-deploy).
+Azure Functions can automatically perform builds on the code it receives after zip deployments. These builds behave slightly differently depending on whether your app is running on Windows or Linux. Remote builds are not performed when an app has previously been set to run in [Run From Package](run-functions-from-deployment-package.md) mode. To learn how to use remote build, navigate to [zip deploy](#zip-deploy).
 
 > [!NOTE]
-> Если возникают проблемы с удаленной сборкой, это может быть вызвано тем, что приложение было создано до того, как функция стала доступной (1 августа 2019 г.). Попробуйте создать новое приложение-функцию или запустите `az functionapp update -g <RESOURCE_GROUP_NAME> -n <APP_NAME>`, чтобы обновить приложение-функцию. Для выполнения этой команды может потребоваться две попытки.
+> If you're having issues with remote build, it might be because your app was created before the feature was made available (August 1, 2019). Try creating a new function app, or running `az functionapp update -g <RESOURCE_GROUP_NAME> -n <APP_NAME>` to update your function app. This command might take two tries to succeed.
 
-#### <a name="remote-build-on-windows"></a>Удаленная сборка в Windows
+#### <a name="remote-build-on-windows"></a>Remote build on Windows
 
-Все приложения-функции, работающие в Windows, имеют небольшое приложение управления, SCM (или [KUDU](https://github.com/projectkudu/kudu)). Этот сайт обрабатывает большую часть логики развертывания и сборки для функций Azure.
+All function apps running on Windows have a small management app, the SCM (or [Kudu](https://github.com/projectkudu/kudu)) site. This site handles much of the deployment and build logic for Azure Functions.
 
-При развертывании приложения в Windows выполняются команды для конкретного языка, такие как `dotnet restore` (C#) или `npm install` (JavaScript).
+When an app is deployed to Windows, language-specific commands, like `dotnet restore` (C#) or `npm install` (JavaScript) are run.
 
-#### <a name="remote-build-on-linux"></a>Удаленная сборка в Linux
+#### <a name="remote-build-on-linux"></a>Remote build on Linux
 
-Чтобы включить удаленную сборку в Linux, необходимо задать следующие [Параметры приложения](functions-how-to-use-azure-function-app-settings.md#settings) :
+To enable remote build on Linux, the following [application settings](functions-how-to-use-azure-function-app-settings.md#settings) must be set:
 
 * `ENABLE_ORYX_BUILD=true`
 * `SCM_DO_BUILD_DURING_DEPLOYMENT=true`
 
-По умолчанию как [Azure functions Core Tools](functions-run-local.md) , так и [расширение функций Azure для Visual Studio Code](functions-create-first-function-vs-code.md#publish-the-project-to-azure) выполнять удаленные сборки при развертывании в Linux. По этой причине оба средства автоматически создают эти параметры в Azure. 
+By default, both [Azure Functions Core Tools](functions-run-local.md) and the [Azure Functions Extension for Visual Studio Code](functions-create-first-function-vs-code.md#publish-the-project-to-azure) perform remote builds when deploying to Linux. Because of this, both tools automatically create these settings for you in Azure. 
 
-Когда приложения создаются удаленно в Linux, они [запускаются из пакета развертывания](run-functions-from-deployment-package.md). 
+When apps are built remotely on Linux, they [run from the deployment package](run-functions-from-deployment-package.md). 
 
 ##### <a name="consumption-plan"></a>План потребления
 
-В приложениях-функциях Linux, выполняющихся в плане потребления, отсутствует сайт SCM или KUDU, который ограничивает возможности развертывания. Однако приложения функций в Linux, работающие в плане потребления, поддерживают удаленные сборки.
+Linux function apps running in the Consumption plan don't have an SCM/Kudu site, which limits the deployment options. However, function apps on Linux running in the Consumption plan do support remote builds.
 
-##### <a name="dedicated-and-premium-plans"></a>Планы "Специальный" и "Премиум"
+##### <a name="dedicated-and-premium-plans"></a>Dedicated and Premium plans
 
-Приложения-функции, работающие в Linux в [специальном плане (служба приложений)](functions-scale.md#app-service-plan) и [план Premium](functions-scale.md#premium-plan) , также имеют ограниченный сайт SCM или KUDU.
+Function apps running on Linux in the [Dedicated (App Service) plan](functions-scale.md#app-service-plan) and the [Premium plan](functions-scale.md#premium-plan) also have a limited SCM/Kudu site.
 
-## <a name="deployment-technology-details"></a>Сведения о технологии развертывания
+## <a name="deployment-technology-details"></a>Deployment technology details
 
-В функциях Azure доступны следующие методы развертывания.
+The following deployment methods are available in Azure Functions.
 
-### <a name="external-package-url"></a>URL-адрес внешнего пакета
+### <a name="external-package-url"></a>External package URL
 
-URL-адрес внешнего пакета можно использовать для ссылки на файл удаленного пакета (ZIP), содержащий приложение-функцию. Файл загружается по указанному URL-адресу, и приложение запускается в режиме [запуска из пакета](run-functions-from-deployment-package.md) .
+You can use an external package URL to reference a remote package (.zip) file that contains your function app. The file is downloaded from the provided URL, and the app runs in [Run From Package](run-functions-from-deployment-package.md) mode.
 
->__Как его использовать:__ Добавьте `WEBSITE_RUN_FROM_PACKAGE` в параметры приложения. Значение этого параметра должно быть URL-адресом (расположением определенного файла пакета, который требуется выполнить). Параметры можно добавить либо [на портале](functions-how-to-use-azure-function-app-settings.md#settings) , либо с [помощью Azure CLI](/cli/azure/functionapp/config/appsettings#az-functionapp-config-appsettings-set). 
+>__How to use it:__ Add `WEBSITE_RUN_FROM_PACKAGE` to your application settings. The value of this setting should be a URL (the location of the specific package file you want to run). You can add settings either [in the portal](functions-how-to-use-azure-function-app-settings.md#settings) or [by using the Azure CLI](/cli/azure/functionapp/config/appsettings#az-functionapp-config-appsettings-set). 
 >
->При использовании хранилища BLOB-объектов Azure используйте частный контейнер с [подписанным URL-адресом (SAS)](../vs-azure-tools-storage-manage-with-storage-explorer.md#generate-a-sas-in-storage-explorer) , чтобы предоставить функциям доступ к пакету. При каждом перезапуске приложения он получает копию содержимого. Ссылка должна быть действительна в течение времени существования приложения.
+>If you use Azure Blob storage, use a private container with a [shared access signature (SAS)](../vs-azure-tools-storage-manage-with-storage-explorer.md#generate-a-sas-in-storage-explorer) to give Functions access to the package. Any time the application restarts, it fetches a copy of the content. Your reference must be valid for the lifetime of the application.
 
->__Когда его использовать:__ URL-адрес внешнего пакета — это единственный поддерживаемый метод развертывания для функций Azure, выполняющихся в Linux в плане потребления, если пользователь не хочет, чтобы [удаленная сборка](#remote-build) выполнялась. При обновлении файла пакета, на который ссылается приложение-функция, необходимо [вручную синхронизировать триггеры](#trigger-syncing) , чтобы сообщить Azure о том, что ваше приложение изменилось.
+>__When to use it:__ External package URL is the only supported deployment method for Azure Functions running on Linux in the Consumption plan, if the user doesn't want a [remote build](#remote-build) to occur. When you update the package file that a function app references, you must [manually sync triggers](#trigger-syncing) to tell Azure that your application has changed.
 
-### <a name="zip-deploy"></a>ZIP-развертывание
+### <a name="zip-deploy"></a>Zip deploy
 
-Используйте ZIP deploy, чтобы отправить zip-файл, содержащий приложение-функцию, в Azure. При необходимости можно настроить приложение для запуска [из пакета](run-functions-from-deployment-package.md)или указать, что выполняется [удаленная сборка](#remote-build) .
+Use zip deploy to push a .zip file that contains your function app to Azure. Optionally, you can set your app to start [running from package](run-functions-from-deployment-package.md), or specify that a [remote build](#remote-build) occurs.
 
->__Как его использовать:__ Развертывание с помощью любимого клиентского средства: [Visual Studio Code](functions-create-first-function-vs-code.md#publish-the-project-to-azure), [Visual Studio](functions-develop-vs.md#publish-to-azure), [Azure functions Core Tools](functions-run-local.md)или [Azure CLI](functions-create-first-azure-function-azure-cli.md#deploy-the-function-app-project-to-azure). По умолчанию эти средства используют ZIP-развертывание и [запускаются из пакета](run-functions-from-deployment-package.md). Основные средства и расширение Visual Studio Code позволяют включить [удаленную сборку](#remote-build) при развертывании в Linux. Чтобы вручную развернуть ZIP-файл в приложении-функции, следуйте инструкциям в разделе [развертывание из файла с расширением ZIP или URL-адреса](https://github.com/projectkudu/kudu/wiki/Deploying-from-a-zip-file-or-url).
+>__How to use it:__ Deploy by using your favorite client tool: [Visual Studio Code](functions-create-first-function-vs-code.md#publish-the-project-to-azure), [Visual Studio](functions-develop-vs.md#publish-to-azure), the [Azure Functions Core Tools](functions-run-local.md), or the [Azure CLI](functions-create-first-azure-function-azure-cli.md#deploy-the-function-app-project-to-azure). By default, these tools use zip deployment and [run from package](run-functions-from-deployment-package.md). Core Tools and the Visual Studio Code extension both enable [remote build](#remote-build) when deploying to Linux. To manually deploy a .zip file to your function app, follow the instructions in [Deploy from a .zip file or URL](https://github.com/projectkudu/kudu/wiki/Deploying-from-a-zip-file-or-url).
 
->При развертывании с помощью ZIP-развертывания можно настроить приложение для [запуска из пакета](run-functions-from-deployment-package.md). Чтобы запустить из пакета, задайте для параметра приложения `WEBSITE_RUN_FROM_PACKAGE` значение `1`. Рекомендуется использовать ZIP-развертывание. Это позволяет ускорить загрузку приложений, и это значение по умолчанию для VS Code, Visual Studio и Azure CLI. 
+>When you deploy by using zip deploy, you can set your app to [run from package](run-functions-from-deployment-package.md). To run from package, set the `WEBSITE_RUN_FROM_PACKAGE` application setting value to `1`. We recommend zip deployment. It yields faster loading times for your applications, and it's the default for VS Code, Visual Studio, and the Azure CLI. 
 
->__Когда его использовать:__ ZIP Deploy — это рекомендуемая технология развертывания для функций Azure.
+>__When to use it:__ Zip deploy is the recommended deployment technology for Azure Functions.
 
-### <a name="docker-container"></a>Контейнер DOCKER
+### <a name="docker-container"></a>Контейнер Docker
 
-Вы можете развернуть образ контейнера Linux, содержащий приложение-функцию.
+You can deploy a Linux container image that contains your function app.
 
->__Как его использовать:__ Создайте приложение-функцию Linux в плане "Премиум" или "выделенный" и укажите образ контейнера для запуска. Это можно сделать двумя способами.
+>__How to use it:__ Create a Linux function app in the Premium or Dedicated plan and specify which container image to run from. Это можно сделать двумя способами.
 >
->* Создайте приложение-функцию Linux в плане службы приложений Azure на портал Azure. Для **публикации**выберите **образ DOCKER**, а затем настройте контейнер. Введите расположение, в котором размещен образ.
->* Создайте приложение-функцию Linux в плане службы приложений с помощью Azure CLI. Дополнительные сведения см. в статье [Создание функции в Linux с помощью пользовательского образа](functions-create-function-linux-custom-image.md#create-a-premium-plan).
+>* Create a Linux function app on an Azure App Service plan in the Azure portal. For **Publish**, select **Docker Image**, and then configure the container. Enter the location where the image is hosted.
+>* Create a Linux function app on an App Service plan by using the Azure CLI. To learn how, see [Create a function on Linux by using a custom image](functions-create-function-linux-custom-image.md#create-a-premium-plan).
 >
->Чтобы выполнить развертывание в существующем приложении с помощью пользовательского контейнера, в [Azure functions Core Tools](functions-run-local.md)используйте команду [`func deploy`](functions-run-local.md#publish) .
+>To deploy to an existing app by using a custom container, in [Azure Functions Core Tools](functions-run-local.md), use the [`func deploy`](functions-run-local.md#publish) command.
 
->__Когда его использовать:__ Используйте параметр контейнер DOCKER, если требуется больший контроль над средой Linux, в которой выполняется приложение функции. Этот механизм развертывания доступен только для функций, работающих в Linux.
+>__When to use it:__ Use the Docker container option when you need more control over the Linux environment where your function app runs. This deployment mechanism is available only for Functions running on Linux.
 
-### <a name="web-deploy-msdeploy"></a>Веб-развертывание (MSDeploy)
+### <a name="web-deploy-msdeploy"></a>Web Deploy (MSDeploy)
 
-Веб-развертывание пакеты и развертывает приложения Windows на любом сервере IIS, включая приложения функций, работающие в Windows в Azure.
+Web Deploy packages and deploys your Windows applications to any IIS server, including your function apps running on Windows in Azure.
 
->__Как его использовать:__ Используйте [инструменты Visual Studio для функций Azure](functions-create-your-first-function-visual-studio.md). Снимите флажок **запускать из файла пакета (рекомендуется)** .
+>__How to use it:__ Use [Visual Studio tools for Azure Functions](functions-create-your-first-function-visual-studio.md). Clear the **Run from package file (recommended)** check box.
 >
->Можно также загрузить [веб-развертывание 3,6](https://www.iis.net/downloads/microsoft/web-deploy) и вызвать `MSDeploy.exe` напрямую.
+>You can also download [Web Deploy 3.6](https://www.iis.net/downloads/microsoft/web-deploy) and call `MSDeploy.exe` directly.
 
->__Когда его использовать:__ Веб-развертывание поддерживается и не имеет проблем, но предпочтительным механизмом является [развертывание ZIP с включенным запуском из пакета](#zip-deploy). Дополнительные сведения см. в разделе с [руководством по разработке для Visual Studio](functions-develop-vs.md#publish-to-azure).
+>__When to use it:__ Web Deploy is supported and has no issues, but the preferred mechanism is [zip deploy with Run From Package enabled](#zip-deploy). To learn more, see the [Visual Studio development guide](functions-develop-vs.md#publish-to-azure).
 
 ### <a name="source-control"></a>Система управления версиями
 
-Используйте систему управления версиями для подключения приложения-функции к репозиторию Git. Обновление кода в этом репозитории активирует развертывание. Дополнительные сведения см. на [вики-сайте KUDU](https://github.com/projectkudu/kudu/wiki/VSTS-vs-Kudu-deployments).
+Use source control to connect your function app to a Git repository. An update to code in that repository triggers deployment. For more information, see the [Kudu Wiki](https://github.com/projectkudu/kudu/wiki/VSTS-vs-Kudu-deployments).
 
->__Как его использовать:__ Используйте центр развертывания в области "функции" на портале, чтобы настроить публикацию из системы управления версиями. Дополнительные сведения см. в статье [Непрерывное развертывание для функций Azure](functions-continuous-deployment.md).
+>__How to use it:__ Use Deployment Center in the Functions area of the portal to set up publishing from source control. Дополнительные сведения см. в статье [Непрерывное развертывание для функций Azure](functions-continuous-deployment.md).
 
->__Когда его использовать:__ Использование системы управления версиями — это оптимальная практика для команд, совместно работающих с приложениями-функциями. Система управления версиями — хороший вариант развертывания, обеспечивающий более сложные конвейеры развертывания.
+>__When to use it:__ Using source control is the best practice for teams that collaborate on their function apps. Source control is a good deployment option that enables more sophisticated deployment pipelines.
 
-### <a name="local-git"></a>локальный репозиторий Git;
+### <a name="local-git"></a>Локальный репозиторий Git
 
-Вы можете использовать локальный Git для отправки кода с локального компьютера в функции Azure с помощью Git.
+You can use local Git to push code from your local machine to Azure Functions by using Git.
 
->__Как его использовать:__ Следуйте инструкциям в [локальном развертывании Git в службе приложений Azure](../app-service/deploy-local-git.md).
+>__How to use it:__ Follow the instructions in [Local Git deployment to Azure App Service](../app-service/deploy-local-git.md).
 
->__Когда его использовать:__ Как правило, рекомендуется использовать другой метод развертывания. При публикации из локального репозитория Git необходимо [вручную синхронизировать триггеры](#trigger-syncing).
+>__When to use it:__ In general, we recommend that you use a different deployment method. When you publish from local Git, you must [manually sync triggers](#trigger-syncing).
 
-### <a name="cloud-sync"></a>Синхронизация в облаке
+### <a name="cloud-sync"></a>Cloud sync
 
-Используйте облачную синхронизацию для синхронизации содержимого из Dropbox и OneDrive в функции Azure.
+Use cloud sync to sync your content from Dropbox and OneDrive to Azure Functions.
 
->__Как его использовать:__ Следуйте инструкциям в разделе [Синхронизация содержимого из облачной папки](../app-service/deploy-content-sync.md).
+>__How to use it:__ Follow the instructions in [Sync content from a cloud folder](../app-service/deploy-content-sync.md).
 
->__Когда его использовать:__ Как правило, мы рекомендуем использовать другие методы развертывания. При публикации с помощью синхронизации Cloud необходимо [вручную синхронизировать триггеры](#trigger-syncing).
+>__When to use it:__ In general, we recommend other deployment methods. When you publish by using cloud sync, you must [manually sync triggers](#trigger-syncing).
 
 ### <a name="ftp"></a>FTP
 
-Вы можете использовать FTP для непосредственного перемещения файлов в функции Azure.
+You can use FTP to directly transfer files to Azure Functions.
 
->__Как его использовать:__ Следуйте инструкциям в разделе [развертывание содержимого с помощью FTP/s](../app-service/deploy-ftp.md).
+>__How to use it:__ Follow the instructions in [Deploy content by using FTP/s](../app-service/deploy-ftp.md).
 
->__Когда его использовать:__ Как правило, мы рекомендуем использовать другие методы развертывания. При публикации с помощью FTP необходимо [вручную синхронизировать триггеры](#trigger-syncing).
+>__When to use it:__ In general, we recommend other deployment methods. When you publish by using FTP, you must [manually sync triggers](#trigger-syncing).
 
-### <a name="portal-editing"></a>Редактирование на портале
+### <a name="portal-editing"></a>Portal editing
 
-В редакторе на основе портала можно изменять файлы, которые находятся в приложении-функции (по сути, развертывая каждый раз при сохранении изменений).
+In the portal-based editor, you can directly edit the files that are in your function app (essentially deploying every time you save your changes).
 
->__Как его использовать:__ Чтобы иметь возможность изменять функции в портал Azure, необходимо [создать функции на портале](functions-create-first-azure-function.md). Чтобы сохранить один источник истинности, использование любого другого метода развертывания сделает функцию только для чтения и не позволит продолжить редактирование на портале. Чтобы вернуться в состояние, в котором можно изменить файлы в портал Azure, можно вручную снова включить режим изменения в `Read/Write` и удалить все параметры приложения, связанные с развертыванием (например, `WEBSITE_RUN_FROM_PACKAGE`). 
+>__How to use it:__ To be able to edit your functions in the Azure portal, you must have [created your functions in the portal](functions-create-first-azure-function.md). To preserve a single source of truth, using any other deployment method makes your function read-only and prevents continued portal editing. To return to a state in which you can edit your files in the Azure portal, you can manually turn the edit mode back to `Read/Write` and remove any deployment-related application settings (like `WEBSITE_RUN_FROM_PACKAGE`). 
 
->__Когда его использовать:__ Портал — хороший способ начать работу с функциями Azure. Для более интенсивной работы по разработке рекомендуется использовать одно из следующих клиентских средств:
+>__When to use it:__ The portal is a good way to get started with Azure Functions. For more intense development work, we recommend that you use one of the following client tools:
 >
->* [Visual Studio Code](functions-create-first-function-vs-code.md)
->* [Azure Functions Core Tools (Командная строка)](functions-run-local.md)
+>* [Код Visual Studio](functions-create-first-function-vs-code.md)
+>* [Azure Functions Core Tools (command line)](functions-run-local.md)
 >* [Visual Studio](functions-create-your-first-function-visual-studio.md)
 
-В следующей таблице показаны операционные системы и языки, поддерживающие редактирование на портале.
+The following table shows the operating systems and languages that support portal editing:
 
-| | Использование Windows | Windows Premium | Выделенные Windows | Использование Linux | Linux Premium | Выделенные Linux |
+| | Windows Consumption | Windows Premium | Windows Dedicated | Linux Consumption | Linux Premium | Linux Dedicated |
 |-|:-----------------: |:----------------:|:-----------------:|:-----------------:|:-------------:|:---------------:|
 | C# | | | | | |
 | Скрипт C# |✔|✔|✔| |✔<sup>\*</sup> |✔<sup>\*</sup>|
 | F# | | | | | | |
-| Java | | | | | | |
+| Java: | | | | | | |
 | JavaScript (Node.js) |✔|✔|✔| |✔<sup>\*</sup>|✔<sup>\*</sup>|
 | Python (предварительная версия) | | | | | | |
-| PowerShell (Предварительная версия) |✔|✔|✔| | | |
-| TypeScript (Node. js) | | | | | | |
+| PowerShell (Preview) |✔|✔|✔| | | |
+| TypeScript (Node.js) | | | | | | |
 
-<sup>*</sup> Редактирование на портале включено только для триггеров HTTP и таймера для функций в Linux, использующих Premium и выделенные планы.
+<sup>*</sup> Portal editing is enabled only for HTTP and Timer triggers for Functions on Linux using Premium and dedicated plans.
 
 ## <a name="deployment-slots"></a>Слоты развертывания
 
-При развертывании приложения-функции в Azure можно выполнить развертывание в отдельном слоте развертывания, а не непосредственно в рабочей среде. Дополнительные сведения о слотах развертывания см. в документации по [слотам развертывания функций Azure](../app-service/deploy-staging-slots.md) .
+When you deploy your function app to Azure, you can deploy to a separate deployment slot instead of directly to production. For more information on deployment slots, see the [Azure Functions Deployment Slots](../app-service/deploy-staging-slots.md) documentation for details.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Ознакомьтесь со следующими статьями, чтобы узнать больше о развертывании приложений функций. 
+Read these articles to learn more about deploying your function apps: 
 
-+ [Непрерывное развертывание для Функций Azure](functions-continuous-deployment.md)
-+ [Непрерывная поставка с помощью Azure DevOps](functions-how-to-azure-devops.md)
-+ [Развертывание ZIP-файлов для функций Azure](deployment-zip-push.md)
-+ [Запуск функций Azure из файла пакета](run-functions-from-deployment-package.md)
-+ [Автоматизация развертывания ресурсов для приложения функции в службе "функции Azure"](functions-infrastructure-as-code.md)
++ [Непрерывное развертывание для функций Azure](functions-continuous-deployment.md)
++ [Continuous delivery by using Azure DevOps](functions-how-to-azure-devops.md)
++ [Zip deployments for Azure Functions](deployment-zip-push.md)
++ [Run your Azure Functions from a package file](run-functions-from-deployment-package.md)
++ [Automate resource deployment for your function app in Azure Functions](functions-infrastructure-as-code.md)

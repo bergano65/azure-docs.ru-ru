@@ -7,16 +7,16 @@ ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 08/08/2019
-ms.openlocfilehash: 1ed1b105f64d109284de441af1bcaee5f0827d75
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.openlocfilehash: daeb09acd11d727b11ad8a7b98d97ff90fddc6d8
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72331363"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74228266"
 ---
 # <a name="reference---iot-hub-quotas-and-throttling"></a>Руководство. Квоты и регулирование в Центре Интернета вещей
 
-В этой статье объясняются квоты центра Интернета вещей и приводятся сведения, помогающие понять, как работает регулирование.
+This article explains the quotas for an IoT Hub, and provides information to help you understand how throttling works.
 
 ## <a name="quotas-and-throttling"></a>Квоты и регулирование
 
@@ -28,66 +28,66 @@ ms.locfileid: "72331363"
 
 ### <a name="iot-plug-and-play"></a>IoT Plug and Play
 
-Во время общедоступной предварительной версии устройства IoT Plug and Play будут отсылать отдельные сообщения на интерфейс, что может увеличить количество сообщений, подсчитанных в отношении квоты сообщений.
+During public preview, IoT Plug and Play devices will send separate messages per interface, which may increase the number of messages counted towards your message quota.
 
 ## <a name="operation-throttles"></a>Регулирование операций
 
-Регулирование операций — это ограничения частоты, которые применяются в диапазоне минут и предназначены для предотвращения нарушения. Они также накладываются на [формирование трафика](#traffic-shaping).
+Operation throttles are rate limitations that are applied in minute ranges and are intended to prevent abuse. They're also subject to [traffic shaping](#traffic-shaping).
 
 В следующей таблице показаны варианты принудительного регулирования. Значения обозначают тот или иной концентратор.
 
 | Регулирование | Бесплатный, B1 и S1 | В2 и S2 | B3 и S3 | 
 | -------- | ------- | ------- | ------- |
-| [Операции с реестром удостоверений](#identity-registry-operations-throttle) (создание, получение, перечисление, обновление, удаление) | 1,67 операций в секунду на единицу (100 операций в минуту на единицу) | 1,67 операций в секунду на единицу (100 операций в минуту на единицу) | 83,33 операций в секунду на единицу (5000 в минуту на единицу) |
-| [Новые подключения к устройствам](#device-connections-throttle) (это ограничение применяется к частоте _новых подключений_, а не к общему числу подключений). | Более 100 в секунду или 12 в секунду на единицу <br/> Например, две единицы S1 — это 2\*12 = 24 новых подключений в секунду, но для ваших единиц имеется не менее 100 новых подключений в секунду. Для девяти единиц S1 мы получим 108 новых подключений в секунду (9\*12) для всех единиц. | 120 новых подключений/с/ед. | 6 000 новых подключений в секунду на единицу |
-| Передачи с устройства в облако | Более 100 операций отправки в секунду или 12 операций отправки в секунду на единицу <br/> Например, два модуля S1 — 2 @ no__t-012 = 24/с, но у вас есть по крайней мере 100 операций отправки в секунду между вашими единицами. С девятью единицами S1 у вас есть 108 операций отправки в секунду (9 @ no__t-012) по всем единицам. | 120 операций отправки в секунду на единицу | 6 000 операций отправки в секунду на единицу |
-| Передачи из облака на устройство <sup>1</sup> | 1,67 операций отправки в секунду на единицу (100 сообщений/мин на единицу) | 1,67 операций отправки в секунду на единицу (100 операций отправки в минуту на единицу) | 83,33 операций отправки в секунду на единицу (5 000 операций отправки в минуту на единицу) |
-| Прием из облака на устройство <sup>1</sup> <br/> (только если устройство использует HTTPS)| 16,67 операций получения в секунду на единицу (1 000 операций получения/мин на единицу) | 16,67 операций получения в секунду на единицу (1 000 операций получения/мин на единицу) | 833,33 операций получения в секунду на единицу (50 000 операций получения/мин на единицу) |
-| Передача файла | 1,67./сек/с/единиц (100 в минуту на единицу) | 1,67./сек/с/единиц (100 в минуту на единицу) | 83,33./сек/с/единиц (5000 в минуту на единицу) |
+| [Identity registry operations](#identity-registry-operations-throttle) (create, retrieve, list, update, delete) | 1,67 операций в секунду на единицу (100 операций в минуту на единицу) | 1,67 операций в секунду на единицу (100 операций в минуту на единицу) | 83.33/sec/unit (5,000/min/unit) |
+| [New device connections](#device-connections-throttle) (this limit applies to the rate of _new connections_, not the total number of connections) | Более 100 в секунду или 12 в секунду на единицу <br/> Например, две единицы S1 — это 2\*12 = 24 новых подключений в секунду, но для ваших единиц имеется не менее 100 новых подключений в секунду. Для девяти единиц S1 мы получим 108 новых подключений в секунду (9\*12) для всех единиц. | 120 новых подключений/с/ед. | 6,000 new connections/sec/unit |
+| Передачи с устройства в облако | Higher of 100 send operations/sec or 12 send operations/sec/unit <br/> For example, two S1 units are 2\*12 = 24/sec, but you have at least 100 send operations/sec across your units. With nine S1 units, you have 108 send operations/sec (9\*12) across your units. | 120 send operations/sec/unit | 6,000 send operations/sec/unit |
+| Передачи из облака на устройство <sup>1</sup> | 1.67 send operations/sec/unit (100 messages/min/unit) | 1.67 send operations/sec/unit (100 send operations/min/unit) | 83.33 send operations/sec/unit (5,000 send operations/min/unit) |
+| Прием из облака на устройство <sup>1</sup> <br/> (только если устройство использует HTTPS)| 16.67 receive operations/sec/unit (1,000 receive operations/min/unit) | 16.67 receive operations/sec/unit (1,000 receive operations/min/unit) | 833.33 receive operations/sec/unit (50,000 receive operations/min/unit) |
+| Передача файла | 1.67 file upload initiations/sec/unit (100/min/unit) | 1.67 file upload initiations/sec/unit (100/min/unit) | 83.33 file upload initiations/sec/unit (5,000/min/unit) |
 | Прямые методы<sup>1</sup> | 160 КБ/сек/единицу<sup>2</sup> | 480 КБ/сек/единицу<sup>2</sup> | 24 МБ/сек/единицу<sup>2</sup> | 
-| Запросы | 20 в минуту на единицу | 20 в минуту на единицу | 1000 в минуту на единицу |
-| Операции чтения двойников устройств и модулей<sup>1</sup> | 100/с | Более 100 в секунду или 10 в секунду на единицу | 500 в секунду на единицу |
-| Обновление двойников устройств и двойников модулей<sup>1</sup> | 50 в секунду | Более 50 в секунду или 5 в секунду на единицу | 250 в секунду на единицу |
-| Операции с заданиями<sup>1</sup> <br/> (создание, обновление, перечисление и удаление) | 1,67 операций в секунду на единицу (100 операций в минуту на единицу) | 1,67 операций в секунду на единицу (100 операций в минуту на единицу) | 83,33 операций в секунду на единицу (5000 в минуту на единицу) |
+| Запросы | 20/min/unit | 20/min/unit | 1,000/min/unit |
+| Операции чтения двойников устройств и модулей<sup>1</sup> | 100/sec | Higher of 100/sec or 10/sec/unit | 500/sec/unit |
+| Обновление двойников устройств и двойников модулей<sup>1</sup> | 50/sec | Higher of 50/sec or 5/sec/unit | 250/sec/unit |
+| Операции с заданиями<sup>1</sup> <br/> (создание, обновление, перечисление и удаление) | 1,67 операций в секунду на единицу (100 операций в минуту на единицу) | 1,67 операций в секунду на единицу (100 операций в минуту на единицу) | 83.33/sec/unit (5,000/min/unit) |
 | Операции с заданиями на устройстве<sup>1</sup> <br/> (обновление двойника, вызов прямого метода) | 10 в секунду | Более 10 в секунду или 1 в секунду на единицу | 50 в секунду на единицу |
 | Конфигурации и развертывания Edge<sup>1</sup> <br/> (создание, обновление, перечисление и удаление) | 0,33/с/ед. (мин/20/ед.) | 0,33/с/ед. (мин/20/ед.) | 0,33/с/ед. (мин/20/ед.) |
-| Скорость инициации потока устройства<sup>1</sup> | 5 новых потоков в секунду | 5 новых потоков в секунду | 5 новых потоков в секунду |
-| Максимальное число параллельно подключенных потоков устройств<sup>1</sup> | 50 | 50 | 50 |
-| Максимальный объем передачи данных в потоке устройства<sup>1</sup> (совокупная частота в день) | 300 МБ | 300 МБ | 300 МБ |
+| Device stream initiation rate<sup>1</sup> | 5 новых потоков в секунду | 5 новых потоков в секунду | 5 новых потоков в секунду |
+| Maximum number of concurrently connected device streams<sup>1</sup> | 50 | 50 | 50 |
+| Maximum device stream data transfer<sup>1</sup> (aggregate volume per day) | 300 МБ | 300 МБ | 300 МБ |
 
-<sup>1</sup>Эта функция недоступна на базовом уровне Центра Интернета вещей. Дополнительные сведения см. в статье [Масштабирование решения для Центра Интернета вещей](iot-hub-scaling.md). <br/><sup>2</sup> Размер счетчика регулирования составляет 4 КБ.
+<sup>1</sup>Эта функция недоступна на базовом уровне Центра Интернета вещей. Дополнительные сведения см. в статье [Масштабирование решения для Центра Интернета вещей](iot-hub-scaling.md). <br/><sup>2</sup>Throttling meter size is 4 KB.
 
-### <a name="throttling-details"></a>Сведения о регулировании
+### <a name="throttling-details"></a>Throttling Details
 
-* Размер счетчика определяет, на что увеличивается ограничение регулирования. Если полезная нагрузка прямого вызова находится в диапазоне от 0 до 4 КБ, то она считается 4 КБ. До достижения ограничения в 160 КБ/с на единицу можно до 40 вызовов в секунду на единицу.
+* The meter size determines at what increments your throttling limit is consumed. If your direct call's payload is between 0 and 4 KB, it is counted as 4 KB. You can make up to 40 calls per second per unit before hitting the limit of 160 KB/sec/unit.
 
-   Аналогично, если полезные данные находятся в диапазоне от 4 КБ до 8 КБ, каждая учетная запись вызова будет иметь размер 8 КБ, а до достижения максимального ограничения можно состоять до 20 вызовов в секунду на единицу.
+   Similarly, if your payload is between 4 KB and 8 KB, each call accounts for 8 KB and you can make up to 20 calls per second per unit before hitting the max limit.
 
-   Наконец, если размер полезной нагрузки составляет от 156KB до 160 КБ, вы сможете сделать только один вызов в секунду на единицу в концентраторе до достижения ограничения в 160 КБ/с на единицу.
+   Finally, if your payload size is between 156KB and 160 KB, you'll be able to make only 1 call per second per unit in your hub before hitting the limit of 160 KB/sec/unit.
 
-*  Для *заданий операций с устройствами (обновление двойника, вызов прямого метода)* для уровня S2, 50 в секунду на единицу применяется только при вызове методов с помощью заданий. При непосредственном вызове прямых методов предельное значение ограничения в 24 Мб/с на единицу (для S2) применяется.
+*  For *Jobs device operations (update twin, invoke direct method)* for tier S2, 50/sec/unit only applies to when you invoke methods using jobs. If you invoke direct methods directly, the original throttling limit of 24 MB/sec/unit (for S2) applies.
 
-*  **Квота** — это совокупное количество сообщений, которые можно отправить в центре *за день*. Вы можете найти предельную квоту концентратора в столбце **Общее число сообщений/день** на [странице цен на центр Интернета вещей](https://azure.microsoft.com/pricing/details/iot-hub/).
+*  **Quota** is the aggregate number of messages you can send in your hub *per day*. You can find your hub's quota limit under the column **Total number of messages /day** on the [IoT Hub pricing page](https://azure.microsoft.com/pricing/details/iot-hub/).
 
-*  Скорость отправки сообщений из облака на устройство и с устройства в облако определяется максимальной *скоростью* , с которой можно отправить сообщения — количество сообщений, не отличных от 4 КБ. Каждое сообщение может иметь размер до 256 КБ, что является [максимальным размером сообщения](iot-hub-devguide-quotas-throttling.md#other-limits).
+*  Your cloud-to-device and device-to-cloud throttles determine the maximum *rate* at which you can send messages -- number of messages irrespective of 4 KB chunks. Each message can be up to 256 KB which is the [maximum message size](iot-hub-devguide-quotas-throttling.md#other-limits).
 
-*  Рекомендуется регулировать вызовы, чтобы не превысить пределы регулирования. Если достигнуто предельное значение, центр Интернета вещей выдает сообщение с кодом ошибки 429, и клиент должен выполнить отправку и повторить попытку. Эти ограничения задаются для каждого концентратора (или в некоторых случаях на концентратор или единицу). Дополнительные сведения см. в статье об [управлении подключением и надежных шаблонах обмена сообщениями и повторных попыток](iot-hub-reliability-features-in-sdks.md#retry-patterns).
+*  It's a good practice to throttle your calls so that you don't hit/exceed the throttling limits. If you do hit the limit, IoT Hub responds with error code 429 and the client should back-off and retry. These limits are per hub (or in some cases per hub/unit). For more information, refer to [Manage connectivity and reliable messaging/Retry patterns](iot-hub-reliability-features-in-sdks.md#retry-patterns).
 
-### <a name="traffic-shaping"></a>Формирование трафика
+### <a name="traffic-shaping"></a>Traffic shaping
 
-Чтобы обеспечить соответствие пакетному трафику, центр Интернета вещей принимает запросы, превышающие регулирование, в течение ограниченного времени. Первые несколько этих запросов обрабатываются немедленно. Однако если количество запросов по-новому нарушает регулирование, центр Интернета вещей начинает размещать запросы в очереди и обрабатывает их по скорости ограничения. Этот результат называется *формированием трафика*. Кроме того, размер этой очереди ограничен. Если нарушение регулирования будет продолжено, в конце концов очередь заполнится, а центр Интернета вещей отклонит запросы с `429 ThrottlingException`.
+To accommodate burst traffic, IoT Hub accepts requests above the throttle for a limited time. The first few of these requests are processed immediately. However, if the number of requests continues violate the throttle, IoT Hub starts placing the requests in a queue and processed at the limit rate. This effect is called *traffic shaping*. Furthermore, the size of this queue is limited. If the throttle violation continues, eventually the queue fills up, and IoT Hub starts rejecting requests with `429 ThrottlingException`.
 
-Например, вы используете виртуальное устройство для отправки 200 сообщений, отправляемых с устройства в облако, в центр Интернета вещей S1 (с ограничением в 100/с D2C). В течение первой минуты или два сообщения обрабатываются немедленно. Тем не менее, так как устройство будет продолжать отправку большего количества сообщений, чем ограничение регулирования, центр Интернета вещей начинает обрабатывать только 100 сообщений в секунду и помещает остальные в очередь. Вы начинаете увеличивать задержку. Со временем вы начинаете получать `429 ThrottlingException` по мере заполнения очереди, а "количество ошибок регулирования" в [метриках центра Интернета вещей](iot-hub-metrics.md) начинает увеличиваться.
+For example, you use a simulated device to send 200 device-to-cloud messages per second to your S1 IoT Hub (which has a limit of 100/sec D2C sends). For the first minute or two, the messages are processed immediately. However, since the device continues to send more messages than the throttle limit, IoT Hub begins to only process 100 messages per second and puts the rest in a queue. You start noticing increased latency. Eventually, you start getting `429 ThrottlingException` as the queue fills up, and the "number of throttle errors" in [IoT Hub's metrics](iot-hub-metrics.md) starts increasing.
 
-### <a name="identity-registry-operations-throttle"></a>Регулирование операций реестра удостоверений
+### <a name="identity-registry-operations-throttle"></a>Identity registry operations throttle
 
-Операции с реестром удостоверений устройств предназначены для использования во время выполнения в сценариях управления устройствами и подготовки. Чтение или обновление большого количества удостоверений устройств поддерживается с помощью [заданий импорта и экспорта](iot-hub-devguide-identity-registry.md#import-and-export-device-identities).
+Device identity registry operations are intended for run-time use in device management and provisioning scenarios. Чтение или обновление большого количества удостоверений устройств поддерживается с помощью [заданий импорта и экспорта](iot-hub-devguide-identity-registry.md#import-and-export-device-identities).
 
-### <a name="device-connections-throttle"></a>Регулирование подключений устройств
+### <a name="device-connections-throttle"></a>Device connections throttle
 
 Регулирование *подключений устройств* определяет скорость, с которой можно установить новые подключения устройства к Центру Интернета вещей. Регулирование *подключений устройства* не влияет на максимальное число одновременно подключенных устройств. Регулирование скорости *подключений устройства* зависит от числа единиц, подготовленных для Центра Интернета вещей.
 
-Например, если вы приобретаете одну единицу S1, то получаете регулирование 100 соединений в секунду. Таким образом, для подключения устройств 100 000 требуется не менее 1 000 секунд (приблизительно 16 минут). Однако вы можете иметь столько одновременно подключенных устройств, сколько устройств зарегистрировано в вашем реестре удостоверений.
+Например, если вы приобретаете одну единицу S1, то получаете регулирование 100 соединений в секунду. Therefore, to connect 100,000 devices, it takes at least 1,000 seconds (approximately 16 minutes). Однако вы можете иметь столько одновременно подключенных устройств, сколько устройств зарегистрировано в вашем реестре удостоверений.
 
 ## <a name="other-limits"></a>Другие ограничения
 
@@ -95,28 +95,28 @@ ms.locfileid: "72331363"
 
 | Операция | Ограничение |
 | --------- | ----- |
-| Устройства | Общее число устройств и модулей, которые могут быть зарегистрированы в одном центре Интернета вещей, ограничено на 1 000 000. Единственный способ увеличить это ограничение — обратиться в [Служба поддержки Майкрософт](https://azure.microsoft.com/support/options/).|
-| Передача файлов | 10 параллельных отправок файлов на устройство. |
-| Задания<sup>1</sup> | Максимальное число одновременных заданий равно 1 (для Free и S1), 5 (для S2) и 10 (для S3). Однако максимальное количество одновременных [заданий импорта и экспорта устройств](iot-hub-bulk-identity-mgmt.md) равно 1 для всех уровней. <br/>Журнал заданий сохраняется до 30 дней. |
+| Устройства | The total number of devices plus modules that can be registered to a single IoT hub is capped at 1,000,000. The only way to increase this limit is to contact [Microsoft Support](https://azure.microsoft.com/support/options/).|
+| Передача файлов | 10 concurrent file uploads per device. |
+| Задания<sup>1</sup> | Maximum concurrent jobs is 1 (for Free and S1), 5 (for S2), and 10 (for S3). However, the max concurrent [device import/export jobs](iot-hub-bulk-identity-mgmt.md) is 1 for all tiers. <br/>Job history is retained up to 30 days. |
 | Дополнительные конечные точки | Платные центры SKU могут иметь 10 дополнительных конечных точек. Бесплатные центры SKU могут иметь одну дополнительную конечную точку. |
-| Запросы маршрутизации сообщений | В платных центрах SKU может быть 100 запросов маршрутизации. Свободные концентраторы номеров SKU могут содержать пять запросов маршрутизации. |
-| Обогащение сообщений | Платные центры SKU могут иметь до 10 дополнений сообщений. Свободные центры SKU могут иметь до 2 дополнений сообщений.|
+| Message routing queries | Paid SKU hubs may have 100 routing queries. Free SKU hubs may have five routing queries. |
+| Обогащение сообщений | Paid SKU hubs can have up to 10 message enrichments. Free SKU hubs can have up to 2 message enrichments.|
 | Передача сообщений с устройства в облако | Максимальный размер сообщения — 256 КБ |
-| Передача сообщений из облака на устройство<sup>1</sup> | Максимальный размер сообщения — 64 КБ. Максимальное количество сообщений, ожидающих доставки, составляет 50 на устройство. |
+| Передача сообщений из облака на устройство<sup>1</sup> | Максимальный размер сообщения — 64 КБ. Maximum pending messages for delivery is 50 per device. |
 | Прямой метод<sup>1</sup> | Максимальный размер полезных данных прямого метода — 128 КБ. |
 | Автоматическая конфигурация устройств<sup>1</sup> | 100 конфигураций на платный центр SKU. 20 конфигураций на бесплатный центр SKU. |
-| IoT Edge автоматические развертывания<sup>1</sup> | 20 модулей на развертывание. 100 развертываний на платный центр SKU. 10 развертываний на каждый центр свободных номеров SKU. |
-| Двойники<sup>1</sup> | Максимальный размер на раздел двойников (теги, требуемые и сообщаемые свойства) — 8 КБ |
+| IoT Edge automatic deployments<sup>1</sup> | 20 модулей на развертывание. 100 развертываний на платный центр SKU. 10 deployments per free SKU hub. |
+| Двойники<sup>1</sup> | Maximum size of desired properties and reported properties sections are 32 KB each. Maximum size of tags section is 8 KB. |
 
 <sup>1</sup>Эта функция недоступна на базовом уровне Центра Интернета вещей. Дополнительные сведения см. в статье [Масштабирование решения для Центра Интернета вещей](iot-hub-scaling.md).
 
-## <a name="increasing-the-quota-or-throttle-limit"></a>Увеличение квоты или ограничения регулирования
+## <a name="increasing-the-quota-or-throttle-limit"></a>Increasing the quota or throttle limit
 
-В любой момент времени можно увеличить квоты или ограничения регулирования, [увеличив число подготовленных единиц в центре Интернета вещей](iot-hub-upgrade.md).
+At any given time, you can increase quotas or throttle limits by [increasing the number of provisioned units in an IoT hub](iot-hub-upgrade.md).
 
 ## <a name="latency"></a>Задержка
 
-Центр Интернета вещей стремится обеспечить малую задержку при выполнении всех операций. Однако из-за условий сети и других непредсказуемых факторов она не может гарантировать определенную задержку. При разработке решения учитывайте следующее:
+Центр Интернета вещей стремится обеспечить малую задержку при выполнении всех операций. However, due to network conditions and other unpredictable factors it cannot guarantee a certain latency. При разработке решения учитывайте следующее:
 
 * Не делайте никаких предположений о максимально низкой задержке любой операции Центра Интернета вещей.
 * Подготовьте Центр Интернета вещей в ближайшем к вашим устройствам регионе Azure.

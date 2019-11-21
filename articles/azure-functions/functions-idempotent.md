@@ -1,47 +1,45 @@
 ---
-title: Проектирование функций Azure для идентичных входных данных
-description: Создание идемпотентными функций Azure
+title: Designing Azure Functions for identical input
+description: Building Azure Functions to be idempotent
 author: craigshoemaker
 ms.author: cshoe
 ms.date: 9/12/2019
 ms.topic: article
-ms.service: azure-functions
-manager: gwallace
-ms.openlocfilehash: 39e785a1ca7a158ddb90a3e6ba914582c405612a
-ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
+ms.openlocfilehash: 15af60ac5a862e6fb20e65ba6fbb92482420b7c0
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70997397"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74226875"
 ---
-# <a name="designing-azure-functions-for-identical-input"></a>Проектирование функций Azure для идентичных входных данных
+# <a name="designing-azure-functions-for-identical-input"></a>Designing Azure Functions for identical input
 
-Реальность, основанная на событиях и архитектуре на основе сообщений, определяет необходимость принятия идентичных запросов при сохранении целостности данных и стабильности системы.
+The reality of event-driven and message-based architecture dictates the need to accept identical requests while preserving data integrity and system stability.
 
-Для иллюстрации рассмотрим кнопку лифтного вызова. По мере нажатия кнопки она высветится, и в этаж будет отправлен Лифт. Чуть позже, кто-то другой Присоединяйтесь к вам в зале ожидания. Этот человек имеет свое значение и нажимает кнопку с освещением во второй раз. Вы не захотите, чтобы вы чуккле, что команда для вызова лифта — идемпотентными.
+To illustrate, consider an elevator call button. As you press the button, it lights up and an elevator is sent to your floor. A few moments later, someone else joins you in the lobby. This person smiles at you and presses the illuminated button a second time. You smile back and chuckle to yourself as you're reminded that the command to call an elevator is idempotent.
 
-Нажатие кнопки лифта в качестве второго, третьего или четвертого времени не повлияет на окончательный результат. При нажатии кнопки, независимо от числа раз, Лифт посылается в пол. Идемпотентными Systems, как в лифте, приводят к тому же результату независимо от того, сколько раз выдаются идентичные команды.
+Pressing an elevator call button a second, third, or fourth time has no bearing on the final result. When you press the button, regardless of the number of times, the elevator is sent to your floor. Idempotent systems, like the elevator, result in the same outcome no matter how many times identical commands are issued.
 
-Когда дело доходит до создания приложений, учитывайте следующие сценарии.
+When it comes to building applications, consider the following scenarios:
 
-- Что произойдет, если приложение управления запасами попытается удалить один и тот же продукт несколько раз?
-- Как работает приложение-персонал, если существует несколько запросов на создание записи сотрудника для одного и того же человека?
-- Где происходит возврат денег, если приложение банковской работы получает 100 запросов для получения того же изъятия?
+- What happens if your inventory control application tries to delete the same product more than once?
+- How does your human resource application behave if there is more than one request to create an employee record for the same person?
+- Where does the money go if your banking app gets 100 requests to make the same withdrawal?
 
-Существует много контекстов, в которых запросы к функции могут принимать идентичные команды. Ниже перечислены некоторые ситуации.
+There are many contexts where requests to a function may receive identical commands. Some situations include:
 
-- Политики повтора, отправляющие один и тот же запрос несколько раз
-- Кэшированные команды, воспроизводимые в приложении
-- Ошибки приложения при отправке нескольких идентичных запросов
+- Retry policies sending the same request many times
+- Cached commands replayed to the application
+- Application errors sending multiple identical requests
 
-Для защиты целостности данных и работоспособности системы приложение идемпотентными содержит логику, которая может содержать следующие варианты поведения:
+To protect data integrity and system health, an idempotent application contains logic that may contain the following behaviors:
 
-- Проверка существования данных перед попыткой выполнить удаление
-- Проверка наличия данных перед попыткой выполнить действие создания
-- Согласование логики, которая создает окончательную согласованность данных
-- Элементы управления параллелизмом
-- Обнаружение дубликатов
-- Проверка актуальности данных
-- Логика защиты для проверки входных данных
+- Verifying of the existence of data before trying to execute a delete
+- Checking to see if data already exists before trying to execute a create action
+- Reconciling logic that creates eventual consistency in data
+- Concurrency controls
+- Duplication detection
+- Data freshness validation
+- Guard logic to verify input data
 
-В конечном итоге идемпотентности достигается путем обеспечения возможности выполнения определенного действия и выполняется только один раз.
+Ultimately idempotency is achieved by ensuring a given action is possible and is only executed once.

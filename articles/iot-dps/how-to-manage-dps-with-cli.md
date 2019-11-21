@@ -1,5 +1,5 @@
 ---
-title: Управление Службой подготовки устройств Центра Интернета вещей с помощью Azure CLI и расширения Интернета вещей | Документация Майкрософт
+title: Manage IoT Hub Device Provisioning Service using Azure CLI & IoT extension
 description: Узнайте, как управлять Службой подготовки устройств Центра Интернета вещей с помощью Azure CLI и расширения Интернета вещей
 author: chrissie926
 ms.author: menchi
@@ -7,13 +7,12 @@ ms.date: 01/17/2018
 ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
-manager: briz
-ms.openlocfilehash: 59d2277bd99fac1e8357c1b0d7336ca7451bf8dc
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0e276ca32d7cd02f9668b33b3729757404b13b00
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62122875"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74229742"
 ---
 # <a name="how-to-use-azure-cli-and-the-iot-extension-to-manage-the-iot-hub-device-provisioning-service"></a>Как управлять Службой подготовки устройств Центра Интернета вещей с помощью Azure CLI и расширения Интернета вещей
 
@@ -44,20 +43,20 @@ ms.locfileid: "62122875"
 Перед началом работы выполните описанные выше шаги по установке. Если у вас нет учетной записи Azure, вы можете создать [бесплатную учетную запись](https://azure.microsoft.com/free/?v=17.39a). 
 
 
-### <a name="1-log-in-to-the-azure-account"></a>1. Войдите в учетную запись Azure
+### <a name="1-log-in-to-the-azure-account"></a>1. Log in to the Azure account
   
     az login
 
 ![вход][1]
 
-### <a name="2-create-a-resource-group-iothubblogdemo-in-eastus"></a>2. Создайте группу ресурсов IoTHubBlogDemo в регионе eastus
+### <a name="2-create-a-resource-group-iothubblogdemo-in-eastus"></a>2. Create a resource group IoTHubBlogDemo in eastus
 
     az group create -l eastus -n IoTHubBlogDemo
 
 ![Создать группу ресурсов][2]
 
 
-### <a name="3-create-two-device-provisioning-services"></a>3. Создайте две службы подготовки устройств
+### <a name="3-create-two-device-provisioning-services"></a>3. Create two Device Provisioning services
 
     az iot dps create --resource-group IoTHubBlogDemo --name demodps
 
@@ -65,20 +64,20 @@ ms.locfileid: "62122875"
 
     az iot dps create --resource-group IoTHubBlogDemo --name demodps2
 
-### <a name="4-list-all-the-existing-device-provisioning-services-under-this-resource-group"></a>4. Создайте список всех имеющихся служб подготовки устройств в этой группе ресурсов
+### <a name="4-list-all-the-existing-device-provisioning-services-under-this-resource-group"></a>4. List all the existing Device Provisioning services under this resource group
 
     az iot dps list --resource-group IoTHubBlogDemo
 
 ![Создание списка службы подготовки устройств][4]
 
 
-### <a name="5-create-an-iot-hub-blogdemohub-under-the-newly-created-resource-group"></a>5. Создайте Центр Интернета вещей blogDemoHub в созданной группе ресурсов.
+### <a name="5-create-an-iot-hub-blogdemohub-under-the-newly-created-resource-group"></a>5. Create an IoT Hub blogDemoHub under the newly created resource group
 
     az iot hub create --name blogDemoHub --resource-group IoTHubBlogDemo
 
 ![Создание Центра Интернета вещей][5]
 
-### <a name="6-link-one-existing-iot-hub-to-a-device-provisioning-service"></a>6. Свяжите один имеющийся Центр Интернета вещей со службой подготовки устройств
+### <a name="6-link-one-existing-iot-hub-to-a-device-provisioning-service"></a>6. Link one existing IoT Hub to a Device Provisioning service
 
     az iot dps linked-hub create --resource-group IoTHubBlogDemo --dps-name demodps --connection-string <connection string> -l westus
 
@@ -94,7 +93,7 @@ ms.locfileid: "62122875"
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-В этом руководстве вы узнали, как:
+Из этого руководства вы узнали, как выполнить следующие задачи:
 
 > [!div class="checklist"]
 > * Регистрация устройства

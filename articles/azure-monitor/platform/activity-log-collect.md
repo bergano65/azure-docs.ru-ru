@@ -1,79 +1,79 @@
 ---
-title: Собирайте и анализируйте журналы действий Azure в Log Analytics рабочей области | Документация Майкрософт
-description: Собирайте журналы действий Azure в журналах Azure Monitor и используйте решение мониторинга для анализа и поиска в журнале действий Azure во всех подписках Azure.
+title: Collect and analyze Azure activity logs in Log Analytics workspace | Microsoft Docs
+description: Collect the Azure Activity Log in Azure Monitor Logs and use the monitoring solution to analyze and search the Azure activity log across all your Azure subscriptions.
 ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 09/30/2019
-ms.openlocfilehash: a53694f97da144f3932efe39941d3f22ef739c7b
-ms.sourcegitcommit: b1a8f3ab79c605684336c6e9a45ef2334200844b
+ms.openlocfilehash: 07062ea9ce10b99e0f03a66247bb97795b45aedc
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74048224"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74212587"
 ---
-# <a name="collect-and-analyze-azure-activity-logs-in-log-analytics-workspace-in-azure-monitor"></a>Собирайте и анализируйте журналы действий Azure в Log Analytics рабочей области в Azure Monitor
+# <a name="collect-and-analyze-azure-activity-logs-in-log-analytics-workspace-in-azure-monitor"></a>Collect and analyze Azure activity logs in Log Analytics workspace in Azure Monitor
 
 > [!NOTE]
-> Теперь можно выполнить сбор журнала действий в Log Analytics рабочую область, используя параметр диагностики, аналогичный сбору журналов ресурсов. См. статью [Получение и анализ журналов действий Azure в log Analytics рабочей области в Azure Monitor](activity-log-collect.md).
+> You can now collect the Activity log into a Log Analytics workspace using a diagnostic setting similar to how you collect resource logs. See [Collect and analyze Azure activity logs in Log Analytics workspace in Azure Monitor](diagnostic-settings-subscription.md).
 
-[Журнал действий Azure](activity-logs-overview.md) позволяет получить представление о событиях уровня подписки, произошедших в подписке Azure. В этой статье описывается, как получить журнал действий в Log Analytics рабочей области и как использовать [решение для мониторинга](../insights/solutions.md)аналитика журнала действий, которое предоставляет запросы и представления журнала для анализа этих данных. 
+The [Azure Activity Log](activity-logs-overview.md) provides insight into subscription-level events that have occurred in your Azure subscription. This article describes how to collect the Activity Log into a Log Analytics workspace and how to use the Activity Log Analytics [monitoring solution](../insights/solutions.md), which provides log queries and views for analyzing this data. 
 
-Подключение журнала действий к рабочей области Log Analytics предоставляет следующие преимущества.
+Connecting the Activity Log to a Log Analytics workspace provides the following benefits:
 
-- Объедините журнал действий из нескольких подписок Azure в одно место для анализа.
-- Храните записи журнала действий дольше 90 дней.
-- Сопоставьте данные журнала действий с другими данными мониторинга, собранными Azure Monitor.
-- Используйте [запросы журналов](../log-query/log-query-overview.md) для выполнения сложного анализа и получения подробных сведений о записях журнала действий.
+- Consolidate the Activity Log from multiple Azure subscriptions into one location for analysis.
+- Store Activity Log entries for longer than 90 days.
+- Correlate Activity Log data with other monitoring data collected by Azure Monitor.
+- Use [log queries](../log-query/log-query-overview.md) to perform complex analysis and gain deep insights on Activity Log entries.
 
-## <a name="connect-to-log-analytics-workspace"></a>Подключение к рабочей области Log Analytics
-Одну рабочую область можно подключить к журналу действий для нескольких подписок в одном клиенте Azure. Сведения о сборе в нескольких клиентах см. в статье [Сбор журналов действий Azure в log Analytics рабочей области между подписками в разных клиентах Azure Active Directory](activity-log-collect-tenants.md).
+## <a name="connect-to-log-analytics-workspace"></a>Connect to Log Analytics workspace
+A single workspace can be connected to the Activity Log for multiple subscriptions in the same Azure tenant. For collection across multiple tenants, see [Collect Azure Activity Logs into a Log Analytics workspace across subscriptions in different Azure Active Directory tenants](activity-log-collect-tenants.md).
 
 > [!IMPORTANT]
-> Если поставщики ресурсов Microsoft. OperationalInsights и Microsoft. OperationsManagement не зарегистрированы для вашей подписки, может появиться сообщение об ошибке со следующей процедурой. Чтобы зарегистрировать эти поставщики, см. раздел [поставщики и типы ресурсов Azure](../../azure-resource-manager/resource-manager-supported-services.md) .
+> You may receive an error with the following procedure if the Microsoft.OperationalInsights and Microsoft.OperationsManagement resource providers aren't registered for your subscription. See [Azure resource providers and types](../../azure-resource-manager/resource-manager-supported-services.md) to register these providers.
 
-Используйте следующую процедуру, чтобы подключить журнал действий к рабочей области Log Analytics:
+Use the following procedure to connect the Activity Log to your Log Analytics workspace:
 
-1. В меню **log Analytics рабочие области** в портал Azure выберите рабочую область, чтобы получить журнал действий.
-1. В разделе **Источники данных рабочей области** в меню рабочей области выберите **Журнал действий Azure**.
-1. Щелкните подписку, которую нужно подключить.
+1. From the **Log Analytics workspaces** menu in the Azure portal, select the workspace to collect the Activity Log.
+1. In the **Workspace Data Sources** section of the workspace's menu, select **Azure Activity log**.
+1. Click the subscription you want to connect.
 
     ![Рабочие области](media/activity-log-export/workspaces.png)
 
-1. Нажмите кнопку **подключить** , чтобы подключить журнал действий в подписке к выбранной рабочей области. Если подписка уже подключена к другой рабочей области, нажмите кнопку **Отключить** сначала, чтобы отключить ее.
+1. Click **Connect** to connect the Activity log in the subscription to the selected workspace. If the subscription is already connected to another workspace, click **Disconnect** first to disconnect it.
 
-    ![Подключение рабочих областей](media/activity-log-export/connect-workspace.png)
+    ![Connect Workspaces](media/activity-log-export/connect-workspace.png)
 
-## <a name="analyze-in-log-analytics-workspace"></a>Анализ в Log Analytics рабочей области
-При подключении журнала действий к рабочей области Log Analytics записи будут записываться в рабочую область в таблицу с именем **AzureActivity** , которую можно получить с помощью [запроса журнала](../log-query/log-query-overview.md). Структура этой таблицы зависит от [категории записи журнала](activity-logs-overview.md#categories-in-the-activity-log). Описание каждой категории см. в статье [схема событий журнала действий Azure](activity-log-schema.md) .
+## <a name="analyze-in-log-analytics-workspace"></a>Analyze in Log Analytics workspace
+When you connect an Activity Log to a Log Analytics workspace, entries will be written to the workspace into a table called **AzureActivity** that you can retrieve with a [log query](../log-query/log-query-overview.md). The structure of this table varies depending on the [category of log entry](activity-logs-overview.md#categories-in-the-activity-log). See [Azure Activity Log event schema](activity-log-schema.md) for a description of each category.
 
-## <a name="activity-logs-analytics-monitoring-solution"></a>Решение для мониторинга журналов действий
-Решение для мониторинга Log Analytics Azure включает несколько запросов и представлений журнала для анализа записей журнала действий в рабочей области Log Analytics.
+## <a name="activity-logs-analytics-monitoring-solution"></a>Activity Logs Analytics monitoring solution
+The Azure Log Analytics monitoring solution includes multiple log queries and views for analyzing the Activity Log records in your Log Analytics workspace.
 
 ### <a name="install-the-solution"></a>Установка решения
-Используйте процедуру, описанную в разделе [Установка решения для мониторинга](../insights/solutions.md#install-a-monitoring-solution) для установки **аналитика журнала действий** решения. Дополнительная настройка не требуется.
+Use the procedure in [Install a monitoring solution](../insights/solutions.md#install-a-monitoring-solution) to install the **Activity Log Analytics** solution. There is no additional configuration required.
 
 ### <a name="use-the-solution"></a>Использование решения
-Доступ к решениям мониторинга осуществляется из меню " **монитор** " в портал Azure. Выберите **больше** в разделе **Insights** , чтобы открыть страницу **обзора** с плитками решения. На плитке **журналы действий Azure** отображается количество записей **AzureActivity** в рабочей области.
+Monitoring solutions are accessed from the **Monitor** menu in the Azure portal. Select **More** in the **Insights** section to open the **Overview** page with the solution tiles. The **Azure Activity Logs** tile displays a count of the number of **AzureActivity** records in your workspace.
 
 ![Плитка "Журналы действий Azure"](media/collect-activity-logs/azure-activity-logs-tile.png)
 
 
-Щелкните плитку **журналы действий Azure** , чтобы открыть представление **журналы действий Azure** . Представление включает в себя элементы визуализации, приведенные в следующей таблице. Каждая часть содержит до 10 элементов, соответствующих критериям этой части за указанный диапазон времени. Можно выполнить запрос журнала, возвращающий все совпадающие записи, щелкнув **Просмотреть все** в нижней части части.
+Click the **Azure Activity Logs** tile to open the **Azure Activity Logs** view. The view includes the visualization parts in the following table. Each part lists up to 10 items matching that parts's criteria for the specified time range. You can run a log query that returns all  matching records by clicking **See all** at the bottom of the part.
 
 ![Панель мониторинга "Журналы действий Azure"](media/collect-activity-logs/activity-log-dash.png)
 
-| Визуализация, часть | ОПИСАНИЕ |
+| Visualization part | Описание |
 | --- | --- |
-| Записи журнала действий Azure | Отображает линейчатую диаграмму с общими суммами записей журнала действий Azure для выбранного диапазона дат и показывает список 10 вызывающих элементов с максимальным числом вызовов. Щелкните линейчатую диаграмму, чтобы выполнить поиск `AzureActivity`. Щелкните вызывающий элемент, чтобы выполнить поиск по журналам, возвращающий все записи журнала действий для этого элемента. |
-| Журналы действий по состоянию | Показывает кольцевую диаграмму состояния журнала действий Azure для выбранного диапазона дат и список первых десяти записей состояния. Щелкните диаграмму, чтобы выполнить запрос журнала для `AzureActivity | summarize AggregatedValue = count() by ActivityStatus`. Щелкните элемент состояния, чтобы выполнить поиск по журналам, возвращая все записи журнала действий для этой записи состояния. |
-| Журналы действий по ресурсу | Показывает общее число ресурсов с журналами действий и список первых десяти ресурсов с количеством записей для каждого ресурса. Щелкните область итогов, чтобы запустить поиск `AzureActivity | summarize AggregatedValue = count() by Resource` по журналам, который возвратит все доступные для решения ресурсы Azure. Щелкните ресурс, чтобы выполнить запрос журнала, возвращающий все записи о действиях для этого ресурса. |
-| Журналы действий по поставщику ресурсов | Показывает общее число поставщиков ресурсов, создающих журналы действий, и список первых десяти. Щелкните область итогов, чтобы выполнить запрос журнала для `AzureActivity | summarize AggregatedValue = count() by ResourceProvider`, в котором отображаются все поставщики ресурсов Azure. Щелкните поставщик ресурсов, чтобы выполнить запрос журнала, возвращающий все записи действий для поставщика. |
+| Записи журнала действий Azure | Shows a bar chart of the top Azure Activity Log entry record totals for the date range that you have selected and shows a list of the top 10 activity callers. Щелкните линейчатую диаграмму, чтобы выполнить поиск `AzureActivity`. Click a caller item to run a log search returning all Activity Log entries for that item. |
+| Журналы действий по состоянию | Shows a doughnut chart for Azure Activity Log status for the selected date range and a list of the top ten status records. Click the chart to run a log query for `AzureActivity | summarize AggregatedValue = count() by ActivityStatus`. Click a status item to run a log search returning all Activity Log entries for that status record. |
+| Журналы действий по ресурсу | Shows the total number of resources with Activity Logs and lists the top ten resources with record counts for each resource. Щелкните область итогов, чтобы запустить поиск `AzureActivity | summarize AggregatedValue = count() by Resource` по журналам, который возвратит все доступные для решения ресурсы Azure. Click a resource to run a log query returning all activity records for that resource. |
+| Журналы действий по поставщику ресурсов | Shows the total number of resource providers that produce Activity Logs and lists the top ten. Click the total area to run a log query for `AzureActivity | summarize AggregatedValue = count() by ResourceProvider`, which shows all Azure resource providers. Click a resource provider to run a log query returning all activity records for the provider. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения о [журнале действий](activity-logs-overview.md).
-- Дополнительные сведения о [платформе Azure Monitor Data Platform](data-platform.md).
-- Используйте [запросы журналов](../log-query/log-query-overview.md) для просмотра подробных сведений из журнала действий.
+- Learn more about the [Activity Log](activity-logs-overview.md).
+- Learn more about the [Azure Monitor data platform](data-platform.md).
+- Use [log queries](../log-query/log-query-overview.md) to view detailed information from your Activity Log.

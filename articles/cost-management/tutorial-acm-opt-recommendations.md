@@ -7,15 +7,15 @@ author: bandersmsft
 ms.author: banders
 ms.date: 10/24/2019
 ms.topic: conceptual
-ms.service: cost-management
+ms.service: cost-management-billing
 manager: dougeby
 ms.custom: seodec18
-ms.openlocfilehash: 603de4d9bed936ecb91f130b0e30f6d1383a9092
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: a9dbb121cab49024aaf0dc65bbac938764d9f8b2
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72935861"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74229835"
 ---
 # <a name="tutorial-optimize-costs-from-recommendations"></a>Руководство. Рекомендации по оптимизации затрат
 
@@ -29,7 +29,7 @@ ms.locfileid: "72935861"
 > * Проверьте результат, чтобы убедиться в том, что размер виртуальной машины успешно изменен
 
 ## <a name="prerequisites"></a>Технические условия
-Рекомендации доступны для различных областей и типов учетных записей Azure. Полный список поддерживаемых типов учетных записей см. в статье [Интерпретация данных службы "Управление затратами"](understand-cost-mgt-data.md). Для просмотра данных о расходах вы должны по крайней мере иметь доступ на чтение к одной или нескольким следующим областям. См. [основные сведения об областях и работе с ними](understand-work-scopes.md).
+Recommendations are available for a variety of scopes and Azure account types. Полный список поддерживаемых типов учетных записей см. в статье [Интерпретация данных службы "Управление затратами"](understand-cost-mgt-data.md). Для просмотра данных о расходах вы должны по крайней мере иметь доступ на чтение к одной или нескольким следующим областям. См. [основные сведения об областях и работе с ними](understand-work-scopes.md).
 
 - Subscription
 - группа ресурсов.
@@ -41,9 +41,9 @@ ms.locfileid: "72935861"
 
 ## <a name="view-cost-optimization-recommendations"></a>Просмотр рекомендаций по оптимизации затрат
 
-Чтобы просмотреть рекомендации по оптимизации затрат для подписки, откройте нужную область в портал Azure и выберите **рекомендации помощника**.
+To view cost optimization recommendations for a subscription, open the desired scope in the Azure portal and select **Advisor recommendations**.
 
-Чтобы просмотреть рекомендации для группы управления, откройте нужную область в портал Azure а затем в меню выберите **анализ затрат** . Используйте **область** пилюля для переключения на другую область, например группу управления. В меню выберите **рекомендации помощника** . См. [основные сведения об областях и работе с ними](understand-work-scopes.md).
+To view recommendations for a management group, open the desired scope in the Azure portal and select **Cost analysis** in the menu. Use the **Scope** pill to switch to a different scope, such as a management group. Select **Advisor recommendations** in the menu. См. [основные сведения об областях и работе с ними](understand-work-scopes.md).
 
 ![Рекомендации Помощника по управлению затратами, показанные на портале Azure](./media/tutorial-acm-opt-recommendations/advisor-recommendations.png)
 
@@ -51,19 +51,19 @@ ms.locfileid: "72935861"
 
 Категории **Impact** (Влияние) и **Potential yearly savings** (Потенциальная ежегодная экономия) должны помочь определить рекомендации, которые позволят больше сэкономить.
 
-Ниже приведены рекомендации по высоким последствиям.
-- [Приобретение зарезервированных экземпляров виртуальных машин для экономии денег с оплатой по мере использования](../advisor/advisor-cost-recommendations.md#buy-reserved-virtual-machine-instances-to-save-money-over-pay-as-you-go-costs)
-- [Оптимизация расходов на виртуальные машины путем изменения размера или завершения работы недостаточных экземпляров](../advisor/advisor-cost-recommendations.md#optimize-virtual-machine-spend-by-resizing-or-shutting-down-underutilized-instances)
-- [Использование хранилища уровня "Стандартный" для хранения моментальных снимков управляемых дисков](../advisor/advisor-cost-recommendations.md#use-standard-snapshots-for-managed-disks)
+High impact recommendations include:
+- [Buy reserved virtual machine instances to save money over pay-as-you-go costs](../advisor/advisor-cost-recommendations.md#buy-reserved-virtual-machine-instances-to-save-money-over-pay-as-you-go-costs)
+- [Optimize virtual machine spend by resizing or shutting down underutilized instances](../advisor/advisor-cost-recommendations.md#optimize-virtual-machine-spend-by-resizing-or-shutting-down-underutilized-instances)
+- [Use Standard Storage to store Managed Disks snapshots](../advisor/advisor-cost-recommendations.md#use-standard-snapshots-for-managed-disks)
 
-Ниже приведены средние рекомендации по влиянию.
-- [Удаление конвейеров фабрики данных Azure, которые завершаются сбоем](../advisor/advisor-cost-recommendations.md#delete-azure-data-factory-pipelines-that-are-failing)
-- [Сократите расходы, удалив неподготовленные каналы ExpressRoute](../advisor/advisor-cost-recommendations.md#reduce-costs-by-eliminating-unprovisioned-expressroute-circuits)
-- [Сократите расходы, удалив или перестроив шлюзы виртуальной сети с неактивной настройкой](../advisor/advisor-cost-recommendations.md#reduce-costs-by-deleting-or-reconfiguring-idle-virtual-network-gateways)
+Medium impact recommendations include:
+- [Delete Azure Data Factory pipelines that are failing](../advisor/advisor-cost-recommendations.md#delete-azure-data-factory-pipelines-that-are-failing)
+- [Reduce costs by eliminating un-provisioned ExpressRoute circuits](../advisor/advisor-cost-recommendations.md#reduce-costs-by-eliminating-unprovisioned-expressroute-circuits)
+- [Reduce costs by deleting or reconfiguring idle virtual network gateways](../advisor/advisor-cost-recommendations.md#reduce-costs-by-deleting-or-reconfiguring-idle-virtual-network-gateways)
 
 ## <a name="act-on-a-recommendation"></a>Выполнение рекомендации
 
-Помощник Azure отслеживает использование виртуальной машины в течение семи дней, а затем определяет неиспользуемые виртуальные машины. Виртуальные машины, у которых использование ресурсов ЦП составляет не больше 5 %, а использование ресурсов сети составляет не больше 7 МБ на протяжении 4 или более дней, будут считаться недостаточно нагруженными.
+Azure Advisor monitors your virtual machine usage for seven days and then identifies underutilized virtual machines. Виртуальные машины, у которых использование ресурсов ЦП составляет не больше 5 %, а использование ресурсов сети составляет не больше 7 МБ на протяжении 4 или более дней, будут считаться недостаточно нагруженными.
 
 Параметр использования ЦП на 5 % или меньше настроен по умолчанию, но вы можете его изменить. Дополнительные сведения об изменении параметра см. в статье [Приступая к работе с Azure Advisor](../advisor/advisor-get-started.md#configure-low-usage-vm-recommendation).
 
@@ -79,14 +79,14 @@ ms.locfileid: "72935861"
 
 Обратите внимание на текущий размер виртуальной машины. После проверки на необходимость изменения размера виртуальной машины, закройте сведения о виртуальной машине, чтобы просмотреть список виртуальных машин.
 
-В списке кандидатов для завершения работы или изменения размера выберите * * Изменить размер *&lt;фромвиртуалмачинеску&gt;* на *&lt;товиртуалмачинеску&gt;* * *.
+In the list of candidates to shut down or resize, select **Resize *&lt;FromVirtualMachineSKU&gt;* to *&lt;ToVirtualMachineSKU&gt;***.
 ![Пример рекомендации с параметром "Измените размер виртуальной машины"](./media/tutorial-acm-opt-recommendations/resize-vm.png)
 
-После этого вы увидите список доступных параметров для изменения размера. Выберите тот, который обеспечит вашему сценарию самую лучшую производительность и экономичность. В следующем примере выбран вариант изменения размера с **Standard_D8s_v3** на **Standard_D2s_v3**.
+После этого вы увидите список доступных параметров для изменения размера. Выберите тот, который обеспечит вашему сценарию самую лучшую производительность и экономичность. In the following example, the option chosen resizes from **Standard_D8s_v3** to **Standard_D2s_v3**.
 
 ![Пример списка доступных размеров виртуальных машин, в котором можно выбрать размер](./media/tutorial-acm-opt-recommendations/choose-size.png)
 
-Выбрав подходящий размер, нажмите кнопку **изменить размер** , чтобы запустить действие изменить размер.
+After you choose a suitable size, click **Resize** to start the resize action.
 
 Для изменения размера активную виртуальную машину необходимо перезапустить. Если виртуальная машина находится в рабочей среде, то операцию изменения размера рекомендуется запускать после окончания рабочего дня. Планирование перезапуска может уменьшить сбои, вызванные кратковременной недоступностью.
 

@@ -1,6 +1,6 @@
 ---
-title: Центр безопасности Azure и реестр контейнеров Azure
-description: Сведения об интеграции центра безопасности Azure с реестром контейнеров Azure
+title: Azure Security Center and Azure Container Registry
+description: Learn about Azure Security Center's integration with Azure Container Registry
 services: security-center
 documentationcenter: na
 author: memildin
@@ -12,37 +12,42 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/19/2019
 ms.author: memildin
-ms.openlocfilehash: f2a07774fa23173738bc33907dd00017ca260fd9
-ms.sourcegitcommit: 8e31a82c6da2ee8dafa58ea58ca4a7dd3ceb6132
-ms.translationtype: HT
+ms.openlocfilehash: 0ca7bfb276f49da720264305a92d31e81857cfd5
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74196382"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74229321"
 ---
-# <a name="azure-container-registry-integration-with-security-center-preview"></a>Интеграция реестра контейнеров Azure с центром безопасности (Предварительная версия)
+# <a name="azure-container-registry-integration-with-security-center-preview"></a>Azure Container Registry integration with Security Center (Preview)
 
-Реестр контейнеров Azure (запись контроля доступа) — это управляемая частная служба реестра DOCKER, которая хранит образы контейнеров для развертываний Azure и управляет ими в центральном реестре. Он основан на реестре DOCKER с открытым кодом 2,0.
+Azure Container Registry (ACR) is a managed, private Docker registry service that stores and manages your container images for Azure deployments in a central registry. It's based on the open-source Docker Registry 2.0.
 
-Для более глубокого ознакомления с уязвимостями реестра и образов пользователи уровня "Стандартный" центра безопасности Azure могут включить дополнительный пакет реестров контейнеров. Дополнительные сведения см. на странице [цен](security-center-pricing.md). При включенном наборе центр безопасности автоматически сканирует изображения в службе контроля учетных записей каждый раз, когда в реестр помещается образ. По завершении проверки (обычно через 10 минут) результаты поиска доступны в центре безопасности по следующим рекомендациям:
+For deeper visibility into your registry and images' vulnerabilities, users of Azure Security Center's standard tier can enable the optional Container Registries bundle. Дополнительные сведения см. на странице [цен](security-center-pricing.md). With the bundle enabled, Security Center automatically scans images in your registry whenever an image is pushed to the registry.
 
-[![пример рекомендации центра безопасности Azure об уязвимостях, обнаруженных в размещенном образе реестра контейнеров Azure (записи контроля доступа)](media/azure-container-registry-integration/container-security-acr-page.png)](media/azure-container-registry-integration/container-security-acr-page.png#lightbox)
+> [!NOTE]
+> Security Center's first scan of a registry will only occur after the Container Registries bundle is enabled and an image is pushed to the registry.
+
+When the scan completes (typically after approximately 10 minutes), findings are available in Security Center recommendations like this:
+
+[![Sample Azure Security Center recommendation about vulnerabilities discovered in an Azure Container Registry (ACR) hosted image](media/azure-container-registry-integration/container-security-acr-page.png)](media/azure-container-registry-integration/container-security-acr-page.png#lightbox)
 
 ## <a name="benefits-of-integration"></a>Преимущества интеграции
 
-Центр безопасности определяет реестры записей контроля доступа в подписке и позволяет легко предоставить следующие сведения:
+Security Center identifies ACR registries in your subscription and seamlessly provides:
 
-* **Поиск уязвимостей** для всех отправленных образов Linux в Azure. Центр безопасности сканирует образ с помощью сканера, который является ведущим в отрасли для проверки уязвимостей поставщика, Qualys. Это собственное решение по умолчанию тесно интегрировано.
+* **Azure-native vulnerability scanning** for all pushed Linux images. Security Center scans the image using a scanner from the industry-leading vulnerability scanning vendor, Qualys. This native solution is seamlessly integrated by default.
 
-* **Рекомендации по безопасности** для образов Linux с известными уязвимостями. Центр безопасности предоставляет подробные сведения о каждой обнаруженной уязвимости и классификации серьезности. Кроме того, он предоставляет рекомендации по исправлению конкретных уязвимостей, обнаруженных в каждом образе, отправленном в реестр.
+* **Security recommendations** for Linux images with known vulnerabilities. Security Center provides details of each reported vulnerability and a  severity classification. Additionally, it gives guidance for how to  remediate the specific vulnerabilities found on each image pushed to registry.
 
-![Общий обзор центра безопасности Azure и реестра контейнеров Azure (записи контроля доступа)](./media/azure-container-registry-integration/aks-acr-integration-detailed.png)
+![Azure Security Center and Azure Container Registry (ACR) high-level overview](./media/azure-container-registry-integration/aks-acr-integration-detailed.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о функциях безопасности контейнеров центра безопасности см. в следующих статьях:
+To learn more about Security Center's container security features, see:
 
-* [Центр безопасности Azure и безопасность контейнеров](container-security.md)
+* [Azure Security Center and container security](container-security.md)
 
-* [Интеграция со службой Kubernetes Azure](azure-kubernetes-service-integration.md)
+* [Integration with Azure Kubernetes Service](azure-kubernetes-service-integration.md)
 
-* [Защита виртуальных машин](security-center-virtual-machine-protection.md) . описание рекомендаций центра безопасности
+* [Virtual Machine protection](security-center-virtual-machine-protection.md) - Describes Security Center's recommendations

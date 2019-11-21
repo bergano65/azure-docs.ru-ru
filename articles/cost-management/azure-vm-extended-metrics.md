@@ -8,14 +8,14 @@ manager: vitavor
 ms.author: banders
 ms.date: 05/21/2019
 ms.topic: conceptual
-ms.service: cost-management
+ms.service: cost-management-billing
 ms.custom: seodec18
-ms.openlocfilehash: e1d0beb6ced0d582166d556c1ae2fc17b375dddf
-ms.sourcegitcommit: 8bae7afb0011a98e82cbd76c50bc9f08be9ebe06
+ms.openlocfilehash: ebbdd89d3ef41d4fb40197cbd83038b5cbc02073
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71695362"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74230146"
 ---
 # <a name="add-extended-metrics-for-azure-virtual-machines"></a>Добавление расширенных метрик для виртуальных машин Azure
 
@@ -28,10 +28,10 @@ ms.locfileid: "71695362"
 - управлять расходами, изменяя размеры в соответствии с потреблением;
 - получать рекомендации по выбору размера с учетом рентабельности из службы Cloudyn.
 
-Например, вам может потребоваться отслеживать процент используемой памяти и загрузки ЦП виртуальных машин Azure. Метрики виртуальной машины Azure соответствуют _процентным загрузкам ЦП_ и _\ память @ no__t-2 зафиксированным используемым байтам_.
+Например, вам может потребоваться отслеживать процент используемой памяти и загрузки ЦП виртуальных машин Azure. The Azure VM metrics correspond to _Percentage CPU_ and _\Memory\% Committed Bytes In Use_.
 
 > [!NOTE]
-> Расширенный сбор данных метрик поддерживается только с помощью мониторинга Azure на уровне гостя. Cloudyn несовместим с [агентом log Analytics](../azure-monitor/platform/agents-overview.md). 
+> Расширенный сбор данных метрик поддерживается только с помощью мониторинга Azure на уровне гостя. Cloudyn is not compatible with the [Log Analytics agent](../azure-monitor/platform/agents-overview.md). 
 
 ## <a name="determine-whether-extended-metrics-are-enabled"></a>Определение доступности расширенных метрик
 
@@ -44,7 +44,7 @@ ms.locfileid: "71695362"
 
 ## <a name="enable-extended-metrics-in-the-azure-portal"></a>Включение расширенных метрик на портале Azure
 
-Стандартные метрики являются метриками главного компьютера. Пример метрики _ЦП_ — один из примеров. Существуют также базовые метрики для гостевых виртуальных машин, которые также называются расширенными метриками. Примеры расширенных метрик включают _\ память @ no__t-1 выделенные байты_ и _\мемори\аваилабле байты_.
+Стандартные метрики являются метриками главного компьютера. The _Percentage CPU_ metric is one example. Существуют также базовые метрики для гостевых виртуальных машин, которые также называются расширенными метриками. Examples of extended metrics include _\Memory\% Committed Bytes In Use_ and _\Memory\Available Bytes_.
 
 Включить расширенные метрики достаточно просто. Включите мониторинг на уровне гостя для каждой виртуальной машины. При включении мониторинга на уровне гостя на виртуальную машину устанавливается агент диагностики Azure. Базовый набор расширенных метрик добавляется по умолчанию. Следующий процесс одинаков для классических и обычных виртуальных машин с ОС Windows и Linux.
 
@@ -84,6 +84,6 @@ ms.locfileid: "71695362"
 
 ![Справочные данные, отображаемые в Обозревателе экземпляра](./media/azure-vm-extended-metrics/instance-explorer.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Если доступ к API Azure Resource Manager в учетных записях еще не включен, перейдите к разделу [Активация подписок и учетных записей Azure с помощью Cloudyn](activate-subs-accounts.md).

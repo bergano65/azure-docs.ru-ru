@@ -7,15 +7,15 @@ author: bandersmsft
 ms.author: banders
 ms.date: 05/21/2019
 ms.topic: conceptual
-ms.service: cost-management
+ms.service: cost-management-billing
 manager: benshy
 ms.custom: seodec18
-ms.openlocfilehash: 247d959abadc92d70bdd60555a090986743e9322
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 937d1b6e0bc9ece0507821538fafb0f5d8c0ef99
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66002075"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74230129"
 ---
 # <a name="connect-a-google-cloud-platform-account"></a>Подключение учетной записи Google Cloud Platform
 
@@ -48,7 +48,7 @@ Cloudyn извлекает данные выставления счетов Goog
 - API BigQuery;
 - Google Cloud SQL;
 - API Google Cloud Datastore;
-- Google Cloud Storage;
+- Google Cloud Storage
 - API Google Cloud Storage JSON;
 - API Google Compute Engine.
 

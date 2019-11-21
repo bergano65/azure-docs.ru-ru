@@ -1,18 +1,14 @@
 ---
 title: Поддерживаемые языки в решении "Функции Azure"
 description: Узнайте, какие языки поддерживаются (являются общедоступными), а какие используются в режиме экспериментальной или предварительной версии.
-author: ggailey777
-manager: gwallace
-ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 08/02/2018
-ms.author: glenga
-ms.openlocfilehash: eac67c43915edb0aed273df40e7b08ca846062bf
-ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
+ms.openlocfilehash: 3b61dd83e481d42dd15f089247d016c6b71ff0de
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72802456"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74230286"
 ---
 # <a name="supported-languages-in-azure-functions"></a>Поддерживаемые языки в решении "Функции Azure"
 
@@ -26,7 +22,7 @@ ms.locfileid: "72802456"
 * **Предварительная версия** — языки, которые еще не поддерживаются, но в будущем станут общедоступными.
 * **Экспериментальные** — языки, которые не поддерживаются и могут быть удалены в будущем. Нет гарантии, что они будут поддерживаться в качестве общедоступных.
 
-## <a name="languages-by-runtime-version"></a>Языки по версии среды выполнения 
+## <a name="languages-by-runtime-version"></a>Languages by runtime version 
 
 Доступны [две версии среды выполнения в решении "Функции Azure"](functions-versions.md). В следующей таблице показаны поддерживаемые языки для каждой версии среды выполнения.
 
@@ -42,16 +38,16 @@ ms.locfileid: "72802456"
 
 ### <a name="language-extensibility"></a>Расширяемость языка
 
-Начиная с версии 2. x среда выполнения разработана таким образом, чтобы обеспечить [расширяемость языка](https://github.com/Azure/azure-webjobs-sdk-script/wiki/Language-Extensibility). Языки JavaScript и Java в среде выполнения 2.x поддерживают эту расширяемость.
+Starting with version 2.x, the runtime is designed to offer [language extensibility](https://github.com/Azure/azure-webjobs-sdk-script/wiki/Language-Extensibility). Языки JavaScript и Java в среде выполнения 2.x поддерживают эту расширяемость.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о разработке функций на поддерживаемых языках см. в следующих ресурсах:
+To learn more about how to develop functions in the supported languages, see the following resources:
 
-+ [C#Справочник разработчика библиотеки классов](functions-dotnet-class-library.md)
-+ [C#Справочник разработчика скриптов](functions-reference-csharp.md)
-+ [Справочник разработчика Java](functions-reference-java.md)
-+ [Справочник разработчика JavaScript](functions-reference-node.md)
-+ [Справочник разработчика по PowerShell](functions-reference-powershell.md)
-+ [Справочник разработчика Python](functions-reference-python.md)
-+ [Справочник разработчика TypeScript](functions-reference-node.md#typescript)
++ [C# class library developer reference](functions-dotnet-class-library.md)
++ [C# script developer reference](functions-reference-csharp.md)
++ [Java developer reference](functions-reference-java.md)
++ [JavaScript developer reference](functions-reference-node.md)
++ [PowerShell developer reference](functions-reference-powershell.md)
++ [Python developer reference](functions-reference-python.md)
++ [TypeScript developer reference](functions-reference-node.md#typescript)

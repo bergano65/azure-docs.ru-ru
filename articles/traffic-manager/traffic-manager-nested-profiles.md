@@ -1,6 +1,6 @@
 ---
 title: Вложенные профили диспетчера трафика в Azure
-titlesuffix: Azure Traffic Manager
+titleSuffix: Azure Traffic Manager
 description: В этой статье описываются функции "вложенных профилей" диспетчера трафика Azure.
 services: traffic-manager
 documentationcenter: ''
@@ -13,22 +13,22 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/22/2018
 ms.author: allensu
-ms.openlocfilehash: 8815d852ad9f8a1823e1c21cc2d233409518da33
-ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
+ms.openlocfilehash: a5444c05b59196f53c670a2ae782f2bda5527c54
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68333789"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74227746"
 ---
 # <a name="nested-traffic-manager-profiles"></a>Вложенные профили диспетчера трафика
 
 Диспетчер трафика предлагает несколько методов маршрутизации трафика, позволяя вам выбрать оптимальный алгоритм распределения трафика пользователей между конечными точками. Дополнительные сведения см. в разделе [Методы маршрутизации трафика диспетчером трафика](traffic-manager-routing-methods.md).
 
-Каждый профиль диспетчера трафика определяет один метод маршрутизации трафика. Но бывают случаи, когда требуется более сложная маршрутизация трафика, чем та, которую может обеспечить отдельный профиль диспетчера трафика. Чтобы воспользоваться преимуществами нескольких методов маршрутизации трафика, можно выполнить вложение профилей диспетчера трафика. Вложенные профили позволяют переопределить стандартное поведение диспетчера трафика, реализуя поддержку крупных и сложных развертываний приложений.
+Каждый профиль диспетчера трафика определяет один метод маршрутизации трафика. Но бывают случаи, когда требуется более сложная маршрутизация трафика, чем та, которую может обеспечить отдельный профиль диспетчера трафика. Чтобы воспользоваться преимуществами нескольких методов маршрутизации трафика, можно выполнить вложение профилей диспетчера трафика. Вложенные профили позволяют переопределить работу диспетчера трафика по умолчанию и обеспечить поддержку более объемных и сложных развертываний приложений.
 
 Следующие примеры иллюстрируют использование вложенных профилей диспетчера трафика в разных сценариях.
 
-## <a name="example-1-combining-performance-and-weighted-traffic-routing"></a>Пример 1 Объединение маршрутизации трафика для повышения производительности и маршрутизации трафика со взвешиванием
+## <a name="example-1-combining-performance-and-weighted-traffic-routing"></a>Пример 1. Объединение маршрутизации трафика для повышения производительности и маршрутизации трафика со взвешиванием
 
 Предположим, приложение развернуто в нескольких регионах Azure: в западной части США, Западной Европе и Восточной Азии. Вы используете метод маршрутизации трафика по производительности, т. е. диспетчер трафика направляет трафик в ближайший для пользователя регион.
 
@@ -46,7 +46,7 @@ ms.locfileid: "68333789"
 
 Так как родительский профиль использует маршрутизацию трафика по производительности, каждой конечной точке должно быть назначено расположение. Расположение указывается при настройке конечной точки. Выберите ближайший к вашему развертыванию регион Azure. Именно регионы Azure отслеживаются в таблице задержек Интернета. Дополнительные сведения см. в разделе [Метод маршрутизации трафика по приоритету](traffic-manager-routing-methods.md#performance).
 
-## <a name="example-2-endpoint-monitoring-in-nested-profiles"></a>Пример 2 Мониторинг конечных точек во вложенных профилях
+## <a name="example-2-endpoint-monitoring-in-nested-profiles"></a>Пример 2. Мониторинг конечных точек во вложенных профилях
 
 Диспетчер трафика активно отслеживает работоспособность каждой конечной точки службы. Если конечная точка находится в неработоспособном состоянии, диспетчер трафика направляет пользователей к другим конечным точкам, чтобы обеспечить доступность службы. Этот режим мониторинга и отработки отказа конечных точек применяется ко всем методам маршрутизации трафика. Дополнительные сведения см. в статье [Мониторинг и отработка отказов конечной точки диспетчера трафика](traffic-manager-monitoring.md). Мониторинг конечных точек выполняется иначе для вложенных профилей. В таком случае родительский профиль не проверяет состояние дочерних элементов (вложенных профилей) напрямую. Вместо этого вычисляется общая характеристика работоспособности для дочернего профиля с учетом состояния работоспособности всех конечных точек этого профиля. Эта информация передается вверх по иерархии вложенных профилей. Родительский профиль использует сводные данные о работоспособности и определяет, следует ли передавать трафик в дочерний профиль. Процедура мониторинга работоспособности вложенных профилей подробно описана в разделе [Часто задаваемые вопросы](traffic-manager-FAQs.md#traffic-manager-nested-profiles).
 
@@ -63,7 +63,7 @@ ms.locfileid: "68333789"
 > [!NOTE]
 > Метод маршрутизации трафика по приоритетам направляет весь трафик к одной конечной точке. Поэтому в таком случае нет смысла задавать значение выше 1 для параметра MinChildEndpoints.
 
-## <a name="example-3-prioritized-failover-regions-in-performance-traffic-routing"></a>Пример 3 Расположенные в порядке приоритета регионы отработки отказа при маршрутизации трафика для повышения производительности
+## <a name="example-3-prioritized-failover-regions-in-performance-traffic-routing"></a>Пример 3. Расположенные по приоритетам регионы отработки отказа при маршрутизации трафика для повышения производительности
 
 Поведение по умолчанию для метода маршрутизации трафика "Производительность", когда среди конечных точек размещенных в разных географических расположениях, в которые необходимо маршрутизировать запросы пользователей, выбираются "ближайшие" конечные точки с точки зрения минимальных задержек сети.
 
@@ -97,19 +97,19 @@ ms.locfileid: "68333789"
 
 ## <a name="faqs"></a>Часто задаваемые вопросы
 
-* [Разделы справки настроить вложенные профили?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#traffic-manager-endpoint-monitoring)
+* [How do I configure nested profiles?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#traffic-manager-endpoint-monitoring)
 
-* [Сколько уровней вложенности поддерживает диспетчер трафика?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-many-layers-of-nesting-does-traffic-manger-support)
+* [How many layers of nesting does Traffic Manger support?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-many-layers-of-nesting-does-traffic-manger-support)
 
-* [Можно ли смешивать другие типы конечных точек с вложенными дочерними профилями в том же профиле диспетчера трафика?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#can-i-mix-other-endpoint-types-with-nested-child-profiles-in-the-same-traffic-manager-profile)
+* [Can I mix other endpoint types with nested child profiles, in the same Traffic Manager profile?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#can-i-mix-other-endpoint-types-with-nested-child-profiles-in-the-same-traffic-manager-profile)
 
-* [Как применяется модель выставления счетов для вложенных профилей?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-does-the-billing-model-apply-for-nested-profiles)
+* [How does the billing model apply for Nested profiles?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-does-the-billing-model-apply-for-nested-profiles)
 
-* [Влияет ли на производительность вложенных профилей?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#is-there-a-performance-impact-for-nested-profiles)
+* [Is there a performance impact for nested profiles?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#is-there-a-performance-impact-for-nested-profiles)
 
-* [Как диспетчер трафика рассчитывает работоспособность вложенной конечной точки в родительском профиле?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-does-traffic-manager-compute-the-health-of-a-nested-endpoint-in-a-parent-profile)
+* [How does Traffic Manager compute the health of a nested endpoint in a parent profile?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-does-traffic-manager-compute-the-health-of-a-nested-endpoint-in-a-parent-profile)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте больше о [профилях диспетчера трафика](traffic-manager-overview.md).
 

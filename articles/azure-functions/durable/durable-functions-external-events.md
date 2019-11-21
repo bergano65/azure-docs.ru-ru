@@ -1,20 +1,15 @@
 ---
 title: Обработка внешних событий в устойчивых функциях в Azure
 description: Сведения о том, как обрабатывать внешние события в расширении устойчивых функций для Функций Azure.
-services: functions
-author: ggailey777
-manager: jeconnoc
-keywords: ''
-ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 11/02/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 1c2a2f08c31c427241bbd5e482906118a90ee178
-ms.sourcegitcommit: b2fb32ae73b12cf2d180e6e4ffffa13a31aa4c6f
+ms.openlocfilehash: 7d7fcc725d78b24a93b09cb9c76cf7dc0231cac2
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73614831"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74232898"
 ---
 # <a name="handling-external-events-in-durable-functions-azure-functions"></a>Обработка внешних событий в устойчивых функциях (Функции Azure)
 
@@ -25,7 +20,7 @@ ms.locfileid: "73614831"
 
 ## <a name="wait-for-events"></a>Ожидание событий
 
-Методы `WaitForExternalEvent` (.NET) и `waitForExternalEvent` (JavaScript) [привязки триггера оркестрации](durable-functions-bindings.md#orchestration-trigger) позволяют функции Orchestrator асинхронно ждать и ожидать внешнего события. Функция оркестратора, ожидающая передачи данных, объявляет *имя* события и *форму данных*, которую ожидает получить.
+The `WaitForExternalEvent` (.NET) and `waitForExternalEvent` (JavaScript) methods of the [orchestration trigger binding](durable-functions-bindings.md#orchestration-trigger) allows an orchestrator function to asynchronously wait and listen for an external event. Функция оркестратора, ожидающая передачи данных, объявляет *имя* события и *форму данных*, которую ожидает получить.
 
 ### <a name="c"></a>C#
 
@@ -47,9 +42,9 @@ public static async Task Run(
 ```
 
 > [!NOTE]
-> Предыдущий C# код предназначен для устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать `DurableOrchestrationContext` вместо `IDurableOrchestrationContext`. Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
+> The previous C# code is for Durable Functions 2.x. For Durable Functions 1.x, you must use `DurableOrchestrationContext` instead of `IDurableOrchestrationContext`. For more information about the differences between versions, see the [Durable Functions versions](durable-functions-versions.md) article.
 
-### <a name="javascript-functions-20-only"></a>JavaScript (только функции 2,0)
+### <a name="javascript-functions-20-only"></a>JavaScript (только Функции 2.0)
 
 ```javascript
 const df = require("durable-functions");
@@ -96,9 +91,9 @@ public static async Task Run(
 ```
 
 > [!NOTE]
-> Предыдущий C# код предназначен для устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать `DurableOrchestrationContext` вместо `IDurableOrchestrationContext`. Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
+> The previous C# code is for Durable Functions 2.x. For Durable Functions 1.x, you must use `DurableOrchestrationContext` instead of `IDurableOrchestrationContext`. For more information about the differences between versions, see the [Durable Functions versions](durable-functions-versions.md) article.
 
-#### <a name="javascript-functions-20-only"></a>JavaScript (только функции 2,0)
+#### <a name="javascript-functions-20-only"></a>JavaScript (только Функции 2.0)
 
 ```javascript
 const df = require("durable-functions");
@@ -142,9 +137,9 @@ public static async Task Run(
 ```
 
 > [!NOTE]
-> Предыдущий код предназначен для Устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать `DurableOrchestrationContext` вместо `IDurableOrchestrationContext`. Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
+> The previous code is for Durable Functions 2.x. For Durable Functions 1.x, you must use `DurableOrchestrationContext` instead of `IDurableOrchestrationContext`. For more information about the differences between versions, see the [Durable Functions versions](durable-functions-versions.md) article.
 
-#### <a name="javascript-functions-20-only"></a>JavaScript (только функции 2,0)
+#### <a name="javascript-functions-20-only"></a>JavaScript (только Функции 2.0)
 
 ```javascript
 const df = require("durable-functions");
@@ -163,7 +158,7 @@ module.exports = df.orchestrator(function*(context) {
 });
 ```
 
-`WaitForExternalEvent` ожидает некоторых входных данных в течение неограниченного времени.  Приложение-функцию можно безопасно выгрузить во время ожидания. Когда событие поступит в этот экземпляр оркестрации, он автоматически активируется и немедленно обработает событие.
+`WaitForExternalEvent` waits indefinitely for some input.  Приложение-функцию можно безопасно выгрузить во время ожидания. Когда событие поступит в этот экземпляр оркестрации, он автоматически активируется и немедленно обработает событие.
 
 > [!NOTE]
 > Если в приложении-функции используется план потребления, когда функция оркестратора ожидает задачи от `WaitForExternalEvent` (.NET) или`waitForExternalEvent` (JavaScript), плата не взимается, независимо от того, сколько длится ожидание.
@@ -172,7 +167,7 @@ module.exports = df.orchestrator(function*(context) {
 
 ## <a name="send-events"></a>Отправка событий
 
-Метод `RaiseEventAsync` (.NET) или `raiseEvent` (JavaScript) [привязки клиента оркестрации](durable-functions-bindings.md#orchestration-client) отправляет события, которые `WaitForExternalEvent` (.NET) или `waitForExternalEvent` (JavaScript) ожидают.  Метод `RaiseEventAsync` принимает *eventName* и *eventData* в качестве параметров. Данные событий должны быть JSON-сериализуемыми.
+The `RaiseEventAsync` (.NET) or `raiseEvent` (JavaScript) method of the [orchestration client binding](durable-functions-bindings.md#orchestration-client) sends the events that `WaitForExternalEvent` (.NET) or `waitForExternalEvent` (JavaScript) waits for.  Метод `RaiseEventAsync` принимает *eventName* и *eventData* в качестве параметров. Данные событий должны быть JSON-сериализуемыми.
 
 Ниже приведен пример функции, активируемой с помощью очереди, которая отправляет событие "Approval" в экземпляр функции оркестратора. Идентификатор экземпляра оркестрации поступает из текста сообщения очереди.
 
@@ -189,9 +184,9 @@ public static async Task Run(
 ```
 
 > [!NOTE]
-> Предыдущий C# код предназначен для устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать атрибут `OrchestrationClient` вместо атрибута `DurableClient`, а вместо `IDurableOrchestrationClient`необходимо использовать тип параметра `DurableOrchestrationClient`. Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
+> The previous C# code is for Durable Functions 2.x. For Durable Functions 1.x, you must use `OrchestrationClient` attribute instead of the `DurableClient` attribute, and you must use the `DurableOrchestrationClient` parameter type instead of `IDurableOrchestrationClient`. For more information about the differences between versions, see the [Durable Functions versions](durable-functions-versions.md) article.
 
-### <a name="javascript-functions-20-only"></a>JavaScript (только функции 2,0)
+### <a name="javascript-functions-20-only"></a>JavaScript (только Функции 2.0)
 
 ```javascript
 const df = require("durable-functions");
@@ -210,7 +205,7 @@ module.exports = async function(context, instanceId) {
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Узнайте, как реализовать обработку ошибок](durable-functions-error-handling.md)
+> [Learn how to implement error handling](durable-functions-error-handling.md)
 
 > [!div class="nextstepaction"]
 > [Запуск примера с ожиданием действий человека](durable-functions-phone-verification.md)

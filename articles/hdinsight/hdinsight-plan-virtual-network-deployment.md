@@ -1,6 +1,6 @@
 ---
-title: Планирование виртуальной сети для Azure HDInsight
-description: Узнайте, как спланировать развертывание виртуальной сети Azure для подключения HDInsight к другим облачным ресурсам или ресурсам в вашем центре обработки данных.
+title: Plan a virtual network for Azure HDInsight
+description: Learn how to plan an Azure Virtual Network deployment to connect HDInsight to other cloud resources, or resources in your datacenter.
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
@@ -8,16 +8,16 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 07/23/2019
-ms.openlocfilehash: 8d89031a3b27742149d450ab79c9febf0aaef1ff
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
-ms.translationtype: HT
+ms.openlocfilehash: d337d026e89d2383e25498288ba11a9c60f77b39
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74185623"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74228994"
 ---
-# <a name="plan-a-virtual-network-for-azure-hdinsight"></a>Планирование виртуальной сети для Azure HDInsight
+# <a name="plan-a-virtual-network-for-azure-hdinsight"></a>Plan a virtual network for Azure HDInsight
 
-В этой статье содержатся общие сведения об использовании [виртуальных сетей Azure](../virtual-network/virtual-networks-overview.md) с Azure HDInsight. Здесь также обсуждаются решения по проектированию и реализации, которые необходимо выполнить, прежде чем можно будет реализовать виртуальную сеть для кластера HDInsight. После завершения этапа планирования можно приступить к [созданию виртуальных сетей для кластеров Azure HDInsight](hdinsight-create-virtual-network.md). Дополнительные сведения об IP-адресах управления HDInsight, которые необходимы для правильной настройки групп безопасности сети и определяемых пользователем маршрутов, см. в разделе [IP-адреса управления hdinsight](hdinsight-management-ip-addresses.md).
+This article provides background information on using [Azure Virtual Networks](../virtual-network/virtual-networks-overview.md) with Azure HDInsight. It also discusses design and implementation decisions that must be made before you can implement a virtual network for your HDInsight cluster. Once the planning phase is finished, you can proceed to [Create virtual networks for Azure HDInsight clusters](hdinsight-create-virtual-network.md). For more information on HDInsight management IP addresses that are needed to properly configure network security groups and user-defined routes, see [HDInsight management IP addresses](hdinsight-management-ip-addresses.md).
 
 Виртуальная сеть Azure обеспечивает реализацию следующих сценариев:
 
@@ -26,9 +26,9 @@ ms.locfileid: "74185623"
 * Прямой доступ к службам [Apache Hadoop](https://hadoop.apache.org/), недоступным из Интернета. Например, возможность напрямую работать с API [Apache Kafka](https://kafka.apache.org/) или использовать API Java для [Apache HBase](https://hbase.apache.org/).
 
 > [!IMPORTANT]
-> Создание кластера HDInsight в виртуальной сети приведет к созданию нескольких сетевых ресурсов, таких как сетевые карты и подсистемы балансировки нагрузки. **Не** удаляйте эти сетевые ресурсы, так как они необходимы для правильной работы кластера с виртуальной сетью.
+> Creating an HDInsight cluster in a VNET will create several networking resources, such as NICs and load balancers. Do **not** delete these networking resources, as they are needed for your cluster to function correctly with the VNET.
 >
-> После 28 февраля 2019 виртуальные сетевые ресурсы (например, сетевые карты, фунты и т. д.) для новых кластеров HDInsight, созданных в виртуальной сети, будут подготовлены в той же группе ресурсов кластера HDInsight. Ранее эти ресурсы были подготовлены в группе ресурсов виртуальной сети. Нет изменений в текущих работающих кластерах и созданных кластерах без виртуальной сети.
+> After Feb 28, 2019, the networking resources (such as NICs, LBs, etc) for NEW HDInsight clusters created in a VNET will be provisioned in the same HDInsight cluster resource group. Previously, these resources were provisioned in the VNET resource group. There is no change to the current running clusters and those clusters created without a VNET.
 
 ## <a name="planning"></a>Планирование
 
@@ -71,7 +71,7 @@ ms.locfileid: "74185623"
 
     * Группы безопасности сети
 
-        Замените `RESOURCEGROUP` именем группы ресурсов, содержащей виртуальную сеть, а затем введите команду:
+        Replace `RESOURCEGROUP` with the name of the resource group that contains the virtual network, and then enter the command:
     
         ```powershell
         Get-AzNetworkSecurityGroup -ResourceGroupName  "RESOURCEGROUP"
@@ -86,9 +86,9 @@ ms.locfileid: "74185623"
         > [!IMPORTANT]  
         > Правила группы безопасности сети применяются в порядке, основанном на приоритете правила. Применяется первое правило, которое соответствует шаблону трафика; другие правила не применяются к этому трафику. Правила применяются в следующем порядке: от правила с максимальными разрешениями к правилу с минимальными разрешениями. Дополнительные сведения см. в документе [Фильтрация сетевого трафика с помощью групп безопасности сети](../virtual-network/security-overview.md).
 
-    * Определяемые пользователем маршруты
+    * Пользовательские маршруты
 
-        Замените `RESOURCEGROUP` именем группы ресурсов, содержащей виртуальную сеть, а затем введите команду:
+        Replace `RESOURCEGROUP` with the name of the resource group that contains the virtual network, and then enter the command:
 
         ```powershell
         Get-AzRouteTable -ResourceGroupName "RESOURCEGROUP"
@@ -118,7 +118,7 @@ Azure предоставляет разрешение имен для служб
 
 * любые ресурсы, доступные в Интернете; например, microsoft.com, windowsupdate.com;
 
-* любой ресурс, который находится в той же виртуальной сети Azure, с помощью __внутреннего DNS-имени__ ресурса; Например, при использовании разрешения имен по умолчанию ниже приведены примеры внутренних DNS-имен, назначенных рабочим узлам HDInsight.
+* любой ресурс, который находится в той же виртуальной сети Azure, с помощью __внутреннего DNS-имени__ ресурса; For example, when using the default name resolution, the following are examples of internal DNS names assigned to HDInsight worker nodes:
 
   * wn0-hdinsi.0owcbllr5hze3hxdja3mqlrhhe.ex.internal.cloudapp.net;
   * wn2-hdinsi.0owcbllr5hze3hxdja3mqlrhhe.ex.internal.cloudapp.net.
@@ -174,7 +174,7 @@ Azure предоставляет разрешение имен для служб
 
 1. Чтобы найти внутренние полные доменные имена (FQDN) узлов кластера HDInsight, используйте один из следующих методов:
 
-    Замените `RESOURCEGROUP` именем группы ресурсов, содержащей виртуальную сеть, а затем введите команду:
+    Replace `RESOURCEGROUP` with the name of the resource group that contains the virtual network, and then enter the command:
 
     ```powershell
     $clusterNICs = Get-AzNetworkInterface -ResourceGroupName "RESOURCEGROUP" | where-object {$_.Name -like "*node*"}
@@ -203,43 +203,43 @@ Azure предоставляет разрешение имен для служб
 
 ## <a id="networktraffic"></a>Управление сетевым трафиком
 
-### <a name="techniques-for-controlling-inbound-and-outbound-traffic-to-hdinsight-clusters"></a>Методы управления входящим и исходящим трафиком в кластерах HDInsight
+### <a name="techniques-for-controlling-inbound-and-outbound-traffic-to-hdinsight-clusters"></a>Techniques for controlling inbound and outbound traffic to HDInsight clusters
 
 Для управления сетевым трафиком в виртуальных сетях Azure можно использовать следующие методы:
 
 * **Группы безопасности сети** (NSG) позволяют фильтровать входящий и исходящий трафик в сети. Дополнительные сведения см. в документе [Фильтрация сетевого трафика с помощью групп безопасности сети](../virtual-network/security-overview.md).
 
-* **Сетевые виртуальные устройства** (NVA) можно использовать только с исходящим трафиком. NVA реплицирует функциональность таких устройств, как брандмауэры и маршрутизаторы. Дополнительные сведения см. в документе [Сетевые устройства](https://azure.microsoft.com/solutions/network-appliances).
+* **Network virtual appliances** (NVA) can be used with outbound traffic only. NVAs replicate the functionality of devices such as firewalls and routers. Дополнительные сведения см. в документе [Сетевые устройства](https://azure.microsoft.com/solutions/network-appliances).
 
-В качестве управляемой службы HDInsight требует неограниченного доступа к службе работоспособности и управления службой хранилища HDInsight как для входящего, так и для исходящего трафика из виртуальной сети. При использовании группы безопасности сети необходимо убедиться, что эти службы по-прежнему могут взаимодействовать с кластером HDInsight.
+As a managed service, HDInsight requires unrestricted access to the HDInsight health and management services both for incoming and outgoing traffic from the VNET. When using NSGs, you must ensure that these services can still communicate with HDInsight cluster.
 
-![Схема сущностей HDInsight, созданных в настраиваемой виртуальной сети Azure](./media/hdinsight-plan-virtual-network-deployment/hdinsight-vnet-diagram.png)
+![Diagram of HDInsight entities created in Azure custom VNET](./media/hdinsight-plan-virtual-network-deployment/hdinsight-vnet-diagram.png)
 
-### <a name="hdinsight-with-network-security-groups"></a>HDInsight с группами безопасности сети
+### <a name="hdinsight-with-network-security-groups"></a>HDInsight with network security groups
 
-Если вы планируете использовать **группы безопасности сети** для управления сетевым трафиком, перед установкой HDInsight выполните следующие действия.
+If you plan on using **network security groups** to control network traffic, perform the following actions before installing HDInsight:
 
 1. Определите регион Azure, который планируется использовать для HDInsight.
 
-2. Найдите теги службы, необходимые HDInsight для вашего региона. Дополнительные сведения см. в статье [теги службы группы безопасности сети (NSG) для Azure HDInsight](hdinsight-service-tags.md).
+2. Identify the service tags required by HDInsight for your region. For more information, see [Network security group (NSG) service tags for Azure HDInsight](hdinsight-service-tags.md).
 
-3. Создайте или измените группы безопасности сети для подсети, в которую планируется установить HDInsight.
+3. Create or modify the network security groups for the subnet that you plan to install HDInsight into.
 
-    * __Группы безопасности сети__: разрешите __входящий__ трафик через порт __443__ с диапазона IP-адресов. Это обеспечит, чтобы службы управления HDInsight могли получить доступ к кластеру извне виртуальной сети.
+    * __Группы безопасности сети__: разрешите __входящий__ трафик через порт __443__ с диапазона IP-адресов. This will ensure that HDInsight management services can reach the cluster from outside the virtual network.
 
-Дополнительные сведения о группах безопасности сети см. в разделе [Общие сведения о группах безопасности сети](../virtual-network/security-overview.md).
+For more information on network security groups, see the [overview of network security groups](../virtual-network/security-overview.md).
 
-### <a name="controlling-outbound-traffic-from-hdinsight-clusters"></a>Управление исходящим трафиком из кластеров HDInsight
+### <a name="controlling-outbound-traffic-from-hdinsight-clusters"></a>Controlling outbound traffic from HDInsight clusters
 
-Дополнительные сведения об управлении исходящим трафиком из кластеров HDInsight см. в статье [Настройка ограничения исходящего сетевого трафика для кластеров Azure hdinsight](hdinsight-restrict-outbound-traffic.md).
+For more information on controlling outbound traffic from HDInsight clusters, see [Configure outbound network traffic restriction for Azure HDInsight clusters](hdinsight-restrict-outbound-traffic.md).
 
-#### <a name="forced-tunneling-to-on-premise"></a>Локальное принудительное туннелирование
+#### <a name="forced-tunneling-to-on-premises"></a>Forced tunneling to on-premises
 
-Принудительное туннелирование — это определяемая пользователем конфигурация маршрутизации, где весь трафик из подсети принудительно направляется в определенную сеть или расположение, например в локальную сеть. HDInsight __не__ поддерживает принудительное туннелирование трафика в локальные сети. 
+Принудительное туннелирование — это определяемая пользователем конфигурация маршрутизации, где весь трафик из подсети принудительно направляется в определенную сеть или расположение, например в локальную сеть. HDInsight does __not__ support forced tunneling of traffic to on-premises networks. 
 
 ## <a id="hdinsight-ip"></a> Требуемые IP-адреса
 
-Если для управления трафиком используются группы безопасности сети или определяемые пользователем маршруты, см. раздел [IP-адреса управления HDInsight](hdinsight-management-ip-addresses.md).
+If you use network security groups or user-defined routes to control traffic, please see [HDInsight management IP addresses](hdinsight-management-ip-addresses.md).
     
 ## <a id="hdinsight-ports"></a> Требуемые порты
 
@@ -249,15 +249,15 @@ Azure предоставляет разрешение имен для служб
 
 Дополнительные сведения о правилах межсетевого экрана для виртуальных модулей см. в документе [Сценарий использования виртуальных устройств](../virtual-network/virtual-network-scenario-udr-gw-nva.md).
 
-## <a name="load-balancing"></a>Балансировка нагрузки.
+## <a name="load-balancing"></a>Балансировка нагрузки
 
-При создании кластера HDInsight также создается балансировщик нагрузки. Тип этой подсистемы балансировки нагрузки — это [уровень SKU "базовый](../load-balancer/load-balancer-overview.md#skus) ", имеющий определенные ограничения. Одно из этих ограничений заключается в том, что если у вас есть две виртуальные сети в разных регионах, вы не сможете подключиться к базовым подсистемам балансировки нагрузки. Дополнительные сведения см. [в статье вопросы и ответы по виртуальным сетям: ограничения для пиринга глобальной виртуальной](../virtual-network/virtual-networks-faq.md#what-are-the-constraints-related-to-global-vnet-peering-and-load-balancers)сети.
+When you create an HDInsight cluster, a load balancer is created as well. The type of this load balancer is at the [basic SKU level](../load-balancer/load-balancer-overview.md#skus) which has certain constraints. One of these constraints is that if you have two virtual networks in different regions, you cannot connect to basic load balancers. See [virtual networks FAQ: constraints on global vnet peering](../virtual-network/virtual-networks-faq.md#what-are-the-constraints-related-to-global-vnet-peering-and-load-balancers), for more information.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-* Примеры кода и примеры создания виртуальных сетей Azure см. в статье [Создание виртуальных сетей для кластеров Azure HDInsight](hdinsight-create-virtual-network.md).
+* For code samples and examples of creating Azure Virtual Networks, see [Create virtual networks for Azure HDInsight clusters](hdinsight-create-virtual-network.md).
 * Полный пример настройки HDInsight для подключения к локальной сети см. в статье [Подключение HDInsight к локальной сети](./connect-on-premises-network.md).
-* Сведения о настройке кластеров Apache HBase в виртуальных сетях Azure см. [в статье Создание кластеров Apache HBase в HDInsight в виртуальной сети Azure](hbase/apache-hbase-provision-vnet.md).
+* For configuring Apache HBase clusters in Azure virtual networks, see [Create Apache HBase clusters on HDInsight in Azure Virtual Network](hbase/apache-hbase-provision-vnet.md).
 * См. инструкции по [настройке георепликации кластера Apache HBase в виртуальных сетях Azure](hbase/apache-hbase-replication.md).
 * Дополнительные сведения о виртуальных сетях Azure см. в статье [Виртуальная сеть Azure](../virtual-network/virtual-networks-overview.md).
 * Дополнительные сведения о группах безопасности сети см. в статье [Фильтрация сетевого трафика с помощью групп безопасности сети](../virtual-network/security-overview.md).

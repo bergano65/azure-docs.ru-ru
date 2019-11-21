@@ -1,22 +1,17 @@
 ---
 title: Привязки Центров событий Azure для службы "Функции Azure"
 description: Узнайте, как использовать привязки Центров событий Azure в Функциях Azure.
-services: functions
-documentationcenter: na
 author: craigshoemaker
-manager: gwallace
-keywords: функции azure, функции, обработка событий, динамические вычисления, независимая архитектура
 ms.assetid: daf81798-7acc-419a-bc32-b5a41c6db56b
-ms.service: azure-functions
 ms.topic: reference
 ms.date: 11/08/2017
 ms.author: cshoe
-ms.openlocfilehash: bc75ad08716a001ae0cfd934dbc8d5da668dc1c3
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 2e76853a7b1bf2e6dfda84ffa1454074c266d2c1
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70086652"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74227274"
 ---
 # <a name="azure-event-hubs-bindings-for-azure-functions"></a>Привязки Центров событий Azure для службы "Функции Azure"
 
@@ -41,7 +36,7 @@ ms.locfileid: "70086652"
 
 [!INCLUDE [functions-bindings-event-hubs](../../includes/functions-bindings-event-hubs.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md)

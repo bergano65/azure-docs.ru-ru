@@ -1,39 +1,37 @@
 ---
-title: Непрерывная доставка обновлений кода функции с помощью Azure DevOps — функции Azure
-description: Узнайте, как настроить конвейер Azure DevOps, нацеленный на функции Azure.
+title: Continuously deliver function code updates by using Azure DevOps - Azure Functions
+description: Learn how to set up an Azure DevOps pipeline that targets Azure Functions.
 author: ahmedelnably
-manager: jeconnoc
-ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 04/18/2019
 ms.author: aelnably
-ms.openlocfilehash: 4fb01eac53151799a0def00d13f18619faf437f6
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: e2dbcadab662caf641716272db1f860c3a6bafa5
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72927530"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74230542"
 ---
-# <a name="continuous-delivery-by-using-azure-devops"></a>Непрерывная поставка с помощью Azure DevOps
+# <a name="continuous-delivery-by-using-azure-devops"></a>Continuous delivery by using Azure DevOps
 
-Вы можете автоматически развернуть функцию в приложении "функции Azure" с помощью [Azure pipelines](/azure/devops/pipelines/).
+You can automatically deploy your function to an Azure Functions app by using [Azure Pipelines](/azure/devops/pipelines/).
 
-Существует два варианта определения конвейера:
+You have two options for defining your pipeline:
 
-- **Файл YAML**: файл YAML описывает конвейер. Файл может содержать раздел шаги сборки и раздел выпуска. Файл YAML должен находиться в том же репозитории, что и приложение.
-- **Шаблон**. шаблоны — это готовые задачи, которые создают или развертывают приложение.
+- **YAML file**: A YAML file describes the pipeline. The file might have a build steps section and a release section. The YAML file must be in the same repo as the app.
+- **Template**: Templates are ready-made tasks that build or deploy your app.
 
-## <a name="yaml-based-pipeline"></a>Конвейер на основе YAML
+## <a name="yaml-based-pipeline"></a>YAML-based pipeline
 
-Чтобы создать конвейер на основе YAML, сначала выполните сборку приложения, а затем разверните приложение.
+To create a YAML-based pipeline, first build your app, and then deploy the app.
 
 ### <a name="build-your-app"></a>Создайте свое приложение
 
-Создание приложения в Azure Pipelines зависит от языка программирования приложения. Каждый язык имеет определенные шаги сборки, которые создают артефакт развертывания. Артефакт развертывания используется для развертывания приложения-функции в Azure.
+How you build your app in Azure Pipelines depends on your app's programming language. Each language has specific build steps that create a deployment artifact. A deployment artifact is used to deploy your function app in Azure.
 
 #### <a name="net"></a>.NET
 
-Чтобы создать файл YAML для создания приложения .NET, можно использовать следующий пример:
+You can use the following sample to create a YAML file to build a .NET app:
 
 ```yaml
 pool:
@@ -64,7 +62,7 @@ steps:
 
 #### <a name="javascript"></a>JavaScript
 
-Чтобы создать файл YAML для создания приложения JavaScript, можно использовать следующий пример:
+You can use the following sample to create a YAML file to build a JavaScript app:
 
 ```yaml
 pool:
@@ -92,7 +90,7 @@ steps:
 
 #### <a name="python"></a>Python
 
-Следующий пример можно использовать для создания файла YAML для создания приложения Python. Python поддерживается только для функций Linux Azure. YAML для Python 3,7 можно создать, заменив все экземпляры 3,6 на 3,7 в этом YAML.
+You can use the following sample to create a YAML file to build a Python app. Python is supported only for Linux Azure Functions. The YAML for Python 3.7 can be built by replacing all the instances of 3.6 with 3.7 in this YAML.
 
 ```yaml
 pool:
@@ -125,7 +123,7 @@ steps:
 ```
 #### <a name="powershell"></a>PowerShell
 
-Чтобы создать файл YAML для упаковки приложения PowerShell, можно использовать следующий пример. PowerShell поддерживается только для функций Windows Azure.
+You can use the following sample to create a YAML file to package a PowerShell app. PowerShell is supported only for Windows Azure Functions.
 
 ```yaml
 pool:
@@ -145,11 +143,11 @@ steps:
 
 ### <a name="deploy-your-app"></a>Развертывание приложения
 
-В зависимости от ОС размещения в файл YAML необходимо включить один из следующих примеров YAML.
+You must include one of the following YAML samples in your YAML file, depending on the hosting OS.
 
-#### <a name="windows-function-app"></a>Приложение функции Windows
+#### <a name="windows-function-app"></a>Windows function app
 
-Для развертывания приложения-функции Windows можно использовать следующий фрагмент кода:
+You can use the following snippet to deploy a Windows function app:
 
 ```yaml
 steps:
@@ -164,9 +162,9 @@ steps:
     #slotName: '<Slot name>'
 ```
 
-#### <a name="linux-function-app"></a>Приложение функции Linux
+#### <a name="linux-function-app"></a>Linux function app
 
-Для развертывания приложения-функции Linux можно использовать следующий фрагмент:
+You can use the following snippet to deploy a Linux function app:
 
 ```yaml
 steps:
@@ -182,61 +180,61 @@ steps:
     #slotName: '<Slot name>'
 ```
 
-## <a name="template-based-pipeline"></a>Конвейер на основе шаблона
+## <a name="template-based-pipeline"></a>Template-based pipeline
 
-Шаблоны в Azure DevOps — это стандартные группы задач, которые создают или развертывают приложение.
+Templates in Azure DevOps are predefined groups of tasks that build or deploy an app.
 
 ### <a name="build-your-app"></a>Создайте свое приложение
 
-Создание приложения в Azure Pipelines зависит от языка программирования приложения. Каждый язык имеет определенные шаги сборки, которые создают артефакт развертывания. Артефакт развертывания используется для обновления приложения-функции в Azure.
+How you build your app in Azure Pipelines depends on your app's programming language. Each language has specific build steps that create a deployment artifact. A deployment artifact is used to update your function app in Azure.
 
-Чтобы использовать встроенные шаблоны сборки, при создании нового конвейера сборки выберите **использовать классический редактор** для создания конвейера с помощью шаблонов конструктора.
+To use built-in build templates, when you create a new build pipeline, select **Use the classic editor** to create a pipeline by using designer templates.
 
-![Выберите Azure Pipelines классический редактор.](media/functions-how-to-azure-devops/classic-editor.png)
+![Select the Azure Pipelines classic editor](media/functions-how-to-azure-devops/classic-editor.png)
 
-После настройки источника кода найдите шаблоны сборок службы "функции Azure". Выберите шаблон, соответствующий языку приложения.
+After you configure the source of your code, search for Azure Functions build templates. Select the template that matches your app language.
 
-![Выбор шаблона сборки функций Azure](media/functions-how-to-azure-devops/build-templates.png)
+![Select an Azure Functions build template](media/functions-how-to-azure-devops/build-templates.png)
 
-В некоторых случаях артефакты сборки имеют определенную структуру папок. Может потребоваться установить флажок **имя корневой папки в начале для архивных путей** .
+In some cases, build artifacts have a specific folder structure. You might need to select the **Prepend root folder name to archive paths** check box.
 
-![Параметр, позволяющий добавить имя корневой папки в начало](media/functions-how-to-azure-devops/prepend-root-folder.png)
+![The option to prepend the root folder name](media/functions-how-to-azure-devops/prepend-root-folder.png)
 
-#### <a name="javascript-apps"></a>Приложения JavaScript
+#### <a name="javascript-apps"></a>JavaScript apps
 
-Если приложение JavaScript зависит от собственных модулей Windows, необходимо обновить версию пула агентов до **HOSTED VS2017**.
+If your JavaScript app has a dependency on Windows native modules, you must update the agent pool version to **Hosted VS2017**.
 
-![Обновление версии пула агентов](media/functions-how-to-azure-devops/change-agent.png)
+![Update the agent pool version](media/functions-how-to-azure-devops/change-agent.png)
 
 ### <a name="deploy-your-app"></a>Развертывание приложения
 
-При создании нового конвейера выпуска выполните поиск шаблона выпуска функций Azure.
+When you create a new release pipeline, search for the Azure Functions release template.
 
-![Поиск шаблона выпуска функций Azure](media/functions-how-to-azure-devops/release-template.png)
+![Search for the Azure Functions release template](media/functions-how-to-azure-devops/release-template.png)
 
-Развертывание в слот развертывания не поддерживается в шаблоне выпуска.
+Deploying to a deployment slot is not supported in the release template.
 
-## <a name="create-a-build-pipeline-by-using-the-azure-cli"></a>Создание конвейера сборки с помощью Azure CLI
+## <a name="create-a-build-pipeline-by-using-the-azure-cli"></a>Create a build pipeline by using the Azure CLI
 
-Чтобы создать конвейер сборки в Azure, используйте [команду](/cli/azure/functionapp/devops-pipeline#az-functionapp-devops-pipeline-create)`az functionapp devops-pipeline create`. Конвейер сборки создается для сборки и освобождения всех изменений кода, внесенных в репозиторий. Команда создает новый файл YAML, который определяет конвейер сборки и выпуска, а затем фиксирует его в репозитории. Необходимые условия для этой команды зависят от расположения кода.
+To create a build pipeline in Azure, use the `az functionapp devops-pipeline create` [command](/cli/azure/functionapp/devops-pipeline#az-functionapp-devops-pipeline-create). The build pipeline is created to build and release any code changes that are made in your repo. The command generates a new YAML file that defines the build and release pipeline and then commits it to your repo. The prerequisites for this command depend on the location of your code.
 
-- Если ваш код находится на GitHub:
+- If your code is in GitHub:
 
-    - У вас должны быть разрешения на **запись** для своей подписки.
+    - You must have **write** permissions for your subscription.
 
-    - Вы должны быть администратором проекта в Azure DevOps.
+    - You must be the project administrator in Azure DevOps.
 
-    - Необходимо иметь разрешения на создание личного маркера доступа GitHub (PAT) с достаточными разрешениями. Дополнительные сведения см. в разделе [требования к разрешениям GITHUB Pat.](https://aka.ms/azure-devops-source-repos)
+    - You must have permissions to create a GitHub personal access token (PAT) that has sufficient permissions. For more information, see [GitHub PAT permission requirements.](https://aka.ms/azure-devops-source-repos)
 
-    - Необходимо иметь разрешения на фиксацию в главной ветви в репозитории GitHub, чтобы можно было зафиксировать автоматически созданный файл YAML.
+    - You must have permissions to commit to the master branch in your GitHub repository so you can commit the autogenerated YAML file.
 
-- Если ваш код находится в Azure Repos:
+- If your code is in Azure Repos:
 
-    - У вас должны быть разрешения на **запись** для своей подписки.
+    - You must have **write** permissions for your subscription.
 
-    - Вы должны быть администратором проекта в Azure DevOps.
+    - You must be the project administrator in Azure DevOps.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Ознакомьтесь с [обзором функций Azure](functions-overview.md).
-- Ознакомьтесь с [обзором Azure DevOps](/azure/devops/pipelines/).
+- Review the [Azure Functions overview](functions-overview.md).
+- Review the [Azure DevOps overview](/azure/devops/pipelines/).

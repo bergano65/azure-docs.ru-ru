@@ -1,6 +1,6 @@
 ---
-title: Использование хранилища очередей (C++) в службе хранилища Azure
-description: Узнайте, как использовать службу хранилища очередей в Azure. Примеры написаны на C++.
+title: How to use Queue storage (C++) - Azure Storage
+description: Learn how to use the Queue storage service in Azure. Примеры написаны на C++.
 author: mhopkins-msft
 ms.author: mhopkins
 ms.date: 05/11/2017
@@ -8,19 +8,19 @@ ms.service: storage
 ms.subservice: queues
 ms.topic: conceptual
 ms.reviewer: cbrooks
-ms.openlocfilehash: e268e30e8f8c512dd6efb5a50da45f173e526b62
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: 6c6e092f16111f3f54ed17e19d28775e35eedc96
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68721639"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74227801"
 ---
 # <a name="how-to-use-queue-storage-from-c"></a>Использование хранилища очередей из C++
 [!INCLUDE [storage-selector-queue-include](../../../includes/storage-selector-queue-include.md)]
 
 [!INCLUDE [storage-try-azure-tools-queues](../../../includes/storage-try-azure-tools-queues.md)]
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Краткое описание
 В этом руководстве показано, как реализовать типичные сценарии с использованием службы хранения очередей Azure. Примеры написаны на C++ и используют [клиентскую библиотеку хранилища Azure для C++](https://github.com/Azure/azure-storage-cpp/blob/master/README.md). Здесь описаны такие сценарии, как **вставка**, **просмотр**, **получение** и **удаление** сообщений очереди, а также **создание и удаление очередей**.
 
 > [!NOTE]
@@ -39,12 +39,14 @@ ms.locfileid: "68721639"
 
 Чтобы установить клиентскую библиотеку хранилища для C++, можно использовать следующие методы.
 
-* **Linux:** следуйте инструкциям, указанным в файле README [клиентской библиотеки хранилища Azure для C++](https://github.com/Azure/azure-storage-cpp/blob/master/README.md).
-* **Windows:** В Visual Studio щелкните **Инструменты > Диспетчер пакетов NuGet > Консоль диспетчера пакетов**. Введите следующую команду в [консоли диспетчера пакетов NuGet](https://docs.nuget.org/docs/start-here/using-the-package-manager-console) и нажмите клавишу **ВВОД**.
+* **Linux:** Follow the instructions given in the [Azure Storage Client Library for C++ README: Getting Started on Linux](https://github.com/Azure/azure-storage-cpp#getting-started-on-linux) page.
+* **Windows:** On Windows, use [vcpkg](https://github.com/microsoft/vcpkg) as the dependency manager. Follow the [quick-start](https://github.com/microsoft/vcpkg#quick-start) to initialize vcpkg. Then, use the following command to install the library:
 
 ```powershell
-Install-Package wastorage
+.\vcpkg.exe install azure-storage-cpp
 ```
+
+You can find a guide for how to build the source code and export to Nuget in the [README](https://github.com/Azure/azure-storage-cpp#download--install) file.
 
 ## <a name="configure-your-application-to-access-queue-storage"></a>Настройка приложения для доступа к хранилищу очередей
 Если нужно использовать API-интерфейсы Azure для доступа к очередям, добавьте следующие инструкции импорта в верхнюю часть файла C++.  
@@ -81,7 +83,7 @@ const utility::string_t storage_connection_string(U("UseDevelopmentStorage=true;
 azure::storage::cloud_storage_account storage_account = azure::storage::cloud_storage_account::parse(storage_connection_string);
 ```
 
-## <a name="how-to-create-a-queue"></a>Практическое руководство. Создать очередь
+## <a name="how-to-create-a-queue"></a>Практическое руководство. Создание очереди
 Объект **cloud_queue_client** позволяет получать ссылки на очереди. Следующий код создает объект **cloud_queue_client**.
 
 ```cpp
@@ -190,7 +192,7 @@ std::wcout << U("Dequeued message: ") << dequeued_message.content_as_string() <<
 queue.delete_message(dequeued_message);
 ```
 
-## <a name="how-to-leverage-additional-options-for-de-queuing-messages"></a>Практическое руководство. Дополнительные параметры для удаления сообщений из очереди
+## <a name="how-to-leverage-additional-options-for-de-queuing-messages"></a>Дополнительные параметры для удаления сообщений из очереди
 Способ извлечения сообщения из очереди можно настроить двумя способами. Во-первых, можно получить пакет сообщений (до 32 сообщений). Во-вторых, можно задать более длительное или короткое время ожидания видимости, чтобы предоставить коду больше или меньше времени на полную обработку каждого сообщения. В следующем примере кода метод **get_messages** используется для получения 20 сообщений за один вызов. Затем он обрабатывает каждое сообщение с помощью цикла **for** . Он также задает время ожидания невидимости 5 минут для каждого сообщения. Обратите внимание, что пятиминутный период начинается для всех сообщений одновременно, поэтому по прошествии 5 минут с момента вызова **get_messages** все сообщения, которые не были удалены, снова становятся видимыми.
 
 ```cpp
@@ -258,7 +260,7 @@ azure::storage::cloud_queue queue = queue_client.get_queue_reference(U("my-sampl
 queue.delete_queue_if_exists();  
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда вы ознакомились с основными сведениями о хранилище очередей, используйте следующие ссылки для получения дополнительных сведений о хранилище Azure.
 
 * [Использование хранилища BLOB-объектов из C++](../blobs/storage-c-plus-plus-how-to-use-blobs.md)

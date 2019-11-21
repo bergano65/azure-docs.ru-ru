@@ -1,18 +1,18 @@
 ---
-title: Вопросы и ответы об Azure DNS
-description: Часто задаваемые вопросы об Azure DNS
+title: FAQ - Azure DNS
+description: In this article, learn about frequently asked questions about Azure DNS
 services: dns
-author: vhorne
+author: asudbring
 ms.service: dns
 ms.topic: article
 ms.date: 6/15/2019
-ms.author: victorh
-ms.openlocfilehash: bb5c4d508344f391d610aeaa7e0be54a93c997dc
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: allensu
+ms.openlocfilehash: c194d47842c927d3f8049a424dc08a34424a8a31
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67080031"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74212030"
 ---
 # <a name="azure-dns-faq"></a>Вопросы и ответы об Azure DNS
 
@@ -32,25 +32,25 @@ ms.locfileid: "67080031"
 
 Дополнительные сведения см. на [странице цен на Azure DNS](https://azure.microsoft.com/pricing/details/dns/).
 
-### <a name="what-is-the-sla-for-azure-dns"></a>Что такое соглашение об уровне обслуживания для Azure DNS?
+### <a name="what-is-the-sla-for-azure-dns"></a>Какое соглашение об уровне обслуживания предусмотрено для Azure DNS?
 
 Azure гарантирует, что в 100 % случаев на допустимые запросы DNS поступит ответ хотя бы от одного DNS-сервера Azure.
 
 Дополнительные сведения см. на [странице соглашения об уровне обслуживания для Azure DNS](https://azure.microsoft.com/support/legal/sla/dns).
 
-### <a name="what-is-a-dns-zone-is-it-the-same-as-a-dns-domain"></a>Что такое "зона DNS"? Это то же самое, что и домен DNS? 
+### <a name="what-is-a-dns-zone-is-it-the-same-as-a-dns-domain"></a>Что такое зона DNS? Это то же самое, что и домен DNS? 
 
 Домен — это уникальное имя в службе доменных имен. Например, contoso.com.
 
-Зона DNS используется для размещения DNS-записей определенного домена. Например, домен contoso.com может содержать несколько записей DNS. Записи могут включать mail.contoso.com для почтового сервера и www\.contoso.com для веб-сайта. Эти записи размещаются в зоне DNS contoso.com.
+Зона DNS используется в целях размещения записей DNS для конкретного домена. Например, домен contoso.com может содержать несколько записей DNS. The records might include mail.contoso.com for a mail server and www\.contoso.com for a website. Эти записи размещаются в зоне DNS contoso.com.
 
 Доменное имя — это *просто имя*. Зона DNS — это ресурс данных, который содержит записи DNS для имени домена. С помощью Azure DNS вы можете разместить зону DNS и управлять записями DNS для домена в Azure. Также предоставляются DNS-серверы для ответа на запросы DNS из Интернета.
 
 ### <a name="do-i-need-to-buy-a-dns-domain-name-to-use-azure-dns"></a>Необходимо ли приобретать имя домена DNS для использования Azure DNS? 
 
-Не обязательно.
+Необязательно.
 
-Вам не потребуется приобретать домен для размещения зоны DNS в Azure DNS. Вы можете создать зону DNS в любой момент, не владея доменным именем. Запросы DNS для данной зоны будут разрешены только в том случае, если они направлены на DNS-серверы Azure, назначенные этой зоне.
+Вам не потребуется приобретать домен для размещения зоны DNS в Azure DNS. Вы можете создать зону DNS в любой момент без владения именем домена. Запросы DNS для данной зоны будут разрешены только в том случае, если они направлены на DNS-серверы Azure, назначенные этой зоне.
 
 Чтобы привязать зону DNS к глобальной иерархии DNS, необходимо купить доменное имя. Затем запросы DNS из любой точки мира найдут зону DNS и ответ с помощью записи DNS.
 
@@ -68,25 +68,25 @@ Azure DNS поддерживает только размещение "стати
 
 ### <a name="does-azure-dns-support-domain-name-registration"></a>Поддерживает ли Azure DNS регистрацию доменных имен?
 
-№ Чтобы приобрести доменные имена, сейчас Azure DNS не поддерживает параметр. Чтобы купить домены, необходимо использовать регистратор сторонних доменных имен. Регистратор обычно взимает небольшую годовую плату. Затем вы сможете разместить домены в Azure DNS, чтобы управлять записями DNS. Дополнительные сведения см. в статье [Делегирование домена в Azure DNS](dns-domain-delegation.md).
+Нет. Чтобы приобрести доменные имена, сейчас Azure DNS не поддерживает параметр. Чтобы купить домены, необходимо использовать регистратор сторонних доменных имен. Регистратор обычно взимает небольшую годовую плату. Затем вы сможете разместить домены в Azure DNS, чтобы управлять записями DNS. Дополнительные сведения см. в статье [Делегирование домена в Azure DNS](dns-domain-delegation.md).
 
 Возможность приобрести доменные имена отслеживается в очереди невыполненной работы Azure. Вы можете воспользоваться нашим сайтом для отзывов, чтобы [поддержать эту функцию](https://feedback.azure.com/forums/217313-networking/suggestions/4996615-azure-should-be-its-own-domain-registrar).
 
 ### <a name="does-azure-dns-support-dnssec"></a>Поддерживает ли Azure DNS набор DNSSEC?
 
-№ Сейчас Azure DNS не поддерживает модуль безопасности службы доменных имен (DNSSEC).
+Нет. Сейчас Azure DNS не поддерживает модуль безопасности службы доменных имен (DNSSEC).
 
 Функция DNSSEC отслеживается в очереди невыполненной работы Azure DNS. Вы можете воспользоваться нашим сайтом для отзывов, чтобы [поддержать эту функцию](https://feedback.azure.com/forums/217313-networking/suggestions/13284393-azure-dns-needs-dnssec-support).
 
 ### <a name="does-azure-dns-support-zone-transfers-axfrixfr"></a>Поддерживает ли Azure DNS передачу зон (AXFR-IXFR)?
 
-№ Сейчас Azure DNS не поддерживает передачу зон. Зоны DNS можно [импортировать в Azure DNS с помощью Azure CLI](dns-import-export.md). Затем записями DNS можно управлять с помощью [портала управления Azure DNS](dns-operations-recordsets-portal.md), нашего [REST API](https://docs.microsoft.com/powershell/module/az.dns), [пакета SDK](dns-sdk.md), [командлетов PowerShell](dns-operations-recordsets.md) или [программы командной строки](dns-operations-recordsets-cli.md).
+Нет. Сейчас Azure DNS не поддерживает передачу зон. Зоны DNS можно [импортировать в Azure DNS с помощью Azure CLI](dns-import-export.md). Затем записями DNS можно управлять с помощью [портала управления Azure DNS](dns-operations-recordsets-portal.md), нашего [REST API](https://docs.microsoft.com/powershell/module/az.dns), [пакета SDK](dns-sdk.md), [командлетов PowerShell](dns-operations-recordsets.md) или [программы командной строки](dns-operations-recordsets-cli.md).
 
 Функция передачи зон отслеживается в очереди невыполненной работы Azure DNS. Вы можете воспользоваться нашим сайтом для отзывов, чтобы [поддержать эту функцию](https://feedback.azure.com/forums/217313-networking/suggestions/12925503-extend-azure-dns-to-support-zone-transfers-so-it-c).
 
 ### <a name="does-azure-dns-support-url-redirects"></a>Поддерживает ли Azure DNS перенаправление URL-адресов?
 
-№ Службы перенаправления URL-адреса не являются службой DNS. Они работают на уровне HTTP, а не на уровне DNS. Некоторые поставщики DNS связывают службу перенаправления URL-адресов со своим предложением. На данный момент Azure DNS не поддерживает эту функцию.
+Нет. Службы перенаправления URL-адреса не являются службой DNS. Они работают на уровне HTTP, а не на уровне DNS. Некоторые поставщики DNS связывают службу перенаправления URL-адресов со своим предложением. На данный момент Azure DNS не поддерживает эту функцию.
 
 Функция перенаправления URL-адреса отслеживается в очереди невыполненной работы Azure DNS. Вы можете воспользоваться нашим сайтом для отзывов, чтобы [поддержать эту функцию](https://feedback.azure.com/forums/217313-networking/suggestions/10109736-provide-a-301-permanent-redirect-service-for-ape).
 
@@ -118,7 +118,7 @@ Azure DNS поддерживает только размещение "стати
 
 - **Выберите ресурс общедоступного IP-адреса из набора DNS-записей A/AAAA**. Можно создать набор записей A/AAAA и сделать его набором записей псевдонимов, указывающим на ресурс общедоступного IP-адреса.
 - **Выберите профиль диспетчера трафика из набора DNS-записей A/AAAA/CNAME**. Можно выбрать CNAME профиля диспетчера трафика из набора DNS-записей CNAME. Например, contoso.trafficmanager.net. Теперь также можно выбрать профиль диспетчера трафика, который имеет внешние конечные точки из наборов записей A или AAAA в зоне DNS.
-- **Выберите конечную точку Azure доставки содержимого сети (CDN)** . Это полезно при создании статических веб-сайтов, с помощью службы хранилища Azure и Azure CDN.
+- **Point to an Azure Content Delivery Network (CDN) endpoint**. This is useful when you create static websites using Azure storage and Azure CDN.
 - **Выберите другой набор DNS-записей в пределах той же зоны**. Записи псевдонимов могут ссылаться на другие наборы записей того же типа. Например, вы можете иметь набор записей DNS CNAME, как псевдоним для другого набора записей CNAME того же типа. Такой подход полезен в том случае, если вы хотите, чтобы некоторые наборы записей были псевдонимами, а некоторые ими не были.
 
 ### <a name="can-i-create-and-update-alias-records-from-the-azure-portal"></a>Можно ли создавать и изменять записи псевдонимов на портале Azure?
@@ -143,11 +143,11 @@ Azure DNS поддерживает только размещение "стати
 
 ## <a name="use-azure-dns"></a>Использование Azure DNS
 
-### <a name="can-i-co-host-a-domain-by-using-azure-dns-and-another-dns-provider"></a>Могу ли я разместить домен с помощью Azure DNS и другого поставщика DNS?
+### <a name="can-i-co-host-a-domain-by-using-azure-dns-and-another-dns-provider"></a>Can I co-host a domain by using Azure DNS and another DNS provider?
 
 Да. Azure DNS поддерживает совместное размещение доменов с другими службами DNS.
 
-Чтобы настроить совместное размещение, изменение записи NS для домена указать серверы доменных имен обоих поставщиков. Сервер доменных имен (NS) записывает элемент управления, для домена которого поставщики получают запросы DNS. Эти записи NS можно изменить в Azure DNS, в другом поставщике и в родительской зоне. Родительская зона обычно настраивается с помощью регистратора доменных имен. Дополнительные сведения о делегировании DNS см. в разделе [Делегирование зон DNS с помощью Azure DNS](dns-domain-delegation.md).
+To set up co-hosting, modify the NS records for the domain to point to the name servers of both providers. Сервер доменных имен (NS) записывает элемент управления, для домена которого поставщики получают запросы DNS. Эти записи NS можно изменить в Azure DNS, в другом поставщике и в родительской зоне. Родительская зона обычно настраивается с помощью регистратора доменных имен. Дополнительные сведения о делегировании DNS см. в разделе [Делегирование зон DNS с помощью Azure DNS](dns-domain-delegation.md).
 
 Кроме того, убедитесь, что записи DNS для домена синхронизированы между обоими поставщиками DNS. Сейчас Azure DNS не поддерживает передачу зон DNS. Необходимо синхронизировать записи DNS с помощью [портала управления Azure DNS](dns-operations-recordsets-portal.md), [REST API](https://docs.microsoft.com/powershell/module/az.dns), [пакета SDK](dns-sdk.md), [командлетов PowerShell](dns-operations-recordsets.md) или [программы командной строки](dns-operations-recordsets-cli.md).
 

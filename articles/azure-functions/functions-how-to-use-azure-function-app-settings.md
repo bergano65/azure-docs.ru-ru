@@ -1,33 +1,29 @@
 ---
-title: Настройка параметров приложения функции в Azure
+title: Configure function app settings in Azure
 description: Узнайте, как настроить параметры приложения-функции Azure.
-author: ggailey777
-manager: gwallace
 ms.assetid: 81eb04f8-9a27-45bb-bf24-9ab6c30d205c
-ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 08/14/2019
-ms.author: glenga
 ms.custom: cc996988-fb4f-47
-ms.openlocfilehash: 7ad7f6156bbd8ea86e3e71bda4b23dac9722a0ef
-ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
+ms.openlocfilehash: 662a04dbcc39f3fa95b0098eb8fe556b18b3495b
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70170736"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74230568"
 ---
-# <a name="manage-your-function-app"></a>Управление приложением функции 
+# <a name="manage-your-function-app"></a>Manage your function app 
 
-В функциях Azure приложение-функция предоставляет контекст выполнения для отдельных функций. Поведение приложения-функции применяется ко всем содержащимся в нем функциям. Все функции в приложении-функции должны иметь один и тот же [язык](supported-languages.md). 
+В функциях Azure приложение-функция предоставляет контекст выполнения для отдельных функций. Поведение приложения-функции применяется ко всем содержащимся в нем функциям. All functions in a function app must be of the same [language](supported-languages.md). 
 
-Отдельные функции в приложении-функции развертываются вместе и масштабируются вместе. Все функции в одном и том же приложении функции совместно используют ресурсы для каждого экземпляра, так как приложение функции масштабируется. 
+Individual functions in a function app are deployed together and are scaled together. All functions in the same function app share resources, per instance, as the function app scales. 
 
-Строки подключения, переменные среды и другие параметры приложения определяются отдельно для каждого приложения функции. Все данные, которые должны совместно использоваться приложениями-функциями, должны храниться извне в постоянном хранилище.
+Connection strings, environment variables, and other application settings are defined separately for each function app. Any data that must be shared between function apps should be stored externally in a persisted store.
 
-В этой статье описывается настройка приложений функций и управление ими. 
+This article describes how to configure and manage your function apps. 
 
 > [!TIP]  
-> Многие параметры конфигурации можно также управлять с помощью [Интерфейс командной строки Azure]. 
+> Many configuration options can also be managed by using the [Azure CLI]. 
 
 ## <a name="get-started-in-the-azure-portal"></a>Начните работу на портале Azure
 
@@ -35,28 +31,28 @@ ms.locfileid: "70170736"
 
 ![Обзор приложения-функции на портале Azure](./media/functions-how-to-use-azure-function-app-settings/azure-function-app-main.png)
 
-Вы можете выбрать все необходимое для управления приложением-функцией на странице Обзор, в частности **[Параметры приложения](#settings)** и **[функции платформы](#platform-features)** .
+You can navigate to everything you need to manage your function app from the overview page, in particular the **[Application settings](#settings)** and **[Platform features](#platform-features)** .
 
 ## <a name="settings"></a>Параметры приложения
 
-На вкладке **Параметры приложения** хранятся параметры, используемые приложением функции. Эти параметры хранятся в зашифрованном виде, поэтому необходимо выбрать параметр **Показать значения** , чтобы просмотреть значения на портале. Вы также можете получить доступ к параметрам приложения с помощью Azure CLI.
+The **Application Settings** tab maintains settings that are used by your function app. These settings are stored encrypted, and you must select **Show values** to see the values in the portal. You can also access application settings by using the Azure CLI.
 
-### <a name="portal"></a>Портал
+### <a name="portal"></a>Microsoft Azure
 
-Чтобы добавить параметр на портале, выберите **параметр создать приложение** и добавьте новую пару «ключ-значение».
+To add a setting in the portal, select **New application setting** and add the new key-value pair.
 
-![Параметры приложения функции в портал Azure.](./media/functions-how-to-use-azure-function-app-settings/azure-function-app-settings-tab.png)
+![Function app settings in the Azure portal.](./media/functions-how-to-use-azure-function-app-settings/azure-function-app-settings-tab.png)
 
-### <a name="azure-cli"></a>Azure CLI
+### <a name="azure-cli"></a>Azure CLI
 
-[`az functionapp config appsettings list`](/cli/azure/functionapp/config/appsettings#az-functionapp-config-appsettings-list) Команда возвращает существующие параметры приложения, как показано в следующем примере:
+The [`az functionapp config appsettings list`](/cli/azure/functionapp/config/appsettings#az-functionapp-config-appsettings-list) command returns the existing application settings, as in the following example:
 
 ```azurecli-interactive
 az functionapp config appsettings list --name <FUNCTION_APP_NAME> \
 --resource-group <RESOURCE_GROUP_NAME>
 ```
 
-[`az functionapp config appsettings set`](/cli/azure/functionapp/config/appsettings#az-functionapp-config-appsettings-set) Команда добавляет или обновляет параметр приложения. В следующем примере создается параметр с именем `CUSTOM_FUNCTION_APP_SETTING` ключа и `12345`значением:
+The [`az functionapp config appsettings set`](/cli/azure/functionapp/config/appsettings#az-functionapp-config-appsettings-set) command adds or updates an application setting. The following example creates a setting with a key named `CUSTOM_FUNCTION_APP_SETTING` and a value of `12345`:
 
 
 ```azurecli-interactive
@@ -65,13 +61,13 @@ az functionapp config appsettings set --name <FUNCTION_APP_NAME> \
 --settings CUSTOM_FUNCTION_APP_SETTING=12345
 ```
 
-### <a name="use-application-settings"></a>Использовать параметры приложения
+### <a name="use-application-settings"></a>Use application settings
 
 [!INCLUDE [functions-environment-variables](../../includes/functions-environment-variables.md)]
 
-При разработке приложения-функции локально необходимо сохранить локальные копии этих значений в файле проекта Local. Settings. JSON. Дополнительные сведения см. в разделе [локальный файл параметров](functions-run-local.md#local-settings-file).
+When you develop a function app locally, you must maintain local copies of these values in the local.settings.json project file. To learn more, see [Local settings file](functions-run-local.md#local-settings-file).
 
-## <a name="platform-features"></a>Функции платформы
+## <a name="platform-features"></a>Platform features
 
 ![Вкладка функций платформы для приложения-функции](./media/functions-how-to-use-azure-function-app-settings/azure-function-app-features-tab.png)
 
@@ -80,14 +76,14 @@ az functionapp config appsettings set --name <FUNCTION_APP_NAME> \
 > [!NOTE]
 > Не все функции службы приложений доступны при выполнении приложения с планом размещения потребления.
 
-Оставшаяся часть этой статьи посвящена следующим функциям службы приложений в портал Azure, которые полезны для функций:
+The rest of this article focuses on the following App Service features in the Azure portal that are useful for Functions:
 
 + [Редактор службы приложений](#editor)
 + [Console](#console)
 + [Дополнительные инструменты (Kudu)](#kudu)
 + [Варианты развертывания](#deployment)
 + [CORS](#cors)
-+ [Authentication](#auth)
++ [Authentication](#auth) (Аутентификация)
 
 Дополнительные сведения о работе с параметрами службы приложений см. в статье [Настройка параметров в службе приложений Azure](../app-service/configure-common.md).
 
@@ -95,9 +91,9 @@ az functionapp config appsettings set --name <FUNCTION_APP_NAME> \
 
 ![Редактор службы приложений](./media/functions-how-to-use-azure-function-app-settings/configure-function-app-appservice-editor.png)
 
-Редактор службы приложений — это расширенный редактор на портале, который можно использовать для изменения JSON-файлов конфигурации и файлов с кодом. При выборе этого параметра откроется отдельная вкладка браузера с базовым редактором. Он позволяет выполнять интеграцию с репозиторием Git, запускать и отлаживать код и изменять параметры приложения-функции. Этот редактор предоставляет улучшенную среду разработки для функций по сравнению с встроенным редактором функций.  
+Редактор службы приложений — это расширенный редактор на портале, который можно использовать для изменения JSON-файлов конфигурации и файлов с кодом. При выборе этого параметра откроется отдельная вкладка браузера с базовым редактором. Он позволяет выполнять интеграцию с репозиторием Git, запускать и отлаживать код и изменять параметры приложения-функции. This editor provides an enhanced development environment for your functions compared with the built-in function editor.  
 
-Рекомендуется разрабатывать функции на локальном компьютере. При разработке локально и публикации в Azure файлы проекта доступны только для чтения на портале. Дополнительные сведения см. в статье Использование [кода и тестирование функций Azure в локальной](functions-develop-local.md)среде.
+We recommend that you consider developing your functions on your local computer. When you develop locally and publish to Azure, your project files are read-only in the portal. To learn more, see [Code and test Azure Functions locally](functions-develop-local.md).
 
 ### <a name="console"></a>Консоль
 
@@ -105,7 +101,7 @@ az functionapp config appsettings set --name <FUNCTION_APP_NAME> \
 
 Консоль на портале оптимально подходит разработчикам, желающим взаимодействовать с приложением-функцией из командной строки. Стандартные команды включают создание каталогов и файлов и навигацию по ним, а также выполнение пакетных файлов и сценариев. 
 
-При разработке локально рекомендуется использовать [Azure functions Core Tools](functions-run-local.md) и [Интерфейс командной строки Azure].
+When developing locally, we recommend using the [Azure Functions Core Tools](functions-run-local.md) and the [Azure CLI].
 
 ### <a name="kudu"></a>Дополнительные инструменты (Kudu)
 
@@ -114,23 +110,23 @@ az functionapp config appsettings set --name <FUNCTION_APP_NAME> \
 Дополнительные средства для службы приложений (которые также называются Kudu) предоставляют доступ к расширенным административным функциям для приложения-функции. С помощью Kudu можно управлять системными сведениями, параметрами приложения, переменными среды, заголовками HTTP и переменными сервера. Кроме того, можно также запустить **Kudu**, перейдя на конечную точку SCM для приложения-функции, например `https://<myfunctionapp>.scm.azurewebsites.net/`. 
 
 
-### <a name="deployment"></a>Центр развертывания
+### <a name="deployment"></a>Deployment Center
 
-При использовании решения системы управления версиями для разработки и сопровождения кода функций центр развертывания позволяет выполнять сборку и развертывание из системы управления версиями. Проект будет создан и развернут в Azure при внесении обновлений. Дополнительные сведения см. [в статье технологии развертывания в службе "функции Azure](functions-deployment-technologies.md)".
+When you use a source control solution to develop and maintain your functions code, Deployment Center lets you build and deploy from source control. Your project is built and deployed to Azure when you make updates. For more information, see [Deployment technologies in Azure Functions](functions-deployment-technologies.md).
 
-### <a name="cors"></a>Общий доступ к ресурсам между источниками
+### <a name="cors"></a>Cross-origin resource sharing
 
-Чтобы предотвратить выполнение вредоносного кода на клиенте, современные браузеры блокируют запросы от веб-приложений к ресурсам, выполняемым в отдельном домене. [Общий доступ к ресурсам между источниками (CORS)](https://developer.mozilla.org/docs/Web/HTTP/CORS) позволяет `Access-Control-Allow-Origin` заголовку объявить, какие источники могут вызывать конечные точки в приложении-функции.
+To prevent malicious code execution on the client, modern browsers block requests from web applications to resources running in a separate domain. [Cross-origin resource sharing (CORS)](https://developer.mozilla.org/docs/Web/HTTP/CORS) lets an `Access-Control-Allow-Origin` header declare which origins are allowed to call endpoints on your function app.
 
-#### <a name="portal"></a>Портал
+#### <a name="portal"></a>Microsoft Azure
 
-При настройке списка **разрешенных источников** для приложения `Access-Control-Allow-Origin` -функции заголовок автоматически добавляется ко всем ответам из конечных точек HTTP в приложении функции. 
+When you configure the **Allowed origins** list for your function app, the `Access-Control-Allow-Origin` header is automatically added to all responses from HTTP endpoints in your function app. 
 
-![Настройка списка CORS приложения функции](./media/functions-how-to-use-azure-function-app-settings/configure-function-app-cors.png)
+![Configure function app's CORS list](./media/functions-how-to-use-azure-function-app-settings/configure-function-app-cors.png)
 
-При использовании подстановочного`*`знака () все остальные домены игнорируются. 
+When the wildcard (`*`) is used, all other domains are ignored. 
 
-[`az functionapp cors add`](/cli/azure/functionapp/cors#az-functionapp-cors-add) Используйте команду, чтобы добавить домен в список разрешенных источников. В следующем примере добавляется домен contoso.com:
+Use the [`az functionapp cors add`](/cli/azure/functionapp/cors#az-functionapp-cors-add) command to add a domain to the allowed origins list. The following example adds the contoso.com domain:
 
 ```azurecli-interactive
 az functionapp cors add --name <FUNCTION_APP_NAME> \
@@ -138,19 +134,19 @@ az functionapp cors add --name <FUNCTION_APP_NAME> \
 --allowed-origins https://contoso.com
 ```
 
-[`az functionapp cors show`](/cli/azure/functionapp/cors#az-functionapp-cors-show) Используйте команду для вывода списка текущих разрешенных источников.
+Use the [`az functionapp cors show`](/cli/azure/functionapp/cors#az-functionapp-cors-show) command to list the current allowed origins.
 
 ### <a name="auth"></a>Проверка подлинности
 
 ![Настройка проверки подлинности для приложения-функции](./media/functions-how-to-use-azure-function-app-settings/configure-function-app-authentication.png)
 
-Если функции используют триггер HTTP, можно настроить обязательную предварительную проверку подлинности для вызовов. Служба приложений поддерживает Azure Active Directory проверку подлинности и вход с помощью поставщиков социальных сетей, таких как Facebook, Microsoft и Twitter. Дополнительные сведения о настройке определенных поставщиков аутентификации см. в разделе [Проверка подлинности и авторизация в службе приложений Azure](../app-service/overview-authentication-authorization.md). 
+Если функции используют триггер HTTP, можно настроить обязательную предварительную проверку подлинности для вызовов. App Service supports Azure Active Directory authentication and sign-in with social providers, such as Facebook, Microsoft, and Twitter. Дополнительные сведения о настройке определенных поставщиков аутентификации см. в разделе [Проверка подлинности и авторизация в службе приложений Azure](../app-service/overview-authentication-authorization.md). 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 + [Настройка параметров службы приложений Azure](../app-service/configure-common.md)
 + [Непрерывное развертывание для функций Azure](functions-continuous-deployment.md)
 
-[Интерфейс командной строки Azure]: /cli/azure/
-[портал Azure]: https://portal.azure.com
+[Azure CLI]: /cli/azure/
+[Портал Azure]: https://portal.azure.com

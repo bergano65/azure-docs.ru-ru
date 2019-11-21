@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство по фиветран
+title: Fivetran quickstart
 description: Быстро приступите к работе с Fivetran и хранилищем данных SQL Azure.
 services: sql-data-warehouse
 author: mlee3gsd
@@ -11,12 +11,12 @@ ms.date: 10/12/2018
 ms.author: martinle
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 250df3e106ae65cafc84a412c155e3a27c535c79
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 715f891484458f3bf3febc6807c3490b88062d50
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73686115"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74229090"
 ---
 # <a name="get-started-quickly-with-fivetran-and-sql-data-warehouse"></a>Быстрое начало работы с Fivetran и хранилищем данных SQL
 
@@ -71,7 +71,7 @@ ms.locfileid: "73686115"
     EXEC sp_addrolemember '<resource_class_name>', 'fivetran';
     ```
 
-    Дополнительные сведения см. в статье [ограничения памяти и параллелизма] память-параллелизм — limits.md) и [классы ресурсов](sql-data-warehouse-memory-optimizations-for-columnstore-compression.md#ways-to-allocate-more-memory).
+    Дополнительные сведения об [ограничениях параллелизма и памяти](memory-concurrency-limits.md) и [классах ресурсов](sql-data-warehouse-memory-optimizations-for-columnstore-compression.md#ways-to-allocate-more-memory).
 
 
 ## <a name="sign-in-to-fivetran"></a>Вход в Fivetran
@@ -80,6 +80,6 @@ ms.locfileid: "73686115"
 
 * узел (имя вашего сервера);
 * порт;
-* база данных;
-* Пользователь (имя пользователя должно быть **фиветран\@_server_name_**  , где *имя_сервера* является частью URI узла Azure: ***имя_сервера *. Database. Windows. NET**).
+* База данных.
+* User (the user name should be **fivetran\@_server_name_** where *server_name* is part of your Azure host URI: ***server_name*.database.windows.net**).
 * Пароль.

@@ -1,5 +1,5 @@
 ---
-title: Использование инструментов, предоставленных в пакетах SDK для службы подготовки устройств к добавлению в Центр Интернета вещей, для упрощения разработки
+title: Use Azure IoT Hub Device Provisioning Service SDKs tools
 description: В этом документе рассматривается использование для разработки инструментов, предоставляемых в пакетах SDK для службы подготовки устройств к добавлению в Центр Интернета вещей.
 author: robinsh
 ms.author: robinsh
@@ -7,12 +7,12 @@ ms.date: 04/09/2018
 ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
-ms.openlocfilehash: 4fd4913776a7d21405f62a28d452bd50cd22f046
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: f5bdf81dedfcf803b8c53a5b0a29cfb823989873
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68883008"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74229669"
 ---
 # <a name="how-to-use-tools-provided-in-the-sdks-to-simplify-development-for-provisioning"></a>Упрощение разработки для процесса подготовки с использованием инструментов, предоставляемых в пакетах SDK
 Служба подготовки устройств к добавлению в Центр Интернета вещей упрощает процесс подготовки с помощью [автоматической JIT-подготовки](concepts-auto-provisioning.md), выполняемой безопасным и масштабируемым способом.  При этом требуется аттестация безопасности в виде сертификата X.509 или доверенного платформенного модуля (TPM).  Корпорация Майкрософт также сотрудничает с [другими партнерами-поставщиками оборудования безопасности](https://azure.microsoft.com/blog/azure-iot-supports-new-security-hardware-to-strengthen-iot-security/), чтобы повысить уровень безопасности развертывания решения Центра Интернета вещей. Требования к безопасности оборудования могут быть трудными для понимания. Чтобы разработчики могли использовать удобный уровень для написания клиентов, которые обращаются к службе подготовки, предоставляется набор пакетов SDK для службы подготовки устройств к добавлению в Центр Интернета вещей Azure. Пакеты SDK также содержат образцы общих сценариев и набор инструментов для упрощения аттестации безопасности при разработке.
@@ -33,11 +33,11 @@ ms.locfileid: "68883008"
 [Сертификаты X.509](https://docs.microsoft.com/azure/iot-dps/concepts-security#x509-certificates) можно использовать в качестве механизма аттестации для масштабирования производства и упрощения подготовки устройств к работе.  Существует [несколько способов](https://docs.microsoft.com/azure/iot-hub/iot-hub-x509ca-overview#how-to-get-an-x509-ca-certificate) получения сертификата X.509.
 * Для рабочей среды рекомендуем приобрести сертификат ЦС X.509 в общедоступном корневом центре сертификации.
 * Для среды тестирования вы можете создать корневой сертификат X.509 или цепочку сертификатов X.509 с помощью:
-    * OpenSSL. Для создания сертификата можно использовать сценарии:
+    * OpenSSL. Для создания сертификата можно использовать скрипты:
         * [Node.js](https://github.com/Azure/azure-iot-sdk-node/tree/master/provisioning/tools)
         * [PowerShell или Bash](https://github.com/Azure/azure-iot-sdk-c/blob/master/tools/CACertificates/CACertificateOverview.md)
         
-    * Эмулятор обработчика композиций для удостоверений устройств (DICE). DICE может использоваться для идентификации устройств криптографическими средствами и аттестации на основе протокола TLS и клиентских сертификатов X.509.  [Узнайте](https://www.microsoft.com/research/publication/device-identity-dice-riot-keys-certificates/) больше об идентификации устройств с использованием DICE.
+    * Эмулятор DICE (обработчик композиции для удостоверений устройств). DICE может использоваться для идентификации устройств криптографическими средствами и аттестации на основе протокола TLS и клиентских сертификатов X.509.  [Узнайте](https://www.microsoft.com/research/publication/device-identity-dice-riot-keys-certificates/) больше об идентификации устройств с использованием DICE.
 
 ### <a name="using-x509-certificate-generator-with-dice-emulator"></a>Использование генератора сертификатов X.509 с эмулятором DICE
 В [пакете SDK для Java](https://github.com/Azure/azure-iot-sdk-java/tree/master/provisioning/provisioning-tools/provisioning-x509-cert-generator) содержится генератор сертификатов X.509 с эмулятором DICE.  Этот генератор работает на нескольких платформах.  Созданный сертификат может использоваться для разработки на других языках.
@@ -65,5 +65,5 @@ ms.locfileid: "68883008"
 
 Корневой или промежуточный сертификат можно использовать для создания группы регистраций или индивидуальной регистрации [программным образом](https://docs.microsoft.com/azure/iot-dps/how-to-manage-enrollments-sdks) или с помощью [портала](https://docs.microsoft.com/azure/iot-dps/how-to-manage-enrollments).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Разработка с использованием [пакета SDK для Azure IoT]( https://github.com/Azure/azure-iot-sdks) для Центра Интернета Azure и службы подготовки устройств к добавлению в Центр Интернета вещей

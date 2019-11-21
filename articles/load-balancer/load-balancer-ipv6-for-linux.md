@@ -1,7 +1,7 @@
 ---
 title: Настройка DHCPv6 для виртуальных машин Linux
-titlesuffix: Azure Load Balancer
-description: Из этой статьи вы узнаете, как настроить DHCPv6 для виртуальных машин Linux.
+titleSuffix: Azure Load Balancer
+description: In this article, learn how to configure DHCPv6 for Linux VMs.
 services: load-balancer
 documentationcenter: na
 author: asudbring
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/22/2019
 ms.author: allensu
-ms.openlocfilehash: 1eea6d71b06bac47dcc4fdca9302ee937e0fd54d
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: 6ea215b6aa826231e940f88c3687bb65591303f2
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74077033"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74225316"
 ---
 # <a name="configure-dhcpv6-for-linux-vms"></a>Настройка DHCPv6 для виртуальных машин Linux
 
@@ -54,9 +54,9 @@ ms.locfileid: "74077033"
     ```bash
     sudo ifdown eth0 && sudo ifup eth0
     ```
-Начиная с Ubuntu 17,10, механизмом сетевой конфигурации по умолчанию является [нетплан]( https://netplan.io).  При установке или создании экземпляра НЕТПЛАН считывает конфигурацию сети из файлов конфигурации YAML в этом расположении:/{Либ, т. е. Run}/нетплан/*. YAML.
+Beginning with Ubuntu 17.10, the default network configuration mechanism is [NETPLAN]( https://netplan.io).  At install/instantiation time, NETPLAN reads network configuration from YAML configuration files at this location: /{lib,etc,run}/netplan/*.yaml.
 
-Для каждого интерфейса Ethernet в конфигурации необходимо включить инструкцию *dhcp6: true* .  Например,
+Please include a *dhcp6:true* statement for each ethernet interface in your configuration.  Пример.
   
         network:
           version: 2
@@ -64,7 +64,7 @@ ms.locfileid: "74077033"
             eno1:
               dhcp6: true
 
-Во время раннего запуска нетплан "модуль подготовки отчетов" записывает конфигурацию в/Run для передачи управления устройствами в указанную сетевую управляющую программу для справочных сведений об НЕТПЛАН, см. https://netplan.io/reference.
+During early boot, the netplan “network renderer” writes configuration to /run to hand off control of devices to the specified networking daemon For reference information about NETPLAN, see https://netplan.io/reference.
  
 ## <a name="debian"></a>Debian
 

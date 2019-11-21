@@ -1,25 +1,21 @@
 ---
 title: Привязки Azure Cosmos DB для службы "Функции" версии 1.х
 description: Узнайте, как использовать триггеры и привязки Azure Cosmos DB в службе "Функции Azure".
-services: functions
 author: craigshoemaker
 ms.author: cshoe
-manager: gwallace
-keywords: функции azure, функции, обработка событий, динамические вычисления, независимая архитектура
-ms.service: azure-functions
 ms.topic: reference
 ms.date: 11/21/2017
 ms.custom: seodec18
-ms.openlocfilehash: 0e6782c48543723438ee332313de268117dee3e9
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 9946994f21e19bd2ac0b53054cbb2181f1558bd3
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67480723"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74227345"
 ---
 # <a name="azure-cosmos-db-bindings-for-azure-functions-1x"></a>Привязки Azure Cosmos DB для службы "Функции Azure" версии 1.х
 
-> [!div class="op_single_selector" title1="Выберите версию среды выполнения функций Azure, которую вы используете: "]
+> [!div class="op_single_selector" title1="Select the version of the Azure Functions runtime you are using: "]
 > * [Версия 1](functions-bindings-cosmosdb.md)
 > * [Версия 2](functions-bindings-cosmosdb-v2.md)
 
@@ -50,7 +46,7 @@ ms.locfileid: "67480723"
 Языковой пример см. в разделах:
 
 * [C#](#trigger---c-example)
-* [Скрипт C# (CSX)](#trigger---c-script-example)
+* [Сценарий C# (CSX)](#trigger---c-script-example)
 * [JavaScript](#trigger---javascript-example)
 
 [Пропустить примеры триггеров](#trigger---attributes)
@@ -213,7 +209,7 @@ namespace CosmosDBSamplesV1
 
 Триггер не указывает, был ли документ обновлен или вставлен. Вместо этого он представляет сам документ. Если операции обновления и вставки необходимо обрабатывать по-разному, это можно сделать, внедрив поля меток времени для операций обновления и вставки.
 
-## <a name="input"></a>Вход
+## <a name="input"></a>Входные данные
 
 Входная привязка Azure Cosmos DB извлекает один или несколько документов из Azure Cosmos DB и передает их входному параметру функции через API SQL. Идентификатор документа или параметры запроса можно определить по триггеру, который вызывает функцию.
 
@@ -222,7 +218,7 @@ namespace CosmosDBSamplesV1
 См. примеры (для разных языков), в которых для считывания одного документа указывается значение идентификатора:
 
 * [C#](#input---c-examples)
-* [Скрипт C# (CSX)](#input---c-script-examples)
+* [Сценарий C# (CSX)](#input---c-script-examples)
 * [JavaScript](#input---javascript-examples)
 * [F#](#input---f-examples)
 
@@ -1179,7 +1175,7 @@ module.exports = function (context, req, toDoItem) {
 
 В функциях JavaScript изменения не обрабатываются автоматически при выходе из функции. Для внесения изменений используйте `context.bindings.<documentName>In` и `context.bindings.<documentName>Out`. Ознакомьтесь с [примером на языке JavaScript](#input---javascript-examples).
 
-## <a name="output"></a>Output
+## <a name="output"></a>Выходные данные
 
 Выходная привязка Azure Cosmos DB позволяет записать новый документ в базу данных Azure Cosmos DB с помощью API SQL.
 
@@ -1188,7 +1184,7 @@ module.exports = function (context, req, toDoItem) {
 Языковой пример см. в разделах:
 
 * [C#](#output---c-examples)
-* [Скрипт C# (CSX)](#output---c-script-examples)
+* [Сценарий C# (CSX)](#output---c-script-examples)
 * [JavaScript](#output---javascript-examples)
 * [F#](#output---f-examples)
 
@@ -1586,7 +1582,7 @@ public static async Task Run(ToDoItem[] toDoItemsIn, IAsyncCollector<ToDoItem> t
 |**collectionName** |**CollectionName**  | Имя коллекции, в которой создается документ. |
 |**createIfNotExists**  |**CreateIfNotExists**    | Логическое значение, указывающее, будет ли создана коллекция при ее отсутствии. Значение по умолчанию — *false*, так как коллекции создаются с использованием зарезервированной пропускной способности, с которой связаны ценовые требования. Дополнительные сведения см. на [странице с расценками](https://azure.microsoft.com/pricing/details/documentdb/).  |
 |**partitionKey**|**PartitionKey** |Если для `CreateIfNotExists` задано значение true, определяется путь к ключу раздела для созданной коллекции.|
-|**collectionThroughput**|**collectionThroughput**| Если для `CreateIfNotExists` задано значение true, определяется [пропускная способность](../cosmos-db/set-throughput.md) созданной коллекции.|
+|**CollectionThroughput**|**CollectionThroughput**| Если для `CreateIfNotExists` задано значение true, определяется [пропускная способность](../cosmos-db/set-throughput.md) созданной коллекции.|
 |**подключение**    |**ConnectionStringSetting** |Имя параметра приложения, содержащего строку подключения к Azure Cosmos DB.        |
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
@@ -1602,7 +1598,7 @@ public static async Task Run(ToDoItem[] toDoItemsIn, IAsyncCollector<ToDoItem> t
 
 | Привязка | Справочные материалы |
 |---|---|
-| Cosmos DB | [Коды ошибок Cosmos DB](https://docs.microsoft.com/rest/api/cosmos-db/http-status-codes-for-cosmosdb) |
+| Cosmos DB; | [Коды ошибок Cosmos DB](https://docs.microsoft.com/rest/api/cosmos-db/http-status-codes-for-cosmosdb) |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

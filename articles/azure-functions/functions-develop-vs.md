@@ -1,50 +1,46 @@
 ---
-title: Разработка Функций Azure с помощью Visual Studio | Документация Майкрософт
-description: Узнайте, как разрабатывать и тестировать функции Azure с помощью инструментов функций Azure для Visual Studio 2019.
-author: ggailey777
-manager: gwallace
-ms.service: azure-functions
+title: Разработка Функций Azure с помощью Visual Studio
+description: Learn how to develop and test Azure Functions by using Azure Functions Tools for Visual Studio 2019.
 ms.custom: vs-azure
 ms.topic: conceptual
 ms.date: 08/21/2019
-ms.author: glenga
-ms.openlocfilehash: ebc900735dfbb25206c4b22e3d20da62d85c61df
-ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
+ms.openlocfilehash: 04074579b3eb34175a6d29897bbd38b95ae3a596
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70773162"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74230655"
 ---
 # <a name="develop-azure-functions-using-visual-studio"></a>Разработка Функций Azure с помощью Visual Studio  
 
-Visual Studio позволяет разрабатывать, тестировать и развертывать C# функции библиотеки классов в Azure. Если вы впервые сталкиваетесь с функциями Azure, дополнительные сведения см. в статье [Общие сведения о Функциях Azure](functions-overview.md).
+Visual Studio lets you develop, test, and deploy C# class library functions to Azure. Если вы впервые сталкиваетесь с функциями Azure, дополнительные сведения см. в статье [Общие сведения о Функциях Azure](functions-overview.md).
 
-Visual Studio предоставляет следующие преимущества при разработке функций: 
+Visual Studio provides the following benefits when develop your functions: 
 
 * Создание, редактирование и выполнение функций на локальном компьютере для разработки. 
-* Опубликуйте проект функций Azure непосредственно в Azure и при необходимости создайте ресурсы Azure. 
-* Используйте C# атрибуты для объявления привязок функций непосредственно в C# коде.
+* Publish your Azure Functions project directly to Azure, and create Azure resources as needed. 
+* Use C# attributes to declare function bindings directly in the C# code.
 * Разработка и развертывание предварительно скомпилированных функций C#. Предварительно скомпилированные функции обеспечивают более высокую производительность при холодном запуске, чем функции C# на основе сценариев. 
 * Программирование функций в C#, сохраняя при этом все преимущества разработки в Visual Studio. 
 
-В этой статье содержатся сведения об использовании Visual Studio для разработки C# функций библиотеки классов и их публикации в Azure. Перед прочтением этой статьи необходимо выполнить действия из статьи [Создание первой функции с помощью Visual Studio](functions-create-your-first-function-visual-studio.md). 
+This article provides details about how to use Visual Studio to develop C# class library functions and publish them to Azure. Перед прочтением этой статьи необходимо выполнить действия из статьи [Создание первой функции с помощью Visual Studio](functions-create-your-first-function-visual-studio.md). 
 
-Если не указано иное, процедуры и примеры приведены для Visual Studio 2019. 
+Unless otherwise noted, procedures and examples shown are for Visual Studio 2019. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
-Средства функций Azure входят в рабочую нагрузку разработки Azure Visual Studio, начиная с Visual Studio 2017. Убедитесь, что в установку Visual Studio включена рабочая нагрузка **разработки Azure** .
+Azure Functions Tools is included in the Azure development workload of Visual Studio starting with Visual Studio 2017. Make sure you include the **Azure development** workload in your Visual Studio installation.
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-Другие необходимые ресурсы, например учетная запись хранения Azure, создаются в подписке во время процесса публикации.
+Other resources that you need, such as an Azure Storage account, are created in your subscription during the publishing process.
 
 > [!NOTE]
-> В Visual Studio 2017 Рабочая нагрузка разработки Azure устанавливает инструменты функций Azure как отдельное расширение. При обновлении Visual Studio 2017 также убедитесь, что вы используете [самую последнюю версию](#check-your-tools-version) средств функций Azure. В следующих разделах показано, как проверить и (при необходимости) обновить расширение средств работы с функциями Azure в Visual Studio 2017. 
+> In Visual Studio 2017, the Azure development workload installs the Azure Functions Tools as a separate extension. When you update your Visual Studio 2017, also make sure that you are using the [most recent version](#check-your-tools-version) of the Azure Functions tools. The following sections show you how to check and (if needed) update your Azure Functions Tools extension in Visual Studio 2017. 
 >
-> Если вы используете Visual Studio 2019, пропустите этот раздел.
+> Please skip these section when using Visual Studio 2019.
 
-### <a name="check-your-tools-version"></a>Проверка версии инструментов в Visual Studio 2017
+### <a name="check-your-tools-version"></a>Check your tools version in Visual Studio 2017
 
 1. В меню **Сервис** выберите пункт **Расширения и обновления**. Разверните **Установленные** > **Инструменты** и выберите **Azure Functions and Web Jobs Tools** (Инструменты для решения "Функции Azure" и веб-заданий).
 
@@ -54,7 +50,7 @@ Visual Studio предоставляет следующие преимущест
 
 1. Если вы используете более раннюю версию, обновите инструменты в Visual Studio, как показано в следующем разделе.
 
-### <a name="update-your-tools-in-visual-studio-2017"></a>Обновление средств в Visual Studio 2017
+### <a name="update-your-tools-in-visual-studio-2017"></a>Update your tools in Visual Studio 2017
 
 1. В диалоговом окне **Расширения и обновления** последовательно выберите **Обновления** > **Visual Studio Marketplace**, **Azure Functions and Web Jobs Tools** (Инструменты для решения "Функции Azure" и веб-заданий) и нажмите кнопку **Обновить**.
 
@@ -67,7 +63,7 @@ Visual Studio предоставляет следующие преимущест
 1. Когда обновление завершится, нажмите кнопку **Закрыть** и перезапустите Visual Studio.
 
 > [!NOTE]  
-В Visual Studio 2019 и более поздних версиях расширение "средства функций Azure" обновляется как часть Visual Studio.  
+In Visual Studio 2019 and later, the Azure Functions tools extension is updated as part of Visual Studio.  
 
 ## <a name="create-an-azure-functions-project"></a>Создание проекта Функций Azure
 
@@ -75,9 +71,9 @@ Visual Studio предоставляет следующие преимущест
 
 Шаблон проекта создает проект на C#, устанавливает пакет NuGet `Microsoft.NET.Sdk.Functions` и задает требуемую версию .NET Framework. Новый проект содержит следующие файлы:
 
-* **host.json**: позволяет настроить узел функций. Эти параметры применяются как в локальном режиме, так и в Azure. Дополнительные сведения см. в [справочной статье о host.json](functions-host-json.md).
+* **host.json**: позволяет настроить узел Функций. Эти параметры применяются как в локальном режиме, так и в Azure. Дополнительные сведения см. в [справочной статье о host.json](functions-host-json.md).
 
-* **local.settings.json**: содержит параметры, используемые при выполнении функций локально. Эти параметры не используются при работе в Azure. Дополнительные сведения см. в разделе [локальный файл параметров](#local-settings-file).
+* **local.settings.json**: содержит параметры, используемые при выполнении функций локально. These settings aren't used when running in Azure. For more information, see [Local settings file](#local-settings-file).
 
     >[!IMPORTANT]
     >Так как файл local.settings.json может содержать секреты, вы должны исключить его из системы управления версиями проекта. Параметр **Копировать в выходной каталог** для этого файла должен всегда иметь значение **Копировать, если новее**. 
@@ -86,19 +82,19 @@ Visual Studio предоставляет следующие преимущест
 
 [!INCLUDE [functions-local-settings-file](../../includes/functions-local-settings-file.md)]
 
-Параметры в local. Settings. JSON не передаются автоматически при публикации проекта. Чтобы убедиться, что эти параметры также существуют в приложении функции в Azure, их необходимо отправить после публикации проекта. Дополнительные сведения см. в разделе [Параметры приложения функции](#function-app-settings).
+Settings in local.settings.json aren't uploaded automatically when you publish the project. To make sure that these settings also exist in your function app in Azure, you must upload them after you publish your project. To learn more, see [Function app settings](#function-app-settings).
 
 Значения **ConnectionStrings** никогда не публикуются.
 
-Эти значения параметров приложения-функции также могут считываться в коде как переменные среды. Дополнительные сведения см. в разделе [переменные среды](functions-dotnet-class-library.md#environment-variables).
+Эти значения параметров приложения-функции также могут считываться в коде как переменные среды. For more information, see [Environment variables](functions-dotnet-class-library.md#environment-variables).
 
 ## <a name="configure-the-project-for-local-development"></a>Настройка проекта для локальной разработки
 
-Среде выполнения Функций Azure необходима учетная запись хранения Azure для внутреннего использования. Для всех типов триггеров, кроме HTTP и веб-перехватчиков, необходимо задать в качестве ключа **Values.AzureWebJobsStorage** допустимую строку подключения к учетной записи хранения Azure. Приложение-функция может также использовать [эмулятор службы хранилища Azure](../storage/common/storage-use-emulator.md) для параметра подключения **AzureWebJobsStorage**, который необходим для проекта. Чтобы использовать эмулятор, установите значение **AzureWebJobsStorage** для `UseDevelopmentStorage=true`. Измените этот параметр на действительную строку подключения учетной записи хранения перед развертыванием.
+Среде выполнения Функций Azure необходима учетная запись хранения Azure для внутреннего использования. Для всех типов триггеров, кроме HTTP и веб-перехватчиков, необходимо задать в качестве ключа **Values.AzureWebJobsStorage** допустимую строку подключения к учетной записи хранения Azure. Приложение-функция может также использовать [эмулятор службы хранилища Azure](../storage/common/storage-use-emulator.md) для параметра подключения **AzureWebJobsStorage**, который необходим для проекта. Чтобы использовать эмулятор, установите значение **AzureWebJobsStorage** для `UseDevelopmentStorage=true`. Change this setting to an actual storage account connection string before deployment.
 
 Чтобы задать строку подключения к учетной записи хранения, выполните следующие действия:
 
-1. В Visual Studio откройте **Cloud Explorer**, разверните **учетную запись** > хранения**ваша учетная запись хранения**, а затем на вкладке **Свойства** скопируйте **основное значение строки подключения** .
+1. In Visual Studio, open **Cloud Explorer**, expand **Storage Account** > **Your Storage Account**, then in the **Properties** tab copy the **Primary Connection String** value.
 
 2. В своем проекте откройте файл local.settings.json и задайте в качестве значения ключа **AzureWebJobsStorage** скопированную вами строку подключения.
 
@@ -106,7 +102,7 @@ Visual Studio предоставляет следующие преимущест
 
 ## <a name="add-a-function-to-your-project"></a>Добавление функции в проект
 
-В C# функциях библиотеки классов привязки, используемые функцией, определяются путем применения атрибутов в коде. При создании триггеров функций из предоставленных шаблонов применяются атрибуты триггера. 
+In C# class library functions, the bindings used by the function are defined by applying attributes in the code. When you create your function triggers from the provided templates, the trigger attributes are applied for you. 
 
 1. Щелкните правой кнопкой мыши узел проекта в **обозревателе решений** и выберите **Добавить** > **Новый элемент**. Выберите **Функция Azure**, введите **Имя** класса и нажмите кнопку **Добавить**.
 
@@ -148,7 +144,7 @@ Visual Studio предоставляет следующие преимущест
 
 Как и триггеры, входные и выходные привязки добавляются к функции в виде атрибутов. Добавьте привязки к функции следующим образом:
 
-1. Убедитесь, что [проект настроен для локальной разработки](#configure-the-project-for-local-development).
+1. Make sure you've [configured the project for local development](#configure-the-project-for-local-development).
 
 2. Добавьте соответствующий пакет расширений NuGet для конкретной привязки. Дополнительные сведения см. в разделе [Локальная разработка на C# с помощью Visual Studio или VS Code](./functions-bindings-register.md#local-csharp). Требования к пакету NuGet для определенной привязки можно найти в соответствующей справочной статье. Например, требования к пакету для триггера Центров событий см. в [справочной статье о привязках Центров событий](functions-bindings-event-hubs.md).
 
@@ -188,20 +184,20 @@ For an example of how to test a queue triggered function, see the [queue trigger
 
 Дополнительные сведения об использовании основных инструментов Функций Azure см. в статье [Как программировать и тестировать функции Azure в локальной среде](functions-run-local.md).
 
-## <a name="publish-to-azure"></a>Опубликовать в Azure
+## <a name="publish-to-azure"></a>Публикация в Azure
 
-При публикации из Visual Studio используется один из двух методов развертывания:
+When publishing from Visual Studio, one of two deployment methods are used:
 
-* [Веб-развертывание](functions-deployment-technologies.md#web-deploy-msdeploy): пакеты и развертывает приложения Windows на любом сервере IIS.
-* [ZIP-развертывание с включенным запуском из пакета](functions-deployment-technologies.md#zip-deploy): рекомендуется для развертываний функций Azure.
+* [Web Deploy](functions-deployment-technologies.md#web-deploy-msdeploy): packages and deploys Windows apps to any IIS server.
+* [Zip Deploy with Run-From-Package enabled](functions-deployment-technologies.md#zip-deploy): recommended for Azure Functions deployments.
 
-Выполните следующие действия, чтобы опубликовать проект в приложении-функции в Azure.
+Use the following steps to publish your project to a function app in Azure.
 
 [!INCLUDE [Publish the project to Azure](../../includes/functions-vstools-publish.md)]
 
 ## <a name="function-app-settings"></a>Параметры приложения-функции
 
-Все параметры, которые вы добавили в файл local.settings.json, необходимо также добавить в приложение-функцию в Azure. Эти параметры не передаются автоматически при публикации проекта.
+Все параметры, которые вы добавили в файл local.settings.json, необходимо также добавить в приложение-функцию в Azure. These settings aren't uploaded automatically when you publish the project.
 
 Проще всего передать необходимые параметры в приложение-функцию в Azure с помощью ссылки **Управление параметрами приложения…** , которая появляется после успешной публикации проекта.
 
@@ -214,7 +210,7 @@ For an example of how to test a queue triggered function, see the [queue trigger
 **Локальный** — значение параметра в файле local.settings.json, а **Удаленный** — текущий параметр в приложении-функции в Azure.  Чтобы создать параметр приложения, выберите **Добавьте параметр**. Используйте ссылку **Вставка локального значения**, чтобы скопировать значение параметра в поле **Удаленный**. Когда вы нажмете кнопку **ОК**, ожидающие изменения запишутся в файл с локальными параметрами и приложение-функцию.
 
 > [!NOTE]
-> По умолчанию файл Local. Settings. JSON не возвращается в систему управления версиями. Это означает, что при клонировании проекта локальных функций из системы управления версиями проект не содержит файл Local. Settings. JSON. В этом случае необходимо вручную создать файл Local. Settings. JSON в корневом каталоге проекта, чтобы диалоговое окно **параметров приложения** работала правильно. 
+> By default, the local.settings.json file is not checked into source control. This means that when you clone a local Functions project from source control, the project doesn't have a local.settings.json file. In this case, you need to manually create the local.settings.json file in the project root so that the **Application Settings** dialog works as expected. 
 
 Управление параметрами приложения также можно осуществлять с помощью одного из способов ниже.
 
@@ -232,7 +228,7 @@ For an example of how to test a queue triggered function, see the [queue trigger
 
 Дополнительные сведения см. в статье [Мониторинг Функций Azure](functions-monitoring.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об основных инструментах Функций Azure см. в статье [Как программировать и тестировать функции Azure в локальной среде](functions-run-local.md).
 

@@ -7,18 +7,18 @@ ms.date: 03/21/2018
 ms.service: storage
 ms.subservice: blobs
 ms.topic: conceptual
-ms.openlocfilehash: f64856d5b0140d529e939d92d4be61b074928d6e
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: be3dc27823c09823133d5b9a3a3f34afe52ec57d
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68726429"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74227906"
 ---
 # <a name="how-to-use-blob-storage-from-c"></a>Использование хранилища BLOB-объектов из C++
 
 В этом руководстве показано, как реализовать типичные сценарии с использованием хранилища BLOB-объектов Azure. В примерах показано, как загружать, удалять BLOB-объекты и получать список этих объектов. Примеры написаны на C++ и используют [клиентскую библиотеку хранилища Azure для C++](https://github.com/Azure/azure-storage-cpp/blob/master/README.md).   
 
-Дополнительные сведения см. в статье [Общие сведения о хранилище BLOB-объектов Azure](storage-blobs-introduction.md).
+Дополнительные сведения о хранилище BLOB-объектов см. в статье [Общие сведения о хранилище BLOB-объектов](storage-blobs-introduction.md).
 
 > [!NOTE]
 > Данное руководство предназначено для клиентской библиотеки хранилища Azure для С++ версии 1.0.0 и выше. Корпорация Майкрософт рекомендует использовать последнюю версию клиентской библиотеки хранилища Azure для С++, которая доступна в [NuGet](https://www.nuget.org/packages/wastorage) или [GitHub](https://github.com/Azure/azure-storage-cpp).
@@ -32,10 +32,14 @@ ms.locfileid: "68726429"
 
 Чтобы установить клиентскую библиотеку хранилища для C++, можно использовать следующие методы.
 
-* **Linux:** следуйте инструкциям, указанным в файле README [клиентской библиотеки хранилища Azure для C++](https://github.com/Azure/azure-storage-cpp/blob/master/README.md).  
-* **Windows:** В Visual Studio щелкните **Инструменты > Диспетчер пакетов NuGet > Консоль диспетчера пакетов**. Введите следующую команду в [консоли диспетчера пакетов NuGet](https://docs.nuget.org/docs/start-here/using-the-package-manager-console) и нажмите клавишу **ВВОД**.  
-  
-     Install-Package wastorage
+* **Linux:** Follow the instructions given in the [Azure Storage Client Library for C++ README: Getting Started on Linux](https://github.com/Azure/azure-storage-cpp#getting-started-on-linux) page.
+* **Windows:** On Windows, use [vcpkg](https://github.com/microsoft/vcpkg) as the dependency manager. Follow the [quick-start](https://github.com/microsoft/vcpkg#quick-start) to initialize vcpkg. Then, use the following command to install the library:
+
+```powershell
+.\vcpkg.exe install azure-storage-cpp
+```
+
+You can find a guide for how to build the source code and export to Nuget in the [README](https://github.com/Azure/azure-storage-cpp#download--install) file.
 
 ## <a name="configure-your-application-to-access-blob-storage"></a>Настройка приложения для доступа к хранилищу больших двоичных объектов
 Добавьте следующие инструкции в начало файла C++, где требуется использовать API-интерфейсы Azure для доступа к BLOB-объектам.  
@@ -66,7 +70,7 @@ const utility::string_t storage_connection_string(U("UseDevelopmentStorage=true;
 
 В приведенных ниже примерах предполагается, что вы использовали одно из этих двух определений для получения строки подключения к хранилищу.  
 
-## <a name="retrieve-your-storage-account"></a>Получение учетной записи хранения
+## <a name="retrieve-your-storage-account"></a>Retrieve your storage account
 Информацию о своей учетной записи хранения можно представить с помощью класса **cloud_storage_account**. Чтобы получить данные учетной записи хранения из строки подключения хранилища, можно использовать метод **синтаксического анализа** .  
 
 ```cpp
@@ -81,7 +85,7 @@ azure::storage::cloud_storage_account storage_account = azure::storage::cloud_st
 azure::storage::cloud_blob_client blob_client = storage_account.create_cloud_blob_client();  
 ```
 
-## <a name="how-to-create-a-container"></a>Практическое руководство. Создать контейнер
+## <a name="how-to-create-a-container"></a>Практическое руководство. Создание контейнера
 [!INCLUDE [storage-container-naming-rules-include](../../../includes/storage-container-naming-rules-include.md)]
 
 В этом примере показано, как создать контейнер:  
@@ -183,7 +187,7 @@ for (auto it = container.list_blobs(); it != end_of_results; ++it)
 
 Дополнительные сведения об операциях перечисления см. в разделе [Перечисление ресурсов хранилища Azure в C++](../storage-c-plus-plus-enumeration.md).
 
-## <a name="how-to-download-blobs"></a>Практическое руководство. Скачивание больших двоичных объектов
+## <a name="how-to-download-blobs"></a>Практическое руководство. Загрузка BLOB-объектов
 Для загрузки BLOB-объектов сначала нужно получить ссылку на BLOB-объект и затем вызвать метод **download_to_stream**. В следующем примере используется метод **download_to_stream** для переноса содержимого BLOB-объекта в объект потока, который затем можно сохранить в локальном файле.  
 
 ```cpp
@@ -231,7 +235,7 @@ azure::storage::cloud_block_blob text_blob = container.get_block_blob_reference(
 utility::string_t text = text_blob.download_text();
 ```
 
-## <a name="how-to-delete-blobs"></a>Практическое руководство. Удаление blob-объектов
+## <a name="how-to-delete-blobs"></a>Практическое руководство. Удаление BLOB-объектов
 Чтобы удалить BLOB-объект, сначала нужно получить ссылку на него, а затем вызвать для него метод **delete_blob**.  
 
 ```cpp
@@ -251,7 +255,7 @@ azure::storage::cloud_block_blob blockBlob = container.get_block_blob_reference(
 blockBlob.delete_blob();
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда вы ознакомились с основными сведениями о хранилище BLOB-объектов, используйте следующие ссылки для получения дополнительных сведений о хранилище Azure.  
 
 * [Использование хранилища очередей из C++](../storage-c-plus-plus-how-to-use-queues.md)
