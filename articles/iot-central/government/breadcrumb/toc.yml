@@ -10,6 +10,6 @@
           tocHref: /azure/iot-central/
           topicHref: /azure/iot-central/
           items:
-            - name: IoT Central для государственных организаций
+            - name: IoT Central для государственных организаций (предварительная версия функций)
               tocHref: /azure/iot-central/
               topicHref: /azure/iot-central/government/index/

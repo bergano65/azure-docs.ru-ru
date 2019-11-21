@@ -193,7 +193,7 @@
             - name: Прогнозирование задержки рейсов
               displayName: 'classification, studio'
               href: how-to-designer-sample-classification-flight-delay.md
-            - name: Классификация тестов
+            - name: Классификация текстов
               displayName: 'classification, studio'
               href: how-to-designer-sample-text-classification.md
         - name: Использование средств оценки для машинного обучения

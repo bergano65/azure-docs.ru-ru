@@ -3,12 +3,12 @@ title: Пример схемы IRS 1075 — общие сведения
 description: Узнайте о примере схемы IRS 1075. Этот пример схемы помогает клиентам оценить определенные средства управления IRS 1075.
 ms.date: 11/19/2019
 ms.topic: sample
-ms.openlocfilehash: f713f6a59f439b2d5cb9df0860d16ff761304b4b
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 1d2fdac47c590e663a51c11f54a3a135a7a0ed3d
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74210188"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74267379"
 ---
 # <a name="overview-of-the-irs-1075-blueprint-sample"></a>Общие сведения о примере схемы IRS 1075.
 
@@ -23,7 +23,8 @@ ms.locfileid: "74210188"
 Вы ознакомились с общими сведениями о примере схемы IRS 1075. Дополнительные сведения о сопоставлении элементов управления и развертывании этого примера см. в следующих статьях:
 
 > [!div class="nextstepaction"]
-> [Схема IRS 1075. Сопоставление элементов управления](./control-mapping.md)
+> [Схема IRS 1075 — сопоставление элементов управления](./control-mapping.md)
+> [Схема IRS 1075 — этапы развертывания](./deploy.md)
 
 Дополнительные статьи о схемах и способах их использования:
 

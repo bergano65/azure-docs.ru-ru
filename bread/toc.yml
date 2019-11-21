@@ -187,19 +187,19 @@
             - name: IoT Central
               tocHref: /azure/iot-central/core/
               topicHref: /azure/iot-central/core/
-            - name: IoT Central (предварительная версия)
+            - name: IoT Central (предварительная версия функций)
               tocHref: /azure/iot-central/preview/
               topicHref: /azure/iot-central/preview/
-            - name: IoT Central для энергетики
+            - name: IoT Central для предприятий энергетической отрасли (предварительная версия функций)
               tocHref: /azure/iot-central/energy/
               topicHref: /azure/iot-central/energy/
-            - name: IoT Central для государственных организаций
+            - name: IoT Central для государственных организаций (предварительная версия функций)
               tocHref: /azure/iot-central/government/
               topicHref: /azure/iot-central/government/
-            - name: IoT Central для здравоохранения
+            - name: IoT Central для организаций в сфере здравоохранения (предварительная версия функций)
               tocHref: /azure/iot-central/healthcare/
               topicHref: /azure/iot-central/healthcare/
-            - name: IoT Central для розничной торговли
+            - name: IoT Central для предприятий розничной торговли (предварительная версия функций)
               tocHref: /azure/iot-central/retail/
               topicHref: /azure/iot-central/retail/
         - name: IoT Edge
