@@ -112,14 +112,6 @@
               items:
                 - name: Начало работы с аудитом Базы данных SQL
                   href: sql-database-auditing.md
-        - name: Безопасность сети
-          items:
-            - name: Конечные точки виртуальной сети
-              href: sql-database-vnet-service-endpoint-rule-overview.md
-            - name: Конечные точки виртуальной сети — PowerShell
-              href: sql-database-vnet-service-endpoint-rule-powershell.md
-            - name: Приватный канал
-              href: sql-database-private-endpoint-overview.md
         - name: Управление безопасностью
           items:
             - name: Расширенная защита данных
@@ -136,14 +128,22 @@
               href: sql-database-feature-restrictions.md
         - name: Защита отдельных баз данных
           items:
+            - name: Средства контроля сетевого доступа
+              href: sql-database-networkaccess-overview.md
+            - name: Брандмауэр на основе IP-адресов
+              href: sql-database-firewall-configure.md
+            - name: Правила брандмауэра виртуальной сети
+              items:
+                - name: Конечные точки виртуальной сети
+                  href: sql-database-vnet-service-endpoint-rule-overview.md
+                - name: "Конечные точки виртуальной сети\_— PowerShell"
+                  href: sql-database-vnet-service-endpoint-rule-powershell.md
+            - name: Приватный канал
+              href: sql-database-private-endpoint-overview.md
             - name: Формат журналов аудита
               href: sql-database-audit-log-format.md
             - name: Условный доступ
               href: sql-database-conditional-access.md
-            - name: Правила брандмауэра для IP-адресов на уровне сервера
-              items:
-                - name: Создание и управление
-                  href: sql-database-firewall-configure.md
         - name: Обеспечение защиты управляемого экземпляра
           items:
             - name: Обеспечение безопасности общедоступных конечных точек

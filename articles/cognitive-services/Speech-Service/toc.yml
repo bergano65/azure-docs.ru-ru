@@ -427,6 +427,33 @@
           href: 'https://aka.ms/csspeech/pythonref'
         - name: Заметки о выпуске пакета SDK для службы "Речь"
           href: releasenotes.md
+- name: Устройства
+  exanded: false
+  items:
+    - name: Обзор
+      items:
+        - name: Сведения о пакете SDK для устройств в службе "Речь"
+          href: speech-devices-sdk.md
+        - name: 'Получение пакета SDK для устройств, подключаемых к службе "Речь"'
+          href: get-speech-devices-sdk.md
+    - name: Оборудование
+      items:
+        - name: Рекомендации по микрофонной решетке
+          href: speech-devices-sdk-microphone.md
+        - name: "Комплект Roobo версии\_1"
+          href: speech-devices-sdk-roobo-v1.md
+    - name: Краткие руководства
+      items:
+        - name: Windows
+          href: speech-devices-sdk-windows-quickstart.md
+        - name: Linux
+          href: speech-devices-sdk-linux-quickstart.md
+        - name: Android
+          href: speech-devices-sdk-android-quickstart.md
+    - name: Ресурсы
+      items:
+        - name: 'Устранение неполадок пакета SDK для устройств, подключаемых к службе "Речь"'
+          href: speech-devices-sdk-troubleshooting.md
 - name: Миграция
   exanded: false
   items:

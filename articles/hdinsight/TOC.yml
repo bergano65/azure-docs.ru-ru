@@ -355,7 +355,7 @@
                   href: ./spark/apache-spark-jupyter-notebook-kernels.md
                 - name: Использование внешних пакетов с записными книжками Jupyter с помощью волшебных команд
                   href: ./spark/apache-spark-jupyter-notebook-use-external-packages.md
-                - name: Использование внешних пакетов с записными книжками Jupyter с помощью действий скрипта
+                - name: Безопасное управление средой Python в Azure HDInsight с помощью действия скрипта
                   href: ./spark/apache-spark-python-package-installation.md
                 - name: Использование записных книжек Apache Zeppelin
                   href: ./spark/apache-spark-zeppelin-notebook.md

@@ -38,6 +38,8 @@
           href: class-type-shell-scripting-linux.md
         - name: Этичный взлом
           href: class-type-ethical-hacking.md
+        - name: Управление базами данных
+          href: class-type-database-management.md
     - name: Создание и настройка учетных записей лаборатории (владелец учетной записи лаборатории)
       items:
         - name: Создание и администрирование учетных записей лаборатории

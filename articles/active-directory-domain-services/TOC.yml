@@ -23,6 +23,8 @@
       href: tutorial-configure-password-hash-sync.md
     - name: Создание управляемого домена с расширенными возможностями
       href: tutorial-create-instance-advanced.md
+    - name: Создание доверия леса (предварительная версия)
+      href: tutorial-create-forest-trust.md
 - name: Примеры
   items:
     - name: Создание управляемого домена с помощью Azure PowerShell
@@ -33,6 +35,12 @@
       href: administration-concepts.md
     - name: Распространенные сценарии развертывания
       href: scenarios.md
+    - name: Леса и отношения доверия
+      items:
+        - name: Леса ресурсов
+          href: concepts-resource-forest.md
+        - name: Отношения доверия для леса
+          href: concepts-forest-trust.md
     - name: Как работает синхронизация Azure AD DS
       href: synchronization.md
     - name: Как работает синхронизация хэшированных паролей
