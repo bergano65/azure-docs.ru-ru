@@ -11,23 +11,34 @@ ms.devlang: na
 ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 07/09/2019
+ms.date: 10/10/2019
 ms.author: jmprieur
 ms.reviwer: brandwe
 ms.custom: aaddev, identityplatformtop40
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0a26a7fc27fa13d86eb3b82fd4be70e5b371581f
-ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
+ms.openlocfilehash: 5417c29b62414468064338a67b188c7b7f832ac5
+ms.sourcegitcommit: 3486e2d4eb02d06475f26fbdc321e8f5090a7fac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71677965"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73242215"
 ---
-# <a name="sign-in-users-and-call-the-microsoft-graph-from-an-android-app"></a>Вход пользователей и вызов Microsoft Graph из приложения Android
+# <a name="tutorial-sign-in-users-and-call-the-microsoft-graph-from-an-android-app"></a>Руководство по Вход пользователей и вызов Microsoft Graph из приложения Android
+
+> [!NOTE]
+> Это руководство еще не обновлено для работы с MSAL для библиотеки Android версии 1.0. Оно предназначено для более ранней версии, как указано.
 
 Из этого руководства вы узнаете, как интегрировать приложение Android с платформой удостоверений Майкрософт. Ваше приложение сможет авторизовать пользователя, получить маркер доступа для вызова API Microsoft Graph и выполнить запрос к API Microsoft Graph.  
 
-Когда вы завершите работу с этим руководством, ваше приложение сможет принимать операции входа с помощью личных учетных записей Майкрософт (включая outlook.com, live.com и другие), а также рабочих или учебных учетных записей из любой компании или организации, в которых используется Azure Active Directory.
+> [!div class="checklist"]
+> * Интеграция приложения Android с платформой удостоверений Майкрософт
+> * Вход пользователя
+> * Получение маркера доступа для вызова API Microsoft Graph
+> * Вызовите API Microsoft Graph.  
+
+Когда вы завершите работу с этим руководством, ваше приложение сможет принимать операции входа с помощью личных учетных записей Майкрософт (включая outlook.com, live.com и др.), а также рабочих или учебных учетных записей из любой компании или организации, в которых используется Azure Active Directory.
+
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="how-this-tutorial-works"></a>Как работает это руководство
 
@@ -53,7 +64,7 @@ ms.locfileid: "71677965"
 
 ## <a name="create-a-project"></a>Создание проекта
 
-В рамках этого руководства будет создан проект. Если вместо этого вы хотите скачать готовое руководство, [скачайте код](https://github.com/Azure-Samples/active-directory-android-native-v2/archive/master.zip).
+В рамках этого руководства будет создан проект. Если вместо этого вы хотите скачать готовое руководство, [скачайте код](https://github.com/Azure-Samples/ms-identity-android-java/archive/master.zip).
 
 1. Запустите Android Studio и выберите **Start a new Android Studio project** (Создать проект Android Studio).
 2. Выберите **Basic Activity** (Базовое действие) и щелкните **Next** (Далее).
@@ -177,7 +188,7 @@ ms.locfileid: "71677965"
 
     ```gradle  
     implementation 'com.android.volley:volley:1.1.1'
-    implementation 'com.microsoft.identity.client:msal:1.0.+'
+    implementation 'com.microsoft.identity.client:msal:0.3+'
     ```
 
 ### <a name="use-msal"></a>Использование MSAL
@@ -535,6 +546,10 @@ private void updateGraphUI(JSONObject graphResponse) {
 ### <a name="consent"></a>Согласие на предоставление разрешений
 
 При первом входе любого пользователя в приложение от платформы удостоверений Майкрософт появится запрос на предоставление согласия на запрашиваемые разрешения.  Хотя большинство пользователей могут дать согласие, некоторые арендаторы Azure AD отключили согласие пользователей, что предусматривает получение согласия администраторов от имени всех пользователей. Для поддержки этого сценария обязательно зарегистрируйте области своего приложения на портале Azure.
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Удалите ненужный объект приложения, созданный на шаге [Регистрация приложения](#register-your-application).
 
 ## <a name="get-help"></a>Получение справки
 
