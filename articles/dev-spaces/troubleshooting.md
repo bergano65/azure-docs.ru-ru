@@ -1,20 +1,16 @@
 ---
 title: Устранение неполадок
-titleSuffix: Azure Dev Spaces
 services: azure-dev-spaces
-ms.service: azure-dev-spaces
-author: zr-msft
-ms.author: zarhoads
 ms.date: 09/25/2019
 ms.topic: conceptual
-description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
-keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s '
-ms.openlocfilehash: 5d327dd1041172bc546b2e0cb5ec3a140f401d84
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
-ms.translationtype: MT
+description: Быстрая разработка Kubernetes с использованием контейнеров и микрослужб в Azure
+keywords: 'Docker, Kubernetes, Azure, служба контейнеров Azure, служба Azure Kubernetes, контейнеры, Helm, сетка службы, сетка службы маршрутизации, kubectl, k8s '
+ms.openlocfilehash: 5eec9771e964cf6b47492fdad34bcba14d897d41
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74072190"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74279714"
 ---
 # <a name="troubleshooting-guide"></a>Руководство по устранению неполадок
 
@@ -453,3 +449,13 @@ kubectl -n my-namespace delete pod --all
 ```
 
 После перезапуска модулей можно начать использовать существующее пространство имен с Azure Dev Spaces.
+
+### <a name="enable-azure-dev-spaces-on-aks-cluster-with-restricted-egress-traffic-for-cluster-nodes"></a>Включение Azure Dev Spaces в кластере AKS с ограниченным трафиком исходящего трафика для узлов кластера
+
+Чтобы включить Azure Dev Spaces в кластере AKS, для которого исходящий трафик от узлов кластера ограничен, необходимо разрешить следующие полные доменные имена:
+
+| ПОЛН                                    | Порт      | Использование      |
+|-----------------------------------------|-----------|----------|
+| cloudflare.docker.com | HTTPS:443 | Извлечение образов Linux Alpine и других Azure Dev Spaces |
+| gcr.io | HTTP: 443 | Извлечение Helm/с образами|
+| storage.googleapis.com | HTTP: 443 | Извлечение Helm/с образами|

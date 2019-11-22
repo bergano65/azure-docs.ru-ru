@@ -1,14 +1,14 @@
 ---
 title: Работа с большими наборами данных
-description: Узнайте, как получать большие наборы данных и управлять ими в Azure Resource Graph.
+description: Узнайте, как получать, форматировать, разбирать и пропускать записи в больших наборах данных при работе с графиком ресурсов Azure.
 ms.date: 10/18/2019
 ms.topic: conceptual
-ms.openlocfilehash: a7258534b867c57f89eeb432b579e87070b4fc1d
-ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
+ms.openlocfilehash: 2c6aca0c468630cee79222bc77bdc20dc9d95b19
+ms.sourcegitcommit: 8a2949267c913b0e332ff8675bcdfc049029b64b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73959012"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74304001"
 ---
 # <a name="working-with-large-azure-resource-data-sets"></a>Работа с большими наборами данных ресурса Azure
 
@@ -168,4 +168,4 @@ response = client.resources(request)
 
 - См. язык, используемый в [начальных запросах](../samples/starter.md).
 - См. Дополнительные сведения о расширенном использовании в [расширенных запросах](../samples/advanced.md).
-- Узнайте больше о том, как [исследовать ресурсы](explore-resources.md).
+- Дополнительные сведения об [исследовании ресурсов](explore-resources.md).

@@ -1,5 +1,5 @@
 ---
-title: Настройка автоматического ускорения входа с помощью политики обнаружения домашних областей | Документация Майкрософт
+title: Настройка автоматического ускорения входа с помощью обнаружения домашней области
 description: Узнайте, как настроить политику обнаружения домашней области для проверки подлинности Azure Active Directory для федеративных пользователей, включая автоматическое ускорение и указания доменов.
 services: active-directory
 documentationcenter: ''
@@ -15,12 +15,12 @@ ms.date: 04/08/2019
 ms.author: mimart
 ms.custom: seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8f8f51fcd69a7115879aad97bbf696833e87877b
-ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
+ms.openlocfilehash: 174cdc31d7e5f29716febc7f68bbb410f33926c6
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68477208"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74274625"
 ---
 # <a name="configure-azure-active-directory-sign-in-behavior-for-an-application-by-using-a-home-realm-discovery-policy"></a>Настройка поведения при входе в Azure Active Directory для приложения с помощью политики обнаружения домашней области
 
@@ -65,7 +65,7 @@ ms.locfileid: "68477208"
 
 **WS-Federation**:  whr=contoso.com в строке запроса.
 
-**SAML**:  либо запрос на аутентификацию SAML, содержащий указание домена, либо строка запроса whr=contoso.com.
+**SAML**: либо запрос на аутентификацию SAML, содержащий указание домена, либо строка запроса whr=contoso.com.
 
 **Open ID Connect**: строка запроса domain_hint=contoso.com. 
 
@@ -152,7 +152,7 @@ API Graph, который позволяет управлять политико
 - получение списка приложений, для которых настроена политика.
 
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>предварительным требованиям
 В примерах ниже создаются, обновляются, связываются и удаляются политики для субъектов-служб приложения в Azure AD.
 
 1.  Чтобы начать, скачайте последнюю предварительную версию командлетов PowerShell для Azure AD. 
@@ -170,14 +170,14 @@ API Graph, который позволяет управлять политико
 
 Если результат не возвращается, в клиенте нет созданных политик.
 
-### <a name="example-set-hrd-policy-for-an-application"></a>Пример настройка политики обнаружения домашней области для приложения 
+### <a name="example-set-hrd-policy-for-an-application"></a>Пример: настройка политики обнаружения домашней области для приложения 
 
 В этом примере показано, как создать политику, которая при назначении ее приложению выполняет одно из указанных ниже действий. 
 - Выполняет автоматическое ускорение входа пользователей и переводит их на экран входа AD FS (когда они выполняют вход в систему в приложении), если в клиенте имеется один домен. 
 - Выполняет автоматическое ускорение входа пользователей и переводит их на экран входа AD FS, если в клиенте имеется несколько федеративных доменов.
 - Разрешает неинтерактивный вход с использованием имени пользователя и пароля непосредственно в Azure Active Directory для федеративных пользователей для приложений, которым назначена политика.
 
-#### <a name="step-1-create-an-hrd-policy"></a>Шаг 1.: Создание политики обнаружения домашней области
+#### <a name="step-1-create-an-hrd-policy"></a>Шаг 1. Создание политики обнаружения домашней области
 
 Указанная ниже политика выполняет автоматическое ускорение входа пользователей и переводит их на экран входа AD FS (когда они выполняют вход в систему в приложении), если в клиенте имеется один домен.
 
@@ -206,7 +206,7 @@ Get-AzureADPolicy
 
 Чтобы применить политику обнаружения домашней области после ее создания, можно назначить ее нескольким субъектам-службам приложения.
 
-#### <a name="step-2-locate-the-service-principal-to-which-to-assign-the-policy"></a>Шаг 2.: Поиск субъекта-службы для назначения политики  
+#### <a name="step-2-locate-the-service-principal-to-which-to-assign-the-policy"></a>Шаг 2. Поиск субъекта-службы для назначения политики  
 Чтобы назначить политику субъектам-службам, необходимо знать их идентификаторы **ObjectID**. Существует несколько способов получения идентификатора **ObjectID** субъектов-служб.    
 
 Можно использовать портал или отправить запрос к [Microsoft Graph](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/entity-and-complex-type-reference#serviceprincipal-entity). Можно также открыть [Graph Explorer Tool](https://developer.microsoft.com/graph/graph-explorer) и войти в учетную запись Azure AD, чтобы просмотреть список всех субъектов-служб в своей организации. 
@@ -217,7 +217,7 @@ Get-AzureADPolicy
 Get-AzureADServicePrincipal
 ```
 
-#### <a name="step-3-assign-the-policy-to-your-service-principal"></a>Шаг 3. Назначение политики для субъекта-службы  
+#### <a name="step-3-assign-the-policy-to-your-service-principal"></a>Шаг 3. Назначение политики для субъекта-службы  
 Получив идентификатор **ObjectID** субъекта-службы приложения, для которого требуется настроить автоматическое ускорение, выполните следующую команду. Эта команда привязывает политику обнаружения домашней области, созданную на шаге 1, к субъекту-службе, определенному на шаге 2.
 
 ``` powershell
@@ -228,18 +228,18 @@ Add-AzureADServicePrincipalPolicy -Id <ObjectID of the Service Principal> -RefOb
 
 Если приложению уже назначена политика HomeRealmDiscovery, вам не удастся назначить ему еще одну такую политику.  В этом случае измените определение политики обнаружения домашней области, которая назначена приложению, чтобы добавить дополнительные параметры.
 
-#### <a name="step-4-check-which-application-service-principals-your-hrd-policy-is-assigned-to"></a>Шаг 4. Проверка субъектов-служб приложения, которым назначена политика обнаружения домашней области
+#### <a name="step-4-check-which-application-service-principals-your-hrd-policy-is-assigned-to"></a>Шаг 4. Проверка субъектов-служб приложения, которым назначена политика обнаружения домашней области
 Чтобы проверить, для каких приложений настроена политика обнаружения домашней области, воспользуйтесь командлетом **Get-AzureADPolicyAppliedObject**. Передайте в него идентификатор **ObjectID** политики, которую нужно проверить.
 
 ``` powershell
 Get-AzureADPolicyAppliedObject -id <ObjectId of the Policy>
 ```
-#### <a name="step-5-youre-done"></a>Шаг 5. Готово!
+#### <a name="step-5-youre-done"></a>Шаг 5. Готово!
 Испытайте приложение, чтобы проверить новую политику в действии.
 
-### <a name="example-list-the-applications-for-which-hrd-policy-is-configured"></a>Пример получение списка приложений, для которых настроена политика обнаружения домашней области
+### <a name="example-list-the-applications-for-which-hrd-policy-is-configured"></a>Пример: получение списка приложений, для которых настроена политика обнаружения домашней области
 
-#### <a name="step-1-list-all-policies-that-were-created-in-your-organization"></a>Шаг 1.: Получение списка всех политик, созданных в организации 
+#### <a name="step-1-list-all-policies-that-were-created-in-your-organization"></a>Шаг 1. Получение списка всех политик, созданных в организации 
 
 ``` powershell
 Get-AzureADPolicy
@@ -247,28 +247,28 @@ Get-AzureADPolicy
 
 Запишите идентификатор **ObjectID** политики, для которой вы хотите получить список назначений.
 
-#### <a name="step-2-list-the-service-principals-to-which-the-policy-is-assigned"></a>Шаг 2.: Получение списка субъектов-служб, которым назначена политика  
+#### <a name="step-2-list-the-service-principals-to-which-the-policy-is-assigned"></a>Шаг 2. Получение списка субъектов-служб, которым назначена политика  
 
 ``` powershell
 Get-AzureADPolicyAppliedObject -id <ObjectId of the Policy>
 ```
 
-### <a name="example-remove-an-hrd-policy-for-an-application"></a>Пример удаление политики обнаружения домашней области для приложения
-#### <a name="step-1-get-the-objectid"></a>Шаг 1.: Получение идентификатора ObjectID
+### <a name="example-remove-an-hrd-policy-for-an-application"></a>Пример: удаление политики обнаружения домашней области для приложения
+#### <a name="step-1-get-the-objectid"></a>Шаг 1. Получение идентификатора ObjectID
 Используйте предыдущий пример, чтобы получить идентификатор **ObjectID** политики, а также идентификатор ObjectID субъекта-службы приложения, из которого нужно удалить эту политику. 
 
-#### <a name="step-2-remove-the-policy-assignment-from-the-application-service-principal"></a>Шаг 2.: Удаление назначения политики из субъекта-службы приложения  
+#### <a name="step-2-remove-the-policy-assignment-from-the-application-service-principal"></a>Шаг 2. Удаление назначения политики из субъекта-службы приложения  
 
 ``` powershell
 Remove-AzureADApplicationPolicy -id <ObjectId of the Service Principal>  -PolicyId <ObjectId of the policy>
 ```
 
-#### <a name="step-3-check-removal-by-listing-the-service-principals-to-which-the-policy-is-assigned"></a>Шаг 3. Проверка удаления путем получения списка субъектов-служб, которым назначена политика 
+#### <a name="step-3-check-removal-by-listing-the-service-principals-to-which-the-policy-is-assigned"></a>Шаг 3. Проверка удаления путем получения списка субъектов-служб, которым назначена политика 
 
 ``` powershell
 Get-AzureADPolicyAppliedObject -id <ObjectId of the Policy>
 ```
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 - Дополнительные сведения о принципах работы аутентификации в Azure AD см. в статье [Сценарии аутентификации в Azure Active Directory](../develop/authentication-scenarios.md).
 - Дополнительные сведения о единый вход пользователей см. в статье [единый вход в приложения в Azure Active Directory](what-is-single-sign-on.md).
 - Сведения для разработчиков см. в [руководстве разработчика по Active Directory](../develop/v1-overview.md).

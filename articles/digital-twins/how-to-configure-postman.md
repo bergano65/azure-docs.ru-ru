@@ -1,6 +1,6 @@
 ---
 title: Как настроить пост-Azure Digital двойников | Документация Майкрософт
-description: Узнайте, как настроить и использовать Posting для тестирования интерфейсов API цифровых двойников Azure.
+description: Узнайте, как настроить и использовать POST для тестирования интерфейсов API цифровых двойников Azure.
 ms.author: alinast
 author: alinamstanciu
 manager: bertvanhoof
@@ -8,12 +8,12 @@ ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
 ms.date: 11/13/2019
-ms.openlocfilehash: 6a001d6b501a22b4b07599792a64af735c5d4d9b
-ms.sourcegitcommit: a170b69b592e6e7e5cc816dabc0246f97897cb0c
+ms.openlocfilehash: 784e31b823c65c0b908dc07582805e7a69d19563
+ms.sourcegitcommit: 8a2949267c913b0e332ff8675bcdfc049029b64b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74090477"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74304846"
 ---
 # <a name="how-to-configure-postman-for-azure-digital-twins"></a>Настройка Postman для Azure Digital Twins
 
@@ -52,15 +52,15 @@ ms.locfileid: "74090477"
 
 1. Выбранный API появится как **Azure Digital Twins** в той же области **Запрос разрешений API**. Выберите раскрывающийся список **Read (1)** (Чтение (1)), а затем установите флажок **Read.Write**. Нажмите кнопку **Add permissions** (Добавить разрешения).
 
-    [![Добавление разрешений API](../../includes/media/digital-twins-permissions/aad-app-req-permissions.png)](../../includes/media/digital-twins-permissions/aad-app-req-permissions.png#lightbox)
+    [![добавить разрешения API для Azure Digital двойников](../../includes/media/digital-twins-permissions/aad-app-req-permissions.png)](../../includes/media/digital-twins-permissions/aad-app-req-permissions.png#lightbox)
 
 1. В зависимости от параметров вашей организации вам может потребоваться предпринять дополнительные шаги для предоставления доступа администратора к этому API. Для получения дополнительной информации обратитесь к администратору. Как только доступ администратора будет утвержден, столбец **ADMIN CONSENT REQUIRED** (Требуется согласие администратора) в области **Разрешения API** будет отображать примерно следующее для интерфейсов API:
 
-    [утверждение согласия администратора ![](../../includes/media/digital-twins-permissions/aad-app-admin-consent.png)](../../includes/media/digital-twins-permissions/aad-app-admin-consent.png#lightbox)
+    [![настроить утверждение согласия администратора](../../includes/media/digital-twins-permissions/aad-app-admin-consent.png)](../../includes/media/digital-twins-permissions/aad-app-admin-consent.png#lightbox)
 
 1. Настройте второй **URI перенаправления** для `https://www.getpostman.com/oauth2/callback`.
 
-    [![добавить URI перенаправления POST](media/how-to-configure-postman/authentication-redirect-uri.png)](media/how-to-configure-postman/authentication-redirect-uri.png#lightbox)
+    [![настроить новый URI перенаправления POST](media/how-to-configure-postman/authentication-redirect-uri.png)](media/how-to-configure-postman/authentication-redirect-uri.png#lightbox)
 
 1. Чтобы убедиться, что [приложение зарегистрировано как **общедоступный клиент**](https://docs.microsoft.com/azure/active-directory/develop/scenario-desktop-app-registration), откройте панель **аутентификации** для регистрации приложения и прокрутите эту область вниз. В разделе **Тип клиента по умолчанию** выберите **Да** для **рассматривать приложение как общедоступный клиент**и нажмите кнопку **сохранить**.
 
@@ -104,7 +104,7 @@ ms.locfileid: "74090477"
 
 1. Теперь клиент должен выглядеть следующим образом.
 
-    [Пример клиента ![POST](media/how-to-configure-postman/postman-oauth-token.png)](media/how-to-configure-postman/postman-oauth-token.png#lightbox)
+    [Пример маркера клиента ![POST](media/how-to-configure-postman/configure-postman-oauth-token.png)](media/how-to-configure-postman/configure-postman-oauth-token.png#lightbox)
 
 1. Выберите **Request Token** (Токен запроса).
   
@@ -116,14 +116,14 @@ ms.locfileid: "74090477"
 
 1. На вкладке **заголовки** добавьте **тип содержимого** "ключ заголовка HTTP-запроса" со значением `multipart/mixed`.
 
-   [тип содержимого ![multipart/Mixed](media/how-to-configure-postman/content-type.png)](media/how-to-configure-postman/content-type.png#lightbox)
+   [![указать тип содержимого multipart/Mixed](media/how-to-configure-postman/configure-postman-content-type.png)](media/how-to-configure-postman/configure-postman-content-type.png#lightbox)
 
 1. Сериализируйте текстовые данные в файлы. Данные JSON будут сохранены в качестве JSON-файла.
 1. На вкладке **текст** выберите `form-data`. 
 1. Добавьте каждый файл, назначив имя **ключа** , выбрав `File`.
 1. Далее выберите каждый файл, используя кнопку **Выберите файл**.
 
-   [Пример клиента ![POST](media/how-to-configure-postman/form-body.png)](media/how-to-configure-postman/form-body.png#lightbox)
+   [Пример тела формы клиента ![POST](media/how-to-configure-postman/configure-postman-form-body.png)](media/how-to-configure-postman/configure-postman-form-body.png#lightbox)
 
    >[!NOTE]
    > * Клиент Postman не требует, чтобы составные части имели назначенный вручную **Content-Type** или **Content-Disposition**.

@@ -2,14 +2,14 @@
 title: Надежное развертывание в разных регионах — Azure диспетчер развертывания
 description: В этой статье описывается, как развернуть службу в нескольких регионах с помощью диспетчера развертывания Azure. Кроме того, здесь приведены методики безопасного развертывания, которые позволяют проверить стабильность развертывания во все регионы, прежде чем выполнять этот процесс.
 ms.topic: conceptual
-ms.date: 05/31/2019
+ms.date: 11/21/2019
 ms.custom: seodec18
-ms.openlocfilehash: 0a0d13150086b393e10bc16c5c2cef173ab0abab
-ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
+ms.openlocfilehash: 9b0e314b3911dcd3b96dc2b5b32081bd2e9c0c0c
+ms.sourcegitcommit: 8a2949267c913b0e332ff8675bcdfc049029b64b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74147188"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74307047"
 ---
 # <a name="enable-safe-deployment-practices-with-azure-deployment-manager-public-preview"></a>Использование рекомендаций по обеспечению безопасного развертывания с помощью Azure диспетчер развертывания (общедоступная Предварительная версия)
 
@@ -338,3 +338,5 @@ Azure диспетчер развертывания доступна в пред
 
 > [!div class="nextstepaction"]
 > [Руководство. Использование диспетчера развертывания Azure с шаблонами Resource Manager](./deployment-manager-tutorial.md)
+>
+> [Краткое руководство. Попробуйте диспетчер развертывания Azure всего за несколько минут](https://github.com/Azure-Samples/adm-quickstart)

@@ -12,18 +12,18 @@ ms.date: 03/12/2018
 ms.author: ghogen
 ms.custom: aaddev, vs-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 26f25daa01288959c38520f9713d35eb975d2df2
-ms.sourcegitcommit: 44c2a964fb8521f9961928f6f7457ae3ed362694
+ms.openlocfilehash: c6df50db564dac09785b460d158d4276ea8a215e
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73941383"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74271246"
 ---
 # <a name="diagnosing-errors-with-the-azure-active-directory-connected-service"></a>Диагностика ошибок с помощью подключенной службы Azure Active Directory
 
-При попытке определить существующий код аутентификации сервер подключения Azure Active Directory обнаружил несовместимый тип аутентификации.
+При обнаружении предыдущего кода проверки подлинности подключенная служба Azure Active Directory обнаружила несовместимый тип проверки подлинности.
 
-Чтобы правильно определить существующий в проекте код аутентификации, необходимо создать проект.  Если вы видите эту ошибку и у вас нет предыдущего кода проверки подлинности в проекте, выполните повторную сборку и повторите попытку.
+Чтобы правильно обнаружить предыдущий код проверки подлинности в проекте, необходимо выполнить перестроение проекта. Если вы видите эту ошибку и у вас нет предыдущего кода проверки подлинности в проекте, выполните повторную сборку и повторите попытку.
 
 ## <a name="project-types"></a>Типы проектов
 

@@ -3,12 +3,12 @@ title: Создание политик конфигурации гостя
 description: Узнайте, как создать политику гостевой конфигурации политики Azure для виртуальных машин Windows или Linux.
 ms.date: 09/20/2019
 ms.topic: conceptual
-ms.openlocfilehash: 3c7b214a07b89f4b66aa32724259b01129b9b7e9
-ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
+ms.openlocfilehash: 2f8ad66e636f7fa37d94d24d12a2537759a3304b
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73959479"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74279358"
 ---
 # <a name="how-to-create-guest-configuration-policies"></a>Создание политик конфигурации гостя
 
@@ -412,4 +412,4 @@ $Cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 
 - Узнайте, как проводить аудит виртуальных машин с помощью [гостевой конфигурации](../concepts/guest-configuration.md).
 - Узнайте, как [программно создавать политики](programmatically-create.md).
-- Узнайте, как [получить данные о соответствии](getting-compliance-data.md).
+- Узнайте, как [получить данные о соответствии](get-compliance-data.md).

@@ -1,5 +1,6 @@
 ---
-title: Устранение неполадок подключений с помощью службы "Наблюдатель за сетями Azure" на портале Azure | Документация Майкрософт
+title: Устранение неполадок соединений — портал Azure
+titleSuffix: Azure Network Watcher
 description: Узнайте, как использовать функцию устранения неполадок подключений с помощью службы "Наблюдатель за сетями Azure" с помощью портала Azure.
 services: network-watcher
 documentationcenter: na
@@ -13,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/03/2017
 ms.author: kumud
-ms.openlocfilehash: 783bcd0cdc97328f16c4a0defa18daa46a065842
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5236d076939b6972946adfde3557e3534f9adf5c
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64702000"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74275968"
 ---
 # <a name="troubleshoot-connections-with-azure-network-watcher-using-the-azure-portal"></a>Устранение неполадок подключений с помощью службы "Наблюдатель за сетями Azure" с помощью портала Azure
 
@@ -56,9 +57,9 @@ ms.locfileid: "64702000"
 
 ![Результаты проверки возможности подключения веб-сайта][2]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-Дополнительные сведения об автоматизации записи пакетов с помощью оповещений на виртуальной машине см. в статье, посвященной [созданию записи пакетов, активируемой с использованием оповещений](network-watcher-alert-triggered-packet-capture.md).
+Узнайте, как автоматизировать запись пакетов, используя оповещения на виртуальной машине, в статье [Использование записи пакетов для упреждающего мониторинга сети с помощью Функций Azure](network-watcher-alert-triggered-packet-capture.md).
 
 Сведения о состоянии (разрешен или запрещен) входящего и исходящего трафика виртуальной машины см. в статье, посвященной [проверке потока IP-адресов](diagnose-vm-network-traffic-filtering-problem.md).
 

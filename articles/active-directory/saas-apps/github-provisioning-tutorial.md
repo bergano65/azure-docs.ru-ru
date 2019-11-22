@@ -1,5 +1,5 @@
 ---
-title: Руководство. Настройка GitHub для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
+title: Учебник. подготовка пользователей для GitHub — Azure AD
 description: Узнайте, как настроить Azure Active Directory для автоматической подготовки и отзыва учетных записей пользователей в GitHub.
 services: active-directory
 documentationcenter: ''
@@ -15,31 +15,31 @@ ms.topic: article
 ms.date: 03/27/2019
 ms.author: arvinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 356af6567cea96efc7edbe8bc4932182d35ebc07
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 02bae60622ca8f0e660c8fafbd21189d8e368ba9
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65963941"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74276607"
 ---
-# <a name="tutorial-configure-github-for-automatic-user-provisioning"></a>Руководство. Настройка GitHub для автоматической подготовки пользователей
+# <a name="tutorial-configure-github-for-automatic-user-provisioning"></a>Руководство по настройке GitHub для автоматической подготовки пользователей
 
 Цель этого руководства — показать, как в GitHub и Azure AD настроить автоматическую подготовку и отзыв учетных записей пользователей из Azure AD в GitHub.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 Сценарий, описанный в этом учебнике, предполагает, что у вас уже имеется:
 
 * клиент Azure Active Directory;
 * Организация GitHub, созданная в облаке [GitHub Enterprise](https://help.github.com/articles/github-s-products/#github-enterprise), которой требуется [план выставления счетов GitHub Enterprise](https://help.github.com/articles/github-s-billing-plans/#billing-plans-for-organizations).
-* Учетную запись пользователя в GitHub с разрешениями администратора в организации
+* Учетная запись пользователя в GitHub с разрешениями администратора для Организации.
 
 > [!NOTE]
-> Интеграция подготовки Azure AD зависит от [GitHub SCIM API](https://developer.github.com/v3/scim/), доступного для [GitHub Enterprise Cloud](https://help.github.com/articles/github-s-products/#github-enterprise) клиенты, использующие [план выставления счетов GitHub Enterprise](https://help.github.com/articles/github-s-billing-plans/#billing-plans-for-organizations) .
+> Интеграция подготовки Azure AD зависит от [API GITHUB scim](https://developer.github.com/v3/scim/), который доступен для клиентов [GitHub Enterprise Cloud](https://help.github.com/articles/github-s-products/#github-enterprise) в [плане выставления счетов на GitHub Enterprise](https://help.github.com/articles/github-s-billing-plans/#billing-plans-for-organizations).
 
 ## <a name="assigning-users-to-github"></a>Назначение пользователей в GitHub
 
-В Azure Active Directory для определения того, какие пользователи должны получать доступ к выбранным приложениям, используется концепция, называемая "назначение". В контексте автоматической подготовки учетной записи будут синхронизированы только те записи и группы, которые были "назначены" приложению в Azure AD. 
+В Azure Active Directory для определения того, какие пользователи должны получать доступ к выбранным приложениям, используется концепция, называемая "назначение". В контексте автоматической подготовки учетной записи синхронизированы только те записи и группы, которые были "назначены" приложению в Azure AD. 
 
 Перед настройкой и включением службы подготовки необходимо решить, какие пользователи или группы в Azure AD представляют пользователей, которым требуется доступ к приложению GitHub. Когда этот вопрос будет решен, можно назначить этих пользователей приложению GitHub, следуя приведенным ниже указаниям.
 
@@ -92,7 +92,7 @@ ms.locfileid: "65963941"
 
 13. Выберите команду **Сохранить**.
 
-После этого начнется начальная синхронизация всех пользователей и (или) групп, назначенных в GitHub в разделе "Пользователи и группы". Начальная синхронизация занимает больше времени, чем последующие операции синхронизации. Если служба запущена, они выполняются примерно каждые 40 минут. В разделе **Сведения о синхронизации** можно отслеживать ход выполнения и переходить по ссылкам для просмотра журналов действий по подготовке, в которых зафиксированы все действия, выполняемые службой подготовки.
+После этого начнется начальная синхронизация всех пользователей и (или) групп, назначенных в GitHub в разделе "Пользователи и группы". Начальная синхронизация занимает больше времени, чем последующие операции синхронизации. Последующие операции синхронизации выполняются примерно каждые 40 минут, при условии, что служба запущена. В разделе **Сведения о синхронизации** можно отслеживать ход выполнения и переходить по ссылкам для просмотра журналов действий по подготовке, в которых зафиксированы все действия, выполняемые службой подготовки.
 
 Дополнительные сведения о чтении журналов подготовки Azure AD см. в руководстве по [отчетам об автоматической подготовке учетных записей](../manage-apps/check-status-user-account-provisioning.md).
 
@@ -101,6 +101,6 @@ ms.locfileid: "65963941"
 * [Управление подготовкой учетных записей пользователей для корпоративных приложений](../manage-apps/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)

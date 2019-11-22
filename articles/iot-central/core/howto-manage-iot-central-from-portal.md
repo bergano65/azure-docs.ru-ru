@@ -8,12 +8,12 @@ ms.author: dobett
 ms.date: 10/02/2019
 ms.topic: conceptual
 manager: philmea
-ms.openlocfilehash: 59fc01920a94e8ab3e7037e4bb226ea18a4314bf
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: c9a8ed6d55fbbfcf59c98a86ac98cb4264d31ee4
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73806509"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74278817"
 ---
 # <a name="manage-iot-central-from-the-azure-portal"></a>Управление IoT Central на портале Azure
 
@@ -41,10 +41,10 @@ ms.locfileid: "73806509"
 
 Заполните все поля в форме. Эта форма аналогична форме, которую вы заполнили для создания приложений на веб-сайте [Azure IOT Central Application Manager](https://aka.ms/iotcentral) . Дополнительные сведения см. в кратком руководстве [Создание приложения Azure IoT Central](quick-deploy-iot-central.md).
 
-**Расположение** — это физическое расположение или [География](https://azure.microsoft.com/global-infrastructure/geographies/) , где вы хотите создать приложение. Как правило, для достижения оптимальной производительности следует выбирать расположение, расположенное рядом с вашими устройствами. Регионы, в которых доступно приложение Azure IoT Central,можно просмотреть на странице [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=iot-central). После выбора расположения вы не сможете переместить приложение в другое расположение позже.
+**Расположение** — это [География](https://azure.microsoft.com/global-infrastructure/geographies/) , где вы хотите создать приложение. Как правило, для достижения оптимальной производительности следует выбирать расположение, расположенное рядом с вашими устройствами. Azure IoT Central в настоящее время доступна в **США**, **Австралии**, **Азиатско-Тихоокеанский регион**или в **Европе**.  После выбора расположения вы не сможете переместить приложение в другое расположение позже.
 
 > [!NOTE]
-> В настоящее время шаблон **предварительной версии приложения** доступен только в **Северной Европе** и в **центральных регионах США** .
+> Шаблон **предварительной версии приложения** доступен только в **странах Европы** и **США** .
 
 ![Портал управления: создание ресурса IoT Central](media/howto-manage-iot-central-from-portal/image1a.png)  
 
@@ -73,7 +73,7 @@ ms.locfileid: "73806509"
 
 ![Портал управления: управление ресурсами](media/howto-manage-iot-central-from-portal/image5a.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Вы узнали, как управлять приложениями Azure IoT Central на портале Azure, а значит, вы готовы к следующему шагу:
 

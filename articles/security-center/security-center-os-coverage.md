@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/29/2019
 ms.author: memildin
-ms.openlocfilehash: d91ac6d50faaadf560ae7ff9e9cce5f7bc4b180a
-ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
+ms.openlocfilehash: 47e66bfc4550372b571b7263ef5b7f2f149712dc
+ms.sourcegitcommit: 8a2949267c913b0e332ff8675bcdfc049029b64b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72803913"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74307309"
 ---
 # <a name="supported-platforms"></a>Поддерживаемые платформы 
 
@@ -45,8 +45,8 @@ ms.locfileid: "72803913"
 |:---|:-:|:-:|
 |Windows Server 2019|✔|X|
 |Windows Server 2016|✔|✔|
-|Windows Server 2012 R2|✔|✔|
-|Windows Server 2008 R2|✔|✔|
+|Windows Server 2012 R2|✔|✔|
+|Windows Server 2008 R2|✔|✔|
 
 Дополнительные сведения о поддерживаемых функциях для операционных систем Windows, перечисленных выше, см. в разделе [Поддерживаемые функции виртуальных машин и серверов](security-center-services.md##vm-server-features).
 
@@ -89,7 +89,7 @@ ms.locfileid: "72803913"
 * SQL
 * PostGreSQL
 * MySQL
-* Cosmos DB;
+* Cosmos DB
 * Учетная запись хранения
 * Служба приложений
 * Функция
@@ -102,19 +102,21 @@ ms.locfileid: "72803913"
 * Учетная запись Service Fabric
 * Учетная запись службы автоматизации
 * Подсистема балансировки нагрузки
-* служба поиска.
+* поиска
 * Пространство имен служебной шины
 * Stream Analytics
 * Пространство имен концентратора событий
-* Логические приложения
+* приложений логики;
 * Redis
 * Аналитика озера данных
-* Data Lake Storage
-* Key Vault;
+* Data Lake Store
+* Хранилище ключей
 
 Дополнительные сведения о поддерживаемых функциях для приведенного выше списка ресурсов PaaS см. в разделе [службы PaaS поддерживаемые функции](security-center-services.md#paas-services).
 
-## <a name="next-steps"></a>Дальнейшие действия
+Также поддерживается защита виртуальных машин, размещенных в Azure Stack. Дополнительные сведения об интеграции центра безопасности с Azure Stack см. в статье подключение [Azure Stack виртуальных машин к центру безопасности](https://docs.microsoft.com/azure/security-center/quick-onboard-azure-stack).
+
+## <a name="next-steps"></a>Дополнительная информация
 
 - Узнайте, как [Центр безопасности собирает данные и агент log Analytics](security-center-enable-data-collection.md).
 - Узнайте [, как центр безопасности управляет и защищает данные](security-center-data-security.md).

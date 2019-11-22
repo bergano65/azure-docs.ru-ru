@@ -1,21 +1,17 @@
 ---
 title: Действия GitHub & службы Azure Kubernetes
-titleSuffix: Azure Dev Spaces
-author: zr-msft
 services: azure-dev-spaces
-ms.service: azure-dev-spaces
-ms.author: zarhoads
 ms.date: 11/04/2019
 ms.topic: conceptual
 description: Изучите и протестируйте изменения из запроса на вытягивание непосредственно в службе Azure Kubernetes, используя действия GitHub и Azure Dev Spaces.
 keywords: DOCKER, Kubernetes, Azure, AKS, служба Kubernetes Azure, контейнеры, действия GitHub, Helm, сеть службы, маршрутизация в сети службы, kubectl, K8S
 manager: gwallace
-ms.openlocfilehash: 09dc9440628ac5d808f90d086bd88e4f90765c28
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: f362e75b834cd33f209dfeb261b0e6ff1df57cb3
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73889732"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74280163"
 ---
 # <a name="github-actions--azure-kubernetes-service-preview"></a>Действия GitHub & службы Azure Kubernetes (Предварительная версия)
 

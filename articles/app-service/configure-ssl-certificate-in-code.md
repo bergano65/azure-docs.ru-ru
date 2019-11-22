@@ -14,12 +14,12 @@ ms.date: 11/04/2019
 ms.author: cephalin
 ms.reviewer: yutlin
 ms.custom: seodec18
-ms.openlocfilehash: 93dfe784d45cd9cd93d22c5e8c3275c563f7f88b
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 1546ded1977e1e26792189e1d992d106d3d77ef2
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73572077"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74271286"
 ---
 # <a name="use-an-ssl-certificate-in-your-code-in-azure-app-service"></a>Использование SSL-сертификата в коде в службе приложений Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "73572077"
 
 Доверив управление SSL-сертификатами службе приложений, вы сможете разделить сертификаты и код приложения, защитив таким образом конфиденциальные данные.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 Ознакомьтесь со следующими статьями:
 
@@ -38,7 +38,7 @@ ms.locfileid: "73572077"
 
 ## <a name="find-the-thumbprint"></a>Найти отпечаток
 
-В <a href="https://portal.azure.com" target="_blank">портал Azure</a>в меню слева выберите **службы приложений** >  **\<имя приложения >** .
+На <a href="https://portal.azure.com" target="_blank">портале Azure</a> в меню слева выберите **Службы приложений** >  **\<имя_приложения>** .
 
 В левой области навигации приложения выберите **Параметры TLS/SSL**, а затем выберите **Сертификаты закрытого ключа (PFX)** или **Сертификаты открытого ключа (CER)** .
 
@@ -141,6 +141,8 @@ var cert = new X509Certificate2(bytes);
 > ```azurecli-interactive
 > az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings WEBSITE_LOAD_USER_PROFILE=1
 > ```
+>
+> Этот подход к использованию сертификатов в коде использует функциональность SSL в службе приложений, которая требует, чтобы ваше приложение было на уровне **Basic** или выше.
 
 В следующем C# примере общедоступный сертификат загружается из относительного пути в приложении:
 

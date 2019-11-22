@@ -1,5 +1,5 @@
 ---
-title: Назначение пользователя или группы корпоративному приложению в Azure Active Directory | Документы Майкрософт
+title: Назначение пользователя или группы корпоративному приложению в Azure AD
 description: Узнайте, как выбрать корпоративное приложение и назначить для него пользователя или группу в Azure Active Directory.
 services: active-directory
 author: msmimart
@@ -12,12 +12,12 @@ ms.date: 10/24/2019
 ms.author: mimart
 ms.reviewer: luleon
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6d28b9c31b8fbad8a565ff8cbdf717bfb3bc1309
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: 3a5135f97ffb7d29c9fd928382ca4344beaa654d
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72896474"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74274740"
 ---
 # <a name="assign-a-user-or-group-to-an-enterprise-app-in-azure-active-directory"></a>Назначение пользователя или группы корпоративному приложению в Azure Active Directory
 
@@ -128,7 +128,7 @@ ms.locfileid: "72896474"
     New-AzureADUserAppRoleAssignment -ObjectId $user.ObjectId -PrincipalId $user.ObjectId -ResourceId $sp.ObjectId -Id $appRole.Id
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Просмотр всех моих групп](../fundamentals/active-directory-groups-view-azure-portal.md)
 - [Удаление назначения пользователя или группы из корпоративного приложения](remove-user-or-group-access-portal.md)

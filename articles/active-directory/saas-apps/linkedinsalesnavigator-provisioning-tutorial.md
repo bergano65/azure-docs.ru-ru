@@ -1,5 +1,5 @@
 ---
-title: Руководство по Настройка LinkedIn Sales Navigator для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
+title: Учебник. подготовка пользователей — LinkedIn Sales Navigator, Azure AD
 description: Узнайте, как настроить Azure Active Directory для автоматической подготовки и отмены подготовки учетных записей пользователей в LinkedIn Sales Navigator.
 services: active-directory
 documentationcenter: ''
@@ -15,18 +15,18 @@ ms.topic: article
 ms.date: 03/28/2019
 ms.author: arvinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8977e6bb8b665705af7183ff0cdcfae22a19c759
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: dbf8923d62b49ed5341776aef03bc1bc2dabeaa9
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65965948"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74276802"
 ---
-# <a name="tutorial-configure-linkedin-sales-navigator-for-automatic-user-provisioning"></a>Руководство по Настройка LinkedIn Sales Navigator для автоматической подготовки пользователей
+# <a name="tutorial-configure-linkedin-sales-navigator-for-automatic-user-provisioning"></a>Руководство по настройке LinkedIn Sales Navigator для автоматической подготовки пользователей
 
 Цель этого руководства — показать, как настроить автоматическую подготовку и отзыв учетных записей пользователей Azure AD в LinkedIn Sales Navigator.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 Сценарий, описанный в этом учебнике, предполагает, что у вас уже имеется:
 
@@ -121,7 +121,7 @@ ms.locfileid: "65965948"
 
 Дополнительные сведения о чтении журналов подготовки Azure AD см. в руководстве по [отчетам об автоматической подготовке учетных записей](../manage-apps/check-status-user-account-provisioning.md).
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="additional-resources"></a>дополнительные ресурсы.
 
 * [Управление подготовкой учетных записей пользователей для корпоративных приложений](../manage-apps/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)

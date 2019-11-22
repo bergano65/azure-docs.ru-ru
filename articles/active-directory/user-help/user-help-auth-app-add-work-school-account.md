@@ -1,6 +1,6 @@
 ---
-title: Добавление рабочей или учебной учетной записи в приложение для проверки подлинности в Azure AD
-description: Сведения о том, как добавить рабочую и учебную учетную запись в приложение Microsoft Authenticator для двухфакторной проверки подлинности.
+title: Добавление рабочей или учебной учетной записи в приложение Microsoft Authenticator — Azure AD
+description: Добавьте рабочую или учебную учетную запись в приложение Microsoft Authenticator, чтобы проверить удостоверение при использовании двухфакторной проверки подлинности.
 services: active-directory
 author: eross-msft
 manager: daveba
@@ -12,14 +12,14 @@ ms.date: 01/24/2019
 ms.author: lizross
 ms.reviewer: olhaun
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c7c9fa41a1278f0e1e54a06c3930e3bbc3d3d3ae
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: bcd69fab269e39a8c78a56c08854262ca839d60f
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73803741"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74267145"
 ---
-# <a name="add-your-work-or-school-account"></a>Добавление рабочей или учебной учетной записи
+# <a name="add-your-work-or-school-account-to-the-microsoft-authenticator-app"></a>Добавление рабочей или учебной учетной записи в приложение Microsoft Authenticator
 
 Если организация использует двухфакторную проверку подлинности, то вы можете настроить рабочую или учебную учетную запись использовать приложение Microsoft Authenticator в качестве одного из методов проверки подлинности.
 
@@ -53,7 +53,7 @@ ms.locfileid: "73803741"
 
     ![Окно с учетными записями](./media/user-help-auth-app-download-install/auth-app-accounts.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Добавив учетные записи в приложение, вы можете использовать их для входа с помощью приложения Authenticator на мобильном устройстве. Дополнительные сведения см. в статье [Вход с использованием телефона вместо ввода пароля](user-help-auth-app-sign-in.md).
 

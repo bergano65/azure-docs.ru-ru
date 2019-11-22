@@ -1,5 +1,6 @@
 ---
-title: Визуализация журналов потоков для групп безопасности сети с помощью Power BI | Документация Майкрософт
+title: Визуализация журналов потоков Azure NSG — Power BI
+titleSuffix: Azure Network Watcher
 description: В этой статье описывается визуализация журналов потоков для групп безопасности сети с помощью Power BI.
 services: network-watcher
 documentationcenter: na
@@ -14,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: mareat
-ms.openlocfilehash: 6df49f9cd308f4bb9b1fef6e5860872526ce8bb7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 05378799dd77a17b69adbcf492af2e1cb1030375
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60860881"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74277734"
 ---
 # <a name="visualizing-network-security-group-flow-logs-with-power-bi"></a>Визуализация журналов потоков для групп безопасности сети с помощью Power BI
 
@@ -44,9 +45,9 @@ ms.locfileid: "60860881"
 
 Вы можете изменить предложенный шаблон, чтобы добавить в него новые данные и визуальные элементы или изменять запросы в соответствии со своими задачами.
 
-## <a name="setup"></a>Настройка
+## <a name="setup"></a>Setup
 
-Прежде чем мы начнем работу, вам необходимо включить журналы потоков для одной или нескольких групп безопасности сети в вашей учетной записи. Инструкции по включению журналов потоков для групп безопасности сети есть в статье [Общие сведения о ведении журнала потоков для групп безопасности сети](network-watcher-nsg-flow-logging-overview.md).
+Прежде чем мы начнем работу, вам необходимо включить журналы потоков для одной или нескольких групп безопасности сети в вашей учетной записи. Инструкции по включению журналов потоков для групп безопасности сети есть в статье [Introduction to flow logging for Network Security Groups](network-watcher-nsg-flow-logging-overview.md) (Введение в журналы потоков для групп безопасности сети).
 
 Также вам потребуется компьютер с установленным клиентом Power BI Desktop и достаточным объемом дискового пространства для хранения и загрузки данных журналов, сохраненных в учетной записи хранения.
 
@@ -121,7 +122,7 @@ ms.locfileid: "60860881"
 
 * Если у вас очень много журналов для анализа, мы рекомендуем использовать другое хранилище данных, например Data Lake или SQL Server.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как визуализировать журналы потоков для групп безопасности сети с помощью Elastick Stack, прочитав статью [Визуализация журнала потоков для групп безопасности сети Наблюдателя за сетями Azure с помощью инструментов с открытым кодом](network-watcher-visualize-nsg-flow-logs-open-source-tools.md).
 

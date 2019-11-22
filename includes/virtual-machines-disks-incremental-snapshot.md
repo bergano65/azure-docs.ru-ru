@@ -8,44 +8,44 @@ ms.topic: include
 ms.date: 09/23/2019
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: adc4a894f4617f681cefbc8049e453d004ce417e
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 846fd92bce3056dc119f38ac253a0a937e8c56a4
+ms.sourcegitcommit: 8a2949267c913b0e332ff8675bcdfc049029b64b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260856"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74309827"
 ---
-Incremental snapshots (preview) are point in time backups for managed disks that, when taken, consist only of all the changes since the last snapshot. When you attempt to download or otherwise use an incremental snapshot, the full VHD is used. This new capability for managed disk snapshots can potentially allow them to be more cost effective, since you are no longer required to store the entire disk with each individual snapshot, unless you choose to. Just like regular snapshots, incremental snapshots can be used to create a full managed disk or, to make a regular snapshot.
+Добавочные моментальные снимки (Предварительная версия) являются резервными копиями на момент времени для управляемых дисков, которые, будучи приняты, состоят только из всех изменений с момента последнего моментального снимка. При попытке загрузить или использовать добавочный моментальный снимок используется полный виртуальный жесткий диск. Эта новая возможность для моментальных снимков управляемых дисков может потребовать более экономичного использования, так как больше не требуется хранить весь диск в каждом отдельном моментальном снимке, если вы не решили. Как и обычные моментальные снимки, добавочные моментальные снимки можно использовать для создания полностью управляемого диска или, чтобы создать обычный моментальный снимок.
 
-There are a few differences between an incremental snapshot and a regular snapshot. Incremental snapshots will always use standard HDDs storage, irrespective of the storage type of the disk, whereas regular snapshots can use premium SSDs. If you are using regular snapshots on Premium Storage to scale up VM deployments, we recommend you use custom images on standard storage in the [Shared Image Gallery](../articles/virtual-machines/linux/shared-image-galleries.md). It will help you to achieve a more massive scale with lower cost. Additionally, incremental snapshots potentially offer better reliability with [zone-redundant storage](../articles/storage/common/storage-redundancy-zrs.md) (ZRS). If ZRS is available in the selected region, an incremental snapshot will use ZRS automatically. If ZRS is not available in the region, then the snapshot will default to [locally-redundant storage](../articles/storage/common/storage-redundancy-lrs.md) (LRS). You can override this behavior and select one manually but, we do not recommend that.
+Между инкрементным моментальным снимком и обычным моментальным снимком существует несколько различий. Добавочные моментальные снимки всегда будут использовать хранилище дисков уровня "Стандартный" независимо от типа хранилища диска, тогда как обычные моментальные снимки могут использовать твердотельные накопители уровня "Премиум". Если вы используете обычные моментальные снимки в хранилище класса Premium для масштабирования развертываний виртуальных машин, мы рекомендуем использовать пользовательские образы в хранилище уровня "Стандартный" в [коллекции общих образов](../articles/virtual-machines/linux/shared-image-galleries.md). Это поможет добиться более сложного масштабирования с меньшими затратами. Кроме того, добавочные моментальные снимки потенциально обеспечивают лучшую надежность с [хранилищем, избыточным](../articles/storage/common/storage-redundancy-zrs.md) в виде зоны (ZRS). Если ZRS доступен в выбранном регионе, добавочный моментальный снимок будет использовать ZRS автоматически. Если ZRS недоступен в регионе, то моментальный снимок будет по умолчанию использовать [локально избыточное хранилище](../articles/storage/common/storage-redundancy-lrs.md) (LRS). Это поведение можно переопределить, выбрав его вручную, но не рекомендуется.
 
-Incremental snapshots also offer a differential capability, which is uniquely available to managed disks. They enable you to get the changes between two incremental snapshots of the same managed disks, down to the block level. You can use this capability to reduce your data footprint when copying snapshots across regions.
+Добавочные моментальные снимки также предлагают функцию разностного копирования, которая уникально доступна для управляемых дисков. Они позволяют получать изменения между двумя добавочными моментальными снимками тех же управляемых дисков на уровне блоков. Эту возможность можно использовать для уменьшения объема данных при копировании моментальных снимков между регионами.
 
-If you haven't yet signed up for the preview and you'd like to start using incremental snapshots, email us at AzureDisks@microsoft.com to get access to the public preview.
+Если вы еще не зарегистрировались для использования предварительной версии и хотите начать использовать добавочные моментальные снимки, напишите нам по адресу AzureDisks@microsoft.com, чтобы получить доступ к общедоступной предварительной версии.
 
 ## <a name="restrictions"></a>Ограничения
 
-- Incremental snapshots are currently only available in West Central US and North Europe.
-- Incremental snapshots currently cannot be created after you've changed the size of a disk.
-- Incremental snapshots currently cannot be moved between subscriptions.
-- You can currently only generate SAS URIs of up to five snapshots of a particular snapshot family at any given time.
-- You cannot create an incremental snapshot for a particular disk outside of that disk's subscription.
-- Up to seven incremental snapshots per disk can be created every five minutes.
-- A total of 200 incremental snapshots can be created for a single disk.
+- Добавочные моментальные снимки в настоящее время доступны только в западной центральной части США и Северной Европе.
+- В настоящее время добавочные моментальные снимки не могут быть созданы после изменения размера диска.
+- В настоящее время добавочные моментальные снимки нельзя перемещать между подписками.
+- В настоящее время вы можете создавать URI SAS только для пяти моментальных снимков определенного семейства моментальных снимков в любой конкретный момент времени.
+- Нельзя создать добавочный моментальный снимок для конкретного диска за пределами подписки этого диска.
+- Каждые пять минут можно создать до семи добавочных моментальных снимков на диск.
+- Для одного диска можно создать всего 200 добавочных моментальных снимков.
 
 ## <a name="powershell"></a>PowerShell
 
-You can use Azure PowerShell to create an incremental snapshot. You will need the latest version of Azure PowerShell, the following command will either install it or update your existing installation to latest:
+Для создания добавочного моментального снимка можно использовать Azure PowerShell. Вам потребуется последняя версия Azure PowerShell. Следующая команда либо установит ее, либо обновит существующую установку до последней версии:
 
 ```PowerShell
 Install-Module -Name Az -AllowClobber -Scope CurrentUser
 ```
 
-Once that is installed, login to your PowerShell session with `az login`.
+После установки войдите в сеанс PowerShell с помощью `az login`.
 
-To create an incremental snapshot with Azure PowerShell, set the configuration with [New-AzSnapShotConfig](https://docs.microsoft.com/powershell/module/az.compute/new-azsnapshotconfig?view=azps-2.7.0) with the `-Incremental` parameter and then pass that as a variable to [New-AzSnapshot](https://docs.microsoft.com/powershell/module/az.compute/new-azsnapshot?view=azps-2.7.0) through the `-Snapshot` parameter.
+Чтобы создать добавочный моментальный снимок с Azure PowerShell, задайте конфигурацию с помощью командлета [New-азснапшотконфиг](https://docs.microsoft.com/powershell/module/az.compute/new-azsnapshotconfig?view=azps-2.7.0) с параметром `-Incremental`, а затем передайте эту переменную в командлет [New-азснапшот](https://docs.microsoft.com/powershell/module/az.compute/new-azsnapshot?view=azps-2.7.0) с помощью параметра `-Snapshot`.
 
-Replace `<yourDiskNameHere>`, `<yourResourceGroupNameHere>`, and `<yourDesiredSnapShotNameHere>` with your values, then you can use the following script to create an incremental snapshot:
+Замените `<yourDiskNameHere>`, `<yourResourceGroupNameHere>`и `<yourDesiredSnapShotNameHere>` своими значениями, чтобы создать добавочный моментальный снимок, можно использовать следующий скрипт:
 
 ```PowerShell
 # Get the disk that you need to backup by creating an incremental snapshot
@@ -56,9 +56,9 @@ $snapshotConfig=New-AzSnapshotConfig -SourceUri $yourDisk.Id -Location $yourDisk
 New-AzSnapshot -ResourceGroupName <yourResourceGroupNameHere> -SnapshotName <yourDesiredSnapshotNameHere> -Snapshot $snapshotConfig 
 ```
 
-You can identify incremental snapshots from the same disk with the `SourceResourceId` and the `SourceUniqueId` properties of snapshots. `SourceResourceId` is the Azure Resource Manager resource ID of the parent disk. `SourceUniqueId` is the value inherited from the `UniqueId` property of the disk. If you were to delete a disk and then create a new disk with the same name, the value of the `UniqueId` property changes.
+Можно выявление добавочных моментальных снимков с того же диска с `SourceResourceId` и `SourceUniqueId` свойствами моментальных снимков. `SourceResourceId` — это Azure Resource Manager идентификатор ресурса родительского диска. `SourceUniqueId` — это значение, унаследованное от свойства `UniqueId` диска. Если вы удалили диск, а затем создаете новый диск с тем же именем, значение свойства `UniqueId` изменится.
 
-You can use `SourceResourceId` and `SourceUniqueId` to create a list of all snapshots associated with a particular disk. Replace `<yourResourceGroupNameHere>` with your value and then you can use the following example to list your existing incremental snapshots:
+Для создания списка всех моментальных снимков, связанных с определенным диском, можно использовать `SourceResourceId` и `SourceUniqueId`. Замените `<yourResourceGroupNameHere>` своим значением, а затем можно использовать следующий пример для создания списка существующих добавочных моментальных снимков:
 
 ```PowerShell
 $snapshots = Get-AzSnapshot -ResourceGroupName <yourResourceGroupNameHere>
@@ -76,17 +76,19 @@ foreach ($snapshot in $snapshots)
 $incrementalSnapshots
 ```
 
-## <a name="cli"></a>CLI
+## <a name="cli"></a>Интерфейс командной строки
 
-You can create an incremental snapshot with the Azure CLI, you will need the latest version of Azure CLI. The following command will either install or update your existing installation to the latest version:
+Вы можете создать добавочный моментальный снимок с Azure CLI, вам потребуется последняя версия Azure CLI. 
 
+В Windows Следующая команда установит или обновит существующую установку до последней версии:
 ```PowerShell
 Invoke-WebRequest -Uri https://aka.ms/installazurecliwindows -OutFile .\AzureCLI.msi; Start-Process msiexec.exe -Wait -ArgumentList '/I AzureCLI.msi /quiet'
 ```
+В Linux Установка интерфейса командной строки будет зависеть от версии операционной системы.  См. статью [установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) для конкретной версии Linux.
 
-To create an incremental snapshot, use [az snapshot create](https://docs.microsoft.com/cli/azure/snapshot?view=azure-cli-latest#az-snapshot-create) with the `--incremental` parameter.
+Чтобы создать добавочный моментальный снимок, используйте команду [AZ snapshot Create](https://docs.microsoft.com/cli/azure/snapshot?view=azure-cli-latest#az-snapshot-create) с параметром `--incremental`.
 
-The following example creates an incremental snapshot, replace `<yourDesiredSnapShotNameHere>`, `<yourResourceGroupNameHere>`,`<exampleDiskName>`, and `<exampleLocation>` with your own values, then run the example:
+В следующем примере создается добавочный моментальный снимок, заменяются `<yourDesiredSnapShotNameHere>`, `<yourResourceGroupNameHere>`,`<exampleDiskName>`и `<exampleLocation>` с собственными значениями, а затем выполняется пример:
 
 ```bash
 sourceResourceId=$(az disk show -g <yourResourceGroupNameHere> -n <exampleDiskName> --query '[id]' -o tsv)
@@ -98,13 +100,13 @@ az snapshot create -g <yourResourceGroupNameHere> \
 --incremental
 ```
 
-You can identify incremental snapshots from the same disk with the `SourceResourceId` and the `SourceUniqueId` properties of snapshots. `SourceResourceId` is the Azure Resource Manager resource ID of the parent disk. `SourceUniqueId` is the value inherited from the `UniqueId` property of the disk. If you were to delete a disk and then create a new disk with the same name, the value of the `UniqueId` property changes.
+Можно выявление добавочных моментальных снимков с того же диска с `SourceResourceId` и `SourceUniqueId` свойствами моментальных снимков. `SourceResourceId` — это Azure Resource Manager идентификатор ресурса родительского диска. `SourceUniqueId` — это значение, унаследованное от свойства `UniqueId` диска. Если вы удалили диск, а затем создаете новый диск с тем же именем, значение свойства `UniqueId` изменится.
 
-You can use `SourceResourceId` and `SourceUniqueId` to create a list of all snapshots associated with a particular disk. The following example will list all incremental snapshots associated with a particular disk but, it requires some setup.
+Для создания списка всех моментальных снимков, связанных с определенным диском, можно использовать `SourceResourceId` и `SourceUniqueId`. В следующем примере будут перечислены все добавочные моментальные снимки, связанные с конкретным диском, но они требуют установки.
 
-This example uses jq for querying the data. To run the example, you must [install jq](https://stedolan.github.io/jq/download/).
+В этом примере для запроса данных используется JQ. Чтобы запустить пример, необходимо [установить JQ](https://stedolan.github.io/jq/download/).
 
-Replace `<yourResourceGroupNameHere>` and `<exampleDiskName>` with your values, then you can use the following example to list your existing incremental snapshots, as long as you've also installed jq:
+Замените `<yourResourceGroupNameHere>` и `<exampleDiskName>` значениями, затем можно использовать следующий пример, чтобы получить список существующих добавочных моментальных снимков, если вы также установили JQ:
 
 ```bash
 sourceUniqueId=$(az disk show -g <yourResourceGroupNameHere> -n <exampleDiskName> --query '[uniqueId]' -o tsv)
@@ -118,7 +120,7 @@ az snapshot list -g <yourResourceGroupNameHere> -o json \
 
 ## <a name="resource-manager-template"></a>Шаблон Resource Manager
 
-You can also use Azure Resource Manager templates to create an incremental snapshot. You'll need to make sure the apiVersion is set to **2019-03-01** and that the incremental property is also set to true. The following snippet is an example of how to create an incremental snapshot with Resource Manager templates:
+Можно также использовать шаблоны Azure Resource Manager для создания добавочного моментального снимка. Необходимо убедиться, что для apiVersion задано значение **2019-03-01** и для свойства инкремента задано значение true. В следующем фрагменте кода приведен пример создания добавочного моментального снимка с помощью шаблонов диспетчер ресурсов.
 
 ```json
 {
@@ -152,10 +154,10 @@ You can also use Azure Resource Manager templates to create an incremental snaps
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-1. If you haven't yet signed up for the preview and you'd like to start using incremental snapshots, email us at AzureDisks@microsoft.com to get access to the public preview. 
+1. Если вы еще не зарегистрировались для использования предварительной версии и хотите начать использовать добавочные моментальные снимки, напишите нам по адресу AzureDisks@microsoft.com, чтобы получить доступ к общедоступной предварительной версии. 
 
-2. Explore the following samples for cross-region copy of incremental snapshots using differential capability   
+2. Ознакомьтесь со следующими примерами для копирования добавочных моментальных снимков по нескольким регионам с помощью функции разностных копий.   
 
-    - [Using Azure .Net SDKs](https://github.com/Azure-Samples/managed-disks-dotnet-backup-with-incremental-snapshots)
+    - [Использование пакетов SDK для Azure .NET](https://github.com/Azure-Samples/managed-disks-dotnet-backup-with-incremental-snapshots)

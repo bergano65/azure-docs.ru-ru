@@ -1,6 +1,6 @@
 ---
-title: Set up security questions as your authentication method - Azure AD
-description: How to set up your Security info to verify your identity using pre-defined security questions as your authentication method.
+title: Настройка контрольных вопросов в качестве метода проверки — Azure AD
+description: Настройка страницы сведений о безопасности (Предварительная версия) для проверки личности с помощью заранее определенных контрольных вопросов в качестве метода проверки.
 services: active-directory
 author: eross-msft
 manager: daveba
@@ -12,14 +12,14 @@ ms.topic: conceptual
 ms.date: 02/13/2019
 ms.author: lizross
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 78e660163d3cc728f9ffe49e23a5c6cc2baa25eb
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
-ms.translationtype: HT
+ms.openlocfilehash: 6c32e2e2a7b609f999c7b804494188e2c6820171
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74231771"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74279001"
 ---
-# <a name="set-up-security-questions-as-your-authentication-method-from-the-security-info-preview-page"></a>Set up security questions as your authentication method from the Security info (preview) page
+# <a name="set-up-security-questions-as-your-verification-method"></a>Настройка контрольных вопросов в качестве метода проверки
 
 Чтобы добавить свой метод сброса пароля, выполните следующие действия. После первоначальной настройки вы можете вернуться к странице **Сведения для защиты**, чтобы добавить, обновить или удалить сведения для защиты.
 
@@ -38,7 +38,7 @@ ms.locfileid: "74231771"
 >
 > Если вы не видите параметр для настройки контрольных вопросов, возможно, ваша организация не позволяет использовать их для проверки. Если это так, вам нужно выбрать другой метод или обратиться за помощью к администратору.
 >
-> Administrator accounts are not allowed to use Security Questions as a password reset method. If you are logged in as an admin level account you will not see these options.
+> Учетным записям администратора запрещено использовать контрольные вопросы в качестве метода сброса пароля. Если вы вошли в систему как учетную запись уровня администратора, эти параметры отображаться не будут.
 
 ### <a name="to-set-up-your-security-questions"></a>Настройка контрольных вопросов
 
@@ -75,7 +75,7 @@ ms.locfileid: "74231771"
 
 2. Выберите **Да** в окне подтверждения, чтобы удалить **контрольные вопросы**. При удалении контрольных вопросов этот метод удаляется из сведений для защиты и не отображается на странице **Сведения для защиты**.
 
-## <a name="additional-security-info-methods"></a>Дополнительные методы в сведениях для защиты
+## <a name="additional-security-info-methods"></a>Дополнительные методы проверки сведений для защиты
 
 Чтобы подтвердить вашу личность, ваша организация может связаться с вами различными способами, в зависимости от того, что именно вы пытаетесь выполнить. Эти способы могут быть следующими:
 
@@ -85,14 +85,14 @@ ms.locfileid: "74231771"
 
 - **Звонок на мобильный или рабочий телефон.** Введите номер своего мобильного устройства, чтобы получить звонок с информацией для двухфакторной проверки подлинности или сброса пароля. Пошаговые инструкции о том, как подтвердить свою личность с помощью номера телефона, см. в статье о [настройке использования телефонных звонков в сведениях для защиты](security-info-setup-phone-number.md).
 
-- **Security key.** Register your Microsoft-compatible security key and use it along with a PIN for two-step verification or password reset. For step-by-step instructions about how to verify your identity with a security key, see [Set up security info to use a security key](security-info-setup-security-key.md).
+- **Ключ безопасности.** Зарегистрируйте ключ безопасности, совместимый с Майкрософт, и используйте его вместе с ПИН-кодом для двухфакторной проверки подлинности или сброса пароля. Пошаговые инструкции по проверке удостоверения с помощью ключа безопасности см. [в разделе Настройка сведений о безопасности для использования ключа безопасности](security-info-setup-security-key.md).
 
 - **Адрес электронной почты.** Введите рабочий или учебный адрес электронной почты, чтобы получить электронное письмо для сброса пароля. Этот вариант недоступен для двухфакторной проверки подлинности. Пошаговые инструкции о том, как настроить адрес электронной почты, см. в статье о [настройке использования электронной почты в сведениях для защиты](security-info-setup-email.md).
 
     >[!Note]
     >Если некоторые из этих параметров отсутствуют, скорее всего, ваша организация не разрешает данные методы. Если это так, вам нужно выбрать доступный метод или обратиться за помощью к администратору.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Если вы забыли свой пароль, сбросьте его на [портале сброса пароля](https://passwordreset.microsoftonline.com/) или выполните действия, описанные в статье о [сбросе пароля рабочей или учебной учетной записи](active-directory-passwords-update-your-own-password.md).
 

@@ -7,16 +7,20 @@ ms.topic: conceptual
 author: mgoedtel
 ms.author: magoedte
 ms.date: 11/11/2019
-ms.openlocfilehash: b513408f551a255facc897b7ba83c68e2befe282
-ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
+ms.openlocfilehash: 8fb1c6c65ab9c38ef16cfbc20435b35d0c7a7ce5
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73928270"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74279620"
 ---
 # <a name="how-to-update-azure-monitor-for-containers-to-enable-metrics"></a>Обновление Azure Monitor для контейнеров для включения метрик
 
 Azure Monitor для контейнеров — это поддержка сбора метрик из узлов и модулей Azure Kubernetes Services (AKS) кластеров и их записи в хранилище метрик Azure Monitor. Это изменение предназначено для предоставления улучшенной временной шкалы при представлении статистических вычислений (AVG, Count, Max, min, сумм) в диаграммах производительности, поддержки закрепления диаграмм производительности на портал Azure информационных панелях и поддержки оповещений о метриках.
+
+>[!NOTE]
+>В настоящее время эта функция не поддерживает кластеры Red Hat OpenShift.
+>
 
 В составе этой функции включены следующие метрики:
 

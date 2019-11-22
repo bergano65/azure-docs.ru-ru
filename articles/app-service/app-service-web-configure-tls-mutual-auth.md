@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 10/01/2019
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: d2823158192ae9fc9182f3f60f82d5bd9c050b09
-ms.sourcegitcommit: 80da36d4df7991628fd5a3df4b3aa92d55cc5ade
+ms.openlocfilehash: a07fa597305771ed3f4da01f2819297fc9cd3d77
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71811626"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74271695"
 ---
 # <a name="configure-tls-mutual-authentication-for-azure-app-service"></a>Настройка взаимной проверки подлинности TLS для службы приложений Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "71811626"
 
 ## <a name="enable-client-certificates"></a>Включение сертификатов клиента
 
-Чтобы настроить приложение для запроса сертификатов клиента, необходимо задать для приложения параметр `clientCertEnabled`, чтобы `true`. Чтобы задать параметр, выполните следующую команду в [Cloud Shell](https://shell.azure.com).
+Чтобы настроить приложение для запроса сертификатов клиента, необходимо задать для приложения параметр `clientCertEnabled` `true`. Чтобы задать параметр, выполните следующую команду в [Cloud Shell](https://shell.azure.com).
 
 ```azurecli-interactive
 az webapp update --set clientCertEnabled=true --name <app_name> --resource-group <group_name>
@@ -64,7 +64,7 @@ az webapp update --set clientCertEnabled=true --name <app_name> --resource-group
 
     namespace ClientCertificateUsageSample
     {
-        public partial class cert : System.Web.UI.Page
+        public partial class Cert : System.Web.UI.Page
         {
             public string certHeader = "";
             public string errorString = "";
@@ -180,7 +180,7 @@ az webapp update --set clientCertEnabled=true --name <app_name> --resource-group
 
 ## <a name="nodejs-sample"></a>Пример Node. js
 
-Следующий пример кода Node. js получает заголовок `X-ARR-ClientCert` и использует [подделку узла](https://github.com/digitalbazaar/forge) для преобразования строки PEM в кодировке Base64 в объект сертификата и его проверки:
+Следующий пример кода Node. js получает заголовок `X-ARR-ClientCert` и использует [подделку node](https://github.com/digitalbazaar/forge) для преобразования строки PEM в кодировке Base64 в объект сертификата и его проверки:
 
 ```javascript
 import { NextFunction, Request, Response } from 'express';

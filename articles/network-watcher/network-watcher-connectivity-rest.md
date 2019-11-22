@@ -1,5 +1,6 @@
 ---
-title: Устранение неполадок подключений с помощью службы "Наблюдатель за сетями Azure" в Azure REST API | Документация Майкрософт
+title: Устранение неполадок подключений в Azure REST API
+titleSuffix: Azure Network Watcher
 description: Узнайте, как использовать функцию устранения неполадок подключений службы "Наблюдатель за сетями Azure" с помощью Azure REST API.
 services: network-watcher
 documentationcenter: na
@@ -13,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/02/2017
 ms.author: kumud
-ms.openlocfilehash: 82dd77e8ea36610244b97c1701209d5aa3be2869
-ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
+ms.openlocfilehash: 792556a63b5ca9ef53a33960e8284354972b3895
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69017773"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74275956"
 ---
 # <a name="troubleshoot-connections-with-azure-network-watcher-using-the-azure-rest-api"></a>Устранение неполадок подключений в службе "Наблюдатель за сетями Azure" с помощью Azure REST API
 
@@ -48,14 +49,14 @@ ms.locfileid: "69017773"
 armclient login
 ```
 
-## <a name="retrieve-a-virtual-machine"></a>Получение виртуальной машины
+## <a name="retrieve-a-virtual-machine"></a>получите виртуальную машину;
 
 Выполните следующий скрипт, чтобы получить сведения о виртуальной машине. Эти сведения потребуются для подключения.
 
 Выполните приведенный ниже код, указав в нем значения следующих переменных:
 
 - **subscriptionId** — идентификатор используемой подписки.
-- **resourceGroupName** — имя группы ресурсов, в которой содержатся виртуальные машины.
+- **resourceGroupName** — имя группы ресурсов, в которой содержатся виртуальные машины.
 
 ```powershell
 $subscriptionId = '<subscription id>'
@@ -131,7 +132,7 @@ Date: Fri, 02 Jun 2017 20:21:16 GMT
 null
 ```
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 Следующий ответ взят из предыдущего примера.  В этом ответе параметр `ConnectionStatus` имеет значение **Unreachable** (Недоступно). Как видите, все отправленные пробы завершились неудачей. Попытка подключения завершилась сбоем в виртуальном модуле из-за пользовательского правила `NetworkSecurityRule` с именем **UserRule_Port80**, настроенного на блокировку входящего трафика на порту 80. Эти сведения можно использовать для анализа проблем с подключением.
 
@@ -247,7 +248,7 @@ Date: Fri, 02 Jun 2017 20:26:05 GMT
 null
 ```
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 В следующем примере состояние `connectionStatus` отображается как **Unreachable** (Недоступно). В блоке `hops` в разделе `issues` видно, что трафик заблокирован из-за `UserDefinedRoute`.
 
@@ -343,7 +344,7 @@ Date: Fri, 02 Jun 2017 20:31:00 GMT
 null
 ```
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 В следующем ответе видно, что параметр `connectionStatus` отображается со значением **Reachable** (Достижимо). Когда подключение будет установлено, отобразятся значения задержки.
 
@@ -430,7 +431,7 @@ Date: Fri, 02 Jun 2017 20:05:03 GMT
 null
 ```
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 Ниже представлен пример ответа на выполнение предыдущего вызова API. Так как проверка выполнена успешно, свойство `connectionStatus` отображается со значением **Reachable** (Достижимо).  Также отображаются сведения о числе прыжков, необходимых для доступа к BLOB-объекту в хранилище, а также о задержке.
 
@@ -465,7 +466,7 @@ null
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения об автоматизации записи пакетов с помощью оповещений на виртуальной машине см. в статье, посвященной [созданию записи пакетов, активируемой с использованием оповещений](network-watcher-alert-triggered-packet-capture.md).
 

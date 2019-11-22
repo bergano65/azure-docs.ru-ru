@@ -1,5 +1,6 @@
 ---
-title: 'Наблюдатель за сетями Azure: автоматизация аудита NSG с помощью представления группы безопасности службы | Документация Майкрософт'
+title: Автоматизация NSG Auditing — представление группы безопасности
+titleSuffix: Azure Network Watcher
 description: На этой странице представлены инструкции по настройке аудита группы безопасности сети
 services: network-watcher
 documentationcenter: na
@@ -14,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: kumud
-ms.openlocfilehash: 8e0eddd07fc0c473e4777d9dd90d0b2c64145e34
-ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
+ms.openlocfilehash: f4c553cd144f7c921121aa943e3c40849891f957
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70165137"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74278047"
 ---
 # <a name="automate-nsg-auditing-with-azure-network-watcher-security-group-view"></a>Автоматизация аудита группы безопасности сети с помощью представления группы безопасности в Наблюдателе за сетями Azure
 
@@ -34,7 +35,7 @@ ms.locfileid: "70165137"
 
 В нашем примере вам предлагается сравнить известные базовые показатели и результаты в представлении группы безопасности, возвращаемые для виртуальной машины.
 
-В этом сценарии предполагается, что вы создали Наблюдатель за сетями в соответствии с инструкциями в статье [Create a Network Watcher](network-watcher-create.md) (Создание Наблюдателя за сетями). Предполагается также, что у вас имеется группа ресурсов с допустимой виртуальной машиной.
+В этом сценарии предполагается, что вы создали Наблюдатель за сетями в соответствии с инструкциями в статье [Create an Azure Network Watcher instance](network-watcher-create.md) (Наблюдатель за сетями: создание экземпляра службы). Предполагается также, что у вас есть группа ресурсов с допустимой виртуальной машиной.
 
 ## <a name="scenario"></a>Сценарий
 
@@ -124,7 +125,7 @@ ms.locfileid: "70165137"
 $nsgbaserules = Get-Content -Path C:\temp\testvm1-nsg.json | ConvertFrom-Json
 ```
 
-## <a name="retrieve-network-watcher"></a>Извлечение Наблюдателя за сетями
+## <a name="retrieve-network-watcher"></a>Получение Наблюдателя за сетями
 
 Далее необходимо получить экземпляр Наблюдателя за сетями. Переменная `$networkWatcher` передается в командлет `AzNetworkWatcherSecurityGroupView`.
 
@@ -188,7 +189,7 @@ Direction                : Inbound
 SideIndicator            : <=
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Если параметры изменены, см. статью об [управлении группами безопасности сети с помощью портала](../virtual-network/manage-network-security-group.md). В ней содержатся сведения об отслеживании группы безопасности сети и нужных правил безопасности.
 

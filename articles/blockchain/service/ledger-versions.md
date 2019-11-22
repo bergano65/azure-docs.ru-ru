@@ -1,21 +1,21 @@
 ---
-title: Версии, исправления и обновления Azure Блокчейн Service
+title: Версии книги Azure Блокчейн Service, установка исправлений, обновление &
 description: Обзор поддерживаемых версий книг в службе Блокчейн Azure, включая политики исправления систем, управления системой и управляемыми пользователями обновлениями.
 services: azure-blockchain
 keywords: ''
 author: PatAltimore
 ms.author: patricka
-ms.date: 10/14/2019
+ms.date: 11/20/2019
 ms.topic: conceptual
 ms.service: azure-blockchain
 ms.reviewer: janders
 manager: femila
-ms.openlocfilehash: 16d0f0876e7d75dfd0266468ddc3005b86fc632f
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
-ms.translationtype: MT
+ms.openlocfilehash: 03eaf86ece191cce7eef6647a582a66495692db2
+ms.sourcegitcommit: e50a39eb97a0b52ce35fd7b1cf16c7a9091d5a2a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73579801"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74284923"
 ---
 # <a name="supported-azure-blockchain-service-ledger-versions"></a>Поддерживаемые версии книги Azure Блокчейн Service
 
@@ -37,6 +37,6 @@ ms.locfileid: "73579801"
 
 Служба Azure Блокчейн предоставляет новейшие основные и дополнительные версии книги кворума в течение 60 дней, доступных у производителя кворума. Для консортиа предоставляется не более четырех вспомогательных выпусков при подготовке нового члена и консорциума. Обновление до основной или вспомогательной версии сейчас не поддерживается. Например, если вы используете версию 2. x, обновление до версии 3. x сейчас не поддерживается. Аналогично, если вы используете версию 2,2, обновление до версии 2,3 сейчас не поддерживается.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 [Ограничения в службе Блокчейн Azure](limits.md)

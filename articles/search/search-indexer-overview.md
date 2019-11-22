@@ -8,12 +8,13 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 1fd667e14501355f2567712d13b10dd7fbc7ee19
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.custom: fasttrack-edit
+ms.openlocfilehash: 09a1b8e54726accf705515bf077f6a599f0f9b78
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74112689"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74266916"
 ---
 # <a name="indexers-in-azure-cognitive-search"></a>Индексаторы в Azure Когнитивный поиск
 
@@ -46,9 +47,10 @@ ms.locfileid: "74112689"
 Данные о сканировании, выполненном индексаторами, хранятся в Azure.
 
 * [Хранилище BLOB-объектов Azure](search-howto-indexing-azure-blob-storage.md)
+* [Azure Data Lake Storage 2-го поколения](search-howto-index-azure-data-lake-storage.md) (Предварительная версия)
 * [Хранилище таблиц Azure](search-howto-indexing-azure-tables.md)
 * [Azure Cosmos DB](search-howto-index-cosmosdb.md)
-* [база данных SQL Azure;](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
+* [База данных SQL Azure](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
 * [SQL Server на виртуальных машинах Azure](search-howto-connecting-azure-sql-iaas-to-azure-search-using-indexers.md)
 * [Управляемые экземпляры SQL в Azure](search-howto-connecting-azure-sql-mi-to-azure-search-using-indexers.md)
 

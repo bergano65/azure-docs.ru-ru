@@ -1,5 +1,5 @@
 ---
-title: Настройка согласия пользователя для приложения (Azure Active Directory) | Документация Майкрософт
+title: Настройка согласия пользователя для приложения — Azure Active Directory
 description: Сведения о том, как управлять методами получения согласия пользователя на разрешения приложения. Взаимодействие с пользователем можно упростить, предоставив согласие администратора. Эти методы применяются для всех пользователей в клиенте Azure Active Directory (AAD).
 services: active-directory
 author: msmimart
@@ -12,19 +12,19 @@ ms.date: 10/22/2018
 ms.author: mimart
 ms.reviewer: arvindh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6bd746e79bc9d70be23771f97b1757f090f6375f
-ms.sourcegitcommit: d4c9821b31f5a12ab4cc60036fde00e7d8dc4421
+ms.openlocfilehash: 4a187ea9d22efa40c482ea8930be0271d84a899a
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71709269"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74273990"
 ---
 # <a name="configure-the-way-end-users-consent-to-an-application-in-azure-active-directory"></a>Настройка методов получения согласия пользователей для приложения в Azure Active Directory
 Сведения о том, как настроить метод для получения согласия пользователя на разрешения приложения. Взаимодействие с пользователем можно упростить, предоставив согласие администратора. В этой статье приводятся различные способы, позволяющие настроить согласие пользователя. Эти методы применяются для всех пользователей в клиенте Azure Active Directory (AAD). 
 
 Дополнительные сведения о предоставлении согласия для приложений см. в статье [Платформа предоставления согласия Azure Active Directory](../develop/consent-framework.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 Чтобы предоставить согласие администратора, следует войти от имени глобального администратора, администратора приложения или администратора облачных приложений.
 
@@ -63,16 +63,16 @@ ms.locfileid: "71709269"
 
 Чтобы предоставить согласие администратора через запрос на URL-адрес, сделайте следующее:
 
-1. Создайте запрос на адрес *login.microsoftonline.com*, указав параметры нужного приложения, и добавьте строку `&prompt=admin_consent`. Этот URL-адрес будет выглядеть следующим образом: `https://login.microsoftonline.com/<tenant-id>/oauth2/authorize?client_id=<client id>&response_type=code&redirect_uri=<Your-Redirect-URI-Https-Encoded>&nonce=1234&resource=<your-resource-Https-encoded>&prompt=admin_consent`.
+1. Создайте запрос на адрес *login.microsoftonline.com*, указав параметры нужного приложения, и добавьте строку `&prompt=admin_consent`. Этот URL-адрес будет выглядеть следующим образом: `https://login.microsoftonline.com/<tenant-id>/oauth2/authorize?client_id=<client id>&response_type=code&redirect_uri=<Your-Redirect-URI-Https-Encoded>&nonce=1234&resource=<your-resource-Https-encoded>&prompt=admin_consent`
 2. После входа с учетными данными администратора приложению были предоставлены разрешения для всех пользователей.
 
 
 ## <a name="force-user-consent-through-a-url-request"></a>Требование согласия пользователя через запрос на URL-адрес
 
 Вы можете потребовать, чтобы пользователи предоставляли согласие для приложения при каждом входе, добавив строку `&prompt=consent` к URL-адресу запроса проверки подлинности.
-Этот URL-адрес будет выглядеть следующим образом: `https://login.microsoftonline.com/<tenant-id>/oauth2/authorize?client_id=<client id>&response_type=code&redirect_uri=<Your-Redirect-URI-Https-Encoded>&nonce=1234&resource=<your-resource-Https-encoded>&prompt=consent`.
+Этот URL-адрес будет выглядеть следующим образом: `https://login.microsoftonline.com/<tenant-id>/oauth2/authorize?client_id=<client id>&response_type=code&redirect_uri=<Your-Redirect-URI-Https-Encoded>&nonce=1234&resource=<your-resource-Https-encoded>&prompt=consent`
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 [Согласие и интеграция приложений с Azure Active Directory](../develop/quickstart-v1-integrate-apps-with-azure-ad.md)
 

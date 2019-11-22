@@ -1,5 +1,5 @@
 ---
-title: Включение удаленного доступа к Power BI с помощью AD Application Proxy Azure | Документация Майкрософт
+title: Включение удаленного доступа для Power BI с помощью AD Application Proxy Azure
 description: В этой статье рассматриваются основы интеграции локального Power BI с Azure AD Application Proxy.
 services: active-directory
 documentationcenter: ''
@@ -16,18 +16,18 @@ ms.author: mimart
 ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 845ffda22cae9464870786cc5997b9f5521c03e1
-ms.sourcegitcommit: 018e3b40e212915ed7a77258ac2a8e3a660aaef8
+ms.openlocfilehash: 9faa1fffde5553168c8b76ea40cebc001c1e27b2
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73795627"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74275513"
 ---
 # <a name="enable-remote-access-to-power-bi-mobile-with-azure-ad-application-proxy"></a>Включение удаленного доступа для Power BI Mobile с помощью AD Application Proxy Azure
 
 В этой статье описывается, как использовать AD Application Proxy Azure, чтобы разрешить Power BI мобильного приложения подключаться к Сервер отчетов Power BI (PBIRS) и SQL Server Reporting Services (SSRS) 2016 и более поздних версий. Благодаря этой интеграции пользователи, которые находятся вне корпоративной сети, могут получать доступ к отчетам Power BI из мобильного приложения Power BI и защищать их с помощью проверки подлинности Azure AD. Эта защита включает в себя такие [преимущества безопасности](application-proxy-security.md#security-benefits) , как условный доступ и многофакторная идентификация.  
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 В этой статье предполагается, что вы уже развернули службы Reporting Services и [включили прокси приложения](application-proxy-add-on-premises-application.md).
 
@@ -91,13 +91,13 @@ ms.locfileid: "73795627"
 
 2. После публикации приложения необходимо настроить параметры единого входа с помощью следующих действий:
 
-   а. На странице приложения на портале выберите **Единый вход**.
+   a. На странице приложения на портале выберите **Единый вход**.
 
    b. **В режиме единого входа**выберите **Встроенная проверка подлинности Windows**.
 
-   c. Задайте для параметра **Внутреннее имя субъекта-службы приложения** значение, заданное ранее.  
+   В. Задайте для параметра **Внутреннее имя субъекта-службы приложения** значение, заданное ранее.  
 
-   г) Выберите **делегированную идентификацию для входа**, которую соединитель сможет использовать от имени пользователей. Дополнительные сведения см. в разделе [Работа с разными локальными и облачными удостоверениями](application-proxy-configure-single-sign-on-with-kcd.md#working-with-different-on-premises-and-cloud-identities).
+   d. Выберите **делегированную идентификацию для входа**, которую соединитель сможет использовать от имени пользователей. Дополнительные сведения см. в разделе [Работа с разными локальными и облачными удостоверениями](application-proxy-configure-single-sign-on-with-kcd.md#working-with-different-on-premises-and-cloud-identities).
 
    д. Нажмите кнопку **Сохранить**, чтобы сохранить изменения.
 
@@ -157,7 +157,7 @@ Microsoft Intune можно использовать для управления
 
 Если приложение возвращает страницу ошибки после попытки загрузить отчет более чем через несколько минут, может потребоваться изменить параметр времени ожидания. По умолчанию прокси приложения поддерживает приложения, которые отреагируют на запрос до 85 секунд. Чтобы увеличить значение этого параметра на 180 секунд, выберите время ожидания серверной части **на странице** параметры прокси приложения для приложения. Советы по созданию быстрых и надежных отчетов см. в разделе [Power BI отчеты рекомендации](https://docs.microsoft.com/power-bi/power-bi-reports-performance).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Включение собственного клиентского приложения для взаимодействия с прокси-приложениями](application-proxy-configure-native-client-application.md)
 - [Просмотр локальных отчетов и ключевых показателей эффективности сервера отчетов в Power BI мобильных приложениях](https://docs.microsoft.com/power-bi/consumer/mobile/mobile-app-ssrs-kpis-mobile-on-premises-reports)

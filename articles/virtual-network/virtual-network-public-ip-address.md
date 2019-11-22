@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/06/2019
 ms.author: kumud
-ms.openlocfilehash: 5e71f30723826a18f10d4c8e1b9d34e356c9962b
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: 9071596d384d09bf6cbc46316a7f33c69c7b32e9
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74114636"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74278455"
 ---
 # <a name="create-change-or-delete-a-public-ip-address"></a>Создание, изменение и удаление общедоступного IP-адреса
 
@@ -45,7 +45,7 @@ ms.locfileid: "74114636"
 
 ## <a name="create-a-public-ip-address"></a>Создание общедоступного IP-адреса
 
-1. Выберите **+ Создать ресурс** в левом верхнем углу портала.
+1. На **домашней странице** или в меню портала Azure выберите команду **Создать ресурс**.
 2. В поле *Поиск в Marketplace* введите *общедоступный IP-адрес*. Когда в результатах поиска появится пункт **Общедоступный IP-адрес**, щелкните его.
 3. В колонке **Общедоступный IP-адрес** щелкните **Создать**.
 4. Введите или выберите значения для перечисленных ниже параметров в разделе **Создать общедоступный IP-адрес**, а затем щелкните **Создать**.

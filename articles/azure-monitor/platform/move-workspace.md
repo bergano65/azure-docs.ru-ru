@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/13/2019
-ms.openlocfilehash: fd7ff7aa2275defba57aa24b5ef0b9adc78a5355
-ms.sourcegitcommit: a170b69b592e6e7e5cc816dabc0246f97897cb0c
+ms.openlocfilehash: f6e1af2fdf43eb4351e996297f7dba775b7ffcef
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74093791"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74278791"
 ---
 # <a name="move-a-log-analytics-workspace-to-different-subscription-or-resource-group"></a>Перемещение рабочей области Log Analytics в другую подписку или группу ресурсов
 
@@ -29,17 +29,17 @@ ms.locfileid: "74093791"
 (Get-AzSubscription -SubscriptionName <your-destination-subscription>).TenantId
 ```
 
-## <a name="remove-solutions"></a>Удалить решения
-Управляемые решения, установленные в рабочей области, будут перемещены с помощью Log Analytics операции перемещения рабочей области. Так как вы должны удалить связь из рабочей области с любой учетной записью службы автоматизации, необходимо удалить решения, основанные на этой ссылке.
+## <a name="workspace-move-considerations"></a>Рекомендации по перемещению рабочей области
+Управляемые решения, установленные в рабочей области, будут перемещены с помощью Log Analytics операции перемещения рабочей области. Подключенные агенты останутся подключенными и не смогут отправить данные в рабочую область после перемещения. Так как операция перемещения требует, чтобы в рабочей области не было ссылок на учетную запись службы автоматизации, необходимо удалить решения, основанные на этой ссылке.
 
-Ниже перечислены решения, которые необходимо удалить. 
+Решения, которые необходимо удалить перед удалением связи с учетной записью службы автоматизации:
 
-- Управление обновлениями
+- управление обновлениями;
 - Отслеживание изменений
 - Запуск и остановка виртуальных машин в нерабочее время
 
 
-### <a name="azure-portal"></a>портале Azure
+### <a name="delete-in-azure-portal"></a>Удаление на портале Azure
 Используйте следующую процедуру, чтобы удалить решения с помощью портал Azure:
 
 1. Откройте меню для группы ресурсов, в которой установлены все решения.
@@ -48,7 +48,7 @@ ms.locfileid: "74093791"
 
 ![Удаление решений](media/move-workspace/delete-solutions.png)
 
-### <a name="powershell"></a>PowerShell
+### <a name="delete-using-powershell"></a>Удаление с помощью PowerShell
 
 Чтобы удалить решения с помощью PowerShell, используйте командлет [Remove-азресаурце](/powershell/module/az.resources/remove-azresource?view=azps-2.8.0) , как показано в следующем примере:
 
@@ -58,7 +58,7 @@ Remove-AzResource -ResourceType 'Microsoft.OperationsManagement/solutions' -Reso
 Remove-AzResource -ResourceType 'Microsoft.OperationsManagement/solutions' -ResourceName "Start-Stop-VM(<workspace-name>)" -ResourceGroupName <resource-group-name>
 ```
 
-## <a name="remove-alert-rules"></a>Удаление правил генерации оповещений
+### <a name="remove-alert-rules"></a>Удаление правил генерации оповещений
 Для решения " **Запуск и завершение виртуальных машин** " необходимо также удалить правила генерации оповещений, созданные решением. Используйте следующую процедуру в портал Azure, чтобы удалить эти правила.
 
 1. Откройте меню **мониторинг** и выберите пункт **оповещения**.

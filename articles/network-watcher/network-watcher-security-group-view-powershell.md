@@ -1,5 +1,6 @@
 ---
-title: Анализ безопасности сети с помощью представления группы безопасности Наблюдателя за сетями (PowerShell) | Документация Майкрософт
+title: Анализ безопасности сети — представление группы безопасности — Azure PowerShell
+titleSuffix: Azure Network Watcher
 description: В этой статье вы узнаете, как проанализировать безопасность виртуальных машин, используя представление группы безопасности, с помощью PowerShell.
 services: network-watcher
 documentationcenter: na
@@ -14,19 +15,19 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: kumud
-ms.openlocfilehash: 4c7b79460169612a046b19a4d66f222936710a8e
-ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
+ms.openlocfilehash: 3127d60263437a18e0c8d9a98ebdfad31049c58d
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70163903"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74277915"
 ---
 # <a name="analyze-your-virtual-machine-security-with-security-group-view-using-powershell"></a>Анализ безопасности виртуальной машины с использованием представления группы безопасности (PowerShell)
 
 > [!div class="op_single_selector"]
 > - [PowerShell](network-watcher-security-group-view-powershell.md)
 > - [Интерфейс командной строки Azure](network-watcher-security-group-view-cli.md)
-> - [REST API](network-watcher-security-group-view-rest.md)
+> - [ИНТЕРФЕЙС REST API](network-watcher-security-group-view-rest.md)
 
 Представление группы безопасности возвращает настроенные и действующие правила сетевой безопасности, применяемые к виртуальной машине. Эта возможность полезна для аудита и диагностики групп безопасности сети и настроенных на виртуальной машине правил, позволяющих обеспечить разрешение или отклонение трафика соответствующим образом. В этой статье мы покажем, как получить настроенные и действующие правила безопасности, применяемые к виртуальной машине, с помощью PowerShell.
 
@@ -37,15 +38,15 @@ ms.locfileid: "70163903"
 
 В этом сценарии вы получите сведения о правиле безопасности, используя командлет `Get-AzNetworkWatcherSecurityGroupView`.
 
-В этом сценарии предполагается, что вы создали Наблюдатель за сетями в соответствии с инструкциями в статье [Create a Network Watcher](network-watcher-create.md) (Создание Наблюдателя за сетями).
+В этом сценарии предполагается, что вы создали Наблюдатель за сетями в соответствии с инструкциями в статье [Create an Azure Network Watcher instance](network-watcher-create.md) (Наблюдатель за сетями: создание экземпляра службы).
 
 ## <a name="scenario"></a>Сценарий
 
 В сценарии, описанном в этой статье, вы получите настроенные и действующие правила безопасности для указанной виртуальной машины.
 
-## <a name="retrieve-network-watcher"></a>Извлечение Наблюдателя за сетями
+## <a name="retrieve-network-watcher"></a>Получение Наблюдателя за сетями
 
-Сначала необходимо получить экземпляр Наблюдателя за сетями. Эта переменная передается в командлет `Get-AzNetworkWatcherSecurityGroupView`.
+Сначала необходимо извлечь экземпляр Наблюдателя за сетями. Эта переменная передается в командлет `Get-AzNetworkWatcherSecurityGroupView`.
 
 ```powershell
 $networkWatcher = Get-AzResource | Where {$_.ResourceType -eq "Microsoft.Network/networkWatchers" -and $_.Location -eq "WestCentralUS" }
@@ -128,7 +129,7 @@ NetworkInterfaces : [
                     ]
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Сведения об автоматизации проверки групп безопасности сети см. в статье [Auditing Network Security Groups (NSG) with Network Watcher](network-watcher-nsg-auditing-powershell.md) (Выполнение аудита групп безопасности сети с помощью Наблюдателя за сетями).
 

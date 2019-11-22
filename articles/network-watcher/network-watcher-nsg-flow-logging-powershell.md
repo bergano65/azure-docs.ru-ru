@@ -1,5 +1,6 @@
 ---
-title: Управление журналами потоков для групп безопасности сети с помощью Наблюдателя за сетями (PowerShell) | Документация Майкрософт
+title: Управление журналами потоков NSG — Azure PowerShell
+titleSuffix: Azure Network Watcher
 description: На этой странице объясняется, как управлять журналами потоков для групп безопасности сети с помощью Наблюдателя за сетями и PowerShell
 services: network-watcher
 documentationcenter: na
@@ -14,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: kumud
-ms.openlocfilehash: 508fe6f7dc6c5fef99e5f62a2ce75b0c81b1577f
-ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
+ms.openlocfilehash: 162e499ba44557db388484639c21877fd8b852bf
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71676334"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74277969"
 ---
 # <a name="configuring-network-security-group-flow-logs-with-powershell"></a>Настройка журналов потоков для групп безопасности сети с помощью PowerShell
 
@@ -27,9 +28,9 @@ ms.locfileid: "71676334"
 > - [портал Azure](network-watcher-nsg-flow-logging-portal.md)
 > - [PowerShell](network-watcher-nsg-flow-logging-powershell.md)
 > - [Интерфейс командной строки Azure](network-watcher-nsg-flow-logging-cli.md)
-> - [REST API](network-watcher-nsg-flow-logging-rest.md)
+> - [ИНТЕРФЕЙС REST API](network-watcher-nsg-flow-logging-rest.md)
 
-Журналы потоков для групп безопасности сети — это компонент Наблюдателя за сетями, который позволяет просматривать сведения о входящем и исходящем IP-трафике через группу безопасности сети. Эти журналы потоков записываются в формате JSON. В них отображаются входящие и исходящие потоки по каждому правилу, сетевая карта, с которой связан поток, сведения о 5 кортежах потока (IP-адрес источника и места назначения, порт источника и места назначения, протокол), а также сведения о состоянии трафика (разрешен или запрещен).
+Журналы потоков для групп безопасности сети — это компонент Наблюдателя за сетями, который позволяет просматривать сведения о входящем и исходящем IP-трафике через группу безопасности сети. Эти журналы потоков записываются в формате JSON. В них отображаются входящие и исходящие потоки по каждому правилу, сетевая карта, с которой связан поток, сведения о 5 кортежах потока (исходный и конечный IP-адреса, исходный и конечный порты, протокол), а также сведения о состоянии трафика (разрешен или запрещен).
 
 ## <a name="register-insights-provider"></a>Регистрация поставщика Microsoft Insights
 
@@ -95,7 +96,7 @@ https://{storageAccountName}.blob.core.windows.net/insights-logs-networksecurity
 
 Сведения о структуре журнала см. в статье [Network Security Group Flow log Overview](network-watcher-nsg-flow-logging-overview.md) (Обзор журнала потоков для группы безопасности сети).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как [визуализировать сведения журналов потоков группы безопасности сети с помощью PowerBI](network-watcher-visualize-nsg-flow-logs-power-bi.md).
 

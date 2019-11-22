@@ -1,5 +1,5 @@
 ---
-title: Проблемы при настройке единого входа по паролю для приложения из коллекции Azure AD | Документация Майкрософт
+title: Проблемы при настройке единого входа с паролем для приложения из коллекции Azure AD
 description: Из этой статьи вы узнаете, какие проблемы возникают при настройке единого входа по паролю для пользовательских приложений из коллекции приложений Azure AD.
 services: active-directory
 documentationcenter: ''
@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 07/11/2017
 ms.author: mimart
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bc75346b1093cc41a44edad1376c5f10dfec2409
-ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
+ms.openlocfilehash: 96e729bee0ac9beac447893ed8dbf1bba633e412
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68381131"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74274198"
 ---
 # <a name="problem-configuring-password-single-sign-on-for-an-azure-ad-gallery-application"></a>Проблема при настройке единого входа по паролю для приложения из коллекции Azure AD
 
@@ -107,6 +107,6 @@ ms.locfileid: "68381131"
 
 -   [Расширение "Панель доступа" для Firefox](https://addons.mozilla.org/firefox/addon/access-panel-extension/)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 [Реализация единого входа в приложения с помощью прокси приложения](application-proxy-configure-single-sign-on-with-kcd.md)
 

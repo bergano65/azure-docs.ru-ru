@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
-ms.openlocfilehash: c8aa3fb124420c933e17b0e9f7e52b7f114a7f61
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: 28ef082d6aac5557998f7b67443d4dafd3a0fb15
+ms.sourcegitcommit: e50a39eb97a0b52ce35fd7b1cf16c7a9091d5a2a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74012902"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74285579"
 ---
 # <a name="access-and-customize-developer-portal"></a>Доступ и Настройка портала разработчика
 
@@ -35,10 +35,6 @@ ms.locfileid: "74012902"
 Дополнительные сведения можно найти на портале разработчика на [портале разработчика управления API Azure](api-management-howto-developer-portal.md).
 
 ![Портал разработчика управления API — режим администратора](media/api-management-howto-developer-portal-customize/cover.png)
-
-> [!WARNING]
-> На портале разработчика в настоящее время выполняется развертывание в службах управления API.
-> Если служба была только что создана или является службой уровня разработчика, у вас уже должна быть последняя версия. В противном случае могут возникнуть проблемы (например, с помощью функции публикации). Ожидается, что развертывание функции будет завершено до пятницы ноября 22, 2019. 
 
 ## <a name="prerequisites"></a>предварительным требованиям
 

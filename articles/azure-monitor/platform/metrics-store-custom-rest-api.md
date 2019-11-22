@@ -1,5 +1,5 @@
 ---
-title: Отправка пользовательских метрик для ресурса Azure в хранилище метрик Azure Monitor с использованием REST API
+title: Отправка метрик в базу данных метрик Azure Monitor с помощью REST API
 description: Отправка пользовательских метрик для ресурса Azure в хранилище метрик Azure Monitor с использованием REST API
 author: anirudhcavale
 services: azure-monitor
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: ancav
 ms.subservice: metrics
-ms.openlocfilehash: aa842979bf86410e9dab97d6209f336eb6b02bd3
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: a19b59c758f31ff1ef3416b59031202193d50522
+ms.sourcegitcommit: e50a39eb97a0b52ce35fd7b1cf16c7a9091d5a2a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60253872"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74285941"
 ---
 # <a name="send-custom-metrics-for-an-azure-resource-to-the-azure-monitor-metric-store-by-using-a-rest-api"></a>Отправка пользовательских метрик для ресурса Azure в хранилище метрик Azure Monitor с использованием REST API
 
@@ -117,6 +117,6 @@ curl -X POST https://login.microsoftonline.com/<yourtenantid>/oauth2/token -F "g
 1. В раскрывающемся списке **метрик** выберите **QueueDepth**.  
 
  
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 - Дополнительные сведения о настраиваемых метриках см. в [этой статье](../../azure-monitor/platform/metrics-custom-overview.md).
 

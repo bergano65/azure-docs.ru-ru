@@ -9,12 +9,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: sstein
-ms.openlocfilehash: 5c70d1d7d62b41965d4c81e8bbe0e5b2dc3cbb92
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.openlocfilehash: bdea9af04008ef68578ff8c136760f2493a2ae35
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74166257"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74279216"
 ---
 # <a name="sql-database-release-notes"></a>Заметки о выпуске базы данных SQL
 
@@ -80,9 +80,10 @@ ms.locfileid: "74166257"
 
 - **2019 августа** — автономные базы данных полностью поддерживаются в управляемом экземпляре.
 - **2019** . Встроенное восстановление базы данных на момент времени с уровня критически важный для бизнеса на уровень общего назначения не будет выполнено, если база данных-источник содержит объекты OLTP в памяти.
+- **Oct 2019** — вы можете использовать функцию **Database Mail** с внешними (не Azure) почтовыми серверами с помощью безопасного подключения.
 - **Ноя 2019** — проверка согласованности базы данных производится с помощью `DBCC CHECKDB` после восстановления базы данных из хранилища BLOB-объектов Azure.
 
-## <a name="updates"></a>обновлениях
+## <a name="updates"></a>Обновления
 
 Список обновлений и улучшений базы данных SQL см. в статье [обновления службы базы данных SQL](https://azure.microsoft.com/updates/?product=sql-database).
 

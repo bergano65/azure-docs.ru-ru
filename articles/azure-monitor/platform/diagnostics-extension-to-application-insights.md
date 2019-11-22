@@ -1,5 +1,5 @@
 ---
-title: Настройка диагностики Azure для отправки данных в Application Insights
+title: Отправка система диагностики Azure данных в Application Insights
 description: Обновление открытой конфигурации диагностики Azure для отправки данных в Application Insights.
 ms.service: azure-monitor
 ms.subservice: diagnostic-extension
@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: rboucher
 ms.author: robb
 ms.date: 03/19/2016
-ms.openlocfilehash: 5328d2be4b8bf733041c39fe029ae2d02ecc3a6e
-ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
+ms.openlocfilehash: 6165ff13f489f9f23b9ece677b3643641150130d
+ms.sourcegitcommit: e50a39eb97a0b52ce35fd7b1cf16c7a9091d5a2a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72552041"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74285993"
 ---
 # <a name="send-cloud-service-virtual-machine-or-service-fabric-diagnostic-data-to-application-insights"></a>Отправка в Application Insights диагностических данных облачной службы, виртуальной машины или Service Fabric
 Облачные службы, виртуальные машины, масштабируемые наборы виртуальных машин и Service Fabric используют расширение системы диагностики Azure для сбора данных.  Система диагностики Azure отправляет данные в таблицы службы хранилища Azure.  Тем не менее эти данные можно также полностью или частично передавать в другие расположения, используя расширение системы диагностики Azure 1.5 или более поздней версии.
@@ -70,7 +70,7 @@ ms.locfileid: "72552041"
         - Информация
         - Предупреждение
         - Ошибка
-        - Критический
+        - критические ошибки.
 
 Канал действует как фильтр и позволяет выбрать конкретные уровни ведения журнала для отправки в приемник. Например, можно собирать подробные журналы и отправлять их в хранилище, а в приемник отправлять только журнал ошибок.
 
@@ -213,7 +213,7 @@ ms.locfileid: "72552041"
 - **Уровень ведения журнала для канала не может превышать уровень ведения журнала, данные которого собираются системой диагностики Azure.** Например, нельзя собирать данные об ошибках в журнале приложений в элементе Logs и пытаться отправлять подробные журналы в приемник Application Insight. Атрибут *ScheduledTransferLogLevelFilter* должен всегда собирать равное или большее число журналов, чем число журналов, которые вы пытаетесь отправить в приемник.
 - **В Application Insights нельзя отправлять собранные расширением системы диагностики Azure данные больших двоичных объектов.** Например, данные, указанные в узле *Directories*. Что касается аварийных дампов, фактический аварийный дамп отправляется в хранилище BLOB-объектов, а в Application Insights отправляется только уведомление о том, что аварийный дамп был создан.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте, как [просматривать данные диагностики Azure](https://docs.microsoft.com/azure/application-insights/app-insights-cloudservices) в Application Insights.
 * Используйте [PowerShell](../../cloud-services/cloud-services-diagnostics-powershell.md) , чтобы включить расширение диагностики Azure для вашего приложения.
 * Используйте [Visual Studio](/visualstudio/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines) , чтобы включить расширение диагностики Azure для вашего приложения.

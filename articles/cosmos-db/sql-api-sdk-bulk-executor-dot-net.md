@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 10/24/2019
 ms.author: ramkris
-ms.openlocfilehash: 0ff281e54df0273cc4c72d1780f4a99fe9719aec
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: b6685f8524dc1f3ac080abe81389d091c7cf6f1b
+ms.sourcegitcommit: 8a2949267c913b0e332ff8675bcdfc049029b64b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72900188"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74306748"
 ---
 # <a name="net-bulk-executor-library-download-information"></a>Библиотека массового исполнителя .NET — информация о скачивании 
 
@@ -37,8 +37,11 @@ ms.locfileid: "72900188"
 |**Скачивание пакета SDK**| [NuGet](https://www.nuget.org/packages/Microsoft.Azure.CosmosDB.BulkExecutor/) |
 | **Библиотека с массовым исполнителем в GitHub**| [GitHub](https://github.com/Azure/azure-cosmosdb-bulkexecutor-dotnet-getting-started)|
 |**Документация по API**|[Справочная документация по API .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmosdb.bulkexecutor?view=azure-dotnet)|
-|**Приступая к работе с условным доступом**|[Начало работы с пакетом SDK для .NET для библиотеки массового исполнителя](bulk-executor-dot-net.md)|
+|**Начало работы**|[Начало работы с пакетом SDK для .NET для библиотеки массового исполнителя](bulk-executor-dot-net.md)|
 | **Текущая поддерживаемая платформа**| Microsoft .NET Framework 4.5.2, 4.6.1 и .NET Standard 2.0 |
+
+> [!NOTE]
+> Если вы используете пакетный исполнитель, ознакомьтесь с последней версией [пакета SDK для .NET](tutorial-sql-api-dotnet-bulk-import.md)версии 3. x, в которой имеется пакет SDK для среды выполнения. 
 
 ## <a name="release-notes"></a>Заметки о выпуске
 
@@ -50,15 +53,15 @@ ms.locfileid: "72900188"
 
 * Изменена зависимость SDK на > = 2.5.1
 
-### <a name="a-name230-preview2230-preview2"></a><a name="2.3.0-preview2"/>2.3.0-preview2
+### <a name="a-name230-preview2230-preview2"></a><a name="2.3.0-preview2"/>2.3.0 — preview2
 
 * Добавлена поддержка многоисполнительного графа Graph для приема TTL на вершинах и краях.
 
-### <a name="a-name220-preview2220-preview2"></a><a name="2.2.0-preview2"/>2.2.0-preview2
+### <a name="a-name220-preview2220-preview2"></a><a name="2.2.0-preview2"/>2.2.0 — preview2
 
 * Исправлена проблема, которая привела к возникновению исключений во время эластичного масштабирования Azure Cosmos DB при работе в режиме шлюза. Это исправление функционально эквивалентно 1.4.1 выпуску.
 
-### <a name="a-name210-preview2210-preview2"></a><a name="2.1.0-preview2"/>2.1.0-preview2
+### <a name="a-name210-preview2210-preview2"></a><a name="2.1.0-preview2"/>2.1.0 — preview2
 
 * Добавлена поддержка Булкделете для учетных записей API SQL, чтобы принять ключ секции, кортежи идентификаторов документов для удаления. Это изменение делает его функционально эквивалентным выпуску 1.4.0.
 
@@ -138,7 +141,7 @@ ms.locfileid: "72900188"
 
 * Добавлена поддержка операции BulkImport и BulkUpdate для учетных записей API Azure Cosmos DB SQL.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о библиотеке Java для неполного выполнителя см. в следующей статье:
 

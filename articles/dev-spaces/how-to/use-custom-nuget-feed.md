@@ -1,8 +1,6 @@
 ---
 title: Как использовать пользовательский веб-канал NuGet в Azure Dev Spaces
-titleSuffix: Azure Dev Spaces
 services: azure-dev-spaces
-ms.service: azure-dev-spaces
 author: zr-msft
 ms.author: zarhoads
 ms.date: 07/17/2019
@@ -10,12 +8,12 @@ ms.topic: conceptual
 description: Использование настраиваемого веб-канала NuGet для предоставления доступа и использования пакетов NuGet в Azure Dev Spaces.
 keywords: Docker, Kubernetes, Azure, AKS, Azure Container Service, containers
 manager: gwallace
-ms.openlocfilehash: 019335cd73e8eaf0ada6897f08c88ef2b8bbf631
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
-ms.translationtype: MT
+ms.openlocfilehash: ee14d999872f6e739321c144831d60a4ae6f9388
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73162801"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74279952"
 ---
 #  <a name="use-a-custom-nuget-feed-in-an-azure-dev-space"></a>Использование настраиваемого веб-канала NuGet в Azure Dev Spaces
 
@@ -23,7 +21,7 @@ ms.locfileid: "73162801"
 
 ## <a name="set-up-a-nuget-feed"></a>Настройка веб-канала NuGet
 
-Добавьте [ссылку на пакет](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files) для зависимости в файл `*.csproj` в узле `PackageReference`. Пример.
+Добавьте [ссылку на пакет](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files) для зависимости в файл `*.csproj` в узле `PackageReference`. Например,
 
 ```xml
 <ItemGroup>
@@ -33,7 +31,7 @@ ms.locfileid: "73162801"
 </ItemGroup>
 ```
 
-Создайте файл [NuGet. config](https://docs.microsoft.com/nuget/reference/nuget-config-file) в папке проекта и задайте разделы `packageSources` и `packageSourceCredentials` для веб-канала NuGet. В разделе `packageSources` содержится URL-адрес канала, который должен быть доступен из кластера AKS. `packageSourceCredentials` являются учетными данными для доступа к веб-каналу. Пример.
+Создайте файл [NuGet. config](https://docs.microsoft.com/nuget/reference/nuget-config-file) в папке проекта и задайте разделы `packageSources` и `packageSourceCredentials` для веб-канала NuGet. В разделе `packageSources` содержится URL-адрес канала, который должен быть доступен из кластера AKS. `packageSourceCredentials` являются учетными данными для доступа к веб-каналу. Например,
 
 ```xml
 <packageSources>
@@ -48,7 +46,7 @@ ms.locfileid: "73162801"
 </packageSourceCredentials>
 ```
 
-Обновите файлы dockerfile, чтобы скопировать файл `NuGet.Config` в образ. Пример.
+Обновите файлы dockerfile, чтобы скопировать файл `NuGet.Config` в образ. Например,
 
 ```console
 COPY ["<project folder>/NuGet.Config", "./NuGet.Config"]
@@ -71,6 +69,6 @@ ignore:
 
 При следующем запуске `azds up` или нажатии `F5` в Visual Studio Code или Visual Studio Azure Dev Spaces синхронизирует файл `NuGet.Config` использовать его для установки зависимостей пакетов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Узнайте больше о [NuGet и принципах его работы](https://docs.microsoft.com/nuget/what-is-nuget).

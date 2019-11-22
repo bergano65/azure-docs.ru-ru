@@ -1,5 +1,6 @@
 ---
-title: Анализ безопасности сети с помощью представления группы безопасности Наблюдателя за сетями (REST API) | Документация Майкрософт
+title: Анализ безопасности сети — представление группы безопасности — Azure REST API
+titleSuffix: Azure Network Watcher
 description: В этой статье вы узнаете, как проанализировать безопасность виртуальных машин, используя представление группы безопасности, с помощью PowerShell.
 services: network-watcher
 documentationcenter: na
@@ -14,19 +15,19 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: kumud
-ms.openlocfilehash: 86fff39605fa91c1b09c1547dd0efa97b8fd26cd
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f11e288c28274e08fdabe7fee02a099410611872
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64687849"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74277896"
 ---
 # <a name="analyze-your-virtual-machine-security-with-security-group-view-using-rest-api"></a>Анализ безопасности виртуальной машины с использованием представления группы безопасности в REST API
 
 > [!div class="op_single_selector"]
 > - [PowerShell](network-watcher-security-group-view-powershell.md)
 > - [Интерфейс командной строки Azure](network-watcher-security-group-view-cli.md)
-> - [REST API](network-watcher-security-group-view-rest.md)
+> - [ИНТЕРФЕЙС REST API](network-watcher-security-group-view-rest.md)
 
 Представление группы безопасности возвращает настроенные и действующие правила сетевой безопасности, применяемые к виртуальной машине. Эта возможность полезна для аудита и диагностики групп безопасности сети и настроенных на виртуальной машине правил, позволяющих обеспечить разрешение или отклонение трафика соответствующим образом. В этой статье мы покажем, как получить эффективные правила безопасности и применить их к виртуальной машине с помощью REST API.
 
@@ -35,9 +36,9 @@ ms.locfileid: "64687849"
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-В этом сценарии вы вызовите REST API Наблюдателя за сетями, чтобы получить представление группы безопасности для виртуальной машины. Чтобы вызвать REST API при помощи командлетов PowerShell, вам потребуется ARMClient. Пакет ARMClient можно скачать на сайте [Chocolatey](https://chocolatey.org/packages/ARMClient).
+В этом сценарии вы вызовите REST API Наблюдателя за сетями, чтобы получить представление группы безопасности для виртуальной машины. Чтобы вызвать REST API при помощи PowerShell, потребуется ARMClient. Пакет ARMClient можно скачать на сайте [Chocolatey](https://chocolatey.org/packages/ARMClient).
 
-В этом сценарии предполагается, что вы создали Наблюдатель за сетями в соответствии с инструкциями в статье [Create a Network Watcher](network-watcher-create.md) (Создание Наблюдателя за сетями). Предполагается также, что у вас имеется группа ресурсов с допустимой виртуальной машиной.
+В этом сценарии предполагается, что вы создали Наблюдатель за сетями в соответствии с инструкциями в статье [Create an Azure Network Watcher instance](network-watcher-create.md) (Наблюдатель за сетями: создание экземпляра службы). Предполагается также, что у вас есть группа ресурсов с допустимой виртуальной машиной.
 
 ## <a name="scenario"></a>Сценарий
 
@@ -49,12 +50,12 @@ ms.locfileid: "64687849"
 armclient login
 ```
 
-## <a name="retrieve-a-virtual-machine"></a>Получение виртуальной машины
+## <a name="retrieve-a-virtual-machine"></a>получите виртуальную машину;
 
 Чтобы получить сведения о виртуальной машине, выполните приведенный ниже скрипт, указав в нем следующие переменные:
 
-- **subscriptionId** -идентификатор подписки также можно получить с помощью **Get AzSubscription** командлета.
-- **resourceGroupName** — имя группы ресурсов, в которой содержатся виртуальные машины.
+- **SubscriptionId** — идентификатор подписки можно также получить с помощью командлета **Get-азсубскриптион** .
+- **resourceGroupName** — имя группы ресурсов, в которой содержатся виртуальные машины.
 
 ```powershell
 $subscriptionId = '<subscription id>'
@@ -93,7 +94,7 @@ pute/virtualMachines/{vmName}/extensions/CustomScriptExtension"
 }
 ```
 
-## <a name="get-security-group-view-for-virtual-machine"></a>Получение представления группы безопасности для виртуальной машины
+## <a name="get-security-group-view-for-virtual-machine"></a>получить представление группы безопасности для виртуальной машины;
 
 Приведенный ниже пример запрашивает представление группы безопасности целевой виртуальной машины. Полученный после выполнения результат можно использовать, чтобы сравнить правила и параметры безопасности, определенные источником. Это позволит оценить изменения конфигурации.
 
@@ -182,7 +183,7 @@ armclient post "https://management.azure.com/subscriptions/${subscriptionId}/Res
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Сведения об автоматизации проверки групп безопасности сети см. в статье [Auditing Network Security Groups (NSG) with Network Watcher](network-watcher-security-group-view-powershell.md) (Выполнение аудита групп безопасности сети с помощью Наблюдателя за сетями).
 

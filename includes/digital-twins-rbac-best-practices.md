@@ -7,14 +7,14 @@ author: alinamstanciu
 manager: bertvanhoof
 ms.service: digital-twins
 ms.topic: include
-ms.date: 09/30/2019
+ms.date: 11/20/2019
 ms.custom: include file
-ms.openlocfilehash: d25f6f0d787b7343b93025ff2dd2bd5bf4f0f6d8
-ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
+ms.openlocfilehash: e22ca39536e8e5d216d786c9d3c473f13431859f
+ms.sourcegitcommit: 8a2949267c913b0e332ff8675bcdfc049029b64b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71948944"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74307206"
 ---
 Управление доступом на основе ролей — это стратегия обеспечения безопасности на основе наследования для управления доступом, разрешениями и ролями. Дочерние роли наследуют разрешения от родительских. Разрешения также можно назначить без наследования от родительской роли и для настройки роли по мере необходимости.
 

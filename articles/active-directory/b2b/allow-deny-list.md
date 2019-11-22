@@ -1,5 +1,5 @@
 ---
-title: Разрешение или запрет приглашений для конкретных организаций — Azure Active Directory | Документация Майкрософт
+title: Разрешение или запрет приглашений для конкретных организаций — Azure AD
 description: Эта статья содержит сведения о том, как администратор может настроить список разрешенных и запрещенных для предоставления или отзыва приглашений пользователям B2B из определенных доменов с помощью портала Azure или PowerShell.
 services: active-directory
 ms.service: active-directory
@@ -12,12 +12,12 @@ manager: celestedg
 ms.reviewer: sasubram
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2cd0cc6b2343a84287bd2ffdfd9df8d832f17fc8
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 8b5100c4406cfd4a8395dfa177dc3cd5e911decb
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73474163"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74273428"
 ---
 # <a name="allow-or-block-invitations-to-b2b-users-from-specific-organizations"></a>Предоставление или отзыв приглашений пользователям B2B из отдельных организаций
 
@@ -45,7 +45,7 @@ ms.locfileid: "73474163"
 2. Выберите **Azure Active Directory** > **Пользователи** > **Параметры пользователей**.
 3. В разделе **Внешние пользователи** выберите **Manage external collaboration settings** (Управление параметрами внешних партнеров).
 4. В разделе **Collaboration restrictions** (Ограничения сотрудничества) выберите **Deny invitations to the specified domains** (Запретить отправлять приглашения указанным доменам).
-5. В разделе **Целевые домены** введите имя одного из доменов, который следует заблокировать. Если нужно заблокировать несколько доменов, вводите каждый из них в новой строке. Например:
+5. В разделе **Целевые домены** введите имя одного из доменов, который следует заблокировать. Если нужно заблокировать несколько доменов, вводите каждый из них в новой строке. Например,
 
    ![Отображение параметра запрета приглашений и добавленных доменов](./media/allow-deny-list/DenyListSettings.png)
  
@@ -66,7 +66,7 @@ ms.locfileid: "73474163"
 2. Выберите **Azure Active Directory** > **Пользователи** > **Параметры пользователей**.
 3. В разделе **Внешние пользователи** выберите **Manage external collaboration settings** (Управление параметрами внешних партнеров).
 4. В разделе **Ограничения взаимодействия** выберите **Разрешить отправку приглашений только в указанные домены (максимальное ограничение)** .
-5. В разделе **Целевые домены** введите имя одного из доменов, который следует разрешить. Если нужно заблокировать несколько доменов, вводите каждый из них в новой строке. Например:
+5. В разделе **Целевые домены** введите имя одного из доменов, который следует разрешить. Если нужно заблокировать несколько доменов, вводите каждый из них в новой строке. Например,
 
    ![Отображение параметра разрешения приглашений и добавленных доменов](./media/allow-deny-list/AllowListSettings.png)
  
@@ -140,25 +140,25 @@ New-AzureADPolicy -Definition $policyValue -DisplayName B2BManagementPolicy -Typ
 New-AzureADPolicy -Definition @("{`"B2BManagementPolicy`":{`"InvitationsAllowedAndBlockedDomainsPolicy`":{`"AllowedDomains`": [],`"BlockedDomains`": [`"live.com`"]}}}") -DisplayName B2BManagementPolicy -Type B2BManagementPolicy -IsOrganizationDefault $true 
 ```
 
-Чтобы настроить политику разрешенных или запрещенных, выполните командлет [Set-AzureADPolicy](https://docs.microsoft.com/powershell/module/azuread/set-azureadpolicy?view=azureadps-2.0-preview). Например:
+Чтобы настроить политику разрешенных или запрещенных, выполните командлет [Set-AzureADPolicy](https://docs.microsoft.com/powershell/module/azuread/set-azureadpolicy?view=azureadps-2.0-preview). Например,
 
 ```powershell   
 Set-AzureADPolicy -Definition $policyValue -Id $currentpolicy.Id 
 ```
 
-Чтобы получить политику, выполните командлет [Get-AzureADPolicy](https://docs.microsoft.com/powershell/module/azuread/get-azureadpolicy?view=azureadps-2.0-preview). Например:
+Чтобы получить политику, выполните командлет [Get-AzureADPolicy](https://docs.microsoft.com/powershell/module/azuread/get-azureadpolicy?view=azureadps-2.0-preview). Например,
 
 ```powershell
 $currentpolicy = Get-AzureADPolicy | ?{$_.Type -eq 'B2BManagementPolicy'} | select -First 1 
 ```
 
-Чтобы удалить политику, выполните командлет [Remove-AzureADPolicy](https://docs.microsoft.com/powershell/module/azuread/remove-azureadpolicy?view=azureadps-2.0-preview). Например:
+Чтобы удалить политику, выполните командлет [Remove-AzureADPolicy](https://docs.microsoft.com/powershell/module/azuread/remove-azureadpolicy?view=azureadps-2.0-preview). Например,
 
 ```powershell
 Remove-AzureADPolicy -Id $currentpolicy.Id 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Общие сведения об Azure AD B2B см. в статье [Что такое служба совместной работы Azure AD B2B](what-is-b2b.md).
 - Сведения об условном доступе и службе совместной работы B2B см. в разделе [Условный доступ для пользователей службы совместной работы B2B](conditional-access.md).

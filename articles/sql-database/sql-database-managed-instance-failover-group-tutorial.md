@@ -12,12 +12,12 @@ ms.author: mathoma
 ms.reviewer: sashan, carlrab
 manager: jroth
 ms.date: 08/27/2019
-ms.openlocfilehash: 85d2e58d35ef233fda7c724f85152fc74bd11189
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 939606412c55ddad29801776c2385b406dc93a33
+ms.sourcegitcommit: e50a39eb97a0b52ce35fd7b1cf16c7a9091d5a2a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73826837"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74286762"
 ---
 # <a name="tutorial-add-a-sql-database-managed-instance-to-a-failover-group"></a>Учебник. Добавление управляемого экземпляра базы данных SQL в группу отработки отказа
 
@@ -33,7 +33,7 @@ ms.locfileid: "73826837"
   > - Создание управляемого экземпляра может занять значительное время. В результате для выполнения этого руководства может потребоваться несколько часов. Дополнительные сведения о времени подготовки см. в разделе [операции управления управляемыми экземплярами](sql-database-managed-instance.md#managed-instance-management-operations). 
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 # <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
 В рамках этого руководства вам потребуются: 
@@ -387,17 +387,17 @@ ms.locfileid: "73826837"
 | [New-AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork) | Создает виртуальную сеть.  |
 | [Add-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/add-azvirtualnetworksubnetconfig) | Добавляет конфигурацию подсети в виртуальную сеть. | 
 | [Get-AzVirtualNetwork](/powershell/module/az.network/get-azvirtualnetwork) | Получает виртуальную сеть в группе ресурсов. | 
-| [Get-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/get-azvirtualnetworksubnetconfig) | Возвращает подсеть в виртуальной сети. | 
+| [Get-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/get-azvirtualnetworksubnetconfig) | Получает подсеть в виртуальной сети. | 
 | [New-AzNetworkSecurityGroup](/powershell/module/az.network/new-aznetworksecuritygroup) | Создает группу безопасности сети. | 
-| [New-AzRouteTable](/powershell/module/az.network/new-azroutetable) | Создает таблицу маршрутов. |
+| [New-AzRouteTable](/powershell/module/az.network/new-azroutetable) | Создает таблицу маршрутизации. |
 | [Set-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/set-azvirtualnetworksubnetconfig) | Обновляет конфигурацию подсети для виртуальной сети.  |
 | [Set-AzVirtualNetwork](/powershell/module/az.network/set-azvirtualnetwork) | Обновляет виртуальную сеть.  |
 | [Get-AzNetworkSecurityGroup](/powershell/module/az.network/get-aznetworksecuritygroup) | Возвращает группу безопасности сети. |
 | [Add-AzNetworkSecurityRuleConfig](/powershell/module/az.network/add-aznetworksecurityruleconfig)| Добавляет в группу безопасности сети конфигурацию правила безопасности сети. |
 | [Set-AzNetworkSecurityGroup](/powershell/module/az.network/set-aznetworksecuritygroup) | Обновляет группу безопасности сети.  | 
-| [Add-Азраутеконфиг](/powershell/module/az.network/add-azrouteconfig) | Добавляет маршрут к таблице маршрутов. |
-| [Set-AzRouteTable](/powershell/module/az.network/set-azroutetable) | Обновляет таблицу маршрутов.  |
-| [New-AzSqlInstance](/powershell/module/az.sql/new-azsqlinstance) | Создает управляемый экземпляр базы данных SQL Azure.  |
+| [Add-AzRouteConfig](/powershell/module/az.network/add-azrouteconfig) | Добавляет маршрут в таблицу маршрутизации. |
+| [Set-AzRouteTable](/powershell/module/az.network/set-azroutetable) | Обновляет таблицу маршрутизации.  |
+| [New-AzSqlInstance](/powershell/module/az.sql/new-azsqlinstance) | Создает управляемый экземпляр Базы данных SQL Azure.  |
 
 ---
 
@@ -713,17 +713,17 @@ ms.locfileid: "73826837"
 | [New-AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork) | Создает виртуальную сеть.  |
 | [Add-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/add-azvirtualnetworksubnetconfig) | Добавляет конфигурацию подсети в виртуальную сеть. | 
 | [Get-AzVirtualNetwork](/powershell/module/az.network/get-azvirtualnetwork) | Получает виртуальную сеть в группе ресурсов. | 
-| [Get-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/get-azvirtualnetworksubnetconfig) | Возвращает подсеть в виртуальной сети. | 
+| [Get-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/get-azvirtualnetworksubnetconfig) | Получает подсеть в виртуальной сети. | 
 | [New-AzNetworkSecurityGroup](/powershell/module/az.network/new-aznetworksecuritygroup) | Создает группу безопасности сети. | 
-| [New-AzRouteTable](/powershell/module/az.network/new-azroutetable) | Создает таблицу маршрутов. |
+| [New-AzRouteTable](/powershell/module/az.network/new-azroutetable) | Создает таблицу маршрутизации. |
 | [Set-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/set-azvirtualnetworksubnetconfig) | Обновляет конфигурацию подсети для виртуальной сети.  |
 | [Set-AzVirtualNetwork](/powershell/module/az.network/set-azvirtualnetwork) | Обновляет виртуальную сеть.  |
 | [Get-AzNetworkSecurityGroup](/powershell/module/az.network/get-aznetworksecuritygroup) | Возвращает группу безопасности сети. |
 | [Add-AzNetworkSecurityRuleConfig](/powershell/module/az.network/add-aznetworksecurityruleconfig)| Добавляет в группу безопасности сети конфигурацию правила безопасности сети. |
 | [Set-AzNetworkSecurityGroup](/powershell/module/az.network/set-aznetworksecuritygroup) | Обновляет группу безопасности сети.  | 
-| [Add-Азраутеконфиг](/powershell/module/az.network/add-azrouteconfig) | Добавляет маршрут к таблице маршрутов. |
-| [Set-AzRouteTable](/powershell/module/az.network/set-azroutetable) | Обновляет таблицу маршрутов.  |
-| [New-AzSqlInstance](/powershell/module/az.sql/new-azsqlinstance) | Создает управляемый экземпляр базы данных SQL Azure.  |
+| [Add-AzRouteConfig](/powershell/module/az.network/add-azrouteconfig) | Добавляет маршрут в таблицу маршрутизации. |
+| [Set-AzRouteTable](/powershell/module/az.network/set-azroutetable) | Обновляет таблицу маршрутизации.  |
+| [New-AzSqlInstance](/powershell/module/az.sql/new-azsqlinstance) | Создает управляемый экземпляр Базы данных SQL Azure.  |
 
 ---
 
@@ -757,7 +757,7 @@ ms.locfileid: "73826837"
     | **Тип шлюза** | Выберите **VPN**. |
     | **Тип VPN** | Выбор **на основе маршрута** |
     | **SKU**| Оставьте значение по умолчанию `VpnGw1`. |
-    | **Расположение**| Расположение, в котором находится основной управляемый экземпляр и первичная виртуальная сеть.   |
+    | **Местоположение.**| Расположение, в котором находится основной управляемый экземпляр и первичная виртуальная сеть.   |
     | **Виртуальная сеть**| Выберите виртуальную сеть, созданную в разделе 2, например `vnet-sql-mi-primary`. |
     | **Общедоступный IP-адрес**| Выберите **Создать**. |
     | **Имя общедоступного IP-адреса**| Введите имя IP-адреса, например `primary-gateway-IP`. |
@@ -812,10 +812,10 @@ ms.locfileid: "73826837"
 | [Get-AzVirtualNetwork](/powershell/module/az.network/get-azvirtualnetwork) | Получает виртуальную сеть в группе ресурсов. |
 | [Add-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/add-azvirtualnetworksubnetconfig) | Добавляет конфигурацию подсети в виртуальную сеть. | 
 | [Set-AzVirtualNetwork](/powershell/module/az.network/set-azvirtualnetwork) | Обновляет виртуальную сеть.  |
-| [Get-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/get-azvirtualnetworksubnetconfig) | Возвращает подсеть в виртуальной сети. |
+| [Get-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/get-azvirtualnetworksubnetconfig) | Получает подсеть в виртуальной сети. |
 | [New-AzPublicIpAddress](/powershell/module/az.network/new-azpublicipaddress) | Создает общедоступный IP-адрес.  | 
 | [New-AzVirtualNetworkGatewayIpConfig](/powershell/module/az.network/new-azvirtualnetworkgatewayipconfig) | Создает IP-конфигурацию для шлюза виртуальной сети. |
-| [New-AzVirtualNetworkGateway](/powershell/module/az.network/new-azvirtualnetworkgateway) | Создает шлюз виртуальной сети. |
+| [New-AzVirtualNetworkGateway](/powershell/module/az.network/new-azvirtualnetworkgateway) | Создание шлюза виртуальной сети |
 
 
 ---
@@ -839,7 +839,7 @@ ms.locfileid: "73826837"
    | **Тип шлюза** | Выберите **VPN**. |
    | **Тип VPN** | Выбор **на основе маршрута** |
    | **SKU**| Оставьте значение по умолчанию `VpnGw1`. |
-   | **Расположение**| Расположение, где находится дополнительный управляемый экземпляр и вторичная виртуальная сеть.   |
+   | **Местоположение.**| Расположение, где находится дополнительный управляемый экземпляр и вторичная виртуальная сеть.   |
    | **Виртуальная сеть**| Выберите виртуальную сеть, созданную в разделе 2, например `vnet-sql-mi-secondary`. |
    | **Общедоступный IP-адрес**| Выберите **Создать**. |
    | **Имя общедоступного IP-адреса**| Введите имя IP-адреса, например `secondary-gateway-IP`. |
@@ -893,10 +893,10 @@ ms.locfileid: "73826837"
 | [Get-AzVirtualNetwork](/powershell/module/az.network/get-azvirtualnetwork) | Получает виртуальную сеть в группе ресурсов. |
 | [Add-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/add-azvirtualnetworksubnetconfig) | Добавляет конфигурацию подсети в виртуальную сеть. | 
 | [Set-AzVirtualNetwork](/powershell/module/az.network/set-azvirtualnetwork) | Обновляет виртуальную сеть.  |
-| [Get-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/get-azvirtualnetworksubnetconfig) | Возвращает подсеть в виртуальной сети. |
+| [Get-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/get-azvirtualnetworksubnetconfig) | Получает подсеть в виртуальной сети. |
 | [New-AzPublicIpAddress](/powershell/module/az.network/new-azpublicipaddress) | Создает общедоступный IP-адрес.  | 
 | [New-AzVirtualNetworkGatewayIpConfig](/powershell/module/az.network/new-azvirtualnetworkgatewayipconfig) | Создает IP-конфигурацию для шлюза виртуальной сети. |
-| [New-AzVirtualNetworkGateway](/powershell/module/az.network/new-azvirtualnetworkgateway) | Создает шлюз виртуальной сети. |
+| [New-AzVirtualNetworkGateway](/powershell/module/az.network/new-azvirtualnetworkgateway) | Создание шлюза виртуальной сети |
 
 ---
 
@@ -997,7 +997,7 @@ ms.locfileid: "73826837"
 
 | Команда | Примечания |
 |---|---|
-| [New-Азсклдатабасеинстанцефаиловерграуп](/powershell/module/az.sql/new-azsqldatabaseinstancefailovergroup)| Создает новую группу отработки отказа управляемого экземпляра базы данных SQL Azure.  |
+| [New-AzSqlDatabaseInstanceFailoverGroup](/powershell/module/az.sql/new-azsqldatabaseinstancefailovergroup)| Создает новую группу отработки отказа управляемого экземпляра Базы данных SQL Azure.  |
 
 
 ---
@@ -1063,8 +1063,8 @@ ms.locfileid: "73826837"
 
 | Команда | Примечания |
 |---|---|
-| [Get-Азсклдатабасеинстанцефаиловерграуп](/powershell/module/az.sql/get-azsqldatabaseinstancefailovergroup) | Возвращает или перечисляет группы отработки отказа управляемого экземпляра.| 
-| [Switch-Азсклдатабасеинстанцефаиловерграуп](/powershell/module/az.sql/switch-azsqldatabaseinstancefailovergroup) | Выполняет отработку отказа для группы отработки отказа управляемого экземпляра. | 
+| [Get-AzSqlDatabaseInstanceFailoverGroup](/powershell/module/az.sql/get-azsqldatabaseinstancefailovergroup) | Возвращает или перечисляет группы отработки отказа управляемого экземпляра.| 
+| [Switch-AzSqlDatabaseInstanceFailoverGroup](/powershell/module/az.sql/switch-azsqldatabaseinstancefailovergroup) | Выполняет отработку отказа для группы отработки отказа управляемого экземпляра. | 
 
 ---
 
@@ -1075,14 +1075,14 @@ ms.locfileid: "73826837"
 
 # <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
 1. Перейдите к группе ресурсов в [портал Azure](https://portal.azure.com). 
-1. Выберите управляемый экземпляр и нажмите кнопку **Удалить**. В текстовом поле введите `yes`, чтобы подтвердить удаление ресурса, а затем выберите **Удалить**. Этот процесс может занять некоторое время в фоновом режиме, и пока он не будет завершен, вы не сможете удалить *виртуальный кластер* или другие зависимые ресурсы. Проследите за удалением на вкладке действие, чтобы подтвердить удаление управляемого экземпляра. 
+1. Выберите управляемые экземпляры, а затем щелкните **Удалить**. В текстовом поле введите `yes`, чтобы подтвердить удаление ресурса, а затем выберите **Удалить**. Этот процесс может занять некоторое время в фоновом режиме, и пока он не будет завершен, вы не сможете удалить *виртуальный кластер* или другие зависимые ресурсы. Проследите за удалением на вкладке действие, чтобы подтвердить удаление управляемого экземпляра. 
 1. После удаления управляемого экземпляра удалите *виртуальный кластер* , выбрав его в группе ресурсов, а затем нажмите кнопку **Удалить**. В текстовом поле введите `yes`, чтобы подтвердить удаление ресурса, а затем выберите **Удалить**. 
 1. Удалите все оставшиеся ресурсы. В текстовом поле введите `yes`, чтобы подтвердить удаление ресурса, а затем выберите **Удалить**. 
 1. Удалите группу ресурсов, выбрав **Удалить группу ресурсов**, введя имя группы ресурсов `myResourceGroup`и выбрав **Удалить**. 
 
 # <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
 
-Группу ресурсов необходимо будет удалить дважды. При первом удалении группы ресурсов будет удален управляемый экземпляр и виртуальные кластеры, но после этого будет выдаваться сообщение об ошибке `Remove-AzResourceGroup : Long running operation failed with status 'Conflict'.`. Выполните команду Remove-Азресаурцеграуп еще раз, чтобы удалить все остаточные ресурсы, а также группу ресурсов.
+Группу ресурсов необходимо будет удалить дважды. При первом удалении группы ресурсов будет удален управляемый экземпляр и виртуальные кластеры, но после этого будет выдаваться сообщение об ошибке `Remove-AzResourceGroup : Long running operation failed with status 'Conflict'.`. Выполните команду Remove-AzResourceGroup еще раз, чтобы удалить все остаточные ресурсы, а также группу ресурсов.
 
 ```powershell-interactive
 Remove-AzResourceGroup -ResourceGroupName $resourceGroupName
@@ -1112,25 +1112,25 @@ Write-host "Removing residual resources and resouce group..."
 | [New-AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork) | Создает виртуальную сеть.  |
 | [Add-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/add-azvirtualnetworksubnetconfig) | Добавляет конфигурацию подсети в виртуальную сеть. | 
 | [Get-AzVirtualNetwork](/powershell/module/az.network/get-azvirtualnetwork) | Получает виртуальную сеть в группе ресурсов. | 
-| [Get-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/get-azvirtualnetworksubnetconfig) | Возвращает подсеть в виртуальной сети. | 
+| [Get-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/get-azvirtualnetworksubnetconfig) | Получает подсеть в виртуальной сети. | 
 | [New-AzNetworkSecurityGroup](/powershell/module/az.network/new-aznetworksecuritygroup) | Создает группу безопасности сети. | 
-| [New-AzRouteTable](/powershell/module/az.network/new-azroutetable) | Создает таблицу маршрутов. |
+| [New-AzRouteTable](/powershell/module/az.network/new-azroutetable) | Создает таблицу маршрутизации. |
 | [Set-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/set-azvirtualnetworksubnetconfig) | Обновляет конфигурацию подсети для виртуальной сети.  |
 | [Set-AzVirtualNetwork](/powershell/module/az.network/set-azvirtualnetwork) | Обновляет виртуальную сеть.  |
 | [Get-AzNetworkSecurityGroup](/powershell/module/az.network/get-aznetworksecuritygroup) | Возвращает группу безопасности сети. |
 | [Add-AzNetworkSecurityRuleConfig](/powershell/module/az.network/add-aznetworksecurityruleconfig)| Добавляет в группу безопасности сети конфигурацию правила безопасности сети. |
 | [Set-AzNetworkSecurityGroup](/powershell/module/az.network/set-aznetworksecuritygroup) | Обновляет группу безопасности сети.  | 
-| [Add-Азраутеконфиг](/powershell/module/az.network/add-azrouteconfig) | Добавляет маршрут к таблице маршрутов. |
-| [Set-AzRouteTable](/powershell/module/az.network/set-azroutetable) | Обновляет таблицу маршрутов.  |
-| [New-AzSqlInstance](/powershell/module/az.sql/new-azsqlinstance) | Создает управляемый экземпляр базы данных SQL Azure.  |
-| [Get-Азсклинстанце](/powershell/module/az.sql/get-azsqlinstance)| Возвращает сведения об управляемом экземпляре базы данных SQL Azure. |
+| [Add-AzRouteConfig](/powershell/module/az.network/add-azrouteconfig) | Добавляет маршрут в таблицу маршрутизации. |
+| [Set-AzRouteTable](/powershell/module/az.network/set-azroutetable) | Обновляет таблицу маршрутизации.  |
+| [New-AzSqlInstance](/powershell/module/az.sql/new-azsqlinstance) | Создает управляемый экземпляр Базы данных SQL Azure.  |
+| [Get-AzSqlInstance](/powershell/module/az.sql/get-azsqlinstance)| Возвращает сведения об Управляемом экземпляре Базы данных SQL Azure |
 | [New-AzPublicIpAddress](/powershell/module/az.network/new-azpublicipaddress) | Создает общедоступный IP-адрес.  | 
 | [New-AzVirtualNetworkGatewayIpConfig](/powershell/module/az.network/new-azvirtualnetworkgatewayipconfig) | Создает IP-конфигурацию для шлюза виртуальной сети. |
-| [New-AzVirtualNetworkGateway](/powershell/module/az.network/new-azvirtualnetworkgateway) | Создает шлюз виртуальной сети. |
+| [New-AzVirtualNetworkGateway](/powershell/module/az.network/new-azvirtualnetworkgateway) | Создание шлюза виртуальной сети |
 | [New-AzVirtualNetworkGatewayConnection](/powershell/module/az.network/new-azvirtualnetworkgatewayconnection) | Создает подключение между двумя шлюзами виртуальной сети.   |
-| [New-Азсклдатабасеинстанцефаиловерграуп](/powershell/module/az.sql/new-azsqldatabaseinstancefailovergroup)| Создает новую группу отработки отказа управляемого экземпляра базы данных SQL Azure.  |
-| [Get-Азсклдатабасеинстанцефаиловерграуп](/powershell/module/az.sql/get-azsqldatabaseinstancefailovergroup) | Возвращает или перечисляет группы отработки отказа управляемого экземпляра.| 
-| [Switch-Азсклдатабасеинстанцефаиловерграуп](/powershell/module/az.sql/switch-azsqldatabaseinstancefailovergroup) | Выполняет отработку отказа для группы отработки отказа управляемого экземпляра. | 
+| [New-AzSqlDatabaseInstanceFailoverGroup](/powershell/module/az.sql/new-azsqldatabaseinstancefailovergroup)| Создает новую группу отработки отказа управляемого экземпляра Базы данных SQL Azure.  |
+| [Get-AzSqlDatabaseInstanceFailoverGroup](/powershell/module/az.sql/get-azsqldatabaseinstancefailovergroup) | Возвращает или перечисляет группы отработки отказа управляемого экземпляра.| 
+| [Switch-AzSqlDatabaseInstanceFailoverGroup](/powershell/module/az.sql/switch-azsqldatabaseinstancefailovergroup) | Выполняет отработку отказа для группы отработки отказа управляемого экземпляра. | 
 | [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup) | Удаляет группу ресурсов. | 
 
 # <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal) 
@@ -1139,7 +1139,7 @@ Write-host "Removing residual resources and resouce group..."
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 В этом руководстве вы настроили группу отработки отказа между двумя управляемыми экземплярами. Вы научились выполнять следующие задачи:
 

@@ -1,21 +1,19 @@
 ---
 title: Непрерывность бизнес-процессов и аварийное восстановление в Azure Dev Spaces
-titleSuffix: Azure Dev Spaces
 services: azure-dev-spaces
-ms.service: azure-dev-spaces
 author: lisaguthrie
 ms.author: lcozzens
 ms.date: 01/28/2019
 ms.topic: conceptual
-description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
-keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s '
+description: Быстрая разработка Kubernetes с использованием контейнеров и микрослужб в Azure
+keywords: 'Docker, Kubernetes, Azure, служба контейнеров Azure, служба Azure Kubernetes, контейнеры, Helm, сетка службы, сетка службы маршрутизации, kubectl, k8s '
 manager: gwallace
-ms.openlocfilehash: 2da92b4fcd98024ada8d852d65e08fe8c70e3884
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
-ms.translationtype: MT
+ms.openlocfilehash: f2c2767d23a99644ee4ecb4e1040162c58a72b1a
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67704057"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74280091"
 ---
 # <a name="business-continuity-and-disaster-recovery-in-azure-dev-spaces"></a>Непрерывность бизнес-процессов и аварийное восстановление в Azure Dev Spaces
 

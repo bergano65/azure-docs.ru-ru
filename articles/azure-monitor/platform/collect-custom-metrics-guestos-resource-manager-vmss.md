@@ -1,5 +1,5 @@
 ---
-title: Отправка метрик гостевой ОС в хранилище метрик Azure Monitor с помощью шаблона Azure Resource Manager для масштабируемого набора виртуальных машин Windows
+title: Получение метрик масштабируемого набора Windows в Azure Monitor с помощью шаблона
 description: Отправка метрик гостевой ОС в хранилище метрик Azure Monitor с помощью шаблона Resource Manager для масштабируемого набора виртуальных машин Windows
 author: anirudhcavale
 services: azure-monitor
@@ -8,24 +8,24 @@ ms.topic: conceptual
 ms.date: 09/09/2019
 ms.author: ancav
 ms.subservice: metrics
-ms.openlocfilehash: 8ee8c0c9d9724706f9b46013eba14e878832fd02
-ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
+ms.openlocfilehash: 691b2ae7e497c9292975083e3687d9240ce6f3e6
+ms.sourcegitcommit: e50a39eb97a0b52ce35fd7b1cf16c7a9091d5a2a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70844973"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74286137"
 ---
 # <a name="send-guest-os-metrics-to-the-azure-monitor-metric-store-by-using-an-azure-resource-manager-template-for-a-windows-virtual-machine-scale-set"></a>Отправка метрик гостевой ОС в хранилище метрик Azure Monitor с помощью шаблона Azure Resource Manager для масштабируемого набора виртуальных машин Windows
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-[Расширение Диагностики Azure для Windows](diagnostics-extension-overview.md) для Azure Monitor позволяет собирать метрики и журналы из гостевой операционной системы (гостевой ОС), работающей в составе виртуальной машины, облачной службы или кластера Azure Service Fabric. Расширение может отправлять телеметрию во множество различных расположений, перечисленных в предыдущей статье.  
+[Расширение Диагностики Azure для Windows](diagnostics-extension-overview.md) для Azure Monitor позволяет собирать метрики и журналы из гостевой операционной системы (гостевой ОС), работающей в составе виртуальной машины, облачной службы или кластера Azure Service Fabric. Расширение может отправлять телеметрию во множество различных расположений, перечисленных в присоединенной ранее статье.  
 
 В этой статье описывается процесс отправки метрик производительности гостевой ОС для масштабируемого набора виртуальных машин под управлением Windows в хранилище данных Azure Monitor. Начиная с Диагностики Azure для Windows версии 1.11 метрики можно записывать напрямую в хранилище метрик Azure Monitor, где уже собраны стандартные метрики платформы. Таким образом вы можете получить доступ к тем же действиям, которые доступны для метрик платформы. К этим действиям относятся оповещения практически в реальном времени, построение диаграмм, маршрутизация, доступ из REST API и многое другое. В прошлом расширение Диагностики Azure для Windows обеспечивало запись в службу хранилища Azure, но не в хранилище данных Azure Monitor.  
 
 Если вы не знакомы с шаблонами Resource Manager, изучите сведения о [развертывании шаблонов](../../azure-resource-manager/resource-group-overview.md), их структуре и синтаксисе.  
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 - Подписку необходимо зарегистрировать в [Microsoft.Insights](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services). 
 
@@ -292,7 +292,7 @@ ms.locfileid: "70844973"
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 - Дополнительные сведения о настраиваемых метриках см. в [этой статье](metrics-custom-overview.md).
 
 

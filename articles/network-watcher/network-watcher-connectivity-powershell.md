@@ -1,5 +1,6 @@
 ---
-title: Устранение неполадок подключений с помощью службы "Наблюдатель за сетями Azure" в PowerShell | Документация Майкрософт
+title: Устранение неполадок соединений — Azure PowerShell
+titleSuffix: Azure Network Watcher
 description: Узнайте, как использовать функцию устранения неполадок подключений службы "Наблюдатель за сетями Azure" с помощью PowerShell.
 services: network-watcher
 documentationcenter: na
@@ -13,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/11/2017
 ms.author: kumud
-ms.openlocfilehash: 82bd92de8b2cbb0da4d6d37911a6a3f71186b592
-ms.sourcegitcommit: 4f3f502447ca8ea9b932b8b7402ce557f21ebe5a
+ms.openlocfilehash: 824799254b2706c64a17921034dbde3e4f60e132
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71802047"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74276001"
 ---
 # <a name="troubleshoot-connections-with-azure-network-watcher-using-powershell"></a>Устранение неполадок подключений с помощью службы "Наблюдатель за сетями Azure" с помощью PowerShell
 
@@ -62,7 +63,7 @@ $networkWatcher = Get-AzNetworkWatcher | Where-Object -Property Location -EQ -Va
 Test-AzNetworkWatcherConnectivity -NetworkWatcher $networkWatcher -SourceId $VM1.Id -DestinationId $VM2.Id -DestinationPort 80
 ```
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 Следующий ответ взят из предыдущего примера.  В этом ответе параметр `ConnectionStatus` имеет значение **Unreachable** (Недоступно). Как видите, все отправленные пробы завершились неудачей. Попытка подключения завершилась сбоем в виртуальном модуле из-за пользовательского правила `NetworkSecurityRule` с именем **UserRule_Port80**, настроенного на блокировку входящего трафика на порту 80. Эти сведения можно использовать для анализа проблем с подключением.
 
@@ -153,7 +154,7 @@ $networkWatcher = Get-AzNetworkWatcher | Where-Object -Property Location -EQ -Va
 Test-AzNetworkWatcherConnectivity -NetworkWatcher $networkWatcher -SourceId $VM1.Id -DestinationAddress 13.107.21.200 -DestinationPort 80
 ```
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 В следующем примере состояние `ConnectionStatus` отображается как **Unreachable** (Недоступно). В блоке `Hops` в разделе `Issues` видно, что трафик заблокирован из-за `UserDefinedRoute`. 
 
@@ -217,7 +218,7 @@ $networkWatcher = Get-AzNetworkWatcher | Where-Object -Property Location -EQ -Va
 Test-AzNetworkWatcherConnectivity -NetworkWatcher $networkWatcher -SourceId $VM1.Id -DestinationAddress https://bing.com/
 ```
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 В следующем ответе видно, что параметр `ConnectionStatus` отображается со значением **Reachable** (Достижимо). Когда подключение будет установлено, отобразятся значения задержки.
 
@@ -269,7 +270,7 @@ $networkWatcher = Get-AzNetworkWatcher | Where-Object -Property Location -EQ -Va
 Test-AzNetworkWatcherConnectivity -NetworkWatcher $networkWatcher -SourceId $VM1.Id -DestinationAddress https://contosostorageexample.blob.core.windows.net/ 
 ```
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 JSON-код ниже — это пример ответа на предыдущий командлет. Так как назначение доступно, для свойства `ConnectionStatus` отображается значение **Reachable** (Доступно).  Также отображаются сведения о числе прыжков, необходимых для доступа к BLOB-объекту в хранилище, а также о задержке.
 
@@ -302,7 +303,7 @@ Hops             : [
                    ]
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Сведения о состоянии (разрешен или запрещен) входящего и исходящего трафика виртуальной машины см. в статье, посвященной [проверке потока IP-адресов](diagnose-vm-network-traffic-filtering-problem.md).
 

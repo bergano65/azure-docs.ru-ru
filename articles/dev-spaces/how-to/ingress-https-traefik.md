@@ -1,26 +1,22 @@
 ---
 title: Использование пользовательского контроллера входящих данных траефик и настройка HTTPS
-titleSuffix: Azure Dev Spaces
 services: azure-dev-spaces
-ms.service: azure-dev-spaces
-author: zr-msft
-ms.author: zarhoads
 ms.date: 08/13/2019
 ms.topic: conceptual
 description: Узнайте, как настроить Azure Dev Spaces для использования пользовательского контроллера входящих данных траефик и настройки HTTPS с помощью этого контроллера входящего трафика.
-keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
-ms.openlocfilehash: c015fe8e7108f07d66d2464c4f8b6287e8f54446
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+keywords: Docker, Kubernetes, Azure, служба контейнеров Azure, служба Azure Kubernetes, контейнеры, Helm, сетка службы, сетка службы маршрутизации, kubectl, k8s
+ms.openlocfilehash: a7f8684c8236e69c16bedf0186ed7ed17bbc8462
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73582321"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74280077"
 ---
 # <a name="use-a-custom-traefik-ingress-controller-and-configure-https"></a>Использование пользовательского контроллера входящих данных траефик и настройка HTTPS
 
 В этой статье показано, как настроить Azure Dev Spaces для использования пользовательского контроллера входящего трафика траефик. В этой статье также показано, как настроить этот настраиваемый контроллер входящего трафика для использования протокола HTTPS.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 * Подписка Azure. Если ее нет, можно создать [бесплатную учетную запись][azure-account-create].
 * [Установленный Azure CLI][az-cli].
@@ -78,7 +74,7 @@ az network dns record-set a add-record \
     --ipv4-address MY_EXTERNAL_IP
 ```
 
-В приведенном выше примере в зону DNS *MY_CUSTOM_DOMAIN* добавляется запись *A* .
+В приведенном выше примере запись *A* добавляется в зону DNS *MY_CUSTOM_DOMAIN* .
 
 В этой статье на примере [приложения Azure Dev Spaces для аренды велосипедов](https://github.com/Azure/dev-spaces/tree/master/samples/BikeSharingApp) вы изучите применение Azure Dev Spaces. Клонируйте приложение с GitHub и перейдите в его каталог:
 
@@ -87,7 +83,7 @@ git clone https://github.com/Azure/dev-spaces
 cd dev-spaces/samples/BikeSharingApp/charts
 ```
 
-Откройте [Values. YAML][values-yaml] и замените все экземпляры *< REPLACE_ME_WITH_HOST_SUFFIX >* на *траефик. MY_CUSTOM_DOMAIN* , используя домен для *MY_CUSTOM_DOMAIN*. Также замените *kubernetes.IO/Ingress.class: траефик-аздс # dev Spaces, относящийся* к *kubernetes.IO/Ingress.class: Траефик # Custom входной*вход. Ниже приведен пример обновленного файла `values.yaml`.
+Откройте [Values. YAML][values-yaml] и замените все экземпляры *< REPLACE_ME_WITH_HOST_SUFFIX >* на *траефик. MY_CUSTOM_DOMAIN* использование домена для *MY_CUSTOM_DOMAIN*. Также замените *kubernetes.IO/Ingress.class: траефик-аздс # dev Spaces, относящийся* к *kubernetes.IO/Ingress.class: Траефик # Custom входной*вход. Ниже приведен пример обновленного файла `values.yaml`.
 
 ```yaml
 # This is a YAML-formatted file.
@@ -213,13 +209,13 @@ helm upgrade traefik stable/traefik --namespace traefik --values traefik-values.
 > [!NOTE]
 > Для запуска новой версии службы траефик может потребоваться несколько минут. Ход выполнения можно проверить с помощью `kubectl get pods --namespace traefik --watch`.
 
-Перейдите к образцу приложения в дочернем пространстве *dev/azureuser1* и обратите внимание, что вы перенаправлялись на использование протокола HTTPS. Также обратите внимание, что страница загружается, но в браузере отображаются некоторые ошибки. При открытии консоли браузера отображается ошибка, связанная с HTTPS-страницей, пытающейся загрузить ресурсы HTTP. Например:
+Перейдите к образцу приложения в дочернем пространстве *dev/azureuser1* и обратите внимание, что вы перенаправлялись на использование протокола HTTPS. Также обратите внимание, что страница загружается, но в браузере отображаются некоторые ошибки. При открытии консоли браузера отображается ошибка, связанная с HTTPS-страницей, пытающейся загрузить ресурсы HTTP. Например,
 
 ```console
 Mixed Content: The page at 'https://azureuser1.s.dev.bikesharingweb.traefik.MY_CUSTOM_DOMAIN/devsignin' was loaded over HTTPS, but requested an insecure resource 'http://azureuser1.s.dev.gateway.traefik.MY_CUSTOM_DOMAIN/api/user/allUsers'. This request has been blocked; the content must be served over HTTPS.
 ```
 
-Чтобы устранить эту ошибку, обновите [бикешарингвеб/аздс. YAML][azds-yaml] , чтобы использовать *траефик* для *kubernetes.IO/Ingress.class* , и личный домен для *$ (хостсуффикс)* . Например:
+Чтобы устранить эту ошибку, обновите [бикешарингвеб/аздс. YAML][azds-yaml] , чтобы использовать *траефик* для *kubernetes.IO/Ingress.class* , и личный домен для *$ (хостсуффикс)* . Например,
 
 ```yaml
 ...
@@ -270,7 +266,7 @@ azds up
 
 Перейдите к образцу приложения в дочернем пространстве *dev/azureuser1* и обратите внимание, что вы перенаправлялись на использование протокола HTTPS без ошибок.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Узнайте, как в Azure Dev Spaces можно разрабатывать более сложные приложения в нескольких контейнерах и как упростить совместную разработку, используя разные версии и ветви кода в разных средах.
 

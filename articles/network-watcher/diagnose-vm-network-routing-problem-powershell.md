@@ -1,5 +1,6 @@
 ---
-title: Диагностика проблемы с маршрутизацией в сети виртуальной машины с помощью Azure PowerShell | Документация Майкрософт
+title: Диагностика проблемы сетевой маршрутизации виртуальной машины — Azure PowerShell
+titleSuffix: Azure Network Watcher
 description: Из этой статьи вы узнаете, как диагностировать проблему с маршрутизацией в сети виртуальной машины с помощью возможности следующего прыжка в Наблюдателе за сетями Azure.
 services: network-watcher
 documentationcenter: network-watcher
@@ -17,24 +18,24 @@ ms.workload: infrastructure
 ms.date: 04/20/2018
 ms.author: kumud
 ms.custom: ''
-ms.openlocfilehash: 08d273ce6e6ecb1b10d3c39a0954d430a3cb674a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 81e2af329661d485b2d189e9a1f70b50bd6d4b7d
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66730750"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74276114"
 ---
 # <a name="diagnose-a-virtual-machine-network-routing-problem---azure-powershell"></a>Диагностика проблем с маршрутизацией в сети виртуальной машины с помощью Azure PowerShell
 
 В этой статье вы развернете виртуальную машину и проверите доступ к IP-адресу и URL-адресу. Затем вы определите причину проблемы с подключением и найдете способ ее устранения.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать PowerShell локально, в этой статье требуется Azure PowerShell `Az` модуля. Выполните командлет `Get-Module -ListAvailable Az`, чтобы узнать установленную версию. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-Az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
+Если вы решили установить и использовать PowerShell локально, для работы с этой статьей требуется модуль Azure PowerShell `Az`. Выполните командлет `Get-Module -ListAvailable Az`, чтобы узнать установленную версию. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-Az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
 
 
 
@@ -57,7 +58,7 @@ $vM = New-AzVm `
 
 Создание виртуальной машины занимает несколько минут. Не приступайте к дальнейшим инструкциям, пока не завершится создание виртуальной машины и PowerShell не вернет выходные данные.
 
-## <a name="test-network-communication"></a>Тестирование взаимодействия по сети
+## <a name="test-network-communication"></a>Тестирование сетевой связи
 
 Чтобы проверить сетевое подключение с помощью Наблюдателя за сетями, сначала включите Наблюдатель за сетями в регионе, где размещается тестируемая виртуальная машина. Затем примените в Наблюдателе за сетями возможность следующего прыжка.
 
@@ -82,7 +83,7 @@ $networkWatcher = New-AzNetworkWatcher `
 
 ### <a name="use-next-hop"></a>Использование следующего прыжка
 
-Azure автоматически создает маршруты к пунктам назначения по умолчанию. Вы можете создать настраиваемые маршруты, которые переопределяют маршруты по умолчанию. В некоторых случаях настраиваемые маршруты могут привести к сбою связи. Чтобы протестировать маршрутизацию из виртуальной Машины, используйте [Get AzNetworkWatcherNextHop](/powershell/module/az.network/get-aznetworkwatchernexthop) команду, чтобы определить следующий прыжок маршрута, если трафик предназначен для конкретного адреса.
+Azure автоматически создает маршруты к пунктам назначения по умолчанию. Вы можете создать настраиваемые маршруты, которые переопределяют маршруты по умолчанию. В некоторых случаях настраиваемые маршруты могут привести к сбою связи. Чтобы протестировать маршрутизацию из виртуальной машины, используйте команду [Get-азнетворкватчернекссоп](/powershell/module/az.network/get-aznetworkwatchernexthop) , чтобы определить следующий прыжок маршрутизации при передаче трафика по определенному адресу.
 
 Проверьте исходящее подключение виртуальной машины по любому из IP-адресов сайта www.bing.com.
 
@@ -110,7 +111,7 @@ Get-AzNetworkWatcherNextHop `
 
 ## <a name="view-details-of-a-route"></a>Просмотр сведений о маршруте
 
-Чтобы проанализировать дальнейшую маршрутизацию, просмотрите действующие маршруты для сетевого интерфейса с помощью [Get AzEffectiveRouteTable](/powershell/module/az.network/get-azeffectiveroutetable) команды:
+Для дальнейшего анализа маршрутизации Проверьте действующие маршруты сетевого интерфейса с помощью команды [Get-азеффективераутетабле](/powershell/module/az.network/get-azeffectiveroutetable) :
 
 ```azurepowershell-interactive
 Get-AzEffectiveRouteTable `
@@ -141,7 +142,7 @@ Name State  Source  AddressPrefix           NextHopType NextHopIpAddress
 Remove-AzResourceGroup -Name myResourceGroup -Force
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 В этой статье вы создали виртуальную машину и выполнили диагностику сетевой маршрутизации из виртуальной машины. Вы узнали, что Azure создает несколько маршрутов по умолчанию и тестирует маршрутизацию в два разные пункта назначения. Дополнительные сведения см. в статье [Маршрутизация трафика в виртуальной сети](../virtual-network/virtual-networks-udr-overview.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json) и разделе [Создание маршрута](../virtual-network/manage-route-table.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json#create-a-route).
 

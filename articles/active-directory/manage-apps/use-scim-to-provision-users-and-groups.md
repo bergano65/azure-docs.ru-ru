@@ -1,5 +1,5 @@
 ---
-title: Подготовка пользователей SCIM с помощью Azure Active Directory | Документация Майкрософт
+title: Автоматизация подготовки приложений с помощью SCIM в Azure AD
 description: Узнайте, как создать конечную точку SCIM, интегрировать API SCIM с Azure Active Directory и начать автоматизировать подготовку пользователей и групп в приложениях.
 services: active-directory
 documentationcenter: ''
@@ -16,12 +16,12 @@ ms.author: mimart
 ms.reviewer: arvinh
 ms.custom: aaddev;it-pro;seohack1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d8bb9b507763c935ab244c42584120a279063954
-ms.sourcegitcommit: 8e31a82c6da2ee8dafa58ea58ca4a7dd3ceb6132
+ms.openlocfilehash: 1d4694dfa92d282e1dc098a510ac82dd9c703c1e
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74195463"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74276491"
 ---
 # <a name="scim-user-provisioning-with-azure-active-directory-azure-ad"></a>Подготовка пользователей SCIM с помощью Azure Active Directory (Azure AD)
 

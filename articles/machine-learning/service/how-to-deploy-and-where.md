@@ -11,12 +11,12 @@ author: jpe316
 ms.reviewer: larryfr
 ms.date: 09/13/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: 9d7dc724130286298af6e1d4b0babc551f3f2658
-ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
+ms.openlocfilehash: 63d2aa5c9e4ec751d9b95ba0d884e6dc17e207bb
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74123616"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74276793"
 ---
 # <a name="deploy-models-with-azure-machine-learning"></a>Развертывание моделей с помощью Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -578,6 +578,10 @@ print(profiling_results)
 ## <a name="deploy-to-target"></a>Развертывание в целевом объекте
 
 Развертывание использует конфигурацию развертывания конфигурации определения для развертывания моделей. Процесс развертывания аналогичен, независимо от целевого объекта вычислений. Развертывание в AKS немного отличается, так как необходимо предоставить ссылку на кластер AKS.
+
+### <a name="securing-deployments-with-ssl"></a>Защита развертываний с помощью SSL
+
+Дополнительные сведения о защите развертывания веб-службы см. в статье [использование SSL для защиты веб-службы](how-to-secure-web-service.md#enable).
 
 ### <a id="local"></a>Локальное развертывание
 

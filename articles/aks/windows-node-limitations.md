@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 05/31/2019
 ms.author: mlearned
-ms.openlocfilehash: 2cec24e5ea50360531e247b37369802f3ef4e336
-ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
+ms.openlocfilehash: 3a57fbb010f8a04352d09d4b6d57cf465e3e6988
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72990295"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74279157"
 ---
 # <a name="current-limitations-for-windows-server-node-pools-and-application-workloads-in-azure-kubernetes-service-aks"></a>Текущие ограничения для пулов узлов Windows Server и рабочих нагрузок приложений в службе Kubernetes Azure (AKS)
 
@@ -98,7 +98,7 @@ Azure Dev Spaces в настоящее время доступно только 
 
 Мы работаем над тем, чтобы приложить все необходимые компоненты Windows в AKS, но если у вас возникают пробелы, проект [AKS-Engine][aks-engine] с открытым кодом предоставляет простой и полностью настраиваемый способ запуска Kubernetes в Azure, включая поддержку Windows. Обязательно ознакомьтесь с нашим планом функций, поступающих в [AKSную схему][aks-roadmap].
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Чтобы приступить к работе с контейнерами Windows Server в AKS, [Создайте пул узлов под управлением Windows Server в AKS][windows-node-cli].
 
@@ -119,4 +119,4 @@ Azure Dev Spaces в настоящее время доступно только 
 [azure-outbound-traffic]: ../load-balancer/load-balancer-outbound-connections.md#defaultsnat
 [nodepool-limitations]: use-multiple-node-pools.md#limitations
 [preview-support]: support-policies.md#preview-features-or-feature-flags
-[windows-container-compat]: https://docs.microsoft.com/virtualization/windowscontainers/deploy-containers/version-compatibility#windows-server-2019-host-os-compatibility
+[windows-container-compat]: /virtualization/windowscontainers/deploy-containers/version-compatibility?tabs=windows-server-2019%2Cwindows-10-1909

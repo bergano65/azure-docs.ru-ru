@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: librown
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: acdcbef74d95fbbc4cfb49176d1f98621e746ff6
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 3ca668036a8b4a4af261ee85b8a884c22258beb4
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73474350"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74269505"
 ---
 # <a name="enable-passwordless-sign-in-with-the-microsoft-authenticator-app-preview"></a>Включение входа без пароля с помощью приложения Microsoft Authenticator (Предварительная версия)
 
@@ -29,7 +29,7 @@ ms.locfileid: "73474350"
 > [!NOTE]
 > Эта возможность наблюдается в Microsoft Authenticator приложении, начиная с марта 2017, поэтому существует вероятность того, что при включении политики для каталога пользователи могут столкнуться с этим потоком немедленно и видеть сообщение об ошибке, если они не были включены политикой. Учитывайте это и не забудьте предупредить пользователей.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 - Многофакторная идентификация Azure с Push-уведомлениями, разрешенными в качестве метода проверки 
 - Последняя версия Microsoft Authenticator на устройствах под управлением iOS версии 8.0 или более поздней версии или Android 6.0 или более поздней версии.
@@ -46,7 +46,7 @@ ms.locfileid: "73474350"
 ### <a name="enable-passwordless-phone-sign-in-authentication-methods"></a>Включить методы проверки подлинности для входа с помощью телефона без пароля
 
 1. Войдите на [портал Azure](https://portal.azure.com)
-1. Перейдите к **методам проверки подлинности** **Azure AD Security** >  > **политику метода проверки подлинности (Предварительная версия)**
+1. Найдите и выберите *Azure Active Directory*. Выбор **методов проверки Подлинности** > **безопасности** > **политики метода проверки подлинности (Предварительная версия)**
 1. В разделе **безпарольный вход с помощью телефона**выберите следующие параметры.
    1. **Включить** -да или нет
    1. **Target** — все пользователи или выбранные пользователи
@@ -97,7 +97,7 @@ ms.locfileid: "73474350"
 > [!NOTE]
 > Регистрация устройств не аналогична управлению устройствами или MDM. Он связывает только идентификатор устройства и идентификатор пользователя вместе в каталоге Azure AD.  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 [Что такое пароль?](concept-authentication-passwordless.md)
 

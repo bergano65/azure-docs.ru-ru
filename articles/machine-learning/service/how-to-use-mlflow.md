@@ -11,12 +11,12 @@ ms.reviewer: nibaccam
 ms.topic: conceptual
 ms.date: 09/23/2019
 ms.custom: seodec18
-ms.openlocfilehash: 946350af0c1a4e8140fbf7f926061aae250e9969
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: 9b6efdc75c15e9686728236f82fea8794f3782bf
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73716481"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74276641"
 ---
 # <a name="track-metrics-and-deploy-models-with-mlflow-and-azure-machine-learning-preview"></a>Мониторинг метрик и развертывание моделей с помощью Млфлов и Машинное обучение Azure (Предварительная версия)
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -55,7 +55,7 @@ ms.locfileid: "73716481"
 |Мониторинг производительности модели||✓|  |   |
 | Определение смещения данных |   | ✓ |   | ✓ |
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 * [Установите Млфлов.](https://mlflow.org/docs/latest/quickstart.html)
 * [Установка пакета sdk машинное обучение Azure](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py) на локальном компьютере. пакет SDK обеспечивает подключение для млфлов к рабочей области.
@@ -88,7 +88,7 @@ mlflow.set_tracking_uri(ws.get_mlflow_tracking_uri())
 ```
 
 >[!NOTE]
->URI отслеживания действителен до часа или меньше. Если вы перезапустите сценарий после некоторого времени простоя, используйте API get_mlflow_tracking_uri для получения нового URI.
+>URI отслеживания действителен до часа или меньше. Если вы перезапустите сценарий после некоторого времени простоя, используйте API get_mlflow_tracking_uri, чтобы получить новый универсальный код ресурса (URI).
 
 Задайте имя эксперимента Млфлов с помощью `set_experiment()` и запустите обучающий запуск с `start_run()`. Затем используйте `log_metric()`, чтобы активировать API ведения журнала Млфлов и начать запись в журнал метрик выполнения обучения.
 
@@ -238,7 +238,7 @@ ws.get_details()
 
 ### <a name="log-your-model"></a>Регистрация модели
 
-Перед развертыванием убедитесь, что модель сохранена, чтобы можно было ссылаться на нее и ее расположение для развертывания. В скрипте обучения должен быть указан код, аналогичный следующему методу [млфлов. sklearn. log _model ()](https://www.mlflow.org/docs/latest/python_api/mlflow.sklearn.html) , который сохраняет модель в заданном каталоге Outputs. 
+Перед развертыванием убедитесь, что модель сохранена, чтобы можно было ссылаться на нее и ее расположение для развертывания. В скрипте обучения должен быть указан код, аналогичный следующему методу [млфлов. sklearn. log_model ()](https://www.mlflow.org/docs/latest/python_api/mlflow.sklearn.html) , который сохраняет модель в заданном каталоге Outputs. 
 
 ```python
 # change sklearn to pytorch, tensorflow, etc. based on your experiment's framework 
@@ -303,7 +303,7 @@ aci_config = AciWebservice.deploy_configuration(cpu_cores=1,
                                                 location='eastus2')
 ```
 
-Затем разверните образ с помощью метода [deploy_from_image ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.webservice(class)?view=azure-ml-py#deploy-from-image-workspace--name--image--deployment-config-none--deployment-target-none-) пакета SDK машинное обучение Azure. 
+Затем разверните образ с помощью метода [deploy_from_image ()](/python/api/azureml-core/azureml.core.webservice.webservice(class)?view=azure-ml-py#deploy-from-image-workspace--name--image--deployment-config-none--deployment-target-none--overwrite-false-) машинное обучение Azure SDK. 
 
 ```python
 webservice = Webservice.deploy_from_image( image=azure_image, 
@@ -359,7 +359,7 @@ aks_config = AksWebservice.deploy_configuration(enable_app_insights=True)
 service_name ='aks-service'
 ```
 
-Затем разверните образ с помощью метода [deploy_from_image ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.webservice(class)?view=azure-ml-py#deploy-from-image-workspace--name--image--deployment-config-none--deployment-target-none-) пакета SDK машинное обучение Azure. 
+Затем разверните образ с помощью метода [deploy_from_image ()](/python/api/azureml-core/azureml.core.webservice.webservice(class)?view=azure-ml-py#deploy-from-image-workspace--name--image--deployment-config-none--deployment-target-none--overwrite-false-) машинное обучение Azure SDK. 
 
 ```python
 # Webservice creation using single command
@@ -393,6 +393,6 @@ aks_service.wait_for_deployment(show_output=True)
 
 [Млфлов с записными книжками машинного обучения Azure](https://aka.ms/azureml-mlflow-examples) демонстрируют и расширяют концепции, представленные в этой статье.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 * [Управляйте моделями](concept-model-management-and-deployment.md).
 * Мониторинг производственных моделей для [смещения данных](how-to-monitor-data-drift.md).

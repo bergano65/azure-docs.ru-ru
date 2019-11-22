@@ -1,20 +1,16 @@
 ---
 title: Использование Azure Dev Spaces для взаимодействия с контейнерами Windows
-titleSuffix: Azure Dev Spaces
 services: azure-dev-spaces
-ms.service: azure-dev-spaces
-author: zr-msft
-ms.author: zarhoads
 ms.date: 07/25/2019
 ms.topic: conceptual
 description: Узнайте, как запускать Azure Dev Spaces в существующем кластере с контейнерами Windows
 keywords: Azure Dev Spaces, пространства разработки, Docker, Kubernetes, Azure, AKS, служба Kubernetes Azure, контейнеры, контейнеры Windows
-ms.openlocfilehash: 90d7c8e5fc08405178ab6596b765f289b9bd716f
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
-ms.translationtype: MT
+ms.openlocfilehash: ad91d8e48a9242795d4f5d5cd165e658339ebe08
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73582773"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74280031"
 ---
 # <a name="use-azure-dev-spaces-to-interact-with-windows-containers"></a>Использование Azure Dev Spaces для взаимодействия с контейнерами Windows
 
@@ -172,7 +168,7 @@ Service 'webfrontend' port 80 (http) is available via port forwarding at http://
 
 ![Пример приложения, в котором отображается версия Windows из mywebapi](../media/run-dev-spaces-windows-containers/sample-app.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Узнайте, как в Azure Dev Spaces можно разрабатывать более сложные приложения в нескольких контейнерах и как упростить совместную разработку, используя разные версии и ветви кода в разных средах.
 

@@ -1,6 +1,6 @@
 ---
-title: Резервное копирование и восстановление с помощью приложения Microsoft Authenticator — Azure AD
-description: Узнайте, как выполнять резервное копирование и восстановление учетных данных с помощью приложения Microsoft Authenticator.
+title: Резервное копирование и восстановление учетных записей с помощью приложения Microsoft Authenticator — Azure AD
+description: Узнайте, как выполнять резервное копирование и восстановление учетных данных учетной записи с помощью приложения Microsoft Authenticator.
 services: active-directory
 author: eross-msft
 manager: daveba
@@ -12,14 +12,14 @@ ms.date: 08/22/2019
 ms.author: lizross
 ms.reviewer: olhaun
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2404dd443c1e3ede1d3ad5a81888e9f805edb810
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 827213c8d243e9d66c58195e1d9400bed9c3e337
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73820261"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74267001"
 ---
-# <a name="backup-and-recover-account-credentials-with-the-microsoft-authenticator-app"></a>Резервное копирование и восстановление учетных данных с помощью приложения Microsoft Authenticator.
+# <a name="backup-and-recover-account-credentials-using-the-microsoft-authenticator-app"></a>Резервное копирование и восстановление учетных данных с помощью приложения Microsoft Authenticator
 
 **Область применения**
 
@@ -121,7 +121,7 @@ ms.locfileid: "73820261"
 
 - **Резервное копирование устарело.** Если сведения о резервной копии устарели, вам может быть предложено обновить сведения, снова войдя в учетную запись восстановления Майкрософт. Ваша учетная запись восстановления — это личное учетная запись Майкрософт, которые изначально использовались для хранения резервной копии. Если требуется выполнить вход, в меню или на панели действий появится красная точка. После выбора красной точки вам будет предложено войти еще раз, чтобы обновить данные.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Итак, вы успешно выполнили резервное копирование учетных данных и восстановили их из резервной копии на новое устройство. Теперь вы можете обычным образом использовать приложение Microsoft Authenticator для проверки идентификации. Дополнительные сведения см. в статье [Вход в учетные записи с помощью приложения Microsoft Authenticator](user-help-sign-in.md).
 

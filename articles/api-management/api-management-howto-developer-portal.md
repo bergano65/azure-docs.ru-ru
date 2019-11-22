@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
-ms.openlocfilehash: 377ed8f17cfcf67f10cbdec77199c69c606afa3e
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.openlocfilehash: 1a8fb8140fd2f58556e4a64bca0f4a052a84c2bb
+ms.sourcegitcommit: e50a39eb97a0b52ce35fd7b1cf16c7a9091d5a2a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74180690"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74285595"
 ---
 # <a name="azure-api-management-developer-portal-overview"></a>Обзор портала разработчика управления API Azure
 
@@ -26,8 +26,6 @@ ms.locfileid: "74180690"
 В этой статье описываются различия между самостоятельным размещением и управляемыми версиями портала разработчика в управлении API. Здесь также объясняется его архитектура и приводятся ответы на часто задаваемые вопросы.
 
 > [!WARNING]
-> В настоящее время выполняется развертывание нового портала разработчика в службах управления API.
-> Если служба была только что создана или является службой уровня разработчика, у вас уже должна быть последняя версия. В противном случае могут возникнуть проблемы (например, с помощью функции публикации). Ожидается, что развертывание функции будет завершено до пятницы ноября 22, 2019.
 >
 > [Узнайте, как выполнить миграцию из предварительной версии в общедоступную версию](#preview-to-ga) портала разработчика.
 
@@ -109,11 +107,11 @@ API описан в [разделе вики репозитория GitHub][2]. 
 
 ### <a name="does-the-portal-support-azure-resource-manager-templates-andor-is-it-compatible-with-api-management-devops-resource-kit"></a>Поддерживает ли портал Azure Resource Manager шаблоны и/или является ли он совместимым с набором средств API Management DevOps Resource Kit?
 
-Нет
+Нет.
 
 ### <a name="do-i-need-to-enable-additional-vnet-connectivity-for-the-managed-portal-dependencies"></a>Нужно ли включать дополнительное подключение к виртуальной сети для зависимостей управляемого портала?
 
-Нет
+Нет.
 
 ### <a name="im-getting-a-cors-error-when-using-the-interactive-console-what-should-i-do"></a>При использовании интерактивной консоли я получаю ошибку CORS. Что делать?
 

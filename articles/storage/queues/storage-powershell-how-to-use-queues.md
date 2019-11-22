@@ -1,5 +1,5 @@
 ---
-title: Выполнение операций с хранилищем очередей Azure с помощью PowerShell в службе хранилища Azure
+title: Выполнение действий хранилища очередей Azure в PowerShell
 description: Как выполнять операции с хранилищем очередей Azure при помощи PowerShell
 author: mhopkins-msft
 ms.author: mhopkins
@@ -8,20 +8,20 @@ ms.service: storage
 ms.subservice: queues
 ms.topic: conceptual
 ms.reviewer: cbrooks
-ms.openlocfilehash: bf5cf668620eb08e0d808c2052eac59b15af740c
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: 98c59555f2b9b93ee3f78da91f85a7728679235d
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68721230"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74269378"
 ---
 # <a name="perform-azure-queue-storage-operations-with-azure-powershell"></a>Выполнение операций хранилища очередей Azure с помощью Azure PowerShell
 
-Хранилище очередей Azure — это служба хранения большого количества сообщений, к которым можно получить доступ по протоколам HTTP или HTTPS практически из любой точки мира. Дополнительные сведения см. в статье [Общие сведения об очередях](storage-queues-introduction.md). В этом практическом руководстве рассматриваются распространенные операции с хранилищем очередей. Вы узнаете, как выполнять следующие задачи:
+Хранилище очередей Azure — это служба хранения большого количества сообщений, к которым можно получить доступ по протоколам HTTP или HTTPS практически из любой точки мира. Дополнительные сведения см. в статье [Общие сведения об очередях](storage-queues-introduction.md). В этом практическом руководстве рассматриваются распространенные операции с хранилищем очередей. Вы узнаете, как выполнять такие задачи.
 
 > [!div class="checklist"]
 >
-> * Создать очередь
+> * Создание очереди
 > * Извлечение очереди
 > * Добавление сообщения
 > * Чтение сообщения
@@ -34,7 +34,7 @@ ms.locfileid: "68721230"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-## <a name="sign-in-to-azure"></a>Войдите в Azure
+## <a name="sign-in-to-azure"></a>Вход в Azure
 
 Войдите в подписку Azure с помощью команды `Connect-AzAccount` и следуйте инструкциям на экране.
 
@@ -44,7 +44,7 @@ Connect-AzAccount
 
 ## <a name="retrieve-list-of-locations"></a>Получение списка расположений
 
-Если вы не знаете, какое расположение нужно использовать, можно получить список доступных расположений. Получив список, найдите расположение, которое нужно использовать. В этом задании будет использоваться **eastus**. Сохраните его в переменной **location** для использования в будущем.
+Если вы не знаете, какое расположение нужно использовать, можно получить список доступных расположений. Получив список, найдите то расположение, которое вы хотите использовать. В этом задании будет использоваться **eastus**. Сохраните его в переменной **location** для использования в будущем.
 
 ```powershell
 Get-AzLocation | select Location
@@ -62,7 +62,7 @@ $resourceGroup = "howtoqueuesrg"
 New-AzResourceGroup -ResourceGroupName $resourceGroup -Location $location
 ```
 
-## <a name="create-storage-account"></a>Создайте учетную запись хранения
+## <a name="create-storage-account"></a>Создать учетную запись хранения
 
 Создайте стандартную учетную запись хранения общего назначения с локально избыточным хранилищем (LRS) с помощью команды [New-AzStorageAccount](/powershell/module/az.storage/New-azStorageAccount). Получите контекст учетной записи хранения, определяющий необходимую учетную запись хранения. Действуя в учетной записи хранения, ссылайтесь на контекст, вместо того чтобы многократно предоставлять учетные данные.
 
@@ -76,7 +76,7 @@ $storageAccount = New-AzStorageAccount -ResourceGroupName $resourceGroup `
 $ctx = $storageAccount.Context
 ```
 
-## <a name="create-a-queue"></a>Создать очередь
+## <a name="create-a-queue"></a>Создание очереди
 
 Сначала в этом примере устанавливается соединение со службой хранилища Azure, используя контекст учетной записи хранения, который включает имя учетной записи хранения и ее ключ доступа. Затем вызывается командлет [New-AzStorageQueue](/powershell/module/az.storage/New-AzStorageQueue), чтобы создать очередь с именем queuename.
 
@@ -179,13 +179,13 @@ Remove-AzStorageQueue –Name $queueName –Context $ctx
 Remove-AzResourceGroup -Name $resourceGroup
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Из этого практического руководства вы узнали о базовом управлении хранилищем очередей с помощью PowerShell, включая выполнение следующих задач:
 
 > [!div class="checklist"]
 >
-> * Создать очередь
+> * Создание очереди
 > * Извлечение очереди
 > * Добавление сообщения
 > * Чтение следующего сообщения

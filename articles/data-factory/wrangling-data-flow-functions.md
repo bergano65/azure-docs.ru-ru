@@ -7,12 +7,12 @@ ms.reviewer: gamal
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 11/01/2019
-ms.openlocfilehash: 3274641f7b118e13b3ed727f609ce7471fd66b54
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: e2517ec4a02a5d61fb3ce1d9ca9ffa2b5f4e8bf8
+ms.sourcegitcommit: e50a39eb97a0b52ce35fd7b1cf16c7a9091d5a2a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73682285"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74287025"
 ---
 # <a name="transformation-functions-in-wrangling-data-flow"></a>Функции преобразования в потоке данных структурирование
 
@@ -73,7 +73,7 @@ ms.locfileid: "73682285"
 * Должен использоваться с агрегатной функцией
 * Поддерживаемые статистические функции: [Table. ROWCOUNT](https://docs.microsoft.com/powerquery-m/table-rowcount), [List. Sum](https://docs.microsoft.com/powerquery-m/list-sum), [List. Count](https://docs.microsoft.com/powerquery-m/list-count), [List. СРЗНАЧ](https://docs.microsoft.com/powerquery-m/list-average), [List. min](https://docs.microsoft.com/powerquery-m/list-min), [List. Max](https://docs.microsoft.com/powerquery-m/list-max), [List. стандартное отклонение](https://docs.microsoft.com/powerquery-m/list-standarddeviation), [List. First](https://docs.microsoft.com/powerquery-m/list-first), [List. Last](https://docs.microsoft.com/powerquery-m/list-last)
 
-## <a name="sorting"></a>сортировок
+## <a name="sorting"></a>Сортировок
 
 Используйте [таблицу. Sort](https://docs.microsoft.com/powerquery-m/table-sort) для сортировки значений.
 
@@ -81,12 +81,21 @@ ms.locfileid: "73682285"
 
 Сохраняются и удаляются первые, сохраняют диапазоны (соответствующие функции M, только вспомогательные счетчики, not Conditions: [Table. FirstN](https://docs.microsoft.com/powerquery-m/table-firstn), [таблица. Skip](https://docs.microsoft.com/powerquery-m/table-skip), [таблица. ремовефирстн](https://docs.microsoft.com/powerquery-m/table-removefirstn), [таблица. диапазон](https://docs.microsoft.com/powerquery-m/table-range), [таблица. Минн](https://docs.microsoft.com/powerquery-m/table-minn), [Table. максн](https://docs.microsoft.com/powerquery-m/table-maxn))
 
-## <a name="known-unsupported-functionality"></a>Известные неподдерживаемые функции
+## <a name="known-unsupported-functions"></a>Известные неподдерживаемые функции
 
-Ниже приведены функции, которые не поддерживаются. Этот список не является исчерпывающим и может быть изменен.
-* Объединение столбцов (может быть достигнуто с помощью AddColumn)
-* Разделить столбец
-* Добавление запросов
-* "Использовать первую строку как заголовки" и "использовать заголовки как первую строку"
+| Функция | Состояние |
+| -- | -- |
+| Таблица. Промотехеадерс | Не поддерживается. Тот же результат можно получить, установив в наборе данных "первая строка как заголовок". |
+| Таблица. Комбинеколумнс | Это распространенный сценарий, который не поддерживается напрямую, но может быть достигнут путем добавления нового столбца, объединяющего два заданных столбца.  Например, Table. AddColumn (Ремовимаилколумн, "Name", each [FirstName] & "" & [LastName]) |
+| Таблица. TransformColumnTypes | В большинстве случаев это поддерживается. Следующие сценарии не поддерживаются: преобразование строки в тип валюты, преобразование строки в тип времени, преобразование строки в процентный тип. |
+| Таблица. Нестеджоин | При простом соединении будет возникать ошибка проверки. Столбцы должны быть развернуты, чтобы они работали. |
+| Table. DISTINCT | Удаление повторяющихся строк не поддерживается. |
+| Таблица. Ремовеластн | Удаление нижних строк не поддерживается. |
+| Table. RowCount | Не поддерживается, но может быть достигнут с добавлением столбца со всеми ячейками Empty (можно использовать столбец условий), а затем с помощью инструкции Group By для этого столбца. Таблица. Группа поддерживается. | 
+| Обработка ошибок на уровне строк | Обработка ошибок на уровне строк в настоящее время не поддерживается. Например, чтобы отфильтровать нечисловые значения из столбца, одним из подходов будет преобразование текстового столбца в число. Каждая ячейка, для которой не выполняется преобразование, будет находиться в состоянии ошибки и должна быть отфильтрована. Этот сценарий невозможен в потоке данных структурирование. |
+| Table. транспонировать | Не поддерживается |
+| Таблица. сведение | Не поддерживается |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
+
+Узнайте, как [создать поток данных структурирование](wrangling-data-flow-tutorial.md).

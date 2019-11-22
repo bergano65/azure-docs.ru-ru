@@ -1,23 +1,14 @@
 ---
 title: Примеры записных книжек Jupyter для службы "Записные книжки Azure"
 description: Эти примеры отлично подходят для знакомства с записными книжками Jupyter, работающими в бесплатных облачных службах "Записные книжки Azure".
-services: app-service
-documentationcenter: ''
-author: kraigb
-manager: barbkess
-ms.assetid: 07e95905-0f1b-49ce-a0f9-820f61952278
-ms.service: azure-notebooks
-ms.workload: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 01/11/2019
-ms.author: kraigb
-ms.openlocfilehash: 715db36921427dc0ac5dcdad24c2c026b1ea1326
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: cd615777adb28af6528afd2b95bc853372e799e8
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73496700"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74277655"
 ---
 # <a name="discover-and-use-sample-notebooks"></a>Обнаружение и использование примеров записных книжек
 
@@ -38,7 +29,7 @@ ms.locfileid: "73496700"
 - Вводный курс по физике от [кафедры физики Имперского колледжа Лондона](https://notebooks.azure.com/cvanbreu/libraries)
 - [Примеры для начала работы со службой "Машинное обучение Azure"](https://notebooks.azure.com/azureml/projects/azureml-getting-started)
 
-## <a name="next-steps"></a>Дальнейшие действия  
+## <a name="next-steps"></a>Дополнительная информация  
 
 - [Как настраивать проекты и управлять ими](configure-manage-azure-notebooks-projects.md)
 - [Практические руководства. Работа с файлами данных](work-with-project-data-files.md)

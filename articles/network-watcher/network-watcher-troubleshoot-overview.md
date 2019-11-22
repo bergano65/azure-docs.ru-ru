@@ -1,5 +1,6 @@
 ---
-title: Общие сведения об устранении неполадок ресурсов в Наблюдателе за сетями Azure | Документация Майкрософт
+title: Общие сведения об устранении неполадок ресурсов
+titleSuffix: Azure Network Watcher
 description: Эта страница содержит обзор возможностей Наблюдателя за сетями по устранению неполадок.
 services: network-watcher
 documentationcenter: na
@@ -14,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/19/2017
 ms.author: kumud
-ms.openlocfilehash: 65ce9e7d298131486ae4e5f3584c7975ca81e1ab
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 736bbd16456dd0abda3292b9b9e73ea5b941e7ed
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64684248"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74277775"
 ---
 # <a name="introduction-to-resource-troubleshooting-in-azure-network-watcher"></a>Общие сведения об устранении неполадок ресурсов в Наблюдателе за сетями Azure
 
@@ -75,7 +76,7 @@ ms.locfileid: "64684248"
 | ConnectionIsMarkedDisconnected | Подключение отмечено как "разъединенное" |Нет|
 | ConnectionNotConfiguredOnGateway | Для базовой службы не настроено подключение. | Yes |
 | ConnectionMarkedStandby | Базовая служба помечена как ждущая.| Yes|
-| Authentication | Несоответствие предварительного ключа | Yes|
+| Проверка подлинности | Несоответствие предварительного ключа | Yes|
 | PeerReachability | Одноранговый шлюз недоступен. | Yes|
 | IkePolicyMismatch | У однорангового шлюза имеются политики IKE, которые не поддерживаются в Azure. | Yes|
 | WfpParse Error | Ошибка при анализе журнала WFP. |Yes|
@@ -107,7 +108,7 @@ ms.locfileid: "64684248"
 > [!NOTE]
 > В некоторых случаях только подмножество файлов журналов записывается в хранилище.
 
-Инструкции по скачиванию файлов из учетных записей хранения Azure см. в статье [Приступая к работе с хранилищем BLOB-объектов Azure с помощью .NET](../storage/blobs/storage-dotnet-how-to-use-blobs.md). Кроме того, можно использовать такое средство, как Storage Explorer. Дополнительные сведения об Обозревателе службы хранилища см. по этой ссылке: [Обозреватель хранилища](https://storageexplorer.com/)
+Инструкции по скачиванию файлов из учетных записей хранения Azure см. в статье [Приступая к работе с хранилищем BLOB-объектов Azure с помощью .NET](../storage/blobs/storage-dotnet-how-to-use-blobs.md). Кроме того, можно использовать такое средство, как Storage Explorer. Дополнительные сведения об обозревателе хранилищ см. [здесь](https://storageexplorer.com/).
 
 ### <a name="connectionstatstxt"></a>ConnectionStats.txt
 
@@ -210,7 +211,7 @@ Elapsed Time            330 sec
 |        12    ikeext               ike_sa_management_c3307  7857a320-42ee-6e90-d5d9-3f414e3ea2d3|
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Сведения о диагностике проблемы со шлюзом или подключением к нему см. в статье о [диагностике проблем обмена данными между сетями](diagnose-communication-problem-between-networks.md).
 <!--Image references-->

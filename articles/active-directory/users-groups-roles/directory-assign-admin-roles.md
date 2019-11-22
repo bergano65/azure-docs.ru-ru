@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fc9565f44fdb868bc45d2f99de1d4036e1d5d123
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.openlocfilehash: 5eefac10e2ab196affc4c4148348d19959fcfeec
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74181143"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74266899"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Разрешения роли администратора в Azure Active Directory
 
@@ -238,6 +238,7 @@ ms.locfileid: "74181143"
 >- [Портал Azure AD](https://portal.azure.com/#blade/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/AllApps/menuId/) . Глобальный считыватель не может прочитать режим подготовки для корпоративного приложения.
 >- [Центр администрирования M365](https://admin.microsoft.com/Adminportal/Home#/homepage) — глобальный модуль чтения не может читать запросы на хранилище клиентов. **На левой** панели центра администрирования M365 не находится вкладка " **запросы к защищенному хранилищем для клиентов** ".
 >- [M365 Security Center](https://security.microsoft.com/homepage) -Global Reader не может читать метки чувствительности и хранения. На левой панели центра безопасности M365 не найдены **метки конфиденциальности**, **метки хранения**и **аналитика меток** .
+>- [Office Центр безопасности и соответствия требованиям](https://protection.microsoft.com) — глобальный считыватель не может читать журналы аудита SCC или выполнять поиск содержимого.
 >- [Центр администрирования групп](https://admin.teams.microsoft.com) — глобальный модуль чтения не может читать **жизненный цикл групп**, **аналитические отчеты &** , **Управление устройствами с IP-телефонами** и **Каталог приложений**.
 >- [Privileged Access Management (PAM)](https://docs.microsoft.com/office365/securitycompliance/privileged-access-management-overview) не поддерживает роль глобального читателя.
 >- [Azure Information Protection](https://docs.microsoft.com/azure/information-protection/what-is-information-protection) -Global Reader поддерживается только [для централизованной отчетности](https://docs.microsoft.com/azure/information-protection/reports-aip) , и если ваша организация Azure AD не находится на [единой платформе меток](https://docs.microsoft.com/azure/information-protection/faqs#how-can-i-determine-if-my-tenant-is-on-the-unified-labeling-platform).

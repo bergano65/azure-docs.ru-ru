@@ -1,5 +1,6 @@
 ---
-title: Устранение неполадок шлюза виртуальной сети и подключений с помощью Наблюдателя за сетями Azure (REST) | Документация Майкрософт
+title: Устранение неполадок шлюза и подключений виртуальной сети — Azure REST API
+titleSuffix: Azure Network Watcher
 description: На этой странице объясняется, как в службе наблюдения за сетями Azure с помощью REST устранять неполадки шлюза виртуальной сети и подключений
 services: network-watcher
 documentationcenter: na
@@ -14,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/19/2017
 ms.author: kumud
-ms.openlocfilehash: 0f10b9b45f63485417685a0826c047725a264772
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9b3898a7c4cd09b59da0fc167b758199119793eb
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64686113"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74277803"
 ---
 # <a name="troubleshoot-virtual-network-gateway-and-connections-using-azure-network-watcher"></a>Устранение неполадок шлюза виртуальной сети и подключений, используя Наблюдатель за сетями Azure
 
@@ -27,7 +28,7 @@ ms.locfileid: "64686113"
 > - [Портал](diagnose-communication-problem-between-networks.md)
 > - [PowerShell](network-watcher-troubleshoot-manage-powershell.md)
 > - [Интерфейс командной строки Azure](network-watcher-troubleshoot-manage-cli.md)
-> - [REST API](network-watcher-troubleshoot-manage-rest.md)
+> - [ИНТЕРФЕЙС REST API](network-watcher-troubleshoot-manage-rest.md)
 
 Наблюдатель за сетями предоставляет множество возможностей, так как он позволяет проанализировать сетевые ресурсы в Azure. Одна из этих возможностей — устранение неполадок в ресурсах. Процедуру устранения неполадок с ресурсами можно вызывать с помощью портала, PowerShell, интерфейса командной строки или API-интерфейса REST. При вызове Наблюдатель за сетями проверяет работоспособность шлюза виртуальной сети или подключения и возвращает результаты.
 
@@ -38,9 +39,9 @@ ms.locfileid: "64686113"
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-Чтобы вызвать REST API при помощи командлетов PowerShell, вам потребуется ARMClient. Пакет ARMClient можно скачать на сайте [Chocolatey](https://chocolatey.org/packages/ARMClient).
+Чтобы вызвать REST API при помощи PowerShell, потребуется ARMClient. Пакет ARMClient можно скачать на сайте [Chocolatey](https://chocolatey.org/packages/ARMClient).
 
-В этом сценарии предполагается, что вы создали Наблюдатель за сетями в соответствии с инструкциями в статье [Create a Network Watcher](network-watcher-create.md) (Создание Наблюдателя за сетями).
+В этом сценарии предполагается, что вы создали Наблюдатель за сетями в соответствии с инструкциями в статье [Create an Azure Network Watcher instance](network-watcher-create.md) (Наблюдатель за сетями: создание экземпляра службы).
 
 Список поддерживаемых типов шлюзов см. в разделе [Поддерживаемые типы шлюзов](network-watcher-troubleshoot-overview.md#supported-gateway-types).
 
@@ -48,7 +49,7 @@ ms.locfileid: "64686113"
 
 Средство устранения неполадок Наблюдатель за сетями позволяет устранить неполадки в работе шлюзов виртуальной сети и подключений. При запросе на устранение неполадок в ресурсах запрашиваются и проверяются журналы. По завершении проверки возвращаются результаты. Запросы к API устранения неполадок выполняются долго, поэтому для возвращения результатов может потребоваться несколько минут. Журналы хранятся в контейнере учетной записи хранения.
 
-## <a name="log-in-with-armclient"></a>Вход с помощью ARMClient
+## <a name="log-in-with-armclient"></a>выполните вход с помощью ARMClient;
 
 ```powershell
 armclient login
@@ -325,8 +326,8 @@ is a transient state while the Azure platform is being updated.",
 
 Текст действий содержит общие рекомендации по устранению проблемы. Если для устранения проблемы можно что-то сделать, предоставляется ссылка на дополнительные инструкции. Если дополнительных рекомендаций нет, в ответе указывается URL-адрес, открыв который можно отправить запрос в службу поддержки.  Дополнительные сведения о свойствах ответа, а также о данных, которые он содержит, см. в статье [Network Watcher Troubleshoot overview](network-watcher-troubleshoot-overview.md) (Обзор устранения неполадок наблюдателя за сетями).
 
-Инструкции по скачиванию файлов из учетных записей хранения Azure см. в статье [Приступая к работе с хранилищем BLOB-объектов Azure с помощью .NET](../storage/blobs/storage-dotnet-how-to-use-blobs.md). Кроме того, можно использовать такое средство, как Storage Explorer. Дополнительные сведения об Обозревателе службы хранилища см. по этой ссылке: [Обозреватель хранилища](https://storageexplorer.com/)
+Инструкции по скачиванию файлов из учетных записей хранения Azure см. в статье [Приступая к работе с хранилищем BLOB-объектов Azure с помощью .NET](../storage/blobs/storage-dotnet-how-to-use-blobs.md). Кроме того, можно использовать такое средство, как Storage Explorer. Дополнительные сведения об обозревателе хранилищ см. [здесь](https://storageexplorer.com/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Если изменены параметры, которые мешают VPN-подключению, см. статью [Управление группами безопасности сети с помощью портала](../virtual-network/manage-network-security-group.md), чтобы найти сведения о группах безопасности сети и соответствующие правила безопасности.
