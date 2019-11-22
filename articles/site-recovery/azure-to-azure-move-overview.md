@@ -1,34 +1,23 @@
 ---
-title: Перенос виртуальных машин IaaS Azure в другой регион Azure с помощью службы Azure Site Recovery | Документация Майкрософт
-description: Используйте службу Azure Site Recovery для переноса виртуальных машин IaaS Azure из одного региона Azure в другой.
-services: site-recovery
+title: Перемещение виртуальных машин Azure в другой регион с помощью Azure Site Recovery
+description: Перенос виртуальных машин Azure из одного региона Azure в другой с помощью службы Azure Site Recovery.
 author: rajani-janaki-ram
 ms.service: site-recovery
 ms.topic: tutorial
 ms.date: 01/28/2019
 ms.author: rajanaki
 ms.custom: MVC
-ms.openlocfilehash: dc49b33fd3e6d582b31af5fe0507884e60205757
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 05d0fcb9e689b8954bffaff402475762344c023d
+ms.sourcegitcommit: a170b69b592e6e7e5cc816dabc0246f97897cb0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58078012"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74091938"
 ---
-# <a name="move-azure-vms-to-another-region"></a>Перенос виртуальных машин Azure в другой регион
+# <a name="moving-azure-vms-to-another-azure-region"></a>Перемещение виртуальных машин Azure в другой регион Azure
 
-Azure развивается вместе с клиентской базой и добавляет поддержку новых регионов в соответствии с растущими требованиями. Кроме того, в разных службах ежемесячно добавляются новые возможности. Вам может потребоваться переместить виртуальные машины в другой регион или в Зоны доступности, чтобы повысить доступность.
+В этой статье приводится обзор причин и действий по переносу виртуальных машин Azure в другой регион Azure с помощью [Azure Site Recovery](site-recovery-overview.md). 
 
-В этой статье рассматриваются различные сценарии перемещения виртуальных машин. Кроме того, в ней приведено руководство по настройке архитектуры в целевом регионе для повышения доступности. 
-
-В рамках этого учебника вы ознакомитесь со следующими сведениями:
-
-> [!div class="checklist"]
-> 
-> * Причины перемещения виртуальных машин.
-> * Стандартные архитектуры.
-> * Перемещение виртуальных машин "как есть" в целевой регион.
-> * Перемещение виртуальных машин для повышения доступности.
 
 ## <a name="reasons-to-move-azure-vms"></a>Причины перемещения виртуальных машин Azure
 

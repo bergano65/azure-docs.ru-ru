@@ -1,5 +1,5 @@
 ---
-title: Общие сведения о сбросе пароля рабочей или учебной учетной записи в Azure Active Directory | Документация Майкрософт
+title: Общие сведения о сбросе пароля рабочей или учебной учетной записи — Azure AD
 description: Список ссылок на статьи о способах регистрации и сброса пароля рабочей или учебной учетной записи без помощи администратора.
 services: active-directory
 author: eross-msft
@@ -12,12 +12,12 @@ ms.topic: overview
 ms.date: 05/15/2019
 ms.author: lizross
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 15fbc526822f3b6659bc190ee67c6c17ff96b067
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 57d14ac3cbce6880604ad44b6aa71998ed061c10
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73160605"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74028504"
 ---
 # <a name="reset-your-own-work-or-school-password-overview"></a>Общие сведения о сбросе пароля рабочей или учебной учетной записи
 
@@ -34,5 +34,5 @@ ms.locfileid: "73160605"
 
 |Статья |ОПИСАНИЕ |
 |------|------------|
-| [Регистрация для самостоятельного сброса пароля](active-directory-passwords-reset-register.md) ] В этой статье приведены инструкции по тому, как проверить методы аутентификации и зарегистрироваться для самостоятельного сброса пароля, чтобы иметь возможность сбросить свой пароль.|
-| [Сброс пароля](active-directory-passwords-update-your-own-password.md) ] В этой статье приведены инструкции по тому, как сбросить пароль или разблокировать свою рабочую или учебную учетную запись.|
+| [Регистрация для самостоятельного сброса пароля](active-directory-passwords-reset-register.md) | Инструкции по тому, как проверить методы проверки подлинности и зарегистрироваться для самостоятельного сброса пароля, чтобы иметь возможность сбросить свой пароль. |
+| [Сброс пароля к рабочей или учебной учетной записи](active-directory-passwords-update-your-own-password.md) | Инструкции по тому, как сбросить пароль или разблокировать свою рабочую или учебную учетную запись. |

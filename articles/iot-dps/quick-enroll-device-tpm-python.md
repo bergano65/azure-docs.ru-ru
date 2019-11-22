@@ -1,23 +1,23 @@
 ---
-title: Регистрация устройств TPM в службе подготовки устройств Azure с помощью Python | Документация Майкрософт
+title: Краткое руководство. Регистрация устройств TPM в службе подготовки устройств Azure с помощью Python
 description: Краткое руководство по Azure. Регистрация устройства доверенного платформенного модуля в Службе подготовки устройств к добавлению в Центр Интернета вещей с помощью пакета SDK Python для службы подготовки. В этом кратком руководстве используется индивидуальная регистрация.
 author: wesmc7777
 ms.author: wesmc
-ms.date: 01/26/2018
+ms.date: 11/08/2019
 ms.topic: quickstart
 ms.service: iot-dps
 services: iot-dps
 manager: timlt
 ms.devlang: python
 ms.custom: mvc
-ms.openlocfilehash: 6e38d5f3a959d363347c8b266b7bbaf165f34937
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 49e7961200a2ab523997350fffa6606d65f60c8c
+ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51249070"
+ms.lasthandoff: 11/10/2019
+ms.locfileid: "73903401"
 ---
-# <a name="enroll-tpm-device-to-iot-hub-device-provisioning-service-using-python-provisioning-service-sdk"></a>Регистрация устройств TPM в службе "Подготовка устройств к добавлению в Центр Интернета вещей" пакета SDK для службы подготовки Python
+# <a name="quickstart-enroll-tpm-device-to-iot-hub-device-provisioning-service-using-python-provisioning-service-sdk"></a>Краткое руководство. Регистрация устройств TPM в службе "Подготовка устройств к добавлению в Центр Интернета вещей" пакета SDK для службы подготовки Python
 [!INCLUDE [iot-dps-selector-quick-enroll-device-tpm](../../includes/iot-dps-selector-quick-enroll-device-tpm.md)]
 
 В этой статье показано, как программными средствами создать отдельную регистрацию устройства TPM в службе "Подготовка устройств к добавлению в Центр Интернета вещей" с помощью [пакета SDK для службы подготовки Python](https://github.com/Azure/azure-iot-sdk-python/tree/master/provisioning_service_client) и примера приложения Python. В этой статье процесс регистрации описан на примере компьютера под управлением Windows. Но пакет SDK для службы Python также успешно работает на Linux.

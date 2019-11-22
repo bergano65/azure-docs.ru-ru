@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Распознавание речи, намерений и сущностей в службе "Речь" для Java
+title: Краткое руководство. Распознавание речи, намерений и сущностей в службе "Речь" с помощью Java
 titleSuffix: Azure Cognitive Services
 description: ПОДЛЕЖИТ УТОЧНЕНИЮ
 services: cognitive-services
@@ -11,20 +11,21 @@ ms.topic: quickstart
 ms.date: 10/28/2019
 ms.author: erhopf
 zone_pivot_groups: programming-languages-set-two
-ms.openlocfilehash: 441c938e9ab74eafecaf0f9188c0884696eccfae
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 2aa8311c9284d9aff3c50fcec30bc8ab9df6b11b
+ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73506118"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74125589"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
-Перед началом работы нужно сделать следующее.
+Перед началом работы нужно сделать следующее:
 
 > [!div class="checklist"]
+>
 > * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
-> * [Настроить приложение LUIS и получить ключ конечной точки.](../../../../quickstarts/create-luis.md)
+> * [Создать приложение LUIS и получить ключ конечной точки](../../../../quickstarts/create-luis.md).
 > * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md?tabs=jre)
 > * [Создать пустой пример проекта.](../../../../quickstarts/create-project.md?tabs=jre)
 
@@ -41,14 +42,14 @@ ms.locfileid: "73506118"
 
 Перед инициализацией объекта `IntentRecognizer` необходимо создать конфигурацию, использующую ключ и регион конечной точки LUIS. Вставьте этот код в блок try/catch в методе main
 
-В этом примере для создания `SpeechConfig` используется метод `FromSubscription()`. Полный список доступных методов см. в статье [Класс SpeechConfig](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.speechconfig?view=azure-dotnet).
+В этом примере для создания `SpeechConfig` используется метод `FromSubscription()`. Полный список доступных методов см. в статье [SpeechConfig Class](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.speechconfig?view=azure-dotnet) (Класс SpeechConfig).
 
 > [!NOTE]
-> Очень важно использовать ключ конечной точки LUIS, а не ключи для начала или разработки, так как только ключ конечной точки допустим для распознавания преобразования речи в намерения. Инструкции по получению правильного ключа см. в статье [Создание приложения LUIS и получение ключа конечной точки](~/articles/cognitive-services/Speech-Service/quickstarts/create-luis.md).
+> Очень важно использовать ключ конечной точки LUIS, а не ключи для начала работы или разработки, так как только ключ конечной точки допустим для распознавания с преобразованием речи в намерения. Инструкции по получению правильного ключа см. в статье [Создание приложения LUIS и получение ключа конечной точки](~/articles/cognitive-services/Speech-Service/quickstarts/create-luis.md) (Создание приложения LUIS и получение ключа конечной точки).
 
 [!code-java[](~/samples-cognitive-services-speech-sdk/quickstart/java/jre/intent-recognition/src/speechsdk/quickstart/Main.java?range=27)]
 
-## <a name="initialize-a-intentrecognizer"></a>Инициализация объекта IntentRecognizer
+## <a name="initialize-an-intentrecognizer"></a>Инициализация объекта IntentRecognizer
 
 Теперь создадим объект `IntentRecognizer`. Вставьте этот код непосредственно под конфигурацией службы "Речь".
 [!code-java[](~/samples-cognitive-services-speech-sdk/quickstart/java/jre/intent-recognition/src/speechsdk/quickstart/Main.java?range=30)]
@@ -76,7 +77,8 @@ ms.locfileid: "73506118"
 
 ## <a name="check-your-code"></a>Проверка кода
 
-На этом этапе код должен выглядеть так: (Мы добавили несколько комментариев к этой версии.) [!code-java[](~/samples-cognitive-services-speech-sdk/quickstart/java/jre/intent-recognition/src/speechsdk/quickstart/Main.java?range=6-76)]
+На этом этапе код должен выглядеть так:  
+(Мы добавили несколько комментариев к этой версии.) [!code-java[](~/samples-cognitive-services-speech-sdk/quickstart/java/jre/intent-recognition/src/speechsdk/quickstart/Main.java?range=6-76)]
 
 ## <a name="build-and-run-your-app"></a>Сборка и запуск приложения
 

@@ -1,12 +1,10 @@
 ---
-title: Пример CLI. Виртуальные машины Load Balancer в пределах зоны — Azure | Документация Майкрософт
+title: Распределение нагрузки виртуальных машин в пределах зоны — Azure CLI
 description: В этом примере скрипта Azure CLI показано, как распределить трафик на виртуальных машинах в пределах определенной зоны доступности
 services: load-balancer
 documentationcenter: load-balancer
 author: asudbring
-manager: jeconnoc
-editor: tysonn
-tags: ''
+manager: kumudD
 Customer intent: As an IT administrator, I want to create a load balancer that load balances incoming internet traffic to virtual machines within a specific zone in a region.
 ms.assetid: ''
 ms.service: load-balancer
@@ -16,14 +14,14 @@ ms.tgt_pltfrm: ''
 ms.workload: infrastructure
 ms.date: 06/14/2018
 ms.author: allensu
-ms.openlocfilehash: 29671283a1ef2906e03685a59d62ccc13c1307fe
-ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
+ms.openlocfilehash: c99e232243e95d3aa0a85e09c2534973114e28ea
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68273738"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74068761"
 ---
-# <a name="azure-cli-script-example-load-balance-traffic-to-vms-for-high-availability"></a>Пример скрипта Azure CLI. Балансировка трафика на виртуальных машинах для обеспечения высокой доступности
+# <a name="azure-cli-script-example-load-balance-traffic-to-vms-within-a-specific-availability-zone"></a>Пример скрипта Azure CLI. Распределение нагрузки трафика на виртуальные машины в пределах определенной зоны доступности
 
 Этот пример скрипта Azure CLI позволяет создать все необходимые компоненты для запуска нескольких виртуальных машин Ubuntu, настроенных в высокодоступной конфигурации с распределением нагрузки в пределах определенной зоны доступности. После выполнения этого скрипта будут созданы три виртуальные машины в одной группе доступности в пределах региона. Доступ к ним можно будет получить с помощью Azure Load Balancer категории "Стандартный". 
 

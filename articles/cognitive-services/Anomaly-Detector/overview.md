@@ -10,12 +10,12 @@ ms.subservice: anomaly-detector
 ms.topic: overview
 ms.date: 09/05/2019
 ms.author: aahi
-ms.openlocfilehash: 3bd60ff1e732940bbb13c2e224084cf7e331266b
-ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
+ms.openlocfilehash: 706bd9c141b191632acee1c04745d64baaf50ee5
+ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70934864"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74012059"
 ---
 # <a name="what-is-the-anomaly-detector-api"></a>Общие сведения об API Детектора аномалий
 
@@ -72,7 +72,7 @@ API Детектор аномалий - это веб-сервис RESTful, по
 
 ## <a name="algorithms"></a>Алгоритмы
 
-* Обратитесь к этому техническому блогу [Introducing Azure Anomaly Detector API](https://techcommunity.microsoft.com/t5/AI-Customer-Engineering-Team/Introducing-Azure-Anomaly-Detector-API/ba-p/490162) (Общие сведения об API Детектора аномалий Azure), в котором описаны алгоритмы.
+* Дополнительные сведения о внутренних алгоритмах см. в статьях технического блога [Introducing Azure Anomaly Detector API](https://techcommunity.microsoft.com/t5/AI-Customer-Engineering-Team/Introducing-Azure-Anomaly-Detector-API/ba-p/490162) (Общие сведения об API Детектора аномалий Azure) и [Overview of SR-CNN algorithm in Azure Anomaly Detector](https://techcommunity.microsoft.com/t5/AI-Customer-Engineering-Team/Overview-of-SR-CNN-algorithm-in-Azure-Anomaly-Detector/ba-p/982798) (Обзор алгоритма SR-CNN в Детекторе аномалий Azure).
 * Дополнительные сведения о новейших алгоритмах SR-CNN, разработанных корпорацией Майкрософт см. в статье [Служба Детектора аномалий временных рядов в Microsoft](https://arxiv.org/abs/1906.03821) (принятая KDD 2019).
 
 > [!VIDEO https://www.youtube.com/embed/ERTaAnwCarM]

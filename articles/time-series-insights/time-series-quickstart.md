@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство. Обозреватель службы "Аналитика временных рядов Azure" | Документация Майкрософт
-description: В этом кратком руководстве показано, как начать работу с обозревателем Аналитики временных рядов Azure в веб-браузере для визуализации больших объемов данных Интернета вещей. Предлагается обзор ключевых возможностей в демонстрационной среде.
+title: Краткое руководство. Обозреватель службы "Аналитика временных рядов Azure" | Документация Майкрософт
+description: Сведения о начале работы с обозревателем службы "Аналитика временных рядов Azure". Визуализируйте большие объемы данных Интернета вещей и ознакомьтесь с основными функциями среды.
 ms.service: time-series-insights
 services: time-series-insights
 author: deepakpalled
@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.workload: big-data
 ms.custom: mvc seodec18
 ms.date: 09/23/2019
-ms.openlocfilehash: 156e95c88bc3c66890ba9c8baf9b281330b60186
-ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
+ms.openlocfilehash: 0253a46cd73679c7c2f50a1e37d26d67578e342e
+ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72990908"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74006425"
 ---
 # <a name="quickstart-explore-azure-time-series-insights"></a>Краткое руководство. Знакомство со службой "Аналитика временных рядов Azure"
 

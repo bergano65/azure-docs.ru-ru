@@ -10,12 +10,12 @@ author: trevorbye
 ms.author: trbye
 ms.reviewer: trbye
 ms.date: 09/25/2019
-ms.openlocfilehash: 59844c5989abb03bbe5134c83c9653290c17d0a9
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: b2434102e0355d5c26c501588c360f74eb98404d
+ms.sourcegitcommit: b1a8f3ab79c605684336c6e9a45ef2334200844b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73582491"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74049139"
 ---
 # <a name="tutorial-get-started-creating-your-first-ml-experiment-with-the-python-sdk"></a>Руководство по Начало работы по созданию эксперимента Машинного обучения с помощью пакета SDK для Python
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -81,7 +81,7 @@ ms.locfileid: "73582491"
 
 1. На верхней панели выберите виртуальную машину записной книжки для запуска записной книжки. Эти виртуальные машины предварительно настроены со всем необходимым для запуска Машинного обучения Azure. Вы можете выбрать виртуальную машину, созданную любым пользователем вашей рабочей области. 
 
-1. Если ВМ не найдены, выберите **+ Добавление вычислительной среды**, чтобы создать ВМ.
+1. Если виртуальные машины не найдены, выберите **+ Add VM** (+ Добавить виртуальную машину), чтобы создать виртуальную машину. 
 
     1. При создании виртуальной машины укажите имя.  Имя должно содержать от 2 до 16 символов. Действительными символами являются буквы, цифры и символы. Они должны быть уникальными для всей подписки Azure.
 

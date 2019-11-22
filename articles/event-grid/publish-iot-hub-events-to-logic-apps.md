@@ -1,6 +1,6 @@
 ---
-title: Использование событий Центра Интернета вещей для активации Azure Logic Apps | Документация Майкрософт
-description: Создайте автоматизированные процессы для выполнения действий Azure Logic Apps на основе событий в Центре Интернета вещей, используя службу маршрутизации событий "Сетка событий Azure".
+title: Руководство по использованию событий Центра Интернета вещей для активации Azure Logic Apps
+description: Руководство по Создайте автоматизированные процессы для выполнения действий Azure Logic Apps на основе событий в Центре Интернета вещей, используя службу маршрутизации событий "Сетка событий Azure".
 services: iot-hub
 documentationcenter: ''
 author: kgremban
@@ -10,14 +10,14 @@ ms.service: iot-hub
 ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/07/2018
+ms.date: 11/11/2019
 ms.author: kgremban
-ms.openlocfilehash: 9c84e1a62ad8b67e398c62074c390711f4b0be28
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: e003cb650b0589ab43c984850838c56cbbf1ff2f
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58080003"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74106776"
 ---
 # <a name="tutorial-send-email-notifications-about-azure-iot-hub-events-using-logic-apps"></a>Руководство. Отправка уведомлений электронной почты о событиях в Центре Интернета вещей Azure с помощью Logic Apps
 

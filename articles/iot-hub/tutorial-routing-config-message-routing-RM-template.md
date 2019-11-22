@@ -1,5 +1,5 @@
 ---
-title: Настройка маршрутизации сообщений для Центра Интернета вещей с помощью шаблона Azure Resource Manager | Документация Майкрософт
+title: Настройка маршрутизации сообщений для Центра Интернета вещей с помощью шаблона Azure Resource Manager
 description: Настройка маршрутизации сообщений для Центра Интернета вещей с помощью шаблона Azure Resource Manager
 author: robinsh
 manager: philmeagit st
@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: robinsh
 ms.custom: mvc
-ms.openlocfilehash: d7b8c0685cf92341241575d3e67c09a759f5c190
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 8f245653a8b84944e1e8a3f48a49992f0065be58
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66163269"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74084392"
 ---
 # <a name="tutorial-use-an-azure-resource-manager-template-to-configure-iot-hub-message-routing"></a>Руководство по Применение шаблона Azure Resource Manager для настройки маршрутизации сообщений в Центре Интернета вещей
 
@@ -370,7 +370,7 @@ ms.locfileid: "66163269"
 
 Запустите скрипт, чтобы выполнить развертывание. Последняя строка этого скрипта извлекает переменную, которая была создана для возврата значения. Она содержит строку подключения к очереди служебной шины.
 
-В скрипте задаются значения следующих переменных.
+Скрипт задает и использует следующие переменные:
 
 **$RGName** — имя группы ресурсов, в которой нужно развернуть шаблон. Это поле создается перед развертыванием шаблона.
 

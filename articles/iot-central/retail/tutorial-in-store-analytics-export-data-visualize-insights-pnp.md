@@ -1,5 +1,5 @@
 ---
-title: Экспорт данных и визуализация аналитических сведений в Azure IoT Central | Документация Майкрософт
+title: Руководство по экспорту данных и визуализации аналитических сведений в Azure IoT Central
 description: В этом руководстве описано, как экспортировать данные из IoT Central и визуализировать аналитические сведения на панели мониторинга Power BI.
 services: iot-central
 ms.service: iot-central
@@ -10,13 +10,13 @@ ms.custom:
 - iot-p0-scenario
 ms.author: dobett
 author: dominicbetts
-ms.date: 10/22/2019
-ms.openlocfilehash: 0cf1c6e926b2406d960762a9d597b28a17f6c316
-ms.sourcegitcommit: b2fb32ae73b12cf2d180e6e4ffffa13a31aa4c6f
+ms.date: 11/12/2019
+ms.openlocfilehash: ce775f207eaa5df05900ea2e5b6d9fbeab4dc878
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73615285"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74112873"
 ---
 # <a name="tutorial-export-data-from-azure-iot-central-and-visualize-insights-in-power-bi"></a>Руководство по Экспорт данных из Azure IoT Central и визуализация аналитических сведений в Power BI
 

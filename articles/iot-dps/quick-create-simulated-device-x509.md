@@ -1,20 +1,20 @@
 ---
-title: Краткое руководство по подготовке имитированного устройства X.509 в Центре Интернета вещей Azure с помощью C | Документация Майкрософт
+title: Краткое руководство. Краткое руководство по подготовке имитированного устройства X.509 в Центре Интернета вещей Azure с помощью C
 description: В этом кратком руководстве используется индивидуальная регистрация. В этом кратком руководстве вы создадите и подготовите к работе имитированное устройство X.509 с помощью пакета SDK C для Службы подготовки устройств к добавлению в Центр Интернета вещей Azure.
 author: wesmc7777
 ms.author: wesmc
-ms.date: 04/10/2019
+ms.date: 11/08/2019
 ms.topic: quickstart
 ms.service: iot-dps
 services: iot-dps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: ae5a1708b56db45bec38a4482b5dfd936bdedd4a
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: dbbdfb9ead31d11c760e6cbb0280ed1c4e5f3b24
+ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65901235"
+ms.lasthandoff: 11/10/2019
+ms.locfileid: "73904762"
 ---
 # <a name="quickstart-provision-an-x509-simulated-device-using-the-azure-iot-c-sdk"></a>Краткое руководство. Подготовка имитированного устройства X.509 с помощью пакета SDK для устройства C Интернета вещей Azure
 

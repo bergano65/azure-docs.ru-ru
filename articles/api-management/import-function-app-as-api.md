@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 06/28/2019
 ms.author: apimpm
-ms.openlocfilehash: 7e9215d7250628ed9177e097d127a1554a1f0ea0
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 0c4a95669eea1b98baea5f9a866598e000c0923c
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70073354"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74107850"
 ---
 # <a name="import-an-azure-function-app-as-an-api-in-azure-api-management"></a>Импорт приложения-функции Azure в качестве API в службу управления API Azure
 
@@ -142,7 +142,7 @@ ms.locfileid: "70073354"
 
 ![Добавление из приложения-функции](./media/import-function-app-as-api/keys-01.png)
 
-## <a name="test-in-azure-portal"></a> Проверка нового программного интерфейса службы "Управление API" на портале Azure
+## <a name="test-in-azure-portal"></a> Проверка нового API на портале Azure
 
 Операции можно вызывать непосредственно на портале Azure. Использование портала Azure — удобный способ просмотра и тестирования операций с API.  
 
@@ -157,26 +157,6 @@ ms.locfileid: "70073354"
 4. Нажмите кнопку **Отправить**.
 
     Служба серверной части вернет ответ **200 OK** и другие данные.
-
-## <a name="test-in-developer-portal"></a> Вызов операции с портала разработчика
-
-Также операции можно вызвать с портала разработчиков, чтобы проверить API. 
-
-1. Выберите API, который был создан на шаге "Импорт и публикация API серверной части".
-
-2. Щелкните **Портал разработчика**.
-
-    Откроется сайт портала разработчика.
-
-3. Выберите созданный **API**.
-
-4. Выберите операцию, которую необходимо проверить.
-
-5. Щелкните **Тестирование**.
-
-6. Нажмите кнопку **Отправить**.
-    
-    После вызова операции портал разработчика отображает **состояние ответа**, **заголовки ответа** и **содержимое ответа**.
 
 [!INCLUDE [api-management-define-api-topics.md](../../includes/api-management-define-api-topics.md)]
 

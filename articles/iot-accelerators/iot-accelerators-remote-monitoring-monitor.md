@@ -1,5 +1,5 @@
 ---
-title: Руководство по мониторингу устройств Интернета вещей из решения Azure | Документация Майкрософт
+title: Мониторинг устройств в решении для удаленного мониторинга в Azure | Документация Майкрософт
 description: Из этого руководства вы узнаете, как отслеживать устройства Интернета вещей с помощью акселератора решения для удаленного мониторинга.
 author: dominicbetts
 manager: timlt
@@ -9,14 +9,14 @@ services: iot-accelerators
 ms.date: 03/08/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: d6d850fa8f896809318be77529e10abddaf6ea9a
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 400a71b11fde210b889d938041e88c5ebe73c1dc
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58173827"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73890873"
 ---
-# <a name="tutorial-monitor-your-iot-devices"></a>Руководство. Мониторинг устройств Интернета вещей
+# <a name="tutorial-monitor-your-iot-devices"></a>Руководство по Мониторинг устройств Интернета вещей
 
 В этом руководстве показано, как отслеживать подключенные устройства Интернета вещей с помощью акселератора решения для удаленного мониторинга. Вы можете просматривать данные телеметрии, сведения об устройстве, оповещения и ключевые показатели эффективности на панели мониторинга решения.
 

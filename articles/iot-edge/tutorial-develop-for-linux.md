@@ -1,20 +1,20 @@
 ---
-title: Разработка модулей для устройств Linux (Azure IoT Edge) | Документация Майкрософт
+title: Руководство по разработке модулей для устройств Linux (Azure IoT Edge)
 description: В этом учебнике описано, как настроить компьютер и облачные ресурсы для разработки модулей IoT Edge с использованием контейнеров Linux для устройств Linux.
 author: kgremban
 manager: philmea
 ms.author: kgremban
-ms.date: 08/13/2019
+ms.date: 11/11/2019
 ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: a523028fb312f030bc453692daceb0f254f844b6
-ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
+ms.openlocfilehash: 01ca118348b3a084c97182338bf656da83d52cb4
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71240951"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74114057"
 ---
 # <a name="tutorial-develop-iot-edge-modules-for-linux-devices"></a>Руководство по Разработка модулей IoT Edge для устройств Linux
 

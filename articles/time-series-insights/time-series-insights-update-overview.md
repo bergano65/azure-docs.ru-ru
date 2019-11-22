@@ -1,6 +1,6 @@
 ---
-title: 'Рассматриваемые действия: Предварительная версия службы "Аналитика временных рядов Azure" | Документация Майкрософт'
-description: Общие сведения о предварительной версии службы "Аналитика временных рядов Azure".
+title: 'Рассматриваемые действия: Что собой представляет предварительная версия службы "Аналитика временных рядов Azure"? — Аналитика временных рядов Azure | Документация Майкрософт'
+description: Сведения об основных улучшениях в предварительной версии службы "Аналитика временных рядов Azure".
 ms.service: time-series-insights
 services: time-series-insights
 author: deepakpalled
@@ -10,12 +10,12 @@ ms.workload: big-data
 ms.topic: overview
 ms.date: 10/29/2019
 ms.custom: seodec18
-ms.openlocfilehash: 05f4c64adad184e761e2b5a01b8c033c024dbc49
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: cde846152ff183db857b8a0549fafd24700ffff9
+ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73585254"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74014746"
 ---
 # <a name="what-is-azure-time-series-insights-preview"></a>Что собой представляет предварительная версия службы "Аналитика временных рядов Azure"?
 

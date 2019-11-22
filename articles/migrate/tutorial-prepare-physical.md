@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 11/07/2019
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: df425f723aa6a5e261ed6dcd15abfe87b367ad68
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: 176dfdabeee6299bba0eb17085be25ced3e97993
+ms.sourcegitcommit: a170b69b592e6e7e5cc816dabc0246f97897cb0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73747971"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74091917"
 ---
 # <a name="prepare-for-assessment-and-migration-of-physical-servers-to-azure"></a>Подготовка физических компьютеров к оценке и миграции в Azure
 
@@ -99,25 +99,25 @@ ms.locfileid: "73747971"
 
 ### <a name="verify-physical-server-settings"></a>Проверка параметров физических серверов
 
-1. Проверьте [требования к физическим серверам](migrate-support-matrix-hyper-v.md#assessment-hyper-v-host-requirements) для оценки серверов.
-2. Убедитесь, что на физических серверах открыты [необходимые порты](migrate-support-matrix-hyper-v.md#assessment-port-requirements).
+1. Проверьте [требования к физическим серверам](migrate-support-matrix-physical.md#assessment-physical-server-requirements) для оценки серверов.
+2. Убедитесь, что на физических серверах открыты [необходимые порты](migrate-support-matrix-physical.md#assessment-port-requirements).
 
 
 ### <a name="verify-appliance-settings"></a>Проверка настроек устройства
 
 Перед настройкой устройства Миграции Azure и началом оценки из следующего руководства вам следует подготовиться к развертыванию устройства.
 
-1. [Проверьте](migrate-support-matrix-hyper-v.md#assessment-appliance-requirements) требования к устройству.
-2. [Просмотрите](migrate-support-matrix-hyper-v.md#assessment-appliance-url-access) URL-адреса Azure, к которым устройству потребуется доступ.
+1. [Проверьте](migrate-support-matrix-physical.md#assessment-appliance-requirements) требования к устройству.
+2. [Просмотрите](migrate-support-matrix-physical.md#assessment-appliance-url-access) URL-адреса Azure, к которым устройству потребуется доступ.
 3. Просмотрите данные, собранные устройством во время обнаружения и оценки.
-4. [Обратите внимание](migrate-support-matrix-hyper-v.md#assessment-port-requirements) на требования доступа к порту для устройства.
+4. [Обратите внимание](migrate-support-matrix-physical.md#assessment-port-requirements) на требования доступа к порту для устройства.
 
 
 ### <a name="set-up-an-account-for-physical-server-discovery"></a>Настройка учетной записи для обнаружения физических серверов
 
 Миграции Azure необходимы разрешения для обнаружения локальных серверов.
 
-- **Windows:** Настройте локальную учетную запись пользователя на всех серверах Windows, которые необходимо обнаружить. Это учетная запись должна быть добавлена в следующие группы: "Пользователи удаленного рабочего стола", "Пользователи системного монитора" и "Пользователи журналов производительности".
+- **Windows:** Настройте локальную учетную запись пользователя на всех серверах Windows, которые необходимо обнаружить. Эта учетная запись должна быть добавлена в следующие группы: "Пользователи удаленного управления", "Пользователи системного монитора" и "Пользователи журналов производительности".
 - **Linux:** Вам потребуются права суперпользователя на серверах Linux, которые вы хотите обнаружить.
 
 

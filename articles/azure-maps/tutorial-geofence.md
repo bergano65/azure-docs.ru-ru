@@ -1,22 +1,22 @@
 ---
-title: Создание геозоны с помощью Azure Maps | Документация Майкрософт
-description: Настройка геозоны с использованием Azure Maps.
+title: Руководство по созданию геозоны с помощью Azure Maps
+description: Руководство по Настройка геозоны с использованием Azure Maps.
 author: walsehgal
 ms.author: v-musehg
-ms.date: 02/14/2019
+ms.date: 11/12/2019
 ms.topic: tutorial
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 176cde77810a1c75cc18c351969a128fa78348af
-ms.sourcegitcommit: 8bae7afb0011a98e82cbd76c50bc9f08be9ebe06
+ms.openlocfilehash: 62005546c653796773083eaf625820ab532a8a2c
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71694928"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74107098"
 ---
-# <a name="set-up-a-geofence-by-using-azure-maps"></a>Настройка геозоны с использованием Azure Maps
+# <a name="tutorial-set-up-a-geofence-by-using-azure-maps"></a>Руководство по Настройка геозоны с использованием Azure Maps
 
 Этот руководство поможет выполнить основные действия по настройке геозоны с помощью Azure Maps. Сценарий, который мы рассмотрим в этом руководстве — помощь начальству строительной площадки в отслеживании перемещения потенциально опасного оборудования за пределы установленных границ строительного участка. Строительство предусматривает использование дорогостоящего оборудования и соблюдение разнообразных нормативов. Обычно существует требование о том, чтобы строительное оборудование находилось на строительной площадке и не вывозилось за ее пределы без разрешения.
 
