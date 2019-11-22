@@ -6,12 +6,12 @@ ms.service: spring-cloud
 ms.topic: quickstart
 ms.date: 11/4/2019
 ms.author: jeconnoc
-ms.openlocfilehash: bc8b834e0dd128457910c46cc1a62382bbc28ee1
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: 39a249fb75249505189e2af4872c3a3f61ebe2af
+ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73721574"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74133228"
 ---
 # <a name="quickstart-launch-an-azure-spring-cloud-application-using-the-azure-portal"></a>Краткое руководство. Запуск приложения Azure Spring Cloud с помощью портала Azure
 
@@ -56,14 +56,16 @@ az extension add --name spring-cloud
 
 1. В веб-браузере откройте [эту ссылку на Azure Spring Cloud на портале Azure](https://ms.portal.azure.com/#create/Microsoft.AppPlatform).
 
-1. Выберите **Spring Cloud для Azure**, чтобы перейти на страницу обзора. Чтобы начать, нажмите кнопку **Создать**.
-
-1. Заполните форму, принимая во внимание следующие рекомендации:
+1. Заполните форму на странице **создания** Azure Spring Cloud.  Ознакомьтесь со следующими рекомендациями:
     - Имя службы: Укажите имя экземпляра службы.  Его длина должна быть от 4 до 32 знаков. Имя может содержать только строчные буквы, цифры и дефисы.  Первым символом в имени службы должна быть буква, а последним — буква или цифра.
     - Подписка: Выберите подписку, на которую будет выставляться счет за этот ресурс.  Убедитесь, что эта подписка добавлена в наш список разрешений для Azure Spring Cloud.
     - Группа ресурсов: Советуем создавать группы ресурсов для новых ресурсов.
     - Расположение. Выберите расположение для экземпляра службы. В настоящее время поддерживаются следующие расположения: восточная часть США, западная часть США 2, Западная Европа и Юго-Восточная Азия.
-    
+
+1. Щелкните **Проверка и создание**.
+
+1. Проверьте спецификации и щелкните **Создать**.
+
 Развертывание службы занимает около 5 минут.  После развертывания появится страница **Обзор** для экземпляра службы.
 
 ## <a name="set-up-your-configuration-server"></a>Настройка сервера конфигурации
@@ -72,7 +74,7 @@ az extension add --name spring-cloud
 
 1. В разделе **Репозиторий по умолчанию** задайте для параметра **URI** значение "https\://github.com/Azure-Samples/piggymetrics", для параметра **Метка** — значение "config" и щелкните **Применить**, чтобы сохранить изменения.
 
-    ![Снимок экрана, где отображается окно портала ASC](media/spring-cloud-tutorial-config-server/portal-config-server.png)
+    ![Снимок экрана, где отображается окно портала ASC](media/spring-cloud-quickstart-launch-app-portal/portal-config.png)
 
 ## <a name="build-and-deploy-microservice-applications"></a>Создание и развертывание приложений микрослужб
 

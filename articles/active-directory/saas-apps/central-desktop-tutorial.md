@@ -8,6 +8,7 @@ manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: b805d485-93db-49b4-807a-18d446c7090e
 ms.service: active-directory
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +16,12 @@ ms.topic: tutorial
 ms.date: 02/12/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 58fcd21c7e6e3f2336d3e809584451dc38f6276b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: fda8e928b530001faeae34c364dfed91d7620f0a
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67105742"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73157512"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-central-desktop"></a>Руководство по Интеграция Azure Active Directory с Central Desktop
 
@@ -140,7 +141,7 @@ ms.locfileid: "67105742"
 
 2. Перейдите в меню **Параметры**. Выберите **Advanced** (Дополнительно), а затем **Single Sign On** (Единый вход).
 
-    ![Настройка — Дополнительно](./media/central-desktop-tutorial/ic769563.png "Настройка — Дополнительно")
+    ![Настройка. Дополнительно](./media/central-desktop-tutorial/ic769563.png "Настройка  — Дополнительно")
 
 3. На странице **Single Sign On Settings** (Параметры единого входа) сделайте следующее:
 
@@ -156,7 +157,7 @@ ms.locfileid: "67105742"
 
 4. В разделе **Message Signature Verification Method** (Метод проверки подписей в сообщениях) сделайте следующее:
 
-    ![Метод проверки подписей в сообщениях](./media/central-desktop-tutorial/ic769565.png "Message Signature Verification Method")
+    ![Метод проверки подписей в сообщениях](./media/central-desktop-tutorial/ic769565.png "Метод проверки подписей в сообщениях")
     
     a. Выберите **Сертификат**.
 
@@ -232,7 +233,7 @@ ms.locfileid: "67105742"
 
 2. Выберите **People** (Люди) и **Add Internal Members** (Добавить внутренних участников).
 
-    ![Люди](./media/central-desktop-tutorial/ic781051.png "Люди")
+    ![Пользователи](./media/central-desktop-tutorial/ic781051.png "Люди")
 
 3. В поле **Email Address of New Members** (Адреса электронной почты новых участников) введите учетную запись Azure AD, которую вы хотите подготовить, а затем нажмите кнопку **Далее**.
 
@@ -240,7 +241,7 @@ ms.locfileid: "67105742"
 
 4. Выберите **Add Internal members** (Добавить внутренних участников).
 
-    ![Добавление внутренних участников](./media/central-desktop-tutorial/ic781053.png "Добавление внутренних участников")
+    ![Добавление внутреннего участника](./media/central-desktop-tutorial/ic781053.png "Добавление внутреннего участника")
   
    > [!NOTE]
    > Пользователи, которые были добавлены, получат сообщение электронной почты, содержащее ссылку для активации учетной записи.
@@ -257,4 +258,4 @@ ms.locfileid: "67105742"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
