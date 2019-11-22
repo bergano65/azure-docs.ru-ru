@@ -8,6 +8,7 @@ manager: daveba
 ms.reviewer: barbkess
 ms.assetid: f826b5d2-9c64-47df-bbbf-0adf9eb0fa71
 ms.service: active-directory
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +16,12 @@ ms.topic: tutorial
 ms.date: 12/19/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2bc3de858102c02d49a7cefeef15de7e1c82220e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: bfa7934472b512e2c884ab3f9a06728a8fb18b12
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67106470"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73157752"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-bamboohr"></a>Руководство по Интеграция Azure Active Directory с BambooHR
 
@@ -132,7 +133,7 @@ ms.locfileid: "67106470"
 
 2. На домашней странице сделайте следующее.
    
-    ![Страница единого входа в BambooHR](./media/bamboo-hr-tutorial/ic796691.png "Единый вход")   
+    ![Страница единого входа BambooHR](./media/bamboo-hr-tutorial/ic796691.png "Единый вход")   
 
     a. Выберите **Apps** (Приложения).
    
@@ -142,7 +143,7 @@ ms.locfileid: "67106470"
 
 3. На панели **SAML Single Sign-On** (Единый вход SAML) выполните следующие действия.
    
-    ![Панель единого входа SAML](./media/bamboo-hr-tutorial/IC796692.png "Единый вход SAML")
+    ![Область единого входа SAML](./media/bamboo-hr-tutorial/IC796692.png "Единый вход SAML")
    
     a. В поле **SSO Login URL** (URL-адрес для единого входа) вставьте **URL-адрес входа**, скопированный на портале Azure на 6 шаге.
       
@@ -209,7 +210,7 @@ ms.locfileid: "67106470"
 
 2. Вверху панели инструментов выберите **Settings** (Параметры).
    
-    ![Кнопка параметров](./media/bamboo-hr-tutorial/IC796694.png "Параметры")
+    ![Кнопка "Параметры"](./media/bamboo-hr-tutorial/IC796694.png "Параметр")
 
 3. Щелкните **Обзор**.
 
@@ -234,5 +235,5 @@ ms.locfileid: "67106470"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

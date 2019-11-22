@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.date: 10/04/2018
 ms.author: tomfitz
-ms.openlocfilehash: 62d8de4f36ab110f7bd871c9de0e5d843516970c
-ms.sourcegitcommit: f29fec8ec945921cc3a89a6e7086127cc1bc1759
+ms.openlocfilehash: f248fe125873b4ed1e930e56865e4e403bcceea6
+ms.sourcegitcommit: 87efc325493b1cae546e4cc4b89d9a5e3df94d31
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72529013"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73053841"
 ---
 # <a name="create-and-publish-a-managed-application-definition"></a>Создание и публикация определения управляемого приложения
 
@@ -87,7 +87,7 @@ ms.locfileid: "72529013"
 
 ## <a name="defining-your-create-experience-using-createuidefinitionjson"></a>Определение процесса создания с помощью файла CreateUiDefinition.json
 
-Как издатель вы определяете процесс создания с помощью файла **createUiDefinition.json**, который реализует интерфейс для пользователей, создающих управляемые приложения. Вы определяете, как пользователи вводят значения для каждого параметра, используя [элементы управления] (create-uidefinition-elements.md), в том числе раскрывающиеся списки, текстовые поля и поля пароли.
+Как издатель вы определяете процесс создания с помощью файла **createUiDefinition.json**, который реализует интерфейс для пользователей, создающих управляемые приложения. Вы определяете, как пользователи вводят значения для каждого параметра, используя [элементы управления](create-uidefinition-elements.md), в том числе раскрывающиеся списки, текстовые поля и поля для пароля.
 
 Создайте файл с именем **createUiDefinition.json** (в этом имени учитывается регистр).
 

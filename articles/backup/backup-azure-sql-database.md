@@ -7,12 +7,12 @@ ms.service: backup
 ms.topic: tutorial
 ms.date: 06/18/2019
 ms.author: dacurwin
-ms.openlocfilehash: 202d608e5d994cabd3d7e2e9a0887c8aab75af31
-ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
+ms.openlocfilehash: e5d24c35fd2fafc27f2339af5b1c92875b0138d9
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72437823"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73162199"
 ---
 # <a name="about-sql-server-backup-in-azure-vms"></a>Сведения о резервном копировании SQL Server на виртуальных машинах Azure
 
@@ -45,20 +45,10 @@ ms.locfileid: "72437823"
 **Поддержка** | **Дополнительные сведения**
 --- | ---
 **Поддерживаемые развертывания** | Поддерживаются виртуальные машины Azure Marketplace SQL и не связанные с Marketplace виртуальные машины (установленный вручную SQL Server).
-**Поддерживаемые географические регионы** | Юго-Восточная Австралия (ASE), Восточная Австралия (AE), Центральная Австралия (AC), Центральная Австралия 2 (AC 2) <br> Южная Бразилия (BRS).<br> Центральная Канада (CNC), Восточная Канада (CE),<br> Юго-Восточная Азия (SEA), Восточная Азия (EA), <br> восточная часть США (EUS), восточная часть США 2 (EUS2), центрально-западная часть США (WCUS), западная часть США (WUS), западная часть США 2 (WUS 2), центрально-северная часть США (NCUS), центральная часть США (CUS), центрально-южная часть США (SCUS), <br> Центральная Индия (INC), Южная Индия (INS), Западная Индия <br> Восточная Япония (JPE), Западная Япония (JPW), <br> Республика Корея, центральный регион (KRC), Республика Корея, южный регион (KRS), <br> Северная Европа (NE), Западная Европа, <br> южная часть Соединенного Королевства (UKS), западная часть Соединенного Королевства (UKW). <br> US Gov (Аризона), US Gov (Вирджиния), US Gov (Техас), центральный регион US DoD, восточный регион US DoD <br> Северная Германия, Центрально-Западная Германия <br> Северная Швейцария, Западная Швейцария
-**Поддерживаемые операционные системы** | Windows Server 2016, Windows Server 2012 R2 и Windows Server 2012<br/><br/> Linux в настоящее время не поддерживается.
-**Поддерживаемые версии SQL Server** | SQL Server 2017, как описано [здесь](https://support.microsoft.com/lifecycle/search?alpha=SQL%20server%202017), SQL Server 2016 с пакетами обновлений, как описано [здесь](https://support.microsoft.com/lifecycle/search?alpha=SQL%20server%202016%20service%20pack), SQL Server 2014, SQL Server 2012.<br/><br/> Enterprise, Standard, Web, Developer, Express.
-**Поддерживаемые версии .NET** | На виртуальной машине установлен .NET Framework 4.5.2 или более поздняя версия.
-
-### <a name="support-for-sql-server-2008-and-sql-server-2008-r2"></a>Поддержка SQL Server 2008 и SQL Server 2008 R2
-
-Недавно Azure Backup анонсировала поддержку [EOS SQL Server](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-2008-eos-extend-support) — SQL Server 2008 и SQL Server 2008 R2. Сейчас это решение доступно в режиме предварительного доступа для EOS SQL Server и оно поддерживает следующую конфигурацию:
-
-1. SQL Server 2008 и SQL Server 2008 R2 на базе Windows 2008 R2 SP1
-2. На виртуальную машину следует установить .NET Framework 4.5.2 или более позднюю версию.
-3. Резервное копирование для экземпляра отказоустойчивого кластера и зеркальных баз данных отсутствует.
-
-До момента пока эта функция не станет общедоступной, с пользователей не будет взиматься плата за ее использование. Все другие [Рекомендации и ограничения касательно функций](#feature-consideration-and-limitations) также применяются к этим версиям. Перед настройкой защиты на серверах SQL Server 2008 и 2008 R2 следует ознакомиться с [предварительными требованиями](backup-sql-server-database-azure-vms.md#prerequisites).
+**Поддерживаемые географические регионы** | Юго-Восточная Австралия (ASE), Восточная Австралия (AE), Центральная Австралия (AC), Центральная Австралия 2 (AC 2) <br> Южная Бразилия (BRS).<br> Центральная Канада (CNC), Восточная Канада (CE),<br> Юго-Восточная Азия (SEA), Восточная Азия (EA), <br> восточная часть США (EUS), восточная часть США 2 (EUS2), центрально-западная часть США (WCUS), западная часть США (WUS), западная часть США 2 (WUS 2), центрально-северная часть США (NCUS), центральная часть США (CUS), центрально-южная часть США (SCUS), <br> Центральная Индия (INC), Южная Индия (INS), Западная Индия <br> Восточная Япония (JPE), Западная Япония (JPW), <br> Республика Корея, центральный регион (KRC), Республика Корея, южный регион (KRS), <br> Северная Европа (NE), Западная Европа, <br> южная часть Соединенного Королевства (UKS), западная часть Соединенного Королевства (UKW). <br> US Gov (Аризона), US Gov (Вирджиния), US Gov (Техас), центральный регион US DoD, восточный регион US DoD <br> Северная Германия, Центрально-Западная Германия <br> Северная Швейцария, Западная Швейцария <br> Центральная Франция <br> Восточный Китай, Восточный Китай 2, Северный Китай, Северный Китай 2
+**Поддерживаемые операционные системы** | Windows Server 2019, Windows Server 2016, Windows Server 2012, Windows Server 2008 R2 с пакетом обновления 1 (SP1) <br/><br/> Linux в настоящее время не поддерживается.
+**Поддерживаемые версии SQL Server** | SQL Server 2019, SQL Server 2017, как описано на странице [поиска жизненного цикла приложения](https://support.microsoft.com/lifecycle/search?alpha=SQL%20server%202017), SQL Server 2016 и SharePoint Server, как описано на странице [поиска жизненного цикла приложения](https://support.microsoft.com/lifecycle/search?alpha=SQL%20server%202016%20service%20pack), SQL Server 2014, SQL Server 2012, SQL Server 2008 R2, SQL Server 2008 <br/><br/> Enterprise, Standard, Web, Developer, Express.
+**Поддерживаемые версии .NET** | Виртуальная машина с .NET Framework версии 4.5.2 и выше.
 
 ## <a name="feature-consideration-and-limitations"></a>Рекомендации и ограничения касательно функций
 

@@ -1,5 +1,5 @@
 ---
-title: Сбор данных с гибридного компьютера Windows с помощью Azure Monitor | Документация Майкрософт
+title: Сбор данных с гибридной виртуальной машины Windows с помощью Azure Monitor
 description: Из этого краткого руководства вы узнаете, как развернуть агент Log Analytics для компьютеров Windows, которые работают вне среды Azure, и включить сбор данных с помощью журналов Azure Monitor.
 services: azure-monitor
 documentationcenter: azure-monitor
@@ -14,12 +14,12 @@ ms.topic: quickstart
 ms.date: 08/22/2019
 ms.author: magoedte
 ms.custom: mvc, seo-javascript-october2019
-ms.openlocfilehash: 1b8888c2c8aaedce181d19c015206323ccf2b0ba
-ms.sourcegitcommit: 1bd2207c69a0c45076848a094292735faa012d22
+ms.openlocfilehash: 26919a64313df823dddad5dcfca6de5d08dcd993
+ms.sourcegitcommit: fa5ce8924930f56bcac17f6c2a359c1a5b9660c9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72677222"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73199027"
 ---
 # <a name="collect-data-from-a-windows-computer-in-a-hybrid-environment-with-azure-monitor"></a>Сбор данных с компьютера Windows в гибридной среде с помощью Azure Monitor
 

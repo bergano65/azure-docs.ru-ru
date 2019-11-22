@@ -7,13 +7,13 @@ ms.service: ansible
 author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
-ms.date: 04/30/2019
-ms.openlocfilehash: d89150f43205a4b38612008033ab5649acd9af5b
-ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
+ms.date: 10/23/2019
+ms.openlocfilehash: 6d520518e7180f69ee7293523dd40c8158dcfb99
+ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72241582"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72990672"
 ---
 # <a name="tutorial-configure-dynamic-inventories-of-your-azure-resources-using-ansible"></a>Руководство по настройке динамических списков ресурсов Azure с помощью Ansible
 
@@ -71,11 +71,20 @@ Ansible можно использовать для извлечения инфо
 
 Можно [использовать теги](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags#azure-cli) для организации ресурсов Azure по определенным пользователем категориям. 
 
+### <a name="using-ansible-version--28"></a>Использование версий Ansible, предшествующих версии 2.8
 Выполните приведенную ниже команду [az resource tag](/cli/azure/resource?view=azure-cli-latest.md#az-resource-tag), чтобы добавить тег для виртуальной машины `ansible-inventory-test-vm1` с ключом `nginx`:
 
 ```azurecli-interactive
 az resource tag --tags nginx --id /subscriptions/<YourAzureSubscriptionID>/resourceGroups/ansible-inventory-test-rg/providers/Microsoft.Compute/virtualMachines/ansible-inventory-test-vm1
 ```
+
+### <a name="using-ansible-version--28"></a>Если вы используете Ansible версии 2.8 и выше
+Выполните приведенную ниже команду [az resource tag](/cli/azure/resource?view=azure-cli-latest.md#az-resource-tag), чтобы добавить тег для виртуальной машины `ansible-inventory-test-vm1` с ключом `Ansible=nginx`:
+
+```azurecli-interactive
+az resource tag --tags Ansible=nginx --id /subscriptions/<YourAzureSubscriptionID>/resourceGroups/ansible-inventory-test-rg/providers/Microsoft.Compute/virtualMachines/ansible-inventory-test-vm1
+```
+
 ## <a name="generate-a-dynamic-inventory"></a>Создание динамического списка
 
 После определения виртуальных машин (и добавления тегов) необходимо создать динамический список.
@@ -124,10 +133,14 @@ Ansible предоставляет сценарий Python [azure_rm.py](https:/
 1. Для этого подключаемого модуля инвентаризации требуется файл конфигурации. В конце файл конфигурации должен содержать `azure_rm`. Кроме того, он должен использовать расширение `yml` или `yaml`. Для примера этого учебника сохраните следующий сборник как `myazure_rm.yml`.
 
     ```yml
-    plugin: azure_rm
-    include_vm_resource_groups:
-    - ansible-inventory-test-rg
-    auth_source: auto
+        plugin: azure_rm
+        include_vm_resource_groups:
+        - ansible-inventory-test-rg
+        auth_source: auto
+    
+        keyed_groups:
+        - prefix: tag
+          key: tags
     ```
 
 1. Выполните следующую команду, чтобы проверить связь с виртуальными машинами в группе ресурсов.
@@ -142,7 +155,7 @@ Ansible предоставляет сценарий Python [azure_rm.py](https:/
     Failed to connect to the host via ssh: Host key verification failed.
     ```
     
-    Если произошла ошибка "проверки ключа узла", добавьте следующую строку в файл конфигурации Ansible. Файл конфигурации Ansible расположен здесь: `/etc/ansible/ansible.cfg`.
+    Если произошла ошибка "проверки ключа узла", добавьте следующую строку в файл конфигурации Ansible. Файл конфигурации Ansible расположен здесь: `/etc/ansible/ansible.cfg` или `~/.ansible.cfg`.
 
     ```bash
     host_key_checking = False
@@ -156,33 +169,49 @@ Ansible предоставляет сценарий Python [azure_rm.py](https:/
     ```
 
 ## <a name="enable-the-vm-tag"></a>Включение тега виртуальной машины
-После установки тег нужно "включить". Один из способов включения тега — экспортировать его в переменную среды `AZURE_TAGS` с помощью команды `export`.
 
-```azurecli-interactive
-export AZURE_TAGS=nginx
-```
+### <a name="if-youre-using-ansible--28"></a>Если вы используете Ansible версии ниже 2.8
 
-- Если вы используете версию Azure, предшествующую версии 2.8, выполните следующую команду.
+- После установки тег нужно "включить". Один из способов включения тега — экспортировать его в переменную среды `AZURE_TAGS` с помощью команды `export`.
+
+    ```azurecli-interactive
+    export AZURE_TAGS=nginx
+    ```
+    
+- Выполните следующую команду:
 
     ```bash
     ansible -i azure_rm.py ansible-inventory-test-rg -m ping
     ```
+    
+    Теперь отображается только одна виртуальная машина (тег которой совпадает со значением, экспортированным в переменную среды `AZURE_TAGS`).
 
-- Если вы используете Azure 2.8 или более позднюю версию, выполните следующую команду.
-  
-    ```bash
-    ansible all -m ping -i ./myazure_rm.yml
+    ```Output
+       ansible-inventory-test-vm1 | SUCCESS => {
+        "changed": false,
+        "failed": false,
+        "ping": "pong"
+    }
     ```
 
-Теперь отображается только одна виртуальная машина (тег которой совпадает со значением, экспортированным в переменную среды `AZURE_TAGS`).
+### <a name="if-youre-using-ansible---28"></a>Если вы используете Ansible версии 2.8 и выше
 
-```Output
-ansible-inventory-test-vm1 | SUCCESS => {
-    "changed": false,
-    "failed": false,
-    "ping": "pong"
-}
-```
+- Выполните команду `ansible-inventory -i myazure_rm.yml --graph`, чтобы получить следующие выходные данные:
+
+    ```Output
+        @all:
+          |--@tag_Ansible_nginx:
+          |  |--ansible-inventory-test-vm1_9e2f
+          |--@ungrouped:
+          |  |--ansible-inventory-test-vm2_7ba9
+    ```
+
+- Вы также можете проверить подключение к виртуальной машине Nginx с помощью следующей команды:
+  
+    ```bash
+    ansible -i ./myazure_rm.yml -m ping tag_Ansible_nginx
+    ```
+
 
 ## <a name="set-up-nginx-on-the-tagged-vm"></a>Настройка Nginx на виртуальной машине с тегом
 
@@ -197,19 +226,19 @@ ansible-inventory-test-vm1 | SUCCESS => {
 1. Вставьте следующий пример кода в редактор.
 
     ```yml
-    ---
-    - name: Install and start Nginx on an Azure virtual machine
-      hosts: all
-      become: yes
-      tasks:
-      - name: install nginx
-        apt: pkg=nginx state=installed
-        notify:
-        - start nginx
-
-      handlers:
-        - name: start nginx
-          service: name=nginx state=started
+        ---
+        - name: Install and start Nginx on an Azure virtual machine
+          hosts: all
+          become: yes
+          tasks:
+          - name: install nginx
+            apt: pkg=nginx state=installed
+            notify:
+            - start nginx
+    
+          handlers:
+            - name: start nginx
+              service: name=nginx state=started
     ```
 
 1. Сохраните файл и закройте редактор.
@@ -218,15 +247,15 @@ ansible-inventory-test-vm1 | SUCCESS => {
 
    - Версия Ansible, предшествующая версии 2.8:
 
-    ```bash
-    ansible-playbook -i azure_rm.py nginx.yml
-    ```
+     ```bash
+     ansible-playbook -i azure_rm.py nginx.yml
+     ```
 
    - Ansible 2.8 или более поздняя версия:
 
-    ```bash
-     ansible-playbook  -i ./myazure_rm.yml  nginx.yml
-    ```
+     ```bash
+     ansible-playbook  -i ./myazure_rm.yml  nginx.yml --limit=tag_Ansible_nginx
+     ```
 
 1. После запуска сборника схем отобразятся результаты, аналогичные приведенным ниже.
 

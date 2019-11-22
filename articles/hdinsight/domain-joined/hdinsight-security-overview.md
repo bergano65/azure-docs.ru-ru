@@ -7,12 +7,12 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.topic: overview
 ms.date: 09/23/2019
-ms.openlocfilehash: e1863cc54759f6cc2266073629093d4923260525
-ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
+ms.openlocfilehash: 7fadb17476c2a071de767573994bb1120b476cdf
+ms.sourcegitcommit: 87efc325493b1cae546e4cc4b89d9a5e3df94d31
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71240407"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73053735"
 ---
 # <a name="overview-of-enterprise-security-in-azure-hdinsight"></a>Общие сведения о корпоративной безопасности в Azure HDInsight
 
@@ -59,6 +59,10 @@ Azure HDInsight предлагает ряд методов для соответ
 Защита данных важна для соблюдения требований безопасности и соответствия, установленных в организации. Помимо ограничения доступа неавторизованных сотрудников к данным, их следует зашифровать.
 
 Оба хранилища данных для кластеров HDInsight (хранилище BLOB-объектов Azure и Azure Data Lake Storage 1-го и 2-го поколений) поддерживают [шифрование неактивных данных](../../storage/common/storage-service-encryption.md) на стороне сервера. Защищенные кластеры HDInsight полностью поддерживают шифрование неактивных данных на стороне сервера.
+
+### <a name="compliance"></a>Соответствие нормативным требованиям
+
+Предложения Azure для соответствия требованиям основаны на различных типах гарантий, включая официальные процедуры сертификации, аттестации, проверки, авторизации и оценки, проведенные независимыми аудиторскими фирмами, а также поправки к контрактам, самостоятельные оценки и руководства для клиентов, предоставляемые корпорацией Майкрософт. См. сведения о [соответствии Microsoft Azure требованиям HDInsight](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942) и информацию в [центре управления безопасностью Майкрософт](https://www.microsoft.com/trust-center).
 
 ## <a name="shared-responsibility-model"></a>Модель общей ответственности
 

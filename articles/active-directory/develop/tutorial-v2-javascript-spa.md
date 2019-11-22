@@ -1,5 +1,6 @@
 ---
-title: Интерактивная настройка одностраничного приложения JavaScript в Azure AD версии 2.0 | Документация Майкрософт
+title: Интерактивная настройка одностраничного приложения JavaScript в Azure AD 2.0
+titleSuffix: Microsoft identity platform
 description: Узнайте, как одностраничные приложения JavaScript могут вызывать API, которым требуются маркеры доступа от конечной точки Azure Active Directory версии 2.0.
 services: active-directory
 documentationcenter: dev-center-name
@@ -16,12 +17,12 @@ ms.date: 03/20/2019
 ms.author: nacanuma
 ms.custom: aaddev, identityplatformtop40
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 61790954393923bbf330ad3a534d1d33d1a44bbc
-ms.sourcegitcommit: 909ca340773b7b6db87d3fb60d1978136d2a96b0
+ms.openlocfilehash: fc03e6f1610fe6cef9ce72c981f6f800da8a9951
+ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70983480"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72802527"
 ---
 # <a name="sign-in-users-and-call-the-microsoft-graph-api-from-a-javascript-single-page-application-spa"></a>Вход пользователей и вызов API Microsoft Graph из одностраничного приложения JavaScript (SPA)
 
@@ -263,7 +264,7 @@ ms.locfileid: "70983480"
 
 Когда пользователь впервые нажимает кнопку **Войти**, метод `signIn` вызывает `loginPopup`, чтобы пользователь мог выполнить вход. Этот метод открывает всплывающее окно с *конечной точкой платформы удостоверений Майкрософт*, чтобы запросить и проверить учетные данные пользователя. После успешного входа пользователь перенаправляется обратно на исходную страницу *index.html*. Полученный маркер обрабатывается в `msal.js`, а сведения из него кэшируются. Этот маркер известен как *маркер идентификатора*. Он содержит основные сведения о пользователе, такие как отображаемое имя пользователя. Если вы планируете использовать какие-либо данные, предоставляемые этим маркером, то необходимо убедиться, что маркер проверен внутренним сервером. Это позволит гарантировать, что маркер был выдан допустимому пользователю для вашего приложения.
 
-Одностраничное приложение, создаваемое в рамках этого руководства вызывает `acquireTokenSilent` и (или) `acquireTokenPopup`, чтобы получить *маркер доступа*, используемый при запросе API Microsoft Graph для получения сведений из профиля пользователя. Если вам нужен пример, проверяющий маркер идентификатора, ознакомьтесь с [этим]примером приложения на портале GitHub: (https://github.com/Azure-Samples/active-directory-javascript-singlepageapp-dotnet-webapi-v2 "active-directory-javascript-singlepageapp-dotnet-webapi-v2"). В нем для проверки маркеров используется веб-API ASP.NET.
+Одностраничное приложение, создаваемое в рамках этого руководства вызывает `acquireTokenSilent` и (или) `acquireTokenPopup`, чтобы получить *маркер доступа*, используемый при запросе API Microsoft Graph для получения сведений из профиля пользователя. Если вам нужен пример, проверяющий маркер идентификатора, см. [пример приложения на GitHub](https://github.com/Azure-Samples/active-directory-javascript-singlepageapp-dotnet-webapi-v2 "Пример на GitHub: active-directory-javascript-singlepageapp-dotnet-webapi-v2"). В нем для проверки маркеров используется веб-API ASP.NET.
 
 #### <a name="getting-a-user-token-interactively"></a>Интерактивное получение маркера пользователя
 

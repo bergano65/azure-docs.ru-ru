@@ -1,5 +1,5 @@
 ---
-title: Автоматизация рабочих процессов с помощью Visual Studio Code — Azure Logic Apps
+title: Автоматизация задач с помощью Visual Studio Code — Azure Logic Apps
 description: Создание или редактирование приложения логики, лежащего в основе определений JSON, с помощью Visual Studio Code (VS Code)
 services: logic-apps
 ms.service: logic-apps
@@ -11,15 +11,15 @@ ms.manager: carmonm
 ms.reviewer: klam, deli, LADocs
 ms.topic: quickstart
 ms.custom: mvc
-ms.date: 10/05/2018
-ms.openlocfilehash: a1387ca4d94410bafb1b1024345b5e307e215e6f
-ms.sourcegitcommit: d37991ce965b3ee3c4c7f685871f8bae5b56adfa
+ms.date: 10/25/2019
+ms.openlocfilehash: 96551d3c7f0d37bc7ed8696666b130fa83dae41b
+ms.sourcegitcommit: f7f70c9bd6c2253860e346245d6e2d8a85e8a91b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72679156"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73063651"
 ---
-# <a name="quickstart-create-and-manage-logic-app-workflow-definitions-with-visual-studio-code"></a>Краткое руководство. Создание определений рабочих процессов приложений логики и управление ими с помощью Visual Studio Code
+# <a name="quickstart-create-and-manage-logic-app-workflow-definitions-by-using-visual-studio-code"></a>Краткое руководство. Создание определений рабочих процессов приложения логики и управление ими с помощью Visual Studio Code
 
 С помощью [Azure Logic Apps](../logic-apps/logic-apps-overview.md) и Visual Studio Code можно создать приложения логики, которые автоматизируют задачи, рабочие процессы и процессы для интеграции приложений, данных, систем и служб по предприятиям и организациям, и управлять ими. В этом кратком руководстве показано, как создать и изменить базовые определения рабочего процесса, которые используют нотацию объектов JavaScript (JSON) для приложений логики через взаимодействие на основе кода. Вы также можете работать с приложениями логики, уже развернутыми в Azure.
 
@@ -27,11 +27,11 @@ ms.locfileid: "72679156"
 
 В этой статье вы можете создать то же приложение логики из этого [краткого руководства](../logic-apps/quickstart-create-first-logic-app-workflow.md), которое демонстрирует основные понятия. В Visual Studio Code приложение логики выглядит так, как показано в следующем примере.
 
-![Пример определения рабочего процесса приложения логики](./media/create-logic-apps-visual-studio-code/visual-studio-code-overview.png)
+![Пример определения рабочего процесса приложения логики](./media/quickstart-create-logic-apps-visual-studio-code/visual-studio-code-overview.png)
 
-Прежде чем начать, убедитесь, что вы выполняете следующие условия.
+Прежде чем начать, убедитесь, что у вас есть эти элементы:
 
-* Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
+* Если у вас нет учетной записи и подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
 * Базовые знания об [определениях рабочих процессов приложения логики](../logic-apps/logic-apps-workflow-definition-language.md) и их структуре, как описано для JSON.
 
@@ -47,11 +47,11 @@ ms.locfileid: "72679156"
 
     Это расширение можно скачать и установить из [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-logicapps) или непосредственно из Visual Studio Code. Перезапустите Visual Studio Code после установки.
 
-    ![Поиск расширения Visual Studio Code для Azure Logic Apps](./media/create-logic-apps-visual-studio-code/find-install-logic-apps-extension.png)
+    ![Поиск расширения Visual Studio Code для Azure Logic Apps](./media/quickstart-create-logic-apps-visual-studio-code/find-install-logic-apps-extension.png)
 
     Выбрав значок Azure на панели инструментов Visual Studio Code, можно узнать, что расширение установлено правильно.
 
-    ![Подтверждение правильной установки расширения](./media/create-logic-apps-visual-studio-code/confirm-installed-visual-studio-code-extension.png)
+    ![Подтверждение правильной установки расширения](./media/quickstart-create-logic-apps-visual-studio-code/confirm-installed-visual-studio-code-extension.png)
 
     Дополнительные сведения см. на странице [Extension Marketplace](https://code.visualstudio.com/docs/editor/extension-gallery) (Расширения в Marketplace). Чтобы внести изменения в эту версию расширения с открытым кодом, посетите веб-страницу [расширения Azure Logic Apps для Visual Studio Code на веб-сайте GitHub](https://github.com/Microsoft/vscode-azurelogicapps).
 
@@ -61,76 +61,81 @@ ms.locfileid: "72679156"
 
 1. Откройте Visual Studio Code. На панели инструментов Visual Studio Code щелкните значок Azure.
 
-   ![Выберите значок Azure на панели инструментов Visual Studio Code](./media/create-logic-apps-visual-studio-code/open-extensions-visual-studio-code.png)
+   ![Выберите значок Azure на панели инструментов Visual Studio Code](./media/quickstart-create-logic-apps-visual-studio-code/open-extensions-visual-studio-code.png)
 
-1. В окне Azure в разделе **Logic Apps** выберите пункт **Sign in to Azure** (Войти в Azure).
+1. В окне Azure в разделе **Logic Apps** выберите пункт **Sign in to Azure** (Войти в Azure). Когда отобразится запрос страницы входа Майкрософт, войдите с помощью учетной записи Azure.
 
-   ![Выбор пункта "Sign in to Azure" (Войти в Azure).](./media/create-logic-apps-visual-studio-code/sign-in-azure-visual-studio-code.png)
+   ![Выбор пункта "Sign in to Azure" (Войти в Azure).](./media/quickstart-create-logic-apps-visual-studio-code/sign-in-azure-visual-studio-code.png)
 
-   Вам будет предложено выполнить вход с помощью предоставленного кода проверки подлинности.
+   1. Если вход выполняется дольше обычного, Visual Studio Code предлагает выполнить вход через веб-сайт проверки подлинности Майкрософт, предоставив код устройства. Чтобы выполнить вход с помощью кода, нажмите кнопку **Use Device Code** (Использовать код устройства).
 
-1. Скопируйте код проверки подлинности, а затем нажмите кнопку **Копировать и открыть**, после чего откроется новое окно браузера.
+      ![Продолжение действий с кодом устройства](./media/quickstart-create-logic-apps-visual-studio-code/use-device-code-prompt.png)
 
-   ![Скопируйте код проверки подлинности для использования при входе в Azure](./media/create-logic-apps-visual-studio-code/sign-in-prompt-authentication.png)
+   1. Чтобы скопировать код, нажмите кнопку **Copy & Open** (Копировать и открыть).
 
-1. Введите код проверки подлинности. При появлении запроса выберите **Далее**.
+      ![Копирование кода для входа в Azure](./media/quickstart-create-logic-apps-visual-studio-code/sign-in-prompt-authentication.png)
 
-   ![Введите код проверки подлинности для входа в Azure](./media/create-logic-apps-visual-studio-code/authentication-code-azure-sign-in.png)
+   1. Чтобы открыть новое окно браузера и перейти на веб-сайт проверки подлинности, нажмите кнопку **Открыть ссылку**.
+
+      ![Подтверждение открытия браузера и перехода на веб-сайт проверки подлинности](./media/quickstart-create-logic-apps-visual-studio-code/confirm-open-link.png)
+
+   1. На странице **Войдите в учетную запись** введите код проверки подлинности и нажмите кнопку **Далее**.
+
+      ![Введение кода проверки подлинности для входа в Azure](./media/quickstart-create-logic-apps-visual-studio-code/authentication-code-azure-sign-in.png)
 
 1. Выберите учетную запись Azure. После входа можно закрыть браузер и вернуться в Visual Studio Code.
 
-   Теперь в окне Azure в разделах Logic Apps и учетных записей интеграции отображаются подписки Azure в вашей учетной записи.
+   На панели Azure в разделе **Logic Apps** и **Учетные записи интеграции** теперь отображаются подписки Azure, связанные с вашей учетной записью. Однако если вы не видите нужных подписок или если в разделах отображается слишком много подписок, сделайте следующее:
 
-   ![Выбор подписки Azure](./media/create-logic-apps-visual-studio-code/select-azure-subscription.png)
+   1. Наведите указатель мыши на метку **Logic Apps**. Когда появится панель инструментов, выберите параметр **Выбор подписок** (значок фильтра).
 
-   Если нужные подписки отсутствуют, рядом с названием **Logic Apps** щелкните **Select Subscriptions** (Выбрать подписки) (значок фильтра). Найдите и выберите нужные подписки.
+      ![Поиск или фильтрация подписок Azure](./media/quickstart-create-logic-apps-visual-studio-code/find-or-filter-subscriptions.png)
 
-1. Чтобы просмотреть существующие приложения логики или учетные записи интеграции в подписке Azure, разверните подписку.
+   1. В появившемся списке выберите подписки, которые должны отображаться.
 
-   ![Просмотр приложений логики и учетных записей интеграции](./media/create-logic-apps-visual-studio-code/view-existing-logic-apps-azure.png)
+1. В разделе **Logic Apps** выберите нужную подписку. Узел подписки разворачивается и отображает все приложения логики, которые существуют в этой подписке.
+
+   ![Выбор подписки Azure](./media/quickstart-create-logic-apps-visual-studio-code/select-azure-subscription.png)
+
+   > [!TIP]
+   > В разделе **Учетные записи интеграции** при выборе подписки отображаются все учетные записи интеграции, которые существуют в этой подписке.
 
 <a name="create-logic-app"></a>
 
-## <a name="create-logic-app"></a>Создание приложения логики
+## <a name="create-new-logic-app"></a>Создание приложения логики
 
-1. Если вы еще не вошли подписку Azure в Visual Studio Code, выполните описанные в этой статье действия по [входу](#sign-in-azure).
+1. Если вы еще не вошли в учетную запись Azure и подписку из Visual Studio Code, выполните [предыдущие действия, чтобы войти](#sign-in-azure).
 
-1. В контекстном меню подписки выберите команду **Создать**.
+1. В Visual Studio Code в разделе **Logic Apps** откройте контекстное меню своей подписки и выберите параметр **Создание приложения логики**.
 
-   ![Выберите команду "Создать" в меню подписки](./media/create-logic-apps-visual-studio-code/create-logic-app-visual-studio-code.png)
+   ![Выбор пункта "Создание приложения логики" в меню подписки](./media/quickstart-create-logic-apps-visual-studio-code/create-logic-app-visual-studio-code.png)
 
-1. В списке групп ресурсов Azure в подписке выберите имеющуюся группу ресурсов или **создайте группу ресурсов**.
+   Появится список, в котором отобразятся все группы ресурсов Azure в вашей подписке.
 
-   В этом примере показано создание группы ресурсов.
+1. В списке группы ресурсов выберите пункт **Создать группу ресурсов** или имеющуюся группу ресурсов. В этом примере создайте группу ресурсов.
 
-   ![Создайте новую группу ресурсов Azure](./media/create-logic-apps-visual-studio-code/select-or-create-azure-resource-group.png)
+   ![создадим группу ресурсов Azure;](./media/quickstart-create-logic-apps-visual-studio-code/select-or-create-azure-resource-group.png)
 
 1. Укажите имя для группы ресурсов Azure и нажмите клавишу ВВОД.
 
-   ![Укажите имя для группы ресурсов Azure](./media/create-logic-apps-visual-studio-code/enter-name-resource-group.png)
+   ![Укажите имя для группы ресурсов Azure](./media/quickstart-create-logic-apps-visual-studio-code/enter-name-resource-group.png)
 
-1. Выберите расположение центра обработки данных для сохранения метаданных приложения логики.
+1. Выберите регион Azure, в котором необходимо сохранить метаданные приложения логики.
 
-   ![Выберите расположение Azure для сохранения метаданных приложения логики](./media/create-logic-apps-visual-studio-code/select-azure-location-new-resources.png)
+   ![Выберите расположение Azure для сохранения метаданных приложения логики](./media/quickstart-create-logic-apps-visual-studio-code/select-azure-location-new-resources.png)
 
-1. Укажите имя для приложения логики, а затем нажмите клавишу ВВОД.
+1. Укажите имя приложения логики и нажмите клавишу ВВОД.
 
-   ![Укажите имя приложения логики.](./media/create-logic-apps-visual-studio-code/enter-name-logic-app.png)
+   ![Укажите имя приложения логики.](./media/quickstart-create-logic-apps-visual-studio-code/enter-name-logic-app.png)
 
-   Новое приложение логики появится в окне Azure под подпиской Azure. Теперь можно приступить к созданию определения рабочего процесса приложения логики.
+   В окне Azure в подписке Azure появится новое и пустое приложение логики. Visual Studio Code также открывает файл JSON (.logicapp.json), который содержит схему определения рабочего процесса для приложения логики. Теперь можно вручную выполнить разработку определения рабочего процесса приложения логики в этом JSON-файле. Технические справочные сведения о структуре и синтаксисе определения рабочего процесса см. в разделе [Schema reference guide for the Workflow Definition Language in Azure Logic Apps](../logic-apps/logic-apps-workflow-definition-language.md) (Справочное руководство по схеме для языка определения рабочих процессов в Azure Logic Apps).
 
-1. В контекстном меню приложения логики выберите **Открыть в редакторе**.
+   ![JSON-файл определения рабочего процесса пустого приложения логики](./media/quickstart-create-logic-apps-visual-studio-code/empty-logic-app-workflow-definition.png)
 
-   ![Откройте приложение логики в редакторе кода](./media/create-logic-apps-visual-studio-code/open-new-logic-app-visual-studio-code.png)
+   Например, ниже приведен пример определения рабочего процесса приложения логики, который начинается с триггера RSS и действия Office 365 Outlook. Обычно элементы JSON отображаются в каждом разделе в алфавитном порядке. Однако в этом примере эти элементы отображаются приблизительно в том порядке, в котором в конструкторе отображаются шаги приложения логики.
 
-   В Visual Studio Code откроется шаблон определения рабочего процесса приложения логики (файл logicapp.json), и вы сможете приступить к созданию рабочего процесса приложения логики.
-
-   ![Новое определение рабочего процесса приложения логики](./media/create-logic-apps-visual-studio-code/blank-logic-app-workflow-definition.png)
-
-1. В файле шаблона определения рабочего процесса приложения логики начните создавать определение рабочего процесса приложения логики.
-Технические справочные сведения см. в статье [Сведения о схеме языка определения рабочих процессов в Azure Logic Apps](../logic-apps/logic-apps-workflow-definition-language.md).
-
-   Ниже приведен пример определения логики. Обычно элементы JSON отображаются в каждом разделе в алфавитном порядке. Однако в этом примере эти элементы отображаются приблизительно в том порядке, в котором в конструкторе отображаются шаги приложения логики.
+   > [!IMPORTANT]
+   > Если вы хотите повторно использовать этот пример определения приложения логики, вам потребуется учетная запись организации Office 365, например @fabrikam.com. Обязательно замените вымышленный адрес электронной почты своим. Чтобы использовать другой соединитель электронной почты, например Outlook.com или Gmail, замените действие `Send_an_email_action` аналогичным действием, доступным в [соединителе электронной почты, поддерживаемом Azure Logic Apps](../connectors/apis-list.md).
 
    ```json
    {
@@ -165,22 +170,22 @@ ms.locfileid: "72679156"
          }
       },
       "actions": {
-         "Send_an_email": {
+         "Send_an_email_(V2)": {
             "runAfter": {},
             "type": "ApiConnection",
             "inputs": {
                "body": {
-                  "Body": "Title: @{triggerBody()?['title']}\n\nDate published: @{triggerBody()?['publishDate']}\n\nLink: @{triggerBody()?['primaryLink']}",
-                  "Subject": "New RSS item: @{triggerBody()?['title']}",
-                  "To": "Sophie.Owen@contoso.com"
+                  "Body": "<p>Title: @{triggerBody()?['title']}<br>\n<br>\nDate published: @{triggerBody()?['updatedOn']}<br>\n<br>\nLink: @{triggerBody()?['primaryLink']}</p>",
+                  "Subject": "RSS item: @{triggerBody()?['title']}",
+                  "To": "sophia-owen@fabrikam.com"
                },
                "host": {
                   "connection": {
-                     "name": "@parameters('$connections')['outlook']['connectionId']"
+                     "name": "@parameters('$connections')['office365']['connectionId']"
                   }
                },
                "method": "post",
-               "path": "/Mail"
+               "path": "/v2/Mail"
             }
          }
       },
@@ -188,41 +193,119 @@ ms.locfileid: "72679156"
    }
    ```
 
-1. Закончив, сохраните файл определения приложения логики. Когда в Visual Studio Code появится запрос на подтверждение отправки определения приложения логики в подписку Azure, нажмите кнопку **Отправить**.
+1. Когда все будет готово, сохраните определение рабочего процесса приложения логики. (Меню "Файл > Сохранить" или нажмите клавиши CTRL + S)
 
-   ![Передайте новое приложение логики в подписку Azure](./media/create-logic-apps-visual-studio-code/upload-new-logic-app.png)
+1. Когда появится запрос на отправку приложения логики в подписку Azure, выберите пункт **Отправить**.
 
-   После того как Visual Studio Code опубликует приложение логики в Azure, приложение будет доступно и запущено на портале Azure.
+   На этом этапе приложение логики публикуется на [портале Azure](https://portal.azure.com), а логика запускается в Azure.
 
-   ![Опубликованное приложение логики на портале Azure](./media/create-logic-apps-visual-studio-code/published-logic-app-in-azure.png)
+   ![Передайте новое приложение логики в подписку Azure](./media/quickstart-create-logic-apps-visual-studio-code/upload-new-logic-app.png)
+
+## <a name="view-logic-app-in-designer"></a>Просмотр приложения логики в конструкторе
+
+В Visual Studio Code можно открыть приложение логики в режиме конструктора только для чтения. Несмотря на то, что приложение логики нельзя изменить в конструкторе, вы можете просмотреть рабочий процесс приложения логики в режиме конструктора.
+
+В окне Azure в разделе **Logic Apps** откройте контекстное меню приложения логики и выберите пункт **Open in Designer** (Открыть в конструкторе).
+
+Конструктор в режиме только для чтения открывается в отдельном окне и показывает рабочий процесс приложения логики, например:
+
+![Просмотр приложения логики в конструкторе только для чтения](./media/quickstart-create-logic-apps-visual-studio-code/logic-app-designer-view.png)
+
+## <a name="view-in-azure-portal"></a>Просмотр на портале Azure
+
+Чтобы просмотреть приложение логики на портале Azure, сделайте следующее:
+
+1. Войдите на [портал Azure](https://portal.azure.com) с помощью той же учетной записи и подписки Azure, которая связана с приложением логики.
+
+1. В поле поиска портала Azure введите имя приложения логики. В списке результатов выберите ваше приложение логики.
+
+   ![Новое приложение логики на портале Azure](./media/quickstart-create-logic-apps-visual-studio-code/published-logic-app-in-azure.png)
+
+<a name="disable-enable-logic-app"></a>
+
+## <a name="disable-or-enable-logic-app"></a>Отключение и включение приложения логики
+
+Если вы изменяете опубликованное приложение логики и сохраняете изменения в Visual Studio Code, уже развернутое приложение *перезаписывается*. Чтобы не нарушать работу приложения логики в рабочей среде и сократить период такого нарушения, сначала отключите приложение логики. Убедившись, что приложение логики работает нормально, вы можете повторно активировать его.
+
+1. Если вы еще не вошли в учетную запись Azure и подписку из Visual Studio Code, выполните [предыдущие действия, чтобы войти](#sign-in-azure).
+
+1. В окне Azure в разделе **Logic Apps** разверните подписку Azure, чтобы можно было просмотреть все приложения логики в этой подписке.
+
+   1. Чтобы отключить нужное приложение логики, откройте меню приложения логики и выберите пункт **Отключить**.
+
+      ![Отключение приложения логики](./media/quickstart-create-logic-apps-visual-studio-code/disable-published-logic-app.png)
+
+   1. Когда вы будете готовы к повторной активации приложения логики, откройте меню приложения логики и выберите пункт **Включить**.
+
+      ![Включение приложения логики](./media/quickstart-create-logic-apps-visual-studio-code/enable-published-logic-app.png)
 
 <a name="edit-logic-app"></a>
 
-## <a name="edit-logic-app"></a>Изменение приложения логики
+## <a name="edit-deployed-logic-app"></a>Изменение развернутого приложения логики
 
-Для работы с приложением логики, опубликованным в Azure, можно открыть определение приложения логики с помощью Visual Studio Code.
+В Visual Studio Code можно открыть и изменить определение рабочего процесса для развернутого приложения логики в Azure.
 
-1. Если вы еще не вошли подписку Azure в Visual Studio Code, выполните описанные в этой статье действия по [входу](#sign-in-azure).
+> [!IMPORTANT] 
+> Прежде чем изменять работающее приложение логики в рабочей среде, устраните риск нарушения работы этого приложения логики и сократите период такого нарушения, [отключив его](#disable-enable-logic-app).
+
+1. Если вы еще не вошли в учетную запись Azure и подписку из Visual Studio Code, выполните [предыдущие действия, чтобы войти](#sign-in-azure).
 
 1. В окне Azure в разделе **Logic Apps** разверните подписку Azure и выберите нужное приложение логики.
 
-1. В меню приложения логики выберите пункт **Открыть в редакторе**. Или рядом с именем приложения логики щелкните значок редактирования.
+1. Откройте меню приложения логики и выберите пункт **Открыть в редакторе**. Или рядом с именем приложения логики щелкните значок редактирования.
 
-   ![Открытие редактора для имеющегося приложения логики](./media/create-logic-apps-visual-studio-code/open-editor-existing-logic-app.png)
+   ![Открытие редактора для имеющегося приложения логики](./media/quickstart-create-logic-apps-visual-studio-code/open-editor-existing-logic-app.png)
 
-   В Visual Studio Code откроется файл logicapp.json для определения рабочего процесса приложения логики.
+   Visual Studio Code открывает файл .logicapp.json в локальной временной папке, чтобы можно было просмотреть определение рабочего процесса приложения логики.
 
-   ![Открытое определение рабочего процесса приложения логики](./media/create-logic-apps-visual-studio-code/edit-logic-app-workflow-definition-file.png)
+   ![Просмотр определения рабочего процесса для опубликованного приложения логики](./media/quickstart-create-logic-apps-visual-studio-code/edit-published-logic-app-workflow-definition.png)
 
-1. Внесите необходимые изменения в определение приложения логики.
+1. Внесите изменения в определение рабочего процесса приложения логики.
 
-1. Сохраните изменения, когда закончите.
+1. Сохраните изменения, когда закончите. (Меню "Файл > Сохранить" или нажмите клавиши CTRL + S)
 
-1. Когда в Visual Studio Code появится запрос на обновление определения приложения логики в подписке Azure, нажмите кнопку **Отправить**.
+1. При появлении запроса на отправку изменений и *перезапись* имеющегося приложения логики на портале Azure выберите пункт **Отправить**.
 
-   ![Отправьте изменения в определение приложения логики](./media/create-logic-apps-visual-studio-code/upload-logic-app-changes.png)
+   На этом этапе обновления для приложения логики публикуются на [портале Azure](https://portal.azure.com).
+
+   ![Отправка изменений в определение приложения логики в Azure](./media/quickstart-create-logic-apps-visual-studio-code/upload-logic-app-changes.png)
+
+## <a name="view-or-promote-other-versions"></a>Просмотр или повышение уровня других версий
+
+В Visual Studio Code можно открыть и проверить более ранние версии приложения логики, а также повысить уровень версии с более ранней на текущую.
+
+> [!IMPORTANT] 
+> Прежде чем изменять работающее приложение логики в рабочей среде, устраните риск нарушения работы этого приложения логики и сократите период такого нарушения, [отключив его](#disable-enable-logic-app).
+
+1. В окне Azure в разделе **Logic Apps** разверните подписку Azure, чтобы можно было просмотреть все приложения логики в этой подписке.
+
+1. Разверните приложение логики в подписке и узел **Версии**.
+
+   В списке **Версии** отображаются более ранние версии приложения логики, если они существуют.
+
+   ![Предыдущие версии приложения логики](./media/quickstart-create-logic-apps-visual-studio-code/view-previous-versions.png)
+
+1. Чтобы просмотреть более раннюю версию, выберите одно из следующих действий:
+
+   * Чтобы просмотреть определение JSON, в разделе **Версии** выберите номер версии для этого определения. Вы также можете открыть контекстное меню этой версии и выбрать пункт **Open in Editor** (Открыть в редакторе).
+
+     На локальном компьютере откроется новый файл, в котором будет показано определение JSON этой версии.
+
+   * Чтобы просмотреть версию в режиме конструктора только для чтения, откройте контекстное меню этой версии и выберите пункт **Open in Designer** (Открыть в конструкторе).
+
+1. Чтобы повысить уровень версии с более раннего на текущий, сделайте следующее:
+
+   1. В разделе **Версии** откройте контекстное меню более ранней версии и выберите пункт **Повысить уровень**.
+
+      ![Повышение уровня более ранней версии](./media/quickstart-create-logic-apps-visual-studio-code/promote-earlier-version.png)
+
+   1. Visual Studio Code запросит подтверждение. Чтобы продолжить, нажмите кнопку **Да**.
+
+      ![Подтверждение повышения уровня более ранней версии](./media/quickstart-create-logic-apps-visual-studio-code/confirm-promote-version.png)
+
+      Visual Studio Code повышает уровень выбранной версии до уровня текущей версии и присваивает этой версии новый номер. Ранее текущая версия отображается теперь как версия повышенного уровня.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> * [Создание приложений логики в Visual Studio](../logic-apps/quickstart-create-logic-apps-with-visual-studio.md)
+> [Создание приложений логики в Visual Studio](../logic-apps/quickstart-create-logic-apps-with-visual-studio.md)

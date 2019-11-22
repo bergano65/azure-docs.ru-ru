@@ -9,12 +9,12 @@ ms.service: stream-analytics
 ms.topic: tutorial
 ms.date: 12/07/2018
 ms.custom: seodec18
-ms.openlocfilehash: 9e05e4eab8bd3c307334b62df00dc03e56ce60ad
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.openlocfilehash: 7810cf9950d919469c4b47053a878518726f4393
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56727593"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72925067"
 ---
 # <a name="tutorial-deploy-an-azure-stream-analytics-job-with-cicd-using-azure-pipelines"></a>Руководство. Развертывание заданий Azure Stream Analytics с помощью CI/CD и Azure Pipelines
 В этом руководстве описано, как настроить непрерывную интеграцию и развертывание для задания Azure Stream Analytics с помощью CI/CD и Azure Pipelines. 
@@ -117,7 +117,7 @@ ms.locfileid: "56727593"
     
     |**Параметр**  |**Рекомендуемое значение**  |
     |---------|---------|
-    |Подписка  |  Выберите свою подписку.   |
+    |Subscription  |  Выберите свою подписку.   |
     |Действие  |  Создание или изменение группы ресурсов   |
     |Группа ресурсов  |  Введите имя группы ресурсов.   |
     |Шаблон  | [Путь решения] \bin\Debug\Deploy\\[имя_проекта]. JobTemplate.json   |

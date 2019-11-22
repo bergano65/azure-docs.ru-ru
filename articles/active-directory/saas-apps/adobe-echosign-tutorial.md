@@ -8,6 +8,7 @@ manager: daveba
 ms.reviewer: barbkess
 ms.assetid: f9385723-8fe7-4340-8afb-1508dac3e92b
 ms.service: active-directory
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +16,12 @@ ms.topic: tutorial
 ms.date: 12/19/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bcb27e24e9b53b734a24304a63c8fd91d5e94f5d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 788c1292b844088f171479b40fc566ff5cfc8a57
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67107328"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73154021"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-adobe-sign"></a>Руководство по Интеграция Azure Active Directory с Adobe Sign
 
@@ -151,13 +152,13 @@ ms.locfileid: "67107328"
 
 1. В меню SAML выберите **Параметры учетной записи** > **Параметры SAML**.
    
-    ![Снимок экрана страницы параметров SAML на веб-сайте Adobe Sign](./media/adobe-echosign-tutorial/ic789520.png "Учетная запись")
+    ![Страница параметров SAML на веб-сайте Adobe Sign](./media/adobe-echosign-tutorial/ic789520.png "Учетная запись.")
 
 1. В разделе **SAML Settings** (Параметры SAML) выполните следующие действия.
   
-   ![Снимок экрана параметров SAML](./media/adobe-echosign-tutorial/ic789521.png "Параметры SAML")
+   ![Параметры SAML](./media/adobe-echosign-tutorial/ic789521.png "Настройка SAML")
    
-   ![Снимок экрана параметров SAML](./media/adobe-echosign-tutorial/ic789522.png "Параметры SAML")
+   ![Параметры SAML](./media/adobe-echosign-tutorial/ic789522.png "Настройка SAML")
 
    a. В разделе **SAML Mode** (Режим SAML) выберите параметр **SAML Mandatory** (SAML обязательно).
    
@@ -237,11 +238,11 @@ ms.locfileid: "67107328"
 
 2. В верхней области меню выберите **Учетная запись**. Затем в левой области выберите **Пользователи и группы** > **Создать нового пользователя**.
    
-    ![Снимок экрана корпоративного веб-сайта Adobe Sign с выделенными параметрами "Учетная запись", "Пользователи и группы" и "Создать нового пользователя"](./media/adobe-echosign-tutorial/ic789524.png "Учетная запись")
+    ![Корпоративный веб-сайт Adobe Sign с выделенными параметрами "Учетная запись", "Пользователи и группы" и "Создать нового пользователя"](./media/adobe-echosign-tutorial/ic789524.png "Учетная запись.")
    
 3. В разделе **Создание нового пользователя** выполните следующие действия.
    
-    ![Снимок экрана раздела "Создание нового пользователя"](./media/adobe-echosign-tutorial/ic789525.png "Создать пользователя")
+    ![Раздел "Создание нового пользователя"](./media/adobe-echosign-tutorial/ic789525.png "Создать пользователя")
    
     a. Введите в текстовые поля **Адрес электронной почты**, **Имя** и **Фамилия** соответствующие данные действующей учетной записи Azure AD, которую нужно подготовить.
    
@@ -262,5 +263,5 @@ ms.locfileid: "67107328"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c1d7d2ad6adefb83c3c313063a9e630458ccebc5
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 07c1d6e3c622a76a1e625962ad5f08d414ad8cef
+ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68851766"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73175037"
 ---
 # <a name="what-is-a-device-identity"></a>Что такое удостоверение устройства?
 
@@ -94,4 +94,4 @@ ms.locfileid: "68851766"
 - Подробнее о [присоединенных к Azure AD устройствах](concept-azure-ad-join.md)
 - Подробнее о[присоединенных к Azure AD с помощью гибридного присоединения устройствах](concept-azure-ad-join-hybrid.md)
 - Чтобы получить общие сведения о том, как управлять удостоверениями устройств на портале Azure, ознакомьтесь с разделом [Как управлять устройствами с помощью портала Azure](device-management-azure-portal.md).
-- Дополнительные сведения об условном доступе на основе устройств см. в статье [Практическое руководство. Требование использовать только управляемые устройства для доступа к облачным приложениям с помощью условного доступа](../conditional-access/require-managed-devices.md).
+- См. сведения о [настройке требования использовать только управляемые устройства для доступа к облачным приложениям с помощью условного доступа](../conditional-access/require-managed-devices.md).

@@ -10,13 +10,13 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: article
-ms.date: 09/06/2019
-ms.openlocfilehash: 5888555e93c28c96445bed1936deda022b0a4b94
-ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
+ms.date: 10/28/2019
+ms.openlocfilehash: 1b4eebafadcdbebfc89ce7265f4d4f77f4f5ac8c
+ms.sourcegitcommit: 38251963cf3b8c9373929e071b50fd9049942b37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70734590"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73043232"
 ---
 # <a name="tutorial-migrate-postgresql-to-azure-database-for-postgresql-online-using-dms"></a>Руководство по Миграция PostgreSQL в Базу данных Azure для PostgreSQL через Интернет с помощью Azure Database Migration Service
 
@@ -63,7 +63,7 @@ Azure Database Migration Service можно использовать для пе
 * Создайте [правило брандмауэра](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure) уровня сервера для Базы данных Azure для PostgreSQL, чтобы предоставить службе Azure Database Migration Service доступ к целевым базам данных. Задайте диапазон подсети в виртуальной сети, которая используется для Azure Database Migration Service.
 * Вызвать интерфейс командной строки можно двумя способами.
 
-  * Выберите "Cloud Shell" в правом верхнем углу окна портала Azure.
+  * Нажмите кнопку Cloud Shell в правом верхнем углу окна портала Azure.
 
        ![Кнопка "Cloud Shell" на портале Azure](media/tutorial-postgresql-to-azure-postgresql-online/cloud-shell-button.png)
 

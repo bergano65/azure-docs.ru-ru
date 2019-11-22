@@ -1,23 +1,23 @@
 ---
 title: Развертывание в Функциях Azure с помощью подключаемого модуля Jenkins для Функций Azure
-description: Из этой статьи вы узнаете, как выполнять развертывание в Функциях Azure с помощью подключаемого модуля Jenkins для Функций Azure.
+description: Узнайте, как выполнить развертывание в Функциях Azure с помощью подключаемого модуля Jenkins для Функций Azure.
 ms.service: jenkins
 keywords: jenkins, azure, devops, java, azure functions
 author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
-ms.date: 02/23/2019
-ms.openlocfilehash: 1ee5a8d5f55422c9f8a0f20f3c6eb039f080dc2d
-ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
+ms.date: 10/23/2019
+ms.openlocfilehash: 58267c607b0c4f2eaaf242c8e0752451f8c04c9a
+ms.sourcegitcommit: 7efb2a638153c22c93a5053c3c6db8b15d072949
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68815733"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72882043"
 ---
-# <a name="deploy-to-azure-functions-using-the-jenkins-azure-functions-plugin"></a>Развертывание в Функциях Azure с помощью подключаемого модуля Jenkins для Функций Azure
+# <a name="deploy-to-azure-functions-using-the-jenkins-azure-functions-plug-in"></a>Развертывание в Функциях Azure с помощью подключаемого модуля Jenkins для Функций Azure
 
-[Функции Azure](/azure/azure-functions/) — это независимая от сервера служба вычислений. С помощью Функций Azure вы можете выполнить код по требованию, не запуская операции по подготовке инфраструктуры или управлению ею. В этом руководстве рассматривается, как развернуть функцию Java в Функциях Azure с помощью подключаемого модуля для Функций Azure.
+[Функции Azure](/azure/azure-functions/) — это независимая от сервера служба вычислений. С помощью Функций Azure вы можете выполнить код по требованию, не запуская операции по подготовке инфраструктуры или управлению ею. В этом руководстве описано, как развернуть функцию Java в Функциях Azure с помощью подключаемого модуля для Функций Azure.
 
 ## <a name="prerequisites"></a>Предварительные требования
 

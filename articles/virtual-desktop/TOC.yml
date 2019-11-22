@@ -62,6 +62,8 @@
       href: customize-rdp-properties.md
     - name: Развертывание средства диагностики
       href: deploy-diagnostics.md
+    - name: Настройка присоединения приложения MSIX
+      href: app-attach.md
 - name: Основные понятия
   items:
     - name: Среда Виртуального рабочего стола Windows

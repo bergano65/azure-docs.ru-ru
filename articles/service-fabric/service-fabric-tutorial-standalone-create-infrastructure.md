@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 05/11/2018
 ms.author: dekapur
 ms.custom: mvc
-ms.openlocfilehash: 69508628356a5f33073311e4d062d66875509192
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.openlocfilehash: 048051a612793cbe82f82fbde482ed470ad3758c
+ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66302481"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73177823"
 ---
 # <a name="tutorial-create-aws-infrastructure-to-host-a-service-fabric-cluster"></a>Руководство по созданию инфраструктуры AWS для размещения кластера Service Fabric
 
@@ -82,7 +82,7 @@ New-NetFirewallRule -DisplayName "Service Fabric Ports" -Direction Inbound -Acti
 
 Чтобы не сделать эти порты общедоступными, откройте их только для узлов в той же группе безопасности. Запишите идентификатор группы безопасности. В примере он имеет значение **sg c4fb1eba**.  Затем выберите **Edit** (Изменить).
 
-Добавьте четыре правила в группу безопасности для зависимостей службы, а затем еще три для самой службы Service Fabric. Первое правило — разрешить трафик ICMP для базовой проверки подключений. Другие правила открывают необходимые порты для включения SMB и удаленного реестра.
+Добавьте четыре правила в группу безопасности для зависимостей службы, а затем еще три для самой службы Service Fabric. Первое правило — разрешить трафик ICMP для базовой проверки подключений. Другие правила открывают необходимые порты для включения удаленного реестра.
 
 Для первого правила выберите **Add Rule** (Добавить правило), затем в раскрывающемся меню выберите **All ICMP - IPv4** (Все ICMP — IPv4). Выберите поле ввода рядом с полем Custom (Настраиваемый) и введите записанный ранее идентификатор группы безопасности.
 
@@ -118,30 +118,18 @@ New-NetFirewallRule -DisplayName "Service Fabric Ports" -Direction Inbound -Acti
 ping 172.31.20.163
 ```
 
-Если ваш результат выглядит следующим образом `Reply from 172.31.20.163: bytes=32 time<1ms TTL=128` и повторяется четыре раза, это означает, что ваше соединение между экземплярами работает.  Теперь с помощью следующей команды проверьте, работает ли SMB:
-
-```
-net use * \\172.31.20.163\c$
-```
-
-Она должна возвратить следующие выходные данные: `Drive Z: is now connected to \\172.31.20.163\c$.`.
+Если ваш результат выглядит следующим образом `Reply from 172.31.20.163: bytes=32 time<1ms TTL=128` и повторяется четыре раза, это означает, что ваше соединение между экземплярами работает.  
 
 ## <a name="prep-instances-for-service-fabric"></a>Подготовка экземпляров для Service Fabric
 
-Если вы создаете экземпляр с нуля, вам нужно выполнить несколько дополнительных шагов.  А именно: вам нужно будет проверить, запущен ли удаленный реестр, включен ли SMB и открыты ли необходимые порты для SMB и удаленного реестра.
+Если вы создаете экземпляр с нуля, вам нужно выполнить несколько дополнительных шагов.  А именно, вам нужно будет проверить, запущен ли удаленный реестр и открыты ли необходимые порты.
 
 С целью упрощения этого процесса вся эта работа была выполнена во время начальной загрузки экземпляров с помощью скрипта пользовательских данных.
-
-Включить SMB можно с помощью команды PowerShell, которую вы уже использовали:
-
-```powershell
-netsh advfirewall firewall set rule group="File and Printer Sharing" new enable=Yes
-```
 
 Чтобы открыть порты в брандмауэре, выполните команду PowerShell:
 
 ```powershell
-New-NetFirewallRule -DisplayName "Service Fabric Ports" -Direction Inbound -Action Allow -RemoteAddress LocalSubnet -Protocol TCP -LocalPort 135, 137-139, 445
+New-NetFirewallRule -DisplayName "Service Fabric Ports" -Direction Inbound -Action Allow -RemoteAddress LocalSubnet -Protocol TCP -LocalPort 135, 137-139
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация

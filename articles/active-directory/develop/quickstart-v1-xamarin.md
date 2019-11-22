@@ -18,12 +18,12 @@ ms.author: ryanwi
 ms.reviewer: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 36e354894700ec92a444f288b3e09f5d7af88329
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: f93816168a95fa10639da91d72a070660157a96f
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68321036"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73149539"
 ---
 # <a name="quickstart-build-a-xamarin-app-that-integrates-microsoft-sign-in"></a>Краткое руководство. Создание приложения Xamarin, которое интегрирует функцию входа в Майкрософт
 
@@ -31,5 +31,6 @@ ms.locfileid: "68321036"
 
 [Библиотека аутентификации Майкрософт (MSAL)](msal-overview.md) позволяет разработчикам получать маркеры из конечной точки платформы удостоверений Майкрософт, чтобы получить доступ к защищенным веб-API. Библиотека проверки подлинности Active Directory (ADAL) интегрируется с конечной точкой Azure AD для разработчиков (версия 1.0), а MSAL интегрируется с конечной точкой платформы удостоверений Майкрософт (версия 2.0).
 
-С новыми приложениями Xamarin мы рекомендуем использовать платформу удостоверений Майкрософт (версия 2.0) и MSAL для получения маркеров и доступа к защищенным веб-API: [интегрируйте удостоверение Майкрософт и Microsoft Graph в приложение с формами Xamarin с помощью MSAL](https://github.com/azure-samples/active-directory-xamarin-native-v2#integrate-microsoft-identity-and-the-microsoft-graph-into-a-xamarin-forms-app-using-msal) (без необязательных шагов).
+## <a name="next-steps"></a>Дополнительная информация
 
+С новыми приложениями Xamarin мы рекомендуем использовать платформу удостоверений Майкрософт (версия 2.0) и MSAL для получения маркеров и доступа к защищенным веб-API: Чтобы начать работу, см. руководство по [интеграции удостоверения Майкрософт и Microsoft Graph в приложение с формами Xamarin с помощью MSAL](https://github.com/azure-samples/active-directory-xamarin-native-v2#integrate-microsoft-identity-and-the-microsoft-graph-into-a-xamarin-forms-app-using-msal) (без необязательных шагов).

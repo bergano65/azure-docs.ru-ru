@@ -8,6 +8,7 @@ manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 28acce3e-22a0-4a37-8b66-6e518d777350
 ms.service: active-directory
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +16,12 @@ ms.topic: tutorial
 ms.date: 01/21/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 88f42a849d5c483feb9325072fd65769839672e4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7b34e6087f3a6e7f3cc0f46c53d4fe903838d210
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67105384"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73158599"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-clarizen"></a>Руководство по Интеграция Azure Active Directory с Clarizen
 
@@ -132,7 +133,7 @@ ms.locfileid: "67105384"
 
 1. Щелкните свое имя пользователя и выберите пункт **Settings** (Параметры).
 
-    ![Выбор пункта "Параметры" по именем пользователя](./media/clarizen-tutorial/tutorial_clarizen_001.png "Параметры")
+    ![Пункт "Параметры" под именем пользователя](./media/clarizen-tutorial/tutorial_clarizen_001.png "Параметры")
 
 1. Откройте вкладку **Global Settings** (Глобальные параметры). Рядом с параметром **Federated Authentication** (Федеративная проверка подлинности) нажмите кнопку **edit** (изменить).
 
@@ -217,15 +218,15 @@ ms.locfileid: "67105384"
 
 2. Выберите параметр **Пользователи**.
 
-    ![Выберите пункт People (Пользователи)](./media/clarizen-tutorial/create_aaduser_001.png "Пользователи")
+    ![Кнопка "Люди"](./media/clarizen-tutorial/create_aaduser_001.png "Люди")
 
 3. Нажмите кнопку **Пригласить пользователя**.
 
-    ![Кнопка Invite User](./media/clarizen-tutorial/create_aaduser_002.png "Пригласить пользователя")
+    ![Кнопка "Пригласить пользователя"](./media/clarizen-tutorial/create_aaduser_002.png "Пригласить пользователей")
 
 1. В диалоговом окне **Invite People** (Приглашение пользователей) выполните следующие действия.
 
-    ![Диалоговое окно Invite People](./media/clarizen-tutorial/create_aaduser_003.png "Приглашение пользователей")
+    ![Диалоговое окно "Приглашение пользователей"](./media/clarizen-tutorial/create_aaduser_003.png "Приглашение пользователей")
 
     a. В текстовом поле **Email** (Электронная почта) введите адрес электронной почты учетной записи Britta Simon.
 
@@ -247,4 +248,4 @@ ms.locfileid: "67105384"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

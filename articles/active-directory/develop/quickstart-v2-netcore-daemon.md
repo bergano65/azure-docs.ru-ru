@@ -1,5 +1,6 @@
 ---
-title: Использование управляющей программы .NET Core с платформой удостоверений Майкрософт | Azure
+title: Получение маркера безопасности и вызов API Microsoft Graph из консольного приложения с помощью удостоверения приложения | Azure
+titleSuffix: Microsoft identity platform
 description: Узнайте, как процесс .NET Core может получить маркер доступа и вызвать API, защищенный конечной точкой платформы удостоверений Майкрософт, с помощью собственного удостоверения приложения.
 services: active-directory
 documentationcenter: dev-center-name
@@ -17,14 +18,14 @@ ms.date: 07/16/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a130878baa10be426072dfe79284a1d602dfb6ff
-ms.sourcegitcommit: 8fea78b4521921af36e240c8a92f16159294e10a
+ms.openlocfilehash: a2617013b90cc9709a27ff8ab8c5046ebdcc9951
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2019
-ms.locfileid: "70211855"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73149434"
 ---
-# <a name="quickstart-acquire-a-token-and-call-microsoft-graph-api-from-a-console-app-using-apps-identity"></a>Краткое руководство. Получение маркера безопасности и вызов API Microsoft Graph из консольного приложения с помощью удостоверения приложения
+# <a name="quickstart-acquire-a-token-and-call-microsoft-graph-api-using-console-apps-identity"></a>Краткое руководство. Получение маркера безопасности и вызов API Microsoft Graph из консольного приложения с помощью удостоверения приложения
 
 В этом кратком руководстве вы узнаете, как создать приложение .NET Core, которое может получить маркер доступа, используя собственное удостоверение приложения, а затем вызвать API Microsoft Graph для отображения [списка пользователей](https://docs.microsoft.com/graph/api/user-list) в каталоге. Этот сценарий полезен в ситуациях, где автономное, автоматическое задание или службу Windows необходимо запустить с использованием удостоверения приложения, а не удостоверения пользователя.
 
