@@ -1,14 +1,14 @@
 ---
 title: Устранение распространенных ошибок
-description: Узнайте, как устранять проблемы с запросом ресурсов Azure с помощью графа ресурсов Azure.
+description: Узнайте, как устранять неполадки с различными пакетами SDK при запросе ресурсов Azure с помощью графа ресурсов Azure.
 ms.date: 10/18/2019
 ms.topic: troubleshooting
-ms.openlocfilehash: e8f42650265b1ca400731365203408eeb22a4e4c
-ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
+ms.openlocfilehash: f881db4f75bcee8c13221717596442ac29a4b1ac
+ms.sourcegitcommit: 8a2949267c913b0e332ff8675bcdfc049029b64b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73958519"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74303894"
 ---
 # <a name="troubleshoot-errors-using-azure-resource-graph"></a>Устранение ошибок с помощью графа ресурсов Azure
 

@@ -61,8 +61,6 @@
               href: quickstart-v2-netcore-daemon.md
             - name: Управляющая программа консоли Python
               href: quickstart-v2-python-daemon.md
-            - name: Веб-приложение управляющей программы ASP.NET
-              href: 'https://github.com/Azure-Samples/active-directory-dotnet-daemon-v2'
     - name: Учебники
       items:
         - name: Одностраничные приложения
@@ -83,6 +81,10 @@
               href: tutorial-v2-windows-uwp.md
             - name: Платформа .NET для классических приложений Windows
               href: tutorial-v2-windows-desktop.md
+        - name: Управляющие программы
+          items:
+            - name: Веб-приложение управляющей программы ASP.NET
+              href: tutorial-v2-aspnet-daemon-web-app.md
     - name: Примеры
       href: sample-v2-code.md
     - name: Основные понятия

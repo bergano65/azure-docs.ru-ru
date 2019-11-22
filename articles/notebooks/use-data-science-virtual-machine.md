@@ -1,23 +1,17 @@
 ---
 title: Использование виртуальных машин Azure для обработки и анализа данных
 description: Подключитесь к виртуальной машине Azure для обработки и анализа данных (DSVM), чтобы расширить вычислительную мощность, доступную для записных книжек Azure.
-services: app-service
-documentationcenter: ''
 author: getroyer
 manager: andneil
-ms.assetid: 0ccc2529-e17f-4221-b7c7-9496d6a731cc
-ms.service: azure-notebooks
-ms.workload: na
-ms.tgt_pltfrm: na
+ms.author: getroyer
 ms.topic: article
 ms.date: 06/13/2019
-ms.author: getroyer
-ms.openlocfilehash: 0f06475708adaf1324eedbd8e315fe4d731339be
-ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
+ms.openlocfilehash: 0559442cb3f6c3937e6930082940e9354c43bc30
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2019
-ms.locfileid: "71970106"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74277401"
 ---
 # <a name="use-azure-data-science-virtual-machines"></a>Использование виртуальных машин Azure для обработки и анализа данных
 
@@ -67,6 +61,6 @@ ms.locfileid: "71970106"
 1. Введите новое имя пользователя и пароль и нажмите кнопку **Обновить**. (Существующие имена пользователей не затрагиваются.)
 1. Повторите предыдущий шаг для всех дополнительных пользователей.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о Dsvm см. в статье [Введение в виртуальные машины Azure для обработки и анализа данных](/azure/machine-learning/data-science-virtual-machine/overview).

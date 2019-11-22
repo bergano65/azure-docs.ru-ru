@@ -1,5 +1,5 @@
 ---
-title: Служба совместной работы B2B для гибридных организаций в Azure Active Directory | Документация Майкрософт
+title: Служба совместной работы B2B для гибридных организаций — Azure AD
 description: Предоставьте партнерам доступ к локальным и облачным ресурсам с помощью службы совместной работы AAD B2B.
 services: active-directory
 ms.service: active-directory
@@ -11,12 +11,12 @@ author: msmimart
 manager: celestedg
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b30e9c14863f67d28203eac916606e8786101e3b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 427f7ad4d6a1b9839b1197ef9f7ca15400ea0f59
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65768285"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74272472"
 ---
 # <a name="azure-active-directory-b2b-collaboration-for-hybrid-organizations"></a>Служба совместной работы Azure Active Directory B2B для гибридных организаций
 
@@ -45,7 +45,7 @@ ms.locfileid: "65768285"
 
 Подробнее см. статью [Предоставление локально управляемым партнерским учетным записям доступа к облачным ресурсам через службу совместной работы AAD B2B](hybrid-on-premises-to-cloud.md).
  
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Предоставление пользователям B2B в Azure AD доступа к локальным приложениям](hybrid-cloud-to-on-premises.md)
 - [Предоставление локально управляемым партнерским учетным записям доступа к облачным ресурсам через службу совместной работы AAD B2B](hybrid-on-premises-to-cloud.md)
