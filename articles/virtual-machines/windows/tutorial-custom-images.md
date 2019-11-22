@@ -1,5 +1,5 @@
 ---
-title: Руководство. Создание пользовательских образов виртуальных машин с помощью Azure PowerShell | Документация Майкрософт
+title: Учебник. Создание пользовательских образов виртуальных машин с помощью Azure PowerShell
 description: В этом руководстве описано, как с помощью Azure PowerShell создать пользовательский образ виртуальной машины Linux в Azure.
 services: virtual-machines-windows
 documentationcenter: virtual-machines
@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 11/30/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 58f7e530008303f16f2d015e29e60e95480cab2c
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: 906ac3b28a512a866e712cefda4355ad901c258d
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72390572"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74064716"
 ---
 # <a name="tutorial-create-a-custom-image-of-an-azure-vm-with-azure-powershell"></a>Руководство по Создание пользовательского образа виртуальной машины Azure с помощью Azure PowerShell
 

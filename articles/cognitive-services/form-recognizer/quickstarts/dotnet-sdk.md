@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство. Клиентская библиотека Распознавателя документов для .NET | Документация Майкрософт
-description: Здесь приведены сведения о том, как начать работу с клиентской библиотекой Распознавателя документов для .NET.
+description: Здесь приведены сведения о том, как начать работу с клиентской библиотекой Распознавателя документов для .NET, чтобы обучать, извлекать, анализировать и получать структурированные выходные данные.
 services: cognitive-services
 author: PatrickFarley
 manager: nitinme
@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: quickstart
 ms.date: 07/12/2019
 ms.author: pafarley
-ms.openlocfilehash: 74bb062713eac44310edcc8d1cdaed605e964681
-ms.sourcegitcommit: b4665f444dcafccd74415fb6cc3d3b65746a1a31
+ms.openlocfilehash: 6d360939a0196d7e5dc651ecf9a01ef5cbd2f689
+ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72264440"
+ms.lasthandoff: 11/10/2019
+ms.locfileid: "73904608"
 ---
 # <a name="quickstart-form-recognizer-client-library-for-net"></a>Краткое руководство. Клиентская библиотека Распознавателя документов для .NET
 
@@ -43,7 +43,7 @@ ms.locfileid: "72264440"
 
 [!INCLUDE [create resource](../includes/create-resource.md)]
 
-После получения ключа из своего ресурса или пробной подписки [задайте переменную среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для ключа с именем `FORM_RECOGNIZER_KEY`.
+После получения ключа из своего ресурса или пробной подписки [задайте переменные среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для ключа и конечной точки с именами `FORM_RECOGNIZER_KEY` и `FORM_RECOGNIZER_ENDPOINT` соответственно.
 
 ### <a name="create-a-new-c-application"></a>Создание нового приложения C#
 
@@ -120,7 +120,6 @@ dotnet add package Microsoft.Azure.CognitiveServices.FormRecognizer --version 0.
 
 Перед определением методов добавьте следующие определения переменных в начало класса **Program**. Вам придется самостоятельно ввести некоторые переменные. 
 
-* Значение конечной точки службы можно найти в разделе **Обзор** на портале Azure. 
 * Чтобы получить подписанный URL-адрес данных для обучения, откройте Обозреватель службы хранилища Microsoft Azure, щелкните контейнер правой кнопкой мыши и выберите **Получить подписанный URL-адрес**. Убедитесь, что разрешение на **чтение** и разрешение **списка** установлены и нажмите кнопку **Создать**. Затем скопируйте значение в разделе **URL-адрес**. Оно должно быть в таком формате: `https://<storage account>.blob.core.windows.net/<container name>?<SAS value>`.
 * Если для анализа требуется пример формы, можно использовать один из файлов в папке **Test** из [примера набора данных](https://go.microsoft.com/fwlink/?linkid=2090451). С этим руководством используются только формы PDF.
 

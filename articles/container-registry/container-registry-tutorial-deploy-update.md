@@ -1,6 +1,6 @@
 ---
-title: Руководство. Отправка обновленного образа контейнера для развертывания в региональных приложениях Azure
-description: Отправьте измененный образ Docker в геореплицируемый реестр контейнеров Azure, а затем просмотрите изменения, автоматически развернутые в веб-приложениях, которые выполняются в нескольких регионах. Это третья часть руководства из трех частей.
+title: Учебник. Принудительное обновление геореплицированного Реестра контейнеров Azure
+description: Принудительно отправьте обновленный образ Docker в геореплицированный Реестр контейнеров Azure, а затем просмотрите изменения, автоматически развернутые в веб-приложениях, которые работают в нескольких регионах. Это третья часть руководства из трех частей.
 services: container-registry
 author: dlepow
 manager: gwallace
@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 04/30/2018
 ms.author: danlep
 ms.custom: seodec18, mvc
-ms.openlocfilehash: e01fdc41d0cc2e65951bd92378eb59f0fd35816a
-ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
+ms.openlocfilehash: adf6348e3b4c5fa728a0289ccd5bd3f289872108
+ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68310429"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73931377"
 ---
 # <a name="tutorial-push-an-updated-container-image-to-a-geo-replicated-container-registry-for-regional-web-app-deployments"></a>Руководство. Отправка обновленного образа контейнера в геореплицируемый реестр контейнеров для развертывания в региональных веб-приложениях
 

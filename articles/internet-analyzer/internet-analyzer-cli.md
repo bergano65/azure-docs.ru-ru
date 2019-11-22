@@ -7,12 +7,12 @@ ms.service: internet-analyzer
 ms.topic: tutorial
 ms.date: 10/16/2019
 ms.author: mebeatty
-ms.openlocfilehash: 3ae3c3f66ce7301023217a91cd8c79783f3ef833
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 2952f7f24e92b952daafa682eee9d4605537a37b
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73509848"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73839526"
 ---
 # <a name="create-an-internet-analyzer-test-using-cli-preview"></a>Создание теста Анализатора Интернета с помощью интерфейса командной строки (предварительная версия)
 
@@ -79,7 +79,7 @@ ms.locfileid: "73509848"
     az internet-analyzer test create --resource-group "MyInternetAnalyzerResourceGroup" --profile-name "MyInternetAnalyzerProfile" --endpoint-a-name "contoso" --endpoint-a-endpoint "www.contoso.com/some/path/to/trans.gif" --endpoint-b-name "microsoft" --endpoint-b-endpoint "www.microsoft.com/another/path/to/trans.gif" --name "MyFirstInternetAnalyzerTest" --enabled-state Enabled
     ```
 
-    Приведенная выше команда предполагает, что ресурсы www.contoso.com и www.microsoft.com содержат однопиксельное изображение ([trans.gif](https://fpc.msedge.net/apc/trans.gif)) в настраиваемом пути. Если путь к объекту не указан явно, то Анализатор Интернета по умолчанию будет использовать `/apc/trans.gif` в качестве пути к объекту, где в предварительно настроенных конечных точках размещается однопиксельное изображение. Обратите также внимание, что не нужно указывать схему (HTTPS/HTTP). Анализатор Интернета поддерживает только конечные точки HTTPS, поэтому предполагается использование протокола HTTPS.
+    Приведенная выше команда предполагает, что ресурсы `www.contoso.com` и `www.microsoft.com` содержат однопиксельное изображение ([trans.gif](https://fpc.msedge.net/apc/trans.gif)) в настраиваемом пути. Если путь к объекту не указан явно, то Анализатор Интернета по умолчанию будет использовать `/apc/trans.gif` в качестве пути к объекту, где в предварительно настроенных конечных точках размещается однопиксельное изображение. Обратите также внимание, что не нужно указывать схему (HTTPS/HTTP). Анализатор Интернета поддерживает только конечные точки HTTPS, поэтому предполагается использование протокола HTTPS.
 
 11. Новый тест должен появиться в профиле Анализатора Интернета:
     ```azurecli-interactive
@@ -133,4 +133,4 @@ ms.locfileid: "73509848"
 ## <a name="next-steps"></a>Дополнительная информация
 
 * [Вопросы и ответы об Анализаторе Интернета](internet-analyzer-faq.md)
-* Дополнительные сведения о внедрении [клиента Анализатора Интернета](internet-analyzer-embed-client.md) и создании [пользовательской конечной точки](internet-analyzer-custom-endpoint.md). 
+* Узнайте больше о внедрении [клиента Анализатора Интернета](internet-analyzer-embed-client.md) и создании [пользовательской конечной точки](internet-analyzer-custom-endpoint.md). 

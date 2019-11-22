@@ -1,19 +1,19 @@
 ---
 title: Учебник по C#. Упорядочение результатов
 titleSuffix: Azure Cognitive Search
-description: Этот учебник продолжает развитие проекта "Разбиение результатов поиска на страницы (Когнитивный поиск Azure)", добавляя к нему упорядочение результатов поиска. Из этой статьи вы узнаете, как правильно упорядочивать результаты и как упорядочивать по дополнительному свойству те результаты, у которых совпадают значения основного свойства. Наконец, вы научитесь упорядочивать результаты по профилю повышения.
+description: В этом учебнике показано, как упорядочить результаты поиска. В его основе лежит имеющийся проект гостиниц с упорядочиванием по первичному и дополнительному свойству, а также профилем повышения для добавления критериев.
 manager: nitinme
 author: PeterTurcan
 ms.author: v-pettur
 ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 11/04/2019
-ms.openlocfilehash: 8d0c8e2a4467fe56cc0633a7d501af0c6aeed22a
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: 9230e555f9ea56ca4cda3fcabe1f9719e36a8f62
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72794057"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74112681"
 ---
 # <a name="c-tutorial-order-the-results---azure-cognitive-search"></a>Руководство по C#. Упорядочивание результатов в службе "Когнитивный поиск Azure".
 

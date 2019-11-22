@@ -1,23 +1,23 @@
 ---
-title: Подготовка имитированного устройства X.509 в Центре Интернета вещей Azure с помощью Node.js | Документация Майкрософт
+title: Краткое руководство. Подготовка имитированного устройства X.509 в Центре Интернета вещей Azure с помощью Node.js
 description: Создание и подготовка к работе имитированного устройства X.509 с помощью пакета SDK Node.js для Службы подготовки устройств к добавлению в Центр Интернета вещей. В этом кратком руководстве используется индивидуальная регистрация.
 author: wesmc7777
 ms.author: wesmc
-ms.date: 04/09/2018
+ms.date: 11/08/2018
 ms.topic: quickstart
 ms.service: iot-dps
 services: iot-dps
 manager: timlt
 ms.devlang: nodejs
 ms.custom: mvc
-ms.openlocfilehash: e0f7fa544efcdd20e9ed567c6de55a8b1aecfe41
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.openlocfilehash: e28f0c19918cb29ca6850b1957a403af5aafb1a4
+ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62126517"
+ms.lasthandoff: 11/10/2019
+ms.locfileid: "73904795"
 ---
-# <a name="create-and-provision-an-x509-simulated-device-using-nodejs-device-sdk-for-iot-hub-device-provisioning-service"></a>Создание и подготовка имитированного устройства X.509 с помощью пакета SDK для устройства Node.js для службы подготовки устройств к добавлению в Центр Интернета вещей
+# <a name="quickstart-create-and-provision-an-x509-simulated-device-using-nodejs-device-sdk-for-iot-hub-device-provisioning-service"></a>Краткое руководство. Создание и подготовка имитированного устройства X.509 с помощью пакета SDK для устройства Node.js для службы подготовки устройств к добавлению в Центр Интернета вещей
 [!INCLUDE [iot-dps-selector-quick-create-simulated-device-x509](../../includes/iot-dps-selector-quick-create-simulated-device-x509.md)]
 
 В этом руководстве показано, как создавать запись регистрации в службе подготовки устройств, имитировать устройство X.509 на компьютере разработки, подключать имитированное устройство к службе подготовки устройств, а также регистрировать устройство в Центре Интернета вещей с помощью [пакета SDK для устройств Node.js для Центра Интернета вещей Azure](https://github.com/Azure/azure-iot-sdk-node).
@@ -96,7 +96,7 @@ ms.locfileid: "62126517"
 
 С помощью [пакета SDK для устройств Node.js для Центра Интернета вещей Azure](https://github.com/Azure/azure-iot-sdk-node) можно легко сымитировать устройство. Дополнительные сведения см. в статье [Понятия устройства в контексте подготовки устройств в Центре Интернета вещей](https://docs.microsoft.com/azure/iot-dps/concepts-device).
 
-1. На портале Azure выберите колонку **Обзор** службы подготовки устройств и запишите значения для **_глобальной конечной точки устройства_** и **_области идентификатора_**.
+1. На портале Azure выберите колонку **Обзор** службы подготовки устройств и запишите значения для **_глобальной конечной точки устройства_** и **_области идентификатора_** .
 
     ![Извлеките сведения о конечной точке службы подготовки устройств из колонки на портале](./media/quick-create-simulated-device-x509-node/extract-dps-endpoints.png) 
 

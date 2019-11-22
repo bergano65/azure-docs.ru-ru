@@ -1,22 +1,22 @@
 ---
-title: Подготовка имитированного устройства TPM в Центре Интернета вещей Azure с помощью Node.js | Документация Майкрософт
+title: Краткое руководство. Подготовка имитированного устройства доверенного платформенного модуля в Центре Интернета вещей Azure с помощью Node.js
 description: Краткое руководство по Azure. Создание и подготовка к работе имитированного устройства доверенного платформенного модуля с помощью пакета SDK Node.js для Службы подготовки устройств к добавлению в Центр Интернета вещей Azure. В этом кратком руководстве используется индивидуальная регистрация.
 author: wesmc7777
 ms.author: wesmc
-ms.date: 04/09/2018
+ms.date: 11/08/2018
 ms.topic: quickstart
 ms.service: iot-dps
 services: iot-dps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: ef0a3d251679d7dd6760f1f928cbf0f0daf3db01
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 1495b8b62f775fcc8ae68fe08d9736beb72d67c6
+ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58099143"
+ms.lasthandoff: 11/10/2019
+ms.locfileid: "73903529"
 ---
-# <a name="create-and-provision-a-simulated-tpm-device-using-nodejs-device-sdk-for-iot-hub-device-provisioning-service"></a>Создание и подготовка имитированного устройства TPM с помощью пакета SDK устройств для Node.js для службы "Подготовка устройств к добавлению в Центр Интернета вещей"
+# <a name="quickstart-create-and-provision-a-simulated-tpm-device-using-nodejs-device-sdk-for-iot-hub-device-provisioning-service"></a>Краткое руководство. Создание и подготовка имитированного устройства TPM с помощью пакета SDK устройств для Node.js для службы "Подготовка устройств к добавлению в Центр Интернета вещей"
 
 [!INCLUDE [iot-dps-selector-quick-create-simulated-device-tpm](../../includes/iot-dps-selector-quick-create-simulated-device-tpm.md)]
 
@@ -131,7 +131,7 @@ ms.locfileid: "58099143"
     node ExtractDevice.js
     ```
 
-1. Окно выходных данных отображает **_ключ подтверждения_** и **_идентификатор регистрации_**, необходимые для регистрации устройства. Запишите эти значения. 
+1. Окно выходных данных отображает **_ключ подтверждения_** и **_идентификатор регистрации_** , необходимые для регистрации устройства. Запишите эти значения. 
 
 
 ## <a name="create-a-device-entry"></a>Создание записи устройства
@@ -156,7 +156,7 @@ ms.locfileid: "58099143"
 
 ## <a name="register-the-device"></a>Регистрация устройства
 
-1. На портале Azure выберите колонку **Обзор** службы подготовки устройств и запишите значения для **_глобальной конечной точки устройства_** и **_области идентификатора_**.
+1. На портале Azure выберите колонку **Обзор** службы подготовки устройств и запишите значения для **_глобальной конечной точки устройства_** и **_области идентификатора_** .
 
     ![Извлеките сведения о конечной точке службы подготовки устройств из колонки на портале](./media/quick-create-simulated-device/extract-dps-endpoints.png) 
 

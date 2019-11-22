@@ -1,7 +1,7 @@
 ---
 title: Краткое руководство. Создание Load Balancer ценовой категории "Стандартный" с помощью Azure PowerShell
-titlesuffix: Azure Load Balancer
-description: В этом кратком руководстве показано, как с помощью PowerShell создать Load Balancer уровня "Стандартный"
+titleSuffix: Azure Load Balancer
+description: Из этого краткого руководства вы узнаете, как с помощью Azure PowerShell создать Load Balancer уровня "Стандартный".
 services: load-balancer
 documentationcenter: na
 author: asudbring
@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 05/07/2019
 ms.author: allensu
 ms:custom: seodec18
-ms.openlocfilehash: 0e00728e091a7d7d96cb624135519b17524d2227
-ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
+ms.openlocfilehash: b387df5049fff2cb17e8d0758f1cf5fd8f0d0853
+ms.sourcegitcommit: b1a8f3ab79c605684336c6e9a45ef2334200844b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68274109"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74049110"
 ---
 # <a name="quickstart-create-a-standard-load-balancer-using-azure-powershell"></a>Краткое руководство. Создание Load Balancer ценовой категории "Стандартный" с помощью Azure PowerShell
 

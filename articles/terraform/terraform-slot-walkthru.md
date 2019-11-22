@@ -1,26 +1,23 @@
 ---
-title: Слоты развертывания поставщика Terraform с Azure
+title: Руководство. Подготовка инфраструктуры со слотами развертывания Azure с помощью Terraform
 description: Руководство по использованию слотов развертывания поставщика Terraform с Azure
-services: terraform
-ms.service: azure
-keywords: terraform, devops, virtual machine, Azure, deployment slots
+ms.service: terraform
 author: tomarchermsft
-manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
-ms.date: 09/20/2019
-ms.openlocfilehash: ec2ed1da46df2793a241c9c89d168a6c5d462b9d
-ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
+ms.date: 11/07/2019
+ms.openlocfilehash: 0bfd10325f1a62e74f0d3573f052d114069491a3
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71169824"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73838063"
 ---
-# <a name="use-terraform-to-provision-infrastructure-with-azure-deployment-slots"></a>Использование Terraform для подготовки инфраструктуры со слотами развертывания Azure
+# <a name="tutorial-provision-infrastructure-with-azure-deployment-slots-using-terraform"></a>Руководство по подготовке инфраструктуры со слотами развертывания Azure с помощью Terraform
 
 Вы можете использовать [слоты развертывания Azure](/azure/app-service/deploy-staging-slots) для переключения между разными версиями приложения. Эту возможность помогает минимизировать влияние неработающих развертываний. 
 
-В этой статье показан пример использования слотов развертывания. Мы рассмотрим развертывание двух приложений через GitHub и Azure. Одно из приложений размещается в рабочем слоте, а второе — в промежуточном. (Названия "рабочий" и "промежуточный" произвольны и их можно изменить в зависимости от сценария.) После настройки слотов развертывания для переключения между двумя слотами можно использовать Terraform.
+В этой статье показан пример использования слотов развертывания. Мы рассмотрим развертывание двух приложений через GitHub и Azure. Одно из приложений размещается в рабочем слоте, а второе — в промежуточном. (Имена "production" и "staging" являются произвольными. Это могут быть любые имена, которые подходят для вашего сценария.) После настройки слотов развертывания используйте Terraform для переключения между двумя слотами.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -64,13 +61,11 @@ ms.locfileid: "71169824"
     cd deploy
     ```
 
-1. С помощью [редактора VI](https://www.debian.org/doc/manuals/debian-tutorial/ch-editor.html) создайте файл с именем `deploy.tf`. В этом файле будет храниться [конфигурация Terraform](https://www.terraform.io/docs/configuration/index.html).
+1. В Cloud Shell создайте файл с именем `deploy.tf`.
 
     ```bash
-    vi deploy.tf
+    code deploy.tf
     ```
-
-1. Нажмите клавишу I, чтобы войти в режим вставки.
 
 1. Скопируйте приведенный ниже код и вставьте его в редактор.
 
@@ -85,8 +80,8 @@ ms.locfileid: "71169824"
 
     resource "azurerm_app_service_plan" "slotDemo" {
         name                = "slotAppServicePlan"
-        location            = "${azurerm_resource_group.slotDemo.location}"
-        resource_group_name = "${azurerm_resource_group.slotDemo.name}"
+        location            = azurerm_resource_group.slotDemo.location
+        resource_group_name = azurerm_resource_group.slotDemo.name
         sku {
             tier = "Standard"
             size = "S1"
@@ -95,27 +90,21 @@ ms.locfileid: "71169824"
 
     resource "azurerm_app_service" "slotDemo" {
         name                = "slotAppService"
-        location            = "${azurerm_resource_group.slotDemo.location}"
-        resource_group_name = "${azurerm_resource_group.slotDemo.name}"
-        app_service_plan_id = "${azurerm_app_service_plan.slotDemo.id}"
+        location            = azurerm_resource_group.slotDemo.location
+        resource_group_name = azurerm_resource_group.slotDemo.name
+        app_service_plan_id = azurerm_app_service_plan.slotDemo.id
     }
 
     resource "azurerm_app_service_slot" "slotDemo" {
         name                = "slotAppServiceSlotOne"
-        location            = "${azurerm_resource_group.slotDemo.location}"
-        resource_group_name = "${azurerm_resource_group.slotDemo.name}"
-        app_service_plan_id = "${azurerm_app_service_plan.slotDemo.id}"
-        app_service_name    = "${azurerm_app_service.slotDemo.name}"
+        location            = azurerm_resource_group.slotDemo.location
+        resource_group_name = azurerm_resource_group.slotDemo.name
+        app_service_plan_id = azurerm_app_service_plan.slotDemo.id
+        app_service_name    = azurerm_app_service.slotDemo.name
     }
     ```
 
-1. Нажмите клавишу ESC, чтобы выйти из режима вставки.
-
-1. Сохраните файл и закройте редактор VI. Для этого введите приведенную ниже команду.
-
-    ```bash
-    :wq
-    ```
+1. Сохраните файл ( **&lt;Ctrl>S**) и закройте редактор ( **&lt;Ctrl>Q**).
 
 1. После создания файла проверьте его содержимое.
 
@@ -207,7 +196,7 @@ ms.locfileid: "71169824"
 
 1. На вкладке **Вариант развертывания** нажмите кнопку **ОК**.
 
-На этом этапе развертывание рабочего слота выполнено. Для развертывания промежуточного слота выполните все предыдущие шаги в этом разделе с учетом следующих изменений.
+На этом этапе выполнено развертывание рабочего слота. Чтобы развернуть промежуточный слот, выполните предыдущие действия, используя следующие изменения:
 
 - На шаге 3 выберите ресурс **slotAppServiceSlotOne**.
 
@@ -219,8 +208,6 @@ ms.locfileid: "71169824"
 
 В предыдущих разделах вы настроили два слота (**slotAppService** и **slotAppServiceSlotOne**), чтобы выполнять развертывание из разных ветвей в GitHub. Чтобы проверить, что веб-приложения были успешно развернуты, их нужно предварительно просмотреть.
 
-Выполните следующие шаги дважды. При первом выполнении на шаге 3 выберите **slotAppService**, а при втором выполнении — **slotAppServiceSlotOne**.
-
 1. В главном меню на портале Azure выберите **Группы ресурсов**.
 
 1. Выберите **slotDemoResourceGroup**.
@@ -231,14 +218,11 @@ ms.locfileid: "71169824"
 
     ![Выбор URL-адреса на вкладке обзора для отображения приложения](./media/terraform-slot-walkthru/resource-url.png)
 
-> [!NOTE]
-> Процесс создания и развертывания сайта в Azure через GitHub может занять несколько минут.
->
->
+1. В зависимости от выбранного приложения, вы увидите следующие результаты:
+    - Веб-приложение **slotAppService** — синяя страница с заголовком **Slot Demo App 1** (Демонстрационное приложение слота 1). 
+    - Веб-приложение **slotAppServiceSlotOne** — синяя страница с заголовком **Slot Demo App 2** (Демонстрационное приложение слота 2).
 
-Для веб-приложения **slotAppService** отобразится синяя страница с заголовком **Slot Demo App 1** (Демонстрационное приложение слота 1). Для веб-приложения **slotAppServiceSlotOne** отобразится зеленая страница с заголовком **Slot Demo App 2** (Демонстрационное приложение слота 2).
-
-![Предварительный просмотр приложений для проверки правильного развертывания](./media/terraform-slot-walkthru/app-preview.png)
+    ![Предварительный просмотр приложений для проверки правильного развертывания](./media/terraform-slot-walkthru/app-preview.png)
 
 ## <a name="swap-the-two-deployment-slots"></a>Переключение между двумя слотами развертывания
 
@@ -256,13 +240,11 @@ ms.locfileid: "71169824"
     cd clouddrive/swap
     ```
 
-1. С помощью редактора VI создайте файл с именем `swap.tf`.
+1. В Cloud Shell создайте файл с именем `swap.tf`.
 
     ```bash
-    vi swap.tf
+    code swap.tf
     ```
-
-1. Нажмите клавишу I, чтобы войти в режим вставки.
 
 1. Скопируйте приведенный ниже код и вставьте его в редактор.
 
@@ -278,13 +260,7 @@ ms.locfileid: "71169824"
     }
     ```
 
-1. Нажмите клавишу ESC, чтобы выйти из режима вставки.
-
-1. Сохраните файл и закройте редактор VI. Для этого введите приведенную ниже команду.
-
-    ```bash
-    :wq
-    ```
+1. Сохраните файл ( **&lt;Ctrl>S**) и закройте редактор ( **&lt;Ctrl>Q**).
 
 1. Инициализируйте Terraform.
 
@@ -304,7 +280,7 @@ ms.locfileid: "71169824"
     terraform apply
     ```
 
-1. После завершения процесса переключения слотов в Terraform перейдите в браузер, в котором открыто веб-приложение **slotAppService**, и обновите страницу. 
+1. Вернитесь в браузер после переключения Terraform между слотами. Обновите страницу. 
 
 Веб-приложение в промежуточном слоте **slotAppServiceSlotOne** было переведено на рабочий слот и теперь отображается зеленым цветом. 
 
@@ -317,3 +293,8 @@ terraform apply
 ```
 
 После переключения приложения отобразится исходная конфигурация.
+
+## <a name="next-steps"></a>Дополнительная информация
+
+> [!div class="nextstepaction"] 
+> [Документация по Terraform в Azure](/azure/terraform)

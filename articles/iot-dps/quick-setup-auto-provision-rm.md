@@ -1,22 +1,22 @@
 ---
-title: Настройка подготовки устройств с помощью шаблона Azure Resource Manager | Документация Майкрософт
+title: Краткое руководство. Настройка подготовки устройств с помощью шаблона Azure Resource Manager
 description: Краткое руководство Azure. Настройка службы "Подготовка устройств к добавлению в Центр Интернета вещей" с помощью шаблона
 author: wesmc7777
 ms.author: wesmc
-ms.date: 06/18/2018
+ms.date: 11/08/2019
 ms.topic: quickstart
 ms.service: iot-dps
 services: iot-dps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 3360bfa7eed15f72fb78f698e837d887e9c8aa85
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.openlocfilehash: fdc75424c5c99e80c13ac086229da93411e3ce83
+ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62126483"
+ms.lasthandoff: 11/10/2019
+ms.locfileid: "73903361"
 ---
-# <a name="set-up-the-iot-hub-device-provisioning-service-with-an-azure-resource-manager-template"></a>Настройка службы "Подготовка устройств к добавлению в Центр Интернета вещей" c помощью шаблона Azure Resource Manager
+# <a name="quickstart-set-up-the-iot-hub-device-provisioning-service-with-an-azure-resource-manager-template"></a>Краткое руководство. Настройка службы "Подготовка устройств к добавлению в Центр Интернета вещей" c помощью шаблона Azure Resource Manager
 
 [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview) можно использовать, чтобы программно настраивать облачные ресурсы Azure, необходимые для подготовки устройств. В этих шагах показано, как создать Центр Интернета вещей, службу "Подготовка устройств к добавлению в Центр Интернета вещей" и связать обе службы с помощью шаблона Azure Resource Manager. В этом кратком руководстве для выполнения программных шагов, необходимых для создания группы ресурсов и развертывания шаблона, используется [Azure CLI](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-template-deploy-cli). Однако для развертывания шаблона также можно использовать [портал Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-template-deploy-portal), [PowerShell](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-template-deploy), .NET, Ruby или другие языки программирования. 
 
@@ -31,7 +31,7 @@ ms.locfileid: "62126483"
 
 Войдите в учетную запись Azure и выберите подписку.
 
-1. В командной строке запустите [команду для входа][lnk-login-command]:
+1. В командной строке запустите [команду login][lnk-login-command]:
     
     ```azurecli
     az login
@@ -51,7 +51,7 @@ ms.locfileid: "62126483"
     az account set --subscription {your subscription name or id}
     ```
 
-3. Такие облачные ресурсы Azure, как Центры Интернета вещей и службы подготовки, создаются в группе ресурсов. Используйте существующую группу ресурсов либо выполните следующую [команду для создания группы ресурсов][lnk-az-resource-command]:
+3. Такие облачные ресурсы Azure, как Центры Интернета вещей и службы подготовки, создаются в группе ресурсов. Используйте имеющуюся группу ресурсов либо выполните следующую [команду для создания группы ресурсов][lnk-az-resource-command]:
     
     ```azurecli
      az group create --name {your resource group name} --location westus

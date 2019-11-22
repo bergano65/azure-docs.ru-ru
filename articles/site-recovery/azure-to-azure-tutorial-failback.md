@@ -1,19 +1,19 @@
 ---
-title: Восстановление размещения виртуальных машин Azure, реплицированных в дополнительный регион Azure для аварийного восстановления, с помощью службы Azure Site Recovery.
-description: Сведения о том, как выполнить восстановление размещения виртуальных машин Azure с помощью службы Azure Site Recovery.
+title: Восстановление размещения виртуальных машин Azure в основной регион с помощью службы Azure Site Recovery.
+description: Сведения о восстановлении размещения виртуальных машин Azure в основной регион с помощью службы Azure Site Recovery.
 author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: tutorial
-ms.date: 09/09/2019
+ms.date: 11/14/2019
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: c8be547790452774992b9226ca8010532263aaff
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: c27b7bf29e5f124fdcfb886b658fd8e9d4cc48fe
+ms.sourcegitcommit: a170b69b592e6e7e5cc816dabc0246f97897cb0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70814514"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74091349"
 ---
 # <a name="fail-back-an-azure-vm-between-azure-regions"></a>Восстановление размещения виртуальной машины Azure между регионами Azure
 
@@ -56,6 +56,9 @@ ms.locfileid: "70814514"
 8. Для виртуальной машины должно отобразиться состояние отработки отказа и восстановления размещения.
 
     ![Виртуальная машина в основном и дополнительном регионах.](./media/site-recovery-azure-to-azure-failback/azure-to-azure-failback-vm-view.png)
+
+> [!NOTE]
+> Для компьютеров, на которых выполняется расширение Site Recovery версии 9.28.x.x, начиная с [накопительного пакета обновления 40](https://support.microsoft.com/help/4521530/update-rollup-40-for-azure-site-recovery), Site Recovery выполняет очистку компьютеров в дополнительном регионе аварийного восстановления после завершения восстановления размещения и повторной защиты виртуальных машин. В дополнительном регионе не нужно удалять виртуальные машины и сетевые карты вручную. Если репликация полностью отключена после восстановления размещения, кроме виртуальных машин и сетевых адаптеров Site Recovery также очищает диски в регионе аварийного восстановления.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

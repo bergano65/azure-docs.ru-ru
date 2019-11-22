@@ -8,12 +8,12 @@ ms.author: crtreasu
 ms.date: 02/24/2019
 ms.topic: quickstart
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 94cae186cee099618772f53d2b820e12f20cad64
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 7069a3c8b266938e974d1b7130a349e0c9b66b5c
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68562403"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74111826"
 ---
 # <a name="quickstart-create-a-hololens-app-with-azure-spatial-anchors-in-cwinrt-and-directx"></a>Краткое руководство. Создание приложения HoloLens с использованием Пространственных привязок Azure в C++/WinRT и DirectX
 
@@ -58,7 +58,7 @@ ms.locfileid: "68562403"
 
 Укажите для параметра **Solution Configuration** (Конфигурация решения) значение **Release** (Выпуск), а для параметра **Solution Platform** (Платформа решения) значение **x86** и выберите **Device** (Устройство) в списке целевых вариантов развертывания.
 
-При использовании HoloLens 2 **платформой решения** будет **ARM**, а не **x86**.
+При использовании HoloLens 2 **платформой решения** будет **ARM64**, а не **x86**.
 
 ![Настройка Visual Studio](./media/get-started-hololens/visual-studio-configuration.png)
 

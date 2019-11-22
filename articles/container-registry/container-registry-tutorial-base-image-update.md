@@ -1,5 +1,5 @@
 ---
-title: Руководство. Автоматизация сборок образов контейнера при обновлении базового образа с помощью набора компонентов "Задачи Реестра контейнеров Azure"
+title: Учебник. Активация сборки образов при обновлении базового образа в службе "Реестр контейнеров Azure"
 description: Из этого руководства вы узнаете, как в службе "Реестр контейнеров Azure" настроить задачу для автоматического активирования сборки образов контейнера в облаке при обновлении базового образа.
 services: container-registry
 author: dlepow
@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 08/12/2019
 ms.author: danlep
 ms.custom: seodec18, mvc
-ms.openlocfilehash: 6b9a74ee6530d8fc195490b0f1414e6348e855f6
-ms.sourcegitcommit: 86d49daccdab383331fc4072b2b761876b73510e
+ms.openlocfilehash: 1beb66d8491b7dac84e9531558f8967e22086575
+ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70743589"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73931687"
 ---
 # <a name="tutorial-automate-container-image-builds-when-a-base-image-is-updated-in-an-azure-container-registry"></a>Руководство. автоматизации сборок образов контейнера при обновлении базового образа в службе "Реестр контейнеров Azure" 
 

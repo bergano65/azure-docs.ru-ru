@@ -1,5 +1,5 @@
 ---
-title: Пример сценария PowerShell "Отправка универсального VHD в Azure" | Документы Майкрософт
+title: Пример скрипта PowerShell "Отправка универсального VHD в Azure"
 description: Пример сценария PowerShell для отправки универсального виртуального жесткого диска (VHD) в Azure и создания виртуальной машины с помощью модели развертывания Azure Resource Manager и управляемых дисков.
 services: virtual-machines-windows
 documentationcenter: virtual-machines
@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 01/02/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: bd1be056576275194a013671cf0aae1f7855df69
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: f2c739d90917bd00bbde5d680a20a18271a581cc
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73749702"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74038883"
 ---
 # <a name="sample-script-to-upload-a-vhd-to-azure-and-create-a-new-vm"></a>Пример сценария для отправки VHD в Azure и создания виртуальной машины
 

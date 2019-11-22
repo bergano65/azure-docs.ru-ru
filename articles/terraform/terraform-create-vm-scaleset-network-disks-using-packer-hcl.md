@@ -1,50 +1,47 @@
 ---
-title: Создание масштабируемого набора виртуальных машин Azure из пользовательского образа Packer с помощью Terraform
+title: Учебник. Создание масштабируемого набора виртуальных машин Azure из пользовательского образа Packer с помощью Terraform
 description: Terraform используется для настройки и управления версиями масштабируемого набора виртуальных машин Azure из пользовательского образа, созданного в Packer (с виртуальной сетью и управляемыми подключенными дисками).
-services: terraform
-ms.service: azure
-keywords: terraform, devops, масштабируемый набор, виртуальная машина, сеть, хранилище, модули, пользовательские образы, packer
+ms.service: terraform
 author: tomarchermsft
-manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
-ms.date: 09/20/2019
-ms.openlocfilehash: 6feeab9b48715a8fe1f6c6fe11ae90b6be71a57a
-ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
+ms.date: 11/07/2019
+ms.openlocfilehash: 7d2813a51e63d86b56712bb6d07efc2f65ec65a0
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71173481"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74077814"
 ---
-# <a name="use-terraform-to-create-an-azure-virtual-machine-scale-set-from-a-packer-custom-image"></a>Создание масштабируемого набора виртуальных машин Azure из пользовательского образа Packer с помощью Terraform
+# <a name="tutorial-create-an-azure-virtual-machine-scale-set-from-a-packer-custom-image-by-using-terraform"></a>Руководство по созданию масштабируемого набора виртуальных машин Azure из пользовательского образа Packer с помощью Terraform
 
-В этом руководстве [Terraform](https://www.terraform.io/) используется для создания и развертывания [масштабируемого набора виртуальных машин Azure](/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-overview) на основе образа [Packer](https://www.packer.io/intro/index.html) с управляемыми дисками с использованием [HashiCorp Configuration Language](https://www.terraform.io/docs/configuration/syntax.html) (HCL).  
+В этом руководстве [Terraform](https://www.terraform.io/) используется для создания и развертывания [масштабируемого набора виртуальных машин Azure](/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-overview) на основе образа [Packer](https://www.packer.io/intro/index.html) с управляемыми дисками, которые используют [HashiCorp Configuration Language](https://www.terraform.io/docs/configuration/syntax.html) (HCL). 
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * настройка развертывания Terraform;
-> * использование переменных и выходных данных для развертывания Terraform; 
+> * использование переменных и выходных данных для развертывания Terraform;
 > * создание и развертывание сетевой инфраструктуры;
 > * создание пользовательского образа виртуальной машины с помощью Packer;
 > * создание и развертывание масштабируемого набора виртуальных машин с помощью пользовательского образа;
-> * создание и развертывание jumpbox. 
+> * создание и развертывание jumpbox.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="before-you-begin"></a>Перед началом работы
-> * [Установите Terraform и настройте доступ к Azure](https://docs.microsoft.com/azure/virtual-machines/linux/terraform-install-configure).
-> * [Создайте пару ключей SSH](https://docs.microsoft.com/azure/virtual-machines/linux/mac-create-ssh-keys), если их у вас еще нет.
-> * [Установите Packer](https://www.packer.io/docs/install/index.html) на локальный компьютер, если вы еще этого не сделали.
+## <a name="prerequisites"></a>Предварительные требования
 
+- **Terraform**. [Установка Terraform и настройка доступа к Azure](/azure/virtual-machines/linux/terraform-install-configure).
+- **Пара ключей SSH**: [Создание пары ключей SSH](/azure/virtual-machines/linux/mac-create-ssh-keys).
+- **Packer**:  [Установка Packer](https://www.packer.io/docs/install/index.html).
 
 ## <a name="create-the-file-structure"></a>Создание структуры файлов
 
 В пустом каталоге создайте три файла со следующими именами:
 
-- `variables.tf` : этот файл содержит значения переменных, используемых в шаблоне.
-- `output.tf` : этот файл описывает параметры, отображающиеся после развертывания.
-- `vmss.tf` : этот файл содержит код инфраструктуры, для которой выполняется развертывание.
+- `variables.tf`: этот файл содержит значения переменных, используемых в шаблоне.
+- `output.tf`: этот файл описывает параметры, отображающиеся после развертывания.
+- `vmss.tf`: этот файл содержит код инфраструктуры, для которой выполняется развертывание.
 
 ##  <a name="create-the-variables"></a>Создание переменных 
 
@@ -66,7 +63,7 @@ variable "resource_group_name" {
 ```
 
 > [!NOTE]
-> По умолчанию значение переменной resource_group_name не задано. Задайте собственное значение.
+> По умолчанию значение переменной resource_group_name не задано. Определите собственное значение.
 
 Сохраните файл.
 
@@ -76,16 +73,16 @@ variable "resource_group_name" {
 
 ```hcl 
 output "vmss_public_ip" {
-    value = "${azurerm_public_ip.vmss.fqdn}"
+    value = azurerm_public_ip.vmss.fqdn
 }
 ```
 
 ## <a name="define-the-network-infrastructure-in-a-template"></a>Определение сетевой инфраструктуры в шаблоне 
 
 На этом шаге в новой группе ресурсов Azure создается указанная ниже сетевая инфраструктура: 
-  - Одна виртуальная сеть с пространством адресов 10.0.0.0/16. 
-  - Одна подсеть с пространством адресов 10.0.2.0/24.
-  - Два общедоступных IP-адреса. Один из них используется подсистемой балансировки нагрузки масштабируемого набора виртуальных машин, другой — для подключения к SSH jumpbox.
+  - Одна виртуальная сеть с диапазоном адресов 10.0.0.0/16.
+  - Одна подсеть с пространством адресов 10.0.2.0/24.
+  - Два общедоступных IP-адреса. Один используется подсистемой балансировки нагрузки масштабируемого набора виртуальных машин. Второй — для подключения к jumpbox SSH.
 
 Понадобится также группа, в которой создаются все ресурсы. 
 
@@ -94,8 +91,8 @@ output "vmss_public_ip" {
 ```hcl
 
 resource "azurerm_resource_group" "vmss" {
-  name     = "${var.resource_group_name}"
-  location = "${var.location}"
+  name     = var.resource_group_name
+  location = var.location
 
   tags {
     environment = "codelab"
@@ -105,8 +102,8 @@ resource "azurerm_resource_group" "vmss" {
 resource "azurerm_virtual_network" "vmss" {
   name                = "vmss-vnet"
   address_space       = ["10.0.0.0/16"]
-  location            = "${var.location}"
-  resource_group_name = "${azurerm_resource_group.vmss.name}"
+  location            = var.location
+  resource_group_name = azurerm_resource_group.vmss.name
 
   tags {
     environment = "codelab"
@@ -115,17 +112,17 @@ resource "azurerm_virtual_network" "vmss" {
 
 resource "azurerm_subnet" "vmss" {
   name                 = "vmss-subnet"
-  resource_group_name  = "${azurerm_resource_group.vmss.name}"
-  virtual_network_name = "${azurerm_virtual_network.vmss.name}"
+  resource_group_name  = azurerm_resource_group.vmss.name
+  virtual_network_name = azurerm_virtual_network.vmss.name
   address_prefix       = "10.0.2.0/24"
 }
 
 resource "azurerm_public_ip" "vmss" {
   name                         = "vmss-public-ip"
-  location                     = "${var.location}"
-  resource_group_name          = "${azurerm_resource_group.vmss.name}"
+  location                     = var.location
+  resource_group_name          = azurerm_resource_group.vmss.name
   allocation_method            = "static"
-  domain_name_label            = "${azurerm_resource_group.vmss.name}"
+  domain_name_label            = azurerm_resource_group.vmss.name
 
   tags {
     environment = "codelab"
@@ -135,7 +132,7 @@ resource "azurerm_public_ip" "vmss" {
 ``` 
 
 > [!NOTE]
-> Рекомендуется маркировать ресурсы, развертываемые в Azure, чтобы упростить их идентификацию в будущем.
+> Пометьте ресурсы, развертываемые в Azure, чтобы упростить их идентификацию в будущем.
 
 ## <a name="create-the-network-infrastructure"></a>Создание сетевой инфраструктуры
 
@@ -162,24 +159,24 @@ terraform apply
 ![Сетевые ресурсы Terraform масштабируемого набора виртуальных машин](./media/terraform-create-vm-scaleset-network-disks-using-packer-hcl/tf-create-vmss-step4-rg.png)
 
 
-## <a name="create-an-azure-image-using-packer"></a>Создание образа Azure с помощью Packer
-Создайте пользовательский образ Linux, выполнив действия, описанные в руководстве [Создание образов виртуальных машин Linux в Azure с помощью Packer](https://docs.microsoft.com/azure/virtual-machines/linux/build-image-with-packer).
+## <a name="create-an-azure-image-by-using-packer"></a>Создание образа Azure с помощью Packer
+Создайте пользовательский образ Linux, выполнив действия, описанные в руководстве [Создание образов виртуальных машин Linux в Azure с помощью Packer](/azure/virtual-machines/linux/build-image-with-packer).
  
-Выполните шаги из руководства, чтобы создать отозванный образ Ubuntu с установленным NGINX.
+Выполните шаги из руководства, чтобы создать отозванный образ Ubuntu с установленным Nginx.
 
-![Вы получаете созданный образ Packer](./media/terraform-create-vm-scaleset-network-disks-using-packer-hcl/packerimagecreated.png)
+![После создания вы получаете образ Packer](./media/terraform-create-vm-scaleset-network-disks-using-packer-hcl/packerimagecreated.png)
 
 > [!NOTE]
-> Для целей данного руководства выполняется команда для установки nginx в образе Packer. Во время создания можно также запустить собственный сценарий.
+> Для целей данного руководства выполняется команда для установки Nginx в образе Packer. Во время создания можно также запустить собственный сценарий.
 
 ## <a name="edit-the-infrastructure-to-add-the-virtual-machine-scale-set"></a>Изменение инфраструктуры для добавления масштабируемого набора виртуальных машин
 
 На этом шаге создайте следующие ресурсы в предварительно развернутой сети.
-- Подсистема балансировки нагрузки Azure для обслуживания приложения и подключения к общедоступному IP-адресу, развернутому ранее.
-- Одна подсистема балансировки нагрузки и правила для обслуживания приложения и подключения ее к общедоступному IP-адресу, настроенному ранее.
-- Внутренний пул адресов Azure для присвоения подсистеме балансировки нагрузки.
+- Подсистему балансировки нагрузки Azure для обслуживания приложения. Присоедините ее к общедоступному IP-адресу, который был развернут ранее.
+- Одна подсистема балансировки нагрузки Azure и правила для обслуживания приложения. Присоедините ее к общедоступному IP-адресу, который был настроен ранее.
+- Серверный пул адресов. Назначьте его подсистеме балансировки нагрузки.
 - Порт проверки работоспособности, используемый приложением и настраиваемый в подсистеме балансировки нагрузки.
-- Масштабируемый набор виртуальных машин, защищенный подсистемой балансировки нагрузки и выполняемый в виртуальной сети, созданной ранее.
+- Масштабируемый набор виртуальных машин, расположенный за подсистемой балансировки нагрузки и работающий в виртуальной сети, которая была развернута ранее.
 - [Nginx](https://nginx.org/) на узлах масштабирования виртуальных машин, установленных из пользовательского образа.
 
 
@@ -189,12 +186,12 @@ terraform apply
 
 resource "azurerm_lb" "vmss" {
   name                = "vmss-lb"
-  location            = "${var.location}"
-  resource_group_name = "${azurerm_resource_group.vmss.name}"
+  location            = var.location
+  resource_group_name = azurerm_resource_group.vmss.name
 
   frontend_ip_configuration {
     name                 = "PublicIPAddress"
-    public_ip_address_id = "${azurerm_public_ip.vmss.id}"
+    public_ip_address_id = azurerm_public_ip.vmss.id
   }
 
   tags {
@@ -203,28 +200,28 @@ resource "azurerm_lb" "vmss" {
 }
 
 resource "azurerm_lb_backend_address_pool" "bpepool" {
-  resource_group_name = "${azurerm_resource_group.vmss.name}"
-  loadbalancer_id     = "${azurerm_lb.vmss.id}"
+  resource_group_name = azurerm_resource_group.vmss.name
+  loadbalancer_id     = azurerm_lb.vmss.id
   name                = "BackEndAddressPool"
 }
 
 resource "azurerm_lb_probe" "vmss" {
-  resource_group_name = "${azurerm_resource_group.vmss.name}"
-  loadbalancer_id     = "${azurerm_lb.vmss.id}"
+  resource_group_name = azurerm_resource_group.vmss.name
+  loadbalancer_id     = azurerm_lb.vmss.id
   name                = "ssh-running-probe"
-  port                = "${var.application_port}"
+  port                = var.application_port
 }
 
 resource "azurerm_lb_rule" "lbnatrule" {
-  resource_group_name            = "${azurerm_resource_group.vmss.name}"
-  loadbalancer_id                = "${azurerm_lb.vmss.id}"
+  resource_group_name            = azurerm_resource_group.vmss.name
+  loadbalancer_id                = azurerm_lb.vmss.id
   name                           = "http"
   protocol                       = "Tcp"
-  frontend_port                  = "${var.application_port}"
-  backend_port                   = "${var.application_port}"
-  backend_address_pool_id        = "${azurerm_lb_backend_address_pool.bpepool.id}"
+  frontend_port                  = var.application_port
+  backend_port                   = var.application_port
+  backend_address_pool_id        = azurerm_lb_backend_address_pool.bpepool.id
   frontend_ip_configuration_name = "PublicIPAddress"
-  probe_id                       = "${azurerm_lb_probe.vmss.id}"
+  probe_id                       = azurerm_lb_probe.vmss.id
 }
 
 data "azurerm_resource_group" "image" {
@@ -233,13 +230,13 @@ data "azurerm_resource_group" "image" {
 
 data "azurerm_image" "image" {
   name                = "myPackerImage"
-  resource_group_name = "${data.azurerm_resource_group.image.name}"
+  resource_group_name = data.azurerm_resource_group.image.name
 }
 
 resource "azurerm_virtual_machine_scale_set" "vmss" {
   name                = "vmscaleset"
-  location            = "${var.location}"
-  resource_group_name = "${azurerm_resource_group.vmss.name}"
+  location            = var.location
+  resource_group_name = azurerm_resource_group.vmss.name
   upgrade_policy_mode = "Manual"
 
   sku {
@@ -249,7 +246,7 @@ resource "azurerm_virtual_machine_scale_set" "vmss" {
   }
 
   storage_profile_image_reference {
-    id="${data.azurerm_image.image.id}"
+    id=data.azurerm_image.image.id
   }
 
   storage_profile_os_disk {
@@ -277,7 +274,7 @@ resource "azurerm_virtual_machine_scale_set" "vmss" {
 
     ssh_keys {
       path     = "/home/azureuser/.ssh/authorized_keys"
-      key_data = "${file("~/.ssh/id_rsa.pub")}"
+      key_data = file("~/.ssh/id_rsa.pub")
     }
   }
 
@@ -287,8 +284,8 @@ resource "azurerm_virtual_machine_scale_set" "vmss" {
 
     ip_configuration {
       name                                   = "IPConfiguration"
-      subnet_id                              = "${azurerm_subnet.vmss.id}"
-      load_balancer_backend_address_pool_ids = ["${azurerm_lb_backend_address_pool.bpepool.id}"]
+      subnet_id                              = azurerm_subnet.vmss.id
+      load_balancer_backend_address_pool_ids = [azurerm_lb_backend_address_pool.bpepool.id]
       primary = true
     }
   }
@@ -345,7 +342,7 @@ terraform apply
 Этот необязательный шаг позволяет получить доступ к экземплярам масштабируемого набора виртуальных машин по SSH с помощью jumpbox.
 
 Добавьте следующие ресурсы в имеющееся развертывание:
-- Сетевой интерфейс, подключенный к той же подсети, что и масштабируемый набор виртуальных машин.
+- Сетевой интерфейс подключен к той же подсети, что и масштабируемый набор виртуальных машин
 - Виртуальная машина с сетевым интерфейсом.
 
 Добавьте следующий код в конец файла `vmss.tf`:
@@ -353,8 +350,8 @@ terraform apply
 ```hcl 
 resource "azurerm_public_ip" "jumpbox" {
   name                         = "jumpbox-public-ip"
-  location                     = "${var.location}"
-  resource_group_name          = "${azurerm_resource_group.vmss.name}"
+  location                     = var.location
+  resource_group_name          = azurerm_resource_group.vmss.name
   allocation_method            = "static"
   domain_name_label            = "${azurerm_resource_group.vmss.name}-ssh"
 
@@ -365,14 +362,14 @@ resource "azurerm_public_ip" "jumpbox" {
 
 resource "azurerm_network_interface" "jumpbox" {
   name                = "jumpbox-nic"
-  location            = "${var.location}"
-  resource_group_name = "${azurerm_resource_group.vmss.name}"
+  location            = var.location
+  resource_group_name = azurerm_resource_group.vmss.name
 
   ip_configuration {
     name                          = "IPConfiguration"
-    subnet_id                     = "${azurerm_subnet.vmss.id}"
+    subnet_id                     = azurerm_subnet.vmss.id
     private_ip_address_allocation = "dynamic"
-    public_ip_address_id          = "${azurerm_public_ip.jumpbox.id}"
+    public_ip_address_id          = azurerm_public_ip.jumpbox.id
   }
 
   tags {
@@ -382,9 +379,9 @@ resource "azurerm_network_interface" "jumpbox" {
 
 resource "azurerm_virtual_machine" "jumpbox" {
   name                  = "jumpbox"
-  location              = "${var.location}"
-  resource_group_name   = "${azurerm_resource_group.vmss.name}"
-  network_interface_ids = ["${azurerm_network_interface.jumpbox.id}"]
+  location              = var.location
+  resource_group_name   = azurerm_resource_group.vmss.name
+  network_interface_ids = [azurerm_network_interface.jumpbox.id]
   vm_size               = "Standard_DS1_v2"
 
   storage_image_reference {
@@ -412,7 +409,7 @@ resource "azurerm_virtual_machine" "jumpbox" {
 
     ssh_keys {
       path     = "/home/azureuser/.ssh/authorized_keys"
-      key_data = "${file("~/.ssh/id_rsa.pub")}"
+      key_data = file("~/.ssh/id_rsa.pub")
     }
   }
 
@@ -426,7 +423,7 @@ resource "azurerm_virtual_machine" "jumpbox" {
 
 ```
 output "jumpbox_public_ip" {
-    value = "${azurerm_public_ip.jumpbox.fqdn}"
+    value = azurerm_public_ip.jumpbox.fqdn
 }
 ```
 
@@ -453,16 +450,9 @@ terraform apply
 terraform destroy
 ```
 
-Введите `yes`, чтобы подтвердить операцию удаления ресурсов. Процесс удаления может занять несколько минут.
+Введите *yes* для подтверждения операции удаления группы ресурсов. Процесс удаления может занять несколько минут.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом руководстве выполнялось развертывание масштабируемого набора виртуальных машин и jumpbox в Azure с помощью Terraform. Вы научились выполнять следующие задачи:
-
-> [!div class="checklist"]
-> * инициализация развертывания Terraform;
-> * использование переменных и выходных данных для развертывания Terraform; 
-> * создание и развертывание сетевой инфраструктуры;
-> * создание пользовательского образа виртуальной машины с помощью Packer;
-> * создание и развертывание масштабируемого набора виртуальных машин с помощью пользовательского образа;
-> * создание и развертывание jumpbox. 
+> [!div class="nextstepaction"] 
+> [Документация по Terraform в Azure](/azure/terraform)

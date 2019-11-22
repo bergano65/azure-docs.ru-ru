@@ -8,14 +8,14 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 11/04/2019
-ms.openlocfilehash: d83db424ee6e9a009353ca568232b38260883a4c
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: 4e8097eeb07420bee4ba30eb0fedbe5d4db2db9d
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72793610"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74113322"
 ---
-# <a name="c-tutorial-crawl-an-azure-sql-database-using-azure-cognitive-search-indexers"></a>Руководство по C#. Сканирование базы данных Azure SQL с помощью индексаторов в службе "Когнитивный поиск Azure"
+# <a name="c-tutorial-import-azure-sql-database-using-azure-cognitive-search-indexers"></a>Руководство по C#. Импорт базы данных SQL Azure с помощью индексаторов в службе "Когнитивный поиск Azure"
 
 Вы узнаете, как настроить индексатор для извлечения доступных для поиска данных из примера базы данных SQL Azure. [Индексатор](search-indexer-overview.md) — это компонент службы "Когнитивный поиск Azure", который сканирует внешние источники данных и заполняет [индекс поиска](search-what-is-an-index.md) содержимым. Чаще всего используется индексатор для Базы данных SQL Azure. 
 

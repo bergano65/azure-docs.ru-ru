@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Создание профиля диспетчера трафика для обеспечения высокодоступных приложений с помощью портала Azure
+title: Краткое руководство. Создание профиля для обеспечения высокого уровня доступности приложений на портале Azure — диспетчер трафика Azure
 description: В этом кратком руководстве показано, как создать профиль диспетчера трафика для сборки высокодоступных веб-приложений.
 services: traffic-manager
 author: asudbring
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/28/2018
 ms.author: allensu
-ms.openlocfilehash: 1f7fd3398c24eb82b1a2308f3b52df382c0aab7e
-ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
+ms.openlocfilehash: b6a015c7462f082d5114a51d83cfacb0c550b026
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68224667"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74032700"
 ---
 # <a name="quickstart-create-a-traffic-manager-profile-using-the-azure-portal"></a>Краткое руководство. Создание профиля диспетчера трафика с помощью портала Azure
 
@@ -68,7 +68,7 @@ ms.locfileid: "68224667"
     | ИМЯ | Для профиля диспетчера трафика введите уникальное имя.|
     | Метод маршрутизации | Выберите **Приоритет**.|
     | Subscription | Выберите подписку, к которой будет применяться профиль диспетчера трафика. |
-    | Resource group | Выберите *myResourceGroupTM1*.|
+    | группа ресурсов. | Выберите *myResourceGroupTM1*.|
     | Location |Эти параметры касаются расположения группы ресурсов. Это не влияет на профиль диспетчера трафика, который будет развернут глобально.|
 
 3. Нажмите кнопку **Создать**.

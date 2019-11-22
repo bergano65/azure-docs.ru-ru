@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Academy Attendance | Документация Майкрософт
+title: Руководство по интеграции единого входа Azure Active Directory с Academy Attendance | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Academy Attendance.
 services: active-directory
 documentationCenter: na
@@ -13,17 +13,17 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 07/26/2019
+ms.date: 10/21/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 489284a83483bb20353818adf275303b027255ce
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: 2e3214572042f4a6d6cf5e6e160a4d37a9f2909d
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68641256"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74082113"
 ---
-# <a name="tutorial-integrate-academy-attendance-with-azure-active-directory"></a>Руководство по интеграции Academy Attendance с Azure Active Directory
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-academy-attendance"></a>Руководство по интеграции единого входа Azure Active Directory с Academy Attendance
 
 В данном учебнике описано, как интегрировать Academy Attendance с Azure Active Directory (Azure AD). Интеграция Academy Attendance с Azure Active Directory обеспечивает следующие возможности:
 
@@ -37,7 +37,7 @@ ms.locfileid: "68641256"
 
 Чтобы приступить к работе, потребуется следующее:
 
-* подписка Azure AD Если у вас нет подписки, [здесь](https://azure.microsoft.com/pricing/free-trial/) вы можете получить бесплатную пробную версию сроком на один месяц.
+* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * подписка Academy Attendance с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -45,7 +45,10 @@ ms.locfileid: "68641256"
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
 * Academy Attendance поддерживает единый вход, инициированный **поставщиком услуг**.
+
+
 * Academy Attendance поддерживает **JIT**-подготовку пользователей.
+
 
 ## <a name="adding-academy-attendance-from-the-gallery"></a>Добавление Academy Attendance из коллекции
 
@@ -58,20 +61,21 @@ ms.locfileid: "68641256"
 1. В разделе **Добавление из коллекции** в поле поиска введите **Academy Attendance**.
 1. Выберите **Academy Attendance** в области результатов и добавьте это приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
-## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
+
+## <a name="configure-and-test-azure-ad-single-sign-on-for-academy-attendance"></a>Настройка и проверка единого входа Azure AD для Academy Attendance
 
 Настройте и проверьте единый вход Azure AD в Academy Attendance с помощью тестового пользователя **B.Simon**. Чтобы обеспечить работу единого входа, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Academy Attendance.
 
 Чтобы настроить и проверить единый вход Azure AD в Academy Attendance, выполните действия в следующих стандартных блоках:
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-sso)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Настройка единого входа в Academy Attendance](#configure-academy-attendance-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
-3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя B. Simon.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить B. Simon использовать единый вход Azure AD.
-5. **[Создание тестового пользователя Academy Attendance](#create-academy-attendance-test-user)** требуется, чтобы в Academy Attendance существовал пользователь B. Simon, связанный с одноименным пользователем в Azure AD.
-6. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+    1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
+    1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
+1. **[Настройка единого входа в Academy Attendance](#configure-academy-attendance-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+    1. **[Создание тестового пользователя Academy Attendance](#create-academy-attendance-test-user)** требуется, чтобы в Academy Attendance существовал пользователь B.Simon, связанный с одноименным пользователем в Azure AD.
+1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
 
-### <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
+## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
 Выполните следующие действия, чтобы включить единый вход Azure AD на портале Azure.
 
@@ -90,48 +94,26 @@ ms.locfileid: "68641256"
     > [!NOTE]
     > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить их, обратитесь в [группу поддержки клиентов Academy Attendance](mailto:support@yournextconcepts.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-1. Приложение Academy Attendance ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Значениями этих атрибутов можно управлять в разделе **Атрибуты пользователя** на странице интеграции приложения. На следующем снимке экрана показано, как настроить утверждения:
+1. Приложение Academy Attendance ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию.
 
     ![image](common/edit-attribute.png)
 
     > [!NOTE]
     > Academy Attendance поддерживает две роли для пользователей: **Учитель** и **Учащийся**. Настройте эти роли в Azure AD, чтобы пользователям можно было назначить соответствующие роли. Подробные сведения о создании пользовательских ролей в Azure AD см. в [этом](https://docs.microsoft.com/azure/active-directory/develop/active-directory-enterprise-app-role-management) документе.
 
-1. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** измените утверждения, щелкнув значок **Изменить**, или добавьте утверждение, нажав кнопку **Добавить новое утверждение**, чтобы настроить атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия.
+1. В дополнение к описанному выше приложение Academy Attendance ожидает несколько дополнительных атрибутов в ответе SAML, как показано ниже. Эти атрибуты также заранее заполнены, но вы можете изменить их в соответствии со своими требованиями.
 
     | ИМЯ |  Исходный атрибут|
     | --------- | --------------- |
     | role      | user.assignedroles |
 
-    a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
-
-    ![image](common/new-save-attribute.png)
-
-    ![image](common/new-attribute-details.png)
-
-    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
-
-    c. Оставьте пустым поле **Пространство имен**.
-
-    d. В качестве источника выберите **Атрибут**.
-
-    д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
-
-    Е. Нажмите кнопку **ОК**.
-
-    ж. Выберите команду **Сохранить**.
-
-1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите элемент **XML метаданных** и нажмите кнопку **Скачать**, чтобы скачать сертификат и сохранить его на компьютере.
+1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите элемент **XML метаданных федерации** и выберите **Скачать**, чтобы скачать сертификат и сохранить его на компьютере.
 
     ![Ссылка для скачивания сертификата](common/metadataxml.png)
 
 1. Требуемые URL-адреса можно скопировать из раздела **Настройка Academy Attendance**.
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
-
-### <a name="configure-academy-attendance-sso"></a>Настройка единого входа в Academy Attendance
-
-Чтобы настроить единый вход на стороне **Academy Attendance**, нужно отправить скачанный **XML-файл метаданных** и соответствующие URL-адреса, скопированные на портале Azure, в [группу поддержки Academy Attendance](mailto:support@yournextconcepts.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -163,11 +145,15 @@ ms.locfileid: "68641256"
 1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
 1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
+## <a name="configure-academy-attendance-sso"></a>Настройка единого входа в Academy Attendance
+
+Чтобы настроить единый вход на стороне **Academy Attendance**, нужно отправить скачанный **XML-файл метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, в [группу поддержки Academy Attendance](mailto:support@yournextconcepts.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+
 ### <a name="create-academy-attendance-test-user"></a>Создание тестового пользователя в Academy Attendance
 
-В этом разделе описано, как в приложении Academy Attendance создать пользователя с именем B. Simon. Приложение Academy Attendance поддерживает JIT-подготовку пользователей, которая включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Если пользователь еще не существует в Academy Attendance, он создается после проверки подлинности.
+В этом разделе описано, как в приложении Academy Attendance создать пользователя с именем Britta Simon. Приложение Academy Attendance поддерживает JIT-подготовку пользователей, которая включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Если пользователь еще не существует в Academy Attendance, он создается после проверки подлинности.
 
-### <a name="test-sso"></a>Проверка единого входа
+## <a name="test-sso"></a>Проверка единого входа 
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
@@ -175,9 +161,11 @@ ms.locfileid: "68641256"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+
+- [Пробное использование Academy Attendance с Azure AD](https://aad.portal.azure.com/)
 

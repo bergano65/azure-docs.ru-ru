@@ -1,7 +1,7 @@
 ---
-title: Анализ тональности с помощью REST API Анализа текста в Cognitive Services Azure
+title: Анализ тональности с помощью REST API "Анализ текста"
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как определить тональность с помощью REST API анализа текста.
+description: В этой статье показано, как определить тональность в тексте с помощью REST API "Анализ текста" Azure Cognitive Services.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: sample
 ms.date: 09/23/2019
 ms.author: aahi
-ms.openlocfilehash: d246b14a5bd6e60a7b6facae73c68d7449e2e097
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: f7a62d1d2b695726421ba990d0f118eb3ae199da
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73494441"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74031458"
 ---
 # <a name="example-detect-sentiment-with-text-analytics"></a>Пример: Определение тональности в службе "Анализ текста"
 
@@ -36,7 +36,7 @@ ms.locfileid: "73494441"
 
 ## <a name="sentiment-analysis-v3-public-preview"></a>Общедоступная предварительная версия 3 анализа тональности
 
-Теперь доступна общедоступная предварительная [следующая версия анализа тональности](https://cognitiveusw2ppe.portal.azure-api.net/docs/services/TextAnalytics-v3-0-Preview-1/operations/56f30ceeeda5650db055a3c9). Это значительно улучшает точность и детализацию классификации и оценки текста API.
+Теперь доступна общедоступная предварительная [следующая версия анализа тональности](https://cognitiveusw2ppe.portal.azure-api.net/docs/services/TextAnalytics-v3-0-Preview-1/operations/Sentiment). Это значительно улучшает точность и детализацию классификации и оценки текста API.
 
 > [!NOTE]
 > * Формат запроса и [ограничения данных](../overview.md#data-limits) для анализа тональности версии 3 по сравнению с предыдущей версией не изменились.

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Создание и администрирование виртуальных сетей Azure для виртуальных машин Linux | Документация Майкрософт
+title: Учебник. Создание и администрирование виртуальных сетей Azure для виртуальных машин Linux
 description: В этом руководстве описано, как с помощью Azure CLI создать и администрировать виртуальные сети Azure для виртуальных машин Linux.
 services: virtual-machines-linux
 documentationcenter: virtual-machines
@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 05/10/2017
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: b2255e75843f4ddadd44e7780054de4fc45e6449
-ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
+ms.openlocfilehash: d6624b9d5d77a8552584049463b63738bbf17627
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2019
-ms.locfileid: "72300728"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74034346"
 ---
 # <a name="tutorial-create-and-manage-azure-virtual-networks-for-linux-virtual-machines-with-the-azure-cli"></a>Руководство по Создание и администрирование виртуальных сетей Azure для виртуальных машин Linux с помощью Azure CLI
 

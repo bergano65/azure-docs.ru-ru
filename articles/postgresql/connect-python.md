@@ -1,131 +1,121 @@
 ---
 title: Подключение к службе "База данных Azure для PostgreSQL — отдельный сервер" с помощью Python
-description: В этом кратком руководстве представлен пример кода Python, который можно использовать для подключения к службе "База данных Azure для PostgreSQL — отдельный сервер" и запроса данных из нее.
+description: В этом кратком руководстве представлены примеры кода Python, которые можно использовать для подключения к службе "База данных Azure для PostgreSQL — отдельный сервер" и запроса данных из нее.
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.custom: mvc, devcenter
 ms.devlang: python
 ms.topic: quickstart
-ms.date: 5/6/2019
-ms.openlocfilehash: 4d7988ad590e6d57d9da37f46557f99fccaad294
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.date: 11/07/2019
+ms.openlocfilehash: 441ff1ebeffde36d1940520404050f6cc29ea53e
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65067223"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74066302"
 ---
-# <a name="azure-database-for-postgresql---single-server-use-python-to-connect-and-query-data"></a>База данных Azure для PostgreSQL — отдельный сервер: подключение и запрос данных с помощью Python
-Это краткое руководство демонстрирует, как использовать [Python](https://python.org) для подключения к базе данных Azure для PostgreSQL. Здесь также используются инструкции по использованию инструкций SQL для вставки, обновления и удаления данных в базе данных с платформ Windows, Mac OS и Ubuntu Linux. В этой статье предполагается, что у вас уже есть опыт разработки на Python и вы только начали работу с базой данных Azure для PostgreSQL.
+# <a name="use-python-to-connect-and-query-data-in-azure-database-for-postgresql---single-server"></a>Подключение к службе "База данных Azure для PostgreSQL — отдельный сервер" и выполнение запроса данных с помощью Python
+В этом кратком руководстве показано, как работать со службой "База данных Azure для PostgreSQL" с помощью Python в операционной системе macOS, Ubuntu Linux или Windows. Здесь описано, как подключиться к базе данных и как с помощью инструкций SQL запрашивать, вставлять, обновлять и удалять данные. В этой статье предполагается, что вы знакомы с Python, но только начинаете работу со службой "База данных Azure для PostgreSQL".
 
 ## <a name="prerequisites"></a>Предварительные требования
-В качестве отправной точки в этом кратком руководстве используются ресурсы, созданные в соответствии со следующими материалами:
-- [Создание базы данных с помощью портала](quickstart-create-server-database-portal.md)
-- [Создание базы данных SQL Azure и отправка к ней запросов с помощью Azure CLI](quickstart-create-server-database-azure-cli.md)
+- Служба "База данных Azure для PostgreSQL — отдельный сервер", созданная с помощью действий, описанных в [кратком руководстве по созданию сервера службы "База данных Azure для PostgreSQL" на портале Azure](quickstart-create-server-database-portal.md) или [по созданию службы "База данных Azure для PostgreSQL" с помощью Azure CLI](quickstart-create-server-database-azure-cli.md). 
+  
+- [Python](https://www.python.org/downloads/) 2.7.9 или 3.4+.
+  
+- Последнее обновление установщика пакета [PIP](https://pip.pypa.io/en/stable/installing/), установленного с помощью `pip install -U pip`. 
 
-Кроме того, вам понадобится следующее:
-- установить [Python](https://www.python.org/downloads/);
-- Установить пакет [pip](https://pip.pypa.io/en/stable/installing/) (он уже установлен, если вы используете двоичные файлы Python 2 >=2.7.9 или Python 3 >= 3.4, скачанные с сайта [python.org](https://python.org)).
+## <a name="install-the-python-libraries-for-postgresql"></a>Установка библиотек Python для PostgreSQL
+Модуль [psycopg2](https://pypi.python.org/pypi/psycopg2/) позволяет подключаться к базе данных PostgreSQL и выполнять запросы к ней. Он доступен в виде пакета [Wheel](https://pythonwheels.com/) для Linux, macOS или Windows. Установите двоичную версию модуля, включая все зависимости. Дополнительные сведения об установке `psycopg2` и о предварительных требованиях см. на [этой странице](http://initd.org/psycopg/docs/install.html). 
 
-## <a name="install-the-python-connection-libraries-for-postgresql"></a>Установка библиотек подключений Python для PostgreSQL
-Установите пакет [psycopg2](http://initd.org/psycopg/docs/install.html), позволяющий подключаться к базе данных и запрашивать данные из нее. Пакет psycopg2 [доступен на странице PyPI](https://pypi.python.org/pypi/psycopg2/) в виде пакетов [wheel](https://pythonwheels.com/) для наиболее распространенных платформ (Linux, OS X, Windows). Вы можете использовать команду установки pip, чтобы получить двоичную версию модуля, включая все зависимости.
+Чтобы установить `psycopg2`, откройте окно терминала или командную строку и выполните команду `pip install psycopg2`.
 
-1. На своем компьютере запустите интерфейс командной строки:
-    - На платформе Linux запустите оболочку Bash.
-    - На платформе macOS запустите терминал.
-    - На платформе Windows запустите командную строку из меню "Пуск".
-2. Убедитесь, что вы используете последнюю версию pip при выполнении определенной команды. Например:
-    ```cmd
-    pip install -U pip
-    ```
+## <a name="get-database-connection-information"></a>Получение сведений о подключении к базе данных
+Чтобы подключиться к базе данных службы "База данных Azure для PostgreSQL", требуется полное имя сервера и учетные данные для входа. Эти сведения можно получить на портале Azure.
 
-3. Выполните следующую команду, чтобы установить пакет psycopg2:
-    ```cmd
-    pip install psycopg2
-    ```
+1. На [портале Azure](https://portal.azure.com/) выполните поиск по имени сервера и выберите сервер службы "База данных Azure для PostgreSQL". 
+1. На странице **Обзор** сервера скопируйте **полное имя сервера** и **имя администратора**. Полное **имя сервера** всегда имеет формат *\<имя-сервера>.postgres.database.azure.com*, а **имя администратора** — формат *\<имя-администратора>@\<имя-сервера>* . 
+   
+   Кроме того, потребуется пароль администратора. Если вы не помните этот пароль, вы можете сбросить его на этой странице. 
+   
+   ![Имя сервера службы "База данных Azure для PostgreSQL"](./media/connect-python/1-connection-string.png)
 
-## <a name="get-connection-information"></a>Получение сведений о подключении
-Получите сведения, необходимые для подключения к базе данных Azure.для PostgreSQL. Вам потребуется полное имя сервера и учетные данные для входа.
+## <a name="how-to-run-the-python-examples"></a>Выполнение примеров кода Python
 
-1. Войдите на [портал Azure](https://portal.azure.com/).
-2. В меню слева на портале Azure щелкните **Все ресурсы** и выполните поиск по имени созданного сервера (например, **mydemoserver**).
-3. Щелкните имя сервера.
-4. Запишите **имя сервера** и **имя для входа администратора сервера** с панели сервера **Обзор**. Если вы забыли свой пароль, можно также сбросить пароль с помощью этой панели.
- ![Имя сервера службы "База данных Azure для PostgreSQL"](./media/connect-python/1-connection-string.png)
+Для каждого примера кода в этой статье сделайте следующее:
 
-## <a name="how-to-run-python-code"></a>Как выполнять код Python
-В этой статье содержится всего четыре образца кода, каждый из которых выполняет определенную функцию. В приведенной ниже инструкции объясняется, как создать текстовый файл, вставить блок кода и затем сохранить файл, чтобы запустить его позже. Не забудьте создать четыре отдельных файла, по одному для каждого блока кода.
+1. Создайте файл в текстовом редакторе. 
+   
+1. Добавьте пример кода в файл. В коде замените:
+   - `<server-name>` и `<admin-username>` значениями, скопированными на портале Azure.
+   - `<admin-password>` паролем сервера.
+   - `<database-name>` именем базы данных службы "База данных Azure для PostgreSQL". При создании сервера автоматически создается база данных по умолчанию с именем *postgres*. Вы можете переименовать эту базу данных или создать другую с помощью команд SQL. 
+   
+1. Сохраните файл в папке проекта с расширением *PY*, например *postgres-insert.py*. При сохранении файла в ОС Windows обязательно выберите кодировку UTF-8. 
+   
+1. Чтобы запустить этот файл, перейдите в папку проекта в интерфейсе командной строки и введите `python`, а затем — имя файла, например `python postgres-insert.py`.
 
-- С помощью предпочитаемого текстового редактора создайте файл.
-- Скопируйте и вставьте пример кода, показанный ниже, в текстовый файл. Замените значения параметров **Host**, **dbname**, **User** и **Password** значениями, указанными при создании сервера и базы данных.
-- Сохраните PY-файл (например, postgres.py) в папку проекта. При сохранении файла в Windows убедитесь, что выбрали кодировку UTF-8. 
-- Запустите командную строку, терминал или оболочку Bash и затем перейдите в каталог вашей папки проекта, например `cd postgres`.
--  Чтобы запустить код, введите команду Python, за которой следует имя файла, например `Python postgres.py`
-
-> [!NOTE]
-> Начиная с версии Python 3, при выполнении следующих блоков кода может появиться ошибка `SyntaxError: Missing parentheses in call to 'print'`. Если это произойдет, замените каждый вызов к команде `print "string"` вызовом функции, используя скобки, например `print("string")`.
-
-## <a name="connect-create-table-and-insert-data"></a>Подключение, создание таблицы и вставка данных
-Используйте указанный ниже код для подключения и загрузки данных с помощью функции [psycopg2.connect](http://initd.org/psycopg/docs/connection.html) с инструкцией SQL **INSERT**. Функция [cursor.execute](http://initd.org/psycopg/docs/cursor.html#execute) используется для выполнения SQL-запроса к базе данных PostgreSQL. Замените значения параметров host, dbname, user и password значениями, указанными при создании сервера и базы данных.
+## <a name="create-a-table-and-insert-data"></a>Создание таблицы и вставка данных
+Приведенный ниже пример кода подключается к базе данных службы "База данных Azure для PostgreSQL" с помощью функции [psycopg2.connect](http://initd.org/psycopg/docs/connection.html) и загружает данные с помощью инструкции SQL **INSERT**. Функция [cursor.execute](http://initd.org/psycopg/docs/cursor.html#execute) выполняет SQL-запрос к базе данных. 
 
 ```Python
 import psycopg2
 
-# Update connection string information obtained from the portal
-host = "mydemoserver.postgres.database.azure.com"
-user = "mylogin@mydemoserver"
-dbname = "mypgsqldb"
-password = "<server_admin_password>"
+# Update connection string information 
+host = "<server-name>"
+dbname = "<database-name>"
+user = "<admin-username>"
+password = "<admin-password>"
 sslmode = "require"
 
 # Construct connection string
 conn_string = "host={0} user={1} dbname={2} password={3} sslmode={4}".format(host, user, dbname, password, sslmode)
 conn = psycopg2.connect(conn_string) 
-print "Connection established"
+print("Connection established")
 
 cursor = conn.cursor()
 
 # Drop previous table of same name if one exists
 cursor.execute("DROP TABLE IF EXISTS inventory;")
-print "Finished dropping table (if existed)"
+print("Finished dropping table (if existed)")
 
-# Create table
+# Create a table
 cursor.execute("CREATE TABLE inventory (id serial PRIMARY KEY, name VARCHAR(50), quantity INTEGER);")
-print "Finished creating table"
+print("Finished creating table")
 
-# Insert some data into table
+# Insert some data into the table
 cursor.execute("INSERT INTO inventory (name, quantity) VALUES (%s, %s);", ("banana", 150))
 cursor.execute("INSERT INTO inventory (name, quantity) VALUES (%s, %s);", ("orange", 154))
 cursor.execute("INSERT INTO inventory (name, quantity) VALUES (%s, %s);", ("apple", 100))
-print "Inserted 3 rows of data"
+print("Inserted 3 rows of data")
 
-# Cleanup
+# Clean up
 conn.commit()
 cursor.close()
 conn.close()
 ```
 
-После успешного выполнения кода выводится следующий результат:
+При успешном выполнении кода возвращаются следующие данные:
 
 ![Вывод командной строки](media/connect-python/2-example-python-output.png)
 
-## <a name="read-data"></a>Считывание данных
-Используйте указанный ниже код для чтения данных, вставленных с помощью функции [cursor.execute](http://initd.org/psycopg/docs/cursor.html#execute), используя инструкцию SQL **SELECT**. Эта функция принимает запрос и возвращает результирующий набор, по которому может быть выполнена итерация с помощью метода [cursor.fetchall()](http://initd.org/psycopg/docs/cursor.html#cursor.fetchall). Замените значения параметров host, dbname, user и password значениями, указанными при создании сервера и базы данных.
+## <a name="read-data"></a>Чтение данных
+Приведенный ниже пример кода подключается к базе данных службы "База данных Azure для PostgreSQL" и считывает данные с помощью функции [cursor.execute](http://initd.org/psycopg/docs/cursor.html#execute) и инструкции SQL **SELECT**. Эта функция принимает запрос и возвращает результирующий набор для итерации с помощью [cursor.fetchall()](http://initd.org/psycopg/docs/cursor.html#cursor.fetchall). 
 
 ```Python
 import psycopg2
 
-# Update connection string information obtained from the portal
-host = "mydemoserver.postgres.database.azure.com"
-user = "mylogin@mydemoserver"
-dbname = "mypgsqldb"
-password = "<server_admin_password>"
+# Update connection string information
+host = "<server-name>"
+dbname = "<database-name>"
+user = "<admin-username>"
+password = "<admin-password>"
 sslmode = "require"
 
 # Construct connection string
 conn_string = "host={0} user={1} dbname={2} password={3} sslmode={4}".format(host, user, dbname, password, sslmode)
 conn = psycopg2.connect(conn_string) 
-print "Connection established"
+print("Connection established")
 
 cursor = conn.cursor()
 
@@ -135,7 +125,7 @@ rows = cursor.fetchall()
 
 # Print all rows
 for row in rows:
-    print "Data row = (%s, %s, %s)" %(str(row[0]), str(row[1]), str(row[2]))
+    print("Data row = (%s, %s, %s)" %(str(row[0]), str(row[1]), str(row[2])))
 
 # Cleanup
 conn.commit()
@@ -144,28 +134,28 @@ conn.close()
 ```
 
 ## <a name="update-data"></a>Обновление данных
-Используйте указанный ниже код, чтобы обновить строку inventory, вставленную ранее с помощью функции [cursor.execute](http://initd.org/psycopg/docs/cursor.html#execute), используя инструкцию SQL **UPDATE**. Замените значения параметров host, dbname, user и password значениями, указанными при создании сервера и базы данных.
+Приведенный ниже пример кода подключается к базе данных службы "База данных Azure для PostgreSQL" и обновляет данные с помощью функции [cursor.execute](http://initd.org/psycopg/docs/cursor.html#execute) и инструкции SQL **UPDATE**. 
 
 ```Python
 import psycopg2
 
-# Update connection string information obtained from the portal
-host = "mydemoserver.postgres.database.azure.com"
-user = "mylogin@mydemoserver"
-dbname = "mypgsqldb"
-password = "<server_admin_password>"
+# Update connection string information
+host = "<server-name>"
+dbname = "<database-name>"
+user = "<admin-username>"
+password = "<admin-password>"
 sslmode = "require"
 
 # Construct connection string
 conn_string = "host={0} user={1} dbname={2} password={3} sslmode={4}".format(host, user, dbname, password, sslmode)
 conn = psycopg2.connect(conn_string) 
-print "Connection established"
+print("Connection established")
 
 cursor = conn.cursor()
 
 # Update a data row in the table
 cursor.execute("UPDATE inventory SET quantity = %s WHERE name = %s;", (200, "banana"))
-print "Updated 1 row of data"
+print("Updated 1 row of data")
 
 # Cleanup
 conn.commit()
@@ -174,28 +164,28 @@ conn.close()
 ```
 
 ## <a name="delete-data"></a>Удаление данных
-Используйте указанный ниже код, чтобы удалить элемент inventory, вставленный ранее с помощью функции [cursor.execute](http://initd.org/psycopg/docs/cursor.html#execute), используя инструкцию SQL **DELETE**. Замените значения параметров host, dbname, user и password значениями, указанными при создании сервера и базы данных.
+Приведенный ниже пример кода подключается к базе данных службы "База данных Azure для PostgreSQL" и удаляет вставленный ранее элемент inventory с помощью функции [cursor.execute](http://initd.org/psycopg/docs/cursor.html#execute) и инструкции SQL **DELETE**. 
 
 ```Python
 import psycopg2
 
-# Update connection string information obtained from the portal
-host = "mydemoserver.postgres.database.azure.com"
-user = "mylogin@mydemoserver"
-dbname = "mypgsqldb"
-password = "<server_admin_password>"
+# Update connection string information
+host = "<server-name>"
+dbname = "<database-name>"
+user = "<admin-username>"
+password = "<admin-password>"
 sslmode = "require"
 
 # Construct connection string
 conn_string = "host={0} user={1} dbname={2} password={3} sslmode={4}".format(host, user, dbname, password, sslmode)
 conn = psycopg2.connect(conn_string) 
-print "Connection established"
+print("Connection established")
 
 cursor = conn.cursor()
 
 # Delete data row from table
 cursor.execute("DELETE FROM inventory WHERE name = %s;", ("orange",))
-print "Deleted 1 row of data"
+print("Deleted 1 row of data")
 
 # Cleanup
 conn.commit()

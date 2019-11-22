@@ -5,19 +5,19 @@ author: zr-msft
 services: azure-dev-spaces
 ms.service: azure-dev-spaces
 ms.author: zarhoads
-ms.date: 03/22/2019
+ms.date: 11/13/2019
 ms.topic: quickstart
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
 manager: gwallace
 ms.custom: vs-azure
 ms.workload: azure-vs
-ms.openlocfilehash: 41dea16f7938d391f8cdf03e1a731e8082f74b26
-ms.sourcegitcommit: 8bae7afb0011a98e82cbd76c50bc9f08be9ebe06
+ms.openlocfilehash: 5a7ab993c58730594a0c4e10572939d3dccbdf02
+ms.sourcegitcommit: a170b69b592e6e7e5cc816dabc0246f97897cb0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71695475"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74091828"
 ---
 # <a name="quickstart-debug-and-iterate-with-visual-studio-and-net-core-on-kubernetes-with-azure-dev-spaces"></a>Краткое руководство. Отладка и итерация с помощью Visual Studio, .NET Core и Azure Dev Spaces в Kubernetes
 
@@ -52,7 +52,7 @@ Azure Dev Spaces также позволяет выполнять отладку
 
 ## <a name="enable-azure-dev-spaces-on-your-aks-cluster"></a>Включение Azure Dev Spaces в кластере AKS
 
-Перейдите к своему кластеру AKS на портале Azure и щелкните *Dev Spaces*. Под надписью *Enable Dev Spaces* (Включить Dev Spaces) нажмите *Да* и щелкните *Сохранить*.
+Перейдите к своему кластеру AKS на портале Azure и щелкните *Dev Spaces*. Под надписью *Use Dev Spaces* (Использовать Dev Spaces) выберите переключатель *Да* и нажмите кнопку *Сохранить*.
 
 ![Включение Dev Spaces на портале Azure](media/get-started-netcore-visualstudio/enable-dev-spaces-portal.png)
 
@@ -60,11 +60,11 @@ Azure Dev Spaces также позволяет выполнять отладку
 
 1. Откройте Visual Studio.
 1. создание проекта;
-1. Выберите *Веб-приложение ASP.NET Core* и присвойте проекту имя *webfrontend*.
-1. Последовательно выберите *ОК*.
+1. Выберите *Веб-приложение ASP.NET Core* и щелкните *Далее*.
+1. Присвойте проекту имя *webfrontend* и нажмите кнопку *Создать*.
 1. При появлении запроса выберите *Веб-приложение (модель-представление-контроллер)* в качестве шаблона.
-1. Выберите *.NET Core* и *ASP.NET Core 2.0* вверху.
-1. Последовательно выберите *ОК*.
+1. Выберите *.NET Core* и *ASP.NET Core 2.1* вверху.
+1. Нажмите кнопку *Создать*.
 
 ## <a name="connect-your-project-to-your-dev-space"></a>Подключение проекта к пространству разработки
 
@@ -93,12 +93,12 @@ Built container image in 39s
 Waiting for container...
 36s
 
-Service 'webfrontend' port 'http' is available at http://webfrontend.1234567890abcdef1234.eus.azds.io/
+Service 'webfrontend' port 'http' is available at http://default.webfrontend.1234567890abcdef1234.eus.azds.io/
 Service 'webfrontend' port 80 (http) is available at http://localhost:62266
 Completed warmup for project 'webfrontend' in 125 seconds.
 ```
 
-В нашем примере используется такой общедоступный URL-адрес: http://webfrontend.1234567890abcdef1234.eus.azds.io/. Перейдите по общедоступному URL-адресу службы, запущенной в вашем пространстве разработки, и проверьте ее работу.
+В нашем примере используется такой общедоступный URL-адрес: http://default.webfrontend.1234567890abcdef1234.eus.azds.io/. Перейдите по общедоступному URL-адресу службы, запущенной в вашем пространстве разработки, и проверьте ее работу.
 
 Возможно, из-за этого процесса отключился общий доступ к вашей службе. Чтобы включить общий доступ, обновите [значение входящего трафика в *values.yaml*][ingress-update].
 

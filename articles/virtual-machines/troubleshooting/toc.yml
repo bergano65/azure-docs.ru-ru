@@ -114,6 +114,8 @@
           href: serial-console-grub-single-user-mode.md
         - name: Немаскируемое прерывание в последовательной консоли / SysRq
           href: serial-console-nmi-sysrq.md
+        - name: Заблаговременная настройка GRUB и Серийной консоли
+          href: serial-console-grub-proactive-configuration.md
     - name: Последовательная консоль для Windows
       href: serial-console-windows.md
       items:
@@ -125,8 +127,6 @@
       href: serial-console-power-options.md
     - name: Распространенные ошибки последовательностей консоли
       href: serial-console-errors.md
-    - name: Заблаговременная настройка GRUB и Серийной консоли
-      href: serial-console-grub-proactive-configuration.md
 - name: Ошибки при удалении ресурсов хранилища
   href: storage-resource-deletion-errors.md
 - name: Ошибки при удалении ресурсов классического хранилища

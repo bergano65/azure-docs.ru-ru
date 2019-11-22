@@ -1,22 +1,18 @@
 ---
 title: Использование Azure Lighthouse в корпоративных сценариях
 description: Возможности Azure Lighthouse можно использовать для упрощения управления в сценариях работы предприятия, которое использует несколько клиентов Azure AD.
-author: JnHs
-ms.service: lighthouse
-ms.author: jenhayes
 ms.date: 09/25/2019
 ms.topic: overview
-manager: carmonm
-ms.openlocfilehash: fbd87cc801824729025feb7aefa411ac38048949
-ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
+ms.openlocfilehash: ae2241048e6ae481e319154beedab74c23c91163
+ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71266681"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74132500"
 ---
 # <a name="azure-lighthouse-in-enterprise-scenarios"></a>Использование Azure Lighthouse в корпоративных сценариях
 
-Наиболее распространенный сценарий для Azure Lighthouse — это поставщик услуг, который управляет ресурсами в клиентах Azure Active Directory (Azure AD) для своих клиентов. Но возможности Azure Lighthouse можно использовать еще и для упрощения управления в сценариях работы предприятия, которое использует несколько клиентов Azure AD.
+Наиболее распространенный сценарий для [Azure Lighthouse](../overview.md) — это поставщик услуг, который управляет ресурсами в клиентах Azure Active Directory (Azure AD) для своих клиентов. Но возможности Azure Lighthouse можно использовать еще и для упрощения управления в сценариях работы предприятия, которое использует несколько клиентов Azure AD.
 
 ## <a name="single-vs-multiple-tenants"></a>Один или несколько клиентов
 

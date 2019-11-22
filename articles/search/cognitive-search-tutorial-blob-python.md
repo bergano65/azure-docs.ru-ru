@@ -1,5 +1,5 @@
 ---
-title: Учебник по Python. Вызов Cognitive Services в конвейере обогащения данных с помощью средств ИИ
+title: Руководство по созданию набора навыков в Python с помощью REST API
 titleSuffix: Azure Cognitive Search
 description: Ознакомьтесь с примером извлечения данных, обработки естественного языка и изображений с применением искусственного интеллекта в службе "Когнитивный поиск Azure" с помощью записной книжки Jupyter для Python. Извлеченные данные индексируются и легко доступны по запросу.
 manager: nitinme
@@ -9,14 +9,14 @@ ms.service: cognitive-search
 ms.devlang: python
 ms.topic: tutorial
 ms.date: 11/04/2019
-ms.openlocfilehash: bb36ae551c48fc53756933e78ff0212f8ec1cdeb
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: 1e404998c8f49852248a754e7134f439dcdf5b04
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72790206"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74113680"
 ---
-# <a name="python-tutorial-call-cognitive-services-apis-in-an-azure-cognitive-search-enrichment-pipeline"></a>Учебник по Python. Вызов API-интерфейсов Cognitive Services в конвейере обогащения службы "Когнитивный поиск Azure"
+# <a name="tutorial-create-an-ai-enrichment-pipeline-using-rest-and-python"></a>Руководство по созданию конвейера обогащения с помощью ИИ, используя REST и Python
 
 В этом учебнике вы узнаете о механизме программирования обогащения данных в службе "Когнитивный поиск Azure" с использованием *когнитивных методик*. Навыки подкрепляются возможностями обработки естественного языка (NLP) и анализа изображений в Cognitive Services. Настроив сочетание и конфигурацию набора навыков, можно извлечь текст и текстовые представления изображения или файл отсканированного документа. Кроме того, вы можете определить язык, сущности, ключевые фразы и многое другое. Результатом является расширенное содержимое в индексе поиска, созданное конвейером индексирования с возможностями ИИ. 
 

@@ -1,22 +1,29 @@
 ---
-title: Перенос устаревших Частных зон Azure DNS на новую модель ресурсов
+title: Перенос устаревших частных зон Azure DNS на новую модель ресурсов
+titleSuffix: Azure DNS
 description: Это руководство предоставляет пошаговые инструкции по переносу устаревших частных зон DNS на последнюю модель ресурсов
 services: dns
-author: rohinkoul
+author: asudbring
 ms.service: dns
 ms.topic: tutorial
 ms.date: 06/18/2019
-ms.author: rohink
-ms.openlocfilehash: 870f8f43fb37f3f58fc19f2fd544e77b1a3a3967
-ms.sourcegitcommit: 4d177e6d273bba8af03a00e8bb9fe51a447196d0
+ms.author: allensu
+ms.openlocfilehash: 3beac014ee69120df518e0358a5fdbef5818f7cf
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71960552"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74076727"
 ---
 # <a name="migrating-legacy-azure-dns-private-zones-to-new-resource-model"></a>Перенос устаревших частных зон Azure DNS на новую модель ресурсов
 
-Текущий выпуск частных зон Azure DNS предоставляет новые функции и снимает некоторые ограничения начальной общедоступной предварительной версии. Но эти преимущества недоступны в частных зонах DNS, которые были созданы с помощью предварительной версии API. Чтобы воспользоваться преимуществами нового выпуска, необходимо перевести устаревшие ресурсы частных зон DNS на новую модель ресурсов. Процесс переноса прост, и мы предоставили сценарий PowerShell для автоматизации этого процесса. Это руководство содержит пошаговые инструкции по переводу частных зон Azure DNS на новую модель ресурсов.
+Во время действия общедоступной предварительной версии частные зоны DNS создавались с помощью ресурса "dnszones" со свойством "zoneType", для которого установлено значение "Private". Такие зоны не будут поддерживаться после 31 декабря 2019 г. и должны быть перенесены в общедоступную модель ресурсов, которая использует тип ресурса "privateDnsZones" вместо "dnszones". Процесс переноса прост, и мы предоставили сценарий PowerShell для автоматизации этого процесса. Это руководство содержит пошаговые инструкции по переводу частных зон Azure DNS на новую модель ресурсов.
+
+Чтобы найти ресурсы dnszones, требующие миграции, выполните приведенную ниже команду в Azure CLI.
+```azurecli
+az account set --subscription <SubscriptionId>
+az network dns zone list --query "[?zoneType=='Private']"
+```
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -25,7 +32,7 @@ ms.locfileid: "71960552"
 Установите модуль Az.PrivateDns для Azure PowerShell. Для этого откройте окно PowerShell с повышенными привилегиями (режим администратора) и введите следующую команду:
 
 ```powershell
-Install-Module -Name Az.PrivateDns -AllowPrerelease
+Install-Module -Name Az.PrivateDns
 ```
 
 >[!IMPORTANT]
@@ -44,6 +51,9 @@ install-script PrivateDnsMigrationScript
 ![Установка сценария](./media/private-dns-migration-guide/install-migration-script.png)
 
 Вы можете также вручную получить последнюю версию сценария PowerShell по адресу https://www.powershellgallery.com/packages/PrivateDnsMigrationScript.
+
+>[!IMPORTANT]
+>Скрипт миграции не должен запускаться в Azure Cloud Shell, а должен выполняться на виртуальной машине или на локальном компьютере, подключенном к Интернету.
 
 ## <a name="running-the-script"></a>Запуск сценария
 

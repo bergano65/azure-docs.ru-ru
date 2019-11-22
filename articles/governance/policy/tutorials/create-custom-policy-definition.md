@@ -1,14 +1,14 @@
 ---
 title: Создание определения пользовательской политики
-description: Создание определения пользовательской политики для Политики Azure с целью соблюдения пользовательских бизнес-правил.
+description: Создайте определение пользовательской политики для Политики Azure, чтобы применять пользовательские бизнес-правила для ресурсов Azure.
 ms.date: 04/23/2019
 ms.topic: tutorial
-ms.openlocfilehash: 1a5be5a3e81dec6f4369e6b01dcda3d5de5f6dac
-ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
+ms.openlocfilehash: 97a85eb28cd0dbb2586623fda442d87a5790db2a
+ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73959269"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74128797"
 ---
 # <a name="tutorial-create-a-custom-policy-definition"></a>Руководство по Создание определения пользовательской политики
 

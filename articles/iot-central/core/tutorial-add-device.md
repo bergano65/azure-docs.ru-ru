@@ -1,20 +1,20 @@
 ---
-title: Добавление реального устройства в приложение Azure IoT Central | Документация Майкрософт
-description: Сведения о том, как добавить реальное устройство в приложение Azure IoT Central и настроить его. Также вы узнаете, как создавать код в реальном устройстве.
+title: Руководство по добавлению реального устройства в приложение Azure IoT Central
+description: Руководство по Сведения о том, как добавить реальное устройство в приложение Azure IoT Central и настроить его. Также вы узнаете, как создавать код в реальном устройстве.
 author: sandeeppujar
 ms.author: sandeepu
-ms.date: 08/23/2019
+ms.date: 11/13/2019
 ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: peterpr
-ms.openlocfilehash: fce5be4d059d7b3698f1e76a4ec6ff46c4ce3c0b
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 5234c371cc4a7238148915f4dcca1faac564f608
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73824609"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74108975"
 ---
 # <a name="tutorial-add-a-real-device-to-your-azure-iot-central-application"></a>Руководство по Добавление реального устройства в приложение Azure IoT Central
 

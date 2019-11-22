@@ -1,19 +1,19 @@
 ---
-title: Подробное пошаговое руководство по службе "Машинное обучение Azure" для Azure IoT Edge | Документация Майкрософт
+title: Руководство по Подробное пошаговое руководство по службе "Машинное обучение Azure" для Azure IoT Edge
 description: Краткое руководство, в котором рассматриваются различные задачи, необходимые для создания комплексного машинного обучения в граничном сценарии.
 author: kgremban
 manager: philmea
 ms.author: kgremban
-ms.date: 06/13/2019
+ms.date: 11/11/2019
 ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 916e48752431be41ff150c2ac84e66eb1e98e81f
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 965c420fa29c4cf82517148c01e17d6d7dd6ea97
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67064678"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74106507"
 ---
 # <a name="tutorial-an-end-to-end-solution-using-azure-machine-learning-and-iot-edge"></a>Руководство по Комплексное решение с помощью машинного обучения Azure и IoT Edge
 

@@ -1,19 +1,18 @@
 ---
-title: Перемещение виртуальных машин IaaS между регионами Azure для государственных организаций и общедоступными регионами Azure с помощью службы Azure Site Recovery | Документация Майкрософт
-description: Используйте Azure Site Recovery, чтобы переносить виртуальные машины IaaS между регионами Azure для государственных организаций и общедоступными регионами Azure.
-services: site-recovery
+title: Перенос виртуальных машин Azure между общедоступными регионами и регионами Azure для государственных организаций с помощью Azure Site Recovery
+description: Переносите виртуальные машины между регионами для государственных организаций и общедоступными регионами Azure с помощью Azure Site Recovery.
 author: rajani-janaki-ram
 ms.service: site-recovery
 ms.topic: tutorial
 ms.date: 04/16/2019
 ms.author: rajanaki
 ms.custom: MVC
-ms.openlocfilehash: bff6268507c0d2ec0aa1eac0c7e2e9d2513ded58
-ms.sourcegitcommit: aebe5a10fa828733bbfb95296d400f4bc579533c
+ms.openlocfilehash: 2a749e9345fec0e91751641cd15805d7f7d62d95
+ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70376126"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73961407"
 ---
 # <a name="move-azure-vms-between-azure-government-and-public-regions"></a>Перенос виртуальных машин Azure между общедоступными регионами и регионами Azure для государственных организаций 
 

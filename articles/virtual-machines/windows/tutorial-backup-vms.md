@@ -1,5 +1,5 @@
 ---
-title: Руководство. Резервное копирование виртуальных машин Windows на портале Azure | Документация Microsoft
+title: Учебник. Резервное копирование виртуальных машин Windows на портале Azure
 description: Из этого руководства вы узнаете, как защитить виртуальные машины Windows с помощью портала Azure и службы Azure Backup.
 services: virtual-machines-windows
 documentationcenter: virtual-machines
@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 06/06/2019
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 8eaa96dd92ab0f18b590b284d59dd7b775738602
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 603bffe3d28214dbdcd51888925c3c653d0759e7
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70101735"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74068180"
 ---
 # <a name="tutorial-back-up-and-restore-files-for-windows-virtual-machines-in-azure"></a>Руководство по резервному копированию и восстановлению файлов для виртуальных машин Windows в Azure
 

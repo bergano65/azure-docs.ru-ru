@@ -1,19 +1,19 @@
 ---
-title: Настройка аварийного восстановления для виртуальных машин Hyper-V между локальными сайтами с помощью службы Azure Site Recovery
+title: Настройка аварийного восстановления Hyper-V на дополнительный сайт с помощью Azure Site Recovery
 description: Сведения о настройке аварийного восстановления для виртуальных машин Hyper-V между локальными сайтами с помощью службы Azure Site Recovery.
 author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: tutorial
-ms.date: 09/09/2019
+ms.date: 11/14/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: a2eb8bf10454ee01953ddd37025f0c0048d00a0a
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: 8d89c7eda845f0e5ed9bc8ccc7b6b3812ba275f9
+ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70813762"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74132988"
 ---
 # <a name="set-up-disaster-recovery-for-hyper-v-vms-to-a-secondary-on-premises-site"></a>Настройка аварийного восстановления для виртуальных машин Hyper-V на дополнительный локальный сайт
 
@@ -28,6 +28,7 @@ ms.locfileid: "70813762"
 > * Настройка сетевого сопоставления 
 > * Создание политики репликации
 > * Включение репликации для виртуальных машин.
+
 
 ## <a name="prerequisites"></a>Предварительные требования
 

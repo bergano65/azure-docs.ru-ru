@@ -1,21 +1,21 @@
 ---
-title: Краткое руководство по регистрации устройств X.509 в Службе подготовки устройств Azure с помощью Node.js | Документация Майкрософт
+title: Краткое руководство. Регистрация устройств X.509 в Службе подготовки устройств Azure с помощью Node.js
 description: В этом кратком руководстве используется групповая регистрация. Из этого краткого руководства вы узнаете, как зарегистрировать устройство X.509 в Службе подготовки устройств к добавлению в Центр Интернета вещей Azure с помощью пакета SDK для Node.js
 author: wesmc7777
 ms.author: wesmc
-ms.date: 04/10/2019
+ms.date: 11/08/2019
 ms.topic: quickstart
 ms.service: iot-dps
 services: iot-dps
 manager: philmea
 ms.devlang: nodejs
 ms.custom: mvc
-ms.openlocfilehash: a861bc52734f5b2bc6e455965428328cd1415b76
-ms.sourcegitcommit: 41015688dc94593fd9662a7f0ba0e72f044915d6
+ms.openlocfilehash: 3b2c27b8fc595dae39ed7374ec3647e6b4ba6f23
+ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59500674"
+ms.lasthandoff: 11/10/2019
+ms.locfileid: "73903409"
 ---
 # <a name="quickstart-enroll-x509-devices-to-the-device-provisioning-service-using-nodejs"></a>Краткое руководство. Регистрация устройств X.509 в Службе подготовки устройств с помощью Node.js
 
@@ -147,4 +147,4 @@ ms.locfileid: "59500674"
 В этом кратком руководстве вы создали группу регистрации для сертификата X.509 промежуточного или корневого центра сертификации с помощью службы подготовки устройств Центра Интернета вещей Azure. Дополнительные сведения о подготовке устройств см. в руководстве по настройке службы подготовки устройств на портале Azure. 
  
 > [!div class="nextstepaction"]
-> [Руководства по службе подготовки устройств к добавлению в Центр Интернета вещей Azure](./tutorial-set-up-cloud.md)
+> [Руководства по службе подготовки устройств для Центра Интернета вещей Azure](./tutorial-set-up-cloud.md)

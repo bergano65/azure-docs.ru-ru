@@ -1,6 +1,6 @@
 ---
-title: Включение службы "Центр безопасности Azure для Интернета вещей" в Центре Интернета вещей | Документация Майкрософт
-description: Сведения о включении Центра безопасности Azure для Интернета вещей в Центре Интернета вещей.
+title: Краткое руководство. Включение службы "Центр безопасности Azure для Интернета вещей" в Центре Интернета вещей
+description: В этом руководстве приведены сведения о включении Центра безопасности Azure для Интернета вещей в Центре Интернета вещей.
 services: asc-for-iot
 ms.service: asc-for-iot
 documentationcenter: na
@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 10/17/2019
+ms.date: 11/08/2019
 ms.author: mlottner
-ms.openlocfilehash: 67361c402bdbc82d5df01709dc962b59671cb2aa
-ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
+ms.openlocfilehash: 641ba4c8d3b0e54132c19a493e1e4bf17bb28e13
+ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72991395"
+ms.lasthandoff: 11/10/2019
+ms.locfileid: "73904114"
 ---
 # <a name="quickstart-onboard-azure-security-center-for-iot-service-in-iot-hub"></a>Краткое руководство. Включение службы "Центр безопасности Azure для Интернета вещей" в Центре Интернета вещей
 
@@ -81,5 +81,3 @@ ms.locfileid: "72991395"
 
 > [!div class="nextstepaction"]
 > [Quickstart: Configure your IoT solution](quickstart-configure-your-solution.md) (Краткое руководство. Настройка решения Интернета вещей)
-
-

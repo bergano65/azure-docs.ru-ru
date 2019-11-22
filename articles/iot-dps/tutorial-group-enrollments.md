@@ -1,23 +1,23 @@
 ---
-title: Подготовка имитированного устройства X.509 в Центре Интернета вещей Azure с помощью Java и групп регистрации | Документация Майкрософт
+title: Руководство по подготовке имитированного устройства X.509 в Центре Интернета вещей Azure с помощью Java и групп регистрации
 description: Руководство Azure. Создание и подготовка имитированного устройства X.509 с помощью Java устройства, SDK службы и групп регистрации для службы подготовки устройств Центра Интернета вещей
 author: wesmc7777
 ms.author: wesmc
-ms.date: 01/04/2018
+ms.date: 11/12/2019
 ms.topic: tutorial
 ms.service: iot-dps
 services: iot-dps
 manager: timlt
 ms.devlang: java
 ms.custom: mvc
-ms.openlocfilehash: 8e926c3ff7c3d7abc9467291e9b1de77781f664e
-ms.sourcegitcommit: 7f7c2fe58c6cd3ba4fd2280e79dfa4f235c55ac8
+ms.openlocfilehash: b3cb506b241adab44df490e2fe7f363d35f0f747
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56805059"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74112431"
 ---
-# <a name="create-and-provision-a-simulated-x509-device-using-java-device-and-service-sdk-and-group-enrollments-for-iot-hub-device-provisioning-service"></a>Создание и подготовка имитированного устройства X.509 с помощью Java устройства, SDK службы и групп регистрации для службы подготовки устройств Центра Интернета вещей
+# <a name="tutorial-create-and-provision-a-simulated-x509-device-using-java-device-and-service-sdk-and-group-enrollments-for-iot-hub-device-provisioning-service"></a>Руководство по Создание и подготовка имитированного устройства X.509 с помощью Java устройства, SDK службы и групп регистрации для службы подготовки устройств Центра Интернета вещей
 
 В этом руководстве показано, как имитировать устройство X.509 на компьютере разработки под управлением ОС Windows, а также как с помощью примера кода подключить имитированное устройство к службе подготовки устройств и Центру Интернета вещей, используя группы регистрации. 
 
@@ -46,7 +46,7 @@ ms.locfileid: "56805059"
 
         1. В разделе **Добавление сертификата** введите следующие данные.
             - Введите уникальное имя сертификата.
-            - Выберите созданный файл **_RootCA.pem_**.
+            - Выберите созданный файл **_RootCA.pem_** .
             - Затем нажмите кнопку **Сохранить**.
 
            ![Добавление сертификата](./media/tutorial-group-enrollments/add-certificate.png)
@@ -54,7 +54,7 @@ ms.locfileid: "56805059"
         1. Выберите только что созданный сертификат.
             - Щелкните **Создать код проверки**. Скопируйте созданный код.
             - Выполните этап проверки. Введите _код проверки_ или щелкните правой кнопкой мыши в открытом окне PowerShell, чтобы вставить код.  Нажмите клавишу **ВВОД**.
-            - На портале Azure выберите созданный файл **_verifyCert4.pem_**. Нажмите кнопку **Проверка**.
+            - На портале Azure выберите созданный файл **_verifyCert4.pem_** . Нажмите кнопку **Проверка**.
 
               ![Проверка сертификата](./media/tutorial-group-enrollments/validate-certificate.png)
 
@@ -73,7 +73,7 @@ ms.locfileid: "56805059"
     git clone https://github.com/Azure/azure-iot-sdk-java.git --recursive
     ```
 
-1. В загруженном исходном коде найдите папку **_azure-iot-sdk-java/provisioning/provisioning-samples/service-enrollment-group-sample_**. Откройте файл **_/src/main/java/samples/com/microsoft/azure/sdk/iot/ServiceEnrollmentGroupSample.java_** в любом удобном текстовом редакторе и добавьте следующие данные:
+1. В загруженном исходном коде найдите папку **_azure-iot-sdk-java/provisioning/provisioning-samples/service-enrollment-group-sample_** . Откройте файл **_/src/main/java/samples/com/microsoft/azure/sdk/iot/ServiceEnrollmentGroupSample.java_** в любом удобном текстовом редакторе и добавьте следующие данные:
 
     1. В службу подготовки добавьте `[Provisioning Connection String]` с портала следующим образом:
 
@@ -127,7 +127,7 @@ ms.locfileid: "56805059"
 
     1. Сохраните файл _ServiceEnrollmentGroupSample.java_.
 
-1. Откройте окно командной строки и перейдите к папке **_azure-iot-sdk-java/provisioning/provisioning-samples/service-enrollment-group-sample_**.
+1. Откройте окно командной строки и перейдите к папке **_azure-iot-sdk-java/provisioning/provisioning-samples/service-enrollment-group-sample_** .
 
 1. Соберите пример кода с помощью следующей команды:
 
@@ -177,7 +177,7 @@ ms.locfileid: "56805059"
 
     Если вы создали сертификаты вашего устройства с помощью оболочки Bash, то открытый ключ находится в ./certs/new-device.cert.pem. Закрытый ключ будет находиться в файле ./private/new-device.key.pem.
 
-    Откройте ваш файл с открытым ключом и обновите переменную `leafPublicPem`, используя это значение. Скопируйте текст от строки _-----BEGIN PRIVATE KEY-----_ по строку _-----END PRIVATE KEY-----_.
+    Откройте ваш файл с открытым ключом и обновите переменную `leafPublicPem`, используя это значение. Скопируйте текст от строки _-----BEGIN PRIVATE KEY-----_ по строку _-----END PRIVATE KEY-----_ .
 
     ```java
     private static final String leafPublicPem = "-----BEGIN CERTIFICATE-----\n" +
@@ -189,7 +189,7 @@ ms.locfileid: "56805059"
         "-----END CERTIFICATE-----\n";
     ```
 
-    Откройте ваш файл с закрытым ключом и обновите переменную `leafPrivatePem`, используя это значение. Скопируйте текст от строки _-----BEGIN RSA PRIVATE KEY-----_ по строку _-----END RSA PRIVATE KEY-----_.
+    Откройте ваш файл с закрытым ключом и обновите переменную `leafPrivatePem`, используя это значение. Скопируйте текст от строки _-----BEGIN RSA PRIVATE KEY-----_ по строку _-----END RSA PRIVATE KEY-----_ .
 
     ```java
     private static final String leafPrivateKey = "-----BEGIN RSA PRIVATE KEY-----\n" +

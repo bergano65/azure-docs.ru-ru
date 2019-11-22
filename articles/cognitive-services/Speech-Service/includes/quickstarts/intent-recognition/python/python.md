@@ -11,22 +11,23 @@ ms.topic: quickstart
 ms.date: 10/28/2019
 ms.author: erhopf
 zone_pivot_groups: programming-languages-set-two
-ms.openlocfilehash: 8916cb0438f0005d3ff9f720cf1b5a5653eeac77
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 4efa535118d075addf78b2e9be6a645c458d6bb4
+ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73506166"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74125591"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
-Перед началом работы нужно:
+Перед началом работы нужно сделать следующее:
 
 > [!div class="checklist"]
-> * [Создать ресурс службы "Речь" Azure](../../../../get-started.md).
+>
+> * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
 > * [Создать приложение LUIS и получить ключ конечной точки](../../../../quickstarts/create-luis.md).
-> * [Настроить среду разработки](../../../../quickstarts/setup-platform.md).
-> * [Создать пустой пример проекта](../../../../quickstarts/create-project.md).
+> * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md)
+> * [Создать пустой пример проекта.](../../../../quickstarts/create-project.md)
 
 ## <a name="open-your-project"></a>Открытие проекта
 
@@ -48,7 +49,7 @@ ms.locfileid: "73506166"
 
 [!code-python[](~/samples-cognitive-services-speech-sdk/quickstart/python/intent-recognition/quickstart.py?range=12)]
 
-## <a name="initialize-a-intentrecognizer"></a>Инициализация объекта IntentRecognizer
+## <a name="initialize-an-intentrecognizer"></a>Инициализация объекта IntentRecognizer
 
 Теперь создадим объект `IntentRecognizer`. Вставьте этот код непосредственно под конфигурацией службы "Речь".
 [!code-python[](~/samples-cognitive-services-speech-sdk/quickstart/python/intent-recognition/quickstart.py?range=15)]
@@ -71,7 +72,8 @@ ms.locfileid: "73506166"
 
 ## <a name="check-your-code"></a>Проверка кода
 
-На этом этапе код должен выглядеть так: (Мы добавили несколько комментариев к этой версии.) [!code-python[](~/samples-cognitive-services-speech-sdk/quickstart/python/intent-recognition/quickstart.py?range=5-47)]
+На этом этапе код должен выглядеть так:  
+(Мы добавили несколько комментариев к этой версии.) [!code-python[](~/samples-cognitive-services-speech-sdk/quickstart/python/intent-recognition/quickstart.py?range=5-47)]
 
 ## <a name="build-and-run-your-app"></a>Создание и запуск приложения
 

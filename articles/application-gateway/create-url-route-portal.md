@@ -1,18 +1,18 @@
 ---
-title: Руководство. Создание шлюза приложений с правилами маршрутизации на основе URL-пути при помощи портала Azure
+title: Руководство по правилам маршрутизации на основе URL-пути с помощью портала — Шлюз приложений Azure
 description: В этом руководстве вы узнаете, как создать правила маршрутизации на основе URL-пути для шлюза приложений и масштабируемый набор виртуальных машин с помощью портала Azure.
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: tutorial
-ms.date: 09/10/2019
+ms.date: 11/14/2019
 ms.author: victorh
-ms.openlocfilehash: 2cb21eb98e698ab44d73ada195fdcb7d7aac8839
-ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
+ms.openlocfilehash: bc810ac7901d83f03d3f3ac2199561225326d261
+ms.sourcegitcommit: b1a8f3ab79c605684336c6e9a45ef2334200844b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70844653"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74048137"
 ---
 # <a name="tutorial-create-an-application-gateway-with-path-based-routing-rules-using-the-azure-portal"></a>Руководство по Создание шлюза приложений с правилами маршрутизации на основе URL-пути при помощи портала Azure | Документация Майкрософт
 
