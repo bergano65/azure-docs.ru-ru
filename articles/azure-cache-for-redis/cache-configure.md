@@ -169,15 +169,15 @@ ms.locfileid: "74122874"
 ## <a name="azure-cache-for-redis-advisor"></a>Помощник по кэшу Azure для Redis
 В колонке **Azure Cache for Redis Advisor** (Помощник по кэшу Azure для Redis) отображаются рекомендации для кэша. Во время обычной работы не отображается никаких рекомендаций. 
 
-![рекомендации](./media/cache-configure/redis-cache-no-recommendations.png)
+![Рекомендации](./media/cache-configure/redis-cache-no-recommendations.png)
 
 При возникновении во время работы кэша любого из таких условий, как интенсивное использование памяти, пропускной способности сети или сервера, в колонке **Azure Cache for Redis** (Кэш Azure для Redis) отображается предупреждение.
 
-![рекомендации](./media/cache-configure/redis-cache-recommendations-alert.png)
+![Рекомендации](./media/cache-configure/redis-cache-recommendations-alert.png)
 
 Дополнительные сведения можно найти в колонке **Рекомендации** .
 
-![рекомендации](./media/cache-configure/redis-cache-recommendations.png)
+![Рекомендации](./media/cache-configure/redis-cache-recommendations.png)
 
 Эти метрики можно отслеживать в колонке [Azure Cache for Redis](cache-how-to-monitor.md#monitoring-charts) (Кэш Azure для Redis) в разделах [Monitoring charts](cache-how-to-monitor.md#usage-charts) (Диаграммы мониторинга) и **Usage charts** (Диаграммы использования).
 

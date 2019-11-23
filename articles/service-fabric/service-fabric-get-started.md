@@ -37,7 +37,7 @@ ms.locfileid: "74185681"
 
 * Windows 7
 * Windows 8 и Windows 8.1;
-* Windows Server 2012 R2
+* Windows Server 2012 R2
 * Windows Server 2016
 * Windows 10
 

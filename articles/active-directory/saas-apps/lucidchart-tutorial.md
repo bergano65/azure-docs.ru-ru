@@ -8,6 +8,7 @@ manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 1068d364-11f3-43b5-bd6d-26f00ecd5baa
 ms.service: active-directory
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +16,12 @@ ms.topic: tutorial
 ms.date: 02/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e12b5984eb2fe4e54ffec7d6b4a2a6da202c70e4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4dc91d51d49ac1a317b88835e4d2e51773216020
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67097793"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73159498"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-lucidchart"></a>Руководство по Интеграция Azure Active Directory с Lucidchart
 
@@ -128,29 +129,29 @@ ms.locfileid: "67097793"
 
 2. В верхнем меню нажмите пункт **Группа**.
 
-    ![Team](./media/lucidchart-tutorial/ic791190.png "Team") (Команда)
+    ![Группа](./media/lucidchart-tutorial/ic791190.png "Группа")
 
 3. Выберите **Приложение \> Управление SAML**.
 
-    ![Manage SAML](./media/lucidchart-tutorial/ic791191.png "Manage SAML") (Управление SAML)
+    ![Управление SAML](./media/lucidchart-tutorial/ic791191.png "Управление SAML")
 
 4. На странице диалогового окна **Параметры проверки подлинности SAML** выполните следующие действия.
 
     a. Установите флажок **Enable SAML Authentication** (Включить аутентификацию SAML), а затем выберите **Optional** (Необязательно).
 
-    ![SAML Authentication Settings](./media/lucidchart-tutorial/ic791192.png "SAML Authentication Settings") (Параметры аутентификации SAML)
+    ![Параметры проверки подлинности SAML](./media/lucidchart-tutorial/ic791192.png "Параметры проверки подлинности SAML")
 
     b. В текстовом поле **Domain** (Домен) введите свой домен и нажмите кнопку **Change Certificate** (Изменить сертификат).
 
-    ![Change Certificate](./media/lucidchart-tutorial/ic791193.png "Change Certificate") (Изменить сертификат)
+    ![Изменить сертификат](./media/lucidchart-tutorial/ic791193.png "Изменение сертификата")
 
     c. Откройте скачанный файл метаданных, скопируйте его содержимое и вставьте его в текстовое поле **Отправка метаданных** .
 
-    ![Upload Metadata](./media/lucidchart-tutorial/ic791194.png "Upload Metadata") (Передача метаданных)
+    ![Отправка метаданных](./media/lucidchart-tutorial/ic791194.png "Отправка метаданных")
 
     d. Установите флажок **Автоматически добавлять новых пользователей в группу**, а затем нажмите кнопку **Сохранить изменения**.
 
-    ![Сохранение изменений](./media/lucidchart-tutorial/ic791195.png "Сохранение изменений")
+    ![Save Changes](./media/lucidchart-tutorial/ic791195.png "Сохранить изменения")
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -221,4 +222,4 @@ ms.locfileid: "67097793"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

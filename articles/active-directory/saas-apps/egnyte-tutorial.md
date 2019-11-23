@@ -8,6 +8,7 @@ manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 8c2101d4-1779-4b36-8464-5c1ff780da18
 ms.service: active-directory
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +16,12 @@ ms.topic: tutorial
 ms.date: 2/4/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 808564f291328450b17db8eb7ea299c194c66400
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e53f3adbf7f9909d3590a0bc34dadc49d498291d
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67103522"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73157292"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-egnyte"></a>Руководство по Интеграция Azure Active Directory с Egnyte
 
@@ -142,7 +143,7 @@ ms.locfileid: "67103522"
 
 5. В разделе **Проверка подлинности единого входа** выполните следующие действия.
 
-    ![Аутентификация единого входа](./media/egnyte-tutorial/ic787822.png "Аутентификация единого входа")   
+    ![Проверка подлинности единого входа](./media/egnyte-tutorial/ic787822.png "Проверка подлинности единого входа")   
     
     a. Выберите для параметра **Single sign-on authentication** (Аутентификация единого входа) значение **SAML 2.0**.
    
@@ -227,7 +228,7 @@ ms.locfileid: "67103522"
 
 4. В разделе **New Power User** (Новый опытный пользователь) выполните следующие действия.
     
-    ![Новый обычный пользователь](./media/egnyte-tutorial/ic787825.png "Новый обычный пользователь")   
+    ![Создание обычного пользователя](./media/egnyte-tutorial/ic787825.png "Новый обычный пользователь")   
 
     a. В текстовом поле **Email** (Адрес электронной почты) введите адрес электронной почты пользователя, например **Brittasimon\@contoso.com**.
 
@@ -257,5 +258,5 @@ ms.locfileid: "67103522"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
