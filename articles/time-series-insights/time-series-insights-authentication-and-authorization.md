@@ -1,5 +1,5 @@
 ---
-title: Проверка подлинности и авторизация API в Azure Time Series Insights | Документация Майкрософт
+title: API authentication and authorization - Azure Time Series Insights | Microsoft Docs
 description: В этой статье описывается настройка аутентификации и авторизации для пользовательского приложения, которое вызывает API "Аналитика временных рядов Azure".
 ms.service: time-series-insights
 services: time-series-insights
@@ -12,73 +12,73 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 11/14/2019
 ms.custom: seodec18
-ms.openlocfilehash: 60099689c79308a45e3d40d63e0f993b030db7cd
-ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
+ms.openlocfilehash: d47f846f77d3552288dfea43b417d8c60856f41a
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74133547"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74327890"
 ---
 # <a name="authentication-and-authorization-for-azure-time-series-insights-api"></a>Проверка подлинности и авторизация для API Azure Time Series Insights
 
-В этом документе описывается регистрация приложения в Azure Active Directory с помощью новой колонки Azure Active Directory. Приложения, зарегистрированные в Azure Active Directory позволяют пользователям проходить проверку подлинности и иметь право использовать API анализа временных рядов Azure, связанный с средой "аналитика временных рядов".
+This document describes how to register an app in Azure Active Directory using the new Azure Active Directory blade. Apps registered in Azure Active Directory enable users to authenticate to and be authorized to use the Azure Time Series Insight API associated with a Time Series Insights environment.
 
 ## <a name="service-principal"></a>Субъект-служба
 
-В следующих разделах описано, как настроить приложение для доступа к API "аналитика временных рядов" от имени приложения. Приложение может запрашивать или публиковать эталонные данные в среде Time Series Insights с помощью собственных учетных данных приложения с помощью Azure Active Directory.
+The following sections describe how to configure an application to access the Time Series Insights API on behalf of an app. The application may then query or publish reference data in the Time Series Insights environment using its own application credentials through Azure Active Directory.
 
-## <a name="summary-and-best-practices"></a>Сводка и рекомендации
+## <a name="summary-and-best-practices"></a>Summary and best practices
 
-Процесс регистрации Azure Active Directory приложения состоит из трех основных этапов.
+The Azure Active Directory app registration flow involves three main steps.
 
-1. [Зарегистрируйте приложение](#azure-active-directory-app-registration) в Azure Active Directory.
-1. Авторизация приложения для [доступа к данным в среде "аналитика временных рядов"](#granting-data-access).
-1. Используйте **идентификатор приложения** и **секрет клиента** , чтобы получить маркер из `https://api.timeseries.azure.com/` в [клиентском приложении](#client-app-initialization). С помощью маркера безопасности можно вызывать API Time Series Insights.
+1. [Register an application](#azure-active-directory-app-registration) in Azure Active Directory.
+1. Authorize the application to have [data access to the Time Series Insights environment](#granting-data-access).
+1. Use the **Application ID** and **Client Secret** to acquire a token from `https://api.timeseries.azure.com/` in your [client app](#client-app-initialization). С помощью маркера безопасности можно вызывать API Time Series Insights.
 
-На **шаге 3**разделение приложения и учетные данные пользователя позволяют:
+Per **step 3**, separating your application's and your user credentials allows you to:
 
-* Назначьте разрешения удостоверению приложения, отличающиеся от собственных разрешений. Как правило, приложение получает именно те разрешения, которые требуются для его работы. Например, можно разрешить приложению считывать данные только из определенной среды "аналитика временных рядов".
-* Изолируйте безопасность приложения от создания учетных данных для проверки подлинности пользователя с помощью **секрета клиента** или сертификата безопасности. В результате учетные данные приложения не зависят от учетных данных конкретного пользователя. При изменении роли пользователя приложение не обязательно потребует новых учетных данных или дальнейшей настройки. Если пользователь изменяет пароль, для доступа к приложению не требуются новые учетные данные или ключи.
-* Запустите автоматический сценарий, используя **секрет клиента** или сертификат безопасности, а не учетные данные конкретного пользователя (требуется их присутствие).
-* Используйте сертификат безопасности, а не пароль для защиты доступа к API службы "аналитика временных рядов Azure".
+* Assign permissions to the app identity that are distinct from your own permissions. Как правило, приложение получает именно те разрешения, которые требуются для его работы. For example, you can allow the app to read data only from a particular Time Series Insights environment.
+* Isolate the app's security from the creating user's authentication credentials by using a **Client Secret** or security certificate. As a result, the application's credentials are not dependent on a specific user's credentials. If the user's role changes, the application does not necessarily require new credentials or further configuration. If the user changes their password, all access to the application doesn't require new credentials or keys.
+* Run an unattended script using a **Client Secret** or security certificate rather than a specific user's credentials (requiring them to be present).
+* Use a security certificate rather than a password to secure access to your Azure Time Series Insights API.
 
 > [!IMPORTANT]
-> Следуйте принципу **разделения проблем** (описанных выше) при настройке политики безопасности "аналитика временных рядов Azure".
+> Follow the principle of **Separation of Concerns** (described for this scenario above) when configuring your Azure Time Series Insights security policy.
 
 > [!NOTE]
-> * В этой статье основное внимание уделяется приложению с одним клиентом, в котором приложение предназначено только для работы в одной организации.
-> * Обычно для бизнес-приложений, выполняемых в Организации, используются приложения с одним клиентом.
+> * The article focuses on a single-tenant application where the application is intended to run in only one organization.
+> * You'll typically use single-tenant applications for line-of-business applications that run in your organization.
 
-## <a name="detailed-setup"></a>Подробная настройка
+## <a name="detailed-setup"></a>Detailed setup
 
-### <a name="azure-active-directory-app-registration"></a>Регистрация приложения Azure Active Directory
+### <a name="azure-active-directory-app-registration"></a>Azure Active Directory app registration
 
 [!INCLUDE [Azure Active Directory app registration](../../includes/time-series-insights-aad-registration.md)]
 
-### <a name="granting-data-access"></a>Предоставление доступа к данным
+### <a name="granting-data-access"></a>Granting data access
 
-1. Для среды "аналитика временных рядов" выберите **политики доступа к данным** и нажмите кнопку **Добавить**.
+1. For the Time Series Insights environment, select **Data Access Policies** and select **Add**.
 
-   [![добавить новую политику доступа к данным в среду "аналитика временных рядов"](media/authentication-and-authorization/time-series-insights-data-access-policies-add.png)](media/authentication-and-authorization/time-series-insights-data-access-policies-add.png#lightbox)
+   [![Add new data access policy to the Time Series Insights environment](media/authentication-and-authorization/time-series-insights-data-access-policies-add.png)](media/authentication-and-authorization/time-series-insights-data-access-policies-add.png#lightbox)
 
-1. В диалоговом окне **Выбор пользователя** вставьте **имя приложения** или **идентификатор приложения** из раздела регистрация приложения Azure Active Directory.
+1. In the **Select User** dialog box, paste either the **Application Name** or the **Application ID** from the Azure Active Directory app registration section.
 
-   [![Поиск приложения в диалоговом окне "Выбор пользователя"](media/authentication-and-authorization/time-series-insights-data-access-policies-select-user.png)](media/authentication-and-authorization/time-series-insights-data-access-policies-select-user.png#lightbox)
+   [![Find an application in the Select User dialog box](media/authentication-and-authorization/time-series-insights-data-access-policies-select-user.png)](media/authentication-and-authorization/time-series-insights-data-access-policies-select-user.png#lightbox)
 
-1. Выберите роль. Выберите **читатель** , чтобы запросить данные или **участника** для запроса данных и изменения ссылочных данных. Нажмите кнопку **ОК**.
+1. Select the role. Select **Reader** to query data or **Contributor** to query data and change reference data. Нажмите кнопку **ОК**.
 
-   [![Выбор читателя или участника в диалоговом окне "Выбор роли пользователя"](media/authentication-and-authorization/time-series-insights-data-access-policies-select-role.png)](media/authentication-and-authorization/time-series-insights-data-access-policies-select-role.png#lightbox)
+   [![Pick Reader or Contributor in the Select User Role dialog box](media/authentication-and-authorization/time-series-insights-data-access-policies-select-role.png)](media/authentication-and-authorization/time-series-insights-data-access-policies-select-role.png#lightbox)
 
-1. Сохраните политику, нажав **кнопку ОК**.
+1. Save the policy by selecting **OK**.
 
    > [!TIP]
-   > Узнайте, как [предоставить доступ к данным](./time-series-insights-data-access.md) в среду "аналитика временных рядов" в Azure Active Directory.
+   > For advanced data access options, read [granting data access](./time-series-insights-data-access.md).
 
-### <a name="client-app-initialization"></a>Инициализация клиентского приложения
+### <a name="client-app-initialization"></a>Client app initialization
 
-1. Используйте **идентификатор приложения** и **секрет клиента** (ключ приложения) из раздела регистрации приложения Azure Active Directory, чтобы получить маркер от имени приложения.
+1. Use the **Application ID** and **Client Secret** (Application Key) from the Azure Active Directory app registration section to acquire the token on behalf of the application.
 
-    В C#следующий код может получить маркер от имени приложения. Полный пример см. в статье [Запрос данных из среды Azure Time Series Insights с помощью C##](time-series-insights-query-data-csharp.md).
+    In C#, the following code can acquire the token on behalf of the application. Полный пример см. в статье [Запрос данных из среды Azure Time Series Insights с помощью C##](time-series-insights-query-data-csharp.md).
 
     ```csharp
     // Enter your Active Directory tenant domain name
@@ -101,56 +101,56 @@ ms.locfileid: "74133547"
 
 1. Затем маркер безопасности можно передать в заголовок `Authorization`, когда приложение вызывает API Time Series Insights.
 
-## <a name="common-headers-and-parameters"></a>Общие заголовки и параметры
+## <a name="common-headers-and-parameters"></a>Common headers and parameters
 
-В этом разделе описаны распространенные заголовки HTTP-запросов и параметры, используемые для выполнения запросов к интерфейсам API "аналитика временных рядов". Требования к конкретному API подробно описаны в [справочной документации "аналитика временных рядов" REST API](https://docs.microsoft.com/rest/api/time-series-insights/).
+This section describes common HTTP request headers and parameters used to make queries against the Time Series Insights GA and Preview APIs. API-specific requirements are covered in greater detail in the [Time Series Insights REST API reference documentation](https://docs.microsoft.com/rest/api/time-series-insights/).
 
-### <a name="authentication"></a>Проверка подлинности
+### <a name="authentication"></a>Authentication
 
-Для выполнения запросов с проверкой подлинности к [API-интерфейсам "аналитика временных рядов](https://docs.microsoft.com/rest/api/time-series-insights/)" необходимо передать допустимый токен носителя OAuth 2,0 в [заголовок авторизации](/rest/api/apimanagement/2019-01-01/authorizationserver/createorupdate) с помощью клиента произвольного выбора (POST, JavaScript C#). 
+To perform authenticated queries against the [Time Series Insights REST APIs](https://docs.microsoft.com/rest/api/time-series-insights/), a valid OAuth 2.0 bearer token must be passed in the [Authorization header](/rest/api/apimanagement/2019-01-01/authorizationserver/createorupdate) using a REST client of your choice (Postman, JavaScript, C#). 
 
 > [!IMPORTANT]
-> Маркер должен быть полностью выдан ресурсу `https://api.timeseries.azure.com/` (также известной как "аудитория" маркера).
-> * После этого ваша [Публикация](https://www.getpostman.com/) **аусурл** будет соответствовать следующим требованиям: `https://login.microsoftonline.com/microsoft.onmicrosoft.com/oauth2/authorize?resource=https://api.timeseries.azure.com/`
+> The token must be issued exactly to the `https://api.timeseries.azure.com/` resource (also known as the "audience" of the token).
+> * Your [Postman](https://www.getpostman.com/) **AuthURL** with therefore conform to: `https://login.microsoftonline.com/microsoft.onmicrosoft.com/oauth2/authorize?resource=https://api.timeseries.azure.com/`
 
 > [!TIP]
-> Ознакомьтесь с [примером визуализации клиентского пакета SDK](https://tsiclientsample.azurewebsites.net/) для службы "аналитика временных рядов Azure", чтобы узнать, как программным способом проверить подлинность с помощью API службы "аналитика временных рядов", используя [клиентский пакет SDK для JavaScript](https://github.com/microsoft/tsiclient/blob/master/docs/API.md) , а также диаграммы и графики.
+> See the hosted Azure Time Series Insights [client SDK sample visualization](https://tsiclientsample.azurewebsites.net/) to see how to authenticate with the Time Series Insights APIs programmatically using the [JavaScript Client SDK](https://github.com/microsoft/tsiclient/blob/master/docs/API.md) along with charts and graphs.
 
 ### <a name="http-headers"></a>HTTP-заголовки
 
-Обязательные заголовки запроса:
+Required request headers:
 
-- `Authorization` для проверки подлинности и авторизации, в заголовке авторизации должен быть передан допустимый токен носителя OAuth 2,0. Маркер должен быть полностью выдан ресурсу `https://api.timeseries.azure.com/` (также известной как "аудитория" маркера).
+- `Authorization` for authentication and authorization, a valid OAuth 2.0 Bearer token must be passed in the Authorization header. The token must be issued exactly to the `https://api.timeseries.azure.com/` resource (also known as the "audience" of the token).
 
-Необязательные заголовки запроса:
+Optional request headers:
 
-- поддерживается `application/json` только для `Content-type`.
-- `x-ms-client-request-id` — идентификатор запроса клиента. Служба записывает это значение. Позволяет службе выполнять трассировку операций между службами.
-- `x-ms-client-session-id` — идентификатор сеанса клиента. Служба записывает это значение. Позволяет службе выполнять трассировку группы связанных операций между службами.
-- `x-ms-client-application-name` — имя приложения, создавшего этот запрос. Служба записывает это значение.
+- `Content-type` - only `application/json` is supported.
+- `x-ms-client-request-id` - a client request ID. Service records this value. Allows the service to trace operation across services.
+- `x-ms-client-session-id` - a client session ID. Service records this value. Allows the service to trace a group of related operations across services.
+- `x-ms-client-application-name` - name of the application that generated this request. Service records this value.
 
-Заголовки ответа:
+Response headers:
 
-- поддерживается `application/json` только для `Content-type`.
-- Идентификатор запроса, созданный сервером `x-ms-request-id`. Можно использовать для обращения в корпорацию Майкрософт, чтобы исследовать запрос.
+- `Content-type` - only `application/json` is supported.
+- `x-ms-request-id` - server-generated request ID. Can be used to contact Microsoft to investigate a request.
 
-### <a name="http-parameters"></a>Параметры HTTP
+### <a name="http-parameters"></a>HTTP parameters
 
-Обязательные параметры строки запроса URL-адреса:
+Required URL query string parameters:
 
 - `api-version=2016-12-12`
 - `api-version=2018-11-01-preview`
 
-Необязательные параметры строки запроса URL-адреса:
+Optional URL query string parameters:
 
-- `timeout=<timeout>` — время ожидания на стороне сервера для выполнения запроса. Применяется только к [событиям "получить среду](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api#get-environment-events-api) " и " [получить агрегаты среды](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api#get-environment-aggregates-api) ". Значение времени ожидания должно быть в формате длительности ISO 8601, например `"PT20S"` и должно находиться в диапазоне `1-30 s`. Значение по умолчанию — `30 s`.
+- `timeout=<timeout>` – server-side timeout for the request execution. Applicable only to the [Get Environment Events](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api#get-environment-events-api) and [Get Environment Aggregates](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api#get-environment-aggregates-api) APIs. Timeout value should be in ISO 8601 duration format, for example `"PT20S"` and should be in the range `1-30 s`. По умолчанию имеет значение `30 s`.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Пример кода, который вызывает API-интерфейс "аналитика временных рядов", см. в разделе [запрос данных с помощью C# ](./time-series-insights-query-data-csharp.md).
+- For sample code that calls the GA Time Series Insights API, see [Query data using C#](./time-series-insights-query-data-csharp.md).
 
-- Примеры кода API для аналитики временных рядов см. в статье [Предварительный просмотр данных запросов C#с помощью ](./time-series-insights-update-query-data-csharp.md).
+- For Preview Time Series Insights API code samples, see [Query Preview data using C#](./time-series-insights-update-query-data-csharp.md).
 
 - Справочные сведения об API см. в статье об [API запросов к службе "Аналитика временных рядов Azure"](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api).
 
-- Узнайте, как [создать субъект-службу](../active-directory/develop/howto-create-service-principal-portal.md).
+- Learn how to [create a service principal](../active-directory/develop/howto-create-service-principal-portal.md).

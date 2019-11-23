@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: cd16ee87b213c2bfa4c541c4d3c453a4499855d0
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: 5368aec04eb0a57654adf5b0d5914282a979dcfd
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73887730"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74325401"
 ---
 # <a name="azure-maps-supported-map-styles"></a>Стили карт, поддерживаемые в службе Azure Maps
 Служба Azure Maps поддерживает несколько различных встроенных стилей карт, как описано ниже.
@@ -26,18 +26,18 @@ ms.locfileid: "73887730"
 **Применимые API:**
 * [Изображение карты](https://docs.microsoft.com/rest/api/maps/render/getmapimage)
 * [Фрагмент карты](https://docs.microsoft.com/rest/api/maps/render/getmaptile)
-* Элемент управления картой веб-пакета SDK
-* Элемент управления картой Android
+* Web SDK map control
+* Android map control
 
-## <a name="blank-and-blank_accessible"></a>пусто и blank_accessible
+## <a name="blank-and-blank_accessible"></a>blank and blank_accessible
 
-**Пустые** и **blank_accessible** стили карт предоставляют пустой холст для визуализации данных. Стиль **blank_accessible** продолжит предоставлять обновления средства чтения с экрана с подробными сведениями о расположении, где расположена схема, даже если базовая схема не отображается.
+The **blank** and **blank_accessible** map styles provide a blank canvas on which to visualize data on. The **blank_accessible** style will continue to provide screen reader updates with location details of where the map is located, even though the base map is not displayed.
 
 > [!Note]
-> В веб-пакете SDK можно изменить цвет фона на карте, установив стиль CSS `background-color` элемента Map DIV.
+> In the web SDK you can change the background color of the map by setting the CSS `background-color` style of map DIV element.
 
 **Применимые API:**
-* Элемент управления картой веб-пакета SDK
+* Web SDK map control
 
 ## <a name="satellite"></a>спутник 
 Стиль **спутник** представляет собой комбинацию спутниковых и аэроснимков.
@@ -46,8 +46,8 @@ ms.locfileid: "73887730"
 
 **Применимые API:**
 * [Фрагмент спутниковой карты](https://docs.microsoft.com/rest/api/maps/render/getmapimagerytilepreview)
-* Элемент управления картой веб-пакета SDK
-* Элемент управления картой Android
+* Web SDK map control
+* Android map control
 
 ## <a name="satellite_road_labels"></a>satellite_road_labels
 Этот стиль карты представляет собой гибрид дорог и ярлыков, наложенных поверх спутниковых и аэроснимков.
@@ -55,8 +55,8 @@ ms.locfileid: "73887730"
 ![satellite_road_labels](./media/supported-map-styles/satellite_road_labels.png)
 
 **Применимые API:**
-* Элемент управления картой веб-пакета SDK
-* Элемент управления картой Android
+* Web SDK map control
+* Android map control
 
 ## <a name="grayscale_dark"></a>grayscale_dark
 **Темно-серый** — это темная версия стиля дорожной карты.
@@ -64,18 +64,20 @@ ms.locfileid: "73887730"
 ![gray_scale](./media/supported-map-styles/grayscale_dark.png)
 
 **Применимые API:**
-* Элемент управления картой веб-пакета SDK 
-* Элемент управления картой Android
+* [Изображение карты](https://docs.microsoft.com/rest/api/maps/render/getmapimage)
+* [Фрагмент карты](https://docs.microsoft.com/rest/api/maps/render/getmaptile)
+* Web SDK map control 
+* Android map control
 
 
 ## <a name="grayscale_light"></a>grayscale_light
-**источник оттенков серого** — это небольшая версия стиля схемы дороги.
+**grayscale light** is a light version of the road map style.
 
-![светло-серый](./media/supported-map-styles/grayscale_light.png)
+![grayscale light](./media/supported-map-styles/grayscale_light.png)
 
 **Применимые API:**
-* Элемент управления картой веб-пакета SDK
-* Элемент управления картой Android
+* Web SDK map control
+* Android map control
 
 
 ## <a name="night"></a>ночь
@@ -84,8 +86,8 @@ ms.locfileid: "73887730"
 ![ночь](./media/supported-map-styles/night.png)
 
 **Применимые API:**
-* Элемент управления картой веб-пакета SDK
-* Элемент управления картой Android
+* Web SDK map control
+* Android map control
 
 ## <a name="road_shaded_relief"></a>road_shaded_relief
 **road shaded relief** — это основной стиль Azure Maps, дополненный рельефами Земли.
@@ -94,13 +96,13 @@ ms.locfileid: "73887730"
 
 **Применимые API:**
 * [Фрагмент карты](https://docs.microsoft.com/rest/api/maps/render/getmaptile)
-* Элемент управления картой веб-пакета SDK
-* Элемент управления картой Android
+* Web SDK map control
+* Android map control
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Узнайте, как задать стиль схемы в Azure Maps.
+Learn about how to set a map style in Azure Maps:
 
 > [!div class="nextstepaction"]
 > [Выбор стиля карты](https://docs.microsoft.com/azure/azure-maps/choose-map-style)

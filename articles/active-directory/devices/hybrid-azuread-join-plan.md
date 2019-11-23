@@ -1,5 +1,5 @@
 ---
-title: Как планировать реализацию присоединения к гибридной Azure Active Directory (Azure AD) | Документация Майкрософт
+title: Plan hybrid Azure Active Directory join - Azure Active Directory
 description: Сведения о настройке гибридных устройств, присоединенных к Azure Active Directory.
 services: active-directory
 ms.service: active-directory
@@ -11,14 +11,14 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5a188349e15c5e4c486d37daed9f8b611a325dcf
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.openlocfilehash: 3a4f85aeaf2fb263ba2df8f34a51f9e25c212aff
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74167329"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74379317"
 ---
-# <a name="how-to-plan-your-hybrid-azure-active-directory-join-implementation"></a>Руководство. Планирование реализации гибридного Azure Active Directory Join
+# <a name="how-to-plan-your-hybrid-azure-active-directory-join-implementation"></a>How To: Plan your hybrid Azure Active Directory join implementation
 
 Подобно пользователю, устройство — это еще одно основное удостоверение, которое необходимо защитить, чтобы с его помощью обеспечить постоянную защиту ресурсов независимо от того, где вы находитесь. Для этого разместите удостоверения своих устройств в Azure AD и управляйте такими удостоверениями с помощью одного из следующих методов:
 
@@ -26,16 +26,16 @@ ms.locfileid: "74167329"
 - гибридное присоединение к Azure AD;
 - регистрация в Azure AD.
 
-Размещение устройств в Azure AD позволяет увеличить эффективность работы пользователей благодаря выполнению единого входа для облачных и локальных ресурсов. В то же время вы можете защитить доступ к облачным и локальным ресурсам с помощью [условного доступа](../active-directory-conditional-access-azure-portal.md).
+Размещение устройств в Azure AD позволяет увеличить эффективность работы пользователей благодаря выполнению единого входа для облачных и локальных ресурсов. At the same time, you can secure access to your cloud and on-premises resources with [Conditional Access](../active-directory-conditional-access-azure-portal.md).
 
-Если у вас есть локальная среда Active Directory (AD) и вы хотите присоединить к Azure AD компьютеры, присоединенные к домену AD, это можно сделать, выполнив гибридное присоединение к Azure AD. В этой статье приведены соответствующие шаги для реализации гибридного присоединения устройств к Azure AD в вашей среде. 
+If you have an on-premises Active Directory (AD) environment and you want to join your AD domain-joined computers to Azure AD, you can accomplish this by doing hybrid Azure AD join. В этой статье приведены соответствующие шаги для реализации гибридного присоединения устройств к Azure AD в вашей среде. 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
-В этой статье предполагается, что вы знакомы с [введением в Управление удостоверениями устройств в Azure Active Directory](../device-management-introduction.md).
+This article assumes that you are familiar with the [Introduction to device identity management in Azure Active Directory](../device-management-introduction.md).
 
 > [!NOTE]
-> Минимальная требуемая версия контроллера домена для гибридного подключения Azure AD Windows 10 — Windows Server 2008 R2.
+> The minimum required domain controller version for Windows 10 hybrid Azure AD join is Windows Server 2008 R2.
 
 ## <a name="plan-your-implementation"></a>Планирование реализации
 
@@ -45,9 +45,9 @@ ms.locfileid: "74167329"
 | --- | --- |
 | ![Проверка][1] | Просмотр списка поддерживаемых устройств |
 | ![Проверка][1] | Ознакомление с важными сведениями |
-| ![Проверка][1] | Проверка управляемой проверки гибридного присоединение к Azure AD |
-| ![Проверка][1] | Выбор сценария на основе инфраструктуры идентификации |
-| ![Проверка][1] | Проверка поддержки локального имени участника-пользователя AD для гибридного присоединение к Azure AD |
+| ![Проверка][1] | Review controlled validation of hybrid Azure AD join |
+| ![Проверка][1] | Select your scenario based on your identity infrastructure |
+| ![Проверка][1] | Review on-premises AD UPN support for hybrid Azure AD join |
 
 ## <a name="review-supported-devices"></a>Просмотр списка поддерживаемых устройств
 
@@ -55,56 +55,56 @@ ms.locfileid: "74167329"
 
 ### <a name="windows-current-devices"></a>Текущие устройства Windows
 
-- Windows 10
+- Windows 10
 - Windows Server 2016
 - Windows Server 2019
 
-Для устройств под управлением операционной системы Windows, поддерживаемая версия, указана в этой статье [сведения о выпуске Windows 10](https://docs.microsoft.com/windows/release-information/). Рекомендуется выполнить обновление до последней версии Windows 10.
+For devices running the Windows desktop operating system, supported version are listed in this article [Windows 10 release information](https://docs.microsoft.com/windows/release-information/). As a best practice, Microsoft recommends you upgrade to the latest version of Windows 10.
 
 ### <a name="windows-down-level-devices"></a>Устройства Windows нижнего уровня
 
 - Windows 8.1
-- Windows 7. Сведения о поддержке в Windows 7 см. в статье [Поддержка Windows 7 в конце концов](https://www.microsoft.com/microsoft-365/windows/end-of-windows-7-support).
-- Windows Server 2012 R2
+- Windows 7. For support information on Windows 7, see [Support for Windows 7 is ending](https://www.microsoft.com/microsoft-365/windows/end-of-windows-7-support).
+- Windows Server 2012 R2
 - Windows Server 2012
-- Windows Server 2008 R2. Сведения о поддержке в Windows Server 2008 и 2008 R2 см. в разделе [Подготовка к завершению поддержки Windows server 2008](https://www.microsoft.com/cloud-platform/windows-server-2008).
+- Windows Server 2008 R2. For support information on Windows Server 2008 and 2008 R2, see [Prepare for Windows Server 2008 end of support](https://www.microsoft.com/cloud-platform/windows-server-2008).
 
 В качестве первого шага планирования вам следует просмотреть свою среду и определить, нужно ли вам поддерживать устройства Windows нижнего уровня.
 
 ## <a name="review-things-you-should-know"></a>Ознакомление с важными сведениями
 
-Гибридное присоединение к Azure AD в настоящее время не поддерживается, если среда состоит из одного леса AD, который синхронизирует данные удостоверений с несколькими клиентами Azure AD.
+Hybrid Azure AD join is currently not supported if your environment consists of a single AD forest synchronizing identity data to more than one Azure AD tenant.
 
-Если в вашей среде используется инфраструктура виртуальных рабочих столов (VDI), см. статью [Идентификация устройств и Виртуализация рабочего стола](https://docs.microsoft.com/azure/active-directory/devices/howto-device-identity-virtual-desktop-infrastructure).
+If your environment uses virtual desktop infrastructure (VDI), see [Device identity and desktop virtualization](https://docs.microsoft.com/azure/active-directory/devices/howto-device-identity-virtual-desktop-infrastructure).
 
-Гибридное присоединение к Azure AD поддерживается для FIPS-совместимого доверенного платформенного модуля 2,0 и не поддерживается для TPM 1,2. Если на устройствах установлен совместимый с FIPS доверенный платформенный модуль 1,2, необходимо отключить их, прежде чем продолжить гибридное присоединение к Azure AD. Корпорация Майкрософт не предоставляет средств для отключения режима FIPS для доверенных платформенных модулей, так как он зависит от производителя доверенного платформенного модуля. Обратитесь за поддержкой к ИЗГОТОВИТЕЛю оборудования. Начиная с выпуска WIndows 10 1903, доверенные 1,2 платформенные модули не используются для гибридного присоединение к Azure AD, а устройства с этими доверенными платформенными модулями будут рассматриваться как недоверенные.
+Hybrid Azure AD join is supported for FIPS-compliant TPM 2.0 and not supported for TPM 1.2. If your devices have FIPS-compliant TPM 1.2, you must disable them before proceeding with Hybrid Azure AD join. Microsoft does not provide any tools for disabling FIPS mode for TPMs as it is dependent on the TPM manufacturer. Please contact your hardware OEM for support. Starting from WIndows 10 1903 release, TPMs 1.2 are not used for hybrid Azure AD join and devices with those TPMs will be considered as if they don't have a TPM.
 
-Гибридное присоединение к Azure AD не поддерживается для Windows Server, на котором работает роль контроллера домена (DC).
+Hybrid Azure AD join is not supported for Windows Server running the Domain Controller (DC) role.
 
-Гибридное присоединение к Azure AD не поддерживается на устройствах Windows нижнего уровня при использовании роуминга учетных данных или роуминга профиля пользователя.
+Hybrid Azure AD join is not supported on Windows down-level devices when using credential roaming or user profile roaming or mandatory profile.
 
-Если вы используете средство подготовки системы (Sysprep) и если вы используете предварительно установленный образ **Windows 10 1809** , убедитесь, что образ не относится к устройству, которое уже зарегистрировано в Azure AD как гибридное присоединение к Azure AD.
+If you are relying on the System Preparation Tool (Sysprep) and if you are using a **pre-Windows 10 1809** image for installation, make sure that image is not from a device that is already registered with Azure AD as Hybrid Azure AD join.
 
-Если вы полагаетесь на моментальный снимок виртуальной машины для создания дополнительных виртуальных машин, убедитесь, что моментальный снимок не относится к виртуальной машине, которая уже зарегистрирована в Azure AD в качестве гибридного присоединение к Azure AD.
+If you are relying on a Virtual Machine (VM) snapshot to create additional VMs, make sure that snapshot is not from a VM that is already registered with Azure AD as Hybrid Azure AD join.
 
-Если присоединенные к домену устройства с Windows 10 являются [Azure AD, зарегистрированными](overview.md#getting-devices-in-azure-ad) в вашем клиенте, это может привести к двойному состоянию гибридного присоединения к Azure AD и зарегистрированному устройству Azure AD. Для автоматического устранения этой ситуации мы рекомендуем обновить Windows 10 1803 (с применением KB4489894) или более поздней версии. В выпусках, предшествующих 1803, необходимо вручную удалить зарегистрированное состояние Azure AD, прежде чем включить гибридное присоединение к Azure AD. В 1803 и более поздних версиях были внесены следующие изменения, чтобы избежать такого двойного состояния:
+If your Windows 10 domain joined devices are [Azure AD registered](overview.md#getting-devices-in-azure-ad) to your tenant, it could lead to a dual state of Hybrid Azure AD joined and Azure AD registered device. We recommend upgrading to Windows 10 1803 (with KB4489894 applied) or above to automatically address this scenario. In pre-1803 releases, you will need to remove the Azure AD registered state manually before enabling Hybrid Azure AD join. In 1803 and above releases, the following changes have been made to avoid this dual state:
 
-- Любое существующее состояние, зарегистрированное в Azure AD, будет автоматически удалено <i>после присоединения устройства к гибридной службе Azure AD</i>.
-- Чтобы предотвратить регистрацию устройства, присоединенного к домену, в Azure AD, добавьте следующий раздел реестра — Хклм\софтваре\полиЦиес\микрософт\виндовс\воркплацежоин, "Блоккаадворкплацежоин" = DWORD: 00000001.
-- В Windows 10 1803, если настроена Windows Hello для бизнеса, пользователю необходимо повторно настроить Windows Hello для бизнеса после очистки двойного состояния. Эта проблема устранена с помощью KB4512509
+- Any existing Azure AD registered state would be automatically removed <i>after the device is Hybrid Azure AD joined</i>.
+- You can prevent your domain joined device from being Azure AD registered by adding this registry key - HKLM\SOFTWARE\Policies\Microsoft\Windows\WorkplaceJoin, "BlockAADWorkplaceJoin"=dword:00000001.
+- In Windows 10 1803, if you have Windows Hello for Business configured, the user needs to re-setup Windows Hello for Business after the dual state clean up.This issue has been addressed with KB4512509
 
 > [!NOTE]
-> Зарегистрированное устройство Azure AD не будет автоматически удалено, если оно управляется Intune.
+> The Azure AD registered device will not be automatically removed if it is managed by Intune.
 
-## <a name="review-controlled-validation-of-hybrid-azure-ad-join"></a>Проверка управляемой проверки гибридного присоединение к Azure AD
+## <a name="review-controlled-validation-of-hybrid-azure-ad-join"></a>Review controlled validation of hybrid Azure AD join
 
-Если все предварительные требования установлены, устройства Windows будут автоматически регистрироваться в качестве устройств в клиенте Azure AD. Состояние этих удостоверений устройств в Azure AD называется гибридным присоединением к Azure AD. Дополнительные сведения о концепциях, описанных в этой статье, можно найти в статье [Введение в Управление удостоверениями устройств в Azure Active Directory](overview.md).
+When all of the pre-requisites are in place, Windows devices will automatically register as devices in your Azure AD tenant. The state of these device identities in Azure AD is referred as hybrid Azure AD join. More information about the concepts covered in this article can be found in the article [Introduction to device identity management in Azure Active Directory](overview.md).
 
-Организациям может потребоваться выполнить управляемую проверку гибридного присоединение к Azure AD, прежде чем включать его в всей Организации одновременно. Ознакомьтесь со статьей [Управление проверкой гибридного присоединение к Azure AD](hybrid-azuread-join-control.md) , чтобы понять, как это сделать.
+Organizations may want to do a controlled validation of hybrid Azure AD join before enabling it across their entire organization all at once. Review the article [controlled validation of hybrid Azure AD join](hybrid-azuread-join-control.md) to understand how to accomplish it.
 
-## <a name="select-your-scenario-based-on-your-identity-infrastructure"></a>Выбор сценария на основе инфраструктуры идентификации
+## <a name="select-your-scenario-based-on-your-identity-infrastructure"></a>Select your scenario based on your identity infrastructure
 
-Гибридное присоединение к Azure AD работает как с управляемыми, так и с федеративными средами в зависимости от того, поддерживает ли UPN возможность маршрутизации или без маршрутизации. Список поддерживаемых сценариев см. в нижней части страницы.  
+Hybrid Azure AD join works with both, managed and federated environments depending on whether the UPN is routable or non-routable. See bottom of the page for table on supported scenarios.  
 
 ### <a name="managed-environment"></a>Управляемая среда
 
@@ -116,8 +116,8 @@ ms.locfileid: "74167329"
 
 В федеративной среде должен быть поставщик удостоверений, поддерживающий следующие требования. Это не относится к федеративной среде, в которой используются службы федерации Active Directory (AD FS).
 
-- **Утверждение WIAORMULTIAUTHN:** Это утверждение необходимо для того, чтобы выполнить гибридное присоединение к Azure AD для устройств Windows нижнего уровня.
-- **Протокол WS-Trust:** Этот протокол необходим для проверки подлинности текущих гибридных присоединенных к Azure AD устройств в Azure AD. При использовании AD FS нужно включить следующие конечные точки WS-Trust: `/adfs/services/trust/2005/windowstransport`  
+- **WIAORMULTIAUTHN claim:** This claim is required to do hybrid Azure AD join for Windows down-level devices.
+- **WS-Trust protocol:** This protocol is required to authenticate Windows current hybrid Azure AD joined devices with Azure AD. При использовании AD FS нужно включить следующие конечные точки WS-Trust: `/adfs/services/trust/2005/windowstransport`  
 `/adfs/services/trust/13/windowstransport`  
   `/adfs/services/trust/2005/usernamemixed` 
   `/adfs/services/trust/13/usernamemixed`
@@ -130,34 +130,34 @@ ms.locfileid: "74167329"
 > [!NOTE]
 > Azure AD не поддерживает смарт-карты и сертификаты в управляемых доменах.
 
-Начиная с версии 1.1.819.0, Azure AD Connect предоставляет мастер для настройки гибридного присоединения устройств к Azure AD. Этот мастер позволяет значительно упростить настройку. Если установка нужной версии Azure AD Connect для вас не подходит, перейдите к [руководству по настройке гибридного присоединения устройств к Azure AD вручную](hybrid-azuread-join-manual.md). 
+Начиная с версии 1.1.819.0 Azure AD Connect предоставляет мастер для настройки гибридного присоединения к Azure AD. Этот мастер позволяет значительно упростить настройку. Если установка нужной версии Azure AD Connect для вас не подходит, перейдите к [руководству по настройке гибридного присоединения устройств к Azure AD вручную](hybrid-azuread-join-manual.md). 
 
-На основе сценария, соответствующего вашей инфраструктуре идентификации, см.:
+Based on the scenario that matches your identity infrastructure, see:
 
-- [Настройка гибридного Azure Active Directory Join для Федеративной среды](hybrid-azuread-join-federated-domains.md)
-- [Настройка гибридного Azure Active Directory присоединение для управляемой среды](hybrid-azuread-join-managed-domains.md)
+- [Configure hybrid Azure Active Directory join for federated environment](hybrid-azuread-join-federated-domains.md)
+- [Configure hybrid Azure Active Directory join for managed environment](hybrid-azuread-join-managed-domains.md)
 
-## <a name="review-on-premises-ad-upn-support-for-hybrid-azure-ad-join"></a>Проверка поддержки локального имени участника-пользователя AD для гибридного присоединение к Azure AD
+## <a name="review-on-premises-ad-upn-support-for-hybrid-azure-ad-join"></a>Review on-premises AD UPN support for Hybrid Azure AD join
 
 В некоторых случаях имена участников-пользователей локальной службы AD могут отличаться от имен участников-пользователей Azure Active Directory. В некоторых случаях присоединение к гибридной Azure Active Directory в Windows 10 обеспечивает ограниченную поддержку имен участников-пользователей локальной службы AD, которая определяется [методом проверки подлинности](https://docs.microsoft.com/azure/security/fundamentals/choose-ad-authn), типом домена и версией Windows 10. Существуют два типа имен участников-пользователей локальной службы AD, которые могут существовать в вашей среде.
 
-- Имя участника-пользователя с возможностью маршрутизации. имя UPN с поддержкой маршрутизации имеет допустимый проверенный домен, зарегистрированный в регистраторе домена. Например, если основным доменом является contoso.com в Azure Active Directory, то contoso.org является основным доменом в локальной службе AD, принадлежащим компании Contoso и [проверенным в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/fundamentals/add-custom-domain).
-- Имя участника-пользователя, не поддерживающего маршрутизацию: имя участника-пользователя без поддержки маршрутизации не имеет проверенного домена. Эго возможно использовать только в частной сети вашей организации. Например, если основным доменом в Azure Active Directory является contoso.com, то contoso.local является основным доменом в локальной службе AD, но не является проверяемым доменом в Интернете и используется только в сети компании Contoso.
+- Routable UPN: A routable UPN has a valid verified domain, that is registered with a domain registrar. Например, если основным доменом является contoso.com в Azure Active Directory, то contoso.org является основным доменом в локальной службе AD, принадлежащим компании Contoso и [проверенным в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/fundamentals/add-custom-domain).
+- Non-routable UPN: A non-routable UPN does not have a verified domain. Эго возможно использовать только в частной сети вашей организации. Например, если основным доменом в Azure Active Directory является contoso.com, то contoso.local является основным доменом в локальной службе AD, но не является проверяемым доменом в Интернете и используется только в сети компании Contoso.
 
 В приведенной ниже таблице приведены сведения о поддержке имен участников-пользователей локальной службы AD для гибридного присоединения к Azure Active Directory в Windows 10.
 
-| Тип имени участника-пользователя локальной службы AD | Тип домена | Версия Windows 10 | ОПИСАНИЕ |
+| Тип имени участника-пользователя локальной службы AD | Тип домена | Версия Windows 10 | Описание |
 | ----- | ----- | ----- | ----- |
 | Маршрутизируемый | Федеративные | Начиная с выпуска 1703 | Общедоступная версия |
 | Немаршрутизируемый | Федеративные | Начиная с выпуска 1803 | Общедоступная версия |
-| Маршрутизируемый | Управляемые | Начиная с выпуска 1803 | Общедоступная версия Azure AD SSPR в Windows на экране блокировки не поддерживается |
-| Немаршрутизируемый | Управляемые | Не поддерживается | |
+| Маршрутизируемый | Управляемое | Начиная с выпуска 1803 | Generally available, Azure AD SSPR on Windows lockscreen is not supported |
+| Немаршрутизируемый | Управляемое | Не поддерживается | |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Настройка гибридного Azure Active Directory Join для Федеративной среды](hybrid-azuread-join-federated-domains.md)
-> [настройка гибридного Azure Active Directory присоединение для управляемой среды](hybrid-azuread-join-managed-domains.md)
+> [Configure hybrid Azure Active Directory join for federated environment](hybrid-azuread-join-federated-domains.md)
+> [Configure hybrid Azure Active Directory join for managed environment](hybrid-azuread-join-managed-domains.md)
 
 <!--Image references-->
 [1]: ./media/hybrid-azuread-join-plan/12.png

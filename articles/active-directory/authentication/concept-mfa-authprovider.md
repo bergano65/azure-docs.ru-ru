@@ -1,22 +1,22 @@
 ---
-title: В каких случаях и как использовать поставщик службы "Многофакторная идентификация Azure"? — Azure Active Directory
+title: Azure Multi-Factor Auth Providers - Azure Active Directory
 description: Когда следует использовать поставщик аутентификации с Azure MFA?
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 11/27/2018
+ms.date: 11/21/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 399fccf9aaaeb9e252527e80a6549ee286bb1898
-ms.sourcegitcommit: c71306fb197b433f7b7d23662d013eaae269dc9c
+ms.openlocfilehash: 9d4b89f7416847e01cad8cb4f9bc52248d09170d
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68369368"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74382006"
 ---
 # <a name="when-to-use-an-azure-multi-factor-authentication-provider"></a>Когда следует использовать поставщик службы Многофакторной идентификации Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "68369368"
 Поставщик Многофакторной идентификации Azure позволяет пользователям, у которых **нет лицензий**, воспользоваться преимуществами функций Многофакторной идентификации Azure.
 
 > [!NOTE]
-> С 1 сентября 2018 года создавать новые поставщики аутентификации невозможно. Существующие поставщики проверки подлинности могут продолжать использоваться и обновляться, но миграция больше невозможна. Многофакторная аутентификация по-прежнему будет предоставляться как функция в лицензиях Azure AD ценовой категории "Премиум".
+> С 1 сентября 2018 года создавать новые поставщики аутентификации невозможно. Existing auth providers may continue to be used and updated, but migration is no longer possible. Многофакторная аутентификация по-прежнему будет предоставляться как функция в лицензиях Azure AD ценовой категории "Премиум".
 
 ## <a name="caveats-related-to-the-azure-mfa-sdk"></a>Предупреждения о пакете SDK для Azure MFA
 
@@ -43,35 +43,35 @@ ms.locfileid: "68369368"
 
 Если поставщик MFA не связан с клиентом Azure AD или новый поставщик MFA связан с другим клиентом Azure AD, пользовательские настройки и параметры конфигурации не будут применяться. Кроме того, вам потребуется повторно активировать существующие серверы Azure MFA с помощью учетных данных активации, созданных с помощью поставщика многофакторной идентификации. Повторная активация серверов MFA для их связи с поставщиком MFA не влияет на аутентификацию с помощью телефонного звонка и текстового сообщения в отличие от уведомлений мобильных приложений, которые перестанут работать, пока пользователи повторно не активируют мобильные приложения.
 
-### <a name="removing-an-authentication-provider"></a>Удаление поставщика проверки подлинности
+### <a name="removing-an-authentication-provider"></a>Removing an authentication provider
 
 > [!CAUTION]
-> При удалении поставщика проверки подлинности подтверждение не выполняется. Выбор **удаления** является постоянным процессом.
+> There is no confirmation when deleting an authentication provider. Selecting **Delete** is a permanent process.
 
-Поставщики проверки подлинности можно найти в **портал Azure** > **Azure Active Directory** > **поставщиков** **MFA** > . Щелкните список поставщиков, чтобы просмотреть сведения и конфигурации, связанные с этим поставщиком.
+Authentication providers can be found in the **Azure portal** > **Azure Active Directory** > **MFA** > **Providers**. Click on listed providers to see details and configurations associated with that provider.
 
-Перед удалением поставщика проверки подлинности запишите все настроенные параметры, настроенные в поставщике. Определите, какие параметры необходимо перенести в общие параметры MFA от поставщика, и завершите перенос этих параметров. 
+Before removing an authentication provider, take note of any customized settings configured in your provider. Decide what settings need to be migrated to general MFA settings from your provider and complete the migration of those settings. 
 
-Серверы Azure MFA, связанные с поставщиками, потребуется активировать повторно, используя учетные данные, созданные в разделе **портал Azure** > **Azure Active Directory** > **Параметры сервера** **MFA** > . Перед повторной активацией необходимо удалить следующие файлы из `\Program Files\Multi-Factor Authentication Server\Data\` каталога на серверах Azure MFA в вашей среде:
+Azure MFA Servers linked to providers will need to be reactivated using credentials generated under **Azure portal** > **Azure Active Directory** > **MFA** > **Server settings**. Before reactivating, the following files must be deleted from the `\Program Files\Multi-Factor Authentication Server\Data\` directory on Azure MFA Servers in your environment:
 
 - caCert
 - cert
-- граупкацерт
+- groupCACert
 - groupKey
-- Группа
-- Ключ лицензии
-- PKEY
+- groupName
+- licenseKey
+- pkey
 
-![Удаление поставщика проверки подлинности из портал Azure](./media/concept-mfa-authprovider/authentication-provider-removal.png)
+![Delete an auth provider from the Azure portal](./media/concept-mfa-authprovider/authentication-provider-removal.png)
 
-Убедившись, что все параметры были перенесены, можно перейти к **портал Azure** > **Azure Active Directory** > **поставщиков** **MFA** > и нажать кнопку с многоточием **...** и выберите **Удалить**.
+When you have confirmed that all settings have been migrated, you can browse to the **Azure portal** > **Azure Active Directory** > **MFA** > **Providers** and select the ellipses **...** and select **Delete**.
 
 > [!WARNING]
-> При удалении поставщика проверки подлинности будут удалены все сведения о отчетах, связанные с этим поставщиком. Перед удалением поставщика может потребоваться сохранить отчеты о действиях.
+> Deleting an authentication provider will delete any reporting information associated with that provider. You may want to save activity reports before deleting your provider.
 
 > [!NOTE]
-> Пользователям с более старыми версиями приложения Microsoft Authenticator и Azure MFA может потребоваться повторная регистрация приложения.
+> Users with older versions of the Microsoft Authenticator app and Azure MFA Server may need to re-register their app.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Настройка параметров Многофакторной идентификации](howto-mfa-mfasettings.md)

@@ -1,107 +1,117 @@
 ---
-title: Настройка управления сеансом проверки подлинности с помощью Azure Active Directory условного доступа
-description: Настройте конфигурацию сеанса проверки подлинности Azure AD, включая частоту входа пользователя и сохранение сеанса браузера.
+title: Configure authentication session management - Azure Active Directory
+description: Customize Azure AD authentication session configuration including user sign in frequency and browser session persistence.
 services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 04/26/2019
+ms.date: 11/21/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
-ms.reviewer: calebb
+ms.reviewer: jlu, calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 70de9da44d52bd6e93377776a2dbfc1b802dd412
-ms.sourcegitcommit: 3486e2d4eb02d06475f26fbdc321e8f5090a7fac
+ms.openlocfilehash: 225b2248f9d4953e5daa763d9e195cfe2662d05f
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73241698"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74380730"
 ---
-# <a name="configure-authentication-session-management-with-conditional-access"></a>Настройка управления сеансом проверки подлинности с помощью условного доступа
+# <a name="configure-authentication-session-management-with-conditional-access"></a>Configure authentication session management with Conditional Access
 
-В сложных развертываниях организациям может потребоваться ограничить сеансы проверки подлинности. Некоторые сценарии могут включать:
+In complex deployments, organizations might have a need to restrict authentication sessions. Some scenarios might include:
 
-* Доступ к ресурсам с неуправляемого или общего устройства
-* Доступ к конфиденциальным сведениям из внешней сети
-* Пользователи с высоким уровнем влияния
-* Критические бизнес-приложения
+* Resource access from an unmanaged or shared device
+* Access to sensitive information from an external network
+* High impact users
+* Critical business applications
 
-Элементы управления условным доступом позволяют создавать политики, предназначенные для конкретных вариантов использования в Организации, не затрагивая всех пользователей.
+Conditional Access controls allow you to create policies that target specific use cases within your organization without affecting all users.
 
-Прежде чем углубляться в подробные сведения о настройке политики, давайте рассмотрим конфигурацию по умолчанию.
+Before diving into details on how to configure the policy, let’s examine the default configuration.
 
-## <a name="user-sign-in-frequency"></a>Частота входа пользователя
+## <a name="user-sign-in-frequency"></a>User sign-in frequency
 
-Периодичность входа определяет период времени, по истечении которого пользователю будет предложено войти снова при попытке доступа к ресурсу.
+Sign-in frequency defines the time period before a user is asked to sign in again when attempting to access a resource.
 
-Конфигурация по умолчанию Azure Active Directory (Azure AD) для периодичности входа пользователя — это период в 90 дней. Запрос на ввод учетных данных часто кажется разумным, но он может баккфире: пользователи, которые обучены для ввода учетных данных без необходимости, могут случайно передать их в запрос учетных данных.
+The Azure Active Directory (Azure AD) default configuration for user sign in frequency is a rolling window of 90 days. Asking users for credentials often seems like a sensible thing to do, but it can backfire: users that are trained to enter their credentials without thinking can unintentionally supply them to a malicious credential prompt.
 
-Может показаться, что пользователь не просит пользователя войти в систему, в действительности любое нарушение политик ИТ приведет к отмене сеанса. К некоторым примерам относятся (но не ограничиваются) изменение пароля, несоответствующее устройство или отключение учетной записи. Вы также можете явно [отозвать сеансы пользователей с помощью PowerShell](https://docs.microsoft.com/powershell/module/azuread/revoke-azureaduserallrefreshtoken?view=azureadps-2.0). Конфигурация по умолчанию Azure AD переходит в состояние "не спрашивать пользователей о предоставлении учетных данных, если уровень безопасности своих сеансов не изменился".
+It might sound alarming to not ask for a user to sign back in, in reality any violation of IT policies will revoke the session. Some examples include (but are not limited to) a password change, an incompliant device, or account disable. You can also explicitly [revoke users’ sessions using PowerShell](https://docs.microsoft.com/powershell/module/azuread/revoke-azureaduserallrefreshtoken?view=azureadps-2.0). The Azure AD default configuration comes down to “don’t ask users to provide their credentials if security posture of their sessions has not changed”.
 
-Параметр частоты входа работает с приложениями, которые реализовали протоколы OAUTH2 или OIDC в соответствии со стандартами. Большинство собственных приложений Microsoft для Windows, Mac и мобильных устройств соответствуют параметру.
+Sign-in frequency setting works with apps that have implemented OAUTH2 or OIDC protocols according to the standards. Most Microsoft native apps for Windows, Mac, and Mobile including the following comply with the setting.
 
-## <a name="persistence-of-browsing-sessions"></a>Сохранение сеансов обзора
+- Word, Excel, PowerPoint Online
+- OneNote Online
+- Office.com
+- O365 Admin portal
+- Exchange Online
+- SharePoint and OneDrive
+- Teams web client
+- Dynamics CRM Online
+- портала Azure
 
-Постоянный сеанс браузера позволяет пользователям оставаться в системе после закрытия и повторного открытия окна браузера.
+## <a name="persistence-of-browsing-sessions"></a>Persistence of browsing sessions
 
-По умолчанию Azure AD для сохранения сеанса браузера пользователи персональных устройств могут выбрать, следует ли сохранять сеанс, выполнив команду "остаться в системе". запрос после успешной проверки подлинности. Если сохраняемость браузера настроена в AD FS следуя указаниям в статье [AD FS Параметры единого входа](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/ad-fs-single-sign-on-settings#enable-psso-for-office-365-users-to-access-sharepoint-online
-), мы будем соблюдать эту политику и также сохраняем сеанс Azure AD. Вы также можете указать, видят ли пользователи в клиенте «остаться в системе». выдавать запрос, изменяя соответствующий параметр в области фирменной символики компании в портал Azure следуя указаниям в статье [Настройка страницы входа в Azure AD](../fundamentals/customize-branding.md).
+A persistent browser session allows users to remain signed in after closing and reopening their browser window.
 
-## <a name="configuring-authentication-session-controls"></a>Настройка элементов управления сеанса проверки подлинности
+The Azure AD default for browser session persistence allows users on personal devices to choose whether to persist the session by showing a “Stay signed in?” prompt after successful authentication. If browser persistence is configured in AD FS using the guidance in the article [AD FS Single Sign-On Settings](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/ad-fs-single-sign-on-settings#enable-psso-for-office-365-users-to-access-sharepoint-online
+), we will comply with that policy and persist the Azure AD session as well. You can also configure whether users in your tenant see the “Stay signed in?” prompt by changing the appropriate setting in the company branding pane in Azure portal using the guidance in the article [Customize your Azure AD sign-in page](../fundamentals/customize-branding.md).
 
-Условный доступ является Azure AD Premiumной возможностью и требует наличия лицензии Premium. Дополнительные сведения об условном доступе см [. в разделе что такое условный доступ в Azure Active Directory?](overview.md#license-requirements)
+## <a name="configuring-authentication-session-controls"></a>Configuring authentication session controls
+
+Conditional Access is an Azure AD Premium capability and requires a premium license. If you would like to learn more about Conditional Access, see [What is Conditional Access in Azure Active Directory?](overview.md#license-requirements)
 
 > [!WARNING]
-> Если вы используете [настраиваемую функцию времени существования маркера](../develop/active-directory-configurable-token-lifetimes.md) в настоящее время в общедоступной предварительной версии, мы не поддерживаем создание двух разных политик для одного и того же сочетания пользователя или приложения: один с этой функцией и другой с настраиваемым токеном. функция времени существования. Корпорация Майкрософт планирует снять с учета настраиваемую функцию срока действия маркера 1 мая 2020 и заменить ее на функцию управления сеансом проверки подлинности с условным доступом.  
+> If you are using the [configurable token lifetime](../develop/active-directory-configurable-token-lifetimes.md) feature currently in public preview, please note that we don’t support creating two different policies for the same user or app combination: one with this feature and another one with configurable token lifetime feature. Microsoft plans to retire the configurable token lifetime feature on May 1, 2020 and replace it with the Conditional Access authentication session management feature.  
 
-### <a name="policy-1-sign-in-frequency-control"></a>Политика 1. Управление частотой входа
+### <a name="policy-1-sign-in-frequency-control"></a>Policy 1: Sign-in frequency control
 
-1. Создание новой политики
-1. Выберите все необходимые условия для среды клиента, включая целевые облачные приложения.
-
-   > [!NOTE]
-   > Рекомендуется задать равную частоту запросов проверки подлинности для ключевых Microsoft Office приложений, таких как Exchange Online и SharePoint Online, для оптимального взаимодействия с пользователем.
-
-1. Последовательно выберите пункты **Управление доступом** > **сеанс** и щелкните **периодичность входа** .
-1. Введите требуемое значение дней и часов в первом текстовом поле
-1. Выберите число **часов** или **дней** в раскрывающемся списке
-1. Сохранение политики
-
-![Политика условного доступа, настроенная для частоты входа](media/howto-conditional-access-session-lifetime/conditional-access-policy-session-sign-in-frequency.png)
-
-При входе в систему устройств с Windows Azure AD вход на устройство считается запросом. Например, если вы настроили частоту входа в 24 часа для приложений Office, пользователи, зарегистрированные на устройствах Windows Azure AD, будут соответствовать политике частоты входа, войдя на устройство и не выводят запрос при открытии приложений Office.
-
-Если вы настроили другую частоту входа для различных веб-приложений, которые выполняются в одном сеансе браузера, к обоим приложениям будет применена самая политика, так как все приложения, работающие в одном сеансе браузера, совместно используют один маркер сеанса.
-
-### <a name="policy-2-persistent-browser-session"></a>Политика 2: постоянный сеанс браузера
-
-1. Создание новой политики
-1. Выберите все обязательные условия.
+1. Create new policy
+1. Choose all required conditions for customer’s environment, including the target cloud apps.
 
    > [!NOTE]
-   > Обратите внимание, что в качестве условия для этого элемента управления необходимо выбрать "все облачные приложения". Сохраняемость сеанса браузера управляется токеном сеанса проверки подлинности. Все вкладки в сеансе браузера совместно используют один маркер сеанса, поэтому все они должны предоставлять общий доступ к состоянию сохраняемости.
+   > It is recommended to set equal authentication prompt frequency for key Microsoft Office apps such as Exchange Online and SharePoint Online for best user experience.
 
-1. Перейдите в раздел " **Управление доступом** > **сеанс** " и щелкните " **постоянный сеанс браузера** ".
-1. Выберите значение из раскрывающегося списка
-1. Сохранить политику
+1. Go to **Access Controls** > **Session** and click **Sign-in frequency**
+1. Enter the required value of days and hours in the first text box
+1. Select a value of **Hours** or **Days** from dropdown
+1. Save your policy
 
-![Политика условного доступа, настроенная для постоянного браузера](media/howto-conditional-access-session-lifetime/conditional-access-policy-session-persistent-browser.png)
+![Conditional Access policy configured for sign in frequency](media/howto-conditional-access-session-lifetime/conditional-access-policy-session-sign-in-frequency.png)
+
+On Azure AD registered Windows devices sign in to the device is considered a prompt. For example, if you have configured the Sign in frequency to 24 hours for Office apps, users on Azure AD registered Windows devices will satisfy the Sign in frequency policy by signing in to the device and will be not prompted again when opening Office apps.
+
+If you have configured different Sign-in frequency for different web apps that are running in the same browser session, the strictest policy will be applied to both apps because all apps running in the same browser session share a single session token.
+
+### <a name="policy-2-persistent-browser-session"></a>Policy 2: Persistent browser session
+
+1. Create new policy
+1. Choose all required conditions.
+
+   > [!NOTE]
+   > Please note that this control requires to choose “All Cloud Apps” as a condition. Browser session persistence is controlled by authentication session token. All tabs in a browser session share a single session token and therefore they all must share persistence state.
+
+1. Go to **Access Controls** > **Session** and click **Persistent browser session**
+1. Select a value from dropdown
+1. Save you policy
+
+![Conditional Access policy configured for persistent browser](media/howto-conditional-access-session-lifetime/conditional-access-policy-session-persistent-browser.png)
 
 > [!NOTE]
-> Конфигурация постоянного сеанса браузера в условном доступе Azure AD перезапишет "остаться в системе?" в области фирменной символики компании в портал Azure для того же пользователя, если обе политики настроены.
+> Persistent Browser Session configuration in Azure AD Conditional Access will overwrite the “Stay signed in?” setting in the company branding pane in the Azure portal for the same user if you have configured both policies.
 
 ## <a name="validation"></a>Проверка
 
-Используйте средство "что если", чтобы имитировать вход пользователя в целевое приложение и другие условия в зависимости от настройки политики. Элементы управления сеанса проверки подлинности отображаются в результатах работы средства.
+Use the What-If tool to simulate a login from the user to the target application and other conditions based on how you configured your policy. The authentication session management controls show up in the result of the tool.
 
-![Результаты средства условного доступа What If](media/howto-conditional-access-session-lifetime/conditional-access-what-if-tool-result.png)
+![Conditional Access What If tool results](media/howto-conditional-access-session-lifetime/conditional-access-what-if-tool-result.png)
 
 ## <a name="policy-deployment"></a>Развертывание политики
 
-Чтобы убедиться, что политика работает должным образом, рекомендуется протестировать ее перед развертыванием в рабочей среде. В идеале для проверки правильности работы новой политики следует использовать тестовый клиент. Дополнительные сведения см. в статье рекомендации [по условному доступу в Azure Active Directory](best-practices.md).
+Чтобы убедиться, что политика работает должным образом, рекомендуется протестировать ее перед развертыванием в рабочей среде. В идеале для проверки правильности работы новой политики следует использовать тестовый клиент. For more information, see the article [Best practices for Conditional Access in Azure Active Directory](best-practices.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Если вы хотите узнать, как настроить политику условного доступа, см. статью [запрос MFA для конкретных приложений с Azure Active Directory условным доступом](app-based-mfa.md).
-* Если вы готовы к настройке политик условного доступа для своей среды, см. статью рекомендации [по условному доступу в Azure Active Directory](best-practices.md).
+* If you want to know how to configure a Conditional Access policy, see the article [Require MFA for specific apps with Azure Active Directory Conditional Access](app-based-mfa.md).
+* If you are ready to configure Conditional Access policies for your environment, see the article [Best practices for Conditional Access in Azure Active Directory](best-practices.md).

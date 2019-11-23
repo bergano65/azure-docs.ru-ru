@@ -1,22 +1,22 @@
 ---
-title: Настройка самостоятельного сброса пароля в Azure AD — Azure Active Directory
+title: Customize self-service password reset - Azure Active Directory
 description: Параметры настройки самостоятельного сброса пароля в Azure AD
 services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 07/30/2019
+ms.date: 11/21/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 527dd99f122ec70cc47305947a5cbce3207b9664
-ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
+ms.openlocfilehash: 0dfd035f73ea529ddb55bac6ce601185fda51a4d
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68666301"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74381940"
 ---
 # <a name="customize-the-azure-ad-functionality-for-self-service-password-reset"></a>Настройка функции самостоятельного сброса пароля в Azure AD
 
@@ -24,22 +24,22 @@ ms.locfileid: "68666301"
 
 ## <a name="customize-the-contact-your-administrator-link"></a>Настройка ссылки "Обратитесь к администратору"
 
-Пользователи самостоятельного сброса пароля имеют доступ к ссылке "обратитесь к администратору" на портале сброса паролей. Если пользователь выбирает эту ссылку, он выполняет одно из двух действий:
+Self-service password reset users have a "Contact your administrator" link available to them in the password reset portal. If a user selects this link, it will do one of two things:
 
-* Если Left в состоянии по умолчанию:
-   * Сообщения электронной почты отправляются администраторам и запрашиваются, чтобы предоставить помощь в изменении пароля пользователя. См. [Пример электронного письма](#sample-email) ниже.
-* Если настроено:
-   * Отправляет пользователя на веб-страницу или адрес электронной почты, указанный администратором, для получения помощи.
+* If left in the default state:
+   * Email is sent to your administrators and asks them to provide assistance in changing the user's password. See the [sample email](#sample-email) below.
+* If customized:
+   * Sends your user to a webpage or email address specified by the administrator for assistance.
 
 > [!TIP]
-> При настройке этого параметра рекомендуется задать для этого пользователя, который уже знаком с для поддержки
+> If you customize this, we recommend setting this to something users are already familiar with for support
 
 > [!WARNING]
-> Если настроить этот параметр с помощью адреса электронной почты и учетной записи, требующей сброса пароля, пользователь не сможет обратиться за помощью.
+> If you customize this setting with an email address and account that needs a password reset the user may be unable to ask for assistance.
 
 ### <a name="sample-email"></a>Пример электронного сообщения
 
-![Пример запроса на сброс электронной почты, отправленный администратору][Contact]
+![Sample request to reset email sent to Administrator][Contact]
 
 Контактный адрес электронной почты отправляется следующим получателям в таком порядке:
 
@@ -76,8 +76,8 @@ Set-ADFSGlobalWebContent -SigninPageDescriptionText "<p><A href='https://passwor
 
 * После того, как пользователь вводит свое имя пользователя.
 * Когда пользователь обращается к настраиваемому URL-адресу:
-   * Передавая `whr` параметр на страницу сброса пароля, например`https://login.microsoftonline.com/?whr=contoso.com`
-   * Передавая `username` параметр на страницу сброса пароля, например`https://login.microsoftonline.com/?username=admin@contoso.com`
+   * By passing the `whr` parameter to the password reset page, like `https://login.microsoftonline.com/?whr=contoso.com`
+   * By passing the `username` parameter to the password reset page, like `https://login.microsoftonline.com/?username=admin@contoso.com`
 
 Сведения о настройке фирменной символики компании см. в статье о [добавлении фирменной символики компании на страницу входа в Azure AD](../fundamentals/customize-branding.md).
 
@@ -88,7 +88,7 @@ Set-ADFSGlobalWebContent -SigninPageDescriptionText "<p><A href='https://passwor
 * понятное имя в сообщении электронной почты, например "Майкрософт от имени демонстрационной учетной записи CONTOSO";
 * строка темы в сообщении электронной почты, например "Код подтверждения адреса электронной почты демонстрационной учетной записи CONTOSO".
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Как развернуть самостоятельный сброс пароля?](howto-sspr-deployment.md)
 * [Сброс или изменение пароля](../user-help/active-directory-passwords-update-your-own-password.md)
@@ -100,7 +100,7 @@ Set-ADFSGlobalWebContent -SigninPageDescriptionText "<p><A href='https://passwor
 * [Что такое обратная запись паролей и каково ее назначение](howto-sspr-writeback.md)
 * [Как сообщать о действиях в SSPR](howto-sspr-reporting.md)
 * [Обзор всех параметров SSPR и их значение](concept-sspr-howitworks.md)
-* [Как устранить неполадки самостоятельного сброса пароля](active-directory-passwords-troubleshoot.md)
+* [I think something is broken. How do I troubleshoot SSPR?](active-directory-passwords-troubleshoot.md)
 * [Вопросы, не вошедшие в другие статьи](active-directory-passwords-faq.md)
 
-[Contact]: ./media/concept-sspr-customization/sspr-contact-admin.png "Обратитесь к администратору за помощью в качестве примера сброса пароля по электронной почте"
+[Contact]: ./media/concept-sspr-customization/sspr-contact-admin.png "Contact your administrator for help with resetting your password email example"

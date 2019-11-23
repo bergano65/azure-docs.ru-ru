@@ -1,21 +1,15 @@
 ---
-title: Обзор сообщений об интеграции Azure Blockchain Workbench
-description: Общие сведения об использовании сообщений в предварительной версии Azure Блокчейн Workbench.
-services: azure-blockchain
-keywords: ''
-author: PatAltimore
-ms.author: patricka
+title: Use messages to integrate with Azure Blockchain Workbench
+description: Overview of using messages to integrate Azure Blockchain Workbench Preview with other systems.
 ms.date: 09/05/2019
 ms.topic: article
-ms.service: azure-blockchain
 ms.reviewer: brendal
-manager: femila
-ms.openlocfilehash: 99159b15ea663d43d125748d6db1f334b72931ae
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 14bd0f84bc9490d95d3dbe0b9f122882f0d2059d
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73161802"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74324510"
 ---
 # <a name="azure-blockchain-workbench-messaging-integration"></a>Интеграция службы сообщений Azure Blockchain Workbench
 
@@ -65,7 +59,7 @@ Blockchain Workbench возвращает ответ со следующими �
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------------|
 | requestId             | GUID, предоставляемый клиентом |
 | userId                | Идентификатор созданного пользователя |
-| userChainIdentifier   | Адрес пользователя, который был создан в сети блокчейна. В Ethereum адрес — это адрес **локальной цепочки** пользователя. |
+| userChainIdentifier   | Адрес пользователя, который был создан в сети блокчейна. In Ethereum, the address is the user's **on-chain** address. |
 | connectionId          | Уникальный идентификатор подключения блокчейна|
 | messageSchemaVersion  | Версия схемы службы сообщений |
 | messageName           | **CreateUserUpdate** |
@@ -375,7 +369,7 @@ Blockchain Workbench возвращает ответ со следующими �
 
 ## <a name="notification-message-reference"></a>Справочник по сообщениям об уведомлениях
 
-В зависимости от **мессаженаме**сообщения уведомления имеют один из следующих типов сообщений.
+Depending on the **messageName**, the notification messages have one of the following message types.
 
 ### <a name="block-message"></a>Сообщение о блоке
 
@@ -556,7 +550,7 @@ Blockchain Workbench возвращает ответ со следующими �
 }
 ```
 
-### <a name="event-message-contract-function-invocation"></a>Сообщение о событии: вызов функции контракта
+### <a name="event-message-contract-function-invocation"></a>Event message: Contract function invocation
 
 Содержит сведения о вызове функции контракта, в том числе имя функции, входные параметры и сведения о вызывающем объекте.
 
@@ -636,7 +630,7 @@ Blockchain Workbench возвращает ответ со следующими �
 }
 ```
 
-### <a name="event-message-application-ingestion"></a>Сообщение о событии: прием приложения
+### <a name="event-message-application-ingestion"></a>Event message: Application ingestion
 
 Содержит сведения об отправке приложения в Workbench, например имя и версия отправляемого приложения.
 
@@ -678,7 +672,7 @@ Blockchain Workbench возвращает ответ со следующими �
 | id | Уникальный идентификатор рабочего процесса приложения в Azure Blockchain Workbench |
 | name | Имя рабочего процесса приложения |
 | displayName | Отображаемое имя рабочего процесса приложения |
-| функции | Коллекция [функций для рабочего процесса приложения](#workflow-function-information)|
+| функции | Collection of [functions for the application workflow](#workflow-function-information)|
 | штаты | Коллекция [состояний для рабочего процесса приложения](#workflow-state-information) |
 | properties | [Сведения о свойствах рабочего процесса](#workflow-property-information) приложения |
 
@@ -830,7 +824,7 @@ Blockchain Workbench возвращает ответ со следующими �
 }
 ```
 
-### <a name="event-message-role-assignment"></a>Сообщение о событии: назначение роли
+### <a name="event-message-role-assignment"></a>Event message: Role assignment
 
 Содержит сведения о назначении пользователю роли в Workbench, в том числе идентификатор того, кто выполнил назначение роли, имя роли и соответствующее приложение.
 

@@ -1,33 +1,27 @@
 ---
-title: Управление службой Блокчейн Azure с помощью Azure CLI
-description: Создание службы Блокчейн Azure и управление ею с помощью Azure CLI
-services: azure-blockchain
-keywords: ''
-author: PatAltimore
-ms.author: patricka
+title: Manage Azure Blockchain Service using Azure CLI
+description: How to manage Azure Blockchain Service with Azure CLI
 ms.date: 05/02/2019
 ms.topic: article
-ms.service: azure-blockchain
-ms.reviewer: seal
-manager: femila
-ms.openlocfilehash: 4dd58f2542674633f2d5e2a1724adc7934d7f030
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.reviewer: janders
+ms.openlocfilehash: 2a749387baee4881ffd6960e64666ede366a36ec
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70307044"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74325158"
 ---
-# <a name="manage-azure-blockchain-service-using-azure-cli"></a>Управление службой Блокчейн Azure с помощью Azure CLI
+# <a name="manage-azure-blockchain-service-using-azure-cli"></a>Manage Azure Blockchain Service using Azure CLI
 
-В дополнение к портал Azure можно использовать Azure CLI для управления членами блокчейн и узлами транзакций службы Блокчейн Azure.
+In addition to the Azure portal, you can use Azure CLI to manage blockchain members and transaction nodes for your Azure Blockchain Service.
 
-Убедитесь, что вы установили последнюю [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) и выполнили вход в учетную запись Azure в `az login`с помощью.
+Make sure that you have installed the latest [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) and logged in to an Azure account in with `az login`.
 
-В следующих примерах замените пример `<parameter names>` собственными значениями.
+In the following examples, replace example `<parameter names>` with your own values.
 
-## <a name="create-blockchain-member"></a>Создание элемента блокчейн
+## <a name="create-blockchain-member"></a>Create blockchain member
 
-Пример создает элемент блокчейн в службе Блокчейн Azure, который выполняет протокол кворума в новом консорциуме.
+Example creates a blockchain member in Azure Blockchain Service that runs the Quorum ledger protocol in a new consortium.
 
 ```azurecli
 az resource create --resource-group <myResourceGroup> --name <myMemberName> --resource-type Microsoft.Blockchain/blockchainMembers --is-full-object --properties "{ \"location\": \"<myBlockchainLocation>\", \"properties\": {\"password\": \"<myStrongPassword>\", \"protocol\": \"Quorum\", \"consortium\": \"<myConsortiumName>\", \"consortiumManagementAccountPassword\": \"<myConsortiumManagementAccountPassword>\", \"firewallRules\": [ { \"ruleName\": \"<myRuleName>\", \"startIpAddress\": \"<myStartIpAddress>\", \"endIpAddress\": \"<myEndIpAddress>\" } ] }, \"sku\": { \"name\": \"<skuName>\" } }"
@@ -36,20 +30,20 @@ az resource create --resource-group <myResourceGroup> --name <myMemberName> --re
 | Параметр | Описание |
 |---------|-------------|
 | **resource-group** | Имя группы ресурсов, в которой создаются ресурсы службы "Блокчейн Azure". |
-| **name** | Уникальное имя, идентифицирующее участника блокчейн-сети в службе "Блокчейн Azure". Это имя используется в адресе общедоступной конечной точки. Например, `myblockchainmember.blockchain.azure.com`. |
-| **расположение** | Регион Azure, в котором создается участник блокчейн-сети. Например, `eastus`. Выберите расположение, наиболее близкое к пользователям или другим приложениям Azure. |
-| **password** | Пароль учетной записи участника. Пароль учетной записи участника используется для обычной аутентификации в общедоступной конечной точке участника блокчейн-сети. Пароль должен соответствовать трем из следующих четырех требований: длина должна составлять от 12 & 72 символов, содержать от 1 строчной буквы, 1 прописную букву, 1 число и один специальный символ, не являющийся знаком (#), percent (%), запятая (,), звездочка (*), Обратная кавычка (\`), двойная кавычка ("), одинарная кавычка ('), тире (-) и семиколумн (;)|
-| **protocol** | Общедоступная Предварительная версия поддерживает кворум. |
+| **name** | Уникальное имя, идентифицирующее участника блокчейн-сети в службе "Блокчейн Azure". Это имя используется в адресе общедоступной конечной точки. Пример: `myblockchainmember.blockchain.azure.com`. |
+| **location** | Регион Azure, в котором создается участник блокчейн-сети. Пример: `eastus`. Выберите расположение, наиболее близкое к пользователям или другим приложениям Azure. |
+| **password** | Пароль учетной записи участника. Пароль учетной записи участника используется для обычной аутентификации в общедоступной конечной точке участника блокчейн-сети. The password must meet three of the following four requirements: length needs to be between 12 & 72 characters, 1 lower case character, 1 upper case character, 1 number, and 1 special character that is not number sign(#), percent(%), comma(,), star(*), back quote(\`), double quote("), single quote('), dash(-) and semicolumn(;)|
+| **protocol** | Public preview supports Quorum. |
 | **consortium** | Имя консорциума, который создается или к которому присоединяется участник. |
-| **consortiumManagementAccountPassword** | Пароль управления консорциума. Пароль используется для присоединения к консорциуму. |
-| **ruleName** | Имя правила для список разрешений диапазон IP-адресов. Необязательный параметр для правил брандмауэра.|
-| **Параметров startipaddress** | Начало диапазона IP-адресов для список разрешений. Необязательный параметр для правил брандмауэра. |
-| **endIpAddress** | Конец диапазона IP-адресов для список разрешений. Необязательный параметр для правил брандмауэра. |
+| **consortiumManagementAccountPassword** | Пароль управления консорциума. The password is used for joining a consortium. |
+| **ruleName** | Rule name for whitelisting an IP address range. Optional parameter for firewall rules.|
+| **startIpAddress** | Start of the IP address range for whitelisting. Optional parameter for firewall rules. |
+| **endIpAddress** | End of the IP address range for whitelisting. Optional parameter for firewall rules. |
 | **skuName** | Тип уровня. Используйте S0, чтобы выбрать ценовую категорию "Стандартный", или B0, чтобы выбрать ценовую категорию "Базовый". |
 
-## <a name="change-blockchain-member-password"></a>Изменить пароль члена блокчейн
+## <a name="change-blockchain-member-password"></a>Change blockchain member password
 
-В примере изменяется пароль участника блокчейн.
+Example changes a blockchain member's password.
 
 ```azurecli
 az resource update --resource-group <myResourceGroup> --name <myMemberName> --resource-type Microsoft.Blockchain/blockchainMembers --set properties.password="<myStrongPassword>" --remove properties.consortiumManagementAccountAddress
@@ -57,12 +51,12 @@ az resource update --resource-group <myResourceGroup> --name <myMemberName> --re
 | Параметр | Описание |
 |---------|-------------|
 | **resource-group** | Имя группы ресурсов, в которой создаются ресурсы службы "Блокчейн Azure". |
-| **name** | Имя, идентифицирующее участника службы Azure Блокчейн. |
-| **password** | Пароль учетной записи участника. Пароль должен соответствовать трем из следующих четырех требований: длина должна составлять от 12 & 72 символов, содержать от 1 строчной буквы, 1 прописную букву, 1 число и один специальный символ, не являющийся знаком (#), percent (%), запятая (,), звездочка (*), Обратная кавычка (\`), двойная кавычка ("), одинарная кавычка ('), тире (-) и точка с запятой (;). |
+| **name** | Name that identifies your Azure Blockchain Service member. |
+| **password** | Пароль учетной записи участника. The password must meet three of the following four requirements: length needs to be between 12 & 72 characters, 1 lower case character, 1 upper case character, 1 number, and 1 special character that is not number sign(#), percent(%), comma(,), star(*), back quote(\`), double quote("), single quote('), dash(-) and semicolon(;). |
 
 ## <a name="create-transaction-node"></a>Создание узла транзакций
 
-Создайте узел транзакции внутри существующего элемента блокчейн. Добавляя узлы транзакций, можно повысить изоляцию безопасности и распределить нагрузку. Например, у вас может быть конечная точка узла транзакции для разных клиентских приложений.
+Create a transaction node inside an existing blockchain member. By adding transaction nodes, you can increase security isolation and distribute load. For example, you could have a transaction node endpoint for different client applications.
 
 ```azurecli
 az resource create --resource-group <myResourceGroup> --name <myMemberName>/transactionNodes/<myTransactionNode> --resource-type Microsoft.Blockchain/blockchainMembers  --is-full-object --properties "{ \"location\": \"<myRegion>\", \"properties\": { \"password\": \"<myStrongPassword>\", \"firewallRules\": [ { \"ruleName\": \"<myRuleName>\", \"startIpAddress\": \"<myStartIpAddress>\", \"endIpAddress\": \"<myEndIpAddress>\" } ] } }"
@@ -71,16 +65,16 @@ az resource create --resource-group <myResourceGroup> --name <myMemberName>/tran
 | Параметр | Описание |
 |---------|-------------|
 | **resource-group** | Имя группы ресурсов, в которой создаются ресурсы службы "Блокчейн Azure". |
-| **name** | Имя участника Azure Блокчейн Service блокчейн, который также включает новое имя узла транзакции. |
-| **расположение** | Регион Azure, в котором создается участник блокчейн-сети. Например, `eastus`. Выберите расположение, наиболее близкое к пользователям или другим приложениям Azure. |
-| **password** | Пароль узла транзакции. Пароль должен соответствовать трем из следующих четырех требований: длина должна составлять от 12 & 72 символов, содержать от 1 строчной буквы, 1 прописную букву, 1 число и один специальный символ, не являющийся знаком (#), percent (%), запятая (,), звездочка (*), Обратная кавычка (\`), двойная кавычка ("), одинарная кавычка ('), тире (-) и точка с запятой (;). |
-| **ruleName** | Имя правила для список разрешений диапазон IP-адресов. Необязательный параметр для правил брандмауэра. |
-| **Параметров startipaddress** | Начало диапазона IP-адресов для список разрешений. Необязательный параметр для правил брандмауэра. |
-| **endIpAddress** | Конец диапазона IP-адресов для список разрешений. Необязательный параметр для правил брандмауэра.|
+| **name** | Name of the Azure Blockchain Service blockchain member that also includes the new transaction node name. |
+| **location** | Регион Azure, в котором создается участник блокчейн-сети. Пример: `eastus`. Выберите расположение, наиболее близкое к пользователям или другим приложениям Azure. |
+| **password** | The transaction node password. The password must meet three of the following four requirements: length needs to be between 12 & 72 characters, 1 lower case character, 1 upper case character, 1 number, and 1 special character that is not number sign(#), percent(%), comma(,), star(*), back quote(\`), double quote("), single quote('), dash(-) and semicolon(;). |
+| **ruleName** | Rule name for whitelisting an IP address range. Optional parameter for firewall rules. |
+| **startIpAddress** | Start of the IP address range for whitelisting. Optional parameter for firewall rules. |
+| **endIpAddress** | End of the IP address range for whitelisting. Optional parameter for firewall rules.|
 
-## <a name="change-transaction-node-password"></a>Изменение пароля узла транзакции
+## <a name="change-transaction-node-password"></a>Change transaction node password
 
-Пример изменяет пароль узла транзакции.
+Example changes a transaction node password.
 
 ```azurecli
 az resource update --resource-group <myResourceGroup> --name <myMemberName>/transactionNodes/<myTransactionNode> --resource-type Microsoft.Blockchain/blockchainMembers  --set properties.password="<myStrongPassword>"
@@ -88,13 +82,13 @@ az resource update --resource-group <myResourceGroup> --name <myMemberName>/tran
 
 | Параметр | Описание |
 |---------|-------------|
-| **resource-group** | Имя группы ресурсов, в которой существуют ресурсы службы Блокчейн Azure. |
-| **name** | Имя участника Azure Блокчейн Service блокчейн, который также включает новое имя узла транзакции. |
-| **password** | Пароль узла транзакции. Пароль должен соответствовать трем из следующих четырех требований: длина должна составлять от 12 & 72 символов, содержать от 1 строчной буквы, 1 прописную букву, 1 число и один специальный символ, не являющийся знаком (#), percent (%), запятая (,), звездочка (*), Обратная кавычка (\`), двойная кавычка ("), одинарная кавычка ('), тире (-) и точка с запятой (;). |
+| **resource-group** | Resource group name where Azure Blockchain Service resources exist. |
+| **name** | Name of the Azure Blockchain Service blockchain member that also includes the new transaction node name. |
+| **password** | The transaction node password. The password must meet three of the following four requirements: length needs to be between 12 & 72 characters, 1 lower case character, 1 upper case character, 1 number, and 1 special character that is not number sign(#), percent(%), comma(,), star(*), back quote(\`), double quote("), single quote('), dash(-) and semicolon(;). |
 
-## <a name="change-consortium-management-account-password"></a>Изменение пароля учетной записи управления консорциумом
+## <a name="change-consortium-management-account-password"></a>Change consortium management account password
 
-Учетная запись управления консорциумом используется для управления членством в консорциуме W3C. Каждый элемент однозначно идентифицируется учетной записью управления консорциумом, и вы можете изменить пароль этой учетной записи с помощью следующей команды.
+The consortium management account is used for consortium membership management. Each member is uniquely identified by a consortium management account and you can change the password of this account with the following command.
 
 ```azurecli
 az resource update --resource-group <myResourceGroup> --name <myMemberName> --resource-type Microsoft.Blockchain/blockchainMembers --set properties.consortiumManagementAccountPassword="<myConsortiumManagementAccountPassword>" --remove properties.consortiumManagementAccountAddress
@@ -103,10 +97,10 @@ az resource update --resource-group <myResourceGroup> --name <myMemberName> --re
 | Параметр | Описание |
 |---------|-------------|
 | **resource-group** | Имя группы ресурсов, в которой создаются ресурсы службы "Блокчейн Azure". |
-| **name** | Имя, идентифицирующее участника службы Azure Блокчейн. |
-| **consortiumManagementAccountPassword** | Пароль учетной записи управления консорциумом. Пароль должен соответствовать трем из следующих четырех требований: длина должна составлять от 12 & 72 символов, содержать от 1 строчной буквы, 1 прописную букву, 1 число и один специальный символ, не являющийся знаком (#), percent (%), запятая (,), звездочка (*), Обратная кавычка (\`), двойная кавычка ("), одинарная кавычка ('), тире (-) и точка с запятой (;). |
+| **name** | Name that identifies your Azure Blockchain Service member. |
+| **consortiumManagementAccountPassword** | The consortium management account password. The password must meet three of the following four requirements: length needs to be between 12 & 72 characters, 1 lower case character, 1 upper case character, 1 number, and 1 special character that is not number sign(#), percent(%), comma(,), star(*), back quote(\`), double quote("), single quote('), dash(-) and semicolon(;). |
   
-## <a name="update-firewall-rules"></a>Обновление правил брандмауэра
+## <a name="update-firewall-rules"></a>Update firewall rules
 
 ```azurecli
 az resource update --resource-group <myResourceGroup> --name <myMemberName> --resource-type Microsoft.Blockchain/blockchainMembers --set properties.firewallRules="[ { \"ruleName\": \"<myRuleName>\", \"startIpAddress\": \"<myStartIpAddress>\", \"endIpAddress\": \"<myEndIpAddress>\" } ]" --remove properties.consortiumManagementAccountAddress
@@ -114,15 +108,15 @@ az resource update --resource-group <myResourceGroup> --name <myMemberName> --re
 
 | Параметр | Описание |
 |---------|-------------|
-| **resource-group** | Имя группы ресурсов, в которой существуют ресурсы службы Блокчейн Azure. |
-| **name** | Имя члена блокчейн службы Azure Блокчейн. |
-| **ruleName** | Имя правила для список разрешений диапазон IP-адресов. Необязательный параметр для правил брандмауэра.|
-| **Параметров startipaddress** | Начало диапазона IP-адресов для список разрешений. Необязательный параметр для правил брандмауэра.|
-| **endIpAddress** | Конец диапазона IP-адресов для список разрешений. Необязательный параметр для правил брандмауэра.|
+| **resource-group** | Resource group name where Azure Blockchain Service resources exist. |
+| **name** | Name of the Azure Blockchain Service blockchain member. |
+| **ruleName** | Rule name for whitelisting an IP address range. Optional parameter for firewall rules.|
+| **startIpAddress** | Start of the IP address range for whitelisting. Optional parameter for firewall rules.|
+| **endIpAddress** | End of the IP address range for whitelisting. Optional parameter for firewall rules.|
 
-## <a name="list-api-keys"></a>Список ключей API
+## <a name="list-api-keys"></a>List API keys
 
-Ключи API можно использовать для доступа к узлам аналогично имени пользователя и паролю. Существует два ключа API для поддержки смены ключей. Используйте следующую команду, чтобы получить список ключей API.
+API keys can be used for node access similar to user name and password. There are two API keys to support key rotation. Use the following command to list your API keys.
 
 ```azurecli
 az resource invoke-action --resource-group <myResourceGroup> --name <myMemberName>/transactionNodes/<myTransactionNode> --action "listApiKeys" --resource-type Microsoft.Blockchain/blockchainMembers
@@ -130,12 +124,12 @@ az resource invoke-action --resource-group <myResourceGroup> --name <myMemberNam
 
 | Параметр | Описание |
 |---------|-------------|
-| **resource-group** | Имя группы ресурсов, в которой существуют ресурсы службы Блокчейн Azure. |
-| **name** | Имя участника Azure Блокчейн Service блокчейн, который также включает новое имя узла транзакции. |
+| **resource-group** | Resource group name where Azure Blockchain Service resources exist. |
+| **name** | Name of the Azure Blockchain Service blockchain member that also includes the new transaction node name. |
 
-## <a name="regenerate-api-keys"></a>Повторное создание ключей API
+## <a name="regenerate-api-keys"></a>Regenerate API keys
 
-Используйте следующую команду, чтобы повторно создать ключи API.
+Use the following command to regenerate your API keys.
 
 ```azurecli
 az resource invoke-action --resource-group <myResourceGroup> --name <myMemberName>/transactionNodes/<myTransactionNode> --action "regenerateApiKeys" --resource-type Microsoft.Blockchain/blockchainMembers --request-body '{"keyName":"<keyValue>"}'
@@ -144,13 +138,13 @@ az resource invoke-action --resource-group <myResourceGroup> --name <myMemberNam
 
 | Параметр | Описание |
 |---------|-------------|
-| **resource-group** | Имя группы ресурсов, в которой существуют ресурсы службы Блокчейн Azure. |
-| **name** | Имя участника Azure Блокчейн Service блокчейн, который также включает новое имя узла транзакции. |
-| **keyName** | Замените \<KeyValue\> на key1 или Key2. |
+| **resource-group** | Resource group name where Azure Blockchain Service resources exist. |
+| **name** | Name of the Azure Blockchain Service blockchain member that also includes the new transaction node name. |
+| **keyName** | Replace \<keyValue\> with either key1 or key2. |
 
-## <a name="delete-a-transaction-node"></a>Удаление узла транзакции
+## <a name="delete-a-transaction-node"></a>Delete a transaction node
 
-Пример удаляет узел транзакции-члена блокчейн.
+Example deletes a blockchain member transaction node.
 
 ```azurecli
 az resource delete --resource-group <myResourceGroup> --name <myMemberName>/transactionNodes/<myTransactionNode> --resource-type Microsoft.Blockchain/blockchainMembers
@@ -158,12 +152,12 @@ az resource delete --resource-group <myResourceGroup> --name <myMemberName>/tran
 
 | Параметр | Описание |
 |---------|-------------|
-| **resource-group** | Имя группы ресурсов, в которой существуют ресурсы службы Блокчейн Azure. |
-| **name** | Имя члена Azure Блокчейн Service блокчейн, который также включает имя нового узла транзакции, который необходимо удалить. |
+| **resource-group** | Resource group name where Azure Blockchain Service resources exist. |
+| **name** | Name of the Azure Blockchain Service blockchain member that also includes the new transaction node name to be deleted. |
 
-## <a name="delete-a-blockchain-member"></a>Удаление элемента блокчейн
+## <a name="delete-a-blockchain-member"></a>Delete a blockchain member
 
-Пример удаляет элемент блокчейн.
+Example deletes a blockchain member.
 
 ```azurecli
 az resource delete --resource-group <myResourceGroup> --name <myMemberName> --resource-type Microsoft.Blockchain/blockchainMembers
@@ -171,12 +165,12 @@ az resource delete --resource-group <myResourceGroup> --name <myMemberName> --re
 
 | Параметр | Описание |
 |---------|-------------|
-| **resource-group** | Имя группы ресурсов, в которой существуют ресурсы службы Блокчейн Azure. |
-| **name** | Имя удаляемого члена Azure Блокчейн Service блокчейн. |
+| **resource-group** | Resource group name where Azure Blockchain Service resources exist. |
+| **name** | Name of the Azure Blockchain Service blockchain member to be deleted. |
 
 ## <a name="azure-active-directory"></a>Azure Active Directory
 
-### <a name="grant-access-for-azure-ad-user"></a>Предоставление доступа для пользователя Azure AD
+### <a name="grant-access-for-azure-ad-user"></a>Grant access for Azure AD user
 
 ```azurecli
 az role assignment create --role <role> --assignee <assignee> --scope /subscriptions/<subId>/resourceGroups/<groupName>/providers/Microsoft.Blockchain/blockchainMembers/<myMemberName>
@@ -184,13 +178,13 @@ az role assignment create --role <role> --assignee <assignee> --scope /subscript
 
 | Параметр | Описание |
 |---------|-------------|
-| **role** | Имя роли Azure AD. |
-| **уполномоченного** | Идентификатор пользователя Azure AD. Например: `user@contoso.com` |
-| **scope** | Область назначения роли. Может быть либо блокчейн элементом, либо узлом транзакции. |
+| **role** | Name of the Azure AD role. |
+| **assignee** | Azure AD user ID. Например `user@contoso.com`. |
+| **scope** | Scope of the role assignment. Can be either a blockchain member or transaction node. |
 
 **Пример.**
 
-Предоставьте доступ к узлу для пользователя Azure AD **члену**блокчейн:
+Grant node access for Azure AD user to blockchain **member**:
 
 ```azurecli
 az role assignment create \
@@ -201,7 +195,7 @@ az role assignment create \
 
 **Пример.**
 
-Предоставьте доступ к узлу для пользователя Azure AD на **узел транзакции**блокчейн:
+Grant node access for Azure AD user to blockchain **transaction node**:
 
 ```azurecli
 az role assignment create \
@@ -210,20 +204,20 @@ az role assignment create \
   --scope /subscriptions/mySubscriptionId/resourceGroups/contosoResourceGroup/providers/Microsoft.Blockchain/blockchainMembers/contosoMember1/transactionNodes/contosoTransactionNode1
 ```
 
-### <a name="grant-node-access-for-azure-ad-group-or-application-role"></a>Предоставление доступа к узлу для роли приложения или группы Azure AD
+### <a name="grant-node-access-for-azure-ad-group-or-application-role"></a>Grant node access for Azure AD group or application role
 
 ```azurecli
 az role assignment create --role <role> --assignee-object-id <assignee_object_id>
 ```
 | Параметр | Описание |
 |---------|-------------|
-| **role** | Имя роли Azure AD. |
-| **assigns-Object-ID** | Идентификатор группы Azure AD или идентификатор приложения. |
-| **scope** | Область назначения роли. Может быть либо блокчейн элементом, либо узлом транзакции. |
+| **role** | Name of the Azure AD role. |
+| **assignee-object-id** | Azure AD group ID or application ID. |
+| **scope** | Scope of the role assignment. Can be either a blockchain member or transaction node. |
 
 **Пример.**
 
-Предоставление доступа к узлу для **роли приложения**
+Grant node access for **application role**
 
 ```azurecli
 az role assignment create \
@@ -232,7 +226,7 @@ az role assignment create \
   --scope /subscriptions/mySubscriptionId/resourceGroups/contosoResourceGroup/providers/Microsoft.Blockchain/blockchainMembers/contosoMember1
 ```
 
-### <a name="remove-azure-ad-node-access"></a>Удаление доступа к узлу Azure AD
+### <a name="remove-azure-ad-node-access"></a>Remove Azure AD node access
 
 ```azurecli
 az role assignment delete --role <myRole> --assignee <assignee> --scope /subscriptions/mySubscriptionId/resourceGroups/<myResourceGroup>/providers/Microsoft.Blockchain/blockchainMembers/<myMemberName>/transactionNodes/<myTransactionNode>
@@ -240,11 +234,11 @@ az role assignment delete --role <myRole> --assignee <assignee> --scope /subscri
 
 | Параметр | Описание |
 |---------|-------------|
-| **role** | Имя роли Azure AD. |
-| **уполномоченного** | Идентификатор пользователя Azure AD. Например: `user@contoso.com` |
-| **scope** | Область назначения роли. Может быть либо блокчейн элементом, либо узлом транзакции. |
+| **role** | Name of the Azure AD role. |
+| **assignee** | Azure AD user ID. Например `user@contoso.com`. |
+| **scope** | Scope of the role assignment. Can be either a blockchain member or transaction node. |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Настройка узлов транзакций службы Azure Блокчейн с портал Azure](configure-transaction-nodes.md)
+> [Configure Azure Blockchain Service transaction nodes with the Azure portal](configure-transaction-nodes.md)

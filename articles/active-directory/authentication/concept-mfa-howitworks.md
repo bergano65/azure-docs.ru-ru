@@ -1,34 +1,34 @@
 ---
-title: Работа с многофакторной идентификацией Azure — Azure Active Directory
-description: Многофакторная идентификация Azure помогает защитить доступ к данным и приложениям, при этом не усложняя процесс входа пользователя в систему.
+title: How it works Azure MFA - Azure Active Directory
+description: Многофакторная идентификация Azure защищает доступ к вашим данным и приложениям, а также предоставляет пользователям простой вход в систему.
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 06/03/2018
+ms.date: 11/21/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 57b441803a066b794d17b46afec4d930b94ebdea
-ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+ms.openlocfilehash: c1036d7e8aef29e3185452d5088e660d474726e4
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70125130"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74381968"
 ---
-# <a name="how-it-works-azure-multi-factor-authentication"></a>Принцип работы. Многофакторная проверка подлинности Azure
+# <a name="how-it-works-azure-multi-factor-authentication"></a>Как это работает: служба Многофакторной идентификации Azure
 
 Безопасность двухшаговой проверки подлинности заключается в многоуровневом подходе. Нарушения нескольких факторов проверки подлинности представляет нетривиальную задачу для злоумышленников. Даже если злоумышленнику удастся получить пароль пользователя, им нельзя воспользоваться без дополнительного метода проверки подлинности. Служба требует использования двух и более методов проверки подлинности следующего характера:
 
-* Известные вам сведения (обычно это пароль)
-* Имеющееся у вас оборудование (доверенное устройство, которое трудно дублировать, например телефон)
-* Ваши биологические признаки (биометрические данные)
+* Что-то, что известно вам (обычно это пароль).
+* Что-то, что у вас есть (доверенное устройство, которое непросто дублируется, такое как телефон).
+* Что-то, относящееся непосредственно к вам (биометрические данные).
 
 <center>
 
-![Изображение методов концептуальной проверки подлинности](./media/concept-mfa-howitworks/methods.png)</center>
+![Conceptual authentication methods image](./media/concept-mfa-howitworks/methods.png)</center>
 
 Служба Многофакторной идентификации Azure помогает защитить доступ к данным и приложениям, обеспечивая при этом удобство работы пользователей. Эта служба предлагает дополнительную защиту за счет дополнительного способа аутентификации и, используя ряд простых [методов проверки подлинности](concept-authentication-methods.md), обеспечивает строгую проверку. Направление пользователям запросов о необходимости Многофакторной идентификации зависит от настроек, заданных администратором.
 
@@ -36,9 +36,9 @@ ms.locfileid: "70125130"
 
 Служба Многофакторной идентификации Azure доступна в составе следующих предложений:
 
-* **Azure Active Directory Premium** или **Microsoft 365 бизнес** — полнофункциональное использование многофакторной идентификации Azure с использованием политик условного доступа, чтобы требовать многофакторную проверку подлинности.
+* **Azure Active Directory Premium** or **Microsoft 365 Business** - Full featured use of Azure Multi-Factor Authentication using Conditional Access policies to require multi-factor authentication.
 
-* **Azure AD Free** или автономные лицензии **Office 365** . Используйте предварительно созданные [политики защиты для условного доступа](../conditional-access/concept-baseline-protection.md) , чтобы требовать многофакторную проверку подлинности для пользователей и администраторов.
+* **Azure AD Free** or standalone **Office 365** licenses - Use pre-created [Conditional Access baseline protection policies](../conditional-access/concept-baseline-protection.md) to require multi-factor authentication for your users and administrators.
 
 * **Глобальные администраторы Azure Active Directory**. Для защиты учетных записей глобальных администраторов доступны некоторые возможности службы Многофакторной идентификации Azure.
 
@@ -50,10 +50,10 @@ ms.locfileid: "70125130"
 Так как большинство пользователей привыкло использовать для аутентификации только пароли, важно проинформировать всех пользователей в организации об этом процессе. Это поможет снизить вероятность того, что пользователи будут обращаться в службу технической поддержки для устранения незначительных проблем с MFA. Однако бывают ситуации, когда необходимо временно отключить MFA. Вот несколько рекомендаций по действиям для таких случаев.
 
 * Обучите сотрудников службы технической поддержки тому, как действовать в случаях, когда пользователь не может войти в систему, так как не имеет доступа к своим методам проверки подлинности или они неправильно работают.
-   * Используя политики условного доступа для службы Azure MFA, ваш персонал службы поддержки может добавить пользователя в группу, исключенную из политики, для которой требуется MFA.
-* Используйте условный доступ с именованными расположениями, чтобы максимально сокращать запросы на двухфакторную проверку подлинности. С помощью этой функции администраторы могут обходить двухфакторную проверку подлинности для пользователей, которые входят в защищенное надежное сетевое расположение, например сегмент сети, используемый для адаптации новых пользователей.
-* Разверните [Защита идентификации Azure AD](../active-directory-identityprotection.md) и активируйте двухфакторную проверку подлинности на основе обнаруженных рисков.
+   * Using Conditional Access policies for Azure MFA Service, your support staff can add a user to a group that is excluded from a policy requiring MFA.
+* Consider using Conditional Access named locations as a way to minimize two-step verification prompts. With this functionality, administrators can bypass two-step verification for users that are signing in from a secure trusted network location such as a network segment used for new user onboarding.
+* Deploy [Azure AD Identity Protection](../active-directory-identityprotection.md) and trigger two-step verification based on risk detections.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Пошаговое развертывание многофакторной идентификации Azure](howto-mfa-getstarted.md)
+- [Step-by-step Azure Multi-Factor Authentication deployment](howto-mfa-getstarted.md)

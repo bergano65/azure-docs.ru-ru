@@ -1,5 +1,5 @@
 ---
-title: Удаление и восстановление рабочей области Log Analytics Azure | Документация Майкрософт
+title: Delete and recover Azure Log Analytics workspace | Microsoft Docs
 description: Узнайте, как удалить рабочую область Log Analytics, если она была создана в личной подписке, или как изменить структуру модели рабочей области.
 ms.service: azure-monitor
 ms.subservice: logs
@@ -7,22 +7,22 @@ ms.topic: conceptual
 author: MGoedtel
 ms.author: magoedte
 ms.date: 10/28/2019
-ms.openlocfilehash: 709d63b2c764049a698bc538d9ec451b4e75feaa
-ms.sourcegitcommit: 38251963cf3b8c9373929e071b50fd9049942b37
+ms.openlocfilehash: b8fdefb5e8555e90b5c9065672f4593e5bf98e06
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73044240"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74326508"
 ---
-# <a name="delete-and-restore-azure-log-analytics-workspace"></a>Удаление и восстановление рабочей области Azure Log Analytics
+# <a name="delete-and-restore-azure-log-analytics-workspace"></a>Delete and restore Azure Log Analytics workspace
 
-В этой статье объясняется понятие обратимого удаления в рабочей области Azure Log Analytics и восстановление удаленной рабочей области. 
+This article explains the concept of Azure Log Analytics workspace soft-delete and how to recover deleted workspace. 
 
-## <a name="considerations-when-deleting-a-workspace"></a>Рекомендации по удалению рабочей области
+## <a name="considerations-when-deleting-a-workspace"></a>Considerations when deleting a workspace
 
-При удалении рабочей области Log Analytics выполняется операция обратимого удаления, позволяющая восстановить рабочую область, включая ее данные и подключенные агенты, в течение 14 дней, независимо от того, было ли удаление случайным или умышленно. После периода обратимого удаления Рабочая область и ее данные не могут быть восстановлены и помещаются в очередь для постоянного удаления в течение 30 дней.
+When you delete a Log Analytics workspace, a soft-delete operation is performed to allow the recovery of the workspace including its data and connected agents within 14 days, whether the deletion was accidental or intentional. After the soft-delete period, the workspace and its data are non-recoverable – data is queued for permanent deletion within 30 days and the workspace name is available and can be used to create a new workspace.
 
-При удалении рабочей области необходимо соблюдать осторожность, так как могут возникать важные данные и конфигурация, которые могут негативно повлиять на работу службы. Проверьте, какие агенты, решения и другие службы и источники Azure хранят свои данные в Log Analytics, например:
+You want to exercise caution when you delete a workspace because there might be important data and configuration that may negatively impact your service operation. Review what agents, solutions, and other Azure services and sources that store their data in Log Analytics, such as:
 
 * Решения для управления
 * Автоматизация Azure
@@ -30,40 +30,40 @@ ms.locfileid: "73044240"
 * агенты, работающие на компьютерах Windows и Linux в вашей среде;
 * System Center Operations Manager
 
-Операция обратимого удаления удаляет ресурс рабочей области, и все связанные с ним разрешения пользователей нарушаются. Если пользователи связаны с другими рабочими областями, они могут продолжать использовать Log Analytics с другими рабочими областями.
+The soft-delete operation deletes the workspace resource and any associated users’ permission is broken. If users are associated with other workspaces, then they can continue using Log Analytics with those other workspaces.
 
 ## <a name="soft-delete-behavior"></a>Поведение обратимого удаления
 
-Операция удаления рабочей области удаляет ресурс рабочей области диспетчер ресурсов, но его конфигурация и данные хранятся в течение 14 дней, при этом внешний вид рабочей области будет удален. Все агенты и группы управления System Center Operations Manager, настроенные для передачи в рабочую область, остаются в потерянном состоянии во время периода обратимого удаления. Служба дополнительно предоставляет механизм для восстановления удаленной рабочей области, включая ее данные и подключенные ресурсы, по сути, отменяя удаление.
+The workspace delete operation removes the workspace Resource Manager resource, but its configuration and data are kept for 14 days, while giving the appearance that the workspace is deleted. Any agents and System Center Operations Manager management groups configured to report to the workspace remain in an orphaned state during the soft-delete period. The service further provides a mechanism for recovering the deleted workspace including its data and connected resources, essentially undoing the deletion.
 
 > [!NOTE] 
-> Установленные решения и связанные службы, такие как учетная запись службы автоматизации Azure, окончательно удаляются из рабочей области во время удаления и не могут быть восстановлены. Их необходимо перенастроить после операции восстановления, чтобы перевести рабочую область в ранее настроенное состояние.
+> Installed solutions and linked services like your Azure Automation account are permanently removed from the workspace at deletion time and can’t be recovered. These should be reconfigured after the recovery operation to bring the workspace to its previously configured state.
 
-Рабочую область можно удалить с помощью [PowerShell](https://docs.microsoft.com/powershell/module/azurerm.operationalinsights/remove-azurermoperationalinsightsworkspace?view=azurermps-6.13.0), [REST API](https://docs.microsoft.com/rest/api/loganalytics/workspaces/delete)или в [портал Azure](https://portal.azure.com).
+You can delete a workspace using [PowerShell](https://docs.microsoft.com/powershell/module/azurerm.operationalinsights/remove-azurermoperationalinsightsworkspace?view=azurermps-6.13.0), [REST API](https://docs.microsoft.com/rest/api/loganalytics/workspaces/delete), or in the [Azure portal](https://portal.azure.com).
 
-### <a name="delete-workspace-in-azure-portal"></a>Удаление рабочей области в портал Azure
+### <a name="delete-workspace-in-azure-portal"></a>Delete workspace in Azure portal
 
-1. Чтобы войти в систему, перейдите на [портал Azure](https://portal.azure.com). 
+1. To sign in, go to the [Azure portal](https://portal.azure.com). 
 2. На портале Azure щелкните **Все службы**. В списке ресурсов введите **Log Analytics**. Как только вы начнете вводить символы, список отфильтруется соответствующим образом. Выберите рабочие области **Log Analytics**.
-3. В списке рабочих областей Log Analytics выберите рабочую область и щелкните **Удалить** в верхней части средней области.
+3. In the list of Log Analytics workspaces, select a workspace and then click **Delete**  from the top of the middle pane.
    ![Параметр "Удалить" в области свойств рабочей области](media/delete-workspace/log-analytics-delete-workspace.png)
 4. Когда отобразится окно с запросом подтверждения удаления рабочей области, щелкните **Да**.
    ![Подтверждение удаления рабочей области](media/delete-workspace/log-analytics-delete-workspace-confirm.png)
 
-## <a name="recover-workspace"></a>Восстановить рабочую область
+## <a name="recover-workspace"></a>Recover workspace
 
-Если у вас есть разрешения участника для подписки и группы ресурсов, в которых Рабочая область была связана до операции обратимого удаления, ее можно восстановить в течение периода обратимого удаления, включая его данные, конфигурацию и подключенные агенты. После периода обратимого удаления Рабочая область не может быть восстановлена и назначена для постоянного удаления. Имена удаленных рабочих областей сохраняются во время периода обратимого удаления и не могут использоваться при попытке создать новую рабочую область.  
+If you have Contributor permissions to the subscription and resource group where the workspace was associated before the soft-delete operation, you can recover it during its soft-delete period including its data, configuration and connected agents. After the soft-delete period, the workspace is non-recoverable and assigned for permanent deletion. Names of deleted workspaces are preserved during the soft-delete period and can't be used when attempting to create a new workspace.  
 
-Вы можете восстановить рабочую область, повторно создав ее с помощью следующих методов создания рабочей области: [PowerShell](https://docs.microsoft.com/powershell/module/az.operationalinsights/New-AzOperationalInsightsWorkspace) или [REST API]( https://docs.microsoft.com/rest/api/loganalytics/workspaces/createorupdate) , если следующие свойства заполнены сведениями об удаленной рабочей области:
+You can recover a workspace by re-creating it using the following workspace create methods: [PowerShell](https://docs.microsoft.com/powershell/module/az.operationalinsights/New-AzOperationalInsightsWorkspace) or [REST API]( https://docs.microsoft.com/rest/api/loganalytics/workspaces/createorupdate) as long as the following properties are populated with the deleted workspace details:
 
 * Идентификатор подписки
 * Имя группы ресурсов
 * имя рабочей области.
 * Регион
 
-После завершения операции восстановления Рабочая область и все ее данные возвращаются обратно. Решения и связанные службы были окончательно удалены из рабочей области, когда они были удалены, и их следует перенастроить, чтобы перевести рабочую область в ранее настроенное состояние. Некоторые данные могут быть недоступны для запроса после восстановления рабочей области до тех пор, пока не будут повторно установлены связанные решения и их схемы не будут добавлены в рабочую область.
+The workspace and all its data are brought back after the recovery operation. Solutions and linked services were permanently removed from the workspace when it was deleted and these should be reconfigured to bring the workspace to its previously configured state. Some of the data may not be available for query after the workspace recovery until the associated solutions are re-installed and their schemas are added to the workspace.
 
 > [!NOTE]
-> * Восстановление рабочей области не поддерживается в [портал Azure](https://portal.azure.com). 
-> * Повторное создание рабочей области в течение периода обратимого удаления дает указание на то, что это имя рабочей области уже используется. 
+> * Workspace recovery isn't supported in the [Azure portal](https://portal.azure.com). 
+> * Re-creating a workspace during the soft-delete period gives an indication that this workspace name is already in use. 
 > 

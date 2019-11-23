@@ -1,22 +1,22 @@
 ---
-title: Начало работы с проверкой подлинности на основе сертификатов — Azure Active Directory
+title: Certificate-based authentication - Azure Active Directory
 description: Узнайте, как настроить в своей среде аутентификацию на основе сертификата.
 services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: article
-ms.date: 01/15/2018
+ms.date: 11/21/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: annaba
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f57d4615fc80df6c5df9ba295288ad71ae12fa23
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 8bfe306f089a26258ba9c7a07c54925f4540b44b
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60359081"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74382029"
 ---
 # <a name="get-started-with-certificate-based-authentication-in-azure-active-directory"></a>Приступая к работе с аутентификацией на основе сертификата в Azure Active Directory
 
@@ -44,7 +44,7 @@ ms.locfileid: "60359081"
 - Устройство клиента должно иметь доступ хотя бы к одному центру сертификации, выдающему сертификаты клиента.
 - Для аутентификации вашего клиента должен быть выдан сертификат клиента.
 
-## <a name="step-1-select-your-device-platform"></a>Шаг 1. Выбор платформы устройства
+## <a name="step-1-select-your-device-platform"></a>Шаг 1. Выбор платформы устройства
 
 При выборе платформы устройства для начала необходимо ознакомиться со следующими сведениями:
 
@@ -56,7 +56,7 @@ ms.locfileid: "60359081"
 - [Android](active-directory-certificate-based-authentication-android.md)
 - [iOS](active-directory-certificate-based-authentication-ios.md)
 
-## <a name="step-2-configure-the-certificate-authorities"></a>Шаг 2. Настройка центров сертификации
+## <a name="step-2-configure-the-certificate-authorities"></a>Шаг 2. Настройка центров сертификации
 
 Чтобы настроить в Azure Active Directory центры сертификации, для каждого центра сертификации отправьте следующие данные:
 
@@ -96,7 +96,7 @@ ms.locfileid: "60359081"
 
 В качестве первого шага настройки необходимо установить подключение к клиенту. Когда будет установлено подключение к клиенту, вы сможете просмотреть, добавить, удалить или изменить доверенные центры сертификации, определенные в каталоге.
 
-### <a name="connect"></a>Подключение
+### <a name="connect"></a>Подключиться
 
 Чтобы установить подключение к клиенту, используйте командлет [Connect-AzureAD](/powershell/module/azuread/connect-azuread?view=azureadps-2.0):
 
@@ -126,7 +126,7 @@ ms.locfileid: "60359081"
     $c=Get-AzureADTrustedCertificateAuthority
     Remove-AzureADTrustedCertificateAuthority -CertificateAuthorityInformation $c[2]
 
-### <a name="modify"></a>Изменить
+### <a name="modify"></a>Изменение
 
 Чтобы изменить доверенный центр сертификации, используйте командлет [Set-AzureADTrustedCertificateAuthority](/powershell/module/azuread/set-azureadtrustedcertificateauthority?view=azureadps-2.0):
 
@@ -134,7 +134,7 @@ ms.locfileid: "60359081"
     $c[0].AuthorityType=1
     Set-AzureADTrustedCertificateAuthority -CertificateAuthorityInformation $c[0]
 
-## <a name="step-3-configure-revocation"></a>Шаг 3. Настройка отзыва
+## <a name="step-3-configure-revocation"></a>Шаг 3. Настройка отзыва
 
 Чтобы отозвать сертификат клиента, Azure Active Directory извлекает список отзыва сертификатов (CRL) из URL-адресов, переданных вместе с информацией центра сертификации, и кэширует его. Метка времени последней публикации (свойство**Дата вступления в силу** ) в списке отзыва сертификатов обеспечивает допустимость этого списка. Список отзыва сертификатов периодически опрашивается для отзыва доступа к сертификатам, которые числятся в этом списке.
 
@@ -162,7 +162,7 @@ ms.locfileid: "60359081"
 
 Задаваемая дата должна быть в будущем. Если дата не в будущем, свойство **StsRefreshTokensValidFrom** не будет задано. Если дата в будущем, для **StsRefreshTokensValidFrom** задается актуальное время (не дата, указанная командой Set-MsolUser).
 
-## <a name="step-4-test-your-configuration"></a>Шаг 4. Тестирование конфигурации
+## <a name="step-4-test-your-configuration"></a>Шаг 4. Тестирование конфигурации
 
 ### <a name="testing-your-certificate"></a>Тестирование сертификата
 

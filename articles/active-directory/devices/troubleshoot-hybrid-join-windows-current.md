@@ -1,46 +1,46 @@
 ---
-title: Устранение неполадок с гибридными Azure Active Directory присоединенные устройства — Azure Active Directory
+title: Troubleshooting hybrid Azure Active Directory joined devices
 description: Устранение неполадок на устройствах под управлением Windows 10 и Windows Server 2016 с гибридным присоединением к Azure Active Directory .
 services: active-directory
 ms.service: active-directory
 ms.subservice: devices
 ms.topic: troubleshooting
-ms.date: 06/28/2019
+ms.date: 11/21/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jairoc
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 49658e3e57748ffb7542508530940aa5331f5db1
-ms.sourcegitcommit: a7a9d7f366adab2cfca13c8d9cbcf5b40d57e63a
+ms.openlocfilehash: 932540c830940ec18c439352d54f671db7387b94
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71162405"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74379162"
 ---
-# <a name="troubleshooting-hybrid-azure-active-directory-joined-devices"></a>Устранение неполадок гибридных Azure Active Directory присоединенных устройств 
+# <a name="troubleshooting-hybrid-azure-active-directory-joined-devices"></a>Troubleshooting hybrid Azure Active Directory joined devices 
 
-Содержимое этой статьи применимо к устройствам под Windows 10 или Windows Server 2016.
+The content of this article is applicable to devices running Windows 10 or Windows Server 2016.
 
-Сведения о других клиентах Windows см. в статье [Устранение неполадок гибридных Azure Active Directory Соединенных с устройствами нижнего уровня](troubleshoot-hybrid-join-windows-legacy.md).
+For other Windows clients, see the article [Troubleshooting hybrid Azure Active Directory joined down-level devices](troubleshoot-hybrid-join-windows-legacy.md).
 
 В этой статье предполагается, что вы [настроили гибридное присоединение устройств к Azure Active Directory](hybrid-azuread-join-plan.md) для поддержки следующих сценариев:
 
-- Условный доступ на основе устройств
+- Device-based Conditional Access
 - [Корпоративное перемещение параметров](../active-directory-windows-enterprise-state-roaming-overview.md)
 - [Настройка Windows Hello для бизнеса](../active-directory-azureadjoin-passport-deployment.md)
 
-В этом документе содержатся рекомендации по устранению потенциальных проблем. 
+This document provides troubleshooting guidance to resolve potential issues. 
 
 Для Windows 10 и Windows Server 2016 гибридное присоединение к Azure Active Directory поддерживает обновление Windows 10 от ноября 2015 г.
 
-## <a name="troubleshoot-join-failures"></a>Устранение ошибок при присоединении
+## <a name="troubleshoot-join-failures"></a>Troubleshoot join failures
 
-### <a name="step-1-retrieve-the-join-status"></a>Шаг 1. Получение сведений о состоянии присоединения 
+### <a name="step-1-retrieve-the-join-status"></a>Шаг 1. Получение сведений о состоянии присоединения 
 
 **Для получения сведений о состоянии присоединения выполните следующие действия:**
 
-1. Откройте командную строку от имени администратора.
+1. Open a command prompt as an administrator
 2. Введите `dsregcmd /status`.
 
 ```
@@ -88,30 +88,30 @@ WamDefaultAuthority: organizations
          AzureAdPrt: YES
 ```
 
-### <a name="step-2-evaluate-the-join-status"></a>Шаг 2. Анализ состояния присоединения 
+### <a name="step-2-evaluate-the-join-status"></a>Шаг 2. Анализ состояния присоединения 
 
 Просмотрите следующие поля и убедитесь, что для них заданы ожидаемые значения.
 
-#### <a name="domainjoined--yes"></a>DomainJoined: ДА  
+#### <a name="domainjoined--yes"></a>DomainJoined: YES  
 
 Это поле показывает, присоединено ли устройство к локальному каталогу Active Directory или нет. Если отображается значение **NO**, то устройство не может выполнить гибридное присоединение к Azure AD.  
 
-#### <a name="workplacejoined--no"></a>WorkplaceJoined: НЕТ  
+#### <a name="workplacejoined--no"></a>WorkplaceJoined: NO  
 
 Это поле показывает, зарегистрировано ли устройство в Azure AD в качестве личного устройства (с пометкой *Присоединено к рабочей области*). Этот параметр должен иметь значение **NO** для присоединенных к домену компьютеров, на которых также настроено гибридное присоединение к Azure AD. Если этот параметр имеет значение **YES**, то рабочая или учебная учетная запись была добавлена до завершения гибридного присоединения к Azure AD. В таком случае при использовании версии юбилейного обновления Windows 10 (1607) учетная запись игнорируется.
 
-#### <a name="azureadjoined--yes"></a>AzureAdJoined : ДА  
+#### <a name="azureadjoined--yes"></a>AzureAdJoined: YES  
 
 Это поле показывает, присоединено ли устройство к Azure AD. Если отображается значение **NO**, то присоединение к Azure AD еще не завершено. 
 
-Перейдите к дальнейшим действиям для дальнейшего устранения неполадок.
+Proceed to next steps for further troubleshooting.
 
-### <a name="step-3-find-the-phase-in-which-join-failed-and-the-errorcode"></a>Шаг 3. Найти этап, в котором произошел сбой соединения, и код ошибки
+### <a name="step-3-find-the-phase-in-which-join-failed-and-the-errorcode"></a>Step 3: Find the phase in which join failed and the errorcode
 
-#### <a name="windows-10-1803-and-above"></a>Windows 10 1803 и более поздние версии
+#### <a name="windows-10-1803-and-above"></a>Windows 10 1803 and above
 
-Подраздел "Предыдущая регистрация" находится в разделе "диагностические данные" в выходных данных состояния объединения. Этот раздел отображается только в том случае, если устройство присоединено к домену и не может выполнить гибридное присоединение к Azure AD.
-Поле "фаза ошибки" обозначает фазу сбоя соединения, когда "код ошибки клиента" обозначает код ошибки операции соединения.
+Look for 'Previous Registration' subsection in the 'Diagnostic Data' section of the join status output. This section is displayed only if the device is domain joined and is unable to hybrid Azure AD join.
+The 'Error Phase' field denotes the phase of the join failure while 'Client ErrorCode' denotes the error code of the Join operation.
 
 ```
 +----------------------------------------------------------------------+
@@ -126,62 +126,62 @@ WamDefaultAuthority: organizations
 +----------------------------------------------------------------------+
 ```
 
-#### <a name="older-windows-10-versions"></a>Более старые версии Windows 10
+#### <a name="older-windows-10-versions"></a>Older Windows 10 versions
 
-Используйте журналы Просмотр событий, чтобы указать этап и код ошибки для ошибок соединения.
+Use Event Viewer logs to locate the phase and error code for the join failures.
 
-1. Откройте журналы событий **регистрации пользователей и устройств** в средстве просмотра событий. Находится в **папке Applications and Services журнал** > **регистрации пользователей и устройств** **Microsoft** > **Windows** > 
-2. Найдите события со следующими идентификаторами eventID 304, 305, 307.
+1. Open the **User Device Registration** event logs in event viewer. Located under **Applications and Services Log** > **Microsoft** > **Windows** > **User Device Registration**
+2. Look for events with the following eventIDs 304, 305, 307.
 
-![Событие журнала сбоев](./media/troubleshoot-hybrid-join-windows-current/1.png)
+![Failure Log Event](./media/troubleshoot-hybrid-join-windows-current/1.png)
 
-![Событие журнала сбоев](./media/troubleshoot-hybrid-join-windows-current/2.png)
+![Failure Log Event](./media/troubleshoot-hybrid-join-windows-current/2.png)
 
-### <a name="step-4-check-for-possible-causes-and-resolutions-from-the-lists-below"></a>Шаг 4. Проверьте возможные причины и способы их устранения в списках ниже.
+### <a name="step-4-check-for-possible-causes-and-resolutions-from-the-lists-below"></a>Step 4: Check for possible causes and resolutions from the lists below
 
-#### <a name="pre-check-phase"></a>Этап предварительной проверки
+#### <a name="pre-check-phase"></a>Pre-check phase
 
-Возможные причины сбоя:
+Possible reasons for failure:
 
-- Устройство не имеет линии анализа контроллера домена.
-   - Устройство должно находиться в внутренней сети организации или в VPN с сетевым представлением локального контроллера домена Active Directory (AD).
+- Device has no line of sight to the Domain controller.
+   - The device must be on the organization’s internal network or on VPN with network line of sight to an on-premises Active Directory (AD) domain controller.
 
-#### <a name="discover-phase"></a>Фаза обнаружения
+#### <a name="discover-phase"></a>Discover phase
 
-Возможные причины сбоя:
+Possible reasons for failure:
 
-- Объект точки подключения службы (SCP) неправильно настроен или не может прочитать объект SCP из контроллера домена.
-   - В лесу AD требуется допустимый объект SCP, к которому принадлежит устройство, которое указывает на проверенное доменное имя в Azure AD.
-   - Подробные сведения можно найти в разделе [Настройка точки подключения службы](hybrid-azuread-join-federated-domains.md#configure-hybrid-azure-ad-join).
-- Не удалось подключиться и получить метаданные обнаружения из конечной точки обнаружения.
-   - Устройство должно иметь доступ `https://enterpriseregistration.windows.net`к, в контексте системы, для обнаружения конечных точек регистрации и авторизации. 
-   - Если в локальной среде требуется исходящий прокси-сервер, администратор должен убедиться, что учетная запись компьютера устройства может обнаруживать и автоматически проходить проверку подлинности для исходящего прокси-сервера.
-- Не удалось подключиться к конечной точке пользователя и выполнить обнаружение области. (Только Windows 10 версии 1809 и более поздние)
-   - Устройство должно иметь доступ `https://login.microsoftonline.com`к контексту системы, чтобы выполнить обнаружение области для проверенного домена и определить тип домена (управляемый/федеративный).
-   - Если в локальной среде требуется исходящий прокси-сервер, он должен гарантировать, что контекст системы на устройстве сможет обнаружить и автоматически пройти проверку подлинности для исходящего прокси-сервера.
+- Service Connection Point (SCP) object misconfigured/unable to read SCP object from DC.
+   - A valid SCP object is required in the AD forest, to which the device belongs, that points to a verified domain name in Azure AD.
+   - Details can be found in the section [Configure a Service Connection Point](hybrid-azuread-join-federated-domains.md#configure-hybrid-azure-ad-join).
+- Failure to connect and fetch the discovery metadata from the discovery endpoint.
+   - The device should be able to access `https://enterpriseregistration.windows.net`, in the SYSTEM context, to discover the registration and authorization endpoints. 
+   - If the on-premises environment requires an outbound proxy, the IT admin must ensure that the computer account of the device is able to discover and silently authenticate to the outbound proxy.
+- Failure to connect to user realm endpoint and perform realm discovery. (Windows 10 version 1809 and later only)
+   - The device should be able to access `https://login.microsoftonline.com`, in the SYSTEM context, to perform realm discovery for the verified domain and determine the domain type (managed/federated).
+   - If the on-premises environment requires an outbound proxy, the IT admin must ensure that the SYSTEM context on the device is able to discover and silently authenticate to the outbound proxy.
 
-**Распространенные коды ошибок:**
+**Common error codes:**
 
 - **DSREG_AUTOJOIN_ADCONFIG_READ_FAILED** (0x801c001d/-2145648611)
-   - Причина: Не удалось прочитать объект SCP и получить сведения о клиенте Azure AD.
-   - Способы устранения: См. раздел [Настройка точки подключения службы](hybrid-azuread-join-federated-domains.md#configure-hybrid-azure-ad-join).
+   - Reason: Unable to read the SCP object and get the Azure AD tenant information.
+   - Resolution: Refer to the section [Configure a Service Connection Point](hybrid-azuread-join-federated-domains.md#configure-hybrid-azure-ad-join).
 - **DSREG_AUTOJOIN_DISC_FAILED** (0x801c0021/-2145648607)
-   - Причина: Сбой общего обнаружения. Не удалось получить метаданные обнаружения из DRS.
-   - Способы устранения: Найдите подошибку ниже для дальнейшего изучения.
+   - Reason: Generic Discovery failure. Failed to get the discovery metadata from DRS.
+   - Resolution: Find the suberror below to investigate further.
 - **DSREG_AUTOJOIN_DISC_WAIT_TIMEOUT**  (0x801c001f/-2145648609)
-   - Причина: Время ожидания операции истекло при выполнении обнаружения.
-   - Способы устранения: Убедитесь, `https://enterpriseregistration.windows.net` что доступен в контексте системы. Дополнительные сведения см. в разделе [требования к сетевым подключениям](hybrid-azuread-join-managed-domains.md#prerequisites).
+   - Reason: Operation timed out while performing Discovery.
+   - Resolution: Ensure that `https://enterpriseregistration.windows.net` is accessible in the SYSTEM context. For more information, see the section [Network connectivity requirements](hybrid-azuread-join-managed-domains.md#prerequisites).
 - **DSREG_AUTOJOIN_USERREALM_DISCOVERY_FAILED** (0x801c0021/-2145648611)
-   - Причина: Сбой обнаружения универсальной области. Не удалось определить тип домена (управляемый или федеративный) от службы STS. 
-   - Способы устранения: Найдите подошибку ниже для дальнейшего изучения.
+   - Reason: Generic Realm Discovery failure. Failed to determine domain type (managed/federated) from STS. 
+   - Resolution: Find the suberror below to investigate further.
 
-**Общие коды ошибок:**
+**Common suberror codes:**
 
-Чтобы найти код подошибки для кода ошибки обнаружения, используйте один из следующих методов.
+To find the suberror code for the discovery error code, use one of the following methods.
 
-##### <a name="windows-10-1803-and-above"></a>Windows 10 1803 и более поздние версии
+##### <a name="windows-10-1803-and-above"></a>Windows 10 1803 and above
 
-Найдите "DRS Discovery Test" в разделе "диагностические данные" в выходных данных состояния объединения. Этот раздел отображается только в том случае, если устройство присоединено к домену и не может выполнить гибридное присоединение к Azure AD.
+Look for 'DRS Discovery Test' in the 'Diagnostic Data' section of the join status output. This section is displayed only if the device is domain joined and is unable to hybrid Azure AD join.
 
 ```
 +----------------------------------------------------------------------+
@@ -201,112 +201,112 @@ WamDefaultAuthority: organizations
 +----------------------------------------------------------------------+
 ```
 
-##### <a name="older-windows-10-versions"></a>Более старые версии Windows 10
+##### <a name="older-windows-10-versions"></a>Older Windows 10 versions
 
-Используйте журналы Просмотр событий, чтобы указать этап и код ошибки для ошибок соединения.
+Use Event Viewer logs to locate the phase and errorcode for the join failures.
 
-1. Откройте журналы событий **регистрации пользователей и устройств** в средстве просмотра событий. Находится в **папке Applications and Services журнал** > **регистрации пользователей и устройств** **Microsoft** > **Windows** > 
-2. Ищите события со следующими идентификаторами событий (eventID) 201
+1. Open the **User Device Registration** event logs in event viewer. Located under **Applications and Services Log** > **Microsoft** > **Windows** > **User Device Registration**
+2. Look for events with the following eventIDs 201
 
-![Событие журнала сбоев](./media/troubleshoot-hybrid-join-windows-current/5.png)
+![Failure Log Event](./media/troubleshoot-hybrid-join-windows-current/5.png)
 
-###### <a name="network-errors"></a>Сетевые ошибки
+###### <a name="network-errors"></a>Network errors
 
-- **WININET_E_CANNOT_CONNECT** (0x80072EFD/-2147012867)
-   - Причина: Не удалось установить подключение к серверу
-   - Способы устранения: Обеспечьте сетевое подключение к необходимым ресурсам Майкрософт. Дополнительные сведения см. в статье [требования к сетевому подключению](hybrid-azuread-join-managed-domains.md#prerequisites).
+- **WININET_E_CANNOT_CONNECT** (0x80072efd/-2147012867)
+   - Reason: Connection with the server could not be established
+   - Resolution: Ensure network connectivity to the required Microsoft resources. For more information, see [Network connectivity requirements](hybrid-azuread-join-managed-domains.md#prerequisites).
 - **WININET_E_TIMEOUT** (0x80072ee2/-2147012894)
-   - Причина: Общее время ожидания сети.
-   - Способы устранения: Обеспечьте сетевое подключение к необходимым ресурсам Майкрософт. Дополнительные сведения см. в статье [требования к сетевому подключению](hybrid-azuread-join-managed-domains.md#prerequisites).
-- **WININET_E_DECODING_FAILED** (0х80072f8f/-2147012721)
-   - Причина: Сетевому стеку не удалось декодировать ответ сервера.
-   - Способы устранения: Убедитесь, что сетевой прокси не мешает и не изменяет ответ сервера.
+   - Reason: General network timeout.
+   - Resolution: Ensure network connectivity to the required Microsoft resources. For more information, see [Network connectivity requirements](hybrid-azuread-join-managed-domains.md#prerequisites).
+- **WININET_E_DECODING_FAILED** (0x80072f8f/-2147012721)
+   - Reason: Network stack was unable to decode the response from the server.
+   - Resolution: Ensure that network proxy is not interfering and modifying the server response.
 
-###### <a name="http-errors"></a>Ошибки HTTP
+###### <a name="http-errors"></a>HTTP errors
 
 - **DSREG_DISCOVERY_TENANT_NOT_FOUND** (0x801c003a/-2145648582)
-   - Причина: Объект SCP настроен с неправильным ИДЕНТИФИКАТОРом клиента. Или в клиенте не найдены активные подписки.
-   - Способы устранения: Убедитесь, что для объекта SCP настроен правильный идентификатор клиента Azure AD и активные подписки или он есть в клиенте.
+   - Reason: SCP object configured with wrong tenant ID. Or no active subscriptions were found in the tenant.
+   - Resolution: Ensure SCP object is configured with the correct Azure AD tenant ID and active subscriptions or present in the tenant.
 - **DSREG_SERVER_BUSY** (0x801c0025/-2145648603)
-   - Причина: HTTP 503 с сервера DRS.
-   - Способы устранения: Сервер сейчас недоступен. будущие попытки присоединиться к серверу, скорее всего, будут выполнены снова.
+   - Reason: HTTP 503 from DRS server.
+   - Resolution: Server is currently unavailable. future join attempts will likely succeed once server is back online.
 
-###### <a name="other-errors"></a>Другие ошибки
+###### <a name="other-errors"></a>Other errors
 
 - **E_INVALIDDATA** (0x8007000d/-2147024883)
-   - Причина: Не удалось проанализировать JSON ответа сервера. Вероятно, из-за возврата прокси-сервера HTTP 200 на страницу проверки подлинности HTML.
-   - Способы устранения: Если в локальной среде требуется исходящий прокси-сервер, он должен гарантировать, что контекст системы на устройстве сможет обнаружить и автоматически пройти проверку подлинности для исходящего прокси-сервера.
+   - Reason: Server response JSON couldn't be parsed. Likely due to proxy returning HTTP 200 with an HTML auth page.
+   - Resolution: If the on-premises environment requires an outbound proxy, the IT admin must ensure that the SYSTEM context on the device is able to discover and silently authenticate to the outbound proxy.
 
-#### <a name="authentication-phase"></a>Этап проверки подлинности
+#### <a name="authentication-phase"></a>Authentication phase
 
-Применяется только для федеративных учетных записей домена.
+Applicable only for federated domain accounts.
 
-Причины сбоя:
+Reasons for failure:
 
-- Не удалось автоматически получить маркер доступа для ресурса DRS.
-   - Устройства Windows 10 получают токен проверки подлинности из службы федерации, используя встроенную проверку подлинности Windows для активной конечной точки WS-Trust. Сведения. [Конфигурация служба федерации](hybrid-azuread-join-manual.md##set-up-issuance-of-claims)
+- Unable to get an Access token silently for DRS resource.
+   - Windows 10 devices acquire auth token from the federation service using Integrated Windows Authentication to an active WS-Trust endpoint. Details: [Federation Service Configuration](hybrid-azuread-join-manual.md##set-up-issuance-of-claims)
 
-**Распространенные коды ошибок:**
+**Common error codes:**
 
-Используйте журналы Просмотр событий, чтобы узнать код ошибки, код ошибки, код ошибки сервера и сообщение об ошибке сервера.
+Use Event Viewer logs to locate the error code, suberror code, server error code, and server error message.
 
-1. Откройте журналы событий **регистрации пользователей и устройств** в средстве просмотра событий. Находится в **папке Applications and Services журнал** > **регистрации пользователей и устройств** **Microsoft** > **Windows** > 
-2. Найдите события со следующим кодом eventID 305.
+1. Open the **User Device Registration** event logs in event viewer. Located under **Applications and Services Log** > **Microsoft** > **Windows** > **User Device Registration**
+2. Look for events with the following eventID 305
 
-![Событие журнала сбоев](./media/troubleshoot-hybrid-join-windows-current/3.png)
+![Failure Log Event](./media/troubleshoot-hybrid-join-windows-current/3.png)
 
 ##### <a name="configuration-errors"></a>Ошибки конфигурации
 
 - **ERROR_ADAL_PROTOCOL_NOT_SUPPORTED** (0xcaa90017/-894894057)
-   - Причина: Протокол проверки подлинности не является WS-Trust.
-   - Способы устранения: Локальный поставщик удостоверений должен поддерживать WS-Trust. 
+   - Reason: Authentication protocol is not WS-Trust.
+   - Resolution: The on-premises identity provider must support WS-Trust 
 - **ERROR_ADAL_FAILED_TO_PARSE_XML** (0xcaa9002c/-894894036)
-   - Причина: Локальная служба федерации не вернула XML-ответ.
-   - Способы устранения: Убедитесь, что конечная точка обмена метаданными возвращает допустимый XML-код. Убедитесь, что прокси-сервер не мешает и не возвращает ответы, отличные от XML.
+   - Reason: On-premises federation service did not return an XML response.
+   - Resolution: Ensure MEX endpoint is returning a valid XML. Ensure proxy is not interfering and returning non-xml responses.
 - **ERROR_ADAL_COULDNOT_DISCOVER_USERNAME_PASSWORD_ENDPOINT** (0xcaa90023/-894894045)
-   - Причина: Не удалось обнаружить конечную точку для проверки подлинности имени пользователя и пароля.
-   - Способы устранения: Проверьте параметры локального поставщика удостоверений. Убедитесь, что конечные точки WS-Trust включены и что ответ обмена метаданными содержит эти правильные конечные точки.
+   - Reason: Could not discover endpoint for username/password authentication.
+   - Resolution: Check the on-premises identity provider settings. Ensure that the WS-Trust endpoints are enabled and ensure the MEX response contains these correct endpoints.
 
-##### <a name="network-errors"></a>Сетевые ошибки
+##### <a name="network-errors"></a>Network errors
 
 - **ERROR_ADAL_INTERNET_TIMEOUT** (0xcaa82ee2/-894947614)
-   - Причина: Общее время ожидания сети.
-   - Способы устранения: Убедитесь, `https://login.microsoftonline.com` что доступен в контексте системы. Убедитесь, что локальный поставщик удостоверений доступен в СИСТЕМном контексте. Дополнительные сведения см. в статье [требования к сетевому подключению](hybrid-azuread-join-managed-domains.md#prerequisites).
+   - Reason: General network timeout.
+   - Resolution: Ensure that `https://login.microsoftonline.com` is accessible in the SYSTEM context. Ensure the on-premises identity provider is accessible in the SYSTEM context. For more information, see [Network connectivity requirements](hybrid-azuread-join-managed-domains.md#prerequisites).
 - **ERROR_ADAL_INTERNET_CONNECTION_ABORTED** (0xcaa82efe/-894947586)
-   - Причина: Подключение к конечной точке проверки подлинности прервано.
-   - Способы устранения: Повторите попытку через некоторое время или попробуйте присоединиться к альтернативному стабильному сетевому расположению.
+   - Reason: Connection with the auth endpoint was aborted.
+   - Resolution: Retry after sometime or try joining from an alternate stable network location.
 - **ERROR_ADAL_INTERNET_SECURE_FAILURE** (0xcaa82f8f/-894947441)
-   - Причина: Не удалось проверить сертификат SSL (SSL), отправленный сервером.
-   - Способы устранения: Проверьте отклонение времени клиента. Повторите попытку через некоторое время или попробуйте присоединиться к альтернативному стабильному сетевому расположению. 
+   - Reason: The Secure Sockets Layer (SSL) certificate sent by the server could not be validated.
+   - Resolution: Check the client time skew. Retry after sometime or try joining from an alternate stable network location. 
 - **ERROR_ADAL_INTERNET_CANNOT_CONNECT** (0xcaa82efd/-894947587)
-   - Причина: `https://login.microsoftonline.com` Сбой при попытке подключения.
-   - Способы устранения: Проверьте сетевое подключение `https://login.microsoftonline.com`к.
+   - Reason: The attempt to connect to `https://login.microsoftonline.com` failed.
+   - Resolution: Check network connection to `https://login.microsoftonline.com`.
 
-##### <a name="other-errors"></a>Другие ошибки
+##### <a name="other-errors"></a>Other errors
 
 - **ERROR_ADAL_SERVER_ERROR_INVALID_GRANT** (0xcaa20003/-895352829)
-   - Причина: Токен SAML от локального поставщика удостоверений не был принят Azure AD.
-   - Способы устранения: Проверьте параметры сервера федерации. Найдите код ошибки сервера в журналах проверки подлинности.
+   - Reason: SAML token from the on-premises identity provider was not accepted by Azure AD.
+   - Resolution: Check the federation server settings. Look for the server error code in the authentication logs.
 - **ERROR_ADAL_WSTRUST_REQUEST_SECURITYTOKEN_FAILED** (0xcaa90014/-894894060)
-   - Причина: Ответ сервера WS-Trust сообщил об ошибке сбоя, и ему не удалось получить утверждение
-   - Способы устранения: Проверьте параметры сервера федерации. Найдите код ошибки сервера в журналах проверки подлинности.
+   - Reason: Server WS-Trust response reported fault exception and it failed to get assertion
+   - Resolution: Check the federation server settings. Look for the server error code in the authentication logs.
 - **ERROR_ADAL_WSTRUST_TOKEN_REQUEST_FAIL** (0xcaa90006/-894894074)
-   - Причина: При попытке получить маркер доступа из конечной точки токена получена ошибка.
-   - Способы устранения: Найдите основную ошибку в журнале ADAL. 
+   - Reason: Received an error when trying to get access token from the token endpoint.
+   - Resolution: Look for the underlying error in the ADAL log. 
 - **ERROR_ADAL_OPERATION_PENDING** (0xcaa1002d/-895418323)
-   - Причина: Общая ошибка ADAL
-   - Способы устранения: Найдите код ошибки или код ошибки сервера из журналов проверки подлинности.
+   - Reason: General ADAL failure
+   - Resolution: Look for the suberror code or server error code from the authentication logs.
     
-#### <a name="join-phase"></a>Фаза присоединения
+#### <a name="join-phase"></a>Join Phase
 
-Причины сбоя:
+Reasons for failure:
 
-Найдите тип регистрации и найдите код ошибки из приведенного ниже списка.
+Find the registration type and look for the error code from the list below.
 
-#### <a name="windows-10-1803-and-above"></a>Windows 10 1803 и более поздние версии
+#### <a name="windows-10-1803-and-above"></a>Windows 10 1803 and above
 
-Подраздел "Предыдущая регистрация" находится в разделе "диагностические данные" в выходных данных состояния объединения. Этот раздел отображается только в том случае, если устройство присоединено к домену и не может выполнить гибридное присоединение к Azure AD.
-Поле "тип регистрации" обозначает тип выполненного объединения.
+Look for 'Previous Registration' subsection in the 'Diagnostic Data' section of the join status output. This section is displayed only if the device is domain joined and is unable to hybrid Azure AD join.
+'Registration Type' field denotes the type of join performed.
 
 ```
 +----------------------------------------------------------------------+
@@ -321,94 +321,94 @@ WamDefaultAuthority: organizations
 +----------------------------------------------------------------------+
 ```
 
-#### <a name="older-windows-10-versions"></a>Более старые версии Windows 10
+#### <a name="older-windows-10-versions"></a>Older Windows 10 versions
 
-Используйте журналы Просмотр событий, чтобы указать этап и код ошибки для ошибок соединения.
+Use Event Viewer logs to locate the phase and errorcode for the join failures.
 
-1. Откройте журналы событий **регистрации пользователей и устройств** в средстве просмотра событий. Находится в **папке Applications and Services журнал** > **регистрации пользователей и устройств** **Microsoft** > **Windows** > 
-2. Ищите события со следующими идентификаторами событий (eventID) 204
+1. Open the **User Device Registration** event logs in event viewer. Located under **Applications and Services Log** > **Microsoft** > **Windows** > **User Device Registration**
+2. Look for events with the following eventIDs 204
 
-![Событие журнала сбоев](./media/troubleshoot-hybrid-join-windows-current/4.png)
+![Failure Log Event](./media/troubleshoot-hybrid-join-windows-current/4.png)
 
-##### <a name="http-errors-returned-from-drs-server"></a>Ошибки HTTP, возвращенные с сервера DRS
+##### <a name="http-errors-returned-from-drs-server"></a>HTTP errors returned from DRS server
 
 - **DSREG_E_DIRECTORY_FAILURE** (0x801c03f2/-2145647630)
-   - Причина: Получен ответ об ошибке от DRS с ErrorCode: Счетчику регистраций
-   - Способы устранения: Возможные причины и способы их устранения см. в коде ошибки сервера.
+   - Reason: Received an error response from DRS with ErrorCode: "DirectoryError"
+   - Resolution: Refer to the server error code for possible reasons and resolutions.
 - **DSREG_E_DEVICE_AUTHENTICATION_ERROR** (0x801c0002/-2145648638)
-   - Причина: Получен ответ об ошибке от DRS с ErrorCode: "Аусентикатионеррор" и Еррорсубкоде не являются "Девиценотфаунд". 
-   - Способы устранения: Возможные причины и способы их устранения см. в коде ошибки сервера.
+   - Reason: Received an error response from DRS with ErrorCode: "AuthenticationError" and ErrorSubCode is NOT "DeviceNotFound". 
+   - Resolution: Refer to the server error code for possible reasons and resolutions.
 - **DSREG_E_DEVICE_INTERNALSERVICE_ERROR** (0x801c0006/-2145648634)
-   - Причина: Получен ответ об ошибке от DRS с ErrorCode: Счетчику регистраций
-   - Способы устранения: Возможные причины и способы их устранения см. в коде ошибки сервера.
+   - Reason: Received an error response from DRS with ErrorCode: "DirectoryError"
+   - Resolution: Refer to the server error code for possible reasons and resolutions.
 
-##### <a name="tpm-errors"></a>Ошибки TPM
+##### <a name="tpm-errors"></a>TPM errors
 
 - **NTE_BAD_KEYSET** (0x80090016/-2146893802)
-   - Причина: Операция TPM завершилась ошибкой или недопустима
-   - Способы устранения: Скорее всего, из-за неправильного образа Sysprep. Убедитесь, что компьютер, с которого был создан образ Sysprep, не присоединен к Azure AD, присоединению гибридной службы Azure AD или зарегистрированному Azure AD.
+   - Reason: TPM operation failed or was invalid
+   - Resolution: Likely due to a bad sysprep image. Ensure the machine from which the sysprep image was created is not Azure AD joined, hybrid Azure AD joined, or Azure AD registered.
 - **TPM_E_PCP_INTERNAL_ERROR** (0x80290407/-2144795641)
-   - Причина: Общая ошибка доверенного платформенного модуля. 
-   - Способы устранения: Отключить доверенный платформенный модуль на устройствах с этой ошибкой. Windows 10 версии 1809 и выше автоматически обнаруживает сбои доверенного платформенного модуля и выполняет гибридное присоединение к Azure AD без использования доверенного платформенного модуля.
+   - Reason: Generic TPM error. 
+   - Resolution: Disable TPM on devices with this error. Windows 10 version 1809 and higher automatically detects TPM failures and completes hybrid Azure AD join without using the TPM.
 - **TPM_E_NOTFIPS** (0x80280036/-2144862154)
-   - Причина: В настоящее время доверенный платформенный модуль в режиме FIPS не поддерживается.
-   - Способы устранения: Отключить доверенный платформенный модуль на устройствах с этой ошибкой. Windows 1809 автоматически обнаруживает сбои доверенного платформенного модуля и выполняет гибридное присоединение к Azure AD без использования доверенного платформенного модуля.
+   - Reason: TPM in FIPS mode not currently supported.
+   - Resolution: Disable TPM on devices with this error. Windows 1809 automatically detects TPM failures and completes hybrid Azure AD join without using the TPM.
 - **NTE_AUTHENTICATION_IGNORED** (0x80090031/-2146893775)
-   - Причина: TPM заблокирован.
-   - Способы устранения: Это временная проблема. Дождитесь периода cooldown. Попытки присоединиться через некоторое время. Дополнительные сведения можно найти в статье [основы TPM](https://docs.microsoft.com/windows/security/information-protection/tpm/tpm-fundamentals#anti-hammering)
+   - Reason: TPM locked out.
+   - Resolution: Transient error. Wait for the cooldown period. Join attempt after some time should succeed. More Information can be found in the article [TPM fundamentals](https://docs.microsoft.com/windows/security/information-protection/tpm/tpm-fundamentals#anti-hammering)
 
-##### <a name="network-errors"></a>Ошибки сети
+##### <a name="network-errors"></a>Network Errors
 
 - **WININET_E_TIMEOUT** (0x80072ee2/-2147012894)
-   - Причина: Общее время ожидания в сети при попытке регистрации устройства по адресу DRS
-   - Способы устранения: Проверьте сетевое подключение `https://enterpriseregistration.windows.net`к.
-- **WININET_E_NAME_NOT_RESOLVED** (0x80072EE7/-2147012889)
-   - Причина: Не удалось разрешить имя или адрес сервера.
-   - Способы устранения: Проверьте сетевое подключение `https://enterpriseregistration.windows.net`к. Убедитесь, что разрешение DNS для имени узла является точным в отношении устройства чтения/записи и на устройстве.
-- **WININET_E_CONNECTION_ABORTED** (0x80072EFE/-2147012866)
-   - Причина: Соединение с сервером было аварийно завершено.
-   - Способы устранения: Повторите попытку через некоторое время или попробуйте присоединиться к альтернативному стабильному сетевому расположению.
+   - Reason: General network time out trying to register the device at DRS
+   - Resolution: Check network connectivity to `https://enterpriseregistration.windows.net`.
+- **WININET_E_NAME_NOT_RESOLVED** (0x80072ee7/-2147012889)
+   - Reason: The server name or address could not be resolved.
+   - Resolution: Check network connectivity to `https://enterpriseregistration.windows.net`. Ensure DNS resolution for the hostname is accurate in the n/w and on the device.
+- **WININET_E_CONNECTION_ABORTED** (0x80072efe/-2147012866)
+   - Reason: The connection with the server was terminated abnormally.
+   - Resolution: Retry after sometime or try joining from an alternate stable network location.
 
-##### <a name="federated-join-server-errors"></a>Ошибки федеративных присоединение к серверу
+##### <a name="federated-join-server-errors"></a>Federated join server Errors
 
-| Код ошибки сервера | Сообщение об ошибке сервера | Возможные причины | Разрешение |
+| Server error code | Server error message | Possible reasons | Разрешение |
 | --- | --- | --- | --- |
-| Счетчику регистраций | Ваш запрос регулируется временно. Повторите попытку через 300 секунд. | Ожидаемая ошибка. Возможно, из-за выполнения нескольких запросов на регистрацию в ходе быстрой успешной операции. | Повторить попытку Join после cooldown периода |
+| DirectoryError | Your request is throttled temporarily. Please try after 300 seconds. | Expected error. Possibly due to making multiple registration requests in quick succession. | Retry join after the cooldown period |
 
-##### <a name="sync-join-server-errors"></a>Ошибки синхронизации присоединение к серверу
+##### <a name="sync-join-server-errors"></a>Sync join server Errors
 
-| Код ошибки сервера | Сообщение об ошибке сервера | Возможные причины | Разрешение |
+| Server error code | Server error message | Possible reasons | Разрешение |
 | --- | --- | --- | --- |
-| Счетчику регистраций | AADSTS90002: Клиент <UUID> не найден. Эта ошибка может возникать, если для клиента нет активных подписок. Обратитесь к администратору подписки. | Недопустимый идентификатор клиента в объекте SCP | Убедитесь, что объект SCP настроен с правильным ИДЕНТИФИКАТОРом клиента Azure AD и активными подписками и содержится в клиенте. |
-| Счетчику регистраций | Объект устройства с указанным ИДЕНТИФИКАТОРом не найден. | Ожидаемая ошибка при синхронизации соединений. Объект устройства не синхронизирован из AD в Azure AD | Дождитесь завершения синхронизации Azure AD Connect и следующей попытки объединения после завершения синхронизации, устраните проблему. |
-| аусентикатионеррор | Проверка идентификатора безопасности целевого компьютера | Сертификат на устройстве Azure AD не соответствует сертификату, используемому для подписи большого двоичного объекта во время подключения синхронизации. Обычно эта ошибка означает, что синхронизация еще не завершена. |  Дождитесь завершения синхронизации Azure AD Connect и следующей попытки объединения после завершения синхронизации, устраните проблему. |
+| DirectoryError | AADSTS90002: Tenant <UUID> not found. This error may happen if there are no active subscriptions for the tenant. Check with your subscription administrator. | Tenant ID in SCP object is incorrect | Ensure SCP object is configured with the correct Azure AD tenant ID and active subscriptions and present in the tenant. |
+| DirectoryError | The device object by the given ID is not found. | Expected error for sync join. The device object has not synced from AD to Azure AD | Wait for the Azure AD Connect sync to complete and the next join attempt after sync completion will resolve the issue |
+| AuthenticationError | The verification of the target computer's SID | The certificate on the Azure AD device doesn't match the certificate used to sign the blob during the sync join. This error typically means sync hasn’t completed yet. |  Wait for the Azure AD Connect sync to complete and the next join attempt after sync completion will resolve the issue |
 
-### <a name="step-5-collect-logs-and-contact-microsoft-support"></a>Шаг 5. Получение журналов и контактных служба поддержки Майкрософт
+### <a name="step-5-collect-logs-and-contact-microsoft-support"></a>Step 5: Collect logs and contact Microsoft Support
 
-Получите общедоступные сценарии: [ https://1drv.ms/u/s! AkyTjQ17vtfagYkZ6VJzPg78e3o7PQ]( https://1drv.ms/u/s!AkyTjQ17vtfagYkZ6VJzPg78e3o7PQ)
+Get public scripts here: [https://1drv.ms/u/s!AkyTjQ17vtfagYkZ6VJzPg78e3o7PQ]( https://1drv.ms/u/s!AkyTjQ17vtfagYkZ6VJzPg78e3o7PQ)
 
-1. Откройте командную строку администратора и выполните `start_ngc_tracing_public.cmd`команду.
-2. Выполните действия по воспроизведению проблемы.
-3. Завершите выполнение скрипта ведения журнала `stop_ngc_tracing_public.cmd`, выполнив.
-4. ZIP и отправьте журналы в `%SYSTEMDRIVE%\TraceDJPP\*` для анализа.
+1. Open an admin command prompt and run `start_ngc_tracing_public.cmd`.
+2. Perform the steps to reproduce the issue.
+3. Stop running the logging script by executing `stop_ngc_tracing_public.cmd`.
+4. Zip and send the logs under `%SYSTEMDRIVE%\TraceDJPP\*` for analysis.
 
-## <a name="troubleshoot-post-join-issues"></a>Устранение проблем после объединения
+## <a name="troubleshoot-post-join-issues"></a>Troubleshoot Post-Join issues
 
 ### <a name="retrieve-the-join-status"></a>Получение сведений о состоянии присоединения 
 
-#### <a name="wamdefaultset-yes-and-azureadprt-yes"></a>Вамдефаултсет: Да и Азуреадпрт: ДА
+#### <a name="wamdefaultset-yes-and-azureadprt-yes"></a>WamDefaultSet: YES and AzureADPrt: YES
   
 Эти поля показывают, прошел ли пользователь аутентификацию в Azure AD при входе в устройство. Если эти параметры имеют значение **NO**, то причины могут быть следующими:
 
-- Неверный ключ хранилища в доверенном платформенном модуле, связанном с устройством при регистрации (проверьте Кэйсигнтест при запуске с повышенными правами).
+- Bad storage key in the TPM associated with the device upon registration (check the KeySignTest while running elevated).
 - Наличие альтернативного имени пользователя.
 - Прокси-сервер HTTP не найден.
 
 ## <a name="known-issues"></a>Известные проблемы
-- В разделе "Параметры" — "учетные записи > — > доступ или учебное заведение, гибридные устройства, присоединенные к Azure AD, могут показывать две разные учетные записи: одну для Azure AD и одну для локальной службы AD при подключении к мобильным хот-спотам или внешним сетям Wi-Fi. Это лишь проблема пользовательского интерфейса, которая не влияет на функциональность. 
+- Under Settings -> Accounts -> Access Work or School, Hybrid Azure AD joined devices may show two different accounts, one for Azure AD and one for on-premises AD, when connected to mobile hotspots or external WiFi networks. This is only a UI issue and does not have any impact on functionality. 
  
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Продолжение [устранения неполадок устройств с помощью команды dsregcmd](troubleshoot-device-dsregcmd.md)
+Continue [troubleshooting devices using the dsregcmd command](troubleshoot-device-dsregcmd.md)
 
 Ответы на вопросы можно найти в статье [Azure Active Directory device management FAQ](faq.md) (Часто задаваемые вопросы по управлению устройствами Azure Active Directory).

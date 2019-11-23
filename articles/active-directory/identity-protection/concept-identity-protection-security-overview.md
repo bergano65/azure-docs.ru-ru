@@ -1,6 +1,6 @@
 ---
-title: Обзор безопасности защиты идентификации Azure Active Directory (Azure AD)
-description: Узнайте, как обзор безопасности позволяет получить представление о безопасности вашей организации.
+title: Azure Active Directory Identity Protection security overview
+description: Learn how the Security overview gives you an insight into your organization’s security posture.
 services: active-directory
 ms.service: active-directory
 ms.subservice: identity-protection
@@ -11,16 +11,16 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: adc4acf10fee1b8b2c5e3af18389a49d84e2df14
-ms.sourcegitcommit: 7efb2a638153c22c93a5053c3c6db8b15d072949
+ms.openlocfilehash: a9550684ad154f28a02ee347fd0a79c1ec286beb
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72887238"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74382194"
 ---
 # <a name="azure-active-directory-identity-protection---security-overview"></a>Защита идентификации Azure Active Directory. Обзор безопасности
 
-[Обзор безопасности](https://aka.ms/IdentityProtectionRefresh) в портал Azure позволяет получить представление о безопасности вашей организации. Это помогает определить потенциальные атаки и понять эффективность ваших политик.
+The [Security overview](https://aka.ms/IdentityProtectionRefresh) in the Azure portal gives you an insight into your organization’s security posture. Это помогает определить потенциальные атаки и понять эффективность ваших политик.
 
 "Обзор безопасности" в целом разделен на два раздела.
 
@@ -37,7 +37,7 @@ ms.locfileid: "72887238"
 
 ### <a name="new-risky-sign-ins-detected"></a>Обнаружены новые рискованные входы в систему
 
-На этой диаграмме показано число рискованных входов, обнаруженных за выбранный период времени. Вы можете отфильтровать представление этой диаграммы по типу риска входа (в режиме реального времени или вычисления) и уровню риска входа (низкий, средний, высокий). Незащищенные входы в систему — это успешные входы в систему в режиме реального времени, которые не были оспорены MFA. (Примечание. входные и небезопасные обнаружения не могут быть защищены политиками риска входа в реальном времени.) Наведите указатель мыши на дату в формате UTC, чтобы увидеть количество рискованных входов, обнаруженных для этого дня. Щелкнув эту диаграмму, вы попадете в отчет "Рискованные входы в систему".
+На этой диаграмме показано число рискованных входов, обнаруженных за выбранный период времени. Вы можете отфильтровать представление этой диаграммы по типу риска входа (в режиме реального времени или вычисления) и уровню риска входа (низкий, средний, высокий). Незащищенные входы в систему — это успешные входы в систему в режиме реального времени, которые не были оспорены MFA. (Note: Sign-ins that are risky because of offline detections cannot be protected in real-time by sign-in risk policies). Наведите указатель мыши на дату в формате UTC, чтобы увидеть количество рискованных входов, обнаруженных для этого дня. Щелкнув эту диаграмму, вы попадете в отчет "Рискованные входы в систему".
 
 ## <a name="tiles"></a>Плитки
  
@@ -52,7 +52,7 @@ ms.locfileid: "72887238"
 
 ### <a name="unprotected-risky-sign-ins"></a>Незащищенные рискованные события входа
 
-На плитке "незащищенные входы в систему" отображается число успешных, рискованных входов в режиме реального времени, которые не были заблокированы или MFA были вызваны политикой условного доступа, политикой риска защиты идентификации или многопользовательским MFA. Это потенциально скомпрометированные имена для входа, которые были успешными и не запрошены на MFA. Чтобы защитить такие входы в систему в будущем, примените политику риска входа. Щелкнув плитку "Незащищенные рискованные события входа", вы перенаправитесь в колонку настройки политики рисков входа, где можете настроить политику рисков входа, чтобы требовать MFA при входе с указанным уровнем риска.
+The ‘Unprotected risky sign-ins' tile shows the last week’s count of successful, real-time risky sign-ins that were not blocked or MFA challenged by a Conditional Access policy, Identity Protection risk policy, or per-user MFA. Это потенциально скомпрометированные имена для входа, которые были успешными и не запрошены на MFA. Чтобы защитить такие входы в систему в будущем, примените политику риска входа. Щелкнув плитку "Незащищенные рискованные события входа", вы перенаправитесь в колонку настройки политики рисков входа, где можете настроить политику рисков входа, чтобы требовать MFA при входе с указанным уровнем риска.
 
 ### <a name="legacy-authentication"></a>Устаревшие способы аутентификации
 
@@ -60,10 +60,10 @@ ms.locfileid: "72887238"
 
 ### <a name="identity-secure-score"></a>Оценка безопасности удостоверений
 
-Служба оценки безопасности удостоверений измеряет и сравнивает систему безопасности со стандартами отрасли. Щелкнув плитку "Идентификация безопасного индекса (Предварительная версия)", вы перейдете в колонку "Оценка безопасного удостоверения", где вы сможете узнать больше об улучшении безопасности.
+Служба оценки безопасности удостоверений измеряет и сравнивает систему безопасности со стандартами отрасли. If you click on ‘Identity Secure Score (Preview)’ tile, it will redirect to the ‘Identity Secure Score’ blade where you can learn more about improving your security posture.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Что такое риск](concept-identity-protection-risks.md)
+- [What is risk](concept-identity-protection-risks.md)
 
-- [Политики, доступные для снижения рисков](concept-identity-protection-policies.md)
+- [Policies available to mitigate risks](concept-identity-protection-policies.md)

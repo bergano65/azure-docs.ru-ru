@@ -1,51 +1,51 @@
 ---
-title: Управляемые удостоверения в Azure HDInsight
-description: Содержит общие сведения о реализации управляемых удостоверений в Azure HDInsight.
+title: Managed identities in Azure HDInsight
+description: Provides an overview of the implementation of managed identities in Azure HDInsight.
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 03/12/2019
-ms.openlocfilehash: 02ea164a1fa29b494801623d418be73fc47d069c
-ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
+ms.custom: hdinsightactive
+ms.date: 11/20/2019
+ms.openlocfilehash: e7be8fbf5f6c2c59e93d48729785dd34bae5955e
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71077083"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74327373"
 ---
-# <a name="managed-identities-in-azure-hdinsight"></a>Управляемые удостоверения в Azure HDInsight
+# <a name="managed-identities-in-azure-hdinsight"></a>Managed identities in Azure HDInsight
 
-Управляемое удостоверение — это удостоверение, зарегистрированное в Azure Active Directory (Azure AD), учетные данные которых управляются Azure. При использовании управляемых удостоверений вам не нужно регистрировать субъекты-службы в Azure AD или хранить учетные данные, например сертификаты.
+A managed identity is an identity registered in Azure Active Directory (Azure AD) whose credentials are managed by Azure. With managed identities, you don't need to register service principals in Azure AD, or maintain credentials such as certificates.
 
-Управляемые удостоверения можно использовать в Azure HDInsight, чтобы разрешить вашим кластерам доступ к доменным службам Azure AD, доступ к Azure Key Vault или доступ к файлам в Azure Data Lake Storage 2-го поколения.
+Managed identities can be used in Azure HDInsight to allow your clusters to access Azure AD domain services, access Azure Key Vault, or access files in Azure Data Lake Storage Gen2.
 
-Существует два типа управляемых удостоверений: назначенные пользователем и назначенные системой. Azure HDInsight использует управляемые пользователем удостоверения. Назначаемое пользователем управляемое удостоверение создается как автономный ресурс Azure, который затем можно назначить одному или нескольким экземплярам службы Azure. В отличие от этого, управляемое системой удостоверение создается в Azure AD, а затем автоматически включается в конкретный экземпляр службы Azure. Жизненный цикл этого управляемого удостоверения, назначенного системой, затем привязывается к жизненному циклу экземпляра службы, на котором она включена.
+There are two types of managed identities: user-assigned and system-assigned. Azure HDInsight uses user-assigned managed identities. A user-assigned managed identity is created as a standalone Azure resource, which you can then assign to one or more Azure service instances. In contrast, a system-assigned managed identity is created in Azure AD and then enabled directly on a particular Azure service instance automatically. The life of that system-assigned managed identity is then tied to the life of the service instance that it's enabled on.
 
-## <a name="hdinsight-managed-identity-implementation"></a>Реализация управляемого удостоверения HDInsight
+## <a name="hdinsight-managed-identity-implementation"></a>HDInsight managed identity implementation
 
-В Azure HDInsight управляемые удостоверения подготавливаются на каждом узле кластера. Однако эти компоненты удостоверений можно использовать только в службе HDInsight. В настоящее время нет поддерживаемого метода для создания маркеров доступа с помощью управляемых удостоверений, установленных на узлах кластера HDInsight. Для некоторых служб Azure управляемые удостоверения реализуются с помощью конечной точки, которую можно использовать для получения маркеров доступа для взаимодействия с другими службами Azure самостоятельно.
+In Azure HDInsight, managed identities are provisioned on each node of the cluster. These identity components, however, are only usable by the HDInsight service. There's currently no supported method for you to generate access tokens using the managed identities installed on HDInsight cluster nodes. For some Azure services, managed identities are implemented with an endpoint that you can use to acquire access tokens for interacting with other Azure services on your own.
 
-## <a name="create-a-managed-identity"></a>Создание управляемого удостоверения
+## <a name="create-a-managed-identity"></a>Create a managed identity
 
-Управляемые удостоверения можно создавать с помощью любого из следующих методов.
+Managed identities can be created with any of the following methods:
 
-* [портал Azure](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md)
+* [Портал Azure](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md)
 * [Azure PowerShell](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-powershell.md)
 * [Azure Resource Manager](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-arm.md)
-* [Интерфейс командной строки Azure](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-cli.md)
+* [Azure CLI](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-cli.md)
 
-Оставшиеся шаги по настройке управляемого удостоверения зависят от сценария, в котором он будет использоваться.
+The remaining steps for configuring the managed identity depend on the scenario where it will be used.
 
-## <a name="managed-identity-scenarios-in-azure-hdinsight"></a>Сценарии управляемых удостоверений в Azure HDInsight
+## <a name="managed-identity-scenarios-in-azure-hdinsight"></a>Managed identity scenarios in Azure HDInsight
 
-Управляемые удостоверения используются в Azure HDInsight в нескольких сценариях. Подробные инструкции по настройке и настройке см. в соответствующих документах:
+Managed identities are used in Azure HDInsight in multiple scenarios. See the related documents for detailed setup and configuration instructions:
 
 * [Хранилище Azure Data Lake Storage 2-го поколения](hdinsight-hadoop-use-data-lake-storage-gen2.md#create-a-user-assigned-managed-identity)
 * [Пакет безопасности корпоративного уровня](domain-joined/apache-domain-joined-configure-using-azure-adds.md#create-and-authorize-a-managed-identity)
-* [Создание собственных ключей Kafka (BYOK)](kafka/apache-kafka-byok.md#get-started-with-byok)
+* [Kafka Bring Your Own Key (BYOK)](kafka/apache-kafka-byok.md#get-started-with-byok)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Что такое управляемые удостоверения для ресурсов Azure?](../active-directory/managed-identities-azure-resources/overview.md)

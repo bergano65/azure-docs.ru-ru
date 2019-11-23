@@ -1,413 +1,415 @@
 ---
 title: Устранение неполадок в службе "Миграция Azure" | Документация Майкрософт
-description: Содержит общие сведения об известных проблемах в службе "миграция Azure", а также советы по устранению распространенных ошибок.
+description: Provides an overview of known issues in the Azure Migrate service, as well as troubleshooting tips for common errors.
 author: musa-57
 ms.manager: abhemraj
 ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 11/21/2019
 ms.author: hamusa
-ms.openlocfilehash: 12f8f64c051d33ac2518edbe8b937521318a9e71
-ms.sourcegitcommit: e50a39eb97a0b52ce35fd7b1cf16c7a9091d5a2a
+ms.openlocfilehash: 96c5190988d79885f3a1335b6fd431e028bba8fc
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74284505"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74384065"
 ---
 # <a name="troubleshoot-azure-migrate"></a>Устранение неполадок в службе "Миграция Azure"
 
-Служба " [Миграция Azure](migrate-services-overview.md) " предоставляет центр средств для оценки и миграции, а также предложения независимых поставщиков программного обеспечения (ISV) сторонних разработчиков. Эта статья поможет вам устранить неполадки, связанные с миграцией Azure, оценкой сервера Azure для миграции и миграцией Azure Migration Server.
+[Azure Migrate](migrate-services-overview.md) provides a hub of tools for assessment and migration, as well as third-party independent software vendor (ISV) offerings. This article helps you troubleshoot issues with Azure Migrate, Azure Migrate Server Assessment, and Azure Migrate Server Migration.
 
 
-## <a name="find-a-project"></a>Найти проект
+## <a name="find-a-project"></a>Find a project
 
-Существует [две версии](https://docs.microsoft.com/azure/migrate/migrate-services-overview#azure-migrate-versions) службы "миграция Azure".
-
-
-Если вы создали проект "миграция Azure" в текущей версии службы "миграция Azure", выполните следующие действия.
-
-1. В [портал Azure](https://portal.azure.com)выполните поиск по запросу служба " **Миграция Azure**".
-2. На панели мониторинга миграция Azure > **серверы**щелкните **изменить** в правом верхнем углу.
-
-    ![Переключение на существующий проект службы "миграция Azure"](./media/troubleshooting-general/switch-project.png)
-
-3. Выберите подходящую подписку и проект "миграция Azure".
+There are [two versions](https://docs.microsoft.com/azure/migrate/migrate-services-overview#azure-migrate-versions) of Azure Migrate.
 
 
-Если вы создали проект в предыдущей версии службы "миграция Azure", выполните следующие действия.
+If you created the Azure Migrate project in the current version of Azure Migrate, do the following:
 
-1. В [портал Azure](https://portal.azure.com)выполните поиск по запросу служба " **Миграция Azure**".
-2. Если вы создали проект в предыдущей версии, на панели мониторинга "миграция Azure" появится баннер, ссылающаяся на старые проекты. Выберите баннер.
+1. In the [Azure portal](https://portal.azure.com), search for **Azure Migrate**.
+2. In the Azure Migrate dashboard > **Servers**, select **change** in the upper-right corner.
 
-    ![Доступ к существующим проектам](./media/troubleshooting-general/access-existing-projects.png)
+    ![Switch to an existing Azure Migrate project](./media/troubleshooting-general/switch-project.png)
 
-3. Проверьте список старых проектов.
+3. Select the appropriate subscription and Azure Migrate project.
 
 
-## <a name="create-additional-projects"></a>Создание дополнительных проектов
+If you created the project in the previous version of Azure Migrate,  do the following:
 
-Создайте проект службы "миграция Azure", выполнив следующие действия.
+1. In the [Azure portal](https://portal.azure.com), search for **Azure Migrate**.
+2. In the Azure Migrate dashboard, if you've created a project in the previous version, a banner referencing older projects appears. Select the banner.
 
-1. В [портал Azure](https://portal.azure.com)выполните поиск по запросу служба " **Миграция Azure**".
-2. На панели мониторинга миграция Azure > **серверы**щелкните **изменить** в правом верхнем углу.
+    ![Access existing projects](./media/troubleshooting-general/access-existing-projects.png)
 
-   ![Изменение проекта службы "миграция Azure"](./media/troubleshooting-general/switch-project.png)
+3. Review the list of old project.
 
-3. Чтобы создать новый проект, выберите **щелкните здесь**.
 
-   ![Создание второго проекта службы "миграция Azure"](./media/troubleshooting-general/create-new-project.png)
+## <a name="create-additional-projects"></a>Create additional projects
 
-## <a name="review-supported-geographies"></a>Проверка поддерживаемых географических регионов
+Create a new Azure Migrate project as follows:
 
-Ознакомьтесь с поддерживаемыми географическими схемами для [VMware](https://docs.microsoft.com/azure/migrate/migrate-support-matrix-vmware#azure-migrate-projects) и [Hyper-V](https://docs.microsoft.com/azure/migrate/migrate-support-matrix-hyper-v#azure-migrate-projects).
+1. In the [Azure portal](https://portal.azure.com), search for **Azure Migrate**.
+2. On the Azure Migrate dashboard > **Servers**, select **change** in the upper-right corner.
 
-## <a name="delete-projectsworkspaces"></a>Удаление проектов и рабочих областей
+   ![Change Azure Migrate project](./media/troubleshooting-general/switch-project.png)
 
-При удалении проектов "миграция Azure" и Log Analytics рабочих областей Обратите внимание на следующее:
+3. To create a new project, select **click here**.
 
-- При удалении проекта службы "миграция Azure" проект *и* метаданные об обнаруженных компьютерах удаляются.
-- Если вы подключили рабочую область Log Analytics к средству оценки серверов, Рабочая область не удаляется автоматически.
-- Ту же рабочую область Log Analytics можно использовать для нескольких сценариев.
-- Если вы хотите удалить рабочую область Log Analytics, это необходимо сделать вручную.
+   ![Create a second Azure Migrate project](./media/troubleshooting-general/create-new-project.png)
+
+## <a name="review-supported-geographies"></a>Review supported geographies
+
+Review supported geographies for [VMware](https://docs.microsoft.com/azure/migrate/migrate-support-matrix-vmware#azure-migrate-projects) and [Hyper-V](https://docs.microsoft.com/azure/migrate/migrate-support-matrix-hyper-v#azure-migrate-projects).
+
+## <a name="delete-projectsworkspaces"></a>Delete projects/workspaces
+
+When deleting Azure Migrate projects and Log Analytics workspaces, note that:
+
+- When you delete an Azure Migrate project, the project *and* the metadata about discovered machines are deleted.
+- If you've attached a Log Analytics workspace to the Server Assessment tool, the workspace isn't automatically deleted.
+- The same Log Analytics workspace can be used for multiple scenarios.
+- If you want to delete the Log Analytics workspace, you must do that manually.
 
 
 ### <a name="delete-a-project"></a>Удаление проекта
 
-Чтобы удалить проект в текущей версии службы "миграция Azure", выполните следующие действия.
+To delete a project in the current version of Azure Migrate:
 
-1. Откройте группу ресурсов Azure, в которой был создан проект.
-2. На странице Группа ресурсов выберите пункт **Показывать скрытые типы**.
-3. Выберите проект миграции, который необходимо удалить. Ресурс имеет тип Microsoft. Migrate/мигратепрожектс и удаляет его.
+1. Open the Azure resource group in which the project was created.
+2. In the resource group page, select **Show hidden types**.
+3. Select the migrate project you want to delete. The resource type is Microsoft.Migrate/migrateprojects, and deletes it.
 
-Чтобы удалить проект в более ранней версии службы "миграция Azure", выполните следующие действия.
+To delete a project in the older version of Azure Migrate:
 
-1. Откройте группу ресурсов Azure, в которой был создан проект.
-2. Выберите проект миграции, который необходимо удалить. Тип ресурса — Migration Project и удаляется.
+1. Open the Azure resource group in which the project was created.
+2. Select the migrate project you want to delete. The resource type is Migration project, and deletes it.
 
 
 ### <a name="delete-a-workspace"></a>Удаление рабочей области
 
 Перейдите к рабочей области Log Analytics, связанной с проектом.
-* Если вы еще не удалили проект службы "миграция Azure", можно найти ссылку на рабочую область в **Essentials** > **Server Оценка**.
-       ![LA Рабочая область](./media/troubleshooting-general/loganalytics-workspace.png)
+* If you haven't deleted the Azure Migrate project, you can find the link to the workspace in **Essentials** > **Server Assessment**.
+       ![LA Workspace](./media/troubleshooting-general/loganalytics-workspace.png)
 
      * If you've already deleted the Azure Migrate project, select **Resource Groups** in the left pane of the Azure portal. Locate the workspace in the relevant resources group, and [follow the instructions](https://docs.microsoft.com/azure/azure-monitor/platform/delete-workspace) to delete it.
 
 
-## <a name="error-requests-must-contain-user-identity-headers"></a>Ошибка "запросы должны содержать заголовки удостоверений пользователей"
+## <a name="error-requests-must-contain-user-identity-headers"></a>Error "Requests must contain user identity headers"
 
-При создании проекта эта ошибка может означать, что у вас нет доступа к клиенту Azure Active Directory (Azure AD) Организации.
+When creating a project this error might indicate that you don't have access to the Azure Active Directory (Azure AD) tenant of the organization.
 
-- Когда вы впервые добавите в клиент Azure AD, вы получите по электронной почте приглашение присоединиться к клиенту.
-- Примите приглашение, чтобы успешно добавить его в клиент.
-    - Если вы не видите сообщение электронной почты, обратитесь к пользователю с правами доступа к клиенту и попросите его [повторно отправить приглашение](https://docs.microsoft.com/azure/active-directory/b2b/add-users-administrator#resend-invitations-to-guest-users) .
-    - После получения приглашения по электронной почте откройте его и щелкните ссылку, чтобы принять приглашение. Затем выйдите из портал Azure и войдите снова. (обновление браузера не будет работать.) После этого можно приступить к созданию проекта миграции.
+- When you're added to an Azure AD tenant for the first time, you receive an email invitation to join the tenant.
+- Accept the invitation to get successfully added to the tenant.
+    - If you can't see the email, contact a user with access to the tenant, and ask them to [resend the invitation](https://docs.microsoft.com/azure/active-directory/b2b/add-users-administrator#resend-invitations-to-guest-users) to you.
+    - After receiving the invitation email, open it and select the link to accept the invitation. Then, sign out of the Azure portal and sign in again. (refreshing the browser won't work.) You can then start creating the migration project.
 
 
-## <a name="error-invalid-ovf-manifest-entry"></a>Ошибка "Недопустимая запись манифеста OVF"
+## <a name="error-invalid-ovf-manifest-entry"></a>Error "Invalid OVF manifest entry"
 
-Если появится сообщение об ошибке "указанный файл манифеста недопустим: Недопустимая запись манифеста OVF", выполните следующие действия.
+If you receive the error "The provided manifest file is invalid: Invalid OVF manifest entry", do the following:
 
-1. Проверьте, правильно ли загружен файл OVA устройства для миграции Azure, проверив его хэш-значение. [Дополнительные сведения](https://docs.microsoft.com/azure/migrate/tutorial-assessment-vmware) Если хэш-значение не совпадает, скачайте файл OVA еще раз и повторите попытку развертывания.
-2. Если развертывание по-прежнему завершается сбоем и вы используете VMware vSphere клиент для развертывания файла OVF, попробуйте развернуть его с помощью веб-клиента vSphere. Если развертывание по-прежнему завершается сбоем, попробуйте использовать другой веб-браузер.
-3. Если вы используете веб-клиент vSphere и пытаетесь развернуть его на vCenter Server 6,5 или 6,7, попробуйте развернуть OVA непосредственно на узле ESXi:
-   - Подключитесь к узлу ESXi напрямую (вместо vCenter Server) с помощью веб-клиента (HTTPS://<*IP-адрес узла*>/УИ).
-   - В окне **Инвентаризация** **домашней** > выберите **файл** > **развернуть шаблон OVF**. Перейдите к OVA и завершите развертывание.
+1. Verify that the Azure Migrate appliance OVA file is downloaded correctly by checking its hash value. [Узнайте больше](https://docs.microsoft.com/azure/migrate/tutorial-assessment-vmware). If the hash value doesn't match, download the OVA file again and retry the deployment.
+2. If deployment still fails, and you're using the VMware vSphere client to deploy the OVF file, try deploying it through the vSphere web client. If deployment still fails, try using a different web browser.
+3. If you're using the vSphere web client and trying to deploy it on vCenter Server 6.5 or 6.7, try to deploy the OVA directly on the ESXi host:
+   - Connect to the ESXi host directly (instead of vCenter Server) with the web client (https://<*host IP Address*>/ui).
+   - In **Home** > **Inventory**, select **File** > **Deploy OVF template**. Browse to the OVA and complete the deployment.
 4. Если развертывание по-прежнему не удается, обратитесь в поддержку службы "Миграция Azure".
 
-## <a name="appliance-cant-connect-to-the-internet"></a>Устройству не удается подключиться к Интернету
+## <a name="appliance-cant-connect-to-the-internet"></a>Appliance can't connect to the internet
 
-Это может произойти, если компьютер устройства находится за прокси-сервером.
+This can happen if the appliance machine is behind a proxy.
 
-- Убедитесь, что вы предоставляете учетные данные для авторизации, если они требуются прокси-серверу.
-- Если вы используете прокси-сервер брандмауэра на основе URL-адресов для управления исходящими подключениями, добавьте эти URL-адреса в список разрешений:
+- Make sure you provide the authorization credentials if the proxy needs them.
+- If you're using a URL-based firewall proxy to control outbound connectivity, add these URLs to an allow list:
 
-    - [URL-адреса для оценки VMware](https://docs.microsoft.com/azure/migrate/migrate-support-matrix-vmware#assessment-url-access-requirements)
-    - [URL-адреса для оценки Hyper-V](https://docs.microsoft.com/azure/migrate/migrate-support-matrix-hyper-v#assessment-appliance-url-access)
-    - [URL-адреса для миграции без агента VMware](https://docs.microsoft.com/azure/migrate/migrate-support-matrix-vmware#agentless-migration-url-access-requirements)
-    - [URL-адреса для миграции на основе агента VMware](https://docs.microsoft.com/azure/migrate/migrate-support-matrix-vmware#replication-appliance-url-access)
-    - [URL-адреса для миграции Hyper-V](https://docs.microsoft.com/azure/migrate/migrate-support-matrix-hyper-v#migration-hyper-v-host-url-access)
+    - [URLs for VMware assessment](https://docs.microsoft.com/azure/migrate/migrate-support-matrix-vmware#assessment-url-access-requirements)
+    - [URLs for Hyper-V assessment](https://docs.microsoft.com/azure/migrate/migrate-support-matrix-hyper-v#assessment-appliance-url-access)
+    - [URLs for VMware agentless migration](https://docs.microsoft.com/azure/migrate/migrate-support-matrix-vmware#agentless-migration-url-access-requirements)
+    - [URLS for VMware agent-based migration](https://docs.microsoft.com/azure/migrate/migrate-support-matrix-vmware#replication-appliance-url-access)
+    - [URLs for Hyper-V migration](https://docs.microsoft.com/azure/migrate/migrate-support-matrix-hyper-v#migration-hyper-v-host-url-access)
 
-- Если вы используете перехватчик прокси-сервера для подключения к Интернету, импортируйте сертификат прокси-сервера на виртуальную машину устройства, выполнив [следующие действия](https://docs.microsoft.com/azure/migrate/concepts-collector).
+- If you're using an intercepting proxy to connect to the internet, import the proxy certificate onto the appliance VM using [these steps](https://docs.microsoft.com/azure/migrate/concepts-collector).
 
-## <a name="errordatetime-synchronization"></a>Ошибка: Синхронизация даты и времени
+## <a name="errordatetime-synchronization"></a>Error:Date/time synchronization
 
-Ошибка синхронизации даты и времени (802) означает, что часы сервера могут быть не синхронизированы с текущим временем более чем за пять минут. Измените время на виртуальной машине сборщика в соответствии с текущим временем:
+An error about date and time synchronization (802) indicates that the server clock might be out of synchronization with the current time by more than five minutes. Change the clock time on the collector VM to match the current time:
 
 1. Откройте командную строку с правами администратора на этой виртуальной машине.
-2. Чтобы проверить часовой пояс, выполните команду **w32tm/ТЗ**.
-3. Чтобы синхронизировать время, выполните команду **w32tm/resync**.
+2. To check the time zone, run **w32tm /tz**.
+3. To synchronize the time, run **w32tm /resync**.
 
 
-## <a name="error-unabletoconnecttoserver"></a>Ошибка: UnableToConnectToServer
+## <a name="error-unabletoconnecttoserver"></a>Error: UnableToConnectToServer
 
-При возникновении этой ошибки подключения может быть невозможно подключиться к vCenter Server *ServerName*. com: 9443. Сведения об ошибке указывают на то, что конечная точка не прослушивается на https://*ServerName*. com: 9443/SDK, которые могут принимать сообщение.
+If you get this connection error, you might be unable to connect to vCenter Server *Servername*.com:9443. The error details indicate that there's no endpoint listening at https://*servername*.com:9443/sdk that can accept the message.
 
-- Проверьте, используете ли вы последнюю версию устройства. Если вы не используете, обновите устройство до [последней версии](https://docs.microsoft.com/azure/migrate/concepts-collector).
-- Если проблема по-прежнему возникает в последней версии, возможно, устройство не сможет разрешить указанное vCenter Server имя, или указанный порт может быть неверным. По умолчанию, если порт не указан, сборщик попытается подключиться к порту номер 443.
+- Check whether you're running the latest version of the appliance. If you're not, upgrade the appliance to the [latest version](https://docs.microsoft.com/azure/migrate/concepts-collector).
+- If the issue still occurs in the latest version, the appliance might be unable to resolve the specified vCenter Server name, or the specified port might be wrong. By default, if the port is not specified, the collector will try to connect to port number 443.
 
-    1. Выполните команду ping *ServerName*. com с устройства.
-    2. В случае сбоя шага 1 Попробуйте подключиться к серверу vCenter с помощью IP-адреса.
-    3. Найдите правильный номер порта для подключения к vCenter Server.
-    4. Убедитесь, что vCenter Server работает.
+    1. Ping *Servername*.com from the appliance.
+    2. If step 1 fails, try to connect to the vCenter server using the IP address.
+    3. Identify the correct port number to connect to vCenter Server.
+    4. Verify that vCenter Server is up and running.
 
 
-## <a name="error-appliance-might-not-be-registered"></a>Ошибка: возможно, устройство не зарегистрировано
+## <a name="error-appliance-might-not-be-registered"></a>Error: Appliance might not be registered
 
-- Ошибка 60052, "устройство может быть не зарегистрировано в проекте" миграция Azure ", происходит, если учетная запись Azure, используемая для регистрации устройства, имеет недостаточные разрешения.
-    - Убедитесь, что учетная запись пользователя Azure, используемая для регистрации устройства, имеет по крайней мере разрешения участника на подписку.
-    - Дополнительные [сведения](https://docs.microsoft.com/azure/migrate/migrate-appliance#appliance-deployment-requirements) о необходимых ролях и разрешениях Azure.
-- Ошибка 60039, "устройство может быть не зарегистрировано в проекте" миграция Azure ", может произойти, если регистрация завершается неудачей, поскольку не удается найти проект" миграция Azure ", используемый для регистрации устройства.
-    - В портал Azure и проверьте, существует ли проект в группе ресурсов.
-    - Если проект не существует, создайте новый проект "миграция Azure" в группе ресурсов и снова зарегистрируйте устройство. [Узнайте, как](https://docs.microsoft.com/azure/migrate/how-to-add-tool-first-time#create-a-project-and-add-a-tool) создать новый проект.
+- Error 60052, "The appliance might not be registered successfully to the Azure Migrate project" occurs if the Azure account used to register the appliance has insufficient permissions.
+    - Make sure that the Azure user account used to register the appliance has at least Contributor permissions on the subscription.
+    - [Learn more](https://docs.microsoft.com/azure/migrate/migrate-appliance#appliance-deployment-requirements) about required Azure roles and permissions.
+- Error 60039, "The appliance might not be registered successfully to the Azure Migrate project" can occur if registration fails because the Azure Migrate project used to the register the appliance can't be found.
+    - In the Azure portal and check whether the project exists in the resource group.
+    - If the project doesn't exist, create a new Azure Migrate project in your resource group and register the appliance again. [Learn how to](https://docs.microsoft.com/azure/migrate/how-to-add-tool-first-time#create-a-project-and-add-a-tool) create a new project.
 
-## <a name="error-key-vault-management-operation-failed"></a>Ошибка: сбой операции управления Key Vault
+## <a name="error-key-vault-management-operation-failed"></a>Error: Key Vault management operation failed
 
-При возникновении ошибки 60030 или 60031 "не удалось выполнить операцию управления Azure Key Vault" выполните следующие действия.
-- Убедитесь, что учетная запись пользователя Azure, используемая для регистрации устройства, имеет по крайней мере разрешения участника на подписку.
-- Убедитесь, что учетная запись имеет доступ к хранилищу ключей, указанному в сообщении об ошибке, и повторите операцию.
+If you receive the error 60030 or 60031, "An Azure Key Vault management operation failed", do the following:
+- Make sure the Azure user account used to register the appliance has at least Contributor permissions on the subscription.
+- Make sure the account has access to the key vault specified in the error message, and then retry the operation.
 - Если проблема будет повторяться, обратитесь в службу поддержки Майкрософт.
-- Дополнительные [сведения](https://docs.microsoft.com/azure/migrate/migrate-appliance#appliance-deployment-requirements) о необходимых ролях и разрешениях Azure.
+- [Learn more](https://docs.microsoft.com/azure/migrate/migrate-appliance#appliance-deployment-requirements) about the required Azure roles and permissions.
 
-## <a name="fix-discovery-couldnt-be-initiated"></a>Исправление: не удалось инициировать обнаружение
+## <a name="fix-discovery-couldnt-be-initiated"></a>Fix: Discovery couldn't be initiated
 
-Ошибка 60028: "не удалось инициировать обнаружение из-за ошибки. Сбой операции для указанного списка узлов или кластеров. указывает на то, что не удалось запустить обнаружение на узлах, перечисленных в сообщении об ошибке из-за проблемы при доступе или извлечении сведений о виртуальной машине. Остальные узлы успешно добавлены.
+Error 60028: "Discovery couldn't be initiated because of an error. The operation failed for the specified list of hosts or clusters" indicates that discovery couldn't be started on the hosts listed in the error because of a problem in accessing or retrieving VM information. The rest of the hosts were successfully added.
 
-- Снова добавьте узлы, перечисленные в ошибке, с помощью параметра **Добавить узел** .
-- При возникновении ошибки проверки ознакомьтесь с руководством по исправлению, чтобы исправить ошибки, а затем повторите попытку **сохранить и запустить обнаружение** .
+- Add the hosts listed in the error again, using the **Add host** option.
+- If there's a validation error, review the remediation guidance to fix the errors, and then try the **Save and start discovery** option again.
 
-## <a name="fix-azure-ad-operation-failed-60025"></a>Исправление: сбой операции Azure AD (60025)
+## <a name="fix-azure-ad-operation-failed-60025"></a>Fix: Azure AD operation failed (60025)
 
-Ошибка 60025: "сбой операции Azure AD. Произошла ошибка при создании или обновлении приложения Azure AD "", если учетная запись пользователя Azure, используемая для запуска обнаружения, отличается от учетной записи, используемой для регистрации устройства. Выполните одно из следующих действий.
+Error 60025: "An Azure AD operation failed. The error occurred while creating or updating the Azure AD application" occurs when the Azure user account used to initiate the discovery is different from the account used to register the appliance. Выполните одно из следующих действий.
 
-- Убедитесь, что учетная запись пользователя, инициирующая обнаружение, совпадает с той, которая использовалась для регистрации устройства.
-- Предоставьте Azure Active Directory разрешения на доступ к учетной записи пользователя, для которой происходит сбой операции обнаружения.
-- Удалите группу ресурсов, созданную ранее для проекта службы "миграция Azure". Создайте другую группу ресурсов для повторного запуска.
-- Дополнительные [сведения](https://docs.microsoft.com/azure/migrate/migrate-appliance#appliance-deployment-requirements) о Azure Active Directory разрешениях приложения.
-
-
-## <a name="discovered-vms-not-in-portal"></a>Обнаруженные виртуальные машины, отсутствующие на портале
-
-Если вы запускаете обнаружение, чтобы **в ходе** **оценки сервера** и **миграции сервера** отображалось обнаружение, но на портале еще не отображаются виртуальные машины, обратите внимание на следующее:
-
-- После запуска обнаружения с устройства оно занимает около 15 минут для обнаружения виртуальных машин VMware и около двух минут для каждого добавленного узла для обнаружения виртуальных машин Hyper-V.
-- Если вы продолжаете видеть **процесс обнаружения** даже после этих периодов ожидания, выберите **Обновить** на вкладке **серверы** . Должно отобразиться количество обнаруженных серверов в **оценке сервера** и **миграции сервера**.
+- Ensure that the user account initiating the discovery is same as the one used to register the appliance.
+- Provide Azure Active Directory application access permissions to the user account for which the discovery operation is failing.
+- Delete the resource group previously created for the Azure Migrate project. Create another resource group to start again.
+- [Learn more](https://docs.microsoft.com/azure/migrate/migrate-appliance#appliance-deployment-requirements) about Azure Active Directory application permissions.
 
 
-## <a name="deleted-vms-in-the-portal"></a>Удаленные виртуальные машины на портале
+## <a name="discovered-vms-not-in-portal"></a>Discovered VMs not in portal
 
-Если вы развернули устройство, которое постоянно обнаруживает локальную среду, но удаленные виртуальные машины по-прежнему отображаются на портале, обратите внимание на следующее:  
+If you start discovery so that **Server Assessment** and **Server Migration** show **Discovery in progress**, but don't yet see the VMs in the portal, note the following:
 
-- Данные обнаружения, собранные устройством, будут отражены на портале до 30 минут.
-- Если вы не видите актуальную информацию через 30 минут, обновите данные, выполнив следующие действия.
-
-    1. В разделе **серверы** > **оценки Azure миграция сервера**выберите **Обзор**.
-    2. В разделе **Управление**выберите **работоспособность агентов**
-    3. Выберите **Обновить агент**.
-    1. Дождитесь завершения операции обновления. Теперь вы должны увидеть актуальные сведения.
-
-## <a name="vm-information-isnt-in-the-portal"></a>Сведения о виртуальной машине отсутствуют на портале
-
-- Данные обнаружения, собранные устройством, будут отражены на портале до 30 минут.
-- Если вы не видите актуальную информацию через 30 минут, обновите данные, выполнив следующие действия.
-
-    1. В разделе **серверы** > **оценки Azure миграция сервера**выберите **Обзор**.
-    2. В разделе **Управление**выберите **работоспособность агентов**
-    3. Выберите **Обновить агент**.
-    1. Дождитесь завершения операции обновления. Теперь вы должны увидеть актуальные сведения.
+- After starting discovery from the appliance, it takes around 15 minutes for a VMware VM discovery, and around two minutes for each added host for Hyper-V VM discovery.
+- If you continue to see **Discovery in progress** even after these waiting periods, select **Refresh** on the **Servers** tab. This should show the count of the discovered servers in **Server Assessment** and **Server Migration**.
 
 
-## <a name="fix-cant-connect-to-host-or-cluster"></a>Исправление: не удается подключиться к узлу или кластеру
+## <a name="deleted-vms-in-the-portal"></a>Deleted VMs in the portal
 
-Ошибка 50004: "не удается подключиться к узлу или кластеру, так как не удается разрешить имя сервера. Код ошибки WinRM: 0x803381B9 "может возникать, если службе Azure DNS для устройства не удается разрешить указанный кластер или имя узла.
+If you've deployed an appliance that continuously discovers your on-premises environment, but deleted VMs are still showing in the portal, note the following:  
 
-- Если вы видите эту ошибку в кластере, полное доменное имя кластера.
-- Эта ошибка может также возникать для узлов в кластере. Это означает, что устройство может подключаться к кластеру, но кластер возвращает имена узлов, которые не являются полными доменными именами. Чтобы устранить эту ошибку, обновите файл hosts на устройстве, добавив сопоставление IP-адреса и имени узла:
-    1. Откройте Блокнот с правами администратора.
-    2. Откройте файл C:\Windows\System32\Drivers\etc\hosts.
-    3. Добавьте IP-адрес и имя узла в строку. Повторите эти действия для каждого узла или кластера, где отображается эта ошибка.
-    4. Сохраните и закройте файл hosts.
-    5. Проверьте, может ли устройство подключаться к узлам с помощью приложения управления устройством. Через 30 минут вы увидите последние сведения об этих узлах в портал Azure.
+- It takes up to 30 minutes for the discovery data gathered by the appliance to be reflected in the portal.
+- If you don't see up-to-date information after 30 minutes, refresh the data by following these steps:
 
-## <a name="application-discovery-issues"></a>Проблемы с обнаружением приложений
+    1. In **Servers** > **Azure Migrate Server Assessment**, select **Overview**.
+    2. Under **Manage**, select **Agent Health**
+    3. Select **Refresh agent**.
+    1. Wait for the refresh operation to complete. You should now see up-to-date information.
 
-В настоящее время Обнаружение приложений поддерживается только для виртуальных машин VMware. Поддержка виртуальных машин Hyper-V и физических серверов будет включена в будущем. Для обнаружения приложений требуется указать учетные данные виртуальной машины в устройстве. Дополнительные сведения о привилегиях доступа, необходимых для vCenter Server и для виртуальных машин VMware. Обнаружение может завершиться ошибкой из-за одной из следующих проблем. чтобы устранить проблему, ознакомьтесь с рекомендуемым действием, описанным ниже.
+## <a name="vm-information-isnt-in-the-portal"></a>VM information isn't in the portal
+
+- It takes up to 30 minutes for the discovery data gathered by the appliance to be reflected in the portal.
+- If you don't see up-to-date information after 30 minutes, refresh the data by following these steps:
+
+    1. In **Servers** > **Azure Migrate Server Assessment**, select **Overview**.
+    2. Under **Manage**, select **Agent Health**
+    3. Select **Refresh agent**.
+    1. Wait for the refresh operation to complete. You should now see up-to-date information.
+
+
+## <a name="fix-cant-connect-to-host-or-cluster"></a>Fix: Can't connect to host or cluster
+
+Error 50004: "Can't connect to a host or cluster because the server name can't be resolved. WinRM error code: 0x803381B9" might occur if the Azure DNS service for the appliance can't resolve the cluster or host name you provided.
+
+- If you see this error on the cluster, cluster FQDN.
+- You might also see this error for hosts in a cluster. This indicates that the appliance can connect to the cluster, but the cluster returns host names that aren't FQDNs. To resolve this error, update the hosts file on the appliance by adding a mapping of the IP address and host names:
+    1. Open Notepad as an admin.
+    2. Open the C:\Windows\System32\Drivers\etc\hosts file.
+    3. Add the IP address and host name in a row. Repeat for each host or cluster where you see this error.
+    4. Save and close the hosts file.
+    5. Check whether the appliance can connect to the hosts, using the appliance management app. After 30 minutes, you should see the latest information for these hosts in the Azure portal.
+
+## <a name="application-discovery-issues"></a>Application discovery issues
+
+Discovery of applications is currently only supported for VMware VMs. Support for Hyper-V VMs and physical servers will be enabled in future.
+
+The discovery of applications requires you to provide VM credentials in the appliance, if you have not provided VM credentials in the appliance, application discovery will not work. [Learn more](https://docs.microsoft.com/azure/migrate/migrate-support-matrix-vmware#assessment-vcenter-server-permissions) about the access privileges needed for vCenter Server and for VMware VMs. If you have provided VM credentials in the appliance and the application discovery is failing, review the following table to identify the cause for the failure and remediation action:
 
 **Код ошибки** | **Сообщение** | **Возможная причина** | **Рекомендуемое действие**
 --- | --- | --- | ---
-10 000 | Не удалось обнаружить приложения, установленные на сервере. | Это может произойти, если операционная система, работающая на сервере, не является ни Windows, ни Linux. | Обнаружение установленных приложений поддерживается только для серверов Windows и Linux.
-10001 | Не удалось получить приложения, на которых установлен сервер. | Это вызвано внутренней ошибкой, так как в устройстве есть отсутствующие файлы. | Обратитесь в служба поддержки Майкрософт.
-10002 | Не удалось получить приложения, на которых установлен сервер. | Это может произойти, если агент обнаружения в устройстве "миграция Azure" работает неправильно. | Эта проблема должна автоматически разрешаться за 24 часа. Если проблема сохраняется, обратитесь в служба поддержки Майкрософт.
-10003 | Не удалось получить приложения, на которых установлен сервер. | Это может произойти, если агент обнаружения работает неправильно. | Эта проблема должна автоматически разрешаться за 24 часа. Если проблема сохраняется, обратитесь в служба поддержки Майкрософт.
-10004 | Не удается обнаружить установленные приложения для < > компьютерах под управлением Windows или Linux. |  Учетные данные для доступа < компьютерах под управлением Windows и Linux > не были указаны в устройстве миграции Azure. | Добавьте учетные данные в устройство миграции Azure, которое имеет доступ к < компьютеров > Windows и Linux.
-10005 | Не удалось получить доступ к локальному серверу. | Это может произойти, если учетные данные, предоставленные компьютеру для доступа к серверу, неверны. | Обновите учетные данные, указанные в устройстве, и убедитесь, что сервер доступен с использованием учетных данных.
-10006 | Не удалось получить доступ к локальному серверу. | Это может произойти, если операционная система, работающая на сервере, не является ни Windows, ни Linux. | Обнаружение установленных приложений поддерживается только для серверов Windows и Linux.
-9000 | Не удалось обнаружить приложения, установленные на виртуальной машине. | Возможно, средства VMware не установлены или повреждены. | Установите или переустановите инструменты VMware на виртуальной машине и проверьте, работает ли он.
-9001 | Не удалось обнаружить приложения, установленные на виртуальной машине. | Возможно, средства VMware не установлены или повреждены. | Установите или переустановите инструменты VMware на виртуальной машине и проверьте, работает ли он.
-9002 | Не удалось обнаружить приложения, установленные на виртуальной машине. | Возможно, средства VMware не работают. | Установите или переустановите инструменты VMware на виртуальной машине и проверьте, работает ли он.
-9003 | Не удалось обнаружить приложения, установленные на сервере. | Это может произойти, если операционная система, работающая на сервере, не является ни Windows, ни Linux. | Обнаружение установленных приложений поддерживается только для серверов Windows и Linux.
-9004 | Не удалось обнаружить приложения, установленные на сервере. | Это может произойти, если виртуальная машина выключена. | Чтобы обнаружить установленные приложения на сервере, убедитесь, что виртуальная машина включена.
-9005 | Не удалось обнаружить приложения, установленные на виртуальной машине. | Это может произойти, если операционная система, работающая на виртуальной машине, не является ни Windows, ни Linux. | Обнаружение установленных приложений поддерживается только для серверов Windows и Linux.
-9006 | Не удалось получить приложения, на которых установлен сервер. | Это может произойти, если агент обнаружения работает неправильно. | Эта проблема должна автоматически разрешаться за 24 часа. Если проблема сохраняется, обратитесь в служба поддержки Майкрософт.
-9007 | Не удалось получить приложения, на которых установлен сервер. | Это может произойти, если агент обнаружения работает неправильно. | Эта проблема должна автоматически разрешаться за 24 часа. Если проблема сохраняется, обратитесь в служба поддержки Майкрософт.
-9008 | Не удалось получить приложения, на которых установлен сервер. | Эта ошибка может возникнуть из-за внутренней ошибки.  | Эта проблема должна автоматически разрешаться за 24 часа. Если проблема сохраняется, обратитесь в служба поддержки Майкрософт.
-9009 | Не удалось получить приложения, на которых установлен сервер. | Эта ошибка может возникать, если параметры контроля учетных записей Windows (UAC) на сервере являются более узкими и не позволяют обнаруживать установленные приложения. | Выполните поиск параметров "контроль учетных записей пользователей" на сервере и настройте параметр UAC на сервере на один из двух нижних уровней.
-9010 | Не удалось получить приложения, на которых установлен сервер. | Эта ошибка может возникнуть из-за внутренней ошибки.  | Эта проблема должна автоматически разрешаться за 24 часа. Если проблема сохраняется, обратитесь в служба поддержки Майкрософт.
-8084 | Не удалось обнаружить приложения из-за ошибки VMware: <Exception from VMware> | Устройство для переноса Azure использует API VMware для обнаружения приложений. Эта проблема может возникать из-за исключения, вызванного vCenter Server при попытке обнаружить приложения. Сообщение об ошибке из VMware отображается в сообщении, отображаемом на портале. | Ознакомьтесь с [документацией по VMware](https://pubs.vmware.com/vsphere-51/topic/com.vmware.wssdk.apiref.doc/index-faults.html), найдите сообщение об ошибке и выполните действия по устранению неполадок в статье VMware, чтобы устранить проблему. Если по-прежнему не удается устранить проблему, обратитесь к служба поддержки Майкрософт.
+10 000 | Unable to discover the applications installed on the server. | This could happen if the operating system running on the server is neither Windows nor Linux. | Discovery of installed applications is only supported for Windows and Linux servers.
+10001 | Unable to retrieve the applications installed the server. | This is due to an internal error as there are some missing files in appliance. | Please contact Microsoft Support.
+10002 | Unable to retrieve the applications installed the server. | This could happen if the discovery agent in the Azure Migrate appliance is not working properly. | The issue should automatically get resolved in 24 hours. If the issue still persists, please contact Microsoft Support.
+10003 | Unable to retrieve the applications installed the server. | This could happen if the discovery agent is not working properly. | The issue should automatically get resolved in 24 hours. If the issue still persists, please contact Microsoft Support.
+10004 | Unable to discover installed applications for <Windows/Linux> machines. |  Credentials to access <Windows/Linux> machines were not provided in the Azure Migrate appliance | Please add a credential in the Azure Migrate appliance that has  access to the <Windows/Linux> machines.
+10005 | Unable to access the on-premises server. | This could happen if the credentials provided for machine to access the server is incorrect. | Please update the credentials provided in the appliance and ensure that the server is accessible using the credential.
+10006 | Unable to access the on-premises server. | This could happen if the operating system running on the server is neither Windows nor Linux. | Discovery of installed applications is only supported for Windows and Linux servers.
+9000 | Unable to discover the applications installed on the VM. | VMware tools might not be installed or is corrupted. | Install/Reinstall VMware tools in the VM and check if it is running.
+9001 | Unable to discover the applications installed on the VM. | VMware tools might not be installed or is corrupted. | Install/Reinstall VMware tools in the VM and check if it is running.
+9002 | Unable to discover the applications installed on the VM. | VMware tools might not be running. | Install/Reinstall VMware tools in the VM and check if it is running.
+9003 | Unable to discover the applications installed on the server. | This could happen if the operating system running on the server is neither Windows nor Linux. | Discovery of installed applications is only supported for Windows and Linux servers.
+9004 | Unable to discover the applications installed on the server. | This could happen if the VM is powered off. | To discover installed applications on the server, ensure that the VM is powered on.
+9005 | Unable to discover the applications installed on the VM. | This could happen if the operating system running on the VM is neither Windows nor Linux. | Discovery of installed applications is only supported for Windows and Linux servers.
+9006 | Unable to retrieve the applications installed the server. | This could happen if the discovery agent is not working properly. | The issue should automatically get resolved in 24 hours. If the issue still persists, please contact Microsoft Support.
+9007 | Unable to retrieve the applications installed the server. | This could happen if the discovery agent is not working properly. | The issue should automatically get resolved in 24 hours. If the issue still persists, please contact Microsoft Support.
+9008 | Unable to retrieve the applications installed the server. | The issue can occur due to an internal error.  | The issue should automatically get resolved in 24 hours. If the issue still persists, please contact Microsoft Support.
+9009 | Unable to retrieve the applications installed the server. | The issue can occur if the Windows User Account Control (UAC) settings on the server are restrictive and prevent discovery of installed applications. | Search for 'User Account Control' settings on the server and configure the UAC setting on the server to be at one of the lower two levels.
+9010 | Unable to retrieve the applications installed the server. | The issue can occur due to an internal error.  | The issue should automatically get resolved in 24 hours. If the issue still persists, please contact Microsoft Support.
+8084 | Unable to discover applications due to VMware error: <Exception from VMware> | The Azure Migrate appliance uses VMware APIs to discover applications. This issue can happen due to an exception thrown by vCenter Server while trying to discover applications. The fault message from VMware is displayed in the error message shown in portal. | Review the [VMware documentation](https://pubs.vmware.com/vsphere-51/topic/com.vmware.wssdk.apiref.doc/index-faults.html), search for the fault message and follow the troubleshooting steps in the VMware article to fix the issue. If you are still unable to fix the issue, reach out to Microsoft Support.
 
 
-## <a name="fix-assessment-readiness"></a>Устранение готовности к оценке
+## <a name="fix-assessment-readiness"></a>Fix assessment readiness
 
-Устраните проблемы готовности к оценке, как показано ниже.
+Fix assessment readiness issues as follows:
 
 **Проблема** | **Исправление**
 --- | ---
-Неподдерживаемый тип загрузки | Azure не поддерживает виртуальные машины с типом загрузки EFI. Перед выполнением миграции рекомендуется преобразовать тип загрузки в BIOS. <br/><br/>Миграцию таких виртуальных машин можно выполнить с помощью миграции сервера Azure Migration. Во время миграции тип загрузки виртуальной машины будет преобразован в BIOS.
-Условно поддерживаемая операционная система Windows | Операционная система прошла дату окончания поддержки, и для [поддержки в Azure](https://aka.ms/WSosstatement)требуется специальное соглашение о поддержке (CSA). Перед миграцией в Azure рассмотрите возможность обновления.
-Неподдерживаемая операционная система Windows | Azure поддерживает только [Выбранные версии ОС Windows](https://aka.ms/WSosstatement). Рекомендуется обновить компьютер перед миграцией в Azure.
-Условно поддерживаемая ОС Linux | Azure подтверждает только [Выбранные версии ОС Linux](../virtual-machines/linux/endorsed-distros.md). Рекомендуется обновить компьютер перед миграцией в Azure.
-Неподдерживаемая ОС Linux | Компьютер может начать работу в Azure, но Azure не поддерживает операционные системы. Перед миграцией в Azure рассмотрите возможность обновления до рекомендованной [версии Linux](../virtual-machines/linux/endorsed-distros.md) .
-Неизвестная операционная система | Операционная система виртуальной машины была указана в vCenter Server как "другая". Это поведение блокирует миграцию Azure для проверки готовности виртуальной машины к работе в Azure. Перед переносом компьютера убедитесь, что операционная система [поддерживается](https://aka.ms/azureoslist) Azure.
-Неподдерживаемая разрядная версия | Виртуальные машины с 32-разрядными операционными системами могут загружаться в Azure, но перед миграцией в Azure рекомендуется выполнить обновление до 64-разрядной версии.
-Требуется подписка Microsoft Visual Studio | Компьютер работает под управлением клиентской операционной системы Windows, которая поддерживается только в рамках подписки Visual Studio.
-Не найдена виртуальная машина для требуемой производительности хранилища | Производительность хранилища (операций ввода-вывода в секунду и пропускная способность), необходимая для компьютера, превышает поддержку виртуальной машины Azure. Снизьте требования к хранилищу для компьютера перед выполнением миграции.
-Не найдена виртуальная машина для требуемой производительности сети | Производительность сети (скорость входящего и исходящего трафика), необходимая для компьютера, превышает возможности поддерживаемых виртуальных машин Azure. Уменьшите требования к сети для компьютера.
-Виртуальная машина не найдена в указанном расположении | Используйте другое целевое расположение, прежде чем выполнять миграцию.
-Один или несколько несоответствующих дисков | Один или несколько дисков, подключенных к виртуальной машине, не соответствуют требованиям Azure. Конкретного<br/><br/> Служба "миграция Azure". Оценка серверов сейчас не поддерживает SSD (цен. категория "Ультра") диски и оценивает диски на основе ограничений дискового пространства для управляемых дисков уровня "Премиум" (32 ТБ).<br/><br/> Для каждого диска, подключенного к виртуальной машине, убедитесь, что размер диска составляет < 64 ТБ (поддерживается SSD (цен. категория "Ультра") дисками).<br/><br/> Если это не так, сократите размер диска перед миграцией в Azure или используйте несколько дисков в Azure и разработайте [их вместе](https://docs.microsoft.com/azure/virtual-machines/windows/premium-storage-performance#disk-striping) , чтобы получить более высокие ограничения хранилища. Убедитесь, что производительность (операций ввода-вывода и пропускная способность), необходимая для каждого диска, поддерживается [дисками виртуальной машины под управлением](https://docs.microsoft.com/azure/azure-subscription-service-limits#storage-limits)Azure.
+Неподдерживаемый тип загрузки | Azure doesn't support VMs with an EFI boot type. We recommend that you convert the boot type to BIOS before you run a migration. <br/><br/>You can use Azure Migrate Server Migration to handle the migration of such VMs. It will convert the boot type of the VM to BIOS during the migration.
+Conditionally supported Windows operating system | The operating system has passed its end-of-support date, and needs a Custom Support Agreement (CSA) for [support in Azure](https://aka.ms/WSosstatement). Consider upgrading before you migrate to Azure.
+Unsupported Windows operating system | Azure supports only [selected Windows OS versions](https://aka.ms/WSosstatement). Consider upgrading the machine before you migrate to Azure.
+Условно поддерживаемая ОС Linux | Azure endorses only [selected Linux OS versions](../virtual-machines/linux/endorsed-distros.md). Consider upgrading the machine before you migrate to Azure.
+Неподдерживаемая ОС Linux | The machine might start in Azure, but Azure provides no operating system support. Consider upgrading to an [endorsed Linux version](../virtual-machines/linux/endorsed-distros.md) before you migrate to Azure.
+Неизвестная операционная система | The operating system of the VM was specified as "Other" in vCenter Server. This behavior blocks Azure Migrate from verifying the Azure readiness of the VM. Make sure that the operating system is [supported](https://aka.ms/azureoslist) by Azure before you migrate the machine.
+Unsupported bit version | VMs with a 32-bit operating systems might boot in Azure, but we recommended that you upgrade to 64-bit before you migrate to Azure.
+Requires a Microsoft Visual Studio subscription | The machine is running a Windows client operating system, which is supported only through a Visual Studio subscription.
+VM not found for the required storage performance | The storage performance (input/output operations per second [IOPS] and throughput) required for the machine exceeds Azure VM support. Снизьте требования к хранилищу для компьютера перед выполнением миграции.
+VM not found for the required network performance | Производительность сети (скорость входящего и исходящего трафика), необходимая для компьютера, превышает возможности поддерживаемых виртуальных машин Azure. Уменьшите требования к сети для компьютера.
+VM not found in the specified location | Используйте другое целевое расположение, прежде чем выполнять миграцию.
+One or more unsuitable disks | One or more disks attached to the VM don't meet Azure requirements.A<br/><br/> Azure Migrate: Server Assessment currently doesn't support Ultra SSD disks, and assesses the disks based on the disk limits for premium managed disks (32 TB).<br/><br/> For each disk attached to the VM, make sure that the size of the disk is < 64 TB (supported by Ultra SSD disks).<br/><br/> If it isn't, reduce the disk size before you migrate to Azure, or use multiple disks in Azure and [stripe them together](https://docs.microsoft.com/azure/virtual-machines/windows/premium-storage-performance#disk-striping) to get higher storage limits. Make sure that the performance (IOPS and throughput) needed by each disk is supported by Azure [managed virtual machine disks](https://docs.microsoft.com/azure/azure-subscription-service-limits#storage-limits).
 Один или несколько неподходящих сетевых адаптеров. | Удалите неиспользуемые сетевые адаптеры с компьютера перед миграцией.
 Число дисков превышает ограничение | Удалите неиспользуемые диски с компьютера перед миграцией.
-Размер диска превышает ограничение | Служба "миграция Azure": Оценка серверов сейчас не поддерживает SSD (цен. категория "Ультра") диски и оценивает диски на основе ограничений по лимиту дисков уровня "Премиум" (32 ТБ).<br/><br/> Однако Azure поддерживает диски размером до 64 ТБ (поддерживается SSD (цен. категория "Ультра") дисков). Сократите диски до 64 ТБ перед миграцией или используйте несколько дисков в Azure и разработайте [их вместе](https://docs.microsoft.com/azure/virtual-machines/windows/premium-storage-performance#disk-striping) , чтобы получить более высокие ограничения хранилища.
+Размер диска превышает ограничение | Azure Migrate: Server Assessment currently doesn't support Ultra SSD disks, and assesses the disks based on premium disk limits (32 TB).<br/><br/> However, Azure supports disks with up to 64 TB size (supported by Ultra SSD disks). Shrink disks to less than 64 TB before migration, or use multiple disks in Azure and [stripe them together](https://docs.microsoft.com/azure/virtual-machines/windows/premium-storage-performance#disk-striping) to get higher storage limits.
 Диск недоступен в указанном расположении | Убедитесь, что диск доступен в целевом расположении, прежде чем выполнять миграцию.
 Недоступен диск для обеспечения указанной избыточности | Диск должен использовать тип избыточности хранилища, указанный в параметрах оценки (по умолчанию — LRS).
-Не удалось определить пригодность диска из-за внутренней ошибки | Попробуйте создать новую оценку для группы.
-Виртуальная машина с требуемым числом ядер и объемом памяти не найдена | Azure не удалось найти подходящий тип виртуальной машины. Уменьшите объем памяти и число ядер на локальном компьютере, прежде чем выполнять миграцию.
-Не удалось определить пригодность виртуальной машины из-за внутренней ошибки | Попробуйте создать новую оценку для группы.
-Не удалось определить пригодность для одного или нескольких дисков из-за внутренней ошибки | Попробуйте создать новую оценку для группы.
-Не удалось определить пригодность для одного или нескольких сетевых адаптеров из-за внутренней ошибки | Попробуйте создать новую оценку для группы.
+Could not determine disk suitability because of an internal error | Попробуйте создать новую оценку для группы.
+Виртуальная машина с требуемым числом ядер и объемом памяти не найдена | Azure couldn't find a suitable VM type. Уменьшите объем памяти и число ядер на локальном компьютере, прежде чем выполнять миграцию.
+Could not determine VM suitability because of an internal error | Попробуйте создать новую оценку для группы.
+Could not determine suitability for one or more disks because of an internal error | Попробуйте создать новую оценку для группы.
+Could not determine suitability for one or more network adapters because of an internal error | Попробуйте создать новую оценку для группы.
 
-## <a name="linux-vms-are-conditionally-ready"></a>Виртуальные машины Linux называются условно готовыми.
+## <a name="linux-vms-are-conditionally-ready"></a>Linux VMs are "conditionally ready"
 
-Оценка сервера помечает виртуальные машины Linux как "условно готовые" из-за известного разрыва в оценке сервера.
+Server Assessment marks Linux VMs as  "Conditionally ready" due to a known gap in Server Assessment.
 
-- Разрыв предотвращает обнаружение дополнительной версии ОС Linux, установленной на локальных виртуальных машинах.
-- Например, для RHEL 6,10 в настоящее время Оценка сервера обнаруживает только RHEL 6 в качестве версии ОС.
--  Так как Azure поддерживает только определенные версии Linux, виртуальные машины Linux в настоящее время отмечены как условно готовые к оценке серверов.
-- Вы можете определить, будет ли операционная система Linux, работающая на локальной виртуальной машине, одобрена в Azure, просмотрев [поддержку Linux в Azure](https://aka.ms/migrate/selfhost/azureendorseddistros).
--  Убедившись в подтвержденном распространении, можно проигнорировать это предупреждение.
+- The gap prevents it from detecting the minor version of the Linux OS installed on the on-premises VMs.
+- For example, for RHEL 6.10, currently Server Assessment detects only RHEL 6 as the OS version.
+-  Because Azure endorses only specific versions of Linux, the Linux VMs are currently marked as conditionally ready in Server Assessment.
+- You can determine whether the Linux OS running on the on-premises VM is endorsed in Azure by reviewing [Azure Linux support](https://aka.ms/migrate/selfhost/azureendorseddistros).
+-  After you've verified the endorsed distribution, you can ignore this warning.
 
-## <a name="azure-skus-exceed-on-premises-sizing"></a>Размер SKU Azure превышает локальное изменение размера
+## <a name="azure-skus-exceed-on-premises-sizing"></a>Azure SKUs exceed on-premises sizing
 
-При оценке серверов в службе "миграция Azure" можно рекомендовать номера SKU виртуальных машин Azure с большим количеством ядер и памяти, чем текущее локальное выделение, в зависимости от типа оценки:
-
-
-- Рекомендации по SKU виртуальной машины зависят от свойств оценки.
-- Это зависит от типа оценки, выполняемой при оценке сервера: на *основе производительности*или *в локальной среде*.
-- Для оценки на основе производительности в ходе оценки серверов учитываются данные об использовании локальных виртуальных машин (ЦП, памяти, диска и использования сети), чтобы определить правильный номер SKU целевой виртуальной машины для локальных виртуальных машин. Он также добавляет эффективный фактор при определении эффективного использования.
-- Для локального изменения размера данные о производительности не учитываются, и рекомендуется использовать целевой номер SKU на основе локального выделения.
-
-Чтобы продемонстрировать, как это может повлиять на рекомендации, давайте рассмотрим пример.
-
-У нас есть локальная виртуальная машина с четырьмя ядрами и восемью ГБ памяти, с 50% использования ЦП и 50% использования памяти и заданным комфортным фактором 1,3.
-
--  Если оценка является **локальной**, то рекомендуется использовать SKU виртуальной машины Azure с 4 ядрами и 8 ГБ памяти.
-- Если оценка основана на производительности, зависит от эффективности использования ЦП и памяти (50% от 4 ядер * 1,3 = 2,6 ядер и 50% от 8 ГБ памяти * 1,3 = 5,3 ГБ памяти), самый дешевый номер SKU для четырех ядер (ближайшее поддерживаемое число ядер) и 8 ГБ памяти (ближайшее поддерживаемое рекомендуется использовать память).
-- Дополнительные [сведения](concepts-assessment-calculation.md#sizing) о размере оценки.
-
-## <a name="azure-disk-skus-bigger-than-on-premises"></a>Номера SKU дисков Azure больше, чем в локальной среде
-
-Для оценки серверов в Azure можно использовать более крупный диск в зависимости от типа оценки.
-- Размер диска в оценке сервера зависит от двух свойств оценки: критериев изменения размера и типа хранилища.
-- Если критерии изменения размера **основаны на производительности**и для типа хранилища задано значение **автоматически**, значения операций ввода-вывода и пропускной способности диска будут учитываться при определении типа целевого диска (HDD (цен. Категория "Стандартный"), SSD (цен. Категория "Стандартный") или Premium). Рекомендуется использовать дисковый номер SKU из типа диска, и в рекомендации учитываются требования к размеру локального диска.
-- Если критерии изменения размера **основаны на производительности**, а тип хранилища — **Premium**, рекомендуется использовать номер SKU диска уровня "Премиум" в Azure на основе требований к операциям ввода-вывода, пропускной способности и размеру локального диска. Та же логика используется для создания размера диска, если критерий изменения размера — **локально** , а тип хранилища — **HDD (цен. Категория "Стандартный")** , **SSD (цен. Категория "Стандартный")** или **Premium**.
-
-Например, если у вас есть локальный диск с 32 ГБ памяти, но агрегированные операции чтения и записи для диска составляет 800 операций ввода-вывода, серверная Оценка рекомендует диск уровня "Премиум" (из-за более высоких требований к операциям ввода-вывода), а затем рекомендует номер SKU диска, который может поддерживать r мые операции ввода-вывода и размер. Наиболее подходящий вариант в этом примере будет P15 (256 ГБ и 1100 операций ввода-вывода). Несмотря на то, что размер, необходимый для локального диска, составляет 32 ГБ, при оценке сервера рекомендуется использовать диск большего размера из-за высокого требования к операции ввода-вывода в секунду для локального диска.
-
-## <a name="fix-percentage-of-utilized-core-or-memory-missing"></a>Исправление: процент использованного ядра или отсутствующий объем памяти
-
-Отчеты об оценке серверов "Перцентажеофкоресутилизедмиссинг" или "Перцентажеофмеморютилизедмиссинг", если устройство для миграции Azure не может выполнять собранные данные о производительности для соответствующих локальных виртуальных машин.
-
-- Это может произойти, если виртуальные машины отключены в течение периода оценки. Устройство не может выполнять собранные данные о производительности для виртуальной машины, если она выключена.
-- Если отсутствуют только счетчики памяти и вы пытаетесь оценить виртуальные машины Hyper-V, проверьте, включена ли динамическая память на этих виртуальных машинах. Существует известная ошибка только для виртуальных машин Hyper-V, в которых устройство для миграции Azure не может выполнять получение данных об использовании памяти для виртуальных машин, для которых не включена динамическая память.
-- Если какой-либо из счетчиков производительности отсутствует, Оценка сервера Azure для миграции переключается на выделенные ядра и память и рекомендует соответствующий размер виртуальной машины.
-
-## <a name="is-the-vm-os-license-cost-included-in-cost-assessment"></a>Стоимость лицензии ОС виртуальной машины включена в оценку затрат?
-
-Оценка сервера "миграция Azure" в настоящее время учитывает затраты на лицензии операционной системы только для компьютеров Windows. Затраты на лицензии для компьютеров Linux в настоящее время не рассматриваются.
-
-## <a name="performance-history-and-percentile-use"></a>Журнал производительности и использование процентилей
-
-Эти свойства применяются только к изменению размера на основе производительности в службе "Миграция серверов Azure".
-
-Средство оценки серверов непрерывно ведет журнал производительности локальных компьютеров. Эти данные используются для предоставления рекомендаций по выбору номера SKU виртуальной машины и диска в Azure. Эти данные производительности собираются с помощью оценки сервера следующим образом.
-- Устройство "миграция Azure" непрерывно проводит локальную среду для сбора данных об использовании в режиме реального времени каждые 20 секунд для виртуальных машин VMware и каждые 30 секунд для виртуальных машин Hyper-V.
-- Устройство выполняет сведение 20 или 30-секундных выборок, чтобы создать одну точку данных каждые 10 минут. Чтобы создать одну точку данных, устройство выбирает пиковое значение из 20-секундных и 30-секундных выборок, а затем отправляет их в Azure.
-- Когда средство выполняет оценку с учетом периода оценки производительности и значения процентиля журнала производительности, определяется репрезентативный показатель использования. Например, если журнал производительности составляет одну неделю, а использование процентиля — 95 процентиль, то служба "миграция Azure" сортирует все 10-минутные точки выборки за последнюю неделю в возрастающем порядке, а затем выбирает 95 процентиль процентиль в качестве репрезентативного значения.
-- Значение 95 процентиль процентиль гарантирует игнорирование любых выбросов, которые могут быть добавлены при выборе 99-м процентиль.
-- Если вы хотите выбрать пиковое использование для периода и не хотите пропускать выбросы, следует выбрать 99-м процентиль для использования процентиля.
+Azure Migrate Server Assessment might recommend Azure VM SKUs with more cores and memory than current on-premises allocation based on the type of assessment:
 
 
-## <a name="i-cant-find-dependency-visualization-for-azure-government"></a>Не удается найти визуализацию зависимостей для Azure для государственных организаций
+- The VM SKU recommendation depends on the assessment properties.
+- This is affected by the type of assessment you perform in Server Assessment: *Performance-based*, or *As on-premises*.
+- For performance-based assessments, Server Assessment considers the utilization data of the on-premises VMs (CPU, memory, disk, and network utilization) to determine the right target VM SKU for your on-premises VMs. It also adds a comfort factor when determining effective utilization.
+- For on-premises sizing, performance data is not considered, and the target SKU is recommended based on-premises allocation.
 
-Служба "миграция Azure" зависит от Сопоставление служб функции визуализации зависимостей. Так как Сопоставление служб в настоящее время недоступна в Azure для государственных организаций, эта функция недоступна в Azure для государственных организаций.
+To show how this can affect recommendations, let's take an example:
 
-## <a name="dependencies-dont-show-after-installing-agents"></a>Зависимости не отображаются после установки агентов
+We have an on-premises VM with four cores and eight GB of memory, with 50% CPU utilization and 50% memory utilization, and a specified comfort factor of 1.3.
 
-После установки агентов визуализации зависимостей на локальных виртуальных машинах для отображения зависимостей на портале Служба "миграция Azure" обычно занимает 15-30 минут. Если вы ожидали более 30 минут, убедитесь, что Microsoft Monitoring Agent (MMA) может подключаться к рабочей области Log Analytics.
+-  If the assessment is **As on-premises**, an Azure VM SKU with 4 cores and 8 GB of memory is recommended.
+- If the assessment is performance-based, based on effective CPU and memory utilization (50% of 4 cores * 1.3 = 2.6 cores and 50% of 8-GB memory * 1.3 = 5.3-GB memory), the cheapest VM SKU of four cores (nearest supported core count) and eight GB of memory (nearest supported memory size) is recommended.
+- [Learn more](concepts-assessment-calculation.md#sizing) about assessment sizing.
+
+## <a name="azure-disk-skus-bigger-than-on-premises"></a>Azure disk SKUs bigger than on-premises
+
+Azure Migrate Server Assessment might recommend a bigger disk based on the type of assessment.
+- Disk sizing in Server Assessment depends on two assessment properties: sizing criteria and storage type.
+- If the sizing criteria is **Performance-based**, and the storage type is set to **Automatic**, the IOPS and throughput values of the disk are considered when identifying the target disk type (Standard HDD, Standard SSD, or Premium). A disk SKU from the disk type is then recommended, and the recommendation considers the size requirements of the on-premises disk.
+- If the sizing criteria is **Performance-based**, and the storage type is **Premium**, a premium disk SKU in Azure is recommended based on the IOPS, throughput, and size requirements of the on-premises disk. The same logic is used to perform disk sizing when the sizing criteria is **As on-premises** and the storage type is **Standard HDD**, **Standard SSD**, or **Premium**.
+
+As an example, if you have an on-premises disk with 32 GB of memory, but the aggregated read and write IOPS for the disk is 800 IOPS, Server Assessment recommends a premium disk (because of the higher IOPS requirements), and then recommends a disk SKU that can support the required IOPS and size. Наиболее подходящий вариант в этом примере будет P15 (256 ГБ и 1100 операций ввода-вывода). Even though the size required by the on-premises disk was 32 GB, Server Assessment recommends a larger disk because of the high IOPS requirement of the on-premises disk.
+
+## <a name="fix-percentage-of-utilized-core-or-memory-missing"></a>Fix: Percentage of utilized core or memory missing
+
+Server Assessment reports "PercentageOfCoresUtilizedMissing" or "PercentageOfMemoryUtilizedMissing" when the Azure Migrate appliance can't collect performance data for the relevant on-premises VMs.
+
+- This can occur if the VMs are turned off during the assessment duration. The appliance can't collect performance data for a VM when it's turned off.
+- If only the memory counters are missing and you're trying to assess Hyper-V VMs, check whether you have dynamic memory enabled on these VMs. There's a known issue for Hyper-V VMs only, in which an Azure Migrate appliance can't collect memory utilization data for VMs that don't have dynamic memory enabled.
+- If any of the performance counters are missing, Azure Migrate Server Assessment falls back to the allocated cores and memory, and it recommends a corresponding VM size.
+
+## <a name="is-the-vm-os-license-cost-included-in-cost-assessment"></a>Is the VM OS license cost included in cost assessment?
+
+Azure Migrate Server Assessment currently considers the operating system license cost only for Windows machines. License costs for Linux machines aren't currently considered.
+
+## <a name="performance-history-and-percentile-use"></a>Performance history and percentile use
+
+These properties apply only to performance-based sizing in Azure Migrate Server Assessment.
+
+Средство оценки серверов непрерывно ведет журнал производительности локальных компьютеров. Эти данные используются для предоставления рекомендаций по выбору номера SKU виртуальной машины и диска в Azure. This performance data is collected by Server Assessment as follows:
+- The Azure Migrate appliance continuously profiles the on-premises environment to gather real-time utilization data every 20 seconds for VMware VMs, and every 30 seconds for Hyper-V VMs.
+- The appliance rolls up the 20 or 30-second samples to create a single data point for every 10 minutes. To create the single data point, the appliance selects the peak value from all the 20-second and 30-second samples, and then sends it to Azure.
+- Когда средство выполняет оценку с учетом периода оценки производительности и значения процентиля журнала производительности, определяется репрезентативный показатель использования. For example, if the performance history is one week and percentile utilization is 95th, Azure Migrate sorts all the 10-minute sample points for the last one week in ascending order and then selects the 95th percentile as the representative value.
+- The 95th percentile value makes sure that you ignore any outliers, which might be included if you pick the 99th percentile.
+- If you want to pick the peak usage for the period and don't want to miss any outliers, you should select the 99th percentile for percentile utilization.
+
+
+## <a name="i-cant-find-dependency-visualization-for-azure-government"></a>I can't find dependency visualization for Azure Government
+
+Azure Migrate depends on Service Map for the dependency visualization functionality. Because Service Map is currently unavailable in Azure Government, this functionality is not available in Azure Government.
+
+## <a name="dependencies-dont-show-after-installing-agents"></a>Dependencies don't show after installing agents
+
+After you've installed the dependency visualization agents on on-premises VMs, Azure Migrate typically takes 15-30 minutes to display the dependencies in the portal. If you've waited for more than 30 minutes, make sure that the Microsoft Monitoring Agent (MMA) can connect to the Log Analytics workspace.
 
 Для виртуальных машин Windows:
-1. На панели управления запустите MMA.
-2. В **свойствах Microsoft Monitoring Agent** > **Azure log Analytics (OMS)** убедитесь, что **состояние** рабочей области — зеленый.
-3. Если состояние не является зеленым, попробуйте удалить рабочую область и добавить ее снова в MMA.
+1. In the Control Panel, start MMA.
+2. In the **Microsoft Monitoring Agent properties** > **Azure Log Analytics (OMS)** , make sure that the **Status** for the workspace is green.
+3. If the status isn't green, try removing the workspace and adding it again to MMA.
 
-      ![Диалоговое окно «Свойства MMA»](./media/troubleshooting-general/mma-status.png)
+      ![MMA Properties dialog box](./media/troubleshooting-general/mma-status.png)
 
-Для виртуальных машин Linux убедитесь, что команды установки для MMA и агент зависимостей были успешной.
+For Linux VMs, make sure that the installation commands for MMA and the dependency agent succeeded.
 
-## <a name="supported-mma-os"></a>Поддерживаемая ОС MMA
+## <a name="supported-mma-os"></a>Supported MMA OS
 
- Ознакомьтесь с поддерживаемыми операционными системами [Windows](https://docs.microsoft.com/azure/log-analytics/log-analytics-concept-hybrid#supported-windows-operating-systems)и [Linux](https://docs.microsoft.com/azure/log-analytics/log-analytics-concept-hybrid#supported-linux-operating-systems) .
+ Review the supported [Windows](https://docs.microsoft.com/azure/log-analytics/log-analytics-concept-hybrid#supported-windows-operating-systems), and [Linux](https://docs.microsoft.com/azure/log-analytics/log-analytics-concept-hybrid#supported-linux-operating-systems) operating systems.
 
-## <a name="supported-dependency-agent-os"></a>Поддерживаемые ОС агента зависимостей
+## <a name="supported-dependency-agent-os"></a>Supported dependency agent OS
 
-Ознакомьтесь с поддерживаемыми операционными системами [Windows и Linux](../azure-monitor/insights/vminsights-enable-overview.md#supported-operating-systems) .
+Review the supported [Windows and Linux](../azure-monitor/insights/vminsights-enable-overview.md#supported-operating-systems) operating systems.
 
-## <a name="dependencies-for-more-than-an-hour"></a>Зависимости более часа
+## <a name="dependencies-for-more-than-an-hour"></a>Dependencies for more than an hour
 
-Хотя служба "миграция Azure" позволяет вернуться к определенной дате в прошлом месяце, максимальная продолжительность, для которой можно визуализировать зависимости, составляет один час.
+Although Azure Migrate allows you to go back to a particular date in the last month, the maximum duration for which you can visualize the dependencies is one hour.
 
-Например, можно использовать функцию длительности времени в сопоставлении зависимостей для просмотра зависимостей за вчерашний период, но их можно просмотреть только в течение одного часа.
+For example, you can use the time duration functionality in the dependency map to view dependencies for yesterday, but you can view them for a one-hour period only.
 
-Однако можно использовать журналы Azure Monitor для [запроса данных зависимости](https://docs.microsoft.com/azure/migrate/how-to-create-group-machine-dependencies) в течение более длительного времени.
+However, you can use Azure Monitor logs to [query the dependency data](https://docs.microsoft.com/azure/migrate/how-to-create-group-machine-dependencies) over a longer duration.
 
-## <a name="i-cant-visualize-dependencies-for-groups-with-more-than-10-vms"></a>Не удается визуализировать зависимости для групп с более чем 10 виртуальными машинами
+## <a name="i-cant-visualize-dependencies-for-groups-with-more-than-10-vms"></a>I can't visualize dependencies for groups with more than 10 VMs
 
-С помощью средства "Миграция серверов в Azure" можно [визуализировать зависимости для групп](https://docs.microsoft.com/azure/migrate/how-to-create-group-dependencies) с 10 виртуальными машинами. Для более крупных групп рекомендуется разделить виртуальные машины на более мелкие группы, чтобы визуализировать зависимости.
+In Azure Migrate Server Assessment, you can [visualize dependencies for groups](https://docs.microsoft.com/azure/migrate/how-to-create-group-dependencies) with up to 10 VMs. For larger groups, we recommend that you split the VMs into smaller groups to visualize dependencies.
 
-## <a name="machines-show-install-agent-not-view-dependencies"></a>На компьютерах отображается значение "установить агент", а не "Просмотреть зависимости"
+## <a name="machines-show-install-agent-not-view-dependencies"></a>Machines show "Install agent" not "View dependencies"
 
-После переноса компьютеров с включенной визуализацией зависимостей в Azure компьютеры могут отображать действие "установить агент" вместо "Просмотр зависимостей" из-за следующего поведения:
-
-
-- После миграции в Azure локальные компьютеры отключаются, а аналогичные виртуальные машины загружаются в Azure. Эти компьютеры получают другие MAC-адреса.
-- Компьютеры могут также иметь разные IP-адреса в зависимости от того, был ли сохранен локальный IP-адрес.
-- Если MAC и IP-адреса отличаются от локальных, служба "миграция Azure" не связывает локальные компьютеры с данными зависимостей Сопоставление служб. В этом случае будет показан параметр для установки агента, а не для просмотра зависимостей.
-- После выполнения тестовой миграции в Azure локальные компьютеры остаются включенными, как и ожидалось. Аналогичные компьютеры запрашиваются в Azure, получают другой MAC-адрес и могут получать разные IP адреса. Если вы не блокируете исходящий трафик журнала Azure Monitor с этих компьютеров, служба "миграция Azure" не будет связывать локальные компьютеры с данными зависимостей Сопоставление служб, поэтому в этом случае отобразится возможность установки агентов, а не для просмотра зависимостей.
+After migrating machines with dependency visualization enabled to Azure, machines might show "Install agent" action instead of "View dependencies" due to the following behavior:
 
 
-## <a name="collect-network-traffic-logs-in-portal"></a>Получение журналов сетевого трафика на портале
+- After migration to Azure, on-premises machines are turned off and equivalent VMs are spun up in Azure. Эти компьютеры получают другие MAC-адреса.
+- Machines might also have a different IP address, based on whether you've retained the on-premises IP address or not.
+- If both MAC and IP addresses are different from on-premises, Azure Migrate doesn't associate the on-premises machines with any Service Map dependency data. In this case, it will show the option to install the agent rather than to view dependencies.
+- After a test migration to Azure, on-premises machines remain turned on as expected. Equivalent machines spun up in Azure acquire different MAC address and might acquire different IP addresses. Unless you block outgoing Azure Monitor log traffic from these machines, Azure Migrate won't associate the on-premises machines with any Service Map dependency data, and thus will show the option to install agents, rather than to view dependencies.
 
-Собирайте журналы следующим образом:
 
-1. Войдите на [портал Azure](https://portal.azure.com).
-2. Нажмите клавишу F12, чтобы запустить Средства для разработчиков. При необходимости снимите флажок **Очистить записи в** параметрах навигации.
-3. Перейдите на вкладку **сеть** и запустите запись сетевого трафика.
-   - В Chrome установите флажок **Preserve log** (Сохранить журнал). Запись должна начаться автоматически. Красный кружок означает, что трафик перехватывается. Если красный круг не отображается, выберите черный круг для начала.
-   - В Microsoft ребр и Internet Explorer запись должна запускаться автоматически. Если это не так, нажмите зеленую кнопку воспроизведения.
+## <a name="collect-network-traffic-logs-in-portal"></a>Collect network traffic logs in portal
+
+Collect logs as follows:
+
+1. Войдите на [портале Azure](https://portal.azure.com).
+2. Press F12 to start Developer Tools. If needed, clear the  **Clear entries on navigation** setting.
+3. Select the **Network** tab, and start capturing network traffic:
+   - В Chrome установите флажок **Preserve log** (Сохранить журнал). Запись должна начаться автоматически. A red circle indicates that traffic is being captured. If the red circle doesn't appear, select the black circle to start.
+   - In Microsoft Edge and Internet Explorer, recording should start automatically. If it doesn't, select the green play button.
 4. Попробуйте воспроизвести ошибку.
 5. Если при записи возникла ошибка, остановите запись и сохраните копию записанных действий.
-   - В Chrome щелкните правой кнопкой мыши и выберите **Сохранить как HAR с содержимым**. Это действие сжимает и экспортирует журналы как HAR-файл.
-   - В Microsoft ребр или Internet Explorer выберите параметр **экспортировать захваченный трафик** . Это действие сжимает и экспортирует журнал.
-6. Перейдите на вкладку **консоль** , чтобы проверить наличие предупреждений или ошибок. Чтобы сохранить журнал консоли, сделайте следующее.
-   - В Chrome щелкните правой кнопкой мыши в любом месте в журнале консоли. Выберите **Сохранить как**, экспорт и заархивировать журнал.
-   - В Microsoft ребр или Internet Explorer щелкните ошибки правой кнопкой мыши и выберите команду **Копировать все**.
+   - In Chrome, right-click and select **Save as HAR with content**. This action compresses and exports the logs as a .har file.
+   - In Microsoft Edge or Internet Explorer, select the **Export captured traffic** option. This action compresses and exports the log.
+6. Select the **Console** tab to check for any warnings or errors. Чтобы сохранить журнал консоли, сделайте следующее.
+   - В Chrome щелкните правой кнопкой мыши в любом месте в журнале консоли. Select **Save as**, to export, and zip the log.
+   - In Microsoft Edge or Internet Explorer, right-click the errors and select **Copy all**.
 7. Закройте средства для разработчиков.
