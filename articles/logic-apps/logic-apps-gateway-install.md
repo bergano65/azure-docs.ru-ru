@@ -1,5 +1,5 @@
 ---
-title: Установка локального шлюза данных — Azure Logic Apps
+title: Install on-premises data gateway - Azure Logic Apps
 description: Чтобы получить доступ к данным в локальной среде из Azure Logic Apps, нужно скачать и установить локальный шлюз данных.
 services: logic-apps
 ms.service: logic-apps
@@ -9,43 +9,43 @@ ms.author: estfan
 ms.reviewer: arthii, LADocs
 ms.topic: article
 ms.date: 11/06/2019
-ms.openlocfilehash: ef46fce8609119777ef73cbe189d7a8ace662c91
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: e1e56d18b0874a724849e28092ed46892a1b5519
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74076938"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74326376"
 ---
 # <a name="install-on-premises-data-gateway-for-azure-logic-apps"></a>Установка локального шлюза данных для Azure Logic Apps
 
-Прежде чем можно будет [подключиться к локальным источникам данных из Azure Logic Apps](../logic-apps/logic-apps-gateway-connection.md), скачайте и установите локальный [шлюз данных](https://aka.ms/on-premises-data-gateway-installer) на локальном компьютере. Шлюз работает как мост, обеспечивающий быструю пересылку данных и шифрование между источниками данных в локальной среде и приложениями логики. Вы можете использовать одну и ту же установку шлюза с другими облачными службами, такими как Power BI, Автоматизация питания, Power Apps и Azure Analysis Services. Сведения об использовании шлюза с этими службами см. в следующих статьях:
+Before you can [connect to on-premises data sources from Azure Logic Apps](../logic-apps/logic-apps-gateway-connection.md), download and install the [on-premises data gateway](https://aka.ms/on-premises-data-gateway-installer) on a local computer. The gateway works as a bridge that provides quick data transfer and encryption between data sources on premises and your logic apps. You can use the same gateway installation with other cloud services, such as Power BI, Power Automate, Power Apps, and Azure Analysis Services. For information about how to use the gateway with these services, see these articles:
 
-* [Локальный шлюз данных Microsoft Power автоматизиру](/power-automate/gateway-reference)
+* [Microsoft Power Automate on-premises data gateway](/power-automate/gateway-reference)
 * [Локальный шлюз данных](/power-bi/service-gateway-onprem)
-* [Локальный шлюз данных Microsoft Power Apps](/powerapps/maker/canvas-apps/gateway-reference)
+* [Microsoft Power Apps on-premises data gateway](/powerapps/maker/canvas-apps/gateway-reference)
 * [Локальный шлюз данных](../analysis-services/analysis-services-gateway.md)
 
-В этой статье показано, как скачать, установить и настроить локальный шлюз данных, чтобы получить доступ к локальным источникам данных из Azure Logic Apps. Дополнительные сведения о [работе шлюза данных см](#gateway-cloud-service) . Далее в этом разделе. Дополнительные сведения о шлюзе см. [в статье что такое локальный шлюз](https://docs.microsoft.com/data-integration/gateway/service-gateway-onprem)?
+This article shows how to download, install, and set up your on-premises data gateway so that you can access on-premises data sources from Azure Logic Apps. You can also learn more about [how the data gateway works](#gateway-cloud-service) later in this topic. For more information about the gateway, see [What is an on-premises gateway](https://docs.microsoft.com/data-integration/gateway/service-gateway-onprem)?
 
 <a name="requirements"></a>
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
-* Учетная запись и подписка Azure. Если у вас нет учетной записи Azure с подпиской, зарегистрируйтесь, чтобы [получить бесплатную учетную запись Azure](https://azure.microsoft.com/free/).
+* Учетная запись и подписка Azure. If you don't have an Azure account with a subscription, [sign up for a free Azure account](https://azure.microsoft.com/free/).
 
-  * Учетная запись Azure должна принадлежать к одному [клиенту или каталогу Azure Active Directory (Azure AD)](../active-directory/fundamentals/active-directory-whatis.md#terminology). Для установки и администрирования шлюза на локальном компьютере необходимо использовать одну и ту же учетную запись Azure.
+  * Your Azure account must belong to a single [Azure Active Directory (Azure AD) tenant or directory](../active-directory/fundamentals/active-directory-whatis.md#terminology). You must use the same Azure account for installing and administering the gateway on your local computer.
 
-  * Во время установки шлюза вы входите с помощью учетной записи Azure, которая связывает установку шлюза с учетной записью Azure и только с этой учетной записью. Позже в портал Azure необходимо использовать одну и ту же учетную запись Azure и клиент Azure AD при создании ресурса шлюза Azure, который регистрирует и заявляет установку шлюза. В Azure Logic Apps локальные триггеры и действия затем используют ресурс шлюза для подключения к локальным источникам данных.
+  * During gateway installation, you sign in with your Azure account, which links your gateway installation to your Azure account and only that account. Later, in the Azure portal, you must use the same Azure account and Azure AD tenant when you create an Azure gateway resource that registers and claims your gateway installation. In Azure Logic Apps, on-premises triggers and actions then use the gateway resource for connecting to on-premises data sources.
 
     > [!NOTE]
-    > Вы можете связать только одну установку шлюза и один ресурс шлюза Azure друг с другом. Вы не можете связать одну установку шлюза с несколькими учетными записями Azure или ресурсами шлюза Azure. Однако учетная запись Azure может ссылаться на несколько установок шлюза и ресурсов шлюза Azure. В локальном триггере или действии можно выбрать из различных подписок Azure, а затем выбрать связанный ресурс шлюза.
+    > You can link only one gateway installation and one Azure gateway resource to each other. You can't link the same gateway installation to multiple Azure accounts or Azure gateway resources. However, an Azure account can link to multiple gateway installations and Azure gateway resources. In an on-premises trigger or action, you can select from your various Azure subscriptions, and then select an associated gateway resource.
 
-  * Необходимо выполнить вход с помощью рабочей учетной записи или учебной учетной записи, которая также называется учетной записью *Организации* , которая выглядит как `username@contoso.com`. Вы не можете использовать учетные записи Azure B2B (гостевые) или личные учетные записи Майкрософт, например @hotmail.com или @outlook.com.
+  * You need to sign in with either a work account or school account, also known as an *organization* account, which looks like `username@contoso.com`. You can't use Azure B2B (guest) accounts or personal Microsoft accounts, such as @hotmail.com or @outlook.com.
 
     > [!TIP]
-    > Если вы зарегистрировались в предложении Office 365 и не ввели свой рабочий адрес электронной почты, ваш адрес может выглядеть `username@domain.onmicrosoft.com`. Ваша учетная запись хранится в клиенте в Azure Active Directory (Azure AD). В большинстве случаев имя участника-пользователя (UPN) для учетной записи Azure AD совпадает с адресом электронной почты.
+    > If you signed up for an Office 365 offering and didn't provide your work email address, your address might look like `username@domain.onmicrosoft.com`. Your account is stored within a tenant in an Azure Active Directory (Azure AD). In most cases, the User Principal Name (UPN) for your Azure AD account is the same as your email address.
     >
-    > Чтобы использовать [стандартную подписку Visual Studio](https://visualstudio.microsoft.com/vs/pricing/) , связанную с учетная запись Майкрософт, сначала [Создайте клиент в Azure AD](../active-directory/develop/quickstart-create-new-tenant.md) или используйте каталог по умолчанию. Добавьте пользователя с паролем в каталог, а затем предоставьте ему доступ к своей подписке Azure. Затем вы можете войти в систему во время установки шлюза, используя эти имя пользователя и пароль.
+    > To use a [Visual Studio Standard subscription](https://visualstudio.microsoft.com/vs/pricing/) that's linked to a Microsoft account, first [create a tenant in Azure AD](../active-directory/develop/quickstart-create-new-tenant.md) or use the default directory. Add a user with a password to the directory, and then give that user access to your Azure subscription. Затем вы можете войти в систему во время установки шлюза, используя эти имя пользователя и пароль.
 
 * Требования для локального компьютера приведены ниже.
 
@@ -58,28 +58,30 @@ ms.locfileid: "74076938"
 
   * 8-ядерный ЦП.
   * 8 ГБ ОЗУ.
-  * 64-разрядная версия Windows Server 2012 R2 или более поздней версии
-  * Хранилище твердотельных накопителей (SSD) для буферизации
+  * 64-bit version of Windows Server 2012 R2 or later
+  * Solid-state drive (SSD) storage for spooling
 
   > [!NOTE]
-  > Шлюз не поддерживает Windows Server Core.
+  > The gateway doesn't support Windows Server Core.
 
-* **Связанные вопросы**
+* **Related considerations**
 
-  * Локальный шлюз данных должен быть установлен только на локальном компьютере, который не является контроллером домена. Тем не менее не нужно устанавливать шлюз на компьютере, на котором размещен источник данных. Вам нужен только один шлюз для всех источников данных, поэтому вам не нужно устанавливать шлюз для каждого источника данных.
+  * Install the on-premises data gateway only on a local computer, not a domain controller. Не нужно устанавливать шлюз на компьютере, на котором размещен источник данных. You need only one gateway for all your data sources, so you don't need to install the gateway for each data source.
 
     > [!TIP]
     > Чтобы свести к минимуму задержки, шлюз можно установить как можно ближе к источнику данных или даже на том же компьютере, если только у вас есть соответствующие разрешения.
 
-  * Установите шлюз на компьютере, который находится в проводной сети, подключенном к Интернету, всегда включается и не переходит в спящий режим. В противном случае шлюз не сможет работать, и производительность может снизиться по беспроводной сети.
+  * Install the gateway on a computer that's on a wired network, connected to the internet, always turned on, and doesn't go to sleep. Otherwise, the gateway can't run, and performance might suffer over a wireless network.
 
-  * Если вы планируете использовать проверку подлинности Windows, убедитесь, что шлюз установлен на компьютере, который является членом той же среды Active Directory, что и источники данных.
+  * If you plan to use Windows authentication, make sure that you install the gateway on a computer that's a member of the same Active Directory environment as your data sources.
 
-  * Регион, выбранный для установки шлюза, является тем же расположением, которое необходимо выбрать при последующем создании ресурса шлюза Azure для приложения логики. По умолчанию этот регион совпадает с расположением клиента Azure AD, который управляет учетной записью Azure. Однако расположение можно изменить во время установки шлюза.
+  * The region that you select for your gateway installation is the same location that you must select when you later create the Azure gateway resource for your logic app. By default, this region is the same location as your Azure AD tenant that manages your Azure account. However, you can change the location during gateway installation.
 
-  * Шлюз имеет два режима: Стандартный и личный режим, который применяется только к Power BI. На одном компьютере нельзя запустить несколько шлюзов в одном и том же режиме.
+  * If you're updating your gateway installation to the latest version, uninstall your current gateway first for a cleaner experience.
 
-  * Azure Logic Apps поддерживает операции чтения и записи через шлюз. Однако эти операции имеют [ограничения на размер полезных данных](https://docs.microsoft.com/data-integration/gateway/service-gateway-onprem#considerations).
+  * The gateway has two modes: standard mode and personal mode, which applies only to Power BI. You can't have more than one gateway running in the same mode on the same computer.
+
+  * Azure Logic Apps supports read and write operations through the gateway. However, these operations have [limits on their payload size](https://docs.microsoft.com/data-integration/gateway/service-gateway-onprem#considerations).
 
 <a name="install-gateway"></a>
 
@@ -87,46 +89,46 @@ ms.locfileid: "74076938"
 
 1. [Скачайте и запустите установщик шлюза на локальном компьютере](https://aka.ms/on-premises-data-gateway-installer).
 
-1. После открытия установщика нажмите кнопку **Далее**.
+1. After the installer opens, select **Next**.
 
-   ![Начальный экран для установщика шлюза](./media/logic-apps-gateway-install/gateway-intro-screen.png)
+   ![Intro screen for gateway installer](./media/logic-apps-gateway-install/gateway-intro-screen.png)
 
-1. Выберите **локальный шлюз данных (рекомендуется)** , который является стандартным режимом, и нажмите кнопку **Далее**.
+1. Select **On-premises data gateway (recommended)** , which is standard mode, and then select **Next**.
 
-   ![Выбор режима выполнения для шлюза данных](./media/logic-apps-gateway-install/select-gateway-running-mode.png)
+   ![Select run mode for data gateway](./media/logic-apps-gateway-install/select-gateway-running-mode.png)
 
-1. Просмотрите минимальные требования, оставьте путь установки по умолчанию, примите условия использования и нажмите кнопку **установить**.
+1. Review the minimum requirements, keep the default installation path, accept the terms of use, and then select **Install**.
 
-   ![Проверка требований и принятие условий использования](./media/logic-apps-gateway-install/review-and-accept-terms-of-use.png)
+   ![Review requirements and accept terms of use](./media/logic-apps-gateway-install/review-and-accept-terms-of-use.png)
 
-1. После успешной установки шлюза укажите адрес электронной почты для учетной записи Azure, а затем выберите **Вход**, например:
+1. After the gateway successfully installs, provide the email address for your Azure account, and then select **Sign in**, for example:
 
    ![Выполнение входа в рабочую или учебную учетную запись](./media/logic-apps-gateway-install/sign-in-gateway-install.png)
 
-   Установка шлюза может ссылаться только на одну учетную запись Azure.
+   Your gateway installation can link to only one Azure account.
 
-1. Выберите **зарегистрировать новый шлюз на этом компьютере** > **Далее**. Этот шаг регистрирует установку шлюза в [облачной службе шлюза](#gateway-cloud-service).
+1. Select **Register a new gateway on this computer** > **Next**. This step registers your gateway installation with the [gateway cloud service](#gateway-cloud-service).
 
-   ![Регистрация шлюза на локальном компьютере](./media/logic-apps-gateway-install/register-gateway-local-computer.png)
+   ![Register gateway on local computer](./media/logic-apps-gateway-install/register-gateway-local-computer.png)
 
 1. Для установки шлюза необходимо указать следующие сведения.
 
-   * Имя шлюза, уникальное для клиента Azure AD
-   * Ключ восстановления, который должен содержать по крайней мере восемь символов, которые вы хотите использовать.
+   * A gateway name that's unique across your Azure AD tenant
+   * The recovery key, which must have at least eight characters, that you want to use
    * Подтверждение ключа восстановления
 
-   ![Укажите сведения для установки шлюза](./media/logic-apps-gateway-install/gateway-name-recovery-key.png)
+   ![Provide information for gateway installation](./media/logic-apps-gateway-install/gateway-name-recovery-key.png)
 
    > [!IMPORTANT]
-   > Сохраните и держите ключ восстановления в безопасном месте. Этот ключ необходим, если вам когда-либо нужно изменить расположение, переместить, восстановить или перехватить установку шлюза.
+   > Сохраните и держите ключ восстановления в безопасном месте. You need this key if you ever want to change the location, move, recover, or take over a gateway installation.
 
-   Обратите внимание на возможность **добавления в существующий кластер шлюза**, который выбирается при установке дополнительных шлюзов для [сценариев с высоким уровнем доступности](#high-availability).
+   Note the option to **Add to an existing gateway cluster**, which you select when you install additional gateways for [high-availability scenarios](#high-availability).
 
-1. Проверьте регион облачной службы шлюза и служебной [шины Azure](https://azure.microsoft.com/services/service-bus/) , которая используется для установки шлюза. По умолчанию этот регион совпадает с расположением клиента Azure AD для вашей учетной записи Azure.
+1. Check the region for the gateway cloud service and [Azure Service Bus](https://azure.microsoft.com/services/service-bus/) that's used by your gateway installation. By default, this region is the same location as the Azure AD tenant for your Azure account.
 
-   ![Подтвердите регион для службы шлюза и служебной шины](./media/logic-apps-gateway-install/confirm-gateway-region.png)
+   ![Confirm region for gateway service and service bus](./media/logic-apps-gateway-install/confirm-gateway-region.png)
 
-1. Чтобы принять регион по умолчанию, щелкните **настроить**. Однако если область по умолчанию не является ближайшим к вам, можно изменить регион.
+1. To accept the default region, select **Configure**. However, if the default region isn't the one that's closest to you, you can change the region.
 
    *Причины изменения региона установки шлюза.*
 
@@ -134,36 +136,36 @@ ms.locfileid: "74076938"
 
    1. Рядом с текущим регионом выберите **Изменить регион**.
 
-      ![Изменение текущего региона шлюза](./media/logic-apps-gateway-install/change-gateway-service-region.png)
+      ![Change the current gateway region](./media/logic-apps-gateway-install/change-gateway-service-region.png)
 
-   1. На следующей странице откройте список **Выбор региона** , выберите нужный регион и нажмите кнопку **Готово**.
+   1. On the next page, open the **Select Region** list, select the region you want, and select **Done**.
 
-      ![Выберите другой регион для службы шлюза](./media/logic-apps-gateway-install/select-region-gateway-install.png)
+      ![Select another region for gateway service](./media/logic-apps-gateway-install/select-region-gateway-install.png)
 
-1. Проверьте сведения в окончательном окне подтверждения. В этом примере используется та же учетная запись для Logic Apps, Power BI, Power Apps и Power автоматизируя, поэтому шлюз доступен для всех этих служб. Когда будете готовы, нажмите кнопку **Закрыть**.
+1. Review the information in the final confirmation window. This example uses the same account for Logic Apps, Power BI, Power Apps, and Power Automate, so the gateway is available for all these services. When you're ready, select **Close**.
 
-   ![Подтверждение сведений о шлюзе данных](./media/logic-apps-gateway-install/finished-gateway-default-location.png)
+   ![Confirm data gateway information](./media/logic-apps-gateway-install/finished-gateway-default-location.png)
 
-1. Теперь [Создайте ресурс Azure для установки шлюза](../logic-apps/logic-apps-gateway-connection.md).
+1. Now [create the Azure resource for your gateway installation](../logic-apps/logic-apps-gateway-connection.md).
 
-## <a name="check-or-adjust-communication-settings"></a>Проверка или Настройка параметров связи
+## <a name="check-or-adjust-communication-settings"></a>Check or adjust communication settings
 
-Локальный шлюз данных зависит от [служебной шины Azure](../service-bus-messaging/service-bus-messaging-overview.md) для подключения к облаку и устанавливает соответствующие исходящие подключения к соответствующему региону Azure шлюза. Если ваша рабочая среда требует, чтобы трафик проработал через прокси-сервер или брандмауэр для доступа к Интернету, это ограничение может препятствовать подключению локального шлюза данных к облачной службе шлюза и служебной шине Azure. Шлюз имеет несколько параметров связи, которые можно настроить. Дополнительные сведения см. в следующих статьях:
+The on-premises data gateway depends on [Azure Service Bus](../service-bus-messaging/service-bus-messaging-overview.md) for cloud connectivity and establishes the corresponding outbound connections to the gateway's associated Azure region. If your work environment requires that traffic goes through a proxy or firewall to access the internet, this restriction might prevent the on-premises data gateway from connecting to the gateway cloud service and Azure Service Bus. The gateway has several communication settings, which you can adjust. Дополнительные сведения см. в следующих статьях:
 
-* [Настройка параметров связи для локального шлюза данных](https://docs.microsoft.com/data-integration/gateway/service-gateway-communication)
-* [Настройка параметров прокси-сервера для локального шлюза данных](https://docs.microsoft.com/data-integration/gateway/service-gateway-proxy)
+* [Adjust communication settings for the on-premises data gateway](https://docs.microsoft.com/data-integration/gateway/service-gateway-communication)
+* [Configure proxy settings for the on-premises data gateway](https://docs.microsoft.com/data-integration/gateway/service-gateway-proxy)
 
 <a name="high-availability"></a>
 
 ## <a name="high-availability-support"></a>Поддержка высокой доступности
 
-Чтобы избежать единой точки отказа для доступа к локальному доступу к данным, можно установить несколько вариантов шлюза (только для стандартного режима) с каждым на разных компьютерах и настроить их как кластер или группу. Таким образом, если основной шлюз недоступен, запросы данных направляются на второй шлюз и т. д. Так как на компьютере можно установить только один стандартный шлюз, необходимо установить каждый дополнительный шлюз, который находится в кластере, на другом компьютере. Все соединители, работающие с локальным шлюзом данных, поддерживают высокий уровень доступности.
+To avoid single points of failure for on-premises data access, you can have multiple gateway installations (standard mode only) with each on a different computer, and set them up as a cluster or group. That way, if the primary gateway is unavailable, data requests are routed to the second gateway, and so on. Because you can install only one standard gateway on a computer, you must install each additional gateway that's in the cluster on a different computer. All the connectors that work with the on-premises data gateway support high availability.
 
-* У вас уже должна быть хотя бы одна установка шлюза с той же учетной записью Azure, что и основной шлюз, и ключ восстановления для этой установки.
+* You must already have at least one gateway installation with the same Azure account as the primary gateway and the recovery key for that installation.
 
 * На основном шлюзе должны быть установлены обновления от ноября 2017 г. или более ранние.
 
-После настройки основного шлюза, когда вы переходите к установке другого шлюза, выберите **Добавить в существующий кластер шлюза**, выберите основной шлюз, который является первым установленным шлюзом, и укажите ключ восстановления для этого шлюза. Дополнительные сведения см. в разделе [Кластеры с высоким уровнем доступности для локальных шлюзов данных](https://docs.microsoft.com/data-integration/gateway/service-gateway-install#add-another-gateway-to-create-a-cluster).
+After you set up your primary gateway, when you go to install another gateway, select **Add to an existing gateway cluster**, select the primary gateway, which is the first gateway that you installed, and provide the recovery key for that gateway. Дополнительные сведения см. в разделе [Кластеры с высоким уровнем доступности для локальных шлюзов данных](https://docs.microsoft.com/data-integration/gateway/service-gateway-install#add-another-gateway-to-create-a-cluster).
 
 <a name="update-gateway-installation"></a>
 
@@ -171,110 +173,110 @@ ms.locfileid: "74076938"
 
 Если необходимо изменить расположение шлюза, переместить установку шлюза на новый компьютер, восстановить поврежденный шлюз или использовать владельца существующего шлюза, вам потребуется ключ восстановления, предоставленный во время установки шлюза.
 
-1. Запустите установщик шлюза на компьютере с имеющимся шлюзом. Если у вас нет последнего установщика шлюза, [скачайте последнюю версию шлюза](https://aka.ms/on-premises-data-gateway-installer).
+1. Run the gateway installer on the computer that has the existing gateway. If you don't have the latest gateway installer, [download the latest gateway version](https://aka.ms/on-premises-data-gateway-installer).
 
    > [!NOTE]
-   > Перед восстановлением шлюза на компьютере с исходной установкой шлюза необходимо сначала удалить шлюз на этом компьютере. Это действие отключает исходный шлюз.
-   > Если вы удалите или удалите кластер шлюза для любой облачной службы, вы не сможете восстановить этот кластер.
+   > Before you restore the gateway on the computer that has the original gateway installation, you must first uninstall the gateway on that computer. This action disconnects the original gateway.
+   > If you remove or delete a gateway cluster for any cloud service, you can't restore that cluster.
 
-1. После открытия установщика Войдите в систему, используя ту же учетную запись Azure, которая использовалась для установки шлюза.
+1. After the installer opens, sign in with the same Azure account that was used to install the gateway.
 
-1. Выберите **миграция, восстановление или перенаправление существующего шлюза** > **Далее**, например:
+1. Select **Migrate, restore, or takeover an existing gateway** > **Next**, for example:
 
    ![Выберите "Перенос, восстановление или перехват имеющегося шлюза"](./media/logic-apps-gateway-install/migrate-recover-take-over-gateway.png)
 
-1. Выберите из доступных кластеров и шлюзов и введите ключ восстановления для выбранного шлюза, например:
+1. Select from the available clusters and gateways, and enter the recovery key for the selected gateway, for example:
 
-   ![Выберите шлюз и укажите ключ восстановления.](./media/logic-apps-gateway-install/select-existing-gateway.png)
+   ![Select gateway and provide recovery key](./media/logic-apps-gateway-install/select-existing-gateway.png)
 
-1. Чтобы изменить регион, щелкните **изменить регион**и выберите новый регион.
+1. To change the region, select **Change Region**, and select the new region.
 
-1. Когда будете готовы, нажмите кнопку **настроить** , чтобы завершить выполнение задачи.
+1. When you're ready, select **Configure** so that you can finish your task.
 
-## <a name="tenant-level-administration"></a>Администрирование на уровне клиента
+## <a name="tenant-level-administration"></a>Tenant-level administration
 
-Чтобы получить сведения о всех локальных шлюзах данных в клиенте Azure AD, глобальные администраторы этого клиента могут войти в [центр администрирования Power Platform](https://powerplatform.microsoft.com) в качестве администратора клиента и выбрать параметр " **шлюзы данных** ". Дополнительные сведения см. в статье [Администрирование на уровне клиента для локального шлюза данных](https://docs.microsoft.com/data-integration/gateway/service-gateway-tenant-level-admin).
+To get visibility into all the on-premises data gateways in an Azure AD tenant, global administrators in that tenant can sign in to the [Power Platform Admin center](https://powerplatform.microsoft.com) as a tenant administrator and select the **Data Gateways** option. For more information, see [Tenant-level administration for the on-premises data gateway](https://docs.microsoft.com/data-integration/gateway/service-gateway-tenant-level-admin).
 
 <a name="restart-gateway"></a>
 
 ## <a name="restart-gateway"></a>Перезапуск шлюза
 
-По умолчанию установка шлюза на локальном компьютере выполняется как учетная запись службы Windows с именем "Служба локального шлюза данных". Однако при установке шлюза используется `NT SERVICE\PBIEgwService` имя учетной записи для входа в систему, а также разрешения «вход в качестве службы».
+By default, the gateway installation on your local computer runs as a Windows service account named "On-premises data gateway service". However, the gateway installation uses the `NT SERVICE\PBIEgwService` name for its "Log On As" account credentials and has "Log on as a service" permissions.
 
 > [!NOTE]
-> Учетная запись службы Windows отличается от учетной записи, используемой для подключения к локальным источникам данных, и от учетной записи Azure, используемой при входе в облачные службы.
+> Your Windows service account differs from the account used for connecting to on-premises data sources and from the Azure account that you use when you sign in to cloud services.
 
-Как и любая другая служба Windows, шлюз можно запускать и прекращать различными способами. Дополнительные сведения см. [в статье перезапуск локального шлюза данных](https://docs.microsoft.com/data-integration/gateway/service-gateway-restart).
+Like any other Windows service, you can start and stop the gateway in various ways. For more information, see [Restart an on-premises data gateway](https://docs.microsoft.com/data-integration/gateway/service-gateway-restart).
 
 <a name="gateway-cloud-service"></a>
 
 ## <a name="how-the-gateway-works"></a>Как работает шлюз
 
-Пользователи в вашей организации могут получить доступ к локальным данным, для которых у них уже есть права на доступ. Тем не менее, чтобы пользователи могли подключаться к локальному источнику данных, необходимо установить и настроить локальный шлюз данных. Как правило, администратор — это пользователь, который устанавливает и настраивает шлюз. Для этих действий могут потребоваться разрешения администратора сервера или специальные знания о локальных серверах.
+Users in your organization can access on-premises data for which they already have authorized access. However, before these users can connect to your on-premises data source, you need to install and set up an on-premises data gateway. Usually, an admin is the person who installs and sets up a gateway. These actions might require Server Administrator permissions or special knowledge about your on-premises servers.
 
-Шлюз обеспечивает быструю и безопасную связь в фоновом режиме. Это взаимодействие между пользователем в облаке, облачной службой шлюза и локальным источником данных. Облачная служба шлюза шифрует и хранит учетные данные источников данных и сведения о шлюзах. Служба также направляет запросы и их результаты между пользователем, шлюзом и локальным источником данных.
+The gateway facilitates quick and secure communication behind-the-scenes-communication. This communication flows between a user in the cloud, the gateway cloud service, and your on-premises data source. Облачная служба шлюза шифрует и хранит учетные данные источников данных и сведения о шлюзах. The service also routes queries and their results between the user, the gateway, and your on-premises data source.
 
-Шлюз работает с брандмауэрами и использует только исходящие соединения. Весь трафик поступает как безопасный исходящий трафик от агента шлюза. Шлюз передает данные из локальных источников в зашифрованные каналы через [служебную шину Azure](../service-bus-messaging/service-bus-messaging-overview.md). Служебная шина создает канал между шлюзом и службой вызовов, при этом она не хранит никаких данных. Шифруются все данные, которые передаются через шлюз.
+Шлюз работает с брандмауэрами и использует только исходящие соединения. Весь трафик поступает как безопасный исходящий трафик от агента шлюза. The gateway relays data from on-premises sources on encrypted channels through [Azure Service Bus](../service-bus-messaging/service-bus-messaging-overview.md). Служебная шина создает канал между шлюзом и службой вызовов, при этом она не хранит никаких данных. Шифруются все данные, которые передаются через шлюз.
 
-![Архитектура локального шлюза данных](./media/logic-apps-gateway-install/how-on-premises-data-gateway-works-flow-diagram.png)
+![Architecture for on-premises data gateway](./media/logic-apps-gateway-install/how-on-premises-data-gateway-works-flow-diagram.png)
 
 > [!NOTE]
-> В зависимости от облачной службы может потребоваться настроить источник данных для шлюза.
+> Depending on the cloud service, you might need to set up a data source for the gateway.
 
-Эти шаги описывают, что происходит при взаимодействии с элементом, подключенным к локальному источнику данных:
+These steps describe what happens when you interact with an element that's connected to an on-premises data source:
 
-1. Облачная служба создает запрос вместе с зашифрованными учетными данными для источника данных. Затем служба отправляет запрос и учетные данные в очередь шлюза для обработки.
+1. The cloud service creates a query, along with the encrypted credentials for the data source. The service then sends the query and credentials to the gateway queue for processing.
 
-1. Облачная служба шлюза анализирует запрос и отправляет запрос в служебную шину Azure.
+1. The gateway cloud service analyzes the query and pushes the request to Azure Service Bus.
 
-1. Служебная шина Azure отправляет ожидающие запросы в шлюз.
+1. Azure Service Bus sends the pending requests to the gateway.
 
-1. Шлюз получает запрос, расшифровывает учетные данные и подключается к одному или нескольким источникам данных с этими учетными данными.
+1. The gateway gets the query, decrypts the credentials, and connects to one or more data sources with those credentials.
 
-1. Шлюз отправляет запрос в источник данных для выполнения.
+1. The gateway sends the query to the data source for running.
 
 1. Результаты отправляются из источника данных обратно в шлюз, а затем — в облачную службу шлюза. Затем облачная служба шлюза использует эти результаты.
 
-### <a name="authentication-to-on-premises-data-sources"></a>Проверка подлинности в локальных источниках данных
+### <a name="authentication-to-on-premises-data-sources"></a>Authentication to on-premises data sources
 
-Сохраненные учетные данные используются для подключения из шлюза к локальным источникам данных. Независимо от пользователя, шлюз использует сохраненные учетные данные для подключения. Могут возникнуть исключения проверки подлинности для конкретных служб, например DirectQuery и Ливеконнект, для Analysis Services в Power BI.
+A stored credential is used to connect from the gateway to on-premises data sources. Regardless of the user, the gateway uses the stored credential to connect. There might be authentication exceptions for specific services, such as DirectQuery and LiveConnect for Analysis Services in Power BI.
 
 ### <a name="azure-active-directory-azure-ad"></a>Azure Active Directory (Azure AD)
 
-Облачные службы Майкрософт используют [Azure AD](../active-directory/fundamentals/active-directory-whatis.md) для проверки подлинности пользователей. Клиент Azure AD содержит имена пользователей и группы безопасности. Как правило, адрес электронной почты, используемый для входа, совпадает с именем участника-пользователя (UPN) для вашей учетной записи.
+Microsoft cloud services use [Azure AD](../active-directory/fundamentals/active-directory-whatis.md) to authenticate users. An Azure AD tenant contains usernames and security groups. Typically, the email address that you use for sign-in is the same as the User Principal Name (UPN) for your account.
 
-### <a name="what-is-my-upn"></a>Что такое UPN?
+### <a name="what-is-my-upn"></a>What is my UPN?
 
-Если вы не являетесь администратором домена, возможно, вы не знаете имя участника-пользователя. Чтобы найти имя участника-пользователя для своей учетной записи, выполните команду `whoami /upn` на рабочей станции. Хотя результат выглядит как адрес электронной почты, результатом является имя участника-пользователя для учетной записи локального домена.
+If you're not a domain admin, you might not know your UPN. To find the UPN for your account, run the `whoami /upn` command from your workstation. Although the result looks like an email address, the result is the UPN for your local domain account.
 
-### <a name="synchronize-an-on-premises-active-directory-with-azure-ad"></a>Синхронизация локальной Active Directory с Azure AD
+### <a name="synchronize-an-on-premises-active-directory-with-azure-ad"></a>Synchronize an on-premises Active Directory with Azure AD
 
-Имя участника-пользователя для локальных учетных записей Active Directory и учетных записей Azure AD должно быть одинаковым. Убедитесь, что каждая локальная учетная запись Active Directory соответствует учетной записи Azure AD. Облачные службы узнают только об учетных записях в Azure AD. Поэтому вам не нужно добавлять учетную запись в локальный Active Directory. Если учетная запись не существует в Azure AD, эту учетную запись использовать нельзя.
+The UPN for your on-premises Active Directory accounts and Azure AD accounts must be the same. So, make sure that each on-premises Active Directory account matches your Azure AD account. The cloud services know only about accounts within Azure AD. So, you don't need to add an account to your on-premises Active Directory. If the account doesn't exist in Azure AD, you can't use that account.
 
-Ниже приведены способы сопоставления локальных учетных записей Active Directory с Azure AD.
+Here are ways that you can match your on-premises Active Directory accounts with Azure AD.
 
-* Вручную добавьте учетные записи в Azure AD.
+* Add accounts manually to Azure AD.
 
-  Создайте учетную запись в портал Azure или в центре администрирования Microsoft 365. Убедитесь, что имя учетной записи совпадает с именем участника-пользователя для локальной учетной записи Active Directory.
+  Create an account in the Azure portal or in the Microsoft 365 admin center. Make sure that the account name matches the UPN for the on-premises Active Directory account.
 
-* Синхронизация локальных учетных записей с клиентом Azure AD с помощью средства Azure Active Directory Connect.
+* Synchronize local accounts to your Azure AD tenant by using the Azure Active Directory Connect tool.
 
-  Средство Azure AD Connect предоставляет параметры для синхронизации каталогов и настройки проверки подлинности. Эти параметры включают синхронизацию хэша паролей, сквозную аутентификацию и Федерацию. Если вы не являетесь администратором клиента или администратором локального домена, обратитесь к ИТ-администратору, чтобы получить Azure AD Connect настройки. Azure AD Connect гарантирует, что имя участника-пользователя Azure AD совпадает с локальным Active Directory UPN. Такое сопоставление помогает при использовании Analysis Services активных подключений с функциями Power BI или единого входа (SSO).
+  The Azure AD Connect tool provides options for directory synchronization and authentication setup. These options include password hash sync, pass-through authentication, and federation. If you're not a tenant admin or a local domain admin, contact your IT admin to get Azure AD Connect set up. Azure AD Connect ensures that your Azure AD UPN matches your local Active Directory UPN. This matching helps if you're using Analysis Services live connections with Power BI or single sign-on (SSO) capabilities.
 
   > [!NOTE]
-  > Синхронизация учетных записей с помощью средства Azure AD Connect создает новые учетные записи в клиенте Azure AD.
+  > Synchronizing accounts with the Azure AD Connect tool creates new accounts in your Azure AD tenant.
 
 <a name="faq"></a>
 
-## <a name="faq-and-troubleshooting"></a>Часто задаваемые вопросы и устранение неполадок
+## <a name="faq-and-troubleshooting"></a>FAQ and troubleshooting
 
 Дополнительные сведения см. в следующих статьях:
 
 * [Вопросы и ответы о локальном шлюзе данных](https://docs.microsoft.com/data-integration/gateway/service-gateway-onprem-faq)
-* [Устранение неполадок локального шлюза данных](https://docs.microsoft.com/data-integration/gateway/service-gateway-tshoot)
-* [Мониторинг и оптимизация производительности шлюза](https://docs.microsoft.com/data-integration/gateway/service-gateway-performance)
+* [Troubleshoot the on-premises data gateway](https://docs.microsoft.com/data-integration/gateway/service-gateway-tshoot)
+* [Monitor and optimize gateway performance](https://docs.microsoft.com/data-integration/gateway/service-gateway-performance)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Подключение к локальным данным из приложений логики](../logic-apps/logic-apps-gateway-connection.md)
 * [Возможности интеграции Enterprise](../logic-apps/logic-apps-enterprise-integration-overview.md)

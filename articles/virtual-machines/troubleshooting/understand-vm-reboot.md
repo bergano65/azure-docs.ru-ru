@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: a536eb89f2040333617329e963ce00f5c6b1ba7a
-ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
+ms.openlocfilehash: 4026de0b13a143a6bd3905e3d4fbb5071e196c21
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71086981"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74384233"
 ---
 # <a name="understand-a-system-reboot-for-azure-vm"></a>Описание перезапуска системы для виртуальной машины Azure
 
@@ -67,7 +67,7 @@ Microsoft Azure периодически выполняет обновления
 
 ### <a name="user-initiated-reboot-or-shutdown-actions"></a>Перезапуск, инициированный пользователем, и действия по завершению работы
 
-Если перезапуск выполняется с помощью портала Azure, Azure PowerShell, интерфейса командной строки или API сброса, вы можете найти это событие в [журнале действий Azure](../../azure-monitor/platform/activity-logs-overview.md).
+If you perform a reboot from the Azure portal, Azure PowerShell, command-line interface, or REST API, you can find the event in the [Azure Activity Log](../../azure-monitor/platform/activity-logs-overview.md).
 
 Если вы выполняете это действие из операционной системы виртуальной машины, это событие можно найти в журналах системы.
 
@@ -101,7 +101,7 @@ Microsoft Azure периодически выполняет обновления
 
 В редких случаях рабочей группе Azure может потребоваться выполнить действия по обслуживанию для обеспечения общей работоспособности платформы Azure. Это может повлиять на доступность виртуальных машин и обычно приводит к автоматическому восстановлению, описанному выше.  
 
-Незапланированное обслуживание включает в себя следующее:
+Unplanned maintenance include the following:
 
 - срочную дефрагментацию узла;
 - срочные обновления сетевого коммутатора.
@@ -118,7 +118,7 @@ Microsoft Azure периодически выполняет обновления
 
 **Превышение ограничения количества операций ввода-вывода**
 
-Запросы на операции ввода-вывода последовательно регулируются на основе допустимых объемов, установленных для этих операций (в секунду). Если эти объемы превышают установленные ограничения для диска, виртуальные машины могут временно завершить работу. Стандартный дисковый накопитель ограничен 500 операциями ввода-вывода в секунду. Чтобы устранить эту проблему, используйте чередование дисков или настройте дисковое пространство внутри гостевой виртуальной машины в зависимости от рабочей нагрузки. Дополнительные сведения см. на странице [настройки виртуальных машин Azure для обеспечения оптимальной производительности хранилища](https://blogs.msdn.com/b/mast/archive/2014/10/14/configuring-azure-virtual-machines-for-optimal-storage-performance.aspx).
+Запросы на операции ввода-вывода последовательно регулируются на основе допустимых объемов, установленных для этих операций (в секунду). Если эти объемы превышают установленные ограничения для диска, виртуальные машины могут временно завершить работу. (Standard disk storage is limited to 500 IOPS.) To mitigate this issue, use disk striping or configure the storage space inside the guest VM, depending on the workload. Дополнительные сведения см. на странице [настройки виртуальных машин Azure для обеспечения оптимальной производительности хранилища](https://blogs.msdn.com/b/mast/archive/2014/10/14/configuring-azure-virtual-machines-for-optimal-storage-performance.aspx).
 
 ### <a name="other-incidents"></a>Другие инциденты
 

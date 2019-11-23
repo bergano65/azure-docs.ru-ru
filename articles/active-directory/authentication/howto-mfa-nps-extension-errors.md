@@ -1,22 +1,22 @@
 ---
-title: Устранение ошибок для расширения NPS Azure MFA — Azure Active Directory
+title: Troubleshooting Azure MFA NPS extension - Azure Active Directory
 description: Узнайте, как решить проблемы, связанные с расширением NPS для Многофакторной идентификации Azure
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 11/13/2018
+ms.date: 11/21/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c0d04db6e9ccedc1e67ed0cdfd914ab42ebea0b1
-ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
+ms.openlocfilehash: 1ead9e5785297c9569d23573d4dd7f5f29354717
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "67536939"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74381803"
 ---
 # <a name="resolve-error-messages-from-the-nps-extension-for-azure-multi-factor-authentication"></a>Устранение ошибок, связанных с расширением NPS для Многофакторной идентификации Azure.
 
@@ -31,7 +31,7 @@ ms.locfileid: "67536939"
 | **ESTS_TOKEN_ERROR** | Следуйте инструкциям, описанным в разделе по [устранению неполадок](howto-mfa-nps-extension.md#troubleshooting), чтобы определить проблемы с сертификатом клиента и маркером ADAL. |
 | **HTTPS_COMMUNICATION_ERROR** | NPS-сервер не получает ответы из Azure MFA. Проверьте, открыты ли брандмауэры для входящего и исходящего трафика https://adnotifications.windowsazure.com. |
 | **HTTP_CONNECT_ERROR** | Убедитесь, что у сервера, на котором запущено расширение NPS, есть доступ к https://adnotifications.windowsazure.com и https://login.microsoftonline.com/. Если эти сайты не загружаются, необходимо устранить неполадки подключения на сервере. |
-| **Расширение NPS для Azure MFA** <br> Расширение NPS для Azure MFA выполняет только дополнительную аутентификацию для запросов Radius с состоянием AccessAccept. Запрос, полученный для имени пользователя с состоянием ответа AccessReject, игнорируется. | Эта ошибка обычно означает сбой аутентификации в AD или то, что серверу NPS не удается получить ответы от Azure AD. Убедитесь, что используемые брандмауэры открыты в обоих направлениях для входящего и исходящего трафика с адресов https://adnotifications.windowsazure.com и https://login.microsoftonline.com на портах 80 и 443. Также необходимо убедиться, что на вкладке DIAL-IN (Входящие подключения) раздела Network Access Permissions (Разрешения на доступ к сети) установлено значение параметра control access through NPS Network Policy. Эта ошибка также может быть вызвана, если пользователю не назначена лицензия. |
+| **Расширение NPS для Azure MFA** <br> Расширение NPS для Azure MFA выполняет только дополнительную аутентификацию для запросов Radius с состоянием AccessAccept. Запрос, полученный для имени пользователя с состоянием ответа AccessReject, игнорируется. | Эта ошибка обычно означает сбой аутентификации в AD или то, что серверу NPS не удается получить ответы от Azure AD. Убедитесь, что используемые брандмауэры открыты в обоих направлениях для входящего и исходящего трафика с адресов https://adnotifications.windowsazure.com и https://login.microsoftonline.com на портах 80 и 443. Также необходимо убедиться, что на вкладке DIAL-IN (Входящие подключения) раздела Network Access Permissions (Разрешения на доступ к сети) установлено значение параметра control access through NPS Network Policy. This error can also trigger if the user is not assigned a license. |
 | **REGISTRY_CONFIG_ERROR** | В реестре для приложения отсутствует раздел. Такое может случиться, если после установки не был запущен [сценарий PowerShell](howto-mfa-nps-extension.md#install-the-nps-extension). В сообщении об ошибке должен быть указан отсутствующий раздел. Убедитесь, что этот раздел находится в HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\AzureMfa. |
 | **REQUEST_FORMAT_ERROR** <br> Отсутствует обязательный атрибут userName\Identifier для запроса RADIUS. Убедитесь, что NPS-сервер получает запросы RADIUS. | В этом случае проблема связана с установкой. Расширение NPS должно быть установлено на серверах NPS, которые получают запросы RADIUS. NPS-серверы, установленные как зависимости для таких служб, как RDG и RRAS, запросы RADIUS не получают. В случае такой установки расширение NPS не будет работать, а ошибки будут возникать из-за невозможности прочитать сведения из запроса проверки подлинности. |
 | **REQUEST_MISSING_CODE** | Убедитесь, что протокол шифрования паролей между серверами NAS и NPS поддерживает дополнительный метод аутентификации, который вы используете. **PAP** поддерживает все методы аутентификации Azure MFA в облаке: телефонный звонок, одностороннее текстовое сообщение, уведомление мобильного приложения и код проверки мобильного приложения. **CHAPV2** и **EAP** поддерживают телефонный звонок или уведомление мобильного приложения. |
@@ -42,8 +42,8 @@ ms.locfileid: "67536939"
 | Код ошибки | Сообщение об ошибке | Действия по устранению неполадок |
 | ---------- | ------------- | --------------------- |
 | **ALTERNATE_LOGIN_ID_ERROR** | Ошибка. Сбой поиска userObjectSid. | Убедитесь, что такой пользователь существует в экземпляре локальной службы Active Directory. Если вы используете отношения доверия между лесами, [обратитесь в службу поддержки](#contact-microsoft-support) для получения дополнительных сведений. |
-| **ALTERNATE_LOGIN_ID_ERROR** | Ошибка: сбой поиска альтернативного имени пользователя. | Убедитесь, что для значения реестра LDAP_ALTERNATE_LOGINID_ATTRIBUTE указан [допустимый атрибут Active Directory](https://msdn.microsoft.com/library/ms675090(v=vs.85).aspx). <br><br> Если для LDAP_FORCE_GLOBAL_CATALOG задано значение True, а LDAP_LOOKUP_FORESTS имеет непустое значение, проверьте, настроен ли глобальный каталог и добавлен ли к нему атрибут AlternateLoginId. <br><br> Если LDAP_LOOKUP_FORESTS имеет непустое значение, убедитесь, что это значение правильно. Если указано несколько имен леса, такие имена должны быть разделены точками с запятой без пробелов. <br><br> Если с помощью этих шагов не удалось устранить проблему, обратитесь в [службу поддержки](#contact-microsoft-support) для получения дополнительных сведений. |
-| **ALTERNATE_LOGIN_ID_ERROR** | Ошибка: пустое значение альтернативного имени пользователя. | Убедитесь, что атрибут AlternateLoginId настроен для пользователя. |
+| **ALTERNATE_LOGIN_ID_ERROR** | Ошибка. Сбой поиска альтернативного имени пользователя. | Убедитесь, что для значения реестра LDAP_ALTERNATE_LOGINID_ATTRIBUTE указан [допустимый атрибут Active Directory](https://msdn.microsoft.com/library/ms675090(v=vs.85).aspx). <br><br> Если для LDAP_FORCE_GLOBAL_CATALOG задано значение True, а LDAP_LOOKUP_FORESTS имеет непустое значение, проверьте, настроен ли глобальный каталог и добавлен ли к нему атрибут AlternateLoginId. <br><br> Если LDAP_LOOKUP_FORESTS имеет непустое значение, убедитесь, что это значение правильно. Если указано несколько имен леса, такие имена должны быть разделены точками с запятой без пробелов. <br><br> Если с помощью этих шагов не удалось устранить проблему, обратитесь в [службу поддержки](#contact-microsoft-support) для получения дополнительных сведений. |
+| **ALTERNATE_LOGIN_ID_ERROR** | Ошибка. Пустое значение альтернативного имени пользователя. | Убедитесь, что атрибут AlternateLoginId настроен для пользователя. |
 
 ## <a name="errors-your-users-may-encounter"></a>Ошибки, с которыми могут столкнуться пользователи
 
@@ -90,7 +90,7 @@ ms.locfileid: "67536939"
 | **VersionNotSupported** |  |
 | **MFAPinNotSetup** |  |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 ### <a name="troubleshoot-user-accounts"></a>Устранение неполадок, связанных с учетными данными пользователей
 

@@ -1,29 +1,29 @@
 ---
-title: Журналы работоспособности и диагностики серверной части
+title: Back-end health and diagnostic logs
 titleSuffix: Azure Application Gateway
 description: Узнайте, как включить журналы доступа и производительности для Шлюза приложений Azure и управлять ими.
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: article
-ms.date: 11/14/2019
+ms.date: 11/22/2019
 ms.author: victorh
-ms.openlocfilehash: 448e5bf798f5b1c3006888f846722e54fec46ef8
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: bfae540af1c501c09ec026b97ac11e8a14b177a9
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74075304"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74326545"
 ---
-# <a name="back-end-health-and-diagnostic-logs-for-application-gateway"></a>Журналы работоспособности и диагностики серверной части для шлюза приложений
+# <a name="back-end-health-and-diagnostic-logs-for-application-gateway"></a>Back-end health and diagnostic logs for Application Gateway
 
-Вы можете отслеживать ресурсы шлюза приложений Azure следующими способами.
+You can monitor Azure Application Gateway resources in the following ways:
 
 * [Работоспособность серверной части.](#back-end-health) Шлюз приложений позволяет отслеживать работоспособность серверов во внутренних пулах с помощью портала Azure и PowerShell. Состояние работоспособности внутренних пулов можно также узнать из журналов диагностики производительности.
 
 * [Журналы.](#diagnostic-logging) Можно сохранять или использовать данные производительности, доступа и другие данные, относящиеся к ресурсу, чтобы отслеживать его состояние.
 
-* [Метрики](application-gateway-metrics.md). шлюз приложений имеет несколько метрик, которые помогают проверить, что система работает должным образом.
+* [Metrics](application-gateway-metrics.md): Application Gateway has several metrics which help you verify that your system is performing as expected.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -34,7 +34,7 @@ ms.locfileid: "74075304"
 В отчете о работоспособности серверной части представлены результаты пробы работоспособности, выполняемой шлюзом приложений в отношении серверных экземпляров. Если проба прошла успешно и серверная часть может получать трафик, она считается работоспособной. В противном случае серверная часть считается неработоспособной.
 
 > [!IMPORTANT]
-> Если в подсети шлюза приложений есть группа безопасности сети (NSG), откройте диапазон портов 65503-65534 для номеров SKU v1 и 65200-65535 для SKU v2 в подсети шлюза приложений для входящего трафика. Такой диапазон портов требуется для обмена данными в рамках инфраструктуры Azure. Они защищены (заблокированы) посредством сертификатов Azure. Без подходящих сертификатов внешние сущности, включая клиентов этих шлюзов, не смогут никоим образом изменить конечные точки.
+> If there is a network security group (NSG) on an Application Gateway subnet, open port ranges 65503-65534 for v1 SKUs, and 65200-65535 for v2 SKUs on the Application Gateway subnet for inbound traffic. Такой диапазон портов требуется для обмена данными в рамках инфраструктуры Azure. Они защищены (заблокированы) посредством сертификатов Azure. Без подходящих сертификатов внешние сущности, включая клиентов этих шлюзов, не смогут никоим образом изменить конечные точки.
 
 
 ### <a name="view-back-end-health-through-the-portal"></a>Просмотр данных о работоспособности серверной части на портале
@@ -96,8 +96,8 @@ az network application-gateway show-backend-health --resource-group AdatumAppGat
 В Azure можно использовать различные виды журналов для управления шлюзами приложений и устранения возникающих в них неполадок. Доступ к некоторым из этих журналов можно получить через портал. Также можно извлечь все журналы из хранилища BLOB-объектов Azure и просматривать их с помощью таких средств, как [журналы Azure Monitor](../azure-monitor/insights/azure-networking-analytics.md), Excel и Power BI. В списке ниже приведены дополнительные сведения о разных типах журналов:
 
 * **Журнал действий.** В [журналах действий Azure](../monitoring-and-diagnostics/insights-debugging-with-events.md) (прежнее название — операционные журналы и журналы аудита) можно просматривать все операции, отправляемые в вашу подписку Azure, и состояние этих операций. Записи этого журнала собираются по умолчанию, и их можно просмотреть на портале Azure.
-* **Журнал доступа**. Этот журнал можно использовать для просмотра шаблонов доступа к шлюзу приложений и анализа важной информации. Сюда входит IP-адрес вызывающего объекта, запрошенный URL-адреса, задержка ответа, код возврата и байты. Журнал доступа собирается каждые 300 секунд. Этот журнал содержит одну запись для каждого экземпляра шлюза приложений. Экземпляр Шлюза приложений определяется свойством instanceId.
-* **Журнал производительности.** С помощью этого журнала можно просматривать, как работают экземпляры шлюза приложений. В этот журнал записываются сведения о производительности каждого экземпляра, включая общее число обработанных запросов, пропускную способность в байтах, число неудачных запросов, а также число работоспособных и неработоспособных серверных экземпляров. Данные для журнала производительности собираются каждые 60 секунд. Журнал производительности доступен только для номера SKU v1. Для номера SKU версии 2 Используйте [метрики](application-gateway-metrics.md) для данных производительности.
+* **Access log**: You can use this log to view Application Gateway access patterns and analyze important information. This includes the caller's IP, requested URL, response latency, return code, and bytes in and out. An access log is collected every 300 seconds. Этот журнал содержит одну запись для каждого экземпляра шлюза приложений. Экземпляр Шлюза приложений определяется свойством instanceId.
+* **Журнал производительности.** С помощью этого журнала можно просматривать, как работают экземпляры шлюза приложений. В этот журнал записываются сведения о производительности каждого экземпляра, включая общее число обработанных запросов, пропускную способность в байтах, число неудачных запросов, а также число работоспособных и неработоспособных серверных экземпляров. Данные для журнала производительности собираются каждые 60 секунд. The Performance log is available only for the v1 SKU. For the v2 SKU, use [Metrics](application-gateway-metrics.md) for performance data.
 * **Журнал брандмауэра.** Этот журнал можно использовать для просмотра запросов, которые были зарегистрированы в режиме обнаружения или предотвращения в шлюзе приложений, в котором настроен брандмауэр веб-приложения.
 
 > [!NOTE]
@@ -106,8 +106,8 @@ az network application-gateway show-backend-health --resource-group AdatumAppGat
 Существует три способа хранения журналов:
 
 * **Учетная запись хранения** лучше всего подходит для длительного хранения журналов и их просмотра по мере необходимости.
-* **Концентраторы событий**. концентраторы событий являются отличным вариантом для интеграции с другими средствами управления сведениями о безопасности и событиями (SIEM) для получения оповещений о ресурсах.
-* **Журналы Azure Monitor**. журналы Azure Monitor лучше использовать для общего мониторинга приложения в режиме реального времени или для анализа тенденций.
+* **Event hubs**: Event hubs are a great option for integrating with other security information and event management (SIEM) tools to get alerts on your resources.
+* **Azure Monitor logs**: Azure Monitor logs is best used for general real-time monitoring of your application or looking at trends.
 
 ### <a name="enable-logging-through-powershell"></a>Включение ведения журнала с помощью PowerShell
 
@@ -132,7 +132,7 @@ az network application-gateway show-backend-health --resource-group AdatumAppGat
 
 ### <a name="enable-logging-through-the-azure-portal"></a>Включение ведения журнала на портале Azure
 
-1. В портал Azure найдите ресурс и выберите **параметры диагностики**.
+1. In the Azure portal, find your resource and select **Diagnostic settings**.
 
    Для шлюза приложений доступны три журнала:
 
@@ -140,7 +140,7 @@ az network application-gateway show-backend-health --resource-group AdatumAppGat
    * журнал производительности;
    * журнал брандмауэра.
 
-2. Чтобы начать сбор данных, выберите **включить диагностику**.
+2. To start collecting data, select **Turn on diagnostics**.
 
    ![Включение диагностики][1]
 
@@ -148,7 +148,7 @@ az network application-gateway show-backend-health --resource-group AdatumAppGat
 
    ![Начало процесса настройки][2]
 
-5. Введите имя для параметров, подтвердите параметры и нажмите кнопку **сохранить**.
+5. Type a name for the settings, confirm the settings, and select **Save**.
 
 ### <a name="activity-log"></a>Журнал действий
 
@@ -156,9 +156,9 @@ az network application-gateway show-backend-health --resource-group AdatumAppGat
 
 ### <a name="access-log"></a>журнал доступа;
 
-Журнал доступа создается, только если он включен для каждого экземпляра шлюза приложений, как описано выше. Данные хранятся в учетной записи хранения, указанной при включении ведения журнала. Каждый доступ к шлюзу приложений заносится в формат JSON, как показано в следующем примере для версии v1:
+Журнал доступа создается, только если он включен для каждого экземпляра шлюза приложений, как описано выше. Данные хранятся в учетной записи хранения, указанной при включении ведения журнала. Each access of Application Gateway is logged in JSON format, as shown in the following example for v1:
 
-|Значение  |ОПИСАНИЕ  |
+|Value  |Описание  |
 |---------|---------|
 |instanceId     | Экземпляр шлюза приложений, который обрабатывает запрос.        |
 |clientIP     | IP-адрес источника запроса.        |
@@ -173,8 +173,8 @@ az network application-gateway show-backend-health --resource-group AdatumAppGat
 |sentBytes| Размер отправленного пакета (в байтах).|
 |timeTaken| Время (в миллисекундах), необходимое для обработки запроса и отправки ответа. Вычисляется как промежуток времени от момента, когда шлюз приложений получает первый байт HTTP-запроса, до завершения отправки ответа. Важно отметить, что в поле Time-Taken обычно указывается время передачи пакетов запросов и ответов по сети. |
 |sslEnabled| Определяет, используется ли SSL для обмена данными с внутренними пулами. Допустимые значения: on и off.|
-|host| Имя узла, с которого запрос был отправлен на внутренний сервер. При переопределении серверного имени узла это имя будет отражать это.|
-|оригиналхост| Имя узла, с которым шлюз приложений получил запрос от клиента.|
+|host| The hostname with which the request has been sent to the backend server. If backend hostname is being overridden, this name will reflect that.|
+|originalHost| The hostname with which the request was received by the Application Gateway from the client.|
 ```json
 {
     "resourceId": "/SUBSCRIPTIONS/{subscriptionId}/RESOURCEGROUPS/PEERINGTEST/PROVIDERS/MICROSOFT.NETWORK/APPLICATIONGATEWAYS/{applicationGatewayName}",
@@ -200,9 +200,9 @@ az network application-gateway show-backend-health --resource-group AdatumAppGat
     }
 }
 ```
-Для шлюза приложений и WAF версии 2 журналы содержат несколько дополнительных сведений:
+For Application Gateway and WAF v2, the logs show a little more information:
 
-|Значение  |ОПИСАНИЕ  |
+|Value  |Описание  |
 |---------|---------|
 |instanceId     | Экземпляр шлюза приложений, который обрабатывает запрос.        |
 |clientIP     | IP-адрес источника запроса.        |
@@ -214,14 +214,14 @@ az network application-gateway show-backend-health --resource-group AdatumAppGat
 |httpVersion     | Версия HTTP для запроса.        |
 |receivedBytes     | Размер полученного пакета (в байтах).        |
 |sentBytes| Размер отправленного пакета (в байтах).|
-|timeTaken| Время (в **секундах**), затрачиваемое на обработку запроса и отправку ответа. Вычисляется как промежуток времени от момента, когда шлюз приложений получает первый байт HTTP-запроса, до завершения отправки ответа. Важно отметить, что в поле Time-Taken обычно указывается время передачи пакетов запросов и ответов по сети. |
+|timeTaken| Length of time (in **seconds**) that it takes for a request to be processed and its response to be sent. Вычисляется как промежуток времени от момента, когда шлюз приложений получает первый байт HTTP-запроса, до завершения отправки ответа. Важно отметить, что в поле Time-Taken обычно указывается время передачи пакетов запросов и ответов по сети. |
 |sslEnabled| Определяет, используется ли SSL для обмена данными с внутренними пулами. Допустимые значения: on и off.|
-|сслЦифер| Набор шифров, используемый для связи SSL (если включен протокол SSL).|
-|сслпротокол| Используемый протокол SSL/TLS (если протокол SSL включен).|
-|серверраутед| Внутренний сервер, на который шлюз приложений направляет запрос.|
-|serverStatus| Код состояния HTTP внутреннего сервера.|
-|серверреспонселатенци| Задержка ответа от внутреннего сервера.|
-|host| Адрес, указанный в заголовке узла запроса.|
+|sslCipher| Cipher suite being used for SSL communication (if SSL is enabled).|
+|sslProtocol| SSL/TLS protocol being used (if SSL is enabled).|
+|serverRouted| The backend server that application gateway routes the request to.|
+|serverStatus| HTTP status code of the backend server.|
+|serverResponseLatency| Latency of the response from the backend server.|
+|host| Address listed in the host header of the request.|
 ```json
 {
     "resourceId": "/SUBSCRIPTIONS/{subscriptionId}/RESOURCEGROUPS/PEERINGTEST/PROVIDERS/MICROSOFT.NETWORK/APPLICATIONGATEWAYS/{applicationGatewayName}",
@@ -253,10 +253,10 @@ az network application-gateway show-backend-health --resource-group AdatumAppGat
 
 ### <a name="performance-log"></a>журнал производительности;
 
-Журнал производительности создается, только если он включен для каждого экземпляра шлюза приложений, как описано выше. Данные хранятся в учетной записи хранения, указанной при включении ведения журнала. Данные журнала производительности формируются с интервалом в 1 минуту. Он доступен только для номера SKU версии v1. Для номера SKU версии 2 Используйте [метрики](application-gateway-metrics.md) для данных производительности. В журнал записываются следующие данные:
+Журнал производительности создается, только если он включен для каждого экземпляра шлюза приложений, как описано выше. Данные хранятся в учетной записи хранения, указанной при включении ведения журнала. Данные журнала производительности формируются с интервалом в 1 минуту. It is available only for the v1 SKU. For the v2 SKU, use [Metrics](application-gateway-metrics.md) for performance data. В журнал записываются следующие данные:
 
 
-|Значение  |ОПИСАНИЕ  |
+|Value  |Описание  |
 |---------|---------|
 |instanceId     |  Экземпляр шлюза приложений, для которого формируются данные о производительности. Если экземпляров шлюза приложений несколько, каждому экземпляру будет соответствовать определенная строка.        |
 |healthyHostCount     | Число работоспособных узлов во внутреннем пуле.        |
@@ -293,7 +293,7 @@ az network application-gateway show-backend-health --resource-group AdatumAppGat
 Этот журнал создается, только если он включен для каждого шлюза приложений, как описано выше. Кроме того, в шлюзе приложений должен быть настроен брандмауэр веб-приложения. Данные хранятся в учетной записи хранения, указанной при включении ведения журнала. В журнал записываются следующие данные:
 
 
-|Значение  |ОПИСАНИЕ  |
+|Value  |Описание  |
 |---------|---------|
 |instanceId     | Экземпляр шлюза приложений, для которого формируются данные о брандмауэре. Если экземпляров шлюза приложений несколько, каждому экземпляру будет соответствовать определенная строка.         |
 |clientIp     |   IP-адрес источника запроса.      |
@@ -302,16 +302,16 @@ az network application-gateway show-backend-health --resource-group AdatumAppGat
 |ruleSetType     | Тип набора правил. Доступное значение — OWASP.        |
 |ruleSetVersion     | Используемая версия набора правил. Возможные значения: 2.2.9 и 3.0.     |
 |ruleId     | Идентификатор правила события-триггера.        |
-|message     | Понятное сообщение для события-триггера. Дополнительные сведения приведены в разделе details.        |
-|action     |  Действие, выполняемое с запросом. Возможные значения: Blocked и Allowed.      |
+|Message     | Понятное сообщение для события-триггера. Дополнительные сведения приведены в разделе details.        |
+|action     |  Действие, выполняемое с запросом. Available values are Matched and Blocked.      |
 |site     | Сайт, для которого создан журнал. В нашем случае возможно только значение Global, так как применяются глобальные правила.|
 |сведения     | Сведения о событии-триггере.        |
 |details.message     | Описание правила.        |
 |details.data     | Определенные данные из запроса, которые соответствуют правилу.         |
 |details.file     | Файл конфигурации, содержащий правило.        |
 |details.line     | Номер строки в файле конфигурации, активировавшей событие.       |
-|hostname   | Имя узла или IP-адрес шлюза приложений.    |
-|transactionId  | Уникальный идентификатор для данной транзакции, который помогает сгруппировать несколько нарушений правил, произошедших в одном запросе.   |
+|hostname   | Hostname or IP address of the Application Gateway.    |
+|transactionId  | Unique ID for a given transaction which helps group multiple rule violations that occurred within the same request.   |
 
 ```json
 {
@@ -348,7 +348,7 @@ az network application-gateway show-backend-health --resource-group AdatumAppGat
 Данные журнала действий можно просматривать и анализировать с помощью любого из следующих методов:
 
 * **Средства Azure.** Информацию из журналов действий можно получать с помощью Azure PowerShell, Azure CLI, REST API Azure или портала Azure. Пошаговые инструкции для каждого метода подробно описаны в статье [Activity operations with Resource Manager](../azure-resource-manager/resource-group-audit.md) (Выполнение операций в журналах действий с помощью Resource Manager).
-* **Power BI.** Если у вас еще нет учетной записи [Power BI](https://powerbi.microsoft.com/pricing), вы можете использовать бесплатную пробную версию. С помощью [Power BIных приложений шаблонов](https://docs.microsoft.com/power-bi/service-template-apps-overview)можно анализировать данные.
+* **Power BI.** Если у вас еще нет учетной записи [Power BI](https://powerbi.microsoft.com/pricing), вы можете использовать бесплатную пробную версию. By using the [Power BI template apps](https://docs.microsoft.com/power-bi/service-template-apps-overview), you can analyze your data.
 
 ### <a name="view-and-analyze-the-access-performance-and-firewall-logs"></a>Просмотр и анализ журналов доступа, производительности и брандмауэра
 
@@ -365,7 +365,7 @@ az network application-gateway show-backend-health --resource-group AdatumAppGat
 
 Мы опубликовали шаблон Resource Manager, который устанавливает и запускает популярный анализатор журналов [GoAccess](https://goaccess.io/) для журналов доступа шлюза приложений. GoAccess предоставляет ценную статистику трафика HTTP, такую как уникальные посетители, запрошенные файлы, узлы, операционные системы, браузеры, коды состояния HTTP и многое другое. Дополнительные сведения см. в [файле сведений в папке шаблона Resource Manager на GitHub](https://aka.ms/appgwgoaccessreadme).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. сведения о визуализации журналов счетчиков и событий с помощью [журналов Azure Monitor](../azure-monitor/insights/azure-networking-analytics.md).
 * Прочтите запись блога [Visualize your Azure Activity Log with Power BI](https://blogs.msdn.com/b/powerbi/archive/2015/09/30/monitor-azure-audit-logs-with-power-bi.aspx) (Визуализация журналов действий Azure с помощью Power BI).

@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 09/26/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 8aba38b7ecebefb1205b17bc633d9ff0c0812d4b
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 803b1e397efd4a6f9ddaa3bae1d101c8f204e728
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74206803"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74328291"
 ---
 # <a name="sql-server-azure-virtual-machines-dbms-deployment-for-sap-netweaver"></a>SAP NetWeaver на виртуальных машинах Azure. Руководство по развертыванию СУБД SQL Server
 
@@ -341,7 +341,7 @@ It is recommended to review [this][virtual-machines-sql-server-infrastructure-se
 Эти конфигурации позволяют tempdb использовать больше пространства, чем может предоставить системный диск. Несохраняемый диск D:\ также обеспечивает более низкую задержку операций ввода-вывода и лучшую пропускную способность (за исключением виртуальных машин серии A). Чтобы определить необходимый размер tempdb, можно проверить размеры tempdb в существующих системах. 
 
 >[!NOTE]
-> Если вы помещаете файлы журнала и файлы данных tempdb в созданную вами папку на диске D:\, убедитесь, что эта папка существует после перезагрузки виртуальной машины. Since the D:\ drive is freshly initialized after a VM reboot all file and directory structures are wiped out. A possibility to recreate eventual directory structures on D:\ drive before the start of the SQL Server service is documented in [this article](https://www.sqlserver.co.uk/index.php/using-ssds-in-azure-vms-to-store-sql-server-tempdb-and-buffer-pool-extensions/).
+> Если вы помещаете файлы журнала и файлы данных tempdb в созданную вами папку на диске D:\, убедитесь, что эта папка существует после перезагрузки виртуальной машины. Since the D:\ drive is freshly initialized after a VM reboot all file and directory structures are wiped out. A possibility to recreate eventual directory structures on D:\ drive before the start of the SQL Server service is documented in [this article](https://cloudblogs.microsoft.com/sqlserver/2014/09/25/using-ssds-in-azure-vms-to-store-sql-server-tempdb-and-buffer-pool-extensions/).
 
 Конфигурация виртуальной машины, на которой выполняется SQL Server с базой данных SAP, а данные tempdb и файл журнала tempdb располагаются на диске D:\, выглядит следующим образом.
 

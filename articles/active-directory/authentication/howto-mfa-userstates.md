@@ -1,35 +1,35 @@
 ---
-title: Пользовательские состояния многофакторной идентификации Azure — Azure Active Directory
-description: Узнайте подробнее о состояниях пользователей в службе Многофакторной идентификации Azure.
+title: Per-user Multi-Factor Authentication - Azure Active Directory
+description: Enable MFA by changing user states in Azure Multi-Factor Authentication.
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 10/15/2019
+ms.date: 11/21/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 316d82cbfd0c96fba2ac9714f8025d71c743d7d5
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: 258675a343387eb6930cd3511bf885bf510050c6
+ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74269543"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74404209"
 ---
 # <a name="how-to-require-two-step-verification-for-a-user"></a>Включение двухфакторной проверки подлинности пользователя
 
-Двухфакторную проверку подлинности можно требовать, используя один из двух подходов. Оба эти подхода требуют использования учетной записи глобального администратора. Первый способ — включить многофакторную идентификацию Azure (MFA) для каждого отдельного пользователя. В этом случае пользователи выполняют двухфакторную проверку подлинности при каждом входе (за некоторыми исключениями, к примеру, если они входят из доверенных IP-адресов или включена функция _запоминания устройств_). Второй вариант — настроить политику условного доступа, которая требует двухфакторной проверки подлинности при определенных условиях.
+Двухфакторную проверку подлинности можно требовать, используя один из двух подходов. Оба эти подхода требуют использования учетной записи глобального администратора. Первый способ — включить многофакторную идентификацию Azure (MFA) для каждого отдельного пользователя. В этом случае пользователи выполняют двухфакторную проверку подлинности при каждом входе (за некоторыми исключениями, к примеру, если они входят из доверенных IP-адресов или включена функция _запоминания устройств_). The second option is to set up a Conditional Access policy that requires two-step verification under certain conditions.
 
 > [!TIP]
-> Рекомендуемым подходом является включение многофакторной идентификации Azure с использованием политик условного доступа. Изменение состояния пользователя больше не рекомендуется, если лицензии не включают условный доступ, так как в этом случае пользователям потребуется выполнять MFA каждый раз при входе.
+> Enabling Azure Multi-Factor Authentication using Conditional Access policies is the recommended approach. Changing user states is no longer recommended unless your licenses do not include Conditional Access as it will require users to perform MFA every time they sign in.
 
 ## <a name="choose-how-to-enable"></a>Выбор способа включения
 
-**Включить, изменив состояние пользователя**. Это традиционный метод применения двухфакторной проверки подлинности, который рассматривается в этой статье. Он подходит и для Azure MFA в облаке, и для сервера Azure MFA. При использовании этого метода пользователи должны выполнять двухфакторную проверку подлинности при **каждом** входе в систему и переопределять политики условного доступа.
+**Включить, изменив состояние пользователя**. Это традиционный метод применения двухфакторной проверки подлинности, который рассматривается в этой статье. Он подходит и для Azure MFA в облаке, и для сервера Azure MFA. Using this method requires users to perform two-step verification **every time** they sign in and overrides Conditional Access policies.
 
-Включается политикой условного доступа. это наиболее гибкий способ включить двухфакторную проверку подлинности для пользователей. Включение использования политики условного доступа работает только для Azure MFA в облаке и является функцией Azure AD уровня "Премиум". Дополнительные сведения об этом методе можно найти в статье [Приступая к работе с многофакторной идентификацией Azure в облаке](howto-mfa-getstarted.md).
+Enabled by Conditional Access policy - This is the most flexible means to enable two-step verification for your users. Enabling using Conditional Access policy only works for Azure MFA in the cloud and is a premium feature of Azure AD. Дополнительные сведения об этом методе можно найти в статье [Приступая к работе с многофакторной идентификацией Azure в облаке](howto-mfa-getstarted.md).
 
 Включение с помощью службы "Защита идентификации Azure AD". Этот метод использует политику риска защиты идентификации Azure AD, чтобы требовать двухфакторную проверку подлинности только на основе риска входа для всех облачных приложений. Этот метод требует лицензирования Azure Active Directory P2. Дополнительные сведения об этом методе см. в статье [Защита идентификации Azure Active Directory](../identity-protection/howto-sign-in-risk-policy.md).
 
@@ -41,7 +41,7 @@ ms.locfileid: "74269543"
 
 Учетные записи пользователей в службе Многофакторной идентификации Azure имеют три различных состояния:
 
-| Состояние | ОПИСАНИЕ | Затронутые приложения, не использующие браузер | Затронутые приложения, использующие браузер | Затронутая современная аутентификация |
+| Status | Описание | Затронутые приложения, не использующие браузер | Затронутые приложения, использующие браузер | Затронутая современная аутентификация |
 |:---:|:---:|:---:|:--:|:--:|
 | Отключено |Состояние по умолчанию для нового пользователя, не зарегистрированного в Azure MFA. |Нет |Нет |Нет |
 | Включено |Пользователь указан в Azure MFA, но не зарегистрирован. Ему будет предложено зарегистрироваться при следующем входе в систему. |Нет.  Они будут продолжать работать, пока не завершится регистрация. | Да. После окончания сеанса требуется регистрация в Azure MFA.| Да. После окончания срока действия маркера доступа требуется регистрация в Azure MFA. |
@@ -66,10 +66,10 @@ ms.locfileid: "74269543"
 
 1. Выполните шаги выше, чтобы перейти на страницу **пользователей** MFA.
 2. Найдите пользователя, для которого требуется включить Azure MFA. Возможно, потребуется изменить представление в верхней части страницы.
-   ![выберите пользователя, состояние которого нужно изменить, на вкладке Пользователи](./media/howto-mfa-userstates/enable1.png)
+   ![Select the user to change status for from the users tab](./media/howto-mfa-userstates/enable1.png)
 3. Установите флажок рядом с именем пользователя.
 4. Справа, в разделе **быстрых действий**, щелкните **Включить** или **Отключить**.
-   ![включить выбранного пользователя, щелкнув включить в меню быстрых действий](./media/howto-mfa-userstates/user1.png)
+   ![Enable selected user by clicking Enable on the quick steps menu](./media/howto-mfa-userstates/user1.png)
 
    > [!TIP]
    > Пользователи с состоянием *Включено* автоматически перейдут в состояние *Enforced* (Принудительно) при регистрации в службе Azure MFA. Не изменяйте состояние пользователя вручную на *Enforced* (Принудительно).
@@ -134,11 +134,11 @@ PowerShell — удобный инструмент для массового в
    Set-MsolUser -UserPrincipalName user@domain.com -StrongAuthenticationRequirements @()
    ```
 
-### <a name="convert-users-from-per-user-mfa-to-conditional-access-based-mfa"></a>Преобразование пользователей из многопользовательского MFA в условный доступ на основе MFA
+### <a name="convert-users-from-per-user-mfa-to-conditional-access-based-mfa"></a>Convert users from per-user MFA to Conditional Access based MFA
 
-Приведенная ниже оболочка PowerShell поможет вам выполнить преобразование в службу многофакторной идентификации Azure на основе условного доступа.
+The following PowerShell can assist you in making the conversion to Conditional Access based Azure Multi-Factor Authentication.
 
-Запустите PowerShell в окне интегрированной среды сценариев или сохраните его как. Файл PS1 для локального запуска.
+Run this PowerShell in an ISE window or save as a .PS1 file to run locally.
 
 ```PowerShell
 # Sets the MFA requirement state
@@ -175,9 +175,9 @@ Get-MsolUser -All | Set-MfaState -State Disabled
 ```
 
 > [!NOTE]
-> Мы недавно изменили поведение и сценарий PowerShell. Ранее скрипт сохранялся из методов MFA, отключил MFA и восстановил методы. Это больше не требуется, так как поведение по умолчанию для Disable не приводит к очистке методов.
+> We recently changed the behavior and PowerShell script above accordingly. Previously, the script saved off the MFA methods, disabled MFA, and restored the methods. This is no longer necessary now that the default behavior for disable doesn't clear the methods.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Почему пользователю было предложено или не предложено выполнить MFA? Ознакомьтесь с разделом [Отчет по действиям входа Azure AD](howto-mfa-reporting.md#azure-ad-sign-ins-report).
 * Чтобы настроить дополнительные параметры, например, надежные IP-адреса, пользовательские голосовые сообщения и предупреждения о мошенничестве, прочитайте статью [Настройка параметров Многофакторной идентификации Azure](howto-mfa-mfasettings.md).

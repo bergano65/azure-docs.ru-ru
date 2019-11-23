@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 02/25/2016
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: bb63b25ee9257a402a9887bc8ed8aa83370f3ea0
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: a1f377c3325797f2f55f051830014b1068c51327
+ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70066410"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74405591"
 ---
 # <a name="controlling-azure-app-service-traffic-with-azure-traffic-manager"></a>Управление трафиком службы приложений Azure с помощью диспетчера трафика Azure
 > [!NOTE]
@@ -28,7 +28,7 @@ ms.locfileid: "70066410"
 > 
 > 
 
-## <a name="introduction"></a>Введение
+## <a name="introduction"></a>Общие сведения
 С помощью диспетчера трафика Azure можно управлять распределением запросов от веб-клиентов между приложениями в службе приложений Azure. После добавления конечных точек службы приложений в профиль диспетчера трафика Azure этот компонент отслеживает состояние ваших приложений службы приложений (запущены, остановлены или удалены). На основании этой информации диспетчер трафика принимает решение о том, на какие из этих конечных точек нужно перенаправлять трафик.
 
 ## <a name="routing-methods"></a>Методы маршрутизации
@@ -42,7 +42,7 @@ ms.locfileid: "70066410"
 Дополнительные сведения см. в статье [Методы маршрутизации трафика диспетчером трафика](../traffic-manager/traffic-manager-routing-methods.md).
 
 ## <a name="app-service-and-traffic-manager-profiles"></a>Служба приложений и профили диспетчера трафика
-Чтобы настроить управление трафиком приложения службы приложений, создайте профиль в диспетчере трафика Azure, использующий один из четырех описанных выше методов балансировки нагрузки, а затем добавьте конечные точки (в нашем случае это служба приложений), для которых требуется управлять трафиком к профиля. Сведения о состоянии приложения (запущено, остановлено или удалено) регулярно передаются в профиль. Это позволяет диспетчеру трафика Azure правильно перенаправлять трафик.
+To configure the control of App Service app traffic, you create a profile in Azure Traffic Manager that uses one of the four load balancing methods described previously, and then add the endpoints (in this case, App Service) for which you want to control traffic to the profile. Сведения о состоянии приложения (запущено, остановлено или удалено) регулярно передаются в профиль. Это позволяет диспетчеру трафика Azure правильно перенаправлять трафик.
 
 При использовании диспетчера трафика Azure с Azure необходимо помнить следующее:
 
@@ -57,5 +57,4 @@ ms.locfileid: "70066410"
 ## <a name="next-steps"></a>Следующие шаги
 Общие и технические сведения о диспетчере трафика Azure см. в разделе [Обзор диспетчера трафика](../traffic-manager/traffic-manager-overview.md).
 
-Дополнительные сведения об использовании диспетчера трафика со службой приложений, см. в записях блогов [Using Azure Traffic Manager with Azure Web Sites](https://blogs.msdn.com/b/waws/archive/2014/03/18/using-windows-azure-traffic-manager-with-waws.aspx) (Использование диспетчера трафика Azure c веб-сайтами Azure) и [Azure Traffic Manager can now integrate with Azure Web Sites](https://azure.microsoft.com/blog/2014/03/27/azure-traffic-manager-can-now-integrate-with-azure-web-sites/) (Диспетчер трафика Azure теперь можно интегрировать с веб-сайтами Azure).
 

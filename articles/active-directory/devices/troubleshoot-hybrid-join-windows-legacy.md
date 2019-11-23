@@ -1,22 +1,22 @@
 ---
-title: Устранение неполадок на устройствах нижнего уровня с гибридным присоединением к Azure Active Directory | Документация Майкрософт
+title: Troubleshoot legacy hybrid Azure Active Directory joined devices
 description: Устранение неполадок на устройствах нижнего уровня с гибридным присоединением к Azure Active Directory.
 services: active-directory
 ms.service: active-directory
 ms.subservice: devices
 ms.topic: troubleshooting
-ms.date: 06/28/2019
+ms.date: 11/21/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jairoc
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c7f02937555f7637a6d2f81be717aaad83bab74f
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: e168deea1ba442d48f483264c1e97ce618040f18
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67481462"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74379117"
 ---
 # <a name="troubleshooting-hybrid-azure-active-directory-joined-down-level-devices"></a>Устранение неполадок на устройствах нижнего уровня с гибридным присоединением к Azure Active Directory 
 
@@ -26,13 +26,13 @@ ms.locfileid: "67481462"
 - Windows 8.1 
 - Windows Server 2008 R2 
 - Windows Server 2012 
-- Windows Server 2012 R2 
+- Windows Server 2012 R2 
 
 Сведения об устройствах под управлением Windows 10 и Windows Server 2016 см. в статье [Troubleshooting hybrid Azure Active Directory joined Windows 10 and Windows Server 2016 devices](troubleshoot-hybrid-join-windows-current.md) (Устранение неполадок на устройствах под управлением Windows 10 и Windows Server 2016 с гибридным присоединением к Azure Active Directory).
 
 В этой статье предполагается, что вы [настроили гибридное присоединение устройств к Azure Active Directory](hybrid-azuread-join-plan.md) для поддержки следующих сценариев:
 
-- Условный доступ на основе устройств
+- Device-based Conditional Access
 
 В этой статье содержатся рекомендации по устранению неполадок для решения потенциальных проблем.  
 
@@ -46,7 +46,7 @@ ms.locfileid: "67481462"
 - Начальная регистрация или присоединение устройств настраиваются, чтобы выполнить попытку входа в систему, а также заблокировать или разблокировать устройство. Возможна 5-минутная задержка, связанная с выполнением задачи планировщика задач. 
 - В случае с ОС Windows 7 с пакетом обновления 1 (SP1) или Windows Server 2008 R2 с пакетом обновления 1 (SP1) убедитесь, что обновление [KB4284842](https://support.microsoft.com/help/4284842) уже установлено. Это обновление предотвращает ошибки будущих проверок подлинности из-за потери доступа клиента к защищенными ключам после изменения пароля.
 
-## <a name="step-1-retrieve-the-registration-status"></a>Шаг 1. Получение сведений о состоянии регистрации 
+## <a name="step-1-retrieve-the-registration-status"></a>Шаг 1. Получение сведений о состоянии регистрации 
 
 **Чтобы проверить сведения о состоянии регистрации, сделайте следующее:**  
 
@@ -69,11 +69,11 @@ ms.locfileid: "67481462"
     ![Присоединение к рабочей области для Windows](./media/troubleshoot-hybrid-join-windows-legacy/02.png)
     
    - Autoworkplace.exe не удалось выполнить автоматическую аутентификацию с помощью Azure AD или AD FS. Это может быть вызвано отсутствием или неправильной настройкой AD FS (для федеративных доменов) или отсутствующим или неправильно сконфигурированным эффективным единым входом в Azure AD (для управляемых доменов), или сетевыми проблемами. 
-   - Возможно, что многофакторная проверка подлинности (MFA) для пользователя включена или настроена и WIAORMULTIAUTHN не настроен на сервере AD FS. 
+   - It could be that multi-factor authentication (MFA) is enabled/configured for the user and WIAORMULTIAUTHN is not configured at the AD FS server. 
    - Другой вариант — страница обнаружения домашней области (HRD) ожидает взаимодействия с пользователем, что предотвращает автоматическое запрашивание токена программой **Autoworkplace.exe**.
    - Возможно, URL-адреса AD FS и Azure AD отсутствуют в зоне интрасети IE на клиенте.
    - Проблемы с подключением к сети могут препятствовать **autoworkplace.exe** достигать URL-адреса AD FS или Azure AD. 
-   - **Autoworkplace.exe** клиенту нужно иметь прямой видимости от клиента организации на локальный контроллер домена AD, это означает, которые выполняют присоединение гибридная служба Azure AD выполняется успешно, только если клиент подключен к интрасети организации.
+   - **Autoworkplace.exe** requires the client to have direct line of sight from the client to the organization's on-premises AD domain controller, which means that hybrid Azure AD join succeeds only when the client is connected to organization's intranet.
    - Ваша организация использует прозрачный единый вход Azure AD, `https://autologon.microsoftazuread-sso.com` или `https://aadg.windows.net.nsatc.net` нет в параметрах интрасети IE устройства, а параметр **Разрешить обновление строки состояния в сценарии** не включен в зоне интранета.
 - Вы не вошли в качестве пользователя домена
 
@@ -91,7 +91,7 @@ ms.locfileid: "67481462"
 
     ![Присоединение к рабочей области для Windows](./media/troubleshoot-hybrid-join-windows-legacy/05.png)
 
-Сведения о состоянии можно также найти в журнале событий в разделе **Applications and Services Log\Microsoft-Workplace Join** (Журнал приложений и служб > Microsoft — присоединение к рабочей области).
+Сведения о состоянии можно также найти в журнале событий в разделе **Applications and Services Log\Microsoft-Workplace Join** (Журнал приложений и служб > Microsoft — присоединение к рабочей области).
   
 **Наиболее распространенные причины сбоя гибридного присоединения к Azure AD:** 
 

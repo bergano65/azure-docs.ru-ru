@@ -1,222 +1,231 @@
 ---
-title: Интеграция с партнерами по виртуальным рабочим столам Windows — Azure
-description: Сведения о партнерах и документации по работе с виртуальными рабочими системами Windows о способах интеграции с ними.
+title: Windows Virtual Desktop partner integrations - Azure
+description: Learn about Windows Virtual Desktop's partners and access documentation about how to integrate with them.
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: conceptual
-ms.date: 11/14/2019
+ms.date: 11/22/2019
 ms.author: helohr
-ms.openlocfilehash: c482291e665656bf16f28cd114a9cb8141ae77c3
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.openlocfilehash: 6b4e1a5024fec07ca73c79d2742933b7b115e6c2
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74084010"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74384296"
 ---
-# <a name="windows-virtual-desktop-partner-integrations"></a>Интеграция с партнерами по виртуальным рабочим столам Windows
+# <a name="windows-virtual-desktop-partner-integrations"></a>Windows Virtual Desktop partner integrations
 
-В этой статье перечислены партнеры виртуального рабочего стола Windows.
+This article lists partners of Windows Virtual Desktop.
 
 ## <a name="citrix"></a>Citrix
 
-![Эмблема Citrix](./media/partners/citrix.png)
+![Citrix logo](./media/partners/citrix.png)
 
-Citrix — это утвержденный поставщик, предоставляющий предприятиям централизованное управление виртуальными приложениями и рабочими нагрузками рабочих столов в Azure, параллельно с локальными развертываниями. Рабочая область Citrix с виртуальными приложениями и рабочими столами позволяет пользователям получать доступ к приложениям и настольным компьютерам с любого устройства, используя улучшенный протокол Citrix ХДКС для предоставления высококачественных возможностей из любого места.
+Citrix is an approved provider that offers enterprises centralized hybrid management of virtual apps and desktops workloads in Azure, side by side with on-premises deployments. Citrix Workspace with the Virtual Apps and Desktops service allows users to access apps and desktops from any device, leveraging the advanced Citrix HDX protocol to deliver a high definition experience from anywhere.
 
-Citrix расширяет ценность виртуальных рабочих столов Windows с помощью надежных корпоративных инструментов, повышая плотность и производительность пользователей, подготавливая рабочие нагрузки по требованию и упрощая управление образами и приложениями. Это позволяет оптимизировать затраты с помощью интеллектуальных средств масштабирования, обеспечивая при этом невероятный пользовательский интерфейс, протестированный на предмет самых сложных приложений в разных отраслях. Кроме того, управляемые настольные компьютеры Citrix — это служебная программа как услуга для виртуальных рабочих столов Windows, которая предоставляет простое облачное решение управления для доставки виртуальных приложений и настольных компьютеров на любое устройство.
+Citrix extends the value of Windows Virtual Desktop with robust enterprise tools to improve user density and performance, provision workloads on demand, and simplify image and application management. IT can optimize costs with intelligent scaling tools, while delivering an incredible user experience that's field-tested against the toughest applications across industries. Additionally, Citrix Managed Desktops is a Windows Virtual Desktop-enabled desktops-as-a-service program that provides a simple, cloud-based management solution for delivering virtual apps and desktops to any device.
 
-- [Перейдите на веб-сайт партнера](https://more.citrix.com/wvd).
+- [Go to the partner website](https://more.citrix.com/wvd).
 
+## <a name="cloudhouse"></a>Cloudhouse
+
+![Cloudhouse logo](./media/partners/cloudhouse.png)
+
+Cloudhouse is a Windows Virtual Desktop value-added services provider that offers customers a turnkey application migration service that can move all applications, including ones that are incompatible with modern Windows operating systems, to the Windows Virtual Desktop environment, allowing customers to truly leverage multi-session Windows 10. 
+
+By leveraging proven Cloudhouse containerization technology, the Cloudhouse service takes all applications, including ones designed for Windows XP, Windows 7, or Windows 8, and deploys them to a modern Windows Virtual Desktop without needing to change code or impact user experience. Cloudhouse further adds to the value of Windows Virtual Desktop by isolating applications from the underlying operating system, allowing Windows Servicing updates to be rolled out without affecting the containerized application. 
+
+- [Go to the partner website](https://cloudhouse.com/resources/migrate-everything-to-windows-10-on-microsoft-windows-virtua).
 
 ## <a name="vmware"></a>VMware
 
-![Логотип VMware](./media/partners/vmware.png)
+![VMware Logo](./media/partners/vmware.png)
 
-Облако горизонта VMware на Microsoft Azure дает организациям возможность подключать свой собственный экземпляр Microsoft Azure к простой, интуитивно понятной плоскости управления в облаке горизонта, создавая безопасное, комплексное облачное решение для доставки в виртуализованной среде. Приложения и настольные системы Windows. С выпуском виртуальных рабочих столов Windows компания VMware сотрудничает с корпорацией Майкрософт, чтобы расширить возможности виртуальных рабочих столов Windows для клиентов, использующих горизонт облака на Microsoft Azure. Эта функция будет доступна в Technical Preview в конце 2019.
+VMware Horizon Cloud on Microsoft Azure gives organizations the ability to connect their own instance of Microsoft Azure to the simple, intuitive Horizon Cloud control plane, creating a secure, comprehensive, cloud-hosted solution for delivering virtualized Windows applications and desktops. With the release of Windows Virtual Desktop, VMware has partnered with Microsoft to extend the functionality of Windows Virtual Desktop to customers using Horizon Cloud on Microsoft Azure. This functionality will be available in Tech Preview by the end of 2019.
  
-Как утвержденный поставщик, преимущества виртуального рабочего стола Windows будут расширены до облака VMware горизонта на Microsoft Azure клиентов, включая Windows 10 Корпоративная для нескольких сеансов, Windows 7 с бесплатными обновлениями безопасности до трех лет и Фслогикс. Кроме того, клиенты получат функции корпоративного уровня в облаке горизонта, такие как общая поддержка конечных точек; Глобальный, оптимизированный для облака брокер; гибкие возможности и настройки рабочего стола; Управление средой пользователя; и поддержка гибридных сред.
+As an approved provider, the benefits of Windows Virtual Desktop will be extended to VMware Horizon Cloud on Microsoft Azure customers, including Windows 10 Enterprise for multi-session, Windows 7 with free Extended Security Updates for up to three years, and FSLogix. Additionally, customers will receive the enterprise-class features of Horizon Cloud, such as broad endpoint support; global, cloud-optimized brokering; flexible desktop options and configurations; user-environment management; and support for hybrid environments.
 
-- [Зарегистрируйтесь для использования ознакомительной версии Technical Preview на Microsoft Azure](https://www.vmware.com/learn/323526_TECH_PREVIEW_REG.html).
-- [Перейдите на веб-сайт партнера](https://www.vmware.com/products/horizon-cloud-virtual-desktops.html).
+- [Register for the Tech Preview of Horizon Cloud on Microsoft Azure](https://www.vmware.com/learn/323526_TECH_PREVIEW_REG.html).
+- [Go to the partner website](https://www.vmware.com/products/horizon-cloud-virtual-desktops.html).
 
-## <a name="cloudjumper"></a>клауджумпер
+## <a name="cloudjumper"></a>CloudJumper
 
-![Логотип Клауджумпер](./media/partners/cloudjumper.png)
+![CloudJumper Logo](./media/partners/cloudjumper.png)
 
-Клауджумпер — это поставщик услуг, добавленный в виртуальные рабочие столы Windows, который предоставляет поставщикам решений и корпоративному ИТ-разработчикам программное обеспечение для комплексной инициализации и управления средами виртуальных рабочих столов Windows. Клауджумпер Software позволяет управлять всеми уровнями развертывания виртуальных рабочих столов Windows. Доставка рабочих нагрузок и приложений осуществляется автоматически, гарантируя, что пользователи смогут быстро получить доступ к рабочему столу в любом месте на любом устройстве.
+CloudJumper is a Windows Virtual Desktop value-added services provider that equips solution providers and enterprise IT with software to  provision and manage Windows Virtual Desktop environments holistically. With CloudJumper software, IT can manage every layer of a Windows Virtual Desktop deployment. Delivery of workloads and applications is automated, ensuring that users can quickly access their desktop anywhere on any device.
 
-Программное обеспечение Клауджумпер, набор управления облачными рабочими областями, расширяет ценность виртуальных рабочих столов Windows, упрощая развертывание и текущие задачи администрирования в Azure. С помощью одной области прозрачности она может подготавливать, администрировать и оптимизировать инфраструктуру для пользовательских рабочих областей. Модуль запуска простого сценария Клауджумпер интегрируется с платформами ИТ, чтобы автоматизировать задачи, связанные с подготовкой виртуального рабочего стола Windows. Кроме того, API-интерфейсы Клауджумпер обеспечивают дальнейшую расширяемость и интеграцию с другими корпоративными системами, такими как ServiceNow и подготовка BMC.
+CloudJumper’s software, Cloud Workspace Management Suite extends the value of Windows Virtual Desktop by simplifying deployment and ongoing administration tasks in Azure. From a single pane of glass, IT can provision, manage, and optimize infrastructure for user workspaces. CloudJumper’s Simple Script Triggering Engine integrates with IT service platforms to automate tasks involved in provisioning Windows Virtual Desktop. Additionally, CloudJumper APIs allow further extensibility and integration with other enterprise systems like ServiceNow and BMC Ready.
 
-- [Ознакомьтесь с кратким](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3p0Mg)обзорным решением.
-- [Перейдите на веб-сайт партнера](https://cloudjumper.com/wvd/).
+- [See the joint solution brief](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3p0Mg).
+- [Go to the partner website](https://cloudjumper.com/wvd/).
 
-## <a name="controlup"></a>контролуп
+## <a name="controlup"></a>ControlUp
 
-![Логотип Контролуп](./media/partners/controlup.png)
+![ControlUp Logo](./media/partners/controlup.png)
 
-Контролуп — это добавленный в Windows виртуальный рабочий стол поставщик услуг, который позволяет ИТ-специалистам отслеживать, устранять неполадки, анализировать и непосредственно исправлять проблемы в своем локальном, гибридном облаке и облачной инфраструктуре в режиме реального времени с помощью одной консоли. Контролупная платформа аналитики и управления позволяет заблаговременно автоматизировать исправления для быстро растущего набора вариантов использования.
+ControlUp is a Windows Virtual Desktop value-added services provider that enables IT teams to monitor, troubleshoot, analyze, and directly remediate problems in their on-premises, hybrid cloud, and cloud infrastructure in real time from a single console. ControlUp’s analytics and management platform also allows IT to proactively automate fixes for a rapidly growing set of use cases.
 
-При использовании с виртуальным рабочим столом Windows Контролуп предоставляет дополнительные возможности для оптимизации сред виртуальных рабочих столов Windows и взаимодействия с конечными пользователями. В консоли Контролуп он получает видимость среды конечного пользователя для эффективного мониторинга и устранения проблем с производительностью. Интуитивно понятная панель мониторинга предоставляет аналитические сведения и аналитику для развертывания виртуальных рабочих столов, а также возможности автоматизированной отчетности, дополненные показателями производительности сообщества. Контролуп может управлять несколькими источниками данных и типами, организуя их в высокопроизводительные наборы данных, агрегированные в рамках инфраструктуры вычислений, хранения и виртуальных рабочих столов Windows, позволяя выполнять детализированную видимость из одной области стекла.
+When used with Windows Virtual Desktop, ControlUp provides additional capabilities to optimize Windows Virtual Desktop environments and the end-user experience. From the ControlUp console, IT gets end-user environment visibility to effectively monitor and troubleshoot performance issues. An intuitive dashboard provides insights and analytics for virtual desktop deployments, as well as options for automated reporting enriched with community benchmarks. ControlUp can manage multiple data sources and types, organizing them in high-performance data sets aggregated across compute, storage, and Windows Virtual Desktop infrastructure, allowing granular visibility from a single pane of glass.
 
-- [Ознакомьтесь с кратким](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3PUit)обзорным решением.
-- [Перейдите на веб-сайт партнера](https://www.controlup.com/solutions/ms_wvd/).
+- [See the joint solution brief](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3PUit).
+- [Go to the partner website](https://www.controlup.com/solutions/ms_wvd/).
 
-## <a name="devicetrust"></a>девицетруст
+## <a name="devicetrust"></a>deviceTRUST
 
-![Логотип Девицетруст](./media/partners/devicetrust.png)
+![deviceTRUST Logo](./media/partners/devicetrust.png)
 
-Девицетруст — это поставщик услуг, добавленный в качестве значения виртуальных рабочих столов Windows, контекстуализес корпоративную корпоративную. Благодаря этому пользователи могут получить доступ к виртуальному рабочему столу Windows из любого расположения, на любом устройстве в любой сети, предоставляя ИТ-отделам сведения и контроль, необходимые для удовлетворения требований к управлению. 
+deviceTRUST is a Windows Virtual Desktop value-added services provider that contextualizes the corporate enterprise. It allows users the freedom to access their Windows Virtual Desktop from any location, on any device, over any network, while giving IT departments the information and control they need to meet their governance requirements. 
 
-Девицетруст расширяет ценность виртуального рабочего стола Windows с помощью его контекстной технологии безопасности. Девицетруст включает условный доступ для защищенного доступа к виртуальным рабочим столам Windows, условный доступ к приложениям в виртуальном рабочем столе Windows и применения условных политик виртуальных рабочих столов Windows без какой-либо дополнительной инфраструктуры. Использование Девицетруст включает в себя мобильную, гибкую рабочую область, которая отвечает всем требованиям безопасности, соответствия и нормативных требований. 
+deviceTRUST extends the value of Windows Virtual Desktop with their contextual security technology. deviceTRUST enables conditional access for a secure Windows Virtual Desktop access, conditional application access within Windows Virtual Desktop and to apply conditional Windows Virtual Desktop policies without any additional infrastructure. Using deviceTRUST enables a mobile, flexible workspace that meets all security, compliance, and regulatory requirements. 
 
-- [Перейдите на веб-сайт партнера](https://devicetrust.com/wvd).
+- [Go to the partner website](https://devicetrust.com/wvd).
 
-## <a name="igel"></a>ижел
+## <a name="igel"></a>IGEL
 
-![Логотип ИЖЕЛ](./media/partners/igel.png)
+![IGEL logo](./media/partners/igel.png)
 
-ИЖЕЛ — это утвержденный и проверенный партнер по Microsoft Azure и служб виртуальных рабочих столов Windows. ИЖЕЛ предлагает ИЖЕЛ OS, новую ОС пограничной среды для облачных рабочих областей, предназначенную для доступа к виртуальным приложениям, рабочим столам и облачным рабочим областям с одного или нескольких пользователей с помощью упрощенной, простой и безопасной конечной точки на основе Linux. Независимое от платформы программное решение, ИЖЕЛ OS и ее серверное управление и управление, ИЖЕЛ универсальный набор управления (UMS), состоит из решения управления конечными системами и управления ими, которое освобождает предприятия от использования всех преимуществ Azure. Облачные экземпляры и настольные виртуальные рабочие столы Windows, включая экономичный виртуальный рабочий стол Windows с несколькими сеансами, сокращая затраты на аппаратное обеспечение и управление устройствами конечных точек и операции.
+IGEL is an approved and verified partner of Microsoft Azure and Windows Virtual Desktop services. IGEL offers IGEL OS, the next-gen edge OS for cloud workspaces designed to access virtual apps, desktops, and cloud workspaces from one or more user devices with a lightweight, simple, and secure Linux-based endpoint. A platform-independent software solution, IGEL OS and its server-based management and control software, IGEL Universal Management Suite (UMS), comprise an endpoint management and control solution that frees enterprises to take full advantage of Azure-based cloud instances and Windows Virtual Desktop desktops, including economical multi-session Windows Virtual Desktop, while reducing endpoint hardware and endpoint device management and operations costs.
  
-ИЖЕЛ OS поддерживает все популярные виртуальные приложения, рабочие столы и клиентские протоколы облачных рабочих областей из Citrix, Microsoft и VMware. Она включает в себя интегрированные технологии от партнеров 85, интерфейсов и протоколов, которые помогают организациям быстро внедрять службы виртуальных рабочих столов Windows в собственные уникальные пользовательские среды. ИЖЕЛ OS — это модульная конечная точка с поддержкой только для чтения, которая помогает защитить ее от несанкционированного доступа. Теперь он также включает полную "цепочку доверия", которая проверяет целостность всех основных основных процессов, выполняемых на конечной точке, от оборудования конечной точки (некоторых моделей) или процесса UEFI для всех служб облака Azure и виртуальных рабочих столов Windows. Благодаря ИЖЕЛ OS предприятия могут подписываться на виртуальные рабочие столы Windows из облака Azure с полной уверенностью в отношении целостности, безопасности и управляемости устройств конечных точек пользователей.
+IGEL OS supports all popular virtual apps, desktops, and cloud workspace client protocols from Citrix, Microsoft, and VMware. It includes integrated technologies from 85 peripheral, interface, and protocol partners to help organizations quickly adopt Windows Virtual Desktop services into their own unique user environments. IGEL OS is a read-only, modular endpoint OS, which helps protect it from tampering. It now also includes a complete “chain of trust” that verifies the integrity of all key major processes running on the endpoint, from the endpoint hardware (some selected models) or UEFI process all the way to the Azure cloud and Windows Virtual Desktop services. With IGEL OS, enterprises can subscribe to Windows Virtual Desktop from the Azure cloud with full confidence in the integrity, security, and manageability of their users’ endpoint devices.
 
-- [Перейдите на веб-сайт партнера.](https://www.igel.com/igel-os-universal-desktop-operating-system/)
+- [Go to the partner website.](https://www.igel.com/igel-os-universal-desktop-operating-system/)
 
-## <a name="ivanti"></a>иванти
+## <a name="ivanti"></a>Ivanti
 
-![Логотип иванти](./media/partners/ivanti.png)
+![Ivanti Logo](./media/partners/ivanti.png)
 
-Иванти User Workspace Manager — это служба, добавленная в виртуальный рабочий стол Windows, которая упрощает развертывание и управление настольными системами, разделяя данные пользователей с рабочего стола для обеспечения бесперебойной переносимости. С помощью Иванти пользователи могут доставлять сложные проекты, например переход на Windows 10, переводить Office 365 или переносить службы в облако быстрее. 
+Ivanti User Workspace Manager is a Windows Virtual Desktop value-added service that eases desktop deployment and management by separating user data from the desktop for seamless portability. With Ivanti, users can deliver complex projects like migrating to Windows 10, adopting Office 365, or moving services to the cloud faster. 
 
-При использовании с виртуальным рабочим столом Windows Диспетчер пользовательских рабочих областей Иванти предоставляет простое контекстное Управление возможностями рабочего стола пользователя, устраняя длительное время входа и уничтожая кошмары групповых политик. Иванти пользовательские шаблоны в диспетчере рабочей области позволяют упростить установку для пользователей с помощью агентов и существующей консоли. Иванти User Workspace Manager обеспечивает скорость реагирования, защиту настольных компьютеров, которые пользователи любят, экономя деньги на серверах, Управление пользователями более эффективно и сокращая риски безопасности конечных точек. 
+When used with Windows Virtual Desktop, Ivanti User Workspace Manager provides simple contextual management of the user desktop experience, eliminating long sign-in times and eradicating group policy nightmares. Ivanti User Workspace Manager out-of-the-box templates simplify installation for users through agents and the existing console. Ivanti User Workspace Manager delivers responsive, secure desktops that users love, saving money on servers, managing users more effectively, and reducing endpoint security risk. 
 
-- [Перейдите на веб-сайт партнера](https://www.ivanti.com/products/user-workspace-manager).
+- [Go to the partner website](https://www.ivanti.com/products/user-workspace-manager).
 
-## <a name="lakeside-software"></a>Программное обеспечение лакесиде
+## <a name="lakeside-software"></a>Lakeside Software
 
-![Логотип программного обеспечения лакесиде](./media/partners/lakeside.png)
+![Lakeside Software Logo](./media/partners/lakeside.png)
 
-Лакесиде Software — это поставщик услуг, добавленный в виде виртуальных рабочих столов Windows, который предоставляет ИТ-командам программное обеспечение для мониторинга производительности и оценки готовности к миграции пользовательских рабочих нагрузок в Azure. Это программное обеспечение обеспечивает более четкое представление об использовании приложений и потреблении ресурсов для упрощения процесса миграции. Лакесиде Software собирает данные в каждой рабочей области, чтобы создать полный отчет о пользовательских средах, что позволяет быстро устранять неполадки и оптимизировать ресурсы.
+Lakeside Software is a Windows Virtual Desktop value-added services provider that equips IT teams with software for monitoring performance and assessing Azure migration readiness of user workloads. With this software, IT gains clearer visibility into application usage and resource consumption to streamline the migration process. Lakeside Software collects data at every workspace to create a comprehensive report on user environments, enabling quick troubleshooting and optimization of assets.
 
-Решение для мониторинга цифровых технологий лакесиде Software, Систракк, помогает обеспечить удобство работы пользователей, отслеживая производительность и выявляя идеальные рабочие нагрузки для миграции. Систракк работает над тем, чтобы расширить ценность виртуальных рабочих столов Windows с помощью оценки размера и непрерывного мониторинга пользовательских сред.
+Lakeside Software’s digital experience monitoring solution, SysTrack, can help provide a great user experience by tracking performance and identifying ideal workloads for migration. SysTrack works to extend the value of Windows Virtual Desktop through right-sizing assessments and continuous monitoring of user environments.
 
-- [Ознакомьтесь с кратким](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3oL8Q)обзорным решением.
-- [Перейдите на веб-сайт партнера](https://www.lakesidesoftware.com/assessments/wvd).
+- [See the joint solution brief](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3oL8Q).
+- [Go to the partner website](https://www.lakesidesoftware.com/assessments/wvd).
 
-## <a name="liquidware"></a>ликуидваре
+## <a name="liquidware"></a>Liquidware
 
-![Логотип ликуидваре](./media/partners/liquidware.png)
+![Liquidware Logo](./media/partners/liquidware.png)
 
-Ликуидваре — это поставщик услуг, добавленный в качестве значения виртуальных рабочих столов Windows, который предоставляет программное обеспечение, которое управляет развертыванием виртуальных рабочих столов Windows и оптимизирует его. Ликуидваре Essentials Suite обеспечивает доставку приложений с помощью уровней, управления пользовательской средой, а также контроля и диагностики взаимодействия с пользователем. Благодаря решениям для оценки готовности к миграции и анализу метрик использования Ликуидваре обеспечивает бесперебойную работу виртуальных рабочих столов для конечных пользователей.
+Liquidware is a Windows Virtual Desktop value-added services provider that delivers software that manages and optimizes Windows Virtual Desktop deployment. The Liquidware Essentials suite provides application delivery through layering, user environment management, and key user experience visibility and diagnostics. With solutions for assessing migration readiness and analyzing usage metrics, Liquidware provides a seamless virtual desktop experience for end users.
 
-Ликуидваре Essentials расширяет ценность виртуальных рабочих столов Windows, позволяя эффективно собирать профили пользователей и собирать ключевые данные пользователя, чтобы упростить миграцию пользовательских сред в Azure. Кроме того, Ликуидваре Essentials упрощает управление образами, объединяя профили пользователей и приложения для многоуровневых приложений на основе настраиваемых параметров управления правами.
+Liquidware Essentials extends the value of Windows Virtual Desktop by efficiently harvesting user profiles and gathering key user data to streamline migration of user environments to Azure. Additionally, Liquidware Essentials simplifies image management by unifying user profiles and layering apps based on configurable rights management settings.
 
-- [Ознакомьтесь с кратким](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3oSY1)обзорным решением.
-- [Перейдите на веб-сайт партнера](https://www.liquidware.com/solutions/solutions-platform/microsoft).
+- [See the joint solution brief](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3oSY1).
+- [Go to the partner website](https://www.liquidware.com/solutions/solutions-platform/microsoft).
 
-## <a name="login-vsi"></a>Имя входа VSI
+## <a name="login-vsi"></a>Login VSI
 
-![Логотип VSI](./media/partners/loginvsi.png)
+![Login VSI Logo](./media/partners/loginvsi.png)
 
-Имя входа VSI — это добавленный поставщиком услуг Windows виртуальный рабочий стол и партнер корпорации Майкрософт по тестированию производительности приложений в средах виртуальных рабочих столов Windows. Клиенты, перемещающие свои локальные бизнес-службы на виртуальные рабочие столы Windows, используют вход VSI Enterprise Edition для оценки и поддержки оптимальной производительности, масштабируемости и доступности многосеансовых приложений Windows 10 Enterprise, Windows 10 Корпоративная и Windows 7 включена с критически важными для бизнеса приложениями.
+Login VSI is a Windows Virtual Desktop value-added services provider and Microsoft partner delivering software for application performance testing in Windows Virtual Desktop environments. Customers moving their on-premises business services to Windows Virtual Desktop use Login VSI Enterprise Edition to evaluate and maintain optimal performance, scalability, and availability of Windows 10  Enterprise multi-session, Windows 10 Enterprise, and Windows 7 enabled with their business critical applications.
 
-- [Перейдите на веб-сайт партнера](https://www.loginvsi.com).
+- [Go to the partner website](https://www.loginvsi.com).
 
 ## <a name="nerdio"></a>Nerdio
 
-![Логотип Nerdio](./media/partners/nerdio.png)
+![Nerdio Logo](./media/partners/nerdio.png)
 
-Nerdio — это платформа автоматизации ИТ Azure, которая упрощает развертывание и Управление виртуальным рабочим столом Windows. Nerdio предоставляет знания и технологии для развертывания, цены, упаковки, управления и оптимизации развертываний Azure для клиентов с помощью виртуальных рабочих столов Windows.
+Nerdio is an Azure IT automation platform that makes it easy to deploy and manage Windows Virtual Desktop. Nerdio provides the knowledge and technology to deploy, price, package, manage, and optimize customers’ Azure deployments—with Windows Virtual Desktop front-and-center.
 
-Nerdio расширяет ценность виртуальных рабочих столов Windows, позволяя легко подготавливать ресурсы Azure и оптимизировать развертывание. С помощью Nerdio для Azure он может автоматически развертывать и управлять всей средой Azure, включая виртуальный рабочий стол Windows, в течение двух часов.
+Nerdio extends the value of Windows Virtual Desktop by making it easy to provision Azure resources and streamline deployment. With Nerdio for Azure, IT can automatically deploy and manage a complete Azure environment, including Windows Virtual Desktop, in under two hours.
 
-- [Ознакомьтесь с кратким](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3p0Mh)обзорным решением.
-- [Перейдите на веб-сайт партнера](https://getnerdio.com/windows-virtual-desktop/).
+- [See the joint solution brief](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3p0Mh).
+- [Go to the partner website](https://getnerdio.com/windows-virtual-desktop/).
 
-## <a name="numecent"></a>нумецент
+## <a name="numecent"></a>Numecent
 
-![Логотип нумецент](./media/partners/numecent.png)
+![Numecent Logo](./media/partners/numecent.png)
 
-Нумецент — это добавленный в Windows виртуальный рабочий стол поставщик услуг, который значительно сокращает эксплуатационные расходы за счет быстрого адаптации и переноса сложных или несовместимых приложений Windows в средах виртуальных рабочих столов Windows. Нумецент также минимизирует объем конфигурации, необходимой пользователям, сокращает количество обновлений приложений и упрощает сложные процессы. Поскольку Нумецент Клаудпагинг поддерживает больше приложений, чем любое другое средство доставки приложений, это сокращает время и рабочие нагрузки ИТ в средах с разнообразным набором приложений. 
+Numecent is a Windows Virtual Desktop value-added services provider that significantly reduces the total operating costs through rapid onboarding and migration of complicated or incompatible Windows apps in Windows Virtual Desktop environments. Numecent also minimizes the amount of configuration that users need to do, reduces application updates, and simplifies complex processes. Because Numecent Cloudpaging supports more applications seamlessly than any other application delivery tool, it reduces time and IT workloads in environments with a diverse set of applications. 
 
-При использовании с виртуальным рабочим столом Windows Клаудпагинг дополнительно сокращает затраты, выполняя жизненный цикл активов программного обеспечения от развертывания до обновления, отслеживания и удаления приложений. Клаудпагинг упрощает управление образами за счет динамической подготовки приложений в режиме реального времени к развертываниям виртуальных рабочих столов Windows. Клаудпагинг помогает приложениям работать без необходимости администрирования или вмешательства в периодические обновления Windows 10. Клаудпагинг также сокращает стоимость лицензирования ресурсоемких приложений, обеспечивая более эффективное развертывание и использование этих приложений. 
+When used with Windows Virtual Desktop, Cloudpaging further reduces costs by completing software asset lifecycle from deployment to upgrading, metering, and removing applications. Cloudpaging simplifies image management by dynamically provisioning apps as needed in real time to the Windows Virtual Desktop deployments. Cloudpaging helps applications run without administration or intervention through the periodic Windows 10 updates. Cloudpaging also reduces the licensing cost of expensive applications by enabling more efficient deployment and usage of these applications. 
 
-- [Перейдите на веб-сайт партнера](https://www.numecent.com/partners/cloudpaging-for-windows-applications-windows-virtual-desktop/).
+- [Go to the partner website](https://www.numecent.com/partners/cloudpaging-for-windows-applications-windows-virtual-desktop/).
 
-## <a name="policypak"></a>полиципак
+## <a name="policypak"></a>PolicyPak
 
-![Логотип Полиципак](./media/partners/policypak.png)
+![PolicyPak Logo](./media/partners/policypak.png)
 
-Полиципак Software — это партнер по виртуальным рабочим столам Windows, который выполняет общее управление параметрами для приложений, настольных систем, браузеров, Java и параметров безопасности. Полиципак сохраняет параметры настольного компьютера, системы и безопасности в соответствии с требованиями. Полиципак расширяет ценность виртуальных рабочих столов Windows, добавляя набор компонентов для улучшения встроенного администрирования Windows. Используйте существующие Active Directory групповая политика и (или) Windows Intune для доставки параметров Полиципак и повышения прав администратора на управление компьютерами под управлением Windows 10. 
+PolicyPak Software is a Windows Virtual Desktop partner that performs total settings management for applications, desktop, browsers, Java, and security settings. PolicyPak keeps your desktop, system, and security settings in compliance. PolicyPak enhances the value of Windows Virtual Desktop by adding a suite of components to enhance Windows’ built-in administration. Use your existing Active Directory Group Policy and/or Windows Intune to deliver PolicyPak’s settings and increase administrators’ ability to manage their Windows 10 machines. 
 
-Наиболее частыми вариантами использования Полиципак является удаление прав локального администратора и преодоление запросов контроля учетных записей, блокирование отправителя, Управление несколькими браузерами, управление режимами работы и совместимости Internet Explorer, сокращение числа объектов групповой политики, Управление сопоставлениями файлов Windows 10, Управление меню "Пуск" и панелью задач Windows 10, а затем Управление компонентами и дополнительными компонентами Windows 10.  
+The top use cases for PolicyPak are to remove local admin rights and overcome UAC prompts, block Ransomware, manage multiple browsers, manage Internet Explorer’s Enterprise and Compatibility modes, reduce the number of GPOs, manage Windows 10 File Associations, manage Windows 10 Start Menu and Taskbar, and manage Windows 10 Features and Optional features.  
 
-- [Перейдите на веб-сайт партнера](https://www.policypak.com/integration/policypak-windows-virtual-desktop.html).
+- [Go to partner website](https://www.policypak.com/integration/policypak-windows-virtual-desktop.html).
 
-## <a name="printerlogic"></a>принтерлогик
+## <a name="printerlogic"></a>PrinterLogic
 
-![Логотип Принтерлогик](./media/partners/printerlogic.png)
+![PrinterLogic Logo](./media/partners/printerlogic.png)
 
-Принтерлогик — это платформа поставщика услуг, добавленная в виртуальные рабочие столы Windows, которая позволяет ИТ-специалистам устранять все серверы печати и предоставлять высокодоступную бессерверную инфраструктуру печати. Принтерлогик расширяет ценность виртуальных рабочих столов Windows и Azure, облегчая централизованное управление и развертывание объектов принтеров на любом принтере или в конечной ОС. 
+PrinterLogic is a Windows Virtual Desktop value-added service provider platform that empowers IT professionals to eliminate all print servers and deliver a highly available serverless printing infrastructure. PrinterLogic extends the value of Windows Virtual Desktop and Azure by making it easy to manage centrally and deploy printer objects to any printer or endpoint OS. 
 
-Платформа Принтерлогик, доступная в виде SaaS или веб-стека в частном облаке, позволяет пользователям всегда иметь нужные принтеры в своих виртуальных сеансах на основе идентификатора пользователя, имени устройства или расположения. Эта функция дополнена полным набором функций управления печатью в корпоративной среде, таких как отслеживание печати и создание отчетов, Мобильная печать и печать выпусков эмблемы с защитой. 
+Available as SaaS or as a web stack in your own private cloud, the PrinterLogic platform ensures users always have the right printers they need in their virtual sessions based on user ID, device name, or location. This functionality is complemented by a full suite of enterprise print management features such as print tracking and reporting, mobile printing, and secure badge release printing. 
 
-- [Перейдите на веб-сайт партнера](https://www.printerlogic.com).
+- [Go to partner website](https://www.printerlogic.com).
 
 ## <a name="printix"></a>Printix
 
-![Логотип Printix](./media/partners/printix.png)
+![Printix Logo](./media/partners/printix.png)
 
-Printix — это дополнительный поставщик услуг Windows, который автоматизирует подключение пользователей к ресурсам печати Office. В качестве отсутствующего элемента в вашей клиентской миграции Azure Printix является наиболее экономичной службой, доступной для удаления инфраструктуры и ИТ-задач, связанных с поддержкой и оптимизацией рабочего процесса печати для каждого пользователя, независимо от расположения.
+Printix is a Windows Virtual Desktop value-added service provider that automates user connection to office printing resources. As the missing piece in your customer Azure migration, Printix is the most cost-effective service available to remove infrastructure and IT tasks associated with supporting and optimizing print workflow for every user, regardless of location.
 
-Печать — это фундаментальная задача практически для каждой среды Office и малого бизнеса. Чтобы воспользоваться всеми преимуществами виртуальных рабочих столов Windows и обеспечить удобный пользовательский интерфейс, важно обеспечить пользователям возможность подключения к принтерам с минимальными усилиями и максимальной надежностью. С помощью Printix можно максимально эффективно воспользоваться виртуальным рабочим столом Windows с помощью единого входа, автоматической настройки, регулярных обновлений и постоянного мониторинга среды печати.
+Printing is a fundamental task in just about every office and small business environment. In order to take full advantage of Windows Virtual Desktop and provide a great user experience, it's essential to ensure your users can connect to printers with minimum effort and maximum reliability. With Printix, you can get the most out of Windows Virtual Desktop through single sign-on (SSO), silent configuration, regular updates, and continuous monitoring of your print environment.
 
-- [Ознакомьтесь с кратким обзором решения](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4aiK2)
-- [Перейдите на веб-сайт партнера](https://www.printix.net/printix-for-windows-virtual-desktop)
+- [See the joint solution brief](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4aiK2)
+- [Go to the partner website](https://www.printix.net/printix-for-windows-virtual-desktop)
 
-## <a name="rdpsoft"></a>рдпсофт
+## <a name="rdpsoft"></a>RDPSoft
 
-![Логотип Рдпсофт](./media/partners/rdpsoft.png)
+![RDPSoft logo](./media/partners/rdpsoft.png)
 
-Рдпсофт — это партнер по виртуальным рабочим столам Windows, предоставляющий эффективные и недорогие решения по мониторингу, управлению и созданию отчетов. Их предложения удаленный рабочий стол Commander позволяют ИТ-специалистам получить представление о работоспособности, производительности, активности пользователей, лицензировании и безопасности развертываний виртуальных рабочих столов Windows. 
+RDPSoft is a Windows Virtual Desktop partner that provides powerful and inexpensive monitoring, management, and reporting solutions. Their Remote Desktop Commander offerings allow IT professionals to gain insight into the health, performance, user activity, licensing, and security of their Windows Virtual Desktop deployments. 
  
-Рдпсофт с решениями удаленный рабочий стол Commander улучшают Администрирование виртуальных рабочих столов Windows. Функции управления уровня "Премиум" упрощают делегирование задач управления виртуальными рабочими столами Windows для поддержки сотрудников рабочей среды, предоставляя удаленную помощь, сеанс пользователя и управление процессами. В то же время пакет удаленный рабочий стол Commander собирает обширные метрики о производительности и нагрузке для каждого пользователя, активности пользователей и аудита, качества подключения к виртуальному рабочему столу Windows (задержка и пропускная способность), лицензирование и безопасность в центральном SQL Azure. экземпляр базы данных для проверки. С помощью Рдпсофт отчеты с богатыми возможностями и исчерпывающими информационными панелями просто щелкают.
+RDPSoft's Remote Desktop Commander solutions enhance Windows Virtual Desktop administration. Premium Management features simplify delegation of Windows Virtual Desktop management tasks to support desk staff by providing remote assistance, user session, and process management. At the same time, the Remote Desktop Commander Suite collects rich metrics about per-user performance and load, user activity and auditing, Windows Virtual Desktop connection quality (latency and bandwidth), licensing, and security into a central Azure SQL database instance for review. With RDPSoft, rich historic reporting and comprehensive dashboards are just a click away.
 
-- [Перейдите на веб-сайт партнера](https://www.rdpsoft.com/products/remote-desktop-commander/suite/)
+- [Go to the partner website](https://www.rdpsoft.com/products/remote-desktop-commander/suite/)
 
-## <a name="thinprint"></a>синпринт
+## <a name="thinprint"></a>ThinPrint
 
-![Логотип Синпринт](./media/partners/thinprint.png)
+![ThinPrint Logo](./media/partners/thinprint.png)
 
-Синпринт — это поставщик услуг, добавленный с помощью виртуальных рабочих столов Windows, который обеспечивает простую и безопасную облачную печать из виртуальных рабочих столов Windows. С помощью служб и программного обеспечения существующую инфраструктуру печати можно использовать для печати документов из облака. Синпринт обеспечивает подключение к локальным и сетевым принтерам, что позволяет пользователям легко выполнять печать в офисе или работать удаленно.
+ThinPrint is a Windows Virtual Desktop value-added services provider that delivers simple and secure cloud printing from Windows Virtual Desktop. With its services and software, existing print infrastructure can be utilized to print documents from the cloud. ThinPrint enables connection to both local and network printers, making it easy for users to print while at the office or working remotely.
 
-Решение Синпринт езип расширяет возможности виртуального рабочего стола Windows, разрешая подключение к существующей корпоративной инфраструктуре печати. езип дает пользователям возможность управлять печатью на предприятии независимо от того, где они находятся. С помощью езип пользователи могут связывать зазор между виртуальным рабочим столом Windows и печатающим оборудованием.
+ThinPrint’s ezeep solution extends the value of Windows Virtual Desktop by enabling the connection to existing enterprise print infrastructure. ezeep gives users control over printing in the enterprise no matter where they are. Using ezeep, users can bridge the gap between Windows Virtual Desktop and printing hardware.
 
-- [Ознакомьтесь с кратким](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3oYas)обзорным решением.
-- [Перейдите на веб-сайт партнера](https://www.ezeep.com/wvd-printing).
+- [See the joint solution brief](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3oYas).
+- [Go to partner website](https://www.ezeep.com/wvd-printing).
 
-## <a name="tricerat"></a>трицерат
+## <a name="tricerat"></a>Tricerat
 
-![Логотип трицерат](./media/partners/tricerat.png)
+![Tricerat Logo](./media/partners/tricerat.png)
 
-Трицерат предлагает превосходное решение для управления печатью для виртуальных рабочих столов Windows и других настольных платформ. Программное обеспечение трицерат обладает мощными функциональными возможностями и обеспечивает лучшую работу как для пользователей, так и для администраторов. Администраторы получают эффективные преимущества благодаря полному управлению драйверами, упрощенному развертыванию очередей печати и согласованному управлению в гибридных платформах. Взаимодействие с пользователем улучшается с учетом более короткого времени входа, интеллектуальной очереди печати на основе пользователя, устройства и сетевого расположения, а также параметров самообслуживания для быстрого выбора принтера. 
+Tricerat offers a superior print management solution for Windows Virtual Desktop and other desktop platforms. Tricerat software has robust functionality, offering a better experience for both users and administrators. Administrators gain efficiencies through complete driver management, simplified deployment of print queues, and consistent management across hybrid platforms. User experience improves with shorter sign-in times, intelligent print queues based on user, device, and network location, and self-service options for quick printer selection. 
 
-С помощью Трицерат печать в виртуальных рабочих столах Windows и более поздних версиях. Трицерат Software позволяет администраторам легко подключать локальные принтеры к облаку, расширяя возможности корпоративного управления печатью из традиционных сред в новые, современные рабочие области.
+With Tricerat, printing is seamless in Windows Virtual Desktop and beyond. Tricerat software allows administrators to easily connect on-premises printers to the cloud, extending enterprise print management from traditional environments to new, modern workspaces.
 
-- [Перейдите на веб-сайт партнера](https://www.tricerat.com/solutions/wvd-microsoft/).
+- [Go to the partner website](https://www.tricerat.com/solutions/wvd-microsoft/).
 
 ## <a name="workspot"></a>Workspot
 
-![Логотип воркспот](./media/partners/workspot.png)
+![Workspot Logo](./media/partners/workspot.png)
 
-Воркспот — это поставщик услуг, добавленный в виртуальные рабочие столы Windows, который предоставляет предприятиям высокопроизводительные рабочие столы и рабочие станции в Azure. При использовании Воркспот подготовка инфраструктуры автоматизирована. Это означает, что пользователи могут получать доступ к своей среде виртуальных рабочих столов Windows из любого места по всему миру с высокой доступностью.
+Workspot is a Windows Virtual Desktop value-added services provider that equips enterprises with high-performance desktops and workstations in Azure. With Workspot, infrastructure provisioning is automated, which means users can access their Windows Virtual Desktop environment from anywhere around the world with high availability.
 
-Воркспот расширяет ценность виртуальных рабочих столов Windows, упрощая процесс подготовки инфраструктуры облачных рабочих столов. С помощью Воркспот можно легко масштабировать ресурсы, чтобы удовлетворить потребности разных пользователей и использовать варианты. Воркспот может оптимизировать развертывания для высокопроизводительных рабочих станций GPU, необходимых для САПР и инженерных пользователей, а также приложений Windows и настольных систем Windows 10 для всех бизнес-пользователей.
+Workspot extends the value of Windows Virtual Desktop by simplifying the provisioning process of cloud desktop infrastructure. With Workspot, resources can be easily scaled up and down to meet the needs of different users and uses cases. Workspot can optimize deployments for high-performance GPU workstations necessary for CAD and engineering users, as well as Windows applications and Windows 10 desktops for all business users.
 
-- [Ознакомьтесь с кратким](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3oL8P)обзорным решением.
-- [Перейдите на веб-сайт партнера](https://www.workspot.com/wvd).
+- [See the joint solution brief](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3oL8P).
+- [Go to partner website](https://www.workspot.com/wvd).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Дополнительные сведения о виртуальных рабочих столах Windows](overview.md).
-- [Создание клиента в виртуальном рабочем столе Windows](tenant-setup-azure-active-directory.md).
+- [Learn more about Windows Virtual Desktop](overview.md).
+- [Create a tenant in Windows Virtual Desktop](tenant-setup-azure-active-directory.md).

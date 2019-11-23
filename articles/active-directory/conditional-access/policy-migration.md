@@ -1,45 +1,45 @@
 ---
-title: Что такое миграции политик в Azure Active Directory условного доступа? | Документация Майкрософт
+title: Migrate Conditional Access policies - Azure Active Directory
 description: Узнайте, что нужно для переноса классических политик на портал Azure.
 services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: article
-ms.date: 07/24/2018
+ms.date: 11/21/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: nigu
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7464546a78e1b54cdea3bd6dd66656f5b189bc02
-ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
+ms.openlocfilehash: 75d664f6e61dbbaaf0b8ab74c392596a206ff644
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67506802"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74380553"
 ---
-# <a name="what-is-a-policy-migration-in-azure-active-directory-conditional-access"></a>Что такое миграции политик в Azure Active Directory условного доступа? 
+# <a name="what-is-a-policy-migration-in-azure-active-directory-conditional-access"></a>What is a policy migration in Azure Active Directory Conditional Access? 
 
-[Условный доступ](../active-directory-conditional-access-azure-portal.md) Azure Active Directory (Azure AD), которая позволяет управлять как авторизованных пользователей доступа к облачным приложениям. Хотя цель остается неизменным, выпуск нового портала Azure представила значительные улучшения, как работает условный доступ.
+[Conditional Access](../active-directory-conditional-access-azure-portal.md) is a capability of Azure Active directory (Azure AD) that enables you to control how authorized users access your cloud apps. While the purpose is still the same, the release of the new Azure portal has introduced significant improvements to how Conditional Access works.
 
 Мы рекомендуем перенести политики, созданные не на портале Azure, по следующим причинам:
 
 - Теперь вы можете работать со сценариями, которые невозможно было обрабатывать ранее.
 - Можно уменьшить количество политик, которыми необходимо управлять, объединяя их.   
-- Вы можете управлять всеми политиками условного доступа в одном централизованном месте.
+- You can manage all your Conditional Access policies in one central location.
 - Использование классического портала Azure будет прекращено.   
 
-В этой статье объясняется, что вам нужно знать о переходе на новую платформу существующие политики условного доступа.
+This article explains what you need to know to migrate your existing Conditional Access policies to the new framework.
  
 ## <a name="classic-policies"></a>Классические политики
 
-В [портала Azure](https://portal.azure.com), [условный доступ — политики](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ConditionalAccessBlade/Policies) страница является точкой входа для политики условного доступа. Тем не менее в вашей среде, также возможно политики условного доступа, вы не создали с помощью этой страницы. Эти политики называются *классическими политиками*. Классическими считаются политики условного доступа, вы создали в:
+In the [Azure portal](https://portal.azure.com), the [Conditional Access - Policies](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ConditionalAccessBlade/Policies) page is your entry point to your Conditional Access policies. However, in your environment, you might also have Conditional Access policies you have not created using this page. Эти политики называются *классическими политиками*. Classic policies are Conditional Access policies, you have created in:
 
 - классического портала Azure;
 - классического портала Intune;
 - портала службы "Защита приложений Intune".
 
-На **условного доступа** странице классических политик можно открыть, щелкнув [ **классические политики (Предварительная версия)** ](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ConditionalAccessBlade/ClassicPolicies) в **управление** раздел. 
+On the **Conditional Access** page, you can access your classic policies by clicking [**Classic policies (preview)** ](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ConditionalAccessBlade/ClassicPolicies) in the **Manage** section. 
 
 ![Azure Active Directory](./media/policy-migration/71.png)
 
@@ -53,7 +53,7 @@ ms.locfileid: "67506802"
 
    ![Azure Active Directory](./media/policy-migration/73.png)
    
-- Проверьте параметры классические политики (и отключать их).
+- Review the settings of a classic policy (and to disable it).
 
    ![Azure Active Directory](./media/policy-migration/74.png)
 
@@ -63,19 +63,19 @@ ms.locfileid: "67506802"
 
 Изменив выбранные группы или исключив определенные группы, можно проверить влияние отключения классический политики на несколько тестовых пользователей, прежде чем отключить ее для всех охваченных пользователей и групп. 
 
-## <a name="azure-ad-conditional-access-policies"></a>Политики условного доступа для AD Azure
+## <a name="azure-ad-conditional-access-policies"></a>Azure AD Conditional Access policies
 
-С помощью условного доступа на портале Azure можно управлять всеми политиками в одном централизованном месте. Так как реализация того, как изменилась условного доступа, следует ознакомиться с основными понятиями перед переносом классических политик.
+With Conditional Access in the Azure portal, you can manage all your policies in one central location. Because the implementation of how Conditional Access has changed, you should familiarize yourself with the basic concepts before migrating your classic policies.
 
-Пример
+См.:
 
-- [Что такое условный доступ в Azure Active Directory](../active-directory-conditional-access-azure-portal.md) Дополнительные сведения об основных понятиях и терминологии.
-- [Советы и рекомендации для условного доступа в Azure Active Directory](best-practices.md) Изучите рекомендации по развертыванию условного доступа в вашей организации.
-- [Требовать многофакторную Идентификацию для конкретных приложений с Azure Active Directory условным доступом](app-based-mfa.md) смогли ознакомиться с пользовательским интерфейсом на портале Azure.
+- [What is Conditional Access in Azure Active Directory](../active-directory-conditional-access-azure-portal.md) to learn about the basic concepts and the terminology.
+- [Best practices for Conditional Access in Azure Active Directory](best-practices.md) to get some guidance on deploying Conditional Access in your organization.
+- [Require MFA for specific apps with Azure Active Directory Conditional Access](app-based-mfa.md) to familiarize yourself with the user interface in the Azure portal.
  
 ## <a name="migration-considerations"></a>Рекомендации по переносу
 
-В этой статье политики условного доступа Azure AD также называются *новые политики*.
+In this article, Azure AD Conditional Access policies are also referred to as *new policies*.
 Классические политики по-прежнему будут работать параллельно с новыми политиками, пока вы не отключите или не удалите их. 
 
 В контексте объединения политик важны следующие аспекты.
@@ -132,5 +132,5 @@ ms.locfileid: "67506802"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Если вы хотите знать, как настроить политику условного доступа, см. в разделе [требования MFA для конкретных приложений, с помощью Azure Active Directory условного доступа](app-based-mfa.md).
-- Если вы готовы к настройке политик условного доступа для своей среды, см. в разделе [советы и рекомендации для условного доступа в Azure Active Directory](best-practices.md). 
+- Чтобы узнать, как настроить политику условного доступа, см. статью [Краткое руководство. Требование Многофакторной идентификации для конкретных приложений с помощью условного доступа Azure Active Directory](app-based-mfa.md).
+- Если вы готовы к настройке политик условного доступа для своей среды, см. статью [Best practices for Conditional Access in Azure Active Directory](best-practices.md) (Рекомендации по работе с условным доступом в Azure Active Directory). 

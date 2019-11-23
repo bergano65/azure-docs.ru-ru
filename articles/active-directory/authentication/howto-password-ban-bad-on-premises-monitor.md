@@ -1,28 +1,28 @@
 ---
-title: Мониторинг и ведение журнала в службе защиты паролей Azure AD. Azure Active Directory
+title: Password protection monitor and logging- Azure Active Directory
 description: Общие сведения о мониторинге и ведении журнала защиты паролем Azure AD
 services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 02/01/2019
+ms.date: 11/21/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a763f15b57bf7f23eeb52c81dd48de7f02adc5e4
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 77f1ac530fe4e20fe26f3a6b7d0111b0bd432928
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68853558"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74381678"
 ---
 # <a name="azure-ad-password-protection-monitoring-and-logging"></a>Мониторинг и ведение журнала защиты паролем Azure AD
 
 После развертывания защиты паролем Azure AD мониторинг и отчетность являются важными задачами. В этой статье мы подробно рассмотрим несколько способов мониторинга, включая те, в которых каждая служба регистрирует сведения и создает отчеты об использовании защиты паролем Azure AD.
 
-Мониторинг и отчетность выполняются либо сообщениями журнала событий, либо путем запуска командлетов PowerShell. Агент контроллера домена и прокси-службы заносить в журнал сообщения журнала событий. Все командлеты PowerShell, описанные ниже, доступны только на прокси-сервере (см. модуль Азуреадпассвордпротектион PowerShell). Программное обеспечение агента контроллера домена не устанавливает модуль PowerShell.
+Monitoring and reporting are done either by event log messages or by running PowerShell cmdlets. The DC agent and proxy services both log event log messages. All PowerShell cmdlets described below are only available on the proxy server (see the AzureADPasswordProtection PowerShell module). The DC agent software does not install a PowerShell module.
 
 ## <a name="dc-agent-event-logging"></a>Ведение журнала событий агента контроллера домена
 
@@ -65,7 +65,7 @@ ms.locfileid: "68853558"
 
 |   |Изменение пароля |Настройка пароля|
 | --- | :---: | :---: |
-|Этап |10014 |10015|
+|Pass; |10014 |10015|
 |Ошибка (из-за политики паролей клиента)| 10016, 30002| 10017, 30003|
 |Ошибка (из-за политики паролей Майкрософт)| 10016, 30004| 10017, 30005|
 |Ошибка (из-за совокупности политики паролей клиента и политики паролей Майкрософт)| 10016, 30026| 10017, 30027|
@@ -96,9 +96,9 @@ PasswordSetErrors               : 1
 
 Область, охватываемую отчетом этого командлета, можно указать с помощью параметра -Forest, -Domain или -DomainController. Если этот параметр не указан, используется параметр -Forest.
 
-Командлет `Get-AzureADPasswordProtectionSummaryReport` запрашивает журнал событий администратора агента контроллера домена, а затем подсчитывает общее количество событий, соответствующих каждой отображаемой категории результатов. В следующей таблице содержатся сопоставления между результатом и соответствующим ИДЕНТИФИКАТОРом события:
+Командлет `Get-AzureADPasswordProtectionSummaryReport` запрашивает журнал событий администратора агента контроллера домена, а затем подсчитывает общее количество событий, соответствующих каждой отображаемой категории результатов. The following table contains the mappings between each outcome and its corresponding event ID:
 
-|Свойство "Get-AzureADPasswordProtectionSummaryReport" |Идентификатор соответствующего события|
+|Свойство "Get-AzureADPasswordProtectionSummaryReport" |Corresponding event ID|
 | :---: | :---: |
 |PasswordChangesValidated |10014|
 |PasswordSetsValidated |10015|
@@ -269,11 +269,11 @@ HeartbeatUTC          : 2/16/2018 8:35:02 AM
 
 Если значение HeartbeatUTC становится устаревшим, это может быть симптомом того, что машина службы агента контроллера домена защиты паролем Azure AD не работает на контроллере домена, была удалена или была понижена уровнем и больше не является контроллером домена.
 
-Если значение Пассвордполицидатеутк устарело, это может быть симптомом того, что агент контроллера домена для защиты паролей Azure AD на этом компьютере работает неправильно.
+If the PasswordPolicyDateUTC value gets stale, this may be a symptom that the Azure AD Password Protection DC Agent on that machine is not working properly.
 
-## <a name="dc-agent-newer-version-available"></a>Доступна более новая версия агента контроллера домена
+## <a name="dc-agent-newer-version-available"></a>DC agent newer version available
 
-Служба агента контроллера домена регистрирует событие предупреждения 30034 в операционном журнале при обнаружении доступности более новой версии программного обеспечения агента контроллера домена, например:
+The DC agent service will log a 30034 warning event to the Operational log upon detecting that a newer version of the DC agent software is available, for example:
 
 ```text
 An update for Azure AD Password Protection DC Agent is available.
@@ -287,10 +287,10 @@ https://aka.ms/AzureADPasswordProtectionAgentSoftwareVersions
 Current version: 1.2.116.0
 ```
 
-В приведенном выше событии не указана версия нового программного обеспечения. Чтобы получить эти сведения, перейдите по ссылке в сообщении о событии.
+The event above does not specify the version of the newer software. You should go to the link in the event message for that information.
 
 > [!NOTE]
-> Несмотря на ссылки на автообновление в приведенном выше сообщении о событии, программное обеспечение агента DC в настоящее время не поддерживает эту функцию.
+> Despite the references to "autoupgrade" in the above event message, the DC agent software does not currently support this feature.
 
 ## <a name="proxy-service-event-logging"></a>Ведение журналов событий службы прокси-сервера
 
@@ -335,7 +335,7 @@ HKLM\System\CurrentControlSet\Services\AzureADPasswordProtectionProxy\Parameters
 
 Результаты выполнения командлетов PowerShell, которые приводят к изменению состояния (например, Register-AzureADPasswordProtectionProxy), обычно записываются в операционный журнал как событие результата.
 
-Кроме того, большинство командлетов PowerShell для защиты паролей Azure AD будут записывать в текстовый журнал, расположенный в папке:
+In addition, most of the Azure AD Password Protection PowerShell cmdlets will write to a text log located under:
 
 `%ProgramFiles%\Azure AD Password Protection Proxy\Logs`
 
@@ -361,9 +361,9 @@ HeartbeatUTC          : 12/25/2018 6:35:02 AM
 
 Если значение HeartbeatUTC становится устаревшим, это может быть симптомом того, что на том компьютере служба прокси-сервера защиты паролем Azure AD не работает или была удалена.
 
-## <a name="proxy-agent-newer-version-available"></a>Доступна более новая версия прокси-агента
+## <a name="proxy-agent-newer-version-available"></a>Proxy agent newer version available
 
-Прокси-служба регистрирует событие предупреждения 20002 в операционном журнале при обнаружении доступности более новой версии программного обеспечения прокси-сервера, например:
+The Proxy service will log a 20002 warning event to the Operational log upon detecting that a newer version of the proxy software is available, for example:
 
 ```text
 An update for Azure AD Password Protection Proxy is available.
@@ -378,11 +378,11 @@ Current version: 1.2.116.0
 .
 ```
 
-В приведенном выше событии не указана версия нового программного обеспечения. Чтобы получить эти сведения, перейдите по ссылке в сообщении о событии.
+The event above does not specify the version of the newer software. You should go to the link in the event message for that information.
 
-Это событие будет выдаваться, даже если прокси-агент настроен с включенным автообновлением.
+This event will be emitted even if the Proxy agent is configured with autoupgrade enabled.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Предварительный просмотр: мониторинг, отчетность и устранение неполадок защиты паролем Azure AD](howto-password-ban-bad-on-premises-troubleshoot.md)
 

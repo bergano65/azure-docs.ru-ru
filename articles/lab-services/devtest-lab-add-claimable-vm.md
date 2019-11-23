@@ -1,5 +1,5 @@
 ---
-title: Создание запрашиваемых виртуальных машин и управление ими в Azure DevTest Labs | Документация Майкрософт
+title: Create and manage claimable VMs in Azure DevTest Labs | Microsoft Docs
 description: Узнайте, как добавить запрашиваемую виртуальную машину в лабораторию в Azure DevTest Labs
 services: devtest-lab,virtual-machines
 documentationcenter: na
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/25/2019
 ms.author: spelluru
-ms.openlocfilehash: a3b8085a4dd2ece384ece72578ffafbd0e2e0b9d
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.openlocfilehash: 13d642597fdf5d0eae6c6fd4f0cab16181f033c2
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74184287"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74383952"
 ---
 # <a name="create-and-manage-claimable-vms-in-azure-devtest-labs"></a>Создание запрашиваемой виртуальной машины и управление ею в лаборатории Azure DevTest Labs
 Добавление запрашиваемой виртуальной машины в лабораторию аналогично [добавлению стандартной виртуальной машины](devtest-lab-add-vm.md). Оно выполняется *на базе* [пользовательского образа](devtest-lab-create-template.md), [формулы](devtest-lab-manage-formulas.md) или [образа Marketplace](devtest-lab-configure-marketplace-images.md). В этой статье описывается добавление запрашиваемой виртуальной машины в лабораторию в DevTest Labs с помощью портала Azure, а также действия пользователя для резервирования или освобождения виртуальной машины.
@@ -72,7 +72,7 @@ ms.locfileid: "74184287"
   ![Запрос любой запрашиваемой виртуальной машины](./media/devtest-lab-add-vm/devtestlab-claim-any.png)
 
 
-После того как пользователь получит заявку на виртуальную машину, DevTest Labs запустит его и переместит в список "мои виртуальные машины" пользователя лаборатории. Это означает, что у пользователя лаборатории теперь будет привилегдес владелец на этом махЦине. Время, необходимое для этого шага, может отличаться в зависимости от времени запуска, а также от других настраиваемых действий, выполняемых во время события утверждения. После получения заявки компьютер больше не будет доступен в запрашиваемом пуле.  
+After a user claims a VM, DevTest Labs will start the machine and move it up into lab user's list of "My virtual machines". This means the lab user will now have owner privileges on this machine. The time required for this step may vary depending on start up times as well as any other custom actions being performed during the claim event. Once claimed, the machine is no longer available in the claimable pool.  
 
 ## <a name="unclaim-a-vm"></a>Освобождение виртуальной машины
 
@@ -86,7 +86,7 @@ ms.locfileid: "74184287"
 
   ![Действие освобождения на панели управления виртуальной машиной](./media/devtest-lab-add-vm/devtestlab-unclaim-VM.png)
 
-Когда пользователь отменяет виртуальную машину, у него больше нет разрешений владельца на эту виртуальную машину лаборатории, и ее можно запросить другим пользователям лаборатории в том состоянии, в котором оно было ретуредо в пул. 
+When a user unclaims a VM, they no longer have owner permissions for that specific lab VM and it is available to be claimed by any other lab user in the state that it was retured to the pool. 
 
 ### <a name="transferring-the-data-disk"></a>Передача диска данных
 Если к запрашиваемой виртуальной машине подключен диск данных, то при освобождении виртуальной машины диск данных остается подключенным к ней. Когда другой пользователь отправит заявку на эту виртуальную машину, он одновременно получит и подключенный диск данных.
@@ -97,6 +97,6 @@ ms.locfileid: "74184287"
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * После создания виртуальной машины вы можете подключиться к ней, выбрав **Подключиться** на соответствующей панели управления.
 * Изучите [коллекцию шаблонов быстрого запуска для Azure Resource Manager в DevTest Labs](https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/QuickStartTemplates).

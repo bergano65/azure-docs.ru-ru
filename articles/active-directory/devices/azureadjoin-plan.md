@@ -1,22 +1,22 @@
 ---
-title: Как планировать реализацию присоединения к Azure Active Directory (Azure AD) | Документация Майкрософт
+title: How to plan your Azure Active Directory join implementation
 description: Описание действий, необходимых для реализации присоединенных к Azure AD устройств в вашей среде.
 services: active-directory
 ms.service: active-directory
 ms.subservice: devices
 ms.topic: conceptual
-ms.date: 06/28/2019
+ms.date: 11/21/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9c8219dd9ec971303fb62cf828da91ee877f4ca9
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: 7d70e87a9a0c7fb9b28f2a025db15ce4ba666255
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73882926"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74379615"
 ---
 # <a name="how-to-plan-your-azure-ad-join-implementation"></a>Инструкции. Планирование реализации присоединения к Azure AD
 
@@ -24,13 +24,13 @@ ms.locfileid: "73882926"
 
 В этой статье содержатся сведения, необходимые для планирования реализации присоединения к Azure AD.
  
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 Предполагается, что вы ознакомлены с [общими сведениями об управлении устройствами в Azure Active Directory](../device-management-introduction.md).
 
 ## <a name="plan-your-implementation"></a>Планирование реализации
 
-Чтобы спланировать реализацию присоединение к Azure AD, необходимо ознакомиться с:
+To plan your Azure AD join implementation, you should familiarize yourself with:
 
 |   |   |
 |---|---|
@@ -40,7 +40,7 @@ ms.locfileid: "73882926"
 |![Проверка][1]|Рекомендации для приложений и ресурсов|
 |![Проверка][1]|Изучение вариантов подготовки|
 |![Проверка][1]|Настройка службы Enterprise State Roaming|
-|![Проверка][1]|Настройка условного доступа|
+|![Проверка][1]|Configure Conditional Access|
 
 ## <a name="review-your-scenarios"></a>Изучение сценариев 
 
@@ -75,10 +75,10 @@ ms.locfileid: "73882926"
  `/adfs/services/trust/2005/certificatemixed`
  `/adfs/services/trust/13/certificatemixed`
 
-Если ваш поставщик удостоверений не поддерживает эти протоколы, то присоединение Azure AD не работает по умолчанию. Начиная с Windows 10 версии 1809, ваши пользователи могут выполнять вход на присоединенном к Azure AD устройстве с поставщиком удостоверений на основе SAML, используя [веб-вход в Windows 10](https://docs.microsoft.com/windows/whats-new/whats-new-windows-10-version-1809#web-sign-in-to-windows-10). В настоящее время вход в систему является предварительной версией функции и не рекомендуется для рабочих развертываний.
+Если ваш поставщик удостоверений не поддерживает эти протоколы, то присоединение Azure AD не работает по умолчанию. Начиная с Windows 10 версии 1809, ваши пользователи могут выполнять вход на присоединенном к Azure AD устройстве с поставщиком удостоверений на основе SAML, используя [веб-вход в Windows 10](https://docs.microsoft.com/windows/whats-new/whats-new-windows-10-version-1809#web-sign-in-to-windows-10). Currently, web sign-in is a preview feature and is not recommended for production deployments.
 
 >[!NOTE]
-> Сейчас присоединение к Azure AD не работает с [AD FS 2019, настроенных с внешними поставщиками проверки подлинности в качестве основного метода проверки](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/additional-authentication-methods-ad-fs#enable-external-authentication-methods-as-primary)подлинности. Присоединение к Azure AD по умолчанию используется для проверки пароля в качестве основного метода, что приводит к сбоям проверки подлинности в этом сценарии.
+> Currently, Azure AD join does not work with [AD FS 2019 configured with external authentication providers as the primary authentication method](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/additional-authentication-methods-ad-fs#enable-external-authentication-methods-as-primary). Azure AD join defaults to password authentication as the primary method, which results in authentication failures in this scenario
 
 
 ### <a name="smartcards-and-certificate-based-authentication"></a>Смарт-карты и проверка подлинности на основе сертификатов
@@ -110,10 +110,10 @@ ms.locfileid: "73882926"
 
 ### <a name="management-platform"></a>Платформа управления
 
-Управление устройствами для устройств, присоединенных к Azure AD, основано на платформе MDM, такой как Intune, и CSP. В Windows 10 есть встроенный агент MDM, работающий со всеми совместимыми решениями MDM.
+Device management for Azure AD joined devices is based on an MDM platform such as Intune, and MDM CSPs. В Windows 10 есть встроенный агент MDM, работающий со всеми совместимыми решениями MDM.
 
 > [!NOTE]
-> Групповые политики не поддерживаются в устройствах, присоединенных к Azure AD, так как они не подключены к локальным Active Directory. Управление устройствами, присоединенными к Azure AD, возможно только через MDM.
+> Group policies are not supported in Azure AD joined devices as they are not connected to on-premises Active Directory. Management of Azure AD joined devices is only possible through MDM
 
 Существует два подхода к управлению устройствами, подключенными к Azure AD:
 
@@ -197,11 +197,11 @@ ms.locfileid: "73882926"
  
 |   | Самостоятельная настройка | Windows Autopilot | Массовая регистрация |
 | --- | --- | --- | --- |
-| Для настройки требуется участие пользователя | Yes | Yes | Нет |
-| Требуется участие ИТ-персонала | Нет | Yes | Yes |
+| Для настройки требуется участие пользователя | ДА | ДА | Нет |
+| Требуется участие ИТ-персонала | Нет | ДА | ДА |
 | Применимые потоки | OOBE и параметры | Только OOBE | Только OOBE |
 | Права локального администратора для основного пользователя | Да, по умолчанию | Настраивается | Нет |
-| Требуется поддержка изготовителя устройства | Нет | Yes | Нет |
+| Требуется поддержка изготовителя устройства | Нет | ДА | Нет |
 | Поддерживаемые версии | 1511+ | 1709+ | 1703+ |
  
 Чтобы выбрать подходы к развертыванию, изучите таблицу выше и ознакомьтесь с приведенными ниже рекомендациями по их реализации.  
@@ -284,15 +284,15 @@ MAM не применяется для присоединения к Azure AD.
 
 **Рекомендация.** Включайте этот параметр даже для устройств, присоединенных к гибридной службе Azure AD.
 
-## <a name="configure-conditional-access"></a>Настройка условного доступа
+## <a name="configure-conditional-access"></a>Configure Conditional Access
 
 Если для устройств, присоединенных к Azure AD, настроен поставщик MDM, то он отмечает устройство как соответствующее требованиям, как только для него включается управление. 
 
 ![Устройства, соответствующие требованиям](./media/azureadjoin-plan/46.png)
 
-Эту реализацию можно использовать для использования [управляемых устройств для доступа к облачным приложениям с помощью условного доступа](../conditional-access/require-managed-devices.md).
+You can use this implementation to [require managed devices for cloud app access with Conditional Access](../conditional-access/require-managed-devices.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Руководство по присоединению нового устройства с Windows 10 с помощью Azure AD во время первого запуска](azuread-joined-devices-frx.md)

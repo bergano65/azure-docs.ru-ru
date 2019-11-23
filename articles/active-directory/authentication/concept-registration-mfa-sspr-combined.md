@@ -1,57 +1,57 @@
 ---
-title: Объединенная регистрация для Azure AD SSPR и многофакторной идентификации (Предварительная версия) — Azure Active Directory
-description: Многофакторная идентификация Azure AD и самостоятельная регистрация для сброса пароля (Предварительная версия)
+title: Combined registration for SSPR and MFA - Azure Active Directory
+description: Azure AD Multi-Factor Authentication and self-service password reset registration (preview)
 services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 08/29/2019
+ms.date: 11/21/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a312c39352f0d13b4354e7b0dfcd897bf4cc0992
-ms.sourcegitcommit: ec2b75b1fc667c4e893686dbd8e119e7c757333a
+ms.openlocfilehash: 3221e6424b449066510667f8067e3bc6d8aec12a
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72808466"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74381955"
 ---
-# <a name="combined-security-information-registration-preview"></a>Объединенная регистрация сведений о безопасности (Предварительная версия)
+# <a name="combined-security-information-registration-preview"></a>Combined security information registration (preview)
 
-Перед Объединенной регистрацией пользователи регистрировали методы проверки подлинности для многофакторной идентификации Azure и самостоятельного сброса пароля (SSPR) отдельно. Пользователи путают, что аналогичные методы использовались для многофакторной проверки подлинности и SSPR, но им пришлось зарегистрироваться для использования обеих функций. Теперь, используя объединенную регистрацию, пользователи могут зарегистрироваться один раз и воспользоваться преимуществами многофакторной проверки подлинности и SSPR.
+Before combined registration, users registered authentication methods for Azure Multi-Factor Authentication and self-service password reset (SSPR) separately. People were confused that similar methods were used for Multi-Factor Authentication and SSPR but they had to register for both features. Now, with combined registration, users can register once and get the benefits of both Multi-Factor Authentication and SSPR.
 
-![Мой профиль, показывающий зарегистрированные сведения о безопасности для пользователя](media/concept-registration-mfa-sspr-combined/combined-security-info-defualts-registered.png)
+![My Profile showing registered Security info for a user](media/concept-registration-mfa-sspr-combined/combined-security-info-defualts-registered.png)
 
-Перед включением нового интерфейса ознакомьтесь с документацией, ориентированной на администраторов, и документацией, ориентированной на пользователей, чтобы убедиться в том, что вы понимаете функциональность и воздействие этой функции. Ознакомьтесь с [пользовательской документацией](../user-help/user-help-security-info-overview.md) , чтобы подготовить пользователей к новым интерфейсам и обеспечить успешный выпуск.
+Before enabling the new experience, review this administrator-focused documentation and the user-focused documentation to ensure you understand the functionality and effect of this feature. Base your training on the [user documentation](../user-help/user-help-security-info-overview.md) to prepare your users for the new experience and help to ensure a successful rollout.
 
-Объединенная регистрация сведений о безопасности в Azure AD сейчас недоступна для национальных облаков, таких как Azure для государственных организаций США, Azure для Германии или Azure для Китая.
+Azure AD combined security information registration is not currently available to national clouds like Azure US Government, Azure Germany, or Azure China 21Vianet.
 
 |     |
 | --- |
-| Объединенная регистрация сведений о безопасности для многофакторной проверки подлинности и Azure Active Directory (Azure AD) самостоятельный сброс пароля является общедоступной функцией предварительной версии Azure AD. См. подробные сведения о [дополнительных условиях использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).|
+| Combined security information registration for Multi-Factor Authentication and Azure Active Directory (Azure AD) self-service password reset is a public preview feature of Azure AD. См. подробные сведения о [дополнительных условиях использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).|
 |     |
 
 > [!IMPORTANT]
-> Пользователи, для которых включена первоначальная Предварительная версия и улучшенная Объединенная процедура регистрации, увидят новое поведение. Пользователи, которые имеют доступ к обоим интерфейсам, увидят только новый интерфейс «мой профиль». Новый мой профиль соответствует внешнему интерфейсу регистрации и обеспечивает удобство работы пользователей. Пользователи могут видеть мой профиль, перейдя по [https://myprofile.microsoft.com у ](https://myprofile.microsoft.com).
+> Users who are enabled for both the original preview and the enhanced combined registration experience will see the new behavior. Users who are enabled for both experiences will see only the new My Profile experience. The new My Profile aligns with the look and feel of combined registration and provides a seamless experience for users. Users can see My Profile by going to [https://myprofile.microsoft.com](https://myprofile.microsoft.com).
 
 > [!NOTE] 
-> При попытке доступа к параметру сведения о безопасности может появиться сообщение об ошибке. Например, "Извините, не удается войти". В этом случае убедитесь в отсутствии объектов конфигурации или групповых политик, блокирующих сторонние файлы cookie в веб-браузере. 
+> You might encounter an error message while trying to access the Security info option. For example, "Sorry, we can't sign you in". In this case, confirm that you don't have any configuration or group policy object that blocks third-party cookies on the web browser. 
 
-Страницы профиля локализуются в зависимости от языковых параметров компьютера, обращающегося к странице. Корпорация Майкрософт сохраняет самый последний язык, используемый в кэше браузера, поэтому последующие попытки доступа к страницам будут по прежнему отображаться на последнем используемом языке. Если очистить кэш, страницы будут повторно отображены. Если вы хотите принудительно применить конкретный язык, можно добавить `?lng=<language>` в конец URL-адреса, где `<language>` является кодом языка, который требуется отобразить.
+My Profile pages are localized based on the language settings of the computer accessing the page. Microsoft stores the most recent language used in the browser cache, so subsequent attempts to access the pages will continue to render in the last language used. If you clear the cache, the pages will re-render. If you want to force a specific language, you can add `?lng=<language>` to the end of the URL, where `<language>` is the code of the language you want to render.
 
-![Настройка SSPR или других методов проверки безопасности](media/howto-registration-mfa-sspr-combined/combined-security-info-my-profile.png)
+![Set up SSPR or other security verification methods](media/howto-registration-mfa-sspr-combined/combined-security-info-my-profile.png)
 
-## <a name="methods-available-in-combined-registration"></a>Методы, доступные в Объединенной регистрации
+## <a name="methods-available-in-combined-registration"></a>Methods available in combined registration
 
-Объединенная регистрация поддерживает следующие методы и действия проверки подлинности:
+Combined registration supports the following authentication methods and actions:
 
 |   | Зарегистрироваться | Change | Удаление |
 | --- | --- | --- | --- |
-| Microsoft Authenticator | Да (максимум 5) | Нет | ДА |
-| Другое приложение для проверки подлинности | Да (максимум 5) | Нет | ДА |
-| Аппаратный токен | Нет | Нет | ДА |
+| Microsoft Authenticator | Yes (maximum of 5) | Нет | ДА |
+| Other authenticator app | Yes (maximum of 5) | Нет | ДА |
+| Hardware token | Нет | Нет | ДА |
 | Номер телефона | ДА | ДА | ДА |
 | Дополнительный телефон | ДА | ДА | ДА |
 | Рабочий телефон | Нет | Нет | Нет |
@@ -60,92 +60,92 @@ ms.locfileid: "72808466"
 | Пароли приложений | ДА | Нет | ДА |
 
 > [!NOTE]
-> Пароли приложений доступны только пользователям, которые были применены для многофакторной проверки подлинности. Пароли приложений недоступны пользователям, для которых включена многофакторная проверка подлинности через политику условного доступа.
+> App passwords are available only to users who have been enforced for Multi-Factor Authentication. App passwords are not available to users who are enabled for Multi-Factor Authentication via a Conditional Access policy.
 
-Пользователи могут задать один из следующих параметров в качестве метода многофакторной проверки подлинности по умолчанию:
+Users can set one of the following options as the default Multi-Factor Authentication method:
 
-- Microsoft Authenticator — уведомление.
-- Приложение для проверки подлинности или маркер оборудования — код.
-- Телефонный звонок.
-- Текстовое сообщение.
+- Microsoft Authenticator – notification.
+- Authenticator app or hardware token – code.
+- Phone call.
+- Text message.
 
-По мере продолжения добавления методов проверки подлинности в Azure AD эти методы будут доступны в Объединенной регистрации.
+As we continue to add more authentication methods to Azure AD, those methods will be available in combined registration.
 
-## <a name="combined-registration-modes"></a>Объединенные режимы регистрации
+## <a name="combined-registration-modes"></a>Combined registration modes
 
-Существует два режима Объединенной регистрации: прерывание и управление.
+There are two modes of combined registration: interrupt and manage.
 
-- **Режим прерывания** — это интерфейс, аналогичный мастеру, представленный пользователям при регистрации или обновлении сведений о безопасности при входе.
+- **Interrupt mode** is a wizard-like experience, presented to users when they register or refresh their security info at sign-in.
 
-- **Режим управления** является частью профиля пользователя и позволяет пользователям управлять сведениями для обеспечения безопасности.
+- **Manage mode** is part of the user profile and allows users to manage their security info.
 
-В обоих режимах пользователи, которые ранее зарегистрировали метод, который можно использовать для многофакторной проверки подлинности, должны выполнить многофакторную проверку подлинности, прежде чем они смогут получить доступ к сведениям о безопасности.
+For both modes, users who have previously registered a method that can be used for Multi-Factor Authentication will need to perform Multi-Factor Authentication before they can access their security info.
 
-### <a name="interrupt-mode"></a>Режим прерывания
+### <a name="interrupt-mode"></a>Interrupt mode
 
-Объединенная регистрация учитывает как многофакторную проверку подлинности, так и политики SSPR, если для клиента включены оба параметра. Эти политики определяют, был ли пользователь прерван для регистрации во время входа в систему и какие методы доступны для регистрации.
+Combined registration respects both Multi-Factor Authentication and SSPR policies, if both are enabled for your tenant. These policies control whether a user is interrupted for registration during sign-in and which methods are available for registration.
 
-Ниже приведено несколько сценариев, в которых пользователям может быть предложено зарегистрировать или обновить сведения о безопасности:
+Here are several scenarios in which users might be prompted to register or refresh their security info:
 
-- Регистрация многофакторной проверки подлинности обеспечивается с помощью защиты идентификации. пользователям предлагается зарегистрироваться во время входа. Они регистрируют методы многофакторной проверки подлинности и методы SSPR (если пользователь включен для SSPR).
-- Регистрация многофакторной проверки подлинности обеспечивается с помощью многофакторной проверки подлинности для каждого пользователя. пользователям предлагается зарегистрироваться во время входа. Они регистрируют методы многофакторной проверки подлинности и методы SSPR (если пользователь включен для SSPR).
-- Регистрация многофакторной проверки подлинности обеспечивается с помощью условного доступа или других политик. пользователям предлагается зарегистрироваться, когда они используют ресурс, для которого требуется многофакторная проверка подлинности. Они регистрируют методы многофакторной проверки подлинности и методы SSPR (если пользователь включен для SSPR).
-- Регистрация SSPR применяется: пользователям предлагается зарегистрироваться во время входа. Они регистрируют только методы SSPR.
-- Принудительное обновление SSPR. пользователям необходимо проверить сведения о безопасности через интервал, заданный администратором. Пользователи показывают свои сведения и могут подтвердить текущие сведения или внести изменения, если это необходимо.
+- Multi-Factor Authentication registration enforced through Identity Protection: Users are asked to register during sign-in. They register Multi-Factor Authentication methods and SSPR methods (if the user is enabled for SSPR).
+- Multi-Factor Authentication registration enforced through per-user Multi-Factor Authentication: Users are asked to register during sign-in. They register Multi-Factor Authentication methods and SSPR methods (if the user is enabled for SSPR).
+- Multi-Factor Authentication registration enforced through Conditional Access or other policies: Users are asked to register when they use a resource that requires Multi-Factor Authentication. They register Multi-Factor Authentication methods and SSPR methods (if the user is enabled for SSPR).
+- SSPR registration enforced: Users are asked to register during sign-in. They register only SSPR methods.
+- SSPR refresh enforced: Users are required to review their security info at an interval set by the admin. Users are shown their info and can confirm the current info or make changes if needed.
 
-При применении регистрации пользователям отображается минимальное число методов, необходимых для обеспечения совместимости с многофакторной проверкой подлинности и политиками SSPR, от большинства до наименьших безопасности.
+When registration is enforced, users are shown the minimum number of methods needed to be compliant with both Multi-Factor Authentication and SSPR policies, from most to least secure.
 
 Пример.
 
-- Пользователь включен для SSPR. Политика SSPR требовала два метода сброса и включила код мобильного приложения, адрес электронной почты и телефон.
-   - Этот пользователь должен зарегистрировать два метода.
-      - По умолчанию пользователь отображается как приложение проверки подлинности и телефон.
-      - Пользователь может зарегистрировать электронную почту вместо приложения или телефона средства проверки подлинности.
+- A user is enabled for SSPR. The SSPR policy required two methods to reset and has enabled mobile app code, email, and phone.
+   - This user is required to register two methods.
+      - The user is shown authenticator app and phone by default.
+      - The user can choose to register email instead of authenticator app or phone.
 
-Эта блок-схема описывает, какие методы отображаются пользователю при прерывании регистрации во время входа в систему.
+This flowchart describes which methods are shown to a user when interrupted to register during sign-in:
 
-![Общая блок-схема сведений о безопасности](media/concept-registration-mfa-sspr-combined/combined-security-info-flow-chart.png)
+![Combined security info flowchart](media/concept-registration-mfa-sspr-combined/combined-security-info-flow-chart.png)
 
-Если у вас есть многофакторная проверка подлинности и SSPR, рекомендуется включить регистрацию многофакторной проверки подлинности.
+If you have both Multi-Factor Authentication and SSPR enabled, we recommend that you enforce Multi-Factor Authentication registration.
 
-Если политика SSPR требует, чтобы пользователи Просмотрели сведения о безопасности через регулярные промежутки времени, пользователи прерываются во время входа в систему и отображаются все зарегистрированные методы. Они могут подтвердить текущие сведения, если они актуальны, или внести необходимые изменения.
+If the SSPR policy requires users to review their security info at regular intervals, users are interrupted during sign-in and shown all their registered methods. They can confirm the current info if it's up-to-date, or they can make changes if they need to.
 
-### <a name="manage-mode"></a>Режим управления
+### <a name="manage-mode"></a>Manage mode
 
-Пользователи могут получить доступ к режиму управления, перейдя в [https://aka.ms/mysecurityinfo](https://aka.ms/mysecurityinfo) или выбрав **сведения о безопасности** в моем профиле. После этого пользователи могут добавлять методы, удалять или изменять существующие методы, изменять метод по умолчанию и многое другое.
+Users can access manage mode by going to [https://aka.ms/mysecurityinfo](https://aka.ms/mysecurityinfo) or by selecting **Security info** from My Profile. From there, users can add methods, delete or change existing methods, change the default method, and more.
 
-## <a name="key-usage-scenarios"></a>Сценарии использования ключей
+## <a name="key-usage-scenarios"></a>Key usage scenarios
 
-### <a name="set-up-security-info-during-sign-in"></a>Настройка сведений о безопасности во время входа
+### <a name="set-up-security-info-during-sign-in"></a>Set up security info during sign-in
 
-Администратор выполнил принудительную регистрацию.
+An admin has enforced registration.
 
-Пользователь не установил все необходимые сведения о безопасности и перейдет к портал Azure. После ввода имени пользователя и пароля пользователю будет предложено настроить сведения для защиты учетной записи. Затем пользователь выполняет действия, описанные в мастере, чтобы настроить необходимые сведения для защиты учетной записи. Если параметры разрешены, пользователь может настроить методы, отличные от показанных по умолчанию. После завершения работы мастера пользователи просматривают методы, которые они настроили, и их метод по умолчанию для многофакторной проверки подлинности. Чтобы завершить процесс установки, пользователь подтверждает сведения и переходит к портал Azure.
+A user has not set up all required security info and goes to the Azure portal. After entering the user name and password, the user is prompted to set up security info. The user then follows the steps shown in the wizard to set up the required security info. If your settings allow it, the user can choose to set up methods other than those shown by default. After completing the wizard, users review the methods they set up and their default method for Multi-Factor Authentication. To complete the setup process, the user confirms the info and continues to the Azure portal.
 
-### <a name="set-up-security-info-from-my-profile"></a>Настройка сведений о безопасности из профиля
+### <a name="set-up-security-info-from-my-profile"></a>Set up security info from My Profile
 
-Администратор не выполнил принудительную регистрацию.
+An admin has not enforced registration.
 
-Пользователь, который еще не настроил все необходимые сведения для защиты, переходит на [https://myprofile.microsoft.com](https://myprofile.microsoft.com). Пользователь выбирает **сведения о безопасности** в левой области. После этого пользователь выбирает Добавление метода, выбирает любой из доступных методов и выполняет действия по его настройке. По завершении пользователь видит метод, который был только что настроен на странице сведений о безопасности.
+A user who hasn't yet set up all required security info goes to [https://myprofile.microsoft.com](https://myprofile.microsoft.com). The user selects **Security info** in the left pane. From there, the user chooses to add a method, selects any of the methods available, and follows the steps to set up that method. When finished, the user sees the method that was just set up on the Security info page.
 
-### <a name="delete-security-info-from-my-profile"></a>Удалить сведения о безопасности из профиля
+### <a name="delete-security-info-from-my-profile"></a>Delete security info from My Profile
 
-Пользователь, который ранее настроил по крайней мере один метод, переходит к [https://aka.ms/mysecurityinfo](https://aka.ms/mysecurityinfo). Пользователь выбирает удаление одного из ранее зарегистрированных методов. По завершении пользователь больше не видит этот метод на странице сведений о безопасности.
+A user who has previously set up at least one method navigates to [https://aka.ms/mysecurityinfo](https://aka.ms/mysecurityinfo). The user chooses to delete one of the previously registered methods. When finished, the user no longer sees that method on the Security info page.
 
-### <a name="change-the-default-method-from-my-profile"></a>Изменение метода по умолчанию в моем профиле
+### <a name="change-the-default-method-from-my-profile"></a>Change the default method from My Profile
 
-Пользователь, который ранее настроил по крайней мере один метод, который можно использовать для многофакторной проверки подлинности, переходит к [https://aka.ms/mysecurityinfo](https://aka.ms/mysecurityinfo). Пользователь изменяет текущий метод по умолчанию на другой метод по умолчанию. По завершении пользователь увидит новый метод по умолчанию на странице сведений о безопасности.
+A user who has previously set up at least one method that can be used for Multi-Factor Authentication navigates to [https://aka.ms/mysecurityinfo](https://aka.ms/mysecurityinfo). The user changes the current default method to a different default method. When finished, the user sees the new default method on the Security info page.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Принудительная повторная регистрация методов проверки подлинности пользователями](howto-mfa-userdevicesettings.md#manage-authentication-methods)
+[Force users to re-register authentication methods](howto-mfa-userdevicesettings.md#manage-authentication-methods)
 
-[Включение Объединенной регистрации в клиенте](howto-registration-mfa-sspr-combined.md)
+[Enable combined registration in your tenant](howto-registration-mfa-sspr-combined.md)
 
-[Отчеты об использовании и аналитике SSPR и MFA](howto-authentication-methods-usage-insights.md)
+[SSPR and MFA usage and insights reporting](howto-authentication-methods-usage-insights.md)
 
-[Доступные методы для многофакторной проверки подлинности и SSPR](concept-authentication-methods.md)
+[Available methods for Multi-Factor Authentication and SSPR](concept-authentication-methods.md)
 
-[Настройка самостоятельного сброса пароля](howto-sspr-deployment.md)
+[Configure self-service password reset](howto-sspr-deployment.md)
 
-[Настройка многофакторной идентификации Azure](howto-mfa-getstarted.md)
+[Configure Azure Multi-Factor Authentication](howto-mfa-getstarted.md)

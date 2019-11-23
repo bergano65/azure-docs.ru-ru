@@ -1,28 +1,28 @@
 ---
-title: Рекомендации по настройке производительности Storm в Azure Data Lake Storage 2-го поколения | Документация Майкрософт
+title: 'Tune performance: Storm, HDInsight & Azure Data Lake Storage Gen2 | Microsoft Docs'
 description: Рекомендации по настройке производительности Storm в Azure Data Lake Storage 2-го поколения
 author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: conceptual
-ms.date: 12/06/2018
+ms.date: 11/18/2019
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: 108eeb03c0ed484e40b884372018bbbef686ee62
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 125c583512f6bae34c2dd3c3dd76a1b96a181ac1
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73159856"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74327899"
 ---
-# <a name="performance-tuning-guidance-for-storm-on-hdinsight-and-azure-data-lake-storage-gen2"></a>Рекомендации по настройке производительности Storm в HDInsight и Azure Data Lake Storage 2-го поколения
+# <a name="tune-performance-storm-hdinsight--azure-data-lake-storage-gen2"></a>Tune performance: Storm, HDInsight & Azure Data Lake Storage Gen2
 
 Изучите факторы, которые важны для настройки производительности в топологии Azure Storm. Например, нужно понимать характеристики работы, выполняемой элементами spout и bolt (в случае, когда работа связана с интенсивными рабочими нагрузками ввода-вывода или активным использованием памяти). В этой статье рассматривается ряд рекомендаций по улучшению производительности, в том числе по устранению типичных неполадок.
 
 ## <a name="prerequisites"></a>Технические условия
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
-* **Учетная запись Azure Data Lake Storage 2-го поколения**. Инструкции по ее созданию см. в разделе [Краткое руководство. Создание учетной записи хранения для аналитики](data-lake-storage-quickstart-create-account.md).
+* **Учетная запись Azure Data Lake Storage 2-го поколения**. For instructions on how to create one, see [Quickstart: Create a storage account for analytic](data-lake-storage-quickstart-create-account.md).
 * **Кластер Azure HDInsight** с доступом к учетной записи Data Lake Storage 2-го поколения. См. раздел [Use Azure Data Lake Storage Gen2 with Azure HDInsight clusters](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2) (Использование хранилища Azure Data Lake поколения 2 с кластерами Azure HDInsight). Убедитесь, что вы включили удаленный рабочий стол для кластера.
 * **Запущенный кластер Storm в Data Lake Storage 2-го поколения**. Дополнительные сведения см. в статье [Основные сведения об Apache Storm в службе HDInsight. Аналитика в реальном времени для Hadoop](https://docs.microsoft.com/azure/hdinsight/hdinsight-storm-overview).
 * **Рекомендации по настройке производительности для Data Lake Storage 2-го поколения**.  Общие вопросы, связанные с производительностью, см. в [рекомендациях по настройке производительности Data Lake Storage 2-го поколения](data-lake-storage-performance-tuning-guidance.md).   
@@ -99,7 +99,7 @@ ms.locfileid: "73159856"
 
 ## <a name="troubleshoot-common-problems"></a>Устранение распространенных неполадок
 Здесь описано несколько типичных сценариев устранения неполадок.
-* **Время ожидания многих кортежей истекло.** Взгляните на каждый узел в топологии, чтобы определить, где находится узкое место. Чаще всего такая проблема связана с тем, что производительность элементов bolt ниже, чем у элементов spout. Это приводит к тому, что ожидающие обработки кортежи переполняют внутренние буферы. Попробуйте увеличить время ожидания или уменьшить максимальное количество ожидающих spout.
+* **Many tuples are timing out.** Look at each node in the topology to determine where the bottleneck is. Чаще всего такая проблема связана с тем, что производительность элементов bolt ниже, чем у элементов spout. Это приводит к тому, что ожидающие обработки кортежи переполняют внутренние буферы. Попробуйте увеличить время ожидания или уменьшить максимальное количество ожидающих spout.
 
 * **Высокая общая задержка выполнения процесса, но при этом низкая задержка процесса bolt.** В этом случае, возможно, кортежи не были подтверждены достаточно быстро. Убедитесь, что имеется достаточное количество подтверждающих. Второй вариант — кортежи ожидают в очереди слишком долго, прежде чем элементы bolt начинают их обрабатывать. Уменьшите максимальное время ожидания элемента spout.
 
@@ -110,7 +110,7 @@ ms.locfileid: "73159856"
 
 Чтобы проверить, применяется ли для вас регулирование, включите ведение журнала отладки на стороне клиента.
 
-1. В **Ambari** ** > ости** > **config** > **Расширенное расширение-Worker-log4j**измените **&lt;корневой уровень = "info"&gt;** на&lt;**корневого уровня = "Debug"&gt;** . Перезапустите все узлы и службы, чтобы изменения конфигурации вступили в силу.
+1. In **Ambari** > **Storm** > **Config** > **Advanced storm-worker-log4j**, change **&lt;root level="info"&gt;** to **&lt;root level="debug"&gt;** . Перезапустите все узлы и службы, чтобы изменения конфигурации вступили в силу.
 2. Отслеживайте журналы топологии на рабочих узлах Storm (в разделе /var/log/storm/worker-artifacts/&lt;TopologyName&gt;/&lt;port&gt;/worker.log) на предмет наличия исключений регулирования Data Lake Storage 2-го поколения.
 
 ## <a name="next-steps"></a>Дальнейшие действия

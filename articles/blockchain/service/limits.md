@@ -1,67 +1,61 @@
 ---
-title: Ограничения Azure Блокчейн
-description: Общие сведения о службе и функциональных ограничениях в службе Блокчейн Azure
-services: azure-blockchain
-keywords: ''
-author: PatAltimore
-ms.author: patricka
+title: Azure Blockchain Service limits
+description: Overview of the service and functional limits in Azure Blockchain Service
 ms.date: 05/02/2019
 ms.topic: conceptual
-ms.service: azure-blockchain
 ms.reviewer: janders
-manager: femila
-ms.openlocfilehash: 20c26db9453220270d17801b74d904384c74cb36
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 0500d7c5e2d05d185b4d032a33c008726d996df1
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73577223"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74326157"
 ---
-# <a name="limits-in-azure-blockchain-service"></a>Ограничения в службе Блокчейн Azure
+# <a name="limits-in-azure-blockchain-service"></a>Limits in Azure Blockchain Service
 
-Служба Блокчейн Azure имеет ограниченные функциональные ограничения, такие как количество узлов, которые может иметь член, ограничения консорциума и объемы хранилища.
+Azure Blockchain Service has service and functional limits such as the number of nodes a member can have, consortium restrictions, and storage amounts.
 
-## <a name="pricing-tier"></a>Ценовой уровень
+## <a name="pricing-tier"></a>Уровень цен
 
-Максимальные ограничения на транзакции и узлы проверки зависят от того, подготавливают ли вы службу Блокчейн Azure на ценовых категориях уровня "базовый" или "Стандартный".
+Maximum limits on transactions and validator nodes depend on whether you provision Azure Blockchain Service at Basic or Standard pricing tiers.
 
-| Ценовой уровень | Максимальное число узлов транзакций | Максимальное количество проверяющих узлов |
+| Уровень цен | Max transaction nodes | Max validator nodes |
 |:---|:---:|:---:|
-| базовая; | 10 | 1 |
-| Standard | 10 | 2 |
+| "Базовый" | 10 | 1 |
+| Стандарт | 10 | 2 |
 
-Изменение ценовой категории "базовый" и "Стандартный" после создания элемента не поддерживается.
+Changing the pricing tier between Basic and Standard after member creation is not supported.
 
 ## <a name="storage-capacity"></a>Емкость хранилища
 
-Максимальный объем хранилища, который может использоваться на каждом узле для данных и журналов книги учета, составляет 1,8 терабайт.
+The maximum amount of storage that can be used per node for ledger data and logs is 1.8 terabytes.
 
-Уменьшение размера книги учета и хранилища журналов не поддерживается.
+Decreasing ledger and log storage size is not supported.
 
-## <a name="consortium-limits"></a>Ограничения консорциума
+## <a name="consortium-limits"></a>Consortium limits
 
-* **Имена консорциума и члена должны быть уникальными** по отношению к именам других консорциумов и членов в службе блокчейн Azure.
+* **Consortium and member names must be unique** from other consortium and member names in the Azure Blockchain Service.
 
-* **Имена членов и консорциума не могут быть изменены**
+* **Member and consortium names cannot be changed**
 
-* **Все элементы в консорциуме должны быть в одной ценовой категории**
+* **All members in a consortium must be in the same pricing tier**
 
-* **Все члены, участвующие в консорциуме, должны находиться в одном регионе.**
+* **All members that participate in a consortium must reside in the same region**
 
-    Первый член, созданный в консорциуме, определяет регион. Приглашенные участники консорциума должны находиться в том же регионе, что и первый элемент. Ограничение всех участников одним регионом гарантирует, что согласие в отношении сети не окажет негативного влияния.
+    The first member created in a consortium dictates the region. Invited members to the consortium must reside in the same region as the first member. Limiting all members to the same region helps ensure network consensus is not negatively impacted.
 
-* **В консорциуме должен быть по крайней мере один администратор.**
+* **A consortium must have at least one administrator**
 
-    Если в консорциуме W3C есть только один администратор, они не могут удалить себя из консорциума или удалить их участника до тех пор, пока другой администратор не добавится в консорциум или не пойдет в него.
+    If there is only one administrator in a consortium, they cannot remove themselves from the consortium or delete their member until another administrator is added or promoted in the consortium.
 
-* **Члены, удаленные из консорциума, не могут быть добавлены повторно**
+* **Members removed from the consortium cannot be added again**
 
-    Вместо этого они должны быть повторно приглашены для присоединиться к консорциуму и создать новый член. Их существующие ресурсы члена не удаляются для сохранения транзакций с предысторией.
+    Rather, they must be reinvited to join the consortium and create a new member. Their existing member resource are not deleted to preserve historical transactions.
 
-* **Все элементы в консорциуме должны использовать одну и ту же версию ГК**
+* **All members in a consortium must be using the same ledger version**
 
-    Дополнительные сведения об исправлениях, обновлениях и версиях главной книги, доступных в службе Azure Блокчейн, см. в разделе [Установка исправлений, обновлений и версий](ledger-versions.md).
+    For more information on the patching, updates, and ledger versions available in Azure Blockchain Service, see [Patching, updates, and versions](ledger-versions.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Установка исправлений, обновления и версии](ledger-versions.md)
+* [Patching, updates, and versions](ledger-versions.md)

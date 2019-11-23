@@ -1,39 +1,39 @@
 ---
 title: Использование распознавания сущностей с помощью API анализа текста
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как идентифицировать и устранить неоднозначность удостоверения сущности, найденной в тексте с помощью REST API Анализ текста.
+description: Learn how to identify and disambiguate the identity of an entity found in text with the Text Analytics REST API.
 services: cognitive-services
 author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: article
-ms.date: 11/12/2019
+ms.date: 11/21/2019
 ms.author: aahi
-ms.openlocfilehash: d3869438f299383a0b3096babbd4874c24f08b3a
-ms.sourcegitcommit: e50a39eb97a0b52ce35fd7b1cf16c7a9091d5a2a
-ms.translationtype: HT
+ms.openlocfilehash: ae5222dcd05740ecb9747037b315c4e920b3eabd
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74286587"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74326629"
 ---
-# <a name="how-to-use-named-entity-recognition-in-text-analytics"></a>Как использовать распознавание именованных сущностей в Анализ текста
+# <a name="how-to-use-named-entity-recognition-in-text-analytics"></a>How to use Named Entity Recognition in Text Analytics
 
-[Именованный API распознавания сущностей](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/5ac4251d5b4ccd1554da7634) принимает неструктурированный текст, и для каждого документа JSON возвращает список неоднозначности сущностей со ссылками на дополнительные сведения в Интернете (Википедии и Bing).
+The [Named Entity Recognition API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/5ac4251d5b4ccd1554da7634) takes unstructured text, and for each JSON document, returns a list of disambiguated entities with links to more information on the web (Wikipedia and Bing).
 
 ## <a name="entity-linking-and-named-entity-recognition"></a>Связывание сущностей и распознавание именованных сущностей
 
-Конечная точка `entities` Анализ текста "поддерживает распознавание имен сущностей (NER) и связывание сущностей.
+The Text Analytics' `entities` endpoint supports both named entity recognition (NER) and entity linking.
 
-### <a name="entity-linking"></a>API связывания сущностей
+### <a name="entity-linking"></a>Связывание сущностей
 Связывание сущностей позволяет идентифицировать сущности, обнаруженные в тексте, и устранить неоднозначности (например, упоминание слова "Марс" может обозначать планету или римского бога войны). Этот процесс требует наличия базы знаний, с которыми будут связываться распознанные сущности. Например, конечная точка `entities` Текстовой аналитики использует в качестве такой базы знаний сайт Википедии.
 
 ### <a name="named-entity-recognition-ner"></a>Распознавание именованных сущностей (NER)
-Распознавание имен сущностей (NER) — это возможность определять различные сущности в тексте и классифицировать их в заранее определенные классы или типы. 
+Named entity recognition (NER) is the ability to identify different entities in text and categorize them into pre-defined classes, or types. 
 
-## <a name="named-entity-recognition-v3-public-preview"></a>Общедоступная Предварительная версия распознавания имен сущностей v3
+## <a name="named-entity-recognition-v3-public-preview"></a>Named Entity Recognition v3 public preview
 
-[Следующая версия распознавания имен сущностей](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0-Preview-1/operations/EntitiesRecognitionGeneral) теперь доступна для общедоступной предварительной версии. Он предоставляет обновления для связывания сущностей и распознавания именованных сущностей.
+The next version of Named Entity Recognition is now available for public preview. It provides updates to both entity linking and Named Entity Recognition. Try it using the [API test console](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0-Preview-1/operations/EntitiesRecognitionGeneral).
 
 :::row:::
     :::column span="":::
@@ -46,90 +46,92 @@ ms.locfileid: "74286587"
 <!-- expanded types and subtypes row-->
 :::row:::
     :::column span="":::
-        Расширенные типы сущностей и подтипы
+        Expanded entity types and subtypes
     :::column-end:::
     :::column span="":::
-     Расширенная классификация и обнаружение для нескольких типов именованных сущностей.
+     Expanded classification and detection for several named entity types.
     :::column-end:::
 :::row-end:::
 <!-- separate endpoints row-->
 :::row:::
     :::column span="":::
-        Отдельные конечные точки запроса 
+        Separate request endpoints 
     :::column-end:::
     :::column span="":::
-        Отдельные конечные точки для отправки запросов на связывание сущностей и NER.
+        Separate endpoints for sending entity linking and NER requests.
     :::column-end:::
 :::row-end:::
 <!-- model-version row -->
 :::row:::
     :::column span="":::
-        `model-version`, параметр
+        `model-version` parameter
     :::column-end:::
     :::column span="":::
-        Необязательный параметр для выбора версии модели Анализ текста. В настоящее время для использования доступна только модель по умолчанию.
+        An optional parameter for choosing a version of the Text Analytics model. Currently only the default model is available for use.
     :::column-end:::
 :::row-end:::
 
 ### <a name="entity-types"></a>Типы сущностей
 
-Распознавание именованных сущностей v3 обеспечивает Расширенное обнаружение для нескольких типов. В настоящее время NER v3 может распознать следующие категории сущностей. Подробный список поддерживаемых сущностей и языков см. в статье [именованные типы сущностей](../named-entity-types.md) .
+Named Entity Recognition v3 provides expanded detection across multiple types. Currently, NER v3 can recognize the following categories of entities. For a detailed list of supported entities and languages, see the [Named entity types](../named-entity-types.md) article.
 
-* Общие
-* Персональные данные 
+* Общие сведения
+* Personal Information 
 
-### <a name="request-endpoints"></a>Конечные точки запроса
+### <a name="request-endpoints"></a>Request endpoints
 
-В примере распознавания сущностей v3 используются отдельные конечные точки для запросов NER и связывания сущностей. Используйте следующий формат URL-адреса в зависимости от вашего запроса:
+Named Entity Recognition v3 uses separate endpoints for NER and entity linking requests. Use a URL format below based on your request:
 
 NER
-* Общие сущности — `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.0-preview.1/entities/recognition/general`
+* General entities - `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.0-preview.1/entities/recognition/general`
 
-* Сущности с личными сведениями — `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.0-preview.1/entities/recognition/pii`
+* Personal information entities - `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.0-preview.1/entities/recognition/pii`
 
-Связывание сущностей
+Entity linking
 * `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.0-preview.1/entities/linking`
 
 ### <a name="model-versioning"></a>управления версиями моделей;
 
 [!INCLUDE [v3-model-versioning](../includes/model-versioning.md)]
 
-## <a name="supported-types-for-named-entity-recognition-v2"></a>Поддерживаемые типы для распознавания именованных сущностей версии 2
+## <a name="supported-types-for-named-entity-recognition-v2"></a>Supported Types for Named Entity Recognition v2
 
 > [!NOTE]
-> Следующие сущности поддерживаются с помощью средства распознавания сущностей (NER) версии 2. [NER v3](#named-entity-recognition-v3-public-preview) находится в общедоступной предварительной версии и значительно расширяет количество и глубину сущностей, распознаваемых в тексте.   
+> The following entities are supported by Named Entity Recognition(NER) version 2. [NER v3](#named-entity-recognition-v3-public-preview) is in public preview, and greatly expands the number and depth of the entities recognized in text.   
 
-| введите  | SubType | Пример |
+| Тип  | SubType | Пример |
 |:-----------   |:------------- |:---------|
-| Person        | Недоступно\*         | "Джеф", "Билл Гейтс"     |
-| Место проведения      | Недоступно\*         | "Редмонд, штат Вашингтон", "Париж"  |
-| План  | Недоступно\*         | "Майкрософт"   |
-| Количество      | Число        | "6", "шесть"     |
-| Количество      | Процент    | "50 %", "пятьдесят процентов"|
+| Лицо        | Недоступно\*         | "Джеф", "Билл Гейтс"     |
+| Location      | Недоступно\*         | "Редмонд, штат Вашингтон", "Париж"  |
+| Организация  | Недоступно\*         | "Майкрософт"   |
+| Количество      | NUMBER        | "6", "шесть"     |
+| Количество      | Процент    | "50 %", "пятьдесят процентов"|
 | Количество      | Порядковый номер       | "2-й", "второй"     |
-| Количество      | Age           | "90 дней", "30 лет"    |
-| Количество      | Валюта      | "10,99 долл. США"     |
-| Количество      | Измерение     | "10 миль", "40 см"     |
-| Количество      | температура;   | "32 градуса"    |
-| DateTime      | Недоступно\*         | "18:30 4 февраля 2012 г."      |
-| DateTime      | Дата          | "2 мая 2017 г.", "02.05.2017"   |
-| DateTime      | Время          | "8 утра", "8:00"  |
-| DateTime      | Диапазон дат     | "с 2 по 5 мая"    |
-| DateTime      | Диапазон времени     | "6:00–17:00"     |
-| DateTime      | Длительность      | "1 минута и 45 секунд"   |
-| DateTime      | Set           | "каждый вторник"     |
+| Количество      | Возраст           | "90 дней", "30 лет"    |
+| Количество      | Валюта      | "10,99 долл. США"     |
+| Количество      | Измерение     | "10 км", "40 см"     |
+| Количество      | Температура   | "32 градуса"    |
+| Дата и время      | Недоступно\*         | "18:30 4 февраля 2012 г."      |
+| Дата и время      | Дата          | "2 мая 2017 г.", "02.05.2017"   |
+| Дата и время      | Время          | "8 утра", "8:00"  |
+| Дата и время      | Диапазон дат     | "со 2 по 5 мая"    |
+| Дата и время      | Диапазон времени     | "18:00–19:00"     |
+| Дата и время      | Duration      | "1 минута 45 секунд"   |
+| Дата и время      | Набор           | "каждый вторник"     |
 | URL-адрес           | Недоступно\*         | "https:\//www.bing.com"    |
-| Email         | Недоступно\*         | "support@contoso.com" |
+| Эл. почта         | Недоступно\*         | "support@contoso.com" |
+| US Phone Number  | Недоступно\*         | (US phone numbers only) "(312) 555-0176" |
+| IP-адрес    | Недоступно\*         | "10.0.0.100" |
 
-\* Некоторые сущности могут опускать `SubType` в зависимости от входных и извлеченных сущностей.  Все поддерживаемые типы сущностей доступны только для английского, упрощенного, французского, немецкого и испанского языков.
+\* Некоторые сущности могут опускать `SubType` в зависимости от входных и извлеченных сущностей.  All the supported entity types listed are available only for the English, Chinese-Simplified, French, German, and Spanish languages.
 
 ### <a name="language-support"></a>Поддержка языков
 
-Связывание сущностей на разных языках требует наличия базы знаний для каждого из этих языков. В Текстовой аналитике это означает, что конечная точка `entities` для распознанных сущностей на каждом поддерживаемом языке предоставляет ссылку на соответствующий раздел Википедии на этом языке. Поскольку наполнение Википедии существенно различается для разных языков, функциональность связывания сущностей также будет иметь существенные различия. Дополнительные сведения см. в статье [Поддержка языков](../language-support.md#sentiment-analysis-key-phrase-extraction-and-named-entity-recognition) .
+Связывание сущностей на разных языках требует наличия базы знаний для каждого из этих языков. В Текстовой аналитике это означает, что конечная точка `entities` для распознанных сущностей на каждом поддерживаемом языке предоставляет ссылку на соответствующий раздел Википедии на этом языке. Поскольку наполнение Википедии существенно различается для разных языков, функциональность связывания сущностей также будет иметь существенные различия. See the [language support](../language-support.md#sentiment-analysis-key-phrase-extraction-and-named-entity-recognition) article for more information.
 
 ## <a name="preparation"></a>Подготовка
 
-Необходимо иметь документы JSON в следующем формате: ID, Text, Language.
+You must have JSON documents in this format: ID, text, language
 
 Поддерживаемые языки перечислены в [этом списке](../text-analytics-supported-languages.md).
 
@@ -152,15 +154,15 @@ NER
     }
 ```
 
-## <a name="step-1-structure-the-request"></a>Шаг 1: Структура запроса
+## <a name="step-1-structure-the-request"></a>Шаг 1. Структурирование запроса
 
 Сведения об определении запроса можно найти в статье [How to call the Text Analytics REST API](text-analytics-how-to-call-api.md) (Способ вызова REST API анализа текста). Для удобства повторим следующие моменты.
 
-+ Создайте запрос **POST**. Ознакомьтесь с документацией по API для этого запроса: [СУЩНОСТИ API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/5ac4251d5b4ccd1554da7634)
++ Создайте запрос **POST**. Review the API documentation for this request: [Entities API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/5ac4251d5b4ccd1554da7634)
 
-+ Задайте конечную точку HTTP для извлечения ключевых фраз с помощью ресурса Анализа текста в Azure или экземпляра [контейнера Анализа текста](text-analytics-how-to-install-containers.md). Необходимо включить `/text/analytics/v2.1/entities`. Например, `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v2.1/entities`.
++ Задайте конечную точку HTTP для извлечения ключевых фраз с помощью ресурса Анализа текста в Azure или экземпляра [контейнера Анализа текста](text-analytics-how-to-install-containers.md). You must include `/text/analytics/v2.1/entities`. Например, `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v2.1/entities`.
 
-+ Задайте заголовок запроса, чтобы включить [ключ доступа](../../cognitive-services-apis-create-account.md#get-the-keys-for-your-resource) для операций анализ текста.
++ Set a request header to include [the access key](../../cognitive-services-apis-create-account.md#get-the-keys-for-your-resource) for Text Analytics operations.
 
 + В тексте запроса укажите набор документов JSON, которые подготовлены для этого анализа
 
@@ -177,7 +179,7 @@ NER
 
 Все запросы POST вернут ответ в формате JSON с идентификаторами и обнаруженными свойствами.
 
-Вывод возвращается немедленно. Можно выполнить потоковую передачу результатов в приложение, которое принимает JSON или сохранить выходные данные в файле локальной системы, а затем импортировать их в приложение, которое дает возможность сортировки, поиска и управления данными.
+Вывод возвращается немедленно. Можно выполнить потоковую передачу результатов в приложение, которое принимает JSON, или сохранить выходные данные в файле локальной системы, а затем импортировать их в приложение, которое дает возможность сортировки, поиска данных и управления ими.
 
 Далее показан пример выходных данных для связывания сущностей:
 
@@ -337,20 +339,20 @@ NER
     }
 ```
 
-## <a name="summary"></a>summary
+## <a name="summary"></a>Резюме
 
-В этой статье рассматриваются основные понятия и рабочий процесс связывания сущностей в службе Текстовой аналитики Cognitive Services. Краткая сводка.
+В этой статье рассматриваются основные понятия и рабочий процесс связывания сущностей в службе Текстовой аналитики Cognitive Services. В разделе "Сводка" сделайте следующее.
 
 + [Сущности API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/5ac4251d5b4ccd1554da7634) доступны для выбранных языков.
 + В тексте запроса передаются документы JSON, которые содержат идентификатор, текст и код языка.
-+ Отправьте запрос POST на конечную точку `/entities`, используя правильные значения [ключа доступа и конечной точки](../../cognitive-services-apis-create-account.md#get-the-keys-for-your-resource) из вашей подписки.
++ Запрос POST передается в конечную точку `/entities`, используя личный [ключ доступа и конечную точку](../../cognitive-services-apis-create-account.md#get-the-keys-for-your-resource), допустимые для вашей подписки.
 + Ответ будет содержать выходные данные, содержащие связанные сущности (включая оценки уверенности, смещения и веб-ссылки для каждого идентификатора документа), которые можно использовать в любом приложении
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [API анализа текста](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/5ac4251d5b4ccd1554da7634)
 
-* [Text Analytics overview](../overview.md) (Общие сведения о Текстовой аналитике)
+* [Text Analytics overview](../overview.md) (Общие сведения об анализе текста)
 * [Часто задаваемые вопросы](../text-analytics-resource-faq.md)</br>
 * [Анализ текста](//go.microsoft.com/fwlink/?LinkID=759712)

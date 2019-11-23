@@ -1,27 +1,21 @@
 ---
-title: Архитектура Azure Блокчейн Workbench Preview
-description: Обзор архитектуры Azure Блокчейн Workbench Preview и ее компонентов.
-services: azure-blockchain
-keywords: ''
-author: PatAltimore
-ms.author: patricka
+title: Архитектура Azure Blockchain Workbench
+description: Overview of Azure Blockchain Workbench Preview architecture and its components.
 ms.date: 09/05/2019
 ms.topic: conceptual
-ms.service: azure-blockchain
 ms.reviewer: brendal
-manager: femila
-ms.openlocfilehash: 4613d441fd0d363654073d4832de19139a7781e7
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: aa972e8ae486d181f0c48df72ec89c925c940451
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73579742"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74324897"
 ---
-# <a name="azure-blockchain-workbench-preview-architecture"></a>Архитектура Azure Блокчейн Workbench Preview
+# <a name="azure-blockchain-workbench-architecture"></a>Архитектура Azure Blockchain Workbench
 
-Предварительная версия Azure Блокчейн Workbench упрощает разработку приложений блокчейн, предоставляя решение с помощью нескольких компонентов Azure. Blockchain Workbench можно развернуть с помощью шаблона решения в Azure Marketplace. Шаблон позволяет выбрать модули и компоненты для развертывания, включая блокчейн-стек, тип клиентского приложения и поддержку интеграции Интернета вещей. После развертывания Blockchain Workbench предоставляет доступ к веб-приложению, iOS-приложению и Android-приложению.
+Azure Blockchain Workbench Preview simplifies blockchain application development by providing a solution using several Azure components. Blockchain Workbench можно развернуть с помощью шаблона решения в Azure Marketplace. Шаблон позволяет выбрать модули и компоненты для развертывания, включая блокчейн-стек, тип клиентского приложения и поддержку интеграции Интернета вещей. После развертывания Blockchain Workbench предоставляет доступ к веб-приложению, iOS-приложению и Android-приложению.
 
-![Архитектура блокчейн Workbench](./media/architecture/architecture.png)
+![Blockchain Workbench architecture](./media/architecture/architecture.png)
 
 ## <a name="identity-and-authentication"></a>Идентификация и аутентификация
 
@@ -105,7 +99,7 @@ Blockchain Workbench автоматически развертывает два 
 
 Это хранилище вне сети обеспечивает возможность корпоративным организациям запрашивать данные в SQL, а не в блокчейн-реестре. Кроме того, стандартизировав стандартную схему, которая не зависит от стеков технологии блокчейн, хранилище вне сети позволяет повторно использовать отчеты и другие артефакты по нескольким проектам, сценариям и организациям.
 
-## <a name="azure-storage"></a>Хранилище Azure
+## <a name="azure-storage"></a>Служба хранилища Azure
 
 Azure Storage используется для хранения контрактов и метаданных, связанных с контрактами.
 

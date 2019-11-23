@@ -1,7 +1,7 @@
 ---
-title: Установка и запуск контейнеров — API распознавания лиц
+title: Install and run containers - FACE API
 titleSuffix: Azure Cognitive Services
-description: В этой статье показано, как загрузить, установить и запустить контейнеры для лиц в этом пошаговом руководстве.
+description: This article shows you how to download, install, and run containers for Face in this walkthrough tutorial.
 services: cognitive-services
 author: IEvangelist
 manager: nitinme
@@ -9,30 +9,30 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: conceptual
-ms.date: 11/18/2019
+ms.date: 11/21/2019
 ms.author: dapine
-ms.openlocfilehash: 97b1fd27e91823594d972bdd49184d2b0f5d320b
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.openlocfilehash: 574f6bead9cac384c72d2d0cd35353eb571a9490
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74171692"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74327044"
 ---
-# <a name="install-and-run-face-containers"></a>Установка и запуск контейнеров лиц
+# <a name="install-and-run-face-containers-preview"></a>Install and run Face containers (Preview)
 
-Лицо Cognitive Services Azure предоставляет стандартизированный контейнер Linux для DOCKER, который обнаруживает людей в образах. Он также определяет атрибуты, которые включают ориентиры для лиц, такие как нос и глаза, пол, возраст и другие функции, прогнозируемые с точки зрения машинного лица. Кроме обнаружения, лицо может проверить, совпадают ли два лица в одном или разных изображениях с помощью оценки достоверности. Кроме того, лицо может сравнить лица с базой данных, чтобы узнать, существует ли уже похожий или аналогичный лицом. Он также может организовывать схожие лица в группы с помощью общих визуальных характеристик.
+Azure Cognitive Services Face provides a standardized Linux container for Docker that detects human faces in images. It also identifies attributes, which include face landmarks such as noses and eyes, gender, age, and other machine-predicted facial features. In addition to detection, Face can check if two faces in the same image or different images are the same by using a confidence score. Face also can compare faces against a database to see if a similar-looking or identical face already exists. It also can organize similar faces into groups by using shared visual traits.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
-Прежде чем использовать контейнеры API распознавания лиц, необходимо выполнить следующие предварительные требования.
+You must meet the following prerequisites before you use the Face API containers.
 
-|обязательные|Назначение|
+|Обязательно для заполнения|Цель|
 |--|--|
-|Модуль Docker| Подсистема DOCKER должна быть установлена на [главном компьютере](#the-host-computer). Docker предоставляет пакеты, которые настраивают среду Docker в ОС [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). См. [общие сведения о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> В Windows DOCKER также должен быть настроен для поддержки контейнеров Linux.<br><br>|
-|Опыт работы с Docker | Вам потребуется базовое понимание концепций DOCKER, таких как реестры, репозитории, контейнеры и образы контейнеров. Также необходимо знание основных `docker`ных команд.| 
-|Ресурс лица |Для использования этого контейнера необходимо следующее:<br><br>Ресурс **лица** Azure, а также соответствующий ключ API и URI конечной точки. Оба значения доступны на страницах **обзора** и **ключей** для ресурса. Они необходимы для запуска контейнера.<br><br>**{API_KEY}** : один из двух доступных ключей ресурсов на странице " **ключи** "<br><br>**{ENDPOINT_URI}** : конечная точка, указанная на странице **обзора**
+|Модуль Docker| The Docker Engine must be installed on a [host computer](#the-host-computer). Docker предоставляет пакеты, которые настраивают среду Docker в ОС [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> On Windows, Docker also must be configured to support Linux containers.<br><br>|
+|Опыт работы с Docker | You need a basic understanding of Docker concepts, such as registries, repositories, containers, and container images. You also need knowledge of basic `docker` commands.| 
+|Face resource |To use the container, you must have:<br><br>An Azure **Face** resource and the associated API key and the endpoint URI. Both values are available on the **Overview** and **Keys** pages for the resource. They're required to start the container.<br><br>**{API_KEY}** : One of the two available resource keys on the **Keys** page<br><br>**{ENDPOINT_URI}** : The endpoint as provided on the **Overview** page
 
 [!INCLUDE [Gathering required container parameters](../containers/includes/container-gathering-required-parameters.md)]
 
@@ -48,22 +48,22 @@ ms.locfileid: "74171692"
 
 В следующей таблице описаны минимальное и рекомендуемое число ядра ЦП и памяти для каждого контейнера API распознавания лиц.
 
-| Контейнер | Минимальная | Рекомендуется | Транзакций в секунду<br>(Минимум, максимум)|
+| Контейнер | Минимальная | Рекомендуется | Число транзакций в секунду<br>(Minimum, maximum)|
 |-----------|---------|-------------|--|
-|API распознавания лиц | 1 ядро, 2 ГБ памяти | 1 ядро, 4 ГБ памяти |10, 20|
+|Распознавание лиц | 1 core, 2-GB memory | 1 core, 4-GB memory |10, 20|
 
-* Каждое ядро должно иметь частоту не менее 2,6 ГГц или быстрее.
-* Количество транзакций в секунду (TPS).
+* Each core must be at least 2.6 GHz or faster.
+* Transactions per second (TPS).
 
 Ядро и память соответствуют параметрам `--cpus` и `--memory`, которые используются как часть команды `docker run`.
 
-## <a name="get-the-container-image-with-docker-pull"></a>Получение образа контейнера с помощью docker pull
+## <a name="get-the-container-image-with-docker-pull"></a>Get the container image with docker pull
 
-Доступны образы контейнеров для API распознавания лиц. 
+Container images for the Face API are available. 
 
 | Контейнер | Репозиторий |
 |-----------|------------|
-| API распознавания лиц | `containerpreview.azurecr.io/microsoft/cognitive-services-face:latest` |
+| Распознавание лиц | `containerpreview.azurecr.io/microsoft/cognitive-services-face:latest` |
 
 [!INCLUDE [Tip for using docker list](../../../includes/cognitive-services-containers-docker-list-tip.md)]
 
@@ -73,18 +73,18 @@ ms.locfileid: "74171692"
 docker pull containerpreview.azurecr.io/microsoft/cognitive-services-face:latest
 ```
 
-## <a name="use-the-container"></a>Использование контейнера
+## <a name="use-the-container"></a>Use the container
 
 После размещения контейнера на [главном компьютере](#the-host-computer) выполните приведенные ниже инструкции для работы с ним.
 
-1. [Запустите контейнер](#run-the-container-with-docker-run) с необходимыми параметрами выставления счетов. Доступны дополнительные [примеры](./face-resource-container-config.md#example-docker-run-commands) команды `docker run`. 
+1. [Run the container](#run-the-container-with-docker-run) with the required billing settings. Доступны дополнительные [примеры](./face-resource-container-config.md#example-docker-run-commands) команды `docker run`. 
 1. [Запрос конечной точки прогнозирования контейнера](#query-the-containers-prediction-endpoint). 
 
-## <a name="run-the-container-with-docker-run"></a>Запуск контейнера с помощью запуска DOCKER
+## <a name="run-the-container-with-docker-run"></a>Run the container with docker run
 
-Воспользуйтесь командой [docker run](https://docs.docker.com/engine/reference/commandline/run/) для запуска контейнера. Сведения о том, как получить значения `{ENDPOINT_URI}` и `{API_KEY}`, см. в разделе [сбор обязательных параметров](#gathering-required-parameters) .
+Воспользуйтесь командой [docker run](https://docs.docker.com/engine/reference/commandline/run/) для запуска контейнера. Refer to [gathering required parameters](#gathering-required-parameters) for details on how to get the `{ENDPOINT_URI}` and `{API_KEY}` values.
 
-Доступны [примеры](face-resource-container-config.md#example-docker-run-commands) команды `docker run`.
+[Examples](face-resource-container-config.md#example-docker-run-commands) of the `docker run` command are available.
 
 ```bash
 docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 \
@@ -96,15 +96,15 @@ ApiKey={API_KEY}
 
 Эта команда:
 
-* Запускает контейнер лицевой стороны из образа контейнера.
-* Выделяется одно ядро ЦП и 4 ГБ памяти.
-* Предоставляет TCP-порт 5000 и выделяет псевдо для контейнера.
+* Runs a face container from the container image.
+* Allocates one CPU core and 4 GB of memory.
+* Exposes TCP port 5000 and allocates a pseudo TTY for the container.
 * автоматически удаляет контейнер после завершения его работы. Образ контейнера остается доступным на главном компьютере. 
 
 Доступны дополнительные [примеры](./face-resource-container-config.md#example-docker-run-commands) команды `docker run`. 
 
 > [!IMPORTANT]
-> Для запуска контейнера необходимо указать параметры `Eula`, `Billing`и `ApiKey`, чтобы контейнер не запускался. Дополнительные сведения см. в [разделе о выставлении счетов](#billing).
+> The `Eula`, `Billing`, and `ApiKey` options must be specified to run the container or the container won't start. Дополнительные сведения см. в [разделе о выставлении счетов](#billing).
 
 [!INCLUDE [Running multiple containers on the same host](../../../includes/cognitive-services-containers-run-multiple-same-host.md)]
 
@@ -124,39 +124,39 @@ ApiKey={API_KEY}
 
 [!INCLUDE [How to stop the container](../../../includes/cognitive-services-containers-stop.md)]
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Устранение неисправностей
 
-Если вы запускаете контейнер с выходным [подключением](./face-resource-container-config.md#mount-settings) и ведение журнала включено, контейнер создает файлы журнала, которые полезны для устранения неполадок, возникающих при запуске или запуске контейнера.
+If you run the container with an output [mount](./face-resource-container-config.md#mount-settings) and logging is enabled, the container generates log files that are helpful to troubleshoot issues that happen while you start or run the container.
 
 [!INCLUDE [Cognitive Services FAQ note](../containers/includes/cognitive-services-faq-note.md)]
 
 ## <a name="billing"></a>Выставление счетов
 
-Контейнеры API распознавания лиц отправляют сведения о выставлении счетов в Azure с помощью ресурса API распознавания лиц в учетной записи Azure. 
+The Face API containers send billing information to Azure by using a Face API resource on your Azure account. 
 
 [!INCLUDE [Container's Billing Settings](../../../includes/cognitive-services-containers-how-to-billing-info.md)]
 
-Дополнительные сведения об этих параметрах см. в статье [Настройка контейнеров](./face-resource-container-config.md).
+Дополнительные сведения об этих параметрах см. в разделе [Настройка контейнеров](./face-resource-container-config.md).
 
 <!--blogs/samples/video coures -->
 
 [!INCLUDE [Discoverability of more container information](../../../includes/cognitive-services-containers-discoverability.md)]
 
-## <a name="summary"></a>summary
+## <a name="summary"></a>Резюме
 
-В этой статье вы узнали основные понятия и рабочий процесс загрузки, установки и запуска контейнеров API распознавания лиц. Краткая сводка.
+In this article, you learned concepts and workflow for how to download, install, and run Face API containers. В разделе "Сводка" сделайте следующее.
 
-* Образы контейнеров загружаются из реестра контейнеров Azure.
-* Образы контейнеров, которые выполняются в Docker.
-* Можно использовать REST API или пакет SDK для вызова операций в контейнерах API распознавания лиц, указав универсальный код ресурса (URI) узла контейнера.
-* При создании экземпляра контейнера необходимо указать сведения о выставлении счетов.
+* Container images are downloaded from the Azure Container Registry.
+* Образы контейнеров выполняются в Docker.
+* You can use either the REST API or the SDK to call operations in Face API containers by specifying the host URI of the container.
+* You must specify billing information when you instantiate a container.
 
 > [!IMPORTANT]
-> Cognitive Services контейнеры не лицензированы для запуска без подключения к Azure для измерения. Клиенты должны включить контейнеры для передачи сведений о выставлении счетов в службу контроля использования в любое время. Контейнеры Cognitive Services не отправляют в корпорацию Майкрософт данные клиента, например анализируемые изображения или тексты.
+> Cognitive Services containers aren't licensed to run without being connected to Azure for metering. Customers must enable the containers to communicate billing information with the metering service at all times. Контейнеры Cognitive Services не отправляют в корпорацию Майкрософт данные клиента, например анализируемые изображения или тексты.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-* Параметры конфигурации см. в разделе [Configure Containers](face-resource-container-config.md).
-* Дополнительные сведения об обнаружении и определении лиц см. в разделе [Обзор лиц](Overview.md).
-* Дополнительные сведения о методах, поддерживаемых контейнером, см. в [API распознавания лиц](//westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236).
-* Чтобы использовать больше контейнеров Cognitive Services, см. раздел [Cognitive Services Containers](../cognitive-services-container-support.md).
+* For configuration settings, see [Configure containers](face-resource-container-config.md).
+* To learn more about how to detect and identify faces, see [Face overview](Overview.md).
+* For information about the methods supported by the container, see the [Face API](//westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236).
+* To use more Cognitive Services containers, see [Cognitive Services containers](../cognitive-services-container-support.md).

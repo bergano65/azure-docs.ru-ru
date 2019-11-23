@@ -1,52 +1,52 @@
 ---
-title: Использование пулов нескольких узлов в службе Kubernetes Azure (AKS)
-description: Узнайте, как создать несколько пулов узлов для кластера в службе Kubernetes Azure (AKS) и управлять ими.
+title: Use multiple node pools in Azure Kubernetes Service (AKS)
+description: Learn how to create and manage multiple node pools for a cluster in Azure Kubernetes Service (AKS)
 services: container-service
 author: mlearned
 ms.service: container-service
 ms.topic: article
 ms.date: 08/9/2019
 ms.author: mlearned
-ms.openlocfilehash: 9c8bae879c5e28914981eec34afb0759dd963004
-ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
+ms.openlocfilehash: c48bcab0a3d009b186832a6b728597f03788a7cd
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73928974"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74382990"
 ---
-# <a name="create-and-manage-multiple-node-pools-for-a-cluster-in-azure-kubernetes-service-aks"></a>Создание нескольких пулов узлов для кластера в службе Kubernetes Azure (AKS) и управление ими
+# <a name="create-and-manage-multiple-node-pools-for-a-cluster-in-azure-kubernetes-service-aks"></a>Create and manage multiple node pools for a cluster in Azure Kubernetes Service (AKS)
 
-В службе Azure Kubernetes Service (AKS) узлы одной и той же конфигурации группируются в *Пулы узлов*. Эти пулы узлов содержат базовые виртуальные машины, на которых работают ваши приложения. Начальное число узлов и их размер (SKU) определяются при создании кластера AKS, который создает *пул узлов по умолчанию*. Для поддержки приложений, имеющих различные требования к вычислению или хранению, можно создать дополнительные пулы узлов. Например, используйте эти дополнительные пулы узлов, чтобы предоставить графические процессоры для приложений с большим объемом вычислений или доступ к высокопроизводительному хранилищу SSD.
+In Azure Kubernetes Service (AKS), nodes of the same configuration are grouped together into *node pools*. These node pools contain the underlying VMs that run your applications. The initial number of nodes and their size (SKU) are defined when you create an AKS cluster, which creates a *default node pool*. To support applications that have different compute or storage demands, you can create additional node pools. For example, use these additional node pools to provide GPUs for compute-intensive applications, or access to high-performance SSD storage.
 
 > [!NOTE]
-> Эта функция обеспечивает более высокий контроль над созданием нескольких пулов узлов и управлением ими. В результате для создания, обновления и удаления требуются отдельные команды. Ранее кластерные операции с помощью `az aks create` или `az aks update` использовали API Манажедклустер и были единственным вариантом изменения плоскости управления и пула с одним узлом. Эта функция предоставляет отдельный набор операций для пулов агентов через API Ажентпул и требует использования набора команд `az aks nodepool` для выполнения операций в пуле отдельных узлов.
+> This feature enables higher control over how to create and manage multiple node pools. As a result, separate commands are required for  create/update/delete. Previously cluster operations through `az aks create` or `az aks update` used the managedCluster API and were the only option to change your control plane and a single node pool. This feature exposes a separate operation set for agent pools through the agentPool API and require use of the `az aks nodepool` command set to execute operations on an individual node pool.
 
-В этой статье показано, как создать несколько пулов узлов и управлять ими в кластере AKS.
+This article shows you how to create and manage multiple node pools in an AKS cluster.
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-Требуется Azure CLI версии 2.0.76 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][install-azure-cli].
+You need the Azure CLI version 2.0.76 or later installed and configured. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][install-azure-cli].
 
 ## <a name="limitations"></a>Ограничения
 
-При создании кластеров AKS, поддерживающих несколько пулов узлов, и управлении ими действуют следующие ограничения.
+The following limitations apply when you create and manage AKS clusters that support multiple node pools:
 
-* Нельзя удалить пул узлов по умолчанию (First).
-* Не удается использовать надстройку маршрутизации приложений HTTP.
-* Кластер AKS должен использовать подсистему балансировки нагрузки уровня "Стандартный" для использования нескольких пулов узлов. Эта функция не поддерживается для подсистем балансировки нагрузки уровня "базовый".
-* Кластер AKS должен использовать масштабируемые наборы виртуальных машин для узлов.
-* Нельзя добавлять или удалять пулы узлов с помощью существующего шаблона диспетчер ресурсов, как в случае с большинством операций. Вместо этого [Используйте отдельный шаблон диспетчер ресурсов](#manage-node-pools-using-a-resource-manager-template) для внесения изменений в пулы узлов в кластере AKS.
-* Имя пула узлов может содержать только буквы в нижнем регистре и должно начинаться с буквы в нижнем регистре. Для пулов узлов Linux длина должна составлять от 1 до 12 символов. для пулов узлов Windows длина должна составлять от 1 до 6 символов.
-* Кластер AKS может иметь не более восьми пулов узлов.
-* Кластер AKS может содержать не более 400 узлов в восьми пулах узлов.
-* Все пулы узлов должны находиться в одной подсети.
+* You can't delete the default (first) node pool.
+* The HTTP application routing add-on can't be used.
+* The AKS cluster must use the Standard SKU load balancer to use multiple node pools, the feature is not supported with Basic SKU load balancers.
+* The AKS cluster must use virtual machine scale sets for the nodes.
+* You can't add or delete node pools using an existing Resource Manager template as with most operations. Instead, [use a separate Resource Manager template](#manage-node-pools-using-a-resource-manager-template) to make changes to node pools in an AKS cluster.
+* The name of a node pool may only contain lowercase alphanumeric characters and must begin with a lowercase letter. For Linux node pools the length must be between 1 and 12 characters, for Windows node pools the length must be between 1 and 6 characters.
+* The AKS cluster can have a maximum of eight node pools.
+* The AKS cluster can have a maximum of 400 nodes across those eight node pools.
+* All node pools must reside in the same subnet.
 
 ## <a name="create-an-aks-cluster"></a>Создание кластера AKS
 
-Чтобы приступить к работе, создайте кластер AKS с одним пулом узлов. В следующем примере используется команда [AZ Group Create][az-group-create] для создания группы ресурсов с именем *myResourceGroup* в регионе *eastus* . После этого кластер AKS с именем *myAKSCluster* создается с помощью команды [AZ AKS Create][az-aks-create] . A *--kubernetes-версия* *1.13.10* используется для демонстрации обновления пула узлов на следующем шаге. Можно указать любую [поддерживаемую версию Kubernetes][supported-versions].
+To get started, create an AKS cluster with a single node pool. The following example uses the [az group create][az-group-create] command to create a resource group named *myResourceGroup* in the *eastus* region. An AKS cluster named *myAKSCluster* is then created using the [az aks create][az-aks-create] command. A *--kubernetes-version* of *1.13.10* is used to show how to update a node pool in a following step. You can specify any [supported Kubernetes version][supported-versions].
 
 > [!NOTE]
-> Номер SKU *базовой* подсистемы балансировки нагрузки **не поддерживается** при использовании нескольких пулов узлов. По умолчанию кластеры AKS создаются с номером SKU *стандартной* подсистемы балансировки нагрузки Azure CLI и портал Azure.
+> The *Basic* load balancer SKU is **not supported** when using multiple node pools. By default, AKS clusters are created with the *Standard* load balancer SKU from Azure CLI and Azure portal.
 
 ```azurecli-interactive
 # Create a resource group in East US
@@ -66,17 +66,17 @@ az aks create \
 Создание кластера занимает несколько минут.
 
 > [!NOTE]
-> Чтобы обеспечить надежное функционирование кластера, необходимо запустить по крайней мере 2 узла в пуле узлов по умолчанию, так как базовые системные службы работают в этом пуле узлов.
+> To ensure your cluster operates reliably, you should run at least 2 (two) nodes in the default node pool, as essential system services are running across this node pool.
 
-Когда кластер будет готов, используйте команду [AZ AKS Get-Credential][az-aks-get-credentials] , чтобы получить учетные данные кластера для использования с `kubectl`.
+When the cluster is ready, use the [az aks get-credentials][az-aks-get-credentials] command to get the cluster credentials for use with `kubectl`:
 
 ```azurecli-interactive
 az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
 ```
 
-## <a name="add-a-node-pool"></a>Добавление пула узлов
+## <a name="add-a-node-pool"></a>Add a node pool
 
-Кластер, созданный на предыдущем шаге, имеет один пул узлов. Добавим пул второго узла с помощью команды [AZ AKS нодепул Add][az-aks-nodepool-add] . В следующем примере создается пул узлов с именем *минодепул* , который запускает *3* узла:
+The cluster created in the previous step has a single node pool. Let's add a second node pool using the [az aks nodepool add][az-aks-nodepool-add] command. The following example creates a node pool named *mynodepool* that runs *3* nodes:
 
 ```azurecli-interactive
 az aks nodepool add \
@@ -88,15 +88,15 @@ az aks nodepool add \
 ```
 
 > [!NOTE]
-> Имя пула узлов должно начинаться с буквы в нижнем регистре и может содержать только буквенно-цифровые символы. Для пулов узлов Linux длина должна составлять от 1 до 12 символов. для пулов узлов Windows длина должна составлять от 1 до 6 символов.
+> The name of a node pool must start with a lowercase letter and can only contain alphanumeric characters. For Linux node pools the length must be between 1 and 12 characters, for Windows node pools the length must be between 1 and 6 characters.
 
-Чтобы просмотреть состояние пулов узлов, используйте команду [AZ AKS node Pool List][az-aks-nodepool-list] и укажите группу ресурсов и имя кластера:
+To see the status of your node pools, use the [az aks node pool list][az-aks-nodepool-list] command and specify your resource group and cluster name:
 
 ```azurecli-interactive
 az aks nodepool list --resource-group myResourceGroup --cluster-name myAKSCluster
 ```
 
-В следующем примере выходных данных показано, что *минодепул* успешно создан с тремя узлами в пуле узлов. При создании кластера AKS на предыдущем шаге создается *nodepool1* по умолчанию с числом узлов, равным *2*.
+The following example output shows that *mynodepool* has been successfully created with three nodes in the node pool. When the AKS cluster was created in the previous step, a default *nodepool1* was created with a node count of *2*.
 
 ```console
 $ az aks nodepool list --resource-group myResourceGroup --cluster-name myAKSCluster
@@ -126,21 +126,21 @@ $ az aks nodepool list --resource-group myResourceGroup --cluster-name myAKSClus
 ```
 
 > [!TIP]
-> Если *орчестраторверсион* или *VmSize* не указаны при добавлении пула узлов, узлы создаются на основе значений по умолчанию для кластера AKS. В этом примере это была Kubernetes версия *1.13.10* и размер узла *Standard_DS2_v2*.
+> If no *OrchestratorVersion* or *VmSize* is specified when you add a node pool, the nodes are created based on the defaults for the AKS cluster. In this example, that was Kubernetes version *1.13.10* and node size of *Standard_DS2_v2*.
 
-## <a name="upgrade-a-node-pool"></a>Обновление пула узлов
+## <a name="upgrade-a-node-pool"></a>Upgrade a node pool
  
 > [!NOTE]
-> Операции обновления и масштабирования в кластере или пуле узлов не могут выполняться одновременно, если была возвращена ошибка. Вместо этого каждый тип операции должен быть завершен в целевом ресурсе до следующего запроса к этому же ресурсу. Дополнительные сведения см. в нашем [руководство по устранению неполадок](https://aka.ms/aks-pending-upgrade).
+> Upgrade and scale operations on a cluster or node pool cannot occur simultaneously, if attempted an error is returned. Instead, each operation type must complete on the target resource prior to the next request on that same resource. Read more about this on our [troubleshooting guide](https://aka.ms/aks-pending-upgrade).
 
-Когда кластер AKS был изначально создан на первом шаге, был указан `--kubernetes-version` *1.13.10* . Это задание версии Kubernetes для плоскости управления и пула узлов по умолчанию. Команды в этом разделе объясняют, как обновить отдельный пул узлов.
+When your AKS cluster was initially created in the first step, a `--kubernetes-version` of *1.13.10* was specified. This set the Kubernetes version for both the control plane and the default node pool. The commands in this section explain how to upgrade a single specific node pool.
 
-Связь между обновлением Kubernetes версии плоскости управления и пулом узлов описывается в [разделе ниже](#upgrade-a-cluster-control-plane-with-multiple-node-pools).
+The relationship between upgrading the Kubernetes version of the control plane and the node pool are explained in the [section below](#upgrade-a-cluster-control-plane-with-multiple-node-pools).
 
 > [!NOTE]
-> Версия образа ОС пула узлов привязана к Kubernetes версии кластера. Обновления образа ОС будут получаться только после обновления кластера.
+> The node pool OS image version is tied to the Kubernetes version of the cluster. You will only get OS image upgrades, following a cluster upgrade.
 
-Так как в этом примере есть два пула узлов, для обновления пула узлов необходимо использовать команду [AZ AKS нодепул Upgrade][az-aks-nodepool-upgrade] . Давайте выполним обновление *минодепул* до Kubernetes *1.13.10*. Используйте команду [AZ AKS нодепул Upgrade][az-aks-nodepool-upgrade] , чтобы обновить пул узлов, как показано в следующем примере:
+Since there are two node pools in this example, we must use [az aks nodepool upgrade][az-aks-nodepool-upgrade] to upgrade a node pool. Let's upgrade the *mynodepool* to Kubernetes *1.13.10*. Use the [az aks nodepool upgrade][az-aks-nodepool-upgrade] command to upgrade the node pool, as shown in the following example:
 
 ```azurecli-interactive
 az aks nodepool upgrade \
@@ -151,7 +151,7 @@ az aks nodepool upgrade \
     --no-wait
 ```
 
-Снова перечислите состояние пулов узлов с помощью команды [AZ AKS node Pool List][az-aks-nodepool-list] . В следующем примере показано, что *минодепул* находится в состоянии *обновления* до *1.13.10*:
+List the status of your node pools again using the [az aks node pool list][az-aks-nodepool-list] command. The following example shows that *mynodepool* is in the *Upgrading* state to *1.13.10*:
 
 ```console
 $ az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster
@@ -184,49 +184,49 @@ $ az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster
 ]
 ```
 
-Обновление узлов до указанной версии занимает несколько минут.
+It takes a few minutes to upgrade the nodes to the specified version.
 
-Рекомендуется обновить все пулы узлов в кластере AKS до одной версии Kubernetes. Поведением `az aks upgrade` по умолчанию является обновление всех пулов узлов вместе с плоскостью управления для достижения этого выравнивания. Возможность обновления индивидуальных пулов узлов позволяет выполнять последовательное обновление и распланировать модули Pod между пулами узлов, чтобы поддерживать время работы приложения в указанных выше ограничениях.
+As a best practice, you should upgrade all node pools in an AKS cluster to the same Kubernetes version. The default behavior of `az aks upgrade` is to upgrade all node pools together with the control plane to achieve this alignment. The ability to upgrade individual node pools lets you perform a rolling upgrade and schedule pods between node pools to maintain application uptime within the above constraints mentioned.
 
-## <a name="upgrade-a-cluster-control-plane-with-multiple-node-pools"></a>Обновление плоскости управления кластера с несколькими пулами узлов
+## <a name="upgrade-a-cluster-control-plane-with-multiple-node-pools"></a>Upgrade a cluster control plane with multiple node pools
 
 > [!NOTE]
-> Kubernetes использует стандартную схему управления версиями [семантического управления версиями](https://semver.org/) . Номер версии выражается в виде *x. y. z*, где *x* — основная версия, *y* — дополнительный номер версии, а *z* — версия исправления. Например, в версии *1.12.6*1 — основной номер версии, 12 — дополнительный номер версии, а 6 — версия исправления. Kubernetes версия плоскости управления и пул начального узла устанавливаются во время создания кластера. При добавлении в кластер для всех дополнительных пулов узлов устанавливается версия Kubernetes. Версии Kubernetes могут отличаться между пулами узлов, а также между пулом узлов и плоскостью управления.
+> Kubernetes uses the standard [Semantic Versioning](https://semver.org/) versioning scheme. The version number is expressed as *x.y.z*, where *x* is the major version, *y* is the minor version, and *z* is the patch version. For example, in version *1.12.6*, 1 is the major version, 12 is the minor version, and 6 is the patch version. The Kubernetes version of the control plane and the initial node pool are set during cluster creation. All additional node pools have their Kubernetes version set when they are added to the cluster. The Kubernetes versions may differ between node pools as well as between a node pool and the control plane.
 
-Кластер AKS содержит два объекта ресурсов кластера с связанными версиями Kubernetes.
+An AKS cluster has two cluster resource objects with Kubernetes versions associated.
 
-1. Версия Kubernetes плоскости управления кластером.
-2. Пул узлов с версией Kubernetes.
+1. A cluster control plane Kubernetes version.
+2. A node pool with a Kubernetes version.
 
-Плоскость управления сопоставляется с одним или несколькими пулами узлов. Поведение операции обновления зависит от того, какая команда Azure CLI используется.
+A control plane maps to one or many node pools. The behavior of an upgrade operation depends on which Azure CLI command is used.
 
-Обновление плоскости управления AKS требует использования `az aks upgrade`. Это обновляет версию плоскости управления и все пулы узлов в кластере. 
+Upgrading an AKS control plane requires using `az aks upgrade`. This upgrades the control plane version and all node pools in the cluster. 
 
-При выдаче команды `az aks upgrade` с флагом `--control-plane-only` обновляется только плоскость управления кластером. Ни один из связанных пулов узлов в кластере не изменился.
+Issuing the `az aks upgrade` command with the `--control-plane-only` flag upgrades only the cluster control plane. None of the associated node pools in the cluster are changed.
 
-Для обновления отдельных пулов узлов необходимо использовать `az aks nodepool upgrade`. Это обновляет только пул целевых узлов с указанной версией Kubernetes
+Upgrading individual node pools requires using `az aks nodepool upgrade`. This upgrades only the target node pool with the specified Kubernetes version
 
-### <a name="validation-rules-for-upgrades"></a>Правила проверки для обновлений
+### <a name="validation-rules-for-upgrades"></a>Validation rules for upgrades
 
-Допустимые обновления для версий Kubernetes, удерживаемых на плоскости управления или пулах узлов кластера, проверяются с помощью следующих наборов правил.
+The valid Kubernetes upgrades for a cluster's control plane and node pools are validated by the following sets of rules.
 
-* Правила для допустимых версий для обновления до:
-   * Версия пула узлов должна иметь ту же *основную* версию, что и плоскость управления.
-   * Версия пула узлов может быть двух *вспомогательных* версий меньше, чем версия плоскости управления.
-   * Версия пула узлов может быть двух версий *исправлений* меньше, чем версия плоскости управления.
+* Rules for valid versions to upgrade node pools:
+   * The node pool version must have the same *major* version as the control plane.
+   * The node pool *minor* version must be within two *minor* versions of the control plane version.
+   * The node pool version cannot be greater than the control `major.minor.patch` version.
 
-* Правила для отправки операции обновления:
-   * Нельзя перейти на более раннюю плоскость управления или Kubernetes версию пула узлов.
-   * Если не указана версия Kubernetes пула узлов, поведение зависит от используемого клиента. Объявление в шаблонах диспетчер ресурсов приводит к переходу к существующей версии, определенной для пула узлов, если она используется, если не задана ни одна версия плоскости управления для возврата.
-   * Можно обновить или масштабировать плоскость управления или пул узлов в определенный момент времени, но нельзя одновременно отправлять несколько операций в одну плоскость управления или ресурс пула узлов.
+* Rules for submitting an upgrade operation:
+   * You cannot downgrade the control plane or a node pool Kubernetes version.
+   * If a node pool Kubernetes version is not specified, behavior depends on the client being used. Declaration in Resource Manager templates fall back to the existing version defined for the node pool if used, if none is set the control plane version is used to fall back on.
+   * You can either upgrade or scale a control plane or a node pool at a given time, you cannot submit multiple operations on a single control plane or node pool resource simultaneously.
 
-## <a name="scale-a-node-pool-manually"></a>Масштабирование пула узлов вручную
+## <a name="scale-a-node-pool-manually"></a>Scale a node pool manually
 
-По мере изменения требований к рабочей нагрузке приложения может потребоваться масштабирование количества узлов в пуле узлов. Количество узлов можно масштабировать вверх или вниз.
+As your application workload demands change, you may need to scale the number of nodes in a node pool. The number of nodes can be scaled up or down.
 
 <!--If you scale down, nodes are carefully [cordoned and drained][kubernetes-drain] to minimize disruption to running applications.-->
 
-Чтобы масштабировать количество узлов в пуле узлов, используйте команду [AZ AKS node Pool Scale][az-aks-nodepool-scale] . В следующем примере показано масштабирование количества узлов в *минодепул* до *5*:
+To scale the number of nodes in a node pool, use the [az aks node pool scale][az-aks-nodepool-scale] command. The following example scales the number of nodes in *mynodepool* to *5*:
 
 ```azurecli-interactive
 az aks nodepool scale \
@@ -237,7 +237,7 @@ az aks nodepool scale \
     --no-wait
 ```
 
-Снова перечислите состояние пулов узлов с помощью команды [AZ AKS node Pool List][az-aks-nodepool-list] . В следующем примере показано, что *минодепул* находится в состоянии *масштабирования* с новым числом узлов, равным *5* .
+List the status of your node pools again using the [az aks node pool list][az-aks-nodepool-list] command. The following example shows that *mynodepool* is in the *Scaling* state with a new count of *5* nodes:
 
 ```console
 $ az aks nodepool list -g myResourceGroupPools --cluster-name myAKSCluster
@@ -270,24 +270,24 @@ $ az aks nodepool list -g myResourceGroupPools --cluster-name myAKSCluster
 ]
 ```
 
-Выполнение операции масштабирования займет несколько минут.
+It takes a few minutes for the scale operation to complete.
 
-## <a name="scale-a-specific-node-pool-automatically-by-enabling-the-cluster-autoscaler"></a>Автоматическое масштабирование определенного пула узлов путем включения автомасштабирования кластера
+## <a name="scale-a-specific-node-pool-automatically-by-enabling-the-cluster-autoscaler"></a>Scale a specific node pool automatically by enabling the cluster autoscaler
 
-AKS предлагает отдельную функцию автоматического масштабирования пулов узлов с помощью функции, которая называется [автомасштабированием кластера](cluster-autoscaler.md). Эту функцию можно включить для каждого пула узлов с уникальными минимальным и максимальным числом масштабируемых счетчиков на пул узлов. Узнайте, как [использовать Автомасштабирование кластера на пул узлов](cluster-autoscaler.md#use-the-cluster-autoscaler-with-multiple-node-pools-enabled).
+AKS offers a separate feature to automatically scale node pools with a feature called the [cluster autoscaler](cluster-autoscaler.md). This feature can be enabled per node pool with unique minimum and maximum scale counts per node pool. Learn how to [use the cluster autoscaler per node pool](cluster-autoscaler.md#use-the-cluster-autoscaler-with-multiple-node-pools-enabled).
 
-## <a name="delete-a-node-pool"></a>Удаление пула узлов
+## <a name="delete-a-node-pool"></a>Delete a node pool
 
-Если пул больше не нужен, его можно удалить и удалить базовые узлы виртуальных машин. Чтобы удалить пул узлов, выполните команду [AZ AKS node Pool Delete][az-aks-nodepool-delete] и укажите имя пула узлов. В следующем примере удаляется *минудепул* , созданный на предыдущих шагах.
+If you no longer need a pool, you can delete it and remove the underlying VM nodes. To delete a node pool, use the [az aks node pool delete][az-aks-nodepool-delete] command and specify the node pool name. The following example deletes the *mynoodepool* created in the previous steps:
 
 > [!CAUTION]
-> Отсутствуют варианты восстановления для потери данных, которые могут возникнуть при удалении пула узлов. Если не удается запланировать модули Pod в других пулах узлов, эти приложения недоступны. Убедитесь, что пул узлов не удаляется, когда используемые в нем приложения не имеют резервных копий данных или не могут выполняться на других пулах узлов в кластере.
+> There are no recovery options for data loss that may occur when you delete a node pool. If pods can't be scheduled on other node pools, those applications are unavailable. Make sure you don't delete a node pool when in-use applications don't have data backups or the ability to run on other node pools in your cluster.
 
 ```azurecli-interactive
 az aks nodepool delete -g myResourceGroup --cluster-name myAKSCluster --name mynodepool --no-wait
 ```
 
-Следующий пример выходных данных команды [AZ AKS node Pool List][az-aks-nodepool-list] показывает, что *минодепул* находится в состоянии *удаления* :
+The following example output from the [az aks node pool list][az-aks-nodepool-list] command shows that *mynodepool* is in the *Deleting* state:
 
 ```console
 $ az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster
@@ -320,15 +320,15 @@ $ az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster
 ]
 ```
 
-Удаление узлов и пула узлов занимает несколько минут.
+It takes a few minutes to delete the nodes and the node pool.
 
-## <a name="specify-a-vm-size-for-a-node-pool"></a>Указание размера виртуальной машины для пула узлов
+## <a name="specify-a-vm-size-for-a-node-pool"></a>Specify a VM size for a node pool
 
-В предыдущих примерах для создания пула узлов использовался размер виртуальной машины по умолчанию для узлов, созданных в кластере. Более распространенный сценарий — создание пулов узлов с различными размерами и возможностями виртуальных машин. Например, можно создать пул узлов, содержащий узлы с большими объемами ресурсов ЦП или памяти, или пул узлов, который обеспечивает поддержку GPU. На следующем шаге вы [используете таинтс и](#schedule-pods-using-taints-and-tolerations) допуски, чтобы сообщить планировщику Kubernetes, как ограничить доступ к модулям Pod, которые могут выполняться на этих узлах.
+In the previous examples to create a node pool, a default VM size was used for the nodes created in the cluster. A more common scenario is for you to create node pools with different VM sizes and capabilities. For example, you may create a node pool that contains nodes with large amounts of CPU or memory, or a node pool that provides GPU support. In the next step, you [use taints and tolerations](#schedule-pods-using-taints-and-tolerations) to tell the Kubernetes scheduler how to limit access to pods that can run on these nodes.
 
-В следующем примере создайте пул узлов на основе GPU, который использует *Standard_NC6* размер виртуальной машины. Эти виртуальные машины работают на базе карты NVIDIA Tesla K80. Дополнительные сведения о доступных размерах виртуальных машин см. [в статье размеры виртуальной машины Linux в Azure][vm-sizes].
+In the following example, create a GPU-based node pool that uses the *Standard_NC6* VM size. These VMs are powered by the NVIDIA Tesla K80 card. For information on available VM sizes, see [Sizes for Linux virtual machines in Azure][vm-sizes].
 
-Создайте пул узлов с помощью команды [AZ AKS node Pool Add][az-aks-nodepool-add] . На этот раз укажите имя *гпунодепул*и используйте параметр `--node-vm-size`, чтобы указать размер *Standard_NC6* :
+Create a node pool using the [az aks node pool add][az-aks-nodepool-add] command again. This time, specify the name *gpunodepool*, and use the `--node-vm-size` parameter to specify the *Standard_NC6* size:
 
 ```azurecli-interactive
 az aks nodepool add \
@@ -340,7 +340,7 @@ az aks nodepool add \
     --no-wait
 ```
 
-В следующем примере выходных данных команды [AZ AKS node Pool List][az-aks-nodepool-list] показано, что *гпунодепул* *создает* узлы с указанным *VmSize*:
+The following example output from the [az aks node pool list][az-aks-nodepool-list] command shows that *gpunodepool* is *Creating* nodes with the specified *VmSize*:
 
 ```console
 $ az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster
@@ -373,11 +373,11 @@ $ az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster
 ]
 ```
 
-Для успешного создания *гпунодепул* потребуется несколько минут.
+It takes a few minutes for the *gpunodepool* to be successfully created.
 
-## <a name="schedule-pods-using-taints-and-tolerations"></a>Планирование модулей Pod с помощью таинтс и допусков
+## <a name="schedule-pods-using-taints-and-tolerations"></a>Schedule pods using taints and tolerations
 
-Теперь у вас есть два пула узлов в кластере — пул узлов по умолчанию изначально создан и пул узлов на основе GPU. Используйте команду [kubectl Get Nodes][kubectl-get] , чтобы просмотреть узлы в кластере. В следующем примере выходных данных показаны узлы:
+You now have two node pools in your cluster - the default node pool initially created, and the GPU-based node pool. Use the [kubectl get nodes][kubectl-get] command to view the nodes in your cluster. The following example output shows the nodes:
 
 ```console
 $ kubectl get nodes
@@ -392,15 +392,15 @@ aks-nodepool1-28993262-vmss000000    Ready    agent   115m    v1.13.10
 * **Отметка** применяется к узлу, указывая, что на него могут назначаться только определенные модули pod.
 * Затем к модулям pod применяется параметр **toleration**, указывающий, что они *допускают* метку узла.
 
-Дополнительные сведения о том, как использовать расширенные функции Kubernetes Schedule, см. в статье рекомендации [по использованию расширенных функций планировщика в AKS][taints-tolerations] .
+For more information on how to use advanced Kubernetes scheduled features, see [Best practices for advanced scheduler features in AKS][taints-tolerations]
 
-В этом примере примените таинт к узлу на основе GPU с помощью команды [kubectl таинт node][kubectl-taint] . Укажите имя узла на основе GPU из выходных данных предыдущей команды `kubectl get nodes`. Таинт применяется в качестве *ключа: value* , а затем — параметра планирования. В следующем примере используется пара *SKU = GPU* и определяются модули Pod, в противном случае — возможность *непланирования* :
+In this example, apply a taint to your GPU-based node using the [kubectl taint node][kubectl-taint] command. Specify the name of your GPU-based node from the output of the previous `kubectl get nodes` command. The taint is applied as a *key:value* and then a scheduling option. The following example uses the *sku=gpu* pair and defines pods otherwise have the *NoSchedule* ability:
 
 ```console
 kubectl taint node aks-gpunodepool-28993262-vmss000000 sku=gpu:NoSchedule
 ```
 
-В следующем примере манифеста YAML используется отклонения, позволяющие планировщику Kubernetes запускать модуль NGINX на узле на основе GPU. Более подходящий, но пример с большим временем выполнения задания Tensorflow для набора данных MNIST см. [в разделе Использование GPU для рабочих нагрузок с большим количеством вычислений в AKS][gpu-cluster].
+The following basic example YAML manifest uses a toleration to allow the Kubernetes scheduler to run an NGINX pod on the GPU-based node. For a more appropriate, but time-intensive example to run a Tensorflow job against the MNIST dataset, see [Use GPUs for compute-intensive workloads on AKS][gpu-cluster].
 
 Создайте файл `gpu-toleration.yaml` и скопируйте в него следующий пример кода YAML:
 
@@ -427,13 +427,13 @@ spec:
     effect: "NoSchedule"
 ```
 
-Запланируйте модуль Pod с помощью команды `kubectl apply -f gpu-toleration.yaml`:
+Schedule the pod using the `kubectl apply -f gpu-toleration.yaml` command:
 
 ```console
 kubectl apply -f gpu-toleration.yaml
 ```
 
-Планирование Pod и извлечение образа NGINX займет несколько секунд. Чтобы просмотреть состояние Pod, используйте команду [kubectl описание Pod][kubectl-describe] . В следующем сжатом примере выходных данных показано, что применяется отклонения *SKU = GPU:* with. В разделе событий планировщик назначил модулю Pod узел *AKS-гпунодепул-28993262-vmss000000* на основе GPU:
+It takes a few seconds to schedule the pod and pull the NGINX image. Use the [kubectl describe pod][kubectl-describe] command to view the pod status. The following condensed example output shows the *sku=gpu:NoSchedule* toleration is applied. In the events section, the scheduler has assigned the pod to the *aks-gpunodepool-28993262-vmss000000* GPU-based node:
 
 ```console
 $ kubectl describe pod mypod
@@ -452,19 +452,19 @@ Events:
   Normal  Started    4m40s  kubelet, aks-gpunodepool-28993262-vmss000000  Started container
 ```
 
-На узлах в *гпунодепул*можно планировать только модули Pod, к которым применен этот таинт. Любой другой модуль будет запланирован в пуле узлов *nodepool1* . Если вы создаете дополнительные пулы узлов, вы можете использовать дополнительные таинтс и допуски, чтобы ограничить возможности планирования модулей в этих ресурсах узла.
+Only pods that have this taint applied can be scheduled on nodes in *gpunodepool*. Any other pod would be scheduled in the *nodepool1* node pool. If you create additional node pools, you can use additional taints and tolerations to limit what pods can be scheduled on those node resources.
 
-## <a name="manage-node-pools-using-a-resource-manager-template"></a>Управление пулами узлов с помощью шаблона диспетчер ресурсов
+## <a name="manage-node-pools-using-a-resource-manager-template"></a>Manage node pools using a Resource Manager template
 
-При использовании шаблона Azure Resource Manager для создания и управления ресурсами, как правило, можно обновить параметры в шаблоне и повторно развернуть, чтобы обновить ресурс. При использовании пулов узлов в AKS профиль пула узлов не может быть обновлен после создания кластера AKS. Такое поведение означает, что вы не можете обновить существующий шаблон диспетчер ресурсов, внести изменения в пулы узлов и повторно развернуть. Вместо этого необходимо создать отдельный шаблон диспетчер ресурсов, который обновляет только пулы узлов для существующего кластера AKS.
+When you use an Azure Resource Manager template to create and managed resources, you can typically update the settings in your template and redeploy to update the resource. With node pools in AKS, the initial node pool profile can't be updated once the AKS cluster has been created. This behavior means that you can't update an existing Resource Manager template, make a change to the node pools, and redeploy. Instead, you must create a separate Resource Manager template that updates only the node pools for an existing AKS cluster.
 
-Создайте шаблон, например `aks-agentpools.json`, и вставьте следующий пример манифеста. В этом примере шаблона настраиваются следующие параметры.
+Create a template such as `aks-agentpools.json` and paste the following example manifest. This example template configures the following settings:
 
-* Обновляет пул узлов *Linux* с именем *мяжентпул* для запуска трех узлов.
-* Задает узлы в пуле узлов для запуска Kubernetes версии *1.13.10*.
-* Определяет размер узла как *Standard_DS2_v2*.
+* Updates the *Linux* node pool named *myagentpool* to run three nodes.
+* Sets the nodes in the node pool to run Kubernetes version *1.13.10*.
+* Defines the node size as *Standard_DS2_v2*.
 
-Измените эти значения, чтобы обновить, добавить или удалить пулы узлов по мере необходимости:
+Edit these values as need to update, add, or delete node pools as needed:
 
 ```json
 {
@@ -533,7 +533,7 @@ Events:
 }
 ```
 
-Разверните этот шаблон с помощью команды [AZ Group Deployment Create][az-group-deployment-create] , как показано в следующем примере. Появится запрос на ввод имени и расположения существующего кластера AKS:
+Deploy this template using the [az group deployment create][az-group-deployment-create] command, as shown in the following example. You are prompted for the existing AKS cluster name and location:
 
 ```azurecli-interactive
 az group deployment create \
@@ -541,42 +541,42 @@ az group deployment create \
     --template-file aks-agentpools.json
 ```
 
-Обновление кластера AKS может занять несколько минут в зависимости от параметров пула узлов и операций, определенных в шаблоне диспетчер ресурсов.
+It may take a few minutes to update your AKS cluster depending on the node pool settings and operations you define in your Resource Manager template.
 
-## <a name="assign-a-public-ip-per-node-in-a-node-pool"></a>Назначение общедоступного IP-адреса для каждого узла в пуле узлов
+## <a name="assign-a-public-ip-per-node-in-a-node-pool"></a>Assign a public IP per node in a node pool
 
 > [!WARNING]
-> При предварительном просмотре назначения общедоступного IP-адреса на узел он не может использоваться с *Load Balancer (цен. Категория "Стандартный") SKU в AKS* из-за возможных правил подсистемы балансировки нагрузки, конфликтующих с подготовкой виртуальной машины. В предварительной версии необходимо использовать *базовый Load Balancer SKU* , если необходимо назначить общедоступный IP-адрес для каждого узла.
+> During the preview of assigning a public IP per node, it cannot be used with the *Standard Load Balancer SKU in AKS* due to possible load balancer rules conflicting with VM provisioning. While in preview you must use the *Basic Load Balancer SKU* if you need to assign a public IP per node.
 
-Узлы AKS не нуждаются в собственных общедоступных IP-адресах для обмена данными. Однако некоторые сценарии могут потребовать, чтобы узлы в пуле узлов имели собственные общедоступные IP-адреса. В качестве примера можно привести игры, в которых консоль должна установить прямое подключение к облачной виртуальной машине для снижения числа прыжков. Для этого можно зарегистрировать отдельную предварительную версию функции, общедоступный IP-адрес узла (Предварительная версия).
+AKS nodes do not require their own public IP addresses for communication. However, some scenarios may require nodes in a node pool to have their own public IP addresses. An example is gaming, where a console needs to make a direct connection to a cloud virtual machine to minimize hops. This can be achieved by registering for a separate preview feature, Node Public IP (preview).
 
 ```azurecli-interactive
 az feature register --name NodePublicIPPreview --namespace Microsoft.ContainerService
 ```
 
-После успешной регистрации разверните шаблон Azure Resource Manager, следуя тем же инструкциям, что и [выше](#manage-node-pools-using-a-resource-manager-template) , и добавьте свойство логического значения `enableNodePublicIP` в ажентпулпрофилес. Установите значение `true` как по умолчанию, если оно задано как `false`, если оно не указано. Это свойство только для создания, для которого требуется минимальная версия API 2019-06-01. Это можно применить к пулам узлов Linux и Windows.
+After successful registration, deploy an Azure Resource Manager template following the same instructions as [above](#manage-node-pools-using-a-resource-manager-template) and add the boolean value property `enableNodePublicIP` to agentPoolProfiles. Set the value to `true` as by default it is set as `false` if not specified. This is a create-time only property and requires a minimum API version of 2019-06-01. This can be applied to both Linux and Windows node pools.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-В этой статье вы создали кластер AKS, содержащий узлы на основе GPU. Чтобы уменьшить излишнюю стоимость, можно удалить *гпунодепул*или весь кластер AKS.
+In this article, you created an AKS cluster that includes GPU-based nodes. To reduce unnecessary cost, you may want to delete the *gpunodepool*, or the whole AKS cluster.
 
-Чтобы удалить пул узлов на основе GPU, используйте команду [AZ AKS нодепул Delete][az-aks-nodepool-delete] , как показано в следующем примере:
+To delete the GPU-based node pool, use the [az aks nodepool delete][az-aks-nodepool-delete] command as shown in following example:
 
 ```azurecli-interactive
 az aks nodepool delete -g myResourceGroup --cluster-name myAKSCluster --name gpunodepool
 ```
 
-Чтобы удалить сам кластер, выполните команду [AZ Group Delete][az-group-delete] , чтобы удалить группу ресурсов AKS:
+To delete the cluster itself, use the [az group delete][az-group-delete] command to delete the AKS resource group:
 
 ```azurecli-interactive
 az group delete --name myResourceGroup --yes --no-wait
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-В этой статье вы узнали, как создавать и администрировать несколько пулов узлов в кластере AKS. Дополнительные сведения об управлении модулями Pod в пулах узлов см. в разделе рекомендации [по использованию расширенных функций планировщика в AKS][operator-best-practices-advanced-scheduler].
+In this article, you learned how to create and manage multiple node pools in an AKS cluster. For more information about how to control pods across node pools, see [Best practices for advanced scheduler features in AKS][operator-best-practices-advanced-scheduler].
 
-Сведения о создании и использовании пулов узлов контейнера Windows Server см. [в разделе Создание контейнера Windows Server в AKS][aks-windows].
+To create and use Windows Server container node pools, see [Create a Windows Server container in AKS][aks-windows].
 
 <!-- EXTERNAL LINKS -->
 [kubernetes-drain]: https://kubernetes.io/docs/tasks/administer-cluster/safely-drain-node/

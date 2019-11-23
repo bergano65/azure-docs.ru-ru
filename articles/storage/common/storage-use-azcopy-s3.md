@@ -1,6 +1,6 @@
 ---
-title: Перенос данных в хранилище Azure из Amazon S3 контейнеров с помощью AzCopy V10 | Документация Майкрософт
-description: Перенос данных с помощью AzCopy и Amazon S3 контейнеров
+title: Copy data from Amazon S3 to Azure Storage by using AzCopy | Microsoft Docs
+description: Transfer data with AzCopy and Amazon S3 buckets
 services: storage
 author: normesta
 ms.service: storage
@@ -8,37 +8,37 @@ ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: normesta
 ms.subservice: common
-ms.openlocfilehash: b984d194c75924451a52250490b1a5590b996974
-ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
+ms.openlocfilehash: 21f11b9175566fc020ad21e1983a9bef64ebbae3
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72821377"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74327858"
 ---
-# <a name="copy-data-from-amazon-s3-buckets-by-using-azcopy"></a>Копирование данных из Amazon S3 контейнеров с помощью AzCopy
+# <a name="copy-data-from-amazon-s3-to-azure-storage-by-using-azcopy"></a>Copy data from Amazon S3 to Azure Storage by using AzCopy
 
-AzCopy — это служебная программа командной строки, которую можно использовать для копирования больших двоичных объектов или файлов в учетную запись хранения или из нее. Эта статья поможет вам скопировать объекты, каталоги и контейнеры из Amazon Web Services (AWS) S3 в хранилище BLOB-объектов Azure с помощью AzCopy.
+AzCopy is a command-line utility that you can use to copy blobs or files to or from a storage account. This article helps you copy objects, directories, and buckets from Amazon Web Services (AWS) S3 to Azure blob storage by using AzCopy.
 
-## <a name="choose-how-youll-provide-authorization-credentials"></a>Выбор порядка предоставления учетных данных для авторизации
+## <a name="choose-how-youll-provide-authorization-credentials"></a>Choose how you'll provide authorization credentials
 
-* Для авторизации в службе хранилища Azure используйте Azure Active Directory (AD) или маркер подписанного URL-адрес (SAS).
+* To authorize with the Azure Storage, use Azure Active Directory (AD) or a Shared Access Signature (SAS) token.
 
-* Для авторизации с помощью AWS S3 используйте ключ доступа AWS и секретный ключ доступа.
+* To authorize with AWS S3, use an AWS access key and a secret access key.
 
-### <a name="authorize-with-azure-storage"></a>Авторизация в службе хранилища Azure
+### <a name="authorize-with-azure-storage"></a>Authorize with Azure Storage
 
-Ознакомьтесь с статьей начало [работы с AzCopy](storage-use-azcopy-v10.md) , чтобы скачать AzCopy, и выберите способ предоставления учетных данных авторизации для службы хранилища.
+See the [Get started with AzCopy](storage-use-azcopy-v10.md) article to download AzCopy, and choose how you'll provide authorization credentials to the storage service.
 
 > [!NOTE]
-> В примерах, приведенных в этой статье, предполагается, что вы прошли проверку подлинности с помощью команды `AzCopy login`. Затем AzCopy использует учетную запись Azure AD для авторизации доступа к данным в хранилище BLOB-объектов.
+> The examples in this article assume that you've authenticated your identity by using the `AzCopy login` command. AzCopy then uses your Azure AD account to authorize access to data in Blob storage.
 >
-> Если вы предпочитаете использовать маркер SAS для авторизации доступа к данным большого двоичного объекта, можно добавить этот маркер к URL-адресу ресурса в каждой команде AzCopy.
+> If you'd rather use a SAS token to authorize access to blob data, then you can append that token to the resource URL in each AzCopy command.
 >
 > Например, `https://mystorageaccount.blob.core.windows.net/mycontainer?<SAS-token>`.
 
-### <a name="authorize-with-aws-s3"></a>Авторизация с помощью AWS S3
+### <a name="authorize-with-aws-s3"></a>Authorize with AWS S3
 
-Соберите ключ доступа AWS и секретный ключ доступа, а затем задайте следующие переменные среды:
+Gather your AWS access key and secret access key, and then set the these environment variables:
 
 | Операционная система | Команда  |
 |--------|-----------|
@@ -46,17 +46,17 @@ AzCopy — это служебная программа командной ст�
 | **Linux** | `export AWS_ACCESS_KEY_ID=<access-key>`<br>`export AWS_SECRET_ACCESS_KEY=<secret-access-key>` |
 | **MacOS** | `export AWS_ACCESS_KEY_ID=<access-key>`<br>`export AWS_SECRET_ACCESS_KEY=<secret-access-key>`|
 
-## <a name="copy-objects-directories-and-buckets"></a>Копирование объектов, каталогов и контейнеров
+## <a name="copy-objects-directories-and-buckets"></a>Copy objects, directories, and buckets
 
-AzCopy использует [блок размещения из API URL-адреса](https://docs.microsoft.com/rest/api/storageservices/put-block-from-url) , поэтому данные копируются непосредственно между AWS S3 и серверами хранилища. Эти операции копирования не используют пропускную способность сети компьютера.
+AzCopy uses the [Put Block From URL](https://docs.microsoft.com/rest/api/storageservices/put-block-from-url) API, so data is copied directly between AWS S3 and storage servers. These copy operations don't use the network bandwidth of your computer.
 
 > [!IMPORTANT]
-> Эта функция в настоящее время находится на стадии предварительной версии. Если вы решили удалить данные из контейнеров S3 после операции копирования, убедитесь, что данные были правильно скопированы в учетную запись хранения перед удалением данных.
+> Эта функция в настоящее время находится на стадии предварительной версии. If you decide to remove data from your S3 buckets after a copy operation, make sure to verify that the data was properly copied to your storage account before you remove the data.
 
 > [!TIP]
-> В примерах этого раздела аргументы пути заключаются в одинарные кавычки (' '). Используйте одинарные кавычки во всех командных оболочках, кроме командной оболочки Windows (cmd. exe). Если вы используете командную оболочку Windows (cmd. exe), заключите аргументы пути в двойные кавычки ("") вместо одинарных кавычек ("").
+> The examples in this section enclose path arguments with single quotes (''). Use single quotes in all command shells except for the Windows Command Shell (cmd.exe). If you're using a Windows Command Shell (cmd.exe), enclose path arguments with double quotes ("") instead of single quotes ('').
 
-### <a name="copy-an-object"></a>Копирование объекта
+### <a name="copy-an-object"></a>Copy an object
 
 |    |     |
 |--------|-----------|
@@ -64,79 +64,79 @@ AzCopy использует [блок размещения из API URL-адре
 | **Пример** | `azcopy copy 'https://s3.amazonaws.com/mybucket/myobject' 'https://mystorageaccount.blob.core.windows.net/mycontainer/myblob'` |
 
 > [!NOTE]
-> В примерах в этой статье используются URL-адреса в формате Path для контейнеров AWS S3 (например: `http://s3.amazonaws.com/<bucket-name>`). 
+> Examples in this article use path-style URLs for AWS S3 buckets (For example: `http://s3.amazonaws.com/<bucket-name>`). 
 >
-> Кроме того, можно использовать виртуальные URL-адреса в стиле (например: `http://bucket.s3.amazonaws.com`). 
+> You can also use virtual hosted-style URLs as well (For example: `http://bucket.s3.amazonaws.com`). 
 >
-> Дополнительные сведения о виртуальном размещении сегментов см. в разделе [виртуальное размещение сегментов]] (https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html).
+> To learn more about virtual hosting of buckets, see [Virtual Hosting of Buckets]](https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html).
 
-### <a name="copy-a-directory"></a>Копирование каталога
+### <a name="copy-a-directory"></a>Copy a directory
 
 |    |     |
 |--------|-----------|
 | **Синтаксис** | `azcopy copy 'https://s3.amazonaws.com/<bucket-name>/<directory-name>' 'https://<storage-account-name>.blob.core.windows.net/<container-name>/<directory-name>' --recursive=true` |
 | **Пример** | `azcopy copy 'https://s3.amazonaws.com/mybucket/mydirectory' 'https://mystorageaccount.blob.core.windows.net/mycontainer/mydirectory' --recursive=true` |
 
-### <a name="copy-a-bucket"></a>Копирование контейнера
+### <a name="copy-a-bucket"></a>Copy a bucket
 
 |    |     |
 |--------|-----------|
 | **Синтаксис** | `azcopy copy 'https://s3.amazonaws.com/<bucket-name>' 'https://<storage-account-name>.blob.core.windows.net/<container-name>' --recursive=true` |
 | **Пример** | `azcopy copy 'https://s3.amazonaws.com/mybucket' 'https://mystorageaccount.blob.core.windows.net/mycontainer' --recursive=true` |
 
-### <a name="copy-all-buckets-in-all-regions"></a>Копировать все контейнеры во всех регионах
+### <a name="copy-all-buckets-in-all-regions"></a>Copy all buckets in all regions
 
 |    |     |
 |--------|-----------|
 | **Синтаксис** | `azcopy copy 'https://s3.amazonaws.com/' 'https://<storage-account-name>.blob.core.windows.net' --recursive=true` |
 | **Пример** | `azcopy copy 'https://s3.amazonaws.com' 'https://mystorageaccount.blob.core.windows.net' --recursive=true` |
 
-### <a name="copy-all-buckets-in-a-specific-s3-region"></a>Копирование всех контейнеров в заданном регионе S3
+### <a name="copy-all-buckets-in-a-specific-s3-region"></a>Copy all buckets in a specific S3 region
 
 |    |     |
 |--------|-----------|
 | **Синтаксис** | `azcopy copy 'https://s3-<region-name>.amazonaws.com/' 'https://<storage-account-name>.blob.core.windows.net' --recursive=true` |
 | **Пример** | `azcopy copy 'https://s3-rds.eu-north-1.amazonaws.com' 'https://mystorageaccount.blob.core.windows.net' --recursive=true` |
 
-## <a name="handle-differences-in-object-naming-rules"></a>Обработку различий в правилах именования объектов
+## <a name="handle-differences-in-object-naming-rules"></a>Handle differences in object naming rules
 
-AWS S3 имеет разный набор соглашений об именовании для имен контейнеров по сравнению с контейнерами больших двоичных объектов Azure. Сведения о них можно прочитать [здесь](https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules). Если вы решили скопировать группу контейнеров в учетную запись хранения Azure, операция копирования может завершиться ошибкой из-за различий в именах.
+AWS S3 has a different set of naming conventions for bucket names as compared to Azure blob containers. You can read about them [here](https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules). If you choose to copy a group of buckets to an Azure storage account, the copy operation might fail because of naming differences.
 
-AzCopy обрабатывает две наиболее распространенные проблемы, которые могут возникнуть. контейнеры, содержащие периоды и сегменты, которые содержат последовательные дефисы. Имена контейнеров S3 AWS могут содержать точки и последовательные дефисы, но контейнер в Azure не может. AzCopy заменяет точки дефисами и последовательными дефисами числом, представляющим количество последовательных дефисов (например, контейнер с именем `my----bucket` преобразуется в `my-4-bucket`. 
+AzCopy handles two of the most common issues that can arise; buckets that contain periods and buckets that contain consecutive hyphens. AWS S3 bucket names can contain periods and consecutive hyphens, but a container in Azure can't. AzCopy replaces periods with hyphens and consecutive hyphens with a number that represents the number of consecutive hyphens (For example: a bucket named `my----bucket` becomes `my-4-bucket`. 
 
-Кроме того, так как AzCopy выполняет копирование файлов, он проверяет наличие конфликтов именования и пытается разрешить их. Например, если есть контейнеры с именем `bucket-name` и `bucket.name`, то AzCopy разрешает контейнер с именем `bucket.name` сначала `bucket-name`, а затем в `bucket-name-2`.
+Also, as AzCopy copies over files, it checks for naming collisions and attempts to resolve them. For example, if there are buckets with the name `bucket-name` and `bucket.name`, AzCopy resolves a bucket named `bucket.name` first to `bucket-name` and then to `bucket-name-2`.
 
-## <a name="handle-differences-in-object-metadata"></a>Обработку различий в метаданных объекта
+## <a name="handle-differences-in-object-metadata"></a>Handle differences in object metadata
 
-AWS S3 и Azure позволяют использовать разные наборы символов в именах объектных ключей. Вы можете ознакомиться с символами, [которые использует AWS](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys)S3. На стороне Azure ключи объектов большого двоичного объекта соответствуют правилам именования [ C# идентификаторов](https://docs.microsoft.com/dotnet/csharp/language-reference/).
+AWS S3 and Azure allow different sets of characters in the names of object keys. You can read about the characters that AWS S3 uses [here](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys). On the Azure side, blob object keys adhere to the naming rules for [C# identifiers](https://docs.microsoft.com/dotnet/csharp/language-reference/).
 
-В рамках команды AzCopy `copy` можно указать значение для необязательного флага `s2s-invalid-metadata-handle`, который определяет, как следует выполнять обработку файлов, в которых метаданные файла содержат несовместимые имена ключей. В следующей таблице описывается каждое значение флага.
+As part of an AzCopy `copy` command, you can provide a value for optional the `s2s-invalid-metadata-handle` flag that specifies how you would like to handle files where the metadata of the file contains incompatible key names. The following table describes each flag value.
 
-| Значение флага | Описание  |
+| Flag value | Описание  |
 |--------|-----------|
-| **ексклудеифинвалид** | (Параметр по умолчанию) Метаданные не включаются в передаваемый объект. AzCopy регистрирует предупреждение. |
-| **фаилифинвалид** | Объекты не копируются. AzCopy регистрирует ошибку и включает эту ошибку в число сбоев, которое отображается в сводке по перемещению.  |
-| **ренамеифинвалид**  | AzCopy разрешает недопустимый ключ метаданных и копирует объект в Azure с помощью разрешенной пары "ключ — значение метаданных". Чтобы узнать, какие действия AzCopy для переименования объектных ключей, ознакомьтесь с разделом [как AzCopy переименовывает ключи объектов](#rename-logic) ниже. Если AzCopy не удается переименовать ключ, объект не будет скопирован. |
+| **ExcludeIfInvalid** | (Default option) The metadata isn't included in the transferred object. AzCopy logs a warning. |
+| **FailIfInvalid** | Objects aren't copied. AzCopy logs an error and includes that error in the failed count that appears in the transfer summary.  |
+| **RenameIfInvalid**  | AzCopy resolves the invalid metadata key, and copies the object to Azure using the resolved metadata key value pair. To learn exactly what steps AzCopy takes to rename object keys, see the [How AzCopy renames object keys](#rename-logic) section below. If AzCopy is unable to rename the key, then the object won't be copied. |
 
 <a id="rename-logic" />
 
-### <a name="how-azcopy-renames-object-keys"></a>Как AzCopy переименовывает объектные ключи
+### <a name="how-azcopy-renames-object-keys"></a>How AzCopy renames object keys
 
-AzCopy выполняет следующие действия:
+AzCopy performs these steps:
 
-1. Заменяет недопустимые символы символом "_".
+1. Replaces invalid characters with '_'.
 
-2. Добавляет строку `rename_` в начало нового допустимого ключа.
+2. Adds the string `rename_` to the beginning of a new valid key.
 
-   Этот ключ будет использоваться для сохранения исходного **значения**метаданных.
+   This key will be used to save the original metadata **value**.
 
-3. Добавляет строку `rename_key_` в начало нового допустимого ключа.
-   Этот ключ будет использоваться для сохранения исходных метаданных недопустимого **ключа**.
-   Этот ключ можно использовать для попыток восстановления метаданных на стороне Azure, так как ключ метаданных сохраняется как значение в службе хранилища BLOB-объектов.
+3. Adds the string `rename_key_` to the beginning of a new valid key.
+   This key will be used to save original metadata invalid **key**.
+   You can use this key to try and recover the metadata in Azure side since metadata key is preserved as a value on the Blob storage service.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные примеры приведены в любой из следующих статей:
+Find more examples in any of these articles:
 
 - [Get started with AzCopy](storage-use-azcopy-v10.md) (Начало работы с AzCopy)
 

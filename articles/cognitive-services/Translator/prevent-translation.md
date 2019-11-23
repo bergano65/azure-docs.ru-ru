@@ -8,26 +8,31 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: conceptual
-ms.date: 11/18/2019
+ms.date: 11/21/2019
 ms.author: swmachan
-ms.openlocfilehash: dd3684cbd7c03851bfcc75293a9690f77b4652b2
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.openlocfilehash: 15a36451c18d65df6667f24284f3f69f3d1c06b8
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74184817"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74326761"
 ---
 # <a name="how-to-prevent-translation-of-content-with-the-translator-text-api"></a>Запрет перевода содержимого с помощью API перевода текстов
 
 API перевода текстов позволяет помечать содержимое тегами, чтобы оно не переводилось. Например, можно пометить тегами код, название торговой марки, а также слово или фразу, которая не имеет смысла при локализации.
 
 ## <a name="methods-for-preventing-translation"></a>Способы запрета перевода
-1. Для экранирования используйте тег Twitter @somethingtopassthrough или #somethingtopassthrough. Отмените экранирование после перевода. Это регулярное выражение для допустимых тегов Twitter: `\B@[A-Za-z]+[A-Za-z0-9_]+)`. Тег должен начинаться с символа "@", за которым следует символ, а затем один или несколько символов, цифр или символ подчеркивания. Рекомендуется, чтобы теги были короткими, а открывающим тегом — пробел.
+1. Для экранирования используйте тег Twitter @somethingtopassthrough или #somethingtopassthrough. Отмените экранирование после перевода. This is the regular expression for valid twitter tags: `\B@[A-Za-z]+[A-Za-z0-9_]+)`. A tag should start with a "@" sign, followed by a character and then followed by one or many characters, digits or underscore. It is recommended to keep tags short and the opening tag must be preceded by a space.
 
-2. Пометьте содержимое с помощью `notranslate`.
+2. Пометьте содержимое с помощью `notranslate`. It's by design that this works only when the input textType is set as HTML
 
    Пример:
 
+   ```html
+   <span class="notranslate">This will not be translated.</span>
+   <span>This will be translated. </span>
+   ```
+   
    ```html
    <div class="notranslate">This will not be translated.</div>
    <div>This will be translated. </div>
@@ -37,9 +42,9 @@ API перевода текстов позволяет помечать соде
 
 4. Не передавайте строку в API перевода текстов для перевода.
 
-5. Пользовательский переводчик. Используйте [словарь в пользовательском трансляторе](custom-translator/what-is-dictionary.md) , чтобы предписывает перевод фразы с вероятностью 100%.
+5. Custom Translator: Use a [dictionary in Custom Translator](custom-translator/what-is-dictionary.md) to prescribe the translation of a phrase with 100% probability.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 > [!div class="nextstepaction"]
 > [Запрет перевода при вызове API перевода текстов](reference/v3-0-translate.md)

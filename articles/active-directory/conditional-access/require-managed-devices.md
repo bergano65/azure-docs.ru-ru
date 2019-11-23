@@ -1,41 +1,41 @@
 ---
-title: Как для - требуются управляемые устройства для доступа к облаку приложения с помощью Azure Active Directory условного доступа | Документация Майкрософт
-description: Узнайте, как настроить Azure Active Directory (Azure AD) на основе устройств политики условного доступа, требующие управляемых устройств для доступа к приложению в облаке.
+title: Conditional Access require managed device - Azure Active Directory
+description: Learn how to configure Azure Active Directory (Azure AD) device-based Conditional Access policies that require managed devices for cloud app access.
 services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: article
-ms.date: 06/14/2018
+ms.date: 11/21/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jairoc
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e9c99b8390cd43c3f0767123684fe06e0ae74f86
-ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
+ms.openlocfilehash: 31b7aa906cbefc0ffda707a228f2a9d50be351a8
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67509376"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74380029"
 ---
-# <a name="how-to-require-managed-devices-for-cloud-app-access-with-conditional-access"></a>Как Требовать управляемых устройств для доступа к облаку приложения с помощью условного доступа
+# <a name="how-to-require-managed-devices-for-cloud-app-access-with-conditional-access"></a>How To: Require managed devices for cloud app access with Conditional Access
 
 Azure Active Directory (AAD) поддерживает единый вход для приложений и служб из любого расположения, что очень важно в современном мире мобильных и облачных технологий. Авторизованные пользователи могут обращаться к облачным приложениям, используя широкий спектр мобильных и других устройств, в том числе личные устройства. Но во многих средах используются такие приложения, доступ к которым следует разрешать только для тех устройств, для которых соблюдаются определенные стандарты соответствия и безопасности. Такие устройства называются управляемыми устройствами. 
 
-В этой статье объясняется, как можно настроить политики условного доступа, требующие управляемых устройств для доступа к определенным облачным приложениям в вашей среде. 
+This article explains how you can configure Conditional Access policies that require managed devices to access certain cloud apps in your environment. 
 
 ## <a name="prerequisites"></a>Технические условия
 
-Требование управляемых устройств для облачных приложений доступ ties **условного доступа Azure AD** и **управление устройствами Azure AD** друг с другом. Если вы не знакомы с одной из этих областей, ознакомьтесь со следующими статьями:
+Requiring managed devices for cloud app access ties **Azure AD Conditional Access** and **Azure AD device management** together. Если вы не знакомы с одной из этих областей, ознакомьтесь со следующими статьями:
 
-- **[Условный доступ в Azure Active Directory](../active-directory-conditional-access-azure-portal.md)**  — в этой статье предоставляются общие сведения об условном доступе и связанная терминология.
+- **[Conditional Access in Azure Active Directory](../active-directory-conditional-access-azure-portal.md)** - This article provides you with a conceptual overview of Conditional Access and the related terminology.
 - **[Общие сведения об управлении устройствами в Azure Active Directory](../devices/overview.md)** . В этой статье описано несколько вариантов реализации контроля организации за устройствами. 
 
 ## <a name="scenario-description"></a>Описание сценария
 
 Зачастую непросто поддерживать баланс между безопасностью и производительностью. Широкое разнообразие поддерживаемых устройств для доступа к облачным ресурсам помогает повысить эффективность работы пользователей. С другой стороны, вы наверняка захотите оградить некоторые ресурсы в корпоративной среде от доступа устройств с неизвестным уровнем защиты. Для всех таких ресурсов нужно настроить ограничение, разрешающее доступ только с управляемых устройств. 
 
-С помощью условного доступа Azure AD это требование с одну политику, которая предоставляет доступ можно выполнить:
+With Azure AD Conditional Access, you can address this requirement with a single policy that grants access:
 
 - к выбранным облачным приложениям;
 - к выбранным пользователям и группам;
@@ -49,11 +49,11 @@ Azure Active Directory (AAD) поддерживает единый вход дл
 
 Существует три варианта регистрации устройств в Azure AD: 
 
-- **Устройства, зарегистрированные в Azure AD** — Чтобы получить личные устройства, зарегистрированного в Azure AD
-- **Устройства, присоединенные к Azure AD** — для получения организации устройство Windows 10, который не присоединен к локальной AD, зарегистрированы в Azure AD. 
-- **Устройства, присоединенные к гибридной среде Azure AD** — для получения Windows 10 или поддерживаемых устройств нижнего уровня, подключенном к локальной AD, зарегистрированы в Azure AD.
+- **Azure AD registered devices** - to get a personal device registered with Azure AD
+- **Azure AD joined devices** - to get an organizational Windows 10 device that is not joined to an on-premises AD registered with Azure AD. 
+- **Hybrid Azure AD joined devices** - to get a Windows 10 or supported down-level device that is joined to an on-premises AD registered with Azure AD.
 
-В этой статье рассматриваются эти три варианта [что такое удостоверение устройства?](../devices/overview.md)
+These three options are discussed in the article [What is a device identity?](../devices/overview.md)
 
 В качестве управляемых устройств можно использовать зарегистрированные устройства, которые **имеют гибридное присоединение к Azure AD** или **помечены как совместимые**.  
 
@@ -61,7 +61,7 @@ Azure Active Directory (AAD) поддерживает единый вход дл
  
 ## <a name="require-hybrid-azure-ad-joined-devices"></a>Требовать устройства с гибридным присоединением к Azure AD
 
-В политике условного доступа можно выбрать **требуется устройство, присоединенное к гибридной среде Azure AD** чтобы указать, что выбранным облачным приложениям возможен только с помощью управляемых устройств. 
+In your Conditional Access policy, you can select **Require Hybrid Azure AD joined device** to state that the selected cloud apps can only be accessed using a managed device. 
 
 ![Состояния на основе устройства](./media/require-managed-devices/10.png)
 
@@ -93,4 +93,4 @@ Azure Active Directory (AAD) поддерживает единый вход дл
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Прежде чем настраивать политику условного доступа на основе устройств в вашей среде, следует рассмотреть [советы и рекомендации для условного доступа в Azure Active Directory](best-practices.md).
+Before configuring a device-based Conditional Access policy in your environment, you should take a look at the [best practices for Conditional Access in Azure Active Directory](best-practices.md).
