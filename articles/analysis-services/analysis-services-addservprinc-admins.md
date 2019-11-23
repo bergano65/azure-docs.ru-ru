@@ -21,7 +21,7 @@ ms.locfileid: "73573616"
 ## <a name="before-you-begin"></a>Перед началом работы
 Прежде чем приступить к этой задаче, нужно зарегистрировать субъект-службу в Azure Active Directory.
 
-[Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](../active-directory/develop/howto-create-service-principal-portal.md)   
+[Создание субъекта-службы с помощью портала Azure](../active-directory/develop/howto-create-service-principal-portal.md)   
 [Создание субъекта-службы с помощью PowerShell](../active-directory/develop/howto-authenticate-service-principal-powershell.md)
 
 ## <a name="required-permissions"></a>Необходимые разрешения

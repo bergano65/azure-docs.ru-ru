@@ -44,7 +44,7 @@ Azure Analysis Services операции с базой данных исполь
 
 ### <a name="supported-cmdlets"></a>Поддерживаемые командлеты
 
-|Командлет|Description (Описание)|
+|Командлет|ОПИСАНИЕ|
 |------------|-----------------| 
 |[Add-RoleMember](https://docs.microsoft.com/powershell/module/sqlserver/Add-RoleMember)|Добавление участника в роль базы данных.| 
 |[Backup-ASDatabase](https://docs.microsoft.com/powershell/module/sqlserver/backup-asdatabase)|Архивация базы данных Analysis Services.|  

@@ -191,7 +191,7 @@ public static void GracefulShutdownDemo(
 Чтобы написать функцию, которая создает новое сообщение очереди, используйте атрибут **Queue** . Как и в случае с **QueueTrigger**, имя очереди можно передать в виде строки или [задать динамически](#how-to-set-configuration-options).
 
 ### <a name="string-queue-messages"></a>Строковые сообщения очереди
-Следующий пример неасинхронного кода создает новое сообщение очереди в очереди с именем «outputqueue» с тем же содержимым, что и сообщение очереди, поступившее в очередь с именем «inputqueue». (Для асинхронных функций используйте **IAsyncCollector @ no__t-1T >** , как показано далее в этом разделе.)
+Следующий пример неасинхронного кода создает новое сообщение очереди в очереди с именем «outputqueue» с тем же содержимым, что и сообщение очереди, поступившее в очередь с именем «inputqueue». (Для асинхронных функций используйте **IAsyncCollector\<t >** , как показано далее в этом разделе.)
 
 ```csharp
 public static void CreateQueueMessage(
@@ -217,7 +217,7 @@ public static void CreateQueueMessage(
 Пакет SDK автоматически выполняет сериализацию объекта в формат JSON. Сообщение очереди создается всегда, даже если объект имеет значение null.
 
 ### <a name="create-multiple-messages-or-in-async-functions"></a>Создание нескольких сообщений или сообщений в асинхронных функциях
-Чтобы создать несколько сообщений, сделайте тип параметра для выходной очереди **ICollector @ no__t-1T >** или **IAsyncCollector @ no__t-3T >** , как показано в следующем примере.
+Чтобы создать несколько сообщений, сделайте тип параметра для очереди вывода **ICollector\<t >** или **IAsyncCollector\<t >** , как показано в следующем примере.
 
 ```csharp
 public static void CreateQueueMessages(
@@ -551,7 +551,7 @@ public static void WriteLog(
         [09/26/2014 21:01:13 > 491e54: ERR ] Console.Error - Hello world!
         [09/26/2014 21:01:13 > 491e54: INFO] Console.Out - Hello world!
 
-В BLOB-объекте Azure журналы приложений выглядят следующим образом: 2014-09-26T21:01:13,Information,contosoadsnew,491e54,635473620738373502,0,17404,17,Console.Write - Hello world!, 2014-09-26T21:01:13,Error,contosoadsnew,491e54,635473620738373502,0,17404,19,Console.Error - Hello world!, 2014-09-26T21:01:13,Information,contosoadsnew,491e54,635473620738529920,0,17404,17,Console.Out - Hello world!.
+Вот как выглядят журналы приложений в большом двоичном объекте Azure: 2014-09-26T21:01:13,Information,contosoadsnew,491e54,635473620738373502,0,17404,17,Console.Write - Hello world!, 2014-09-26T21:01:13,Error,contosoadsnew,491e54,635473620738373502,0,17404,19,Console.Error - Hello world!, 2014-09-26T21:01:13,Information,contosoadsnew,491e54,635473620738529920,0,17404,17,Console.Out - Hello world!,
 
 В таблице Azure журналы **Console.Out** и **Console.Error** выглядят следующим образом.
 
@@ -559,6 +559,6 @@ public static void WriteLog(
 
 ![Журнал Error в таблице](./media/vs-storage-webjobs-getting-started-queues/tableerror.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 В этой статье предоставлены примеры кода обработки обычных сценариев для работы с очередями Azure. Дополнительная информация об использовании веб-заданий Azure и пакета SDK для веб-заданий доступна в [ресурсах с документацией по веб-заданиям Azure](https://go.microsoft.com/fwlink/?linkid=390226).
 

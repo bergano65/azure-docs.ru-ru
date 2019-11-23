@@ -184,7 +184,7 @@ WITH PRIVATE KEY (<private_key_options>)
 - [Резервное копирование главного ключа службы](/sql/t-sql/statements/backup-service-master-key-transact-sql) не поддерживается (управляется службой базы данных SQL).
 - [Восстановление главного ключа службы](/sql/t-sql/statements/restore-service-master-key-transact-sql) не поддерживается (управляется службой базы данных SQL).
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Конфигурация
 
 ### <a name="buffer-pool-extension"></a>Расширение буферного пула
 
@@ -302,7 +302,7 @@ WITH PRIVATE KEY (<private_key_options>)
 - прокси-серверы;
 - Планирование заданий на неактивном ЦП
 - Включение или отключение агента
-- Оповещения
+- Предупреждения
 
 Сведения об агенте SQL Server см. в статье [Агент SQL Server](/sql/ssms/agent/sql-server-agent).
 

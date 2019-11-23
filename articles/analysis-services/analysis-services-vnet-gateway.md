@@ -35,7 +35,7 @@ ms.locfileid: "73572276"
     ![Свойство AlwaysUseGateway](media/analysis-services-vnet-gateway/aas-ssms-always-property.png)
 
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также
 [Подключение к локальным источникам данных](analysis-services-gateway.md)   
 [Установка и настройка локального шлюза данных](analysis-services-gateway-install.md)   
 [Виртуальная сеть Azure](../virtual-network/virtual-networks-overview.md)   

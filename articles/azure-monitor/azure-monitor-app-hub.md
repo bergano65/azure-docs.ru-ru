@@ -135,7 +135,7 @@ ms.locfileid: "72899163"
                                                         <br><br>
                                                         <h3>Приложения .NET</h3>
                                                         <p>
-                                                            <a href="./app/asp-net.md">Мониторинг служб и приложений Node.js с помощью Application Insights</a><br>
+                                                            <a href="./app/asp-net.md">Настройка Application Insights для веб-сайта ASP.NET</a><br>
                                                             <a href="./app/monitor-performance-live-website-now.md">Монитор состояния</a><br>
                                                             <a href="./app/azure-web-apps.md">Мониторинг производительности Службы приложений Azure</a><br>
                                                             <a href="./app/azure-vm-vmss-apps.md">Мониторинг приложений масштабируемого набора виртуальной машины и виртуальных машин</a><br>
@@ -145,7 +145,7 @@ ms.locfileid: "72899163"
                                                         <br><br>
                                                           <h3>Приложения .NET Core</h3>
                                                         <p>
-                                                            <a href="./app/asp-net-core.md">Мониторинг служб и приложений Node.js с помощью Application Insights</a><br>
+                                                            <a href="./app/asp-net-core.md">Настройка Application Insights для веб-сайта ASP.NET</a><br>
                                                             <a href="./app/profiler-aspnetcore-linux.md">Профилирование веб-приложений ASP.NET Core в Azure для Linux с помощью Application Insights Profiler</a><br>
                                                             <a href="./app/api-custom-events-metrics.md">Пользовательские события и метрики</a><br>
                                                             <a href="https://github.com/Microsoft/ApplicationInsights-aspnetcore">Пакет SDK для .NET Core репозиторий GitHub с открытым исходным кодом</a>
@@ -153,14 +153,14 @@ ms.locfileid: "72899163"
                                                         <br><br>
                                                           <h3>Приложения Node.js</h3>
                                                         <p>
-                                                            <a href="./app/nodejs.md">Мониторинг служб и приложений Node.js с помощью Application Insights</a><br>
+                                                            <a href="./app/nodejs.md">Настройка Application Insights для веб-сайта ASP.NET</a><br>
                                                             <a href="./app/api-custom-events-metrics.md">Пользовательские события и метрики</a><br>
                                                             <a href="https://github.com/Microsoft/ApplicationInsights-node.js">Репозиторий GitHub пакета SDK для Node. js с открытым кодом</a>
                                                         </p>
                                                         <br><br>
                                                         <h3>Мониторинг на стороне клиента или браузера</h3>
                                                         <p>
-                                                            <a href="./app/javascript.md">Мониторинг служб и приложений Node.js с помощью Application Insights</a><br>
+                                                            <a href="./app/javascript.md">Настройка Application Insights для веб-сайта ASP.NET</a><br>
                                                             <a href="./app/api-custom-events-metrics.md">Пользовательские события и метрики</a><br>
                                                             <a href="https://github.com/Microsoft/ApplicationInsights-JS">Репозиторий GitHub пакета SDK для JavaScript с открытым кодом</a><br>
                                                         </p>
@@ -182,13 +182,13 @@ ms.locfileid: "72899163"
                                                             <a href="./app/usage-funnels.md">Воронки</a><br>
                                                             <a href="./app/usage-cohorts.md">Когорты</a><br>
                                                             <a href="./app/usage-impact.md">Влияние</a><br>
-                                                            <a href="./app/usage-retention.md">Сохранение</a><br>
+                                                            <a href="./app/usage-retention.md">Удержание</a><br>
                                                             <a href="./app/usage-flows.md">Маршруты пользователей</a>
                                                         </p>
                                                         <br><br>
                                                         <h3>Мониторинг в реальном времени,<br> визуализация и анализ</h3>
                                                         <p>
-                                                            <a href="./app/overview-dashboard.md">Обзорная панель мониторинга Application Insights</a><br>
+                                                            <a href="./app/overview-dashboard.md">Обзорная панель мониторинга Application Insights&amp;<br>
                                                             <a href="./app/monitor-web-app-availability.md">Наблюдение за доступностью и скоростью реагирования веб-сайта</a><br>
                                                             <a href="./app/live-stream.md">Live Metrics Stream: мониторинг и диагностика с задержкой в 1 секунду</a><br>
                                                             <a href="./app/app-map.md">Схема приложений: рассмотрение распределенных приложений</a><br>
@@ -203,7 +203,7 @@ ms.locfileid: "72899163"
                                                             <a href="https://docs.microsoft.com/azure/log-analytics/log-analytics-personal-data-mgmt">Руководство по хранению персональных данных в Log Analytics и Application Insights</a><br>
                                                             <a href="./app/data-retention-privacy.md">Сбор, период удержания и &amp;хранение данных</a><br>
                                                             <a href="./app/resources-roles-access-control.md">Ресурсы, роли и контроль доступа в Application Insights</a><br>
-                                                            <a href="./app/ip-addresses.md">IP-адреса, используемые Application Insights и Log Analytics</a><br>
+                                                            <a href="./app/ip-addresses.md">IP-адреса, используемые Application Insights и Log Analytics&amp;<br>
                                                             <a href="https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-usage-and-estimated-costs">Использование и оценка затрат</a>
                                                         </p>
                                                         <br><br>
@@ -211,10 +211,10 @@ ms.locfileid: "72899163"
                                                         <p>
                                                             <a href="./app/data-model.md">Обзор</a><br>
                                                             <a href="./app/data-model-request-telemetry.md">Запрос</a><br>
-                                                            <a href="./app/data-model-dependency-telemetry.md">Зависимость</a><br>
+                                                            <a href="./app/data-model-dependency-telemetry.md">Dependency</a><br>
                                                             <a href="./app/data-model-exception-telemetry.md">Исключение</a><br>
                                                             <a href="./app/data-model-trace-telemetry.md">Трассировка</a><br>
-                                                            <a href="./app/data-model-event-telemetry.md">Событие</a><br>
+                                                            <a href="./app/data-model-event-telemetry.md">Event</a><br>
                                                             <a href="./app/data-model-metric-telemetry.md">Метрика</a><br>
                                                                                                                          <a href="./app/data-model-context.md">контекста</a>
 </p>

@@ -1,6 +1,6 @@
 ---
-title: Connect privately to a storage account using Azure Private Endpoint
-description: Learn how to connect privately to a storage account in Azure using a Private Endpoint.
+title: Подключение в частном порядке к учетной записи хранения с помощью частной конечной точки Azure
+description: Узнайте, как подключаться к учетной записи хранения в Azure с помощью частной конечной точки.
 services: private-link
 author: asudbring
 ms.service: private-link
@@ -14,33 +14,33 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74228093"
 ---
-# <a name="connect-privately-to-a-storage-account-using-azure-private-endpoint"></a>Connect privately to a storage account using Azure Private Endpoint
-Azure Private Endpoint is the fundamental building block for Private Link in Azure. It enables Azure resources, like virtual machines (VMs), to communicate privately with Private Link resources.
+# <a name="connect-privately-to-a-storage-account-using-azure-private-endpoint"></a>Подключение в частном порядке к учетной записи хранения с помощью частной конечной точки Azure
+Частная конечная точка Azure — это фундаментальный Стандартный блок для частной ссылки в Azure. Она позволяет ресурсам Azure, таким как виртуальные машины, обмениваться данными с частными ресурсами.
 
-In this Quickstart, you will learn how to create a VM on an Azure virtual network, a storage account with a Private Endpoint using the Azure portal. Then, you can securely access the storage account from the VM.
+В этом кратком руководстве вы узнаете, как создать виртуальную машину в виртуальной сети Azure, учетную запись хранения с частной конечной точкой, используя портал Azure. Затем вы можете безопасно получить доступ к учетной записи хранения из виртуальной машины.
 
 
-## <a name="sign-in-to-azure"></a>Войдите в Azure
+## <a name="sign-in-to-azure"></a>Вход в Azure
 
 Войдите на портал Azure по адресу https://portal.azure.com.
 
-## <a name="create-a-vm"></a>Создание ВМ
-In this section, you will create virtual network and the subnet to host the VM that is used to access your Private Link Resource (a storage account in this example).
+## <a name="create-a-vm"></a>Создание виртуальной машины
+В этом разделе вы создадите виртуальную сеть и подсеть для размещения виртуальной машины, которая используется для доступа к ресурсу частной ссылки (учетная запись хранения в этом примере).
 
 ### <a name="create-the-virtual-network"></a>Создание виртуальной сети
 
-In this section, you will create virtual network and the subnet to host the VM that is used to access your Private Link resource.
+В этом разделе вы создадите виртуальную сеть и подсеть для размещения виртуальной машины, которая используется для доступа к ресурсу частной ссылки.
 
 1. Вверху с левой стороны экрана последовательно выберите **Создать ресурс** > **Сети** > **Виртуальная сеть**.
 1. В подменю **Создать виртуальную сеть** введите или выберите следующую информацию:
 
-    | Параметр | Value |
+    | Настройка | Значение |
     | ------- | ----- |
     | Name | Введите *myVirtualNetwork*. |
     | Пространство адресов | Введите *10.1.0.0/16*. |
-    | Subscription | Выберите свою подписку.|
-    | группа ресурсов. | Выберите **Создать**, а затем введите *myResourceGroup* и нажмите кнопку **ОК**. |
-    | Location | Выберите **WestCentralUS**.|
+    | подписку | Выберите свою подписку.|
+    | Группа ресурсов | Выберите **Создать**, а затем введите *myResourceGroup* и нажмите кнопку **ОК**. |
+    | Место проведения | Выберите **WestCentralUS**.|
     | Имя подсети | Введите *mySubnet*. |
     | Диапазон адреса подсети | Введите *10.1.0.0/24*. |
     |||
@@ -49,20 +49,20 @@ In this section, you will create virtual network and the subnet to host the VM t
 
 ### <a name="create-virtual-machine"></a>Создание виртуальной машины
 
-1. On the upper-left side of the screen in the Azure portal, select **Create a resource** > **Compute** > **Virtual machine**.
+1. В верхней левой части экрана портал Azure выберите **создать ресурс** > **вычислений** > **Виртуальная машина**.
 
 1. В окне **Создание виртуальной машины — Основы** введите или выберите следующую информацию:
 
-    | Параметр | Value |
+    | Настройка | Значение |
     | ------- | ----- |
     | **Сведения о проекте** | |
-    | Subscription | Выберите свою подписку. |
-    | группа ресурсов. | Выберите **myResourceGroup**. Вы создали ее в предыдущем разделе.  |
+    | подписку | Выберите свою подписку. |
+    | Группа ресурсов | Выберите **myResourceGroup**. Вы создали ее в предыдущем разделе.  |
     | **Подробности об экземпляре** |  |
     | Имя виртуальной машины | Введите *myVm*. |
     | Регион | Выберите **WestCentralUS**. |
     | Параметры доступности | Оставьте значение по умолчанию **No infrastructure redundancy required** (Избыточность инфраструктуры не требуется). |
-    | Изображение | Выберите **Центр обработки данных Windows Server 2019**. |
+    | Образ — | Выберите **Центр обработки данных Windows Server 2019**. |
     | Размер | Оставьте значение по умолчанию **Standard DS1 v2**. |
     | **Учетная запись администратора** |  |
     | Имя пользователя | Введите выбранное имя пользователя. |
@@ -74,13 +74,13 @@ In this section, you will create virtual network and the subnet to host the VM t
     | Already have a Windows license? (У вас уже есть лицензия Windows?) | Оставьте значение по умолчанию **Нет**. |
     |||
 
-1. Select **Next: Disks**.
+1. Выберите **Далее: диски**.
 
-1. In **Create a virtual machine - Disks**, leave the defaults and select **Next: Networking**.
+1. В окне **Создание виртуальной машины — диски**оставьте значения по умолчанию и нажмите кнопку **Далее: Сетевые подключения**.
 
 1. В окне **Создание виртуальной машины — Сети** выберите такую информацию:
 
-    | Параметр | Value |
+    | Настройка | Значение |
     | ------- | ----- |
     | Виртуальная сеть | Оставьте значение по умолчанию **myVirtualNetwork**.  |
     | Пространство адресов | Оставьте значение по умолчанию **10.1.0.0/24**.|
@@ -94,56 +94,56 @@ In this section, you will create virtual network and the subnet to host the VM t
 
 1. При появлении сообщения **Проверка пройдена** нажмите кнопку **Создать**.
 
-## <a name="create-your-private-endpoint"></a>Create your Private Endpoint
-In this section, you will create a private storage account using a Private Endpoint to it. 
+## <a name="create-your-private-endpoint"></a>Создание частной конечной точки
+В этом разделе вы создадите закрытую учетную запись хранения, используя для нее закрытую конечную точку. 
 
-1. On the upper-left side of the screen in the Azure portal, select **Create a resource** > **Storage** > **Storage account**.
+1. В верхней левой части экрана портал Azure выберите **создать ресурс** > **хранилище** > **учетная запись хранения**.
 
-1. In **Create storage account - Basics**, enter or select this information:
+1. В статье **Создание учетной записи хранения — основные**сведения введите или выберите следующую информацию:
 
-    | Параметр | Value |
+    | Настройка | Значение |
     | ------- | ----- |
     | **Сведения о проекте** | |
-    | Subscription | Выберите свою подписку. |
-    | группа ресурсов. | Выберите **myResourceGroup**. Вы создали ее в предыдущем разделе.|
+    | подписку | Выберите свою подписку. |
+    | Группа ресурсов | Выберите **myResourceGroup**. Вы создали ее в предыдущем разделе.|
     | **Подробности об экземпляре** |  |
-    | Имя учетной записи хранения  | Enter *mystorageaccount*. Если это имя используется, создайте уникальное имя. |
+    | Имя учетной записи хранения  | Введите *mystorageaccount*. Если это имя используется, создайте уникальное имя. |
     | Регион | Выберите **WestCentralUS**. |
-    | Ориентированное на производительность| Оставьте значение по умолчанию **Стандартная**. |
-    | Тип учетной записи | Leave the default **Storage (general purpose v2)** . |
-    | Репликация | Select **Read-access geo-redundant storage (RA-GRS)** . |
+    | Производительность| Оставьте значение по умолчанию **Стандартная**. |
+    | Тип учетной записи | Оставьте хранилище по умолчанию **(общее назначение версии 2)** . |
+    | Репликация | Выберите **геоизбыточное хранилище с доступом для чтения (RA-GRS)** . |
     |||
   
-3. Select **Next: Networking**.
-4. In **Create a storage account - Networking**, connectivity method, select **Private Endpoint**.
-5. In **Create a storage account - Networking**, select **Add Private Endpoint**. 
-6. In **Create Private Endpoint**, enter or select this information:
+3. Выберите **Далее: сети**.
+4. В окне **Создание учетной записи хранения —** подключение к сети, метод подключения выберите **Частная конечная точка**.
+5. В окне **Создание учетной записи хранения — сеть**выберите **Добавить частную конечную точку**. 
+6. В окне **Создание частной конечной точки**введите или выберите следующие сведения:
 
-    | Параметр | Value |
+    | Настройка | Значение |
     | ------- | ----- |
     | **Сведения о проекте** | |
-    | Subscription | Выберите свою подписку. |
-    | группа ресурсов. | Выберите **myResourceGroup**. Вы создали ее в предыдущем разделе.|
-    |Location|Выберите **WestCentralUS**.|
-    |Name|Enter *myPrivateEndpoint*.  |
-    |Storage sub-resource|Leave the default **Blob**. |
+    | подписку | Выберите свою подписку. |
+    | Группа ресурсов | Выберите **myResourceGroup**. Вы создали ее в предыдущем разделе.|
+    |Место проведения|Выберите **WestCentralUS**.|
+    |Name|Введите *миприватиндпоинт*.  |
+    |Подресурс хранилища|Оставьте **большой двоичный объект**по умолчанию. |
     | **СЕТИ** |  |
-    | Виртуальная сеть  | Select *MyVirtualNetwork* from resource group *myResourceGroup*. |
+    | Виртуальная сеть  | Выберите *MyVirtualNetwork* из группы ресурсов *myResourceGroup*. |
     | Подсеть | Выберите *mySubnet*. |
     | **ЧАСТНАЯ ИНТЕГРАЦИЯ DNS**|  |
-    | Интеграция с частной зоной DNS  | Leave the default **Yes**. |
-    | Частная зона DNS  | Leave the default ** (New) privatelink.blob.core.windows.net**. |
+    | Интеграция с частной зоной DNS  | Оставьте значение по умолчанию **Да**. |
+    | Частная зона DNS  | Оставьте значение по умолчанию * * (новое) privatelink.blob.core.windows.net * *. |
     |||
 7. Нажмите кнопку **ОК**. 
 8. Выберите **Review + create** (Просмотреть и создать). Вы будете перенаправлены на страницу **Просмотр и создание**, где Azure проверит вашу конфигурацию. 
 9. При появлении сообщения **Проверка пройдена** нажмите кнопку **Создать**. 
-10. Browse to the storage account resource that you just created.
-11. Select **Access Keys** from the left content menu.
-12. Select **Copy** on the connection string for key1.
+10. Перейдите к только что созданному ресурсу учетной записи хранения.
+11. Выберите **ключи доступа** в меню с содержимым слева.
+12. Выберите **Копировать** в строке подключения для key1.
  
 ## <a name="connect-to-a-vm-from-the-internet"></a>Подключение к виртуальной машине из Интернета
 
-Connect to the VM *myVm* from the internet as follows:
+Подключитесь к виртуальной машине *myVm* из Интернета следующим образом:
 
 1. На портале в строке поиска введите *myVm*.
 
@@ -166,15 +166,15 @@ Connect to the VM *myVm* from the internet as follows:
 
 1. Когда появится рабочий стол виртуальной машины, сверните его, чтобы вернуться на локальный рабочий стол.  
 
-## <a name="access-storage-account-privately-from-the-vm"></a>Access storage account privately from the VM
+## <a name="access-storage-account-privately-from-the-vm"></a>Доступ к учетной записи хранения в частном порядке с виртуальной машины
 
-In this section, you will connect privately to the storage account using the Private Endpoint.
+В этом разделе вы будете подключаться к учетной записи хранения с помощью частной конечной точки.
 
 > [!IMPORTANT]
-> DNS configuration for storage needs a manual modification on the hosts file to include the FQDN of the specific account Please modify the following file using administrator permissions on Windows: c:\Windows\System32\Drivers\etc\hosts or Linux /etc/hosts Include the DNS information for the account from previous step in the following format [Private IP Address] myaccount.blob.core.windows.net
+> Конфигурации DNS для хранилища требуется ручное изменение файла hosts для включения полного доменного имени конкретной учетной записи. Измените следующий файл с помощью разрешений администратора в Windows: c:\Windows\System32\Drivers\etc\hosts или Linux/etc/hosts Включите сведения DNS для учетной записи из предыдущего шага в следующем формате [частный IP-адрес] myaccount.blob.core.windows.net
 
 1. На удаленном рабочем столе  *myVm* откройте PowerShell.
-2. Enter `nslookup mystorageaccount.blob.core.windows.net` You'll receive a message similar to this:
+2. Введите `nslookup mystorageaccount.blob.core.windows.net` вы получите примерно следующее сообщение:
     ```azurepowershell
     Server:  UnKnown
     Address:  168.63.129.16
@@ -184,28 +184,28 @@ In this section, you will connect privately to the storage account using the Pri
     Aliases:  mystorageaccount.blob.core.windows.net
     ```
 3. Установите [Обозреватель службы хранилища Microsoft Azure](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json&tabs=windows).
-4. Select **Storage accounts** with the right-click.
-5. Select **Connect to an azure storage**.
-6. Select **Use a connection string**.
-7. Щелкните **Далее**.
-8. Enter the connection string by pasting the information previously copied.
-9. Щелкните **Далее**.
+4. Выберите **учетные записи хранения** с помощью щелчка правой кнопкой мыши.
+5. Выберите **подключиться к службе хранилища Azure**.
+6. Выберите **использовать строку подключения**.
+7. Нажмите кнопку **Далее**.
+8. Введите строку подключения, вставляя скопированную ранее информацию.
+9. Нажмите кнопку **Далее**.
 10. Нажмите кнопку **Подключиться**.
-11. Browse the Blob containers from mystorageaccount 
-12. (Optionally) Create folders and/or upload files to *mystorageaccount*. 
-13. Close the remote desktop connection to *myVM*. 
+11. Просмотр контейнеров больших двоичных объектов из mystorageaccount 
+12. При необходимости Создание папок и/или отправка файлов в *mystorageaccount*. 
+13. Закройте подключение к удаленному рабочему столу *myVM*. 
 
-Additional options to access the storage account:
-- Microsoft Azure Storage Explorer is a standalone free app from Microsoft that enables you to work visually with Azure storage data on Windows, macOS, and Linux. You can install the application to browse privately the storage account content. 
+Дополнительные параметры для доступа к учетной записи хранения:
+- Обозреватель службы хранилища Microsoft Azure — это автономное бесплатное приложение от корпорации Майкрософт, позволяющее визуально работать с данными службы хранилища Azure в Windows, macOS и Linux. Вы можете установить приложение, чтобы в частном порядке просмотреть содержимое учетной записи хранения. 
  
-- The AzCopy utility is another option for high-performance scriptable data transfer for Azure storage. С помощью AzCopy можно передавать данные из хранилища BLOB-объектов, таблиц и файлов и обратно. 
+- Служебная программа AzCopy — это еще один вариант для высокопроизводительной передаваемой данных с поддержкой скриптов для службы хранилища Azure. С помощью AzCopy можно передавать данные из хранилища BLOB-объектов, таблиц и файлов и обратно. 
 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов 
-When you're done using the Private Endpoint, storage account and the VM, delete the resource group and all of the resources it contains: 
+Когда вы закончите использовать закрытую конечную точку, учетную запись хранения и виртуальную машину, удалите группу ресурсов и все содержащиеся в ней ресурсы. 
 1. Введите *myResourceGroup* в поле **Поиск** в верхней части портала и выберите *myResourceGroup* в результатах поиска. 
 2. Выберите **Удалить группу ресурсов**. 
-3. Enter *myResourceGroup* for **TYPE THE RESOURCE GROUP NAME** and select **Delete**. 
+3. Введите *myResourceGroup* **в поле введите имя группы ресурсов** и выберите **Удалить**. 
 
-## <a name="next-steps"></a>Дальнейшие действия
-In this Quickstart, you created a VM on a virtual network and storage account and a Private Endpoint. You connected to one VM from the internet and securely communicated to the storage account using Private Link. To learn more about Private Endpoint, see [What is Azure Private Endpoint?](private-endpoint-overview.md).
+## <a name="next-steps"></a>Дополнительная информация
+В этом кратком руководстве вы создали виртуальную машину в виртуальной сети, учетной записи хранения и частной конечной точке. Вы подключились к одной виртуальной машине из Интернета и безопасно взаимодействовали с учетной записью хранения, используя закрытую ссылку. Дополнительные сведения о частных конечных точках см. в статье [что такое частная конечная точка Azure?](private-endpoint-overview.md).

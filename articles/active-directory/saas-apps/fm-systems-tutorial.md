@@ -8,18 +8,19 @@ manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: f78c58c5-6e98-458b-8991-78624a245665
 ms.service: active-directory
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/05/2019
 ms.author: jeedes
-ms.openlocfilehash: 62e800a5ac1e1e001e5d4ef328a80c554d007182
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e7f5e003a058cd94e6e4a4440c512217c387fda3
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67102345"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73158155"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-fmsystems"></a>Руководство по Интеграция Azure Active Directory с FM:Systems
 
@@ -183,15 +184,15 @@ ms.locfileid: "67102345"
 
 2. Последовательно выберите **System Administration \> Manage Security \> Users \> User list** (Системное администрирование > Управление безопасностью > Пользователи > Список пользователей).
    
-    ![Администрирование системы](./media/fm-systems-tutorial/ic795905.png "Администрирование системы")
+    ![Системное администрирование](./media/fm-systems-tutorial/ic795905.png "Системное администрирование")
 
 3. Нажмите **Создать нового пользователя**.
    
-    ![Создание пользователя](./media/fm-systems-tutorial/ic795906.png "Создание пользователя")
+    ![Создание пользователя](./media/fm-systems-tutorial/ic795906.png "Создать нового пользователя")
 
 4. В разделе **Создание пользователя** выполните следующие действия.
    
-    ![Создание пользователя](./media/fm-systems-tutorial/ic795907.png "Создание пользователя")
+    ![Создание пользователя](./media/fm-systems-tutorial/ic795907.png "Создать пользователя")
    
     a. В текстовых полях **Имя пользователя**, **Пароль**, **Подтверждение пароля**, **Адрес электронной почты** и **Идентификатор сотрудника** введите соответствующие данные для действующей учетной записи Azure Active Directory, которую хотите подготовить.
    
@@ -209,5 +210,5 @@ ms.locfileid: "67102345"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

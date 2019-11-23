@@ -204,7 +204,7 @@ PostgreSQL предоставляет возможность расширить 
 
 
 ## <a name="pg_stat_statements"></a>pg_stat_statements
-Расширение pg_stat_statements предварительно загружено на каждом сервере базы данных Azure для PostgreSQL, чтобы предоставить средства отслеживания статистики выполнения инструкций SQL.
+Расширение pg_stat_statements предварительно загружается на каждом сервере базы данных Azure для PostgreSQL для предоставления средств отслеживания статистики выполнения инструкций SQL.
 Параметр `pg_stat_statements.track`, который управляет тем, какие инструкции учитываются расширением, по умолчанию имеет значение `top`. Это означает, что все инструкции, выпущенные непосредственно клиентами, отслеживаются. Два других уровня отслеживания: `none` и `all`. Этот параметр можно настроить в качестве параметра сервера с помощью [портала Azure](https://docs.microsoft.com/azure/postgresql/howto-configure-server-parameters-using-portal) или [Azure CLI](https://docs.microsoft.com/azure/postgresql/howto-configure-server-parameters-using-cli).
 
 Существует компромисс между информацией о выполнении запроса, предоставляемой pg_stat_statements, и воздействием на производительность сервера при регистрации каждой инструкции SQL. Если расширение pg_stat_statements не используется активно, рекомендуется задать для параметра `pg_stat_statements.track` значение `none`. Обратите внимание, что некоторые сторонние службы мониторинга могут зависеть от pg_stat_statements при предоставлении информации о производительности запроса, поэтому подтвердите ваш ли это случай.
@@ -227,7 +227,7 @@ dblink и postgres_fdw позволяют подключаться с одног
 [Узнайте больше о тимескаледб](https://docs.timescale.com/latest), охраняемом товарном знаке [шкалы времени, Inc.](https://www.timescale.com/)
 
 ### <a name="installing-timescaledb"></a>Установка Тимескаледб
-Чтобы установить Тимескаледб, необходимо включить его в общие библиотеки предварительной загрузки сервера. Для вступления в силу изменения параметра `shared_preload_libraries` требуется **перезапуск сервера** . Параметры можно изменить с помощью [портал Azure](howto-configure-server-parameters-using-portal.md) или [Azure CLI](howto-configure-server-parameters-using-cli.md).
+Чтобы установить Тимескаледб, необходимо включить его в общие библиотеки предварительной загрузки сервера. Для вступления в силу изменения параметра `shared_preload_libraries` postgres требуется **Перезагрузка сервера** . Параметры можно изменить с помощью [портал Azure](howto-configure-server-parameters-using-portal.md) или [Azure CLI](howto-configure-server-parameters-using-cli.md).
 
 Использование [портал Azure](https://portal.azure.com/):
 
@@ -249,10 +249,10 @@ dblink и postgres_fdw позволяют подключаться с одног
 CREATE EXTENSION IF NOT EXISTS timescaledb CASCADE;
 ```
 > [!TIP]
-> Если появится сообщение об ошибке, подтвердите [перезапуск сервера](howto-restart-server-portal.md) после сохранения shared_preload_libraries. 
+> Если появится сообщение об ошибке, убедитесь, что [сервер был перезагружен](howto-restart-server-portal.md) после сохранения shared_preload_libraries. 
 
 Теперь можно создать таблицу Тимескаледб [с нуля](https://docs.timescale.com/getting-started/creating-hypertables) или перенести [существующие данные временных рядов в PostgreSQL](https://docs.timescale.com/getting-started/migrating-data).
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 Если вы не видите расширение, которое вы хотите использовать, сообщите нам. Проголосуйте за существующие запросы или создавайте новые запросы на отзыв на [форуме отзывов](https://feedback.azure.com/forums/597976-azure-database-for-postgresql).

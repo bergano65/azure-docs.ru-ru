@@ -74,7 +74,7 @@ ms.locfileid: "72241978"
 ## <a name="CLRTypes"></a> Типы .NET Framework, допустимые в выражениях политики
 В следующей таблице перечислены типы .NET Framework и их члены, допустимые в выражениях политики.
 
-|Type|Поддерживаемые члены|
+|введите|Поддерживаемые члены|
 |--------------|-----------------------|
 |Newtonsoft. JSON. форматирование|Все|
 |Newtonsoft. JSON. JsonConvert|Для SerializeObject, методов DeserializeObject|
@@ -94,19 +94,19 @@ ms.locfileid: "72241978"
 |System.Byte|Все|
 |System.Char|Все|
 |System. Collections. Generic. Dictionary < TKey, TValue >|Все|
-|System. Collections. Generic. hashing @ no__t-0T >|Все|
-|System. Collections. Generic. ICollection @ no__t-0T >|Все|
+|System. Collections. Generic. hashing\<T >|Все|
+|System. Collections. Generic. ICollection\<T >|Все|
 |System. Collections. Generic. IDictionary < TKey, TValue >|Все|
-|System. Collections. Generic. IEnumerable @ no__t-0T >|Все|
-|System. Collections. Generic. IEnumerator @ no__t-0T >|Все|
-|System. Collections. Generic. IList @ no__t-0T >|Все|
-|System. Collections. Generic. IReadOnlyCollection @ no__t-0T >|Все|
+|System. Collections. Generic. IEnumerable\<T >|Все|
+|System. Collections. Generic. IEnumerator\<T >|Все|
+|System. Collections. Generic. IList\<T >|Все|
+|System. Collections. Generic. IReadOnlyCollection\<T >|Все|
 |System. Collections. Generic. IReadOnlyDictionary < TKey, TValue >|Все|
-|System. Collections. Generic. ISet @ no__t-0T >|Все|
+|System. Collections. Generic. ISet\<T >|Все|
 |System. Collections. Generic. KeyValuePair < TKey, TValue >|Все|
-|System. Collections. Generic. List @ no__t-0T >|Все|
-|System. Collections. Generic. Queue @ no__t-0T >|Все|
-|System. Collections. Generic. Stack @ no__t-0T >|Все|
+|System. Collections. Generic. List\<T >|Все|
+|System. Collections. Generic. Queue\<T >|Все|
+|System. Collections. Generic. Stack\<T >|Все|
 |System.Convert|Все|
 |System.DateTime|(Конструктор), Add, AddDays, AddHours, Аддмиллисекондс, Аддминутес, Аддмонсс, Аддсекондс, Аддтиккс, Аддеарс, Дата, день, DayOfWeek, DayOfYear, Дайсинмонс, Hour, Исдайлигхтсавингтиме, IsLeapYear, MaxValue, миллисекунда, минута, MinValue, month, Now , Синтаксический анализ, второй, вычитание, такты, TimeOfDay, Today, ToString, UtcNow, Year|
 |System.DateTimeKind|Время в формате UTC|
@@ -156,7 +156,7 @@ ms.locfileid: "72241978"
 |System. Security. Cryptography. SymmetricAlgorithm|Все|
 |System. Security. Cryptography. X509Certificates. PublicKey|Все|
 |System. Security. Cryptography. X509Certificates. Рсацертификатикстенсионс|Все|
-|System. Security. Cryptography. X509Certificates. X500DistinguishedName|ИМЯ|
+|System. Security. Cryptography. X509Certificates. X500DistinguishedName|Name|
 |System. Security. Cryptography. X509Certificates. X509Certificate|Все|
 |System.Security.Cryptography.X509Certificates.X509Certificate2|Все|
 |System. Security. Cryptography. X509Certificates. X509ContentType|Все|
@@ -192,7 +192,7 @@ ms.locfileid: "72241978"
 |System.Xml.Linq.XComment|Все|
 |System.Xml.Linq.XContainer|Все|
 |System.Xml.Linq.XDeclaration|Все|
-|System.Xml.Linq.XDocument|ALL, за исключением: загрузить|
+|System.Xml.Linq.XDocument|Все, за исключением: Load|
 |System.Xml.Linq.XDocumentType|Все|
 |System.Xml.Linq.XElement|Все|
 |System.Xml.Linq.XName|Все|
@@ -210,32 +210,32 @@ ms.locfileid: "72241978"
 
 |Переменная контекста|Допустимые методы, свойства и значения параметров|
 |----------------------|-------------------------------------------------------|
-|context|[API](#ref-context-api): [иапи](#ref-iapi)<br /><br /> [Развертывание](#ref-context-deployment)<br /><br /> Elapsed: TimeSpan — интервал времени между значением Timestamp и текущим временем<br /><br /> [LastError](#ref-context-lasterror)<br /><br /> [Операция](#ref-context-operation)<br /><br /> [Продукт](#ref-context-product)<br /><br /> [Запрос](#ref-context-request)<br /><br /> RequestId: Guid — уникальный идентификатор запроса<br /><br /> [Ответ](#ref-context-response)<br /><br /> [подписка](#ref-context-subscription)<br /><br /> Timestamp: DateTime — время получения запроса<br /><br /> Tracing: логическое значение — указывает, включена ли трассировка <br /><br /> [User](#ref-context-user)<br /><br /> [Переменные](#ref-context-variables). IReadOnlyDictionary<строка, объект><br /><br /> void Trace(message: строка)|
+|context|[API](#ref-context-api): [иапи](#ref-iapi)<br /><br /> [Развертывание](#ref-context-deployment)<br /><br /> Elapsed: TimeSpan — интервал времени между значением Timestamp и текущим временем<br /><br /> [LastError](#ref-context-lasterror)<br /><br /> [операции](#ref-context-operation)<br /><br /> [Продукт](#ref-context-product)<br /><br /> [Запрос](#ref-context-request)<br /><br /> RequestId: Guid — уникальный идентификатор запроса<br /><br /> [Ответ](#ref-context-response)<br /><br /> [Подписка](#ref-context-subscription)<br /><br /> Timestamp: DateTime — время получения запроса<br /><br /> Tracing: логическое значение — указывает, включена ли трассировка <br /><br /> [User](#ref-context-user)<br /><br /> [Переменные](#ref-context-variables): строка < IReadOnlyDictionary, объект ><br /><br /> void Trace(message: строка)|
 |<a id="ref-context-api"></a>локального. API|Id: строка<br /><br /> IsCurrentRevision: bool<br /><br />  Name: строка<br /><br /> Path: строка<br /><br /> Revision: строка<br /><br /> ServiceUrl: [иурл](#ref-iurl)<br /><br /> Version: строка |
 |<a id="ref-context-deployment"></a>локального. Развертывания|Region: строка<br /><br /> ServiceName: строка<br /><br /> Certificates: IReadOnlyDictionary<строка, X509Certificate2>|
 |<a id="ref-context-lasterror"></a>локального. LastError|Source: строка<br /><br /> Reason: строка<br /><br /> Message: строка<br /><br /> Scope: строка<br /><br /> Section: строка<br /><br /> Path: строка<br /><br /> PolicyId: строка<br /><br /> Дополнительные сведения о переменной context.LastError см. в разделе [Error handling](api-management-error-handling-policies.md) (Обработка ошибок).|
 |<a id="ref-context-operation"></a>локального. Операцию|Id: строка<br /><br /> Method: строка<br /><br /> Name: строка<br /><br /> UrlTemplate: строка|
-|<a id="ref-context-product"></a>локального. Продукта|Apis: IEnumerable <[иапи](#ref-iapi)\><br /><br /> ApprovalRequired: логическое значение<br /><br /> Groups: IEnumerable <[играуп](#ref-igroup)\><br /><br /> Id: строка<br /><br /> Name: строка<br /><br /> State: enum ProductState {NotPublished, Published}<br /><br /> SubscriptionLimit: целое число?<br /><br /> SubscriptionRequired: логическое значение|
-|<a id="ref-context-request"></a>локального. Получения|Текст: [Имессажебоди](#ref-imessagebody) или `null`, если запрос не имеет текста.<br /><br /> Certificate: System.Security.Cryptography.X509Certificates.X509Certificate2<br /><br /> [Заголовки](#ref-context-request-headers): IReadOnlyDictionary<строка, строка[]><br /><br /> IpAddress: строка<br /><br /> MatchedParameters: IReadOnlyDictionary<строка, строка><br /><br /> Method: строка<br /><br /> Оригиналурл: [иурл](#ref-iurl)<br /><br /> Url: [иурл](#ref-iurl)|
+|<a id="ref-context-product"></a>локального. Продукта|API-интерфейсы: IEnumerable <[иапи](#ref-iapi)\><br /><br /> ApprovalRequired: логическое значение<br /><br /> Группы: IEnumerable <[играуп](#ref-igroup)\><br /><br /> Id: строка<br /><br /> Name: строка<br /><br /> State: enum ProductState {NotPublished, Published}<br /><br /> SubscriptionLimit: целое число?<br /><br /> SubscriptionRequired: логическое значение|
+|<a id="ref-context-request"></a>локального. Получения|Body: [имессажебоди](#ref-imessagebody) или `null`, если запрос не имеет текста.<br /><br /> Certificate: System.Security.Cryptography.X509Certificates.X509Certificate2<br /><br /> [Заголовки](#ref-context-request-headers): IReadOnlyDictionary < строка, String [] ><br /><br /> IpAddress: строка<br /><br /> MatchedParameters: IReadOnlyDictionary<string, string><br /><br /> Method: строка<br /><br /> Оригиналурл: [иурл](#ref-iurl)<br /><br /> URL-адрес: [иурл](#ref-iurl)|
 |<a id="ref-context-request-headers"></a>контекст строки. Request. Headers. GetValueOrDefault (Хеадернаме: строка, defaultValue: строка)|headerName: строка<br /><br /> defaultValue: строка<br /><br /> Возвращает значения заголовков запросов, разделенные запятыми, или значение `defaultValue`, если заголовок не найден.|
-|<a id="ref-context-response"></a>локального. Ответ|Текст: [имессажебоди](#ref-imessagebody)<br /><br /> [Заголовки](#ref-context-response-headers): IReadOnlyDictionary<строка, строка[]><br /><br /> StatusCode: целое число<br /><br /> StatusReason: строка|
+|<a id="ref-context-response"></a>локального. Ответ|Текст: [имессажебоди](#ref-imessagebody)<br /><br /> [Заголовки](#ref-context-response-headers): IReadOnlyDictionary < строка, String [] ><br /><br /> StatusCode: целое число<br /><br /> StatusReason: строка|
 |<a id="ref-context-response-headers"></a>контекст строки. Response. Headers. GetValueOrDefault (Хеадернаме: строка, defaultValue: String)|headerName: строка<br /><br /> defaultValue: строка<br /><br /> Возвращает значения заголовков ответов, разделенные запятыми, или значение `defaultValue`, если заголовок не найден.|
-|<a id="ref-context-subscription"></a>локального. Подписчик|CreatedTime: DateTime<br /><br /> EndDate: DateTime?<br /><br /> Id: строка<br /><br /> Key: строка<br /><br /> Name: строка<br /><br /> PrimaryKey: строка<br /><br /> SecondaryKey: строка<br /><br /> StartDate: DateTime?|
-|<a id="ref-context-user"></a>локального. Нажат|Email: строка<br /><br /> FirstName: строка<br /><br /> Groups: IEnumerable <[играуп](#ref-igroup)\><br /><br /> Id: строка<br /><br /> Identities: IEnumerable <[иусеридентити](#ref-iuseridentity)\><br /><br /> LastName: строка<br /><br /> Note: строка<br /><br /> RegistrationDate: DateTime|
-|<a id="ref-iapi"></a>иапи|Id: строка<br /><br /> Name: строка<br /><br /> Path: строка<br /><br /> Protocols: IEnumerable<строка\><br /><br /> ServiceUrl: [иурл](#ref-iurl)<br /><br /> SubscriptionKeyParameterNames: [исубскриптионкэйпараметернамес](#ref-isubscriptionkeyparameternames)|
+|<a id="ref-context-subscription"></a>локального. Подписчик|CreatedTime: дата и время<br /><br /> EndDate: дата и время?<br /><br /> Id: строка<br /><br /> Key: строка<br /><br /> Name: строка<br /><br /> PrimaryKey: строка<br /><br /> SecondaryKey: строка<br /><br /> StartDate: дата и время?|
+|<a id="ref-context-user"></a>локального. Нажат|Email: строка<br /><br /> FirstName: строка<br /><br /> Группы: IEnumerable <[играуп](#ref-igroup)\><br /><br /> Id: строка<br /><br /> Удостоверения: IEnumerable <[иусеридентити](#ref-iuseridentity)\><br /><br /> LastName: строка<br /><br /> Note: строка<br /><br /> RegistrationDate: дата и время|
+|<a id="ref-iapi"></a>иапи|Id: строка<br /><br /> Name: строка<br /><br /> Path: строка<br /><br /> Protocols: IEnumerable<string\><br /><br /> ServiceUrl: [иурл](#ref-iurl)<br /><br /> Субскриптионкэйпараметернамес: [исубскриптионкэйпараметернамес](#ref-isubscriptionkeyparameternames)|
 |<a id="ref-igroup"></a>играуп|Id: строка<br /><br /> Name: строка|
-|<a id="ref-imessagebody"></a>имессажебоди|As<T\>(preserveContent: bool = false): Где T: String, Byte [], JObject, JToken, Жаррай, XNode, XElement, XDocument<br /><br /> Методы `context.Request.Body.As<T>` и `context.Response.Body.As<T>` используются для чтения текста сообщения запроса или ответа в одном из заданных форматов `T`. По умолчанию метод использует исходный поток текста сообщения и делает его недоступным после возвращения. Чтобы избежать этого, задайте для параметра `preserveContent` значение `true`, чтобы метод работал с копией потока текста. Перейдите по [этой](api-management-transformation-policies.md#SetBody) ссылке, чтобы увидеть пример.|
-|<a id="ref-iurl"></a>иурл|Host: строка<br /><br /> Path: строка<br /><br /> Port: целое число<br /><br /> [Запрос.](#ref-iurl-query) IReadOnlyDictionary<строка, строка[]><br /><br /> QueryString: строка<br /><br /> Scheme: строка|
+|<a id="ref-imessagebody"></a>имессажебоди|Как < T\>(Пресервеконтент: bool = false): где T: String, Byte [], JObject, JToken, Жаррай, XNode, XElement, XDocument<br /><br /> Методы `context.Request.Body.As<T>` и `context.Response.Body.As<T>` используются для чтения текста сообщения запроса или ответа в одном из заданных форматов `T`. По умолчанию метод использует исходный поток текста сообщения и делает его недоступным после возвращения. Чтобы избежать этого, задайте для параметра `preserveContent` значение `true`, чтобы метод работал с копией потока текста. Перейдите по [этой](api-management-transformation-policies.md#SetBody) ссылке, чтобы увидеть пример.|
+|<a id="ref-iurl"></a>иурл|Host: строка<br /><br /> Path: строка<br /><br /> Port: целое число<br /><br /> [Запрос](#ref-iurl-query): IReadOnlyDictionary < строка, String [] ><br /><br /> QueryString: строка<br /><br /> Scheme: строка|
 |<a id="ref-iuseridentity"></a>иусеридентити|Id: строка<br /><br /> Provider: строка|
 |<a id="ref-isubscriptionkeyparameternames"></a>исубскриптионкэйпараметернамес|Header: строка<br /><br /> Query: строка|
 |<a id="ref-iurl-query"></a>Строка Иурл. Query. GetValueOrDefault (queryParameterName: строка, defaultValue: String)|queryParameterName: строка<br /><br /> defaultValue: строка<br /><br /> Возвращает разделенные запятыми значения параметров запроса или значение `defaultValue`, если параметр не найден.|
-|<a id="ref-context-variables"></a>T контекст. Variables. GetValueOrDefault < T @ no__t-1 (variableName: String, defaultValue: T)|variableName: строка<br /><br /> defaultValue: T<br /><br /> Возвращает значение переменной, приведенное к типу `T` или `defaultValue`, если переменная не найдена.<br /><br /> Этот метод выдает исключение, если указанный тип не соответствует фактическому типу возвращаемой переменной.|
+|<a id="ref-context-variables"></a>T контекст. Variables. GetValueOrDefault < T\>(variableName: String, defaultValue: T)|variableName: строка<br /><br /> defaultValue: T<br /><br /> Возвращает значение переменной, приведенное к типу `T` или `defaultValue`, если переменная не найдена.<br /><br /> Этот метод выдает исключение, если указанный тип не соответствует фактическому типу возвращаемой переменной.|
 |BasicAuthCredentials AsBasic(input: this string)|input: строка<br /><br /> Если входной параметр содержит допустимое значение заголовка запроса авторизации для обычной проверки подлинности HTTP, метод возвращает объект типа `BasicAuthCredentials`; в противном случае метод возвращает значение NULL.|
 |bool TryParseBasic(input: this string, result: out BasicAuthCredentials)|input: строка<br /><br /> result: выходное значение BasicAuthCredentials<br /><br /> Если входной параметр содержит допустимое значение заголовка запроса авторизации для обычной проверки подлинности и HTTP, метод возвращает значение `true`, а параметр результата содержит значение типа `BasicAuthCredentials`. В противном случае метод возвращает значение `false`.|
 |BasicAuthCredentials|Password: строка<br /><br /> UserId: строка|
 |Jwt AsJwt(input: this string)|input: строка<br /><br /> Если входной параметр содержит допустимое значение маркера JWT, метод возвращает объект типа `Jwt`; в противном случае метод возвращает значение `null`.|
 |bool TryParseJwt(input: this string, result: out Jwt)|input: строка<br /><br /> result: выходное значение типа Jwt<br /><br /> Если входной параметр содержит допустимое значение маркера JWT, метод возвращает значение `true`, а параметр результата содержит значение типа `Jwt`; в противном случае метод возвращает значение `false`.|
-|Jwt|Algorithm: строка<br /><br /> Audience: IEnumerable<строка\><br /><br /> Claims: IReadOnlyDictionary<строка, строка[]><br /><br /> ExpirationTime: DateTime?<br /><br /> Id: строка<br /><br /> Issuer: строка<br /><br /> Иссуедат: DateTime?<br /><br /> NotBefore: DateTime?<br /><br /> Subject: строка<br /><br /> Type: строка|
+|Jwt|Algorithm: строка<br /><br /> Audience: IEnumerable<string\><br /><br /> Claims: IReadOnlyDictionary<string, string[]><br /><br /> ExpirationTime: дата и время?<br /><br /> Id: строка<br /><br /> Issuer: строка<br /><br /> Иссуедат: Дата и время?<br /><br /> NotBefore: дата и время?<br /><br /> Subject: строка<br /><br /> Type: строка|
 |string Jwt.Claims.GetValueOrDefault(claimName: string, defaultValue: string)|claimName: строка<br /><br /> defaultValue: строка<br /><br /> Возвращает значения утверждений, разделенные запятыми, или значение `defaultValue`, если заголовок не найден.|
 |byte[] Encrypt(input: this byte[], alg: строка, key:byte[], iv:byte[])|input — открытый текст, который нужно зашифровать<br /><br />alg — имя алгоритма симметричного шифрования<br /><br />key — ключ шифрования<br /><br />iv — вектор инициализации<br /><br />Возвращает открытый текст в зашифрованном виде.|
 |byte[] Encrypt(input: this byte[], alg: System.Security.Cryptography.SymmetricAlgorithm)|input — открытый текст, который нужно зашифровать<br /><br />alg — алгоритм шифрования<br /><br />Возвращает открытый текст в зашифрованном виде.|
@@ -243,10 +243,10 @@ ms.locfileid: "72241978"
 |byte[] Decrypt(input: this byte[], alg: строка, key:byte[], iv:byte[])|input — зашифрованный текст, который нужно расшифровать<br /><br />alg — имя алгоритма симметричного шифрования<br /><br />key — ключ шифрования<br /><br />iv — вектор инициализации<br /><br />Возвращает открытый текст.|
 |byte[] Decrypt(input: this byte[], alg: System.Security.Cryptography.SymmetricAlgorithm)|input — зашифрованный текст, который нужно расшифровать<br /><br />alg — алгоритм шифрования<br /><br />Возвращает открытый текст.|
 |byte[] Decrypt(input: this byte[], alg: System.Security.Cryptography.SymmetricAlgorithm, key:byte[], iv:byte[])|input — зашифрованный текст, который нужно расшифровать<br /><br />alg — алгоритм шифрования<br /><br />key — ключ шифрования<br /><br />iv — вектор инициализации<br /><br />Возвращает открытый текст.|
-|bool Верифиноревокатион (входные данные: Этот системный. Security. Cryptography. X509Certificates. X509Certificate2)|Выполняет проверку цепочки X. 509 без проверки состояния отзыва сертификата.<br /><br />input-Certificate, объект<br /><br />Возвращает значение `true`, если проверка прошла успешнее; `false`, если проверка завершается неудачно.|
+|bool Верифиноревокатион (входные данные: Этот системный. Security. Cryptography. X509Certificates. X509Certificate2)|Выполняет проверку цепочки X. 509 без проверки состояния отзыва сертификата.<br /><br />input-Certificate, объект<br /><br />Возвращает `true`, если проверка прошла успешнее; `false`, если проверка завершается неудачно.|
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о работе с политиками см. в следующих статьях:
 

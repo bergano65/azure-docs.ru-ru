@@ -41,7 +41,7 @@ ms.locfileid: "72245244"
 
 Действия, описанные в этой статье, можно выполнить с помощью [Azure CLI](/cli/azure/), [модуля Azure PowerShell AZ](/powershell/azure/overview)или [портал Azure](https://portal.azure.com).
 
-Доступ к порталу возможен через браузер, Azure CLI и Azure PowerShell требуется локальная установка. см. раздел Шифрование диска [Azure для Windows: Чтобы получить дополнительные сведения, установите средства @ no__t-0.
+Доступ к порталу возможен через браузер, Azure CLI и Azure PowerShell требуется локальная установка. Дополнительные сведения см. в [статье шифрование дисков Azure для Windows: Установка средств](disk-encryption-windows.md#install-tools-and-connect-to-azure) .
 
 ### <a name="connect-to-your-azure-account"></a>Подключение к учетной записи Azure
 
@@ -57,7 +57,7 @@ Connect-AzAccount
 
 [!INCLUDE [disk-encryption-key-vault](../../../includes/disk-encryption-key-vault.md)]
  
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Сценарий CLI для предварительных требований к шифрованию дисков Azure](https://github.com/ejarvi/ade-cli-getting-started)
 - [Сценарий PowerShell для предварительных требований к шифрованию дисков Azure](https://github.com/Azure/azure-powershell/tree/master/src/Compute/Compute/Extension/AzureDiskEncryption/Scripts)

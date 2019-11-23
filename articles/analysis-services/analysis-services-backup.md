@@ -49,7 +49,7 @@ ms.locfileid: "73573449"
 
     ![Сохранение параметров архивации](./media/analysis-services-backup/aas-backup-save.png)
 
-## <a name="backup"></a>Архивация
+## <a name="backup"></a>Azure Backup
 
 ### <a name="to-backup-by-using-ssms"></a>Архивация с помощью SSMS
 

@@ -20,7 +20,7 @@ ms.locfileid: "72514606"
 * [как создать общую папку Azure с помощью PowerShell](#create-file-share-through-powershell);
 * [Создание файлового ресурса Azure с помощью CLI](#create-file-share-through-command-line-interface-cli)
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 Чтобы создать общую папку в Azure, вы можете использовать существующую учетную запись хранения Azure или [создать новую](../common/storage-create-storage-account.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json). Чтобы создать общую папку в Azure с помощью PowerShell, вам потребуется ключ учетной записи и имя учетной записи хранения. Если вы планируете использовать PowerShell или CLI, вам потребуется ключ учетной записи хранения.
 
 > [!NOTE]
@@ -88,13 +88,13 @@ ms.locfileid: "72514606"
     az storage share create --name files --quota 2048 --connection-string $current_env_conn_string > /dev/null
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 * [Mount an Azure File share and access the share in Windows](storage-how-to-use-files-windows.md) (Подключение файлового ресурса Azure и доступ к нему в Windows)
 * [Использование хранилища файлов Azure в Linux](../storage-how-to-use-files-linux.md)
 * [Mount Azure File share over SMB with macOS](storage-how-to-use-files-mac.md) (Использование хранилища файлов Azure с помощью протокола SMB в macOS)
 
-Дополнительные сведения о службе "Файлы Azure" см. по следующим ссылкам.
+Дополнительную информацию о файлах Azure см. в следующих разделах.
 
-* [ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ](../storage-files-faq.md)
+* [Часто задаваемые вопросы](../storage-files-faq.md)
 * [Troubleshoot Azure File storage problems in Windows](storage-troubleshoot-windows-file-connection-problems.md) (Устранение неполадок хранилища файлов Azure в Windows)      
 * [Troubleshoot Azure File storage problems in Linux](storage-troubleshoot-linux-file-connection-problems.md) (Устранение неполадок хранилища файлов Azure в Linux)   

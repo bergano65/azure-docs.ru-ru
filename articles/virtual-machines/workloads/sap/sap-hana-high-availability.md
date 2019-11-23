@@ -1,6 +1,6 @@
 ---
 title: Обеспечение высокого уровня доступности SAP HANA на виртуальных машинах Azure в SUSE Linux Enterprise Server | Документация Майкрософт
-description: Сведения об обеспечении высокого уровня доступности SAP HANA на виртуальных машинах Azure в SUSE Linux Enterprise Server.
+description: Обеспечение высокого уровня доступности SAP HANA на виртуальных машинах Azure в SUSE Linux Enterprise Server
 services: virtual-machines-linux
 documentationcenter: ''
 author: MSSedusch
@@ -19,7 +19,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/07/2019
 ms.locfileid: "73721500"
 ---
-# <a name="high-availability-of-sap-hana-on-azure-vms-on-suse-linux-enterprise-server"></a>Сведения об обеспечении высокого уровня доступности SAP HANA на виртуальных машинах Azure в SUSE Linux Enterprise Server.
+# <a name="high-availability-of-sap-hana-on-azure-vms-on-suse-linux-enterprise-server"></a>Обеспечение высокого уровня доступности SAP HANA на виртуальных машинах Azure в SUSE Linux Enterprise Server
 
 [dbms-guide]:dbms-guide.md
 [deployment-guide]:deployment-guide.md
@@ -112,7 +112,7 @@ ms.locfileid: "73721500"
     - **System Availability** (Доступность системы). Выберите значение **HA**.
     - **Имя пользователя и пароль администратора**. создается новый пользователь, который может использоваться для входа на компьютер.
     - **New Or Existing Subnet** (Новая или существующая подсеть). Определяет, следует ли создать виртуальную сеть и подсеть или использовать имеющуюся подсеть. Если у вас уже есть виртуальная сеть, подключенная к локальной сети, выберите вариант **Existing** (Существующая).
-    - **Subnet ID** (Идентификатор подсети).Чтобы развернуть виртуальную машину в имеющуюся виртуальную сеть с определенной подсетью, необходимо указать идентификатор этой определенной подсети. Идентификатор обычно имеет формат **/subscriptions/\<идентификатор_подписки>/resourceGroups/\<имя_группы_ресурсов>/providers/Microsoft.Network/virtualNetworks/\<имя_виртуальной_сети>/subnets/\<имя_подсети>** .
+    - **Идентификатор подсети**.Чтобы развернуть виртуальную машину в имеющуюся виртуальную сеть с определенной подсетью, необходимо указать идентификатор этой определенной подсети. Идентификатор обычно имеет формат **/subscriptions/\<идентификатор_подписки>/resourceGroups/\<имя_группы_ресурсов>/providers/Microsoft.Network/virtualNetworks/\<имя_виртуальной_сети>/subnets/\<имя_подсети>** .
 
 ### <a name="manual-deployment"></a>Развертывание вручную
 
@@ -233,7 +233,7 @@ ms.locfileid: "73721500"
    Дополнительные сведения о портах, требуемых для SAP HANA, см. в разделе [подключения к базам данных клиента](https://help.sap.com/viewer/78209c1d3a9b41cd8624338e42a12bf6/latest/en-US/7a9343c9f2a2436faa3cfdb5ca00c052.html) в руководству по [базам данных клиента SAP HANA](https://help.sap.com/viewer/78209c1d3a9b41cd8624338e42a12bf6) или в статье о [SAP 2388694][2388694].
 
 > [!IMPORTANT]
-> Не включайте метки времени TCP на виртуальных машинах Azure, размещенных за Azure Load Balancer. Включение отметок времени TCP приведет к сбою пробы работоспособности. Установите параметр **net. IPv4. TCP _timestamps** в значение **0**. Дополнительные сведения см. в разделе [Load Balancer проверки работоспособности](https://docs.microsoft.com/azure/load-balancer/load-balancer-custom-probe-overview).
+> Не включайте метки времени TCP на виртуальных машинах Azure, размещенных за Azure Load Balancer. Включение отметок времени TCP приведет к сбою пробы работоспособности. Установите параметр **net. IPv4. tcp_timestamps** в значение **0**. Дополнительные сведения см. в разделе [Load Balancer проверки работоспособности](https://docs.microsoft.com/azure/load-balancer/load-balancer-custom-probe-overview).
 > См. также Примечание SAP [2382421](https://launchpad.support.sap.com/#/notes/2382421). 
 
 ## <a name="create-a-pacemaker-cluster"></a>Создание кластера Pacemaker
@@ -1125,7 +1125,7 @@ crm resource cleanup msl_SAPHana_<b>HN1</b>_HDB<b>03</b> <b>hn1-db-0</b>
       rsc_nc_HN1_HDB03   (ocf::heartbeat:anything):      Started hn1-db-0
    </code></pre>
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Планирование и реализация виртуальных машин Azure для SAP][planning-guide]
 * [Развертывание виртуальных машин Azure для SAP][deployment-guide]
