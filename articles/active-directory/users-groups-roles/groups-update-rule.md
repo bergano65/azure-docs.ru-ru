@@ -1,6 +1,6 @@
 ---
-title: Обновление и Управление правилом динамической группы и устранение неполадок членства-Azure Active Directory | Документация Майкрософт
-description: Как создать правило членства в группе в портал Azure, проверьте состояние.
+title: Update and manage a dynamic group rule and troubleshoot membership - Azure Active Directory | Microsoft Docs
+description: How to create a group membership rule in the Azure portal, check status.
 services: active-directory
 documentationcenter: ''
 author: curtand
@@ -14,79 +14,79 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 84290ee3c242b5ccb91bdca8a6b82fc0bf963751
-ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
+ms.openlocfilehash: c387e2d78adcaebc430073a2a45818c4a0928b9f
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70194585"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74422356"
 ---
-# <a name="update-a-dynamic-group-to-manage-membership-in-azure-active-directory"></a>Обновление динамической группы для управления членством в Azure Active Directory
+# <a name="update-a-dynamic-group-to-manage-membership-in-azure-active-directory"></a>Update a dynamic group to manage membership in Azure Active Directory
 
-В Azure Active Directory (Azure AD) можно использовать правила для определения членства в группах на основе свойств пользователя или устройства. В этой статье рассказывается, как настроить правило для динамической группы в портал Azure.
-Динамическое членство поддерживается для групп безопасности или Office 365. Когда применяется правило членства в группе, атрибуты пользователя и устройства оцениваются для совпадений с правилом членства. При изменении атрибута для пользователя или устройства все правила динамических групп в Организации обрабатываются для изменения членства. Пользователи и устройства добавляются или удаляются, если они соответствуют условиям для группы.
+In Azure Active Directory (Azure AD), you can use rules to determine group membership based on user or device properties. This article tells how to set up a rule for a dynamic group in the Azure portal.
+Dynamic membership is supported for security groups or Office 365 groups. When a group membership rule is applied, user and device attributes are evaluated for matches with the membership rule. When an attribute changes for a user or device, all dynamic group rules in the organization are processed for membership changes. Users and devices are added or removed if they meet the conditions for a group.
 
-## <a name="rule-builder-in-the-azure-portal"></a>Построитель правил в портал Azure
+## <a name="rule-builder-in-the-azure-portal"></a>Rule builder in the Azure portal
 
-Azure AD предоставляет построитель правил для более быстрого создания и обновления важных правил. Построитель правил поддерживает построение до пяти выражений. Построитель правил упрощает формирование правила с помощью нескольких простых выражений, однако его нельзя использовать для воспроизведения каждого правила. Если построитель правил не поддерживает правило, которое необходимо создать, можно использовать текстовое поле.
+Azure AD provides a rule builder to create and update your important rules more quickly. The rule builder supports the construction up to five expressions. The rule builder makes it easier to form a rule with a few simple expressions, however, it can't be used to reproduce every rule. If the rule builder doesn't support the rule you want to create, you can use the text box.
 
-Ниже приведены некоторые примеры расширенных правил или синтаксиса, для которых рекомендуется создавать текст с помощью текстового поля.
+Here are some examples of advanced rules or syntax for which we recommend that you construct using the text box:
 
-- Правило с более чем пятью выражениями
-- Правило Direct Reports
-- Установка [приоритета операторов](groups-dynamic-membership.md#operator-precedence)
-- [Правила со сложными выражениями](groups-dynamic-membership.md#rules-with-complex-expressions); Например`(user.proxyAddresses -any (_ -contains "contoso"))`
+- Rule with more than five expressions
+- The Direct reports rule
+- Setting [operator precedence](groups-dynamic-membership.md#operator-precedence)
+- [Rules with complex expressions](groups-dynamic-membership.md#rules-with-complex-expressions); for example `(user.proxyAddresses -any (_ -contains "contoso"))`
 
 > [!NOTE]
-> Построитель правил может не отображать некоторые правила, созданные в текстовом поле. Если построитель правил не может отобразить правило, может появиться сообщение. Построитель правил не изменяет поддерживаемый синтаксис, проверку или обработку правил динамической группы каким бы то ни было.
+> The rule builder might not be able to display some rules constructed in the text box. You might see a message when the rule builder is not able to display the rule. The rule builder doesn't change the supported syntax, validation, or processing of dynamic group rules in any way.
 
-![Добавление правила членства для динамической группы](./media/groups-update-rule/update-dynamic-group-rule.png)
+![Add membership rule for a dynamic group](./media/groups-update-rule/update-dynamic-group-rule.png)
 
-Примеры синтаксиса, Поддерживаемые свойства, операторы и значения для правила членства см. [в разделе правила динамического членства для групп в Azure Active Directory](groups-dynamic-membership.md).
+For examples of syntax, supported properties, operators, and values for a membership rule, see [Dynamic membership rules for groups in Azure Active Directory](groups-dynamic-membership.md).
 
-## <a name="to-update-a-group-membership-rule"></a>Обновление правила членства в группе
+## <a name="to-update-a-group-membership-rule"></a>To update a group membership rule
 
-1. Войдите в [центр администрирования Azure AD](https://aad.portal.azure.com) с помощью учетной записи, которая находится в роли глобального администратора, администратора Intune или администратора пользователя в клиенте.
-1. Выберите **группы** > **все группы**.
-1. Выберите группу, чтобы открыть ее профиль.
-1. На странице Профиль для группы выберите **правила динамического членства**. Построитель правил поддерживает до пяти выражений. Чтобы добавить более пяти выражений, необходимо использовать текстовое поле.
+1. Sign in to the [Azure AD admin center](https://aad.portal.azure.com) with an account that is in the Global administrator, Group administrator, Intune administrator, or User administrator role in the tenant.
+1. Select **Groups** > **All groups**.
+1. Select a group to open its profile.
+1. On the profile page for the group, select **Dynamic membership rules**. The rule builder supports up to five expressions. To add more than five expressions, you must use the text box.
 
-   ![Добавление правила членства для динамической группы](./media/groups-update-rule/update-dynamic-group-rule.png)
+   ![Add membership rule for a dynamic group](./media/groups-update-rule/update-dynamic-group-rule.png)
 
-1. Чтобы просмотреть свойства настраиваемого расширения, доступные для вашего правила членства, сделайте следующее:
-   1. Выберите **получить пользовательские свойства расширения**
-   1. Введите идентификатор приложения, а затем выберите **обновить свойства**.
-1. После обновления правила нажмите кнопку **сохранить**.
+1. To see the custom extension properties available for your membership rule:
+   1. Select **Get custom extension properties**
+   1. Enter the application ID, and then select **Refresh properties**.
+1. After updating the rule, select **Save**.
 
-Если введенное правило недопустимо, в уведомлении Azure на портале отображается объяснение того, почему не удалось обработать правило. Внимательно прочтите его, чтобы понять, как исправить это правило.
+If the rule you entered isn't valid, an explanation of why the rule couldn't be processed is displayed in an Azure notification in the portal. Read it carefully to understand how to fix the rule.
 
-## <a name="check-processing-status-for-a-rule"></a>Проверка состояния обработки для правила
+## <a name="check-processing-status-for-a-rule"></a>Check processing status for a rule
 
 Вы можете просматривать состояние обработки членства и дату последнего обновления на странице **Обзор** для группы.
   
-  ![Отображение состояния динамической группы](./media/groups-create-rule/group-status.png)
+  ![display of dynamic group status](./media/groups-create-rule/group-status.png)
 
 Для состояния **Обработка членства** могут отображаться следующие сообщения о состоянии:
 
-- **Оценка**:  изменение группы получено и оценивается.
-- **Обработка**: обновления обрабатываются.
-- **Обновление выполнено**: обработка завершена, все применимые обновления внесены.
-- **Ошибка обработки**:  Не удалось завершить обработку из-за ошибки при вычислении правила членства.
-- **Обновление приостановлено**: обновление правила динамического членства приостановлено администратором. MembershipRuleProcessingState имеет статус "Приостановлено".
+- **Оценка** — изменение группы получено и оценивается.
+- **Обработка** — обновления обрабатываются.
+- **Обновление выполнено** — обработка завершена, все применимые обновления внесены.
+- **Processing error**:  Processing couldn't be completed because of an error evaluating the membership rule.
+- **Обновление приостановлено** — обновление правила динамического членства приостановлено администратором. MembershipRuleProcessingState имеет статус "Приостановлено".
 
 Для состояния **Последнее обновление членства** могут отображаться следующие сообщения о состоянии:
 
-- **Дата и время**: время последнего обновления членства.
-- **Выполняется**. Обновления выполняются.
-- **Неизвестно**: Не удается получить время последнего обновления. Группа может быть новой.
+- **Date and time**: The last time the membership was updated.
+- **Выполняется** — обновления выполняются.
+- **Unknown**: The last update time can't be retrieved. The group might be new.
 
 Если произошла ошибка при обработке правила членства для конкретной группы, отображается предупреждение в верхней части **страницы "Обзор"** для группы. Если более 24 часов невозможно было обработать никакие ожидающие обработки изменения динамического членства для всех групп в клиенте, отображается предупреждение в верхней части страницы **Все группы**.
 
-![Обработка предупреждений об ошибках](./media/groups-create-rule/processing-error.png)
+![processing error message alerts](./media/groups-create-rule/processing-error.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-В этих статьях содержатся дополнительные сведения о работе с динамическими группами в Azure AD.
+These articles provide additional information on working with dynamic groups in Azure AD.
 
-- Полный справочник по структуре динамических правил см. в разделе [синтаксис правила динамического членства](groups-dynamic-membership.md).
-- [Создайте статическую группу членства и добавьте члены](../fundamentals/active-directory-groups-create-azure-portal.md).
+- For a complete reference to dynamic rule structure, see [Dynamic membership rule syntax](groups-dynamic-membership.md).
+- [Create a static membership group and add members](../fundamentals/active-directory-groups-create-azure-portal.md).

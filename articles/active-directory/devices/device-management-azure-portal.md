@@ -11,30 +11,29 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jairoc
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b1b44a7df499dc0b6ce4370bf74ece35c99a4493
-ms.sourcegitcommit: fa5ce8924930f56bcac17f6c2a359c1a5b9660c9
+ms.openlocfilehash: 6c8e94a1b15ad8cd55019f9351c82f58130e472d
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73200243"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74420604"
 ---
-# <a name="manage-device-identities-using-the-azure-portal"></a>Управление удостоверениями устройств с помощью портал Azure
+# <a name="manage-device-identities-using-the-azure-portal"></a>Manage device identities using the Azure portal
 
-С помощью управления удостоверениями устройств в Azure Active Directory (Azure AD) можно обеспечить доступ пользователей к ресурсам с устройств, которые соответствуют стандартам безопасности и соответствия требованиям.
+With device identity management in Azure Active Directory (Azure AD), you can ensure that your users are accessing your resources from devices that meet your standards for security and compliance.
 
 В этой статье:
 
-- Предполагается, что вы знакомы с [введением в Управление удостоверениями устройств в Azure Active Directory](overview.md)
-- Содержит сведения об управлении удостоверениями устройств с помощью портала Azure AD.
+- Assumes that you are familiar with the [introduction to device identity management in Azure Active Directory](overview.md)
+- Provides you with information about managing your device identities using the Azure AD portal
 
 ## <a name="manage-device-identities"></a>Управление удостоверениями устройства
 
-Портал Azure AD предоставляет централизованное управление удостоверениями устройств. Сюда можно перейти по [прямой ссылке](https://portal.azure.com/#blade/Microsoft_AAD_IAM/DevicesMenuBlade/Devices) или с помощью следующих действий:
+The Azure AD portal provides you with a central place to manage your device identities. Сюда можно перейти по [прямой ссылке](https://portal.azure.com/#blade/Microsoft_AAD_IAM/DevicesMenuBlade/Devices) или с помощью следующих действий:
 
 1. Войдите на [портал Azure](https://portal.azure.com) с учетной записью администратора.
-2. На панели навигации слева щелкните **Active Directory**.
 
-   ![Настройка параметров устройства](./media/device-management-azure-portal/01.png)
+2. Search for and select **Azure Active Directory** or select it from the **Home** page.
 
 3. В разделе **Управление** щелкните **Устройства**.
 
@@ -44,12 +43,12 @@ ms.locfileid: "73200243"
 
 - Настройка параметров устройства
 - Поиск устройств
-- Выполнение задач управления удостоверениями устройств
-- Проверка журналов аудита, связанных с устройствами  
+- Perform device identity management tasks
+- Review device-related audit logs  
   
 ## <a name="configure-device-settings"></a>Настройка параметров устройства
 
-Для управления удостоверениями устройств с помощью портала Azure AD устройства должны быть [зарегистрированы или присоединены](overview.md) к Azure AD. Администратор может точно настроить процесс регистрации и присоединения устройств, задав параметры устройства.
+To manage your device identities using the Azure AD portal, your devices need to be either [registered or joined](overview.md) to Azure AD. Администратор может точно настроить процесс регистрации и присоединения устройств, задав параметры устройства.
 
 ![Настройка параметров устройства](./media/device-management-azure-portal/22.png)
 
@@ -57,22 +56,22 @@ ms.locfileid: "73200243"
 
 ![Управление устройством Intune](./media/device-management-azure-portal/21.png)
 
-- **Пользователи могут присоединять устройства к Azure AD** . Этот параметр позволяет выбрать пользователей, которые могут регистрировать свои устройства в качестве устройств, присоединенных к Azure AD. Значение этого параметра по умолчанию — **Все**.
+- **Users may join devices to Azure AD** - This setting enables you to select the users who can register their devices as Azure AD joined devices. Значение этого параметра по умолчанию — **Все**.
 
 > [!NOTE]
-> **Пользователи могут присоединять устройства к параметрам Azure AD** только в присоединение к Azure AD в Windows 10.
+> **Users may join devices to Azure AD** setting is only applicable to Azure AD join on Windows 10.
 
 - **Дополнительные локальные администраторы на устройствах, присоединенных к Azure AD**. Этот параметр позволяет выбрать пользователей, которым предоставляются права локального администратора на устройстве. Добавленные здесь пользователи добавляются в роль *Администраторы устройств* в Azure AD. По умолчанию права локального администратора предоставляются глобальным администраторам в Azure AD и владельцам устройств. Этот параметр относится к возможностям выпуска Premium и доступен в таких продуктах, как Azure AD Premium или Enterprise Mobility Suite (EMS).
-- **Пользователи могут регистрировать свои устройства в Azure AD** . необходимо настроить этот параметр, чтобы разрешить регистрацию устройств Windows 10 Personal, iOS, Android и MacOs в Azure AD. Если выбрано **значение нет**, устройства не могут регистрироваться в Azure AD. Для регистрации в Microsoft Intune или службе управления мобильными устройствами (MDM) для Office 365 требуется регистрация. Если вы настроили одну из этих служб, будет выбран пункт **Все**, а кнопка **Нет** будет отключена.
-- **Требовать многофакторную проверку подлинности для приподключения устройств** . Вы можете выбрать, требуется ли пользователям предоставлять дополнительный фактор проверки подлинности для приподключения устройства к Azure AD. По умолчанию используется значение **Нет**. Рекомендуется использовать Многофакторную идентификацию при регистрации устройства. Перед включением Многофакторной идентификации для этой службы необходимо убедиться, что Многофакторная идентификация настроена для пользователей, которые регистрируют свои устройства. Дополнительные сведения о различных службах Многофакторной идентификации в Azure см. в статье [Приступая к работе со службой "Многофакторная идентификация Microsoft Azure" в облаке](../authentication/concept-mfa-whichversion.md). 
+- **Users may register their devices with Azure AD** - You need to configure this setting to allow Windows 10 personal, iOS, Android, and macOs devices to be registered with Azure AD. If you select **None**, devices are not allowed to register with Azure AD. Для регистрации в Microsoft Intune или службе управления мобильными устройствами (MDM) для Office 365 требуется регистрация. Если вы настроили одну из этих служб, будет выбран пункт **Все**, а кнопка **Нет** будет отключена.
+- **Require Multi-Factor Auth to join devices** - You can choose whether users are required to provide an additional authentication factor to join their device to Azure AD. По умолчанию используется значение **Нет**. Рекомендуется использовать Многофакторную идентификацию при регистрации устройства. Перед включением Многофакторной идентификации для этой службы необходимо убедиться, что Многофакторная идентификация настроена для пользователей, которые регистрируют свои устройства. Дополнительные сведения о различных службах Многофакторной идентификации в Azure см. в статье [Приступая к работе со службой "Многофакторная идентификация Microsoft Azure" в облаке](../authentication/concept-mfa-whichversion.md). 
 
 > [!NOTE]
-> Параметр **требовать многофакторную проверку подлинности для присоединения устройств** применяется к устройствам, которые присоединены к Azure AD или зарегистрированы в Azure AD. Этот параметр не применяется к гибридным устройствам, присоединенным к Azure AD.
+> **Require Multi-Factor Auth to join devices** setting applies to devices that are either Azure AD joined or Azure AD registered. This setting does not apply to hybrid Azure AD joined devices.
 
-- **Максимальное число устройств** . Этот параметр позволяет выбрать максимальное число присоединенных к Azure AD или зарегистрированных устройств Azure AD в Azure AD. По достижении этой квоты пользователь больше не сможет добавлять дополнительные устройства до тех пор, пока не будет удалены одно или несколько существующих устройств. По умолчанию используется значение **20**.
+- **Maximum number of devices** - This setting enables you to select the maximum number of Azure AD joined or Azure AD registered devices that a user can have in Azure AD. По достижении этой квоты пользователь больше не сможет добавлять дополнительные устройства до тех пор, пока не будет удалены одно или несколько существующих устройств. По умолчанию используется значение **20**.
 
 > [!NOTE]
-> Параметр **Максимальное число устройств** применяется к устройствам, которые присоединены к Azure AD или зарегистрированы в Azure AD. Этот параметр не применяется к гибридным устройствам, присоединенным к Azure AD.
+> **Maximum number of devices** setting applies to devices that are either Azure AD joined or Azure AD registered. This setting does not apply to hybrid Azure AD joined devices.
 
 - **Пользователи могут выполнять синхронизацию параметров и данных разных устройств**. По умолчанию этот параметр имеет значение **Нет**. Выбор конкретных пользователей, групп или значения "Все" позволяет синхронизировать параметры и данные приложений пользователя на его устройствах Windows 10. Узнайте больше о том, как работает синхронизация в Windows 10.
 Этот параметр относится к возможностям Premium и доступен в таких продуктах, как Azure AD Premium или Enterprise Mobility Suite (EMS).
@@ -91,7 +90,7 @@ ms.locfileid: "73200243"
 
 С помощью любого из этих средств можно получить представление, которое:
 
-- Позволяет выполнять поиск устройств с помощью отображаемого имени или идентификатора устройства в качестве фильтра.
+- Enables you to search for devices using the display name or device ID as filter.
 - предоставляет подробный обзор зарегистрированных и присоединенных к домену устройств;
 - позволяет выполнять общие задачи управления устройствами.
 
@@ -99,24 +98,24 @@ ms.locfileid: "73200243"
 
 >[!TIP]
 >
->* Если вы видите устройство "гибридная служба Azure AD присоединена" с состоянием "ожидание" в списке ЗАРЕГИСТРИРОВАНный столбец, это означает, что устройство синхронизировано из Azure AD Connect и ожидает завершения регистрации от клиента. Дополнительные сведения о [планировании гибридной реализации присоединение к Azure AD](hybrid-azuread-join-plan.md). Дополнительные сведения см. в статье [часто задаваемые вопросы об устройствах](faq.md).
+>* If you see a device that is "Hybrid Azure AD joined" with a state "Pending" under the REGISTERED column, it indicates that the device has been synchronized from Azure AD connect and is waiting to complete registration from the client. Read more on how to [plan your Hybrid Azure AD join implementation](hybrid-azuread-join-plan.md). Additional information can be found in the article, [Devices frequently asked questions](faq.md).
 >
->   ![Ожидающие устройства](./media/device-management-azure-portal/75.png)
+>   ![Pending devices](./media/device-management-azure-portal/75.png)
 >
->* Для некоторых устройств iOS, имена которых содержат апострофы, потенциально можно использовать другие знаки, которые выглядят как апострофы. Так что поиск таких устройств является непростой задачей. Если результаты поиска не отображаются должным образом, убедитесь, что строка поиска содержит соответствующий символ апострофа.
+>* Для некоторых устройств iOS, имена которых содержат апострофы, потенциально можно использовать другие знаки, которые выглядят как апострофы. So searching for such devices is a little tricky - if you are not seeing search results correctly, ensure that the search string contains matching apostrophe character.
 
-## <a name="device-identity-management-tasks"></a>Задачи управления удостоверениями устройств
+## <a name="device-identity-management-tasks"></a>Device identity management tasks
 
-Администратор глобального администратора или облачного устройства может управлять зарегистрированными или присоединенными устройствами. Администраторы службы Intune могут:
+As a global administrator or cloud device administrator, you can manage the registered or joined devices. Администраторы службы Intune могут:
 
 - обновлять устройства — например, при ежедневных операциях, таких как включение и отключение устройств;
 - удалять устройства — когда устройство списывается и должно быть удалено из Azure AD.
 
-В этом разделе содержатся сведения об общих задачах управления удостоверениями устройств.
+This section provides you with information about common device identity management tasks.
 
 ### <a name="manage-an-intune-device"></a>Управление устройством Intune
 
-Если вы являетесь администратором Intune, то вы можете управлять устройствами, которые отмечены как **Microsoft Intune**. Если устройство не зарегистрировано в Microsoft Intune параметр "Управление" будет неактивен.
+Если вы являетесь администратором Intune, то вы можете управлять устройствами, которые отмечены как **Microsoft Intune**. If the device is not enrolled with Microsoft Intune the "Manage" option will be greyed out.
 
 ![Управление устройством Intune](./media/device-management-azure-portal/31.png)
 
@@ -134,9 +133,9 @@ ms.locfileid: "73200243"
 
 **Примечания:**
 
-- Чтобы включить или отключить устройство, необходимо быть администратором глобального администратора или облачным устройством в Azure AD. 
-- Отключение устройства предотвращает успешную проверку подлинности устройства в Azure AD. Таким образом, устройство не сможет получить доступ к ресурсам Azure AD, защищенным ЦС устройств, или использовать учетные данные WH4B.
-- Отключение устройства приведет к отмене основного маркера обновления (PRT) и маркеров обновления (RT) на устройстве.
+- You need to be a global administrator or cloud device administrator in Azure AD to enable / disable a device. 
+- Disabling a device prevents a device from successfully authenticating with Azure AD, thereby preventing the device from accessing your Azure AD resources that are guarded by device CA or using your WH4B credentials.
+- Disabling the device will revoke both the Primary Refresh Token (PRT) and any Refresh Tokens (RT) on the device.
 
 ### <a name="delete-an-azure-ad-device"></a>Удаление устройства Azure AD
 
@@ -158,7 +157,7 @@ ms.locfileid: "73200243"
    - будут удалены все данные, связанные с устройством, например ключи BitLocker для устройств Windows;  
    - вы не сможете отменить это действие (не рекомендуется выполнять без необходимости).
 
-Если устройство управляется другим центром управления (например, Microsoft Intune), перед удалением устройства в Azure AD убедитесь, что устройство было очищено или снято с учета. Узнайте, как [управлять устаревшими устройствами](device-management-azure-portal.md) перед удалением устройств.
+If a device is managed by another management authority (for example, Microsoft Intune), make sure that the device has been wiped / retired before deleting the device in Azure AD. Review how to [manage stale devices](device-management-azure-portal.md) before deleting any devices.
 
 ### <a name="view-or-copy-device-id"></a>Просмотр и копирование идентификатора устройства
 
@@ -186,7 +185,7 @@ ms.locfileid: "73200243"
 
 ## <a name="audit-logs"></a>Журналы аудита
 
-Действия устройств можно просмотреть в журналах действий. Эти журналы включают действия, активируемые службой регистрации устройств и пользователями.
+Действия устройств можно просмотреть в журналах действий. These logs include activities triggered by the device registration service and by users:
 
 - создание устройства и добавление владельцев или пользователей устройства;
 - изменение параметров устройства;
@@ -224,4 +223,4 @@ ms.locfileid: "73200243"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Как управлять устаревшими устройствами в Azure AD](manage-stale-devices.md)
+[How to manage stale devices in Azure AD](manage-stale-devices.md)

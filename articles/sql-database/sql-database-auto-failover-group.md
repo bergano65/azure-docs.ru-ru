@@ -11,21 +11,21 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab
 ms.date: 11/07/2019
-ms.openlocfilehash: 16fc15a574655f20e3e6e37f164773b41ffe0b78
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: 470e9a9c36b6b4ec2e40db5dfc47ae03fb6b5aa8
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73839341"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74421371"
 ---
 # <a name="use-auto-failover-groups-to-enable-transparent-and-coordinated-failover-of-multiple-databases"></a>Использование групп автоматической отработки отказа для включения прозрачной и согласованной отработки отказа в нескольких базах данных
 
-Группы автоматической отработки отказа — это функция базы данных SQL, которая позволяет управлять репликацией и отработкой отказа группы баз данных на сервере базы данных SQL или всех базах данных в управляемом экземпляре в другом регионе. Это декларативная абстракция поверх существующей функции [активной георепликации](sql-database-active-geo-replication.md) , предназначенной для упрощения развертывания геореплицируемых баз данных и управления ими в масштабе. Вы можете запустить отработку отказа вручную или делегировать службе Базы данных SQL, используя определяемую пользователем политику. Последний вариант позволяет автоматически восстановить несколько связанных баз данных в дополнительном регионе после катастрофических сбоев или других незапланированных событий, которые приводят к полной или частичной потере доступности службы Базы данных SQL в основном регионе. Группа отработки отказа может включать одну или несколько баз данных, обычно используемых одним приложением. Кроме того, клиенты могут использовать доступные для чтения базы данных-получатели для разгрузки рабочих нагрузок запросов, доступных только для чтения. Так как группы автоматической отработки отказа включают в себя несколько баз данных, базы данных необходимо настроить на сервере-источнике. Группы автоматической отработки отказа поддерживают репликацию всех баз данных в группе только на один сервер-получатель в другом регионе.
+Auto-failover groups is a SQL Database feature that allows you to manage replication and failover of a group of databases on a SQL Database server or all databases in a managed instance to another region. It is a declarative abstraction on top of the existing [active geo-replication](sql-database-active-geo-replication.md) feature, designed to simplify deployment and management of geo-replicated databases at scale. Вы можете запустить отработку отказа вручную или делегировать службе Базы данных SQL, используя определяемую пользователем политику. Последний вариант позволяет автоматически восстановить несколько связанных баз данных в дополнительном регионе после катастрофических сбоев или других незапланированных событий, которые приводят к полной или частичной потере доступности службы Базы данных SQL в основном регионе. A failover group can include one or multiple databases, typically used by the same application. Кроме того, клиенты могут использовать доступные для чтения базы данных-получатели для разгрузки рабочих нагрузок запросов, доступных только для чтения. Так как группы автоматической отработки отказа включают в себя несколько баз данных, базы данных необходимо настроить на сервере-источнике. Группы автоматической отработки отказа поддерживают репликацию всех баз данных в группе только на один сервер-получатель в другом регионе.
 
 > [!NOTE]
 > Если при работе с отдельными базами данных или с базами данных в пуле на сервере базы данных SQL вы хотите создать несколько вторичных реплик в одном или в разных регионах, используйте [активную георепликацию](sql-database-active-geo-replication.md). 
 
-Во время работы с группами автоматической отработки отказа с политикой автоматической отработки отказа любой сбой, который влияет на одну или на несколько баз данных в группе, приведет к автоматической отработке отказа. Обычно это инциденты, которые невозможно устранить самостоятельно с помощью встроенных автоматических операций высокой доступности. Примеры триггеров отработки отказа включают в себя инцидент, вызванный кругом клиентов SQL или контрольным кольцом, из-за утечки памяти ядра операционной системы на нескольких службах вычислений или инцидента, вызванного неисправностью одного или нескольких звонков клиента, так как в процессе ro был вырезан Недопустимый сетевой кабель. утине аппаратное списание.  Дополнительные сведения см. в статье [Высокая доступность базы данных SQL](sql-database-high-availability.md).
+Во время работы с группами автоматической отработки отказа с политикой автоматической отработки отказа любой сбой, который влияет на одну или на несколько баз данных в группе, приведет к автоматической отработке отказа. Typically these are incidents that cannot be self-mitigated by the built-in automatic high availability operations. The examples of failover triggers include an incident caused by a SQL tenant ring or control ring being down due to an OS kernel memory leak on several compute nodes, or an incident caused by one or more tenant rings being down because a wrong network cable was cut during routine hardware decommissioning.  For more information, see [SQL Database High Availability](sql-database-high-availability.md).
 
 Кроме того, группы автоматической отработки отказа предоставляют конечные точки прослушивателя только для чтения и для чтения-записи, которые во время отработки отказа не изменяются. Независимо от того, используете ли вы активацию вручную или автоматическую активацию отработки отказа, отработка отказа переключит все базы данных-получатели в группе в базу данных-источник. После выполнения автоматической отработки отказа базы данных запись DNS автоматически обновляется, чтобы перенаправить конечные точки в новый регион. Конкретные сведения о RPO и RTO можно найти в [обзоре обеспечения непрерывности бизнес-процессов](sql-database-business-continuity.md).
 
@@ -41,12 +41,12 @@ ms.locfileid: "73839341"
 
 ## <a name="auto-failover-group-terminology-and-capabilities"></a>Терминология и способности группы автоматической отработки отказа
 
-- **Группа отработки отказа (туман)**
+- **Failover group (FOG)**
 
-  Группа отработки отказа — это именованная группа баз данных, управляемая одним сервером базы данных SQL или одним управляемым экземпляром, которые могут выполнять отработку отказа в другой регион в случае, если все или некоторые базы данных-получатели становятся недоступными вследствие сбоя в основном регионе. При создании для управляемых экземпляров группа отработки отказа содержит все пользовательские базы данных в экземпляре, поэтому в экземпляре можно настроить только одну группу отработки отказа.
+  A failover group is a named group of databases managed by a single SQL Database server or within a single managed instance that can fail over as a unit to another region in case all or some primary databases become unavailable due to an outage in the primary region. When created for managed instances, a failover group contains all user databases in the instance and therefore only one failover group can be configured on an instance.
   
   > [!IMPORTANT]
-  > Имя группы отработки отказа должно быть глобально уникальным в пределах домена `.database.windows.net`.
+  > The name of the failover group must be globally unique within the `.database.windows.net` domain.
 
 - **Серверы Базы данных SQL**
 
@@ -54,18 +54,18 @@ ms.locfileid: "73839341"
 
 - **Источник**
 
-  Сервер базы данных SQL или управляемый экземпляр, на котором размещены базы данных источника в группе отработки отказа.
+  The SQL Database server or managed instance that hosts the primary databases in the failover group.
 
 - **Получатель**
 
-  Сервер базы данных SQL или управляемый экземпляр, на котором размещены базы данных-получатели в группе отработки отказа. Источники и получатели не могут находиться в одном и том же регионе.
+  The SQL Database server or managed instance that hosts the secondary databases in the failover group. Источники и получатели не могут находиться в одном и том же регионе.
 
 - **Добавление отдельных баз данных в группу отработки отказа**
 
   Вы можете разместить несколько отдельных баз данных на одном сервере Базы данных SQL в одной группе отработки отказа. Если вы добавите отдельную базу данных в группу отработки отказа, она автоматически создаст базу данных-получатель, используя тот же выпуск и объем вычислительных ресурсов на сервере-получателе.  Этот сервер следует указать при создании группы отработки отказа. Если вы добавите базу данных, у которой уже есть база данных-получатель на сервере-получателе, эта ссылка на георепликацию наследуется группой. Во время добавления базы данных, у которой уже есть база данных-получатель на сервере, которая не является частью группы отработки отказа, на этом сервере-получателе будет создана новая база данных-получатель.
-  
+
   > [!IMPORTANT]
-  > Убедитесь, что у сервера-получателя нет базы данных с тем же именем, если она не является существующей базой данных-получателем. В группе отработки отказа для управляемого экземпляра реплицируются все пользовательские базы данных. Нельзя выбирать подмножество для репликации пользовательских баз данных в группе отработки отказа.
+  > Make sure that the secondary server doesn't have a database with the same name unless it is an existing secondary database. In failover groups for managed instance all user databases are replicated. Нельзя выбирать подмножество для репликации пользовательских баз данных в группе отработки отказа.
 
 - **Добавление баз данных в эластичный пул в группе отработки отказа**
 
@@ -73,33 +73,33 @@ ms.locfileid: "73839341"
   
 - **Зона DNS**
 
-  Уникальный идентификатор, который автоматически создается при создании нового экземпляра. Сертификат с несколькими доменами (SAN) для этого экземпляра подготавливается для проверки подлинности клиентских подключений к любому экземпляру в той же зоне DNS. Два управляемых экземпляра в одной группе отработки отказа должны иметь общий доступ к зоне DNS. 
+  A unique ID that is automatically generated when a new instance is created. A multi-domain (SAN) certificate for this instance is provisioned to authenticate the client connections to any instance in the same DNS zone. The two managed instances in the same failover group must share the DNS zone.
   
   > [!NOTE]
-  > Идентификатор зоны DNS не требуется для групп отработки отказа, созданных для серверов базы данных SQL.
+  > A DNS zone ID is not required for failover groups created for SQL Database servers.
 
 - **Прослушиватель чтения и записи для группы отработки отказа**
 
-  Запись DNS CNAME, которая указывает на текущий основной URL-адрес. Он создается автоматически при создании группы отработки отказа и позволяет рабочей нагрузке SQL для чтения и записи прозрачно повторно подключаться к базе данных-источнику при изменении основных изменений после отработки отказа. При создании группы отработки отказа на сервере базы данных SQL запись CNAME DNS для URL-адреса прослушивателя формируется как `<fog-name>.database.windows.net`. При создании группы отработки отказа на управляемом экземпляре запись CNAME DNS для URL-адреса прослушивателя формируется как `<fog-name>.zone_id.database.windows.net`.
+  A DNS CNAME record that points to the current primary's URL. It is created automatically when the failover group is created and allows the read-write SQL workload to transparently reconnect to the primary database when the primary changes after failover. When the failover group is created on a SQL Database server, the DNS CNAME record for the listener URL is formed as `<fog-name>.database.windows.net`. When the failover group is created on a managed instance, the DNS CNAME record for the listener URL is formed as `<fog-name>.zone_id.database.windows.net`.
 
 - **Прослушиватель только для чтения для группы отработки отказа**
 
-  Формируется запись DNS CNAME, которая указывает на прослушиватель только для чтения, указывающий на URL-адрес получателя. Он создается автоматически при создании группы отработки отказа и позволяет рабочей нагрузке SQL только для чтения прозрачно подключаться к базе данных-получателю с помощью указанных правил балансировки нагрузки. При создании группы отработки отказа на сервере базы данных SQL запись CNAME DNS для URL-адреса прослушивателя формируется как `<fog-name>.secondary.database.windows.net`. При создании группы отработки отказа на управляемом экземпляре запись CNAME DNS для URL-адреса прослушивателя формируется как `<fog-name>.zone_id.secondary.database.windows.net`.
+  Формируется запись DNS CNAME, которая указывает на прослушиватель только для чтения, указывающий на URL-адрес получателя. It is created automatically when the failover group is created and allows the read-only SQL workload to transparently connect to the secondary using the specified load-balancing rules. When the failover group is created on a SQL Database server, the DNS CNAME record for the listener URL is formed as `<fog-name>.secondary.database.windows.net`. When the failover group is created on a managed instance, the DNS CNAME record for the listener URL is formed as `<fog-name>.zone_id.secondary.database.windows.net`.
 
 - **Политика автоматической отработки отказа**
 
   По умолчанию группа отработки отказа настроена с помощью политики автоматической отработки отказа. Служба базы данных SQL запускает отработку отказа после обнаружения сбоя и истечения льготного периода. Системе необходимо убедиться, что сбой нельзя устранить с помощью встроенной [инфраструктуры обеспечения высокой доступности Службы базы данных SQL](sql-database-high-availability.md) из-за масштаба влияния. Если вы хотите управлять рабочим процессом отработки отказа из приложения, вы можете отключить автоматическую отработку отказа.
   
   > [!NOTE]
-  > Из-за проверки масштаба сбоя и того, насколько быстро ее можно устранить, она включает в себя действия, выполняемые группой эксплуатации. льготный период не может быть указан ниже одного часа.  Это ограничение применяется ко всем базам данных в группе отработки отказа независимо от состояния синхронизации данных. 
+  > Because verification of the scale of the outage and how quickly it can be mitigated involves human actions by the operations team, the grace period cannot be set below one hour.  This  limitation applies to all databases in the failover group regardless of their data synchronization state. 
 
 - **Политика отработки отказа только для чтения**
 
-  По умолчанию группа отработки отказа только для чтения отключена. Это гарантирует, что производительность базы данных-источника не изменится, если база данных-получателя отключена. Тем не менее, это также означает, что невозможно будет активировать сеансы только для чтения, пока база данных-получателя не восстановится. Если вы не можете допустить время простоя для сеансов только для чтения и хотите временно использовать первичный трафик как для чтения, так и для чтения и записи за счет возможного снижения производительности источника данных, вы можете включить отработку отказа для прослушивателя только для чтения. путем настройки свойства `AllowReadOnlyFailoverToPrimary`. В этом случае трафик только для чтения будет автоматически перенаправлен на сервер-источник, если дополнительный сервер недоступен.
+  По умолчанию группа отработки отказа только для чтения отключена. Это гарантирует, что производительность базы данных-источника не изменится, если база данных-получателя отключена. Тем не менее, это также означает, что невозможно будет активировать сеансы только для чтения, пока база данных-получателя не восстановится. If you cannot tolerate downtime for the read-only sessions and are OK to temporarily use the primary for both read-only and read-write traffic at the expense of the potential performance degradation of the primary, you can enable failover for the read-only listener by configuring the `AllowReadOnlyFailoverToPrimary` property. In that case, the read-only traffic will be automatically redirected to the primary if the secondary is not available.
 
 - **Плановая отработка отказа**
 
-   Плановая отработка отказа выполняет полную синхронизацию между базой данных-источник и базой данных-получатель, прежде чем база данных-получатель переключится на основную роль. Такая обработка отказа гарантирует отсутствие потерь данных. Плановая отработка отказа используется в следующих сценариях.
+   Плановая отработка отказа выполняет полную синхронизацию между базой данных-источник и базой данных-получатель, прежде чем база данных-получатель переключится на основную роль. Такая отработка отказа гарантирует отсутствие потери данных. Плановая отработка отказа используется в следующих сценариях.
 
   - Тестирование аварийного восстановления (DR) в рабочей среде в случае, если потеря данных неприемлема.
   - Перемещение баз данных в другой регион.
@@ -107,7 +107,7 @@ ms.locfileid: "73839341"
 
 - **Незапланированная отработка отказа**
 
-   При незапланированной или принудительной отработке отказа база данных-получатель немедленно переключается на основную роль без какой-либо синхронизации с базой данных-источником. Эта операция приведет к потере данных. Незапланированная отработка отказа используется в качестве метода восстановления при сбоях, когда база данных-источник недоступна. Когда исходный первичный сервер возвращается в режим «в сети», он автоматически повторно подключается без синхронизации и становится новым сервером-получателем.
+   При незапланированной или принудительной отработке отказа база данных-получатель немедленно переключается на основную роль без какой-либо синхронизации с базой данных-источником. Эта операция приведет к потере данных. Незапланированная отработка отказа используется в качестве метода восстановления при сбоях, когда база данных-источник недоступна. When the original primary is back online, it will automatically reconnect without synchronization and become a new secondary.
 
 - **Отработка отказа вручную**
 
@@ -115,7 +115,7 @@ ms.locfileid: "73839341"
 
 - **Льготный период с потерей данных**
 
-  Так как база данных-источник и база данных-получатель синхронизированы с помощью асинхронной репликации, отработка отказа может привести к потере данных. Вы можете настроить политику автоматической отработки отказа, чтобы представить устойчивость приложения к потере данных. Настроив `GracePeriodWithDataLossHours`, вы можете контролировать, как долго система ожидает перед началом отработки отказа, которая, скорее всего, приведет к утрате данных.
+  Так как база данных-источник и база данных-получатель синхронизированы с помощью асинхронной репликации, отработка отказа может привести к потере данных. Вы можете настроить политику автоматической отработки отказа, чтобы представить устойчивость приложения к потере данных. By configuring `GracePeriodWithDataLossHours`, you can control how long the system waits before initiating the failover that is likely to result data loss.
 
 - **Несколько групп отработки отказа**
 
@@ -125,16 +125,20 @@ ms.locfileid: "73839341"
   > Управляемый экземпляр не поддерживает несколько групп отработки отказа.
   
 ## <a name="permissions"></a>Разрешения
-Управление разрешениями для группы отработки отказа осуществляется [с помощью управления доступом на основе ролей (RBAC)](../role-based-access-control/overview.md). Роль [участника SQL Server](../role-based-access-control/built-in-roles.md#sql-server-contributor) имеет все необходимые разрешения для управления группами отработки отказа. 
 
-### <a name="create-failover-group"></a>Создание группы отработки отказа
-Чтобы создать группу отработки отказа, необходим доступ на запись RBAC к серверам-источнику и серверу-получателю, а также ко всем базам данных в группе отработки отказа. Для управляемого экземпляра необходим доступ на запись RBAC к основному и дополнительному управляемому экземпляру, но разрешения на отдельные базы данных не важны, так как отдельные базы данных управляемого экземпляра нельзя добавлять в группу отработки отказа или удалять из нее. 
+Permissions for a failover group are managed via [role-based access control (RBAC)](../role-based-access-control/overview.md). The [SQL Server Contributor](../role-based-access-control/built-in-roles.md#sql-server-contributor) role has all the necessary permissions to manage failover groups.
 
-### <a name="update-a-failover-group"></a>Обновление группы отработки отказа
-Чтобы обновить группу отработки отказа, требуется доступ на запись RBAC к группе отработки отказа и все базы данных на текущем сервере-источнике или управляемом экземпляре.  
+### <a name="create-failover-group"></a>Create failover group
 
-### <a name="failover-a-failover-group"></a>Переход на другой ресурс группы отработки отказа
-Для переключения группы отработки отказа требуется доступ на запись RBAC к группе отработки отказа на новом сервере-источнике или управляемом экземпляре. 
+To create a failover group, you need RBAC write access to both the primary and secondary servers, and to all databases in the failover group. For a managed instance, you need RBAC write access to both the primary and secondary managed instance, but permissions on individual databases are not relevant since individual managed instance databases cannot be added to or removed from a failover group. 
+
+### <a name="update-a-failover-group"></a>Update a failover group
+
+To update a failover group, you need RBAC write access to the failover group, and all databases on the current primary server or managed instance.  
+
+### <a name="failover-a-failover-group"></a>Failover a failover group
+
+To fail over a failover group, you need RBAC write access to the failover group on the new primary server or managed instance.
 
 ## <a name="best-practices-of-using-failover-groups-with-single-databases-and-elastic-pools"></a>Рекомендации по использованию групп отработки отказа с отдельными базами данных и эластичными пулами
 
@@ -143,8 +147,7 @@ ms.locfileid: "73839341"
 ![автоматическая отработка отказа](./media/sql-database-auto-failover-group/auto-failover-group.png)
 
 > [!NOTE]
-> Подробное пошаговое руководство по добавлению одной базы данных в группу отработки отказа см. в разделе [Добавление отдельной базы данных в группу отработки отказа](sql-database-single-database-failover-group-tutorial.md) . 
-
+> See [Add single database to a failover group](sql-database-single-database-failover-group-tutorial.md) for a detailed step-by-step tutorial adding a single database to a failover group.
 
 При разработке службы с обеспечением непрерывности бизнес-процессов придерживайтесь следующих рекомендаций.
 
@@ -153,7 +156,7 @@ ms.locfileid: "73839341"
   Вы можете создать одну или несколько групп отработки отказа между двумя серверами в различных регионах (для основного сервера и сервера-получателя). Каждая группа может содержать одну или несколько баз данных, которые восстанавливаются единым блоком в случае, когда все или часть баз данных-источников становятся недоступными из-за сбоя в основном регионе. Группа отработки отказа создает базу данных-получатель в дополнительном географическом регионе с таким же целевым уровнем служб, который указан для базы данных-источника. При добавлении существующей связи георепликации к группе отработки отказа убедитесь, что база данных-получатель геореплицируемых данных настроена с тем же уровнем служб и объемом вычислительных ресурсов, что и база данных-источник.
   
   > [!IMPORTANT]
-  > Создание групп отработки отказа между двумя серверами в разных подписках в настоящее время не поддерживается для отдельных баз данных и эластичных пулов. Если переместить основной или дополнительный сервер в другую подписку после создания группы отработки отказа, это может привести к сбоям запросов отработки отказа и других операций.
+  > Creating failover groups between two servers in different subscriptions is not currently supported for single databases and elastic pools. If you move the primary or secondary server to a different subscription after the failover group has been created, it could result in failures of the failover requests and other operations.
 
 - **Использование прослушивателя чтения и записи для рабочей нагрузки OLTP**
 
@@ -161,7 +164,7 @@ ms.locfileid: "73839341"
 
 - **Использование прослушивателя только для чтения для рабочей нагрузки только для чтения**
 
-  Если вы используете логически изолированную рабочую нагрузку в режиме только для чтения, устойчивую к некоторым задержкам в обновлении данных, в приложении можно использовать базу данных-получатель. Для сеансов с доступом только для чтения используйте `<fog-name>.secondary.database.windows.net` в качестве URL-адреса сервера, чтобы подключение автоматически перенаправлялось на сервер-получатель. Также рекомендуется указать в качестве цели чтения строки соединения значение `ApplicationIntent=ReadOnly`. Чтобы обеспечить возможность повторного подключения рабочей нагрузки только для чтения после отработки отказа или в случае, если сервер-получатель переходит в автономный режим, обязательно настройте свойство `AllowReadOnlyFailoverToPrimary` политики отработки отказа. 
+  Если вы используете логически изолированную рабочую нагрузку в режиме только для чтения, устойчивую к некоторым задержкам в обновлении данных, в приложении можно использовать базу данных-получатель. Для сеансов с доступом только для чтения используйте `<fog-name>.secondary.database.windows.net` в качестве URL-адреса сервера, чтобы подключение автоматически перенаправлялось на сервер-получатель. It is also recommended that you indicate in connection string read intent by using `ApplicationIntent=ReadOnly`. If you want to ensure that the read-only workload can reconnect after failover or in case the secondary server goes offline, make sure to configure the `AllowReadOnlyFailoverToPrimary` property of the failover policy.
 
 - **Будьте готовы к снижению производительности**
 
@@ -172,45 +175,44 @@ ms.locfileid: "73839341"
 
 - **Будьте готовы к потере данных**
 
-  При обнаружении сбоя SQL ожидает период, указанный параметром `GracePeriodWithDataLossHours`. Значение этого свойства по умолчанию – 1 час. Если вы не можете позволить себе потери данных, обязательно установите `GracePeriodWithDataLossHours` в достаточно большое число, например 24 часа. Используйте группу ручной отработки отказа для восстановления размещения из получателя в источник.
+  If an outage is detected, SQL waits for the period you specified by `GracePeriodWithDataLossHours`. Значение этого свойства по умолчанию – 1 час. If you cannot afford data loss, make sure to set `GracePeriodWithDataLossHours` to a sufficiently large number, such as 24 hours. Используйте группу ручной отработки отказа для восстановления размещения из получателя в источник.
 
   > [!IMPORTANT]
   > Эластичные пулы с 800 DTU или менее и более чем 250 базами данных, использующими георепликацию, могут испытывать проблемы, включая более длительные плановые операции отработки отказа и снижение производительности.  Эти проблемы чаще всего возникают из-за рабочих нагрузок, интенсивно записывающих данные, если конечные точки георепликации физически находятся далеко друг от друга или если используется несколько дополнительных конечных точек для каждой базы данных.  Симптомы этих проблем проявляются при увеличении задержки георепликации с течением времени.  Эту задержку можно отслеживать с помощью [sys.dm_geo_replication_link_status](/sql/relational-databases/system-dynamic-management-views/sys-dm-geo-replication-link-status-azure-sql-database).  Если эти проблемы возникли, к возможным способам их устранения относятся увеличение числа DTU пула или уменьшение количества геореплицируемых баз данных в одном пуле.
 
-## <a name="best-practices-of-using-failover-groups-with-managed-instances"></a>Рекомендации по использованию групп отработки отказа с управляемыми экземплярами
+## <a name="best-practices-of-using-failover-groups-with-managed-instances"></a>Best practices of using failover groups with managed instances
 
-Группы автоматической отработки отказа должны быть настроены на экземпляре источника и подключены к экземпляру получателя в другом регионе Azure.  Все базы данных в экземпляре будут реплицированы в экземпляр получателя. 
+Группы автоматической отработки отказа должны быть настроены на экземпляре источника и подключены к экземпляру получателя в другом регионе Azure.  Все базы данных в экземпляре будут реплицированы в экземпляр получателя.
 
 На следующей схеме показана типичная конфигурация геоизбыточного облачного приложения, использующего несколько управляемых экземпляров и активную георепликацию.
 
 ![автоматическая отработка отказа](./media/sql-database-auto-failover-group/auto-failover-group-mi.png)
 
 > [!NOTE]
-> Подробное пошаговое руководство по добавлению управляемого экземпляра для использования группы отработки отказа см. в разделе [Добавление управляемого экземпляра в группу отработки отказа](sql-database-managed-instance-failover-group-tutorial.md) . 
+> See [Add managed instance to a failover group](sql-database-managed-instance-failover-group-tutorial.md) for a detailed step-by-step tutorial adding a managed instance to use failover group.
 
-Если приложение использует управляемый экземпляр в качестве уровня данных, при проектировании непрерывности бизнес-процессов следуйте приведенным ниже общим рекомендациям.
+If your application uses managed instance as the data tier, follow these general guidelines when designing for business continuity:
 
 - **Создание экземпляра получателя в той же зоне DNS, что и для экземпляра источника**
 
-  Чтобы обеспечить беспрерывное подключение к экземпляру источника после отработки отказа, экземпляры и источника, и получателя должны находиться в одной зоне DNS. Это гарантирует, что один и тот же сертификат с несколькими доменами (SAN) можно использовать для проверки подлинности клиентских подключений к одному из двух экземпляров в группе отработки отказа. После подготовки вашего приложения к рабочему развертыванию создайте экземпляр получателя в другом регионе и убедитесь, что он использует ту же зону DNS, что и экземпляр источника. Это можно сделать, указав необязательный параметр `DNS Zone Partner` с помощью портал Azure, PowerShell или REST API. 
+  Чтобы обеспечить беспрерывное подключение к экземпляру источника после отработки отказа, экземпляры и источника, и получателя должны находиться в одной зоне DNS. It will guarantee that the same multi-domain (SAN) certificate can be used to authenticate the client connections to either of the two instances in the failover group. После подготовки вашего приложения к рабочему развертыванию создайте экземпляр получателя в другом регионе и убедитесь, что он использует ту же зону DNS, что и экземпляр источника. You can do it by specifying a `DNS Zone Partner` optional parameter using the Azure portal, PowerShell, or the REST API.
 
 > [!IMPORTANT]
-> Первый экземпляр, созданный в подсети, определяет зону DNS для всех последующих экземпляров в той же подсети. Это означает, что два экземпляра из одной подсети не могут принадлежать разным зонам DNS.   
+> First instance created in the subnet determines DNS zone for all subsequent instances in the same subnet. This means that two instances from the same subnet cannot belong to different DNS zones.
 
-  Дополнительные сведения о создании экземпляра-получателя в той же зоне DNS, что и основной экземпляр, см. в разделе [Создание вторичного управляемого экземпляра](sql-database-managed-instance-failover-group-tutorial.md#3---create-a-secondary-managed-instance).
+  For more information about creating the secondary instance in the same DNS zone as the primary instance, see [Create a secondary managed instance](sql-database-managed-instance-failover-group-tutorial.md#3---create-a-secondary-managed-instance).
 
 - **Включение трафика репликации между двумя экземплярами**
 
   Поскольку каждый экземпляр изолирован в своей виртуальной сети, двусторонний трафик между этими виртуальными сетями должен быть разрешен. См. [VPN-шлюзы Azure](../vpn-gateway/vpn-gateway-about-vpngateways.md)
 
-- **Создание группы отработки отказа между управляемыми экземплярами в разных подписках**
+- **Create a failover group between managed instances in different subscriptions**
 
-  Группу отработки отказа можно создать между управляемыми экземплярами в двух разных подписках. При использовании API PowerShell можно сделать это, указав параметр `PartnerSubscriptionId` для вторичного экземпляра. При использовании REST API каждый идентификатор экземпляра, входящий в параметр `properties.managedInstancePairs`, может иметь собственную subscriptionID. 
+  You can create a failover group between managed instances in two different subscriptions. When using PowerShell API you can do it by  specifying the `PartnerSubscriptionId` parameter for the secondary instance. When using REST API, each instance ID included in the `properties.managedInstancePairs` parameter can have its own subscriptionID.
   
   > [!IMPORTANT]
-  > Портал Azure не поддерживает группы отработки отказа в разных подписках.
+  > Azure Portal does not support failover groups across different subscriptions.
 
-  
 - **Настройка группы отработки отказа для управления отработками отказов для всего экземпляра**
 
   Группа отработки отказа будет управлять отработкой отказа всех баз данных в экземпляре. При создании группы каждая база данных в экземпляре будет автоматически геореплицироваться в экземпляр получателя. Вы не можете использовать группы отработки отказа для запуска частичной отработки отказа подмножества баз данных.
@@ -220,7 +222,7 @@ ms.locfileid: "73839341"
 
 - **Использование прослушивателя чтения и записи для рабочей нагрузки OLTP**
 
-  При выполнении операций OLTP используйте `<fog-name>.zone_id.database.windows.net` в качестве URL-адреса сервера, чтобы все подключения автоматически перенаправлялись на сервер-источник. Этот URL-адрес не будет изменяться после отработки отказа. Отработка отказа включает в себя обновление DNS-записи, поэтому клиентские подключения будут перенаправляться на новый сервер-источник только после обновления кэша DNS на стороне клиента. Так как вторичный экземпляр использует зону DNS в качестве базы данных-источника, клиентское приложение сможет повторно подключиться к нему, используя тот же сертификат SAN.
+  При выполнении операций OLTP используйте `<fog-name>.zone_id.database.windows.net` в качестве URL-адреса сервера, чтобы все подключения автоматически перенаправлялись на сервер-источник. Этот URL-адрес не будет изменяться после отработки отказа. Отработка отказа включает в себя обновление DNS-записи, поэтому клиентские подключения будут перенаправляться на новый сервер-источник только после обновления кэша DNS на стороне клиента. Because the secondary instance shares the DNS zone with the primary, the client application will be able to reconnect to it using the same SAN certificate.
 
 - **Прямое подключение к георепликации получателя для запросов только для чтения**
 
@@ -229,7 +231,7 @@ ms.locfileid: "73839341"
   > [!NOTE]
   > На некоторых уровнях служб База данных SQL Azure поддерживает использование [реплик только для чтения](sql-database-read-scale-out.md) для балансировки рабочих нагрузок запросов только для чтения, используя возможности одной реплики и параметра `ApplicationIntent=ReadOnly` в строке соединения. После настройки георепликации получателя вы можете использовать эту возможность для соединения с репликой только для чтения либо в основном расположении, либо в геореплицированном расположении.
   > - Для подключения к реплике только для чтения в основном расположении используйте `<fog-name>.zone_id.database.windows.net`.
-  > - Чтобы подключиться к реплике только для чтения в дополнительном расположении, используйте `<fog-name>.secondary.zone_id.database.windows.net`.
+  > - To connect to a read-only replica in the secondary location, use `<fog-name>.secondary.zone_id.database.windows.net`.
 
 - **Будьте готовы к снижению производительности**
 
@@ -239,18 +241,18 @@ ms.locfileid: "73839341"
 
   При обнаружении сбоя SQL автоматически активирует отработку отказа с чтением и записью, если потери данных нулевые, насколько нам известно. В противном случае он ожидает в течение периода, указанного в `GracePeriodWithDataLossHours`. Если вы указали `GracePeriodWithDataLossHours`, будьте готовы к потере данных. Во время сбоев Azure, как правило, повышает доступность. Если вы не можете позволить себе потерю данных, установите для параметра GracePeriodWithDataLossHours достаточно большое количество времени, например 24 часа.
 
-  После запуска отработки отказа DNS обновления прослушивателя чтения и записи произойдут автоматически. Эта операция не приведет к потере данных. Однако процесс смены ролей баз данных в обычных условиях может занять до 5 минут. До окончания этого процесса некоторые базы данных в новом экземпляре источника будут оставаться в режиме только для чтения. Если отработка отказа инициируется с помощью PowerShell, вся операция выполняется синхронно. Если она инициируется с помощью портал Azure, Пользовательский интерфейс будет указывать состояние завершения. Если она инициируется с помощью REST API, то используйте стандартный механизм опроса Azure Resource Manager для мониторинга выполнения.
+  После запуска отработки отказа DNS обновления прослушивателя чтения и записи произойдут автоматически. Эта операция не приведет к потере данных. Однако процесс смены ролей баз данных в обычных условиях может занять до 5 минут. До окончания этого процесса некоторые базы данных в новом экземпляре источника будут оставаться в режиме только для чтения. If failover is initiated using PowerShell, the entire operation is synchronous. If it is initiated using the Azure portal, the UI will indicate completion status. Если она инициируется с помощью REST API, то используйте стандартный механизм опроса Azure Resource Manager для мониторинга выполнения.
 
   > [!IMPORTANT]
   > Используйте группу ручной отработки отказа для перемещения источников в исходное расположение. После устранения сбоя, вызвавшего отработку отказа, вы можете переместить базы данных-источники в исходное расположение. Для этого вам следует инициировать ручную отработку отказа группы.
 
-- **Подтверждение известных ограничений групп отработки отказа**
+- **Acknowledge known limitations of failover groups**
 
-  Переименование базы данных не поддерживается для экземпляров в группе отработки отказа. Чтобы иметь возможность переименовать базу данных, необходимо временно удалить группу отработки отказа.
+  Database rename is not supported for instances in failover group. You will need to temporarily delete failover group to be able to rename a database.
 
 ## <a name="failover-groups-and-network-security"></a>Группы отработки отказа и сетевая безопасность
 
-Для некоторых приложений правила безопасности требует, чтобы сетевой доступ к уровню данных был ограничен конкретным компонентом или компонентами, такими как виртуальная машина, веб-служба и т. д. Это требование представляет некоторые трудности при проектировании непрерывности бизнес-процессов и использовании групп отработки отказа. При реализации такого ограниченного доступа учитывайте следующие параметры.
+For some applications the security rules require that the network access to the data tier is restricted to a specific component or components such as a VM, web service etc. This requirement presents some challenges for business continuity design and the use of the failover groups. Consider the following options when implementing such restricted access.
 
 ### <a name="using-failover-groups-and-virtual-network-rules"></a>Использование групп отработки отказа и правил виртуальной сети
 
@@ -266,7 +268,7 @@ ms.locfileid: "73839341"
 
 ### <a name="using-failover-groups-and-sql-database-firewall-rules"></a>Использование групп отработки отказа и правил брандмауэра базы данных SQL
 
-Если для плана обеспечения непрерывности бизнес-процессов требуется отработка отказа с помощью групп с автоматической отработкой отказа, можно ограничить доступ к базе данных SQL с помощью традиционных правил брандмауэра.  Для поддержки автоматического перехода на другой ресурс выполните следующие действия:
+Если для плана обеспечения непрерывности бизнес-процессов требуется отработка отказа с помощью групп с автоматической отработкой отказа, можно ограничить доступ к базе данных SQL с помощью традиционных правил брандмауэра. Для поддержки автоматического перехода на другой ресурс выполните следующие действия:
 
 1. [создайте общедоступный IP-адрес](../virtual-network/virtual-network-public-ip-address.md#create-a-public-ip-address);
 2. [создайте общедоступный балансировщик нагрузки](../load-balancer/quickstart-create-basic-load-balancer-portal.md#create-a-basic-load-balancer) и назначьте ему общедоступный IP-адрес;
@@ -282,40 +284,40 @@ ms.locfileid: "73839341"
 > [!IMPORTANT]
 > Для обеспечения непрерывности бизнес-процессов при региональных сбоях должна присутствовать географическая избыточность интерфейсных компонентов и баз данных.
 
-## <a name="enabling-geo-replication-between-managed-instances-and-their-vnets"></a>Включение георепликации между управляемыми экземплярами и их виртуальных сетей
+## <a name="enabling-geo-replication-between-managed-instances-and-their-vnets"></a>Enabling geo-replication between managed instances and their VNets
 
-При настройке группы отработки отказа между основным и дополнительным управляемыми экземплярами в двух разных регионах каждый экземпляр изолирован с помощью независимой виртуальной сети. Чтобы разрешить трафик репликации между этими виртуальных сетей, убедитесь, что выполнены следующие условия.
+When you set up a failover group between primary and secondary managed instances in two different regions, each instance is isolated using an independent virtual network. To allow replication traffic between these VNets ensure these prerequisites are met:
 
-1. Два управляемых экземпляра должны находиться в разных регионах Azure.
-1. Два управляемых экземпляра должны быть одного уровня службы и иметь одинаковый размер хранилища. 
-1. Ваш вторичный управляемый экземпляр должен быть пустым (без пользовательских баз данных).
-1. Виртуальные сети, используемые управляемыми экземплярами, должны быть подключены через [VPN-шлюз](../vpn-gateway/vpn-gateway-about-vpngateways.md) или Express Route. Если две виртуальные сети подключаются через локальную сеть, убедитесь в отсутствии портов, блокирующих правила брандмауэра 5022 и 11000-11999. Пиринг глобальной виртуальной сети не поддерживается.
-1. У двух управляемых экземпляров виртуальных сетей не может быть перекрывающихся IP-адресов.
-1. Необходимо настроить группы безопасности сети (NSG), чтобы порты 5022 и диапазон 11000 ~ 12000 были открытыми для входящих и исходящих подключений из другой управляемой подсети с экземпляром. Это позволяет обеспечить трафик репликации между экземплярами.
+1. The two managed instances need to be in different Azure regions.
+1. The two managed instances need to be the same service tier, and have the same storage size.
+1. Your secondary managed instance must be empty (no user databases).
+1. The virtual networks used by the managed instances need to be connected through a [VPN Gateway](../vpn-gateway/vpn-gateway-about-vpngateways.md) or Express Route. When two virtual networks connect through an on-premises network, ensure there is no firewall rule blocking ports 5022, and 11000-11999. Пиринг глобальной виртуальной сети не поддерживается.
+1. The two managed instance VNets cannot have overlapping IP addresses.
+1. You need to set up your Network Security Groups (NSG) such that ports 5022 and the range 11000~12000 are open inbound and outbound for connections from the other managed instanced subnet. Это позволяет обеспечить трафик репликации между экземплярами.
 
    > [!IMPORTANT]
    > Неправильная настройка правил безопасности NSG приводит к задержке операций копирования баз данных.
 
-7. Для экземпляра-получателя настраивается правильный идентификатор зоны DNS. Зона DNS — это свойство управляемого экземпляра и виртуального кластера, а его идентификатор включается в адрес имени узла. Идентификатор зоны создается в виде случайной строки, когда первый управляемый экземпляр создается в каждой виртуальной сети, и один и тот же идентификатор назначается всем остальным экземплярам в той же подсети. После назначения зону DNS изменить нельзя. Управляемые экземпляры, входящие в одну группу отработки отказа, должны иметь общий доступ к зоне DNS. Это достигается путем передачи идентификатора зоны основного экземпляра в качестве значения параметра Днсзонепартнер при создании экземпляра-получателя. 
+1. The secondary instance is configured with the correct DNS zone ID. DNS zone is a property of a managed instance and virtual cluster, and its ID is included in the host name address. The zone ID is generated as a random string when the first managed instance is created in each VNet and the same ID is assigned to all other instances in the same subnet. Once assigned, the DNS zone cannot be modified. Managed instances included in the same failover group must share the DNS zone. You accomplish this by passing the primary instance's zone ID as the value of DnsZonePartner parameter when creating the secondary instance. 
 
    > [!NOTE]
-   > Подробное руководство по настройке групп отработки отказа с управляемым экземпляром см. в разделе [Добавление управляемого экземпляра в группу отработки отказа](sql-database-managed-instance-failover-group-tutorial.md).
+   > For a detailed tutorial on configuring failover groups with managed instance, see [add a managed instance to a failover group](sql-database-managed-instance-failover-group-tutorial.md).
 
 ## <a name="upgrading-or-downgrading-a-primary-database"></a>Повышение или понижение уровня производительности базы данных-источника
 
-Вы можете повышать или понижать объем вычислительных ресурсов базы данных-источника (в рамках одного уровня служб, а не между уровнем общего назначения и критически важным для бизнеса) без отключения каких-либо баз данных-получателей. При обновлении рекомендуется сначала обновить все базы данных-получатели, а затем обновить сервер-источник. При переходе на более раннюю версию в обратном порядке: переход на более раннюю версию первичного и последующее понижение уровня всех баз данных-получателей. Когда вы повышаете или понижаете базу данных до следующего уровня служб, особенно важно выполнять рекомендацию выше.
+Вы можете повышать или понижать объем вычислительных ресурсов базы данных-источника (в рамках одного уровня служб, а не между уровнем общего назначения и критически важным для бизнеса) без отключения каких-либо баз данных-получателей. When upgrading, we recommend that you upgrade all of the secondary databases first, and then upgrade the primary. When downgrading, reverse the order: downgrade the primary first, and then downgrade all of the secondary databases. Когда вы повышаете или понижаете базу данных до следующего уровня служб, особенно важно выполнять рекомендацию выше.
 
-Эту последовательность рекомендуется использовать специально, чтобы избежать проблем, когда вторичная версия на более низком SKU перегружается и должна быть повторно заполнена во время обновления или перехода на более раннюю версию. Вы также можете избежать этой проблемы, сделав первичную доступную только для чтения, за счет чего влияют на все рабочие нагрузки чтения и записи для первичной реплики. 
+This sequence is recommended specifically to avoid the problem where the secondary at a lower SKU gets overloaded and must be re-seeded during an upgrade or downgrade process. You could also avoid the problem by making the primary read-only, at the expense of impacting all read-write workloads against the primary.
 
 > [!NOTE]
 > Если вы создали базу данных-получатель как часть конфигурации группы отработки отказа, понижение ее уровня не рекомендуется. Это необходимо, чтобы обеспечить достаточную емкость уровня данных для обработки регулярных рабочих нагрузок после активации отработки отказа.
 
 ## <a name="preventing-the-loss-of-critical-data"></a>Предотвращение потери важных данных
 
-Из-за высокой задержки глобальных сетей непрерывная копия использует механизм асинхронной репликации. Ввиду асинхронной репликации потеря данных в случае сбоя неизбежна. Тем не менее для некоторых приложений терять данные недопустимо. Чтобы защитить эти критические обновления, разработчик приложения сразу же после фиксации транзакции может вызывать системную процедуру [sp_wait_for_database_copy_sync](/sql/relational-databases/system-stored-procedures/active-geo-replication-sp-wait-for-database-copy-sync). Вызов `sp_wait_for_database_copy_sync` блокирует вызывающий поток до тех пор, пока Последняя зафиксированная транзакция не будет передана в базу данных-получатель. Но вызов не дожидается воспроизведения и фиксации переданных транзакций в базе данных-получателе. `sp_wait_for_database_copy_sync` ограничивается ссылкой на определенное непрерывное копирование. Эту процедуру может вызвать любой пользователь с правами подключения к базе данных-источнику.
+Из-за высокой задержки глобальных сетей непрерывная копия использует механизм асинхронной репликации. Ввиду асинхронной репликации потеря данных в случае сбоя неизбежна. Тем не менее для некоторых приложений терять данные недопустимо. Чтобы защитить эти критические обновления, разработчик приложения сразу же после фиксации транзакции может вызывать системную процедуру [sp_wait_for_database_copy_sync](/sql/relational-databases/system-stored-procedures/active-geo-replication-sp-wait-for-database-copy-sync). Calling `sp_wait_for_database_copy_sync` blocks the calling thread until the last committed transaction has been transmitted to the secondary database. Но вызов не дожидается воспроизведения и фиксации переданных транзакций в базе данных-получателе. `sp_wait_for_database_copy_sync` is scoped to a specific continuous copy link. Эту процедуру может вызвать любой пользователь с правами подключения к базе данных-источнику.
 
 > [!NOTE]
-> `sp_wait_for_database_copy_sync` предотвращает потерю данных после отработки отказа, но не гарантирует полную синхронизацию для доступа на чтение. Задержка, вызванная вызовом процедуры `sp_wait_for_database_copy_sync`, может быть значительна и зависит от размера журнала транзакций во время вызова.
+> `sp_wait_for_database_copy_sync` prevents data loss after failover, but does not guarantee full synchronization for read access. The delay caused by a `sp_wait_for_database_copy_sync` procedure call can be significant and depends on the size of the transaction log at the time of the call.
 
 ## <a name="failover-groups-and-point-in-time-restore"></a>Группы отработки отказа и восстановление до точки во времени
 
@@ -325,36 +327,59 @@ ms.locfileid: "73839341"
 
 Как уже говорилось ранее, группами автоматической отработки отказа и активной георепликацией можно также управлять программно с помощью Azure PowerShell и REST API. В приведенных ниже таблицах описан доступный для этого набор команд. Активная георепликация включает в себя набор API-интерфейсов Azure Resource Manager для управления, в том числе [REST API Базы данных SQL Azure](https://docs.microsoft.com/rest/api/sql/) и [командлеты Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview). Эти интерфейсы API требуют использования групп ресурсов и поддерживают безопасность на основе ролей (RBAC). Дополнительные сведения о том, как реализовать контроль доступа на основе ролей, см. в статье [Использование управления доступом на основе ролей для контроля доступа к ресурсам в подписке Azure](../role-based-access-control/overview.md).
 
-### <a name="powershell-manage-sql-database-failover-with-single-databases-and-elastic-pools"></a>PowerShell. Управление отработкой отказа базы данных SQL с помощью отдельных баз данных и эластичных пулов
+# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
 
-| Командлет | Description (Описание) |
+### <a name="manage-sql-database-failover-with-single-databases-and-elastic-pools"></a>Управление отработкой отказа баз данных SQL с отдельными базами данных и эластичными пулами
+
+| Командлет | Описание |
 | --- | --- |
-| [New-AzSqlDatabaseFailoverGroup](https://docs.microsoft.com/powershell/module/az.sql/new-azsqldatabasefailovergroup) |Создает группу отработки отказа и регистрирует ее на основном сервере и сервере-получателе.|
-| [Remove-Азсклдатабасефаиловерграуп](https://docs.microsoft.com/powershell/module/az.sql/remove-azsqldatabasefailovergroup) | Удаляет группу отработки отказа с сервера, а также удаляет все входящие в нее базы данных-получатели. |
-| [Get-AzSqlDatabaseFailoverGroup](https://docs.microsoft.com/powershell/module/az.sql/get-azsqldatabasefailovergroup) | Возвращает конфигурацию группы отработки отказа. |
-| [Set-Азсклдатабасефаиловерграуп](https://docs.microsoft.com/powershell/module/az.sql/set-azsqldatabasefailovergroup) |Изменяет конфигурацию группы отработки отказа. |
-| [Switch-AzSqlDatabaseFailoverGroup](https://docs.microsoft.com/powershell/module/az.sql/switch-azsqldatabasefailovergroup) | Запускает отработку отказа группы отработки отказа на сервер-получатель. |
-| [Add-AzSqlDatabaseToFailoverGroup](https://docs.microsoft.com/powershell/module/az.sql/add-azsqldatabasetofailovergroup)|Добавляет одну или несколько баз данных в группу отработки отказа Базы данных SQL Azure.|
-|  | |
+| [New-AzSqlDatabaseFailoverGroup](/powershell/module/az.sql/new-azsqldatabasefailovergroup) |Создает группу отработки отказа и регистрирует ее на основном сервере и сервере-получателе.|
+| [Remove-AzSqlDatabaseFailoverGroup](/powershell/module/az.sql/remove-azsqldatabasefailovergroup) | Удаляет группу отработки отказа с сервера, а также удаляет все входящие в нее базы данных-получатели. |
+| [Get-AzSqlDatabaseFailoverGroup](/powershell/module/az.sql/get-azsqldatabasefailovergroup) | Возвращает конфигурацию группы отработки отказа. |
+| [Set-AzSqlDatabaseFailoverGroup](/powershell/module/az.sql/set-azsqldatabasefailovergroup) |Изменяет конфигурацию группы отработки отказа. |
+| [Switch-AzSqlDatabaseFailoverGroup](/powershell/module/az.sql/switch-azsqldatabasefailovergroup) | Запускает отработку отказа группы отработки отказа на сервер-получатель. |
+| [Add-AzSqlDatabaseToFailoverGroup](/powershell/module/az.sql/add-azsqldatabasetofailovergroup)|Добавляет одну или несколько баз данных в группу отработки отказа Базы данных SQL Azure.|
+
+### <a name="manage-sql-database-failover-groups-with-managed-instances"></a>Manage SQL database failover groups with managed instances
+
+| Командлет | Описание |
+| --- | --- |
+| [New-AzSqlDatabaseInstanceFailoverGroup](/powershell/module/az.sql/new-azsqldatabaseinstancefailovergroup) |Создает группу отработки отказа и регистрирует ее на основном сервере и сервере-получателе.|
+| [Set-AzSqlDatabaseInstanceFailoverGroup](/powershell/module/az.sql/set-azsqldatabaseinstancefailovergroup) |Изменяет конфигурацию группы отработки отказа.|
+| [Get-AzSqlDatabaseInstanceFailoverGroup](/powershell/module/az.sql/get-azsqldatabaseinstancefailovergroup) |Возвращает конфигурацию группы отработки отказа.|
+| [Switch-AzSqlDatabaseInstanceFailoverGroup](/powershell/module/az.sql/switch-azsqldatabaseinstancefailovergroup) |Запускает отработку отказа группы отработки отказа на сервер-получатель.|
+| [Remove-AzSqlDatabaseInstanceFailoverGroup](/powershell/module/az.sql/remove-azsqldatabaseinstancefailovergroup) | Удаляет группу отработки отказа.|
+
+# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+### <a name="manage-sql-database-failover-with-single-databases-and-elastic-pools"></a>Управление отработкой отказа баз данных SQL с отдельными базами данных и эластичными пулами
+
+| Команда | Описание |
+| --- | --- |
+| [az sql failover-group create](/cli/azure/sql/failover-group#az-sql-failover-group-create) |Создает группу отработки отказа и регистрирует ее на основном сервере и сервере-получателе.|
+| [az sql failover-group delete](/cli/azure/sql/failover-group#az-sql-failover-group-delete) | Удаляет группу отработки отказа с сервера, а также удаляет все входящие в нее базы данных-получатели. |
+| [az sql failover-group show](/cli/azure/sql/failover-group#az-sql-failover-group-show) | Возвращает конфигурацию группы отработки отказа. |
+| [az sql failover-group update](/cli/azure/sql/failover-group#az-sql-failover-group-update) |Modifies the configuration of the failover group and/or adds one or more databases to an Azure SQL Database failover group|
+| [az sql failover-group set-primary](/cli/azure/sql/failover-group#az-sql-failover-group-set-primary) | Запускает отработку отказа группы отработки отказа на сервер-получатель. |
+
+### <a name="manage-sql-database-failover-groups-with-managed-instances"></a>Manage SQL database failover groups with managed instances
+
+| Команда | Описание |
+| --- | --- |
+| [az sql instance-failover-group create](/cli/azure/sql/instance-failover-group#az-sql-instance-failover-group-create) | Создает группу отработки отказа и регистрирует ее на основном сервере и сервере-получателе.|
+| [az sql instance-failover-group update](/cli/azure/sql/instance-failover-group#az-sql-instance-failover-group-update) | Изменяет конфигурацию группы отработки отказа.|
+| [az sql instance-failover-group show](/cli/azure/sql/instance-failover-group#az-sql-instance-failover-group-show) | Возвращает конфигурацию группы отработки отказа.|
+| [az sql instance-failover-group set-primary](/cli/azure/sql/instance-failover-group#az-sql-instance-failover-group-set-primary) | Запускает отработку отказа группы отработки отказа на сервер-получатель.|
+| [az sql instance-failover-group delete](/cli/azure/sql/instance-failover-group#az-sql-instance-failover-group-delete) | Удаляет группу отработки отказа. |
+
+* * *
 
 > [!IMPORTANT]
 > Пример сценария см. в статье [Use PowerShell to configure an active geo-replication failover group for a single Azure SQL database](scripts/sql-database-add-single-db-to-failover-group-powershell.md) (Использование PowerShell для настройки группы отработки отказа активной георепликации для отдельной базы данных SQL Azure).
->
 
-### <a name="powershell-managing-sql-database-failover-groups-with-managed-instances"></a>PowerShell: Управление группами отработки отказа базы данных SQL с помощью управляемых экземпляров 
+### <a name="rest-api-manage-sql-database-failover-groups-with-single-and-pooled-databases"></a>REST API: Manage SQL database failover groups with single and pooled databases
 
-| Командлет | Description (Описание) |
-| --- | --- |
-| [New-Азсклдатабасеинстанцефаиловерграуп](https://docs.microsoft.com/powershell/module/az.sql/new-azsqldatabaseinstancefailovergroup) |Создает группу отработки отказа и регистрирует ее на основном сервере и сервере-получателе.|
-| [Set-Азсклдатабасеинстанцефаиловерграуп](https://docs.microsoft.com/powershell/module/az.sql/set-azsqldatabaseinstancefailovergroup) |Изменяет конфигурацию группы отработки отказа.|
-| [Get-Азсклдатабасеинстанцефаиловерграуп](https://docs.microsoft.com/powershell/module/az.sql/get-azsqldatabaseinstancefailovergroup) |Возвращает конфигурацию группы отработки отказа.|
-| [Switch-Азсклдатабасеинстанцефаиловерграуп](https://docs.microsoft.com/powershell/module/az.sql/switch-azsqldatabaseinstancefailovergroup) |Запускает отработку отказа группы отработки отказа на сервер-получатель.|
-| [Remove-Азсклдатабасеинстанцефаиловерграуп](https://docs.microsoft.com/powershell/module/az.sql/remove-azsqldatabaseinstancefailovergroup) | Удаляет группу отработки отказа.|
-|  | |
-
-### <a name="rest-api-manage-sql-database-failover-groups-with-single-and-pooled-databases"></a>REST API: Управление группами отработки отказа базы данных SQL с помощью одной базы данных и в составе пула
-
-| API | Description (Описание) |
+| API | Описание |
 | --- | --- |
 | [Создание или обновление группы отработки отказа](https://docs.microsoft.com/rest/api/sql/failovergroups/createorupdate) | Создает или обновляет группу отработки отказа. |
 | [Удаление группы отработки отказа](https://docs.microsoft.com/rest/api/sql/failovergroups/delete) | Удаляет группу отработки отказа с сервера. |
@@ -363,11 +388,10 @@ ms.locfileid: "73839341"
 | [Получение группы отработки отказа](https://docs.microsoft.com/rest/api/sql/failovergroups/get) | Получает группу отработки отказа. |
 | [Вывод списка групп отработки отказа с фильтрацией по серверу](https://docs.microsoft.com/rest/api/sql/failovergroups/listbyserver) | Перечисляет группы отработки отказа на сервере. |
 | [Обновление группы отработки отказа](https://docs.microsoft.com/rest/api/sql/failovergroups/update) | Обновляет группу отработки отказа. |
-|  | |
 
-### <a name="rest-api-manage-failover-groups-with-managed-instances"></a>REST API: Управление группами отработки отказа с помощью управляемых экземпляров
+### <a name="rest-api-manage-failover-groups-with-managed-instances"></a>REST API: Manage failover groups with Managed Instances
 
-| API | Description (Описание) |
+| API | Описание |
 | --- | --- |
 | [Создание или обновление группы отработки отказа](https://docs.microsoft.com/rest/api/sql/instancefailovergroups/createorupdate) | Создает или обновляет группу отработки отказа. |
 | [Удаление группы отработки отказа](https://docs.microsoft.com/rest/api/sql/instancefailovergroups/delete) | Удаляет группу отработки отказа с сервера. |
@@ -378,14 +402,14 @@ ms.locfileid: "73839341"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Подробные руководства см. в разделе
-    - [Добавление отдельной базы данных в группу отработки отказа](sql-database-single-database-failover-group-tutorial.md)
-    - [Добавление эластичного пула в группу отработки отказа](sql-database-elastic-pool-failover-group-tutorial.md)
-    - [Добавление управляемого экземпляра в группу отработки отказа](sql-database-managed-instance-failover-group-tutorial.md)
+- For detailed tutorials, see
+    - [Add single database to a failover group](sql-database-single-database-failover-group-tutorial.md)
+    - [Add elastic pool to a failover group](sql-database-elastic-pool-failover-group-tutorial.md)
+    - [Add a managed instance to a failover group](sql-database-managed-instance-failover-group-tutorial.md)
 - Ознакомьтесь с примерами скриптов в следующих статьях:
-  - [Настройка активной георепликации для отдельной базы данных в базе данных SQL Azure с помощью PowerShell](scripts/sql-database-setup-geodr-and-failover-database-powershell.md)
-  - [Настройка активной георепликации для базы данных в составе пула в базе данных SQL Azure с помощью PowerShell](scripts/sql-database-setup-geodr-and-failover-pool-powershell.md)
-  - [Добавление отдельной базы данных SQL Azure в группу отработки отказа с помощью PowerShell](scripts/sql-database-add-single-db-to-failover-group-powershell.md)
+  - [Use PowerShell to configure active geo-replication for a single database in Azure SQL Database](scripts/sql-database-setup-geodr-and-failover-database-powershell.md)
+  - [Use PowerShell to configure active geo-replication for a pooled database in Azure SQL Database](scripts/sql-database-setup-geodr-and-failover-pool-powershell.md)
+  - [Use PowerShell to add an Azure SQL Database single database to a failover group](scripts/sql-database-add-single-db-to-failover-group-powershell.md)
 - Сведения об обеспечении непрерывности бизнес-процессов и возможные сценарии описаны в [обзоре непрерывности бизнес-процессов](sql-database-business-continuity.md)
 - Чтобы узнать об автоматически создаваемых резервных копиях базы данных SQL Azure, ознакомьтесь с разделом [Общие сведения об автоматическом резервном копировании базы данных SQL](sql-database-automated-backups.md).
 - Чтобы узнать об использовании автоматически создаваемых резервных копий для восстановления, ознакомьтесь с [восстановлением базы данных из резервных копий, инициируемых службой](sql-database-recovery-using-backups.md).

@@ -1,5 +1,5 @@
 ---
-title: Параметры поддержки и справки — служба речи
+title: Support and help options - Speech Service
 titleSuffix: Azure Cognitive Services
 description: Как получить справку и поддержку по вопросам и проблемам, возникающим при создании приложения, которое интегрируется со службой "Речь"
 services: cognitive-services
@@ -10,34 +10,34 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 11/05/2019
 ms.author: jhakulin
-ms.openlocfilehash: f8793975d920e24924fca7c2ae366f70972e6ab7
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 925d21d22806ab2854be29b9648aab78138741ec
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73468617"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74422611"
 ---
 # <a name="support-and-help-options"></a>Возможности получения поддержки и справки
 
-Вы только начинаете изучать функциональные возможности речевых служб? Или вы реализуете в приложении новую функцию? Вот несколько подсказок, как получить справку для разработчика.
+Are you just starting to explore the functionality of the Speech Services? Или вы реализуете в приложении новую функцию? Вот несколько подсказок, как получить справку для разработчика.
 
 > [!div class="checklist"]
 > * Будьте в курсе последних разработок в *Azure Cognitive Services* и следите за последними новостями о *службе "Речь"* .
-> * Заметки о выпуске содержат сведения обо всех выпусках.
+> * Release notes contain information for all releases.
 > * Попробуйте найти вашу проблему в обсуждении сообщества или поищите документацию по нужной вам функции.
 > * Если не удается найти удовлетворительный ответ, задайте вопрос в *Stack Overflow*.
 > * Если возникла проблема с одним из примеров, опубликованных на сайте GitHub, создайте запрос на сайте *GitHub*.
 > * Поищите решение на форуме *UserVoice*.
 
-## <a name="stay-informed"></a>Следите за новостями
+## <a name="stay-informed"></a>Будьте в курсе
 
-Новости о Cognitive Services собраны в [блоге по Cognitive Services](https://azure.microsoft.com/blog/topics/cognitive-services/). Последние сведения о речевых службах см. в [блоге по голосовым службам](https://azure.microsoft.com/blog/tag/speech-service/).
+Новости о Cognitive Services собраны в [блоге по Cognitive Services](https://azure.microsoft.com/blog/topics/cognitive-services/). For the latest information about Speech Services, track the [Speech Services blog](https://azure.microsoft.com/blog/tag/speech-service/).
 
 ## <a name="release-notes"></a>Заметки о выпуске
 
-[Заметки о выпуске](https://aka.ms/csspeech/whatsnew) обновляются, как только будет доступен новый выпуск. Заметки содержат сведения о новых возможностях, улучшениях и исправлениях ошибок.
+The [release notes](https://aka.ms/csspeech/whatsnew) are updated as soon as a new release is available. The notes contain information about new features, improvements, and bug fixes.
 
-## <a name="search"></a>Поиск
+## <a name="search"></a>служба поиска.
 
 Ответ можно найти в документации, наших примерах или ответах на вопросы, заданные на сайте [Stack Overflow](https://www.stackoverflow.com).
 
@@ -55,23 +55,14 @@ ms.locfileid: "73468617"
 
 Клиенты Azure могут создавать запросы на получение поддержки и управлять ими на портале Azure.
 
-* [портал Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview)
+* [Портал Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview)
 * [Портал Azure для государственных учреждений США](https://portal.azure.us)
 
 ## <a name="post-a-question-to-stack-overflow"></a>Публикация вопроса на сайте Stack Overflow
 
 Stack Overflow — это идеальное место для вопросов, связанных с разработкой. Члены сообщества и команда Майкрософт постараются решить ваши проблемы.
 
-Если вы не нашли решение своей проблемы с помощью функции поиска, отправьте вопрос на сайт Stack Overflow. При формулировании вопроса используйте один из следующих тегов:
-
-|Компонент или область  |Теги  |
-|---------|---------|
-|Распознавание речи |[[microsoft-cognitive+speech-to-text]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+speech-to-text)|
-|Синтез речи |[[microsoft-cognitive+text-to-speech]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+text-to-speech)|
-|Перевод речи |[[microsoft-cognitive+translation]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+translation)|
-|Намерения говорящего |[[microsoft-cognitive+luis]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+luis)|
-|Общий пакет SDK для службы "Речь" |[[microsoft-cognitive+microsoft-speech-api]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+microsoft-speech-api)|
-|Речевые помощники | [[Microsoft-программа + Virtual-Assistant + botframework]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+virtual-assistant+botframework) |
+If you can't find an answer to your problem via search, submit a new question to Stack Overflow by using the [microsoft-cognitive-speech](https://stackoverflow.com/questions/tagged/microsoft-cognitive-speech) tag.
 
 > [!TIP]
 > Указанные ниже публикации на Stack Overflow содержат советы о том, как формулировать вопросы и добавлять исходный код. Следуйте этим рекомендациям, чтобы повысить вероятность того, что участники сообщества быстро отреагируют на ваш вопрос:  
@@ -85,7 +76,7 @@ Stack Overflow — это идеальное место для вопросов
 * [пакет SDK для службы "Речь"](https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues);
 * [Пакет SDK для речевых устройств](https://github.com/Azure-Samples/Cognitive-Services-Speech-Devices-SDK/issues)
 
-Вы можете создать отчет об ошибках, запросить функции или задать общий вопрос и поделиться рекомендациями. Для отчетов об ошибках используйте предоставленный шаблон:
+You can create a bug report, feature request, or ask a general question and share best practices. Для отчетов об ошибках используйте предоставленный шаблон:
 
 **Описание ошибки**
 
@@ -114,7 +105,7 @@ Stack Overflow — это идеальное место для вопросов
 **Дополнительный контекст**
 
  - Сообщения об ошибках, сведения из журнала, трассировка стека и т. д.
- - Если вы сообщаете об ошибке для определенного взаимодействия со службой, сообщите о SessionId и времени (включая часовой пояс) сообщаемых инцидентов. Идентификатор сеанса указывается в обратных вызовах или событиях, которые вы получаете.
+ - If you report an error for a specific service interaction, report the SessionId and time (incl. timezone) of the reported incidents. Идентификатор сеанса указывается в обратных вызовах или событиях, которые вы получаете.
  - Другая дополнительная информация
 
 

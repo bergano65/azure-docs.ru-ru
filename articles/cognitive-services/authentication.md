@@ -1,5 +1,5 @@
 ---
-title: Проверка подлинности
+title: Authentication
 titleSuffix: Azure Cognitive Services
 description: 'Существует три способа проверки подлинности запроса к ресурсу Azure Cognitive Services: ключ подписки, маркер носителя и подписка на несколько служб. В этой статье вы получите информацию о всех этих методах и узнаете, как выполнить запрос.'
 services: cognitive-services
@@ -7,14 +7,14 @@ author: erhopf
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: conceptual
-ms.date: 07/24/2019
+ms.date: 11/22/2019
 ms.author: erhopf
-ms.openlocfilehash: ae3530af7741b8ce48e08c2a85589ffae8a83f49
-ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
+ms.openlocfilehash: 1c13c2cc4d4e562d3512de90338d874091dfeef6
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70276777"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74423945"
 ---
 # <a name="authenticate-requests-to-azure-cognitive-services"></a>Проверка подлинности запросов к Azure Cognitive Services
 
@@ -23,23 +23,23 @@ ms.locfileid: "70276777"
 * [Проверка подлинности по ключу подписки для одной службы](#authenticate-with-a-single-service-subscription-key)
 * [Проверка подлинности по ключу подписки для нескольких служб](#authenticate-with-a-multi-service-subscription-key)
 * [Проверка подлинности по маркеру](#authenticate-with-an-authentication-token)
-* [Проверка подлинности с помощью Azure Active Directory (AAD)](#authenticate-with-azure-active-directory)
+* [Authenticate with Azure Active Directory (AAD)](#authenticate-with-azure-active-directory)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
-Чтобы выполнять запрос, вам нужно иметь учетную запись Azure и подписку Azure Cognitive Services. Если у вас есть учетная запись, пропустите этот раздел и перейдите к следующему. Если у вас нет учетной записи, воспользуйтесь этим руководством и создайте ее за несколько минут: [Краткое руководство. Создание учетной записи Cognitive Services на портале Azure](cognitive-services-apis-create-account.md).
+Чтобы выполнять запрос, вам нужно иметь учетную запись Azure и подписку Azure Cognitive Services. Если у вас есть учетная запись, пропустите этот раздел и перейдите к следующему. If you don't have an account, we have a guide to get you set up in minutes: [Create a Cognitive Services account for Azure](cognitive-services-apis-create-account.md).
 
-Ключ подписки можно получить из [портал Azure](cognitive-services-apis-create-account.md#get-the-keys-for-your-resource) после создания учетной записи или активации [бесплатной пробной версии](https://azure.microsoft.com/try/cognitive-services/my-apis).
+You can get your subscription key from the [Azure portal](cognitive-services-apis-create-account.md#get-the-keys-for-your-resource) after creating your account, or activating a [free trial](https://azure.microsoft.com/try/cognitive-services/my-apis).
 
 ## <a name="authentication-headers"></a>Заголовки проверки подлинности
 
 Давайте кратко рассмотрим заголовки проверки подлинности, которые доступны для использования с Azure Cognitive Services.
 
-| Header | Описание |
+| Заголовок | Описание |
 |--------|-------------|
 | Ocp-Apim-Subscription-Key | Используйте этот заголовок для проверки подлинности по ключу подписки для конкретной службы или для нескольких служб. |
 | Ocp-Apim-Subscription-Region | Этот заголовок является обязательным, только если используется ключ подписки для нескольких служб с [API перевода текстов](./Translator/reference/v3-0-reference.md). Используйте этот заголовок, чтобы указать регион подписки. |
-| Authorization | Используйте этот заголовок, если вы применяете маркер проверки подлинности. В следующих разделах подробно описан процесс обмена маркерами. Значение предоставляется в следующем формате: `Bearer <TOKEN>`. |
+| Авторизация | Используйте этот заголовок, если вы применяете маркер проверки подлинности. В следующих разделах подробно описан процесс обмена маркерами. Значение предоставляется в следующем формате: `Bearer <TOKEN>`. |
 
 ## <a name="authenticate-with-a-single-service-subscription-key"></a>Проверка подлинности по ключу подписки для одной службы
 
@@ -66,7 +66,7 @@ curl -X POST 'https://api.cognitive.microsofttranslator.com/translate?api-versio
 ## <a name="authenticate-with-a-multi-service-subscription-key"></a>Проверка подлинности по ключу подписки для нескольких служб
 
 >[!WARNING]
-> Сейчас некоторые службы **не** поддерживают ключи для нескольких служб: QnA Maker, службы речи, Пользовательское визуальное распознавание и детектор аномалий.
+> At this time, these services **don't** support multi-service keys: QnA Maker, Speech Services, Custom Vision, and Anomaly Detector.
 
 Этот метод проверки подлинности запросов также использует ключ подписки. Основное различие заключается в том, что этот ключ подписки не привязан к конкретной службе, а применяется для проверки подлинности запросов к нескольким службам Cognitive Services. На странице [цен на Cognitive Services](https://azure.microsoft.com/pricing/details/cognitive-services/) вы найдете сведения о доступности по регионам, поддерживаемых функциях и стоимости.
 
@@ -115,11 +115,11 @@ curl -X POST 'https://api.cognitive.microsofttranslator.com/translate?api-versio
 Некоторые службы Azure Cognitive Services поддерживают или даже требуют маркер проверки подлинности. Сейчас маркеры проверки подлинности поддерживают следующие службы:
 
 * API перевода текстов;
-* Службы распознавания речи: REST API преобразования речи в текст;
-* Службы распознавания речи: REST API преобразования текста в речь.
+* Speech Services: Speech-to-text REST API
+* Speech Services: Text-to-speech REST API
 
 >[!NOTE]
-> QnA Maker также использует заголовок авторизации, но требует указывать ключ конечной точки. Дополнительные сведения см. в статье [ Quickstart: Get answer from knowledge base using cURL](./qnamaker/quickstarts/get-answer-from-kb-using-curl.md) (Краткое руководство. Получение ответов из базы знаний с помощью cURL).
+> QnA Maker также использует заголовок авторизации, но требует указывать ключ конечной точки. For more information, see [QnA Maker: Get answer from knowledge base](./qnamaker/quickstarts/get-answer-from-knowledge-base-using-url-tool.md).
 
 >[!WARNING]
 > Со временем список служб, которые поддерживают маркеры проверки подлинности, может меняться. Обратитесь к документации по API конкретной службы, прежде чем внедрять этот метод проверки подлинности.
@@ -161,8 +161,8 @@ curl -X POST 'https://api.cognitive.microsofttranslator.com/translate?api-versio
 
 [!INCLUDE [](../../includes/cognitive-services-azure-active-directory-authentication.md)]
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>Дополнительные материалы
 
 * [Что такое Cognitive Services?](welcome.md)
 * [Цены на Cognitive Services](https://azure.microsoft.com/pricing/details/cognitive-services/)
-* [Пользовательские поддомены](cognitive-services-custom-subdomains.md)
+* [Custom subdomains](cognitive-services-custom-subdomains.md)

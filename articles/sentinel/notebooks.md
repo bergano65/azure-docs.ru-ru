@@ -1,6 +1,6 @@
 ---
-title: Возможности поисковых компьютеров с помощью записных книжек в Azure Sentinel | Документация Майкрософт
-description: В этой статье описывается, как использовать записные книжки с возможностями Поиск Sentinel маркеров Azure.
+title: Hunting capabilities using notebooks in Azure Sentinel| Microsoft Docs
+description: This article describes how to use notebooks with the Azure Sentinel hunting capabilities.
 services: sentinel
 documentationcenter: na
 author: rkarlin
@@ -14,136 +14,136 @@ ms.topic: conceptual
 ms.custom: mvc
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/04/2019
+ms.date: 11/22/2019
 ms.author: rkarlin
-ms.openlocfilehash: ba22cc3db0ca50a292ddef4d0d646f8578c15cd4
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: b94744e3879d31e88865f7b01ac12d816f67da15
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73489142"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74424122"
 ---
-# <a name="use-jupyter-notebooks-to-hunt-for-security-threats"></a>Использование записных книжек Jupyter для поиска угроз безопасности
+# <a name="use-jupyter-notebooks-to-hunt-for-security-threats"></a>Use Jupyter notebooks to hunt for security threats
 
-Основой Azure Sentinel является хранилище данных. Он сочетает высокопроизводительные запросы, динамическую схему и масштабируется до больших объемов данных. Портал Azure и все средства Azure Sentinel используют общий API для доступа к этому хранилищу данных. Этот API также доступен для внешних средств, таких как записные книжки [Jupyter](https://jupyter.org/) и Python. Хотя многие распространенные задачи могут быть выполнены на портале, Jupyter расширяет область действия, с помощью которых можно выполнять эти данные. Она сочетает полную программируемость с огромным набором библиотек для машинного обучения, визуализации и анализа данных. Эти атрибуты делают Jupyter привлекательным инструментом для расследования и исследования безопасности.
+The foundation of Azure Sentinel is the data store; it combines high performance querying, dynamic schema, and scales to massive data volumes. The Azure portal and all Azure Sentinel tools use a common API to access this data store. The same API is also available for external tools such as [Jupyter](https://jupyter.org/) notebooks and Python. While many common tasks can be carried out in the portal, Jupyter extends the scope of what you can do with this data. It combines full programmability with a huge collection of libraries for machine learning, visualization, and data analysis. These attributes make Jupyter a compelling tool for security investigation and hunting.
 
-![Пример записной книжки](./media/notebooks/sentinel-notebooks-map.png)
+![example notebook](./media/notebooks/sentinel-notebooks-map.png)
 
-Мы включили Jupyter интерфейс в портал Azure, что упрощает создание и запуск записных книжек для анализа данных. Библиотека *кклмагик* предоставляет связующий объект, который позволяет выполнять запросы из Azure Sentinel и запускать их непосредственно внутри записной книжки. Запросы используют [язык запросов Kusto](https://kusto.azurewebsites.net/docs/query/index.html). Несколько записных книжек, разработанных некоторыми аналитиками корпорации Майкрософт по безопасности, упаковываются с помощью Azure Sentinel. Некоторые из этих записных книжек созданы для конкретного сценария и могут использоваться "как есть". Другие предназначены в качестве примеров для демонстрации методов и функций, которые можно копировать или адаптировать для использования в записных книжках. Другие записные книжки также могут быть импортированы из сообщества Azure Sentinel Community.
+We've integrated the Jupyter experience into the Azure portal, making it easy for you to create and run notebooks to analyze your data. The *Kqlmagic* library provides the glue that lets you take queries from Azure Sentinel and run them directly inside a notebook. Queries use the [Kusto Query Language](https://kusto.azurewebsites.net/docs/query/index.html). Several notebooks, developed by some of Microsoft's security analysts, are packaged with Azure Sentinel. Some of these notebooks are built for a specific scenario and can be used as-is. Others are intended as samples to illustrate techniques and features that you can copy or adapt for use in your own notebooks. Other notebooks may also be imported from the Azure Sentinel community GitHub.
 
-Интегрированный интерфейс Jupyter использует [записные книжки Azure](https://notebooks.azure.com/) для хранения, совместного использования и выполнения записных книжек. Эти записные книжки также можно запускать локально, если у вас есть среда Python и Jupyter на компьютере или в других средах Жуптерхуб, таких как Azure Databricks.
+The integrated Jupyter experience uses [Azure Notebooks](https://notebooks.azure.com/) to store, share, and execute notebooks. You can also run these notebooks locally if you have a Python environment and Jupyter on your computer, or in other JupterHub environments such as Azure Databricks.
 
-В записных книжках есть два компонента:
+Notebooks have two components:
 
-- Интерфейс на основе браузера, в котором вводятся и запускаются запросы и код, а также место отображения результатов выполнения.
-- *Ядро* , ответственное за синтаксический анализ и выполнение самого кода. 
+- The browser-based interface where you enter and run queries and code, and where the results of the execution are displayed.
+- A *kernel* that is responsible for parsing and executing the code itself. 
 
-В записных книжках Azure по умолчанию этот ядро работает в *бесплатном расчете и хранилище облачных*ресурсов Azure. Если записные книжки содержат сложные модели машинного обучения или визуализации, рассмотрите возможность использования более мощных выделенных вычислительных ресурсов, таких как виртуальные машины для обработки и [анализа данных](https://azure.microsoft.com/services/virtual-machines/data-science-virtual-machines/) (DSVM). Записные книжки в вашей учетной записи остаются частными, если вы не решили поделиться ими.
+In Azure Notebooks, by default, this kernel runs on Azure *Free Cloud Compute and Storage*. If your notebooks include complex machine learning models or visualizations, consider using more powerful, dedicated compute resources such as [Data Science Virtual Machines](https://azure.microsoft.com/services/virtual-machines/data-science-virtual-machines/) (DSVM). Notebooks in your account are kept private unless you choose to share them.
 
-В записных книжках Azure Sentinel используются многие популярные библиотеки Python, такие как Pandas, Matplotlib, Боке и др. Существует большое количество других пакетов Python для выбора, охватывающих такие области, как:
+The Azure Sentinel notebooks use many popular Python libraries such as pandas, matplotlib, bokeh, and others. There are a great many other Python packages for you to choose from, covering areas such as:
 
-- Визуализации и графика
-- Обработка и анализ данных
-- Статистика и числовые вычисления
-- Машинное обучение и глубокое обучение
+- Visualizations and graphics
+- Data processing and analysis
+- Statistics and numerical computing
+- Machine learning and deep learning
 
-Мы также выпустили некоторые средства безопасности Jupyter с открытым кодом в пакете с именем [мстикпи](https://github.com/Microsoft/msticpy/). Этот пакет используется во многих включенных записных книжках. Средства мстикпи предназначены специально для создания записных книжек для получения и исследования и активно работают над новыми функциями и улучшениями.
+We've also released some open-source Jupyter security tools in a package named [msticpy](https://github.com/Microsoft/msticpy/). This package is used in many of the included notebooks. Msticpy tools are designed specifically to help with creating notebooks for hunting and investigation and we're actively working on new features and improvements.
 
-В число исходных записных книжек входят следующие:
+The initial notebooks include:
 
-- **Интерактивное исследование — обработка оповещений**. позволяет быстро рассматривать предупреждения путем анализа действий на затронутом узле или узлах.
-- **Интерактивное Поиск — обозреватель узлов Windows**: позволяет просматривать действия с учетной записью, выполнения процессов, сетевые операции и другие события на узле.
-- Поиск подозрительных действий Office 365 в нескольких наборах данных Office **365.**
+- **Guided investigation - Process Alerts**: Allows you to quickly triage alerts by analyzing activity on the affected host or hosts.
+- **Guided hunting - Windows host explorer**: Allows you to explore account activity, process executions, network activity, and other events on a host.
+- **Guided hunting - Office365-Exploring**: Hunt for suspicious Office 365 activity in multiple Office 365 data sets.
 
-[Репозиторий сообщества Azure Sentinel Community](https://github.com/Azure/Azure-Sentinel) — это расположение для всех будущих записных книжек Azure Sentinel, созданных корпорацией Майкрософт или предоставляемых сообществом.
+The [Azure Sentinel Community GitHub repository](https://github.com/Azure/Azure-Sentinel) is the location for any future Azure Sentinel notebooks built by Microsoft or contributed from the community.
 
-Чтобы использовать записные книжки, необходимо иметь учетную запись записных книжек Azure. Дополнительные сведения см. в разделе [Краткое руководство. вход и указание идентификатора пользователя](https://docs.microsoft.com/azure/notebooks/quickstart-sign-in-azure-notebooks) в документации по записным книжкам Azure. Чтобы создать эту учетную запись, можно использовать параметр **Регистрация в записных книжках Azure** на панели команд в **Azure Sentinel-Notebooks**:
+To use the notebooks, you must have an Azure Notebooks account. For more information, see [Quickstart: Sign in and set a user ID](https://docs.microsoft.com/azure/notebooks/quickstart-sign-in-azure-notebooks) from the Azure Notebooks documentation. To create this account, you can use the **Sign up for Azure Notebooks** option from the command bar in **Azure Sentinel - Notebooks**:
 
 > [!div class="mx-imgBorder"]
->![подписаться на записные книжки Azure](./media/notebooks/sentinel-azure-sign-up-azure-notebooks.png)
+>![Sign up for Azure Notebooks option](./media/notebooks/sentinel-azure-sign-up-azure-notebooks.png)
 
-## <a name="view-available-notebooks-from-azure-sentinel"></a>Просмотр доступных записных книжек из Azure Sentinel
+You can run a notebook direct from Azure Sentinel, or clone all the Azure Sentinel notebooks to a new Azure Notebooks project.
+
+## <a name="run-a-notebook-from-azure-sentinel"></a>Run a notebook from Azure Sentinel
  
-1. В портал Azure перейдите в раздел **Azure sentinel** > **управление угрозами** > **записные книжки**, где можно просмотреть записные книжки, предоставляемые Azure Sentinel. 
+1. From the Azure portal, navigate to **Azure Sentinel** > **Threat management** > **Notebooks**, where you can see notebooks that Azure Sentinel provides. 
 
-2. Выберите отдельные записные книжки, чтобы прочитать их описания, необходимые типы данных и источники данных. Например:
+2. Select individual notebooks to read their descriptions, required data types, and data sources. Пример.
     
     > [!div class="mx-imgBorder"]
-    > ![запустить записную книжку](./media/notebooks/sentinel-azure-notebooks-nolaunch.png)
+    > ![launch notebook](./media/notebooks/sentinel-azure-notebooks-nolaunch.png)
 
-3. Выберите **запустить записную книжку** , чтобы просмотреть записные книжки в [репозитории GitHub сообщества Azure](https://github.com/Azure/Azure-Sentinel).
+3. Select the notebook you want to use, and then select **Launch Notebook (Preview)** to clone and configure the notebook into a new Azure Notebooks project that connects to your Azure Sentinel workspace. When the process is complete, the notebook opens within Azure Notebooks for you to run.
 
-Сейчас вы не можете запустить записную книжку непосредственно из Azure Sentinel. Вместо этого используйте следующую процедуру, которая позволяет выполнить клонирование записных книжек на GitHub в проект записных книжек Azure.
+## <a name="clone-azure-sentinel-notebooks-to-a-new-azure-notebooks-project"></a>Clone Azure Sentinel notebooks to a new Azure Notebooks project
 
-## <a name="clone-azure-sentinel-notebooks-to-a-new-azure-notebooks-project"></a>Клонирование записных книжек Azure в новый проект записных книжек Azure
+This procedure creates an Azure Notebooks project for you, which contains the Azure Sentinel notebooks. You can then run the notebooks as-is, or make changes to them and then run them.
 
-Эта процедура создает проект записных книжек Azure, который содержит записные книжки Azure Sentinel. Затем можно запустить записные книжки "как есть" или внести в них изменения, а затем запустить их.
-
-1. В портал Azure перейдите к **Azure Sentinel** > **управление угрозами** > **записные книжки** , а затем выберите **клонировать записные книжки** на панели команд:
+1. From the Azure portal, navigate to **Azure Sentinel** > **Threat management** > **Notebooks** and then select **Clone Notebooks** from the command bar:
   
     > [!div class="mx-imgBorder"]
-    >параметр ![клонировать записные книжки](./media/notebooks/sentinel-azure-clone-notebooks.png)
+    >![Clone Notebooks option](./media/notebooks/sentinel-azure-clone-notebooks.png)
 
-2. Когда появится следующее диалоговое окно, выберите **Импорт** , чтобы клонировать репозиторий GitHub в проект записных книжек Azure. Если у вас нет учетной записи записных книжек Azure, вам будет предложено создать ее и выполнить вход.
+2. When the following dialog appears, select **Import** to clone the GitHub repo into your Azure Notebooks project. If you don't have an existing Azure Notebooks account, you'll be prompted to create one and sign in.
 
-   ![Импорт записной книжки](./media/notebooks/sentinel-notebooks-clone.png)
+   ![Import notebook](./media/notebooks/sentinel-notebooks-clone.png)
 
-3. В диалоговом окне **Отправка репозитория GitHub** не выбирайте параметр **клонировать рекурсивно** , так как этот вариант относится к связанному репозиториев GitHub. В качестве имени проекта используйте имя или тип по умолчанию в новом. Затем нажмите кнопку **Импорт** , чтобы начать клонирование содержимого GitHub, что может занять несколько минут.
+3. On the **Upload GitHub Repository** dialog box, don't select **Clone recursively** because this option refers to linked GitHub repos. For the project name, use the default name or type in a new one. Then click **Import** to start cloning the GitHub content, which can take a few minutes to complete.
 
-   ![Импорт записной книжки](./media/notebooks/sentinel-create-project.png)
+   ![Import notebook](./media/notebooks/sentinel-create-project.png)
 
-4. Откройте только что созданный проект, а затем откройте папку " **записные книжки** ", чтобы просмотреть записные книжки. Например:
+4. Open the project you just created, and then open the **Notebooks** folder to see the notebooks. Пример.
 
-   ![Импорт репозитория](./media/notebooks/sentinel-open-notebook1.png)
+   ![Import repo](./media/notebooks/sentinel-open-notebook1.png)
 
-Затем можно запустить записные книжки из записных книжек Azure. Чтобы вернуться к этим записным книжкам из Azure Sentinel, выберите **"переход к записным книжкам** " на панели команд в **Azure Sentinel-Notebooks**:
+You can then run the notebooks from Azure Notebooks. To return to these notebooks from Azure Sentinel, select **Go to your Notebooks** from the command bar in **Azure Sentinel - Notebooks**:
 
 > [!div class="mx-imgBorder"]
->![перейдите к параметру записных книжек](./media/notebooks/sentinel-azure-to-go-notebooks.png)
+>![Go to your Notebooks option](./media/notebooks/sentinel-azure-to-go-notebooks.png)
 
 
-## <a name="using-notebooks-to-hunt"></a>Использование записных книжек для поиска
+## <a name="using-notebooks-to-hunt"></a>Using notebooks to hunt
 
-В каждой записной книжке рассматриваются шаги по выполнению поиска или исследования. Библиотеки и другие зависимости, необходимые для записной книжки, можно установить из самой записной книжки или с помощью простой процедуры настройки. Конфигурация, связывающая проект записной книжки с подпиской Azure Sentinel, автоматически подготавливается на предыдущих шагах.
+Each notebook walks you through the steps for carrying out a hunt or investigation. Libraries and other dependencies needed by the notebook can be installed from the notebook itself or via a simple configuration procedure. Configuration that ties your notebook project back to your Azure Sentinel subscription is automatically provisioned in the preceding steps.
 
-1. Если вы еще не находитесь в записных книжках Azure, вы можете использовать команду **"переход к записным книжкам** " на панели команд в **Azure Sentinel-Notebooks**:
+1. If you're not already in Azure Notebooks, you can use the **Go to your Notebooks** option from the command bar in **Azure Sentinel - Notebooks**:
     
     > [!div class="mx-imgBorder"]
-    >![перейдите к параметру записных книжек](./media/notebooks/sentinel-azure-to-go-notebooks.png)
+    >![Go to your Notebooks option](./media/notebooks/sentinel-azure-to-go-notebooks.png)
     
-    В записных книжках Azure выберите **Мои проекты**, проект, который содержит записные книжки Azure, и, наконец, папку **записных книжек** .
+    In Azure Notebooks, select **My Projects**, then the project that contains the Azure Sentinel notebooks, and finally the **Notebooks** folder.
     
-2. Перед открытием записной книжки имейте в виду, что по умолчанию для запуска записных книжек выбрано свободное вычисление:
+2. Before you open a notebook, be aware that by default, Free Compute is selected to run the notebooks:
     
-   ![выбрать записную книжку](./media/notebooks/sentinel-open-notebook2.png)
+   ![select notebook](./media/notebooks/sentinel-open-notebook2.png)
     
-    Если вы настроили виртуальные машины для обработки и анализа данных (DSVM) для использования, как описано во введении, выберите DSVM и выполните проверку подлинности перед открытием первой записной книжки. 
+    If you've configured a Data Science Virtual Machines (DSVM) to use as explained in the introduction, select the DSVM and authenticate before you open the first notebook. 
 
-3. Выберите записную книжку, чтобы открыть ее.
+3. Select a notebook to open it.
     
-    При первом открытии записной книжки может быть предложено выбрать версию ядра. Если запрос не выводится, можно выбрать **версию ядра в ядре >  ** **изменить ядро**, а затем выбрать версию, которая не ниже 3,6. Выбранная версия ядра отображается в правом верхнем углу окна записной книжки:
+    The first time you open a notebook, you might be prompted to select a kernel version. If you're not prompted, you can select the kernel version from **Kernel** >  **Change kernel**, and then select a version that's at least 3.6. The selected kernel version is displayed in the top right of the notebook window:
     
-   ![выбрать записную книжку](./media/notebooks/sentinel-select-kernel.png)
+   ![select notebook](./media/notebooks/sentinel-select-kernel.png)
 
-4. Перед внесением каких-либо изменений в скачанную записную книжку рекомендуется создать копию исходной записной книжки и работать с копией. Для этого выберите **файл** > **создать копию**. Работа с копиями позволяет безопасно обновлять будущие версии записных книжек без перезаписи каких бы то ни было данных.
+4. Before you make any changes to notebook that you've downloaded, it's a good idea to make a copy of the original notebook and work on the copy. To do that, select **File** > **Make a Copy**. Working on copies lets you safely update to future versions of notebooks without overwriting any of your data.
     
-    Теперь вы готовы к запуску или редактированию выбранной записной книжки.
+    You're now ready to run or edit the selected notebook.
 
 Рекомендации
 
-- Для быстрого ознакомления с запросом данных в Azure Sentinel просмотрите записную книжку в папке "главные **записные книжки** [".](https://github.com/Azure/Azure-Sentinel/blob/master/Notebooks/Get%20Started.ipynb) 
+- For a quick introduction to querying data in Azure Sentinel, look at the [GetStarted](https://github.com/Azure/Azure-Sentinel/blob/master/Notebooks/Get%20Started.ipynb) notebook in the main **Notebooks** folder. 
 
-- Дополнительные примеры записных книжек можно найти в подпапке **Sample-Notebooks** . Эти примеры записных книжек были сохранены вместе с данными, чтобы упростить просмотр предполагаемых выходных данных. Рекомендуется просмотреть эти записные книжки в [нбвиевер](https://nbviewer.jupyter.org/). 
+- You'll find additional sample notebooks in the **Sample-Notebooks** subfolder. These sample notebooks have been saved with data, so that it's easier to see the intended output. We recommend viewing these notebooks in [nbviewer](https://nbviewer.jupyter.org/). 
 
-- Папка **руководств** содержит записные книжки, описывающие, например, настройку версии Python по умолчанию, настройку DSVM, создание закладок Azure Sentinel из записной книжки и другие темы.
+- The **HowTos** folder contains notebooks describing, for example: Setting you default Python version, configuring a DSVM, creating Azure Sentinel bookmarks from a notebook, and other subjects.
 
-Указанные записные книжки предназначены как полезные средства, а также иллюстрации и примеры кода, которые можно использовать при разработке собственных записных книжек.
+The notebooks provided are intended as both useful tools and as illustrations and code samples that you can use in the development of your own notebooks.
 
-Мы ждем отзывов, предложений, запросов на функции, предоставленных записных книжек, отчетов об ошибках, улучшений и дополнений к существующим записным книжкам. Перейдите на портал [Azure Sentinel Community GitHub](https://github.com/Azure/Azure-Sentinel) , чтобы создать вопрос или вилку и отправить публикацию.
+We welcome feedback, whether suggestions, requests for features, contributed Notebooks, bug reports or improvements and additions to existing notebooks. Go to the [Azure Sentinel Community GitHub](https://github.com/Azure/Azure-Sentinel) to create an issue or fork and upload a contribution.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этой статье вы узнали, как приступить к использованию записных книжек Jupyter в Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
+In this article, you learned how to get started using Jupyter notebooks in Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 
-- [Упреждающее слежение за угрозами](hunting.md)
-- [Использование закладок для сохранения интересных сведений при поиске](bookmarks.md)
+- [Proactively hunt for threats](hunting.md)
+- [Use bookmarks to save interesting information while hunting](bookmarks.md)

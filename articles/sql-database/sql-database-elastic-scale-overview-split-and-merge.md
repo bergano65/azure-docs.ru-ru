@@ -1,5 +1,5 @@
 ---
-title: Перемещение данных между масштабируемыми облачными базами данных
+title: Перенос данных между масштабируемыми облачными базами данных
 description: Объясняет, как управлять сегментами и перемещать данные с помощью размещенной службы с применением интерфейсов API эластичного масштабирования.
 services: sql-database
 ms.service: sql-database
@@ -11,22 +11,22 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 03/12/2019
-ms.openlocfilehash: 00f579017ce4dd79e913565ee27698398b5feb38
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 8b0db4a1e55b53165e40e176834d66b62926e24b
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73823585"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74421558"
 ---
-# <a name="moving-data-between-scaled-out-cloud-databases"></a>Перемещение данных между масштабируемыми облачными базами данных
+# <a name="moving-data-between-scaled-out-cloud-databases"></a>Перенос данных между масштабируемыми облачными базами данных
 
 Если вы разрабатываете программное обеспечение как услугу и ваше предложение внезапно становится популярным, к этому росту нужно как-то адаптироваться. В результате добавляются новые базы данных (сегменты). Как перераспределить данные с учетом новых баз данных, не нарушив целостность данных? Для перемещения данных из ограниченных баз данных во вновь созданные используйте **средство разбиения и слияния** .  
 
 Средство разбиения и объединения выполняется как веб-служба Azure. Оно позволяет администратору или разработчику перемещать шардлеты (данные из сегмента) между разными базами данных (сегментами). Средство разбиения и объединения ведет базу метаданных службы, используя управление сопоставлениями сегментов, и обеспечивает согласованность сопоставлений.
 
-![Обзор][1]
+![Краткое описание][1]
 
-## <a name="download"></a>Загрузить
+## <a name="download"></a>Download (Скачать)
 
 [Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge/)
 
@@ -104,14 +104,15 @@ ms.locfileid: "73823585"
     // Create the schema annotations
     SchemaInfo schemaInfo = new SchemaInfo();
 
-    // Reference tables
+    // reference tables
     schemaInfo.Add(new ReferenceTableInfo("dbo", "region"));
     schemaInfo.Add(new ReferenceTableInfo("dbo", "nation"));
 
-    // Sharded tables
+    // sharded tables
     schemaInfo.Add(new ShardedTableInfo("dbo", "customer", "C_CUSTKEY"));
     schemaInfo.Add(new ShardedTableInfo("dbo", "orders", "O_CUSTKEY"));
-    // Publish
+
+    // publish
     smm.GetSchemaInfoCollection().Add(Configuration.ShardMapName, schemaInfo);
     ```
 
@@ -216,21 +217,26 @@ ms.locfileid: "73823585"
 ## <a name="deploy-diagnostics"></a>Развертывание диагностики
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 > [!IMPORTANT]
-> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Эти командлеты см. в разделе [AzureRM. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле AZ и в модулях AzureRm существенно идентичны.
+> The PowerShell Azure Resource Manager module is still supported by Azure SQL Database, but all future development is for the Az.Sql module. For these cmdlets, see [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). The arguments for the commands in the Az module and in the AzureRm modules are substantially identical.
 
 Чтобы включить наблюдение и диагностику с помощью конфигурации диагностики для веб- и рабочих ролей, предоставленных пакетом NuGet, выполните следующие команды с помощью Azure PowerShell:
 
 ```powershell
-    $storage_name = "<YourAzureStorageAccount>"
-    $key = "<YourAzureStorageAccountKey"
-    $storageContext = New-AzStorageContext -StorageAccountName $storage_name -StorageAccountKey $key  
-    $config_path = "<YourFilePath>\SplitMergeWebContent.diagnostics.xml"
-    $service_name = "<YourCloudServiceName>"
-    Set-AzureServiceDiagnosticsExtension -StorageContext $storageContext -DiagnosticsConfigurationPath $config_path -ServiceName $service_name -Slot Production -Role "SplitMergeWeb"
-    $config_path = "<YourFilePath>\SplitMergeWorkerContent.diagnostics.xml"
-    $service_name = "<YourCloudServiceName>"
-    Set-AzureServiceDiagnosticsExtension -StorageContext $storageContext -DiagnosticsConfigurationPath $config_path -ServiceName $service_name -Slot Production -Role "SplitMergeWorker"
+$storageName = "<azureStorageAccount>"
+$key = "<azureStorageAccountKey"
+$storageContext = New-AzStorageContext -StorageAccountName $storageName -StorageAccountKey $key
+$configPath = "<filePath>\SplitMergeWebContent.diagnostics.xml"
+$serviceName = "<cloudServiceName>"
+
+Set-AzureServiceDiagnosticsExtension -StorageContext $storageContext `
+    -DiagnosticsConfigurationPath $configPath -ServiceName $serviceName `
+    -Slot Production -Role "SplitMergeWeb"
+
+Set-AzureServiceDiagnosticsExtension -StorageContext $storageContext `
+    -DiagnosticsConfigurationPath $configPath -ServiceName $serviceName `
+    -Slot Production -Role "SplitMergeWorker"
 ```
 
 Дополнительные сведения о настройке и развертывании параметров диагностики можно найти в разделе [Включение диагностики в облачных службах Azure и виртуальных машинах](../cloud-services/cloud-services-dotnet-diagnostics.md).
@@ -243,9 +249,9 @@ ms.locfileid: "73823585"
 
 Таблица WADLogsTable, выделенная на рисунке выше, содержит подробные события из журнала приложения службы разбиения/объединения. Обратите внимание, что конфигурация по умолчанию, которая предоставляется в составе загружаемого пакета, предназначена для рабочего развертывания. Как следствие, интервал извлечения журналов и счетчиков из экземпляров службы достаточно большой (5 минут). Для тестирования и разработки можно сократить этот интервал, изменив настройки параметров диагностики веб-роли или рабочей роли. Щелкните правой кнопкой мыши роль в Visual Studio Server Explorer (см. выше) и затем измените период передачи в диалоговом окне настройки параметров диагностики:
 
-![Конфигурация][3]
+![Настройка][3]
 
-## <a name="performance"></a>Производительность
+## <a name="performance"></a>Ориентированное на производительность
 
 Обычно высокая производительность ожидается на высших, более производительных уровнях служб базы данных SQL Azure. Более высокая скорость ввода-вывода, мощные ЦП и большая память для высших уровней служб предоставляют преимущества при осуществлении операций массового копирования и удаления данных, которые используются внутри служб разбиения и объединения. По этой причине повышать уровень служб нужно только для этих баз данных на ограниченный период времени.
 

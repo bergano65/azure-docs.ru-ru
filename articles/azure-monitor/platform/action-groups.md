@@ -8,37 +8,35 @@ ms.topic: conceptual
 ms.date: 8/19/2019
 ms.author: dukek
 ms.subservice: alerts
-ms.openlocfilehash: a0b0df9110f062b5f9c23840cb21308b634c9c81
-ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
+ms.openlocfilehash: 6b3d1ff76d4f7611da8e08dd4ce42293c805978e
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69898154"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74423852"
 ---
 # <a name="create-and-manage-action-groups-in-the-azure-portal"></a>Создание групп действий и управление ими на портале Azure
 Группа действий — это коллекция параметров уведомлений, которые определены владельцем подписки Azure. Оповещения служб Azure Monitor и "Работоспособность служб" используют группы действий для уведомления пользователей о том, что оповещение активировано. Для разных оповещений может использоваться как одна группа действий, так разные. Это зависит от требований пользователя. В подписке можно настроить до 2000 групп действий.
 
-Вы настраиваете действие для уведомления пользователя по электронной почте или SMS, оно получит подтверждение о том, что они были добавлены в группу действий.
+You configure an action to notify a person by email or SMS, they receive a confirmation indicating they have been added to the action group.
 
 В этой статье показано, как создавать группы действий и управлять ими на портале Azure.
 
 Каждое действие состоит из следующих свойств:
 
-* **Имя**: уникальный идентификатор в группе действий.  
-* **Тип действия:** Выполненное действие. Примеры включают отправку голосового звонка, текстовое сообщение, сообщение электронной почты или активацию различных типов автоматических действий. Типы приведены далее в этой статье.
-* **Сведения**. Соответствующие сведения, зависящие от *типа действия*.
+* **Имя:** уникальный идентификатор в группе действий.  
+* **Action type**: The action performed. Примеры включают отправку голосового звонка, текстовое сообщение, сообщение электронной почты или активацию различных типов автоматических действий. Типы приведены далее в этой статье.
+* **Details**: The corresponding details that vary by *action type*.
 
 Дополнительные сведения о настройке групп действий с помощью шаблонов Azure Resource Manager см. в статье [Создание группы действий с помощью шаблона Resource Manager](../../azure-monitor/platform/action-groups-create-resource-manager-template.md).
 
 ## <a name="create-an-action-group-by-using-the-azure-portal"></a>Создание группы действий с помощью портала Azure
 
-1. На [портале Azure](https://portal.azure.com) выберите **Монитор**. Панель **монитор** объединяет все параметры мониторинга и данные в одном представлении.
+1. In the [Azure portal](https://portal.azure.com), search for and select **Monitor**. The **Monitor** pane consolidates all your monitoring settings and data in one view.
 
-    ![Служба "Монитор"](./media/action-groups/home-monitor.png)
-    
-1. Выберите **оповещения** и щелкните **Управление действиями**.
+1. Выберите **Оповещения**, а затем **Управление действиями**.
 
-    ![Кнопка "Управление действиями"](./media/action-groups/manage-action-groups.png)
+    ![Manage Actions button](./media/action-groups/manage-action-groups.png)
     
 1. Выберите **Add action group** (Добавить группу действий) и заполните поля.
 
@@ -52,21 +50,21 @@ ms.locfileid: "69898154"
 
 1. Выберите **группу ресурсов**, в которой хранится группа действий.
 
-1. Определите список действий. Для каждого действия укажите следующие сведения.
+1. Define a list of actions. Provide the following for each action:
 
-    1. **Имя.** введите уникальный идентификатор для этого действия.
+    1. **Имя.** Введите уникальный идентификатор для этого действия.
 
-    1. **Тип действия.** выберите Email/SMS/Push/Voice (Электронная почта, SMS, push-уведомление, голосовой вызов), приложение логики, веб-перехватчик, ITSM или модуль runbook службы автоматизации.
+    1. **Тип действия**. Вы можете выбрать Email/SMS/Push/Voice (Электронная почта, SMS, push-уведомление, голосовой вызов), приложение логики, веб-перехватчик, ITSM или модуль runbook службы автоматизации.
 
-    1. **Сведения**. в зависимости от выбранного типа действия укажите номер телефона, адрес электронной почты, универсальный код ресурса (URI) веб-перехватчика, приложение Azure, сведения о подключении ITSM или модуль runbook службы автоматизации. Для действия ITSM дополнительно укажите **рабочий элемент** и заполните другие поля, требуемые инструментом ITSM.
+    1. **Подробные сведения**. В зависимости от выбранного типа действия укажите номер телефона, адрес электронной почты, универсальный код ресурса (URI) веб-перехватчика, приложение Azure, сведения о подключении ITSM или модуль runbook службы автоматизации. Для действия ITSM дополнительно укажите **рабочий элемент** и заполните другие поля, требуемые инструментом ITSM.
     
-    1. **Общая схема предупреждений**: Вы можете включить [общую схему предупреждений](https://aka.ms/commonAlertSchemaDocs), которая предоставляет преимущества единого расширяемого и унифицированного набора полезных данных оповещений во всех службах предупреждений в Azure Monitor.
+    1. **Common alert schema**: You can choose to enable the [common alert schema](https://aka.ms/commonAlertSchemaDocs), which provides the advantage of having a single extensible and unified alert payload across all the alert services in Azure Monitor.
 
 1. Нажмите кнопку **ОК**, чтобы создать группу действий.
 
 ## <a name="manage-your-action-groups"></a>Управление группами действий
 
-После создания группы действий она отображается в разделе **группы действий** панели **монитор** . Выберите группу действий, которой необходимо управлять:
+After you create an action group, it's visible in the **Action groups** section of the **Monitor** pane. Выберите группу действий, которой необходимо управлять:
 
 * добавлять, изменять или удалять действия;
 * удалить группу действий.
@@ -74,65 +72,65 @@ ms.locfileid: "69898154"
 ## <a name="action-specific-information"></a>Сведения о конкретных действиях
 
 > [!NOTE]
-> См. раздел [ограничения службы подписки для наблюдения](https://docs.microsoft.com/azure/azure-subscription-service-limits#azure-monitor-limits) за числовыми ограничениями для каждого из указанных ниже элементов.  
+> See [Subscription Service Limits for Monitoring](https://docs.microsoft.com/azure/azure-subscription-service-limits#azure-monitor-limits) for numeric limits on each of the items below.  
 
-### <a name="automation-runbook"></a>Runbook автоматизации
-Ограничения на полезные данные Runbook см. в разделе [ограничения службы подписки Azure](../../azure-subscription-service-limits.md) .
+### <a name="automation-runbook"></a>Automation Runbook
+Refer to the [Azure subscription service limits](../../azure-subscription-service-limits.md) for limits on Runbook payloads.
 
-У вас может быть ограниченное количество действий Runbook в группе действий. 
+You may have a limited number of Runbook actions in an Action Group. 
 
-### <a name="azure-app-push-notifications"></a>Push-уведомления приложения Azure
-У вас может быть ограниченное количество действий в приложении Azure в группе действий.
+### <a name="azure-app-push-notifications"></a>Azure app Push Notifications
+You may have a limited number of Azure app actions in an Action Group.
 
-### <a name="email"></a>Адрес эл. почты
+### <a name="email"></a>Эл. почта
 Электронная почта будет отправляться на следующие адреса (правильно настройте фильтрацию электронной почты):
 - azure-noreply@microsoft.com
 - azureemail-noreply@microsoft.com
 - alerts-noreply@mail.windowsazure.com
 
-У вас может быть ограниченное количество действий электронной почты в группе действий. См. статью [сведения о ограничении скорости](./../../azure-monitor/platform/alerts-rate-limiting.md) .
+You may have a limited number of email actions in an Action Group. See the [rate limiting information](./../../azure-monitor/platform/alerts-rate-limiting.md) article.
 
-### <a name="email-azure-resource-manager-role"></a>Роль Azure Resource Manager по электронной почте
-Отправьте сообщение электронной почты членам роли подписки.
+### <a name="email-azure-resource-manager-role"></a>Email Azure Resource Manager Role
+Send email to the members of the subscription's role.
 
-У вас может быть ограниченное количество действий электронной почты в группе действий. См. статью [сведения о ограничении скорости](./../../azure-monitor/platform/alerts-rate-limiting.md) .
+You may have a limited number of email actions in an Action Group. See the [rate limiting information](./../../azure-monitor/platform/alerts-rate-limiting.md) article.
 
 ### <a name="function"></a>Функция
-Функциональные ключи для приложений-функций, настроенных как действия, считываются через API функций, который в настоящее время требует приложений-функций версии 2, чтобы настроить параметр приложения "Азуревебжобссекретсторажетипе" на "Files". Дополнительные сведения см. [в разделе изменения в управлении ключами в функциях версии 2]( https://aka.ms/funcsecrets).
+The function keys for Function Apps configured as actions are read through the Functions API, which currently requires v2 function apps to configure the app setting “AzureWebJobsSecretStorageType” to “files”. For more information, see [Changes to Key Management in Functions V2]( https://aka.ms/funcsecrets).
 
-У вас может быть ограниченное число действий функций в группе действий.
+You may have a limited number of Function actions in an Action Group.
 
 ### <a name="itsm"></a>ITSM
 Действие ITSM требует подключения ITSM. Дополнительные сведения о создании подключения ITSM см. в статье [Централизованное управление рабочими элементами ITSM с помощью соединителя управления ИТ-службами (предварительная версия)](../../azure-monitor/platform/itsmc-overview.md).
 
-У вас может быть ограниченное количество действий ITSM в группе действий. 
+You may have a limited number of ITSM actions in an Action Group. 
 
-### <a name="logic-app"></a>Приложение логики
-У вас может быть ограниченное количество действий приложения логики в группе действий.
+### <a name="logic-app"></a>Логическое приложение
+You may have a limited number of Logic App actions in an Action Group.
 
-### <a name="secure-webhook"></a>Безопасный веб-перехватчик
-**Функция безопасного веб-перехватчика в настоящее время доступна в предварительной версии.**
+### <a name="secure-webhook"></a>Secure Webhook
+**The Secure Webhook functionality is currently in Preview.**
 
-Действие веб-перехватчика группы действий позволяет воспользоваться преимуществами Azure Active Directory для защиты подключения между группой действий и защищенным веб-API (конечной точкой перехватчика). Ниже описан общий рабочий процесс для использования этой функции. Общие сведения о приложениях и субъектах-службах Azure AD см. в [статье Обзор платформы Microsoft Identity Platform (v 2.0)](https://docs.microsoft.com/azure/active-directory/develop/v2-overview).
+The Action Groups Webhook action enables you to take advantage of Azure Active Directory to secure the connection between your action group and your protected web API (webhook endpoint). The overall workflow for taking advantage of this functionality is described below. For an overview of Azure AD Applications and service principals, see [Microsoft identity platform (v2.0) overview](https://docs.microsoft.com/azure/active-directory/develop/v2-overview).
 
-1. Создайте приложение Azure AD для защищенного веб-API. См. раздел https://docs.microsoft.com/azure/active-directory/develop/scenario-protected-web-api-overview.
-    - Настройте защищенный API, который будет вызываться приложением демона.
+1. Create an Azure AD Application for your protected web API. См. https://docs.microsoft.com/azure/active-directory/develop/scenario-protected-web-api-overview.
+    - Configure your protected API to be called by a daemon app.
     
-1. Включите группы действий для использования приложения Azure AD.
+1. Enable Action Groups to use your Azure AD Application.
 
     > [!NOTE]
-    > Для выполнения этого скрипта необходимо быть членом [роли администратора приложения Azure AD](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles#available-roles) .
+    > You must be a member of the [Azure AD Application Administrator role](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles#available-roles) to execute this script.
     
-    - Измените вызов Connect-AzureAD в сценарии PowerShell, чтобы использовать идентификатор клиента Azure AD.
-    - Измените переменную сценария PowerShell $myAzureADApplicationObjectId для использования идентификатора объекта приложения Azure AD.
-    - Запустите измененный скрипт.
+    - Modify the PowerShell script's Connect-AzureAD call to use your Azure AD Tenant ID.
+    - Modify the PowerShell script's variable $myAzureADApplicationObjectId to use the Object ID of your Azure AD Application
+    - Run the modified script.
     
-1. Настройка действия "Защита веб-перехватчика группы действий".
-    - Скопируйте значение $myApp. ObjectId из скрипта и введите его в поле Идентификатор объекта приложения в определении действия веб-перехватчика.
+1. Configure the Action Group Secure Webhook action.
+    - Copy the value $myApp.ObjectId from the script and enter it in the Application Object ID field in the Webhook action definition.
     
-    ![Действие "безопасный веб-перехватчик"](./media/action-groups/action-groups-secure-webhook.png)
+    ![Secure Webhook action](./media/action-groups/action-groups-secure-webhook.png)
 
-#### <a name="secure-webhook-powershell-script"></a>Безопасный скрипт PowerShell веб-перехватчика
+#### <a name="secure-webhook-powershell-script"></a>Secure Webhook PowerShell Script
 
 ```PowerShell
 Connect-AzureAD -TenantId "<provide your Azure AD tenant ID here>"
@@ -202,17 +200,17 @@ Write-Host $myApp.AppRoles
 ```
 
 ### <a name="sms"></a>SMS
-Дополнительные важные сведения см. в статье [сведения о ограничении скорости](./../../azure-monitor/platform/alerts-rate-limiting.md) и поведении [оповещений SMS](../../azure-monitor/platform/alerts-sms-behavior.md) .
+See the [rate limiting information](./../../azure-monitor/platform/alerts-rate-limiting.md) and [SMS alert behavior](../../azure-monitor/platform/alerts-sms-behavior.md) for additional important information.
 
-У вас может быть ограниченное количество действий SMS в группе действий.  
+You may have a limited number of SMS actions in an Action Group.  
 
 ### <a name="voice"></a>Голос
-См. статью [сведения о ограничении скорости](./../../azure-monitor/platform/alerts-rate-limiting.md) .
+See the [rate limiting information](./../../azure-monitor/platform/alerts-rate-limiting.md) article.
 
-В группе действий может быть ограниченное количество голосовых действий.
+You may have a limited number of Voice actions in an Action Group.
 
-### <a name="webhook"></a>Веб-перехватчик
-Повторные попытки веб-перехватчиков выполняются с помощью следующих правил. Повторный вызов веб-перехватчика выполняется не более двух раз, когда возвращаются следующие коды состояния HTTP: 408, 429, 503, 504 (или если конечная точка HTTP не отвечает). Первый повторный вызов происходит через 10 секунд, второй — через 100 секунд. После двух сбоев группа действий не будет вызывать конечную точку в течение 30 минут. 
+### <a name="webhook"></a>webhook
+Webhooks are retried using the following rules. The webhook call is retried a maximum of 2 times when the following HTTP status codes are returned: 408, 429, 503, 504 or the HTTP endpoint does not respond. Первый повторный вызов происходит через 10 секунд, второй — через 100 секунд. After two failures, no action group will call the endpoint for 30 minutes. 
 
 Исходные диапазоны IP-адресов
  - 13.72.19.232
@@ -231,13 +229,13 @@ Write-Host $myApp.AppRoles
  - 51.5.148.86
  - 51.5.149.19
 
-Для получения обновлений об изменениях этих IP-адресов рекомендуется настроить оповещение о работоспособности службы, которое отслеживает информационные уведомления о службе групп действий.
+To receive updates about changes to these IP addresses, we recommend you configure a Service Health alert, which monitors for Informational notifications about the Action Groups service.
 
-У вас может быть ограниченное число действий веб-перехватчика в группе действий.
+You may have a limited number of Webhook actions in an Action Group.
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения о поведении SMS-оповещений в группе действий см. в [этой статье](../../azure-monitor/platform/alerts-sms-behavior.md).  
 * Узнайте о [схеме веб-перехватчика для оповещений журнала действий](../../azure-monitor/platform/activity-log-alerts-webhook.md).  
 * Дополнительные сведения о соединителе ITSM см. в статье [Централизованное управление рабочими элементами ITSM с помощью соединителя управления ИТ-службами (предварительная версия)](../../azure-monitor/platform/itsmc-overview.md).

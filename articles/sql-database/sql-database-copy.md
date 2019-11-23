@@ -11,20 +11,20 @@ author: stevestein
 ms.author: sashan
 ms.reviewer: carlrab
 ms.date: 11/14/2019
-ms.openlocfilehash: 0b8bfff03414dd02360cab1957ea2205e392235d
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.openlocfilehash: b3bc99d0fbdb551af0fb3711d74db537d3f9b1a5
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74082480"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74421342"
 ---
 # <a name="copy-a-transactionally-consistent-copy-of-an-azure-sql-database"></a>Копирование транзакционно согласованной копии базы данных Azure SQL
 
-База данных SQL Azure предоставляет несколько методов создания транзакционно согласованной копии существующей базы данных SQL Azure ([отдельной базы данных](sql-database-single-database.md)) на том же или на другом сервере. Базу данных SQL можно копировать с помощью портала Azure, PowerShell или T-SQL. 
+Azure SQL Database provides several methods for creating a transactionally consistent copy of an existing Azure SQL database ([single database](sql-database-single-database.md)) on either the same server or a different server. Базу данных SQL можно копировать с помощью портала Azure, PowerShell или T-SQL.
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Краткое описание
 
-Копия базы данных представляет собой моментальный снимок исходной базы данных на момент запроса копирования. Можно выбрать один и тот же сервер или другой сервер. Кроме того, можно настроить уровень служб и размер вычислений либо использовать другой размер вычислений в пределах того же уровня служб (выпуска). После завершения копирования копия становится полностью работоспособной и независимой базой данных. На этом этапе можно перейти на использование любой более поздней или более ранней версии. Именами входа, пользователями и разрешениями можно управлять независимо. Копия создается с помощью технологии георепликации, и после завершения заполнения связь георепликации автоматически завершается. Все требования к использованию георепликации применяются к операции копирования базы данных. Дополнительные сведения см. в разделе [Общие сведения об активной георепликации](sql-database-active-geo-replication.md) .
+Копия базы данных представляет собой моментальный снимок исходной базы данных на момент запроса копирования. You can select the same server or a different server. Also you can choose to keep its service tier and compute size, or use a different compute size within the same service tier (edition). После завершения копирования копия становится полностью работоспособной и независимой базой данных. На этом этапе можно перейти на использование любой более поздней или более ранней версии. Именами входа, пользователями и разрешениями можно управлять независимо. The copy is created using the geo-replication technology and once seeding is completed the geo-replication link is automatically terminated. All the requirements for using geo-replication apply to the database copy operation. See [Active geo-replication overview](sql-database-active-geo-replication.md) for details.
 
 > [!NOTE]
 > [Создаваемые автоматически резервные копии базы данных](sql-database-automated-backups.md) используются при создании копии базы данных.
@@ -33,71 +33,74 @@ ms.locfileid: "74082480"
 
 При копировании базы данных на тот же сервер Базы данных SQL можете использовать для обеих баз данных одинаковые имена входа. Субъект безопасности, используемый для копирования базы данных, становится владельцем новой базы данных. В копируемую базу данных копируются все пользователи, их разрешения и идентификаторы безопасности (SID).  
 
-При копировании базы данных на другой сервер Базы данных SQL субъект безопасности на новом сервере становится владельцем новой базы данных. Если вы используете [пользователей автономной базы данных](sql-database-manage-logins.md) для доступа к данным, это гарантирует, что база данных-источник и база данных-получатель всегда имеют одинаковые учетные данные пользователей, поэтому после завершения копирования к копии можно будет немедленно обратиться, используя прежние учетные данные. 
+При копировании базы данных на другой сервер Базы данных SQL субъект безопасности на новом сервере становится владельцем новой базы данных. Если вы используете [пользователей автономной базы данных](sql-database-manage-logins.md) для доступа к данным, это гарантирует, что база данных-источник и база данных-получатель всегда имеют одинаковые учетные данные пользователей, поэтому после завершения копирования к копии можно будет немедленно обратиться, используя прежние учетные данные.
 
-Если вы используете [Azure Active Directory](../active-directory/fundamentals/active-directory-whatis.md), то можно полностью исключить потребность в управлении учетными данными в копии. Тем не менее при копировании базы данных на новый сервер доступ по имени для входа может перестать работать, так на новом сервере отсутствуют имена для входа. В статье [Настройка безопасности базы данных SQL Azure и управление ею для геовосстановления или отработки отказа](sql-database-geo-replication-security-config.md) описывается управление именами для входа при копировании базы данных на другой сервер Базы данных SQL. 
+Если вы используете [Azure Active Directory](../active-directory/fundamentals/active-directory-whatis.md), то можно полностью исключить потребность в управлении учетными данными в копии. Тем не менее при копировании базы данных на новый сервер доступ по имени для входа может перестать работать, так на новом сервере отсутствуют имена для входа. В статье [Настройка безопасности базы данных SQL Azure и управление ею для геовосстановления или отработки отказа](sql-database-geo-replication-security-config.md) описывается управление именами для входа при копировании базы данных на другой сервер Базы данных SQL.
 
 С момента успешного завершения копирования и вплоть до сопоставления остальных пользователей войти в новую базу данных может только ее владелец, т. е. пользователь, инициировавший копирование. Сведения о разрешении имен для входа после завершения операции копирования см. в разделе [Копирование базы данных SQL Azure с помощью Transact-SQL](#resolve-logins).
 
 ## <a name="copy-a-database-by-using-the-azure-portal"></a>Копирование базы данных на портале Azure
 
-Чтобы скопировать базу данных с помощью портала Azure, откройте страницу базы данных и щелкните **Копировать**. 
+Чтобы скопировать базу данных с помощью портала Azure, откройте страницу базы данных и щелкните **Копировать**.
 
    ![Копирование базы данных](./media/sql-database-copy/database-copy.png)
 
 ## <a name="copy-a-database-by-using-powershell"></a>Копирование базы данных с помощью PowerShell
 
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+To copy a database, use the following examples.
 
-Чтобы скопировать базу данных с помощью PowerShell, используйте командлет [New-азсклдатабасекопи](/powershell/module/az.sql/new-azsqldatabasecopy) . 
+# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+
+For PowerShell, use the [New-AzSqlDatabaseCopy](/powershell/module/az.sql/new-azsqldatabasecopy) cmdlet.
+
+> [!IMPORTANT]
+> The PowerShell Azure Resource Manager (RM) module is still supported by Azure SQL Database, but all future development is for the Az.Sql module. The AzureRM module will continue to receive bug fixes until at least December 2020.  The arguments for the commands in the Az module and in the AzureRm modules are substantially identical. For more about their compatibility, see [Introducing the new Azure PowerShell Az module](/powershell/azure/new-azureps-module-az).
 
 ```powershell
-New-AzSqlDatabaseCopy -ResourceGroupName "myResourceGroup" `
-    -ServerName $sourceserver `
-    -DatabaseName "MySampleDatabase" `
-    -CopyResourceGroupName "myResourceGroup" `
-    -CopyServerName $targetserver `
-    -CopyDatabaseName "CopyOfMySampleDatabase"
+New-AzSqlDatabaseCopy -ResourceGroupName "<resourceGroup>" -ServerName $sourceserver -DatabaseName "<databaseName>" `
+    -CopyResourceGroupName "myResourceGroup" -CopyServerName $targetserver -CopyDatabaseName "CopyOfMySampleDatabase"
 ```
+
+The database copy is a asynchronous operation but the target database is created immediately after the request is accepted. If you need to cancel the copy operation while still in progress, drop the the target database using the [Remove-AzSqlDatabase](/powershell/module/az.sql/new-azsqldatabase) cmdlet.
+
+# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+```azure-cli
+az sql db copy --dest-name "CopyOfMySampleDatabase" --dest-resource-group "myResourceGroup" --dest-server $targetserver `
+    --name "<databaseName>" --resource-group "<resourceGroup>" --server $sourceserver
+```
+
+The database copy is a asynchronous operation but the target database is created immediately after the request is accepted. If you need to cancel the copy operation while still in progress, drop the the target database using the [az sql db delete](/cli/azure/sql/db#az-sql-db-delete) command.
+
+* * *
 
 Полный пример сценария см. в статье [Копирование базы данных SQL на новый сервер с помощью PowerShell](scripts/sql-database-copy-database-to-new-server-powershell.md).
 
-Копия базы данных является асинхронной операцией, но Целевая база данных создается сразу после принятия запроса. Если необходимо отменить операцию копирования, пока все еще выполняется, удалите целевую базу данных с помощью командлета [Remove-азсклдатабасе](/powershell/module/az.sql/new-azsqldatabase) .  
+## <a name="rbac-roles-to-manage-database-copy"></a>RBAC roles to manage database copy
 
-## <a name="rbac-roles-to-manage-database-copy"></a>Роли RBAC для управления копированием базы данных
-
-Чтобы создать копию базы данных, необходимо быть в следующих ролях:
+To create a database copy, you will need to be in the following roles
 
 - владельца подписки или
-- Роль участника SQL Server или
-- Пользовательская роль в исходной и целевой базах данных со следующим разрешением:
+- SQL Server Contributor role or
+- Custom role on the source and target databases with following permission:
 
-   Microsoft.Sql/servers/databases/read   
-   Microsoft.Sql/servers/databases/write   
+   Microsoft.Sql/servers/databases/read  Microsoft.Sql/servers/databases/write
 
-Чтобы отменить копирование базы данных, необходимо иметь следующие роли.
+To cancel a database copy, you will need to be in the following roles
 
 - владельца подписки или
-- Роль участника SQL Server или
-- Пользовательская роль в исходной и целевой базах данных со следующим разрешением:
+- SQL Server Contributor role or
+- Custom role on the source and target databases with following permission:
 
-   Microsoft.Sql/servers/databases/read   
-   Microsoft.Sql/servers/databases/write   
-   
-Для управления копированием базы данных с помощью портал Azure также необходимы следующие разрешения.
+   Microsoft.Sql/servers/databases/read  Microsoft.Sql/servers/databases/write
 
-&nbsp; &nbsp; &nbsp; Microsoft. Resources/Subscriptions/Resources/Read   
-&nbsp; &nbsp; &nbsp; Microsoft. Resources/Subscriptions/Resources/Write   
-&nbsp; &nbsp; &nbsp; Microsoft. Resources/deployments/Read   
-&nbsp; &nbsp; &nbsp; Microsoft. Resources/deployments/Write   
-&nbsp; &nbsp; &nbsp; Microsoft. Resources/deployments/оператионстатусес/Read    
+To manage database copy using Azure portal, you will also need the following permissions:
 
-Если вы хотите просмотреть операции в развертываниях в группе ресурсов на портале, операции с несколькими поставщиками ресурсов, включая операции SQL, понадобятся вам следующие дополнительные роли RBAC: 
+   Microsoft.Resources/subscriptions/resources/read Microsoft.Resources/subscriptions/resources/write Microsoft.Resources/deployments/read Microsoft.Resources/deployments/write Microsoft.Resources/deployments/operationstatuses/read
 
-&nbsp; &nbsp; &nbsp; Microsoft. Resources/Subscriptions/resourcegroups/deployments/Operations/Read   
-&nbsp; &nbsp; &nbsp; Microsoft. Resources/Subscriptions/resourcegroups/deployments/оператионстатусес/Read
+If you want to see the operations under deployments in the resource group on the portal, operations across multiple resource providers including SQL operations, you will need these additional RBAC roles:
 
-
+   Microsoft.Resources/subscriptions/resourcegroups/deployments/operations/read Microsoft.Resources/subscriptions/resourcegroups/deployments/operationstatuses/read
 
 ## <a name="copy-a-database-by-using-transact-sql"></a>Копирование базы данных с помощью Transact-SQL
 
@@ -111,9 +114,10 @@ New-AzSqlDatabaseCopy -ResourceGroupName "myResourceGroup" `
 
 Эта команда копирует Database1 в новую базу данных с именем Database2 на том же сервере. Операция копирования может занять некоторое время в зависимости от размера базы данных.
 
-    -- Execute on the master database.
-    -- Start copying.
-    CREATE DATABASE Database2 AS COPY OF Database1;
+   ```sql
+   -- execute on the master database to start copying
+   CREATE DATABASE Database2 AS COPY OF Database1;
+   ```
 
 ### <a name="copy-a-sql-database-to-a-different-server"></a>Копирование Базы данных SQL на другой сервер
 
@@ -121,19 +125,20 @@ New-AzSqlDatabaseCopy -ResourceGroupName "myResourceGroup" `
 
 Эта команда копирует Database1 на сервере server1 в новую базу данных с именем Database2 на сервере server2. Операция копирования может занять некоторое время в зависимости от размера базы данных.
 
-    -- Execute on the master database of the target server (server2)
-    -- Start copying from Server1 to Server2
-    CREATE DATABASE Database2 AS COPY OF server1.Database1;
-    
+```sql
+-- Execute on the master database of the target server (server2) to start copying from Server1 to Server2
+CREATE DATABASE Database2 AS COPY OF server1.Database1;
+```
+
 > [!IMPORTANT]
-> Брандмауэры обоих серверов должны быть настроены на разрешение входящего подключения от IP-адреса клиента, выдающего команду T-SQL COPY.
+> Both servers' firewalls must be configured to allow inbound connection from the IP of the client issuing the T-SQL COPY command.
 
-### <a name="copy-a-sql-database-to-a-different-subscription"></a>Копирование базы данных SQL в другую подписку
+### <a name="copy-a-sql-database-to-a-different-subscription"></a>Copy a SQL database to a different subscription
 
-Действия, описанные в предыдущем разделе, можно использовать для копирования базы данных на сервер базы данных SQL в другой подписке. Убедитесь, что используется имя входа с тем же именем и паролем, что и у владельца базы данных-источника, а оно является членом роли dbmanager или является именем входа участника уровня сервера. 
+You can use the steps described in the previous section to copy your database to a SQL Database server in a different subscription. Make sure you use a login that has the same name and password as the database owner of the source database and it is a member of the dbmanager role or is the server-level principal login. 
 
 > [!NOTE]
-> [Портал Azure](https://portal.azure.com) не поддерживает копирование в другую подписку, так как портал вызывает API ARM и использует сертификаты подписки для доступа к серверам, участвующим в георепликации.  
+> The [Azure portal](https://portal.azure.com) does not support copy to a different subscription because Portal calls the ARM API and it uses the subscription certificates to access both servers involved in geo-replication.  
 
 ### <a name="monitor-the-progress-of-the-copying-operation"></a>Отслеживание хода операции копирования
 
@@ -146,8 +151,7 @@ New-AzSqlDatabaseCopy -ResourceGroupName "myResourceGroup" `
 > Чтобы отменить копирование до его завершения, выполните в новой базе данных инструкцию [DROP DATABASE](https://msdn.microsoft.com/library/ms178613.aspx). Кроме того, процесс копирования отменяет также выполнение оператора DROP DATABASE в исходной базе данных.
 
 > [!IMPORTANT]
-> Если необходимо создать копию с существенно меньшим значением уровня обслуживания, чем у источника, то Целевая база данных может не иметь достаточных ресурсов для завершения процесса заполнения, и это может привести к сбою в области Opera для копирования. В этом сценарии для создания копии на другом сервере и (или) другом регионе используется запрос географического восстановления. Дополнительные сведения см. в статье [Восстановление базы данных SQL Azure с помощью резервных копий базы данных](sql-database-recovery-using-backups.md#geo-restore) .
-
+> If you need to create a copy with a substantially smaller SLO than the source, the target database may not have sufficient resources to complete the seeding process and it can cause the copy operaion to fail. In this scenario use a geo-restore request to create a copy in a different server and/or a different region. See [Recover an Azure SQL database using database backups](sql-database-recovery-using-backups.md#geo-restore) for more informaion.
 
 ## <a name="resolve-logins"></a>Разрешение имен для входа
 
@@ -161,7 +165,7 @@ New-AzSqlDatabaseCopy -ResourceGroupName "myResourceGroup" `
 
 При копировании базы данных в базе данных SQL Azure могут возникнуть следующие ошибки. Дополнительные сведения см. в статье [Копирование базы данных SQL Azure](sql-database-copy.md).
 
-| Код ошибки | Уровень серьезности | ОПИСАНИЕ |
+| Код ошибки | Серьезность | Описание |
 | ---:| ---:|:--- |
 | 40635 |16 |Клиент с IP-адресом %.&#x2a;ls временно отключен. |
 | 40637 |16 |Возможность создания копии базы данных в настоящее время отключена. |
@@ -177,7 +181,7 @@ New-AzSqlDatabaseCopy -ResourceGroupName "myResourceGroup" `
 | 40570 |16 |Произошел сбой при копировании базы данных из-за внутренней ошибки. Удалите целевую базу данных и повторите попытку позднее. |
 | 40571 |16 |Произошел сбой при копировании базы данных из-за внутренней ошибки. Удалите целевую базу данных и повторите попытку позднее. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-* Сведения об именах для входа см. в статьях [Предоставление доступа к базе данных и управление им](sql-database-manage-logins.md) и [Настройка безопасности базы данных SQL Azure и управление ею для геовосстановления или отработки отказа](sql-database-geo-replication-security-config.md).
-* Сведения об экспорте базы данных см. в статье [Экспорт базы данных SQL Azure или SQL Server в BACPAC-файл](sql-database-export.md).
+- Сведения об именах для входа см. в статьях [Предоставление доступа к базе данных и управление им](sql-database-manage-logins.md) и [Настройка безопасности базы данных SQL Azure и управление ею для геовосстановления или отработки отказа](sql-database-geo-replication-security-config.md).
+- Сведения об экспорте базы данных см. в статье [Экспорт базы данных SQL Azure или SQL Server в BACPAC-файл](sql-database-export.md).

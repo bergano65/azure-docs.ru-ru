@@ -1,6 +1,6 @@
 ---
-title: Вход в виртуальную машину Windows в Azure с помощью Azure Active Directory (Предварительная версия)
-description: Вход Azure AD в виртуальную машину Azure под Windows
+title: Sign in to Windows virtual machine in Azure using Azure Active Directory (Preview)
+description: Azure AD sign in to an Azure VM running Windows
 services: active-directory
 ms.service: active-directory
 ms.subservice: devices
@@ -11,99 +11,99 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0bfd75f54e2b57e57fcadc27df2ca43d8be5cf37
-ms.sourcegitcommit: e50a39eb97a0b52ce35fd7b1cf16c7a9091d5a2a
+ms.openlocfilehash: ac52fa7eab055a2b2e9154481019d49acdca65d9
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74285523"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74420537"
 ---
-# <a name="sign-in-to-windows-virtual-machine-in-azure-using-azure-active-directory-authentication-preview"></a>Вход в виртуальную машину Windows в Azure с помощью проверки подлинности Azure Active Directory (Предварительная версия)
+# <a name="sign-in-to-windows-virtual-machine-in-azure-using-azure-active-directory-authentication-preview"></a>Sign in to Windows virtual machine in Azure using Azure Active Directory authentication (Preview)
 
-Организации теперь могут использовать проверку подлинности Azure Active Directory (AD) для виртуальных машин Azure под **Windows Server 2019 Datacenter Edition** или **Windows 10 1809** и более поздних версий. Использование Azure AD для проверки подлинности на виртуальных машинах обеспечивает централизованное управление и применение политик. Такие средства, как управление доступом на основе ролей (RBAC) и условный доступ Azure AD, позволяют управлять доступом к виртуальной машине. В этой статье показано, как создать и настроить виртуальную машину Windows Server 2019 для использования проверки подлинности Azure AD.
+Organizations can now utilize Azure Active Directory (AD) authentication for their Azure virtual machines (VMs) running **Windows Server 2019 Datacenter edition** or **Windows 10 1809** and later. Using Azure AD to authenticate to VMs provides you with a way to centrally control and enforce policies. Tools like Azure Role-Based Access Control (RBAC) and Azure AD Conditional Access allow you to control who can access a VM. This article shows you how to create and configure a Windows Server 2019 VM to use Azure AD authentication.
 
 |     |
 | --- |
-| Функция входа Azure AD для виртуальных машин Azure Windows — это общедоступная Предварительная версия функции Azure Active Directory. См. дополнительные сведения о [дополнительных условиях использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).|
+| Azure AD sign in for Azure Windows VMs is a public preview feature of Azure Active Directory. См. дополнительные сведения о [дополнительных условиях использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).|
 |     |
 
-Существует множество преимуществ использования проверки подлинности Azure AD для входа на виртуальные машины Windows в Azure, в том числе:
+There are many benefits of using Azure AD authentication to log in to Windows VMs in Azure, including:
 
-- Используйте те же Федеративные или управляемые учетные данные Azure AD, которые вы обычно используете.
-- Больше не требуется управлять учетными записями локального администратора.
-- Azure RBAC позволяет предоставлять соответствующий доступ к виртуальным машинам в зависимости от необходимости и удалять его, если он больше не нужен.
-- Перед предоставлением доступа к виртуальной машине условный доступ Azure AD может применять дополнительные требования, например: 
-   - Многофакторная проверка подлинности
-   - Проверка риска при входе
-- Автоматизируйте и масштабируйте присоединение Azure AD к виртуальным машинам Windows Azure, которые являются частью развертывания VDI.
+- Utilize the same federated or managed Azure AD credentials you normally use.
+- No longer have to manage local administrator accounts.
+- Azure RBAC allows you to grant the appropriate access to VMs based on need and remove it when it is no longer needed.
+- Before allowing access to a VM, Azure AD Conditional Access can enforce additional requirements such as: 
+   - Многофакторная Идентификация
+   - Sign-in risk check
+- Automate and scale Azure AD join of Azure Windows VMs that are part for your VDI deployments.
 
 ## <a name="requirements"></a>Требования
 
-### <a name="supported-azure-regions-and-windows-distributions"></a>Поддерживаемые регионы Azure и дистрибутивы Windows
+### <a name="supported-azure-regions-and-windows-distributions"></a>Supported Azure regions and Windows distributions
 
-В настоящее время в предварительной версии этой функции поддерживаются следующие дистрибутивы Windows:
+The following Windows distributions are currently supported during the preview of this feature:
 
 - Windows Server 2019 Datacenter
-- Windows 10 1809 и более поздние версии
+- Windows 10 1809 and later
 
 В режиме предварительной версии этой функции сейчас поддерживаются следующие регионы Azure:
 
-- Все глобальные регионы Azure
+- All Azure global regions
 
 > [!IMPORTANT]
-> Чтобы использовать эту предварительную версию функции, разверните только поддерживаемое распространение Windows и в поддерживаемом регионе Azure. В настоящее время эта функция не поддерживается в облаках Azure для государственных организаций и независимых.
+> To use this preview feature, only deploy a supported Windows distribution and in a supported Azure region. The feature is currently not supported in Azure Government or sovereign clouds.
 
 ### <a name="network-requirements"></a>Требования к сети
 
-Чтобы включить проверку подлинности Azure AD для виртуальных машин Windows в Azure, необходимо убедиться, что конфигурация сети виртуальных машин разрешает исходящий доступ к следующим конечным точкам через TCP-порт 443:
+To enable Azure AD authentication for your Windows VMs in Azure, you need to ensure your VMs network configuration permits outbound access to the following endpoints over TCP port 443:
 
 - https://enterpriseregistration.windows.net
 - https://login.microsoftonline.com
 - https://device.login.microsoftonline.com
 - https://pas.windows.net
 
-## <a name="enabling-azure-ad-login-in-for-windows-vm-in-azure"></a>Включение входа Azure AD в для виртуальной машины Windows в Azure
+## <a name="enabling-azure-ad-login-in-for-windows-vm-in-azure"></a>Enabling Azure AD login in for Windows VM in Azure
 
-Чтобы использовать вход Azure AD в для виртуальной машины Windows в Azure, необходимо сначала включить параметр входа в Azure AD для виртуальной машины Windows, а затем настроить назначения ролей RBAC для пользователей, которым разрешено выполнять вход на виртуальную машину.
-Существует несколько способов включения имени входа Azure AD для виртуальной машины Windows.
+To use Azure AD login in for Windows VM in Azure, you need to first enable Azure AD login option for your Windows VM and then you need to configure RBAC role assignments for users who are authorized to login in to the VM.
+There are multiple ways you can enable Azure AD login for your Windows VM:
 
-- Использование портал Azure при создании виртуальной машины Windows
-- Использование Azure Cloud Shell при создании виртуальной машины Windows **или существующей виртуальной машины Windows**
+- Using the Azure portal experience when creating a Windows VM
+- Using the Azure Cloud Shell experience when creating a Windows VM **or for an existing Windows VM**
 
-### <a name="using-azure-portal-create-vm-experience-to-enable-azure-ad-login"></a>Использование портал Azure создания виртуальной машины для включения имени входа Azure AD
+### <a name="using-azure-portal-create-vm-experience-to-enable-azure-ad-login"></a>Using Azure portal create VM experience to enable Azure AD login
 
-Вы можете включить имя входа Azure AD для Windows Server 2019 Datacenter или Windows 10 1809 и более поздних образов виртуальных машин. 
+You can enable Azure AD login for Windows Server 2019 Datacenter or Windows 10 1809 and later VM images. 
 
-Чтобы создать виртуальную машину Windows Server 2019 Datacenter в Azure с помощью входа Azure AD, выполните следующие действия. 
+To create a Windows Server 2019 Datacenter VM in Azure with Azure AD logon: 
 
-1. Войдите в [портал Azure](https://portal.azure.com)с учетной записью, которая имеет доступ для создания виртуальных машин, и выберите **+ создать ресурс**.
-1. Введите **Windows Server** в поле Поиск в строке поиска Marketplace.
-   1. Щелкните **Windows Server** и выберите **Windows Server 2019 Datacenter** в раскрывающемся списке выберите план программного обеспечения.
+1. Sign in to the [Azure portal](https://portal.azure.com), with an account that has access to create VMs, and select **+ Create a resource**.
+1. Type **Windows Server** in Search the Marketplace search bar.
+   1. Click **Windows Server** and choose **Windows Server 2019 Datacenter** from Select a software plan dropdown.
    1. Нажмите кнопку **Создать**.
-1. На вкладке "Управление" включите параметр **войти с использованием учетных данных AAD (Предварительная версия)** в разделе **Azure Active Directory.**
-1. Убедитесь, что **управляемое удостоверение, назначенное системой** , в разделе удостоверение установлено в значение **вкл**. Это действие должно выполняться автоматически при включении входа с использованием учетных данных Azure AD.
-1. Пройдите весь процесс создания виртуальной машины. Во время этой предварительной версии потребуется создать имя пользователя и пароль администратора для виртуальной машины.
+1. On the “Management” tab, enable the option to **Login with AAD credentials (Preview)** under the Azure Active Directory section from Off to **On**.
+1. Make sure **System assigned managed identity** under the Identity section is set to **On**. This action should happen automatically once you enable Login with Azure AD credentials.
+1. Go through the rest of the experience of creating a virtual machine. During this preview, you will have to create an administrator username and password for the VM.
 
-![Вход с использованием учетных данных Azure AD создание виртуальной машины](./media/howto-vm-sign-in-azure-ad-windows/azure-portal-login-with-azure-ad.png)
+![Login with Azure AD credentials create a VM](./media/howto-vm-sign-in-azure-ad-windows/azure-portal-login-with-azure-ad.png)
 
 > [!NOTE]
-> Чтобы войти в виртуальную машину с помощью учетных данных Azure AD, сначала необходимо настроить назначения ролей для виртуальной машины, как описано в одном из следующих разделов.
+> In order to log in to the VM using your Azure AD credential, you will first need to configure role assignments for the VM as described in one of the sections below.
 
-### <a name="using-the-azure-cloud-shell-experience-to-enable-azure-ad-login"></a>Использование интерфейса Azure Cloud Shell для включения имени входа Azure AD
+### <a name="using-the-azure-cloud-shell-experience-to-enable-azure-ad-login"></a>Using the Azure Cloud Shell experience to enable Azure AD login
 
 Azure Cloud Shell — это бесплатная интерактивная оболочка, с помощью которой можно выполнять действия, описанные в этой статье. В Cloud Shell предварительно установлены и настроены общие инструменты Azure для использования с вашей учетной записью. Нажмите кнопку "Копировать", чтобы скопировать код. Вставьте его в Cloud Shell и нажмите клавишу "ВВОД", чтобы выполнить код. Cloud Shell можно открыть разными способами:
 
-Выберите проверить в правом верхнем углу блока кода.
+Select Try It in the upper-right corner of a code block.
 Откройте Cloud Shell в браузере.
-Нажмите кнопку Cloud Shell в меню в правом верхнем углу [портал Azure](https://portal.azure.com).
+Select the Cloud Shell button on the menu in the upper-right corner of the [Azure portal](https://portal.azure.com).
 
-Если вы решили установить и использовать CLI локально, для работы с этой статьей требуется Azure CLI версии 2.0.31 или более поздней. Чтобы узнать версию, выполните команду az --version. Если необходимо установить или обновить, см. статью [установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
+If you choose to install and use the CLI locally, this article requires that you are running the Azure CLI version 2.0.31 or later. Чтобы узнать версию, выполните команду az --version. If you need to install or upgrade, see the article [Install Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
 
 1. Создайте группу ресурсов с помощью команды [az group create](https://docs.microsoft.com/cli/azure/group#az-group-create). 
-1. Создайте виртуальную машину с помощью команды [AZ VM Create](https://docs.microsoft.com/cli/azure/vm#az-vm-create) , используя поддерживаемое распространение в поддерживаемом регионе. 
-1. Установите расширение виртуальной машины для входа в Azure AD. 
+1. Create a VM with [az vm create](https://docs.microsoft.com/cli/azure/vm#az-vm-create) using a supported distribution in a supported region. 
+1. Install the Azure AD login VM extension. 
 
-В следующем примере выполняется развертывание виртуальной машины с именем myVM, которая использует Win2019Datacenter, в группу ресурсов с именем myResourceGroup в регионе southcentralus. В следующих примерах можно при необходимости указать собственную группу ресурсов и имена виртуальных машин.
+The following example deploys a VM named myVM that uses Win2019Datacenter, into a resource group named myResourceGroup, in the southcentralus region. В следующих примерах можно при необходимости указать собственную группу ресурсов и имена виртуальных машин.
 
 ```AzureCLI
 az group create --name myResourceGroup --location southcentralus
@@ -119,10 +119,10 @@ az vm create \
 
 Создание виртуальной машины и вспомогательных ресурсов занимает несколько минут.
 
-Наконец, установите расширение виртуальной машины для входа Azure AD, чтобы включить имя входа Azure AD для виртуальной машины Windows. Расширения виртуальных машин — это небольшие приложения, которые выполняют задачи настройки и автоматизации после развертывания виртуальных машин Azure. Используйте команду [AZ VM Extension](https://docs.microsoft.com/cli/azure/vm/extension#az-vm-extension-set) Set, чтобы установить расширение аадлогинфорвиндовс на виртуальной машине с именем myVM в группе ресурсов myResourceGroup:
+Finally, install the Azure AD login VM extension to enable Azure AD login for Windows VM. Расширения виртуальных машин — это небольшие приложения, которые выполняют задачи настройки и автоматизации после развертывания виртуальных машин Azure. Use [az vm extension](https://docs.microsoft.com/cli/azure/vm/extension#az-vm-extension-set) set to install the AADLoginForWindows extension on the VM named myVM in the myResourceGroup resource group:
 
 > [!NOTE]
-> Вы можете установить расширение Аадлогинфорвиндовс на имеющейся виртуальной машине Windows Server 2019 или Windows 10 1809 и более поздних версий, чтобы включить ее для проверки подлинности Azure AD. Ниже приведен пример AZ CLI.
+> You can install AADLoginForWindows extension on an existing Windows Server 2019 or Windows 10 1809 and later VM to enable it for Azure AD authentication. An example of AZ CLI is shown below.
 
 ```AzureCLI
 az vm extension set \
@@ -132,41 +132,41 @@ az vm extension set \
     --vm-name myVM
 ```
 
-После установки расширения на виртуальной машине отображается `provisioningState` `Succeeded`.
+The `provisioningState` of `Succeeded` is shown, once the extension is installed on the VM.
 
 ## <a name="configure-role-assignments-for-the-vm"></a>Настройка назначений ролей для виртуальной машины
 
-Теперь, когда виртуальная машина создана, необходимо настроить политику Azure RBAC, чтобы определить, кто может войти в виртуальную машину. Для авторизации входа на виртуальную машину используются две роли RBAC:
+Now that you have created the VM, you need to configure Azure RBAC policy to determine who can log in to the VM. Для авторизации входа на виртуальную машину используются две роли RBAC:
 
-- **Имя для входа администратора виртуальной машины**. пользователи с этой ролью могут войти в виртуальную машину Azure с правами администратора.
+- **Virtual Machine Administrator Login**: Users with this role assigned can log in to an Azure virtual machine with administrator privileges.
 - **Имя для входа пользователя виртуальной машины.** Пользователи с этой ролью могут входить на виртуальную машину Azure с правами обычного пользователя.
 
 > [!NOTE]
-> Чтобы разрешить пользователю входить на ВИРТУАЛЬную машину по протоколу RDP, необходимо назначить имя входа администратора виртуальной машины или роль входа пользователя виртуальной машины. Пользователь Azure с ролями владельца или участника, назначенных для виртуальной машины, не имеет автоматически привилегий для входа на виртуальную машину по протоколу RDP. Это позволяет обеспечить разделение между набором пользователей, управляющих виртуальными машинами, и набором пользователей, которые имеют доступ к виртуальным машинам.
+> To allow a user to log in to the VM over RDP, you must assign either the Virtual Machine Administrator Login or Virtual Machine User Login role. An Azure user with the Owner or Contributor roles assigned for a VM do not automatically have privileges to log in to the VM over RDP. This is to provide audited separation between the set of people who control virtual machines versus the set of people who can access virtual machines.
 
-Существует несколько способов настройки назначений ролей для виртуальной машины.
+There are multiple ways you can configure role assignments for VM:
 
-- Использование интерфейса портала Azure AD
-- Использование интерфейса Azure Cloud Shell
+- Using the Azure AD Portal experience
+- Using the Azure Cloud Shell experience
 
-### <a name="using-azure-ad-portal-experience"></a>Использование интерфейса портала Azure AD
+### <a name="using-azure-ad-portal-experience"></a>Using Azure AD Portal experience
 
-Чтобы настроить назначения ролей для виртуальных машин Windows Server 2019 Datacenter с поддержкой Azure AD, выполните следующие действия.
+To configure role assignments for your Azure AD enabled Windows Server 2019 Datacenter VMs:
 
-1. Перейдите на страницу обзора конкретных виртуальных машин.
-1. Выберите **Управление доступом (IAM)** в меню Параметры.
-1. Выберите **Добавить**, **добавить назначение ролей** , чтобы открыть панель Добавление назначения ролей.
-1. В раскрывающемся списке **Role (роль** ) выберите роль, например **имя входа администратора виртуальной машины** или **имя входа пользователя виртуальной машины**.
-1. В поле **Выбор** выберите пользователя, группу, субъект-службу или управляемое удостоверение. Если субъект безопасности не отображается в списке, введите его имя в поле **Выбор**, чтобы найти в каталоге отображаемые имена, адреса электронной почты и идентификаторы объектов.
-1. Нажмите кнопку **сохранить**, чтобы назначить роль.
+1. Navigate to the specific virtual machine overview page
+1. Select **Access control (IAM)** from the menu options
+1. Select **Add**, **Add role assignment** to open the Add role assignment pane.
+1. In the **Role** drop-down list, select a role such as **Virtual Machine Administrator Login** or **Virtual Machine User Login**.
+1. In the **Select** field, select a user, group, service principal, or managed identity. Если субъект безопасности не отображается в списке, введите его имя в поле **Выбор**, чтобы найти в каталоге отображаемые имена, адреса электронной почты и идентификаторы объектов.
+1. Select **Save**, to assign the role.
 
 Через несколько секунд субъекту безопасности будет назначена роль в выбранной области.
 
-![Назначение ролей пользователям, которые будут получать доступ к виртуальной машине](./media/howto-vm-sign-in-azure-ad-windows/azure-portal-access-control-assign-role.png)
+![Assign roles to users who will access the VM](./media/howto-vm-sign-in-azure-ad-windows/azure-portal-access-control-assign-role.png)
 
-### <a name="using-the-azure-cloud-shell-experience"></a>Использование интерфейса Azure Cloud Shell
+### <a name="using-the-azure-cloud-shell-experience"></a>Using the Azure Cloud Shell experience
 
-В следующем примере с помощью команды [AZ Role назначение](https://docs.microsoft.com/cli/azure/role/assignment#az-role-assignment-create) роли имя администратора виртуальной машины НАЗНАЧАЕТСЯ виртуальной машине для текущего пользователя Azure. Имя пользователя активной учетной записи Azure получено с помощью команды [AZ Account шоу](https://docs.microsoft.com/cli/azure/account#az-account-show), а для области задана виртуальная машина, созданная на предыдущем шаге, с помощью команды [AZ VM демонстрация](https://docs.microsoft.com/cli/azure/vm#az-vm-show). Область также можно назначить на уровне группы ресурсов или подписки. При этом применяются обычные разрешения наследования RBAC. Дополнительные сведения см. в разделе [Управление доступом на основе ролей](../../virtual-machines/linux/login-using-aad.md).
+The following example uses [az role assignment create](https://docs.microsoft.com/cli/azure/role/assignment#az-role-assignment-create) to assign the Virtual Machine Administrator Login role to the VM for your current Azure user. The username of your active Azure account is obtained with [az account show](https://docs.microsoft.com/cli/azure/account#az-account-show), and the scope is set to the VM created in a previous step with [az vm show](https://docs.microsoft.com/cli/azure/vm#az-vm-show). Область также можно назначить на уровне группы ресурсов или подписки. При этом применяются обычные разрешения наследования RBAC. For more information, see [Role-Based Access Controls](../../virtual-machines/linux/login-using-aad.md).
 
 ```AzureCLI
 username=$(az account show --query user.name --output tsv)
@@ -179,181 +179,181 @@ az role assignment create \
 ```
 
 > [!NOTE]
-> Если домен доменных имен AAD и имя пользователя для входа не совпадают, необходимо указать идентификатор объекта учетной записи пользователя с `--assignee-object-id`, а не только именем пользователя для `--assignee`. Идентификатор объекта учетной записи пользователя можно получить с помощью команды [az ad user list](https://docs.microsoft.com/cli/azure/ad/user#az-ad-user-list).
+> If your AAD domain and logon username domain do not match, you must specify the object ID of your user account with the `--assignee-object-id`, not just the username for `--assignee`. Идентификатор объекта учетной записи пользователя можно получить с помощью команды [az ad user list](https://docs.microsoft.com/cli/azure/ad/user#az-ad-user-list).
 
-Дополнительные сведения об использовании RBAC для управления доступом к ресурсам подписки Azure см. в следующих статьях:
+For more information on how to use RBAC to manage access to your Azure subscription resources, see the following articles:
 
-- [Управление доступом к ресурсам Azure с помощью RBAC и Azure CLI](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-cli)
+- [Manage access to Azure resources using RBAC and Azure CLI](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-cli)
 - [Управление доступом к ресурсам Azure с помощью RBAC и портала Azure](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal)
-- [Управление доступом к ресурсам Azure с помощью RBAC и Azure PowerShell](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-powershell).
+- [Manage access to Azure resources using RBAC and Azure PowerShell](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-powershell).
 
-## <a name="using-conditional-access"></a>Использование условного доступа
+## <a name="using-conditional-access"></a>Using Conditional Access
 
-Вы можете применить политики условного доступа, такие как многофакторная проверка подлинности или проверка риска входа пользователя, прежде чем разрешить доступ к виртуальным машинам Windows в Azure, включенным при входе в Azure AD. Чтобы применить политику условного доступа, необходимо выбрать приложение "вход в виртуальную машину Azure" из параметра "облачные приложения" или "назначение действий", а затем использовать риск для входа в качестве условия и/или требовать многофакторную проверку подлинности в качестве предоставления контроля доступа. 
+You can enforce Conditional Access policies such as multi-factor authentication or user sign-in risk check before authorizing access to Windows VMs in Azure that are enabled with Azure AD sign in. To apply Conditional Access policy, you must select "Azure Windows VM Sign-In" app from the cloud apps or actions assignment option and then use Sign-in risk as a condition and/or require multi-factor authentication as a grant access control. 
 
 > [!NOTE]
-> Если вы используете "требовать многофакторную проверку подлинности" в качестве предоставления контроля доступа для запроса доступа к приложению "вход в виртуальную машину Azure", необходимо предоставить утверждение многофакторной проверки подлинности как часть клиента, который инициирует сеанс RDP для целевой виртуальной машины Windows в Службы. Единственный способ добиться этого на клиенте Windows 10 — использовать ПИН-код Windows Hello для бизнеса или биометрическую проверку подлинности во время RDP. Поддержка биометрической проверки подлинности во время RDP была добавлена в Windows 10 1809. Использование проверки подлинности Windows Hello для бизнеса во время RDP доступно только для развертываний, использующих модель доверия сертификатов и в настоящее время недоступно для модели доверия ключей.
+> If you use "Require multi-factor authentication" as a grant access control for requesting access to the "Azure Windows VM Sign-In" app, then you must supply multi-factor authentication claim as part of the client that initiates the RDP session to the target Windows VM in Azure. The only way to achieve this on a Windows 10 client is to use Windows Hello for Business PIN or biometric authenication with the RDP client. Support for biometric authentication was added to the RDP client in Windows 10 version 1809. Remote desktop using Windows Hello for Business authentication is only available for deployments that use cert trust model and currently not available for key trust model.
 
-## <a name="log-in-using-azure-ad-credentials-to-a-windows-vm"></a>Вход с использованием учетных данных Azure AD для виртуальной машины Windows
+## <a name="log-in-using-azure-ad-credentials-to-a-windows-vm"></a>Log in using Azure AD credentials to a Windows VM
 
 > [!IMPORTANT]
-> Удаленное подключение к виртуальным машинам, присоединенным к Azure AD, разрешено только с компьютеров Windows 10, присоединенных к Azure AD или гибридных служб Azure AD, присоединенных к **тому каталогу** , что и виртуальная машина Кроме того, в RDP с использованием учетных данных Azure AD пользователь должен принадлежать к одной из двух ролей RBAC, имени входа администратора виртуальной машины или имени входа пользователя виртуальной машины.
+> Remote connection to VMs joined to Azure AD is only allowed from Windows 10 PCs that are Azure AD joined or hybrid Azure AD joined to the **same** directory as the VM. Additionally, to RDP using Azure AD credentials, the user must belong to one of the two RBAC roles, Virtual Machine Administrator Login or Virtual Machine User Login.
 
-Чтобы войти на виртуальную машину Windows Server 2019 с помощью Azure AD, выполните следующие действия. 
+To login in to your Windows Server 2019 virtual machine using Azure AD: 
 
-1. Перейдите на страницу обзора виртуальной машины, которая была включена с помощью входа в Azure AD.
-1. Щелкните **подключить** , чтобы открыть колонку подключение к виртуальной машине.
+1. Navigate to the overview page of the virtual machine that has been enabled with Azure AD logon.
+1. Select **Connect** to open the Connect to virtual machine blade.
 1. Щелкните **Скачать RDP-файл**.
-1. Нажмите кнопку **Открыть** , чтобы запустить клиент Подключение к удаленному рабочему столу.
-1. Нажмите кнопку **Подключиться** , чтобы открыть диалоговое окно входа в Windows.
-1. Вход с использованием учетных данных Azure AD.
+1. Select **Open** to launch the Remote Desktop Connection client.
+1. Select **Connect** to launch the Windows logon dialog.
+1. Logon using your Azure AD credentials.
 
-Теперь вы вошли в виртуальную машину Azure Windows Server 2019 с назначенными разрешениями роли, например "пользователь виртуальной машины" или "Администратор виртуальной машины". 
+You are now signed in to the Windows Server 2019 Azure virtual machine with the role permissions as assigned, such as VM User or VM Administrator. 
 
 > [!NOTE]
-> Можно сохранить. RDP-файл локально на компьютере для запуска будущих подключений к удаленному рабочему столу виртуальной машины вместо перехода на страницу обзора виртуальных машин в портал Azure и с помощью параметра Connect.
+> You can save the .RDP file locally on your computer to launch future remote desktop connections to your virtual machine instead of having to navigate to virtual machine overview page in the Azure portal and using the connect option.
 
 ## <a name="troubleshoot"></a>Устранение неполадок
 
 ### <a name="troubleshoot-deployment-issues"></a>Устранение неполадок развертывания
 
-Расширение Аадлогинфорвиндовс должно быть успешно установлено, чтобы виртуальная машина завершила процесс приподключения к Azure AD. Если расширение виртуальной машины не удается правильно установить, выполните следующие действия.
+The AADLoginForWindows extension must install successfully in order for the VM to complete the Azure AD join process. Perform the following steps if the VM extension fails to install correctly.
 
-1. Подключитесь к виртуальной машине по протоколу RDP, используя учетную запись локального администратора, и изучите Коммандексекутион. log в разделе  
+1. RDP to the VM using the local administrator account and examine the CommandExecution.log under  
    
    C:\WindowsAzure\Logs\Plugins\Microsoft.Azure.ActiveDirectory.AADLoginForWindows\0.3.1.0. 
 
    > [!NOTE]
-   > Если расширение перезапускается после первоначального сбоя, журнал с ошибкой развертывания будет сохранен как CommandExecution_YYYYMMDDHHMMSSSSS. log. 
+   > If the extension restarts after the initial failure, the log with the deployment error will be saved as CommandExecution_YYYYMMDDHHMMSSSSS.log. 
 
-1. Откройте командную строку на виртуальной машине и убедитесь, что эти запросы к конечной точке службы метаданных экземпляра (IMDS), работающей на узле Azure, возвращают:
+1. Open a command prompt on the VM and verify these queries against the Instance Metadata Service (IMDS) Endpoint running on the Azure host returns:
 
-   | Команда для запуска | Ожидаемые выходные данные |
+   | Command to run | Ожидаемые выходные данные |
    | --- | --- |
-   | Перелистывание метаданных: true "http://169.254.169.254/metadata/instance?api-version=2017-08-01" | Правильные сведения о виртуальной машине Azure |
-   | Перелистывание метаданных: true "http://169.254.169.254/metadata/identity/info?api-version=2018-02-01" | Допустимый идентификатор клиента, связанный с подпиской Azure |
-   | Перелистывание метаданных: true "http://169.254.169.254/metadata/identity/oauth2/token?resource=urn:ms-drs:enterpriseregistration.windows.net&api-version=2018-02-01" | Допустимый маркер доступа, выданный Azure Active Directory для управляемого удостоверения, назначенного этой виртуальной машине |
+   | curl -H Metadata:true "http://169.254.169.254/metadata/instance?api-version=2017-08-01 " | Correct information about the Azure VM |
+   | curl -H Metadata:true "http://169.254.169.254/metadata/identity/info?api-version=2018-02-01 " | Valid Tenant ID associated with the Azure Subscription |
+   | curl -H Metadata:true "http://169.254.169.254/metadata/identity/oauth2/token?resource=urn:ms-drs:enterpriseregistration.windows.net&api-version=2018-02-01 " | Valid access token issued by Azure Active Directory for the managed identity that is assigned to this VM |
 
    > [!NOTE]
-   > Маркер доступа можно декодировать с помощью такого средства, как [http://calebb.net/](http://calebb.net/). Проверьте, что идентификатор AppID в маркере доступа соответствует управляемому удостоверению, назначенному виртуальной машине.
+   > The access token can be decoded using a tool like [http://calebb.net/](http://calebb.net/). Verify the "appid" in the access token matches the managed identity assigned to the VM.
 
-1. Убедитесь, что необходимые конечные точки доступны из виртуальной машины с помощью командной строки:
+1. Ensure the required endpoints are accessible from the VM using the command line:
    
-   - фигурная https://login.microsoftonline.com/-D —
-   - Перелистывание https://login.microsoftonline.com/`<TenantID>`/-D —
+   - curl https://login.microsoftonline.com/ -D –
+   - curl https://login.microsoftonline.com/`<TenantID>` / -D –
 
    > [!NOTE]
-   > Замените `<TenantID>` ИДЕНТИФИКАТОРом клиента Azure AD, связанным с подпиской Azure.
+   > Replace `<TenantID>` with the Azure AD Tenant ID that is associated with the Azure subscription.
 
-   - фигурная https://enterpriseregistration.windows.net/-D-
-   - фигурная https://device.login.microsoftonline.com/-D-
-   - фигурная https://pas.windows.net/-D-
+   - curl https://enterpriseregistration.windows.net/ -D -
+   - curl https://device.login.microsoftonline.com/ -D -
+   - curl https://pas.windows.net/ -D -
 
-1. Состояние устройства можно просмотреть, выполнив `dsregcmd /status`. Цель — это состояние устройства, которое будет отображаться как `AzureAdJoined : YES`.
+1. The Device State can be viewed by running `dsregcmd /status`. The goal is for Device State to show as `AzureAdJoined : YES`.
 
    > [!NOTE]
-   > Действие присоединение к Azure AD регистрируется в средстве просмотра событий в журнале Регистратион\админов устройств пользователя.
+   > Azure AD join activity is captured in Event viewer under the User Device Registration\Admin log.
 
-Если расширение Аадлогинфорвиндовс завершается с определенным кодом ошибки, можно выполнить следующие действия.
+If AADLoginForWindows extension fails with certain error code, you can perform the following steps:
 
-#### <a name="issue-1-aadloginforwindows-extension-fails-to-install-with-terminal-error-code-1007-and-exit-code--2145648574"></a>Ошибка 1. не удается установить расширение Аадлогинфорвиндовс с кодом ошибки терминала "1007" и кодом выхода:-2145648574.
+#### <a name="issue-1-aadloginforwindows-extension-fails-to-install-with-terminal-error-code-1007-and-exit-code--2145648574"></a>Issue 1: AADLoginForWindows extension fails to install with terminal error code '1007' and Exit code: -2145648574.
 
-Этот код выхода преобразуется в DSREG_E_MSI_TENANTID_UNAVAILABLE, так как расширение не может запросить сведения о клиенте Azure AD.
+This exit code translates to DSREG_E_MSI_TENANTID_UNAVAILABLE because the extension is unable to query the Azure AD Tenant information.
 
-1. Убедитесь, что виртуальная машина Azure может получить значение TenantID из службы метаданных экземпляра.
+1. Verify the Azure VM can retrieve the TenantID from the Instance Metadata Service.
 
-   - Подключитесь к виртуальной машине по протоколу RDP с правами локального администратора и убедитесь, что конечная точка возвращает допустимый идентификатор клиента, выполнив следующую команду из командной строки с повышенными привилегиями на виртуальной машине:
+   - RDP to the VM as a local administrator and verify the endpoint returns valid Tenant ID by running this command from an elevated command line on the VM:
       
-      - фигурные-H метаданные: true http://169.254.169.254/metadata/identity/info?api-version=2018-02-01
+      - curl -H Metadata:true http://169.254.169.254/metadata/identity/info?api-version=2018-02-01
 
-1. Администратор виртуальной машины пытается установить расширение Аадлогинфорвиндовс, но для управляемого удостоверения, назначенного системой, предварительно не была включена виртуальная машина. Перейдите в колонку удостоверение виртуальной машины. На вкладке назначенная система убедитесь, что параметр состояние имеет значение Вкл.
+1. The VM admin attempts to install the AADLoginForWindows extension, but a system assigned managed identity has not enabled the VM first. Navigate to the Identity blade of the VM. From the System assigned tab, verify Status is toggled to On.
 
-#### <a name="issue-2-aadloginforwindows-extension-fails-to-install-with-exit-code--2145648607"></a>Причина 2. не удается установить расширение Аадлогинфорвиндовс с кодом выхода:-2145648607
+#### <a name="issue-2-aadloginforwindows-extension-fails-to-install-with-exit-code--2145648607"></a>Issue 2: AADLoginForWindows extension fails to install with Exit code: -2145648607
 
-Этот код выхода преобразуется в DSREG_AUTOJOIN_DISC_FAILED, так как расширение не может достичь конечной точки https://enterpriseregistration.windows.net.
+This Exit code translates to DSREG_AUTOJOIN_DISC_FAILED because the extension is not able to reach the https://enterpriseregistration.windows.net endpoint.
 
-1. Убедитесь, что необходимые конечные точки доступны из виртуальной машины с помощью командной строки:
+1. Verify the required endpoints are accessible from the VM using the command line:
 
-   - фигурная https://login.microsoftonline.com/-D —
-   - Перелистывание https://login.microsoftonline.com/`<TenantID>`/-D —
+   - curl https://login.microsoftonline.com/ -D –
+   - curl https://login.microsoftonline.com/`<TenantID>` / -D –
    
    > [!NOTE]
-   > Замените `<TenantID>` ИДЕНТИФИКАТОРом клиента Azure AD, связанным с подпиской Azure. Если необходимо найти идентификатор клиента, можно навести указатель мыши на имя учетной записи, чтобы получить идентификатор каталога или клиента, или выбрать Azure Active Directory > Свойства > идентификатор каталога в портал Azure.
+   > Replace `<TenantID>` with the Azure AD Tenant ID that is associated with the Azure subscription. If you need to find the tenant ID, you can hover over your account name to get the directory / tenant ID, or select Azure Active Directory > Properties > Directory ID in the Azure portal.
 
-   - фигурная https://enterpriseregistration.windows.net/-D-
-   - фигурная https://device.login.microsoftonline.com/-D-
-   - фигурная https://pas.windows.net/-D-
+   - curl https://enterpriseregistration.windows.net/ -D -
+   - curl https://device.login.microsoftonline.com/ -D -
+   - curl https://pas.windows.net/ -D -
 
-1. Если какая-либо из команд завершается с ошибкой "не удалось разрешить узел `<URL>`", попробуйте выполнить эту команду, чтобы определить сервер DNS, используемый виртуальной машиной.
+1. If any of the commands fails with "Could not resolve host `<URL>`", try running this command to determine the DNS server that is being used by the VM.
    
    `nslookup <URL>`
 
    > [!NOTE] 
-   > Замените `<URL>` полными доменными именами, используемыми конечными точками, например "login.microsoftonline.com".
+   > Replace `<URL>` with the fully qualified domain names used by the endpoints, such as “login.microsoftonline.com”.
 
-1. Далее, если указать общедоступный DNS-сервер, команда будет выполнена:
+1. Next, see if specifying a public DNS server allows the command to succeed:
 
    `nslookup <URL> 208.67.222.222`
 
-1. При необходимости измените DNS-сервер, назначенный группе безопасности сети, к которой принадлежит виртуальная машина Azure.
+1. If necessary, change the DNS server that is assigned to the network security group that the Azure VM belongs to.
 
-#### <a name="issue-3-aadloginforwindows-extension-fails-to-install-with-exit-code-51"></a>Причина 3. не удается установить расширение Аадлогинфорвиндовс с кодом выхода: 51
+#### <a name="issue-3-aadloginforwindows-extension-fails-to-install-with-exit-code-51"></a>Issue 3: AADLoginForWindows extension fails to install with Exit code: 51
 
-Код выхода 51 преобразуется в "это расширение не поддерживается в операционной системе виртуальной машины".
+Exit code 51 translates to "This extension is not supported on the VM's operating system".
 
-В общедоступной предварительной версии расширение Аадлогинфорвиндовс предназначено только для установки на Windows Server 2019 или Windows 10 (сборка 1809 или более поздняя версия). Убедитесь, что версия Windows поддерживается. Если сборка Windows не поддерживается, удалите расширение виртуальной машины.
+At Public Preview, the AADLoginForWindows extension is only intended to be installed on Windows Server 2019 or Windows 10 (Build 1809 or later). Ensure the version of Windows is supported. If the build of Windows is not supported, uninstall the VM Extension.
 
 ### <a name="troubleshoot-sign-in-issues"></a>Устранение неполадок при входе
 
-Некоторые распространенные ошибки при попытке входа по протоколу RDP с использованием учетных данных Azure AD включают в себя не назначенные роли RBAC, несанкционированный клиент или 2FA. Чтобы устранить эти проблемы, используйте следующие сведения.
+Some common errors when you try to RDP with Azure AD credentials include no RBAC roles assigned, unauthorized client, or 2FA sign-in method required. Use the following information to correct these issues.
 
-Состояние устройства и единого входа можно просмотреть, выполнив `dsregcmd /status`. Эта задача предназначена для отображения состояния устройства в виде `AzureAdJoined : YES` и `SSO State` для отображения `AzureAdPrt : YES`.
+The Device and SSO State can be viewed by running `dsregcmd /status`. The goal is for Device State to show as `AzureAdJoined : YES` and `SSO State` to show `AzureAdPrt : YES`.
 
-Кроме того, вход по протоколу RDP с помощью учетных записей Azure AD регистрируется в средстве просмотра событий в журналах событий Аад\оператионал.
+Also, RDP Sign-in using Azure AD accounts is captured in Event viewer under the AAD\Operational event logs.
 
 #### <a name="rbac-role-not-assigned"></a>не назначена роль RBAC
 
-Если при инициации подключения удаленного рабочего стола к виртуальной машине отображается следующее сообщение об ошибке: 
+If you see the following error message when you initiate a remote desktop connection to your VM: 
 
-- Ваша учетная запись настроена для предотвращения использования этого устройства. Для получения дополнительных сведений обратитесь к системному администратору.
+- Your account is configured to prevent you from using this device. For more info, contact your system administrator
 
-![Ваша учетная запись настроена для предотвращения использования этого устройства.](./media/howto-vm-sign-in-azure-ad-windows/rbac-role-not-assigned.png)
+![Your account is configured to prevent you from using this device.](./media/howto-vm-sign-in-azure-ad-windows/rbac-role-not-assigned.png)
 
-Убедитесь, что для ВИРТУАЛЬНОЙ машины [настроены политики RBAC](../../virtual-machines/linux/login-using-aad.md) , которые предоставляют пользователю имя входа администратора виртуальной машины или роль входа пользователя виртуальной машины.
+Verify that you have [configured RBAC policies](../../virtual-machines/linux/login-using-aad.md) for the VM that grants the user either the Virtual Machine Administrator Login or Virtual Machine User Login role:
  
-#### <a name="unauthorized-client"></a>Неавторизованный клиент
+#### <a name="unauthorized-client"></a>Unauthorized client
 
-Если при инициации подключения удаленного рабочего стола к виртуальной машине отображается следующее сообщение об ошибке: 
+If you see the following error message when you initiate a remote desktop connection to your VM: 
 
-- Ваши учетные данные не работали
+- Your credentials did not work
 
-![Ваши учетные данные не работали](./media/howto-vm-sign-in-azure-ad-windows/your-credentials-did-not-work.png)
+![Your credentials did not work](./media/howto-vm-sign-in-azure-ad-windows/your-credentials-did-not-work.png)
 
-Убедитесь, что компьютер Windows 10, который вы используете для запуска подключения к удаленному рабочему столу, — это одно из присоединенных к Azure AD или гибридное приложение Azure AD, присоединенное к тому же каталогу Azure AD, к которому присоединена виртуальная машина. Дополнительные сведения об удостоверении устройств см. в статье [что такое удостоверение устройства](https://docs.microsoft.com/azure/active-directory/devices/overview).
+Verify that the Windows 10 PC you are using to initiate the remote desktop connection is one that is either Azure AD joined, or hybrid Azure AD joined to the same Azure AD directory where your VM is joined to. For more information about device identity, see the article [What is a device identity](https://docs.microsoft.com/azure/active-directory/devices/overview).
 
 > [!NOTE]
-> Windows 10 20H1, добавит поддержку зарегистрированного компьютера Azure AD для инициирования подключения к удаленному рабочему столу виртуальной машины. Присоединяйтесь к программе предварительной оценки Windows, чтобы испытать эти возможности и изучить новые функции Windows 10.
+> Windows 10 20H1, will add support for Azure AD Registered PC to initiate remote desktop connection to your VM. Join the Windows Insider Program to try this out and explore new features of Windows 10.
 
-Кроме того, убедитесь, что расширение Аадлогинфорвиндовс не было удалено после завершения приподключения к Azure AD.
+Also, verify the AADLoginForWindows extension has not been uninstalled after Azure AD join has completed.
  
-#### <a name="mfa-sign-in-method-required"></a>Требуется метод входа MFA
+#### <a name="mfa-sign-in-method-required"></a>MFA sign-in method required
 
-Если при инициации подключения удаленного рабочего стола к виртуальной машине отображается следующее сообщение об ошибке: 
+If you see the following error message when you initiate a remote desktop connection to your VM: 
 
-- Метод входа, который вы пытаетесь использовать, не разрешен. Попробуйте использовать другой метод входа или обратитесь к системному администратору.
+- The sign-in method you're trying to use isn't allowed. Try a different sign-in method or contact your system administrator.
 
-![Метод входа, который вы пытаетесь использовать, не разрешен.](./media/howto-vm-sign-in-azure-ad-windows/mfa-sign-in-method-required.png)
+![The sign-in method you're trying to use isn't allowed.](./media/howto-vm-sign-in-azure-ad-windows/mfa-sign-in-method-required.png)
 
-Если вы настроили политику условного доступа, для которой требуется выполнить MFA, прежде чем можно будет получить доступ к ресурсу RBAC, необходимо убедиться, что компьютер Windows 10, инициирующий подключение к удаленному рабочему столу, выполняет вход с помощью надежного метода проверки подлинности, такого как как Windows Hello. Если для подключения к удаленному рабочему столу не используется строгий метод проверки подлинности, вы увидите следующую ошибку. 
+If you have configured a Conditional Access policy that requires multi-factor authentication (MFA) before you can access the resource, then you need to ensure that the Windows 10 PC initiating the remote desktop connection to your VM signs in using a strong authentication method such as Windows Hello. If you do not use a strong authentication method for your remote desktop connection, you will see the previous error.
 
-Если вы не развернули Windows Hello для бизнеса, и если это не так, вы можете екслкуде MFA, настроив политику условного доступа, которая исключает из списка облачных приложений, требующих MFA, параметр "вход в систему виртуальной машины Azure". Дополнительные сведения о Windows Hello для бизнеса см. в статье [Обзор Windows Hello для бизнеса](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification).
+If you have not deployed Windows Hello for Business and if that is not an option for now, you can exclude MFA requirement by configuring Conditional Access policy that excludes "Azure Windows VM Sign-In" app from the list of cloud apps that require MFA. To learn more about Windows Hello for Business, see [Windows Hello for Business Overview](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification).
 
 > [!NOTE]
-> В течение этого времени в Windows 10 поддерживается проверка подлинности ПИН-кода Windows Hello для бизнеса во время RDP. Поддержка биометрической проверки подлинности во время RDP была добавлена в Windows 10 1809. Использование проверки подлинности Windows Hello для бизнеса во время RDP доступно только для развертываний, использующих модель доверия сертификатов и в настоящее время недоступно для модели доверия ключей.
+> Windows Hello for Business PIN authentication with RDP has been supported by Windows 10 for several versions, however support for Biometric authentication with RDP was added in Windows 10 version 1809. Using Windows Hello for Business auth during RDP is only available for deployments that use cert trust model and currently not available for key trust model.
  
 ## <a name="preview-feedback"></a>Отзывы о предварительной версии
 
-Поделитесь своими отзывами об этой предварительной версии функции или сообщите о проблемах с ее помощью на [форуме обратной связи Azure AD](https://feedback.azure.com/forums/169401-azure-active-directory?category_id=166032).
+Share your feedback about this preview feature or report issues using it on the [Azure AD feedback forum](https://feedback.azure.com/forums/169401-azure-active-directory?category_id=166032).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения об Azure Active Directory см. в статье [Что такое Azure Active Directory](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-whatis).

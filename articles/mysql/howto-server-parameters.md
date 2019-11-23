@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 11/19/2019
-ms.openlocfilehash: 6b5d48a1d198b62af853a6334de41bad01b3c98c
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: d589800f62f96510a09d23cb6e8794177121c6dd
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74232551"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74419713"
 ---
 # <a name="how-to-configure-server-parameters-in-azure-database-for-mysql-by-using-the-azure-portal"></a>Как настроить параметры сервера в базе данных Azure для MySQL с помощью портала Azure
 
@@ -39,7 +39,7 @@ The InnoDB Buffer Pool size is not configurable and tied to your [pricing tier](
 
 |**Ценовая категория**|**Виртуальные ядра**|**InnoDB Buffer Pool size in MB <br>(servers supporting up to 4 TB storage)**| **InnoDB Buffer Pool size in MB <br>(servers supporting up to 16 TB storage)**|
 |:---|---:|---:|---:|
-|"Базовый"| 1| 960| |
+|"Базовый"| 1| 832| |
 |"Базовый"| 2| 2560| |
 |Универсальные| 2| 3584| 7168|
 |Универсальные| 4| 7680| 15360|
