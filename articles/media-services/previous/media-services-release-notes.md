@@ -13,23 +13,23 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 10/01/2019
 ms.author: juliako
-ms.openlocfilehash: f76a2eb098e2d96f617d19de089e56c7e8a497fd
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 7c6cac925ad53e08ecc10c828765153c905f1c1d
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73162768"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74423883"
 ---
 # <a name="azure-media-services-release-notes"></a>Заметки о выпуске служб мультимедиа Azure
 
 В этих заметках для служб мультимедиа Azure описаны изменения по сравнению с предыдущими выпусками, а также известные проблемы.
 
 > [!NOTE]
-> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). См. также [руководство по миграции из v2 в версии 3](../latest/migrate-from-v2-to-v3.md) .
+> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). Also, see [migration guidance from v2 to v3](../latest/migrate-from-v2-to-v3.md)
 
 Мы ждем отзывов от наших заказчиков, чтобы уделить внимание исправлению проблем, влияющих на вашу работу. Сообщения о проблемах и вопросы размещайте на [форуме MSDN по службам мультимедиа Azure]. 
 
-## <a name="a-idissuesknown-issues"></a><a id="issues"/>известные проблемы
+## <a name="a-idissuesknown-issues"></a><a id="issues"/>Known issues
 ### <a name="a-idgeneral_issuesmedia-services-general-issues"></a><a id="general_issues"/>Общие проблемы служб мультимедиа
 
 | Проблема | Описание |
@@ -41,34 +41,34 @@ ms.locfileid: "73162768"
 | При запросе сущностей за один раз возвращается не больше 1000 сущностей, так как в открытой версии 2 REST количество результатов запросов ограничено 1000. |Используйте Skip и Take (.NET) или top (REST), как описано в [этом](media-services-dotnet-manage-entities.md#enumerating-through-large-collections-of-entities) и [этом](media-services-rest-manage-entities.md#enumerating-through-large-collections-of-entities) примерах. |
 | Некоторые клиенты могут сталкиваться с проблемой тега повтора в манифесте Smooth Streaming. |Дополнительные сведения см. в [этом разделе](media-services-deliver-content-overview.md#known-issues). |
 | Объекты в пакете SDK .NET для служб мультимедиа не могут быть сериализованы и поэтому не работают с кэшем Azure для Redis. |При попытке сериализации объекта SDK AssetCollection с целью его добавления в кэш Azure для Redis возникает исключение. |
-|REST API отвечает сообщением об ошибке: "при попытке получить фильтр на уровне ресурса или учетной записи" доступ к фильтру невозможен в этой версии API-интерфейса.|Фильтр был создан или изменен с использованием более новой версии API, чем используется для попыток получения фильтра. Это может произойти, если в коде или средствах, используемых клиентом, используются две версии API.  Лучшим решением здесь является обновление кода или средств для использования более новых или двух версий API.|
+|The REST API responds with an error message saying “The filter cannot be accessed by this version of REST Api” when attempting to get an Asset or Account level filter.|The filter was created or modified with a newer API version than is being used to try to get the filter. This can happen if two API versions are being used by code or tools being used by the customer.  The best solution here is to upgrade the code or tools to use the newer or the two API versions.|
 
 ## <a name="a-idrest_version_historyrest-api-version-history"></a><a id="rest_version_history"/>Журнал версий интерфейса API REST
 Сведения о журнале версий интерфейса REST API служб мультимедиа см. в [этой статье].
 
 ## <a name="september-2019"></a>Сентябрь 2019 г.
 
-### <a name="deprecation-of-media-processors"></a>Устаревшие обработчики мультимедиа
+### <a name="deprecation-of-media-processors"></a>Deprecation of media processors
 
-Мы объявляем объявление о нерекомендуемых *Azure Media indexer* и *Azure Media indexer 2 Preview*. [Azure Media Indexerный](media-services-index-content.md) обработчик мультимедиа будет снят с 1 октября по 2020. Процессоры мультимедиа [Azure Media indexer 2 Preview](media-services-process-content-with-indexer2.md) будут сняты с 1 января 2020. [Индексатор видео служб мультимедиа Azure](https://docs.microsoft.com/azure/media-services/video-indexer/) заменяет эти устаревшие обработчики мультимедиа.
+We are announcing deprecation of *Azure Media Indexer* and *Azure Media Indexer 2 Preview*. The [Azure Media Indexer](media-services-index-content.md) media processor will be retired on October 1st of 2020. The [Azure Media Indexer 2 Preview](media-services-process-content-with-indexer2.md) media processors will be retired on January 1 of 2020. [Azure Media Services Video Indexer](https://docs.microsoft.com/azure/media-services/video-indexer/) replaces these legacy media processors.
 
-Дополнительные сведения см. в статье [Миграция с Azure Media indexer и Azure Media indexer 2 в индексатор видео служб мультимедиа Azure](migrate-indexer-v1-v2.md).
+For more information, see [Migrate from Azure Media Indexer and Azure Media Indexer 2 to Azure Media Services Video Indexer](migrate-indexer-v1-v2.md).
 
 ## <a name="august-2019"></a>Август 2019 г.
 
-### <a name="deprecation-of-media-processors"></a>Устаревшие обработчики мультимедиа
+### <a name="deprecation-of-media-processors"></a>Deprecation of media processors
 
-Мы сообщаем о прекращении использования *Windows Azure Media Encoder* (Ваме) и обработчиков мультимедиа *кодировщика мультимедиа Azure* (\ Media Encoder), которые выводятся на выходе 30 ноября 2019.
+We are announcing deprecation of the *Windows Azure Media Encoder* (WAME) and *Azure Media Encoder* (AME) media processors, which are being retired on March 31, 2020.
 
-Дополнительные сведения см. в статье [Миграция Ваме в Media Encoder Standard](https://go.microsoft.com/fwlink/?LinkId=2101334) и [перенос в Media Encoder Standard](https://go.microsoft.com/fwlink/?LinkId=2101335).
+For details, see [Migrate WAME to Media Encoder Standard](https://go.microsoft.com/fwlink/?LinkId=2101334) and [Migrate AME to Media Encoder Standard](https://go.microsoft.com/fwlink/?LinkId=2101335).
 
 ## <a name="march-2019"></a>Март 2019 г.
 
-Функция предварительной версии мультимедийных функций служб мультимедиа Azure устарела.
+The Media Hyperlapse Preview feature of Azure Media Services was deprecated.
 
 ## <a name="december-2018"></a>Декабрь 2018 г.
 
-В скором времени функция предварительной версии мультимедиа в службах мультимедиа Azure будет прекращена. Начиная с 19 декабря 2018 г. прекращается внесение изменений и улучшений в компонент Media Hyperlapse Служб мультимедиа. 29 марта 2019 г. этот компонент будет выведен из эксплуатации.
+The Media Hyperlapse Preview feature of Azure Media Services will soon be retired. Начиная с 19 декабря 2018 г. прекращается внесение изменений и улучшений в компонент Media Hyperlapse Служб мультимедиа. 29 марта 2019 г. этот компонент будет выведен из эксплуатации.
 
 ## <a name="october-2018"></a>Октябрь 2018 г.
 
