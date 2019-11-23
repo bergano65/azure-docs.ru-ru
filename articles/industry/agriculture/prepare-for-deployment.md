@@ -1,135 +1,135 @@
 ---
-title: Развертывание Фармбеатс Azure
-description: Описывает развертывание Фармбеатс
+title: Deploy Azure FarmBeats
+description: Describes how to deploy FarmBeats
 author: uhabiba04
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: v-umha
-ms.openlocfilehash: acc64486ac8bd15a9abab1f2010ea56b752a1e86
-ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
+ms.openlocfilehash: ccd8fc293d284150d7318242b71a46a99fec12fa
+ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73927664"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74406324"
 ---
 # <a name="deploy-farmbeats"></a>Развертывание FarmBeats
 
-В этой статье описывается, как настроить Azure Фармбеатс.
+This article describes how to set up Azure FarmBeats.
 
-Azure Фармбеатс — это комплексное, расширяемое решение для управляемых данными хозяйства, которое позволяет легко подключаться к облаку Azure, сбору данных телеметрии и агрегированию с помощью устройств с датчиками. В Azure Фармбеатс есть различные датчики, такие как камеры, дроны, датчики почвы и управление устройствами из облака, в том числе инфраструктура и службы в Azure для устройств IoT ("Интернет вещей"), предназначенных для мобильных и веб-приложений расширяемыми. Визуализация, оповещения и аналитика.
+Azure FarmBeats is an industry-specific, extensible solution for data-driven farming that enables seamless provisioning and sensor devices connectivity to Azure cloud, telemetry data collection, and aggregation. Azure FarmBeats has various sensors such as cameras, drones, soil sensors, and management of devices from the cloud, which includes infrastructure and services in Azure for the IoT-ready (Internet of Things) devices to an extendible web and mobile app to provide visualization, alerts, and insights.
 
 > [!NOTE]
-> Azure Фармбеатс поддерживается только в общедоступных облачных средах. Дополнительные сведения о облачной среде см. в статье [Azure](https://azure.microsoft.com/overview/what-is-a-public-cloud/).
+> Azure FarmBeats is supported only in Public Cloud Environments. For more information about cloud environment, see [Azure](https://azure.microsoft.com/overview/what-is-a-public-cloud/).
 
-В Azure Фармбеатс есть два следующих компонента:
+Azure FarmBeats has the following two components:
 
-- **Концентратор** данных — это уровень платформы Azure фармбеатс, который позволяет создавать, хранить, обрабатывать данные и вырисовывать ценные сведения из существующих или новых конвейеров данных. Этот уровень платформы полезен для запуска и создания конвейеров и моделей данных сельское хозяйство.
+- **Data hub** - Data hub is the platform layer of Azure FarmBeats that lets you build, store, process data and draw insights from existing or new data pipelines. This platform layer is useful to run and build your agriculture data pipelines and models.
 
-- **Ускоритель** — это уровень решения Azure фармбеатс, который содержит встроенное приложение для демонстрации возможностей Azure фармбеатс с использованием предварительно созданных моделей сельское хозяйство. Этот уровень решения позволяет создавать границы фермы и вырисовывать аналитические данные из данных сельское хозяйство в контексте границы фермы.
+- **Accelerator** - Accelerator is the solution layer of Azure FarmBeats that has a built-in application to illustrate the capabilities of Azure FarmBeats using the pre-created agriculture models. This solution layer lets you create farm boundaries and draw insights from the agriculture data within the context of the farm boundary.
 
-Быстрое развертывание Azure Фармбеатс займет меньше часа. Затраты для концентратора данных и ускорителя зависят от их использования.
+A quick deployment of Azure FarmBeats should take less than an hour. Costs for the Data hub and Accelerator vary based on usage.
 
-## <a name="deployed-resources"></a>Развернутые ресурсы
+## <a name="deployed-resources"></a>Deployed resources
 
-Развертывание Фармбеатс Azure создает перечисленные ниже ресурсы в вашей подписке.
+Azure FarmBeats deployment creates the below listed resources within your subscription:
 
-|Серийный номер  |Имя ресурса  |Компонент Azure Фармбеатс  |
+|Серийный номер  |Имя ресурса  |Azure FarmBeats Component  |
 |---------|---------|---------|
-|1  |       Azure Cosmos DB   |  Концентратор данных       |
-|2  |    Application Insights      |     Концентратор данных или ускоритель     |
-|3  |Кэш Azure для Redis   |Концентратор данных   |
-|4\.  |       Azure KeyVault    |  Концентратор данных или ускоритель        |
-|5  |    Time Series Insights       |     Концентратор данных      |
-|6 |      Пространство имен EventHub    |  Концентратор данных       |
-|7  |    Фабрика данных Azure версии 2       |     Концентратор данных или ускоритель      |
-|8  |Учетная запись Пакетной службы    |Концентратор данных   |
-|9  |       Учетная запись хранения     |  Концентратор данных или ускоритель        |
-|10  |    приложение логики;        |     Концентратор данных      |
-|11  |    Подключение API        |     Концентратор данных      |
-|12|      Служба приложений      |  Концентратор данных или ускоритель       |
-|13. |    План службы приложений        |     Концентратор данных или ускоритель      |
-|14 |Учетная запись Azure Maps     |Accelerator    |
-|15 |       Time Series Insights      |  Концентратор данных     |
+|1  |       Azure Cosmos DB;   |  Центр данных       |
+|2  |    Application Insights      |     Data hub/Accelerator     |
+|3  |Кэш Redis для Azure   |Центр данных   |
+|4  |       Azure KeyVault    |  Data hub/ Accelerator        |
+|5  |    Аналитика временных рядов       |     Центр данных      |
+|6 |      EventHub Namespace    |  Центр данных       |
+|7  |    Фабрика данных Azure версии 2       |     Data hub/ Accelerator      |
+|8  |Учетная запись Пакетной службы    |Центр данных   |
+|9  |       Учетная запись хранения     |  Data hub/ Accelerator        |
+|10  |    Приложение логики        |     Центр данных      |
+|11  |    API connection        |     Центр данных      |
+|12|      Служба приложений      |  Data hub/Accelerator       |
+|13 |    План службы приложений        |     Data hub/ Accelerator      |
+|14 |Azure Maps account     |Accelerator    |
+|15 |       Аналитика временных рядов      |  Центр данных     |
 
-Azure Фармбеатс доступен для скачивания из Azure Marketplace. Доступ к нему можно получить непосредственно из портал Azure.  
+Azure FarmBeats is available for you to download from the Azure Marketplace. You can access it directly from Azure portal.  
 
-## <a name="create-azure-farmbeats-offer-on-marketplace"></a>Создание предложения Azure Фармбеатс в Marketplace
+## <a name="create-azure-farmbeats-offer-on-marketplace"></a>Create Azure FarmBeats offer on marketplace
 
-Чтобы создать предложение Azure Фармбеатс в Marketplace, выполните следующие действия:
+Use these steps to create an Azure FarmBeats offer in the marketplace:
 
-1. Войдите в портал Azure и выберите свою учетную запись в правом верхнем углу и перейдите в клиент Azure AD, где требуется развернуть Microsoft Azure Фармбеатс.
-2. Azure Фармбеатс доступен в Azure Marketplace. На странице Marketplace выберите "получить сейчас".
-3. Выберите Создать и введите следующие сведения.
-    - имя подписки.
-    - имя существующей группы ресурсов (только пустая группа ресурсов) или создайте новую группу ресурсов для развертывания Azure Фармбеатс. Запишите эту группу ресурсов в последующих разделах.
-4. Регион, в котором вы хотите установить Azure Фармбеатс. В настоящее время Фармбеатс следующие регионы: Центральная часть США, Западная Европа, Восточная часть США 2, Северная Европа, Западная часть США, Юго-Восточная Азия, Восточная часть США, Восточная Австралия, Западная часть США 2.
+1. Sign-in to the Azure portal and select your account in the top-right corner, and switch to the Azure AD tenant where you want to deploy Microsoft Azure FarmBeats.
+2. Azure FarmBeats is available at Azure Marketplace. On the marketplace page, select on “Get it Now”.
+3. Select Create and enter the following information:
+    - subscription name.
+    - an existing resource group name (empty resource group only) or create a new resource group for deploying Azure FarmBeats. Make a note of this resource group in subsequent sections.
+4. The region you want to install Azure FarmBeats. Currently Azure FarmBeats is supported in the following regions: Central US, West Europe, East US 2, North Europe, West US, Southeast Asia, East US, Australia East, West US 2.
 5. Нажмите кнопку **ОК**.
-Откроется страница Условия использования. Проверьте стандартные термины Marketplace или щелкните гиперссылку, чтобы ознакомиться с условиями использования.
-6. Нажмите кнопку **Закрыть**, установите флажок "я принимаю" и нажмите кнопку **создать**.
-7. Вы успешно подписаны лицензионным соглашением с конечным пользователем Azure Фармбеатс в Marketplace.  
-7. Чтобы продолжить развертывание, выполните следующие действия в этом руководстве.
+The Terms of use page appears. Review the standard marketplace terms or select the hyperlink to review the Terms of Use.
+6. Select **Close**, then the "I agree" checkbox and then select **Create**.
+7. You have now successfully signed Azure FarmBeats's End-user License agreement (EULA) on the marketplace.  
+7. To continue with the deployment, follow the next steps in this guide.
 
-## <a name="prepare"></a>Подготовка
+## <a name="prepare"></a>Подготовка.
 
-Для развертывания Azure Фармбеатс вам потребуются следующие разрешения:
+You need the following permissions for deploying Azure FarmBeats:
 
-- Клиент: доступ для чтения
-- Подписка: участник или владелец
-- Группа ресурсов: владелец
+- Tenant: Read Access
+- Subscription: contributor or owner
+- Resource group: owner
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-Перед запуском развертывания убедитесь, что вы сделали следующее:
+Before initiating the deployment, ensure you've the following:
 
-- Учетная запись Sentinel
-- Регистрация приложения Azure Active Directory (AD)
+- Sentinel account
+- Azure Active Directory (AD) app registration
 
-## <a name="create-a-sentinel-account"></a>Создание учетной записи-метки    
+## <a name="create-a-sentinel-account"></a>Create a sentinel account    
 
-Учетная запись с метками помогает скачать вспомогательные изображения Sentinel с своего официального веб-сайта на устройство. Чтобы создать бесплатную учетную запись, выполните следующие действия.
+An account with sentinel helps you to download the sentinel satellite imagery from their official website to your device. Follow these steps to create a free account:
 
-Перейдите на сайт https://scihub.copernicus.eu/dhus/#/self-registration. На странице Регистрация укажите имя, фамилию, имя пользователя, пароль и адрес электронной почты.
-На зарегистрированный адрес электронной почты будет отправлено проверочное письмо с подтверждением. Выберите ссылку и подтвердите ее. Процесс регистрации завершен.
+Перейдите на сайт https://scihub.copernicus.eu/dhus/#/self-registration. In the registration page, provide a first name, last name, username, password, and email.
+A verification email will be sent to the registered email address for confirmation. Select the link and confirm. Your registration process is complete.
 
-## <a name="create-azure-ad-app-registration"></a>Создание регистрации приложения Azure AD
+## <a name="create-azure-ad-app-registration"></a>Create Azure AD app registration
 
-Для проверки подлинности и авторизации в Azure Фармбеатс необходимо зарегистрировать приложение Azure Active Directory, которое:
+For authentication and authorization on Azure FarmBeats, you must have an Azure active directory application registration which:
 
-- Вариант 1. установщик может создавать автоматически (при условии, что у вас есть необходимые разрешения на доступ к клиентам, подпискам и группам ресурсов).
-- Вариант 2. перед развертыванием Azure Фармбеатс можно создать и настроить (требуются ручные действия).
+- Case 1: Installer can create automatically (provided you have the required tenant, subscription, and resource group access permissions).
+- Case 2: You can create and configure before deploying Azure FarmBeats (requires manual steps).
 
-**Вариант 1**:: если у вас есть доступ для создания регистрации приложения AAD, вы можете пропустить этот шаг и позволить установщику создать регистрацию приложения. Перейдите к следующему разделу: [Подготовка файла input. JSON](#prepare-input-json-file)
+**Case 1**: : If you have access to create an AAD app registration, you may skip this step and let the installer create the app registration. Please continue to the next section: [Prepare input.json file](#prepare-input-json-file)
 
-Если у вас уже есть подписка, можно напрямую переместиться к следующей процедуре.
+If you already have a subscription, you can directly moved to the next procedure.
 
-**Вариант 2**. Этот метод является предпочтительным, если у вас недостаточно прав для создания и настройки регистрации приложения Azure AD в вашей подписке. Запросите администратора использовать [настраиваемый скрипт](https://aka.ms/FarmBeatsAADScript), который поможет ИТ Admin автоматически создать и настроить регистрацию приложения Azure AD на портал Azure. В качестве выходных данных для выполнения этого пользовательского сценария с помощью среды PowerShell ИТ Admin должен предоставить вам идентификатор клиента приложения Azure Active Directory и секрет пароля. Запишите эти значения:
+**Case 2**: This method is the preferred step when you don't have enough rights to create and configure an Azure AD app registration within your subscription. Request your  admin to use the [custom script](https://aka.ms/FarmBeatsAADScript), which will help IT admin automatically generate and configure the Azure AD app registration on the Azure portal. As an output to running this custom script using PowerShell environment the IT admin needs to share an Azure Active Directory Application Client ID and password secret with you. Запишите эти значения:
 
-Выполните следующие действия, чтобы запустить сценарий регистрации приложения Azure AD.
+Use the following steps to run the Azure AD application registration script:
 
-1. Скачать [Скрипт](https://aka.ms/FarmBeatsAADScript).
-2. Войдите в портал Azure и выберите свою подписку и клиент AD.
+1. Download [script](https://aka.ms/FarmBeatsAADScript).
+2. Sign in to Azure portal and select your subscription and AD tenant.
 3. Запустите Cloud Shell с верхней панели навигации портала Azure.
 
-    ![Перебивает ферму проекта](./media/prepare-for-deployment/navigation-bar-1.png)
+    ![Project Farm Beats](./media/prepare-for-deployment/navigation-bar-1.png)
 
 
-4. Пользователям в первый раз будет предложено выбрать подписку для создания учетной записи хранения и Microsoft Azure общего доступа к файлам. Щелкните **Создать хранилище**.
-5. В первый раз пользователям будет предложено выбрать предпочтительный интерфейс оболочки — bash или PowerShell. Выберите PowerShell.
-6. Отправьте скрипт (из шага 1) в Cloud Shell и запишите расположение отправленного файла.
+4. First-time users will be prompted to select a subscription to create a storage account and Microsoft Azure Files share. Щелкните **Создать хранилище**.
+5. First time users will be prompted with a choice of preferred shell experience- Bash or PowerShell. Choose PowerShell.
+6. Upload the script (from step 1) to the Cloud Shell and note the location of the uploaded file.
 
     > [!NOTE]
-    > По умолчанию он отправляется в домашний каталог.
+    > By default, it is uploaded to your home directory.
 
     Используйте следующий скрипт:
 
     ```azurepowershell-interactive
     ./create_aad_script.ps1
     ```
-7. Запишите идентификатор приложения Azure AD и секрет клиента, чтобы поделиться им с пользователем, который развертывает Azure Фармбеатс.
+7. Make a note of the Azure AD application ID and client secret to share with person deploying Azure FarmBeats.
 
-### <a name="prepare-input-json-file"></a>Подготовка входного JSON файла
+### <a name="prepare-input-json-file"></a>Prepare Input Json file
 
-В процессе установки создайте файл Input. JSON следующим образом:
+As part of the installation, create an input.json file as follows:
 
 ```json
     {  
@@ -146,46 +146,46 @@ Azure Фармбеатс доступен для скачивания из Azure
     }
 ```
 
-Этот файл является входным файлом для Azure Cloud Shell и параметров, значения которых используются во время установки. Все параметры в JSON должны быть заменены соответствующими значениями или удалены; в случае удаления программа установки выводит запрос во время установки.
+This file is your input file to Azure Cloud Shell and parameters whose values are used during the installation. All params in the json needs to be replaced with appropriate values or removed; if removed, installer will prompt you during installation
 
 
-Перед началом подготовки файла проверьте параметры.
+Review the parameters before preparing the file.
 
-|Команда | ОПИСАНИЕ|
+|Команда | Описание|
 |--- | ---|
-|sku  | Предоставляет возможность загрузить либо компоненты Azure Фармбеатс, либо оба компонента. Указывает компоненты для загрузки. Чтобы установить только концентратор данных, используйте "онлидатабхуб". Чтобы установить концентратор данных и ускоритель, используйте "both".|
-|subscriptionId | Указывает подписку для установки Фармбеатс|
-|датахубресаурцеграуп| Имя группы ресурсов для ресурсов концентратора данных|
-|location |Расположение, в котором вы хотите создать ресурсы|
-|акцелераторвебситенаме |Уникальный префикс URL-адреса для имени концентратора данных|
-|акцелераторресаурцеграуп  | Уникальный URL-префикс для имени веб-сайта ускорителя.|
-|датахубвебситенаме  | Ууникуе URL-префикс для имени веб-сайта концентратора данных. |
-|сентинелусернаме | имя пользователя для входа: https://scihub.copernicus.eu/dhus/#/self-registration.|
-|нотификатионемаиладдресс  | Адрес электронной почты для получения уведомлений обо всех оповещениях, настроенных в центре данных.|
-|упдатеифексистс|Используемых Параметр, включаемый в входной. JSON, только если требуется обновить существующий экземпляр Фармбеатс. Для обновления — другие сведения, например. имена групп ресурсов, расположений и т. д. должны быть одинаковыми.|
-|аадаппклиентид | [**Необязательно**] Параметр, включаемый в входной. JSON, только если приложение Azure AD уже существует.  |
-|аадаппклиентсекрет  | [**Необязательно**] Параметр, включаемый в входной. JSON, только если приложение Azure AD уже существует.|
+|sku  | Provides a choice to download either or both the components of Azure FarmBeats. Specifies which components to download. To install only Data hub, use “onlydatabhub”. To install Data hub and Accelerator, use “both”|
+|subscriptionId | Specifies the subscription for installing Azure FarmBeats|
+|datahubResourceGroup| Resource group name for Data hub resources|
+|location |Location where you would like to create the resources|
+|acceleratorWebsiteName |Unique URL prefix to name your Data hub|
+|acceleratorResourceGroup  | Unique URL prefix to name your accelerator website.|
+|datahubWebsiteName  | UUnique URL prefix to name your Data hub website. |
+|sentinelUsername | user name to sign into: https://scihub.copernicus.eu/dhus/#/self-registration.|
+|notificationEmailAddress  | Email address to receive the notifications for any alerts that you configure within Data hub.|
+|updateIfExists|[Optional] Parameter to be included within Input.Json only if you want to upgrade an existing Azure FarmBeats instance. For upgrade, other details eg. the resource group names, locations etc. need to be the same.|
+|aadAppClientId | [**Optional**] Parameter to be included within Input.Json only if Azure AD app already exists.  |
+|aadAppClientSecret  | [**Optional**] Parameter to be included within Input.Json only if Azure AD app already exists.|
 
-## <a name="deploy-within-cloud-shell-browser-based-command-line"></a>Развертывание в Cloud Shell командной строке на основе браузера
+## <a name="deploy-within-cloud-shell-browser-based-command-line"></a>Deploy within Cloud Shell browser-based command line
 
-В рамках рабочего процесса Marketplace необходимо создать одну группу ресурсов и подписать лицензионное соглашение, которое можно проверить снова в рамках фактического развертывания. Развертывание можно выполнить с помощью Azure Cloud Shell (Командная строка на основе браузера), используя среду bash. Перейдите к следующим разделам, чтобы выполнить развертывание с помощью Cloud Shell.
+As part of the marketplace workflow above, you must have created one Resource Group and signed the End-user License Agreement, which can be reviewed once again as part of the actual deployment. The deployment can be done via Azure Cloud Shell (browser-based command line) using Bash environment. Please continue to the next sections to deploy via the Cloud Shell.
 
 > [!NOTE]
-> Срок действия неактивных сеансов Cloud Shell истекает через 20 минут. Попробуйте завершить развертывание в течение этого времени.
+> Inactive Cloud Shell sessions expire after 20 minutes. Try to complete the deployment within this time.
 
-1. Войдите в портал Azure и выберите нужную подписку и клиент AD.
+1. Sign into Azure portal and select the desired subscription and AD tenant.
 2. Запустите Cloud Shell с верхней панели навигации портала Azure.
-3. Если вы используете Cloud Shell в первый раз, вам будет предложено выбрать подписку для создания учетной записи хранения и общей папки Microsoft Azure файлов.
-4. Выберите **создать хранилище**.  
+3. If you are using the Cloud Shell for the first time, you will be prompted to select a subscription to create a storage account and Microsoft Azure Files share.
+4. Select **Create Storage**.  
 
-Выберите среду как bash (а не PowerShell).
+Select the environment as Bash (and not PowerShell).
 
-## <a name="deployment-scenario-1"></a>Сценарий развертывания 1
+## <a name="deployment-scenario-1"></a>Deployment scenario 1
 
-Программа установки создает Azure AD App регистрацию (вариант 1 выше).
+Installer creates the Azure AD App Registration (Case 1 above)
 
-1. Скопируйте следующий шаблон и присвойте ему имя input. JSON.  
-Пример входного JSON:
+1. Copy the following template and name it to input.json.  
+Sample JSON input:
 
     ```json
     {  
@@ -202,40 +202,40 @@ Azure Фармбеатс доступен для скачивания из Azure
     }
     ```
 
-2. Сохраните файл и запишите путь (на локальном компьютере).
-3. Перейдите в Azure Cloud Shell и после успешной проверки подлинности выберите передачу (см. рисунок, выделенный ниже) и отправьте входной JSON-файл в хранилище Cloud Shell.  
+2. Save the file and make a note of the path (on your local computer).
+3. Go to Azure Cloud Shell and after successful authentication, select the upload (see highlighted icon in below image) and upload the input.json file to Cloud Shell storage.  
 
-    ![Перебивает ферму проекта](./media/prepare-for-deployment/bash-2-1.png)
+    ![Project Farm Beats](./media/prepare-for-deployment/bash-2-1.png)
 
-4. Перейдите к домашнему каталогу в Cloud Shell. По умолчанию это/Хоме/<username>
-5. Введите или вставьте следующую команду в Cloud Shell. Не забудьте изменить путь на входные данные. Файл JSON и нажмите клавишу ВВОД.
+4. Go to your home directory in the cloud shell. By default, it is /home/<username>
+5. Type or paste the following command into the Cloud Shell. Make sure to modify the path to input. Json file and press enter.
 
    ```bash
       wget -O farmbeats-installer.sh https://aka.ms/AzureFarmbeatsInstallerScript && bash farmbeats-installer.sh /home/<username>/input.json
     ```
-     Установщик автоматически скачивает все зависимости и создает средство развертывания. Вам будет предложено согласиться с условиями лицензионного соглашения Azure Фармбеатс.
+     The installer automatically downloads all dependencies and builds the deployer. You will be prompted to agree to the Azure FarmBeats End-user license agreement (EULA).
 
-     - Если вы согласны, введите "Y", и вы переходите к следующему шагу.
-     - Введите "N", если вы не согласны с условиями, а развертывание завершится.
+     - Enter ‘Y’ if you agree and you will proceed to the next step.
+     - Enter ‘N’ if you do not agree to the terms and the deployment will terminate.
 
-6. Затем вам будет предложено ввести маркер доступа для развертывания. Скопируйте созданный код и войдите в https://microsoft.com/devicelogin с учетными данными Azure.
+6. Then you will be prompted to enter an access token for the deployment. Copy the code generated and login to https://microsoft.com/devicelogin with your Azure credentials.
 
     > [!NOTE]
-    > Срок действия маркера истекает через 60 минут. По истечении срока действия можно перезапустить, введя команду развертывания еще раз.
+    > The token expires after 60 minutes. When it expires you can restart by typing the deployment command again.
 
-7. При появлении запроса введите пароль для учетной записи Sentinel.
-8. Теперь установщик проверяет и запускает развертывание, что может занять около 20 минут.
-9. После успешного развертывания вы получите следующие выходные ссылки:
+7. When prompted, enter your Sentinel account password.
+8. The installer now validates and starts deploying, which can take about 20 minutes.
+9. Once the deployment is successful, you will receive the below output links:
 
- - **URL-адрес концентратора данных**: Swagger — ссылка для пробных API Azure фармбеатс.
- - **URL-адрес ускорителя**: Пользовательский интерфейс для изучения ускорителя Smart ферма Azure фармбеатс.
- - Файл журнала **развертывания**— файл журнала, созданный во время развертывания. При необходимости его можно использовать для устранения неполадок.
+ - **Data hub URL**: Swagger link to try Azure FarmBeats APIs.
+ - **Accelerator URL**: User Interface to explore Azure FarmBeats Smart Farm Accelerator.
+ - **Deployer log file**- Log file created during deployment. It can be used for troubleshooting if required.
 
-## <a name="deployment-scenario-2"></a>Сценарий развертывания 2
+## <a name="deployment-scenario-2"></a>Deployment scenario 2
 
-Для развертывания используется существующая Azure Active Directory регистрация приложения (вариант 2 выше).
+Existing Azure Active Directory app registration is used to deploy (Case 2 above)
 
-1. Скопируйте приведенный ниже файл JSON, который содержит идентификатор клиента приложения Azure и пароль в файле input. JSON, и сохраните его.
+1. Copy the below JSON file, which includes the Azure Application Client ID and password in the input.json, and save it.
 
     ```json
    {
@@ -256,109 +256,109 @@ Azure Фармбеатс доступен для скачивания из Azure
    }
    ```
 
-Выполните остальные шаги.
+Follow the rest of the steps:
 
-2. Запишите путь к файлу input. JSON (на локальном компьютере).
-3. Перейдите в Azure Cloud Shell снова и пройдите проверку подлинности, нажмите кнопку отправки (см. значок выделенного значка ниже изображения) и передайте входной файл. JSON в хранилище Cloud Shell.
+2. Make a note of the path to your input.json file (on your local computer).
+3. Go to Azure Cloud Shell once again and you're successfully authenticated, select the upload button (see highlighted icon in below image) and upload the input.json file to Cloud Shell storage.
 
-    ![Перебивает ферму проекта](./media/prepare-for-deployment/bash-2-1.png)
+    ![Project Farm Beats](./media/prepare-for-deployment/bash-2-1.png)
 
-4. Перейдите к домашнему каталогу в Cloud Shell. По умолчанию это/Хоме/<username>
-5. Введите или вставьте следующую команду в Cloud Shell. Не забудьте изменить путь на входные данные. Файл JSON и нажмите клавишу ВВОД.
+4. Go to your home directory in the cloud shell. By default, it is /home/<username>
+5. Type or paste the following command into the Cloud Shell. Make sure to modify the path to input. Json file and press enter.
 
     ```bash
     wget -O farmbeats-installer.sh https://aka.ms/AzureFarmbeatsInstallerScript && bash farmbeats-installer.sh /home/<username>/input.json
     ```
 
-Следуйте инструкциям на экране.
+Follow the onscreen instructions.
 
-6. Скрипт автоматически скачивает все зависимости и создает средство развертывания.
-7. Вам будет предложено прочитать и принять условия лицензионного соглашения Azure Фармбеатс (EULA).
+6. The script automatically downloads all dependencies and builds the deployer.
+7. You will be prompted to read and agree to the Azure FarmBeats End-user license agreement (EULA).
 
-    - Если вы согласны, введите "Y", и вы продолжите переход к следующему шагу.
-    - Введите "N", если вы не согласны с условиями, и развертывание будет прекращено.
+    - Enter 'Y' if you agree and you will continue to the next step.
+    - Enter 'N' if you don't agree to the terms and the deployment will terminate.
 
-8. Вам будет предложено ввести маркер доступа для развертывания. Скопируйте созданный код и войдите в https://microsoft.com/devicelogin с учетными данными Azure.
-9. Теперь установщик будет проверять и приступить к созданию ресурсов, что может занять около 20 минут. В течение этого времени сеанс будет активным на Cloud Shell.
-10. После успешного развертывания вы получите следующие выходные ссылки:
+8. You will be prompted to enter an access token for the deployment. Copy the code generated and sign in to https://microsoft.com/devicelogin with your Azure credentials.
+9. The installer will now validate and start creating the resources, which can take about 20 minutes. Keep the session active on Cloud Shell during this time.
+10. Once the deployment goes through successfully, you will receive the below output links:
 
- - **URL-адрес концентратора данных**: Swagger Link to try фармбеатс API.
- - **URL-адрес ускорителя**: Пользовательский интерфейс для изучения ускорителя Smart ферма фармбеатс.
- - **Файл журнала развертывания**: файл журнала, созданный во время развертывания. При необходимости его можно использовать для устранения неполадок.
+ - **Data hub URL**: Swagger link to try Azure FarmBeats APIs.
+ - **Accelerator URL**: User Interface to explore Azure FarmBeats Accelerator.
+ - **Deployer log file**: Log file created during deployment. It can be used for troubleshooting if required.
 
-Если возникнут проблемы, ознакомьтесь с [разрешениями по устранению неполадок](troubleshoot-project-farmbeats.md).
+If you encounter any issues, review [Troubleshoot](troubleshoot-project-farmbeats.md).
 
 
-## <a name="validate-deployment"></a>Проверка развертывания
+## <a name="validate-deployment"></a>Validate deployment
 
-### <a name="data-hub"></a>Концентратор данных
+### <a name="data-hub"></a>Центр данных
 
-После завершения установки концентратора данных вы получите URL-адрес для доступа к API Azure Фармбеатс через интерфейс Swagger в формате: https://\<йоурдатахуб-website-name >. azurewebsites. NET.
+Once the data hub installation is complete, you'll receive the URL to access Azure FarmBeats APIs via the Swagger interface in the format: https://\<yourdatahub-website-name>.azurewebsites.net/swagger
 
-1. Чтобы войти через Swagger, скопируйте и вставьте URL-адрес в браузере.
-2. Войдите, используя учетные данные портал Azure.
-3. Работоспособности тест (необязательно)
+1. To sign in via Swagger, copy and paste the URL in the browser.
+2. Sign in with Azure portal credentials.
+3. Sanity test (Optional)
 
-     - Возможность успешного входа на портал Swagger с помощью ссылки на концентратор данных, полученной в качестве выходных данных для успешного развертывания.
-     - Расширенные типы Get API — выберите команду "попробовать"/Execute ".
-     - Вы должны получить код ответа сервера 200, а не исключение, например 403 "неавторизованный пользователь".
+     - Able to successfully sign in to the Swagger portal using the Data hub link, which you received as an output to a successful deployment.
+     - Extended types Get API- Select "Try it out /Execute"
+     - You should receive the server response Code 200 and not an exception such as 403 "unauthorized user".
 
 ### <a name="accelerator"></a>Accelerator
 
-После завершения установки ускорителя вы получите URL-адрес для доступа к Фармбеатс пользовательскому интерфейсу в формате: https://\<Accelerator-website-name >. azurewebsites. NET.
+Once the Accelerator installation is complete, you'll receive the URL to access Azure FarmBeats user-interface in the format: https://\<accelerator-website-name>.azurewebsites.net
 
-1. Чтобы войти из ускорителя, скопируйте и вставьте URL-адрес в браузере.
-2. Войдите, используя учетные данные портал Azure.
+1. To sign in from Accelerator, copy and paste the URL in the browser.
+2. Sign in with Azure portal credentials.
 
 ## <a name="upgrade"></a>Обновление
 
-Шаги для обновления аналогичны этапам установки в первый раз. Выполните следующие действия:
+The steps for upgrade are similar to the first-time installation. Выполните следующие действия:
 
-1. Войдите в портал Azure и выберите нужную подписку и клиент AD.
+1. Sign in to Azure portal and select your desired subscription and AD tenant.
 2. Запустите Cloud Shell с верхней панели навигации портала Azure.
 
-   ![Перебивает ферму проекта](./media/prepare-for-deployment/navigation-bar-1.png)
+   ![Project Farm Beats](./media/prepare-for-deployment/navigation-bar-1.png)
 
-3. Выберите среду с именем Bash в раскрывающемся списке слева от оболочки.
-4. Внесите изменения в файл Input. JSON, только если это необходимо, и отправьте его в Azure Cloud Shell. Например, можно обновить адрес электронной почты для уведомления, которое вы хотите получить.
-5. Отправьте входной файл. JSON в Azure Cloud Shell.
-6. Введите или вставьте следующие две команды в Cloud Shell. Обязательно измените путь к файлу input. JSON и нажмите клавишу ВВОД.
+3. Select the environment as “Bash” from the drop-down from the left of the of shell.
+4. Make changes to your input.json file only if needed and upload to the Azure Cloud Shell. For example, you can update your email address for the notification you want to receive.
+5. Upload the input.json file to Azure Cloud Shell.
+6. Type or paste the following two commands into the Cloud Shell. Make sure to modify the path to input.json file and press enter.
 
     ```bash
     wget -O farmbeats-installer.sh https://aka.ms/AzureFarmbeatsInstallerScript && bash farmbeats-installer.sh /home/<username>/input.json
     ```
-Следуйте инструкциям на экране:
+Follow the onscreen instructions:
 
-7. Установщик автоматически запрашивает требуемые входные данные во время выполнения:
-8. Введите маркер доступа для развертывания. Скопируйте созданный код и войдите в https://microsoft.com/devicelogin с учетными данными Azure.
-9. Пароль Sentinel
-10. Теперь установщик проверяет и запускает создание ресурсов, что может занять около 20 минут.
-11. После успешного развертывания вы получите следующие выходные ссылки:
- - **URL-адрес концентратора данных**: Swagger Link to try фармбеатс API.
- - **URL-адрес ускорителя**: Пользовательский интерфейс для изучения ускорителя Smart ферма фармбеатс.
- - **Файл журнала развертывания**: сохраняет журналы во время развертывания. Его можно использовать для устранения неполадок.
+7. The Installer automatically prompts the required inputs at run-time:
+8. Enter an access token for deployment. Copy the code generated and sign in to https://microsoft.com/devicelogin with your Azure credentials.
+9. Sentinel password
+10. The installer now validates and starts creating the resources, which can take about 20 minutes.
+11. Once the deployment is successful, you will receive the below output links:
+ - **Data hub URL**: Swagger link to try Azure FarmBeats APIs.
+ - **Accelerator URL**: User interface to explore Azure FarmBeats Accelerator.
+ - **Deployer log file**: saves logs during deployment. It can be used for troubleshooting.
 
 > [!NOTE]
-> Запишите приведенные выше значения для использования в будущем.
+> Make note of the above values for future use.
 
 
 ## <a name="uninstall"></a>Удаление
 
-Сейчас мы не поддерживаем автоматическое удаление Фармбеатс с помощью установщика. Чтобы удалить концентратор данных или ускоритель, в портал Azure удалите группу ресурсов, в которой установлены эти компоненты, или удалите ресурсы вручную.
+Currently we don't support automated uninstallation of Azure FarmBeats using the installer. To remove the Data hub or  Accelerator, in the Azure portal, delete the resource group in which these components are installed, or delete resources manually.
 
-Например, если вы развернули концентратор данных и ускоритель в двух разных группах ресурсов, удалите эти группы ресурсов следующим образом:
+For example, if you deployed Data hub and Accelerator in two different resource groups, you delete those resource groups as follows:
 
 1. Войдите на портал Azure.
-2. Выберите свою учетную запись в правом верхнем углу и перейдите к нужному клиенту Azure AD, где вы хотите развернуть Microsoft Фармбеатс.
+2. Select your account in the top right corner, and switch to the desired Azure AD tenant where you want to deploy Azure FarmBeats.
 
    > [!NOTE]
-   > Для правильной работы ускорителя требуется концентратор данных. Не рекомендуется удалять концентратор данных без удаления ускорителя.
+   > Data hub is needed for Accelerator to work properly. We don’t recommend uninstalling Data hub without uninstalling Accelerator.
 
-3. Выберите группы ресурсов и введите имя концентратора данных или группы ресурсов ускорителя, которые необходимо удалить.
-4. Выберите имя группы ресурсов. Введите имя еще раз, чтобы выполнить двойной контроль, и выберите Удалить, чтобы удалить группу ресурсов и все ее базовые ресурсы.
-5. Кроме того, можно удалить каждый ресурс вручную, что не рекомендуется.
-7. Для удаления или удаления концентратора данных перейдите в группу ресурсов непосредственно в Azure и удалите группу ресурсов.
+3. Select Resource Groups, and type in the name of the Data hub or Accelerator resource group that you want to delete.
+4. Выберите имя группы ресурсов. Type in the name again to double-check, and select Delete to remove the resource group, and all its underlying resources.
+5. Alternatively, you can delete each resource manually, which is not recommended.
+7. To delete/uninstall data hub, go to the Resource group directly on Azure and delete the resource group from there.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Вы развернули Azure Фармбеатс. Теперь научитесь [создавать фермы](manage-farms.md#create-farms).
+You have deployed Azure FarmBeats. Now, learn how to [create farms](manage-farms.md#create-farms).

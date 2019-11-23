@@ -1,5 +1,5 @@
 ---
-title: Настройка частных IP-адресов для виртуальных машин — Azure CLI
+title: Configure private IP addresses for VMs - Azure CLI
 description: Узнайте, как настроить частные IP-адреса для виртуальных машин с помощью интерфейса командной строки (CLI) Azure.
 services: virtual-network
 documentationcenter: na
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/16/2017
 ms.author: kumud
-ms.openlocfilehash: 5734b96466801efaa991a971bd87f60aafc9df32
-ms.sourcegitcommit: 8e31a82c6da2ee8dafa58ea58ca4a7dd3ceb6132
+ms.openlocfilehash: dfc56d86d2e516a7c7bb82ef7a5e84105e049188
+ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74196609"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74404458"
 ---
 # <a name="configure-private-ip-addresses-for-a-virtual-machine-using-the-azure-cli"></a>Настройка частных IP-адресов для виртуальной машины с помощью Azure CLI
 
@@ -35,7 +35,7 @@ ms.locfileid: "74196609"
 [!INCLUDE [virtual-networks-static-ip-scenario-include](../../includes/virtual-networks-static-ip-scenario-include.md)]
 
 > [!NOTE]
-> Для работы приведенных в этом руководстве команд Azure CLI требуется наличие готовой среды. Чтобы выполнять команды в соответствии с указаниями, представленными в этом документе, сначала постройте тестовую среду, как описано в статье [Создание виртуальной сети](quick-create-cli.md).
+> Для работы приведенных в этом руководстве команд Azure CLI требуется наличие готовой среды. Для выполнения команд в том виде, в каком они представлены в данном документе, сначала постройте тестовую среду, описанную в разделе [Создание виртуальной сети](quick-create-cli.md).
 
 ## <a name="specify-a-static-private-ip-address-when-creating-a-vm"></a>Указание статического частного IP-адреса при создании виртуальной машины
 
@@ -184,7 +184,7 @@ az network nic show \
 rivateIpAllocationMethod,PublicAddress:publicIpAddress}'
 ```
 
-Результат будет выглядеть следующим образом:
+Результат будет выглядеть следующим образом.
 
 ```json
 {
@@ -251,7 +251,7 @@ rivateIpAllocationMethod,PublicAddress:publicIpAddress}'
 2. Выполните команду **azure vm set** , чтобы изменить сетевую карту, используемую виртуальной машиной.
    
     ```azurecli
-    azure vm set -g TestRG -n DNS01 -N TestNIC2
+   az vm nic set --resource-group TestRG --vm-name DNS01 --nics TestNIC2
     ```
 
     Ожидаемые выходные данные:
@@ -269,6 +269,6 @@ rivateIpAllocationMethod,PublicAddress:publicIpAddress}'
     > [!NOTE]
     > Если размер виртуальной машины позволяет подключить несколько сетевых карт, выполните команду **azure network nic delete**, чтобы удалить старую сетевую карту.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с дополнительными сведениями об управлении [параметрами IP-адресов](virtual-network-network-interface-addresses.md).

@@ -1,14 +1,14 @@
 ---
-title: Обновление существующего назначения на портале
-description: Узнайте о механизме обновления существующего назначения на портале в проекте Azure.
-ms.date: 10/25/2018
+title: Update an existing assignment from the portal
+description: Learn about the mechanism for updating an existing blueprint assignment from the portal in Azure Blueprints.
+ms.date: 11/21/2019
 ms.topic: conceptual
-ms.openlocfilehash: f48f8cfb33a05e2bf8dcbe097d3a9eb3a5ebb9db
-ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
+ms.openlocfilehash: b4cf03d88103b85bc00dbd815816ead2740f2093
+ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73960359"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74406394"
 ---
 # <a name="how-to-update-an-existing-blueprint-assignment"></a>Обновление существующего назначения схемы
 
@@ -24,19 +24,20 @@ ms.locfileid: "73960359"
 
 1. Выберите **Назначенные схемы** на странице слева.
 
-1. В списке схем щелкните левой кнопкой мыши назначение схемы. Затем нажмите кнопку " **обновить назначение** " или щелкните правой кнопкой мыши назначение схемы и выберите команду " **обновить назначение**".
+1. В списке схем щелкните левой кнопкой мыши назначение схемы. Then click the **Update assignment** button OR right-click the blueprint assignment and select **Update assignment**.
 
-   ![Обновление существующего назначения схемы](../media/update-existing-assignments/update-assignment.png)
+   ![Update an existing blueprint assignment](../media/update-existing-assignments/update-assignment.png)
 
-1. Страница **назначение** схемы будет загружать предварительно заполненные все значения из исходного назначения. Вы можете изменить **версию определения схемы**, состояние **блокировки назначения** и любые динамические параметры в определении схемы. Внеся необходимые изменения, нажмите кнопку **Назначить**.
+1. The **Assign blueprint** page will load pre-filled with all values from the original assignment.
+   Вы можете изменить **версию определения схемы**, состояние **блокировки назначения** и любые динамические параметры в определении схемы. Внеся необходимые изменения, нажмите кнопку **Назначить**.
 
 1. Просмотрите новое состояние на странице сведений об обновленном назначении. В этом примере мы добавили в назначение **блокировку**.
 
-   ![Изменен режим блокировки для существующего назначения схемы](../media/update-existing-assignments/updated-assignment.png)
+   ![Updated an existing blueprint assignment - lock mode changed](../media/update-existing-assignments/updated-assignment.png)
 
-1. Изучите сведения о других **операциях назначения** с помощью раскрывающегося списка. Таблица обновлений **управляемых ресурсов** по выбранной операции назначения.
+1. Explore details about other **Assignment operations** using the drop-down. The table of **Managed resources** updates by selected assignment operation.
 
-   ![Операции присваивания для назначения схемы](../media/update-existing-assignments/assignment-operations.png)
+   ![Assignment operations of a blueprint assignment](../media/update-existing-assignments/assignment-operations.png)
 
 ## <a name="rules-for-updating-assignments"></a>Правила обновления назначений
 
@@ -46,9 +47,10 @@ ms.locfileid: "73960359"
   - Если роль или получатель роли (пользователь, группа или приложение) изменяется, создается новое назначение роли. Ранее развернутые назначения ролей сохраняются.
 - Назначения политик
   - Если изменяются параметры назначения политики, существующее назначение обновляется.
-  - Если изменяется определение назначения политики, создается новое назначение политики. Ранее развернутые назначения политик сохраняются.
+  - Если изменяется определение назначения политики, создается новое назначение политики.
+    Ранее развернутые назначения политик сохраняются.
   - Если артефакт назначения политики удаляется из схемы, развернутое назначение политики сохраняется.
-- Шаблоны диспетчера ресурсов Azure
+- Шаблоны Azure Resource Manager
   - Шаблон обрабатывается с помощью Resource Manager как **PUT**. Так как каждый тип ресурсов обрабатывает это действие по-разному, просмотрите документацию для каждого включенного ресурса, чтобы определить влияние этого действия при его выполнении схемой.
 
 ## <a name="possible-errors-on-updating-assignments"></a>Возможные ошибки при обновлении назначений
@@ -61,7 +63,7 @@ ms.locfileid: "73960359"
 - объект уже существует;
 - Azure Resource Manager не поддерживает запрошенное изменение.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь со сведениями о [жизненном цикле схем](../concepts/lifecycle.md).
 - Узнайте, как использовать [статические и динамические параметры](../concepts/parameters.md).

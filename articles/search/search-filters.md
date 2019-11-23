@@ -1,23 +1,23 @@
 ---
-title: Фильтрация по результатам поиска
+title: Filter on search results
 titleSuffix: Azure Cognitive Search
-description: Фильтрация по идентификатору безопасности пользователя, языку, географическому расположению или числовым значениям для сокращения результатов поиска по запросам в Когнитивный поиск Azure, размещенной облачной службе поиска на Microsoft Azure.
+description: Filter by user security identity, language, geo-location, or numeric values to reduce search results on queries in Azure Cognitive Search, a hosted cloud search service on Microsoft Azure.
 manager: nitinme
 author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 960f6f0de94c6bb4fc6b03c31740b63270cf9e14
-ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
+ms.openlocfilehash: f4ce3cd0db20f76aa6169f15254cf36ee64151a5
+ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74132930"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74406747"
 ---
-# <a name="filters-in-azure-cognitive-search"></a>Фильтры в Когнитивный поиск Azure 
+# <a name="filters-in-azure-cognitive-search"></a>Filters in Azure Cognitive Search 
 
-*Фильтр* содержит критерии выбора документов, используемых в запросе Azure когнитивный Поиск. Неотфильтрованные результаты поиска содержат все документы в индексе. Фильтр ограничивает поисковой запрос подмножеством документов. Например, фильтр может ограничивать полнотекстовый поиск продуктами определенного бренда, цвета или ценового диапазона, превышающего определенное пороговое значение.
+A *filter* provides criteria for selecting documents used in an Azure Cognitive Search query. Неотфильтрованные результаты поиска содержат все документы в индексе. Фильтр ограничивает поисковой запрос подмножеством документов. Например, фильтр может ограничивать полнотекстовый поиск продуктами определенного бренда, цвета или ценового диапазона, превышающего определенное пороговое значение.
 
 Некоторые поисковые запросы устанавливают требования к фильтрам как часть реализации, но вы можете использовать фильтры, когда требуется ограничить поиск с помощью критериев *на основе значений* (поиск с ограничением поиска по типу продукта "книги" для категории "не фантастика", издательства Simon & Schuster).
 
@@ -49,37 +49,36 @@ ms.locfileid: "74132930"
 
  + Параметр запроса `searchFields` ограничивает поиск конкретными полями. Например, если в вашем индексе содержатся отдельные поля для описания на английском и испанском языках, вы можете использовать searchFields, чтобы указать конкретные поля для полнотекстового поиска. 
 
-+ Параметр `$select` используется, чтобы указать поля, которые требуется включить в результирующий набор для эффективной обрезки ответа перед его отправкой вызывающему приложению. Этот параметр не позволяет уточнить запрос или сократить коллекцию документов, но если вы не отвечаете за более маленький ответ, этот параметр можно рассмотреть. 
++ Параметр `$select` используется, чтобы указать поля, которые требуется включить в результирующий набор для эффективной обрезки ответа перед его отправкой вызывающему приложению. This parameter does not refine the query or reduce the document collection, but if a smaller response is your goal, this parameter is an option to consider. 
 
 Дополнительные сведения о параметрах запроса см. в подразделе ["Параметры запроса" раздела "Запрос" статьи Search Documents (Azure Search Service REST API)](https://docs.microsoft.com/rest/api/searchservice/search-documents#request) (Поиск документов (REST API службы "Поиск" Azure)).
 
 
-## <a name="how-filters-are-executed"></a>Как выполняются фильтры
+## <a name="how-filters-are-executed"></a>How filters are executed
 
-Во время запроса средство синтаксического анализа фильтров принимает критерии в качестве входных данных, преобразует выражение в атомарные логические выражения, представленные в виде дерева, а затем вычисляет дерево фильтров по фильтруемым полям в индексе.
+At query time, a filter parser accepts criteria as input, converts the expression into atomic Boolean expressions represented as a tree, and then evaluates the filter tree over filterable fields in an index.
 
-Фильтрация выполняется в сочетании с поиском, определяющим, какие документы следует включить в подчиненную обработку для получения документа и оценки релевантности. При связывании со строкой поиска фильтр эффективно сокращает набор отзывов последующей операции поиска. При использовании отдельно (например, когда строка запроса пуста, где `search=*`), критерием фильтра являются только входные данные. 
+Filtering occurs in tandem with search, qualifying which documents to include in downstream processing for document retrieval and relevance scoring. When paired with a search string, the filter effectively reduces the recall set of the subsequent search operation. При использовании отдельно (например, когда строка запроса пуста, где `search=*`), критерием фильтра являются только входные данные. 
 
 ## <a name="defining-filters"></a>Определение фильтров
+Filters are OData expressions, articulated using a [subset of OData V4 syntax supported in Azure Cognitive Search](https://docs.microsoft.com/rest/api/searchservice/odata-expression-syntax-for-azure-search). 
 
-Фильтры — это выражения OData, сформулированные с помощью [подмножества синтаксиса OData версии 4, поддерживаемого в когнитивный Поиск Azure](https://docs.microsoft.com/rest/api/searchservice/odata-expression-syntax-for-azure-search). 
+You can specify one filter for each **search** operation, but the filter itself can include multiple fields, multiple criteria, and if you use an **ismatch** function, multiple full-text search expressions. In a multi-part filter expression, you can specify predicates in any order (subject to the rules of operator precedence). Попытка поставить предикаты в определенной последовательности не даст значительного прироста производительности.
 
-Можно указать один фильтр для каждой операции **поиска** , но сам фильтр может включать несколько полей, несколько условий, а при использовании функции **Match** — несколько выражений полнотекстового поиска. В выражении фильтра из нескольких частей можно указать предикаты в любом порядке (в соответствии с правилами приоритета операторов). Попытка поставить предикаты в определенной последовательности не даст значительного прироста производительности.
-
-Одним из ограничений критерия фильтра является максимальный размер запроса. Весь запрос, включая функции фильтра, не может содержать более 16 МБ данных для POST или 8 КБ для GET. Кроме того, существует ограничение на количество предложений в выражении фильтра. Хорошее проверенное правило: если у вас есть сотни предложений, вы рискуете превысить лимит. Мы рекомендуем разрабатывать приложение таким образом, чтобы оно не создавало фильтры неограниченного размера.
+One of the limits on a filter expression is the maximum size limit of the request. Весь запрос, включая функции фильтра, не может содержать более 16 МБ данных для POST или 8 КБ для GET. There is also a limit on the number of clauses in your filter expression. Хорошее проверенное правило: если у вас есть сотни предложений, вы рискуете превысить лимит. Мы рекомендуем разрабатывать приложение таким образом, чтобы оно не создавало фильтры неограниченного размера.
 
 Следующие примеры представляют собой прототипные определения фильтров в нескольких API.
 
 ```http
 # Option 1:  Use $filter for GET
-GET https://[service name].search.windows.net/indexes/hotels/docs?search=*&$filter=baseRate lt 150&$select=hotelId,description&api-version=2019-05-06
+GET https://[service name].search.windows.net/indexes/hotels/docs?api-version=2019-05-06&search=*&$filter=Rooms/any(room: room/BaseRate lt 150.0)&$select=HotelId, HotelName, Rooms/Description, Rooms/BaseRate
 
 # Option 2: Use filter for POST and pass it in the request body
 POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-version=2019-05-06
 {
     "search": "*",
-    "filter": "baseRate lt 150",
-    "select": "hotelId,description"
+    "filter": "Rooms/any(room: room/BaseRate lt 150.0)",
+    "select": "HotelId, HotelName, Rooms/Description, Rooms/BaseRate"
 }
 ```
 
@@ -87,45 +86,45 @@ POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-ve
     parameters =
         new SearchParameters()
         {
-            Filter = "baseRate lt 150",
-            Select = new[] { "hotelId", "description" }
+            Filter = "Rooms/any(room: room/BaseRate lt 150.0)",
+            Select = new[] { "HotelId", "HotelName", "Rooms/Description" ,"Rooms/BaseRate"}
         };
 
     var results = searchIndexClient.Documents.Search("*", parameters);
 ```
 
-## <a name="filter-usage-patterns"></a>Шаблоны использования фильтров
+## <a name="filter-usage-patterns"></a>Filter usage patterns
 
-В следующих примерах показаны несколько шаблонов использования для сценариев фильтрации. Дополнительные примеры можно найти в разделе [Примеры OData](https://docs.microsoft.com/azure/search/search-query-odata-filter#examples).
+The following examples illustrate several usage patterns for filter scenarios. Дополнительные примеры можно найти в разделе [Примеры OData](https://docs.microsoft.com/azure/search/search-query-odata-filter#examples).
 
-+ Автономный параметр **$filter** без строки запроса полезен, когда выражение фильтра может полностью определить интересующие документы. Без строки запроса не выполняется лексический или лингвистический анализ, нет оценки и рейтинга. Обратите внимание, что строка поиска — это просто звездочка, что означает "сопоставить все документы".
-
-   ```
-   search=*&$filter=(baseRate ge 60 and baseRate lt 300) and accommodation eq 'Hotel' and city eq 'Nogales'
-   ```
-
-+ Сочетание строки запроса и **$filter**, где фильтр создает подмножество, а строка запроса предоставляет термины для полнотекстового поиска по отфильтрованному подмножеству. Использование фильтра с строкой запроса является наиболее распространенным шаблоном использования.
++ Автономный параметр **$filter** без строки запроса полезен, когда выражение фильтра может полностью определить интересующие документы. Без строки запроса не выполняется лексический или лингвистический анализ, нет оценки и рейтинга. Notice the search string is just an asterisk, which means "match all documents".
 
    ```
-   search=hotels ocean$filter=(baseRate ge 60 and baseRate lt 300) and city eq 'Los Angeles'
+   search=*&$filter=Rooms/any(room: room/BaseRate ge 60 and room/BaseRate lt 300) and Address/City eq 'Honolulu'
    ```
 
-+ Составные запросы, разделенные с помощью логического оператора or, каждый со своими критериями фильтра (например, beagles в категории dog или siamese в категории cat). Выражения, Объединенные с `or`, оцениваются по отдельности с объединением документов, соответствующих каждому выражению, отправляемому обратно в ответе. Этот шаблон использования достигается с помощью функции `search.ismatchscoring`. Можно также использовать версию без оценки `search.ismatch`.
++ Сочетание строки запроса и **$filter**, где фильтр создает подмножество, а строка запроса предоставляет термины для полнотекстового поиска по отфильтрованному подмножеству. The addition of terms (walking distance theaters) introduces search scores in the results, where documents that best match the terms are ranked higher. Using a filter with a query string is the most common usage pattern.
+
+   ```
+  search=walking distance theaters&$filter=Rooms/any(room: room/BaseRate ge 60 and room/BaseRate lt 300) and Address/City eq 'Seattle'&$count=true
+   ```
+
++ Составные запросы, разделенные с помощью логического оператора or, каждый со своими критериями фильтра (например, beagles в категории dog или siamese в категории cat). Expressions combined with `or` are evaluated individually, with the union of documents matching each expression sent back in the response. This usage pattern is achieved through the `search.ismatchscoring` function. You can also use the non-scoring version, `search.ismatch`.
 
    ```
    # Match on hostels rated higher than 4 OR 5-star motels.
-   $filter=search.ismatchscoring('hostel') and rating ge 4 or search.ismatchscoring('motel') and rating eq 5
+   $filter=search.ismatchscoring('hostel') and Rating ge 4 or search.ismatchscoring('motel') and Rating eq 5
 
    # Match on 'luxury' or 'high-end' in the description field OR on category exactly equal to 'Luxury'.
-   $filter=search.ismatchscoring('luxury | high-end', 'description') or category eq 'Luxury'
+   $filter=search.ismatchscoring('luxury | high-end', 'Description') or Category eq 'Luxury'&$count=true
    ```
 
-  Можно также объединить полнотекстовый поиск с помощью `search.ismatchscoring` с фильтрами `and` вместо `or`, но это функционально эквивалентно использованию параметров `search` и `$filter` в запросе поиска. Например, следующие два запроса дают одинаковый результат:
+  It is also possible to combine full-text search via `search.ismatchscoring` with filters using `and` instead of `or`, but this is functionally equivalent to using the `search` and `$filter` parameters in a search request. For example, the following two queries produce the same result:
 
   ```
-  $filter=search.ismatchscoring('pool') and rating ge 4
+  $filter=search.ismatchscoring('pool') and Rating ge 4
 
-  search=pool&$filter=rating ge 4
+  search=pool&$filter=Rating ge 4
   ```
 
 Исчерпывающие сведения о конкретных вариантах использования см. в следующих статьях:
@@ -136,32 +135,32 @@ POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-ve
 
 ## <a name="field-requirements-for-filtering"></a>Требования к полям для фильтрации
 
-В REST API фильтрация по умолчанию включена *для* простых полей. Фильтруемые поля увеличивают размер индекса. Не забудьте установить `"filterable": false` для полей, которые вы не планируете фактически использовать в фильтре. Дополнительные сведения о параметрах для определения полей см. в статье [Create Index (Azure Search Service REST API)](https://docs.microsoft.com/rest/api/searchservice/create-index) (Создание индекса (REST API службы "Поиск Azure")).
+In the REST API, filterable is *on* by default for simple fields. Фильтруемые поля увеличивают размер индекса. Не забудьте установить `"filterable": false` для полей, которые вы не планируете фактически использовать в фильтре. Дополнительные сведения о параметрах для определения полей см. в статье [Create Index (Azure Search Service REST API)](https://docs.microsoft.com/rest/api/searchservice/create-index) (Создание индекса (REST API службы "Поиск Azure")).
 
-В пакете SDK для .NET фильтруемые поля *отключены* по умолчанию. Можно сделать фильтр для поля, задав для свойства с [фильтром](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.field.isfilterable?view=azure-dotnet) для соответствующего объекта [поля](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.field?view=azure-dotnet) значение `true`. Это также можно сделать декларативно с помощью атрибута с [фильтрацией](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.isfilterableattribute). В приведенном ниже примере атрибут задается в свойстве `BaseRate` класса Model, который сопоставляется с определением индекса.
+В пакете SDK для .NET фильтруемые поля *отключены* по умолчанию. You can make a field filterable by setting the [IsFilterable property](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.field.isfilterable?view=azure-dotnet) of the corresponding [Field](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.field?view=azure-dotnet) object to `true`. You can also do this declaratively by using the [IsFilterable attribute](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.isfilterableattribute). In the example below, the attribute is set on the `BaseRate` property of a model class that maps to the index definition.
 
 ```csharp
     [IsFilterable, IsSortable, IsFacetable]
     public double? BaseRate { get; set; }
 ```
 
-### <a name="making-an-existing-field-filterable"></a>Обеспечение фильтрации существующего поля
+### <a name="making-an-existing-field-filterable"></a>Making an existing field filterable
 
-Нельзя изменить существующие поля, чтобы сделать их фильтруемыми. Вместо этого необходимо добавить новое поле или перестроить индекс. Дополнительные сведения о перестроении индекса или повторном заполнении полей см. [в статье перестроение индекса Azure когнитивный Поиск](search-howto-reindex.md).
+You can't modify existing fields to make them filterable. Instead, you need to add a new field, or rebuild the index. For more information about rebuilding an index or repopulating fields, see [How to rebuild an Azure Cognitive Search index](search-howto-reindex.md).
 
 ## <a name="text-filter-fundamentals"></a>Принципы работы текстовых фильтров
 
-Текстовые фильтры соответствуют строковым полям строк литералов, которые вы задаюте в фильтре. В отличие от полнотекстового поиска, для текстовых фильтров не существует лексического анализа или разбиения слов, поэтому сравнения предназначены только для точных совпадений. Например, предположим, что поле *f* содержит "Sunny Day", `$filter=f eq 'Sunny'` не соответствует, но `$filter=f eq 'sunny day'` будет. 
+Text filters match string fields against literal strings that you provide in the filter. Unlike full-text search, there is no lexical analysis or word-breaking for text filters, so comparisons are for exact matches only. For example, assume a field *f* contains "sunny day", `$filter=f eq 'Sunny'` does not match, but `$filter=f eq 'sunny day'` will. 
 
-Текстовые строки учитывают регистр. Отсутствует нижний регистр слов в верхнем регистре: `$filter=f eq 'Sunny day'` не будет искать "Sunny Day".
+Текстовые строки учитывают регистр. There is no lower-casing of upper-cased words: `$filter=f eq 'Sunny day'` will not find "sunny day".
 
-### <a name="approaches-for-filtering-on-text"></a>Подходы к фильтрации по тексту
+### <a name="approaches-for-filtering-on-text"></a>Approaches for filtering on text
 
-| Подход | ОПИСАНИЕ | Сценарии использования |
+| Подход | Описание | Сценарии использования |
 |----------|-------------|-------------|
-| [`search.in`](search-query-odata-search-in-function.md) | Функция, которая сопоставляет поле со списком строк с разделителями. | Рекомендуется для [фильтров безопасности](search-security-trimming-for-azure-search.md) и для любых фильтров, в которых несколько необработанных текстовых значений должны сопоставляться с строковым полем. Функция **Search.in** разработана для ускорения и намного быстрее, чем явно сравнивать поле с каждой строкой с помощью `eq` и `or`. | 
-| [`search.ismatch`](search-query-odata-full-text-search-functions.md) | Функция, которая позволяет совместно использовать операции полнотекстового поиска вместе с операциями строго логического фильтра в одном выражении фильтра. | Используйте **Поиск. Match** (или его эквивалент, **Search. исматчскоринг**), если требуется несколько сочетаний фильтра поиска в одном запросе. Вы также можете использовать ее для фильтра *contains* (для фильтрации в частичной строке в контексте большей строки). |
-| [`$filter=field operator string`](search-query-odata-comparison-operators.md) | Определенное пользователем выражение, состоящее из поля, операторов и значений. | Используйте этот параметр, если нужно найти точные соответствия между строковым и строковым значениями. |
+| [`search.in`](search-query-odata-search-in-function.md) | A function that matches a field against a delimited list of strings. | Recommended for [security filters](search-security-trimming-for-azure-search.md) and for any filters where many raw text values need to be matched with a string field. The **search.in** function is designed for speed and is much faster than explicitly comparing the field against each string using `eq` and `or`. | 
+| [`search.ismatch`](search-query-odata-full-text-search-functions.md) | Функция, которая позволяет совместно использовать операции полнотекстового поиска вместе с операциями строго логического фильтра в одном выражении фильтра. | Use **search.ismatch** (or its scoring equivalent, **search.ismatchscoring**) when you want multiple search-filter combinations in one request. Вы также можете использовать ее для фильтра *contains* (для фильтрации в частичной строке в контексте большей строки). |
+| [`$filter=field operator string`](search-query-odata-comparison-operators.md) | Определенное пользователем выражение, состоящее из поля, операторов и значений. | Use this when you want to find exact matches between a string field and a string value. |
 
 ## <a name="numeric-filter-fundamentals"></a>Основные компоненты числового фильтра
 
@@ -169,7 +168,7 @@ POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-ve
 
 Документы, содержащие числовые поля (цена, размер, SKU, идентификатор), предоставляют эти значения в результатах поиска, если поле отмечено `retrievable`. Суть в том, что полнотекстовый поиск не применим к числовым типам полей.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сначала попробуйте использовать **обозреватель поиска** на портале, чтобы отправить запросы с параметрами **$filter**. [Пример индекса выборки недвижимости](search-get-started-portal.md) предоставляет полезные результаты для следующих отфильтрованных запросов при их вставке в строку поиска:
 
@@ -196,10 +195,10 @@ search=John Leclerc&$count=true&$select=source,city,postCode,baths,beds&$filter=
 
 Дополнительные примеры можно найти в разделе [Примеры OData](https://docs.microsoft.com/azure/search/search-query-odata-filter#examples).
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>Дополнительные материалы
 
-+ [Как работает полнотекстовый поиск в Azure Когнитивный поиск](search-lucene-query-architecture.md)
++ [How full text search works in Azure Cognitive Search](search-lucene-query-architecture.md)
 + [Search Documents (Azure Search Service REST API)](https://docs.microsoft.com/rest/api/searchservice/search-documents) (Поиск по документам (REST API службы поиска Azure))
-+ [Простой синтаксис запросов](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search)
++ [Синтаксис простых запросов](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search)
 + [Синтаксис запросов Lucene](https://docs.microsoft.com/rest/api/searchservice/lucene-query-syntax-in-azure-search)
 + [Supported data types (Azure Search)](https://docs.microsoft.com/rest/api/searchservice/supported-data-types) (Поддерживаемые типы данных (служба "Поиск Azure")).

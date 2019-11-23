@@ -1,44 +1,44 @@
 ---
-title: Приступая к работе сервер Многофакторной идентификации Azure Azure Active Directory
+title: Getting started Azure MFA Server - Azure Active Directory
 description: Пошаговые инструкции по началу работы с сервером Многофакторной идентификации Azure в локальной среде
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 05/20/2019
+ms.date: 11/21/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4682425dfd3f32e139390ef65e267a80d95f6ccd
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: 3e751c7aefe888d16e6d86a0184a1a59437d665f
+ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74268988"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74404250"
 ---
 # <a name="getting-started-with-the-azure-multi-factor-authentication-server"></a>Приступая к работе с сервером Многофакторной идентификации Azure
 
 <center>
 
-![начало работы с локальным сервером MFA](./media/howto-mfaserver-deploy/server2.png)</center>
+![Getting started with MFA Server on-premises](./media/howto-mfaserver-deploy/server2.png)</center>
 
 На этой странице рассматривается процедура установки сервера и его настройка в локальной службе Active Directory. Если сервер MFA уже установлен и вам нужно его обновить, см. сведения в статье [Обновление сервера Многофакторной идентификации Azure до последней версии](howto-mfaserver-deploy-upgrade.md). Сведения об установке только веб-службы см. в статье [Включение проверки подлинности мобильных приложений с помощью сервера Многофакторной идентификации Azure](howto-mfaserver-deploy-mobileapp.md).
 
 > [!IMPORTANT]
-> По состоянию на 1 июля 2019 Корпорация Майкрософт больше не будет предлагать сервер MFA для новых развертываний. Новые клиенты, желающие требовать многофакторную проверку подлинности пользователей, должны использовать службу многофакторной идентификации Azure на основе облачных служб. Существующие клиенты, которые активировали сервер MFA до 1 июля, смогут скачать последнюю версию, будущие обновления и создать учетные данные активации обычным образом.
+> As of July 1, 2019, Microsoft will no longer offer MFA Server for new deployments. New customers who would like to require multi-factor authentication from their users should use cloud-based Azure Multi-Factor Authentication. Existing customers who have activated MFA Server prior to July 1 will be able to download the latest version, future updates and generate activation credentials as usual.
 
 ## <a name="plan-your-deployment"></a>Планирование развертывания
 
 > [!WARNING]
-> Начиная с марта 2019. скачивание сервера MFA будет доступно только платным клиентам. Клиенты бесплатных и пробных версий больше не смогут скачивать или создавать и использовать учетные данные активации.
+> Starting in March of 2019 MFA Server downloads will only be available to paid tenants. Free/trial tenants will no longer be able to download or generate and use activation credentials.
 
 Прежде чем скачивать сервер Многофакторной идентификации Azure, определите требования к нагрузке и высокому уровню доступности. Используйте эти сведения, чтобы выбрать способ и расположение развертывания.
 
 Чтобы определить необходимый объем памяти, исходите из предполагаемого количества пользователей, которые будут регулярно выполнять проверку подлинности.
 
-| Users | ОЗУ |
+| Пользователи | ОЗУ |
 | ----- | --- |
 | 1–10 000 | 4 ГБ |
 | 10 001–50 000 | 8 ГБ |
@@ -54,10 +54,10 @@ ms.locfileid: "74268988"
 
 Убедитесь, что сервер, используемый для Многофакторной идентификации Azure, соответствует следующим требованиям:
 
-| Требования к серверу Многофакторной идентификации Azure | ОПИСАНИЕ |
+| Требования к серверу Многофакторной идентификации Azure | Описание |
 |:--- |:--- |
 | Оборудование |<li>200 МБ места на жестком диске</li><li>32- или 64-разрядный процессор</li><li>Не менее 1 ГБ ОЗУ</li> |
-| Программное обеспечение |<li>Windows Server 2016</li><li>Windows Server 2012 R2</li><li>Windows Server 2012</li><li>Windows Server 2008 R2</li><li>Windows Server 2008 с пакетом обновления 1 (SP1) и 2 (SP2)</li><li>Windows Server 2003 R2</li><li>Windows Server 2003 с пакетом обновления 1 (SP1) и 2 (SP2)</li><li>Windows 10</li><li>Windows 8.1, все выпуски</li><li>Windows 8, все выпуски</li><li>Windows 7, все выпуски</li><li>Windows Vista, все выпуски, а также выпуски с пакетом обновления 1 (SP1) и 2 (SP2)</li><li>Microsoft .NET Framework 4.0</li><li>IIS 7.0 или более поздняя версия, если вы устанавливаете SDK для пользовательского портала или веб-службы</li> |
+| Программное обеспечение |<li>Windows Server 2016</li><li>Windows Server 2012 R2</li><li>Windows Server 2012</li><li>Windows Server 2008 R2</li><li>Windows Server 2008 с пакетом обновления 1 (SP1) и 2 (SP2)</li><li>Windows Server 2003 R2</li><li>Windows Server 2003 с пакетом обновления 1 (SP1) и 2 (SP2)</li><li>Windows 10</li><li>Windows 8.1, все выпуски</li><li>Windows 8, все выпуски</li><li>Windows 7, все выпуски</li><li>Windows Vista, все выпуски, а также выпуски с пакетом обновления 1 (SP1) и 2 (SP2)</li><li>Microsoft .NET Framework 4.0</li><li>IIS 7.0 или более поздняя версия, если вы устанавливаете SDK для пользовательского портала или веб-службы</li> |
 | Разрешения | Учетная запись администратора домена или администратора предприятия для регистрации в Active Directory |
 
 ### <a name="azure-mfa-server-components"></a>Компоненты сервера Azure MFA
@@ -97,16 +97,16 @@ ms.locfileid: "74268988"
 ## <a name="download-the-mfa-server"></a>Скачивание сервера Многофакторной идентификации
 
 > [!WARNING]
-> Начиная с марта 2019. скачивание сервера MFA будет доступно только платным клиентам. Клиенты бесплатных и пробных версий больше не смогут скачивать или создавать и использовать учетные данные активации.
+> Starting in March of 2019 MFA Server downloads will only be available to paid tenants. Free/trial tenants will no longer be able to download or generate and use activation credentials.
 
 Чтобы скачать сервер Многофакторной идентификации Azure с портала Azure, сделайте следующее:
 
 1. Войдите на [портал Azure](https://portal.azure.com) с использованием учетной записи администратора.
-2. Найдите и выберите *Azure Active Directory*. Выберите **сервер MFA**.
+2. Найдите и выберите *Azure Active Directory*. Select **MFA Server**.
 3. Выберите **Параметры сервера**.
 4. Выберите **Загрузить** и следуйте инструкциям на странице скачивания, чтобы сохранить установщик. 
 
-   ![Загрузка сервера MFA из портал Azure](./media/howto-mfaserver-deploy/downloadportal.png)
+   ![Download MFA Server from the Azure portal](./media/howto-mfaserver-deploy/downloadportal.png)
 
 5. Не закрывайте эту страницу — мы вернемся к ней после запуска установщика.
 
@@ -119,7 +119,7 @@ ms.locfileid: "74268988"
 3. После завершения установки нажмите кнопку **Готово**. Запустится мастер настройки.
 4. На экране приветствия мастера настройки установите флажок **Пропустить использование мастера настройки проверки подлинности** и нажмите кнопку **Далее**. Мастер закроется, и сервер запустится.
 
-   ![Пропустить использование мастера настройки проверки подлинности](./media/howto-mfaserver-deploy/skip2.png)
+   ![Skip using the Authentication Configuration Wizard](./media/howto-mfaserver-deploy/skip2.png)
 
 5. На странице, с которой вы скачали сервер, нажмите кнопку **Создать учетные данные для активации**. Скопируйте эти данные в соответствующие поля на сервере Azure MFA и нажмите кнопку **Activate**(Активировать).
 
@@ -139,7 +139,7 @@ ms.locfileid: "74268988"
 
 На вкладке Email Content (Содержимое электронного письма) отображаются различные шаблоны электронной почты. В зависимости от настроек многофакторной проверки подлинности можно выбрать тот шаблон, который максимально вам подходит.
 
-![Шаблоны электронной почты сервера MFA в консоли](./media/howto-mfaserver-deploy/email2.png)
+![MFA Server Email templates in the console](./media/howto-mfaserver-deploy/email2.png)
 
 ## <a name="import-users-from-active-directory"></a>Импорт пользователей из Active Directory
 
@@ -152,7 +152,7 @@ ms.locfileid: "74268988"
 3. Теперь вы можете искать в каталоге AD отдельных пользователей. Вы также можете искать подразделения и входящих в них пользователей. В этом случае будет указано подразделение, к которому принадлежит пользователь.
 4. Выделите всех пользователей справа и нажмите кнопку **Импортировать**. Должно появиться всплывающее окно с сообщением о том, что импорт выполнен успешно. Закройте окно импорта.
 
-   ![Импорт пользователя сервера MFA из Active Directory](./media/howto-mfaserver-deploy/import2.png)
+   ![MFA Server user import from Active Directory](./media/howto-mfaserver-deploy/import2.png)
 
 ### <a name="automated-synchronization-with-active-directory"></a>Автоматическая синхронизация с Active Directory
 
@@ -180,7 +180,7 @@ ms.locfileid: "74268988"
 Кроме указанных выше полей, результат проверки подлинности (пройдена или получен отказ) и причины отказов также хранятся с данными проверки подлинности и могут быть получены из отчетов о проверке подлинности или использовании.
 
 > [!IMPORTANT]
-> Начиная с марта 2019 параметры телефонного звонка не будут доступны пользователям сервера MFA в бесплатных или пробных клиентах Azure AD. Это изменение не влияет на SMS messages. Телефонный звонок будет по прежнему доступен пользователям в платных клиентах Azure AD. Это изменение касается только бесплатных и пробных клиентов Azure AD.
+> Starting in March of 2019 the phone call options will not be available to MFA Server users in free/trial Azure AD tenants. SMS messages are not impacted by this change. Phone call will continue to be available to users in paid Azure AD tenants. This change only impacts free/trial Azure AD tenants.
 
 ## <a name="back-up-and-restore-azure-mfa-server"></a>Резервное копирование и восстановление сервера Azure MFA
 
@@ -202,7 +202,7 @@ ms.locfileid: "74268988"
 
 После установки сервера MFA 8.x или более поздней версии (либо обновления до этой версии) рекомендуется отключить или удалить прежние, менее надежные комплекты шифров (если они не требуются в организации). Соответствующие инструкции см. в статье, посвященной [управлению протоколами SSL и TLS, а также комплектами шифров для AD FS](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/manage-ssl-protocols-in-ad-fs).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Установка и настройка [пользовательского портала](howto-mfaserver-deploy-userportal.md) для самообслуживания пользователей.
 - Установите и настройте сервер Azure MFA со [службой федерации Active Directory](multi-factor-authentication-get-started-adfs.md), [проверкой подлинности RADIUS](howto-mfaserver-dir-radius.md) или [проверкой подлинности LDAP](howto-mfaserver-dir-ldap.md).

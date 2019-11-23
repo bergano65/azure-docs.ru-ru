@@ -1,5 +1,5 @@
 ---
-title: Создание определяемых пользователем функций — в Azure Digital двойников | Документация Майкрософт
+title: How to create user-defined functions - in Azure Digital Twins | Microsoft Docs
 description: Создание определяемых пользователем функций, сопоставителей и назначений ролей с помощью Azure Digital Twins.
 ms.author: alinast
 author: alinamstanciu
@@ -7,14 +7,14 @@ manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 11/07/2019
+ms.date: 11/21/2019
 ms.custom: seodec18
-ms.openlocfilehash: 4db6f0052c92d4532917a996eda82a27d97d3063
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: 824fe611867216233e223e505f5321b23b7406fb
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74009565"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74383315"
 ---
 # <a name="how-to-create-user-defined-functions-in-azure-digital-twins"></a>Создание определяемых пользователем функций в Azure Digital Twins
 
@@ -46,7 +46,7 @@ ms.locfileid: "74009565"
 
 В приведенном ниже примере сопоставитель возвращает значение true для любого события телеметрии датчика с типом значения данных `"Temperature"`. Вы можете создать несколько сопоставлений сущностей на определяемую пользователем функцию, сделав аутентифицированный запрос HTTP POST.
 
-```plaintext
+```URL
 YOUR_MANAGEMENT_API_URL/matchers
 ```
 
@@ -69,11 +69,11 @@ YOUR_MANAGEMENT_API_URL/matchers
 }
 ```
 
-| Значение | Заменить на |
+| Value | Заменить на |
 | --- | --- |
-| YOUR_SPACE_IDENTIFIER | Регион сервера, в котором размещен ваш экземпляр |
+| YOUR_SPACE_IDENTIFIER | Регион сервера, в котором размещен ваш экземпляр. |
 
-## <a name="create-a-user-defined-function"></a>создание определяемой пользователем функции;
+## <a name="create-a-user-defined-function"></a>Создание определяемой пользователем функции
 
 Создание определяемой пользователем функции включает в себя составной HTTP-запрос к API управления Azure Digital Twins.
 
@@ -81,7 +81,7 @@ YOUR_MANAGEMENT_API_URL/matchers
 
 После создания сопоставления загрузите фрагмент функции со следующим аутентифицированным составным HTTP-запросом POST в следующее расположение.
 
-```plaintext
+```URL
 YOUR_MANAGEMENT_API_URL/userdefinedfunctions
 ```
 
@@ -109,7 +109,7 @@ function process(telemetry, executionContext) {
 --USER_DEFINED_BOUNDARY--
 ```
 
-| Значение | Заменить на |
+| Value | Заменить на |
 | --- | --- |
 | USER_DEFINED_BOUNDARY | Имя границы составного содержимого |
 | YOUR_SPACE_IDENTIFIER | Идентификатор пространства  |
@@ -201,7 +201,7 @@ function process(telemetry, executionContext) {
 
 1. [Запросите API системы](./security-create-manage-role-assignments.md#retrieve-all-roles) для всех ролей, чтобы получить идентификатор роли, которую необходимо назначить определяемой пользователем функции. Сделайте это, создавая аутентифицированный запрос HTTP GET.
 
-    ```plaintext
+    ```URL
     YOUR_MANAGEMENT_API_URL/system/roles
     ```
    Сохраните идентификатор требуемой роли. Он будет передан в качестве атрибута текста JSON **roleId** (`YOUR_DESIRED_ROLE_IDENTIFIER`) ниже.
@@ -210,17 +210,17 @@ function process(telemetry, executionContext) {
 1. Найдите значение **path** (`YOUR_ACCESS_CONTROL_PATH`), запрашивая пространство с помощью `fullpath`.
 1. Скопируйте возвращенное значение `spacePaths`. Оно понадобится вам далее. Создайте аутентифицированный запрос HTTP GET.
 
-    ```plaintext
+    ```URL
     YOUR_MANAGEMENT_API_URL/spaces?name=YOUR_SPACE_NAME&includes=fullpath
     ```
 
-    | Значение | Заменить на |
+    | Value | Заменить на |
     | --- | --- |
     | YOUR_SPACE_NAME | Имя необходимого пространства |
 
 1. Вставьте возвращенное значение `spacePaths` в **path**, чтобы создать назначение роли определяемой пользователем функции, сделав аутентифицированный HTTP-запрос POST в следующее расположение.
 
-    ```plaintext
+    ```URL
     YOUR_MANAGEMENT_API_URL/roleassignments
     ```
     С помощью текста в формате JSON:
@@ -234,11 +234,11 @@ function process(telemetry, executionContext) {
     }
     ```
 
-    | Значение | Заменить на |
+    | Value | Заменить на |
     | --- | --- |
     | YOUR_DESIRED_ROLE_IDENTIFIER | Идентификатор необходимой роли |
     | YOUR_USER_DEFINED_FUNCTION_ID | Идентификатор необходимой определяемой пользователем функции |
-    | YOUR_USER_DEFINED_FUNCTION_TYPE_ID | Идентификатор типа для определяемой пользователем функции |
+    | YOUR_USER_DEFINED_FUNCTION_TYPE_ID | The ID specifying the user-defined function type (`UserDefinedFunctionId`) |
     | YOUR_ACCESS_CONTROL_PATH | Путь для управления доступом |
 
 >[!TIP]
@@ -252,7 +252,7 @@ function process(telemetry, executionContext) {
 1. В зависимости от того, что именно сопоставители успешно оценили, извлеките связанные определяемые пользователем функции.
 1. Выполните каждую определяемую пользователем функцию.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как [создать конечные точки Azure Digital Twins](./how-to-egress-endpoints.md), чтобы отправлять в них события.
 

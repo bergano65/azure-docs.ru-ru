@@ -1,52 +1,52 @@
 ---
 title: Поддержка контейнеров
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как создать ресурс экземпляра контейнера Azure.
+description: Learn how to create an Azure container instance resource.
 services: cognitive-services
 author: IEvangelist
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 8/21/2019
+ms.date: 11/21/2019
 ms.author: dapine
-ms.openlocfilehash: 07e2067571c7bc7403ee8a1d1a0600c451e1581f
-ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
+ms.openlocfilehash: 1679862b1660d3c8b2505c6e0c54f203f5d4665d
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70051166"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74383517"
 ---
-## <a name="create-an-azure-container-instance-resource"></a>Создание ресурса экземпляра контейнера Azure
+## <a name="create-an-azure-container-instance-resource"></a>Create an Azure Container Instance resource
 
-1. Перейдите на страницу [создания](https://ms.portal.azure.com/#create/Microsoft.ContainerInstances) экземпляров контейнеров.
+1. Go to the [Create](https://ms.portal.azure.com/#create/Microsoft.ContainerInstances) page for Container Instances.
 
-2. На вкладке **основы** введите следующие сведения.
+2. On the **Basics** tab, enter the following details:
 
-    |Параметр|Значение|
+    |Параметр|Value|
     |--|--|
-    |Подписка|Выберите свою подписку.|
-    |Группа ресурсов|Выберите доступную группу ресурсов или создайте новую, например `cognitive-services`.|
-    |Имя контейнера|Введите имя, например `cognitive-container-instance`. Имя должно быть меньше прописных букв.|
-    |Местоположение|Выберите регион для развертывания.|
-    |Тип образа|Если образ контейнера хранится в реестре контейнеров, который не требует учетных данных, `Public`выберите. Если для доступа к образу контейнера требуются учетные данные, выберите `Private`. Сведения о том, является `Public` ли образ контейнера или `Private` ("общедоступная Предварительная версия"), см. в разделе репозитории [и образы контейнеров](../../cognitive-services-container-support.md#container-repositories-and-images) . |
-    |Имя образа|Введите расположение контейнера Cognitive Services. Расположение — это то, что используется в качестве аргумента `docker pull` команды. Сведения о доступных именах образов и соответствующих репозиториях см. в разделе [репозитории и образы контейнеров](../../cognitive-services-container-support.md#container-repositories-and-images) .<br><br>Имя образа должно быть полным указанием трех частей. Сначала реестр контейнеров, затем репозиторий, а затем имя образа: `<container-registry>/<repository>/<image-name>`.<br><br>Ниже приведен пример, `mcr.microsoft.com/azure-cognitive-services/keyphrase` который представляет извлечение ключевых фраз образ в реестре контейнеров Майкрософт в репозитории Cognitive Services Azure. Другим примером является, `containerpreview.azurecr.io/microsoft/cognitive-services-speech-to-text` который представляет изображение преобразования речи в текст в репозитории Microsoft реестра контейнеров предварительной версии контейнера. |
+    |Subscription|Выберите свою подписку.|
+    |группа ресурсов.|Select the available resource group or create a new one such as `cognitive-services`.|
+    |Имя контейнера|Enter a name such as `cognitive-container-instance`. The name must be in lower caps.|
+    |Location|Select a region for deployment.|
+    |Тип образа|If your container image is stored in a container registry that doesn’t require credentials, choose `Public`. If accessing your container image requires credentials, choose `Private`. Refer to [container repositories and images](../../cognitive-services-container-support.md#container-repositories-and-images) for details on whether or not the container image is `Public` or `Private` ("Public Preview"). |
+    |Имя образа|Enter the Cognitive Services container location. The location is what's used as an argument to the `docker pull` command. Refer to the [container repositories and images](../../cognitive-services-container-support.md#container-repositories-and-images) for the available image names and their corresponding repository.<br><br>The image name must be fully qualified specifying three parts. First, the container registry, then the repository, finally the image name: `<container-registry>/<repository>/<image-name>`.<br><br>Here is an example, `mcr.microsoft.com/azure-cognitive-services/keyphrase` would represent the Key Phrase Extraction image in the Microsoft Container Registry under the Azure Cognitive Services repository. Another example is, `containerpreview.azurecr.io/microsoft/cognitive-services-speech-to-text` which would represent the Speech to Text image in the Microsoft repository of the Container Preview container registry. |
     |Тип ОС|`Linux`|
-    |Size|Измените размер на Рекомендуемые рекомендации для конкретного контейнера службы:<br>2 ядра ЦП<br>4 ГБ
+    |Размер|Change size to the suggested recommendations for your specific Cognitive Service container:<br>2 CPU cores<br>4 ГБ
 
-3. На вкладке **сети** введите следующие сведения.
+3. On the **Networking** tab, enter the following details:
 
-    |Параметр|Значение|
+    |Параметр|Value|
     |--|--|
-    |Порты|Установите TCP-порт в `5000`значение. Предоставляет контейнер через порт 5000.|
+    |порты;|Set the TCP port to `5000`. Exposes the container on port 5000.|
 
-4. На вкладке **Дополнительно** введите необходимые **переменные среды** для параметров выставления счетов в контейнере для ресурса экземпляра контейнера Azure:
+4. On the **Advanced** tab, enter the required **Environment Variables** for the container billing settings of the Azure Container Instance resource:
 
-    | Ключ | Значение |
+    | Ключ | Value |
     |--|--|
-    |`apikey`|Копируется со страницы **ключи** ресурса. Это строка, `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`состоящая из 32 буквенно-цифровых символов без пробелов или дефисов.|
-    |`billing`|Копируется со страницы **обзора** ресурса.|
+    |`apikey`|Copied from the **Keys** page of the resource. It is a 32 alphanumeric-character string with no spaces or dashes, `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`.|
+    |`billing`|Copied from the **Overview** page of the resource.|
     |`eula`|`accept`|
 
-1. Щелкните **Проверка и создать** .
-1. После прохождения проверки нажмите кнопку **создать** , чтобы завершить процесс создания
-1. После успешного развертывания ресурс готов
+1. Click **Review and Create**
+1. After validation passes, click **Create** to finish the creation process
+1. When the resource is successfully deployed, it's ready

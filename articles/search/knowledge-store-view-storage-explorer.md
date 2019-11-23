@@ -1,52 +1,52 @@
 ---
-title: Просмотр хранилища знаний (Предварительная версия) с Обозреватель службы хранилища
+title: View a knowledge store (preview) with Storage Explorer
 titleSuffix: Azure Cognitive Search
-description: Просматривайте и анализируйте хранилище знаний Azure Когнитивный поиск с помощью Обозреватель службы хранилища портал Azure. Хранилище знаний сейчас находится в общедоступной предварительной версии.
+description: Просматривайте и анализируйте хранилище знаний Когнитивного поиска Azure с помощью Обозревателя службы хранилища портала Azure. knowledge store is currently in public preview.
 manager: nitinme
-author: lisaleib
-ms.author: v-lilei
+author: HeidiSteen
+ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: e3ea879a419aa14d3a6693e23f4f120aca8d9d51
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: ca2df05cf20ef51b2d5ca866f22bd9450dd6acaf
+ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73720051"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74406556"
 ---
-# <a name="view-a-knowledge-store-with-storage-explorer"></a>Просмотр хранилища знаний с помощью Обозреватель службы хранилища
+# <a name="view-a-knowledge-store-with-storage-explorer"></a>Просмотр хранилища знаний с помощью Обозревателя службы хранилища
 
 > [!IMPORTANT] 
-> Хранилище знаний сейчас находится в общедоступной предварительной версии. Функции предварительной версии предоставляются без соглашения об уровне обслуживания и не рекомендуются для рабочих нагрузок. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). [REST API версия 2019-05-06-Preview](search-api-preview.md) предоставляет функции предварительной версии. В настоящее время поддерживается ограниченная поддержка портала и поддержка пакета SDK для .NET.
+> Сейчас предоставляется общедоступная предварительная версия хранилища знаний. Для предварительной версии функции соглашение об уровне обслуживания не предусмотрено. Мы не рекомендуем использовать ее в рабочей среде. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). [Версия REST API 2019-05-06-Preview](search-api-preview.md) предоставляет предварительные версии функций. В настоящее время предоставляется ограниченная поддержка портала, но поддержка пакета SDK для .NET пока что отсутствует.
 
-В этой статье вы узнаете, как подключиться к хранилищу знаний и исследовать его с помощью Обозреватель службы хранилища в портал Azure.
+In this article, you'll learn by example how to connect to and explore a knowledge store using Storage Explorer in the Azure portal.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
-+ Выполните действия, описанные в разделе [Создание хранилища знаний в портал Azure](knowledge-store-create-portal.md) или [Создание хранилища знаний Azure когнитивный Поиск с помощью функции "оставшаяся",](knowledge-store-create-rest.md) чтобы создать образец хранилища знаний, используемый в этом пошаговом руководстве.
++ Follow the steps in [Create a knowledge store in Azure portal](knowledge-store-create-portal.md) or [Create an Azure Cognitive Search knowledge store by using REST](knowledge-store-create-rest.md) to create the sample knowledge store used in this walkthrough.
 
-+ Кроме того, вам потребуется имя учетной записи хранения Azure, которая использовалась для создания хранилища знаний, а также его ключ доступа из портал Azure.
++ Кроме того, вам потребуется имя учетной записи хранения Azure, которая использовалась для создания хранилища знаний, а также его ключ доступа из портала Azure.
 
-## <a name="view-edit-and-query-a-knowledge-store-in-storage-explorer"></a>Просмотр, изменение и запрос к хранилищу знаний в Обозреватель службы хранилища
+## <a name="view-edit-and-query-a-knowledge-store-in-storage-explorer"></a>View, edit, and query a knowledge store in Storage Explorer
 
-1. В портал Azure [откройте учетную запись хранения](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Storage%2storageAccounts/) , которая использовалась для создания хранилища знаний.
+1. In the Azure portal, [open the Storage account](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Storage%2storageAccounts/) that you used to create the knowledge store.
 
-1. В левой области навигации учетной записи хранения щелкните **Обозреватель службы хранилища**.
+1. В левой области навигации учетной записи хранения щелкните **Обозреватель службы хранилища.**
 
-1. Разверните список **таблицы** , чтобы отобразить список проекций таблиц Azure, которые были созданы при запуске мастера **импорта данных** для данных в отеле.
+1. Разверните список **Таблицы**, чтобы показать список проекций Azure, которые были созданы при запуске мастера **импорта данных** на примере данных обзоров отелей.
 
-Выберите любую таблицу для просмотра обогащенных данных, включая ключевые фразы тональности оценки, широту и долготу, а также многое другое.
+Выберите любую таблицу для просмотра обогащенных данных, включая ключевые фразы оценки тональности, широту и долготу, а также многое другое.
 
-   ![Просмотр таблиц в Обозреватель службы хранилища](media/knowledge-store-view-storage-explorer/storage-explorer-tables.png "Просмотр таблиц в Обозреватель службы хранилища")
+   ![Просмотр таблиц в Обозревателе службы хранилища](media/knowledge-store-view-storage-explorer/storage-explorer-tables.png "Просмотр таблиц в Обозревателе службы хранилища")
 
-Чтобы изменить тип данных для любого значения таблицы или изменить отдельные значения в таблице, нажмите кнопку **изменить**. При изменении типа данных для любого столбца в одной строке таблицы он будет применен ко всем строкам.
+Чтобы изменить тип данных для любого значения таблицы или изменить отдельные значения в таблице, нажмите кнопку **Изменить**. При изменении типа данных для любого столбца в одной строке таблицы, он будет применен ко всем строкам.
 
-   ![Изменение таблицы в Обозреватель службы хранилища](media/knowledge-store-view-storage-explorer/storage-explorer-edit-table.png "Изменение таблицы в Обозреватель службы хранилища")
+   ![Изменение таблицы в Обозревателе службы хранилища](media/knowledge-store-view-storage-explorer/storage-explorer-edit-table.png "Изменение таблицы в Обозревателе службы хранилища")
 
-Чтобы выполнить запросы, щелкните **запрос** на панели команд и введите условия.  
+Чтобы выполнить запросы, щелкните **Запрос** на панели команд и введите условия.  
 
-   ![Запрос таблицы в Обозреватель службы хранилища](media/knowledge-store-view-storage-explorer/storage-explorer-query-table.png "Запрос таблицы в Обозреватель службы хранилища")
+   ![Запрос таблицы в Обозревателе службы хранилища](media/knowledge-store-view-storage-explorer/storage-explorer-query-table.png "Запрос таблицы в Обозревателе службы хранилища")
 
 ## <a name="clean-up"></a>Очистка
 
@@ -58,8 +58,8 @@ ms.locfileid: "73720051"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Подключите это хранилище знаний к Power BI для более глубокого анализа или вперед с помощью кода, используя REST API и POST, чтобы создать другое хранилище знаний.
+Connect this knowledge store to Power BI for deeper analysis, or move forward with code, using the REST API and Postman to create a different knowledge store.
 
 > [!div class="nextstepaction"]
-> [Подключение с помощью Power BI](knowledge-store-connect-power-bi.md)
-> [Создание хранилища знаний в оставшейся](knowledge-store-howto.md) работе
+> [Connect with Power BI](knowledge-store-connect-power-bi.md)
+> [Create a knowledge store in REST](knowledge-store-howto.md)

@@ -1,5 +1,5 @@
 ---
-title: Включение многоклиентских приложений в Azure Digital двойников | Документация Майкрософт
+title: Enable multitenant applications - Azure Digital Twins | Microsoft Docs
 description: Как настроить мультитенантные приложения Azure Active Directory для Azure Digital Twins.
 ms.author: alinast
 author: alinamstanciu
@@ -7,13 +7,13 @@ manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 10/02/2019
-ms.openlocfilehash: 6394d519b93b55358ef9d528f89978d5a3cf3007
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.date: 11/21/2019
+ms.openlocfilehash: 65e1fa3fe371766566eeeaaa2d33479ea0243d61
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74005916"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74383336"
 ---
 # <a name="enable-multitenant-applications-with-azure-digital-twins"></a>Включение мультитенантных приложений с помощью Azure Digital Twins
 
@@ -54,18 +54,18 @@ ms.locfileid: "74005916"
 
 - На [портале Azure](https://portal.azure.com) администратор клиента Azure AD **пользователя** должен выполнить описанные ниже действия:
 
-  1. Открыть **подписки**.
+  1. Search for **Subscriptions** in the top Azure search field. Выберите **Подписки**.
   1. Выберите подписку с клиентом Azure Active Directory, который будет использоваться в приложении **разработчика**.
 
-     [![подписки Azure Active Directory](media/multitenant/ad-subscriptions.png)](media/multitenant/ad-subscriptions.png#lightbox)
+     [![Azure Active Directory subscriptions](media/multitenant/ad-subscriptions.png)](media/multitenant/ad-subscriptions.png#lightbox)
 
   1. Выбрать **Поставщики ресурсов**.
   1. Найти **Microsoft.IoTSpaces**.
   1. Выберите **Зарегистрировать**.
 
-     [поставщики ресурсов ![Azure Active Directory](media/multitenant/ad-resource-providers.png)](media/multitenant/ad-resource-providers.png#lightbox)
+     [![Azure Active Directory resource providers](media/multitenant/ad-resource-providers.png)](media/multitenant/ad-resource-providers.png#lightbox)
   
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения см. в статье [Создание определяемых пользователем функций в Azure Digital Twins](./how-to-user-defined-functions.md).
 

@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 08/31/2019
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: 038178b3b73e9b07ce96e079403cb641f8efe8b1
-ms.sourcegitcommit: d470d4e295bf29a4acf7836ece2f10dabe8e6db2
+ms.openlocfilehash: 936fd797786d05edd7cf0f729af33c95ad3b3c56
+ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2019
-ms.locfileid: "70210057"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74405649"
 ---
 # <a name="locking-down-an-app-service-environment"></a>Блокирование среды службы приложений
 
@@ -30,18 +30,21 @@ ms.locfileid: "70210057"
 
 Решение для защиты исходящих адресов заключается в использовании устройства брандмауэра, которое может контролировать исходящий трафик на основе доменных имен. Брандмауэр Azure может ограничить исходящий трафик HTTP и HTTPS на основе FQDN назначения.  
 
+> [!NOTE]
+> At this moment, we can't fully lockdown the outbound connection currently.
+
 ## <a name="system-architecture"></a>Архитектура системы
 
-Для развертывания ASE с исходящим трафиком, который проходит через устройство брандмауэра, необходимо изменить маршруты в подсети ASE. Маршруты работают на уровне IP-адреса. Если вы не следите за определением маршрутов, вы можете принудительно применить ответный трафик TCP к источнику из другого адреса. Если адрес ответа отличается от адреса, на который был отправлен адрес, проблема называется асимметричной маршрутизацией, и она прервет TCP.
+Deploying an ASE with outbound traffic going through a firewall device requires changing routes on the ASE subnet. Routes operate at an IP level. If you are not careful in defining your routes, you can force TCP reply traffic to source from another address. When your reply address is different from the address traffic was sent to, the problem is called asymmetric routing and it will break TCP.
 
-Должны быть определены маршруты, чтобы входящий трафик в ASE мог ответить обратно таким же образом, как и поступил трафик. Маршруты должны быть определены для входящих запросов управления и для входящих запросов приложений.
+There must be routes defined so that inbound traffic to the ASE can reply back the same way the traffic came in. Routes must be defined for inbound management requests and for inbound application requests.
 
-Входящий и исходящий трафик ASE должен соответствовать следующим соглашениям.
+The traffic to and from an ASE must abide by the following conventions
 
-* Трафик к Azure SQL, хранилищу и концентратору событий не поддерживается при использовании устройства брандмауэра. Этот трафик должен быть отправлен непосредственно в эти службы. Это можно сделать, настроив конечные точки службы для этих трех служб. 
-* Необходимо определить правила таблицы маршрутов, которые отправляют входящий трафик управления обратно из места поступления.
-* Необходимо определить правила таблицы маршрутов, которые отправляют входящий трафик приложения обратно из места поступления. 
-* Весь остальной трафик, исходящий из ASE, можно отправить на устройство брандмауэра с помощью правила таблицы маршрутов.
+* The traffic to Azure SQL, Storage, and Event Hub are not supported with use of a firewall device. This traffic must be sent directly to those services. The way to make that happen is to configure service endpoints for those three services. 
+* Route table rules must be defined that send inbound management traffic back from where it came.
+* Route table rules must be defined that send inbound application traffic back from where it came. 
+* All other traffic leaving the ASE can be sent to your firewall device with a route table rule.
 
 ![Сетевые подключения Среды службы приложений с Брандмауэром Azure][5]
 
@@ -49,7 +52,7 @@ ms.locfileid: "70210057"
 
 Шаги по блокировке исходящего трафика существующей Среды службы приложений с помощью Брандмауэра Azure:
 
-1. Включите конечные точки служб для SQL, службы хранилища и концентратора событий в подсети ASE. Чтобы включить конечные точки службы, перейдите на портал сети > подсети и выберите Microsoft. EventHub, Microsoft. SQL и Microsoft. Storage из раскрывающегося списка конечных точек службы. Включив конечные точки служб для SQL Azure, необходимо также настроить конечные точки для всех зависимостей SQL Azure, которые есть у ваших приложений. 
+1. Включите конечные точки служб для SQL, службы хранилища и концентратора событий в подсети ASE. To enable service endpoints, go into the networking portal > subnets and select Microsoft.EventHub, Microsoft.SQL and Microsoft.Storage from the Service endpoints dropdown. Включив конечные точки служб для SQL Azure, необходимо также настроить конечные точки для всех зависимостей SQL Azure, которые есть у ваших приложений. 
 
    ![Выбор конечных точек служб][2]
   
@@ -91,7 +94,7 @@ ms.locfileid: "70210057"
 
     AzureDiagnostics | where msg_s contains "Deny" | where TimeGenerated >= ago(1h)
  
-Интеграция брандмауэра Azure с журналами Azure Monitor полезна при первом получении приложения, работающего, если не известно о всех зависимостях приложения. Дополнительные сведения о Azure Monitor журналах см. [в статье анализ данных журнала в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/log-query-overview).
+Integrating your Azure Firewall with Azure Monitor logs is useful when first getting an application working when you are not aware of all of the application dependencies. You can learn more about Azure Monitor logs from [Analyze log data in Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/log-query-overview).
  
 ## <a name="dependencies"></a>Зависимости
 
@@ -109,22 +112,22 @@ ms.locfileid: "70210057"
 |----------|
 | Azure SQL |
 | Служба хранилища Azure |
-| Концентратор событий Azure |
+| Центры событий Azure; |
 
 #### <a name="ip-address-dependencies"></a>Зависимости IP-адреса
 
-| Конечная точка | Подробнее |
+| Конечная точка | Сведения |
 |----------| ----- |
 | \*:123 | Проверка часов NTP. Трафик проверяется в нескольких конечных точках на порте 123. |
-| \*:12000 | Этот порт используется для некоторых операций мониторинга системы. В случае блокировки некоторые проблемы будут труднее рассматривать, но ASE будет продолжать работать. |
-| 40.77.24.27:80 | Требуется для отслеживания проблем ASE и оповещения о них |
-| 40.77.24.27:443 | Требуется для отслеживания проблем ASE и оповещения о них |
-| 13.90.249.229:80 | Требуется для отслеживания проблем ASE и оповещения о них |
-| 13.90.249.229:443 | Требуется для отслеживания проблем ASE и оповещения о них |
-| 104.45.230.69:80 | Требуется для отслеживания проблем ASE и оповещения о них |
-| 104.45.230.69:443 | Требуется для отслеживания проблем ASE и оповещения о них |
-| 13.82.184.151:80 | Требуется для отслеживания проблем ASE и оповещения о них |
-| 13.82.184.151:443 | Требуется для отслеживания проблем ASE и оповещения о них |
+| \*:12000 | Этот порт используется для некоторых операций мониторинга системы. If blocked, then some issues will be harder to triage but your ASE will continue to operate |
+| 40.77.24.27:80 | Needed to monitor and alert on ASE problems |
+| 40.77.24.27:443 | Needed to monitor and alert on ASE problems |
+| 13.90.249.229:80 | Needed to monitor and alert on ASE problems |
+| 13.90.249.229:443 | Needed to monitor and alert on ASE problems |
+| 104.45.230.69:80 | Needed to monitor and alert on ASE problems |
+| 104.45.230.69:443 | Needed to monitor and alert on ASE problems |
+| 13.82.184.151:80 | Needed to monitor and alert on ASE problems |
+| 13.82.184.151:443 | Needed to monitor and alert on ASE problems |
 
 При подключении Брандмауэра Azure все перечисленные ниже параметры автоматически настраиваются с тегами полных доменных имен. 
 
@@ -217,7 +220,7 @@ ms.locfileid: "70210057"
 | \*.management.azure.com:443 |
 | \*.update.microsoft.com:443 |
 | \*.windowsupdate.microsoft.com:443 |
-| \*. identity.azure.net:443 |
+| \*.identity.azure.net:443 |
 
 #### <a name="linux-dependencies"></a>Зависимости Linux 
 
@@ -232,7 +235,7 @@ ms.locfileid: "70210057"
 |download.mono-project.com:80 |
 |packages.treasuredata.com:80|
 |security.ubuntu.com:80 |
-| \*. cdn.mscr.io:443 |
+| \*.cdn.mscr.io:443 |
 |mcr.microsoft.com:443 |
 |packages.fluentbit.io:80 |
 |packages.fluentbit.io:443 |
@@ -249,15 +252,15 @@ ms.locfileid: "70210057"
 |40.76.35.62:11371 |
 |104.215.95.108:11371 |
 
-## <a name="us-gov-dependencies"></a>Зависимости US Gov
+## <a name="us-gov-dependencies"></a>US Gov dependencies
 
-Для US Gov по-прежнему необходимо задать конечные точки службы для хранилища, SQL и концентратора событий.  Вы также можете использовать брандмауэр Azure с инструкциями, приведенными выше в этом документе. Если необходимо использовать собственное устройство брандмауэра исходящего трафика, конечные точки перечислены ниже.
+For US Gov you still need to set service endpoints for Storage, SQL and Event Hub.  You can also use Azure Firewall with the instructions earlier in this document. If you need to use your own egress firewall device, the endpoints are listed below.
 
 | Конечная точка |
 |----------|
-| \*. ctldl.windowsupdate.com:80 |
-| \*. management.usgovcloudapi.net:80 |
-| \*. update.microsoft.com:80 |
+| \*.ctldl.windowsupdate.com:80 |
+| \*.management.usgovcloudapi.net:80 |
+| \*.update.microsoft.com:80 |
 |admin.core.usgovcloudapi.net:80 |
 |azperfmerges.blob.core.windows.net:80 |
 |azperfmerges.blob.core.windows.net:80 |
@@ -300,9 +303,9 @@ ms.locfileid: "70210057"
 |management.usgovcloudapi.net:80 |
 |maupdateaccountff.blob.core.usgovcloudapi.net:80 |
 |mscrl.microsoft.com
-|OCSP. DigiCert. 0 |
+|ocsp.digicert.0 |
 |ocsp.msocsp.co|
-|OCSP. VeriSign. 0 |
+|ocsp.verisign.0 |
 |rteventse.trafficmanager.net:80 |
 |settings-n.data.microsoft.com:80 |
 |shavamafestcdnprod1.azureedge.net:80 |
@@ -314,7 +317,7 @@ ms.locfileid: "70210057"
 |www.msftconnecttest.com:80 |
 |www.thawte.com:80 |
 |\*ctldl.windowsupdate.com:443 |
-|\*. management.usgovcloudapi.net:443 |
+|\*.management.usgovcloudapi.net:443 |
 |\*.update.microsoft.com:443 |
 |admin.core.usgovcloudapi.net:443 |
 |azperfmerges.blob.core.windows.net:443 |

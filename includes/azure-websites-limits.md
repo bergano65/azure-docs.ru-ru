@@ -4,19 +4,19 @@ ms.service: cost-management-billing
 ms.topic: include
 ms.date: 08/09/2019
 ms.author: jroth
-ms.openlocfilehash: 707f18ade87e755243a9122ecb7f898a753b2a8e
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: a05229f22e1682d73b627e3b4644ba64e653335f
+ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74224540"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74414531"
 ---
 | Ресурс | Бесплатные | Общая | "Базовый" | Стандарт | Премиум (версия 2) | Изолированный </th> |
 | --- | --- | --- | --- | --- | --- | --- |
 | [Web, mobile, or API apps](https://azure.microsoft.com/services/app-service/) per [Azure App Service plan](../articles/app-service/overview-hosting-plans.md)<sup>1</sup> |10 |100 |Без ограничений<sup>2</sup> |Без ограничений<sup>2</sup> |Без ограничений<sup>2</sup> |Без ограничений<sup>2</sup>|
 | [План обслуживания приложения](../articles/app-service/overview-hosting-plans.md) |10 для каждого региона |10 шт. на одну группу ресурсов |100 шт. на одну группу ресурсов |100 шт. на одну группу ресурсов |100 шт. на одну группу ресурсов |100 шт. на одну группу ресурсов|
 | Тип вычислительной операции |Общая |Общая |Выделенный<sup>3</sup> |Выделенный<sup>3</sup> |Выделенный<sup>3</sup></p> |Выделенный<sup>3</sup>|
-| [Scale out](../articles/app-service/manage-scale-up.md) (maximum instances) |1 общедоступный |1 общедоступный |3 выделенных<sup>3</sup> |10 выделенных<sup>3</sup> |20 выделенных<sup>3</sup>|100 выделенных<sup>4</sup>|
+| [Scale out](../articles/app-service/manage-scale-up.md) (maximum instances) |1 общедоступный |1 общедоступный |3 выделенных<sup>3</sup> |10 выделенных<sup>3</sup> |30 dedicated<sup>3</sup>|100 выделенных<sup>4</sup>|
 | Хранилище<sup>5</sup> |1 ГБ<sup>5</sup> |1 ГБ<sup>5</sup> |10 ГБ<sup>5</sup> |50 ГБ<sup>5</sup> |250 ГБ<sup>5</sup></p> |1 ТБ<sup>5</sup>|
 | CPU time (5 minutes)<sup>6</sup> |3 минуты |3 минуты |Без ограничений, оплата по стандартным [тарифам](https://azure.microsoft.com/pricing/details/app-service/)</a> |Без ограничений, оплата по стандартным [тарифам](https://azure.microsoft.com/pricing/details/app-service/)</a> |Без ограничений, оплата по стандартным [тарифам](https://azure.microsoft.com/pricing/details/app-service/)</a> |Без ограничений, оплата по стандартным [тарифам](https://azure.microsoft.com/pricing/details/app-service/)</a>|
 | Время ЦП (в день)<sup>6</sup> |60 минут |240 минут |Без ограничений, оплата по стандартным [тарифам](https://azure.microsoft.com/pricing/details/app-service/)</a> |Без ограничений, оплата по стандартным [тарифам](https://azure.microsoft.com/pricing/details/app-service/)</a> |Без ограничений, оплата по стандартным [тарифам](https://azure.microsoft.com/pricing/details/app-service/)</a> |Без ограничений, оплата по стандартным [тарифам](https://azure.microsoft.com/pricing/details/app-service/)</a> |

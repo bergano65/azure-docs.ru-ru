@@ -1,88 +1,84 @@
 ---
-title: Компонуемости маркеров Azure Блокчейн
-description: Маркеры Azure Блокчейн компонуемости обеспечивают гибкость создания маркеров для расширенных сценариев.
-services: azure-blockchain
-author: PatAltimore
-ms.author: patricka
+title: Azure Blockchain Tokens composability
+description: Azure Blockchain Tokens composability provides flexibility to create tokens for advanced scenarios.
 ms.date: 11/04/2019
 ms.topic: conceptual
-ms.service: azure-blockchain
 ms.reviewer: brendal
-ms.openlocfilehash: a82d7ba606eac5dcafc26b1a8527810a5a21840d
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: a3fe1b290917de20b7c3af31fe386ed93580d850
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73577117"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74325117"
 ---
-# <a name="azure-blockchain-tokens-composability"></a>Компонуемости маркеров Azure Блокчейн
+# <a name="azure-blockchain-tokens-composability"></a>Azure Blockchain Tokens composability
 
 [!INCLUDE [Preview note](./includes/preview.md)]
 
-Token компонуемости обеспечивает гибкость создания маркеров для расширенных сценариев. У вас может быть сложный сценарий, который не может быть реализован с помощью [четырех предварительно созданных шаблонов маркеров](templates.md#base-token-types). Token компонуемости позволяет проектировать собственные шаблоны маркеров путем добавления или удаления определенных поведений для создания собственного шаблона токена. При создании нового шаблона токена Azure Блокчейн tokens проверяет все правила грамматики маркеров. Составные шаблоны сохраняются в службе маркеров Azure Блокчейн для выдачи в подключенных сетях блокчейн.
+Token composability provides flexibility to create tokens for advanced scenarios. You may have a complex scenario that cannot be implemented using the [four pre-built token templates](templates.md#base-token-types). Token composability allows you to design your own token templates by adding or removing defined behaviors to build your own token template. When creating a new token template, Azure Blockchain Tokens verifies all token grammar rules. Composed templates are saved in Azure Blockchain Tokens service for issuing on connected blockchain networks.
 
-Вы можете использовать [поведение маркеров](templates.md#token-behaviors) в следующих разделах для проектирования шаблона токена.
+You can use the [token behaviors](templates.md#token-behaviors) in the following sections to design your token template.
 
-## <a name="burnable-b"></a>Записываемый (b)
+## <a name="burnable-b"></a>Burnable (b)
 
-Возможность удаления токенов из источника.
+Ability to remove the tokens from supply.
 
-Например, при активации Интернет-точек кредитных карт для подарочной карты записываются точки кредитных карт.
+For example, when you redeem online credit card points for a gift card, the credit card points are burned.
 
-## <a name="delegable-g"></a>Делегируемых (g)
+## <a name="delegable-g"></a>Delegable (g)
 
-Возможность делегировать действия, выполненные с маркером, который вы владеете.
+Ability to delegate the actions taken on the token that you own.
 
-Делегат может выполнять действия в качестве владельца маркера. Например, можно использовать токен делегируемых, чтобы реализовать голосование. Маркер делегируемых позволяет владельцу токена голосования проголосовать за кого-нибудь другого.
+The delegate can perform actions as the owner of the token. For example, you could use a delegable token to implement a vote. A delegable token allows the vote token owner to have someone else vote on their behalf.
 
-## <a name="logable-l"></a>Логабле (l)
+## <a name="logable-l"></a>Logable (l)
 
-Возможность записи в журнал.
+Ability to log.
 
-Например, можно выдать маркер логабле для распределения фильма по каждому кинотеатру, отображающему конкретный фильм. Чтобы фильм воспроизводился, на экране должна регистрироваться транзакция для каждого показа, так как выводятся сведения о выплатах за использование во время выполнения выпуска фильма. Сборка Actors может использовать маркеры фильмов для проверки выдачи на каждый из кинотеатров в дистрибутиве.
+For example, you can issue a logable token for a movie distribution to each theater showing a specific movie. For the movie to be played, the showing must log a transaction for each showing because royalty payouts are per showing during the movie's release run. The actors build can use the movie tokens to validate payouts per movie showing per theater in the distribution.
 
-## <a name="mint-able-m"></a>Mint-возможность (m)
+## <a name="mint-able-m"></a>Mint-able (m)
 
-Возможность Mint дополнительные токены для класса Token. Роль Минтер включает в себя поведение минтабле.
+Ability to mint additional tokens for the token class. The minter role includes the mintable behavior.
 
-Например, розничная компания, которая хочет реализовать программу лояльности, может использовать маркеры минтабле для своей программы лояльности. Они могут Mint дополнительные баллы по программе лояльности клиентов по мере роста своей базы клиентов.  
+For example, a retail company, which wants to implement a loyalty program can use mintable tokens for their loyalty program. They can mint additional loyalty points for their customers as their customer base grows.  
 
-## <a name="non-subdividable-or-whole-d"></a>Не является разделителем или целым (~ d)
+## <a name="non-subdividable-or-whole-d"></a>Non-subdividable or whole (~d)
 
-Ограничение, предотвращающее разделение маркера на более мелкие части.
+Restriction to prevent a token from being divided into smaller parts.
 
-Например, одно художественное Рисование нельзя разделить на несколько меньших частей. 
+For example, a single art painting cannot be subdivided into multiple smaller parts. 
 
-## <a name="non-transferable-t"></a>Не передается (~ t)
+## <a name="non-transferable-t"></a>Non-transferable (~t)
 
-Ограничение для предотвращения смены владельца первоначального маркера.
+Restriction to prevent a change of ownership from the initial token owner.
 
-Например, диплом университета — это непереносимый токен. После того, как диплом передается выпускнику, он не может быть передан другому человеку.
+For example, a university diploma is a non-transferable token. Once a diploma is given to a graduate, it cannot be transferred from the graduate to another person.
 
-## <a name="roles-r"></a>Роли (r)
+## <a name="roles-r"></a>Roles (r)
 
-Возможность определять роли в классе шаблона токена для конкретных поведений.
+Ability to define roles within the token template class for specific behaviors.
 
-Вы можете предоставить список имен ролей, поддерживаемых маркером, во время создания маркера. Если указаны роли, пользователь может назначить роли для этих вариантов поведения. В настоящее время поддерживается только роль Минтер.
+You can provide a list of role names that a token supports at the token creation time. When roles are specified, the user can assign roles to these behaviors. Currently, only the minter role is supported.
 
-## <a name="singleton-s"></a>Одноэлементные элементы
+## <a name="singleton-s"></a>Singleton (s)
 
-Ограничение, разрешающее предоставление одного маркера.
+Restriction to allow a supply of one token.
 
-Например, музей-артефакт является одноэлементным токеном. Артефакты музей являются уникальными. Маркер, представляющий артефакт, содержит только один элемент в блоке.
+For example, a museum artifact is a singleton token. Museum artifacts are unique. A token representing an artifact only has a single item in the supply.
 
-## <a name="subdividable-d"></a>С разделителями (d)
+## <a name="subdividable-d"></a>Subdividable (d)
 
-Возможность разделения маркера на более мелкие части.
+Ability to divide a token into smaller parts.
 
-Например, доллар можно разделить на центы.
+For example, a dollar can be subdivided into cents.
 
-## <a name="transferable-t"></a>Передаваемые (t)
+## <a name="transferable-t"></a>Transferable (t)
 
-Возможность передавать владение маркером.
+Ability to transfer ownership of the token.
 
-Например, заголовок свойства — это передаваемый токен, который может быть передан от одного человека другому при продаже свойства.
+For example, a property title is a transferable token, which can be transferred from one person to another when the property is sold.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Сведения об [управлении учетными записями маркеров Azure блокчейн](account-management.md).
+Learn about [Azure Blockchain Tokens account management](account-management.md).

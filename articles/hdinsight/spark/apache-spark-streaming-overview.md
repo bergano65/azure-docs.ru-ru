@@ -1,19 +1,19 @@
 ---
 title: Потоковая передача Spark в Azure HDInsight
-description: Использование Apache Spark потоковых приложений в кластерах HDInsight Spark.
-ms.service: hdinsight
+description: How to use Apache Spark Streaming applications on HDInsight Spark clusters.
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
-ms.custom: hdinsightactive
+ms.service: hdinsight
 ms.topic: conceptual
-ms.date: 03/11/2019
-ms.openlocfilehash: f990e5eb2761f1743c2731f499ecc341990edf53
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.custom: hdinsightactive
+ms.date: 11/20/2019
+ms.openlocfilehash: 521d72642a27995d096402a4ca0e4af632b0788c
+ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70813992"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74406265"
 ---
 # <a name="overview-of-apache-spark-streaming"></a>Общие сведения о потоковой передаче Apache Spark
 
@@ -27,9 +27,9 @@ ms.locfileid: "70813992"
 
 Потоковая передача Spark представляет непрерывный поток входящих данных с использованием *дискретизированного потока* под названием DStream. Поток DStream можно создать из источников входных данных, таких как Центры событий или Kafka, либо путем применения преобразований в другом потоке DStream.
 
-Поток DStream обеспечивает уровень абстракции поверх необработанных данных событий. 
+Поток DStream обеспечивает уровень абстракции поверх необработанных данных событий.
 
-Начните с одиночного события, например с чтения температуры с подключенного термостата. При получении этого события в приложении потоковой передачи Spark оно сохраняется надежным способом, то есть реплицируется на нескольких узлах. Такая отказоустойчивость гарантирует, что сбой какого-либо узла не приведет к потере события. В ядре Spark используется структура данных, в которой данные распределяются по нескольким узлам кластера, где каждый узел обычно хранит свои данные в памяти для повышения производительности. Эта структура данных называется *устойчивым распределенным набором данных* (RDD).
+Начните с одиночного события, например с чтения температуры с подключенного термостата. When this event arrives at your Spark Streaming application, the event is stored in a reliable way, where it's replicated on multiple nodes. This fault-tolerance ensures that the failure of any single node won't result in the loss of your event. В ядре Spark используется структура данных, в которой данные распределяются по нескольким узлам кластера, где каждый узел обычно хранит свои данные в памяти для повышения производительности. Эта структура данных называется *устойчивым распределенным набором данных* (RDD).
 
 Каждый набор RDD содержит события, собранные за определяемый пользователем период времени, называемый *интервалом пакетной обработки*. По окончании каждого интервала пакетов создается новый набор RDD, содержащий все данные из этого интервала. Непрерывный набор RDD собирается в поток DStream. Например, если интервал пакетов составляет одну секунду, ваш поток DStream каждую секунду выдает пакет, содержащий один набор RDD со всеми данными, полученными на протяжении этой секунды. При обработке потока DStream событие температуры появляется в одном из этих пакетов. Приложение потоковой передачи Spark обрабатывает пакеты, содержащие события, и в конечном счете работает с данными, хранящимися в каждом наборе RDD.
 
@@ -139,13 +139,13 @@ stream.foreachRDD { rdd =>
     val _sqlContext = org.apache.spark.sql.SQLContext.getOrCreate(rdd.sparkContext)
     _sqlContext.createDataFrame(rdd).toDF("value", "time")
         .registerTempTable("demo_numbers")
-} 
+}
 
 // Start the stream processing
 ssc.start()
 ```
 
-Подождите около 30 секунд после запуска приложения выше.  Затем можно периодически выполнять запрос к кадру данных, чтобы увидеть текущий набор значений, представленных в пакете, например с помощью запроса SQL:
+Wait for about 30 seconds after starting the application above.  Then, you can query the DataFrame periodically to see the current set of values present in the batch, for example using this SQL query:
 
 ```sql
 %%sql
@@ -214,7 +214,7 @@ stream.window(org.apache.spark.streaming.Minutes(1)).foreachRDD { rdd =>
     val _sqlContext = org.apache.spark.sql.SQLContext.getOrCreate(rdd.sparkContext)
     _sqlContext.createDataFrame(rdd).toDF("value", "time")
     .registerTempTable("demo_numbers")
-} 
+}
 
 // Start the stream processing
 ssc.start()
@@ -251,7 +251,7 @@ ssc.start()
 
 Состояние всех приложений можно также проверить с помощью запроса GET к конечной точке LIVY. Наконец, можно закрыть работающее приложение, выполнив запрос DELETE к конечной точке LIVY. Дополнительные сведения об API LIVY см. в статье [Удаленная отправка заданий Spark в кластер Azure HDInsight с помощью Apache Spark REST API](apache-spark-livy-rest-interface.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Создание кластеров под управлением Linux в HDInsight с помощью портала Azure](../hdinsight-hadoop-create-linux-clusters-portal.md)
 * [Руководство по программированию потоковой передачи Apache Spark](https://people.apache.org/~pwendell/spark-releases/latest/streaming-programming-guide.html)

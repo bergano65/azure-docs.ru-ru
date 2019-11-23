@@ -1,35 +1,35 @@
 ---
-title: Настройка сервера MFA Azure для обеспечения высокой доступности — Azure Active Directory
+title: High availability for Azure MFA Server - Azure Active Directory
 description: Разверните несколько экземпляров сервера Многофакторной идентификации Azure в конфигурациях, обеспечивающих высокую доступность.
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 07/11/2018
+ms.date: 11/21/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 43154e428c3208f5d990688554407777d09f2f1b
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 18f56665041fed301faf3b4b5f99c78c1d468f8e
+ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67056027"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74404309"
 ---
 # <a name="configure-azure-multi-factor-authentication-server-for-high-availability"></a>Настройка сервера Многофакторной идентификации Azure для обеспечения высокой доступности
 
 Чтобы обеспечить высокую доступность с развертыванием сервера MFA Azure, необходимо развернуть несколько серверов MFA. В этой статье приведены сведения о структуре с балансировкой нагрузки, позволяющей достичь целевых показателей высокой доступности в развертывании сервера MFA Azure.
 
 > [!IMPORTANT]
-> Начиная с 1 июля 2019 г. Корпорация Майкрософт больше не предоставляет многофакторной проверки Подлинности сервера для новых развертываний. Новых клиентов, которые хотите требовать многофакторную проверку подлинности от пользователей, их следует использовать многофакторную идентификацию Azure на основе облака. Существующие клиенты, которые активировали сервера MFA до 1 июля будет иметь возможность загрузить последнюю версию, будущие обновления и создать учетные данные активации обычным образом.
+> As of July 1, 2019, Microsoft will no longer offer MFA Server for new deployments. New customers who would like to require multi-factor authentication from their users should use cloud-based Azure Multi-Factor Authentication. Existing customers who have activated MFA Server prior to July 1 will be able to download the latest version, future updates and generate activation credentials as usual.
 
 ## <a name="mfa-server-overview"></a>Обзор сервера MFA
 
 Архитектура сервера MFA Azure состоит из нескольких компонентов, как показано на схеме ниже.
 
- ![Компоненты архитектуры сервера MFA](./media/howto-mfaserver-deploy-ha/mfa-ha-architecture.png)
+ ![MFA Server Architecture components](./media/howto-mfaserver-deploy-ha/mfa-ha-architecture.png)
 
 Сервер MFA — это сервер Windows Server, на котором установлено программное обеспечение службы "Многофакторная идентификация Azure". Экземпляр сервера MFA необходимо активировать с помощью службы MFA Azure. В локальной среде можно установить несколько серверов MFA.
 
@@ -39,9 +39,9 @@ ms.locfileid: "67056027"
 
 После успешной проверки подлинности в AD сервер MFA будет взаимодействовать со службой MFA. Сервер MFA ожидает уведомление от службы MFA, чтобы разрешить или запретить доступ пользователя к приложению.
 
-Если главный сервер MFA отключится от сети, проверку подлинности по-прежнему можно будет обработать, но операции, при выполнении которых необходимо вносить изменения в базу данных MFA, не удастся обработать. (К ним относятся: Добавление пользователей самообслуживания ПИН-код изменений, изменение сведений о пользователе и доступ на пользовательский портал)
+Если главный сервер MFA отключится от сети, проверку подлинности по-прежнему можно будет обработать, но операции, при выполнении которых необходимо вносить изменения в базу данных MFA, не удастся обработать. (Examples include: the addition of users, self-service PIN changes, changing user information, or access to the user portal)
 
-## <a name="deployment"></a>Развертывание
+## <a name="deployment"></a>Развертывание.
 
 Обратите внимание на следующие важные замечания по балансировке нагрузки сервера MFA Azure и связанных с ним компонентов.
 

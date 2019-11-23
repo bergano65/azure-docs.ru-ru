@@ -8,24 +8,24 @@ ms.topic: include
 ms.date: 11/04/2019
 ms.author: cynthn
 ms.custom: include file
-ms.openlocfilehash: 7ea4762684a41e06687adcca91b13872a0c9f740
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: 06b54c3038e8b4f5879a93b696920534c2199008
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73897551"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74414639"
 ---
-В этой статье представлены общие сведения о возможностях доступности виртуальных машин Azure (ВМ).
+This article provides you with an overview of the availability features of Azure virtual machines (VMs).
 
-## <a name="high-availability"></a>высокой доступности
+## <a name="high-availability"></a>Высокий уровень доступности
 
-Рабочие нагрузки обычно распределяются между разными виртуальными машинами для повышения пропускной способности, производительности и создания избыточности на случай, если на виртуальную машину влияет обновление или другое событие. 
+Workloads are typically spread across different virtual machines to gain high throughput, performance, and to create redundancy in case a VM is impacted due to an update or other event. 
 
-В Azure предусмотрено несколько вариантов обеспечения высокого уровня доступности. Сначала давайте поговорим о базовых конструкциях. 
+There are few options that Azure provides to achieve High Availability. First let’s talk about basic constructs. 
 
 ### <a name="availability-zones"></a>Зоны доступности
 
-[Зоны доступности](../articles/availability-zones/az-overview.md) расширяют уровень контроля, который должен поддерживать доступность приложений и данных на виртуальных машинах. Зона доступности — это физически отдельная зона в регионе Azure. В каждом поддерживаемом регионе Azure есть три зоны доступности. 
+[Availability zones](../articles/availability-zones/az-overview.md) expand the level of control you have to maintain the availability of the applications and data on your VMs. An Availability Zone is a physically separate zone, within an Azure region. В каждом поддерживаемом регионе Azure есть три зоны доступности. 
 
 У каждой зоны доступности есть отдельный источник питания, сеть и система охлаждения. Вы можете защитить приложения и данные от потери в центре обработки данных, настроив свои решения для использования реплицированных виртуальных машин в зонах доступности. В случае неполадок с одной зоной реплицированные приложения и данные сразу же станут доступными в другой зоне. 
 
@@ -42,33 +42,33 @@ ms.locfileid: "73897551"
 
 Домен обновления — это логическая группа базового оборудования, которое может одновременно обслуживаться или перезагружаться. 
 
-Такой подход гарантирует, что по крайней мере один экземпляр приложения будет работать во время периодического обслуживания платформы Azure. Порядок перезагрузки доменов обновления может не выполняться последовательно во время обслуживания, но только один домен обновления перезагружается одновременно.
+Такой подход гарантирует, что по крайней мере один экземпляр приложения будет работать во время периодического обслуживания платформы Azure. The order of update domains being rebooted may not proceed sequentially during maintenance, but only one update domain is rebooted at a time.
 
 
 ## <a name="virtual-machines-scale-sets"></a>Наборы масштабирования виртуальных машин. 
 
-Масштабируемые наборы виртуальных машин Azure позволяют создавать группы виртуальных машин с балансировкой нагрузки и управлять ими. Число экземпляров виртуальных машин может автоматически увеличиваться или уменьшаться в зависимости от спроса или по определенному расписанию. Масштабируемые наборы обеспечивают высокий уровень доступности для приложений и позволяют централизованно управлять, настраивать и обновлять несколько виртуальных машин. Мы рекомендуем создать в масштабируемом наборе две или несколько виртуальных машин, чтобы обеспечить высокодоступное приложение и обеспечить соответствие требованиям [соглашения об уровне обслуживания Azure 99,95%](https://azure.microsoft.com/support/legal/sla/virtual-machines/). Затраты на сам масштабируемый набор не изменяются, вы платите только за создаваемый экземпляр виртуальной машины. Если отдельная виртуальная машина использует [SSD Azure (цен. категория "Премиум")](https://docs.microsoft.com/azure/virtual-machines/windows/disks-types#premium-ssd), соглашение об уровне обслуживания Azure применяется для внеплановых мероприятий обслуживания. Виртуальные машины в масштабируемом наборе можно развертывать в нескольких регионах и доменах сбоя, чтобы обеспечить максимальную доступность и устойчивость к сбоям из-за сбоев центра обработки данных, а также запланированных или незапланированных событий обслуживания. Виртуальные машины в масштабируемом наборе можно также развернуть в одной зоне доступности или в регионе. Параметры развертывания зоны доступности могут отличаться в зависимости от режима оркестрации.
+Azure virtual machine scale sets let you create and manage a group of load balanced VMs. Число экземпляров виртуальных машин может автоматически увеличиваться или уменьшаться в зависимости от спроса или по определенному расписанию. Scale sets provide high availability to your applications, and allow you to centrally manage, configure, and update many VMs. We recommended that two or more VMs are created within a scale set to provide for a highly available application and to meet the [99.95% Azure SLA](https://azure.microsoft.com/support/legal/sla/virtual-machines/). There is no cost for the scale set itself, you only pay for each VM instance that you create. Если отдельная виртуальная машина использует [SSD Azure (цен. категория "Премиум")](https://docs.microsoft.com/azure/virtual-machines/windows/disks-types#premium-ssd), соглашение об уровне обслуживания Azure применяется для внеплановых мероприятий обслуживания. Virtual machines in a scale set can be deployed across multiple update domains and fault domains to maximize availability and resilience to outages due to data center outages, and planned or unplanned maintenance events. Virtual machines in a scale set can also be deployed into a single Availability zone, or regionally. Availability zone deployment options may differ based on the orchestration mode.
 
-### <a name="preview-orchestration-mode-preview"></a>Предварительный просмотр: режим оркестрации (Предварительная версия)
-Масштабируемые наборы виртуальных машин позволяют указать режим оркестрации.  С помощью режима оркестрации масштабируемого набора виртуальных машин теперь можно выбрать, должен ли масштабируемый набор управлять виртуальными машинами, созданными явно вне модели конфигурации масштабируемого набора, или экземплярами виртуальных машин, созданными неявно. на основе модели конфигурации. Выберите режим оркестрации, который модель оркестрации позволяет группировать явно определенные виртуальные машины вместе в регионе или в зоне доступности. Виртуальные машины, развернутые в зоне доступности, обеспечивают изоляцию зональные для виртуальных машин, привязанные к границе зоны доступности и не подвержены сбоям, которые могут возникнуть в другой зоне доступности в регионе. 
+### <a name="preview-orchestration-mode-preview"></a>Preview: Orchestration mode Preview
+Virtual machines scale sets allow you to specify orchestration mode.  With the virtual machine scale set orchestration mode (preview), you can now choose whether the scale set should orchestrate virtual machines which are created explicitly outside of a scale set configuration model, or virtual machine instances created implicitly based on the configuration model. Choose the orchestration mode that VM orchestration model allows you group explicitly defined Virtual Machines together in a region or in an availability zone. Virtual machines deployed in an Availability Zone provides zonal isolation to VMs are they are bound to the availability zone boundary and are not subjected to any failures that may occur in other availability zone in the region. 
 
-|   | "Орчестратионмоде": "VM" (VirtualMachine)| "Орчестратионмоде": "Скалесетвм" (Виртуалмачинескалесетвм) |
+|   | “orchestrationMode”: “VM” (VirtualMachine)| “orchestrationMode”: “ScaleSetVM” (VirtualMachineScaleSetVM) |
 |----|----|----|
-| Модель конфигурации виртуальной машины| Нет. VirtualMachineProfile не определен в модели масштабируемого набора. | обязательный параметр. VirtualMachineProfile заполняется в модели масштабируемого набора. |
-| Добавление новой виртуальной машины в масштабируемый набор| Виртуальные машины явным образом добавляются в масштабируемый набор при создании виртуальной машины. | Виртуальные машины неявно создаются и добавляются в масштабируемый набор на основе модели конфигурации виртуальной машины, числа экземпляров и правил автомасштабирования. |
-| зоны доступности;| Поддержка региональных развертываний или виртуальных машин в одной зоне доступности| Поддерживает региональные развертывания или несколько Зоны доступности; Может определить стратегию балансировки зоны |
-| Домены сбоя| Может определять число доменов сбоя. 2 или 3 на основе региональной поддержки и 5 для зоны доступности. Назначенный домен сбоя виртуальной машины будет сохранен с жизненным циклом виртуальной машины, включая освобождение и перезапуск. | Может определить 1, 2 или 3 домена сбоя для развертываний без зональные и 5 для развертываний зон доступности. Назначенный домен сбоя виртуальной машины не сохраняется с жизненным циклом виртуальной машины, виртуальным машинам назначается домен сбоя во время выделения. |
-| Домены обновления| Недоступно Домены обновления автоматически сопоставляются с доменами сбоя| Недоступно Домены обновления автоматически сопоставляются с доменами сбоя |
+| VM configuration model| Нет подходящих вариантов. VirtualMachineProfile is undefined in the scale set model. | Обязательный параметр. VirtualMachineProfile is populated in the scale set model. |
+| Adding new VM to Scale Set| VMs are explicitly added to the scale set when the VM is created. | VMs are implicitly created and added to the scale set based on the VM configuration model, instance count, and AutoScaling rules. |
+| зоны доступности;| Supports regional deployment or VMs in one Availability Zone| Supports regional deployment or multiple Availability Zones; Can define the zone balancing strategy |
+| Домены сбоя| Can define fault domains count. 2 or 3 based on regional support and 5 for Availability zone. The assigned VM fault domain will persist with VM lifecycle, including deallocate and restart. | Can define 1, 2, or 3 fault domains for non-zonal deployments, and 5 for Availability zone deployments. The assigned VM fault domain does not persist with VM lifecycle, virtual machines are assigned a fault domain at time of allocation. |
+| Домены обновления| Недоступно Update domains are automatically mapped to fault domains| Недоступно Update domains are automatically mapped to fault domains |
 
-**Домены сбоя и домены обновления**
+**Fault domains and update domains**
 
-Масштабируемые наборы виртуальных машин упрощают проектирование для обеспечения высокого уровня доступности, выровняйте домены сбоя и домены обновления. Для масштабируемого набора потребуется определить только количество доменов сбоя. Количество доменов сбоя, доступных для масштабируемых наборов, может отличаться в зависимости от региона. См. [число доменов сбоя в одном регионе](https://docs.microsoft.com/azure/virtual-machines/windows/manage-availability#number-of-fault-domains-per-region).
+Virtual machine scale sets simplify designing for high availability by aligning fault domains and update domains. You will only have to define fault domains count for the scale set. The number of fault domains available to the scale sets may vary by region. See [Number of Fault Domains per region](https://docs.microsoft.com/azure/virtual-machines/windows/manage-availability#number-of-fault-domains-per-region).
 
 
 ## <a name="availability-sets"></a>Группы доступности
 Группа доступности — это логическое объединение виртуальных машин в центре обработки данных, которое позволяет Azure определить структуру вашего приложения, чтобы обеспечить избыточность и доступность. Для обеспечения высокой доступности приложения и достижения показателя [99,95 % уровня обслуживания (SLA) Azure](https://azure.microsoft.com/support/legal/sla/virtual-machines/) мы рекомендуем создать в группе доступности не менее двух виртуальных машин. Группа доступности представляется бесплатно, оплачивается только каждый созданный экземпляр виртуальной машины. Если отдельная виртуальная машина использует [SSD Azure (цен. категория "Премиум")](../articles/virtual-machines/windows/disks-types.md#premium-ssd), соглашение об уровне обслуживания Azure применяется для внеплановых мероприятий обслуживания.
 
-В группе доступности виртуальные машины автоматически распределяются по этим доменам сбоя. Данный подход ограничивает влияние потенциальных сбоев физического оборудования, сети или электропитания.
+In an availability set, VMs are automatically distributed across these fault domains. Данный подход ограничивает влияние потенциальных сбоев физического оборудования, сети или электропитания.
 
 При использовании управляемой группы доступности виртуальные машины, использующие [управляемые диски Azure](../articles/virtual-machines/windows/faq-for-disks.md), согласовываются с доменами сбоя управляемого диска. Это гарантирует, что все управляемые диски, подключенные к виртуальной машине, относятся к одному домену сбоя управляемого диска. 
 
@@ -77,10 +77,10 @@ ms.locfileid: "73897551"
 ![Управляемая группа доступности](./media/virtual-machines-common-manage-availability/md-fd-updated.png)
 
 
-Виртуальные машины в группе доступности также автоматически распределяются между доменами обновления. 
+VMs within an availability set are also automatically distributed across update domains. 
 
 ![Группы доступности](./media/virtual-machines-common-manage-availability/ud-fd-configuration.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь вы можете использовать функции доступности и избыточности для создания среды Azure. Рекомендации см. в статье [Контрольный список для обеспечения доступности](/azure/architecture/checklist/resiliency-per-service).
 

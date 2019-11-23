@@ -1,7 +1,7 @@
 ---
-title: Использование пакета DAC для базы данных SQL и заданий Stream Analytics с помощью приложения "база данных SQL Azure" | Документация Майкрософт
-description: Сведения об использовании заданий Stream Analytics в границе базы данных SQL
-keywords: Пограничная база данных SQL, Stream Analytics, SqlPackage
+title: Using SQL Database DAC packages and Stream Analytics jobs with Azure SQL Database Edge | Microsoft Docs
+description: Learn about using Stream Analytics jobs in SQL Database Edge
+keywords: sql database edge, stream analytics, sqlpackage
 services: sql-database-edge
 ms.service: sql-database-edge
 ms.topic: conceptual
@@ -9,20 +9,20 @@ author: SQLSourabh
 ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 11/04/2019
-ms.openlocfilehash: c3ed84e06f693925ed8b484070616e223929e401
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: 21a8bb6953fd879b17816361f536596571678697
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74108741"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74384161"
 ---
-# <a name="using-sql-database-dac-package-and-stream-analytics-job-with-sql-database-edge"></a>Использование пакета DAC базы данных SQL и задания Stream Analytics с помощью границы базы данных SQL
+# <a name="using-sql-database-dac-packages-and-stream-analytics-jobs-with-sql-database-edge"></a>Using SQL Database DAC packages and Stream Analytics jobs with SQL Database Edge
 
-Предварительная версия базы данных SQL Azure — это оптимизированное реляционное ядро СУБД, предназначенное для развертывания IoT и пограничных развертываний. Он основан на последних версиях Microsoft SQL Server ядро СУБД, которые обеспечивают ведущие в отрасли функции повышения производительности, безопасности и обработки запросов. Наряду с ведущими в отрасли возможностями управления реляционными базами данных SQL Server, служба "база данных SQL Azure" предоставляет встроенную потоковую возможность для аналитики в реальном времени и сложной обработки событий.
+Azure SQL Database Edge Preview is an optimized relational database engine geared for IoT and edge deployments. It's built on the latest versions of the Microsoft SQL Server Database Engine, which provides industry-leading performance, security, and query processing capabilities. Along with the industry-leading relational database management capabilities of SQL Server, Azure SQL Database Edge provides in-built streaming capability for real-time analytics and complex event-processing.
 
-Служба "база данных SQL Azure" также предоставляет собственную реализацию SQLPackage. exe, которая позволяет пользователям развертывать пакет [DAC базы данных SQL](https://docs.microsoft.com/sql/relational-databases/data-tier-applications/data-tier-applications) во время развертывания пограничных баз данных SQL.
+Azure SQL Database Edge also provides a native implementation of SqlPackage.exe that enables you to deploy a [SQL Database DAC](https://docs.microsoft.com/sql/relational-databases/data-tier-applications/data-tier-applications) package during the deployment of SQL Database Edge.
 
-Граница базы данных SQL Azure предоставляет два необязательных параметра с помощью параметра *двойника модуля, требуемого* для модуля IOT Edge.
+Azure SQL Database Edge exposes two optional parameters through the `module twin's desired properties` option of the IoT Edge module:
 
 ```json
 {
@@ -34,37 +34,37 @@ ms.locfileid: "74108741"
 }
 ```
 
-|Поле | ОПИСАНИЕ |
+|Поле | Описание |
 |------|-------------|
-| SqlPackage | Универсальный код ресурса (URI) хранилища BLOB-объектов Azure для файла *. zip, содержащего пакет DAC базы данных SQL.
-| асажобинфо | Универсальный код ресурса (URI) хранилища BLOB-объектов Azure для задания ASA ребра. Дополнительные сведения о публикации задания ASA ребра см. в статье [Публикация задания с ребром ASA для базы данных SQL](/azure/sql-database-edge/stream-analytics#using-streaming-jobs-with-sql-database-edge).
+| SqlPackage | Azure Blob storage URI for the *.zip file that contains the SQL Database DAC package.
+| ASAJobInfo | Azure Blob storage URI for the ASA Edge job. For more information, see [Publishing an ASA Edge job for SQL Database Edge](/azure/sql-database-edge/stream-analytics#using-streaming-jobs-with-sql-database-edge).
 
-## <a name="using-sql-database-dac-packages-with-sql-database-edge"></a>Использование пакетов DAC базы данных SQL с границей базы данных SQL
+## <a name="using-sql-database-dac-packages-with-sql-database-edge"></a>Using SQL Database DAC packages with SQL Database Edge
 
-Чтобы использовать пакет DAC базы данных SQL (*. dacpac) с границей базы данных SQL, выполните приведенные ниже действия.
+To use a SQL Database DAC package (*.dacpac) with SQL Database Edge, take these steps:
 
-1. Создание или извлечение пакета DAC для базы данных SQL. Для создания пакета DacPac для существующей базы данных SQL можно использовать основные понятия, упомянутые при [извлечении DAC из существующей базы данных](/sql/relational-databases/data-tier-applications/extract-a-dac-from-a-database/) .
+1. Create or extract a SQL Database DAC package. See [Extracting a DAC from a database](/sql/relational-databases/data-tier-applications/extract-a-dac-from-a-database/) for information on how to generate a DAC package for an existing SQL Server database.
 
-2. Заархивировать файл * *. dacpac* и отправить его в учетную запись хранилища BLOB-объектов Azure. Дополнительные сведения о загрузке файлов в хранилище BLOB-объектов Azure см. [в разделе Отправка, скачивание и вывод списка больших двоичных объектов с помощью портал Azure](../storage/blobs/storage-quickstart-blobs-portal.md).
+2. Zip the *.dacpac and upload it to an Azure Blob storage account. For more information on uploading files to Azure Blob storage, see [Upload, download, and list blobs with the Azure portal](../storage/blobs/storage-quickstart-blobs-portal.md).
 
-3. Создайте подпись SAS для ZIP-файла с помощью портал Azure. Дополнительные сведения см. в статье [Делегирование доступа с помощью подписанных URL-адресов (SAS)](../storage/common/storage-sas-overview.md).
+3. Generate a shared access signature for the zip file by using the Azure portal. For more information, see [Delegate access with shared access signatures (SAS)](../storage/common/storage-sas-overview.md).
 
-4. Обновите конфигурацию модуля ребра базы данных SQL, включив в нее URI SAS для пакета DAC. Обновление модуля ребра базы данных SQL
+4. Update the SQL Database Edge module configuration to include the shared access URI for the DAC package. To update the SQL Database Edge module, take these steps:
 
-    1. На портал Azure перейдите к развертыванию центра Интернета вещей.
+    1. In the Azure portal, go to your IoT Hub deployment.
 
-    2. В левой области щелкните **IOT Edge**.
+    2. В левой области щелкните **IoT Edge**.
 
-    3. На странице **IOT Edge** найдите и щелкните IOT EDGE, где развернут модуль ребра базы данных SQL.
+    3. On the **IoT Edge** page, find and select the IoT edge where the SQL Database Edge module is deployed.
 
-    4. На странице устройства *IOT Edge устройство* щелкните **задать модуль**. 
+    4. On the **IoT Edge Device** device page, select **Set Module**.
 
-    5. На странице **Установка модулей** щелкните *настроить* для модуля "база данных SQL". 
+    5. On the **Set modules** page, select **Configure** against the SQL Database Edge module.
 
-    6. На панели **IOT Edge пользовательские модули** выберите *необходимые свойства набора модулей* , а затем обновите требуемые свойства, чтобы включить универсальный код ресурса (URI) для параметра SqlPackage, как показано в примере ниже. 
+    6. In the **IoT Edge Custom Modules** pane, select **Set module twin's desired properties**. Update the desired properties to include the URI for the `SQLPackage` option, as shown in the following example.
 
         > [!NOTE]
-        > URI SAS ниже предназначен только для иллюстрации. Замените URI фактическим кодом URI из развертывания.
+        > The SAS URI in the following JSON is just an example. Replace the URI with the actual URI from your deployment.
 
         ```json
             {
@@ -75,40 +75,40 @@ ms.locfileid: "74108741"
             }
         ```
 
-    7. Выберите команду **Сохранить**.
+    7. Щелкните **Сохранить**.
 
-    8. На странице **Установка модулей** нажмите кнопку *Далее*.
+    8. On the **Set modules** page, select **Next**.
 
-    9. На странице **Установка модулей** нажмите кнопку *Далее* , а затем — **Отправить**.
+    9. On the **Set modules** page, select **Next** and then **Submit**.
 
-5. После отправки обновления модуля DACPAC-файл скачивается, распаковывается и развертывается для экземпляра SQL Server с пограничным экземпляром.
+5. After the module update, the DAC package file is downloaded, unzipped, and deployed against the SQL Database Edge instance.
 
-## <a name="using-streaming-jobs-with-sql-database-edge"></a>Использование заданий потоковой передачи с границей базы данных SQL
+## <a name="using-streaming-jobs-with-sql-database-edge"></a>Using streaming jobs with SQL Database Edge
 
-В базе данных SQL Azure имеется собственная реализация среды выполнения Stream Analytics. Это позволяет пользователям создавать задания Azure Stream Analytics ребра и развертывать это задание как задание пограничной потоковой передачи базы данных SQL. Чтобы создать задание пограничной Stream Analytics, выполните следующие действия.
+Azure SQL Database Edge has a native implementation of the stream analytics runtime. This implementation enables you to create an Azure Stream Analytics edge job and deploy that job as a SQL Database Edge streaming job. To create a Stream Analytics edge job, complete these steps:
 
-1. Перейдите к портал Azure с помощью [URL-адреса](https://portal.azure.com/?microsoft_azure_streamanalytics_edgeadapterspreview=true)для просмотра. Этот URL-адрес предварительной версии позволяет пользователям настраивать выходные данные базы данных SQL для задания ребра Stream Analytics.
+1. Go to the Azure portal by using the preview [URL](https://portal.azure.com/?microsoft_azure_streamanalytics_edgeadapterspreview=true). This preview URL enables you to configure SQL Database output for a Stream Analytics edge job.
 
-2. Создайте новое **Azure Stream Analytics на IOT Edge** задание и выберите среду размещения, нацеливание на **границу**.
+2. Create a new **Azure Stream Analytics on IoT Edge** job. Choose the hosting environment that targets **Edge**.
 
-3. Определите *входные* и *выходные данные* для задания Azure Stream Analytics. Каждый выходной файл SQL (настроенный ниже) привязан к одной таблице в базе данных. При необходимости потоковой передачи данных в несколько таблиц необходимо создать несколько выходов базы данных SQL. Выходные данные SQL можно настроить так, чтобы они указывали на разные базы данных.
+3. Define an input and output for the Azure Stream Analytics job. Each SQL output, which you'll set up here, is tied to a single table in the database. If you need to stream data to multiple tables, you'll need to create multiple SQL Database outputs. You can configure the SQL outputs to point to different databases.
 
-    *Входные данные — выберите EdgeHub в качестве входных данных для задания ребра и заполните сведения о ресурсе.*
+    **Input**. Choose EdgeHub as the input for the edge job, and provide the resource info.
 
-    *Выходные данные. Выберите базу данных SQL в качестве выходного параметра, введите параметры базы данных SQL вручную и укажите сведения о конфигурации для базы данных и таблицы.*
+    **Output**. Select SQL Database the as output. Select **Provide SQL Database settings manually**. Provide the configuration details for the database and table.
 
-    |Поле      | ОПИСАНИЕ |
+    |Поле      | Описание |
     |---------------|-------------|
-    |Псевдоним выходных данных | Имя выходного псевдонима.|
-    |База данных | Имя базы данных SQL. Это должно быть допустимое имя базы данных, которое существует на пограничном экземпляре базы данных SQL.|
-    |Имя сервера | Имя (или IP-адрес) и сведения об номере порта для экземпляра SQL. Для развертывания с пограничным развертыванием базы данных SQL в качестве имени сервера можно использовать **TCP:., 1433** .|
-    |Имя пользователя | Учетная запись входа SQL, которая имеет доступ к базе данных, указанной выше, с помощью модуля чтения данных и модуля записи данных.|
-    |Пароль | Пароль для учетной записи входа SQL, упомянутой выше.|
-    |таблица | Имя таблицы, которая будет выводиться для задания потоковой передачи.|
-    |Наследование секционирования| Этот параметр конфигурации SQL output позволяет наследовать схему секционирования предыдущего шага запроса или входных данных. Если этот параметр включен, запись в таблицу на диске и наличие полной параллельной топологии для вашего задания, предположительно, позволяют повысить пропускную способность.|
-    |Размер пакета| Размер пакета — это максимальное число записей, отправляемых при каждой транзакции с массовыми вставками.|
+    |Псевдоним выходных данных | Name of the output alias.|
+    |База данных | Name of the SQL database. It needs to be a valid name of a database that exists on the SQL Database Edge instance.|
+    |Имя сервера | Name (or IP address) and port number details for the SQL instance. For a SQL Database Edge deployment, you can use **tcp:.,1433** for the server name.|
+    |Имя пользователя | SQL sign-in account that has data reader and data writer access to the database that you specified earlier.|
+    |Пароль | Password for the SQL sign-in account that you specified earlier.|
+    |Таблицы | Name of the table that will be output for the streaming job.|
+    |Inherit Partitioning| Enables inheriting the partitioning scheme of your previous query step or input. When this option is enabled, you can expect to see better throughput when you write to a disk-based table and have a fully parallel topology for your job.|
+    |Размер пакета| The maximum number of records that's sent with every bulk insert transaction.|
 
-    Пример конфигурации ввода-вывода ниже:
+    Here's a sample input/output configuration:
 
     ```txt
         Input:
@@ -118,7 +118,7 @@ ms.locfileid: "74108741"
             Encoding: UTF-8
             Event compression type: None
 
-        Output :
+        Output:
             Output alias: output
             Database:  MeasurementsDB
             Server name: tcp:.,1433
@@ -130,32 +130,32 @@ ms.locfileid: "74108741"
     ```
 
     > [!NOTE]
-    > Дополнительные сведения о выходном адаптере SQL для Azure Stream Analytics см. в разделе [Azure Stream Analytics Output to SQL Azure Database](../stream-analytics/stream-analytics-sql-output-perf.md).
+    > For more information on the SQL output adapter for Azure Stream Analytics, see [Azure Stream Analytics output to Azure SQL Database](../stream-analytics/stream-analytics-sql-output-perf.md).
 
-4. Определите запрос задания ASA для задания ребра. Этот запрос должен использовать определенные псевдонимы ввода-вывода в качестве входных и выходных имен в запросе. Дополнительные сведения см. в разделе [Справочник по языку запросов Stream Analytics](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference).
+4. Define the ASA job query for the edge job. This query should use the defined input/output aliases as the input and output names in the query. For more information, see [Stream Analytics Query Language reference](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference).
 
-5. Задайте параметры учетной записи хранения для задания ребра. Учетная запись хранения используется в качестве целевого объекта публикации для задания ребра.
+5. Set the storage account settings for the edge job. The storage account is used as the publishing target for the edge job.
 
-6. В разделе Настройка выберите Опубликовать и нажмите кнопку Опубликовать. Сохраните URL-адрес SAS для использования с модулем SQL Database ребра.
+6. Under **Configure**, select **Publish**, and then select the **Publish** button. Save the SAS URI for use with the SQL Database Edge module.
 
-### <a name="deploy-the-stream-analytics-edge-job-to-the-sql-database-edge"></a>Развертывание задания пограничной Stream Analytics на границе базы данных SQL
+### <a name="deploy-the-stream-analytics-edge-job-to-sql-database-edge"></a>Deploy the Stream Analytics edge job to SQL Database Edge
 
-Чтобы развернуть задание потоковой передачи в модуле базы данных SQL, обновите конфигурацию модуля ребра базы данных SQL, включив в нее URI SAS для задания потоковой передачи из предыдущего шага. Обновление модуля ребра базы данных SQL
+To deploy the streaming job to the SQL Database Edge module, update the SQL Database Edge module configuration to include the SAS URI for the streaming job from the earlier step. To update the SQL Database Edge module:
 
-1. На портал Azure перейдите к развертыванию центра Интернета вещей.
+1. In the Azure portal, go to your IoT Hub deployment.
 
-2. В левой области щелкните **IOT Edge**.
+2. В левой области щелкните **IoT Edge**.
 
-3. На странице **IOT Edge** найдите и щелкните IOT EDGE, где развернут модуль ребра базы данных SQL.
+3. On the **IoT Edge** page, find and select the IoT edge where the SQL Database Edge module is deployed.
 
-4. На странице устройства *IOT Edge устройство* щелкните **задать модуль**. 
+4. On the **IoT Edge Device** device page, select **Set Module**.
 
-5. На странице **Установка модулей** щелкните *настроить* для модуля "база данных SQL". 
+5. On the **Set modules** page, select **Configure** against the SQL Database Edge module.
 
-6. На панели **IOT Edge пользовательские модули** выберите *необходимые свойства набора модулей* , а затем обновите требуемые свойства, чтобы включить универсальный код ресурса (URI) для параметра асажобинфо, как показано в примере ниже. 
+6. In the **IoT Edge Custom Modules** pane, select **Set module twin's desired properties**. Update the desired properties to include the URI for the `ASAJobInfo` option, as shown in the following example.
 
     > [!NOTE]
-    > URI SAS ниже предназначен только для иллюстрации. Замените URI фактическим кодом URI из развертывания.
+    > The SAS URI in the following JSON is just an example. Replace the URI with the actual URI from your deployment.
 
     ```json
         {
@@ -166,17 +166,16 @@ ms.locfileid: "74108741"
         }
     ```
 
-7. Выберите команду **Сохранить**.
+7. Щелкните **Сохранить**.
 
-8. На странице **Установка модулей** нажмите кнопку *Далее*.
+8. On the **Set modules** page, select **Next**.
 
-9. На странице **Установка модулей** нажмите кнопку *Далее* , а затем — **Отправить**.
+9. On the **Set modules** page, select **Next** and then **Submit**.
 
-10. После отправки обновления модуля файл задания Stream Analytics загружается, расzip и развертывается для экземпляра SQL Server с пограничным экземпляром.
+10. After the module update, the stream analytics job file is downloaded, unzipped, and deployed against the SQL Database Edge instance.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Сведения о ценах и доступности см. на странице с [пограничными базами данных SQL Azure](https://azure.microsoft.com/services/sql-database-edge/).
-- Запрос на включение границы базы данных SQL Azure для вашей подписки.
-- Чтобы приступить к работе, см. следующие сведения.
-  - [Развертывание пограничных баз данных SQL с помощью портал Azure](deploy-portal.md)
+- For pricing and availability details, see [Azure SQL Database Edge](https://azure.microsoft.com/services/sql-database-edge/).
+- Request enabling Azure SQL Database Edge for your subscription.
+- To get started, see [Deploy SQL Database Edge through Azure portal](deploy-portal.md).

@@ -1,36 +1,36 @@
 ---
-title: Проверка подлинности RADIUS и сервер Azure MFA — Azure Active Directory
+title: RADIUS and Azure MFA Server - Azure Active Directory
 description: Развертывание аутентификации RADIUS на сервере Многофакторной идентификации Azure.
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/31/2018
+ms.date: 11/21/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 17e040492b1d986215aeb77ea14ebff53946f78e
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: f7f773914fcdd205e9cb6b7e3505904eb9550f16
+ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67056018"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74404264"
 ---
 # <a name="integrate-radius-authentication-with-azure-multi-factor-authentication-server"></a>Интеграция аутентификации RADIUS с сервером Многофакторной идентификации Azure
 
 RADIUS — это стандартный протокол принятия и обработки запросов проверки подлинности. Сервер Многофакторной идентификации Azure может выполнять роль сервер RADIUS. Установите его между клиентом RADIUS (например, VPN-устройством) и целевым объектом проверки подлинности, чтобы добавить двухфакторную проверку подлинности. Целевым объектом проверки подлинности может быть каталог Active Directory, каталог LDAP или другой сервер RADIUS. Для нормального функционирования Многофакторной идентификации Azure (MFA) необходимо настроить сервер Azure MFA так, чтобы он мог взаимодействовать как с клиентскими серверами, таки и с целевым объектом аутентификации. Сервер Azure MFA принимает запросы от клиента RADIUS, проверяет учетные данные на целевом объекте проверки подлинности, добавляет Многофакторную идентификацию Azure и отправляет ответ клиенту RADIUS. Запрос на проверку подлинности будет успешно выполнен только в случае успешного прохождения и основной проверки подлинности, и Многофакторной идентификации Azure.
 
 > [!IMPORTANT]
-> Начиная с 1 июля 2019 г. Корпорация Майкрософт больше не предоставляет многофакторной проверки Подлинности сервера для новых развертываний. Новых клиентов, которые хотите требовать многофакторную проверку подлинности от пользователей, их следует использовать многофакторную идентификацию Azure на основе облака. Существующие клиенты, которые активировали сервера MFA до 1 июля будет иметь возможность загрузить последнюю версию, будущие обновления и создать учетные данные активации обычным образом.
+> As of July 1, 2019, Microsoft will no longer offer MFA Server for new deployments. New customers who would like to require multi-factor authentication from their users should use cloud-based Azure Multi-Factor Authentication. Existing customers who have activated MFA Server prior to July 1 will be able to download the latest version, future updates and generate activation credentials as usual.
 
 > [!NOTE]
 > Выполняя роль RADIUS, сервер MFA поддерживает только такие протоколы RADIUS: PAP (протокол проверки пароля) и MSCHAPv2 (протокол проверки пароля Майкрософт).  Другие протоколы, такие как EAP (расширяемый протокол аутентификации), можно использовать, если сервер MFA выполняет роль прокси-сервера RADIUS для другого сервера RADIUS, который поддерживает этот протокол.
 >
 > При такой конфигурации односторонние SMS и OATH-токены не будут работать, так как сервер MFA не сможет инициировать успешный ответ на запрос RADIUS с использованием альтернативных протоколов.
 
-![Проверка подлинности RADIUS на сервере MFA](./media/howto-mfaserver-dir-radius/radius.png)
+![Radius Authentication in MFA Server](./media/howto-mfaserver-dir-radius/radius.png)
 
 ## <a name="add-a-radius-client"></a>Добавление клиента RADIUS
 
