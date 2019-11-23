@@ -8,6 +8,7 @@ manager: daveba
 ms.reviewer: barbkess
 ms.assetid: bfed291c-a33e-410d-b919-5b965a631d45
 ms.service: active-directory
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +16,12 @@ ms.topic: tutorial
 ms.date: 01/02/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d96d1addf1028c2651ed837f3dab66f12d5d5fcc
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ab998b6d9aec663123f0bd2428e4c6f1767f1846
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67105851"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73158734"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-canvas"></a>Руководство по Интеграция Azure Active Directory с Canvas
 
@@ -136,7 +137,7 @@ ms.locfileid: "67105851"
 
 2. Выберите **Курсы \> Управляемые учетные записи \> Microsoft**.
 
-    ![Canvas](./media/canvas-lms-tutorial/ic775990.png "Canvas")
+    ![Холст](./media/canvas-lms-tutorial/ic775990.png "Холст")
 
 3. На панели навигации слева выберите раздел **Проверка подлинности** и нажмите кнопку **Add New SAML Config** (Добавить новую конфигурацию SAML).
 
@@ -223,7 +224,7 @@ ms.locfileid: "67105851"
 
 2. Выберите **Курсы \> Управляемые учетные записи \> Microsoft**.
 
-   ![Canvas](./media/canvas-lms-tutorial/ic775990.png "Canvas")
+   ![Холст](./media/canvas-lms-tutorial/ic775990.png "Холст")
 
 3. Выберите раздел **Пользователи**.
 
@@ -235,7 +236,7 @@ ms.locfileid: "67105851"
 
 5. На странице диалогового окна "Добавление пользователя" выполните следующие действия.
 
-   ![Добавление пользователя](./media/canvas-lms-tutorial/ic775997.png "Добавление пользователя")
+   ![Добавление пользователя](./media/canvas-lms-tutorial/ic775997.png "Добавить пользователя")
 
    a. В текстовое поле **Full Name** (Полное имя) введите имя, например **BrittaSimon**.
 
@@ -262,5 +263,5 @@ ms.locfileid: "67105851"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

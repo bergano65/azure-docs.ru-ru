@@ -8,6 +8,7 @@ manager: daveba
 ms.reviewer: barbkess
 ms.assetid: 25fd1df0-411c-4f55-8be3-4273b543100f
 ms.service: active-directory
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +16,12 @@ ms.topic: tutorial
 ms.date: 12/26/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a3d0a8151610658d8302d90f9a3cb3159a877925
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 43245a88ee48b016e1947047d12349423cca6047
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67106861"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73152892"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-appdynamics"></a>Руководство по Интеграция Azure Active Directory с AppDynamics
 
@@ -138,11 +139,11 @@ ms.locfileid: "67106861"
 
 1. Откройте вкладку **Authentication Provider** (Поставщик проверки подлинности).
 
-    ![Поставщик проверки подлинности](./media/appdynamics-tutorial/ic790224.png "Поставщик проверки подлинности")
+    ![Поставщик проверки подлинности](./media/appdynamics-tutorial/ic790224.png "Authentication Provider")
 
 1. В разделе **Authentication Provider** (Поставщик проверки подлинности) выполните следующие действия.
 
-   ![Настройка SAML](./media/appdynamics-tutorial/ic790225.png "Настройка SAML")
+   ![Конфигурация SAML](./media/appdynamics-tutorial/ic790225.png "Настройка SAML")
 
    a. Для параметра **Authentication Provider** (Поставщик проверки подлинности) выберите значение **SAML**.
 
@@ -224,5 +225,5 @@ ms.locfileid: "67106861"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

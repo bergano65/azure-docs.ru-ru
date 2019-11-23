@@ -8,6 +8,7 @@ manager: daveba
 ms.reviewer: barbkess
 ms.assetid: f0db4fb0-7eec-48c2-9c7a-beab1ab49bc2
 ms.service: active-directory
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +16,12 @@ ms.topic: tutorial
 ms.date: 12/31/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 714e67bc7cf9e9c928eb4fd0764619041c9c1424
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 741efbae84e18c811beb6c0579c1949c5ddf619c
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67092593"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73160117"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-samanage"></a>Руководство по Интеграция Azure Active Directory с Samanage
 
@@ -132,7 +133,7 @@ ms.locfileid: "67092593"
 
 2. Щелкните **Панель мониторинга** и выберите **Настройка** в левой области навигации.
    
-    ![Панель мониторинга](./media/samanage-tutorial/tutorial_samanage_001.png "Панель мониторинга")
+    ![Панель мониторинга](./media/samanage-tutorial/tutorial_samanage_001.png "панель мониторинга")
 
 3. Щелкните **Единый вход**.
    
@@ -140,7 +141,7 @@ ms.locfileid: "67092593"
 
 4. Перейдите в раздел **Login using SAML** (Вход с помощью SAML) и выполните следующие действия.
    
-    ![Вход с помощью SAML](./media/samanage-tutorial/tutorial_samanage_003.png "Вход с помощью SAML")
+    ![Вход с помощью SAML](./media/samanage-tutorial/tutorial_samanage_003.png "Login using SAML")
  
     a. Установите флажок **Enable Single Sign-On with SAML**(Включить единый вход с помощью SAML).  
  
@@ -232,7 +233,7 @@ ms.locfileid: "67092593"
 
 5. Заполните текстовые поля **Name** (Имя) и **Email Address** (Адрес электронной почты) данными из учетной записи Azure Active Directory, которую необходимо подготовить, а затем нажмите кнопку **Create user** (Создать пользователя).
    
-    ![Создание пользователя](./media/samanage-tutorial/tutorial_samanage_008.png "Создание пользователя")
+    ![Создание пользователя](./media/samanage-tutorial/tutorial_samanage_008.png "Создать пользователя")
    
    >[!NOTE]
    >Владелец учетной записи Azure Active Directory получит по электронной почте сообщение со ссылкой для активации учетной записи. Вы можете использовать любые другие инструменты создания учетных записей пользователя Samanage или API, предоставляемые Samanage для подготовки учетных записей пользователя Azure Active Directory.
@@ -249,5 +250,5 @@ ms.locfileid: "67092593"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

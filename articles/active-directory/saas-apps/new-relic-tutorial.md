@@ -8,18 +8,19 @@ manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 3186b9a8-f4d8-45e2-ad82-6275f95e7aa6
 ms.service: active-directory
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/04/2019
 ms.author: jeedes
-ms.openlocfilehash: 664824772d9c04e5d02d7a38cda58ad4ede8baaf
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: fd75cc392bb30d15b665190eef8fbea39d692ee3
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67096275"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73160341"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-new-relic"></a>Руководство по Интеграция Azure Active Directory с New Relic
 
@@ -128,7 +129,7 @@ ms.locfileid: "67096275"
 
 2. В меню в верхней части страницы щелкните **Параметры учетной записи**.
    
-    ![Параметры учетной записи](./media/new-relic-tutorial/ic797036.png "параметры учетной записи")
+    ![Параметры учетной записи](./media/new-relic-tutorial/ic797036.png "Параметры учетной записи")
 
 3. Щелкните вкладку **Security and authentication** (Безопасность и аутентификация), а затем выберите вкладку **Single sign on** (Единый вход).
    
@@ -207,11 +208,11 @@ ms.locfileid: "67096275"
 
 2. В меню в верхней части страницы щелкните **Параметры учетной записи**.
    
-    ![Параметры учетной записи](./media/new-relic-tutorial/ic797040.png "параметры учетной записи")
+    ![Параметры учетной записи](./media/new-relic-tutorial/ic797040.png "Параметры учетной записи")
 
 3. В области **Account** (Учетная запись) слева щелкните **Summary** (Сводка) и нажмите кнопку **Add user** (Добавить пользователя).
    
-    ![Параметры учетной записи](./media/new-relic-tutorial/ic797041.png "параметры учетной записи")
+    ![Параметры учетной записи](./media/new-relic-tutorial/ic797041.png "Параметры учетной записи")
 
 4. В диалоговом окне **Активные пользователи** сделайте следующее:
    
@@ -239,5 +240,5 @@ ms.locfileid: "67096275"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
