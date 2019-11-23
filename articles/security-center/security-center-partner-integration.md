@@ -13,35 +13,35 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/20/2019
 ms.author: memildin
-ms.openlocfilehash: 0a3bc6bcae2f06173cbc334ffe80e2dfa001e407
-ms.sourcegitcommit: 0486aba120c284157dfebbdaf6e23e038c8a5a15
+ms.openlocfilehash: 435ae9f08f718a9310fd1687fb7859058edf8b45
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71309262"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74384244"
 ---
 # <a name="integrate-security-solutions-in-azure-security-center"></a>Интеграция решений по обеспечению безопасности в центре безопасности Azure
 В этом документе описана процедура управления решениями по обеспечению безопасности, подключенными к центру безопасности Azure, и добавления новых решений.
 
 > [!NOTE]
-> Подмножество решений по обеспечению безопасности было прекращено 31 июля 2019 г. Дополнительные сведения и альтернативные службы см. в разделе [выбытие средств центра безопасности (июль 2019)](security-center-features-retirement-july2019.md#menu_solutions).
+> A subset of security solutions has been retired on July 31st, 2019. For more information and alternative services, see [Retirement of Security Center features (July 2019)](security-center-features-retirement-july2019.md#menu_solutions).
 
 ## <a name="integrated-azure-security-solutions"></a>Интегрированные решения по обеспечению безопасности Azure
 Центр безопасности упрощает включение интегрированных решений по обеспечению безопасности в Azure. Основные преимущества:
 
-- **Упрощенный процесс развертывания**. Центр безопасности предлагает упрощенную подготовку партнерских решений обеспечения безопасности. Для таких решений, как защита от вредоносных программ и Оценка уязвимостей, центр безопасности может подготавливать агент на виртуальных машинах. Для устройств брандмауэра Центр безопасности может выполнять большую часть необходимой конфигурации сети.
-- **Интегрированные обнаружения**. События безопасности автоматически собираются из партнерских решений, объединяются и отображаются в списках оповещений и инцидентов центра безопасности. Эти события используются совместно с результатами сканирования других источников, что дает дополнительные возможности для обнаружения угроз.
-- **Единый мониторинг работоспособности и единое управление**. Пользователи могут использовать интегрированные события работоспособности, чтобы отслеживать все партнерские решения в одном расположении. Предоставляются базовые возможности для управления и быстрый доступ к партнерским решениям для расширенной настройки.
+- **Упрощенное развертывание.** Центр безопасности предлагает упрощенную подготовку партнерских решений обеспечения безопасности. For solutions like antimalware and vulnerability assessment, Security Center can provision the agent on your virtual machines. For firewall appliances, Security Center can take care of much of the network configuration required.
+- **Интегрированные обнаружения.** События безопасности автоматически собираются из партнерских решений, объединяются и отображаются в списках оповещений и инцидентов центра безопасности. Эти события используются совместно с результатами сканирования других источников, что дает дополнительные возможности для обнаружения угроз.
+- **Единый мониторинг работоспособности и единое управление.** Интеграция событий работоспособности позволяет клиентам отслеживать все партнерские решения в одном расположении. Предоставляются базовые возможности для управления и быстрый доступ к партнерским решениям для расширенной настройки.
 
-В настоящее время интегрированные решения безопасности включают оценку уязвимостей с помощью [Qualys](https://www.qualys.com/public-cloud/#azure) и [Rapid7](https://www.rapid7.com/products/insightvm/) и брандмауэра веб-приложения шлюза приложений Майкрософт.
+Currently, integrated security solutions include vulnerability assessment by [Qualys](https://www.qualys.com/public-cloud/#azure) and [Rapid7](https://www.rapid7.com/products/insightvm/) and Microsoft Application Gateway Web application firewall.
 
 > [!NOTE]
-> Центр безопасности не устанавливает Microsoft Monitoring Agent на виртуальные устройства партнеров, так как большинство поставщиков безопасности запрещают работу внешних агентов на их устройствах.
+> Security Center does not install the Microsoft Monitoring Agent on partner virtual appliances because most security vendors prohibit external agents running on their appliances.
 >
 >
 
 ## <a name="how-security-solutions-are-integrated"></a>Как интегрируются решения по обеспечению безопасности
-Решения по обеспечению безопасности Azure, развертываемые из центра безопасности, подключены автоматически. Кроме того, можно подключать другие источники данных безопасности, включая компьютеры, работающие локально или в других облаках.
+Решения по обеспечению безопасности Azure, развертываемые из центра безопасности, подключены автоматически. You can also connect other security data sources, including computers running on-premises or in other clouds.
 
 ![Интеграция решений партнеров](./media/security-center-partner-integration/security-center-partner-integration-fig8.png)
 
@@ -55,30 +55,30 @@ ms.locfileid: "71309262"
 
    ![Обзор центра безопасности](./media/security-center-partner-integration/overview.png)
 
-В разделе **решения безопасности**можно просмотреть работоспособность интегрированных решений безопасности Azure и выполнить основные задачи управления.
+In **Security solutions**, you can see the health of integrated Azure security solutions and run basic management tasks.
 
 ### <a name="connected-solutions"></a>Подключенные решения
 
-Раздел **подключенные решения** содержит решения по обеспечению безопасности, которые в настоящее время подключены к центру безопасности. Он также показывает состояние работоспособности каждого решения.  
+The **Connected solutions** section includes security solutions that are currently connected to Security Center. It also shows the health status of each solution.  
 
 ![Подключенные решения](./media/security-center-partner-integration/security-center-partner-integration-fig4.png)
 
 Поле состояния партнерского решения может содержать следующее значение:
 
-* Исправен (зеленый) — нет проблем с работоспособностью.
-* Неработоспособный (красный) — существует ошибка работоспособности, требующая немедленного вмешательства.
+* Healthy (green) - no health issues.
+* Unhealthy (red) - there's a health issue that requires immediate attention.
 * "Проблемы работоспособности" (оранжевый) — решение перестало сообщать о работоспособности.
-* Не сообщается (серый) — решение еще не сообщило, а данные о работоспособности недоступны. Состояние решения может быть неотчетным, если оно было недавно подключено и еще развертывается.
+* Not reported (gray) - the solution hasn't reported anything yet and no health data is available. A solution's status may be unreported if it was connected recently and is still deploying.
 
 > [!NOTE]
-> Если данные о работоспособности отсутствуют, центр безопасности отображает дату и время последнего полученного события, позволяя проверить отправку отчетов с устройства. Если данные о работоспособности недоступны и в течение последних 14 дней не было получено оповещений, центр безопасности указывает, что решение неработоспособно или не сообщает об этом.
+> Если данные о работоспособности отсутствуют, центр безопасности отображает дату и время последнего полученного события, позволяя проверить отправку отчетов с устройства. If no health data is available and no alerts were received within the last 14 days, Security Center indicates that the solution is unhealthy or not reporting.
 >
 >
 
-1. Выберите **Просмотреть** , чтобы получить дополнительные сведения и параметры, например:
+1. Select **VIEW** for additional information and options such as:
 
    - **Консоль решения**. Открывает интерфейс управления для этого решения.
-   - **Связать виртуальную машину**. Открывает страницу связывание приложений. В ней можно подключить ресурсы к решению партнера.
+   - **Связать виртуальную машину**. Opens the Link Applications page. В ней можно подключить ресурсы к решению партнера.
    - **Удалить решение**.
    - **Настройка**.
 
@@ -86,16 +86,14 @@ ms.locfileid: "71309262"
 
 ### <a name="discovered-solutions"></a>Обнаруженные решения
 
-Центр безопасности автоматически обнаруживает решения по обеспечению безопасности, которые выполняются в Azure, но не подключены к центру безопасности, и отображает решения в разделе **обнаруженные решения** . Эти решения включают решения Azure, такие как [Защита идентификации Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-identityprotection)и решения партнеров.
+Security Center automatically discovers security solutions running in Azure but not connected to Security Center and displays the solutions in the **Discovered solutions** section. These  solutions include Azure solutions, like [Azure AD Identity Protection](https://docs.microsoft.com/azure/active-directory/active-directory-identityprotection), and partner solutions.
 
 > [!NOTE]
-> Использование центра безопасности категории "Стандартный" на уровне подписки является обязательным требованием для работы функции обнаружения решений. Дополнительные сведения о ценовых категориях см. в разделе [цены](security-center-pricing.md) .
+> Использование центра безопасности категории "Стандартный" на уровне подписки является обязательным требованием для работы функции обнаружения решений. See [Pricing](security-center-pricing.md) to learn more about the pricing tiers.
 >
 >
 
-Выберите **Подключиться** в решении для интеграции с центром безопасности и получите уведомления об оповещениях системы безопасности.
-
-![Обнаруженные решения](./media/security-center-partner-integration/security-center-partner-integration-fig5.png)
+Select **CONNECT** under a solution to integrate with Security Center and be notified of security alerts.
 
 ### <a name="add-data-sources"></a>Добавление источников данных
 
@@ -105,9 +103,9 @@ ms.locfileid: "71309262"
 
 ## <a name="exporting-data-to-a-siem"></a>Экспорт данных в SIEM
 
-Вы можете настроить решения Siem или другие средства мониторинга для получения событий центра безопасности Azure.
+You can configure your SIEMs or other monitoring tools to receive Azure Security Center events.
 
-Все события из центра безопасности Azure публикуются в [журнале действий](../monitoring-and-diagnostics/monitoring-overview-activity-logs.md)Azure Azure Monitor. Azure Monitor использует [Объединенный конвейер](../azure-monitor/platform/stream-monitoring-data-event-hubs.md) для потоковой передачи данных в концентратор событий, где их можно затем извлечь в средство мониторинга.
+All events from Azure Security Center are published to Azure Monitor's Azure [Activity log](../monitoring-and-diagnostics/monitoring-overview-activity-logs.md). Azure Monitor uses [a consolidated pipeline](../azure-monitor/platform/stream-monitoring-data-event-hubs.md) to  stream the data to an Event Hub where it can then be pulled into your monitoring tool.
 
 В следующих разделах описывается, как настроить потоковую передачу данных в концентратор событий. В инструкциях предполагается, что в вашей подписке Azure настроен центр безопасности Azure.
 
@@ -117,36 +115,36 @@ ms.locfileid: "71309262"
 
 ### <a name="what-is-the-azure-security-data-exposed-to-siem"></a>Какие данные безопасности Azure передаются в SIEM?
 
-В этой версии мы предоставляем [оповещения системы безопасности.](../security-center/security-center-managing-and-responding-alerts.md) В будущих выпусках мы дополним их рекомендациями по безопасности.
+In this version, we expose the [security alerts.](../security-center/security-center-managing-and-responding-alerts.md) В будущих выпусках мы дополним их рекомендациями по безопасности.
 
-### <a name="how-to-set-up-the-pipeline"></a>Настройка конвейера
+### <a name="how-to-set-up-the-pipeline"></a>How to set up the pipeline
 
 #### <a name="create-an-event-hub"></a>Создание концентратора событий
 
-Прежде чем начать, [Создайте пространство имен концентраторов событий](../event-hubs/event-hubs-create.md) — назначение для всех данных мониторинга.
+Before you begin, [create an Event Hubs namespace](../event-hubs/event-hubs-create.md) - the destination for all your monitoring data.
 
 #### <a name="stream-the-azure-activity-log-to-event-hubs"></a>Потоковая передача журнала действий Azure в Центры событий
 
-См. следующую статью: [Журнал действий потока в концентраторы событий](../azure-monitor/platform/activity-logs-stream-event-hubs.md)
+See the following article [stream activity log to Event Hubs](../azure-monitor/platform/activity-logs-stream-event-hubs.md)
 
 #### <a name="install-a-partner-siem-connector"></a>Установка соединителя SIEM партнера 
 
 Маршрутизация данных мониторинга в концентратор событий с помощью Azure Monitor обеспечивает интеграцию с партнерским решением SIEM и инструментами мониторинга.
 
-Список [поддерживаемых решения Siem](../azure-monitor/platform/resource-logs-stream-event-hubs.md#what-you-can-do-with-resource-logs-sent-to-an-event-hub) см. в следующей статье.
+See the following article for the list of [supported SIEMs](../azure-monitor/platform/resource-logs-stream-event-hubs.md#what-you-can-do-with-resource-logs-sent-to-an-event-hub)
 
 ### <a name="example-for-querying-data"></a>Пример запроса данных 
 
-Ниже приведены некоторые Splunk запросы, которые можно использовать для извлечения данных оповещений:
+Here are some Splunk queries you can use to pull alert data:
 
 | **Описание запроса** | **Запрос** |
 |----|----|
-| Все предупреждения| index=main Microsoft.Security/locations/alerts|
+| Все оповещения.| index=main Microsoft.Security/locations/alerts|
 | Суммирование количества операций по имени.| index=main sourcetype="amal:security" \| table operationName \| stats count by operationName|
 | Получение сведений об оповещении: время, имя, состояние, идентификатор и подписка. | index=main Microsoft.Security/locations/alerts \| table \_time, properties.eventName, State, properties.operationId, am_subscriptionId |
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этой статьи вы узнали, как интегрировать партнерские решения в центре безопасности. Дополнительные сведения о центре безопасности см. в следующих статьях:
 

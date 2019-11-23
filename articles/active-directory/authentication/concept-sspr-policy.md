@@ -1,22 +1,22 @@
 ---
-title: Политики самостоятельного сброса пароля Azure AD — Azure Active Directory
+title: 'Azure Active Directory: политики самостоятельного сброса пароля'
 description: Настройка параметров политик самостоятельного сброса пароля в Azure AD.
 services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 05/16/2018
+ms.date: 11/21/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b8f5371334fb383b15514c879ceb262fa78d7fca
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 5af0c2ecde539c9737249e4251f7eab276affb9c
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70084959"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74381919"
 ---
 # <a name="password-policies-and-restrictions-in-azure-active-directory"></a>Политики и ограничения для паролей в Azure Active Directory
 
@@ -34,24 +34,24 @@ ms.locfileid: "70084959"
   * администратор службы технической поддержки;
   * администратор службы поддержки;
   * Администратор выставления счетов
-  * Поддержка партнеров уровня 1
-  * Поддержка партнеров уровня 2
-  * Администратор Exchange
-  * Администратор Skype для бизнеса
+  * Служба поддержка партнеров уровня 1
+  * Служба поддержка партнеров уровня 2
+  * администратор Exchange;
+  * администратор Skype для бизнеса;
   * Администратор пользователей
-  * Редакторы каталогов
+  * создатели каталогов;
   * глобальный или корпоративный администратор;
-  * Администратор SharePoint
-  * Администратор соответствия требованиям
-  * Администратор приложений
+  * администратор SharePoint;
+  * администратор соответствия требованиям.
+  * администратор приложений;
   * Администратор безопасности
-  * Администратор привилегированных ролей
-  * Администратор Intune
+  * администратор привилегированных ролей;
+  * Intune administrator
   * администратор прокси-сервера приложений;
-  * Администратор Dynamics 365
+  * Dynamics 365 administrator
   * администратор службы Power BI.
-  * Администратор проверки подлинности
-  * Администратор привилегированной проверки подлинности
+  * Authentication administrator
+  * Privileged Authentication administrator
 
 * если прошло 30 дней с момента установки пробной подписки; или
 * при наличии личного домена (например, contoso.com); или
@@ -77,23 +77,23 @@ ms.locfileid: "70084959"
 
 ## <a name="password-policies-that-only-apply-to-cloud-user-accounts"></a>Политики паролей, которые применяются только к облачным учетным записям пользователей.
 
-В следующей таблице описаны параметры политики паролей, применяемые к учетным записям пользователей, которые создаются и управляются в Azure AD.
+The following table describes the password policy settings applied to user accounts that are created and managed in Azure AD:
 
 | Свойство | Требования |
 | --- | --- |
-| Допустимые символы |<ul><li>A–Z</li><li>a–z</li><li>0–9</li> <li>@ # $ % ^ & * - _ ! + = [ ] { } &#124; \ : ‘ , . ? / \`~ " ( ) ;</li> <li>пустое пространство</li></ul> |
+| Допустимые символы |<ul><li>A–Z</li><li>a–z</li><li>0–9</li> <li>@ # $ % ^ & * - _ ! + = [ ] { } &#124; \ : ‘ , . ? / \` ~ " ( ) ;</li> <li>blank space</li></ul> |
 | Недопустимые символы | Знаки Юникода. |
-| Ограничения для пароля |<ul><li>Не менее 8 символов и не более 256 символов.</li><li>Необходимо выполнить 3 из 4 следующих условий:<ul><li>строчные буквы;</li><li>прописные буквы;</li><li>числа (0–9);</li><li>символы (см. ограничения для пароля выше).</li></ul></li></ul> |
-| Длительность срока действия пароля (максимальный возраст пароля) |<ul><li>Значение по умолчанию: **90** дней.</li><li>Значение можно изменить с помощью командлета `Set-MsolPasswordPolicy` из модуля Azure Active Directory для Windows PowerShell.</li></ul> |
-| Уведомление об истечении срока действия пароля (когда пользователи получают уведомление об истечении срока действия пароля) |<ul><li>Значение по умолчанию: **14** дней (до истечения срока действия пароля).</li><li>Это значение можно настроить с помощью командлета `Set-MsolPasswordPolicy`.</li></ul> |
-| Срок действия пароля (истекает срок действия паролей) |<ul><li>Значение по умолчанию: **false** дней (означает, что включен срок действия пароля).</li><li>Это значение можно настроить для каждой учетной записи пользователя с помощью командлета `Set-MsolUser`.</li></ul> |
+| Ограничения для пароля |<ul><li>A minimum of 8 characters and a maximum of 256 characters.</li><li>Необходимо выполнить 3 из 4 следующих условий:<ul><li>строчные буквы;</li><li>прописные буквы;</li><li>числа (0–9);</li><li>символы (см. ограничения для пароля выше).</li></ul></li></ul> |
+| Password expiry duration (Maximum password age) |<ul><li>Значение по умолчанию: **90** дней.</li><li>Значение можно изменить с помощью командлета `Set-MsolPasswordPolicy` из модуля Azure Active Directory для Windows PowerShell.</li></ul> |
+| Password expiry notification (When are users notified of password expiration) |<ul><li>Значение по умолчанию: **14** дней (до истечения срока действия пароля).</li><li>Это значение можно настроить с помощью командлета `Set-MsolPasswordPolicy`.</li></ul> |
+| Password expiry (Do passwords ever expire) |<ul><li>Значение по умолчанию: **false** дней (означает, что включен срок действия пароля).</li><li>Это значение можно настроить для каждой учетной записи пользователя с помощью командлета `Set-MsolUser`.</li></ul> |
 | Журнал изменения пароля | Последний пароль *невозможно* использовать повторно, когда пользователь изменяет пароль. |
 | Журнал сброса пароля | Последний пароль *можно* использовать повторно, когда пользователь сбрасывает забытый пароль. |
 | Блокировка учетной записи | После 10 неудачных попыток входа (с неправильным паролем) пользователь будет заблокирован на одну минуту. Последующие неудачные попытки входа приведут к блокировке пользователя на более длительное время. [Смарт-блокировка](howto-password-smart-lockout.md) отслеживает хэши последних трех попыток неправильного ввода пароля во избежание повторного увеличения счетчика блокировки для того же пароля. Если кто-то введет тот же неверный пароль несколько раз, это не вызовет блокировку учетной записи. |
 
 ## <a name="set-password-expiration-policies-in-azure-ad"></a>Установка политик срока действия пароля в Azure AD
 
-Глобальный администратор или администратор пользователей для облачной службы Майкрософт может использовать модуль Microsoft Azure AD для Windows PowerShell, чтобы задать для паролей пользователей не срок действия. Можно также использовать командлеты Windows PowerShell, чтобы удалить бессрочную конфигурацию или просмотреть, какие пароли пользователей имеют неограниченный срок действия. 
+A global administrator or user administrator for a Microsoft cloud service can use the Microsoft Azure AD Module for Windows PowerShell to set user passwords not to expire. Можно также использовать командлеты Windows PowerShell, чтобы удалить бессрочную конфигурацию или просмотреть, какие пароли пользователей имеют неограниченный срок действия. 
 
 Эти указания применимы к другим поставщикам, таким как Intune и Office 365, которые используют Azure AD для служб идентификации и каталогов. Срок действия пароля — это единственное, что может быть изменено в политике.
 
@@ -106,16 +106,16 @@ ms.locfileid: "70084959"
 
 ### <a name="check-the-expiration-policy-for-a-password"></a>Проверка политики срока действия пароля
 
-1. Подключитесь к Windows PowerShell с помощью учетных данных администратора или администратора организации.
+1. Connect to Windows PowerShell by using your user administrator or company administrator credentials.
 1. Выполните следующие команды:
 
-   * Чтобы узнать, не просрочен ли пароль одного пользователя, выполните следующий командлет, используя имя участника-пользователя (например, *April\@contoso.onmicrosoft.com*) или идентификатор пользователя, которого необходимо проверить:
+   * To see if a single user’s password is set to never expire, run the following cmdlet by using the UPN (for example, *aprilr\@contoso.onmicrosoft.com*) or the user ID of the user you want to check:
 
    ```powershell
    Get-AzureADUser -ObjectId <user ID> | Select-Object @{N="PasswordNeverExpires";E={$_.PasswordPolicies -contains "DisablePasswordExpiration"}}
    ```
 
-   * Чтобы просмотреть параметр **срок действия пароля не ограничен** для всех пользователей, выполните следующий командлет:
+   * To see the **Password never expires** setting for all users, run the following cmdlet:
 
    ```powershell
    Get-AzureADUser -All $true | Select-Object UserPrincipalName, @{N="PasswordNeverExpires";E={$_.PasswordPolicies -contains "DisablePasswordExpiration"}}
@@ -123,16 +123,16 @@ ms.locfileid: "70084959"
 
 ### <a name="set-a-password-to-expire"></a>Задание срока действия пароля
 
-1. Подключитесь к Windows PowerShell с помощью учетных данных администратора или администратора организации.
+1. Connect to Windows PowerShell by using your user administrator or company administrator credentials.
 1. Выполните следующие команды:
 
-   * Чтобы задать пароль одного пользователя, чтобы срок действия пароля истек, выполните следующий командлет, используя имя участника-пользователя или идентификатор пользователя:
+   * To set the password of one user so that the password expires, run the following cmdlet by using the UPN or the user ID of the user:
 
    ```powershell
    Set-AzureADUser -ObjectId <user ID> -PasswordPolicies None
    ```
 
-   * Чтобы задать пароли всех пользователей в Организации с истечением срока действия, используйте следующий командлет:
+   * To set the passwords of all users in the organization so that they expire, use the following cmdlet:
 
    ```powershell
    Get-AzureADUser -All $true | Set-AzureADUser -PasswordPolicies None
@@ -140,16 +140,16 @@ ms.locfileid: "70084959"
 
 ### <a name="set-a-password-to-never-expire"></a>Установка бессрочного пароля
 
-1. Подключитесь к Windows PowerShell с помощью учетных данных администратора или администратора организации.
+1. Connect to Windows PowerShell by using your user administrator or company administrator credentials.
 1. Выполните следующие команды:
 
-   * Чтобы задать бессрочный пароль для одного пользователя, выполните следующий командлет, используя имя участника-пользователя или идентификатор пользователя:
+   * To set the password of one user to never expire, run the following cmdlet by using the UPN or the user ID of the user:
 
    ```powershell
    Set-AzureADUser -ObjectId <user ID> -PasswordPolicies DisablePasswordExpiration
    ```
 
-   * Чтобы задать бессрочные пароли всех пользователей в Организации, выполните следующий командлет:
+   * To set the passwords of all the users in an organization to never expire, run the following cmdlet:
 
    ```powershell
    Get-AzureADUser -All $true | Set-AzureADUser -PasswordPolicies DisablePasswordExpiration
@@ -158,18 +158,18 @@ ms.locfileid: "70084959"
    > [!WARNING]
    > Пароль, для которого задано `-PasswordPolicies DisablePasswordExpiration`, по-прежнему имеет срок использования, определяемый атрибутом `pwdLastSet`. Если задать для пользователей бессрочные пароли, то по прошествии 90 дней их срок действия истечет. В зависимости от атрибута `pwdLastSet`, если задать срок действия, указав `-PasswordPolicies None`, то всем пользователям, у паролей которых значение `pwdLastSet` превышает 90 дней, будет необходимо сменить пароль при следующем входе. Это изменение может повлиять на большое количество пользователей.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о сбросе пароля с помощью Azure AD см. в следующих статьях:
 
 * [Как развернуть самостоятельный сброс пароля?](howto-sspr-deployment.md)
-* [Сброс или изменение пароля](../user-help/active-directory-passwords-update-your-own-password.md)
-* [Регистрация для самостоятельного сброса пароля](../user-help/active-directory-passwords-reset-register.md)
+* [Сброс или изменение пароля](../user-help/active-directory-passwords-update-your-own-password.md).
+* [Регистрация для самостоятельного сброса пароля](../user-help/active-directory-passwords-reset-register.md).
 * [Требования к лицензированию самостоятельного сброса пароля в Azure AD](concept-sspr-licensing.md)
 * [Какие данные используются для SSPR и какие сведения нужно указывать для пользователей](howto-sspr-authenticationdata.md)
-* [Доступные пользователям методы проверки подлинности](concept-sspr-howitworks.md#authentication-methods).
-* [Обзор обратной записи паролей](howto-sspr-writeback.md).
+* [Доступные пользователям методы проверки подлинности](concept-sspr-howitworks.md#authentication-methods)
+* [Что такое обратная запись паролей и каково ее назначение](howto-sspr-writeback.md)
 * [Как сообщать о действиях в SSPR](howto-sspr-reporting.md)
 * [Обзор всех параметров SSPR и их значение](concept-sspr-howitworks.md)
-* [Как устранить неполадки самостоятельного сброса пароля](active-directory-passwords-troubleshoot.md)
+* [I think something is broken. How do I troubleshoot SSPR?](active-directory-passwords-troubleshoot.md)
 * [Вопросы, не вошедшие в другие статьи](active-directory-passwords-faq.md)

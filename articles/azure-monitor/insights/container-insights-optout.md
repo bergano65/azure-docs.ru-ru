@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: mgoedtel
 ms.author: magoedte
 ms.date: 08/19/2019
-ms.openlocfilehash: 508bfa9cf7bff0084e7f0644ee5e053e683cb9cf
-ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
+ms.openlocfilehash: fe0155d6102dac12d5d4c01b78b1ddd45f9bee02
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72554104"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74382246"
 ---
 # <a name="how-to-stop-monitoring-your-azure-kubernetes-service-aks-with-azure-monitor-for-containers"></a>Как остановить мониторинг кластера Службы Azure Kubernetes (AKS) с помощью Azure Monitor для контейнеров
 
@@ -21,7 +21,7 @@ ms.locfileid: "72554104"
 
 ## <a name="azure-cli"></a>Azure CLI
 
-Используйте команду [​az aks disable-addons](https://docs.microsoft.com/cli/azure/aks?view=azure-cli-latest#az-aks-disable-addons), чтобы отключить Azure Monitor для контейнеров. Команда удаляет агент из узлов кластера, не удаляет решение или данные, которые уже собраны и хранятся в ресурсе Azure Monitor.  
+Используйте команду [​az aks disable-addons](https://docs.microsoft.com/cli/azure/aks?view=azure-cli-latest#az-aks-disable-addons), чтобы отключить Azure Monitor для контейнеров. The command removes the agent from the cluster nodes, it does not remove the solution or the data already collected and stored in your Azure Monitor resource.  
 
 ```azurecli
 az aks disable-addons -a monitoring -n MyExistingManagedCluster -g MyExistingManagedClusterRG
@@ -38,7 +38,7 @@ az aks disable-addons -a monitoring -n MyExistingManagedCluster -g MyExistingMan
 * [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure CLI](../../azure-resource-manager/resource-group-template-deploy-cli.md)
 
 >[!NOTE]
->Шаблон необходимо развернуть в той же группе ресурсов кластера. Если вы опустите какие-либо другие свойства или надстройки при использовании этого шаблона, это может привести к удалению их из кластера. Например, *енаблербак* для политик RBAC, реализованных в кластере, или *аксресаурцетагвалуес* , если для кластера AKS указаны теги.  
+>The template needs to be deployed in the same resource group of the cluster. Если вы опустите какие-либо другие свойства или надстройки при использовании этого шаблона, это может привести к удалению их из кластера. For example, *enableRBAC* for RBAC policies implemented in your cluster, or *aksResourceTagValues* if tags are specified for the AKS cluster.  
 >
 
 Если вы решили использовать Azure CLI, необходимо сначала установить интерфейс командной строки и использовать его локально. Необходимо запустить Azure CLI версии 2.0.27 или более поздней. Для определения версии выполните `az --version`. Если вам необходимо установить или обновить Azure CLI, ознакомьтесь со статьей [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli). 
@@ -125,7 +125,7 @@ az aks disable-addons -a monitoring -n MyExistingManagedCluster -g MyExistingMan
 
     На странице **Свойства** также скопируйте **идентификатор ресурса рабочей области**. Это значение потребуется, если позже вы решите удалить рабочую область Log Analytics, что выходит за рамки этого процесса. 
 
-    Измените значения для **аксресаурцетагвалуес** , чтобы они совпадали с существующими значениями тегов, указанными для кластера AKS.
+    Edit the values for **aksResourceTagValues** to match the existing tag values specified for the AKS cluster.
 
 5. Сохраните этот файл как **OptOutParam.json** в локальной папке.
 
@@ -165,5 +165,8 @@ New-AzResourceGroupDeployment -Name opt-out -ResourceGroupName <ResourceGroupNam
 ProvisioningState       : Succeeded
 ```
 
-Если рабочая область была создана только для мониторинга кластера и больше не требуется, ее необходимо удалить вручную. Если вам неизвестно, как удалить рабочую область, прочитайте раздел [Удаление рабочей области Azure Log Analytics на портале Azure](../../log-analytics/log-analytics-manage-del-workspace.md). Не забывайте об **идентификаторе ресурса рабочей области**, скопированном ранее на шаге 4, он вам еще понадобится. 
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+Если рабочая область была создана только для мониторинга кластера и больше не требуется, ее необходимо удалить вручную. Если вам неизвестно, как удалить рабочую область, прочитайте раздел [Удаление рабочей области Azure Log Analytics на портале Azure](../../log-analytics/log-analytics-manage-del-workspace.md). Don't forget about the **Workspace Resource ID** copied earlier in step 4, you're going to need that. 
 

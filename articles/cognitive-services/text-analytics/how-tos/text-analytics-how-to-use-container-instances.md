@@ -1,27 +1,27 @@
 ---
-title: Запуск службы "экземпляры контейнеров Azure" — Анализ текста
+title: Run Azure Container Instances - Text Analytics
 titleSuffix: Azure Cognitive Services
-description: Разверните контейнеры Text Analytics в экземпляре контейнера Azure и протестируйте его в веб-браузере.
+description: Deploy the text analytics containers to the Azure Container Instance, and test it in a web browser.
 services: cognitive-services
 author: IEvangelist
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 08/20/2019
+ms.date: 11/21/2019
 ms.author: dapine
-ms.openlocfilehash: 35812ec4585e3189282c5acf0aa09d309c33c7ed
-ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
+ms.openlocfilehash: 7ae8fbd404c9c2b650e4eed30c219e8ffafe55f7
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70051934"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74383534"
 ---
-# <a name="deploy-a-text-analytics-container-to-azure-container-instances"></a>Развертывание контейнера Анализ текста в службе "экземпляры контейнеров Azure"
+# <a name="deploy-a-text-analytics-container-to-azure-container-instances"></a>Deploy a Text Analytics container to Azure Container Instances
 
-Узнайте, как развернуть контейнер [Анализ текста][install-and-run-containers] Cognitive Services в службе " [экземпляры контейнеров][container-instances]Azure". Эта процедура обладает создание ресурса Анализ текста, создание связанного анализ тональности образа и возможность выполнить это согласование двух из браузера. Использование контейнеров может повлечь за собой внимание разработчиков от управления инфраструктурой до того, чтобы сосредоточиться на разработке приложений.
+Learn how to deploy the Cognitive Services [Text Analytics][install-and-run-containers] container to Azure [Container Instances][container-instances]. This procedure exemplifies the creation of a Text Analytics resource, the creation of an associated Sentiment Analysis image and the ability to exercise this orchestration of the two from a browser. Using containers can shift the developers' attention away from managing infrastructure to instead focusing on application development.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Используйте подписку Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
@@ -29,7 +29,7 @@ ms.locfileid: "70051934"
 
 [!INCLUDE [Create a Text Analytics Containers on Azure Container Instances](../../containers/includes/create-container-instances-resource.md)]
 
-#### <a name="key-phrase-extractiontabkeyphrase"></a>[Извлечение ключевых фраз](#tab/keyphrase).
+#### <a name="key-phrase-extractiontabkeyphrase"></a>[Извлечение ключевых фраз](#tab/keyphrase)
 
 [!INCLUDE [Verify the Key Phrase Extraction container instance](../includes/verify-key-phrase-extraction-container.md)]
 
@@ -37,16 +37,16 @@ ms.locfileid: "70051934"
 
 [!INCLUDE [Verify the Language Detection container instance](../includes/verify-language-detection-container.md)]
 
-#### <a name="sentiment-analysistabsentiment"></a>[Анализ тональности](#tab/sentiment).
+#### <a name="sentiment-analysistabsentiment"></a>[Анализ тональности](#tab/sentiment)
 
 [!INCLUDE [Verify the Sentiment Analysis container instance](../includes/verify-sentiment-analysis-container.md)]
 
 ***
 
-## <a name="next-steps"></a>Следующие шаги 
+## <a name="next-steps"></a>Дальнейшие действия 
 
 * Воспользуйтесь [дополнительными контейнерами Cognitive Services](../../cognitive-services-container-support.md)
-* Использование [подключенной службы анализ текста](../vs-text-connected-service.md)
+* Use the [Text Analytics Connected Service](../vs-text-connected-service.md)
 
 [install-and-run-containers]: ./text-analytics-how-to-install-containers.md
 [container-instances]: https://docs.microsoft.com/azure/container-instances
