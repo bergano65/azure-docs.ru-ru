@@ -8,19 +8,19 @@ ms.custom: include file
 ms.service: cognitive-services
 ms.subservice: luis
 ms.topic: include
-ms.date: 09/02/2018
+ms.date: 09/02/2019
 ms.author: diberry
-ms.openlocfilehash: 591e6f1fc114994dd29b0f41d92fc4f099b6ea49
-ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
+ms.openlocfilehash: 3064211fe44a416a6288b86c977ed7e2337a7ccd
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70256849"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74451504"
 ---
-Управление вкладами из участников совместной работы зависит от текущего состояния приложения.
+Management of contributions from collaborators depends on the current status of the app.
 
-**Для [создания переносимых ресурсов](../luis-migration-authoring.md) приложения**: _участники_ управляются в портал Azure для ресурса разработки с помощью страницы **управления доступом (IAM)** . Добавьте пользователя, используя адрес электронной почты участника совместной работы и роль _участника_ . 
+**For [authoring resource migrated](../luis-migration-authoring.md) apps**: _contributors_ are managed in the Azure portal for the authoring resource, using the **Access control (IAM)** page. Add a user, using the collaborator's email address and the _contributor_ role. 
 
-**Для приложений, которые еще не перенесены**: все _Участники совместной работы_ управляются на портале Luis на странице **совместной работы по > управлению** на каждом приложении. На этой странице [добавьте адрес электронной почты пользователя](../luis-how-to-collaborate.md). Это обеспечивает доступ только к этому приложению. 
+**For apps that have not migrated yet**: all _collaborators_ are managed in the LUIS portal from each app's **Manage -> Collaborators** page. On this page, [add a user's email address](../luis-how-to-collaborate.md). This provides authoring access to this app only. 
 
 

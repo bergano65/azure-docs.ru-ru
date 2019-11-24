@@ -4,12 +4,12 @@ ms.service: azure-resource-manager
 ms.topic: include
 ms.date: 01/30/2019
 ms.author: tomfitz
-ms.openlocfilehash: 7c081b3bc5f9e6273f680b24897f9aced4999afa
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: aac2f3ea2b52ac0319f96279deed13c1145749bd
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185671"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74451494"
 ---
 ## <a name="deploy-template-from-cloud-shell"></a>Развертывание шаблона из Cloud Shell
 
@@ -19,7 +19,7 @@ ms.locfileid: "67185671"
 
 1. Выберите свою группу ресурсов Cloud Shell. Шаблон имени — `cloud-shell-storage-<region>`.
 
-   ![Выбор группы ресурсов](./media/resource-manager-cloud-shell-deploy/select-cs-resource-group.png)
+   ![Выбор группы ресурсов](./media/resource-manager-cloud-shell-deploy/select-cloud-shell-resource-group.png)
 
 1. Выберите учетную запись хранения для Cloud Shell.
 

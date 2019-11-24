@@ -8,22 +8,22 @@ ms.custom: include file
 ms.service: cognitive-services
 ms.subservice: luis
 ms.topic: include
-ms.date: 09/02/2018
+ms.date: 09/02/2019
 ms.author: diberry
-ms.openlocfilehash: 4dd638d825c73d901de0c9b909307bd6995511a2
-ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
+ms.openlocfilehash: a255a68eab6936de18d238b40f596076261049c1
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70259720"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74451481"
 ---
-Если приложения должны быть созданы другими людьми, необходимо добавить соответствующие адреса электронной почты в ресурс создания портал Azure.
+If your apps need to be authored by other people, you need to add the associated email addresses in the Azure portal's authoring resource.
 
-Если вы являетесь **владельцем или администратором подписки Azure**, вы можете добавить участника к ресурсу. 
+If you are the **owner or administrator of your Azure subscription**, you can add a contributor to the resource. 
 
-Если вы **не являетесь владельцем или администратором подписки Azure**, ваша учетная запись Azure должна иметь `Microsoft.Authorization/roleAssignments/write` разрешения.
+If you are **not the owner or administrator of your Azure subscription**, your Azure account needs to have `Microsoft.Authorization/roleAssignments/write` permissions.
 
-Если у вас возникли проблемы с этим назначением роли, ознакомьтесь с: 
+If you have trouble with this role assignment, review: 
 
-* [Назначения ролей Azure](../../../role-based-access-control/role-assignments-portal.md)
- * [Устранение неполадок контроля доступа Azure](../../../role-based-access-control/troubleshooting.md#problems-with-rbac-role-assignments)
+* [Azure role assignments](../../../role-based-access-control/role-assignments-portal.md)
+ * [Azure access control troubleshooting](../../../role-based-access-control/troubleshooting.md#problems-with-rbac-role-assignments)
