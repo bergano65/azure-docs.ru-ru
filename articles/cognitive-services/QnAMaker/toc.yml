@@ -12,12 +12,8 @@
       href: quickstarts/create-publish-knowledge-base.md
     - name: Добавление вопросов с использованием метаданных
       href: quickstarts/add-question-metadata-portal.md
-    - name: Получение ответов
-      items:
-        - name: Использование Postman
-          href: Quickstarts/get-answer-from-kb-using-postman.md
-        - name: Использование cURL
-          href: Quickstarts/get-answer-from-kb-using-cURL.md
+    - name: Получение ответа с помощью Postman или cURL
+      href: Quickstarts/get-answer-from-knowledge-base-using-url-tool.md
     - name: С помощью REST API
       items:
         - name: Создание базы знаний

@@ -34,34 +34,46 @@
           href: connect-macos.md
         - name: Подключение с помощью клиента iOS
           href: connect-ios.md
-    - name: Создание пула узлов с помощью шаблона Azure Resource Manager
-      href: create-host-pools-arm-template.md
-    - name: Создание пула узлов с помощью PowerShell
-      href: create-host-pools-powershell.md
-    - name: "Развертывание виртуальной машины Windows\_7 в службе \"Виртуальный рабочий стол Windows\""
-      href: deploy-windows-7-virtual-machine.md
-    - name: Применение лицензии Windows к узлам сеансов Виртуальных рабочих столов Windows
+    - name: Создание пула узлов и узлов сеансов
+      items:
+        - name: Шаблон Azure Resource Manager
+          href: create-host-pools-arm-template.md
+        - name: PowerShell
+          href: create-host-pools-powershell.md
+        - name: "Развертывание виртуальной машины Windows\_7"
+          href: deploy-windows-7-virtual-machine.md
+        - name: Развертывание узла сеансов на основе GPU
+          href: configure-vm-gpu.md
+    - name: Создание контейнера профилей
+      items:
+        - name: Использование файлового ресурса на основе виртуальной машины
+          href: create-host-pools-user-profile.md
+        - name: Использование Azure NetApp Files
+          href: create-fslogix-profile-container.md
+    - name: Настройка параметров пула узлов
+      items:
+        - name: Свойства RDP
+          href: customize-rdp-properties.md
+        - name: Балансировка нагрузки для объединенных пулов узлов
+          href: configure-host-pool-load-balancing.md
+    - name: Использование лицензии на Виртуальный рабочий стол Windows
       href: apply-windows-license.md
     - name: Создание контейнера профиля для пула узлов с помощью общей папки
       href: create-host-pools-user-profile.md
-    - name: Создание контейнера профиля для пула узлов с помощью Azure NetApp Files
-      href: create-fslogix-profile-container.md
-    - name: Настройка метода балансировки нагрузки Виртуального рабочего стола Windows
-      href: configure-host-pool-load-balancing.md
-    - name: Подготовка и настройка главного образа VHD
-      href: set-up-customize-master-image.md
-    - name: Установка Office в главный образ VHD
-      href: install-office-on-wvd-master-image.md
-    - name: Настройка GPU для Виртуального рабочего стола Windows
-      href: configure-vm-gpu.md
+    - name: Настройка образа узла сеансов
+      items:
+        - name: Настройка главного образа VHD
+          href: set-up-customize-master-image.md
+        - name: Установка Office в главный образ VHD
+          href: install-office-on-wvd-master-image.md
     - name: Динамическое масштабирование узлов сеансов
       href: set-up-scaling-script.md
-    - name: Настройка канала для пользователей Виртуального рабочего стола Windows
+    - name: Настройка веб-канала
       href: customize-feed-for-virtual-desktop-users.md
-    - name: Настройка свойств RDP
-      href: customize-rdp-properties.md
     - name: Развертывание средства диагностики
       href: deploy-diagnostics.md
+    - name: Публикация приложений
+      href: publish-apps.md
     - name: Настройка присоединения приложения MSIX
       href: app-attach.md
 - name: Основные понятия
@@ -118,6 +130,8 @@
       href: 'https://azure.microsoft.com/services/virtual-desktop/assessment/'
     - name: Калькулятор цен
       href: 'https://azure.microsoft.com/pricing/calculator/'
+    - name: Схема обучения
+      href: 'https://docs.microsoft.com/learn/paths/m365-wvd/'
     - name: Группа поддержки технического сообщества
       href: 'https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop'
     - name: Форум UserVoice

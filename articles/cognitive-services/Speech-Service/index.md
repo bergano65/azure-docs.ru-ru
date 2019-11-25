@@ -4,12 +4,12 @@ ms.date: 10-19-2019
 ms.topic: hub-page
 title: Документация по службе "Речь"
 description: Начало работы со службой "Речь"
-ms.openlocfilehash: 0a07125764908b661216c20279ab4bdf80ae91ca
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: e9fda2788b28ba882b5c5eb232bfd2ffbc85f049
+ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73580328"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74406192"
 ---
 <div id="main" class="v2">    
     <div class="container">
@@ -271,7 +271,7 @@ ms.locfileid: "73580328"
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Распознавание речи, намерений и сущностей</h3>
-                                                    <p>Используйте пакет SDK службы "Речь" и службу LUIS для распознавания речи, намерений и сущностей.</p>
+                                                    <p>Используйте пакет SDK набора служб "Речь" и службу "Распознавание речи" (LUIS) для распознавания речи, намерений и сущностей.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -289,7 +289,7 @@ ms.locfileid: "73580328"
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Документация по LUIS</h3>
+                                                    <h3>Документация по Распознаванию речи (LUIS)</h3>
                                                     <p>Дополнительные сведения о службе "Распознавание речи" (LUIS) и обработке естественного языка (NLP).</p>
                                                 </div>
                                             </div>
@@ -308,7 +308,7 @@ ms.locfileid: "73580328"
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Портал LUIS</h3>
+                                                    <h3>Портал службы "Распознавание речи" (LUIS)</h3>
                                                     <p>Встройте возможности работы с естественным языком в приложения, боты и устройства Интернета вещей.</p>
                                                 </div>
                                             </div>

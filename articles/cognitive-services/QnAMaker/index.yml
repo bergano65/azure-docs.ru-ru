@@ -11,12 +11,12 @@ metadata:
   services: cognitive-services
   title: Документация по QnA Maker
   description: QnA Maker — это облачная служба API, которая позволяет работать с данными в форме вопросов и ответов. QnA Maker представляет собой службу для отправки вопросов и получения ответов из частично структурированного содержимого, например документов с часто задаваемыми вопросами, URL-адресов и руководств по продуктам. Служба QnA Maker отвечает на вопросы, сформулированные на естественном языке, сопоставляя их с наиболее точными ответами в разделе вопросов и ответов вашей базы знаний.
-  ms.openlocfilehash: 091d2007d115c5e08904af6081d0f67b2eb60071
-  ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
+  ms.openlocfilehash: f88336107203a166b61df98c55b680f1f11f79f6
+  ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 10/05/2019
-  ms.locfileid: "71971471"
+  ms.lasthandoff: 11/23/2019
+  ms.locfileid: "74422644"
 landingContent:
 - title: Сведения о QnA Maker
   linkLists:
@@ -64,10 +64,8 @@ landingContent:
   linkLists:
   - linkListType: get-started
     links:
-    - text: Краткое руководство. Использование Postman
-      url: quickstarts/get-answer-from-kb-using-postman.md
-    - text: Краткое руководство. Использование cURL
-      url: quickstarts/get-answer-from-kb-using-curl.md
+    - text: Краткое руководство. С использованием Postman или cURL
+      url: quickstarts/get-answer-from-knowledge-base-using-url-tool.md
     - text: Краткое руководство. Использование REST и C#
       url: quickstarts/get-answer-from-knowledge-base-csharp.md
     - text: Краткое руководство. Использование NuGet и C#
