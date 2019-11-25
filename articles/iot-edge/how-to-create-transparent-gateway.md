@@ -8,71 +8,70 @@ ms.date: 08/17/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.custom: seodec18
-ms.openlocfilehash: 467ec25bb9e41180da36f118094324e4fea48cf8
-ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
+ms.openlocfilehash: d0ac7fa3a1dbb1c91da5b9919bc2c62de74213b5
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71266098"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74456779"
 ---
 # <a name="configure-an-iot-edge-device-to-act-as-a-transparent-gateway"></a>Настройка устройства IoT Edge в качестве прозрачного шлюза
 
-В этой статье содержатся подробные инструкции по настройке устройства IoT Edge для работы в качестве прозрачного шлюза для взаимодействия других устройств с центром Интернета вещей. В этой статье под термином *шлюз IoT Edge* подразумевается устройство IoT Edge, которое используется в качестве прозрачного шлюза. Дополнительные сведения см. [в статье как можно использовать IOT Edge устройство в качестве шлюза](./iot-edge-as-gateway.md).
+This article provides detailed instructions for configuring an IoT Edge device to function as a transparent gateway for other devices to communicate with IoT Hub. В этой статье под термином *шлюз IoT Edge* подразумевается устройство IoT Edge, которое используется в качестве прозрачного шлюза. For more information, see [How an IoT Edge device can be used as a gateway](./iot-edge-as-gateway.md).
 
 >[!NOTE]
 >В данный момент:
 > * устройства с поддержкой Edge не могут подключиться к шлюзам IoT Edge; 
 > * подчиненные устройства не поддерживают отправку файлов.
 
-Существует три основных шага для настройки успешного подключения к прозрачному шлюзу. В этой статье рассматривается первый шаг:
+There are three general steps to set up a successful transparent gateway connection. This article covers the first step:
 
-1. **Устройство шлюза должно иметь возможность безопасного подключения к подчиненным устройствам, получать подключения от подчиненных устройств и маршрутизировать сообщения в соответствующее место назначения.**
-2. Подчиненное устройство должно иметь удостоверение устройства, чтобы иметь возможность проходить проверку подлинности в центре Интернета вещей и взаимодействовать через его устройство шлюза. Дополнительные сведения см. в статье [Проверка подлинности подчиненного устройства в центре Интернета вещей Azure](how-to-authenticate-downstream-device.md).
-3. Подчиненное устройство должно иметь возможность безопасного подключения к устройству шлюза. Дополнительные сведения см. в статье [Connect a downstream device to an Azure IoT Edge gateway](how-to-connect-downstream-device.md) (Подключение подчиненного устройства к шлюзу Azure IoT Edge).
+1. **The gateway device needs to be able to securely connect to downstream devices, receive communications from downstream devices, and route messages to the proper destination.**
+2. The downstream device needs to have a device identity to be able to authenticate with IoT Hub, and know to communicate through its gateway device. For more information, see [Authenticate a downstream device to Azure IoT Hub](how-to-authenticate-downstream-device.md).
+3. The downstream device needs to be able to securely connect to its gateway device. Дополнительные сведения см. в статье [Connect a downstream device to an Azure IoT Edge gateway](how-to-connect-downstream-device.md) (Подключение подчиненного устройства к шлюзу Azure IoT Edge).
 
 
-Чтобы устройство могло работать как шлюз, оно должно иметь возможность безопасного подключения к его подчиненным устройствам. Решение Azure IoT Edge позволяет настраивать безопасные подключения между устройствами с использованием инфраструктуры открытых ключей (PKI). В этом случае мы разрешаем подчиненному устройству подключаться к устройству IoT Edge, выполняющему роль прозрачного шлюза. Чтобы обеспечить приемлемую безопасность, подчиненное устройство должно подтвердить удостоверение устройства шлюза. Эта проверка удостоверения не позволяет устройствам подключаться к потенциально вредоносным шлюзам.
+For a device to function as a gateway, it needs to be able to securely connect to its downstream devices. Решение Azure IoT Edge позволяет настраивать безопасные подключения между устройствами с использованием инфраструктуры открытых ключей (PKI). В этом случае мы разрешаем подчиненному устройству подключаться к устройству IoT Edge, выполняющему роль прозрачного шлюза. To maintain reasonable security, the downstream device should confirm the identity of the gateway device. This identity check prevents your devices from connecting to potentially malicious gateways.
 
-Подчиненным устройством в сценарии с прозрачным шлюзом может быть любое приложение или платформа с удостоверением, созданным с помощью облачной службы [центра Интернета вещей Azure](https://docs.microsoft.com/azure/iot-hub) . Часто для этих приложений применяется [пакет SDK для устройств Azure IoT](../iot-hub/iot-hub-devguide-sdks.md). Для любых практических целей в качестве подчиненного устройства можно использовать даже приложение, запущенное на самом устройстве шлюза IoT Edge. Однако устройство IoT Edge не может быть переIoT Edge шлюза. 
+A downstream device in a transparent gateway scenario can be any application or platform that has an identity created with the [Azure IoT Hub](https://docs.microsoft.com/azure/iot-hub) cloud service. Часто для этих приложений применяется [пакет SDK для устройств Azure IoT](../iot-hub/iot-hub-devguide-sdks.md). Для любых практических целей в качестве подчиненного устройства можно использовать даже приложение, запущенное на самом устройстве шлюза IoT Edge. However, an IoT Edge device cannot be downstream of an IoT Edge gateway. 
 
-Вы можете создать любую инфраструктуру сертификата, обеспечивающую доверие, необходимое для топологии "устройство — шлюз". В этой статье мы предполагаем ту же настройку сертификата, которую вы использовали для включения [безопасности ЦС x. 509](../iot-hub/iot-hub-x509ca-overview.md) в центре Интернета вещей, которая включает сертификат ЦС x. 509, связанный с конкретным центром Интернета вещей (КОРНЕВой ЦС центра Интернета вещей), ряд сертификатов, подписанных этим ЦС. и ЦС для устройства IoT Edge.
+Вы можете создать любую инфраструктуру сертификата, обеспечивающую доверие, необходимое для топологии "устройство — шлюз". In this article, we assume the same certificate setup that you would use to enable [X.509 CA security](../iot-hub/iot-hub-x509ca-overview.md) in IoT Hub, which involves an X.509 CA certificate associated to a specific IoT hub (the IoT hub root CA), a series of certificates signed with this CA, and a CA for the IoT Edge device.
 
 ![Установка сертификата шлюза](./media/how-to-create-transparent-gateway/gateway-setup.png)
 
 >[!NOTE]
->Термин "корневой ЦС", используемый в этой статье, относится к общедоступному центру сертификации цепочки PKI-сертификатов, а не к корню сертификата в центре сертификации. Во многих случаях это фактический открытый сертификат промежуточного ЦС. 
+>The term "root CA" used throughout this article refers to the topmost authority public certificate of the PKI certificate chain, and not necessarily the certificate root of a syndicated certificate authority. In many cases, it is actually an intermediate CA public certificate. 
 
-Шлюз представляет сертификат ЦС IoT Edge устройства для подчиненного устройства во время запуска подключения. Подчиненное устройство проверяет, подписан ли сертификат ЦС устройства IoT Edge сертификатом корневого ЦС. Этот процесс позволяет подчиненному устройству подтвердить, что шлюз поступает из надежного источника.
+The gateway presents its IoT Edge device CA certificate to the downstream device during the initiation of the connection. The downstream device checks to make sure the IoT Edge device CA certificate is signed by the root CA certificate. This process allows the downstream device to confirm that the gateway comes from a trusted source.
 
-Следующие шаги описывают процесс создания сертификатов и их установки в нужных местах шлюза. Можно создать сертификаты с помощью любого компьютера и затем скопировать их на устройство IoT Edge. 
+The following steps walk you through the process of creating the certificates and installing them in the right places on the gateway. Можно создать сертификаты с помощью любого компьютера и затем скопировать их на устройство IoT Edge. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
-* Компьютер разработки для создания сертификатов. 
-* Устройство Azure IoT Edge, настраиваемое в качестве шлюза. Используйте IoT Edge шаги установки для одной из следующих операционных систем:
+* A development machine to create certificates. 
+* Устройство Azure IoT Edge, настраиваемое в качестве шлюза. Use the IoT Edge installation steps for one of the following operating systems:
   * [Windows](how-to-install-iot-edge-windows.md)
   * [Linux](how-to-install-iot-edge-linux.md)
 
 ## <a name="generate-certificates-with-windows"></a>Создание сертификатов с помощью Windows
 
-Выполните действия, описанные в этом разделе, чтобы создать тестовые сертификаты в Windows. Вы можете использовать компьютер Windows для создания сертификатов, а затем скопировать их на любое IoT Edge устройство, работающее в любой поддерживаемой операционной системе. 
+Use the steps in this section to generate test certificates on Windows. You can use a Windows machine to generate the certificates, and then copy them over to any IoT Edge device running on any supported operating system. 
 
 Сертификаты, создаваемые в этом разделе, предназначены только для тестирования. 
 
 ### <a name="install-openssl"></a>Установка OpenSSL
 
-Установите OpenSSL для Windows на компьютере, который используется для создания сертификатов. Если на устройстве Windows уже установлен OpenSSL, этот шаг можно пропустить, но убедитесь, что файл OpenSSL. exe доступен в переменной среды PATH. 
+Установите OpenSSL для Windows на компьютере, который используется для создания сертификатов. If you already have OpenSSL installed on your Windows device, you may skip this step, but ensure that openssl.exe is available in your PATH environment variable. 
 
-Существует несколько способов установки OpenSSL, включая следующие.
+There are several ways to install OpenSSL, including:
 
-* **Простой способ.** Скачайте и установите все [сторонние двоичные файлы OpenSSL](https://wiki.openssl.org/index.php/Binaries), например, из [OpenSSL в SourceForge](https://sourceforge.net/projects/openssl/). Добавьте полный путь к файлу openssl.exe в переменную среды PATH. 
+* **Easier:** Download and install any [third-party OpenSSL binaries](https://wiki.openssl.org/index.php/Binaries), for example, from [OpenSSL on SourceForge](https://sourceforge.net/projects/openssl/). Добавьте полный путь к файлу openssl.exe в переменную среды PATH. 
    
-* **Рекомендуется:** Скачайте исходный код OpenSSL и создайте двоичные файлы на компьютере самостоятельно или с помощью [vcpkg](https://github.com/Microsoft/vcpkg). В следующих инструкциях используется vcpkg для скачивания исходного кода, а также компиляции и установки OpenSSL на компьютере Windows с помощью простых действий.
+* **Рекомендуемый способ.** Скачайте исходный код OpenSSL и создайте двоичные файлы на компьютере самостоятельно или с помощью [vcpkg](https://github.com/Microsoft/vcpkg). В следующих инструкциях используется vcpkg для скачивания исходного кода, а также компиляции и установки OpenSSL на компьютере Windows с помощью простых действий.
 
    1. Перейдите в каталог для установки vcpkg. В дальнейшем он будет называться *\<VCPKGDIR>* . Следуйте указаниям, чтобы скачать и установить [vcpkg](https://github.com/Microsoft/vcpkg).
    
-   2. После установки vcpkg выполните следующую команду в командной строке PowerShell, чтобы установить пакет OpenSSL для Windows x64. Обычно установка занимает около пяти минут.
+   2. Once vcpkg is installed, run the following command from a powershell prompt to install the OpenSSL package for Windows x64. Обычно установка занимает около пяти минут.
 
       ```powershell
       .\vcpkg install openssl:x64-windows
@@ -81,7 +80,7 @@ ms.locfileid: "71266098"
 
 ### <a name="prepare-creation-scripts"></a>Подготовка скриптов создания
 
-Репозиторий Azure IoT Edge Git содержит скрипты, которые можно использовать для создания тестовых сертификатов. В этом разделе вы создаете точную копию репозитория IoT Edge и выполняете скрипты. 
+The Azure IoT Edge git repository contains scripts that you can use to generate test certificates. In this section, you clone the IoT Edge repo and execute the scripts. 
 
 1. Откройте окно PowerShell с правами администратора. 
 
@@ -91,16 +90,16 @@ ms.locfileid: "71266098"
    git clone https://github.com/Azure/iotedge.git
    ```
 
-3. Перейдите в каталог, в котором вы планируете работать. В этой статье мы назовем этот каталог  *\<вркдир >* . Все сертификаты и ключи будут созданы в этом рабочем каталоге.
+3. Перейдите в каталог, в котором вы планируете работать. Throughout this article, we'll call this directory *\<WRKDIR>* . All certificates and keys will be created in this working directory.
 
-4. Скопируйте файлы конфигурации и скриптов из клонированного репозитория в рабочий каталог. 
+4. Copy the configuration and script files from the cloned repo into your working directory. 
 
    ```powershell
    copy <path>\iotedge\tools\CACertificates\*.cnf .
    copy <path>\iotedge\tools\CACertificates\ca-certs.ps1 .
    ```
 
-   Если репозиторий был скачан в виде ZIP-файла, имя папки будет `iotedge-master` равно, а остальная часть пути будет одинаковой. 
+   If you downloaded the repo as a ZIP, then the folder name is `iotedge-master` and the rest of the path is the same. 
 <!--
 5. Set environment variable OPENSSL_CONF to use the openssl_root_ca.cnf configuration file.
 
@@ -114,15 +113,15 @@ ms.locfileid: "71266098"
    Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
    ```
 
-7. Перенесите функции, используемые скриптами, в глобальное пространство имен PowerShell.
+7. Bring the functions used by the scripts into PowerShell's global namespace.
    
    ```powershell
    . .\ca-certs.ps1
    ```
 
-   В окне PowerShell отобразится предупреждение о том, что сертификаты, созданные этим сценарием, предназначены только для тестирования и не должны использоваться в рабочих сценариях.
+   The PowerShell window will display a warning that the certificates generated by this script are only for testing purposes, and should not be used in production scenarios.
 
-8. Убедитесь, что OpenSSL установлен правильно, и убедитесь в отсутствии конфликтов имен с существующими сертификатами. При возникновении проблем сценарий должен описывать способы их устранения.
+8. Verify that OpenSSL has been installed correctly and make sure that there won't be name collisions with existing certificates. При возникновении проблем сценарий должен описывать способы их устранения.
 
    ```powershell
    Test-CACertsPrerequisites
@@ -132,39 +131,39 @@ ms.locfileid: "71266098"
 
 В этом разделе мы создадим три сертификата, а затем соединим их в цепочку. Размещение сертификатов в файле цепочки позволяет легко установить их на устройстве шлюза IoT Edge и любых подчиненных устройствах.  
 
-1. Создайте сертификат корневого ЦС и подпишите один промежуточный сертификат. Все сертификаты помещаются в рабочий каталог.
+1. Create the root CA certificate and have it sign one intermediate certificate. The certificates are all placed in your working directory.
 
    ```powershell
    New-CACertsCertChain rsa
    ```
 
-   Эта команда сценария создает несколько файлов сертификатов и ключей, но мы будем ссылаться на них в частности, далее в этой статье:
+   This script command creates several certificate and key files, but we're going to refer to one in particular later in this article:
    * `<WRKDIR>\certs\azure-iot-test-only.root.ca.cert.pem`
 
-2. Создайте сертификат ЦС устройства IoT Edge и закрытый ключ с помощью следующей команды. Укажите имя сертификата ЦС, например **меджедевицека**. Имя используется для именования файлов и во время создания сертификата. 
+2. Create the IoT Edge device CA certificate and private key with the following command. Provide a name for the CA certificate, for example **MyEdgeDeviceCA**. The name is used to name the files and during certificate generation. 
 
    ```powershell
    New-CACertsEdgeDeviceCA "MyEdgeDeviceCA"
    ```
 
-   Эта команда скрипта создает несколько файлов сертификатов и ключей, включая два, которые мы будем называть далее в этой статье:
+   This script command creates several certificate and key files, including two that we're going to refer to later in this article:
    * `<WRKDIR>\certs\iot-edge-device-ca-MyEdgeDeviceCA-full-chain.cert.pem`
    * `<WRKDIR>\private\iot-edge-device-ca-MyEdgeDeviceCA.key.pem`
 
    >[!TIP]
-   >Если указать имя, отличное от **меджедевицека**, то сертификаты и ключи, созданные этой командой, будут отражать это имя. 
+   >If you provide a name other than **MyEdgeDeviceCA**, then the certificates and keys created by this command will reflect that name. 
 
-Теперь, когда у вас есть сертификаты, перейдите к [установке сертификатов на шлюзе](#install-certificates-on-the-gateway) .
+Now that you have the certificates, skip ahead to [Install certificates on the gateway](#install-certificates-on-the-gateway)
 
 ## <a name="generate-certificates-with-linux"></a>Создание сертификатов с помощью Linux
 
-Выполните действия, описанные в этом разделе, чтобы создать тестовые сертификаты в Linux. Вы можете использовать компьютер Linux для создания сертификатов, а затем скопировать их на любое IoT Edge устройство, работающее в любой поддерживаемой операционной системе. 
+Use the steps in this section to generate test certificates on Linux. You can use a Linux machine to generate the certificates, and then copy them over to any IoT Edge device running on any supported operating system. 
 
 Сертификаты, создаваемые в этом разделе, предназначены только для тестирования. 
 
 ### <a name="prepare-creation-scripts"></a>Подготовка скриптов создания
 
-Репозиторий Azure IoT Edge Git содержит скрипты, которые можно использовать для создания тестовых сертификатов. В этом разделе вы создаете точную копию репозитория IoT Edge и выполняете скрипты. 
+The Azure IoT Edge git repository contains scripts that you can use to generate test certificates. In this section, you clone the IoT Edge repo and execute the scripts. 
 
 1. Клонируйте репозиторий Git, который содержит скрипты для создания сертификатов, не являющихся рабочими. Эти скрипты помогут вам создать необходимые сертификаты для настройки прозрачного шлюза. 
 
@@ -172,9 +171,9 @@ ms.locfileid: "71266098"
    git clone https://github.com/Azure/iotedge.git
    ```
 
-2. Перейдите в каталог, в котором вы планируете работать. Мы будем называть этот каталог по всей статье как  *\<вркдир >* . Все файлы сертификатов и ключей будут созданы в этом каталоге.
+2. Перейдите в каталог, в котором вы планируете работать. We'll refer to this directory throughout the article as *\<WRKDIR>* . All certificate and key files will be created in this directory.
   
-3. Скопируйте файлы конфигурации и скрипты из клонированного IoT Edge репозитория в рабочий каталог.
+3. Copy the config and script files from the cloned IoT Edge repo into your working directory.
 
    ```bash
    cp <path>/iotedge/tools/CACertificates/*.cnf .
@@ -193,29 +192,29 @@ ms.locfileid: "71266098"
 
 В этом разделе мы создадим три сертификата, а затем соединим их в цепочку. Размещение сертификатов в файле цепочки позволяет легко установить их на устройстве шлюза IoT Edge и любых подчиненных устройствах.  
 
-1. Создайте сертификат корневого ЦС и один промежуточный сертификат. Эти сертификаты помещаются в каталог *\<WRKDIR>* .
+1. Create the root CA certificate and one intermediate certificate. Эти сертификаты помещаются в каталог *\<WRKDIR>* .
 
-   Если вы уже создали корневые и промежуточные сертификаты в этом рабочем каталоге, не выполняйте этот сценарий еще раз. При повторном запуске этого скрипта существующие сертификаты будут перезаписаны. Вместо этого перейдите к следующему шагу. 
+   If you've already created root and intermediate certificates in this working directory, don't run this script again. Rerunning this script will overwrite the existing certificates. Instead, proceed to the next step. 
 
    ```bash
    ./certGen.sh create_root_and_intermediate
    ```
 
-   Скрипт создает несколько сертификатов и ключей. Запишите его, который мы будем использовать в следующем разделе:
+   The script creates several certificates and keys. Make note of one, which we'll refer to in the next section:
    * `<WRKDIR>/certs/azure-iot-test-only.root.ca.cert.pem`
 
-2. Создайте сертификат ЦС устройства IoT Edge и закрытый ключ с помощью следующей команды. Укажите имя сертификата ЦС, например **меджедевицека**. Имя используется для именования файлов и во время создания сертификата. 
+2. Create the IoT Edge device CA certificate and private key with the following command. Provide a name for the CA certificate, for example **MyEdgeDeviceCA**. The name is used to name the files and during certificate generation. 
 
    ```bash
    ./certGen.sh create_edge_device_ca_certificate "MyEdgeDeviceCA"
    ```
 
-   Скрипт создает несколько сертификатов и ключей. Обратите внимание на два, которые мы будем называть в следующем разделе: 
+   The script creates several certificates and keys. Make note of two, which we'll refer to in the next section: 
    * `<WRKDIR>/certs/iot-edge-device-ca-MyEdgeDeviceCA-full-chain.cert.pem`
    * `<WRKDIR>/private/iot-edge-device-ca-MyEdgeDeviceCA.key.pem`
 
    >[!TIP]
-   >Если указать имя, отличное от **меджедевицека**, то сертификаты и ключи, созданные этой командой, будут отражать это имя. 
+   >If you provide a name other than **MyEdgeDeviceCA**, then the certificates and keys created by this command will reflect that name. 
 
 ## <a name="install-certificates-on-the-gateway"></a>Установка сертификатов в шлюзе
 
@@ -225,16 +224,16 @@ ms.locfileid: "71266098"
 
    * Сертификат ЦС устройства — `<WRKDIR>\certs\iot-edge-device-ca-MyEdgeDeviceCA-full-chain.cert.pem`.
    * Закрытый ключ ЦС устройства — `<WRKDIR>\private\iot-edge-device-ca-MyEdgeDeviceCA.key.pem`.
-   * Корневой ЦС —`<WRKDIR>\certs\azure-iot-test-only.root.ca.cert.pem`
+   * Root CA - `<WRKDIR>\certs\azure-iot-test-only.root.ca.cert.pem`
 
-   Для перемещения файлов сертификатов можно использовать службу, такую как [Azure Key Vault](https://docs.microsoft.com/azure/key-vault) , или функцию, например [протокол безопасного копирования](https://www.ssh.com/ssh/scp/) .  Если сертификаты созданы на самом устройстве IoT Edge, этот шаг можно пропустить и использовать путь к рабочему каталогу.
+   You can use a service like [Azure Key Vault](https://docs.microsoft.com/azure/key-vault) or a function like [Secure copy protocol](https://www.ssh.com/ssh/scp/) to move the certificate files.  If you generated the certificates on the IoT Edge device itself, you can skip this step and use the path to the working directory.
 
 2. Откройте файл конфигурации управляющей программы безопасности IoT Edge. 
 
    * Windows: `C:\ProgramData\iotedge\config.yaml`
    * Linux: `/etc/iotedge/config.yaml`
 
-3. Задайте для свойств **сертификата** в файле config. YAML полный путь к сертификату и файлам ключей на устройстве IOT Edge. `#` Удалите символ перед свойствами сертификата, чтобы раскомментировать четыре строки. Помните, что отступы в YAML — это два пробела.
+3. Set the **certificate** properties in the config.yaml file to the full path to the certificate and key files on the IoT Edge device. Remove the `#` character before the certificate properties to uncomment the four lines. Remember that indents in yaml are two spaces.
 
    * Windows:
 
@@ -253,13 +252,13 @@ ms.locfileid: "71266098"
         trusted_ca_certs: "<CERTDIR>/certs/azure-iot-test-only.root.ca.cert.pem"
       ```
 
-4. На устройствах Linux убедитесь, что у пользователя **iotedge** есть разрешения на чтение каталога, в котором хранятся сертификаты. 
+4. On Linux devices, make sure that the user **iotedge** has read permissions for the directory holding the certificates. 
 
 ## <a name="deploy-edgehub-to-the-gateway"></a>Развертывание модуля EdgeHub в шлюзе
 
-При первой установке IoT Edge на устройстве автоматически запускается только один системный модуль: агент IoT Edge. Для работы устройства в качестве шлюза потребуются оба системных модуля. Если вы еще не развернули модули на устройстве шлюза, создайте начальное развертывание для устройства, чтобы запустить второй системный модуль, концентратор IoT Edge. Развертывание будет пустым, так как в мастере не будут добавляться модули, но это позволит убедиться в том, что оба системных модуля работают. 
+When you first install IoT Edge on a device, only one system module starts automatically: the IoT Edge agent. Для работы устройства в качестве шлюза потребуются оба системных модуля. If you haven't deployed any modules to your gateway device before, create an initial deployment for your device to start the second system module, the IoT Edge hub. The deployment will look empty because you don't add any modules in the wizard, but it will make sure that both system modules are running. 
 
-Проверить, какие модули выполняются на устройстве, можно с помощью команды `iotedge list`. Если список возвращает только модуль **edgeAgent** без **edgeHub**, выполните следующие действия.
+Проверить, какие модули выполняются на устройстве, можно с помощью команды `iotedge list`. If the list only returns the module **edgeAgent** without **edgeHub**, use the following steps:
 
 1. Найдите нужный Центр Интернета вещей на портале Azure.
 
@@ -281,24 +280,24 @@ ms.locfileid: "71266098"
 
 6. На странице **Review template** (Проверка шаблона) щелкните **Отправить**.
 
-## <a name="open-ports-on-gateway-device"></a>Открытие портов на устройстве шлюза
+## <a name="open-ports-on-gateway-device"></a>Open ports on gateway device
 
-Для стандартных устройств IoT Edge не требуется выполнять какие-либо входящие подключения, так как все связи с центром Интернета вещей выполняются через исходящие подключения. Устройства шлюза отличаются, так как они должны принимать сообщения со своих нижестоящих устройств. Если брандмауэр находится между подчиненными устройствами и устройством шлюза, связь также должна быть возможна через брандмауэр.
+Standard IoT Edge devices don't need any inbound connectivity to function, because all communication with IoT Hub is done through outbound connections. Gateway devices are different because they need to receive messages from their downstream devices. If a firewall is between the downstream devices and the gateway device, then communication needs to be possible through the firewall as well.
 
-Чтобы сценарий шлюза работал, по крайней мере один из поддерживаемых протоколов концентратора IoT Edge должен быть открыт для входящего трафика от подчиненных устройств. Поддерживаемые протоколы: MQTT, AMQP и HTTPS. 
+For a gateway scenario to work, at least one of the IoT Edge hub's supported protocols must be open for inbound traffic from downstream devices. The supported protocols are MQTT, AMQP, and HTTPS. 
 
-| Port | Protocol |
+| Port | Протокол |
 | ---- | -------- |
-| 8883 | MQTT |
-| 5671 | AMQP |
-| 443 | HTTPS <br> MQTT + WS <br> AMQP + WS | 
+| 8883 | MQTT; |
+| 5671 | AMQP; |
+| 443 | HTTPS <br> MQTT+WS <br> AMQP+WS | 
 
 ## <a name="route-messages-from-downstream-devices"></a>Маршрутизация сообщений с подчиненных устройств
-Среда выполнения IoT Edge может маршрутизировать сообщения, отправляемые с подчиненных устройств. Например, сообщения, отправляемые модулями. Эта функция позволяет выполнять аналитику в модуле, работающем в шлюзе, перед отправкой данных в облако. 
+Среда выполнения IoT Edge может маршрутизировать сообщения, отправляемые с подчиненных устройств. Например, сообщения, отправляемые модулями. This feature allows you to perform analytics in a module running on the gateway before sending any data to the cloud. 
 
 В настоящее время маршрутизация сообщений, отправляемых подчиненными устройствами, заключается в дифференцировании их от сообщений, отправляемых модулями. Все сообщения, отправляемые модулями, в отличие от сообщений, отправляемых подчиненными устройствами, содержат системное свойство с именем **connectionModuleId**. Вы можете использовать предложение маршрута WHERE, чтобы исключить любые сообщения, содержащие это системное свойство. 
 
-Ниже приведен пример маршрута, который отправляет сообщения с любого подчиненного устройства в модуль с именем `ai_insights`, а затем из `ai_insights` в центр Интернета вещей.
+The below route is an example that would send messages from any downstream device to a module named `ai_insights`, and then from `ai_insights` to IoT Hub.
 
 ```json
 {
@@ -312,14 +311,14 @@ ms.locfileid: "71266098"
 Дополнительные сведения о маршрутизации сообщений см. в разделе [Объявление маршрутов](./module-composition.md#declare-routes).
 
 
-## <a name="enable-extended-offline-operation"></a>Включить расширенную автономную операцию
+## <a name="enable-extended-offline-operation"></a>Enable extended offline operation
 
-Начиная с выпуска IoT Edge среды выполнения [версии 1.0.4](https://github.com/Azure/azure-iotedge/releases/tag/1.0.4) , устройство шлюза и подчиненные устройства, подключающиеся к нему, могут быть настроены для расширенной работы в автономном режиме. 
+Starting with the [v1.0.4 release](https://github.com/Azure/azure-iotedge/releases/tag/1.0.4) of the IoT Edge runtime, the gateway device and downstream devices connecting to it can be configured for extended offline operation. 
 
-Благодаря этой возможности локальные модули или подчиненные устройства могут повторно пройти проверку подлинности на IoT Edge устройстве по мере необходимости и взаимодействовать друг с другом, используя сообщения и методы, даже если они отключены от центра Интернета вещей. Дополнительные сведения см. в разделе [Сведения о расширенных возможностях автономной работы устройств, модулей и дочерних устройств IoT Edge](offline-capabilities.md).
+With this capability, local modules or downstream devices can re-authenticate with the IoT Edge device as needed and communicate with each other using messages and methods even when disconnected from the IoT hub. Дополнительные сведения см. в разделе [Сведения о расширенных возможностях автономной работы устройств, модулей и дочерних устройств IoT Edge](offline-capabilities.md).
 
-Чтобы включить расширенные возможности автономного режима, необходимо установить связь "родители-потомки" между устройством шлюза IoT Edge и подчиненными устройствами, которые будут подключаться к нему. Эти действия более подробно описаны в статье [Проверка подлинности подчиненного устройства в центре Интернета вещей Azure](how-to-authenticate-downstream-device.md).
+To enable extended offline capabilities, you establish a parent-child relationship between an IoT Edge gateway device and downstream devices that will connect to it. Those steps are explained in more detail in [Authenticate a downstream device to Azure IoT Hub](how-to-authenticate-downstream-device.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Теперь, когда у вас есть устройство IoT Edge, работающее в качестве прозрачного шлюза, необходимо настроить подчиненные устройства так, чтобы они доверяли шлюзу и отправляли ему сообщения. Продолжите [проверку подлинности подчиненного устройства в центре Интернета вещей Azure](how-to-authenticate-downstream-device.md) , чтобы выполнить следующие действия в разделе Настройка сценария прозрачного шлюза. 
+Теперь, когда у вас есть устройство IoT Edge, работающее в качестве прозрачного шлюза, необходимо настроить подчиненные устройства так, чтобы они доверяли шлюзу и отправляли ему сообщения. Continue on to [Authenticate a downstream device to Azure IoT Hub](how-to-authenticate-downstream-device.md) for the next steps in setting up your transparent gateway scenario. 

@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
-ms.openlocfilehash: 55a9cbcfdb9766c6adc6d10f975fa4d074ec3aaf
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: d6e7c04cbd5a7f1ed509b27cf87ac3f692c28d9f
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74011664"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74454468"
 ---
 # <a name="how-to-authorize-developer-accounts-by-using-azure-active-directory-b2c-in-azure-api-management"></a>Как авторизовать учетные записи разработчиков с помощью Azure Active Directory B2C в службе управления API Azure
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Краткое описание
 
 Azure Active Directory B2C — это облачное решение, позволяющее управлять удостоверениями в веб-приложениях и мобильных приложениях, с которыми взаимодействуют клиенты. Его можно использовать для управления доступом к порталу разработчика. В этом руководстве объясняется, как настроить службу управления API для интеграции с Azure Active Directory B2C. Сведения о предоставлении доступа к порталу разработчика с помощью классической службы Azure Active Directory см. в статье [Авторизация учетных записей разработчиков с помощью Azure Active Directory в управлении API Azure].
 
@@ -35,9 +35,9 @@ Azure Active Directory B2C — это облачное решение, позв
 1. Чтобы приступить к работе, перейдите на [портал Azure](https://portal.azure.com) и найдите свой экземпляр управления API.
 
    > [!NOTE]
-   > Если вы еще не создали экземпляр службы управления API, ознакомьтесь со статьей [Создание экземпляра службы управления API][Create an API Management service instance] в [руководстве Приступая к работе с управлением API Azure][Get started with Azure API Management].
+   > If you haven't yet created an API Management service instance, see [Create an API Management service instance][Create an API Management service instance] in the [Get started with Azure API Management tutorial][Get started with Azure API Management].
 
-2. В разделе **удостоверения**. В верхней части меню щелкните **+Добавить**.
+2. Under **Identities**. В верхней части меню щелкните **+Добавить**.
 
    Справа отобразится область **Добавление поставщика удостоверений**. Выберите **Azure Active Directory B2C**.
     
@@ -75,9 +75,9 @@ Azure Active Directory B2C — это облачное решение, позв
 
 11. Вернитесь на панель **Добавление поставщика удостоверений** управления API и вставьте ключ в текстовое поле **секрет клиента**.
     
-12. Укажите доменное имя клиента Azure Active Directory B2C в **клиенте SignIn**.
+12. Specify the domain name of the Azure Active Directory B2C tenant in **Signin tenant**.
 
-13. Поле " **центр** " позволяет управлять используемым URL-адресом входа Azure AD B2C. Задайте значение **< your_b2c_tenant_name >. b2clogin. com**.
+13. The **Authority** field let you control the Azure AD B2C login URL to use. Set the value to **<your_b2c_tenant_name>.b2clogin.com**.
 
 14. Из политик клиента B2C укажите **политику регистрации** и **политику входа**. Дополнительно можно также указать **политику редактирования профиля** и **политику сброса пароля**.
 
@@ -85,15 +85,18 @@ Azure Active Directory B2C — это облачное решение, позв
 
     После сохранения изменений разработчики смогут создавать новые учетные записи и входить на портал разработчика с помощью Azure Active Directory B2C.
 
-## <a name="developer-portal---add-azure-ad-b2c-account-authentication"></a>Портал разработчика. Добавление проверки подлинности учетной записи Azure AD B2C
+## <a name="developer-portal---add-azure-ad-b2c-account-authentication"></a>Developer portal - add Azure AD B2C account authentication
 
-На портале разработчика для мини-приложения " **кнопки OAuth** " можно войти с помощью AAD B2C. Мини-приложение уже включено на странице входа в содержимое портала разработчика по умолчанию.
+In the developer portal, sign-in with AAD B2C is possible with the **OAuth buttons** widget. The widget is already included on the sign-in page of the default developer portal content.
 
-![Мини-приложение кнопок AAD](./media/api-management-howto-aad/portal-oauth-widget.png)
+![AAD buttons widget](./media/api-management-howto-aad/portal-oauth-widget.png)
 
-Несмотря на то что новая учетная запись будет создана автоматически при входе нового пользователя с AAD B2C, вы можете добавить это же мини-приложение на страницу регистрации.
+Although a new account will be automatically created whenever a new user signs in with AAD B2C, you may consider adding the same widget to the sign-up page.
 
-## <a name="legacy-developer-portal---how-to-sign-up-with-azure-ad-b2c"></a>Устаревший портал разработчика. Регистрация с помощью Azure AD B2C
+> [!IMPORTANT]
+> You need to [republish the portal](api-management-howto-developer-portal-customize.md#publish) for the AAD changes to take effect.
+
+## <a name="legacy-developer-portal---how-to-sign-up-with-azure-ad-b2c"></a>Legacy developer portal - how to sign up with Azure AD B2C
 
 [!INCLUDE [api-management-portal-legacy.md](../../includes/api-management-portal-legacy.md)]
 
@@ -110,13 +113,13 @@ Azure Active Directory B2C — это облачное решение, позв
    > [!NOTE]
    > Если Azure Active Directory B2C является единственным активным параметром на вкладке **Удостоверения** на портале издателя, вы будете сразу перенаправлены к политике регистрации.
 
-   ![Developer portal][api-management-howto-aad-b2c-dev-portal-b2c-options]
+   ![Портал разработчика][api-management-howto-aad-b2c-dev-portal-b2c-options]
 
    После завершения регистрации вы будете перенаправлены обратно на портал разработчика. Теперь вы вошли на портал разработчика вашего экземпляра службы управления API.
 
     ![Регистрация завершена][api-management-registration-complete]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 *  [Azure Active Directory B2C: регистрация и вход пользователей в приложения]
 *  [Azure Active Directory B2C: расширяемая инфраструктура политик]

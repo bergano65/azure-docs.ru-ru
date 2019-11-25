@@ -1,42 +1,37 @@
 ---
-title: Общие сведения о задачах реестра контейнеров Azure
-description: Общие сведения о задачах записи контроля доступа — наборе функций в реестре контейнеров Azure, который обеспечивает безопасную автоматическую сборку, управление и исправление образов контейнеров в облаке.
-services: container-registry
-author: dlepow
-manager: gwallace
-ms.service: container-registry
+title: Обзор Задач ACR
+description: An introduction to ACR Tasks, a suite of features in Azure Container Registry that provides secure, automated container image build, management, and patching in the cloud.
 ms.topic: article
 ms.date: 09/05/2019
-ms.author: danlep
-ms.openlocfilehash: 45fdd68273ed2cd5cfccf37765935ce9f7bfdc13
-ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
+ms.openlocfilehash: b4710591dfd78f0633d5071c78d80e300349f498
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73931474"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74456154"
 ---
-# <a name="automate-container-image-builds-and-maintenance-with-acr-tasks"></a>Автоматизация сборки и обслуживание образов контейнеров с помощью задач контроля доступа
+# <a name="automate-container-image-builds-and-maintenance-with-acr-tasks"></a>Automate container image builds and maintenance with ACR Tasks
 
-Контейнеры предоставляют новые уровни виртуализации, изолируя зависимости приложения и разработчиков от требований в отношении инфраструктуры и эксплуатации. Тем не менее, остается необходимость решить, как управление виртуализацией приложений будет осуществляться в течение жизненного цикла контейнера.
+Контейнеры предоставляют новые уровни виртуализации, изолируя зависимости приложения и разработчиков от требований в отношении инфраструктуры и эксплуатации. What remains, however, is the need to address how this application virtualization is managed and patched over the container lifecycle.
 
 ## <a name="what-is-acr-tasks"></a>Что такое "Задачи ACR"?
 
-**Задачи ACR** — это набор компонентов в Реестре контейнеров Azure. Он обеспечивает облачное создание образов контейнеров для [платформ](#image-platforms) , включая Linux, Windows и ARM, а также может автоматизировать [исправление ОС и платформы](#automate-os-and-framework-patching) для контейнеров DOCKER. Задачи записи контроля доступа расширяют цикл разработки "внутренний цикл" до облака с сборками образа контейнера по требованию, но также включают автоматические сборки, активируемые обновлениями исходного кода, обновлениями базового образа контейнера или таймерами. Например, с помощью триггеров обновления базовых образов можно автоматизировать рабочий процесс исправления операционной системы и платформы приложений, сохранив защищенные среды и применяя принципы неизменяемых контейнеров.
+**Задачи ACR** — это набор компонентов в Реестре контейнеров Azure. It provides cloud-based container image building for [platforms](#image-platforms) including Linux, Windows, and ARM, and can automate [OS and framework patching](#automate-os-and-framework-patching) for your Docker containers. ACR Tasks not only extends your "inner-loop" development cycle to the cloud with on-demand container image builds, but also enables automated builds triggered by source code updates, updates to a container's base image, or timers. For example, with base image update triggers, you can automate your OS and application framework patching workflow, maintaining secure environments while adhering to the principles of immutable containers.
 
-## <a name="task-scenarios"></a>Сценарии задач
+## <a name="task-scenarios"></a>Task scenarios
 
-Задачи записи контроля доступа поддерживают несколько сценариев для создания и обслуживания образов контейнеров и других артефактов. Дополнительные сведения см. в следующих разделах этой статьи.
+ACR Tasks supports several scenarios to build and maintain container images and other artifacts. See the following sections in this article for details.
 
-* **[Быстрая задача](#quick-task)** — сборка и отправка одного образа контейнера в реестр контейнеров по требованию в Azure без необходимости установки локальной подсистемы DOCKER. Выполняйте `docker build` и `docker push` в облаке.
-* **Автоматически активируемые задачи** . Включение одного или нескольких *триггеров* для создания образа:
-  * **[Триггер при обновлении исходного кода](#trigger-task-on-source-code-update)** 
-  * **[Триггер при обновлении базового образа](#automate-os-and-framework-patching)** 
-  * **[Активация по расписанию](#schedule-a-task)** 
-* **[Многоэтапная задача](#multi-step-tasks)** . Расширьте единое средство сборки и принудительной отправки задач записи контроля доступа с многошаговыми рабочими процессами, основанными на нескольких контейнерах. 
+* **[Quick task](#quick-task)** - Build and push a single container image to a container registry on-demand, in Azure, without needing a local Docker Engine installation. Выполняйте `docker build` и `docker push` в облаке.
+* **Automatically triggered tasks** - Enable one or more *triggers* to build an image:
+  * **[Trigger on source code update](#trigger-task-on-source-code-update)** 
+  * **[Trigger on base image update](#automate-os-and-framework-patching)** 
+  * **[Trigger on a schedule](#schedule-a-task)** 
+* **[Multi-step task](#multi-step-tasks)** - Extend the single image build-and-push capability of ACR Tasks with multi-step, multi-container-based workflows. 
 
-Каждая задача записи контроля доступа имеет связанный [контекст исходного кода](#context-locations) — расположение набора исходных файлов, используемых для построения образа контейнера или другого артефакта. Примеры контекстов включают репозиторий Git или локальную файловую систему.
+Each ACR Task has an associated [source code context](#context-locations) - the location of a set of source files used to build a container image or other artifact. Example contexts include a Git repository or a local filesystem.
 
-Задачи также могут использовать преимущества [переменных запуска](container-registry-tasks-reference-yaml.md#run-variables), поэтому можно повторно использовать определения задач и стандартизировать теги для изображений и артефактов.
+Tasks can also take advantage of [run variables](container-registry-tasks-reference-yaml.md#run-variables), so you can reuse task definitions and standardize tags for images and artifacts.
 
 ## <a name="quick-task"></a>Быстрая задача
 
@@ -44,43 +39,43 @@ ms.locfileid: "73931474"
 
 Прежде чем зафиксировать первую строку кода, функция [Быстрая задача](container-registry-tutorial-quick-task.md) службы "Задачи ACR" может обеспечить интегрированный опыт разработки, разгружая сборки образов контейнера в Azure. С помощью быстрых задач можно проверить автоматические определения сборки и перехватывать потенциальные проблемы перед фиксацией кода.
 
-Используя привычный формат `docker build`, команда [AZ запись контроля][az-acr-build] доступа в Azure CLI принимает [контекст](#context-locations) (набор файлов для сборки), отправляет задачи записи контроля доступа и по умолчанию запрашивает созданный образ в реестр после завершения.
+Using the familiar `docker build` format, the [az acr build][az-acr-build] command in the Azure CLI takes a [context](#context-locations) (the set of files to build), sends it ACR Tasks and, by default, pushes the built image to its registry upon completion.
 
-Общие сведения см. в кратком руководстве по [созданию и запуску образа контейнера](container-registry-quickstart-task-cli.md) в реестре контейнеров Azure.  
+For an introduction, see the quickstart to [build and run a container image](container-registry-quickstart-task-cli.md) in Azure Container Registry.  
 
-Служба "Задачи ACR" разработана как примитив жизненного цикла контейнеров. К примеру, интегрируйте службу "Задачи ACR" в решение CI/CD. Выполняя команду [AZ login][az-login] с [субъектом-службой][az-login-service-principal], решение CI/CD может выдавать команды [AZ контроля][az-acr-build] доступа для запуска сборок образа.
+Служба "Задачи ACR" разработана как примитив жизненного цикла контейнеров. К примеру, интегрируйте службу "Задачи ACR" в решение CI/CD. By executing [az login][az-login] with a [service principal][az-login-service-principal], your CI/CD solution could then issue [az acr build][az-acr-build] commands to kick off image builds.
 
 Узнайте, как использовать быстрые задачи из первого руководства по Задачам ACR: [Руководство. Создание образов контейнера в облаке с помощью службы "Задачи Реестра контейнеров Azure"](container-registry-tutorial-quick-task.md).
 
 > [!TIP]
-> Если вы хотите создать и отправить образ непосредственно из исходного кода, без Dockerfile, реестр контейнеров Azure предоставляет команду [AZ Pack Build][az-acr-pack-build] (Предварительная версия). Это средство создает и отправляет образ из исходного кода приложения с помощью [собственного облачного буилдпаккс](https://buildpacks.io/).
+> If you want to build and push an image directly from source code, without a Dockerfile, Azure Container Registry provides the [az acr pack build][az-acr-pack-build] command (preview). This tool builds and pushes an image from application source code using [Cloud Native Buildpacks](https://buildpacks.io/).
 
-## <a name="trigger-task-on-source-code-update"></a>Активировать задачу при обновлении исходного кода
+## <a name="trigger-task-on-source-code-update"></a>Trigger task on source code update
 
-Активация сборки образа контейнера или многоэтапной задачи при фиксации кода или создании или обновлении запроса на включение внесенных изменений в репозиторий Git в GitHub или Azure DevOps. Например, настройте задачу сборки с помощью команды Azure CLI AZ запись [контроля доступа Create][az-acr-task-create] , указав репозиторий Git и, при необходимости, ветвь и Dockerfile. Когда команда обновляет код в репозитории, веб-перехватчик, созданный задачами записи контроля доступа, запускает сборку образа контейнера, определенного в репозитории. 
+Trigger a container image build or multi-step task when code is committed, or a pull request is made or updated, to a Git repository in GitHub or Azure DevOps. For example, configure a build task with the Azure CLI command [az acr task create][az-acr-task-create] by specifying a Git repository and optionally a branch and Dockerfile. When your team updates code in the repository, an ACR Tasks-created webhook triggers a build of the container image defined in the repo. 
 
-Задачи записи контроля доступа поддерживают следующие триггеры при настройке репозитория Git в качестве контекста задачи:
+ACR Tasks supports the following triggers when you set a Git repo as the task's context:
 
-| Триггер | Включено по умолчанию |
+| Триггер | Enabled by default |
 | ------- | ------------------ |
-| Фиксация | Yes |
-| Запрос на вытягивание | Нет |
+| Фиксация | ДА |
+| Pull request | Нет |
 
-Чтобы настроить триггер, укажите для задачи личный маркер доступа (PAT), чтобы задать веб-перехватчик в репозитории GitHub или Azure DevOps.
+To configure the trigger, you provide the task a personal access token (PAT) to set the webhook in the GitHub or Azure DevOps repo.
 
 Узнайте, как активировать сборку при фиксации исходного кода из второго руководства по службе "Задачи ACR": [Руководство. Автоматизация сборок образов контейнера с помощью службы "Задачи Реестра контейнеров Azure"](container-registry-tutorial-build-task.md).
 
 ## <a name="automate-os-and-framework-patching"></a>Автоматизация установки исправлений ОС и платформы
 
-Возможность службы "Задачи ACR" значительно улучшать рабочий процесс сборки контейнера обуславливается ее способностью обнаруживать обновление базового образа. Когда обновленный базовый образ помещается в реестр или базовый образ обновляется в общедоступном репозитории, например в центре DOCKER, задачи записи контроля доступа могут автоматически создавать образы приложений на основе этого приложения.
+Возможность службы "Задачи ACR" значительно улучшать рабочий процесс сборки контейнера обуславливается ее способностью обнаруживать обновление базового образа. When the updated base image is pushed to your registry, or a base image is updated in a public repo such as in Docker Hub, ACR Tasks can automatically build any application images based on it.
 
-Образы контейнеров можно классифицировать на *базовые* образы и образы *приложения*. К базовым образам, как правило, относятся операционная система и платформы приложений, на основе которых создано приложение, а также другие настройки. Эти базовые образы обычно основаны на общедоступных вышестоящем образах, например [Alpine Linux][base-alpine], [Windows][base-windows], [.NET][base-dotnet]или [node. js][base-node]. Несколько образов вашего приложения могут совместно использовать общий базовый образ.
+Образы контейнеров можно классифицировать на *базовые* образы и образы *приложения*. К базовым образам, как правило, относятся операционная система и платформы приложений, на основе которых создано приложение, а также другие настройки. These base images are themselves typically based on public upstream images, for example: [Alpine Linux][base-alpine], [Windows][base-windows], [.NET][base-dotnet], or [Node.js][base-node]. Несколько образов вашего приложения могут совместно использовать общий базовый образ.
 
 Когда вышестоящая программа обслуживания обновляет образ ОС или платформу приложения, к примеру, путем внесения критического исправления системы безопасности ОС, необходимо также внести его и в базовые образы. Затем необходимо повторно выполнить сборку каждого образа приложения, чтобы внести эти вышестоящие исправления, внесенные в базовый образ.
 
 Так как при создании образа контейнера служба "Задачи ACR" динамически находит зависимости базовых образов, она может определить время обновления базового образа приложения. С помощью одной предварительно настроенной [задачи сборки](container-registry-tutorial-base-image-update.md#create-a-task) служба "Задачи ACR" **автоматически повторно выполняет сборку каждого образа приложения**. Благодаря такому автоматическому обнаружению и повторному выполнению сборок служба "Задачи ACR" экономит время и усилия, необходимые для того, чтобы вручную отслеживать и обновлять каждый образ приложения, ссылающийся на обновленный базовый образ.
 
-Для сборок изображений из Dockerfile задача записи контроля доступа отслеживает базовый образ обновления, когда базовый образ находится в одном из следующих расположений:
+For image builds from a Dockerfile, an ACR task tracks a base image update when the base image is in one of the following locations:
 
 * реестр контейнеров Azure, в котором выполняется задача;
 * другой реестр контейнеров Azure в том же регионе; 
@@ -88,25 +83,25 @@ ms.locfileid: "73931474"
 * общедоступный репозиторий в Реестре контейнеров Azure.
 
 > [!NOTE]
-> * Базовый триггер обновления образа включен по умолчанию в задаче записи контроля доступа. 
-> * Сейчас задачи записи контроля доступа отслеживают только обновления базовых образов для образов приложений (*сред выполнения*). Задачи записи контроля доступа не отписывают обновления базовых образов для промежуточных образов (*буилдтиме*), используемых в нескольких стадиях файлы dockerfile. 
+> * The base image update trigger is enabled by default in an ACR task. 
+> * Currently, ACR Tasks only tracks base image updates for application (*runtime*) images. ACR Tasks doesn't track base image updates for intermediate (*buildtime*) images used in multi-stage Dockerfiles. 
 
-Дополнительные сведения об исправлениях операционных систем и платформ см. в разделе Руководство по задачам контроля доступа, [Автоматизация сборки образа в базовом обновлении образа с помощью задач реестра контейнеров Azure](container-registry-tutorial-base-image-update.md).
+Learn more about OS and framework patching in the third ACR Tasks tutorial, [Automate image builds on base image update with Azure Container Registry Tasks](container-registry-tutorial-base-image-update.md).
 
 ## <a name="schedule-a-task"></a>Планирование задачи
 
-При необходимости Запланируйте задачу, настроив один или несколько *триггеров таймера* при создании или обновлении задачи. Планирование задачи полезно для выполнения рабочих нагрузок контейнера по определенному расписанию или для выполнения операций обслуживания или тестирования образов, которые регулярно помещаются в реестр. Дополнительные сведения см. [в разделе Запуск задачи записи контроля доступа по определенному расписанию](container-registry-tasks-scheduled.md).
+Optionally schedule a task by setting up one or more *timer triggers* when you create or update the task. Scheduling a task is useful for running container workloads on a defined schedule, or running maintenance operations or tests on images pushed regularly to your registry. For details, see [Run an ACR task on a defined schedule](container-registry-tasks-scheduled.md).
 
 ## <a name="multi-step-tasks"></a>Многошаговые задачи
 
-Многоэтапные задачи обеспечивают определение и выполнение задач на основе шага для создания, тестирования и исправления образов контейнеров в облаке. Шаги задач, определенные в [файле YAML](container-registry-tasks-reference-yaml.md) , указывают отдельные операции сборки и отправки для образов контейнеров или других артефактов. Они также могут определять выполнение одного или нескольких контейнеров, причем каждый шаг использует контейнер в качестве среды выполнения.
+Multi-step tasks provide step-based task definition and execution for building, testing, and patching container images in the cloud. Task steps defined in a [YAML file](container-registry-tasks-reference-yaml.md) specify individual build and push operations for container images or other artifacts. Они также могут определять выполнение одного или нескольких контейнеров, причем каждый шаг использует контейнер в качестве среды выполнения.
 
 Например, можно создать многошаговую задачу, которая автоматизирует следующие операции:
 
 1. Сборка образа веб-приложения.
 1. Выполнение контейнера веб-приложения.
 1. Сборка тестового образа веб-приложения.
-1. Запустите тестовый контейнер веб-приложения, который выполняет тесты для контейнера запущенного приложения.
+1. Run the web application test container, which performs tests against the running application container
 1. Если тесты проходят успешно, создайте пакет архива диаграмм Helm.
 1. Выполнение команды `helm upgrade` с использованием нового пакета архива диаграмм Helm.
 
@@ -114,41 +109,41 @@ ms.locfileid: "73931474"
 
 Дополнительные сведения о многошаговых задачах см. в статье [Выполнение многошаговых задач сборки, тестирования и исправления в службе "Задачи ACR"](container-registry-tasks-multi-step.md).
 
-## <a name="context-locations"></a>Расположения контекста
+## <a name="context-locations"></a>Context locations
 
 В следующей таблице приведено несколько примеров поддерживаемых расположений контекста для Задач ACR:
 
-| Расположение контекста | ОПИСАНИЕ | Пример |
+| Расположение контекста | Описание | Пример |
 | ---------------- | ----------- | ------- |
 | Локальная файловая система | Файлы в каталоге в локальной файловой системе. | `/home/user/projects/myapp` |
 | Главная ветвь GitHub | Файлы в главной ветви (или другой ветви по умолчанию) репозитория GitHub.  | `https://github.com/gituser/myapp-repo.git` |
 | Ветвь GitHub | Определенная ветвь репозитория GitHub.| `https://github.com/gituser/myapp-repo.git#mybranch` |
-| Вложенная папка GitHub | Файлы во вложенной папке в репозитории GitHub. В примере показано сочетание ветви и спецификации вложенных папок. | `https://github.com/gituser/myapp-repo.git#mybranch:myfolder` |
-| Вложенная папка DevOps для Azure | Файлы во вложенной папке репозитория Azure. В примере показано сочетание спецификации ветвей и вложенных папок. | `https://dev.azure.com/user/myproject/_git/myapp-repo#mybranch:myfolder` |
+| Вложенная папка GitHub | Файлы во вложенной папке в репозитории GitHub. Example shows combination of a branch and subfolder specification. | `https://github.com/gituser/myapp-repo.git#mybranch:myfolder` |
+| Azure DevOps subfolder | Files within a subfolder in an Azure repo. Example shows combination of branch and subfolder specification. | `https://dev.azure.com/user/myproject/_git/myapp-repo#mybranch:myfolder` |
 | Удаленный архив Tarball | Файлы в сжатом архиве на удаленном веб-сервере. | `http://remoteserver/myapp.tar.gz` |
 
-## <a name="image-platforms"></a>Платформы изображений
+## <a name="image-platforms"></a>Image platforms
 
-По умолчанию задачи записи контроля доступа строят образы для ОС Linux и архитектуры AMD64. Укажите тег `--platform`, чтобы создать образы Windows или образы Linux для других архитектур. Укажите операционную систему и, при необходимости, поддерживаемую архитектуру в формате ОС/архитектуры (например, `--platform Linux/arm`). Для архитектур ARM можно дополнительно указать вариант в формате OS/Architecture/Variant (например, `--platform Linux/arm64/v8`):
+By default, ACR Tasks builds images for the Linux OS and the amd64 architecture. Specify the `--platform` tag to build Windows images or Linux images for other architectures. Specify the OS and optionally a supported architecture in OS/architecture format (for example, `--platform Linux/arm`). For ARM architectures, optionally specify a variant in OS/architecture/variant format (for example, `--platform Linux/arm64/v8`):
 
 | ОС | Архитектура|
 | --- | ------- | 
-| Linux | AMD64<br/>активации<br/>arm64<br/>386 |
-| Windows | AMD64 |
+| Linux | amd64<br/>arm<br/>arm64<br/>386 |
+| Windows | amd64 |
 
-## <a name="view-task-logs"></a>Просмотр журналов задач
+## <a name="view-task-logs"></a>View task logs
 
-Каждое выполнение задачи создает выходные данные журнала, которые можно проверить, чтобы определить, успешно ли выполнялись шаги задачи. Если вы используете команду [AZ запись контроля](/cli/azure/acr#az-acr-build)доступа, AZ запись после [выполнения](/cli/azure/acr#az-acr-run)или [AZ контроля](/cli/azure/acr/task#az-acr-task-run) доступа для запуска задачи, выходные данные журнала для выполнения задачи передаются в консоль, а также сохраняются для последующего извлечения. Если задача запускается автоматически, например при фиксации исходного кода или обновлении базового образа, журналы задач сохраняются. Просмотрите журналы выполнения задачи в портал Azure или используйте команду [AZ контроля доступа к журналам задач](/cli/azure/acr/task#az-acr-task-logs) .
+Each task run generates log output that you can inspect to determine whether the task steps ran successfully. If you use the [az acr build](/cli/azure/acr#az-acr-build), [az acr run](/cli/azure/acr#az-acr-run), or [az acr task run](/cli/azure/acr/task#az-acr-task-run) command to trigger the task, log output for the task run is streamed to the console and also stored for later retrieval. When a task is automatically triggered, for example by a source code commit or a base image update, task logs are only stored. View the logs for a task run in the Azure portal, or use the [az acr task logs](/cli/azure/acr/task#az-acr-task-logs) command.
 
-По умолчанию данные и журналы для выполнения задач в реестре хранятся в течение 30 дней, а затем автоматически очищаются. Если требуется архивировать данные для выполнения задачи, включите архивацию с помощью команды [AZ контроля доступа Task Update-Run](/cli/azure/acr/task#az-acr-task-update-run) . В следующем примере включается Архивация для задачи Run *cf11* в реестре *myregistry*.
+By default, data and logs for task runs in a registry are retained for 30 days and then automatically purged. If you want to archive the data for a task run, enable archiving using the [az acr task update-run](/cli/azure/acr/task#az-acr-task-update-run) command. The following example enables archiving for the task run *cf11* in registry *myregistry*.
 
 ```azurecli
 az acr task update-run --registry myregistry --run-id cf11 --no-archive false
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Когда вы будете готовы автоматизировать сборку и обслуживание образов контейнеров в облаке, см. [серию руководств по задачам записи контроля](container-registry-tutorial-quick-task.md)доступа.
+When you're ready to automate container image builds and maintenance in the cloud, check out the [ACR Tasks tutorial series](container-registry-tutorial-quick-task.md).
 
 При необходимости установите [расширение Docker для Visual Studio Code](https://code.visualstudio.com/docs/azure/docker) и расширение [учетной записи Azure](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account) для работы со своими реестрами контейнеров Azure. Извлекайте и отправляйте образы в реестр контейнеров Azure или запускайте Задачи ACR в Visual Studio Code.
 

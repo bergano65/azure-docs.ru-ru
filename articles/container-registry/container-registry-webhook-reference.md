@@ -1,23 +1,18 @@
 ---
-title: Справочник по схеме веб-перехватчика реестра контейнеров Azure
-description: Запрос к веб-перехватчику со ссылкой на полезные данные JSON для реестра контейнеров Azure.
-services: container-registry
-author: dlepow
-manager: gwallace
-ms.service: container-registry
+title: Registry webhook schema reference
+description: Reference for JSON payload for webhook requests in an Azure container registry, which are generated when webhooks are enabled for artifact push or delete events
 ms.topic: article
 ms.date: 03/05/2019
-ms.author: danlep
-ms.openlocfilehash: fcdee2be92f2a3052e2ebbfaab3a2f9cb96e0125
-ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
+ms.openlocfilehash: 8354ef9db24d5825238155ac567d5d829f9b0d7f
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68311595"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74455973"
 ---
 # <a name="azure-container-registry-webhook-reference"></a>Справочник по веб-перехватчику реестра контейнеров Azure
 
-Вы можете [настроить веб-перехватчики](container-registry-webhook.md) для реестра контейнеров, которые создают события при выполнении с ними определенных действий. Например, включите веб-перехватчики, которые запускаются при отправке образа контейнера или Helm диаграммы в реестр или удалении. Когда срабатывает веб-перехватчик, реестр контейнеров Azure направляет на указанную вами конечную точку запрос HTTP или HTTPS с информацией об этом событии. Конечная точка может обработать данные от веб-перехватчика и выполнить необходимые действия.
+Вы можете [настроить веб-перехватчики](container-registry-webhook.md) для реестра контейнеров, которые создают события при выполнении с ними определенных действий. For example, enable webhooks that are triggered when a container image or Helm chart is pushed to a registry, or deleted. Когда срабатывает веб-перехватчик, реестр контейнеров Azure направляет на указанную вами конечную точку запрос HTTP или HTTPS с информацией об этом событии. Конечная точка может обработать данные от веб-перехватчика и выполнить необходимые действия.
 
 В следующих разделах подробно описана схема запросов веб-перехватчика, которые создаются для поддерживаемых событий. Раздел, посвященный событиям, описывает схему полезных данных схемы для типов событий, предоставляет пример полезных данных этого запроса и пару примеров команд, которые приводят к срабатыванию веб-перехватчика.
 
@@ -43,33 +38,33 @@ ms.locfileid: "68311595"
 
 |Элемент|Тип|Описание|
 |-------------|----------|-----------|
-|`id`|Строка,|Идентификатор события веб-перехватчика.|
-|`timestamp`|DateTime|Время создания события веб-перехватчика.|
-|`action`|Строка,|Действие, которое привело к созданию события веб-перехватчика.|
+|`id`|Строка|Идентификатор события веб-перехватчика.|
+|`timestamp`|Дата и время|Время создания события веб-перехватчика.|
+|`action`|Строка|Действие, которое привело к созданию события веб-перехватчика.|
 |[target](#target)|Сложный тип|Целевой объект для действия, которое привело к созданию события веб-перехватчика.|
 |[request](#request)|Сложный тип|Запрос, который создал событие веб-перехватчика.|
 
-### <a name="target"></a>мишень
+### <a name="target"></a>target
 
 |Элемент|Тип|Описание|
 |------------------|----------|-----------|
-|`mediaType`|Строка,|Тип MIME передаваемого объекта.|
+|`mediaType`|Строка|Тип MIME передаваемого объекта.|
 |`size`|Int32|Число байтов содержимого. Это значение совпадает со значением поля Length.|
-|`digest`|Строка,|Хэш-код содержимого, как определено в спецификации API HTTP версии 2 реестра.|
+|`digest`|Строка|Хэш-код содержимого, как определено в спецификации API HTTP версии 2 реестра.|
 |`length`|Int32|Число байтов содержимого. Это значение совпадает со значением поля Size.|
-|`repository`|Строка,|Имя репозитория.|
-|`tag`|Строка,|Имя тега образа.|
+|`repository`|Строка|Имя репозитория.|
+|`tag`|Строка|Имя тега образа.|
 
-### <a name="request"></a>получения
+### <a name="request"></a>request
 
 |Элемент|Тип|Описание|
 |------------------|----------|-----------|
-|`id`|Строка,|Идентификатор запроса, инициировавшего событие.|
-|`host`|Строка,|Доступное из внешней сети имя узла на экземпляре реестра, которое указано в заголовке host во входящих HTTP-запросах.|
-|`method`|Строка,|Метод запроса, который создал событие.|
-|`useragent`|Строка,|Заголовок user agent из запроса.|
+|`id`|Строка|Идентификатор запроса, инициировавшего событие.|
+|`host`|Строка|Доступное из внешней сети имя узла на экземпляре реестра, которое указано в заголовке host во входящих HTTP-запросах.|
+|`method`|Строка|Метод запроса, который создал событие.|
+|`useragent`|Строка|Заголовок user agent из запроса.|
 
-### <a name="payload-example-image-push-event"></a>Пример полезной нагрузки: событие Push-изображения
+### <a name="payload-example-image-push-event"></a>Payload example: image push event
 
 ```JSON
 {
@@ -93,38 +88,38 @@ ms.locfileid: "68311595"
 }
 ```
 
-Пример команды [DOCKER CLI](https://docs.docker.com/engine/reference/commandline/cli/) , запускающей веб-перехватчик **push-уведомлений** образа:
+Example [Docker CLI](https://docs.docker.com/engine/reference/commandline/cli/) command that triggers the image **push** event webhook:
 
 ```bash
 docker push myregistry.azurecr.io/hello-world:v1
 ```
 
-## <a name="chart-push-event"></a>Событие push-уведомления диаграммы
+## <a name="chart-push-event"></a>Chart push event
 
-Веб-перехватчик срабатывает при отправке диаграммы Helm в репозиторий.
+Webhook triggered when a Helm chart is pushed to a repository.
 
-### <a name="chart-push-event-payload"></a>Полезные данные события push-уведомлений диаграммы
+### <a name="chart-push-event-payload"></a>Chart push event payload
 
 |Элемент|Тип|Описание|
 |-------------|----------|-----------|
-|`id`|Строка,|Идентификатор события веб-перехватчика.|
-|`timestamp`|DateTime|Время создания события веб-перехватчика.|
-|`action`|Строка,|Действие, которое привело к созданию события веб-перехватчика.|
+|`id`|Строка|Идентификатор события веб-перехватчика.|
+|`timestamp`|Дата и время|Время создания события веб-перехватчика.|
+|`action`|Строка|Действие, которое привело к созданию события веб-перехватчика.|
 |[target](#helm_target)|Сложный тип|Целевой объект для действия, которое привело к созданию события веб-перехватчика.|
 
-### <a name="helm_target"></a>мишень
+### <a name="helm_target"></a>target
 
-|Элемент|Type|Описание|
+|Элемент|Тип|Описание|
 |------------------|----------|-----------|
-|`mediaType`|Строка,|Тип MIME передаваемого объекта.|
+|`mediaType`|Строка|Тип MIME передаваемого объекта.|
 |`size`|Int32|Число байтов содержимого.|
-|`digest`|Строка,|Хэш-код содержимого, как определено в спецификации API HTTP версии 2 реестра.|
-|`repository`|Строка,|Имя репозитория.|
-|`tag`|Строка,|Имя тега диаграммы.|
-|`name`|Строка,|Имя диаграммы.|
-|`version`|Строка,|Версия диаграммы.|
+|`digest`|Строка|Хэш-код содержимого, как определено в спецификации API HTTP версии 2 реестра.|
+|`repository`|Строка|Имя репозитория.|
+|`tag`|Строка|The chart tag name.|
+|`name`|Строка|The chart name.|
+|`version`|Строка|The chart version.|
 
-### <a name="payload-example-chart-push-event"></a>Пример полезных данных: событие push-уведомления диаграммы
+### <a name="payload-example-chart-push-event"></a>Payload example: chart push event
 
 ```JSON
 {
@@ -143,7 +138,7 @@ docker push myregistry.azurecr.io/hello-world:v1
 }
 ```
 
-Пример [Azure CLI](/cli/azure/acr) команды, запускающей веб-перехватчик события **chart_push** :
+Example [Azure CLI](/cli/azure/acr) command that triggers the **chart_push** event webhook:
 
 ```azurecli
 az acr helm push wordpress-5.4.0.tgz --name MyRegistry
@@ -151,15 +146,15 @@ az acr helm push wordpress-5.4.0.tgz --name MyRegistry
 
 ## <a name="delete-event"></a>Удаление события
 
-Веб-перехватчик срабатывает при удалении репозитория образов или манифеста. Событие не создается при удалении тега.
+Webhook triggered when an image repository or manifest is deleted. Событие не создается при удалении тега.
 
 ### <a name="delete-event-payload"></a>Полезные данные события Delete
 
 |Элемент|Тип|Описание|
 |-------------|----------|-----------|
-|`id`|Строка,|Идентификатор события веб-перехватчика.|
-|`timestamp`|DateTime|Время создания события веб-перехватчика.|
-|`action`|Строка,|Действие, которое привело к созданию события веб-перехватчика.|
+|`id`|Строка|Идентификатор события веб-перехватчика.|
+|`timestamp`|Дата и время|Время создания события веб-перехватчика.|
+|`action`|Строка|Действие, которое привело к созданию события веб-перехватчика.|
 |[target](#delete_target)|Сложный тип|Целевой объект для действия, которое привело к созданию события веб-перехватчика.|
 |[request](#delete_request)|Сложный тип|Запрос, который создал событие веб-перехватчика.|
 
@@ -167,20 +162,20 @@ az acr helm push wordpress-5.4.0.tgz --name MyRegistry
 
 |Элемент|Тип|Описание|
 |------------------|----------|-----------|
-|`mediaType`|Строка,|Тип MIME передаваемого объекта.|
-|`digest`|Строка,|Хэш-код содержимого, как определено в спецификации API HTTP версии 2 реестра.|
-|`repository`|Строка,|Имя репозитория.|
+|`mediaType`|Строка|Тип MIME передаваемого объекта.|
+|`digest`|Строка|Хэш-код содержимого, как определено в спецификации API HTTP версии 2 реестра.|
+|`repository`|Строка|Имя репозитория.|
 
 ### <a name="delete_request"></a> request
 
 |Элемент|Тип|Описание|
 |------------------|----------|-----------|
-|`id`|Строка,|Идентификатор запроса, инициировавшего событие.|
-|`host`|Строка,|Доступное из внешней сети имя узла на экземпляре реестра, которое указано в заголовке host во входящих HTTP-запросах.|
-|`method`|Строка,|Метод запроса, который создал событие.|
-|`useragent`|Строка,|Заголовок user agent из запроса.|
+|`id`|Строка|Идентификатор запроса, инициировавшего событие.|
+|`host`|Строка|Доступное из внешней сети имя узла на экземпляре реестра, которое указано в заголовке host во входящих HTTP-запросах.|
+|`method`|Строка|Метод запроса, который создал событие.|
+|`useragent`|Строка|Заголовок user agent из запроса.|
 
-### <a name="payload-example-image-delete-event"></a>Пример полезной нагрузки: событие удаления изображения
+### <a name="payload-example-image-delete-event"></a>Payload example: image delete event
 
 ```JSON
 {
@@ -211,32 +206,32 @@ az acr repository delete --name MyRegistry --repository MyRepository
 az acr repository delete --name MyRegistry --image MyRepository:MyTag
 ```
 
-## <a name="chart-delete-event"></a>Событие удаления диаграммы
+## <a name="chart-delete-event"></a>Chart delete event
 
-Веб-перехватчик срабатывает при удалении диаграммы или репозитория Helm. 
+Webhook triggered when a Helm chart or repository is deleted. 
 
-### <a name="chart-delete-event-payload"></a>Полезные данные события удаления диаграммы
+### <a name="chart-delete-event-payload"></a>Chart delete event payload
 
-|Элемент|Type|Описание|
+|Элемент|Тип|Описание|
 |-------------|----------|-----------|
-|`id`|Строка,|Идентификатор события веб-перехватчика.|
-|`timestamp`|DateTime|Время создания события веб-перехватчика.|
-|`action`|Строка,|Действие, которое привело к созданию события веб-перехватчика.|
+|`id`|Строка|Идентификатор события веб-перехватчика.|
+|`timestamp`|Дата и время|Время создания события веб-перехватчика.|
+|`action`|Строка|Действие, которое привело к созданию события веб-перехватчика.|
 |[target](#chart_delete_target)|Сложный тип|Целевой объект для действия, которое привело к созданию события веб-перехватчика.|
 
 ### <a name="chart_delete_target"></a> target
 
 |Элемент|Тип|Описание|
 |------------------|----------|-----------|
-|`mediaType`|Строка,|Тип MIME передаваемого объекта.|
+|`mediaType`|Строка|Тип MIME передаваемого объекта.|
 |`size`|Int32|Число байтов содержимого.|
-|`digest`|Строка,|Хэш-код содержимого, как определено в спецификации API HTTP версии 2 реестра.|
-|`repository`|Строка,|Имя репозитория.|
-|`tag`|Строка,|Имя тега диаграммы.|
-|`name`|Строка,|Имя диаграммы.|
-|`version`|Строка,|Версия диаграммы.|
+|`digest`|Строка|Хэш-код содержимого, как определено в спецификации API HTTP версии 2 реестра.|
+|`repository`|Строка|Имя репозитория.|
+|`tag`|Строка|The chart tag name.|
+|`name`|Строка|The chart name.|
+|`version`|Строка|The chart version.|
 
-### <a name="payload-example-chart-delete-event"></a>Пример полезных данных: событие удаления диаграммы
+### <a name="payload-example-chart-delete-event"></a>Payload example: chart delete event
 
 ```JSON
 {
@@ -255,12 +250,12 @@ az acr repository delete --name MyRegistry --image MyRepository:MyTag
 }
 ```
 
-Пример [Azure CLI](/cli/azure/acr) команды, запускающей веб-перехватчик события **chart_delete** :
+Example [Azure CLI](/cli/azure/acr) command that triggers the **chart_delete** event webhook:
 
 ```azurecli
 az acr helm delete wordpress --version 5.4.0 --name MyRegistry
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Использование веб-перехватчиков реестра контейнеров Azure](container-registry-webhook.md)

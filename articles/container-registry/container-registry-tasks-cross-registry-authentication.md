@@ -1,62 +1,58 @@
 ---
-title: Проверка подлинности между реестром из задачи реестра контейнеров Azure
-description: Настройка задачи реестра контейнеров Azure (задача контроля доступа) для доступа к другому частному реестру контейнеров Azure с помощью управляемого удостоверения для ресурсов Azure
-services: container-registry
-author: dlepow
-ms.service: container-registry
+title: Cross-registry authentication from ACR task
+description: Configure an Azure Container Registry Task (ACR Task) to access another private Azure container registry by using a managed identity for Azure Resources
 ms.topic: article
 ms.date: 07/12/2019
-ms.author: danlep
-ms.openlocfilehash: f2ffb42ce109f5e6f7186461f931b7f8da57ff32
-ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
+ms.openlocfilehash: 3dc4792f196ab7553f3167983ce34850669fa5bc
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73931513"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74456193"
 ---
-# <a name="cross-registry-authentication-in-an-acr-task-using-an-azure-managed-identity"></a>Проверка подлинности между реестром в задаче контроля доступа с помощью удостоверения, управляемого Azure 
+# <a name="cross-registry-authentication-in-an-acr-task-using-an-azure-managed-identity"></a>Cross-registry authentication in an ACR task using an Azure-managed identity 
 
-В [задаче контроля](container-registry-tasks-overview.md)доступа можно [Включить управляемое удостоверение для ресурсов Azure](container-registry-tasks-authentication-managed-identity.md). Эта задача может использовать удостоверение для доступа к другим ресурсам Azure без необходимости предоставлять учетные данные или управлять ими. 
+In an [ACR task](container-registry-tasks-overview.md), you can [enable a managed identity for Azure resources](container-registry-tasks-authentication-managed-identity.md). The task can use the identity to access other Azure resources, without needing to provide or manage credentials. 
 
-Из этой статьи вы узнаете, как включить управляемое удостоверение в задаче, которая извлекает образ из реестра, отличающегося от используемого для выполнения задачи.
+In this article, you learn how to enable a managed identity in a task that pulls an image from a registry different from the one used to run the task.
 
-Для создания ресурсов Azure в этой статье необходимо запустить Azure CLI версии 2.0.68 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli].
+To create the Azure resources, this article requires that you run the Azure CLI version 2.0.68 or later. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli].
 
 ## <a name="scenario-overview"></a>Обзор сценария
 
-В примере задачи извлекается базовый образ из другого реестра контейнеров Azure для создания и отправки образа приложения. Чтобы извлечь базовый образ, необходимо настроить задачу с помощью управляемого удостоверения и назначить ей соответствующие разрешения. 
+The example task pulls a base image from another Azure container registry to build and push an application image. To pull the base image, you configure the task with a managed identity and assign appropriate permissions to it. 
 
-В этом примере показаны действия, использующие назначенное пользователем или управляемое системой удостоверение. Выбор удостоверения зависит от потребностей Организации.
+This example shows steps using either a user-assigned or system-assigned managed identity. Your choice of identity depends on your organization's needs.
 
-В реальной ситуации Организация может поддерживать набор базовых образов, используемых всеми группами разработчиков для создания приложений. Эти базовые образы хранятся в корпоративном реестре, и каждая группа разработчиков имеет только права на вытягивание. 
+In a real-world scenario, an organization might maintain a set of base images used by all development teams to build their applications. These base images are stored in a corporate registry, with each development team having only pull rights. 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
-В этой статье вам понадобятся два реестра контейнеров Azure:
+For this article, you need two Azure container registries:
 
-* Первый реестр используется для создания и выполнения задач контроля доступа. В этой статье этот реестр называется *myregistry*. 
-* Во втором реестре размещается базовый образ, используемый задачей для создания образа. В этой статье второй реестр называется *мибасерегистри*. 
+* You use the first registry to create and execute ACR tasks. In this article, this registry is named *myregistry*. 
+* The second registry hosts a base image used for the task to build an image. In this article, the second registry is named *mybaseregistry*. 
 
-Замените собственными именами реестра на последующих шагах.
+Replace with your own registry names in later steps.
 
-Если у вас еще нет необходимых реестров контейнеров Azure, см. раздел [Краткое руководство. создание закрытого реестра контейнеров с помощью Azure CLI](container-registry-get-started-azure-cli.md). Вам не нужно отправлять образы в реестр.
+If you don't already have the needed Azure container registries, see [Quickstart: Create a private container registry using the Azure CLI](container-registry-get-started-azure-cli.md). You don't need to push images to the registry yet.
 
-## <a name="prepare-base-registry"></a>Подготовка базового реестра
+## <a name="prepare-base-registry"></a>Prepare base registry
 
-Сначала создайте рабочий каталог, а затем создайте файл с именем Dockerfile со следующим содержимым. В этом простом примере создается базовый образ Node. js из общедоступного образа в центре DOCKER.
+First, create a working directory and then create a file named Dockerfile with the following content. This simple example builds a Node.js base image from a public image in Docker Hub.
     
 ```bash
 echo FROM node:9-alpine > Dockerfile
 ```
-В текущем каталоге выполните команду AZ запись [контроля][az-acr-build] доступа, чтобы создать и отправить базовый образ в базовый реестр. На практике другая команда или процесс в Организации может поддерживать базовый реестр.
+In the current directory, run the [az acr build][az-acr-build] command to build and push the base image to the base registry. In practice, another team or process in the organization might maintain the base registry.
     
 ```azurecli
 az acr build --image baseimages/node:9-alpine --registry mybaseregistry --file Dockerfile .
 ```
 
-## <a name="define-task-steps-in-yaml-file"></a>Определение шагов задачи в файле YAML
+## <a name="define-task-steps-in-yaml-file"></a>Define task steps in YAML file
 
-Шаги для этого примера [многошаговой задачи](container-registry-tasks-multi-step.md) определяются в [файле YAML](container-registry-tasks-reference-yaml.md). Создайте файл с именем `helloworldtask.yaml` в локальном рабочем каталоге и вставьте в него следующее содержимое. Обновите значение `REGISTRY_NAME` на шаге сборки, указав имя сервера в базовом реестре.
+The steps for this example [multi-step task](container-registry-tasks-multi-step.md) are defined in a [YAML file](container-registry-tasks-reference-yaml.md). Create a file named `helloworldtask.yaml` in your local working directory and paste in the following contents. Update the value of `REGISTRY_NAME` in the build step with the server name of your base registry.
 
 ```yml
 version: v1.0.0
@@ -66,17 +62,17 @@ steps:
   - push: ["{{.Run.Registry}}/hello-world:{{.Run.ID}}"]
 ```
 
-Для создания образа на этапе сборки используется файл `Dockerfile-app` в репозитории [Azure-Samples/контроля учетных записей — сборка-HelloWorld-node](https://github.com/Azure-Samples/acr-build-helloworld-node.git) . `--build-arg` ссылается на базовый реестр для извлечения базового образа. После успешной сборки образ помещается в реестр, используемый для выполнения задачи.
+The build step uses the `Dockerfile-app` file in the [Azure-Samples/acr-build-helloworld-node](https://github.com/Azure-Samples/acr-build-helloworld-node.git) repo to build an image. The `--build-arg` references the base registry to pull the base image. When successfully built, the image is pushed to the registry used to run the task.
 
-## <a name="option-1-create-task-with-user-assigned-identity"></a>Вариант 1. Создание задачи с назначенным пользователем удостоверением
+## <a name="option-1-create-task-with-user-assigned-identity"></a>Option 1: Create task with user-assigned identity
 
-В этом разделе описывается создание задачи и включение назначенного пользователю удостоверения. Если вместо этого требуется включить назначенное системой удостоверение, см. раздел [вариант 2. Создание задачи с назначенным системой удостоверением](#option-2-create-task-with-system-assigned-identity). 
+The steps in this section create a task and enable a user-assigned identity. If you want to enable a system-assigned identity instead, see [Option 2: Create task with system-assigned identity](#option-2-create-task-with-system-assigned-identity). 
 
 [!INCLUDE [container-registry-tasks-user-assigned-id](../../includes/container-registry-tasks-user-assigned-id.md)]
 
 ### <a name="create-task"></a>Создание задачи
 
-Создайте задачу *хелловорлдтаск* , выполнив следующую команду [AZ контроля доступа Task Create][az-acr-task-create] . Задача выполняется без контекста исходного кода, а команда ссылается на файл `helloworldtask.yaml` в рабочем каталоге. Параметр `--assign-identity` передает идентификатор ресурса назначенного пользователю удостоверения. 
+Create the task *helloworldtask* by executing the following [az acr task create][az-acr-task-create] command. The task runs without a source code context, and the command references the file `helloworldtask.yaml` in the working directory. The `--assign-identity` parameter passes the resource ID of the user-assigned identity. 
 
 ```azurecli
 az acr task create \
@@ -89,13 +85,13 @@ az acr task create \
 
 [!INCLUDE [container-registry-tasks-user-id-properties](../../includes/container-registry-tasks-user-id-properties.md)]
 
-## <a name="option-2-create-task-with-system-assigned-identity"></a>Вариант 2. Создание задачи с удостоверением, назначенным системой
+## <a name="option-2-create-task-with-system-assigned-identity"></a>Option 2: Create task with system-assigned identity
 
-В этом разделе описано, как создать задачу и включить назначенное системой удостоверение. Если вместо этого вы хотите включить пользовательское удостоверение, см. раздел [вариант 1. Создание задачи с назначенным пользователем удостоверением](#option-1-create-task-with-user-assigned-identity). 
+The steps in this section create a task and enable a system-assigned identity. If you want to enable a user-assigned identity instead, see [Option 1: Create task with user-assigned identity](#option-1-create-task-with-user-assigned-identity). 
 
 ### <a name="create-task"></a>Создание задачи
 
-Создайте задачу *хелловорлдтаск* , выполнив следующую команду [AZ контроля доступа Task Create][az-acr-task-create] . Задача выполняется без контекста исходного кода, а команда ссылается на файл `helloworldtask.yaml` в рабочем каталоге. Параметр `--assign-identity` без значения включает в задаче назначенное системой удостоверение. 
+Create the task *helloworldtask* by executing the following [az acr task create][az-acr-task-create] command. The task runs without a source code context, and the command references the file `helloworldtask.yaml` in the working directory. The `--assign-identity` parameter with no value enables the system-assigned identity on the task. 
 
 ```azurecli
 az acr task create \
@@ -107,25 +103,25 @@ az acr task create \
 ```
 [!INCLUDE [container-registry-tasks-system-id-properties](../../includes/container-registry-tasks-system-id-properties.md)]
 
-## <a name="give-identity-pull-permissions-to-the-base-registry"></a>Предоставление удостоверений для получения разрешений на базовый реестр
+## <a name="give-identity-pull-permissions-to-the-base-registry"></a>Give identity pull permissions to the base registry
 
-В этом разделе предоставьте управляемому удостоверению разрешения на извлечение из базового реестра *мибасерегистри*.
+In this section, give the managed identity permissions to pull from the base registry, *mybaseregistry*.
 
-Используйте команду [AZ запись контроля][az-acr-show] доступа, чтобы получить идентификатор ресурса для базового реестра и сохранить его в переменной:
+Use the [az acr show][az-acr-show] command to get the resource ID of the base registry and store it in a variable:
 
 ```azurecli
 baseregID=$(az acr show --name mybaseregistry --query id --output tsv)
 ```
 
-Чтобы назначить удостоверение роли `acrpull` базовому реестру, используйте команду [AZ Role назначение Create][az-role-assignment-create] . Эта роль имеет разрешения только на извлечение изображений из реестра.
+Use the [az role assignment create][az-role-assignment-create] command to assign the identity the `acrpull` role to the base registry. This role has permissions only to pull images from the registry.
 
 ```azurecli
 az role assignment create --assignee $principalID --scope $baseregID --role acrpull
 ```
 
-## <a name="add-target-registry-credentials-to-task"></a>Добавление учетных данных целевого реестра в задачу
+## <a name="add-target-registry-credentials-to-task"></a>Add target registry credentials to task
 
-Теперь используйте команду [AZ запись контроля учетных данных][az-acr-task-credential-add] для добавления учетных данных удостоверения в задачу, чтобы она могла проходить проверку подлинности в основном реестре. Выполните команду, соответствующую типу управляемого удостоверения, включенного в задаче. Если вы включили назначенное пользователем удостоверение, передайте `--use-identity` с ИДЕНТИФИКАТОРом клиента удостоверения. Если вы включили назначенное системой удостоверение, передайте `--use-identity [system]`.
+Now use the [az acr task credential add][az-acr-task-credential-add] command to add the identity's credentials to the task so that it can authenticate with the base registry. Run the command corresponding to the type of managed identity you enabled in the task. If you enabled a user-assigned identity, pass `--use-identity` with the client ID of the identity. If you enabled a system-assigned identity, pass `--use-identity [system]`.
 
 ```azurecli
 # Add credentials for user-assigned identity to the task
@@ -143,9 +139,9 @@ az acr task credential add \
   --use-identity [system]
 ```
 
-## <a name="manually-run-the-task"></a>Запуск задачи вручную
+## <a name="manually-run-the-task"></a>Manually run the task
 
-Чтобы убедиться, что задача, в которой вы включили управляемое удостоверение, запущена успешно, вручную активируйте задачу с помощью команды [AZ контроля][az-acr-task-run] доступа для запуска. 
+To verify that the task in which you enabled a managed identity runs successfully, manually trigger the task with the [az acr task run][az-acr-task-run] command. 
 
 ```azurecli
 az acr task run \
@@ -153,7 +149,7 @@ az acr task run \
   --registry myregistry
 ```
 
-Если задача выполняется успешно, выходные данные выглядят примерно так:
+If the task runs successfully, output is similar to:
 
 ```
 Queued a run with ID: cf10
@@ -202,7 +198,7 @@ The push refers to repository [myregistry.azurecr.io/hello-world]
 Run ID: cf10 was successful after 32s
 ```
 
-Выполните команду [AZ myregistry Repository][az-acr-repository-show-tags] , чтобы убедиться, что образ создан и успешно передан в:
+Run the [az acr repository show-tags][az-acr-repository-show-tags] command to verify that the image built and was successfully pushed to *myregistry*:
 
 ```azurecli
 az acr repository show-tags --name myregistry --repository hello-world --output tsv
@@ -214,10 +210,10 @@ az acr repository show-tags --name myregistry --repository hello-world --output 
 cf10
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-* Дополнительные сведения о [включении управляемого удостоверения в задаче контроля](container-registry-tasks-authentication-managed-identity.md)доступа.
-* См. раздел [YAML Tasks Reference](container-registry-tasks-reference-yaml.md)
+* Learn more about [enabling a managed identity in an ACR task](container-registry-tasks-authentication-managed-identity.md).
+* See the [ACR Tasks YAML reference](container-registry-tasks-reference-yaml.md)
 
 <!-- LINKS - Internal -->
 [az-login]: /cli/azure/reference-index#az-login

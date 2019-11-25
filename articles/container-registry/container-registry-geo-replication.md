@@ -1,19 +1,16 @@
 ---
-title: Георепликация реестра контейнеров Azure
-description: Приступите к созданию геореплицированного реестра контейнеров Azure и управлению им, что позволяет реестру обслуживать несколько регионов с несколькими региональными репликами.
-services: container-registry
+title: Георепликация реестра
+description: Get started creating and managing a geo-replicated Azure container registry, which enables the registry to serve multiple regions with multi-master regional replicas.
 author: stevelas
-manager: gwallace
-ms.service: container-registry
 ms.topic: article
 ms.date: 08/16/2019
 ms.author: stevelas
-ms.openlocfilehash: cddd55d3dfc2609b7a32a276e106e152f0868b32
-ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
+ms.openlocfilehash: d238de30e458261a11c941c03ac127c732ca8d3d
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73931649"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74456443"
 ---
 # <a name="geo-replication-in-azure-container-registry"></a>Георепликация в реестре контейнеров Azure
 
@@ -64,7 +61,7 @@ docker push contosowesteu.azurecr.io/public/products/web:1.2
 
 ## <a name="configure-geo-replication"></a>Настройка георепликации
 
-Настроить георепликацию так же просто, как и выбрать регионы на карте. Можно также управлять георепликацией с помощью средств, включая команды [AZ запись контроля](/cli/azure/acr/replication) доступа в Azure CLI, или развернуть реестр, включенный для георепликации с [шаблоном Azure Resource Manager](https://github.com/Azure/azure-quickstart-templates/tree/master/101-container-registry-geo-replication).
+Настроить георепликацию так же просто, как и выбрать регионы на карте. You can also manage geo-replication using tools including the [az acr replication](/cli/azure/acr/replication) commands in the Azure CLI, or deploy a registry enabled for geo-replication with an [Azure Resource Manager template](https://github.com/Azure/azure-quickstart-templates/tree/master/101-container-registry-geo-replication).
 
 Георепликация — это функция [реестров только уровня "Премиум"](container-registry-skus.md). Вы можете изменить уровень "Базовый" или "Стандартный" на "Премиум" (если у вас его еще нет) на [портале Azure](https://portal.azure.com).
 
@@ -97,19 +94,19 @@ ACR начинает синхронизацию образов между нас
 * Каждый регион в геореплицированном реестре является независимым после настройки. Соглашения об уровне обслуживания Реестра контейнеров Azure применяются к каждому геореплицированному региону.
 * При отправке образов в геореплицированный реестр или извлечении их из него диспетчер трафика Azure в фоновом режиме отправляет запрос в реестр, расположенный в ближайшем к вам регионе.
 * После отправки образа или тега обновления в ближайший регион потребуется некоторое время, чтобы Реестр контейнеров Azure реплицировал манифесты и слои в остальные регионы, которые вы выбрали. Чем больше образ, тем дольше он реплицируется. Образы и теги синхронизируются во всех регионах репликации в соответствии с моделью итоговой согласованности.
-* Для управления рабочими процессами, которые зависят от обновлений для геореплицированной репликации, рекомендуется настроить [веб-перехватчики](container-registry-webhook.md) для реагирования на события push-уведомлений. Можно настроить региональные веб-перехватчики в геореплицированном реестре, чтобы отслеживать выполнение событий отправки во всех геореплицированных регионах.
+* To manage workflows that depend on push updates to a geo-replicated , we recommend that you configure [webhooks](container-registry-webhook.md) to respond to the push events. Можно настроить региональные веб-перехватчики в геореплицированном реестре, чтобы отслеживать выполнение событий отправки во всех геореплицированных регионах.
 
 ## <a name="delete-a-replica"></a>Удаление реплики
 
-После настройки реплики для реестра ее можно удалить в любое время, если она больше не нужна. Удалите реплику с помощью портал Azure или других средств, таких как [AZ запись контроля доступа Delete](/cli/azure/acr/replication#az-acr-replication-delete) в Azure CLI.
+After you've configured a replica for your registry, you can delete it at any time if it's no longer needed. Delete a replica using the Azure portal or other tools such as the [az acr replication delete](/cli/azure/acr/replication#az-acr-replication-delete) command in the Azure CLI.
 
-Чтобы удалить реплику в портал Azure, выполните следующие действия.
+To delete a replica in the Azure portal:
 
-1. Перейдите к реестру контейнеров Azure и выберите **репликация**.
-1. Выберите имя реплики и нажмите кнопку **Удалить**. Подтвердите, что вы хотите удалить реплику.
+1. Navigate to your Azure Container Registry, and select **Replications**.
+1. Select the name of a replica, and select **Delete**. Confirm that you want to delete the replica.
 
 > [!NOTE]
-> Вы не можете удалить реплику реестра в *основном регионе* реестра, то есть в том месте, где был создан реестр. Удалить реплику Home можно только путем удаления самого реестра.
+> You can't delete the registry replica in the *home region* of the registry, that is, the location where you created the registry. You can only delete the home replica by deleting the registry itself.
 
 ## <a name="geo-replication-pricing"></a>Расходы, связанные с георепликацией
 
@@ -125,7 +122,7 @@ ACR начинает синхронизацию образов между нас
 
 Чтобы для разрешения DNS-имен при передаче образов использовалась ближайшая реплика, настройте геореплицированный реестр в том же регионе Azure, где находится источник операций отправки, или в ближайшем регионе при работе вне Azure.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Просмотрите руководство, состоящее из трех частей, [Подготовка геореплицированного реестра контейнеров Azure](container-registry-tutorial-prepare-registry.md). Рассмотрите создание геореплицированного реестра, создание контейнера, а затем его развертывание в несколько региональных экземпляров веб-приложений для контейнеров, выполнив единую команду `docker push`.
 

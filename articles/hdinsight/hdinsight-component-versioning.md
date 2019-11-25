@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 11/21/2019
-ms.openlocfilehash: 451d47f4fee50764783c9ce7be79cf34fef96756
-ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
+ms.openlocfilehash: a2955fc72a652ec36304c7856f2ba9ed5f21d7df
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74406778"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74457567"
 ---
 # <a name="what-are-the-apache-hadoop-components-and-versions-available-with-hdinsight"></a>Что представляют собой компоненты и версии Apache Hadoop, доступные в HDInsight?
 
@@ -73,7 +73,7 @@ Azure HDInsight поддерживает несколько версий кла�
 | Версия HDInsight | ОС виртуальной машины | Дата выпуска | Дата прекращения поддержки | Дата вывода | Высокий уровень доступности |  Availability in the Azure portal |
 | --- | --- | --- | --- | --- | --- | --- |
 | HDInsight 4.0 |Ubuntu 16.0.4 LTS |24 сентября 2018 г. | | |ДА |ДА |
-| HDInsight 3.6 |Ubuntu 16.0.4 LTS |4 апреля 2017 г. | December 31, 2020 |June 30, 2021 |ДА |ДА |
+| HDInsight 3.6 |Ubuntu 16.0.4 LTS |4 апреля 2017 г. | June 30, 2020 |December 31, 2020 |ДА |ДА |
 
 Spark 2.1, 2.2 & Kafka 1.0 support will expire on June 30th, 2020 and retirement on Dec 31st 2020.
 

@@ -1,6 +1,6 @@
 ---
 title: Подготовка устройств и их развертывания в рабочей среде — Azure IoT Edge | Документация Майкрософт
-description: Узнайте, как взять решение Azure IoT Edge из разработки в рабочую среду, включая настройку устройств с помощью соответствующих сертификатов и создание плана развертывания для будущих обновлений кода.
+description: Learn how to take your Azure IoT Edge solution from development to production, including setting up your devices with the appropriate certificates and making a deployment plan for future code updates.
 author: kgremban
 manager: philmea
 ms.author: kgremban
@@ -8,23 +8,22 @@ ms.date: 08/09/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.custom: seodec18
-ms.openlocfilehash: 610e0088fe97bdda1dce7f7391530c5128428b29
-ms.sourcegitcommit: b45ee7acf4f26ef2c09300ff2dba2eaa90e09bc7
+ms.openlocfilehash: 1d8ba8452f5f2d4ab05083e1a97fa0b9ba75017f
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73096962"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74457303"
 ---
 # <a name="prepare-to-deploy-your-iot-edge-solution-in-production"></a>Подготовка к развертыванию решения IoT Edge в рабочей среде
 
 Когда вы будете готовы перейти от разработки решения IoT Edge к его развертыванию в рабочей среде, убедитесь, что оно настроено для непрерывной работы.
 
-Информация, приведенная в этой статье, не равна. Чтобы помочь вам расставить приоритеты, каждый раздел начинается со списков, разделяющих работу на две части: **важные** задачи, которые следует выполнить перед переходом в рабочую среду, и **полезные** для вас сведения.
+The information provided in this article isn't all equal. Чтобы помочь вам расставить приоритеты, каждый раздел начинается со списков, разделяющих работу на две части: **важные** задачи, которые следует выполнить перед переходом в рабочую среду, и **полезные** для вас сведения.
 
 ## <a name="device-configuration"></a>Конфигурация устройств
 
-Устройством IoT Edge может быть что угодно — от Raspberry Pi до ноутбука или виртуальной машины, работающей на сервере. У вас может быть доступ к устройству (физически или через виртуальное подключение), либо оно может быть изолировано в течение продолжительного времени. В любом случае необходимо убедиться, что оно настроено для правильной работы. 
+Устройством IoT Edge может быть что угодно — от Raspberry Pi до ноутбука или виртуальной машины, работающей на сервере. У вас может быть доступ к устройству (физически или через виртуальное подключение), либо оно может быть изолировано в течение продолжительного времени. Either way, you want to make sure that it's configured to work appropriately. 
 
 * **Важно!**
     * Установка рабочих сертификатов
@@ -52,15 +51,15 @@ ms.locfileid: "73096962"
 * Управляющая программа IoT Edge
 * Сертификаты ЦС
 
-Дополнительные сведения см. [в разделе Обновление среды выполнения IOT Edge](how-to-update-iot-edge.md). Для применения современных методик обновления управляющей программы IoT Edge требуется доступ к устройству IoT Edge (физически или по протоколу SSH). При наличии множества устройств для обновления рекомендуется добавить шаги обновления в скрипт или использовать средство автоматизации, например Ansible.
+For more information, see [Update the IoT Edge runtime](how-to-update-iot-edge.md). Для применения современных методик обновления управляющей программы IoT Edge требуется доступ к устройству IoT Edge (физически или по протоколу SSH). If you have many devices to update, consider adding the update steps to a script or use an automation tool like Ansible.
 
 ### <a name="use-moby-as-the-container-engine"></a>Использование Moby в качестве модуля контейнеров
 
-Подсистема контейнеров является необходимым условием для любого IoT Edge устройства. В рабочей среде поддерживается только moby-engine. Другие модули контейнеров, например Docker, совместимы с IoT Edge, и их можно использовать при разработке. Модуль moby-engine можно распространять при использовании с Azure IoT Edge, а корпорация Майкрософт выполняет обслуживание этого модуля.
+A container engine is a prerequisite for any IoT Edge device. В рабочей среде поддерживается только moby-engine. Другие модули контейнеров, например Docker, совместимы с IoT Edge, и их можно использовать при разработке. Модуль moby-engine можно распространять при использовании с Azure IoT Edge, а корпорация Майкрософт выполняет обслуживание этого модуля.
 
 ### <a name="choose-upstream-protocol"></a>Выбор вышестоящего протокола
 
-Протокол (и, следовательно, используемый порт) для вышестоящей связи с центром Интернета вещей можно настроить как для агента IoT Edge, так и для центра IoT Edge. По умолчанию используется протокол AMQP, но его можно изменить в зависимости от конфигурации сети. 
+The protocol (and therefore the port used) for upstream communication to IoT Hub can be configured for both the IoT Edge agent and the IoT Edge hub. По умолчанию используется протокол AMQP, но его можно изменить в зависимости от конфигурации сети. 
 
 У двух модулей среды выполнения есть переменная среды **UpstreamProtocol**. Допустимые значения переменной: 
 
@@ -69,7 +68,7 @@ ms.locfileid: "73096962"
 * MQTTWS
 * AMQPWS
 
-Настройте переменную Упстреампротокол для агента IoT Edge в файле config. YAML на самом устройстве. Например, если устройство IoT Edge находится за прокси-сервером, который блокирует порты AMQP, может потребоваться настроить агент IoT Edge для использования AMQP через WebSocket (АМКПВС) для установления начального подключения к центру Интернета вещей. 
+Configure the UpstreamProtocol variable for the IoT Edge agent in the config.yaml file on the device itself. For example, if your IoT Edge device is behind a proxy server that blocks AMQP ports, you may need to configure the IoT Edge agent to use AMQP over WebSocket (AMQPWS) to establish the initial connection to IoT Hub. 
 
 После подключения устройства IoT Edge обязательно настраивайте переменную UpstreamProtocol для обоих модулей среды выполнения в будущих развертываниях. Пример этого процесса представлен в статье [Настройка устройства IoT Edge для обмена данными через прокси-сервер](how-to-configure-proxy-support.md).
 
@@ -77,41 +76,41 @@ ms.locfileid: "73096962"
 
 * **Полезное**
     * Согласование с вышестоящим протоколом
-    * Настройка хранилища узлов для системных модулей
-    * Уменьшение объема памяти, используемого центром IoT Edge
+    * Set up host storage for system modules
+    * Reduce memory space used by the IoT Edge hub
     * Не используйте отладочные версии образов модулей
 
 ### <a name="be-consistent-with-upstream-protocol"></a>Согласование с вышестоящим протоколом
 
-Если вы настроили агент IoT Edge на устройстве IoT Edge для использования протокола, отличного от AMQP по умолчанию, то следует объявить тот же протокол во всех последующих развертываниях. Например, если устройство IoT Edge защищено прокси-сервером, блокирующим порты AMQP, то оно наверняка настроено на подключение по протоколу AMQP через WebSocket (AMQPWS). При развертывании модулей на устройстве настройте один и тот же протокол АМКПВС для агента IoT Edge и центра IoT Edge, иначе AMQP по умолчанию переопределит параметры и не сможет снова подключиться. 
+If you configured the IoT Edge agent on your IoT Edge device to use a different protocol than the default AMQP, then you should declare the same protocol in all future deployments. Например, если устройство IoT Edge защищено прокси-сервером, блокирующим порты AMQP, то оно наверняка настроено на подключение по протоколу AMQP через WebSocket (AMQPWS). When you deploy modules to the device, configure the same AMQPWS protocol for the IoT Edge agent and IoT Edge hub, or else the default AMQP will override the settings and prevent you from connecting again. 
 
-Необходимо настроить только переменную среды Упстреампротокол для IoT Edgeного агента и IoT Edge модулей концентратора. Все остальные модули используют протокол, заданный в модулях среды выполнения. 
+You only have to configure the UpstreamProtocol environment variable for the IoT Edge agent and IoT Edge hub modules. Все остальные модули используют протокол, заданный в модулях среды выполнения. 
 
 Пример этого процесса представлен в статье [Настройка устройства IoT Edge для обмена данными через прокси-сервер](how-to-configure-proxy-support.md).
 
-### <a name="set-up-host-storage-for-system-modules"></a>Настройка хранилища узлов для системных модулей
+### <a name="set-up-host-storage-for-system-modules"></a>Set up host storage for system modules
 
-Модули концентратора IoT Edge и агента используют локальное хранилище для поддержания состояния и обеспечивают обмен сообщениями между модулями, устройствами и облаком. Для повышения надежности и производительности настройте системные модули для использования хранилища в файловой системе узла.
+The IoT Edge hub and agent modules use local storage to maintain state and enable messaging between modules, devices, and the cloud. For better reliability and performance, configure the system modules to use storage on the host filesystem.
 
-Дополнительные сведения см. в разделе [хранилище узлов для системных модулей](how-to-access-host-storage-from-module.md).
+For more information, see [Host storage for system modules](how-to-access-host-storage-from-module.md).
 
-### <a name="reduce-memory-space-used-by-iot-edge-hub"></a>Уменьшение объема памяти, используемого центром IoT Edge
+### <a name="reduce-memory-space-used-by-iot-edge-hub"></a>Reduce memory space used by IoT Edge hub
 
-При развертывании ограниченных устройств с ограниченным объемом доступной памяти можно настроить центр IoT Edge для работы в более упрощенной емкости и использовать меньше места на диске. Однако эти конфигурации ограничивают производительность центра IoT Edge, поэтому нужно найти подходящий баланс, который подходит для вашего решения. 
+If you're deploying constrained devices with limited memory available, you can configure IoT Edge hub to run in a more streamlined capacity and use less disk space. These configurations do limit the performance of the IoT Edge hub, however, so find the right balance that works for your solution. 
 
 #### <a name="dont-optimize-for-performance-on-constrained-devices"></a>Не оптимизируйте устройства с ограниченными ресурсами для высокой производительности
 
-Центр IoT Edge по умолчанию оптимизирован для повышения производительности, поэтому он пытается выделить большие блоки памяти. Такая конфигурация может привести к проблемам со стабильностью на небольших устройствах, таких как Raspberry Pi. При развертывании устройств с ограниченными ресурсами может потребоваться задать для переменной среды **оптимизефорперформанце** **значение false** в центре IOT Edge. 
+The IoT Edge hub is optimized for performance by default, so it attempts to allocate large chunks of memory. Такая конфигурация может привести к проблемам со стабильностью на небольших устройствах, таких как Raspberry Pi. If you're deploying devices with constrained resources, you may want to set the **OptimizeForPerformance** environment variable to **false** on the IoT Edge hub. 
 
-Если для **оптимизефорперформанце** задано **значение true**, головка протокола MQTT использует пуледбитебуффераллокатор, который имеет лучшую производительность, но выделяет больше памяти. Распределитель не работает хорошо на 32 разрядных операционных системах или на устройствах с нехваткой памяти. Кроме того, при оптимизации производительности Рокксдб выделяет больше памяти для своей роли в качестве локального поставщика хранилища. 
+When **OptimizeForPerformance** is set to **true**, the MQTT protocol head uses the PooledByteBufferAllocator which has better performance but allocates more memory. The allocator does not work well on 32 bit operating systems or on devices with low memory. Additionally, when optimized for performance, RocksDb allocates more memory for its role as the local storage provider. 
 
 Дополнительные сведения см. в разделе [Проблемы с надежностью на устройствах с ограниченными ресурсами](troubleshoot.md#stability-issues-on-resource-constrained-devices).
 
 #### <a name="disable-unused-protocols"></a>Отключение неиспользуемых протоколов
 
-Другой способ оптимизации производительности центра IoT Edge и снижения использования памяти заключается в отключении заголовков протоколов для всех протоколов, которые не используются в решении. 
+Another way to optimize the performance of the IoT Edge hub and reduce its memory usage is to turn off the protocol heads for any protocols that you're not using in your solution. 
 
-Заголовки протоколов настраиваются путем настройки переменных среды для модуля IoT Edge концентратора в манифестах развертывания. Вот эти переменные:
+Protocol heads are configured by setting boolean environment variables for the IoT Edge hub module in your deployment manifests. Вот эти переменные:
 
 * **amqpSettings__enabled**
 * **mqttSettings__enabled**
@@ -121,7 +120,7 @@ ms.locfileid: "73096962"
 
 #### <a name="reduce-storage-time-for-messages"></a>Сокращение времени хранения сообщений
 
-Модуль IoT Edge Hub временно хранит сообщения, если они не могут быть доставлены в центр Интернета вещей по какой-либо причине. Вы можете настроить период, в течение которого центр IoT Edge удерживается для недоставленных сообщений, прежде чем истечет срок их действия. При наличии проблем с памятью на устройстве можно уменьшить значение **тиметоливесекс** в модуле центра IOT Edge двойника. 
+The IoT Edge hub module stores messages temporarily if they cannot be delivered to IoT Hub for any reason. You can configure how long the IoT Edge hub holds on to undelivered messages before letting them expire. If you have memory concerns on your device, you can lower the **timeToLiveSecs** value in the IoT Edge hub module twin. 
 
 Для параметра timeToLiveSecs по умолчанию задано значение 7200 секунд, то есть два часа. 
 
@@ -143,7 +142,7 @@ ms.locfileid: "73096962"
 
 ### <a name="use-tags-to-manage-versions"></a>Использование тегов для управления версиями
 
-Тег — это концепция DOCKER, которую можно использовать для различения версий контейнеров DOCKER. Теги — это суффиксы (например, **1.0**), указываемые в конце имени репозитория контейнеров. Пример: **mcr.microsoft.com/azureiotedge-agent:1.0**. Теги можно в любой момент менять, чтобы указывать на другой контейнер, поэтому вашей команде следует договориться о правилах обновления образов модулей в будущем. 
+A tag is a docker concept that you can use to distinguish between versions of docker containers. Теги — это суффиксы (например, **1.0**), указываемые в конце имени репозитория контейнеров. Пример: **mcr.microsoft.com/azureiotedge-agent:1.0**. Теги можно в любой момент менять, чтобы указывать на другой контейнер, поэтому вашей команде следует договориться о правилах обновления образов модулей в будущем. 
 
 Теги также помогают принудительно устанавливать обновления на устройствах IoT Edge. Отправляя обновленную версию модуля в реестр контейнеров, увеличивайте тег. Затем отправьте новое развертывание на устройства с увеличенным тегом. Модуль контейнеров распознает увеличенный тег как новую версию и извлечет последнюю версию модуля на устройство. 
 
@@ -153,16 +152,16 @@ ms.locfileid: "73096962"
 
 * **Полезное**
     * Просмотр конфигурации исходящих и входящих подключений
-    * Разрешить подключения от устройств IoT Edge
+    * Allow connections from IoT Edge devices
     * Настройка связи через прокси-сервер
 
 ### <a name="review-outboundinbound-configuration"></a>Просмотр конфигурации исходящих и входящих подключений
 
 Каналы связи между Центром Интернета вещей Azure и IoT Edge всегда настраиваются как исходящие. Для большинства сценариев IoT Edge достаточно трех подключений. Модуль контейнеров должен соединяться с реестрами контейнеров, в которых хранятся образы модулей. Среда выполнения IoT Edge должна подключиться к Центру Интернета вещей, чтобы получить сведения о конфигурации устройств, а также отправить сообщение и данные телеметрии. А если вы используете автоматическую подготовку, управляющая программа IoT Edge должна подключиться к службе подготовки устройств. Дополнительные сведения см. в разделе [Правила конфигурации брандмауэра и порта для развертывания IoT Edge](troubleshoot.md#firewall-and-port-configuration-rules-for-iot-edge-deployment).
 
-### <a name="allow-connections-from-iot-edge-devices"></a>Разрешить подключения от устройств IoT Edge
+### <a name="allow-connections-from-iot-edge-devices"></a>Allow connections from IoT Edge devices
 
-Если для настройки сети требуется явное разрешение подключений с IoT Edge устройств, ознакомьтесь со следующим списком компонентов IoT Edge:
+If your networking setup requires that you explicitly permit connections made from IoT Edge devices, review the following list of IoT Edge components:
 
 * **Агент IoT Edge** открывает постоянное подключение AMQP/MQTT к Центру Интернета вещей (возможно, через объекты WebSocket). 
 * **Центр IoT Edge** открывает одно постоянное подключение AMQP или несколько подключений MQTT к Центру Интернета вещей (возможно, через объекты WebSocket). 
@@ -178,12 +177,12 @@ ms.locfileid: "73096962"
    | ----- | ----- | ----- |
    | mcr.microsoft.com  | 443 | Реестр контейнеров Майкрософт |
    | global.azure-devices-provisioning.net  | 443 | Доступ к DPS (необязательно) |
-   | \*.azurecr.io | 443 | Личные и сторонние реестры контейнеров |
-   | \*.blob.core.windows.net | 443 | Скачивание изменений образа реестра контейнеров Azure из хранилища BLOB-объектов  | 
+   | \*.azurecr.io | 443 | Personal and third-party container registries |
+   | \*.blob.core.windows.net | 443 | Download Azure Container Registry image deltas from blob storage  | 
    | \*.azure-devices.net | 5671, 8883, 443 | Доступ к Центру Интернета вещей |
-   | \*.docker.io  | 443 | Доступ к концентратору DOCKER (необязательно) |
+   | \*.docker.io  | 443 | Docker Hub access (optional) |
 
-Некоторые из этих правил брандмауэра наследуются от реестра контейнеров Azure. Дополнительные сведения см. в статье [Настройка правил для доступа к реестру контейнеров Azure за брандмауэром](../container-registry/container-registry-firewall-access-rules.md).
+Some of these firewall rules are inherited from Azure Container Registry. For more information, see [Configure rules to access an Azure container registry behind a firewall](../container-registry/container-registry-firewall-access-rules.md).
 
 ### <a name="configure-communication-through-a-proxy"></a>Настройка связи через прокси-сервер
 
@@ -197,7 +196,7 @@ ms.locfileid: "73096962"
 
 ### <a name="set-up-logs-and-diagnostics"></a>Настройка журналов и диагностики
 
-В Linux управляющая программа IoT Edge использует журналы в качестве драйвера ведения журнала по умолчанию. Чтобы запрашивать журналы управляющей программы, можно использовать программу командной строки `journalctl`. В Windows управляющая программа IoT Edge использует диагностику PowerShell. Чтобы запрашивать журналы из управляющей программы, используйте команду `Get-IoTEdgeLog`. Модули IoT Edge используют для ведения журнала JSON-драйвер, который используется по умолчанию.  
+On Linux, the IoT Edge daemon uses journals as the default logging driver. Чтобы запрашивать журналы управляющей программы, можно использовать программу командной строки `journalctl`. В Windows управляющая программа IoT Edge использует диагностику PowerShell. Чтобы запрашивать журналы из управляющей программы, используйте команду `Get-IoTEdgeLog`. IoT Edge modules use the JSON driver for logging, which is the  default.  
 
 ```powershell
 . {Invoke-WebRequest -useb aka.ms/iotedge-win} | Invoke-Expression; Get-IoTEdgeLog
@@ -205,13 +204,13 @@ ms.locfileid: "73096962"
 
 При тестировании развертывания IoT Edge обычно можно получать доступ к своим устройствам для извлечения журналов и устранения неполадок. В случае развертывания эта возможность может отсутствовать. Подумайте, как вы будете собирать сведения об устройствах в рабочей среде. Один вариант — использовать модуль ведения журнала, который собирает сведения от других модулей и отправляет их в облако. К примерам модулей ведения журнала относится [logspout-loganalytics](https://github.com/veyalla/logspout-loganalytics). Вы также можете создать собственный модуль. 
 
-### <a name="place-limits-on-log-size"></a>Ограничить размер журнала
+### <a name="place-limits-on-log-size"></a>Place limits on log size
 
-По умолчанию подсистема контейнеров значок Кита не устанавливает ограничения размера журнала контейнера. Со временем это может привести к заполнению устройством журналов и исчерпанию дискового пространства. Чтобы избежать этого, рассмотрите следующие варианты.
+By default the Moby container engine does not set container log size limits. Over time this can lead to the device filling up with logs and running out of disk space. Consider the following options to prevent this:
 
-**Параметр: задает глобальные ограничения, которые применяются ко всем модулям контейнеров.**
+**Option: Set global limits that apply to all container modules**
 
-Можно ограничить размер файлов журнала контейнера в параметрах журнала модуля контейнера. В следующем примере для драйвера журнала задается `json-file` (рекомендуется) с ограничениями на размер и число файлов:
+You can limit the size of all container logfiles in the container engine log options. The following example sets the log driver to `json-file` (recommended) with limits on size and number of files:
 
 ```JSON
 {
@@ -223,18 +222,18 @@ ms.locfileid: "73096962"
 }
 ```
 
-Добавьте (или добавьте) эти сведения в файл с именем `daemon.json` и поместите его в нужное расположение для платформы устройства.
+Add (or append) this information to a file named `daemon.json` and place it the right location for your device platform.
 
 | платформа | Location |
 | -------- | -------- |
 | Linux | `/etc/docker/` |
 | Windows | `C:\ProgramData\iotedge-moby\config\` |
 
-Чтобы изменения вступили в силу, необходимо перезапустить модуль контейнера.
+The container engine must be restarted for the changes to take effect.
 
-**Параметр: Настройка параметров журнала для каждого модуля контейнера**
+**Option: Adjust log settings for each container module**
 
-Это можно сделать в **креатеоптионс** каждого модуля. Пример.
+You can do so in the **createOptions** of each module. Пример.
 
 ```yml
 "createOptions": {
@@ -250,11 +249,11 @@ ms.locfileid: "73096962"
 }
 ```
 
-**Дополнительные параметры в системах Linux**
+**Additional options on Linux systems**
 
-* Настройте модуль контейнеров для отправки журналов в `systemd` [Журнал](https://docs.docker.com/config/containers/logging/journald/) , установив `journald` в качестве драйвера ведения журнала по умолчанию. 
+* Configure the container engine to send logs to `systemd` [journal](https://docs.docker.com/config/containers/logging/journald/) by setting `journald` as the default logging driver. 
 
-* Периодически удаляйте старые журналы с устройства, установив средство logrotate. Используйте следующую спецификацию файла: 
+* Periodically remove old logs from your device by installing a logrotate tool. Используйте следующую спецификацию файла: 
 
    ```
    /var/lib/docker/containers/*/*-json.log{

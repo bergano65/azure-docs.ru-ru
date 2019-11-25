@@ -9,12 +9,12 @@ ms.date: 11/11/2019
 ms.author: bwren
 ms.custom: subject-monitoring
 ms.subservice: logs
-ms.openlocfilehash: 0f61057daf994fde284e9484e41c01ed2e8ae78c
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: d131523e3031f55a818bb1919f39119bf073cb75
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74220212"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74456532"
 ---
 # <a name="azure-cosmos-db-monitoring-data-reference"></a>Azure Cosmos DB monitoring data reference
 This article provides a reference of log and metric data collected to analyze the performance and availability of Azure Cosmos DB. See [Monitoring Cosmos DB](monitor-cosmos-db.md) for details on collecting and analyzing monitoring data for Azure Cosmos DB.
@@ -27,7 +27,7 @@ The following table lists the properties for Azure Cosmos DB resource logs when 
 | --- | --- | --- |
 | **time** | **TimeGenerated** | Дата и время (UTC) выполнения операции. |
 | **resourceId** | **Ресурс** | Учетная запись Azure Cosmos DB, для которой включены журналы.|
-| **category** | **Категория** | Для журналов Azure Cosmos DB единственным доступным значением является **DataPlaneRequests**. |
+| **category** | **Категория** | For Azure Cosmos DB logs, **DataPlaneRequests**, **MongoRequests**, **QueryRuntimeStatistics**, **PartitionKeyStatistics**, **PartitionKeyRUConsumption**, **ControlPlaneRequests** are the available log types. |
 | **operationName** | **OperationName** | Имя операции. В качестве значения можно использовать любую из следующих операций: Create, Update, Read, ReadFeed, Delete, Replace, Execute, SqlQuery, Query, JSQuery, Head, HeadFeed или Upsert.   |
 | **properties** | Н/Д | Содержимое этого поля описано в строках, приведенных ниже. |
 | **activityId** | **activityId_g** | Уникальный идентификатор GUID регистрируемой операции. |

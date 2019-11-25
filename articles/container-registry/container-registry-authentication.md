@@ -1,26 +1,21 @@
 ---
-title: Аутентификация в реестре контейнеров Azure
+title: Registry authentication options
 description: Варианты проверки подлинности для реестра контейнеров Azure, включая вход с помощью удостоверения Azure Active Directory, с помощью субъектов-служб и с помощью необязательных учетных данных администратора.
-services: container-registry
-author: dlepow
-manager: gwallace
-ms.service: container-registry
 ms.topic: article
 ms.date: 12/21/2018
-ms.author: danlep
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: a55cba27c676b283a4da490f05dd6fc672e10d49
-ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
+ms.openlocfilehash: 29e23f6a983ccc2197e609511aee2ce13726ed0f
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70032390"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74455389"
 ---
 # <a name="authenticate-with-a-private-docker-container-registry"></a>Аутентификация с помощью частного реестра контейнеров Docker
 
 Существует несколько способов аутентификации в реестре контейнеров Azure, каждый из которых подходит для одного или нескольких сценариев использования реестра.
 
-Рекомендуемые способы включения проверки подлинности в реестре напрямую через [отдельное имя входа](#individual-login-with-azure-ad), а приложения и управляющие контейнеры могут выполнять автоматическую или неавтономную проверку подлинности с помощью службы Azure Active Directory (Azure AD). [ субъект](#service-principal).
+Recommended ways include authenticating to a registry directly via [individual login](#individual-login-with-azure-ad), or your applications and container orchestrators can perform unattended, or "headless," authentication by using an Azure Active Directory (Azure AD) [service principal](#service-principal).
 
 ## <a name="individual-login-with-azure-ad"></a>Отдельный вход с помощью Azure AD
 
@@ -50,23 +45,23 @@ az acr login --name <acrName>
 
 Полный список ролей см. в статье, посвященной [ролям и разрешениям реестра контейнеров Azure](container-registry-roles.md).
 
-Сведения о создании субъекта-службы для проверки подлинности в реестре контейнеров Azure с помощью скриптов CLI и рекомендации по использованию субъекта-службы см. в статье [Проверка подлинности реестра контейнеров Azure с субъектами-службами](container-registry-auth-service-principal.md).
+For CLI scripts to create a service principal for authenticating with an Azure container registry, and guidance on using a service principal, see [Azure Container Registry authentication with service principals](container-registry-auth-service-principal.md).
 
 ## <a name="admin-account"></a>Учетная запись администратора
 
 Каждый реестр контейнеров содержит учетную запись администратора, которая отключена по умолчанию. Вы можете включить учетную запись администратора и управлять ее учетными данными на портале Azure или с помощью Azure CLI либо других средств Azure.
 
 > [!IMPORTANT]
-> Учетная запись администратора предоставляет доступ к реестру одному пользователю. Она предназначена, главным образом, для тестирования. Не рекомендуется совместно использовать учетные данные учетной записи администратора между несколькими пользователями. Все пользователи, выполняющие аутентификацию с учетной записью администратора, отображаются как один пользователь с возможностью извлечения данных из реестра и отправки данных в него. Изменив или отключив эту учетную запись, вы ограничите доступ к реестру для пользователей, использующих эти учетные данные. Для пользователей и субъектов-служб в сценариях автоматического входа рекомендуется использовать отдельные удостоверения.
+> Учетная запись администратора предоставляет доступ к реестру одному пользователю. Она предназначена, главным образом, для тестирования. We do not recommend sharing the admin account credentials among multiple users. Все пользователи, выполняющие аутентификацию с учетной записью администратора, отображаются как один пользователь с возможностью извлечения данных из реестра и отправки данных в него. Изменив или отключив эту учетную запись, вы ограничите доступ к реестру для пользователей, использующих эти учетные данные. Для пользователей и субъектов-служб в сценариях автоматического входа рекомендуется использовать отдельные удостоверения.
 >
 
-Учетной записи администратора предоставляются два пароля, каждый из которых можно создать повторно. Благодаря этому вы можете подключаться к реестру, используя один пароль, пока второй создается повторно. Если учетная запись администратора включена, вы можете указать в команде `docker login` имя пользователя и пароль, когда будет предложено выполнить базовую аутентификацию в реестре. Пример:
+Учетной записи администратора предоставляются два пароля, каждый из которых можно создать повторно. Благодаря этому вы можете подключаться к реестру, используя один пароль, пока второй создается повторно. Если учетная запись администратора включена, вы можете указать в команде `docker login` имя пользователя и пароль, когда будет предложено выполнить базовую аутентификацию в реестре. Пример.
 
 ```
 docker login myregistry.azurecr.io 
 ```
 
-Рекомендации по управлению учетными данными для входа см. в справочнике по командам [DOCKER login](https://docs.docker.com/engine/reference/commandline/login/) .
+For best practices to manage login credentials, see the [docker login](https://docs.docker.com/engine/reference/commandline/login/) command reference.
 
 Чтобы включить учетную запись администратора для существующего реестра, можно использовать параметр `--admin-enabled` в команде [az acr update](/cli/azure/acr?view=azure-cli-latest#az-acr-update) в Azure CLI.
 
@@ -78,7 +73,7 @@ az acr update -n <acrName> --admin-enabled true
 
 ![Включение учетной записи администратора на портале Azure][auth-portal-01]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Отправка первого образа с помощью Azure CLI](container-registry-get-started-azure-cli.md)
 

@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: article
-ms.date: 11/21/2019
+ms.date: 11/22/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jairoc
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 31b7aa906cbefc0ffda707a228f2a9d50be351a8
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: 0caf8e8d5e18efc0a7332f97acccc394051ed360
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74380029"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74452402"
 ---
 # <a name="how-to-require-managed-devices-for-cloud-app-access-with-conditional-access"></a>How To: Require managed devices for cloud app access with Conditional Access
 
@@ -79,7 +79,7 @@ In your Conditional Access policy, you can select **Require Hybrid Azure AD join
 
 Для использования этого варианта устройство должно быть зарегистрировано в Azure AD, а также помечено как совместимое с помощью:
          
-- Intune.
+- Intune
 - Система управления мобильными устройствами стороннего производителя, которая поддерживает устройства Windows 10 через интеграцию с Azure AD. Сторонние системы управления мобильными устройствами для ОС, отличных от Windows 10, не поддерживаются.
  
 ![Состояния на основе устройства](./media/require-managed-devices/46.png)
@@ -90,6 +90,9 @@ In your Conditional Access policy, you can select **Require Hybrid Azure AD join
 - Мобильные приложения, которые используют ваши сотрудники, являются управляемыми
 - Сведения о вашей организации защищены благодаря контролю над тем, как ваши сотрудники обращаются к этим данным и обмениваются ими
 - Устройство и приложения на нем соответствуют требованиям безопасности организации
+
+> [!NOTE]
+> If you configure a policy to require compliant devices users may be prompted on Mac, iOS, and Android to select a device certificate during policy evaluation. This is a known behavior.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

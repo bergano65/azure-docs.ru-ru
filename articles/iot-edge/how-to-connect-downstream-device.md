@@ -1,6 +1,6 @@
 ---
 title: Подключение подчиненных устройств — Azure IoT Edge | Документация Майкрософт
-description: Как настроить подчиненные или конечные устройства для подключения к Azure IoT Edge устройствам шлюза.
+description: How to configure downstream or leaf devices to connect to Azure IoT Edge gateway devices.
 author: kgremban
 manager: philmea
 ms.author: kgremban
@@ -8,23 +8,22 @@ ms.date: 10/08/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.custom: seodec18
-ms.openlocfilehash: c37c3ed2031746d7c476850749bb3dc613252654
-ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
+ms.openlocfilehash: 719ec736fd2f28f8d8b3b226109bc988c872d10f
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72176778"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74457122"
 ---
 # <a name="connect-a-downstream-device-to-an-azure-iot-edge-gateway"></a>Подключение подчиненного устройства к шлюзу Azure IoT Edge
 
-В этой статье приводятся инструкции по установлению доверенного подключения между подчиненными устройствами и IoT Edge прозрачными шлюзами. В сценарии с прозрачным шлюзом одно или несколько устройств могут передавать свои сообщения через одно устройство шлюза, которое поддерживает подключение к центру Интернета вещей. Роль подчиненного устройства может выполнять любое приложение или платформа с идентификатором, созданным с помощью облачной службы [Центра Интернета вещей Azure](https://docs.microsoft.com/azure/iot-hub). Часто для этих приложений применяется [пакет SDK для устройств Azure IoT](../iot-hub/iot-hub-devguide-sdks.md). Подчиненное устройство может даже быть приложением, которое работает на IoT Edge устройстве шлюза. 
+This article provides instructions for establishing a trusted connection between downstream devices and IoT Edge transparent gateways. In a transparent gateway scenario, one or more devices can pass their messages through a single gateway device that maintains the connection to IoT Hub. Роль подчиненного устройства может выполнять любое приложение или платформа с идентификатором, созданным с помощью облачной службы [Центра Интернета вещей Azure](https://docs.microsoft.com/azure/iot-hub). Часто для этих приложений применяется [пакет SDK для устройств Azure IoT](../iot-hub/iot-hub-devguide-sdks.md). A downstream device could even be an application running on the IoT Edge gateway device itself. 
 
-Существует три основных шага для настройки успешного подключения к прозрачному шлюзу. В этой статье рассматривается третий шаг:
+There are three general steps to set up a successful transparent gateway connection. This article covers the third step:
 
-1. Устройство шлюза должно безопасно подключаться к подчиненным устройствам, получать подключения от подчиненных устройств и маршрутизировать сообщения в соответствующее место назначения. Дополнительные сведения см. [в разделе Настройка устройства IOT Edge для работы в качестве прозрачного шлюза](how-to-create-transparent-gateway.md).
-2. Подчиненному устройству требуется удостоверение устройства, чтобы иметь возможность проходить проверку подлинности в центре Интернета вещей и взаимодействовать через его устройство шлюза. Дополнительные сведения см. в статье [Проверка подлинности подчиненного устройства в центре Интернета вещей Azure](how-to-authenticate-downstream-device.md).
-3. **Подчиненное устройство должно иметь возможность безопасного подключения к устройству шлюза.**
+1. The gateway device needs to securely connect to downstream devices, receive communications from downstream devices, and route messages to the proper destination. For more information, see [Configure an IoT Edge device to act as a transparent gateway](how-to-create-transparent-gateway.md).
+2. The downstream device needs a device identity to be able to authenticate with IoT Hub, and know to communicate through its gateway device. For more information, see [Authenticate a downstream device to Azure IoT Hub](how-to-authenticate-downstream-device.md).
+3. **The downstream device needs to be able to securely connect to its gateway device.**
 
 В этой статье описаны распространенные проблемы с подключениями подчиненных устройств, приведены инструкции по настройке подчиненных устройств и представлены следующие сведения: 
 
@@ -34,36 +33,36 @@ ms.locfileid: "72176778"
 
 В этой статье под терминами *шлюз* и *шлюз IoT Edge* подразумевается устройство IoT Edge, которое настроенное в качестве прозрачного шлюза. 
 
-## <a name="prerequisites"></a>Предварительные требования 
+## <a name="prerequisites"></a>Технические условия 
 
-Попросите файл сертификата **Азуре-ИОТ-тест-Онли. root. ca. CERT. pem** , созданный в [настройке устройства IOT EDGE, в качестве прозрачного шлюза](how-to-create-transparent-gateway.md) , доступного на подчиненном устройстве. Подчиненное устройство использует этот сертификат для проверки подлинности устройства шлюза. 
+Have the **azure-iot-test-only.root.ca.cert.pem** certificate file that was generated in [Configure an IoT Edge device to act as a transparent gateway](how-to-create-transparent-gateway.md) available on your downstream device. Your downstream device uses this certificate to validate the identity of the gateway device. 
 
 ## <a name="prepare-a-downstream-device"></a>Подготовка подчиненного устройства
 
-Роль подчиненного устройства может выполнять любое приложение или платформа с идентификатором, созданным с помощью облачной службы [Центра Интернета вещей Azure](https://docs.microsoft.com/azure/iot-hub). Часто для этих приложений применяется [пакет SDK для устройств Azure IoT](../iot-hub/iot-hub-devguide-sdks.md). Подчиненное устройство может даже быть приложением, которое работает на IoT Edge устройстве шлюза. Однако другое устройство IoT Edge не может быть нисходящем шлюзом IoT Edge. 
+Роль подчиненного устройства может выполнять любое приложение или платформа с идентификатором, созданным с помощью облачной службы [Центра Интернета вещей Azure](https://docs.microsoft.com/azure/iot-hub). Часто для этих приложений применяется [пакет SDK для устройств Azure IoT](../iot-hub/iot-hub-devguide-sdks.md). A downstream device could even be an application running on the IoT Edge gateway device itself. However, another IoT Edge device cannot be downstream of an IoT Edge gateway. 
 
 >[!NOTE]
->Устройства IoT с удостоверениями, зарегистрированными в центре Интернета вещей, могут использовать [модуль двойников](../iot-hub/iot-hub-devguide-module-twins.md) для изоляции различных процессов, оборудования или функций на одном устройстве. Шлюзы IoT Edge поддерживают подключения подчиненных модулей с помощью проверки подлинности с симметричным ключом, а не для сертификата X. 509. 
+>IoT devices that have identities registered in IoT Hub can use [module twins](../iot-hub/iot-hub-devguide-module-twins.md) to isolate different process, hardware, or functions on a single device. IoT Edge gateways support downstream module connections using symmetric key authentication but not X.509 certificate authentication. 
 
 Чтобы подключить подчиненное устройство к шлюзу Azure IoT Edge, вам потребуются следующие два компонента:
 
 * Устройство или приложение, в настройках которого указана строка подключения устройств Центра Интернета вещей с данными для подключения к шлюзу. 
 
-    Этот шаг описан в статье [Аутентификация подчиненного устройства в центре Интернета вещей Azure](how-to-authenticate-downstream-device.md).
+    This step is explained in [Authenticate a downstream device to Azure IoT Hub](how-to-authenticate-downstream-device.md).
 
-* Устройство или приложение должно доверять сертификату **корневого ЦС** шлюза, чтобы проверить TLS подключения к устройству шлюза. 
+* The device or application has to trust the gateway's **root CA** certificate to validate the TLS connections to the gateway device. 
 
-    Этот шаг подробно описан в оставшейся части этой статьи. Этот шаг можно выполнить одним из двух способов: установив сертификат ЦС в хранилище сертификатов операционной системы или (для определенных языков), обратившись к сертификату в приложениях с помощью пакетов SDK для Интернета вещей Azure.
+    This step is explained in detail in the rest of this article. This step can be performed one of two ways: by installing the CA certificate in the operating system's certificate store, or (for certain languages) by referencing the certificate within applications using the Azure IoT SDKs.
 
 ## <a name="tls-and-certificate-fundamentals"></a>Основные сведения о TLS и сертификатах
 
-При создании безопасного подключения между подчиненными устройствами и IoT Edge возникают такие же трудности, как и при любом обмене данными через Интернет в режиме "клиент — сервер". Клиент и сервер безопасно обмениваются данными через Интернет по [протоколу TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security). Протокол TLS основан на конструкциях стандарта [инфраструктуры открытых ключей (PKI)](https://en.wikipedia.org/wiki/Public_key_infrastructure), называемых сертификатами. Протокол TLS является довольно вовлеченным спецификацией и предназначен для широкого спектра разделов, относящихся к защите двух конечных точек. В этом разделе перечислены основные понятия, относящиеся к безопасному подключению устройств к IoT Edge шлюзу.
+При создании безопасного подключения между подчиненными устройствами и IoT Edge возникают такие же трудности, как и при любом обмене данными через Интернет в режиме "клиент — сервер". Клиент и сервер безопасно обмениваются данными через Интернет по [протоколу TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security). Протокол TLS основан на конструкциях стандарта [инфраструктуры открытых ключей (PKI)](https://en.wikipedia.org/wiki/Public_key_infrastructure), называемых сертификатами. TLS is a fairly involved specification and addresses a wide range of topics related to securing two endpoints. This section summarizes the concepts relevant for you to securely connect devices to an IoT Edge gateway.
 
-Когда клиент подключается к серверу, сервер предоставляет ему *цепочку сертификатов сервера*. Такая цепочка обычно состоит из сертификата корневого ЦС, одного или нескольких сертификатов промежуточных ЦС, и сертификата самого сервера. Клиент устанавливает отношения доверия с сервером, криптографически проверяя всю цепочку сертификатов сервера. Эта проверка клиента цепочки сертификатов сервера называется *проверкой цепочки серверов*. Клиент криптографически выполнит криптографию, чтобы обеспечить владение закрытым ключом, связанным с сертификатом сервера, в процессе, который называется « *подтверждение принадлежности*». Сочетание проверки и проверки принадлежности серверной цепочки называется *проверкой подлинности сервера*. Чтобы проверить цепочку сертификатов сервера, клиенту нужна копия сертификата корневого ЦС, который использовался для создания (выдачи) этого сертификата сервера. Обычно браузеры при подключении к веб-сайтам используют предварительно настроенный набор часто используемых сертификатов ЦС, оптимизируя работу клиента. 
+Когда клиент подключается к серверу, сервер предоставляет ему *цепочку сертификатов сервера*. Такая цепочка обычно состоит из сертификата корневого ЦС, одного или нескольких сертификатов промежуточных ЦС, и сертификата самого сервера. Клиент устанавливает отношения доверия с сервером, криптографически проверяя всю цепочку сертификатов сервера. This client validation of the server certificate chain is called *server chain validation*. The client cryptographically challenges the service to prove possession of the private key associated with the server certificate in a process called *proof of possession*. The combination of server chain validation and proof of possession is called *server authentication*. Чтобы проверить цепочку сертификатов сервера, клиенту нужна копия сертификата корневого ЦС, который использовался для создания (выдачи) этого сертификата сервера. Обычно браузеры при подключении к веб-сайтам используют предварительно настроенный набор часто используемых сертификатов ЦС, оптимизируя работу клиента. 
 
 Когда устройство подключается к Центру Интернета вещей, оно выполняет роль клиента облачной службы, а служба Центра Интернета вещей представляет собой сервер. Облачная служба Центра Интернета вещей поддерживается сертификатом корневого ЦС с именем **Baltimore CyberTrust Root**, который является общедоступным и широко распространенным. Так как сертификат ЦС для Центра Интернета вещей уже установлен на большинстве устройств, во многих реализациях TLS (OpenSSL, Schannel, LibreSSL) он автоматически используется для проверки сертификата сервера. Возможна ситуация, когда устройство успешно подключается к Центру Интернета вещей, но при попытке подключения к шлюзу IoT Edge возникают проблемы.
 
-Когда устройство подключается к шлюзу IoT Edge, подчиненное устройство выполняет роль клиента, а устройство шлюза представляет собой сервер. Azure IoT Edge позволяет операторам (или пользователям) по своему усмотрению создавать любые цепочки сертификатов шлюза. Оператор может использовать сертификат общедоступного ЦС, например Baltimore, или самозаверяющий сертификат внутреннего корневого ЦС. Сертификаты общедоступных ЦС часто предоставляются за плату, что делает их использование более оправданным для рабочих сценариев. Самозаверяющие сертификаты удобны для разработки и тестирования. В статьях о настройке прозрачного шлюза, перечисленных в разделе Введение, используются самозаверяющие сертификаты корневого ЦС. 
+Когда устройство подключается к шлюзу IoT Edge, подчиненное устройство выполняет роль клиента, а устройство шлюза представляет собой сервер. Azure IoT Edge позволяет операторам (или пользователям) по своему усмотрению создавать любые цепочки сертификатов шлюза. Оператор может использовать сертификат общедоступного ЦС, например Baltimore, или самозаверяющий сертификат внутреннего корневого ЦС. Сертификаты общедоступных ЦС часто предоставляются за плату, что делает их использование более оправданным для рабочих сценариев. Самозаверяющие сертификаты удобны для разработки и тестирования. The transparent gateway setup articles listed in the introduction use self-signed root CA certificates. 
 
 Если вы используете для шлюза IoT Edge самозаверяющий корневой сертификат, он должен быть установлен или предоставлен для всех подчиненных устройств, которые будут подключаться к этому шлюзу. 
 
@@ -71,36 +70,36 @@ ms.locfileid: "72176778"
 
 Дополнительные сведения о сертификатах IoT Edge и некоторых ограничениях для рабочей среды см. в статье [Сведения об использовании сертификатов Azure IoT Edge](iot-edge-certs.md).
 
-## <a name="provide-the-root-ca-certificate"></a>Укажите сертификат корневого ЦС
+## <a name="provide-the-root-ca-certificate"></a>Provide the root CA certificate
 
-Чтобы проверить сертификаты устройства шлюза, подчиненному устройству требуется собственная копия сертификата корневого ЦС. Если вы использовали сценарии, предоставленные в репозитории IoT Edge Git для создания тестовых сертификатов, сертификат корневого ЦС называется **Азуре-ИОТ-тест-Онли. root. ca. CERT. pem**. Если вы еще не сделали это в рамках других этапов подготовки подчиненных устройств, переместите этот файл сертификата в любой каталог на подчиненном устройстве. Для перемещения файла сертификата можно использовать службу, такую как [Azure Key Vault](https://docs.microsoft.com/azure/key-vault) , или функцию, например [протокол безопасного копирования](https://www.ssh.com/ssh/scp/) .
+To verify the gateway device's certificates, the downstream device needs its own copy of the root CA certificate. If you used the scripts provided in the IoT Edge git repository to create test certificates, then the root CA certificate is called **azure-iot-test-only.root.ca.cert.pem**. If you haven't already as part of the other downstream device preparation steps, move this certificate file to any directory on your downstream device. You can use a service like [Azure Key Vault](https://docs.microsoft.com/azure/key-vault) or a function like [Secure copy protocol](https://www.ssh.com/ssh/scp/) to move the certificate file.
 
-## <a name="install-certificates-in-the-os"></a>Установка сертификатов в ОС
+## <a name="install-certificates-in-the-os"></a>Install certificates in the OS
 
-Установка сертификата корневого ЦС в хранилище сертификатов операционной системы обычно позволяет большинству приложений использовать сертификат корневого ЦС. Существуют некоторые исключения, например приложения NodeJS, которые не используют хранилище сертификатов ОС, а используют внутреннее хранилище сертификатов среды выполнения узла. Если вы не можете установить сертификат на уровне операционной системы, переходите к [использованию сертификатов с пакетами SDK для Интернета вещей Azure](#use-certificates-with-azure-iot-sdks). 
+Installing the root CA certificate in the operating system's certificate store generally allows most applications to use the root CA certificate. There are some exceptions, like NodeJS applications that don't use the OS certificate store but rather use the Node runtime's internal certificate store. If you can't install the certificate at the operating system level, skip ahead to [Use certificates with Azure IoT SDKs](#use-certificates-with-azure-iot-sdks). 
 
 ### <a name="ubuntu"></a>Ubuntu
 
-Команды из следующего примера устанавливают сертификат ЦС на узле под управлением ОС Ubuntu. В этом примере предполагается, что вы используете сертификат **Азуре-ИОТ-тест-Онли. root. ca. CERT. pem** из статей о предварительных требованиях и скопировали сертификат в расположение на подчиненном устройстве.
+Команды из следующего примера устанавливают сертификат ЦС на узле под управлением ОС Ubuntu. This example assumes that you're using the **azure-iot-test-only.root.ca.cert.pem** certificate from the prerequisites articles, and that you've copied the certificate into a location on the downstream device.
 
 ```bash
 sudo cp <path>/azure-iot-test-only.root.ca.cert.pem /usr/local/share/ca-certificates/azure-iot-test-only.root.ca.cert.pem.crt
 sudo update-ca-certificates
 ```
 
-Должно отобразиться следующее сообщение: "Updating certificates in /etc/ssl/certs... 1 added, 0 removed; done" (Обновление сертификатов в /etc/ssl/certs... Добавлено: 1, удалено: 0. Готово.).
+You should see a message that says, "Updating certificates in /etc/ssl/certs... 1 added, 0 removed; done."
 
 ### <a name="windows"></a>Windows
 
-В следующих шагах описано, как установить сертификат ЦС на узле под управлением ОС Windows. В этом примере предполагается, что вы используете сертификат **Азуре-ИОТ-тест-Онли. root. ca. CERT. pem** из статей о предварительных требованиях и скопировали сертификат в расположение на подчиненном устройстве.
+В следующих шагах описано, как установить сертификат ЦС на узле под управлением ОС Windows. This example assumes that you're using the **azure-iot-test-only.root.ca.cert.pem** certificate from the prerequisites articles, and that you've copied the certificate into a location on the downstream device.
 
-Сертификаты можно установить с помощью [импорта сертификата](https://docs.microsoft.com/powershell/module/pkiclient/import-certificate?view=win10-ps) PowerShell с правами администратора:
+You can install certificates using PowerShell's [Import-Certificate](https://docs.microsoft.com/powershell/module/pkiclient/import-certificate?view=win10-ps) as an administrator:
 
 ```powershell
 import-certificate  <file path>\azure-iot-test-only.root.ca.cert.pem -certstorelocation cert:\LocalMachine\root
 ```
 
-Сертификаты также можно установить с помощью служебной программы **certlm** : 
+You can also install certificates using the **certlm** utility: 
 
 1. В меню "Пуск" выполните поиск по элементу **Управление сертификатами компьютеров**. Откроется служебная программа **certlm**.
 2. Откройте **Сертификаты — локальный компьютер** > **Доверенные корневые центры сертификации**.
@@ -117,15 +116,15 @@ import-certificate  <file path>\azure-iot-test-only.root.ca.cert.pem -certstorel
 
 Прежде чем использовать примеры уровня приложения, следует подготовить следующие два компонента:
 
-* Строка подключения к центру Интернета вещей подчиненного устройства, измененная для указания на устройство шлюза, и все сертификаты, необходимые для проверки подлинности подчиненного устройства в центре Интернета вещей. Дополнительные сведения см. в статье [Проверка подлинности подчиненного устройства в центре Интернета вещей Azure](how-to-authenticate-downstream-device.md).
+* Your downstream device's IoT Hub connection string modified to point to the gateway device, and any certificates required to authenticate your downstream device to IoT Hub. For more information, see [Authenticate a downstream device to Azure IoT Hub](how-to-authenticate-downstream-device.md).
 
 * Полный путь к сертификату корневого ЦС, который вы скопировали (сохранили) на подчиненное устройство.
 
-    Например, `<path>/azure-iot-test-only.root.ca.cert.pem`. 
+    Пример: `<path>/azure-iot-test-only.root.ca.cert.pem`. 
 
-### <a name="nodejs"></a>Node.js
+### <a name="nodejs"></a>NodeJs
 
-Этот раздел содержит пример приложения для подключения клиентского устройства Azure IoT NodeJS к шлюзу IoT Edge. Для приложений NodeJS необходимо установить сертификат корневого ЦС на уровне приложения, как показано ниже. Приложения NodeJS не используют хранилище сертификатов системы. 
+Этот раздел содержит пример приложения для подключения клиентского устройства Azure IoT NodeJS к шлюзу IoT Edge. For NodeJS applications, you must install the root CA certificate at the application level as shown here. NodeJS applications don't use the system's certificate store. 
 
 1. Получите пример файла **edge_downstream_device.js** из [репозитория примеров использования пакета SDK для устройств Azure IoT для Node.js](https://github.com/Azure/azure-iot-sdk-node/tree/master/device/samples). 
 2. Убедитесь, что у вас есть все необходимые компоненты для запуска примера (см. файл **readme.md**). 
@@ -170,7 +169,7 @@ var options = {
 
 Если вы не используете OpenSSL или другую библиотеку TLS, на узлах Windows пакет SDK по умолчанию применяет Schannel. Чтобы обеспечить правильную работу Schannel, сертификат корневого ЦС для IoT Edge должен быть установлен в хранилище сертификатов Windows, а не с помощью операции `IoTHubDeviceClient_SetOption`. 
 
-### <a name="java"></a>Java
+### <a name="java"></a>Java:
 
 Этот раздел знакомит вас с примером приложения для подключения клиентского устройства Azure IoT Java к шлюзу IoT Edge. 
 
@@ -182,33 +181,33 @@ var options = {
 
 Этот раздел знакомит вас с примером приложения для подключения клиентского устройства Azure IoT Python к шлюзу IoT Edge. 
 
-1. Получите пример для **send_message** из [пакета SDK для устройств Azure IOT для примеров Python](https://github.com/Azure/azure-iot-sdk-python/tree/master/azure-iot-device/samples/advanced-edge-scenarios). 
-2. Убедитесь, что либо выполняется в контейнере IoT Edge, либо в сценарии отладки заданы переменные среды `EdgeHubConnectionString` и `EdgeModuleCACertificateFile`.
+1. Get the sample for **send_message** from the [Azure IoT device SDK for Python samples](https://github.com/Azure/azure-iot-sdk-python/tree/master/azure-iot-device/samples/advanced-edge-scenarios). 
+2. Ensure that you are either running in an IoT Edge container, or in a debug scenario, have the `EdgeHubConnectionString` and `EdgeModuleCACertificateFile` environment variables set.
 3. В документации по пакету SDK вы найдете инструкции по запуску примера на конкретном устройстве. 
 
 
 ## <a name="test-the-gateway-connection"></a>Тестирование подключения к шлюзу
 
-Используйте этот пример команды, чтобы проверить возможность подключения подчиненного устройства к устройству шлюза. 
+Use this sample command to test that your downstream device can connect to the gateway device: 
 
 ```cmd/sh
 openssl s_client -connect mygateway.contoso.com:8883 -CAfile <CERTDIR>/certs/azure-iot-test-only.root.ca.cert.pem -showcerts
 ```
 
-Эта команда проверяет соединения через МКТТС (порт 8883). Если вы используете другой протокол, внесите необходимые изменения в команду для AMQPS (5671) или HTTPS (433).
+This command tests connections over MQTTS (port 8883). If you're using a different protocol, adjust the command as neccessary for AMQPS (5671) or HTTPS (433).
 
-Выходные данные этой команды могут быть длинными, включая сведения обо всех сертификатах в цепочке. Если подключение установлено успешно, вы увидите строку, например `Verification: OK` или `Verify return code: 0 (ok)`.
+The output of this command may be long, including information about all the certificates in the chain. If your connection is successful, you'll see a line like `Verification: OK` or `Verify return code: 0 (ok)`.
 
-![Проверка подключения шлюза](./media/how-to-connect-downstream-device/verification-ok.png)
+![Verify gateway connection](./media/how-to-connect-downstream-device/verification-ok.png)
 
-## <a name="troubleshoot-the-gateway-connection"></a>Устранение неполадок подключения шлюза
+## <a name="troubleshoot-the-gateway-connection"></a>Troubleshoot the gateway connection
 
-Если конечное устройство постоянно подключено к устройству шлюза, попробуйте выполнить следующие действия для решения проблемы. 
+If your leaf device has intermittent connection to its gateway device, try the following steps for resolution. 
 
-1. Совпадает ли имя узла шлюза в строке подключения со значением имени узла в файле IoT Edge config. YAML на устройстве шлюза?
-2. Разрешается ли имя узла шлюза в IP-адрес? Вы можете разрешить периодические подключения с помощью DNS или путем добавления записи файла узла на конечном устройстве.
-3. Открыты ли порты связи в брандмауэре? Связь, основанная на используемом протоколе (МКТТС: 8883/AMQPS: 5671/HTTPS: 433), должна быть возможна между подчиненным устройством и прозрачным IoT Edge.
+1. Is the gateway hostname in the connection string the same as the hostname value in the IoT Edge config.yaml file on the gateway device?
+2. Is the gateway hostname resolvable to an IP Address? You can resolve intermittent connections either by using DNS or by adding a host file entry on the leaf device.
+3. Are communication ports open in your firewall? Communication based on the protocol used (MQTTS:8883/AMQPS:5671/HTTPS:433) must be possible between downstream device and the transparent IoT Edge.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как IoT Edge расширяет [возможности автономной работы](offline-capabilities.md) для подчиненных устройств. 

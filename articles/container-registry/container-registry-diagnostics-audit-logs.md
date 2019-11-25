@@ -1,101 +1,90 @@
 ---
-title: Журналы ресурсов для реестра контейнеров Azure | Документация Майкрософт
-description: Записывайте и анализируйте события журнала ресурсов для реестра контейнеров Azure, такие как проверка подлинности, отправка образа и извлечение образа.
-services: container-registry
-documentationcenter: ''
-author: dlepow
-manager: gwallace
-editor: ''
-ms.assetid: ''
-ms.service: container-registry
-ms.devlang: na
+title: Collect & analyze resource logs
+description: Record and analyze resource log events for Azure Container Registry such as authentication, image push, and image pull.
 ms.topic: article
-ms.tgt_pltfrm: multiple
-ms.workload: ''
 ms.date: 10/30/2019
-ms.author: danlep
-ms.openlocfilehash: e419f8c5cf06efc93294f9c428e9102c1f81b36a
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.openlocfilehash: ada8502724c1779b9bdab2e8ac7e8ea61c256e44
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73180820"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74456428"
 ---
-# <a name="azure-container-registry-logs-for-diagnostic-evaluation-and-auditing"></a>Журналы реестра контейнеров Azure для диагностической оценки и аудита
+# <a name="azure-container-registry-logs-for-diagnostic-evaluation-and-auditing"></a>Azure Container Registry logs for diagnostic evaluation and auditing
 
-В этой статье объясняется, как получить данные журнала для реестра контейнеров Azure с помощью функций [Azure Monitor](../azure-monitor/overview.md). Azure Monitor собирает [журналы ресурсов](../azure-monitor/platform/resource-logs-overview.md) (ранее называемые *журналами диагностики*) для событий, управляемых пользователем, в реестре. Собирайте и потребляют эти данные в соответствии с потребностями:
+This article explains how to collect log data for an Azure container registry using features of [Azure Monitor](../azure-monitor/overview.md). Azure Monitor collects [resource logs](../azure-monitor/platform/resource-logs-overview.md) (formerly called *diagnostic logs*) for user-driven events in your registry. Collect and consume this data to meet needs such as:
 
-* Аудит событий проверки подлинности в реестре для обеспечения безопасности и соответствия требованиям 
+* Audit registry authentication events to ensure security and compliance 
 
-* Предоставьте полный журнал действий для артефактов реестра, таких как события извлечения и извлечения, чтобы диагностировать проблемы с реестром. 
+* Provide a complete activity trail on registry artifacts such as pull and pull events so you can diagnose operational issues with your registry 
 
-Сбор данных журнала ресурсов с помощью Azure Monitor может повлечь дополнительные затраты. См. [Azure Monitor цены](https://azure.microsoft.com/pricing/details/monitor/). 
+Collecting resource log data using Azure Monitor may incur additional costs. See [Azure Monitor pricing](https://azure.microsoft.com/pricing/details/monitor/). 
 
 
 > [!IMPORTANT]
-> Эта функция сейчас доступна в предварительной версии, и некоторые [ограничения](#preview-limitations) применяются. Предварительные версии предоставляются при условии, что вы принимаете [дополнительные условия использования][terms-of-use]. Некоторые аспекты этой функции могут быть изменены до выхода общедоступной версии.
+> This feature is currently in preview, and some [limitations](#preview-limitations) apply. Предварительные версии предоставляются при условии, что вы принимаете [дополнительные условия использования][terms-of-use]. Некоторые аспекты этой функции могут быть изменены до выхода общедоступной версии.
 
 ## <a name="preview-limitations"></a>Ограничения предварительной версии
 
-Ведение журнала событий уровня репозитория в настоящее время не включает события удаления или удалить тег. Регистрируются только следующие события репозитория:
-* **События push-уведомлений** для изображений и других артефактов
-* **События извлечения** для изображений и других артефактов
+Logging of repository-level events doesn't currently include delete or untag events. Only the following repository events are logged:
+* **Push events** for images and other artifacts
+* **Pull events** for images and other artifacts
 
-## <a name="registry-resource-logs"></a>Журналы ресурсов реестра
+## <a name="registry-resource-logs"></a>Registry resource logs
 
-Журналы ресурсов содержат сведения, созданные ресурсами Azure, которые описывают их внутреннюю работу. Для реестра контейнеров Azure журналы содержат события проверки подлинности и уровня репозитория, хранящиеся в следующих таблицах. 
+Resource logs contain information emitted by Azure resources that describe their internal operation. For an Azure container registry, the logs contain authentication and repository-level events stored in the following tables. 
 
-* **Контаинеррегистрилогиневентс** — события и состояние проверки подлинности реестра, включая входящий идентификатор и IP-адрес.
-* **Контаинеррегистрирепоситоревентс** — такие операции, как отправка и Извлечение изображений и других артефактов в репозиториях реестра.
-* **Азуреметрикс** - [метрики реестра контейнеров](../azure-monitor/platform/metrics-supported.md#microsoftcontainerregistryregistries) , такие как агрегированные push-уведомления и счетчики Pull.
+* **ContainerRegistryLoginEvents**  - Registry authentication events and status, including the incoming identity and IP address
+* **ContainerRegistryRepositoryEvents** - Operations such as push and pull for images and other artifacts in registry repositories
+* **AzureMetrics** - [Container registry metrics](../azure-monitor/platform/metrics-supported.md#microsoftcontainerregistryregistries) such as aggregated push and pull counts.
 
-Для операций данные журнала включают:
-  * Состояние успеха или сбоя
-  * Метки времени начала и окончания
+For operations, log data includes:
+  * Success or failure status
+  * Start and end time stamps
 
-Помимо журналов ресурсов, Azure предоставляет [Журнал действий](../azure-monitor/platform/activity-logs-overview.md), отдельную запись на уровне подписки на события управления Azure, например создание или удаление реестра контейнеров.
+In addition to resource logs, Azure provides an [activity log](../azure-monitor/platform/activity-logs-overview.md), a single subscription-level record of Azure management events such as the creation or deletion of a container registry.
 
-## <a name="enable-collection-of-resource-logs"></a>Включение сбора журналов ресурсов
+## <a name="enable-collection-of-resource-logs"></a>Enable collection of resource logs
 
-Сбор журналов ресурсов для реестра контейнеров по умолчанию отключен. Явно включите параметры диагностики для каждого реестра, который требуется отслеживать. Сведения о параметрах включения диагностики см. в статье [Создание параметров диагностики для сбора журналов и метрик платформы в Azure](../azure-monitor/platform/diagnostic-settings.md).
+Collection of resource logs for a container registry isn't enabled by default. Explicitly enable diagnostic settings for each registry you want to monitor. For options to enable diagnostic settings, see [Create diagnostic setting to collect platform logs and metrics in Azure](../azure-monitor/platform/diagnostic-settings.md).
 
-Например, чтобы просмотреть журналы и метрики для реестра контейнеров практически в реальном времени в Azure Monitor, собирайте журналы ресурсов в рабочей области Log Analytics. Чтобы включить этот параметр диагностики с помощью портал Azure, выполните следующие действия.
+For example, to view logs and metrics for a container registry in near real-time in Azure Monitor, collect the resource logs in a Log Analytics workspace. To enable this diagnostic setting using the Azure portal:
 
-1. Если у вас еще нет рабочей области, создайте ее с помощью [портал Azure](../azure-monitor/learn/quick-create-workspace.md). Чтобы максимально сокращать задержку в сборе данных, убедитесь, что Рабочая область находится в том **же регионе** , что и реестр контейнеров.
-1. На портале выберите реестр и выберите **мониторинг > параметры диагностики > добавить параметр диагностики**.
-1. Введите имя параметра и выберите **отправить в log Analytics**.
-1. Выберите рабочую область для журналов диагностики реестра.
-1. Выберите данные журнала, которые требуется отслеживать, и нажмите кнопку **сохранить**.
+1. If you don't already have a workspace, create a workspace using the [Azure portal](../azure-monitor/learn/quick-create-workspace.md). To minimize latency in data collection, ensure that the workspace is in the **same region** as your container registry.
+1. In the portal, select the registry, and select **Monitoring > Diagnostic settings > Add diagnostic setting**.
+1. Enter a name for the setting, and select **Send to Log Analytics**.
+1. Select the workspace for the registry diagnostic logs.
+1. Select the log data you want to collect, and click **Save**.
 
-На следующем рисунке показано создание параметра диагностики для реестра с помощью портала.
+The following image shows creation of a diagnostic setting for a registry using the portal.
 
 ![Включение параметров диагностики](media/container-registry-diagnostics-audit-logs/diagnostic-settings.png)
 
 > [!TIP]
-> Собирайте только необходимые данные, стоимость балансировки и потребности мониторинга. Например, если требуется только аудит событий проверки подлинности, выберите только журнал **контаинеррегистрилогиневентс** . 
+> Collect only the data that you need, balancing cost and your monitoring needs. For example, if you only need to audit authentication events, select only the **ContainerRegistryLoginEvents** log. 
 
-## <a name="view-data-in-azure-monitor"></a>Просмотр данных в Azure Monitor
+## <a name="view-data-in-azure-monitor"></a>View data in Azure Monitor
 
-После включения сбора журналов диагностики в Log Analytics для отображения данных в Azure Monitor может потребоваться несколько минут. Чтобы просмотреть данные на портале, выберите реестр и выберите **мониторинг > журналы**. Выберите одну из таблиц, содержащих данные для реестра. 
+After you enable collection of diagnostic logs in Log Analytics, it can take a few minutes for data to appear in Azure Monitor. To view the data in the portal, select the registry, and select **Monitoring > Logs**. Select one of the tables that contains data for the registry. 
 
-Выполнение запросов для просмотра данных. Предоставляется несколько примеров запросов или выполняется собственное. Например, следующий запрос получает последние 24 часа данных из таблицы **контаинеррегистрирепоситоревентс** :
+Run queries to view the data. Several sample queries are provided, or run your own. For example, the following query retrieves the most recent 24 hours of data from the **ContainerRegistryRepositoryEvents** table:
 
 ```Kusto
 ContainerRegistryRepositoryEvents
 | where TimeGenerated > ago(1d) 
 ```
 
-На следующем рисунке показан пример выходных данных:
+The following image shows sample output:
 
 ![Запрашивание данных журнала](media/container-registry-diagnostics-audit-logs/azure-monitor-query.png)
 
-Руководство по использованию Log Analytics в портал Azure см. в статье Начало [работы с Azure Monitor log Analytics](../azure-monitor/log-query/get-started-portal.md)или использование [демонстрационной среды](https://portal.loganalytics.io/demo)log Analytics. 
+For a tutorial on using Log Analytics in the Azure portal, see [Get started with Azure Monitor Log Analytics](../azure-monitor/log-query/get-started-portal.md), or try the Log Analytics [Demo environment](https://portal.loganalytics.io/demo). 
 
-Дополнительные сведения о запросах журналов см. [в разделе Общие сведения о запросах журналов в Azure Monitor](../azure-monitor/log-query/log-query-overview.md).
+For more information on log queries, see [Overview of log queries in Azure Monitor](../azure-monitor/log-query/log-query-overview.md).
 
-### <a name="additional-query-examples"></a>Дополнительные примеры запросов
+### <a name="additional-query-examples"></a>Additional query examples
 
-#### <a name="100-most-recent-registry-events"></a>100. Последние события реестра
+#### <a name="100-most-recent-registry-events"></a>100 most recent registry events
 
 ```Kusto
 ContainerRegistryRepositoryEvents
@@ -104,16 +93,16 @@ ContainerRegistryRepositoryEvents
 | project TimeGenerated, LoginServer , OperationName , Identity , Repository , DurationMs , Region , ResultType
 ```
 
-## <a name="additional-log-destinations"></a>Дополнительные назначения журналов
+## <a name="additional-log-destinations"></a>Additional log destinations
 
-Помимо отправки журналов в Log Analytics или в качестве альтернативы распространенным сценарием является выбор учетной записи хранения Azure в качестве назначения журнала. Чтобы архивировать журналы в службе хранилища Azure, создайте учетную запись хранения, прежде чем включать архивацию с помощью параметров диагностики.
+In addition to sending the logs to Log Analytics, or as an alternative, a common scenario is to select an Azure Storage account as a log destination. To archive logs in Azure Storage, create a storage account before enabling archiving through the diagnostic settings.
 
-Вы также можете выполнять потоковую передачу событий журнала диагностики в [концентратор событий Azure](../event-hubs/event-hubs-what-is-event-hubs.md). Центры событий способны принимать миллионы событий в секунду, позволяя преобразовать и сохранять их с помощью любого поставщика аналитики в реальном времени. 
+You can also stream diagnostic log events to an [Azure Event Hub](../event-hubs/event-hubs-what-is-event-hubs.md). Центры событий способны принимать миллионы событий в секунду, позволяя преобразовать и сохранять их с помощью любого поставщика аналитики в реальном времени. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Дополнительные сведения об использовании [log Analytics](../azure-monitor/log-query/get-started-portal.md) и создании [запросов журналов](../azure-monitor/log-query/get-started-queries.md).
-* Сведения о журналах платформы, доступных на разных уровнях Azure, см. в статье [Обзор журналов платформы Azure](../azure-monitor/platform/platform-logs-overview.md) .
+* Learn more about using [Log Analytics](../azure-monitor/log-query/get-started-portal.md) and creating [log queries](../azure-monitor/log-query/get-started-queries.md).
+* See [Overview of Azure platform logs](../azure-monitor/platform/platform-logs-overview.md) to learn about platform logs that are available at different layers of Azure.
 
 <!-- LINKS - External -->
 [terms-of-use]: https://azure.microsoft.com/support/legal/preview-supplemental-terms/

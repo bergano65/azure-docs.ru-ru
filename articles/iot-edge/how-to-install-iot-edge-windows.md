@@ -9,13 +9,12 @@ services: iot-edge
 ms.topic: conceptual
 ms.date: 10/04/2019
 ms.author: kgremban
-ms.custom: seodec18
-ms.openlocfilehash: ae3f866ff5e4266983117e93f2aab5982065947e
-ms.sourcegitcommit: c4700ac4ddbb0ecc2f10a6119a4631b13c6f946a
+ms.openlocfilehash: 401e988e41a25a999c047bf93b6794388d38461e
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2019
-ms.locfileid: "72964388"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74456804"
 ---
 # <a name="install-the-azure-iot-edge-runtime-on-windows"></a>Установка среды выполнения Azure IoT Edge в Windows
 
@@ -23,16 +22,16 @@ ms.locfileid: "72964388"
 
 Дополнительные сведения о среде выполнения IoT Edge см. в статье [Общие сведения о среде выполнения Azure IoT Edge и ее архитектуре](iot-edge-runtime.md).
 
-В этой статье перечислены действия по установке среды выполнения Azure IoT Edge в системе Windows x64 (AMD и Intel) с помощью контейнеров Windows.
+This article lists the steps to install the Azure IoT Edge runtime on your Windows x64 (AMD/Intel) system using Windows containers.
 
 > [!NOTE]
-> Известная ошибка операционной системы Windows не позволяет переходить в спящий режим и режим гибернации при IoT Edgeных модулях (контейнеры Windows Nano Server с изолированной обработкой). Эта проблема влияет на время работы батареи устройства.
+> A known Windows operating system issue prevents transition to sleep and hibernate power states when IoT Edge modules (process-isolated Windows Nano Server containers) are running. This issue impacts battery life on the device.
 >
-> В качестве обходного решения используйте команду `Stop-Service iotedge` для завершения работы модулей IoT Edge перед использованием этих режимов питания. 
+> As a workaround, use the command `Stop-Service iotedge` to stop any running IoT Edge modules before using these power states. 
 
-Использование контейнеров Linux в системах Windows не является рекомендуемым или поддерживаемым производственной конфигурацией для Azure IoT Edge. Однако его можно использовать для целей разработки и тестирования. Дополнительные сведения см. в статье [использование IOT EDGE в Windows для запуска контейнеров Linux](how-to-install-iot-edge-windows-with-linux.md).
+Использование контейнеров Linux в системах Windows не является рекомендуемым или поддерживаемым производственной конфигурацией для Azure IoT Edge. Однако его можно использовать для целей разработки и тестирования. To learn more, see [Use IoT Edge on Windows to run Linux containers](how-to-install-iot-edge-windows-with-linux.md).
 
-Сведения о том, что входит в последнюю версию IoT Edge, см. в разделе [Azure IOT Edge выпуски](https://github.com/Azure/azure-iotedge/releases).
+For information about what's included in the latest version of IoT Edge, see [Azure IoT Edge releases](https://github.com/Azure/azure-iotedge/releases).
 
 ## <a name="prerequisites"></a>Технические условия
 
@@ -40,15 +39,15 @@ ms.locfileid: "72964388"
 
 ### <a name="supported-windows-versions"></a>Поддерживаемые версии Windows
 
-Для сценариев разработки и тестирования Azure IoT Edge с контейнерами Windows можно установить в любой версии Windows 10 или Windows Server 2019 (сборка 17763), поддерживающей функцию контейнеров. Сведения о том, какие операционные системы в настоящее время поддерживаются в рабочих сценариях, см. в разделе [Azure IOT Edge Поддерживаемые системы](support.md#operating-systems). 
+For development and test scenarios, Azure IoT Edge with Windows containers can be installed on any version of Windows 10 or Windows Server 2019 (build 17763) that supports the containers feature. For information about which operating systems are currently supported for production scenarios, see [Azure IoT Edge supported systems](support.md#operating-systems). 
 
-Устройства центра Интернета вещей должны включать в себя дополнительный компонент "контейнеры Интернета вещей Core — Windows" для поддержки IoT Edge среды выполнения. Используйте следующую команду в [удаленном сеансе PowerShell](https://docs.microsoft.com/windows/iot-core/connect-your-device/powershell) , чтобы проверить, поддерживаются ли на устройстве контейнеры Windows: 
+IoT Core devices must include the IoT Core- Windows Containers optional feature to support the IoT Edge runtime. Use the following command in a [remote PowerShell session](https://docs.microsoft.com/windows/iot-core/connect-your-device/powershell) to check that Windows containers are supported on your device: 
 
 ```powershell
 Get-Service vmcompute
 ```
 
-Если служба присутствует, вы должны получить успешный ответ со статусом службы в списке **выполняется**. Если служба вмкомпуте не найдена, устройство не соответствует требованиям для IoT Edge. Обратитесь к поставщику оборудования, чтобы узнать о поддержке этой функции. 
+If the service is present, you should get a successful response with the service status listed as **running**. If the vmcompute service is not found, then your device does not meet the requirements for IoT Edge. Contact your hardware provider to ask about support for this feature. 
 
 ### <a name="prepare-for-a-container-engine"></a>Подготовка для подсистемы контейнеров 
 
@@ -62,23 +61,23 @@ Get-Service vmcompute
 Сценарий PowerShell загружает и устанавливает управляющую программу безопасности Azure IoT Edge. Управляющая программа безопасности запускает первый из двух модулей среды выполнения, агент IoT Edge, который обеспечивает удаленные развертывания других модулей. 
 
 >[!TIP]
->Для устройств IoT Core рекомендуется выполнять команды установки с помощью сеанса Ремотеповершелл. Дополнительные сведения см. [в статье Использование PowerShell для Windows IOT](https://docs.microsoft.com/windows/iot-core/connect-your-device/powershell).
+>For IoT Core devices, we recommend running the installation commands using a RemotePowerShell session. For more information, see [Using PowerShell for Windows IoT](https://docs.microsoft.com/windows/iot-core/connect-your-device/powershell).
 
-При установке среды выполнения IoT Edge в первый раз на устройстве нужно подготовить устройство с помощью удостоверения из центра Интернета вещей. Отдельное IoT Edge устройство можно подготовить вручную, используя строку подключения устройства, предоставленную Центром Интернета вещей. Вы также можете использовать службу подготовки устройств (DPS) для автоматической подготовки устройств, что полезно при наличии множества устройств для настройки. В зависимости от выбранного способа подготовки выберите соответствующий скрипт установки. 
+При установке среды выполнения IoT Edge в первый раз на устройстве нужно подготовить устройство с помощью удостоверения из центра Интернета вещей. A single IoT Edge device can be provisioned manually using a device connection string provided by IoT Hub. Or, you can use the Device Provisioning Service (DPS) to automatically provision devices, which is helpful when you have many devices to set up. В зависимости от выбранного способа подготовки выберите соответствующий скрипт установки. 
 
 Следующие разделы описывают распространенные варианты использования и параметров для скрипта установки IoT Edge на новое устройство. 
 
 ### <a name="option-1-install-and-manually-provision"></a>Вариант 1. Установка и подготовка вручную
 
-В этом первом варианте вы задаете **строку подключения устройства** , созданную центром Интернета вещей для инициализации устройства. 
+In this first option, you provide a **device connection string** generated by IoT Hub to provision the device. 
 
-В этом примере демонстрируется установка вручную с контейнерами Windows.
+This example demonstrates a manual installation with Windows containers:
 
-1. Если вы еще этого не сделали, зарегистрируйте новое устройство IoT Edge и получите **строку подключения устройства**. Скопируйте строку подключения для использования далее в этом разделе. Этот шаг можно выполнить с помощью следующих средств:
+1. If you haven't already, register a new IoT Edge device and retrieve the **device connection string**. Copy the connection string to use later in this section. You can complete this step using the following tools:
 
    * [Портал Azure](how-to-register-device.md#register-in-the-azure-portal)
    * [Azure CLI](how-to-register-device.md#register-with-the-azure-cli)
-   * [Visual Studio Code](how-to-register-device.md#register-with-visual-studio-code)
+   * [Код Visual Studio](how-to-register-device.md#register-with-visual-studio-code)
 
 2. Откройте сеанс PowerShell от имени администратора.
 
@@ -89,14 +88,14 @@ Get-Service vmcompute
    >(Get-Process -Id $PID).StartInfo.EnvironmentVariables["PROCESSOR_ARCHITECTURE"]
    >```
 
-3. Команда **deploy-IoTEdge** проверяет, что компьютер Windows находится в поддерживаемой версии, включает функцию контейнеров, а затем загружает среду выполнения значок Кита и среду выполнения IOT Edge. Команда по умолчанию использует контейнеры Windows. 
+3. The **Deploy-IoTEdge** command checks that your Windows machine is on a supported version, turns on the containers feature, and then downloads the moby runtime and the IoT Edge runtime. The command defaults to using Windows containers. 
 
    ```powershell
    . {Invoke-WebRequest -useb https://aka.ms/iotedge-win} | Invoke-Expression; `
    Deploy-IoTEdge
    ```
 
-4. На этом этапе устройства IoT Core могут перезапускаться автоматически. Другие устройства Windows 10 или Windows Server могут предложить перезагрузку. Если да, перезагрузите устройство прямо сейчас. Когда устройство будет готово, снова запустите PowerShell от имени администратора.
+4. At this point, IoT Core devices may restart automatically. Other Windows 10 or Windows Server devices may prompt you to restart. If so, restart your device now. Once your device is ready, run PowerShell as an administrator again.
 
 5. Команда **Initialize-IoTEdge** настраивает среду выполнения IoT Edge на вашем компьютере. По умолчанию при выполнении команды применяется подготовка вручную с помощью контейнеров Windows. 
 
@@ -105,11 +104,11 @@ Get-Service vmcompute
    Initialize-IoTEdge
    ```
 
-6. При появлении запроса введите строку подключения устройства, полученную на шаге 1. Строка подключения устройства связывает физическое устройство с ИДЕНТИФИКАТОРом устройства в центре Интернета вещей. 
+6. When prompted, provide the device connection string that you retrieved in step 1. The device connection string associates the physical device with a device ID in IoT Hub. 
 
-   Строка подключения устройства имеет следующий формат и не должна содержать кавычки: `HostName={IoT hub name}.azure-devices.net;DeviceId={device name};SharedAccessKey={key}`
+   The device connection string takes the following format, and should not include quotation marks: `HostName={IoT hub name}.azure-devices.net;DeviceId={device name};SharedAccessKey={key}`
 
-7. Выполните действия, описанные в разделе [Проверка успешной установки](#verify-successful-installation) , чтобы проверить состояние IOT EDGE на устройстве. 
+7. Use the steps in [Verify successful installation](#verify-successful-installation) to check the status of IoT Edge on your device. 
 
 Когда вы устанавливаете и подготавливаете устройство вручную, можно использовать дополнительные параметры для изменения установки, том числе сделать следующее.
 
@@ -117,16 +116,16 @@ Get-Service vmcompute
 * Указать установщику автономный каталог.
 * Объявить определенный образ контейнера агента и указать учетные данные, если он находится в частном реестре.
 
-Дополнительные сведения об этих параметрах установки см. в статье о [всех параметрах установки](#all-installation-parameters).
+For more information about these installation options, skip ahead to learn about [all installation parameters](#all-installation-parameters).
 
 ### <a name="option-2-install-and-automatically-provision"></a>Вариант 2. Установка и автоматическая подготовка
 
-Во втором варианте подготовка устройства выполняется с помощью службы подготовки устройств к добавлению в Центр Интернета вещей. Укажите **идентификатор области** из экземпляра службы подготовки устройств, а также другие сведения, относящиеся к предпочтительному [механизму аттестации](../iot-dps/concepts-security.md#attestation-mechanism):
+Во втором варианте подготовка устройства выполняется с помощью службы подготовки устройств к добавлению в Центр Интернета вещей. Provide the **Scope ID** from a Device Provisioning Service instance along with any other information specific to your preferred [attestation mechanism](../iot-dps/concepts-security.md#attestation-mechanism):
 
-* [Создание и инициализация имитации устройства IoT Edge с помощью виртуального доверенного платформенного модуля в Windows](how-to-auto-provision-simulated-device-windows.md)
-* [Создание и инициализация устройства IoT Edge с помощью аттестации симметричных ключей](how-to-auto-provision-symmetric-keys.md)
+* [Create and provision a simulated IoT Edge device with a virtual TPM on Windows](how-to-auto-provision-simulated-device-windows.md)
+* [Create and provision an IoT Edge device using symmetric key attestation](how-to-auto-provision-symmetric-keys.md)
 
-При автоматической установке и подготовке устройства можно использовать дополнительные параметры для изменения установки, в том числе:
+When you install and provision a device automatically, you can use additional parameters to modify the installation including:
 
 * Направить трафик через прокси-сервер.
 * Указать установщику автономный каталог.
@@ -136,79 +135,79 @@ Get-Service vmcompute
 
 ## <a name="offline-installation"></a>Автономная установка
 
-Во время установки скачивается два файла:
+During installation two files are downloaded:
 
-* Microsoft Azure IoT Edge CAB-файл, содержащий управляющую программу IoT Edge (иотеджед), контейнер значок Кита и интерфейс командной строки значок Кита.
+* Microsoft Azure IoT Edge cab, which contains the IoT Edge security daemon (iotedged), Moby container engine, and Moby CLI.
 * MSI-файл распространяемого пакета Visual C++ (среда выполнения VC).
 
-На устройство можно заранее загрузить один или оба этих файла, а затем указать сценарий установки в каталоге, содержащем файлы. Установщик сначала проверяет каталог и затем загружает только компоненты, которые не были найдены. Если все файлы доступны в автономном режиме, можно установить без подключения к Интернету. Эту функцию также можно использовать для установки определенной версии компонентов.  
+You can download one or both of these files ahead of time to the device, then point the installation script at the directory that contains the files. Установщик сначала проверяет каталог и затем загружает только компоненты, которые не были найдены. If all the files are available offline, you can install with no internet connection. You can also use this feature to install a specific version of the components.  
 
-Последние файлы установки IoT Edge вместе с предыдущими версиями см. в разделе [Azure IOT Edge выпуски](https://github.com/Azure/azure-iotedge/releases).
+For the latest IoT Edge installation files along with previous versions, see [Azure IoT Edge releases](https://github.com/Azure/azure-iotedge/releases).
 
-Чтобы установить с автономными компонентами, используйте параметр `-OfflineInstallationPath` в составе команды deploy-IoTEdge и укажите абсолютный путь к каталогу файлов. Например,
+To install with offline components, use the `-OfflineInstallationPath` parameter as part of the Deploy-IoTEdge command and provide the absolute path to the file directory. Например,
 
 ```powershell
 . {Invoke-WebRequest -useb https://aka.ms/iotedge-win} | Invoke-Expression; `
 Deploy-IoTEdge -OfflineInstallationPath C:\Downloads\iotedgeoffline
 ```
 
-Кроме того, можно использовать параметр пути установки в автономном режиме с помощью команды Update-IoTEdge, представленной далее в этой статье. 
+You can also use the offline installation path parameter with the Update-IoTEdge command, introduced later in this article. 
 
 ## <a name="verify-successful-installation"></a>Проверка успешного выполнения установки
 
-Проверьте состояние службы IoT Edge. Оно должно быть указано как работает.  
+Проверьте состояние службы IoT Edge. It should be listed as running.  
 
 ```powershell
 Get-Service iotedge
 ```
 
-Просмотрите журналы службы за последние пять минут. Если вы только что установили среду выполнения IoT Edge, может отобразиться список ошибок с момента запуска **deploy-IoTEdge** и **Initialize-IoTEdge**. Эти ошибки являются ожидаемыми, так как служба пытается запуститься перед настройкой. 
+Просмотрите журналы службы за последние пять минут. If you just finished installing the IoT Edge runtime, you may see a list of errors from the time between running **Deploy-IoTEdge** and **Initialize-IoTEdge**. These errors are expected, as the service is trying to start before being configured. 
 
 ```powershell
 . {Invoke-WebRequest -useb https://aka.ms/iotedge-win} | Invoke-Expression; Get-IoTEdgeLog
 ```
 
-Выполните автоматическую проверку наиболее распространенных ошибок конфигурации и сети.
+Run an automated check for the most common configuration and networking errors.
 
 ```powershell
 iotedge check
 ```
 
-Просмотрите список запущенных модулей. После новой установки единственным модулем, который вы должны увидеть, является **edgeAgent**. После первого [развертывания модулей IOT Edge](how-to-deploy-modules-portal.md) на устройстве будет запущен другой системный модуль **edgeHub**. 
+Просмотрите список запущенных модулей. After a new installation, the only module you should see running is **edgeAgent**. After you [deploy IoT Edge modules](how-to-deploy-modules-portal.md) for the first time, the other system module, **edgeHub**, will start on the device too. 
 
 ```powershell
 iotedge list
 ```
 
-## <a name="manage-module-containers"></a>Управление контейнерами модулей
+## <a name="manage-module-containers"></a>Manage module containers
 
-Для работы службы IoT Edge требуется, чтобы на устройстве выполнялся модуль контейнера. При развертывании модуля на устройстве среда выполнения IoT Edge использует подсистему контейнеров для извлечения образа контейнера из реестра в облаке. Служба IoT Edge позволяет взаимодействовать с модулями и получать журналы, но иногда может потребоваться использовать модуль контейнеров для взаимодействия с самим контейнером. 
+The IoT Edge service requires a container engine running on your device. When you deploy a module to a device, the IoT Edge runtime uses the container engine to pull the container image from a registry in the cloud. The IoT Edge service enables you to interact with your modules and retrieve logs, but sometimes you may want to use the container engine to interact with the container itself. 
 
-Дополнительные сведения об основных понятиях модуля см. в разделе [Знакомство с Azure IOT Edge модулями](iot-edge-modules.md). 
+For more information about module concepts, see [Understand Azure IoT Edge modules](iot-edge-modules.md). 
 
-Если вы используете контейнеры Windows на устройстве Windows IoT Edge, то IoT Edgeная установка включала подсистему контейнеров значок Кита. Подсистема значок Кита была основана на тех же стандартах, что и DOCKER, и была разработана для параллельного выполнения на том же компьютере, что и DOCKER Desktop. По этой причине, если вы хотите нацелить контейнеры, управляемые подсистемой значок Кита, необходимо специально указать эту подсистему вместо DOCKER. 
+If you're running Windows containers on your Windows IoT Edge device, then the IoT Edge installation included the Moby container engine. The Moby engine was based on the same standards as Docker, and was designed to run in parallel on the same machine as Docker Desktop. For that reason, if you want to target containers managed by the Moby engine, you have to specifically target that engine instead of Docker. 
 
-Например, чтобы получить список всех образов DOCKER, используйте следующую команду:
+For example, to list all Docker images, use the following command:
 
 ```powershell
 docker images
 ```
 
-Чтобы получить список всех образов значок Кита, измените ту же команду, указав указатель на подсистему значок Кита: 
+To list all Moby images, modify the same command with a pointer to the Moby engine: 
 
 ```powershell
 docker -H npipe:////./pipe/iotedge_moby_engine images
 ```
 
-Универсальный код ресурса (URI) обработчика указан в выходных данных скрипта установки, или его можно найти в разделе Параметры среды выполнения контейнера для файла config. YAML. 
+The engine URI is listed in the output of the installation script, or you can find it in the container runtime settings section for the config.yaml file. 
 
-![URI moby_runtime в файле config. YAML](./media/how-to-install-iot-edge-windows/moby-runtime-uri.png)
+![moby_runtime uri in config.yaml](./media/how-to-install-iot-edge-windows/moby-runtime-uri.png)
 
-Дополнительные сведения о командах, которые можно использовать для взаимодействия с контейнерами и изображениями, работающими на устройстве, см. в разделе [интерфейсы командной строки DOCKER](https://docs.docker.com/engine/reference/commandline/docker/).
+For more information about commands you can use to interact with containers and images running on your device, see [Docker command-line interfaces](https://docs.docker.com/engine/reference/commandline/docker/).
 
 ## <a name="update-an-existing-installation"></a>Обновление существующей установки
 
-Если вы уже установили среду выполнения IoT Edge на устройстве до и подготовили его с удостоверением из центра Интернета вещей, то можете обновить среду выполнения без необходимости повторного ввода сведений об устройстве. 
+If you've already installed the IoT Edge runtime on a device before and provisioned it with an identity from IoT Hub, then you can update the runtime without having to reenter your device information. 
 
 Дополнительные сведения см. в разделе [Обновление управляющей программы безопасности и среды выполнения IoT Edge](how-to-update-iot-edge.md).
 
@@ -219,15 +218,15 @@ docker -H npipe:////./pipe/iotedge_moby_engine images
 Update-IoTEdge
 ```
 
-При обновлении IoT Edge можно использовать дополнительные параметры для изменения обновления, в том числе:
+When you update IoT Edge, you can use additional parameters to modify the update, including:
 
-* Прямой трафик для прохода через прокси-сервер или
+* Direct traffic to go through a proxy server, or
 * Указать установщику автономный каталог. 
-* Перезапуск без запроса при необходимости
+* Restarting without a prompt if necessary
 
-Вы не можете объявить образ контейнера агента IoT Edge с параметрами сценария, так как эта информация уже задана в файле конфигурации предыдущей установки. Если вы хотите изменить образ контейнера агента, сделайте это в файле config.yaml. 
+You can't declare an IoT Edge agent container image with script parameters because that information is already set in the configuration file from the previous installation. Если вы хотите изменить образ контейнера агента, сделайте это в файле config.yaml. 
 
-Для получения дополнительных сведений об этих параметрах обновления используйте команду `Get-Help Update-IoTEdge -full` или обратитесь ко [всем параметрам установки](#all-installation-parameters).
+For more information about these update options, use the command `Get-Help Update-IoTEdge -full` or refer to [all installation parameters](#all-installation-parameters).
 
 ## <a name="uninstall-iot-edge"></a>Удаление IoT Edge
 
@@ -238,39 +237,39 @@ Update-IoTEdge
 Uninstall-IoTEdge
 ```
 
-Команда uninstall-IoTEdge не работает в Windows IoT базовая. Чтобы удалить IoT Edge с устройств Windows IoT Core, необходимо повторно развернуть образ Windows IoT Core. 
+The Uninstall-IoTEdge command does not work on Windows IoT Core. To remove IoT Edge from Windows IoT Core devices, you need to redeploy your Windows IoT Core image. 
 
-Для получения дополнительных сведений о параметрах удаления используйте команду `Get-Help Uninstall-IoTEdge -full`. 
+For more information about uninstallation options, use the command `Get-Help Uninstall-IoTEdge -full`. 
 
 ## <a name="all-installation-parameters"></a>Все параметры установки
 
-В предыдущих разделах представлены общие сценарии установки с примерами того, как использовать параметры для изменения скрипта установки. В этом разделе содержатся справочные таблицы по общим параметрам, используемым для установки, обновления или удаления IoT Edge. 
+В предыдущих разделах представлены общие сценарии установки с примерами того, как использовать параметры для изменения скрипта установки. This section provides reference tables of the common parameters used to install, update, or uninstall IoT Edge. 
 
 ### <a name="deploy-iotedge"></a>Deploy-IoTEdge
 
-Команда deploy-IoTEdge скачивает и развертывает управляющую программу безопасности IoT Edge и ее зависимости. Команда развертывания принимает эти общие параметры, а также другие. Для полного списка используйте команду `Get-Help Deploy-IoTEdge -full`.  
+The Deploy-IoTEdge command downloads and deploys the IoT Edge Security Daemon and its dependencies. The deployment command accepts these common parameters, among others. For the full list, use the command `Get-Help Deploy-IoTEdge -full`.  
 
 | Параметр | Допустимые значения | Комментарии |
 | --------- | --------------- | -------- |
-| **ContainerOs** | **Windows** или **Linux**. | Если не указана операционная система контейнера, значение по умолчанию — Windows.<br><br>Для контейнеров Windows IoT Edge использует подсистему контейнеров значок Кита, входящую в установку. Для контейнеров Linux необходимо установить подсистему контейнеров перед началом установки. |
+| **ContainerOs** | **Windows** или **Linux**. | If no container operating system is specified, Windows is the default value.<br><br>For Windows containers, IoT Edge uses the moby container engine included in the installation. Для контейнеров Linux необходимо установить подсистему контейнеров перед началом установки. |
 | **Proxy** | URL-адрес прокси-сервера. | Включите этот параметр, если ваше устройство подключается к Интернету через прокси-сервер. Дополнительные сведения см. в статье [Настройка устройства IoT Edge для обмена данными через прокси-сервер](how-to-configure-proxy-support.md). |
-| **OfflineInstallationPath** | Путь к каталогу. | Если этот параметр включен, установщик будет проверять указанный каталог на наличие файлов MSI для IoT Edge CAB и среды выполнения VC, необходимых для установки. Скачаны все файлы, не найденные в каталоге. Если оба файла находятся в каталоге, можно установить IoT Edge без подключения к Интернету. Этот параметр также можно использовать для использования определенной версии. |
+| **OfflineInstallationPath** | Путь к каталогу. | If this parameter is included, the installer will check the listed directory for the IoT Edge cab and VC Runtime MSI files required for installation. Any files not found in the directory are downloaded. If both files are in the directory, you can install IoT Edge without an internet connection. You can also use this parameter to use a specific version. |
 | **InvokeWebRequestParameters** | Хэш-таблица параметров и значений. | Во время установки выполняется несколько веб-запросов. Используйте это поле, чтобы задать параметры для этих веб-запросов. Этот параметр нужен, чтобы настроить учетные данные для прокси-серверов. Дополнительные сведения см. в статье [Настройка устройства IoT Edge для обмена данными через прокси-сервер](how-to-configure-proxy-support.md). |
-| **рестартифнидед** | Нет | Этот флаг позволяет скрипту развертывания перезапускать компьютер без запроса при необходимости. |
+| **RestartIfNeeded** | Нет | This flag allows the deployment script to restart the machine without prompting, if necessary. |
 
 ### <a name="initialize-iotedge"></a>Initialize-IoTEdge
 
-Команда Initialize-IoTEdge настраивает IoT Edge с помощью строки подключения устройства и сведений о работе. Большая часть информации, создаваемой этой командой, сохраняется в файле иотедже\конфиг.ямл. Команда инициализации принимает и другие общие параметры. Для полного списка используйте команду `Get-Help Initialize-IoTEdge -full`. 
+The Initialize-IoTEdge command configures IoT Edge with your device connection string and operational details. Much of the information generated by this command is then stored in the iotedge\config.yaml file. The initialization command accepts these common parameters, among others. For the full list, use the command `Get-Help Initialize-IoTEdge -full`. 
 
 | Параметр | Допустимые значения | Комментарии |
 | --------- | --------------- | -------- |
-| **Вручную** | Нет | **Параметр-переключатель**. Если тип подготовки не указан, по умолчанию используется значение вручную.<br><br>Объявляет, что вы предоставите строку подключения устройства для подготовки устройства вручную. |
-| **Dps** | Нет | **Параметр-переключатель**. Если тип подготовки не указан, по умолчанию используется значение вручную.<br><br>Объявляет, что вы предоставите идентификатор области службы подготовки устройств (DPS) и идентификатор регистрации устройства для подготовки через DPS.  |
+| **Вручную** | Нет | **Параметр-переключатель**. If no provisioning type is specified, manual is the default value.<br><br>Объявляет, что вы предоставите строку подключения устройства для подготовки устройства вручную. |
+| **Dps** | Нет | **Параметр-переключатель**. If no provisioning type is specified, manual is the default value.<br><br>Объявляет, что вы предоставите идентификатор области службы подготовки устройств (DPS) и идентификатор регистрации устройства для подготовки через DPS.  |
 | **DeviceConnectionString** | Строка подключения из устройства IoT Edge, зарегистрированного в Центре Интернета вещей, в одинарных кавычках. | **Необходима** для установки вручную. Если не указать строку подключения в параметрах скрипта, она будет запрошена во время установки. |
 | **ScopeId** | Идентификатор области из экземпляра службы подготовки устройств, связанного с Центром Интернета вещей. | **Необходим** для установки через службу подготовки устройств. Если не указать идентификатор области в параметрах скрипта, он будет запрошен во время установки. |
-| **RegistrationId** | Идентификатор регистрации, созданный вашим устройством. | **Требуется** для установки DPS при использовании TPM или аттестации симметричного ключа. |
-| **SymmetricKey** | Симметричный ключ, используемый для подготовки удостоверения устройства IoT Edge при использовании DPS | **Требуется** для установки DPS при использовании аттестации симметричных ключей. |
-| **ContainerOs** | **Windows** или **Linux**. | Если не указана операционная система контейнера, значение по умолчанию — Windows.<br><br>Для контейнеров Windows IoT Edge использует подсистему контейнеров значок Кита, входящую в установку. Для контейнеров Linux необходимо установить подсистему контейнеров перед началом установки. |
+| **RegistrationId** | Идентификатор регистрации, созданный вашим устройством. | **Required** for DPS installation if using TPM or symmetric key attestation. |
+| **SymmetricKey** | The symmetric key used to provision the IoT Edge device identity when using DPS | **Required** for DPS installation if using symmetric key attestation. |
+| **ContainerOs** | **Windows** или **Linux**. | If no container operating system is specified, Windows is the default value.<br><br>For Windows containers, IoT Edge uses the moby container engine included in the installation. Для контейнеров Linux необходимо установить подсистему контейнеров перед началом установки. |
 | **InvokeWebRequestParameters** | Хэш-таблица параметров и значений. | Во время установки выполняется несколько веб-запросов. Используйте это поле, чтобы задать параметры для этих веб-запросов. Этот параметр нужен, чтобы настроить учетные данные для прокси-серверов. Дополнительные сведения см. в статье [Настройка устройства IoT Edge для обмена данными через прокси-сервер](how-to-configure-proxy-support.md). |
 | **AgentImage** | URI образа агента IoT Edge. | По умолчанию новая установка IoT Edge использует последний тег для образа агента IoT Edge. Используйте этот параметр, чтобы задать определенный тег для версии образа, или предоставьте свой образ агента. Дополнительные сведения см. в статье [Основные сведения о тегах IoT Edge](how-to-update-iot-edge.md#understand-iot-edge-tags). |
 | **Имя пользователя** | Имя пользователя реестра контейнеров | Используйте этот параметр только в том случае, если вы задаете значение параметра -AgentImage для контейнера в частном реестре. Укажите имя пользователя с доступом к реестру. |
@@ -280,18 +279,18 @@ Uninstall-IoTEdge
 
 | Параметр | Допустимые значения | Комментарии |
 | --------- | --------------- | -------- |
-| **ContainerOs** | **Windows** или **Linux**. | Если ОС контейнера не указана, по умолчанию используется значение Windows. Для контейнеров Windows подсистема контейнеров будет включена в установку. Для контейнеров Linux необходимо установить подсистему контейнеров перед началом установки. |
+| **ContainerOs** | **Windows** или **Linux**. | If no container OS is specified, Windows is the default value. Для контейнеров Windows подсистема контейнеров будет включена в установку. Для контейнеров Linux необходимо установить подсистему контейнеров перед началом установки. |
 | **Proxy** | URL-адрес прокси-сервера. | Включите этот параметр, если ваше устройство подключается к Интернету через прокси-сервер. Дополнительные сведения см. в статье [Настройка устройства IoT Edge для обмена данными через прокси-сервер](how-to-configure-proxy-support.md). |
 | **InvokeWebRequestParameters** | Хэш-таблица параметров и значений. | Во время установки выполняется несколько веб-запросов. Используйте это поле, чтобы задать параметры для этих веб-запросов. Этот параметр нужен, чтобы настроить учетные данные для прокси-серверов. Дополнительные сведения см. в статье [Настройка устройства IoT Edge для обмена данными через прокси-сервер](how-to-configure-proxy-support.md). |
-| **OfflineInstallationPath** | Путь к каталогу. | Если этот параметр включен, установщик будет проверять указанный каталог на наличие файлов MSI для IoT Edge CAB и среды выполнения VC, необходимых для установки. Скачаны все файлы, не найденные в каталоге. Если оба файла находятся в каталоге, можно установить IoT Edge без подключения к Интернету. Этот параметр также можно использовать для использования определенной версии. |
-| **рестартифнидед** | Нет | Этот флаг позволяет скрипту развертывания перезапускать компьютер без запроса при необходимости. |
+| **OfflineInstallationPath** | Путь к каталогу. | If this parameter is included, the installer will check the listed directory for the IoT Edge cab and VC Runtime MSI files required for installation. Any files not found in the directory are downloaded. If both files are in the directory, you can install IoT Edge without an internet connection. You can also use this parameter to use a specific version. |
+| **RestartIfNeeded** | Нет | This flag allows the deployment script to restart the machine without prompting, if necessary. |
 
 ### <a name="uninstall-iotedge"></a>Uninstall-IoTEdge
 
 | Параметр | Допустимые значения | Комментарии |
 | --------- | --------------- | -------- |
-| **Перевести** | Нет | Этот флаг принудительно выполняет удаление, если предыдущая попытка удаления завершилась неудачно. 
-| **рестартифнидед** | Нет | Этот флаг позволяет сценарию удаления перезапускать компьютер без запроса при необходимости. |
+| **Force** | Нет | This flag forces the uninstallation in case the previous attempt to uninstall was unsuccessful. 
+| **RestartIfNeeded** | Нет | This flag allows the uninstall script to restart the machine without prompting, if necessary. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

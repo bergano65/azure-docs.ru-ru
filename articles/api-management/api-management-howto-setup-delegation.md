@@ -13,31 +13,31 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 04/04/2019
 ms.author: apimpm
-ms.openlocfilehash: 63ff91c6b4db351e5ec72973874466cff74432b5
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: a69babdf2fffb4cb9d963f1806f3c85755e50294
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70073449"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74454357"
 ---
 # <a name="how-to-delegate-user-registration-and-product-subscription"></a>Делегирование пользователю регистрации и подписки на продукт
 
-Делегирование позволяет использовать существующий веб-сайт для управления входом и регистрацией разработчиков, а также подписки на продукты, в отличие от использования встроенных функций на портале разработчика. В результате этого веб-сайт будет владеть пользовательскими данными и проверять эти шаги в соответствии с вашими настройками.
+Delegation allows you to use your existing website for handling developer sign in/sign up and subscription to products, as opposed to using the built-in functionality in the developer portal. It enables your website to own the user data and perform the validation of these steps in a custom way.
 
 [!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
 
-## <a name="delegate-signin-up"> </a>Делегирование входа и регистрация для разработчиков
+## <a name="delegate-signin-up"> </a>Делегирование входа и регистрации разработчика
 
-Чтобы делегировать вход в систему разработчика и зарегистрироваться на существующем веб-сайте, необходимо создать специальную конечную точку делегирования на сайте. Он должен действовать в качестве точки входа для любого такого запроса, инициированного на портале разработчика управления API.
+To delegate developer, sign in and sign up to your existing website, you'll need to create a special delegation endpoint on your site. It needs to act as the entry-point for any such request initiated from the API Management developer portal.
 
 Итоговый рабочий процесс будет иметь следующий вид:
 
-1. Разработчик щелкает ссылку входа или регистрации на портале разработчика управления API.
+1. Developer clicks on the sign in or sign up link at the API Management developer portal
 2. Браузер перенаправляется в конечную точку делегирования
-3. Конечная точка делегирования в возврате перенаправляет в или представляет интерфейс пользователя, запрашивающий вход или регистрацию
+3. Delegation endpoint in return redirects to or presents UI asking user to sign in or sign up
 4. При успешном выполнении данной операции пользователь перенаправляется обратно на ту страницу портала разработчика API Management, с которой он начал данный процесс
 
-Сначала следует настроить службу управления API так, чтобы он направлял запросы через вашу конечную точку делегирования. В портал Azure выполните поиск по запросу **Безопасность** в ресурсе управления API, а затем щелкните элемент делегирование. Установите флажок, чтобы включить функцию "делегирование входа & регистрации".
+Сначала следует настроить службу управления API так, чтобы он направлял запросы через вашу конечную точку делегирования. In the Azure portal, search for **Security** in your API Management resource and then click the **Delegation** item. Click the checkbox to enable 'Delegate sign in & sign up'.
 
 ![Страница "Делегирование"][api-management-delegation-signin-up]
 
@@ -48,14 +48,14 @@ ms.locfileid: "70073449"
 
 1. Получите запрос в следующей форме:
    
-   > *http:\//ВВВ.йоурвебсите.ком/апимделегатион? Operation = Signing & ReturnUrl = {URL-адрес исходной страницы} & Salt = {String} & SIG = {строка}*
+   > *http:\//www.yourwebsite.com/apimdelegation?operation=SignIn&returnUrl={URL of source page}&salt={string}&sig={string}*
    > 
    > 
    
-    Параметры запроса для регистра входа и регистрации:
+    Query parameters for the sign in / sign up case:
    
    * **operation**: идентифицирует тип запроса на делегирование (в данном случае может быть только **SignIn**).
-   * **ReturnUrl**: URL-адрес страницы, на которой пользователь щелкнул ссылку для входа или регистрации.
+   * **returnUrl**: the URL of the page where the user clicked on a sign in or sign up link
    * **salt**– специальная строка случайных данных, используемая для вычисления хэша безопасности.
    * **sig**– вычисленный хэш безопасности, который будет сравниваться с вашим вычисленным хэшем.
 2. Убедитесь, что запрос поступает из службы управления Azure API (это необязательный шаг, но мы настоятельно рекомендуем его выполнять для обеспечения безопасности)
@@ -66,9 +66,9 @@ ms.locfileid: "70073449"
      > 
      > 
    * Сравните вычисленный выше хэш со значением параметра запроса **sig**. Если два хэша совпадают друг с другом, перейдите к следующему шагу. Если нет, отклоните запрос.
-3. Убедитесь, что вы получили запрос на вход и регистрацию: параметр запроса **операции** будет иметь значение "**Signing**".
-4. Предоставление пользователю пользовательского интерфейса для входа или регистрации
-5. Если пользователь регистрируется, для него необходимо создать соответствующую учетную запись в API Management. [Создание пользователя] с помощью интерфейса API Management REST API. При этом убедитесь, что для идентификатора пользователя задано то же значение, что и в хранилище пользователя, или идентификатор, который можно отследить.
+3. Verify that you are receiving a request for sign in/sign up: the **operation** query parameter will be set to "**SignIn**".
+4. Present the user with UI to sign in or sign up
+5. Если пользователь регистрируется, для него необходимо создать соответствующую учетную запись в API Management. [Создание пользователя] с помощью интерфейса API Management REST API. When doing so, ensure that you set the user ID to the same value as in your user store or to an ID that you can keep track of.
 6. После успешной проверки подлинности пользователя:
    
    * [запросите маркер единого входа (SSO)] через API Management REST API
@@ -88,24 +88,24 @@ ms.locfileid: "70073449"
 Для операций управления учетными записями необходимо передать следующие параметры запроса.
 
 * **operation**– определяет тип запроса на делегирование (ChangePassword, ChangeProfile или CloseAccount).
-* **UserID**: идентификатор пользователя учетной записи для управления.
+* **userId**: the user ID of the account to manage
 * **salt**– специальная строка случайных данных, используемая для вычисления хэша безопасности.
 * **sig**– вычисленный хэш безопасности, который будет сравниваться с вашим вычисленным хэшем.
 
 ## <a name="delegate-product-subscription"> </a>Делегирование подписки на продукт
-Делегирование подписки на продукт работает аналогично делегированию входа пользователя. Итоговый рабочий процесс будет иметь следующий вид:
+Delegating product subscription works similarly to delegating user sign in/-up. Итоговый рабочий процесс будет иметь следующий вид:
 
-1. Разработчик выбирает продукт на портале разработчика управления API и нажимает кнопку подписывать.
-2. Браузер перенаправляется в конечную точку делегирования.
-3. Конечная точка делегирования выполняет обязательные шаги подписки продукта. Вы можете разработать шаги. Они могут включать перенаправление на другую страницу для запроса сведений о выставлении счетов, запрашивать дополнительные вопросы или просто хранить информацию и не требует вмешательства пользователя.
+1. Developer selects a product in the API Management developer portal and clicks on the Subscribe button.
+2. Browser is redirected to the delegation endpoint.
+3. Delegation endpoint performs required product subscription steps. It's up to you to design the steps. They may include redirecting to another page to request billing information, asking additional questions, or simply storing the information and not requiring any user action.
 
 Чтобы включить функцию, на странице **Делегирование** щелкните **Делегировать подписку на продукт**.
 
-Затем убедитесь, что конечная точка делегирования выполняет следующие действия.
+Next, ensure the delegation endpoint does the following actions:
 
 1. Получите запрос в следующей форме:
    
-   > *http:\//ВВВ.йоурвебсите.ком/апимделегатион? Operation = {Operation} & ProductID = {продукт для подписки} & UserID = {пользователь, выполняющий запрос} & Salt = {String} & SIG = {строка}*
+   > *http:\//www.yourwebsite.com/apimdelegation?operation={operation}&productId={product to subscribe to}&userId={user making request}&salt={string}&sig={string}*
    >
    
     Параметры запроса для подписки на продукт:
@@ -115,28 +115,28 @@ ms.locfileid: "70073449"
      * "Unsubscribe": запрос на отказ от подписки пользователя на продукт;
      * "Renew": запрос на обновление подписки (например, в случае истечения срока действия).
    * **productId**: идентификатор продукта, подписку на который запрашивает пользователь.
-   * **SubscriptionId**: при *отмене подписки* и *продлении* — идентификатор подписки продукта.
-   * **UserID**: идентификатор пользователя, для которого выполняется запрос
+   * **subscriptionId**: on *Unsubscribe* and *Renew* - the ID of the product subscription
+   * **userId**: the ID of the user the request is made for
    * **salt**– специальная строка случайных данных, используемая для вычисления хэша безопасности.
    * **sig**– вычисленный хэш безопасности, который будет сравниваться с вашим вычисленным хэшем.
 
 2. Убедитесь, что запрос поступает из службы управления Azure API (это необязательный шаг, но мы настоятельно рекомендуем его выполнять для обеспечения безопасности)
    
-   * Вычисление HMAC-SHA512 строки на основе параметров запроса **ProductID**, **UserID**и **Salt** :
+   * Compute an HMAC-SHA512 of a string based on the **productId**, **userId**, and **salt** query parameters:
      
      > HMAC(**salt** + '\n' + **productId** + '\n' + **userId**)
      > 
      > 
    * Сравните вычисленный выше хэш со значением параметра запроса **sig**. Если два хэша совпадают друг с другом, перейдите к следующему шагу. Если нет, отклоните запрос.
-3. Обработка подписки на продукт на основе типа операции, запрошенной в **операции** . Например, выставление счетов, дальнейшие вопросы и т. д.
-4. В случае успешной подписки пользователя на продукт на стороне пользователя Подпишитесь на продукт управления API, [вызов REST API для подписок].
+3. Process product subscription based on the type of operation requested in **operation** - for example, billing, further questions, etc.
+4. On successfully subscribing the user to the product on your side, subscribe the user to the API Management product by [calling the REST API for subscriptions].
 
 ## <a name="delegate-example-code"> </a> Пример кода
 
-В следующих примерах кода показано, как:
+These code samples show how to:
 
-* Возьмем *ключ проверки делегирования*, заданный на экране делегирования на портале издателя.
-* Создайте код HMAC, который затем используется для проверки подписи, подтверждая допустимость переданного returnUrl.
+* Take the *delegation validation key*, which is set in the Delegation screen of the publisher portal
+* Create an HMAC, which is then used to validate the signature, proving the validity of the passed returnUrl.
 
 Тот же код с незначительными изменениями подходит для productId и userId.
 
@@ -174,7 +174,10 @@ var digest = hmac.update(salt + '\n' + returnUrl).digest();
 var signature = digest.toString('base64');
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+> [!IMPORTANT]
+> You need to [republish the developer portal](api-management-howto-developer-portal-customize.md#publish) for the delegation changes to take effect.
+
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительную информацию о делегировании см. в следующем видео.
 
 > [!VIDEO https://channel9.msdn.com/Blogs/AzureApiMgmt/Delegating-User-Authentication-and-Product-Subscription-to-a-3rd-Party-Site/player]
@@ -185,7 +188,7 @@ var signature = digest.toString('base64');
 [Delegating product subscription]: #delegate-product-subscription
 [запросите маркер единого входа (SSO)]: https://docs.microsoft.com/rest/api/apimanagement/2019-01-01/User/GenerateSsoUrl
 [Создание пользователя]: https://docs.microsoft.com/rest/api/apimanagement/2019-01-01/user/createorupdate
-[вызов REST API для подписок]: https://docs.microsoft.com/rest/api/apimanagement/2019-01-01/subscription/createorupdate
+[calling the REST API for subscriptions]: https://docs.microsoft.com/rest/api/apimanagement/2019-01-01/subscription/createorupdate
 [Next steps]: #next-steps
 [на приведенном ниже примере кода]: #delegate-example-code
 

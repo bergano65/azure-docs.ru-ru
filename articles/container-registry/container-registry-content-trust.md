@@ -1,19 +1,14 @@
 ---
-title: Доверие к содержимому в Реестре контейнеров Azure
-description: Узнайте, как включить доверие содержимого для реестра контейнеров Azure, а затем отправить и получить подписанные изображения.
-services: container-registry
-author: dlepow
-manager: gwallace
-ms.service: container-registry
+title: Manage signed images
+description: Learn how to enable content trust for your Azure container registry, and push and pull signed images.
 ms.topic: article
 ms.date: 09/06/2019
-ms.author: danlep
-ms.openlocfilehash: f14d4d32d2423b12786095da17305af605088fb7
-ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
+ms.openlocfilehash: 0418b13c352dc3b81d34501e7e76be6c54615a83
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71300424"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74456454"
 ---
 # <a name="content-trust-in-azure-container-registry"></a>Доверие к содержимому в Реестре контейнеров Azure
 
@@ -43,7 +38,7 @@ ms.locfileid: "71300424"
 
 Сначала необходимо включить функцию доверия к содержимому на уровне реестра. После этого клиенты (пользователи или службы) смогут отправлять подписанные образы в ваш реестр. Включение доверия не ограничивает использование реестра только получателями с этой функцией. Получатели без нее используют ваш реестр как обычно. Но, если у них эта функция включена, для них отображаются *только* подписанные образы в вашем реестре.
 
-Сначала перейдите в реестр на портале Azure. В разделе **Политики** последовательно выберите **Доверие к содержимому** > **Включено** > **Сохранить**. Можно также использовать команду [AZ запись контроля содержимого для обновления доверия][az-acr-config-content-trust-update] в Azure CLI.
+Сначала перейдите в реестр на портале Azure. В разделе **Политики** последовательно выберите **Доверие к содержимому** > **Включено** > **Сохранить**. You can also use the [az acr config content-trust update][az-acr-config-content-trust-update] command in the Azure CLI.
 
 ![Включение доверия к содержимому в реестре на портале Azure][content-trust-01-portal]
 
@@ -77,7 +72,7 @@ docker build --disable-content-trust -t myacr.azurecr.io/myimage:v1 .
 Только пользователи или системы с разрешением на подписывание могут отправлять доверенные образы в ваш реестр. Чтобы выдать такое разрешение пользователю (или системе через субъект-службу), назначьте ему роль `AcrImageSigner` в Azure Active Directory в дополнение к роли `AcrPush` (или ее аналогу), необходимой для отправки образов в реестр. Дополнительные сведения см. в разделе [Роли и разрешения реестра контейнеров Azure](container-registry-roles.md).
 
 > [!NOTE]
-> Вы не можете предоставить надежное разрешение на принудительную отправку образа [учетной записи администратора](container-registry-authentication.md#admin-account) реестра контейнеров Azure.
+> You can't grant trusted image push permission to the [admin account](container-registry-authentication.md#admin-account) of an Azure container registry.
 
 Далее описано, как назначить роль `AcrImageSigner` на портале Azure и в инфраструктуре Azure CLI.
 
@@ -89,7 +84,7 @@ docker build --disable-content-trust -t myacr.azurecr.io/myimage:v1 .
 
 ![Включение доверия к содержимому в реестре на портале Azure][content-trust-02-portal]
 
-### <a name="azure-cli"></a>Azure CLI
+### <a name="azure-cli"></a>Azure CLI
 
 Чтобы выдать разрешение на подписывание с помощью Azure CLI, назначьте роль `AcrImageSigner` пользователю из вашего реестра. Команда имеет следующий формат.
 
@@ -117,7 +112,7 @@ az role assignment create --scope $REGISTRY_ID --role AcrImageSigner --assignee 
 В `<service principal ID>` можно указать **appId** или **objectId** субъекта-службы или одно из его имен **servicePrincipalNames**. Дополнительные сведения о работе с субъектами-службами и Реестром контейнеров Azure см. в статье [Аутентификация в реестре контейнеров Azure с помощью субъектов-служб](container-registry-auth-service-principal.md).
 
 > [!IMPORTANT]
-> После изменения роли выполните `az acr login` для обновления локального маркера идентификации для Azure CLI, чтобы новые роли вступили в действие. Сведения о проверке ролей для удостоверения см. в статье [Управление доступом к ресурсам Azure с помощью RBAC и Azure CLI](../role-based-access-control/role-assignments-cli.md) и [Устранение неполадок RBAC для ресурсов Azure](../role-based-access-control/troubleshooting.md).
+> После изменения роли выполните `az acr login` для обновления локального маркера идентификации для Azure CLI, чтобы новые роли вступили в действие. For information about verifying roles for an identity, see [Manage access to Azure resources using RBAC and Azure CLI](../role-based-access-control/role-assignments-cli.md) and [Troubleshoot RBAC for Azure resources](../role-based-access-control/troubleshooting.md).
 
 ## <a name="push-a-trusted-image"></a>Отправка доверенного образа
 
@@ -197,7 +192,7 @@ umask 077; tar -zcvf docker_private_keys_backup.tar.gz ~/.docker/trust/private; 
 
 ![Отключение доверия к содержимому в реестре на портале Azure][content-trust-03-portal]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Подробные сведения о функции доверия к содержимому см. в статье [Content trust in Docker][docker-content-trust] (Функция доверия к содержимому в Docker). В этой статье мы затронули лишь ключевые моменты обширной темы доверия к содержимому, которая более подробно рассматривается в документации Docker.
 

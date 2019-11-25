@@ -1,28 +1,28 @@
 ---
-title: Общие сведения о проверке подлинности API в Azure Digital двойников | Документация Майкрософт
-description: Узнайте, как подключиться к API и пройти проверку подлинности с помощью Azure Digital двойников.
+title: Understand API authentication - Azure Digital Twins | Microsoft Docs
+description: Learn how to connect to and authenticate with APIs using Azure Digital Twins.
 ms.author: alinast
 author: alinamstanciu
 manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 09/30/2019
-ms.openlocfilehash: 6af6a4501ad58fc8e371b895da601d177d872f41
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.date: 11/22/2019
+ms.openlocfilehash: 6c2b0ec5165652e77c92426bb62a30468eef04c2
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74013943"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74456899"
 ---
-# <a name="connect-to-and-authenticate-with-apis"></a>Подключение и проверка подлинности с помощью API
+# <a name="connect-to-and-authenticate-with-apis"></a>Connect to and authenticate with APIs
 
-Azure Digital Twins использует Azure Active Directory (Azure AD) для аутентификации пользователей и защиты приложений. Служба Azure AD поддерживает проверку подлинности для различных современных архитектур. Все они основаны на таких стандартных отраслевых протоколах, как OAuth 2.0 или OpenID Connect. Кроме того, разработчики могут использовать Azure AD для создания приложения с одним клиентом, а также бизнес-приложений. Разработчики также могут использовать Azure AD для разработки мультиканальных приложений.
+Azure Digital Twins использует Azure Active Directory (Azure AD) для аутентификации пользователей и защиты приложений. Служба Azure AD поддерживает проверку подлинности для различных современных архитектур. Все они основаны на таких стандартных отраслевых протоколах, как OAuth 2.0 или OpenID Connect. Кроме того, разработчики могут использовать Azure AD для создания приложения с одним клиентом, а также бизнес-приложений. Developers also can use Azure AD to develop [multitenant applications](how-to-multitenant-applications.md).
 
 Общие сведения об Azure AD, пошаговые руководства и понятия см. в статье [Базовая документация по Azure Active Directory](https://docs.microsoft.com/azure/active-directory/fundamentals/).
 
 > [!TIP]
-> Следуйте указаниям в [руководстве](tutorial-facilities-setup.md) по настройке и запуску примера приложения для цифрового двойников Azure.
+> Follow the [Tutorial](tutorial-facilities-setup.md) to set up and run an Azure Digital Twins sample app.
 
 Чтобы интегрировать приложение или службу с Azure AD, разработчику сначала необходимо зарегистрировать приложение в Azure AD. Дополнительные сведения см. в статье [Краткое руководство. Регистрация приложения в конечной точке Azure Active Directory версии 1.0](../active-directory/develop/quickstart-register-app.md).
 
@@ -35,9 +35,9 @@ Azure Digital Twins использует Azure Active Directory (Azure AD) дл�
 * Управляющая программа или серверное приложение — веб-API. Управляющей программе или серверному приложению, в котором нет веб-интерфейса пользователя, требуется получить ресурсы из веб-API, защиту которого обеспечивает Azure AD.
 
 > [!IMPORTANT]
-> Azure Digital двойников поддерживает обе следующие библиотеки проверки подлинности:
-> * Более свежая [Библиотека проверки подлинности Майкрософт (MSAL)](https://docs.microsoft.com/azure/active-directory/develop/msal-overview)
-> * [Библиотека проверки Подлинности Azure Active Directory (ADAL)](https://docs.microsoft.com/azure/active-directory/develop/active-directory-authentication-libraries)
+> Azure Digital Twins supports both of the following authentication libraries:
+> * The more recent [Microsoft Authentication Library (MSAL)](https://docs.microsoft.com/azure/active-directory/develop/msal-overview)
+> * The [Azure Active Directory Authentication Library (ADAL)](https://docs.microsoft.com/azure/active-directory/develop/active-directory-authentication-libraries)
 
 ## <a name="call-digital-twins-from-a-middle-tier-web-api"></a>Вызов Digital Twins из веб-API среднего уровня
 
@@ -51,7 +51,7 @@ Azure Digital Twins использует Azure Active Directory (Azure AD) дл�
 
 Подробные инструкции по организации потока On-Behalf-Of см. в статье [Azure Active Directory версии 2.0 и поток On-Behalf-Of в OAuth 2.0](https://docs.microsoft.com/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow). Кроме того, вы можете просмотреть примеры кода в статье о [вызове веб-API нижнего уровня](https://github.com/Azure-Samples/active-directory-dotnet-webapi-onbehalfof).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы настроить и проверить Azure Digital Twins с помощью потока неявного предоставления разрешения в OAuth 2.0, ознакомьтесь со статьей о [настройке Postman](./how-to-configure-postman.md).
 

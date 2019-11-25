@@ -9,13 +9,12 @@ ms.topic: conceptual
 ms.reviewer: menchi
 ms.service: iot-edge
 services: iot-edge
-ms.custom: seodec18
-ms.openlocfilehash: 4c2adc8ef0d426617dc85dd507907d612bbdabaa
-ms.sourcegitcommit: c4700ac4ddbb0ecc2f10a6119a4631b13c6f946a
+ms.openlocfilehash: 6d915145e64a5f1a097f38cf79b19426c3acbaf2
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2019
-ms.locfileid: "72964923"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74457424"
 ---
 # <a name="deploy-azure-iot-edge-modules-from-the-azure-portal"></a>Развертывание модулей IoT Edge Azure с помощью портала Azure
 
@@ -43,9 +42,9 @@ ms.locfileid: "72964923"
 
 ### <a name="add-modules"></a>Добавление модулей
 
-1. В разделе **параметры реестра контейнеров** на странице Укажите учетные данные для доступа к любым частным реестрам контейнеров, содержащим образы модулей.
+1. In the **Container Registry Settings** section of the page, provide the credentials to access any private container registries that contain your module images.
 
-1. В разделе **модули развертывания** страницы выберите **Добавить**.
+1. In the **Deployment Modules** section of the page, select **Add**.
 
 1. Просмотрите типы модулей в раскрывающемся списке:
 
@@ -57,7 +56,7 @@ ms.locfileid: "72964923"
 
 1. Введите имя модуля и выберите образ контейнера. Пример.
 
-   * **Имя** — симулатедтемпературесенсор
+   * **Name** - SimulatedTemperatureSensor
    * **URI образа** — mcr.microsoft.com/azureiotedge-simulated-temperature-sensor:1.0.
 
 1. При желании заполните необязательные поля. Дополнительные сведения о возможностях при создании контейнера, политике перезапуска и требуемом состоянии см. в разделе [Требуемые свойства EdgeAgent](module-edgeagent-edgehub.md#edgeagent-desired-properties). Подробные сведения о двойниках модулей см. в разделе [Определение или обновление требуемых свойств](module-composition.md#define-or-update-desired-properties).
@@ -92,7 +91,7 @@ Azure Marketplace — это интернет-магазин приложени
 
 1. Найдите модуль и начните процесс развертывания.
 
-   * Портал Azure: Найдите модуль и выберите **создать**.
+   * Azure portal: Find a module and select **Create**.
 
    * Azure Marketplace:
 

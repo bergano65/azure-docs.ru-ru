@@ -2,21 +2,19 @@
 title: Конвейер CI/CD с Azure DevOps Projects — Azure IoT Edge | Документация Майкрософт
 description: Azure DevOps Projects упрощает начало работы с Azure. В этой статье вы узнаете, как запустить необходимое приложение Azure IoT Edge за несколько быстрых шагов.
 author: shizn
-manager: ''
 ms.author: xshi
 ms.date: 10/09/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.custom: seodec18
-ms.openlocfilehash: daa4bc7b1584dc2159d4128fa4b44056df347ecb
-ms.sourcegitcommit: 1c2659ab26619658799442a6e7604f3c66307a89
+ms.openlocfilehash: ccf6ea567143180daa848566d1e7e1420c181c5f
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72253124"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74457376"
 ---
-# <a name="create-a-cicd-pipeline-for-iot-edge-with-azure-devops-projects"></a>Создание конвейера CI/CD для IoT Edge с Azure DevOps Projects
+# <a name="create-a-cicd-pipeline-for-iot-edge-with-azure-devops-projects"></a>Create a CI/CD pipeline for IoT Edge with Azure DevOps Projects
 
 Настройте непрерывную интеграцию (CI) и непрерывную доставку (CD) для приложения IoT Edge с помощью DevOps Projects. DevOps Projects упрощает начальную настройку конвейера сборки и выпуска в Azure Pipelines.
 
@@ -38,7 +36,7 @@ DevOps Projects создает конвейер CI/CD в Azure DevOps. Вы мо
 
    ![Выбор языка для создания приложения](./media/how-to-devops-project/select-language.png)
 
-2. Выберите в качестве платформы приложений **простой IOT** , а затем нажмите кнопку **Далее**.
+2. Select **Simple IoT** as your application framework, and then select **Next**.
 
    ![Выбор платформы "Простой Интернет вещей"](media/how-to-devops-project/select-iot.png)
 
@@ -56,7 +54,7 @@ DevOps Projects создает конвейер CI/CD в Azure DevOps. Вы мо
 
    4. Используйте имя Центра Интернета вещей, созданное на основе имени проекта, или укажите собственное.
 
-   5. Примите расположение по умолчанию или выберите одно из близкого к вам. 
+   5. Accept the default location, or choose one close to you. 
 
    5. Выберите **Дополнительные параметры** для настройки ресурсов Azure, создаваемых компонентом DevOps Projects от вашего имени.
 
@@ -66,7 +64,7 @@ DevOps Projects создает конвейер CI/CD в Azure DevOps. Вы мо
 
 Через несколько минут панель мониторинга DevOps Projects отобразится на портале Azure. Выберите имя проекта, чтобы просмотреть ход выполнения. Вам может потребоваться обновить страницу. Пример приложения IoT Edge настраивается в репозитории в организации Azure DevOps, после чего выполняется его сборка и оно развертывается на устройство IoT Edge. Эта панель мониторинга позволяет просматривать репозиторий кода, конвейер CI/CD и приложение в Azure.
 
-   ![Просмотр приложения в портал Azure](./media/how-to-devops-project/devops-portal.png)
+   ![View application in Azure portal](./media/how-to-devops-project/devops-portal.png)
 
 
 ## <a name="commit-code-changes-and-execute-cicd"></a>Фиксация изменений, внесенных в код, и выполнение CI/CD
@@ -79,16 +77,16 @@ DevOps Projects создает репозиторий Git для проекта 
 
 2. Ниже приведены инструкции по внесению изменений в код с использованием веб-браузера. Если вы хотите клонировать репозиторий локально, выберите **Клонировать** в верхней правой части окна. Клонируйте репозиторий Git в Visual Studio Code или в другом предпочитаемом инструменте разработки, используя предоставленный URL-адрес. 
 
-3. Репозиторий уже содержит код для модуля с именем **FilterModule** на основе языка приложения, выбранного в процессе создания. Откройте файл **modules/FilterModule/Module. JSON** .
+3. The repository already contains code for a module called **FilterModule** based on the application language that you chose in the creation process. Open the **modules/FilterModule/module.json** file.
 
    ![Открытие файла module.json в Azure Repos](./media/how-to-devops-project/open-module-json.png)
 
-4. Обратите внимание, что в этом файле используются [переменные сборки Azure DevOps](https://docs.microsoft.com/azure/devops/pipelines/build/variables?view=vsts#build-variables) в параметре **Version** . Эта конфигурация гарантирует, что новая версия модуля будет создана каждый раз при выполнении новой сборки. 
+4. Notice that this file uses [Azure DevOps build variables](https://docs.microsoft.com/azure/devops/pipelines/build/variables?view=vsts#build-variables) in the **version** parameter. This configuration ensures that a new version of the module will be created every time a new build runs. 
 
 
-## <a name="examine-the-cicd-pipeline"></a>Изучение конвейера CI/CD
+## <a name="examine-the-cicd-pipeline"></a>Просмотр конвейера CI/CD
 
-В предыдущих разделах в Azure DevOps Projects был автоматически настроен полный конвейер CI/CD для приложения IoT Edge. Теперь изучите и настройте конвейер нужным образом. Чтобы ознакомиться с конвейерами сборки и выпуска Azure DevOps, выполните следующие действия.
+В предыдущих разделах в Azure DevOps Projects был автоматически настроен полный конвейер CI/CD для приложения IoT Edge. Теперь изучите и настройте конвейер нужным образом. Use the following steps to familiarize yourself with the Azure DevOps build and release pipelines.
 
 1. Чтобы просмотреть конвейеры сборки в проекте DevOps, выберите **Конвейеры сборки** в меню на панели мониторинга проекта. По ссылке откроется вкладка браузера, содержащая сведения о конвейере сборки Azure DevOps для нового проекта.
 
@@ -106,7 +104,7 @@ DevOps Projects создает репозиторий Git для проекта 
 
 5. Выберите **Сохранить и поместить в очередь**, а затем щелкните **Сохранить**.
 
-6. В меню конвейера Сборка выберите **триггеры** . DevOps Projects автоматически создает триггер CI, а каждая фиксация в репозитории запускает новую сборку.  При желании выберите включение или исключение ветвей из процесса непрерывной интеграции.
+6. Select **Triggers** from the build pipeline menu. DevOps Projects автоматически создает триггер CI, а каждая фиксация в репозитории запускает новую сборку.  При желании выберите включение или исключение ветвей из процесса непрерывной интеграции.
 
 7. Щелкните **Период удержания**. В зависимости от сценария можно указать политики для хранения или удаления определенного количества сборок.
 
@@ -118,7 +116,7 @@ DevOps Projects создает репозиторий Git для проекта 
 
 10. В разделе **Артефакты** выберите **Удалить**. Источник, просматриваемый этим артефактом, представляет собой выходные данные конвейера сборки, который вы изучали на предыдущих этапах. 
 
-11. Рядом со значком **Удалить** выберите элемент **Триггер непрерывного развертывания**, который выглядит как молния. В этом конвейере выпуска активирован триггер, выполняющий развертывание каждый раз, когда становится доступным новый артефакт сборки. При желании можно отключить триггер, чтобы выполнить развертывание вручную.  
+11. Рядом со значком **Удалить** выберите элемент **Триггер непрерывного развертывания**, который выглядит как молния. В этом конвейере выпуска активирован триггер, выполняющий развертывание каждый раз, когда становится доступным новый артефакт сборки. При необходимости можно отключить триггер, чтобы выполнять развертывание вручную.  
 
 12. В меню для конвейера выпуска выберите **Задачи**, а затем выберите этап **dev** в раскрывающемся списке. В DevOps Projects создается этап выпуска, который создает центр Интернета вещей, создает устройство IoT Edge в этом центре, развертывает пример модуля из конвейера сборки и подготавливает виртуальную машину для запуска в качестве устройства IoT Edge. Чтобы узнать больше о задачах Azure IoT Edge для непрерывного развертывания, ознакомьтесь с [этим разделом](how-to-ci-cd.md#configure-continuous-deployment).
 
@@ -133,7 +131,7 @@ DevOps Projects создает репозиторий Git для проекта 
 
 Ненужную Службу приложений Azure и связанные ресурсы можно удалить. Для этого воспользуйтесь функцией **Удалить** на панели мониторинга DevOps Projects.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения о задачах Azure IoT Edge в Azure DevOps см. в статье [Непрерывная интеграция и непрерывное развертывание в Azure IoT Edge](how-to-ci-cd.md).
 * Основные сведения о развертывании IoT Edge см. в статье [Understand IoT Edge deployments for single devices or at scale](module-deployment-monitoring.md) (Основные сведения о развертываниях IoT Edge для отдельных устройств или в требуемом масштабе).
 * Ознакомьтесь со статьей [Развертывание и мониторинг модулей IoT Edge в нужном масштабе (предварительная версия)](how-to-deploy-monitor.md), чтобы узнать, как создавать, обновлять или удалять развертывание.

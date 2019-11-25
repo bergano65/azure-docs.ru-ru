@@ -1,55 +1,52 @@
 ---
-title: Отправка артефактов OCI в частный реестр контейнеров Azure
-description: Отправка и извлечение артефактов с открытым контейнером (OCI) с помощью закрытого реестра контейнеров в Azure
-services: container-registry
+title: Push and pull OCI artifact
+description: Push and pull Open Container Initiative (OCI) artifacts using a private container registry in Azure
 author: SteveLasker
 manager: gwallace
-ms.service: container-registry
 ms.topic: article
 ms.date: 08/30/2019
 ms.author: stevelas
-ms.custom: ''
-ms.openlocfilehash: 69423f85aecdc3f8049a7e784888e1f71d0bc702
-ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
+ms.openlocfilehash: cb58a7ed51ae15d33ffdbb616c9b32ef03bcbfb7
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70182706"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74456256"
 ---
-# <a name="push-and-pull-an-oci-artifact-using-an-azure-container-registry"></a>Отправка и извлечение артефакта OCI с помощью реестра контейнеров Azure
+# <a name="push-and-pull-an-oci-artifact-using-an-azure-container-registry"></a>Push and pull an OCI artifact using an Azure container registry
 
-Вы можете использовать реестр контейнеров Azure для хранения артефактов и управления ими [(OCI)](container-registry-image-formats.md#oci-artifacts) , а также для образов контейнеров, совместимых с DOCKER и DOCKER.
+You can use an Azure container registry to store and manage [Open Container Initiative (OCI) artifacts](container-registry-image-formats.md#oci-artifacts) as well as Docker and Docker-compatible container images.
 
-Чтобы продемонстрировать эту возможность, в этой статье показано, как использовать средство [реестра OCI как хранилище (Орас)](https://github.com/deislabs/oras) для отправки примера артефакта — текстового файла в реестр контейнеров Azure. Затем извлекать артефакт из реестра. Вы можете управлять множеством артефактов OCI в реестре контейнеров Azure, используя различные программы командной строки, подходящие для каждого артефакта.
+To demonstrate this capability, this article shows how to use the [OCI Registry as Storage (ORAS)](https://github.com/deislabs/oras) tool to push a sample artifact -  a text file - to an Azure container registry. Then, pull the artifact from the registry. You can manage a variety of OCI artifacts in an Azure container registry using different command-line tools appropriate to each artifact.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * **Реестр контейнеров Azure.** Создайте реестр контейнеров в своей подписке Azure. Это можно сделать на [портале Azure](container-registry-get-started-portal.md) или с помощью [Azure CLI](container-registry-get-started-azure-cli.md).
-* **Средство Орас** . Скачайте и установите текущий выпуск Орас для вашей операционной системы из [репозитория GitHub](https://github.com/deislabs/oras/releases). Средство выпускается как сжатый tarball (`.tar.gz` файл). Извлеките и установите файл, используя стандартные процедуры для вашей операционной системы.
-* **Azure Active Directory субъекта-службы (необязательно)** . для проверки подлинности непосредственно с помощью Орас создайте [субъект-службу](container-registry-auth-service-principal.md) для доступа к реестру. Убедитесь, что субъекту-службе назначена роль, например Акрпуш, чтобы она обладала разрешениями на принудительную отправку и извлечение артефактов.
-* **Azure CLI (необязательно)** . чтобы использовать индивидуальное удостоверение, требуется локальная установка Azure CLI. Рекомендуется использовать версию 2.0.71 или более позднюю. Выполните `az --version `команду, чтобы найти версию. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
-* **DOCKER (необязательно)** . чтобы использовать индивидуальное удостоверение, необходимо также установить DOCKER на локальном компьютере для проверки подлинности в реестре. Docker предоставляет пакеты, которые позволяют быстро настроить Docker в системе под управлением [macOS][docker-mac], [Windows][docker-windows] или [Linux][docker-linux].
+* **ORAS tool** - Download and install a current ORAS release for your operating system from the [GitHub repo](https://github.com/deislabs/oras/releases). The tool is released as a compressed tarball (`.tar.gz` file). Extract and install the file using standard procedures for your operating system.
+* **Azure Active Directory service principal (optional)** - To authenticate directly with ORAS, create a [service principal](container-registry-auth-service-principal.md) to access your registry. Ensure that the service principal is assigned a role such as AcrPush so that it has permissions to push and pull artifacts.
+* **Azure CLI (optional)** - To use an individual identity, you need a local installation of the Azure CLI. Version 2.0.71 or later is recommended. Run `az --version `to find the version. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
+* **Docker (optional)** - To use an individual identity, you must also have Docker installed locally, to authenticate with the registry. Docker предоставляет пакеты, которые позволяют быстро настроить Docker в системе под управлением [macOS][docker-mac], [Windows][docker-windows] или [Linux][docker-linux].
 
 
-## <a name="sign-in-to-a-registry"></a>Вход в реестр
+## <a name="sign-in-to-a-registry"></a>Sign in to a registry
 
-В этом разделе показаны два предлагаемых рабочего процесса для входа в реестр в зависимости от используемого удостоверения. Выберите метод, подходящий для вашей среды.
+This section shows two suggested workflows to sign into the registry, depending on the identity used. Choose the method appropriate for your environment.
 
-### <a name="sign-in-with-oras"></a>Вход с помощью Орас
+### <a name="sign-in-with-oras"></a>Sign in with ORAS
 
-Используя [субъект-службу](container-registry-auth-service-principal.md) с правами Push, выполните `oras login` команду, чтобы войти в реестр с помощью идентификатора и пароля приложения субъекта-службы. Укажите полное имя реестра (все строчные), в данном случае *myregistry.azurecr.IO*. Идентификатор приложения субъекта-службы передается в переменную `$SP_APP_ID`среды и пароль в переменной. `$SP_PASSWD`
+Using a [service principal](container-registry-auth-service-principal.md) with push rights, run the `oras login` command to sign in to the registry using the service principal application ID and password. Specify the fully qualified registry name (all lowercase), in this case *myregistry.azurecr.io*. The service principal application ID is passed in the environment variable `$SP_APP_ID`, and the password in the variable `$SP_PASSWD`.
 
 ```bash
 oras login myregistry.azurecr.io --username $SP_APP_ID --password $SP_PASSWD
 ```
 
-Чтобы прочитать пароль из stdin, используйте `--password-stdin`.
+To read the password from Stdin, use `--password-stdin`.
 
 ### <a name="sign-in-with-azure-cli"></a>Вход с помощью Azure CLI
 
-[Войдите](/cli/azure/authenticate-azure-cli) в Azure CLI с помощью удостоверения, чтобы отправить артефакты из реестра контейнеров и извлечь их из него.
+[Sign in](/cli/azure/authenticate-azure-cli) to the Azure CLI with your identity to push and pull artifacts from the container registry.
 
-Затем используйте команду Azure CLI [AZ контроля учетных записей](/cli/azure/acr?view=azure-cli-latest#az-acr-login) для доступа к реестру. Например, для проверки подлинности в реестре с именем *myregistry*:
+Then, use the Azure CLI command [az acr login](/cli/azure/acr?view=azure-cli-latest#az-acr-login) to access the registry. For example, to authenticate to a registry named *myregistry*:
 
 ```azurecli
 az login
@@ -57,17 +54,17 @@ az acr login --name myregistry
 ```
 
 > [!NOTE]
-> `az acr login`использует клиент DOCKER для установки маркера Azure Active Directory в `docker.config` файле. Для выполнения отдельного потока проверки подлинности необходимо установить и запустить клиент DOCKER.
+> `az acr login` uses the Docker client to set an Azure Active Directory token in the `docker.config` file. The Docker client must be installed and running to complete the individual authentication flow.
 
-## <a name="push-an-artifact"></a>Отправка артефакта
+## <a name="push-an-artifact"></a>Push an artifact
 
-Создайте текстовый файл в локальном рабочем каталоге с примером текста. Например, в оболочке bash:
+Create a text file in a local working working directory with some sample text. For example, in a bash shell:
 
 ```bash
 echo "Here is an artifact!" > artifact.txt
 ```
 
-`oras push` Используйте команду, чтобы отправить этот текстовый файл в реестр. В следующем примере текстовый файл отправляется в `samples/artifact` репозиторий. Реестр определен с полным именем реестра *myregistry.azurecr.IO* (все строчные буквы). Артефакт помечается `1.0`тегом. По умолчанию артефакт имеет неопределенный тип, который определяется строкой *типа носителя* после имени файла `artifact.txt`. Дополнительные типы см. в статье о [артефактах OCI](https://github.com/opencontainers/artifacts) . 
+Use the `oras push` command to push this text file to your registry. The following example pushes the sample text file to the `samples/artifact` repo. The registry is identified with the fully qualified registry name *myregistry.azurecr.io* (all lowercase). The artifact is tagged `1.0`. The artifact has an undefined type, by default, identified by the *media type* string following the filename `artifact.txt`. See [OCI Artifacts](https://github.com/opencontainers/artifacts) for additional types. 
 
 ```bash
 oras push myregistry.azurecr.io/samples/artifact:1.0 \
@@ -75,7 +72,7 @@ oras push myregistry.azurecr.io/samples/artifact:1.0 \
     ./artifact.txt:application/vnd.unknown.layer.v1+txt
 ```
 
-Выходные данные для успешной отправки push-уведомлений похожи на следующие:
+Output for a successful push is similar to the following:
 
 ```console
 Uploading 33998889555f artifact.txt
@@ -83,7 +80,7 @@ Pushed myregistry.azurecr.io/samples/artifact:1.0
 Digest: sha256:xxxxxxbc912ef63e69136f05f1078dbf8d00960a79ee73c210eb2a5f65xxxxxx
 ```
 
-Для управления артефактами в реестре, если вы используете Azure CLI, выполните стандартные `az acr` команды для управления образами. Например, получите атрибуты артефакта с помощью команды [AZ][az-acr-repository-show] запись в репозитории:
+To manage artifacts in your registry, if you are using the Azure CLI, run standard `az acr` commands for managing images. For example, get the attributes of the artifact using the [az acr repository show][az-acr-repository-show] command:
 
 ```azurecli
 az acr repository show \
@@ -109,33 +106,33 @@ az acr repository show \
 }
 ```
 
-## <a name="pull-an-artifact"></a>Извлечение артефакта
+## <a name="pull-an-artifact"></a>Pull an artifact
 
-`oras pull` Выполните команду, чтобы извлечь артефакт из реестра.
+Run the `oras pull` command to pull the artifact from your registry.
 
-Сначала удалите текстовый файл из локального рабочего каталога:
+First remove the text file from your local working directory:
 
 ```bash
 rm artifact.txt
 ```
 
-Выполните `oras pull` команду, чтобы извлечь артефакт, и укажите тип носителя, используемый для принудительной отправки артефакта:
+Run `oras pull` to pull the artifact, and specify the media type used to push the artifact:
 
 ```bash
 oras pull myregistry.azurecr.io/samples/artifact:1.0 \
     --media-type application/vnd.unknown.layer.v1+txt
 ```
 
-Убедитесь, что извлечение прошло успешно:
+Verify that the pull was successful:
 
 ```bash
 $ cat artifact.txt
 Here is an artifact!
 ```
 
-## <a name="remove-the-artifact-optional"></a>Удалить артефакт (необязательно)
+## <a name="remove-the-artifact-optional"></a>Remove the artifact (optional)
 
-Чтобы удалить артефакт из реестра контейнеров Azure, используйте команду AZ запись в [репозиторий удаления][az-acr-repository-delete] . Следующий пример удаляет артефакт, который вы сохранили:
+To remove the artifact from your Azure container registry, use the [az acr repository delete][az-acr-repository-delete] command. The following example removes the artifact you stored there:
 
 ```azurecli
 az acr repository delete \
@@ -143,10 +140,10 @@ az acr repository delete \
     --image samples/artifact:1.0
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* Дополнительные сведения о [библиотеке Орас](https://github.com/deislabs/oras/tree/master/docs), включая настройку манифеста для артефакта
-* Справочные сведения о новых типах артефактов см. в репозитории [артефактов OCI](https://github.com/opencontainers/artifacts) .
+* Learn more about [the ORAS Library](https://github.com/deislabs/oras/tree/master/docs), including how to configure a manifest for an artifact
+* Visit the [OCI Artifacts](https://github.com/opencontainers/artifacts) repo for reference information about new artifact types
 
 
 

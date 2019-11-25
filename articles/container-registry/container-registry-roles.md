@@ -1,32 +1,27 @@
 ---
-title: Реестр контейнеров Azure — роли и разрешения
+title: RBAC roles and permissions
 description: Используйте управление доступом Azure на основе ролей (RBAC) и управление удостоверениями и доступом (IAM) для предоставления детализированных разрешений для доступа к ресурсам в реестре контейнеров Azure.
-services: container-registry
-author: dlepow
-manager: gwallace
-ms.service: container-registry
 ms.topic: article
 ms.date: 03/20/2019
-ms.author: danlep
-ms.openlocfilehash: 69104cdaeb4abfc15e2ac4209e1ddbc610656c13
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: 8ef4f26dfd59c7b3b177ef58fa23e08f7e66d328
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72793987"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74456243"
 ---
 # <a name="azure-container-registry-roles-and-permissions"></a>Роли и разрешения реестра контейнеров Azure
 
 Служба реестра контейнеров Azure поддерживает ряд Azure-ролей, которые предоставляют различные уровни разрешений для реестра контейнеров Azure. Используйте [управление доступом Azure на основе ролей (RBAC)](../role-based-access-control/index.yml), чтобы назначать пользователям или субъектам-службам, которые должны взаимодействовать с реестром, особые разрешения.
 
-| Роль или разрешение       | [Доступ к Resource Manager](#access-resource-manager) | [Создание и удаление реестра](#create-and-delete-registry) | [Отправка образа](#push-image) | [Получение образа](#pull-image) | [Удаление данных изображения](#delete-image-data) | [Изменение политик](#change-policies) |   [Подписывание образов](#sign-images)  |
+| Роль или разрешение       | [Доступ к Resource Manager](#access-resource-manager) | [Создание и удаление реестра](#create-and-delete-registry) | [Отправка образа](#push-image) | [Получение образа](#pull-image) | [Delete image data](#delete-image-data) | [Изменение политик](#change-policies) |   [Подписывание образов](#sign-images)  |
 | ---------| --------- | --------- | --------- | --------- | --------- | --------- | --------- |
 | Владелец. | X | X | X | X | X | X |  |  
 | участник; | X | X | X |  X | X | X |  |  
 | Читатель | X |  |  | X |  |  |  |
 | AcrPush |  |  | X | X | |  |  |  
 | AcrPull |  |  |  | X |  |  |  |  
-| акрделете |  |  |  |  | X |  |  |
+| AcrDelete |  |  |  |  | X |  |  |
 | AcrImageSigner |  |  |  |  |  |  | X |
 
 ## <a name="differentiate-users-and-services"></a>Различие пользователей и служб
@@ -63,7 +58,7 @@ ms.locfileid: "72793987"
 
 ## <a name="delete-image-data"></a>Удаление данных образа
 
-Возможность [удалять образы контейнеров](container-registry-delete.md)или удалять другие [Поддерживаемые артефакты](container-registry-image-formats.md) , например диаграммы Helm, из реестра.
+The ability to [delete container images](container-registry-delete.md), or delete other [supported artifacts](container-registry-image-formats.md) such as Helm charts, from a registry.
 
 ## <a name="change-policies"></a>Изменение политик
 

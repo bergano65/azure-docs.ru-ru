@@ -1,19 +1,14 @@
 ---
-title: Форматы содержимого Реестра контейнеров Azure
-description: Сведения о форматах содержимого, поддерживаемых реестром контейнеров Azure, включая образы контейнеров, совместимые с DOCKER, Helmные диаграммы, изображения OCI и, например, артефакты OCI.
-services: container-registry
-author: dlepow
-manager: gwallace
-ms.service: container-registry
+title: Supported content formats
+description: Learn about content formats supported by Azure Container Registry, including Docker-compatible container images, Helm charts, OCI images, and OCI artifacts.
 ms.topic: article
 ms.date: 08/30/2019
-ms.author: danlep
-ms.openlocfilehash: 38639f22457d923643e8de09cfbbb2fd7f4d2985
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: ab915385f46f83c7b655acd1a48d66df84b50653
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74007481"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74455020"
 ---
 # <a name="content-formats-supported-in-azure-container-registry"></a>Форматы содержимого, поддерживаемые в Реестре контейнеров Azure
 
@@ -21,27 +16,27 @@ ms.locfileid: "74007481"
 
 ## <a name="docker-compatible-container-images"></a>Образы контейнеров, совместимые с Docker
 
-Поддерживаются следующие форматы образов контейнеров docker:
+The following Docker container image formats are supported:
 
 * [Манифест версии 2 образа Docker, схема 1](https://docs.docker.com/registry/spec/manifest-v2-1/)
 
 * [Манифест версии 2 образа Docker, схема 2](https://docs.docker.com/registry/spec/manifest-v2-2/) — включает в себя списки манифестов, которые позволяют реестрам хранить многоплатформенные образы в одной ссылке "image: tag"
 
-## <a name="oci-images"></a>Изображения OCI
+## <a name="oci-images"></a>OCI images
 
-Реестр контейнеров Azure поддерживает образы, соответствующие [спецификации формата образа для инициативы Open Container (OCI)](https://github.com/opencontainers/image-spec/blob/master/spec.md). Форматы упаковки включают [Формат изображения в формате "только в единственном числе" (SIF)](https://github.com/sylabs/sif).
+Azure Container Registry supports images that meet the [Open Container Initiative (OCI) Image Format Specification](https://github.com/opencontainers/image-spec/blob/master/spec.md). Packaging formats include [Singularity Image Format (SIF)](https://github.com/sylabs/sif).
 
-## <a name="oci-artifacts"></a>, Артефакты OCI
+## <a name="oci-artifacts"></a>OCI artifacts
 
-Реестр контейнеров Azure поддерживает [спецификацию распространения OCI](https://github.com/opencontainers/distribution-spec), независимые от поставщика, независимые от облака спецификации для хранения, совместного использования, защиты и развертывания образов контейнеров и других типов содержимого (артефактов). Спецификация позволяет реестру хранить широкий спектр артефактов в дополнение к образам контейнеров. Для отправки и извлечения артефактов используются инструменты, подходящие для артефакта. Пример см. в разделе [Отправка и извлечение артефакта OCI с помощью реестра контейнеров Azure](container-registry-oci-artifacts.md).
+Azure Container Registry supports the [OCI Distribution Specification](https://github.com/opencontainers/distribution-spec), a vendor-neutral, cloud-agnostic spec to store, share, secure, and deploy container images and other content types (artifacts). The specification allows a registry to store a wide range of artifacts in addition to container images. You use tooling appropriate to the artifact to push and pull artifacts. For an example, see [Push and pull an OCI artifact using an Azure container registry](container-registry-oci-artifacts.md).
 
-Дополнительные сведения о артефактах OCI см. в репозитории "реестр" в [хранилище "OCI" (Орас)](https://github.com/deislabs/oras) и репозитории [артефактов OCI](https://github.com/opencontainers/artifacts) на сайте GitHub.
+To learn more about OCI artifacts, see the [OCI Registry as Storage (ORAS)](https://github.com/deislabs/oras) repo and the [OCI Artifacts](https://github.com/opencontainers/artifacts) repo on GitHub.
 
 ## <a name="helm-charts"></a>Чарты Helm
 
-Реестр контейнеров Azure может размещать репозитории для [диаграмм Helm](https://helm.sh/), формат упаковки, используемый для быстрого управления и развертывания приложений для Kubernetes. Поддерживается [клиент Helm](https://docs.helm.sh/using_helm/#installing-helm) версии 2 (2.11.0 или более поздней).
+Azure Container Registry can host repositories for [Helm charts](https://helm.sh/), a packaging format used to quickly manage and deploy applications for Kubernetes. [Helm client](https://docs.helm.sh/using_helm/#installing-helm) version 2 (2.11.0 or later) is supported.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, как [принудительно отправлять и извлекать](container-registry-get-started-docker-cli.md) образы с помощью Реестра контейнеров Azure.
 

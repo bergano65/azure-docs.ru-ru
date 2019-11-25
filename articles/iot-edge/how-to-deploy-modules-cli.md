@@ -9,13 +9,12 @@ ms.topic: conceptual
 ms.reviewer: menchi
 ms.service: iot-edge
 services: iot-edge
-ms.custom: seodec18
-ms.openlocfilehash: c8cd6e2d13e252f9a7560b55eca58341e791db5a
-ms.sourcegitcommit: c4700ac4ddbb0ecc2f10a6119a4631b13c6f946a
+ms.openlocfilehash: 72535b69c81aee880eb16bf5d10e11dedb36f3a7
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2019
-ms.locfileid: "72964941"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74457462"
 ---
 # <a name="deploy-azure-iot-edge-modules-with-azure-cli"></a>Развертывание модулей IoT Edge Azure с помощью интерфейса командной строки Azure
 
@@ -116,7 +115,7 @@ ms.locfileid: "72964941"
    az iot edge set-modules --device-id [device id] --hub-name [hub name] --content [file path]
    ```
 
-В параметре идентификатора устройства учитывается регистр. Параметр content указывает на сохраненный ранее файл манифеста развертывания.
+The device ID parameter is case-sensitive. Параметр content указывает на сохраненный ранее файл манифеста развертывания.
 
    ![Выходные данные команды az iot edge set-modules](./media/how-to-deploy-cli/set-modules.png)
 
@@ -130,7 +129,7 @@ ms.locfileid: "72964941"
    az iot hub module-identity list --device-id [device id] --hub-name [hub name]
    ```
 
-В параметре идентификатора устройства учитывается регистр.
+The device ID parameter is case-sensitive.
 
    ![Выходные данные команды az iot hub module-identity list](./media/how-to-deploy-cli/list-modules.png)
 

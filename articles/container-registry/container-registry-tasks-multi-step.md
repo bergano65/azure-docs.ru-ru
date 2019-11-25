@@ -1,19 +1,14 @@
 ---
-title: Многошаговая задача для сборки, тестирования образа & исправления в реестре контейнеров Azure
-description: Общие сведения о многошаговых задачах, функции записей контроля доступа в реестре контейнеров Azure, которая предоставляет рабочие процессы на основе задач для создания, тестирования и исправления образов контейнеров в облаке.
-services: container-registry
-author: dlepow
-manager: gwallace
-ms.service: container-registry
+title: Multi-step task to build, test & patch image
+description: Introduction to multi-step tasks, a feature of ACR Tasks in Azure Container Registry that provides task-based workflows for building, testing, and patching container images in the cloud.
 ms.topic: article
 ms.date: 03/28/2019
-ms.author: danlep
-ms.openlocfilehash: 06bdcc1cd4f9bfcb1a77140d70435545fbe01079
-ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
+ms.openlocfilehash: 3ed071fa2027e91ee5bc6c07738dc66763454847
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74148771"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74456176"
 ---
 # <a name="run-multi-step-build-test-and-patch-tasks-in-acr-tasks"></a>Выполнение многошаговых задач сборки, тестирования и исправления в службе "Задачи ACR"
 
@@ -31,7 +26,7 @@ ms.locfileid: "74148771"
 1. Если тесты проходят успешно, создайте пакет архива диаграмм Helm.
 1. Выполнение команды `helm upgrade` с использованием нового пакета архива диаграмм Helm.
 
-Все действия выполняются в рамках Azure, а значит вычисления переносятся на вычислительные ресурсы Azure, а вы в это время можете управлять инфраструктурой. Помимо Реестра контейнеров Azure вы платите только за используемые ресурсы. Дополнительные сведения о ценах см. в разделе **Создание контейнера** статьи [цены на реестр контейнеров Azure][pricing].
+Все действия выполняются в рамках Azure, а значит вычисления переносятся на вычислительные ресурсы Azure, а вы в это время можете управлять инфраструктурой. Помимо Реестра контейнеров Azure вы платите только за используемые ресурсы. For information on pricing, see the **Container Build** section in [Azure Container Registry pricing][pricing].
 
 
 ## <a name="common-task-scenarios"></a>Распространенные сценарии задач
@@ -84,13 +79,13 @@ steps:
   - cmd: {{.Run.Registry}}/functions/helm upgrade helloworld ./helm/helloworld/ --reuse-values --set helloworld.image={{.Run.Registry}}/helloworld:{{.Run.ID}}
 ```
 
-В разделе [примеры задач](container-registry-tasks-samples.md) для многоэтапных файлов YAML и файлы dockerfile в нескольких сценариях.
+See [task examples](container-registry-tasks-samples.md) for multi-step task YAML files and Dockerfiles for several scenarios.
 
 ## <a name="run-a-sample-task"></a>Выполнение простой задачи
 
 Задачи поддерживают и выполнение вручную, называемое быстрым выполнением, и автоматическое выполнение при фиксации в Git или обновлении основного образа.
 
-Чтобы выполнить задачу, сначала определите шаги задачи в файле YAML, а затем выполните Azure CLI команду [AZ Run][az-acr-run].
+To run a task, you first define the task's steps in a YAML file, then execute the Azure CLI command [az acr run][az-acr-run].
 
 Ниже приведен пример команды Azure CLI, которая запускает задачу, используя пример YAML-файла задачи. Ее шаги выполняют сборку, а затем отправку образа. Перед выполнением команды обновите переменную `\<acrName\>`, указав имя собственного реестра контейнеров Azure.
 
@@ -150,12 +145,12 @@ Run ID: yd14 was successful after 19s
 
 Дополнительные сведения об автоматизированных сборках при фиксации в Git или обновлении основного образа см. в статях [об автоматизации сборок образов](container-registry-tutorial-build-task.md) и [сборке с обновлением основного образа](container-registry-tutorial-base-image-update.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Справочные сведения и примеры многошаговых задач можно найти здесь:
 
 * [Справочник по задачам](container-registry-tasks-reference-yaml.md). Типы шагов задач, их свойства и использование.
-* [Примеры задач](container-registry-tasks-samples.md) — пример `task.yaml` и файлов DOCKER для нескольких сценариев, простые и сложные.
+* [Task examples](container-registry-tasks-samples.md) - Example `task.yaml` and Docker files for several scenarios, simple to complex.
 * [Репозиторий команд](https://github.com/AzureCR/cmd). Набор контейнеров и команд для Задач ACR.
 
 <!-- IMAGES -->
