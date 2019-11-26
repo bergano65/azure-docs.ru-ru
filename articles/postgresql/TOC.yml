@@ -175,6 +175,10 @@
   items:
     - name: Отдельный сервер
       items:
+        - name: Управление сервером
+          items:
+            - name: Портал Azure
+              href: howto-create-manage-server-portal.md
         - name: Аутентификация
           items:
             - name: Создание пользователей
