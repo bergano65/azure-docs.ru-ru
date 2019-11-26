@@ -1,5 +1,5 @@
 ---
-title: Push & pull Docker image
+title: Образ DOCKER & для отправки по запросу
 description: Отправка образов Docker в частный реестр контейнеров в Azure и их получение с помощью интерфейса командной строки Docker
 ms.topic: article
 ms.date: 01/23/2019
@@ -17,7 +17,7 @@ ms.locfileid: "74456355"
 
 Выполняя следующие действия, вы скачаете официальный [образ Nginx](https://store.docker.com/images/nginx) из общедоступного реестра Docker Hub, поместите его в частный реестр контейнеров Azure, отправите его в свой реестр, а затем извлечете его от туда.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 * **Реестр контейнеров Azure.** Создайте реестр контейнеров в своей подписке Azure. Это можно сделать на [портале Azure](container-registry-get-started-portal.md) или с помощью [Azure CLI](container-registry-get-started-azure-cli.md).
 * **Docker CLI**. Также необходим локально установленный модуль Docker. Docker предоставляет пакеты, которые позволяют быстро настроить Docker в системе под управлением [macOS][docker-mac], [Windows][docker-windows] или [Linux][docker-linux].
@@ -57,7 +57,7 @@ docker pull nginx
 docker run -it --rm -p 8080:80 nginx
 ```
 
-Browse to `http://localhost:8080` to view the default web page served by Nginx in the running container. Вы должны увидеть страницу, аналогичную показанной ниже:
+Перейдите к `http://localhost:8080`, чтобы просмотреть веб-страницу по умолчанию, обслуживаемую nginx в работающем контейнере. Вы должны увидеть страницу, аналогичную показанной ниже:
 
 ![Nginx на локальном компьютере](./media/container-registry-get-started-docker-cli/nginx.png)
 
@@ -99,7 +99,7 @@ docker pull myregistry.azurecr.io/samples/nginx
 docker run -it --rm -p 8080:80 myregistry.azurecr.io/samples/nginx
 ```
 
-Browse to `http://localhost:8080` to view the running container.
+Перейдите к `http://localhost:8080`, чтобы просмотреть выполняющийся контейнер.
 
 Чтобы остановить и удалить контейнер, нажмите `Control`+`C`.
 
@@ -117,7 +117,7 @@ docker rmi myregistry.azurecr.io/samples/nginx
 az acr repository delete --name myregistry --image samples/nginx:latest
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Теперь, когда вы знаете основы, можно приступать к использованию реестра. Например, можно развернуть образы контейнера из реестра в следующие службы:
 

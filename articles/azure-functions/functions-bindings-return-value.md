@@ -1,6 +1,6 @@
 ---
-title: Using return value from an Azure Function
-description: Learn to manage return values for Azure Functions
+title: Использование возвращаемого значения из функции Azure
+description: Узнайте, как управлять возвращаемыми значениями для функций Azure.
 author: craigshoemaker
 ms.topic: reference
 ms.date: 01/14/2019
@@ -12,15 +12,15 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/25/2019
 ms.locfileid: "74480575"
 ---
-# <a name="using-the-azure-function-return-value"></a>Using the Azure Function return value
+# <a name="using-the-azure-function-return-value"></a>Использование возвращаемого значения функции Azure
 
-This article explains how return values work inside a function.
+В этой статье объясняется, как возвращаемые значения работают внутри функции.
 
-In languages that have a return value, you can bind a function [output binding](./functions-triggers-bindings.md#binding-direction) to the return value:
+В языках, имеющих возвращаемое значение, можно привязать [выходную привязку](./functions-triggers-bindings.md#binding-direction) функции к возвращаемому значению:
 
 * В библиотеке классов C# примените атрибут выходной привязки к возвращаемому значению метода.
-* In Java, apply the output binding annotation to the function method.
-* В других языках задайте для свойства `name` значение `$return` в файле *function.json*.
+* В Java примените заметку выходной привязки к методу функции.
+* В других языках задайте для свойства `name` значение *в файле*function.json`$return`.
 
 При наличии нескольких выходных привязок используйте возвращаемое значение только для одной из них.
 
@@ -52,7 +52,7 @@ public static Task<string> Run([QueueTrigger("inputqueue")]WorkItem input, ILogg
 }
 ```
 
-# <a name="c-scripttabcsharp-script"></a>[C# Script](#tab/csharp-script)
+# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
 
 Выходная привязка в файле *function.json*:
 
@@ -155,7 +155,7 @@ def main(input: azure.functions.InputStream) -> str:
 
 # <a name="javatabjava"></a>[Java](#tab/java)
 
-Here's Java code that uses the return value for an output binding:
+Вот код Java, который использует возвращаемое значение для выходной привязки.
 
 ```java
 @FunctionName("QueueTrigger")
@@ -173,7 +173,7 @@ public static String run(
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Handle Azure Functions binding errors](./functions-bindings-errors.md)
+> [Обработчик ошибок привязки функций Azure](./functions-bindings-errors.md)

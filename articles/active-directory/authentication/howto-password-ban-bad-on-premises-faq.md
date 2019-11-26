@@ -1,5 +1,5 @@
 ---
-title: On-premises password protection FAQ - Azure Active Directory
+title: Вопросы и ответы по защите локальных паролей — Azure Active Directory
 description: Вопросы и ответы о локальной службе защиты паролем Azure AD
 services: active-directory
 ms.service: active-directory
@@ -20,53 +20,53 @@ ms.locfileid: "74381705"
 ---
 # <a name="azure-ad-password-protection-on-premises---frequently-asked-questions"></a>Часто задаваемые вопросы о локальной службе защиты паролем Azure AD
 
-This section provides answers to many commonly asked questions about Azure AD Password Protection.
+В этом разделе содержатся ответы на часто задаваемые вопросы о защите паролей Azure AD.
 
 ## <a name="general-questions"></a>Общие вопросы
 
-**Q: What guidance should users be given on how to select a secure password?**
+**Вопрос. какие рекомендации следует предоставить пользователям для выбора безопасного пароля?**
 
 В настоящее время это руководство Майкрософт можно найти по следующей ссылке:
 
 [Руководство по паролям](https://www.microsoft.com/research/publication/password-guidance)
 
-**Q: Is on-premises Azure AD Password Protection supported in non-public clouds?**
+**Вопрос. Локальная защита паролей Azure AD поддерживается в облаках, не являющихся общедоступными?**
 
 Нет. Локальная служба защиты паролем Azure AD поддерживается только в общедоступных облаках. Дата доступности в необщедоступных облаках еще не объявлена.
 
-The Azure AD portal does allow modification of the on-premises-specific "Password protection for Windows Server Active Directory" configuration even in non-public clouds; such changes will be persisted but otherwise will never take effect. Registration of on-premises proxy agents or forests is unsupported when non-public cloud credentials are used, and any such registration attempts will always fail.
+Портал Azure AD позволяет вносить изменения в локальную конфигурацию защиты паролем для Windows Server Active Directory "даже в общедоступных облаках; такие изменения будут сохранены, но в противном случае они никогда не вступят в силу. Регистрация локальных прокси-агентов или лесов не поддерживается при использовании учетных данных облака, не являющихся общедоступными, и любые такие попытки регистрации всегда будут завершаться сбоем.
 
-**Q: How can I apply Azure AD Password Protection benefits to a subset of my on-premises users?**
+**Вопрос. как можно применить преимущества защиты паролем Azure AD к подмножеству локальных пользователей?**
 
 Не поддерживается. После развертывания и включения служба защиты паролей Azure AD не разделяет пользователей — все пользователи получают одинаковые преимущества безопасности.
 
-**Q: What is the difference between a password change and a password set (or reset)?**
+**Вопрос. Какова разница между изменением пароля и набором паролей (или сбросом)?**
 
-A password change is when a user chooses a new password after proving they have knowledge of the old password. For example, a password change is what happens when a user logs into Windows and is then prompted to choose a new password.
+Изменение пароля происходит, когда пользователь выбирает новый пароль после подтверждения того, что он знает о старом пароле. Например, изменение пароля — это то, что происходит при входе пользователя в Windows и последующем запросе на выбор нового пароля.
 
-A password set (sometimes called a password reset) is when an administrator replaces the password on an account with a new password, for example by using the Active Directory Users and Computers management tool. This operation requires a high level of privilege (usually Domain Admin), and the person performing the operation usually does not have knowledge of the old password. Help-desk scenarios often perform password sets, for instance when assisting a user who has forgotten their password. You will also see password set events when a brand new user account is being created for the first time with a password.
+Пароль (иногда называемый сбросом пароля) используется, когда администратор заменяет пароль учетной записи новым паролем, например с помощью средства управления пользователями и компьютерами Active Directory. Эта операция требует высокого уровня привилегий (обычно это администратор домена), и пользователь, выполняющий операцию, обычно не знает о старом пароле. Сценарии службы поддержки часто выполняют наборы паролей, например, при помощи пользователю, который забыл свой пароль. Кроме того, при первом создании новой учетной записи пользователя с паролем будут отображаться события набора паролей.
 
-The password validation policy behaves the same regardless of whether a password change or set is being done. The Azure AD Password Protection DC Agent service does log different events to inform you whether a password change or set operation was done.  See [Azure AD Password Protection monitoring and logging](https://docs.microsoft.com/azure/active-directory/authentication/howto-password-ban-bad-on-premises-monitor).
+Политика проверки паролей ведет себя одинаково независимо от того, выполняется ли изменение или Настройка пароля. Служба агента контроллера домена для защиты паролем Azure AD регистрирует различные события, чтобы сообщить вам о том, была ли выполнена операция смены или изменения пароля.  См. раздел [мониторинг и ведение журнала в службе защиты паролей Azure AD](https://docs.microsoft.com/azure/active-directory/authentication/howto-password-ban-bad-on-premises-monitor).
 
-**Q: Why are duplicated password rejection events logged when attempting to set a weak password using the Active Directory Users and Computers management snap-in?**
+**Вопрос. Почему при попытке задать ненадежный пароль с помощью оснастки "Управление пользователями и компьютерами" Active Directory "регистрируются дублирующиеся события отклонения пароля?"**
 
-The Active Directory Users and Computers management snap-in will first try to set the new password using the Kerberos protocol. Upon failure, the snap-in will make a second attempt to set the password using a legacy (SAM RPC) protocol (the specific protocols used are not important). If the new password is considered weak by Azure AD Password Protection, this snap-in behavior will result in two sets of password reset rejection events being logged.
+Оснастка управления пользователями и компьютерами Active Directory сначала попытается задать новый пароль с помощью протокола Kerberos. После сбоя оснастка попытается установить пароль с помощью устаревшего протокола (SAM RPC) (конкретные используемые протоколы не важны). Если новый пароль считается ненадежным с помощью защиты паролем в Azure AD, это поведение приведет к записи двух наборов событий отклонения сброса пароля.
 
-**Q: Why are Azure AD Password Protection password validation events being logged with an empty user name?**
+**Вопрос. Почему события проверки пароля для защиты паролем Azure AD регистрируются с пустым именем пользователя?**
 
-Active Directory supports the ability to test a password to see if it passes the domain's current password complexity requirements, for example using the [NetValidatePasswordPolicy](https://docs.microsoft.com/windows/win32/api/lmaccess/nf-lmaccess-netvalidatepasswordpolicy) api. When a password is validated in this way, the testing also includes validation by password-filter-dll based products such as Azure AD Password Protection - but the user names passed to a given password filter dll will be empty. In this scenario, Azure AD Password Protection will still validate the password using the currently in-effect password policy and will issue an event log message to capture the outcome, however the event log message will have empty user name fields.
+Active Directory поддерживает возможность проверки пароля, чтобы узнать, прошел ли он текущие требования к сложности пароля домена, например с помощью API [нетвалидатепассвордполици](https://docs.microsoft.com/windows/win32/api/lmaccess/nf-lmaccess-netvalidatepasswordpolicy) . Когда пароль проверяется таким образом, тестирование также включает проверку таких продуктов на основе фильтров паролей, как защита паролем Azure AD, но имена пользователей, переданные в указанную DLL фильтра паролей, будут пустыми. В этом сценарии защита паролем Azure AD по-прежнему будет проверять пароль с помощью действующей в настоящее время политики паролей и выдаст сообщение журнала событий для записи результата, однако в сообщении журнала событий будут соблюдаться пустые поля имени пользователя.
 
-**Q: Is it supported to install Azure AD Password Protection side by side with other password-filter-based products?**
+**Вопрос. поддерживается ли возможность установки защиты паролей Azure AD параллельно с другими продуктами на основе фильтров паролей?**
 
 Да. Поддержка нескольких зарегистрированных библиотек DLL для фильтрации по паролю является основной функцией Windows и не относится к защите паролем Azure AD. Все зарегистрированные библиотеки DLL для фильтрации по паролю должны подтвердить пароль, прежде чем он будет принят.
 
-**Q: How can I deploy and configure Azure AD Password Protection in my Active Directory environment without using Azure?**
+**Вопрос. как развернуть и настроить защиту паролей Azure AD в моей Active Directoryной среде без использования Azure?**
 
 Не поддерживается. Защита паролей Azure AD — это компонент Azure, который поддерживает расширение в локальную среду Active Directory.
 
-**Q: How can I modify the contents of the policy at the Active Directory level?**
+**Вопрос. как можно изменить содержимое политики на уровне Active Directory?**
 
-Не поддерживается. The policy can only be administered using the Azure AD portal. См. также предыдущий вопрос.
+Не поддерживается. Политику можно администрировать только с помощью портала Azure AD. См. также предыдущий вопрос.
 
 **Вопрос. Почему для репликации SYSVOL требуется DFSR?**
 
@@ -78,14 +78,14 @@ Active Directory supports the ability to test a password to see if it passes the
 
 [The End is Nigh for FRS](https://blogs.technet.microsoft.com/filecab/2014/06/25/the-end-is-nigh-for-frs) (Близится конец FRS)
 
-If your domain is not already using DFSR, you MUST migrate it to use DFSR before installing Azure AD Password Protection. For more information, see the following link:
+Если в вашем домене еще не используется служба DFSR, ее необходимо перенести для использования DFSR перед установкой защиты паролей Azure AD. Дополнительные сведения см. по следующей ссылке:
 
-[SYSVOL Replication Migration Guide: FRS to DFS Replication](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd640019(v=ws.10))
+[Руководство по миграции репликации SYSVOL: FRS — репликация DFS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd640019(v=ws.10))
 
 > [!WARNING]
-> The Azure AD Password Protection DC Agent software will currently install on domain controllers in domains that are still using FRS for sysvol replication, but the software will NOT work properly in this environment. Additional negative side-effects include individual files failing to replicate, and sysvol restore procedures appearing to succeed but silently failing to replicate all files. You should migrate your domain to use DFSR as soon as possible, both for DFSR's inherent benefits and also to unblock the deployment of Azure AD Password Protection. Future versions of the software will be automatically disabled when running in a domain that is still using FRS.
+> Программное обеспечение агента DC для защиты паролем Azure AD будет установлено на контроллерах домена в доменах, которые по-прежнему используют службу FRS для репликации SYSVOL, но программное обеспечение не будет работать должным образом в этой среде. К дополнительным отрицательным побочным эффектам относятся отдельные файлы, которые не реплицируются, и процедуры восстановления SYSVOL, которые завершаются успешно, но не выполняют автоматическую репликацию всех файлов. Необходимо выполнить миграцию домена, чтобы использовать DFSR как можно скорее, и для внутренних преимуществ DFSR, а также для разблокировки развертывания защиты паролей Azure AD. Будущие версии программного обеспечения будут автоматически отключены при работе в домене, который по-прежнему использует службу FRS.
 
-**Q: How much disk space does the feature require on the domain sysvol share?**
+**Вопрос. какой объем дискового пространства требуется компоненту для общего ресурса SYSVOL в домене?**
 
 Точное использование пространства зависит от таких факторов, как количество и длина запрещенных маркеров в глобальном списке запрещенных маркеров Майкрософт и настраиваемом списке каждого клиента, а также накладные расходы на шифрование. Эти списки, вероятно, будут расширяться в будущем. Учитывая это, разумно ожидать, что для этого компонента потребуется по крайней мере пять (5) мегабайт пространства в общей папке sysvol домена.
 
@@ -95,19 +95,19 @@ If your domain is not already using DFSR, you MUST migrate it to use DFSR before
 
 **В. Имеется ли способ настроить агент контроллера домена для использования конкретного прокси-сервера?**
 
-Нет. Так как прокси-сервер не учитывает состояние, не важно, какой конкретный прокси-сервер используется.
+Нет Так как прокси-сервер не учитывает состояние, не важно, какой конкретный прокси-сервер используется.
 
-**Q: Is it okay to deploy the Azure AD Password Protection Proxy service side by side with other services such as Azure AD Connect?**
+**Вопрос. можно ли развернуть службу защиты паролей Azure AD параллельно с другими службами, такими как Azure AD Connect?**
 
 Да. Служба прокси-сервера Защиты паролей Azure AD и Azure AD Connect никогда не конфликтуют друг с другом напрямую.
 
-Unfortunately, an incompatibility has been found between the version of the Microsoft Azure AD Connect Agent Updater service that is installed by the Azure AD Password Protection Proxy software and the version of the service that is installed by the [Azure Active Directory Application Proxy](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy) software. This incompatibility may result in the Agent Updater service being unable to contact Azure for software updates. It is not recommended to install Azure AD Password Protection Proxy and Azure Active Directory Application Proxy on the same machine.
+К сожалению, обнаружена несовместимость между версией службы обновления агента Microsoft Azure AD Connect, установленной с помощью прокси-сервера защиты паролей Azure AD, и версии службы, которая устанавливается программным обеспечением [Azure Active Directory Application proxy](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy) . Такая несовместимость может привести к тому, что службе обновления агента не удается связаться с Azure для обновления программного обеспечения. Не рекомендуется устанавливать прокси-сервер защиты паролей Azure AD и Azure Active Directory Application Proxy на одном компьютере.
 
-**Q: In what order should the DC agents and proxies be installed and registered?**
+**Вопрос. в каком порядке следует устанавливать и регистрировать агенты контроллеров домена и прокси-серверы?**
 
-Any ordering of Proxy agent installation, DC agent installation, forest registration, and Proxy registration  is supported.
+Поддерживается любое упорядочение установки прокси-агента, установка агента контроллера домена, регистрация леса и регистрация прокси-сервера.
 
-**Q: Should I be concerned about the performance hit on my domain controllers from deploying this feature?**
+**Вопрос. следует ли мне заботиться о производительности на контроллерах домена от развертывания этого компонента?**
 
 Служба агента контроллера домена Защиты паролей Azure AD не должна существенно влиять на производительность контроллера домена в существующем работоспособном развертывании Active Directory.
 
@@ -115,49 +115,49 @@ Any ordering of Proxy agent installation, DC agent installation, forest registra
 
 Тем не менее, если текущие контроллеры домена уже работают на уровнях с ограниченной производительностью (например, по максимуму используют ЦП, дисковое пространство, дисковые операции ввода-вывода и т. д.), рекомендуется добавить дополнительные контроллеры домена или расширить доступное дисковое пространство перед развертыванием этого компонента. См. также вопрос об использовании дискового пространства sysvol выше.
 
-**Q: I want to test Azure AD Password Protection on just a few DCs in my domain. Is it possible to force user password changes to use those specific DCs?**
+**Вопрос. я хочу протестировать защиту пароля Azure AD на нескольких контроллерах домена в моем домене. Можно ли принудительно изменить пароль пользователя для использования этих конкретных контроллеров домена?**
 
-Нет. Клиентская ОС Windows определяет, какой контроллер домена используется при изменении пароля пользователем. The domain controller is selected based on factors such as Active Directory site and subnet assignments, environment-specific network configuration, etc. Azure AD Password Protection does not control these factors and cannot influence which domain controller is selected to change a user's password.
+Нет Клиентская ОС Windows определяет, какой контроллер домена используется при изменении пароля пользователем. Контроллер домена выбирается на основе таких факторов, как Active Directory назначений сайтов и подсетей, конфигурация сети, зависящая от среды, и т. д. Защита паролем в Azure AD не контролирует эти факторы и не влияет на выбор контроллера домена для изменения пароля пользователя.
 
 Один из способов частично достичь этой цели — развернуть Защиту паролей Azure AD на всех контроллерах домена на данном сайте Active Directory. Такой подход обеспечит разумное покрытие для клиентов Windows, назначенных этому сайту, а также для пользователей, которые входят в эти клиенты и меняют свои пароли.
 
-**Q: If I install the Azure AD Password Protection DC Agent service on just the Primary Domain Controller (PDC), will all other domain controllers in the domain also be protected?**
+**Вопрос. Если установить службу агента DC для защиты паролем Azure AD только на основном контроллере домена (PDC), будут ли также защищены все другие контроллеры домена в этом домене?**
 
-Нет. Когда пароль пользователя изменяется на контроллере домена, отличном от основного, открытый пароль никогда не отправляется на основной контроллер домена (эта идея является распространенным заблуждением). Когда новый пароль будет принят на данном контроллере домена, этот контроллер домена начнет использовать его, чтобы создавать различные хэши этого пароля для конкретного протокола аутентификации, а затем сохранять их в каталоге. Открытый пароль не сохраняется. Затем обновленные хэши реплицируются в этот основной контроллер домена. В некоторых случаях пароли пользователей могут быть изменены непосредственно на основном контроллере домена в зависимости от различных факторов, таких как топология сети и структура сайта Active Directory. (См. предыдущий вопрос.)
+Нет Когда пароль пользователя изменяется на контроллере домена, отличном от основного, открытый пароль никогда не отправляется на основной контроллер домена (эта идея является распространенным заблуждением). Когда новый пароль будет принят на данном контроллере домена, этот контроллер домена начнет использовать его, чтобы создавать различные хэши этого пароля для конкретного протокола аутентификации, а затем сохранять их в каталоге. Открытый пароль не сохраняется. Затем обновленные хэши реплицируются в этот основной контроллер домена. В некоторых случаях пароли пользователей могут быть изменены непосредственно на основном контроллере домена в зависимости от различных факторов, таких как топология сети и структура сайта Active Directory. (См. предыдущий вопрос.)
 
 Таким образом, развертывание службы агента контроллера домена Защиты паролей Azure AD только на основном контроллере домена необходимо для достижения 100%-го уровня безопасности компонента в домене. Развертывание компонента только на основном контроллере домена не предоставляет преимуществ Защиты паролей Azure AD для других контроллеров в домене.
 
-**Q: Why is custom smart lockout not working even after the agents are installed in my on-premises Active Directory environment?**
+**Вопрос. Почему пользовательская интеллектуальная блокировка не работает даже после установки агентов в локальной среде Active Directory?**
 
-Custom smart lockout is only supported in Azure AD. Changes to the custom smart lockout settings in the Azure AD portal have no effect on the on-premises Active Directory environment, even with the agents installed.
+Пользовательская смарт-блокировка поддерживается только в Azure AD. Изменения настраиваемых параметров смарт-блокировки на портале Azure AD не влияют на локальную среду Active Directory, даже если агенты установлены.
 
-**Q: Is a System Center Operations Manager management pack available for Azure AD Password Protection?**
+**Вопрос. является ли пакет управления System Center Operations Manager доступным для защиты паролей Azure AD?**
 
-Нет.
+Нет
 
-**Q: Why is Azure AD still rejecting weak passwords even though I've configured the policy to be in Audit mode?**
+**Вопрос. Почему Azure AD все еще отвергает ненадежные пароли, даже если политика включена в режим аудита?**
 
-Audit mode is only supported in the on-premises Active Directory environment. Azure AD is implicitly always in "enforce" mode when it evaluates passwords.
+Режим аудита поддерживается только в локальной среде Active Directory. Azure AD неявно всегда находится в режиме принудительного применения при оценке паролей.
 
-**Q: My users see the traditional Windows error message when a password is rejected by Azure AD Password Protection. Is it possible to customize this error message so that users know what really happened?**
+**Вопрос. пользователи видят традиционное сообщение об ошибке Windows при отклонении пароля службой защиты паролей Azure AD. Можно ли настроить это сообщение об ошибке, чтобы пользователи могли узнать, что произошло?**
 
-Нет. The error message seen by users when a password is rejected by a domain controller is controlled by the client machine, not by the domain controller. This behavior happens whether a password is rejected by the default Active Directory password policies or by a password-filter-based solution such as Azure AD Password Protection.
+Нет Сообщение об ошибке, отображаемое пользователями, если пароль отклонен контроллером домена, управляется клиентским компьютером, а не контроллером домена. Это происходит, когда пароль отклоняется по умолчанию Active Directory политиками паролей или с помощью решения на основе фильтра паролей, такого как защита паролей Azure AD.
 
 ## <a name="additional-content"></a>Дополнительное содержимое
 
 Следующие ссылки не являются частью основной документации по Защите паролей Azure AD, но могут быть полезным источником дополнительных сведений о компоненте.
 
-[Azure AD Password Protection is now generally available!](https://techcommunity.microsoft.com/t5/Azure-Active-Directory-Identity/Azure-AD-Password-Protection-is-now-generally-available/ba-p/377487)
+[Служба защиты паролей Azure AD теперь общедоступна.](https://techcommunity.microsoft.com/t5/Azure-Active-Directory-Identity/Azure-AD-Password-Protection-is-now-generally-available/ba-p/377487)
 
-[Email Phishing Protection Guide – Part 15: Implement the Microsoft Azure AD Password Protection Service (for On-Premises too!)](https://blogs.technet.microsoft.com/cloudready/2018/10/14/email-phishing-protection-guide-part-15-implement-the-microsoft-azure-ad-password-protection-service-for-on-premises-too/)
+[Руководство по защите от фишинга электронной почты. часть 15. Реализация службы защиты паролей Microsoft Azure AD (для локальной среды).](https://blogs.technet.microsoft.com/cloudready/2018/10/14/email-phishing-protection-guide-part-15-implement-the-microsoft-azure-ad-password-protection-service-for-on-premises-too/)
 
 [Azure AD Password Protection and Smart Lockout are now in Public Preview!](https://techcommunity.microsoft.com/t5/Azure-Active-Directory-Identity/Azure-AD-Password-Protection-and-Smart-Lockout-are-now-in-Public/ba-p/245423#M529) (Компонент "Защита паролей Azure AD" и интеллектуальная блокировка теперь предоставляются в общедоступной версии)
 
 ## <a name="microsoft-premierunified-support-training-available"></a>Доступно обучение по поддержке Microsoft Premier и Единой поддержке Майкрософт
 
-Если вы хотите узнать больше о Защите паролей Azure AD и развертывании этого компонента в своей среде, вы можете воспользоваться проактивной службой Майкрософт, доступной для тех клиентов, которые заключили контракт на поддержку Premier или Единую поддержку. The service is called Azure Active Directory: Password Protection. Свяжитесь со своим техническим менеджером по работе с клиентами, чтобы получить дополнительные сведения.
+Если вы хотите узнать больше о Защите паролей Azure AD и развертывании этого компонента в своей среде, вы можете воспользоваться проактивной службой Майкрософт, доступной для тех клиентов, которые заключили контракт на поддержку Premier или Единую поддержку. Эта служба называется Azure Active Directory: Защита паролем. Свяжитесь со своим техническим менеджером по работе с клиентами, чтобы получить дополнительные сведения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Если у вас есть вопрос о локальной службе защиты паролей Azure AD, который не освещается в этой статье, ниже вы можете отправить нам отзыв. Спасибо!
 

@@ -1,6 +1,6 @@
 ---
-title: Provide risk feedback in Azure Active Directory Identity Protection
-description: How and why should you provide feedback on Identity Protection risk detections.
+title: Предоставление отзывов о рисках в Защита идентификации Azure Active Directory
+description: Как и зачем предоставлять отзыв об обнаружении рисков для защиты идентификации.
 services: active-directory
 ms.service: active-directory
 ms.subservice: identity-protection
@@ -18,46 +18,46 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74382094"
 ---
-# <a name="how-to-give-risk-feedback-in-azure-ad-identity-protection"></a>How To: Give risk feedback in Azure AD Identity Protection
+# <a name="how-to-give-risk-feedback-in-azure-ad-identity-protection"></a>Как предоставить отзыв о рисках в защита идентификации Azure AD
 
-Azure AD Identity Protection allows you to give feedback on its risk assessment. The following document lists the scenarios where you would like to give feedback on Azure AD Identity Protection’s risk assessment and how we incorporate it.
+Защита идентификации Azure AD позволяет отправить отзыв о своей оценке рисков. В следующем документе перечислены сценарии, в которых вы хотите отправить отзыв о оценке рисков защита идентификации Azure AD и о том, как мы его включили.
 
-## <a name="what-is-a-detection"></a>What is a detection?
+## <a name="what-is-a-detection"></a>Что такое обнаружение?
 
-An Identity Protection detection is an indicator of suspicious activity from an identity risk perspective. These suspicious activities are called risk detections. These identity-based detections can be based on heuristics, machine learning or can come from partner products. These detections are used to determine sign-in risk and user risk,
+Обнаружение защиты идентификации — это индикатор подозрительных действий с точки зрения риска идентификации. Эти подозрительные действия называются обнаружением рисков. Эти обнаружения на основе удостоверений могут основываться на эвристике, машинном обучении или в продуктах партнеров. Эти обнаружения используются для определения риска при входе и риска для пользователей,
 
-* User risk represents the probability an identity is compromised.
-* Sign-in risk represents the probability a sign-in is compromised (for example, the sign-in is not authorized by the identity owner).
+* Риск для пользователей представляет вероятность компрометации удостоверения.
+* Риск входа представляет вероятность компрометации входа в систему (например, если вход не разрешен владельцем удостоверения).
 
-## <a name="why-should-i-give-risk-feedback-to-azure-ads-risk-assessments"></a>Why should I give risk feedback to Azure AD’s risk assessments? 
+## <a name="why-should-i-give-risk-feedback-to-azure-ads-risk-assessments"></a>Зачем предоставлять отзыв о рисках для оценки рисков Azure AD? 
 
-There are several reasons why you should give Azure AD risk feedback:
+Существует несколько причин, по которым необходимо предоставить отзыв о рисках Azure AD:
 
-- **You found Azure AD’s user or sign-in risk assessment incorrect**. For example, a sign-in shown in ‘Risky sign-ins’ report was benign and all the detections on that sign-in were false positives.
-- **You validated that Azure AD’s user or sign-in risk assessment was correct**. For example, a sign-in shown in ‘Risky sign-ins’ report was indeed malicious and you want Azure AD to know that all the detections on that sign-in were true positives.
-- **You remediated the risk on that user outside of Azure AD Identity Protection** and you want the user’s risk level to be updated.
+- **Обнаружено неверное средство оценки рисков для пользователя или входа Azure AD**. Например, вход, показанный в отчете "рискованные входы", был неопасным, и все обнаружения на этом входе были ложными положительными.
+- **Вы проверили правильность оценки риска для пользователя или входа Azure AD**. Например, вход, показанный в отчете "рискованные входы", действительно является вредоносным, и вы хотите, чтобы Azure AD знал, что все обнаружения на этом входе были настоящими положительными.
+- Вы исправляете **риск для этого пользователя за пределами Защита идентификации Azure AD** и хотите обновить уровень риска пользователя.
 
-## <a name="how-does-azure-ad-use-my-risk-feedback"></a>How does Azure AD use my risk feedback?
+## <a name="how-does-azure-ad-use-my-risk-feedback"></a>Как Azure AD использует отзыв о рисках?
 
-Azure AD uses your feedback to update the risk of the underlying user and/or sign-in and the accuracy of these events. This feedback helps secure the end user. For example, once you confirm a sign-in is compromised, Azure AD immediately increases the user’s risk and sign-in’s aggregate risk (not real-time risk) to High. If this user is included in your user risk policy to force High risk users to securely reset their passwords, the user will automatically remediate itself the next time they sign-in.
+Azure AD использует ваши отзывы для обновления риска базового пользователя и (или) входа и точности этих событий. Этот отзыв помогает защитить конечного пользователя. Например, после подтверждения того, что вход в систему будет скомпрометирован, Azure AD немедленно увеличит риск и совокупное значение риска пользователя, а также статистический показатель входа (не риск в реальном времени). Если этот пользователь включен в политику риска пользователя для принудительного сброса паролей пользователями с высоким уровнем риска, он автоматически исправит себя при следующем входе в систему.
 
-## <a name="how-should-i-give-risk-feedback-and-what-happens-under-the-hood"></a>How should I give risk feedback and what happens under the hood?
+## <a name="how-should-i-give-risk-feedback-and-what-happens-under-the-hood"></a>Как следует предоставлять отзывы о рисках и что происходит внутри нее?
 
-Here are the scenarios and mechanisms to give risk feedback to Azure AD.
+Ниже приведены сценарии и механизмы, позволяющие предоставить отзыв о рисках для Azure AD.
 
-| Сценарий | How to give feedback? | What happens under the hood? | Заметки |
+| Сценарий | Как дать отзыв? | Что происходит внутри? | Примечания |
 | --- | --- | --- | --- |
-| **Sign-in not compromised (False positive)** <br> ‘Risky sign-ins’ report shows an at-risk sign-in [Risk state = At risk] but that sign-in was not compromised. | Select the sign-in and click on ‘Confirm sign-in safe’. | Azure AD will move the sign-in’s aggregate risk to none [Risk state = Confirmed safe; Risk level (Aggregate) = -] and will reverse its impact on the user risk. | Currently, the ‘Confirm sign-in safe’ option is only available in ‘Risky sign-ins’ report. |
-| **Sign-in compromised (True positive)** <br> ‘Risky sign-ins’ report shows an at-risk sign-in [Risk state = At risk] with low risk [Risk level (Aggregate) = Low] and that sign-in was indeed compromised. | Select the sign-in and click on ‘Confirm sign-in compromised’. | Azure AD will move the sign-in’s aggregate risk and the user risk to High [Risk state = Confirmed compromised; Risk level = High]. | Currently, the ‘Confirm sign-in compromised’ option is only available in ‘Risky sign-ins’ report. |
-| **User compromised (True positive)** <br> ‘Risky users’ report shows an at-risk user [Risk state = At risk] with low risk [Risk level = Low] and that user was indeed compromised. | Select the user and click on ‘Confirm user compromised’. | Azure AD will move the user risk to High [Risk state = Confirmed compromised; Risk level = High] and will add a new detection ‘Admin confirmed user compromised’. | Currently, the ‘Confirm user compromised’ option is only available in ‘Risky users’ report. <br> The detection ‘Admin confirmed user compromised’ is shown in the tab ‘Risk detections not linked to a sign-in’ in the ‘Risky users’ report. |
-| **User remediated outside of Azure AD Identity Protection (True positive + Remediated)** <br> ‘Risky users’ report shows an at-risk user and I have subsequently remediated the user outside of Azure AD Identity Protection. | 1. Select the user and click ‘Confirm user compromised’. (This process confirms to Azure AD that the user was indeed compromised.) <br> 2. Wait for the user’s ‘Risk level’ to go to High. (This time gives Azure AD the needed time to take the above feedback to the risk engine.) <br> 3. Select the user and click ‘Dismiss user risk’. (This process confirms to Azure AD that the user is no longer compromised.) |  Azure AD moves the user risk to none [Risk state = Dismissed; Risk level = -] and closes the risk on all existing sign-ins having active risk. | Clicking ‘Dismiss user risk’ will close all risk on the user and past sign-ins. This action cannot be undone. |
-| **User not compromised (False positive)** <br> ‘Risky users’ report shows at at-risk user but the user is not compromised. | Select the user and click ‘Dismiss user risk’. (This process confirms to Azure AD that the user is not compromised.) | Azure AD moves the user risk to none [Risk state = Dismissed; Risk level = -]. | Clicking ‘Dismiss user risk’ will close all risk on the user and past sign-ins. This action cannot be undone. |
-| I want to close the user risk but I am not sure whether the user is compromised / safe. | Select the user and click ‘Dismiss user risk’. (This process confirms to Azure AD that the user is no longer compromised.) | Azure AD moves the user risk to none [Risk state = Dismissed; Risk level = -]. | Clicking ‘Dismiss user risk’ will close all risk on the user and past sign-ins. This action cannot be undone. We recommend you remediate the user by clicking on ‘Reset password’ or request the user to securely reset/change their credentials. |
+| **Вход не скомпрометирован (ложный положительный результат)** <br> В отчете "рискованные входы" показан вход в систему [состояние риска = под угрозой], но этот вход не был скомпрометирован. | Выберите вход и щелкните "подтвердить безопасность входа". | Azure AD переместит составной риск входа в None [состояние риска = подтверждено безопасно; Уровень риска (aggregate) =-] и отменяет влияние на риск пользователя. | В настоящее время параметр "подтверждение безопасного входа" доступен только в отчете "рискованные входы". |
+| **При входе скомпрометировано (истинный положительный результат)** <br> В отчете "рискованные входы" показан вход в систему [состояние риска = под угрозой] с низким риском [уровень риска (агрегатная) = низкая], и этот вход действительно скомпрометирован. | Выберите вход и щелкните "подтвердить несанкционированный вход". | Azure AD переместит статистический показатель входа в систему, и пользователь подвергается высокой опасности [состояние риска = подтверждено скомпрометировано; Уровень риска = высокий]. | В настоящее время параметр "подтвердить несанкционированный вход" доступен только в отчете "рискованные входы". |
+| **Скомпрометированный пользователь (истинный положительный результат)** <br> В отчете "рискованные пользователи" отображается пользователь с риском [состояние риска = под угрозой] с низким риском [уровень риска = низкий], и этот пользователь действительно скомпрометирован. | Выберите пользователя и нажмите кнопку "подтвердить безопасность пользователя". | Azure AD переместит риск для пользователя в высокий уровень [состояние риска = подтверждено скомпрометировано; Уровень риска = высокий] и добавит новое обнаружение "администратор подтвердил" скомпрометированный пользователь ". | В настоящее время параметр "подтверждать безопасность пользователя" доступен только в отчете "рискованные пользователи". <br> Обнаружение "администратор подтвердил безопасность пользователя" отображается на вкладке "обнаружение рисков, не связанных с входом" в отчете "рискованные пользователи". |
+| **Пользователь исправляется за пределами защита идентификации Azure AD (true положительный и исправленный)** <br> В отчете "рискованные пользователи" отображается пользователь с риском, и он затем исправлен пользователем за пределами защита идентификации Azure AD. | 1. Выберите пользователя и нажмите кнопку "подтвердить безопасность пользователя". (Этот процесс подтверждает в Azure AD, что пользователь действительно скомпрометирован.) <br> 2. Дождитесь, пока "уровень риска" пользователя переходит в режим "высокий". (На этот раз Azure AD предпримет необходимое время на отзыв о подсистеме риска.) <br> 3. Выберите пользователя и нажмите кнопку "закрыть риск для пользователя". (Этот процесс подтверждает в Azure AD, что пользователь больше не скомпрометирован.) |  Azure AD перемещает пользователя в состояние "нет". Уровень риска =-] и закрывает риск для всех существующих входов, имеющих активный риск. | Нажатие кнопки "закрыть риск пользователя" приведет к закрытию всех рисков для пользователя и прошлых входов. Это действие нельзя отменить. |
+| **Пользователь не скомпрометирован (ложный положительный результат)** <br> Отчет "рискованные пользователи" показывает пользователя с риском, но он не скомпрометирован. | Выберите пользователя и нажмите кнопку "закрыть риск для пользователя". (Этот процесс подтверждает в Azure AD, что пользователь не скомпрометирован.) | Azure AD перемещает пользователя в состояние "нет". Уровень риска =-]. | Нажатие кнопки "закрыть риск пользователя" приведет к закрытию всех рисков для пользователя и прошлых входов. Это действие нельзя отменить. |
+| Я хочу закрыть риск для пользователя, но не уверен, что он скомпрометирован или является надежным. | Выберите пользователя и нажмите кнопку "закрыть риск для пользователя". (Этот процесс подтверждает в Azure AD, что пользователь больше не скомпрометирован.) | Azure AD перемещает пользователя в состояние "нет". Уровень риска =-]. | Нажатие кнопки "закрыть риск пользователя" приведет к закрытию всех рисков для пользователя и прошлых входов. Это действие нельзя отменить. Рекомендуется исправить пользователя, щелкнув "Сброс пароля" или запросите у пользователя безопасный сброс или изменение учетных данных. |
 
-Feedback on user risk detections in Identity Protection is processed offline and may take some time to update. The risk processing state column will provide the current state of feedback processing.
+Отзывы об обнаружении рисков пользователей в защите идентификации обрабатываются в автономном режиме, а обновление может занять некоторое время. В столбце состояние обработки рисков будет содержаться текущее состояние обработки отзывов.
 
-![Risk processing state for risky user report](./media/howto-identity-protection-risk-feedback/risky-users-provide-feedback.png)
+![Состояние обработки риска для отчета о рискованных пользователях](./media/howto-identity-protection-risk-feedback/risky-users-provide-feedback.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-- [Azure Active Directory Identity Protection risk detections reference](risk-events-reference.md)
+- [Справочник по обнаружению рисков Защита идентификации Azure Active Directory](risk-events-reference.md)

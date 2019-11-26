@@ -1,6 +1,6 @@
 ---
-title: Investigate risk Azure Active Directory Identity Protection
-description: Learn how to investigate risky users, detections, and sign-ins in Azure Active Directory Identity Protection
+title: Исследование рисков Защита идентификации Azure Active Directory
+description: Узнайте, как исследовать рискованных пользователей, обнаружения и входа в Защита идентификации Azure Active Directory
 services: active-directory
 ms.service: active-directory
 ms.subservice: identity-protection
@@ -18,78 +18,78 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74382120"
 ---
-# <a name="how-to-investigate-risk"></a>How To: Investigate risk
+# <a name="how-to-investigate-risk"></a>Как исследовать риски
 
-Identity Protection provides organizations with three reports they can use to investigate identity risks in their environment. These reports are the **risky users**, **risky sign-ins**, and **risk detections**. Investigation of events is key to better understanding and identifying any weak points in your security strategy.
+Защита идентификации предоставляет организациям три отчета, которые они могут использовать для исследования рисков идентификации в их среде. Эти отчеты являются **рискованными пользователями**, **опасными входами**и **обнаруженными рисками**. Исследование событий является ключом к более глубокому пониманию и идентификации слабых точек в стратегии безопасности.
 
-All three reports allow for downloading of events in .CSV format for further analysis outside of the Azure portal. The risky users and risky sign-ins reports allow for downloading the most recent 2500 entries, while the risk detections report allows for downloading the most recent 5000 records.
+Все три отчета позволяют скачивать события в. Формат CSV для дальнейшего анализа за пределами портал Azure. В отчетах о рискованных пользователях и событиях входа в систему можно загружать последние записи 2500, а в отчете об обнаружении рисков — загружать последние записи 5000.
 
-Organizations can take advantage of the Microsoft Graph API integrations to aggregate data with other sources they may have access to as an organization.
+Организации могут воспользоваться преимуществами интеграции API Microsoft Graph для агрегирования данных с другими источниками, к которым у них может быть доступ в качестве организации.
 
-The three reports are found in the **Azure portal** > **Azure Active Directory** > **Security**.
+Три отчета находятся в **портал Azure** > **Azure Active Directory** > **безопасности**.
 
-## <a name="navigating-the-reports"></a>Navigating the reports
+## <a name="navigating-the-reports"></a>Навигация по отчетам
 
-Each report launches with a list of all detections for the period shown at the top of the report. Each report allows for the addition or removal of columns based on administrator preference. Administrators can choose to download the data in .CSV format. Reports can be filtered using the filters across the top of the report.
+Каждый отчет запускается со списком всех обнаружений за период, показанный в верхней части отчета. Каждый отчет допускает добавление или удаление столбцов в зависимости от предпочтений администратора. Администраторы могут выбрать загрузку данных в. Формат CSV. Отчеты можно фильтровать с помощью фильтров в верхней части отчета.
 
-Selecting individual entries may enable additional entries at the top of the report such as the ability to confirm a sign-in as compromised or safe, confirm a user as compromised, or dismiss user risk.
+При выборе отдельных записей в верхней части отчета могут быть включены дополнительные записи, такие как возможность подтвердить вход в систему как скомпрометированный или надежный, подтвердить, что пользователь скомпрометирован, или закрыть риск для пользователя.
 
-Selecting individual entries expands a details window below the detections. The details view allows administrators to investigate and perform actions on each detection. 
+Выбор отдельных записей расширяет окно сведений после обнаружения. Представление Details позволяет администраторам исследовать и выполнять действия при каждом обнаружении. 
 
-![Example Identity Protection report showing risky sign-ins and details](./media/howto-identity-protection-investigate-risk/identity-protection-risky-sign-ins-report.png)
+![Пример отчета о защите идентификации, отображающий рискованные входы и сведения](./media/howto-identity-protection-investigate-risk/identity-protection-risky-sign-ins-report.png)
 
 ## <a name="risky-users"></a>Пользователи, выполняющие рискованные действия
 
-With the information provided by the risky users report, administrators can find:
+При наличии сведений, предоставленных отчетом рискованных пользователей, администраторы могут найти:
 
-- Which users are at risk, have had risk remediated, or have had risk dismissed?
-- Details about detections
-- History of risky sign-ins
+- Какие пользователи подвергаются риску, были ли риски исправлены или были отклонены риски?
+- Сведения об обнаружении
+- Журнал рискованных входов в систему
 - Журнал рисков
  
-Administrators can then choose to take action on these events. Administrators can choose to:
+Затем администраторы могут предпринять действия с этими событиями. Администраторы могут выбрать:
 
-- Reset the user password
-- Confirm user compromise
+- Сброс пароля пользователя
+- Подтверждение компрометации пользователей
 - Параметр "Закрыть уведомление о риске для пользователя"
-- Block user from signing in
-- Investigate further using Azure ATP
+- Запретить вход пользователя
+- Дальнейшее изучение с помощью Azure ATP
 
 ## <a name="risky-sign-ins"></a>Вход, представляющий риск
 
-The risky sign-ins report contains filterable data for up to the past 30 days (1 month).
+Отчет о событиях входа с рисками содержит фильтруемые данные за последние 30 дней (1 месяц).
 
-With the information provided by the risky sign-ins report, administrators can find:
+С информацией, предоставленной отчетом о событиях входа в систему, администраторы могут найти:
 
-- Which sign-ins are classified as at risk, confirmed compromised, confirmed safe, dismissed, or remediated.
-- Real-time and aggregate risk levels associated with sign-in attempts.
-- Detection types triggered
-- Conditional Access policies applied
-- MFA details
-- Device information
+- Какие операции входа классифицируются под угрозой, они считаются скомпрометированными, подтверждены как надежные, отклоненные или исправленные.
+- Уровни риска в режиме реального времени и статистические показатели, связанные с попытками входа.
+- Типы обнаружения активированы
+- Примененные политики условного доступа
+- Сведения о MFA
+- Сведения об устройстве
 - Сведения о приложении
-- Location information
+- Сведения о расположении
 
-Administrators can then choose to take action on these events. Administrators can choose to:
+Затем администраторы могут предпринять действия с этими событиями. Администраторы могут выбрать:
 
-- Confirm sign-in compromise
-- Confirm sign-in safe
+- Подтверждение компрометации при входе
+- Подтверждение безопасного входа
 
 ## <a name="risk-detections"></a>Обнаружение рисков
 
-The risk detections report contains filterable data for up to the past 90 days (3 months).
+Отчет об обнаружении рисков содержит фильтруемые данные за последние 90 дней (3 месяца).
 
-With the information provided by the risk detections report, administrators can find:
+С информацией, предоставленной отчетом об обнаружении рисков, администраторы могут найти:
 
-- Information about each risk detection including type.
-- Other risks triggered at the same time
-- Sign-in attempt location
-- Link out to more detail from Microsoft Cloud App Security (MCAS).
+- Сведения о каждом обнаружении рисков, включая тип.
+- Другие риски, активированные в то же время
+- Расположение попытки входа
+- Ссылка на дополнительные сведения из Microsoft Cloud App Security (МКАС).
 
-Administrators can then choose to return to the user's risk or sign-ins report to take actions based on information gathered.
+Затем администраторы могут вернуться к отчету о рисках или входе пользователя для выполнения действий на основе собранных данных.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-- [Policies available to mitigate risks](concept-identity-protection-policies.md)
+- [Identity Protection policies](concept-identity-protection-policies.md) (Политики защиты идентификации)
 
-- [Enable sign-in and user risk policies](howto-identity-protection-configure-risk-policies.md)
+- [Включение политик входа и риска для пользователей](howto-identity-protection-configure-risk-policies.md)

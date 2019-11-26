@@ -1,6 +1,6 @@
 ---
-title: Using Private Endpoints with Azure Storage | Microsoft Docs
-description: Overview of private endpoints for secure access to storage accounts from virtual networks.
+title: Использование частных конечных точек в службе хранилища Azure | Документация Майкрософт
+description: Общие сведения о частных конечных точках для безопасного доступа к учетным записям хранения из виртуальных сетей.
 services: storage
 author: santoshc
 ms.service: storage
@@ -16,125 +16,125 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74227881"
 ---
-# <a name="using-private-endpoints-for-azure-storage-preview"></a>Using Private Endpoints for Azure Storage (Preview)
+# <a name="using-private-endpoints-for-azure-storage-preview"></a>Использование частных конечных точек для службы хранилища Azure (Предварительная версия)
 
-You can use [Private Endpoints](../../private-link/private-endpoint-overview.md) for your Azure Storage accounts to allow clients on a virtual network (VNet) to securely access data over a [Private Link](../../private-link/private-link-overview.md). The private endpoint uses an IP address from the VNet address space for your storage account service. Network traffic between the clients on the VNet and the storage account traverses over the VNet and a private link on the Microsoft backbone network, eliminating exposure from the public internet.
+Вы можете использовать [частные конечные точки](../../private-link/private-endpoint-overview.md) для учетных записей хранения Azure, чтобы разрешить клиентам в виртуальной сети (VNet) безопасный доступ к данным по [частной ссылке](../../private-link/private-link-overview.md). Частная конечная точка использует IP-адрес из адресного пространства виртуальной сети для вашей службы учетной записи хранения. Сетевой трафик между клиентами в виртуальной сети и учетной записью хранения проходит по виртуальной сети и частной ссылке на магистральную сеть Майкрософт, что устраняет уязвимость в общедоступном Интернете.
 
-Using private endpoints for your storage account enables you to:
-- Secure your storage account by configuring the storage firewall to block all connections on the public endpoint for the storage service.
-- Increase security for the virtual network (VNet), by enabling you to block exfiltration of data from the VNet.
-- Securely connect to storage accounts from on-premises networks that connect to the VNet using [VPN](../../vpn-gateway/vpn-gateway-about-vpngateways.md) or [ExpressRoutes](../../expressroute/expressroute-locations.md) with private-peering.
+Использование частных конечных точек для учетной записи хранения позволяет выполнять следующие задачи:
+- Защитите учетную запись хранения, настроив брандмауэр хранилища для блокировки всех подключений в общедоступной конечной точке для службы хранилища.
+- Увеличьте уровень безопасности для виртуальной сети, позволяя блокировать утечка данных из сети.
+- Безопасное подключение к учетным записям хранения из локальных сетей, подключающихся к виртуальной сети с помощью [VPN](../../vpn-gateway/vpn-gateway-about-vpngateways.md) или [которыми](../../expressroute/expressroute-locations.md) с частными пиринга.
 
-## <a name="conceptual-overview"></a>Conceptual Overview
-![Private Endpoints for Azure Storage Overview](media/storage-private-endpoints/storage-private-endpoints-overview.jpg)
+## <a name="conceptual-overview"></a>Обзор концепции
+![Общие сведения о частных конечных точках для службы хранилища Azure](media/storage-private-endpoints/storage-private-endpoints-overview.jpg)
 
-A Private Endpoint is a special network interface for an Azure service in your [Virtual Network](../../virtual-network/virtual-networks-overview.md) (VNet). When you create a private endpoint for your storage account, it provides secure connectivity between clients on your VNet and your storage. The private endpoint is assigned an IP address from the IP address range of your VNet. The connection between the private endpoint and the storage service uses a secure private link.
+Частная конечная точка — это специальный сетевой интерфейс для службы Azure в [виртуальной сети](../../virtual-network/virtual-networks-overview.md) (VNet). При создании частной конечной точки для учетной записи хранения обеспечивается безопасное подключение между клиентами в виртуальной сети и хранилищем. Частной конечной точке назначается IP-адрес из диапазона IP-адресов виртуальной сети. Соединение между частной конечной точкой и службой хранилища использует защищенную закрытую ссылку.
 
-Applications in the VNet can connect to the storage service over the private endpoint seamlessly, **using the same connection strings and authorization mechanisms that they would use otherwise**. Private endpoints can be used with all protocols supported by the storage account, including REST and SMB.
+Приложения в виртуальной сети могут легко подключаться к службе хранилища через закрытую конечную точку, **используя те же строки подключения и механизмы авторизации, которые используются в противном случае**. Частные конечные точки можно использовать со всеми протоколами, поддерживаемыми учетной записью хранения, включая остальные и SMB.
 
-When you create a private endpoint for a storage service in your VNet, a consent request is sent for approval to the storage account owner. If the user requesting the creation of the private endpoint is also an owner of the storage account, this consent request is automatically approved.
+При создании частной конечной точки для службы хранилища в виртуальной сети запрос согласия отправляется на утверждение владельцу учетной записи хранения. Если пользователь, запрашивающий создание частной конечной точки, также является владельцем учетной записи хранения, этот запрос на согласие автоматически утверждается.
 
-Storage account owners can manage consent requests and the private endpoints, through the '*Private Endpoints*' tab for the storage account in the [Azure portal](https://portal.azure.com).
-
-> [!TIP]
-> If you want to restrict access to your storage account through the private endpoint only, configure the storage firewall to deny or control access through the public endpoint.
-
-You can secure your storage account to only accept connections from your VNet, by [configuring the storage firewall](storage-network-security.md#change-the-default-network-access-rule) to deny access through its public endpoint by default. You don't need a firewall rule to allow traffic from a VNet that has a private endpoint, since the storage firewall only controls access through the public endpoint. Private endpoints instead rely on the consent flow for granting subnets access to the storage service.
-
-### <a name="private-endpoints-for-storage-service"></a>Private Endpoints for Storage Service
-
-When creating the private endpoint, you must specify the storage account and the storage service to which it connects. You need a separate private endpoint for each storage service in a storage account that you need to access, namely [Blobs](../blobs/storage-blobs-overview.md), [Data Lake Storage Gen2](../blobs/data-lake-storage-introduction.md), [Files](../files/storage-files-introduction.md), [Queues](../queues/storage-queues-introduction.md), [Tables](../tables/table-storage-overview.md), or [Static Websites](../blobs/storage-blob-static-website.md).
+Владельцы учетных записей хранения могут управлять запросами на согласие и закрытыми конечными точками через вкладку "*частные конечные точки*" для учетной записи хранения в [портал Azure](https://portal.azure.com).
 
 > [!TIP]
-> Create a separate private endpoint for the secondary instance of the storage service for better read performance on RA-GRS accounts.
+> Если вы хотите ограничить доступ к учетной записи хранения только через закрытую конечную точку, настройте брандмауэр службы хранилища для запрета или управления доступом через общедоступную конечную точку.
 
-For read availability on a [read-access geo redundant storage account](storage-redundancy-grs.md#read-access-geo-redundant-storage), you need separate private endpoints for both the primary and secondary instances of the service. You don't need to create a private endpoint for the secondary instance for **failover**. The private endpoint will automatically connect to the new primary instance after failover.
+Вы можете защитить учетную запись хранения, чтобы принимать подключения только из виртуальной сети, [настроив брандмауэр хранилища](storage-network-security.md#change-the-default-network-access-rule) на запрет доступа через общедоступную конечную точку по умолчанию. Правило брандмауэра не требуется, чтобы разрешить трафик из виртуальной сети, имеющей закрытую конечную точку, так как брандмауэр хранилища управляет доступом только через общедоступную конечную точку. Вместо этого частные конечные точки используют поток согласия для предоставления подсетям доступа к службе хранилища.
+
+### <a name="private-endpoints-for-storage-service"></a>Частные конечные точки для службы хранилища
+
+При создании частной конечной точки необходимо указать учетную запись хранения и службу хранилища, к которой она подключается. Вам потребуется отдельная частная конечная точка для каждой службы хранилища в учетной записи хранения, которой требуется доступ, а именно [большие двоичные объекты](../blobs/storage-blobs-overview.md), [Data Lake Storage 2-го поколения](../blobs/data-lake-storage-introduction.md), [файлы](../files/storage-files-introduction.md), [очереди](../queues/storage-queues-introduction.md), [таблицы](../tables/table-storage-overview.md)или [статические веб-сайты](../blobs/storage-blob-static-website.md).
+
+> [!TIP]
+> Создайте отдельную закрытую конечную точку для дополнительного экземпляра службы хранилища, чтобы повысить производительность чтения в учетных записях RA-GRS.
+
+Для доступности чтения в [геоизбыточной учетной записи хранения с доступом на чтение](storage-redundancy-grs.md#read-access-geo-redundant-storage)требуются отдельные частные конечные точки для основного и дополнительного экземпляров службы. Для **отработки отказа**не нужно создавать закрытую конечную точку для вторичного экземпляра. Частная конечная точка будет автоматически подключаться к новому основному экземпляру после отработки отказа.
 
 #### <a name="resources"></a>Ресурсы
 
-For more detailed information on creating a private endpoint for your storage account, refer to the following articles:
+Более подробные сведения о создании частной конечной точки для учетной записи хранения см. в следующих статьях:
 
-- [Connect privately to a storage account from the Storage Account experience in the Azure portal](../../private-link/create-private-endpoint-storage-portal.md)
-- [Create a private endpoint using the Private Link Center in the Azure portal](../../private-link/create-private-endpoint-portal.md)
-- [Create a private endpoint using Azure CLI](../../private-link/create-private-endpoint-cli.md)
-- [Create a private endpoint using Azure PowerShell](../../private-link/create-private-endpoint-powershell.md)
+- [Подключайтесь к учетной записи хранения из учетной записи хранения в портал Azure](../../private-link/create-private-endpoint-storage-portal.md)
+- [Создание частной конечной точки с помощью частного центра ссылок в портал Azure](../../private-link/create-private-endpoint-portal.md)
+- [Создание частной конечной точки с помощью Azure CLI](../../private-link/create-private-endpoint-cli.md)
+- [Создание частной конечной точки с помощью Azure PowerShell](../../private-link/create-private-endpoint-powershell.md)
 
-### <a name="connecting-to-private-endpoints"></a>Connecting to Private Endpoints
+### <a name="connecting-to-private-endpoints"></a>Подключение к частным конечным точкам
 
-Clients on a VNet using the private endpoint should use the same connection string for the storage account, as clients connecting to the public endpoint. We rely upon DNS resolution to automatically route the connections from the VNet to the storage account over a private link.
+Клиенты в виртуальной сети, использующие частную конечную точку, должны использовать одну и ту же строку подключения для учетной записи хранения, так как клиенты подключаются к общедоступной конечной точке. Мы используем разрешение DNS, чтобы автоматически маршрутизировать подключения из виртуальной сети к учетной записи хранения по частной ссылке.
 
 > [!IMPORTANT]
-> Use the same connection string to connect to the storage account using private endpoints, as you'd use otherwise. Please don't connect to the storage account using its '*privatelink*' subdomain URL.
+> Используйте ту же строку подключения для подключения к учетной записи хранения с помощью частных конечных точек, как и в противном случае. Не подключайтесь к учетной записи хранения, используя URL-адрес поддомена "*привателинк*".
 
-We create a [private DNS zone](../../dns/private-dns-overview.md) attached to the VNet with the necessary updates for the private endpoints, by default. However, if you're using your own DNS server, you may need to make additional changes to your DNS configuration. The section on [DNS changes](#dns-changes-for-private-endpoints) below describes the updates required for private endpoints.
+Мы создадим [закрытую зону DNS](../../dns/private-dns-overview.md) , подключенную к виртуальной сети, с необходимыми обновлениями для частных конечных точек по умолчанию. Однако если вы используете собственный DNS-сервер, может потребоваться внести дополнительные изменения в конфигурацию DNS. В разделе об [изменениях DNS](#dns-changes-for-private-endpoints) ниже описаны обновления, необходимые для частных конечных точек.
 
-## <a name="dns-changes-for-private-endpoints"></a>DNS changes for Private Endpoints
+## <a name="dns-changes-for-private-endpoints"></a>Изменения DNS для частных конечных точек
 
-The DNS CNAME resource record for a storage account with a private endpoint is updated to an alias in a subdomain with the prefix '*privatelink*'. By default, we also create a [private DNS zone](../../dns/private-dns-overview.md) attached to the VNet that corresponds to the subdomain with the prefix '*privatelink*', and contains the DNS A resource records for the private endpoints.
+Запись ресурса DNS CNAME для учетной записи хранения с частной конечной точкой обновлена до псевдонима в поддомее с префиксом "*привателинк*". По умолчанию также создается [Частная зона DNS](../../dns/private-dns-overview.md) , подключенная к виртуальной сети, которая соответствует поддомену с префиксом "*привателинк*", и содержит записи ресурсов DNS a для частных конечных точек.
 
-When you resolve the storage endpoint URL from outside the VNet with the private endpoint, it resolves to the public endpoint of the storage service. When resolved from the VNet hosting the private endpoint, the storage endpoint URL resolves to the private endpoint's IP address.
+При разрешении URL-адреса конечной точки хранилища извне виртуальной сети с закрытой конечной точкой она разрешается в общедоступную конечную точку службы хранилища. При разрешении из виртуальной сети, в которой размещается частная конечная точка, URL-адрес конечной точки хранилища разрешается в IP-адрес частной конечной точки.
 
-For the illustrated example above, the DNS resource records for the storage account 'StorageAccountA', when resolved from outside the VNet hosting the private endpoint, will be:
+В приведенном выше примере записи ресурсов DNS для учетной записи хранения "Сторажеаккаунта" при разрешении из-за пределов виртуальной сети, в которой размещается частная конечная точка, будут:
 
-| Name                                                  | Тип  | Value                                                 |
+| имя                                                  | введите  | Значение                                                 |
 | :---------------------------------------------------- | :---: | :---------------------------------------------------- |
 | ``StorageAccountA.blob.core.windows.net``             | CNAME | ``StorageAccountA.privatelink.blob.core.windows.net`` |
-| ``StorageAccountA.privatelink.blob.core.windows.net`` | CNAME | \<storage service public endpoint\>                   |
-| \<storage service public endpoint\>                   | A     | \<storage service public IP address\>                 |
+| ``StorageAccountA.privatelink.blob.core.windows.net`` | CNAME | общедоступная конечная точка службы хранилища \<\>                   |
+| общедоступная конечная точка службы хранилища \<\>                   | Файл ,     | общедоступный IP-адрес службы хранилища \<\>                 |
 
-As previously mentioned, you can deny or control access for clients outside the VNet through the public endpoint using the storage firewall.
+Как упоминалось ранее, вы можете запретить или контролировать доступ клиентов за пределами виртуальной сети через общедоступную конечную точку с помощью брандмауэра хранилища.
 
-The DNS resource records for StorageAccountA, when resolved by a client in the VNet hosting the private endpoint, will be:
+Записи ресурсов DNS для Сторажеаккаунта, разрешенные клиентом в виртуальной сети, где размещается частная конечная точка, будут:
 
-| Name                                                  | Тип  | Value                                                 |
+| имя                                                  | введите  | Значение                                                 |
 | :---------------------------------------------------- | :---: | :---------------------------------------------------- |
 | ``StorageAccountA.blob.core.windows.net``             | CNAME | ``StorageAccountA.privatelink.blob.core.windows.net`` |
-| ``StorageAccountA.privatelink.blob.core.windows.net`` | A     | 10.1.1.5                                              |
+| ``StorageAccountA.privatelink.blob.core.windows.net`` | Файл ,     | 10.1.1.5                                              |
 
-This approach enables access to the storage account **using the same connection string** for clients on the VNet hosting the private endpoints, as well as clients outside the VNet.
+Такой подход обеспечивает доступ к учетной записи хранения **, используя ту же строку подключения** для клиентов в виртуальной сети, где размещаются частные конечные точки, а также клиенты за пределами виртуальной сети.
 
-If you are using a custom DNS server on your network, clients must be able to resolve the FQDN for the storage account endpoint to the private endpoint IP address. For this, you must configure your DNS server to delegate your private link subdomain to the private DNS zone for the VNet, or configure the A records for '*StorageAccountA.privatelink.blob.core.windows.net*' with the private endpoint IP address. 
+При использовании пользовательского DNS-сервера в сети клиенты должны иметь возможность разрешить полное доменное имя конечной точки учетной записи хранения в IP-адрес частной конечной точки. Для этого необходимо настроить DNS-сервер для делегирования поддомена частной связи в частную зону DNS для виртуальной сети или настроить записи A для "*StorageAccountA.privatelink.BLOB.Core.Windows.NET*" с IP-адресом частной конечной точки. 
 
 > [!TIP]
-> When using a custom or on-premises DNS server, you should configure your DNS server to resolve the storage account name in the 'privatelink' subdomain to the private endpoint IP address. You can do this by delegating the 'privatelink' subdomain to the private DNS zone of the VNet, or configuring the DNS zone on your DNS server and adding the DNS A records.
+> При использовании пользовательского или локального DNS-сервера следует настроить DNS-сервер для разрешения имени учетной записи хранения в поддомене "привателинк" в IP-адрес частной конечной точки. Это можно сделать, делегируя поддомен "привателинк" частной зоне DNS виртуальной сети, или настроив зону DNS на DNS-сервере и добавив записи A DNS.
 
-The recommended DNS zone names for private endpoints for storage services are:
+Рекомендуемые имена зон DNS для частных конечных точек служб хранилища:
 
-| Storage service        | Zone name                            |
+| Служба хранилища        | Имя зоны                            |
 | :--------------------- | :----------------------------------- |
-| Служба BLOB-объектов           | `privatelink.blob.core.windows.net`  |
-| Data Lake Storage 2-го поколения | `privatelink.dfs.core.windows.net`   |
-| File service           | `privatelink.file.core.windows.net`  |
-| Queue service          | `privatelink.queue.core.windows.net` |
-| Table service          | `privatelink.table.core.windows.net` |
-| Static Websites        | `privatelink.web.core.windows.net`   |
+| Служба больших двоичных объектов           | `privatelink.blob.core.windows.net`  |
+| Data Lake Storage Gen2 | `privatelink.dfs.core.windows.net`   |
+| Служба файлов           | `privatelink.file.core.windows.net`  |
+| служба очередей          | `privatelink.queue.core.windows.net` |
+| Служба таблиц          | `privatelink.table.core.windows.net` |
+| Статические веб-сайты        | `privatelink.web.core.windows.net`   |
 
 #### <a name="resources"></a>Ресурсы
 
-For additional guidance on configuring your own DNS server to support private endpoints, refer to the following articles:
+Дополнительные рекомендации по настройке собственного DNS-сервера для поддержки частных конечных точек см. в следующих статьях:
 
 - [Разрешение имен ресурсов в виртуальных сетях Azure](/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances#name-resolution-that-uses-your-own-dns-server)
-- [DNS configuration for Private Endpoints](/private-link/private-endpoint-overview#dns-configuration)
+- [Конфигурация DNS для частных конечных точек](/private-link/private-endpoint-overview#dns-configuration)
 
-## <a name="pricing"></a>Стоимость
+## <a name="pricing"></a>Цены
 
 Дополнительные сведения о ценах см. на [странице цен на службу "Приватный канал" Azure](https://azure.microsoft.com/pricing/details/private-link).
 
 ## <a name="known-issues"></a>Известные проблемы
 
-### <a name="copy-blob-support"></a>Copy Blob support
+### <a name="copy-blob-support"></a>Поддержка копирования больших двоичных объектов
 
-During the preview, we don't support [Copy Blob](https://docs.microsoft.com/rest/api/storageservices/Copy-Blob) commands issued to storage accounts accessed through private endpoints when the source storage account is protected by a firewall.
+Во время предварительной версии мы не поддерживаем команды [копирования больших двоичных объектов](https://docs.microsoft.com/rest/api/storageservices/Copy-Blob) , выданные учетным записям хранения, доступ к которым осуществляется через частные конечные точки, когда исходная учетная запись хранения защищена
 
-### <a name="subnets-with-service-endpoints"></a>Subnets with Service Endpoints
-Currently, you can't create a private endpoint in a subnet that has service endpoints. As a workaround, you can create separate subnets in the same VNet for service endpoints and private endpoints.
+### <a name="subnets-with-service-endpoints"></a>Подсети с конечными точками служб
+В настоящее время нельзя создать частную конечную точку в подсети с конечными точками службы. В качестве обходного решения можно создать отдельные подсети в одной виртуальной сети для конечных точек служб и частных конечных точек.
 
-### <a name="storage-access-constraints-for-clients-in-vnets-with-private-endpoints"></a>Storage access constraints for clients in VNets with Private Endpoints
+### <a name="storage-access-constraints-for-clients-in-vnets-with-private-endpoints"></a>Ограничения доступа к хранилищу для клиентов в виртуальных сетей с частными конечными точками
 
-Clients in VNets with existing private endpoints face constraints when accessing other storage accounts that have private endpoints. For instance, suppose a VNet N1 has a private endpoint for a storage account A1 for, say, the blob service. If storage account A2 has a private endpoint in a VNet N2 for the blob service, then clients in VNet N1 must also access the blob service of account A2 using a private endpoint. If storage account A2 does not have any private endpoints for the blob service, then clients in VNet N1 can access its blob service without a private endpoint.
+При доступе к другим учетным записям хранения, имеющим частные конечные точки, клиенты в виртуальных сетей с существующими закрытыми конечными точками имеют ограничения. Например, предположим, что виртуальная сеть N1 имеет закрытую конечную точку для учетной записи хранения a1 для, например, службы BLOB-объектов. Если у учетной записи хранения a2 есть частная конечная точка в виртуальной сети N2 для службы BLOB-объектов, клиенты в виртуальной сети N1 также должны получить доступ к службе BLOB-объектов учетной записи a2 с помощью частной конечной точки. Если у учетной записи хранения a2 нет закрытых конечных точек для службы BLOB-объектов, клиенты в виртуальной сети N1 могут получить доступ к своей службе больших двоичных объектов без закрытой конечной точки.
 
-This constraint is a result of the DNS changes made when account A2 creates a private endpoint.
+Это ограничение является результатом изменений DNS, внесенных при создании частной конечной точки учетной записью a2.
 
-### <a name="network-security-group-rules-for-subnets-with-private-endpoints"></a>Network Security Group rules for subnets with private endpoints
+### <a name="network-security-group-rules-for-subnets-with-private-endpoints"></a>Правила группы безопасности сети для подсетей с частными конечными точками
 
-Currently, you can't configure [Network Security Group](../../virtual-network/security-overview.md) (NSG) rules for subnets with private endpoints. A limited workaround for this issue is to implement your access rules for private endpoints on the source subnets, though this approach may require a higher management overhead.
+Сейчас невозможно настроить правила [группы безопасности сети](../../virtual-network/security-overview.md) (NSG) для подсетей с частными конечными точками. Для этой проблемы ограниченный обходной путь заключается в реализации правил доступа для частных конечных точек в исходных подсетях, хотя этот подход может потребовать более высоких затрат на управление.

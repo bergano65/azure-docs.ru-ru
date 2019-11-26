@@ -29,7 +29,7 @@ Azure Monitor позволяет собирать пользовательски
 
 В этом руководстве мы развернем виртуальную машину Linux под управлением операционной системы Ubuntu 16.04 LTS. Агент Telegraf поддерживается для большинства операционных систем Linux. Пакеты Debian и RPM с распакованными двоичными файлами Linux доступны на [портале загрузки InfluxData](https://portal.influxdata.com/downloads). Дополнительные инструкции по установке и доступные варианты установки Telegraf см. в этом [руководстве по установке Telegraf](https://docs.influxdata.com/telegraf/v1.8/introduction/installation/). 
 
-Войдите на [портал Azure](https://portal.azure.com).
+Войдите на [портале Azure](https://portal.azure.com).
 
 Создайте новую виртуальную машину Linux. 
 

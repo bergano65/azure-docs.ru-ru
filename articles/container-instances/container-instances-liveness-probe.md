@@ -1,5 +1,5 @@
 ---
-title: Set up liveness probe on container instance
+title: Настройка проверки актуальности в экземпляре контейнера
 description: Подробные сведения о настройке проб активности для перезагрузки неработоспособных контейнеров в службе "Экземпляры контейнеров Azure"
 ms.topic: article
 ms.date: 06/08/2018
@@ -12,11 +12,11 @@ ms.locfileid: "74481681"
 ---
 # <a name="configure-liveness-probes"></a>Настройка проб активности
 
-Containerized applications may run for extended periods of time, resulting in broken states that may need to be repaired by restarting the container. Azure Container Instances supports liveness probes so that you can configure your containers within your container group to restart if critical functionality is not working. The liveness probe behaves like a [Kubernetes liveness probe](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/).
+Контейнерные приложения могут выполняться в течение продолжительного периода времени, что приводит к повреждению состояний, которые, возможно, потребуется восстановить путем перезапуска контейнера. Служба "экземпляры контейнеров Azure" поддерживает проверки актуальности, чтобы можно было настроить контейнеры в группе контейнеров для перезапуска, если критические функции не работают. Проверка актуальности ведет себя так же, как проверка [Kubernetesности в режиме реального времени](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/).
 
 В этой статье описывается развертывание группы контейнеров, содержащей пробу активности. В рамках этого примера демонстрируется автоматический перезапуск имитированного неработоспособного контейнера.
 
-Azure Container Instances also supports [readiness probes](container-instances-readiness-probe.md), which you can configure to ensure that traffic reaches a container only when it's ready for it.
+Служба "экземпляры контейнеров Azure" также поддерживает [проверки готовности](container-instances-readiness-probe.md), которые можно настроить так, чтобы трафик достиг контейнера только в том случае, если он готов к работе.
 
 ## <a name="yaml-deployment"></a>Развертывание файла YAML
 
@@ -60,17 +60,17 @@ az container create --resource-group myResourceGroup --name livenesstest -f live
 
 ### <a name="start-command"></a>Команда "Запуск"
 
-The deployment defines a starting command to be run when the container first starts running, defined by the `command` property, which accepts an array of strings. В этом примере передается следующая команда, которая запускает сеанс Bash и создает файл с именем `healthy` в каталоге `/tmp`:
+Развертывание определяет запускаемую команду, которая запускается при первом запуске контейнера, определяемого свойством `command`, которое принимает массив строк. В этом примере передается следующая команда, которая запускает сеанс Bash и создает файл с именем `healthy` в каталоге `/tmp`:
 
 ```bash
 /bin/sh -c "touch /tmp/healthy; sleep 30; rm -rf /tmp/healthy; sleep 600"
 ```
 
- It will then sleep for 30 seconds before deleting the file, then enters a 10-minute sleep.
+ Затем он будет находиться в спящем режиме на 30 секунд перед удалением файла, а затем войдет в 10-минутный спящий режим.
 
 ### <a name="liveness-command"></a>Команда активности
 
-This deployment defines a `livenessProbe` that supports an `exec` liveness command that acts as the liveness check. Если в результате выполнения этой команды возвращается ненулевое значение, работа контейнера будет завершена и перезапущена, после чего отобразится сообщение о том, что не удалось найти файл `healthy`. Если эта команда завершается успешно с кодом выхода 0, никакие действия выполняться не будут.
+Это развертывание определяет `livenessProbe`, который поддерживает команду `exec` Live, которая действует как проверка на актуальность. Если в результате выполнения этой команды возвращается ненулевое значение, работа контейнера будет завершена и перезапущена, после чего отобразится сообщение о том, что не удалось найти файл `healthy`. Если эта команда завершается успешно с кодом выхода 0, никакие действия выполняться не будут.
 
 Свойство `periodSeconds` определяет команду активности, которая должна выполняться каждые 5 секунд.
 
@@ -84,7 +84,7 @@ This deployment defines a `livenessProbe` that supports an `exec` liveness comma
 
 ![Неработоспособные события на портале][portal-unhealthy]
 
-Просматривая события на портале Azure, вы увидите, что события типа `Unhealthy` будут запускаться после сбоя работы команды активности. Далее будет выполняться событие типа `Killing`, сообщающее об удалении контейнера и необходимости перезагрузки системы. The restart count for the container increments each time this event  occurs.
+Просматривая события на портале Azure, вы увидите, что события типа `Unhealthy` будут запускаться после сбоя работы команды активности. Далее будет выполняться событие типа `Killing`, сообщающее об удалении контейнера и необходимости перезагрузки системы. Счетчик перезапусков для контейнера увеличивается каждый раз, когда происходит это событие.
 
 Перезагрузка выполняется "на месте", а ресурсы (например, общедоступные IP-адреса и содержимое конкретного узла) будут сохранены.
 
@@ -94,9 +94,9 @@ This deployment defines a `livenessProbe` that supports an `exec` liveness comma
 
 ## <a name="liveness-probes-and-restart-policies"></a>Пробы активности и политики перезагрузки
 
-Политики перезагрузки заменяют поведение перезагрузки, активируемое пробами активности. For example, if you set a `restartPolicy = Never` *and* a liveness probe, the container group will not restart because of a failed liveness check. Вместо этого группа контейнеров будет соответствовать политике перезагрузки группы контейнеров `Never`.
+Политики перезагрузки заменяют поведение перезагрузки, активируемое пробами активности. Например, если задать `restartPolicy = Never` *и* проверку на динамическую проверку, Группа контейнеров не будет перезапущена из-за неудачной проверки на активное время. Вместо этого группа контейнеров будет соответствовать политике перезагрузки группы контейнеров `Never`.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Для выполнения сценариев на основе задачи может понадобиться, чтобы пробы активности включали функцию автоматической перезагрузки в случае, если необходимая функция не работает должным образом. Дополнительные сведения о запуске контейнеров на основе задач см. статье [Выполнение задачи-контейнера в службе "Экземпляры контейнеров Azure"](container-instances-restart-policy.md).
 

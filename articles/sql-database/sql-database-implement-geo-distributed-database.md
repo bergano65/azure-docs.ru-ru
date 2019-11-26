@@ -1,5 +1,5 @@
 ---
-title: Implement a geo-distributed solution
+title: Реализация геораспределенного решения
 description: Сведения о настройке базы данных SQL Azure и приложения для отработки отказа в реплицированную базу данных и тестовой отработки отказа.
 services: sql-database
 ms.service: sql-database
@@ -29,19 +29,19 @@ ms.locfileid: "74421138"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 > [!IMPORTANT]
-> The PowerShell Azure Resource Manager module is still supported by Azure SQL Database, but all future development is for the Az.Sql module. For these cmdlets, see [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). The arguments for the commands in the Az module and in the AzureRm modules are substantially identical.
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Эти командлеты см. в разделе [AzureRM. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле AZ и в модулях AzureRm существенно идентичны.
 
 Для работы с этим руководством необходимо убедиться, что установлены следующие компоненты:
 
 - [Azure PowerShell](/powershell/azureps-cmdlets-docs)
-- A single database in Azure SQL Database. Чтобы создать ее, можно использовать:
-  - [Microsoft Azure](sql-database-single-database-get-started.md)
-  - [CLI](sql-database-cli-samples.md)
+- Отдельная база данных в базе данных SQL Azure. Чтобы создать ее, можно использовать:
+  - [Портал](sql-database-single-database-get-started.md)
+  - [ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](sql-database-cli-samples.md)
   - [PowerShell](sql-database-powershell-samples.md)
 
   > [!NOTE]
@@ -90,10 +90,10 @@ Get-AzSqlDatabase -ResourceGroupName $resourceGroup -ServerName $server -Databas
     Add-AzSqlDatabaseToFailoverGroup -ResourceGroupName $resourceGroup -ServerName $server -FailoverGroupName $failoverGroup
 ```
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-clitabazure-cli"></a>[Интерфейс командной строки Azure](#tab/azure-cli)
 
 > [!IMPORTANT]
-> Run `az login` to sign in to Azure.
+> Запустите `az login`, чтобы войти в Azure.
 
 ```powershell
 $admin = "<adminName>"
@@ -319,7 +319,7 @@ az sql failover-group create --name $failoverGroup --partner-server $drServer `
 
 # <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
 
-You can check the role of the disaster recovery server during the test with the following command:
+Роль сервера аварийного восстановления можно проверить в ходе теста с помощью следующей команды:
 
 ```powershell
 (Get-AzSqlDatabaseFailoverGroup -FailoverGroupName $failoverGroup `
@@ -342,9 +342,9 @@ You can check the role of the disaster recovery server during the test with the 
     -ServerName $server -FailoverGroupName $failoverGroup
    ```
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-clitabazure-cli"></a>[Интерфейс командной строки Azure](#tab/azure-cli)
 
-You can check the role of the disaster recovery server during the test with the following command:
+Роль сервера аварийного восстановления можно проверить в ходе теста с помощью следующей команды:
 
 ```azure-cli
 az sql failover-group show --name $failoverGroup --resource-group $resourceGroup --server $drServer
@@ -366,7 +366,7 @@ az sql failover-group show --name $failoverGroup --resource-group $resourceGroup
 
 * * *
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 В этом руководстве вы настроили базу данных SQL Azure и приложение для отработки отказа в удаленный регион и протестировали план отработки отказа. Вы научились выполнять следующие задачи:
 
