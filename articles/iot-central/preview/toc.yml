@@ -71,6 +71,8 @@
           href: howto-version-device-template.md
         - name: Управление устройствами
           href: howto-manage-devices.md
+        - name: Настройка правил
+          href: howto-configure-rules.md
         - name: Анализ данных устройства
           href: howto-create-analytics.md
         - name: Добавление плиток на панель мониторинга
