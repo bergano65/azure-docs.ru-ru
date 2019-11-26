@@ -2,13 +2,13 @@
 title: Предложения управляемых служб в Azure Marketplace
 description: Предложения управляемых служб позволяют поставщикам услуг продавать предложения по управлению ресурсами клиентам в Azure Marketplace.
 ms.date: 09/19/2019
-ms.topic: overview
-ms.openlocfilehash: 0f1ba749a5477f0c006e6666b841e82f4eeb193f
-ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
-ms.translationtype: HT
+ms.topic: conceptual
+ms.openlocfilehash: f7dcaa34b1fb471823acd74a7d9b05e42dd44161
+ms.sourcegitcommit: 95931aa19a9a2f208dedc9733b22c4cdff38addc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74131871"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74464001"
 ---
 # <a name="managed-services-offers-in-azure-marketplace"></a>Предложения управляемых служб в Azure Marketplace
 
@@ -36,7 +36,7 @@ ms.locfileid: "74131871"
 
 Чтобы узнать, как опубликовать предложение управляемых служб, см. раздел [Publish a managed services offer to Azure Marketplace](../how-to/publish-managed-services-offers.md) (Публикация предложений управляемых служб в Azure Marketplace). Общие сведения о публикации в Azure Marketplace с помощью портала Cloud Partner см. раздел [Azure Marketplace and AppSource publishing guide](https://docs.microsoft.com/azure/marketplace/marketplace-publishers-guide) (Руководство по публикации в Azure Marketplace и AppSource) и [Manage Azure and AppSource Marketplace offers](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/manage-offers/cpp-manage-offers) (Управление предложениями Azure и AppSource Marketplace).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [делегированном управлении ресурсами Azure](azure-delegated-resource-management.md) и [интерфейсах управления для различных клиентов](cross-tenant-management-experience.md).
 - [Publish a managed services offer](../how-to/publish-managed-services-offers.md) (Публикация предложения управляемых служб) в Azure Marketplace.

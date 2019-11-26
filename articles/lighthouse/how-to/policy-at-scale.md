@@ -2,13 +2,13 @@
 title: Развертывание службы "Политика Azure" для делегированных подписок в масштабе
 description: Узнайте, как с помощью системы делегированного управления ресурсами Azure развернуть определение и назначение политики в нескольких клиентах.
 ms.date: 11/8/2019
-ms.topic: overview
-ms.openlocfilehash: fd335e77feb26241d573db48c2e96c725f70d031
-ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
-ms.translationtype: HT
+ms.topic: conceptual
+ms.openlocfilehash: 3853e8fc163dfc662adc675dd3df1d15958d329a
+ms.sourcegitcommit: 95931aa19a9a2f208dedc9733b22c4cdff38addc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74131268"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74463854"
 ---
 # <a name="deploy-azure-policy-to-delegated-subscriptions-at-scale"></a>Развертывание службы "Политика Azure" для делегированных подписок в масштабе
 
@@ -88,7 +88,7 @@ foreach ($ManagedSub in $ManagedSubscriptions)
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о службе [Политика Azure](https://docs.microsoft.com/azure/governance/policy/).
 - Узнайте больше об [интерфейсах управления для различных клиентов](../concepts/cross-tenant-management-experience.md).

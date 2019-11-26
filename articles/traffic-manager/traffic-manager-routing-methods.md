@@ -10,12 +10,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/17/2018
 ms.author: allensu
-ms.openlocfilehash: 06ce7fb5d18920be6f71821b034dc13061c60032
-ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
+ms.openlocfilehash: 824fabf6e694b7148486d6593cf17f741d9e5c9e
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70051456"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74483795"
 ---
 # <a name="traffic-manager-routing-methods"></a>Методы маршрутизации диспетчера трафика
 
@@ -23,17 +23,17 @@ ms.locfileid: "70051456"
 
 В диспетчере трафика доступны следующие методы маршрутизации трафика:
 
-* **[По приоритету](#priority).** Выберите метод **По приоритету**, если требуется использовать первичную конечную точку службы для всего трафика, а также предоставлять резервные конечные точки, если первичная или резервная конечные точки станут недоступны.
-* **[Со взвешиванием](#weighted).** Выберите метод **Со взвешиванием**, если требуется распределить трафик между несколькими конечными точками равномерно или согласно определяемым вами весовым коэффициентам.
-* **[Производительность](#performance).** Выберите метод **Производительность**, если конечные точки размещены в разных географических расположениях и нужно, чтобы клиенты использовали "ближайшие" конечные точки (с точки зрения минимальных задержек сети).
-* **[Географический](#geographic).** Выберите метод **Географический**, чтобы пользователи направлялись к определенным конечным точкам (Azure, внешним или вложенным) в зависимости от географического расположения, из которого исходит их запрос DNS. Это позволяет клиентам диспетчера трафика реализовать сценарии, в которых важно знать географический регион пользователей и направлять их на основе этих данных. К примерам относятся соблюдение предписаний независимости данных, локализация содержимого и взаимодействия с пользователем, а также измерение трафика из разных регионов.
-* **[Многозначный](#multivalue).** Выберите метод **Многозначный** для профилей диспетчера трафика, у которых могут быть конечные точки только в виде IPv4- или IPv6-адресов. При получении запроса для этого профиля возвращаются все работоспособные конечные точки.
-* **[Подсеть](#subnet).** Выберите метод маршрутизации трафика **Подсеть** для сопоставления наборов диапазонов IP-адресов пользователей с определенной конечной точкой в профиле диспетчера трафика. При получении запроса возвращаемая конечная точка будет сопоставлена с этим исходным IP-адресом запроса. 
+* **[По приоритету](#priority-traffic-routing-method):** выберите метод **По приоритету**, если требуется использовать первичную конечную точку службы для всего трафика, а также предоставлять резервные конечные точки, если первичная или резервные конечные точки станут недоступны.
+* **[Со взвешиванием](#weighted):** выберите метод **Со взвешиванием**, если требуется распределить трафик между несколькими конечными точками равномерно или согласно определяемым вами весовым коэффициентам.
+* **[Производительность](#performance):** выберите метод **Производительность**, если конечные точки размещены в разных географических расположениях и нужно, чтобы клиенты использовали "ближайшие" конечные точки (с точки зрения минимальных задержек сети).
+* **[Географический](#geographic):** выберите метод **Географический**, чтобы пользователи направлялись к определенным конечным точкам (Azure, внешним или вложенным) в зависимости от географического расположения, из которого исходит их DNS-запрос. Это позволяет клиентам диспетчера трафика реализовать сценарии, в которых важно знать географический регион пользователей и направлять их на основе этих данных. К примерам относятся соблюдение предписаний независимости данных, локализация содержимого и взаимодействия с пользователем, а также измерение трафика из разных регионов.
+* **[Многозначный](#multivalue):** выберите **Многозначный** для профилей диспетчера трафика, которые могут иметь конечные точки только в виде IPv4- или IPv6-адресов. При получении запроса для этого профиля возвращаются все работоспособные конечные точки.
+* **[Подсеть](#subnet):** выберите метод маршрутизации трафика **Подсеть** для сопоставления наборов диапазонов IP-адресов пользователей с определенной конечной точкой в профиле диспетчера трафика. При получении запроса возвращаемая конечная точка будет сопоставлена с этим исходным IP-адресом запроса. 
 
 
 Все профили диспетчера трафика включают мониторинг работоспособности и автоматическую отработку отказа для всех конечных точек. Дополнительные сведения см. в статье [Мониторинг и отработка отказов конечной точки диспетчера трафика](traffic-manager-monitoring.md). Отдельный профиль диспетчера трафика может использовать только один метод маршрутизации трафика. В любое время для профиля можно выбрать другой метод маршрутизации трафика. Изменения применяются в течение одной минуты, не приводя к простою. Методы маршрутизации трафика можно комбинировать с помощью вложенных профилей диспетчера трафика. Вложенность позволяет создавать сложные и гибкие конфигурации для маршрутизации трафика в соответствии с потребностями крупных и сложных приложений. Дополнительную информацию см. в статье [Вложенные профили диспетчера трафика](traffic-manager-nested-profiles.md).
 
-## <a name = "priority"></a>Метод маршрутизации трафика по приоритету
+## <a name="priority-traffic-routing-method"></a>Метод маршрутизации трафика по приоритету
 
 Как правило, организация стремится обеспечить надежность своих служб, развертывая одну или несколько резервных служб на случай, если основная служба выйдет из строя. Метод маршрутизации трафика "По приоритету" позволяет клиентам Azure легко реализовать эту схему отработки отказа.
 
@@ -56,9 +56,9 @@ ms.locfileid: "70051456"
 
 Метод взвешивания позволяет реализовать некоторые полезные сценарии.
 
-* Постепенное обновление приложения. Направляйте часть трафика в новую конечную точку и постепенно доведите объем трафика до 100 %.
-* Миграция приложений в Azure. Создайте профиль, содержащий конечные точки Azure и внешние конечные точки. Настройте весовые коэффициенты так, чтобы приоритет отдавался новым конечным точкам.
-* Переход в облако для получения дополнительной емкости. Быстро расширьте локальное развертывание в облако, воспользовавшись профилем диспетчера трафика. Если вам требуется дополнительная емкость в облаке, добавьте конечные точки и укажите, какая часть трафика направляется на ту или иную конечную точку.
+* Постепенное обновление приложения: направляйте часть трафика в новую конечную точку и постепенно доведите объем трафика до 100 %.
+* Миграция приложений в Azure: создайте профиль, который включает конечные точки, расположенные в среде Azure и за ее пределами. Настройте весовые коэффициенты так, чтобы приоритет отдавался новым конечным точкам.
+* Повышение в облако для получения дополнительной емкости: быстро расширьте локальное развертывание в облако, изменив профиль диспетчера трафика. Если вам требуется дополнительная емкость в облаке, добавьте конечные точки и укажите, какая часть трафика направляется на ту или иную конечную точку.
 
 Помимо портала Azure, весовые коэффициенты также можно настроить с помощью Azure PowerShell, интерфейса командной строки и интерфейсов REST API.
 
@@ -125,36 +125,36 @@ ms.locfileid: "70051456"
 
 ### <a name="faqs"></a>Часто задаваемые вопросы
 
-* [В каких случаях полезно использовать географическую маршрутизацию?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-are-some-use-cases-where-geographic-routing-is-useful)
+* [What are some use cases where geographic routing is useful?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-are-some-use-cases-where-geographic-routing-is-useful)
 
-* [Разделы справки решить, следует ли использовать метод маршрутизации производительности или метод географической маршрутизации?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-do-i-decide-if-i-should-use-performance-routing-method-or-geographic-routing-method)
+* [How do I decide if I should use Performance routing method or Geographic routing method?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-do-i-decide-if-i-should-use-performance-routing-method-or-geographic-routing-method)
 
-* [Какие регионы поддерживаются диспетчером трафика для географической маршрутизации?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-are-the-regions-that-are-supported-by-traffic-manager-for-geographic-routing)
+* [What are the regions that are supported by Traffic Manager for geographic routing?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-are-the-regions-that-are-supported-by-traffic-manager-for-geographic-routing)
 
-* [Как диспетчер трафика определяет, откуда выполняется запрос пользователя?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-does-traffic-manager-determine-where-a-user-is-querying-from)
+* [How does traffic manager determine where a user is querying from?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-does-traffic-manager-determine-where-a-user-is-querying-from)
 
-* [Гарантируется ли диспетчер трафика правильно определять точное географическое расположение пользователя в каждом случае?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#is-it-guaranteed-that-traffic-manager-can-correctly-determine-the-exact-geographic-location-of-the-user-in-every-case)
+* [Is it guaranteed that Traffic Manager can correctly determine the exact geographic location of the user in every case?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#is-it-guaranteed-that-traffic-manager-can-correctly-determine-the-exact-geographic-location-of-the-user-in-every-case)
 
-* [Должна ли конечная точка быть физически размещена в том же регионе, что и конфигурация для географической маршрутизации?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#does-an-endpoint-need-to-be-physically-located-in-the-same-region-as-the-one-it-is-configured-with-for-geographic-routing)
+* [Does an endpoint need to be physically located in the same region as the one it is configured with for geographic routing?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#does-an-endpoint-need-to-be-physically-located-in-the-same-region-as-the-one-it-is-configured-with-for-geographic-routing)
 
-* [Можно ли назначить географические регионы конечным точкам в профиле, не настроенном для географической маршрутизации?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#can-i-assign-geographic-regions-to-endpoints-in-a-profile-that-is-not-configured-to-do-geographic-routing)
+* [Can I assign geographic regions to endpoints in a profile that is not configured to do geographic routing?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#can-i-assign-geographic-regions-to-endpoints-in-a-profile-that-is-not-configured-to-do-geographic-routing)
 
-* [Почему я получаю сообщение об ошибке при попытке изменить метод маршрутизации существующего профиля на географический?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#why-am-i-getting-an-error-when-i-try-to-change-the-routing-method-of-an-existing-profile-to-geographic)
+* [Why am I getting an error when I try to change the routing method of an existing profile to Geographic?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#why-am-i-getting-an-error-when-i-try-to-change-the-routing-method-of-an-existing-profile-to-geographic)
 
-* [Почему настоятельно рекомендуется, чтобы клиенты создали вложенные профили вместо конечных точек в профиле с включенной географической маршрутизацией?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#why-is-it-strongly-recommended-that-customers-create-nested-profiles-instead-of-endpoints-under-a-profile-with-geographic-routing-enabled)
+* [Why is it strongly recommended that customers create nested profiles instead of endpoints under a profile with geographic routing enabled?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#why-is-it-strongly-recommended-that-customers-create-nested-profiles-instead-of-endpoints-under-a-profile-with-geographic-routing-enabled)
 
-* [Существуют ли какие-либо ограничения на версию API, которая поддерживает этот тип маршрутизации?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#are-there-any-restrictions-on-the-api-version-that-supports-this-routing-type)
+* [Are there any restrictions on the API version that supports this routing type?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#are-there-any-restrictions-on-the-api-version-that-supports-this-routing-type)
 
 ## <a name = "multivalue"></a>Метод маршрутизации трафика "Многозначный"
-Метод маршрутизации трафика **Многозначный** позволяет получить несколько работоспособных конечных точек в одном ответе на запрос DNS. Это позволяет вызывающему объекту выполнять повторные попытки на стороне клиента с другими конечными точками в случае, если возвращаемая конечная точка не отвечает. Этот шаблон может повысить доступность службы и сократить задержки, связанные с новым запросом DNS на получение работоспособной конечной точки. Метод маршрутизации "Многозначный" работает только в том случае, если все конечные точки внешние и являются IPv4- или IPv6-адресами. При получении запроса для этого профиля все работоспособные конечные точки возвращаются на основе настраиваемого максимального числа записей в ответе.
+Метод маршрутизации трафика **Многозначный** позволяет получить несколько работоспособных конечных точек в одном ответе на запрос DNS. This enables the caller to do client-side retries with other endpoints in the event of a returned endpoint being unresponsive. Этот шаблон может повысить доступность службы и сократить задержки, связанные с новым запросом DNS на получение работоспособной конечной точки. Метод маршрутизации "Многозначный" работает только в том случае, если все конечные точки внешние и являются IPv4- или IPv6-адресами. При получении запроса для этого профиля все работоспособные конечные точки возвращаются на основе настраиваемого максимального числа записей в ответе.
 
 ### <a name="faqs"></a>Часто задаваемые вопросы
 
-* [В каких случаях полезно использовать многозначную маршрутизацию?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-are-some-use-cases-where-multivalue-routing-is-useful)
+* [What are some use cases where MultiValue routing is useful?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-are-some-use-cases-where-multivalue-routing-is-useful)
 
-* [Сколько конечных точек возвращается при использовании многозначной маршрутизации?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-many-endpoints-are-returned-when-multivalue-routing-is-used)
+* [How many endpoints are returned when MultiValue routing is used?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-many-endpoints-are-returned-when-multivalue-routing-is-used)
 
-* [Будет ли получен тот же набор конечных точек при использовании многозначной маршрутизации?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#will-i-get-the-same-set-of-endpoints-when-multivalue-routing-is-used)
+* [Will I get the same set of endpoints when MultiValue routing is used?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#will-i-get-the-same-set-of-endpoints-when-multivalue-routing-is-used)
 
 ## <a name = "subnet"></a>Метод маршрутизации трафика "Подсеть"
 Метод маршрутизации трафика **Подсеть** позволяет сопоставить набор диапазонов IP-адресов пользователя с определенными конечными точками в профиле. После этого, если диспетчер трафика получает запрос DNS для этого профиля, он будет проверять исходный IP-адрес этого запроса (в большинстве случаев это будет исходящий IP-адрес сопоставителя DNS, используемый вызывающим объектом), чтобы определить, какая конечная точка сопоставляется, и вернет конечную точку в ответе на запрос. 
@@ -166,18 +166,18 @@ IP-адрес для сопоставления с конечной точкой
 
 ### <a name="faqs"></a>Часто задаваемые вопросы
 
-* [В каких случаях может использоваться маршрутизация подсетей?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-are-some-use-cases-where-subnet-routing-is-useful)
+* [What are some use cases where subnet routing is useful?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-are-some-use-cases-where-subnet-routing-is-useful)
 
-* [Как диспетчер трафика знает IP-адрес конечного пользователя?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-does-traffic-manager-know-the-ip-address-of-the-end-user)
+* [How does Traffic Manager know the IP address of the end user?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-does-traffic-manager-know-the-ip-address-of-the-end-user)
 
-* [Как указать IP-адреса при использовании маршрутизации подсетей?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-can-i-specify-ip-addresses-when-using-subnet-routing)
+* [How can I specify IP addresses when using Subnet routing?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-can-i-specify-ip-addresses-when-using-subnet-routing)
 
-* [Как указать резервную конечную точку при использовании маршрутизации подсети?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-can-i-specify-a-fallback-endpoint-when-using-subnet-routing)
+* [How can I specify a fallback endpoint when using Subnet routing?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-can-i-specify-a-fallback-endpoint-when-using-subnet-routing)
 
-* [Что произойдет, если конечная точка отключена в профиле типа маршрутизации подсети?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-happens-if-an-endpoint-is-disabled-in-a-subnet-routing-type-profile)
+* [What happens if an endpoint is disabled in a Subnet routing type profile?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-happens-if-an-endpoint-is-disabled-in-a-subnet-routing-type-profile)
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как разрабатывать высокодоступные приложения с помощью [мониторинга конечных точек диспетчером трафика](traffic-manager-monitoring.md)
 

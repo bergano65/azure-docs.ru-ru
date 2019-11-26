@@ -1,6 +1,6 @@
 ---
 title: Use Azure Storage Explorer with Azure Data Lake Storage Gen2
-description: In this quickstart, you learn how to use Azure Storage Explorer to create a container in an Azure Data Lake Storage Gen2 account, as well as a directory and a file. Далее вы узнаете, как загружать файл на локальный компьютер и как просматривать все файлы в каталоге.
+description: Learn how to use Azure Storage Explorer to create a file system in an Azure Data Lake Storage Gen2 account, as well as a directory and a file. Далее вы узнаете, как загружать файл на локальный компьютер и как просматривать все файлы в каталоге.
 author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
@@ -8,16 +8,16 @@ ms.topic: conceptual
 ms.date: 11/19/2019
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: 53f43945b13a9dae44eba752f935eb34d7aa498b
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
+ms.openlocfilehash: b300d96408bed621a0687c04a9c94021af009f95
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74327621"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74484480"
 ---
 # <a name="use-azure-storage-explorer-with-azure-data-lake-storage-gen2"></a>Use Azure Storage Explorer with Azure Data Lake Storage Gen2
 
-В этом кратком руководстве вы научитесь использовать [Обозреватель службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/) для создания каталога и большого двоичного объекта. Далее вы узнаете, как загружать большой двоичный объект на локальный компьютер и как просматривать все большие двоичные объекты в каталоге. Вы также узнаете, как создавать моментальный снимок большого двоичного объекта, управлять политиками доступа к каталогу и создавать подписанный URL-адрес.
+In this article, you'll learn how to use [Azure Storage Explorer](https://azure.microsoft.com/features/storage-explorer/) to create a directory and a blob. Далее вы узнаете, как загружать большой двоичный объект на локальный компьютер и как просматривать все большие двоичные объекты в каталоге. Вы также узнаете, как создавать моментальный снимок большого двоичного объекта, управлять политиками доступа к каталогу и создавать подписанный URL-адрес.
 
 ## <a name="prerequisites"></a>Технические условия
 

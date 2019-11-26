@@ -2,13 +2,13 @@
 title: Делегированное управление ресурсами Azure
 description: Предложения управляемых служб позволяют поставщикам услуг продавать предложения по управлению ресурсами клиентам в Azure Marketplace.
 ms.date: 07/11/2019
-ms.topic: overview
-ms.openlocfilehash: e79252d38e5e3363ef1d6a82ec060b896fa247a8
-ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
-ms.translationtype: HT
+ms.topic: conceptual
+ms.openlocfilehash: ccbd09cd51216f9076e3b5bd462ee2180ac8f3ab
+ms.sourcegitcommit: 95931aa19a9a2f208dedc9733b22c4cdff38addc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74133386"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74464012"
 ---
 # <a name="azure-delegated-resource-management"></a>Делегированное управление ресурсами Azure
 
@@ -43,7 +43,7 @@ ms.locfileid: "74133386"
 
 Если вам нужна помощь, связанная с делегированным управлением ресурсами Azure, можете подать запрос в службу поддержки на портале Azure. **Тип проблемы** укажите как **Техническая проблема**. Выберите подписку, затем — **Делегированное управление ресурсами** (в **Мониторинг и управление**).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте больше об [интерфейсах управления для различных клиентов](cross-tenant-management-experience.md).
 - Дополнительные сведения о [предложениях управляемых служб в Azure Marketplace](managed-services-offers.md).

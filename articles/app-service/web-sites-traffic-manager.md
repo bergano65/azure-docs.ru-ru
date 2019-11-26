@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 02/25/2016
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: a1f377c3325797f2f55f051830014b1068c51327
-ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
+ms.openlocfilehash: 2cd53c3c0b3e9acbb8a5a88c7696e8b3089c50c9
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74405591"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74483375"
 ---
 # <a name="controlling-azure-app-service-traffic-with-azure-traffic-manager"></a>Управление трафиком службы приложений Azure с помощью диспетчера трафика Azure
 > [!NOTE]
@@ -34,7 +34,7 @@ ms.locfileid: "74405591"
 ## <a name="routing-methods"></a>Методы маршрутизации
 Диспетчер трафика Azure использует четыре разных метода маршрутизации. Эти методы и их применение к службе приложений Azure описаны в следующем списке.
 
-* **[По приоритету](../traffic-manager/traffic-manager-routing-methods.md#priority)** . Основное приложение получает весь трафик, а резервные копии создаются на тот случай, если основное или резервное приложения будут недоступны.
+* **[По приоритету](../traffic-manager/traffic-manager-routing-methods.md#priority-traffic-routing-method)** . Основное приложение получает весь трафик, а резервные копии создаются на тот случай, если основное или резервное приложения будут недоступны.
 * **[Со взвешиванием](../traffic-manager/traffic-manager-routing-methods.md#weighted)** . Трафик распределяется между несколькими приложениями равномерно или в соответствии с весовыми коэффициентами, которые вы можете настроить.
 * **[По производительности](../traffic-manager/traffic-manager-routing-methods.md#performance)** . Если используется несколько приложений, размещенных в разных географических регионах, трафик направляется к ближайшему из них в соответствии со статистикой задержек в сети.
 * **[Географический](../traffic-manager/traffic-manager-routing-methods.md#geographic)** . Пользователи направляются к конкретному приложению в соответствии с настройками для географических расположений, из которых получены соответствующие запросы DNS. 

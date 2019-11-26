@@ -2,13 +2,13 @@
 title: Арендаторы, роли и пользователи в сценариях Azure Lighthouse
 description: Изучите принципы действия арендаторов, пользователей и ролей Azure Active Directory, а также узнайте о том, как их можно использовать в сценариях Azure Lighthouse.
 ms.date: 11/05/2019
-ms.topic: overview
-ms.openlocfilehash: 73c5cd592f07a23edaad23796e498ea9243c5d26
-ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
-ms.translationtype: HT
+ms.topic: conceptual
+ms.openlocfilehash: a1ad004c79f90f4642640405da9e8876b9202e98
+ms.sourcegitcommit: 95931aa19a9a2f208dedc9733b22c4cdff38addc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74131342"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74463922"
 ---
 # <a name="tenants-roles-and-users-in-azure-lighthouse-scenarios"></a>Арендаторы, роли и пользователи в сценариях Azure Lighthouse
 
@@ -39,7 +39,7 @@ ms.locfileid: "74131342"
 - Добавьте пользователя с ролью [Managed Services Registration Assignment Delete](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#managed-services-registration-assignment-delete-role) (Удаление назначенных регистраций управляемых служб), чтобы можно было при необходимости [удалить доступ к делегированию](../how-to/onboard-customer.md#remove-access-to-a-delegation) позже. Если эта роль не назначена, делегированные ресурсы могут быть удалены только пользователем в арендаторе клиента.
 - Убедитесь, что любой пользователь, которому нужно [просматривать страницу "Мои клиенты" на портале Azure](../how-to/view-manage-customers.md), имеет роль [Читатель](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#reader) (или другую встроенную роль, которая предоставляет доступ для чтения).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте больше о [рекомендациях по обеспечению безопасности для делегированного управления ресурсами Azure](recommended-security-practices.md).
 - Подключите клиентов к делегированному управлению ресурсами Azure с помощью [шаблонов Azure Resource Manager](../how-to/onboard-customer.md) или путем [публикации предложения частных или общедоступных управляемых служб в Azure Marketplace](../how-to/publish-managed-services-offers.md).

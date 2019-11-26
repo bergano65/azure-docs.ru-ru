@@ -1,6 +1,6 @@
 ---
 title: Добавление слоя символов в Azure Maps | Документация Майкрософт
-description: Добавление символов в веб-пакет SDK для Azure Maps.
+description: How to add symbols to the Azure Maps Web SDK.
 author: rbrundritt
 ms.author: richbrun
 ms.date: 07/29/2019
@@ -9,23 +9,31 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: 10f6a7ef92bfd6558ed93e7fb40df9e48e1b92f5
-ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
+ms.openlocfilehash: fff73801d20333a6df5e7952d02ed664c17fe40b
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68976179"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74480613"
 ---
 # <a name="add-a-symbol-layer-to-a-map"></a>Добавление слоя символов на карту
 
-Символ может быть подключен к источнику данных и использоваться для отображения значка и (или) текста в заданной точке. Слои символов подготавливаются к просмотру с помощью WebGL и могут использоваться для отображения больших коллекций точек на карте. Этот слой может отображать гораздо больше данных на карте с хорошей производительностью, чем то, что достижимо с помощью маркеров HTML. Однако слой символов не поддерживает традиционные элементы CSS и HTML для стилей.  
+A symbol can be connected up to a data source and used to render an icon and/or text at a given point. Symbol layers are rendered using WebGL and can be used to render large collections of points on the map. This layer can render a lot more point data on the map, with good performance, than what is achievable using HTML markers. However, the symbol layer doesn't support traditional CSS and HTML elements for styling.  
 
 > [!TIP]
-> Слои символов по умолчанию отображают координаты всех геометрических объектов в источнике данных. Чтобы ограничить слой таким образом, чтобы он отображал только возможности геометрических точек `filter` , задайте для `['==', ['geometry-type'], 'Point']` свойства слоя значение `['any', ['==', ['geometry-type'], 'Point'], ['==', ['geometry-type'], 'MultiPoint']]` или, если требуется включить компоненты MultiPoint.
+> Слои символов по умолчанию отображают координаты всех геометрических объектов в источнике данных. To limit the layer such that it only renders point geometry features set the `filter` property of the layer to `['==', ['geometry-type'], 'Point']` or `['any', ['==', ['geometry-type'], 'Point'], ['==', ['geometry-type'], 'MultiPoint']]` if you want to include MultiPoint features as well.
+
+The maps image sprite manager, which is used to load custom images used by the symbol layer supports the following image formats:
+
+- JPEG
+- PNG
+- SVG
+- BMP
+- GIF (no animations)
 
 ## <a name="add-a-symbol-layer"></a>Добавление слоя символов
 
-Чтобы добавить слой символов на карту и отобразить данные, сначала необходимо создать источник данных и добавить карту. Затем можно создать и передать в источнике данных слой символов для получения данных из. Наконец, необходимо добавить данные в источник данных для подготовки к просмотру. В следующем коде показан код, который должен быть добавлен к карте после его загрузки для отрисовки одной точки на карте с помощью слоя символов. 
+To add a symbol layer to the map and render data, a data source first needs to be created and added the map. A symbol layer can then be created and passed in the data source to retrieve the data from. Finally, data needs to be added into the data source so that there is something to be rendered. The following code shows the code that should be added to the map after it has loaded to render a single point on the map using a symbol layer. 
 
 ```javascript
 //Create a data source and add it to the map.
@@ -42,14 +50,14 @@ map.layers.add(layer);
 dataSource.add(new atlas.data.Point([0, 0]));
 ```
 
-Существует четыре типа данных Point, которые можно добавить на карту:
+There are four different types of point data to that can be added to the map:
 
-- Геометрическая точка в формате JSON. Этот объект содержит только координаты точки и ничего другого. `atlas.data.Point` Вспомогательный класс можно использовать для простого создания этих объектов.
-- Геометрическая геометрия MultiPoint — этот объект содержит координаты нескольких точек, но ничего другого нет. `atlas.data.MultiPoint` Вспомогательный класс можно использовать для простого создания этих объектов.
-- Функция геоjson — этот объект состоит из любой геометрической фигуры и набора свойств, содержащих метаданные, связанные с геометрическим объектом. `atlas.data.Feature` Вспомогательный класс можно использовать для простого создания этих объектов.
-- `atlas.Shape`класс похож на функцию геоjson в том, что она состоит из геометрической геометрии и набора свойств, содержащих метаданные, связанные с геометрическим объектом. Если объект геоjson-файла добавляется в источник данных, его можно легко отобразить на слое, однако если свойство координаты этого объекта геообъектно-JSON обновляется, источник данных и схема не изменятся, так как в объекте JSON нет механизма для активации обновления. Класс Shape предоставляет функции для обновления содержащихся в ней данных, а при внесении изменений источник данных и схема автоматически уведомляются и обновляются. 
+- GeoJSON Point geometry - This object only contains a coordinate of a point and nothing else. The `atlas.data.Point` helper class can be used to easily create these objects.
+- GeoJSON MultiPoint geometry - This object contains the coordinates of multiple points but nothing else. The `atlas.data.MultiPoint` helper class can be used to easily create these objects.
+- GeoJSON Feature - This object consists of any GeoJSON geometry and a set of properties that contain metadata associated to the geometry. The `atlas.data.Feature` helper class can be used to easily create these objects.
+- `atlas.Shape` class is similar to the GeoJSON feature in that it consists of a GeoJSON geometry and a set of properties that contain metadata associated to the geometry. If a GeoJSON object is added to a data source it can easily be rendered in a layer, however, if the coordinates property of that GeoJSON object is updated, the data source and map don't change as there is no mechanism in the JSON object to trigger an update. The shape class provides functions for updating the data it contains, and when a change is made, the data source and map are automatically notified and updated. 
 
-В следующем примере кода создается геометрическая точка в формате JSON, которая передается `atlas.Shape` в класс, чтобы упростить обновление. Центр схемы изначально используется для отрисовки символа. Событие щелчка добавляется к карте таким, что при его срабатывании координаты, по которым была нажата мышь, используются с функцией Shapes `setCoordinates` , которая обновляет расположение символа на карте.
+The following code sample creates a GeoJSON Point geometry and passes it into the `atlas.Shape` class to make it easy to update. The center of the map is used initially to render a symbol. A click event is added to the map such that when it fires, the coordinates of where the mouse was clicked are used with the shapes `setCoordinates` function that updates the location of the symbol on the map.
 
 <br/>
 
@@ -57,11 +65,11 @@ dataSource.add(new atlas.data.Point([0, 0]));
 </iframe>
 
 > [!TIP]
-> По умолчанию для производительности слои символов оптимизируют отрисовку символов путем скрытия перекрывающихся символов. При изменении масштаба скрытые символы становятся видимыми. Чтобы отключить эту функцию и вывести все символы в любое время, задайте `allowOverlap` для `true`свойства `iconOptions` параметра значение.
+> By default, for performance, symbol layers optimize the rendering of symbols by hiding symbols that overlap. As you zoom in the hidden symbols become visible. To disable this feature and render all symbols at all times, set the `allowOverlap` property of the `iconOptions` options to `true`.
 
 ## <a name="add-a-custom-icon-to-a-symbol-layer"></a>Добавление пользовательского значка в слой символов
 
-Слои символов преобразовываются для просмотра с помощью WebGL. Таким образом, все ресурсы (например, образы значков) необходимо загрузить в контекст WebGL. В этом примере показано, как добавить пользовательский значок к ресурсам сопоставлений, а затем использовать его для отрисовки данных точек с помощью пользовательского символа на карте. Свойство `textField` слоя символа требует указания выражения. В этом случае мы хотим отобразить свойство температуры, но поскольку это число, его необходимо преобразовать в строку. Кроме того, мы хотим добавить к нему «° F». Для этого можно использовать выражение. `['concat', ['to-string', ['get', 'temperature']], '°F']`. 
+Слои символов преобразовываются для просмотра с помощью WebGL. Таким образом, все ресурсы (например, образы значков) необходимо загрузить в контекст WebGL. This sample shows how to add a custom icon to the map resources and then use it to render point data with a custom symbol on the map. Свойство `textField` слоя символа требует указания выражения. In this case, we want to render the temperature property but since it's a number, it needs to be converted to a string. Additionally we want to append the "°F" to it. An expression can be used to do this; `['concat', ['to-string', ['get', 'temperature']], '°F']`. 
 
 <br/>
 
@@ -69,7 +77,7 @@ dataSource.add(new atlas.data.Point([0, 0]));
 </iframe>
 
 > [!TIP]
-> Azure Maps веб-пакет SDK предоставляет несколько настраиваемых шаблонов изображений, которые можно использовать с уровнем символов. Дополнительные сведения см. в документе [Использование шаблонов изображений](how-to-use-image-templates-web-sdk.md) .
+> The Azure Maps web SDK provides several customizable image templates you can use with the symbol layer. For more infromation, see the [How to use image templates](how-to-use-image-templates-web-sdk.md) document.
 
 ## <a name="customize-a-symbol-layer"></a>Настройка слоя символа 
 
@@ -81,9 +89,9 @@ dataSource.add(new atlas.data.Point([0, 0]));
 </iframe>
 
 > [!TIP]
-> Если требуется отображать только текст с помощью слоя символов, можно скрыть значок, установив `image` для `'none'`свойства параметров значка значение.
+> When you only want to render text with a symbol layer, you can hide the icon by setting the `image` property of the icon options to `'none'`.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
@@ -97,12 +105,12 @@ dataSource.add(new atlas.data.Point([0, 0]));
 > [IconOptions interface](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.iconoptions?view=azure-iot-typescript-latest) (Интерфейс IconOptions)
 
 > [!div class="nextstepaction"]
-> [текстоптионс](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.textoptions?view=azure-iot-typescript-latest)
+> [TextOptions](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.textoptions?view=azure-iot-typescript-latest)
 
 Дополнительные примеры кода для добавления в карты см. в следующих статьях:
 
 > [!div class="nextstepaction"]
-> [Создание источника данных](create-data-source-web-sdk.md)
+> [Create a data source](create-data-source-web-sdk.md)
 
 > [!div class="nextstepaction"]
 > [Добавление всплывающего окна](map-add-popup.md)
@@ -111,13 +119,13 @@ dataSource.add(new atlas.data.Point([0, 0]));
 > [Использование стилистических выражений на основе данных](data-driven-style-expressions-web-sdk.md)
 
 > [!div class="nextstepaction"]
-> [Использование шаблонов изображений](how-to-use-image-templates-web-sdk.md)
+> [How to use image templates](how-to-use-image-templates-web-sdk.md)
 
 > [!div class="nextstepaction"]
-> [Добавить слой линий](map-add-line-layer.md)
+> [Add a line layer](map-add-line-layer.md)
 
 > [!div class="nextstepaction"]
-> [Добавление слоя многоугольников](map-add-shape.md)
+> [Add a polygon layer](map-add-shape.md)
 
 > [!div class="nextstepaction"]
 > [Добавление слоя пузырьков](map-add-bubble-layer.md)

@@ -1,6 +1,6 @@
 ---
 title: Общие сведения о модели виртуального ядра
-description: Модель приобретения Виртуальное ядро позволяет независимо масштабировать ресурсы вычислений и хранения, сопоставлять локальную производительность и оптимизировать цену.
+description: The vCore purchasing model lets you independently scale compute and storage resources, match on-premises performance, and optimize price.
 services: sql-database
 ms.service: sql-database
 ms.subservice: service
@@ -8,176 +8,176 @@ ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: sashan, moslake, carlrab
-ms.date: 11/04/2019
-ms.openlocfilehash: 1bdd14841fc1c537046ee8dc3d0d6dc63b88ea25
-ms.sourcegitcommit: 8e31a82c6da2ee8dafa58ea58ca4a7dd3ceb6132
+ms.date: 11/25/2019
+ms.openlocfilehash: 94728f2e4be6a16d048b4ff97bedefd5e32957ed
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74196533"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74481281"
 ---
 # <a name="vcore-model-overview"></a>Общие сведения о модели виртуального ядра
 
-Модель виртуальных ядер (Виртуальное ядро) предоставляет несколько преимуществ.
+The virtual core (vCore) model provides several benefits:
 
-- Более высокие пределы вычислений, памяти, операций ввода-вывода и хранилища.
-- Управление созданием оборудования для лучшего соответствия требованиям к вычислению и памяти рабочей нагрузки.
-- Ценовые скидки для [преимущество гибридного использования Azure (АХБ)](sql-database-azure-hybrid-benefit.md) и [зарезервированного экземпляра (RI)](sql-database-reserved-capacity.md).
-- Более большая прозрачность в сведениях об оборудовании, которые вычисляют вычисление; облегчает планирование миграции из локальных развертываний.
+- Higher compute, memory, IO, and storage limits.
+- Control over the hardware generation to better match compute and memory requirements of the workload.
+- Pricing discounts for [Azure Hybrid Benefit (AHB)](sql-database-azure-hybrid-benefit.md) and [Reserved Instance (RI)](sql-database-reserved-capacity.md).
+- Greater transparency in the hardware details that power the compute; facilitates planning for migrations from on-premises deployments.
 
-## <a name="service-tiers"></a>Уровни службы
+## <a name="service-tiers"></a>Уровни служб
 
-Параметры уровня службы в модели Виртуальное ядро включают общего назначения, критически важный для бизнеса и масштабирование. Уровень служб обычно определяет архитектуру хранилища, ограничения пространства и операций ввода-вывода, а также возможности обеспечения непрерывности бизнеса, связанные с доступностью и аварийным восстановлением.
+Service tier options in the vCore model include General Purpose, Business Critical, and Hyperscale. The service tier generally defines the storage architecture, space and IO limits, and business continuity options related to availability and disaster recovery.
 
-||**Универсальные**|**Критически важный для бизнеса**|**Гипермасштабируемого**|
+||**Универсальные**|**Business critical**|**Hyperscale**|
 |---|---|---|---|
-|Оптимально для|Большинства рабочих нагрузок. Предлагает бюджетные, сбалансированные и масштабируемые варианты вычислений и хранения. |Предоставляет бизнес-приложениям наивысшую устойчивость к сбоям с помощью нескольких изолированных реплик и обеспечивает наивысшую производительность ввода-вывода на реплику базы данных.|Большинство рабочих нагрузок с высоким уровнем масштабируемости и требованиями к масштабированию.  Обеспечивает более высокую устойчивость к сбоям, позволяя настраивать более одной изолированной реплики базы данных. |
-|Служба хранилища|Использует удаленное хранилище.<br/>**Подготовленные расчеты для одной базы данных и эластичного пула**:<br/>От 5 ГБ до 4 ТБ<br/>**Бессерверные вычислений**:<br/>5 ГБ — 3 ТБ<br/>**Управляемый экземпляр**: 32 ГБ-8 ТБ |Использует локальное хранилище SSD.<br/>**Подготовленные расчеты для одной базы данных и эластичного пула**:<br/>5 ГБ — 8 ТБ<br/>**Управляемый экземпляр**:<br/>от 32 ГБ до 4 ТБ |Гибкое автоматическое расширение хранилища при необходимости. Поддерживает до 100 ТБ хранилища. Использует локальное хранилище SSD для кэша локального буфера и локального хранилища данных. Использует удаленное хранилище Azure в качестве последнего долгосрочного хранилища данных. |
-|Пропускная способность ввода-вывода (приблизительная)|**Одна база данных и эластичный пул**: 500 операций ввода-вывода в секунду на виртуальное ядро до 40000 максимум операций ввода-вывода в секунду<br/>**Управляемый экземпляр**: зависит от [размера файла](../virtual-machines/windows/premium-storage-performance.md#premium-storage-disk-sizes).|5000 операций ввода-вывода в секунду на виртуальное ядро до 320 000 максимум операций ввода-вывода|Масштабирование — многоуровневая архитектура с кэшированием на нескольких уровнях. Действующие операции ввода-вывода будут зависеть от рабочей нагрузки.|
-|Доступность|1 реплика, нет реплик для чтения и масштабирования|3 реплики, 1 [реплика чтения и масштабирования](sql-database-read-scale-out.md),<br/>высокий уровень доступности избыточной зоны (HA)|1 реплика для чтения и записи, а также 0-4 [реплики чтения и масштабирования](sql-database-read-scale-out.md)|
-|Резервные копии|[Геоизбыточное хранилище с доступом на чтение (RA-GRS)](../storage/common/storage-designing-ha-apps-with-ragrs.md), 7-35 дней (по умолчанию 7 дней)|[RA-GRS](../storage/common/storage-designing-ha-apps-with-ragrs.md), 7–35 дней (7 дней по умолчанию)|Резервные копии на основе моментального снимка в удаленном хранилище Azure. Эти моментальные снимки используются для быстрого восстановления. Резервные копии создаются мгновенно и не влияют на производительность вычислений ввода-вывода. Восстановление выполняется быстро и не является операцией с объемом данных (в минутах, а не в часах или днях).|
-|В памяти|Не поддерживается|Поддерживаются|Не поддерживается|
+|Оптимально для|Большинства рабочих нагрузок. Offers budget-oriented, balanced, and scalable compute and storage options. |Offers business applications the highest resilience to failures by using several isolated replicas, and provides the highest I/O performance per database replica.|Most business workloads with highly scalable storage and read-scale requirements.  Offers higher resilience to failures by allowing configuration of more than one isolated database replica. |
+|Storage|Uses remote storage.<br/>**Single database and elastic pool provisioned compute**:<br/>От 5 ГБ до 4 ТБ<br/>**Serverless compute**:<br/>5 GB - 3 TB<br/>**Managed instance**: 32 GB - 8 TB |Uses local SSD storage.<br/>**Single database and elastic pool provisioned compute**:<br/>От 5 ГБ до 4 ТБ<br/>**Managed instance**:<br/>от 32 ГБ до 4 ТБ |Flexible autogrow of storage as needed. Supports up to 100 TB of storage. Uses local SSD storage for local buffer-pool cache and local data storage. Uses Azure remote storage as final long-term data store. |
+|I/O throughput (approximate)|**Single database and elastic pool**: 500 IOPS per vCore up to 40000 maximum IOPS.<br/>**Managed instance**: Depends on [size of file](../virtual-machines/windows/premium-storage-performance.md#premium-storage-disk-sizes).|5000 IOPS per vCore up to 320,000 maximum IOPS|Hyperscale is a multi-tiered architecture with caching at multiple levels. Effective IOPs will depend on the workload.|
+|Доступность|1 replica, no read-scale replicas|3 реплики, 1 [реплика чтения и масштабирования](sql-database-read-scale-out.md),<br/>zone-redundant high availability (HA)|1 read-write replica, plus 0-4 [read-scale replicas](sql-database-read-scale-out.md)|
+|Резервные копии|[Read-access geo-redundant storage (RA-GRS)](../storage/common/storage-designing-ha-apps-with-ragrs.md), 7-35 days (7 days by default)|[RA-GRS](../storage/common/storage-designing-ha-apps-with-ragrs.md), 7–35 дней (7 дней по умолчанию)|Snapshot-based backups in Azure remote storage. Эти моментальные снимки используются для быстрого восстановления. Backups are instantaneous and don't impact compute I/O performance. Restores are fast and aren't a size-of-data operation (taking minutes rather than hours or days).|
+|В памяти|Не поддерживается|Поддерживается|Не поддерживается|
 |||
 
 
 ### <a name="choosing-a-service-tier"></a>Выбор уровня служб
 
-Сведения о выборе уровня служб для конкретной рабочей нагрузки см. в следующих статьях:
+For information on selecting a service tier for your particular workload, see the following articles:
 
-- [Когда следует выбирать уровень служб общего назначения](sql-database-service-tier-general-purpose.md#when-to-choose-this-service-tier)
-- [Когда следует выбирать уровень служб критически важный для бизнеса](sql-database-service-tier-business-critical.md#when-to-choose-this-service-tier)
-- [Когда следует выбирать уровень службы "линейка"](sql-database-service-tier-hyperscale.md#who-should-consider-the-hyperscale-service-tier)
+- [When to choose the General purpose service tier](sql-database-service-tier-general-purpose.md#when-to-choose-this-service-tier)
+- [When to choose the Business Critical service tier](sql-database-service-tier-business-critical.md#when-to-choose-this-service-tier)
+- [When to choose the Hyperscale service tier](sql-database-service-tier-hyperscale.md#who-should-consider-the-hyperscale-service-tier)
 
 
-## <a name="compute-tiers"></a>Уровни вычислений
+## <a name="compute-tiers"></a>Compute tiers
 
-Параметры уровня вычислений в модели Виртуальное ядро включают подготовленные и бессерверные уровни вычислений.
+Compute tier options in the vCore model include the provisioned and serverless compute tiers.
 
 
 ### <a name="provisioned-compute"></a>Подготовленные вычислительные ресурсы
 
-Подготовленный уровень вычислений предоставляет определенный объем ресурсов вычислений, которые непрерывно подготавливаются независимо от активности рабочей нагрузки, и выставляются счета за указанный объем вычислений по фиксированной цене за час.
+The provisioned compute tier provides a specific amount of compute resources that are continuously provisioned independent of workload activity, and bills for the amount of compute provisioned at a fixed price per hour.
 
 
 ### <a name="serverless-compute"></a>Бессерверные вычисления
 
-Масштабируемые ресурсы с [бессерверным уровнем вычислений](sql-database-serverless.md) автомасштабирование на основе активности рабочей нагрузки, а также счета за количество вычислений, использованных в секунду.
+The [serverless compute tier](sql-database-serverless.md) auto-scales compute resources based on workload activity, and bills for the amount of compute used per second.
 
 
 
-## <a name="hardware-generations"></a>Поколения оборудования
+## <a name="hardware-generations"></a>Hardware generations
 
-Варианты создания оборудования в модели Виртуальное ядро включают в себя поколения 4/5, M-Series (Предварительная версия) и серия fsv2 (Предварительная версия). Создание оборудования обычно определяет ограничения вычислений и памяти, а также другие характеристики, влияющие на производительность рабочей нагрузки.
+Hardware generation options in the vCore model include Gen 4/5, M-series (preview), and Fsv2-series (preview). The hardware generation generally defines the compute and memory limits and other characteristics that impact the performance of the workload.
 
-### <a name="gen4gen5"></a>Го поколения/го поколения
+### <a name="gen4gen5"></a>Gen4/Gen5
 
-- Оборудование го поколения/го поколения предоставляет сбалансированные ресурсы вычислений и памяти и подходит для большинства рабочих нагрузок баз данных, которые не имеют более высоких объемов памяти, более Виртуальное ядро или более быстрые требования к Виртуальное ядро, предоставляемые сериями серия fsv2 или серии M.
+- Gen4/Gen5 hardware provides balanced compute and memory resources, and is suitable for most database workloads that do not have higher memory, higher vCore, or faster single vCore requirements as provided by Fsv2-series or M-series.
 
-Сведения о регионах, где доступна го поколения/го поколения, см. в разделе [доступность го поколения/го поколения](#gen4gen5-1).
+For regions where Gen4/Gen5 is available, see [Gen4/Gen5 availability](#gen4gen5-1).
 
-### <a name="fsv2-seriespreview"></a>Серии серия fsv2 (Предварительная версия)
+### <a name="fsv2-seriespreview"></a>Fsv2-series (preview)
 
-- Серия серия fsv2 — это оптимизированный для вычислений аппаратный вариант, обеспечивающий низкую задержку процессора и высокую тактовую частоту для большинства ресурсоемких рабочих нагрузок.
-- В зависимости от рабочей нагрузки серия fsv2-Series может доставлять больше производительности ЦП на виртуальное ядро, чем го поколения, а размер 72 Виртуальное ядро может обеспечить дополнительную производительность ЦП для менее затрат, чем 80 виртуальных ядер на го поколения. 
-- Серия fsv2 предоставляет меньше памяти и tempdb на виртуальное ядро по сравнению с другим оборудованием, поэтому для рабочих нагрузок, зависящих от этих ограничений, может потребоваться использовать вместо него го поколения или серии M.  
+- Fsv2-series is a compute optimized hardware option delivering low CPU latency and high clock speed for the most CPU demanding workloads.
+- Depending on the workload, Fsv2-series can deliver more CPU performance per vCore than Gen5, and the 72 vCore size can provide more CPU performance for less cost than 80 vCores on Gen5. 
+- Fsv2 provides less memory and tempdb per vCore than other hardware so workloads sensitive to those limits may want to consider Gen5 or M-series instead.  
 
-Для регионов, где доступна серия серия fsv2, см. статью [доступность серии серия fsv2](#fsv2-series).
-
-
-### <a name="m-seriespreview"></a>Серия M (Предварительная версия)
-
-- Серия M — это оптимизированное для памяти оборудование для рабочих нагрузок, которым требуется больший объем памяти и более высокие ограничения вычислений, чем предоставлено го поколения.
-- Серия M предоставляет 29 ГБ на виртуальное ядро и 128 виртуальных ядер, что увеличивает ограничение памяти относительно го поколения на 4 ТБ.
-
-Чтобы включить оборудование серии M для подписки и региона, запрос на поддержку должен быть открыт. Если запрос на поддержку утвержден, выбор и подготовка к работе с сериями M следуют той же схеме, что и для других поколений оборудования. Для регионов, где доступна серия M, см. статью [доступность рядов m](#m-series).
+For regions where Fsv2-series is available, see [Fsv2-series availability](#fsv2-series).
 
 
-### <a name="compute-and-memory-specifications"></a>Спецификации вычислений и памяти
+### <a name="m-seriespreview"></a>M-series (preview)
+
+- M-series is a memory optimized hardware option for workloads demanding more memory and higher compute limits than provided by Gen5.
+- M-series provides 29 GB per vCore and 128 vCores, which increases the memory limit relative to Gen5 by 8x to nearly 4 TB.
+
+To enable M-series hardware for a subscription and region, a support request must be open. If the support request is approved, then the selection and provisioning experience of M-series follows the same pattern as for other hardware generations. For regions where M-series is available, see [M-series availability](#m-series).
 
 
-|Поколение оборудования  |Среда выполнения приложений  |Память  |
+### <a name="compute-and-memory-specifications"></a>Compute and memory specifications
+
+
+|Поколение оборудования  |Compute  |Память  |
 |:---------|:---------|:---------|
-|Го поколения     |Процессоры Intel 2673 v3 (Haswell) с частотой 2,4 ГГц<br>-Подготавливать до 24 виртуальных ядер (1 Виртуальное ядро = 1 физическое ядро)  |-7 ГБ на виртуальное ядро<br>— Подготавливается до 168 ГБ|
-|5-го поколения     |**Подготовленные вычисления**<br>Процессоры Intel 2673 V4 (Broadwell) с частотой 2,3 ГГц<br>— Подготавливается до 80 виртуальных ядер (1 Виртуальное ядро = 1 Hyper-Thread)<br><br>**Бессерверные вычисления**<br>Процессоры Intel 2673 V4 (Broadwell) с частотой 2,3 ГГц<br>— Автоматическое масштабирование до 16 виртуальных ядер (1 Виртуальное ядро = 1 Hyper-Thread)|**Подготовленные вычисления**<br>-5,1 ГБ на виртуальное ядро<br>— Подготавливается до 408 ГБ<br><br>**Бессерверные вычисления**<br>— Автоматическое масштабирование до 24 ГБ на виртуальное ядро<br>— Автоматическое масштабирование до 48 ГБ (максимум)|
-|Серия Fsv2     |— Процессоры Intel Xeon Platinum 8168 (SkyLake)<br>— Обеспечивается постоянная вся частота ядра Turbo 3,4 ГГц и максимальная скорость одного ядра с частотой в 3,7 ГГц.<br>— Инициализация 72 виртуальных ядер (1 Виртуальное ядро = 1 Hyper-Thread)|-1,9 ГБ на виртуальное ядро<br>— Инициализация 136 ГБ|
-|Серия M     |Процессоры Intel Xeon E7-8890 v3 с частотой 2,5 ГГц<br>— Инициализация 128 виртуальных ядер (1 Виртуальное ядро = 1 Hyper-Thread)|– 29 ГБ на виртуальное ядро<br>— Инициализация 3,7 ТБ|
+|Gen4     |- Intel E5-2673 v3 (Haswell) 2.4 GHz processors<br>- Provision up to 24 vCores (1 vCore = 1 physical core)  |- 7 GB per vCore<br>- Provision up to 168 GB|
+|5-е поколение     |**Подготовленные вычисления**<br>- Intel E5-2673 v4 (Broadwell) 2.3 GHz processors<br>- Provision up to 80 vCores (1 vCore = 1 hyper-thread)<br><br>**Бессерверные вычисления**<br>- Intel E5-2673 v4 (Broadwell) 2.3 GHz processors<br>- Auto-scale up to 16 vCores (1 vCore = 1 hyper-thread)|**Подготовленные вычисления**<br>- 5.1 GB per vCore<br>- Provision up to 408 GB<br><br>**Бессерверные вычисления**<br>- Auto-scale up to 24 GB per vCore<br>- Auto-scale up to 48 GB max|
+|Серия Fsv2     |- Intel Xeon Platinum 8168 (SkyLake) processors<br>- Featuring a sustained all core turbo clock speed of 3.4 GHz and a maximum single core turbo clock speed of 3.7 GHz.<br>- Provision 72 vCores (1 vCore = 1 hyper-thread)|- 1.9 GB per vCore<br>- Provision 136 GB|
+|Серия M     |- Intel Xeon E7-8890 v3 2.5 GHz processors<br>- Provision 128 vCores (1 vCore = 1 hyper-thread)|- 29 GB per vCore<br>- Provision 3.7 TB|
 
 
-Дополнительные сведения об ограничениях ресурсов см. в разделе [ограничения ресурсов для отдельных баз данных (Виртуальное ядро)](sql-database-vcore-resource-limits-single-databases.md)или [ограничения ресурсов для эластичных пулов (Виртуальное ядро)](sql-database-vcore-resource-limits-elastic-pools.md).
+For more information on resource limits, see [Resource limits for single databases (vCore)](sql-database-vcore-resource-limits-single-databases.md), or [Resource limits for elastic pools (vCore)](sql-database-vcore-resource-limits-elastic-pools.md).
 
-### <a name="selecting-a-hardware-generation"></a>Выбор создания оборудования
+### <a name="selecting-a-hardware-generation"></a>Selecting a hardware generation
 
-В портал Azure можно выбрать создание оборудования для базы данных или пула SQL во время создания или изменить создание оборудования для существующей базы данных или пула SQL.
+In the Azure portal, you can select the hardware generation for a SQL database or pool at the time of creation, or you can change the hardware generation of an existing SQL database or pool.
 
-**Выбор создания оборудования при создании базы данных или пула SQL**
+**To select a hardware generation when creating a SQL database or pool**
 
-Подробные сведения см. [в разделе Создание базы данных SQL](sql-database-single-database-get-started.md).
+For detailed information, see [Create a SQL database](sql-database-single-database-get-started.md).
 
-На вкладке " **основы** " выберите ссылку **настроить базу данных** в разделе " **Вычисление и хранилище** ", а затем щелкните ссылку " **изменить конфигурацию** ":
+On the **Basics** tab, select the **Configure database** link in the **Compute + storage** section, and then select the **Change configuration** link:
 
   ![настройка базы данных](media/sql-database-service-tiers-vcore/configure-sql-database.png)
 
-Выберите нужное поколение оборудования:
+Select the desired hardware generation:
 
-  ![Выбор оборудования](media/sql-database-service-tiers-vcore/select-hardware.png)
+  ![select hardware](media/sql-database-service-tiers-vcore/select-hardware.png)
 
 
-**Изменение создания оборудования существующей базы данных или пула SQL**
+**To change the hardware generation of an existing SQL database or pool**
 
-Для базы данных на странице Обзор выберите ссылку **ценовая** Категория:
+For a database, on the Overview page, select the **Pricing tier** link:
 
-  ![изменение оборудования](media/sql-database-service-tiers-vcore/change-hardware.png)
+  ![change hardware](media/sql-database-service-tiers-vcore/change-hardware.png)
 
-Для пула на странице Обзор выберите **Настройка**.
+For a pool, on the Overview page, select **Configure**.
 
-Выполните действия по изменению конфигурации и выберите поколение оборудования, как описано в предыдущих шагах.
+Follow the steps to change configuration, and select the hardware generation as described in the previous steps.
 
-### <a name="hardware-availability"></a>Доступность оборудования
+### <a name="hardware-availability"></a>Hardware availability
 
-#### <a name="gen4gen5-1"></a>Го поколения/го поколения
+#### <a name="gen4gen5-1"></a> Gen4/Gen5
 
-Новые базы данных го поколения больше не поддерживаются в Восточная Австралия или Южная Бразилия регионах. 
+New Gen4 databases are no longer supported in the Australia East or Brazil South regions. 
 
-Го поколения доступен в большинстве регионов по всему миру.
+Gen5 is available in most regions worldwide.
 
 #### <a name="fsv2-series"></a>Серия Fsv2
 
-Серия серия fsv2 доступна в следующих регионах: Центральная Австралия, Центральная Австралия 2, Восточная Австралия, юго-восток Австралии, Южная Бразилия, Центральная Канада, Восточная Азия, Восточная часть США, Центральная Австралия, Центральная Индия, Западная Индия, Центральная Корея, Южная Корея, Юг Южной, Северная Европа, Северная Африка, Юго-Восток, Восточная Азия, южная часть Соединенного Королевства, западная часть Соединенного Королевства, Западная Европа, Западная часть США 2.
+Fsv2-series is available in the following regions: Australia Central, Australia Central 2, Australia East, Australia Southeast, Brazil South, Canada Central, East Asia, East Us, France Central, India Central, India West, Korea Central, Korea South, North Europe, South Africa North, Southeast Asia, UK South, UK West, West Europe, West Us 2.
 
 
 #### <a name="m-series"></a>Серия M
 
-Серия M доступна в следующих регионах: Восточная часть США, Северная Европа, Западная Европа, Западная часть США 2.
-Ряд M также может иметь ограниченную доступность в дополнительных регионах. Вы можете запросить регион, отличный от указанного здесь, но выполнение в другом регионе может оказаться невозможным.
+M-series is available in the following regions: East US, North Europe, West Europe, West US 2.
+M-series may also have limited availability in additional regions. You can request a different region than listed here, but fulfillment in a different region may not be possible.
 
-Чтобы включить доступность серии M в подписке, необходимо запрашивать доступ, заменяя [новый запрос в службу поддержки](#create-a-support-request-to-enable-m-series).
+To enable M-series availability in a subscription, access must be requested by [filing a new support request](#create-a-support-request-to-enable-m-series).
 
 
-##### <a name="create-a-support-request-to-enable-m-series"></a>Создайте запрос в службу поддержки, чтобы включить ряд M: 
+##### <a name="create-a-support-request-to-enable-m-series"></a>Create a support request to enable M-series: 
 
-1. На портале выберите **Справка и поддержка** .
+1. Select **Help + support** in the portal.
 2. Выберите **Новый запрос в службу поддержки**.
 
-На странице **Основные сведения** укажите следующее.
+On the **Basics** page, provide the following:
 
 1. Для поля **Тип проблемы** выберите **Ограничения службы и подписки (квоты)** .
-2. Для **подписки** = выберите подписку, чтобы включить ряд M.
-3. В качестве **типа квоты**выберите **база данных SQL**.
-4. Нажмите кнопку **Далее** , чтобы открыть страницу **сведений** .
+2. For **Subscription** = select the subscription to enable M-series.
+3. For **Quota type**, select **SQL database**.
+4. Select **Next** to go to the **Details** page.
 
-На странице **сведения** укажите следующие данные.
+On the **Details** page, provide the following:
 
-5. В разделе **сведения о проблеме** выберите ссылку **указать сведения** . 
-6. Для **типа квоты базы данных SQL** выберите пункт **M-Series**.
-7. В поле **регион**выберите регион, чтобы включить ряд M.
-    Для регионов, где доступна серия M, см. статью [доступность рядов m](#m-series).
+5. In the **PROBLEM DETAILS** section select the **Provide details** link. 
+6. For **SQL Database quota type** select **M-series**.
+7. For **Region**, select the region to enable M-series.
+    For regions where M-series is available, see [M-series availability](#m-series).
 
-Утвержденные запросы на поддержку обычно выполняются в течение 5 рабочих дней.
+Approved support requests are typically fulfilled within 5 business days.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Сведения о создании базы данных SQL см. [в разделе Создание базы данных SQL с помощью портал Azure](sql-database-single-database-get-started.md).
-- Сведения о конкретных размерах вычислений и размерах хранилища, доступных для отдельных баз данных, см. в статье [ограничения ресурсов на основе виртуальное ядро базы данных SQL для отдельных баз](sql-database-vcore-resource-limits-single-databases.md)данных.
-- Конкретные размеры вычислений и выбор размера хранилища, доступные для эластичных пулов, см. в разделе [SQL Database Виртуальное ядро Limits for эластичные пулы](sql-database-vcore-resource-limits-elastic-pools.md).
-- Сведения о ценах см. на [странице цен на базу данных SQL Azure](https://azure.microsoft.com/pricing/details/sql-database/single/).
+- To create a SQL database, see [Creating a SQL database using the Azure portal](sql-database-single-database-get-started.md).
+- For the specific compute sizes and storage size choices available for single databases, see [SQL Database vCore-based resource limits for single databases](sql-database-vcore-resource-limits-single-databases.md).
+- For the specific compute sizes and storage size choices available for elastic pools, see [SQL Database vCore-based resource limits for elastic pools](sql-database-vcore-resource-limits-elastic-pools.md).
+- For pricing details, see the [Azure SQL Database pricing page](https://azure.microsoft.com/pricing/details/sql-database/single/).

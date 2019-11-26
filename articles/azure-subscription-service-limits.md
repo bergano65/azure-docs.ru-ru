@@ -10,12 +10,12 @@ ms.service: cost-management-billing
 ms.topic: article
 ms.date: 05/30/2019
 ms.author: byvinyal
-ms.openlocfilehash: ed08a457ac00da7b40dc267cc1eb3b61db9df297
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 08c459a3c32b44df2d9e5cf783087dd34d660292
+ms.sourcegitcommit: 95931aa19a9a2f208dedc9733b22c4cdff38addc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74224481"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74463306"
 ---
 # <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Подписка Azure и лимиты службы, квоты и ограничения
 В этом документе указаны некоторые из наиболее распространенных ограничений Microsoft Azure, которые иногда называются квотами. Этот документ на текущий момент охватывает не все службы Azure. Over time, the list will be expanded and updated to cover more services.
@@ -76,6 +76,7 @@ In the following list of limits, a new table reflects any differences in limits 
 * [Центры событий](#event-hubs-limits)
 * [Front Door Service](#azure-front-door-service-limits)
 * [Identity Manager](#identity-manager-limits)
+* [IoT Central](#iot-central-limits)
 * [Центр Интернета вещей](#iot-hub-limits)
 * [Служба подготовки устройств к добавлению в Центр Интернета вещей](#iot-hub-device-provisioning-service-limits)
 * [хранилище ключей;](#key-vault-limits)
@@ -329,6 +330,9 @@ To learn more about limits on a more granular level, such as document size, quer
 
 ### <a name="service-bus-limits"></a>Ограничения служебной шины
 [!INCLUDE [azure-servicebus-limits](../includes/service-bus-quotas-table.md)]
+
+### <a name="iot-central-limits"></a>IoT Central limits
+[!INCLUDE [iot-central-limits](../includes/iot-central-limits.md)]
 
 ### <a name="iot-hub-limits"></a>Пределы для Центра Интернета вещей
 [!INCLUDE [azure-iothub-limits](../includes/iot-hub-limits.md)]

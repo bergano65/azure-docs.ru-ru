@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/20/2019
 ms.author: memildin
-ms.openlocfilehash: 435ae9f08f718a9310fd1687fb7859058edf8b45
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: 0479918ad2afa99dcd9f18d3ba81f94a3e262e9e
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74384244"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74479379"
 ---
 # <a name="integrate-security-solutions-in-azure-security-center"></a>Интеграция решений по обеспечению безопасности в центре безопасности Azure
 В этом документе описана процедура управления решениями по обеспечению безопасности, подключенными к центру безопасности Azure, и добавления новых решений.
@@ -27,7 +27,7 @@ ms.locfileid: "74384244"
 > A subset of security solutions has been retired on July 31st, 2019. For more information and alternative services, see [Retirement of Security Center features (July 2019)](security-center-features-retirement-july2019.md#menu_solutions).
 
 ## <a name="integrated-azure-security-solutions"></a>Интегрированные решения по обеспечению безопасности Azure
-Центр безопасности упрощает включение интегрированных решений по обеспечению безопасности в Azure. Основные преимущества:
+Центр безопасности упрощает включение интегрированных решений по обеспечению безопасности в Azure. Преимущества:
 
 - **Упрощенное развертывание.** Центр безопасности предлагает упрощенную подготовку партнерских решений обеспечения безопасности. For solutions like antimalware and vulnerability assessment, Security Center can provision the agent on your virtual machines. For firewall appliances, Security Center can take care of much of the network configuration required.
 - **Интегрированные обнаружения.** События безопасности автоматически собираются из партнерских решений, объединяются и отображаются в списках оповещений и инцидентов центра безопасности. Эти события используются совместно с результатами сканирования других источников, что дает дополнительные возможности для обнаружения угроз.
@@ -102,6 +102,10 @@ Select **CONNECT** under a solution to integrate with Security Center and be not
 ![Источники данных](./media/security-center-partner-integration/security-center-partner-integration-fig7.png)
 
 ## <a name="exporting-data-to-a-siem"></a>Экспорт данных в SIEM
+
+> [!NOTE]
+> For details of a simpler method (currently in preview) for exporting data to a SIEM, see [Export security alerts and recommendations (Preview)](continuous-export.md). The new method does not use Activity Log as an intermediator and allows direct export from Security Center to Event Hubs (and then on to your SIEM), it also supports the export of Security Recommendations.
+
 
 You can configure your SIEMs or other monitoring tools to receive Azure Security Center events.
 

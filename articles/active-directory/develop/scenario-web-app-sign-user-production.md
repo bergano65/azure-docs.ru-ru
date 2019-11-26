@@ -1,6 +1,6 @@
 ---
-title: Веб-приложение, которое входит в систему пользователей (переместить в рабочую среду) — платформа Microsoft Identity
-description: Узнайте, как создать веб-приложение, которое входит в систему пользователей (переходит в рабочую среду).
+title: Web app that signs in users (move to production) - Microsoft identity platform
+description: Learn how to build a web app that signs in users (move to production)
 services: active-directory
 documentationcenter: dev-center-name
 author: jmprieur
@@ -15,38 +15,46 @@ ms.date: 09/17/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bd6717c132d32d54c16e7678695a09e35181a057
-ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
+ms.openlocfilehash: efcc7ed4f80d0e3e9750d19ff95d010052a08b87
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71086551"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74481877"
 ---
-# <a name="web-app-that-signs-in-users---move-to-production"></a>Веб-приложение, которое входит в систему пользователей — перейти в рабочую среду
+# <a name="web-app-that-signs-in-users-move-to-production"></a>Web app that signs in users: Move to production
 
-Теперь, когда вы узнали, как получить маркер для вызова веб-API, Узнайте, как переместить его в рабочую среду.
+Now that you know how to get a token to call web APIs, learn how to move it to production.
 
 [!INCLUDE [Move to production common steps](../../../includes/active-directory-develop-scenarios-production.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-### <a name="calling-web-apis-scenario"></a>Вызов сценария веб-API
+### <a name="scenario-for-calling-web-apis"></a>Scenario for calling web APIs
 
-После входа в веб-приложение пользователи могут вызывать веб-API от имени вошедших в систему пользователей. Вызов веб-API из веб-приложения является объектом следующего сценария:
+After your web app signs in users, it can call web APIs on behalf of the signed-in users. Calling web APIs from the web app is the object of the following scenario:
 
 > [!div class="nextstepaction"]
 > [Веб-приложение, которое вызывает веб-API](scenario-web-app-call-api-overview.md)
 
-### <a name="deep-dive---aspnet-core-web-app-tutorial"></a>Руководство по веб-приложениям для глубокого углубления ASP.NET Core
+### <a name="deep-dive-aspnet-core-web-app-tutorial"></a>Deep dive: ASP.NET Core web app tutorial
 
-Узнайте о других способах входа пользователей с помощью ASP.NET Core учебнике [MS-Identity-aspnetcore-webapp-Tutorial](https://github.com/Azure-Samples/ms-identity-aspnetcore-webapp-tutorial). Этот пример представляет собой прогрессивный учебник с кодом готовности к работе для веб-приложения, включая добавление входа с учетными записями в:
+Learn about other ways to sign in users with this ASP.NET Core tutorial: 
 
-- Ваша организация,
-- несколько организаций,
-- рабочие или учебные учетные записи или персональные учетная запись Майкрософт
-- с [Azure AD B2C](https://aka.ms/aadb2c)
-- или в национальных облаках.
+> [!div class="nextstepaction"]
+> [Enable your web apps to sign in users and call APIs with the Microsoft identity platform for developers](https://github.com/Azure-Samples/ms-identity-aspnetcore-webapp-tutorial) 
 
-### <a name="sample-code---java-web-app"></a>Пример кода — веб-приложение Java
+This progressive tutorial has production-ready code for a web app, including how to add sign-in with accounts in:
 
-Дополнительные сведения о веб-приложении Java см. в примере на сайте GitHub: [Веб-приложение Java, которое входит в систему пользователей с платформой идентификации Майкрософт и вызывает Microsoft Graph](https://github.com/Azure-Samples/ms-identity-java-webapp)
+- Your organization
+- Multiple organizations
+- Work or school accounts, or personal Microsoft accounts
+- [Azure AD B2C](https://aka.ms/aadb2c)
+- National clouds
+
+### <a name="sample-code-java-web-app"></a>Sample code: Java web app
+
+Learn more about the Java web app from this sample on GitHub: 
+
+> [!div class="nextstepaction"]
+> [A Java Web application that signs in users with the Microsoft identity platform and calls Microsoft Graph](https://github.com/Azure-Samples/ms-identity-java-webapp)

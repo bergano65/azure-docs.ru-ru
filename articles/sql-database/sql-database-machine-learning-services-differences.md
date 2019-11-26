@@ -1,5 +1,5 @@
 ---
-title: Основные отличия для Службы машинного обучения (Предварительная версия)
+title: Key differences for Machine Learning Services (preview)
 description: Здесь описываются основные различия между Службами машинного обучения Базы данных SQL Azure (с использованием R) и Службами машинного обучения SQL Server.
 services: sql-database
 ms.service: sql-database
@@ -11,22 +11,19 @@ author: dphansen
 ms.author: davidph
 ms.reviewer: carlrab
 manager: cgronlun
-ms.date: 03/01/2019
-ms.openlocfilehash: 1397f5d81ddf63740d733111b965a0517a2b917f
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.date: 11/20/2019
+ms.openlocfilehash: 533e2b9e50a92cce1419da521d8cebc4955e4df6
+ms.sourcegitcommit: 95931aa19a9a2f208dedc9733b22c4cdff38addc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73827469"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74462118"
 ---
-# <a name="key-differences-between-machine-learning-services-in-azure-sql-database-preview-and-sql-server"></a>Основные различия между Службы машинного обучения в базе данных SQL Azure (Предварительная версия) и SQL Server
+# <a name="key-differences-between-machine-learning-services-in-azure-sql-database-preview-and-sql-server"></a>Key differences between Machine Learning Services in Azure SQL Database (preview) and SQL Server
 
-Функции Службы машинного обучения базы данных SQL Azure (с R) в (Предварительная версия) похожи на [SQL Server службы машинного обучения](https://docs.microsoft.com/sql/advanced-analytics/what-is-sql-server-machine-learning). Ниже приведены некоторые ключевые отличия.
+The functionality of Azure SQL Database Machine Learning Services (with R) in  (preview) is similar to [SQL Server Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/what-is-sql-server-machine-learning). Below are some key differences.
 
-> [!IMPORTANT]
-> Сейчас службы машинного обучения в Базе данных SQL Azure находятся в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
-> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+[!INCLUDE[ml-preview-note](../../includes/sql-database-ml-preview-note.md)]
 
 ## <a name="language-support"></a>Поддержка языков
 
@@ -41,30 +38,30 @@ SQL Server обеспечивает поддержку R и Python через [�
 Установка пакетов R и управление ими в Базе данных SQL и SQL Server отличаются, в частности:
 
 - Пакеты R устанавливаются с использованием [sqlmlutils](https://github.com/Microsoft/sqlmlutils) или [CREATE EXTERNAL LIBRARY](https://docs.microsoft.com/sql/t-sql/statements/create-external-library-transact-sql).
-- Пакеты не могут выполнять исходящие сетевые вызовы. Это ограничение аналогично [правилам брандмауэра по умолчанию для службы машинного обучения](https://docs.microsoft.com//sql/advanced-analytics/security/firewall-configuration) в SQL Server, но не может быть изменено в базе данных SQL.
+- Пакеты не могут выполнять исходящие сетевые вызовы. This limitation is similar to the [default firewall rules for Machine Learning Services](https://docs.microsoft.com//sql/advanced-analytics/security/firewall-configuration) in SQL Server, but can't be changed in SQL Database.
 - Пакеты, которые зависят от внешних сред выполнения (например, Java) или которым требуется доступ к API операционной системы для установки или использования, не поддерживаются.
 
-## <a name="writing-to-a-temporary-table"></a>Запись во временную таблицу
+## <a name="writing-to-a-temporary-table"></a>Writing to a temporary table
 
-Если вы используете RODBC в базе данных SQL Azure, то не сможете выполнить запись во временную таблицу независимо от того, создана ли она внутри или вне сеанса `sp_execute_external_script`. Обходной путь заключается в использовании [RxOdbcData](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxodbcdata) и [rxDataStep](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxdatastep) (with overwrite = false и Append = "Rows") для записи в глобальную временную таблицу, созданную перед запросом `sp_execute_external_script`.
+If you're using RODBC in Azure SQL Database, then you can't write to a temporary table, whether it's created inside or outside of the `sp_execute_external_script` session. The workaround is to use [RxOdbcData](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxodbcdata) and [rxDataStep](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxdatastep) (with overwrite=FALSE and append="rows") to write to a global temporary table created before the `sp_execute_external_script` query.
 
 ## <a name="resource-governance"></a>управление ресурсами;
 
 Ресурсы R невозможно ограничить с помощью [Resource Governor](https://docs.microsoft.com/sql/relational-databases/resource-governor/resource-governor) и внешних пулов ресурсов.
 
-В общедоступной предварительной версии ресурсы R задаются максимум 20% ресурсов базы данных SQL и зависят от выбранного уровня служб. Дополнительные сведения см. в статье [Модели приобретения Базы данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-service-tiers).
-### <a name="insufficient-memory-error"></a>Ошибка "недостаточно памяти"
+During the public preview, R resources are set to a maximum of 20% of the SQL Database resources, and depend on which service tier you choose. Дополнительные сведения см. в статье [Модели приобретения Базы данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-service-tiers).
+### <a name="insufficient-memory-error"></a>Insufficient memory error
 
-Если объем доступной памяти для R недостаточен, вы получите сообщение об ошибке. Распространенные сообщения об ошибках:
+If there is insufficient memory available for R, you will get an error message. Common error messages are:
 
-- Не удается связаться со средой выполнения для скрипта "R" для идентификатора запроса: * * * * * * *. Проверьте требования среды выполнения "R".
-- Произошла ошибка сценария R во время выполнения "sp_execute_external_script" с HRESULT 0x80004004. ... произошла ошибка внешнего скрипта: ".. не удалось выделить память (0 МБ) в функции C "R_AllocStringBuffer" "
-- Произошла ошибка внешнего скрипта: ошибка: не удается выделить вектор размера.
+- Unable to communicate with the runtime for 'R' script for request id: *******. Please check the requirements of 'R' runtime
+- 'R' script error occurred during execution of 'sp_execute_external_script' with HRESULT 0x80004004. ...an external script error occurred: "..could not allocate memory (0 Mb) in C function 'R_AllocStringBuffer'"
+- An external script error occurred: Error: cannot allocate vector of size.
 
-Использование памяти зависит от того, сколько используется в скриптах R и сколько параллельных запросов выполняется. Если вы получаете приведенные выше ошибки, для решения этой проблемы можно масштабировать базу данных до более высокого уровня служб.
+Memory usage depends on how much is used in your R scripts and the number of parallel queries being executed. If you receive the errors above, you can scale your database to a higher service tier to resolve this.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- См. Обзор, [службы машинного обучения базы данных SQL Azure с R (Предварительная версия)](sql-database-machine-learning-services-overview.md).
-- Сведения о том, как использовать R для запроса базы данных SQL Azure Службы машинного обучения (Предварительная версия), см. в [руководстве по быстрому](sql-database-connect-query-r.md)запуску.
-- Чтобы приступить к работе с некоторыми простыми скриптами R, ознакомьтесь со статьей [Создание и выполнение простых скриптов r в базе данных SQL Azure службы машинного обучения (Предварительная версия)](sql-database-quickstart-r-create-script.md).
+- See the overview, [Azure SQL Database Machine Learning Services with R (preview)](sql-database-machine-learning-services-overview.md).
+- To learn how to use R to query Azure SQL Database Machine Learning Services (preview), see the [Quickstart guide](sql-database-connect-query-r.md).
+- To get started with some simple R scripts, see [Create and run simple R scripts in Azure SQL Database Machine Learning Services (preview)](sql-database-quickstart-r-create-script.md).

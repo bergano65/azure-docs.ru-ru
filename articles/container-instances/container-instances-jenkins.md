@@ -1,25 +1,20 @@
 ---
-title: Использование Экземпляров контейнеров Azure в качестве агента сборки Jenkins
-description: Узнайте, как настроить сервер Jenkins для выполнения заданий сборки по запросу в службе "экземпляры контейнеров Azure".
-services: container-instances
-author: dlepow
-manager: gwallace
-ms.service: container-instances
+title: Jenkins build on container instance
+description: Learn how to configure a Jenkins server to run build jobs on-demand in Azure Container Instances
 ms.topic: article
 ms.date: 08/31/2018
-ms.author: danlep
-ms.openlocfilehash: 7e93457a182598a2e8d739f4d626b49ff57b30fb
-ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
+ms.openlocfilehash: e63ade82d4efeed40a9fba6f11d16131e8c728e7
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74150217"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74484061"
 ---
 # <a name="use-azure-container-instances-as-a-jenkins-build-agent"></a>Использование Экземпляров контейнеров Azure в качестве агента сборки Jenkins
 
 Экземпляры контейнеров Azure (ACI) предоставляют доступную по требованию изолированную среду выполнения с накапливаемыми ресурсами для контейнерных рабочих нагрузок. Эти характеристики делают ACI отличной платформой для масштабного выполнения заданий сборки Jenkins. В этой статье описано, как развертывать и использовать сервер Jenkins, для которого целевым объектом сборки указаны экземпляры контейнеров Azure.
 
-Дополнительные сведения о службе "экземпляры контейнеров Azure" см. в статье о службе " [экземпляры контейнеров Azure][about-aci]".
+For more information on Azure Container Instances, see [About Azure Container Instances][about-aci].
 
 ## <a name="deploy-a-jenkins-server"></a>Развертывание сервера Jenkins
 
@@ -48,7 +43,7 @@ ms.locfileid: "74150217"
 
    ![Дополнительные параметры для развертывания Jenkins на портале](./media/container-instances-jenkins/jenkins-portal-02.png)
 
-4. Для интеграции субъекта-службы выберите **Авто (MSI)** , чтобы [управляемые удостоверения для ресурсов Azure][managed-identities-azure-resources] автоматически создали удостоверение проверки подлинности для экземпляра Jenkins. Выберите режим **Вручную**, если вы можете предоставить собственные учетные данные для субъекта-службы.
+4. For service principal integration, select **Auto(MSI)** to have [managed identities for Azure resources][managed-identities-azure-resources] automatically create an authentication identity for the Jenkins instance. Выберите режим **Вручную**, если вы можете предоставить собственные учетные данные для субъекта-службы.
 
 5. Облачные агенты настраивают облачную платформу для заданий сборки Jenkins. Для работы с этой статьей выберите **ACI**. Облачный агент ACI запускает каждое задание сборки Jenkins в отдельном экземпляре контейнера.
 
@@ -70,7 +65,7 @@ ms.locfileid: "74150217"
 
 4. После подключения сеанса введите следующую команду, чтобы получить исходный пароль администратора:
 
-   ```
+   ```bash
    sudo cat /var/lib/jenkins/secrets/initialAdminPassword
    ```
 
@@ -132,9 +127,9 @@ ms.locfileid: "74150217"
 
 Если вы столкнулись с ошибками, которые касаются подключаемых модулей Jenkins, сообщите о проблеме конкретного компонента в [JENKS JIRA](https://issues.jenkins-ci.org/).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о Jenkins в Azure см. в статье [Azure и Jenkins][jenkins-azure].
+To learn more about Jenkins on Azure, see [Azure and Jenkins][jenkins-azure].
 
 <!-- LINKS - internal -->
 [about-aci]: ./container-instances-overview.md

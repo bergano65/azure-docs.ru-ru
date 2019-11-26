@@ -4,38 +4,39 @@ description: Добавление данных в новый том хранил
 author: ekpgh
 ms.service: avere-vfxt
 ms.topic: conceptual
-ms.date: 10/31/2018
+ms.date: 11/21/2019
 ms.author: rohogue
-ms.openlocfilehash: f4696d9e2d45e99089c9a723024067bf3b2aabcc
-ms.sourcegitcommit: 1c2659ab26619658799442a6e7604f3c66307a89
+ms.openlocfilehash: 183ed719eb5396fe0e442e6b774d962d1ba48386
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72255438"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74480598"
 ---
-# <a name="moving-data-to-the-vfxt-cluster---parallel-data-ingest"></a>Перемещение данных в кластер vFXT — параллельный прием данных 
+# <a name="moving-data-to-the-vfxt-cluster---parallel-data-ingest"></a>Перемещение данных в кластер vFXT — параллельный прием данных
 
 После создания кластера vFXT первой задачей может быть перемещение данных в новый том хранилища. Однако, если вы будете использовать обычный метод — выполнение простой команды копирования из одного клиента — вероятно, скорость копирования будет низкой. Копирование с помощью одного потока не является хорошим вариантом для копирования данных в серверное хранилище кластера Avere vFXT.
 
 Так как кластер vFXT является масштабируемым кэшем с несколькими клиентами, самый быстрый и эффективный способ копирования данных в него — это использование нескольких клиентов. Этот метод параллелизует прием файлов и объектов.
 
-![Схема, на которой показано многопоточное перемещение данных несколькими клиентами. В левом верхнем углу из значка локального аппаратного хранилища исходят несколько стрелок. Стрелки указывают на четыре клиентских компьютера. Три стрелки из каждого клиентского компьютера направлены на Avere vFXT. Из Avere vFXT несколько стрелок направлены к хранилищу BLOB-объектов.](media/avere-vfxt-parallel-ingest.png) 
+![Схема, показывающая многопоточное перемещение данных с несколькими клиентами. В левом верхнем углу из значка локального аппаратного хранилища исходят несколько стрелок. Стрелки указывают на четыре клиентских компьютера. Три стрелки из каждого клиентского компьютера направлены на Avere vFXT. Из Avere vFXT несколько стрелок направлены к хранилищу BLOB-объектов.](media/avere-vfxt-parallel-ingest.png)
 
 Команды ``cp`` или ``copy``, которые обычно используются для переноса данных из одной системы хранения в другую, представляют собой однопотоковые процессы, которые одновременно копируют по одному файлу за раз. Это означает, что файловый сервер принимает только один файл за раз, что является пустой тратой ресурсов кластера.
 
 В этой статье описываются стратегии создания многоклиентской многопоточной системы копирования файлов для перемещения данных в кластер Avere vFXT. В ней описываются концепции передачи файлов и точки принятия решений, которые можно использовать для эффективного копирования данных с использованием нескольких клиентов и простых команд копирования.
 
-Здесь также описываются некоторые служебные программы, которые могут помочь. С помощью служебной программы ``msrsync`` можно частично автоматизировать процесс разделения набора данных на группы и применение команд rsync. Сценарий ``parallelcp`` — это другая служебная программа, которая считывает исходный каталог и выдает команды копирования автоматически.  
+Здесь также описываются некоторые служебные программы, которые могут помочь. The ``msrsync`` utility can be used to partially automate the process of dividing a dataset into buckets and using ``rsync`` commands. Сценарий ``parallelcp`` — это другая служебная программа, которая считывает исходный каталог и выдает команды копирования автоматически. Also, the ``rsync`` tool can be used in two phases to provide a quicker copy that still provides data consistency.
 
 Щелкните ссылку, чтобы перейти к нужному разделу:
 
 * [Пример копирования вручную](#manual-copy-example) (подробное объяснение использования команд копирования)
-* [Пример частичной автоматизации (msrsync)](#use-the-msrsync-utility-to-populate-cloud-volumes) 
+* [Two-phase rsync example](#use-a-two-phase-rsync-process)
+* [Пример частичной автоматизации (msrsync)](#use-the-msrsync-utility)
 * [Пример параллельного копирования](#use-the-parallel-copy-script)
 
 ## <a name="data-ingestor-vm-template"></a>Шаблон виртуальной машины для приема данных
 
-На GitHub доступен шаблон Resource Manager, позволяющий автоматически создать виртуальную машину со средствами параллельного приема данных, упомянутыми в этой статье. 
+На GitHub доступен шаблон Resource Manager, позволяющий автоматически создать виртуальную машину со средствами параллельного приема данных, упомянутыми в этой статье.
 
 ![Схема, показывающая несколько стрелок из хранилища BLOB-объектов, аппаратного хранилища и файловых хранилищ Azure. Стрелки ведут к виртуальной машине для приема данных, из которой также исходят несколько стрелок к Avere vFXT](media/avere-vfxt-ingestor-vm.png)
 
@@ -50,7 +51,7 @@ ms.locfileid: "72255438"
 
 Каждый процесс копирования имеет пропускную способность и скорость передачи файлов, которые можно измерять по времени команды копирования с учетом размера и количества файлов. Объяснение того, как измерять скорость, выходит за рамки этого документа, но важно понять, с файлами какого размера вы будете работать.
 
-## <a name="manual-copy-example"></a>Пример копирования вручную 
+## <a name="manual-copy-example"></a>Пример копирования вручную
 
 Можно вручную создать многопоточные операции копирования на клиентском компьютере, запустив более одной команды копирования одновременно в фоновом режиме для предопределенных наборов файлов или путей.
 
@@ -64,9 +65,9 @@ cp /mnt/source/file1 /mnt/destination1/ & cp /mnt/source/file2 /mnt/destination1
 
 После запуска этой команды команда `jobs` покажет, что выполняются два потока.
 
-### <a name="predictable-filename-structure"></a>Прогнозируемая структура имен файлов 
+### <a name="predictable-filename-structure"></a>Прогнозируемая структура имен файлов
 
-Если имена файлов предсказуемы, можно использовать выражения для создания параллельных потоков копирования. 
+Если имена файлов предсказуемы, можно использовать выражения для создания параллельных потоков копирования.
 
 Например, если в каталоге содержится 1000 файлов, пронумерованных последовательно от `0001` до `1000`, можно использовать следующие выражения для создания десяти параллельных потоков, каждый из которых копирует 100 файлов:
 
@@ -85,7 +86,7 @@ cp /mnt/source/file9* /mnt/destination1/
 
 ### <a name="unknown-filename-structure"></a>Неизвестная структура имен файлов
 
-Если структура именования файлов непредсказуема, можно сгруппировать файлы по именам каталогов. 
+Если структура именования файлов непредсказуема, можно сгруппировать файлы по именам каталогов.
 
 В этом примере осуществляется сбор целых каталогов для отправки в команды ``cp``, выполняемые в качестве фоновых задач.
 
@@ -103,16 +104,16 @@ cp /mnt/source/file9* /mnt/destination1/
 
 ```bash
 cp /mnt/source/* /mnt/destination/
-mkdir -p /mnt/destination/dir1 && cp /mnt/source/dir1/* mnt/destination/dir1/ & 
-cp -R /mnt/source/dir1/dir1a /mnt/destination/dir1/ & 
-cp -R /mnt/source/dir1/dir1b /mnt/destination/dir1/ & 
+mkdir -p /mnt/destination/dir1 && cp /mnt/source/dir1/* mnt/destination/dir1/ &
+cp -R /mnt/source/dir1/dir1a /mnt/destination/dir1/ &
+cp -R /mnt/source/dir1/dir1b /mnt/destination/dir1/ &
 cp -R /mnt/source/dir1/dir1c /mnt/destination/dir1/ & # this command copies dir1c1 via recursion
 cp -R /mnt/source/dir1/dir1d /mnt/destination/dir1/ &
 ```
 
 ### <a name="when-to-add-mount-points"></a>Когда добавлять точки подключения
 
-После того как будет достаточно параллельных потоков, направленных к одной точке подключения файловой системы, наступит момент, когда добавление потоков не обеспечит больше пропускной способности. (Пропускная способность будет измеряться в файлах в секунду или в байтах в секунду, в зависимости от типа данных.) Что еще хуже, многопоточность иногда может привести к ухудшению пропускной способности.  
+После того как будет достаточно параллельных потоков, направленных к одной точке подключения файловой системы, наступит момент, когда добавление потоков не обеспечит больше пропускной способности. (Throughput will be measured in files/second or bytes/second, depending on your type of data.) Or worse, over-threading can sometimes cause a throughput degradation.
 
 В этом случае можно добавить клиентские точки подключения к другим IP-адресам кластера vFXT, используя тот же путь подключения к удаленной файловой системе:
 
@@ -123,7 +124,7 @@ cp -R /mnt/source/dir1/dir1d /mnt/destination/dir1/ &
 10.1.1.103:/nfs on /mnt/destination3type nfs (rw,vers=3,proto=tcp,addr=10.1.1.103)
 ```
 
-Добавление точек подключения на стороне клиента позволяет разделить дополнительные команды копирования на дополнительные точки подключения `/mnt/destination[1-3]`, что позволяет повысить уровень параллелизма.  
+Добавление точек подключения на стороне клиента позволяет разделить дополнительные команды копирования на дополнительные точки подключения `/mnt/destination[1-3]`, что позволяет повысить уровень параллелизма.
 
 Например, если файлы очень велики, можно определить для команд копирования использование различных путей назначения, параллельно отправив дополнительные команды из клиента, выполняющего копирование.
 
@@ -143,7 +144,7 @@ cp /mnt/source/file8* /mnt/destination3/ & \
 
 ### <a name="when-to-add-clients"></a>Когда следует добавлять клиенты
 
-Наконец, когда вы достигли предела возможностей клиента, добавление потоков копирования или точек подключения не даст дополнительного увеличения числа файлов в секунду или байт в секунду. В этой ситуации можно развернуть другой клиент с тем же набором точек подключения, для которых будут выполняться собственные наборы процессов копирования файлов. 
+Наконец, когда вы достигли предела возможностей клиента, добавление потоков копирования или точек подключения не даст дополнительного увеличения числа файлов в секунду или байт в секунду. В этой ситуации можно развернуть другой клиент с тем же набором точек подключения, для которых будут выполняться собственные наборы процессов копирования файлов.
 
 Пример:
 
@@ -167,7 +168,7 @@ Client4: cp -R /mnt/source/dir3/dir3d /mnt/destination/dir3/ &
 
 ### <a name="create-file-manifests"></a>Создание манифестов файлов
 
-Теперь, когда вы разобрались с описанными выше подходами (несколько потоков копирования для места назначения, несколько мест назначения для клиента, несколько клиентов на каждую доступную в сети файловую систему источника), создайте манифесты файлов, а затем используйте их с командами копирования для нескольких клиентов.
+Теперь, когда вы разобрались с описанными выше подходами (множественные потоки копирования в место назначения, множественные места назначения для клиента, несколько клиентов на каждую доступную в сети файловую систему источника), рассмотрите возможность создания манифестов файлов, а затем возможность использования их с командами копирования для нескольких клиентов.
 
 В этом сценарии для создания манифестов файлов или каталогов используется команда UNIX ``find``:
 
@@ -189,7 +190,7 @@ user@build:/mnt/source > find . -mindepth 4 -maxdepth 4 -type d
 Затем можно выполнить итерацию по манифесту, используя команды BASH для подсчета файлов и определения размеров подкаталогов:
 
 ```bash
-ben@xlcycl1:/sps/internal/atj5b5ab44b7f > for i in $(cat /tmp/foo); do echo " `find ${i} |wc -l`    `du -sh ${i}`"; done
+ben@xlcycl1:/sps/internal/atj5b5ab44b7f > for i in $(cat /tmp/foo); do echo " `find ${i} |wc -l` `du -sh ${i}`"; done
 244    3.5M    ./atj5b5ab44b7f-02/support/gsi/2018-07-18T00:07:03EDT
 9      172K    ./atj5b5ab44b7f-02/support/gsi/stats_2018-07-18T05:01:00UTC
 124    5.8M    ./atj5b5ab44b7f-02/support/gsi/stats_2018-07-19T01:01:01UTC
@@ -225,7 +226,7 @@ ben@xlcycl1:/sps/internal/atj5b5ab44b7f > for i in $(cat /tmp/foo); do echo " `f
 33     2.8G    ./atj5b5ab44b7f-03/support/trace/rolling
 ```
 
-Наконец, вы должны создавать фактические команды копирования файлов для клиентов.  
+Наконец, вы должны создавать фактические команды копирования файлов для клиентов.
 
 При наличии четырех клиентов используйте следующую команду:
 
@@ -239,13 +240,13 @@ for i in 1 2 3 4 ; do sed -n ${i}~4p /tmp/foo > /tmp/client${i}; done
 for i in 1 2 3 4 5; do sed -n ${i}~5p /tmp/foo > /tmp/client${i}; done
 ```
 
-Для шести клиентов... Экстраполируйте при необходимости.
+And for six.... Extrapolate as needed.
 
 ```bash
 for i in 1 2 3 4 5 6; do sed -n ${i}~6p /tmp/foo > /tmp/client${i}; done
 ```
 
-Вы получите *N* файлов (по одному для каждого из ваших *N* клиентов), у которых есть пути к каталогам 4-го уровня, полученные как часть выходных данных команды `find`. 
+Вы получите *N* файлов (по одному для каждого из ваших *N* клиентов), у которых есть пути к каталогам 4-го уровня, полученные как часть выходных данных команды `find`.
 
 Используйте каждый файл для создания команды копирования:
 
@@ -253,28 +254,48 @@ for i in 1 2 3 4 5 6; do sed -n ${i}~6p /tmp/foo > /tmp/client${i}; done
 for i in 1 2 3 4 5 6; do for j in $(cat /tmp/client${i}); do echo "cp -p -R /mnt/source/${j} /mnt/destination/${j}" >> /tmp/client${i}_copy_commands ; done; done
 ```
 
-Вы получите *N* файлов (каждый с командой копирования в строке), которые могут быть запущены в качестве сценария BASH в клиенте. 
+Вы получите *N* файлов (каждый с командой копирования в строке), которые могут быть запущены в качестве сценария BASH в клиенте.
 
 Целью является параллельное выполнение нескольких потоков этих сценариев в каждом клиенте (одновременно в нескольких клиентах).
 
-## <a name="use-the-msrsync-utility-to-populate-cloud-volumes"></a>Использование служебной программы msrsync для заполнения облачных томов
+## <a name="use-a-two-phase-rsync-process"></a>Use a two-phase rsync process
 
-Средство ``msrsync`` также можно использовать для перемещения данных в основное серверное файловое хранилище кластера Avere. Это средство предназначено для оптимизации использования пропускной способности путем запуска нескольких параллельных процессов ``rsync``. Оно доступно на сайте GitHub по адресу https://github.com/jbd/msrsync.
+The standard ``rsync`` utility does not work well for populating cloud storage through the Avere vFXT for Azure system because it generates a large number of file create and rename operations to guarantee data integrity. However, you can safely use the ``--inplace`` option with ``rsync`` to skip the more careful copying procedure if you follow that with a second run that checks file integrity.
+
+A standard ``rsync`` copy operation creates a temporary file and fills it with data. If the data transfer completes successfully, the temporary file is renamed to the original filename. This method guarantees consistency even if the files are accessed during copy. But this method generates more write operations, which slows file movement through the cache.
+
+The option ``--inplace`` writes the new file directly in its final location. Files are not guaranteed to be consistent during transfer, but that is not important if you are priming a storage system for use later.
+
+The second ``rsync`` operation serves as a consistency check on the first operation. Because the files have already been copied, the second phase is a quick scan to ensure that the files on the destination match the files on the source. If any files don't match, they are recopied.
+
+You can issue both phases together in one command:
+
+```bash
+rsync -azh --inplace <source> <destination> && rsync -azh <source> <destination>
+```
+
+This method is a simple and time-effective method for datasets up to the number of files the internal directory manager can handle. (This is typically 200 million files for a 3-node cluster, 500 million files for a six-node cluster, and so on.)
+
+## <a name="use-the-msrsync-utility"></a>Use the msrsync utility
+
+Средство ``msrsync`` также можно использовать для перемещения данных в основное серверное файловое хранилище кластера Avere. Это средство предназначено для оптимизации использования пропускной способности путем запуска нескольких параллельных процессов ``rsync``. Оно доступно на сайте GitHub по адресу <https://github.com/jbd/msrsync>.
 
 ``msrsync`` разбивает исходный каталог на отдельные группы, а затем запускает отдельные процессы ``rsync`` в каждой группе.
 
 Предварительное тестирование с использованием четырех основных виртуальных машин показало наилучшую эффективность при выполнении 64 процессов. Используйте параметр ``-p`` в ``msrsync``, чтобы настроить 64 процесса.
 
-Обратите внимание, что ``msrsync`` может выполнять запись только в локальные тома и из них. Источник и назначение должны быть доступны как локальные точки подключения в виртуальной сети кластера.
+You also can use the ``--inplace`` argument with ``msrsync`` commands. If you use this option, consider running a second command (as with [rsync](#use-a-two-phase-rsync-process), described above) to ensure data integrity.
 
-Чтобы с помощью msrsync заполнить облачный том Azure для кластера Avere, следуйте приведенным ниже инструкциям.
+``msrsync`` can only write to and from local volumes. Источник и назначение должны быть доступны как локальные точки подключения в виртуальной сети кластера.
 
-1. Установите msrsync и необходимые для него компоненты (rsync и Python 2.6 или более поздней версии).
+To use ``msrsync`` to populate an Azure cloud volume with an Avere cluster, follow these instructions:
+
+1. Install ``msrsync`` and its prerequisites (rsync and Python 2.6 or later)
 1. Определите общее число копируемых файлов и каталогов.
 
-   Например, используйте служебную программу Avere ``prime.py`` с аргументами ```prime.py --directory /path/to/some/directory``` (можно загрузить по URL-адресу https://github.com/Azure/Avere/blob/master/src/clientapps/dataingestor/prime.py).
+   For example, use the Avere utility ``prime.py`` with arguments ```prime.py --directory /path/to/some/directory``` (available by downloading url <https://github.com/Azure/Avere/blob/master/src/clientapps/dataingestor/prime.py>).
 
-   Если не использовать ``prime.py``, можно вычислить количество элементов с помощью инструмента GNU ``find`` следующим образом:
+   If not using ``prime.py``, you can calculate the number of items with the GNU ``find`` tool as follows:
 
    ```bash
    find <path> -type f |wc -l         # (counts files)
@@ -284,39 +305,45 @@ for i in 1 2 3 4 5 6; do for j in $(cat /tmp/client${i}); do echo "cp -p -R /mnt
 
 1. Разделите число элементов на 64, чтобы определить количество элементов для каждого процесса. Используйте это число с параметром ``-f``, чтобы задать размер групп при выполнении команды.
 
-1. Выполните команду msrsync для копирования файлов:
+1. Issue the ``msrsync`` command to copy files:
 
    ```bash
-   msrsync -P --stats -p64 -f<ITEMS_DIV_64> --rsync "-ahv --inplace" <SOURCE_PATH> <DESTINATION_PATH>
+   msrsync -P --stats -p 64 -f <ITEMS_DIV_64> --rsync "-ahv" <SOURCE_PATH> <DESTINATION_PATH>
+   ```
+
+   If using ``--inplace``, add a second execution without the option to check that the data is correctly copied:
+
+   ```bash
+   msrsync -P --stats -p 64 -f <ITEMS_DIV_64> --rsync "-ahv --inplace" <SOURCE_PATH> <DESTINATION_PATH> && msrsync -P --stats -p 64 -f <ITEMS_DIV_64> --rsync "-ahv" <SOURCE_PATH> <DESTINATION_PATH>
    ```
 
    К примеру, эта команда предназначена для перемещения 11 000 файлов в 64 процессах из /test/source-repository в /mnt/vfxt/repository:
 
-   ``mrsync -P --stats -p64 -f170 --rsync "-ahv --inplace" /test/source-repository/ /mnt/vfxt/repository``
+   ``msrsync -P --stats -p 64 -f 170 --rsync "-ahv --inplace" /test/source-repository/ /mnt/vfxt/repository && msrsync -P --stats -p 64 -f 170 --rsync "-ahv --inplace" /test/source-repository/ /mnt/vfxt/repository``
 
 ## <a name="use-the-parallel-copy-script"></a>Использование сценария параллельного копирования
 
-Сценарий ``parallelcp`` также может быть полезен для перемещения данных в серверное хранилище кластера vFXT. 
+Сценарий ``parallelcp`` также может быть полезен для перемещения данных в серверное хранилище кластера vFXT.
 
 Приведенный ниже сценарий добавит исполняемый файл `parallelcp`. (Этот сценарий предназначен для Ubuntu. Если используется другой дистрибутив, необходимо установить ``parallel`` отдельно.)
 
 ```bash
-sudo touch /usr/bin/parallelcp && sudo chmod 755 /usr/bin/parallelcp && sudo sh -c "/bin/cat >/usr/bin/parallelcp" <<EOM 
+sudo touch /usr/bin/parallelcp && sudo chmod 755 /usr/bin/parallelcp && sudo sh -c "/bin/cat >/usr/bin/parallelcp" <<EOM
 #!/bin/bash
 
-display_usage() { 
-    echo -e "\nUsage: \$0 SOURCE_DIR DEST_DIR\n" 
-} 
+display_usage() {
+    echo -e "\nUsage: \$0 SOURCE_DIR DEST_DIR\n"
+}
 
-if [  \$# -le 1 ] ; then 
+if [  \$# -le 1 ] ; then
     display_usage
     exit 1
-fi 
- 
-if [[ ( \$# == "--help") ||  \$# == "-h" ]] ; then 
+fi
+
+if [[ ( \$# == "--help") ||  \$# == "-h" ]] ; then
     display_usage
     exit 0
-fi 
+fi
 
 SOURCE_DIR="\$1"
 DEST_DIR="\$2"
@@ -352,7 +379,7 @@ EOM
 
 ### <a name="parallel-copy-example"></a>Пример параллельного копирования
 
-В этом примере сценарий параллельного копирования выполняет компиляцию ``glibc`` с использованием исходных файлов из кластера Avere. 
+В этом примере сценарий параллельного копирования выполняет компиляцию ``glibc`` с использованием исходных файлов из кластера Avere.
 <!-- xxx what is stored where? what is 'the avere cluster mount point'? xxx -->
 
 Исходные файлы хранятся в точке подключения кластера Avere, а файлы объектов — на локальном жестком диске.
@@ -374,4 +401,3 @@ cd obj
 /home/azureuser/avere/glibc-2.27/configure --prefix=/home/azureuser/usr
 time make -j
 ```
-

@@ -1,26 +1,21 @@
 ---
-title: Получение журналов и событий контейнеров в службе "Экземпляры контейнеров Azure"
+title: Get container instance logs & events
 description: Узнайте, как отладить журналы и события контейнеров в службе "Экземпляры контейнеров Azure"
-services: container-instances
-author: dlepow
-manager: gwallace
-ms.service: container-instances
 ms.topic: article
 ms.date: 03/21/2019
-ms.author: danlep
 ms.custom: mvc
-ms.openlocfilehash: 8ae7ab3f53f480f46165800504fbb1eb6649c3e2
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 57d35b9423fd8c64e5a58ee4d8055aa3b238ba8c
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68325972"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74481747"
 ---
 # <a name="retrieve-container-logs-and-events-in-azure-container-instances"></a>Получение журналов и событий контейнеров в службе "Экземпляры контейнеров Azure"
 
-При наличии контейнера с неправильным поведением Начните с просмотра его журналов с помощью команды [AZ Container Logs][az-container-logs]и потоковой передачи стандартного выхода и стандартной ошибки с помощью команды [AZ Container Attach][az-container-attach].
+When you have a misbehaving container, start by viewing its logs with [az container logs][az-container-logs], and streaming its standard out and standard error with [az container attach][az-container-attach].
 
-## <a name="view-logs"></a>Просмотреть журналы
+## <a name="view-logs"></a>Просмотр журналов
 
 Для просмотра журналов из кода приложения в контейнере можно использовать команду [az container logs][az-container-logs].
 
@@ -48,9 +43,9 @@ Traceback (most recent call last):
 urllib.error.HTTPError: HTTP Error 404: Not Found
 ```
 
-## <a name="attach-output-streams"></a>Присоединение потоков вывода
+## <a name="attach-output-streams"></a>Присоединение выходных потоков
 
-Команда [AZ Container Attach][az-container-attach] предоставляет диагностические сведения во время запуска контейнера. Она направляет потоки STDOUT и STDERR запущенного контейнера в локальную консоль.
+The [az container attach][az-container-attach] command provides diagnostic information during container startup. Она направляет потоки STDOUT и STDERR запущенного контейнера в локальную консоль.
 
 Ниже приводятся выходные данные журнала, созданные контейнером на основе задач, описанным в статье [Выполнение задачи-контейнера в службе "Экземпляры контейнеров Azure"](container-instances-restart-policy.md), которому предоставлен действительный URL-адрес большого текстового файла для обработки.
 
@@ -147,7 +142,7 @@ az container show --resource-group myResourceGroup --name mycontainer
   ...
 }
 ```
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте, как [устранить неполадки контейнера и развертывания](container-instances-troubleshooting.md) для службы "Экземпляры контейнеров Azure".
 
 <!-- LINKS - Internal -->

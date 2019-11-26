@@ -2,13 +2,13 @@
 title: Использование Azure Lighthouse в корпоративных сценариях
 description: Возможности Azure Lighthouse можно использовать для упрощения управления в сценариях работы предприятия, которое использует несколько клиентов Azure AD.
 ms.date: 09/25/2019
-ms.topic: overview
-ms.openlocfilehash: ae2241048e6ae481e319154beedab74c23c91163
-ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
-ms.translationtype: HT
+ms.topic: conceptual
+ms.openlocfilehash: f610f943ed7faa0d2ad64ff2f1554cdd41d76ee8
+ms.sourcegitcommit: 95931aa19a9a2f208dedc9733b22c4cdff38addc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74132500"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74463913"
 ---
 # <a name="azure-lighthouse-in-enterprise-scenarios"></a>Использование Azure Lighthouse в корпоративных сценариях
 
@@ -24,7 +24,7 @@ ms.locfileid: "74132500"
 
 При централизации операций управления между клиентами необходимо определить, какой клиент будет включать пользователей, выполняющих операции управления для других клиентов. Иными словами, нужно выбрать один клиент для управления другими клиентами.
 
-Для примера предположим, что в организации есть один клиент с именем *Клиент А*. Эта организация приобретает два дополнительных клиента (*Клиент Б* и *Клиент В*), и у нее есть важные причины сохранить их в качестве отдельных клиентов.
+For example, say your organization has a single tenant that we’ll call *Tenant A*. Your organization then acquires two additional tenants, *Tenant B* and *Tenant C*, and you have business reasons that require you to maintain them as separate tenants.
 
 Но для всех клиентов эта организация намерена использовать одинаковые определения политик, методы резервного копирования и процессы безопасности. Поскольку у нее уже есть пользователи (а также группы пользователей и субъекты-службы), которые отвечают за выполнение задач управления в Tenant A, можно подключить все подписки из Tenant B и Tenant C так, чтобы аналогичные операции для них выполняли те же пользователи в Tenant A.
 
@@ -56,7 +56,7 @@ Azure Lighthouse и делегированное управление ресур
 
 В этом примере пользователи из Tenant A, имеющие соответствующие разрешения, могут [просматривать делегированные ресурсы и управлять ими](../how-to/view-manage-customers.md) на странице **Мои клиенты** портала Azure. Аналогичным образом, пользователи из Tenant B и Tenant C, имеющие соответствующие разрешения, могут [просматривать делегированные в Tenant A ресурсы и управлять ими](../how-to/view-manage-service-providers.md) на странице **Поставщики услуг** портала Azure.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте больше об [интерфейсах управления для различных клиентов](cross-tenant-management-experience.md).
 - Ознакомьтесь со сведениями о [делегированном управлении ресурсами Azure](azure-delegated-resource-management.md).

@@ -4,29 +4,29 @@ description: В этой статье приводятся сведения об
 services: automation
 ms.service: automation
 ms.subservice: ''
-author: bobbytreed
-ms.author: robreed
-ms.date: 02/12/2019
+author: mgoedtel
+ms.author: magoedte
+ms.date: 11/25/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 39cf6126f6212b6e83f1974dae7aaab0038e69c6
-ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
+ms.openlocfilehash: 31d81c6946fc256f5c22b93674469d7b87500173
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71240986"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74480707"
 ---
 # <a name="troubleshoot-hybrid-runbook-workers"></a>Устранение неполадок с гибридными рабочими ролями Runbook
 
 В этой статье приводятся сведения об устранении неполадок с гибридными рабочими ролями Runbook.
 
-## <a name="general"></a>Общее
+## <a name="general"></a>Общие сведения
 
-Гибридная рабочая роль Runbook зависит от агента, который используется для взаимодействия с учетной записью автоматизации для регистрации рабочей роли, получения заданий runbook и сообщения о состоянии. В Windows используется агент Microsoft Monitoring Agent. В Linux — Агент Operations Management Suite для Linux.
+Гибридная рабочая роль Runbook зависит от агента, который используется для взаимодействия с учетной записью автоматизации для регистрации рабочей роли, получения заданий runbook и сообщения о состоянии. For Windows, this agent is the Log Analytics agent for Windows (also referred to as the Microsoft Monitoring Agent (MMA)). For Linux, it's the Log Analytics agent for Linux.
 
-### <a name="runbook-execution-fails"></a>Сценарий. Происходит сбой выполнения модуля Runbook
+### <a name="runbook-execution-fails"></a>Сценарий: происходит сбой выполнения модуля Runbook
 
-#### <a name="issue"></a>Проблемы
+#### <a name="issue"></a>Проблема
 
 Происходит сбой выполнения модуля Runbook со следующей ошибкой:
 
@@ -58,9 +58,9 @@ ms.locfileid: "71240986"
 
 Проверьте журнал событий **Microsoft-SMA** на наличие соответствующего события с описанием *Процесс Win32 завершен с кодом [4294967295]* . Эта ошибка возникла из-за того, что аутентификация в модулях Runbook еще не настроена или для группы гибридных рабочих ролей указаны учетные данные запуска от имени. Просмотрите [разрешения для модулей Runbook](../automation-hrw-run-runbooks.md#runbook-permissions), чтобы убедиться, что аутентификация для этих модулей настроена правильно.
 
-### <a name="no-cert-found"></a>Сценарий. Не найден сертификат в хранилище сертификатов в гибридной рабочей роли Runbook
+### <a name="no-cert-found"></a>Scenario: No certificate was found in the certificate store on Hybrid Runbook Worker
 
-#### <a name="issue"></a>Проблемы
+#### <a name="issue"></a>Проблема
 
 Модуль Runbook, запущенный в гибридной рабочей роли Runbook, завершается сбоем со следующей ошибкой.
 
@@ -83,17 +83,17 @@ At line:3 char:1
 
 ## <a name="linux"></a>Linux
 
-Гибридная рабочая роль Runbook Linux зависит от агента OMS для Linux, который используется для взаимодействия с учетной записью службы автоматизации с целью регистрации рабочей роли, получения заданий Runbook и передачи сведений о состоянии. Если при регистрации рабочей роли произошла ошибка, это могло произойти по следующим причинам:
+The Linux Hybrid Runbook Worker depends on the [Log Analytics agent for Linux](../../azure-monitor/platform/log-analytics-agent.md) to communicate with your Automation account to register the worker, receive runbook jobs, and report status. Если при регистрации рабочей роли произошла ошибка, это могло произойти по следующим причинам:
 
-### <a name="oms-agent-not-running"></a>Сценарий. Агент OMS для Linux не запущен.
+### <a name="oms-agent-not-running"></a>Scenario: The Log Analyics agent for Linux isn't running
 
-#### <a name="issue"></a>Проблемы
+#### <a name="issue"></a>Проблема
 
-Агент OMS для Linux не запущен
+The Log Analytics agent for Linux is not running
 
 #### <a name="cause"></a>Причина:
 
-Если Агент OMS для Linux не запущен, гибридная рабочая роль Runbook Linux не сможет взаимодействовать со службой автоматизации Azure. Агент может не работать по разным причинам.
+If the agent isn't running, it prevents the Linux Hybrid Runbook Worker from communicating with Azure Automation. Агент может не работать по разным причинам.
 
 #### <a name="resolution"></a>Разрешение
 
@@ -114,11 +114,11 @@ nxautom+   8595      1  0 14:45 ?        00:00:02 python /opt/microsoft/omsconfi
 
 * **diy/worker.conf** — это процесс гибридной рабочей роли DIY. Процесс гибридной рабочей роли DIY используется для выполнения модулей Runbook пользователя в гибридной рабочей роли Runbook. Он отличается от процесса автоматически зарегистрированной рабочей роли только тем, что использует другую конфигурацию. Если решение "Служба автоматизации Azure" отключено и гибридная рабочая роль DIY для Linux отсутствует, этот процесс будет отсутствовать.
 
-Если агент OMS для Linux не запущен, выполните следующую команду, чтобы запустить службу: `sudo /opt/microsoft/omsagent/bin/service_control restart`.
+If the agent isn't running, run the following command to start the service: `sudo /opt/microsoft/omsagent/bin/service_control restart`.
 
-### <a name="class-does-not-exist"></a>Сценарий. Указанный класс не существует
+### <a name="class-does-not-exist"></a>Сценарий: указанный класс не существует
 
-При появлении ошибки о том, **что указанный класс не существует**, в `/var/opt/microsoft/omsconfig/omsconfig.log` необходимо обновить агент OMS для Linux. Выполните следующую команду, чтобы повторно установить агент OMS:
+Если вы видите сообщение об ошибке о том, что **указанный класс не существует**, in the  `/var/opt/microsoft/omsconfig/omsconfig.log` then the Log Analytics agent for Linux needs to be updated. Run the following command to reinstall the agent:
 
 ```bash
 wget https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/installer/scripts/onboard_agent.sh && sh onboard_agent.sh -w <WorkspaceID> -s <WorkspaceKey>
@@ -126,11 +126,11 @@ wget https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/inst
 
 ## <a name="windows"></a>Windows
 
-Гибридная рабочая роль Runbook для Windows зависит от службы Microsoft Monitoring Agent, которая используется для взаимодействия с учетной записью службы автоматизации для регистрации рабочей роли, получения заданий Runbook и сообщения о состоянии. Если при регистрации рабочей роли произошла ошибка, это могло произойти по следующим причинам:
+The Windows Hybrid Runbook Worker depends on the [Log Analytics agent for Windows](../../azure-monitor/platform/log-analytics-agent.md) to communicate with your Automation account to register the worker, receive runbook jobs, and report status. Если при регистрации рабочей роли произошла ошибка, это могло произойти по следующим причинам:
 
-### <a name="mma-not-running"></a>Сценарий. Агент Microsoft Monitoring Agent не запущен
+### <a name="mma-not-running"></a>Scenario: The Microsoft Monitoring Agent isn't running
 
-#### <a name="issue"></a>Проблемы
+#### <a name="issue"></a>Проблема
 
 Служба `healthservice` не работает на компьютере с гибридной рабочей ролью Runbook.
 
@@ -144,23 +144,23 @@ wget https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/inst
 
 ### <a name="event-4502"></a> Событие 4502 в журнале Operations Manager
 
-#### <a name="issue"></a>Проблемы
+#### <a name="issue"></a>Проблема
 
-В журнале событий в папке **Application and Services Logs\Operations Manager** отображается событие 4502 и сообщение о событии с **Microsoft.EnterpriseManagement.HealthService.AzureAutomation.HybridAgent** со следующим описанием: *Сертификат, представленный службой \<wsid\>.oms.opinsights.azure.com, не был выдан центром сертификации, используемым для служб Майкрософт. Обратитесь к администратору сети, чтобы узнать, использует ли он прокси-сервер, перехватывающий связь по протоколам TLS и SSL. Дополнительные сведения об устранении неполадок, связанных с подключением, содержатся в статье базы знаний KB3126513.*
+In the **Application and Services Logs\Operations Manager** event log, you see event 4502 and EventMessage that contains **Microsoft.EnterpriseManagement.HealthService.AzureAutomation.HybridAgent** with the following description: *The certificate presented by the service \<wsid\>.oms.opinsights.azure.com was not issued by a certificate authority used for Microsoft services. Please contact your network administrator to see if they are running a proxy that intercepts TLS/SSL communication.*
 
 #### <a name="cause"></a>Причина:
 
-Эта проблема может быть вызвана тем, что прокси-сервер или сетевой брандмауэр блокируют подключение к Microsoft Azure. Проверьте, имеет ли компьютер исходящий доступ к *.azure-automation.net на порту 443.
+Эта проблема может быть вызвана тем, что прокси-сервер или сетевой брандмауэр блокируют подключение к Microsoft Azure. Проверьте, имеет ли компьютер исходящий доступ к *.azure-automation.net на порту 443. 
 
 #### <a name="resolution"></a>Разрешение
 
-Журналы сохраняются локально в каждом гибридном компоненте Worker по адресу C:\ProgramData\Microsoft\System Center\Orchestrator\7.2\SMA\Sandboxes. Можно проверить, зарегистрированы ли в журналах событий в папках **Application and Services Logs\Microsoft-SMA\Operations** и **Application and Services Logs\Operations Manager** какие-либо предупреждения или ошибки, которые указывают на проблемы подключения или другие проблемы, связанные с адаптацией роли службы автоматизации Azure, либо на проблемы во время выполнения обычных операций.
+Журналы сохраняются локально в каждом гибридном компоненте Worker по адресу C:\ProgramData\Microsoft\System Center\Orchestrator\7.2\SMA\Sandboxes. Можно проверить, зарегистрированы ли в журналах событий в папках **Application and Services Logs\Microsoft-SMA\Operations** и **Application and Services Logs\Operations Manager** какие-либо предупреждения или ошибки, которые указывают на проблемы подключения или другие проблемы, связанные с адаптацией роли службы автоматизации Azure, либо на проблемы во время выполнения обычных операций. For additional help troubleshooting issues with the Log Analytics agent, see [Troubleshoot issues with the Log Analytics Windows agent](../../azure-monitor/platform/agent-windows-troubleshoot.md).
 
 [Выходные данные Runbook и сообщения](../automation-runbook-output-and-messages.md) отправляются в службу автоматизации Azure из гибридных рабочих ролей точно так же, как задания Runbook, которые выполняются в облаке. Потоки Verbose и Progress можно активировать точно так же, как и для других модулей Runbook.
 
 ### <a name="corrupt-cache"></a>Гибридная рабочая роль Runbook не создает отчеты
 
-#### <a name="issue"></a>Проблемы
+#### <a name="issue"></a>Проблема
 
 Компьютер гибридной рабочей роли Runbook работает, но в рабочей области не отображаются данные о пульсе для компьютера.
 
@@ -188,9 +188,9 @@ Remove-Item -Path 'C:\Program Files\Microsoft Monitoring Agent\Agent\Health Serv
 Start-Service -Name HealthService
 ```
 
-### <a name="already-registered"></a>Сценарий. Не удается добавить гибридную рабочую роль Runbook
+### <a name="already-registered"></a>Scenario: You are unable to add a Hybrid Runbook Worker
 
-#### <a name="issue"></a>Проблемы
+#### <a name="issue"></a>Проблема
 
 Вы получите следующее сообщение при попытке добавить гибридную рабочую роль Runbook с помощью командлета `Add-HybridRunbookWorker`.
 
@@ -208,7 +208,7 @@ Machine is already registered
 
 `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\HybridRunbookWorker`
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 

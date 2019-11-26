@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: security
 ms.subservice: security-fundamentals
 ms.workload: identity
-ms.openlocfilehash: 71b4a8abc641a3ab11d6b17bbc8de3b42b61c34c
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 71339565eed9f41f8f32da852a727c82df482662
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73820545"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74483952"
 ---
 # <a name="choose-the-right-authentication-method-for-your-azure-active-directory-hybrid-identity-solution"></a>Выбор правильного метода аутентификации для гибридного решения для идентификации Azure Active Directory
 
@@ -45,7 +45,7 @@ Azure AD поддерживает следующие методы аутенти
 ### <a name="cloud-authentication"></a>Облачная аутентификация
 При выборе этого метода аутентификации Azure AD обрабатывает процесс входа пользователей. В сочетании с простым единым входом (SSO) пользователи могут войти в облачные приложения без необходимости повторного ввода своих учетных данных. При использовании облачной аутентификации вы можете выбрать один из двух вариантов:
 
-**Синхронизация хэша паролей Azure AD**. Это самый простой способ включить аутентификацию объектов локального каталога в Azure AD. Пользователи могут использовать те же имя пользователя и пароль, которые они вводят в локальной среде, без необходимости развертывания какой-либо дополнительной инфраструктуры. Для некоторых функций Azure AD, таких как защита идентификации и [доменные службы Azure AD](../../active-directory-domain-services/active-directory-ds-getting-started-password-sync.md), требуется синхронизация хэша паролей, независимо от выбранного метода проверки подлинности.
+**Синхронизация хэша паролей Azure AD**. Это самый простой способ включить аутентификацию объектов локального каталога в Azure AD. Пользователи могут использовать те же имя пользователя и пароль, которые они вводят в локальной среде, без необходимости развертывания какой-либо дополнительной инфраструктуры. Some premium features of Azure AD, like Identity Protection and [Azure AD Domain Services](../../active-directory-domain-services/active-directory-ds-getting-started-password-sync.md), require password hash synchronization, no matter which authentication method you choose.
 
 > [!NOTE]
 > Пароли никогда не сохраняются в виде открытого текста или зашифровываются с помощью обратимого алгоритма в Azure AD. Для получения дополнительной информации о фактическом процессе синхронизации хэша паролей изучите статью [Реализация синхронизации хэшированных паролей в службе синхронизации Azure AD Connect](../../active-directory/hybrid/how-to-connect-password-hash-synchronization.md).
@@ -69,13 +69,13 @@ Azure AD поддерживает следующие методы аутенти
 
 1. Azure AD может контролировать вход пользователей, не полагаясь на локальные компоненты проверки паролей.
 2. Azure AD может передать функцию контроля входа пользователей доверенному поставщику проверки подлинности, например AD FS корпорации Майкрософт.
-3. Если необходимо применить политики безопасности Active Directory уровня пользователя, такие как учетная запись с истекшим сроком действия, отключенная учетная запись, срок действия пароля истек, учетная запись заблокирована и время входа для каждого пользователя, Azure AD требует некоторых локальных компонентов.
+3. If you need to apply, user-level Active Directory security policies such as account expired, disabled account, password expired, account locked out, and sign-in hours on each user sign-in, Azure AD requires some on-premises components.
 4. Способы входа, не поддерживаемые Azure AD:
    * вход с помощью смарт-карт или сертификатов;
    * вход с помощью многофакторной проверки подлинности на локальном сервере;
-   * Вход с помощью стороннего решения проверки подлинности.
+   * Sign-in using third party authentication solution.
    * универсальное локальное решение проверки подлинности.
-5. Защита идентификации Azure AD предусматривает синхронизацию хэшей паролей, независимо от используемого метода входа в систему, для подготовки *отчета о пользователях со скомпрометированными учетными данными*. Организации могут выполнить отработку отказа в синхронизацию хэша паролей, если их основной метод входа завершается сбоем и был настроен перед событием сбоя.
+5. Защита идентификации Azure AD предусматривает синхронизацию хэшей паролей, независимо от используемого метода входа в систему, для подготовки *отчета о пользователях со скомпрометированными учетными данными*. Organizations can fail over to Password Hash Sync if their primary sign-in method fails and it was configured before the failure event.
 
 > [!NOTE]
 > Для защиты идентификации Azure AD требуется лицензия [Azure AD Premium P2](https://azure.microsoft.com/pricing/details/active-directory/).
@@ -88,19 +88,19 @@ Azure AD поддерживает следующие методы аутенти
 
 * **Взаимодействие с пользователем**. Чтобы повысить удобство входа пользователей, разверните простой единый вход с синхронизацией хэша паролей. Простой единый вход исключает ненужные запросы, если пользователи вошли в систему.
 
-* **Сложные сценарии**. При необходимости организации могут использовать аналитические сведения из удостоверений в отчетах службы защиты идентификации Azure AD с Azure AD Premium P2. Например, в отчете об утечке учетных данных. [При использовании синхронизации хэшей паролей](https://docs.microsoft.com/windows/access-protection/hello-for-business/hello-identity-verification)Windows Hello для бизнеса имеет особые требования. [Доменные службы Azure AD](../../active-directory-domain-services/active-directory-ds-getting-started-password-sync.md) требуют синхронизации хэша паролей для предоставления пользователям корпоративных учетных данных в управляемом домене.
+* **Сложные сценарии**. При необходимости организации могут использовать аналитические сведения из удостоверений в отчетах службы защиты идентификации Azure AD с Azure AD Premium P2. Например, в отчете об утечке учетных данных. Windows Hello for Business has [specific requirements when you use password hash synchronization](https://docs.microsoft.com/windows/access-protection/hello-for-business/hello-identity-verification). [Azure AD Domain Services](../../active-directory-domain-services/active-directory-ds-getting-started-password-sync.md) requires password hash synchronization to provision users with their corporate credentials in the managed domain.
 
-    Организации, которым требуется многофакторная проверка подлинности с синхронизацией хэшей паролей, должны использовать многофакторную проверку подлинности Azure AD или [настраиваемые элементы управления условного доступа](../../active-directory/conditional-access/controls.md#custom-controls-preview). Эти организации не могут использовать сторонние или локальные методы проверки подлинности, основанные на Федерации.
+    Organizations that require multifactor authentication with password hash synchronization must use Azure AD multifactor authentication or [Conditional Access custom controls](../../active-directory/conditional-access/controls.md#custom-controls-preview). Those organizations can't use third-party or on-premises multifactor authentication methods that rely on federation.
 
 > [!NOTE]
-> Для условного доступа Azure AD требуются лицензии [Azure AD Premium P1](https://azure.microsoft.com/pricing/details/active-directory/) .
+> Azure AD Conditional Access require [Azure AD Premium P1](https://azure.microsoft.com/pricing/details/active-directory/) licenses.
 
 * **Непрерывность бизнес-процессов**. Использование синхронизации хэша паролей с облачной аутентификацией обеспечивает высокий уровень доступности в качестве облачной службы, которая охватывает все центры обработки данных Майкрософт. Чтобы убедиться в том, что синхронизация хэша паролей не отключится на продолжительное время, разверните второй сервер Azure AD Connect в промежуточном режиме в резервной конфигурации.
 
 * **Рекомендации**. В настоящее время синхронизация хэша паролей не обеспечивает немедленное изменение состояния локальных учетных записей. В этой ситуации пользователь будет иметь доступ к облачным приложениям, пока состояние его учетной записи не будет синхронизировано с Azure AD. Если организации могут преодолеть это ограничение, активируя новый цикл синхронизации после того, как администраторы выполнят массовые процедуры обновления состояния локальных учетных записей пользователей. Примером может быть отключение учетных записей.
 
 > [!NOTE]
-> Состояния с истекшим сроком действия пароля и блокировки учетной записи в настоящее время не синхронизируются с Azure AD с помощью Azure AD Connect. Когда вы изменяете пароль пользователя и устанавливаете параметр *Требовать смену пароля при следующем* флаге входа в систему, хэш пароля не будет синхронизирован с Azure AD с Azure AD Connect, пока пользователь не изменит свой пароль.
+> Состояния с истекшим сроком действия пароля и блокировки учетной записи в настоящее время не синхронизируются с Azure AD с помощью Azure AD Connect. When you change a user's password and set the *user must change password at next logon* flag, the password hash will not be synced to Azure AD with Azure AD Connect, until the user change their password.
 
 Ознакомьтесь с [реализацией синхронизации хэша паролей](../../active-directory/hybrid/how-to-connect-password-hash-synchronization.md), чтобы получить указания по развертыванию.
 
@@ -112,15 +112,15 @@ Azure AD поддерживает следующие методы аутенти
 
 * **Взаимодействие с пользователем**. Чтобы повысить удобство входа пользователей, разверните простой единый вход со сквозной аутентификацией. Простой единый вход исключает ненужные запросы, если пользователи уже вошли в систему.
 
-* **Сложные сценарии**. Сквозная проверка подлинности применяет локальную политику учетных записей во время входа. Например, доступ запрещается, если локальная учетная запись пользователя отключена, заблокирована, [истек срок действия ее пароля](../../active-directory/hybrid/how-to-connect-pta-faq.md#what-happens-if-my-users-password-has-expired-and-they-try-to-sign-in-by-using-pass-through-authentication) или пользователь пытается войти в период времени, когда вход запрещен.
+* **Сложные сценарии**. Pass-through Authentication enforces the on-premises account policy at the time of sign-in. Например, доступ запрещается, если локальная учетная запись пользователя отключена, заблокирована, [истек срок действия ее пароля](../../active-directory/hybrid/how-to-connect-pta-faq.md#what-happens-if-my-users-password-has-expired-and-they-try-to-sign-in-by-using-pass-through-authentication) или пользователь пытается войти в период времени, когда вход запрещен.
 
-    Организации, которым требуется многофакторная проверка подлинности с сквозной проверкой подлинности, должны использовать Azure Multi-Factor Authentication (MFA) или [настраиваемые элементы управления условного доступа](../../active-directory/conditional-access/controls.md#custom-controls-preview). В этих организациях не может использоваться сторонний или локальный метод многофакторной проверки подлинности, основанный на Федерации. Для использования расширенных функций требуется, чтобы синхронизация хэша паролей была развернута независимо от того, реализуется ли сквозная аутентификация. Например, это требуется для получения отчетов об утечке учетных данных службы "Защита идентификации".
+    Organizations that require multifactor authentication with pass-through authentication must use Azure Multi-Factor Authentication (MFA) or [Conditional Access custom controls](../../active-directory/conditional-access/controls.md#custom-controls-preview). Those organizations can't use a third-party or on-premises multifactor authentication method that relies on federation. Для использования расширенных функций требуется, чтобы синхронизация хэша паролей была развернута независимо от того, реализуется ли сквозная аутентификация. Например, это требуется для получения отчетов об утечке учетных данных службы "Защита идентификации".
 
 * **Непрерывность бизнес-процессов**. Рекомендуется развернуть два дополнительных агента сквозной аутентификации. Они устанавливаются в дополнение к первому агенту на сервере Azure AD Connect. Развертывание эти агентов обеспечивает высокий уровень доступности запросов на аутентификацию. Если развернуты три агента, один агент все еще может выйти из строя, если другой агент отключен для обслуживания.
 
     Развертывание синхронизации хэша паролей в дополнение к сквозной аутентификации дает еще одно преимущество. Это обеспечивает резервный метод аутентификации на случай, если основной метод аутентификации станет недоступен.
 
-* **Рекомендации**. Синхронизацию хэша паролей можно использовать в качестве резервного метода аутентификации для сквозной аутентификации на случай, если агентам не удается проверить учетные данные пользователя из-за значительного сбоя в локальной среде. Отработка отказа для синхронизации хэша паролей не происходит автоматически, и необходимо использовать Azure AD Connect для переключения метода входа вручную.
+* **Рекомендации**. Синхронизацию хэша паролей можно использовать в качестве резервного метода аутентификации для сквозной аутентификации на случай, если агентам не удается проверить учетные данные пользователя из-за значительного сбоя в локальной среде. Fail over to password hash synchronization doesn't happen automatically and you must use Azure AD Connect to switch the sign-on method manually.
 
     Ознакомьтесь с [часто задаваемыми вопросами](../../active-directory/hybrid/how-to-connect-pta-faq.md) и другими вопросами о сквозной аутентификации, включая поддержку альтернативного идентификатора.
 
@@ -135,7 +135,7 @@ Azure AD поддерживает следующие методы аутенти
 * **Сложные сценарии**. Решение для федеративной проверки подлинности обычно требуется, когда требования клиентов к аутентификации изначально не может удовлетворить служба Azure AD. Ознакомьтесь с подробными сведениями, чтобы [выбрать подходящий вариант входа в систему](https://blogs.msdn.microsoft.com/samueld/2017/06/13/choosing-the-right-sign-in-option-to-connect-to-azure-ad-office-365/). Рассмотрим наиболее распространенные требования:
 
   * Аутентификация, требующая наличия смарт-карт или сертификатов.
-  * Локальные серверы MFA или сторонние поставщики сторонних поставщиков, которым необходим федеративный поставщик удостоверений.
+  * On-premises MFA servers or third-party multifactor providers requiring a federated identity provider.
   * Аутентификация с использованием решения для аутентификации стороннего производителя. Ознакомьтесь со [списком совместимости с федерацией Azure AD](../../active-directory/hybrid/how-to-connect-fed-compatibility.md).
   * Для входа в систему требуется имя sAMAccountName, например "ДОМЕН\имя пользователя", а не имя участника-пользователя (UPN), например user@domain.com.
 
@@ -160,7 +160,7 @@ Azure AD поддерживает следующие методы аутенти
 
     ![Гибридная идентификация Azure AD с синхронизацией хэша паролей](./media/choose-ad-authn/azure-ad-authn-image2.png)
 
-* Требования агента к сквозной проверке подлинности с использованием двух агентов для обеспечения избыточности:
+* Agent requirements of pass-through authentication, using two agents for redundancy:
 
     ![Гибридная идентификация Azure AD со сквозной аутентификацией](./media/choose-ad-authn/azure-ad-authn-image3.png)
 
@@ -172,23 +172,23 @@ Azure AD поддерживает следующие методы аутенти
 
 |Рассматриваемый вопрос|Синхронизация хэша паролей и простой единый вход|Сквозная аутентификация и простой единый вход|Федерация с AD FS|
 |:-----|:-----|:-----|:-----|
-|Где происходит аутентификация?|В облаке|В облаке после безопасного обмена данными проверки пароля с локальным агентом аутентификации|Локальная система|
-|Каковы требования к локальному серверу помимо системы подготовки (Azure AD Connect)?|None|Один сервер для каждого дополнительного агента аутентификации|Не менее двух серверов AD FS<br><br>Не менее двух WAP-серверов в сети периметра|
-|Каковы локальные требования к доступу к Интернету и сетевым подключениям помимо системы подготовки?|None|[Исходящий доступ к Интернету](../../active-directory/hybrid/how-to-connect-pta-quick-start.md) с серверов, где работают агенты аутентификации|[Входящий доступ к Интернету](https://docs.microsoft.com/windows-server/identity/ad-fs/overview/ad-fs-requirements) к WAP-серверам в сети периметра<br><br>Входящий сетевой доступ к серверам AD FS с WAP-серверов в сети периметра<br><br>Балансировка сетевой нагрузки|
-|Существует ли требование к SSL-сертификату?|Нет|Нет|Да|
+|Где происходит аутентификация?|В облаке|В облаке после безопасного обмена данными проверки пароля с локальным агентом аутентификации|Локальная среда|
+|Каковы требования к локальному серверу помимо системы подготовки (Azure AD Connect)?|Нет|Один сервер для каждого дополнительного агента аутентификации|Не менее двух серверов AD FS<br><br>Не менее двух WAP-серверов в сети периметра|
+|Каковы локальные требования к доступу к Интернету и сетевым подключениям помимо системы подготовки?|Нет|[Исходящий доступ к Интернету](../../active-directory/hybrid/how-to-connect-pta-quick-start.md) с серверов, где работают агенты аутентификации|[Входящий доступ к Интернету](https://docs.microsoft.com/windows-server/identity/ad-fs/overview/ad-fs-requirements) к WAP-серверам в сети периметра<br><br>Входящий сетевой доступ к серверам AD FS с WAP-серверов в сети периметра<br><br>Балансировка сетевой нагрузки|
+|Существует ли требование к SSL-сертификату?|Нет|Нет|ДА|
 |Имеется ли решение для мониторинга работоспособности?|Не требуется|Состояние агента, предоставляемое [Центром администрирования Azure Active Directory](../../active-directory/hybrid/tshoot-connect-pass-through-authentication.md)|[Azure AD Connect Health](../../active-directory/hybrid/how-to-connect-health-adfs.md)|
-|Пользователи получают единый вход в облачные ресурсы с присоединенных к домену устройств в корпоративной сети?|Да, с [простым единым входом](../../active-directory/hybrid/how-to-connect-sso.md)|Да, с [простым единым входом](../../active-directory/hybrid/how-to-connect-sso.md)|Да|
-|Какие типы входа поддерживаются?|UserPrincipalName и пароль<br><br>Встроенная проверка подлинности Windows с помощью [простого единого входа](../../active-directory/hybrid/how-to-connect-sso.md)<br><br>[Альтернативный идентификатор входа](../../active-directory/hybrid/how-to-connect-install-custom.md)|UserPrincipalName и пароль<br><br>Встроенная проверка подлинности Windows с помощью [простого единого входа](../../active-directory/hybrid/how-to-connect-sso.md)<br><br>[Альтернативный идентификатор входа](../../active-directory/hybrid/how-to-connect-pta-faq.md)|UserPrincipalName и пароль<br><br>sAMAccountName и пароль<br><br>Встроенная проверка подлинности Windows<br><br>[Аутентификация с использованием сертификатов и смарт-карт](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-user-certificate-authentication)<br><br>[Альтернативный идентификатор входа](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configuring-alternate-login-id)|
+|Пользователи получают единый вход в облачные ресурсы с присоединенных к домену устройств в корпоративной сети?|Да, с [простым единым входом](../../active-directory/hybrid/how-to-connect-sso.md)|Да, с [простым единым входом](../../active-directory/hybrid/how-to-connect-sso.md)|ДА|
+|Какие типы входа поддерживаются?|UserPrincipalName и пароль<br><br>Windows-Integrated Authentication by using [Seamless SSO](../../active-directory/hybrid/how-to-connect-sso.md)<br><br>[Альтернативный идентификатор входа](../../active-directory/hybrid/how-to-connect-install-custom.md)|UserPrincipalName и пароль<br><br>Windows-Integrated Authentication by using [Seamless SSO](../../active-directory/hybrid/how-to-connect-sso.md)<br><br>[Альтернативный идентификатор входа](../../active-directory/hybrid/how-to-connect-pta-faq.md)|UserPrincipalName и пароль<br><br>sAMAccountName и пароль<br><br>Windows-Integrated Authentication<br><br>[Аутентификация с использованием сертификатов и смарт-карт](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-user-certificate-authentication)<br><br>[Альтернативный идентификатор входа](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configuring-alternate-login-id)|
 |Поддерживается ли Windows Hello для бизнеса?|[Модель доверия на основе ключей](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification)|[Модель доверия на основе ключей](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification)<br>*Требует режима работы домена Windows Server 2016*|[Модель доверия на основе ключей](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification)<br><br>[Модель доверия на основе сертификатов](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-key-trust-adfs)|
-|Какие варианты многофакторной проверки подлинности существуют?|[Многофакторная идентификация Azure](https://docs.microsoft.com/azure/multi-factor-authentication/)<br><br>[Пользовательские элементы управления с условным доступом *](../../active-directory/conditional-access/controls.md)|[Многофакторная идентификация Azure](https://docs.microsoft.com/azure/multi-factor-authentication/)<br><br>[Пользовательские элементы управления с условным доступом *](../../active-directory/conditional-access/controls.md)|[Многофакторная идентификация Azure](https://docs.microsoft.com/azure/multi-factor-authentication/)<br><br>[Сервер Azure MFA](../../active-directory/authentication/howto-mfaserver-deploy.md)<br><br>[Стороннее решение многофакторной идентификации](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-additional-authentication-methods-for-ad-fs)<br><br>[Пользовательские элементы управления с условным доступом *](../../active-directory/conditional-access/controls.md)|
+|Какие варианты многофакторной проверки подлинности существуют?|[Многофакторная идентификация Azure](https://docs.microsoft.com/azure/multi-factor-authentication/)<br><br>[Custom Controls with Conditional Access*](../../active-directory/conditional-access/controls.md)|[Многофакторная идентификация Azure](https://docs.microsoft.com/azure/multi-factor-authentication/)<br><br>[Custom Controls with Conditional Access*](../../active-directory/conditional-access/controls.md)|[Многофакторная идентификация Azure](https://docs.microsoft.com/azure/multi-factor-authentication/)<br><br>[Сервер Azure MFA](../../active-directory/authentication/howto-mfaserver-deploy.md)<br><br>[Стороннее решение многофакторной идентификации](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-additional-authentication-methods-for-ad-fs)<br><br>[Custom Controls with Conditional Access*](../../active-directory/conditional-access/controls.md)|
 |Какие состояния учетной записи пользователя поддерживаются?|Отключенные учетные записи<br>(до 30-минутной задержки)|Отключенные учетные записи<br><br>Учетная запись заблокирована<br><br>Срок действия учетной записи истек<br><br>Срок действия пароля истек<br><br>Время входа|Отключенные учетные записи<br><br>Учетная запись заблокирована<br><br>Срок действия учетной записи истек<br><br>Срок действия пароля истек<br><br>Время входа|
-|Что такое параметры условного доступа?|[Условный доступ Azure AD с Azure AD Premium](../../active-directory/conditional-access/overview.md)|[Условный доступ Azure AD с Azure AD Premium](../../active-directory/conditional-access/overview.md)|[Условный доступ Azure AD с Azure AD Premium](../../active-directory/conditional-access/overview.md)<br><br>[Правила утверждений AD FS](https://adfshelp.microsoft.com/AadTrustClaims/ClaimsGenerator)|
+|What are the Conditional Access options?|[Azure AD Conditional Access, with Azure AD Premium](../../active-directory/conditional-access/overview.md)|[Azure AD Conditional Access, with Azure AD Premium](../../active-directory/conditional-access/overview.md)|[Azure AD Conditional Access, with Azure AD Premium](../../active-directory/conditional-access/overview.md)<br><br>[Правила утверждений AD FS](https://adfshelp.microsoft.com/AadTrustClaims/ClaimsGenerator)|
 |Поддерживается ли блокировка устаревших протоколов?|[Да](../../active-directory/conditional-access/conditions.md)|[Да](../../active-directory/conditional-access/conditions.md)|[Да](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/access-control-policies-w2k12)|
 |Можно ли настроить логотип, изображение и описание на страницах входа?|[Да, в Azure AD Premium](../../active-directory/fundamentals/customize-branding.md)|[Да, в Azure AD Premium](../../active-directory/fundamentals/customize-branding.md)|[Да](../../active-directory/hybrid/how-to-connect-fed-management.md)|
-|Какие дополнительные сценарии поддерживаются?|[Интеллектуальная блокировка паролей](../../active-directory/authentication/concept-sspr-howitworks.md)<br><br>[Отчеты об утечке учетных данных, с Azure AD Premium P2](../../active-directory/reports-monitoring/concept-risk-events.md)|[Интеллектуальная блокировка паролей](../../active-directory/authentication/howto-password-smart-lockout.md)|Система аутентификации нескольких сайтов с низкой задержкой<br><br>[Блокировка экстрасети AD FS](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-ad-fs-extranet-soft-lockout-protection)<br><br>[Интеграция со сторонними системами идентификации](../../active-directory/hybrid/how-to-connect-fed-compatibility.md)|
+|Какие дополнительные сценарии поддерживаются?|[Интеллектуальная блокировка паролей](../../active-directory/authentication/howto-password-smart-lockout.md)<br><br>[Отчеты об утечке учетных данных, с Azure AD Premium P2](../../active-directory/reports-monitoring/concept-risk-events.md)|[Интеллектуальная блокировка паролей](../../active-directory/authentication/howto-password-smart-lockout.md)|Система аутентификации нескольких сайтов с низкой задержкой<br><br>[Блокировка экстрасети AD FS](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-ad-fs-extranet-soft-lockout-protection)<br><br>[Интеграция со сторонними системами идентификации](../../active-directory/hybrid/how-to-connect-fed-compatibility.md)|
 
 > [!NOTE]
-> Настраиваемые элементы управления в условном доступе Azure AD в настоящее время не поддерживают регистрацию устройств.
+> Custom controls in Azure AD Conditional Access does not currently support device registration.
 
 ## <a name="recommendations"></a>Рекомендации
 Ваша система идентификации гарантирует доступ пользователей к облачным приложениям и бизнес-приложениям, которые вы переносите в облако. Аутентификация управляет доступом к приложениям, обеспечивая работу авторизованных пользователей и исключение остальных субъектов для защиты конфиденциальных данных организации.
@@ -203,7 +203,7 @@ Azure AD поддерживает следующие методы аутенти
 
    * Организации, которые ранее включили синхронизацию хэша паролей, изменили свой способ аутентификации для использования синхронизации хэша паролей. Они восстановили работу в течение нескольких часов. Используя доступ к электронной почте через Office 365, они смогли работать над устранением проблем и использовать другие облачные рабочие нагрузки.
 
-   * Организациям, которые ранее не включали синхронизацию хэшей паролей, пришлось прибегнуть к ненадежным внешним потребителям, чтобы устранять неполадки. В таких случаях восстановление локальной инфраструктуры удостоверений заняло несколько недель, прежде чем пользователи смогли снова войти в облачные приложения.
+   * Organizations that didn’t previously enable password hash synchronization had to resort to untrusted external consumer email systems for communications to resolve issues. In those cases, it took them weeks to restore their on-premises identity infrastructure, before users were able to sign in to cloud-based apps again.
 
 3. **Защита идентификации**. Одним из лучших способов защиты пользователей в облаке является "Защита идентификации Azure Active Directory" с Azure AD Premium P2. Корпорация Майкрософт постоянно ищет в Интернете списки пользователей и паролей, которые злоумышленники продают и предоставляют на теневых веб-сайтах. Azure AD может использовать эту информацию, чтобы проверить, были ли скомпрометированы какие-либо имена пользователей и пароли в организации. Поэтому очень важно включить синхронизацию хэша паролей, независимо от используемого метода аутентификации, будь то федеративная или сквозная аутентификация. Сведения об утечке учетных данных представляются в виде отчета. Эти сведения можно использовать, чтобы блокировать пользователей или вынудить их сменить пароль при попытке выполнить вход с помощью скомпрометированного пароля.
 
@@ -219,4 +219,4 @@ Azure AD поддерживает следующие методы аутенти
 
 [Начните работу](../../active-directory/fundamentals/get-started-azure-ad.md) с Azure AD и разверните правильное решение аутентификации для своей организации.
 
-Если вы планируете перейти с федеративной аутентификации на облачную, узнайте больше об [изменении метода входа](../../active-directory/hybrid/plan-connect-user-signin.md). Чтобы помочь вам спланировать и реализовать миграцию, используйте [эти планы развертывания проектов](https://aka.ms/deploymentplans) или рассмотрите возможность использования новой функции [поэтапного внедрения](../../active-directory/hybrid/how-to-connect-staged-rollout.md) для переноса федеративных пользователей на использование облачной проверки подлинности в промежуточном подходе.
+Если вы планируете перейти с федеративной аутентификации на облачную, узнайте больше об [изменении метода входа](../../active-directory/hybrid/plan-connect-user-signin.md). To help you plan and implement the migration, use [these project deployment plans](https://aka.ms/deploymentplans) or consider using the new [Staged Rollout](../../active-directory/hybrid/how-to-connect-staged-rollout.md) feature to migrate federated users to using cloud authentication in a staged approach.

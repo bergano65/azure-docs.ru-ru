@@ -1,59 +1,59 @@
 ---
-title: Подключение приложения MSIX виртуальных рабочих столов Windows — Azure
-description: Как настроить присоединение приложения MSIX для виртуального рабочего стола Windows.
+title: Windows Virtual Desktop MSIX app attach - Azure
+description: How to set up MSIX app attach for Windows Virtual Desktop.
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 11/21/2019
 ms.author: helohr
-ms.openlocfilehash: b6c56bbe86f2c81421a39ee85e06dec447382833
-ms.sourcegitcommit: e50a39eb97a0b52ce35fd7b1cf16c7a9091d5a2a
+ms.openlocfilehash: c5d6c671890f5e036d3f4cce6e880230c01048ed
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74288715"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74483816"
 ---
 # <a name="set-up-msix-app-attach"></a>Настройка присоединения приложения MSIX
 
 > [!IMPORTANT]
-> Присоединение приложения MSIX в настоящее время находится в общедоступной предварительной версии.
+> MSIX app attach is currently in public preview.
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-В этом разделе описано, как настроить подключение приложения MSIX в среде виртуальных рабочих столов Windows.
+This topic will walk you through how to set up MSIX app attach in a Windows Virtual Desktop environment.
 
 ## <a name="requirements"></a>Требования
 
-Прежде чем приступить к работе, необходимо настроить присоединение приложения MSIX:
+Before you get started, here's what you need to configure MSIX app attach:
 
-- Доступ к порталу программы предварительной оценки Windows для получения версии Windows 10 с поддержкой API-интерфейсов подключения приложения MSIX.
-- Работающее развертывание виртуальных рабочих столов Windows. Дополнительные сведения см. [в статье Создание клиента в виртуальном рабочем столе Windows](tenant-setup-azure-active-directory.md).
-- Средство упаковки MSIX
-- Сетевая папка в развертывании виртуальных рабочих столов Windows, где будет храниться пакет MSIX
+- Access to the Windows Insider portal to obtain the version of Windows 10 with support for the MSIX app attach APIs.
+- A functioning Windows Virtual Desktop deployment. For information, see [Create a tenant in Windows Virtual Desktop](tenant-setup-azure-active-directory.md).
+- The MSIX packaging tool
+- A network share in your Windows Virtual Desktop deployment where the MSIX package will be stored
 
-## <a name="get-the-os-image"></a>Получение образа ОС
+## <a name="get-the-os-image"></a>Get the OS image
 
-Сначала необходимо получить образ ОС, который будет использоваться для приложения MSIX. Чтобы получить образ ОС, сделайте следующее:
+First, you need to get the OS image you'll use for the MSIX app. To get the OS image:
 
-1. Откройте [портал предварительной оценки Windows](https://www.microsoft.com/software-download/windowsinsiderpreviewadvanced?wa=wsignin1.0) и выполните вход.
+1. Open the [Windows Insider portal](https://www.microsoft.com/software-download/windowsinsiderpreviewadvanced?wa=wsignin1.0) and sign in.
 
      >[!NOTE]
-     >Для доступа к порталу предварительной оценки Windows необходимо быть членом программы предварительной оценки Windows. Дополнительные сведения о программе предварительной оценки Windows см. в [документации по предварительной проверке Windows](https://docs.microsoft.com/windows-insider/at-home/).
+     >You must be member of the Windows Insider program to access the Windows Insider portal. To learn more about the Windows Insider program, check out our [Windows Insider documentation](https://docs.microsoft.com/windows-insider/at-home/).
 
-2. Прокрутите вниз до раздела **Выбор выпуска** и выберите **Windows 10 Предварительная версия Microsoft Enterprise (быстрая) — сборка XXXXX**.
+2. Scroll down to the **Select edition** section and select **Windows 10 Insider Preview Enterprise (FAST) – Build XXXXX**.
 
-3. Выберите **подтвердить**, затем выберите нужный язык и нажмите кнопку **подтвердить** еще раз.
+3. Select **Confirm**, then select the language you wish to use, and then select **Confirm** again.
     
      >[!NOTE]
-     >В настоящее время английский язык является единственным языком, который был протестирован с помощью этой функции. Можно выбрать другие языки, но они могут не отображаться должным образом.
+     >At the moment, English is the only language that has been tested with the feature. You can select other languages, but they may not display as intended.
     
-4. Когда будет создана ссылка для скачивания, выберите **64-разрядную загрузку** и сохраните ее на локальный жесткий диск.
+4. When the download link is generated, select the **64-bit Download** and save it to your local hard disk.
 
-## <a name="prepare-the-vhd-image-for-azure"></a>Подготовка образа VHD для Azure 
+## <a name="prepare-the-vhd-image-for-azure"></a>Prepare the VHD image for Azure 
 
-Прежде чем приступить к работе, необходимо создать главный образ VHD. Если вы еще не создали главный VHD-образ, перейдите к статье [Подготовка и настройка главного образа VHD](set-up-customize-master-image.md) и следуйте инструкциям. 
+Before you get started, you'll need to create a master VHD image. If you haven't created your master VHD image yet, go to [Prepare and customize a master VHD image](set-up-customize-master-image.md) and follow the instructions there. 
 
-После создания главного образа VHD необходимо отключить автоматическое обновление для приложений, присоединив приложения MSIX. Чтобы отключить автоматическое обновление, необходимо выполнить следующие команды в командной строке с повышенными привилегиями:
+After you've created your master VHD image, you must disable automatic updates for MSIX app attach applications. To disable automatic updates, you'll need to run the following commands in an elevated command prompt:
 
 ```cmd
 rem Disable Store auto update:
@@ -73,144 +73,144 @@ rem Disable Windows Update:
 sc config wuauserv start=disabled
 ```
 
-Затем подготовьте виртуальный жесткий диск виртуальной машины для Azure и отправьте полученный VHD-файл в Azure. Дополнительные сведения см. в статье [Подготовка и настройка главного образа VHD](set-up-customize-master-image.md).
+Next, prepare the VM VHD for Azure and upload the resulting VHD disk to Azure. To learn more, see [Prepare and customize a master VHD image](set-up-customize-master-image.md).
 
-После отправки виртуального жесткого диска в Azure создайте пул узлов, основанный на этом новом образе, следуя инструкциям в руководстве по [созданию пула узлов с помощью Azure Marketplace](create-host-pools-azure-marketplace.md) .
+Once you've uploaded the VHD to Azure, create a host pool that's based on this new image by following the instructions in the [Create a host pool by using the Azure Marketplace](create-host-pools-azure-marketplace.md) tutorial.
 
-## <a name="prepare-the-application-for-msix-app-attach"></a>Подготовка приложения к подключению приложения MSIX 
+## <a name="prepare-the-application-for-msix-app-attach"></a>Prepare the application for MSIX app attach 
 
-Если у вас уже есть пакет MSIX, перейдите к [настройке инфраструктуры виртуальных рабочих столов Windows](#configure-windows-virtual-desktop-infrastructure). Если вы хотите протестировать устаревшие приложения, следуйте инструкциям в статье [Создание пакета MSIX из установщика настольных систем на виртуальной машине](https://docs.microsoft.com/windows/msix/packaging-tool/create-app-package-msi-vm) для преобразования устаревшего приложения в пакет MSIX.
+If you already have an MSIX package, skip ahead to [Configure Windows Virtual Desktop infrastructure](#configure-windows-virtual-desktop-infrastructure). If you want to test legacy applications, follow the instructions in [Create an MSIX package from a desktop installer on a VM](https://docs.microsoft.com/windows/msix/packaging-tool/create-app-package-msi-vm) to convert the legacy application to an MSIX package.
 
-## <a name="generate-a-vhd-or-vhdx-package-for-msix"></a>Создание пакета VHD или VHDX для MSIX
+## <a name="generate-a-vhd-or-vhdx-package-for-msix"></a>Generate a VHD or VHDX package for MSIX
 
-Пакеты имеют формат VHD или VHDX для оптимизации производительности. Для правильной работы MSIX требуются пакеты VHD или VHDX.
+Packages are in VHD or VHDX format to optimize performance. MSIX requires VHD or VHDX packages to work properly.
 
-Чтобы создать пакет VHD или VHDX для MSIX, выполните следующие действия.
+To generate a VHD or VHDX package for MSIX:
 
-1. [Скачайте средство мсиксмгр](https://aka.ms/msixmgr) и сохраните ZIP-папку в папке на виртуальной машине узла сеансов.
+1. [Download the msixmgr tool](https://aka.ms/msixmgr) and save the .zip folder to a folder within a session host VM.
 
-2. Распакуйте папку мсиксмгр Tool. zip.
+2. Unzip the msixmgr tool .zip folder.
 
-3. Вставьте исходный пакет MSIX в ту же папку, в которой вы распаковать средство мсиксмгр.
+3. Put the source MSIX package into the same folder where you unzipped the msixmgr tool.
 
-4. Выполните следующий командлет в PowerShell, чтобы создать виртуальный жесткий диск:
+4. Run the following cmdlet in PowerShell to create a VHD:
 
     ```powershell
     New-VHD -SizeBytes <size>MB -Path c:\temp\<name>.vhd -Dynamic -Confirm:$false
     ```
 
     >[!NOTE]
-    >Убедитесь, что размер виртуального жесткого диска достаточно велик для размещения развернутого MSIX. *
+    >Make sure the size of VHD is large enough to hold the expanded MSIX.*
 
-5. Выполните следующий командлет, чтобы подключить только что созданный виртуальный жесткий диск:
+5. Run the following cmdlet to mount the newly created VHD:
 
     ```powershell
     $vhdObject = Mount-VHD c:\temp\<name>.vhd -Passthru
     ```
 
-6. Запустите этот командлет для инициализации виртуального жесткого диска:
+6. Run this cmdlet to initialize the VHD:
 
     ```powershell
     $disk = Initialize-Disk -Passthru -Number $vhdObject.Number
     ```
 
-7. Используйте этот командлет для создания новой секции:
+7. Run this cmdlet to create a new partition:
 
     ```powershell
     $partition = New-Partition -AssignDriveLetter -UseMaximumSize -DiskNumber $disk.Number
     ```
 
-8. Выполните этот командлет, чтобы отформатировать раздел:
+8. Run this cmdlet to format the partition:
 
     ```powershell
     Format-Volume -FileSystem NTFS -Confirm:$false -DriveLetter $partition.DriveLetter -Force
     ```
 
-9. Создайте родительскую папку на подключенном виртуальном жестком диске. Этот шаг является обязательным, так как для подключения к приложению MSIX требуется родительская папка. Вы можете присвоить имя родительской папке по своему усмотрению.
+9. Create a parent folder on the mounted VHD. This step is mandatory as the MSIX app attach requires a parent folder. You can name the parent folder whatever you like.
 
-### <a name="expand-msix"></a>Развернуть MSIX
+### <a name="expand-msix"></a>Expand MSIX
 
-После этого необходимо развернуть образ MSIX, выполнив его распаковку. Распаковка образа MSIX:
+After that, you'll need to "expand" the MSIX image by unpacking it. To unpack the MSIX image:
 
-1. Откройте командную строку от имени администратора и перейдите к папке, в которую был скачан и распакован инструмент мсиксмгр.
+1. Open a command prompt as Administrator and navigate to the folder where you downloaded and unzipped the msixmgr tool.
 
-2. Выполните следующий командлет, чтобы распаковать MSIX в виртуальный жесткий диск, созданный и подключенный в предыдущем разделе.
+2. Run the following cmdlet to unpack the MSIX into the VHD you created and mounted in the previous section.
 
     ```powershell
     msixmgr.exe -Unpack -packagePath <package>.msix -destination "f:\<name of folder you created earlier>" -applyacls
     ```
 
-    После распаковки должно появиться следующее сообщение:
+    The following message should appear once unpacking is done:
 
     `Successfully unpacked and applied ACLs for package: <package name>.msix`
 
     >[!NOTE]
-    > При использовании пакетов из Microsoft Store для бизнеса (или образования) в сети или на устройствах, которые не подключены к Интернету, необходимо получить лицензии пакета из магазина и установить их для успешного запуска приложения. См. раздел [Использование пакетов в автономном режиме](#use-packages-offline).
+    > If using packages from the Microsoft Store for Business (or Education) within your network, or on devices that are not connected to the internet, you will need to obtain the package licenses from the Store and install them to run the app successfully. See [Use packages offline](#use-packages-offline).
 
-3. Перейдите к подключенному виртуальному жесткому диску и откройте папку приложения и проверьте наличие содержимого пакета.
+3. Navigate to the mounted VHD and open the app folder and confirm package content is present.
 
-4. Отключите виртуальный жесткий диск.
+4. Unmount the VHD.
 
-## <a name="configure-windows-virtual-desktop-infrastructure"></a>Настройка инфраструктуры виртуальных рабочих столов Windows
+## <a name="configure-windows-virtual-desktop-infrastructure"></a>Configure Windows Virtual Desktop infrastructure
 
-Один развернутый пакет MSIX (VHD, созданный в предыдущем разделе) может совместно использоваться несколькими виртуальными машинами узла сеансов, так как виртуальные жесткие диски подключены в режиме только для чтения.
+By design, a single MSIX expanded package (the VHD you created in the previous section) can be shared between multiple session host VMs as the VHDs are attached in read-only mode.
 
-Прежде чем начать, убедитесь, что сетевая папка соответствует следующим требованиям:
+Before you start, make sure your network share meets these requirements:
 
-- Общий ресурс совместим с SMB.
-- Виртуальные машины, которые являются частью пула узлов сеансов, имеют разрешения NTFS для общей папки.
+- The share is SMB compatible.
+- The VMs that are part of the session host pool have NTFS permissions to the share.
 
-### <a name="set-up-an-msix-app-attach-share"></a>Настройка общего ресурса для присоединения приложения MSIX 
+### <a name="set-up-an-msix-app-attach-share"></a>Set up an MSIX app attach share 
 
-В среде виртуальных рабочих столов Windows создайте общую сетевую папку и переместите в нее пакет.
+In your Windows Virtual Desktop environment, create a network share and move the package there.
 
 >[!NOTE]
-> Для создания общих сетевых ресурсов MSIX рекомендуется настроить общую сетевую папку с разрешениями NTFS только для чтения.
+> The best practice for creating MSIX network shares is to set up the network share with NTFS read-only permissions.
 
-## <a name="install-certificates"></a>Установка сертификатов
+## <a name="install-certificates"></a>Install certificates
 
-Если приложение использует сертификат, который не является доверенным или является самозаверяющим, вот как его установить:
+If your app uses a certificate that isn't public-trusted or was self-signed, here's how to install it:
 
-1. Щелкните правой кнопкой мыши пакет и выберите пункт **Свойства**.
-2. В появившемся окне выберите вкладку **цифровые подписи** . В списке на вкладке должен быть только один элемент, как показано на следующем рисунке. Выберите этот элемент, чтобы выделить его, а затем выберите * * de
-3. Когда появится окно сведения о цифровом сигнале, перейдите на вкладку **Общие** и выберите **установить сертификат**.
-4. Когда Установщик откроется, выберите в качестве места хранения **локальный компьютер** , а затем нажмите кнопку **Далее**.
-5. Если программа установки запросит, хотите ли вы разрешить приложению вносить изменения на устройстве, выберите **Да**.
-6. Выберите **поместить все сертификаты в следующее хранилище**, а затем нажмите кнопку **Обзор**.
-7. Когда появится окно Выбор хранилища сертификатов, выберите **Доверенные лица**, а затем нажмите кнопку **ОК**.
+1. Right-click the package and select **Properties**.
+2. In the window that appears, select the **Digital signatures** tab. There should be only one item in the list on the tab, as shown in the following image. Select that item to highlight the item, then select **De
+3. When the digital signal details window appears, select the **General** tab, then select **Install certificate**.
+4. When the installer opens, select **local machine** as your storage location, then select **Next**.
+5. If the installer asks you if you want to allow the app to make changes to your device, select **Yes**.
+6. Select **Place all certificates in the following store**, then select **Browse**.
+7. When the select certificate store window appears, select **Trusted people**, then select **OK**.
 8. Выберите **Готово**.
 
-## <a name="prepare-powershell-scripts-for-msix-app-attach"></a>Подготовка скриптов PowerShell для подключения к приложению MSIX
+## <a name="prepare-powershell-scripts-for-msix-app-attach"></a>Prepare PowerShell scripts for MSIX app attach
 
-Присоединение приложения MSIX состоит из четырех отдельных этапов, которые необходимо выполнить в следующем порядке:
+MSIX app attach has four distinct phases that must be performed in the following order:
 
-1. Этап
-2. регистрация;
-3. Отмена регистрации
-4. Отмена размещения
+1. Stage
+2. Зарегистрироваться
+3. Deregister
+4. Destage
 
-На каждом этапе создается сценарий PowerShell. Примеры сценариев для каждого этапа доступны [здесь](https://github.com/Azure/RDS-Templates/tree/master/msix-app-attach).
+Each phase creates a PowerShell script. Sample scripts for each phase are available [here](https://github.com/Azure/RDS-Templates/tree/master/msix-app-attach).
 
-### <a name="stage-the-powershell-script"></a>Разместить сценарий PowerShell
+### <a name="stage-the-powershell-script"></a>Stage the PowerShell script
 
-Перед обновлением скриптов PowerShell убедитесь, что у вас есть идентификатор GUID тома в виртуальном жестком диске. Чтобы получить GUID тома, сделайте следующее:
+Before you update the PowerShell scripts, make sure you have the volume GUID of the volume in the VHD. To get the volume GUID:
 
-1.  Откройте сетевую папку, в которой виртуальный жесткий диск находится внутри виртуальной машины, где будет выполняться скрипт.
+1.  Open the network share where the VHD is located inside the VM where you'll run the script.
 
-2.  Щелкните правой кнопкой мыши виртуальный жесткий диск и выберите **подключить**. При этом виртуальный жесткий диск будет подключен к букве диска.
+2.  Right-click the VHD and select **Mount**. This will mount the VHD to a drive letter.
 
-3.  После подключения виртуального жесткого диска откроется окно **проводника** . Запись родительской папки и обновление переменной **\$парентфолдер**
+3.  After you mount the VHD, the **File Explorer** window will open. Capture the parent folder and update the **\$parentFolder** variable
 
     >[!NOTE]
-    >Если родительская папка не отображается, это означает, что MSIX не был правильно раскрыт. Повторно выполните предыдущий раздел и повторите попытку.
+    >If you don't see a parent folder, that means the MSIX wasn't expanded properly. Redo the previous section and try again.
 
-4.  Откройте родительскую папку. При правильном развертывании вы увидите папку с тем же именем, что и у пакета. Обновите переменную **\$packageName** в соответствии с именем этой папки.
+4.  Open the parent folder. If correctly expanded, you'll see a folder with the same name as the package. Update the **\$packageName** variable to match the name of this folder.
 
-    Например, `VSCodeUserSetup-x64-1.38.1_1.38.1.0_x64__8wekyb3d8bbwe`.
+    Пример: `VSCodeUserSetup-x64-1.38.1_1.38.1.0_x64__8wekyb3d8bbwe`.
 
-5.  Откройте командную строку и введите команду **mountvol**. Эта команда отобразит список томов и их идентификаторы GUID. Скопируйте идентификатор GUID тома, где буква диска совпадает с диском, к которому подключен виртуальный жесткий диск, на шаге 2.
+5.  Open a command prompt and enter **mountvol**. This command will display a list of volumes and their GUIDs. Copy the GUID of the volume where the drive letter matches the drive you mounted your VHD to in step 2.
 
-    Например, в этом примере выходных данных для команды mountvol при подключении виртуального жесткого диска к диску C необходимо скопировать значение, приведенное выше `C:\`.
+    For example, in this example output for the mountvol command, if you mounted your VHD to Drive C, you'll want to copy the value above `C:\`:
 
     ```cmd
     Possible values for VolumeName along with current mount points are:
@@ -227,9 +227,9 @@ sc config wuauserv start=disabled
     ```
 
 
-6.  Обновите переменную **volumeGuid\$** с только что скопированным GUID тома.
+6.  Update the **\$volumeGuid** variable with the volume GUID you just copied.
 
-7. Откройте командную строку PowerShell с правами администратора и обновите следующий сценарий PowerShell с переменными, которые применяются к вашей среде.
+7. Open an Admin PowerShell prompt and update the following PowerShell script with the variables that apply to your environment.
 
     ```powershell
     #MSIX app attach staging sample
@@ -321,9 +321,9 @@ sc config wuauserv start=disabled
     #endregion
     ```
 
-### <a name="register-powershell-script"></a>Регистрация скрипта PowerShell
+### <a name="register-powershell-script"></a>Register PowerShell script
 
-Чтобы выполнить скрипт регистрации, выполните следующие командлеты PowerShell с заданными значениями заполнителями, которые относятся к вашей среде.
+To run the register script, run the following PowerShell cmdlets with the placeholder values replaced with values that apply to your environment.
 
 ```powershell
 #MSIX app attach registration sample
@@ -343,9 +343,9 @@ Add-AppxPackage -Path \$path -DisableDevelopmentMode -Register
 #endregion
 ```
 
-### <a name="deregister-powershell-script"></a>Отменить регистрацию скрипта PowerShell
+### <a name="deregister-powershell-script"></a>Deregister PowerShell script
 
-Для этого скрипта замените заполнитель для **\$packageName** именем тестируемого пакета.
+For this script, replace the placeholder for **\$packageName** with the name of the package you're testing.
 
 ```powershell
 #MSIX app attach deregistration sample
@@ -363,9 +363,9 @@ Remove-AppxPackage -PreserveRoamableApplicationData $packageName
 #endregion
 ```
 
-### <a name="destage-powershell-script"></a>Отмена размещения скрипта PowerShell
+### <a name="destage-powershell-script"></a>Destage PowerShell script
 
-Для этого скрипта замените заполнитель для **\$packageName** именем тестируемого пакета.
+For this script, replace the placeholder for **\$packageName** with the name of the package you're testing.
 
 ```powershell
 #MSIX app attach de staging sample
@@ -389,30 +389,30 @@ rmdir $packageName -Force -Verbose
 #endregion
 ```
 
-## <a name="set-up-simulation-scripts-for-the-msix-app-attach-agent"></a>Настройка сценариев моделирования для агента присоединения приложения MSIX
+## <a name="set-up-simulation-scripts-for-the-msix-app-attach-agent"></a>Set up simulation scripts for the MSIX app attach agent
 
-После создания сценариев пользователи могут вручную запустить их или настроить для автоматического запуска в качестве сценариев запуска, входа в систему, выхода из системы и завершения работы. Дополнительные сведения об этих типах сценариев см. в разделе [Использование сценариев сартуп, завершения работы, входа и выхода из системы в групповая политика](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn789196(v=ws.11)).
+After you create the scripts, users can manually run them or set them up to run automatically as startup, logon, logoff, and shutdown scripts. To learn more about these types of scripts, see [Using startup, shutdown, logon, and logoff scripts in Group Policy](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn789196(v=ws.11)).
 
-Каждый из этих автоматических сценариев запускается на одном этапе сценария присоединения приложения:
+Each of these automatic scripts runs one phase of the app attach scripts:
 
-- Сценарий запуска запускает скрипт этапа.
-- Сценарий входа запускает сценарий Register.
-- Сценарий выхода из системы запускает сценарий дерегистрации.
-- Сценарий завершения работы запускает скрипт отмены размещения.
+- The startup script runs the stage script.
+- The logon script runs the register script.
+- The logoff script runs the deregister script.
+- The shutdown script runs the destage script.
 
-## <a name="use-packages-offline"></a>Использование пакетов в автономном режиме
+## <a name="use-packages-offline"></a>Use packages offline
 
-Если вы используете пакеты из [Microsoft Store для бизнеса](https://businessstore.microsoft.com/) или [Microsoft Store для образовательных учреждений](https://educationstore.microsoft.com/) в сети или на устройствах, которые не подключены к Интернету, необходимо получить лицензии пакета из Microsoft Store и установить их на устройстве, чтобы успешно запустить приложение. Если устройство подключено к сети и может подключаться к Microsoft Store для бизнеса, необходимые лицензии должны загружаться автоматически, но если вы работаете в автономном режиме, вам потребуется настроить лицензии вручную. 
+If you're using packages from the [Microsoft Store for Business](https://businessstore.microsoft.com/) or the [Microsoft Store for Education](https://educationstore.microsoft.com/) within your network or on devices that aren't connected to the internet, you need to get the package licenses from the Microsoft Store and install them on your device to successfully run the app. If your device is online and can connect to the Microsoft Store for Business, the required licenses should download automatically, but if you're offline, you'll need to set up the licenses manually. 
 
-Чтобы установить файлы лицензий, необходимо использовать скрипт PowerShell, который вызывает класс MDM_EnterpriseModernAppManagement_StoreLicenses02_01 в поставщике WMI Bridge.  
+To install the license files, you'll need to use a PowerShell script that calls the MDM_EnterpriseModernAppManagement_StoreLicenses02_01 class in the WMI Bridge Provider.  
 
-Вот как можно настроить лицензии для автономного использования: 
+Here's how to set up the licenses for offline use: 
 
-1. Скачайте пакет приложения, лицензии и необходимые платформы из Microsoft Store для бизнеса. Необходимы как закодированные, так и незакодированные файлы лицензий. Подробные инструкции по скачиванию можно найти [здесь](https://docs.microsoft.com/microsoft-store/distribute-offline-apps#download-an-offline-licensed-app).
-2. Обновите следующие переменные в скрипте для шага 3.
-      1. `$contentID` — это значение ContentID из файла незакодированной лицензии (. XML). Файл лицензии можно открыть в текстовом редакторе по своему усмотрению.
-      2. `$licenseBlob` — это вся строка для большого двоичного объекта лицензии в закодированном файле лицензии (. bin). Файл закодированной лицензии можно открыть в текстовом редакторе по своему усмотрению. 
-3. Запустите следующий скрипт из командной строки администратора PowerShell. Место для установки лицензий можно установить в конце [сценария промежуточного хранения](#stage-the-powershell-script) , который также необходимо запустить из командной строки администратора.
+1. Download the app package, licenses, and required frameworks from the Microsoft Store for Business. You need both the encoded and unencoded license files. Detailed download instructions can be found [here](https://docs.microsoft.com/microsoft-store/distribute-offline-apps#download-an-offline-licensed-app).
+2. Update the following variables in the script for step 3:
+      1. `$contentID` is the ContentID value from the Unencoded license file (.xml). You can open the license file in a text editor of your choice.
+      2. `$licenseBlob` is the entire string for the license blob in the Encoded license file (.bin). You can open the encoded license file in a text editor of your choice. 
+3. Run the following script from an Admin PowerShell prompt. A good place to perform license installation is at the end of the [staging script](#stage-the-powershell-script) that also needs to be run from an Admin prompt.
 
 ```powershell
 $namespaceName = "root\cimv2\mdm\dmmap"
@@ -448,8 +448,8 @@ catch [Exception]
 }  
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-В настоящее время эта функция не поддерживается, но вы можете задать вопросы в сообществе на странице [виртуальных рабочих столов Windows течкоммунити](https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop).
+This feature isn't currently supported, but you can ask questions to the community at the [Windows Virtual Desktop TechCommunity](https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop).
 
-Вы также можете оставить отзыв о виртуальном рабочем столе Windows в [центре обратной связи виртуальных рабочих столов Windows](https://aka.ms/MRSFeedbackHub)или оставить отзыв о приложении MSIX и средстве упаковки в центре [обратной связи](https://aka.ms/msixappattachfeedback) и в [центре обратной](https://aka.ms/msixtoolfeedback)связи в приложении MSIX.
+You can also leave feedback for Windows Virtual Desktop at the [Windows Virtual Desktop feedback hub](https://aka.ms/MRSFeedbackHub), or leave feedback for the MSIX app and packaging tool at the [MSIX app attach feedback hub](https://aka.ms/msixappattachfeedback) and the [MSIX packaging tool feedback hub](https://aka.ms/msixtoolfeedback).

@@ -2,13 +2,13 @@
 title: Рекомендации по программе для поставщиков облачных решений
 description: Для партнеров CSP делегированное управление ресурсами Azure помогает улучшить безопасность и контроль за счет предоставления детализированных разрешений.
 ms.date: 10/23/2019
-ms.topic: overview
-ms.openlocfilehash: 3ea32418cdf6808ad311d343d28ba2778740dbe4
-ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
-ms.translationtype: HT
+ms.topic: conceptual
+ms.openlocfilehash: 7e1e371d8c31c45828ee0565545cb40145b40e92
+ms.sourcegitcommit: 95931aa19a9a2f208dedc9733b22c4cdff38addc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74132509"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74463962"
 ---
 # <a name="azure-lighthouse-and-the-cloud-solution-provider-program"></a>Azure Lighthouse и программа поставщиков облачных решений
 
@@ -38,7 +38,7 @@ ms.locfileid: "74132509"
 >
 > Клиенты CSP могут появиться в этом разделе независимо от того, были ли они подключены для делегированного управления ресурсами Azure. Если они появились, то они также будут отображаться в разделе **Клиенты**, как описано в статье [Просмотр клиентов и делегированных ресурсов, а также управление ими](../how-to/view-manage-customers.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте больше об [интерфейсах управления для различных клиентов](cross-tenant-management-experience.md).
 - Узнайте, как [подключить подписку к делегированному управлению ресурсами Azure](../how-to/onboard-customer.md).

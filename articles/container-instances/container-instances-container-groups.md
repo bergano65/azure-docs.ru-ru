@@ -1,28 +1,23 @@
 ---
-title: Группы контейнеров в службе "Экземпляры контейнеров Azure"
-description: Сведения о группах контейнеров в службе "экземпляры контейнеров Azure", коллекции экземпляров, которые совместно используют жизненный цикл и ресурсы, такие как хранилище и сеть.
-services: container-instances
-author: dlepow
-manager: gwallace
-ms.service: container-instances
+title: Introduction to container groups
+description: Learn about container groups in Azure Container Instances, a collection of instances that share a lifecycle and resources such as storage and network
 ms.topic: article
 ms.date: 11/01/2019
-ms.author: danlep
 ms.custom: mvc
-ms.openlocfilehash: ef6745e18a0df3ee0a572f106d1507d0fca32ac2
-ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
+ms.openlocfilehash: 9fbf9fea7da0896ee6c0e248d18e18d52798fbd7
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74150204"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74482105"
 ---
 # <a name="container-groups-in-azure-container-instances"></a>Группы контейнеров в службе "Экземпляры контейнеров Azure"
 
 Ресурс верхнего уровня в службе "Экземпляры контейнеров Azure" — это *группа контейнеров*. В этой статье представлены сведения о группах контейнеров и описаны сценарии, которые можно реализовать с их помощью.
 
-## <a name="what-is-a-container-group"></a>Что такое группа контейнеров?
+## <a name="what-is-a-container-group"></a>What is a container group?
 
-Группа контейнеров — это набор контейнеров, которые можно планировать на одном хост-компьютере. Контейнеры в группе контейнеров совместно используют жизненный цикл, ресурсы, локальную сеть и тома хранилища. Он похож на понятие для *Pod* в [Kubernetes][kubernetes-pod].
+Группа контейнеров — это набор контейнеров, которые можно планировать на одном хост-компьютере. The containers in a container group share a lifecycle, resources, local network, and storage volumes. It's similar in concept to a *pod* in [Kubernetes][kubernetes-pod].
 
 На схеме ниже показан пример группы контейнеров, включающей несколько контейнеров:
 
@@ -37,51 +32,51 @@ ms.locfileid: "74150204"
 * Включает два общих файловых ресурса Azure в качестве подключенных томов. При этом к каждому контейнеру локально подключен один из общих ресурсов.
 
 > [!NOTE]
-> В настоящее время группы с несколькими контейнерами поддерживают только контейнеры Linux. Для контейнеров Windows служба "экземпляры контейнеров Azure" поддерживает только развертывание одного экземпляра. Пока мы работаем над переносом всех компонентов в контейнеры Windows, в [обзоре](container-instances-overview.md#linux-and-windows-containers) службы можно найти различия в текущих платформах.
+> Multi-container groups currently support only Linux containers. For Windows containers, Azure Container Instances only supports deployment of a single instance. While we are working to bring all features to Windows containers, you can find current platform differences in the service [Overview](container-instances-overview.md#linux-and-windows-containers).
 
-## <a name="deployment"></a>Развертывание
+## <a name="deployment"></a>Развертывание.
 
-Ниже приведены два распространенных способа развертывания группы с несколькими контейнерами. Используйте [шаблон диспетчер ресурсов][resource-manager template] или [YAML-файл][yaml-file]. Шаблон диспетчер ресурсов рекомендуется использовать, если требуется развернуть дополнительные ресурсы службы Azure (например, файловый [ресурс Azure][azure-files]) при развертывании экземпляров контейнера. Из-за более краткой природы формата YAML рекомендуется использовать файл YAML, если развертывание включает только экземпляры контейнеров. Дополнительные сведения о свойствах, которые можно задать, см. в [справочнике по шаблону диспетчер ресурсов](/azure/templates/microsoft.containerinstance/containergroups) или в [справочной](container-instances-reference-yaml.md) документации по YAML.
+Here are two common ways to deploy a multi-container group: use a [Resource Manager template][resource-manager template] or a [YAML file][yaml-file]. A Resource Manager template is recommended when you need to deploy additional Azure service resources (for example, an [Azure Files share][azure-files]) when you deploy the container instances. Due to the YAML format's more concise nature, a YAML file is recommended when your deployment includes only container instances. For details on properties you can set, see the [Resource Manager template reference](/azure/templates/microsoft.containerinstance/containergroups) or [YAML reference](container-instances-reference-yaml.md) documentation.
 
-Чтобы сохранить конфигурацию группы контейнеров, можно экспортировать конфигурацию в файл YAML с помощью команды Azure CLI [AZ Container Export][az-container-export]. Экспорт позволяет хранить конфигурации групп контейнеров в системе управления версиями для "конфигурации как кода". Или вы можете использовать экспортированный файл в качестве отправной точки при разработке новой конфигурации в YAML-файле.
+To preserve a container group's configuration, you can export the configuration to a YAML file by using the Azure CLI command [az container export][az-container-export]. Export allows you to store your container group configurations in version control for "configuration as code." Или вы можете использовать экспортированный файл в качестве отправной точки при разработке новой конфигурации в YAML-файле.
 
 
 
 ## <a name="resource-allocation"></a>Выделение ресурсов
 
-Служба "экземпляры контейнеров Azure" выделяет ресурсы, такие как ЦП, память и (необязательно) [GPU][gpus] (Предварительная версия), в группу контейнеров, добавляя [запросы ресурсов][resource-requests] к экземплярам в группе. Использование ресурсов ЦП в качестве примера. Если вы создадите группу контейнеров с двумя экземплярами, каждый из которых запрашивает 1 ЦП, то Группа контейнеров выделила 2 процессора.
+Azure Container Instances allocates resources such as CPUs, memory, and optionally [GPUs][gpus] (preview) to a container group by adding the [resource requests][resource-requests] of the instances in the group. Taking CPU resources as an example, if you create a container group with two instances, each requesting 1 CPU, then the container group is allocated 2 CPUs.
 
-### <a name="resource-usage-by-instances"></a>Использование ресурсов по экземплярам
+### <a name="resource-usage-by-instances"></a>Resource usage by instances
 
-Каждому экземпляру контейнера назначаются ресурсы, указанные в его запросе ресурса. Однако использование ресурсов экземпляром контейнера в группе зависит от настройки свойства необязательного [ограничения ресурсов][resource-limits] .
+Each container instance is allocated the resources specified in its resource request. However, the resource usage by a container instance in a group depends on how you configure its optional [resource limit][resource-limits] property.
 
-* Если не указать ограничение ресурса, максимальное использование ресурсов экземпляра будет таким же, как и его запрос ресурса.
+* If you don't specify a resource limit, the instance's maximum resource usage is the same as its resource request.
 
-* Если для экземпляра задано ограничение по ресурсам, можно настроить использование ресурсов экземпляра для его рабочей нагрузки, уменьшив или увеличив использование относительно запроса ресурса. Максимальное количество ресурсов, которое можно задать, — общее количество ресурсов, выделенных группе.
+* If you specify a resource limit for an instance, you can adjust the instance's resource usage for its workload, either reducing or increasing usage relative to the resource request. The maximum resource limit you can set is the total resources allocated to the group.
     
-    Например, в группе с двумя экземплярами, запрашивающими 1 ЦП, один из контейнеров может выполнять рабочую нагрузку, требующую больше процессоров, чем другая.
+    For example, in a group with two instances requesting 1 CPU, one of your containers might run a workload that requires more CPUs to run than the other.
 
-    В этом сценарии можно задать ограничение ресурсов ЦП 0,5 для одного экземпляра и ограничение в 2 ЦП для второго. Эта конфигурация ограничивает использование ресурсов первого контейнера до 0,5 ЦП, позволяя второму контейнеру использовать до 2 ЦП, если они доступны.
+    In this scenario, you could set a resource limit of 0.5 CPU for one instance, and a limit of 2 CPUs for the second. This configuration limits the first container's resource usage to 0.5 CPU, allowing the second container to use up to the full 2 CPUs if available.
 
-Дополнительные сведения см. в описании свойства [ресаурцерекуирементс][resource-requirements] в группах контейнеров REST API.
+For more information, see the [ResourceRequirements][resource-requirements] property in the container groups REST API.
 
-### <a name="minimum-and-maximum-allocation"></a>Минимальное и максимальное выделение
+### <a name="minimum-and-maximum-allocation"></a>Minimum and maximum allocation
 
-* Выделите не **менее** 1 ЦП и 1 ГБ памяти для группы контейнеров. Отдельные экземпляры контейнера в группе могут быть подготовлены с использованием менее 1 ЦП и 1 ГБ памяти. 
+* Allocate a **minimum** of 1 CPU and 1 GB of memory to a container group. Individual container instances within a group can be provisioned with less than 1 CPU and 1 GB of memory. 
 
-* Сведения о **максимальном объеме** ресурсов в группе контейнеров см. в разделе [доступность ресурсов][region-availability] для экземпляров контейнеров Azure в регионе развертывания.
+* For the **maximum** resources in a container group, see the [resource availability][region-availability] for Azure Container Instances in the deployment region.
 
-## <a name="networking"></a>Сеть
+## <a name="networking"></a>Работа в сети
 
-Группы контейнеров совместно используют IP-адрес и пространство имен порта для этого IP-адреса. Чтобы внешние клиенты могли получить доступ к контейнеру в группе, необходимо предоставить порт по IP-адресу и из контейнера. Поскольку контейнеры в группе совместно используют пространство имен портов, сопоставление портов не поддерживается. Контейнеры внутри группы могут обращаться друг к другу через localhost на предоставляемых им портах, даже если эти порты не предоставляются извне на IP-адрес группы.
+Группы контейнеров совместно используют IP-адрес и пространство имен порта для этого IP-адреса. Чтобы внешние клиенты могли получить доступ к контейнеру в группе, необходимо предоставить порт по IP-адресу и из контейнера. Because containers within the group share a port namespace, port mapping isn't supported. Containers within a group can reach each other via localhost on the ports that they have exposed, even if those ports aren't exposed externally on the group's IP address.
 
-При необходимости разверните группы контейнеров в [виртуальной сети Azure][virtual-network] (Предварительная версия), чтобы обеспечить безопасное взаимодействие контейнеров с другими ресурсами в виртуальной сети.
+Optionally deploy container groups into an [Azure virtual network][virtual-network] (preview) to allow containers to communicate securely with other resources in the virtual network.
 
-## <a name="storage"></a>Служба хранилища
+## <a name="storage"></a>Storage
 
 Вы можете указать внешние тома для подключения в пределах группы контейнеров. Эти тома можно сопоставить с конкретными путями в пределах отдельных контейнеров в группе.
 
-## <a name="common-scenarios"></a>Распространенные сценарии
+## <a name="common-scenarios"></a>Стандартные сценарии
 
 Многоконтейнерные группы удобны в случаях, когда нужно разделить одну функциональную задачу на небольшое число образов контейнеров. Эти образы затем могут доставляться различными командами сотрудников и иметь отдельные требования к ресурсам.
 
@@ -90,9 +85,9 @@ ms.locfileid: "74150204"
 * Контейнер, обслуживающий веб-приложение, и контейнер, извлекающий последнее содержимое из системы управления версиями.
 * Контейнер приложения и журнала. Контейнер журнала собирает журналы и выходные данные метрик для основного приложения и записывает их в хранилище для долговременного хранения.
 * Контейнер приложения и мониторинга. Контейнер мониторинга периодически выполняет запрос к приложению, чтобы убедиться, что оно правильно работает и отвечает, и выдает предупреждение, если это не так.
-* Интерфейсный контейнер и серверный контейнер. Внешний интерфейс может обслуживать веб-приложение с серверной частью службы для получения данных. 
+* A front-end container and a back-end container. The front end might serve a web application, with the back end running a service to retrieve data. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как развертывать группу контейнеров с несколькими контейнерами с использованием шаблона Azure Resource Manager:
 

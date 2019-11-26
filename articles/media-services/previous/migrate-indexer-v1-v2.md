@@ -1,6 +1,6 @@
 ---
-title: Миграция из индексаторов версии 1 и v2 в индексатор видео служб мультимедиа Azure | Документация Майкрософт
-description: В этом разделе описано, как выполнить миграцию из Azure Media Indexer v1 и v2 в индексатор видео служб мультимедиа Azure.
+title: Migrate from Indexer v1 and v2 to Azure Media Services Video Indexer | Microsoft Docs
+description: This topic discusses how to migrate from Azure Media Indexer v1 and v2 to Azure Media Services Video Indexer.
 services: media-services
 documentationcenter: ''
 author: juliako
@@ -13,77 +13,75 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/20/2019
 ms.author: juliako
-ms.openlocfilehash: d38b11b8fc4351c6b074ccfdf47df06a71e0a0a4
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 791287d693903007d09c2e82025bfe195f9f15d1
+ms.sourcegitcommit: 95931aa19a9a2f208dedc9733b22c4cdff38addc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73823970"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74464055"
 ---
-# <a name="migrate-from-media-indexer-and-media-indexer-2-to-video-indexer"></a>Миграция из индексатора мультимедиа и индексатора мультимедиа 2 в индексатор видео
+# <a name="migrate-from-media-indexer-and-media-indexer-2-to-video-indexer"></a>Migrate from Media Indexer and Media Indexer 2 to Video Indexer
 
-[Azure Media Indexerный](media-services-index-content.md) обработчик мультимедиа будет снят с 1 октября по 2020. Процессоры мультимедиа [Azure Media indexer 2 Preview](media-services-process-content-with-indexer2.md) будут сняты с 1 января 2020.  [Индексатор видео служб мультимедиа Azure](https://docs.microsoft.com/azure/media-services/video-indexer/) заменяет эти устаревшие обработчики мультимедиа.
+The [Azure Media Indexer](media-services-index-content.md) media processor will be retired on October 1st of 2020. The [Azure Media Indexer 2 Preview](media-services-process-content-with-indexer2.md) media processors will be retired on January 1 of 2020.  [Azure Media Services Video Indexer](https://docs.microsoft.com/azure/media-services/video-indexer/) replaces these legacy media processors.
 
-Индексатор видео служб мультимедиа Azure создан на основе Аналитика мультимедиа Azure, Когнитивный поиск Azure Cognitive Services (например, API распознавания лиц, Microsoft Translator, API компьютерного зрения и службы Пользовательское распознавание речи). Индексатор видео позволяет извлекать аналитические сведения из видеоматериалов с помощью видео- и аудиомоделей. Чтобы узнать, в каких сценариях можно использовать индексатор видео, какие функции он предлагает и как приступить к работе, см. статью [видео и звуковые модели индексатора видео](../video-indexer/video-indexer-overview.md). 
+Azure Media Services Video Indexer is built on Azure Media Analytics, Azure Cognitive Search, Cognitive Services (such as the Face API, Microsoft Translator, the Computer Vision API, and Custom Speech Service). Индексатор видео позволяет извлекать аналитические сведения из видеоматериалов с помощью видео- и аудиомоделей. To see what scenarios Video Indexer can be used in, what features it offers, and how to get started, see [Video Indexer video and audio models](../video-indexer/video-indexer-overview.md). 
 
-Вы можете извлекать аналитические данные из видео-и звуковых файлов с помощью [предварительных установок анализатора служб мультимедиа Azure v3](../latest/analyzing-video-audio-files-concept.md) или напрямую с помощью [API-интерфейсов индексатора видео](https://api-portal.videoindexer.ai/). В настоящее время существует перекрытие функций, предоставляемых API индексатора видео и API-интерфейсов служб мультимедиа v3.
+You can extract insights from your video and audio files by using the [Azure Media Services v3 analyzer presets](../latest/analyzing-video-audio-files-concept.md) or directly by using the [Video Indexer APIs](https://api-portal.videoindexer.ai/). Currently, there is an overlap between features offered by the Video Indexer APIs and the Media Services v3 APIs.
 
 > [!NOTE]
 > Чтобы определить, в каких случаях вам лучше использовать Индексатор видео, а в каких — предустановки анализатора Служб мультимедиа, ознакомьтесь со статьей, в которой приводится [сравнение](../video-indexer/compare-video-indexer-with-media-services-presets.md) этих инструментов. 
 
-В этой статье рассматриваются действия по миграции из Azure Media Indexer и Azure Media Indexer 2 в индексатор видео служб мультимедиа Azure.  
+This article discusses the steps for migrating from the Azure Media Indexer and Azure Media Indexer 2 to Azure Media Services Video Indexer.  
 
 ## <a name="migration-options"></a>Варианты переноса 
 
-|Если требуется  |а затем — |
+|If you require  |а затем — |
 |---|---|
-|решение, которое предоставляет возможность подзаписи речи в текст для любого формата файлов мультимедиа в форматах файлов скрытых субтитров: ВТТ, SRT или TTML<br/>а также дополнительные сведения о звуках, такие как ключевые слова, темы для событий, акустические события, диаризатиони докладчика, извлечение и перевод сущностей.| Обновите приложения для использования возможностей индексатора видео Azure с помощью индексатора видео версии 2 REST API или предустановки анализатора звука для служб мультимедиа Azure v3.|
-|возможности преобразования речи в текст| Используйте API распознавания речи Cognitive Services напрямую.|  
+|a solution that provides a speech-to-text transcription for any media file format in a closed caption file formats: VTT, SRT, or TTML<br/>as well as additional audio insights such as: keywords, topic inferencing, acoustic events, speaker diarization, entities extraction and translation| update your applications to use the Azure Video Indexer capabilities through the Video Indexer v2 REST API or the Azure Media Services v3 Audio Analyzer preset.|
+|speech-to-text capabilities| use the Cognitive Services Speech API directly.|  
 
-## <a name="getting-started-with-video-indexer"></a>Приступая к работе с индексатором видео
+## <a name="getting-started-with-video-indexer"></a>Getting started with Video Indexer
 
-В следующем разделе приведены ссылки на соответствующие вопросы: [как начать работу с индексатором видео?](https://docs.microsoft.com/azure/media-services/video-indexer/video-indexer-overview#how-can-i-get-started-with-video-indexer) 
+The following section points you to relevant links: [How can I get started with Video Indexer?](https://docs.microsoft.com/azure/media-services/video-indexer/video-indexer-overview#how-can-i-get-started-with-video-indexer) 
 
-## <a name="getting-started-with-media-services-v3-apis"></a>Начало работы с API-интерфейсами служб мультимедиа v3
+## <a name="getting-started-with-media-services-v3-apis"></a>Getting started with Media Services v3 APIs
 
-API служб мультимедиа Azure v3 позволяет извлекать аналитические данные из видео и звуковых файлов с помощью [предустановок анализатора служб мультимедиа Azure v3](../latest/analyzing-video-audio-files-concept.md). 
+Azure Media Services v3 API enables you to extract insights from your video and audio files through the [Azure Media Services v3 analyzer presets](../latest/analyzing-video-audio-files-concept.md). 
 
-**AudioAnalyzerPreset** позволяет извлекать множество звуковых аналитических сведений из аудио- или видеофайла. Выходные данные включают файл ВТТ или TTML для записи звука и JSON-файл (со всеми дополнительными сведениями о Audio Insights). В данные аудио Insights входят ключевые слова, индексирование докладчика и анализ тональности речи. Аудиоанализерпресет также поддерживает определение языка для конкретных языков. Подробные сведения см. в разделе [преобразования](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#audioanalyzerpreset).
+**AudioAnalyzerPreset** позволяет извлекать множество звуковых аналитических сведений из аудио- или видеофайла. The output includes a VTT or TTML file for the audio transcript and a JSON file (with all the additional audio insights). The audio insights include keywords, speaker indexing, and speech sentiment analysis. AudioAnalyzerPreset also supports language detection for specific languages. For detailed information, see [Transforms](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#audioanalyzerpreset).
 
-### <a name="get-started"></a>Приступая к работе
+### <a name="get-started"></a>Начать
 
-Чтобы начать работу, ознакомьтесь со статьей:
+To get started see:
 
 * [Руководство](../latest/analyze-videos-tutorial-with-api.md)
-* Примеры Аудиоанализерпресет: [пакет SDK для Java](https://github.com/Azure-Samples/media-services-v3-java/tree/master/AudioAnalytics/AudioAnalyzer) или [пакет SDK для .NET](https://github.com/Azure-Samples/media-services-v3-dotnet/tree/master/AudioAnalytics/AudioAnalyzer)
-* Примеры Видеоанализерпресет: [пакет SDK для Java](https://github.com/Azure-Samples/media-services-v3-java/tree/master/VideoAnalytics/VideoAnalyzer) или [пакет SDK для .NET](https://github.com/Azure-Samples/media-services-v3-dotnet/tree/master/VideoAnalytics/VideoAnalyzer)
+* AudioAnalyzerPreset samples: [Java SDK](https://github.com/Azure-Samples/media-services-v3-java/tree/master/AudioAnalytics/AudioAnalyzer) or [.NET SDK](https://github.com/Azure-Samples/media-services-v3-dotnet/tree/master/AudioAnalytics/AudioAnalyzer)
+* VideoAnalyzerPreset samples: [Java SDK](https://github.com/Azure-Samples/media-services-v3-java/tree/master/VideoAnalytics/VideoAnalyzer) or [.NET SDK](https://github.com/Azure-Samples/media-services-v3-dotnet/tree/master/VideoAnalytics/VideoAnalyzer)
 
-## <a name="getting-started-with-cognitive-services-speech-services"></a>Начало работы с Cognitive Services голосовыми службами
+## <a name="getting-started-with-cognitive-services-speech-services"></a>Getting started with Cognitive Services Speech Services
 
-[Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/) предоставляет службу преобразования речи в текст, расшифровывает звуковые потоки в текст в режиме реального времени, которые могут использоваться приложениями, инструментами или устройствами. Вы можете использовать преобразование речи в текст, чтобы [настроить собственную акустическую модель, модель языка или произношение модели](../../cognitive-services/speech-service/how-to-custom-speech-train-model.md). Дополнительные сведения см. в разделе [Cognitive Services преобразование речи в текст](../../cognitive-services/speech-service/speech-to-text.md). 
+[Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/) provides a speech-to-text service that transcribes audio streams to text in real time that your applications, tools, or devices can consume or display. You can  use speech-to-text to [customize your own acoustic model, language model, or pronunciation model](../../cognitive-services/speech-service/how-to-custom-speech-train-model.md). For more information, see [Cognitive Services speech-to-text](../../cognitive-services/speech-service/speech-to-text.md). 
 
 > [!NOTE] 
-> Служба преобразования речи в текст не принимает форматы видеофайлов и принимает только [определенные звуковые форматы](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-speech-to-text#audio-formats). 
+> The speech-to-text service does not take video file formats and only takes [certain audio formats](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-speech-to-text#audio-formats). 
 
-Дополнительные сведения о службе преобразования текста в речь и о том, как приступить к работе, см. в разделе [что такое преобразование речи в текст?](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-to-text)
+For more information about the text-to-speech service and how to get started, see [What is speech-to-text?](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-to-text)
 
-## <a name="known-differences-from-deprecated-services"></a>Известные отличия от устаревших служб 
+## <a name="known-differences-from-deprecated-services"></a>Known differences from deprecated services 
 
-Вы обнаружите, что индексатор видео, службы мультимедиа Azure v3 Аудиоанализерпресет и службы Cognitive Services Speech Services более надежны и получают более качественные выходные данные, чем выпущенные Azure Media Indexer 1 и Azure Media Indexer 2 процессора.  
+You will find that Video Indexer, Azure Media Services v3 AudioAnalyzerPreset, and Cognitive Services Speech Services services are more reliable and produces better quality output than the retired Azure Media Indexer 1 and Azure Media Indexer 2 processors.  
 
-Ниже перечислены некоторые известные отличия. 
+Some known differences include: 
 
-* Файлы скрытых субтитров в формате SAMI больше не будут поддерживаться. Это более старый формат субтитров, который больше не используется. Он заменяется на TTML, WebVTT и SRT.  
-* Файлы большого двоичного объекта индексирования аудио (AIB) больше не будут поддерживаться. Эта функция была специально предназначена для технологии индексатора 1 и больше не предлагается.  
-* Cognitive Services службы речи не поддерживают извлечение ключевых слов. Однако индексатор видео и службы мультимедиа v3 Аудиоанализерпресет оба предлагают более надежный набор ключевых слов в формате JSON. 
+* Cognitive Services Speech Services does not support keyword extraction. However, Video Indexer and Media Services v3 AudioAnalyzerPreset both offer a more robust set of keywords in JSON file format. 
 
-## <a name="need-help"></a>Требуется помощь?
+## <a name="need-help"></a>Нужна помощь?
 
-Вы можете отправить запрос в службу поддержки, перейдя к [новому запросу в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest) .
+Вы можете открыть запрос в службу поддержки, перейдя к разделу [нового запроса на техническую поддержку](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Устаревшие компоненты](legacy-components.md)
-* [Страница цен](https://azure.microsoft.com/pricing/details/media-services/#encoding)
+* [Legacy components](legacy-components.md)
+* [Pricing page](https://azure.microsoft.com/pricing/details/media-services/#encoding)
 
 

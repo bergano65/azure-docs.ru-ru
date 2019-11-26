@@ -14,17 +14,17 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
-ms.openlocfilehash: 26a951ffaf0253371ffe69c6df798120f0464082
-ms.sourcegitcommit: 7efb2a638153c22c93a5053c3c6db8b15d072949
+ms.openlocfilehash: 0e49e90209c7337081458b7c214d27b37d3b4da1
+ms.sourcegitcommit: 95931aa19a9a2f208dedc9733b22c4cdff38addc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72881897"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74462616"
 ---
 # <a name="analyze-your-media-using-the-azure-portal"></a>Анализ данных мультимедиа с помощью портала Azure 
 
 > [!IMPORTANT]
-> Ознакомьтесь с [планами выбытия](media-services-analytics-overview.md#retirement-plans) некоторых процессоров мультимедиа.
+> Review the [retirement plans](media-services-analytics-overview.md#retirement-plans) of some media processors.
 
 ## <a name="overview"></a>Краткое описание
 Медиааналитика служб мультимедиа Azure — это набор речевых и визуальных компонентов корпоративного уровня, соответствующий нормам безопасности и доступный по всему миру. Используя медиааналитику для анализа видеофайлов, компании и организации могут получать ценную информацию для принятия решений. Подробные сведения об аналитике служб мультимедиа Azure см. в [этой статье](media-services-analytics-overview.md). 
@@ -54,15 +54,11 @@ ms.locfileid: "72881897"
 
 ### <a name="captions"></a>Субтитры
 Вы можете выбрать формат субтитров, который будет создаваться из контента. Задание индексирования может создавать файлы скрытых субтитров в следующих форматах:  
-
-* **SAMI**
+ 
 * **TTML**
 * **WebVTT**
 
 С помощью файлов скрытых субтитров в этих форматах аудио- и видеофайлы можно сделать доступным для людей с нарушениями слуха.
-
-### <a name="aib-file"></a>Файл AIB
-Выберите этот параметр, если вы хотите создать файл большого двоичного объекта для индексирования аудиозаписей и использовать его с настраиваемым фильтром IFilter SQL Server. Дополнительную информацию см. в [этом](https://azure.microsoft.com/blog/using-aib-files-with-azure-media-indexer-and-sql-server/) блоге.
 
 ### <a name="keywords"></a>Ключевые слова
 Выберите этот параметр, если хотите создать XML-файл ключевых слов. Это файл, который содержит ключевые слова, извлеченные из распознанной речи, и информацию об их частоте и расположении в файле.

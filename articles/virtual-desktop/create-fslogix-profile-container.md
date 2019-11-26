@@ -1,60 +1,60 @@
 ---
-title: Контейнеры профилей Фслогикс NetApp виртуальный рабочий стол Windows — Azure
-description: Создание контейнера профиля Фслогикс с помощью Azure NetApp Files в виртуальном рабочем столе Windows.
+title: FSLogix profile containers NetApp Windows Virtual Desktop - Azure
+description: How to create an FSLogix profile container using Azure NetApp Files in Windows Virtual Desktop.
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: conceptual
-ms.date: 08/26/2019
+ms.date: 11/25/2019
 ms.author: helohr
-ms.openlocfilehash: 1f5d1050815961f51c2bb1cfce256b1ea37d3ac1
-ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+ms.openlocfilehash: 1e26d61e0b1ec50e7a3831970af1fd8fad7fed99
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73605763"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74483658"
 ---
-# <a name="create-an-fslogix-profile-container-for-a-host-pool-using-azure-netapp-files"></a>Создание контейнера профиля Фслогикс для пула узлов с помощью Azure NetApp Files
+# <a name="create-an-fslogix-profile-container-for-a-host-pool-using-azure-netapp-files"></a>Create an FSLogix profile container for a host pool using Azure NetApp Files
 
-Мы рекомендуем использовать контейнеры профилей Фслогикс в качестве решения для профилей пользователей для [службы предварительной версии Windows Virtual Desktop](overview.md). Контейнеры профилей Фслогикс хранят полный профиль пользователя в одном контейнере и предназначены для перемещения профилей в неустойчивых удаленных вычислительных средах, таких как виртуальные рабочие столы Windows. При входе контейнер динамически подключается к вычислительной среде, используя локально поддерживаемый виртуальный жесткий диск (VHD) и виртуальный жесткий диск Hyper-V (VHDX). Эти дополнительные технологии драйверов фильтров позволяют использовать профиль пользователя сразу же и отображаться в системе точно так же, как и локальный профиль пользователя. Дополнительные сведения о контейнерах профилей Фслогикс см. в статье [контейнеры профилей фслогикс и файлы Azure](fslogix-containers-azure-files.md).
+We recommend using FSLogix profile containers as a user profile solution for the [Windows Virtual Desktop service](overview.md). FSLogix profile containers store a complete user profile in a single container and are designed to roam profiles in non-persistent remote computing environments like Windows Virtual Desktop. When you sign in, the container dynamically attaches to the computing environment using a locally supported virtual hard disk (VHD) and Hyper-V virtual hard disk (VHDX). These advanced filter-driver technologies allow the user profile to be immediately available and appear in the system exactly like a local user profile. To learn more about FSLogix profile containers, see [FSLogix profile containers and Azure files](fslogix-containers-azure-files.md).
 
-Вы можете создавать контейнеры профилей Фслогикс с помощью [Azure NetApp Files](https://azure.microsoft.com/services/netapp/), простой в использовании службы собственной платформы Azure, которая помогает клиентам быстро и надежно подготавливать тома SMB корпоративного уровня для сред виртуальных рабочих столов Windows. Дополнительные сведения о Azure NetApp Files см. в разделе [что такое Azure NetApp Files?](../azure-netapp-files/azure-netapp-files-introduction.md)
+You can create FSLogix profile containers using [Azure NetApp Files](https://azure.microsoft.com/services/netapp/), an easy-to-use Azure native platform service that helps customers quickly and reliably provision enterprise-grade SMB volumes for their Windows Virtual Desktop environments. To learn more about Azure NetApp Files, see [What is Azure NetApp Files?](../azure-netapp-files/azure-netapp-files-introduction.md)
 
-В этом руководство показано, как настроить учетную запись Azure NetApp Files и создать контейнеры профилей Фслогикс в виртуальном рабочем столе Windows.
+This guide will show you how to set up an Azure NetApp Files account and create FSLogix profile containers in Windows Virtual Desktop.
 
-В этой статье предполагается, что [Пулы узлов](create-host-pools-azure-marketplace.md) уже настроены и сгруппированы в один или несколько клиентов в среде виртуальных рабочих столов Windows. Сведения о настройке клиентов см. [в статье Создание клиента в виртуальном рабочем столе Windows и в](tenant-setup-azure-active-directory.md) [нашей записи блога сообщества Tech](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/Getting-started-with-Windows-Virtual-Desktop/ba-p/391054).
+This article assumes you already have [host pools](create-host-pools-azure-marketplace.md) set up and grouped into one or more tenants in your Windows Virtual Desktop environment. To learn how to set up tenants, see [Create a tenant in Windows Virtual Desktop](tenant-setup-azure-active-directory.md) and [our Tech Community blog post](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/Getting-started-with-Windows-Virtual-Desktop/ba-p/391054).
 
-Инструкции в этом разделе предназначены специально для пользователей виртуальных рабочих столов Windows. Если вы ищете общие рекомендации по настройке Azure NetApp Files и созданию контейнеров профилей Фслогикс за пределами виртуального рабочего стола Windows, ознакомьтесь с [кратким руководством по настройке Azure NetApp Files и созданию тома NFS](../azure-netapp-files/azure-netapp-files-quickstart-set-up-account-create-volumes.md).
-
->[!NOTE]
->В этой статье не рассматриваются рекомендации по защите доступа к Azure NetApp Files общему ресурсу.
+The instructions in this guide are specifically for Windows Virtual Desktop users. If you're looking for more general guidance for how to set up Azure NetApp Files and create FSLogix profile containers outside of Windows Virtual Desktop, see the [Set up Azure NetApp Files and create an NFS volume quickstart](../azure-netapp-files/azure-netapp-files-quickstart-set-up-account-create-volumes.md).
 
 >[!NOTE]
->Если вы ищете сравнительные материалы о различных вариантах хранения контейнера профиля Фслогикс в Azure, см. статью [Параметры хранилища для контейнеров профилей фслогикс](store-fslogix-profile.md).
+>This article doesn't cover best practices for securing access to the Azure NetApp Files share.
 
-## <a name="prerequisites"></a>Предварительные требования
+>[!NOTE]
+>If you're looking for comparison material about the different FSLogix Profile Container storage options on Azure, see [Storage options for FSLogix profile containers](store-fslogix-profile.md).
 
-Перед созданием контейнера профиля Фслогикс для пула узлов необходимо выполнить следующие действия.
+## <a name="prerequisites"></a>Технические условия
 
-- Настройка и настройка виртуального рабочего стола Windows
-- Подготавливает пул узлов виртуальных рабочих столов Windows
-- [Включение подписки на Azure NetApp Files](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-register)
+Before you can create an FSLogix profile container for a host pool, you must:
 
-## <a name="set-up-your-azure-netapp-files-account"></a>Настройка учетной записи Azure NetApp Files
+- Set up and configure Windows Virtual Desktop
+- Provision a Windows Virtual Desktop host pool
+- [Enable your Azure NetApp Files subscription](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-register)
 
-Чтобы приступить к работе, необходимо настроить учетную запись Azure NetApp Files.
+## <a name="set-up-your-azure-netapp-files-account"></a>Set up your Azure NetApp Files account
 
-1. Войдите на [портал Azure](https://portal.azure.com). Убедитесь, что у вашей учетной записи есть права участника или администратора.
+To get started, you need to set up an Azure NetApp Files account.
 
-2. Щелкните **значок Azure Cloud Shell** справа от панели поиска, чтобы открыть Azure Cloud Shell.
+1. Войдите на [портале Azure](https://portal.azure.com). Make sure your account has contributor or administrator permissions.
 
-3. После открытия Azure Cloud Shell выберите **PowerShell**.
+2. Select the **Azure Cloud Shell icon** to the right of the search bar to open Azure Cloud Shell.
 
-4. Если вы впервые используете Azure Cloud Shell, создайте учетную запись хранения в той же подписке, в которой хранятся Azure NetApp Files и виртуальный рабочий стол Windows.
+3. Once Azure Cloud Shell is open, select **PowerShell**.
 
-   ![Окно учетной записи хранения с кнопкой создать хранилище в нижней части окна, выделенного красным цветом.](media/create-storage-button.png)
+4. If this is your first time using Azure Cloud Shell, create a storage account in the same subscription you keep your Azure NetApp Files and Windows Virtual Desktop.
 
-5. После загрузки Azure Cloud Shell выполните следующие два командлета.
+   ![The storage account window with the create storage button at the bottom of the window highlighted in red.](media/create-storage-button.png)
+
+5. Once Azure Cloud Shell loads, run the following two cmdlets.
 
    ```powershell
    az account set --subscription <subscriptionID>
@@ -64,125 +64,130 @@ ms.locfileid: "73605763"
    az provider register --namespace Microsoft.NetApp --wait
    ```
 
-6. В левой части окна выберите **все службы**. Введите **Azure NetApp Files** в поле поиска, которое отображается в верхней части меню.
+6. In the left side of the window, select **All services**. Enter **Azure NetApp Files** into the search box that appears at the top of the menu.
 
-   ![Снимок экрана, в котором пользователь вводит "Azure NetApp Files" в поле поиска All Services (все службы). В результатах поиска отображается ресурс Azure NetApp Files.](media/azure-netapp-files-search-box.png)
+   ![A screenshot of a user entering "Azure NetApp Files" into the All services search box. The search results show the Azure NetApp Files resource.](media/azure-netapp-files-search-box.png)
 
 
-7. Выберите **Azure NetApp Files** в результатах поиска, а затем щелкните **создать**.
+7. Select **Azure NetApp Files** in the search results, then select **Create**.
 
 8. Нажмите кнопку **Добавить**.
-9. Когда откроется колонка **Новая учетная запись NetApp** , введите следующие значения:
+9. When the **New NetApp account** blade opens, enter the following values:
 
-    - В качестве **имени**введите имя учетной записи NetApp.
-    - В поле **Подписка**выберите подписку для учетной записи хранения, настроенной на шаге 4 из раскрывающегося меню.
-    - В поле **Группа ресурсов**выберите существующую группу ресурсов из раскрывающегося меню или создайте новую, выбрав **создать**.
-    - В поле **Расположение**выберите регион для учетной записи NetApp в раскрывающемся меню. Этот регион должен быть тем же регионом, что и виртуальные машины узла сеанса.
+    - For **Name**, enter your NetApp account name.
+    - For **Subscription**, select the subscription for the storage account you set up in step 4 from the drop-down menu.
+    - For **Resource group**, either select an existing resource group from the drop-down menu or create a new one by selecting **Create new**.
+    - For **Location**, select the region for your NetApp account from the drop-down menu. This region must be the same region as your session host VMs.
 
    >[!NOTE]
-   >Azure NetApp Files сейчас не поддерживает подключение тома между регионами.
+   >Azure NetApp Files currently doesn't support mounting of a volume across regions.
 
-10. По завершении нажмите кнопку **создать** , чтобы создать учетную запись NetApp.
+10. When you're finished, select **Create** to create your NetApp account.
 
-## <a name="create-a-capacity-pool"></a>Создание пула ресурсов
+## <a name="create-a-capacity-pool"></a>Create a capacity pool
 
-Затем создайте пул емкости. 
+Next, create a new capacity pool: 
 
-1. Перейдите в меню Azure NetApp Files и выберите новую учетную запись.
-2. В меню учетной записи выберите **Пулы ресурсов** в разделе Служба хранилища.
-3. Выберите **Добавить пул**.
-4. Когда откроется колонка **новый пул ресурсов** , введите следующие значения:
+1. Go to the Azure NetApp Files menu and select your new account.
+2. In your account menu, select **Capacity pools** under Storage service.
+3. Select **Add pool**.
+4. When the **New capacity pool** blade opens, enter the following values:
 
-    - В поле **имя**введите имя нового пула ресурсов.
-    - В поле **уровень обслуживания**выберите нужное значение из раскрывающегося меню. Для большинства сред рекомендуется использовать **Premium** .
+    - For **Name**, enter a name for the new capacity pool.
+    - For **Service level**, select your desired value from the drop-down menu. We recommend **Premium** for most environments.
        >[!NOTE]
-       >Параметр Premium обеспечивает минимальную пропускную способность, доступную для уровня обслуживания Premium (256 Мбит/с). Может потребоваться настроить эту пропускную способность для рабочей среды. Окончательная пропускная способность основана на связи, описанной в разделе [ограничения пропускной способности](../azure-netapp-files/azure-netapp-files-service-levels.md).
-    - В поле **size (тиб) (размер)** введите размер пула емкости, который наилучшим образом соответствует вашим потребностям. Минимальный размер — 4 тиб.
+       >The Premium setting provides the minimum throughput available for a Premium Service level, which is 256 MBps. You may need to adjust this throughput for a production environment. Final throughput is based on the relationship described in [Throughput limits](../azure-netapp-files/azure-netapp-files-service-levels.md).
+    - For **Size (TiB)** , enter the capacity pool size that best fits your needs. The minimum size is 4 TiB.
 
-5. Когда все будет готово, нажмите кнопку **ОК**.
+5. When you're finished, select **OK**.
 
-## <a name="join-an-active-directory-connection"></a>Присоединение к Active Directoryному соединению
+## <a name="join-an-active-directory-connection"></a>Join an Active Directory connection
 
-После этого необходимо присоединиться к Active Directoryному соединению.
+After that, you need to join an Active Directory connection.
 
-1. Выберите **Active Directory подключения** в меню в левой части страницы, а затем нажмите кнопку **присоединить** , чтобы открыть страницу **Присоединение Active Directory** .
+1. Select **Active Directory connections** in the menu on the left side of the page, then select the **Join** button to open the **Join Active Directory** page.
 
-   ![Снимок экрана меню соединения Active Directory соединения.](media/active-directory-connections-menu.png)
+   ![A screenshot of the Join Active Directory connections menu.](media/active-directory-connections-menu.png)
 
-2. Введите следующие значения на странице **соединение Active Directory** , чтобы присоединиться к соединению.
+2. Enter the following values in the **Join Active Directory** page to join a connection:
 
-    - В поле **основной DNS**-сервер введите IP-адрес DNS-сервера в среде, который может разрешить доменное имя.
-    - В качестве имени **домена**введите полное доменное имя.
-    - Для **префикса сервера SMB (учетная запись компьютера)** введите строку, которую необходимо добавить к имени учетной записи компьютера.
-    - В поле **username (имя пользователя**) введите имя учетной записи с разрешениями на присоединение к домену.
-    - В поле **Password (пароль**) введите пароль учетной записи.
+    - For **Primary DNS**, enter the IP address of the DNS server in your environment that can resolve the domain name.
+    - For **Domain**, enter your fully qualified domain name (FQDN).
+    - For **SMB Server (Computer Account) Prefix**, enter the string you want to append to the computer account name.
+    - For **Username**, enter the name of the account with permissions to perform domain join.
+    - For **Password**, enter the account's password.
 
   >[!NOTE]
-  >Рекомендуется убедиться, что учетная запись компьютера, созданная при [присоединении Active Directory подключения](create-fslogix-profile-container.md#join-an-active-directory-connection) , появилась в контроллере домена в разделе **Компьютеры** или **соответствующее подразделение Организации**.
+  >It's best practice to confirm that the computer account you created in [Join an Active Directory connection](create-fslogix-profile-container.md#join-an-active-directory-connection) has appeared in your domain controller under **Computers** or **your enterprise's relevant OU**.
 
 ## <a name="create-a-new-volume"></a>Создание нового тома
 
-Далее необходимо создать новый том.
+Next, you'll need to create a new volume.
 
-1. Выберите **тома**, а затем щелкните **Добавить том**.
+1. Select **Volumes**, then select **Add volume**.
 
-2. Когда откроется колонка **Создание тома** , введите следующие значения:
+2. When the **Create a volume** blade opens, enter the following values:
 
-    - В поле **имя тома**введите имя нового тома.
-    - В поле **пул емкости**выберите только что созданный пул ресурсов из раскрывающегося меню.
-    - В поле **квота (гиб)** введите размер тома, соответствующий вашей среде.
-    - В поле **Виртуальная сеть**выберите существующую виртуальную сеть с подключением к контроллеру домена из раскрывающегося меню.
-    - В разделе **подсеть**выберите **создать**. Помните, что эта подсеть будет делегирована в Azure NetApp Files.
+    - For **Volume name**, enter a name for the new volume.
+    - For **Capacity pool**, select the capacity pool you just created from the drop-down menu.
+    - For **Quota (GiB)** , enter the volume size appropriate for your environment.
+    - For **Virtual network**, select an existing virtual network that has connectivity to the domain controller from the drop-down menu.
+    - Under **Subnet**, select **Create new**. Keep in mind that this subnet will be delegated to Azure NetApp Files.
 
-3.  Нажмите кнопку **Далее: протокол \>\>** , чтобы открыть вкладку Протокол и настроить параметры доступа к тому.
+3.  Select **Next: Protocol \>\>** to open the Protocol tab and configure your volume access parameters.
 
-## <a name="configure-volume-access-parameters"></a>Настройка параметров доступа к тому
+## <a name="configure-volume-access-parameters"></a>Configure volume access parameters
 
-После создания тома настройте параметры доступа к тому.
+After you create the volume, configure the volume access parameters.
 
-1.  В качестве типа протокола выберите **SMB** .
-2.  В разделе Конфигурация в раскрывающемся меню **Active Directory** выберите тот же каталог, который вы изначально подключили для соединения [с Active Directory](create-fslogix-profile-container.md#join-an-active-directory-connection). Помните, что существует ограничение в один Active Directory на подписку.
-3.  В текстовом поле **имя общего ресурса** введите имя общей папки, используемой пулом узлов сеансов и его пользователями.
+1.  Select **SMB** as the protocol type.
+2.  Under Configuration in the **Active Directory** drop-down menu, select the same directory that you originally connected in [Join an Active Directory connection](create-fslogix-profile-container.md#join-an-active-directory-connection). Keep in mind that there's a limit of one Active Directory per subscription.
+3.  In the **Share name** text box, enter the name of the share used by the session host pool and its users.
 
-4.  В нижней части страницы выберите **Просмотр и создание** . Откроется страница Проверка. После успешной проверки тома нажмите кнопку **создать**.
+4.  Select **Review + create** at the bottom of the page. This opens the validation page. After your volume is validated successfully, select **Create**.
 
-5.  На этом этапе начнется развертывание нового тома. После завершения развертывания можно использовать общий ресурс Azure NetApp Files.
+5.  At this point, the new volume will start to deploy. Once deployment is complete, you can use the Azure NetApp Files share.
 
-6.  Чтобы просмотреть путь подключения, выберите **Переход к ресурсу** и найдите его на вкладке Обзор.
+6.  To see the mount path, select **Go to resource** and look for it in the Overview tab.
 
-    ![Снимок экрана с экраном обзора с красной стрелкой, указывающей на путь подключения.](media/overview-mount-path.png)
+    ![A screenshot of the Overview screen with a red arrow pointing at the mount path.](media/overview-mount-path.png)
 
-## <a name="configure-fslogix-on-session-host-virtual-machines-vms"></a>Настройка Фслогикс на виртуальных машинах узла сеансов
+## <a name="configure-fslogix-on-session-host-virtual-machines-vms"></a>Configure FSLogix on session host virtual machines (VMs)
 
-Этот раздел основан на разделе [Создание контейнера профилей для пула узлов с помощью общей папки](create-host-pools-user-profile.md).
+This section is based on [Create a profile container for a host pool using a file share](create-host-pools-user-profile.md).
 
-1. [Скачайте zip-файл агента фслогикс](https://go.microsoft.com/fwlink/?linkid=2084562&clcid=0x409) , пока вы все еще удаленно находитесь на виртуальной машине узла сеансов.
+1. [Download the FSLogix agent .zip file](https://go.microsoft.com/fwlink/?linkid=2084562&clcid=0x409) while you're still remoted in the session host VM.
 
-2. Распакуйте скачанный файл.
+2. Unzip the downloaded file.
 
-3. В файле перейдите на **x64** > **выпуски** и запустите **фслогиксаппссетуп. exe**. Откроется меню установки.
+3. In the file, go to **x64** > **Releases** and run **FSLogixAppsSetup.exe**. The installation menu will open.
 
-4.  Если у вас есть ключ продукта, введите его в текстовом поле ключ продукта.
+4.  If you have a product key, enter it in the Product Key text box.
 
-5. Установите флажок, чтобы **я принимаю условия лицензии**.
+5. Select the check box next to **I agree to the license terms and conditions**.
 
 6. Щелкните **Установить**.
 
-7. Перейдите в раздел **C:\\Program files\\фслогикс\\Apps** , чтобы убедиться, что агент установлен.
+7. Navigate to **C:\\Program Files\\FSLogix\\Apps** to confirm the agent installed.
 
-8. В меню Пуск запустите **regedit** от имени администратора.
+8. From the Start menu, run **RegEdit** as administrator.
 
-9. Перейдите в раздел **Computer\\HKEY_LOCAL_MACHINE\\software\\фслогикс**.
+9. Navigate to **Computer\\HKEY_LOCAL_MACHINE\\software\\FSLogix**.
 
-10. Создайте ключ с именем **Profiles**.
+10. Create a key named **Profiles**.
 
-11.  Создайте значение с именем **Enabled** с типом **REG_DWORD** , установленным в значение типа данных **1**.
+11.  Create a value named **Enabled** with a **REG_DWORD** type set to a data value of **1**.
 
-12. Создайте значение с именем **вхдлокатионс** с **многострочным типом и** задайте в качестве его значения данных URI для Azure NetApp Files общего ресурса.
+12. Create a value named **VHDLocations** with a **Multi-String** type and set its data value to the URI for the Azure NetApp Files share.
 
-## <a name="assign-users-to-session-host"></a>Назначение пользователей узлу сеансов
+13. Create a value named **DeleteLocalProfileWhenVHDShouldApply** with a DWORD value of 1 to avoid problems with existing local profiles before you sign in.
 
-1. Откройте **интегрированную среду сценариев PowerShell** от имени администратора и войдите на виртуальный рабочий стол Windows.
+     >[!WARNING]
+     >Be careful when creating the DeleteLocalProfileWhenVHDShouldApply value. When the FSLogix Profiles system determines a user should have an FSLogix profile, but a local profile already exists, Profile Container will permanently delete the local profile. The user will then be signed in with the new FSLogix profile.
+
+## <a name="assign-users-to-session-host"></a>Assign users to session host
+
+1. Open **PowerShell ISE** as administrator and sign in to Windows Virtual Desktop.
 
 2. Выполните следующие командлеты.
 
@@ -193,9 +198,9 @@ ms.locfileid: "73605763"
    Add-RdsAccount -DeploymentUrl $brokerurl
    ```
 
-3. При появлении запроса на ввод учетных данных введите учетные данные пользователя с ролью создателя клиента или участника RDS/RDS в клиенте виртуальных рабочих столов Windows.
+3. When prompted for credentials, enter the credentials for the user with the Tenant Creator or RDS Owner/RDS Contributor roles on the Windows Virtual Desktop tenant.
 
-4. Выполните следующие командлеты, чтобы назначить пользователя группе удаленный рабочий стол.
+4. Run the following cmdlets to assign a user to a Remote Desktop group:
 
    ```powershell
    $wvdTenant = "<your-wvd-tenant>"
@@ -205,26 +210,26 @@ ms.locfileid: "73605763"
    Add-RdsAppGroupUser $wvdTenant $hostPool $appGroup $user
    ```
 
-## <a name="make-sure-users-can-access-the-azure-netapp-file-share"></a>Убедитесь, что пользователи имеют доступ к общей папке Azure NetApp
+## <a name="make-sure-users-can-access-the-azure-netapp-file-share"></a>Make sure users can access the Azure NetApp File share
 
-1. Откройте веб – браузер и перейдите по адресу <https://rdweb.wvd.microsoft.com/webclient/index.html>.
+1. Open your internet browser and go to <https://rdweb.wvd.microsoft.com/webclient/index.html>.
 
-2. Выполните вход, используя учетные данные пользователя, назначенного группе удаленный рабочий стол.
+2. Sign in with the credentials of a user assigned to the Remote Desktop group.
 
-3. После установки сеанса пользователя Войдите в портал Azure с помощью учетной записи администратора.
+3. Once you've established the user session, sign in to the Azure portal with an administrative account.
 
-4. Откройте **Azure NetApp Files**, выберите учетную запись Azure NetApp Files, а затем щелкните **тома**. После открытия меню тома выберите соответствующий том.
+4. Open **Azure NetApp Files**, select your Azure NetApp Files account, and then select **Volumes**. Once the Volumes menu opens, select the corresponding volume.
 
-   ![Снимок экрана учетной записи NetApp, настроенной ранее в портал Azure с выбранной кнопкой "тома".](media/netapp-account.png)
+   ![A screenshot of the NetApp account you set up earlier in the Azure portal with the Volumes button selected.](media/netapp-account.png)
 
-5. Перейдите на вкладку **Обзор** и убедитесь, что в контейнере профиля фслогикс используется пространство.
+5. Go to the **Overview** tab and confirm that the FSLogix profile container is using space.
 
-6. Подключитесь напрямую к любой виртуальной машине из пула узлов с помощью удаленный рабочий стол и откройте **Проводник.** Затем перейдите к **пути подключения** (в следующем примере путь подключения \\\\ANF-SMB-3863.gt1107.onmicrosoft.com\\использовании-VOL).
+6. Connect directly to any VM part of the host pool using Remote Desktop and open the **File Explorer.** Then navigate to the **Mount path** (in the following example, the mount path is \\\\anf-SMB-3863.gt1107.onmicrosoft.com\\anf-VOL).
 
-   В этой папке должен быть виртуальный жесткий диск профиля (или VHDX), подобный показанному в следующем примере.
+   Within this folder, there should be a profile VHD (or VHDX) like the one in the following example.
 
-   ![Снимок экрана содержимого папки в пути подключения. Внутри — это один VHD-файл с именем «Profile_ssbb».](media/mount-path-folder.png)
+   ![A screenshot of the contents of the folder in the mount path. Inside is a single VHD file named "Profile_ssbb."](media/mount-path-folder.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Для настройки общего ресурса профиля пользователя можно использовать контейнеры профилей Фслогикс. Сведения о создании общих папок профилей пользователей с помощью новых контейнеров см. в статье [Создание контейнера профилей для пула узлов с использованием общей папки](create-host-pools-user-profile.md).
+You can use FSLogix profile containers to set up a user profile share. To learn how to create user profile shares with your new containers, see [Create a profile container for a host pool using a file share](create-host-pools-user-profile.md).

@@ -8,86 +8,87 @@ ms.topic: include
 ms.date: 06/25/2019
 ms.author: anavin
 ms.custom: include file
-ms.openlocfilehash: a37280fddf34221a9d08501ef55c6b069cd877a4
-ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
+ms.openlocfilehash: ac1687d371630089436640af15cf46491a38ab51
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "70242753"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74485495"
 ---
-<a name="azure-resource-manager-virtual-networking-limits"></a>Ограничения сети. Azure Resource Manager следующие ограничения применяются только к сетевым ресурсам, управляемым с помощью **Azure Resource Manager** для каждого региона на подписку. Узнайте, как [просмотреть текущие данные об использовании ресурсов в соответствии с ограничениями подписки](../articles/networking/check-usage-against-limits.md).
+<a name="azure-resource-manager-virtual-networking-limits"></a>Networking limits - Azure Resource Manager The following limits apply only for networking resources managed through **Azure Resource Manager** per region per subscription. Узнайте, как [просмотреть текущие данные об использовании ресурсов в соответствии с ограничениями подписки](../articles/networking/check-usage-against-limits.md).
 
 > [!NOTE]
-> Недавно мы увеличили все ограничения по умолчанию до максимального уровня. Если столбец максимального ограничения отсутствует, ресурс не имеет регулируемых ограничений. Если эти ограничения были увеличены за счет поддержки в прошлом и не видят обновленные ограничения в следующих таблицах, отправьте [запрос в службу поддержки по сети](../articles/azure-resource-manager/resource-manager-quota-errors.md) бесплатно.
+> Недавно мы увеличили все ограничения по умолчанию до максимального уровня. If there's no maximum limit column, the resource doesn't have adjustable limits. If you had these limits increased by support in the past and don't see updated limits in the following tables, [open an online customer support request at no charge](../articles/azure-resource-manager/resource-manager-quota-errors.md)
 
-| Resource | По умолчанию/максимальное ограничение | 
+| Ресурс | Default/maximum limit | 
 | --- | --- |
 | Виртуальные сети |1000 |
 | Подсетей на виртуальную сеть |3000 |
-| Пиринг виртуальных сетей на виртуальную сеть |500 |
-| DNS-серверов на виртуальную сеть |20 |
-| Частных IP-адресов на виртуальную сеть |65 536 |
-| Частные IP-адреса на сетевой интерфейс |256 |
-| Частных IP-адресов на виртуальную машину |256 |
-| Общедоступные IP-адреса на сетевой интерфейс |256 |
-| Общедоступные IP-адреса на виртуальную машину |256 |
-| Параллельные потоки TCP или UDP для каждого сетевого адаптера виртуальной машины или экземпляра роли |500,000 |
-| Сетевые карты |65 536 |
-| группы сетевой безопасности; |5 000 |
+| Virtual network peerings per virtual network |500 |
+| [Virtual network gateways (VPN Gateways) per virtual network](../articles/vpn-gateway/vpn-gateway-about-vpngateways.md#gwsku) |30 |
+| DNS servers per virtual network |20 |
+| Private IP addresses per virtual network |65,536 |
+| Private IP addresses per network interface |256 |
+| Private IP addresses per virtual machine |256 |
+| Public IP addresses per network interface |256 |
+| Public IP addresses per virtual machine |256 |
+| Параллельные потоки TCP или UDP для каждого сетевого адаптера виртуальной машины или экземпляра роли |500 000 |
+| Network interface cards |65,536 |
+| Группы безопасности сети |5 000 |
 | Правил группы NSG на группу NSG |1000 |
 | IP-адреса и диапазоны, указанные для источника или назначения в группе безопасности |4000 |
 | Группы безопасности приложений |3000 |
 | Группы безопасности приложений на IP-конфигурацию для каждого сетевого адаптера |20 |
 | IP-конфигураций на группу безопасности приложения |4000 |
 | Группы безопасности приложений, которые могут быть указаны в пределах всех правил безопасности группы безопасности сети |100 |
-| Определяемые пользователем таблицы маршрутов |200 |
-| Определяемые пользователем маршруты на таблицу маршрутов |400 |
-| Корневые сертификаты типа "точка — сеть" для VPN-шлюза Azure |20 |
+| User-defined route tables |200 |
+| User-defined routes per route table |400 |
+| Point-to-site root certificates per Azure VPN Gateway |20 |
 | Элементы TAP виртуальной сети |100 |
 | Число конфигураций TAP сетевых интерфейсов на TAP виртуальной сети |100 |
 
 #### <a name="publicip-address"></a>Ограничения для общедоступных IP-адресов
-| Resource | Ограничение по умолчанию | Максимальное ограничение |
+| Ресурс | Ограничение по умолчанию | Максимальное ограничение |
 | --- | --- | --- |
-| Общедоступные IP-адреса (динамические) | 1 000 для Basic. |Обратитесь в службу поддержки. |
-| Общедоступные IP-адреса (статические) | 1 000 для Basic. |Обратитесь в службу поддержки. |
-| Общедоступные IP-адреса (статические) | 1 000 для Standard.|Обратитесь в службу поддержки. |
-| Длина префикса общедоступного IP-адреса | /28 | Обратитесь в службу поддержки. |
+| Общедоступные IP-адреса (динамические) | 1,000 for Basic. |Обратитесь в службу поддержки. |
+| Общедоступные IP-адреса (статические) | 1,000 for Basic. |Обратитесь в службу поддержки. |
+| Общедоступные IP-адреса (статические) | 1,000 for Standard.|Обратитесь в службу поддержки. |
+| Public IP prefix length | /28 | Обратитесь в службу поддержки. |
 
-#### <a name="load-balancer"></a>Ограничения подсистемы балансировки нагрузки
+#### <a name="load-balancer"></a>Load balancer limits
 Следующие ограничения применяются только к сетевым ресурсам, управление которыми осуществляется с помощью Azure Resource Manager для региона и на подписку. Узнайте, как [просмотреть текущие данные об использовании ресурсов в соответствии с ограничениями подписки](../articles/networking/check-usage-against-limits.md).
 
-| Resource | По умолчанию/максимальное ограничение |
+| Ресурс | Default/maximum limit |
 | --- | --- |
-| Подсистемы балансировки нагрузки | 1000 | 
+| Балансировщики нагрузки | 1000 | 
 | Правил на ресурс, уровень "Базовый" | 250 |
-| Правил на ресурс, уровень "Стандартный" | 1,500 | 
+| Правил на ресурс, уровень "Стандартный" | 1500 | 
 | Правил на IP-конфигурацию | 299 |
 | Правил на сетевой адаптер | 300 |
-| IP-конфигурации внешних интерфейсов, базовый | 200 |
-| IP-конфигурации внешних интерфейсов, Стандартный | 600 |
-| Пул серверной части, базовый | 100, одна группа доступности |
-| Пул серверной части, Стандартный | 1 000, одна виртуальная сеть |
-| Ресурсы серверной части на подсистему балансировки нагрузки, Стандартный<sup>1</sup> | 150 |
-| Порты высокого уровня доступности, Standard | 1 для внутреннего внешнего интерфейса |
+| Front-end IP configurations, Basic | 200 |
+| Front-end IP configurations, Standard | 600 |
+| Back-end pool, Basic | 100, single availability set |
+| Back-end pool, Standard | 1,000, single virtual network |
+| Back-end resources per load balancer, Standard<sup>1</sup> | 150 |
+| High-availability ports, Standard | 1 per internal front-end |
 
-<sup>1</sup> Ограничение составляет до 150 ресурсов в любом сочетании автономных ресурсов виртуальной машины, ресурсов группы доступности и масштабируемых наборов виртуальных машин.
+<sup>1</sup>The limit is up to 150 resources, in any combination of standalone virtual machine resources, availability set resources, and virtual machine scale-set resources.
 
-#### <a name="virtual-networking-limits-classic"></a>Следующие ограничения применяются только к сетевым ресурсам, управляемым с помощью **классической** модели развертывания на подписку. Узнайте, как [просмотреть текущие данные об использовании ресурсов в соответствии с ограничениями подписки](../articles/networking/check-usage-against-limits.md).
+#### <a name="virtual-networking-limits-classic"></a>The following limits apply only for networking resources managed through the **classic** deployment model per subscription. Узнайте, как [просмотреть текущие данные об использовании ресурсов в соответствии с ограничениями подписки](../articles/networking/check-usage-against-limits.md).
 
-| Resource | Ограничение по умолчанию | Максимальное ограничение |
+| Ресурс | Ограничение по умолчанию | Максимальное ограничение |
 | --- | --- | --- |
 | Виртуальные сети |100 |100 |
 | Сайты локальной сети |20 |50 |
-| DNS-серверов на виртуальную сеть |20 |20 |
-| Частных IP-адресов на виртуальную сеть |4096 |4096 |
-| Параллельные потоки TCP или UDP для каждого сетевого адаптера виртуальной машины или экземпляра роли |500 000, до 1 000 000 для двух или более сетевых карт. |500 000, до 1 000 000 для двух или более сетевых карт. |
-| Группы безопасности сети (NSG) |200 |200 |
+| DNS servers per virtual network |20 |20 |
+| Private IP addresses per virtual network |4096 |4096 |
+| Параллельные потоки TCP или UDP для каждого сетевого адаптера виртуальной машины или экземпляра роли |500,000, up to 1,000,000 for two or more NICs. |500,000, up to 1,000,000 for two or more NICs. |
+| Группы безопасности сети |200 |200 |
 | Правил группы NSG на группу NSG |1000 |1000 |
-| Определяемые пользователем таблицы маршрутов |200 |200 |
-| Определяемые пользователем маршруты на таблицу маршрутов |400 |400 |
+| User-defined route tables |200 |200 |
+| User-defined routes per route table |400 |400 |
 | Общедоступные IP-адреса (динамические) |500 |500 |
 | Зарезервированные общедоступные IP-адреса |500 |500 |
-| Виртуальный IP-адрес на развертывание |5 |Связаться со службой поддержки |
-| Частный виртуальный IP-адрес (внутренняя балансировка нагрузки) для каждого развертывания |1 |1 |
-| Списки управления доступом к конечным точкам (ACL) |50 |50 |
+| Виртуальный IP-адрес на развертывание |5 |Обращение в службу поддержки |
+| Private VIP (internal load balancing) per deployment |1 |1 |
+| Endpoint access control lists (ACLs) |50 |50 |

@@ -1,105 +1,101 @@
 ---
-title: Службы "экземпляры контейнеров Azure" — часто задаваемые вопросы
-description: Ответы на часто задаваемые вопросы, связанные со службой "экземпляры контейнеров Azure"
-services: container-instances
+title: Часто задаваемые вопросы
+description: Answers for frequently asked questions related to the Azure Container Instances service
 author: dkkapur
-manager: gwallace
-ms.service: container-instances
 ms.topic: article
 ms.date: 4/25/2019
-ms.author: dekapur
-ms.openlocfilehash: 29d31e2076e0ff5ddf4f84df13ac2eede482c052
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: b5888efe210ab0f3794895d350c5647b6f685880
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68325996"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74484129"
 ---
-# <a name="frequently-asked-questions-about-azure-container-instances"></a>Часто задаваемые вопросы о службе "экземпляры контейнеров Azure"
+# <a name="frequently-asked-questions-about-azure-container-instances"></a>Frequently asked questions about Azure Container Instances
 
-В этой статье рассматриваются часто задаваемые вопросы о службе "экземпляры контейнеров Azure".
+This article addresses frequently asked questions about Azure Container Instances.
 
-## <a name="deployment"></a>Развертывание
+## <a name="deployment"></a>Развертывание.
 
-### <a name="how-large-can-my-container-image-be"></a>Насколько велика возможность создания образа контейнера?
+### <a name="how-large-can-my-container-image-be"></a>How large can my container image be?
 
-Максимальный размер развертываемого образа контейнера в службе "экземпляры контейнеров Azure" составляет 15 ГБ. Вы можете развертывать крупные образы в зависимости от доступности на момент развертывания, но это не гарантируется.
+The maximum size for a deployable container image on Azure Container Instances is 15 GB. You might be able to deploy larger images depending on the exact availability at the moment you deploy, but this is not guaranteed.
 
-Размер образа контейнера влияет на время развертывания, поэтому обычно требуется, чтобы образы контейнера были как можно меньше.
+The size of your container image impacts how long it takes to deploy, so generally you want to keep your container images as small as possible.
 
-### <a name="how-can-i-speed-up-the-deployment-of-my-container"></a>Как ускорить развертывание контейнера?
+### <a name="how-can-i-speed-up-the-deployment-of-my-container"></a>How can I speed up the deployment of my container?
 
-Поскольку один из основных определителями времени развертывания — это размер изображения, ищите способы уменьшения размера. Удалите ненужные слои или уменьшите размер слоев в изображении (путем выбора более светлого базового образа ОС). Например, если вы используете контейнеры Linux, рассмотрите возможность использования Alpine в качестве базового образа, а не полного сервера Ubuntu. Аналогично, для контейнеров Windows используйте базовый образ Nano Server, если это возможно. 
+Because one of the main determinants of deployment times is the image size, look for ways to reduce the size. Remove layers you don't need, or reduce the size of layers in the image (by picking a lighter base OS image). For example, if you're running Linux containers, consider using Alpine as your base image rather than a full Ubuntu Server. Similarly, for Windows containers, use a Nano Server base image if possible. 
 
-Также следует проверить список предварительно кэшированных образов в образах контейнеров Azure, доступных через API-интерфейс для [кэшированных изображений](/rest/api/container-instances/listcachedimages) . Вы можете переключить слой изображения для одного из предварительно кэшированных изображений. 
+You should also check the list of pre-cached images in Azure Container Images, available via the [List Cached Images](/rest/api/container-instances/listcachedimages) API. You might be able to switch out an image layer for one of the pre-cached images. 
 
-См. более [подробные рекомендации](container-instances-troubleshooting.md#container-takes-a-long-time-to-start) по сокращению времени запуска контейнера.
+See more [detailed guidance](container-instances-troubleshooting.md#container-takes-a-long-time-to-start) on reducing container startup time.
 
-### <a name="what-windows-base-os-images-are-supported"></a>Какие образы базовой ОС Windows поддерживаются?
+### <a name="what-windows-base-os-images-are-supported"></a>What Windows base OS images are supported?
 
-#### <a name="windows-server-2016-base-images"></a>Базовые образы Windows Server 2016
+#### <a name="windows-server-2016-base-images"></a>Windows Server 2016 base images
 
-* [Сервер Nano Server](https://hub.docker.com/_/microsoft-windows-nanoserver): `10.0.14393.x`,`sac2016`
-* [Windows Server Core](https://hub.docker.com/_/microsoft-windows-servercore): `ltsc2016`,`10.0.14393.x`
+* [Nano Server](https://hub.docker.com/_/microsoft-windows-nanoserver): `10.0.14393.x`, `sac2016`
+* [Windows Server Core](https://hub.docker.com/_/microsoft-windows-servercore): `ltsc2016`,  `10.0.14393.x`
 
 > [!NOTE]
-> Образы Windows на основе полугодовых каналов выпуска 1709 или 1803 не поддерживаются.
+> Windows images based on Semi-Annual Channel release 1709 or 1803 are not supported.
 
-#### <a name="windows-server-2019-and-client-base-images-preview"></a>Windows Server 2019 и базовые образы клиента (Предварительная версия)
+#### <a name="windows-server-2019-and-client-base-images-preview"></a>Windows Server 2019 and client base images (preview)
 
-* [Сервер Nano Server](https://hub.docker.com/_/microsoft-windows-nanoserver): `1809`,`10.0.17763.x`
-* [Windows Server Core](https://hub.docker.com/_/microsoft-windows-servercore): `ltsc2019`, `1809`,`10.0.17763.x`
-* [Windows](https://hub.docker.com/_/microsoft-windows): `1809`,`10.0.17763.x` 
+* [Nano Server](https://hub.docker.com/_/microsoft-windows-nanoserver): `1809`, `10.0.17763.x`
+* [Windows Server Core](https://hub.docker.com/_/microsoft-windows-servercore): `ltsc2019`, `1809`, `10.0.17763.x`
+* [Windows](https://hub.docker.com/_/microsoft-windows): `1809`, `10.0.17763.x` 
 
-### <a name="what-net-or-net-core-image-layer-should-i-use-in-my-container"></a>Какой уровень образа .NET или .NET Core следует использовать в моем контейнере? 
+### <a name="what-net-or-net-core-image-layer-should-i-use-in-my-container"></a>What .NET or .NET Core image layer should I use in my container? 
 
-Используйте наименьшее изображение, удовлетворяющее вашим требованиям. Для Linux можно использовать образ *среды выполнения — Alpine* .NET Core, который поддерживался с момента выпуска .net Core 2,1. Для Windows, если используется полная .NET Framework, необходимо использовать образ Windows Server Core (образ только для среды выполнения, например *4.7.2-windowsservercore-ltsc2016*). Образы только для среды выполнения меньше, но не поддерживают рабочие нагрузки, для которых требуется пакет SDK для .NET.
+Use the smallest image that satisfies your requirements. For Linux, you could use a *runtime-alpine* .NET Core image, which has been supported since the release of .NET Core 2.1. For Windows, if you are using the full .NET Framework, then you need to use a Windows Server Core image (runtime-only image, such as  *4.7.2-windowsservercore-ltsc2016*). Runtime-only images are smaller but do not support workloads that require the .NET SDK.
 
-## <a name="availability-and-quotas"></a>Доступность и квоты
+## <a name="availability-and-quotas"></a>Availability and quotas
 
-### <a name="how-many-cores-and-memory-should-i-allocate-for-my-containers-or-the-container-group"></a>Сколько ядер и памяти следует выделить для контейнеров или группы контейнеров?
+### <a name="how-many-cores-and-memory-should-i-allocate-for-my-containers-or-the-container-group"></a>How many cores and memory should I allocate for my containers or the container group?
 
-Это действительно зависит от рабочей нагрузки. Запустите небольшие и протестируйте производительность, чтобы увидеть, как находятся ваши контейнеры. [Отслеживайте использование ресурсов ЦП и памяти](container-instances-monitor.md), а затем добавляйте ядра или память на основе типов процессов, развертываемых в контейнере. 
+This really depends on your workload. Start small and test performance to see how your containers do. [Monitor CPU and memory resource usage](container-instances-monitor.md), and then add cores or memory based on the kind of processes that you deploy in the container. 
 
-Также проверьте [доступность ресурсов](container-instances-region-availability.md#availability---general) для региона, в котором выполняется развертывание, для верхних границ для ядер ЦП и памяти, доступных для каждой группы контейнеров. 
+Make sure also to check the [resource availability](container-instances-region-availability.md#availability---general) for the region you are deploying in for the upper bounds on CPU cores and memory available per container group. 
 
-### <a name="what-underlying-infrastructure-does-aci-run-on"></a>В какой базовой инфраструктуре работает ACI?
+### <a name="what-underlying-infrastructure-does-aci-run-on"></a>What underlying infrastructure does ACI run on?
 
-Служба "экземпляры контейнеров Azure" предназначена для бессерверных контейнеров — службы по запросу, поэтому мы хотим сконцентрироваться на разработке контейнеров и не будем беспокоиться об инфраструктуре! Для тех, которые интересуют или хотят сравнивать производительность, ACI работает на наборах виртуальных машин Azure различных номеров SKU в основном из серии F и D. Мы планируем изменить это в будущем, так как мы продолжаем разрабатывать и оптимизировать службу. 
+Azure Container Instances aims to be a serverless containers-on-demand service, so we want you to be focused on developing your containers, and not worry about the infrastructure! For those that are curious or wanting to do comparisons on performance, ACI runs on sets of Azure VMs of various SKUs, primarily from the F and the D series. We expect this to change in the future as we continue to develop and optimize the service. 
 
-### <a name="i-want-to-deploy-thousand-of-cores-on-aci---can-i-get-my-quota-increased"></a>Я хочу развернуть тысячи ядер на ACI — можно ли увеличить квоту?
+### <a name="i-want-to-deploy-thousand-of-cores-on-aci---can-i-get-my-quota-increased"></a>I want to deploy thousand of cores on ACI - can I get my quota increased?
  
-Да (иногда). Сведения о текущих квотах и ограничениях, которые могут быть увеличены по запросу, см. в статье [квоты и ограничения](container-instances-quotas.md) .
+Yes (sometimes). See the [quotas and limits](container-instances-quotas.md) article for current quotas and which limits can be increased by request.
 
-### <a name="can-i-deploy-with-more-than-4-cores-and-16-gb-of-ram"></a>Можно ли выполнить развертывание с более чем 4 ядрами и 16 ГБ ОЗУ?
+### <a name="can-i-deploy-with-more-than-4-cores-and-16-gb-of-ram"></a>Can I deploy with more than 4 cores and 16 GB of RAM?
 
-Пока нет. В настоящее время это максимальные значения для группы контейнеров. Обратитесь в службу поддержки Azure с конкретными требованиями или запросами. 
+Пока нет. Currently, these are the maximums for a container group. Contact Azure Support with specific requirements or requests. 
 
-### <a name="when-will-aci-be-in-a-specific-region"></a>Когда будет ACI в определенном регионе?
+### <a name="when-will-aci-be-in-a-specific-region"></a>When will ACI be in a specific region?
 
-Доступность текущего региона опубликована [здесь](container-instances-region-availability.md#availability---general). Если у вас есть требование для определенного региона, обратитесь в службу поддержки Azure.
+Current region availability is published [here](container-instances-region-availability.md#availability---general). If you have a requirement for a specific region, contact Azure Support.
 
-## <a name="features-and-scenarios"></a>Функции и сценарии
+## <a name="features-and-scenarios"></a>Features and scenarios
 
-### <a name="how-do-i-scale-a-container-group"></a>Разделы справки масштабировать группу контейнеров?
+### <a name="how-do-i-scale-a-container-group"></a>How do I scale a container group?
 
-В настоящее время масштабирование недоступно для контейнеров или групп контейнеров. Если вам нужно запустить больше экземпляров, используйте наш API для автоматизации и создания дополнительных запросов для создания группы контейнеров в службе. 
+Currently, scaling is not available for containers or container groups. If you need to run more instances, use our API to automate and create more requests for container group creation to the service. 
 
-### <a name="what-features-are-available-to-instances-running-in-a-custom-vnet"></a>Какие функции доступны экземплярам, выполняемым в пользовательской виртуальной сети?
+### <a name="what-features-are-available-to-instances-running-in-a-custom-vnet"></a>What features are available to instances running in a custom VNet?
 
-Вы можете развернуть группы контейнеров в выбранной виртуальной сети Azure и делегировать частные IP-адреса группам контейнеров, чтобы маршрутизировать трафик между виртуальными сетями в ресурсах Azure. Развертывание группы контейнеров в виртуальной сети сейчас находится на этапе предварительной версии. Некоторые аспекты этой функции могут быть изменены до выхода общедоступной версии. См. раздел [ограничения предварительной версии](container-instances-vnet.md#preview-limitations) для обновленной информации.
+You can deploy container groups in an Azure virtual network of your choice, and delegate private IPs to the container groups to route traffic within the VNet across your Azure resources. Deployment of a container group into a virtual network is currently in preview, and some aspects of this feature may change prior to general availability (GA). See [Preview limitations](container-instances-vnet.md#preview-limitations) for updated information.
 
-## <a name="pricing"></a>Цены
+## <a name="pricing"></a>Стоимость
 
-### <a name="when-does-the-meter-start-running"></a>Когда запускается Счетчик?
+### <a name="when-does-the-meter-start-running"></a>When does the meter start running?
 
-Длительность группы контейнеров вычисляется с момента, когда начинается извлечение образа первого контейнера (для нового развертывания) или перезапуска группы контейнеров (если она уже развернута), пока группа контейнеров не будет остановлена. Дополнительные сведения см. в разделе [цены на экземпляры контейнеров](https://azure.microsoft.com/pricing/details/container-instances/).
+Container group duration is calculated from the time that we start to pull your first container's image (for a new deployment) or your container group is restarted (if already deployed), until the container group is stopped. See details at [Container Instances pricing](https://azure.microsoft.com/pricing/details/container-instances/).
 
-### <a name="do-i-stop-being-charged-when-my-containers-are-stopped"></a>Нужно ли прекратить оплату при остановке контейнеров?
+### <a name="do-i-stop-being-charged-when-my-containers-are-stopped"></a>Do I stop being charged when my containers are stopped?
 
-Счетчики останавливаются после остановки всей группы контейнеров. Пока контейнер в группе контейнеров работает, мы содержали ресурсы на случай, если вы хотите запустить контейнеры снова. 
+Meters stop running once your entire container group is stopped. As long as a container in your container group is running, we hold the resources in case you want to start the containers up again. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* Дополнительные [сведения](container-instances-overview.md) о службе "экземпляры контейнеров Azure".
-* [Устранение распространенных](container-instances-troubleshooting.md) неполадок в службе "экземпляры контейнеров Azure".
+* [Learn more](container-instances-overview.md) about Azure Container Instances.
+* [Troubleshoot common issues](container-instances-troubleshooting.md) in Azure Container Instances.

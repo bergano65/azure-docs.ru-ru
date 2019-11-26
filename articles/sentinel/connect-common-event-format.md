@@ -1,6 +1,6 @@
 ---
-title: Подключение данных CEF к предварительной версии Azure Sentinel | Документация Майкрософт
-description: Узнайте, как подключить данные CEF к Azure Sentinel.
+title: Connect CEF data to Azure Sentinel Preview| Microsoft Docs
+description: Learn how to connect CEF data to Azure Sentinel.
 services: sentinel
 documentationcenter: na
 author: rkarlin
@@ -12,44 +12,44 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 10/14/2019
+ms.date: 11/26/2019
 ms.author: rkarlin
-ms.openlocfilehash: 92beb61125c9c6a41bafb9a0c477d81c34a2f5de
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 0fbdba5c3fbfdfab5267407ccec9c611d74a5e02
+ms.sourcegitcommit: 95931aa19a9a2f208dedc9733b22c4cdff38addc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73520670"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74463979"
 ---
-# <a name="connect-your-external-solution-using-common-event-format"></a>Подключение внешнего решения с помощью общего формата событий
+# <a name="connect-your-external-solution-using-common-event-format"></a>Connect your external solution using Common Event Format
 
 
 
-В этой статье объясняется, как подключить метку Azure к внешним решениям по обеспечению безопасности, которые отправляют сообщения общего формата событий (CEF) поверх системного журнала. 
+This article explains how to connect Azure Sentinel with your external security solutions that send Common Event Format (CEF) messages on top of Syslog. 
 
 > [!NOTE] 
-> Данные хранятся в географическом расположении рабочей области, в которой выполняется Sentinel-метка Azure.
+> Data is stored in the geographic location of the workspace on which you are running Azure Sentinel.
 
-## <a name="how-it-works"></a>Принцип работы
+## <a name="how-it-works"></a>Принципы работы
 
-Необходимо развернуть агент на выделенном компьютере Linux (виртуальную машину или локально) для поддержки обмена данными между устройством и Sentinel. На следующей схеме описывается настройка в событии виртуальной машины Linux в Azure.
+You need to deploy an agent on a dedicated Linux machine (VM or on premises) to support the communication between the appliance and Azure Sentinel. The following diagram describes the setup in the event of a Linux VM in Azure.
 
  ![CEF в Azure](./media/connect-cef/cef-syslog-azure.png)
 
-Кроме того, эта установка будет существовать, если вы используете виртуальную машину в другом облаке или на локальном компьютере. 
+Alternatively, this setup will exist if you use a VM in another cloud, or an on-premises machine. 
 
  ![CEF в локальной среде](./media/connect-cef/cef-syslog-onprem.png)
 
 
 ## <a name="security-considerations"></a>Вопросы безопасности
 
-Обязательно настройте безопасность компьютера в соответствии с политикой безопасности вашей организации. Например, можно настроить сеть для согласования с политикой безопасности корпоративной сети и изменить порты и протоколы в управляющей программе в соответствии с вашими требованиями. Для улучшения конфигурации безопасности компьютера можно использовать следующие инструкции:  [безопасная виртуальная машина в Azure](../virtual-machines/linux/security-policy.md), рекомендации [по сетевой безопасности](../security/fundamentals/network-best-practices.md).
+Make sure to configure the machine's security according to your organization's security policy. For example, you can configure your network to align with your corporate network security policy and change the ports and protocols in the daemon to align with your requirements. You can use the following instructions to improve your machine security configuration:  [Secure VM in Azure](../virtual-machines/linux/security-policy.md), [Best practices for Network security](../security/fundamentals/network-best-practices.md).
 
-Чтобы использовать TLS-связь между решением безопасности и компьютером syslog, необходимо настроить управляющую программу syslog (rsyslog или syslog-ng) для взаимодействия в TLS: [шифрование трафика syslog с помощью TLS — rsyslog](https://www.rsyslog.com/doc/v8-stable/tutorials/tls_cert_summary.html), [Шифрование сообщений журнала с помощью TLS — syslog-ng](https://support.oneidentity.com/technical-documents/syslog-ng-open-source-edition/3.22/administration-guide/60#TOPIC-1209298).
+To use TLS communication between the security solution and the Syslog machine, you will need to configure the Syslog daemon (rsyslog or syslog-ng) to communicate in TLS: [Encrypting Syslog Traffic with TLS -rsyslog](https://www.rsyslog.com/doc/v8-stable/tutorials/tls_cert_summary.html), [Encrypting log messages with TLS –syslog-ng](https://support.oneidentity.com/technical-documents/syslog-ng-open-source-edition/3.22/administration-guide/60#TOPIC-1209298).
 
  
 ## <a name="prerequisites"></a>Технические условия
-Убедитесь, что компьютер Linux, используемый в качестве прокси-сервера, работает под управлением одной из следующих операционных систем:
+Make sure the Linux machine you use as a proxy is running one of the following operating systems:
 
 - 64-разрядная
   - CentOS 6 и 7
@@ -66,65 +66,65 @@ ms.locfileid: "73520670"
    - Debian GNU/Linux 8 и 9
    - Ubuntu Linux 14.04 LTS и 16.04 LTS
  
- - Версии управляющей программы
-   - Syslog-ng: 2,1-3.22.1
-   - Rsyslog: V8
+ - Daemon versions
+   - Syslog-ng: 2.1 - 3.22.1
+   - Rsyslog: v8
   
- - Поддерживаемые документы RFC системного журнала
+ - Syslog RFCs supported
    - Syslog RFC 3164
    - Syslog RFC 5424
  
-Убедитесь, что компьютер соответствует следующим требованиям: 
+Make sure your machine also meets the following requirements: 
 - Разрешения
-    - Необходимо иметь повышенные разрешения (sudo) на компьютере. 
+    - You must have elevated permissions (sudo) on your machine. 
 - Требования к программному обеспечению
-    - Убедитесь, что на вашем компьютере установлен Python.
-## <a name="step-1-deploy-the-agent"></a>Шаг 1. Развертывание агента
+    - Make sure you have Python running on your machine
+## <a name="step-1-deploy-the-agent"></a>STEP 1: Deploy the agent
 
-На этом шаге необходимо выбрать компьютер Linux, который будет использоваться в качестве прокси-сервера между Sentinel Azure и решением безопасности. Вам потребуется запустить сценарий на прокси-компьютере, который:
-- Устанавливает агент Log Analytics и настраивает его по мере необходимости для прослушивания сообщений Syslog через порт 514 через TCP и отправляет сообщения CEF в рабочую область "Sentinel" Azure.
-- Настраивает управляющую программу syslog для пересылки CEF сообщений агенту Log Analytics с помощью порта 25226.
-- Устанавливает агент системного журнала для получения данных и их безопасного отправку в Log Analytics, где они анализируются и расширяются.
+In this step, you need to select the Linux machine that will act as a proxy between Azure Sentinel and your security solution. You will have to run a script on the proxy machine that:
+- Installs the Log Analytics agent and configures it as needed to listen for Syslog messages.
+- Configures the Syslog daemon to listen to Syslog messages using TCP port 514 and then forwards only the CEF messages to the Log Analytics agent using TCP port 25226.
+- Sets the Syslog agent to collect the data and send it securely to Azure Sentinel, where it is parsed and enriched.
  
  
-1. На портале Sentinel Azure щелкните **соединители данных** и выберите **общий формат событий (CEF)** , а затем **откройте страницу соединителя**. 
+1. In the Azure Sentinel portal, click **Data connectors** and select **Common Event Format (CEF)** and then **Open connector page**. 
 
-1. В разделе **Установка и настройка агента syslog**выберите тип компьютера: Azure, другое облако или локально. 
+1. Under **Install and configure the Syslog agent**, select your machine type, either Azure, other cloud, or on-premises. 
    > [!NOTE]
-   > Так как скрипт на следующем шаге устанавливает агент Log Analytics и подключает компьютер к рабочей области Sentinel Azure, убедитесь, что этот компьютер не подключен к какой-либо другой рабочей области.
-1. Необходимо иметь повышенные разрешения (sudo) на компьютере. Убедитесь, что на компьютере установлен Python, выполнив следующую команду: `python –version`
+   > Because the script in the next step installs the Log Analytics agent and connects the machine to your Azure Sentinel workspace, make sure this machine is not connected to any other workspace.
+1. You must have elevated permissions (sudo) on your machine. Make sure that you have Python on your machine using the following command: `python –version`
 
-1. Выполните следующий сценарий на прокси-компьютере.
+1. Run the following script on your proxy machine.
    `sudo wget https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/DataConnectors/CEF/cef_installer.py&&sudo python cef_installer.py [WorkspaceID] [Workspace Primary Key]`
-1. Во время выполнения скрипта убедитесь, что не получены сообщения об ошибках и предупреждения.
+1. While the script is running, check to make sure you don't get any error or warning messages.
 
 
-## <a name="step-2-configure-your-security-solution-to-send-cef-messages"></a>Шаг 2. Настройка решения безопасности для отправки сообщений CEF
+## <a name="step-2-configure-your-security-solution-to-send-cef-messages"></a>STEP 2: Configure your security solution to send CEF messages
 
-1. На устройстве необходимо задать эти значения, чтобы устройство отправляло необходимые журналы в нужном формате в агент syslog Sentinel Azure на основе агента Log Analytics. Вы можете изменить эти параметры на своем устройстве при условии, что они также будут изменены в управляющей программе syslog в агенте Sentinel Azure.
-    - Протокол = TCP
-    - Порт = 514
+1. On the appliance you need to set these values so that the appliance sends the necessary logs in the necessary format to the Azure Sentinel Syslog agent, based on the Log Analytics agent. You can modify these parameters in your appliance, as long as you also modify them in the Syslog daemon on the Azure Sentinel agent.
+    - Protocol = TCP
+    - Port = 514
     - Format = CEF
-    - IP-адрес. не забудьте отправить сообщения CEF по IP-адресу виртуальной машины, выделенной для этой цели.
+    - IP address - make sure to send the CEF messages to the IP address of the virtual machine you dedicated for this purpose.
 
    > [!NOTE]
-   > Это решение поддерживает syslog RFC 3164 или RFC 5424.
+   > This solution supports Syslog RFC 3164 or RFC 5424.
 
 
-1. Чтобы использовать соответствующую схему в Log Analytics для событий CEF, выполните поиск по запросу `CommonSecurityLog`.
+1. To use the relevant schema in Log Analytics for the CEF events, search for `CommonSecurityLog`.
 
-## <a name="step-3-validate-connectivity"></a>Шаг 3. Проверка подключения
+## <a name="step-3-validate-connectivity"></a>STEP 3: Validate connectivity
 
-1. Откройте Log Analytics, чтобы убедиться, что журналы получены с помощью схемы CommonSecurityLog.<br> Если журналы начнут появляться в Log Analytics, это может занять до 20 минут. 
+1. Open Log Analytics to make sure that logs are received using the CommonSecurityLog schema.<br> It may take upwards of 20 minutes until your logs start to appear in Log Analytics. 
 
-1. Перед запуском скрипта рекомендуется отправить сообщения из решения безопасности, чтобы убедиться, что они перенаправлены на настроенный вами прокси-сервер syslog. 
-1. Необходимо иметь повышенные разрешения (sudo) на компьютере. Убедитесь, что на компьютере установлен Python, выполнив следующую команду: `python –version`
-1. Выполните следующий сценарий, чтобы проверить подключение между агентом, Sentinel Azure и решением по обеспечению безопасности. Он проверяет правильность настройки перенаправления управляющей программы, прослушивает правильные порты и не блокирует обмен данными между управляющей программой и агентом Log Analytics. Сценарий также отправляет фиктивные сообщения "Тесткоммоневентформат" для проверки сквозного подключения. <br>
+1. Before you run the script, we recommend that you send messages from your security solution to make sure they are being forwarded to the Syslog proxy machine you configured. 
+1. You must have elevated permissions (sudo) on your machine. Make sure that you have Python on your machine using the following command: `python –version`
+1. Run the following script to check connectivity between the agent, Azure Sentinel, and your security solution. It checks that the daemon forwarding is properly configured, listens on the correct ports, and that nothing is blocking communication between the daemon and the Log Analytics agent. The script also sends mock messages 'TestCommonEventFormat' to check end-to-end connectivity. <br>
  `sudo wget https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/DataConnectors/CEF/cef_troubleshoot.py&&sudo python cef_troubleshoot.py [WorkspaceID]`
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-В этом документе вы узнали, как подключить устройства CEF к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
-- Узнайте, как [получить представление о данных и потенциальных угрозах](quickstart-get-visibility.md).
-- Приступая [к обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats.md).
+In this document, you learned how to connect CEF appliances to Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
+- Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
+- Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats.md).
 

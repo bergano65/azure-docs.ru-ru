@@ -14,20 +14,20 @@ ms.tgt_pltfrm: vm-windows
 ms.devlang: azurecli
 ms.date: 01/11/2018
 ms.author: delhan
-ms.openlocfilehash: fab1e0b6f3b01446baed974b4be9b7295af4f837
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: 3f028431fcd4b338d2e610ce1828a02b753c4d32
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73749719"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74483703"
 ---
 # <a name="use-remote-tools-to-troubleshoot-azure-vm-issues"></a>Использование инструментов удаленного управления для устранения неполадок виртуальной машины Azure
 
-При устранении неполадок на виртуальной машине Azure можно подключиться к ней с помощью инструментов удаленного управления, которые рассматриваются в этой статье, а не использовать протокол удаленного рабочего стола (RDP).
+When you troubleshoot issues on an Azure virtual machine (VM), you can connect to the VM by using the remote tools that are discussed in this article instead of using the Remote Desktop Protocol (RDP).
 
-## <a name="serial-console"></a>Серийная консоль
+## <a name="serial-console"></a>Последовательная консоль
 
-Используйте [Серийную консоль виртуальной машины](serial-console-windows.md) для выполнения команд на удаленной виртуальной машине Azure.
+Use a [serial console for Azure Virtual Machines](serial-console-windows.md) to run commands on the remote Azure VM.
 
 ## <a name="remote-cmd"></a>Удаленный сеанс командной строки
 
@@ -37,108 +37,106 @@ ms.locfileid: "73749719"
 psexec \\<computer>-u user -s cmd
 ```
 
->[!Note]
->* Команда должна выполняться на компьютере, который находится в той же виртуальной сети.
->* Для замены \<> компьютера можно использовать DIP или HostName.
+>[!NOTE]
+>* The command must be run on a computer that's in the same virtual network.
+>* DIP or HostName can be used to replace \<computer>.
 >* Параметр -s гарантирует, что команда вызывается с помощью системной учетной записи (с разрешениями администратора).
->* PsExec использует TCP-порты 135 и 445. Поэтому эти два порта должны быть открыты в брандмауэре.
+>* PsExec использует TCP-порты 135 и 445. As a result, the two ports have to be open on the firewall.
 
-## <a name="run-commands"></a>Команды запуска
+## <a name="run-command"></a>Команда "Выполнить"
 
-В разделе [Выполнение сценариев PowerShell в виртуальной машине Windows с помощью команды "Выполнить"](../windows/run-command.md) приведены дополнительные сведения о том, как использовать функцию "Команды запуска" для выполнения сценариев на виртуальной машине.
+For more information about how to use the run command feature to run scripts on the VM, see [Run PowerShell scripts in your Windows VM with run command](../windows/run-command.md).
 
-## <a name="customer-script-extension"></a>Расширение пользовательских сценариев
+## <a name="custom-script-extension"></a>Расширение пользовательских скриптов
 
 Можно использовать функцию расширения пользовательских сценариев для выполнения пользовательского сценария на целевой виртуальной машине. Для этого должны быть выполнены следующие условия.
 
 * Виртуальная машина доступна в сети.
-
-* На виртуальной машине установлен и правильно работает агент Azure.
-
-* Расширение не было ранее установлено на виртуальной машине.
+* Azure Virtual Machine Agent is installed and is working as expected on the VM.
+* The extension wasn't previously installed on the VM.
  
-  Расширение будет внедрять сценарий только при первом использовании. Если вы используете эту функцию позже, расширение определит, что оно уже использовалось, и не передаст новый сценарий.
+  The extension injects the script only the first time that it's used. If you use this feature later, the extension recognizes that it was already used and doesn't upload the new script.
 
-Нужно передать сценарий в учетную запись хранения и создать для него контейнер. Затем выполните приведенный ниже сценарий в Azure PowerShell на компьютере, который может подключиться к виртуальной машине.
+Upload your script to a storage account, and generate its own container. Затем выполните приведенный ниже сценарий в Azure PowerShell на компьютере, который может подключиться к виртуальной машине.
 
-### <a name="for-v1-vms"></a>Для виртуальных машин версии 1
+### <a name="for-classic-deployment-model-vms"></a>For classic deployment model VMs
 
 ```powershell
-#Setup the basic variables
+#Set up the basic variables.
 $subscriptionID = "<<SUBSCRIPTION ID>>" 
 $storageAccount = "<<STORAGE ACCOUNT>>" 
 $localScript = "<<FULL PATH OF THE PS1 FILE TO EXECUTE ON THE VM>>" 
-$blobName = "file.ps1" #Name you want for the blob in the storage
+$blobName = "file.ps1" #Name you want for the blob in the storage.
 $vmName = "<<VM NAME>>" 
-$vmCloudService = "<<CLOUD SERVICE>>" #Resource group/Cloud Service where the VM is hosted. I.E.: For "demo305.cloudapp.net" the cloud service is going to be demo305
+$vmCloudService = "<<CLOUD SERVICE>>" #Resource group or cloud service where the VM is hosted. For example, for "demo305.cloudapp.net" the cloud service is going to be demo305.
 
-#Setup the Azure Powershell module and ensure the access to the subscription
+#Set up the Azure PowerShell module, and ensure the access to the subscription.
 Import-Module Azure
-Add-AzureAccount  #Ensure Login with account associated with subscription ID
+Add-AzureAccount  #Ensure login with the account associated with the subscription ID.
 Get-AzureSubscription -SubscriptionId $subscriptionID | Select-AzureSubscription
 
-#Setup the access to the storage account and upload the script
+#Set up the access to the storage account, and upload the script.
 $storageKey = (Get-AzureStorageKey -StorageAccountName $storageAccount).Primary
 $context = New-AzureStorageContext -StorageAccountName $storageAccount -StorageAccountKey $storageKey
 $container = "cse" + (Get-Date -Format yyyyMMddhhmmss)<
 New-AzureStorageContainer -Name $container -Permission Off -Context $context
 Set-AzureStorageBlobContent -File $localScript -Container $container -Blob $blobName  -Context $context
 
-#Push the script into the VM
+#Push the script into the VM.
 $vm = Get-AzureVM -ServiceName $vmCloudService -Name $vmName
 Set-AzureVMCustomScriptExtension "CustomScriptExtension" -VM $vm -StorageAccountName $storageAccount -StorageAccountKey $storagekey -ContainerName $container -FileName $blobName -Run $blobName | Update-AzureVM
 ```
 
-### <a name="for-v2-vms"></a>Для виртуальных машин версии 2
+### <a name="for-azure-resource-manager-vms"></a>For Azure Resource Manager VMs
 
  
 
 ```powershell
-#Setup the basic variables
+#Set up the basic variables.
 $subscriptionID = "<<SUBSCRIPTION ID>>"
 $storageAccount = "<<STORAGE ACCOUNT>>"
 $storageRG = "<<RESOURCE GROUP OF THE STORAGE ACCOUNT>>" 
 $localScript = "<<FULL PATH OF THE PS1 FILE TO EXECUTE ON THE VM>>" 
-$blobName = "file.ps1" #Name you want for blob in storage
+$blobName = "file.ps1" #Name you want for the blob in the storage.
 $vmName = "<<VM NAME>>" 
 $vmResourceGroup = "<<RESOURCE GROUP>>"
 $vmLocation = "<<DATACENTER>>" 
  
-#Setup the Azure Powershell module and ensure the access to the subscription
-Login-AzAccount #Ensure Login with account associated with subscription ID
+#Set up the Azure PowerShell module, and ensure the access to the subscription.
+Login-AzAccount #Ensure login with the account associated with the subscription ID.
 Get-AzSubscription -SubscriptionId $subscriptionID | Select-AzSubscription
 
-#Setup the access to the storage account and upload the script 
+#Set up the access to the storage account, and upload the script.
 $storageKey = (Get-AzStorageAccountKey -ResourceGroupName $storageRG -Name $storageAccount).Value[0]
 $context = New-AzureStorageContext -StorageAccountName $storageAccount -StorageAccountKey $storageKey
 $container = "cse" + (Get-Date -Format yyyyMMddhhmmss)
 New-AzureStorageContainer -Name $container -Permission Off -Context $context
 Set-AzureStorageBlobContent -File $localScript -Container $container -Blob $blobName  -Context $context
 
-#Push the script into the VM
+#Push the script into the VM.
 Set-AzVMCustomScriptExtension -Name "CustomScriptExtension" -ResourceGroupName $vmResourceGroup -VMName $vmName -Location $vmLocation -StorageAccountName $storageAccount -StorageAccountKey $storagekey -ContainerName $container -FileName $blobName -Run $blobName
 ```
 
 ## <a name="remote-powershell"></a>Удаленный сеанс PowerShell
 
->[!Note]
+>[!NOTE]
 >Необходимо открыть TCP-порт 5986 (HTTPS), чтобы можно было использовать эту возможность.
 >
->Для виртуальных машин ARM необходимо открыть порт 5986 в группе безопасности сети (NSG). Чтобы получить дополнительные сведения, ознакомьтесь с группами безопасности. 
+>For Azure Resource Manager VMs, you must open port 5986 on the network security group (NSG). Чтобы получить дополнительные сведения, ознакомьтесь с группами безопасности. 
 >
->Для виртуальных машин RDFE необходима конечная точка с частным портом (5986) и общедоступным портом. Затем необходимо также открыть этот общедоступный порт в группе безопасности сети.
+>Для виртуальных машин RDFE необходима конечная точка с частным портом (5986) и общедоступным портом. Then, you also have to open that public-facing port on the NSG.
 
 ### <a name="set-up-the-client-computer"></a>Настройка клиентского компьютера
 
 Чтобы использовать PowerShell для удаленного подключения к виртуальной машине, необходимо сначала настроить клиентский компьютер, чтобы разрешить такое подключение. Для этого добавьте виртуальную машину в список доверенных узлов PowerShell, выполнив приведенную ниже команду соответствующим образом.
 
-Вот как можно добавить одну виртуальную машину в список доверенных узлов.
+To add one VM to the trusted hosts list:
 
 ```powershell
 Set-Item wsman:\localhost\Client\TrustedHosts -value <ComputerName>
 ```
 
-Вот как можно добавить в список доверенных узлов несколько виртуальных машин.
+To add multiple VMs to the trusted hosts list:
 
 ```powershell
 Set-Item wsman:\localhost\Client\TrustedHosts -value <ComputerName1>,<ComputerName2>
@@ -152,7 +150,7 @@ Set-Item wsman:\localhost\Client\TrustedHosts -value *
 
 ### <a name="enable-remoteps-on-the-vm"></a>Включение RemotePS на виртуальной машине
 
-Для классических виртуальных машин используйте расширение пользовательских сценариев, чтобы выполнить приведенный ниже сценарий.
+For VMs created using the classic deployment model, use the Custom Script Extension to run the following script:
 
 ```powershell
 Enable-PSRemoting -Force
@@ -162,41 +160,41 @@ $command = "winrm create winrm/config/Listener?Address=*+Transport=HTTPS @{Hostn
 cmd.exe /C $command
 ```
 
-Для виртуальных машин ARM используйте функцию "Команды запуска" на портале, чтобы выполнить сценарий EnableRemotePS.
+For Azure Resource Manager VMs, use run commands from the portal to run the EnableRemotePS script:
 
-![Запуск команды](./media/remote-tools-troubleshoot-azure-vm-issues/run-command.png)
+![Команда "Выполнить"](./media/remote-tools-troubleshoot-azure-vm-issues/run-command.png)
 
 ### <a name="connect-to-the-vm"></a>Подключение к виртуальной машине
 
-Выполните следующую команду с учетом расположения клиентского компьютера.
+Run the following command based on the client computer location:
 
-* За пределами виртуальной сети или развертывания
+* Outside the virtual network or deployment
 
-  * Для классической виртуальной машины выполните следующую команду.
+  * For a VM created using the classic deployment model, run the following command:
 
     ```powershell
     $Skip = New-PSSessionOption -SkipCACheck -SkipCNCheck
     Enter-PSSession -ComputerName  "<<CLOUDSERVICENAME.cloudapp.net>>" -port "<<PUBLIC PORT NUMBER>>" -Credential (Get-Credential) -useSSL -SessionOption $Skip
     ```
 
-  * Для виртуальной машины ARM сначала добавьте DNS-имя в общедоступный IP-адрес. Подробные инструкции приведены в статье [Создание полного доменного имени на портале Azure для виртуальной машины Windows](../windows/portal-create-fqdn.md). Затем выполните следующую команду:
+  * For an Azure Resource Manager VM, first add a DNS name to the public IP address. Подробные инструкции приведены в статье [Создание полного доменного имени на портале Azure для виртуальной машины Windows](../windows/portal-create-fqdn.md). Затем выполните следующую команду:
 
     ```powershell
     $Skip = New-PSSessionOption -SkipCACheck -SkipCNCheck
     Enter-PSSession -ComputerName "<<DNSname.DataCenter.cloudapp.azure.com>>" -port "5986" -Credential (Get-Credential) -useSSL -SessionOption $Skip
     ```
 
-* За пределами виртуальной сети или развертывания выполните следующую команду.
+* Inside the virtual network or deployment, run the following command:
   
   ```powershell
   $Skip = New-PSSessionOption -SkipCACheck -SkipCNCheck
   Enter-PSSession -ComputerName  "<<HOSTNAME>>" -port 5986 -Credential (Get-Credential) -useSSL -SessionOption $Skip
   ```
 
->[!Note] 
+>[!NOTE] 
 >Если установить флаг SkipCaCheck, то можно обойти обязательный импорт сертификата на виртуальную машину при запуске сеанса.
 
-Также можно использовать командлет Invoke-Command для удаленного выполнения сценария на виртуальной машине.
+You can also use the Invoke-Command cmdlet to run a script on the VM remotely.
 
 ```powershell
 Invoke-Command -ComputerName "<<COMPUTERNAME>" -ScriptBlock {"<<SCRIPT BLOCK>>"}
@@ -204,37 +202,37 @@ Invoke-Command -ComputerName "<<COMPUTERNAME>" -ScriptBlock {"<<SCRIPT BLOCK>>"}
 
 ## <a name="remote-registry"></a>Удаленный реестр
 
->[!Note]
+>[!NOTE]
 >TCP-порты 135 и 445 должны быть открыты для использования этой функции.
 >
->Для виртуальных машин ARM необходимо открыть порт 5986 в группе безопасности сети. Чтобы получить дополнительные сведения, ознакомьтесь с группами безопасности. 
+>For Azure Resource Manager VMs, you have to open port 5986 on the NSG. Чтобы получить дополнительные сведения, ознакомьтесь с группами безопасности. 
 >
->Для виртуальных машин RDFE необходима конечная точка с частным портом (5986) и общедоступным портом. Кроме того, необходимо открыть этот общедоступный порт в группе безопасности сети.
+>Для виртуальных машин RDFE необходима конечная точка с частным портом (5986) и общедоступным портом. You also have to open that public-facing port on the NSG.
 
-1. На другой виртуальной машине в той же виртуальной сети откройте редактор реестра (regedit.exe).
+1. From another VM on the same virtual network, open the registry editor (regedit.exe).
 
-2. Выберите **Файл** >**Подключить сетевой реестр**.
+2. Выберите **Файл** > **Подключить сетевой реестр**.
 
-   ![Параметры удаленной работы](./media/remote-tools-troubleshoot-azure-vm-issues/remote-registry.png) 
+   ![Registry editor](./media/remote-tools-troubleshoot-azure-vm-issues/remote-registry.png) 
 
-3. Найдите целевую виртуальную машину по **имени узла** или **динамическому IP-адресу** (предпочтительно), введя его в поле "Enter the object name to select" (Введите имя выбираемого объекта).
+3. Locate the target VM by **host name** or **dynamic IP** (preferable) by entering it in the **Enter the object name to select** box.
 
-   ![Параметры удаленной работы](./media/remote-tools-troubleshoot-azure-vm-issues/input-computer-name.png) 
+   ![Enter the object name to select box](./media/remote-tools-troubleshoot-azure-vm-issues/input-computer-name.png) 
  
 4. Введите учетные данные для целевой виртуальной машины.
 
 5. Внесите в реестр необходимые изменения.
 
-## <a name="remote-services-console"></a>Консоль удаленных служб
+## <a name="remote-services-console"></a>Remote services console
 
->[!Note]
+>[!NOTE]
 >TCP-порты 135 и 445 должны быть открыты для использования этой функции.
 >
->Для виртуальных машин ARM необходимо открыть порт 5986 в группе безопасности сети. Чтобы получить дополнительные сведения, ознакомьтесь с группами безопасности. 
+>For Azure Resource Manager VMs, you have to open port 5986 on the NSG. Чтобы получить дополнительные сведения, ознакомьтесь с группами безопасности. 
 >
->Для виртуальных машин RDFE необходима конечная точка с частным портом (5986) и общедоступным портом. Затем необходимо также открыть этот общедоступный порт в группе безопасности сети.
+>Для виртуальных машин RDFE необходима конечная точка с частным портом (5986) и общедоступным портом. You also have to open that public-facing port on the NSG.
 
-1. На другой виртуальной машине в той же виртуальной сети откройте экземпляр **Services.msc**.
+1. From another VM on the same virtual network, open an instance of **Services.msc**.
 
 2. Щелкните правой кнопкой мыши **Службы (локальные)** .
 
@@ -242,20 +240,17 @@ Invoke-Command -ComputerName "<<COMPUTERNAME>" -ScriptBlock {"<<SCRIPT BLOCK>>"}
 
    ![Удаленная служба](./media/remote-tools-troubleshoot-azure-vm-issues/remote-services.png)
 
-4. Введите динамический IP-адрес целевой виртуальной машины.
+4. Enter the dynamic IP of the target VM.
 
-   ![Ввод DIP-адреса](./media/remote-tools-troubleshoot-azure-vm-issues/input-ip-address.png)
+   ![Input dynamic IP](./media/remote-tools-troubleshoot-azure-vm-issues/input-ip-address.png)
 
 5. Внесите необходимые изменения в службы.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Enter-PSSession](https://technet.microsoft.com/library/hh849707.aspx)
-
-[Расширение пользовательских сценариев для Windows с помощью классической модели развертывания](../extensions/custom-script-classic.md)
-
-PsExec является частью [набора PSTools](https://download.sysinternals.com/files/PSTools.zip).
-
-Дополнительные сведения о наборе PSTools см. в разделе [PSTools](https://docs.microsoft.com/sysinternals/downloads/pstools).
+- For more information about the Enter-PSSession cmdlet, see [Enter-PSSession](https://technet.microsoft.com/library/hh849707.aspx).
+- For more information about the Custom Script Extension for Windows using the classic deployment model, see [Custom Script Extension for Windows](../extensions/custom-script-classic.md).
+- PsExec является частью [набора PSTools](https://download.sysinternals.com/files/PSTools.zip).
+- For more information about the PSTools Suite, see [PSTools](https://docs.microsoft.com/sysinternals/downloads/pstools).
 
 

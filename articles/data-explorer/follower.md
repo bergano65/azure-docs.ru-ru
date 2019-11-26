@@ -1,70 +1,73 @@
 ---
-title: Использование функции базы данных следующих компонентов для присоединения баз данных в Azure обозреватель данных
-description: Узнайте, как присоединить базы данных в Azure обозреватель данных с помощью функции базы данных ниже.
+title: Use follower database feature to attach databases in Azure Data Explorer
+description: Learn about how to attach databases in Azure Data Explorer using the follower database feature.
 author: orspod
 ms.author: orspodek
 ms.reviewer: gabilehner
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 11/07/2019
-ms.openlocfilehash: 2306b6cbdd347e3be9921b196ae06385ef5ca90a
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.openlocfilehash: 61cfcfc41a1d9caeaded475511dd69ebc48756e2
+ms.sourcegitcommit: 95931aa19a9a2f208dedc9733b22c4cdff38addc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74083189"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74462023"
 ---
-# <a name="use-follower-database-to-attach-databases-in-azure-data-explorer"></a>Использование базы данных следующих служб для присоединения баз данных в Azure обозреватель данных
+# <a name="use-follower-database-to-attach-databases-in-azure-data-explorer"></a>Use follower database to attach databases in Azure Data Explorer
 
-Функция **базы данных-след** позволяет присоединить базу данных, расположенную в другом кластере, к кластеру Azure обозреватель данных. **База данных-след** присоединяется в режиме *только для чтения* , что позволяет просматривать данные и выполнять запросы к данным, которые были переданы в **базу данных лидера**. База данных следов синхронизирует изменения в базах данных лидера. В связи с синхронизацией данные в доступности данных забывают в течение нескольких секунд. Продолжительность временной задержки зависит от общего размера метаданных базы данных лидера. Ведущие и последующие базы данных используют одну и ту же учетную запись хранения для выборки данных. Владельцем хранилища является лидер базы данных. База данных для получения результатов просматривает данные без необходимости их приема. Поскольку присоединенная база данных является базой данных только для чтения, данные, таблицы и политики в базе данных нельзя изменить, за исключением [политики кэширования](#configure-caching-policy), [участников](#manage-principals)и [разрешений](#manage-permissions). Не удается удалить подключенные базы данных. Они должны быть отсоединены от лидера или следующего, и только после этого их можно удалить. 
+The **follower database** feature allows you to attach a database located in a different cluster to your Azure Data Explorer cluster. The **follower database** is attached in *read-only* mode, making it possible to view the data and run queries on the data that was ingested into the **leader database**. The follower database synchronizes changes in the leader databases. Due to the synchronization, there's a data lag of a few seconds to a few minutes in data availability. The length of the time lag depends on the overall size of the leader database metadata. The leader and follower databases use the same storage account to fetch the data. The storage is owned by the leader database. The follower database views the data without needing to ingest it. Since the attached database is a read-only database, the data, tables, and policies in the database can't be modified except for [caching policy](#configure-caching-policy), [principals](#manage-principals), and [permissions](#manage-permissions). Attached databases can't be deleted. They must be detached by the leader or follower and only then they can be deleted. 
 
-Присоединение базы данных к другому кластеру с помощью возможности последующей функции используется в качестве инфраструктуры для обмена данными между организациями и группами. Эта функция полезна для разделения ресурсов вычислений для защиты рабочей среды от нерабочих случаев использования. Кроме того, можно использовать для связи стоимости кластера Azure обозреватель данных с стороной, которая выполняет запросы к данным.
+Attaching a database to a different cluster using the follower capability is used as the infrastructure to share data between organizations and teams. The feature is useful to segregate compute resources to protect a production environment from non-production use cases. Follower can also be used to associate the cost of Azure Data Explorer cluster to the party that runs queries on the data.
 
-## <a name="which-databases-are-followed"></a>Какие базы данных будут выполнены?
+## <a name="which-databases-are-followed"></a>Which databases are followed?
 
-* Кластер может соответствовать одной базе данных, нескольким базам данных или всем базам данных в кластере лидера. 
-* Один кластер может следовать за базами данных из нескольких серверов-заполнителей. 
-* Кластер может содержать как базы данных, так и лидерическую базу данных
+* A cluster can follow one database, several databases, or all databases of a leader cluster. 
+* A single cluster can follow databases from multiple leader clusters. 
+* A cluster can contain both follower databases and leader databases
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 1. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
-1. [Создайте кластер и базу данных](/azure/data-explorer/create-cluster-database-portal) для лидера и последующих результатов.
-1. Прием [данных](/azure/data-explorer/ingest-sample-data) в лидер базы данных с помощью одного из различных методов, обсуждаемых в [обзоре приема](/azure/data-explorer/ingest-data-overview).
+1. [Create cluster and DB](/azure/data-explorer/create-cluster-database-portal) for the leader and follower.
+1. [Ingest data](/azure/data-explorer/ingest-sample-data) to leader database using one of various methods discussed in [ingestion overview](/azure/data-explorer/ingest-data-overview).
 
 ## <a name="attach-a-database"></a>Присоединение базы данных
 
-Существует несколько методов, которые можно использовать для присоединения базы данных. В этой статье обсуждается присоединение базы данных с C# помощью или шаблона Azure Resource Manager. Чтобы присоединить базу данных, необходимо иметь разрешения на доступ к кластеру лидера и к кластеру последующих узлов. Дополнительные сведения о разрешениях см. в разделе [Управление разрешениями](#manage-permissions).
+There are various methods you can use to attach a database. In this article, we discuss attaching a database using C# or an Azure Resource Manager template. To attach a database, you must have permissions on the leader cluster and the follower cluster. For more information about permissions, see [manage permissions](#manage-permissions).
 
-### <a name="attach-a-database-using-c"></a>Присоединение базы данных с помощьюC#
+### <a name="attach-a-database-using-c"></a>Attach a database using C#
 
-**Необходимые NuGet**
+**Needed NuGets**
 
-* Установите [Microsoft. Azure. Management. kusto](https://www.nuget.org/packages/Microsoft.Azure.Management.Kusto/).
-* Установите [Microsoft. RESTful. ClientRuntime. Azure. Authentication для проверки подлинности](https://www.nuget.org/packages/Microsoft.Rest.ClientRuntime.Azure.Authentication).
+* Install [Microsoft.Azure.Management.kusto](https://www.nuget.org/packages/Microsoft.Azure.Management.Kusto/).
+* Install [Microsoft.Rest.ClientRuntime.Azure.Authentication for authentication](https://www.nuget.org/packages/Microsoft.Rest.ClientRuntime.Azure.Authentication).
 
 
 ```Csharp
 var tenantId = "xxxxxxxx-xxxxx-xxxx-xxxx-xxxxxxxxx";//Directory (tenant) ID
 var clientId = "xxxxxxxx-xxxxx-xxxx-xxxx-xxxxxxxxx";//Application ID
 var clientSecret = "xxxxxxxxxxxxxx";//Client secret
-var subscriptionId = "xxxxxxxx-xxxxx-xxxx-xxxx-xxxxxxxxx";
+var leaderSubscriptionId = "xxxxxxxx-xxxxx-xxxx-xxxx-xxxxxxxxx";
+var followerSubscriptionId = "xxxxxxxx-xxxxx-xxxx-xxxx-xxxxxxxxx";
 
 var serviceCreds = await ApplicationTokenProvider.LoginSilentAsync(tenantId, clientId, clientSecret);
-var resourceManagementClient = new ResourceManagementClient(serviceCreds);
+var resourceManagementClient = new KustoManagementClient(serviceCreds){
+    SubscriptionId = followerSubscriptionId
+};
 
-var leaderResourceGroupName = "testrg";
 var followerResourceGroupName = "followerResouceGroup";
+var leaderResourceGroup = "leaderResouceGroup";
 var leaderClusterName = "leader";
 var followerClusterName = "follower";
 var attachedDatabaseConfigurationName = "adc";
-var databaseName = "db" // Can be specific database name or * for all databases
+var databaseName = "db"; // Can be specific database name or * for all databases
 var defaultPrincipalsModificationKind = "Union"; 
 var location = "North Central US";
 
 AttachedDatabaseConfiguration attachedDatabaseConfigurationProperties = new AttachedDatabaseConfiguration()
 {
-    ClusterResourceId = $"/subscriptions/{subscriptionId}/resourceGroups/{followerResourceGroupName}/providers/Microsoft.Kusto/Clusters/{followerClusterName}",
+    ClusterResourceId = $"/subscriptions/{leaderSubscriptionId}/resourceGroups/{leaderResourceGroup}/providers/Microsoft.Kusto/Clusters/{leaderClusterName}",
     DatabaseName = databaseName,
     DefaultPrincipalsModificationKind = defaultPrincipalsModificationKind,
     Location = location
@@ -73,9 +76,9 @@ AttachedDatabaseConfiguration attachedDatabaseConfigurationProperties = new Atta
 var attachedDatabaseConfigurations = resourceManagementClient.AttachedDatabaseConfigurations.CreateOrUpdate(followerResourceGroupName, followerClusterName, attachedDatabaseConfigurationName, attachedDatabaseConfigurationProperties);
 ```
 
-### <a name="attach-a-database-using-an-azure-resource-manager-template"></a>Присоединение базы данных с помощью шаблона Azure Resource Manager
+### <a name="attach-a-database-using-an-azure-resource-manager-template"></a>Attach a database using an Azure Resource Manager template
 
-В этом разделе вы узнаете, как присоединить базу данных с помощью [шаблона Azure Resource Manager](../azure-resource-manager/resource-group-overview.md). 
+In this section, you learn how to attach a database by using an [Azure Resource Manager template](../azure-resource-manager/resource-group-overview.md). 
 
 ```json
 {
@@ -158,50 +161,53 @@ var attachedDatabaseConfigurations = resourceManagementClient.AttachedDatabaseCo
 
 ### <a name="deploy-the-template"></a>Развертывание шаблона 
 
-Шаблон Azure Resource Manager можно развернуть с [помощью портал Azure](https://portal.azure.com) или с помощью PowerShell.
+You can deploy the Azure Resource Manager template by [using the Azure portal](https://portal.azure.com) or using powershell.
 
-   ![Развертывание шаблона](media/follower/template-deployment.png)
+   ![template deployment](media/follower/template-deployment.png)
 
 
 |**Параметр**  |**Описание**  |
 |---------|---------|
-|Имя кластера следов     |  Имя кластера последов       |
-|Имя конфигурации присоединенной базы данных    |    Имя объекта конфигурации присоединенной базы данных. Имя должно быть уникальным на уровне кластера.     |
-|Имя базы данных     |      Имя базы данных, которая будет следовать. Если вы хотите следовать всем базам данных лидера, используйте "*".   |
-|Идентификатор ресурса кластера лидера    |   Идентификатор ресурса для кластера лидера.      |
-|Тип изменения участников по умолчанию    |   Тип изменения субъекта по умолчанию. Может быть `Union`, `Replace` или `None`. Дополнительные сведения об изменении типа субъекта по умолчанию см. в разделе [команда управления типа изменения основного сервера](/azure/kusto/management/cluster-follower?branch=master#alter-follower-database-principals-modification-kind).      |
-|Место проведения   |   Расположение всех ресурсов. Лидер и след должны находиться в одном расположении.       |
+|Follower Cluster Name     |  The name of the follower cluster       |
+|Attached Database Configurations Name    |    The name of the attached database configurations object. The name must be unique at the cluster level.     |
+|Имя базы данных     |      The name of the database to be followed. If you want to follow all the leader's databases, use '*'.   |
+|Leader Cluster Resource ID    |   The resource ID of the leader cluster.      |
+|Default Principals Modification Kind    |   The default principal modification kind. Can be `Union`, `Replace` or `None`. For more information about default principal modification kind, see [principal modification kind control command](/azure/kusto/management/cluster-follower?branch=master#alter-follower-database-principals-modification-kind).      |
+|Location   |   The location of all the resources. The leader and the follower must be in the same location.       |
  
-### <a name="verify-that-the-database-was-successfully-attached"></a>Проверка успешного присоединения базы данных
+### <a name="verify-that-the-database-was-successfully-attached"></a>Verify that the database was successfully attached
 
-Чтобы убедиться, что база данных была успешно присоединена, найдите подключенные базы данных в [портал Azure](https://portal.azure.com). 
+To verify that the database was successfully attached, find your attached databases in the [Azure portal](https://portal.azure.com). 
 
-1. Перейдите к кластеру последующих узлов и выберите **базы данных** .
-1. Поиск новых баз данных, которые доступны только для чтения в списке
+1. Navigate to the follower cluster and select **Databases**
+1. Search for new Read-only databases in the database list.
 
-    ![База данных, доступная только для чтения](media/follower/read-only-follower-database.png)
+    ![Read-only follower database](media/follower/read-only-follower-database.png)
 
 Еще один вариант:
 
-1. Перейдите к кластеру лидерства и выберите **базы данных** .
-2. Убедитесь, что соответствующие базы данных помечены как **Общие для других** > **Да**
+1. Navigate to the leader cluster and select **Databases**
+2. Check that the relevant databases are marked as **SHARED WITH OTHERS** > **Yes**
 
-    ![Чтение и запись подключенных баз данных](media/follower/read-write-databases-shared.png)
+    ![Read and write attached databases](media/follower/read-write-databases-shared.png)
 
-## <a name="detach-the-follower-database-using-c"></a>Отсоедините базу данных следующих результатов с помощьюC# 
+## <a name="detach-the-follower-database-using-c"></a>Detach the follower database using C# 
 
-### <a name="detach-the-attached-follower-database-from-the-follower-cluster"></a>Отсоединение присоединенной базы данных последующих действий от кластера
+### <a name="detach-the-attached-follower-database-from-the-follower-cluster"></a>Detach the attached follower database from the follower cluster
 
-Кластер следов может отключить любую присоединенную базу данных следующим образом:
+Follower cluster can detach any attached database as follows:
 
 ```csharp
 var tenantId = "xxxxxxxx-xxxxx-xxxx-xxxx-xxxxxxxxx";//Directory (tenant) ID
 var clientId = "xxxxxxxx-xxxxx-xxxx-xxxx-xxxxxxxxx";//Application ID
 var clientSecret = "xxxxxxxxxxxxxx";//Client secret
-var subscriptionId = "xxxxxxxx-xxxxx-xxxx-xxxx-xxxxxxxxx";
+var leaderSubscriptionId = "xxxxxxxx-xxxxx-xxxx-xxxx-xxxxxxxxx";
+var followerSubscriptionId = "xxxxxxxx-xxxxx-xxxx-xxxx-xxxxxxxxx";
 
 var serviceCreds = await ApplicationTokenProvider.LoginSilentAsync(tenantId, clientId, clientSecret);
-var resourceManagementClient = new ResourceManagementClient(serviceCreds);
+var resourceManagementClient = new KustoManagementClient(serviceCreds){
+    SubscriptionId = followerSubscriptionId
+};
 
 var followerResourceGroupName = "testrg";
 //The cluster and database that are created as part of the prerequisites
@@ -211,18 +217,21 @@ var attachedDatabaseConfigurationsName = "adc";
 resourceManagementClient.AttachedDatabaseConfigurations.Delete(followerResourceGroupName, followerClusterName, attachedDatabaseConfigurationsName);
 ```
 
-### <a name="detach-the-attached-follower-database-from-the-leader-cluster"></a>Отсоединение присоединенной базы данных следующих серверов от ведущего кластера
+### <a name="detach-the-attached-follower-database-from-the-leader-cluster"></a>Detach the attached follower database from the leader cluster
 
-Кластер лидера может отключить любую присоединенную базу данных следующим образом:
+The leader cluster can detach any attached database as follows:
 
 ```csharp
 var tenantId = "xxxxxxxx-xxxxx-xxxx-xxxx-xxxxxxxxx";//Directory (tenant) ID
 var clientId = "xxxxxxxx-xxxxx-xxxx-xxxx-xxxxxxxxx";//Application ID
 var clientSecret = "xxxxxxxxxxxxxx";//Client secret
-var subscriptionId = "xxxxxxxx-xxxxx-xxxx-xxxx-xxxxxxxxx";
+var leaderSubscriptionId = "xxxxxxxx-xxxxx-xxxx-xxxx-xxxxxxxxx";
+var followerSubscriptionId = "xxxxxxxx-xxxxx-xxxx-xxxx-xxxxxxxxx";
 
 var serviceCreds = await ApplicationTokenProvider.LoginSilentAsync(tenantId, clientId, clientSecret);
-var resourceManagementClient = new ResourceManagementClient(serviceCreds);
+var resourceManagementClient = new KustoManagementClient(serviceCreds){
+    SubscriptionId = leaderSubscriptionId
+};
 
 var leaderResourceGroupName = "testrg";
 var followerResourceGroupName = "followerResouceGroup";
@@ -232,42 +241,42 @@ var followerClusterName = "follower";
 var followerDatabaseDefinition = new FollowerDatabaseDefinition()
     {
         AttachedDatabaseConfigurationName = "adc",
-        ClusterResourceId = $"/subscriptions/{subscriptionId}/resourceGroups/{followerResourceGroupName}/providers/Microsoft.Kusto/Clusters/{followerClusterName}"
+        ClusterResourceId = $"/subscriptions/{followerSubscriptionId}/resourceGroups/{followerResourceGroupName}/providers/Microsoft.Kusto/Clusters/{followerClusterName}"
     };
 
 resourceManagementClient.Clusters.DetachFollowerDatabases(leaderResourceGroupName, leaderClusterName, followerDatabaseDefinition);
 ```
 
-## <a name="manage-principals-permissions-and-caching-policy"></a>Управление участниками, разрешениями и политикой кэширования
+## <a name="manage-principals-permissions-and-caching-policy"></a>Manage principals, permissions, and caching policy
 
-### <a name="manage-principals"></a>Управление участниками
+### <a name="manage-principals"></a>Manage principals
 
-При присоединении базы данных укажите **тип изменения участников по умолчанию "** . По умолчанию сбор данных о лидере [полномочных участников](/azure/kusto/management/access-control/index#authorization) сохраняется.
+When attaching a database, specify the **"default principals modification kind"** . The default is keeping the leader database collection of [authorized principals](/azure/kusto/management/access-control/index#authorization)
 
 |**Вид** |**Описание**  |
 |---------|---------|
-|**Наборов**     |   Присоединенные участники базы данных всегда включают в себя исходные субъекты базы данных, а также дополнительные новые участники, добавленные в базу данных следующих.      |
-|**Замените**   |    Нет наследования субъектов от исходной базы данных. Для присоединенной базы данных необходимо создать новые субъекты. По крайней мере один участник должен быть добавлен к наследованию субъекта-блока.     |
-|**None**   |   Присоединенные участники базы данных включают только субъекты исходной базы данных без дополнительных субъектов.      |
+|**Union**     |   The attached database principals will always include the original database principals plus additional new principals added to the follower database.      |
+|**Замените**   |    No inheritance of principals from the original database. New principals must be created for the attached database.     |
+|**None**   |   The attached database principals include only the principals of the original database with no additional principals.      |
 
-Дополнительные сведения об использовании команд управления для настройки полномочных участников см. в разделе [Управление командами для управления кластером последующих действий](/azure/kusto/management/cluster-follower).
+For more information about using control commands to configure the authorized principals, see [Control commands for managing a follower cluster](/azure/kusto/management/cluster-follower).
 
-### <a name="manage-permissions"></a>Управление разрешениями
+### <a name="manage-permissions"></a>Manage permissions
 
-Управление разрешением на доступ к базе данных только для чтения осуществляется так же, как и для всех типов баз данных. См. раздел [Управление разрешениями в портал Azure](/azure/data-explorer/manage-database-permissions#manage-permissions-in-the-azure-portal).
+Managing read-only database permission is the same as for all database types. See [manage permissions in the Azure portal](/azure/data-explorer/manage-database-permissions#manage-permissions-in-the-azure-portal).
 
-### <a name="configure-caching-policy"></a>Настройка политики кэширования
+### <a name="configure-caching-policy"></a>Configure caching policy
 
-Администратор базы данных может изменить [политику кэширования](/azure/kusto/management/cache-policy) присоединенной базы данных или любой из ее таблиц в кластере размещения. По умолчанию заполнение коллекции баз данных и политик кэширования на уровне таблицы. Например, можно использовать политику кэширования в 30 дней в базе данных лидера для выполнения ежемесячного создания отчетов и политику кэширования в течение трех дней в базе данных последующих версий, чтобы запросить только последние данные для устранения неполадок. Дополнительные сведения об использовании команд управления для настройки политики кэширования для базы данных или следующей таблицы см. в разделе [Управление командами для управления кластером последующих действий](/azure/kusto/management/cluster-follower).
+The follower database administrator can modify the [caching policy](/azure/kusto/management/cache-policy) of the attached database or any of its tables on the hosting cluster. The default is keeping the leader database collection of database and table-level caching policies. You can, for example, have a 30 day caching policy on the leader database for running monthly reporting and a three day caching policy on the follower database to query only the recent data for troubleshooting. For more information about using control commands to configure the caching policy on the follower database or table, see [Control commands for managing a follower cluster](/azure/kusto/management/cluster-follower).
 
 ## <a name="limitations"></a>Ограничения
 
-* Следующие и ведущие кластеры должны находиться в одном регионе.
-* Прием [потоковой передачи](/azure/data-explorer/ingest-data-streaming) нельзя использовать для базы данных, которая находится в процессе.
-* Невозможно удалить базу данных, присоединенную к другому кластеру, прежде чем отсоединить ее.
-* Невозможно удалить кластер с базой данных, присоединенной к другому кластеру, прежде чем отсоединить его.
-* Невозможно прикрепить к кластеру, присоединенному к исполнению или выполнительу базы данных. 
+* The follower and the leader clusters must be in the same region.
+* [Streaming ingestion](/azure/data-explorer/ingest-data-streaming) can't be used on a database that is being followed.
+* You can't delete a database that is attached to a different cluster before detaching it.
+* You can't delete a cluster that has a database attached to a different cluster before detaching it.
+* You can't stop a cluster that has attached follower or leader database(s). 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-* Сведения о конфигурации кластера ниже см. в разделе [управляющие команды для управления кластером последующих действий](/azure/kusto/management/cluster-follower).
+* For information about follower cluster configuration, see [Control commands for managing a follower cluster](/azure/kusto/management/cluster-follower).

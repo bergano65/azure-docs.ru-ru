@@ -1,32 +1,32 @@
 ---
-title: Создание политик для свойств массива в ресурсах
-description: Научитесь создавать параметры массива, создавать правила для выражений языка массива, оценивать псевдоним [*] и добавлять элементы в существующий массив с помощью правил определения политики Azure.
+title: Author policies for array properties on resources
+description: Learn to work with array parameters and array language expressions, evaluate the [*] alias, and to append elements with Azure Policy definition rules.
 ms.date: 03/06/2019
 ms.topic: conceptual
-ms.openlocfilehash: f28cffcf928f9c4da6b2dae2a0811200397c1f0d
-ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
+ms.openlocfilehash: 96598918f0dbcc2f56e8ccc316844ee768306b75
+ms.sourcegitcommit: 95931aa19a9a2f208dedc9733b22c4cdff38addc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73959713"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74463500"
 ---
-# <a name="author-policies-for-array-properties-on-azure-resources"></a>Создание политик для свойств массива в ресурсах Azure
+# <a name="author-policies-for-array-properties-on-azure-resources"></a>Author policies for array properties on Azure resources
 
-Azure Resource Manager свойства обычно определяются как строки и логические значения. Если существует связь «один ко многим», то сложные свойства определяются как массивы. В политике Azure массивы используются несколькими различными способами.
+Azure Resource Manager properties are commonly defined as strings and booleans. When a one-to-many relationship exists, complex properties are instead defined as arrays. In Azure Policy, arrays are used in several different ways:
 
-- Тип [параметра определения](../concepts/definition-structure.md#parameters)для предоставления нескольких параметров
-- Часть [правила политики](../concepts/definition-structure.md#policy-rule) , использующая условия **в** или **notIn**
-- Часть правила политики, которая оценивает [\[\*\] псевдоним](../concepts/definition-structure.md#understanding-the--alias) для вычисления конкретных сценариев, таких как **None**, **ANY**или **ALL** .
-- В [результате добавления](../concepts/effects.md#append) для замены или добавления в существующий массив
+- The type of a [definition parameter](../concepts/definition-structure.md#parameters), to provide multiple options
+- Part of a [policy rule](../concepts/definition-structure.md#policy-rule) using the conditions **in** or **notIn**
+- Part of a policy rule that evaluates the [\[\*\] alias](../concepts/definition-structure.md#understanding-the--alias) to evaluate specific scenarios such as **None**, **Any**, or **All**
+- In the [append effect](../concepts/effects.md#append) to replace or add to an existing array
 
-В этой статье рассматривается каждое использование в политике Azure и приводится несколько примеров определений.
+This article covers each use by Azure Policy and provides several example definitions.
 
-## <a name="parameter-arrays"></a>Массивы параметров
+## <a name="parameter-arrays"></a>Parameter arrays
 
-### <a name="define-a-parameter-array"></a>Определение массива параметров
+### <a name="define-a-parameter-array"></a>Define a parameter array
 
-Определение параметра в качестве массива обеспечивает гибкость политики, если требуется более одного значения.
-Это определение политики допускает любое одно расположение параметра **allowedLocations** и значение по умолчанию _eastus2_:
+Defining a parameter as an array allows the policy flexibility when more than one value is needed.
+This policy definition allows any single location for the parameter **allowedLocations** and defaults to _eastus2_:
 
 ```json
 "parameters": {
@@ -42,9 +42,9 @@ Azure Resource Manager свойства обычно определяются к
 }
 ```
 
-Как **тип** _String_, при назначении политики может быть задано только одно значение. Если эта политика назначена, ресурсы в области разрешены только в пределах одного региона Azure. Большинству определений политик необходимо предоставить список утвержденных параметров, например разрешить _eastus2_, _eastus_и _westus2_.
+As **type** was _string_, only one value can be set when assigning the policy. If this policy is assigned, resources in scope are only allowed within a single Azure region. Most policies definitions need to allow for a list of approved options, such as allowing _eastus2_, _eastus_, and _westus2_.
 
-Чтобы создать определение политики, разрешающее несколько параметров, используйте **тип**массива. Эту же политику можно переписывать следующим образом:
+To create the policy definition to allow multiple options, use the _array_ **type**. The same policy can be rewritten as follows:
 
 ```json
 "parameters": {
@@ -67,17 +67,17 @@ Azure Resource Manager свойства обычно определяются к
 ```
 
 > [!NOTE]
-> После сохранения определения политики невозможно изменить свойство **Type** в параметре.
+> Once a policy definition is saved, the **type** property on a parameter can't be changed.
 
-Это новое определение параметра принимает более одного значения во время назначения политики. Если определено свойство массива **allowedValues** , значения, доступные во время назначения, дополнительно ограничиваются предопределенным списком вариантов выбора. Использование **allowedValues** является необязательным.
+This new parameter definition takes more than one value during policy assignment. With the array property **allowedValues** defined, the values available during assignment are further limited to the predefined list of choices. Use of **allowedValues** is optional.
 
-### <a name="pass-values-to-a-parameter-array-during-assignment"></a>Передача значений в массив параметров во время назначения
+### <a name="pass-values-to-a-parameter-array-during-assignment"></a>Pass values to a parameter array during assignment
 
-При назначении политики с помощью портал Azure параметр _массива_ **типа** отображается как одно текстовое поле. В подсказке указано "use; для разделения значений. (например, Лондон; Нью-Йорк) ". Чтобы передать допустимые значения расположения _eastus2_, _eastus_и _westus2_ в параметр, используйте следующую строку:
+When assigning the policy through the Azure portal, a parameter of **type** _array_ is displayed as a single textbox. The hint says "Use ; to separate values. (e.g. London;New York)". To pass the allowed location values of _eastus2_, _eastus_, and _westus2_ to the parameter, use the following string:
 
 `eastus2;eastus;westus2`
 
-Формат значения параметра отличается при использовании Azure CLI, Azure PowerShell или REST API. Значения передаются через строку JSON, которая также содержит имя параметра.
+The format for the parameter value is different when using Azure CLI, Azure PowerShell, or the REST API. The values are passed through a JSON string that also includes the name of the parameter.
 
 ```json
 {
@@ -91,18 +91,18 @@ Azure Resource Manager свойства обычно определяются к
 }
 ```
 
-Чтобы использовать эту строку вместе с каждым пакетом SDK, используйте следующие команды:
+To use this string with each SDK, use the following commands:
 
-- Azure CLI: команда [AZ назначение политики создать](/cli/azure/policy/assignment?view=azure-cli-latest#az-policy-assignment-create) с параметрами **параметров**
-- Azure PowerShell: командлет [New-азполициассигнмент](/powershell/module/az.resources/New-Azpolicyassignment) с параметром **полиципараметер**
-- REST API: в операции _размещения_ [создания](/rest/api/resources/policyassignments/create) как часть текста запроса как значение свойства **. parameters**
+- Azure CLI: Command [az policy assignment create](/cli/azure/policy/assignment?view=azure-cli-latest#az-policy-assignment-create) with parameter **params**
+- Azure PowerShell: Cmdlet [New-AzPolicyAssignment](/powershell/module/az.resources/New-Azpolicyassignment) with parameter **PolicyParameter**
+- REST API: In the _PUT_ [create](/rest/api/resources/policyassignments/create) operation as part of the Request Body as the value of the **properties.parameters** property
 
-## <a name="policy-rules-and-arrays"></a>Правила и массивы политики
+## <a name="policy-rules-and-arrays"></a>Policy rules and arrays
 
-### <a name="array-conditions"></a>Условия массива
+### <a name="array-conditions"></a>Array conditions
 
-[Условие правила политики](../concepts/definition-structure.md#conditions) , в котором _массив_
-**тип** параметра, может использоваться с, ограничен `in` и `notIn`. В качестве примера возьмем следующее определение политики с условием `equals`.
+The policy rule [conditions](../concepts/definition-structure.md#conditions) that an _array_
+**type** of parameter may be used with is limited to `in` and `notIn`. Take the following policy definition with condition `equals` as an example:
 
 ```json
 {
@@ -130,20 +130,20 @@ Azure Resource Manager свойства обычно определяются к
 }
 ```
 
-Попытка создать определение политики с помощью портал Azure приводит к ошибке, такой как следующее сообщение об ошибке:
+Attempting to create this policy definition through the Azure portal leads to an error such as this error message:
 
-- "Не удалось выполнить параметризацию политики" {GUID} "из-за ошибок проверки. Убедитесь, что параметры политики определены правильно. Результатом вычисления внутреннего исключения "выражение языка" [Parameters (' allowedLocations ')] ' является тип ' Array ', ожидаемым типом является String. '. '
+- "The policy '{GUID}' could not be parameterized because of validation errors. Please check if policy parameters are properly defined. The inner exception 'Evaluation result of language expression '[parameters('allowedLocations')]' is type 'Array', expected type is 'String'.'."
 
-Ожидаемый **тип** условия `equals` является _строковым_. Так как **allowedLocations** определен как _массив_типов, обработчик политики вычисляет выражение языка и выдает ошибку. При условии `in` и `notIn` обработчик политики ждет, что _массив_ **типов** будет в выражении языка. Чтобы устранить это сообщение об ошибке, измените значение `equals` на `in` или `notIn`.
+The expected **type** of condition `equals` is _string_. Since **allowedLocations** is defined as **type** _array_, the policy engine evaluates the language expression and throws the error. With the `in` and `notIn` condition, the policy engine expects the **type** _array_ in the language expression. To resolve this error message, change `equals` to either `in` or `notIn`.
 
-### <a name="evaluating-the--alias"></a>Вычисление псевдонима [*]
+### <a name="evaluating-the--alias"></a>Evaluating the [*] alias
 
-Псевдонимы, имеющие **[\*]** , прикрепленные к имени, указывают, что этот **тип** является _массивом_. Вместо вычисления значения всего массива **[\*]** позволяет оценивать каждый элемент массива. Существует три сценария, которые могут быть полезны для оценки каждого элемента: None, Any и ALL.
+Aliases that have **[\*]** attached to their name indicate the **type** is an _array_. Instead of evaluating the value of the entire array, **[\*]** makes it possible to evaluate each element of the array. There are three scenarios this per item evaluation is useful in: None, Any, and All.
 
-Обработчик политики активирует этот **результат** **только в том случае** , если правило **If** имеет значение true.
-Этот факт важен для понимания в контексте способа, с помощью которого **[\*]** оценивает каждый отдельный элемент массива.
+The policy engine triggers the **effect** in **then** only when the **if** rule evaluates as true.
+This fact is important to understand in context of the way **[\*]** evaluates each individual element of the array.
 
-Пример правила политики для следующей таблицы сценария:
+The example policy rule for the scenario table below:
 
 ```json
 "policyRule": {
@@ -162,7 +162,7 @@ Azure Resource Manager свойства обычно определяются к
 }
 ```
 
-Массив **ипрулес** выглядит следующим образом в таблице сценариев ниже:
+The **ipRules** array is as follows for the scenario table below:
 
 ```json
 "ipRules": [
@@ -177,35 +177,35 @@ Azure Resource Manager свойства обычно определяются к
 ]
 ```
 
-Для каждого примера условия ниже замените `<field>` `"field": "Microsoft.Storage/storageAccounts/networkAcls.ipRules[*].value"`.
+For each condition example below, replace `<field>` with `"field": "Microsoft.Storage/storageAccounts/networkAcls.ipRules[*].value"`.
 
-Следующие результаты являются результатом сочетания условия, а также правила для примера политики и массива существующих значений, приведенных выше.
+The following outcomes are the result of the combination of the condition and the example policy rule and array of existing values above:
 
-|Условие |Результат |Объяснение |
+|Условие |Результат |Пояснение |
 |-|-|-|
-|`{<field>,"notEquals":"127.0.0.1"}` |Возмож |Один элемент массива вычисляется как false (127.0.0.1! = 127.0.0.1), а другой — как true (127.0.0.1! = 192.168.1.1), поэтому условие **notEquals** имеет _значение false_ и этот результат не срабатывает. |
-|`{<field>,"notEquals":"10.0.4.1"}` |Воздействие политики |Оба элемента массива оцениваются как true (10.0.4.1! = 127.0.0.1 и 10.0.4.1! = 192.168.1.1), поэтому условие **notEquals** имеет _значение true_ и срабатывает. |
-|`"not":{<field>,"Equals":"127.0.0.1"}` |Воздействие политики |Один элемент массива вычисляется как true (127.0.0.1 = = 127.0.0.1), а другой — как false (127.0.0.1 = = 192.168.1.1), поэтому условие **Equals** имеет _значение false_. Логический оператор принимает значение true (**не** _false_), поэтому срабатывает. |
-|`"not":{<field>,"Equals":"10.0.4.1"}` |Воздействие политики |Оба элемента массива оцениваются как false (10.0.4.1 = = 127.0.0.1 и 10.0.4.1 = = 192.168.1.1), поэтому условие **Equals** имеет _значение false_. Логический оператор принимает значение true (**не** _false_), поэтому срабатывает. |
-|`"not":{<field>,"notEquals":"127.0.0.1" }` |Воздействие политики |Один элемент массива вычисляется как false (127.0.0.1! = 127.0.0.1) и один как true (127.0.0.1! = 192.168.1.1), поэтому условие **notEquals** имеет _значение false_. Логический оператор принимает значение true (**не** _false_), поэтому срабатывает. |
-|`"not":{<field>,"notEquals":"10.0.4.1"}` |Возмож |Оба элемента массива оцениваются как true (10.0.4.1! = 127.0.0.1 и 10.0.4.1! = 192.168.1.1), поэтому условие **notEquals** имеет _значение true_. Логический оператор вычисляет значение false (**не** _Истина_), поэтому этот результат не срабатывает. |
-|`{<field>,"Equals":"127.0.0.1"}` |Возмож |Один элемент массива вычисляется как true (127.0.0.1 = = 127.0.0.1), а другой — как false (127.0.0.1 = = 192.168.1.1), поэтому условие **Equals** имеет _значение false_ , а сам результат не срабатывает. |
-|`{<field>,"Equals":"10.0.4.1"}` |Возмож |Оба элемента массива оцениваются как false (10.0.4.1 = = 127.0.0.1 и 10.0.4.1 = = 192.168.1.1), поэтому условие **Equals** имеет _значение false_ , а сам результат не срабатывает. |
+|`{<field>,"notEquals":"127.0.0.1"}` |Nothing |One array element evaluates as false (127.0.0.1 != 127.0.0.1) and one as true (127.0.0.1 != 192.168.1.1), so the **notEquals** condition is _false_ and the effect isn't triggered. |
+|`{<field>,"notEquals":"10.0.4.1"}` |Policy effect |Both array elements evaluate as true (10.0.4.1 != 127.0.0.1 and 10.0.4.1 != 192.168.1.1), so the **notEquals** condition is _true_ and the effect is triggered. |
+|`"not":{<field>,"Equals":"127.0.0.1"}` |Policy effect |One array element evaluates as true (127.0.0.1 == 127.0.0.1) and one as false (127.0.0.1 == 192.168.1.1), so the **Equals** condition is _false_. The logical operator evaluates as true (**not** _false_), so the effect is triggered. |
+|`"not":{<field>,"Equals":"10.0.4.1"}` |Policy effect |Both array elements evaluate as false (10.0.4.1 == 127.0.0.1 and 10.0.4.1 == 192.168.1.1), so the **Equals** condition is _false_. The logical operator evaluates as true (**not** _false_), so the effect is triggered. |
+|`"not":{<field>,"notEquals":"127.0.0.1" }` |Policy effect |One array element evaluates as false (127.0.0.1 != 127.0.0.1) and one as true (127.0.0.1 != 192.168.1.1), so the **notEquals** condition is _false_. The logical operator evaluates as true (**not** _false_), so the effect is triggered. |
+|`"not":{<field>,"notEquals":"10.0.4.1"}` |Nothing |Both array elements evaluate as true (10.0.4.1 != 127.0.0.1 and 10.0.4.1 != 192.168.1.1), so the **notEquals** condition is _true_. The logical operator evaluates as false (**not** _true_), so the effect isn't triggered. |
+|`{<field>,"Equals":"127.0.0.1"}` |Nothing |One array element evaluates as true (127.0.0.1 == 127.0.0.1) and one as false (127.0.0.1 == 192.168.1.1), so the **Equals** condition is _false_ and the effect isn't triggered. |
+|`{<field>,"Equals":"10.0.4.1"}` |Nothing |Both array elements evaluate as false (10.0.4.1 == 127.0.0.1 and 10.0.4.1 == 192.168.1.1), so the **Equals** condition is _false_ and the effect isn't triggered. |
 
-## <a name="the-append-effect-and-arrays"></a>Действие добавления и массивы
+## <a name="the-append-effect-and-arrays"></a>The append effect and arrays
 
-[Результат действия Append](../concepts/effects.md#append) по-разному зависит от того, является ли **Details. Field** псевдонимом **[\*]** .
+The [append effect](../concepts/effects.md#append) behaves differently depending on if the **details.field** is a **[\*]** alias or not.
 
-- Если не является псевдонимом **[\*]** , Append заменяет весь массив свойством **value**
-- Если псевдоним **[\*]** , Append добавляет свойство **value** в существующий массив или создает новый массив.
+- When not a **[\*]** alias, append replaces the entire array with the **value** property
+- When a **[\*]** alias, append adds the **value** property to the existing array or creates the new array
 
-Дополнительные сведения см. в разделе [Примеры добавления](../concepts/effects.md#append-examples).
+For more information, see the [append examples](../concepts/effects.md#append-examples).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Просмотрите примеры в [примерах политики Azure](../samples/index.md).
+- Review examples at [Azure Policy samples](../samples/index.md).
 - Изучите статью о [структуре определения Политики Azure](../concepts/definition-structure.md).
-- См. дополнительные сведения о [действиях политик](../concepts/effects.md).
-- Узнайте, как [программно создавать политики](programmatically-create.md).
-- Узнайте, как [исправлять несоответствующие ресурсы](remediate-resources.md).
+- Изучите [сведения о действии политик](../concepts/effects.md).
+- Understand how to [programmatically create policies](programmatically-create.md).
+- Learn how to [remediate non-compliant resources](remediate-resources.md).
 - Дополнительные сведения о группе управления см. в статье [Упорядочивание ресурсов с помощью групп управления Azure](../../management-groups/overview.md).

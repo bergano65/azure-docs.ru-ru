@@ -14,23 +14,23 @@ ms.tgt_pltfrm: vm
 ms.workload: infrastructure-services
 ms.date: 8/20/2019
 ms.author: alsin
-ms.openlocfilehash: fb74fdb74a366f6ab920b7782f6013fd8bab7148
-ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
+ms.openlocfilehash: 7bd9fe4044dace4061285c016cb08562b556b98e
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2019
-ms.locfileid: "74452295"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74483606"
 ---
 # <a name="common-errors-within-the-azure-serial-console"></a>Common errors within the Azure Serial Console
 There are a set of known errors within the Azure Serial Console. This is a list of those errors and mitigation steps for them.
 
 ## <a name="common-errors"></a>Распространенные ошибки
 
-Ошибка                            |   Устранение
+Ошибка                             |   Устранение
 :---------------------------------|:--------------------------------------------|
-"Azure Serial Console requires boot diagnostics to be enabled. Click here to configure boot diagnostics for your virtual machine."![Boot diagnostics error](./media/virtual-machines-serial-console/virtual-machines-serial-console-boot-diagnostics-error.png) | Ensure that the VM or virtual machine scale set has [boot diagnostics](boot-diagnostics.md) enabled. If you are using serial console on a virtual machine scale set instance, ensure that your instance has the latest model.
+"Azure Serial Console requires boot diagnostics to be enabled. Click here to configure boot diagnostics for your virtual machine." ![Boot diagnostics error](./media/virtual-machines-serial-console/virtual-machines-serial-console-boot-diagnostics-error.png) | Ensure that the VM or virtual machine scale set has [boot diagnostics](boot-diagnostics.md) enabled. If you are using serial console on a virtual machine scale set instance, ensure that your instance has the latest model.
 "Azure Serial Console requires a virtual machine to be running. Use the Start button above to start your virtual machine." ![Deallocated error](./media/virtual-machines-serial-console/virtual-machines-serial-console-deallocating-error.png) | The VM or virtual machine scale set instance must be in a started state to access the serial console (your VM must not be stopped or deallocated). Ensure your VM or virtual machine scale set instance is running and try again.
-"Azure Serial Console is not enabled for this subscription, contact your subscription administrator to enable."![Subscription disabled error](./media/virtual-machines-serial-console/virtual-machines-serial-console-subscription-disabled-error.png) | The Azure Serial Console can be disabled at a subscription level. If you are a subscription administrator, you may [enable and disable the Azure Serial Console](./serial-console-enable-disable.md). If you are not a subscription administrator, you should reach out to your subscription administrator for next steps.
+"Azure Serial Console is not enabled for this subscription, contact your subscription administrator to enable." ![Subscription disabled error](./media/virtual-machines-serial-console/virtual-machines-serial-console-subscription-disabled-error.png) | The Azure Serial Console can be disabled at a subscription level. If you are a subscription administrator, you may [enable and disable the Azure Serial Console](./serial-console-enable-disable.md). If you are not a subscription administrator, you should reach out to your subscription administrator for next steps.
 При доступе к учетной записи хранения для диагностики загрузки виртуальной машины обнаружен ответ "Запрещено". ![Storage account firewall error](./media/virtual-machines-serial-console/virtual-machines-serial-console-firewall-error.png)| Убедитесь, что в системе диагностики загрузки нет брандмауэра учетной записи. Для функционирования последовательной консоли требуется доступная учетная запись хранения для диагностики загрузки. Последовательная консоль не может работать с учетными записями хранения с включенным брандмауэром и диагностикой загрузки.
 У вас нет нужных разрешений для использования последовательной консоли этой виртуальной машины. Убедитесь в наличии по крайней мере разрешений роли участника виртуальной машины.| The serial console access requires you to have contributor level access or above on your VM or virtual machine scale set. For more information, see the [overview page](serial-console-overview.md).
 The storage account '' used for boot diagnostics on this VM could not be found. Verify that boot diagnostics is enabled for this VM, this storage account has not been deleted, and you have access to this storage account. | Double check that you have not deleted the boot diagnostics storage account for your VM or virtual machine scale set

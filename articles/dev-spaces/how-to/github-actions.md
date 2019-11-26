@@ -1,77 +1,77 @@
 ---
-title: Действия GitHub & службы Azure Kubernetes
+title: GitHub Actions & Azure Kubernetes Service
 services: azure-dev-spaces
 ms.date: 11/04/2019
 ms.topic: conceptual
-description: Изучите и протестируйте изменения из запроса на вытягивание непосредственно в службе Azure Kubernetes, используя действия GitHub и Azure Dev Spaces.
-keywords: DOCKER, Kubernetes, Azure, AKS, служба Kubernetes Azure, контейнеры, действия GitHub, Helm, сеть службы, маршрутизация в сети службы, kubectl, K8S
+description: Review and test changes from a pull request directly in Azure Kubernetes Service using GitHub Actions and Azure Dev Spaces.
+keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, GitHub Actions, Helm, service mesh, service mesh routing, kubectl, k8s
 manager: gwallace
-ms.openlocfilehash: f362e75b834cd33f209dfeb261b0e6ff1df57cb3
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: e20efc6b109eeef234dcd621374d25b812cdc0ce
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74280163"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74483938"
 ---
-# <a name="github-actions--azure-kubernetes-service-preview"></a>Действия GitHub & службы Azure Kubernetes (Предварительная версия)
+# <a name="github-actions--azure-kubernetes-service-preview"></a>GitHub Actions & Azure Kubernetes Service (preview)
 
-Azure Dev Spaces предоставляет рабочий процесс с помощью действий GitHub, позволяющих проверять изменения из запроса на вытягивание непосредственно в AKS перед слиянием запроса на включение внесенных изменений в основную ветвь репозитория. Наличие работающего приложения для просмотра изменений запроса на вытягивание может повысить уверенность как разработчика, так и членов группы. Это работающее приложение также может помочь членам группы, таким как, менеджеры по продуктам и проектировщикам, стать частью процесса проверки на ранних стадиях разработки.
+Azure Dev Spaces provides a workflow using GitHub Actions that allows you to test changes from a pull request directly in AKS before the pull request is merged into your repository’s main branch. Having a running application to review changes of a pull request can increase the confidence of both the developer as well as team members. This running application can also help team members such as, product managers and designers, become part of the review process during early stages of development.
 
 В этом руководстве вы узнаете как:
 
 * настройка Azure Dev Spaces в управляемом кластере Kubernetes в Azure;
 * развертывание большого приложения с несколькими микрослужбами в пространстве разработки;
-* Настройка CI/CD с помощью действий GitHub.
+* Set up CI/CD with GitHub actions.
 * тестирование отдельных микрослужб в изолированном пространстве разработки в контексте всего приложения.
 
 > [!IMPORTANT]
 > Эта функция в настоящее время находится на стадии предварительной версии. Предварительные версии предоставляются при условии, что вы принимаете [дополнительные условия использования](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Некоторые аспекты этой функции могут быть изменены до выхода общедоступной версии.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 * Подписка Azure. Если у вас нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free).
 * [Установленный Azure CLI][azure-cli-installed].
-* [Установленный Helm 2.13 или более поздней версии][helm-installed].
-* Учетная запись GitHub с [включенными действиями GitHub][github-actions-beta-signup].
-* [Пример приложения для Azure dev Spacesного использования велосипеда](https://github.com/Azure/dev-spaces/tree/master/samples/BikeSharingApp/README.md) , работающего в кластере AKS.
+* [Helm 2.13 - 2.16 installed][helm-installed].
+* A GitHub Account with [GitHub Actions enabled][github-actions-beta-signup].
+* The [Azure Dev Spaces Bike Sharing sample application](https://github.com/Azure/dev-spaces/tree/master/samples/BikeSharingApp/README.md) running on an AKS cluster.
 
 ## <a name="create-an-azure-container-registry"></a>Создание реестра контейнеров Azure
 
-Создайте реестр контейнеров Azure (запись контроля доступа):
+Create an Azure Container Registry (ACR):
 
 ```cmd
 az acr create --resource-group MyResourceGroup --name <acrName> --sku Basic
 ```
 
 > [!IMPORTANT]
-> Имя записи контроля доступа должно быть уникальным в пределах Azure и содержать 5-50 буквенно-цифровых символов. Все используемые буквы должны быть в нижнем регистре.
+> The name your ACR must be unique within Azure and contain 5-50 alphanumeric characters. Any letters you use must be lower case.
 
-Сохраните значение *loginServer* из выходных данных, так как оно используется на более позднем шаге.
+Save the *loginServer* value from the output because it is used in a later step.
 
-## <a name="create-a-service-principal-for-authentication"></a>Создание субъекта-службы для проверки подлинности
+## <a name="create-a-service-principal-for-authentication"></a>Create a service principal for authentication
 
-Для создания субъекта-службы используйте команду [AZ AD SP Create-для – RBAC][az-ad-sp-create-for-rbac] . Например,
+Use [az ad sp create-for-rbac][az-ad-sp-create-for-rbac] to create a service principal. Пример.
 
 ```cmd
 az ad sp create-for-rbac --sdk-auth --skip-assignment
 ```
 
-Сохраните выходные данные JSON, так как они используются на более позднем шаге.
+Save the JSON output because it is used in a later step.
 
 
-Чтобы отобразить *идентификатор* кластера AKS, используйте команду [AZ AKS Показать][az-aks-show] .
+Use [az aks show][az-aks-show] to display the *id* of your AKS cluster:
 
 ```cmd
 az aks show -g MyResourceGroup -n MyAKS  --query id
 ```
 
-Для отображения *идентификатора* записи контроля доступа используйте команду [AZ запись контроля][az-acr-show] доступа.
+Use [az acr show][az-acr-show] to display the *id* of the ACR:
 
 ```cmd
 az acr show --name <acrName> --query id
 ```
 
-Используйте команду [AZ Role назначение][az-role-assignment-create] , чтобы предоставить *участнику* доступ к кластеру AKS и *акрпуш* доступ к записи контроля доступа.
+Use [az role assignment create][az-role-assignment-create] to give *Contributor* access to your AKS cluster and *AcrPush* access to your ACR.
 
 ```cmd
 az role assignment create --assignee <ClientId> --scope <AKSId> --role Contributor
@@ -79,46 +79,46 @@ az role assignment create --assignee <ClientId>  --scope <ACRId> --role AcrPush
 ```
 
 > [!IMPORTANT]
-> Чтобы предоставить субъекту-службе доступ к этим ресурсам, необходимо быть владельцем кластера AKS и записи контроля доступа.
+> You must be the owner of both your AKS cluster and ACR in order to give your service principal access to those resources.
 
-## <a name="configure-your-github-action"></a>Настройка действия GitHub
+## <a name="configure-your-github-action"></a>Configure your GitHub action
 
 > [!IMPORTANT]
-> Для вашего репозитория должны быть включены действия GitHub. Чтобы включить действия GitHub для репозитория, перейдите в репозиторий на сайте GitHub, перейдите на вкладку действия и выберите параметр Включить действия для этого репозитория.
+> You must have GitHub Actions enabled for your repository. To enable GitHub Actions for your repository, navigate to your repository on GitHub, click on the Actions tab, and choose to enable actions for this repository.
 
-Перейдите к разветвленному репозиторию и щелкните *Параметры*. Щелкните *секреты* в левой боковой панели. Щелкните *Добавить новый секрет* , чтобы добавить каждый новый секрет, приведенный ниже.
+Navigate to your forked repository and click *Settings*. Click on *Secrets* in the left sidebar. Click *Add a new secret* to add each new secret below:
 
-1. *AZURE_CREDENTIALS*— все выходные данные создания субъекта-службы.
-1. *RESOURCE_GROUP*: Группа ресурсов для кластера AKS, в данном примере — *MyResourceGroup*.
-1. *CLUSTER_NAME*: имя кластера AKS, в данном примере — *мякс*.
-1. *CONTAINER_REGISTRY*: *LOGINSERVER* для записи контроля доступа.
-1. *Узел*. узел для пространства разработки, который принимает форму *< MASTER_SPACE >. < APP_NAME >. < HOST_SUFFIX*>, в этом примере — *dev.bikesharingweb.fedcab0987.EUS.azds.IO*.
-1. *HOST_SUFFIX*: суффикс узла для пространства разработки, который в данном примере — *fedcab0987.EUS.azds.IO*.
-1. *IMAGE_PULL_SECRET*— имя секрета, который вы хотите использовать, например " *демонстрационный секрет*".
-1. *MASTER_SPACE*: имя родительского пространства разработки, которое в данном примере — *dev*.
-1. *REGISTRY_USERNAME*: *ClientID* из выходных данных JSON для создания субъекта-службы.
-1. *REGISTRY_PASSWORD*: *clientSecret* из выходных данных JSON при создании субъекта-службы.
+1. *AZURE_CREDENTIALS*: the entire output from the service principal creation.
+1. *RESOURCE_GROUP*: the resource group for your AKS cluster, which in this example is *MyResourceGroup*.
+1. *CLUSTER_NAME*: the name of your AKS cluster, which in this example is *MyAKS*.
+1. *CONTAINER_REGISTRY*: the *loginServer* for the ACR.
+1. *HOST*: the host for your Dev Space, which takes the form *<MASTER_SPACE>.<APP_NAME>.<HOST_SUFFIX>* , which in this example is *dev.bikesharingweb.fedcab0987.eus.azds.io*.
+1. *HOST_SUFFIX*: the host suffix for your Dev Space, which in this example is *fedcab0987.eus.azds.io*.
+1. *IMAGE_PULL_SECRET*: the name of the secret you wish to use, for example *demo-secret*.
+1. *MASTER_SPACE*: the name of your parent Dev Space, which in this example is *dev*.
+1. *REGISTRY_USERNAME*: the *clientId* from the JSON output from the service principal creation.
+1. *REGISTRY_PASSWORD*: the *clientSecret* from the JSON output from the service principal creation.
 
 > [!NOTE]
-> Все эти секреты используются действием GitHub и настраиваются в [. GitHub/Workflows/Bikes. yml][github-action-yaml].
+> All of these secrets are used by the GitHub action and are configured in [.github/workflows/bikes.yml][github-action-yaml].
 
-## <a name="create-a-new-branch-for-code-changes"></a>Создание новой ветви для изменения кода
+## <a name="create-a-new-branch-for-code-changes"></a>Create a new branch for code changes
 
-Перейдите к `BikeSharingApp/` и создайте новую ветвь под названием *Bike-Images*.
+Navigate to `BikeSharingApp/` and create a new branch called *bike-images*.
 
 ```cmd
 cd dev-spaces/samples/BikeSharingApp/
 git checkout -b bike-images
 ```
 
-Измените [велосипеды/Server. js][bikes-server-js] , чтобы удалить строки 232 и 233:
+Edit [Bikes/server.js][bikes-server-js] to remove lines 232 and 233:
 
 ```javascript
     // Hard code image url *FIX ME*
     theBike.imageUrl = "/static/logo.svg";
 ```
 
-Теперь раздел должен выглядеть следующим образом:
+The section should now look like:
 
 ```javascript
     var theBike = result;
@@ -126,35 +126,35 @@ git checkout -b bike-images
     delete theBike._id;
 ```
 
-Сохраните файл, а затем используйте `git add` и `git commit` для размещения изменений.
+Save the file then use `git add` and `git commit` to stage your changes.
 
 ```cmd
 git add Bikes/server.js 
 git commit -m "Removing hard coded imageUrl from /bikes/:id route"
 ```
 
-## <a name="push-your-changes"></a>Отправка изменений
+## <a name="push-your-changes"></a>Push your changes
 
-Используйте `git push` для отправки новой ветви в разветвленный репозиторий:
+Use `git push` to push your new branch to your forked repository:
 
 ```cmd
 git push origin bike-images
 ```
 
-После завершения отправки перейдите к разветвленному репозиторию на сайте GitHub, чтобы создать запрос на вытягивание с *главной* ветвью в разветвленном репозитории по сравнению с ветвью " *образы велосипедов* ".
+After the push is complete, navigate to your forked repository on GitHub to create a pull request with the *master* branch in your forked repository as the base branch compared to the *bike-images* branch.
 
-После открытия запроса на вытягивание перейдите на вкладку *действия* . Убедитесь, что новое действие началось и создает службу *велосипедов* .
+After your pull request is opened, navigate to the *Actions* tab. Verify a new action has started and is building the *Bikes* service.
 
-## <a name="view-the-child-space-with-your-changes"></a>Просмотр дочернего пространства с вашими изменениями
+## <a name="view-the-child-space-with-your-changes"></a>View the child space with your changes
 
-После завершения действия вы увидите комментарий с URL-адресом нового дочернего пространства на основе изменений в запросе на вытягивание.
+After the action has completed, you will see a comment with a URL to your new child space based the changes in the pull request.
 
 > [!div class="mx-imgBorder"]
-> URL-адрес действия ![GitHub](../media/github-actions/github-action-url.png)
+> ![GitHub Action Url](../media/github-actions/github-action-url.png)
 
-Перейдите к службе *бикешарингвеб* , открыв URL-адрес из комментария. В качестве пользователя выберите *Аурелиа Бриггс (клиент)* , а затем выберите велосипед для аренды. Убедитесь, что вы больше не видите изображение заполнителя для велосипеда.
+Navigate to the *bikesharingweb* service by opening the URL from the comment. Select *Aurelia Briggs (customer)* as the user, then select a bike to rent. Verify you no longer see the placeholder image for the bike.
 
-При объединении изменений в *главную* ветвь в вилке выполняется другое действие для перестроения и запуска всего приложения в родительском пространстве разработки. В этом примере родительское пространство — *dev*. Это действие настраивается в [. GitHub/Workflows/bikesharing. yml][github-action-bikesharing-yaml].
+If you merge your changes into the *master* branch in your fork, another action will run to rebuild and run your entire application in the parent dev space. In this example, the parent space is *dev*. This action is configured in [.github/workflows/bikesharing.yml][github-action-bikesharing-yaml].
 
 ## <a name="clean-up-your-azure-resources"></a>Очистка ресурсов Azure
 
@@ -162,7 +162,7 @@ git push origin bike-images
 az group delete --name MyResourceGroup --yes --no-wait
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как в Azure Dev Spaces можно разрабатывать более сложные приложения в нескольких контейнерах и как упростить совместную разработку, используя разные версии и ветви кода в разных средах.
 
@@ -180,7 +180,7 @@ az group delete --name MyResourceGroup --yes --no-wait
 [github-actions-beta-signup]: https://github.com/features/actions
 [github-action-yaml]: https://github.com/Azure/dev-spaces/blob/master/.github/workflows/bikes.yml
 [github-action-bikesharing-yaml]: https://github.com/Azure/dev-spaces/blob/master/.github/workflows/bikesharing.yml
-[helm-installed]: https://helm.sh/docs/using_helm/#installing-helm
+[helm-installed]: https://v2.helm.sh/docs/using_helm/#installing-helm
 [tiller-rbac]: https://helm.sh/docs/using_helm/#role-based-access-control
 [supported-regions]: ../about.md#supported-regions-and-configurations
 [sp-acr]: ../../container-registry/container-registry-auth-service-principal.md

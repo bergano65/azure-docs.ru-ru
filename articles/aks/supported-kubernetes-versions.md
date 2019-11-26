@@ -7,22 +7,22 @@ ms.service: container-service
 ms.topic: article
 ms.date: 05/20/2019
 ms.author: saudas
-ms.openlocfilehash: 27b180d8d95d7dad967b8ac2495a795ed70836b9
-ms.sourcegitcommit: aaa82f3797d548c324f375b5aad5d54cb03c7288
+ms.openlocfilehash: b6dd91dda559f778eaa8f5a17b46a22020dd8373
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70147218"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74484046"
 ---
 # <a name="supported-kubernetes-versions-in-azure-kubernetes-service-aks"></a>Поддерживаемые версии Kubernetes в Службе Azure Kubernetes (AKS)
 
 Сообщество Kubernetes выпускает дополнительные версии примерно каждые три месяца. Эти выпуски содержат новые функции и улучшения. Исправления выпускаются чаще (иногда еженедельно) и предназначены только для устранения критических ошибок в дополнительной версии. Эти выпуски исправлений включают устранение уязвимостей безопасности или серьезных ошибок, влияющих на многих клиентов и большое количество продуктов, выполняющихся в рабочей среде на основе Kubernetes.
 
-AKS нацелены на сертификацию и выпуск новых версий Kubernetes в течение 30 дней с вышестоящего выпуска, в зависимости от стабильности выпуска.
+AKS aims to certify and release new Kubernetes versions within 30 days of an upstream release, subject to the stability of the release.
 
-## <a name="kubernetes-versions"></a>Версии Kubernetes
+## <a name="kubernetes-versions"></a>Kubernetes versions
 
-Kubernetes использует стандартную схему управления версиями [семантического управления версиями](https://semver.org/) . Это означает, что каждая версия Kubernetes соответствует этой схеме нумерации:
+Kubernetes uses the standard [Semantic Versioning](https://semver.org/) versioning scheme. This means that each version of Kubernetes follows this numbering scheme:
 
 ```
 [major].[minor].[patch]
@@ -32,34 +32,37 @@ Example:
   1.12.15
 ```
 
-Каждое число в версии указывает на общую совместимость с предыдущей версией:
+Each number in the version indicates general compatibility with the previous version:
 
-* Основные версии изменяются, когда несовместимые изменения API или обратная совместимость могут быть разорваны.
-* Дополнительные версии изменяются при внесении изменений в функциональность, обратная совместимость с другими вспомогательными выпусками.
-* Изменения версий исправления при исправлении ошибок, совместимых с обратной совместимостью.
+* Major versions change when incompatible API changes or backwards compatibility may be broken.
+* Minor versions change when functionality changes are made that are backwards compatible to the other minor releases.
+* Patch versions change when backwards-compatible bug fixes are made.
 
-Как правило, пользователи должны выполнить последнюю версию исправления дополнительной версии, например если ваш рабочий кластер находится в *1.12.14* , а *1.12.15* — последнюю доступную версию исправления, доступную для серии *1,12* . необходимо выполнить обновление до *1.12.15* , как только вы сможете гарантировать, что кластер полностью обновлен и поддерживается.
+In general, users should endeavor to run the latest patch release of the minor version they are running, for example if your production cluster is on *1.12.14* and *1.12.15* is the latest available patch version available for the *1.12* series, you should upgrade to *1.12.15* as soon as you are able to ensure your cluster is fully patched and supported.
 
 ## <a name="kubernetes-version-support-policy"></a>Политика поддержки версии Kubernetes
 
+> [!NOTE]
+> Starting December 9th, 2019 AKS will move to supporting latest (N) - 2 versions of Kubernetes. This change is to conform to the upstream window of support for Kubernetes versions and ensure the latest and most secure versions are being used. To learn more read the [announcement here](https://azure.microsoft.com/updates/azure-kubernetes-service-will-be-retiring-support-for-kubernetes-versions-1-11-and-1-12/).
+
 AKS поддерживает четыре дополнительные версии Kubernetes:
 
-* Текущая дополнительная версия, выпущенная в AKS (N)
+* The current minor version that is released in AKS (N)
 * Три предыдущие дополнительные версии. Каждая поддерживаемая дополнительная версия также поддерживает два стабильных исправления.
 
-Это называется "N-3" — (N (последний выпуск) — 3 (дополнительные версии)).
+This is known as "N-3" - (N (Latest release) - 3 (minor versions)).
 
-Например, если в AKS появились *1.13.* сегодня, поддержка предоставляется для следующих версий:
+For example, if AKS introduces *1.13.a* today, support is provided for the following versions:
 
-Новая дополнительная версия    |    Список поддерживаемых версий
+New minor version    |    Supported Version List
 -----------------    |    ----------------------
-1.13. a               |    1.12. a, 1.12. b, 1.11. a, 1.11. b, 1,10. a, 1,10. b
+1.13.a               |    1.12.a, 1.12.b, 1.11.a, 1.11.b, 1.10.a, 1.10.b
 
-Где ". a" и ". b" являются репрезентативными версиями исправлений ". в 1.13. a может отличаться от 1.12. a. Например, 1.13.9 и 1.12.8.
+Where ".a" and ".b" are representative patch versions."a" from 1.13.a can be different from 1.12.a. For example, 1.13.9 and 1.12.8.
 
-Дополнительные сведения о взаимодействии с изменениями и ожиданиями версий см. в разделе "связь" ниже.
+For details on communications regarding version changes and expectations, see "Communications" below.
 
-При введении новой дополнительной версии не рекомендуется использовать и удалять самые старые дополнительные версии и исправления. Например, если текущий список поддерживаемых версий:
+When a new minor version is introduced, the oldest minor version and patch releases supported are deprecated and removed. For example if the current supported version list is:
 
 ```
 1.12.a
@@ -72,13 +75,13 @@ AKS поддерживает четыре дополнительные верс�
 1.9.b
 ```
 
-И AKS выпуски 1,13. *это означает, что 1,9.* версии (все версии 1,9) будут удалены и не смогут поддерживаться.
+And AKS releases 1.13. *, this means that the 1.9.* versions (all 1.9 versions) will be removed and out of support.
 
 > [!NOTE]
-> Обратите внимание, что если клиенты работают в неподдерживаемой версии Kubernetes, они получат запрос на обновление при запросе поддержки кластера. В кластерах с неподдерживаемыми выпусками Kubernetes не включены [политики поддержки AKS](https://docs.microsoft.com/azure/aks/support-policies).
+> Please note, that if customers are running an unsupported Kubernetes version, they will be asked to upgrade when requesting support for the cluster. Clusters running unsupported Kubernetes releases are not covered by the [AKS support policies](https://docs.microsoft.com/azure/aks/support-policies).
 
 
-В дополнение к дополнительным версиям AKS поддерживает два последних выпуска *исправлений** для данной дополнительной версии. Например, при наличии следующих поддерживаемых версий:
+In addition to the above on minor versions, AKS supports the two latest *patch** releases of a given minor version. For example, given the following supported versions:
 
 ```
 Current Supported Version List
@@ -86,7 +89,7 @@ Current Supported Version List
 1.12.1, 1.12.2, 1.11.4, 1.11.5
 ```
 
-Если вышестоящий Kubernetes выпустил 1.12.3 и 1.11.6 и AKS выпускают эти версии исправлений, самые старые версии исправления являются устаревшими и удалены, а список поддерживаемых версий выглядит следующим образом:
+If upstream Kubernetes released 1.12.3 and 1.11.6 and AKS releases those patch versions, the oldest patch versions are deprecated and removed, and the supported version list becomes:
 
 ```
 New Supported Version List
@@ -95,50 +98,56 @@ New Supported Version List
 ```
 
 > [!NOTE]
-> Клиенты не должны закреплять создание кластера, CI или другие автоматические задания для конкретных выпусков исправлений. 
+> Customers should not pin cluster creation, CI or other automated jobs to specific patch releases. 
 
-### <a name="communications"></a>Взаимодействие
+### <a name="communications"></a>Связь
 
-* Для новых **вспомогательных** версий Kubernetes
-  * Все пользователи получают уведомления о новой версии и о том, какая версия будет удалена.
-  * При выпуске новой версии исправления самые старые исправления удаляются одновременно.
-  * У клиентов **60 дней** с общедоступной даты уведомления для обновления до поддерживаемого дополнительного выпуска версии.
-* Для новых версий **исправлений** Kubernetes
-  * Все пользователи получают уведомления о выпуске новой версии исправления и обновлении до последней версии исправления.
-  * У пользователей есть **30 дней** для обновления до более новой, поддерживаемой версии исправления. У пользователей есть **30 дней** для обновления до поддерживаемого выпуска исправлений до того, как будет удален самый старый.
+* For new **minor** versions of Kubernetes
+  * All users are notified publicly of the new version and what version will be removed.
+  * When a new patch version is released, the oldest patch release is removed at the same time.
+  * Customers have **60 days** from the public notification date to upgrade to a supported minor version release.
+* For new **patch** versions of Kubernetes
+  * All users are notified of the new patch version being released and to upgrade to the latest patch release.
+  * Users have **30 days** to upgrade to a newer, supported patch release. Users have **30 days** to upgrade to a supported patch release before the oldest is removed.
 
-AKS определяет "выпуск" как общедоступный, включенный во всех измерениях цели/качества обслуживания и доступных во всех регионах.
+AKS defines "released" as general availability, enabled in all SLO / Quality of Service measurements and available in all regions.
 
 > [!NOTE]
-> Клиенты получают уведомления о выпусках и нерекомендуемых версиях Kubernetes, если дополнительный номер версии является устаревшим или удаленные пользователи получают 60 дней для обновления до поддерживаемого выпуска. В случае выпусков исправлений клиенты получают 30 дней на обновление до поддерживаемого выпуска.
+> Customers are notified of Kubernetes version releases and deprecations, when a minor version is deprecated/removed users are given 60 days to upgrade to a supported release. In the case of patch releases, customers are given 30 days to upgrade to a supported release.
 
-Уведомления отправляются через:
+#### <a name="notification-channels-for-aks-changes"></a>Notification channels for AKS changes
 
-* [Заметки о выпуске AKS](https://aka.ms/aks/releasenotes)
-* Уведомления портал Azure
-* [Канал обновления Azure][azure-update-channel]
+AKS releases a weekly service update which summarizes new Kubernetes versions, service changes, and component updates that have been released on the service on [github](https://github.com/Azure/AKS/releases).
 
-### <a name="policy-exceptions"></a>Исключения политики
+These changes are rolled to all customers as part of regular maintenance that is offered as part of the managed service, some require explicit upgrades while others require no action.
 
-AKS оставляет за собой право добавлять или удалять новые или существующие версии, которые были обнаружены, чтобы иметь один или несколько критически важных производственных ошибок или проблем безопасности без предварительного уведомления.
+Notifications are also sent via:
 
-Определенные выпуски исправлений могут быть пропущены или ускорены в зависимости от серьезности ошибки или проблемы безопасности.
+* [AKS Release notes](https://aka.ms/aks/releasenotes)
+* Уведомления на портале Azure
+* [Azure update channel][azure-update-channel]
 
-### <a name="azure-portal-and-cli-default-versions"></a>Версии портал Azure и CLI по умолчанию
+### <a name="policy-exceptions"></a>Policy Exceptions
 
-При развертывании кластера AKS на портале или с Azure CLI кластер всегда устанавливается в виде N-1 дополнительного номера версии и последнего исправления. Например, если AKS поддерживает *1.13. a*, *1.12. a* +  + *1.12. b*, *1.11.* a*1.11. b*, *1,10. a* + *1.10 b*, версия по умолчанию для новых кластеров — *1.12. b* .
+AKS reserves the right to add or remove new/existing versions that have been identified to have one or more critical production impacting bugs or security issues without advance notice.
 
-AKS по умолчанию имеет значение N-1 (Minor. Латестпатч, пример 1.12. b), чтобы предоставить клиентам известную, стабильную и исправленную версию по умолчанию.
+Specific patch releases may be skipped, or rollout accelerated depending on the severity of the bug or security issue.
+
+### <a name="azure-portal-and-cli-default-versions"></a>Azure portal and CLI default versions
+
+When you deploy an AKS cluster in the portal or with the Azure CLI, the cluster is always set to the N-1 minor version and latest patch. For example, if AKS supports *1.13.a*, *1.12.a* + *1.12.b*, *1.11.a* + *1.11.b*, *1.10.a* + *1.10b*, the default version for new clusters is *1.12.b*.
+
+AKS defaults to N-1 (minor.latestPatch, eg 1.12.b) to provide customers a known, stable and patched version by default.
 
 ## <a name="list-currently-supported-versions"></a>Список поддерживаемых версий
 
-Чтобы узнать, какие версии доступны в настоящее время для вашей подписки и региона, используйте команду [AZ AKS get-versions][az-aks-get-versions] . В следующем примере перечислены доступные версии Kubernetes для региона *EastUS*:
+To find out what versions are currently available for your subscription and region, use the [az aks get-versions][az-aks-get-versions] command. В следующем примере перечислены доступные версии Kubernetes для региона *EastUS*:
 
 ```azurecli-interactive
 az aks get-versions --location eastus --output table
 ```
 
-Выходные данные похожи на приведенный ниже пример, который показывает, что доступна самая последняя версия Kubernetes версии *1.14.6* :
+The output is similar to the following example, which shows that Kubernetes version *1.14.6* is the most recent version available:
 
 ```
 KubernetesVersion    Upgrades
@@ -155,20 +164,20 @@ KubernetesVersion    Upgrades
 1.10.12              1.10.13, 1.11.9, 1.11.10
 ```
 
-## <a name="faq"></a>Часто задаваемые вопросы
+## <a name="faq"></a>Вопросы и ответы
 
 **Что происходит, когда клиент обновляет кластер Kubernetes с неподдерживаемой дополнительной версией?**
 
-Если вы используете версию *n-4* , вы выходите из поддержки и вам будет предложено выполнить обновление. Если обновление с версии n-4 до n-3 выполняется, теперь вы можете применить наши политики поддержки. Пример:
+If you are on the *n-4* version, you are outside of support and will be asked to upgrade. If your upgrade from version n-4 to n-3 succeeds, you are now within our support policies. Пример.
 
-- Если поддерживаемыми версиями AKS являются *1.13. a*, *1.12. b* + *1.12. c*, *1.11. d* + *1.11. e*и *1.10. f* + *1.10. g* и вы используете *1,9. h* или 1,9. *i* , вы вне службы поддержки.
-- Если обновление с версии *1,9. h* или *1,9. i* до *1.10* . *g* выполнено, то вы вернетесь в наши политики поддержки.
+- If the supported AKS versions are *1.13.a*, *1.12.b* + *1.12.c*, *1.11.d* + *1.11.e*, and *1.10.f* + *1.10.g* and you are on *1.9.h* or *1.9.i*, you are outside of support.
+- If the upgrade from *1.9.h* or *1.9.i* to *1.10.f* or *1.10.g* succeeds, you are back in the within our support policies.
 
 Обновления до версий старше *n-4* не поддерживаются. В таких случаях мы рекомендуем клиентам создать новые кластеры AKS и повторно развернуть их рабочие нагрузки.
 
-**Что означает "поддержка не поддерживается"**
+**What does 'Out of Support' mean**
 
-"Вне поддержки" означает, что используемая версия находится вне списка поддерживаемых версий, и вам будет предложено обновить кластер до поддерживаемой версии при запросе поддержки. Кроме того, AKS не делает никакой среды выполнения или других гарантий для кластеров за пределами списка поддерживаемых версий.
+'Outside of Support' means that the version you are running is outside of the supported versions list, and you will be asked to upgrade the cluster to a supported version when requesting support. Additionally, AKS does not make any runtime or other guarantees for clusters outside of the supported versions list.
 
 **Что происходит, когда клиент выполняет масштабирование кластера Kubernetes с неподдерживаемой дополнительной версией?**
 
@@ -176,15 +185,15 @@ KubernetesVersion    Upgrades
 
 **Может ли клиент всегда использовать одну версию Kubernetes?**
 
-Да. Однако если кластер не входит в одну из версий, поддерживаемых AKS, то кластер выходит за пределы политик поддержки AKS. Azure не обновляет и не удаляет ваш кластер автоматически.
+Да. However, if the cluster is not on one of the versions supported by AKS, the cluster is out of the AKS support policies. Azure не обновляет и не удаляет ваш кластер автоматически.
 
 **Какую версию поддерживает главный кластер, если кластер агента не использует ни одну из поддерживаемых версий AKS?**
 
 Главный кластер автоматически обновляется до последней поддерживаемой версии.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Сведения о том, как обновить кластер, см. в статье [Обновление кластера Azure Kubernetes Service (AKS)][aks-upgrade].
+For information on how to upgrade your cluster, see [Upgrade an Azure Kubernetes Service (AKS) cluster][aks-upgrade].
 
 <!-- LINKS - External -->
 [aks-engine]: https://github.com/Azure/aks-engine

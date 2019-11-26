@@ -1,6 +1,6 @@
 ---
-title: Обработку событий с помощью Azure Maps | Документация Майкрософт
-description: Как создать интерактивную карту веб-пакета SDK с помощью событий Map
+title: Handle events with Azure Maps | Microsoft Docs
+description: How to make an interactive Web SDK map with map events
 author: jingjing-z
 ms.author: jinzh
 ms.date: 09/10/2019
@@ -9,20 +9,20 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: c5b4ed73d7bc4d89a67280a0bb183f374ae093d8
-ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.openlocfilehash: 99ef5aa0ee8fa542b0aa807cc536ebfbee369e10
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70899431"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74484289"
 ---
 # <a name="interact-with-the-map"></a>Взаимодействие с картой
 
-В этой статье показано, как использовать свойство [события класса Map](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?#events) для выделения событий на карте и на разных слоях на карте. Здесь также показано, как использовать свойство событий класса карты для выделения событий при взаимодействии с маркером HTML.
+This article shows you how to use [map class events](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?#events) property to highlight events on the map and on different layers of the map. Здесь также показано, как использовать свойство событий класса карты для выделения событий при взаимодействии с маркером HTML.
 
 ## <a name="interact-with-the-map"></a>Взаимодействие с картой
 
-Посмотрите на карту ниже и просмотрите соответствующие события мыши, выделенные справа. Вы можете щелкнуть **вкладку JS**, чтобы просмотреть и изменить код JavaScript. Кроме того, можно нажать кнопку **редактирования в CodePen** и изменить код.
+Play with the map below, and see the corresponding mouse events highlighted on the right. Вы можете щелкнуть **вкладку JS**, чтобы просмотреть и изменить код JavaScript. Кроме того, можно нажать кнопку **редактирования в CodePen** и изменить код.
 
 <br/>
 
@@ -31,7 +31,7 @@ ms.locfileid: "70899431"
 
 ## <a name="interact-with-map-layers"></a>Взаимодействие со слоями карты
 
-В следующем коде выделены имена событий, которые создаются при взаимодействии с уровнем символов. На уровне символов, пузырьковых, линий и многоугольников поддерживается один и тот же набор событий. Уровни тепловой карты и мозаичных уровней не поддерживают ни одно из этих событий.
+The following code highlights the name of the events that get fired up as you interact with the Symbol Layer. The symbol, bubble, line, and polygon layer all support the same set of events. The heat map and tile layers do not support any of these events.
 
 <br/>
 
@@ -40,74 +40,81 @@ ms.locfileid: "70899431"
 
 ## <a name="interact-with-html-marker"></a>Взаимодействие с маркером HTML
 
-Следующий код добавляет события сопоставлений JavaScript в HTML-маркер. Он также выделяет название событий, которые запускаются при взаимодействии с маркером HTML.
+The following code adds Javascript map events to an HTML marker. Он также выделяет название событий, которые запускаются при взаимодействии с маркером HTML.
 
 <br/>
 
 <iframe height='500' scrolling='no' title='Взаимодействие с картой – события маркера HTML' src='//codepen.io/azuremaps/embed/VVzKJY/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода <a href='https://codepen.io/azuremaps/pen/VVzKJY/'>Взаимодействие с картой – события маркера HTML</a> службы "Карты Azure" (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-В следующей таблице перечислены все поддерживаемые события класса Map.
+The following table lists all of the supported map class events.
 
-| событие             | Описание |
-|-------------------|-------------|
-| боксзуменд        | Возникает при завершении диалога "масштаб Box".|
-| боксзумстарт      | Возникает при запуске диалогового окна "Масштаб".|
-| Откройте             | Возникает при нажатии и отпускании указывающего устройства в той же точке на карте.|
-| закрыть             | Возникает, когда всплывающее окно закрывается вручную или программно.|
-| меню       | Возникает при нажатии правой кнопки мыши.|
-| добавляется         | Возникает при добавлении фигур в источник данных.|
-| Удаление       | Возникает, когда фигуры удаляются из источника данных.|
-| датасаурцеупдатед | Возникает при обновлении объекта DataSource.|
-| кнопки          | Возникает при двойном щелчке указывающего устройства в той же точке на карте.|
-| Переместить              | Возникает повторно во время действия "перетаскивание для панорамирования" на отметке, всплывающем окне или HTML-маркере.|
-| драженд           | Возникает при завершении диалога "перетаскивание в Pan" на маркере Map, Popup или HTML.|
-| драгстарт         | Возникает, когда взаимодействие «перетаскивание в Pan» начинается с маркера «Map», «Popup» или «HTML».|
-| error             | Возникает при возникновении ошибки.|
-| клавиш           | Возникает при нажатии клавиши.|
-| бытии          | Возникает при нажатии клавиши, создающей типабле символ (ключ ANSI).|
-| KeyUp             | Возникает при освобождении ключа.|
-| лайераддед        | Возникает при добавлении слоя к сопоставлению.|
-| load              | Срабатывает сразу после загрузки всех необходимых ресурсов и первого визуально завершающего рендеринга схемы.|
-| вниз         | Возникает при нажатии указывающего устройства в сопоставлении.|
-| событие         | Возникает при перемещении указывающего устройства в пределах этой схемы.|
-| мышь          | Возникает, когда точка покидает холст на карте.|
-| MouseOver         | Возникает при перемещении указывающего устройства в пределах этой схемы.|
-| Кнопка           | Возникает при освобождении указывающего устройства в сопоставлении.|
-| Перемещение              | Возникает повторно во время анимированного перехода из одного представления в другое в результате взаимодействия с пользователем или методов.|
-| мовинд           | Срабатывает сразу после того, как Map завершает переход от одного представления к другому, как результат взаимодействия с пользователем или методов.|
-| мовестарт         | Срабатывает непосредственно перед тем, как на карте начинается переход из одного представления в другое в результате взаимодействия с пользователем или методов.|
-| открыть              | Возникает, когда всплывающее окно открывается вручную или программно.|
-| тон             | Срабатывает при каждом изменении высоты (наклона) на карте в результате взаимодействия с пользователем или методов.|
-| питченд          | Срабатывает сразу после того, как закончится изменение высоты (наклона) в результате взаимодействия с пользователем или методов.|
-| питчстарт        | Срабатывает каждый раз, когда шаг (наклон) на карте начинает изменение в результате взаимодействия с пользователем или методов.|
-| ready             | Возникает, когда минимальный требуемый ресурс сопоставлений загружается перед тем, как карту готовы к программному взаимодействию с.|
-| render            | <p> Возникает при каждом отображении отображения на экране, как результат:<ul><li>Изменение расположения, масштаба, высоты или соответствия на карте.</li><li>Изменение стиля схемы.</li><li>Изменение источника DataSource.</li><li>Загрузка плитки вектора, геоjson-файла, глифа или спрайта.</li></ul></p>|
-| Изменить размер            | Срабатывает сразу после изменения размера схемы.|
-| повернуть            | Возникает повторно во время диалога "перетаскивание для поворота".|
-| ротатинд         | Возникает при завершении диалога "перетаскивание для поворота".|
-| ротатестарт       | Возникает, когда начинается взаимодействие "перетаскивание для поворота".|
-| шапечанжед      | Возникает при изменении свойства объекта Shape.|
-| саурцеаддед       | Возникает при добавлении DataSource или Вектортилесаурце к сопоставлению.|
-| саурцеремовед     | Возникает при удалении DataSource или Вектортилесаурце из Map.|
-| стиледата         | Возникает при загрузке или изменении стиля схемы.|
-| токенаккуиред     | Возникает при получении маркера доступа AAD.|
-| таучканцел       | Возникает при возникновении события таучканцел в сопоставлении.|
-| таученд          | Возникает при возникновении события таученд в сопоставлении.|
-| TouchMove         | Возникает при возникновении события TouchMove в сопоставлении.|
-| таучстарт        | Возникает при возникновении события таучстарт в сопоставлении.|
-| wheel             | Возникает при возникновении события колесика мыши в карте.|
-| Масштаб              | Возникает повторно во время анимированного перехода с одного уровня масштаба на другой в результате взаимодействия с пользователем или методов.|
-| зуменд           | Срабатывает сразу после того, как на карте выполняется переход с одного уровня масштаба на другой в результате взаимодействия с пользователем или методов.|
-| зумстарт         | Срабатывает непосредственно перед тем, как на карте начинается переход с одного уровня масштаба на другой в результате взаимодействия с пользователем или методов.|
+| Мероприятие               | Описание |
+|---------------------|-------------|
+| `boxzoomend`        | Fired when a "box zoom" interaction ends.|
+| `boxzoomstart`      | Fired when a "box zoom" interaction starts.|
+| `click`             | Fired when a pointing device is pressed and released at the same point on the map.|
+| `close`             | Fired when the popup is closed manually or programatically.|
+| `contextmenu`       | Fired when the right button of the mouse is clicked.|
+| `data`              | Fired when any map data loads or changes. |
+| `dataadded`         | Fired when shapes are added to the `DataSource`.|
+| `dataremoved`       | Fired when shapes are removed from the `DataSource`.|
+| `datasourceupdated` | Fired when the `DataSource` object is updated.|
+| `dblclick`          | Fired when a pointing device is clicked twice at the same point on the map.|
+| `drag`              | Fired repeatedly during a "drag to pan" interaction on the map, popup, or HTML marker.|
+| `dragend`           | Fired when a "drag to pan" interaction ends on the map, popup, or HTML marker.|
+| `dragstart`         | Fired when a "drag to pan" interaction starts on the map, popup, or HTML marker.|
+| `error`             | Fired when an error occurs.|
+| `idle`              | <p>Fired after the last frame rendered before the map enters an "idle" state:<ul><li>No camera transitions are in progress.</li><li>All currently requested tiles have loaded.</li><li>All fade/transition animations have completed.</li></ul></p>|
+| `keydown`           | Fired when a key is pressed down.|
+| `keypress`          | Fired when a key that produces a typable character (an ANSI key) is pressed.|
+| `keyup`             | Fired when a key is released.|
+| `layeradded`        | Fired when a layer is added to the map.|
+| `layerremoved`      | Fired when a layer is removed from the map.|
+| `load`              | Fired immediately after all necessary resources have been downloaded and the first visually complete rendering of the map has occurred.|
+| `mousedown`         | Fired when a pointing device is pressed within the map or when on top of an element.|
+| `mouseenter`        | Fired when a pointing device is initially moved over the map or an element. |
+| `mouseleave`        | Fired when a pointing device is moved out the map or an element. |
+| `mousemove`         | Fired when a pointing device is moved within the map or an element.|
+| `mouseout`          | Fired when a point device leaves the map's canvas our leaves an element.|
+| `mouseover`         | Fired when a pointing device is moved over the map or an element.|
+| `mouseup`           | Fired when a pointing device is released within the map or when on top of an element.|
+| `move`              | Fired repeatedly during an animated transition from one view to another, as the result of either user interaction or methods.|
+| `moveend`           | Fired just after the map completes a transition from one view to another, as the result of either user interaction or methods.|
+| `movestart`         | Fired just before the map begins a transition from one view to another, as the result of either user interaction or methods.|
+| `open`              | Fired when the popup is opened manually or programatically.|
+| `pitch`             | Fired whenever the map's pitch (tilt) changes as the result of either user interaction or methods.|
+| `pitchend`          | Fired immediately after the map's pitch (tilt) finishes changing as the result of either user interaction or methods.|
+| `pitchstart`        | Fired whenever the map's pitch (tilt) begins a change as the result of either user interaction or methods.|
+| `ready`             | Fired when the minimum required map resources are loaded before the map is ready to be programmatically interacted with.|
+| `render`            | <p>Fired whenever the map is drawn to the screen, as the result of:<ul><li>A change to the map's position, zoom, pitch, or bearing.</li><li>A change to the map's style.</li><li>A change to a `DataSource` source.</li><li>The loading of a vector tile, GeoJSON file, glyph, or sprite.</li></ul></p>|
+| `resize`            | Fired immediately after the map has been resized.|
+| `rotate`            | Fired repeatedly during a "drag to rotate" interaction.|
+| `rotateend`         | Fired when a "drag to rotate" interaction ends.|
+| `rotatestart`       | Fired when a "drag to rotate" interaction starts.|
+| `shapechanged`      | Fired when a shape object property is changed.|
+| `sourcedata`        | Fired when one of the map's sources loads or changes, including if a tile belonging to a source loads or changes. |
+| `sourceadded`       | Fired when a `DataSource` or `VectorTileSource` is added to the map.|
+| `sourceremoved`     | Fired when a `DataSource` or `VectorTileSource` is removed from the map.|
+| `styledata`         | Fired when the map's style loads or changes.|
+| `styleimagemissing` | Fired when a layer tries to load an image from the image sprite that doesn't exist |
+| `tokenacquired`     | Fired when an AAD access token is obtained.|
+| `touchcancel`       | Fired when a touchcancel event occurs within the map.|
+| `touchend`          | Fired when a touchend event occurs within the map.|
+| `touchmove`         | Fired when a touchmove event occurs within the map.|
+| `touchstart`        | Fired when a touchstart event occurs within the map.|
+| `wheel`             | Fired when a mouse wheel event occurs within the map.|
+| `zoom`              | Fired repeatedly during an animated transition from one zoom level to another, as the result of either user interaction or methods.|
+| `zoomend`           | Fired just after the map completes a transition from one zoom level to another, as the result of either user interaction or methods.|
+| `zoomstart`         | Fired just before the map begins a transition from one zoom level to another, as the result of either user interaction or methods.|
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Полные примеры кода см. в следующих статьях:
 
 > [!div class="nextstepaction"]
-> [Использование модуля Azure Maps Services](./how-to-use-services-module.md)
+> [Using the Azure Maps Services module](./how-to-use-services-module.md)
 
 > [!div class="nextstepaction"]
 > [Примеры кода](https://docs.microsoft.com/samples/browse/?products=azure-maps)

@@ -1,6 +1,6 @@
 ---
-title: Выражения стиля на основе данных в Azure Maps веб-пакете SDK | Документация Майкрософт
-description: Использование выражений стиля, управляемых данными, в веб-пакете SDK для Azure Maps.
+title: Data-driven style Expressions in the Azure Maps Web SDK | Microsoft Docs
+description: How to use data-driven style expressions in the Azure Maps Web SDK.
 author: rbrundritt
 ms.author: richbrun
 ms.date: 4/4/2019
@@ -9,26 +9,26 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendleton
 ms.custom: codepen
-ms.openlocfilehash: 507af54b8b4c2e7c67538a1a25a040c7ee5fdfd5
-ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
+ms.openlocfilehash: 6cd69ba8abe243daadf5d517ab7c5a224953cc99
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68976319"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74480644"
 ---
-# <a name="data-driven-style-expressions-web-sdk"></a>Выражения стиля на основе данных (веб-пакет SDK)
+# <a name="data-driven-style-expressions-web-sdk"></a>Data-driven Style Expressions (Web SDK)
 
-Выражения позволяют применять бизнес-логику к параметрам стилей, которые задают свойства, определенные в каждой фигуре источника данных. Выражения также можно использовать для фильтрации данных в источнике или слое данных. Выражения могут состоять из условной логики, например if-операторы, и также могут использоваться для работы с данными. строковые, логические и математические операторы. 
+Expressions enable you to apply business logic to styling options that observe the properties defined in each shape in a data source. Expressions can also be used to filter data in a data source or layer. Expressions can consist of conditional logic, like if-statements, and can also be used to manipulate data with; string, logical and mathematical operators. 
 
-Стили, управляемые данными, позволяют уменьшить объем кода, необходимого для реализации бизнес-логики вокруг стилей. При использовании с слоями выражения оцениваются во время визуализации в отдельном потоке, что обеспечивает повышенную производительность по сравнению с оценкой бизнес-логики в потоке пользовательского интерфейса.
+Data-driven styles can reduce the amount of code needed to implement business logic around styling. When used with layers, expressions are evaluated at render time on a separate thread that provides increased performance when compared to evaluating business logic on the UI thread.
 
-В следующем видео представлен обзор стилизации на основе данных в Azure Maps веб-пакете SDK.
+The following video provides an overview of data-driven styling in the Azure Maps Web SDK.
 
 <br/>
 
 <iframe src="https://channel9.msdn.com/Shows/Internet-of-Things-Show/Data-Driven-Styling-with-Azure-Maps/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
 
-Выражения представлены в виде массивов JSON. Первым элементом выражения в массиве является строка, указывающая имя оператора выражения. Например, "+" или "Case". Следующие элементы (если таковые имеются) являются аргументами выражения. Каждый аргумент является либо литеральным значением (строкой, числом, логическим значением `null`или), либо другим массивом выражений. Следующий псевдокод определяет базовую структуру выражения. 
+Expressions are represented as JSON arrays. The first element of an expression in the array is a string that specifies the name of the expression operator. For example, "+" or "case". The next elements (if any) are the arguments to the expression. Each argument is either a literal value (a string, number, boolean, or `null`), or another expression array. The following pseudocode defines the basic structure an expression. 
 
 ```javascript
 [ 
@@ -39,24 +39,24 @@ ms.locfileid: "68976319"
 ] 
 ```
 
-Azure Maps веб-пакет SDK поддерживает множество типов, которые можно использовать в сочетании с другими выражениями.
+The Azure Maps Web SDK supports many types of that can be used on their own or in combination with other expressions.
 
-| Тип выражений | Описание |
+| Type of expressions | Описание |
 |---------------------|-------------|
-| [Статистическое выражение](#aggregate-expression) | Выражение, определяющее вычисление, которое обрабатывается по набору данных и может использоваться с `clusterProperties` параметром. `DataSource` |
-| [Логические выражения](#boolean-expressions) | Логические выражения предоставляют набор выражений логических операторов для оценки логических сравнений. |
-| [Выражения цвета](#color-expressions) | Выражения цвета упрощают создание цветовых значений и манипуляций с ними. |
-| [Условные выражения](#conditional-expressions) | Условные выражения предоставляют логические операции, аналогичные операторам if. |
-| [Выражения данных](#data-expressions) | Предоставляет доступ к данным свойств в компоненте. |
-| [Выражения интерполяции и шага](#interpolate-and-step-expressions) | Выражения интерполяции и шага можно использовать для вычисления значений по кривой с интерполяцией или с пошаговыми функциями. |
-| [Выражения для конкретных слоев](#layer-specific-expressions) | Специальные выражения, применимые только к одному слою. |
-| [Математические выражения](#math-expressions) | Предоставляет математические операторы для выполнения вычислений на основе данных в платформе выражений. |
-| [Выражения строкового оператора](#string-operator-expressions) | Выражения строкового оператора выполняют операции преобразования строк, таких как объединение и преобразование варианта. |
-| [Выражения типа](#type-expressions) | Выражения типа предоставляют средства для тестирования и преобразования различных типов данных, таких как строки, числа и логические значения. |
-| [Выражения привязки переменных](#variable-binding-expressions) | Выражения привязки переменных позволяют сохранять результаты вычисления в переменной и ссылаться на другие части выражения несколько раз без необходимости повторного вычисления сохраненного значения. |
-| [Выражение масштаба](#zoom-expression) | Возвращает текущий уровень масштаба для отображения во время отрисовки. |
+| [Aggregate expression](#aggregate-expression) | An expression that defines a calculate that is processed over a set of data and can be used with the `clusterProperties` option of a `DataSource`. |
+| [Boolean expressions](#boolean-expressions) | Boolean expressions provide a set of boolean operators expressions for evaluating boolean comparisons. |
+| [Color expressions](#color-expressions) | Color expressions make it easier to create and manipulate color values. |
+| [Conditional expressions](#conditional-expressions) | Conditional expressions provide logic operations that are like if-statements. |
+| [Data expressions](#data-expressions) | Provides access to the property data in a feature. |
+| [Interpolate and Step expressions](#interpolate-and-step-expressions) | Interpolate and step expressions can be used to calculate values along an interpolated curve or step function. |
+| [Layer specific expressions](#layer-specific-expressions) | Special expressions that are only applicable to a single layer. |
+| [Math expressions](#math-expressions) | Provides mathematical operators to perform data-driven calculations within the expression framework. |
+| [String operator expressions](#string-operator-expressions) | String operator expressions perform conversion operations on strings such as concatenating and converting the case. |
+| [Type expressions](#type-expressions) | Type expressions provide tools for testing and converting different data types like strings, numbers, and boolean values. |
+| [Variable binding expressions](#variable-binding-expressions) | Variable binding expressions let the results of a calculation be stored in a variable and referenced elsewhere in an expression multiple times without having to recalculate the stored value. |
+| [Zoom expression](#zoom-expression) | Retrieves the current zoom level of the map at render time. |
 
-Все примеры в этом документе будут использовать следующую функцию для демонстрации различных способов использования различных типов выражений. 
+All examples in this document will use the following feature to demonstrate different ways in that the different types of expressions can be used. 
 
 ```javascript
 {
@@ -77,24 +77,24 @@ Azure Maps веб-пакет SDK поддерживает множество т�
 }
 ```
 
-## <a name="data-expressions"></a>Выражения данных
+## <a name="data-expressions"></a>Data expressions
 
-Выражения данных предоставляют доступ к данным свойств в компоненте. 
+Data expressions provide access to the property data in a feature. 
 
-| Выражение | Тип возвращаемого значения | Описание |
+| Expression | Тип возвращаемого значения | Описание |
 |------------|-------------|-------------|
-| `['at', number, array]` | объект | Извлекает элемент из массива. |
-| `['geometry-type']` | строка | Возвращает тип геометрии компонента: Точка, MultiPoint, LineString, MultiLineString, многоугольник, многомногоугольниковый. |
-| `['get', string]` | value | Возвращает значение свойства из свойств текущего компонента. Возвращает значение null, если запрошенное свойство отсутствует. |
-| `['get', string, object]` | value | Возвращает значение свойства из свойств указанного объекта. Возвращает значение null, если запрошенное свойство отсутствует. |
-| `['has', string]` | Логический | Определяет, имеют ли свойства компонента указанное свойство. |
-| `['has', string, object]` | Логический | Определяет, имеют ли свойства объекта указанное свойство. |
-| `['id']` | value | Возвращает идентификатор компонента, если он имеется. |
-| `['length', string | array]` | номер | Возвращает длину строки или массива. |
+| `['at', number, array]` | object | Retrieves an item from an array. |
+| `['geometry-type']` | string | Gets the feature's geometry type: Point, MultiPoint, LineString, MultiLineString, Polygon, MultiPolygon. |
+| `['get', string]` | value | Gets the property value from the current feature's properties. Returns null if the requested property is missing. |
+| `['get', string, object]` | value | Gets the property value from the properties of the provided object. Returns null if the requested property is missing. |
+| `['has', string]` | Логическое | Determines if the properties of a feature have the specified property. |
+| `['has', string, object]` | Логическое | Determines if the properties of the object have the specified property. |
+| `['id']` | value | Gets the feature's ID if it has one. |
+| `['length', string | array]` | number | Gets the length of a string or array. |
 
 **Примеры**
 
-Доступ к свойствам функции можно получить непосредственно в выражении с помощью `get` выражения. В следующем примере значение "Зонеколор" функции используется для указания свойства Color пузырькового слоя. 
+Properties of a feature can be accessed directly in an expression by using a `get` expression. The following example uses the "zoneColor" value of the feature to specify the color property of a bubble layer. 
 
 ```javascript
 var layer = new atlas.layer.BubbleLayer(datasource, null, {
@@ -102,7 +102,7 @@ var layer = new atlas.layer.BubbleLayer(datasource, null, {
 });
 ```
 
-Приведенный выше пример будет работать нормально, если у всех функций Point `zoneColor` есть свойство, но если это не так, цвет скорее всего вернется к «черному». Чтобы изменить цвет резервирования, `case` можно использовать выражение в сочетании `has` с выражением для проверки существования свойства и, если вместо этого он не возвращает резервный цвет.
+The above example will work fine if all the point features have the `zoneColor` property, but if they don’t, the color will likely fall back to "black". To modify the fallback color, a `case` expression can be used in combination with the `has` expression to check if the property exists, and if it doesn’t return a fallback color instead.
 
 ```javascript
 var layer = new atlas.layer.BubbleLayer(datasource, null, {
@@ -117,7 +117,7 @@ var layer = new atlas.layer.BubbleLayer(datasource, null, {
 });
 ```
 
-Пузырьки и слои символов по умолчанию отображают координаты всех фигур в источнике данных. Это можно сделать, чтобы выделить вершины многоугольника или линии. Параметр слоя можно использовать для ограничения типа геометрии функций, которые он отображает, `['geometry-type']` с помощью выражения в логическом выражении. `filter` В следующем примере уровень пузырьков ограничивается таким образом, `Point` чтобы отображались только функции.
+Bubble and symbol layers will render the coordinates of all shapes in a data source by default. This can be done to highlight the vertices of a polygon or line. The `filter` option of the layer can be used to limit the geometry type of the features it renders by using a `['geometry-type']` expression within a boolean expression. The following example limits a bubble layer so that only `Point` features are rendered.
 
 ```javascript
 var layer = new atlas.layer.BubbleLayer(datasource, null, {
@@ -125,7 +125,7 @@ var layer = new atlas.layer.BubbleLayer(datasource, null, {
 });
 ```
 
-В следующем примере разрешаются `Point` отрисовка и компонентов, и `MultiPoint` . 
+The following example will allow both `Point` and `MultiPoint` features to be rendered. 
 
 ```javascript
 var layer = new atlas.layer.BubbleLayer(datasource, null, {
@@ -133,90 +133,90 @@ var layer = new atlas.layer.BubbleLayer(datasource, null, {
 });
 ```
 
-Точно так же контур многоугольников будет отображаться в слоях линий. Чтобы отключить это поведение на уровне линии, добавьте фильтр, допускающий `LineString` только функции и. `MultiLineString`  
+Similarly, the outline of Polygons will render in line layers. To disable this behavior in a line layer, add a filter that only allows `LineString` and `MultiLineString` features.  
 
-## <a name="math-expressions"></a>Математические выражения
+## <a name="math-expressions"></a>Math expressions
 
-Математические выражения предоставляют математические операторы для выполнения вычислений на основе данных в платформе выражений.
+Math expressions provide mathematical operators to perform data-driven calculations within the expression framework.
 
-| Выражение | Тип возвращаемого значения | Описание |
+| Expression | Тип возвращаемого значения | Описание |
 |------------|-------------|-------------|
-| `['+', number, number, …]` | номер | Вычисляет сумму указанных чисел. |
-| `['-', number]` | номер | Вычитает 0 на указанное число. |
-| `['-', number, number]` | номер | Вычитает первые цифры по второму числу. |
-| `['*', number, number, …]` | номер | Умножает указанные числа вместе. |
-| `['/', number, number]` | номер | Делит первое число на второе число. |
-| `['%', number, number]` | номер | Вычисляет остаток при делении первого числа на второе число. |
-| `['^', number, number]` | номер | Вычисляет значение первого значения, возведенного в степень второго числа. |
-| `['abs', number]` | номер | Вычисляет абсолютное значение указанного числа. |
-| `['acos', number]` | номер | Вычисляет арккосинус указанного числа. |
-| `['asin', number]` | номер | Вычисляет арксинус указанного числа. |
-| `['atan', number]` | номер | Вычисляет арктангенс указанного числа. |
-| `['ceil', number]` | номер | Округляет число до следующего целого числа. |
-| `['cos', number]` | номер | Вычисляет COS указанного числа. |
-| `['e']` | номер | Возвращает математическую константу `e`. |
-| `['floor', number]` | номер | Округляет число до предыдущего целого числа. |
-| `['ln', number]` | номер | Вычисляет натуральный логарифм заданного числа. |
-| `['ln2']` | номер | Возвращает математическую константу `ln(2)`. |
-| `['log10', number]` | номер | Вычисляет десятичный логарифм указанного числа. |
-| `['log2', number]` | номер | Вычисляет логарифм указанного числа с основанием 2. |
-| `['max', number, number, …]` | номер | Вычисляет максимальное число в указанном наборе чисел. |
-| `['min', number, number, …]` | номер | Вычисляет минимальное число в указанном наборе чисел. |
-| `['pi']` | номер | Возвращает математическую константу `PI`. |
-| `['round', number]` | номер | Округляет число до ближайшего целого. Среднее значение округляется с нуля. Например, `['round', -1.5]` принимает значение-2. |
-| `['sin', number]` | номер | Вычисляет синус указанного числа. |
-| `['sqrt', number]` | номер | Вычисляет квадратный корень из указанного числа. |
-| `['tan', number]` | номер | Вычисляет тангенс указанного числа. |
+| `['+', number, number, …]` | number | Calculates the sum of the specified numbers. |
+| `['-', number]` | number | Subtracts 0 by the specified number. |
+| `['-', number, number]` | number | Subtracts the first numbers by the second number. |
+| `['*', number, number, …]` | number | Multiplies the specified numbers together. |
+| `['/', number, number]` | number | Divides the first number by the second number. |
+| `['%', number, number]` | number | Calculates the remainder when dividing the first number by the second number. |
+| `['^', number, number]` | number | Calculates the value of the first value raised to the power of the second number. |
+| `['abs', number]` | number | Calculates the absolute value of the specified number. |
+| `['acos', number]` | number | Calculates the arccosine of the specified number. |
+| `['asin', number]` | number | Calculates the arcsine of the specified number. |
+| `['atan', number]` | number | Calculates the arctangent of the specified number. |
+| `['ceil', number]` | number | Rounds the number up to the next whole integer. |
+| `['cos', number]` | number | Calculates the cos of the specified number. |
+| `['e']` | number | Returns the mathematical constant `e`. |
+| `['floor', number]` | number | Rounds the number down to the previous whole integer. |
+| `['ln', number]` | number | Calculates the natural logarithm of the specified number. |
+| `['ln2']` | number | Returns the mathematical constant `ln(2)`. |
+| `['log10', number]` | number | Calculates the base-ten logarithm of the specified number. |
+| `['log2', number]` | number | Calculates the base-two logarithm of the specified number. |
+| `['max', number, number, …]` | number | Calculates the maximum number in the specified set of numbers. |
+| `['min', number, number, …]` | number | Calculates the minimum number in the specified set of numbers. |
+| `['pi']` | number | Returns the mathematical constant `PI`. |
+| `['round', number]` | number | Rounds the number to the nearest integer. Halfway values are rounded away from zero. For example, `['round', -1.5]` evaluates to -2. |
+| `['sin', number]` | number | Calculates the sine of the specified number. |
+| `['sqrt', number]` | number | Calculates the square root of the specified number. |
+| `['tan', number]` | number | Calculates the tangent of the specified number. |
 
-## <a name="aggregate-expression"></a>Статистическое выражение
+## <a name="aggregate-expression"></a>Aggregate expression
 
-Статистическое выражение определяет вычисление, которое обрабатывается по набору данных и может использоваться с `clusterProperties` параметром. `DataSource` Выходные данные этих выражений должны быть числами или логическими значениями. 
+An aggregate expression defines a calculation that is processed over a set of data and can be used with the `clusterProperties` option of a `DataSource`. The output of these expressions must be a number or boolean. 
 
-Статистическое выражение принимает три значения; значение оператора, начальное значение и выражение для получения свойства из каждого компонента в данных для применения статистической операции к. Это выражение имеет следующий формат:
+An aggregate expression takes in three values; an operator value, and initial value, and an expression to retrieve a property from each feature in a data to apply the aggregate operation on. This expression has the following format:
 
 ```javascript
 [operator: string, initialValue: boolean | number, mapExpression: Expression]
 ```
 
-- станции Функция выражения, которая затем применяется к всем значениям, вычисленным `mapExpression` для каждой точки в кластере. Поддерживаемые операторы; 
-    - Для чисел: `+`, `*`, `max`,`min`
-    - Для логических значений: `all`,`any`
-- Инитиалвалуе: Начальное значение, для которого выполняется статистическая обработка первого вычисленного значения.
-- Мапекспрессион: Выражение, применяемое к каждой точке в наборе данных.
+- operator: An expression function that is then applied to against all values calculated by the `mapExpression` for each point in the cluster. Supported operators; 
+    - For numbers: `+`, `*`, `max`, `min`
+    - For Booleans: `all`, `any`
+- initialValue: An initial value in which the first calculated value is aggregated against.
+- mapExpression: An expression that is applied against each point in the data set.
 
 **Примеры**
 
-Если все компоненты в наборе данных имеют `revenue` свойство, которое является числом. Общий доход всех точек в кластере, созданных из набора данных, можно вычислить с помощью следующего статистического выражения:`['+', 0, ['get', 'revenue']]`
+If all features in a data set have a `revenue` property that is a number. The total revenue of all points in a cluster created from the data set can be calculated using the following aggregate expression: `['+', 0, ['get', 'revenue']]`
 
 ## <a name="boolean-expressions"></a>Логические выражения
 
-Логические выражения предоставляют набор выражений логических операторов для оценки логических сравнений.
+Boolean expressions provide a set of boolean operators expressions for evaluating boolean comparisons.
 
-При сравнении значений сравнение строго типизировано. Значения различных типов всегда считаются неравными. Случаи, когда типы во время синтаксического анализа могут различаться, считаются недопустимыми и выдают ошибку синтаксического анализа. 
+When comparing values, the comparison is strictly typed. Values of different types are always considered unequal. Cases where the types are known to be different at parse time are considered invalid and will produce a parse error. 
 
-| Выражение | Тип возвращаемого значения | Описание |
+| Expression | Тип возвращаемого значения | Описание |
 |------------|-------------|-------------|
-| `['! ', boolean]` | Логический | Логическое отрицание. Возвращает `true` , если входные `false`данные имеют `false` значение, и если `true`вход имеет значение. |
-| `['!= ', value, value]` | Логический | Возвращает `true` значение, `false` если входные значения не равны; в противном случае —. |
-| `['<', value, value]` | Логический | Возвращает `true` , если первые входные данные строго меньше второго, `false` в противном случае —. Аргументы должны быть либо строками, либо обоими числами. |
-| `['<=', value, value]` | Логический | Возвращает `true` ,`false` если первый вход меньше второго или равен ему; в противном случае — значение. Аргументы должны быть либо строками, либо обоими числами. |
-| `['==', value, value]` | Логический | Возвращает `true` значение, если входные значения равны `false` , в противном случае —. Аргументы должны быть либо строками, либо обоими числами. |
-| `['>', value, value]` | Логический | Возвращает `true` , если первые входные данные строго больше второго, `false` в противном случае —. Аргументы должны быть либо строками, либо обоими числами. |
-| `['>=' value, value]` | Логический | Возвращает `true` ,`false` если первый вход больше второго или равен ему; в противном случае — значение. Аргументы должны быть либо строками, либо обоими числами. |
-| `['all', boolean, boolean, …]` | Логический | Возвращает `true` значение, если все входные `false` данные являются `true`, в противном случае —. |
-| `['any', boolean, boolean, …]` | Логический | Возвращает `true` , если какой либо вход имеет `true`значение `false` , в противном случае —. |
+| `['! ', boolean]` | Логическое | Logical negation. Returns `true` if the input is `false`, and `false` if the input is `true`. |
+| `['!= ', value, value]` | Логическое | Returns `true` if the input values are not equal, `false` otherwise. |
+| `['<', value, value]` | Логическое | Returns `true` if the first input is strictly less than the second, `false` otherwise. The arguments are required to be either both strings or both numbers. |
+| `['<=', value, value]` | Логическое | Returns `true` if the first input is less than or equal to the second, `false` otherwise. The arguments are required to be either both strings or both numbers. |
+| `['==', value, value]` | Логическое | Returns `true` if the input values are equal, `false` otherwise. The arguments are required to be either both strings or both numbers. |
+| `['>', value, value]` | Логическое | Returns `true` if the first input is strictly greater than the second, `false` otherwise. The arguments are required to be either both strings or both numbers. |
+| `['>=' value, value]` | Логическое | Returns `true` if the first input is greater than or equal to the second, `false` otherwise. The arguments are required to be either both strings or both numbers. |
+| `['all', boolean, boolean, …]` | Логическое | Returns `true` if all the inputs are `true`, `false` otherwise. |
+| `['any', boolean, boolean, …]` | Логическое | Returns `true` if any of the inputs are `true`, `false` otherwise. |
 
 ## <a name="conditional-expressions"></a>Условные выражения
 
-Условные выражения предоставляют логические операции, аналогичные операторам if.
+Conditional expressions provide logic operations that are like if-statements.
 
-Следующие выражения выполняют условные операции логики над входными данными. Например, `case` выражение предоставляет логику "if/then/else", `match` а выражение как "оператор switch". 
+The following expressions perform conditional logic operations on the input data. For example, the `case` expression provides "if/then/else" logic while the `match` expression is like a "switch-statement". 
 
-### <a name="case-expression"></a>Выражение CASE
+### <a name="case-expression"></a>Case expression
 
-`case` Выражение — это тип условного выражения, который предоставляет оператор if, например, логику (если/then/else). Этот тип выражения выполняет шаги по списку логических условий и возвращает выходное значение первого логического условия, которое имеет значение true.
+A `case` expression is a type of conditional expression that provides if-statement like logic (if/then/else). This type of expression steps through a list of boolean conditions and returns the output value of the first boolean condition that’s true.
 
-Следующий псевдокод определяет структуру `case` выражения. 
+The following pseudocode defines the structure of the `case` expression. 
 
 ```javascript
 [
@@ -232,7 +232,7 @@ var layer = new atlas.layer.BubbleLayer(datasource, null, {
 
 **Пример**
 
-В следующем примере выполняется выполнение различных логических условий до тех пор, пока не будет найдено `true`выражение, результатом вычисления которого является, а затем возвращается соответствующее значение. Если результат логического условия не равен `true`, будет возвращено резервное значение. 
+The following example steps through different boolean conditions until it finds one that evaluates to `true`, and then returns that associated value. If no boolean condition evaluates to `true`, a fallback value will be returned. 
 
 ```javascript
 var layer = new atlas.layer.BubbleLayer(datasource, null, {
@@ -253,11 +253,11 @@ var layer = new atlas.layer.BubbleLayer(datasource, null, {
 });
 ```
 
-### <a name="match-expression"></a>Выражение match
+### <a name="match-expression"></a>Match expression
 
-`match` Выражение представляет собой тип условного выражения, предоставляющего оператор switch, например логику. Входными данными может быть любое выражение `['get', 'entityType']` , например, возвращающее строку или число. Каждая метка должна быть либо одиночным литеральным значением, либо массивом литеральных значений, значения которых должны быть всеми строками или целыми числами. Входные данные соответствуют, если какое бы то ни было значение в массиве. Каждая метка должна быть уникальной. Если тип входных данных не соответствует типу меток, результатом будет резервное значение.
+A `match` expression is a type of conditional expression that provides switch-statement like logic. The input can be any expression such as `['get', 'entityType']` that returns a string or a number. Each label must be either a single literal value or an array of literal values, whose values must be all strings or all numbers. The input matches if any of the values in the array match. Each label must be unique. If the input type doesn't match the type of the labels, the result will be the fallback value.
 
-Следующий псевдокод определяет структуру `match` выражения. 
+The following pseudocode defines the structure of the `match` expression. 
 
 ```javascript
 [
@@ -274,7 +274,7 @@ var layer = new atlas.layer.BubbleLayer(datasource, null, {
 
 **Примеры**
 
-В следующем примере рассматривается `entityType` свойство функции Point в пузырьковой слое, где выполняется поиск совпадения. Если найдено совпадение, возвращается указанное значение или возвращается резервное значение.
+The following example looks at the `entityType` property of a Point feature in a bubble layer searches for a match. If it finds a match, that specified value is returned or it returns the fallback value.
 
 ```javascript
 var layer = new atlas.layer.BubbleLayer(datasource, null, {
@@ -294,7 +294,7 @@ var layer = new atlas.layer.BubbleLayer(datasource, null, {
 });
 ```
 
-В следующем примере массив используется для перечисления набора меток, которые должны возвращать одно и то же значение. Это гораздо более эффективно, чем перечислять каждую метку по отдельности. В этом случае, если `entityType` свойство имеет значение "Ресторан" или "grocery_store", будет возвращен красный цвет.
+The following example uses an array to list a set of labels that should all return the same value. This is much more efficient than list each label individually. In this case, if the `entityType` property is "restaurant" or "grocery_store", the color "red" will be returned.
 
 ```javascript
 var layer = new atlas.layer.BubbleLayer(datasource, null, {
@@ -315,7 +315,7 @@ var layer = new atlas.layer.BubbleLayer(datasource, null, {
 });
 ```
 
-В следующем примере используется выражение match для выполнения фильтра типа "в массиве" или "массив содержит", в этом случае выполняется фильтрация данных, имеющих значение идентификатора, которое содержится в списке разрешенных идентификаторов. При использовании выражений с фильтрами результат должен быть логическим значением.
+The following example uses a match expression to perform an "in array" or "array contains" type filter, in this case filtering data that has an ID value that is in a list of allowed IDs. When using expressions with filters, the result needs to be a Boolean value.
 
 ```javascript
 var layer = new atlas.layer.BubbleLayer(datasource, null, {
@@ -337,11 +337,11 @@ var layer = new atlas.layer.BubbleLayer(datasource, null, {
 });
 ```
 
-### <a name="coalesce-expression"></a>Выражение объединения
+### <a name="coalesce-expression"></a>Coalesce expression
 
-`coalesce` Выражение проходит через набор выражений до тех пор, пока не будет получено первое значение, отличное от NULL, и не вернет это значение. 
+A `coalesce` expression steps through a set of expressions until the first non-null value is obtained and returns that value. 
 
-Следующий псевдокод определяет структуру `coalesce` выражения. 
+The following pseudocode defines the structure of the `coalesce` expression. 
 
 ```javascript
 [
@@ -354,7 +354,7 @@ var layer = new atlas.layer.BubbleLayer(datasource, null, {
 
 **Пример**
 
-В следующем примере `coalesce` выражение используется для `textField` задания параметра уровня символа. Если свойство отсутствует в компоненте или имеет `null`значение, выражение попытается найти `subtitle` свойство, если оно отсутствует или `null`, после этого будет возвращаться к пустой строке. `title` 
+The following example uses a `coalesce` expression to set the `textField` option of a symbol layer. If the `title` property is missing from the feature or set to `null`, the expression will then try looking for the `subtitle` property, if its missing or `null`, it will then fall back to an empty string. 
 
 ```javascript
 var layer = new atlas.layer.SymbolLayer(datasource, null, {
@@ -375,21 +375,40 @@ var layer = new atlas.layer.SymbolLayer(datasource, null, {
 });
 ```
 
-## <a name="type-expressions"></a>Выражения типа
+The following example uses a `coalesce` expression to retrieve the first available image icon available in the map sprite from a list of specified image names.
 
-Выражения типа предоставляют средства для тестирования и преобразования различных типов данных, таких как строки, числа и логические значения.
+```javascript
+var layer = new atlas.layer.SymbolLayer(datasource, null, {
+    iconOptions: {
+        image: [
+            'coalesce',
 
-| Выражение | Тип возвращаемого значения | Описание |
+            //Try getting the image with id 'missing-image'.
+            ['image', 'missing-image'],
+
+            //Specify an image id to fallback to. 
+            'marker-blue'
+        ]
+    }
+});
+``` 
+
+## <a name="type-expressions"></a>Type expressions
+
+Type expressions provide tools for testing and converting different data types like strings, numbers, and boolean values.
+
+| Expression | Тип возвращаемого значения | Описание |
 |------------|-------------|-------------|
-| `['literal', array]`<br/><br/>`['literal', object]` | array \| , объект | Возвращает литеральный массив или значение объекта. Используйте это выражение, чтобы предотвратить вычисление массива или объекта в качестве выражения. Это необходимо, если массив или объект должен возвращаться выражением. |
-| `['to-boolean', value]` | Логический | Преобразует входное значение в логическое. В результате `false` входные данные представляют собой пустую строку `null` `false`, `0`,, или `NaN`; в противном `true`случае — значение. |
-| `['to-color', value]`<br/><br/>`['to-color', value1, value2…]` | цвет | Преобразует входное значение в цвет. Если указано несколько значений, каждый из них вычисляется по порядку, пока не будет получено первое успешное преобразование. Если ни один из входных данных не может быть преобразован, выражение является ошибкой. |
-| `['to-number', value]`<br/><br/>`['to-number', value1, value2, …]` | номер | По возможности преобразует входное значение в число. Если входные данные `null` имеют `false`значение или, результат равен 0. Если входные данные `true`имеют значение, результат равен 1. Если входные данные являются строкой, она преобразуется в число с помощью функции строки [Тонумбер](https://tc39.github.io/ecma262/#sec-tonumber-applied-to-the-string-type) спецификации языка ECMAScript. Если указано несколько значений, каждый из них вычисляется по порядку, пока не будет получено первое успешное преобразование. Если ни один из входных данных не может быть преобразован, выражение является ошибкой. |
-| `['to-string', value]` | строка | Преобразует входное значение в строку. Если вход имеет `null`значение, то результатом будет `""`. Если входными данными является логическое значение, результатом является `"true"` или `"false"`. Если входные данные являются числом, оно преобразуется в строку с помощью функции [ToString](https://tc39.github.io/ecma262/#sec-tostring-applied-to-the-number-type) Number спецификации языка ECMAScript. Если входные данные являются цветом, они преобразуются в строку `"rgba(r,g,b,a)"`цвета объекта RGBA CSS. В противном случае входные данные преобразуются в строку с помощью функции [JSON. stringify](https://tc39.github.io/ecma262/#sec-json.stringify) спецификации языка ECMAScript. |
-| `['typeof', value]` | строка | Возвращает строку, описывающую тип данного значения. |
+| `['literal', array]`<br/><br/>`['literal', object]` | array \| object | Returns a literal array or object value. Use this expression to prevent an array or object from being evaluated as an expression. This is necessary when an array or object needs to be returned by an expression. |
+| `['image', string]` | string | Checks to see if a specified image ID is loaded into the maps image sprite. If it is, the ID is returned, otherwise null is returned. |
+| `['to-boolean', value]` | Логическое | Converts the input value to a boolean. The result is `false` when the input is an empty string, `0`, `false`, `null`, or `NaN`; otherwise its `true`. |
+| `['to-color', value]`<br/><br/>`['to-color', value1, value2…]` | color | Converts the input value to a color. If multiple values are provided, each one is evaluated in order until the first successful conversion is obtained. If none of the inputs can be converted, the expression is an error. |
+| `['to-number', value]`<br/><br/>`['to-number', value1, value2, …]` | number | Converts the input value to a number, if possible. If the input is `null` or `false`, the result is 0. If the input is `true`, the result is 1. If the input is a string, it's converted to a number using the [ToNumber](https://tc39.github.io/ecma262/#sec-tonumber-applied-to-the-string-type) string function of the ECMAScript Language Specification. If multiple values are provided, each one is evaluated in order until the first successful conversion is obtained. If none of the inputs can be converted, the expression is an error. |
+| `['to-string', value]` | string | Converts the input value to a string. If the input is `null`, the result is `""`. If the input is a boolean, the result is `"true"` or `"false"`. If the input is a number, it's converted to a string using the [ToString](https://tc39.github.io/ecma262/#sec-tostring-applied-to-the-number-type) number function of the ECMAScript Language Specification. If the input is a color, it's converted to CSS RGBA color string `"rgba(r,g,b,a)"`. Otherwise, the input is converted to a string using the [JSON.stringify](https://tc39.github.io/ecma262/#sec-json.stringify) function of the ECMAScript Language Specification. |
+| `['typeof', value]` | string | Returns a string describing the type of the given value. |
 
 > [!TIP]
-> Если в консоли браузера `Expression name must be a string, but found number instead. If you wanted a literal array, use ["literal", [...]].` отображается сообщение об ошибке, похожее на, значит, в коде есть выражение, имеющее массив, в котором нет строки для первого значения. Если требуется, чтобы выражение возвращало массив, заключите массив `literal` в выражение. В следующем примере задается `offset` параметр Icon слоя символов, который должен быть массивом, содержащим два числа, с `match` помощью выражения для выбора между двумя значениями смещения, основанными `entityType` на значении свойства точки. функциями.
+> If an error message similar to `Expression name must be a string, but found number instead. If you wanted a literal array, use ["literal", [...]].` appears in the browser console it means that there is an expression somewhere in your code that has an array that doesn’t have a string for its first value. If you want the expression to return an array, wrap the array with the `literal` expression. The following example sets the icon `offset` option of a symbol layer, which needs to be an array containing two numbers, by using a `match` expression to choose between two offset values based on the value of the  `entityType` property of the point feature.
 >
 > ```javascript
 > var layer = new atlas.layer.SymbolLayer(datasource, null, {
@@ -400,7 +419,7 @@ var layer = new atlas.layer.SymbolLayer(datasource, null, {
 >             //Get the entityType value.
 >             ['get', 'entityType'],
 >
->             //If there is no title, try getting the subtitle. 
+>             //If the entity type is 'restaurant', return a different pixel offset. 
 >             'restaurant', ['literal', [0, -10]],
 >
 >             //Default to value.
@@ -410,19 +429,19 @@ var layer = new atlas.layer.SymbolLayer(datasource, null, {
 > });
 > ```
 
-## <a name="color-expressions"></a>Выражения цвета
+## <a name="color-expressions"></a>Color expressions
 
-Выражения цвета упрощают создание цветовых значений и манипуляций с ними.
+Color expressions make it easier to create and manipulate color values.
 
-| Выражение | Тип возвращаемого значения | Описание |
+| Expression | Тип возвращаемого значения | Описание |
 |------------|-------------|-------------|
-| `['rgb', number, number, number]` | цвет | Создает значение цвета из *Красного*, *зеленого*и синего компонентов, которое должно находиться в `0` диапазоне `255`от до и альфа-компонент `1`. Если какой-либо компонент выходит за пределы диапазона, выражение является ошибкой. |
-| `['rgba', number, number, number, number]` | цвет | Создает значение цвета из *Красного*, *зеленого*, синего компонентов, которое должно находиться `0` между `255`и, и альфа-компонентом в диапазоне `0` и `1`. Если какой-либо компонент выходит за пределы диапазона, выражение является ошибкой. |
-| `['to-rgba']` | \[число, число, число, число\] | Возвращает массив из четырех элементов, содержащий *красный*, *зеленый*, *синий*и *альфа* -компоненты цвета ввода в указанном порядке. |
+| `['rgb', number, number, number]` | color | Creates a color value from *red*, *green*, and *blue* components that must range between `0` and `255`, and an alpha component of `1`. If any component is out of range, the expression is an error. |
+| `['rgba', number, number, number, number]` | color | Creates a color value from *red*, *green*, *blue* components that must range between `0` and `255`, and an alpha component within a range of `0` and `1`. If any component is out of range, the expression is an error. |
+| `['to-rgba']` | \[number, number, number, number\] | Returns a four-element array containing the input color's *red*, *green*, *blue*, and *alpha* components, in that order. |
 
 **Пример**
 
-В следующем примере создается и значение цвета RGB с *красным* значением `255`, а также *зеленые* и синие значения, вычисляемые `2.5` `temperature` путем умножения на значение свойства. При изменении температуры цвет изменится на другие оттенки *Красного*цвета.
+The following example creates and RGB color value that has a *red* value of `255`, and *green* and *blue* values that are calculated by multiplying `2.5` by the value of the `temperature` property. As the temperature changes the color will change to different shades of *red*.
 
 ```javascript
 var layer = new atlas.layer.BubbleLayer(datasource, null, {
@@ -438,19 +457,19 @@ var layer = new atlas.layer.BubbleLayer(datasource, null, {
 });
 ```
 
-## <a name="string-operator-expressions"></a>Выражения строкового оператора
+## <a name="string-operator-expressions"></a>String operator expressions
 
-Выражения строкового оператора выполняют операции преобразования строк, таких как объединение и преобразование варианта. 
+String operator expressions perform conversion operations on strings such as concatenating and converting the case. 
 
-| Выражение | Тип возвращаемого значения | Описание |
+| Expression | Тип возвращаемого значения | Описание |
 |------------|-------------|-------------|
-| `['concat', string, string, …]` | строка | Объединяет несколько строк вместе. Каждое значение должно быть строкой. Используйте выражение `to-string` типа для преобразования других типов значений в строку, если это необходимо. |
-| `['downcase', string]` | строка | Преобразует указанную строку в нижний регистр. |
-| `['upcase', string]` | строка | Преобразует указанную строку в верхний регистр. |
+| `['concat', string, string, …]` | string | Concatenates multiple strings together. Each value must be a string. Use the `to-string` type expression to convert other value types to string if needed. |
+| `['downcase', string]` | string | Converts the specified string to lowercase. |
+| `['upcase', string]` | string | Converts the specified string to uppercase. |
 
 **Пример**
 
-В следующем примере `temperature` свойство функции Point преобразуется в строку, а затем в конец строки объединяется "° f".
+The following example converts the `temperature` property of the point feature into a string and then concatenates "°F" to the end of it.
 
 ```javascript
 var layer = new atlas.layer.SymbolLayer(datasource, null, {
@@ -465,33 +484,33 @@ var layer = new atlas.layer.SymbolLayer(datasource, null, {
 });
 ```
 
-Приведенное выше выражение выводит на карту закрепление с текстом "64 ° F", который накладывается поверх него, как показано на рисунке ниже.
+The above expression renders a pin on the map with the text "64°F" overlaid on top of it as shown in the image below.
 
 <center>
 
-![Пример](media/how-to-expressions/string-operator-expression.png) выражения строкового оператора</center>
+![String operator expression example](media/how-to-expressions/string-operator-expression.png) </center>
 
-## <a name="interpolate-and-step-expressions"></a>Выражения интерполяции и шага
+## <a name="interpolate-and-step-expressions"></a>Interpolate and Step expressions
 
-Выражения интерполяции и шага можно использовать для вычисления значений по кривой с интерполяцией или с пошаговыми функциями. Эти выражения принимают выражение, возвращающее числовое значение в качестве входных данных, `['get',  'temperature']`например. Входное значение вычисляется на основе пар входных и выходных значений, называемых "остановками", для определения значения, которое лучше подходит для интерполяции кривой или функции Step. Входные значения для каждой из них должны быть числами и находиться в возрастающем порядке. Выходные значения должны быть числом, массивом чисел или цветом.
+Interpolate and step expressions can be used to calculate values along an interpolated curve or step function. These expressions take in an expression that returns a numeric value as their input, for example `['get',  'temperature']`. The input value is evaluated against pairs of input and output values, called "stops", to determine the value that best fits the interpolated curve or step function. The input values for each stop must be a number and be in ascending order. The output values must be a number, and array of numbers, or a color.
 
-### <a name="interpolate-expression"></a>Выражение интерполяции
+### <a name="interpolate-expression"></a>Interpolate expression
 
-`interpolate` Выражение можно использовать для вычисления непрерывного гладкого набора значений путем интерполяции между значениями типа «конец». `interpolate` Выражение, возвращающее цветовые значения, создает цветовой градиент, в котором значения результатов выбираются из.
+An `interpolate` expression can be used to calculate a continuous, smooth set of values by interpolating between stop values. An `interpolate` expression that returns color values produces a color gradient in which result values are selected from.
 
-Существует три типа методов интерполяции, которые можно использовать в `interpolate` выражении:
+There are three types of interpolation methods that can be used in an `interpolate` expression:
  
-* `['linear']`— Выполняет линейную интерполяцию между парой остановок.
-* `['exponential', base]`— Выполняет экспоненциальную интерполяцию между остановками. `base` Значение определяет скорость, с которой увеличивается вывод. Более высокие значения приводят к увеличению объема выходных данных в большую сторону диапазона. `base` Значение, близкое к 1, создает выходные данные, которые более линейно увеличиваются.
-* `['cubic-bezier', x1, y1, x2, y2]`— Выполняет интерполяцию с использованием [кривой Безье третьего порядка](https://developer.mozilla.org/docs/Web/CSS/timing-function) , определяемой заданными контрольными точками.
+* `['linear']` -  Interpolates linearly between the pair of stops.
+* `['exponential', base]` - Interpolates exponentially between the stops. The `base` value controls the rate at which the output increases. Higher values make the output increase more towards the high end of the range. A `base` value close to 1 produces an output that increases more linearly.
+* `['cubic-bezier', x1, y1, x2, y2]` - Interpolates using a [cubic Bezier curve](https://developer.mozilla.org/docs/Web/CSS/timing-function) defined by the given control points.
 
-Ниже приведен пример того, как выглядят эти различные типы интерполяций. 
+Here is an example of what these different types of interpolations look like. 
 
-| Линейный  | Экспоненциальная | Кубические Безье |
+| Линейная  | Экспоненциальная | Cubic Bezier |
 |---------|-------------|--------------|
-| ![Диаграмма линейной интерполяции](media/how-to-expressions/linear-interpolation.png) | ![Экспоненциальный граф интерполяции](media/how-to-expressions/exponential-interpolation.png) | ![Диаграмма интерполяции Безье третьего порядка](media/how-to-expressions/bezier-curve-interpolation.png) |
+| ![Linear interpolation graph](media/how-to-expressions/linear-interpolation.png) | ![Exponential interpolation graph](media/how-to-expressions/exponential-interpolation.png) | ![Cubic Bezier interpolation graph](media/how-to-expressions/bezier-curve-interpolation.png) |
 
-Следующий псевдокод определяет структуру `interpolate` выражения. 
+The following pseudocode defines the structure of the `interpolate` expression. 
 
 ```javascript
 [
@@ -508,7 +527,7 @@ var layer = new atlas.layer.SymbolLayer(datasource, null, {
 
 **Пример**
 
-В следующем примере `linear interpolate` выражение используется для `color` задания свойства `temperature` пузырькового слоя на основе свойства функции Point. `temperature` Если значение меньше 60, возвращается "Blue", если между 60 и меньше 70, возвращается желтый цвет, если между 70 и меньше 80 возвращается "оранжевый", будет возвращено значение "Red".
+The following example uses a `linear interpolate` expression to set the `color` property of a bubble layer based on the `temperature` property of the point feature. If the `temperature` value is less than 60, "blue" will be returned, if between 60 and less than 70, yellow will be returned, if between 70 and less than 80, "orange" will be returned, if 80 or greater, "red" will be returned.
 
 ```javascript
 var layer = new atlas.layer.BubbleLayer(datasource, null, {
@@ -528,17 +547,17 @@ var layer = new atlas.layer.BubbleLayer(datasource, null, {
 });
 ```
 
-На следующем рисунке показано, как выбираются цвета для приведенного выше выражения.
+The following image demonstrates how the colors are chosen for the above expression.
  
 <center>
 
-![Пример](media/how-to-expressions/interpolate-expression-example.png) выражения интерполяции</center>
+![Interpolate expression example](media/how-to-expressions/interpolate-expression-example.png) </center>
 
-### <a name="step-expression"></a>Выражение шага
+### <a name="step-expression"></a>Step expression
 
-Выражение можно использовать для вычисления дискретных пошаговых значений результатов путем вычисления [функции кусочно--Constant](http://mathworld.wolfram.com/PiecewiseConstantFunction.html) , определенной в параметре Stop. `step` 
+A `step` expression can be used to calculate discrete, stepped result values by evaluating a [piecewise-constant function](http://mathworld.wolfram.com/PiecewiseConstantFunction.html) defined by stops. 
 
-Следующий псевдокод определяет структуру `step` выражения. 
+The following pseudocode defines the structure of the `step` expression. 
 
 ```javascript
 [
@@ -553,11 +572,11 @@ var layer = new atlas.layer.BubbleLayer(datasource, null, {
 ]
 ```
 
-Выражения шага возвращают выходное значение завершения, непосредственно предшествующее входному значению, или первое входное значение, если входные данные меньше первой позиции. 
+Step expressions return the output value of the stop just before the input value, or the first input value if the input is less than the first stop. 
 
 **Пример**
 
-В следующем примере `step` выражение используется для `color` задания свойства `temperature` пузырькового слоя на основе свойства функции Point. `temperature` Если значение меньше 60, возвращается "Blue", если между 60 и меньше 70, возвращается "Yellow", если между 70 и меньше 80 возвращается "оранжевый", будет возвращено значение "красный".
+The following example uses a `step` expression to set the `color` property of a bubble layer based on the `temperature` property of the point feature. If the `temperature` value is less than 60, "blue" will be returned, if between 60 and less than 70, "yellow" will be returned, if between 70 and less than 80, "orange" will be returned, if 80 or greater, "red" will be returned.
 
 ```javascript
 var layer = new atlas.layer.BubbleLayer(datasource, null, {
@@ -575,27 +594,27 @@ var layer = new atlas.layer.BubbleLayer(datasource, null, {
 });
 ```
 
-На следующем рисунке показано, как выбираются цвета для приведенного выше выражения.
+The following image demonstrates how the colors are chosen for the above expression.
  
 <center>
 
-![Пример выражения шага](media/how-to-expressions/step-expression-example.png)
+![Step expression example](media/how-to-expressions/step-expression-example.png)
 </center>
 
-## <a name="layer-specific-expressions"></a>Выражения для конкретных слоев
+## <a name="layer-specific-expressions"></a>Layer specific expressions
 
-Специальные выражения, которые применяются только к определенным слоям.
+Special expressions that only apply to specific layers.
 
-### <a name="heat-map-density-expression"></a>Выражение плотности тепловой карт
+### <a name="heat-map-density-expression"></a>Heat map density expression
 
-Выражение плотности тепловой карт извлекает значение плотности тепловой карт для каждого пикселя на уровне тепловой карт и `['heatmap-density']`определяется как. Это значение является числом между `0` и `1` `interpolation` используется в сочетании с выражением или `step` для определения цветового градиента, используемого для раскрашивания тепловой карт. Это выражение можно использовать только в параметре [Color](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.heatmaplayeroptions?view=azure-iot-typescript-latest#color) слоя тепловой карт.
+A heat map density expression retrieves the heat map density value for each pixel in a heat map layer and is defined as `['heatmap-density']`. This value is a number between `0` and `1` and is used in combination with a `interpolation` or `step` expression to define the color gradient used to colorize the heat map. This expression can only be used in the [color option](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.heatmaplayeroptions?view=azure-iot-typescript-latest#color) of the heat map layer.
 
 > [!TIP]
-> Цвет с индексом 0 в выражении интерполяции или цвет по умолчанию для цвета шага определяет цвет области, в которой нет данных, и может использоваться для определения цвета фона. Многие пользователи предпочитают использовать для этого прозрачный или полупрозрачный черный цвет. 
+> The color at index 0 in an interpolation expression or the default color of a step color, defines the color of the area where there's no data and can be used to define a background color. Многие пользователи предпочитают использовать для этого прозрачный или полупрозрачный черный цвет. 
 
 **Пример**
 
-В этом примере используется выражение интерполяции для создания гладкой цветового градиента для визуализации тепловой карт. 
+This example uses a liner interpolation expression to create a smooth color gradient for rendering the heat map. 
 
 ```javascript 
 var layer = new atlas.layer.HeatMapLayer(datasource, null, {
@@ -611,7 +630,7 @@ var layer = new atlas.layer.HeatMapLayer(datasource, null, {
 });
 ```
 
-Помимо использования плавного градиента для выделения тепловой карте, цвета можно указать в наборе диапазонов с помощью `step` выражения. `step` Использование выражения для раскрашивания тепловой карт позволяет визуально разбить плотность на диапазоны, которые более похожи на карту в виде контура или лепестковой диаграммы.  
+In addition to using a smooth gradient to colorize a heat map, colors can be specified within a set of ranges by using a `step` expression. Using a `step` expression for colorizing the heat map breaks up the density visually into ranges that more so resembles a contour or radar style map.  
 
 ```javascript 
 var layer = new atlas.layer.HeatMapLayer(datasource, null, {
@@ -628,18 +647,18 @@ var layer = new atlas.layer.HeatMapLayer(datasource, null, {
 });
 ```
 
-Дополнительные сведения см. в документации по [добавлению слоя тепловой карт](map-add-heat-map-layer.md) .
+For more information, see the [Add a heat map layer](map-add-heat-map-layer.md) documentation.
 
-### <a name="line-progress-expression"></a>Выражение хода выполнения строки
+### <a name="line-progress-expression"></a>Line progress expression
 
-Выражение хода выполнения строки получает ход выполнения вдоль линии градиента в слое линий и определяется как `['line-progress']`. Это значение является числом от 0 до 1 и используется в сочетании с `interpolation` выражением или. `step` Это выражение можно использовать только с параметром [строкеградиент]( https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.linelayeroptions?view=azure-iot-typescript-latest#strokegradient) слоя Line. 
+A line progress expression retrieves the progress along a gradient line in a line layer and is defined as `['line-progress']`. This value is a number between 0 and 1 and is used in combination with a `interpolation` or `step` expression. This expression can only be used with the [strokeGradient option]( https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.linelayeroptions?view=azure-iot-typescript-latest#strokegradient) of the line layer. 
 
 > [!NOTE]
-> Для параметра уровня линии необходимо, `lineMetrics` чтобы параметр источника данных был установлен в `true`значение. `strokeGradient`
+> The `strokeGradient` option of the line layer requires the `lineMetrics` option of the data source to be set to `true`.
 
 **Пример**
 
-В следующем примере `['line-progress']` выражение используется для применения градиента цвета к штриху линии.
+The following example uses the `['line-progress']` expression to apply a color gradient to the stroke of a line.
 
 ```javascript
 var layer = new atlas.layer.LineLayer(datasource, null, {
@@ -657,16 +676,17 @@ var layer = new atlas.layer.LineLayer(datasource, null, {
 });
 ```
 
-[См. пример в реальном времени](map-add-line-layer.md#line-stroke-gradient)
+[See live example](map-add-line-layer.md#line-stroke-gradient)
 
-### <a name="text-field-format-expression"></a>Выражение формата текстового поля
+### <a name="text-field-format-expression"></a>Text field format expression
 
-Выражение формата текстового поля можно использовать с `textField` параметром свойства «слои `textOptions` символов» для обеспечения форматирования смешанного текста. Это выражение позволяет указать набор входных строк и параметров форматирования. Для каждой входной строки в этом выражении можно указать следующие параметры.
+The text field format expression can be used with the `textField` option of the symbol layers `textOptions` property to provide mixed text formatting. This expression allows a set of input strings and formatting options to be specified. The following options can be specified for each input string in this expression.
 
- * `'font-scale'`— Задает коэффициент масштабирования для размера шрифта. Если указано, это значение переопределит `size` свойство `textOptions` объекта для отдельной строки.
- * `'text-font'`— Указывает одно или несколько семейств шрифтов, которые должны использоваться для этой строки. Если указано, это значение переопределит `font` свойство `textOptions` объекта для отдельной строки.
+ * `'font-scale'` - Specifies the scaling factor for the font size. If specified, this value will override the `size` property of the `textOptions` for the individual string.
+ * `'text-font'` - Specifies one or more font families that should be used for this string. If specified, this value will override the `font` property of the `textOptions` for the individual string.
+ * `'text-color'` - Specifies a color to apply to a text when rendering. 
 
-Следующий псевдокод определяет структуру выражения формата текстового поля. 
+The following pseudocode defines the structure of the text field format expression. 
 
 ```javascript
 [
@@ -674,12 +694,14 @@ var layer = new atlas.layer.LineLayer(datasource, null, {
     input1: string, 
     options1: { 
         'font-scale': number, 
-        'text-font': string[] 
+        'text-font': string[],
+        'text-color': color
     },
     input2: string, 
     options2: { 
         'font-scale': number, 
-        'text-font': string[] 
+        'text-font': string[] ,
+        'text-color': color
     },
     …
 ]
@@ -687,7 +709,7 @@ var layer = new atlas.layer.LineLayer(datasource, null, {
 
 **Пример**
 
-В следующем примере текстовое поле форматируется путем добавления полужирного шрифта и масштабирования размера `title` шрифта свойства функции. В этом примере также добавляется `subtitle` свойство функции на новую строку с масштабируемым размером шрифта.
+The following example formats the text field by adding a bold font and scaling up the font size of the `title` property of the feature. This example also adds the `subtitle` property of the feature on a newline, with a scaled down font size and colored red.
 
 ```javascript
 var layer = new atlas.layer.SymbolLayer(datasource, null, {
@@ -706,28 +728,31 @@ var layer = new atlas.layer.SymbolLayer(datasource, null, {
 
             //Scale the font size down of the subtitle property. 
             ['get', 'subtitle'],
-            { 'font-scale': 0.75 }
+            { 
+                'font-scale': 0.75, 
+                'text-color': 'red' 
+            }
         ]
     }
 });
 ```
 
-Этот слой будет отображать функцию Point, как показано на рисунке ниже:
+This layer will render the point feature as shown in the image below:
  
 <center>
 
-![Изображение компонента Point с форматированным текстовым](media/how-to-expressions/text-field-format-expression.png) полем</center>
+![Image of Point feature with formatted text field](media/how-to-expressions/text-field-format-expression.png) </center>
 
-### <a name="number-format-expression"></a>Выражение формата чисел
+### <a name="number-format-expression"></a>Number format expression
 
-Выражение может использоваться только `textField` с параметром на уровне символов. `number-format` Это выражение Преобразует предоставленное число в отформатированную строку. Это выражение заключает в оболочку функцию [Number. Толокалстринг](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString) JavaScript и поддерживает следующий набор параметров.
+The `number-format` expression can only be used with the `textField` option of a symbol layer. This expression converts the provided number into a formatted string. This expression wraps JavaScript’s [Number.toLocalString](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString) function and supports the following set of options.
 
- * `locale`— Укажите этот параметр для преобразования чисел в строки способом, который соответствует указанному языку. Передайте в этот параметр [тег языка BCP 47](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl#Locale_identification_and_negotiation) .
- * `currency`— Для преобразования числа в строку, представляющую валюту. Возможными значениями являются [коды валют ISO 4217](https://en.wikipedia.org/wiki/ISO_4217), например "USD" для доллара США, "EUR" для евро, или "КНИ" для китайского RMB.
- * `'min-fraction-digits'`— Указывает минимальное число десятичных разрядов для включения в строковую версию числа.
- * `'max-fraction-digits'`— Указывает максимальное число десятичных разрядов, включаемых в строковую версию числа.
+ * `locale` - Specify this option for converting numbers to strings in a way that aligns with the specified language. Pass a [BCP 47 language tag](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl#Locale_identification_and_negotiation) into this option.
+ * `currency` - To convert the number into a string representing a currency. Possible values are the [ISO 4217 currency codes](https://en.wikipedia.org/wiki/ISO_4217), such as "USD" for the US dollar, "EUR" for the euro, or "CNY" for the Chinese RMB.
+ * `'min-fraction-digits'` - Specifies the minimum number of decimal places to include in the string version of the number.
+ * `'max-fraction-digits'` - Specifies the maximum number of decimal places to include in the string version of the number.
 
-Следующий псевдокод определяет структуру выражения формата текстового поля. 
+The following pseudocode defines the structure of the text field format expression. 
 
 ```javascript
 [
@@ -744,7 +769,7 @@ var layer = new atlas.layer.SymbolLayer(datasource, null, {
 
 **Пример**
 
-В следующем примере `number-format` выражение используется для изменения `revenue` способа отрисовки свойства `textField` функции Point в параметре слоя символов таким образом, что он выглядит как значение доллара США.
+The following example uses a `number-format` expression to modify how the `revenue` property of the point feature is rendered in the `textField` option of a symbol layer such that it appears a US dollar value.
 
 ```javascript
 var layer = new atlas.layer.SymbolLayer(datasource, null, {
@@ -760,19 +785,19 @@ var layer = new atlas.layer.SymbolLayer(datasource, null, {
 });
 ```
 
-Этот слой будет отображать функцию Point, как показано на рисунке ниже:
+This layer will render the point feature as shown in the image below:
 
 <center>
 
-![Пример](media/how-to-expressions/number-format-expression.png) выражения числового формата</center>
+![Number format expression example](media/how-to-expressions/number-format-expression.png) </center>
 
-## <a name="zoom-expression"></a>Выражение масштаба
+## <a name="zoom-expression"></a>Zoom expression
 
-Выражение используется для получения текущего уровня масштаба отображения во время визуализации и определяется как `['zoom']`. `zoom` Это выражение возвращает число между минимальным и максимальным диапазонами масштаба для сопоставления. Использование этого выражения позволяет динамически изменять стили при изменении масштаба на карте. Выражение может использоваться только с `interpolate` выражениями и `step`. `zoom`
+A `zoom` expression is used to retrieve the current zoom level of the map at render time and is defined as `['zoom']`. This expression returns a number between the minimum and maximum zoom level range of the map. Using this expression allows styles to be modified dynamically as the zoom level of the map is changed. The `zoom` expression may only be used with `interpolate` and `step` expressions.
 
 **Пример**
 
-По умолчанию радиусы точек данных, отображаемых на уровне тепловой карт, имеют фиксированный пиксельный радиус для всех уровней масштабирования. По мере масштабирования на карте объединяются статистические данные, и слой тепловой карт выглядит иначе. `zoom` Выражение можно использовать для масштабирования радиуса каждого уровня масштаба таким, чтобы каждая точка данных охватывает одну и ту же физическую область на карте. Это сделает слой тепловой карт более статическим и последовательным. Каждый уровень масштаба на карте имеет вдвое больше пикселей по вертикали и горизонтали, чем предыдущий уровень масштаба. При масштабировании радиуса с каждым уровнем масштабирования будет создана тепловая схема, которая выглядит единообразно на всех уровнях масштабирования. Это можно сделать с помощью `zoom` выражения `base 2 exponential interpolation` с выражением, как показано ниже. 
+By default, the radii of data points rendered in the heat map layer have a fixed pixel radius for all zoom levels. As the map is zoomed the data aggregates together and the heat map layer looks different. A `zoom` expression can be used to scale the radius for each zoom level such that each data point covers the same physical area of the map. This will make the heat map layer look more static and consistent. Each zoom level of the map has twice as many pixels vertically and horizontally as the previous zoom level. Scaling the radius such that it doubles with each zoom level will create a heat map that looks consistent on all zoom levels. This can be accomplished by using the `zoom` expression with a `base 2 exponential interpolation` expression as shown below. 
 
 ```javascript 
 var layer = new atlas.layer.HeatMapLayer(datasource, null, {
@@ -790,20 +815,20 @@ var layer = new atlas.layer.HeatMapLayer(datasource, null, {
 };
 ```
 
-[См. пример в реальном времени](map-add-heat-map-layer.md#consistent-zoomable-heat-map)
+[See live example](map-add-heat-map-layer.md#consistent-zoomable-heat-map)
 
-## <a name="variable-binding-expressions"></a>Выражения привязки переменных
+## <a name="variable-binding-expressions"></a>Variable binding expressions
 
-Выражения привязки переменных хранят результаты вычисления в переменной, чтобы на них можно было ссылаться в других местах выражения несколько раз без необходимости повторного вычисления. Это полезная оптимизация для выражений, в которых задействовано много вычислений.
+Variable binding expressions store the results of a calculation in a variable so that it can be referenced elsewhere in an expression multiple times without having to recalculate it. This is a useful optimization for expressions that involve many calculations
 
-| Выражение | Тип возвращаемого значения | Описание |
+| Expression | Тип возвращаемого значения | Описание |
 |--------------|---------------|--------------|
-| \[<br/>&nbsp;&nbsp;&nbsp;&nbsp;Let,<br/>&nbsp;&nbsp;&nbsp;&nbsp;name1: строка,<br/>&nbsp;&nbsp;&nbsp;&nbsp;Значение1: Any,<br/>&nbsp;&nbsp;&nbsp;&nbsp;имя2: строка,<br/>&nbsp;&nbsp;&nbsp;&nbsp;значение2: Any,<br/>&nbsp;&nbsp;&nbsp;&nbsp;...<br/>&nbsp;&nbsp;&nbsp;&nbsp;чилдекспрессион<br/>\] | | Хранит одно или несколько значений как переменные для использования `var` выражением в дочернем выражении, возвращающем результат. |
-| `['var', name: string]` | Любое действие | Ссылается на переменную, созданную с `let` помощью выражения. |
+| \[<br/>&nbsp;&nbsp;&nbsp;&nbsp;'let',<br/>&nbsp;&nbsp;&nbsp;&nbsp;name1: string,<br/>&nbsp;&nbsp;&nbsp;&nbsp;value1: any,<br/>&nbsp;&nbsp;&nbsp;&nbsp;name2: string,<br/>&nbsp;&nbsp;&nbsp;&nbsp;value2: any,<br/>&nbsp;&nbsp;&nbsp;&nbsp;…<br/>&nbsp;&nbsp;&nbsp;&nbsp;childExpression<br/>\] | | Stores one or more values as variables for use by the `var` expression in the child expression that returns the result. |
+| `['var', name: string]` | любой | References a variable that was created using the `let` expression. |
 
 **Пример**
 
-В этом примере используется выражение, которое вычисляет доход относительно коэффициента температуры, а затем использует `case` выражение для вычисления различных логических операций с этим значением. Выражение используется для хранения дохода относительно коэффициента температуры, поэтому его необходимо вычислить только один раз, `var` а выражение ссылается на эту переменную как можно реже, не вычисляя ее повторно. `let`
+This example uses an expression that calculates the revenue relative to temperature ratio and then uses a `case` expression to evaluate different boolean operations on this value. The `let` expression is used to store the revenue relative to temperature ratio so that it only needs to be calculated once and the `var` expression references this variable as often as needed without having to recalculate it.
 
 ```javascript
 var layer = new atlas.layer.BubbleLayer(datasource, null, {
@@ -829,9 +854,9 @@ var layer = new atlas.layer.BubbleLayer(datasource, null, {
 });
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные примеры кода, реализующие выражения, см. в следующих статьях:
+See the following articles for more code samples that implement expressions:
 
 > [!div class="nextstepaction"] 
 > [Добавление слоя символов](map-add-pin.md)
@@ -840,15 +865,15 @@ var layer = new atlas.layer.BubbleLayer(datasource, null, {
 > [Добавление слоя пузырьков](map-add-bubble-layer.md)
 
 > [!div class="nextstepaction"]
-> [Добавить слой линий](map-add-line-layer.md)
+> [Add a line layer](map-add-line-layer.md)
 
 > [!div class="nextstepaction"]
-> [Добавление слоя многоугольников](map-add-shape.md)
+> [Add a polygon layer](map-add-shape.md)
 
 > [!div class="nextstepaction"] 
-> [Добавление слоя тепловой карт](map-add-heat-map-layer.md)
+> [Add a heat map layer](map-add-heat-map-layer.md)
 
-Дополнительные сведения о параметрах слоя, поддерживающих выражения:
+Learn more about the layer options that support expressions:
 
 > [!div class="nextstepaction"] 
 > [BubbleLayerOptions](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.bubblelayeroptions?view=azure-iot-typescript-latest)
@@ -857,10 +882,10 @@ var layer = new atlas.layer.BubbleLayer(datasource, null, {
 > [HeatMapLayerOptions](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.heatmaplayeroptions?view=azure-iot-typescript-latest)
 
 > [!div class="nextstepaction"] 
-> [линелайероптионс](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.linelayeroptions?view=azure-iot-typescript-latest)
+> [LineLayerOptions](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.linelayeroptions?view=azure-iot-typescript-latest)
 
 > [!div class="nextstepaction"] 
-> [полигонлайероптионс](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.polygonlayeroptions?view=azure-iot-typescript-latest)
+> [PolygonLayerOptions](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.polygonlayeroptions?view=azure-iot-typescript-latest)
 
 > [!div class="nextstepaction"] 
 > [SymbolLayerOptions interface](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.symbollayeroptions?view=azure-iot-typescript-latest) (Интерфейс SymbolLayerOptions) 
