@@ -1,6 +1,6 @@
 ---
-title: Conditional Access - Combined security information - Azure Active Directory
-description: Create a custom Conditional Access policy to require a trusted location for security info registration
+title: Условный доступ — объединенные сведения о безопасности — Azure Active Directory
+description: Создание настраиваемой политики условного доступа, которая требует надежного расположения для регистрации сведений безопасности
 services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
@@ -18,37 +18,37 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74322738"
 ---
-# <a name="conditional-access-require-trusted-location-for-mfa-registration"></a>Conditional Access: Require trusted location for MFA registration
+# <a name="conditional-access-require-trusted-location-for-mfa-registration"></a>Условный доступ: требовать надежное расположение для регистрации MFA
 
-Securing when and how users register for Azure Multi-Factor Authentication and self-service password reset is now possible with user actions in Conditional Access policy. This preview feature is available to organizations who have enabled the [combined registration preview](../authentication/concept-registration-mfa-sspr-combined.md). This functionality may be enabled in organizations where they want users to register for Azure Multi-Factor Authentication and SSPR from a central location such as a trusted network location during HR onboarding. For more information about creating trusted locations in Conditional Access, see the article [What is the location condition in Azure Active Directory Conditional Access?](../conditional-access/location-condition.md#named-locations)
+Теперь, когда и как пользователи регистрируются в службе многофакторной идентификации Azure и самостоятельного сброса пароля, вы можете использовать действия пользователя в политике условного доступа. Эта предварительная версия функции доступна для организаций, которые включили [объединенную предварительную версию регистрации](../authentication/concept-registration-mfa-sspr-combined.md). Эта функция может быть включена в организациях, где пользователи должны зарегистрироваться для использования многофакторной идентификации Azure и SSPR из центрального расположения, такого как надежное сетевое расположение во время адаптации персонала. Дополнительные сведения о создании надежных расположений в условном доступе см. в статье [что такое условие расположения в Azure Active Directory условном доступе?](../conditional-access/location-condition.md#named-locations)
 
-## <a name="create-a-policy-to-require-registration-from-a-trusted-location"></a>Create a policy to require registration from a trusted location
+## <a name="create-a-policy-to-require-registration-from-a-trusted-location"></a>Создание политики, требующей регистрации из надежного расположения
 
-The following policy applies to all selected users, who attempt to register using the combined registration experience, and blocks access unless they are connecting from a location marked as trusted network.
+Следующая политика применяется ко всем выбранным пользователям, которые пытаются зарегистрироваться с помощью Объединенной функции регистрации, и блокирует доступ, если они не подключены из расположения, помеченного как Доверенная сеть.
 
-1. In the **Azure portal**, browse to **Azure Active Directory** > **Conditional Access**.
+1. В **портал Azure**перейдите к **Azure Active Directory** > **Условный доступ**.
 1. Выберите **Новая политика**.
-1. In Name, Enter a Name for this policy. For example, **Combined Security Info Registration on Trusted Networks**.
-1. Under **Assignments**, click **Users and groups**, and select the users and groups you want this policy to apply to.
+1. В списке Имя введите имя политики. Например, **Объединенная регистрация сведений о безопасности в доверенных сетях**.
+1. В разделе **назначения**щелкните **Пользователи и группы**и выберите пользователей и группы, к которым должна применяться эта политика.
 
    > [!WARNING]
-   > Users must be enabled for the [combined registration preview](../authentication/howto-registration-mfa-sspr-combined.md).
+   > Пользователи должны быть включены для [просмотра Объединенных регистраций](../authentication/howto-registration-mfa-sspr-combined.md).
 
-1. Under **Cloud apps or actions**, select **User actions**, check **Register security information (preview)** .
-1. Under **Conditions** > **Locations**.
-   1. Configure **Yes**.
-   1. Include **Any location**.
-   1. Exclude **All trusted locations**.
-   1. Click **Done** on the Locations blade.
-   1. Click **Done** on the Conditions blade.
-1. Under **Access controls** > **Grant**.
-   1. Click **Block access**.
+1. В разделе **облачные приложения или действия**выберите **действия пользователя**, установите флажок **зарегистрировать сведения о безопасности (Предварительная версия)** .
+1. В области **условия** > **расположения**.
+   1. Настройте **Да**.
+   1. Включите **любое расположение**.
+   1. Исключите **все надежные расположения**.
+   1. В колонке расположения щелкните **Готово** .
+   1. Щелкните **Готово** в колонке условия.
+1. В разделе **элементы управления доступом** > **предоставить**.
+   1. Щелкните **блокировать доступ**.
    1. Затем щелкните **Выбрать**.
-1. Set **Enable policy** to **On**.
+1. Установите для **параметра включить политику** значение **вкл**.
 1. Нажмите кнопку **Сохранить**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-[Conditional Access common policies](concept-conditional-access-policy-common.md)
+[Общие политики условного доступа](concept-conditional-access-policy-common.md)
 
-[Simulate sign in behavior using the Conditional Access What If tool](troubleshoot-conditional-access-what-if.md)
+[Моделирование поведения входа с помощью средства What If условного доступа](troubleshoot-conditional-access-what-if.md)

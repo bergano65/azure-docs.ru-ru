@@ -1,6 +1,6 @@
 ---
-title: Export an Azure IoT Central application | Microsoft Docs
-description: As a solution manager, I want to export an application template to be able to reuse it.
+title: Экспорт приложения IoT Central Azure | Документация Майкрософт
+description: Как диспетчер решений я хочу экспортировать шаблон приложения, чтобы его можно было использовать повторно.
 author: dominicbetts
 ms.author: dobett
 ms.date: 10/17/2019
@@ -15,88 +15,88 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/25/2019
 ms.locfileid: "74480369"
 ---
-# <a name="export-your-application-preview-features"></a>Export your application (preview features)
+# <a name="export-your-application-preview-features"></a>Экспорт приложения (предварительные версии компонентов)
 
 [!INCLUDE [iot-central-pnp-original](../../../includes/iot-central-pnp-original-note.md)]
 
-This article describes how, as a solution manager, to export an IoT Central application to be able to reuse it.
+В этой статье описывается, как с помощью диспетчера решений экспортировать приложение IoT Central, чтобы его можно было использовать повторно.
 
 Существует два варианта.
 
-- You can create a copy of your application if you just need to create a duplicate copy of your application.
-- You can create an application template from your application if you plan to create multiple copies.
+- Вы можете создать копию приложения, если вам нужно просто создать копию приложения.
+- Вы можете создать шаблон приложения из приложения, если планируется создать несколько копий.
 
-## <a name="copy-your-application"></a>Copy your application
+## <a name="copy-your-application"></a>Копирование приложения
 
-Можно создать копию любого приложения без экземпляров устройства, журнала данных устройства и данных пользователя. The copy is a Pay-As-You-Go application that you'll be charged for. You can't create a Trial application by copying an application.
+Можно создать копию любого приложения без экземпляров устройства, журнала данных устройства и данных пользователя. Копия — это приложение с оплатой по мере использования, за которое взимается плата. Вы не можете создать пробное приложение, скопировав приложение.
 
-Select **Copy**. В диалоговом окне введите сведения для нового приложения с оплатой по мере использования. Then select **Copy** to confirm that you want to continue. To learn more about the fields in the form, see the [Create an application](quick-deploy-iot-central.md) quickstart.
+Выберите **Копировать**. В диалоговом окне введите сведения для нового приложения с оплатой по мере использования. Затем выберите **Копировать** , чтобы подтвердить продолжение работы. Дополнительные сведения о полях в форме см. в кратком руководстве по [созданию приложения](quick-deploy-iot-central.md) .
 
 > [!NOTE]
-> You can **Copy your application** to **Europe** and **US** locations only.
+> Приложение можно **скопировать** только в **Европе** и в **США** .
 
 ![Страница "Параметры приложения"](media/howto-use-app-templates/appcopy2.png)
 
-After the app copy operation succeeds, you can navigate to the new application using the link.
+После завершения операции копирования приложения можно переходить к новому приложению, используя ссылку.
 
 ![Страница "Параметры приложения"](media/howto-use-app-templates/appcopy3a.png)
 
-Copying an application also copies the definition of rules and email action. Some actions, such as Flow and  Logic Apps, are tied to specific rules via the Rule ID. When a rule is copied to a different application, it gets its own Rule ID. In this case, users will have to create a new action and then associate the new rule with it. In general, it's a good idea to check the rules and actions to make sure they're up-to-date in the new app.
+При копировании приложения также копируются определение правил и действий по электронной почте. Некоторые действия, такие как Flow и Logic Apps, привязаны к определенным правилам с помощью идентификатора правила. Когда правило копируется в другое приложение, оно получает собственный идентификатор правила. В этом случае пользователям придется создать новое действие, а затем связать с ним новое правило. Как правило, рекомендуется проверить правила и действия, чтобы убедиться, что они актуальны в новом приложении.
 
 > [!WARNING]
-> If a dashboard includes tiles that display information about specific devices, then those tiles show **The requested resource was not found** in the new application. You must reconfigure these tiles to display information about devices in your new application.
+> Если на панели мониторинга есть плитки, отображающие сведения о конкретных устройствах, то **запрошенный ресурс не был найден** в новом приложении. Необходимо перенастроить эти плитки, чтобы отобразить сведения об устройствах в новом приложении.
 
-## <a name="create-an-application-template"></a>Создание шаблона приложения
+## <a name="create-an-application-template"></a>Создание шаблона приложения.
 
-When you create an Azure IoT Central application, you have a choice of built-in sample templates. You can also create your own application templates from existing IoT Central applications. You can then use your own application templates when you create new applications.
+При создании приложения IoT Central Azure можно выбрать встроенные образцы шаблонов. Вы также можете создавать собственные шаблоны приложений на основе существующих IoT Central приложений. Затем можно использовать собственные шаблоны приложений при создании новых приложений.
 
-When you create an application template, it includes the following items from your existing application:
+При создании шаблона приложения он включает в себя следующие элементы из существующего приложения:
 
-- The default application dashboard, including the dashboard layout and all the tiles you've defined.
-- Device templates, including measurements, settings, properties, commands, and dashboard.
-- Rules. All rule definitions are included. However actions, except for email actions, aren't included.
-- Device sets, including their conditions and dashboards.
+- Панель мониторинга приложения по умолчанию, включая макет панели мониторинга и все определенные плитки.
+- Шаблоны устройств, включая измерения, параметры, свойства, команды и панель мониторинга.
+- Правил. Включаются все определения правил. Однако действия, за исключением действий электронной почты, не включаются.
+- Наборы устройств, включая их условия и панели мониторинга.
 
 > [!WARNING]
-> If a dashboard includes tiles that display information about specific devices, then those tiles show **The requested resource was not found** in the new application. You must reconfigure these tiles to display information about devices in your new application.
+> Если на панели мониторинга есть плитки, отображающие сведения о конкретных устройствах, то **запрошенный ресурс не был найден** в новом приложении. Необходимо перенастроить эти плитки, чтобы отобразить сведения об устройствах в новом приложении.
 
-When you create an application template, it doesn't include the following items:
+При создании шаблона приложения он не включает следующие элементы:
 
 - Устройства
-- Пользователи
-- Job definitions
-- Continuous data export definitions
+- Users
+- Определения заданий
+- Определения экспорта непрерывных данных
 
-Add these items manually to any applications created from an application template.
+Добавьте эти элементы вручную в любые приложения, созданные из шаблона приложения.
 
-To create an application template from an existing IoT Central application:
+Чтобы создать шаблон приложения из существующего IoT Centralного приложения, выполните следующие действия.
 
-1. Go to the **Administration** section in your application.
-1. Select **Application Template Export**.
-1. On the **Application Template Export** page, enter a name and description for your template.
-1. Select the **Export** button to create the application template. You can now copy the **Shareable Link** that enables someone to create a new application from the template:
+1. Перейдите к разделу **Администрирование** в приложении.
+1. Выберите **Экспорт шаблона приложения**.
+1. На странице **Экспорт шаблона приложения** введите имя и описание шаблона.
+1. Нажмите кнопку **Экспорт** , чтобы создать шаблон приложения. Теперь можно скопировать ссылку с **общим доступом** , которая позволит создать новое приложение на основе шаблона:
 
-![Создание шаблона приложения](media/howto-use-app-templates/create-template.png)
+![Создание шаблона приложения.](media/howto-use-app-templates/create-template.png)
 
-### <a name="use-an-application-template"></a>Use an application template
+### <a name="use-an-application-template"></a>Использование шаблона приложения
 
-To use an application template to create a new IoT Central application, you need a previously created **Shareable Link**. Paste the **Shareable Link** into your browser's address bar. The **Create an application** page displays with your custom application template selected:
+Чтобы использовать шаблон приложения для создания нового IoT Central приложения, требуется ранее созданная **ссылка**. Вставьте **ссылку с общим доступом** в адресную строку браузера. Откроется страница **Создание приложения** с выбранным шаблоном настраиваемого приложения:
 
-![Create an application from a template](media/howto-use-app-templates/create-app.png)
+![Создание приложения на основе шаблона](media/howto-use-app-templates/create-app.png)
 
-Select your payment plan and fill out the other fields on the form. Then select **Create** to create a new IoT Central application from the application template.
+Выберите свой план оплаты и заполните другие поля в форме. Затем выберите **создать** , чтобы создать новое IOT Central приложение из шаблона приложения.
 
 > [!NOTE]
-> When an application is created using **Shareable Link** the available locations are **Europe** and **US**.
+> Когда приложение создается с помощью **ссылки с общим доступом** , доступные расположения: **Европа** и **США**.
 
-### <a name="manage-application-templates"></a>Manage application templates
+### <a name="manage-application-templates"></a>Управление шаблонами приложений
 
-On the **Application Template Export** page, you can delete or update the application template.
+На странице **Экспорт шаблона приложения** можно удалить или обновить шаблон приложения.
 
-If you delete an application template, you can no longer use the previously generated shareable link to create new applications.
+Если удалить шаблон приложения, вы больше не сможете использовать созданную ранее ссылку для создания новых приложений.
 
-To update your application template, change the template name or description on the **Application Template Export** page. Then select the **Export** button again. This action generates a new **Shareable link** and invalidates any previous **Shareable link** URL.
+Чтобы обновить шаблон приложения, измените имя или описание шаблона на странице **Экспорт шаблона приложения** . Затем снова нажмите кнопку **Экспорт** . Это действие создает новую **ссылку с общим доступом** и делает недействительным любой предыдущий URL-адрес **ссылки** .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-Now that you've learned how to use application templates, the suggested next step is to learn how to [Manage IoT Central from the Azure portal](../core/howto-manage-iot-central-from-portal.md?toc=/azure/iot-central/preview/toc.json&bc=/azure/iot-central/preview/breadcrumb/toc.json)
+Теперь, когда вы узнали, как использовать шаблоны приложений, предлагаем следующий шаг — Узнайте, как [управлять IOT Central из портал Azure](../core/howto-manage-iot-central-from-portal.md?toc=/azure/iot-central/preview/toc.json&bc=/azure/iot-central/preview/breadcrumb/toc.json)

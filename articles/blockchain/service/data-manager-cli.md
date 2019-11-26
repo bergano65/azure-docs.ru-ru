@@ -1,6 +1,6 @@
 ---
-title: Configure Blockchain Data Manager using Azure CLI - Azure Blockchain Service
-description: Create and manage a Blockchain Data Manager for Azure Blockchain Service using Azure CLI
+title: Настройка Диспетчер данных Блокчейн с помощью Azure CLI Azure Блокчейн Service
+description: Создание Диспетчер данных Блокчейн для службы Блокчейн Azure и управление ею с помощью Azure CLI
 ms.date: 11/04/2019
 ms.topic: article
 ms.reviewer: chroyal
@@ -13,20 +13,20 @@ ms.locfileid: "74455937"
 ---
 # <a name="configure-blockchain-data-manager-using-azure-cli"></a>Настройка диспетчера данных блокчейна с помощью Azure CLI
 
-Configure Blockchain Data Manager for Azure Blockchain Service to capture blockchain data send it to an Azure Event Grid Topic.
+Настройка Диспетчер данных Блокчейн для службы Блокчейн Azure для записи данных блокчейн отправьте их в службу "Сетка событий Azure".
 
-To configure a Blockchain Data Manager instance, you:
+Чтобы настроить экземпляр Диспетчер данных Блокчейн, сделайте следующее:
 
-* Create a Blockchain Manager instance
-* Create an input to an Azure Blockchain Service transaction node
-* Create an output to an Azure Event Grid Topic
+* Создание экземпляра Блокчейн Manager
+* Создание входных данных для узла транзакции службы Azure Блокчейн
+* Создание выходных данных в службе "Сетка событий Azure"
 * Добавление приложения блокчейна
-* Start an instance
+* Запуск экземпляра
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
-* Install the latest [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) and signed in using `az login`.
-* Complete [Quickstart: Use Visual Studio Code to connect to a Azure Blockchain Service consortium network](connect-vscode.md)
+* Установите последнюю [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) и войдите в нее с помощью `az login`.
+* Полное [руководство. использование Visual Studio Code для подключения к сети консорциума Блокчейн службы Azure](connect-vscode.md)
 * Создайте [раздел Сетки событий](../../event-grid/custom-event-quickstart-portal.md#create-a-custom-topic).
 * Подробные сведения см. в статье об [обработчиках событий в службе "Сетка событий Azure"](../../event-grid/event-handlers.md).
 
@@ -48,7 +48,7 @@ az group create --name myRG --location eastus
 
 ## <a name="create-instance"></a>Создание экземпляра
 
-A Blockchain Data Manager instance monitors an Azure Blockchain Service transaction node. Экземпляр регистрирует все необработанные данные о блоках и транзакциях из узла транзакций.
+Экземпляр Диспетчер данных Блокчейн отслеживает узел транзакции службы Блокчейн Azure. Экземпляр регистрирует все необработанные данные о блоках и транзакциях из узла транзакций.
 
 ``` azurecli
 az resource create \
@@ -59,17 +59,17 @@ az resource create \
                    --properties <watcher resource properties>
 ```
 
-| Параметр | Описание |
+| Параметр | ОПИСАНИЕ |
 |-----------|-------------|
-| resource-group | Resource group name where to create the Blockchain Data Manager instance. |
-| name | Name of the Blockchain Data Manager instance. |
-| resource-type | The resource type for a Blockchain Data Manager instance is **Microsoft.blockchain/watchers**. |
-| full-object | Indicates properties contain options for the watcher resource. |
-| properties | JSON-formatted string containing properties for the watcher resource. Can be passed as a string or a file.  |
+| resource-group | Имя группы ресурсов, в которой создается экземпляр Диспетчер данных Блокчейн. |
+| Имя | Имя экземпляра Диспетчер данных Блокчейн. |
+| Тип ресурса | Тип ресурса для экземпляра Диспетчер данных Блокчейн — **Microsoft. блокчейн/наблюдатели**. |
+| full-object | Указывает, что свойства содержат параметры для ресурса наблюдателя. |
+| properties | Строка в формате JSON, содержащая свойства для ресурса наблюдателя. Может передаваться в виде строки или файла.  |
 
-### <a name="create-instance-examples"></a>Create instance examples
+### <a name="create-instance-examples"></a>Примеры создания экземпляров
 
-JSON configuration example to create a Blockchain Manager instance in the **East US** region.
+Пример конфигурации JSON для создания экземпляра Блокчейн Manager в регионе " **Восточная часть США** ".
 
 ``` json
 {
@@ -79,12 +79,12 @@ JSON configuration example to create a Blockchain Manager instance in the **East
 }
 ```
 
-| Элемент | Описание |
+| Элемент | ОПИСАНИЕ |
 |---------|-------------|
-| location | Region where to create the watcher resource |
-| properties | Properties to set when creating the watcher resource |
+| location | Регион для создания ресурса наблюдателя |
+| properties | Свойства, устанавливаемые при создании ресурса наблюдателя |
 
-Create a Blockchain Data Manager instance named *mywatcher* using a JSON string for configuration.
+Создайте экземпляр Диспетчер данных Блокчейн с именем *миватчер* , используя строку JSON для настройки.
 
 ``` azurecli-interactive
 az resource create \
@@ -95,7 +95,7 @@ az resource create \
                      --properties '{"location":"eastus"}'
 ```
 
-Create a Blockchain Data Manager instance named *mywatcher* using a JSON configuration file.
+Создайте экземпляр Диспетчер данных Блокчейн с именем *миватчер* с помощью JSON-файла конфигурации.
 
 ``` azurecli
 az resource create \
@@ -108,7 +108,7 @@ az resource create \
 
 ## <a name="create-input"></a>Создание входных данных
 
-An input connects Blockchain Data Manager to an Azure Blockchain Service transaction node. Only users with access to the transaction node can create a connection.
+Входные данные соединяют Блокчейн Диспетчер данных с узлом транзакции службы Блокчейн Azure. Только пользователи с доступом к узлу транзакции могут создать подключение.
 
 ``` azurecli
 az resource create \
@@ -121,19 +121,19 @@ az resource create \
                    --properties <input resource properties>
 ```
 
-| Параметр | Описание |
+| Параметр | ОПИСАНИЕ |
 |-----------|-------------|
-| resource-group | Resource group name where to create the input resource. |
-| name | Name of the input. |
-| пространство_имен | Use the **Microsoft.Blockchain** provider namespace. |
-| resource-type | The resource type for a Blockchain Data Manager input is **inputs**. |
-| parent | The path to the watcher to which the input is associated. For example, **watchers/mywatcher**. |
-| full-object | Indicates properties contain options for the input resource. |
-| properties | JSON-formatted string containing properties for the input resource. Can be passed as a string or a file. |
+| resource-group | Имя группы ресурсов, в которой создается входной ресурс. |
+| Имя | Имя входных данных. |
+| пространство_имен | Используйте пространство имен поставщика **Microsoft. блокчейн** . |
+| Тип ресурса | Тип ресурса для Блокчейн **Диспетчер данных входными данными.** |
+| источника | Путь к наблюдателю, с которым связана входные данные. Например, **наблюдатели или миватчер**. |
+| full-object | Указывает, что свойства содержат параметры для входного ресурса. |
+| properties | Строка в формате JSON, содержащая свойства для входного ресурса. Может передаваться в виде строки или файла. |
 
-### <a name="input-examples"></a>Input examples
+### <a name="input-examples"></a>Примеры входных данных
 
-Configuration JSON example to create an input resource in the *East US* region that is connected to \<Blockchain member\>.
+Пример конфигурации JSON для создания входного ресурса в регионе " *Восточная часть США* ", подключенного к \<члена блокчейн\>.
 
 ``` json
 {
@@ -147,13 +147,13 @@ Configuration JSON example to create an input resource in the *East US* region t
 }
 ```
 
-| Элемент | Описание |
+| Элемент | ОПИСАНИЕ |
 |---------|-------------|
-| location | Region where to create the input resource. |
-| inputType | Ledger type of the Azure Blockchain Service member. Currently, **Ethereum** is supported. |
-| ResourceId | Transaction node to which the input is connected. Replace \<Subscription ID\>, \<Resource group\>, and \<Blockchain member\> with the values for the transaction node resource. The input connects to the default transaction node for the Azure Blockchain Service member. |
+| location | Регион, в котором создается входной ресурс. |
+| inputType | Тип главной книги участника службы Azure Блокчейн. В настоящее время поддерживается **Ethereum** . |
+| resourceId | Узел транзакции, к которому подключены входные данные. Замените идентификатор подписки \<\>, \<\>группы ресурсов и \<элемент Блокчейн\> значениями для ресурса узла транзакции. Вход подключается к узлу транзакции по умолчанию для члена службы Azure Блокчейн. |
 
-Create an input named *myInput* for *mywatcher* using a JSON string for configuration.
+Создайте вход с именем *myInput* для *миватчер* , используя строку JSON для конфигурации.
 
 ``` azurecli-interactive
 az resource create \
@@ -166,7 +166,7 @@ az resource create \
                    --properties '{"location":"eastus", "properties":{"inputType":"Ethereum","dataSource":{"resourceId":"/subscriptions/<Subscription ID>/resourceGroups/<Resource group>/providers/Microsoft.Blockchain/BlockchainMembers/<Blockchain member>/transactionNodes/transaction-node"}}}'
 ```
 
-Create an input named *myInput* for *mywatcher* using a JSON configuration file.
+Создайте вход с именем *myInput* для *миватчер* , используя файл конфигурации JSON.
 
 ``` azurecli
 az resource create \
@@ -178,7 +178,7 @@ az resource create \
                    --properties @input.json
 ```
 
-## <a name="create-output"></a>Create output
+## <a name="create-output"></a>Создание выходных данных
 
 Исходящее подключение отправляет данные блокчейна в службу "Сетка событий Azure". Данные блокчейна можно отправлять в одно или несколько назначений. Диспетчер данных блокчейна для каждого отдельного экземпляра поддерживает несколько исходящих подключений к разделам Сетки событий.
 
@@ -193,19 +193,19 @@ az resource create \
                    --properties <output resource properties>
 ```
 
-| Параметр | Описание |
+| Параметр | ОПИСАНИЕ |
 |-----------|-------------|
-| resource-group | Resource group name where to create the output resource. |
-| name | Name of the output. |
-| пространство_имен | Use the **Microsoft.Blockchain** provider namespace. |
-| resource-type | The resource type for a Blockchain Data Manager output is **outputs**. |
-| parent | The path to the watcher to which the output is associated. For example, **watchers/mywatcher**. |
-| full-object | Indicates properties contain options for the output resource. |
-| properties | JSON-formatted string containing properties for the output resource. Can be passed as a string or a file. |
+| resource-group | Имя группы ресурсов, в которой создается выходной ресурс. |
+| Имя | Имя выходных данных. |
+| пространство_имен | Используйте пространство имен поставщика **Microsoft. блокчейн** . |
+| Тип ресурса | Тип ресурса для Блокчейн выходных данных Диспетчер данных — **выходы**. |
+| источника | Путь к наблюдателю, с которым связаны выходные данные. Например, **наблюдатели или миватчер**. |
+| full-object | Указывает, что свойства содержат параметры для выходного ресурса. |
+| properties | Строка в формате JSON, содержащая свойства выходного ресурса. Может передаваться в виде строки или файла. |
 
-### <a name="output-examples"></a>Output examples
+### <a name="output-examples"></a>Примеры выходных данных
 
-Configuration JSON example to create an output resource in the *East US* region that is connected to an event grid topic named \<event grid topic\>.
+Пример конфигурации JSON для создания выходного ресурса в регионе " *Восточная часть США* ", подключенного к разделу сетки событий с именем \<разделе "Сетка событий"\>.
 
 ``` json
 {
@@ -219,13 +219,13 @@ Configuration JSON example to create an output resource in the *East US* region 
 }
 ```
 
-| Элемент | Описание |
+| Элемент | ОПИСАНИЕ |
 |---------|-------------|
-| location | Region where to create the output resource. |
-| outputType | Type of output. Currently, **EventGrid** is supported. |
-| ResourceId | Resource to which the output is connected. Replace \<Subscription ID\>, \<Resource group\>, and \<Blockchain member\> with the values for the event grid resource. |
+| location | Регион, в котором создается выходной ресурс. |
+| outputType | Тип выходных данных. В настоящее время поддерживается **EventGrid** . |
+| resourceId | Ресурс, к которому подключены выходные данные. Замените идентификатор подписки \<\>, \<\>группы ресурсов и \<элемент Блокчейн\> значениями для ресурса сетки событий. |
 
-Create an output named *myoutput* for *mywatcher* that connects to an event grid topic using a JSON configuration string.
+Создайте выход с именем *мйоутпут* для *миватчер* , который подключается к разделу сетки событий, используя строку конфигурации JSON.
 
 ``` azurecli-interactive
 az resource create \
@@ -238,7 +238,7 @@ az resource create \
                    --properties '{"location":"eastus","properties":{"outputType":"EventGrid","dataSource":{"resourceId":"/subscriptions/<Subscription ID>/resourceGroups/<Resource group>/providers/Microsoft.EventGrid/topics/<event grid topic>"}}}'
 ```
 
-Create an output named *myoutput* for *mywatcher* that connects to an event grid topic using a JSON configuration file.
+Создайте выход с именем *мйоутпут* для *миватчер* , который подключается к разделу сетки событий с помощью JSON-файла конфигурации.
 
 ``` azurecli
 az resource create \
@@ -251,13 +251,13 @@ az resource create \
                    --properties @output.json
 ```
 
-## <a name="add-blockchain-application"></a>Add blockchain application
+## <a name="add-blockchain-application"></a>Добавление приложения блокчейн
 
-If you add a blockchain application, Blockchain Data Manager decodes event and property state for the application. Otherwise, only raw block and raw transaction data is sent. Blockchain Data Manager also discovers contract addresses when the contract is deployed. You can add multiple blockchain applications to a Blockchain Data Manager instance.
+При добавлении приложения блокчейн Блокчейн Диспетчер данных декодирует события и состояние свойства для приложения. В противном случае отправляются только данные необработанных блоков и необработанных транзакций. Блокчейн Диспетчер данных также обнаруживает контрактные адреса при развертывании контракта. К экземпляру Диспетчер данных Блокчейн можно добавить несколько приложений блокчейн.
 
 
 > [!IMPORTANT]
-> Currently, blockchain applications that declare Solidity [array types](https://solidity.readthedocs.io/en/v0.5.12/types.html#arrays) or [mapping types](https://solidity.readthedocs.io/en/v0.5.12/types.html#mapping-types) are not fully supported. Properties declared as array or mapping types will not be decoded in *ContractPropertiesMsg* or *DecodedContractEventsMsg* messages.
+> В настоящее время блокчейн приложения, объявляющие [типы массивов](https://solidity.readthedocs.io/en/v0.5.12/types.html#arrays) или [типов сопоставлений](https://solidity.readthedocs.io/en/v0.5.12/types.html#mapping-types) , не полностью поддерживаются. Свойства, объявленные как массив или типы сопоставления, не будут декодированы в сообщениях *контрактпропертиесмсг* или *декодедконтрактевентсмсг* .
 
 ``` azurecli
 az resource create \
@@ -270,19 +270,19 @@ az resource create \
                    --properties <Application resource properties>
 ```
 
-| Параметр | Описание |
+| Параметр | ОПИСАНИЕ |
 |-----------|-------------|
-| resource-group | Resource group name where to create the application resource. |
-| name | Name of the application. |
-| пространство_имен | Use the **Microsoft.Blockchain** provider namespace. |
-| resource-type | The resource type for a Blockchain Data Manager application is **artifacts**. |
-| parent | The path to the watcher to which the application is associated. For example, **watchers/mywatcher**. |
-| full-object | Indicates properties contain options for the application resource. |
-| properties | JSON-formatted string containing properties for the application resource. Can be passed as a string or a file. |
+| resource-group | Имя группы ресурсов, в которой создается ресурс приложения. |
+| Имя | Имя приложения. |
+| пространство_имен | Используйте пространство имен поставщика **Microsoft. блокчейн** . |
+| Тип ресурса | Тип ресурса для приложения Диспетчер данных Блокчейн — это **артефакты**. |
+| источника | Путь к наблюдателю, с которым связано приложение. Например, **наблюдатели или миватчер**. |
+| full-object | Указывает, что свойства содержат параметры для ресурса приложения. |
+| properties | Строка в формате JSON, содержащая свойства для ресурса приложения. Может передаваться в виде строки или файла. |
 
-### <a name="blockchain-application-examples"></a>Blockchain application examples
+### <a name="blockchain-application-examples"></a>Примеры приложений блокчейн
 
-Configuration JSON example to create an application resource in the *East US* region that monitors a smart contract defined by the contract ABI and bytecode.
+Пример конфигурации JSON для создания ресурса приложения в регионе " *Восточная часть США* ", отслеживающего интеллектуальный контракт, определяемый интерфейсом ABI и байт-адресом контракта.
 
 ``` json
 {
@@ -301,15 +301,15 @@ Configuration JSON example to create an application resource in the *East US* re
 }
 ```
 
-| Элемент | Описание |
+| Элемент | ОПИСАНИЕ |
 |---------|-------------|
-| location | Region where to create the application resource. |
-| artifactType | Тип приложения. Currently, **EthereumSmartContract** is supported. |
-| abiFileUrl | URL for smart contract ABI JSON file. For more information on obtaining contract ABI and creating a URL, see [Get Contract ABI and bytecode](data-manager-portal.md#get-contract-abi-and-bytecode) and [Create contract ABI and bytecode URL](data-manager-portal.md#create-contract-abi-and-bytecode-url). |
-| bytecodeFileUrl | URL for smart contract deployed bytecode JSON file. For more information on obtaining the smart contract deployed bytecode and creating a URL, see [Get Contract ABI and bytecode](data-manager-portal.md#get-contract-abi-and-bytecode) and [Create contract ABI and bytecode URL](data-manager-portal.md#create-contract-abi-and-bytecode-url). Note: Blockchain Data Manager requires the **deployed bytecode**. |
-| queryTargetTypes | Published message types. Specifying **ContractProperties** publishes *ContractPropertiesMsg* message type. Specifying **ContractEvents** publishes *DecodedContractEventsMsg* message type. Note: *RawBlockAndTransactionMsg* and *RawTransactionContractCreationMsg* message types are always published. |
+| location | Регион, в котором создается ресурс приложения. |
+| artifactType | Тип приложения. В настоящее время поддерживается **есереумсмартконтракт** . |
+| абифилеурл | URL-адрес для JSON-файла ABI Smart Contract. Дополнительные сведения о получении интерфейса ABI контракта и создании URL-адреса см. в разделе [получение контракта ABI и байт-кода](data-manager-portal.md#get-contract-abi-and-bytecode) и [Создание интерфейса ABI и URL для кода](data-manager-portal.md#create-contract-abi-and-bytecode-url)интерфейса. |
+| битекодефилеурл | URL-адрес развернутого JSON-файла байтового кода Smart Contract. Дополнительные сведения о получении развернутого байт-кода для Smart Contract и создании URL-адреса см. в [статьях получение интерфейса ABI и байт кода](data-manager-portal.md#get-contract-abi-and-bytecode) и [Создание интерфейса ABI и URL-адреса кода контракта](data-manager-portal.md#create-contract-abi-and-bytecode-url). Примечание. для Диспетчер данных Блокчейн требуется **развернутый байт**. |
+| куеритаржеттипес | Типы опубликованных сообщений. При указании **контрактпропертиес** публикуются типы сообщений *контрактпропертиесмсг* . При указании **контрактевентс** публикуются типы сообщений *декодедконтрактевентсмсг* . Примечание. типы сообщений *равблоккандтрансактионмсг* и *равтрансактионконтракткреатионмсг* всегда публикуются. |
 
-Create an application named *myApplication* for *mywatcher* that monitors a smart contract defined by a JSON string.
+Создайте приложение с именем *myApplication* для *миватчер* , которое отслеживает смарт-контракт, определенный строкой JSON.
 
 ``` azurecli-interactive
 az resource create \
@@ -322,7 +322,7 @@ az resource create \
                    --properties '{"location":"eastus","properties":{"artifactType":"EthereumSmartContract","content":{"abiFileUrl":"<ABI URL>","bytecodeFileUrl":"<Bytecode URL>","queryTargetTypes":["ContractProperties","ContractEvents"]}}}'
 ```
 
-Create an application named *myApplication* for *mywatcher* that watches a smart contract defined using a JSON configuration file.
+Создайте приложение с именем *myApplication* для *миватчер* , которое наблюдает за интеллектуальным контрактом, определенным с помощью JSON-файла конфигурации.
 
 ``` azurecli
 az resource create \
@@ -335,9 +335,9 @@ az resource create \
                    --properties @artifact.json
 ```
 
-## <a name="start-instance"></a>Start instance
+## <a name="start-instance"></a>Запустить экземпляр
 
-When running, a Blockchain Manager instance monitors blockchain events from the defined inputs and sends data to the defined outputs.
+При запуске экземпляр Блокчейн Manager отслеживает события блокчейн из определенных входных данных и отправляет данные в определенные выходные данные.
 
 ``` azurecli
 az resource invoke-action \
@@ -345,14 +345,14 @@ az resource invoke-action \
                           --ids /subscriptions/<Subscription ID>/resourceGroups/<Resource group>/providers/Microsoft.Blockchain/watchers/<Watcher name>
 ```
 
-| Параметр | Описание |
+| Параметр | ОПИСАНИЕ |
 |-----------|-------------|
-| action | Use **start** to run the watcher. |
-| ids | Watcher resource ID. Replace \<Subscription ID\>, \<Resource group\>, and \<Watcher name\> with the values for the watcher resource.|
+| action | Используйте **Start** для запуска наблюдателя. |
+| ids | Идентификатор ресурса наблюдателя. Замените идентификатор подписки \<\>, \<\>группы ресурсов и имя \<наблюдателя\> значениями для ресурса наблюдателя.|
 
-### <a name="start-instance-example"></a>Start instance example
+### <a name="start-instance-example"></a>Пример начального экземпляра
 
-Start a Blockchain Data Manager instance named *mywatcher*.
+Запустите экземпляр Диспетчер данных Блокчейн с именем *миватчер*.
 
 ``` azurecli-interactive
 az resource invoke-action \
@@ -360,9 +360,9 @@ az resource invoke-action \
                           --ids /subscriptions/<Subscription ID>/resourceGroups/<Resource group>/providers/Microsoft.Blockchain/watchers/mywatcher
 ```
 
-## <a name="stop-instance"></a>Stop instance
+## <a name="stop-instance"></a>Останавливает экземпляр
 
-Stop a Blockchain Data Manager instance.
+Останавливает экземпляр Диспетчер данных Блокчейн.
 
 ``` azurecli
 az resource invoke-action \
@@ -370,14 +370,14 @@ az resource invoke-action \
                           --ids /subscriptions/<Subscription ID>/resourceGroups/<Resource group>/providers/Microsoft.Blockchain/watchers/<Watcher name>
 ```
 
-| Параметр | Описание |
+| Параметр | ОПИСАНИЕ |
 |-----------|-------------|
-| action | Use **stop** to stop the watcher. |
-| ids | Name of the watcher. Replace \<Subscription ID\>, \<Resource group\>, and \<Watcher name\> with the values for the watcher resource. |
+| action | Чтобы отключить наблюдатель, используйте параметр " **прерывать** ". |
+| ids | Имя наблюдателя. Замените идентификатор подписки \<\>, \<\>группы ресурсов и имя \<наблюдателя\> значениями для ресурса наблюдателя. |
 
-### <a name="stop-watcher-example"></a>Stop watcher example
+### <a name="stop-watcher-example"></a>Пример наблюдателя для завершения
 
-Stop an instance named *mywatcher*.
+Останавливает экземпляр с именем *миватчер*.
 
 ``` azurecli-interactive
 az resource invoke-action \
@@ -385,9 +385,9 @@ az resource invoke-action \
                           --ids /subscriptions/<Subscription ID>/resourceGroups/<Resource group>/providers/Microsoft.Blockchain/watchers/mywatcher
 ```
 
-## <a name="delete-instance"></a>Delete instance
+## <a name="delete-instance"></a>Удалить экземпляр
 
-Delete a Blockchain Data Manager instance.
+Удалите экземпляр Диспетчер данных Блокчейн.
 
 ``` azurecli
 az resource delete \
@@ -396,15 +396,15 @@ az resource delete \
                    --resource-type Microsoft.Blockchain/watchers
 ```
 
-| Параметр | Описание |
+| Параметр | ОПИСАНИЕ |
 |-----------|-------------|
-| resource-group | Resource group name of the watcher to delete. |
-| name | Name of the watcher to delete. |
-| resource-type | The resource type for a Blockchain Data Manager watcher is **Microsoft.blockchain/watchers**. |
+| resource-group | Имя группы ресурсов наблюдателя, который нужно удалить. |
+| Имя | Имя удаляемого наблюдателя. |
+| Тип ресурса | Тип ресурса для наблюдателя Диспетчер данных Блокчейн — **Microsoft. блокчейн/наблюдатели**. |
 
-### <a name="delete-instance-example"></a>Delete instance example
+### <a name="delete-instance-example"></a>Пример удаления экземпляра
 
-Delete an instance named *mywatcher* in the *myRG* resource group.
+Удалите экземпляр с именем *миватчер* в группе ресурсов *myRG* .
 
 ``` azurecli-interactive
 az resource delete \
@@ -413,9 +413,9 @@ az resource delete \
                    --resource-type Microsoft.blockchain/watchers
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-Try the next tutorial creating a blockchain transaction message explorer using Blockchain Data Manager and Azure Cosmos DB.
+Попробуйте следующее руководство по созданию обозревателя сообщений блокчейн TRANSACTION с помощью Блокчейн Диспетчер данных и Azure Cosmos DB.
 
 > [!div class="nextstepaction"]
-> [Use Blockchain Data Manager to send data to Azure Cosmos DB](data-manager-cosmosdb.md)
+> [Использование Диспетчер данных Блокчейн для отправки данных в Azure Cosmos DB](data-manager-cosmosdb.md)

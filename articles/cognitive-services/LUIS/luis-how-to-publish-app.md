@@ -1,5 +1,5 @@
 ---
-title: Publish app - LUIS
+title: Публикация приложения — LUIS
 titleSuffix: Azure Cognitive Services
 description: После завершения создания и проверки рабочего приложения LUIS, сделайте его доступным для приложения клиента путем его публикации в конечной точке.
 services: cognitive-services
@@ -20,7 +20,7 @@ ms.locfileid: "74221721"
 ---
 # <a name="publish-your-active-trained-app-to-a-staging-or-production-endpoint"></a>Публикация активного обученного приложения в промежуточной или рабочей конечной точке
 
-When you finish building, training, and testing your active LUIS app, make it available to your client application by publishing it to the endpoint. 
+После завершения сборки, обучения и тестирования активного приложения LUIS сделайте его доступным для клиентского приложения, опубликовав его в конечной точке. 
 
 [!INCLUDE [Uses preview portal](includes/uses-portal-preview.md)]
 
@@ -28,46 +28,46 @@ When you finish building, training, and testing your active LUIS app, make it av
 
 1. Чтобы опубликовать его в конечной точке, на верхней правой панели выберите **Опубликовать**. 
 
-    ![Publish button in top, right nav bar](./media/luis-how-to-publish-app/publish-top-nav-bar.png)
+    ![Кнопка "опубликовать" в верхней области, правой панели навигации](./media/luis-how-to-publish-app/publish-top-nav-bar.png)
 
-1. Select your settings for the published prediction endpoint, then select **Publish**.
+1. Выберите параметры опубликованной конечной точки прогнозирования, а затем щелкните **опубликовать**.
 
-    ![Select publish settings then select Publish button](./media/luis-how-to-publish-app/publish-pop-up.png)
+    ![Выберите параметры публикации, а затем нажмите кнопку Опубликовать.](./media/luis-how-to-publish-app/publish-pop-up.png)
 
-### <a name="publishing-slots"></a>Publishing slots
+### <a name="publishing-slots"></a>Слоты публикации
 
-Select the correct slot when the pop-up window displays: 
+При отображении всплывающего окна выберите правильный слот: 
 
-* Промежуточное хранение
+* Промежуточная
 * Производство 
 
-By using both publishing slots, this allows you to have two different versions of your app available at the published endpoints or the same version on two different endpoints. 
+При использовании обоих слотов публикации это позволяет использовать две различные версии приложения на опубликованных конечных точках или одну и ту же версию на двух разных конечных точках. 
 
 ### <a name="publishing-regions"></a>Регионы публикации
 
-The app is published to all regions associated with the LUIS prediction endpoint resources added in the LUIS portal from the **Manage** ->  **[Azure Resources](/luis-how-to-azure-subscription.md#assign-a-resource-to-an-app)** page. 
+Приложение публикуется во всех регионах, связанных с ресурсами конечной точки прогнозирования LUIS, добавленными на портале LUIS на странице **Управление** **[ресурсами -> Azure](/luis-how-to-azure-subscription.md#assign-a-resource-to-an-app)** . 
 
-For example, for an app created on [www.luis.ai](https://www.luis.ai), if you create a LUIS resource in two regions, **westus** and **eastus**, and add these to the app as resources, the app is published in both regions. Дополнительные сведения о регионах LUIS см. в статье [Регионы и ключи](luis-reference-regions.md).
+Например, для приложения, созданного на [www.Luis.AI](https://www.luis.ai), при создании ресурса Luis в двух регионах, **westus** и **eastus**и добавлении их в приложение в качестве ресурсов приложение публикуется в обоих регионах. Дополнительные сведения о регионах LUIS см. в статье [Регионы и ключи](luis-reference-regions.md).
 
 > [!TIP]
-> There are 3 authoring regions. You must author in the region you intend to publish to. If you need to publish to all regions, you need to manage your authoring process and the resulting trained model in all 3 authoring regions. 
+> Существует 3 области разработки. Необходимо создать в регионе, в котором планируется опубликовать. Если необходимо выполнить публикацию во всех регионах, необходимо управлять процессом разработки и полученной обученной моделью во всех трех регионах разработки. 
 
 
 ## <a name="configuring-publish-settings"></a>Настройка параметров публикации
 
-After you select the slot, configure the publish settings for:
+После выбора слота настройте параметры публикации для:
 
 * Анализ мнений
-* Spelling correction - v2 prediction endpoint only
+* Исправление орфографии — только конечная точка прогнозирования версии 2
 * Подготовка речи 
 
-After you publish, these settings are available for review from the **Manage** section's **Publish settings** page. You can change the settings with every publish. If you cancel a publish, any changes you made during the publish are also canceled. 
+После публикации эти параметры доступны для проверки на странице **параметров публикации** раздела **Управление** . Параметры можно изменить при каждой публикации. При отмене публикации все изменения, внесенные во время публикации, также отменяются. 
 
-### <a name="when-your-app-is-published"></a>When your app is published
+### <a name="when-your-app-is-published"></a>При публикации приложения
 
-When your app is successfully published, a success notification appears at the top of the browser. The notification also includes a link to the endpoints. 
+После успешной публикации приложения в верхней части браузера появится уведомление об успешном выполнении. Уведомление также содержит ссылку на конечные точки. 
 
-Если требуется узнать URL-адрес конечной точки, выберите ссылку. You can also get to the endpoint URLs by selecting **Manage** in the top menu, then select **Azure Resources** in the left menu. 
+Если требуется узнать URL-адрес конечной точки, выберите ссылку. Можно также перейти к URL-адресам конечной точки, выбрав **Управление** в верхнем меню, а затем щелкнув **ресурсы Azure** в меню слева. 
 
 ## <a name="sentiment-analysis"></a>Анализ мнений
 
@@ -81,17 +81,17 @@ When your app is successfully published, a success notification appears at the t
 
 Для получения дополнительной информации об ответе конечной точки JSON с анализом мнений см. раздел[Анализ мнений](luis-concept-data-extraction.md#sentiment-analysis)
 
-## <a name="spelling-correction"></a>Spelling correction
+## <a name="spelling-correction"></a>Исправление орфографии
 
 [!INCLUDE [Not supported in V3 API prediction endpoint](./includes/v2-support-only.md)]
 
-Corrections to spelling are made before the LUIS user utterance prediction. You can see any changes to the original utterance, including spelling, in the response.
+Исправления для проверки орфографии выполняются до прогнозирования utterance пользователя LUIS. В ответе можно увидеть любые изменения в исходном utterance, включая проверку орфографии.
 
 ## <a name="speech-priming"></a>Подготовка речи
 
-Speech priming is the process of using sending the LUIS model to Speech services prior to conversion of text to speech. This allows the speech service to provide speech conversion more accurately for your model. This allows bot Speech and LUIS requests and responses in one call by making one speech call and getting back a LUIS response. It provides less latency overall.
+Речь подготовка — это процесс использования отправки модели LUIS в речевые службы до преобразования текста в речь. Это позволяет службе распознавания речи точнее обеспечивать преобразование речи для модели. Это позволяет осуществлять голосовые и LUISные запросы и ответы в одном вызове путем выполнения одного вызова речи и получения ответа LUIS. Она обеспечивает меньше задержек в целом.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * Чтобы узнать, как добавить ключи подписки Azure в LUIS и настроить ключ проверки орфографии Bing, а также как включить все намерения в результаты, см. статью [Управление ключами конечной точки в LUIS](./luis-how-to-azure-subscription.md).
 * Инструкции по тестированию приложения с помощью консоли тестирования см. в статье [Test your LUIS app](luis-interactive-test.md) (Протестируйте свое приложение LUIS).

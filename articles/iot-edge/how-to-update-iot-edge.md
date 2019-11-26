@@ -18,7 +18,7 @@ ms.locfileid: "74456542"
 ---
 # <a name="update-the-iot-edge-security-daemon-and-runtime"></a>Обновление управляющей программы безопасности и среды выполнения IoT Edge
 
-As the IoT Edge service releases new versions, you'll want to update your IoT Edge devices for the latest features and security improvements. В этой статье представлены сведения об обновлении устройств IoT Edge при наличии новой версии. 
+По мере выпуска службой IoT Edge новых версий необходимо обновить устройства IoT Edge, чтобы получить новейшие функции и улучшения безопасности. В этой статье представлены сведения об обновлении устройств IoT Edge при наличии новой версии. 
 
 Если вы хотите перейти на новую версию, вам необходимо обновить два компонента устройства IoT Edge. Первый компонент — управляющая программа безопасности, которая выполняется на устройстве и запускает модули среды выполнения при запуске устройства. В настоящее время обновить управляющую программу безопасности можно только на самом устройстве. Второй компонент — это среда выполнения, состоящая из модулей центра и агента IoT Edge. В зависимости от структуры развертывания среду выполнения можно обновить как на устройстве, так и удаленно. 
 
@@ -32,30 +32,30 @@ As the IoT Edge service releases new versions, you'll want to update your IoT Ed
 
 ### <a name="linux-devices"></a>Устройства Linux
 
-On Linux x64 devices, use apt-get or your appropriate package manager to update the security daemon. 
+На устройствах Linux x64 используйте apt-get или соответствующий диспетчер пакетов, чтобы обновить управляющую программу безопасности. 
 
 ```bash
 apt-get update
 apt-get install libiothsm iotedge
 ```
 
-On Linux ARM32 devices, use the steps in [Install Azure IoT Edge runtime on Linux (ARM32v7/armhf)](how-to-install-iot-edge-linux-arm.md) to install the latest version of the security daemon. 
+На устройствах Linux ARM32 выполните действия, описанные в статье [Установка среды выполнения Azure IOT EDGE в Linux (ARM32v7/армхф)](how-to-install-iot-edge-linux-arm.md) , чтобы установить последнюю версию управляющей программы безопасности. 
 
 ### <a name="windows-devices"></a>Устройства Windows
 
-On Windows devices, use the PowerShell script to update the security daemon. The script automatically pulls the latest version of the security daemon. 
+На устройствах Windows используйте сценарий PowerShell для обновления управляющей программы безопасности. Сценарий автоматически извлекает последнюю версию управляющей программы безопасности. 
 
 ```powershell
 . {Invoke-WebRequest -useb aka.ms/iotedge-win} | Invoke-Expression; Update-IoTEdge -ContainerOs <Windows or Linux>
 ```
 
-Running the Update-IoTEdge command removes the security daemon from your device, along with the two runtime container images. The config.yaml file is kept on the device, as well as data from the Moby container engine (if you're using Windows containers). Keeping the configuration information means that you don't have to provide the connection string or Device Provisioning Service information for your device again during the update process. 
+Выполнение команды Update-IoTEdge удаляет управляющую программу безопасности с устройства, а также два образа контейнеров среды выполнения. Файл config. YAML хранится на устройстве, а также данные из подсистемы контейнеров значок Кита (если вы используете контейнеры Windows). Хранение сведений о конфигурации означает, что в процессе обновления не требуется повторно указывать строку подключения или сведения о службе подготовки устройств для устройства. 
 
-If you want to install a specific version of the security daemon, download the appropriate Microsoft-Azure-IoTEdge.cab file from [IoT Edge releases](https://github.com/Azure/azure-iotedge/releases). Затем используйте параметр `-OfflineInstallationPath`, чтобы указать местоположение файла. Дополнительные сведения см. в статье [Автономная установка](how-to-install-iot-edge-windows.md#offline-installation).
+Если вы хотите установить определенную версию управляющей программы безопасности, скачайте соответствующий файл Микрософт-Азуре-иотедже. cab из [IOT Edge выпусков](https://github.com/Azure/azure-iotedge/releases). Затем используйте параметр `-OfflineInstallationPath`, чтобы указать местоположение файла. Дополнительные сведения см. в статье [Автономная установка](how-to-install-iot-edge-windows.md#offline-installation).
 
 ## <a name="update-the-runtime-containers"></a>Обновление контейнеров среды выполнения
 
-The way that you update the IoT Edge agent and IoT Edge hub containers depends on whether you use rolling tags (like 1.0) or specific tags (like 1.0.7) in your deployment. 
+Способ обновления IoT Edgeного агента и контейнера центра IoT Edge зависит от того, используются ли в развертывании чередующиеся Теги (например, 1,0) или определенные теги (например, 1.0.7). 
 
 Проверьте версию модулей агента и центра IoT Edge, используемую в настоящее время на вашем устройстве, с помощью команды `iotedge logs edgeAgent` или `iotedge logs edgeHub`. 
 
@@ -66,7 +66,7 @@ The way that you update the IoT Edge agent and IoT Edge hub containers depends o
 Образы агента и центра IoT Edge отмечены тегами версии IoT Edge, с которой они связаны. Существует два способа использования тегов с образами среды выполнения: 
 
 * **Последовательные теги**: используются только первые два значения номера версии для получения последнего образа, соответствующего этим цифрам. Например, 1.0 обновляется всякий раз, когда появляется новый выпуск, указывающий на последнюю версию 1.0.x. Если среда выполнения контейнера на устройстве IoT Edge снова извлекает образ, модули среды выполнения обновляются до последней версии. Такой подход рекомендуется использовать для разработки. Для развертываний с портала Azure по умолчанию установлены последовательные теги. 
-* **Конкретные теги**: используются все три значения номера версии для явной установки версии образа. For example, 1.0.7 won't change after its initial release. Вы можете объявить новый номер версии в манифесте развертывания, когда будете готовы к обновлению. Такой подход рекомендуется использовать для производственных целей.
+* **Конкретные теги**: используются все три значения номера версии для явной установки версии образа. Например, 1.0.7 не изменится после первоначального выпуска. Вы можете объявить новый номер версии в манифесте развертывания, когда будете готовы к обновлению. Такой подход рекомендуется использовать для производственных целей.
 
 ### <a name="update-a-rolling-tag-image"></a>Обновление образа последовательного тега
 
@@ -85,11 +85,11 @@ docker rmi mcr.microsoft.com/azureiotedge-agent:1.0
 
 ### <a name="update-a-specific-tag-image"></a>Обновление образа конкретного тега
 
-If you use specific tags in your deployment (for example, mcr.microsoft.com/azureiotedge-hub:**1.0.7**) then all you need to do is update the tag in your deployment manifest and apply the changes to your device. 
+Если в развертывании используются определенные теги (например, mcr.microsoft.com/azureiotedge-hub:**1.0.7**), то все, что нужно сделать, — это обновить тег в манифесте развертывания и применить изменения к устройству. 
 
 На портале Azure образы развертывания среды выполнения объявляются в разделе **Настройка дополнительных параметров среды выполнения Edge**. 
 
-![Configure advanced edge runtime settings](./media/how-to-update-iot-edge/configure-runtime.png)
+![Настройка дополнительных параметров среды выполнения ребра](./media/how-to-update-iot-edge/configure-runtime.png)
 
 В манифесте развертывания JSON обновите образы модулей в разделе **systemModules**. 
 
@@ -114,18 +114,18 @@ If you use specific tags in your deployment (for example, mcr.microsoft.com/azur
 },
 ```
 
-## <a name="update-to-a-release-candidate-version"></a>Update to a release candidate version
+## <a name="update-to-a-release-candidate-version"></a>Обновление до версии-кандидата
 
-Azure IoT Edge regularly releases new versions of the IoT Edge service. Before each stable release, there is one or more release candidate (RC) versions. RC versions include all the planned features for the release, but are still going through the testing and validation processes required for a stable release. If you want to test a new feature early, you can install the RC version and provide feedback through GitHub. 
+Azure IoT Edge регулярно выпускает новые версии службы IoT Edge. Перед каждым стабильным выпуском есть одна или несколько версий версии-кандидата (RC). Версии RC включают все запланированные компоненты для выпуска, но все еще проверяют процессы тестирования и проверки, необходимые для стабильного выпуска. Если вы хотите протестировать новую функцию на раннем этапе, можно установить версию-кандидат и отправить отзыв через GitHub. 
 
-Release candidate versions follow the same numbering convention of releases, but have **-rc** plus an incremental number appended to the end. You can see the release candidates in the same list of [Azure IoT Edge releases](https://github.com/Azure/azure-iotedge/releases) as the stable versions. For example, find **1.0.7-rc1** and **1.0.7-rc2**, the two release candidates that came before **1.0.7**. You can also see that RC versions are marked with **pre-release** labels. 
+Версии-кандидаты соответствуют тем же правилам нумерации выпусков, но имеют значение **— RC** плюс добавочный номер, добавленный к концу. Кандидаты выпуска можно просмотреть в том же списке [Azure IOT Edge выпусках](https://github.com/Azure/azure-iotedge/releases) , что и стабильные версии. Например, найдите **1.0.7-RC1** и **1.0.7-RC2**, два кандидата выпуска, которые были выпущены до **1.0.7**. Также можно увидеть, что версии RC помечены метками **предварительной версии** . 
 
-As previews, release candidate versions aren't included as the latest version that the regular installers target. Instead, you need to manually target the assets for the RC version that you want to test. Depending on your IoT Edge device operating system, use the following sections to update IoT Edge to a specific version:
+В качестве предварительных версий версии-кандидата не входят в качестве последней версии, предназначенной для обычных установщиков. Вместо этого необходимо вручную ориентироваться на ресурсы для версии RC, которую требуется протестировать. В зависимости от операционной системы устройства IoT Edge используйте следующие разделы для обновления IoT Edge до определенной версии.
 
 * [Linux](how-to-install-iot-edge-linux.md#install-a-specific-runtime-version)
 * [Windows](how-to-install-iot-edge-windows.md#offline-installation)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Ознакомьтесь с последними выпусками Azure IoT Edge [на сайте GitHub](https://github.com/Azure/azure-iotedge/releases).
 

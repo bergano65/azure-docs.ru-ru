@@ -1,5 +1,5 @@
 ---
-title: Provision legacy devices using symmetric keys - Azure IoT Hub Device Provisioning Service
+title: Подготовка устаревших устройств с помощью симметричных ключей. Служба подготовки устройств для центра Интернета вещей Azure
 description: Подготовка устаревших устройств с использованием симметричных ключей в экземпляре службы подготовки устройств.
 author: wesmc7777
 ms.author: wesmc
@@ -28,9 +28,9 @@ ms.locfileid: "74209919"
 В этой статье описывается использование рабочей станции под управлением Windows. Тем не менее эти процедуры можно выполнить и на Linux. Пример для Linux см. в статье [Подготовка к мультитенантности](how-to-provision-multitenant.md).
 
 > [!NOTE]
-> The sample used in this article is written in C. There is also a [C# device provisioning symmetric key sample](https://github.com/Azure-Samples/azure-iot-samples-csharp/tree/master/provisioning/Samples/device/SymmetricKeySample) available. To use this sample, download or clone the [azure-iot-samples-csharp](https://github.com/Azure-Samples/azure-iot-samples-csharp) repository and follow the in-line instructions in the sample code. You can follow the instructions in this article to create a symmetric key enrollment group using the portal and to find the ID Scope and enrollment group primary and secondary keys needed to run the sample. You can also create individual enrollments using the sample.
+> Пример, используемый в этой статье, написан на языке C. Также доступен пример с [ C# симметричным ключом подготовки устройства](https://github.com/Azure-Samples/azure-iot-samples-csharp/tree/master/provisioning/Samples/device/SymmetricKeySample) . Чтобы использовать этот пример, скачайте или клонировать репозиторий [Azure-IOT-Samples-CSharp](https://github.com/Azure-Samples/azure-iot-samples-csharp) и следуйте инструкциям в примере кода. Чтобы создать группу регистрации симметричных ключей с помощью портала и найти область ИДЕНТИФИКАТОРов и первичный и вторичный ключи, необходимые для запуска примера, следуйте инструкциям, приведенным в этой статье. Можно также создать отдельные регистрации с помощью примера.
 
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
 
 Уникальный идентификатор регистрации будет определен для каждого устройства на основе сведений, идентифицирующих это устройство. Например, MAC-адреса или серийного номера.
 
@@ -41,9 +41,9 @@ ms.locfileid: "74209919"
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
-* Выполните процедуру, описанную в кратком руководстве по [настройке службы подготовки устройств Центра Интернета вещей на портале Azure](./quick-setup-auto-provision.md).
+* Выполните процедуру, описанную в кратком руководстве по [настройке Службы подготовки устройств к добавлению в Центр Интернета вещей на портале Azure](./quick-setup-auto-provision.md).
 * [Visual Studio 2015](https://visualstudio.microsoft.com/vs/) или более поздней версии с включенной рабочей нагрузкой [Разработка классических приложений на C++](https://www.visualstudio.com/vs/support/selecting-workloads-visual-studio-2017/).
 * Установите последнюю версию [Git](https://git-scm.com/download/).
 
@@ -58,7 +58,7 @@ ms.locfileid: "74209919"
 
     **Перед** установкой `CMake` очень важно установить на компьютер необходимые компоненты Visual Studio (Visual Studio с рабочей нагрузкой "Разработка классических приложений на C++"). После установки компонентов и проверки загрузки установите систему сборки CMake.
 
-2. Откройте командную строку или оболочку Git Bash. Выполните следующую команду для клонирования репозитория GitHub пакета SDK Azure IoT для C:
+2. Откройте командную строку или оболочку Git Bash. Выполните следующую команду для клонирования репозитория GitHub пакета SDK Azure IoT для C.
     
     ```cmd/sh
     git clone https://github.com/Azure/azure-iot-sdk-c.git --recursive
@@ -105,7 +105,7 @@ ms.locfileid: "74209919"
 
 2. Выберите вкладку **Управление регистрациями**, а затем нажмите кнопку **Добавить группу регистрации** в верхней части страницы. 
 
-3. В разделе **Добавление группы регистрации** введите следующие сведения ниже, а затем нажмите кнопку **Сохранить**.
+3. В разделе **Добавление группы регистрации** введите приведенные ниже сведения, а затем нажмите кнопку **Сохранить**.
 
    - **Имя группы**: введите **mylegacydevices**.
 
@@ -141,7 +141,7 @@ sn-007-888-abc-mac-a1-b2-c3-d4-e5-f6
 
 Чтобы создать ключ устройства, используйте главный ключ группы для вычисления [HMAC-SHA256](https://wikipedia.org/wiki/HMAC) на основе уникального идентификатора регистрации для устройства и преобразования результата в формат Base64.
 
-Не включайте главный ключ группы в код устройства.
+Не добавляйте главный ключ группы в код устройства.
 
 
 #### <a name="linux-workstations"></a>Рабочие станции Linux
@@ -246,7 +246,7 @@ Jsm0lyGpjaVYVP2g3FnmnmG9dI/9qU24wNoykUmermc=
 
 8. В меню Visual Studio выберите **Отладка** > **Запуск без отладки**, чтобы запустить решение. При появлении запроса перестроить проект щелкните **Да**, чтобы перестроить его перед запуском.
 
-    Следующий результат является примером успешной загрузки имитированного устройства и его подключения к экземпляру службы подготовки для назначения Центру Интернета вещей:
+    Следующий результат является примером успешной загрузки имитированного устройства и его подключения к экземпляру службы подготовки для назначения Центру Интернета вещей.
 
     ```cmd
     Provisioning API Version: 1.2.8
@@ -263,7 +263,7 @@ Jsm0lyGpjaVYVP2g3FnmnmG9dI/9qU24wNoykUmermc=
     Press enter key to exit:
     ```
 
-9. In the portal, navigate to the IoT hub your simulated device was assigned to and click the **IoT Devices** tab. On successful provisioning of the simulated to the hub, its device ID appears on the **IoT Devices** blade, with *STATUS* as **enabled**. Возможно, вам потребуется нажать кнопку **Обновить** в верхней области. 
+9. На портале перейдите к центру Интернета вещей, которому назначено имитируемое устройство, и перейдите на вкладку **устройства IOT** . При успешной подготовке имитации в концентраторе его идентификатор устройства отображается в колонке **устройства IOT** с *состоянием* **включено**. Возможно, вам потребуется нажать кнопку **Обновить** в верхней области. 
 
     ![Устройство зарегистрировано в Центре Интернета вещей](./media/how-to-legacy-device-symm-key/hub-registration.png) 
 
@@ -277,11 +277,11 @@ Jsm0lyGpjaVYVP2g3FnmnmG9dI/9qU24wNoykUmermc=
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-* To learn more Reprovisioning, see [IoT Hub Device reprovisioning concepts](concepts-device-reprovision.md) 
-* [Краткое руководство по подготовке имитированного устройства с использованием симметричных ключей](quick-create-simulated-device-symm-key.md)
-* To learn more Deprovisioning, see [How to deprovision devices that were previously auto-provisioned](how-to-unprovision-devices.md) 
+* Дополнительные сведения о повторной подготовке см. в статье [Основные понятия повторной инициализации устройств центра Интернета вещей](concepts-device-reprovision.md) . 
+* [Краткое руководство по подготовке имитированного устройства с использованием симметричных ключей](quick-create-simulated-device-symm-key.md).
+* Дополнительные сведения об отмене подготовки см. в статье [как отменить подготовку устройств, которые были подготовлены ранее](how-to-unprovision-devices.md) . 
 
 
 

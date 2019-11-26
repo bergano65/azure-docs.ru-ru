@@ -11,7 +11,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74224508"
 ---
-| Ресурс | Ограничение по умолчанию | Максимальное ограничение | Примечание |
+| Resource (Ресурс) | Ограничение по умолчанию | Максимальное ограничение | Примечание. |
 | --- | --- | --- | --- |
-| Наблюдатель за сетями Azure | 1 для каждого региона | 1 для каждого региона | Network Watcher is created to enable access to the service. Only one instance of Network Watcher is required per subscription per region. |
-| Packet capture sessions |10,000 per region | 10 000 |Number of sessions only, not saved captures. |
+| Наблюдатель за сетями Azure | 1 для каждого региона | 1 для каждого региона | Наблюдатель за сетями создается для обеспечения доступа к службе. Для каждой подписки на регион требуется только один экземпляр наблюдателя за сетями. |
+| Сеансы записи пакетов |10 000. США за регион | 10 000 |Количество сеансов, а не сохраненных записей. |

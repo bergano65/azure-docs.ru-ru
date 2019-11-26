@@ -1,5 +1,5 @@
 ---
-title: Single/pooled databases file space management
+title: Управление местом в файлах для отдельных баз данных/в составе пула
 description: Здесь описывается управление файловым пространством отдельной базы данных или базы данных в пуле Базы данных SQL Azure и приведены примеры кода для определения необходимости сжатия отдельной базы данных или базы данных в составе пула и выполнения операции сжатия.
 services: sql-database
 ms.service: sql-database
@@ -25,7 +25,7 @@ ms.locfileid: "74420983"
 > [!NOTE]
 > Эта статья не относится к параметру развертывания управляемого экземпляра Базы данных SQL Azure.
 
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
 
 В отдельной базе данных или базе данных в пуле Базы данных SQL Azure существуют шаблоны рабочей нагрузки, в которых распределение базовых файлов для баз данных может превысить объем используемых страниц данных. Это может произойти, когда используемое пространство увеличивается, а данные затем удаляются. Это объясняется тем, что выделенное файловое пространство автоматически не освобождается.
 
@@ -140,12 +140,12 @@ ORDER BY end_time DESC
 
 ### <a name="elastic-pool-data-space-allocated-and-unused-allocated-space"></a>Выделенное пространство данных эластичного пула и неиспользуемое выделенное пространство
 
-Modify the following examples to return a table listing the space allocated and unused allocated space for each database in an elastic pool. Таблица сортирует базы данных по объему неиспользованного выделенного пространства от наибольших к наименьшим.  Единицы результатов запроса указываются в МБ.  
+Измените следующие примеры, чтобы получить таблицу с перечнем выделенного и неиспользуемого пространства для каждой базы данных в эластичном пуле. Таблица сортирует базы данных по объему неиспользованного выделенного пространства от наибольших к наименьшим.  Единицы результатов запроса указываются в МБ.  
 
 Результаты запроса для определения выделенного пространства для каждой базы данных в пуле могут суммироваться для представления общего пространства, выделенного для эластичного пула. Выделенное пространство эластичного пула не должно превышать максимальный размер эластичного пула.  
 
 > [!IMPORTANT]
-> The PowerShell Azure Resource Manager (RM) module is still supported by Azure SQL Database, but all future development is for the Az.Sql module. The AzureRM module will continue to receive bug fixes until at least December 2020.  The arguments for the commands in the Az module and in the AzureRm modules are substantially identical. For more about their compatibility, see [Introducing the new Azure PowerShell Az module](/powershell/azure/new-azureps-module-az).
+> Модуль PowerShell Azure Resource Manager (RM) по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Модуль AzureRM продолжит принимать исправления ошибок до 2020 декабря.  Аргументы для команд в модуле AZ и в модулях AzureRm существенно идентичны. Дополнительные сведения о совместимости см. [в разделе Введение в новый модуль Azure PowerShell AZ](/powershell/azure/new-azureps-module-az).
 
 Сценарию PowerShell требуется модуль SQL Server PowerShell. Дополнительные сведения см. в разделе [Установка модуля SQL Server PowerShell](https://docs.microsoft.com/sql/powershell/download-sql-server-ps-module).
 
@@ -231,7 +231,7 @@ ALTER DATABASE [db1] SET AUTO_SHRINK ON
 
 После сжатия файлов базы данных индексы могут стать фрагментированными, а эффективность оптимизации их производительности может ухудшиться. Если происходит замедление, попробуйте перестроить индексы базы данных. Дополнительные сведения о фрагментации и перестроении индексов см. в статье [Реорганизация и перестроение индексов](https://docs.microsoft.com/sql/relational-databases/indexes/reorganize-and-rebuild-indexes).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Сведения о максимальных размерах базы данных см. в статьях:
   - [Ограничения ресурсов для отдельной базы данных в Базе данных SQL Azure при использовании модели приобретения на основе виртуальных ядер](sql-database-vcore-resource-limits-single-databases.md)

@@ -1,5 +1,5 @@
 ---
-title: Create and manage Azure IoT Central applications from the CSP portal | Microsoft Docs
+title: Создание приложений IoT Central Azure и управление ими на портале CSP | Документация Майкрософт
 description: Сведения о создании приложения Azure IoT Central поставщиком облачных решений от имени клиента.
 services: iot-central
 ms.service: iot-central
@@ -15,17 +15,17 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/25/2019
 ms.locfileid: "74480335"
 ---
-# <a name="create-and-manage-an-azure-iot-central-application-from-the-csp-portal"></a>Create and manage an Azure IoT Central application from the CSP portal
+# <a name="create-and-manage-an-azure-iot-central-application-from-the-csp-portal"></a>Создание приложения IoT Central Azure и управление им на портале CSP
 
 Программа для поставщиков облачных решений (CSP) (Microsoft) — это программа Microsoft Reseller. Ее целью является предоставление партнерам Channel Partner единого решения для продажи всех коммерческих служб Microsoft Online Services. Узнайте больше о [программе для поставщиков облачных решений](https://partner.microsoft.com/cloud-solution-provider).
 
 Поставщик облачных решений может создавать решения Microsoft Azure IoT Central и управлять ими от имени клиентов с помощью [Центра партнеров Майкрософт](https://partnercenter.microsoft.com/partner/home). Если поставщик облачных решений создает приложения Azure IoT Central от имени клиентов так же, как другие управляемые им службы Azure, он сам занимается процедурой управления выставлением счетов для клиентов. Плата за Azure IoT Central будет отображаться в общем счете в Центре партнеров Майкрософт.
 
-Чтобы приступить к работе, войдите в учетную запись на портале партнеров Майкрософт и выберите клиента, для которого вы хотите создать приложение Azure IoT Central. Navigate to Service Management for the customer from the left nav.
+Чтобы приступить к работе, войдите в учетную запись на портале партнеров Майкрософт и выберите клиента, для которого вы хотите создать приложение Azure IoT Central. В левой панели навигации перейдите к элементу Управление службами для клиента.
 
 ![Клиентское представление в Центре партнеров Майкрософт](media/howto-create-application-csp/image1.png)
 
-Azure IoT Central отображается как служба, доступная для администрирования. Select the Azure IoT Central link on the page to create new applications or manage existing applications for this customer.
+Azure IoT Central отображается как служба, доступная для администрирования. На странице щелкните ссылку Azure IoT Central, чтобы создать новые приложения или управлять существующими приложениями для этого клиента.
 
 ![Доступная для управления служба Azure IoT Central](media/howto-create-application-csp/image2.png)
 
@@ -33,7 +33,7 @@ Azure IoT Central отображается как служба, доступна
 
 ![Создание диспетчера для поставщиков облачных решений](media/howto-create-application-csp/image3.png)
 
-To create an Azure IoT Central application, select **Build** in the left menu. Choose one of the industry templates, or choose **Custom app** to create an application from scratch. Будет загружена страница создания приложения. Необходимо заполнить все поля на этой странице и нажать кнопку **Создать**. Ниже приводятся сведения о каждом поле.
+Чтобы создать приложение IoT Central Azure, выберите **Сборка** в меню слева. Выберите один из отраслевых шаблонов или выберите **пользовательское приложение** , чтобы создать приложение с нуля. Будет загружена страница создания приложения. Необходимо заполнить все поля на этой странице и нажать кнопку **Создать**. Ниже приводятся сведения о каждом поле.
 
 ![Страница создания приложения для CSP](media/howto-create-application-csp/image4.png)
 
@@ -53,7 +53,7 @@ URL-адрес приложения представляет собой ссыл
 
 URL-адрес приложения будет создан автоматически, когда вы введете имя приложения. При желании вы можете выбрать другой URL-адрес. URL-адрес каждого приложения Azure IoT Central должен быть уникальным в Azure IoT Central. Если выбрать URL-адрес, который уже используется, отобразится сообщение об ошибке.
 
-## <a name="directory"></a>Каталог
+## <a name="directory"></a>каталог.
 
 Так как Azure IoT Central сохраняет контекст, говорящий о ваших планах по управлению клиентом, выбранным на портале партнеров Майкрософт, в поле "Каталог" вы увидите только клиент Azure Active Directory для этого клиента. 
 
@@ -61,7 +61,7 @@ URL-адрес приложения будет создан автоматиче
 
 Дополнительные сведения см. в [документации по Azure Active Directory](https://docs.microsoft.com/azure/active-directory/).
 
-## <a name="azure-subscription"></a>Подписка на Azure
+## <a name="azure-subscription"></a>Подписка Azure.
 
 Подписка Azure позволяет создавать экземпляры служб Azure. Azure IoT Central автоматически обнаруживает все подписки Azure клиента, к которым у вас есть доступ, и отображает их в раскрывающемся списке на странице **Создание приложения**. Выберите подписку Azure, чтобы создать приложение Azure IoT Central.
 
@@ -71,12 +71,12 @@ URL-адрес приложения будет создан автоматиче
 
 ## <a name="region"></a>Регион
 
-Choose the region or [geography](https://azure.microsoft.com/global-infrastructure/geographies/) where you’d like to create your Azure IoT Central Application. Typically, you should choose the region that's closest physically to your devices to get optimal performance.
+Выберите регион или [географию](https://azure.microsoft.com/global-infrastructure/geographies/) , где вы хотите создать приложение IOT Central Azure. Как правило, для достижения оптимальной производительности следует выбирать наиболее близкий к вашим устройствам регион.
 
 > [!NOTE]
-> The preview application templates are currently only available in the **Europe** and **US** locations.
+> В настоящее время шаблоны приложений предварительной версии доступны только в **странах Европы** и **США** .
 
-To learn more, see [Azure regions](https://azure.microsoft.com/global-infrastructure/regions/) and [Azure geographies](https://azure.microsoft.com/global-infrastructure/geographies/).
+Дополнительные сведения см. в статье [регионы Azure](https://azure.microsoft.com/global-infrastructure/regions/) и [географические диаграммы Azure](https://azure.microsoft.com/global-infrastructure/geographies/).
 
 Регионы, в которых доступно приложение Azure IoT Central,можно просмотреть на странице [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=iot-central).
 
@@ -87,13 +87,13 @@ To learn more, see [Azure regions](https://azure.microsoft.com/global-infrastruc
 
 Вы можете выбрать один из доступных шаблонов приложений для нового приложения Azure IoT Central. Шаблон приложения может содержать стандартные элементы (например, шаблоны устройств и панели мониторинга), которые позволяют вам приступить к работе.
 
-| Шаблон приложения | Описание |
+| Шаблон приложения | ОПИСАНИЕ |
 | -------------------- | ----------- |
 | Custom application (Пользовательское приложение)   | Создает пустое приложение, в которое необходимо добавить собственные шаблоны устройств и сами устройства. |
 | Sample Contoso (Образец Contoso)       | Создает приложение, которое содержит шаблон устройства для легко подключаемого устройства. Используйте этот шаблон, чтобы приступить к работе в Azure IoT Central. |
 | Custom application (Образец Devkits)       | Создает приложение с готовыми шаблонами устройств, чтобы вы могли подключить устройство MXChip или Raspberry Pi. Используйте этот шаблон, если вы являетесь разработчиком устройства, работающим с кодом в одном из этих устройств. |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Вы узнали, как создать приложение Azure IoT Central в качестве поставщика облачных решений, а значит, вы готовы к следующему шагу.
 

@@ -1,7 +1,7 @@
 ---
-title: Add entities - LUIS
+title: Добавление сущностей — LUIS
 titleSuffix: Azure Cognitive Services
-description: Create entities to extract key data from user utterances in Language Understanding (LUIS) apps. Extracted entity data is used by the client application to fullfil customer requests.
+description: Создание сущностей для извлечения данных ключей из фразы продолжительностью пользователей в приложениях Language Understanding (LUIS). Извлеченные данные сущности используются клиентским приложением для фуллфил запросов клиентов.
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -18,179 +18,179 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74383684"
 ---
-# <a name="add-entities-to-extract-data"></a>Add entities to extract data 
+# <a name="add-entities-to-extract-data"></a>Добавление сущностей для извлечения данных 
 
-Create entities to extract key data from user utterances in Language Understanding (LUIS) apps. Extracted entity data is used by your client application to fullfil customer requests.
+Создание сущностей для извлечения данных ключей из фразы продолжительностью пользователей в приложениях Language Understanding (LUIS). Извлеченные данные сущности используются клиентским приложением для фуллфил запросов клиентов.
 
-Сущность представляет подлежащее извлечению слово или фразу в высказывании. Сущности описывают информацию, относящуюся к намерению, и иногда они необходимы приложению для выполнения поставленной задачи. You can create entities when you add an example utterance to an intent or apart from (before or after) adding an example utterance to an intent.
+Сущность представляет подлежащее извлечению слово или фразу в высказывании. Сущности описывают информацию, относящуюся к намерению, и иногда они необходимы приложению для выполнения поставленной задачи. Вы можете создавать сущности, когда вы добавляете пример utterance в намерение или помимо него (до или после), добавляя пример utterance к намерению.
 
 [!INCLUDE [Uses preview portal](includes/uses-portal-preview.md)]
 
-## <a name="plan-entities-then-create-and-label"></a>Plan entities, then create and label
+## <a name="plan-entities-then-create-and-label"></a>Планирование сущностей, создание и добавление меток
 
-Machine-learned entities can be created from the example utterances or created from the **Entities** page. 
+Сущности, полученные от компьютера, можно создать на основе примера фразы продолжительностью или создать на странице **сущности** . 
 
-In general, a best practice is to spend time planning the entities before creating a machine-learned entity in the portal. Then create the machine-learned entity from the example utterance with as much detail in the subcomponents and descriptors and constraints as you know at the time. The [decomposable entity tutorial](tutorial-machine-learned-entity.md) demonstrates how to use this method. 
+Как правило, рекомендуется потратить время на планирование сущностей перед созданием на портале сущности, предназначенной для компьютера. Затем создайте сущность, занятую компьютером, из примера utterance с использованием как можно больше подробностей в подкомпонентах и дескрипторах и ограничениях, как известное время. В [учебнике по сущностям делимыми](tutorial-machine-learned-entity.md) показано, как использовать этот метод. 
 
-As part of planning the entities, you may know you need text-matching entities (such as prebuilt entities, regular expression entities, or list entities). You can create these from the **Entities** page before they are labeled in example utterances. 
+В рамках планирования сущностей может быть известно, что вам потребуются сущности, совпадающие с текстом (например, предварительно созданные сущности, сущности регулярных выражений или список сущностей). Их можно создать на странице **сущности** , прежде чем они помечаются в примере фразы продолжительностью. 
 
-When labeling, you can either label individual entities then build up to a parent machine-learned entity. Or you can start with a parent machine-learned entity and decompose into child entities. 
+При создании меток можно либо пометить отдельные сущности, либо создать сборку до родительской сущности, занятой компьютером. Или можно начать с сущности, наученной в родительском компьютере, и разбить ее на дочерние сущности. 
 
 > [!TIP] 
->Label all words that may indicate an entity, even if the words are not used when extracted in the client application. 
+>Пометка всех слов, которые могут указывать на сущность, даже если эти слова не используются при извлечении в клиентском приложении. 
 
-## <a name="creating-an-entity-before-or-with-labeling"></a>Creating an entity before or with labeling
+## <a name="creating-an-entity-before-or-with-labeling"></a>Создание сущности до или с меткой
 
-Use the following table to understand which entities where to create or add each entity to the app. 
+Используйте следующую таблицу, чтобы понять, в каких сущностях нужно создать или добавить каждую сущность в приложение. 
 
-|Тип сущности|Where to create entity in the LUIS portal|
+|Тип сущности|Где создать сущность на портале LUIS|
 |--|--|
-|Сущность, прошедшая машинное обучение|Entities or Intent detail|
-|Сущность списка|Entities or Intent detail|
+|Сущность, прошедшая машинное обучение|Сущности или сведения о намерениях|
+|Сущности списка|Сущности или сведения о намерениях|
 |Сущность регулярного выражения|Сущности|
 |Сущность Pattern.any|Сущности|
 |Предварительно созданная сущность|Сущности|
-|Prebuilt domain entity|Сущности|
+|Предварительно созданная сущность домена|Сущности|
 
-You can create all the entities from the **Entities** page, or you can create a couple of the entities as part of labeling the entity in the example utterance on the **Intent detail** page. You can only _label_ an entity in an example utterance from the **Intent detail** page. 
+Можно создать все сущности на странице **сущности** или создать пару сущностей в качестве метки для сущности в примере utterance на странице **сведений о намерениях** . Вы можете _пометить_ сущность в примере utterance на странице **сведений о намерениях** . 
 
-## <a name="create-a-machine-learned-entity"></a>Create a machine-learned entity
+## <a name="create-a-machine-learned-entity"></a>Создание сущности, занятой компьютером
 
 [!INCLUDE [Create and label entities in machine-learned tutorial](includes/decomposable-tutorial-links.md)]
 
-## <a name="create-a-text-matching-entity"></a>Create a text-matching entity
+## <a name="create-a-text-matching-entity"></a>Создание сущности, совпадающей с текстом
 
-Use text-matching entities provide several ways to extract data:
+Использование сущностей с совпадающими текстом предоставляет несколько способов извлечения данных:
 
-|Text-matching entities|Цель|
+|Сущности, совпадающие с текстом|Назначение|
 |--|--|
-|[List entity](#add-list-entities-for-exact-matches)|list of canonical names along with synonyms as alternative forms|
-|Сущность регулярного выражения|match text using a regular expression entity|
-|[Prebuilt entity](tutorial-machine-learned-entity.md#add-prebuilt-number-to-help-extract-data)|match common data types such as number, email, date|
-|Prebuilt domain entity|match using selected subject domains|
-|[Pattern.Any](#add-a-patternany-entity)| to match entities that may be easily confused with the surrounding text|  
+|[Сущность списка](#add-list-entities-for-exact-matches)|Список канонических имен вместе с синонимами в качестве альтернативных форм|
+|Сущность регулярного выражения|Сопоставление текста с помощью сущности регулярного выражения|
+|[Предварительно созданная сущность](tutorial-machine-learned-entity.md#add-prebuilt-number-to-help-extract-data)|Сопоставление общих типов данных, таких как число, электронная почта, Дата|
+|Предварительно созданная сущность домена|сопоставление с использованием выбранных доменов субъектов|
+|[Pattern.Any](#add-a-patternany-entity)| для сопоставления сущностей, которые могут быть легко путают с окружающим текстом|  
 
-Prebuilt entities work without providing any custom training data. The other entities need you to provide either customer training data (such as List entity's items) or an expression (such as a regular expression or pattern.any).
+Предварительно созданные сущности работают без предоставления пользовательских обучающих данных. Другие сущности требуют предоставления данных для обучения клиентам (например, элементов списка) или выражения (например, регулярного выражения или шаблона).
 
 <a name="add-list-entities"></a>
 
-### <a name="how-to-create-a-new-custom-entity"></a>How to create a new custom entity
+### <a name="how-to-create-a-new-custom-entity"></a>Создание новой настраиваемой сущности
 
-1. In the LUIS portal, goto the **Manage** section, then the **Entities** page. 
-1. Select **+ Create**, then select the entity type. 
-1. Continue configuring the entity then select **Create** when you are done. 
+1. На портале LUIS перейдите в раздел **Управление** , а затем на страницу **сущности** . 
+1. Выберите **+ создать**, а затем выберите тип сущности. 
+1. Продолжайте настройку сущности, а затем выберите **создать** по завершении. 
 
-### <a name="add-list-entities-for-exact-matches"></a>Add list entities for exact matches
+### <a name="add-list-entities-for-exact-matches"></a>Добавление сущностей списка для точных совпадений
 
-Сущности списка — это фиксированный закрытый набор связанных машинных слов. While you, as the author, can change the list, LUIS won't grow or shrink the list. You can also import to an existing list entity using a [list entity .json format(reference-entity-list.md#example-json-to-import-into-list-entity). 
+Сущности списка — это фиксированный закрытый набор связанных машинных слов. В то время как автор может изменить список, LUIS не будет увеличивать или уменьшать список. Также можно импортировать в существующую сущность списка с помощью [List Entity. JSON Format (ссылка-Entity-List. md # example-JSON-to-Import-in-List-Entity). 
 
-The following list demonstrates the canonical name and the synonyms. 
+В следующем списке показано каноническое имя и синонимы. 
 
-|Color - list item name|Color - synonyms|
+|Имя элемента списка цветов|Цвета-синонимы|
 |--|--|
-|Красный|crimson, blood, apple, fire-engine|
-|Синий|sky, azure, cobalt|
-|Зеленый|kelly, lime|
+|Красный|Crimson, кровь, Apple, пожар-Engine|
+|Синий|Небесно, Azure, кобалт|
+|Зеленый|Келли, травяной|
 
-Use the procedure to create a list entity. Once the list entity is created, you don't need to label example utterances in an intent. List items and synonyms are matched using exact text. 
+Используйте процедуру, чтобы создать сущность списка. После создания сущности List не нужно помечать пример фразы продолжительностью с намерением. Элементы списка и синонимы сопоставляются с использованием точного текста. 
 
-1. From the **Build** section, select **Entities** in the left panel, and then select **+ Create**.
+1. В разделе **Сборка** выберите **сущности** на левой панели, а затем щелкните **+ создать**.
 
-1. In the **Create an entity type** dialog box, enter the name of the entity, such as `Colors` and select **List**.
-1. In the **Create a list entity** dialog box, in the **Add new sublist....** , enter the list item name, such as `Green`, then add synonyms.
+1. В диалоговом окне **Создание типа сущности** введите имя сущности, например `Colors` и **Список**выбора.
+1. В диалоговом окне **Создание сущности списка** в поле **Добавить новый подсписок.** ... Введите имя элемента списка, например `Green`, а затем добавьте синонимы.
 
     > [!div class="mx-imgBorder"]
-    > ![Create a list of colors as a list entity in the Entity detail page.](media/how-to-add-entities/create-list-entity-of-colors.png) 
+    > ![создать список цветов как сущность списка на странице сведений о сущности.](media/how-to-add-entities/create-list-entity-of-colors.png) 
 
-1. When you are finished adding list items and synonyms, select **Create**.
+1. По завершении добавления элементов списка и синонимов выберите **создать**.
 
-    When you are done with a group of changes to the app, remember to **Train** the app. Do not train the app after a single change. 
+    Завершив работу с группой изменений в приложении, не забудьте **обучить** приложение. Не обучить приложение после одного изменения. 
 
     > [!NOTE]
-    > This procedure demonstrates creating and labeling a list entity from an example utterance in the **Intent detail** page. You can also create the same entity from the **Entities** page.
+    > Эта процедура демонстрирует создание и маркировку сущности List из примера utterance на странице **сведений о намерениях** . Одну и ту же сущность можно также создать на странице **сущности** .
 
-## <a name="add-a-role-for-an-entity"></a>Add a role for an entity
+## <a name="add-a-role-for-an-entity"></a>Добавление роли для сущности
 
-A role is a named subtype of an entity, based on context. 
+Роль — это именованный подтип сущности на основе контекста. 
 
-### <a name="add-a-role-to-distinguish-different-contexts"></a>Add a role to distinguish different contexts
+### <a name="add-a-role-to-distinguish-different-contexts"></a>Добавление роли для различения разных контекстов
 
-In the following utterance, there are two locations, and each is specified semantically by the words around it such as `to` and `from`: 
+В следующем utterance есть два расположения, каждый из которых семантически определяется словами, такими как `to` и `from`: 
 
 `Pick up the package from Seattle and deliver to New York City.`
 
-In this procedure, add `origin` and `destination` roles to a prebuilt geographyV2 entity.
+В этой процедуре добавьте роли `origin` и `destination` в предварительно созданную сущность geographyV2.
 
 1. В разделе **Сборка** на левой панели выберите **Сущности**.
 
-1. Select **+ Add prebuilt entity**. Select **geographyV2** then select **Done**. This adds a prebuilt entity to the app.
+1. Выберите **+ добавить предварительно созданную сущность**. Выберите **geographyV2** , а затем нажмите кнопку **Готово**. При этом в приложение добавляется предварительно созданная сущность.
     
     Если ваш шаблон, который включает сущность Pattern.any, извлекает сущности неправильно, используйте [явный список](reference-pattern-syntax.md#explicit-lists), чтобы решить эту проблему. 
 
-1. Select the newly added prebuilt geographyV2 entity from the **Entities** page list of entities. 
-1. To add a new role, select **+** next to **No roles added**.
-1. In the **Type role...** textbox, enter the name of the role `Origin` then enter. Add a second role name of `Destination` then enter. 
+1. Выберите только что добавленную предварительно созданную сущность geographyV2 из списка **сущностей** сущностей. 
+1. Чтобы добавить новую роль, выберите **+** рядом с ним **не добавлены роли**.
+1. В текстовом поле **Type Role...** введите имя роли, `Origin` затем введите. Добавьте второе имя роли `Destination` затем введите. 
 
     > [!div class="mx-imgBorder"]
-    > ![Screenshot of adding Origin role to Location entity](media/how-to-add-entities//add-role-to-prebuilt-geographyv2-entity.png)
+    > ![снимок экрана: Добавление исходной роли в сущность расположения](media/how-to-add-entities//add-role-to-prebuilt-geographyv2-entity.png)
 
-    The role is added to the prebuilt entity but isn't added to any utterances using that entity. 
+    Роль добавляется в предварительно созданную сущность, но не добавляется в фразы продолжительностью с помощью этой сущности. 
 
-### <a name="label-text-with-a-role-in-an-example-utterance"></a>Label text with a role in an example utterance
+### <a name="label-text-with-a-role-in-an-example-utterance"></a>Добавление метки к тексту с ролью в примере utterance
 
-1. Go to the Intent details page, which has example utterances that use the role. 
-1. To label with the role, select the entity label (solid line under text) in the example utterance, then select **View in entity palette** from the drop-down list. 
-
-    > [!div class="mx-imgBorder"]
-    > ![Screenshot of selecting View in entity Palette](media/how-to-add-entities/select-text-label-with-entity-palette-for-role.png)   
-
-    The entity palette opens to the right. 
-
-1. Select the entity, then go to the bottom of the palette and select the role. 
+1. Перейдите на страницу сведений о намерениях, в которой приведен пример фразы продолжительностью, который использует эту роль. 
+1. Чтобы добавить метку к роли, выберите метку сущности (сплошная линия под текстом) в примере utterance, а затем в раскрывающемся списке выберите **представление в палитре сущностей** . 
 
     > [!div class="mx-imgBorder"]
-    > ![Screenshot of selecting View in entity Palette](media/how-to-add-entities/select-role-from-entity-palette-entity-inspector.png)
+    > ![снимок экрана: Выбор представления в палитре сущностей](media/how-to-add-entities/select-text-label-with-entity-palette-for-role.png)   
+
+    Справа откроется палитра сущностей. 
+
+1. Выберите сущность, затем перейдите в нижнюю часть палитры и выберите роль. 
+
+    > [!div class="mx-imgBorder"]
+    > ![снимок экрана: Выбор представления в палитре сущностей](media/how-to-add-entities/select-role-from-entity-palette-entity-inspector.png)
 
 <a name="add-pattern-any-entities"></a>
 
-## <a name="add-a-patternany-entity"></a>Add a pattern.any entity
+## <a name="add-a-patternany-entity"></a>Добавление шаблона. любая сущность
 
-[Pattern.any](luis-concept-entity-types.md) entities are only valid in [patterns](luis-how-to-model-intent-pattern.md), not intents' example utterances. Этот вид сущности помогает службе LUIS найти конец сущностей различной длины и выбора машинного слова. Так как эта сущность используется в шаблоне, служба LUIS знает, где конец сущности в шаблоне высказывания.
+[Pattern. любые](luis-concept-entity-types.md) сущности действительны только в [шаблонах](luis-how-to-model-intent-pattern.md), а не на примере фразы продолжительностью. Этот вид сущности помогает службе LUIS найти конец сущностей различной длины и выбора машинного слова. Так как эта сущность используется в шаблоне, служба LUIS знает, где конец сущности в шаблоне высказывания.
 
-### <a name="steps-to-create-a-patternany-entity"></a>Steps to create a pattern.any entity
+### <a name="steps-to-create-a-patternany-entity"></a>Действия по созданию шаблона. любая сущность
 
-1. From the **Build** section, select **Entities** in the left panel, and then select **+ Create**.
+1. В разделе **Сборка** выберите **сущности** на левой панели, а затем щелкните **+ создать**.
 
-1. In the **Choose an entity type** dialog box, enter the entity name in the **Name** box, and select **Pattern.Any** as the **Type** then select **Create**.
+1. В диалоговом окне **Выбор типа сущности** введите имя сущности в поле **имя** и выберите **шаблон. Any** в качестве **типа** , а затем выберите **создать**.
 
-    Once you [create a pattern utterance](luis-how-to-model-intent-pattern.md) using this entity, the entity is extracted with a combined machine-learned and text-matching algorithm. 
+    После [создания шаблона, utterance](luis-how-to-model-intent-pattern.md) с помощью этой сущности, сущность извлекается с использованием комбинированного алгоритма сопоставления и текста. 
 
-### <a name="create-a-pattern-template-utterance-to-use-patternany-entity"></a>Create a pattern template utterance to use pattern.any entity
+### <a name="create-a-pattern-template-utterance-to-use-patternany-entity"></a>Создайте шаблон шаблона utterance для использования шаблона. любая сущность
 
 Чтобы использовать сущность pattern.any, добавьте шаблон на странице **Шаблоны** в разделе **Повышение производительности приложения** с помощью правильных фигурных скобок, например `Where is **{HumanResourcesFormTitle}** on the server?`.
 
 Если ваш шаблон, который включает сущность Pattern.any, извлекает сущности неправильно, используйте [явный список](reference-pattern-syntax.md#explicit-lists), чтобы решить эту проблему. 
 
-## <a name="do-not-change-entity-type"></a>Do not change entity type
+## <a name="do-not-change-entity-type"></a>Не изменяйте тип сущности
 
 Интеллектуальная служба распознавания речи не позволяет изменить тип сущности, поскольку неизвестно, что добавлять или удалять для создания этой сущности. Чтобы изменить тип, лучше создать новую сущность правильного типа с незначительно отличающимся именем. После создания сущности в каждом высказывании удалите старое отмеченное имя сущности и добавьте новое. После того как все высказывания будут повторно отмечены, удалите старую сущность. 
 
 <a name="create-a-pattern-from-an-utterance"></a>
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"] 
-> [Use prebuilt models](howto-add-prebuilt-models.md) 
+> [Использование предварительно созданных моделей](howto-add-prebuilt-models.md) 
 
 См. также:
-* How to [train](luis-how-to-train.md)
-* How to [test](luis-interactive-test.md)
-* How to [publish](luis-how-to-publish-app.md)
-* Patterns:
+* [Обучение](luis-how-to-train.md)
+* [Тестирование](luis-interactive-test.md)
+* Как [опубликовать](luis-how-to-publish-app.md)
+* Закономерно
     * [Основные понятия](luis-concept-patterns.md)
     * [Синтаксис](reference-pattern-syntax.md)
-* [Prebuilt entities GitHub repository](https://github.com/Microsoft/Recognizers-Text)
-* [Data Extraction concepts](luis-concept-data-extraction.md)
+* [Репозиторий GitHub с предварительно созданными сущностями](https://github.com/Microsoft/Recognizers-Text)
+* [Основные понятия извлечения данных](luis-concept-data-extraction.md)
 
 
  

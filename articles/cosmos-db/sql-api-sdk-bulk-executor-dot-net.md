@@ -37,7 +37,7 @@ ms.locfileid: "74306748"
 |**Скачивание пакета SDK**| [NuGet](https://www.nuget.org/packages/Microsoft.Azure.CosmosDB.BulkExecutor/) |
 | **Библиотека с массовым исполнителем в GitHub**| [GitHub](https://github.com/Azure/azure-cosmosdb-bulkexecutor-dotnet-getting-started)|
 |**Документация по API**|[Справочная документация по API .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmosdb.bulkexecutor?view=azure-dotnet)|
-|**Начало работы**|[Начало работы с пакетом SDK для .NET для библиотеки массового исполнителя](bulk-executor-dot-net.md)|
+|**Приступая к работе**|[Начало работы с пакетом SDK для .NET для библиотеки массового исполнителя](bulk-executor-dot-net.md)|
 | **Текущая поддерживаемая платформа**| Microsoft .NET Framework 4.5.2, 4.6.1 и .NET Standard 2.0 |
 
 > [!NOTE]

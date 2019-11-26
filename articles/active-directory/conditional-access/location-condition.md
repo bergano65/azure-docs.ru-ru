@@ -1,5 +1,5 @@
 ---
-title: Location condition in Azure Active Directory Conditional Access
+title: Условие расположения в условном доступе Azure Active Directory
 description: Узнайте, как использовать условие расположения для управления доступом к облачным приложениям на основе расположения пользователя в сети.
 services: active-directory
 ms.service: active-directory
@@ -19,71 +19,71 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74380295"
 ---
-# <a name="what-is-the-location-condition-in-azure-active-directory-conditional-access"></a>What is the location condition in Azure Active Directory Conditional Access? 
+# <a name="what-is-the-location-condition-in-azure-active-directory-conditional-access"></a>Каково условие расположения в Azure Active Directory условном доступе? 
 
-With [Azure Active Directory (Azure AD) Conditional Access](../active-directory-conditional-access-azure-portal.md), you can control how authorized users can access your cloud apps. The location condition of a Conditional Access policy enables you to tie access controls settings to the network locations of your users.
+С помощью [условного доступа Azure Active Directory (Azure AD)](../active-directory-conditional-access-azure-portal.md)вы можете контролировать, как разрешенные пользователи могут получать доступ к облачным приложениям. Условие расположения политики условного доступа позволяет привязывать параметры контроля доступа к сетевым расположениям пользователей.
 
 В этой статье приведены сведения, необходимые для настройки условия расположения.
 
 ## <a name="locations"></a>Расположения
 
-Azure AD enables single sign-on to devices, apps, and services from anywhere on the public internet. Условие расположения позволяет управлять доступом к облачным приложениям на основе расположения пользователя в сети. Ниже приведены наиболее распространенные варианты использования условия расположения.
+Azure AD обеспечивает единый вход для устройств, приложений и служб из любого места в общедоступном Интернете. Условие расположения позволяет управлять доступом к облачным приложениям на основе расположения пользователя в сети. Ниже приведены наиболее распространенные варианты использования условия расположения.
 
 - Требование многофакторной проверки подлинности для пользователей, которые пытаются получить доступ к службе, но пока отключены от корпоративной сети.
 - Блокировка доступа для пользователей, которые пытаются получить доступ к службе из определенных стран или регионов.
 
-A location is a label for a network location that either represents a named location or multi-factor authentication Trusted IPs.
+Расположение — это метка для сетевого расположения, которая либо представляет именованное расположение, либо надежные IP-адреса многофакторной проверки подлинности.
 
 ## <a name="named-locations"></a>Именованные расположения
 
-With named locations, you can create logical groupings of IP address ranges or countries and regions.
+С помощью именованных расположений можно создавать логические группы диапазонов IP-адресов или стран и регионов.
 
-You can access your named locations in the **Manage** section of the Conditional Access page.
+Доступ к именованным расположениям можно получить в разделе **Управление** на странице условный доступ.
 
-![Named locations in Conditional Access](./media/location-condition/02.png)
+![Именованные расположения в условном доступе](./media/location-condition/02.png)
 
 Именованное расположение состоит из следующих компонентов.
 
-![Create a new named location](./media/location-condition/42.png)
+![Создать новое именованное расположение](./media/location-condition/42.png)
 
 - **Имя** — отображаемое имя именованного расположения.
-- **Диапазоны IP-адресов** — один или не сколько диапазонов IPv4-адресов в формате CIDR. Specifying an IPv6 address range is not supported.
+- **Диапазоны IP-адресов** — один или не сколько диапазонов IPv4-адресов в формате CIDR. Указание диапазона IPv6-адресов не поддерживается.
 
    > [!NOTE]
-   > IPv6 address ranges cannot currently be included in a named location. This means IPv6 ranges cannot be excluded from a Conditional Access policy.
+   > В настоящее время диапазоны IPv6-адресов не могут быть добавлены в именованное расположение. Это означает, что диапазоны IPv6 не могут быть исключены из политики условного доступа.
 
-- **Отметить как надежное расположение** — флажок, который можно установить для именованного расположения, чтобы указать надежное расположение. Как правило, надежные расположения являются областями сети, которые контролируются ИТ-отделом. In addition to Conditional Access, trusted named locations are also used by Azure Identity Protection and Azure AD security reports to reduce [false positives](../reports-monitoring/concept-risk-events.md#impossible-travel-to-atypical-locations-1).
+- **Отметить как надежное расположение** — флажок, который можно установить для именованного расположения, чтобы указать надежное расположение. Как правило, надежные расположения являются областями сети, которые контролируются ИТ-отделом. Помимо условного доступа, доверенные именованные расположения также используются для защиты идентификации Azure и отчетов безопасности Azure AD, чтобы сократить [число ложных срабатываний](../reports-monitoring/concept-risk-events.md#impossible-travel-to-atypical-locations-1).
 - **Страны и регионы**. Этот параметр позволяет выбрать одну или несколько стран или регионов для определения именованного расположения.
-- **Include unknown areas** - Some IP addresses are not mapped to a specific country or region. Этот параметр позволяет указать, нужно ли включать эти IP-адреса в именованное расположение. Используйте данный параметр, когда политика, использующая именованное расположение, должна применяться к неизвестным расположениям.
+- **Включить неизвестные области** . Некоторые IP-адреса не сопоставлены с определенной страной или регионом. Этот параметр позволяет указать, нужно ли включать эти IP-адреса в именованное расположение. Используйте данный параметр, когда политика, использующая именованное расположение, должна применяться к неизвестным расположениям.
 
-Количество именованных расположений, которые можно настроить, ограничено размером соответствующего объекта в Azure AD. You can configure locations based on of the following limitations:
+Количество именованных расположений, которые можно настроить, ограничено размером соответствующего объекта в Azure AD. Расположения можно настроить на основе следующих ограничений.
 
 - Именованное расположение с диапазонами IP-адресов до 1200.
 - Максимум 90 именованных расположений, каждому из которых назначен один диапазон IP-адресов.
 
-Conditional Access policy applies to IPv4 and IPv6 traffic. Currently named locations do not allow IPv6 ranges to be configured. This limitation causes the following situations:
+Политика условного доступа применяется к трафику IPv4 и IPv6. В настоящее время именованные расположения не разрешают настройку диапазонов IPv6. Это ограничение приводит к следующим ситуациям:
 
-- Conditional Access policy cannot be targeted to specific IPv6 ranges
-- Conditional Access policy cannot exclude specific IPV6 ranges
+- Политика условного доступа не может быть нацелена на определенные диапазоны IPv6
+- Политика условного доступа не может исключать определенные диапазоны IPV6
 
-If a policy is configured to apply to “Any location”, it will apply to IPv4 and IPv6 traffic. Named locations configured for specified countries and regions only support IPv4 addresses. IPv6 traffic is only included if the option to “include unknown areas” selected.
+Если политика настроена для применения к любому расположению, она будет применяться к трафику IPv4 и IPv6. Именованные расположения, настроенные для указанных стран и регионов, поддерживают только IPv4-адреса. Трафик IPv6 включается, только если выбран параметр "включить неизвестные области".
 
 ## <a name="trusted-ips"></a>Надежные IP-адреса
 
-Вы также можете настроить диапазоны IP-адресов, представляющие локальную интрасеть в [параметрах службы многофакторной проверки подлинности](https://account.activedirectory.windowsazure.com/usermanagement/mfasettings.aspx). Эта функция позволяет настроить до 50 диапазонов IP-адресов. Диапазоны IP-адресов имеют формат CIDR. For more information, see [Trusted IPs](../authentication/howto-mfa-mfasettings.md#trusted-ips).  
+Вы также можете настроить диапазоны IP-адресов, представляющие локальную интрасеть в [параметрах службы многофакторной проверки подлинности](https://account.activedirectory.windowsazure.com/usermanagement/mfasettings.aspx). Эта функция позволяет настроить до 50 диапазонов IP-адресов. Диапазоны IP-адресов имеют формат CIDR. Дополнительные сведения см. в разделе [Надежные IP-адреса](../authentication/howto-mfa-mfasettings.md#trusted-ips).  
 
-If you have Trusted IPs configured, they show up as **MFA Trusted IPS** in the list of locations for the location condition.
+Если настроены доверенные IP-адреса, они отображаются как **Надежные IP-адреса MFA** в списке расположений для условия расположения.
 
 ### <a name="skipping-multi-factor-authentication"></a>Пропуск многофакторной проверки подлинности
 
-На странице параметров службы многофакторной проверки подлинности можно определить пользователей корпоративной интрасети, установив флажок **Пропустить многофакторную проверку подлинности для запросов от федеративных пользователей из моей интрасети**. Этот параметр указывает, что внутреннее утверждение корпоративной сети, выдаваемое сервером служб федерации Active Directory (AD FS), должно быть надежным и использоваться для идентификации пользователя в корпоративной сети. For more information, see [Enable the Trusted IPs feature by using Conditional Access](../authentication/howto-mfa-mfasettings.md#enable-the-trusted-ips-feature-by-using-conditional-access).
+На странице параметров службы многофакторной проверки подлинности можно определить пользователей корпоративной интрасети, установив флажок **Пропустить многофакторную проверку подлинности для запросов от федеративных пользователей из моей интрасети**. Этот параметр указывает, что внутреннее утверждение корпоративной сети, выдаваемое сервером служб федерации Active Directory (AD FS), должно быть надежным и использоваться для идентификации пользователя в корпоративной сети. Дополнительные сведения см. в разделе [Включение функции надежных IP-адресов с помощью условного доступа](../authentication/howto-mfa-mfasettings.md#enable-the-trusted-ips-feature-by-using-conditional-access).
 
-After checking this option, including the named location **MFA Trusted IPS** will apply to any policies with this option selected.
+После выбора этого параметра, включая именованное расположение, **Надежные IP-адреса MFA** будут применяться к политикам с выбранным параметром.
 
-For mobile and desktop applications, which have long lived session lifetimes, Conditional Access is periodically reevaluated. По умолчанию — один раз в час. Если внутренне утверждение корпоративной сети выпускается только во время первоначальной проверки подлинности, Azure AD может не иметь списка диапазонов надежных IP-адресов. В этом случае трудно определить, находится ли по-прежнему пользователь в корпоративной сети.
+Для мобильных и настольных приложений, которые имеют продолжительное время существования сеанса, периодически проверяется условный доступ. По умолчанию — один раз в час. Если внутренне утверждение корпоративной сети выпускается только во время первоначальной проверки подлинности, Azure AD может не иметь списка диапазонов надежных IP-адресов. В этом случае трудно определить, находится ли по-прежнему пользователь в корпоративной сети.
 
 1. Проверьте, входит ли IP-адрес пользователя в один из диапазонов надежных IP-адресов.
-2. Check whether the first three octets of the user’s IP address match the first three octets of the IP address of the initial authentication. The IP address is compared with the initial authentication when the inside corporate network claim was originally issued and the user location was validated.
+2. Проверьте, соответствуют ли первые три октета IP-адреса пользователя первым трем октетам IP-адреса первоначальной проверки подлинности. IP-адрес сравнивается с первоначальной проверкой подлинности, когда первоначально выдавалось внутреннее утверждение корпоративной сети и было проверено расположение пользователя.
 
 Если оба этапа завершатся ошибкой, считается, что пользователь больше не использует надежный IP-адрес.
 
@@ -116,21 +116,21 @@ For mobile and desktop applications, which have long lived session lifetimes, Co
 
 ### <a name="when-is-a-location-evaluated"></a>Когда выполняется проверка расположения
 
-Conditional Access policies are evaluated when:
+Политики условного доступа оцениваются в следующих случаях:
 
 - Изначально пользователь входит в веб-приложение, мобильное или классическое приложение.
-- Мобильное или классическое приложение, в котором применяется современная аутентификация, использует маркер обновления для получения нового маркера доступа. By default this check is once an hour.
+- Мобильное или классическое приложение, в котором применяется современная аутентификация, использует маркер обновления для получения нового маркера доступа. По умолчанию эта проверка длится один раз в час.
 
-This check means for mobile and desktop applications using modern authentication, a change in location would be detected within an hour of changing the network location. Для мобильных и классических приложений, которые не используют современную аутентификацию, к каждому запросу на маркер применяется политика. Частота выполнения запроса зависит от приложения. Для веб-приложений политика также применяется во время начального входа и действует в течение времени существования сеанса веб-приложения. Так как в разных приложениях время сеанса будет разным, время между оценкам политики также может изменяться. Каждый раз, когда приложение запрашивает новый маркер входа, применяется политика.
+Эта проверка означает, что для мобильных и настольных приложений, использующих современную проверку подлинности, изменение расположения будет обнаружено в течение часа изменения сетевого расположения. Для мобильных и классических приложений, которые не используют современную аутентификацию, к каждому запросу на маркер применяется политика. Частота выполнения запроса зависит от приложения. Для веб-приложений политика также применяется во время начального входа и действует в течение времени существования сеанса веб-приложения. Так как в разных приложениях время сеанса будет разным, время между оценкам политики также может изменяться. Каждый раз, когда приложение запрашивает новый маркер входа, применяется политика.
 
 По умолчанию Azure AD выдает токен на почасовой основе. После перемещения из корпоративной сети в течение часа политика применяется для приложений, использующих современную проверку подлинности.
 
 ### <a name="user-ip-address"></a>IP-адрес пользователя
 
-При оценке политики используется общедоступный IP-адрес пользователя. For devices on a private network, this IP address is not the client IP of the user’s device on the intranet, it is the address used by the network to connect to the public internet.
+При оценке политики используется общедоступный IP-адрес пользователя. Для устройств в частной сети этот IP-адрес не является клиентом IP-адреса устройства пользователя в интрасети. это адрес, используемый сетью для подключения к общедоступному Интернету.
 
 > [!WARNING]
-> If your device has only an IPv6 address, configuring the location condition is not supported.
+> Если устройство имеет только IPv6-адрес, Настройка условия расположения не поддерживается.
 
 ### <a name="bulk-uploading-and-downloading-of-named-locations"></a>Массовое обновление и загрузка именованных расположений
 
@@ -144,9 +144,9 @@ This check means for mobile and desktop applications using modern authentication
 
 ### <a name="api-support-and-powershell"></a>Поддержка API и PowerShell
 
-API and PowerShell is not yet supported for named locations, or for Conditional Access policies.
+API и PowerShell пока не поддерживаются для именованных расположений или для политик условного доступа.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Чтобы узнать, как настроить политику условного доступа, см. статью [Краткое руководство. Требование Многофакторной идентификации для конкретных приложений с помощью условного доступа Azure Active Directory](app-based-mfa.md).
 - Если вы готовы к настройке политик условного доступа для своей среды, см. статью [Best practices for Conditional Access in Azure Active Directory](best-practices.md) (Рекомендации по работе с условным доступом в Azure Active Directory).

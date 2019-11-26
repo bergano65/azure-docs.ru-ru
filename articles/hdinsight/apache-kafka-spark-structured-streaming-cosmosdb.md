@@ -1,6 +1,6 @@
 ---
-title: Apache Spark & Apache Kafka with Cosmos DB - Azure HDInsight
-description: Узнайте, как использовать структурированную потоковую передачу Apache Spark для чтения данных из Apache Kafka и как сохранить эти данные в Azure Cosmos DB. В этом примере описано, как выполнить потоковую передачу данных, используя записную книжку Jupyter из Spark в HDInsight.
+title: Apache Spark & Apache Kafka с Cosmos DB Azure HDInsight
+description: Узнайте, как использовать структурированную потоковую передачу Apache Spark для чтения данных из Apache Kafka и как сохранить эти данные в Azure Cosmos DB. В этом примере показано, как выполнить потоковую передачу данных, используя записную книжку Jupyter из Spark в HDInsight.
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
@@ -17,7 +17,7 @@ ms.locfileid: "74406169"
 ---
 # <a name="use-apache-spark-structured-streaming-with-apache-kafka-and-azure-cosmos-db"></a>Использование структурированной потоковой передачи Apache Spark с Apache Kafka в Azure Cosmos DB
 
-Узнайте, как использовать [структурированную потоковую передачу](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html) [Apache Spark](https://spark.apache.org/) для чтения данных из [Apache Kafka](https://kafka.apache.org/) в Azure HDInsight и как сохранить эти данные в Azure Cosmos DB.
+Узнайте, как использовать [структурированную потоковую передачу](https://spark.apache.org/) [Apache Spark](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html) для чтения данных из [Apache Kafka](https://kafka.apache.org/) в Azure HDInsight и как сохранить эти данные в Azure Cosmos DB.
 
 [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/) — это многомодельная глобально распределенная база данных. В этом примере используется модель базы данных API SQL. Дополнительные сведения см. в документе [Добро пожаловать в базу данных Azure Cosmos DB](../cosmos-db/introduction.md).
 
@@ -32,7 +32,7 @@ ms.locfileid: "74406169"
 
 ## <a name="create-the-clusters"></a>Создание кластеров
 
-Apache Kafka on HDInsight doesn't provide access to the Kafka brokers over the public internet. Все объекты, обращающиеся к Kafka, должны находиться в той же виртуальной сети Azure, что и узлы в кластере Kafka. В этом примере кластеры Kafka и Spark расположены в виртуальной сети Azure. На следующей схеме показано, как взаимодействуют кластеры.
+Apache Kafka в HDInsight не предоставляет доступ к брокерам Kafka через общедоступный Интернет. Все объекты, обращающиеся к Kafka, должны находиться в той же виртуальной сети Azure, что и узлы в кластере Kafka. В этом примере кластеры Kafka и Spark расположены в виртуальной сети Azure. На следующей схеме показано, как взаимодействуют кластеры.
 
 ![Схема кластеров Spark и Kafka в виртуальной сети Azure](./media/apache-kafka-spark-structured-streaming-cosmosdb/apache-spark-kafka-vnet.png)
 
@@ -64,19 +64,19 @@ Apache Kafka on HDInsight doesn't provide access to the Kafka brokers over the p
 
 1. Используйте следующие сведения, чтобы заполнить раздел **Настраиваемое развертывание**:
 
-    |Свойство |Value |
+    |Свойство |Значение |
     |---|---|
-    |Subscription|Выберите подписку Azure.|
-    |группа ресурсов.|Создайте новую группу или выберите существующую. Эта группа содержит кластер HDInsight.|
-    |Cosmos DB Account Name|Это значение используется как имя учетной записи Cosmos DB. The name can only contain lowercase letters, numbers, and the hyphen (-) character. Длина — от 3 до 31 знака.|
-    |Base Cluster Name|Это значение будет использоваться в качестве базового имени для кластеров Spark и Kafka. Например, если ввести **myhdi**, будет создан кластер Spark с именем __spark-myhdi__ и кластер Kafka с именем **kafka-myhdi**.|
-    |Cluster Version|Версия кластера HDInsight. Этот пример протестирован с HDInsight 3.6 и может не работать с другими типами кластеров.|
+    |подписку|Выберите подписку Azure.|
+    |Группа ресурсов|Создайте новую группу или выберите существующую. Эта группа содержит кластер HDInsight.|
+    |Имя учетной записи Cosmos DB|Это значение используется как имя учетной записи Cosmos DB. Имя может содержать только строчные буквы, цифры и символ дефиса (-). Длина — от 3 до 31 знака.|
+    |Имя базового кластера|Это значение будет использоваться в качестве базового имени для кластеров Spark и Kafka. Например, если ввести **myhdi**, будет создан кластер Spark с именем __spark-myhdi__ и кластер Kafka с именем **kafka-myhdi**.|
+    |Версия кластера|Версия кластера HDInsight. Этот пример протестирован с HDInsight 3.6 и может не работать с другими типами кластеров.|
     |Имя пользователя для входа в кластер|Имя администратора для кластеров Spark и Kafka.|
     |Пароль для входа в кластер|Пароль администратора для кластеров Spark и Kafka.|
-    |Ssh User Name|Создаваемый пользователь SSH для кластеров Spark и Kafka.|
-    |Ssh Password|Пароль пользователя SSH для кластеров Spark и Kafka.|
+    |Имя пользователя SSH|Создаваемый пользователь SSH для кластеров Spark и Kafka.|
+    |Пароль SSH|Пароль пользователя SSH для кластеров Spark и Kafka.|
 
-    ![HDInsight custom deployment values](./media/apache-kafka-spark-structured-streaming-cosmosdb/hdi-custom-parameters.png)
+    ![Значения настраиваемого развертывания HDInsight](./media/apache-kafka-spark-structured-streaming-cosmosdb/hdi-custom-parameters.png)
 
 1. Прочтите **условия использования** и установите флажок **Я принимаю указанные выше условия**.
 
@@ -154,9 +154,9 @@ az cosmosdb keys list --name $name --resource-group $resourceGroupName --type ke
 
 На домашней странице [Jupyter Notebook](https://jupyter.org/) выберите запись __Stream-data-from-Kafka-to-Cosmos-DB.ipynb__. Следуйте инструкциям в записной книжке, чтобы выполнить потоковую передачу данных из Kafka в Azure Cosmos DB с помощью структурированной потоковой передачи Spark.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-Now that you've learned how to use Apache Spark Structured Streaming, see the following documents to learn more about working with Apache Spark, Apache Kafka, and Azure Cosmos DB:
+Теперь, когда вы узнали, как использовать Apache Spark структурированной потоковой передачи, ознакомьтесь со следующими документами, чтобы узнать больше о работе с Apache Spark, Apache Kafka и Azure Cosmos DB.
 
 * [Пример потоковой передачи Apache Spark (DStream) с использованием Apache Kafka (предварительная версия) в HDInsight](hdinsight-apache-spark-with-kafka.md)
 * [Краткое руководство. Создание кластера Apache Spark в HDInsight с помощью шаблона](spark/apache-spark-jupyter-spark-sql.md)

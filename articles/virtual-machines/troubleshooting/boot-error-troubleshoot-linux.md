@@ -1,6 +1,6 @@
 ---
-title: Troubleshoot boot errors in Azure Linux Virtual Machines | Microsoft Docs
-description: This article helps link you to articles to troubleshoot boot errors in Azure Linux Virtual Machines.
+title: Устранение ошибок загрузки в Azure Виртуальные машины Linux | Документация Майкрософт
+description: Эта статья поможет вам привязать вас к статьям, чтобы устранить ошибки загрузки в Azure Виртуальные машины Linux.
 services: virtual-machines-linux
 documentationCenter: ''
 author: vilibert
@@ -19,34 +19,34 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74408746"
 ---
-# <a name="troubleshoot-azure-linux-virtual-machines-boot-errors"></a>Troubleshoot Azure Linux Virtual Machines boot errors
+# <a name="troubleshoot-azure-linux-virtual-machines-boot-errors"></a>Устранение ошибок загрузки Azure Виртуальные машины Linux
 
-This article lists the common boot errors that you may receive when you start a Linux virtual machine (VM) in Microsoft Azure. Дополнительные сведения об ошибках см. в статьях в разделе **Boot errors and solutions** (Ошибки загрузки и их решения).
+В этой статье перечислены распространенные ошибки загрузки, которые могут быть получены при запуске виртуальной машины Linux в Microsoft Azure. Дополнительные сведения об ошибках см. в статьях в разделе **Boot errors and solutions** (Ошибки загрузки и их решения).
 
 ## <a name="boot-errors-and-solutions"></a>Ошибки загрузки и их решения
 
-* [GRUB rescue](troubleshoot-vm-boot-error.md)
+* [GRUB помощь](troubleshoot-vm-boot-error.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Последовательная консоль виртуальной машины](serial-console-linux.md)
 
-Troubleshoot a Linux VM by attaching the OS disk to a recovery VM using Azure:
+Устранение неполадок виртуальной машины Linux путем подключения диска ОС к виртуальной машине восстановления с помощью Azure:
 
-- [Azure VM repair](repair-linux-vm-using-azure-virtual-machine-repair-commands.md)
+- [Восстановление виртуальной машины Azure](repair-linux-vm-using-azure-virtual-machine-repair-commands.md)
 
- Disk Swap – this can be automated using either:
-- [Power Shell Recovery Scripts](https://github.com/Azure/azure-support-scripts/tree/master/VMRecovery/ResourceManager)
-- [bash Recovery Scripts](https://github.com/sribs/azure-support-scripts)
+ Переключение диска. его можно автоматизировать с помощью следующих средств:
+- [Сценарии восстановления PowerShell](https://github.com/Azure/azure-support-scripts/tree/master/VMRecovery/ResourceManager)
+- [Скрипты Bash Recovery](https://github.com/sribs/azure-support-scripts)
 
-- [CLI](troubleshoot-recovery-disks-linux.md)
-- [Портал Azure](troubleshoot-recovery-disks-portal-linux.md)
+- [ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](troubleshoot-recovery-disks-linux.md)
+- [портал Azure](troubleshoot-recovery-disks-portal-linux.md)
 
 
-## <a name="disk-swap-video"></a>Disk Swap Video:
+## <a name="disk-swap-video"></a>Видео о переключении диска:
 
-If you do not have access to GRUB watch [this](https://youtu.be/m5t0GZ5oGAc) video and see, how you can easily automate the disk swap procedure to recover your VM
+Если у вас нет доступа к GRUB, просмотрите [это](https://youtu.be/m5t0GZ5oGAc) видео и посмотрите, как можно легко автоматизировать процедуру переключения диска для восстановления виртуальной машины.
 
-## <a name="unofficial-solution"></a>Unofficial solution
+## <a name="unofficial-solution"></a>Неофициальное решение
 
-Recovery of a VM can also be attempted with the unsupported BETA script [ALAR](https://github.com/malachma/azure-auto-recover)
+Восстановление виртуальной машины также можно выполнить с помощью неподдерживаемой бета-версии скрипта [Алар](https://github.com/malachma/azure-auto-recover)

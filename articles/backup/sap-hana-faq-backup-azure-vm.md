@@ -22,7 +22,7 @@ ms.locfileid: "74287844"
 
 ### <a name="do-successful-backup-jobs-create-alerts"></a>Отправляются ли оповещения об успешно выполненных заданиях резервного копирования?
 
-Нет. Для успешно выполненных заданий резервного копирования не создаются оповещения. Оповещения отправляются только в случае сбоя. Подробное поведение оповещений портала описано [здесь](https://docs.microsoft.com/azure/backup/backup-azure-monitoring-built-in-monitor). Однако если вы хотите получать оповещения даже для успешных заданий, можно использовать [Azure Monitor](https://docs.microsoft.com/azure/backup/backup-azure-monitoring-use-azuremonitor).
+Нет Для успешно выполненных заданий резервного копирования не создаются оповещения. Оповещения отправляются только в случае сбоя. Подробное поведение оповещений портала описано [здесь](https://docs.microsoft.com/azure/backup/backup-azure-monitoring-built-in-monitor). Однако если вы хотите получать оповещения даже для успешных заданий, можно использовать [Azure Monitor](https://docs.microsoft.com/azure/backup/backup-azure-monitoring-use-azuremonitor).
 
 ### <a name="can-i-see-scheduled-backup-jobs-in-the-backup-jobs-menu"></a>Можно ли просмотреть запланированные задания резервного копирования в меню задания резервного копирования?
 

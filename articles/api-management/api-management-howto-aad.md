@@ -23,7 +23,7 @@ ms.locfileid: "74454452"
 
 В этой статье показывается, как включить доступ к порталу разработчика для пользователей из каталога Active Directory Azure (Azure AD). В этом руководстве также показано, как управлять группами пользователей Azure AD путем добавления внешних групп, содержащих пользователей.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 - Выполните задачи в кратком руководстве по [созданию экземпляра службы управления API Azure](get-started-create-service-instance.md).
 - Импортируйте и опубликуйте экземпляр службы управления API Azure. Дополнительные сведения см. в статье об [импорте и публикации](import-and-publish.md).
@@ -33,35 +33,35 @@ ms.locfileid: "74454452"
 ## <a name="authorize-developer-accounts-by-using-azure-ad"></a>Авторизация учетных записей разработчиков с помощью Azure AD
 
 1. Войдите на [портале Azure](https://portal.azure.com). 
-2. Выберите ![Стрелка](./media/api-management-howto-aad/arrow.png).
+2. Выберите ![стрелка](./media/api-management-howto-aad/arrow.png).
 3. В поле поиска введите **api**.
 4. Выберите **Службы управления API**.
 5. Выберите экземпляр службы управления API.
-6. Under **Security**, select **Identities**.
+6. В разделе **Безопасность**выберите **удостоверение**.
 7. Выберите **+ Добавить** в верхней части экрана.
 
     Справа отобразится область **Добавление поставщика удостоверений**.
 8. В разделе **Тип поставщика** выберите **Azure Active Directory**.
 
     В области отобразятся элементы управления, необходимые для ввода других требуемых сведений. Элементы управления включают **идентификатор клиента** и **секрет клиента**. (Эти элементы управления описаны далее в этой статье.)
-9. Make a note of the content of **Redirect URL**.
+9. Запишите содержимое **URL-адреса перенаправления**.
     
    ![Шаги для добавления поставщика удостоверений на портале Azure](./media/api-management-howto-aad/api-management-with-aad001.png)  
 10. В браузере откройте другую вкладку. 
-11. Navigate to the [Azure portal - App registrations](https://go.microsoft.com/fwlink/?linkid=2083908) to register an app in Active Directory.
-12. Under **Manage**, select **App registrations**.
-13. Выберите **Новая регистрация**. On the **Register an application** page, set the values as follows:
+11. Перейдите к [портал Azure-регистрация приложений](https://go.microsoft.com/fwlink/?linkid=2083908) , чтобы зарегистрировать приложение в Active Directory.
+12. В разделе **Управление**выберите **Регистрация приложений**.
+13. Выберите **Новая регистрация**. На странице **Регистрация приложения** задайте следующие значения:
     
-* Set **Name** to a meaningful name. e.g., *developer-portal*
-* Set **Supported account types** to **Accounts in this organizational directory only**. 
-* Set **Redirect URI** to the value you got from step 9. 
-* Choose **Register**. 
+* Задайте **понятное имя.** Например, *Developer — портал*
+* Установите для **поддерживаемых типов учетных** записей **учетные записи только в этом каталоге Организации**. 
+* Задайте для **URI перенаправления** значение, полученное на шаге 9. 
+* Выберите **зарегистрировать**. 
 
-14.  After the application is registered, copy the **Application (client) ID** from the **Overview** page. 
-15. Go back to your API Management instance. In the **Add identity provider** window, paste the **Application (client) ID** value into the **Client ID** box.
-16. Switch back to the Azure AD configuration, Select **Certificates & secrets** under **Manage**. Select the **New client secret** button. Enter a value in **Description**, select any option for **Expires** and choose **Add**. Copy the client secret value before leaving the page. Они понадобятся вам на следующем шаге. 
-17. Under **Manage**, select **Authentication** and then select **ID tokens** under **Implicit Grant**
-18. Go back to your API Management instance, paste the secret into the **Client secret** box.
+14.  После регистрации приложения скопируйте **идентификатор приложения (Client)** на странице **Обзор** . 
+15. Вернитесь к экземпляру управления API. В окне **Добавление поставщика удостоверений** вставьте значение **Application (Client) ID** в поле **Client ID (идентификатор клиента** ).
+16. Вернитесь к конфигурации Azure AD, выберите **сертификаты & секреты** в разделе **Управление**. Нажмите кнопку **создать секрет клиента** . Введите значение в окне **Описание**, выберите любой вариант для параметра **срок действия** и нажмите кнопку **добавить**. Скопируйте значение секрета клиента, прежде чем покинуть страницу. Они понадобятся вам на следующем шаге. 
+17. В разделе **Управление**выберите **Проверка подлинности** , а затем выберите **токены идентификации** в разделе **неявное предоставление** .
+18. Вернитесь к экземпляру управления API, вставьте секрет в поле **секрет клиента** .
 
     > [!IMPORTANT]
     > Обязательно обновите **секрет клиента** до истечения срока действия ключа. 
@@ -71,9 +71,9 @@ ms.locfileid: "74454452"
 19. В окне **Добавление поставщика удостоверений** также содержится текстовое поле **Разрешенные клиенты**. Укажите домены экземпляров Azure AD, которым требуется предоставить доступ к API экземпляра службы управления API. Несколько доменов можно разделять символами начала новой строки, пробелами или запятыми.
 
 > [!NOTE]
-> В разделе **Разрешенные клиенты** можно указать несколько доменов. Прежде чем какой-либо пользователь сможет выполнить вход из домена, отличного от домена, в котором было зарегистрировано приложение, глобальный администратор этого другого домена должен предоставить разрешение для доступа приложения к данным каталога. To grant permission, the global administrator should: a. Перейдите на страницу `https://<URL of your developer portal>/aadadminconsent` (например, https://contoso.portal.azure-api.net/aadadminconsent).
-> б) Ввести имя домена клиента Azure AD, к которому требуется предоставить доступ.
-> в) Нажмите кнопку **Submit** (Отправить). 
+> В разделе **Разрешенные клиенты** можно указать несколько доменов. Прежде чем какой-либо пользователь сможет выполнить вход из домена, отличного от домена, в котором было зарегистрировано приложение, глобальный администратор этого другого домена должен предоставить разрешение для доступа приложения к данным каталога. Чтобы предоставить разрешение, глобальный администратор должен: a. Перейдите на страницу `https://<URL of your developer portal>/aadadminconsent` (например, https://contoso.portal.azure-api.net/aadadminconsent).
+> b. Ввести имя домена клиента Azure AD, к которому требуется предоставить доступ.
+> c. Нажмите кнопку **Submit** (Отправить). 
 
 20.  После указания требуемой конфигурации выберите **Добавить**.
 
@@ -81,16 +81,16 @@ ms.locfileid: "74454452"
 
 ## <a name="add-an-external-azure-ad-group"></a>Добавление внешней группы Azure AD
 
-After you enable access for users in an Azure AD tenant, you can add Azure AD groups into API Management. As a result, you can control product visibility using Azure AD groups.
+После включения доступа для пользователей в клиенте Azure AD можно добавить группы Azure AD в службу управления API. В результате вы можете управлять видимостью продуктов с помощью групп Azure AD.
 
-To add an external Azure AD group into APIM, you must first complete the previous section. Additionally, the application you registered must be granted access to the Azure Active Directory Graph API with `Directory.ReadAll` permission by following below steps: 
+Чтобы добавить внешнюю группу Azure AD в APIM, сначала необходимо выполнить действия, описанные в предыдущем разделе. Кроме того, зарегистрированному приложению необходимо предоставить доступ к Azure Active Directory API Graph с разрешением `Directory.ReadAll` следующим образом: 
 
-1. Go back to your App Registration that was created in the previous section
-2. Click on the **API Permissions** tab, then click **+Add a permission** button 
-3. In the **Request API Permissions** pane, select the **Microsoft APIs** tab, and scroll to the bottom to find the **Azure Active Directory Graph** tile under the Supported Legacy APIs section and click it. Then click **APPLICATION Permissions** button, and select **Directory.ReadAll** permission and then add that permission using button at the bottom. 
-4. Click the **Grant admin consent for {tenantname}** button so that you grant access for all users in this directory. 
+1. Вернитесь к регистрации приложения, созданному в предыдущем разделе.
+2. Перейдите на вкладку **разрешения API** , а затем нажмите кнопку **+ Добавить разрешение** . 
+3. В области **разрешения API запроса** выберите вкладку API- **интерфейсы Майкрософт** и прокрутите вниз, чтобы найти плитку **Azure Active Directory графа** в разделе Поддерживаемые устаревшие API-интерфейсы, и щелкните ее. Затем нажмите кнопку **разрешения приложения** и выберите разрешение **Directory. ReadAll** , а затем добавьте это разрешение с помощью кнопки внизу. 
+4. Нажмите кнопку **предоставить согласие администратора для {tenantname}** , чтобы предоставить доступ всем пользователям в этом каталоге. 
 
-Now you can add external Azure AD groups from the **Groups** tab of your API Management instance.
+Теперь можно добавить внешние группы Azure AD на вкладке **группы** экземпляра службы управления API.
 
 1. Выберите вкладку **Группы** .
 2. Нажмите кнопку **Добавить группу AAD**.
@@ -98,22 +98,22 @@ Now you can add external Azure AD groups from the **Groups** tab of your API Man
 3. Выберите группу, которую нужно добавить.
 4. Нажмите кнопку **Выбрать**.
 
-После добавления внешней группы Azure AD можно просмотреть и настроить ее свойства. Select the name of the group from the **Groups** tab. From here, you can edit **Name** and **Description** information for the group.
+После добавления внешней группы Azure AD можно просмотреть и настроить ее свойства. Выберите имя группы на вкладке **группы** . Здесь можно изменить **имя** и **Описание** для группы.
  
 Пользователи из настроенного экземпляра Azure AD теперь могут входить на портал разработчика, просматривать любые группы, которые они могут видеть, и подписываться на них.
 
-## <a name="a-idlog_in_to_dev_portal-developer-portal---add-azure-ad-account-authentication"></a><a id="log_in_to_dev_portal"/> Developer portal - add Azure AD account authentication
+## <a name="a-idlog_in_to_dev_portal-developer-portal---add-azure-ad-account-authentication"></a>портал разработчика <a id="log_in_to_dev_portal"/>. Добавление проверки подлинности учетной записи Azure AD
 
-In the developer portal, sign-in with AAD is possible with the **OAuth buttons** widget. The widget is already included on the sign-in page of the default developer portal content.
+На портале разработчика вход с помощью AAD возможен с мини-приложением **кнопок OAuth** . Мини-приложение уже включено на странице входа в содержимое портала разработчика по умолчанию.
 
-![AAD buttons widget](./media/api-management-howto-aad/portal-oauth-widget.png)
+![Мини-приложение кнопок AAD](./media/api-management-howto-aad/portal-oauth-widget.png)
 
-Although a new account will be automatically created whenever a new user signs in with AAD, you may consider adding the same widget to the sign-up page.
+Хотя новая учетная запись будет автоматически создана всякий раз, когда новый пользователь входит в состав AAD, вы можете добавить то же мини-приложение на страницу регистрации.
 
 > [!IMPORTANT]
-> You need to [republish the portal](api-management-howto-developer-portal-customize.md#publish) for the AAD changes to take effect.
+> Чтобы изменения AAD вступили в силу, необходимо [повторно опубликовать портал](api-management-howto-developer-portal-customize.md#publish) .
 
-## <a name="legacy-developer-portal---how-to-sign-in-with-azure-ad"></a>Legacy developer portal - how to sign in with Azure AD
+## <a name="legacy-developer-portal---how-to-sign-in-with-azure-ad"></a>Устаревший портал разработчика. как войти с помощью Azure AD
 
 [!INCLUDE [api-management-portal-legacy.md](../../includes/api-management-portal-legacy.md)]
 

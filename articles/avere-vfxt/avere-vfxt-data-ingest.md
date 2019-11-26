@@ -25,12 +25,12 @@ ms.locfileid: "74480598"
 
 В этой статье описываются стратегии создания многоклиентской многопоточной системы копирования файлов для перемещения данных в кластер Avere vFXT. В ней описываются концепции передачи файлов и точки принятия решений, которые можно использовать для эффективного копирования данных с использованием нескольких клиентов и простых команд копирования.
 
-Здесь также описываются некоторые служебные программы, которые могут помочь. The ``msrsync`` utility can be used to partially automate the process of dividing a dataset into buckets and using ``rsync`` commands. Сценарий ``parallelcp`` — это другая служебная программа, которая считывает исходный каталог и выдает команды копирования автоматически. Also, the ``rsync`` tool can be used in two phases to provide a quicker copy that still provides data consistency.
+Здесь также описываются некоторые служебные программы, которые могут помочь. Служебную программу ``msrsync`` можно использовать для частичной автоматизации процесса разделения набора данных на сегменты и использования ``rsync`` команд. Сценарий ``parallelcp`` — это другая служебная программа, которая считывает исходный каталог и выдает команды копирования автоматически. Кроме того, средство ``rsync`` можно использовать в двух стадиях, чтобы обеспечить более быструю копию, которая по-прежнему обеспечивает согласованность данных.
 
 Щелкните ссылку, чтобы перейти к нужному разделу:
 
 * [Пример копирования вручную](#manual-copy-example) (подробное объяснение использования команд копирования)
-* [Two-phase rsync example](#use-a-two-phase-rsync-process)
+* [Пример 2-фазного rsync](#use-a-two-phase-rsync-process)
 * [Пример частичной автоматизации (msrsync)](#use-the-msrsync-utility)
 * [Пример параллельного копирования](#use-the-parallel-copy-script)
 
@@ -113,7 +113,7 @@ cp -R /mnt/source/dir1/dir1d /mnt/destination/dir1/ &
 
 ### <a name="when-to-add-mount-points"></a>Когда добавлять точки подключения
 
-После того как будет достаточно параллельных потоков, направленных к одной точке подключения файловой системы, наступит момент, когда добавление потоков не обеспечит больше пропускной способности. (Throughput will be measured in files/second or bytes/second, depending on your type of data.) Or worse, over-threading can sometimes cause a throughput degradation.
+После того как будет достаточно параллельных потоков, направленных к одной точке подключения файловой системы, наступит момент, когда добавление потоков не обеспечит больше пропускной способности. (Пропускная способность будет измеряться в файлах/сек или байт/с в зависимости от типа данных.) Или, что еще хуже, иногда может вызвать снижение пропускной способности.
 
 В этом случае можно добавить клиентские точки подключения к другим IP-адресам кластера vFXT, используя тот же путь подключения к удаленной файловой системе:
 
@@ -240,7 +240,7 @@ for i in 1 2 3 4 ; do sed -n ${i}~4p /tmp/foo > /tmp/client${i}; done
 for i in 1 2 3 4 5; do sed -n ${i}~5p /tmp/foo > /tmp/client${i}; done
 ```
 
-And for six.... Extrapolate as needed.
+И для шести.... При необходимости экстраполяция.
 
 ```bash
 for i in 1 2 3 4 5 6; do sed -n ${i}~6p /tmp/foo > /tmp/client${i}; done
@@ -258,44 +258,44 @@ for i in 1 2 3 4 5 6; do for j in $(cat /tmp/client${i}); do echo "cp -p -R /mnt
 
 Целью является параллельное выполнение нескольких потоков этих сценариев в каждом клиенте (одновременно в нескольких клиентах).
 
-## <a name="use-a-two-phase-rsync-process"></a>Use a two-phase rsync process
+## <a name="use-a-two-phase-rsync-process"></a>Использовать двухэтапный процесс rsync
 
-The standard ``rsync`` utility does not work well for populating cloud storage through the Avere vFXT for Azure system because it generates a large number of file create and rename operations to guarantee data integrity. However, you can safely use the ``--inplace`` option with ``rsync`` to skip the more careful copying procedure if you follow that with a second run that checks file integrity.
+Стандартная служебная программа ``rsync`` не подходит для заполнения облачного хранилища с помощью Авере Вфкст для системы Azure, так как создает большое количество операций создания и переименования файлов для обеспечения целостности данных. Однако можно безопасно использовать параметр ``--inplace`` с ``rsync``, чтобы пропустить более аккуратную процедуру копирования, если вы пойдете за это с помощью второго запуска, который проверяет целостность файлов.
 
-A standard ``rsync`` copy operation creates a temporary file and fills it with data. If the data transfer completes successfully, the temporary file is renamed to the original filename. This method guarantees consistency even if the files are accessed during copy. But this method generates more write operations, which slows file movement through the cache.
+Операция копирования типа "Стандартный ``rsync``" создает временный файл и заполняет его данными. Если перенос данных завершается успешно, временный файл переименовывается в исходное имя файла. Этот метод гарантирует согласованность даже при доступе к файлам во время копирования. Но этот метод создает больше операций записи, что снижает скорость перемещения файлов через кэш.
 
-The option ``--inplace`` writes the new file directly in its final location. Files are not guaranteed to be consistent during transfer, but that is not important if you are priming a storage system for use later.
+Параметр ``--inplace`` записывает новый файл непосредственно в его конечном расположении. Во время перемещения не гарантируется согласованность файлов, но это неважно, если вы подготовка систему хранения данных для последующего использования.
 
-The second ``rsync`` operation serves as a consistency check on the first operation. Because the files have already been copied, the second phase is a quick scan to ensure that the files on the destination match the files on the source. If any files don't match, they are recopied.
+Вторая операция ``rsync`` выполняет проверку согласованности первой операции. Поскольку файлы уже скопированы, второй этап является быстрой проверкой, чтобы убедиться, что файлы в месте назначения соответствуют файлам в источнике. Если какие либо файлы не совпадают, они будут скопированы повторно.
 
-You can issue both phases together in one command:
+В одной команде можно выдавать оба этапа:
 
 ```bash
 rsync -azh --inplace <source> <destination> && rsync -azh <source> <destination>
 ```
 
-This method is a simple and time-effective method for datasets up to the number of files the internal directory manager can handle. (This is typically 200 million files for a 3-node cluster, 500 million files for a six-node cluster, and so on.)
+Этот метод является простым и временным методом для наборов данных вплоть до количества файлов, которое может быть обработано внутренним диспетчером каталогов. (Обычно это 200 000 000 файлов для кластера из трех узлов, 500 000 000 файлов для кластера из шести узлов и т. д.)
 
-## <a name="use-the-msrsync-utility"></a>Use the msrsync utility
+## <a name="use-the-msrsync-utility"></a>Использование служебной программы мсрсинк
 
 Средство ``msrsync`` также можно использовать для перемещения данных в основное серверное файловое хранилище кластера Avere. Это средство предназначено для оптимизации использования пропускной способности путем запуска нескольких параллельных процессов ``rsync``. Оно доступно на сайте GitHub по адресу <https://github.com/jbd/msrsync>.
 
 ``msrsync`` разбивает исходный каталог на отдельные группы, а затем запускает отдельные процессы ``rsync`` в каждой группе.
 
-Предварительное тестирование с использованием четырех основных виртуальных машин показало наилучшую эффективность при выполнении 64 процессов. Используйте параметр ``-p`` в ``msrsync``, чтобы настроить 64 процесса.
+Предварительное тестирование с использованием четырех основных виртуальных машин показало наилучшую эффективность при выполнении 64 процессов. Используйте параметр ``msrsync`` в ``-p``, чтобы настроить 64 процесса.
 
-You also can use the ``--inplace`` argument with ``msrsync`` commands. If you use this option, consider running a second command (as with [rsync](#use-a-two-phase-rsync-process), described above) to ensure data integrity.
+Кроме того, можно использовать аргумент ``--inplace`` с командами ``msrsync``. Если вы используете этот параметр, попробуйте выполнить вторую команду (как в случае с [rsync](#use-a-two-phase-rsync-process), описанной выше), чтобы обеспечить целостность данных.
 
-``msrsync`` can only write to and from local volumes. Источник и назначение должны быть доступны как локальные точки подключения в виртуальной сети кластера.
+``msrsync`` может выполнять запись только на локальные тома и с них. Источник и назначение должны быть доступны как локальные точки подключения в виртуальной сети кластера.
 
-To use ``msrsync`` to populate an Azure cloud volume with an Avere cluster, follow these instructions:
+Чтобы использовать ``msrsync`` для заполнения облачного тома Azure с кластером Авере, выполните следующие действия:
 
-1. Install ``msrsync`` and its prerequisites (rsync and Python 2.6 or later)
+1. Установка ``msrsync`` и необходимых компонентов (rsync и Python 2,6 или более поздней версии)
 1. Определите общее число копируемых файлов и каталогов.
 
-   For example, use the Avere utility ``prime.py`` with arguments ```prime.py --directory /path/to/some/directory``` (available by downloading url <https://github.com/Azure/Avere/blob/master/src/clientapps/dataingestor/prime.py>).
+   Например, используйте служебную программу Авере ``prime.py`` с аргументами ```prime.py --directory /path/to/some/directory``` (доступно путем скачивания URL-адреса <https://github.com/Azure/Avere/blob/master/src/clientapps/dataingestor/prime.py>).
 
-   If not using ``prime.py``, you can calculate the number of items with the GNU ``find`` tool as follows:
+   Если не используется ``prime.py``, число элементов можно вычислить с помощью средства GNU ``find`` следующим образом:
 
    ```bash
    find <path> -type f |wc -l         # (counts files)
@@ -305,13 +305,13 @@ To use ``msrsync`` to populate an Azure cloud volume with an Avere cluster, foll
 
 1. Разделите число элементов на 64, чтобы определить количество элементов для каждого процесса. Используйте это число с параметром ``-f``, чтобы задать размер групп при выполнении команды.
 
-1. Issue the ``msrsync`` command to copy files:
+1. Выполните команду ``msrsync``, чтобы скопировать файлы:
 
    ```bash
    msrsync -P --stats -p 64 -f <ITEMS_DIV_64> --rsync "-ahv" <SOURCE_PATH> <DESTINATION_PATH>
    ```
 
-   If using ``--inplace``, add a second execution without the option to check that the data is correctly copied:
+   При использовании ``--inplace``Добавьте второе выполнение без флажка, чтобы проверить, правильно ли скопированы данные:
 
    ```bash
    msrsync -P --stats -p 64 -f <ITEMS_DIV_64> --rsync "-ahv --inplace" <SOURCE_PATH> <DESTINATION_PATH> && msrsync -P --stats -p 64 -f <ITEMS_DIV_64> --rsync "-ahv" <SOURCE_PATH> <DESTINATION_PATH>
@@ -384,7 +384,7 @@ EOM
 
 Исходные файлы хранятся в точке подключения кластера Avere, а файлы объектов — на локальном жестком диске.
 
-Здесь используется сценарий параллельного копирования, описанный выше. Для обеспечения параллелизации с ``parallelcp`` и ``make`` используется параметр ``-j``.
+Здесь используется сценарий параллельного копирования, описанный выше. Для обеспечения параллелизации с ``-j`` и ``parallelcp`` используется параметр ``make``.
 
 ```bash
 sudo apt-get update

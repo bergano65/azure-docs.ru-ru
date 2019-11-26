@@ -288,4 +288,4 @@ POST https://management.azure.com/providers/Microsoft.ResourceGraph/resourceChan
 
 - См. язык, используемый в [начальных запросах](../samples/starter.md).
 - См. Дополнительные сведения о расширенном использовании в [расширенных запросах](../samples/advanced.md).
-- Дополнительные сведения об [исследовании ресурсов](../concepts/explore-resources.md).
+- Узнайте больше о том, как [изучать ресурсы](../concepts/explore-resources.md).

@@ -28,51 +28,51 @@ ms.locfileid: "74479367"
 
 В этой статье описывается, как определять запреты назначений.
 
-## <a name="how-deny-assignments-are-created"></a>How deny assignments are created
+## <a name="how-deny-assignments-are-created"></a>Как создаются запрещенные назначения
 
-Deny assignments are created and managed by Azure to protect resources. Azure Blueprints and Azure managed apps use deny assignments to protect system-managed resources. Azure Blueprints and Azure managed apps are the only way that deny assignments can be created. You can't directly create your own deny assignments.  Дополнительные сведения см. в статье о [защите новых ресурсов с помощью блокировок ресурсов Azure Blueprints](../governance/blueprints/tutorials/protect-new-resources.md).
+Отклонить назначения создаются и управляются Azure для защиты ресурсов. В схемах Azure и управляемых приложениях Azure для защиты управляемых системой ресурсов используются запрещенные назначения. Схемы Azure и управляемые приложения Azure — это единственный способ, которым могут быть созданы отклонения назначений. Вы не можете напрямую создавать собственные назначения Deny.  Дополнительные сведения см. в статье о [защите новых ресурсов с помощью блокировок ресурсов Azure Blueprints](../governance/blueprints/tutorials/protect-new-resources.md).
 
 > [!NOTE]
-> You can't directly create your own deny assignments.
+> Вы не можете напрямую создавать собственные назначения Deny.
 
-## <a name="compare-role-assignments-and-deny-assignments"></a>Compare role assignments and deny assignments
+## <a name="compare-role-assignments-and-deny-assignments"></a>Сравнение назначений ролей и запрета назначений
 
-Deny assignments follow a similar pattern as role assignments, but also have some differences.
+Запрет назначений соответствует шаблону, аналогичному назначению ролей, но также имеет некоторые различия.
 
-| Возможность | Назначение роли | Deny assignment |
+| Функция | Назначение роли | Запретить назначение |
 | --- | --- | --- |
 | Предоставление доступа | :heavy_check_mark: |  |
 | Запрет доступа |  | :heavy_check_mark: |
-| Can be directly created | :heavy_check_mark: |  |
-| Apply at a scope | :heavy_check_mark: | :heavy_check_mark: |
-| Exclude principals |  | :heavy_check_mark: |
-| Prevent inheritance to child scopes |  | :heavy_check_mark: |
-| Apply to [classic subscription administrator](rbac-and-directory-admin-roles.md) assignments |  | :heavy_check_mark: |
+| Можно создать напрямую | :heavy_check_mark: |  |
+| Применить к области | :heavy_check_mark: | :heavy_check_mark: |
+| Исключить субъекты |  | :heavy_check_mark: |
+| Запретить наследование для дочерних областей |  | :heavy_check_mark: |
+| Применить к [классическим](rbac-and-directory-admin-roles.md) назначениям администратора подписки |  | :heavy_check_mark: |
 
 ## <a name="deny-assignment-properties"></a>Свойства запретов назначений
 
  Запрет назначений имеет следующие свойства:
 
 > [!div class="mx-tableFixed"]
-> | Свойство | Обязательно для заполнения | Тип | Описание |
+> | Свойство | обязательные | введите | ОПИСАНИЕ |
 > | --- | --- | --- | --- |
-> | `DenyAssignmentName` | ДА | Строка | Отображаемое имя запрета назначения. Имена должны быть уникальными в пределах области. |
-> | `Description` | Нет | Строка | Описание запрета назначения. |
+> | `DenyAssignmentName` | Yes | Строка, | Отображаемое имя запрета назначения. Имена должны быть уникальными в пределах области. |
+> | `Description` | Нет | Строка, | Описание запрета назначения. |
 > | `Permissions.Actions` | Минимум один Actions или один DataActions. | String[] | Массив строк, определяющих операции управления, к которым запрет назначения блокирует доступ. |
 > | `Permissions.NotActions` | Нет | String[] | Массив строк, определяющих операции управления, освобожденные от запрета назначения. |
 > | `Permissions.DataActions` | Минимум один Actions или один DataActions. | String[] | Массив строк, определяющих операции данных, к которым запрет назначения блокирует доступ. |
 > | `Permissions.NotDataActions` | Нет | String[] | Массив строк, определяющих операции данных, исключенные из запрета назначения. |
-> | `Scope` | Нет | Строка | Строка, определяющая область применения запрета назначения. |
-> | `DoNotApplyToChildScopes` | Нет | Логический | Указывает, применяется ли запрет назначения к дочерним областям. Значение по умолчанию — false. |
-> | `Principals[i].Id` | ДА | String[] | Массив идентификаторов объектов для субъектов Azure AD (пользователь, группа, субъект-служба или управляемое удостоверение), к которым применяется запрет назначения. Чтобы охватить все субъекты, оставьте GUID пустым (`00000000-0000-0000-0000-000000000000`). |
-> | `Principals[i].Type` | Нет | String[] | An array of object types represented by Principals[i].Id. Set to `SystemDefined` to represent all principals. |
+> | `Scope` | Нет | Строка, | Строка, определяющая область применения запрета назначения. |
+> | `DoNotApplyToChildScopes` | Нет | Логическое значение. | Указывает, применяется ли запрет назначения к дочерним областям. Значение по умолчанию — false. |
+> | `Principals[i].Id` | Yes | String[] | Массив идентификаторов объектов для субъектов Azure AD (пользователь, группа, субъект-служба или управляемое удостоверение), к которым применяется запрет назначения. Чтобы охватить все субъекты, оставьте GUID пустым (`00000000-0000-0000-0000-000000000000`). |
+> | `Principals[i].Type` | Нет | String[] | Массив типов объектов, представленных участниками [i]. ID. Задайте значение `SystemDefined` для представления всех субъектов. |
 > | `ExcludePrincipals[i].Id` | Нет | String[] | Массив идентификаторов объектов для субъектов Azure AD (пользователь, группа, субъект-служба или управляемое удостоверение), к которым не применяется запрет назначения. |
 > | `ExcludePrincipals[i].Type` | Нет | String[] | Массив типов объектов, представленный ExcludePrincipals[i].Id. |
-> | `IsSystemProtected` | Нет | Логический | Указывает, был ли запрет назначения создан Azure, а значит, не может быть изменен или удален. В настоящее время все запреты назначений защищаются системой. |
+> | `IsSystemProtected` | Нет | Логическое значение. | Указывает, был ли запрет назначения создан Azure, а значит, не может быть изменен или удален. В настоящее время все запреты назначений защищаются системой. |
 
-## <a name="the-all-principals-principal"></a>The All Principals principal
+## <a name="the-all-principals-principal"></a>Участник всех участников
 
-To support deny assignments, a system-defined principal named *All Principals* has been introduced. Этот субъект представляет всех пользователей, группы, субъекты-службы и управляемые удостоверения в каталоге Azure AD. Если идентификатор субъекта имеет нулевое значение GUID (`00000000-0000-0000-0000-000000000000`), а тип субъекта — `SystemDefined`, субъект представляет все субъекты. In Azure PowerShell output, All Principals looks like the following:
+Для поддержки отклонения назначений был введен определенный системой участник с именем *все субъекты* . Этот субъект представляет всех пользователей, группы, субъекты-службы и управляемые удостоверения в каталоге Azure AD. Если идентификатор субъекта имеет нулевое значение GUID (`00000000-0000-0000-0000-000000000000`), а тип субъекта — `SystemDefined`, субъект представляет все субъекты. В Azure PowerShell выходных данных все субъекты имеют следующий вид:
 
 ```azurepowershell
 Principals              : {
@@ -82,12 +82,12 @@ Principals              : {
                           }
 ```
 
-All Principals can be combined with `ExcludePrincipals` to deny all principals except some users. All Principals has the following constraints:
+Все участники могут сочетаться с `ExcludePrincipals`, чтобы запретить все субъекты, кроме пользователей. Все субъекты имеют следующие ограничения.
 
 - Может использоваться только в `Principals` и не может использоваться в `ExcludePrincipals`.
 - Для параметра `Principals[i].Type` нужно задать значение `SystemDefined`.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-* [List deny assignments for Azure resources using the Azure portal](deny-assignments-portal.md)
+* [Список запрещенных назначений для ресурсов Azure с помощью портал Azure](deny-assignments-portal.md)
 * [Общие сведения об определениях ролей для ресурсов Azure](role-definitions.md)

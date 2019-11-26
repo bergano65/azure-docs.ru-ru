@@ -15,7 +15,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/25/2019
 ms.locfileid: "74485446"
 ---
-Службы вычислений Azure предлагают размеры виртуальных машин ценовой категории "Изолированный", которые используют оборудование определенного типа и выделяются отдельному клиенту.  Эти размеры лучше всего подходят для рабочих нагрузок, требующих высокого уровня изоляции от других клиентов. Это могут быть рабочие нагрузки, связанные с соблюдением соответствия и нормативных требований.  Клиенты также могут разделить ресурсы этих изолированных виртуальных машин благодаря [поддержке вложенных виртуальных машин в Azure](https://azure.microsoft.com/blog/nested-virtualization-in-azure/).
+Служба вычислений Azure предлагает размеры виртуальных машин, которые используют оборудование определенного типа и выделяются отдельному клиенту.  Эти размеры лучше всего подходят для рабочих нагрузок, требующих высокого уровня изоляции от других клиентов. Это могут быть рабочие нагрузки, включающие в себя такие элементы, как соблюдение соответствия и нормативных требований.  Клиенты также могут разделить ресурсы этих изолированных виртуальных машин благодаря [поддержке вложенных виртуальных машин в Azure](https://azure.microsoft.com/blog/nested-virtualization-in-azure/).
 
 Использование размера изолированной виртуальной машины гарантирует, что на конкретном экземпляре сервера будет запущена только ваша виртуальная машина.  Ниже перечислены текущие предложения изолированных виртуальных машин:
 * Standard_E64is_v3
@@ -27,80 +27,80 @@ ms.locfileid: "74485446"
 * Standard_D15_v2
 * Standard_F72s_v2
 
-You can learn more about each available isolated size [here](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-memory).
+Дополнительные сведения о каждом доступном изолированном размере см. [здесь](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-memory).
 
-## <a name="retiring-d15_v2ds15_v2-isolation-on-february-15-2020"></a>Retiring D15_v2/DS15_v2 isolation on February 15, 2020
-We recently announced the Preview of Azure Dedicated Host, which allows you to run your organization’s Linux and Windows virtual machines on single-tenant physical servers. We plan to fully replace isolated Azure VMs with Azure Dedicated Host. After **February 15, 2020** the D15_v2/DS15_v2 Azure VMs may no longer be hardware isolated.
+## <a name="retiring-d15_v2ds15_v2-isolation-on-february-15-2020"></a>Снятие изоляции D15_v2 и DS15_v2 с 15 февраля 2020 г.
+Недавно мы объявили о предварительной версии выделенного узла Azure, который позволяет запускать виртуальные машины Linux и Windows на физических серверах с одним клиентом. Мы планируем полностью заменить изолированные виртуальные машины Azure выделенным узлом Azure. После **15 февраля 2020** виртуальные машины Azure D15_v2/DS15_v2 могут больше не быть изолированы от оборудования.
 
-## <a name="how-does-this-affect-me"></a>How does this affect me?
-After February 15, 2020, we will no longer provide an isolation guarantee for your D15_v2/DS15_v2 Azure virtual machines. 
+## <a name="how-does-this-affect-me"></a>Как это влияет на меня?
+После 15 февраля 2020 мы больше не будем предоставлять гарантию изоляции для виртуальных машин Azure D15_v2 и DS15_v2. 
 
-## <a name="what-actions-should-i-take"></a>What actions should I take?
-If hardware isolation is not required for you, there is no action you need to take. 
+## <a name="what-actions-should-i-take"></a>Какие действия следует предпринять?
+Если для вас не требуется изоляция оборудования, никаких действий предпринимать не нужно. 
 
-If isolation is required to you, before February 15, 2020, you would need to either:
+Если для вас требуется изоляция, до 15 февраля 2020 необходимо выполнить одно из следующих действий.
 
-•   [Migrate](https://azure.microsoft.com/blog/introducing-azure-dedicated-host) your workload to Azure Dedicated Host Preview
+• [Перенос](https://azure.microsoft.com/blog/introducing-azure-dedicated-host) рабочей нагрузки в предварительную версию выделенного узла Azure
 
-•   [Request access](https://aka.ms/D15iRequestAccess) to a D15i_v2 and DS15i_v2 Azure VM, to get the same price performance. This option is only available for pay-as-you-go and one-year reserved instance scenarios.    
+• [Запросить доступ](https://aka.ms/D15iRequestAccess) к D15i_v2 и DS15i_v2 виртуальной машине Azure, чтобы получить ту же самую цену. Этот параметр доступен только для сценариев зарезервированных экземпляров с оплатой по мере использования и одним годом.    
 
-•   [Migrate](https://azure.microsoft.com/blog/resize-virtual-machines/) your workload to another Azure isolated virtual machine. 
+• [Перенос](https://azure.microsoft.com/blog/resize-virtual-machines/) рабочей нагрузки на другую изолированную виртуальную машину Azure. 
 
-For details see below:
+Дополнительные сведения см. ниже.
 
 ## <a name="timeline"></a>Временная шкала
-| Дата | Действия | 
+| Дата | Действие | 
 | --- | --- |
-| Nov 18, 2019  | Availability of D/DS15i_v2 (PAYG, 1-year RI) |
-| Feb 14, 2020  | Last day to buy D/DS15i_v2 1-year RI | 
-| Feb 15, 2020   | D/DS15_v2 isolation guarantee removed | 
-| May 15, 2021  | Retire D/DS15i_v2 (all customers except who bought 3-year RI of D/DS15_v2 before November 18, 2019)| 
-| Nov 17, 2022   | Retire D/DS15i_v2 when 3-year RIs done (for customers who bought 3-year RI of D/DS15_v2 before November 18, 2019) | 
+| 18 ноября 2019 г.  | Доступность D/DS15i_v2 (PAYG, 1 год, RI) |
+| 14 февраля 2020 г.  | Последний день для покупки D/DS15i_v2 1-year RI | 
+| 15 февраля, 2020   | Гарантия изоляции D/DS15_v2 удалена | 
+| 15 мая 2021 г.  | Снятие DS15_v2 с учета D/DS15i_v2 (все клиенты, кроме тех, которые приобрели 3-летний набор прав () до 18 ноября 2019 г.)| 
+| 17 ноября, 2022   | Снятие с учета D/DS15i_v2 при выполнении 3-летний RIs (для клиентов, которые приобрели 3-летний набор данных (DS15_v2) до 18 ноября 2019) | 
 
-## <a name="faq"></a>Вопросы и ответы
-### <a name="q-why-am-i-not-seeing-the-new-dds15i_v2-sizes-in-the-portal"></a>Q: Why am I not seeing the new D/DS15i_v2 sizes in the portal?
-**A**: If you are a current D/DS15_v2 customer and want to use the new D/DS15i_v2 sizes, please fill this [form](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR0FTPNXHdWpJlO27GE-bHitUMkZUWEFPNjFPNVgyMkhZS05FSzlPTzRIOS4u)
+## <a name="faq"></a>часто задаваемые вопросы
+### <a name="q-why-am-i-not-seeing-the-new-dds15i_v2-sizes-in-the-portal"></a>Вопрос. Почему я не вижу новые размеры D/DS15i_v2 на портале?
+Ответ **. Если**вы являетесь текущим клиентом d/DS15_v2 и хотите использовать новые размеры d и DS15i_v2, заполните эту [форму](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR0FTPNXHdWpJlO27GE-bHitUMkZUWEFPNjFPNVgyMkhZS05FSzlPTzRIOS4u) .
 
-### <a name="q-why-i-am-not-seeing-any-quota-for-the-new-dds15i_v2-sizes"></a>Q: Why I am not seeing any quota for the new D/DS15i_v2 sizes?
-**A**: If you are a current D/DS15_v2 customer and want to use the new D/DS15i_v2 sizes, please fill this [form](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR0FTPNXHdWpJlO27GE-bHitUNU1XUkhZWkNXQUFMNEJWUk9VWkRRVUJPMy4u)
+### <a name="q-why-i-am-not-seeing-any-quota-for-the-new-dds15i_v2-sizes"></a>Вопрос. Почему я не вижу квот для новых размеров D/DS15i_v2?
+Ответ **. Если**вы являетесь текущим клиентом d/DS15_v2 и хотите использовать новые размеры d и DS15i_v2, заполните эту [форму](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR0FTPNXHdWpJlO27GE-bHitUNU1XUkhZWkNXQUFMNEJWUk9VWkRRVUJPMy4u) .
 
-### <a name="q-when-are-the-other-isolated-sizes-going-to-retire"></a>Q: When are the other isolated sizes going to retire?
-**A**: We will provide reminders 12 months in advance of the official decommissioning of the sizes.
+### <a name="q-when-are-the-other-isolated-sizes-going-to-retire"></a>Вопрос. когда следует снять с учета другие изолированные размеры?
+Ответ **. Мы**будем предоставлять напоминания за 12 месяцев до официального списания размеров.
 
-### <a name="q-is-there-a-downtime-when-my-vm-lands-on-a-non-isolated-hardware"></a>Q: Is there a downtime when my vm lands on a non-isolated hardware?
-**A**: If you do not need isolation you do not need to take any action and you would not see any downtime.
+### <a name="q-is-there-a-downtime-when-my-vm-lands-on-a-non-isolated-hardware"></a>Вопрос. есть ли время простоя, когда мои виртуальные машины находятся на неизолированном оборудовании?
+Ответ **. Если**изоляция не требуется, не нужно предпринимать никаких действий, и время простоя не будет отображаться.
 
-### <a name="q-are-there-any-cost-changes-for-moving-to-a-non-isolated-virtual-machine"></a>Q: Are there any cost changes for moving to a non-isolated virtual machine?
-**A**: No 
+### <a name="q-are-there-any-cost-changes-for-moving-to-a-non-isolated-virtual-machine"></a>Вопрос. Существуют ли какие-либо изменения затрат для перехода на виртуальную машину без изоляции?
+Ответ **. нет** 
 
-### <a name="q-i-already-purchased-1--or-3-year-reserved-instance-for-d15_v2-or-ds15_v2-how-will-the-discount-be-applied-to-my-vm-usage"></a>Q: I already purchased 1- or 3-year Reserved Instance for D15_v2 or Ds15_v2. How will the discount be applied to my VM usage?
-**A**: RIs purchased before November 18, 2019 will automatically extend coverage to the new isolated VM series. 
+### <a name="q-i-already-purchased-1--or-3-year-reserved-instance-for-d15_v2-or-ds15_v2-how-will-the-discount-be-applied-to-my-vm-usage"></a>Вопрос. для D15_v2 или Ds15_v2 уже приобретен 1-или 3-летняя зарезервированный экземпляр. Как скидка будет применяться к использованию виртуальной машины?
+Ответ **. Служба RIS,** приобретенная до 18 ноября, 2019 будет автоматически расширять покрытие до новой изолированной серии виртуальных машин. 
 
-| RI |  Instance Size Flexibility | Benefit eligibility |   
+| RI |  Гибкость размера экземпляра | Права на преимущества |   
 | --- | --- | --- |
-|   D15_v2  |   Выключено     |   D15_v2 and D15i_v2 |    
-|   D15_v2  |   Включено  |   D15_v2 series and D15i_v2 will all receive the RI benefit. |    
-|   D14_v2  |   Включено  |   D15_v2 series and D15i_v2 will all receive the RI benefit. |    
+|   D15_v2  |   Отключить     |   D15_v2 и D15i_v2 |    
+|   D15_v2  |   С  |   D15_v2 ряд и D15i_v2 получат преимущество RI. |    
+|   D14_v2  |   С  |   D15_v2 ряд и D15i_v2 получат преимущество RI. |    
  
-Likewise for Dsv2 series.
+Аналогично для ряда Dsv2.
  
-### <a name="q-i-want-to-purchase-additional-reserved-instances-for-dv2-which-one-should-i-choose"></a>Q: I want to purchase additional Reserved Instances for Dv2. Which one should I choose?
-**A**: All RIs purchased after Nov 18, 2019, have the following behavior. 
+### <a name="q-i-want-to-purchase-additional-reserved-instances-for-dv2-which-one-should-i-choose"></a>Вопрос. я хочу приобрести дополнительные зарезервированные экземпляры для Dv2. Какой из них следует выбрать?
+Ответ **. все**службы RIS, приобретенные после 18 ноября 2019, имеют следующее поведение. 
 
-| RI |  Instance Size Flexibility | Benefit eligibility |   
+| RI |  Гибкость размера экземпляра | Права на преимущества |   
 | --- | --- | --- |
-| D15_v2 |  Выключено |   D15_v2 only  
-| D15_v2 |  Включено |    D15_v2 series will receive the RI benefit. The new D15i_v2 will not be eligible for RI benefit from this RI type. | 
-| D15i_v2 |     Выключено | D15i_v2 only |  
-| D15i_v2 |     Включено  | D15i_v2 only | 
+| D15_v2 |  Отключить |   Только D15_v2  
+| D15_v2 |  С |    D15_v2 ряд получит преимущество RI. Новый D15i_v2 не будет иметь права на использование RI из этого типа RI. | 
+| D15i_v2 |     Отключить | Только D15i_v2 |  
+| D15i_v2 |     С  | Только D15i_v2 | 
  
-Instance Size Flexibility cannot be used to apply to any other sizes such as D2_v2, D4_v2, or D15_v2. Likewise, for Dsv2 series.  
+Гибкость размера экземпляра не может использоваться для применения к другим размерам, таким как D2_v2, D4_v2 или D15_v2. Аналогично, для ряда Dsv2.  
  
-### <a name="q-can-i-buy-a-new-3-year-ri-for-d15i_v2-and-ds15i_v2"></a>Q: Can I buy a new 3-year RI for D15i_v2 and DS15i_v2?
-**A**: Unfortunately no, only 1-year RI is available for new purchase.
+### <a name="q-can-i-buy-a-new-3-year-ri-for-d15i_v2-and-ds15i_v2"></a>Вопрос. можно ли приобрести новый 3-летний набор прав для D15i_v2 и DS15i_v2?
+Ответ **. к**сожалению, для новой покупки доступна только годовая RI.
  
-### <a name="q-can-i-move-my-existing-d15_v2ds15_v2-reserve-instance-to-an-isolated-size-reserved-instance"></a>Q: Can I move my existing D15_v2/DS15_v2 Reserve Instance to an isolated size Reserved Instance?
-**A**: This is not necessary since the benefit will apply to both isolated and non-isolated sizes. But Azure will support changing existing D15_v2/DS15_v2 Reserved Instances to D15i_v2/DS15i_v2. For all other Dv2/Dsv2 Reserved Instances, use the existing Reserved Instance or buy new Reserved Instances for the isolated sizes.
+### <a name="q-can-i-move-my-existing-d15_v2ds15_v2-reserve-instance-to-an-isolated-size-reserved-instance"></a>Вопрос. можно ли переместить существующий экземпляр D15_v2 или DS15_v2 в зарезервированный экземпляр изолированного размера?
+Ответ **. это**необязательно, поскольку преимущество будет применяться к изолированным и неизолированным размерам. Но Azure будет поддерживать изменение существующих зарезервированных экземпляров D15_v2 и DS15_v2 для D15i_v2 и DS15i_v2. Для всех остальных зарезервированных экземпляров Dv2/Dsv2 используйте существующий зарезервированный экземпляр или купите новые зарезервированные экземпляры для изолированных размеров.
 
-### <a name="q-im-a-azure-service-fabric-customer-relying-on-the-silver-or-gold-durability-tiers-does-this-change-impact-me"></a>Q: I'm a Azure Service Fabric Customer relying on the Silver or Gold Durability Tiers. Does this change impact me?
-**Ответ**. Нет. The guarantees provided by Service Fabric's [Durability Tiers](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-capacity#the-durability-characteristics-of-the-cluster) will continue to function even after this change. If you require physical hardware isolation for other reasons, you may still need to take one of the actions described above. 
+### <a name="q-im-a-azure-service-fabric-customer-relying-on-the-silver-or-gold-durability-tiers-does-this-change-impact-me"></a>Вопрос. я использую Azure Service Fabric, который полагается на уровни устойчивости "серебро" или "Gold". Влияет ли это изменение на меня?
+**Ответ**. Нет. Гарантии, предоставляемые [уровнями устойчивости](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-capacity#the-durability-characteristics-of-the-cluster) Service Fabric, продолжат функционировать даже после этого изменения. Если требуется физическая изоляция оборудования по другим причинам, может потребоваться выполнить одно из описанных выше действий. 

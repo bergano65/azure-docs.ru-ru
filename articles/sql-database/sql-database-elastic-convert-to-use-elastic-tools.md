@@ -22,7 +22,7 @@ ms.locfileid: "74421218"
 
 Вы можете легко управлять существующими масштабируемыми сегментированными базами данных с помощью средств Базы данных SQL Azure (таких как [клиентская библиотека для эластичных баз данных](sql-database-elastic-database-client-library.md)). Для использования [диспетчера сопоставления сегментов](sql-database-elastic-scale-shard-map-management.md) следует сначала преобразовать существующий набор баз данных.
 
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
 
 Для переноса существующей сегментированной базы данных выполните следующие действия.
 
@@ -100,7 +100,7 @@ $ShardMap = New-ListShardMap -KeyType $([int]) -ListShardMapName 'ListShardMap' 
 $ShardMap = New-RangeShardMap -KeyType $([int]) -RangeShardMapName 'RangeShardMap' -ShardMapManager $ShardMapManager
 ```
 
-### <a name="option-3-list-mappings-on-an-individual-database"></a>Option 3: List mappings on an individual database
+### <a name="option-3-list-mappings-on-an-individual-database"></a>Вариант 3. список сопоставлений в отдельной базе данных
 
 Для настройки этого шаблона также требуется создать карту списков, как показано в разделе "Шаг 2, вариант 1".
 
@@ -149,11 +149,11 @@ Get-Shards -ShardMap $ShardMap
 Get-Mappings -ShardMap $ShardMap
 ```
 
-## <a name="summary"></a>Резюме
+## <a name="summary"></a>summary
 
 После завершения настройки можно начать работу с клиентской библиотекой эластичной базы данных. Кроме того, можно воспользоваться [маршрутизацией, зависящей от данных](sql-database-elastic-scale-data-dependent-routing.md), и [формированием многосегментных запросов](sql-database-elastic-scale-multishard-querying.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Скачайте сценарии PowerShell со страницы [Azure SQL DB-Elastic Database tools scripts](https://gallery.technet.microsoft.com/scriptcenter/Azure-SQL-DB-Elastic-731883db) (База данных SQL Azure — сценарии для инструментов эластичной базы данных).
 

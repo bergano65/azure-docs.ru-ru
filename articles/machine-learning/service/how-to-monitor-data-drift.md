@@ -12,7 +12,7 @@ author: cody-dkdc
 ms.date: 11/04/2019
 ms.openlocfilehash: e33f8a8090e7840087add0e16252bd2a3e873524
 ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/21/2019
 ms.locfileid: "74276779"
@@ -37,7 +37,7 @@ ms.locfileid: "74276779"
 + Отправка оповещений о смещении данных по электронной почте.
 
 > [!Note]
-> Эта служба находится в (Предварительная версия) и ограничена параметрами конфигурации. Дополнительные сведения и обновления см. в [документации по API](https://docs.microsoft.com/python/api/azureml-datadrift/) и [заметках о выпуске](azure-machine-learning-release-notes.md). 
+> Эта служба находится в (Предварительная версия) и ограничена параметрами конфигурации. Дополнительные сведения и обновления см. в [документации по API](https://docs.microsoft.com/python/api/azureml-datadrift/) и [заметках о выпуске](azure-machine-learning-release-notes.md) . 
 
 ### <a name="how-data-drift-is-monitored-in-azure-machine-learning"></a>Как отслеживается смещение данных в Машинное обучение Azure
 

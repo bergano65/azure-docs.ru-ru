@@ -1,6 +1,6 @@
 ---
-title: How trusts work for Azure AD Domain Services | Microsoft Docs
-description: Learn more about how forest trust work with Azure AD Domain Services
+title: Как работают отношения доверия для доменных служб Azure AD | Документация Майкрософт
+description: Дополнительные сведения о работе доверия лесов с доменными службами Azure AD
 services: active-directory-ds
 author: iainfoulds
 manager: daveba
@@ -17,266 +17,266 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74233705"
 ---
-# <a name="how-trust-relationships-work-for-resource-forests-in-azure-active-directory-domain-services"></a>How trust relationships work for resource forests in Azure Active Directory Domain Services
+# <a name="how-trust-relationships-work-for-resource-forests-in-azure-active-directory-domain-services"></a>Как работают отношения доверия для лесов ресурсов в доменных службах Azure Active Directory
 
-Active Directory Domain Services (AD DS) provides security across multiple domains or forests through domain and forest trust relationships. Before authentication can occur across trusts, Windows must first check if the domain being requested by a user, computer, or service has a trust relationship with the domain of the requesting account.
+Домен Active Directory Services (AD DS) обеспечивает безопасность в нескольких доменах или лесах с помощью отношений доверия между доменами и лесами. Перед проверкой подлинности в отношениях доверия Windows должна сначала проверить, имеет ли домен, запрашиваемый пользователем, компьютером или службой, отношение доверия с доменом запрашивающей учетной записи.
 
-To check for this trust relationship, the Windows security system computes a trust path between the domain controller (DC) for the server that receives the request and a DC in the domain of the requesting account.
+Чтобы проверить это отношение доверия, система безопасности Windows вычислит путь доверия между контроллером домена (DC) для сервера, получающего запрос, и КОНТРОЛЛЕРом домена в домене запрашивающей учетной записи.
 
-The access control mechanisms provided by AD DS and the Windows distributed security model provide an environment for the operation of domain and forest trusts. For these trusts to work properly, every resource or computer must have a direct trust path to a DC in the domain in which it is located.
+Механизмы управления доступом, предоставляемые AD DS и распределенной моделью безопасности Windows, предоставляют среду для работы отношений доверия между доменами и лесами. Для правильной работы этих отношений доверия каждый ресурс или компьютер должен иметь прямой доверенный путь к КОНТРОЛЛЕРу домена в домене, в котором он находится.
 
-The trust path is implemented by the Net Logon service using  an authenticated remote procedure call (RPC) connection to the trusted domain authority. A secured channel also extends to other AD DS domains through interdomain trust relationships. This secured channel is used to obtain and verify security information, including security identifiers (SIDs) for users and groups.
+Путь доверия реализуется службой сетевого входа в систему с использованием подключения удаленного вызова процедур (RPC), прошедшего проверку подлинности, в доверенном центре домена. Защищенный канал также распространяется на другие домены AD DS через междоменные отношения доверия. Этот защищенный канал используется для получения и проверки сведений о безопасности, включая идентификаторы безопасности (SID) для пользователей и групп.
 
-## <a name="trust-relationship-flows"></a>Trust relationship flows
+## <a name="trust-relationship-flows"></a>Потоки отношений доверия
 
-The flow of secured communications over trusts determines the elasticity of a trust. How you create or configure a trust determines how far the communication extends within or across forests.
+Поток защищенной связи через доверия определяет эластичность доверия. Как вы создаете или настраиваете доверие, определяет, насколько далеко взаимодействуют между лесами.
 
-The flow of communication over trusts is determined by the direction of the trust. Trusts can be one-way or two-way, and can be transitive or non-transitive.
+Поток обмена данными между отношениями доверия определяется направлением доверия. Отношения доверия могут быть односторонними или двусторонними и могут быть транзитивными или нетранзитивными.
 
-The following diagram shows that all domains in *Tree 1* and *Tree 2* have transitive trust relationships by default. As a result, users in *Tree 1* can access resources in domains in *Tree 2* and users in *Tree 1* can access resources in *Tree 2*, when the proper permissions are assigned at the resource.
+На следующей схеме показано, что по умолчанию все домены в *дереве 1* и *дереве 2* имеют транзитивные отношения доверия. В результате пользователи в *дереве 1* могут получить доступ к ресурсам в доменах *дерева 2* , а пользователи в *дереве 1* могут получить доступ к ресурсам в *дереве 2*, если в ресурсе назначены соответствующие разрешения.
 
-![Diagram of trust relationships between two forests](./media/concepts-forest-trust/trust-relationships.png)
+![Схема отношений доверия между двумя лесами](./media/concepts-forest-trust/trust-relationships.png)
 
-### <a name="one-way-and-two-way-trusts"></a>One-way and two-way trusts
+### <a name="one-way-and-two-way-trusts"></a>Одностороннее и двустороннее доверие
 
-Trust relationships enable access to resources can be either one-way or two-way.
+Отношения доверия обеспечивают доступ к ресурсам одним или двумя способами.
 
-A one-way trust is a unidirectional authentication path created between two domains. In a one-way trust between *Domain A* and *Domain B*, users in *Domain A* can access resources in *Domain B*. However, users in *Domain B* can't access resources in *Domain A*.
+Одностороннее отношение доверия — это однонаправленный путь проверки подлинности, созданный между двумя доменами. При одностороннем доверии между *доменом* а и *доменом б*пользователи в *домене a* могут обращаться к ресурсам в *домене б*. Однако пользователи в *домене б* не могут получить доступ к ресурсам в *домене а*.
 
-Some one-way trusts can be either non-transitive or transitive depending on the type of trust being created.
+Некоторые односторонние отношения доверия могут быть нетранзитивными или транзитивными в зависимости от типа создаваемого доверия.
 
-In a two-way trust, *Domain A* trusts *Domain B* and *Domain B* trusts *Domain A*. This configuration means that authentication requests can be passed between the two domains in both directions. Some two-way relationships can be non-transitive or transitive depending on the type of trust being created.
+В двустороннем доверии *домен a* доверяет домену *b* , а *домен б* доверяет *домену а*. Такая конфигурация означает, что запросы проверки подлинности могут передаваться между двумя доменами в обоих направлениях. Некоторые двусторонние связи могут быть нетранзитивными или транзитивными в зависимости от типа создаваемого доверия.
 
-All domain trusts in an AD DS forest are two-way, transitive trusts. When a new child domain is created, a two-way, transitive trust is automatically created between the new child domain and the parent domain.
+Все доверительные отношения доменов в лесу AD DS являются двусторонними транзитивными отношениями доверия. При создании нового дочернего домена автоматически создается двустороннее транзитивное доверие между новым дочерним доменом и родительским доменом.
 
-### <a name="transitive-and-non-transitive-trusts"></a>Transitive and non-transitive trusts
+### <a name="transitive-and-non-transitive-trusts"></a>Транзитивные и нетранзитивные отношения доверия
 
-Transitivity determines whether a trust can be extended outside of the two domains with which it was formed.
+Транзитивность определяет, можно ли расширить отношение доверия за пределами двух доменов, с которыми он был сформирован.
 
-* A transitive trust can be used to extend trust relationships with other domains.
-* A non-transitive trust can be used to deny trust relationships with other domains.
+* Транзитивное доверие можно использовать для расширения отношений доверия с другими доменами.
+* Нетранзитивное доверие можно использовать для запрета доверительных отношений с другими доменами.
 
-Each time you create a new domain in a forest, a two-way, transitive trust relationship is automatically created between the new domain and its parent domain. If child domains are added to the new domain, the trust path flows upward through the domain hierarchy extending the initial trust path created between the new domain and its parent domain. Transitive trust relationships flow upward through a domain tree as it is formed, creating transitive trusts between all domains in the domain tree.
+Каждый раз при создании нового домена в лесу автоматически создается двустороннее транзитивное отношение доверия между новым доменом и его родительским доменом. Если дочерние домены добавляются в новый домен, путь доверия передается вверх через иерархию доменов, расширяя исходный путь доверия, созданный между новым доменом и его родительским доменом. Транзитивные отношения доверия проходят вверх по дереву доменов по мере формирования, создавая транзитивные отношения доверия между всеми доменами в дереве доменов.
 
-Authentication requests follow these trust paths, so accounts from any domain in the forest can be authenticated by any other domain in the forest. With a single logon process, accounts with the proper permissions can access resources in any domain in the forest.
+Запросы проверки подлинности следуют этим путям доверия, поэтому учетные записи из любого домена леса могут проходить проверку подлинности любым другим доменом в лесу. С помощью единого процесса входа учетные записи с соответствующими разрешениями могут получать доступ к ресурсам в любом домене леса.
 
-## <a name="forest-trusts"></a>Forest trusts
+## <a name="forest-trusts"></a>Отношения доверия для леса
 
-Forest trusts help you to manage a segmented AD DS infrastructures and support access to resources and other objects across multiple forests. Forest trusts are useful for service providers, companies undergoing mergers or acquisitions, collaborative business extranets, and companies seeking a solution for administrative autonomy.
+Отношения доверия лесов помогают управлять сегментированными AD DS инфраструктурами и поддерживают доступ к ресурсам и другим объектам в нескольких лесах. Отношения доверия лесов полезны для поставщиков услуг, компаний, осуществляющих слияние или приобретение, совместный бизнес в экстрасети и компании, которые ищут решение для административной автономности.
 
-Using forest trusts, you can link two different forests to form a one-way or two-way transitive trust relationship. A forest trust allows administrators to connect two AD DS forests with a single trust relationship to provide a seamless authentication and authorization experience across the forests.
+С помощью отношений доверия лесов можно связать два леса, чтобы сформировать одностороннее или двустороннее транзитивное отношение доверия. Доверие лесов позволяет администраторам подключать два AD DS лесов с единым отношением доверия для обеспечения эффективной проверки подлинности и авторизации в лесах.
 
-A forest trust can only be created between a forest root domain in one forest and a forest root domain in another forest. Forest trusts can only be created between two forests and can't be implicitly extended to a third forest. This behavior means that if a forest trust is created between *Forest 1* and *Forest 2*, and another forest trust is created between *Forest 2* and *Forest 3*, *Forest 1* doesn't have an implicit trust with *Forest 3*.
+Доверие лесов можно создать только между корневым доменом леса в одном лесу и корневым доменом леса в другом лесу. Отношения доверия лесов могут быть созданы только между двумя лесами и не могут быть неявно расширены до третьего леса. Это означает, что если доверие лесов создано между *лесами 1* и *лесом 2*, а между *лесами 2* и *лесом 3*создается другое доверие лесов, *лес 1* не имеет неявного отношения доверия с *лесом 3*.
 
-The following diagram shows two separate forest trust relationships between three AD DS forests in a single organization.
+На следующей схеме показаны два отдельных отношения доверия лесов между тремя AD DS лесами в одной организации.
 
-![Diagram of forest trusts relationships within a single organization](./media/concepts-forest-trust/forest-trusts.png)
+![Схема отношений доверия лесов в пределах одной организации](./media/concepts-forest-trust/forest-trusts.png)
 
-This example configuration provides the following access:
+Этот пример конфигурации предоставляет следующий доступ:
 
-* Users in *Forest 2* can access resources in any domain in either *Forest 1* or *Forest 3*
-* Users in *Forest 3* can access resources in any domain in *Forest 2*
-* Users in *Forest 1* can access resources in any domain in *Forest 2*
+* Пользователи в *лесу 2* могут получать доступ к ресурсам в любом домене *леса 1* или *леса 3* .
+* Пользователи в *лесу 3* могут получать доступ к ресурсам в любом домене *леса 2* .
+* Пользователи в *лесу 1* могут получать доступ к ресурсам в любом домене *леса 2* .
 
-This configuration doesn't allow users in *Forest 1* to access resources in *Forest 3* or vice versa. To allow users in both *Forest 1* and *Forest 3* to share resources, a two-way transitive trust must be created between the two forests.
+Эта конфигурация не позволяет пользователям *леса 1* обращаться к ресурсам в *лесу 3* и наоборот. Чтобы разрешить пользователям в *лесах 1* и *лесу 3* доступ к ресурсам, необходимо создать двустороннее транзитивное доверие между двумя лесами.
 
-If a one-way forest trust is created between two forests, members of the trusted forest can utilize resources located in the trusting forest. However, the trust operates in only one direction.
+Если между двумя лесами создается одностороннее доверие лесов, члены доверенного леса могут использовать ресурсы, расположенные в доверяющем лесу. Однако доверие действует только в одном направлении.
 
-For example, when a one-way, forest trust is created between *Forest 1* (the trusted forest) and *Forest 2* (the trusting forest):
+Например, при создании одностороннего отношения доверия между *лесами 1* (доверенный лес) и *лесом 2* (лес доверия):
 
-* Members of *Forest 1* can access resources located in *Forest 2*.
-* Members of *Forest 2* can't access resources located in *Forest 1* using the same trust.
+* Члены *леса 1* могут обращаться к ресурсам, расположенным в *лесу 2*.
+* Члены *леса 2* не могут получить доступ к ресурсам, расположенным в *лесу 1* , используя одно и то же отношение доверия.
 
 > [!IMPORTANT]
-> Azure AD Domain Services resource forest only supports a one-way forest trust to on-premises Active Directory.
+> Лес ресурсов доменных служб Azure AD поддерживает односторонние отношения доверия лесов с локальными Active Directory.
 
-### <a name="forest-trust-requirements"></a>Forest trust requirements
+### <a name="forest-trust-requirements"></a>Требования к доверию лесов
 
-Before you can create a forest trust, you need to verify you have the correct Domain Name System (DNS) infrastructure in place. Forest trusts can only be created when one of the following DNS configurations is available:
+Прежде чем можно будет создать доверие лесов, необходимо убедиться в наличии правильной инфраструктуры системы доменных имен (DNS). Отношения доверия лесов можно создавать только при наличии одной из следующих конфигураций DNS:
 
-* A single root DNS server is the root DNS server for both forest DNS namespaces - the root zone contains delegations for each of the DNS namespaces and the root hints of all DNS servers include the root DNS server.
-* Where there is no shared root DNS server, and the root DNS servers for each forest DNS namespace use DNS conditional forwarders for each DNS namespace to route queries for names in the other namespace.
+* Единственный корневой DNS-сервер — это корневой DNS-сервер для обоих пространств имен DNS леса. Корневая зона содержит делегирования для каждого пространства имен DNS, а корневые ссылки всех DNS-серверов включают корневой DNS-сервер.
+* Где нет общего корневого DNS-сервера, а корневые DNS-серверы для каждого пространства имен DNS леса используют DNS-сервер условной пересылки для каждого пространства имен DNS для маршрутизации запросов имен в другом пространстве имен.
 
     > [!IMPORTANT]
-    > Azure AD Domain Services resource forest must use this DNS configuration. Hosting a DNS namespace other than the resource forest DNS namespace is not a feature of Azure AD Domain Services. Conditional forwarders is the proper configuration.
+    > Лес ресурсов доменных служб Azure AD должен использовать эту конфигурацию DNS. Размещение пространства имен DNS, отличного от пространства имен DNS леса ресурсов, не является компонентом доменных служб Azure AD. Условные серверы пересылки являются правильной конфигурацией.
 
-* Where there is no shared root DNS server, and the root DNS servers for each forest DNS namespace are use DNS secondary zones are configured in each DNS namespace to route queries for names in the other namespace.
+* Если нет общего корневого DNS-сервера, а корневые DNS-серверы для каждого пространства имен DNS леса используют дополнительные зоны DNS, настраиваются в каждом пространстве имен DNS для маршрутизации запросов имен в другом пространстве имен.
 
-To create a forest trust, you must be a member of the Domain Admins group (in the forest root domain) or the Enterprise Admins group in Active Directory. Each trust is assigned a password that the administrators in both forests must know. Members of Enterprise Admins in both forests can create the trusts in both forests at once and, in this scenario, a password that is cryptographically random is automatically generated and written for both forests.
+Чтобы создать доверие лесов, необходимо быть членом группы "Администраторы домена" (в корневом домене леса) или группы "Администраторы предприятия" в Active Directory. Каждому доверию назначается пароль, который должны быть знакомы администраторам в обоих лесах. Участники корпоративных администраторов в обоих лесах могут одновременно создавать отношения доверия в обоих лесах, и в этом случае пароль, криптографически случайный, автоматически создается и записывается для обоих лесов.
 
-The outbound forest trust for Azure AD Domain Services is created in the Azure portal. You don't manually create the trust with the managed domain itself. The incoming forest trust must be configured by a user with the privileges previously noted in the on-premises Active Directory.
+В портал Azure создается исходящее доверие лесов для доменных служб Azure AD. Вы не создаете доверие вручную с самим управляемым доменом. Входящее доверие лесов должно быть настроено пользователем с привилегиями, которые ранее были указаны в локальной Active Directory.
 
-## <a name="trust-processes-and-interactions"></a>Trust processes and interactions
+## <a name="trust-processes-and-interactions"></a>Процессы доверия и взаимодействия
 
-Many inter-domain and inter-forest transactions depend on domain or forest trusts in order to complete various tasks. This section describes the processes and interactions that occur as resources are accessed across trusts and authentication referrals are evaluated.
+Многие транзакции между доменами и между лесами зависят от отношений доверия между доменами и лесами для выполнения различных задач. В этом разделе описываются процессы и взаимодействия, происходящие, когда доступ к ресурсам осуществляется по отношениям доверия и по ссылкам проверки подлинности.
 
-### <a name="overview-of-authentication-referral-processing"></a>Overview of Authentication Referral Processing
+### <a name="overview-of-authentication-referral-processing"></a>Общие сведения об обработке ссылок для проверки подлинности
 
-When a request for authentication is referred to a domain, the domain controller in that domain must determine whether a trust relationship exists with the domain from which the request comes. The direction of the trust and whether the trust is transitive or nontransitive must also be determined before it authenticates the user to access resources in the domain. The authentication process that occurs between trusted domains varies according to the authentication protocol in use. The Kerberos V5 and NTLM protocols process referrals for authentication to a domain differently
+Если запрос на проверку подлинности называется доменом, контроллер домена в этом домене должен определить, существует ли отношение доверия с доменом, из которого поступает запрос. Кроме того, необходимо определить, является ли доверие транзитивным или нетранзитивным, прежде чем проверять подлинность пользователя для доступа к ресурсам в домене. Процесс проверки подлинности, который происходит между доверенными доменами, зависит от используемого протокола проверки подлинности. Протоколы Kerberos V5 и NTLM обрабатывают ссылки для проверки подлинности в домене по-разному.
 
-### <a name="kerberos-v5-referral-processing"></a>Kerberos V5 Referral Processing
+### <a name="kerberos-v5-referral-processing"></a>Обработка ссылок Kerberos V5
 
-The Kerberos V5 authentication protocol is dependent on the Net Logon service on domain controllers for client authentication and authorization information. The Kerberos protocol connects to an online Key Distribution Center (KDC) and the Active Directory account store for session tickets.
+Протокол проверки подлинности Kerberos V5 зависит от службы сетевого входа в систему на контроллерах домена для проверки подлинности и авторизации клиента. Протокол Kerberos подключается к сетевому центр распространения ключей (KDC) и хранилищу учетных записей Active Directory для билетов сеансов.
 
-The Kerberos protocol also uses trusts for cross-realm ticket-granting services (TGS) and to validate Privilege Attribute Certificates (PACs) across a secured channel. The Kerberos protocol performs cross-realm authentication only with non-Windows-brand operating system Kerberos realms such as an MIT Kerberos realm and does not need to interact with the Net Logon service.
+Протокол Kerberos также использует отношения доверия для служб предоставления билетов (TGS) между сферами и для проверки сертификатов атрибутов привилегий (PAC) в защищенном канале. Протокол Kerberos выполняет проверку подлинности между сферами только с помощью сфер Kerberos операционной системы, отличных от Windows, таких как область Kerberos, и не требует взаимодействия со службой сетевого входа в систему.
 
-If the client uses Kerberos V5 for authentication, it requests a ticket to the server in the target domain from a domain controller in its account domain. The Kerberos KDC acts as a trusted intermediary between the client and server and provides a session key that enables the two parties to authenticate each other. If the target domain is different from the current domain, the KDC follows a logical process to determine whether an authentication request can be referred:
+Если клиент использует Kerberos V5 для проверки подлинности, он запрашивает билет на сервере в целевом домене из контроллера домена в домене учетной записи. Kerberos KDC выступает в качестве доверенного посредника между клиентом и сервером и предоставляет ключ сеанса, позволяющий двум сторонам проходить проверку подлинности друг друга. Если целевой домен отличается от текущего домена, KDC следует логическому процессу определить, можно ли ссылаться на запрос на проверку подлинности:
 
-1. Is the current domain trusted directly by the domain of the server that is being requested?
-    * If yes, send the client a referral to the requested domain.
-    * If no, go to the next step.
+1. Является ли текущий домен доверенным непосредственно доменом запрашиваемого сервера?
+    * Если да, отправьте клиенту ссылку на запрошенный домен.
+    * Если нет, перейдите к следующему шагу.
 
-2. Does a transitive trust relationship exist between the current domain and the next domain on the trust path?
-    * If yes, send the client a referral to the next domain on the trust path.
-    * If no, send the client a logon-denied message.
+2. Существует ли между текущим доменом и следующим доменом по пути доверия отношение взаимного доверия?
+    * Если да, отправьте клиенту ссылку на следующий домен в пути доверия.
+    * Если нет, отправьте клиенту сообщение с запретом входа.
 
-### <a name="ntlm-referral-processing"></a>NTLM Referral Processing
+### <a name="ntlm-referral-processing"></a>Обработка ссылок NTLM
 
-The NTLM authentication protocol is dependent on the Net Logon service on domain controllers for client authentication and authorization information. This protocol authenticates clients that do not use Kerberos authentication. NTLM uses trusts to pass authentication requests between domains.
+Протокол проверки подлинности NTLM зависит от службы сетевого входа в систему на контроллерах домена для проверки подлинности клиента и авторизации. Этот протокол проверяет подлинность клиентов, не использующих проверку подлинности Kerberos. NTLM использует отношения доверия для передачи запросов проверки подлинности между доменами.
 
-If the client uses NTLM for authentication, the initial request for authentication goes directly from the client to the resource server in the target domain. This server creates a challenge to which the client responds. The server then sends the user's response to a domain controller in its computer account domain. This domain controller checks the user account against its security accounts database.
+Если клиент использует NTLM для проверки подлинности, первоначальный запрос проверки подлинности переходит непосредственно от клиента к серверу ресурсов в целевом домене. Этот сервер создает запрос, на который отвечает клиент. Затем сервер отправляет ответ пользователя на контроллер домена в домене учетной записи компьютера. Этот контроллер домена проверяет учетную запись пользователя на соответствие базе данных учетных записей безопасности.
 
-If the account does not exist in the database, the domain controller determines whether to perform pass-through authentication, forward the request, or deny the request by using the following logic:
+Если учетная запись не существует в базе данных, контроллер домена определяет, следует ли выполнить сквозную аутентификацию, перенаправить запрос или отклонить запрос с помощью следующей логики:
 
-1. Does the current domain have a direct trust relationship with the user's domain?
-    * If yes, the domain controller sends the credentials of the client to a domain controller in the user's domain for pass-through authentication.
-    * If no, go to the next step.
+1. Имеет ли текущий домен отношение прямого доверия с доменом пользователя?
+    * Если да, контроллер домена отправляет учетные данные клиента на контроллер домена в домене пользователя для сквозной проверки подлинности.
+    * Если нет, перейдите к следующему шагу.
 
-2. Does the current domain have a transitive trust relationship with the user's domain?
-    * If yes, pass the authentication request on to the next domain in the trust path. This domain controller repeats the process by checking the user's credentials against its own security accounts database.
-    * If no, send the client a logon-denied message.
+2. Имеет ли текущий домен транзитивное отношение доверия с доменом пользователя?
+    * Если да, передайте запрос на проверку подлинности в следующий домен в пути доверия. Этот контроллер домена повторяет процесс, проверяя учетные данные пользователя по собственной базе данных учетных записей безопасности.
+    * Если нет, отправьте клиенту сообщение с запретом входа.
 
-### <a name="kerberos-based-processing-of-authentication-requests-over-forest-trusts"></a>Kerberos-Based Processing of Authentication Requests Over Forest Trusts
+### <a name="kerberos-based-processing-of-authentication-requests-over-forest-trusts"></a>Обработка запросов проверки подлинности на основе Kerberos через доверия лесов
 
-When two forests are connected by a forest trust, authentication requests made using the Kerberos V5 or NTLM protocols can be routed between forests to provide access to resources in both forests.
+Когда два леса соединяются отношением доверия лесов, запросы на проверку подлинности, созданные с помощью протоколов Kerberos V5 или NTLM, можно перенаправлять между лесами, чтобы предоставить доступ к ресурсам в обоих лесах.
 
-When a forest trust is first established, each forest collects all of the trusted namespaces in its partner forest and stores the information in a [trusted domain object](#trusted-domain-object). Trusted namespaces include domain tree names, user principal name (UPN) suffixes, service principal name (SPN) suffixes, and security ID (SID) namespaces used in the other forest. TDO objects are replicated to the global catalog.
+При первом установлении доверия между лесами каждый лес собирает все доверенные пространства имен в своем лесу партнера и сохраняет информацию в [объекте доверенного домена](#trusted-domain-object). К доверенным пространствам имен относятся имена доменных деревьев, суффиксы имени участника-пользователя, суффиксы имени субъекта-службы и пространства имен ИДЕНТИФИКАТОРов безопасности (SID), используемые в другом лесу. Объекты TDO реплицируются в глобальный каталог.
 
-Before authentication protocols can follow the forest trust path, the service principal name (SPN) of the resource computer must be resolved to a location in the other forest. An SPN can be one of the following:
+Прежде чем протоколы проверки подлинности могут следовать пути доверия лесов, имя участника-службы (SPN) компьютера ресурсов должно быть разрешено в расположение в другом лесу. Имя участника-службы может быть одним из следующих:
 
-* The DNS name of a host.
-* The DNS name of a domain.
-* The distinguished name of a service connection point object.
+* DNS-имя узла.
+* DNS-имя домена.
+* Различающееся имя объекта точки подключения службы.
 
-When a workstation in one forest attempts to access data on a resource computer in another forest, the Kerberos authentication process contacts the domain controller for a service ticket to the SPN of the resource computer. Once the domain controller queries the global catalog and determines that the SPN is not in the same forest as the domain controller, the domain controller sends a referral for its parent domain back to the workstation. At that point, the workstation queries the parent domain for the service ticket and continues to follow the referral chain until it reaches the domain where the resource is located.
+Когда Рабочая станция в одном лесу пытается получить доступ к данным на компьютере ресурса в другом лесу, процесс проверки подлинности Kerberos обращается к контроллеру домена для получения билета службы к имени участника-службы компьютера с ресурсами. После того как контроллер домена запрашивает глобальный каталог и определит, что имя субъекта-службы не находится в том же лесу, что и контроллер домена, контроллер домена отправляет ссылку для своего родительского домена обратно на рабочую станцию. На этом этапе Рабочая станция запрашивает у родительского домена билет службы и продолжит следовать цепочке ссылок до тех пор, пока не достигнет домена, в котором находится ресурс.
 
-The following diagram and steps provide a detailed description of the Kerberos authentication process that's used when computers running Windows attempt to access resources from a computer located in another forest.
+Приведенная ниже схема и шаги содержат подробное описание процесса проверки подлинности Kerberos, используемого при попытке компьютеров, работающих под управлением Windows, получить доступ к ресурсам с компьютера, находящегося в другом лесу.
 
-![Diagram of the Kerberos process over a forest trust](media/concepts-forest-trust/kerberos-over-forest-trust-process.png)
+![Схема процесса Kerberos через доверие леса](media/concepts-forest-trust/kerberos-over-forest-trust-process.png)
 
-1. *User1* logs on to *Workstation1* using credentials from the *europe.tailspintoys.com* domain. The user then attempts to access a shared resource on *FileServer1* located in the *usa.wingtiptoys.com* forest.
+1. *Пользователь1* входит в *компьютере Workstation1* , используя учетные данные из домена *Europe.tailspintoys.com* . Затем пользователь пытается получить доступ к общему ресурсу в *FileServer1* , расположенном в лесу *USA.wingtiptoys.com* .
 
-2. *Workstation1* contacts the Kerberos KDC on a domain controller in its domain, *ChildDC1*, and requests a service ticket for the *FileServer1* SPN.
+2. *Компьютере Workstation1* связывается с центром распространения ключей Kerberos на контроллере домена в своем домене, *ChildDC1*и запрашивает билет службы для SPN *FileServer1* .
 
-3. *ChildDC1* does not find the SPN in its domain database and queries the global catalog to see if any domains in the *tailspintoys.com* forest contain this SPN. Because a global catalog is limited to its own forest, the SPN is not found.
+3. *ChildDC1* не находит имя субъекта-службы в своей базе данных домена и запрашивает глобальный каталог, чтобы узнать, содержат ли какие-либо домены в лесу *tailspintoys.com* это имя участника-службы. Поскольку глобальный каталог ограничен его собственным лесом, имя субъекта-службы не найдено.
 
-    The global catalog then checks its database for information about any forest trusts that are established with its forest. If found, it compares the name suffixes listed in the forest trust trusted domain object (TDO) to the suffix of the target SPN to find a match. Once a match is found, the global catalog provides a routing hint back to *ChildDC1*.
+    Затем глобальный каталог проверяет свою базу данных на наличие сведений о доверии лесов, установленных с лесом. Если он найден, он сравнивает суффиксы имен, перечисленные в объекте доверенного домена доверия лесов, с суффиксом целевого имени субъекта-службы для поиска соответствия. После обнаружения совпадения глобальный каталог предоставляет указание маршрутизации обратно в *ChildDC1*.
 
-    Routing hints help direct authentication requests toward the destination forest. Hints are only used when all traditional authentication channels, such as local domain controller and then global catalog, fail to locate a SPN.
+    Указания маршрутизации помогают направить запросы проверки подлинности в целевой лес. Указания используются только в том случае, если все традиционные каналы проверки подлинности, например локальный контроллер домена и глобальный каталог, не могут наыскать имя участника-службы.
 
-4. *ChildDC1* sends a referral for its parent domain back to *Workstation1*.
+4. *ChildDC1* отправляет ссылку для своего родительского домена обратно в *компьютере Workstation1*.
 
-5. *Workstation1* contacts a domain controller in *ForestRootDC1* (its parent domain) for a referral to a domain controller (*ForestRootDC2*) in the forest root domain of the *wingtiptoys.com* forest.
+5. *Компьютере Workstation1* связывается с контроллером домена в *ForestRootDC1* (его родительским доменом) для ссылки на контроллер домена (*ForestRootDC2*) в корневом домене леса *wingtiptoys.com* .
 
-6. *Workstation1* contacts *ForestRootDC2* in the *wingtiptoys.com* forest for a service ticket to the requested service.
+6. *Компьютере Workstation1* Contacts *ForestRootDC2* в лесу *wingtiptoys.com* для билета службы к запрошенной службе.
 
-7. *ForestRootDC2* contacts its global catalog to find the SPN, and the global catalog finds a match for the SPN and sends it back to *ForestRootDC2*.
+7. *ForestRootDC2* связывается со своим глобальным каталогом, чтобы найти имя субъекта-службы, а глобальный каталог находит совпадение для имени SPN и отправляет его обратно в *ForestRootDC2*.
 
-8. *ForestRootDC2* then sends the referral to *usa.wingtiptoys.com* back to *Workstation1*.
+8. Затем *ForestRootDC2* отправляет ссылку на *USA.wingtiptoys.com* обратно в *компьютере Workstation1*.
 
-9. *Workstation1* contacts the KDC on *ChildDC2* and negotiates the ticket for *User1* to gain access to *FileServer1*.
+9. *Компьютере Workstation1* связывается с центром распространения ключей на *ChildDC2* и согласовывает билет для *User1* , чтобы получить доступ к *FileServer1*.
 
-10. Once *Workstation1* has a service ticket, it sends the service ticket to *FileServer1*, which reads *User1*'s security credentials and constructs an access token accordingly.
+10. Когда у *компьютере Workstation1* есть билет службы, он отправляет билет службы в *FileServer1*, который считывает учетные данные безопасности пользователя *User1*и соответствующим образом формирует маркер доступа.
 
-## <a name="trusted-domain-object"></a>Trusted domain object
+## <a name="trusted-domain-object"></a>Объект доверенного домена
 
-Each domain or forest trust within an organization is represented by a Trusted Domain Object (TDO) stored in the *System* container within its domain.
+Каждое доверие домена или леса в организации представляется доверенным объектом домена (TDO), хранящимся в контейнере *System* в своем домене.
 
-### <a name="tdo-contents"></a>TDO contents
+### <a name="tdo-contents"></a>Содержимое TDO
 
-The information contained in a TDO varies depending on whether a TDO was created by a domain trust or by a forest trust.
+Сведения, содержащиеся в объекте TDO, зависят от того, был ли объект TDO создан доверием домена или доверием леса.
 
-When a domain trust is created, attributes such as the DNS domain name, domain SID, trust type, trust transitivity, and the reciprocal domain name are represented in the TDO. Forest trust TDOs store additional attributes to identify all of the trusted namespaces from the partner forest. These attributes include domain tree names, user principal name (UPN) suffixes, service principal name (SPN) suffixes, and security ID (SID) namespaces.
+При создании доверительных отношений домена атрибуты, такие как доменное имя DNS, идентификатор безопасности домена, тип доверия, транзитивность доверия и имя обратного домена, представлены в объекте TDO. Доверительные отношения лесов ТДОС хранят дополнительные атрибуты для обнаружения всех доверенных пространств имен из леса партнера. Эти атрибуты включают имена деревьев доменов, суффиксы имени участника-пользователя (UPN), суффиксы имени участника-службы (SPN) и ИДЕНТИФИКАТОРы безопасности (SID).
 
-Because trusts are stored in Active Directory as TDOs, all domains in a forest have knowledge of the trust relationships that are in place throughout the forest. Similarly, when two or more forests are joined together through forest trusts, the forest root domains in each forest have knowledge of the trust relationships that are in place throughout all of the domains in trusted forests.
+Так как отношения доверия хранятся в Active Directory как ТДОС, все домены в лесу имеют знания о доверительных отношениях, которые используются в лесу. Аналогично, если два или несколько лесов объединены через доверия лесов, корневые домены леса в каждом лесу имеют знания о доверительных отношениях, которые применяются во всех доменах в доверенных лесах.
 
-### <a name="tdo-password-changes"></a>TDO password changes
+### <a name="tdo-password-changes"></a>Изменения паролей TDO
 
-Both domains in a trust relationship share a password, which is stored in the TDO object in Active Directory. As part of the account maintenance process, every 30 days the trusting domain controller changes the password stored in the TDO. Because all two-way trusts are actually two one-way trusts going in opposite directions, the process occurs twice for two-way trusts.
+Оба домена в отношении доверия совместно используют пароль, который хранится в объекте TDO в Active Directory. В рамках процесса обслуживания учетной записи каждые 30 дней контроллер домена доверия изменяет пароль, хранящийся в объекте TDO. Так как все двусторонние отношения доверия фактически являются 2 1-сторонними отношениями доверия в противоположных направлениях, процесс выполняется дважды для двустороннего доверия.
 
-A trust has a trusting and a trusted side. On the trusted side, any writable domain controller can be used for the process. On the trusting side, the PDC emulator performs the password change.
+Доверие имеет доверие и доверенную сторону. На доверенной стороне для процесса можно использовать любой доступный для записи контроллер домена. На стороне доверия эмулятор основного контроллера домена выполняет смену пароля.
 
-To change a password, the domain controllers complete the following process:
+Чтобы изменить пароль, контроллеры домена выполняют следующий процесс:
 
-1. The primary domain controller (PDC) emulator in the trusting domain creates a new password. A domain controller in the trusted domain never initiates the password change. It's always initiated by the trusting domain PDC emulator.
+1. Эмулятор основного контроллера домена (PDC) в доверяющем домене создает новый пароль. Контроллер домена в доверенном домене никогда не инициирует смену пароля. Он всегда инициируется эмулятором доверенного основного контроллера домена.
 
-2. The PDC emulator in the trusting domain sets the *OldPassword* field of the TDO object to the current *NewPassword* field.
+2. Эмулятор основного контроллера домена в доверяющем домене задает поле *OldPassword* объекта TDO для текущего поля *newPassword* .
 
-3. The PDC emulator in the trusting domain sets the *NewPassword* field of the TDO object to the new password. Keeping a copy of the previous password makes it possible to revert to the old password if the domain controller in the trusted domain fails to receive the change, or if the change is not replicated before a request is made that uses the new trust password.
+3. Эмулятор основного контроллера домена в доверяющем домене задает для поля *newPassword* объекта TDO новый пароль. Сохранение копии предыдущего пароля позволяет вернуться к старому паролю, если контроллер домена в доверенном домене не сможет получить изменение или если изменение не реплицируется до выполнения запроса, использующего новый пароль доверия.
 
-4. The PDC emulator in the trusting domain makes a remote call to a domain controller in the trusted domain asking it to set the password on the trust account to the new password.
+4. Эмулятор основного контроллера домена в доверяющем домене выполняет удаленный вызов контроллера домена в доверенном домене с просьбой установить для пароля учетной записи доверия новый пароль.
 
-5. The domain controller in the trusted domain changes the trust password to the new password.
+5. Контроллер домена в доверенном домене изменяет пароль доверия на новый пароль.
 
-6. On each side of the trust, the updates are replicated to the other domain controllers in the domain. In the trusting domain, the change triggers an urgent replication of the trusted domain object.
+6. На каждой стороне доверия обновления реплицируются на другие контроллеры домена в домене. В доверяющем домене это изменение активирует срочное репликация объекта доверенного домена.
 
-The password is now changed on both domain controllers. Normal replication distributes the TDO objects to the other domain controllers in the domain. However, it's possible for the domain controller in the trusting domain to change the password without successfully updating a domain controller in the trusted domain. This scenario might occur because a secured channel, which is required to process the password change, couldn't be established. It's also possible that the domain controller in the trusted domain might be unavailable at some point during the process and might not receive the updated password.
+Теперь пароль изменен на обоих контроллерах домена. Обычная репликация распространяет объекты TDO на другие контроллеры домена в домене. Однако контроллер домена в доверяющем домене может изменить пароль без успешного обновления контроллера домена в доверенном домене. Такая ситуация может возникнуть из-за того, что защищенный канал, необходимый для обработки изменения пароля, не удалось установить. Также возможно, что контроллер домена в доверенном домене может быть недоступен в некоторый момент во время процесса и может не получить обновленный пароль.
 
-To deal with situations in which the password change isn't successfully communicated, the domain controller in the trusting domain never changes the new password unless it has successfully authenticated (set up a secured channel) using the new password. This behavior is why both the old and new passwords are kept in the TDO object of the trusting domain.
+Для работы с ситуациями, когда изменение пароля не прошло успешно, контроллер домена в доверяющем домене никогда не изменяет новый пароль, если он не прошел проверку подлинности (Настройка защищенного канала) с помощью нового пароля. Это объясняется тем, почему старый и новый пароли хранятся в объекте TDO доверяющего домена.
 
-A password change isn't finalized until authentication using the password succeeds. The old, stored password can be used over the secured channel until the domain controller in the trusted domain receives the new password, thus enabling uninterrupted service.
+Изменение пароля не завершается до тех пор, пока проверка подлинности с помощью пароля завершается с ошибкой. Старый, сохраненный пароль может использоваться по защищенному каналу до тех пор, пока контроллер домена в доверенном домене не получит новый пароль, что обеспечивает непрерывную работу службы.
 
-If authentication using the new password fails because the password is invalid, the trusting domain controller tries to authenticate using the old password. If it authenticates successfully with the old password, it resumes the password change process within 15 minutes.
+Если проверка подлинности с использованием нового пароля завершается неудачей из-за недействительного пароля, доверенный контроллер домена пытается пройти проверку подлинности с использованием старого пароля. Если проверка подлинности прошла успешно с прежним паролем, процесс смены пароля возобновляется в течение 15 минут.
 
-Trust password updates need to replicate to the domain controllers of both sides of the trust within 30 days. If the trust password is changed after 30 days and a domain controller then only has the N-2 password, it cannot use the trust from the trusting side and cannot create a secure channel on the trusted side.
+Доверенные обновления паролей должны реплицироваться на контроллеры домена обеих сторон доверия в течение 30 дней. Если пароль доверия изменен через 30 дней, а контроллер домена имеет только пароль N-2, он не сможет использовать доверие с доверяющей стороны и не сможет создать безопасный канал на доверенной стороне.
 
-## <a name="network-ports-used-by-trusts"></a>Network ports used by trusts
+## <a name="network-ports-used-by-trusts"></a>Сетевые порты, используемые отношениями доверия
 
-Because trusts must be deployed across various network boundaries, they might have to span one or more firewalls. When this is the case, you can either tunnel trust traffic across a firewall or open specific ports in the firewall to allow the traffic to pass through.
+Так как отношения доверия должны развертываться в различных границах сети, они могут занимать один или несколько брандмауэров. В этом случае можно либо подать трафик о доверии через брандмауэр, либо открыть определенные порты в брандмауэре, чтобы разрешить передачу трафика.
 
 > [!IMPORTANT]
-> Active Directory Domain Services does not support restricting Active Directory RPC traffic to specific ports.
+> Домен Active Directory Services не поддерживает ограниченный трафик RPC Active Directory на определенные порты.
 
-Read the **Windows Server 2008 and later versions** section of the Microsoft Support Article [How to configure a firewall for Active Directory domains and trusts](https://support.microsoft.com/help/179442/how-to-configure-a-firewall-for-domains-and-trusts) to learn about the ports needed for a forest trust.
+Ознакомьтесь с разделом служба поддержки Майкрософт **Windows Server 2008 и более поздних версий** этой статьи, [как настроить брандмауэр для Active Directory доменов и отношений доверия](https://support.microsoft.com/help/179442/how-to-configure-a-firewall-for-domains-and-trusts) , чтобы узнать о портах, необходимых для доверия лесов.
 
-## <a name="supporting-services-and-tools"></a>Supporting services and tools
+## <a name="supporting-services-and-tools"></a>Вспомогательные службы и средства
 
-To support trusts and authentication, some additional features and management tools are used.
+Для поддержки отношений доверия и проверки подлинности используются некоторые дополнительные функции и средства управления.
 
-### <a name="net-logon"></a>Net Logon
+### <a name="net-logon"></a>Вход в сеть
 
-The Net Logon service maintains a secured channel from a Windows-based computer to a DC. It's also used in the following trust-related processes:
+Служба сетевого входа в систему поддерживает защищенный канал с компьютера под управлением Windows на контроллер домена. Он также используется в следующих процессах, связанных с отношениями доверия:
 
-* Trust setup and management - Net Logon helps maintain trust passwords, gathers trust information, and verifies trusts by interacting with the LSA process and the TDO.
+* Настройка доверия и управление — служба входа в сеть помогает поддерживать Доверенные пароли, собирает сведения о доверии и проверяет отношения доверия путем взаимодействия с процессом LSA и объектом TDO.
 
-    For Forest trusts, the trust information includes the Forest Trust Information (*FTInfo*) record, which includes the set of namespaces that a trusted forest claims to manage, annotated with a field that indicates whether each claim is trusted by the trusting forest.
+    Для доверий лесов сведения о доверии включают запись о доверии лесов (*фтинфо*), включающую в себя набор пространств имен, которым должны управлять утверждения доверенного леса, с добавлением поля, которое указывает, доверяет ли каждое утверждение доверяющему лесу.
 
-* Authentication – Supplies user credentials over a secured channel to a domain controller and returns the domain SIDs and user rights for the user.
+* Проверка подлинности — предоставляет учетные данные пользователя по защищенному каналу на контроллер домена и возвращает идентификаторы SID домена и права пользователя для пользователя.
 
-* Domain controller location – Helps with finding or locating domain controllers in a domain or across domains.
+* Расположение контроллера домена — помогает найти или найти контроллеры домена в домене или в нескольких доменах.
 
-* Pass-through validation – Credentials of users in other domains are processed by Net Logon. When a trusting domain needs to verify the identity of a user, it passes the user's credentials through Net Logon to the trusted domain for verification.
+* Сквозная проверка — учетные данные пользователей в других доменах обрабатываются с помощью команды Net Logon. Если доверяющему домену необходимо проверить подлинность пользователя, он передает учетные данные пользователя с помощью команды Net Logon в доверенный домен для проверки.
 
-* Privilege Attribute Certificate (PAC) verification – When a server using the Kerberos protocol for authentication needs to verify the PAC in a service ticket, it sends the PAC across the secure channel to its domain controller for verification.
+* Проверка сертификата атрибута прав доступа (PAC). когда сервер, использующий протокол Kerberos для проверки подлинности, должен проверить ключ PAC в билете службы, он отправляет PAC по безопасному каналу на контроллер домена для проверки.
 
-### <a name="local-security-authority"></a>Local Security Authority
+### <a name="local-security-authority"></a>Локальный центр безопасности
 
-The Local Security Authority (LSA) is a protected subsystem that maintains information about all aspects of local security on a system. Collectively known as local security policy, the LSA provides various services for translation between names and identifiers.
+Локальный администратор безопасности (LSA) — это защищенная подсистема, которая хранит информацию обо всех аспектах локальной безопасности в системе. В совокупности называется локальной политикой безопасности, LSA предоставляет различные службы для перевода между именами и идентификаторами.
 
-The LSA security subsystem provides services in both kernel mode and user mode for validating access to objects, checking user privileges, and generating audit messages. LSA is responsible for checking the validity of all session tickets presented by services in trusted or untrusted domains.
+Подсистема безопасности LSA предоставляет службы как в режиме ядра, так и в пользовательском режиме для проверки доступа к объектам, проверки прав пользователей и создания сообщений аудита. LSA отвечает за проверку допустимости всех билетов сеансов, представленных службами в доверенных или недоверенных доменах.
 
 ### <a name="management-tools"></a>Средства управления
 
-Administrators can use *Active Directory Domains and Trusts*, *Netdom* and *Nltest* to expose, create, remove, or modify trusts.
+Администраторы могут использовать *Active Directory домены и отношения доверия*, *netdom* и *nltest* для предоставления, создания, удаления или изменения отношений доверия.
 
-* *Active Directory Domains and Trusts* is the Microsoft Management Console (MMC) that is used to administer domain trusts, domain and forest functional levels, and user principal name suffixes.
-* The *Netdom* and *Nltest* command-line tools can be used to find, display, create, and manage trusts. These tools communicate directly with the LSA authority on a domain controller.
+* *Active Directory домены и отношения доверия* — это консоль управления (MMC), которая используется для управления доверительными отношениями домена, функциональными уровнями домена и леса и суффиксами имени участника-пользователя.
+* Программы командной строки *netdom* и *nltest* можно использовать для поиска, просмотра, создания и управления отношениями доверия. Эти средства напрямую взаимодействуют с полномочиями LSA на контроллере домена.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-To learn more about resource forests, see [How do forest trusts work in Azure AD DS?][concepts-trust]
+Дополнительные сведения о лесах ресурсов см [. в статье как работают отношения доверия лесов в Azure AD DS?][concepts-trust]
 
-To get started with creating an Azure AD DS managed domain with a resource forest, see [Create and configure an Azure AD DS managed domain][tutorial-create-advanced]. You can then [Create an outbound forest trust to an on-premises domain (preview)][create-forest-trust].
+Чтобы приступить к созданию управляемого домена Azure AD DS с помощью леса ресурсов, см. статью [Создание и Настройка управляемого домена AD DS Azure][tutorial-create-advanced]. Затем можно [создать исходящее доверие лесов для локального домена (Предварительная версия)][create-forest-trust].
 
 <!-- LINKS - INTERNAL -->
 [concepts-trust]: concepts-forest-trust.md

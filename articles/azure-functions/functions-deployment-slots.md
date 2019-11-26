@@ -1,6 +1,6 @@
 ---
-title: Azure Functions deployment slots
-description: Learn to create and use deployment slots with Azure Functions
+title: Слоты развертывания функций Azure
+description: Узнайте, как создавать и использовать слоты развертывания с помощью функций Azure.
 author: craigshoemaker
 ms.topic: reference
 ms.date: 08/12/2019
@@ -12,177 +12,177 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74230668"
 ---
-# <a name="azure-functions-deployment-slots"></a>Azure Functions deployment slots
+# <a name="azure-functions-deployment-slots"></a>Слоты развертывания функций Azure
 
-Azure Functions deployment slots allow your function app to run different instances called "slots". Slots are different environments exposed via a publicly available endpoint. One app instance is always mapped to the production slot, and you can swap instances assigned to a slot on demand. Function apps running under the Apps Service plan may have multiple slots, while under Consumption only one slot is allowed.
+Слоты развертывания функций Azure позволяют приложению-функции запускать различные экземпляры, называемые "слотами". Слоты — это разные среды, предоставляемые через общедоступную конечную точку. Один экземпляр приложения всегда сопоставляется с рабочим слотом, и вы можете поменять экземпляры, назначенные слоту, по запросу. Приложения-функции, выполняемые в плане службы приложений, могут иметь несколько слотов, в то время как в условиях использования допускается только один слот.
 
-The following reflect how functions are affected by swapping slots:
+Ниже показано, как зависят функции подкачки слотов:
 
-- Traffic redirection is seamless; no requests are dropped because of a swap.
-- If a function is running during a swap, execution continues and subsequent triggers are routed to the swapped app instance.
+- Перенаправление трафика неэффективно; запросы не отбрасываются из-за переключения.
+- Если во время переключения выполняется функция, выполнение продолжится, и последующие триггеры направляются в перенаправляемый экземпляр приложения.
 
 > [!NOTE]
-> Slots are currently not available for the Linux Consumption plan.
+> В настоящее время слоты недоступны для плана потребления Linux.
 
-## <a name="why-use-slots"></a>Why use slots?
+## <a name="why-use-slots"></a>Зачем использовать слоты?
 
-There are a number of advantages to using deployment slots. The following scenarios describe common uses for slots:
+Использование слотов развертывания имеет ряд преимуществ. В следующих сценариях описываются распространенные способы использования слотов.
 
-- **Different environments for different purposes**: Using different slots gives you the opportunity to differentiate app instances before swapping to production or a staging slot.
-- **Prewarming**: Deploying to a slot instead of directly to production allows the app to warm up before going live. Additionally, using slots reduces latency for HTTP-triggered workloads. Instances are warmed up before deployment which reduces the cold start for newly-deployed functions.
-- **Easy fallbacks**: After a swap with production, the slot with a previously staged app now has the previous production app. If the changes swapped into the production slot aren't as you expect, you can immediately reverse the swap to get your "last known good instance" back.
+- **Разные среды для разных целей**. Использование разных слотов позволяет различать экземпляры приложений перед переключением на рабочую или промежуточный слот.
+- Предварительная **Подготовка: развертывание**в слот, а не непосредственно в рабочую среду, позволяет подготовить приложение перед началом работы. Кроме того, использование слотов сокращает задержку для рабочих нагрузок, активируемых HTTP. Экземпляры загружаются до развертывания, что сокращает холодный запуск для вновь развернутых функций.
+- **Простые резервные**варианты. После переключения в рабочее состояние слот с ранее подготовленным приложением теперь имеет предыдущее рабочее приложение. Если изменения, переставляемые в рабочий слот, не так, как вы планируете, можно немедленно отменить переключение, чтобы получить «последний удачный экземпляр» назад.
 
-## <a name="swap-operations"></a>Swap operations
+## <a name="swap-operations"></a>Операции переключения
 
-During a swap, one slot is considered the source and the other the target. The source slot has the instance of the application that is applied to the target slot. The following steps ensure the target slot doesn't experience downtime during a swap:
+Во время переключения один слот считается источником и другим целевым объектом. Исходный слот содержит экземпляр приложения, который применяется к целевому слоту. Следующие шаги гарантируют, что целевой слот не будет испытывать простои во время переключения.
 
-1. **Apply settings:** Settings from the target slot are applied to all instances of the source slot. For example, the production settings are applied to the staging instance. The applied settings include the following categories:
-    - [Slot-specific](#manage-settings) app settings and connection strings (if applicable)
-    - [Continuous deployment](../app-service/deploy-continuous-deployment.md) settings (if enabled)
-    - [App Service authentication](../app-service/overview-authentication-authorization.md) settings (if enabled)
+1. **Применить параметры:** Параметры из целевого слота применяются ко всем экземплярам исходного слота. Например, к промежуточному экземпляру применяются параметры рабочей среды. К примененным параметрам относятся следующие категории:
+    - Параметры приложения и строки подключения для [конкретного слота](#manage-settings) (если применимо)
+    - Параметры [непрерывного развертывания](../app-service/deploy-continuous-deployment.md) (если включены)
+    - Параметры [проверки подлинности службы приложений](../app-service/overview-authentication-authorization.md) (если включены)
 
-1. **Wait for restarts and availability:** The swap waits for every instance in the source slot to complete its restart and to be available for requests. If any instance fails to restart, the swap operation reverts all changes to the source slot and stops the operation.
+1. **Ожидание перезагрузки и доступности:** Переключение ожидает завершения перезагрузки каждого экземпляра в слоте источника и должно быть доступно для запросов. Если какой либо экземпляр не перезапускается, операция переключения вернет все изменения в исходный слот и прекратит выполнение операции.
 
-1. **Update routing:** If all instances on the source slot are warmed up successfully, the two slots complete the swap by switching routing rules. After this step, the target slot (for example, the production slot) has the app that's previously warmed up in the source slot.
+1. **Маршрутизация обновлений:** Если все экземпляры в исходном слоте успешно загружены, переключение правил маршрутизации завершается двумя слотами. После выполнения этого шага в целевом слоте (например, в рабочем слоте) приложение, которое ранее было перегревается в исходном слоте.
 
-1. **Repeat operation:** Now that the source slot has the pre-swap app previously in the target slot, perform the same operation by applying all settings and restarting the instances for the source slot.
+1. **Операция повтора:** Теперь, когда исходный слот имеет предварительно переставляемое приложение в целевом слоте, выполните ту же операцию, применив все параметры и перезапуская экземпляры для исходного слота.
 
 Помните на следующие моменты.
 
-- At any point of the swap operation, initialization of the swapped apps happens on the source slot. The target slot remains online while the source slot is being prepared, whether the swap succeeds or fails.
+- В любой момент операции переключения происходит инициализация переключенных приложений в исходном слоте. Целевой слот остается в сети во время подготовки исходного слота, независимо от того, успешно ли выполняется операция переключения.
 
-- To swap a staging slot with the production slot, make sure that the production slot is *always* the target slot. This way, the swap operation doesn't affect your production app.
+- Чтобы переключить промежуточный слот на рабочий слот, убедитесь, что рабочий слот *всегда* является целевым слотом. Таким образом, операция переключения не влияет на рабочее приложение.
 
-- Settings related to event sources and bindings need to be configured as [deployment slot settings](#manage-settings) *before you initiate a swap*. Marking them as "sticky" ahead of time ensures events and outputs are directed to the proper instance.
+- Параметры, связанные с источниками событий и привязками, должны быть настроены в качестве [параметров слота развертывания](#manage-settings) *перед началом переключения*. Помечая их как «прикрепленные», вы гарантируете, что события и выходные данные будут направлены к нужному экземпляру.
 
 ## <a name="manage-settings"></a>Управление параметрами
 
 [!INCLUDE [app-service-deployment-slots-settings](../../includes/app-service-deployment-slots-settings.md)]
 
-### <a name="create-a-deployment-setting"></a>Create a deployment setting
+### <a name="create-a-deployment-setting"></a>Создание параметра развертывания
 
-You can mark settings as a deployment setting which makes it "sticky". A sticky setting does not swap with the app instance.
+Параметры можно пометить как параметр развертывания, что сделает его «прикрепленным». Параметр закрепления не переключается на экземпляр приложения.
 
-If you create a deployment setting in one slot, make sure to create the same setting with a unique value in any other slot involved in a swap. This way, while a setting's value doesn't change, the setting names remain consistent among slots. This name consistency ensures your code doesn't try to access a setting that is defined in one slot but not another.
+При создании параметра развертывания в одном слоте необходимо создать тот же параметр с уникальным значением в любом другом слоте, вовлеченном в подкачку. Таким образом, хотя значение параметра не меняется, имена параметров остаются согласованными между слотами. Согласованность имен гарантирует, что код не пытается получить доступ к параметру, определенному в одном слоте, но не к другому.
 
-Use the following steps to to create a deployment setting:
+Чтобы создать параметр развертывания, выполните следующие действия.
 
-- Navigate to *Slots* in the function app
-- Click on the slot name
-- Under *Platform Features > General Settings*, click on **Configuration**
-- Click on the setting name you want to stick with the current slot
-- Click the **Deployment slot setting** checkbox
-- Щелкните **ОК**
-- Once setting blade disappears, click **Save** to keep the changes
+- Переход к *слотам* в приложении функции
+- Щелкните имя слота
+- В разделе *функции платформы > общие параметры*щелкните **Конфигурация** .
+- Щелкните имя параметра, которое вы хотите прикрепить к текущему слоту.
+- Установите флажок **параметр слота развертывания** .
+- Нажмите кнопку **ОК**
+- После того, как колонка настройки исчезнет, нажмите кнопку **сохранить** , чтобы сохранить изменения.
 
-![Deployment Slot Setting](./media/functions-deployment-slots/azure-functions-deployment-slots-deployment-setting.png)
+![Параметр слота развертывания](./media/functions-deployment-slots/azure-functions-deployment-slots-deployment-setting.png)
 
-## <a name="deployment"></a>Развертывание.
+## <a name="deployment"></a>Развертывание
 
-Slots are empty when you create a slot. You can use any of the [supported deployment technologies](./functions-deployment-technologies.md) to deploy your application to a slot.
+При создании слота слоты пусты. Для развертывания приложения в слот можно использовать любую из [поддерживаемых технологий развертывания](./functions-deployment-technologies.md) .
 
 ## <a name="scaling"></a>Масштабирование
 
-All slots scale to the same number of workers as the production slot.
+Все слоты масштабируются на то же количество рабочих областей, что и рабочий слот.
 
-- For Consumption plans, the slot scales as the function app scales.
-- For App Service plans, the app scales to a fixed number of workers. Slots run on the same number of workers as the app plan.
+- Для планов потребления слот масштабируется по мере масштабирования приложения функции.
+- Для планов службы приложений приложение масштабируется до фиксированного числа рабочих ролей. Слоты работают на том же числе рабочих ролей, что и план приложения.
 
-## <a name="add-a-slot"></a>Add a slot
+## <a name="add-a-slot"></a>Добавление слота
 
-You can add a slot via the [CLI](https://docs.microsoft.com/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-create) or through the portal. The following steps demonstrate how to create a new slot in the portal:
+Добавить слот можно с помощью [интерфейса командной строки](https://docs.microsoft.com/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-create) или портала. Ниже показано, как создать новый слот на портале.
 
-1. Navigate to your function app and click on the **plus sign** next to *Slots*.
+1. Перейдите к приложению функции и щелкните **знак "плюс** " рядом с *слотами*.
 
-    ![Add Azure Functions deployment slot](./media/functions-deployment-slots/azure-functions-deployment-slots-add.png)
+    ![Добавление слота развертывания функций Azure](./media/functions-deployment-slots/azure-functions-deployment-slots-add.png)
 
-1. Enter a name in the textbox, and press the **Create** button.
+1. Введите имя в текстовое поле и нажмите кнопку **создать** .
 
-    ![Name Azure Functions deployment slot](./media/functions-deployment-slots/azure-functions-deployment-slots-add-name.png)
+    ![Имя слота развертывания функций Azure](./media/functions-deployment-slots/azure-functions-deployment-slots-add-name.png)
 
-## <a name="swap-slots"></a>Swap slots
+## <a name="swap-slots"></a>Поменять местами слоты
 
-You can swap slots via the [CLI](https://docs.microsoft.com/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-swap) or through the portal. The following steps demonstrate how to swap slots in the portal:
+Вы можете поменять местами слоты с помощью [интерфейса командной строки](https://docs.microsoft.com/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-swap) или портала. Ниже показано, как поменять местами слоты на портале.
 
-1. Navigate to the function app
-1. Click on the source slot name that you want to swap
-1. From the *Overview* tab, click on the **Swap** button  ![Swap Azure Functions deployment slot](./media/functions-deployment-slots/azure-functions-deployment-slots-swap.png)
-1. Verify the configuration settings for your swap and click **Swap** ![Swap Azure Functions deployment slot](./media/functions-deployment-slots/azure-functions-deployment-slots-swap-config.png)
+1. Переход к приложению функции
+1. Щелкните имя слота источника, который нужно поменять местами
+1. На вкладке *Обзор* нажмите кнопку **Переключить** , ![переключить слот развертывания функций Azure](./media/functions-deployment-slots/azure-functions-deployment-slots-swap.png)
+1. Проверьте параметры конфигурации для переключения, а затем щелкните " **поменять местами** ![слот развертывания функций Azure](./media/functions-deployment-slots/azure-functions-deployment-slots-swap-config.png)
 
-The operation may take a moment while the swap operation is executing.
+Операция может занять некоторое время, пока выполняется операция переключения.
 
-## <a name="roll-back-a-swap"></a>Roll back a swap
+## <a name="roll-back-a-swap"></a>Откат переключения
 
-If a swap results in an error or you simply want to "undo" a swap, you can roll back to the initial state. To return to the pre-swapped state, do another swap to reverse the swap.
+Если переключение приводит к ошибке или вы просто хотите отменить переключение, можно вернуться к начальному состоянию. Чтобы вернуться к состоянию до перекачки, выполните другую замену, чтобы отменить переключение.
 
-## <a name="remove-a-slot"></a>Remove a slot
+## <a name="remove-a-slot"></a>Удаление слота
 
-You can remove a slot via the [CLI](https://docs.microsoft.com/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-delete) or through the portal. The following steps demonstrate how to remove a slot in the portal:
+Вы можете удалить слот с помощью [интерфейса командной строки](https://docs.microsoft.com/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-delete) или портала. Ниже показано, как удалить слот на портале.
 
-1. Navigate to the function app Overview
+1. Перейдите к обзору приложения функции.
 
-1. Click on the **Delete** button
+1. Нажмите кнопку " **Удалить** ".
 
-    ![Add Azure Functions deployment slot](./media/functions-deployment-slots/azure-functions-deployment-slots-delete.png)
+    ![Добавление слота развертывания функций Azure](./media/functions-deployment-slots/azure-functions-deployment-slots-delete.png)
 
-## <a name="automate-slot-management"></a>Automate slot management
+## <a name="automate-slot-management"></a>Автоматизация управления слотами
 
-Using the [Azure CLI](https://docs.microsoft.com/cli/azure/functionapp/deployment/slot?view=azure-cli-latest), you can automate the following actions for a slot:
+С помощью [Azure CLI](https://docs.microsoft.com/cli/azure/functionapp/deployment/slot?view=azure-cli-latest)можно автоматизировать следующие действия для слота:
 
 - [создание](https://docs.microsoft.com/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-create)
 - [delete](https://docs.microsoft.com/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-delete)
 - [list](https://docs.microsoft.com/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-list)
-- [swap](https://docs.microsoft.com/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-swap)
-- [auto-swap](https://docs.microsoft.com/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-auto-swap)
+- [позиции](https://docs.microsoft.com/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-swap)
+- [Автоматическая замена](https://docs.microsoft.com/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-auto-swap)
 
-## <a name="change-app-service-plan"></a>Change app service plan
+## <a name="change-app-service-plan"></a>Изменение плана службы приложений
 
-With a function app that is running under an App Service plan, you have the option to change the underlying app service plan for a slot.
+С помощью приложения-функции, которое выполняется в рамках плана службы приложений, можно изменить базовый план службы приложений для слота.
 
 > [!NOTE]
-> You can't change a slot's App Service plan under the Consumption plan.
+> Невозможно изменить план службы приложений слота в плане потребления.
 
-Use the following steps to change a slot's app service plan:
+Чтобы изменить план службы приложений для слота, выполните следующие действия.
 
-1. Navigate to a slot
+1. Переход к слоту
 
-1. Under *Platform Features*, click **All Settings**
+1. В разделе *функции платформы*щелкните **все параметры** .
 
-    ![Change app service plan](./media/functions-deployment-slots/azure-functions-deployment-slots-change-app-service-settings.png)
+    ![Изменение плана службы приложений](./media/functions-deployment-slots/azure-functions-deployment-slots-change-app-service-settings.png)
 
-1. Click on **App Service plan**
+1. Щелкните **план службы приложений** .
 
-1. Select a new App Service plan, or create a new plan
+1. Выберите новый план службы приложений или создайте новый план.
 
-1. Щелкните **ОК**
+1. Нажмите кнопку **ОК**
 
-    ![Change app service plan](./media/functions-deployment-slots/azure-functions-deployment-slots-change-app-service-select.png)
+    ![Изменение плана службы приложений](./media/functions-deployment-slots/azure-functions-deployment-slots-change-app-service-select.png)
 
 
 ## <a name="limitations"></a>Ограничения
 
-Azure Functions deployment slots have the following limitations:
+Слоты развертывания функций Azure имеют следующие ограничения.
 
-- The number of slots available to an app depends on the plan. The Consumption plan is only allowed one deployment slot. Additional slots are available for apps running under the App Service plan.
-- Swapping a slot resets keys for apps that have an `AzureWebJobsSecretStorageType` app setting equal to `files`.
-- Slots are not available for the Linux Consumption plan.
+- Количество слотов, доступных для приложения, зависит от плана. План потребления допускает только один слот развертывания. Дополнительные слоты доступны для приложений, работающих в рамках плана службы приложений.
+- Переключение слота сбрасывает ключи для приложений с параметром приложения `AzureWebJobsSecretStorageType`, равным `files`.
+- Слоты недоступны для плана потребления Linux.
 
 ## <a name="support-levels"></a>Уровни поддержки
 
-There are two levels of support for deployment slots:
+Существует два уровня поддержки слотов развертывания.
 
-- **General availability (GA)** : Fully supported and approved for production use.
-- **Preview**: Not yet supported, but is expected to reach GA status in the future.
+- **Общая доступность (общедоступная версия)** : полностью поддерживается и утверждено для использования в рабочей среде.
+- **Предварительная версия**: пока не поддерживается, но в будущем ожидается, что она будет доступна в общедоступном состоянии.
 
-| OS/Hosting plan           | Level of support     |
+| План ОС и размещения           | Уровень поддержки     |
 | ------------------------- | -------------------- |
-| Windows Consumption       | Общедоступная версия |
+| Использование Windows       | Общедоступная версия |
 | Windows Premium           | Общедоступная версия  |
-| Windows Dedicated         | Общедоступная версия |
-| Linux Consumption         | Не поддерживается          |
+| Выделенные Windows         | Общедоступная версия |
+| Использование Linux         | Не поддерживается          |
 | Linux Premium             | Общедоступная версия  |
-| Linux Dedicated           | Общедоступная версия |
+| Выделенные Linux           | Общедоступная версия |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-- [Deployment technologies in Azure Functions](./functions-deployment-technologies.md)
+- [Технологии развертывания в функциях Azure](./functions-deployment-technologies.md)

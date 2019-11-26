@@ -1,7 +1,7 @@
 ---
-title: Train deep learning Chainer models
+title: Обучение моделей формирователя цепочки глубокого обучения
 titleSuffix: Azure Machine Learning
-description: Learn how to run your PyTorch training scripts at enterprise scale using Azure Machine Learning's Chainer estimator class.  The example script classifies handwritten digit images to build a deep learning neural network using the Chainer Python library running on top of numpy.
+description: Узнайте, как выполнять сценарии обучения PyTorch в масштабе предприятия с помощью класса оценщика цепочки Машинное обучение Azure.  Пример сценария классифицирует рукописные цифры для создания нейронной сети глубокого обучения с помощью библиотеки Python на основе NumPy.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -17,40 +17,40 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74224985"
 ---
-# <a name="train-and-register-chainer-models-at-scale-with-azure-machine-learning"></a>Train and register Chainer models at scale with Azure Machine Learning
+# <a name="train-and-register-chainer-models-at-scale-with-azure-machine-learning"></a>Обучение и регистрация моделей цепочек в масштабе с помощью Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
-In this article, learn how to run your [Chainer](https://chainer.org/) training scripts at enterprise scale using Azure Machine Learning's [Chainer estimator](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.chainer?view=azure-ml-py) class. The example training script in this article uses the popular [MNIST dataset](http://yann.lecun.com/exdb/mnist/) to classify handwritten digits using a deep neural network (DNN) built using the Chainer Python library running on top of [numpy](https://www.numpy.org/).
+Из этой статьи вы узнаете, как выполнять сценарии обучения для программы " [цепочка](https://chainer.org/) " в масштабах предприятия с помощью класса [оценщика цепочки](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.chainer?view=azure-ml-py) машинное обучение Azure. В примере обучающего скрипта в этой статье используется популярный [набор данных MNIST](http://yann.lecun.com/exdb/mnist/) для классификации рукописных цифр с помощью глубокой нейронной сети (DNN), созданной с помощью библиотеки Python, которая выполняется поверх [NumPy](https://www.numpy.org/).
 
-Whether you're training a deep learning Chainer model from the ground-up or you're bringing an existing model into the cloud, you can use Azure Machine Learning to scale out open-source training jobs using elastic cloud compute resources. You can build, deploy, version, and monitor production-grade models with Azure Machine Learning. 
+Независимо от того, обходите ли вы модель цепочки глубокого обучения с нуля или используете существующую модель в облаке, вы можете использовать Машинное обучение Azure для масштабирования заданий обучения с открытым исходным кодом с помощью эластичных облачных ресурсов. Вы можете создавать, развертывать, выполнять версии и отслеживать модели производственного уровня с помощью Машинное обучение Azure. 
 
-Learn more about [deep learning vs machine learning](concept-deep-learning-vs-machine-learning.md).
+Дополнительные сведения о [глубоком обучении и машинном обучении](concept-deep-learning-vs-machine-learning.md).
 
-Если у вас еще нет подписки Azure, создайте бесплатную учетную запись, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) уже сегодня.
+Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) уже сегодня.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
-Run this code on either of these environments:
+Запустите этот код в любой из этих сред:
 
-- Azure Machine Learning Notebook VM - no downloads or installation necessary
+- Машинное обучение Azure виртуальной машины записной книжки — Загрузка или установка не требуется
 
-    - Complete the [Tutorial: Setup environment and workspace](tutorial-1st-experiment-sdk-setup.md) to create a dedicated notebook server pre-loaded with the SDK and the sample repository.
-    - In the samples deep learning folder on the notebook server, find a completed notebook and files in the **how-to-use-azureml > ml-frameworks > chainer > deployment > train-hyperparameter-tune-deploy-with-chainer** folder.  The notebook includes expanded sections covering intelligent hyperparameter tuning, model deployment, and notebook widgets.
+    - Выполните инструкции из [учебника Настройка среды и рабочей области](tutorial-1st-experiment-sdk-setup.md) , чтобы создать выделенный сервер записной книжки, предварительно загруженный с помощью пакета SDK и примера репозитория.
+    - В папке примеры глубокого обучения на сервере записной книжки найдите готовую записную книжку и файлы в окне "использование **> ML-Frameworks" > > развертывание > Train-i Parameter-Настройка-deploy-с помощью папки-chaining** .  Записная книжка включает в себя развернутые разделы, охватывающие интеллектуальные настройки, развертывание моделей и мини-приложения записных книжек.
 
 - Собственный сервер Jupyter Notebook
 
-    - [Install the Azure Machine Learning SDK](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py).
-    - [Create a workspace configuration file](how-to-configure-environment.md#workspace).
-    - Download the sample script file [chainer_mnist.py](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/ml-frameworks/chainer/deployment/train-hyperparameter-tune-deploy-with-chainer).
-     - You can also find a completed [Jupyter Notebook version](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/ml-frameworks/chainer/deployment/train-hyperparameter-tune-deploy-with-chainer/train-hyperparameter-tune-deploy-with-chainer.ipynb) of this guide on GitHub samples page. The notebook includes expanded sections covering intelligent hyperparameter tuning, model deployment, and notebook widgets.
+    - [Установите пакет SDK для машинное обучение Azure](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py).
+    - [Создайте файл конфигурации рабочей области](how-to-configure-environment.md#workspace).
+    - Скачайте пример файла скрипта [chainer_mnist. корректировки](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/ml-frameworks/chainer/deployment/train-hyperparameter-tune-deploy-with-chainer).
+     - Вы также можете найти завершенную [Jupyter Notebook версию](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/ml-frameworks/chainer/deployment/train-hyperparameter-tune-deploy-with-chainer/train-hyperparameter-tune-deploy-with-chainer.ipynb) этого руководства на странице примеров GitHub. Записная книжка включает в себя развернутые разделы, охватывающие интеллектуальные настройки, развертывание моделей и мини-приложения записных книжек.
 
-## <a name="set-up-the-experiment"></a>Set up the experiment
+## <a name="set-up-the-experiment"></a>Настройка эксперимента
 
-This section sets up the training experiment by loading the required python packages, initializing a workspace, creating an experiment, and uploading the training data and training scripts.
+В этом разделе выполняется настройка обучающего эксперимента путем загрузки требуемых пакетов Python, инициализации рабочей области, создания эксперимента и отправки обучающих данных и сценариев обучения.
 
 ### <a name="import-packages"></a>Импорт пакетов
 
-First, import the azureml.core Python library and display the version number.
+Сначала импортируйте библиотеку azureml. Core Python и отобразите номер версии.
 
 ```
 # Check core SDK version number
@@ -59,18 +59,18 @@ import azureml.core
 print("SDK version:", azureml.core.VERSION)
 ```
 
-### <a name="initialize-a-workspace"></a>Initialize a workspace
+### <a name="initialize-a-workspace"></a>Инициализация рабочей области
 
-The [Azure Machine Learning workspace](concept-workspace.md) is the top-level resource for the service. It provides you with a centralized place to work with all the artifacts you create. In the Python SDK, you can access the workspace artifacts by creating a [`workspace`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py) object.
+[Машинное обучение Azure Рабочая область](concept-workspace.md) — это ресурс верхнего уровня для службы. Он обеспечивает централизованное расположение для работы со всеми создаваемыми артефактами. В пакете SDK для Python можно получить доступ к артефактам рабочей области, создав объект [`workspace`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py) .
 
-Create a workspace object by reading the `config.json` file created in the [prerequisites section](#prerequisites):
+Создайте объект рабочей области, прочитав файл `config.json`, созданный в [разделе Предварительные требования](#prerequisites):
 
 ```Python
 ws = Workspace.from_config()
 ```
 
-### <a name="create-a-project-directory"></a>Create a project directory
-Create a directory that will contain all the necessary code from your local machine that you will need access to on the remote resource. This includes the training script and any additional files your training script depends on.
+### <a name="create-a-project-directory"></a>Создание каталога проекта
+Создайте каталог, который будет содержать весь необходимый код с локального компьютера, к которому потребуется доступ на удаленном ресурсе. Сюда входит сценарий обучения и все дополнительные файлы, от которых зависит ваш сценарий обучения.
 
 ```
 import os
@@ -79,15 +79,15 @@ project_folder = './chainer-mnist'
 os.makedirs(project_folder, exist_ok=True)
 ```
 
-### <a name="prepare-training-script"></a>Prepare training script
+### <a name="prepare-training-script"></a>Подготовка сценария обучения
 
-In this tutorial, the training script **chainer_mnist.py** is already provided for you. In practice, you should be able to take any custom training script as is and run it with Azure ML without having to modify your code.
+В этом руководстве сценарий обучения **chainer_mnist. Корректировка** уже предоставлен. На практике вы можете использовать любой пользовательский сценарий обучения как есть и запускать его с помощью Azure ML без необходимости изменять код.
 
-To use Azure ML's tracking and metrics capabilities, add a small amount of Azure ML code inside your training script.  The training script **chainer_mnist.py** shows how to log some metrics to your Azure ML run using the `Run` object within the script.
+Чтобы использовать возможности отслеживания и метрик машинного обучения Azure, добавьте небольшой объем кода машинного обучения Azure в сценарий обучения.  В обучающем скрипте **chainer_mnist. Корректировка** показано, как зарегистрировать некоторые метрики в машинном обучении Azure с помощью объекта `Run` в скрипте.
 
-The provided training script uses example data from the chainer `datasets.mnist.get_mnist` function.  For your own data, you may need to use steps such as [Upload dataset and scripts](how-to-train-keras.md#data-upload) to make data available during training.
+В предоставленном скрипте обучения используются данные примера из функции Chain `datasets.mnist.get_mnist`.  Для собственных данных может потребоваться выполнить такие действия, как [Передача набора данных и скриптов](how-to-train-keras.md#data-upload) , чтобы сделать данные доступными во время обучения.
 
-Copy the training script **chainer_mnist.py** into your project directory.
+Скопируйте сценарий обучения **chainer_mnist. копировать** в каталог проекта.
 
 ```
 import shutil
@@ -95,9 +95,9 @@ import shutil
 shutil.copy('chainer_mnist.py', project_folder)
 ```
 
-### <a name="create-a-deep-learning-experiment"></a>Create a deep learning experiment
+### <a name="create-a-deep-learning-experiment"></a>Создание эксперимента глубокого обучения
 
-Создайте эксперимент. In this example, create an experiment called "chainer-mnist".
+Создайте эксперимент. В этом примере Создайте эксперимент с именем "Chain-mnist".
 
 ```
 from azureml.core import Experiment
@@ -107,11 +107,11 @@ experiment = Experiment(ws, name=experiment_name)
 ```
 
 
-## <a name="create-or-get-a-compute-target"></a>Create or get a compute target
+## <a name="create-or-get-a-compute-target"></a>Создание или получение целевого объекта вычислений
 
-You need a [compute target](concept-compute-target.md) for training your model. In this example, you use Azure ML managed compute (AmlCompute) for your remote training compute resource.
+Для обучения модели требуется [целевой объект вычислений](concept-compute-target.md) . В этом примере используется управляемый центр МАШИНного обучения Azure (Амлкомпуте) для удаленного обучающего ресурса.
 
-**Creation of AmlCompute takes approximately 5 minutes**. If the AmlCompute with that name is already in your workspace, this code skips the creation process.  
+**Создание амлкомпуте занимает примерно 5 минут**. Если Амлкомпуте с таким именем уже находится в рабочей области, этот код пропускает процесс создания.  
 
 ```Python
 from azureml.core.compute import ComputeTarget, AmlCompute
@@ -137,13 +137,13 @@ except ComputeTargetException:
 print(compute_target.get_status().serialize())
 ```
 
-For more information on compute targets, see the [what is a compute target](concept-compute-target.md) article.
+Дополнительные сведения о целевых объектах вычислений см. в статье [что такое целевые показатели вычислений](concept-compute-target.md) .
 
-## <a name="create-a-chainer-estimator"></a>Create a Chainer estimator
+## <a name="create-a-chainer-estimator"></a>Создание оценщика цепочки
 
-The [Chainer estimator](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.chainer?view=azure-ml-py) provides a simple way of launching Chainer training jobs on your compute target.
+Средство [оценки формирователя цепочки](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.chainer?view=azure-ml-py) предоставляет простой способ запуска заданий обучения формирователя цепочки на целевом объекте вычислений.
 
-The Chainer estimator is implemented through the generic [`estimator`](https://docs.microsoft.com//python/api/azureml-train-core/azureml.train.estimator.estimator?view=azure-ml-py) class, which can be used to support any framework. For more information about training models using the generic estimator, see [train models with Azure Machine Learning using estimator](how-to-train-ml-models.md)
+Оценщик цепочки реализуется с помощью универсального класса [`estimator`](https://docs.microsoft.com//python/api/azureml-train-core/azureml.train.estimator.estimator?view=azure-ml-py) , который можно использовать для поддержки любой платформы. Дополнительные сведения о учебных моделях с помощью универсального средства оценки см. в статье [обучение моделей с машинное обучение Azure помощью средства оценки](how-to-train-ml-models.md) .
 
 ```Python
 from azureml.train.dnn import Chainer
@@ -162,40 +162,40 @@ estimator = Chainer(source_directory=project_folder,
                     use_gpu=True)
 ```
 
-## <a name="submit-a-run"></a>Submit a run
+## <a name="submit-a-run"></a>Отправка запуска
 
-The [Run object](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run%28class%29?view=azure-ml-py) provides the interface to the run history while the job is running and after it has completed.
+[Объект Run](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run%28class%29?view=azure-ml-py) предоставляет интерфейс для журнала выполнения во время выполнения задания и после его завершения.
 
 ```Python
 run = exp.submit(est)
 run.wait_for_completion(show_output=True)
 ```
 
-As the Run is executed, it goes through the following stages:
+При выполнении выполнения он проходит следующие этапы.
 
-- **Preparing**: A docker image is created according to the Chainer estimator. The image is uploaded to the workspace's container registry and cached for later runs. Logs are also streamed to the run history and can be viewed to monitor progress.
+- **Подготовка**. образ DOCKER создается в соответствии с оценщиком формирователя цепочки. Образ отправляется в реестр контейнеров рабочей области и кэшируется для последующего выполнения. Журналы также передаются в журнал выполнения и могут быть просмотрены для отслеживания хода выполнения.
 
-- **Scaling**: The cluster attempts to scale up if the Batch AI cluster requires more nodes to execute the run than are currently available.
+- **Масштабирование**. Кластер пытается выполнить масштабирование, если кластеру Batch AI требуется больше узлов для выполнения выполнения, чем в настоящее время доступно.
 
-- **Running**: All scripts in the script folder are uploaded to the compute target, data stores are mounted or copied, and the entry_script is executed. Outputs from stdout and the ./logs folder are streamed to the run history and can be used to monitor the run.
+- **Выполняется**: все скрипты в папке Script передаются в целевой объект вычислений, хранилища данных подключаются или копируются, а entry_script выполняется. Выходные данные из STDOUT и папки/логс передаются в журнал выполнения и могут использоваться для наблюдения за выполнением.
 
-- **Post-Processing**: The ./outputs folder of the run is copied over to the run history.
+- **Пост-обработка**. папка/Outputs для выполнения копируется в журнал выполнения.
 
-## <a name="save-and-register-the-model"></a>Save and register the model
+## <a name="save-and-register-the-model"></a>Сохранение и регистрация модели
 
-Once you've trained the model, you can save and register it to your workspace. Model registration lets you store and version your models in your workspace to simplify [model management and deployment](concept-model-management-and-deployment.md).
+После обучения модели ее можно сохранить и зарегистрировать в рабочей области. Регистрация модели позволяет хранить и отменять версии моделей в рабочей области, чтобы упростить [Управление моделями и их развертывание](concept-model-management-and-deployment.md).
 
 
-After the model training has completed, register the model to your workspace with the following code.  
+После завершения обучения модели Зарегистрируйте модель в рабочей области с помощью следующего кода.  
 
 ```Python
 model = run.register_model(model_name='chainer-dnn-mnist', model_path='outputs/model.npz')
 ```
 
 > [!TIP]
-> The model you just registered is deployed the exact same way as any other registered model in Azure Machine Learning, regardless of which estimator you used for training. The deployment how-to contains a section on registering models, but you can skip directly to [creating a compute target](how-to-deploy-and-where.md#choose-a-compute-target) for deployment, since you already have a registered model.
+> Только что зарегистрированная модель развертывается точно так же, как и любая другая Зарегистрированная модель в Машинное обучение Azure, независимо от того, какой механизм оценки использовался для обучения. Руководство по развертыванию содержит раздел, посвященный регистрации моделей, но можно сразу перейти к [созданию целевого объекта вычислений](how-to-deploy-and-where.md#choose-a-compute-target) для развертывания, так как у вас уже есть Зарегистрированная модель.
 
-You can also download a local copy of the model. This can be useful for doing additional model validation work locally. In the training script, `chainer_mnist.py`, a saver object persists the model to a local folder (local to the compute target). You can use the Run object to download a copy from datastore.
+Также можно скачать локальную копию модели. Это может быть полезно для выполнения дополнительной проверки модели локально. В скрипте обучения `chainer_mnist.py`объект хранителя сохраняет модель в локальной папке (локальную для целевого объекта вычислений). Чтобы скачать копию из хранилища данных, можно использовать объект Run.
 
 ```Python
 # Create a model folder in the current directory
@@ -208,12 +208,12 @@ for f in run.get_file_names():
         run.download_file(name=f, output_file_path=output_file_path)
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-In this article, you trained and registered a deep learning, neural network using Chainer on Azure Machine Learning. To learn how to deploy a model, continue on to our  [model deployment](how-to-deploy-and-where.md) article.
+В этой статье вы обучили и зарегистрировали нейронную сеть для глубокого обучения, использующую цепочку Машинное обучение Azure. Чтобы узнать, как развернуть модель, перейдите к статье о [развертывании модели](how-to-deploy-and-where.md) .
 
 * [Настройка гиперпараметров](how-to-tune-hyperparameters.md)
 
 * [Отслеживание метрик выполнения во время обучения](how-to-track-experiments.md)
 
-* [View our reference architecture for distributed deep learning training in Azure](/azure/architecture/reference-architectures/ai/training-deep-learning)
+* [Ознакомьтесь с нашей справочной архитектурой по распределенному глубокому обучению в Azure](/azure/architecture/reference-architectures/ai/training-deep-learning)

@@ -9,7 +9,7 @@ ms.topic: conceptual
 ms.date: 11/01/2019
 ms.openlocfilehash: e36cc044e6a4160d16f15b93d8a88d946f476c89
 ms.sourcegitcommit: e50a39eb97a0b52ce35fd7b1cf16c7a9091d5a2a
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/21/2019
 ms.locfileid: "74287101"
@@ -45,7 +45,7 @@ ms.locfileid: "74287101"
 | [Хранилище BLOB-объектов Azure](connector-azure-blob-storage.md) | - | Ключ учетной записи |
 | [Хранилище Azure Data Lake Gen1](connector-azure-data-lake-store.md) | - | Субъект-служба |
 | [Хранилище Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md) | - | Ключ учетной записи, субъект-служба |
-| [База данных SQL Azure](connector-azure-sql-database.md) | - | Аутентификация SQL |
+| [база данных SQL Azure;](connector-azure-sql-database.md) | - | Аутентификация SQL |
 | [Azure синапсе Analytics](connector-azure-sql-data-warehouse.md) | - | Аутентификация SQL |
 
 ## <a name="the-mashup-editor"></a>Редактор гибридных приложений

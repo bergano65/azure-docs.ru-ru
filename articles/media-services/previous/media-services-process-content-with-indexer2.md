@@ -24,7 +24,7 @@ ms.locfileid: "74464063"
 # <a name="indexing-media-files-with-azure-media-indexer-2-preview"></a>Индексирование файлов мультимедиа с помощью индексатора мультимедийных данных Azure 2 (предварительная версия)
 
 > [!NOTE]
-> The [Azure Media Indexer 2](media-services-process-content-with-indexer2.md) media processor will be retired on January 1 of 2020. [Azure Media Services Video Indexer](https://docs.microsoft.com/azure/media-services/video-indexer/) replaces this legacy media processor. For more information, see [Migrate from Azure Media Indexer and Azure Media Indexer 2 to Azure Media Services Video Indexer](migrate-indexer-v1-v2.md).
+> [Azure Media indexer 2](media-services-process-content-with-indexer2.md) процессор мультимедиа будет снят с 1 января 2020. [Индексатор видео служб мультимедиа Azure](https://docs.microsoft.com/azure/media-services/video-indexer/) заменяет этот устаревший обработчик мультимедиа. Дополнительные сведения см. в статье [Миграция с Azure Media indexer и Azure Media indexer 2 в индексатор видео служб мультимедиа Azure](migrate-indexer-v1-v2.md).
 
 Обработчик мультимедиа **индексатор мультимедийных данных Azure 2 (предварительная версия)** позволяет сделать мультимедийные файлы и содержимое доступными для поиска, а также создавать дорожки для субтитров. По сравнению с предыдущей версией [индексатора мультимедийных данных](media-services-index-content.md), **индексатор мультимедийных данных Azure 2 (предварительная версия)** быстрее выполняет индексирование и предлагает более широкую поддержку языков. В число поддерживаемых языков входят английский, испанский, французский, немецкий, итальянский, китайский (мандаринский диалект, упрощенное письмо), португальский, арабский, русский и японский.
 
@@ -36,7 +36,7 @@ ms.locfileid: "74464063"
 
 Действительны следующие условия.
  
-* Indexer 2 is not supported in Azure China 21Vianet and Azure Government.
+* Индексатор 2 не поддерживается в Azure Китая 21Vianet и Azure для государственных организаций.
 * При индексировании содержимого обязательно используйте файлы мультимедиа, содержащие отчетливую речь (без фоновой музыки, шума, эффектов или шипения микрофона). Примерами подходящего содержимого могут служить записи собраний, лекций или презентаций. Для индексирования, как правило, не подходит такое содержимое, как фильмы, телепередачи, любые материалы со смешанными аудио- и звуковыми эффектами, записи плохого качества с фоновым шумом (шипением).
  
 ## <a name="input-and-output-files"></a>Входные и выходные файлы
@@ -86,7 +86,7 @@ ms.locfileid: "74464063"
 * японский [JaJp].
 * русский [RuRu];
 * британский английский [EnGb];
-* Spanish (Mexico) [EsMx] 
+* Испанский (Мексика) [Есмкс] 
 
 ## <a name="supported-file-types"></a>Поддерживаемые типы файлов
 
@@ -294,7 +294,7 @@ namespace IndexContent
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отправить отзыв
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="related-links"></a>Связанные ссылки

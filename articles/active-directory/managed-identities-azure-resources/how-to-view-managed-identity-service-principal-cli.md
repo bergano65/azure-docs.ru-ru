@@ -1,5 +1,5 @@
 ---
-title: View service principal of a managed identity - Azure CLI - Azure AD
+title: Просмотр субъекта-службы управляемого удостоверения — Azure CLI Azure AD
 description: Пошаговое руководство по просмотру субъекта-службы управляемого удостоверения с помощью Azure CLI.
 services: active-directory
 documentationcenter: ''
@@ -28,7 +28,7 @@ ms.locfileid: "74224605"
 
 В этой статье описано, как просмотреть субъект-службу управляемого удостоверения с помощью Azure CLI.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 - Если вы не работали с управляемыми удостоверениями для ресурсов Azure, изучите [общие сведения](overview.md).
 - Если у вас нет учетной записи Azure, зарегистрируйтесь для получения [бесплатной пробной версии](https://azure.microsoft.com/free/).
@@ -48,7 +48,7 @@ ms.locfileid: "74224605"
 az ad sp list --display-name <VM or application name>
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения об управлении субъектами-службами Azure AD с помощью Azure CLI см. в разделе [az ad sp](/cli/azure/ad/sp).
 

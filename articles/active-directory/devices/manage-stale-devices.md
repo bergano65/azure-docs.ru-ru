@@ -1,6 +1,6 @@
 ---
 title: Управление устаревшими устройствами в Azure AD | Документация Майкрософт
-description: Learn how to remove stale devices from your database of registered devices in Azure Active Directory.
+description: Узнайте, как удалить устаревшие устройства из базы данных зарегистрированных устройств в Azure Active Directory.
 services: active-directory
 ms.service: active-directory
 ms.subservice: devices
@@ -13,12 +13,12 @@ ms.reviewer: spunukol
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 1829c56f9804c5aa808461db98a5048d63f55446
 ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74207281"
 ---
-# <a name="how-to-manage-stale-devices-in-azure-ad"></a>How To: Manage stale devices in Azure AD
+# <a name="how-to-manage-stale-devices-in-azure-ad"></a>Руководство. управление устаревшими устройствами в Azure AD
 
 Чтобы правильно завершить жизненный цикл ставшего ненужным зарегистрированного устройства, нужно отменить его регистрацию. Но в некоторых случаях такие устройства остаются в среде как устаревшие, например если они украдены, потеряны, сломаны или на них переустановлена ОС. ИТ-администратору будет полезно научиться удалять такие устаревшие устройства, чтобы не тратить время не на них, а на другие актуальные ресурсы.
 
@@ -30,7 +30,7 @@ ms.locfileid: "74207281"
 Устаревшим называется устройство, которое было зарегистрировано в Azure AD, но в течение некоторого времени уже не используется для доступа к приложениям. Устаревшие устройства негативно влияют на возможности поддержки устройств и пользователей и управлению ими в клиенте, так как: 
 
 - избыточное число устройств мешает сотрудникам службы поддержки быстро определить, какое устройство используется;
-- An increased number of devices creates unnecessary device writebacks increasing the time for Azure AD connect syncs.
+- Увеличение числа устройств создает ненужные записи устройств, увеличивая время синхронизации Azure AD Connect.
 - поддержание актуальных сведений о состоянии устройств нужно для поддержания "гигиены" и соблюдения требований в среде. 
 
 Устаревшие устройства в AAD мешают правильно применять политики жизненного цикла для устройств в организации.
@@ -43,11 +43,11 @@ ms.locfileid: "74207281"
 
 Оценка метки активности инициируется при запросе аутентификации с устройства. Azure AD оценивает метку активности в следующих случаях:
 
-- A Conditional Access policies requiring [managed devices](../conditional-access/require-managed-devices.md) or [approved client apps](../conditional-access/app-based-conditional-access.md) has been triggered.
+- Активированы политики условного доступа, которым требуются [управляемые устройства](../conditional-access/require-managed-devices.md) или [утвержденные клиентские приложения](../conditional-access/app-based-conditional-access.md) .
 - когда в сети активируются устройства Windows 10, использующие обычное или гибридное присоединение к AAD; 
 - когда управляемые устройства Intune подключаются к этой службе.
 
-If the delta between the existing value of the activity timestamp and the current value is more than 14 days (+/-5 day variance), the existing value is replaced with the new value.
+Если разница между существующим значением метки времени действия и текущим значением превышает 14 дней (+/-5 дней), существующее значение заменяется новым значением.
 
 ## <a name="how-do-i-get-the-activity-timestamp"></a>Как получить метку активности?
 
@@ -77,7 +77,7 @@ If the delta between the existing value of the activity timestamp and the curren
 
 ### <a name="timeframe"></a>Временной интервал
 
-Определите интервал времени, по которому определяются устаревшие устройства. When defining your timeframe, factor the window noted for updating the activity timestamp into your value. For example, you shouldn't consider a timestamp that is younger than 21 days (includes variance) as an indicator for a stale device. В некоторых ситуациях устройство может казаться устаревшим, хотя фактически им не является. Например, если владелец устройства уехал в отпуск или заболел  на период, превышающий выбранный вами интервал.
+Определите интервал времени, по которому определяются устаревшие устройства. При определении временных интервалов следует учесть, что для обновления метки времени действия в значении указано окно. Например, не следует рассматривать метку времени, которая меньше 21 дня (включает дисперсию) в качестве индикатора устаревшего устройства. В некоторых ситуациях устройство может казаться устаревшим, хотя фактически им не является. Например, если владелец устройства уехал в отпуск или заболел  на период, превышающий выбранный вами интервал.
 
 ### <a name="disable-devices"></a>Отключение устройств
 
@@ -89,7 +89,7 @@ If the delta between the existing value of the activity timestamp and the curren
 
 ### <a name="system-managed-devices"></a>Устройства, управляемые системой
 
-Не удаляйте устройства, управляемые системой. Это могут быть такие устройства, как автопилот. Once deleted, these devices can't be reprovisioned. Новый командлет `get-msoldevice` по умолчанию пропускает устройства, управляемые системой. 
+Не удаляйте устройства, управляемые системой. Это могут быть такие устройства, как автопилот. После удаления эти устройства нельзя будет повторно подготавливать. Новый командлет `get-msoldevice` по умолчанию пропускает устройства, управляемые системой. 
 
 ### <a name="hybrid-azure-ad-joined-devices"></a>Гибридные устройства, присоединенные к Azure AD
 
@@ -98,13 +98,13 @@ If the delta between the existing value of the activity timestamp and the curren
 Для очистки AAD сделайте следующее:
 
 - **Устройства Windows 10** — отключите или удалите устройства Windows 10 в локальном каталоге AD и дождитесь синхронизации изменений в Azure Active Directory.
-- **Windows 7/8** - Disable or delete Windows 7/8 devices in your on-premises AD first. Azure AD Connect нельзя использовать для отключения или удаления устройств Windows 7 или 8 в Azure AD. Instead, when you make the change in your on-premises, you must disable/delete in Azure AD.
+- **Windows 7/8** . сначала отключите или удалите устройства Windows 7/8 в локальной службе AD. Azure AD Connect нельзя использовать для отключения или удаления устройств Windows 7 или 8 в Azure AD. Вместо этого при внесении изменений в локальную среду необходимо отключить или удалить в Azure AD.
 
 > [!NOTE]
->* Deleting devices in your on-premises AD or Azure AD does not remove registration on the client. It will only prevent access to resources using device as an identity (e.g. Conditional Access). Read additional information on how to [remove registration on the client](faq.md#hybrid-azure-ad-join-faq).
->* Deleting a Windows 10 device only in Azure AD will re-synchronize the device from your on-premises using Azure AD connect but as a new object in "Pending" state. A re-registration is required on the device.
->* Removing the device from sync scope for Windows 10/Server 2016 devices will delete the Azure AD device. Adding it back to sync scope will place a new object in "Pending" state. A re-registration of the device is required.
->* If you not using Azure AD Connect for Windows 10 devices to synchronize (e.g. ONLY using AD FS for registration), you must manage lifecycle similar to Windows 7/8 devices.
+>* Удаление устройств в локальной службе AD или Azure AD не приводит к удалению регистрации на клиенте. Он будет препятствовать доступу к ресурсам с помощью устройства в качестве удостоверения (например, условный доступ). Ознакомьтесь с дополнительными сведениями о том, как [Удалить регистрацию на клиенте](faq.md#hybrid-azure-ad-join-faq).
+>* При удалении устройства Windows 10 только в Azure AD будет выполнена повторная синхронизация устройства из локальной среды с помощью Azure AD Connect, но в качестве нового объекта в состоянии "ожидание". На устройстве требуется повторная регистрация.
+>* При удалении устройства из области синхронизации для устройств Windows 10 или Server 2016 устройство Azure AD будет удалено. При добавлении обратно в область синхронизации новый объект будет находиться в состоянии "ожидание". Требуется повторная регистрация устройства.
+>* Если вы не используете Azure AD Connect для синхронизации устройств с Windows 10 (например, только AD FS для регистрации), необходимо управлять жизненным циклом, аналогичным устройствам Windows 7/8.
 
 
 ### <a name="azure-ad-joined-devices"></a>Устройства, присоединенные к Azure AD
@@ -112,16 +112,16 @@ If the delta between the existing value of the activity timestamp and the curren
 Отключите или удалите в Azure AD устройства, присоединенные к Azure AD.
 
 > [!NOTE]
->* Deleting an Azure AD device does not remove registration on the client. It will only prevent access to resources using device as an identity (e.g Conditional Access). 
->* Read more on [how to unjoin on Azure AD](faq.md#azure-ad-join-faq) 
+>* При удалении устройства Azure AD регистрация на клиенте не удаляется. Он будет препятствовать доступу к ресурсам с помощью устройства в качестве удостоверения (например, условный доступ). 
+>* Дополнительные сведения о [том, как отсоединиться от Azure AD](faq.md#azure-ad-join-faq) 
 
 ### <a name="azure-ad-registered-devices"></a>Устройства, зарегистрированные в Azure AD
 
 Отключите или удалите в Azure AD устройства, зарегистрированные в Azure AD.
 
 > [!NOTE]
->* Deleting an Azure AD registered device in Azure AD does not remove registration on the client. It will only prevent access to resources using device as an identity (e.g. Conditional Access).
->* Read more on [how to remove a registration on the client](faq.md#azure-ad-register-faq)
+>* Удаление зарегистрированного устройства Azure AD в Azure AD не приводит к удалению регистрации на клиенте. Он будет препятствовать доступу к ресурсам с помощью устройства в качестве удостоверения (например, условный доступ).
+>* Дополнительные сведения [о том, как удалить регистрацию на клиенте](faq.md#azure-ad-register-faq)
 
 ## <a name="clean-up-stale-devices-in-the-azure-portal"></a>Очистка устаревших устройств на портале Azure  
 
@@ -130,12 +130,12 @@ If the delta between the existing value of the activity timestamp and the curren
 Типичная процедура состоит из следующих шагов:
 
 1. подключение к Azure Active Directory с помощью командлета [Connect-MsolService](https://docs.microsoft.com/powershell/module/msonline/connect-msolservice?view=azureadps-1.0);
-1. Получение списка устройств
+1. получение списка устройств;
 1. отключение устройства с помощью командлета [Disable-MsolDevice](https://docs.microsoft.com/powershell/module/msonline/disable-msoldevice?view=azureadps-1.0); 
 1. Ожидание периода времени перед удалением, в зависимости от количества указанных вами дней.
 1. удаление устройства с помощью командлета [Remove-MsolDevice](https://docs.microsoft.com/powershell/module/msonline/remove-msoldevice?view=azureadps-1.0).
 
-### <a name="get-the-list-of-devices"></a>Получение списка устройств
+### <a name="get-the-list-of-devices"></a>получение списка устройств;
 
 Чтобы получить список всех устройств и сохранить эти данные в CSV-файл, выполните:
 
@@ -144,7 +144,7 @@ Get-MsolDevice -all | select-object -Property Enabled, DeviceId, DisplayName, De
 mateLastLogonTimestamp | export-csv devicelist-summary.csv
 ```
 
-If you have a large number of devices in your directory, use the timestamp filter to narrow down the number of returned devices. Чтобы получить и сохранить в CSV-файл список всех устройств, у которых метка времени старше указанной даты, выполните: 
+Если в вашем каталоге имеется большое количество устройств, используйте фильтр меток времени, чтобы уменьшить количество возвращенных устройств. Чтобы получить и сохранить в CSV-файл список всех устройств, у которых метка времени старше указанной даты, выполните: 
 
 ```PowerShell
 $dt = [datetime]’2017/01/01’
@@ -161,12 +161,12 @@ Get-MsolDevice -all -LogonTimeBefore $dt | select-object -Property Enabled, Devi
 
 Если у вас настроены ключи BitLocker для устройств Windows 10, они хранятся в объекте устройства в AAD. Удаляя устаревшее устройство, вы удалите и сохраненные для него ключи BitLocker. Прежде чем удалять устаревшие устройства, нужно убедиться, соответствует ли выбранная политика очистки фактическим жизненным циклам устройств. 
 
-### <a name="why-should-i-worry-about-windows-autopilot-devices"></a>Why should I worry about Windows Autopilot devices?
+### <a name="why-should-i-worry-about-windows-autopilot-devices"></a>Почему следует беспокоиться о устройствах Windows для автопилота?
 
-When a Azure AD device was associated with a Windows Autopilot object the following three scenarios can occur if the device will be repurposed in future:
-- With Windows Autopilot user-driven deployments without using white glove, a new Azure AD device will be created, but it won’t be tagged with the ZTDID.
-- With Windows Autopilot self-deploying mode deployments, they will fail because an associate Azure AD device cannot be found.  (This is a security mechanism to make sure that no “imposter” devices try to join Azure AD with no credentials.) The failure will indicate a ZTDID mismatch.
-- With Windows Autopilot white glove deployments, they will fail because an associated Azure AD device cannot be found. (Behind the scenes, white glove deployments use the same self-deploying mode process, so they enforce the same security mechanisms.)
+Если устройство Azure AD связано с объектом Windows автопилота, в случае повторного назначения устройства в будущем могут возникать следующие три сценария:
+- При развертывании на основе пользователей Windows автопилота без использования белого специализированный будет создано новое устройство Azure AD, но оно не будет помечено как ЗТДИД.
+- При развертывании в режиме саморазвертывания Windows автопилота произойдет сбой, так как не удается найти связанное устройство Azure AD.  (Это механизм безопасности для того, чтобы устройства "фальшивый" не попытаются присоединиться к Azure AD без учетных данных.) Ошибка сообщит о несоответствии ЗТДИД.
+- При наличии белого специализированный развертывания Windows автопилота они завершатся сбоем, так как не удается найти связанное устройство Azure AD. (В фоновом режиме белые специализированный развертывания используют один и тот же процесс саморазвертывания, поэтому они применяют одинаковые механизмы обеспечения безопасности.)
 
 ### <a name="how-do-i-know-all-the-type-of-devices-joined"></a>Как мне изучить все типы присоединенных устройств?
 
@@ -180,6 +180,6 @@ When a Azure AD device was associated with a Windows Autopilot object the follow
 - **Устройства, присоединенные к AAD** — пользователь не может использовать устройство для входа. 
 - **Мобильные устройства** — пользователь не получит доступа к ресурсам AAD, например к Office 365. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Чтобы получить общие сведения о том, как управлять устройствами на портале Azure, см. раздел [Управление устройствами с помощью портала Azure (предварительная версия)](device-management-azure-portal.md)

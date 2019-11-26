@@ -1,6 +1,6 @@
 ---
-title: Monitoring Azure Functions with Azure Monitor Logs
-description: Learn how to use Azure Monitor Logs with Azure Functions to monitor function executions.
+title: Мониторинг функций Azure с помощью журналов Azure Monitor
+description: Узнайте, как использовать журналы Azure Monitor с помощью функций Azure для наблюдения за выполнением функций.
 author: ahmedelnably
 ms.topic: conceptual
 ms.date: 10/09/2019
@@ -12,30 +12,30 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74226846"
 ---
-# <a name="monitoring-azure-functions-with-azure-monitor-logs"></a>Monitoring Azure Functions with Azure Monitor Logs
+# <a name="monitoring-azure-functions-with-azure-monitor-logs"></a>Мониторинг функций Azure с помощью журналов Azure Monitor
 
-Azure Functions offers an integration with [Azure Monitor Logs](../azure-monitor/platform/data-platform-logs.md) to monitor functions. This article shows you how to configure Azure Functions to send system-generated and user-generated logs to Azure Monitor Logs.
+Функции Azure предлагают интеграцию с [журналами Azure Monitor](../azure-monitor/platform/data-platform-logs.md) для мониторинга функций. В этой статье показано, как настроить функции Azure для отправки сформированных системой и созданных пользователем журналов в Azure Monitor журналы.
 
-Azure Monitor Logs gives you the ability to consolidate logs from different resources in the same workspace, where it can be analyzed with [queries](../azure-monitor/log-query/log-query-overview.md) to quickly retrieve, consolidate, and analyze collected data.  Вы можете создавать и тестировать запросы с помощью [Log Analytics](../azure-monitor/log-query/portals.md) на портале Azure, а затем либо напрямую анализировать данные с помощью этих средств, либо сохранять запросы для использования с [визуализациями](../azure-monitor/visualizations.md) или [правилами генерации оповещений](../azure-monitor/platform/alerts-overview.md).
+Журналы Azure Monitor дают возможность консолидировать журналы из разных ресурсов в одной рабочей области, где их можно анализировать с помощью [запросов](../azure-monitor/log-query/log-query-overview.md) для быстрого извлечения, консолидации и анализа собранных данных.  Вы можете создавать и тестировать запросы с помощью [Log Analytics](../azure-monitor/log-query/portals.md) на портале Azure, а затем либо напрямую анализировать данные с помощью этих средств, либо сохранять запросы для использования с [визуализациями](../azure-monitor/visualizations.md) или [правилами генерации оповещений](../azure-monitor/platform/alerts-overview.md).
 
 В Azure Monitor используется версия [языка запросов Kusto](/azure/kusto/query/), который используется в Azure Data Explorer и совместим с простыми запросами к журналу, но также включает и расширенную функциональность (например, функции агрегирования, объединения и интеллектуальную аналитику). Быстро изучить язык запросов можно с помощью [множества уроков](../azure-monitor/log-query/get-started-queries.md).
 
 > [!NOTE]
-> Integration with Azure Monitor Logs is currently in public preview for function apps running on Windows Consumption, Premium, and Dedicated hosting plans.
+> Интеграция с журналами Azure Monitor в настоящее время доступна в общедоступной предварительной версии для приложений-функций, работающих в планах использования Windows, Premium и на основе специальных планов размещения.
 
 ## <a name="setting-up"></a>Настройка
 
-From the Monitoring section, select **Diagnostic settings** and then click **Add**.
+В разделе Мониторинг выберите **параметры диагностики** , а затем нажмите кнопку **Добавить**.
 
-![Add a diagnostic setting](media/functions-monitor-log-analytics/diagnostic-settings-add.png)
+![Добавление параметра диагностики](media/functions-monitor-log-analytics/diagnostic-settings-add.png)
 
-In the setting page, choose **Send to Log Analytics**, and under **LOG** choose **FunctionAppLogs**, this table contains the desired logs.
+На странице "Параметры" выберите **отправить log Analytics**и в разделе **Журнал** выберите **функтионапплогс**эта таблица содержит нужные журналы.
 
-![Add a diagnostic setting](media/functions-monitor-log-analytics/choose-table.png)
+![Добавление параметра диагностики](media/functions-monitor-log-analytics/choose-table.png)
 
-## <a name="user-generated-logs"></a>User generated logs
+## <a name="user-generated-logs"></a>Журналы, созданные пользователем
 
-To generate custom logs, you can use the specific logging statement depending on your language, here are sample code snippets:
+Для создания пользовательских журналов можно использовать определенную инструкцию ведения журнала в зависимости от языка. ниже приведены примеры фрагментов кода.
 
 **JavaScript**
 
@@ -67,15 +67,15 @@ To generate custom logs, you can use the specific logging statement depending on
     Write-Host "My app logs here."
 ```
 
-## <a name="querying-the-logs"></a>Querying the logs
+## <a name="querying-the-logs"></a>Запрос журналов
 
-To query the generated logs, go to the log analytics workspace and click **Logs**.
+Чтобы запросить созданные журналы, перейдите в рабочую область log Analytics и щелкните **журналы**.
 
-![Query window in LA workspace](media/functions-monitor-log-analytics/querying.png)
+![Окно запроса в LA Workspace](media/functions-monitor-log-analytics/querying.png)
 
-Azure Functions writes all logs to **FunctionAppLogs** table, here are some sample queries.
+Функции Azure записывают все журналы в таблицу **функтионапплогс** . Вот несколько примеров запросов.
 
-### <a name="all-logs"></a>All logs
+### <a name="all-logs"></a>Все журналы
 
 ```
 
@@ -84,7 +84,7 @@ FunctionAppLogs
 
 ```
 
-### <a name="a-specific-function-logs"></a>A specific function logs
+### <a name="a-specific-function-logs"></a>Журналы конкретных функций
 
 ```
 
@@ -103,8 +103,8 @@ FunctionAppLogs
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-- Review the [Azure Functions overview](functions-overview.md)
-- Learn more about [Azure Monitor Logs](../azure-monitor/platform/data-platform-logs.md)
+- [Обзор функций Azure](functions-overview.md)
+- Дополнительные сведения о [журналах Azure Monitor](../azure-monitor/platform/data-platform-logs.md)
 - Узнайте больше о [языке запросов](../azure-monitor/log-query/get-started-queries.md).

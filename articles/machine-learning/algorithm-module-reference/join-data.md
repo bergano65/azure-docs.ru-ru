@@ -1,7 +1,7 @@
 ---
-title: 'Join Data: Module Reference'
+title: 'Соединение данных: Справочник по модулям'
 titleSuffix: Azure Machine Learning
-description: Learn how to use the join Join Data module in Azure Machine Learning to merge datasets.
+description: Узнайте, как использовать модуль присоединить данные JOIN в Машинное обучение Azure для слияния наборов данных.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -18,54 +18,54 @@ ms.locfileid: "74232623"
 ---
 # <a name="join-data"></a>Объединение данных
 
-This article describes how to use the **Join Data** module in Azure Machine Learning designer (preview) to merge two datasets using a database-style join operation.  
+В этой статье описывается, как использовать модуль **Join Data** в машинное обучение Azure Designer (Предварительная версия) для объединения двух наборов данных с помощью операции объединения в стиле.  
 
-## <a name="how-to-configure-join-data"></a>How to configure Join Data
+## <a name="how-to-configure-join-data"></a>Настройка данных объединения
 
-To perform a join on two datasets, they should be related by a key column. Composite keys using multiple columns are also supported. 
+Чтобы выполнить соединение с двумя наборами данных, они должны быть связаны ключевым столбцом. Также поддерживаются составные ключи с несколькими столбцами. 
 
-1. Add the datasets you want to combine, and then drag the **Join Data** module into your pipeline. 
+1. Добавьте наборы данных, которые необходимо объединить, а затем перетащите модуль **Объединенные данные** в конвейер. 
 
-    You can find the module in the **Data Transformation** category, under **Manipulation**.
+    Модуль можно найти в категории **Преобразование данных** в разделе **манипуляция**.
 
-1. Connect the datasets to the **Join Data** module. 
+1. Подключите наборы данных к модулю **Join Data** . 
  
-1. Select **Launch column selector** to choose key column(s). Remember to choose columns for both the left and right inputs.
+1. Выберите пункт **запустить селектор столбцов** , чтобы выбрать ключевые столбцы. Не забудьте выбрать столбцы как для левого, так и для правого входа.
 
-    For a single key:
+    Для одного ключа:
 
-    Select a single key column for both inputs.
+    Выберите один ключевой столбец для обоих входных данных.
     
-    For a composite key:
+    Для составного ключа:
 
-    Select all the key columns from left input and right input in the same order. The **Join Data** module will join the tables when all key columns match. Check the option **Allow duplicates and preserve column order in selection** if the column order isn't the same as the original table. 
+    Выберите все ключевые столбцы из левого входного и правого входа в том же порядке. Модуль **объединения данных** будет соединять таблицы, если все ключевые столбцы совпадают. Установите флажок **разрешить дублирование и сохранить порядок столбцов в выделенном фрагменте** , если порядок столбцов не совпадает с исходной таблицей. 
 
     ![средство выбора столбцов](media/module/join-data-column-selector.png)
 
 
-1. Select the **Match case** option if you want to preserve case sensitivity on a text column join. 
+1. Выберите вариант **учитывать регистр** , если хотите сохранить чувствительность к регистру при соединении с текстовым столбцом. 
    
-1. Use the **Join type** dropdown list to specify how the datasets should be combined.  
+1. Раскрывающийся список **тип объединения** используется для указания способа объединения наборов данных.  
   
-    * **Inner Join**: An *inner join* is the most common join operation. It returns the combined rows only when the values of the key columns match.  
+    * **Внутреннее соединение**: *внутреннее соединение* является наиболее распространенной операцией объединения. Он возвращает объединенные строки только в том случае, если значения ключевых столбцов совпадают.  
   
-    * **Left Outer Join**: A *left outer join* returns joined rows for all rows from the left table. When a row in the left table has no matching rows in the right table, the returned row contains missing values for all columns that come from the right table. You can also specify a replacement value for missing values.  
+    * **Левое внешнее соединение**: *левое внешнее соединение* возвращает строки Соединенных строк из левой таблицы. Если строка в левой таблице не содержит совпадающих строк в правой таблице, возвращаемая строка содержит отсутствующие значения для всех столбцов, поступающих из правой таблицы. Можно также указать заменяющее значение для отсутствующих значений.  
   
-    * **Full Outer Join**: A *full outer join* returns all rows from the left table (**table1**) and from the right table (**table2**).  
+    * **Полное внешнее соединение**. *полное внешнее соединение* возвращает все строки из левой таблицы (**Table1**) и из правой таблицы (**Таблица2**).  
   
-         For each of the rows in either table that have no matching rows in the other, the result includes a row containing missing values.  
+         Для каждой строки в любой из таблиц, не имеющей совпадающих строк в другой, результат включает строку, содержащую отсутствующие значения.  
   
-    * **Left Semi-Join**: A *left semi-join* returns only the values from the left table when the values of the key columns match.  
+    * **Левое частичное соединение**: *левое частичное соединение* возвращает только значения из левой таблицы, если значения ключевых столбцов совпадают.  
 
-1. For the option **Keep right key columns in joined table**:
+1. Для параметра не **учитывать ключевые столбцы в соединяемой таблице**:
 
-    * Select this option to view the keys from both input tables.
-    * Deselect to only return the key columns from the left input.
+    * Выберите этот параметр, чтобы просмотреть ключи из обеих входных таблиц.
+    * Отмените выбор, чтобы получить только ключевые столбцы из левого входа.
 
-1. Run the pipeline, or select the Join Data module and selected **Run Selected** to perform the join.
+1. Запустите конвейер или выберите модуль присоединение данных и выбранный **Запуск** , чтобы выполнить соединение.
 
-1. To view the results, right-click the **Join Data** > **Results dataset** > **Visualize**.
+1. Чтобы просмотреть результаты, щелкните правой кнопкой мыши набор данных **Присоединение** > **результаты** , > **визуализировать**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-See the [set of modules available](module-reference.md) to Azure Machine Learning. 
+См. [набор модулей, доступных](module-reference.md) для машинное обучение Azure. 

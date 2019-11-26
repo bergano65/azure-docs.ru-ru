@@ -23,16 +23,16 @@ ms.locfileid: "74211925"
 # <a name="how-to-manage-dns-zones-in-azure-dns-using-the-azure-cli"></a>Как управлять зонами DNS в службе DNS Azure с помощью интерфейса командной строки Azure
 
 > [!div class="op_single_selector"]
-> * [Microsoft Azure](dns-operations-dnszones-portal.md)
+> * [Портал](dns-operations-dnszones-portal.md)
 > * [PowerShell](dns-operations-dnszones.md)
-> * [Azure CLI](dns-operations-dnszones-cli.md)
+> * [Интерфейс командной строки Azure](dns-operations-dnszones-cli.md)
 
 
 В этом руководстве показано, как управлять зонами DNS с помощью кроссплатформенного интерфейса командной строки Azure, доступного для Windows, Mac и Linux. Зонами DNS также можно управлять с помощью [Azure PowerShell](dns-operations-dnszones.md) или портала Azure.
 
 В этом руководстве рассматриваются именно общедоступные зоны DNS. Сведения об использовании Azure PowerShell для управления частным зонами в Azure DNS см. в статье о [начале работы с Частными зонами Azure DNS с помощью Azure CLI](private-dns-getstarted-cli.md).
 
-## <a name="introduction"></a>Общие сведения
+## <a name="introduction"></a>Введение
 
 [!INCLUDE [dns-create-zone-about](../../includes/dns-create-zone-about-include.md)]
 
@@ -62,21 +62,21 @@ az login
 az account list
 ```
 
-Выберите, какие подписки Azure будут использоваться.
+Выберите подписку Azure.
 
 ```azurecli
 az account set --subscription "subscription name"
 ```
 
-### <a name="optional-to-installuse-azure-dns-private-zones-feature"></a>Optional: To install/use Azure DNS Private Zones feature
-The Azure DNS Private Zone feature is available via an extension to the Azure CLI. Установите расширение dns для Azure CLI: 
+### <a name="optional-to-installuse-azure-dns-private-zones-feature"></a>Необязательно: Установка и использование компонента Частные зоны Azure DNS
+Функция Azure DNS частной зоны доступна через расширение для Azure CLI. Установите расширение dns для Azure CLI: 
 ```
 az extension add --name dns
 ``` 
 
 ### <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Диспетчер ресурсов Azure требует, чтобы все группы ресурсов указывали расположение. Оно используется в качестве расположения по умолчанию для всех ресурсов данной группы. Но так как все ресурсы DNS глобальные, а не региональные, выбор расположения группы ресурсов не влияет на Azure DNS.
+В диспетчере ресурсов Azure для всех групп ресурсов должно быть указано расположение. Оно используется по умолчанию для ресурсов в этой группе. Но так как все ресурсы DNS глобальные, а не региональные, выбор расположения группы ресурсов не влияет на Azure DNS.
 
 Если используется существующая группа ресурсов, можно пропустить этот шаг.
 
@@ -86,7 +86,7 @@ az group create --name myresourcegroup --location "West US"
 
 ## <a name="getting-help"></a>Получение справки
 
-Все команды Azure CLI, относящиеся к Azure DNS, начинаются с `az network dns`. Справку для каждой команды можно отобразить с помощью параметра `--help` (краткая форма: `-h`).  Пример.
+Все команды Azure CLI, относящиеся к Azure DNS, начинаются с `az network dns`. Справку для каждой команды можно отобразить с помощью параметра `--help` (краткая форма: `-h`).  Например,
 
 ```azurecli
 az network dns --help
@@ -192,7 +192,7 @@ az network dns zone update --resource-group myresourcegroup --name contoso.com -
 az network dns zone delete --resource-group myresourcegroup --name contoso.com
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Узнайте, как [управлять наборами записей и записями](dns-getstarted-create-recordset-cli.md) в зоне DNS.
 

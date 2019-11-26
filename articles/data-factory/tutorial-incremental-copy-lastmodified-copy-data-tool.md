@@ -1,6 +1,6 @@
 ---
-title: Data tool to copy new and updated files incrementally
-description: Create an Azure data factory and then use the Copy Data tool to incrementally load new files based on LastModifiedDate.
+title: Средство Data Tool для добавочного копирования новых и обновленных файлов
+description: Создайте фабрику данных Azure, а затем используйте средство Копирование данных для добавочной загрузки новых файлов на основе LastModifiedDate.
 services: data-factory
 documentationcenter: ''
 author: dearandyxu
@@ -21,36 +21,36 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74217787"
 ---
-# <a name="incrementally-copy-new-and-changed-files-based-on-lastmodifieddate-by-using-the-copy-data-tool"></a>Incrementally copy new and changed files based on LastModifiedDate by using the Copy Data tool
+# <a name="incrementally-copy-new-and-changed-files-based-on-lastmodifieddate-by-using-the-copy-data-tool"></a>Добавочное копирование новых и измененных файлов на основе LastModifiedDate с помощью средства Копирование данных
 
-In this tutorial, you'll use the Azure portal to create a data factory. Then, you'll use the Copy Data tool to create a pipeline that incrementally copies new and changed files only, based on their **LastModifiedDate** from Azure Blob storage to Azure Blob storage.
+В этом руководстве вы будете использовать портал Azure для создания фабрики данных. Затем вы будете использовать средство Копирование данных для создания конвейера, который постепенно копирует только новые и измененные файлы на основе их **LastModifiedDate** из хранилища BLOB-объектов Azure в хранилище BLOB-объектов Azure.
 
-By doing so, ADF will scan all the files from the source store, apply the file filter by their LastModifiedDate, and copy the new and updated file only since last time to the destination store.  Please note that if you let ADF scan huge amounts of files but only copy a few files to destination, you would still expect the long duration due to file scanning is time consuming as well.   
+После этого ADF проверит все файлы из исходного хранилища, применит фильтр файлов по их LastModifiedDateм и скопирует новый и обновленный файл только с момента последнего времени в целевое хранилище.  Обратите внимание, что если вы разрешите ADF сканировать огромные объемы файлов, но только скопируйте несколько файлов в место назначения, то по-прежнему будет считаться, что длительное время сканирования файлов также будет долгим.   
 
 > [!NOTE]
 > Если вы еще не работали с фабрикой данных Azure, ознакомьтесь со статьей [Введение в фабрику данных Azure](introduction.md).
 
-In this tutorial, you will perform the following tasks:
+В этом учебнике будут выполнены следующие задачи:
 
 > [!div class="checklist"]
-> * Создали фабрику данных.
+> * Создание фабрики данных.
 > * Создание конвейера с помощью средства копирования данных.
 > * Мониторинг конвейера и выполнения действий.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 * **Подписка Azure**. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
-* **Azure storage account**: Use Blob storage as the _source_ and _sink_ data store. Если у вас нет учетной записи хранения Azure, см. инструкции по [ее созданию](../storage/common/storage-quickstart-create-account.md).
+* **Учетная запись хранения Azure**. Используйте хранилище BLOB-объектов в качестве _источника_ и _приемника_ хранилища данных. Если у вас нет учетной записи хранения Azure, см. инструкции по [ее созданию](../storage/common/storage-quickstart-create-account.md).
 
-### <a name="create-two-containers-in-blob-storage"></a>Create two containers in Blob storage
+### <a name="create-two-containers-in-blob-storage"></a>Создание двух контейнеров в хранилище BLOB-объектов
 
-Prepare your Blob storage for the tutorial by performing these steps.
+Подготовьте хранилище BLOB-объектов для учебника, выполнив следующие действия.
 
-1. Create a container named **source**. You can use various tools to perform this task, such as [Azure Storage Explorer](https://storageexplorer.com/).
+1. Создайте контейнер с именем **Source**. Для выполнения этой задачи можно использовать различные средства, например [Обозреватель службы хранилища Azure](https://storageexplorer.com/).
 
-2. Create a container named **destination**. 
+2. Создайте контейнер с именем **Destination**. 
 
-## <a name="create-a-data-factory"></a>Создание фабрики данных
+## <a name="create-a-data-factory"></a>Создать фабрику данных
 
 1. В меню слева выберите **Создать ресурс** > **Данные и аналитика** > **Фабрика данных**. 
    
@@ -62,8 +62,8 @@ Prepare your Blob storage for the tutorial by performing these steps.
    
    ![Сообщение об ошибке фабрики данных](./media/doc-common-process/name-not-available-error.png)
 
-   Если вы увидите следующую ошибку касательно значения имени, введите другое имя фабрики данных. Например, **_ваше_имя_** **ADFTutorialDataFactory**. Правила именования для артефактов службы "Фабрика данных" см. в [этой](naming-rules.md) статье.
-3. Select the Azure **subscription** in which you'll create the new data factory. 
+   Если вы увидите следующую ошибку касательно значения имени, введите другое имя фабрики данных. Например, _**ваше_имя**_ **ADFTutorialDataFactory**. Правила именования для артефактов службы "Фабрика данных" см. в [этой](naming-rules.md) статье.
+3. Выберите **подписку** Azure, в которой вы создадите новую фабрику данных. 
 4. Для **группы ресурсов** выполните одно из следующих действий:
      
     * Выберите **Использовать существующий** и выберите существующую группу ресурсов из раскрывающегося списка.
@@ -72,35 +72,35 @@ Prepare your Blob storage for the tutorial by performing these steps.
          
     Сведения о группах ресурсов см. в статье [Общие сведения об Azure Resource Manager](../azure-resource-manager/resource-group-overview.md).
 
-5. Under **version**, select **V2**.
-6. В качестве **расположения** выберите расположение фабрики данных. В раскрывающемся списке отображаются только поддерживаемые расположения. The data stores (for example, Azure Storage and SQL Database) and computes (for example, Azure HDInsight) that your data factory uses can be in other locations and regions.
+5. В разделе **версия**выберите **v2**.
+6. В качестве **расположения** выберите расположение фабрики данных. В раскрывающемся списке отображаются только поддерживаемые расположения. Хранилища данных (например, служба хранилища Azure и база данных SQL) и расчеты (например, Azure HDInsight), используемые фабрикой данных, могут находиться в других расположениях и регионах.
 7. Кроме того, установите флажок **Закрепить на панели мониторинга**. 
 8. Нажмите кнопку **Создать**.
-9. On the dashboard, refer to the **Deploying Data Factory** tile to see the process status.
+9. На панели мониторинга просмотрите плитку **развертывание фабрики данных** , чтобы просмотреть состояние процесса.
 
-    ![Deploying Data Factory Tile](media/tutorial-copy-data-tool/deploying-data-factory.png)
+    ![Развертывание плитки фабрики данных](media/tutorial-copy-data-tool/deploying-data-factory.png)
 10. Когда создание завершится, откроется домашняя страница **Фабрика данных**.
    
     ![Домашняя страница фабрики данных](./media/doc-common-process/data-factory-home-page.png)
-11. To open the Azure Data Factory user interface (UI) on a separate tab, select the **Author & Monitor** tile. 
+11. Чтобы открыть пользовательский интерфейс фабрики данных Azure на отдельной вкладке, выберите плитку " **автор & монитор** ". 
 
 ## <a name="use-the-copy-data-tool-to-create-a-pipeline"></a>Создание конвейера с помощью средства копирования данных
 
-1. On the **Let's get started** page, select the **Copy Data** title to open the Copy Data tool. 
+1. На странице Приступая к **работе** выберите заголовок **копирование данных** , чтобы открыть средство копирование данных. 
 
    ![Плитка средства копирования данных](./media/doc-common-process/get-started-page.png)
    
-2. On the **Properties** page, take the following steps:
+2. На странице **Свойства** выполните следующие действия.
 
-    а) Under **Task name**, enter **DeltaCopyFromBlobPipeline**.
+    a. В разделе **имя задачи**введите **делтакопифромблобпипелине**.
 
-    б) Under **Task cadence** or **Task schedule**, select **Run regularly on schedule**.
+    b. В разделе " **ритмичность задач** " или " **Расписание задач**" выберите **регулярное выполнение по расписанию**.
 
-    в) Under **Trigger Type**, select **Tumbling Window**.
+    c. В разделе **тип триггера**выберите **окно "переворачивающегося"** .
     
-    г) Under **Recurrence**, enter **15 Minute(s)** . 
+    d. В разделе **повторение**введите **15 минут**. 
     
-    д) Щелкните **Далее**. 
+    д. Нажмите кнопку **Далее**. 
     
     Пользовательский интерфейс фабрики данных создаст конвейер с указанным именем задачи. 
 
@@ -108,47 +108,47 @@ Prepare your Blob storage for the tutorial by performing these steps.
     
 3. На странице **Исходное хранилище данных** сделайте следующее:
 
-    а) Select  **+ Create new connection**, to add a connection.
+    a. Выберите **+ создать новое соединение**, чтобы добавить подключение.
     
     ![Страница исходного хранилища данных](./media/tutorial-incremental-copy-lastmodified-copy-data-tool/source-data-store-page.png)
 
-    б) В коллекции выберите **Хранилище BLOB-объектов Azure** и щелкните **Продолжить**.
+    b. В коллекции выберите **Хранилище BLOB-объектов Azure** и щелкните **Продолжить**.
     
     ![Страница исходного хранилища данных](./media/tutorial-incremental-copy-lastmodified-copy-data-tool/source-data-store-page-select-blob.png)
 
-    в) On the **New Linked Service** page, select your storage account from the **Storage account name** list and then select **Finish**.
+    c. На странице **Новая связанная служба** выберите учетную запись хранения из списка **имя учетной записи хранения** и нажмите кнопку **Готово**.
     
     ![Страница исходного хранилища данных](./media/tutorial-incremental-copy-lastmodified-copy-data-tool/source-data-store-page-linkedservice.png)
     
-    г) Select the newly created linked service and then select **Next**. 
+    d. Выберите только что созданную связанную службу и нажмите кнопку **Далее**. 
     
    ![Страница исходного хранилища данных](./media/tutorial-incremental-copy-lastmodified-copy-data-tool/source-data-store-page-select-linkedservice.png)
 
 4. На странице **Choose the input file or folder** (Выбор входного файла или папки) выполните следующие действия:
     
-    а) Browse and select the **source** folder, and then select **Choose**.
+    a. Найдите и выберите **исходную** папку, а затем щелкните **выбрать**.
     
     ![Выбор файла или папки входных данных](./media/tutorial-incremental-copy-lastmodified-copy-data-tool/choose-input-file-folder.png)
     
-    б) Under **File loading behavior**, select **Incremental load: LastModifiedDate**.
+    b. В разделе **поведение при загрузке файлов**выберите **добавочная загрузка: LastModifiedDate**.
     
     ![Выбор файла или папки входных данных](./media/tutorial-incremental-copy-lastmodified-copy-data-tool/choose-loading-behavior.png)
     
-    в) Check **Binary copy** and select **Next**.
+    c. Проверьте **двоичное копирование** и нажмите кнопку **Далее**.
     
      ![Выбор файла или папки входных данных](./media/tutorial-incremental-copy-lastmodified-copy-data-tool/check-binary-copy.png)
      
-5. On the **Destination data store** page, select **AzureBlobStorage**. This is the same storage account as the source data store. Затем нажмите кнопку **Далее**.
+5. На странице **целевое хранилище данных** выберите **AzureBlobStorage**. Это та же учетная запись хранения, что и исходное хранилище данных. Затем нажмите кнопку **Далее**.
 
     ![Страница целевого хранилища данных](./media/tutorial-incremental-copy-lastmodified-copy-data-tool/destination-data-store-page-select-linkedservice.png)
     
 6. На странице **Choose the output file or folder** (Выбор целевого файла или папки) выполните следующие действия:
     
-    а) Browse and select the **destination** folder, and then select **Choose**.
+    a. Найдите и выберите папку **назначения** , а затем щелкните **выбрать**.
     
     ![Выбор целевого файла или папки](./media/tutorial-incremental-copy-lastmodified-copy-data-tool/choose-output-file-folder.png)
     
-    б) Щелкните **Далее**.
+    b. Нажмите кнопку **Далее**.
     
      ![Выбор целевого файла или папки](./media/tutorial-incremental-copy-lastmodified-copy-data-tool/click-next-after-output-folder.png)
     
@@ -156,7 +156,7 @@ Prepare your Blob storage for the tutorial by performing these steps.
 
     ![Страница «Параметры»](./media/tutorial-incremental-copy-lastmodified-copy-data-tool/settings-page.png)
     
-8. On the **Summary** page, review the settings and then select **Next**.
+8. На странице **Сводка** проверьте параметры и нажмите кнопку **Далее**.
 
     ![Страница "Сводка"](./media/tutorial-incremental-copy-lastmodified-copy-data-tool/summary-page.png)
     
@@ -164,47 +164,47 @@ Prepare your Blob storage for the tutorial by performing these steps.
 
     ![Страница развертывания](./media/tutorial-incremental-copy-lastmodified-copy-data-tool/deployment-page.png)
     
-10. Обратите внимание, что слева автоматически выбирается вкладка **Мониторинг**. В столбце **действий** отображаются ссылки для просмотра сведений о запусках действий и (или) повторного выполнения на конвейере. Select **Refresh** to refresh the list, and select the **View Activity Runs** link in the **Actions** column. 
+10. Обратите внимание, что слева автоматически выбирается вкладка **Мониторинг**. В столбце **действий** отображаются ссылки для просмотра сведений о запусках действий и (или) повторного выполнения на конвейере. Выберите **Обновить** , чтобы обновить список, и выберите ссылку **Просмотреть запуски действия** в столбце **действия** . 
 
-    ![Refresh list and select View Activity Runs](./media/tutorial-incremental-copy-lastmodified-copy-data-tool/monitor-pipeline-runs1.png)
+    ![Обновить список и выбрать Просмотр запусков действий](./media/tutorial-incremental-copy-lastmodified-copy-data-tool/monitor-pipeline-runs1.png)
 
-11. There's only one activity (the copy activity) in the pipeline, so you see only one entry. Чтобы увидеть сведения об операции копирования, щелкните ссылку **Сведения** (значок очков) в столбце **Действия**. 
+11. В конвейере имеется только одно действие (действие копирования), поэтому отображается только одна запись. Чтобы увидеть сведения об операции копирования, щелкните ссылку **Сведения** (значок очков) в столбце **Действия**. 
 
-    ![Copy activity is in pipeline](./media/tutorial-incremental-copy-lastmodified-copy-data-tool/monitor-pipeline-runs2.png)
+    ![Действие копирования находится в конвейере](./media/tutorial-incremental-copy-lastmodified-copy-data-tool/monitor-pipeline-runs2.png)
     
-    Because there is no file in the **source** container in your Blob storage account, you will not see any file copied to the **destination** container in your Blob storage account.
+    Так как в вашей учетной записи хранилища BLOB-объектов нет файла в **исходном** контейнере, вы не увидите ни одного файла, скопированного в **целевой** контейнер в учетной записи хранилища BLOB-объектов.
     
-    ![No file in source container or destination container](./media/tutorial-incremental-copy-lastmodified-copy-data-tool/monitor-pipeline-runs3.png)
+    ![Нет файла в исходном контейнере или контейнере назначения](./media/tutorial-incremental-copy-lastmodified-copy-data-tool/monitor-pipeline-runs3.png)
     
-12. Create an empty text file and name it **file1.txt**. Upload this text file to the **source** container in your storage account. Это можно сделать при помощи таких средств, как [обозреватель службы хранилища Azure](https://storageexplorer.com/).   
+12. Создайте пустой текстовый файл и назовите его **file1. txt**. Отправьте этот текстовый файл в **Исходный** контейнер в вашей учетной записи хранения. Это можно сделать при помощи таких средств, как [обозреватель службы хранилища Azure](https://storageexplorer.com/).   
 
-    ![Create file1.txt and upload to source container](./media/tutorial-incremental-copy-lastmodified-copy-data-tool/monitor-pipeline-runs3-1.png)
+    ![Создание file1. txt и отправка в исходный контейнер](./media/tutorial-incremental-copy-lastmodified-copy-data-tool/monitor-pipeline-runs3-1.png)
     
-13. To go back to the **Pipeline Runs** view, select **All Pipeline Runs**, and wait for the same pipeline to be triggered again automatically.  
+13. Чтобы вернуться к представлению **запусков конвейера** , выберите **все запуски конвейера**и дождитесь автоматического запуска одного и того же конвейера.  
 
-    ![Select All Pipeline Runs](./media/tutorial-incremental-copy-lastmodified-copy-data-tool/monitor-pipeline-runs4.png)
+    ![Выбрать все запуски конвейера](./media/tutorial-incremental-copy-lastmodified-copy-data-tool/monitor-pipeline-runs4.png)
 
-14. Select **View Activity Run** for the second pipeline run when you see it. Then review the details in the same way you did for the first pipeline run.  
+14. Выберите **Просмотреть выполнение действия** во втором конвейере, если оно отображается. Затем просмотрите сведения таким же образом, как и при первом запуске конвейера.  
 
-    ![Select View Activity Run and review details](./media/tutorial-incremental-copy-lastmodified-copy-data-tool/monitor-pipeline-runs5.png)
+    ![Выберите Просмотр выполнения действия и Просмотр сведений](./media/tutorial-incremental-copy-lastmodified-copy-data-tool/monitor-pipeline-runs5.png)
 
-    You will that see one file (file1.txt) has been copied from the **source** container to the **destination** container of your Blob storage account.
+    Вы увидите, что один файл (file1. txt) скопирован из **исходного** контейнера в **целевой** контейнер учетной записи хранилища BLOB-объектов.
     
-    ![File1.txt has been copied from source container to destination container](./media/tutorial-incremental-copy-lastmodified-copy-data-tool/monitor-pipeline-runs6.png)
+    ![File1. txt скопирован из исходного контейнера в целевой контейнер](./media/tutorial-incremental-copy-lastmodified-copy-data-tool/monitor-pipeline-runs6.png)
     
-15. Create another empty text file and name it **file2.txt**. Upload this text file to the **source** container in your Blob storage account.   
+15. Создайте еще один пустой текстовый файл и назовите его **file2. txt**. Отправьте этот текстовый файл в **Исходный** контейнер в учетной записи хранилища BLOB-объектов.   
     
-16. Repeat steps 13 and 14 for this second text file. You will see that only the new file (file2.txt) has been copied from the **source** container to the **destination** container of your storage account in the next pipeline run.  
+16. Повторите шаги 13 и 14 для второго текстового файла. Вы увидите, что скопирован только новый файл (file2. txt) из **исходного** контейнера в **целевой** контейнер учетной записи хранения при следующем выполнении конвейера.  
     
-    ![File2.txt has been copied from source container to destination container](./media/tutorial-incremental-copy-lastmodified-copy-data-tool/monitor-pipeline-runs7.png)
+    ![File2. txt скопирован из исходного контейнера в целевой контейнер](./media/tutorial-incremental-copy-lastmodified-copy-data-tool/monitor-pipeline-runs7.png)
 
-    You can also verify this by using [Azure Storage Explorer](https://storageexplorer.com/) to scan the files.
+    Это также можно проверить с помощью [Обозреватель службы хранилища Azure](https://storageexplorer.com/) для сканирования файлов.
     
-    ![Scan files using Azure Storage Explorer](./media/tutorial-incremental-copy-lastmodified-copy-data-tool/monitor-pipeline-runs8.png)
+    ![Сканирование файлов с помощью Обозреватель службы хранилища Azure](./media/tutorial-incremental-copy-lastmodified-copy-data-tool/monitor-pipeline-runs8.png)
 
     
-## <a name="next-steps"></a>Дальнейшие действия
-Advance to the following tutorial to learn about transforming data by using an Apache Spark cluster on Azure:
+## <a name="next-steps"></a>Дополнительная информация
+Перейдите к следующему руководству, чтобы узнать о преобразовании данных с помощью кластера Apache Spark в Azure:
 
 > [!div class="nextstepaction"]
->[Transform data in the cloud by using an Apache Spark cluster](tutorial-transform-data-spark-portal.md)
+>[Преобразование данных в облаке с помощью кластера Apache Spark](tutorial-transform-data-spark-portal.md)

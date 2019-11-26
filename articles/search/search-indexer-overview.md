@@ -11,7 +11,7 @@ ms.date: 11/04/2019
 ms.custom: fasttrack-edit
 ms.openlocfilehash: 09a1b8e54726accf705515bf077f6a599f0f9b78
 ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/21/2019
 ms.locfileid: "74266916"
@@ -50,7 +50,7 @@ ms.locfileid: "74266916"
 * [Azure Data Lake Storage 2-го поколения](search-howto-index-azure-data-lake-storage.md) (Предварительная версия)
 * [Хранилище таблиц Azure](search-howto-indexing-azure-tables.md)
 * [Azure Cosmos DB](search-howto-index-cosmosdb.md)
-* [База данных SQL Azure](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
+* [база данных SQL Azure;](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
 * [SQL Server на виртуальных машинах Azure](search-howto-connecting-azure-sql-iaas-to-azure-search-using-indexers.md)
 * [Управляемые экземпляры SQL в Azure](search-howto-connecting-azure-sql-mi-to-azure-search-using-indexers.md)
 

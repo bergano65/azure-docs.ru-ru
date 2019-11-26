@@ -24,15 +24,15 @@ ms.locfileid: "74211637"
 # <a name="manage-dns-records-and-recordsets-in-azure-dns-using-the-azure-cli"></a>Управление записями и наборами записей DNS в Azure DNS с помощью Azure CLI
 
 > [!div class="op_single_selector"]
-> * [портале Azure](dns-operations-recordsets-portal.md)
-> * [Azure CLI](dns-operations-recordsets-cli.md)
+> * [портал Azure](dns-operations-recordsets-portal.md)
+> * [Интерфейс командной строки Azure](dns-operations-recordsets-cli.md)
 > * [PowerShell](dns-operations-recordsets.md)
 
 В этой статье показано, как управлять записями DNS для зоны DNS с помощью кроссплатформенного Azure CLI, доступного для Windows, Mac и Linux. Записями DNS также можно управлять с помощью [Azure PowerShell](dns-operations-recordsets.md) или [портала Azure](dns-operations-recordsets-portal.md).
 
 Для работы с этой статьей необходимо [установить интерфейс командной строки Azure, войти в учетную запись и создать зону DNS](dns-operations-dnszones-cli.md).
 
-## <a name="introduction"></a>Общие сведения
+## <a name="introduction"></a>Введение
 
 Чтобы создавать записи DNS в Azure DNS, нужно понимать, как Azure DNS организует записи DNS в соответствующие наборы записей.
 
@@ -42,7 +42,7 @@ ms.locfileid: "74211637"
 
 ## <a name="create-a-dns-record"></a>Создание записи DNS
 
-Чтобы создать запись DNS, используйте команду `az network dns record-set <record-type> add-record` (где `<record-type>` — это тип записи, например a, srv, txt, etc.) For help, see `az network dns record-set --help`.
+Чтобы создать запись DNS, используйте команду `az network dns record-set <record-type> add-record` (где `<record-type>` — это тип записи, например a, SRV, txt и т. д.) Дополнительные сведения см. в разделе `az network dns record-set --help`.
 
 Создавая запись, вам нужно определить для нее имя группы ресурсов, имя зоны, имя набора записей, тип записей и сведения о создаваемой записи. Имя набора записей должно быть *относительным*, т. е. оно не должно содержать имя зоны.
 
@@ -68,7 +68,7 @@ az network dns record-set a add-record --resource-group myresourcegroup --zone-n
 
 Наборы записей создаются с помощью команды `az network dns record-set <record-type> create`. Чтобы получить справку, см. `az network dns record-set <record-type> create --help`.
 
-При создании набора записей можно явно указать его свойства, например [срок жизни](dns-zones-records.md#time-to-live) и метаданные. [Метаданные набора записей](dns-zones-records.md#tags-and-metadata) используются для связывания данных приложения с каждым набором записей в виде пар "ключ — значение".
+При создании набора записей можно явно указать его свойства, например [срок жизни](dns-zones-records.md#time-to-live) и метаданные. [Метаданные набора записей](dns-zones-records.md#tags-and-metadata) используются для связывания данных приложения с каждым набором записей в виде пар "ключ — значение".
 
 В следующем примере показано, как создать пустой набор записей типа А со сроком жизни 60 секунд. Для этого используется параметр `--ttl` (краткая форма `-l`).
 
@@ -133,7 +133,7 @@ az network dns record-set ns add-record --resource-group myresourcegroup --zone-
 
 ### <a name="create-a-ptr-record"></a>Создание записи типа PTR
 
-В этом случае my-arpa-zone.com представляет зону ARPA вашего диапазона IP-адресов. Каждая запись PTR в этой зоне соответствует IP-адресу в этом диапазоне.  Имя записи 10 — это последний октет IP-адреса в этом диапазоне IP-адресов, представленном данной записью.
+В этом случае my-arpa-zone.com представляет зону ARPA вашего диапазона IP-адресов. Каждая запись типа PTR в этой зоне соответствует IP-адресу в этом диапазоне.  Имя записи 10 — это последний октет IP-адреса в этом диапазоне IP-адресов, представленном данной записью.
 
 ```azurecli
 az network dns record-set ptr add-record --resource-group myresourcegroup --zone-name contoso.com --record-set-name my-arpa.zone.com --ptrdname myservice.contoso.com
@@ -270,7 +270,7 @@ az network dns record-set a update --resource-group myresourcegroup --zone-name 
 
 ### <a name="to-modify-the-metadata-of-an-existing-record-set"></a>Изменение метаданных существующего набора записей
 
-[Метаданные набора записей](dns-zones-records.md#tags-and-metadata) используются для связывания данных приложения с каждым набором записей в виде пар "ключ — значение". Для изменения метаданных существующего набора записей используйте команду `az network dns record-set <record-type> update`. Чтобы получить справку, см. `az network dns record-set <record-type> update --help`.
+[Метаданные набора записей](dns-zones-records.md#tags-and-metadata) используются для связывания данных приложения с каждым набором записей в виде пар "ключ — значение". Для изменения метаданных существующего набора записей используйте команду `az network dns record-set <record-type> update`. Чтобы получить справку, см. `az network dns record-set <record-type> update --help`.
 
 В следующем примере показано, как изменить набор с двумя записями метаданных: dept=finance и environment=production. Обратите внимание, что все существующие метаданные *заменяются* заданными значениями.
 
@@ -293,7 +293,7 @@ az network dns record-set a delete --resource-group myresourcegroup --zone-name 
 
 Отобразится запрос на подтверждение операции удаления. Чтобы скрыть этот запрос, используйте параметр `--yes`.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 См. дополнительные сведения о [зонах и записях в Azure DNS](dns-zones-records.md).
 <br>

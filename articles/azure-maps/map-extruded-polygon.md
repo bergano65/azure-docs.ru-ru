@@ -1,6 +1,6 @@
 ---
-title: Add an extrusion polygon layer to Azure Maps | Microsoft Docs
-description: How to add an extrusion polygon layer to the Azure Maps Web SDK.
+title: Добавление слоя многоугольников объемной фигуры в Azure Maps | Документация Майкрософт
+description: Добавление уровня многоугольника объемной фигуры в веб-пакет SDK Azure Maps.
 author: walsehgal
 ms.author: v-musehg
 ms.date: 10/08/2019
@@ -16,37 +16,37 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/25/2019
 ms.locfileid: "74484343"
 ---
-# <a name="add-an-extrusion-polygon-layer-to-the-map"></a>Add an extrusion polygon layer to the map
+# <a name="add-an-extrusion-polygon-layer-to-the-map"></a>Добавление слоя многоугольников объемной фигуры на карту
 
-This article shows you how to use the polygon extrusion layer to render areas of `Polygon` and `MultiPolygon` feature geometries as extruded shapes on the map. The Azure Maps Web SDK also supports the creation of Circle geometries as defined in the [extended GeoJSON schema](extend-geojson.md#circle). These circles are transformed into polygons when rendered on the map. All feature geometries can also be easily updated if wrapped with the [atlas.Shape](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.shape?view=azure-iot-typescript-latest) class.
+В этой статье показано, как использовать слой объемного многоугольника для отображения областей `Polygon` и `MultiPolygon` геометрических объектов в виде вытянутых фигур на карте. Azure Maps веб-пакет SDK также поддерживает создание круговых геометрических объектов, как определено в [расширенной схеме геоjson](extend-geojson.md#circle). Эти круги преобразуются в многоугольники при отображении на карте. Все геометрические функции также можно легко обновлять, если они заключены в [Atlas. Класс Shape](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.shape?view=azure-iot-typescript-latest) .
 
 
-## <a name="use-a-polygon-extrusion-layer"></a>Use a polygon extrusion layer
+## <a name="use-a-polygon-extrusion-layer"></a>Использование уровня объемной фигуры многоугольника
 
-When a [polygon extrusion layer](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.polygonextrusionlayer?view=azure-maps-typescript-latest) is connected to the data source and loaded on the map, it renders the areas of a `Polygon` and `MultiPolygon` features as extruded shapes. The  `height` and `base` properties of the polygon extrusion layer define the base distance from the ground and height of the extruded shape in **meters**. The following code shows how to create a polygon, add it to a data source and render it using the Polygon extrusion layer class.
+Если [слой объема многоугольников](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.polygonextrusionlayer?view=azure-maps-typescript-latest) подключен к источнику данных и загружен на карту, он отображает области `Polygon` и `MultiPolygon` функций в виде вытянутых фигур. Свойства `height` и `base` слоя уровня "уровень" определяют базовое расстояние от нуля и высоты вытянутой фигуры в **метрах**. В следующем коде показано, как создать многоугольник, добавить его в источник данных и подготовить к просмотру с помощью класса уровня объемного многоугольника.
 
 > [!Note]
-> The `base` value defined in the polygon extrusion layer should be less than or equal to that of the `height`.
+> Значение `base`, определенное на уровне объема фигуры, должно быть меньше или равно значению `height`.
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Extruded polygon" src="https://codepen.io/azuremaps/embed/wvvBpvE?height=265&theme-id=0&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
-See the Pen <a href='https://codepen.io/azuremaps/pen/wvvBpvE'>Extruded polygon</a> by Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) on <a href='https://codepen.io'>CodePen</a>.</iframe>
+<iframe height="500" style="width: 100%;" scrolling="no" title="Вытянутый многоугольник" src="https://codepen.io/azuremaps/embed/wvvBpvE?height=265&theme-id=0&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
+Ознакомьтесь с <a href='https://codepen.io/azuremaps/pen/wvvBpvE'>вытягиванием</a> пера на Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.</iframe>
 
 
-## <a name="add-data-driven-multipolygons"></a>Add data driven multipolygons
+## <a name="add-data-driven-multipolygons"></a>Добавление управляемых данными многоугольных данных
 
-A choropleth map can be rendered using the polygon extrusion layer, by setting its `height` and `fillColor` properties in proportion to the measurement of the statistical variable in the `Polygon` and `MultiPolygon` feature geometries. The following code sample shows an extruded choropleth Map of the U.S based on the measurement of the population density by state.
+Карту хороплет можно визуализировать с помощью слоя «объемная часть многоугольника», установив его `height` и `fillColor` свойства пропорционально измерению статистической переменной в `Polygon` и `MultiPolygon` геометрических компонентах. В следующем образце кода показана вытянутая хороплетная схема U. S, основанная на измерении плотности Генеральной совокупности по штату.
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Extruded choropleth map" src="https://codepen.io/azuremaps/embed/eYYYNox?height=265&theme-id=0&default-tab=result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
-See the Pen <a href='https://codepen.io/azuremaps/pen/eYYYNox'>Extruded choropleth map</a> by Azure Maps(<a href='https://codepen.io/azuremaps'>@azuremaps</a>) on <a href='https://codepen.io'>CodePen</a>.
+<iframe height="500" style="width: 100%;" scrolling="no" title="Вытянутая хороплетная схема" src="https://codepen.io/azuremaps/embed/eYYYNox?height=265&theme-id=0&default-tab=result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
+См. <a href='https://codepen.io/azuremaps/pen/eYYYNox'>хороплет карту с вытягиванием</a> пера по Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## <a name="add-a-circle-to-the-map"></a>Add a circle to the map
+## <a name="add-a-circle-to-the-map"></a>Добавление окружности к карте
 
-Azure Maps uses an extended version of the GeoJSON schema that provides a definition for circles as noted [here](https://docs.microsoft.com/azure/azure-maps/extend-geojson#circle). An extruded circle can be rendered on the map by creating a `point` feature with a `subType` property of `Circle` and a numbered `Radius` property representing the radius in **meters**. Пример.
+Azure Maps использует расширенную версию схемы геоjson, которая предоставляет определение для кругов, как указано [здесь](https://docs.microsoft.com/azure/azure-maps/extend-geojson#circle). Вытянутый круг можно визуализировать на карте, создав `point`ную функцию со свойством `subType` `Circle` и числовым свойством `Radius`, представляющим радиус в **метрах**. Например,
 
 ```Javascript
 {
@@ -62,24 +62,24 @@ Azure Maps uses an extended version of the GeoJSON schema that provides a defini
 } 
 ```
 
-The Azure Maps Web SDK converts these `Point` features into `Polygon` features under the hood and can be rendered on the map using polygon extrusion layer as shown in the following code sample.
+Azure Maps веб-пакет SDK преобразует эти функции `Point` в `Polygon`ные функции, которые можно визуализировать на карте с помощью слоя объема, как показано в следующем примере кода.
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Drone airspace polygon" src="https://codepen.io/azuremaps/embed/zYYYrxo?height=265&theme-id=0&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
-See the Pen <a href='https://codepen.io/azuremaps/pen/zYYYrxo'>Drone airspace polygon</a> by Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) on <a href='https://codepen.io'>CodePen</a>.
+<iframe height="500" style="width: 100%;" scrolling="no" title="Помощью Дронов, многоугольник "airspace"" src="https://codepen.io/azuremaps/embed/zYYYrxo?height=265&theme-id=0&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
+См. раздел Pen <a href='https://codepen.io/azuremaps/pen/zYYYrxo'>помощью Дронов "airspace</a> " с Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## <a name="customize-a-polygon-extrusion-layer"></a>Customize a polygon extrusion layer
+## <a name="customize-a-polygon-extrusion-layer"></a>Настройка уровня объемной фигуры многоугольника
 
-The Polygon Extrusion layer several styling options. которые можно опробовать с помощью определенного средства.
+Уровень объема многоугольников: несколько вариантов стилей. которые можно опробовать.
 
 <br/>
 
-<iframe height='700' scrolling='no' title='PoogBRJ' src='//codepen.io/azuremaps/embed/PoogBRJ/?height=700&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/azuremaps/pen/PoogBRJ/'>PoogBRJ</a> by Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) on <a href='https://codepen.io'>CodePen</a>.
+<iframe height='700' scrolling='no' title='пугбрж' src='//codepen.io/azuremaps/embed/PoogBRJ/?height=700&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>См. <a href='https://codepen.io/azuremaps/pen/PoogBRJ/'>Пугбрж</a> пера by Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
@@ -87,9 +87,9 @@ The Polygon Extrusion layer several styling options. которые можно �
 > [Polygon](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.data.polygon?view=azure-iot-typescript-latest)
 
 > [!div class="nextstepaction"]
-> [polygon extrusion layer](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.polygonextrusionlayer?view=azure-maps-typescript-latest)
+> [уровень объемной фигуры многоугольника](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.polygonextrusionlayer?view=azure-maps-typescript-latest)
 
 Дополнительные ресурсы:
 
 > [!div class="nextstepaction"]
-> [Azure Maps GeoJSON specification extension](extend-geojson.md#circle)
+> [Расширение спецификации геоjson Azure Maps](extend-geojson.md#circle)

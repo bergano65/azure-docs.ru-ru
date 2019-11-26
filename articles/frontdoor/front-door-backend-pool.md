@@ -1,6 +1,6 @@
 ---
-title: Backends and backend pools in Azure Front Door Service | Microsoft Docs
-description: This article describes what backends and backend pools are in Front Door configuration.
+title: Серверы и серверные пулы в службе "Передняя дверца" Azure | Документация Майкрософт
+description: В этой статье описывается, какие серверные и внутренние пулы находятся в конфигурации передней дверцы.
 services: front-door
 documentationcenter: ''
 author: sharad4u
@@ -19,77 +19,77 @@ ms.lasthandoff: 11/20/2019
 ms.locfileid: "74229029"
 ---
 # <a name="backends-and-backend-pools-in-azure-front-door-service"></a>Серверные системы и серверные пулы в службе Azure Front Door
-This article describes concepts about how to map your app deployment with Azure Front Door Service. It also explains the different terms in Front Door configuration around app backends.
+В этой статье описываются основные понятия о том, как сопоставлять развертывание приложений с помощью службы "Передняя дверца Azure". В нем также объясняются различные термины в конфигурации передней дверцы вокруг серверной части приложения.
 
 ## <a name="backends"></a>Серверные системы
-A backend is equal to an app's deployment instance in a region. Front Door Service supports both Azure and non-Azure backends, so the region isn't only restricted to Azure regions. Also, it can be your on-premises datacenter or an app instance in another cloud.
+Серверная часть равна экземпляру развертывания приложения в регионе. Служба "Передняя дверь" поддерживает серверные части Azure и без Azure, поэтому регион не ограничивается только регионами Azure. Кроме того, это может быть локальный центр обработки данных или экземпляр приложения в другом облаке.
 
-Front Door Service backends refer to the host name or public IP of your app, which can serve client requests. Backends shouldn't be confused with your database tier, storage tier, and so on. Backends should be viewed as the public endpoint of your app backend. When you add a backend in a Front Door backend pool, you must also add the following:
+Серверная часть службы "Передняя дверь" ссылается на имя узла или общедоступный IP-адрес вашего приложения, который может обслуживать клиентские запросы. Не следует путать с уровнем базы данных, уровнем хранилища и т. д. Серверные части должны быть просмотрены как общедоступная конечная точка приложения. При добавлении серверной части в серверный пул для передней дверцы необходимо также добавить следующее:
 
-- **Backend host type**. The type of resource you want to add. Front Door Service supports autodiscovery of your app backends from app service, cloud service, or storage. If you want a different resource in Azure or even a non-Azure backend, select **Custom host**.
+- **Тип узла серверной части**. Тип ресурса, который требуется добавить. Служба "Передняя дверца" поддерживает автообнаружение серверных интерфейсов приложения из службы приложений, облачной службы или хранилища. Если вам нужен другой ресурс в Azure или даже Серверная часть, не относящаяся к Azure, выберите **Пользовательский узел**.
 
     >[!IMPORTANT]
-    >During configuration, APIs don't validate if the backend is inaccessible from Front Door environments. Make sure that Front Door can reach your backend.
+    >Во время настройки интерфейсы API не проверяют, недоступна ли Серверная часть в средах с передней дверцей. Убедитесь, что передняя дверца может достигать серверной части.
 
-- **Subscription and Backend host name**. If you haven't selected **Custom host** for backend host type, select your backend by choosing the appropriate subscription and the corresponding backend host name in the UI.
+- **Имя узла подписки и**сервера. Если вы не выбрали **Пользовательский узел** для типа узла серверной части, выберите свою серверную часть, выбрав соответствующую подписку и соответствующее имя узла в пользовательском интерфейсе.
 
-- **Backend host header**. The host header value sent to the backend for each request. For more information, see [Backend host header](#hostheader).
+- **Заголовок узла внутреннего сервера**. Значение заголовка узла, отправляемое в серверную часть для каждого запроса. Дополнительные сведения см. в разделе [Серверный заголовок узла](#hostheader).
 
-- **Приоритет**. Assign priorities to your different backends when you want to use a primary service backend for all traffic. Also, provide backups if the primary or the backup backends are unavailable. For more information, see [Priority](front-door-routing-methods.md#priority).
+- **Приоритет**. Назначьте приоритеты различным серверным конечным серверам, если вы хотите использовать основную внутреннюю службу службы для всего трафика. Кроме того, предоставьте резервные копии, если первичная или резервная недоступна. Дополнительные сведения см. в разделе [Priority](front-door-routing-methods.md#priority).
 
-- **Weight**. Assign weights to your different backends to distribute traffic across a set of backends, either evenly or according to weight coefficients. For more information, see [Weights](front-door-routing-methods.md#weighted).
+- **Вес**. Задайте весовые коэффициенты для различных конечных элементов, чтобы распределить трафик между набором последовательностей, равномерно или пропорционально коэффициентам веса. Дополнительные сведения см. в разделе [веса](front-door-routing-methods.md#weighted).
 
 ### <a name = "hostheader"></a>Заголовок узла серверной системы
 
-Requests forwarded by Front Door to a backend include a host header field that the backend uses to retrieve the targeted resource. Значение для этого поля обычно берется из URI серверной системы и содержит узел и порт.
+Запросы, переадресованные передней дверце к серверной части, включают поле заголовка узла, используемое серверной частью для получения целевого ресурса. Значение для этого поля обычно берется из URI серверной системы и содержит узел и порт.
 
-For example, a request made for www\.contoso.com will have the host header www\.contoso.com. If you use Azure portal to configure your backend, the default value for this field is the host name of the backend. If your backend is contoso-westus.azurewebsites.net, in the Azure portal, the autopopulated value for the backend host header will be contoso-westus.azurewebsites.net. However, if you use Azure Resource Manager templates or another method without explicitly setting this field, Front Door Service will send the incoming host name as the value for the host header. If the request was made for www\.contoso.com, and your backend is contoso-westus.azurewebsites.net that has an empty header field, Front Door Service will set the host header as www\.contoso.com.
+Например, запрос, отправленный для www\.contoso.com, будет иметь заголовок узла www\.contoso.com. Если для настройки серверной части используется портал Azure, значением по умолчанию для этого поля является имя узла серверной части. Если серверная часть — contoso-westus.azurewebsites.net, в портал Azure автоматически заполняемое значение заголовка узла внутреннего сервера будет contoso-westus.azurewebsites.net. Однако если вы используете шаблоны Azure Resource Manager или другой метод без явного задания этого поля, служба "Передняя дверь" отправит входящее имя узла в качестве значения заголовка узла. Если запрос был сделан для www\.contoso.com, а Серверная часть — contoso-westus.azurewebsites.net с пустым полем заголовка, служба "Передняя дверь" настроит заголовок узла как www\.contoso.com.
 
-Most app backends (Azure Web Apps, Blob storage, and Cloud Services) require the host header to match the domain of the backend. However, the frontend host that routes to your backend will use a different hostname such as www\.contoso.azurefd.net.
+Для большинства серверных частей приложения (веб-приложения Azure, хранилище больших двоичных объектов и облачные службы) заголовок узла должен соответствовать домену внутреннего сервера. Однако интерфейсный узел, который маршрутизирует на серверную часть, будет использовать другое имя узла, например www\.contoso.azurefd.net.
 
-If your backend requires the host header to match the backend host name, make sure that the backend host header includes the host name backend.
+Если серверной части требуется, чтобы заголовок узла совпадал с именем узла внутреннего сервера, убедитесь, что заголовок узла внутреннего сервера содержит серверную часть имени узла.
 
 #### <a name="configuring-the-backend-host-header-for-the-backend"></a>Настройка заголовка узла серверной системы
 
-To configure the **backend host header** field for a backend in the backend pool section:
+Чтобы настроить поле **заголовка внутреннего узла** для серверной части в разделе серверный пул:
 
-1. Open your Front Door resource and select the backend pool with the backend to configure.
+1. Откройте ресурс "Передняя дверь" и выберите внутренний пул с серверной частью для настройки.
 
-2. Add a backend if you haven't done so, or edit an existing one.
+2. Добавьте серверную часть, если вы этого не сделали, или измените существующую.
 
-3. Set the backend host header field to a custom value or leave it blank. The hostname for the incoming request will be used as the host header value.
+3. В поле Заголовок узла серверной части задайте пользовательское значение или оставьте его пустым. Имя узла для входящего запроса будет использоваться в качестве значения заголовка узла.
 
-## <a name="backend-pools"></a>Backend pools
-A backend pool in Front Door Service refers to the set of backends that receive similar traffic for their app. In other words, it's a logical grouping of your app instances across the world that receive the same traffic and respond with expected behavior. These backends are deployed across different regions or within the same region. All backends can be in Active/Active deployment mode or what is defined as Active/Passive configuration.
+## <a name="backend-pools"></a>Серверные пулы
+Внутренний пул в службе Front дверь ссылается на набор серверных компонентов, которые получают подобный трафик для своего приложения. Иными словами, это логическая группировка экземпляров приложения по всему миру, которые получают одинаковый трафик и отвечают ожидаемому поведению. Эти интерфейсы развертываются в разных регионах или в одном регионе. Все серверные элементы могут находиться в режиме активного или активного развертывания или быть определены как Активная/пассивная конфигурация.
 
-A backend pool defines how the different backends should be evaluated via health probes. It also defines how load balancing occurs between them.
+Внутренний пул определяет, как различные серверные части должны оцениваться через зонды работоспособности. Он также определяет, как происходит балансировка нагрузки между ними.
 
-### <a name="health-probes"></a>Пробы работоспособности
-Front Door Service sends periodic HTTP/HTTPS probe requests to each of your configured backends. Probe requests determine the proximity and health of each backend to load balance your end-user requests. Health probe settings for a backend pool define how we poll the health status of app backends. The following settings are available for load-balancing configuration:
+### <a name="health-probes"></a>Пробы работоспособности.
+Служба "Передняя дверца" отправляет периодические запросы HTTP/HTTPS на каждый из настроенных серверных систем. Запросы пробы определяют сходство и работоспособность каждой серверной части для балансировки нагрузки запросов конечных пользователей. Параметры проверки работоспособности для внутреннего пула определяют, как мы будем опрашивать состояние работоспособности серверной части приложения. Для конфигурации балансировки нагрузки доступны следующие параметры.
 
-- **Путь**. The URL used for probe requests for all the backends in the backend pool. For example, if one of your backends is contoso-westus.azurewebsites.net and the path is set to /probe/test.aspx, then Front Door Service environments, assuming the protocol is set to HTTP, will send health probe requests to http\://contoso-westus.azurewebsites.net/probe/test.aspx.
+- **Путь**. URL-адрес, используемый для пробных запросов для всех серверных частей внутреннего пула. Например, если один из серверных contoso-westus.azurewebsites.net, а путь имеет значение/пробе/тест.аспкс, то среда службы "Передняя дверца", при условии, что для протокола задано значение HTTP, отправит запросы проверки работоспособности в HTTP\://contoso-westus.azurewebsites.net/probe/test.aspx.
 
-- **Протокол**. Defines whether to send the health probe requests from Front Door Service to your backends with HTTP or HTTPS protocol.
+- **Протокол**. Определяет, следует ли отсылать запросы пробы работоспособности от службы Front дверь к серверной части с помощью протокола HTTP или HTTPS.
 
-- **Interval (seconds)** . Defines the frequency of health probes to your backends, or the intervals in which each of the Front Door environments sends a probe.
+- **Интервал (в секундах)** . Определяет частоту проверок работоспособности в серверных системах или интервалы, в течение которых каждая из сред передней дверцы отправляет зонд.
 
     >[!NOTE]
-    >For faster failovers, set the interval to a lower value. The lower the value, the higher the health probe volume your backends receive. For example, if the interval is set to 30 seconds with 90 Front Door environments or POPs globally, each backend will receive about 3-5 probe requests per second.
+    >Для ускорения отработки отказа установите для интервала меньшее значение. Чем меньше это значение, тем выше объем данных проверки работоспособности, получаемый конечными точками. Например, если для интервала задано значение 30 секунд с 90 средами или точками подключения передней дверцы, каждая серверная часть получит около 3-5 запросов пробы в секунду.
 
-For more information, see [Health probes](front-door-health-probes.md).
+Дополнительные сведения см. в разделе [зонды работоспособности](front-door-health-probes.md).
 
-### <a name="load-balancing-settings"></a>Load-balancing settings
-Load-balancing settings for the backend pool define how we evaluate health probes. These settings determine if the backend is healthy or unhealthy. They also check how to load-balance traffic between different backends in the backend pool. The following settings are available for load-balancing configuration:
+### <a name="load-balancing-settings"></a>Параметры балансировки нагрузки
+Параметры балансировки нагрузки для серверного пула определяют, как оцениваются пробы работоспособности. Эти параметры определяют, является ли Серверная часть работоспособной или неработоспособной. Они также посвящены балансировке нагрузки трафика между различными серверными интерфейсами в внутреннем пуле. Для конфигурации балансировки нагрузки доступны следующие параметры.
 
-- **Sample size**. Identifies how many samples of health probes we need to consider for backend health evaluation.
+- **Размер выборки**. Определяет, сколько примеров проверок работоспособности необходимо учитывать при оценке работоспособности серверной части.
 
-- **Successful sample size**. Defines the sample size as previously mentioned, the number of successful samples needed to call the backend healthy. For example, assume a Front Door health probe interval is 30 seconds, sample size is 5, and successful sample size is 3. Each time we evaluate the health probes for your backend, we look at the last five samples over 150 seconds (5 x 30). At least three successful probes are required to declare the backend as healthy.
+- **Размер выборки успешно выполнен**. Определяет размер выборки, как упоминалось ранее, количество успешных выборок, необходимых для вызова работоспособности серверной части. Например, предположим, что интервал проверки работоспособности передней дверцы составляет 30 секунд, размер выборки равен 5, а успешный размер выборки — 3. Каждый раз, когда оцениваются проверки работоспособности серверной части, мы рассмотрим пять последних выборок за 150 секунд (5 x 30). Для объявления серверной части в качестве работоспособного требуется по крайней мере три успешные проверки.
 
-- **Latency sensitivity (additional latency)** . Defines whether you want Front Door to send the request to backends within the latency measurement sensitivity range or forward the request to the closest backend.
+- **Чувствительность задержки (дополнительная задержка)** . Определяет, должна ли Передняя дверца отправлять запрос на сервер в пределах диапазона чувствительности к измерению задержки или пересылать запрос ближайшему серверу.
 
-For more information, see [Least latency based routing method](front-door-routing-methods.md#latency).
+Дополнительные сведения см. в разделе [метод маршрутизации на основе минимальной задержки](front-door-routing-methods.md#latency).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-- [Create a Front Door profile](quickstart-create-front-door.md)
-- [How Front Door works](front-door-routing-architecture.md)
+- [Создание профиля передней дверцы](quickstart-create-front-door.md)
+- [Принцип работы передней дверцы](front-door-routing-architecture.md)

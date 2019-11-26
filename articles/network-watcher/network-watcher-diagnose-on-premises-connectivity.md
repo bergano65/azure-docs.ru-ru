@@ -17,7 +17,7 @@ ms.date: 02/22/2017
 ms.author: kumud
 ms.openlocfilehash: 602a319ce90e5a6d13829e218899f135413d762d
 ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/21/2019
 ms.locfileid: "74275940"
@@ -80,7 +80,7 @@ Error: On-premises device rejected Quick Mode settings. Check values.
 
 Функция устранения неполадок Наблюдателя за сетями Azure позволяет диагностировать и устранить неполадки VPN-шлюза и подключений так же легко, как выполнить простой командлет PowerShell. В настоящее время поддерживается диагностика приведенных ниже условий. Кроме того, мы работаем над добавлением дополнительных условий.
 
-### <a name="gateway"></a>Шлюз
+### <a name="gateway"></a>gateway
 
 | Тип ошибки | Причина | Журнал|
 |---|---|---|

@@ -1,5 +1,5 @@
 ---
-title: Data alteration - LUIS
+title: Изменение данных — LUIS
 titleSuffix: Azure Cognitive Services
 description: Узнайте, как изменить данные перед прогнозированием в службе "Распознавание речи" (LUIS).
 services: cognitive-services
@@ -19,7 +19,7 @@ ms.lasthandoff: 11/20/2019
 ms.locfileid: "74222024"
 ---
 # <a name="alter-utterance-data-before-or-during-prediction"></a>Изменение данных высказываний до или во время прогнозирования
-LUIS предоставляет способы управления высказыванием до или во время прогнозирования. These include [fixing spelling](luis-tutorial-bing-spellcheck.md), and fixing timezone issues for prebuilt [datetimeV2](luis-reference-prebuilt-datetimev2.md). 
+LUIS предоставляет способы управления высказыванием до или во время прогнозирования. Сюда входит [исправление орфографических](luis-tutorial-bing-spellcheck.md)ошибок и устранение проблем с часовым поясом для предварительно созданной [datetimeV2](luis-reference-prebuilt-datetimev2.md). 
 
 ## <a name="correct-spelling-errors-in-utterance"></a>Исправление орфографических ошибок в высказывании
 
@@ -37,9 +37,9 @@ Usage of the key in the test panel and at the endpoint count toward the [key usa
 
 Чтобы исправления орфографических ошибок вступили в силу, конечной точке требуется два параметра.
 
-|Параметр|Value|
+|Параметр|Значение|
 |--|--|
-|`spellCheck`|Логическое|
+|`spellCheck`|логическое значение|
 |`bing-spell-check-subscription-key`|Ключ конечной точки [API проверки орфографии Bing версии 7](https://azure.microsoft.com/services/cognitive-services/spell-check/)|
 
 Когда [API проверки орфографии Bing версии 7](https://azure.microsoft.com/services/cognitive-services/spell-check/) обнаруживает ошибку, из конечной точки возвращаются исходное выражение, исправленное выражение и прогнозирование.
@@ -78,16 +78,16 @@ Usage of the key in the test panel and at the endpoint count toward the [key usa
 
 * * * 
 
-### <a name="list-of-allowed-words"></a>List of allowed words
-The Bing spell check API used in LUIS does not support a list of words to ignore during the spell check alterations. If you need to allow a list of words or acronyms, process the utterance in the client application before sending the utterance to LUIS for intent prediction.
+### <a name="list-of-allowed-words"></a>Список разрешенных слов
+API проверки орфографии Bing, используемый в LUIS, не поддерживает список игнорируемых слов во время изменений проверки орфографии. Если необходимо разрешить список слов или акронимов, обработайте utterance в клиентском приложении перед отправкой utterance в LUIS для прогнозирования намерения.
 
 ## <a name="change-time-zone-of-prebuilt-datetimev2-entity"></a>Изменение часового пояса предварительно созданной сущности datetimeV2
-When a LUIS app uses the prebuilt [datetimeV2](luis-reference-prebuilt-datetimev2.md) entity, a datetime value can be returned in the prediction response. Часовой пояс запроса используется для определения правильного возвращаемого значения даты и времени. Если запрос поступает от бота или другого централизованного приложения до передачи в LUIS, исправьте часовой пояс, используемый LUIS. 
+Когда приложение LUIS использует предварительно созданную сущность [datetimeV2](luis-reference-prebuilt-datetimev2.md) , в ответе прогноза может возвращаться значение DateTime. Часовой пояс запроса используется для определения правильного возвращаемого значения даты и времени. Если запрос поступает от бота или другого централизованного приложения до передачи в LUIS, исправьте часовой пояс, используемый LUIS. 
 
 ### <a name="endpoint-querystring-parameter"></a>Параметр QueryString конечной точки
 Часовой пояс исправляется путем добавления часового пояса пользователя к [конечной точке](https://go.microsoft.com/fwlink/?linkid=2092356) с помощью параметра `timezoneOffset`. Чтобы изменить время, значение `timezoneOffset` должно быть положительным или отрицательным числом в минутах.  
 
-|Параметр|Value|
+|Параметр|Значение|
 |--|--|
 |`timezoneOffset`|положительное или отрицательное число в минутах|
 
@@ -108,18 +108,18 @@ https://{region}.api.cognitive.microsoft.com/luis/v2.0/apps/{appId}?q=Turn the l
 
 Добавьте 60 минут:
 
-https://{region}.api.cognitive.microsoft.com/luis/v3.0-preview/apps/{appId}/slots/production/predict?query=Turn the lights on?**timezoneOffset=60**&spellCheck={boolean}&bing-spell-check-subscription-key={string}&log={boolean}
+HTTPS://{регион}. API. turn. Microsoft. com/Luis/v 3.0-Предварительная версия/приложения/{appId}/слоты/рабочий/прогноз? запрос = включить индикаторы? **timezoneOffset = 60**& проверки орфографии = {boolean} & Bing-правописание-Check-Subscription-Key = {строка} & log = {Boolean}
 
 Удалите 60 минут: 
 
-https://{region}.api.cognitive.microsoft.com/luis/v3.0-preview/apps/{appId}/slots/production/predict?query=Turn the lights on?**timezoneOffset=-60**&spellCheck={boolean}&bing-spell-check-subscription-key={string}&log={boolean}
+HTTPS://{регион}. API. turn. Microsoft. com/Luis/v 3.0-Предварительная версия/приложения/{appId}/слоты/рабочий/прогноз? запрос = включить индикаторы? **timezoneOffset =-60 & проверки**орфографии = {boolean} & Bing-орфографические проверки-подписка — ключ = {строка} & log = {Boolean}
 
 Дополнительные сведения о [конечной точке прогнозирования V3](luis-migration-api-v3.md).
 
 * * * 
 
 ## <a name="c-code-determines-correct-value-of-timezoneoffset"></a>Код на C# определяет правильное значение timezoneOffset
-В следующем коде на C# для определения правильного значения `timezoneOffset` на основе системного времени используется метод [FindSystemTimeZoneById](https://docs.microsoft.com/dotnet/api/system.timezoneinfo.findsystemtimezonebyid#examples) класса [TimeZoneInfo](https://docs.microsoft.com/dotnet/api/system.timezoneinfo):
+В следующем коде на C# для определения правильного значения [ на основе системного времени используется метод ](https://docs.microsoft.com/dotnet/api/system.timezoneinfo)FindSystemTimeZoneById[ класса ](https://docs.microsoft.com/dotnet/api/system.timezoneinfo.findsystemtimezonebyid#examples)TimeZoneInfo`timezoneOffset`:
 
 ```CSharp
 // Get CST zone id
@@ -135,7 +135,7 @@ DateTime cstDatetime = TimeZoneInfo.ConvertTimeFromUtc(utcDatetime, targetZone);
 int timezoneOffset = (int)((cstDatetime - utcDatetime).TotalMinutes);
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
 > [Исправление орфографических ошибок с помощью этого руководства](luis-tutorial-bing-spellcheck.md)

@@ -1,5 +1,5 @@
 ---
-title: Copy data to and from Azure SQL Database Managed Instance
+title: Копирование данных в Управляемый экземпляр Базы данных SQL Azure и из них
 description: Сведения о перемещении данных в Управляемый экземпляр Базы данных SQL Azure и из него с помощью Фабрики данных Azure.
 services: data-factory
 ms.service: data-factory
@@ -25,9 +25,9 @@ ms.locfileid: "74218771"
 
 ## <a name="supported-capabilities"></a>Поддерживаемые возможности
 
-This Azure SQL Database Managed Instance connector is supported for the following activities:
+Этот соединитель Управляемый экземпляр Базы данных SQL Azure поддерживается для следующих действий:
 
-- [Copy activity](copy-activity-overview.md) with [supported source/sink matrix](copy-activity-overview.md)
+- [Действие копирования](copy-activity-overview.md) с [поддерживаемой матрицей источника и приемника](copy-activity-overview.md)
 - [Действие поиска](control-flow-lookup-activity.md)
 - [Действие получения метаданных в Фабрике данных Azure](control-flow-get-metadata-activity.md)
 
@@ -35,40 +35,40 @@ This Azure SQL Database Managed Instance connector is supported for the followin
 
 Этот соединитель Управляемого экземпляра Базы данных SQL Azure поддерживает:
 
-- Copying data by using SQL authentication and Azure Active Directory (Azure AD) Application token authentication with a service principal or managed identities for Azure resources.
-- As a source, retrieving data by using a SQL query or a stored procedure.
+- Копирование данных с помощью проверки подлинности SQL и Azure Active Directory (Azure AD) маркера приложения с помощью субъекта-службы или управляемых удостоверений для ресурсов Azure.
+- В качестве источника, получая данные с помощью SQL-запроса или хранимой процедуры.
 - (в качестве приемника) применение пользовательской логики для добавления данных в целевую таблицу или вызова хранимой процедуры во время копирования.
 
 >[!NOTE]
->Azure SQL Database Managed Instance [Always Encrypted](https://docs.microsoft.com/sql/relational-databases/security/encryption/always-encrypted-database-engine?view=azuresqldb-mi-current) isn't supported by this connector now. To work around, you can use a [generic ODBC connector](connector-odbc.md) and a SQL Server ODBC driver via a self-hosted integration runtime. Follow [this guidance](https://docs.microsoft.com/sql/connect/odbc/using-always-encrypted-with-the-odbc-driver?view=azuresqldb-mi-current) with ODBC driver download and connection string configurations.
+>Управляемый экземпляр Базы данных SQL Azure [Always encrypted](https://docs.microsoft.com/sql/relational-databases/security/encryption/always-encrypted-database-engine?view=azuresqldb-mi-current) сейчас не поддерживается этим соединителем. Для решения этой проблемы можно использовать [универсальный соединитель ODBC](connector-odbc.md) и драйвер SQL Server ODBC через локальную среду выполнения интеграции. Следуйте указаниям [по](https://docs.microsoft.com/sql/connect/odbc/using-always-encrypted-with-the-odbc-driver?view=azuresqldb-mi-current) загрузке драйвера ODBC и настройке строки подключения.
 
 >[!NOTE]
->Service principal and managed identity authentications currently aren't supported by this connector. To work around, choose an Azure SQL Database connector and manually specify the server of your managed instance.
+>Субъект-служба и проверки подлинности управляемых удостоверений в настоящее время не поддерживаются этим соединителем. Чтобы решить эту проблемы, выберите соединитель базы данных SQL Azure и укажите сервер управляемого экземпляра вручную.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
-To access the Azure SQL Database Managed Instance [public endpoint](../sql-database/sql-database-managed-instance-public-endpoint-securely.md), you can use an Azure Data Factory managed Azure integration runtime. Make sure that you enable the public endpoint and also allow public endpoint traffic on the network security group so that Azure Data Factory can connect to your database. For more information, see [this guidance](../sql-database/sql-database-managed-instance-public-endpoint-configure.md).
+Для доступа к [общедоступной конечной точке](../sql-database/sql-database-managed-instance-public-endpoint-securely.md)управляемый экземпляр базы данных SQL Azure можно использовать управляемую среду выполнения интеграции Azure в фабрике данных Azure. Убедитесь, что включена общедоступная конечная точка, а также разрешите трафик общедоступной конечной точки в группе безопасности сети, чтобы фабрика данных Azure могла подключаться к базе данных. Дополнительные сведения см. в [этом руководстве](../sql-database/sql-database-managed-instance-public-endpoint-configure.md).
 
-To access the Azure SQL Database Managed Instance private endpoint, set up a [self-hosted integration runtime](create-self-hosted-integration-runtime.md) that can access the database. If you provision the self-hosted integration runtime in the same virtual network as your managed instance, make sure that your integration runtime machine is in a different subnet than your managed instance. If you provision your self-hosted integration runtime in a different virtual network than your managed instance, you can use either a virtual network peering or a virtual network to virtual network connection. Дополнительные сведения см. в статье [Подключение приложения к Управляемому экземпляру Базы данных SQL](../sql-database/sql-database-managed-instance-connect-app.md).
+Чтобы получить доступ к закрытой конечной точке Управляемый экземпляр Базы данных SQL Azure, настройте локальную [среду выполнения интеграции](create-self-hosted-integration-runtime.md) , которая может обращаться к базе данных. При подготовке локальной среды выполнения интеграции в той же виртуальной сети, что и управляемый экземпляр, убедитесь, что компьютер среды выполнения интеграции находится в другой подсети, чем управляемый экземпляр. При подготовке локальной среды выполнения интеграции в виртуальной сети, отличной от той, в которой находится управляемый экземпляр, можно использовать пиринг виртуальной сети или виртуальную сеть для подключения к виртуальной сети. Дополнительные сведения см. в статье [Подключение приложения к Управляемому экземпляру Базы данных SQL](../sql-database/sql-database-managed-instance-connect-app.md).
 
-## <a name="get-started"></a>Начать
+## <a name="get-started"></a>Приступая к работе
 
 [!INCLUDE [data-factory-v2-connector-get-started](../../includes/data-factory-v2-connector-get-started.md)]
 
-The following sections provide details about properties that are used to define Azure Data Factory entities specific to the Azure SQL Database Managed Instance connector.
+Следующие разделы содержат сведения о свойствах, которые используются для определения сущностей фабрики данных Azure, относящихся к соединителю Управляемый экземпляр Базы данных SQL Azure.
 
 ## <a name="linked-service-properties"></a>Свойства связанной службы
 
 Для связанной службы Управляемого экземпляра Базы данных SQL поддерживаются следующие свойства.
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | ОПИСАНИЕ | обязательные |
 |:--- |:--- |:--- |
-| Тип | The type property must be set to **AzureSqlMI**. | ДА |
-| connectionString |This property specifies the **connectionString** information that's needed to connect to the managed instance by using SQL authentication. Дополнительные сведения представлены в примерах ниже. <br/>The default port is 1433. If you're using Azure SQL Database Managed Instance with a public endpoint, explicitly specify port 3342.<br>Mark this field as **SecureString** to store it securely in Azure Data Factory. You also can put a password in Azure Key Vault. If it's SQL authentication, pull the `password` configuration out of the connection string. For more information, see the JSON example following the table and [Store credentials in Azure Key Vault](store-credentials-in-key-vault.md). |ДА |
-| servicePrincipalId | Укажите идентификатора клиента приложения. | Yes, when you use Azure AD authentication with a service principal |
-| servicePrincipalKey | Укажите ключ приложения. Mark this field as **SecureString** to store it securely in Azure Data Factory or [reference a secret stored in Azure Key Vault](store-credentials-in-key-vault.md). | Yes, when you use Azure AD authentication with a service principal |
-| tenant | Specify the tenant information, like the domain name or tenant ID, under which your application resides. Retrieve it by hovering the mouse in the upper-right corner of the Azure portal. | Yes, when you use Azure AD authentication with a service principal |
-| connectVia | Это [среда выполнения интеграции](concepts-integration-runtime.md) для подключения к хранилищу данных. You can use a self-hosted integration runtime or an Azure integration runtime if your managed instance has a public endpoint and allows Azure Data Factory to access it. If not specified, the default Azure integration runtime is used. |ДА |
+| type | Для свойства Type необходимо задать значение **азуресклми**. | Yes |
+| connectionString |Это свойство указывает сведения **ConnectionString** , необходимые для подключения к управляемому экземпляру с помощью проверки подлинности SQL. Дополнительные сведения представлены в примерах ниже. <br/>Порт по умолчанию — 1433. Если вы используете Управляемый экземпляр Базы данных SQL Azure с общедоступной конечной точкой, явно укажите порт 3342.<br>Пометьте это поле как **SecureString** , чтобы безопасно хранить его в фабрике данных Azure. Вы также можете добавить пароль в Azure Key Vault. Если это проверка подлинности SQL, вытяните конфигурацию `password` из строки подключения. Дополнительные сведения см. в примере JSON, который следует за таблицей, и [Храните учетные данные в Azure Key Vault](store-credentials-in-key-vault.md). |Yes |
+| servicePrincipalId | Укажите идентификатора клиента приложения. | Да, при использовании проверки подлинности Azure AD с субъектом-службой |
+| servicePrincipalKey | Укажите ключ приложения. Пометьте это поле как **SecureString** , чтобы безопасно хранить его в фабрике данных Azure, или [сослаться на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да, при использовании проверки подлинности Azure AD с субъектом-службой |
+| клиенте | Укажите сведения о клиенте, например имя домена или идентификатор клиента, в котором находится приложение. Извлеките его, наведя указатель мыши на правый верхний угол портал Azure. | Да, при использовании проверки подлинности Azure AD с субъектом-службой |
+| connectVia | Это [среда выполнения интеграции](concepts-integration-runtime.md) для подключения к хранилищу данных. Вы можете использовать локальную среду выполнения интеграции или среду выполнения интеграции Azure, если управляемый экземпляр имеет общедоступную конечную точку и позволяет фабрике данных Azure получить к ней доступ. Если значение не указано, используется среда выполнения интеграции Azure по умолчанию. |Yes |
 
 В разделах ниже описываются требования и приводятся примеры JSON для разных типов проверки подлинности.
 
@@ -78,7 +78,7 @@ The following sections provide details about properties that are used to define 
 
 ### <a name="sql-authentication"></a>Аутентификация SQL
 
-**Example 1: use SQL authentication**
+**Пример 1. Использование проверки подлинности SQL**
 
 ```json
 {
@@ -99,7 +99,7 @@ The following sections provide details about properties that are used to define 
 }
 ```
 
-**Example 2: use SQL authentication with a password in Azure Key Vault**
+**Пример 2. Использование проверки подлинности SQL с паролем в Azure Key Vault**
 
 ```json
 {
@@ -132,35 +132,35 @@ The following sections provide details about properties that are used to define 
 
 Чтобы использовать проверку подлинности по маркеру приложения Azure AD на основе субъекта-службы, выполните следующие действия:
 
-1. Follow the steps to [Provision an Azure Active Directory administrator for your Managed Instance](../sql-database/sql-database-aad-authentication-configure.md#provision-an-azure-active-directory-administrator-for-your-managed-instance).
+1. Выполните действия по [подготовке администратора Azure Active Directory для управляемый экземпляр](../sql-database/sql-database-aad-authentication-configure.md#provision-an-azure-active-directory-administrator-for-your-managed-instance).
 
-2. [Create an Azure Active Directory application](../active-directory/develop/howto-create-service-principal-portal.md#create-an-azure-active-directory-application) from the Azure portal. Запишите имя приложения и следующие значения, которые используются для определения связанной службы:
+2. [Создайте приложение Azure Active Directory](../active-directory/develop/howto-create-service-principal-portal.md#create-an-azure-active-directory-application) из портал Azure. Запишите имя приложения и следующие значения, которые используются для определения связанной службы:
 
     - Идентификатор приложения
     - Ключ приложения
     - Tenant ID
 
-3. [Create logins](https://docs.microsoft.com/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current) for the Azure Data Factory managed identity. In SQL Server Management Studio (SSMS), connect to your Managed Instance using a SQL Server account that is a **sysadmin**. In **master** database, run the following T-SQL:
+3. [Создайте имена входа](https://docs.microsoft.com/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current) для управляемого удостоверения фабрики данных Azure. В SQL Server Management Studio (SSMS) подключитесь к Управляемый экземпляр SQL Server с помощью учетной записи, которая является **администратором**. В базе данных **master** выполните следующий T-SQL:
 
     ```sql
     CREATE LOGIN [your application name] FROM EXTERNAL PROVIDER
     ```
 
-4. [Create contained database users](../sql-database/sql-database-aad-authentication-configure.md#create-contained-database-users-in-your-database-mapped-to-azure-ad-identities) for the Azure Data Factory managed identity. Connect to the database from or to which you want to copy data, run the following T-SQL: 
+4. [Создание пользователей автономной базы данных](../sql-database/sql-database-aad-authentication-configure.md#create-contained-database-users-in-your-database-mapped-to-azure-ad-identities) для управляемого удостоверения в фабрике данных Azure. Подключитесь к базе данных из или в которую необходимо скопировать данные, выполнив следующий T-SQL: 
   
     ```sql
     CREATE USER [your application name] FROM EXTERNAL PROVIDER
     ```
 
-5. Grant the Data Factory managed identity needed permissions as you normally do for SQL users and others. Выполните следующий код. For more options, see [this document](https://docs.microsoft.com/sql/t-sql/statements/alter-role-transact-sql?view=azuresqldb-mi-current).
+5. Предоставьте управляемому удостоверению фабрики данных необходимые разрешения, как обычно для пользователей SQL и других. Выполните следующий код. Дополнительные параметры см. в [этом документе](https://docs.microsoft.com/sql/t-sql/statements/alter-role-transact-sql?view=azuresqldb-mi-current).
 
     ```sql
     ALTER ROLE [role name e.g. db_owner] ADD MEMBER [your application name]
     ```
 
-6. Configure an Azure SQL Database Managed Instance linked service in Azure Data Factory.
+6. Настройка связанной службы Управляемый экземпляр Базы данных SQL Azure в фабрике данных Azure.
 
-**Example: use service principal authentication**
+**Пример. Использование проверки подлинности субъекта-службы**
 
 ```json
 {
@@ -189,33 +189,33 @@ The following sections provide details about properties that are used to define 
 
 ### <a name="managed-identity"></a> Управляемые удостоверения для аутентификации ресурсов Azure
 
-Фабрика данных может быть связана с [управляемым удостоверением ресурсов Azure](data-factory-service-identity.md), которое представляет отдельную фабрику данных. You can use this managed identity for Azure SQL Database Managed Instance authentication. Назначенная фабрика может получить доступ и скопировать данные из вашей базы данных или в нее, используя этот идентификатор.
+Фабрика данных может быть связана с [управляемым удостоверением ресурсов Azure](data-factory-service-identity.md), которое представляет отдельную фабрику данных. Это управляемое удостоверение можно использовать для проверки подлинности Управляемый экземпляр Базы данных SQL Azure. Назначенная фабрика может получить доступ и скопировать данные из вашей базы данных или в нее, используя этот идентификатор.
 
-To use managed identity authentication, follow these steps.
+Чтобы использовать аутентификацию управляемого удостоверения, выполните следующие действия.
 
-1. Follow the steps to [Provision an Azure Active Directory administrator for your Managed Instance](../sql-database/sql-database-aad-authentication-configure.md#provision-an-azure-active-directory-administrator-for-your-managed-instance).
+1. Выполните действия по [подготовке администратора Azure Active Directory для управляемый экземпляр](../sql-database/sql-database-aad-authentication-configure.md#provision-an-azure-active-directory-administrator-for-your-managed-instance).
 
-2. [Create logins](https://docs.microsoft.com/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current) for the Azure Data Factory managed identity. In SQL Server Management Studio (SSMS), connect to your Managed Instance using a SQL Server account that is a **sysadmin**. In **master** database, run the following T-SQL:
+2. [Создайте имена входа](https://docs.microsoft.com/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current) для управляемого удостоверения фабрики данных Azure. В SQL Server Management Studio (SSMS) подключитесь к Управляемый экземпляр SQL Server с помощью учетной записи, которая является **администратором**. В базе данных **master** выполните следующий T-SQL:
 
     ```sql
     CREATE LOGIN [your Data Factory name] FROM EXTERNAL PROVIDER
     ```
 
-3. [Create contained database users](../sql-database/sql-database-aad-authentication-configure.md#create-contained-database-users-in-your-database-mapped-to-azure-ad-identities) for the Azure Data Factory managed identity. Connect to the database from or to which you want to copy data, run the following T-SQL: 
+3. [Создание пользователей автономной базы данных](../sql-database/sql-database-aad-authentication-configure.md#create-contained-database-users-in-your-database-mapped-to-azure-ad-identities) для управляемого удостоверения в фабрике данных Azure. Подключитесь к базе данных из или в которую необходимо скопировать данные, выполнив следующий T-SQL: 
   
     ```sql
     CREATE USER [your Data Factory name] FROM EXTERNAL PROVIDER
     ```
 
-4. Grant the Data Factory managed identity needed permissions as you normally do for SQL users and others. Выполните следующий код. For more options, see [this document](https://docs.microsoft.com/sql/t-sql/statements/alter-role-transact-sql?view=azuresqldb-mi-current).
+4. Предоставьте управляемому удостоверению фабрики данных необходимые разрешения, как обычно для пользователей SQL и других. Выполните следующий код. Дополнительные параметры см. в [этом документе](https://docs.microsoft.com/sql/t-sql/statements/alter-role-transact-sql?view=azuresqldb-mi-current).
 
     ```sql
     ALTER ROLE [role name e.g. db_owner] ADD MEMBER [your Data Factory name]
     ```
 
-5. Configure an Azure SQL Database Managed Instance linked service in Azure Data Factory.
+5. Настройка связанной службы Управляемый экземпляр Базы данных SQL Azure в фабрике данных Azure.
 
-**Example: uses managed identity authentication**
+**Пример. Использование проверки подлинности управляемого удостоверения**
 
 ```json
 {
@@ -240,14 +240,14 @@ To use managed identity authentication, follow these steps.
 
 Полный список разделов и свойств, доступных для определения наборов данных, см. в статье о наборах данных. Этот раздел содержит список свойств, поддерживаемых набором данных Управляемого экземпляра Базы данных SQL.
 
-To copy data to and from Azure SQL Database Managed Instance, the following properties are supported:
+Чтобы скопировать данные в Управляемый экземпляр Базы данных SQL Azure и обратно, поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | ОПИСАНИЕ | обязательные |
 |:--- |:--- |:--- |
-| Тип | The type property of the dataset must be set to **AzureSqlMITable**. | ДА |
-| schema | Name of the schema. |"Нет" для источника, "Да" для приемника  |
-| таблица | Name of the table/view. |"Нет" для источника, "Да" для приемника  |
-| tableName | Name of the table/view with schema. This property is supported for backward compatibility. For new workload, use `schema` and `table`. | "Нет" для источника, "Да" для приемника |
+| type | Свойство Type набора данных должно иметь значение **азуресклмитабле**. | Yes |
+| schema | Имя схемы. |"Нет" для источника, "Да" для приемника  |
+| таблица | Имя таблицы или представления. |"Нет" для источника, "Да" для приемника  |
+| tableName | Имя таблицы или представления со схемой. Это свойство поддерживается для обеспечения обратной совместимости. Для новой рабочей нагрузки используйте `schema` и `table`. | "Нет" для источника, "Да" для приемника |
 
 **Пример**
 
@@ -276,21 +276,21 @@ To copy data to and from Azure SQL Database Managed Instance, the following prop
 
 ### <a name="azure-sql-database-managed-instance-as-a-source"></a>Управляемый экземпляр Базы данных SQL Azure в качестве источника
 
-To copy data from Azure SQL Database Managed Instance, the following properties are supported in the copy activity source section:
+Чтобы скопировать данные из Управляемый экземпляр Базы данных SQL Azure, в разделе Источник действия копирования поддерживаются следующие свойства.
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | ОПИСАНИЕ | обязательные |
 |:--- |:--- |:--- |
-| Тип | The type property of the copy activity source must be set to **SqlMISource**. | ДА |
+| type | Свойство Type источника действия копирования должно иметь значение **склмисаурце**. | Yes |
 | sqlReaderQuery |Это свойство применяет пользовательский SQL-запрос для чтения данных. Например, `select * from MyTable`. |Нет |
 | sqlReaderStoredProcedureName |Это свойство содержит имя хранимой процедуры, которая считывает данные из исходной таблицы. Последней инструкцией SQL должна быть инструкция SELECT в хранимой процедуре. |Нет |
 | storedProcedureParameters |Это параметры для хранимой процедуры.<br/>Допустимые значения: пары имен или значений. Имена и регистр параметров должны совпадать с именами и регистром параметров хранимой процедуры. |Нет |
 
 **Обратите внимание на следующие моменты.**
 
-- If **sqlReaderQuery** is specified for **SqlMISource**, the copy activity runs this query against the managed instance source to get the data. Есть и другой вариант: создать хранимую процедуру, указав ее имя в **sqlReaderStoredProcedureName** и параметры в **storedProcedureParameters**, если она принимает параметры.
+- Если для **склмисаурце**указан **sqlReaderQuery** , действие копирования выполняет этот запрос к источнику управляемого экземпляра для получения данных. Есть и другой вариант: создать хранимую процедуру, указав ее имя в **sqlReaderStoredProcedureName** и параметры в **storedProcedureParameters**, если она принимает параметры.
 - Если свойства **sqlReaderQuery** или **sqlReaderStoredProcedureName** не указаны, то для построения запроса используются столбцы, определенные в разделе structure шаблона JSON для набора данных. Запрос `select column1, column2 from mytable` выполняется для управляемого экземпляра. Если в определении набора данных нет раздела structure, выбираются все столбцы из таблицы.
 
-**Example: Use a SQL query**
+**Пример. Использование SQL-запроса**
 
 ```json
 "activities":[
@@ -322,7 +322,7 @@ To copy data from Azure SQL Database Managed Instance, the following properties 
 ]
 ```
 
-**Example: Use a stored procedure**
+**Пример. использование хранимой процедуры**
 
 ```json
 "activities":[
@@ -380,23 +380,23 @@ GO
 ### <a name="azure-sql-database-managed-instance-as-a-sink"></a>Управляемый экземпляр Базы данных SQL Azure в качестве приемника
 
 > [!TIP]
-> Learn more about the supported write behaviors, configurations, and best practices from [Best practice for loading data into Azure SQL Database Managed Instance](#best-practice-for-loading-data-into-azure-sql-database-managed-instance).
+> Дополнительные сведения о поддерживаемых поведениях записи, конфигурациях и рекомендациях см. в статье рекомендации [по загрузке данных в управляемый экземпляр базы данных SQL Azure](#best-practice-for-loading-data-into-azure-sql-database-managed-instance).
 
-To copy data to Azure SQL Database Managed Instance, the following properties are supported in the copy activity sink section:
+Чтобы скопировать данные в Управляемый экземпляр Базы данных SQL Azure, в разделе приемника действия копирования поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | ОПИСАНИЕ | обязательные |
 |:--- |:--- |:--- |
-| Тип | The type property of the copy activity sink must be set to **SqlMISink**. | ДА |
-| writeBatchSize |Number of rows to insert into the SQL table *per batch*.<br/>Допустимые значения: целое число (количество строк). By default, Azure Data Factory dynamically determines the appropriate batch size based on the row size.  |Нет |
-| writeBatchTimeout |Это свойство определяет время ожидания при выполнении операции пакетной вставки, по истечении которого она считается не выполненной.<br/>Allowed values are for the timespan. Например, 00:30:00 определяет период 30 минут. |Нет |
-| preCopyScript |This property specifies a SQL query for the copy activity to run before writing data into the managed instance. Он вызывается однократно при каждом запуске копирования. Это свойство можно использовать для очистки предварительно загруженных данных. |Нет |
-| sqlWriterStoredProcedureName | Имя хранимой процедуры, в которой определяется, как применить исходные данные в целевой таблице. <br/>Эта хранимая процедура будет *вызываться для каждого пакета*. For operations that run only once and have nothing to do with source data, for example, delete or truncate, use the `preCopyScript` property. | Нет |
-| storedProcedureTableTypeParameterName |The parameter name of the table type specified in the stored procedure.  |Нет |
-| sqlWriterTableType |The table type name to be used in the stored procedure. Действие копирования предоставляет доступ к перемещаемым данным во временной таблице с указанным здесь типом. Это позволяет при выполнении хранимой процедуры объединить копируемые и существующие данные. |Нет |
+| type | Свойство Type приемника действия копирования должно иметь значение **склмисинк**. | Yes |
+| writeBatchSize |Число строк, вставляемых в таблицу SQL для *каждого пакета*.<br/>Допустимые значения: целое число (количество строк). По умолчанию фабрика данных Azure динамически определяет соответствующий размер пакета в зависимости от размера строки.  |Нет |
+| writeBatchTimeout |Это свойство определяет время ожидания при выполнении операции пакетной вставки, по истечении которого она считается не выполненной.<br/>Допустимые значения — для интервала времени. Например, 00:30:00 определяет период 30 минут. |Нет |
+| preCopyScript |Это свойство задает SQL-запрос для выполнения действия копирования перед записью данных в управляемый экземпляр. Он вызывается однократно при каждом запуске копирования. Это свойство можно использовать для очистки предварительно загруженных данных. |Нет |
+| sqlWriterStoredProcedureName | Имя хранимой процедуры, в которой определяется, как применить исходные данные в целевой таблице. <br/>Эта хранимая процедура будет *вызываться для каждого пакета*. Для операций, выполняемых только один раз и не имеющих никаких действий с исходными данными, например Delete или TRUNCATE, используйте свойство `preCopyScript`. | Нет |
+| storedProcedureTableTypeParameterName |Имя параметра табличного типа, указанного в хранимой процедуре.  |Нет |
+| sqlWriterTableType |Имя типа таблицы, используемое в хранимой процедуре. Действие копирования предоставляет доступ к перемещаемым данным во временной таблице с указанным здесь типом. Это позволяет при выполнении хранимой процедуры объединить копируемые и существующие данные. |Нет |
 | storedProcedureParameters |Параметры для хранимой процедуры.<br/>Допустимые значения: пары "имя — значение". Имена и регистр параметров должны совпадать с именами и регистром параметров хранимой процедуры. | Нет |
-| tableOption | Specifies whether to automatically create the sink table if not exists based on the source schema. Auto table creation is not supported when sink specifies stored procedure or staged copy is configured in copy activity. Allowed values are: `none` (default), `autoCreate`. |Нет |
+| таблеоптион | Указывает, следует ли автоматически создавать таблицу приемника, если она не существует на основе исходной схемы. Автоматическое создание таблицы не поддерживается, если приемник указывает, что хранимая процедура или промежуточное копирование настроены в действии копирования. Допустимые значения: `none` (по умолчанию), `autoCreate`. |Нет |
 
-**Example 1: Append data**
+**Пример 1. Добавление данных**
 
 ```json
 "activities":[
@@ -429,9 +429,9 @@ To copy data to Azure SQL Database Managed Instance, the following properties ar
 ]
 ```
 
-**Example 2: Invoke a stored procedure during copy**
+**Пример 2. вызов хранимой процедуры во время копирования**
 
-Learn more details from [Invoke a stored procedure from a SQL MI sink](#invoke-a-stored-procedure-from-a-sql-sink).
+Дополнительные сведения см. в статье [вызов хранимой процедуры из приемника SQL MI](#invoke-a-stored-procedure-from-a-sql-sink).
 
 ```json
 "activities":[
@@ -469,33 +469,33 @@ Learn more details from [Invoke a stored procedure from a SQL MI sink](#invoke-a
 ]
 ```
 
-## <a name="best-practice-for-loading-data-into-azure-sql-database-managed-instance"></a>Best practice for loading data into Azure SQL Database Managed Instance
+## <a name="best-practice-for-loading-data-into-azure-sql-database-managed-instance"></a>Рекомендации по загрузке данных в Управляемый экземпляр Базы данных SQL Azure
 
-When you copy data into Azure SQL Database Managed Instance, you might require different write behavior:
+При копировании данных в Управляемый экземпляр Базы данных SQL Azure может потребоваться другое поведение при записи.
 
-- [Append](#append-data): My source data has only new records.
-- [Upsert](#upsert-data): My source data has both inserts and updates.
-- [Overwrite](#overwrite-the-entire-table): I want to reload the entire dimension table each time.
-- [Write with custom logic](#write-data-with-custom-logic): I need extra processing before the final insertion into the destination table. 
+- [Append](#append-data): мои исходные данные имеют только новые записи.
+- [Upsert](#upsert-data): исходные данные имеют как вставки, так и обновления.
+- [Перезаписать](#overwrite-the-entire-table): я хочу каждый раз загружать всю таблицу измерения.
+- [Запись с помощью пользовательской логики](#write-data-with-custom-logic): требуется дополнительные операции перед окончательным вставкой в целевую таблицу. 
 
-See the respective sections for how to configure in Azure Data Factory and best practices.
+Сведения о настройке в фабрике данных Azure и рекомендациях см. в соответствующих разделах.
 
-### <a name="append-data"></a>Append data
+### <a name="append-data"></a>Добавить данные
 
-Appending data is the default behavior of this Azure SQL Database Managed Instance sink connector. Azure Data Factory does a bulk insert to write to your table efficiently. You can configure the source and sink accordingly in the copy activity.
+Добавление данных — это поведение по умолчанию для соединителя приемника Управляемый экземпляр Базы данных SQL Azure. Фабрика данных Azure обеспечивает эффективную запись в таблицу с помощью операций групповой вставки. Источник и приемник можно настроить соответствующим образом в действии копирования.
 
 ### <a name="upsert-data"></a>Операция upsert с данными
 
-**Option 1:** When you have a large amount of data to copy, use the following approach to do an upsert: 
+**Вариант 1.** При наличии большого объема данных для копирования используйте следующий подход для выполнения Upsert: 
 
-- First, use a [temporary table](https://docs.microsoft.com/sql/t-sql/statements/create-table-transact-sql?view=sql-server-2017#temporary-tables) to bulk load all records by using the copy activity. Because operations against temporary tables aren't logged, you can load millions of records in seconds.
-- Run a stored procedure activity in Azure Data Factory to apply a [MERGE](https://docs.microsoft.com/sql/t-sql/statements/merge-transact-sql?view=azuresqldb-current) or INSERT/UPDATE statement. Use the temp table as the source to perform all updates or inserts as a single transaction. In this way, the number of round trips and log operations is reduced. At the end of the stored procedure activity, the temp table can be truncated to be ready for the next upsert cycle.
+- Во-первых, используйте [временную таблицу](https://docs.microsoft.com/sql/t-sql/statements/create-table-transact-sql?view=sql-server-2017#temporary-tables) для выполнения групповой загрузки всех записей с помощью действия копирования. Поскольку операции с временными таблицами не регистрируются, можно загружать миллионы записей за считаные секунды.
+- Выполните действие хранимой процедуры в фабрике данных Azure, чтобы применить инструкцию [Merge](https://docs.microsoft.com/sql/t-sql/statements/merge-transact-sql?view=azuresqldb-current) или INSERT или Update. Используйте временную таблицу в качестве источника для выполнения всех операций обновления или вставки как одной транзакции. Таким образом уменьшается количество циклов обработки и операций с журналом. В конце действия хранимой процедуры можно усечь временную таблицу, чтобы она была готова к следующему циклу Upsert.
 
-As an example, in Azure Data Factory, you can create a pipeline with a **Copy activity** chained with a **Stored Procedure activity**. The former copies data from your source store into a temporary table, for example, **##UpsertTempTable**, as the table name in the dataset. Then the latter invokes a stored procedure to merge source data from the temp table into the target table and clean up the temp table.
+Например, в фабрике данных Azure можно создать конвейер с **действием копирования** , связанным с **действием хранимой процедуры**. Первый копирует данные из исходного хранилища во временную таблицу, например **# #UpsertTempTable**, в качестве имени таблицы в наборе данных. Затем второй вызывает хранимую процедуру для слияния исходных данных из временной таблицы в целевую таблицу и очистки временной таблицы.
 
 ![Upsert](./media/connector-azure-sql-database/azure-sql-database-upsert.png)
 
-In your database, define a stored procedure with MERGE logic, like the following example, which is pointed to from the previous stored procedure activity. Assume that the target is the **Marketing** table with three columns: **ProfileID**, **State**, and **Category**. Do the upsert based on the **ProfileID** column.
+В базе данных Определите хранимую процедуру с помощью логики слияния, как показано в следующем примере, на который указывает действие из предыдущего действия хранимой процедуры. Предположим, что целевым объектом является **маркетинговая** таблица с тремя столбцами: **ProfileID**, **State**и **Category**. Выполните Upsert на основе столбца **ProfileID** .
 
 ```sql
 CREATE PROCEDURE [dbo].[spMergeData]
@@ -514,31 +514,31 @@ BEGIN
 END
 ```
 
-**Option 2:** You also can choose to [invoke a stored procedure within a copy activity](#invoke-a-stored-procedure-from-a-sql-sink). This approach runs each row in the source table instead of using bulk insert as the default approach in the copy activity, which isn't appropriate for large-scale upsert.
+**Вариант 2.** Можно также выбрать [вызов хранимой процедуры в рамках действия копирования](#invoke-a-stored-procedure-from-a-sql-sink). Этот подход выполняет каждую строку в исходной таблице вместо использования инструкции массовой вставки в качестве подхода по умолчанию в действии копирования, которое не подходит для крупномасштабных Upsert.
 
-### <a name="overwrite-the-entire-table"></a>Overwrite the entire table
+### <a name="overwrite-the-entire-table"></a>Перезаписать всю таблицу
 
-You can configure the **preCopyScript** property in a copy activity sink. In this case, for each copy activity that runs, Azure Data Factory runs the script first. Then it runs the copy to insert the data. For example, to overwrite the entire table with the latest data, specify a script to first delete all the records before you bulk load the new data from the source.
+Свойство **preCopyScript** можно настроить в приемнике действия копирования. В этом случае для каждого выполняемого действия копирования фабрика данных Azure сначала запускает сценарий. Затем выполняется копирование для вставки данных. Например, чтобы перезаписать всю таблицу последними данными, укажите скрипт, чтобы сначала удалить все записи, прежде чем выполнять пакетную загрузку новых данных из источника.
 
-### <a name="write-data-with-custom-logic"></a>Write data with custom logic
+### <a name="write-data-with-custom-logic"></a>Запись данных с помощью пользовательской логики
 
-The steps to write data with custom logic are similar to those described in the [Upsert data](#upsert-data) section. When you need to apply extra processing before the final insertion of source data into the destination table, for large scale, you can do one of two things: 
+Действия по записи данных с помощью пользовательской логики похожи на процедуры, описанные в разделе [данных Upsert](#upsert-data) . Если необходимо применить дополнительную обработку перед окончательной вставкой исходных данных в целевую таблицу, можно выполнить одно из двух действий. 
 
-- Load to a temporary table and then invoke a stored procedure.
-- Invoke a stored procedure during copy.
+- Загрузить во временную таблицу, а затем вызвать хранимую процедуру.
+- Вызов хранимой процедуры во время копирования.
 
 ## <a name="invoke-a-stored-procedure-from-a-sql-sink"></a> Вызов хранимой процедуры из приемника SQL
 
-When you copy data into Azure SQL Database Managed Instance, you also can configure and invoke a user-specified stored procedure with additional parameters. В этой хранимой процедуре используются [параметры с табличным значением](https://msdn.microsoft.com/library/bb675163.aspx).
+При копировании данных в Управляемый экземпляр Базы данных SQL Azure можно также настроить и вызвать указанную пользователем хранимую процедуру с дополнительными параметрами. В этой хранимой процедуре используются [параметры с табличным значением](https://msdn.microsoft.com/library/bb675163.aspx).
 
 > [!TIP]
-> Invoking a stored procedure processes the data row by row instead of by using a bulk operation, which we don't recommend for large-scale copy. Learn more from [Best practice for loading data into Azure SQL Database Managed Instance](#best-practice-for-loading-data-into-azure-sql-database-managed-instance).
+> При вызове хранимой процедуры строка данных обрабатывается, а не с помощью массовой операции, которая не рекомендуется для крупномасштабной копии. Узнайте больше о том, как [загружать данные в управляемый экземпляр базы данных SQL Azure](#best-practice-for-loading-data-into-azure-sql-database-managed-instance).
 
-Вы можете использовать хранимую процедуру, когда встроенные механизмы копирования не подходят. An example is when you want to apply extra processing before the final insertion of source data into the destination table. Some extra processing examples are when you want to merge columns, look up additional values, and insert data into more than one table.
+Вы можете использовать хранимую процедуру, когда встроенные механизмы копирования не подходят. Примером может быть применение дополнительной обработки перед окончательной вставкой исходных данных в целевую таблицу. Некоторые дополнительные примеры обработки используются для объединения столбцов, поиска дополнительных значений и вставки данных в более чем одну таблицу.
 
-В следующем примере показано, как использовать хранимую процедуру для выполнения операции Upsert в таблице базы данных SQL Server. Assume that the input data and the sink **Marketing** table each have three columns: **ProfileID**, **State**, and **Category**. Do the upsert based on the **ProfileID** column, and only apply it for a specific category called "ProductA".
+В следующем примере показано, как использовать хранимую процедуру для выполнения операции Upsert в таблице базы данных SQL Server. Предположим, что у входных данных и **маркетинговой** таблицы приемника есть три столбца: **ProfileID**, **State**и **Category**. Выполните Upsert на основе столбца **ProfileID** и примените его только к определенной категории с названием «Product а».
 
-1. In your database, define the table type with the same name as **sqlWriterTableType**. Для типа таблицы укажите ту же схему, которая возвращается для входных данных.
+1. В базе данных определите тип таблицы с тем же именем, что и **и sqlwritertabletype**. Для типа таблицы укажите ту же схему, которая возвращается для входных данных.
 
     ```sql
     CREATE TYPE [dbo].[MarketingType] AS TABLE(
@@ -548,7 +548,7 @@ When you copy data into Azure SQL Database Managed Instance, you also can config
     )
     ```
 
-2. In your database, define the stored procedure with the same name as **sqlWriterStoredProcedureName**. Она обрабатывает входные данные из указанного источника и выполняет их слияние в выходную таблицу. The parameter name of the table type in the stored procedure is the same as **tableName** defined in the dataset.
+2. В базе данных Определите хранимую процедуру с тем же именем, что и **sqlWriterStoredProcedureName**. Она обрабатывает входные данные из указанного источника и выполняет их слияние в выходную таблицу. Имя параметра типа таблицы в хранимой процедуре совпадает с именем **TableName** , определенным в наборе данных.
 
     ```sql
     CREATE PROCEDURE spOverwriteMarketing @Marketing [dbo].[MarketingType] READONLY, @category varchar(256)
@@ -565,7 +565,7 @@ When you copy data into Azure SQL Database Managed Instance, you also can config
     END
     ```
 
-3. In Azure Data Factory, define the **SQL MI sink** section in the copy activity as follows:
+3. В фабрике данных Azure Определите раздел **приемника SQL MI** в действии копирования следующим образом:
 
     ```json
     "sink": {
@@ -588,48 +588,48 @@ When you copy data into Azure SQL Database Managed Instance, you also can config
 | Тип данных Управляемого экземпляра Базы данных SQL Azure | Промежуточный тип данных Фабрики данных Azure |
 |:--- |:--- |
 | bigint |Int64 |
-| binary |Byte[] |
-| bit |Логический |
-| char |String, Char[] |
-| date |Дата и время |
-| DateTime |Дата и время |
-| datetime2 |Дата и время |
-| Datetimeoffset |DateTimeOffset |
-| Decimal |Decimal |
-| FILESTREAM attribute (varbinary(max)) |Byte[] |
-| Float |DOUBLE |
-| image |Byte[] |
+| binary; |Byte[] |
+| bit |Логическое значение. |
+| char; |String, Char[] |
+| дата |DateTime |
+| Datetime |DateTime |
+| datetime2 |DateTime |
+| Datetimeoffset |Datetimeoffset |
+| DECIMAL |DECIMAL |
+| Атрибут FILESTREAM (varbinary(max)) |Byte[] |
+| Float |Double, |
+| изображение |Byte[] |
 | int |Int32 |
-| money |Decimal |
-| nchar |String, Char[] |
+| money |DECIMAL |
+| nchar; |String, Char[] |
 | ntext |String, Char[] |
-| numeric |Decimal |
+| numeric |DECIMAL |
 | nvarchar |String, Char[] |
-| real |Отдельная |
+| real; |Single |
 | rowversion |Byte[] |
-| smalldatetime |Дата и время |
+| smalldatetime; |DateTime |
 | smallint |Int16 |
-| smallmoney |Decimal |
-| sql_variant |Объекты |
-| текст |String, Char[] |
+| smallmoney |DECIMAL |
+| sql_variant |Объект. |
+| text |String, Char[] |
 | time |Интервал времени |
 | Timestamp |Byte[] |
-| tinyint |Int16 |
-| uniqueidentifier |GUID |
-| varbinary |Byte[] |
-| varchar |String, Char[] |
-| Xml |xml |
+| tinyint; |Int16 |
+| uniqueidentifier |Guid |
+| varbinary; |Byte[] |
+| varchar. |String, Char[] |
+| xml |Xml |
 
 >[!NOTE]
 > В настоящее время для типов данных, которые сопоставляются с промежуточными типом Decimal, Фабрика данных Azure поддерживает точность до 28. Если для ваших данных требуется точность больше 28, попробуйте преобразовать их в строковые данные в SQL-запросе.
 
-## <a name="lookup-activity-properties"></a>Lookup activity properties
+## <a name="lookup-activity-properties"></a>Свойства действия поиска
 
-To learn details about the properties, check [Lookup activity](control-flow-lookup-activity.md).
+Чтобы получить сведения о свойствах, проверьте [действие поиска](control-flow-lookup-activity.md).
 
-## <a name="getmetadata-activity-properties"></a>GetMetadata activity properties
+## <a name="getmetadata-activity-properties"></a>Свойства действия с метаданными
 
-To learn details about the properties, check [GetMetadata activity](control-flow-get-metadata-activity.md) 
+Дополнительные сведения о свойствах см. в статье [действие с операциями](control-flow-get-metadata-activity.md) с помощью метаданных. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 Список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в Фабрике данных Azure см. в [этой таблице](copy-activity-overview.md##supported-data-stores-and-formats).

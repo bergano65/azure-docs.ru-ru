@@ -1,6 +1,6 @@
 ---
 title: Триггеры и привязки в решении "Функции Azure"
-description: Learn to use triggers and bindings to connect your Azure Function to online events and cloud-based services.
+description: Узнайте, как использовать триггеры и привязки для подключения функции Azure к интерактивным событиям и облачным службам.
 author: craigshoemaker
 ms.topic: reference
 ms.date: 02/18/2019
@@ -14,41 +14,41 @@ ms.locfileid: "74226561"
 ---
 # <a name="azure-functions-triggers-and-bindings-concepts"></a>Основные понятия триггеров и привязок в Функциях Azure
 
-In this article you learn the high-level concepts surrounding functions triggers and bindings.
+В этой статье вы узнаете о высокоуровневых концепциях, связанных с триггерами и привязками функций.
 
-Triggers are what cause a function to run. A trigger defines how a function is invoked and a function must have exactly one trigger. Triggers have associated data, which is often provided as the payload of the function. 
+Триггеры являются причиной выполнения функции. Триггер определяет, как вызывается функция, а функция должна иметь только один триггер. Триггеры имеют связанные данные, которые часто предоставляются в качестве полезных данных функции. 
 
-Binding to a function is a way of declaratively connecting another resource to the function; bindings may be connected as *input bindings*, *output bindings*, or both. Данные привязок предоставляются функции в качестве параметров.
+Привязка к функции — это способ декларативного подключения другого ресурса к функции; привязки могут быть подключены как *входные привязки*, *выходные привязки*или и то, и другое. Данные привязок предоставляются функции в качестве параметров.
 
-You can mix and match different bindings to suit your needs. Bindings are optional and a function might have one or multiple input and/or output bindings.
+Вы можете сочетать и сопоставлять различные привязки в соответствии с вашими потребностями. Привязки являются необязательными, и функция может иметь одну или несколько входных и/или выходных привязок.
 
-Triggers and bindings let you avoid hardcoding access to other services. Функция получает нужные данные (например, содержимое сообщения из очереди) в виде параметров. Вы отправляете данные (например, для создания в очереди сообщения) с использованием возвращаемого значения функции. 
+Триггеры и привязки позволяют избежать прописано доступа к другим службам. Функция получает нужные данные (например, содержимое сообщения из очереди) в виде параметров. Вы отправляете данные (например, для создания в очереди сообщения) с использованием возвращаемого значения функции. 
 
-Consider the following examples of how you could implement different functions.
+Рассмотрим следующие примеры реализации различных функций.
 
-| Пример сценария | Триггер | Input binding | Output binding |
+| Пример сценария | Триггер | Входная привязка | Выходная привязка |
 |-------------|---------|---------------|----------------|
-| A new queue message arrives which runs a function to write to another queue. | Queue<sup>*</sup> | *None* | Queue<sup>*</sup> |
-|A scheduled job reads Blob Storage contents and creates a new Cosmos DB document. | Таймер | Хранилище BLOB-объектов | База данных Cosmos |
-|The Event Grid is used to read an image from Blob Storage and a document from Cosmos DB to send an email. | Служба "Сетка событий Azure" | Blob Storage and  Cosmos DB | SendGrid |
-| A webhook that uses Microsoft Graph to update an Excel sheet. | HTTP | *None* | Microsoft Graph |
+| Поступает новое сообщение очереди, которое запускает функцию для записи в другую очередь. | <sup>*</sup> очереди | *None* | <sup>*</sup> очереди |
+|Запланированное задание считывает содержимое хранилища BLOB-объектов и создает новый документ Cosmos DB. | Таймер | Хранилище BLOB-объектов | База данных Cosmos |
+|Сетка событий используется для чтения изображения из хранилища BLOB-объектов и документа из Cosmos DB для отправки сообщения электронной почты. | Сетка событий Azure | Хранилище BLOB-объектов и Cosmos DB | SendGrid |
+| Веб-перехватчик, использующий Microsoft Graph для обновления листа Excel. | HTTP | *None* | Microsoft Graph |
 
-<sup>\*</sup> Represents different queues
+<sup>\*</sup> Представляет различные очереди
 
-These examples are not meant to be exhaustive, but are provided to illustrate how you can use triggers and bindings together.
+Эти примеры не являются исчерпывающими, но предоставляются для иллюстрации того, как можно использовать триггеры и привязки вместе.
 
-###  <a name="trigger-and-binding-definitions"></a>Trigger and binding definitions
+###  <a name="trigger-and-binding-definitions"></a>Определения триггеров и привязок
 
-Triggers and bindings are defined differently depending on the development approach.
+Триггеры и привязки определяются по-разному в зависимости от подхода к разработке.
 
-| платформа | Triggers and bindings are configured by... |
+| платформа | Триггеры и привязки настраиваются... |
 |-------------|--------------------------------------------|
-| Библиотека классов C# | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;decorating methods and parameters with C# attributes |
-| All others (including Azure portal) | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;updating [function.json](./functions-reference.md) ([schema](http://json.schemastore.org/function)) |
+| Библиотека классов C# | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;оформления методов и параметров с C# помощью атрибутов |
+| Все остальные (включая портал Azure) | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;обновление [Function. JSON](./functions-reference.md) ([схема](http://json.schemastore.org/function)) |
 
-The portal provides a UI for this configuration, but you can edit the file directly by opening the **Advanced editor** available via the **Integrate** tab of your function.
+Портал предоставляет пользовательский интерфейс для этой конфигурации, но вы можете изменить файл напрямую, открыв **Расширенный редактор** , доступный через вкладку **Интеграция** функции.
 
-In .NET, the parameter type defines the data type for input data. For instance, use `string` to bind to the text of a queue trigger, a byte array to read as binary and a custom type to de-serialize to an object.
+В .NET тип параметра определяет тип данных для входных данных. Например, используйте `string` для привязки к тексту триггера очереди, массива байтов для чтения в двоичном виде и пользовательского типа для десериализации в объект.
 
 В языках с динамическим типированием, таких как JavaScript, используйте свойство `dataType` в файле *function.json*. Например, задайте для `dataType` значение `binary`, чтобы прочитать содержимое HTTP-запроса в двоичном формате.
 
@@ -61,7 +61,7 @@ In .NET, the parameter type defines the data type for input data. For instance, 
 }
 ```
 
-Другие варианты для `dataType` — `stream` и `string`.
+Другие параметры для `dataType`: `stream` и `string`.
 
 ## <a name="binding-direction"></a>Направление привязки
 
@@ -69,7 +69,7 @@ In .NET, the parameter type defines the data type for input data. For instance, 
 
 - Для триггеров направление всегда входящее (`in`).
 - Для входных и выходных привязок используется как входящее (`in`), так и исходящее (`out`) направление.
-- Некоторые привязки поддерживают специальное направление `inout`. If you use `inout`, only the **Advanced editor** is available via the **Integrate** tab in the portal.
+- Некоторые привязки поддерживают специальное направление `inout`. При использовании `inout`доступен только **Расширенный редактор** на вкладке **Интеграция** на портале.
 
 Если вы используете для настройки триггеров и привязок [атрибуты в библиотеке классов](functions-dotnet-class-library.md), направление задается в конструкторе атрибута или вычисляется по типу параметра.
 
@@ -80,14 +80,14 @@ In .NET, the parameter type defines the data type for input data. For instance, 
 Сведения о том, какие привязки доступны в предварительной версии или утверждены для использования в рабочей среде, см. в статье [Поддерживаемые языки в решении "Функции Azure"](supported-languages.md).
 
 ## <a name="resources"></a>Ресурсы
-- [Binding expressions and patterns](./functions-bindings-expressions-patterns.md)
-- [Using the Azure Function return value](./functions-bindings-return-value.md)
-- [How to register a binding expression](./functions-bindings-register.md)
+- [Выражения привязки и шаблоны](./functions-bindings-expressions-patterns.md)
+- [Использование возвращаемого значения функции Azure](./functions-bindings-return-value.md)
+- [Как зарегистрировать выражение привязки](./functions-bindings-register.md)
 - Проверочный.
   - [Методика тестирования кода с помощью Функций Azure](functions-test-a-function.md)
   - [Запуск функции, не активируемой HTTP-запросом, вручную](functions-manually-run-non-http.md)
-- [Handling binding errors](./functions-bindings-errors.md)
+- [Обработка ошибок привязки](./functions-bindings-errors.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 > [!div class="nextstepaction"]
-> [Register Azure Functions binding extensions](./functions-bindings-register.md)
+> [Регистрация расширений привязки функций Azure](./functions-bindings-register.md)

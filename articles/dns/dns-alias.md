@@ -1,6 +1,6 @@
 ---
-title: Alias records overview - Azure DNS
-description: In this article, learn about support for alias records in Microsoft Azure DNS.
+title: Общие сведения о записях псевдонимов — Azure DNS
+description: В этой статье вы узнаете о поддержке записей псевдонимов в Microsoft Azure DNS.
 services: dns
 author: asudbring
 ms.service: dns
@@ -20,21 +20,21 @@ ms.locfileid: "74212325"
 
 Набор записей псевдонимов поддерживается для следующих типов записей в зоне DNS Azure: 
 
-- A
+- Файл ,
 - AAAA
 - CNAME
 
 > [!NOTE]
-> Если вы планируете использовать запись псевдонима для записей типов A или AAAA, чтобы указать на [профиль диспетчера трафика Azure](../traffic-manager/quickstart-create-traffic-manager-profile.md), необходимо убедиться в том, что профиль диспетчера трафика имеет только [внешние конечные точки](../traffic-manager/traffic-manager-endpoint-types.md#external-endpoints). Укажите IPv4- или IPv6-адрес для внешних конечных точек в диспетчере трафика. You can't use fully-qualified domain names (FQDNs) in endpoints. Рекомендуется использовать статические IP-адреса.
+> Если вы планируете использовать запись псевдонима для записей типов A или AAAA, чтобы указать на [профиль диспетчера трафика Azure](../traffic-manager/quickstart-create-traffic-manager-profile.md), необходимо убедиться в том, что профиль диспетчера трафика имеет только [внешние конечные точки](../traffic-manager/traffic-manager-endpoint-types.md#external-endpoints). Укажите IPv4- или IPv6-адрес для внешних конечных точек в диспетчере трафика. В конечных точках нельзя использовать полные доменные имена (FQDN). Рекомендуется использовать статические IP-адреса.
 
 ## <a name="capabilities"></a>Возможности
 
-- **Выберите ресурс общедоступного IP-адреса из набора DNS-записей A/AAAA**. You can create an A/AAAA record set and make it an alias record set to point to a public IP resource (standard or basic). The DNS record set changes automatically if the public IP address changes or is deleted. Несвязанные DNS-записи, которые указывают на неправильные IP-адреса, не используются.
+- **Выберите ресурс общедоступного IP-адреса из набора DNS-записей A/AAAA**. Вы можете создать набор записей A/AAAA и сделать его набором записей псевдонима, чтобы он указывал на общедоступный IP-ресурс (Standard или Basic). Набор записей DNS изменяется автоматически при изменении или удалении общедоступного IP-адреса. Несвязанные DNS-записи, которые указывают на неправильные IP-адреса, не используются.
 
-   There is a current limit of 20 alias records sets per resource.
+   Существует ограничение в 20 наборов записей псевдонимов на ресурс.
 
-- **Выберите профиль диспетчера трафика из набора DNS-записей A/AAAA/CNAME**. Вы можете создать набор записей A/AAAA или CNAME и использовать записи псевдонимов, чтобы указать на профиль диспетчера трафика. It's especially useful when you need to route traffic at a zone apex, as traditional CNAME records aren't supported for a zone apex. Например, профиль диспетчера трафика — myprofile.trafficmanager.net, а зона DNS бизнеса — contoso.com. Вы можете создать набор записей типа A/AAAA (псевдоним) для contoso.com (вершина зоны) и указать на myprofile.trafficmanager.net.
-- **Point to an Azure Content Delivery Network (CDN) endpoint**. This is useful when you create static websites using Azure storage and Azure CDN.
+- **Выберите профиль диспетчера трафика из набора DNS-записей A/AAAA/CNAME**. Вы можете создать набор записей A/AAAA или CNAME и использовать записи псевдонимов, чтобы указать на профиль диспетчера трафика. Это особенно полезно, когда необходимо маршрутизировать трафик в зоне вершине, так как традиционные записи CNAME не поддерживаются для зоны вершине. Например, профиль диспетчера трафика — myprofile.trafficmanager.net, а зона DNS бизнеса — contoso.com. Вы можете создать набор записей типа A/AAAA (псевдоним) для contoso.com (вершина зоны) и указать на myprofile.trafficmanager.net.
+- **Укажите конечную точку сети доставки содержимого (CDN) Azure**. Это полезно при создании статических веб-сайтов с помощью службы хранилища Azure и Azure CDN.
 - **Выберите другой набор DNS-записей в пределах той же зоны**. Записи псевдонимов могут ссылаться на другие наборы записей одного типа. Например, набор записей DNS CNAME может быть псевдонимом для другого набора записей CNAME. Такой подход полезен в том случае, если вы хотите, чтобы некоторые наборы записей были псевдонимами, а некоторые ими не были.
 
 ## <a name="scenarios"></a>Сценарии
@@ -43,11 +43,11 @@ ms.locfileid: "74212325"
 
 ### <a name="prevent-dangling-dns-records"></a>Предотвратить несвязанные DNS-записи
 
-Одной из распространенных проблем с традиционными DNS-записями являются "несвязанные записи". For example, DNS records that haven't been updated to reflect changes to IP addresses. Проблема возникает особенно часто с типами записей A/AAAA или CNAME.
+Одной из распространенных проблем с традиционными DNS-записями являются "несвязанные записи". Например, записи DNS, которые не были обновлены в соответствии с изменениями IP-адресов. Проблема возникает особенно часто с типами записей A/AAAA или CNAME.
 
-В традиционной записи зоны DNS, если целевой IP-адрес или CNAME больше не существуют, запись DNS, связанную с ними, необходимо обновить вручную. In some organizations, a manual update might not happen in time because of process issues or the separation of roles and associated permission levels. Например, роль, имеющая права на удаление записи CNAME или IP-адрес приложения. Но она не имеет прав на обновление записи DNS, указывающей на эти целевые объекты. Задержка при обновлении записи DNS может стать причиной сбоя для пользователей.
+В традиционной записи зоны DNS, если целевой IP-адрес или CNAME больше не существуют, запись DNS, связанную с ними, необходимо обновить вручную. В некоторых организациях ручное обновление может не происходить вовремя из-за проблем с процессами или разделения ролей и связанных уровней разрешений. Например, роль, имеющая права на удаление записи CNAME или IP-адрес приложения. Но она не имеет прав на обновление записи DNS, указывающей на эти целевые объекты. Задержка при обновлении записи DNS может стать причиной сбоя для пользователей.
 
-Записи псевдонимов предотвращают несвязанные ссылки, тесно связывая жизненный цикл записи DNS с ресурсом Azure. Например, рассмотрим запись DNS, которая является псевдонимом и указывает на общедоступный IP-адрес или профиль диспетчера трафика. If you delete those underlying resources, the DNS alias record becomes an empty record set. It no longer references the deleted resource.
+Записи псевдонимов предотвращают несвязанные ссылки, тесно связывая жизненный цикл записи DNS с ресурсом Azure. Например, рассмотрим запись DNS, которая является псевдонимом и указывает на общедоступный IP-адрес или профиль диспетчера трафика. Если удалить эти базовые ресурсы, запись псевдонима DNS станет пустым набором записей. Он больше не ссылается на удаленный ресурс.
 
 ### <a name="update-dns-record-set-automatically-when-application-ip-addresses-change"></a>Автоматическое обновление набора записей DNS при изменении IP-адресов приложения
 
@@ -55,25 +55,25 @@ ms.locfileid: "74212325"
 
 ### <a name="host-load-balanced-applications-at-the-zone-apex"></a>Размещайте приложения с балансировкой нагрузки в апексе зоны
 
-Протокол DNS предотвращает назначение записей CNAME на вершине зоны. For example if your domain is contoso.com; you can create CNAME records for somelabel.contoso.com; but you can't create CNAME for contoso.com itself.
-Это ограничение создает проблемы владельцам приложений, которые размещают приложения с балансировкой нагрузки за [диспетчером трафика Azure](../traffic-manager/traffic-manager-overview.md). Since using a Traffic Manager profile requires creation of a CNAME record, it isn't possible to point at the Traffic Manager profile from the zone apex.
+Протокол DNS предотвращает назначение записей CNAME на вершине зоны. Например, если ваш домен — contoso.com; Вы можете создать записи CNAME для somelabel.contoso.com; но вы не можете создать запись CNAME для самого contoso.com.
+Это ограничение создает проблемы владельцам приложений, которые размещают приложения с балансировкой нагрузки за [диспетчером трафика Azure](../traffic-manager/traffic-manager-overview.md). Поскольку для использования профиля диспетчера трафика требуется создать запись CNAME, невозможно указать профиль диспетчера трафика из зоны вершине.
 
-This problem is solved using alias records. Unlike CNAME records, alias records are created at the zone apex and application owners can use it to point their zone apex record to a Traffic Manager profile that has external endpoints. Application owners point to the same Traffic Manager profile that's used for any other domain within their DNS zone.
+Эта проблема решена с помощью записей псевдонимов. В отличие от записей CNAME, записи псевдонимов создаются в зоне вершине, и владельцы приложения могут использовать его для указания записи вершине зоны в профиль диспетчера трафика с внешними конечными точками. Владельцы приложений указывают на тот же профиль диспетчера трафика, который используется для любого другого домена в своей зоне DNS.
 
-For example, contoso.com and www\.contoso.com can point to the same Traffic Manager profile. Дополнительные сведения об использовании записей псевдонимов с профилями диспетчера трафика Azure см. в разделе "Дополнительная информация".
+Например, contoso.com и www\.contoso.com могут указывать на один и тот же профиль диспетчера трафика. Дополнительные сведения об использовании записей псевдонимов с профилями диспетчера трафика Azure см. в разделе "Дополнительная информация".
 
-### <a name="point-zone-apex-to-azure-cdn-endpoints"></a>Point zone apex to Azure CDN endpoints
+### <a name="point-zone-apex-to-azure-cdn-endpoints"></a>Точка зоны вершине в конечные точки Azure CDN
 
-Just like a Traffic Manager profile, you can also use alias records to point your DNS zone apex to Azure CDN endpoints. This is useful when you create static websites using Azure storage and Azure CDN. You can then access the website without prepending "www" to your DNS name.
+Так же как и профиль диспетчера трафика, можно также использовать записи псевдонимов, чтобы указать вершине зоны DNS для Azure CDN конечных точек. Это полезно при создании статических веб-сайтов с помощью службы хранилища Azure и Azure CDN. После этого можно получить доступ к веб-сайту, не добавляя к DNS-имени префикс www.
 
-For example, if your static website is named www.contoso.com, your users can access your site using contoso.com without the need to prepend www to the DNS name.
+Например, если статический веб-сайт называется www.contoso.com, пользователи могут получить доступ к сайту с помощью contoso.com, не требуя добавления www к DNS-имени.
 
-As described previously, CNAME records aren't supported at the zone apex. So, you can’t use a CNAME record to point contoso.com to your CDN endpoint. Instead, you can use an alias record to point the zone apex to a CDN endpoint directly.
+Как было сказано ранее, записи CNAME не поддерживаются в зоне вершине. Поэтому нельзя использовать запись CNAME для указания contoso.com к конечной точке CDN. Вместо этого можно использовать запись псевдонима, чтобы напрямую указать зоне вершине для конечной точки CDN.
 
 > [!NOTE]
-> Pointing a zone apex to CDN endpoints for Azure CDN from Akamai is currently not supported.
+> Указание зоны, вершине в конечные точки CDN для Azure CDN из Akamai, в настоящее время не поддерживается.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о записях псевдонима см. в следующих статьях:
 

@@ -1,7 +1,7 @@
 ---
-title: 'Designer: Classify, predict income example'
+title: 'Конструктор: пример классификации, прогнозирования дохода'
 titleSuffix: Azure Machine Learning
-description: Follow this example build a no-code classifier to predict income with Azure Machine Learning designer.
+description: Ниже приведен пример создания классификатора без кода для прогнозирования дохода с помощью Машинное обучение Azure Designer.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -17,69 +17,69 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74214115"
 ---
-# <a name="build-a-classifier--use-feature-selection-to-predict-income-with-azure-machine-learning-designer"></a>Build a classifier & use feature selection to predict income with Azure Machine Learning designer
+# <a name="build-a-classifier--use-feature-selection-to-predict-income-with-azure-machine-learning-designer"></a>Создание классификатора & использование выбора компонентов для прогнозирования дохода с помощью конструктора Машинное обучение Azure
 
-**Designer (preview) sample 3**
+**Конструктор (Предварительная версия) — пример 3**
 
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-enterprise-sku.md)]
 
-Learn how to build a machine learning classifier without writing a single line of code using the designer (preview). This sample trains a **two-class boosted decision tree** to predict adult census income (>=50K or <=50K).
+Узнайте, как создать классификатор машинного обучения, не написав ни одной строки кода с помощью конструктора (Предварительная версия). В этом примере описывается обучение **многоклассового дерева принятия решений** для прогнозирования дохода от взрослых переписей (> = 50 000 или < = 50 000).
 
-Because the question is answering "Which one?" this is called a classification problem. However, you can apply the same fundamental process to tackle any type of machine learning problem whether it be regression, classification, clustering, and so on.
+Так как вопрос отвечает "какой из них?" Это называется проблемой классификации. Тем не менее можно применить тот же фундаментальный процесс для решения любых проблем машинного обучения, будь то регрессия, классификация, кластеризация и т. д.
 
-Here's the final pipeline graph for this sample:
+Вот итоговый граф конвейера для этого примера:
 
-![Graph of the pipeline](media/how-to-designer-sample-classification-predict-income/overall-graph.png)
+![Граф конвейера](media/how-to-designer-sample-classification-predict-income/overall-graph.png)
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 [!INCLUDE [aml-ui-prereq](../../../includes/aml-ui-prereq.md)]
 
-4. Click the sample 3 to open it.
+4. Щелкните пример 3, чтобы открыть его.
 
 
 
 ## <a name="data"></a>Данные
 
-The dataset contains 14 features and one label column. There are multiple types of features, including numerical and categorical. The following diagram shows an excerpt from the dataset: ![data](media/how-to-designer-sample-classification-predict-income/data.png)
+Набор данных содержит 14 функций и один столбец меток. Существует несколько типов функций, включая числовые и по категориям. На следующей диаграмме показан фрагмент из набора данных: ![данных](media/how-to-designer-sample-classification-predict-income/data.png)
 
 
 
-## <a name="pipeline-summary"></a>Pipeline summary
+## <a name="pipeline-summary"></a>Сводка по конвейеру
 
-Follow these steps to create the pipeline:
+Чтобы создать конвейер, выполните следующие действия.
 
-1. Drag the Adult Census Income Binary dataset module into the pipeline canvas.
-1. Add a **Split Data** module to create the training and test sets. Set the fraction of rows in the first output dataset to 0.7. This setting specifies that 70% of the data will be output to the left port of the module and the rest to the right port. We use the left dataset for training and the right one for testing.
-1. Add the **Filter Based Feature Selection** module to select 5 features by PearsonCorreclation. 
-1. Add a **Two-Class Boosted Decision Tree** module to initialize a boosted decision tree classifier.
-1. Add a **Train Model** module. Connect the classifier from the previous step to the left input port of the **Train Model**. Connect the filtered dataset from Filter Based Feature Selection module as training dataset.  The **Train Model** will train the classifier.
-1. Add Select Columns Transformation and Apply Transformation module to apply the same transformation (filtered based feature selection) to test dataset.
-![apply-transformation](media/how-to-designer-sample-classification-predict-income/transformation.png)
-1. Add **Score Model** module and connect the **Train Model** module to it. Then add the test set (the output of Apply Transformation module which apply feature selection to test set too) to the **Score Model**. The **Score Model** will make the predictions. You can select its output port to see the predictions and the positive class probabilities.
+1. Перетащите модуль двоичный набор данных «доход с взрослых» на холст конвейера.
+1. Добавьте модуль **Split Data (разделение данных** ) для создания обучающих и проверочных наборов. Задайте в качестве доли строк в первом выходном наборе данных значение 0,7. Этот параметр указывает, что 70% данных будут выведены по левому порту модуля, а остальные — к нужному порту. Мы используем левый набор данных для обучения и правую единицу для тестирования.
+1. Добавьте модуль **выбора компонентов на основе фильтра** , чтобы выбрать 5 компонентов по пеарсонкорреклатион. 
+1. Добавьте модуль **высококлассного дерева принятия решений с двумя классами** для инициализации классификатора дерева повышенных решений.
+1. Добавьте модуль **обучение модели** . Подключите классификатор из предыдущего шага к левому порту ввода для **модели обучения**. Подключите отфильтрованный набор данных из модуля выбора компонентов на основе фильтра в качестве набора данных для обучения.  **Модель обучения** будет обучать классификатор.
+1. Добавление преобразования «выбор столбцов» и «применение модуля преобразования» для применения того же преобразования (выбор компонентов с фильтрацией) для тестирования набора данных.
+![«применение-преобразование»](media/how-to-designer-sample-classification-predict-income/transformation.png)
+1. Добавьте модуль « **Оценка модели** » и подключите к нему модуль « **обучение модели** ». Затем добавьте в **модель оценки**тестовый набор (выходные данные модуля применить преобразование, которые применяют выбор компонентов к набору тестов). **Модель оценки** сделает прогнозы. Для просмотра прогнозов и вероятностей положительного класса можно выбрать его выходной порт.
 
 
-    This pipeline has two score modules, the one on the right has excluded label column before make the prediction. This is prepared to deploy a real-time endpoint, because the web service input will expect only features not label. 
+    В этом конвейере есть два модуля оценки, а в столбце справа — столбец меток перед выполнением прогноза. Это подготовка к развертыванию конечной точки в режиме реального времени, поскольку входные данные веб-службы предполагают, что только компоненты не имеют метки. 
 
-1. Add an **Evaluate Model** module and connect the scored dataset to its left input port. To see the evaluation results, select the output port of the **Evaluate Model** module and select **Visualize**.
+1. Добавьте модуль « **Анализ модели** » и подключите счет с расчетом на левый порт ввода. Чтобы просмотреть результаты оценки, выберите порт вывода модуля **Анализ модели** и щелкните **визуализировать**.
 
 ## <a name="results"></a>Результаты
 
 ![анализ результатов;](media/how-to-designer-sample-classification-predict-income/evaluate-result.png)
 
-In the evaluation results, you can see that the curves like ROC, Precision-recall and confusion metrics. 
+В результатах оценки можно увидеть, что кривые, такие как ROC, имеют метрики точности и путаницы. 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 [!INCLUDE [aml-ui-cleanup](../../../includes/aml-ui-cleanup.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-Explore the other samples available for the designer:
+Изучите другие примеры, доступные для конструктора:
 
-- [Sample 1 - Regression: Predict an automobile's price](how-to-designer-sample-regression-automobile-price-basic.md)
-- [Sample 2 - Regression: Compare algorithms for automobile price prediction](how-to-designer-sample-regression-automobile-price-compare-algorithms.md)
-- [Sample 4 - Classification: Predict credit risk (cost sensitive)](how-to-designer-sample-classification-credit-risk-cost-sensitive.md)
-- [Sample 5 - Classification: Predict churn](how-to-designer-sample-classification-churn.md)
-- [Sample 6 - Classification: Predict flight delays](how-to-designer-sample-classification-flight-delay.md)
-- [Sample 7 - Text Classification: Wikipedia SP 500 Dataset](how-to-designer-sample-text-classification.md)
+- [Пример 1. регрессия: прогнозирование цены автомобиля](how-to-designer-sample-regression-automobile-price-basic.md)
+- [Пример 2. регрессия. алгоритмы сравнения для прогнозирования цен автомобилей](how-to-designer-sample-regression-automobile-price-compare-algorithms.md)
+- [Пример 4. Классификация: прогнозируемый кредитный риск (с учетом стоимости)](how-to-designer-sample-classification-credit-risk-cost-sensitive.md)
+- [Пример 5. Классификация: обработка прогнозов](how-to-designer-sample-classification-churn.md)
+- [Пример 6. Классификация: прогнозы задержек полета](how-to-designer-sample-classification-flight-delay.md)
+- [Пример 7. Классификация текста: набор данных Википедии SP 500](how-to-designer-sample-text-classification.md)

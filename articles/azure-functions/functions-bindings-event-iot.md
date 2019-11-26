@@ -1,6 +1,6 @@
 ---
-title: Azure IoT Hub bindings for Azure Functions
-description: Understand how to use IoT Hub bindings in Azure Functions.
+title: Привязки центра Интернета вещей Azure для функций Azure
+description: Узнайте, как использовать привязки центра Интернета вещей в функциях Azure.
 author: craigshoemaker
 ms.topic: reference
 ms.date: 03/05/2019
@@ -12,15 +12,15 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74227256"
 ---
-# <a name="azure-iot-hub-bindings-for-azure-functions"></a>Azure IoT Hub bindings for Azure Functions
+# <a name="azure-iot-hub-bindings-for-azure-functions"></a>Привязки центра Интернета вещей Azure для функций Azure
 
-This article explains how to work with Azure Functions bindings for IoT Hub. The IoT Hub support is based on the [Azure Event Hubs Binding](functions-bindings-event-hubs.md).
+В этой статье объясняется, как работать с привязками функций Azure для центра Интернета вещей. Поддержка центра Интернета вещей основана на [привязке концентраторов событий Azure](functions-bindings-event-hubs.md).
 
 [!INCLUDE [intro](../../includes/functions-bindings-intro.md)]
 
-## <a name="packages---functions-1x"></a>Пакеты – Функции 1.x
+## <a name="packages---functions-1x"></a>Пакеты — Функции 1.x
 
-For Azure Functions version 1.x, the IoT Hub bindings are provided in the [Microsoft.Azure.WebJobs.ServiceBus](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.ServiceBus) NuGet package, version 2.x. Исходный код для пакета находится в репозитории GitHub [azure-webjobs-sdk](https://github.com/Azure/azure-webjobs-sdk/tree/v2.x/src/Microsoft.Azure.WebJobs.ServiceBus/EventHubs).
+Для функций Azure версии 1. x привязки центра Интернета вещей предоставляются в пакете NuGet [Microsoft. Azure. веб-заданий. servicebus](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.ServiceBus) , версия 2. x. Исходный код для пакета находится в репозитории GitHub [azure-webjobs-sdk](https://github.com/Azure/azure-webjobs-sdk/tree/v2.x/src/Microsoft.Azure.WebJobs.ServiceBus/EventHubs).
 
 [!INCLUDE [functions-package](../../includes/functions-package.md)]
 
@@ -31,11 +31,11 @@ For Azure Functions version 1.x, the IoT Hub bindings are provided in the [Micro
 [!INCLUDE [functions-package-v2](../../includes/functions-package-v2.md)]
 
 > [!IMPORTANT]
-> While the following code samples use the Event Hub API, the given syntax is applicable for IoT Hub functions.
+> Хотя в следующих примерах кода используется API концентратора событий, заданный синтаксис применим к функциям центра Интернета вещей.
 
 [!INCLUDE [functions-bindings-event-hubs](../../includes/functions-bindings-event-hubs.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
 > [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md)

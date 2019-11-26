@@ -63,7 +63,7 @@ ms.locfileid: "74280646"
 
 | Соединитель и метаданные | structure | columnCount | exists (существует) |
 |:--- |:--- |:--- |:--- |
-| [База данных SQL Azure](connector-azure-sql-database.md) | √ | √ | √ |
+| [база данных SQL Azure;](connector-azure-sql-database.md) | √ | √ | √ |
 | [Управляемый экземпляр Базы данных SQL Azure](connector-azure-sql-database-managed-instance.md) | √ | √ | √ |
 | [Хранилище данных Azure SQL](connector-azure-sql-data-warehouse.md) | √ | √ | √ |
 | [SQL Server](connector-sql-server.md) | √ | √ | √ |

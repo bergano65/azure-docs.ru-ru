@@ -46,22 +46,22 @@ ms.locfileid: "74229108"
 |0|Нет соответствия, поэтому ответ не возвращается.|"Сколько стоит использование службы"|
 
 ## <a name="choose-a-score-threshold"></a>Указание порогового значения оценки
-В приведенной выше таблице показаны оценки, ожидаемые в большинстве баз знаний. However, since every KB is different, and has different types of words, intents, and goals- we recommend you test and choose the threshold that best works for you. By default the threshold is set to 0, so that all possible answers are returned. The recommended threshold that should work for most KBs, is **50**.
+В приведенной выше таблице показаны оценки, ожидаемые в большинстве баз знаний. Тем не менее, поскольку каждая из КИЛОБАЙТов различается и имеет различные типы слов, способов и целей, рекомендуется проверить и выбрать пороговое значение, которое лучше подходит для вас. По умолчанию пороговое значение равно 0, чтобы возвращались все возможные ответы. Рекомендуемое пороговое значение, которое должно работать для большинства KBs, — **50**.
 
 При выборе порогового значения не забывайте про баланс между точностью и охватом и настраивайте порог в соответствии со своими требованиями.
 
 - Если **точность** важнее для вашего сценария, увеличьте пороговое значение. Таким образом, каждый возвращаемый ответ будет иметь гораздо более высокую степень достоверности и намного вероятнее будет соответствовать запросу пользователя. В этом случае многие другие вопросы могут остаться без ответа. *Например*, если пороговое значение — **70**, можно пропустить некоторые неоднозначные примеры, такие как "Что такое сохранение и обучение?".
 
-- Если **охват** (или полнота) важнее, снизьте пороговое значение. Это поможет ответить на максимальное количество вопросов, даже при наличии только частичного отношения к вопросу пользователя. Это означает, что может быть больше случаев, когда ответ не соответствует фактическому запросу пользователя, а предоставляет лишь некоторые связанные сведения. *For example:* if you make the threshold **30**, you might give answers for queries like "Where can I edit my KB?"
+- Если **охват** (или полнота) важнее, снизьте пороговое значение. Это поможет ответить на максимальное количество вопросов, даже при наличии только частичного отношения к вопросу пользователя. Это означает, что может быть больше случаев, когда ответ не соответствует фактическому запросу пользователя, а предоставляет лишь некоторые связанные сведения. *Например* , если установить пороговое значение **30**, вы можете дать ответы на такие запросы, как "где можно редактировать базу знаний?".
 
 > [!NOTE]
 > В новых версиях QnA Maker улучшена логика оценки, что может повлиять на пороговые значения. Каждый раз при обновлении службы проверяйте и, при необходимости, изменяйте пороговые значения. Узнать текущую версию службы QnA вы можете [здесь](https://www.qnamaker.ai/UserSettings). Сведения о том, как получить последние обновления см. [здесь](../How-To/set-up-qnamaker-service-azure.md#get-the-latest-runtime-updates).
 
-## <a name="set-threshold"></a>Set threshold 
+## <a name="set-threshold"></a>Задать порог 
 
-Set the threshold score as a property of the [GenerateAnswer API JSON body](../how-to/metadata-generateanswer-usage.md#generateanswer-request-configuration). This means you set it for each call to GenerateAnswer. 
+Установите пороговую оценку в качестве свойства [тела JSON API женератеансвер](../how-to/metadata-generateanswer-usage.md#generateanswer-request-configuration). Это означает, что вы задаете его для каждого вызова Женератеансвер. 
 
-From the bot framework, set the score as part of the options object with [C#](../how-to/metadata-generateanswer-usage.md?#use-qna-maker-with-a-bot-in-c) or [Node.js](../how-to/metadata-generateanswer-usage.md?#use-qna-maker-with-a-bot-in-nodejs).
+В среде Bot установите оценку как часть объекта Options с [C#](../how-to/metadata-generateanswer-usage.md?#use-qna-maker-with-a-bot-in-c) или [node. js](../how-to/metadata-generateanswer-usage.md?#use-qna-maker-with-a-bot-in-nodejs).
 
 ## <a name="improve-confidence-scores"></a>Улучшение оценок достоверности
 Чтобы улучшить оценку достоверности конкретного ответа на запрос пользователя, можно добавить запрос пользователя в базу знаний в качестве альтернативного вопроса для этого ответа. Вы можете также использовать [исправление слов](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/alterations/replace) без учета регистра, чтобы добавить синонимы к ключевым словам в базе знаний.
@@ -71,22 +71,22 @@ From the bot framework, set the score as part of the options object with [C#](..
 Если несколько ответов имеют аналогичные оценки достоверности, вполне вероятно, что запрос был слишком общим и, следовательно, соответствовал с равной вероятностью с несколькими ответами. Попытайтесь структурировать QnAs лучше, чтобы каждый объект QnA имел четкое намерение.
 
 
-## <a name="confidence-score-differences-between-test-and-production"></a>Confidence score differences between test and production
-Оценка достоверности ответа может незначительно измениться между тестируемой и опубликованной версией базы знаний, даже если содержимое одинаковое. This is because the content of the test and the published knowledge base are located in different Azure Cognitive Search indexes. 
+## <a name="confidence-score-differences-between-test-and-production"></a>Различия оценки достоверности между тестовой и рабочей средами
+Оценка достоверности ответа может незначительно измениться между тестируемой и опубликованной версией базы знаний, даже если содержимое одинаковое. Это связано с тем, что содержимое теста и опубликованной базы знаний находятся в разных индексах Azure Когнитивный поиск. 
 
-The test index holds all the QnA pairs of your knowledge bases. When querying the test index, the query applies to the entire index then results are restricted to the partition for that specific knowledge base. If the test query results are negatively impacting your ability to validate the knowledge base, you can:
-* organize your knowledge base using one of the following:
-    * 1 resource restricted to 1 KB: restrict your single QnA resource (and the resulting Azure Cognitive Search test index) to a single knowledge base. 
-    * 2 resources - 1 for test, 1 for production: have two QnA Maker resources, using one for testing (with its own test and  production indexes) and one for product (also having its own test and production indexes)
-* and, always use the same parameters, such as **[top](../how-to/improve-knowledge-base.md#use-the-top-property-in-the-generateanswer-request-to-get-several-matching-answers)** when querying both your test and production knowledge base
+Тестовый индекс содержит все пары QnA баз знаний. При запросе к тестовому индексу запрос применяется ко всему индексу, а результаты ограничены секцией для этой конкретной базы знаний. Если результаты тестового запроса отрицательно влияют на возможность проверки базы знаний, можно:
+* Упорядочите базу знаний с помощью одного из следующих средств:
+    * 1 ресурс ограничен 1 КБ: Ограничьте единственный ресурс QnA (и результирующий тестовый индекс Azure Когнитивный поиск) одной базой знаний. 
+    * 2 ресурса — 1 для теста, 1 для рабочей среды: имеется два QnA Makerных ресурса, один из которых используется для тестирования (с собственными тестами и производственными индексами) и один для продукта (также имеет собственные тестовые и производственные индексы).
+* и всегда используйте те же параметры, такие, как **[Top](../how-to/improve-knowledge-base.md#use-the-top-property-in-the-generateanswer-request-to-get-several-matching-answers)** , при запросе к тестовой и рабочей базе знаний
 
 При публикации базы знаний ее содержимое раздела вопросов и ответов переносится из тестового индекса в рабочий индекс в службе "Поиск Azure". См. [здесь](../Quickstarts/create-publish-knowledge-base.md#publish-the-knowledge-base), чтобы узнать, как работает процесс публикации.
 
-If you have a knowledge base in different regions, each region uses its own Azure Cognitive Search index. Так как используются разные индексы, оценки не обязательно будут совпадать. 
+Если у вас есть база знаний в разных регионах, в каждом регионе используется собственный индекс Azure Когнитивный поиск. Так как используются разные индексы, оценки не обязательно будут совпадать. 
 
 
 ## <a name="no-match-found"></a>Совпадения не найдены
-Если ни одно из подходящих совпадений не найдено ранжировщиком, возвращается оценка достоверности 0.0 или "Нет", а ответ по умолчанию – "Нет хорошего соответствия в базе знаний". You can override this [default response](#change-default-answer) in the bot or application code calling the endpoint. В качестве альтернативы вы также можете установить переопределение ответа в Azure, и это изменит значение по умолчанию для всех баз знаний, развернутых в определенной службе QnA Maker.
+Если ни одно из подходящих совпадений не найдено ранжировщиком, возвращается оценка достоверности 0.0 или "Нет", а ответ по умолчанию – "Нет хорошего соответствия в базе знаний". Этот [ответ по умолчанию](#change-default-answer) можно переопределить в коде программы-робота или приложения, вызывающего конечную точку. В качестве альтернативы вы также можете установить переопределение ответа в Azure, и это изменит значение по умолчанию для всех баз знаний, развернутых в определенной службе QnA Maker.
 
 ## <a name="change-default-answer"></a>Изменение ответа по умолчанию
 
@@ -96,16 +96,16 @@ If you have a knowledge base in different regions, each region uses its own Azur
 
     ![Доступ к службе приложений для QnA Maker на портале Azure](../media/qnamaker-concepts-confidencescore/set-default-response.png)
 
-3. Щелкните **Параметры приложения** и укажите в поле **DefaultAnswer** требуемый ответ по умолчанию. В нижней части страницы нажмите кнопку **Save**.
+3. Щелкните **Параметры приложения** и укажите в поле **DefaultAnswer** требуемый ответ по умолчанию. Выберите команду **Сохранить**.
 
     ![Выбор элемента "Параметры приложения" и изменение значения в поле DefaultAnswer для QnA Maker](../media/qnamaker-concepts-confidencescore/change-response.png)
 
-4. Перезапустите службу приложений
+4. Перезапустите службу приложений.
 
     ![Перезапуск службы приложений QnA Maker после изменения значения в поле DefaultAnswer](../media/qnamaker-faq/qnamaker-appservice-restart.png)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 > [!div class="nextstepaction"]
 > [Поддерживаемые источники данных](./data-sources-supported.md)
 

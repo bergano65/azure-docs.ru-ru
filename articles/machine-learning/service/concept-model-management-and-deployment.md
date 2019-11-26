@@ -1,7 +1,7 @@
 ---
-title: 'MLOps: ML model management'
+title: 'Млопс: Управление моделями в МАШИНном обучении'
 titleSuffix: Azure Machine Learning
-description: 'Learn about model management with Azure Machine Learning (MLOps). Deploy, manage, and monitor your models to continuously improve them. '
+description: 'Сведения об управлении моделями с помощью Машинное обучение Azure (Млопс). Развертывание моделей, управление ими и их мониторинг для их постоянного улучшения. '
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -18,151 +18,151 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74420072"
 ---
-# <a name="mlops-model-management-deployment-and-monitoring-with-azure-machine-learning"></a>MLOps: model management, deployment, and monitoring with Azure Machine Learning
+# <a name="mlops-model-management-deployment-and-monitoring-with-azure-machine-learning"></a>Млопс: Управление моделями, развертывание и мониторинг с помощью Машинное обучение Azure
 
-In this article, learn about how to use Azure Machine Learning to manage the lifecycle of your models. Azure Machine Learning uses a Machine Learning Operations (MLOps) approach. MLOps improves the quality and consistency of your machine learning solutions. 
+В этой статье вы узнаете, как использовать Машинное обучение Azure для управления жизненным циклом моделей. В Машинное обучение Azure используется подход Машинное обучениеных операций (Млопс). Млопс улучшает качество и согласованность решений машинного обучения. 
 
-Azure Machine Learning provides the following MLOps capabilities:
+Машинное обучение Azure предоставляет следующие возможности Млопс:
 
-- **Create reproducible ML pipelines**. Pipelines allow you to define repeatable and reusable steps for your data preparation, training, and scoring processes.
-- **Register, package, and deploy models from anywhere** and track associated metadata required to use the model.
-- **Capture the governance data required for capturing the end-to-end ML lifecycle**, including who is publishing models, why changes are being made, and when models were deployed or used in production.
-- **Notify and alert on events in the ML lifecycle** such as experiment completion, model registration, model deployment, and data drift detection.
-- **Monitor ML applications for operational and ML-related issues**. Compare model inputs between training and inference, explore model-specific metrics, and provide monitoring and alerts on your ML infrastructure.
-- **Automate the end-to-end ML lifecycle with Azure Machine Learning and Azure DevOps** to frequently update models, test new models, and continuously roll out new ML models alongside your other applications and services.
+- **Создание воспроизводимых конвейеров машинного обучения**. Конвейеры позволяют определять повторяемые и многократно используемые шаги для процессов подготовки данных, обучения и оценки.
+- **Регистрация, Упаковка и развертывание моделей из любого места** и контроль связанных метаданных, необходимых для использования модели.
+- **Запишите данные управления, необходимые для сбора сквозного жизненного цикла машинного обучения**, включая пользователей, которые публикуют модели, причины внесения изменений и время развертывания или использования моделей в рабочей среде.
+- **Уведомлять и оповещать о событиях в жизненном цикле машинного обучения** , например о завершении эксперимента, регистрации модели, развертывании модели и обнаружении расхождения данных.
+- **Мониторинг приложений ml для работы и проблем, связанных с машинным**обучением. Сравните входные данные модели между обработкой и выводом, изучите метрики, зависящие от модели, и предоставьте мониторинг и оповещения в инфраструктуре машинного обучения.
+- **Автоматизируйте сквозной жизненный цикл машинного обучения с помощью машинное обучение Azure и Azure DevOps** для частого обновления моделей, тестирования новых моделей и непрерывного развертывания новых моделей машинного обучения вместе с другими приложениями и службами.
 
-## <a name="create-reproducible-ml-pipelines"></a>Create reproducible ML pipelines
+## <a name="create-reproducible-ml-pipelines"></a>Создание воспроизводимых конвейеров машинного обучения
 
-Use ML pipelines from Azure Machine Learning to stitch together all of the steps involved in your model training process.
+Используйте конвейеры машин из Машинное обучение Azure, чтобы объединить все шаги, связанные с процессом обучения модели.
 
-An ML pipeline can contain steps from data preparation to feature extraction to hyperparameter tuning to model evaluation. For more information, see [ML pipelines](concept-ml-pipelines.md).
+Конвейер машинного обучения может содержать шаги из процесса подготовки данных к извлечению компонентов в настройку параметров для оценки модели. Дополнительные сведения см. в разделе [конвейеры машинного обучения](concept-ml-pipelines.md).
 
-## <a name="register-package-and-deploy-models-from-anywhere"></a>Register, package, and deploy models from anywhere
+## <a name="register-package-and-deploy-models-from-anywhere"></a>Регистрация, Упаковка и развертывание моделей из любого места
 
-### <a name="register-and-track-ml-models"></a>Register and track ML models
+### <a name="register-and-track-ml-models"></a>Регистрация и трассировка моделей машинного обучения
 
 Регистрация модели позволяет хранить и изменять модели в облаке Azure в рабочей области. Модель реестра позволяет легко организовывать и отслеживать ваши обученные модели.
 
 > [!TIP]
-> A registered model is a logical container for one or more files that make up your model. For example, if you have a model that is stored in multiple files, you can register them as a single model in your Azure Machine Learning workspace. After registration, you can then download or deploy the registered model and receive all the files that were registered.
+> Зарегистрированная модель — это логический контейнер для одного или нескольких файлов, составляющих модель. Например, если имеется модель, которая хранится в нескольких файлах, можно зарегистрировать их как единую модель в Машинное обучение Azure рабочей области. После регистрации можно скачать или развернуть зарегистрированную модель и получить все зарегистрированные файлы.
 
-Зарегистрированные модели идентифицируются по имени и версии. При регистрации модели с уже существующим именем реестр увеличивает номер версии. Additional metadata tags can be provided during registration. These tags are then used when searching for a model. Azure Machine Learning supports any model that can be loaded using Python 3.5.2 or higher.
+Зарегистрированные модели идентифицируются по имени и версии. При регистрации модели с уже существующим именем реестр увеличивает номер версии. Во время регистрации можно указать дополнительные теги метаданных. Затем эти теги используются при поиске модели. Машинное обучение Azure поддерживает любую модель, которую можно загрузить с помощью Python 3.5.2 или более поздней версии.
 
 > [!TIP]
-> You can also register models trained outside Azure Machine Learning.
+> Кроме того, можно регистрировать модели, обученные за пределами Машинное обучение Azure.
 
-You can't delete a registered model that is being used in an active deployment.
+Нельзя удалить зарегистрированную модель, используемую в активном развертывании.
 Дополнительные сведения см. в разделе "Регистрация модели" статьи [Развертывание моделей с помощью Службы машинного обучения Azure](how-to-deploy-and-where.md#registermodel).
 
-### <a name="package-and-debug-models"></a>Package and debug models
+### <a name="package-and-debug-models"></a>Модели упаковки и отладки
 
-Before deploying a model into production, it is packaged into a Docker image. In most cases, image creation happens automatically in the background during deployment. You can manually specify the image.
+Перед развертыванием модели в рабочей среде она упаковывается в образ DOCKER. В большинстве случаев создание изображений происходит автоматически в фоновом режиме во время развертывания. Образ можно указать вручную.
 
-If you run into problems with the deployment, you can deploy on your local development environment for troubleshooting and debugging.
+При возникновении проблем с развертыванием можно выполнить развертывание в локальной среде разработки для устранения неполадок и отладки.
 
-For more information, see [Deploy models](how-to-deploy-and-where.md#registermodel) and [Troubleshooting deployments](how-to-troubleshoot-deployment.md).
+Дополнительные сведения см. в разделе [Развертывание моделей](how-to-deploy-and-where.md#registermodel) и [Устранение неполадок развертываний](how-to-troubleshoot-deployment.md).
 
-### <a name="validate-and-profile-models"></a>Validate and profile models
+### <a name="validate-and-profile-models"></a>Проверка и профилирование моделей
 
-Azure Machine Learning can use profiling to determine the ideal CPU and memory settings to use when deploying your model. Model validation happens as part of this process, using data that you supply for the profiling process.
+Машинное обучение Azure может использовать профилирование для определения оптимальных параметров ЦП и памяти, используемых при развертывании модели. Проверка модели выполняется в рамках этого процесса с использованием данных, предоставляемых для процесса профилирования.
 
-### <a name="convert-and-optimize-models"></a>Convert and optimize models
+### <a name="convert-and-optimize-models"></a>Преобразование и оптимизация моделей
 
-Converting your model to [Open Neural Network Exchange](https://onnx.ai) (ONNX) may improve performance. On average, converting to ONNX can yield a 2x performance increase.
+Преобразование модели для [открытия обмена нейронными сетями](https://onnx.ai) (ONNX) может повысить производительность. В среднем преобразование в ONNX может привести к увеличению производительности в 2 раза.
 
-For more information on ONNX with Azure Machine Learning, see the [Create and accelerate ML models](concept-onnx.md) article.
+Дополнительные сведения о ONNX с Машинное обучение Azure см. в статье [Создание и ускорение моделей ML](concept-onnx.md) .
 
-### <a name="use-models"></a>Use models
+### <a name="use-models"></a>Использование моделей
 
-Trained machine learning models are deployed as web services in the cloud or locally. You can also deploy models to Azure IoT Edge devices. Deployments use CPU, GPU, or field-programmable gate arrays (FPGA) for inferencing. You can also use models from Power BI.
+Обученные модели машинного обучения развертываются как веб-службы в облаке или локально. Также можно развернуть модели на Azure IoT Edge устройствах. В развертываниях используются ЦП, GPU или программируемые для полей массивы шлюзов (FPGA). Модели также можно использовать из Power BI.
 
-When using a model as a web service or IoT Edge device, you provide the following items:
+При использовании модели в качестве веб-службы или устройства IoT Edge вы предоставляете следующие элементы:
 
-* The model(s) that are used to score data submitted to the service/device.
-* An entry script. This script accepts requests, uses the model(s) to score the data, and return a response.
-* A conda environment file that describes the dependencies required by the model(s) and entry script.
-* Any additional assets such as text, data, etc. that are required by the model(s) and entry script.
+* Модели, используемые для оценки данных, передаваемых службе или устройству.
+* Скрипт записи. Этот скрипт принимает запросы, использует модели для оценки данных и возвращает ответ.
+* Файл среды conda, описывающий зависимости, необходимые для скрипта моделей и входа.
+* Любые дополнительные активы, такие как текст, данные и т. д., необходимые для скрипта моделей и входа.
 
-You also provide the configuration of the target deployment platform. For example, the VM family type, available memory, and number of cores when deploying to Azure Kubernetes Service.
+Вы также предоставляете конфигурацию целевой платформы развертывания. Например, тип семейства виртуальных машин, объем доступной памяти и число ядер при развертывании в службе Azure Kubernetes.
 
-When the image is created, components required by Azure Machine Learning are also added. For example, assets needed to run the web service and interact with IoT Edge.
+При создании образа также добавляются компоненты, необходимые для Машинное обучение Azure. Например, ресурсы, необходимые для запуска веб-службы и взаимодействия с IoT Edge.
 
 #### <a name="batch-scoring"></a>Пакетная оценка
-Batch scoring is supported through ML pipelines. For more information, see [Batch predictions on big data](how-to-run-batch-predictions.md).
+Пакетная Оценка поддерживается через конвейеры ML. Дополнительные сведения см. [в статье пакетные прогнозы для больших данных](how-to-run-batch-predictions.md).
 
-#### <a name="real-time-web-services"></a>Real-time web services
+#### <a name="real-time-web-services"></a>Веб-службы в режиме реального времени
 
-You can use your models in **web services** with the following compute targets:
+Вы можете использовать модели в **веб-службах** со следующими целевыми объектами вычислений:
 
 * Экземпляр контейнера Azure
 * Служба Azure Kubernetes
-* Local development environment
+* Локальная среда разработки
 
-To deploy the model as a web service, you must provide the following items:
+Чтобы развернуть модель как веб-службу, необходимо предоставить следующие элементы:
 
-* The model or ensemble of models.
-* Dependencies required to use the model. For example, a script that accepts requests and invokes the model, conda dependencies, etc.
-* Deployment configuration that describes how and where to deploy the model.
+* Модель или ансамблей моделей.
+* Зависимости, необходимые для использования модели. Например, скрипт, принимающий запросы и вызывающий модель, conda зависимости и т. д.
+* Конфигурация развертывания, описывающая способ и место развертывания модели.
 
-For more information, see [Deploy models](how-to-deploy-and-where.md).
+Дополнительные сведения см. в разделе [Развертывание моделей](how-to-deploy-and-where.md).
 
-#### <a name="iot-edge-devices"></a>IoT Edge devices
+#### <a name="iot-edge-devices"></a>Устройства IoT Edge
 
-You can use models with IoT devices through **Azure IoT Edge modules**. IoT Edge modules are deployed to a hardware device, which enables inference, or model scoring, on the device.
+Модели с устройствами Интернета вещей можно использовать с помощью **модулей Azure IOT Edge**. IoT Edge модули развертываются на аппаратном устройстве, что позволяет выводить на экран или оценивать модель на устройстве.
 
-For more information, see [Deploy models](how-to-deploy-and-where.md).
+Дополнительные сведения см. в разделе [Развертывание моделей](how-to-deploy-and-where.md).
 
-### <a name="analytics"></a>Analytics
+### <a name="analytics"></a>Аналитика
 
-Microsoft Power BI supports using machine learning models for data analytics. For more information, see [Azure Machine Learning integration in Power BI (preview)](https://docs.microsoft.com/power-bi/service-machine-learning-integration).
+Microsoft Power BI поддерживает использование моделей машинного обучения для аналитики данных. Дополнительные сведения см. [в разделе интеграция машинное обучение Azure в Power BI (Предварительная версия)](https://docs.microsoft.com/power-bi/service-machine-learning-integration).
 
 
-## <a name="capture-the-governance-data-required-for-capturing-the-end-to-end-ml-lifecycle"></a>Capture the governance data required for capturing the end-to-end ML lifecycle
+## <a name="capture-the-governance-data-required-for-capturing-the-end-to-end-ml-lifecycle"></a>Сбор данных управления, необходимых для сбора комплексного жизненного цикла машинного обучения
 
-Azure ML gives you the capability to track the end-to-end audit trail of all of your ML assets. В частности:
+Служба машинного обучения Azure позволяет отслеживать полный журнал аудита всех активов машинного обучения. В частности:
 
-- Azure ML [integrates with Git](how-to-set-up-training-targets.md#gitintegration) to track information on which repository / branch / commit your code came from.
-- [Azure ML Datasets](how-to-create-register-datasets.md) help you track, profile, and version data. 
-- Azure ML Run history stores a snapshot of the code, data, and compute used to train a model.
-- The Azure ML Model Registry captures all of the metadata associated with your model (which experiment trained it, where it is being deployed, if its deployments are healthy).
+- Azure ML [интегрируется с Git](how-to-set-up-training-targets.md#gitintegration) , чтобы отнести сведения о репозитории, ветви или фиксации вашего кода.
+- [Наборы данных машинного обучения Azure](how-to-create-register-datasets.md) помогают отслеживанию, профилированию и версии. 
+- В журнале выполнения машинного обучения Azure хранится моментальный снимок кода, данных и вычислений, используемых для обучения модели.
+- В реестре модели машинного обучения Azure записываются все метаданные, связанные с вашей моделью (которые обучены с помощью эксперимента, где выполняется развертывание, если ее развертывания являются работоспособными).
 
-## <a name="notify-automate-and-alert-on-events-in-the-ml-lifecycle"></a>Notify, automate, and alert on events in the ML lifecycle
-Azure ML publishes key events to Azure EventGrid, which can be used to notify and automate on events in the ML lifecycle. For more information, please see [this document](how-to-use-event-grid.md).
+## <a name="notify-automate-and-alert-on-events-in-the-ml-lifecycle"></a>Уведомлять, автоматизировать и оповещать о событиях в жизненном цикле машинного обучения
+Служба машинного обучения Azure публикует ключевые события в Azure EventGrid, которые можно использовать для уведомления и автоматизации событий в жизненном цикле машинного обучения. Дополнительные сведения см. в [этом документе](how-to-use-event-grid.md).
 
-## <a name="monitor-for-operational--ml-issues"></a>Monitor for operational & ML issues
+## <a name="monitor-for-operational--ml-issues"></a>Мониторинг проблем с операционными &ми машинного обучения
 
-Monitoring enables you to understand what data is being sent to your model, and the predictions that it returns.
+Мониторинг позволяет понять, какие данные отправляются в модель, и какие прогнозы она возвращает.
 
-This information helps you understand how your model is being used. The collected input data may also be useful in training future versions of the model.
+Эти сведения помогут вам понять, как используется модель. Собранные входные данные также могут быть полезны при обучении будущих версий модели.
 
 Дополнительные сведения см. в статье [Сбор данных для моделей в рабочей среде](how-to-enable-data-collection.md).
 
 
-## <a name="automate-the-ml-lifecycle"></a>Automate the ML lifecycle 
+## <a name="automate-the-ml-lifecycle"></a>Автоматизация жизненного цикла машинного обучения 
 
-You can use GitHub and Azure Pipelines to create a continuous integration process that trains a model. In a typical scenario, when a Data Scientist checks a change into the Git repo for a project, the Azure Pipeline will start a training run. The results of the run can then be inspected to see the performance characteristics of the trained model. You can also create a pipeline that deploys the model as a web service.
+Вы можете использовать GitHub и Azure Pipelines для создания процесса непрерывной интеграции, который обучает модель. В типичном сценарии, когда анализу данных проверяет изменение в репозитории Git для проекта, конвейер Azure начнет обучающий запуск. Затем результаты выполнения можно просмотреть, чтобы увидеть характеристики производительности обученной модели. Также можно создать конвейер, который развертывает модель как веб-службу.
 
-The [Azure Machine Learning extension](https://marketplace.visualstudio.com/items?itemName=ms-air-aiagility.vss-services-azureml) makes it easier to work with Azure Pipelines. It provides the following enhancements to Azure Pipelines:
+[Расширение машинное обучение Azure](https://marketplace.visualstudio.com/items?itemName=ms-air-aiagility.vss-services-azureml) упрощает работу с Azure pipelines. Он предоставляет следующие усовершенствования Azure Pipelines.
 
-* Enables workspace selection when defining a service connection.
-* Enables release pipelines to be triggered by trained models created in a training pipeline.
+* Включает выбор рабочей области при определении подключения к службе.
+* Разрешает активацию конвейеров выпуска обученными моделями, созданными в конвейере обучения.
 
-For more information on using Azure Pipelines with Azure Machine Learning, see the [Continuous integration and deployment of ML models with Azure Pipelines](/azure/devops/pipelines/targets/azure-machine-learning) article and the [Azure Machine Learning MLOps](https://aka.ms/mlops) repository.
+Дополнительные сведения об использовании Azure Pipelines с Машинное обучение Azure см. в статье [Непрерывная интеграция и развертывание моделей ml с помощью Azure pipelines](/azure/devops/pipelines/targets/azure-machine-learning) статьи и репозитория [машинное обучение Azure млопс](https://aka.ms/mlops) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-Learn more by reading and exploring the following resources:
+Дополнительные сведения см. в следующих ресурсах:
 
-+ [How & where to deploy models](how-to-deploy-and-where.md) with Azure Machine Learning
++ [Как &, где развертывать модели](how-to-deploy-and-where.md) с машинное обучение Azure
 
-+ [Tutorial: Deploy an image classification model in ACI](tutorial-deploy-models-with-aml.md).
++ [Учебник. Развертывание модели классификации изображений в ACI](tutorial-deploy-models-with-aml.md).
 
-+ [End-to-end MLOps examples repo](https://github.com/microsoft/MLOps)
++ [Репозиторий комплексных примеров Млопс](https://github.com/microsoft/MLOps)
 
-+ [CI/CD of ML models with Azure Pipelines](/azure/devops/pipelines/targets/azure-machine-learning)
++ [CI/CD моделей машинного обучения с Azure Pipelines](/azure/devops/pipelines/targets/azure-machine-learning)
 
-+ Create clients that [consume a deployed model](how-to-consume-web-service.md)
++ Создание клиентов, [использующих развернутую модель](how-to-consume-web-service.md)
 
 + [Машинное обучение с поддержкой масштабирования](/azure/architecture/data-guide/big-data/machine-learning-at-scale)
 
-+ [Azure AI reference architectures & best practices rep](https://github.com/microsoft/AI)
++ [Эталонные архитектуры Azure ии & рекомендации](https://github.com/microsoft/AI)

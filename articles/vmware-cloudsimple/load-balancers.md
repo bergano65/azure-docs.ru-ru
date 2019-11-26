@@ -1,6 +1,6 @@
 ---
-title: Azure VMware Solution by CloudSimple - Choose a load balancing solution for CloudSimple Private Clouds
-description: Describes the load balancing options deploying an application in a Private Cloud
+title: Решение Azure VMware, Клаудсимпле — выбор решения для балансировки нагрузки для частных облаков Клаудсимпле
+description: Описание параметров балансировки нагрузки, которые развертывают приложение в частном облаке
 author: sharaths-cs
 ms.author: b-shsury
 ms.date: 08/20/2019
@@ -15,32 +15,32 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74206501"
 ---
-# <a name="choose-a-load-balancing-solution-for-cloudsimple-private-clouds"></a>Choose a load balancing solution for CloudSimple Private Clouds
+# <a name="choose-a-load-balancing-solution-for-cloudsimple-private-clouds"></a>Выбор решения для балансировки нагрузки для частных облаков Клаудсимпле
 
-When deploying an application in a CloudSimple Private Cloud, you can choose any of several options for load balancing.
+При развертывании приложения в частном облаке Клаудсимпле можно выбрать любой из нескольких вариантов балансировки нагрузки.
 
-You can choose a virtual or software-based load balancer in your CloudSimple private cloud or even use Azure L7 load balancer running in your Azure subscription to front end your web tier VMs running in the CloudSimple Private Cloud. Here, we list a few options:
+Вы можете выбрать виртуальную или программную подсистему балансировки нагрузки в частном облаке Клаудсимпле или даже использовать балансировщик нагрузки Azure уровня 7, выполняющийся в подписке Azure, чтобы получить клиентские виртуальные машины веб-уровней, работающие в частном облаке Клаудсимпле. Ниже перечислены некоторые параметры.
 
-## <a name="virtual-load-balancers"></a>Virtual load balancers
+## <a name="virtual-load-balancers"></a>Виртуальные подсистемы балансировки нагрузки
 
-You can deploy virtual load balancer appliances in your VMware environment through the vCenter interface and configure them to front end your application traffic.
+Вы можете развернуть виртуальные устройства балансировки нагрузки в среде VMware через интерфейс vCenter и настроить их для внешнего интерфейса вашего трафика приложения.
 
-Some popular vendors are: NginX: http://nginx.org/en/docs/http/load_balancing.html F5- BigIP - Traffic Manager: https://www.f5.com/products/big-ip-services/virtual-editions Citrix ADC: https://www.citrix.com/products/citrix-adc/
+Некоторые популярные поставщики: NginX: http://nginx.org/en/docs/http/load_balancing.html F5-BigIP-диспетчер трафика: https://www.f5.com/products/big-ip-services/virtual-editions Citrix ADC: https://www.citrix.com/products/citrix-adc/
 
-## <a name="azure-l7-load-balancer"></a>Azure L7 load balancer
+## <a name="azure-l7-load-balancer"></a>Балансировщик нагрузки Azure уровня 7
 
-When you use Azure Application Gateway as a L7 load balancer for your application running in a Private Cloud, you don’t need to manage the load balancer software. The load balancer software is managed by Azure. All the web tier VMs in the Private Cloud use private IP addresses and don’t require additional NAT rules or public IPs addresses to resolve names. Web tier VMs communicate with the Azure Application Gateway over a private, low-latency, high-bandwidth connection.
+При использовании шлюза приложений Azure в качестве балансировщика нагрузки на уровне 7 для приложения, работающего в частном облаке, управлять программным обеспечением балансировщика нагрузки не требуется. Программное обеспечение балансировщика нагрузки управляется Azure. Все виртуальные машины веб-уровня в частном облаке используют частные IP-адреса и не нуждаются в дополнительных правилах NAT или общедоступных IP-адресах для разрешения имен. Виртуальные машины веб-уровня взаимодействуют с шлюзом приложений Azure по защищенному каналу с низкой задержкой и высокой пропускной способностью.
 
-To learn more about how to configure this solution, refer to the solution guide on Using Azure Application Gateway as a L7 load balancer.
+Дополнительные сведения о настройке этого решения см. в руководстве по решению об использовании шлюза приложений Azure в качестве балансировщика нагрузки на уровне 7.
 
-## <a name="azure-internal-load-balancer"></a>Azure internal load balancer
+## <a name="azure-internal-load-balancer"></a>Внутренний балансировщик нагрузки Azure
 
-If you choose to run your application in a hybrid deployment where the web front-end tier is running within an Azure vNet in your Azure subscription and the DB tier of the application is running in VMware VMs in CloudSimple Private Cloud, you can use Azure internal load balancer (L4 load balancer) in front of your DB tier VMs for traffic management.
+Если вы решили запустить приложение в гибридном развертывании, где веб-интерфейс находится в виртуальной сети Azure в подписке Azure, а уровень базы данных приложения выполняется на виртуальных машинах VMware в частном облаке Клаудсимпле, можно использовать внутреннюю нагрузку Azure. балансировщик (балансировщик нагрузки уровня 4) перед виртуальными машинами на уровне базы данных для управления трафиком.
 
-To learn more, see Azure [Internal Load Balancer](../load-balancer/load-balancer-overview.md#internalloadbalancer) documentation.
+Дополнительные сведения см. в документации по [внутренним Load Balancerам](../load-balancer/load-balancer-overview.md#internalloadbalancer) Azure.
 
-## <a name="global-server-load-balancer"></a>Global server load balancer
+## <a name="global-server-load-balancer"></a>Глобальная подсистема балансировки нагрузки сервера
 
-If you are looking for a DNS-based load balancer, then you may either use third party solutions available in Azure Marketplace or go with the native Azure solution.
+Если вы ищете подсистему балансировки нагрузки на основе DNS, вы можете использовать сторонние решения, доступные в Azure Marketplace, или обратиться к собственному решению Azure.
 
-Azure Traffic Manager is a DNS-based traffic load balancer that enables you to distribute traffic optimally to services across global Azure regions and on-premises, while providing high availability and responsiveness. To learn more, see Azure [Traffic Manager](../traffic-manager/traffic-manager-configure-geographic-routing-method.md) documentation.
+Диспетчер трафика Azure — это балансировщик нагрузки трафика на основе DNS, который позволяет оптимально распределять трафик между службами в глобальных регионах Azure и локальной среде, обеспечивая высокий уровень доступности и скорость реагирования. Дополнительные сведения см. в документации по [диспетчеру трафика](../traffic-manager/traffic-manager-configure-geographic-routing-method.md) Azure.

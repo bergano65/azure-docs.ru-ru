@@ -1,6 +1,6 @@
 ---
 title: Устранение неполадок в Azure Blockchain Workbench
-description: How to troubleshoot an Azure Blockchain Workbench Preview application.
+description: Устранение неполадок в предварительной версии приложения Azure Блокчейн Workbench.
 ms.date: 10/14/2019
 ms.topic: article
 ms.reviewer: brendal
@@ -11,14 +11,14 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74324301"
 ---
-# <a name="azure-blockchain-workbench-preview-troubleshooting"></a>Azure Blockchain Workbench Preview troubleshooting
+# <a name="azure-blockchain-workbench-preview-troubleshooting"></a>Устранение неполадок в предварительной версии Azure Блокчейн Workbench
 
 Мы создали скрипт PowerShell для отладки при разработке и технической поддержки. Этот скрипт формирует сводные данные и собирает подробные журналы для устранения неполадок. Собираются журналы следующих служб:
 
 * сеть Blockchain, например Ethereum;
 * микрослужбы Blockchain Workbench;
 * Application Insights
-* Azure Monitoring (Azure Monitor logs)
+* Мониторинг Azure (журналы Azure Monitor)
 
 Эти сведения помогут вам определиться с дальнейшими действиями и выяснить основную причину возникших проблем.
 
@@ -35,28 +35,28 @@ git clone https://github.com/Azure-Samples/blockchain.git
 ## <a name="run-the-script"></a>Запуск сценария
 [!INCLUDE [sample-powershell-install](../../../includes/sample-powershell-install.md)]
 
-Запустите скрипт `collectBlockchainWorkbenchTroubleshooting.ps1`, чтобы собрать журналы и создать ZIP-файл, содержащий папку со сведениями для устранения неполадок. Пример.
+Запустите скрипт `collectBlockchainWorkbenchTroubleshooting.ps1`, чтобы собрать журналы и создать ZIP-файл, содержащий папку со сведениями для устранения неполадок. Например,
 
 ``` powershell
 collectBlockchainWorkbenchTroubleshooting.ps1 -SubscriptionID "<subscription_id>" -ResourceGroupName "workbench-resource-group-name"
 ```
 Этот скрипт принимает следующие параметры.
 
-| Параметр  | Описание | Обязательно для заполнения |
+| Параметр  | ОПИСАНИЕ | обязательные |
 |---------|---------|----|
-| SubscriptionID | Идентификатор подписки, в которой создаются или используются ресурсы. | ДА |
-| ResourceGroupName | Имя группы ресурсов Azure, в которой развернуто приложение Blockchain Workbench. | ДА |
+| SubscriptionID | Идентификатор подписки, в которой создаются или используются ресурсы. | Yes |
+| ResourceGroupName | Имя группы ресурсов Azure, в которой развернуто приложение Blockchain Workbench. | Yes |
 | OutputDirectory | Путь для создания ZIP-файла с выходными данными. Если это значение не указано, по умолчанию используется текущий каталог. | Нет |
 | LookbackHours | Интервал времени (в часах), используемый при извлечении данных телеметрии. Значение по умолчанию — 24 часа. Максимальное значение — 90 часов. | Нет |
-| OmsSubscriptionId | The subscription ID where Azure Monitor logs is deployed. Only pass this parameter if the Azure Monitor logs for the blockchain network is deployed outside of Blockchain Workbench's resource group.| Нет |
-| OmsResourceGroup |The resource group where Azure Monitor logs is deployed. Only pass this parameter if the Azure Monitor logs for the blockchain network is deployed outside of Blockchain Workbench's resource group.| Нет |
-| OmsWorkspaceName | Имя рабочей области Log Analytics. Only pass this parameter if the Azure Monitor logs for the blockchain network is deployed outside of Blockchain Workbench's resource group | Нет |
+| OmsSubscriptionId | Идентификатор подписки, в которой развертываются Azure Monitor журналы. Этот параметр следует передавать только в том случае, если журналы Azure Monitor для сети блокчейн развертываются за пределами группы ресурсов Блокчейн Workbench.| Нет |
+| OmsResourceGroup |Группа ресурсов, в которой развертываются журналы Azure Monitor. Этот параметр следует передавать только в том случае, если журналы Azure Monitor для сети блокчейн развертываются за пределами группы ресурсов Блокчейн Workbench.| Нет |
+| OmsWorkspaceName | Имя рабочей области Log Analytics. Передавать этот параметр только в том случае, если журналы Azure Monitor для сети блокчейн развертываются за пределами группы ресурсов Блокчейн Workbench. | Нет |
 
 ## <a name="what-is-collected"></a>Какие данные собираются?
 
 Результирующий ZIP-файл содержит выходные данные в следующей структуре папок:
 
-| Папка или файл | Описание  |
+| Папка или файл | ОПИСАНИЕ  |
 |---------|---------|
 | \Summary.txt | Общие сведения о системе |
 | \Metrics\blockchain | Метрики сети блокчейн |
@@ -68,7 +68,7 @@ collectBlockchainWorkbenchTroubleshooting.ps1 -SubscriptionID "<subscription_id>
 
 Папка **Metrics** содержит метрики различных компонентов системы по времени. Например, выходной файл `\Details\Workbench\apiMetrics.txt` содержит сводку различных кодов отклика, а также время отклика за весь период сбора. Папка **Details** содержит подробные журналы со сведениями об устранении определенных проблем с программой Workbench базовой сети блокчейн. Например, файл `\Details\Workbench\Exceptions.csv` содержит список последних исключений, произошедших в системе. Эти сведения полезны для устранения ошибок, связанных со смарт-контрактами или взаимодействием с блокчейном. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
 > [Azure Blockchain Workbench Application Insights troubleshooting guide](https://aka.ms/workbenchtroubleshooting) (Руководство по устранению неполадок с Application Insights в Azure Blockchain Workbench)

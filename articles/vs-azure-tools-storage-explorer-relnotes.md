@@ -23,70 +23,70 @@ ms.locfileid: "74482102"
 ---
 # <a name="microsoft-azure-storage-explorer-release-notes"></a>Заметки о выпуске Обозревателя службы хранилища Microsoft Azure
 
-This article contains the latest release notes for Azure Storage Explorer, as well as release notes for previous versions. 
+Эта статья содержит последние заметки о выпуске для Обозреватель службы хранилища Azure, а также заметки о выпуске для предыдущих версий. 
 
 [Обозреватель службы хранилища Microsoft Azure](./vs-azure-tools-storage-manage-with-storage-explorer.md) — это изолированное приложение, которое упрощает работу с данными из службы хранилища Azure на платформе Windows, macOS и Linux.
 
-To download previous versions of Storage Explorer, you can visit the [Releases page](https://github.com/microsoft/AzureStorageExplorer/releases) of our GitHub repo.
+Чтобы скачать предыдущие версии Обозреватель службы хранилища, можно посетить [страницу выпусков](https://github.com/microsoft/AzureStorageExplorer/releases) нашего репозитория GitHub.
 
-## <a name="version-1110"></a>Version 1.11.0
+## <a name="version-1110"></a>Версия 1.11.0
 11/4/2019
 
-### <a name="new"></a>Новинка
-* Operations for Blobs, ADLS Gen2 and Managed Disks use the integrated AzCopy. More specifically, the following operations are done using AzCopy:
-   * Большие двоичные объекты
-      * Open for editing + Upload
-      * Upload, including drag & drop
-      * Download (Скачать)
-      * Copy & paste #1249
-      * Удаление
-   * ADLS Gen2 Blobs
-      * Upload, including drag & drop
-      * Download (Скачать)
-      * Copy & paste
-      * Delete, including folder delete
+### <a name="new"></a>Создать
+* Операции для больших двоичных объектов, ADLS 2-го поколения и управляемых дисков используют интегрированную AzCopy. В частности, следующие операции выполняются с помощью AzCopy:
+   * BLOB-объекты
+      * Открыть для редактирования и передачи
+      * Отправка, включая перетаскивание &
+      * Скачивание
+      * Копирование & вставки #1249
+      * Удалить
+   * ADLS 2-го поколения большие двоичные объекты
+      * Отправка, включая перетаскивание &
+      * Скачивание
+      * Копировать & вставки
+      * Удалить, включая удаление папки
    * Управляемые диски
-      * Отправка
-      * Download (Скачать)
-      * Copy & paste
+      * Upload
+      * Скачивание
+      * Копировать & вставки
 
-   Additionally, several frequently requested features have been added to the integrated AzCopy experience:
-   * Conflict resolutions - you will be prompted during transfers to resolve conflicts. #1455
-   * Upload as page blobs - you can choose whether or not AzCopy uploads .vhd and .vhdx files as page blobs. #1164 and #1601
-   * Configurable AzCopy parameters - Several settings have been added to tune AzCopy's performance and resource usage. See more details below.
+   Кроме того, в интегрированную среду AzCopy добавлены несколько часто запрашиваемых функций:
+   * Устранение конфликтов — во время передачи для разрешения конфликтов будет выводиться запрос. #1455
+   * Отправить как страничные BLOB-объекты. Вы можете выбрать, будет ли AzCopy отправлять файлы VHD и VHDX в качестве страничных больших двоичных объектов. #1164 и #1601
+   * Настраиваемые параметры AzCopy. добавлены несколько параметров для настройки производительности и использования ресурсов AzCopy. Дополнительные сведения см. ниже.
 
-* To enable ADLS Gen2 and Blobs multi-protocol access and further enhance ADLS Gen2 experiences, we have added the following features for the ADLS Gen2 accounts:
-   * Search using friendly names to set ACL permissions
-   * View hidden containers, such as $logs and $web
-   * Acquire and break container lease
-   * Acquire and break Blob lease #848
-   * Manage container access policies
-   * Configure Blob access tiers
-   * Copy & Paste Blobs
+* Чтобы включить многопротокольный доступ к ADLS 2-го поколения и BLOB-объектам, а также расширить возможности ADLS 2-го поколения, мы добавили следующие функции для учетных записей ADLS 2-го поколения:
+   * Поиск с использованием понятных имен для установки разрешений ACL
+   * Просмотр скрытых контейнеров, таких как $logs и $web
+   * Получение и прерывание аренды контейнера
+   * Получение и прерывание #848 аренды BLOB-объектов
+   * Управление политиками доступа к контейнеру
+   * Настройка уровней доступа к BLOB-объектам
+   * Копировать & вставить большие двоичные объекты
 
-* In this release, we are previewing 17 additional languages. You can switch to a language of your choice on the settings page under "Application" → "Regional Settings" → "Language (Preview)". We are still working hard on translating additional strings and improving the translation quality. Should you have any feedback regarding a translation, or if you notice a string which is not yet translated, please [open an issue on GitHub](https://github.com/microsoft/AzureStorageExplorer/issues/new?assignees=&labels=%F0%9F%8C%90%20localization&template=bug-report.md&title=).
-* In every release, we try to onboard a few settings to enable fine turning Storage Explorer. In this release, we added settings to further configure AzCopy as well as to hide service nodes:
-   * AzCopy bandwidth limit - helps control how much of the network AzCopy uses. You can find this setting at "Transfers" → "AzCopy" → "Maximum transfer rate". #1099
-   * AzCopy MD5 check - lets you configure if and how strictly AzCopy checks for MD5 hashes on download. You can find this setting at "Transfers" → "AzCopy" → "Check MD5".
-   * AzCopy concurrency and memory buffer size - by default AzCopy will analyze your machine to determine reasonable default values for these settings. But if you run into performance problems, these advanced settings can be used to further tailor how AzCopy runs on your computer. You can find these settings under "Transfers" → "AzCopy". #994
-   * Display and hide service nodes - these settings give you the options to display or hide any of the Azure services that Storage Explorer supports. You can find these settings under the "Services" section. #1877
+* В этом выпуске мы используем предварительный просмотр 17 дополнительных языков. Можно переключиться на выбранный вами язык на странице Параметры в разделе "приложение" → "региональные параметры" → "язык (Предварительная версия)". Мы по-прежнему работаем над переводом дополнительных строк и улучшением качества перевода. Если у вас есть отзывы о переводе или если вы заметили строку, которая еще не переведена, [откройте вопрос на сайте GitHub](https://github.com/microsoft/AzureStorageExplorer/issues/new?assignees=&labels=%F0%9F%8C%90%20localization&template=bug-report.md&title=).
+* В каждом выпуске мы пытаемся попытаться подключить несколько параметров, чтобы обеспечить точное Обозреватель службы хранилища. В этом выпуске мы добавили параметры для дальнейшей настройки AzCopy, а также для скрытия узлов служб:
+   * Ограничение пропускной способности AzCopy. помогает управлять объемом сетевых AzCopy, используемых. Этот параметр можно найти по адресу "передачи" → "AzCopy" → "максимальная скорость передачи". #1099
+   * Проверка MD5 AzCopy. позволяет настроить, а также как строго AzCopy проверяет наличие хэшей MD5 при скачивании. Этот параметр можно найти по адресу "передачи" → "AzCopy" → "проверить MD5".
+   * AzCopy параллелизма и размер буфера памяти — по умолчанию AzCopy будет анализировать компьютер, чтобы определить приемлемые значения по умолчанию для этих параметров. Но при возникновении проблем с производительностью эти дополнительные параметры можно использовать для дальнейшей настройки выполнения AzCopy на компьютере. Эти параметры можно найти в разделе "передачи" → "AzCopy". #994
+   * Отображение и скрытие узлов служб. Эти параметры позволяют отображать или скрывать любые службы Azure, которые Обозреватель службы хранилища поддерживаются. Эти параметры можно найти в разделе "службы". #1877
 
-* When creating a Snapshot of a Managed Disk, a default name is now provided. #1847
-* When attaching with Azure AD, if you attach an ADLS Gen2 Blob container, then "(ADLS Gen2)" will be shown next to the node. #1861
+* При создании моментального снимка управляемого диска теперь предоставляется имя по умолчанию. #1847
+* При подключении к Azure AD при присоединении ADLS 2-го поколения контейнера больших двоичных объектов, рядом с узлом будет отображаться "(ADLS 2-го поколения)". #1861
 
 ### <a name="fixes"></a>Исправления
-* When copying, uploading, or downloading large Disks, Storage Explorer would sometimes fail to revoke access to the disks involved in the operation. Эта ошибка исправлена. #2048
-* Table statistics failed when viewing a partition key query. Эта ошибка исправлена. #1886
+* При копировании, отправке или скачивании больших дисков Обозреватель службы хранилища иногда не сможет отозвать доступ к дискам, участвующим в операции. Эта ошибка исправлена. #2048
+* Ошибка статистики таблицы при просмотре запроса ключа секции. Эта ошибка исправлена. #1886
 
 ### <a name="known-issues"></a>Известные проблемы
-* Storage Explorer 1.11.0 now requires a DFS endpoint (such as "myaccount.dfs.core.windows.net") to attach to ADLS Gen2 containers. Previous versions of Storage Explorer allowed you to use a blob endpoint. These attachments may no longer work after upgrading to 1.11.0. If you encounter this problem, reattach using the DFS endpoint.
-* Numeric settings are not checked for whether they lie in a valid range.#2140
-* Copying blob containers from one storage account to another in the tree view may fail. We are investigating the issue.#2124
-* The Auto Refresh setting does not yet affect all operations in the Blob Explorer.
-* Managed Disk features are not supported in Azure Stack.
-* If a Disk upload or paste fails and a new Disk was created prior to the failure, Storage Explorer will not delete the Disk for you.
-* Depending on when you cancel a Disk upload or paste, it is possible to leave the new Disk in a corrupted state. If this happens, you either need to delete the new Disk, or manually call the Disk APIs to replace the contents of the Disk such that it is no longer corrupted.
-* When using RBAC, Storage Explorer requires some management layer permissions in order to access your storage resources. See the [troubleshooting guide](https://docs.microsoft.com/azure/storage/common/storage-explorer-troubleshooting) for more info.
+* Обозреватель службы хранилища 1.11.0 теперь требуется конечная точка DFS (например, "myaccount.dfs.core.windows.net") для присоединения к контейнерам ADLS 2-го поколения. Предыдущие версии Обозреватель службы хранилища позволяли использовать конечную точку большого двоичного объекта. После обновления до 1.11.0 эти вложения могут перестать работать. При возникновении этой проблемы повторно подключитесь с помощью конечной точки DFS.
+* Числовые параметры не проверяются на наличие допустимого диапазона. #2140
+* Копирование контейнеров больших двоичных объектов из одной учетной записи хранения в другую в представлении в виде дерева может завершиться ошибкой. Мы изучаем проблему. #2124
+* Параметр автоматического обновления пока не влияет на все операции в обозревателе больших двоичных объектов.
+* Функции управляемых дисков не поддерживаются в Azure Stack.
+* Если при отправке или вставке диска произошел сбой, а перед сбоем был создан новый диск, Обозреватель службы хранилища не удалит его.
+* В зависимости от того, когда отменяется отправка или Вставка диска, можно оставить новый диск в поврежденном состоянии. В этом случае необходимо либо удалить новый диск, либо вручную вызвать API диска, чтобы заменить содержимое диска таким, что оно больше не будет повреждено.
+* При использовании RBAC Обозреватель службы хранилища требуются разрешения уровня управления для доступа к ресурсам хранилища. Дополнительные сведения см. в разделе [руководство по устранению неполадок](https://docs.microsoft.com/azure/storage/common/storage-explorer-troubleshooting) .
 * Отключение от ресурса, подключенного через URI SAS, например контейнера больших двоичных объектов, может привести к ошибке, которая предотвращает правильное отображение других подключенных объектов. Чтобы обойти эту проблему, просто обновите узел группы. Для получения дополнительных сведений ознакомьтесь с исправлением № 537.
 * Если вы используете VS для Mac и когда-либо создавали пользовательскую конфигурацию AAD, вы не сможете выполнить вход. Чтобы обойти эту проблему, удалите содержимое в папке ~/.IdentityService/AadConfigurations. Если это не разблокирует вашу учетную запись, оставьте комментарий об этой проблеме.
 * В Azurite еще не полностью реализованы все API-интерфейсы хранилища. Из-за этого могут возникнуть непредвиденные ошибки или поведение при использовании Azurite в хранилище разработки.
@@ -97,10 +97,10 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
 * Если выбран неправильный ПИН-код или сертификат смарт-карты, понадобится перезапустить обозреватель хранилищ, чтобы он не сохранял ошибочные данные.
 * При переименовании больших двоичных объектов (по отдельности или в переименованном контейнере больших двоичных объектов) не сохраняются моментальные снимки. Все прочие свойства и метаданные больших двоичных объектов, файлов и сущностей при переименовании сохраняются.
 * В Azure Stack не поддерживаются приведенные ниже возможности. Попытка использовать их при работе с ресурсами Azure Stack может привести к непредвиденным ошибкам.
-   * Общие папки
+   * файловые ресурсы;
    * Уровни доступа
    * обратимое удаление.
-   * ADLS Gen2
+   * ADLS 2-го поколения
    * Управляемые диски
 * Оболочка Electron, используемая обозревателем хранилищ, испытывает проблемы с аппаратным ускорением в некоторых GPU (графический процессор). Если обозреватель хранилищ отображает пустое главное окно, можно попробовать запустить обозреватель хранилищ из командной строки и отключить ускорение GPU, добавив параметр `--disable-gpu`.
 
@@ -108,17 +108,17 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
     ./StorageExplorer.exe --disable-gpu
     ```
 
-* Running Storage Explorer on Linux requires certain dependencies to be installed first. Check the Storage Explorer [troubleshooting guide](https://docs.microsoft.com/azure/storage/common/storage-explorer-troubleshooting?tabs=1804#linux-dependencies) for more information.
+* Для запуска Обозреватель службы хранилища в Linux необходимо сначала установить определенные зависимости. Дополнительные сведения см. в разделе [руководство по устранению неполадок](https://docs.microsoft.com/azure/storage/common/storage-explorer-troubleshooting?tabs=1804#linux-dependencies) обозреватель службы хранилища.
 
 ## <a name="previous-releases"></a>Предыдущие выпуски
 
-* [Version 1.10.1](#version-1101)
-* [Version 1.10.0](#version-1100)
-* [Version 1.9.0](#version-190)
-* [Version 1.8.1](#version-181)
-* [Version 1.8.0](#version-180)
-* [Version 1.7.0](#version-170)
-* [Version 1.6.2](#version-162)
+* [Версия 1.10.1](#version-1101)
+* [Версия 1.10.0](#version-1100)
+* [Версия 1.9.0](#version-190)
+* [Версия 1.8.1](#version-181)
+* [Версия 1.8.0](#version-180)
+* [Версия 1.7.0](#version-170)
+* [Версия 1.6.2](#version-162)
 * [Версия 1.6.1](#version-161)
 * [Версия 1.6.0](#version-160)
 * [Версия 1.5.0](#version-150)
@@ -153,54 +153,54 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
 * [Версия 0.7.20160105.0](#version-07201601050)
 * [Версия 0.7.20151116.0](#version-07201511160)
 
-## <a name="version-1101"></a>Version 1.10.1
+## <a name="version-1101"></a>Версия 1.10.1
 9/19/2019
 
-### <a name="hotfix"></a>Hotfix
-* Some users encountered an error in 1.10.0 while attempting to view their data in their ADLS Gen 1 accounts. This error prevented the explorer panel from rendering properly. Эта ошибка исправлена. #1853 #1865
+### <a name="hotfix"></a>Издания
+* Некоторые пользователи столкнулись с ошибкой в 1.10.0 при попытке просмотра своих данных в учетных записях ADLS Gen 1. Эта ошибка препятствует надлежащей отрисовке панели обозревателя. Эта ошибка исправлена. #1853 #1865
 
-### <a name="new"></a>Новинка
-* Storage Explorer now has a dedicated Settings UI. You can access it either from Edit → Settings, or by clicking on the Settings icon (the gear) in the left-hand vertical toolbar. This feature is the first step we're taking towards providing a variety of [user requested settings](https://github.com/microsoft/AzureStorageExplorer/labels/%3Abulb%3A%20setting%20candidate). Starting in this release the following settings are supported:
+### <a name="new"></a>Создать
+* Обозреватель службы хранилища теперь имеет пользовательский интерфейс выделенных параметров. Доступ к нему можно получить либо в меню Правка > Параметры, либо щелкнув значок параметров (шестеренки) на левой вертикальной панели инструментов. Эта функция является первым шагом для предоставления разнообразных [параметров, запрошенных пользователем](https://github.com/microsoft/AzureStorageExplorer/labels/%3Abulb%3A%20setting%20candidate). Начиная с этого выпуска поддерживаются следующие параметры:
   * Тема
   * Прокси-сервер
-  * Logout on exit #6
-  * Enable device code flow sign-in
-  * Auto refresh #1526
-  * Enable AzCopy
-  * AzCopy SAS duration If there are other setttings you would like to see added, please [open an issue on GitHub](https://github.com/microsoft/AzureStorageExplorer/issues/new?assignees=&labels=%3Abulb%3A%20setting%20candidate&template=feature_request.md&title=) describing the setting you want to see.
-* Storage Explorer now supports Managed Disks. Вы сможете:
-  * Upload an on-prem VHD to a new Disk
-  * Download a Disk
-  * Copy and paste disks across resource groups and regions
-  * Delete Disks
-  * Create a Snapshot of a Disk The uploading, downloading, and cross-region copying of disks are powered by AzCopy v10.
-* Storage Explorer can now be installed via the Snap store on Linux. When you install via the Snap store, all dependencies are installed for you, including .NET Core! Currently we have verified that Storage Explorer runs well on Ubuntu and CentOS. If you encounter issues installing from the Snap store on other Linux distros, please [open an issue on GitHub](https://github.com/microsoft/AzureStorageExplorer/issues/new?assignees=&labels=snaps&template=bug-report.md&title=). To learn more about installing from the Snap store, see our [getting started guide](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer?tabs=linux). #68
-* Two major changes have been made to attach with Azure Active Directory (Azure AD) which are intended to make the feature more useful for ADLS Gen2 users:
-  * You now select the tenant that the resource you are attaching is in. This means that you no longer need to have RBAC access to the resource's subscription.
-  * If you are attaching an ADLS Gen2 Blob Container, you can now attach to a specific path in the container.
-* When managing ACLs for ADLS Gen2 files and folders, Storage Explorer will now show the friendly names for entities in the ACL. #957
-* When adding via OID to an ADLS Gen2 ACL, Storage Explorer will now validate that the OID belongs to a valid entity in your tenant. #1603
-* The keyboard shortcuts for navigating between tabs now use more standard key combinations. #1018
-* Middle clicking on a tab will now close it. #1348
-* If an AzCopy transfer contains skips and no failures, Storage Explorer will now show a warning icon to highlight that skips occured. #1490
-* The integrated AzCopy has been updated to version 10.2.1. Additionally, you can now view the version of AzCopy installed in the About dialog. #1343
+  * Выход при выходе #6
+  * Включение входа потока кода устройства
+  * Автоматическое обновление #1526
+  * Включить AzCopy
+  * Длительность AzCopy SAS если есть другие настройки, которые вы хотели бы увидеть, [откройте сообщение на сайте GitHub](https://github.com/microsoft/AzureStorageExplorer/issues/new?assignees=&labels=%3Abulb%3A%20setting%20candidate&template=feature_request.md&title=) с описанием параметра, который вы хотите увидеть.
+* Обозреватель службы хранилища теперь поддерживает управляемые диски. Вы можете:
+  * Отправка локального виртуального жесткого диска на новый диск
+  * Загрузка диска
+  * Копирование и вставка дисков в группах ресурсов и регионах
+  * Удаление дисков
+  * Создание моментального снимка диска. Отправка, скачивание и копирование дисков в разных регионах осуществляется с помощью AzCopy V10.
+* Теперь Обозреватель службы хранилища можно установить с помощью хранилища прикрепления в Linux. При установке через хранилище привязкой устанавливаются все зависимости, включая .NET Core. Сейчас мы проверили, что Обозреватель службы хранилища хорошо работает на Ubuntu и CentOS. Если возникли проблемы при установке из хранилища прикрепления в другой дистрибутивов Linux, [откройте вопрос на сайте GitHub](https://github.com/microsoft/AzureStorageExplorer/issues/new?assignees=&labels=snaps&template=bug-report.md&title=). Дополнительные сведения об установке из хранилища привязкой см. в нашем разделе [руководства по началу работы](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer?tabs=linux). #68
+* Для присоединения к Azure Active Directory (Azure AD) были внесены два значительных изменения, которые призваны сделать эту функцию более полезной для ADLS 2-го поколения пользователей:
+  * Теперь выберите клиент, в котором находится ресурс, к которому выполняется присоединение. Это означает, что вам больше не нужно иметь доступ RBAC к подписке ресурса.
+  * Если вы подключаете контейнер больших двоичных объектов ADLS 2-го поколения, теперь можно присоединиться к определенному пути в контейнере.
+* При управлении списками управления доступом для ADLS 2-го поколения файлов и папок Обозреватель службы хранилища теперь отображает понятные имена для сущностей в списке ACL. #957
+* При добавлении через OID в ADLS 2-го поколения ACL Обозреватель службы хранилища теперь проверяет, принадлежит идентификатор объекта действительной сущности в клиенте. #1603
+* Сочетания клавиш для перехода между вкладками теперь используют более стандартные сочетания клавиш. #1018
+* Посередине щелкните вкладку, чтобы закрыть ее. #1348
+* Если AzCopy перенос содержит пропуски и не имеет ошибок, Обозреватель службы хранилища теперь отобразится значок предупреждения, чтобы выделить, что пропускается. #1490
+* Интегрированная AzCopy обновлена до версии 10.2.1. Кроме того, теперь можно просмотреть версию AzCopy, установленную в диалоговом окне About. #1343
 
 ### <a name="fixes"></a>Исправления
-* Many users have run into various "cannot read version of undefined" or "cannot read connection of undefined" errors when working with attached Storage Accounts. Although we are still continuing to investigate the root cause of this issue, in 1.10.0 we have improved the error handling around loading attached Storage Accounts. #1626, #985, and #1532
-* It was possible for the explorer tree (left-hand side) to get into a state where focus would jump to the top node repeatedly. Эта ошибка исправлена. #1596
-* When managing a blob's snapshots, screenreaders would not read the timestamp associated with the snapshot. Эта ошибка исправлена. #1202
-* Proxy setting on macOS were not being set in time for the authentication process to use them. Эта ошибка исправлена. #1567
-* If a Storage Account in a sovereign cloud was attached using name and key, AzCopy would not work. Эта ошибка исправлена. #1544
-* When attaching via a connection string, Storage Explorer will now remove trailing spaces. #1387
+* Во время работы с присоединенными учетными записями хранения многие пользователи работают с ошибками "не удается прочитать версию неопределенного" или "не удается прочитать подключение неопределенных". Хотя мы по-прежнему продолжаем исследовать основную причину этой проблемы, в 1.10.0 мы улучшили обработку ошибок, связанных с загрузкой подключенных учетных записей хранения. #1626, #985 и #1532
+* Дерево обозревателя (левая часть) могло бы перейти в состояние, в котором фокус переместится на верхний узел несколько раз. Эта ошибка исправлена. #1596
+* При управлении моментальными снимками большого двоичного объекта средств не считывает метку времени, связанную с моментальным снимком. Эта ошибка исправлена. #1202
+* Параметр прокси-сервера в macOS не был установлен вовремя, чтобы процесс проверки подлинности использовал их. Эта ошибка исправлена. #1567
+* Если учетная запись хранения в облаке независимых была подключена с помощью имени и ключа, AzCopy не будет работать. Эта ошибка исправлена. #1544
+* При подключении через строку подключения Обозреватель службы хранилища теперь удаляет конечные пробелы. #1387
 
 ### <a name="known-issues"></a>Известные проблемы
-* The Auto Refresh setting does not yet affect all operations in the Blob Explorer.
-* Managed Disk features are not supported in Azure Stack.
-* If a Disk upload or paste fails and a new Disk was created prior to the failure, Storage Explorer will not delete the Disk for you.
-* Depending on when you cancel a Disk upload or paste, it is possible to leave the new Disk in a corrupted state. If this happens, you either need to delete the new Disk, or manually call the Disk APIs to replace the contents of the Disk such that it is no longer corrupted.
-* Depending on when you cancel a Disk upload or paste, it is possible to leave the new Disk in a corrupted state. If this happens, you either need to delete the new Disk, or manually call the Disk APIs to replace the contents of the Disk such that it is no longer corrupted.
-* When performing a non-AzCopy Blob download, the MD5 for large files is not being verified. This is due to a bug in the Storage SDK. [#1212](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1212)
-* When using RBAC, Storage Explorer requires some management layer permissions in order to access your storage resources. See the [troubleshooting guide](https://docs.microsoft.com/azure/storage/common/storage-explorer-troubleshooting) for more info.
+* Параметр автоматического обновления пока не влияет на все операции в обозревателе больших двоичных объектов.
+* Функции управляемых дисков не поддерживаются в Azure Stack.
+* Если при отправке или вставке диска произошел сбой, а перед сбоем был создан новый диск, Обозреватель службы хранилища не удалит его.
+* В зависимости от того, когда отменяется отправка или Вставка диска, можно оставить новый диск в поврежденном состоянии. В этом случае необходимо либо удалить новый диск, либо вручную вызвать API диска, чтобы заменить содержимое диска таким, что оно больше не будет повреждено.
+* В зависимости от того, когда отменяется отправка или Вставка диска, можно оставить новый диск в поврежденном состоянии. В этом случае необходимо либо удалить новый диск, либо вручную вызвать API диска, чтобы заменить содержимое диска таким, что оно больше не будет повреждено.
+* При загрузке большого двоичного объекта, не являющегося AzCopy, MD5 для больших файлов не проверяется. Это происходит из-за ошибки в пакете SDK хранилища. [#1212](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1212)
+* При использовании RBAC Обозреватель службы хранилища требуются разрешения уровня управления для доступа к ресурсам хранилища. Дополнительные сведения см. в разделе [руководство по устранению неполадок](https://docs.microsoft.com/azure/storage/common/storage-explorer-troubleshooting) .
 * Отключение от ресурса, подключенного через URI SAS, например контейнера больших двоичных объектов, может привести к ошибке, которая предотвращает правильное отображение других подключенных объектов. Чтобы обойти эту проблему, просто обновите узел группы. Для получения дополнительных сведений ознакомьтесь с исправлением № 537.
 * Если вы используете VS для Mac и когда-либо создавали пользовательскую конфигурацию AAD, вы не сможете выполнить вход. Чтобы обойти эту проблему, удалите содержимое в папке ~/.IdentityService/AadConfigurations. Если это не разблокирует вашу учетную запись, оставьте комментарий об этой проблеме.
 * В Azurite еще не полностью реализованы все API-интерфейсы хранилища. Из-за этого могут возникнуть непредвиденные ошибки или поведение при использовании Azurite в хранилище разработки.
@@ -211,10 +211,10 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
 * Если выбран неправильный ПИН-код или сертификат смарт-карты, понадобится перезапустить обозреватель хранилищ, чтобы он не сохранял ошибочные данные.
 * При переименовании больших двоичных объектов (по отдельности или в переименованном контейнере больших двоичных объектов) не сохраняются моментальные снимки. Все прочие свойства и метаданные больших двоичных объектов, файлов и сущностей при переименовании сохраняются.
 * В Azure Stack не поддерживаются приведенные ниже возможности. Попытка использовать их при работе с ресурсами Azure Stack может привести к непредвиденным ошибкам.
-   * Общие папки
+   * файловые ресурсы;
    * Уровни доступа
    * обратимое удаление.
-   * ADLS Gen2
+   * ADLS 2-го поколения
    * Управляемые диски
 * Оболочка Electron, используемая обозревателем хранилищ, испытывает проблемы с аппаратным ускорением в некоторых GPU (графический процессор). Если обозреватель хранилищ отображает пустое главное окно, можно попробовать запустить обозреватель хранилищ из командной строки и отключить ускорение GPU, добавив параметр `--disable-gpu`.
 
@@ -222,59 +222,59 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
     ./StorageExplorer.exe --disable-gpu
     ```
 
-* Running Storage Explorer on Linux requires certain dependencies to be installed first. Check the Storage Explorer [troubleshooting guide](https://docs.microsoft.com/azure/storage/common/storage-explorer-troubleshooting?tabs=1804#linux-dependencies) for more information.
+* Для запуска Обозреватель службы хранилища в Linux необходимо сначала установить определенные зависимости. Дополнительные сведения см. в разделе [руководство по устранению неполадок](https://docs.microsoft.com/azure/storage/common/storage-explorer-troubleshooting?tabs=1804#linux-dependencies) обозреватель службы хранилища.
 
 
-## <a name="version-1100"></a>Version 1.10.0
+## <a name="version-1100"></a>Версия 1.10.0
 9/12/2019
 
-### <a name="new"></a>Новинка
+### <a name="new"></a>Создать
 
-* Storage Explorer now has a dedicated Settings UI. You can access it either from Edit → Settings, or by clicking on the Settings icon (the gear) in the left-hand vertical toolbar. This feature is the first step we're taking towards providing a variety of [user requested settings](https://github.com/microsoft/AzureStorageExplorer/labels/%3Abulb%3A%20setting%20candidate). Starting in this release the following settings are supported:
+* Обозреватель службы хранилища теперь имеет пользовательский интерфейс выделенных параметров. Доступ к нему можно получить либо в меню Правка > Параметры, либо щелкнув значок параметров (шестеренки) на левой вертикальной панели инструментов. Эта функция является первым шагом для предоставления разнообразных [параметров, запрошенных пользователем](https://github.com/microsoft/AzureStorageExplorer/labels/%3Abulb%3A%20setting%20candidate). Начиная с этого выпуска поддерживаются следующие параметры:
     * Тема
     * Прокси-сервер
-    * Logout on exit [#6](https://www.github.com/Microsoft/AzureStorageExplorer/issues/6)
-    * Enable device code flow sign-in
-    * Auto refresh [#1526](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1526)
-    * Enable AzCopy
-    * AzCopy SAS duration
+    * Выход при выходе [#6](https://www.github.com/Microsoft/AzureStorageExplorer/issues/6)
+    * Включение входа потока кода устройства
+    * Автоматическое обновление [#1526](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1526)
+    * Включить AzCopy
+    * Длительность AzCopy SAS
 
-    If there are other setttings you would like to see added, please [open an issue on GitHub describing the setting you want to see](https://github.com/microsoft/AzureStorageExplorer/issues/new?assignees=&labels=%3Abulb%3A%20setting%20candidate&template=feature_request.md&title=).
-* Storage Explorer now supports Managed Disks. Вы сможете:
-    * Upload an on-prem VHD to a new Disk
-    * Download a Disk
-    * Copy and paste disks across resource groups and regions
-    * Delete Disks
-    * Create a Snapshot of a Disk
+    Если есть другие настройки, которые вы хотели бы увидеть, [откройте вопрос на сайте GitHub с описанием параметра, который вы хотите увидеть](https://github.com/microsoft/AzureStorageExplorer/issues/new?assignees=&labels=%3Abulb%3A%20setting%20candidate&template=feature_request.md&title=).
+* Обозреватель службы хранилища теперь поддерживает управляемые диски. Вы можете:
+    * Отправка локального виртуального жесткого диска на новый диск
+    * Загрузка диска
+    * Копирование и вставка дисков в группах ресурсов и регионах
+    * Удаление дисков
+    * Создание моментального снимка диска
 
-    The uploading, downloading, and cross-region copying of disks are powered by AzCopy v10.
-* Storage Explorer can now be installed via the Snap store on Linux. When you install via the Snap store, all dependencies are installed for you, including .NET Core! Currently we have verified that Storage Explorer runs well on Ubuntu and CentOS. If you encounter issues installing from the Snap store on other Linux distros, please [open an issue on GitHub](https://github.com/microsoft/AzureStorageExplorer/issues/new?assignees=&labels=snaps&template=bug-report.md&title=). To learn more about installing from the Snap store, see our [getting started guide](https://aka.ms/storageexplorer/snapinformation). [#68](https://www.github.com/Microsoft/AzureStorageExplorer/issues/68)
-* Two major changes have been made to attach with Azure Active Directory (Azure AD) which are intended to make the feature more useful for ADLS Gen2 users: * You now select the tenant that the resource you are attaching is in. This means that you no longer need to have RBAC access to the resource's subscription.
-        * If you are attaching an ADLS Gen2 Blob Container, you can now attach to a specific path in the container.
-* When managing ACLs for ADLS Gen2 files and folders, Storage Explorer will now show the friendly names for entities in the ACL. [#957](https://www.github.com/Microsoft/AzureStorageExplorer/issues/957)
-* When adding via OID to an ADLS Gen2 ACL, Storage Explorer will now validate that the OID belongs to a valid entity in your tenant. [#1603](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1603)
-* The keyboard shortcuts for navigating between tabs now use more standard key combinations. [#1018](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1018)
-* Middle clicking on a tab will now close it. [#1348](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1348)
-* If an AzCopy transfer contains skips and no failures, Storage Explorer will now show a warning icon to highlight that skips occured. [#1490](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1490)
-* The integrated AzCopy has been updated to version 10.2.1. Additionally, you can now view the version of AzCopy installed in the About dialog. [#1343](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1343)
+    Передача, скачивание и копирование дисков в разных регионах на базе AzCopy V10.
+* Теперь Обозреватель службы хранилища можно установить с помощью хранилища прикрепления в Linux. При установке через хранилище привязкой устанавливаются все зависимости, включая .NET Core. Сейчас мы проверили, что Обозреватель службы хранилища хорошо работает на Ubuntu и CentOS. Если возникли проблемы при установке из хранилища прикрепления в другой дистрибутивов Linux, [откройте вопрос на сайте GitHub](https://github.com/microsoft/AzureStorageExplorer/issues/new?assignees=&labels=snaps&template=bug-report.md&title=). Дополнительные сведения об установке из хранилища привязкой см. в нашем разделе [руководства по началу работы](https://aka.ms/storageexplorer/snapinformation). [#68](https://www.github.com/Microsoft/AzureStorageExplorer/issues/68)
+* Для присоединения к Azure Active Directory (Azure AD) были внесены два значительных изменения, которые призваны сделать эту функцию более полезной для ADLS 2-го поколения пользователей: * Теперь выберите клиент, в котором находится ресурс, к которому вы подключаетесь. Это означает, что вам больше не нужно иметь доступ RBAC к подписке ресурса.
+        * Если вы подключаете контейнер больших двоичных объектов ADLS 2-го поколения, теперь можно присоединиться к определенному пути в контейнере.
+* При управлении списками управления доступом для ADLS 2-го поколения файлов и папок Обозреватель службы хранилища теперь отображает понятные имена для сущностей в списке ACL. [#957](https://www.github.com/Microsoft/AzureStorageExplorer/issues/957)
+* При добавлении через OID в ADLS 2-го поколения ACL Обозреватель службы хранилища теперь проверяет, принадлежит идентификатор объекта действительной сущности в клиенте. [#1603](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1603)
+* Сочетания клавиш для перехода между вкладками теперь используют более стандартные сочетания клавиш. [#1018](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1018)
+* Посередине щелкните вкладку, чтобы закрыть ее. [#1348](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1348)
+* Если AzCopy перенос содержит пропуски и не имеет ошибок, Обозреватель службы хранилища теперь отобразится значок предупреждения, чтобы выделить, что пропускается. [#1490](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1490)
+* Интегрированная AzCopy обновлена до версии 10.2.1. Кроме того, теперь можно просмотреть версию AzCopy, установленную в диалоговом окне About. [#1343](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1343)
 
 ### <a name="fixes"></a>Исправления
 
-* Many users have run into various "cannot read version of undefined" or "cannot read connection of undefined" errors when working with attached Storage Accounts. Although we are still continuing to investigate the root cause of this issue, in 1.10.0 we have improved the error handling around loading attached Storage Accounts. [#1626](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1626), [#985](https://www.github.com/Microsoft/AzureStorageExplorer/issues/985), and [#1532](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1532)
-* It was possible for the explorer tree (left-hand side) to get into a state where focus would jump to the top node repeatedly. Эта ошибка исправлена. [#1596](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1596)
-* When managing a blob's snapshots, screenreaders would not read the timestamp associated with the snapshot. Эта ошибка исправлена. [#1202](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1202)
-* Proxy setting on macOS were not being set in time for the authentication process to use them. Эта ошибка исправлена. [#1567](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1567)
-* If a Storage Account in a sovereign cloud was attached using name and key, AzCopy would not work. Эта ошибка исправлена. [#1544](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1544)
-* When attaching via a connection string, Storage Explorer will now remove trailing spaces. [#1387](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1387)
+* Во время работы с присоединенными учетными записями хранения многие пользователи работают с ошибками "не удается прочитать версию неопределенного" или "не удается прочитать подключение неопределенных". Хотя мы по-прежнему продолжаем исследовать основную причину этой проблемы, в 1.10.0 мы улучшили обработку ошибок, связанных с загрузкой подключенных учетных записей хранения. [#1626](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1626), [#985](https://www.github.com/Microsoft/AzureStorageExplorer/issues/985)и [#1532](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1532)
+* Дерево обозревателя (левая часть) могло бы перейти в состояние, в котором фокус переместится на верхний узел несколько раз. Эта ошибка исправлена. [#1596](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1596)
+* При управлении моментальными снимками большого двоичного объекта средств не считывает метку времени, связанную с моментальным снимком. Эта ошибка исправлена. [#1202](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1202)
+* Параметр прокси-сервера в macOS не был установлен вовремя, чтобы процесс проверки подлинности использовал их. Эта ошибка исправлена. [#1567](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1567)
+* Если учетная запись хранения в облаке независимых была подключена с помощью имени и ключа, AzCopy не будет работать. Эта ошибка исправлена. [#1544](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1544)
+* При подключении через строку подключения Обозреватель службы хранилища теперь удаляет конечные пробелы. [#1387](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1387)
 
 ### <a name="known-issues"></a>Известные проблемы
 
-* The Auto Refresh setting does not yet affect all operations in the Blob Explorer.
-* Managed Disk features are not supported in Azure Stack.
-* If a Disk upload or paste fails and a new Disk was created prior to the failure, Storage Explorer will not delete the Disk for you.
-* Depending on when you cancel a Disk upload or paste, it is possible to leave the new Disk in a corrupted state. If this happens, you either need to delete the new Disk, or manually call the Disk APIs to replace the contents of the Disk such that it is no longer corrupted.
-* When performing a non-AzCopy Blob download, the MD5 for large files is not being verified. This is due to a bug in the Storage SDK. [#1212](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1212)
-* When using RBAC, Storage Explorer requires some management layer permissions in order to access your storage resources. See the [troubleshooting guide](https://docs.microsoft.com/azure/storage/common/storage-explorer-troubleshooting) for more info.
+* Параметр автоматического обновления пока не влияет на все операции в обозревателе больших двоичных объектов.
+* Функции управляемых дисков не поддерживаются в Azure Stack.
+* Если при отправке или вставке диска произошел сбой, а перед сбоем был создан новый диск, Обозреватель службы хранилища не удалит его.
+* В зависимости от того, когда отменяется отправка или Вставка диска, можно оставить новый диск в поврежденном состоянии. В этом случае необходимо либо удалить новый диск, либо вручную вызвать API диска, чтобы заменить содержимое диска таким, что оно больше не будет повреждено.
+* При загрузке большого двоичного объекта, не являющегося AzCopy, MD5 для больших файлов не проверяется. Это происходит из-за ошибки в пакете SDK хранилища. [#1212](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1212)
+* При использовании RBAC Обозреватель службы хранилища требуются разрешения уровня управления для доступа к ресурсам хранилища. Дополнительные сведения см. в разделе [руководство по устранению неполадок](https://docs.microsoft.com/azure/storage/common/storage-explorer-troubleshooting) .
 * Отключение от ресурса, подключенного через URI SAS, например контейнера больших двоичных объектов, может привести к ошибке, которая предотвращает правильное отображение других подключенных объектов. Чтобы обойти эту проблему, просто обновите узел группы. Для получения дополнительных сведений ознакомьтесь с исправлением № 537.
 * Если вы используете VS для Mac и когда-либо создавали пользовательскую конфигурацию AAD, вы не сможете выполнить вход. Чтобы обойти эту проблему, удалите содержимое в папке ~/.IdentityService/AadConfigurations. Если это не разблокирует вашу учетную запись, оставьте комментарий об этой проблеме.
 * В Azurite еще не полностью реализованы все API-интерфейсы хранилища. Из-за этого могут возникнуть непредвиденные ошибки или поведение при использовании Azurite в хранилище разработки.
@@ -285,10 +285,10 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
 * Если выбран неправильный ПИН-код или сертификат смарт-карты, понадобится перезапустить обозреватель хранилищ, чтобы он не сохранял ошибочные данные.
 * При переименовании больших двоичных объектов (по отдельности или в переименованном контейнере больших двоичных объектов) не сохраняются моментальные снимки. Все прочие свойства и метаданные больших двоичных объектов, файлов и сущностей при переименовании сохраняются.
 * В Azure Stack не поддерживаются приведенные ниже возможности. Попытка использовать их при работе с ресурсами Azure Stack может привести к непредвиденным ошибкам.
-   * Общие папки
+   * файловые ресурсы;
    * Уровни доступа
    * обратимое удаление.
-   * ADLS Gen2
+   * ADLS 2-го поколения
    * Управляемые диски
 * Оболочка Electron, используемая обозревателем хранилищ, испытывает проблемы с аппаратным ускорением в некоторых GPU (графический процессор). Если обозреватель хранилищ отображает пустое главное окно, можно попробовать запустить обозреватель хранилищ из командной строки и отключить ускорение GPU, добавив параметр `--disable-gpu`.
 
@@ -296,44 +296,44 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
     ./StorageExplorer.exe --disable-gpu
     ```
 
-* Running Storage Explorer on Linux requires certain dependencies to be installed first. Check the Storage Explorer [troubleshooting guide](https://docs.microsoft.com/azure/storage/common/storage-explorer-troubleshooting?tabs=1804#linux-dependencies) for more information.
+* Для запуска Обозреватель службы хранилища в Linux необходимо сначала установить определенные зависимости. Дополнительные сведения см. в разделе [руководство по устранению неполадок](https://docs.microsoft.com/azure/storage/common/storage-explorer-troubleshooting?tabs=1804#linux-dependencies) обозреватель службы хранилища.
 
-## <a name="version-190"></a>Version 1.9.0
+## <a name="version-190"></a>Версия 1.9.0
 7/1/2019
 
-### <a name="download-azure-storage-explorer-190"></a>Download Azure Storage Explorer 1.9.0
-- [Azure Storage Explorer 1.9.0 for Windows](https://go.microsoft.com/fwlink/?LinkId=708343)
-- [Azure Storage Explorer 1.9.0 for Mac](https://go.microsoft.com/fwlink/?LinkId=708342)
-- [Azure Storage Explorer 1.9.0 for Linux](https://go.microsoft.com/fwlink/?LinkId=722418)
+### <a name="download-azure-storage-explorer-190"></a>Скачать Обозреватель службы хранилища Azure 1.9.0
+- [Обозреватель службы хранилища Azure 1.9.0 для Windows](https://go.microsoft.com/fwlink/?LinkId=708343)
+- [Обозреватель службы хранилища Azure 1.9.0 для Mac](https://go.microsoft.com/fwlink/?LinkId=708342)
+- [Обозреватель службы хранилища Azure 1.9.0 для Linux](https://go.microsoft.com/fwlink/?LinkId=722418)
 
-### <a name="new"></a>Новинка
+### <a name="new"></a>Создать
 
-* You can now attach Blob containers via Azure AD (RBAC or ACL permissions). This feature is intended to help users who have access to containers but not the Storage Accounts that the containers are in. See our Getting Started Guide for more information on this feature.
-* Acquire and break lease now work with RBAC. [#1354](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1354)
-* Managing access policies and setting public access level now work with RBAC. [#1355](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1355)
-* Deleting blob folders now work with RBAC. [#1450](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1450)
-* Changing blob access tier now work with RBAC. [#1446](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1446)
-* You can now quickly reset Quick Access via "Help" → "Reset". [#1327](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1327)
+* Теперь вы можете подключать контейнеры больших двоичных объектов через Azure AD (разрешения RBAC или ACL). Эта функция призвана помочь пользователям, имеющим доступ к контейнерам, но не к учетным записям хранения, в которых находятся контейнеры. Дополнительные сведения об этой функции см. в нашем начало работы Guide.
+* Получение и прерывание аренды теперь работает с RBAC. [#1354](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1354)
+* Управление политиками доступа и настройка общего уровня доступа теперь работают с RBAC. [#1355](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1355)
+* Удаление папок больших двоичных объектов теперь работает с RBAC. [#1450](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1450)
+* Изменение уровня доступа к BLOB-объекту теперь работает с RBAC. [#1446](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1446)
+* Теперь можно быстро сбросить быстрый доступ, выбрав "Справка" → "Сброс". [#1327](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1327)
 
-### <a name="preview-features"></a>Предварительные версии компонентов
+### <a name="preview-features"></a>Функции предварительной версии
 
-* Device code flow sign in is now available to preview. To enable it, go to "Preview" → "Use Device Code Flow Sign-in". We encourage any users who have had issues with blank sign-in windows to try this feature, as it may prove to be a more reliable form of sign-in.
-* Storage Explorer integrated with AzCopy is currently available to preview. To enable it, go to "Preview" → "Use AzCopy for Improved Blob Upload and Download". Blob transfers completed with AzCopy should be faster and more performant.
+* Теперь для предварительного просмотра доступен вход потока кода устройства. Чтобы включить его, перейдите в раздел "Предварительная версия" → "использовать вход потока кода устройства". Мы советуем пользователям, которые столкнулись с проблемами с пустыми окнами входа, попробовать эту функцию, так как она может оказаться более надежной формой входа в систему.
+* Обозреватель службы хранилища, интегрированная с AzCopy, в настоящее время доступна для предварительного просмотра. Чтобы включить его, перейдите к разделу "Предварительная версия" → "использование AzCopy для улучшения отправки и загрузки больших двоичных объектов". Передача больших двоичных объектов, выполненных с помощью AzCopy, должна быть более быстрой и более производительной.
 
 ### <a name="fixes"></a>Исправления
 
-* Fixed being unable to load more than 50 subscriptions for one account. [#1416](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1416)
-* Fixed the "Sign in" button not working on the infobar that appears when a direct link fails. [#1358](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1358)
-* Fixed not being to upload .app files on macOS. [#1119](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1119)
-* Fixed "Retry All" not working for a failed blob rename. [#992](https://www.github.com/Microsoft/AzureStorageExplorer/issues/992)
-* Fixed "Cancel" not working while opening a blob. [#1464](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1464)
-* Fixed multiple spelling and tooltip issues throughout the product. Many thanks to all who reported these issues! [#1303](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1303), [#1328](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1328), [#1329](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1329), [#1331](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1331), [#1336](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1336), [#1352](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1352), [#1368](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1368), [#1395](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1395)
+* Исправлена ошибка загрузки более 50 подписок для одной учетной записи. [#1416](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1416)
+* Исправлена кнопка "войти" не работает на информационной панели, отображаемой при сбое прямой связи. [#1358](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1358)
+* Исправлена не загрузка. файлы приложения на macOS. [#1119](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1119)
+* Исправлена ошибка "Повтор всех" не работает для переименования BLOB-объекта со сбоем. [#992](https://www.github.com/Microsoft/AzureStorageExplorer/issues/992)
+* Исправлена ошибка "Отмена" при открытии большого двоичного объекта. [#1464](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1464)
+* Исправлено несколько проблем правописания и всплывающих подсказок по всему продукту. Многие Спасибо всем, кто сообщил об этих проблемах! [#1303](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1303), [#1328](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1328), [#1329](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1329), [#1331](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1331), [#1336](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1336), [#1352](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1352), [#1368](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1368), [#1395](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1395)
 
 ### <a name="known-issues"></a>Известные проблемы
 
-* When performing a non-AzCopy Blob download, the MD5 for large files is not being verified. This is due to a bug in the Storage SDK. [#1212](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1212)
-* When using RBAC, Storage Explorer requires some management layer permissions in order to access your storage resources. See the [troubleshooting guide](https://docs.microsoft.com/azure/storage/common/storage-explorer-troubleshooting) for more info.
-* Attempting to access ADLS Gen2 Blobs when behind a proxy may fail.
+* При загрузке большого двоичного объекта, не являющегося AzCopy, MD5 для больших файлов не проверяется. Это происходит из-за ошибки в пакете SDK хранилища. [#1212](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1212)
+* При использовании RBAC Обозреватель службы хранилища требуются разрешения уровня управления для доступа к ресурсам хранилища. Дополнительные сведения см. в разделе [руководство по устранению неполадок](https://docs.microsoft.com/azure/storage/common/storage-explorer-troubleshooting) .
+* Попытка получить доступ к ADLS 2-го поколения больших двоичных объектов, если она находится за прокси-сервером.
 * Отключение от ресурса, подключенного через URI SAS, например контейнера больших двоичных объектов, может привести к ошибке, которая предотвращает правильное отображение других подключенных объектов. Чтобы обойти эту проблему, просто обновите узел группы. Для получения дополнительных сведений ознакомьтесь с исправлением № 537.
 * Если вы используете VS для Mac и когда-либо создавали пользовательскую конфигурацию AAD, вы не сможете выполнить вход. Чтобы обойти эту проблему, удалите содержимое в папке ~/.IdentityService/AadConfigurations. Если это не разблокирует вашу учетную запись, оставьте комментарий об этой проблеме.
 * В Azurite еще не полностью реализованы все API-интерфейсы хранилища. Из-за этого могут возникнуть непредвиденные ошибки или поведение при использовании Azurite в хранилище разработки.
@@ -344,53 +344,53 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
 * Если выбран неправильный ПИН-код или сертификат смарт-карты, понадобится перезапустить обозреватель хранилищ, чтобы он не сохранял ошибочные данные.
 * При переименовании больших двоичных объектов (по отдельности или в переименованном контейнере больших двоичных объектов) не сохраняются моментальные снимки. Все прочие свойства и метаданные больших двоичных объектов, файлов и сущностей при переименовании сохраняются.
 * В Azure Stack не поддерживаются приведенные ниже возможности. Попытка использовать их при работе с ресурсами Azure Stack может привести к непредвиденным ошибкам.
-   * Общие папки
+   * файловые ресурсы;
    * Уровни доступа
    * обратимое удаление.
-   * ADLS Gen2
+   * ADLS 2-го поколения
 * Оболочка Electron, используемая обозревателем хранилищ, испытывает проблемы с аппаратным ускорением в некоторых GPU (графический процессор). Если обозреватель хранилищ отображает пустое главное окно, можно попробовать запустить обозреватель хранилищ из командной строки и отключить ускорение GPU, добавив параметр `--disable-gpu`.
 
     ```
     ./StorageExplorer.exe --disable-gpu
     ```
 
-* Running Storage Explorer on Linux requires certain dependencies to be installed first. Check the Storage Explorer [troubleshooting guide](https://docs.microsoft.com/azure/storage/common/storage-explorer-troubleshooting?tabs=1804#linux-dependencies) for more information.
+* Для запуска Обозреватель службы хранилища в Linux необходимо сначала установить определенные зависимости. Дополнительные сведения см. в разделе [руководство по устранению неполадок](https://docs.microsoft.com/azure/storage/common/storage-explorer-troubleshooting?tabs=1804#linux-dependencies) обозреватель службы хранилища.
 
-## <a name="version-181"></a>Version 1.8.1
+## <a name="version-181"></a>Версия 1.8.1
 5/13/2019
 
 ### <a name="hotfixes"></a>Исправления
-* In some cases, clicking "Load more" at the resource level would not return the next page of resources. Эта ошибка исправлена. [#1359](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1359)
-* On Windows, AzCopy downloads would fail if a single file or folder was being downloaded and the name of the file or folder had a character which was invalid for a Windows path. Эта ошибка исправлена. [#1350](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1350)
-* In extremely rare cases, while performing a rename of a File Share or a rename in a File Share, if the copies for the rename failed, or if Storage Explore was unable to confirm the success of the copies with Azure, there was the potential for Storage Explorer to delete the original files before the copy had finished. Эта ошибка исправлена.
+* В некоторых случаях при нажатии кнопки "загрузить больше" на уровне ресурса не будет возвращена следующая страница ресурсов. Эта ошибка исправлена. [#1359](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1359)
+* В Windows загрузка AzCopy может завершиться ошибкой, если загружается один файл или папка, а имя файла или папки содержит символ, недопустимый для пути Windows. Эта ошибка исправлена. [#1350](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1350)
+* В редких случаях при выполнении переименования общей папки или переименования в общей папке, если копии для переименования завершились ошибкой, или если не удалось проверить успешность выполнения копий в Azure, можно Обозреватель службы хранилища удалить исходные файлы до завершения копирования. Эта ошибка исправлена.
 
-### <a name="new"></a>Новинка
+### <a name="new"></a>Создать
 
-* The integrated AzCopy version has been updated to version 10.1.0.
-* Ctrl/Cmd+R can now be used to refresh the currently focused editor. [#1097](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1097)
-* The Azure Stack Storage API version has been changed to 2017-04-17.
-* The Manage Access Dialog for ADLS Gen2 will now keep the Mask in sync in a way similar to other POSIX permissions tools. The UI will also warn you if a change is made that causes the permissions of a user or group to exceed the bounds of the Mask. [#1253](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1253)
-* For AzCopy uploads, the flag to calculate and set the MD5 hash is now enabled. [#1223](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1223)
+* Интегрированная версия AzCopy обновлена до версии 10.1.0.
+* Сочетание клавиш CTRL/CMD + R теперь можно использовать для обновления текущего редактора. [#1097](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1097)
+* Версия API хранилища Azure Stack была изменена на 2017-04-17.
+* Диалоговое окно Управление доступом для ADLS 2-го поколения сохранит маску в синхронизации так же, как и другие средства разрешений POSIX. Пользовательский интерфейс также выдает предупреждение при внесении изменений, что приводит к превышению разрешений у пользователя или группы в отношении границ маски. [#1253](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1253)
+* Для отправки AzCopy флажок вычислить и установить хэш MD5 теперь включен. [#1223](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1223)
 
 
-### <a name="preview-features"></a>Предварительные версии компонентов
+### <a name="preview-features"></a>Функции предварительной версии
 
-* Device code flow sign in is now available to preview. To enable it, go to "Preview" → "Use Device Code Flow Sign-in". We encourage any users who have had issues with blank sign-in windows to try this feature, as it may prove to be a more reliable form of sign-in.
-* Storage Explorer integrated with AzCopy is currently available to preview. To enable it, go to "Preview" → "Use AzCopy for Improved Blob Upload and Download". Blob transfers completed with AzCopy should be faster and more performant.
+* Теперь для предварительного просмотра доступен вход потока кода устройства. Чтобы включить его, перейдите в раздел "Предварительная версия" → "использовать вход потока кода устройства". Мы советуем пользователям, которые столкнулись с проблемами с пустыми окнами входа, попробовать эту функцию, так как она может оказаться более надежной формой входа в систему.
+* Обозреватель службы хранилища, интегрированная с AzCopy, в настоящее время доступна для предварительного просмотра. Чтобы включить его, перейдите к разделу "Предварительная версия" → "использование AzCopy для улучшения отправки и загрузки больших двоичных объектов". Передача больших двоичных объектов, выполненных с помощью AzCopy, должна быть более быстрой и более производительной.
 
 ### <a name="fixes"></a>Исправления
 
-* The Access Policies dialog will no longer set an expiry date on Storage Access Policies that do not have an expiry. [#764](https://www.github.com/Microsoft/AzureStorageExplorer/issues/764)
-* Some changes have been made to the Generate SAS dialog to make sure Stored Access Policies are used correctly when generating a SAS. [#1269](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1269)
-* When attempting to upload a non-512 byte aligned file to a page Blob, Storage Explorer will now expose a more relevant error. [#1050](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1050)
-* Copying a Blob container which utilized a display name would fail. Now, the actual name of the Blob container is used. [#1166](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1166)
-* Attempting to perform certain actions on an ADLS Gen2 folder which had unicode characters in its name would fail. All actions should now work. [#980](https://www.github.com/Microsoft/AzureStorageExplorer/issues/980)
+* В диалоговом окне политики доступа больше не будет задана дата окончания срока действия для политик доступа к хранилищу, срок действия которых не истек. [#764](https://www.github.com/Microsoft/AzureStorageExplorer/issues/764)
+* В диалоговом окне Создание SAS были внесены некоторые изменения, чтобы обеспечить правильную работу хранимых политик доступа при создании SAS. [#1269](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1269)
+* При попытке передать файл с не512ым байтом в страничный BLOB-объект Обозреватель службы хранилища теперь будет предоставлять более соответствующую ошибку. [#1050](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1050)
+* Копирование контейнера больших двоичных объектов, в котором используется отображаемое имя, приведет к сбою. Теперь используется фактическое имя контейнера больших двоичных объектов. [#1166](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1166)
+* Попытка выполнить определенные действия в папке ADLS 2-го поколения, в имени которой есть символы Юникода, приведет к сбою. Теперь все действия должны работать. [#980](https://www.github.com/Microsoft/AzureStorageExplorer/issues/980)
 
 ### <a name="known-issues"></a>Известные проблемы
 
-* When performing a non-AzCopy Blob download, the MD5 for large files is not being verified. This is due to a bug in the Storage SDK. [#1212](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1212)
-* When using RBAC, Storage Explorer requires some management layer permissions in order to access your storage resources. See the [troubleshooting guide](https://docs.microsoft.com/azure/storage/common/storage-explorer-troubleshooting) for more info.
-* Attempting to access ADLS Gen2 Blobs when behind a proxy may fail.
+* При загрузке большого двоичного объекта, не являющегося AzCopy, MD5 для больших файлов не проверяется. Это происходит из-за ошибки в пакете SDK хранилища. [#1212](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1212)
+* При использовании RBAC Обозреватель службы хранилища требуются разрешения уровня управления для доступа к ресурсам хранилища. Дополнительные сведения см. в разделе [руководство по устранению неполадок](https://docs.microsoft.com/azure/storage/common/storage-explorer-troubleshooting) .
+* Попытка получить доступ к ADLS 2-го поколения больших двоичных объектов, если она находится за прокси-сервером.
 * Отключение от ресурса, подключенного через URI SAS, например контейнера больших двоичных объектов, может привести к ошибке, которая предотвращает правильное отображение других подключенных объектов. Чтобы обойти эту проблему, просто обновите узел группы. Для получения дополнительных сведений ознакомьтесь с исправлением № 537.
 * Если вы используете VS для Mac и когда-либо создавали пользовательскую конфигурацию AAD, вы не сможете выполнить вход. Чтобы обойти эту проблему, удалите содержимое в папке ~/.IdentityService/AadConfigurations. Если это не разблокирует вашу учетную запись, оставьте комментарий об этой проблеме.
 * В Azurite еще не полностью реализованы все API-интерфейсы хранилища. Из-за этого могут возникнуть непредвиденные ошибки или поведение при использовании Azurite в хранилище разработки.
@@ -401,48 +401,48 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
 * Если выбран неправильный ПИН-код или сертификат смарт-карты, понадобится перезапустить обозреватель хранилищ, чтобы он не сохранял ошибочные данные.
 * При переименовании больших двоичных объектов (по отдельности или в переименованном контейнере больших двоичных объектов) не сохраняются моментальные снимки. Все прочие свойства и метаданные больших двоичных объектов, файлов и сущностей при переименовании сохраняются.
 * В Azure Stack не поддерживаются приведенные ниже возможности. Попытка использовать их при работе с ресурсами Azure Stack может привести к непредвиденным ошибкам.
-   * Общие папки
+   * файловые ресурсы;
    * Уровни доступа
    * обратимое удаление.
-   * ADLS Gen2
+   * ADLS 2-го поколения
 * Оболочка Electron, используемая обозревателем хранилищ, испытывает проблемы с аппаратным ускорением в некоторых GPU (графический процессор). Если обозреватель хранилищ отображает пустое главное окно, можно попробовать запустить обозреватель хранилищ из командной строки и отключить ускорение GPU, добавив параметр `--disable-gpu`.
 
     ```
     ./StorageExplorer.exe --disable-gpu
     ```
 
-* Running Storage Explorer on Linux requires certain dependencies to be installed first. Check the Storage Explorer [troubleshooting guide](https://docs.microsoft.com/azure/storage/common/storage-explorer-troubleshooting?tabs=1804#linux-dependencies) for more information.
+* Для запуска Обозреватель службы хранилища в Linux необходимо сначала установить определенные зависимости. Дополнительные сведения см. в разделе [руководство по устранению неполадок](https://docs.microsoft.com/azure/storage/common/storage-explorer-troubleshooting?tabs=1804#linux-dependencies) обозреватель службы хранилища.
 
-## <a name="version-180"></a>Version 1.8.0
+## <a name="version-180"></a>Версия 1.8.0
 5/1/2019
 
-### <a name="new"></a>Новинка
+### <a name="new"></a>Создать
 
-* The integrated AzCopy version has been updated to version 10.1.0.
-* Ctrl/Cmd+R can now be used to refresh the currently focused editor. [#1097](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1097)
-* The Azure Stack Storage API version has been changed to 2017-04-17.
-* The Manage Access Dialog for ADLS Gen2 will now keep the Mask in sync in a way similar to other POSIX permissions tools. The UI will also warn you if a change is made that causes the permissions of a user or group to exceed the bounds of the Mask. [#1253](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1253)
-* For AzCopy uploads, the flag to calculate and set the MD5 hash is now enabled. [#1223](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1223)
+* Интегрированная версия AzCopy обновлена до версии 10.1.0.
+* Сочетание клавиш CTRL/CMD + R теперь можно использовать для обновления текущего редактора. [#1097](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1097)
+* Версия API хранилища Azure Stack была изменена на 2017-04-17.
+* Диалоговое окно Управление доступом для ADLS 2-го поколения сохранит маску в синхронизации так же, как и другие средства разрешений POSIX. Пользовательский интерфейс также выдает предупреждение при внесении изменений, что приводит к превышению разрешений у пользователя или группы в отношении границ маски. [#1253](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1253)
+* Для отправки AzCopy флажок вычислить и установить хэш MD5 теперь включен. [#1223](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1223)
 
 
-### <a name="preview-features"></a>Предварительные версии компонентов
+### <a name="preview-features"></a>Функции предварительной версии
 
-* Device code flow sign in is now available to preview. To enable it, go to "Preview" → "Use Device Code Flow Sign-in". We encourage any users who have had issues with blank sign-in windows to try this feature, as it may prove to be a more reliable form of sign-in.
-* Storage Explorer integrated with AzCopy is currently available to preview. To enable it, go to "Preview" → "Use AzCopy for Improved Blob Upload and Download". Blob transfers completed with AzCopy should be faster and more performant.
+* Теперь для предварительного просмотра доступен вход потока кода устройства. Чтобы включить его, перейдите в раздел "Предварительная версия" → "использовать вход потока кода устройства". Мы советуем пользователям, которые столкнулись с проблемами с пустыми окнами входа, попробовать эту функцию, так как она может оказаться более надежной формой входа в систему.
+* Обозреватель службы хранилища, интегрированная с AzCopy, в настоящее время доступна для предварительного просмотра. Чтобы включить его, перейдите к разделу "Предварительная версия" → "использование AzCopy для улучшения отправки и загрузки больших двоичных объектов". Передача больших двоичных объектов, выполненных с помощью AzCopy, должна быть более быстрой и более производительной.
 
 ### <a name="fixes"></a>Исправления
 
-* The Access Policies dialog will no longer set an expiry date on Storage Access Policies that do not have an expiry. [#764](https://www.github.com/Microsoft/AzureStorageExplorer/issues/764)
-* Some changes have been made to the Generate SAS dialog to make sure Stored Access Policies are used correctly when generating a SAS. [#1269](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1269)
-* When attempting to upload a non-512 byte aligned file to a page Blob, Storage Explorer will now expose a more relevant error. [#1050](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1050)
-* Copying a Blob container which utilized a display name would fail. Now, the actual name of the Blob container is used. [#1166](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1166)
-* Attempting to perform certain actions on an ADLS Gen2 folder which had unicode characters in its name would fail. All actions should now work. [#980](https://www.github.com/Microsoft/AzureStorageExplorer/issues/980)
+* В диалоговом окне политики доступа больше не будет задана дата окончания срока действия для политик доступа к хранилищу, срок действия которых не истек. [#764](https://www.github.com/Microsoft/AzureStorageExplorer/issues/764)
+* В диалоговом окне Создание SAS были внесены некоторые изменения, чтобы обеспечить правильную работу хранимых политик доступа при создании SAS. [#1269](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1269)
+* При попытке передать файл с не512ым байтом в страничный BLOB-объект Обозреватель службы хранилища теперь будет предоставлять более соответствующую ошибку. [#1050](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1050)
+* Копирование контейнера больших двоичных объектов, в котором используется отображаемое имя, приведет к сбою. Теперь используется фактическое имя контейнера больших двоичных объектов. [#1166](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1166)
+* Попытка выполнить определенные действия в папке ADLS 2-го поколения, в имени которой есть символы Юникода, приведет к сбою. Теперь все действия должны работать. [#980](https://www.github.com/Microsoft/AzureStorageExplorer/issues/980)
 
 ### <a name="known-issues"></a>Известные проблемы
 
-* When performing a non-AzCopy Blob download, the MD5 for large files is not being verified. This is due to a bug in the Storage SDK. [#1212](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1212)
-* When using RBAC, Storage Explorer requires some management layer permissions in order to access your storage resources. See the [troubleshooting guide](https://docs.microsoft.com/azure/storage/common/storage-explorer-troubleshooting) for more info.
-* Attempting to access ADLS Gen2 Blobs when behind a proxy may fail.
+* При загрузке большого двоичного объекта, не являющегося AzCopy, MD5 для больших файлов не проверяется. Это происходит из-за ошибки в пакете SDK хранилища. [#1212](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1212)
+* При использовании RBAC Обозреватель службы хранилища требуются разрешения уровня управления для доступа к ресурсам хранилища. Дополнительные сведения см. в разделе [руководство по устранению неполадок](https://docs.microsoft.com/azure/storage/common/storage-explorer-troubleshooting) .
+* Попытка получить доступ к ADLS 2-го поколения больших двоичных объектов, если она находится за прокси-сервером.
 * Отключение от ресурса, подключенного через URI SAS, например контейнера больших двоичных объектов, может привести к ошибке, которая предотвращает правильное отображение других подключенных объектов. Чтобы обойти эту проблему, просто обновите узел группы. Для получения дополнительных сведений ознакомьтесь с исправлением № 537.
 * Если вы используете VS для Mac и когда-либо создавали пользовательскую конфигурацию AAD, вы не сможете выполнить вход. Чтобы обойти эту проблему, удалите содержимое в папке ~/.IdentityService/AadConfigurations. Если это не разблокирует вашу учетную запись, оставьте комментарий об этой проблеме.
 * В Azurite еще не полностью реализованы все API-интерфейсы хранилища. Из-за этого могут возникнуть непредвиденные ошибки или поведение при использовании Azurite в хранилище разработки.
@@ -453,52 +453,52 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
 * Если выбран неправильный ПИН-код или сертификат смарт-карты, понадобится перезапустить обозреватель хранилищ, чтобы он не сохранял ошибочные данные.
 * При переименовании больших двоичных объектов (по отдельности или в переименованном контейнере больших двоичных объектов) не сохраняются моментальные снимки. Все прочие свойства и метаданные больших двоичных объектов, файлов и сущностей при переименовании сохраняются.
 * В Azure Stack не поддерживаются приведенные ниже возможности. Попытка использовать их при работе с ресурсами Azure Stack может привести к непредвиденным ошибкам.
-   * Общие папки
+   * файловые ресурсы;
    * Уровни доступа
    * обратимое удаление.
-   * ADLS Gen2
+   * ADLS 2-го поколения
 * Оболочка Electron, используемая обозревателем хранилищ, испытывает проблемы с аппаратным ускорением в некоторых GPU (графический процессор). Если обозреватель хранилищ отображает пустое главное окно, можно попробовать запустить обозреватель хранилищ из командной строки и отключить ускорение GPU, добавив параметр `--disable-gpu`.
 
     ```
     ./StorageExplorer.exe --disable-gpu
     ```
 
-* Running Storage Explorer on Linux requires certain dependencies to be installed first. Check the Storage Explorer [troubleshooting guide](https://docs.microsoft.com/azure/storage/common/storage-explorer-troubleshooting?tabs=1804#linux-dependencies) for more information.
+* Для запуска Обозреватель службы хранилища в Linux необходимо сначала установить определенные зависимости. Дополнительные сведения см. в разделе [руководство по устранению неполадок](https://docs.microsoft.com/azure/storage/common/storage-explorer-troubleshooting?tabs=1804#linux-dependencies) обозреватель службы хранилища.
 
 ## <a name="version-170"></a>Версия 1.7.0
 3/5/2019
 
-### <a name="download-azure-storage-explorer-170"></a>Download Azure Storage Explorer 1.7.0
-- [Azure Storage Explorer 1.7.0 for Windows](https://go.microsoft.com/fwlink/?LinkId=708343)
-- [Azure Storage Explorer 1.7.0 for Mac](https://go.microsoft.com/fwlink/?LinkId=708342)
-- [Azure Storage Explorer 1.7.0 for Linux](https://go.microsoft.com/fwlink/?LinkId=722418)
+### <a name="download-azure-storage-explorer-170"></a>Скачать Обозреватель службы хранилища Azure 1.7.0
+- [Обозреватель службы хранилища Azure 1.7.0 для Windows](https://go.microsoft.com/fwlink/?LinkId=708343)
+- [Обозреватель службы хранилища Azure 1.7.0 для Mac](https://go.microsoft.com/fwlink/?LinkId=708342)
+- [Обозреватель службы хранилища Azure 1.7.0 для Linux](https://go.microsoft.com/fwlink/?LinkId=722418)
 
-### <a name="new"></a>Новинка
+### <a name="new"></a>Создать
 
-* You can now change the owner and owning group when managing access for an ADLS Gen2 container, file, or folder.
-* On Windows, updating Storage Explorer from within the product is now an incremental install. This should result in a faster update experience. If you prefer a clean install, then you can download the [installer](https://azure.microsoft.com/features/storage-explorer/) yourself and then install manually. #1089
+* Теперь вы можете изменить владельца и группу-владелец при управлении доступом для ADLS 2-го поколения контейнера, файла или папки.
+* В Windows обновление Обозреватель службы хранилища в продукте теперь является добавочной установкой. Это приведет к ускорению процесса обновления. Если вы предпочитаете чистую установку, вы можете скачать [установщик](https://azure.microsoft.com/features/storage-explorer/) самостоятельно, а затем установить его вручную. #1089
 
-### <a name="preview-features"></a>Предварительные версии компонентов
+### <a name="preview-features"></a>Функции предварительной версии
 
-* Device code flow sign in is now available to preview. To enable it, go to "Preview" → "Use Device Code Flow Sign-in". We encourage any users who have had issues with blank sign-in windows to try this feature, as it may prove to be a more reliable form of sign-in. #938
-* Storage Explorer integrated with AzCopy is currently available to preview. To enable it, go to "Preview" → "Use AzCopy for Improved Blob Upload and Download". Blob transfers completed with AzCopy should be faster and more performant.
+* Теперь для предварительного просмотра доступен вход потока кода устройства. Чтобы включить его, перейдите в раздел "Предварительная версия" → "использовать вход потока кода устройства". Мы советуем пользователям, которые столкнулись с проблемами с пустыми окнами входа, попробовать эту функцию, так как она может оказаться более надежной формой входа в систему. #938
+* Обозреватель службы хранилища, интегрированная с AzCopy, в настоящее время доступна для предварительного просмотра. Чтобы включить его, перейдите к разделу "Предварительная версия" → "использование AzCopy для улучшения отправки и загрузки больших двоичных объектов". Передача больших двоичных объектов, выполненных с помощью AzCopy, должна быть более быстрой и более производительной.
 
 ### <a name="fixes"></a>Исправления
 
-* You can now choose the blob type you want to upload as when AzCopy is enabled. #1111
-* Previously, if you had enabled static websites for an ADLS Gen2 Storage account and then attached it with name and key, Storage Explorer would not have detected that hierarchical namespace was enabled. Эта ошибка исправлена. #1081
-* In the blob editor, sorting by either retention days remaining or status was broken. Эта ошибка исправлена. #1106
-* After 1.5.0, Storage Explorer no longer waited for server side copies to finish before reporting success during a rename or copy & paste. Эта ошибка исправлена. #976
-* When using the experimental AzCopy feature, the command copied after clicking "Copy command to clipboard" was not always runnable on its own. Now, all commands needed to run the transfer manually will be copied. #1079
-* Previously, ADLS Gen2 blobs were not accessible if you were behind a proxy. This was due to a bug in a new networking library used by the Storage SDK. In 1.7.0, an attempt to mitigate this issue has been made, but some people may continue to see issues. A full fix will be released in a future update. #1090
-* In 1.7.0, the save file dialog now correctly remembers the last location you saved a file to. #16
-* In the properties panel, the SKU tier of a Storage account was being shown as the account's kind. Эта ошибка исправлена. #654
-* Sometimes, it was impossible to break the lease of a blob, even if you entered the name of the blob correctly. Эта ошибка исправлена. #1070
+* Теперь можно выбрать тип большого двоичного объекта, который нужно передать, как если AzCopy включен. #1111
+* Ранее, если вы включили статические веб-сайты для учетной записи хранения ADLS 2-го поколения, а затем подключились к имени и ключу, Обозреватель службы хранилища не обнаружит, что иерархическое пространство имен было включено. Эта ошибка исправлена. #1081
+* В редакторе больших двоичных объектов Сортировка по остающимся дням хранения или состоянию была нарушена. Эта ошибка исправлена. #1106
+* После 1.5.0 больше не нужно ожидать завершения серверных копий Обозреватель службы хранилища, прежде чем сообщать об успешном выполнении во время переименования или копирования & вставки. Эта ошибка исправлена. #976
+* При использовании экспериментальной функции AzCopy команда, скопированная после нажатия кнопки "Копировать команду в буфер обмена", не всегда была выполнена самостоятельно. Теперь будут скопированы все команды, необходимые для выполнения перемещения вручную. #1079
+* Ранее ADLS 2-го поколения большие двоичные объекты были недоступны, если вы находились за прокси-сервером. Это было вызвано ошибкой в новой сетевой библиотеке, используемой пакетом SDK для службы хранилища. В 1.7.0 была предпринята попытка устранить эту неполадку, но некоторые пользователи могут продолжать видеть проблемы. В будущих обновлениях будет выпущено полное исправление. #1090
+* В 1.7.0 диалоговое окно Save File (сохранить файл) теперь правильно запоминает Последнее место, в которое вы сохранили файл. #16
+* На панели свойств в качестве типа учетной записи отображается уровень SKU учетной записи хранения. Эта ошибка исправлена. #654
+* Иногда невозможно разорвать аренду большого двоичного объекта, даже если вы правильно указали имя BLOB-объекта. Эта ошибка исправлена. #1070
 
 ### <a name="known-issues"></a>Известные проблемы
 
-* When using RBAC, Storage Explorer requires some management layer permissions in order to access your storage resources. See the [troubleshooting guide](https://docs.microsoft.com/azure/storage/common/storage-explorer-troubleshooting) for more info.
-* Attempting to access ADLS Gen2 Blobs when behind a proxy may fail.
+* При использовании RBAC Обозреватель службы хранилища требуются разрешения уровня управления для доступа к ресурсам хранилища. Дополнительные сведения см. в разделе [руководство по устранению неполадок](https://docs.microsoft.com/azure/storage/common/storage-explorer-troubleshooting) .
+* Попытка получить доступ к ADLS 2-го поколения больших двоичных объектов, если она находится за прокси-сервером.
 * Отключение от ресурса, подключенного через URI SAS, например контейнера больших двоичных объектов, может привести к ошибке, которая предотвращает правильное отображение других подключенных объектов. Чтобы обойти эту проблему, просто обновите узел группы. Для получения дополнительных сведений ознакомьтесь с исправлением № 537.
 * Отключение от ресурса, подключенного через URI SAS, например контейнера больших двоичных объектов, может привести к ошибке, которая предотвращает правильное отображение других подключенных объектов. Чтобы обойти эту проблему, просто обновите узел группы. Дополнительные сведения см. в описании ошибки #537.
 * Если вы используете VS для Mac и когда-либо создавали пользовательскую конфигурацию AAD, вы не сможете выполнить вход. Чтобы обойти эту проблему, удалите содержимое в папке ~/.IdentityService/AadConfigurations. Если это не разблокирует вашу учетную запись, оставьте комментарий об этой проблеме.
@@ -510,7 +510,7 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
 * Если выбран неправильный ПИН-код или сертификат смарт-карты, понадобится перезапустить обозреватель хранилищ, чтобы он не сохранял ошибочные данные.
 * При переименовании больших двоичных объектов (по отдельности или в переименованном контейнере больших двоичных объектов) не сохраняются моментальные снимки. Все прочие свойства и метаданные больших двоичных объектов, файлов и сущностей при переименовании сохраняются.
 * В Azure Stack не поддерживаются приведенные ниже возможности. Попытка использовать их при работе с ресурсами Azure Stack может привести к непредвиденным ошибкам.
-   * Общие папки
+   * файловые ресурсы;
    * Уровни доступа
    * обратимое удаление.
 * Оболочка Electron, используемая обозревателем хранилищ, испытывает проблемы с аппаратным ускорением в некоторых GPU (графический процессор). Если обозреватель хранилищ отображает пустое главное окно, можно попробовать запустить обозреватель хранилищ из командной строки и отключить ускорение GPU, добавив параметр `--disable-gpu`.
@@ -555,7 +555,7 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
 * Операция AzCopy при попытке загрузить папку из контейнера BLOB-объектов ADLS 2-го поколения завершалась ошибкой, если в имени этой папки были пробелы. Эта ошибка исправлена. [#990](https://www.github.com/Microsoft/AzureStorageExplorer/issues/990)
 * Редактор CosmosDB в версии 1.6.0 не работал. Теперь эта ошибка исправлена. [#950](https://www.github.com/Microsoft/AzureStorageExplorer/issues/950)
         
-### <a name="new"></a>Новинка
+### <a name="new"></a>Создать
 
 * Теперь обозреватель службы хранилища можно использовать для доступа к данным BLOB-объектов с помощью [RBAC](https://go.microsoft.com/fwlink/?linkid=2045904&clcid=0x409). Если вы вошли в систему, а обозреватель службы хранилища не может получить ключи для вашей учетной записи хранения, для проверки подлинности при взаимодействии с вашими данными будет использоваться токен oAuth.
 * Обозреватель хранилищ теперь поддерживает учетные записи хранения ADLS 2-го поколения. Если обозреватель службы хранилища обнаружит, что иерархическое пространство имен для учетной записи хранения включено, рядом с именем вашей учетной записи хранения появится значок "(Предварительная версия ADLS 2-го поколения)". Обозреватель службы хранилища может определить, включено ли иерархическое пространство имен, если вы выполнили вход в систему или присвоили своей учетной записи хранения имя и ключ. Для учетных записей хранения ADLS 2-го поколения можно использовать обозреватель службы хранилища в следующих целях.
@@ -582,7 +582,7 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
 * Если выбран неправильный ПИН-код или сертификат смарт-карты, понадобится перезапустить обозреватель хранилищ, чтобы он не сохранял ошибочные данные.
 * При переименовании больших двоичных объектов (по отдельности или в переименованном контейнере больших двоичных объектов) не сохраняются моментальные снимки. Все прочие свойства и метаданные больших двоичных объектов, файлов и сущностей при переименовании сохраняются.
 * В Azure Stack не поддерживаются приведенные ниже возможности. Попытка использовать их при работе с ресурсами Azure Stack может привести к непредвиденным ошибкам.
-   * Общие папки
+   * файловые ресурсы;
    * Уровни доступа
    * обратимое удаление.
 * Оболочка Electron, используемая обозревателем хранилищ, испытывает проблемы с аппаратным ускорением в некоторых GPU (графический процессор). Если обозреватель хранилищ отображает пустое главное окно, можно попробовать запустить обозреватель хранилищ из командной строки и отключить ускорение GPU, добавив параметр `--disable-gpu`.
@@ -624,7 +624,7 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
 * Операция AzCopy при попытке загрузить папку из контейнера BLOB-объектов ADLS 2-го поколения завершалась ошибкой, если в имени этой папки были пробелы. Эта ошибка исправлена. [#990](https://www.github.com/Microsoft/AzureStorageExplorer/issues/990)
 * Редактор CosmosDB в версии 1.6.0 не работал. Теперь эта ошибка исправлена. [#950](https://www.github.com/Microsoft/AzureStorageExplorer/issues/950)
         
-### <a name="new"></a>Новинка
+### <a name="new"></a>Создать
 
 * Теперь обозреватель службы хранилища можно использовать для доступа к данным BLOB-объектов с помощью [RBAC](https://go.microsoft.com/fwlink/?linkid=2045904&clcid=0x409). Если вы вошли в систему, а обозреватель службы хранилища не может получить ключи для вашей учетной записи хранения, для проверки подлинности при взаимодействии с вашими данными будет использоваться токен oAuth.
 * Обозреватель хранилищ теперь поддерживает учетные записи хранения ADLS 2-го поколения. Если обозреватель службы хранилища обнаружит, что иерархическое пространство имен для учетной записи хранения включено, рядом с именем вашей учетной записи хранения появится значок "(Предварительная версия ADLS 2-го поколения)". Обозреватель службы хранилища может определить, включено ли иерархическое пространство имен, если вы выполнили вход в систему или присвоили своей учетной записи хранения имя и ключ. Для учетных записей хранения ADLS 2-го поколения можно использовать обозреватель службы хранилища в следующих целях.
@@ -651,7 +651,7 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
 * Если выбран неправильный ПИН-код или сертификат смарт-карты, понадобится перезапустить обозреватель хранилищ, чтобы он не сохранял ошибочные данные.
 * При переименовании больших двоичных объектов (по отдельности или в переименованном контейнере больших двоичных объектов) не сохраняются моментальные снимки. Все прочие свойства и метаданные больших двоичных объектов, файлов и сущностей при переименовании сохраняются.
 * В Azure Stack не поддерживаются приведенные ниже возможности. Попытка использовать их при работе с ресурсами Azure Stack может привести к непредвиденным ошибкам.
-   * Общие папки
+   * файловые ресурсы;
    * Уровни доступа
    * обратимое удаление.
 * Оболочка Electron, используемая обозревателем хранилищ, испытывает проблемы с аппаратным ускорением в некоторых GPU (графический процессор). Если обозреватель хранилищ отображает пустое главное окно, можно попробовать запустить обозреватель хранилищ из командной строки и отключить ускорение GPU, добавив параметр `--disable-gpu`.
@@ -679,7 +679,7 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
 ## <a name="version-160"></a>Версия 1.6.0
 05.12.2018
 
-### <a name="new"></a>Новинка
+### <a name="new"></a>Создать
 
 * Теперь обозреватель службы хранилища можно использовать для доступа к данным BLOB-объектов с помощью [RBAC](https://go.microsoft.com/fwlink/?linkid=2045904&clcid=0x409). Если вы вошли в систему, а обозреватель службы хранилища не может получить ключи для вашей учетной записи хранения, для проверки подлинности при взаимодействии с вашими данными будет использоваться токен oAuth.
 * Обозреватель хранилищ теперь поддерживает учетные записи хранения ADLS 2-го поколения. Если обозреватель службы хранилища обнаружит, что иерархическое пространство имен для учетной записи хранения включено, рядом с именем вашей учетной записи хранения появится значок "(Предварительная версия ADLS 2-го поколения)". Обозреватель службы хранилища может определить, включено ли иерархическое пространство имен, если вы выполнили вход в систему или присвоили своей учетной записи хранения имя и ключ. Для учетных записей хранения ADLS 2-го поколения можно использовать обозреватель службы хранилища в следующих целях.
@@ -706,7 +706,7 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
 * Если выбран неправильный ПИН-код или сертификат смарт-карты, понадобится перезапустить обозреватель хранилищ, чтобы он не сохранял ошибочные данные.
 * При переименовании больших двоичных объектов (по отдельности или в переименованном контейнере больших двоичных объектов) не сохраняются моментальные снимки. Все прочие свойства и метаданные больших двоичных объектов, файлов и сущностей при переименовании сохраняются.
 * В Azure Stack не поддерживаются приведенные ниже возможности. Попытка использовать их при работе с ресурсами Azure Stack может привести к непредвиденным ошибкам.
-   * Общие папки
+   * файловые ресурсы;
    * Уровни доступа
    * обратимое удаление.
 * Оболочка Electron, используемая обозревателем хранилищ, испытывает проблемы с аппаратным ускорением в некоторых GPU (графический процессор). Если обозреватель хранилищ отображает пустое главное окно, можно попробовать запустить обозреватель хранилищ из командной строки и отключить ускорение GPU, добавив параметр `--disable-gpu`.
@@ -734,7 +734,7 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
 ## <a name="version-150"></a>Версия 1.5.0
 29.10.2018
 
-### <a name="new"></a>Новинка
+### <a name="new"></a>Создать
 
 * Теперь вы можете использовать [AzCopy версии 10 (предварительная версия)](https://github.com/Azure/azure-storage-azcopy) для передачи и скачивания больших двоичных объектов. Для включения этой функции перейдите к меню "Экспериментальный" и щелкните "Use AzCopy for Improved Blob Upload and Download" (Использовать AzCopy для усовершенствованной передачи и скачивания больших двоичных объектов). Если этот параметр включен, AzCopy будет использоваться в следующих сценариях.
    * Передача папок и файлов в контейнеры больших двоичных объектов с помощью панели инструментов или перетаскивания.
@@ -770,7 +770,7 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
 * Если выбран неправильный ПИН-код или сертификат смарт-карты, понадобится перезапустить обозреватель хранилищ, чтобы он не сохранял ошибочные данные.
 * При переименовании больших двоичных объектов (по отдельности или в переименованном контейнере больших двоичных объектов) не сохраняются моментальные снимки. Все прочие свойства и метаданные больших двоичных объектов, файлов и сущностей при переименовании сохраняются.
 * В Azure Stack не поддерживаются приведенные ниже возможности. Попытка использовать их при работе с ресурсами Azure Stack может привести к непредвиденным ошибкам.
-   * Общие папки
+   * файловые ресурсы;
    * Уровни доступа
    * обратимое удаление.
 * Оболочка Electron, используемая обозревателем хранилищ, испытывает проблемы с аппаратным ускорением в некоторых GPU (графический процессор). Если обозреватель хранилищ отображает пустое главное окно, можно попробовать запустить обозреватель хранилищ из командной строки и отключить ускорение GPU, добавив параметр `--disable-gpu`.
@@ -803,12 +803,12 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
 * Выполнен откат версии API управления ресурсами Azure для разблокирования пользователей Azure для государственных организаций США. [696](https://github.com/Microsoft/AzureStorageExplorer/issues/696)
 * В индикаторах загрузки теперь используется анимация CSS, чтобы сократить объем GPU, используемый Обозревателем службы хранилища. [653](https://github.com/Microsoft/AzureStorageExplorer/issues/653)
 
-### <a name="new"></a>Новинка
+### <a name="new"></a>Создать
 * Внешние подключенные ресурсы, например для подключений SAS и эмуляторов, были значительно улучшены. Теперь вы можете:
    * Настройте отображаемое имя подключаемого ресурса. [№ 31](https://github.com/Microsoft/AzureStorageExplorer/issues/31)
    * Подключите несколько локальных эмуляторов, используя разные порты. [№ 193](https://github.com/Microsoft/AzureStorageExplorer/issues/193)
    * Добавьте подключенные ресурсы на панель быстрого доступа. [№ 392](https://github.com/Microsoft/AzureStorageExplorer/issues/392)
-* Обозреватель службы хранилища теперь поддерживает обратимое удаление. Вы сможете:
+* Обозреватель службы хранилища теперь поддерживает обратимое удаление. Вы можете:
    * Настройте политику обратимого удаления, щелкнув правой кнопкой мыши узел контейнеров больших двоичных объектов для вашей учетной записи хранения.
    * Просмотрите обратимо удаленные большие двоичные объекты в редакторе больших двоичных объектов, выбрав Active and deleted blobs (Активные и удаленные большие двоичные объекты) в раскрывающемся списке рядом с панелью навигации.
    * Отмените удаление обратимо удаленных больших двоичных объектов.
@@ -859,12 +859,12 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
 * Выполнен откат версии API управления ресурсами Azure для разблокирования пользователей Azure для государственных организаций США. [696](https://github.com/Microsoft/AzureStorageExplorer/issues/696)
 * В индикаторах загрузки теперь используется анимация CSS, чтобы сократить объем GPU, используемый Обозревателем службы хранилища. [653](https://github.com/Microsoft/AzureStorageExplorer/issues/653)
 
-### <a name="new"></a>Новинка
+### <a name="new"></a>Создать
 * Внешние подключенные ресурсы, например для подключений SAS и эмуляторов, были значительно улучшены. Теперь вы можете:
    * Настройте отображаемое имя подключаемого ресурса. [№ 31](https://github.com/Microsoft/AzureStorageExplorer/issues/31)
    * Подключите несколько локальных эмуляторов, используя разные порты. [№ 193](https://github.com/Microsoft/AzureStorageExplorer/issues/193)
    * Добавьте подключенные ресурсы на панель быстрого доступа. [№ 392](https://github.com/Microsoft/AzureStorageExplorer/issues/392)
-* Обозреватель службы хранилища теперь поддерживает обратимое удаление. Вы сможете:
+* Обозреватель службы хранилища теперь поддерживает обратимое удаление. Вы можете:
    * Настройте политику обратимого удаления, щелкнув правой кнопкой мыши узел контейнеров больших двоичных объектов для вашей учетной записи хранения.
    * Просмотрите обратимо удаленные большие двоичные объекты в редакторе больших двоичных объектов, выбрав Active and deleted blobs (Активные и удаленные большие двоичные объекты) в раскрывающемся списке рядом с панелью навигации.
    * Отмените удаление обратимо удаленных больших двоичных объектов.
@@ -914,12 +914,12 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
 ### <a name="hotfixes"></a>Исправления
 * Обновите API управления ресурсами Azure до версии 2018-07-01, чтобы добавить поддержку новых типов учетной записи хранения Azure. [652](https://github.com/Microsoft/AzureStorageExplorer/issues/652)
 
-### <a name="new"></a>Новинка
+### <a name="new"></a>Создать
 * Внешние подключенные ресурсы, например для подключений SAS и эмуляторов, были значительно улучшены. Теперь вы можете:
    * Настройте отображаемое имя подключаемого ресурса. [№ 31](https://github.com/Microsoft/AzureStorageExplorer/issues/31)
    * Подключите несколько локальных эмуляторов, используя разные порты. [№ 193](https://github.com/Microsoft/AzureStorageExplorer/issues/193)
    * Добавьте подключенные ресурсы на панель быстрого доступа. [№ 392](https://github.com/Microsoft/AzureStorageExplorer/issues/392)
-* Обозреватель службы хранилища теперь поддерживает обратимое удаление. Вы сможете:
+* Обозреватель службы хранилища теперь поддерживает обратимое удаление. Вы можете:
    * Настройте политику обратимого удаления, щелкнув правой кнопкой мыши узел контейнеров больших двоичных объектов для вашей учетной записи хранения.
    * Просмотрите обратимо удаленные большие двоичные объекты в редакторе больших двоичных объектов, выбрав Active and deleted blobs (Активные и удаленные большие двоичные объекты) в раскрывающемся списке рядом с панелью навигации.
    * Отмените удаление обратимо удаленных больших двоичных объектов.
@@ -974,12 +974,12 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
 * На медленных компьютерах Windows появление экрана-заставки иногда будет занимать значительно больше времени. [№ 586](https://github.com/Microsoft/AzureStorageExplorer/issues/586)
 * Диалоговое окно подключения появится, даже если есть подключенные учетные записи или службы. [№ 588](https://github.com/Microsoft/AzureStorageExplorer/issues/588)
 
-### <a name="new"></a>Новинка
+### <a name="new"></a>Создать
 * Внешние подключенные ресурсы, например для подключений SAS и эмуляторов, были значительно улучшены. Теперь вы можете:
    * Настройте отображаемое имя подключаемого ресурса. [№ 31](https://github.com/Microsoft/AzureStorageExplorer/issues/31)
    * Подключите несколько локальных эмуляторов, используя разные порты. [№ 193](https://github.com/Microsoft/AzureStorageExplorer/issues/193)
    * Добавьте подключенные ресурсы на панель быстрого доступа. [№ 392](https://github.com/Microsoft/AzureStorageExplorer/issues/392)
-* Обозреватель службы хранилища теперь поддерживает обратимое удаление. Вы сможете:
+* Обозреватель службы хранилища теперь поддерживает обратимое удаление. Вы можете:
    * Настройте политику обратимого удаления, щелкнув правой кнопкой мыши узел контейнеров больших двоичных объектов для вашей учетной записи хранения.
    * Просмотрите обратимо удаленные большие двоичные объекты в редакторе больших двоичных объектов, выбрав Active and deleted blobs (Активные и удаленные большие двоичные объекты) в раскрывающемся списке рядом с панелью навигации.
    * Отмените удаление обратимо удаленных больших двоичных объектов.
@@ -1026,7 +1026,7 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
 ## <a name="version-130"></a>Версия 1.3.0
 09.07.2018.
 
-### <a name="new"></a>Новинка
+### <a name="new"></a>Создать
 * Теперь поддерживается доступ к веб-контейнерам, используемым статическими веб-сайтами. Это позволяет легко передавать файлы и папки, используемые вашим веб-сайтом, и управлять ими. [223](https://github.com/Microsoft/AzureStorageExplorer/issues/223)
 * Панель приложений на macOS была реорганизована. Изменения включают в себя меню "Файл", некоторые сочетания клавиш и несколько новых команд в меню приложения. [99](https://github.com/Microsoft/AzureStorageExplorer/issues/99)
 * Конечная точка центра для входа в Azure для государственных организаций США была изменена на https://login.microsoftonline.us/.
@@ -1055,7 +1055,7 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
 * Если выбран неправильный ПИН-код или сертификат смарт-карты, понадобится перезапустить обозреватель хранилищ, чтобы он не сохранял ошибочные данные.
 * При переименовании больших двоичных объектов (по отдельности или в переименованном контейнере больших двоичных объектов) не сохраняются моментальные снимки. Все прочие свойства и метаданные больших двоичных объектов, файлов и сущностей при переименовании сохраняются.
 * Azure Stack не поддерживает следующие функции (при попытке использовать их в работе с Azure Stack могут возникнуть неожиданные ошибки):
-   * Общие папки
+   * файловые ресурсы;
    * Уровни доступа
    * обратимое удаление.
 * Оболочка Electron, используемая обозревателем хранилищ, испытывает проблемы с аппаратным ускорением в некоторых GPU (графический процессор). Если обозреватель хранилищ отображает пустое главное окно, можно попробовать запустить обозреватель хранилищ из командной строки и отключить ускорение GPU, добавив параметр `--disable-gpu`.
@@ -1083,7 +1083,7 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
 ## <a name="version-120"></a>Версии 1.2.0
 12/06/2018
 
-### <a name="new"></a>Новинка
+### <a name="new"></a>Создать
 * Если обозревателю службы хранилища не удается загрузить подписки только из подмножества ваших клиентов, будут отображаться любые успешно загруженные подписки, а также сообщение об ошибке для клиентов, у которых произошел сбой. [159](https://github.com/Microsoft/AzureStorageExplorer/issues/159)
 * Когда в Windows доступно обновление, вы можете выбрать "Обновить при закрытии". Если вы выбрали этот вариант, средство установки обновления запустится, когда вы закроете обозреватель службы хранилища. [21](https://github.com/Microsoft/AzureStorageExplorer/issues/21)
 * В контекстное меню редактора общей папки при просмотре моментального снимка общей папки добавлен пункт "Восстановить моментальный снимок".[131](https://github.com/Microsoft/AzureStorageExplorer/issues/131)
@@ -1140,7 +1140,7 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
 ## <a name="version-110"></a>Версия 1.1.0
 09.05.2018
 
-### <a name="new"></a>Новинка
+### <a name="new"></a>Создать
 * Обозреватель службы хранилища теперь поддерживает использование Azurite. Примечание. Подключение к Azurite жестко привязано к конечным точкам разработки по умолчанию.
 * В Обозревателе службы хранилища теперь поддерживаются уровни доступа учетных записей хранения только для больших двоичных объектов и GPV2. Дополнительные сведения об уровнях доступа см. [здесь](https://docs.microsoft.com/azure/storage/blobs/storage-blob-storage-tiers).
 * Время начала действия больше не требуется при создании SAS.
@@ -1195,7 +1195,7 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
 ## <a name="version-100"></a>Версия 1.0.0
 16.04.2018
 
-### <a name="new"></a>Новинка
+### <a name="new"></a>Создать
 * Улучшенная проверка подлинности, которая позволяет Обозревателю службы хранилища использовать то же хранилище учетных записей, что и в Visual Studio 2017. Чтобы использовать эту функцию, необходимо повторно войти в свои учетные записи и заново установить отфильтрованные подписки.
 * Для учетных записей Azure Stack, поддерживаемых AAD, Обозреватель службы хранилища теперь будет получать подписки Azure Stack, если включен целевой объект Azure Stack. Больше не требуется создавать настраиваемую среду для входа.
 * Добавлено несколько сочетаний клавиш для ускорения навигации. К ним относятся переключение различных панелей и перемещение между редакторами. Дополнительные сведения см. в меню "Вид".
@@ -1296,7 +1296,7 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
 ## <a name="version-095"></a>Версия 0.9.5
 06.02.2018
 
-### <a name="new"></a>Новинка
+### <a name="new"></a>Создать
 
 * Поддержка моментальных снимков файловых ресурсов:
     * создание моментальных снимков файловых ресурсов и управление ими;
@@ -1345,7 +1345,7 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
 ## <a name="version-094-and-093"></a>Версии 0.9.4 и 0.9.3
 21.01.2018
 
-### <a name="new"></a>Новинка
+### <a name="new"></a>Создать
 * Существующее окно обозревателя службы хранилища будет повторно использоваться в таких случаях:
     * при открытии прямых ссылок, созданных в обозревателе службы хранилища;
     * при открытии обозревателя службы хранилища с портала;
@@ -1399,11 +1399,11 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
 * Домен конечных точек для Azure для государственных организаций США был неправильным. Эта ошибка исправлена.
 * Иногда не нажималась кнопка "Применить" на панели управления учетными записями. Такого больше не случится.
 
-### <a name="new"></a>Новинка
+### <a name="new"></a>Создать
 * Поддержка предварительной версии для Azure Cosmos DB:
     * [электронная документация](./cosmos-db/storage-explorer.md);
     * создание баз данных и коллекций;
-    * Обработка данных
+    * обработка данных;
     * запрос, создание и удаление документов;
     * обновление хранимых процедур, определяемых пользователем функций или триггеров;
     * использование строк подключения для подключения к базам данных и управления ими.
@@ -1455,11 +1455,11 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
 
 ## <a name="version-091-and-090"></a>Версии 0.9.1 и 0.9.0
 20.10.2017
-### <a name="new"></a>Новинка
+### <a name="new"></a>Создать
 * Поддержка предварительной версии для Azure Cosmos DB:
     * [электронная документация](./cosmos-db/storage-explorer.md);
     * создание баз данных и коллекций;
-    * Обработка данных
+    * обработка данных;
     * запрос, создание и удаление документов;
     * обновление хранимых процедур, определяемых пользователем функций или триггеров;
     * использование строк подключения для подключения к базам данных и управления ими.
@@ -1512,7 +1512,7 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
 ## <a name="version-0816"></a>Версия 0.8.16
 8/21/2017
 
-### <a name="new"></a>Новинка
+### <a name="new"></a>Создать
 * Если при открытии большого двоичного объекта обнаружено изменение, в обозревателе хранилищ отображается запрос на передачу скачанного файла.
 * Улучшена процедура входа в Azure Stack.
 * Повышена производительность при одновременной передаче и загрузке множества небольших файлов.
@@ -1552,12 +1552,12 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
 ### <a name="version-0814"></a>Версия 0.8.14
 22.06.2017
 
-### <a name="new"></a>Новинка
+### <a name="new"></a>Создать
 
 * Версия Electron обновлена до 1.7.2, чтобы воспользоваться преимуществами нескольких критически важных обновлений.
 * Теперь вы можете быстро получить доступ к электронному руководству по устранению неполадок в меню "Справка".
-* Storage Explorer Troubleshooting [Guide][2]
-* [Instructions][3] on connecting to an Azure Stack subscription
+* [Руководство по][2] устранению неполадок обозреватель службы хранилища
+* [Инструкции][3] по подключению к Azure Stack подписке
 
 ### <a name="known-issues"></a>Известные проблемы
 
@@ -1579,16 +1579,16 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
 ### <a name="version-0813"></a>Версия 0.8.13
 05/12/2017
 
-#### <a name="new"></a>Новинка
+#### <a name="new"></a>Создать
 
-* Storage Explorer Troubleshooting [Guide][2]
-* [Instructions][3] on connecting to an Azure Stack subscription
+* [Руководство по][2] устранению неполадок обозреватель службы хранилища
+* [Инструкции][3] по подключению к Azure Stack подписке
 
 #### <a name="fixes"></a>Исправления
 
 * Исправлено: при отправке файлов с высокой вероятностью могла произойти ошибка нехватки памяти.
 * Исправлено: теперь можно входить с использованием ПИН-кода или смарт-карты.
-* Fixed: Open in Portal now works with Azure China 21Vianet, Azure Germany, Azure US Government, and Azure Stack
+* Исправлено. открыть на портале теперь работает с Azure для Германии, Azure для государственных организаций и Azure Stack
 * Исправлено: иногда при передаче папки в контейнер большого двоичного объекта возникала ошибка "Недопустимая операция".
 * Исправлено: функция "Выбрать все" отключалась при управлении моментальными снимками.
 * Исправлено: метаданные базового большого двоичного объекта могли перезаписаться после просмотра свойств его моментальных снимков.
@@ -1614,7 +1614,7 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
 ### <a name="version-0812-and-0811-and-0810"></a>Версии 0.8.12, 0.8.11 и 0.8.10
 07.04.2017
 
-#### <a name="new"></a>Новинка
+#### <a name="new"></a>Создать
 
 * Обозреватель хранилищ автоматически закрывается при установке обновления с использованием уведомления об обновлении.
 * Быстрый доступ обеспечивает дополнительные возможности для работы с часто используемыми ресурсами.
@@ -1662,7 +1662,7 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
 >[!VIDEO https://www.youtube.com/embed/SrRPCm94mfE?ecver=1]
 
 
-#### <a name="new"></a>Новинка
+#### <a name="new"></a>Создать
 
 * Обозреватель хранилищ версии 0.8.9 автоматически скачает последнюю версию обновления.
 * Исправление: использование созданного с помощью портала URI SAS для подключения к учетной записи хранения приводило к ошибке.
@@ -1692,7 +1692,7 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
 
 >[!VIDEO https://www.youtube.com/embed/Me4Y4jxoer8?ecver=1]
 
-#### <a name="new"></a>Новинка
+#### <a name="new"></a>Создать
 
 * Вы можете выбрать способ разрешения конфликтов в начале сеанса обновления, скачивания или копирования в окне "Действия".
 * Наведите указатель на вкладку, чтобы увидеть полный путь к ресурсу службы хранилища.
@@ -1719,10 +1719,10 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
 18.11.2016
 ### <a name="version-086"></a>Версия 0.8.6
 
-#### <a name="new"></a>Новинка
+#### <a name="new"></a>Создать
 
 * Теперь вы можете закрепить наиболее часто используемые службы в области быстрого доступа для упрощения навигации.
-* Теперь можно открыть несколько редакторов на разных вкладках. Single click to open a temporary tab; double click to open a permanent tab. You can also click on the temporary tab to make it a permanent tab
+* Теперь можно открыть несколько редакторов на разных вкладках. Единственное нажатие, чтобы открыть временную вкладку; Дважды щелкните, чтобы открыть постоянную вкладку. Можно также щелкнуть вкладку временная, чтобы сделать ее постоянной.
 * Значительное улучшение производительности и стабильности при передаче и скачивании, особенно заметное для больших файлов на быстрых компьютерах.
 * Теперь в контейнерах больших двоичных объектов можно создавать пустые "виртуальные" папки.
 * Мы повторно представляем поиск в заданных областях с расширенным поиском в подстроках. Теперь у вас есть два варианта поиска:
@@ -1757,7 +1757,7 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
 10/03/2016
 ### <a name="version-085"></a>Версия 0.8.5
 
-#### <a name="new"></a>Новинка
+#### <a name="new"></a>Создать
 
 * Теперь созданные на портале ключи SAS можно использовать для подключения к учетным записям хранения и ресурсам.
 
@@ -1780,7 +1780,7 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
 
 >[!VIDEO https://www.youtube.com/embed/cr5tOGyGrIQ?ecver=1]
 
-#### <a name="new"></a>Новинка
+#### <a name="new"></a>Создать
 
 * Создавайте прямые ссылки на учетные записи хранения, контейнеры, очереди, таблицы или общие файловые ресурсы для упрощения общего доступа к ресурсам (поддерживается в Windows и Mac OS).
 * Поиск контейнеров больших двоичных объектов, таблиц, очередей, файловых ресурсов или учетных записей хранения с помощью поля поиска.
@@ -1801,7 +1801,7 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
 
 >[!VIDEO https://www.youtube.com/embed/HeGW-jkSd9Y?ecver=1]
 
-#### <a name="new"></a>Новинка
+#### <a name="new"></a>Создать
 
 * Переименование контейнеров, таблиц, файловых ресурсов.
 * Улучшена работа с конструктором запросов.
@@ -1827,7 +1827,7 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
 
 >[!VIDEO https://www.youtube.com/embed/nYgKbRUNYZA?ecver=1]
 
-#### <a name="new"></a>Новинка
+#### <a name="new"></a>Создать
 
 * Учетные записи хранения группируются по подпискам. Хранилище разработки и ресурсы, подключенные с использованием ключа или SAS, отображаются в узле (локальном и подключенном).
 * Выход из учетных записей осуществляется на панели Azure Account Settings (Параметры учетной записи Azure).
@@ -1854,7 +1854,7 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
 
 >[!VIDEO https://www.youtube.com/embed/3zEXJcGdl_k?ecver=1]
 
-#### <a name="new"></a>Новинка
+#### <a name="new"></a>Создать
 
 * Поддержка общих файловых ресурсов: просмотр, передача, скачивание, копирование файлов, каталогов и URI SAS (создание и подключение).
 * Оптимизирован процесс подключения к службе хранилища с использованием URI SAS или ключей учетной записи.
@@ -1877,7 +1877,7 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
 17.05.2016
 ### <a name="version-07201605090"></a>Версия 0.7.20160509.0
 
-#### <a name="new"></a>Новинка
+#### <a name="new"></a>Создать
 
 * Улучшена обработка ошибок при сбое приложения.
 
@@ -1897,7 +1897,7 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
 
 >[!VIDEO https://www.youtube.com/embed/ceX-P8XZ-s8?ecver=1]
 
-#### <a name="new"></a>Новинка
+#### <a name="new"></a>Создать
 
 * Поддержка таблиц: просмотр, поиск, экспорт, импорт и выполнение операций CRUD для сущностей.
 * Поддержка очередей: просмотр, добавление, вывод сообщений из очереди.
@@ -1929,7 +1929,7 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
 
 ### <a name="version-07201601050"></a>Версия 0.7.20160105.0
 
-#### <a name="new"></a>Новинка
+#### <a name="new"></a>Создать
 
 * Поддержка Linux (функции с контролем четности для OS X).
 * Добавление контейнеров больших двоичных объектов с использованием подписанного URL-адреса (SAS).
@@ -1959,7 +1959,7 @@ To download previous versions of Storage Explorer, you can visit the [Releases p
 18.11.2015
 ### <a name="version-07201511160"></a>Версия 0.7.20151116.0
 
-#### <a name="new"></a>Новинка
+#### <a name="new"></a>Создать
 
 * Версии macOS и Windows.
 * Входите для просмотра учетных записей хранения. Используйте рабочую учетную запись, учетную запись Майкрософт, двухфакторную проверку подлинности и т. д.

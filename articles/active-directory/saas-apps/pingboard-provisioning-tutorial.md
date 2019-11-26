@@ -74,7 +74,7 @@ ms.locfileid: "74278256"
 
     b. Войдите в [Pingboard](https://pingboard.com/) с помощью учетной записи администратора.
 
-    В. Выберите **Add-Ons** > **Integrations** > **Azure Active Directory** (Надстройки > Интеграции > Azure Active Directory).
+    c. Выберите **Add-Ons** > **Integrations** > **Azure Active Directory** (Надстройки > Интеграции > Azure Active Directory).
 
     d. Перейдите на вкладку **Configure** (Настройка) и выберите **Enable user provisioning from Azure** (Включить подготовку пользователей из Azure).
 

@@ -20,7 +20,7 @@ ms.locfileid: "74233066"
 
 + удаление файлов, оставшихся после предыдущих развертываний;
 + настройку развертывания, в том числе выполнение скриптов развертывания;
-+ журналы развертывания.
++ журналы развертывания;
 + синхронизацию триггеров функций в приложении-функции [План потребления](functions-scale.md).
 
 Дополнительные сведения см. в [справочнике по развертыванию из ZIP-файлов](https://github.com/projectkudu/kudu/wiki/Deploying-from-a-zip-file).
@@ -87,9 +87,9 @@ az functionapp deployment source config-zip  -g myResourceGroup -n \
 
 [!INCLUDE [app-service-deploy-zip-push-custom](../../includes/app-service-deploy-zip-push-custom.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Непрерывное развертывание для функций Azure](functions-continuous-deployment.md)
+> [Непрерывное развертывание для Функций Azure](functions-continuous-deployment.md)
 
 [.zip push deployment reference topic]: https://github.com/projectkudu/kudu/wiki/Deploying-from-a-zip-file

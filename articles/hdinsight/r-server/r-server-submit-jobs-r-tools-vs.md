@@ -17,7 +17,7 @@ ms.locfileid: "74229016"
 ---
 # <a name="submit-jobs-from-r-tools-for-visual-studio"></a>Отправка заданий из расширения "Инструменты R для Visual Studio"
 
-[Инструменты R для Visual Studio](https://www.visualstudio.com/vs/rtvs/) (RTVS) — это бесплатное расширение с открытым исходным кодом для выпусков Community (бесплатно), Professional и Enterprise как [Visual Studio 2017](https://www.visualstudio.com/downloads/), так и [Visual Studio 2015 с обновлением 3](https://go.microsoft.com/fwlink/?LinkId=691129) или выше. RTVS is not available for [Visual Studio 2019](https://docs.microsoft.com/visualstudio/porting/port-migrate-and-upgrade-visual-studio-projects?view=vs-2019).
+[Инструменты R для Visual Studio](https://www.visualstudio.com/vs/rtvs/) (RTVS) — это бесплатное расширение с открытым исходным кодом для выпусков Community (бесплатно), Professional и Enterprise как [Visual Studio 2017](https://www.visualstudio.com/downloads/), так и [Visual Studio 2015 с обновлением 3](https://go.microsoft.com/fwlink/?LinkId=691129) или выше. RTVS недоступен для [Visual Studio 2019](https://docs.microsoft.com/visualstudio/porting/port-migrate-and-upgrade-visual-studio-projects?view=vs-2019).
 
 Расширение RTVS улучшает ваш рабочий процесс R, предлагая такие инструменты, как [Интерактивное окно R](https://docs.microsoft.com/visualstudio/rtvs/interactive-repl) (REPL), технология IntelliSense (завершение кода), [визуализация в виде графиков](https://docs.microsoft.com/visualstudio/rtvs/visualizing-data) через библиотеки R, такие как ggplot2 и ggviz, [отладка кода R](https://docs.microsoft.com/visualstudio/rtvs/debugging) и другие.
 
@@ -41,14 +41,14 @@ ms.locfileid: "74229016"
 
    2. Перейдите в пункт меню **Инструменты R**, а затем выберите **Параметры обработки и анализа данных...**
 
-       ![Visual Studio Data Science Settings](./media/r-server-submit-jobs-r-tools-vs/data-science-settings.png)
+       ![Visual Studio Параметры обработки и анализа данных](./media/r-server-submit-jobs-r-tools-vs/data-science-settings.png)
 
       > [!NOTE]  
       > С помощью подхода из шага 1 вы также можете сохранить и восстановить персонализированный макет обработки и анализа данных вместо того, чтобы повторять команду **Параметры обработки и анализа данных**.
 
 ## <a name="execute-local-r-methods"></a>Выполнение локальных методов R
 
-1. Create your HDInsight ML Services cluster.
+1. Создайте кластер служб машинного обучения HDInsight.
 2. Установите [расширение RTVS](https://docs.microsoft.com/visualstudio/rtvs/installation).
 3. Загрузите [ZIP-файл с примерами](https://github.com/Microsoft/RTVS-docs/archive/master.zip).
 4. Откройте `examples/Examples.sln` для запуска решения в Visual Studio.
@@ -56,17 +56,17 @@ ms.locfileid: "74229016"
 6. Начиная сверху файла, нажимайте клавиши CTRL+ENTER, чтобы по очереди отправлять каждую строку в интерактивное окно R. Для некоторых строк это может занять определенное время, так как код в них устанавливает новые пакеты.
     * Кроме того, вы можете выбрать все строки в файле R (CTRL+A) и выполнить их все (CTRL+ENTER) либо на панели инструментов выбрать значок выполнения в интерактивном режиме.
 
-        ![Visual Studio execute interactive](./media/r-server-submit-jobs-r-tools-vs/execute-interactive1.png)
+        ![Интерактивное выполнение Visual Studio](./media/r-server-submit-jobs-r-tools-vs/execute-interactive1.png)
 
 7. Когда все строки в сценарии будут выполнены, у вас должен быть следующий результат:
 
-    ![Visual Studio workspace R tools](./media/r-server-submit-jobs-r-tools-vs/visual-studio-workspace.png)
+    ![Инструменты R рабочей области Visual Studio](./media/r-server-submit-jobs-r-tools-vs/visual-studio-workspace.png)
 
 ## <a name="submit-jobs-to-an-hdinsight-ml-services-cluster"></a>Отправка заданий в кластер HDInsight R для Служб машинного обучения
 
 С помощью Microsoft ML Server или Microsoft R Client с компьютера Windows, где установлена программа PuTTY, вы можете создать контекст вычисления, который будет запускать распределенные функции `RevoScaleR` из вашего локального клиента к вашему кластеру HDInsight. Используйте `RxSpark`, чтобы создать контекст вычисления, указав свое имя пользователя, граничный узел кластера Apache Hadoop, ключи SSH и т. д.
 
-1. The ML Services edge node address on HDInsight is `CLUSTERNAME-ed-ssh.azurehdinsight.net` where `CLUSTERNAME` is the name of your ML Services cluster.
+1. Адресом узла службы ML в HDInsight является `CLUSTERNAME-ed-ssh.azurehdinsight.net`, где `CLUSTERNAME` — это имя кластера служб ML.
 
 1. Вставьте следующий код в интерактивное окно R в Visual Studio, изменив значения переменных настройки в соответствии с вашей средой.
 
@@ -96,7 +96,7 @@ ms.locfileid: "74229016"
     rxSetComputeContext(mySparkCluster)
     ```
 
-   ![apache spark setting the context](./media/r-server-submit-jobs-r-tools-vs/apache-spark-context.png)
+   ![Установка контекста Apache Spark](./media/r-server-submit-jobs-r-tools-vs/apache-spark-context.png)
 
 1. В интерактивном окне R выполните следующие команды:
 
@@ -108,22 +108,22 @@ ms.locfileid: "74229016"
 
     Должен отобразиться результат, аналогичный приведенному ниже:
 
-    ![Successful rx command execution](./media/r-server-submit-jobs-r-tools-vs/successful-rx-commands.png) a
+    ![успешного выполнения команды RX](./media/r-server-submit-jobs-r-tools-vs/successful-rx-commands.png)
 1. Убедитесь, что команда `rxHadoopCopy` успешно скопировала файл `people.json` из папки данных для примера в недавно созданную папку `/user/RevoShare/newUser`:
 
     1. На панели кластера HDInsight для Служб машинного обучения в Azure в меню слева выберите **Учетные записи хранения**.
 
-        ![Azure HDInsight Storage accounts](./media/r-server-submit-jobs-r-tools-vs/hdinsight-storage-accounts.png)
+        ![Учетные записи хранения Azure HDInsight](./media/r-server-submit-jobs-r-tools-vs/hdinsight-storage-accounts.png)
 
     2. Выберите учетную запись хранения по умолчанию для своего кластера, записав имя контейнера и каталога.
 
     3. На панели учетных записей хранения в меню слева выберите **Контейнеры**.
 
-        ![Azure HDInsight Storage containers](./media/r-server-submit-jobs-r-tools-vs/hdi-storage-containers.png)
+        ![Контейнеры хранилища Azure HDInsight](./media/r-server-submit-jobs-r-tools-vs/hdi-storage-containers.png)
 
     4. Выберите имя контейнера вашего кластера, перейдите в папку **пользователя** (возможно, внизу списка нужно будет нажать *Загрузить еще*), выберите *RevoShare*, а затем — **newUser**. Файл `people.json` должен появиться в папке `newUser`.
 
-        ![HDInsight copied file folder location](./media/r-server-submit-jobs-r-tools-vs/hdinsight-copied-file.png)
+        ![Расположение папки "скопированные файлы HDInsight"](./media/r-server-submit-jobs-r-tools-vs/hdinsight-copied-file.png)
 
 1. После этого остановите выполнение текущего контекста Apache Spark. Одновременное выполнение нескольких контекстов не поддерживается.
 
@@ -131,7 +131,7 @@ ms.locfileid: "74229016"
     rxStopEngine(mySparkCluster)
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Варианты контекста вычислений для Служб машинного обучения в HDInsight](r-server-compute-contexts.md)
 * Пример прогнозирования задержки рейсов см. в статье [Совместное использование ScaleR и SparkR в HDInsight](../hdinsight-hadoop-r-scaler-sparkr.md).

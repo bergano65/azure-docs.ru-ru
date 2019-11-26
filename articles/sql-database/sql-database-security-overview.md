@@ -46,7 +46,7 @@ ms.locfileid: "74483837"
 > [!IMPORTANT]
 > Управление базами данных и серверами баз данных в Azure осуществляется путем назначения ролей учетной записи пользователя портала. Дополнительные сведения об этом см. в разделе [Управление доступом на основе ролей на портале Azure](../role-based-access-control/overview.md).
 
-### <a name="authentication"></a>Authentication
+### <a name="authentication"></a>Проверка подлинности
 
 Аутентификацией называют процесс подтверждения личности пользователя. База данных SQL Azure поддерживает два типа аутентификации:
 
@@ -67,13 +67,13 @@ ms.locfileid: "74483837"
 
 ## <a name="authorization"></a>Авторизация
 
-Авторизация — это по сути набор разрешений, которые назначены пользователю в базе данных SQL Azure и которые определяют, какие действия доступны этому пользователю. Permissions are controlled by adding user accounts to [database roles](/sql/relational-databases/security/authentication-access/database-level-roles) and assigning database-level permissions to those roles or by granting the user certain [object-level permissions](/sql/relational-databases/security/permissions-database-engine). См. дополнительные сведения об [операциях входа и пользователях](sql-database-manage-logins.md).
+Авторизация — это по сути набор разрешений, которые назначены пользователю в базе данных SQL Azure и которые определяют, какие действия доступны этому пользователю. Управление разрешениями осуществляется путем добавления учетных записей пользователей в [роли базы данных](/sql/relational-databases/security/authentication-access/database-level-roles) и назначения им разрешений уровня базы данных для этих ролей или предоставления пользователю определенных [разрешений на уровне объектов](/sql/relational-databases/security/permissions-database-engine). См. дополнительные сведения об [операциях входа и пользователях](sql-database-manage-logins.md).
 
-As a best practice, create custom roles when needed. Add users to the role with the least privileges required to do their job function. Do not assign permissions directly to users. The server admin account is a member of the built-in db_owner role, which has extensive permissions and should only be granted to few users with administrative duties. For Azure SQL Database applications, use the [EXECUTE AS](/sql/t-sql/statements/execute-as-clause-transact-sql) to specify the execution context of the called module or use [Application Roles](/sql/relational-databases/security/authentication-access/application-roles) with limited permissions. This practice ensures that the application that connects to the database has the least privileges needed by the application. Following these best practices also fosters separation of duties.
+Рекомендуется создавать пользовательские роли при необходимости. Добавьте пользователей к роли с минимальными привилегиями, необходимыми для работы их функций. Не назначайте разрешения пользователям напрямую. Учетная запись администратора сервера является членом встроенной роли db_owner, которая обладает широкими разрешениями и должна предоставляться только некоторым пользователям с административными обязанностями. Для приложений базы данных SQL Azure используйте [инструкцию EXECUTE AS](/sql/t-sql/statements/execute-as-clause-transact-sql) , чтобы указать контекст выполнения вызванного модуля или использовать [роли приложения](/sql/relational-databases/security/authentication-access/application-roles) с ограниченными разрешениями. Такой подход гарантирует, что приложение, которое подключается к базе данных, имеет минимальные привилегии, необходимые для приложения. Следующие рекомендации также способствуют разделению обязанностей.
 
 ### <a name="row-level-security"></a>Безопасность на уровне строк
 
-Безопасность на уровне строк позволяет пользователям управлять доступом к строкам в таблице базы данных в зависимости от характеристик пользователя, выполняющего запрос (например, членство в группе или контекст выполнения). Row-Level Security can also be used to implement custom Label-based security concepts. Дополнительные сведения см. в статье [Безопасность на уровне строк](/sql/relational-databases/security/row-level-security).
+Безопасность на уровне строк позволяет пользователям управлять доступом к строкам в таблице базы данных в зависимости от характеристик пользователя, выполняющего запрос (например, членство в группе или контекст выполнения). Безопасность на уровне строк также может использоваться для реализации пользовательских концепций безопасности на основе меток. Дополнительные сведения см. в статье [Безопасность на уровне строк](/sql/relational-databases/security/row-level-security).
 
 ![azure-database-rls.png](media/sql-database-security-overview/azure-database-rls.png)
 
@@ -81,13 +81,13 @@ As a best practice, create custom roles when needed. Add users to the role with 
 
 База данных SQL обеспечивает защиту клиентских данных, предоставляя возможности аудита и обнаружения угроз.
 
-### <a name="sql-auditing-in-azure-monitor-logs-and-event-hubs"></a>SQL auditing in Azure Monitor logs and Event Hubs
+### <a name="sql-auditing-in-azure-monitor-logs-and-event-hubs"></a>Аудит SQL в журналах Azure Monitor и концентраторах событий
 
 Аудит Базы данных SQL отслеживает действия в базе данных и помогает поддерживать соответствие стандартам безопасности, сохраняя события базы данных в журнал аудита, сохраненный в учетной записи хранения Azure. Благодаря аудиту пользователи могут в реальном времени отслеживать действия в базе данных, а также анализировать и изучать действия за прошедшие периоды, чтобы выявить потенциальные угрозы, возможные нарушения и риски безопасности. См. дополнительные сведения об [аудите Базы данных SQL](sql-database-auditing.md).  
 
-### <a name="advanced-threat-protection"></a>Расширенная защита от угроз
+### <a name="advanced-threat-protection"></a>Advanced Threat Protection
 
-Advanced Threat Protection is analyzing your SQL Server logs to detect unusual behavior and potentially harmful attempts to access or exploit databases. Alerts are created for suspicious activities such as SQL injection, potential data infiltration, and brute force attacks or for anomalies in access patterns to catch privilege escalations and breached credentials use. Alerts are viewed from the  [Azure Security Center](https://azure.microsoft.com/services/security-center/), where the details of the suspicious activities are provided and recommendations for further investigation given along with actions to mitigate the threat. Advanced Threat Protection can be enabled per server for an additional fee. For more information, see [Get started with SQL Database Advanced Threat Protection](sql-database-threat-detection.md).
+Расширенная защита от угроз анализирует журналы SQL Server, чтобы обнаружить необычное поведение и потенциально опасные попытки доступа к базам данных или их использования. Оповещения создаются для подозрительных действий, таких как атака путем внедрения кода SQL, потенциальных несанкционированного доступа данных, атак методом подбора или аномалий в шаблонах доступа для перехвата укрупнений привилегий и использования учетных данных. Оповещения просматриваются из [центра безопасности Azure](https://azure.microsoft.com/services/security-center/), где указаны сведения о подозрительных действиях, а также рекомендации по устранению угроз для дальнейшего изучения. Расширенную защиту от угроз можно включить для каждого сервера за дополнительную плату. Дополнительные сведения см. в статье [Приступая к работе с расширенной защитой угроз базы данных SQL](sql-database-threat-detection.md).
 
 ![azure-database-td.jpg](media/sql-database-security-overview/azure-database-td.jpg)
 
@@ -97,20 +97,20 @@ Advanced Threat Protection is analyzing your SQL Server logs to detect unusual b
 
 База данных SQL защищает данные клиентов, шифруя передаваемые данные по протоколу [TLS](https://support.microsoft.com/help/3135244/tls-1-2-support-for-microsoft-sql-server).
 
-Sql Server enforces encryption (SSL/TLS) at all times for all connections. This ensures all data is encrypted "in transit" between the client and server irrespective of the setting of **Encrypt** or **TrustServerCertificate** in the connection string.
+SQL Server в любое время обеспечивает шифрование (SSL/TLS) для всех подключений. Это гарантирует, что все данные шифруются "при передаче" между клиентом и сервером независимо от значения параметра **Encrypt** или **TrustServerCertificate** в строке подключения.
 
-As a best practice, recommend that in your application's connection string you specify an encrypted connection and _**not**_ trust the server certificate. This forces your application to verify the server certificate and thus prevents your application from being vulnerable to man in the middle type attacks.
+Рекомендуется, чтобы в строке подключения вашего приложения вы указали зашифрованное соединение и _**не**_ доверяете сертификату сервера. Это заставляет приложение проверять сертификат сервера и, таким образом, предотвращает возможность уязвимости приложения для атак типа "злоумышленник в середине".
 
-For example when using the ADO.NET driver this is accomplished via  **Encrypt=True** and **TrustServerCertificate=False**. Строка подключения, полученная с портала Azure, будет содержать правильные параметры.
+Например, при использовании драйвера ADO.NET это выполняется с помощью функции **Encrypt = true** и **TrustServerCertificate = false**. Строка подключения, полученная с портала Azure, будет содержать правильные параметры.
 
 > [!IMPORTANT]
-> Note that some non-Microsoft drivers may not use TLS by default or rely on an older version of TLS (<1.2) in order to function. In this case SQL Server still allows you to connect to your database. However, we recommend that you evaluate the security risks of allowing such drivers and application to connect to SQL Database, especially if you store sensitive data. 
+> Обратите внимание, что некоторые драйверы сторонних производителей могут не использовать TLS по умолчанию или полагаться на более старую версию TLS (< 1.2) для работы. В этом случае SQL Server по-прежнему позволяет подключаться к базе данных. Однако рекомендуется оценить риски безопасности, позволяющие таким драйверам и приложениям подключаться к базе данных SQL, особенно если вы храните конфиденциальные данные. 
 >
-> For further information about TLS and connectivity, see [TLS considerations](sql-database-connect-query.md#tls-considerations-for-sql-database-connectivity)
+> Дополнительные сведения о TLS и подключении см. в статье [рекомендации по TLS](sql-database-connect-query.md#tls-considerations-for-sql-database-connectivity) .
 
 ### <a name="transparent-data-encryption-encryption-at-rest"></a>Прозрачное шифрование данных (шифрование при хранении)
 
-[Прозрачное шифрование данных (TDE) для Базы данных SQL Azure](transparent-data-encryption-azure-sql.md) добавляет дополнительный уровень безопасности, помогая защищать неактивные данные от несанкционированного или автономного доступа к необработанным файлам или резервным копиям данных. Это актуально для таких сценариев, как кража оборудования из центра обработки данных или небезопасная утилизация оборудования или носителей, например дисковых накопителей и лент с резервными копиями. TDE encrypts the entire database using an AES encryption algorithm, which doesn’t require application developers to make any changes to existing applications.
+[Прозрачное шифрование данных (TDE) для Базы данных SQL Azure](transparent-data-encryption-azure-sql.md) добавляет дополнительный уровень безопасности, помогая защищать неактивные данные от несанкционированного или автономного доступа к необработанным файлам или резервным копиям данных. Это актуально для таких сценариев, как кража оборудования из центра обработки данных или небезопасная утилизация оборудования или носителей, например дисковых накопителей и лент с резервными копиями. TDE шифрует всю базу данных с помощью алгоритма шифрования AES, который не требует от разработчиков приложений вносить изменения в существующие приложения.
 
 Все создаваемые в Azure базы данных SQL по умолчанию шифруются, а ключ шифрования базы данных защищается встроенным сертификатом сервера.  Обслуживание и смена сертификатов автоматически выполняются службой, не требуя действий пользователя. Если клиент предпочитает самостоятельно контролировать ключи шифрования, он может управлять ими через [Azure Key Vault](../key-vault/key-vault-secure-your-key-vault.md).
 
@@ -146,11 +146,11 @@ For example when using the ADO.NET driver this is accomplished via  **Encrypt=Tr
 
 Дополнительные сведения см. в статье [Обнаружение и классификация данных в службе "База данных SQL Azure"](sql-database-data-discovery-and-classification.md).
 
-### <a name="compliance"></a>Соответствие требованиям
+### <a name="compliance"></a>Соответствие нормативным требованиям
 
-В дополнение к приведенным выше функциям и возможностям, которые помогают выполнять требования к безопасности приложений, в отношении Базы данных SQL Azure регулярно проводится аудит, а сама база данных сертифицирована в соответствии с рядом стандартов. For more information, see the [Microsoft Azure Trust Center](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942) where you can find the most current list of SQL Database compliance certifications.
+В дополнение к приведенным выше функциям и возможностям, которые помогают выполнять требования к безопасности приложений, в отношении Базы данных SQL Azure регулярно проводится аудит, а сама база данных сертифицирована в соответствии с рядом стандартов. Дополнительные сведения см. в [центре управления безопасностью Microsoft Azure](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942) , где можно найти самый актуальный список сертификатов соответствия базы данных SQL.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Как пользоваться функциями контроля доступа в базе данных SQL см. в [этой статье](sql-database-control-access.md).
 - Обсуждение аудита баз данных см. в разделе [Аудит базы данных SQL](sql-database-auditing.md).

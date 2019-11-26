@@ -23,9 +23,9 @@ ms.locfileid: "74225386"
 # <a name="create-an-internal-load-balancer-by-using-the-azure-powershell-module"></a>Создание внутренней подсистемы балансировки нагрузки с помощью модуля Azure PowerShell
 
 > [!div class="op_single_selector"]
-> * [Портал Azure](../load-balancer/load-balancer-get-started-ilb-arm-portal.md)
+> * [портал Azure](../load-balancer/load-balancer-get-started-ilb-arm-portal.md)
 > * [PowerShell](../load-balancer/load-balancer-get-started-ilb-arm-ps.md)
-> * [Azure CLI](../load-balancer/load-balancer-get-started-ilb-arm-cli.md)
+> * [Интерфейс командной строки Azure](../load-balancer/load-balancer-get-started-ilb-arm-cli.md)
 > * [Шаблон](../load-balancer/load-balancer-get-started-ilb-arm-template.md)
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
@@ -90,7 +90,7 @@ Select-AzSubscription -Subscriptionid "GUID of subscription"
 New-AzResourceGroup -Name NRP-RG -location "West US"
 ```
 
-Диспетчер ресурсов Azure требует, чтобы все группы ресурсов указывали расположение. Оно используется в качестве расположения по умолчанию для ресурсов в этой группе ресурсов. Всегда используйте одну группу ресурсов для всех команд, связанных с созданием подсистемы балансировки нагрузки.
+В диспетчере ресурсов Azure для всех групп ресурсов должно быть указано расположение. Оно используется в качестве расположения по умолчанию для ресурсов в этой группе ресурсов. Всегда используйте одну группу ресурсов для всех команд, связанных с созданием подсистемы балансировки нагрузки.
 
 В этом примере мы создали группу ресурсов с именем **NRP RG** с расположением "Западная часть США".
 
@@ -251,7 +251,7 @@ $backendnic2= New-AzNetworkInterface -ResourceGroupName "NRP-RG" -Name lb-nic2-b
 
 ### <a name="step-1-store-the-load-balancer-resource"></a>Шаг 1. Сохранение ресурса подсистемы балансировки нагрузки
 
-Сохраните ресурс подсистемы балансировки нагрузки в переменную (если вы этого еще не сделали). We're using the variable name **$lb**. For the attribute values in the script, use the names for the load balancer resources that were created in the previous steps.
+Сохраните ресурс подсистемы балансировки нагрузки в переменную (если вы этого еще не сделали). Мы используем имя переменной **$LB**. Для значений атрибутов в скрипте используйте имена ресурсов балансировщика нагрузки, которые были созданы на предыдущих шагах.
 
 ```azurepowershell-interactive
 $lb = Get-AzLoadBalancer –name NRP-LB -resourcegroupname NRP-RG
@@ -328,7 +328,7 @@ Remove-AzLoadBalancer -Name NRP-LB -ResourceGroupName NRP-RG
 > [!NOTE]
 > Используйте дополнительный параметр **-Force**, чтобы избежать запроса подтверждения удаления.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Настройка режима распределения для подсистемы балансировки нагрузки](load-balancer-distribution-mode.md)
 * [Настройка параметров времени ожидания простоя TCP для подсистемы балансировки нагрузки](load-balancer-tcp-idle-timeout.md)

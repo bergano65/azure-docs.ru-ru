@@ -1,6 +1,6 @@
 ---
-title: Authentication methods - Azure Active Directory
-description: Authentication methods available in Azure AD for MFA and SSPR
+title: Методы проверки подлинности — Azure Active Directory
+description: Методы проверки подлинности, доступные в Azure AD для MFA и SSPR
 services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
@@ -20,13 +20,13 @@ ms.locfileid: "74420766"
 ---
 # <a name="what-are-authentication-methods"></a>Какие методы проверки подлинности доступны?
 
-As an administrator, choosing authentication methods for Azure Multi-Factor Authentication and self-service password reset (SSPR) it is recommended that you require users to register multiple authentication methods. When an authentication method is not available for a user, they can choose to authenticate with another method.
+В качестве администратора, выбрав методы проверки подлинности для многофакторной идентификации Azure и самостоятельного сброса пароля (SSPR), рекомендуется требовать от пользователей регистрировать несколько методов проверки подлинности. Если метод проверки подлинности недоступен для пользователя, он может выбрать проверку подлинности с помощью другого метода.
 
-Администраторы могут определить в политике, какие методы проверки подлинности доступны для пользователей SSPR и MFA. Некоторые методы проверки подлинности могут быть недоступны для всех функций. For more information about configuring your policies see the articles [How to successfully roll out self-service password reset](howto-sspr-deployment.md) and [Planning a cloud-based Azure Multi-Factor Authentication](howto-mfa-getstarted.md)
+Администраторы могут определить в политике, какие методы проверки подлинности доступны для пользователей SSPR и MFA. Некоторые методы проверки подлинности могут быть недоступны для всех функций. Дополнительные сведения о настройке политик см. в статьях [как успешно развернуть самостоятельный сброс пароля](howto-sspr-deployment.md) и [планирование многофакторной идентификации Azure на основе облачных](howto-mfa-getstarted.md) служб.
 
 Корпорация Майкрософт настоятельно рекомендует администраторам предоставить пользователям на выбор больше минимального необходимого количества методов проверки подлинности на случай, если они у ни не будет доступа к одному из них.
 
-|Метод проверки подлинности|Использование|
+|Authentication Method|Использование|
 | --- | --- |
 | Пароль | MFA и SSPR |
 | Контрольные вопросы | Только SSPR |
@@ -41,7 +41,7 @@ As an administrator, choosing authentication methods for Azure Multi-Factor Auth
 
 |     |
 | --- |
-| OATH Hardware tokens for MFA and SSPR are public preview features of Azure Active Directory. См. дополнительные сведения о [дополнительных условиях использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).|
+| Токены оборудования OATH для MFA и SSPR — это общедоступная Предварительная версия функций Azure Active Directory. См. дополнительные сведения о [дополнительных условиях использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).|
 |     |
 
 ## <a name="password"></a>Пароль
@@ -142,7 +142,7 @@ As an administrator, choosing authentication methods for Azure Multi-Factor Auth
 Если включить использование обоих уведомлений посредством мобильного приложения и кода проверки из мобильного приложения, то пользователи, которые регистрируются с помощью системы уведомлений приложения Microsoft Authenticator, смогут использовать уведомление и код для подтверждения своей личности.
 
 > [!NOTE]
-> If your organization has staff working in or traveling to China, the **Notification through mobile app** method on **Android devices** does not work in that country. Alternate methods should be made available for those users.
+> Если в вашей организации сотрудники работают в Китае или **передаются в Китая, уведомление через метод мобильного приложения** на **устройствах Android** не работает в этой стране. Для этих пользователей можно сделать альтернативные методы.
 
 ### <a name="verification-code-from-mobile-app"></a>Код проверки от мобильного приложения
 
@@ -152,13 +152,13 @@ As an administrator, choosing authentication methods for Azure Multi-Factor Auth
 > Если для самостоятельного сброса пароля требуется только один метод, то пользователям будет доступен только сброс с помощью кода проверки, **чтобы обеспечить высший уровень безопасности**.
 >
 
-Users may have a combination of up to five OATH hardware tokens or authenticator applications such as the Microsoft Authenticator app configured for use at any time.
+У пользователей может быть до пяти маркеров оборудования OATH или приложений для проверки подлинности, таких как приложение Microsoft Authenticator, настроенное для использования в любое время.
 
 ## <a name="oath-hardware-tokens-public-preview"></a>Токен оборудования OATH (общедоступная предварительная версия)
 
-OATH является открытым стандартом, который определяет, как генерируются коды одноразовых паролей (OTP). Azure AD будет поддерживать использование токенов OATH-TOTP SHA-1 с 30-секундным или 60-секундным фильтром. Клиенты могут приобрести эти токены у поставщика на свой выбор. Secret keys are limited to 128 characters, which may not be compatible with all tokens. The secret keys need to be encoded in Base32.
+OATH является открытым стандартом, который определяет, как генерируются коды одноразовых паролей (OTP). Azure AD будет поддерживать использование токенов OATH-TOTP SHA-1 с 30-секундным или 60-секундным фильтром. Клиенты могут приобрести эти токены у поставщика на свой выбор. Ключи секрета ограничены 128 символами, которые могут быть несовместимы со всеми маркерами. Секретные ключи должны быть закодированы в base32.
 
-![Uploading OATH tokens to the MFA Server OATH tokens blade](media/concept-authentication-methods/mfa-server-oath-tokens-azure-ad.png)
+![Отправка OATH-токенов в колонку OATH-токенов сервера MFA](media/concept-authentication-methods/mfa-server-oath-tokens-azure-ad.png)
 
 Токены оборудования OATH поддерживаются как часть общедоступной предварительной версии. См. дополнительные сведения о [дополнительных условиях использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
@@ -178,9 +178,9 @@ Helga@contoso.com,1234567,1234567890abcdef1234567890abcdef,60,Contoso,HardwareKe
 
 После устранения ошибок администратор может активировать каждый ключ, щелкнув **Активировать** для активации токена, и ввести одноразовый пароль, отображаемый на токене.
 
-Users may have a combination of up to five OATH hardware tokens or authenticator applications such as the Microsoft Authenticator app configured for use at any time.
+У пользователей может быть до пяти маркеров оборудования OATH или приложений для проверки подлинности, таких как приложение Microsoft Authenticator, настроенное для использования в любое время.
 
-## <a name="phone-options"></a>Phone options
+## <a name="phone-options"></a>Параметры телефона
 
 ### <a name="mobile-phone"></a>Мобильный телефон
 
@@ -195,18 +195,18 @@ Users may have a combination of up to five OATH hardware tokens or authenticator
 >
 > Функция сброса пароля не поддерживает добавочные номера. Даже добавочные номера в формате +1 4255551234X12345 будут удаляться.
 
-Корпорация Майкрософт не гарантирует единообразного запроса Многофакторной идентификация с помощью SMS или голосового вызова при вводе одного и того же числа. В интересах наших пользователей корпорация Майкрософт может добавить или удалить короткие коды в любое время, так как мы корректируем маршруты для улучшения доставки SMS. Microsoft does not support short codes for countries/regions besides the United States and Canada.
+Корпорация Майкрософт не гарантирует единообразного запроса Многофакторной идентификация с помощью SMS или голосового вызова при вводе одного и того же числа. В интересах наших пользователей корпорация Майкрософт может добавить или удалить короткие коды в любое время, так как мы корректируем маршруты для улучшения доставки SMS. Корпорация Майкрософт не поддерживает короткие коды стран и регионов, кроме США и Канады.
 
-#### <a name="text-message"></a>Текстовое сообщение
+#### <a name="text-message"></a>текстовое сообщение;
 
 Текстовое сообщение с кодом проверки отправляется номер мобильного телефона. Этот код проверки следует ввести в интерфейс для входа, чтобы продолжить операцию.
 
-#### <a name="phone-call"></a>Телефонный звонок
+#### <a name="phone-call"></a>телефонный вызов;
 
 По указанному номеру телефона осуществляется автоматический голосовой вызов. Для прохождения аутентификации нужно ответить на вызов и нажать кнопку # на клавиатуре телефона.
 
 > [!IMPORTANT]
-> Starting in March of 2019 the phone call options will not be available to MFA and SSPR users in free/trial Azure AD tenants. SMS messages are not impacted by this change. Phone call will continue to be available to users in paid Azure AD tenants. This change only impacts free/trial Azure AD tenants.
+> Начиная с марта 2019 параметры телефонного звонка не будут доступны для пользователей MFA и SSPR в бесплатных или пробных клиентах Azure AD. Это изменение не влияет на SMS messages. Телефонный звонок будет по прежнему доступен пользователям в платных клиентах Azure AD. Это изменение касается только бесплатных и пробных клиентов Azure AD.
 
 ### <a name="office-phone"></a>Рабочий телефон
 
@@ -217,31 +217,31 @@ Users may have a combination of up to five OATH hardware tokens or authenticator
 Атрибутом рабочего телефона управляет администратор.
 
 > [!IMPORTANT]
-> Starting in March of 2019 the phone call options will not be available to MFA and SSPR users in free/trial Azure AD tenants. SMS messages are not impacted by this change. Phone call will continue to be available to users in paid Azure AD tenants. This change only impacts free/trial Azure AD tenants.
+> Начиная с марта 2019 параметры телефонного звонка не будут доступны для пользователей MFA и SSPR в бесплатных или пробных клиентах Azure AD. Это изменение не влияет на SMS messages. Телефонный звонок будет по прежнему доступен пользователям в платных клиентах Azure AD. Это изменение касается только бесплатных и пробных клиентов Azure AD.
 
 > [!NOTE]
 > Между кодом страны и номером телефона должен быть пробел.
 >
 > Функция сброса пароля не поддерживает добавочные номера. Даже добавочные номера в формате +1 4255551234X12345 будут удаляться.
 
-### <a name="troubleshooting-phone-options"></a>Troubleshooting phone options
+### <a name="troubleshooting-phone-options"></a>Устранение неполадок с параметрами телефона
 
-Common problems related to authentication methods using a phone number:
+Распространенные проблемы, связанные с методами проверки подлинности с использованием номера телефона:
 
-* Blocked caller ID on a single device
-   * Troubleshoot device
-* Wrong phone number, incorrect country code, home phone number versus work phone number
-   * Troubleshoot user object and configured authentication methods. Ensure correct phone numbers are registered.
-* Wrong PIN entered
-   * Confirm user has used the correct PIN registered in Azure MFA Server.
-* Call forwarded to voicemail
-   * Ensure user has phone turned on and that service is available in their area or use alternate method.
+* Заблокированный идентификатор звонящего на одном устройстве
+   * Устранение неполадок устройства
+* Неправильный номер телефона, неверный код страны, номер домашнего телефона и номер рабочего телефона
+   * Устранение неполадок объекта пользователя и настроенных методов проверки подлинности. Убедитесь, что зарегистрированы правильные номера телефонов.
+* Введен неправильный ПИН-код
+   * Подтвердите, что пользователь использовал правильный ПИН-код, зарегистрированный на сервере Azure MFA.
+* Вызов перенаправлен на голосовую почту
+   * Убедитесь, что у пользователя включен Телефон, а эта служба доступна в своей области, или используйте другой метод.
 * Пользователь заблокирован
-   * Have administrator unblock the user in the Azure portal.
-* SMS is not subscribed on the device
-   * Have the user change methods or activate SMS on the device.
-* Faulty telecom providers (No phone input detected, missing DTMF tones issues, blocked caller ID on multiple devices, or blocked SMS across multiple devices)
-   * Microsoft uses multiple telecom providers to route phone calls and SMS messages for authentication. If you are seeing any of the above issues have a user attempt to use the method at least 5 times within 5 minutes and have that user's information available when contacting Microsoft support.
+   * Администратор разблокирует пользователя в портал Azure.
+* На устройстве не создана подписка на SMS
+   * Поменяйте методы изменения пользователем или активируйте SMS на устройстве.
+* Неисправные поставщики телекоммуникационных услуг (при отсутствии входных данных на телефоне, отсутствие сигналов DTMF, заблокированный идентификатор вызывающего объекта на нескольких устройствах или блокирование SMS на нескольких устройствах)
+   * Корпорация Майкрософт использует несколько поставщиков телекоммуникационных услуг для передачи телефонных звонков и сообщений SMS для проверки подлинности. Если вы видите любую из описанных выше проблем, то пользователь попытается использовать метод не менее 5 раз в течение 5 минут и иметь доступ к данным этого пользователя при обращении в службу поддержки Майкрософт.
 
 ## <a name="app-passwords"></a>Пароли приложений
 
@@ -257,12 +257,12 @@ Common problems related to authentication methods using a phone number:
 * Некоторые современные архитектуры при двухфакторной проверке подлинности могут запрашивать как корпоративные учетные данные, так и пароли приложения, в зависимости от того, где выполняется проверка подлинности. Что касается клиентов, выполняющих проверку подлинности в локальной инфраструктуре, можно использовать имя пользователя и пароль, применяющиеся внутри организации. Что касается клиентов, выполняющих проверку подлинности в Azure AD, можно использовать пароль приложения.
 * По умолчанию пользователи не могут создавать пароли приложений. Если требуется разрешить пользователям создавать пароли, выберите параметр **Allow users to create app passwords to sign into non-browser applications** (Разрешить пользователям создавать пароли приложений для входа в небраузерные приложения) в разделе "Параметры службы".
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 [Включение самостоятельного сброса пароля для организации](quickstart-sspr.md)
 
 [Включение службы Многофакторной идентификации Azure для организации](howto-mfa-getstarted.md)
 
-[Enable combined registration in your tenant](howto-registration-mfa-sspr-combined.md)
+[Включение Объединенной регистрации в клиенте](howto-registration-mfa-sspr-combined.md)
 
 [Документация по настройке метода аутентификации пользователей](https://aka.ms/securityinfoguide)

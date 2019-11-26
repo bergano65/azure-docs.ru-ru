@@ -1,5 +1,5 @@
 ---
-title: Get container instance logs & events
+title: Получение журналов экземпляров контейнера & событий
 description: Узнайте, как отладить журналы и события контейнеров в службе "Экземпляры контейнеров Azure"
 ms.topic: article
 ms.date: 03/21/2019
@@ -13,7 +13,7 @@ ms.locfileid: "74481747"
 ---
 # <a name="retrieve-container-logs-and-events-in-azure-container-instances"></a>Получение журналов и событий контейнеров в службе "Экземпляры контейнеров Azure"
 
-When you have a misbehaving container, start by viewing its logs with [az container logs][az-container-logs], and streaming its standard out and standard error with [az container attach][az-container-attach].
+При наличии контейнера с неправильным поведением Начните с просмотра его журналов с помощью команды [AZ Container Logs][az-container-logs]и потоковой передачи стандартного выхода и стандартной ошибки с помощью команды [AZ Container Attach][az-container-attach].
 
 ## <a name="view-logs"></a>Просмотр журналов
 
@@ -43,9 +43,9 @@ Traceback (most recent call last):
 urllib.error.HTTPError: HTTP Error 404: Not Found
 ```
 
-## <a name="attach-output-streams"></a>Присоединение выходных потоков
+## <a name="attach-output-streams"></a>Присоединение потоков вывода
 
-The [az container attach][az-container-attach] command provides diagnostic information during container startup. Она направляет потоки STDOUT и STDERR запущенного контейнера в локальную консоль.
+Команда [AZ Container Attach][az-container-attach] предоставляет диагностические сведения во время запуска контейнера. Она направляет потоки STDOUT и STDERR запущенного контейнера в локальную консоль.
 
 Ниже приводятся выходные данные журнала, созданные контейнером на основе задач, описанным в статье [Выполнение задачи-контейнера в службе "Экземпляры контейнеров Azure"](container-instances-restart-policy.md), которому предоставлен действительный URL-адрес большого текстового файла для обработки.
 
@@ -142,7 +142,7 @@ az container show --resource-group myResourceGroup --name mycontainer
   ...
 }
 ```
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 Узнайте, как [устранить неполадки контейнера и развертывания](container-instances-troubleshooting.md) для службы "Экземпляры контейнеров Azure".
 
 <!-- LINKS - Internal -->

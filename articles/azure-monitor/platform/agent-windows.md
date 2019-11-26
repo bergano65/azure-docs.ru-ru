@@ -1,6 +1,6 @@
 ---
-title: Connect Windows computers to Azure Monitor | Microsoft Docs
-description: This article describes how to connect Windows computers hosted in other clouds or on-premises to Azure Monitor with the Log Analytics agent for Windows.
+title: Подключение компьютеров Windows к Azure Monitor | Документация Майкрософт
+description: В этой статье описывается подключение компьютеров Windows, размещенных в других облаках или локальных, к Azure Monitor с помощью агента Log Analytics для Windows.
 ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
@@ -14,11 +14,11 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74420421"
 ---
-# <a name="connect-windows-computers-to-azure-monitor"></a>Connect Windows computers to Azure Monitor
+# <a name="connect-windows-computers-to-azure-monitor"></a>Подключение компьютеров Windows к Azure Monitor
 
-In order to monitor and manage virtual machines or physical computers in your local datacenter or other cloud environment with Azure Monitor, you need to deploy the Log Analytics agent (also referred to as the Microsoft Monitoring Agent (MMA)) and configure it to report to one or more Log Analytics workspaces. Агент также поддерживает гибридную рабочую роль Runbook для службы автоматизации Azure.  
+Чтобы отслеживать виртуальные машины или физические компьютеры и управлять ими в локальном центре обработки данных или в другой облачной среде с Azure Monitor, необходимо развернуть агент Log Analytics (также называемый Microsoft Monitoring Agent (MMA)) и настроить его на Отправить отчет в одну или несколько рабочих областей Log Analytics. Агент также поддерживает гибридную рабочую роль Runbook для службы автоматизации Azure.  
 
-На отслеживаемом компьютере Windows агент отображается как служба Microsoft Monitoring Agent. Служба Microsoft Monitoring Agent собирает события из файлов журнала, журнала событий Windows, данных о производительности и других данных телеметрии. Even when the agent is unable to communicate with Azure Monitor it reports to, the agent continues to run and queues the collected data on the disk of the monitored computer. При восстановлении подключения служба Microsoft Monitoring Agent отправляет собранные данные в службу.
+На отслеживаемом компьютере Windows агент отображается как служба Microsoft Monitoring Agent. Служба Microsoft Monitoring Agent собирает события из файлов журнала, журнала событий Windows, данных о производительности и других данных телеметрии. Даже если агенту не удается связаться с Azure Monitor, в который он сообщает, агент продолжит работу и помещает собранные данные в очередь на диске наблюдаемого компьютера. При восстановлении подключения служба Microsoft Monitoring Agent отправляет собранные данные в службу.
 
 Агент можно установить с помощью одного из указанных ниже методов. Чтобы установить разные типы компьютеров соответствующим образом, в большинстве установок используется сочетание этих методов.  Подробнее об использовании каждого метода рассказывается далее в этой статье.
 
@@ -28,15 +28,15 @@ In order to monitor and manage virtual machines or physical computers in your lo
 * Шаблон Resource Manager для локальных виртуальных машин под управлением Windows в Azure Stack. 
 
 >[!NOTE]
->Azure Security Center (ASC) depends on the Microsoft Monitoring Agent (also referred to as the Log Analytics Windows agent) and will install and configure it to report to a Log Analytics workspace as part of its deployment. ASC includes an automatic provisioning option which enables automatic installation of the Log Analytics Windows agent on all VMs in your subscription and configures it to report to a specific workspace. For more information about this option, see [Enable automatic provisioning of Log Analytics agent](../../security-center/security-center-enable-data-collection.md#auto-provision-mma).
+>Центр безопасности Azure (ASC) зависит от Microsoft Monitoring Agent (также называется агентом Log Analytics Windows) и будет устанавливать и настраивать его для передачи в рабочую область Log Analytics в рамках развертывания. ASC включает параметр автоматической подготовки, который позволяет автоматически устанавливать агент Log Analytics Windows на всех виртуальных машинах в подписке и настраивает его для передачи отчетов в определенную рабочую область. Дополнительные сведения об этом параметре см. в разделе [Включение автоматической подготовки log Analytics агента](../../security-center/security-center-enable-data-collection.md#auto-provision-mma).
 >
 
-If you need to configure the agent to report to more than one workspace, this cannot be performed during initial setup, only afterwards by updating the settings from Control Panel or PowerShell as described in [Adding or removing a workspace](agent-manage.md#adding-or-removing-a-workspace).  
+Если необходимо настроить агент для передачи отчетов более чем в одну рабочую область, это невозможно сделать во время начальной установки, только после этого обновите параметры на панели управления или в PowerShell, как описано в статье [Добавление или удаление рабочей области](agent-manage.md#adding-or-removing-a-workspace).  
 
 Дополнительные сведения о поддерживаемой конфигурации см. в разделах о [поддерживаемых операционных системах Windows](log-analytics-agent.md#supported-windows-operating-systems) и [требованиях к сетевым брандмауэрам](log-analytics-agent.md#network-firewall-requirements).
 
 ## <a name="obtain-workspace-id-and-key"></a>Получение идентификатора и ключа рабочей области
-Перед установкой агента Log Analytics для Windows требуется получить идентификатор и ключ для рабочей области Log Analytics.  This information is required during setup from each installation method to properly configure the agent and ensure it can successfully communicate with Azure Monitor in Azure commercial and US Government cloud. 
+Перед установкой агента Log Analytics для Windows требуется получить идентификатор и ключ для рабочей области Log Analytics.  Эти сведения необходимы во время установки из каждого метода установки для правильной настройки агента и обеспечения его успешной связи с Azure Monitor в коммерческой и облачной облаке США. 
 
 1. На портале Azure щелкните **Все службы**. В списке ресурсов введите **Log Analytics**. Как только вы начнете вводить символы, список отфильтруется соответствующим образом. Выберите **Log Analytics**.
 2. В списке рабочих областей Log Analytics выберите ту, в которую агент должен отправлять отчеты.
@@ -48,13 +48,13 @@ If you need to configure the agent to report to more than one workspace, this ca
 Чтобы настроить использование протокола [TLS 1.2](https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings#tls-12) для обмена данными между агентом Windows и службой Log Analytics, можно выполнить следующие действия для включения протокола до установки агента на виртуальной машине или после.
 
 >[!NOTE]
->If you are configuring a VM running Windows Server 2008 SP2 x64 to use TLS 1.2, you first need to install the following [SHA-2 code signing support update](https://support.microsoft.com/help/4474419/sha-2-code-signing-support-update) before performing the steps below. 
+>Если вы настраиваете виртуальную машину под управлением Windows Server 2008 с пакетом обновления 2 (SP2) x64 для использования TLS 1,2, сначала необходимо установить следующее [Обновление поддержки подписывания кода SHA-2](https://support.microsoft.com/help/4474419/sha-2-code-signing-support-update) перед выполнением описанных ниже действий. 
 >
 
 1. Найдите следующий подраздел реестра: **HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols**.
-2. Create a subkey under **Protocols** for TLS 1.2 **HKLM\System\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2**
-3. Создайте подраздел **Client** в созданном ранее подразделе версии протокола TLS 1.2. For example, **HKLM\System\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client**.
-4. Create the following DWORD values under **HKLM\System\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client**:
+2. Создайте подраздел в разделе **Protocols** for TLS 1,2 **хклм\систем\куррентконтролсет\контрол\секуритипровидерс\счаннел\протоколс\тлс 1,2**
+3. Создайте подраздел **Client** в созданном ранее подразделе версии протокола TLS 1.2. Например, **хклм\систем\куррентконтролсет\контрол\секуритипровидерс\счаннел\протоколс\тлс 1.2 \ Client**.
+4. Создайте следующие значения DWORD в разделе **хклм\систем\куррентконтролсет\контрол\секуритипровидерс\счаннел\протоколс\тлс 1.2 \ Client**:
 
     * **Enabled** [значение = 1];
     * **DisabledByDefault** [значение = 0].  
@@ -68,7 +68,7 @@ If you need to configure the agent to report to more than one workspace, this ca
 5. Перезагрузите систему, чтобы параметры вступили в силу. 
 
 ## <a name="install-the-agent-using-setup-wizard"></a>Установка агента с помощью мастера установки
-The following steps install and configure the Log Analytics agent in Azure and Azure Government cloud by using the setup wizard for the agent on your computer. Сведения о настройке агента для отправки отчетов в группу управления System Center Operations Manager см. в разделе [Развертывание агента Operations Manager с помощью мастера установки агента](https://docs.microsoft.com/system-center/scom/manage-deploy-windows-agent-manually#to-deploy-the-operations-manager-agent-with-the-agent-setup-wizard).
+Следующие шаги устанавливают и настраивают агент Log Analytics в Azure для государственных организаций, а также с помощью мастера установки агента на компьютере. Сведения о настройке агента для отправки отчетов в группу управления System Center Operations Manager см. в разделе [Развертывание агента Operations Manager с помощью мастера установки агента](https://docs.microsoft.com/system-center/scom/manage-deploy-windows-agent-manually#to-deploy-the-operations-manager-agent-with-the-agent-setup-wizard).
 
 1. В рабочей области Log Analytics на ранее открытой странице **Серверы Windows** выберите соответствующую версию агента для скачивания (**Download Windows Agent** (Скачать агент для Windows)) в зависимости от архитектуры процессора, на котором выполняется операционная система Windows.   
 2. Запустите программу установки, чтобы установить агент на компьютере.
@@ -79,7 +79,7 @@ The following steps install and configure the Log Analytics agent in Azure and A
 6. На странице **Azure Log Analytics** выполните следующее.
    1. Вставьте **идентификатор рабочей области** и **ключ рабочей области (первичный ключ)** , скопированные ранее.  Если компьютер должен передавать данные в рабочую область Log Analytics в облаке Azure для государственных организаций, выберите **Azure для государственных организаций США** из раскрывающегося списка **Облако Azure**.  
    2. Если компьютер должен обмениваться данными со службой Log Analytics через прокси-сервер, щелкните **Дополнительно** и укажите URL-адрес и номер порта прокси-сервера.  Если для доступа к прокси-серверу требуется аутентификация, введите имя пользователя и пароль для аутентификации на прокси-сервере, затем нажмите кнопку **Далее**.  
-7. Нажмите кнопку **Далее** после завершения ввода необходимых параметров конфигурации.<br><br> ![Вставка идентификатора рабочей области и первичного ключа](media/agent-windows/log-analytics-mma-setup-laworkspace.png)<br><br>
+7. Нажмите кнопку **Далее** после завершения ввода необходимых параметров конфигурации.<br><br> ![вставка идентификатора рабочей области и первичного ключа](media/agent-windows/log-analytics-mma-setup-laworkspace.png)<br><br>
 8. На странице **Готовность к установке** просмотрите выбранные параметры и нажмите кнопку **Установить**.
 9. На странице **Настройка успешно завершена** нажмите кнопку **Готово**.
 
@@ -93,7 +93,7 @@ The following steps install and configure the Log Analytics agent in Azure and A
 
 В следующей таблице описаны определенные параметры, поддерживаемые программой установки агента, а также при развертывании с помощью Automation DSC.
 
-|Параметры MMA                   |Заметки         |
+|Параметры MMA                   |Примечания         |
 |---------------------------------------|--------------|
 | NOAPM=1                               | Необязательный параметр. Установка агента без мониторинга производительности приложений .NET.|   
 |ADD_OPINSIGHTS_WORKSPACE               | 1 — настройка агента для передачи отчетов в рабочую область.                |
@@ -117,7 +117,7 @@ The following steps install and configure the Log Analytics agent in Azure and A
     setup.exe /qn NOAPM=1 ADD_OPINSIGHTS_WORKSPACE=1 OPINSIGHTS_WORKSPACE_AZURE_CLOUD_TYPE=1 OPINSIGHTS_WORKSPACE_ID="<your workspace ID>" OPINSIGHTS_WORKSPACE_KEY="<your workspace key>" AcceptEndUserLicenseAgreement=1
     ```
     >[!NOTE]
-    >The string values for the parameters *OPINSIGHTS_WORKSPACE_ID* and *OPINSIGHTS_WORKSPACE_KEY* need to be encapsulated in double-quotes to instruct Windows Installer to interprit as valid options for the package. 
+    >Строковые значения для параметров *OPINSIGHTS_WORKSPACE_ID* и *OPINSIGHTS_WORKSPACE_KEY* должны быть инкапсулированы в двойные кавычки, чтобы указать установщик Windows интерприт в качестве допустимых параметров для пакета. 
 
 ## <a name="install-the-agent-using-dsc-in-azure-automation"></a>Установка агента с помощью DSC в службе автоматизации Azure
 
@@ -186,11 +186,11 @@ The following steps install and configure the Log Analytics agent in Azure and A
 
 На **панели управления** компьютера найдите элемент **Microsoft Monitoring Agent**.  Выберите его. На вкладке **Azure Log Analytics** агент должен отобразить следующее сообщение: **Microsoft Monitoring Agent успешно подключен к службе Microsoft Operations Management Suite.**<br><br> ![Состояние подключения MMA к Log Analytics](media/agent-windows/log-analytics-mma-laworkspace-status.png)
 
-You can also perform a simple log query in the Azure portal.  
+Можно также выполнить простой запрос к журналу в портал Azure.  
 
-1. На портале Azure щелкните **Все службы**. In the list of resources, type **Azure Monitor**. Как только вы начнете вводить символы, список отфильтруется соответствующим образом. Select **Azure Monitor**.  
-2. Select **Logs** in the menu. 
-2. On the Logs pane, in the query field type:  
+1. На портале Azure щелкните **Все службы**. В списке ресурсов введите **Azure Monitor**. Как только вы начнете вводить символы, список отфильтруется соответствующим образом. Выберите **Azure Monitor**.  
+2. Выберите **журналы** в меню. 
+2. В области журналы в поле Запрос введите:  
 
     ```
     Heartbeat 
@@ -200,8 +200,8 @@ You can also perform a simple log query in the Azure portal.
 
 В возвращаемых результатах поиска должны отображаться записи пульса для компьютера, указывающие, что агент успешно подключен и отправляет отчеты в службу.   
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-- Review [Managing and maintaining the Log Analytics agent for Windows and Linux](agent-manage.md) to learn about how to reconfigure, upgrade, or remove the agent from the virtual machine.
+- Ознакомьтесь с [управлением и обслуживанием агента log Analytics для Windows и Linux](agent-manage.md) , чтобы узнать о том, как перенастроить, обновить или удалить агент с виртуальной машины.
 
-- Review [Troubleshooting the Windows agent](agent-windows-troubleshoot.md) if you encounter issues while installing or managing the agent.
+- Если при установке агента или управлении им возникают проблемы, ознакомьтесь [с разрешениями по устранению неполадок в агенте Windows](agent-windows-troubleshoot.md) .

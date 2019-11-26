@@ -1,6 +1,6 @@
 ---
-title: Scenarios for Private Zones - Azure DNS
-description: In this article, learn about common scenarios for using Azure DNS Private Zones.
+title: Сценарии для частных зон — Azure DNS
+description: В этой статье описаны распространенные сценарии использования Частные зоны Azure DNS.
 services: dns
 author: asudbring
 ms.service: dns
@@ -14,7 +14,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74210460"
 ---
-# <a name="azure-dns-private-zones-scenarios"></a>Azure DNS Private zones scenarios
+# <a name="azure-dns-private-zones-scenarios"></a>Сценарии использования частных зон Azure DNS
 
 Частные зоны Azure DNS обеспечивают разрешение имен внутри виртуальной сети и между виртуальными сетями. В этой статье мы рассмотрим несколько распространенных сценариев, которые можно реализовать с помощью этой функции.
 
@@ -47,7 +47,7 @@ ms.locfileid: "74210460"
 
 ![Разрешение имен с "расщеплением горизонта"](./media/private-dns-scenarios/split-brain-resolution.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 Дополнительные сведения об использовании частных зон DNS см. в статье [Using Azure DNS for private domains](private-dns-overview.md) (Использование Azure DNS для частных доменов).
 
 Узнайте, как создать [частную зону DNS](./private-dns-getstarted-powershell.md) в Azure DNS.

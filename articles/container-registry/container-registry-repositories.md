@@ -1,6 +1,6 @@
 ---
-title: View repositories in portal
-description: Use the Azure portal to view Azure Container Registry repositories, which host Docker container images and other supported artifacts.
+title: Просмотр репозиториев на портале
+description: Используйте портал Azure для просмотра репозиториев реестра контейнеров Azure, в которых размещены образы контейнеров DOCKER и другие поддерживаемые артефакты.
 ms.topic: article
 ms.date: 01/05/2018
 ms.openlocfilehash: 1da72706d2554610a685f71199ab14af5e30ce1a
@@ -14,17 +14,17 @@ ms.locfileid: "74456290"
 
 Реестр контейнеров Azure позволяет хранить образы контейнеров Docker в репозиториях. Это позволяет хранить группы образов (версии образов) в изолированных средах. Эти репозитории можно указать при отправке образов в реестр и просмотреть их содержимое на портале Azure.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 * **Реестр контейнеров.** Создайте реестр контейнеров в своей подписке Azure. Это можно сделать на [портале Azure](container-registry-get-started-portal.md) или с помощью [Azure CLI](container-registry-get-started-azure-cli.md).
-* **Docker CLI**: Install [Docker][docker-install] on your local machine, which provides you with the Docker command-line interface.
+* **DOCKER CLI**: установите [DOCKER][docker-install] на локальном компьютере, который предоставляет интерфейс командной строки DOCKER.
 * **Образ контейнера.** Отправьте образ в реестр контейнеров. Рекомендации о том, как это сделать, см. в статье [Отправка первого образа в частный реестр контейнеров Docker с помощью интерфейса командной строки Docker](container-registry-get-started-docker-cli.md).
 
 ## <a name="view-repositories-in-azure-portal"></a>Просмотр списка репозиториев на портале Azure
 
 На портале Azure можно просмотреть список репозиториев с образами, а также теги образов.
 
-Если вы следовали инструкциям из статьи [Отправка первого образа в частный реестр контейнеров Docker с помощью интерфейса командной строки Docker](container-registry-get-started-docker-cli.md), в реестре контейнеров должен храниться образ Nginx (если вы не удалили его). При работе с этой статьей вы отметили образ тегом и указали пространство имен samples (`/samples/nginx`). As a refresher, the [docker push][docker-push] command specified in that article was:
+Если вы следовали инструкциям из статьи [Отправка первого образа в частный реестр контейнеров Docker с помощью интерфейса командной строки Docker](container-registry-get-started-docker-cli.md), в реестре контейнеров должен храниться образ Nginx (если вы не удалили его). При работе с этой статьей вы отметили образ тегом и указали пространство имен samples (`/samples/nginx`). В качестве Обновитель команда [DOCKER Push][docker-push] , указанная в этой статье:
 
 ```Bash
 docker push myregistry.azurecr.io/samples/nginx
@@ -43,7 +43,7 @@ docker push myregistry.azurecr.io/samples/nginx
 
 ![Репозитории на портале](./media/container-registry-repositories/container-registry-repositories.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Теперь, когда вы знаете, как просматривать список репозиториев на портале и работать с ними, попробуйте использовать Реестр контейнеров Azure с кластером [службы Azure Kubernetes (AKS)](../aks/tutorial-kubernetes-prepare-app.md).
 

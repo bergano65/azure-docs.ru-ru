@@ -1,6 +1,6 @@
 ---
-title: Create Azure Cosmos containers and databases in autopilot mode.
-description: Learn about the benefits, use cases, and how to provision Azure Cosmos databases and containers in autopilot mode.
+title: Создание контейнеров и баз данных Azure Cosmos в режиме автопилота.
+description: Узнайте о преимуществах, вариантах использования и подготовке баз данных и контейнеров Azure Cosmos в режиме автопилотного развертывания.
 author: kirillg
 ms.author: kirillg
 ms.service: cosmos-db
@@ -13,100 +13,100 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74383090"
 ---
-# <a name="create-azure-cosmos-containers-and-databases-in-autopilot-mode-preview"></a>Create Azure Cosmos containers and databases in autopilot mode (Preview)
+# <a name="create-azure-cosmos-containers-and-databases-in-autopilot-mode-preview"></a>Создание контейнеров и баз данных Azure Cosmos в режиме автопилотного режима (Предварительная версия)
 
-Azure Cosmos DB allows you to provision throughput on your containers in either manual or autopilot mode. This article describes the benefits and use cases of autopilot mode.
+Azure Cosmos DB позволяет подготавливать пропускную способность для контейнеров в ручном или в режиме автопилота. В этой статье описываются преимущества и варианты использования режима автопилота.
 
 > [!NOTE]
-> Autopilot mode is currently available in public preview. To enable autopilot feature for your Azure Cosmos account, see the [enable autopilot](#enable-autopilot) section of this article. You can enable autopilot for new databases and containers only,it's not available for existing containers and databases.
+> Режим автопилота в настоящее время доступен в общедоступной предварительной версии. Сведения о включении функции автопилота для учетной записи Azure Cosmos см. в разделе [Включение автопилота](#enable-autopilot) этой статьи. Функцию автопилота можно включить только для новых баз данных и контейнеров, но она недоступна для существующих контейнеров и баз данных.
 
-In addition to manual provisioning of throughput, you can now configure Azure cosmos containers in autopilot mode. Azure Cosmos containers and databases configured in autopilot mode will **automatically and instantly scale the provisioned throughput based on your application needs without compromising the SLAs.**
+Кроме ручной подготовки пропускной способности, теперь можно настроить контейнеры Azure Cosmos в режиме автопилота. Контейнеры и базы данных Azure Cosmos, настроенные в режиме автопилота, **автоматически и мгновенно масштабируют подготовленную пропускную способность в зависимости от потребностей вашего приложения, не нарушая соглашения об уровне обслуживания.**
 
-You no longer need to manually manage the provisioned throughput or handle rate-limiting issues. Azure Cosmos containers configured in autopilot mode can be scaled instantly in response to the workload without any impacting the availability, latency, throughput, or performance of the workload globally. Under high utilization, Azure Cosmos containers configured in autopilot mode can be scaled up or down without impacting the ongoing operations.
+Вам больше не нужно вручную управлять подготовленной пропускной способностью или проблемами ограничения частоты обработки. Контейнеры Azure Cosmos, настроенные в режиме автопилотного режима, можно мгновенно масштабировать в ответ на рабочую нагрузку без каких бы то ни было повлиять на доступность, задержку, пропускную способность или производительность рабочей нагрузки. В условиях высокой загрузки контейнеры Azure Cosmos, настроенные в режиме автопилота, можно масштабировать вверх или вниз, не влияя на выполняемые операции.
 
-When configuring containers and databases in autopilot mode, you need to specify the maximum throughput `Tmax`  not to be exceeded. Containers can then scale instantly based on the workload needs within the `0.1*Tmax < T < Tmax` range. In other words, containers and databases scale instantly based on the workload needs, from as low as 10% of the maximum throughput value that you have configured, and up to the configured maximum throughput value. You can change the maximum throughput (Tmax) setting on autopilot database or container at any point in time. With autopilot option, the 400 RU/s minimum throughput per container or database is no longer applicable.
+При настройке контейнеров и баз данных в режиме автопилота необходимо указать максимальную пропускную способность, `Tmax` не следует превысить. Контейнеры могут мгновенно масштабироваться в зависимости от потребностей рабочей нагрузки в диапазоне `0.1*Tmax < T < Tmax`. Другими словами, контейнеры и базы данных мгновенно масштабируются в зависимости от потребностей рабочей нагрузки, от как минимум на 10% от максимального значения пропускной способности и до заданного максимального значения пропускная способность. Вы можете изменить параметр максимальной пропускной способности (Тмакс) в базе данных или контейнере для автопилота в любой момент времени. При использовании функции автопилота Минимальная пропускная способность (400 единиц запросов/с) для контейнера или базы данных больше не применяется.
 
-During the preview of autopilot, for the specified maximum throughput on the container or the database, the system allows operating within the calculated storage limit. If the storage limit is exceeded, then the maximum throughput is automatically adjusted to a higher value. When using database level throughput with autopilot mode, the number of containers allowed within a database is calculated as: (0.001 * Max throughput ). For example, if you provision 20,000 autopilot RU/s, then the database can have 20 containers.
+В ходе предварительной версии автопилота для указанной максимальной пропускной способности контейнера или базы данных система допускает работу в пределах рассчитанного предела хранилища. Если превышено ограничение хранилища, максимальная пропускная способность автоматически корректируется до более высокого значения. При использовании пропускной способности уровня базы данных в режиме автопилота количество контейнеров, допустимых в базе данных, вычисляется следующим образом: (0,001 * максимальная пропускная способность). Например, если вы подготавливаете 20 000 для автопилота, то база данных может иметь 20 контейнеров.
 
-## <a name="benefits-of-autopilot-mode"></a>Benefits of autopilot mode
+## <a name="benefits-of-autopilot-mode"></a>Преимущества режима автопилота
 
-Azure Cosmos containers that are configured in autopilot mode have the following benefits:
+Контейнеры Azure Cosmos, настроенные в режиме "автопилотный режим", имеют следующие преимущества.
 
-* **Simple:** Containers in autopilot mode remove the complexity to manage provisioned throughput (RUs) and capacity manually for various containers.
+* **Простой:** Контейнеры в режиме автопилота удаляют сложность управления подготовленной пропускной способностью (RUs) и емкостью вручную для различных контейнеров.
 
-* **Scalable:** Containers in autopilot mode seamlessly scale the provisioned throughput capacity as needed. There is no disruption to client connections, applications and they don’t impact any existing SLAs.
+* **Масштабируемая:** Контейнеры в режиме автопилота эффективно масштабируют подготовленную пропускную способность по мере необходимости. Не существует сбоев клиентских подключений, приложений, и они не влияют на существующие соглашения об уровне обслуживания.
 
-* **Cost-effective:** When you use Azure Cosmos containers configured in autopilot mode, you only pay for the resources that your workloads need on a per-hour basis.
+* Экономичность **:** При использовании контейнеров Cosmos Azure, настроенных в режиме автопилота, вы платите только за те ресурсы, которые нужны вашей рабочей нагрузке для каждого часа.
 
-* **Highly available:** Azure Cosmos containers in autopilot mode use the same globally distributed, fault-tolerant, highly available backend to ensure data durability, and high availability always.
+* **Высокий уровень доступности:** Контейнеры Azure Cosmos в режиме автопилота используют ту же глобально распределенную, отказоустойчивую, высокодоступную серверную часть, обеспечивающую устойчивость данных, и высокую доступность всегда.
 
-## <a name="use-cases-of-autopilot-mode"></a>Use cases of autopilot mode
+## <a name="use-cases-of-autopilot-mode"></a>Варианты использования режима автопилота
 
-The use cases for Azure Cosmos containers configured in autopilot mode include:
+Варианты использования для контейнеров Azure Cosmos, настроенных в режиме автопилота, включают:
 
-* **Variable workloads:** When you are running a lightly used application with peak usage of 1 hour to several hours few times each day, or several times per year. Examples include applications for human resources, budgeting, and operational reporting. For such scenarios, containers configured in autopilot mode can be used, you no longer need to manually provision for either peak or average capacity.
+* **Рабочие нагрузки переменных:** При использовании незанятого приложения с пиковым потреблением в 1 час в несколько часов каждый день или несколько раз в год. К примерам относятся приложения для отделов кадров, бюджетирования и оперативной отчетности. В таких случаях можно использовать контейнеры, настроенные в режиме автопилота. вам больше не нужно вручную подготавливать пиковую или среднюю емкость.
 
-* **Unpredictable workloads:** When you are running workloads where there is database usage throughout the day, but also peaks of activity that are hard to predict. An example includes a traffic site that sees a surge of activity when weather forecast changes. Containers configured in autopilot mode adjust the capacity to meet the needs of the application's peak load and scale back down when the surge of activity is over.
+* **Непредсказуемые рабочие нагрузки:** При работе с рабочими нагрузками, в которых используется база данных в течение дня, а также пиковые нагрузки действий, которые трудно прогнозировать. Пример включает сайт трафика, который видит всплеск активности при изменении прогноза погоды. Контейнеры, настроенные в режиме "автопилотный режим", изменяют емкость в соответствии с потребностями пиковой нагрузки приложения и возможного увеличения масштаба при превышении предельного напряжения активности.
 
-* **New applications:** If you are deploying a new application and are unsure about how much provisioned throughput (i.e., how many RUs) you need. With containers configured in autopilot mode, you can automatically scale to the capacity needs and requirements of your application.
+* **Новые приложения:** Если вы развертываете новое приложение и не знаете, какой объем подготовленной пропускной способности (т. е. Сколько нужно), необходимо. С помощью контейнеров, настроенных в режиме автопилота, можно автоматически масштабироваться по требованиям к емкости и требованиям приложения.
 
-* **Infrequently used applications:** If you have an application that is only used for a few hours several times per day or week or month, such as a low-volume application/web/blog site.
+* **Редко используемые приложения:** Если у вас есть приложение, которое используется только в течение нескольких часов в день или неделю или месяц, например на небольшое приложение, веб-сайт или блог.
 
-* **Development and test databases:** Developers use the Azure Cosmos accounts during work hours but don't need them on nights or weekends. With containers configured in autopilot mode, they scale down to minimum when not in use.
+* **Базы данных для разработки и тестирования:** Разработчики используют учетные записи Azure Cosmos в рабочее время, но не требуют их в ночей или выходных. Если контейнеры настроены в режиме автопилота, они масштабируются до минимума, когда они не используются.
 
-* **Scheduled production workloads/queries:** When you have a series of scheduled requests/operations/queries on a single container, and if there are idle periods where you want to run at an absolute low throughput, you can now do that easily. When a scheduled query/request is submitted to a container configured in autopilot mode, it will automatically scale up as much as needed and run the operation.
+* **Запланированные рабочие нагрузки и запросы:** Если у вас есть несколько запланированных запросов, операций или запросов в одном контейнере, и если имеются периоды бездействия, в которых вы хотите запускать с низкой пропускной способностью, вы можете сделать это легко. При отправке запланированного запроса или запроса в контейнер, настроенный в режиме автопилота, он автоматически масштабируется по мере необходимости и выполняет операцию.
 
-Solutions to the previous problems not only require an enormous amount of time in implementation, but they also introduce complexity in configuration or your code, and frequently require manual intervention to address them. The autopilot mode enables above scenarios out of the box, so that you do not need to worry about these problems anymore.
+Решения для предыдущих проблем не только требовали огромного количества времени в реализации, но и представляют сложность в настройке или коде, и для их устранения часто требуется вмешательство вручную. Режим "Автопилот" позволяет использовать приведенные выше сценарии, чтобы больше не беспокоиться об этих проблемах.
 
-## <a name="comparison--containers-configured-in-manual-mode-vs-autopilot-mode"></a>Comparison – Containers configured in manual mode vs. autopilot mode
+## <a name="comparison--containers-configured-in-manual-mode-vs-autopilot-mode"></a>Сравнение — контейнеры, настроенные в ручном и режиме автопилотного режима
 
-|  | Containers configured in manual mode  | Containers configured in autopilot mode |
+|  | Контейнеры, настроенные в ручном режиме  | Контейнеры, настроенные в режиме автопилота |
 |---------|---------|---------|
-| **Provisioned throughput** | Manually provisioned | Automatically and instantaneously scaled based on the workload usage patterns. |
-| **Rate-limiting of requests/operations (429)**  | May happen, if consumption exceeds provisioned capacity. | Will not happen if the throughput consumed is within the max throughput that you choose with autopilot mode.   |
-| **Планирование ресурсов** |  You have to do an initial capacity planning and provision of the throughput you need. |    You don’t have to worry about capacity planning. The system automatically takes care of capacity planning and capacity management. |
-| **Цены** | Manually provisioned RU/s per hour. | For single write region accounts, you pay for the throughput used on an hourly basis, by using the autopilot RU/s per hour rate. <br/><br/>For accounts with multiple write regions, there is no extra charge for autopilot. You pay for the throughput used on hourly basis using the same multi-master RU/s per hour rate. |
-| **Best suited for workload types** |  Predictable and stable workloads|   Unpredictable and variable workloads  |
+| **Подготовленная пропускная способность** | Подготовка вручную | Автоматическое и мгновенное масштабирование на основе шаблонов использования рабочих нагрузок. |
+| **Ограничение скорости запросов и операций (429)**  | Может произойти, если потребление превышает подготовленную емкость. | Не будет выполняться, если используемая пропускная способность находится в пределах максимальной пропускной способности, выбранной в режиме автопилота.   |
+| **Планирование ресурсов** |  Необходимо выполнить начальное планирование ресурсов и обеспечить необходимую пропускную способность. |    Вам не нужно беспокоиться о планировании ресурсов. Система автоматически предпринимает меры по планированию ресурсов и управлению емкостью. |
+| **Цены** | Количество единиц запросов в час, подготовленных вручную:. | Для учетных записей с одним регионом записи вы платите за пропускную способность, используемую на почасовой основе, используя автопилотный тариф/с в час. <br/><br/>Для учетных записей с несколькими регионами записи дополнительная плата за автопилот не взимается. Вы платите за пропускную способность, используемую в каждый час, используя один и тот же тариф с несколькими хозяевами запросов в час. |
+| **Лучше всего подходит для типов рабочих нагрузок** |  Прогнозируемые и стабильные рабочие нагрузки|   Непредсказуемые и переменные рабочие нагрузки  |
 
-## <a id="enable-autopilot"></a> Enable autopilot from Azure portal
+## <a id="enable-autopilot"></a>Включить автопилот из портал Azure
 
-You can try out autopilot in your Azure Cosmos accounts by enabling in from Azure portal. Use the following steps to enable the autopilot option:
+Вы можете испытать Автопилот в учетных записях Azure Cosmos, включив в портал Azure. Чтобы включить параметр автопилота, выполните следующие действия.
 
-1. Sign in to the [Azure portal.](https://portal.azure.com)
+1. Войдите в [портал Azure.](https://portal.azure.com)
 
-2. Navigate to your Azure Cosmos account and open the **New Features** tab. Select **Auto Pilot** and **Register** as shown in the following screenshot:
+2. Перейдите к своей учетной записи Azure Cosmos и откройте вкладку **новые функции** . Выберите **Автоматический пилотный режим** и **Регистрация** , как показано на следующем снимке экрана:
 
-![Create a container in autopilot mode](./media/provision-throughput-autopilot/enable-autopilot-azure-portal.png)
+![Создание контейнера в режиме автопилота](./media/provision-throughput-autopilot/enable-autopilot-azure-portal.png)
 
-## <a name="create-a-database-or-a-container-with-autopilot-mode"></a>Create a database or a container with autopilot mode
+## <a name="create-a-database-or-a-container-with-autopilot-mode"></a>Создание базы данных или контейнера с режимом автопилота
 
-You can configure autopilot for databases or containers while creating them. Use the following steps to a new database or container, enable autopilot, and specify the maximum throughput.
+Вы можете настроить Автопилот для баз данных или контейнеров при их создании. Выполните следующие действия для новой базы данных или контейнера, Включите автопилот и укажите максимальную пропускную способность.
 
-1. Sign in to the [Azure portal](https://portal.azure.com) or the [Azure Cosmos explorer.](https://cosmos.azure.com/)
+1. Войдите в [портал Azure](https://portal.azure.com) или [Azure Cosmos Explorer.](https://cosmos.azure.com/)
 
-1. Navigate to your Azure Cosmos account and open the **Data Explorer** tab.
+1. Перейдите к учетной записи Azure Cosmos и откройте вкладку **Обозреватель данных** .
 
-1. Select **New Container**, enter a name for your container, a partition key. Select the **Autopilot** option, and choose the maximum throughput that the container cannot exceed when using the autopilot option.
+1. Выберите **создать контейнер**, введите имя для контейнера, ключ секции. Выберите параметр **автопилот** и укажите максимальную пропускную способность, которую контейнер не может превысить при использовании параметра автопилот.
 
-   ![Create a container in autopilot mode](./media/provision-throughput-autopilot/create-container-autopilot-mode.png)
+   ![Создание контейнера в режиме автопилота](./media/provision-throughput-autopilot/create-container-autopilot-mode.png)
 
 1. Нажмите кнопку **ОК**.
 
-With similar steps, you can also create a database with provisioned throughput in autopilot mode.
+С помощью аналогичных действий можно также создать базу данных с подготовленной пропускной способностью в режиме автопилота.
 
-## <a id="autopilot-limits"></a> Throughput and storage limits for autopilot
+## <a id="autopilot-limits"></a>Ограничения пропускной способности и хранилища для автопилота
 
-The following table shows the maximum throughout and storage limits for different options in autopilot mode:
+В следующей таблице показаны максимальные ограничения по всему хранению и объему хранилища для различных параметров в режиме автопилота.
 
-|Maximum throughput limit  |Maximum storage limit  |
+|Ограничение максимальной пропускной способности  |Максимальный предел хранилища  |
 |---------|---------|
-|4000 RU/s  |   50 ГБ    |
-|20,000 RU/s  |  200 ГБ  |
-|100,000 RU/s    |  1 ТБ   |
-|500,000 RU/s    |  5 ТБ  |
+|4000 единиц запросов в секунду  |   50 ГБ    |
+|20 000 единиц запросов в секунду  |  200 ГБ  |
+|100 000 единиц запросов в секунду    |  1 TБ   |
+|500 000 единиц запросов в секунду    |  5 ТБ  |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-* Подробнее о [логических разделах](partition-data.md).
+* Подробнее о [логических секциях](partition-data.md).
 * Подробнее о [подготовке пропускной способности для контейнера Azure Cosmos](how-to-provision-container-throughput.md).
 * Подробнее о [подготовке пропускной способности для базы данных Azure Cosmos](how-to-provision-database-throughput.md).

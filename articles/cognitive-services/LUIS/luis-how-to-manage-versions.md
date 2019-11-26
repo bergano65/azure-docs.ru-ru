@@ -1,5 +1,5 @@
 ---
-title: Manage versions - LUIS
+title: Управление версиями — LUIS
 titleSuffix: Azure Cognitive Services
 description: Версии позволяют создавать и публиковать различные модели. Прежде чем вносить изменения в активную модель рекомендуется клонировать ее текущую в другую версию приложения.
 services: cognitive-services
@@ -24,10 +24,10 @@ ms.locfileid: "74221925"
 
 Для работы с версиями откройте приложение, выбрав его имя на странице **Мои приложения**, на верхней панели выберите **Управление**, а затем нажмите **Версии** левой панели навигации. 
 
-The list of versions shows which versions are published, where they are published, and which version is currently active. 
+Список версий показывает, какие версии публикуются, где они публикуются, и какая версия активна в данный момент. 
 
 > [!div class="mx-imgBorder"]
-> [![Manage section, versions page](./media/luis-how-to-manage-versions/versions-import.png "раздел "Управление", страница "Версии"")](./media/luis-how-to-manage-versions/versions-import.png#lightbox)
+> [![Раздел "Управление", страница "версии"](./media/luis-how-to-manage-versions/versions-import.png "раздел "Управление", страница "Версии"")](./media/luis-how-to-manage-versions/versions-import.png#lightbox)
 
 ## <a name="clone-a-version"></a>Клонирование версии
 
@@ -44,26 +44,26 @@ The list of versions shows which versions are published, where they are publishe
 
 ## <a name="set-active-version"></a>Настройте активную версию
 
-Select a version from the list, then select **Activate** from the toolbar. 
+Выберите версию из списка, а затем на панели инструментов выберите **активировать** . 
 
 > [!div class="mx-imgBorder"]
-> [![Manage section, versions page, make a version action](./media/luis-how-to-manage-versions/versions-other.png "Manage section, versions page, make a version action")](./media/luis-how-to-manage-versions/versions-other.png#lightbox)
+> [![Управление разделами, страницами версий, создание действия версии](./media/luis-how-to-manage-versions/versions-other.png "Управление разделами, страницами версий, создание действия версии")](./media/luis-how-to-manage-versions/versions-other.png#lightbox)
 
 ## <a name="import-version"></a>Импорт версии
 
-You can import a `.json` or a `.lu` version of your application.
+Вы можете импортировать `.json` или `.lu` версию приложения.
 
-1. Select **Import** from the toolbar, then select the format. 
+1. Выберите **Импорт** на панели инструментов, а затем выберите формат. 
 
-2. В всплывающем окне **Импорт новой версии** введите имя новой версии, которое должно состоять из 10 символов. You only need to set a version ID if the version in the file already exists in the app.
+2. В всплывающем окне **Импорт новой версии** введите имя новой версии, которое должно состоять из 10 символов. Необходимо задать только идентификатор версии, если версия в файле уже существует в приложении.
 
     ![Раздел "Управление", страница "Версии", импорт новой версии](./media/luis-how-to-manage-versions/versions-import-pop-up.png)
 
     После импорта версии она становится активной.
 
-### <a name="import-errors"></a>Import errors
+### <a name="import-errors"></a>Ошибки импорта
 
-* Tokenizer errors: If you get a **tokenizer error** when importing, you are trying to import a version that uses a different [tokenizer](luis-language-support.md#custom-tokenizer-versions) than the app currently uses. To fix this, see [Migrating between tokenizer versions](luis-language-support.md#migrating-between-tokenizer-versions).
+* Ошибки маркеров: Если при импорте возникает **Ошибка** с помощью токена, вы пытаетесь импортировать версию, использующую [другой токен, отличный от](luis-language-support.md#custom-tokenizer-versions) используемого приложением в данный момент. Чтобы устранить эту проблему, см. раздел [Миграция между версиями](luis-language-support.md#migrating-between-tokenizer-versions)маркеров.
 
 <a name = "export-version"></a>
 
@@ -71,5 +71,5 @@ You can import a `.json` or a `.lu` version of your application.
 
 * Чтобы **удалить** версию выберите ее из списка, а затем на панели инструментов нажмите **Удалить**. Нажмите кнопку **ОК**. 
 * Чтобы **переименовать** версию выберите ее из списка, а затем на панели инструментов нажмите **Переименовать**. Введите новое имя и выберите **Готово**. 
-* Чтобы **экспортировать** версию выберите ее из списка, а затем на панели инструментов нажмите **Экспортировать приложение**. Choose JSON to export for backup, choose **Export for container** to [use this app in a LUIS container](luis-container-howto.md).  
+* Чтобы **экспортировать** версию выберите ее из списка, а затем на панели инструментов нажмите **Экспортировать приложение**. Выберите JSON для экспорта для резервного копирования, выберите **Экспорт для контейнера** , чтобы [использовать это приложение в контейнере Luis](luis-container-howto.md).  
 

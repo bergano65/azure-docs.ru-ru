@@ -198,7 +198,7 @@ ms.locfileid: "74217699"
 
 1.  Установите модуль [Azure PowerShell](https://github.com/Azure/azure-powershell/releases/tag/v5.5.0-March2018) .
 
-2.  Не задавайте в скрипте параметр `CatalogAdminCredential`. Пример:
+2.  Не задавайте в скрипте параметр `CatalogAdminCredential`. Например,
 
     ```powershell
     Set-AzDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `

@@ -1,6 +1,6 @@
 ---
-title: Tutorial - Create a forest trust in Azure AD Domain Services | Microsoft Docs
-description: Learn how to create a one-way outbound forest to an on-premises AD DS domain in the Azure portal for Azure AD Domain Services
+title: Руководство. Создание доверия лесов в доменных службах Azure AD | Документация Майкрософт
+description: Узнайте, как создать односторонний исходящий лес для локального AD DS домена в портал Azure доменных служб Azure AD.
 services: active-directory-ds
 author: iainfoulds
 manager: daveba
@@ -17,23 +17,23 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74233601"
 ---
-# <a name="tutorial-create-an-outbound-forest-trust-to-an-on-premises-domain-in-azure-active-directory-domain-services-preview"></a>Tutorial: Create an outbound forest trust to an on-premises domain in Azure Active Directory Domain Services (preview)
+# <a name="tutorial-create-an-outbound-forest-trust-to-an-on-premises-domain-in-azure-active-directory-domain-services-preview"></a>Руководство. Создание исходящего доверия лесов для локального домена в доменных службах Azure Active Directory (Предварительная версия)
 
-In environments where you can't synchronize password hashes, or you have users that exclusively sign in using smart cards so they don't know their password, you can use a resource forest in Azure Active Directory Domain Services (AD DS). A resource forest uses a one-way outbound trust from Azure AD DS to one or more on-premises AD DS environments. This trust relationship lets users, applications, and computers authenticate against an on-premises domain from the Azure AD DS managed domain. Azure AD DS resource forests are currently in preview.
+В средах, где нельзя синхронизировать хэши паролей, или пользователи, которые используют только смарт-карты для входа в систему, могут использовать лес ресурсов в Azure Active Directory доменных службах (AD DS). Лес ресурсов использует одностороннее исходящее доверие от Azure AD DS к одной или нескольким локальным AD DSым средам. Это отношение доверия позволяет пользователям, приложениям и компьютерам проходить проверку подлинности в локальном домене из управляемого домена Azure AD DS. В настоящее время доступны предварительные версии лесов ресурсов Azure AD DS.
 
-![Diagram of forest trust from Azure AD DS to on-premises AD DS](./media/concepts-resource-forest/resource-forest-trust-relationship.png)
+![Схема доверия лесов из AD DS Azure к локальной AD DS](./media/concepts-resource-forest/resource-forest-trust-relationship.png)
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
-> * Configure DNS in an on-premises AD DS environment to support Azure AD DS connectivity
-> * Create a one-way inbound forest trust in an on-premises AD DS environment
-> * Create a one-way outbound forest trust in Azure AD DS
-> * Test and validate the trust relationship for authentication and resource access
+> * Настройка DNS в локальной среде AD DS для поддержки подключения AD DS Azure
+> * Создание одностороннего входящего доверия лесов в локальной среде AD DS
+> * Создание одностороннего исходящего доверия леса в Azure AD DS
+> * Проверка и проверка отношений доверия для проверки подлинности и доступа к ресурсам
 
-Если у вас еще нет подписки Azure, [создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, создайте [учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 Для работы с этим учебником требуются следующие ресурсы и разрешения:
 
@@ -41,171 +41,171 @@ In environments where you can't synchronize password hashes, or you have users t
     * Если у вас еще нет подписки Azure, создайте [учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * Связанный с вашей подпиской клиент Azure Active Directory, синхронизированный с локальным или облачным каталогом.
     * Если потребуется, [создайте клиент Azure Active Directory][create-azure-ad-tenant] или [свяжите подписку Azure со своей учетной записью][associate-azure-ad-tenant].
-* An Azure Active Directory Domain Services managed domain created using a resource forest and configured in your Azure AD tenant.
+* Управляемый домен доменных служб Azure Active Directory, созданный с помощью леса ресурсов и настроенный в клиенте Azure AD.
     * Если потребуется, [создайте и настройте экземпляр доменных служб Azure Active Directory][create-azure-ad-ds-instance-advanced].
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
-In this tutorial, you create and configure the outbound forest trust from Azure AD DS using the Azure portal. Чтобы начать работу, войдите на [портал Azure](https://portal.azure.com).
+В этом руководстве вы создадите и настроите исходящее доверие лесов из Azure AD DS с помощью портал Azure. Чтобы начать работу, войдите на [портал Azure](https://portal.azure.com).
 
 ## <a name="networking-considerations"></a>Рекомендации по работе с сетями
 
-The virtual network that hosts the Azure AD DS resource forest needs network connectivity to your on-premises Active Directory. Applications and services also need network connectivity to the virtual network hosting the Azure AD DS resource forest. Network connectivity to the Azure AD DS resource forest must be always on and stable otherwise users may fail to authenticate or access resources.
+Для виртуальной сети, в которой размещается лес ресурсов Azure AD DS, требуется сетевое подключение к локальной Active Directory. Приложениям и службам также требуется сетевое подключение к виртуальной сети, в которой размещается лес ресурсов Azure AD DS. Сетевое подключение к лесу ресурсов Azure AD DS должно быть всегда включено и стабильны. в противном случае пользователи могут не пройти проверку подлинности или получить доступ к ресурсам.
 
-Before you configure a forest trust in Azure AD DS, make sure your networking between Azure and on-premises environment meets the following requirements:
+Перед настройкой доверия лесов в Azure AD DS убедитесь, что сеть между Azure и локальной средой соответствует следующим требованиям.
 
-* Use private IP addresses. Don't rely on DHCP with dynamic IP address assignment.
-* Avoid overlapping IP address spaces to allow virtual network peering and routing to successfully communicate between Azure and on-premises.
-* An Azure virtual network needs a gateway subnet to configure a site-to-site (S2S) VPN or ExpressRoute connection
-* Create subnets with enough IP addresses to support your scenario.
-* Make sure Azure AD DS has its own subnet, don't share this virtual network subnet with application VMs and services.
-* Peered virtual networks are NOT transitive.
-    * Azure virtual network peerings must be created between all virtual networks you want to use the Azure AD DS resource forest trust to the on-premises AD DS environment.
-* Provide continuous network connectivity to your on-premises Active Directory forest. Don't use on-demand connections.
-* Make sure there's continuous name resolution (DNS) between your Azure AD DS resource forest name and your on-premises Active Directory forest name.
+* Используйте частные IP-адреса. Не полагайтесь на DHCP с использованием динамического назначения IP-адресов.
+* Избегайте перекрытия пространств IP-адресов, чтобы разрешить пиринг виртуальных сетей и маршрутизацию для успешной связи между Azure и локальной средой.
+* Виртуальной сети Azure требуется подсеть шлюза для настройки подключения VPN типа "сеть — сеть" (S2S) или ExpressRoute.
+* Создайте подсети с достаточным количеством IP-адресов для поддержки вашего сценария.
+* Убедитесь, что AD DS Azure имеет собственную подсеть, не предоставляйте эту подсеть виртуальной сети виртуальным машинам и службам приложений.
+* Одноранговые виртуальные сети не являются транзитивными.
+    * Пиринг виртуальных сетей Azure должен быть создан между всеми виртуальными сетями, которые должны использовать доверие лесов ресурсов Azure AD DS в локальной среде AD DS.
+* Обеспечение непрерывного сетевого подключения к локальному Active Directory лесу. Не используйте подключения по требованию.
+* Убедитесь в наличии непрерывного разрешения имен (DNS) между именем леса ресурсов Azure AD DS и локальным Active Directory именем леса.
 
-## <a name="configure-dns-in-the-on-premises-domain"></a>Configure DNS in the on-premises domain
+## <a name="configure-dns-in-the-on-premises-domain"></a>Настройка DNS в локальном домене
 
-To correctly resolve the Azure AD DS managed domain from the on-premises environment, you may need to add forwarders to the existing DNS servers. If you haven't configure the on-premises environment to communicate with the Azure AD DS managed domain, complete the following steps from a management workstation for the on-premises AD DS domain:
+Чтобы правильно разрешить управляемый домен AD DS Azure из локальной среды, может потребоваться добавить серверы пересылки на существующие DNS-сервера. Если локальная среда не настроена для взаимодействия с управляемым доменом AD DS Azure, выполните следующие действия на рабочей станции управления для локального домена AD DS.
 
-1. Select **Start | Administrative Tools | DNS**
-1. Right-select DNS server, such as *myAD01*, select **Properties**
-1. Choose **Forwarders**, then **Edit** to add additional forwarders.
-1. Add the IP addresses of the Azure AD DS managed domain, such as *10.0.1.4* and *10.0.1.5*.
+1. Выберите **Пуск | Администрирование | DNS-сервер**
+1. Щелкните правой кнопкой мыши DNS-сервер, например *myAD01*, выберите пункт **свойства** .
+1. Выберите **серверы пересылки**, а затем нажмите кнопку **изменить** , чтобы добавить дополнительные серверы пересылки.
+1. Добавьте IP-адреса управляемого домена AD DS Azure, например *10.0.1.4* и *10.0.1.5*.
 
-## <a name="create-inbound-forest-trust-in-the-on-premises-domain"></a>Create inbound forest trust in the on-premises domain
+## <a name="create-inbound-forest-trust-in-the-on-premises-domain"></a>Создание входящего доверия лесов в локальном домене
 
-The on-premises AD DS domain needs an incoming forest trust for the Azure AD DS managed domain. This trust must be manually created in the on-premises AD DS domain, it can't be created from the Azure portal.
+Локальному домену AD DS требуется входящее доверие лесов для управляемого домена AD DS Azure. Это отношение доверия должно быть создано вручную в локальном домене AD DS, его нельзя создать из портал Azure.
 
-To configure inbound trust on the on-premises AD DS domain, complete the following steps from a management workstation for the on-premises AD DS domain:
+Чтобы настроить входящее доверие в локальном домене AD DS, выполните следующие действия на рабочей станции управления для локального домена AD DS.
 
-1. Select **Start | Administrative Tools | Active Directory Domains and Trusts**
-1. Right-select domain, such as *onprem.contoso.com*, select **Properties**
-1. Choose **Trusts** tab, then **New Trust**
-1. Enter name on Azure AD DS domain name, such as *aadds.contoso.com*, then select **Next**
-1. Select the option to create a **Forest trust**, then to create a **One way: incoming** trust.
-1. Choose to create the trust for **This domain only**. In the next step, you create the trust in the Azure portal for the Azure AD DS managed domain.
-1. Choose to use **Forest-wide authentication**, then enter and confirm a trust password. This same password is also entered in the Azure portal in the next section.
-1. Step through the next few windows with default options, then choose the option for **No, do not confirm the outgoing trust**.
+1. Выберите **Пуск | Администрирование | Домены и отношения доверия Active Directory**
+1. Щелкните правой кнопкой мыши домен, например *onprem.contoso.com*, выберите пункт **свойства** .
+1. Выберите вкладку **доверия** , затем **новое отношение доверия** .
+1. Введите имя в доменном имени Azure AD DS, например *aadds.contoso.com*, а затем нажмите кнопку **Далее** .
+1. Выберите этот параметр, чтобы создать **отношение доверия с лесом**, а затем создайте **один из способов: входящее** доверие.
+1. Выберите, чтобы создать отношение доверия **только для этого домена**. На следующем шаге вы создадите доверие в портал Azure для управляемого домена AD DS Azure.
+1. Выберите использование **проверки подлинности на уровне леса**, а затем введите и подтвердите пароль доверия. Этот же пароль также можно указать в портал Azure в следующем разделе.
+1. Выполните действия в следующих нескольких окнах с параметрами по умолчанию, а затем выберите параметр **нет, не подтверждайте исходящее доверие**.
 1. Нажмите кнопку **Готово**.
 
-## <a name="create-outbound-forest-trust-in-azure-ad-ds"></a>Create outbound forest trust in Azure AD DS
+## <a name="create-outbound-forest-trust-in-azure-ad-ds"></a>Создание исходящего доверия лесов в Azure AD DS
 
-With the on-premises AD DS domain configured to resolve the Azure AD DS managed domain and an inbound forest trust created, now created the outbound forest trust. This outbound forest trust completes the trust relationship between the on-premises AD DS domain and the Azure AD DS managed domain.
+Если локальный домен AD DS настроен для разрешения управляемого домена AD DS Azure и создания отношения доверия входящего леса, теперь создано исходящее доверие лесов. Это отношение доверия между исходящим лесом завершает отношения доверия между локальным доменом AD DS и управляемым доменом AD DS Azure.
 
-To create the outbound trust for the Azure AD DS managed domain in the Azure portal, complete the following steps:
+Чтобы создать исходящее доверие для управляемого домена Azure AD DS в портал Azure, выполните следующие действия.
 
-1. In the Azure portal, search for and select **Azure AD Domain Services**, then select your managed domain, such as *aadds.contoso.com*
-1. From the menu on the left-hand side of the Azure AD DS managed domain, select **Trusts**, then choose to **+ Add** a trust.
-1. Enter a display name that identifies your trust, then the on-premises trusted forest DNS name, such as *onprem.contoso.com*
-1. Provide the same trust password that was used when configuring the inbound forest trust for the on-premises AD DS domain in the previous section.
-1. Provide at least two DNS servers for the on-premises AD DS domain, such as *10.0.2.4* and *10.0.2.5*
-1. When ready, **Save** the outbound forest trust
+1. В портал Azure найдите и выберите **доменные службы Azure AD**, а затем выберите управляемый домен, например *aadds.contoso.com* .
+1. В меню в левой части управляемого домена AD DS Azure выберите **отношения доверия**, а затем выберите **+ Добавить** доверие.
+1. Введите отображаемое имя, идентифицирующее доверие, а затем локальное DNS-имя доверенного леса, например *onprem.contoso.com* .
+1. Укажите тот же пароль доверия, который использовался при настройке входящего доверия лесов для локального AD DS домена в предыдущем разделе.
+1. Укажите по меньшей мере два DNS-сервера для локального домена AD DS, например *10.0.2.4* и *10.0.2.5* .
+1. При готовности **сохранить** доверие к исходящему лесу
 
-    [Create outbound forest trust in the Azure portal](./media/create-forest-trust/portal-create-outbound-trust.png)
+    [Создание исходящего доверия лесов в портал Azure](./media/create-forest-trust/portal-create-outbound-trust.png)
 
-## <a name="validate-resource-authentication"></a>Validate resource authentication
+## <a name="validate-resource-authentication"></a>Проверка проверки подлинности ресурса
 
-The following common scenarios let you validate that forest trust correctly authenticates users and access to resources:
+Следующие распространенные сценарии позволяют проверить, что доверие леса правильно проверяет подлинность пользователей и доступ к ресурсам.
 
-* [On-premises user authentication from the Azure AD DS resource forest](#on-premises-user-authentication-from-the-azure-ad-ds-resource-forest)
-* [Access resources in the Azure AD DS resource forest using on-premises user](#access-resources-in-the-azure-ad-ds-resource-forest-using-on-premises-user)
-    * [Enable file and printer sharing](#enable-file-and-printer-sharing)
-    * [Create a security group and add members](#create-a-security-group-and-add-members)
-    * [Create a file share for cross-forest access](#create-a-file-share-for-cross-forest-access)
-    * [Validate cross-forest authentication to a resource](#validate-cross-forest-authentication-to-a-resource)
+* [Проверка подлинности локального пользователя из леса ресурсов Azure AD DS](#on-premises-user-authentication-from-the-azure-ad-ds-resource-forest)
+* [Доступ к ресурсам в лесу ресурсов Azure AD DS с помощью локального пользователя](#access-resources-in-the-azure-ad-ds-resource-forest-using-on-premises-user)
+    * [Включить общий доступ к файлам и принтерам](#enable-file-and-printer-sharing)
+    * [Создание группы безопасности и добавление участников](#create-a-security-group-and-add-members)
+    * [Создание общей папки для доступа между лесами](#create-a-file-share-for-cross-forest-access)
+    * [Проверка проверки подлинности между лесами для ресурса](#validate-cross-forest-authentication-to-a-resource)
 
-### <a name="on-premises-user-authentication-from-the-azure-ad-ds-resource-forest"></a>On-premises user authentication from the Azure AD DS resource forest
+### <a name="on-premises-user-authentication-from-the-azure-ad-ds-resource-forest"></a>Проверка подлинности локального пользователя из леса ресурсов Azure AD DS
 
-You should have Windows Server virtual machine joined to the Azure AD DS resource domain. Use this virtual machine to test your on-premises user can authenticate on a virtual machine.
+У вас должна быть виртуальная машина Windows Server, присоединенная к домену ресурсов Azure AD DS. Используйте эту виртуальную машину для тестирования проверки подлинности локального пользователя на виртуальной машине.
 
-1. Connect to the Windows Server VM joined to the Azure AD DS resource forest using Remote Desktop and your Azure AD DS administrator credentials. If you get a Network Level Authentication (NLA) error, check the user account you used is not a domain user account.
+1. Подключитесь к виртуальной машине Windows Server, присоединенной к лесу ресурсов Azure AD DS, используя удаленный рабочий стол и учетные данные администратора Azure AD DS. Если вы получаете ошибку проверка подлинности на уровне сети (NLA), проверьте, что используемая учетная запись пользователя не является учетной записью пользователя домена.
 
     > [!NOTE]
-    > To securely connect to your VMs joined to Azure AD Domain Services, you can use the [Azure Bastion Host Service](https://docs.microsoft.com/azure/bastion/bastion-overview) in supported Azure regions.
+    > Для безопасного подключения к виртуальным машинам, присоединенным к доменным службам Azure AD, можно использовать [службу узла Azure бастиона](https://docs.microsoft.com/azure/bastion/bastion-overview) в поддерживаемых регионах Azure.
 
-1. Open a command prompt and use the `whoami` command to show the distinguished name of the currently authenticated user:
+1. Откройте командную строку и используйте команду `whoami`, чтобы отобразить различающееся имя пользователя, прошедшего проверку подлинности:
 
     ```console
     whoami /fqdn
     ```
 
-1. Use the `runas` command to authenticate as a user from the on-premises domain. In the following command, replace `userUpn@trusteddomain.com` with the UPN of a user from the trusted on-premises domain. The command prompts you for the user’s password:
+1. Используйте команду `runas` для проверки подлинности в качестве пользователя из локального домена. В следующей команде замените `userUpn@trusteddomain.com` именем участника-пользователя из доверенного локального домена. Команда запрашивает пароль пользователя:
 
     ```console
     Runas /u:userUpn@trusteddomain.com cmd.exe
     ```
 
-1. If the authentication is a successful, a new command prompt opens. The title of the new command prompt includes `running as userUpn@trusteddomain.com`.
-1. Use `whoami /fqdn` in the new command prompt to view the distinguished name of the authenticated user from the on-premises Active Directory.
+1. Если проверка подлинности выполнена успешно, откроется новая Командная строка. Заголовок новой командной строки содержит `running as userUpn@trusteddomain.com`.
+1. Используйте `whoami /fqdn` в новой командной строке, чтобы просмотреть различающееся имя пользователя, прошедшего проверку подлинности, из локальной Active Directory.
 
-### <a name="access-resources-in-the-azure-ad-ds-resource-forest-using-on-premises-user"></a>Access resources in the Azure AD DS resource forest using on-premises user
+### <a name="access-resources-in-the-azure-ad-ds-resource-forest-using-on-premises-user"></a>Доступ к ресурсам в лесу ресурсов Azure AD DS с помощью локального пользователя
 
-Using the Windows Server VM joined to the Azure AD DS resource forest, you can test the scenario where users can access resources hosted in the resource forest when they authenticate from computers in the on-premises domain with users from the on-premises domain. The following examples show you how to create and test various common scenarios.
+Используя виртуальную машину Windows Server, присоединенную к лесу ресурсов Azure AD DS, можно протестировать сценарий, в котором пользователи могут получить доступ к ресурсам, размещенным в лесу ресурсов, при проверке подлинности с компьютеров в локальном домене с пользователями из локального домена. В следующих примерах показано, как создавать и тестировать различные распространенные сценарии.
 
-#### <a name="enable-file-and-printer-sharing"></a>Enable file and printer sharing
+#### <a name="enable-file-and-printer-sharing"></a>Включить общий доступ к файлам и принтерам
 
-1. Connect to the Windows Server VM joined to the Azure AD DS resource forest using Remote Desktop and your Azure AD DS administrator credentials. If you get a Network Level Authentication (NLA) error, check the user account you used is not a domain user account.
+1. Подключитесь к виртуальной машине Windows Server, присоединенной к лесу ресурсов Azure AD DS, используя удаленный рабочий стол и учетные данные администратора Azure AD DS. Если вы получаете ошибку проверка подлинности на уровне сети (NLA), проверьте, что используемая учетная запись пользователя не является учетной записью пользователя домена.
 
     > [!NOTE]
-    > To securely connect to your VMs joined to Azure AD Domain Services, you can use the [Azure Bastion Host Service](https://docs.microsoft.com/azure/bastion/bastion-overview) in supported Azure regions.
+    > Для безопасного подключения к виртуальным машинам, присоединенным к доменным службам Azure AD, можно использовать [службу узла Azure бастиона](https://docs.microsoft.com/azure/bastion/bastion-overview) в поддерживаемых регионах Azure.
 
-1. Open **Windows Settings**, then search for and select **Network and Sharing Center**.
-1. Choose the option for **Change advanced sharing** settings.
-1. Under the **Domain Profile**, select **Turn on file and printer sharing** and then **Save changes**.
-1. Close **Network and Sharing Center**.
+1. Откройте **Параметры Windows**, а затем найдите и выберите **центр управления сетями и общим доступом**.
+1. Выберите параметр **изменить дополнительные параметры общего доступа** .
+1. В разделе **профиль домена**выберите **включить общий доступ к файлам и принтерам** , а затем **Сохраните изменения**.
+1. Закройте **центр управления сетями и общим доступом**.
 
-#### <a name="create-a-security-group-and-add-members"></a>Create a security group and add members
+#### <a name="create-a-security-group-and-add-members"></a>Создание группы безопасности и добавление участников
 
 1. Откройте оснастку **Пользователи и компьютеры Active Directory**.
-1. Right-select the domain name, choose **New**, and then select **Organizational Unit**.
-1. In the name box, type *LocalObjects*, then select **OK**.
-1. Select and right-click **LocalObjects** in the navigation pane. Select **New** and then **Group**.
-1. Type *FileServerAccess* in the **Group name** box. For the **Group Scope**, select **Domain local**, then choose **OK**.
-1. In the content pane, double-click **FileServerAccess**. Select **Members**, choose to **Add**, then select **Locations**.
-1. Select your on-premises Active Directory from the **Location** view, then choose **OK**.
-1. Type *Domain Users* in the **Enter the object names to select** box. Select **Check Names**, provide credentials for the on-premises Active Directory, then select **OK**.
+1. Щелкните правой кнопкой мыши имя домена, выберите **создать**, а затем выберите **подразделение**.
+1. В поле Имя введите *локалобжектс*, а затем нажмите кнопку **ОК**.
+1. Выберите и щелкните правой кнопкой мыши **локалобжектс** в области навигации. Выберите **создать** , а затем — **Группа**.
+1. В поле **имя группы** введите *филесерверакцесс* . В **области групп**выберите **домен локальный**, а затем нажмите кнопку **ОК**.
+1. В области содержимого дважды щелкните **филесерверакцесс**. Выберите **элементы**, щелкните **Добавить**, а затем выберите **расположения**.
+1. Выберите локальную Active Directory в представлении **Расположение** , а затем нажмите кнопку **ОК**.
+1. Введите *домен пользователи* в поле **Введите имена объектов для выбора** . Выберите **Проверить имена**, укажите учетные данные для локального Active Directory, а затем нажмите кнопку **ОК**.
 
     > [!NOTE]
-    > You must provide credentials because the trust relationship is only one way. This means users from the Azure AD DS can't access resources or search for users or groups in the trusted (on-premises) domain.
+    > Необходимо указать учетные данные, так как отношение доверия является только одним способом. Это означает, что пользователи из AD DS Azure не могут получить доступ к ресурсам или искать пользователей или группы в доверенном (локальном) домене.
 
-1. The **Domain Users** group from your on-premises Active Directory should be a member of the **FileServerAccess** group. Select **OK** to save the group and close the window.
+1. Группа " **Пользователи домена** " из локальной Active Directory должна быть членом группы **филесерверакцесс** . Нажмите кнопку **ОК** , чтобы сохранить группу и закрыть окно.
 
-#### <a name="create-a-file-share-for-cross-forest-access"></a>Create a file share for cross-forest access
+#### <a name="create-a-file-share-for-cross-forest-access"></a>Создание общей папки для доступа между лесами
 
-1. On the Windows Server VM joined to the Azure AD DS resource forest, create a folder and provide name such as *CrossForestShare*.
-1. Right-select the folder and choose **Properties**.
-1. Select the **Security** tab, then choose **Edit**.
-1. In the *Permissions for CrossForestShare* dialog box, select **Add**.
-1. Type *FileServerAccess* in **Enter the object names to select**, then select **OK**.
-1. Select *FileServerAccess* from the **Groups or user names** list. In the **Permissions for FileServerAccess** list, choose *Allow* for the **Modify** and **Write** permissions, then select **OK**.
-1. Select the **Sharing** tab, then choose **Advanced Sharing…**
-1. Choose **Share this folder**, then enter a memorable name for the file share in **Share name** such as *CrossForestShare*.
-1. Select **Permissions**. In the **Permissions for Everyone** list, choose **Allow** for the **Change** permission.
-1. Select **OK** two times and then **Close**.
+1. На виртуальной машине Windows Server, присоединенной к лесу ресурсов Azure AD DS, создайте папку и укажите имя, например *кроссфорестшаре*.
+1. Выберите папку правой кнопкой мыши и выберите пункт **Свойства**.
+1. Перейдите на вкладку **Безопасность** и нажмите кнопку **изменить**.
+1. В диалоговом окне *разрешения для кроссфорестшаре* выберите **Добавить**.
+1. Введите *филесерверакцесс* в **поле Введите имена объектов для выбора**, а затем нажмите кнопку **ОК**.
+1. Выберите *филесерверакцесс* в списке **группы или имена пользователей** . В списке **разрешения для филесерверакцесс** выберите *Разрешить* для разрешений **изменение** и **запись** , а затем нажмите кнопку **ОК**.
+1. Перейдите на вкладку **общий доступ** , а затем выберите **Расширенный общий доступ...**
+1. Выберите **общий доступ к этой папке**, а затем введите запоминающее имя общей папки в **имени общего ресурса** , например *кроссфорестшаре*.
+1. Выберите **разрешения**. В списке **разрешения для всех пользователей** выберите **Разрешить** для разрешения **изменение** .
+1. Нажмите кнопку **ОК** два раза, а затем **закройте**.
 
-#### <a name="validate-cross-forest-authentication-to-a-resource"></a>Validate cross-forest authentication to a resource
+#### <a name="validate-cross-forest-authentication-to-a-resource"></a>Проверка проверки подлинности между лесами для ресурса
 
-1. Sign in a Windows computer joined to your on-premises Active Directory using a user account from your on-premises Active Directory.
-1. Using **Windows Explorer**, connect to the share you created using the fully qualified host name and the share such as `\\fs1.aadds.contoso.com\CrossforestShare`.
-1. To validate the write permission, right-select in the folder, choose **New**, then select **Text Document**. Use the default name **New Text Document**.
+1. Войдите в компьютер Windows, присоединенный к локальному Active Directory используя учетную запись пользователя из локальной Active Directory.
+1. С помощью **проводника Windows**подключитесь к созданной общей папке, используя полное имя узла и общую папку, например `\\fs1.aadds.contoso.com\CrossforestShare`.
+1. Чтобы проверить разрешение на запись, щелкните правой кнопкой мыши в папке, выберите **создать**, а затем выберите **текстовый документ**. Используйте имя по умолчанию **новый текстовый документ**.
 
-    If the write permissions are set correctly, a new text document is created. The following steps will then open, edit, and delete the file as appropriate.
-1. To validate the read permission, open **New Text Document**.
-1. To validate the modify permission, add text to the file and close **Notepad**. When prompted to save changes, choose **Save**.
-1. To validate the delete permission, right-select **New Text Document** and choose **Delete**. Choose **Yes** to confirm file deletion.
+    Если разрешения на запись заданы правильно, создается новый текстовый документ. Следующие шаги открывают, изменяют и удаляют файл соответствующим образом.
+1. Чтобы проверить разрешение чтение, откройте **новый текстовый документ**.
+1. Чтобы проверить разрешение на изменение, добавьте текст в файл и закройте **Блокнот**. При появлении запроса на сохранение изменений нажмите кнопку **сохранить**.
+1. Чтобы проверить разрешение DELETE, щелкните правой кнопкой мыши **новый текстовый документ** и выберите команду **Удалить**. Нажмите кнопку **Да** , чтобы подтвердить удаление файла.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Из этого руководства вы узнали, как выполнить следующие задачи:
 
 > [!div class="checklist"]
-> * Configure DNS in an on-premises AD DS environment to support Azure AD DS connectivity
-> * Create a one-way inbound forest trust in an on-premises AD DS environment
-> * Create a one-way outbound forest trust in Azure AD DS
-> * Test and validate the trust relationship for authentication and resource access
+> * Настройка DNS в локальной среде AD DS для поддержки подключения AD DS Azure
+> * Создание одностороннего входящего доверия лесов в локальной среде AD DS
+> * Создание одностороннего исходящего доверия леса в Azure AD DS
+> * Проверка и проверка отношений доверия для проверки подлинности и доступа к ресурсам
 
-For more conceptual information about forest types in Azure AD DS, see [What are resource forests?][concepts-forest] and [How do forest trusts work in Azure AD DS?][concepts-trust]
+Дополнительные сведения о типах лесов в Azure AD DS см. в статье [что такое леса ресурсов?][concepts-forest] и [как работают отношения доверия лесов в Azure AD DS?][concepts-trust]
 
 <!-- INTERNAL LINKS -->
 [concepts-forest]: concepts-resource-forest.md

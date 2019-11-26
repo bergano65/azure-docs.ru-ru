@@ -22,7 +22,7 @@ ms.locfileid: "74463876"
 
 После подключения клиента **principalId**, созданный в этой авторизации, сможет назначать эти встроенные роли управляемым удостоверениям в клиенте клиента. Однако у них не будет никаких других разрешений, обычно связанных с ролью администратора доступа пользователей.
 
-В следующем примере показан **principalId**, которому будет назначена роль администратора доступа пользователей. This user will be able to assign two built-in roles to managed identities in the customer tenant: Contributor and Log Analytics Contributor.
+В следующем примере показан **principalId**, которому будет назначена роль администратора доступа пользователей. Этот пользователь будет иметь возможность назначать две встроенные роли управляемым удостоверениям в клиенте клиента: участник и Log Analytics участник.
 
 ```json
 {
@@ -64,7 +64,7 @@ ms.locfileid: "74463876"
 > [!TIP]
 > Доступен [аналогичный пример](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/Azure-Delegated-Resource-Management/templates/policy-add-or-replace-tag), демонстрирующий, как развернуть политику, которая добавляет или удаляет тег (используя эффект изменения) в делегированной подписке.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Сведения о службе [Политика Azure](https://docs.microsoft.com/azure/governance/policy/).
 - Сведения об [управляемых удостоверениях для ресурсов Azure](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview).

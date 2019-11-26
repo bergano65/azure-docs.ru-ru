@@ -1,5 +1,5 @@
 ---
-title: RBAC roles and permissions
+title: Роли и разрешения RBAC
 description: Используйте управление доступом Azure на основе ролей (RBAC) и управление удостоверениями и доступом (IAM) для предоставления детализированных разрешений для доступа к ресурсам в реестре контейнеров Azure.
 ms.topic: article
 ms.date: 03/20/2019
@@ -14,14 +14,14 @@ ms.locfileid: "74456243"
 
 Служба реестра контейнеров Azure поддерживает ряд Azure-ролей, которые предоставляют различные уровни разрешений для реестра контейнеров Azure. Используйте [управление доступом Azure на основе ролей (RBAC)](../role-based-access-control/index.yml), чтобы назначать пользователям или субъектам-службам, которые должны взаимодействовать с реестром, особые разрешения.
 
-| Роль или разрешение       | [Доступ к Resource Manager](#access-resource-manager) | [Создание и удаление реестра](#create-and-delete-registry) | [Отправка образа](#push-image) | [Получение образа](#pull-image) | [Delete image data](#delete-image-data) | [Изменение политик](#change-policies) |   [Подписывание образов](#sign-images)  |
+| Роль или разрешение       | [Доступ к Resource Manager](#access-resource-manager) | [Создание и удаление реестра](#create-and-delete-registry) | [Отправка образа](#push-image) | [Получение образа](#pull-image) | [Удаление данных изображения](#delete-image-data) | [Изменение политик](#change-policies) |   [Подписывание образов](#sign-images)  |
 | ---------| --------- | --------- | --------- | --------- | --------- | --------- | --------- |
-| Владелец. | X | X | X | X | X | X |  |  
-| участник; | X | X | X |  X | X | X |  |  
-| Читатель | X |  |  | X |  |  |  |
+| владелец; | X | X | X | X | X | X |  |  
+| участник | X | X | X |  X | X | X |  |  
+| reader | X |  |  | X |  |  |  |
 | AcrPush |  |  | X | X | |  |  |  
 | AcrPull |  |  |  | X |  |  |  |  
-| AcrDelete |  |  |  |  | X |  |  |
+| акрделете |  |  |  |  | X |  |  |
 | AcrImageSigner |  |  |  |  |  |  | X |
 
 ## <a name="differentiate-users-and-services"></a>Различие пользователей и служб
@@ -58,7 +58,7 @@ ms.locfileid: "74456243"
 
 ## <a name="delete-image-data"></a>Удаление данных образа
 
-The ability to [delete container images](container-registry-delete.md), or delete other [supported artifacts](container-registry-image-formats.md) such as Helm charts, from a registry.
+Возможность [удалять образы контейнеров](container-registry-delete.md)или удалять другие [Поддерживаемые артефакты](container-registry-image-formats.md) , например диаграммы Helm, из реестра.
 
 ## <a name="change-policies"></a>Изменение политик
 
@@ -68,7 +68,7 @@ The ability to [delete container images](container-registry-delete.md), or delet
 
 Возможность подписывания образов обычно назначается автоматизированному процессу, который использует субъект-службу. Это разрешение обычно объединяется с разрешением на [отправку образа](#push-image), чтобы разрешить отправку доверенного образа в реестр. Дополнительные сведения см. в разделе [Доверие содержимому в реестре контейнеров Azure](container-registry-content-trust.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * Ознакомьтесь с дополнительными сведениями о назначении ролей RBAC для удостоверений Azure с помощью [портала Azure](../role-based-access-control/role-assignments-portal.md), [Azure CLI](../role-based-access-control/role-assignments-cli.md) или других средств Azure.
 

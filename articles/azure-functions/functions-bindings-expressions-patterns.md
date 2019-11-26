@@ -1,6 +1,6 @@
 ---
-title: Azure Functions bindings expressions and patterns
-description: Learn to create different Azure Functions binding expressions based on common patterns.
+title: Выражения и шаблоны привязок функций Azure
+description: Научитесь создавать различные выражения привязки функций Azure на основе общих шаблонов.
 author: craigshoemaker
 ms.topic: reference
 ms.date: 02/18/2019
@@ -12,9 +12,9 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74227221"
 ---
-# <a name="azure-functions-binding-expression-patterns"></a>Azure Functions binding expression patterns
+# <a name="azure-functions-binding-expression-patterns"></a>Шаблоны выражений привязки функций Azure
 
-One of the most powerful features of [triggers and bindings](./functions-triggers-bindings.md) is *binding expressions*. В файле *function.json* и в параметрах функции и коде можно использовать выражения, которые разрешаются в значения из различных источников.
+Одной из самых эффективных функций [триггеров и привязок](./functions-triggers-bindings.md) являются *выражения привязки*. В файле *function.json* и в параметрах функции и коде можно использовать выражения, которые разрешаются в значения из различных источников.
 
 Большинство выражений определяются путем их заключения в фигурные скобки. Например, в функции триггера очереди `{queueTrigger}` разрешается в текст сообщения очереди. Если свойство `path` для выходной привязки большого двоичного объекта — `container/{queueTrigger}`, а функция активируется сообщением очереди `HelloWorld`, создается большой двоичный объект с именем `HelloWorld`.
 
@@ -67,7 +67,7 @@ public static void Run(
 }
 ```
 
-## <a name="trigger-file-name"></a>Trigger file name
+## <a name="trigger-file-name"></a>Имя файла триггера
 
 `path` для триггера большого двоичного объекта может быть шаблоном, который позволяет ссылаться на имя большого двоичного объекта, активирующего триггер, в других привязках и коде функции. Шаблон может также включать критерии фильтрации, которые определяют, какие большие двоичные объекты могут активировать вызов функции.
 
@@ -142,7 +142,7 @@ public static void Run(
 * QueueTrigger (содержимое активирующего сообщения, если строка допустима)
 * DequeueCount
 * ExpirationTime
-* Идентификатор
+* id
 * InsertionTime
 * NextVisibleTime
 * PopReceipt
@@ -169,7 +169,7 @@ public static void Run(
 
 Сведения о свойствах метаданных для каждого триггера приведены в соответствующих статьях документации. Пример см. в разделе [о метаданных триггера очередей](functions-bindings-storage-queue.md#trigger---message-metadata). Документация доступна также на портале на вкладке **Интегрировать** в разделе **Документация** под областью конфигурации привязки.  
 
-## <a name="json-payloads"></a>JSON payloads
+## <a name="json-payloads"></a>Полезные данные JSON
 
 Если полезные данные представлены в виде JSON, на его свойства можно ссылаться в конфигурации других привязок в той же функции и ее коде.
 
@@ -305,6 +305,6 @@ public class BlobName
 
 В C# и других языках .NET можно использовать шаблон императивной привязки, которая отличается от декларативной привязки в файле *function.json* или в атрибутах. Императивную привязку удобно использовать, когда параметры привязки должны вычисляться не при проектировании, а во время выполнения. Дополнительные сведения см. в [справочнике разработчика C#](functions-dotnet-class-library.md#binding-at-runtime) и [справочнике разработчика скриптов C#](functions-reference-csharp.md#binding-at-runtime).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 > [!div class="nextstepaction"]
-> [Using the Azure Function return value](./functions-bindings-return-value.md)
+> [Использование возвращаемого значения функции Azure](./functions-bindings-return-value.md)

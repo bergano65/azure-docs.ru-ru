@@ -36,7 +36,7 @@ ms.locfileid: "74224673"
 - Для каждого региона развертывания Azure:
     - диапазон IP-адресов с маской /29 для подключений ER-P2P между виртуальными сетями Azure и крупными экземплярами HANA;
     - блок CIDR с маской /24 (используется для пула IP-адресов серверов крупных экземпляров HANA).
-    - Optional when using [ExpressRoute Global Reach](https://docs.microsoft.com/azure/expressroute/expressroute-global-reach) to enable direct routing from on-premises to HANA Large Instance units or routing between HANA Large Instance units in different Azure regions, you need to reserve another /29 IP address range. This particular range may not overlap with any of the other IP address ranges you defined before.
+    - Необязательно. при использовании [Global REACH ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-global-reach) для прямой маршрутизации из локальной среды в единицы крупных экземпляров Hana или между единицами крупных экземпляров Hana в разных регионах Azure необходимо зарезервировать еще один или 29 диапазон IP-адресов. Этот диапазон может не перекрываться с любыми другими диапазонами IP-адресов, определенными ранее.
 - Значения диапазона IP-адресов, используемые в атрибуте адресного пространства виртуальной сети, каждой виртуальной сети Azure, которая будет подключаться к крупным экземплярам HANA.
 - Данные для каждой системы крупных экземпляров HANA:
   - Требуемое имя узла (в идеале с полным доменным именем).

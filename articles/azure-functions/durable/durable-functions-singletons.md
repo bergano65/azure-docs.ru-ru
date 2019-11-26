@@ -14,11 +14,11 @@ ms.locfileid: "74232799"
 ---
 # <a name="singleton-orchestrators-in-durable-functions-azure-functions"></a>Одноэлементные экземпляры в устойчивых функциях (Функции Azure)
 
-For background jobs, you often need to ensure that only one instance of a particular orchestrator runs at a time. You can ensure this kind of singleton behavior in [Durable Functions](durable-functions-overview.md) by assigning a specific instance ID to an orchestrator when creating it.
+Для фоновых заданий часто требуется обеспечить, чтобы в каждый момент времени выполнялся только один экземпляр определенной Orchestrator. Этот тип одноэлементного поведения можно обеспечить в [устойчивые функции](durable-functions-overview.md) , назначив идентификатору экземпляра Orchestrator при его создании.
 
 ## <a name="singleton-example"></a>Пример одноэлементного экземпляра
 
-The following example shows an HTTP-trigger function that creates a singleton background job orchestration. Код обеспечивает наличие только одного экземпляра с указанным идентификатором.
+В следующем примере показана функция триггера HTTP, которая создает одноэлементное согласование фонового задания. Код обеспечивает наличие только одного экземпляра с указанным идентификатором.
 
 ### <a name="c"></a>C#
 
@@ -52,7 +52,7 @@ public static async Task<HttpResponseMessage> RunSingle(
 ```
 
 > [!NOTE]
-> The previous C# code is for Durable Functions 2.x. For Durable Functions 1.x, you must use `OrchestrationClient` attribute instead of the `DurableClient` attribute, and you must use the `DurableOrchestrationClient` parameter type instead of `IDurableOrchestrationClient`. For more information about the differences between versions, see the [Durable Functions versions](durable-functions-versions.md) article.
+> Предыдущий C# код предназначен для устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать атрибут `OrchestrationClient` вместо атрибута `DurableClient`, а вместо `IDurableOrchestrationClient`необходимо использовать тип параметра `DurableOrchestrationClient`. Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
 
 ### <a name="javascript-functions-20-only"></a>JavaScript (только Функции 2.0)
 
@@ -110,14 +110,14 @@ module.exports = async function(context, req) {
 };
 ```
 
-По умолчанию идентификаторы экземпляров — это случайным образом сгенерированные GUID. In the previous example, however, the instance ID is passed in route data from the URL. The code calls `GetStatusAsync`(C#) or `getStatus` (JavaScript) to check if an instance having the specified ID is already running. If no such instance is running, a new instance is created with that ID.
+По умолчанию идентификаторы экземпляров — это случайным образом сгенерированные GUID. Однако в предыдущем примере идентификатор экземпляра передается в данные маршрута из URL-адреса. Код вызывает `GetStatusAsync`(C#) или `getStatus` (JavaScript), чтобы проверить, запущен ли уже экземпляр с указанным идентификатором. Если такой экземпляр не работает, создается новый экземпляр с этим ИДЕНТИФИКАТОРом.
 
 > [!NOTE]
 > В этом примере содержится потенциальное состояние гонки. Если два экземпляра **HttpStartSingle** выполняются параллельно, оба вызова функции сообщат об успешном выполнении, но фактически запустится только один экземпляр оркестрации. В зависимости от применяемых требований это может привести к нежелательным побочным эффектам. Поэтому важно, чтобы два запроса не выполняли одновременно эту функцию триггера.
 
-The implementation details of the orchestrator function don't actually matter. Это может быть обычная функция оркестратора, которая начинает и завершает работу, или же выполняющаяся бесконечно (т. е. [вечная оркестрация](durable-functions-eternal-orchestrations.md)). Важно то, что в любой момент времени выполняется только один экземпляр.
+Сведения о реализации функции Orchestrator не имеют значения. Это может быть обычная функция оркестратора, которая начинает и завершает работу, или же выполняющаяся бесконечно (т. е. [вечная оркестрация](durable-functions-eternal-orchestrations.md)). Важно то, что в любой момент времени выполняется только один экземпляр.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Learn about the native HTTP features of orchestrations](durable-functions-http-features.md)
+> [Сведения о собственных функциях HTTP оркестрации](durable-functions-http-features.md)

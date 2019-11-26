@@ -1,7 +1,7 @@
 ---
-title: 'K-Means Clustering: Module Reference'
+title: 'Кластеризация по K-средних: Справочник по модулям'
 titleSuffix: Azure Machine Learning
-description: Learn how to use the K-Means Clustering module in the Azure Machine Learning to train clustering models.
+description: Узнайте, как использовать модуль кластеризации K-средних в Машинное обучение Azure для обучения моделей кластеризации.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -16,129 +16,129 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74213917"
 ---
-# <a name="module-k-means-clustering"></a>Module: K-Means Clustering
+# <a name="module-k-means-clustering"></a>Модуль: Кластеризация методом K-средних
 
-This article describes how to use the *K-Means Clustering* module in Azure Machine Learning designer (preview) to create an untrained K-means clustering model. 
+В этой статье описывается, как использовать модуль *кластеризации k-средних* в конструкторе машинное обучение Azure (Предварительная версия) для создания обученной модели кластеризации с k-средних. 
  
-K-means is one of the simplest and the best known *unsupervised* learning algorithms. You can use the algorithm for a variety of machine learning tasks, such as: 
+K-средние — это один из самых простых и *наиболее известных* неконтролируемых алгоритмов обучения. Алгоритм можно использовать для различных задач машинного обучения, таких как: 
 
-* [Detecting abnormal data](https://msdn.microsoft.com/magazine/jj891054.aspx).
-* Clustering text documents.
-* Analyzing datasets before you use other classification or regression methods. 
+* [Обнаружение аномальных данных](https://msdn.microsoft.com/magazine/jj891054.aspx).
+* Кластеризация текстовых документов.
+* Анализ наборов данных перед использованием других методов классификации или регрессии. 
 
-To create a clustering model, you:
+Чтобы создать модель кластеризации, сделайте следующее:
 
-* Add this module to your pipeline.
-* Connect a dataset.
-* Set parameters, such as the number of clusters you expect, the distance metric to use in creating the clusters, and so forth. 
+* Добавьте этот модуль в конвейер.
+* Подключение набора данных.
+* Задайте параметры, например количество кластеров, метрику расстояния, используемую при создании кластеров, и т. д. 
   
-After you've configured the module hyperparameters, you connect the untrained model to the [Train Clustering Model](train-clustering-model.md). Because the K-means algorithm is an unsupervised learning method, a label column is optional. 
+После настройки параметров модуля вы подключаете обученную модель к [модели обучения](train-clustering-model.md). Поскольку алгоритм K-средних является неконтролируемым методом обучения, столбец меток является необязательным. 
 
-+ If your data includes a label, you can use the label values to guide selection of the clusters and optimize the model. 
++ Если данные содержат метку, можно использовать значения меток для пошагового выбора кластеров и оптимизации модели. 
 
-+ If your data has no label, the algorithm creates clusters representing possible categories, based solely on the data.  
++ Если данные не имеют метки, алгоритм создает кластеры, представляющие возможные категории, основываясь исключительно на данных.  
 
-##  <a name="understand-k-means-clustering"></a>Understand K-means clustering
+##  <a name="understand-k-means-clustering"></a>Общие сведения о кластеризации с помощью K-средних
  
-In general, clustering uses iterative techniques to group cases in a dataset into clusters that possess similar characteristics. These groupings are useful for exploring data, identifying anomalies in the data, and eventually for making predictions. Clustering models can also help you identify relationships in a dataset that you might not logically derive by browsing or simple observation. For these reasons, clustering is often used in the early phases of machine learning tasks, to explore the data and discover unexpected correlations.  
+Как правило, кластеризация использует итеративные методы для группирования вариантов в наборе данных в кластеры, имеющие аналогичные характеристики. Эти группирования удобно использовать для просмотра данных, определения аномалий в данных и, в конечном итоге, для выполнения прогнозов. Модели кластеризации также могут помочь определить связи в наборе данных, которые не могут быть логически производными при просмотре или простое наблюдение. По этим причинам кластеризация часто используется на ранних этапах задач машинного обучения для изучения данных и обнаружения непредвиденных корреляций.  
   
- When you configure a clustering model by using the K-means method, you must specify a target number *k* that indicates the number of *centroids* you want in the model. The centroid is a point that's representative of each cluster. The K-means algorithm assigns each incoming data point to one of the clusters by minimizing the within-cluster sum of squares. 
+ При настройке модели кластеризации с помощью метода K-средних необходимо указать целевое число *K* , которое указывает количество *средневзвешенных* в модели. Центроид — это точка, представляющая каждый кластер. Алгоритм K-средних назначает каждую входящую точку данных одному из кластеров, уменьшая сумму квадратов внутри кластера. 
  
-When it processes the training data, the K-means algorithm begins with an initial set of randomly chosen centroids. Centroids serve as starting points for the clusters, and they apply Lloyd's algorithm to iteratively refine their locations. The K-means algorithm stops building and refining clusters when it meets one or more of these conditions:  
+При обработке обучающих данных алгоритм K-средние значения начинается с начального набора случайно выбранных средневзвешенных. Средневзвешенных служат в качестве отправных точек для кластеров и применяют алгоритм Ллойд для итеративного уточнения их расположений. Алгоритм K-средних прекращает создание и уточнение кластеров, если он удовлетворяет одному или нескольким из следующих условий:  
   
--   The centroids stabilize, meaning that the cluster assignments for individual points no longer change and the algorithm has converged on a solution.  
+-   Средневзвешенных стабилизация, что означает, что назначения кластеров для отдельных точек больше не меняются, и алгоритм сходится в решении.  
   
--   The algorithm completed running the specified number of iterations.  
+-   Алгоритм завершил выполнение указанного числа итераций.  
   
- After you've completed the training phase, you use the [Assign Data to Clusters](assign-data-to-clusters.md) module to assign new cases to one of the clusters that you found by using the K-means algorithm. You perform cluster assignment by computing the distance between the new case and the centroid of each cluster. Each new case is assigned to the cluster with the nearest centroid.  
+ После завершения обучения используйте модуль [назначение данных в кластеры](assign-data-to-clusters.md) , чтобы назначить новые варианты одному из кластеров, найденных с помощью алгоритма K-средних. Назначение кластера выполняется путем вычисления расстояния между новым вариантом и центроид каждого кластера. Каждый новый вариант назначается кластеру с ближайшим центроид.  
 
-## <a name="configure-the-k-means-clustering-module"></a>Configure the K-Means Clustering module
+## <a name="configure-the-k-means-clustering-module"></a>Настройка модуля кластеризации K-средних
   
-1.  Add the **K-Means Clustering** module to your pipeline.  
+1.  Добавьте модуль **кластеризации K-средних** в конвейер.  
   
-2.  To specify how you want the model to be trained, select the **Create trainer mode** option.  
+2.  Чтобы указать, как должна быть обучена модель, выберите параметр **создать режим преподавателя** .  
   
-    -   **Single Parameter**: If you know the exact parameters you want to use in the clustering model, you can provide a specific set of values as arguments.  
+    -   **Один параметр**. Если известно, какие параметры вы хотите использовать в модели кластеризации, можно указать конкретный набор значений в качестве аргументов.  
   
-3.  For **Number of centroids**, type the number of clusters you want the algorithm to begin with.  
+3.  В поле **число средневзвешенных**введите число кластеров, с которых должен начинаться алгоритм.  
   
-     The model isn't guaranteed to produce exactly this number of clusters. The algorithm starts with this number of data points and iterates to find the optimal configuration.  
+     В модели не гарантируется, что это количество кластеров будет таким же. Алгоритм начинается с этого количества точек данных и выполняет итерации для поиска оптимальной конфигурации.  
   
-4.  The properties **Initialization** is used to specify the algorithm that's used to define the initial cluster configuration.  
+4.  **Инициализация** свойств используется для указания алгоритма, который используется для определения первоначальной конфигурации кластера.  
   
-    -   **First N**: Some initial number of data points are chosen from the dataset and used as the initial means. 
+    -   **Первый N**: начальное количество точек данных выбирается из набора данных и используется в качестве начального. 
     
-         This method is also called the *Forgy method*.  
+         Этот метод также называется *методом подделки*.  
   
-    -   **Random**: The algorithm randomly places a data point in a cluster and then computes the initial mean to be the centroid of the cluster's randomly assigned points. 
+    -   **Случайный**. алгоритм случайным образом помещает точку данных в кластер, а затем вычисляет начальное среднее, чтобы быть центроидом случайных назначенных точек кластера. 
 
-         This method is also called the *random partition* method.  
+         Этот метод также называется методом *случайного секционирования* .  
   
-    -   **K-Means++** : This is the default method for initializing clusters.  
+    -   **K-средние + +** : это метод по умолчанию для инициализации кластеров.  
   
-         The **K-means++** algorithm was proposed in 2007 by David Arthur and Sergei Vassilvitskii to avoid poor clustering by the standard K-means algorithm. **K-means++** improves upon standard K-means by using a different method for choosing the initial cluster centers.  
+         Алгоритм **k-средних + +** был предложен в 2007 на Дэвида Артур и Сергеем вассилвитскии, чтобы избежать низкой кластеризации по стандартному алгоритму K-средних. **K-средние + +** улучшаются по стандарту k-средних с помощью другого метода выбора начальных центров кластера.  
   
     
-5.  For **Random number seed**, optionally type a value to use as the seed for the cluster initialization. This value can have a significant effect on cluster selection.  
+5.  Для **начального числа случайных чисел**при необходимости введите значение, которое будет использоваться в качестве начального значения для инициализации кластера. Это значение может существенно повлиять на выбор кластера.  
   
-6.  For **Metric**, choose the function to use for measuring the distance between cluster vectors, or between new data points and the randomly chosen centroid. Azure Machine Learning supports the following cluster distance metrics:  
+6.  В поле **Метрика**выберите функцию, используемую для измерения расстояния между векторами кластера или между новыми точками данных и случайным образом выбранным центроид. Машинное обучение Azure поддерживает следующие метрики расстояний кластера:  
   
-    -   **Euclidean**: The Euclidean distance is commonly used as a measure of cluster scatter for K-means clustering. This metric is preferred because it minimizes the mean distance between points and the centroids.
+    -   **Евклидово**: расстояние евклидово обычно используется как мера точечного кластера для кластеризации с K-средних. Эта метрика является предпочтительной, так как уменьшает среднее расстояние между точками и средневзвешенных.
   
-7.  For **Iterations**, type the number of times the algorithm should iterate over the training data before it finalizes the selection of centroids.  
+7.  Для **итераций**введите, сколько раз алгоритм должен пройти по обучающим данным перед тем, как завершит выбор средневзвешенных.  
   
-     You can adjust this parameter to balance accuracy against training time.  
+     Этот параметр можно настроить для балансировки точности относительно времени обучения.  
   
-8.  For **Assign label mode**, choose an option that specifies how a label column, if it's present in the dataset, should be handled.  
+8.  Для параметра **режим назначения метки**выберите параметр, указывающий, как должен обрабатываться столбец меток, если он есть в наборе данных.  
   
-     Because K-means clustering is an unsupervised machine learning method, labels are optional. However, if your dataset already has a label column, you can use those values to guide the selection of the clusters, or you can specify that the values be ignored.  
+     Поскольку кластеризация с K-средних является методом неконтролируемого машинного обучения, метки необязательны. Однако если в наборе данных уже есть столбец меток, эти значения можно использовать для выбора кластеров, или можно указать, что значения будут игнорироваться.  
   
-    -   **Ignore label column**: The values in the label column are ignored and are not used in building the model.
+    -   **Пропустить столбец меток**: значения в столбце Метка игнорируются и не используются при построении модели.
   
-    -   **Fill missing values**: The label column values are used as features to help build the clusters. If any rows are missing a label, the value is imputed by using other features.  
+    -   **Заполнение отсутствующих значений**: значения столбца меток используются в качестве функций для создания кластеров. Если в каких-либо строках отсутствует метка, значение добавленные с помощью других функций.  
   
-    -   **Overwrite from closest to center**: The label column values are replaced with predicted label values, using the label of the point that is closest to the current centroid.  
+    -   **Перезаписывать данные из ближайшего в центр**: значения столбца меток заменяются прогнозируемыми значениями меток с использованием метки точки, ближайшей к текущему центроид.  
 
-8.  Select the **Normalize features** option if you want to normalize features before training.
+8.  Выберите параметр **нормализация функций** , если требуется нормализовать функции перед обучением.
   
-     If you apply normalization, before training, the data points are normalized to `[0,1]` by MinMaxNormalizer.
+     При применении нормализации до начала обучения точки данных нормализуются к `[0,1]` Минмакснормализер.
 
-10. Train the model.  
+10. Обучение модели.  
   
-    -   If you set **Create trainer mode** to **Single Parameter**, add a tagged dataset and train the model by using the [Train Clustering Model](train-clustering-model.md) module.  
+    -   Если присвоить **параметру** **CREATE инструктора** значение Single, добавьте набор данных с тегами и обучите модель с помощью модуля [обучение модели кластеризации](train-clustering-model.md) .  
   
 ### <a name="results"></a>Результаты
 
-After you've finished configuring and training the model, you have a model that you can use to generate scores. However, there are multiple ways to train the model, and multiple ways to view and use the results: 
+После завершения настройки и обучения модели вы получите модель, которую можно использовать для создания оценок. Однако существует несколько способов обучения модели, а также несколько способов просмотра и использования результатов. 
 
-#### <a name="capture-a-snapshot-of-the-model-in-your-workspace"></a>Capture a snapshot of the model in your workspace
+#### <a name="capture-a-snapshot-of-the-model-in-your-workspace"></a>Запись моментального снимка модели в рабочей области
 
-If you used the [Train Clustering Model](train-clustering-model.md) module:
+Если вы использовали модуль « [обучение модели кластеризации](train-clustering-model.md) », выполните следующие действия.
 
-1. Right-click the **Train Clustering Model** module.
+1. Щелкните правой кнопкой мыши модуль **обучение модели кластеризации** .
 
-2. Select **Trained model**, and then select **Save as Trained Model**.
+2. Выберите **обученная модель**, а затем выберите **Сохранить как обученную модель**.
 
-The saved model represents the training data at the time you saved the model. If you later update the training data used in the pipeline, it doesn't update the saved model. 
+Сохраненная модель представляет обучающие данные на момент сохранения модели. Если впоследствии вы обновите обучающие данные, используемые в конвейере, это не приведет к обновлению сохраненной модели. 
 
-#### <a name="see-the-clustering-result-dataset"></a>See the clustering result dataset 
+#### <a name="see-the-clustering-result-dataset"></a>Просмотр результирующего набора кластеризации 
 
-If you used the [Train Clustering Model](train-clustering-model.md) module:
+Если вы использовали модуль « [обучение модели кластеризации](train-clustering-model.md) », выполните следующие действия.
 
-1. Right-click the **Train Clustering Model** module.
+1. Щелкните правой кнопкой мыши модуль **обучение модели кластеризации** .
 
-2. Select **Results dataset**, and then select **Visualize**.
+2. Выберите **набор данных результаты**и нажмите кнопку **визуализировать**.
 
-### <a name="tips-for-generating-the-best-clustering-model"></a>Tips for generating the best clustering model  
+### <a name="tips-for-generating-the-best-clustering-model"></a>Советы по созданию лучшей модели кластеризации  
 
-It is known that the *seeding* process that's used during clustering can significantly affect the model. Seeding means the initial placement of points into potential centroids.
+Известно, что процесс *заполнения* , используемый во время кластеризации, может значительно повлиять на модель. Заполнение означает начальное размещение точек в потенциальных средневзвешенных.
  
-For example, if the dataset contains many outliers, and an outlier is chosen to seed the clusters, no other data points would fit well with that cluster, and the cluster could be a singleton. That is, it might have only one point.  
+Например, если набор данных содержит много выбросов, а выбросы выбираются для заполнения кластеров, другие точки данных не будут хорошо соответствовать этому кластеру, а кластер может быть одноэлементным. То есть у него может быть только одна точка.  
   
-You can avoid this problem in a couple of ways:  
+Эту проблему можно избежать двумя способами:  
   
--   Change the number of centroids and try multiple seed values.  
+-   Измените число средневзвешенных и попробуйте использовать несколько начальных значений.  
   
--   Create multiple models, varying the metric or iterating more.  
+-   Создайте несколько моделей, изменив метрику или просматривая больше.  
   
-In general, with clustering models, it's possible that any given configuration will result in a locally optimized set of clusters. In other words, the set of clusters that's returned by the model suits only the current data points and isn't generalizable to other data. If you use a different initial configuration, the K-means method might find a different, superior, configuration. 
+Как правило, при использовании моделей кластеризации возможна ситуация, когда любая заданная конфигурация приведет к созданию локально оптимизированного набора кластеров. Иными словами, набор кластеров, возвращаемых моделью, подходит только к текущим точкам данных и не является обобщенным для других данных. Если вы используете другую начальную конфигурацию, метод K-средних может найти другую, старшую конфигурацию. 

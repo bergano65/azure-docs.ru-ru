@@ -15,7 +15,7 @@ ms.date: 09/17/2018
 ms.author: cynthn
 ms.openlocfilehash: 2f8ba53080b10568a3ac74e9ad2a81114e1c7c93
 ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74206709"
@@ -31,7 +31,7 @@ ms.locfileid: "74206709"
 >
 > Дополнительные сведения см. в статье [Точное время в Windows Server 2016](https://docs.microsoft.com/windows-server/networking/windows-time-service/accurate-time). 
 
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
 
 Точность часов компьютера оценивается по тому, насколько близки их показания к стандартному времени в формате UTC. Время UTC устанавливается по точным атомным часам, отклонение которых не превышает одной секунды за 300 лет. Однако для считывания времени UTC напрямую требуется специальное оборудование. Вместо этого со временем UTC синхронизируются серверы времени, к которым затем обращаются другие компьютеры. Таким образом достигается масштабируемость и надежность. На каждом компьютере выполняется служба синхронизации времени, которая знает, какие серверы времени следует использовать, и регулярно проверяет необходимость коррекции часов компьютера, при необходимости корректируя время. 
 
@@ -71,7 +71,7 @@ ms.locfileid: "74206709"
 
 ### <a name="host-only"></a>Только от узла 
 
-Так как NTP-серверы, такие как time.windows.com и ntp.ubuntu.com, являются общедоступными, синхронизация времени с ними требует передачи трафика через Интернет. Varying packet delays can negatively affect quality of the time sync. Removing NTP by switching to host-only sync can sometimes improve your time sync results.
+Так как NTP-серверы, такие как time.windows.com и ntp.ubuntu.com, являются общедоступными, синхронизация времени с ними требует передачи трафика через Интернет. Различные задержки пакетов могут негативно повлиять на качество синхронизации времени. Удаление NTP путем переключения на синхронизацию только между узлами иногда может улучшить результаты синхронизации времени.
 
 Переход на синхронизацию времени только с узлом имеет смысл, если возникают проблемы при использовании конфигурации синхронизации по умолчанию. Попробуйте использовать синхронизацию только с узлом и посмотрите, улучшится ли синхронизация времени в виртуальной машине. 
 
@@ -145,11 +145,11 @@ refclock PHC /dev/ptp0 poll 3 dpoll -2 offset 0
 
 Если одновременно включены источники chrony и TimeSync, один из них можно пометить как **предпочтительный**. Другой при этом помечается как резервный. Так как службы NTP корректируют часы через большие периоды времени, служба VMICTimeSync восстанавливает показания часов после приостановки виртуальных машин гораздо быстрее, чем средства на основе NTP, используемые отдельно.
 
-By default chronyd accelerates or slows the system clock to fix any time drift. If the drift becomes too big, chrony will fail to fix the drift. To overcome this the `makestep` parameter in **/etc/chrony.conf** can be changed to force a timesync if the drift exceeds the threshold specified.
+По умолчанию чронид ускоряет или снижает производительность системных часов для устранения любого смещения времени. Если смещение становится слишком большим, чрони не сможет исправить смещение. Чтобы преодолеть этот параметр `makestep` в **/ЕТК/чрони.конф** можно изменить, чтобы принудительно тимесинк, если смещение превышает заданное пороговое значение.
  ```bash
 makestep 1.0 -1
 ```
-Here, chrony will force a time update if the drift is greater than 1 second. To apply the changes restart the chronyd service.
+Здесь чрони будет принудительно обновлять время, если смещение больше 1 секунды. Чтобы применить изменения, перезапустите службу чронид.
 
 ```bash
 systemctl restart chronyd
@@ -162,7 +162,7 @@ systemctl restart chronyd
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения см. в статье [Точное время в Windows Server 2016](https://docs.microsoft.com/windows-server/networking/windows-time-service/accurate-time).
 

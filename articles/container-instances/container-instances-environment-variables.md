@@ -1,5 +1,5 @@
 ---
-title: Set environment variables in container instance
+title: Установка переменных среды в экземпляре контейнера
 description: Узнайте, как настроить переменные среды в контейнерах, выполняемых в службе "Экземпляры контейнеров Azure"
 ms.topic: article
 ms.date: 04/17/2019
@@ -10,13 +10,13 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/25/2019
 ms.locfileid: "74483195"
 ---
-# <a name="set-environment-variables-in-container-instances"></a>Set environment variables in container instances
+# <a name="set-environment-variables-in-container-instances"></a>Установка переменных среды в экземплярах контейнеров
 
 Используя переменные среды в экземплярах контейнеров, вы можете динамически изменять конфигурацию приложения или скрипта, запущенных в контейнере. Эта функция работает так же, как и аргумент `--env` в команде `docker run`. 
 
-Чтобы установить переменные среды в контейнере, укажите их при создании экземпляра контейнера. This article shows examples of setting environment variables when you start a container with the [Azure CLI](#azure-cli-example), [Azure PowerShell](#azure-powershell-example), and the [Azure portal](#azure-portal-example). 
+Чтобы установить переменные среды в контейнере, укажите их при создании экземпляра контейнера. В этой статье приведены примеры настройки переменных среды при запуске контейнера с [Azure CLI](#azure-cli-example), [Azure PowerShell](#azure-powershell-example)и [портал Azure](#azure-portal-example). 
 
-For example, if you run the Microsoft [aci-wordcount][aci-wordcount] container image, you can modify its behavior by specifying the following environment variables:
+Например, при запуске образа контейнера Microsoft [ACI-WordCount][aci-wordcount] можно изменить его поведение, указав следующие переменные среды:
 
 *NumWords* задает число слов для вывода в STDOUT.
 
@@ -28,7 +28,7 @@ For example, if you run the Microsoft [aci-wordcount][aci-wordcount] container i
 
 ## <a name="azure-cli-example"></a>Пример для Azure CLI
 
-To see the default output of the [aci-wordcount][aci-wordcount] container, run it first with this [az container create][az-container-create] command (no environment variables specified):
+Чтобы просмотреть выходные данные по умолчанию для контейнера [ACI-WordCount][aci-wordcount] , сначала запустите его с помощью команды [AZ Container Create][az-container-create] (не указаны переменные среды):
 
 ```azurecli-interactive
 az container create \
@@ -49,7 +49,7 @@ az container create \
     --environment-variables 'NumWords'='5' 'MinLength'='8'
 ```
 
-Once both containers' state shows as *Terminated* (use [az container show][az-container-show] to check state), display their logs with [az container logs][az-container-logs] to see the output.
+Когда оба контейнера отображаются как *Завершенные* (используйте команду [AZ Container Показать][az-container-show] для проверки состояния), выведите их журналы с помощью команды [AZ Container Logs][az-container-logs] , чтобы просмотреть выходные данные.
 
 ```azurecli-interactive
 az container logs --resource-group myResourceGroup --name mycontainer1
@@ -83,7 +83,7 @@ azureuser@Azure:~$ az container logs --resource-group myResourceGroup --name myc
 
 Установка переменных среды в PowerShell аналогична действиям в CLI, за исключением использования аргумента командной строки `-EnvironmentVariable`.
 
-First, launch the [aci-wordcount][aci-wordcount] container in its default configuration with this [New-AzContainerGroup][new-Azcontainergroup] command:
+Сначала запустите контейнер [ACI-WordCount][aci-wordcount] в конфигурации по умолчанию с помощью этой команды [New-азконтаинерграуп][new-Azcontainergroup] :
 
 ```azurepowershell-interactive
 New-AzContainerGroup `
@@ -92,7 +92,7 @@ New-AzContainerGroup `
     -Image mcr.microsoft.com/azuredocs/aci-wordcount:latest
 ```
 
-Now run the following [New-AzContainerGroup][new-Azcontainergroup] command. Она задает переменные среды *NumWords* и *MinLength* после заполнения переменной массива `envVars`:
+Теперь выполните следующую команду [New-азконтаинерграуп][new-Azcontainergroup] . Она задает переменные среды *NumWords* и *MinLength* после заполнения переменной массива `envVars`:
 
 ```azurepowershell-interactive
 $envVars = @{'NumWords'='5';'MinLength'='8'}
@@ -104,7 +104,7 @@ New-AzContainerGroup `
     -EnvironmentVariable $envVars
 ```
 
-Once both containers' state is *Terminated* (use [Get-AzContainerInstanceLog][azure-instance-log] to check state), pull their logs with the [Get-AzContainerInstanceLog][azure-instance-log] command.
+После того как оба контейнера *прерываются* (используйте команду [Get-азконтаинеринстанцелог][azure-instance-log] для проверки состояния), вытяните свои журналы с помощью команды [Get-азконтаинеринстанцелог][azure-instance-log] .
 
 ```azurepowershell-interactive
 Get-AzContainerInstanceLog -ResourceGroupName myResourceGroup -ContainerGroupName mycontainer1
@@ -139,15 +139,15 @@ Azure:\
 
 ## <a name="azure-portal-example"></a>Пример на портале Azure
 
-To set environment variables when you start a container in the Azure portal, specify them in the **Advanced** page when you create the container.
+Чтобы задать переменные среды при запуске контейнера в портал Azure, укажите их на странице **Дополнительно** при создании контейнера.
 
-1. On the **Advanced** page, set the **Restart policy** to *On failure*
-2. Under **Environment variables**, enter `NumWords` with a value of `5` for the first variable, and enter `MinLength` with a value of `8` for the second variable. 
-1. Select **Review + create** to verify and then deploy the container.
+1. На странице **Дополнительно** задайте для параметра **Политика перезапуска** значение *при сбое* .
+2. В разделе **переменные среды**введите `NumWords` со значением `5` для первой переменной и введите `MinLength` со значением `8` для второй переменной. 
+1. Выберите **проверить и создать** , чтобы проверить, а затем развернуть контейнер.
 
 ![Страница портала, отображающая переменную среды, кнопку "Включить" и текстовые поля][portal-env-vars-01]
 
-To view the container's logs, under **Settings** select **Containers**, then **Logs**. Подобно тому, как это было показано в предыдущих разделах для CLI и PowerShell, вы можете увидеть, как поведение скрипта было изменено после указания переменных среды. Отображаются только пять слов, каждое из которых имеет длину не менее восьми символов.
+Чтобы просмотреть журналы контейнера, в разделе **Параметры** выберите **контейнеры**, а затем **журналы**. Подобно тому, как это было показано в предыдущих разделах для CLI и PowerShell, вы можете увидеть, как поведение скрипта было изменено после указания переменных среды. Отображаются только пять слов, каждое из которых имеет длину не менее восьми символов.
 
 ![Выходные данные журналов контейнера на портале][portal-env-vars-02]
 
@@ -196,7 +196,7 @@ az container create --resource-group myResourceGroup --file secure-env.yaml
 
 ### <a name="verify-environment-variables"></a>Проверка переменных среды
 
-Run the [az container show][az-container-show] command to query your container's environment variables:
+Выполните команду [AZ Container показывать][az-container-show] , чтобы запросить переменные среды в контейнере:
 
 ```azurecli-interactive
 az container show --resource-group myResourceGroup --name securetest --query 'containers[].environmentVariables'
@@ -221,7 +221,7 @@ az container show --resource-group myResourceGroup --name securetest --query 'co
 ]
 ```
 
-With the [az container exec][az-container-exec] command, which enables executing a command in a running container, you can verify that the secure environment variable has been set. Выполните следующую команду, чтобы запустить интерактивный сеанс Bash в контейнере:
+С помощью команды [AZ Container Exec][az-container-exec] , которая позволяет выполнять команду в работающем контейнере, можно убедиться, что установлена безопасная переменная среды. Выполните следующую команду, чтобы запустить интерактивный сеанс Bash в контейнере:
 
 ```azurecli-interactive
 az container exec --resource-group myResourceGroup --name securetest --exec-command "/bin/bash"
@@ -234,9 +234,9 @@ root@caas-ef3ee231482549629ac8a40c0d3807fd-3881559887-5374l:/# echo $SECRET
 my-secret-value
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-В скриптах на основе задач, таких как пакетная обработка большого набора данных с несколькими контейнерами, могут использоваться пользовательские переменные среды во время выполнения. For more information about running task-based containers, see [Run containerized tasks with restart policies](container-instances-restart-policy.md).
+В скриптах на основе задач, таких как пакетная обработка большого набора данных с несколькими контейнерами, могут использоваться пользовательские переменные среды во время выполнения. Дополнительные сведения о выполнении контейнеров на основе задач см. [в статье выполнение контейнерных задач с помощью политик перезапуска](container-instances-restart-policy.md).
 
 <!-- IMAGES -->
 [portal-env-vars-01]: ./media/container-instances-environment-variables/portal-env-vars-01.png

@@ -1,6 +1,6 @@
 ---
-title: Sign-in using authentication with a work or school account - Azure AD
-description: Learn how to sign in to your work or school account using the various two-factor verification methods.
+title: Вход с использованием рабочей или учебной учетной записи Azure AD с помощью проверки подлинности
+description: Узнайте, как войти в рабочую или учебную учетную запись с помощью различных методов двухфакторной проверки подлинности.
 services: active-directory
 author: eross-msft
 manager: daveba
@@ -21,7 +21,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74233234"
 ---
-# <a name="sign-in-to-your-work-or-school-account-using-your-two-factor-verification-method"></a>Sign in to your work or school account using your two-factor verification method
+# <a name="sign-in-to-your-work-or-school-account-using-your-two-factor-verification-method"></a>Вход в рабочую или учебную учетную запись с помощью метода двухфакторной проверки подлинности
 
 > [!NOTE]
 > В этой статье рассматривается стандартная процедура входа. Если у вас возникают проблемы со входом в систему см. статью [об устранении неполадок при двухфакторной проверке подлинности](multi-factor-authentication-end-user-troubleshoot.md).
@@ -83,7 +83,7 @@ ms.locfileid: "74233234"
 
    ![Использовать другой метод](./media/multi-factor-authentication-end-user-signin/alt.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 - Если у вас возникли проблемы при входе в систему с помощью двухфакторной проверки подлинности, см. статью [Проблемы с использованием Многофакторной идентификации Azure](multi-factor-authentication-end-user-troubleshoot.md).
 
 - Узнайте, как [управлять параметрами двухфакторной проверки подлинности](multi-factor-authentication-end-user-manage-settings.md).

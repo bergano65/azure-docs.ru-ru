@@ -32,14 +32,14 @@ ms.locfileid: "74227906"
 
 Чтобы установить клиентскую библиотеку хранилища для C++, можно использовать следующие методы.
 
-* **Linux:** Follow the instructions given in the [Azure Storage Client Library for C++ README: Getting Started on Linux](https://github.com/Azure/azure-storage-cpp#getting-started-on-linux) page.
-* **Windows:** On Windows, use [vcpkg](https://github.com/microsoft/vcpkg) as the dependency manager. Follow the [quick-start](https://github.com/microsoft/vcpkg#quick-start) to initialize vcpkg. Then, use the following command to install the library:
+* **Linux:** Следуйте инструкциям, указанным в [клиентской библиотеке службы хранилища Azure C++ для файла README: Начало работы на странице Linux](https://github.com/Azure/azure-storage-cpp#getting-started-on-linux) .
+* **Windows:** В Windows используйте [vcpkg](https://github.com/microsoft/vcpkg) в качестве диспетчера зависимостей. Выполните действия, описанные в руководстве по [быстрому запуску](https://github.com/microsoft/vcpkg#quick-start) , чтобы инициализировать vcpkg. Затем используйте следующую команду для установки библиотеки:
 
 ```powershell
 .\vcpkg.exe install azure-storage-cpp
 ```
 
-You can find a guide for how to build the source code and export to Nuget in the [README](https://github.com/Azure/azure-storage-cpp#download--install) file.
+Руководство по созданию исходного кода и экспорту в NuGet можно найти в файле [сведений](https://github.com/Azure/azure-storage-cpp#download--install) .
 
 ## <a name="configure-your-application-to-access-blob-storage"></a>Настройка приложения для доступа к хранилищу больших двоичных объектов
 Добавьте следующие инструкции в начало файла C++, где требуется использовать API-интерфейсы Azure для доступа к BLOB-объектам.  
@@ -52,7 +52,7 @@ You can find a guide for how to build the source code and export to Nuget in the
 ```
 
 ## <a name="setup-an-azure-storage-connection-string"></a>Настройка строки подключения к службе хранилища Azure
-Клиент хранилища Azure использует строку подключения с целью хранения конечных точек и учетных данных для доступа к службам управления данными. При запуске в клиентском приложении необходимо указать строку подключения для хранилища в следующем формате (в качестве параметров *AccountName* и *AccountKey* укажите имя и ключ доступа своей учетной записи хранения, их можно получить на [портале Azure](https://portal.azure.com)). Сведения об учетных записях хранения и ключах доступа см. в статье[Об учетных записях хранения Azure](../common/storage-create-storage-account.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json). В этом примере показано, как объявить статическое поле для размещения строки подключения:  
+Клиент хранилища Azure использует строку подключения с целью хранения конечных точек и учетных данных для доступа к службам управления данными. При запуске в клиентском приложении необходимо указать строку подключения для хранилища в следующем формате (в качестве параметров [AccountName](https://portal.azure.com) и *AccountKey* укажите имя и ключ доступа своей учетной записи хранения, их можно получить на *портале Azure*). Сведения об учетных записях хранения и ключах доступа см. в статье[Об учетных записях хранения Azure](../common/storage-create-storage-account.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json). В этом примере показано, как объявить статическое поле для размещения строки подключения:  
 
 ```cpp
 // Define the connection-string with your values.
@@ -70,7 +70,7 @@ const utility::string_t storage_connection_string(U("UseDevelopmentStorage=true;
 
 В приведенных ниже примерах предполагается, что вы использовали одно из этих двух определений для получения строки подключения к хранилищу.  
 
-## <a name="retrieve-your-storage-account"></a>Retrieve your storage account
+## <a name="retrieve-your-storage-account"></a>Получение учетной записи хранения
 Информацию о своей учетной записи хранения можно представить с помощью класса **cloud_storage_account**. Чтобы получить данные учетной записи хранения из строки подключения хранилища, можно использовать метод **синтаксического анализа** .  
 
 ```cpp
@@ -255,7 +255,7 @@ azure::storage::cloud_block_blob blockBlob = container.get_block_blob_reference(
 blockBlob.delete_blob();
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 Теперь, когда вы ознакомились с основными сведениями о хранилище BLOB-объектов, используйте следующие ссылки для получения дополнительных сведений о хранилище Azure.  
 
 * [Использование хранилища очередей из C++](../storage-c-plus-plus-how-to-use-queues.md)

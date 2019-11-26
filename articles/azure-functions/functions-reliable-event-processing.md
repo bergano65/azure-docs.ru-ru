@@ -1,6 +1,6 @@
 ---
-title: Azure Functions reliable event processing
-description: Avoid missing Event Hub messages in Azure Functions
+title: Обработка надежных событий в функциях Azure
+description: Предотвращение отсутствия сообщений концентратора событий в функциях Azure
 author: craigshoemaker
 ms.topic: conceptual
 ms.date: 09/12/2019
@@ -12,123 +12,123 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74230368"
 ---
-# <a name="azure-functions-reliable-event-processing"></a>Azure Functions reliable event processing
+# <a name="azure-functions-reliable-event-processing"></a>Обработка надежных событий в функциях Azure
 
-Event processing is one of the most common scenarios associated with serverless architecture. This article describes how to create a reliable message processor with Azure Functions to avoid losing messages.
+Обработка событий является одним из наиболее распространенных сценариев, связанных с бессерверной архитектурой. В этой статье описывается, как создать надежный обработчик сообщений с помощью функций Azure, чтобы избежать потери сообщений.
 
-## <a name="challenges-of-event-streams-in-distributed-systems"></a>Challenges of event streams in distributed systems
+## <a name="challenges-of-event-streams-in-distributed-systems"></a>Проблемы потоков событий в распределенных системах
 
-Consider a system that sends events at a constant rate  of 100 events per second. At this rate, within minutes multiple parallel Functions instances can consume the incoming 100 events every second.
+Рассмотрим систему, которая отправляет события с постоянной частотой 100 событий в секунду. В течение нескольких минут экземпляры параллельных функций могут использовать входящие события 100 каждую секунду.
 
-However, any of the following less-optimal conditions are possible:
+Однако возможны следующие менее оптимальные условия.
 
-- What if the event publisher sends a corrupt event?
-- What if your Functions instance encounters unhandled exceptions?
-- What if a downstream system goes offline?
+- Что делать, если издатель события отправляет поврежденное событие?
+- Что делать, если экземпляр функций обнаруживает необработанные исключения?
+- Что произойдет, если Подчиненная система переходит в режим «вне сети»?
 
-How do you handle these situations while preserving the throughput of your application?
+Как обрабатывать эти ситуации, сохраняя пропускную способность приложения?
 
-With queues, reliable messaging comes naturally. When paired with a Functions trigger, the function creates a lock on the queue message. If processing fails, the lock is released to allow another instance to retry processing. Processing then continues until either the message is evaluated successfully, or it is added to a poison queue.
+Благодаря очередям надежный обмен сообщениями имеет естественное направление. При связывании с триггером функций функция создает блокировку сообщения очереди. Если обработка завершается неудачей, блокировка освобождается, чтобы позволить другому экземпляру повторить попытку обработки. Затем обработка продолжится до тех пор, пока сообщение не будет успешно вычислено или Добавлено в очередь подозрительных сообщений.
 
-Even while a single queue message may remain in a retry cycle, other parallel executions continue to keep to dequeueing remaining messages. The result is that the overall throughput remains largely unaffected by one bad message. However, storage queues don’t guarantee ordering and aren’t optimized for the high throughput demands required by Event Hubs.
+Даже если одно сообщение очереди может остаться в цикле повтора, другие параллельные выполнения продолжают выводить из очереди оставшиеся сообщения. В результате общая пропускная способность не зависит от одного неверного сообщения. Однако очереди хранилища не гарантируют упорядочение и не оптимизируются для высоких требований к пропускной способности, необходимых концентраторам событий.
 
-By contrast, Azure Event Hubs doesn't include a locking concept. To allow for features like high-throughput, multiple consumer groups, and replay-ability, Event Hubs events behave more like a video player. Events are read from a single point in the stream per partition. From the pointer you can read forwards or backwards from that location, but you have to choose to move the pointer for events to process.
+Концентраторы событий Azure, напротив, не включают концепцию блокировки. Для поддержки таких функций, как высокая пропускная способность, несколько групп потребителей и возможность воспроизведения, события концентраторов событий ведут себя так же, как видеопроигрыватель. События считываются из одной точки в потоке на секцию. С помощью указателя можно выполнять чтение вперед или назад из этого расположения, но необходимо выбрать перемещение указателя для обработки событий.
 
-When errors occur in a stream, if you decide to keep the pointer in the same spot, event processing is blocked until the pointer is advanced. In other words, if the pointer is stopped to deal with problems processing a single event, the unprocessed events begin piling up.
+Если при возникновении ошибок в потоке вы решили, чтобы указатель оставался в одном месте, обработка событий блокируется до тех пор, пока указатель не будет расширен. Иными словами, если указатель остановлен, чтобы обработать проблемы с обработкой одного события, необработанные события начинают накапливаться.
 
-Azure Functions avoids deadlocks by advancing the stream's pointer regardless of success or failure. Since the pointer keeps advancing, your functions need to deal with failures appropriately.
+Функции Azure избегают взаимоблокировок путем перемещения указателя потока, независимо от успешности или сбоя. Поскольку указатель продолжает походить, ваши функции должны правильно обрабатывать ошибки.
 
-## <a name="how-azure-functions-consumes-event-hubs-events"></a>How Azure Functions consumes Event Hubs events
+## <a name="how-azure-functions-consumes-event-hubs-events"></a>Как функции Azure используют события концентраторов событий
 
-Azure Functions consumes Event Hub events while cycling through the following steps:
+Функции Azure используют события концентратора событий при циклическом выполнении следующих шагов:
 
-1. A pointer is created and persisted in Azure Storage for each partition of the event hub.
-2. When new messages are received (in a batch by default), the host attempts to trigger the function with the batch of messages.
-3. If the function completes execution (with or without exception) the pointer advances and a checkpoint is saved to the storage account.
-4. If conditions prevent the function execution from completing, the host fails to progress the pointer. If the pointer isn't advanced, then later checks end up processing the same messages.
-5. Repeat steps 2–4
+1. Создается и сохраняется указатель в службе хранилища Azure для каждого раздела концентратора событий.
+2. При получении новых сообщений (по умолчанию в пакете) узел пытается запустить функцию с пакетом сообщений.
+3. Если функция завершает выполнение (с исключением или без него), указатель перемещается и контрольная точка сохраняется в учетной записи хранения.
+4. Если условия не позволяют завершить выполнение функции, узел не сможет выполнить указатель. Если указатель не является продвинутым, последующие проверки обрабатывают те же сообщения.
+5. Повторите шаги 2 – 4
 
-This behavior reveals a few important points:
+Это поведение раскрывает несколько важных моментов.
 
-- *Unhandled exceptions may cause you to lose messages.* Executions that result in an exception will continue to progress the pointer.
-- *Functions guarantees at-least-once delivery.* Your code and dependent systems may need to [account for the fact that the same message could be received twice](./functions-idempotent.md).
+- *Необработанные исключения могут привести к потере сообщений.* Выполнение, результатом которого является исключение, будет по прежнему продвигается указатель.
+- *Функции гарантируют доставку по крайней мере один раз.* Коду и зависимым системам может потребоваться [учитывать тот факт, что одно и то же сообщение может быть получено дважды](./functions-idempotent.md).
 
 ## <a name="handling-exceptions"></a>Обработка исключений
 
-As a general rule, every function should include a [try/catch block](./functions-bindings-error-pages.md) at the highest level of code. Specifically, all functions that consume Event Hubs events should have a `catch` block. That way, when an exception is raised, the catch block handles the error before the pointer progresses.
+Как правило, каждая функция должна включать [блок try/catch](./functions-bindings-error-pages.md) на самом верхнем уровне кода. В частности, все функции, использующие события концентраторов событий, должны иметь блок `catch`. Таким образом, при возникновении исключения блок Catch обрабатывает ошибку перед выполнением указателя.
 
-### <a name="retry-mechanisms-and-policies"></a>Retry mechanisms and policies
+### <a name="retry-mechanisms-and-policies"></a>Механизмы и политики повтора
 
-Some exceptions are transient in nature and don't reappear when an operation is attempted again moments later. This is why the first step is always to retry the operation. You could write retry processing rules yourself, but they are so commonplace that a number of tools available. Using these libraries allow you to define robust retry-policies, which can also help preserve processing order.
+Некоторые исключения являются временными и не отображаются при попытке выполнить операцию позже. Именно поэтому первый шаг всегда должен повторить операцию. Вы можете написать правила обработки повторных попыток самостоятельно, но они настолько распространены, что доступно несколько средств. Использование этих библиотек позволяет определить надежные политики повтора, которые также могут помочь сохранить порядок обработки.
 
-Introducing fault-handling libraries to your functions allow you to define both basic and advanced retry policies. For instance, you could implement a policy that follows a workflow illustrated by the following rules:
+Внедрение библиотек обработки ошибок в функции позволяет определить как базовые, так и расширенные политики повтора. Например, можно реализовать политику, следующую за рабочим процессом, проиллюстрированным следующими правилами.
 
-- Try to insert a message three times (potentially with a delay between retries).
-- If the eventual outcome of all retries is a failure, then add a message to a queue so processing can continue on the stream.
-- Corrupt or unprocessed messages are then handled later.
+- Попробуйте вставить сообщение три раза (возможно, с задержкой между повторными попытками).
+- Если результатом всех повторных попыток является сбой, добавьте сообщение в очередь, чтобы обработка могла продолжаться в потоке.
+- Поврежденные или необработанные сообщения обрабатываются позже.
 
 > [!NOTE]
-> [Polly](https://github.com/App-vNext/Polly) is an example of a resilience and transient-fault-handling library for C# applications.
+> [Polly](https://github.com/App-vNext/Polly) — это пример библиотеки устойчивости и обработки временных ошибок для C# приложений.
 
-When working with pre-complied C# class libraries, [exception filters](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/try-catch) allow you to run code whenever an unhandled exception occurs.
+При работе с предварительно скомпилированными C# библиотеками классов [фильтры исключений](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/try-catch) позволяют запускать код всякий раз, когда возникает необработанное исключение.
 
-Samples that demonstrate how to use exception filters are available in the [Azure WebJobs SDK](https://github.com/Azure/azure-webjobs-sdk/wiki) repo.
+Примеры, демонстрирующие использование фильтров исключений, доступны в репозитории [пакета SDK веб-заданий Azure](https://github.com/Azure/azure-webjobs-sdk/wiki) .
 
-## <a name="non-exception-errors"></a>Non-exception errors
+## <a name="non-exception-errors"></a>Ошибки, не связанные с исключениями
 
-Some issues arise even when an error is not present. For example, consider a failure that occurs in the middle of an execution. In this case, if a function doesn’t complete execution, the offset pointer is never progressed. If the pointer doesn't advance, then any instance that runs after a failed execution continues to read the same messages. This situation provides an "at-least-once" guarantee.
+Некоторые проблемы возникают, даже если ошибка отсутствует. Например, рассмотрим сбой, который происходит в процессе выполнения. В этом случае, если выполнение функции не завершается, указатель смещения никогда не выполняется. Если указатель не передается, любой экземпляр, который запускается после неудачного выполнения, продолжит считывать те же сообщения. Эта ситуация обеспечивает гарантию "хотя бы один раз".
 
-The assurance that every message is processed at least one time implies that some messages may be processed more than once. Your function apps need to be aware of this possibility and must be built around the [principles of idempotency](./functions-idempotent.md).
+Гарантия того, что каждое сообщение обрабатывается по крайней мере один раз, означает, что некоторые сообщения могут обрабатываться несколько раз. Приложения функций должны быть осведомлены об этой возможности и должны быть построены на основе [принципов идемпотентности](./functions-idempotent.md).
 
-## <a name="stop-and-restart-execution"></a>Stop and restart execution
+## <a name="stop-and-restart-execution"></a>Завершение и перезапуск выполнения
 
-While a few errors may be acceptable, what if your app experiences significant failures? You may want to stop triggering on events until the system reaches a healthy state. Having the opportunity pause processing is often achieved with a circuit breaker pattern. The circuit breaker pattern allows your app to "break the circuit" of the event process and resume at a later time.
+Хотя некоторые ошибки могут быть приемлемыми, что происходит, если в вашем приложении возникают серьезные сбои? Может потребоваться отключить активацию событий до тех пор, пока система не достигнет работоспособного состояния. Обработка приостановки возможной сделки часто достигается с помощью шаблона автоматического выключения. Шаблон автоматического выключения позволяет приложению "прерывать канал" процесса события и возобновлять его позже.
 
-There are two pieces required to implement a circuit breaker in an event process:
+Существует две части, необходимые для реализации автоматического прерывания в процессе события:
 
-- Shared state across all instances to track and monitor health of the circuit
-- Master process that can manage the circuit state (open or closed)
+- Общее состояние по всем экземплярам для отслеживания и мониторинга работоспособности канала
+- Главный процесс, который может управлять состоянием канала (открытым или закрытым)
 
-Implementation details may vary, but to share state among instances you need a storage mechanism. You may choose to store state in Azure Storage, a Redis cache, or any other account that is accessible by a collection of functions.
+Сведения о реализации могут отличаться, но для общего доступа к состоянию между экземплярами необходим механизм хранения. Вы можете выбрать сохранение состояния в службе хранилища Azure, кэше Redis или любой другой учетной записи, доступной коллекции функций.
 
-[Azure Logic Apps](../logic-apps/logic-apps-overview.md) or [durable entities](./durable/durable-functions-overview.md) are a natural fit to manage the workflow and circuit state. Other services may work just as well, but logic apps are used for this example. Using logic apps, you can pause and restart a function's execution giving you the control required to implement the circuit breaker pattern.
+[Azure Logic Apps](../logic-apps/logic-apps-overview.md) или [устойчивые сущности](./durable/durable-functions-overview.md) естественным образом подходят для управления рабочим процессом и состоянием цепи. Другие службы могут работать точно так же, но для этого примера используются приложения логики. С помощью приложений логики можно приостанавливать и перезапускать выполнение функции, предоставляя элемент управления, необходимый для реализации шаблона автоматического выключения.
 
-### <a name="define-a-failure-threshold-across-instances"></a>Define a failure threshold across instances
+### <a name="define-a-failure-threshold-across-instances"></a>Определение порогового значения сбоя для экземпляров
 
-To account for multiple instances processing events simultaneously, persisting shared external state is needed to monitor the health of the circuit.
+Для одновременной обработки нескольких экземпляров событий необходимо сохранить общее внешнее состояние, чтобы отслеживать работоспособность канала.
 
-A rule you may choose to implement might enforce that:
+Правило, которое можно выбрать для реализации, может обеспечить соблюдение следующих условий:
 
-- If there are more than 100 eventual failures within 30 seconds across all instances, then break the circuit and stop triggering on new messages.
+- Если в течение 30 секунд во всех экземплярах возникает более 100 удачных попыток, разбейте канал и завершите срабатывание новых сообщений.
 
-The implementation details will vary given your needs, but in general you can create a system that:
+Сведения о реализации будут отличаться в зависимости от ваших потребностей, но в целом можно создать систему, которая:
 
-1. Log failures to a storage account (Azure Storage, Redis, etc.)
-1. When new failure is logged, inspect the rolling count to see if the threshold is met (for example, more than 100 in last 30 seconds).
-1. If the threshold is met, emit an event to Azure Event Grid telling the system to break the circuit.
+1. Регистрация ошибок в учетной записи хранения (служба хранилища Azure, Redis и т. д.)
+1. При занесении в журнал нового сбоя Проверьте число последовательностей, чтобы узнать, соответствует ли порог (например, более 100 за последние 30 секунд).
+1. Если пороговое значение достигнуто, выпустите событие в службе "Сетка событий Azure", чтобы система нарушила цепь.
 
-### <a name="managing-circuit-state-with-azure-logic-apps"></a>Managing circuit state with Azure Logic Apps
+### <a name="managing-circuit-state-with-azure-logic-apps"></a>Управление состоянием цепи с помощью Azure Logic Apps
 
-The following description highlights one way you could create an Azure Logic App to halt a Functions app from processing.
+Следующее описание демонстрирует один из способов создания приложения логики Azure, чтобы остановить обработку приложения-функции.
 
-Azure Logic Apps comes with built-in connectors to different services, features stateful orchestrations, and is a natural choice to manage circuit state. After detecting the circuit needs to break, you can build a logic app to implement the following workflow:
+Azure Logic Apps поставляется с встроенными соединителями для различных служб, применяет согласованность с отслеживанием состояния и является естественным выбором для управления состоянием цепи. После определения необходимости прерывания канала можно создать приложение логики для реализации следующего рабочего процесса:
 
-1. Trigger an Event Grid workflow and stop the Azure Function (with the Azure Resource connector)
-1. Send a notification email that includes an option to restart the workflow
+1. Активация рабочего процесса службы "Сетка событий" и завершение работы функции Azure (с помощью соединителя ресурсов Azure)
+1. Отправить электронное письмо с уведомлением, которое содержит параметр для перезапуска рабочего процесса
 
-The email recipient can investigate the health of the circuit and, when appropriate, restart the circuit via a link in the notification email. As the workflow restarts the function, messages are processed from the last Event Hub checkpoint.
+Получатель электронной почты может исследовать работоспособность канала и при необходимости перезапустить цепь по ссылке в сообщении электронной почты с уведомлением. Когда рабочий процесс перезапускает функцию, сообщения обрабатываются из последней контрольной точки концентратора событий.
 
-Using this approach, no messages are lost, all messages are processed in order, and you can break the circuit as long as necessary.
+При таком подходе сообщения не теряются, все сообщения обрабатываются по порядку, и при необходимости можно разбивать канал.
 
 ## <a name="resources"></a>Ресурсы
 
-- [Reliable event processing samples](https://github.com/jeffhollan/functions-csharp-eventhub-ordered-processing)
-- [Azure Durable Functions Circuit Breaker](https://github.com/jeffhollan/functions-durable-actor-circuitbreaker)
+- [Примеры обработки надежных событий](https://github.com/jeffhollan/functions-csharp-eventhub-ordered-processing)
+- [Автоматическое выключение цепи Azure Устойчивые функции](https://github.com/jeffhollan/functions-durable-actor-circuitbreaker)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Для получения дополнительных сведений см. следующие ресурсы:
 
 - [Обработка ошибок службы "Функции Azure"](./functions-bindings-error-pages.md)
-- [Автоматическое изменение размера переданных изображений с помощью Сетки событий](../event-grid/resize-images-on-storage-blob-upload-event.md?toc=%2Fazure%2Fazure-functions%2Ftoc.json&tabs=dotnet)
+- [Автоматическое изменение размера переданных изображений с помощью сетки событий](../event-grid/resize-images-on-storage-blob-upload-event.md?toc=%2Fazure%2Fazure-functions%2Ftoc.json&tabs=dotnet)
 - [Создание функции, интегрируемой с Azure Logic Apps](./functions-twitter-email.md)

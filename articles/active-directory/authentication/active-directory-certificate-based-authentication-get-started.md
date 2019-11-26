@@ -1,5 +1,5 @@
 ---
-title: Certificate-based authentication - Azure Active Directory
+title: Проверка подлинности на основе сертификата — Azure Active Directory
 description: Узнайте, как настроить в своей среде аутентификацию на основе сертификата.
 services: active-directory
 ms.service: active-directory
@@ -96,7 +96,7 @@ ms.locfileid: "74382029"
 
 В качестве первого шага настройки необходимо установить подключение к клиенту. Когда будет установлено подключение к клиенту, вы сможете просмотреть, добавить, удалить или изменить доверенные центры сертификации, определенные в каталоге.
 
-### <a name="connect"></a>Подключиться
+### <a name="connect"></a>Подключение
 
 Чтобы установить подключение к клиенту, используйте командлет [Connect-AzureAD](/powershell/module/azuread/connect-azuread?view=azureadps-2.0):
 
@@ -126,7 +126,7 @@ ms.locfileid: "74382029"
     $c=Get-AzureADTrustedCertificateAuthority
     Remove-AzureADTrustedCertificateAuthority -CertificateAuthorityInformation $c[2]
 
-### <a name="modify"></a>Изменение
+### <a name="modify"></a>Изменить
 
 Чтобы изменить доверенный центр сертификации, используйте командлет [Set-AzureADTrustedCertificateAuthority](/powershell/module/azuread/set-azureadtrustedcertificateauthority?view=azureadps-2.0):
 
@@ -202,7 +202,7 @@ ms.locfileid: "74382029"
 1. Настройте профиль EAS в приложении, удовлетворяющем требованиям, изложенным в предыдущем разделе.
 2. Откройте приложение и убедитесь, что почта синхронизируется.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 [Дополнительные сведения о проверке подлинности на основе сертификата на устройствах Android](active-directory-certificate-based-authentication-android.md).
 

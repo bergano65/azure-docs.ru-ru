@@ -31,7 +31,7 @@ ms.locfileid: "74231535"
 
 Импорт модулей PowerShell — это сложный многоэтапный процесс. При этом существует вероятность, что модуль не будет импортирован правильно. В таком случае импортируемый модуль может застопориться в переходном состоянии. Дополнительные сведения об этом процессе см. в статье [Importing a PowerShell Module](/powershell/scripting/developer/module/importing-a-powershell-module#the-importing-process) (Импорт модуля PowerShell).
 
-#### <a name="resolution"></a>Разрешение
+#### <a name="resolution"></a>Способы устранения:
 
 Чтобы устранить эту проблему, необходимо удалить модуль, застопорившийся в состоянии **Импорт**, с помощью командлета [Remove-AzureRmAutomationModule](/powershell/module/azurerm.automation/remove-azurermautomationmodule). Затем можно повторить импорт модуля.
 
@@ -39,11 +39,11 @@ ms.locfileid: "74231535"
 Remove-AzureRmAutomationModule -Name ModuleName -ResourceGroupName ExampleResourceGroup -AutomationAccountName ExampleAutomationAccount -Force
 ```
 
-### <a name="update-azure-modules-importing"></a>Scenario: AzureRM modules are stuck importing after trying to update them
+### <a name="update-azure-modules-importing"></a>Сценарий: модули AzureRM зависают импорт после попытки обновления
 
 #### <a name="issue"></a>Проблема
 
-A banner with the following message stays in your account after trying to update your AzureRM modules:
+После попытки обновления модулей AzureRM в вашей учетной записи остается баннер со следующим сообщением:
 
 ```error
 Azure modules are being updated
@@ -51,11 +51,11 @@ Azure modules are being updated
 
 #### <a name="cause"></a>Причина:
 
-There is a known issue with updating the AzureRM modules in an Automation Account that is in a resource group with a numeric name that starts with 0.
+Существует известная ошибка при обновлении модулей AzureRM в учетной записи службы автоматизации, которая находится в группе ресурсов с числовым именем, начинающимся с 0.
 
-#### <a name="resolution"></a>Разрешение
+#### <a name="resolution"></a>Способы устранения:
 
-To update your Azure modules in your Automation Account, it must be in a resource group that has an alphanumeric name. Resource groups with numeric names starting with 0 are unable to update AzureRM modules at this time.
+Чтобы обновить модули Azure в учетной записи службы автоматизации, она должна находиться в группе ресурсов с буквенно-цифровым именем. Группы ресурсов с числовыми именами, начинающимися с 0, не могут обновить модули AzureRM в данный момент.
 
 ### <a name="module-fails-to-import"></a>Сценарий: не удается импортировать модуль или после импорта не выполняются командлеты
 
@@ -72,7 +72,7 @@ To update your Azure modules in your Automation Account, it must be in a resourc
 * В папке отсутствуют зависимости модуля.
 * Командлет `New-AzureRmAutomationModule` используется для передачи модуля, при этом полный путь для хранения не указан или модуль не загружен с помощью общедоступного URL-адреса.
 
-#### <a name="resolution"></a>Разрешение
+#### <a name="resolution"></a>Способы устранения:
 
 Эту проблему можно устранить одним из следующих способов.
 
@@ -80,7 +80,7 @@ To update your Azure modules in your Automation Account, it must be in a resourc
 * Откройте файл PSD1 и проверьте, есть ли у модуля зависимости. Если зависимости есть, отправьте эти модули в учетную запись службы автоматизации.
 * Убедитесь, что все указанные библиотеки DLL находятся в папке модуля.
 
-### <a name="all-modules-suspended"></a>Scenario: Update-AzureModule.ps1 suspends when updating modules
+### <a name="all-modules-suspended"></a>Сценарий: Приостановка Упдате-азуремодуле. ps1 при обновлении модулей
 
 #### <a name="issue"></a>Проблема
 
@@ -90,7 +90,7 @@ To update your Azure modules in your Automation Account, it must be in a resourc
 
 Значение по умолчанию для определения количества одновременно обновляемых модулей — 10 при использовании сценария `Update-AzureModule.ps1`. Процесс обновления подвержен ошибкам, если одновременно обновляются слишком много модулей.
 
-#### <a name="resolution"></a>Разрешение
+#### <a name="resolution"></a>Способы устранения:
 
 Очень редко все модули AzureRM требуются в одной учетной записи службы автоматизации. Мы рекомендуем импортировать только необходимые модули AzureRM.
 
@@ -118,7 +118,7 @@ To update your Azure modules in your Automation Account, it must be in a resourc
 
 ## <a name="run-as-accounts"></a>Учетная запись запуска от имени
 
-### <a name="unable-create-update"></a>Scenario: You're unable to create or update a Run As account
+### <a name="unable-create-update"></a>Сценарий: не удается создать или обновить учетную запись запуска от имени
 
 #### <a name="issue"></a>Проблема
 
@@ -132,17 +132,17 @@ You do not have permissions to create…
 
 У вас нет разрешений, необходимых для создания или обновления учетной записи запуска от имени, или ресурс заблокирован на уровне группы ресурсов.
 
-#### <a name="resolution"></a>Разрешение
+#### <a name="resolution"></a>Способы устранения:
 
 Чтобы создать или обновить учетную запись запуска от имени, необходимо иметь соответствующие разрешения на различные ресурсы, используемые для запуска. Дополнительные сведения о разрешениях, необходимых для создания или обновления учетной записи запуска от имени, см. в разделе [Разрешения для запуска от имени учетной записи](../manage-runas-account.md#permissions).
 
 Если проблема связана с блокировкой, убедитесь, что ее можно удалить. Затем перейдите к ресурсу, который заблокирован, щелкните блокировку правой кнопкой мыши и выберите **Удалить**, чтобы снять блокировку.
 
-### <a name="iphelper"></a>Scenario: You receive the error "Unable to find an entry point named 'GetPerAdapterInfo' in DLL 'iplpapi.dll'" when executing a runbook.
+### <a name="iphelper"></a>Сценарий. при выполнении Runbook появляется сообщение об ошибке "не удается найти точку входа с именем" Жетперадаптеринфо "в библиотеке DLL" иплпапи. dll "".
 
 #### <a name="issue"></a>Проблема
 
-When executing a runbook you receive the following exception:
+При выполнении модуля Runbook появляется следующее исключение:
 
 ```error
 Unable to find an entry point named 'GetPerAdapterInfo' in DLL 'iplpapi.dll'
@@ -150,11 +150,11 @@ Unable to find an entry point named 'GetPerAdapterInfo' in DLL 'iplpapi.dll'
 
 #### <a name="cause"></a>Причина:
 
-This error is most likely caused by an incorrectly configured [Run As Account](../manage-runas-account.md).
+Скорее всего, эта ошибка вызвана неправильно настроенной [учетной записью запуска от имени](../manage-runas-account.md).
 
-#### <a name="resolution"></a>Разрешение
+#### <a name="resolution"></a>Способы устранения:
 
-Make sure your [Run As Account](../manage-runas-account.md) is properly configured. Once it is configured correctly, ensure you have the proper code in your runbook to authenticate with Azure. The following example shows a snippet of code to authenticate to Azure in a runbook using a Run As Account.
+Убедитесь, что [учетная запись запуска от имени](../manage-runas-account.md) настроена правильно. После правильной настройки убедитесь, что у вас есть правильный код в модуле Runbook для проверки подлинности в Azure. В следующем примере показан фрагмент кода для проверки подлинности в Azure в модуле Runbook с помощью учетной записи запуска от имени.
 
 ```powershell
 $connection = Get-AutomationConnection -Name AzureRunAsConnection
@@ -162,7 +162,7 @@ Connect-AzureRmAccount -ServicePrincipal -Tenant $connection.TenantID `
 -ApplicationID $connection.ApplicationID -CertificateThumbprint $connection.CertificateThumbprint
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 

@@ -62,11 +62,11 @@ ms.locfileid: "74304846"
 
     [![настроить новый URI перенаправления POST](media/how-to-configure-postman/authentication-redirect-uri.png)](media/how-to-configure-postman/authentication-redirect-uri.png#lightbox)
 
-1. Чтобы убедиться, что [приложение зарегистрировано как **общедоступный клиент**](https://docs.microsoft.com/azure/active-directory/develop/scenario-desktop-app-registration), откройте панель **аутентификации** для регистрации приложения и прокрутите эту область вниз. В разделе **Тип клиента по умолчанию** выберите **Да** для **рассматривать приложение как общедоступный клиент**и нажмите кнопку **сохранить**.
+1. Чтобы убедиться, что [приложение зарегистрировано как **общедоступный клиент**](https://docs.microsoft.com/azure/active-directory/develop/scenario-desktop-app-registration), откройте область **Аутентификация** для регистрации приложения и прокрутите вниз в этой области. В разделе **Тип клиента по умолчанию** выберите **Да** для параметра **Treat application as a public client** (Рассматривать приложение как общедоступный клиент), а затем нажмите кнопку **Сохранить**.
 
-    Проверьте **маркеры доступа** , чтобы включить параметр **Oauth2AllowImplicitFlow** в файле manifest. JSON.
+    Установите флажок **Маркеры доступа**, чтобы включить параметр **oauth2AllowImplicitFlow** в файле Manifest.json.
 
-    [![параметр конфигурации общедоступного клиента](../../includes/media/digital-twins-permissions/aad-public-client.png)](../../includes/media/digital-twins-permissions/aad-public-client.png#lightbox)
+    [![Параметр конфигурации общедоступного клиента](../../includes/media/digital-twins-permissions/aad-public-client.png)](../../includes/media/digital-twins-permissions/aad-public-client.png#lightbox)
 
 1. Скопируйте и сохраните **идентификатор приложения** Azure AD. Он используется в последующих шагах.
 
