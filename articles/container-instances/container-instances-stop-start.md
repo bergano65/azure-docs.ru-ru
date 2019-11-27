@@ -1,25 +1,20 @@
 ---
-title: Вручную останавливает или запускает контейнеры в службе "экземпляры контейнеров Azure"
+title: Вручную останавливает или запускает группу контейнеров
 description: Узнайте, как вручную отключить или запустить группу контейнеров в службе "экземпляры контейнеров Azure".
-services: container-instances
-author: dlepow
-manager: gwallace
-ms.service: container-instances
 ms.topic: article
 ms.date: 04/15/2019
-ms.author: danlep
-ms.openlocfilehash: c7d46ad8d935e28b5a24e48c85ac2464b55b2669
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: c9f8afea33c65df940d02823ec394697d2786d6a
+ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68325643"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74533420"
 ---
 # <a name="manually-stop-or-start-containers-in-azure-container-instances"></a>Вручную останавливает или запускает контейнеры в службе "экземпляры контейнеров Azure"
 
 Параметр [политики перезапуска](container-instances-restart-policy.md) группы контейнеров определяет, как по умолчанию запускаются и останавливаются экземпляры контейнеров. Настройку по умолчанию можно переопределить, вручную запустив или отключив группу контейнеров.
 
-## <a name="stop"></a>Остановить
+## <a name="stop"></a>Stop
 
 Вручную останавливает выполняющуюся группу контейнеров, например, с помощью команды [AZ Container останавливаться][az-container-stop] или портал Azure. Для определенных рабочих нагрузок контейнера может потребоваться отключить долго выполняющуюся группу контейнеров по истечении определенного периода, чтобы сэкономить на затратах. 
 
@@ -49,7 +44,7 @@ ms.locfileid: "68325643"
 
 После перезапуска группы контейнеров вручную группа контейнеров выполняется в соответствии с настроенной политикой перезапуска.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о параметрах [перезапуска политики](container-instances-restart-policy.md) в службе "экземпляры контейнеров Azure".
 

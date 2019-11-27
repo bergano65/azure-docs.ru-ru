@@ -9,17 +9,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: article
-ms.date: 11/08/2019
+ms.date: 11/27/2019
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a6cfad04d9b0dd3537d60f2651ed341d96bd0210
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: a92dbeec706ff8c4f892632243353549295dd26b
+ms.sourcegitcommit: 36eb583994af0f25a04df29573ee44fbe13bd06e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74027129"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74538794"
 ---
 # <a name="dynamic-membership-rules-for-groups-in-azure-active-directory"></a>Правила динамического членства в группах для Azure Active Directory
 
@@ -32,7 +32,7 @@ ms.locfileid: "74027129"
 
 > [!NOTE]
 > Этот компонент требует наличия лицензии Azure AD Premium P1 для каждого уникального пользователя, добавленного хотя бы в одну из динамических групп. Вам необязательно назначать лицензии пользователям, чтобы внести их в динамическую группу. Но минимальное число лицензий в клиенте должно быть достаточным для всех пользователей. Например, если общее число уникальных пользователей во всех динамических группах в клиенте составляет 1000, чтобы обеспечить соответствие требованиям лицензирования, необходимо не менее 1000 лицензий для Azure AD Premium P1.
->
+> Для устройств, входящих в группу динамических устройств, лицензия не требуется.
 
 ## <a name="rule-builder-in-the-azure-portal"></a>Построитель правил в портал Azure
 

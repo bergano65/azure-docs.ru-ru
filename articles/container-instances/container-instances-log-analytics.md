@@ -1,19 +1,15 @@
 ---
-title: Журналы ресурсов для групп контейнеров — службы "экземпляры контейнеров Azure"
+title: Журналы ресурсов для групп контейнеров
 description: Узнайте, как отправить журналы ресурсов и данные событий из групп контейнеров в службе "экземпляры контейнеров Azure" в журналы Azure Monitor
-services: container-instances
-author: dlepow
-manager: gwallace
-ms.service: container-instances
 ms.topic: article
 ms.date: 09/02/2019
 ms.author: danlep
-ms.openlocfilehash: c9b986376884bf1536567d7b5211d93191ec7cc0
-ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
+ms.openlocfilehash: 02f950917f43b514f83bd7e10078c79634c6c751
+ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74150160"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74533734"
 ---
 # <a name="container-group-and-instance-logging-with-azure-monitor-logs"></a>Ведение журнала группы контейнеров и экземпляра с Azure Monitor журналами
 

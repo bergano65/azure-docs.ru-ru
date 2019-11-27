@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 07/24/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: b0472b10de3641f1575f7f9a5c223ab5032f0e16
-ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
+ms.openlocfilehash: 5643f1df6cefa9ca6c60453939be533b2c00eaf4
+ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71066150"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74533081"
 ---
 # <a name="application-types-that-can-be-used-in-active-directory-b2c"></a>Типы приложений, которые можно использовать в Active Directory B2C
 
@@ -124,7 +124,7 @@ Accept: application/json
 
 #### <a name="web-api-chains-on-behalf-of-flow"></a>Цепочки веб-API (поток On-Behalf-Of)
 
-Многие архитектуры включают в себя интерфейс веб-API, которому требуется вызывать другой нисходящий веб-API. При этом Azure AD B2C защищает оба интерфейса. Этот сценарий характерен для собственных клиентов с внутренним веб-API и вызывает службу Microsoft Online, например API Graph Azure AD.
+Многие архитектуры включают в себя интерфейс веб-API, которому требуется вызывать другой нисходящий веб-API. При этом Azure AD B2C защищает оба интерфейса. Этот сценарий распространен в собственных клиентах с серверной стороны веб-API и вызывает службу Microsoft Online Service, например Microsoft Graph API или Azure AD API Graph.
 
 Этот сценарий веб-API с цепочками может поддерживаться путем предоставления учетных данных носителя JWT OAuth 2.0 или потока On-Behalf-Of.  Однако в Azure AD B2C поток On-Behalf-Of еще не реализован.
 
@@ -139,6 +139,6 @@ Accept: application/json
 
 Чтобы удалить приложение, перейдите на [портал регистрации приложений](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) и удалите его. Приложения отображаются только для владельцев. Прав администратора клиента недостаточно.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Узнайте больше о встроенных политиках, предоставляемых [потоками пользователей в Azure Active Directory B2C](active-directory-b2c-reference-policies.md).

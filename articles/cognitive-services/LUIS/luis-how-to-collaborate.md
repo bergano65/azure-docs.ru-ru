@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 11/19/2019
 ms.author: diberry
-ms.openlocfilehash: efeb8b28ef2b8eec480fcf5090e0173d6451deef
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
-ms.translationtype: HT
+ms.openlocfilehash: 96aa7517a3418ab30b0b6a1736eea950ecf4a731
+ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74225527"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74533805"
 ---
 # <a name="add-contributors-to-your-app"></a>Добавление участников в приложение
 
@@ -89,7 +89,7 @@ ms.locfileid: "74225527"
 
 Если администратору клиента требуется, чтобы только определенные пользователи могли применять LUIS, для этого есть несколько возможных решений.
 * Предоставить "согласие администратора" (согласия для всех пользователей Azure AD), а затем установить значение "Да" для параметра "Требуется назначение пользователей" в свойствах приложения уровня "Корпоративный" и наконец назначить или добавить только нужных пользователей к приложению. При использовании этого метода администратор по-прежнему предоставляет "согласие администратора", имея при этом возможность контролировать доступ пользователей к приложению.
-* Второе решение — использовать [API Graph Azure AD](https://docs.microsoft.com/graph/azuread-identity-access-management-concept-overview) для предоставления согласия для каждого конкретного пользователя. 
+* Второе решение — использование [API удостоверений и управления доступом Azure AD в Microsoft Graph](https://docs.microsoft.com/graph/azuread-identity-access-management-concept-overview) для предоставления согласия каждому конкретному пользователю. 
 
 Узнайте больше о пользователях и согласии Azure Active Directory. 
 * [Ограничьте набор пользователей](../../active-directory/develop/howto-restrict-your-app-to-a-set-of-users.md) приложения.

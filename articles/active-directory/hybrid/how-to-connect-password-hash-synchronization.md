@@ -15,12 +15,12 @@ ms.author: billmath
 search.appverid:
 - MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2d5ca62bc032c12c568e2b8065630dcd8b687513
-ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
-ms.translationtype: HT
+ms.openlocfilehash: 6e77368c7c0c104e777595a16735a7cf1e797a48
+ms.sourcegitcommit: 36eb583994af0f25a04df29573ee44fbe13bd06e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74483102"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74539019"
 ---
 # <a name="implement-password-hash-synchronization-with-azure-ad-connect-sync"></a>Реализация синхронизации хэшированных паролей в службе синхронизации Azure AD Connect
 В этой статье содержатся сведения о том, как синхронизировать пароли пользователей локального экземпляра службы Active Directory (AD) и облачного экземпляра службы Azure Active Directory (Azure AD).
@@ -160,7 +160,7 @@ Azure AD поддерживает отдельную политику срока
 
 ## <a name="password-hash-sync-process-for-azure-ad-domain-services"></a>Процесс синхронизации хэша паролей для доменных служб Azure AD
 
-Если вы используете доменные службы Azure AD для предоставления устаревшей проверки подлинности для приложений и служб, которым требуется использовать Кеберос, LDAP или NTLM, некоторые дополнительные процессы являются частью потока синхронизации хэша паролей. Для синхронизации хэшей паролей с Azure AD для использования в доменных службах Azure AD Azure AD Connect используется дополнительный следующий процесс:
+Если вы используете доменные службы Azure AD для предоставления устаревшей проверки подлинности для приложений и служб, которым требуется использовать Kerberos, LDAP или NTLM, некоторые дополнительные процессы являются частью потока синхронизации хэша паролей. Для синхронизации хэшей паролей с Azure AD для использования в доменных службах Azure AD Azure AD Connect используется дополнительный следующий процесс:
 
 > [!IMPORTANT]
 > Azure AD Connect следует устанавливать и настраивать только для синхронизации с локальными средами AD DS. Установка Azure AD Connect в управляемом домене Azure AD DS для синхронизации объектов обратно в Azure AD не поддерживается.
