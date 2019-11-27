@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 11/20/2019
 ms.author: jingwang
-ms.openlocfilehash: c691281f1ff0cf88d1ba61af43fad8e7782924aa
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
-ms.translationtype: HT
+ms.openlocfilehash: 1178c18b29c5e38d33e51ff0da5db683990daed3
+ms.sourcegitcommit: a678f00c020f50efa9178392cd0f1ac34a86b767
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74278512"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74546969"
 ---
 # <a name="copy-data-from-a-rest-endpoint-by-using-azure-data-factory"></a>Копирование данных из конечной точки REST с помощью Фабрики данных Azure
 
@@ -218,7 +218,7 @@ ms.locfileid: "74278512"
 | requestInterval | Время ожидания перед отправкой запроса следующей страницы. Значение по умолчанию — **00:00:01** |  Нет |
 
 >[!NOTE]
->Соединитель RESTFUL игнорирует любой заголовок Accept, указанный в `additionalHeaders`. Так как соединитель RESTFUL поддерживает только ответ в JSON, функция TT автоматически создаст заголовок `Accept: application/json`.
+>Соединитель RESTFUL игнорирует любой заголовок Accept, указанный в `additionalHeaders`. Так как соединитель RESTFUL поддерживает только ответ в JSON, он автоматически создает заголовок `Accept: application/json`.
 
 **Пример 1. использование метода Get с разбивкой на страницы**
 

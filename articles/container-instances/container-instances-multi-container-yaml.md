@@ -1,30 +1,25 @@
 ---
-title: Руководство. Развертывание группы с несколькими контейнерами в службе "экземпляры контейнеров Azure" — YAML
+title: Руководство по развертыванию группы с несколькими контейнерами — YAML
 description: В этом руководстве описано, как развернуть группу контейнеров с несколькими контейнерами в службе "экземпляры контейнеров Azure" с помощью файла YAML с Azure CLI.
-services: container-instances
-author: dlepow
-manager: gwallace
-ms.service: container-instances
 ms.topic: article
 ms.date: 04/03/2019
-ms.author: danlep
-ms.openlocfilehash: a38b0cfe7072975e4bcaf61b65ab7733694f714c
-ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
+ms.openlocfilehash: cce98ec56ee1d84c087150ba486b9482515b46f0
+ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2019
-ms.locfileid: "71178567"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74533586"
 ---
-# <a name="tutorial-deploy-a-multi-container-group-using-a-yaml-file"></a>Учебник. Развертывание группы с несколькими контейнерами с помощью файла YAML
+# <a name="tutorial-deploy-a-multi-container-group-using-a-yaml-file"></a>Руководство. Развертывание многоконтейнерной группы с помощью файла YAML
 
 > [!div class="op_single_selector"]
 > * [YAML](container-instances-multi-container-yaml.md)
-> * [Resource Manager](container-instances-multi-container-group.md)
+> * [Диспетчер ресурсов](container-instances-multi-container-group.md)
 >
 
 Служба "Экземпляры контейнеров Azure" поддерживает развертывание нескольких контейнеров в одном узле с использованием [группы контейнеров](container-instances-container-groups.md). Группа контейнеров полезна при создании приложения расширения для ведения журнала, мониторинга или любой другой конфигурации, где службе требуется второй присоединенный процесс.
 
-В этом руководстве описано, как выполнить простую конфигурацию расширения с двумя контейнерами, развернув [YAML-файл](container-instances-reference-yaml.md) с помощью Azure CLI. Файл YAML предоставляет краткий формат для указания параметров экземпляра. Вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано, как выполнить простую конфигурацию расширения с двумя контейнерами, развернув [YAML-файл](container-instances-reference-yaml.md) с помощью Azure CLI. Файл YAML предоставляет краткий формат для указания параметров экземпляра. Вы узнаете, как выполнять такие задачи.
 
 > [!div class="checklist"]
 > * Настройка файла YAML
@@ -85,7 +80,7 @@ tags: null
 type: Microsoft.ContainerInstance/containerGroups
 ```
 
-Чтобы использовать частный реестр образов контейнеров, добавьте `imageRegistryCredentials` свойство в группу контейнеров со значениями, измененными для вашей среды:
+Чтобы использовать частный реестр образов контейнеров, добавьте свойство `imageRegistryCredentials` в группу контейнеров со значениями, измененными для вашей среды:
 
 ```YAML
   imageRegistryCredentials:
@@ -126,9 +121,9 @@ Name              ResourceGroup    Status    Image                              
 myContainerGroup  danlep0318r      Running   mcr.microsoft.com/azuredocs/aci-tutorial-sidecar,mcr.microsoft.com/azuredocs/aci-helloworld:latest  20.42.26.114:80,8080  Public     1.0 core/1.5 gb  Linux     eastus
 ```
 
-## <a name="view-container-logs"></a>Просмотреть журналы контейнера
+## <a name="view-container-logs"></a>Просмотр журналов контейнеров
 
-Просмотрите выходные данные журнала контейнера с помощью команды [AZ Container Logs][az-container-logs] . Аргумент `--container-name` определяет контейнер, из которого извлекаются журналы. В этом примере `aci-tutorial-app` указан контейнер.
+Просмотрите выходные данные журнала контейнера с помощью команды [AZ Container Logs][az-container-logs] . Аргумент `--container-name` определяет контейнер, из которого извлекаются журналы. В этом примере указан контейнер `aci-tutorial-app`.
 
 ```azurecli-interactive
 az container logs --resource-group myResourceGroup --name myContainerGroup --container-name aci-tutorial-app
@@ -143,7 +138,7 @@ listening on port 80
 ::1 - - [21/Mar/2019:23:17:54 +0000] "HEAD / HTTP/1.1" 200 1663 "-" "curl/7.54.0"
 ```
 
-Чтобы просмотреть журналы для контейнера расширения, выполните аналогичную команду, указав `aci-tutorial-sidecar` контейнер.
+Чтобы просмотреть журналы для контейнера расширения, выполните аналогичную команду, указав контейнер `aci-tutorial-sidecar`.
 
 ```azurecli-interactive
 az container logs --resource-group myResourceGroup --name myContainerGroup --container-name aci-tutorial-sidecar
@@ -169,9 +164,9 @@ Date: Thu, 21 Mar 2019 20:36:41 GMT
 Connection: keep-alive
 ```
 
-Как видите, сопроводительное приложение периодически выполняет HTTP-запрос к основному веб-приложению через локальную сеть группы, чтобы убедиться, что оно работает. Этот пример расширения можно расширить, чтобы активировать оповещение, если он получил код HTTP-ответа, `200 OK`отличный от.
+Как видите, сопроводительное приложение периодически выполняет HTTP-запрос к основному веб-приложению через локальную сеть группы, чтобы убедиться, что оно работает. Этот пример расширения можно расширить, чтобы активировать оповещение, если получен код HTTP-ответа, отличный от `200 OK`.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 В этом руководстве вы использовали файл YAML для развертывания группы с несколькими контейнерами в службе "экземпляры контейнеров Azure". Вы научились выполнять следующие задачи:
 

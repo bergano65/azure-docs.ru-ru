@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 08/13/2019
-ms.openlocfilehash: 84af0484ed9fb792bef6bbbe9c53395b569acb3c
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: aff6be1a6abf2550013b752ba4f796ffe255499f
+ms.sourcegitcommit: 36eb583994af0f25a04df29573ee44fbe13bd06e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72793868"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74539047"
 ---
 # <a name="office-365-management-solution-in-azure-preview"></a>Решение по управлению Office 365 в Azure (предварительная версия)
 
@@ -37,7 +37,7 @@ ms.locfileid: "72793868"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 Прежде чем устанавливать и настраивать это решение, необходимо иметь в наличии следующие компоненты.
 
@@ -103,14 +103,14 @@ ms.locfileid: "72793868"
 1. Выберите **разрешения API** , а затем **добавьте разрешение**.
 1. Щелкните **API управления Office 365**. 
 
-    ![Выбрать API](media/solution-office-365/select-api.png)
+    ![Выбор API](media/solution-office-365/select-api.png)
 
 1. В **каком типе разрешений требуется ваше приложение?** выберите следующие параметры для **разрешений приложений** и **делегированных разрешений**:
    - чтение сведений о работоспособности служб в вашей организации;
    - чтение данных о действиях в организации;
    - чтение отчетов о действиях для вашей организации.
 
-     ![Выбрать API](media/solution-office-365/select-permissions-01.png)![Выбрать API](media/solution-office-365/select-permissions-02.png)
+     ![Выбор API](media/solution-office-365/select-permissions-01.png)![Выбор API](media/solution-office-365/select-permissions-02.png)
 
 1. Щелкните **Добавить разрешения**.
 1. Щелкните **предоставить согласие администратора** , а затем нажмите кнопку **Да** при появлении запроса на проверку.
@@ -120,12 +120,12 @@ ms.locfileid: "72793868"
 
 1. Выберите **сертификаты & секреты** , а затем — **новый секрет клиента**.
 
-    ![Ключи](media/solution-office-365/secret.png)
+    ![ключей](media/solution-office-365/secret.png)
  
 1. Для нового ключа введите **описание** и **срок действия**.
 1. Нажмите кнопку **Добавить** , а затем сохраните **значение** , созданное в качестве секрета клиента вместе с остальной информацией, собранной ранее.
 
-    ![Ключи](media/solution-office-365/keys.png)
+    ![ключей](media/solution-office-365/keys.png)
 
 ### <a name="add-admin-consent"></a>Добавление согласия администратора
 
@@ -198,8 +198,6 @@ ms.locfileid: "72793868"
 > Возможно, вы будете перенаправлены на несуществующую страницу. Считать его успешным.
 
 ### <a name="subscribe-to-log-analytics-workspace"></a>Подписка на рабочую область Log Analytics
-
-Последним шагом является подписка приложения на рабочую область Log Analytics. Этот шаг можно выполнить с помощью сценария PowerShell.
 
 Последним шагом является подписка приложения на рабочую область Log Analytics. Этот шаг можно выполнить с помощью сценария PowerShell.
 
@@ -381,7 +379,7 @@ ms.locfileid: "72793868"
     .\office365_subscription.ps1 -WorkspaceName MyWorkspace -ResourceGroupName MyResourceGroup -SubscriptionId '60b79d74-f4e4-4867-b631-yyyyyyyyyyyy' -OfficeUsername 'admin@contoso.com' -OfficeTennantID 'ce4464f8-a172-4dcf-b675-xxxxxxxxxxxx' -OfficeClientId 'f8f14c50-5438-4c51-8956-zzzzzzzzzzzz' -OfficeClientSecret 'y5Lrwthu6n5QgLOWlqhvKqtVUZXX0exrA2KRHmtHgQb='
     ```
 
-### <a name="troubleshooting"></a>Устранение неисправностей
+### <a name="troubleshooting"></a>Устранение неполадок
 
 Если приложение уже подписано на эту рабочую область или если этот арендатор подписан на другую рабочую область, может появиться следующая ошибка.
 
@@ -461,15 +459,17 @@ At line:12 char:18
     # Create Authentication Context tied to Azure AD Tenant
     $authContext = New-Object "Microsoft.IdentityModel.Clients.ActiveDirectory.AuthenticationContext" -ArgumentList $authority
     # Acquire token
-    $global:authResultARM = $authContext.AcquireToken($resourceAppIdURIARM, $clientId, $redirectUri, "Auto")
-    $authHeader = $global:authResultARM.CreateAuthorizationHeader()
+    $platformParameters = New-Object "Microsoft.IdentityModel.Clients.ActiveDirectory.PlatformParameters" -ArgumentList "Auto"
+    $global:authResultARM = $authContext.AcquireTokenAsync($resourceAppIdURIARM, $clientId, $redirectUri, $platformParameters)
+    $global:authResultARM.Wait()
+    $authHeader = $global:authResultARM.Result.CreateAuthorizationHeader()
     $authHeader
     }
     
     Function Office-UnSubscribe-Call{
     
     #----------------------------------------------------------------------------------------------------------------------------------------------
-    $authHeader = $global:authResultARM.CreateAuthorizationHeader()
+    $authHeader = $global:authResultARM.Result.CreateAuthorizationHeader()
     $ResourceName = "https://manage.office.com"
     $SubscriptionId   = $Subscription[0].Subscription.Id
     $OfficeAPIUrl = $ARMResource + 'subscriptions/' + $SubscriptionId + '/resourceGroups/' + $ResourceGroupName + '/providers/Microsoft.OperationalInsights/workspaces/' + $WorkspaceName + '/datasources/office365datasources_'  + $SubscriptionId + $OfficeTennantId + '?api-version=2015-11-01-preview'
@@ -507,6 +507,8 @@ At line:12 char:18
     .\office365_unsubscribe.ps1 -WorkspaceName MyWorkspace -ResourceGroupName MyResourceGroup -SubscriptionId '60b79d74-f4e4-4867-b631-yyyyyyyyyyyy' -OfficeTennantID 'ce4464f8-a172-4dcf-b675-xxxxxxxxxxxx'
     ```
 
+Вам будет предложено ввести учетные данные. Укажите учетные данные для рабочей области Log Analytics.
+
 ## <a name="data-collection"></a>Сбор данных
 
 ### <a name="supported-agents"></a>Поддерживаемые агенты
@@ -530,10 +532,10 @@ At line:12 char:18
 
 Панель мониторинга содержит столбцы, перечисленные в приведенной ниже таблице. Каждый столбец содержит десять ведущих оповещений с числом, показывающим соответствие оповещения критериям данного столбца, таким как область действия и диапазон времени. Можно выполнить поиск журналов, выводящий весь список, щелкнув элемент "Просмотреть все" внизу столбца или заголовок этого столбца.
 
-| Столбец | Описание |
+| столбец | ОПИСАНИЕ |
 |:--|:--|
-| Operations | Предоставляет сведения об активных пользователях из всех отслеживаемых подписок Office 365. Также можно просмотреть количество действий, выполненных за определенный период времени.
-| Обмен | Отображает разбивку по действиям Exchange Server, таким как Add-MailboxPermission (Добавление разрешения для почтового ящика) или Set-Mailbox (Настройка почтового ящика). |
+| Операции | Предоставляет сведения об активных пользователях из всех отслеживаемых подписок Office 365. Также можно просмотреть количество действий, выполненных за определенный период времени.
+| Exchange | Отображает разбивку по действиям Exchange Server, таким как Add-MailboxPermission (Добавление разрешения для почтового ящика) или Set-Mailbox (Настройка почтового ящика). |
 | SharePoint | Отображает основные действия, выполняемые пользователями в отношении документов SharePoint. Если выполнить детализацию из этого элемента, то на странице поиска отобразятся сведения об этих действиях, такие как целевой документ и расположение действия. Например, для события доступа к файлу отобразится сам документ, к которому осуществляется доступ, связанное с ним имя учетной записи и IP-адрес. |
 | Azure Active Directory | Включает в себя основные действия пользователей, такие как сброс пароля пользователя и попытка входа в систему. Если выполнить детализацию, то можно просмотреть подробные сведения об этих действиях, такие как состояние результата. Это полезно, в основном, для отслеживания подозрительных действий в Azure Active Directory. |
 
@@ -548,25 +550,25 @@ At line:12 char:18
 
 Следующие свойства являются общими для всех записей Office 365.
 
-| Свойство | Описание |
+| Свойство | ОПИСАНИЕ |
 |:--- |:--- |
-| Тип | *OfficeActivity* |
+| введите | *OfficeActivity* |
 | ClientIP | IP-адрес устройства, которое использовалось при записи действия в журнал. IP-адрес отображается в формате IPv4- или IPv6-адреса. |
-| OfficeWorkload | Служба Office 365, к которой относится запись.<br><br>AzureActiveDirectory<br>Обмен<br>SharePoint|
+| OfficeWorkload | Служба Office 365, к которой относится запись.<br><br>AzureActiveDirectory<br>Exchange<br>SharePoint|
 | Операция | Имя действия пользователя или администратора.  |
 | OrganizationId | Идентификатор GUID для клиента Office 365 организации. Это значение для вашей организации всегда будет одинаковым независимо от службы Office 365, в которой оно встречается. |
 | RecordType | Тип выполняемой операции. |
 | ResultStatus | Указывает, было ли успешным действие (указанное в свойстве Operation). Возможные значения: Succeeded (Успешно), PartiallySucceeded (Выполнено частично) и Failed (Сбой). Для действий администратора Exchange возможные значения — True (Истина) или False (Ложь). |
 | UserId | Имя участника-пользователя (UPN) для пользователя, который выполнил действие, приведшее к регистрации в журнале данной записи. Например, my_name@my_domain_name. Обратите внимание, что сюда также включаются записи для действий, выполняемых системными учетными записями (такими как SHAREPOINT\system или NTAUTHORITY\SYSTEM). | 
 | UserKey | Альтернативный идентификатор пользователя, определенного в свойстве UserId.  Например, значение этого свойства может заполняться уникальным идентификатором Passport (PUID) для событий, выполняемых пользователями в SharePoint, OneDrive для бизнеса и Exchange. Это свойство также может указывать то же значение, что и свойство UserID событий, происходящих в других службах, и событий, выполняемых системными учетными записями.|
-| UserType | Тип пользователя, выполнившего операцию.<br><br>Администратор<br>Приложение<br>DcAdmin<br>Обычный<br>Зарезервировано<br>ServicePrincipal<br>Система |
+| UserType | Тип пользователя, выполнившего операцию.<br><br>Admin<br>Приложение<br>DcAdmin<br>Обычный<br>Reserved<br>ServicePrincipal<br>System |
 
 
 ### <a name="azure-active-directory-base"></a>Основа Azure Active Directory
 
 Следующие свойства являются общими для всех записей Azure Active Directory.
 
-| Свойство | Описание |
+| Свойство | ОПИСАНИЕ |
 |:--- |:--- |
 | OfficeWorkload | AzureActiveDirectory |
 | RecordType     | AzureActiveDirectory |
@@ -578,7 +580,7 @@ At line:12 char:18
 
 Эти записи создаются при попытке пользователя Active Directory войти в систему.
 
-| Свойство | Описание |
+| Свойство | ОПИСАНИЕ |
 |:--- |:--- |
 | `OfficeWorkload` | AzureActiveDirectory |
 | `RecordType`     | AzureActiveDirectoryAccountLogon |
@@ -592,7 +594,7 @@ At line:12 char:18
 
 Эти записи создаются при внесении изменений или дополнений в объекты Azure Active Directory.
 
-| Свойство | Описание |
+| Свойство | ОПИСАНИЕ |
 |:--- |:--- |
 | OfficeWorkload | AzureActiveDirectory |
 | RecordType     | AzureActiveDirectory |
@@ -610,7 +612,7 @@ At line:12 char:18
 
 Эти записи создаются на основе данных аудита безопасности центра обработки данных.  
 
-| Свойство | Описание |
+| Свойство | ОПИСАНИЕ |
 |:--- |:--- |
 | EffectiveOrganization | Имя клиента, в отношении которого выполнялось повышение прав или командлет. |
 | ElevationApprovedTime | Метка времени, когда был утвержден запрос на повышение прав. |
@@ -626,24 +628,24 @@ At line:12 char:18
 
 Эти записи создаются при внесении изменений в конфигурацию Exchange.
 
-| Свойство | Описание |
+| Свойство | ОПИСАНИЕ |
 |:--- |:--- |
-| OfficeWorkload | Обмен |
+| OfficeWorkload | Exchange |
 | RecordType     | ExchangeAdmin |
 | ExternalAccess |  Указывает, кем выполнялся командлет (пользователем организации, персоналом центра обработки данных корпорации Майкрософт, учетной записью службы центра обработки данных или делегированным администратором). Значение False указывает на то, что командлет выполнялся пользователем вашей организации. Значение True означает, что командлет выполнялся персоналом центра обработки данных, учетной записью службы центра обработки данных или делегированным администратором. |
 | ModifiedObjectResolvedName |  Это понятное имя объекта, который был изменен с помощью командлета. Эта запись вносится в журнал только в том случае, если командлет изменяет объект. |
 | OrganizationName | Имя клиента. |
 | OriginatingServer | Имя сервера, из которого выполнялся командлет. |
-| Параметры | Имя и значение для всех параметров, которые использовались с командлетом, указанным в свойстве Operations. |
+| parameters | Имя и значение для всех параметров, которые использовались с командлетом, указанным в свойстве Operations. |
 
 
 ### <a name="exchange-mailbox"></a>Почтовый ящик Exchange
 
 Эти записи создаются при внесении изменений или дополнений в почтовые ящики Exchange.
 
-| Свойство | Описание |
+| Свойство | ОПИСАНИЕ |
 |:--- |:--- |
-| OfficeWorkload | Обмен |
+| OfficeWorkload | Exchange |
 | RecordType     | ExchangeItem |
 | ClientInfoString | Сведения о почтовом клиенте, который использовался для выполнения операции, такие как версия браузера, версия Outlook или сведения о мобильном устройстве. |
 | Client_IPAddress | IP-адрес устройства, которое использовалось при записи операции в журнал. IP-адрес отображается в формате IPv4- или IPv6-адреса. |
@@ -664,11 +666,11 @@ At line:12 char:18
 
 Эти записи создаются при создании записей аудита почтового ящика.
 
-| Свойство | Описание |
+| Свойство | ОПИСАНИЕ |
 |:--- |:--- |
-| OfficeWorkload | Обмен |
+| OfficeWorkload | Exchange |
 | RecordType     | ExchangeItem |
-| Элемент | Представляет элемент, в отношении которого выполнялась операция. | 
+| item | Представляет элемент, в отношении которого выполнялась операция. | 
 | SendAsUserMailboxGuid | Идентификатор GUID Exchange почтового ящика, к которому осуществлялся доступ для отправки почты с помощью команды "Отправить как". |
 | SendAsUserSmtp | SMTP-адрес пользователя, олицетворяемого при отправке. |
 | SendonBehalfOfUserMailboxGuid | Идентификатор GUID Exchange почтового ящика, к которому осуществлялся доступ для отправки почты с помощью команды "Отправить от имени". |
@@ -679,9 +681,9 @@ At line:12 char:18
 
 Эти записи создаются при внесении изменений или дополнений в группы Exchange.
 
-| Свойство | Описание |
+| Свойство | ОПИСАНИЕ |
 |:--- |:--- |
-| OfficeWorkload | Обмен |
+| OfficeWorkload | Exchange |
 | OfficeWorkload | ExchangeItemGroup |
 | AffectedItems | Сведения о каждом элементе в группе. |
 | CrossMailboxOperations | Указывает, задействовано ли в операции более одного почтового ящика. |
@@ -698,7 +700,7 @@ At line:12 char:18
 
 Эти свойства являются общими для всех записей SharePoint.
 
-| Свойство | Описание |
+| Свойство | ОПИСАНИЕ |
 |:--- |:--- |
 | OfficeWorkload | SharePoint |
 | OfficeWorkload | SharePoint |
@@ -715,7 +717,7 @@ At line:12 char:18
 
 Эти записи создаются при внесении изменений в конфигурацию SharePoint.
 
-| Свойство | Описание |
+| Свойство | ОПИСАНИЕ |
 |:--- |:--- |
 | OfficeWorkload | SharePoint |
 | OfficeWorkload | SharePoint |
@@ -728,7 +730,7 @@ At line:12 char:18
 
 Эти записи создаются в ответ на операции с файлами в SharePoint.
 
-| Свойство | Описание |
+| Свойство | ОПИСАНИЕ |
 |:--- |:--- |
 | OfficeWorkload | SharePoint |
 | OfficeWorkload | SharePointFileOperation |
@@ -749,7 +751,7 @@ At line:12 char:18
 
 Следующая таблица содержит примеры запросов поиска по журналу для получения записей обновлений, собранных этим решением.
 
-| Запрос | Описание |
+| Запрос | ОПИСАНИЕ |
 | --- | --- |
 |Количество всех операций для подписки Office 365 |OfficeActivity &#124; summarize count() by Operation |
 |Использование сайтов SharePoint|Оффицеактивити &#124; , где оффицеворклоад = ~ "SharePoint &#124; " суммирует данные () by SiteUrl \| Сортировать по убыванию|
@@ -759,7 +761,7 @@ At line:12 char:18
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * Дополнительные сведения об обновлении данных см. в статье [Анализ данных Log Analytics в Azure Monitor](../log-query/log-query-overview.md).
 * [Создайте собственные панели мониторинга](../learn/tutorial-logs-dashboards.md) для отображения избранных поисковых запросов Office 365.

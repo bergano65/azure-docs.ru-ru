@@ -9,12 +9,12 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 7e4d51701fd8614831585aac03f2c8a909b2b847
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: f1e1ae76c44e66c04baaad110b87264279dfdaf1
+ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74112743"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74530997"
 ---
 # <a name="how-to-index-cosmos-db-data-using-an-indexer-in-azure-cognitive-search"></a>Индексирование Cosmos DB данных с помощью индексатора в Azure Когнитивный поиск 
 
@@ -48,7 +48,7 @@ ms.locfileid: "74112743"
 
 Самый простой способ индексирования Azure Cosmos DB элементов — использование мастера в [портал Azure](https://portal.azure.com/). Выполнив выборку данных и читая метаданные в контейнере, мастер [**импорта данных**](search-import-data-portal.md) в Azure когнитивный Поиск может создать индекс по умолчанию, сопоставлять исходные поля с целевыми полями индекса и загружать индекс в одной операции. В зависимости от размера и сложности исходных данных можно создать рабочий индекс полнотекстового поиска за считаные минуты.
 
-Мы рекомендуем использовать одну и ту же подписку Azure для Azure Когнитивный поиск и Azure Cosmos DB (предпочтительно в том же регионе).
+Мы рекомендуем использовать один и тот же регион или расположение для Когнитивный поиск Azure и Azure Cosmos DB для снижения задержки и избежания расходов на пропускную способность.
 
 ### <a name="1---prepare-source-data"></a>1\. Подготовка исходных данных
 

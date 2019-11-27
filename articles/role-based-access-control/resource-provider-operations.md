@@ -13,12 +13,12 @@ ms.workload: identity
 ms.date: 09/25/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: c413c03c000ef9ff1ebf742359551567d488584b
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.openlocfilehash: 092c3b4ac6ce163e9fcf8aaad9e74f398559e9e2
+ms.sourcegitcommit: a678f00c020f50efa9178392cd0f1ac34a86b767
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74185727"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74546321"
 ---
 # <a name="azure-resource-manager-resource-provider-operations"></a>Операции поставщиков ресурсов Azure Resource Manager
 
@@ -5569,7 +5569,7 @@ ms.locfileid: "74185727"
 > | Действие | Microsoft.StorSimple/managers/devices/deactivate/action | Деактивирует устройство. |
 > | Действие | Microsoft.StorSimple/managers/devices/delete | Удаляет устройства. |
 > | Действие | Microsoft.StorSimple/managers/devices/disks/read | Выводит список дисков или возвращает их. |
-> | Действие | Microsoft.StorSimple/managers/devices/download/action | Скачивает обновления для устройства. |
+> | Действие | Microsoft.StorSimple/managers/devices/download/action | Скачивание обновлений для устройства. |
 > | Действие | Microsoft.StorSimple/managers/devices/failover/action | Выполняет отработку отказа устройства. |
 > | Действие | Microsoft.StorSimple/managers/devices/failover/operationResults/read | Выводит список или возвращает результаты операции. |
 > | Действие | Microsoft.StorSimple/managers/devices/failoverTargets/read | Выводит или возвращает цели отработки отказа для устройств. |

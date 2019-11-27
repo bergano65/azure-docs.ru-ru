@@ -1,20 +1,15 @@
 ---
-title: Подключение тома службы файлов Azure в службе "Экземпляры контейнеров Azure"
+title: Подключение тома файлов Azure к группе контейнеров
 description: Узнайте, как подключить том файлов Azure для сохранения состояния с помощью Экземпляров контейнеров Azure
-services: container-instances
-author: dlepow
-manager: gwallace
-ms.service: container-instances
 ms.topic: article
 ms.date: 07/08/2019
-ms.author: danlep
 ms.custom: mvc
-ms.openlocfilehash: 686c20aeb22c16298967aa6f73ee829472f4ea0c
-ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
+ms.openlocfilehash: a258a96f5fbc0d54b6a85a780288fb9317cb1a1b
+ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72175940"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74533257"
 ---
 # <a name="mount-an-azure-file-share-in-azure-container-instances"></a>Подключение общего файлового ресурса Azure с помощью службы "Экземпляры контейнеров Azure"
 
@@ -235,7 +230,7 @@ az group deployment create --resource-group myResourceGroup --template-file depl
 
 Чтобы подключить несколько томов в экземпляре контейнера, необходимо выполнить развертывание с помощью [шаблона Azure Resource Manager](/azure/templates/microsoft.containerinstance/containergroups) или yaml-файла. Чтобы использовать шаблон или файл YAML, укажите сведения об общем ресурсе и определите тома, заполнив массив `volumes` в разделе `properties` шаблона. 
 
-Например, если вы создали две общие папки службы файлов Azure с именами *share1* и *share2* в учетной записи хранения *myStorageAccount*, массив `volumes` в шаблоне диспетчер ресурсов будет выглядеть следующим образом:
+Например, если вы создали две общие папки службы файлов Azure с именами *share1* и *share2* в учетной записи хранения *myStorageAccount*, то массив `volumes` в шаблоне диспетчер ресурсов будет выглядеть следующим образом:
 
 ```JSON
 "volumes": [{
@@ -269,7 +264,7 @@ az group deployment create --resource-group myResourceGroup --template-file depl
 }]
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Сведения о подключении других типов томов в службе "Экземпляры контейнеров Azure" см. в следующих статьях:
 

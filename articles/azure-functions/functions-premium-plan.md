@@ -5,12 +5,12 @@ author: jeffhollan
 ms.topic: conceptual
 ms.date: 10/16/2019
 ms.author: jehollan
-ms.openlocfilehash: 99589a4f11f91afa7d3c9f93d844654ccc69aab1
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
-ms.translationtype: HT
+ms.openlocfilehash: 9c1a9a9e3b9e1c12c3960a8586c25436c8d937e0
+ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74322962"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74532905"
 ---
 # <a name="azure-functions-premium-plan"></a>План ценовой категории "Премиум" для Функций Azure
 
@@ -29,7 +29,7 @@ az functionapp plan create --resource-group <RESOURCE_GROUP> --name <PLAN_NAME> 
 
 В этом примере замените `<RESOURCE_GROUP>` своей группой ресурсов и `<PLAN_NAME>` именем вашего плана, который уникален в группе ресурсов. Укажите [поддерживаемый `<REGION>`](#regions). Чтобы создать план Premium, поддерживающий Linux, включите параметр `--is-linux`.
 
-После создания плана можно использовать команду [AZ functionapp Create](/cli/azure/functionapp#az-functionapp-create) , чтобы создать приложение функции. На портале одновременно создаются план и приложение. 
+После создания плана можно использовать команду [AZ functionapp Create](/cli/azure/functionapp#az-functionapp-create) , чтобы создать приложение функции. На портале одновременно создаются план и приложение. Пример полного скрипта Azure CLI см. [в разделе Создание приложения-функции в плане Premium](scripts/functions-cli-create-premium-plan.md).
 
 ## <a name="features"></a>Функции
 

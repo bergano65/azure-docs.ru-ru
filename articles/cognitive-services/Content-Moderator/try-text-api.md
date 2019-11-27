@@ -10,12 +10,12 @@ ms.service: cognitive-services
 ms.subservice: content-moderator
 ms.topic: conceptual
 ms.date: 05/29/2019
-ms.openlocfilehash: 467bf7fe26df2f826d6d44d42a9e30b98795232f
-ms.sourcegitcommit: 38251963cf3b8c9373929e071b50fd9049942b37
+ms.openlocfilehash: e0930558f31b27a77fa2cd6b44fcea2fe9091086
+ms.sourcegitcommit: 36eb583994af0f25a04df29573ee44fbe13bd06e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73043935"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74538821"
 ---
 # <a name="moderate-text-from-the-api-console"></a>Модерация текста с помощью консоли API
 
@@ -41,14 +41,14 @@ ms.locfileid: "73043935"
 
 ## <a name="select-the-inputs"></a>Выбор входных данных
 
-### <a name="parameters"></a>Параметры
+### <a name="parameters"></a>parameters
 
 Выберите параметры запроса, которые требуется использовать при проверке текста. В этом примере используется значение по умолчанию для параметра **language** (Язык). Можно также оставить его пустым, так как эта операция автоматически определяет предполагаемый язык в ходе выполнения.
 
 > [!NOTE]
-> Для параметра **language** (Язык) задайте значение `eng` или оставьте это поле пустым, чтобы увидеть в ответе результат машинной **классификации**, которая сейчас выполняется в режиме предварительной версии. **Эта функция поддерживает только английский язык**.
+> Для параметра **language** (язык) задайте значение `eng` или оставьте это поле пустым, чтобы в ответе отобразился результат **classification** (классификация), которая сейчас выполняется в режиме предварительной версии. **Эта функция поддерживает только английский язык**.
 >
-> Для обнаружения **нецензурных терминов** укажите [код ISO 639-3](http://www-01.sil.org/iso639-3/codes.asp) для поддерживаемых языков, которые перечислены в этой статье, или оставьте это поле пустым.
+> Для обнаружения **ненормативной лексики** укажите [код ISO 639-3](http://www-01.sil.org/iso639-3/codes.asp) для поддерживаемых языков, которые перечислены в этой статье, или оставьте это поле пустым.
 
 Для параметров **autocorrect** (Автозамена), **PII** (Личные сведения) и **classify (preview)** (Классификация (предварительная версия)) выберите значение **true** (Истина). Оставьте поле **ListId** (ИД списка) пустым.
 
@@ -63,9 +63,7 @@ ms.locfileid: "73043935"
 В поле **Request body** (Текст запроса) введите какой-либо текст. В следующем примере показана преднамеренная опечатка в тексте.
 
 ```
-Is this a grabage or crap email abcdef@abcd.com, phone: 6657789887, IP: 255.255.255.255, 1 Microsoft Way, Redmond, WA 98052.
-These are all UK phone numbers, the last two being Microsoft UK support numbers: +44 870 608 4000 or 0344 800 2400 or 0800 820 3300.
-Also, 999-99-9999 looks like a social security number (SSN).
+Is this a grabage or crap email abcdef@abcd.com, phone: 4255550111, IP: 255.255.255.255, 1234 Main Boulevard, Panapolis WA 96555. These are all UK phone numbers, the last two being Microsoft UK support numbers: +44 870 608 4000 or 0344 800 2400 or 0800 820 3300. Also, 999-99-9999 looks like a social security number (SSN).
 ```
 
 ## <a name="analyze-the-response"></a>Анализ ответа
@@ -76,8 +74,8 @@ Also, 999-99-9999 looks like a social security number (SSN).
 > Функция машинной классификации находится в режиме предварительной версии и поддерживает только английский язык.
 
 ```json
-{"OriginalText":"Is this a grabage or crap email abcdef@abcd.com, phone: 6657789887, IP: 255.255.255.255, 1 Microsoft Way, Redmond, WA 98052.\r\nThese are all UK phone numbers, the last two being Microsoft UK support numbers: +44 870 608 4000 or 0344 800 2400 or 0800 820 3300.\r\nAlso, 544-56-7788 looks like a social security number (SSN).",
-"NormalizedText":"Is this a grabage or crap email abcdef@ abcd. com, phone: 6657789887, IP: 255. 255. 255. 255, 1 Microsoft Way, Redmond, WA 98052. \r\nThese are all UK phone numbers, the last two being Microsoft UK support numbers: +44 870 608 4000 or 0344 800 2400 or 0800 820 3300. \r\nAlso, 544- 56- 7788 looks like a social security number ( SSN) .",
+{"OriginalText":"Is this a grabage or crap email abcdef@abcd.com, phone: 4255550111, IP: 255.255.255.255, 1234 Main Boulevard, Panapolis WA 96555.\r\nThese are all UK phone numbers: +44 123 456 7890 or 0234 567 8901 or 0456 789 0123.\r\nAlso, 999-99-9999 looks like a social security number (SSN).",
+"NormalizedText":"Is this a grabage or crap email abcdef@ abcd. com, phone: 4255550111, IP: 255. 255. 255. 255, 1234 Main Boulevard, Panapolis WA 96555. \r\nThese are all UK phone numbers: +44 123 456 7890 or 0234 567 8901 or 0456 789 0123. \r\nAlso, 999- 99- 9999 looks like a social security number ( SSN) .",
 "Misrepresentation":null,
 "PII":{  
   "Email":[  
@@ -98,33 +96,33 @@ Also, 999-99-9999 looks like a social security number (SSN).
   "Phone":[  
     {  
       "CountryCode":"US",
-      "Text":"6657789887",
+      "Text":"4255550111",
       "Index":56
     },
     {  
       "CountryCode":"US",
-      "Text":"870 608 4000",
+      "Text":"425 555 0111",
       "Index":211
     },
     {  
       "CountryCode":"UK",
-      "Text":"+44 870 608 4000",
+      "Text":"+44 123 456 7890",
       "Index":207
     },
     {  
       "CountryCode":"UK",
-      "Text":"0344 800 2400",
+      "Text":"0234 567 8901",
       "Index":227
     },
     {  
       "CountryCode":"UK",
-      "Text":"0800 820 3300",
+      "Text":"0456 789 0123",
       "Index":244
     }
   ],
   "Address":[  
     {  
-      "Text":"1 Microsoft Way, Redmond, WA 98052",
+      "Text":"1234 Main Boulevard, Panapolis WA 96555",
       "Index":89
     }
   ],
@@ -171,6 +169,6 @@ Also, 999-99-9999 looks like a social security number (SSN).
 
 Подробное описание всех разделов в ответе JSON см. в концептуальном руководстве по поиску [текста](text-moderation-api.md) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Используйте REST API в коде или следуйте инструкциям в [кратком руководстве по пакету SDK для .NET](dotnet-sdk-quickstart.md) , чтобы интегрировать его с приложением.

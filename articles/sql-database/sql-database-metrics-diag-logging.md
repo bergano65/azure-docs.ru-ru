@@ -11,12 +11,12 @@ author: danimir
 ms.author: danil
 ms.reviewer: jrasnik, carlrab
 ms.date: 11/15/2019
-ms.openlocfilehash: 27810f2ee1bc95c924003cd8a5944860df40db14
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
-ms.translationtype: HT
+ms.openlocfilehash: 95953b4f052531c9804024410e225bb0b5c62aef
+ms.sourcegitcommit: 36eb583994af0f25a04df29573ee44fbe13bd06e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74420804"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74539185"
 ---
 # <a name="azure-sql-database-metrics-and-diagnostics-logging"></a>Метрики и журналы диагностики Базы данных SQL Azure
 
@@ -79,7 +79,7 @@ ms.locfileid: "74420804"
 > Эластичные пулы и управляемые экземпляры имеют отдельные данные телеметрии диагностики из баз данных, которые они содержат. Это важно отметить, так как данные телеметрии диагностики настраиваются отдельно для каждого из этих ресурсов, как описано ниже.
 
 > [!NOTE]
-> Журналы аудита безопасности и Склсекуритяудитевентс не могут быть включены из параметров диагностики базы данных (хотя отображается на экране). Сведения о включении потоковой передачи журналов аудита см. в статьях [Настройка аудита для базы данных](sql-database-auditing.md#subheading-2)и [аудит журналов в Azure Monitor журналах и концентраторах событий Azure](https://techcommunity.microsoft.com/t5/Azure-SQL-Database/SQL-Audit-logs-in-Azure-Log-Analytics-and-Azure-Event-Hubs/ba-p/386242).
+> Сведения о включении потоковой передачи журналов аудита см. в статьях [Настройка аудита для базы данных](sql-database-auditing.md#subheading-2)и [аудит журналов в Azure Monitor журналах и концентраторах событий Azure](https://techcommunity.microsoft.com/t5/Azure-SQL-Database/SQL-Audit-logs-in-Azure-Log-Analytics-and-Azure-Event-Hubs/ba-p/386242).
 
 ## <a name="azure-portal"></a>портале Azure
 
@@ -145,7 +145,7 @@ ms.locfileid: "74420804"
 1. Повторите эти действия для каждой базы данных, которую необходимо отслеживать.
 
 > [!NOTE]
-> Журналы аудита безопасности и Склсекуритяудитевентс не могут быть включены из параметров диагностики базы данных (хотя отображается на экране). Сведения о включении потоковой передачи журналов аудита см. в статьях [Настройка аудита для базы данных](sql-database-auditing.md#subheading-2)и [аудит журналов в Azure Monitor журналах и концентраторах событий Azure](https://techcommunity.microsoft.com/t5/Azure-SQL-Database/SQL-Audit-logs-in-Azure-Log-Analytics-and-Azure-Event-Hubs/ba-p/386242).
+> Сведения о включении потоковой передачи журналов аудита см. в статьях [Настройка аудита для базы данных](sql-database-auditing.md#subheading-2)и [аудит журналов в Azure Monitor журналах и концентраторах событий Azure](https://techcommunity.microsoft.com/t5/Azure-SQL-Database/SQL-Audit-logs-in-Azure-Log-Analytics-and-Azure-Event-Hubs/ba-p/386242).
 
 > [!TIP]
 > Повторите эти шаги для каждой базы данных SQL Azure, которую вы хотите отслеживать.

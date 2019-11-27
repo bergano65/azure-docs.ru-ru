@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 12/01/2017
 ms.author: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d14debff8baf4bdeb808b32e64b389ad0f9e2f38
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 443f1eb1576f2d6eb28d0de16f37e37912b707b9
+ms.sourcegitcommit: a678f00c020f50efa9178392cd0f1ac34a86b767
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74232215"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74547359"
 ---
 # <a name="how-to-use-managed-identities-for-azure-resources-on-an-azure-vm-to-acquire-an-access-token"></a>Как использовать управляемые удостоверения для ресурсов Azure на виртуальной машине Azure для получения маркера доступа 
 
@@ -45,7 +45,7 @@ ms.locfileid: "74232215"
 
 ## <a name="overview"></a>Обзор
 
-Клиентское приложение может запрашивать [маркер доступа к приложению](../develop/developer-glossary.md#access-token) управляемых удостоверений для ресурсов Azure, чтобы получить доступ к заданному ресурсу. Этот маркер [создан с помощью субъекта-службы управляемых удостоверений для ресурсов Azure](overview.md#how-does-it-work). Таким образом клиенту не нужно регистрироваться для получения маркера доступа для собственного субъекта-службы. Маркер подходит для использования в качестве маркера носителя при [выполнении вызовов между службами, требующих учетных данных клиента](../develop/v1-oauth2-client-creds-grant-flow.md).
+Клиентское приложение может запрашивать [маркер доступа к приложению](../develop/developer-glossary.md#access-token) управляемых удостоверений для ресурсов Azure, чтобы получить доступ к заданному ресурсу. Этот маркер [создан с помощью субъекта-службы управляемых удостоверений для ресурсов Azure](overview.md#how-does-the-managed-identities-for-azure-resources-work). Таким образом клиенту не нужно регистрироваться для получения маркера доступа для собственного субъекта-службы. Маркер подходит для использования в качестве маркера носителя при [выполнении вызовов между службами, требующих учетных данных клиента](../develop/v1-oauth2-client-creds-grant-flow.md).
 
 |  |  |
 | -------------- | -------------------- |
