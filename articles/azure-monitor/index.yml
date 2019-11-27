@@ -79,7 +79,7 @@ landingContent:
   linkLists:
 - linkListType: reference
     links:
-    - text: Метрики, Автомасштабирование, Параметры диагностики, Оповещения
+    - text: Метрики, автомасштабирование, параметры диагностики, оповещения
       url: /cli/azure/monitor?view=azure-cli-latest
     - text: Log Analytics
       url: /cli/azure/ext/log-analytics/monitor?view=azure-cli-latest
@@ -89,7 +89,7 @@ landingContent:
   linkLists:
 - linkListType: reference
     links:
-    - text: Метрики, Автомасштабирование, Параметры диагностики, Оповещения
+    - text: Метрики, автомасштабирование, параметры диагностики, оповещения
       url: /powershell/module/az.monitor/?view=azps-2.6.0
     - text: Log Analytics
       url: /powershell/module/az.operationalinsights
@@ -99,7 +99,7 @@ landingContent:
   linkLists:
 - linkListType: reference
     links:
-    - text: Метрики, Автомасштабирование, Параметры диагностики, Оповещения
+   - text: Метрики, автомасштабирование, параметры диагностики, оповещения
       url: /rest/api/monitor
     - text: Log Analytics
       url: /rest/api/loganalytics
