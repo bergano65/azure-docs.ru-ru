@@ -111,7 +111,7 @@ az container create --resource-group myResourceGroup --file deploy-aci.yaml
 az group deployment create --resource-group myResourceGroup --template-file deploy-aci.json
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 ### <a name="volumes"></a>Тома
 
