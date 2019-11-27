@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 11/24/2019
 ms.author: normesta
 ms.reviewer: prishet
-ms.openlocfilehash: 95bb43f1531b6234ccb90eb7d66404ccc66f60f3
-ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
-ms.translationtype: HT
+ms.openlocfilehash: dcd75cfefd53b3c9104052146607869515e1c86e
+ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74485150"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74534293"
 ---
 # <a name="use-azure-cli-for-files--acls-in-azure-data-lake-storage-gen2-preview"></a>Использование Azure CLI для файлов & ACL в Azure Data Lake Storage 2-го поколения (Предварительная версия)
 
@@ -24,7 +24,7 @@ ms.locfileid: "74485150"
 > Расширение `storage-preview`, представленное в этой статье, сейчас находится в общедоступной предварительной версии.
 
 [Пример](https://github.com/Azure/azure-cli-extensions/tree/master/src/storage-preview#adls-gen2-support) | [Gen1 Gen2 сопоставления](https://github.com/Azure/azure-cli-extensions/tree/master/src/storage-preview#mapping-from-adls-gen1-to-adls-gen2) | [Отправить отзыв](https://github.com/Azure/azure-cli-extensions/issues)
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 > [!div class="checklist"]
 > * Подписка Azure. Ознакомьтесь с [бесплатной пробной версией Azure](https://azure.microsoft.com/pricing/free-trial/).
@@ -301,6 +301,6 @@ az storage blob directory metadata show -c my-file-system -d my-directory --acco
 * [Пример](https://github.com/Azure/azure-cli-extensions/tree/master/src/storage-preview)
 * [Сопоставление Gen1 с Gen2](https://github.com/Azure/azure-cli-extensions/tree/master/src/storage-preview#mapping-from-adls-gen1-to-adls-gen2)
 * [Отправка отзывов](https://github.com/Azure/azure-cli-extensions/issues)
-* [Пропуски известных возможностей](data-lake-storage-known-issues.md#api-scope-data-lake-client-library)
+* [Известные проблемы](data-lake-storage-known-issues.md#api-scope-data-lake-client-library)
 * [Исходный код](https://github.com/Azure/azure-cli-extensions/tree/master/src).
 

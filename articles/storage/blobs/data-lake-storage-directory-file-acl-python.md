@@ -8,12 +8,12 @@ ms.author: normesta
 ms.topic: article
 ms.subservice: data-lake-storage-gen2
 ms.reviewer: prishet
-ms.openlocfilehash: a4aebd27e5f71680610ff8cc9ba211dedfe41219
-ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
-ms.translationtype: HT
+ms.openlocfilehash: a65e8b2c5fbcdd4f6df0f8f39b24fa97b8deeca3
+ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74485111"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74534431"
 ---
 # <a name="use-python-for-files--acls-in-azure-data-lake-storage-gen2-preview"></a>Использование Python для файлов & ACL в Azure Data Lake Storage 2-го поколения (Предварительная версия)
 
@@ -24,7 +24,7 @@ ms.locfileid: "74485111"
 
 [Пакет (индекс пакета Python)](https://pypi.org/project/azure-storage-file-datalake/) | [примеры](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-file-datalake/samples) | [Справочник по API](https://azuresdkdocs.blob.core.windows.net/$web/python/azure-storage-file-datalake/12.0.0b5/index.html) | [Gen1 to Gen2 Mapping](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-file-datalake/GEN1_GEN2_MAPPING.md) | [Отправить отзыв](https://github.com/Azure/azure-sdk-for-python/issues)
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 > [!div class="checklist"]
 > * Подписка Azure. Ознакомьтесь с [бесплатной пробной версией Azure](https://azure.microsoft.com/pricing/free-trial/).
@@ -274,5 +274,5 @@ def list_directory_contents():
 * [Пакет (индекс пакета Python)](https://pypi.org/project/azure-storage-file-datalake/)
 * [Примеры](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-file-datalake/samples)
 * [Сопоставление Gen1 с Gen2](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-file-datalake/GEN1_GEN2_MAPPING.md)
-* [Пропуски известных возможностей](data-lake-storage-known-issues.md#api-scope-data-lake-client-library)
+* [Известные проблемы](data-lake-storage-known-issues.md#api-scope-data-lake-client-library)
 * [Отправить отзыв](https://github.com/Azure/azure-sdk-for-python/issues)

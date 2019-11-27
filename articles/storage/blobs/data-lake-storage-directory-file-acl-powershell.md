@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 11/24/2019
 ms.author: normesta
 ms.reviewer: prishet
-ms.openlocfilehash: 91f28c1c005c7cd06eed2b97435a4e02502aadb7
-ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
-ms.translationtype: HT
+ms.openlocfilehash: 71f90fb361e8fc45ee2ce8672990965fca801a49
+ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74484955"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74533929"
 ---
 # <a name="use-powershell-for-files--acls-in-azure-data-lake-storage-gen2-preview"></a>Использование PowerShell для файлов & ACL в Azure Data Lake Storage 2-го поколения (Предварительная версия)
 
@@ -25,7 +25,7 @@ ms.locfileid: "74484955"
 
 [Gen1 Gen2 сопоставления](#gen1-gen2-map) | [Отправить отзыв](https://github.com/Azure/azure-powershell/issues)
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 > [!div class="checklist"]
 > * Подписка Azure. Ознакомьтесь с [бесплатной пробной версией Azure](https://azure.microsoft.com/pricing/free-trial/).
@@ -382,7 +382,7 @@ Get-AzDataLakeGen2ChildItem -Context $ctx -FileSystem $filesystemName -Recurse |
 
 ## <a name="see-also"></a>См. также
 
-* [Пропуски известных возможностей](data-lake-storage-known-issues.md#api-scope-data-lake-client-library)
+* [Известные проблемы](data-lake-storage-known-issues.md#api-scope-data-lake-client-library)
 * [Использование Azure PowerShell со службой хранилища Azure](../common/storage-powershell-guide-full.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)
 * [Командлеты службы хранилища PowerShell](/powershell/module/az.storage).
 

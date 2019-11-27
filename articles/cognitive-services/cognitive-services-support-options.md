@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 11/22/2019
 ms.author: dapine
-ms.openlocfilehash: ca5274113c0c0fd6cb0e81748fbe59320a7c83c8
-ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
-ms.translationtype: HT
+ms.openlocfilehash: 2dc5bfb7459e28a4d118c5d1629133bae3a5637f
+ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74405561"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74533695"
 ---
 # <a name="azure-cognitive-services-support-and-help-options"></a>Параметры поддержки и справки Azure Cognitive Services
 
@@ -63,7 +63,7 @@ ms.locfileid: "74405561"
     <img alt='UserVoice' src='https://docs.microsoft.com/media/logos/logo-uservoice.svg'>
 </div>
 
-Чтобы запросить новые функции, опубликуйте их на платформе UserVoice. Поделитесь своими идеями по улучшению Cognitive Services и сопутствующих API для разрабатываемых вами приложений. Воспользуйтесь нашей [растущей базой знаний](https://cognitive.uservoice.com/knowledgebase) , чтобы найти ответы на часто задаваемые вопросы:
+Чтобы запросить новые функции, опубликуйте их на платформе UserVoice. Поделитесь своими идеями, чтобы сделать Cognitive Services и сопутствующие интерфейсы API лучше подходят для разрабатываемых приложений:
 
 | Служба                       | URL-адрес Cognitive Services UserVoice |
 |-------------------------------|---------------|
@@ -180,7 +180,7 @@ ms.locfileid: "74405561"
 
 Reddit — это веб-сайт с оценочным содержимым и рейтингом, предлагающий новейшие сведения об [Azure Cognitive Services](https://www.reddit.com/r/AZURE/search/?q=Cognitive%20Services&restrict_sr=1). Зарегистрированные участники могут отправлять содержимое, и другие пользователи могут проголосовать за него, что позволяет использовать наиболее актуальное содержимое в верхней части.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Что такое Azure Cognitive Services?](welcome.md)

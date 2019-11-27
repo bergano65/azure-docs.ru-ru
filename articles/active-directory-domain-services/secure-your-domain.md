@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: article
-ms.date: 09/09/2019
+ms.date: 11/26/2019
 ms.author: iainfou
-ms.openlocfilehash: 6d60663e345f297246a423e1b4e7a4fb45f352a5
-ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
+ms.openlocfilehash: 8eee516beaaf26ed25bd20f9689d26fdb1eb9b40
+ms.sourcegitcommit: a678f00c020f50efa9178392cd0f1ac34a86b767
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72754337"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74546221"
 ---
 # <a name="disable-weak-ciphers-and-password-hash-synchronization-to-secure-an-azure-ad-domain-services-managed-domain"></a>Отключение слабых шифров и синхронизации хэшей паролей для защиты управляемого домена доменных служб Azure AD
 
@@ -24,7 +24,7 @@ ms.locfileid: "72754337"
 
 В этой статье показано, как отключить шифры NTLM v1 и TLS V1 и отключить синхронизацию хэша паролей NTLM.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этой статьей вам потребуются следующие ресурсы:
 
@@ -75,7 +75,7 @@ Set-AzResource -Id $DomainServicesResource.ResourceId -Properties $securitySetti
 
 Применение параметров безопасности к управляемому домену Azure AD DS займет несколько секунд.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о процессе синхронизации см. в статье [как синхронизировать объекты и учетные данные в управляемом домене Azure AD DS][synchronization].
 

@@ -1,26 +1,26 @@
 ---
-title: Управление базой данных Azure для MariaDB — портал Azure
-description: Узнайте, как управлять сервером базы данных Azure для MariaDB из портал Azure.
-author: ajlam
-ms.author: andrela
-ms.service: mariadb
+title: Управление базой данных Azure для PostgreSQL — портал Azure
+description: Узнайте, как управлять сервером базы данных Azure для PostgreSQL из портал Azure.
+author: rachel-msft
+ms.author: raagyema
+ms.service: postgresql
 ms.topic: conceptual
-ms.date: 11/25/2019
-ms.openlocfilehash: 7e09db9308f9ecf623ce0ab0d948ed1056dd21b1
+ms.date: 11/20/2019
+ms.openlocfilehash: bcddd64afca29ac9fdd5d284fc8f809ff9e2477d
 ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/26/2019
-ms.locfileid: "74534329"
+ms.locfileid: "74535695"
 ---
-# <a name="manage-an-azure-database-for-mariadb-server-using-the-azure-portal"></a>Управление базой данных Azure для сервера MariaDB с помощью портал Azure
-В этой статье показано, как управлять базой данных Azure для серверов MariaDB. Задачи управления включают в себя вычисление и масштабирование хранилища, сброс пароля администратора и Просмотр сведений о сервере.
+# <a name="manage-an-azure-database-for-postgresql-server-using-the-azure-portal"></a>Управление базой данных Azure для сервера PostgreSQL с помощью портал Azure
+В этой статье показано, как управлять базой данных Azure для серверов PostgreSQL. Задачи управления включают в себя вычисление и масштабирование хранилища, сброс пароля администратора и Просмотр сведений о сервере.
 
 ## <a name="sign-in"></a>входа
 Войдите на [портале Azure](https://portal.azure.com).
 
 ## <a name="create-a-server"></a>Создание сервера
-Чтобы узнать, как создать и начать работу с сервером базы данных Azure для MariaDB, ознакомьтесь с [кратким](quickstart-create-mariadb-server-database-using-azure-portal.md) руководством.
+Чтобы узнать, как создать и начать работу с сервером базы данных Azure для PostgreSQL, ознакомьтесь с [кратким](quickstart-create-server-database-portal.md) руководством.
 
 ## <a name="scale-compute-and-storage"></a>Масштабирование вычислений и хранилища
 
@@ -104,4 +104,4 @@ ms.locfileid: "74534329"
 
 ## <a name="next-steps"></a>Следующие шаги
 - Сведения о [резервном копировании и восстановлении сервера](howto-restore-server-portal.md)
-- Сведения о [параметрах настройки и мониторинга в базе данных Azure для MariaDB](concepts-monitoring.md)
+- Сведения о [параметрах настройки и мониторинга в базе данных Azure для PostgreSQL](concepts-monitoring.md)
