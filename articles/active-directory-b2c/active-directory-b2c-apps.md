@@ -139,6 +139,6 @@ Accept: application/json
 
 Чтобы удалить приложение, перейдите на [портал регистрации приложений](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) и удалите его. Приложения отображаются только для владельцев. Прав администратора клиента недостаточно.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте больше о встроенных политиках, предоставляемых [потоками пользователей в Azure Active Directory B2C](active-directory-b2c-reference-policies.md).

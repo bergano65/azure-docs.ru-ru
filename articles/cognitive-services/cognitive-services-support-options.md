@@ -36,7 +36,7 @@ ms.locfileid: "74533695"
 
 Изучите диапазон [вариантов поддержки Azure и выберите](https://azure.microsoft.com/support/plans) оптимальный план, будь то разработчик, который просто запускает облачный или крупную организацию, развертывая критически важные для бизнеса приложения. Клиенты Azure могут создавать запросы на получение поддержки и управлять ими на портале Azure.
 
-* [портал Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview)
+* [Портал Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview)
 * [Портал Azure для государственных учреждений США](https://portal.azure.us)
 
 ## <a name="post-a-question-on-stack-overflow"></a>Публикация вопроса на Stack Overflow
@@ -69,18 +69,18 @@ ms.locfileid: "74533695"
 |-------------------------------|---------------|
 | Детектор аномалий              | https://cognitive.uservoice.com/forums/912196-anomaly-detector |
 | Службы Bing                 | https://cognitive.uservoice.com/forums/555907-bing-search |
-| API компьютерного зрения               | https://cognitive.uservoice.com/forums/430309-computer-vision |
+| Компьютерное зрение               | https://cognitive.uservoice.com/forums/430309-computer-vision |
 | Content Moderator             | https://cognitive.uservoice.com/forums/559960-content-moderator |
-| Custom Vision                 | https://cognitive.uservoice.com/forums/598141-custom-vision-service |
-| API распознавания лиц                          | https://cognitive.uservoice.com/forums/430315-face |
+| Пользовательское визуальное распознавание                 | https://cognitive.uservoice.com/forums/598141-custom-vision-service |
+| Распознавание лиц                          | https://cognitive.uservoice.com/forums/430315-face |
 | Форма                          | https://cognitive.uservoice.com/forums/921556-form-recognizer |
 | Иммерсивные                     | https://feedback.azure.com/forums/34192--general-feedback |
 | Распознавание речи (LUIS) | https://cognitive.uservoice.com/forums/551524-luis |
 | Персонализатор                  | https://cognitive.uservoice.com/forums/921562-personalizer |
 | QnA Maker                     | https://cognitive.uservoice.com/forums/578689-qna-maker |
-| Службы распознавания речи               | https://cognitive.uservoice.com/forums/912208-speech-service |
-| Текстовая аналитика                | https://cognitive.uservoice.com/forums/555922-text-analytics |
-| Перевод текста               | https://cognitive.uservoice.com/forums/558796-translator |
+| Службы речи               | https://cognitive.uservoice.com/forums/912208-speech-service |
+| Анализ текста                | https://cognitive.uservoice.com/forums/555922-text-analytics |
+| Translator Text               | https://cognitive.uservoice.com/forums/558796-translator |
 | Индексатор видео                 | https://cognitive.uservoice.com/forums/598144-video-indexer |
 
 ## <a name="release-notes"></a>Заметки о выпуске
@@ -92,13 +92,13 @@ ms.locfileid: "74533695"
 Заметки о выпуске обновляются по мере выпуска новых выпусков. Заметки содержат сведения о новых возможностях, улучшениях и исправлениях ошибок.
 
  - [Пользовательское визуальное распознавание](custom-vision-service/release-notes.md)
- - [API распознавания лиц](face/releasenotes.md)
+ - [API Распознавания лиц](face/releasenotes.md)
  - [Распознавание речи (LUIS)](luis/whats-new.md)
  - [Службы "Речь"](speech-service/releasenotes.md)
  - [Пакет SDK для речевых служб](speech-service/devices-sdk-release-notes.md)
  - [Анализ текста](text-analytics/whats-new.md)
 
-## <a name="stay-informed"></a>Следите за новостями
+## <a name="stay-informed"></a>Будьте в курсе
 
 <div class='icon is-large'>
     <img alt='Stay informed' src='https://docs.microsoft.com/media/common/i_blog.svg'>
@@ -106,7 +106,7 @@ ms.locfileid: "74533695"
 
 Новости о Cognitive Services доступны в [блоге Azure](https://azure.microsoft.com/blog/topics/cognitive-services/).
 
-## <a name="search"></a>поиска
+## <a name="search"></a>служба поиска.
 
 <div class='icon is-large'>
     <img alt='Search' src='https://docs.microsoft.com/media/common/i_search.svg'>
@@ -180,7 +180,7 @@ ms.locfileid: "74533695"
 
 Reddit — это веб-сайт с оценочным содержимым и рейтингом, предлагающий новейшие сведения об [Azure Cognitive Services](https://www.reddit.com/r/AZURE/search/?q=Cognitive%20Services&restrict_sr=1). Зарегистрированные участники могут отправлять содержимое, и другие пользователи могут проголосовать за него, что позволяет использовать наиболее актуальное содержимое в верхней части.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Что такое Azure Cognitive Services?](welcome.md)

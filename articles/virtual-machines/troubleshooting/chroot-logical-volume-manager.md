@@ -246,5 +246,5 @@ umount /rescue
 Если виртуальная машина работает, диск будет выключен, Перезагрузите виртуальную машину после завершения операции переключения диска.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о [последовательной консоли Azure]( https://docs.microsoft.com/azure/virtual-machines/troubleshooting/serial-console-linux)

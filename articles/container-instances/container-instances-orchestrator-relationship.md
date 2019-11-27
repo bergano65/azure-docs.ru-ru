@@ -60,7 +60,7 @@ ms.locfileid: "74533664"
 
 Для дополнительных примеров расширения Kubernetes API в бессерверные платформы контейнеров см. проект [Virtual Kubelet](https://github.com/virtual-kubelet/virtual-kubelet).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Создайте свой первый контейнер с использованием службы "Экземпляры контейнеров Azure", используя [краткое руководство](container-instances-quickstart.md).
 

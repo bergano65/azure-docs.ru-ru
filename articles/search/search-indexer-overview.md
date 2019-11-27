@@ -32,7 +32,7 @@ ms.locfileid: "74534526"
 
 * [Мастер импорта данных > портала](search-import-data-portal.md)
 * [API REST службы](https://docs.microsoft.com/rest/api/searchservice/Indexer-operations)
-* [Пакет SDK для .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.iindexersoperations)
+* [ПАКЕТ SDK .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.iindexersoperations)
 
 Изначально новый индексатор объявляется в качестве предварительной версии функции. Предварительные версии функций добавляют в API (REST и .NET), а затем после выхода общедоступной версии интегрируются на портале. При оценке нового индексатора следует запланировать написание кода.
 
@@ -48,7 +48,7 @@ ms.locfileid: "74534526"
 
 * [Хранилище BLOB-объектов Azure](search-howto-indexing-azure-blob-storage.md)
 * [Azure Data Lake Storage 2-го поколения](search-howto-index-azure-data-lake-storage.md) (Предварительная версия)
-* [Хранилище таблиц Azure](search-howto-indexing-azure-tables.md)
+* [хранилище таблиц Azure](search-howto-indexing-azure-tables.md)
 * [Azure Cosmos DB](search-howto-index-cosmosdb.md)
 * [база данных SQL Azure;](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
 * [SQL Server на виртуальных машинах Azure](search-howto-connecting-azure-sql-iaas-to-azure-search-using-indexers.md)
@@ -125,12 +125,12 @@ ms.locfileid: "74534526"
 
 История выполнения включает не более 50 последних завершенных выполнений, которые сортируются в обратном хронологическом порядке (то есть в ответе первым отображается последнее выполнение).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда вы ознакомились с основной идеей, можно переходить к изучению требований и задач, связанных с каждым типом источника данных.
 
 * [База данных Azure SQL (или SQL Server на виртуальных машинах Azure);](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
 * [Azure Cosmos DB](search-howto-index-cosmosdb.md)
 * [Хранилище BLOB-объектов Azure](search-howto-indexing-azure-blob-storage.md)
-* [Хранилище таблиц Azure](search-howto-indexing-azure-tables.md)
+* [хранилище таблиц Azure](search-howto-indexing-azure-tables.md)
 * [Индексирование больших двоичных объектов CSV с помощью индексатора больших двоичных объектов Azure Когнитивный поиск](search-howto-index-csv-blobs.md)
 * [Индексирование больших двоичных объектов JSON с помощью индексатора BLOB-объектов Когнитивный поиск Azure](search-howto-index-json-blobs.md)

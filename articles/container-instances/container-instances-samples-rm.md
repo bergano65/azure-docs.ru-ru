@@ -16,11 +16,11 @@ ms.locfileid: "74533447"
 
 Варианты развертывания см. в разделе [Развертывание](#deployment). Если вы хотите создать собственные шаблоны, службы "экземпляры контейнеров Azure" диспетчер ресурсов шаблон "сведения об [образце][ref] шаблона" и доступные свойства.
 
-## <a name="sample-templates"></a>Примеры шаблонов
+## <a name="sample-templates"></a>Шаблоны с примерами
 
 | | |
 |-|-|
-| **Приложения** ||
+| **Приложения**. ||
 | [WordPress][app-wp] | Создает веб-сайт WordPress и его базу данных MySQL в группе контейнеров. Содержимое сайта WordPress и база данных MySQL сохраняются в общей папке Azure. Также создает шлюз приложений для предоставления доступа к общедоступной сети WordPress. |
 | [MS NAV с SQL Server и IIS][app-nav] | Развертывает один контейнер Windows с полнофункциональной автономной средой Dynamics NAV или Dynamics 365 Business Central. |
 | **Тома** ||
@@ -34,17 +34,17 @@ ms.locfileid: "74533447"
 | **Ресурсы Azure** ||
 | [Создание учетной записи хранения Azure и общего файлового ресурса][az-files] | Создает учетную запись хранения и общую папку Azure в экземпляре контейнера с помощью Azure CLI.
 
-## <a name="deployment"></a>Развертывание
+## <a name="deployment"></a>Развертывание.
 
 Для развертывания ресурсов с помощью шаблонов Resource Manager доступны несколько вариантов:
 
-[Интерфейс командной строки Azure][deploy-cli]
+[Azure CLI][deploy-cli]
 
 [Azure PowerShell][deploy-powershell]
 
-[портал Azure][deploy-portal]
+[Портал Azure][deploy-portal]
 
-[ИНТЕРФЕЙС REST API][deploy-rest]
+[REST API][deploy-rest]
 
 <!-- LINKS - External -->
 [app-nav]: https://github.com/Azure/azure-quickstart-templates/tree/master/101-aci-dynamicsnav

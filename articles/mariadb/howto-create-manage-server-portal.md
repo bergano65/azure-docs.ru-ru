@@ -16,7 +16,7 @@ ms.locfileid: "74534329"
 # <a name="manage-an-azure-database-for-mariadb-server-using-the-azure-portal"></a>Управление базой данных Azure для сервера MariaDB с помощью портал Azure
 В этой статье показано, как управлять базой данных Azure для серверов MariaDB. Задачи управления включают в себя вычисление и масштабирование хранилища, сброс пароля администратора и Просмотр сведений о сервере.
 
-## <a name="sign-in"></a>входа
+## <a name="sign-in"></a>Вход
 Войдите на [портале Azure](https://portal.azure.com).
 
 ## <a name="create-a-server"></a>Создание сервера
@@ -90,7 +90,7 @@ ms.locfileid: "74534329"
 
 1. Выберите сервер в портал Azure. В окне **обзора** выберите **Удалить**.
 
-    ![delete](./media/howto-create-manage-server-portal/overview-delete.png)
+    ![удалить](./media/howto-create-manage-server-portal/overview-delete.png)
 
 2. Введите имя сервера в поле ввода, чтобы убедиться, что это сервер, который требуется удалить.
 
@@ -102,6 +102,6 @@ ms.locfileid: "74534329"
 3. Нажмите кнопку **Удалить**.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Сведения о [резервном копировании и восстановлении сервера](howto-restore-server-portal.md)
 - Сведения о [параметрах настройки и мониторинга в базе данных Azure для MariaDB](concepts-monitoring.md)

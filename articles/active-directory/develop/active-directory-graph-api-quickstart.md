@@ -124,7 +124,7 @@ Azure AD API Graph предоставляет программный досту�
 
 Дополнительные сведения о сущностях и типах Azure AD, предоставляемых графом, и сведения об операциях, которые можно выполнять с ними с помощью Graph, см. в [справочнике по Azure AD graph REST API](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/api-catalog).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте больше о [API Graph Azure AD](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/api-catalog)
 * Дополнительные сведения об [областях разрешений API Graph Azure AD](https://msdn.microsoft.com/Library/Azure/Ad/Graph/howto/azure-ad-graph-api-permission-scopes)

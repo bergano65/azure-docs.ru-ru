@@ -36,7 +36,7 @@ ms.locfileid: "74539275"
 
 Вы можете настроить роль кластера "клиент-Администратор-кластер" только во время создания кластера, указав флаг `--customer-admin-group-id`. Сведения о настройке Azure Active Directory и группы администраторов см. в статье [интеграция Azure Active Directory для Azure Red Hat OpenShift](howto-aad-app-configuration.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Настройте роль "клиент-Администратор-кластер кластера":
 > [!div class="nextstepaction"]

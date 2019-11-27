@@ -34,7 +34,7 @@ ms.locfileid: "74531521"
 
 Следуйте приведенным ниже инструкциям, чтобы создать запрос на поддержку через колонку "Справка и поддержка" Azure, доступную в портал Azure. 
 
-1. В https://portal.azure.comвыберите **Справка и поддержка**.
+1. В https://portal.azure.com выберите **Справка и поддержка**.
 
 ![Справка и поддержка](./media/resource-manager-core-quotas-request/helpsupport.png)
  

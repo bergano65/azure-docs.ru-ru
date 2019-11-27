@@ -180,7 +180,7 @@ az maintenance update list \
    -o table
 ```
 
-## <a name="apply-updates"></a>установка обновлений;
+## <a name="apply-updates"></a>Установка обновлений
 
 Используйте `az maintenance apply update` для применения ожидающих обновлений.
 
@@ -258,5 +258,5 @@ az maintenance configuration delete \
    --name myConfig
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения см. в разделе [обслуживание и обновления](maintenance-and-updates.md).

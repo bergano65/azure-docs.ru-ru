@@ -40,11 +40,11 @@ ms.locfileid: "74546243"
 
 Для настройки параметров синхронизации с областью действия используется портал Azure или PowerShell:
 
-| Action | | |
+| Действия | | |
 |--|--|--|
-| Создание управляемого домена Azure AD DS и Настройка синхронизации с заданной областью | [портал Azure](#enable-scoped-synchronization-using-the-azure-portal) | [PowerShell](#enable-scoped-synchronization-using-powershell) |
-| Изменение синхронизации с заданной областью | [портал Azure](#modify-scoped-synchronization-using-the-azure-portal) | [PowerShell](#modify-scoped-synchronization-using-powershell) |
-| Отключить синхронизацию с заданной областью | [портал Azure](#disable-scoped-synchronization-using-the-azure-portal) | [PowerShell](#disable-scoped-synchronization-using-powershell) |
+| Создание управляемого домена Azure AD DS и Настройка синхронизации с заданной областью | [Портал Azure](#enable-scoped-synchronization-using-the-azure-portal) | [PowerShell](#enable-scoped-synchronization-using-powershell) |
+| Изменение синхронизации с заданной областью | [Портал Azure](#modify-scoped-synchronization-using-the-azure-portal) | [PowerShell](#modify-scoped-synchronization-using-powershell) |
+| Отключить синхронизацию с заданной областью | [Портал Azure](#disable-scoped-synchronization-using-the-azure-portal) | [PowerShell](#disable-scoped-synchronization-using-powershell) |
 
 > [!WARNING]
 > Изменение области синхронизации приводит к тому, что управляемый домен Azure AD DS будет повторно синхронизировать все данные.
@@ -251,7 +251,7 @@ Set-AzResource -Id $DomainServicesResource.ResourceId -Properties $disableScoped
 
 Изменение области синхронизации приводит к тому, что управляемый домен Azure AD DS будет повторно синхронизировать все данные. Объекты, которые больше не требуются в управляемом домене Azure AD DS, удаляются, и повторная синхронизация может занять длительное время.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о процессе синхронизации см. в разделе [Общие сведения о синхронизации в доменных службах Azure AD](synchronization.md).
 

@@ -94,7 +94,7 @@ ms.locfileid: "74533805"
 Узнайте больше о пользователях и согласии Azure Active Directory. 
 * [Ограничьте набор пользователей](../../active-directory/develop/howto-restrict-your-app-to-a-set-of-users.md) приложения.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте [, как использовать версии](luis-how-to-manage-versions.md) для управления жизненным циклом приложения.
 * Изучите основные понятия, в том числе [ресурсы для разработки](luis-concept-keys.md#authoring-key) и [участников](luis-concept-keys.md#contributions-from-other-authors) этого ресурса.

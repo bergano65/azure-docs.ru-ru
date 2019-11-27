@@ -21,7 +21,7 @@ Azure Resource Manager позволяет просматривать журна�
 
 Сведения о развертывании можно просмотреть с помощью портал Azure, PowerShell, Azure CLI или REST API. Каждое развертывание имеет идентификатор корреляции, который используется для наблюдения за связанными событиями. Это может быть полезно при работе с технической поддержкой для устранения неполадок при развертывании.
 
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+# <a name="portaltabazure-portal"></a>[Microsoft Azure](#tab/azure-portal)
 
 1. Выберите группу ресурсов, которую необходимо проверить.
 
@@ -57,7 +57,7 @@ Get-AzResourceGroupDeployment -ResourceGroupName ExampleGroup -DeploymentName Ex
 (Get-AzResourceGroupDeployment -ResourceGroupName ExampleGroup -DeploymentName ExampleDeployment).CorrelationId
 ```
 
-# <a name="azure-clitabazure-cli"></a>[Интерфейс командной строки Azure](#tab/azure-cli)
+# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Чтобы получить список развертывания для группы ресурсов, используйте команду [AZ Group Deployment List](/cli/azure/group/deployment?view=azure-cli-latest#az-group-deployment-list).
 
@@ -113,7 +113,7 @@ GET https://management.azure.com/subscriptions/{subscription-id}/resourcegroups/
 
 Каждое развертывание может включать несколько операций. Чтобы просмотреть дополнительные сведения о развертывании, просмотрите операции развертывания. При сбое развертывания операции развертывания включают в себя сообщение об ошибке.
 
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+# <a name="portaltabazure-portal"></a>[Microsoft Azure](#tab/azure-portal)
 
 1. На странице Сводка по развертыванию выберите **сведения об операции**.
 
@@ -143,7 +143,7 @@ Get-AzResourceGroupDeploymentOperation -ResourceGroupName ExampleGroup -Deployme
 ((Get-AzResourceGroupDeploymentOperation -ResourceGroupName ExampleGroup -DeploymentName ExampleDeploy ).Properties | Where-Object ProvisioningState -eq Failed).StatusMessage.error
 ```
 
-# <a name="azure-clitabazure-cli"></a>[Интерфейс командной строки Azure](#tab/azure-cli)
+# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Чтобы просмотреть операции развертывания для развертывания в группе ресурсов, используйте команду [AZ Group Deployment Operation List](/cli/azure/group/deployment/operation?view=azure-cli-latest#az-group-deployment-operation-list) .
 
@@ -207,7 +207,7 @@ GET https://management.azure.com/subscriptions/{subscription-id}/resourcegroups/
 
 ---
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения об устранении некоторых ошибок развертывания см. в статье об [устранении распространенных ошибок при развертывании ресурсов в Azure с помощью Azure Resource Manager](resource-manager-common-deployment-errors.md).
 * Дополнительные сведения об использовании журналов действий для мониторинга других типов действий см. в статье [Операции аудита с помощью диспетчера ресурсов](resource-group-audit.md).

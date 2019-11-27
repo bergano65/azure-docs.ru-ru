@@ -31,7 +31,7 @@ ms.locfileid: "74535305"
 
 Управление Azure Active Directory требует непрерывного выполнения основных рабочих задач и процессов, которые могут не входить в состав проекта развертывания. Для оптимизации среды все равно важно настроить эти задачи. Основные задачи и их Рекомендуемые владельцы включают следующие.
 
-| Задача | владелец; |
+| Задача | Владелец. |
 | :- | :- |
 | Усовершенствования в оценке безопасности идентификации | Команда InfoSec Operations |
 | Обслуживание серверов Azure AD Connect | Группа операций IAM |
@@ -50,7 +50,7 @@ ms.locfileid: "74535305"
 #### <a name="owners-recommended-reading"></a>Рекомендованные для чтения владельцы
 
 - [Назначение ролей администратора в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-assign-admin-roles-azure-portal)
-- [Управление в Azure](https://docs.microsoft.com/azure/security/governance-in-azure)
+- [Система управления в Azure](https://docs.microsoft.com/azure/security/governance-in-azure)
 
 ## <a name="hybrid-management"></a>Гибридное управление
 
@@ -119,7 +119,7 @@ ms.locfileid: "74535305"
 - спланировать улучшения безопасности;
 - оценить успешность внесенных улучшений.
 
-![Оценка безопасности](./media/active-directory-ops-guide/active-directory-ops-img17.png)
+![Оценка безопасности.](./media/active-directory-ops-guide/active-directory-ops-img17.png)
 
 Если в вашей организации нет программы для отслеживания изменений в рейтинге безопасной идентификации, рекомендуется реализовать план и назначить владельцев для отслеживания и улучшения действий по улучшению. Организации должны устранять действия по улучшению с оценками, которые будут воздействовать более чем на 30, как можно быстрее.
 
@@ -132,7 +132,7 @@ Azure AD использует два адреса "от": <o365mc@email2.microso
 - [Проверки доступа Azure AD](https://docs.microsoft.com/azure/active-directory/governance/access-reviews-overview)
 - [Azure AD Connect Health](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-health-operations#enable-email-notifications)
 - [Защита идентификации Azure AD](https://docs.microsoft.com/azure/active-directory/identity-protection/notifications)
-- [Управление привилегированными пользователями Azure AD](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-email-notifications)
+- [Azure AD Privileged Identity Management](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-email-notifications)
 - [Уведомления об истечении срока действия сертификата корпоративного приложения](https://docs.microsoft.com/azure/active-directory/manage-apps/manage-certificates-for-federated-single-sign-on#add-email-notification-addresses-for-certificate-expiration)
 - Уведомления об подготовке к работе корпоративного приложения
 
@@ -172,7 +172,7 @@ Azure AD использует два адреса "от": <o365mc@email2.microso
 
 Блокировка доступа к локальным компонентам удостоверений, таким как Azure AD Connect, AD FS и службы SQL, так же, как и для контроллеров домена.
 
-## <a name="summary"></a>Сводка
+## <a name="summary"></a>Резюме
 
 Существует семь аспектов безопасной инфраструктуры идентификации. Этот список поможет найти действия, которые необходимо предпринять, чтобы оптимизировать операции для Azure Active Directory (Azure AD).
 
@@ -184,6 +184,6 @@ Azure AD использует два адреса "от": <o365mc@email2.microso
 - Блокировка AD FS.
 - Блокировка доступа к компьютерам с помощью локальных компонентов удостоверений.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о реализации всех возможностей, которые вы не развернули, см. в статье [планы развертывания Azure AD](active-directory-deployment-plans.md) .

@@ -27,7 +27,7 @@ ms.locfileid: "74542398"
 
 С помощью Машинное обучение Azure можно создавать образы DOCKER из обученных моделей машинного обучения. Машинное обучение Azure теперь имеет функции предварительной версии для создания этих моделей машинного обучения в приложениях функций, которые можно [развернуть в функциях Azure](https://docs.microsoft.com/azure/azure-functions/functions-deployment-technologies#docker-container).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Рабочая область машинного обучения Azure. Дополнительные сведения см. в статье [Создание рабочей области](how-to-manage-workspace.md) .
 * [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
@@ -232,7 +232,7 @@ print(blob.location)
 > [!IMPORTANT]
 > Загрузка образа может занять несколько минут. Ход выполнения можно отслеживать с помощью портала Azure.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Научитесь настраивать приложение функций в документации по [функциям](https://docs.microsoft.com/azure/azure-functions/functions-create-function-linux-custom-imag) .
 * Дополнительные сведения о службе хранилища BLOB-объектов см. в статье триггеры [хранилища BLOB-объектов Azure](https://docs.microsoft.com/azure/azure-functions/functions-bindings-storage-blob).

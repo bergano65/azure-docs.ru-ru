@@ -30,7 +30,7 @@ ms.locfileid: "74539135"
 Активация на общем компьютере позволяет развернуть Office 365 профессиональный плюс на компьютере в Организации, к которому обращается несколько пользователей. Дополнительные сведения об активации общего компьютера см. в разделе [Обзор активации общего компьютера для Office 365 профессиональный плюс](https://docs.microsoft.com/DeployOffice/overview-of-shared-computer-activation-for-office-365-proplus).
 
 Используйте [средство развертывания Office](https://www.microsoft.com/download/details.aspx?id=49117) для установки Office. Многосеансовая поддержка Windows 10 Enterprise поддерживает только следующие версии Office:
-- Office 365 профессиональный плюс.
+- Office 365 профессиональный плюс
 - Office 365 Business, входящий в состав подписки Microsoft 365 бизнес
 
 Средству развертывания Office требуется XML-файл конфигурации. Чтобы настроить следующий пример, см. раздел [Параметры конфигурации средства развертывания Office](https://docs.microsoft.com/deployoffice/configuration-options-for-the-office-2016-deployment-tool).
@@ -159,6 +159,6 @@ reg add HKLM\SOFTWARE\Policies\Microsoft\office\16.0\common\officeupdate /v hide
 
 Виртуальный рабочий стол Windows не поддерживает Skype для бизнеса и команды.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы добавили Office в образ, вы можете продолжить настройку главного образа VHD. См. раздел [Подготовка и настройка главного образа VHD](set-up-customize-master-image.md).

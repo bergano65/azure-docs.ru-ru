@@ -195,7 +195,7 @@ NetApp предлагает решение на основе SaaS, [NetApp об�
 
 Нет. Служба импорта и экспорта Azure не поддерживает Azure NetApp Files в настоящее время.
 
-## <a name="next-steps"></a>Следующие шаги  
+## <a name="next-steps"></a>Дальнейшие действия  
 
 - [Microsoft Azure ExpressRoute часто задаваемые вопросы](https://docs.microsoft.com/azure/expressroute/expressroute-faqs)
 - [Вопросы и ответы по виртуальная сеть Microsoft Azure](https://docs.microsoft.com/azure/virtual-network/virtual-networks-faq)

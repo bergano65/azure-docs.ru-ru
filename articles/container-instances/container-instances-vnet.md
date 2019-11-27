@@ -57,7 +57,7 @@ ms.locfileid: "74533267"
 
 Для развертывания групп контейнеров в виртуальной сети требуется три ресурса виртуальной сети Azure: сама [виртуальная сеть](#virtual-network), [делегированная подсеть](#subnet-delegated) в пределах этой виртуальной сети и [сетевой профиль](#network-profile). 
 
-### <a name="virtual-network"></a>виртуальную сеть
+### <a name="virtual-network"></a>Виртуальная сеть
 
 Виртуальная сеть определяет адресное пространство, в котором можно создать одну или несколько подсетей. Затем следует развернуть ресурсы Azure (например, группы контейнеров) в подсетях виртуальной сети.
 
@@ -285,7 +285,7 @@ az network profile delete --id $NETWORK_PROFILE_ID -y
 az network vnet delete --resource-group $RES_GROUP --name aci-vnet
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы развернуть новую виртуальную сеть, подсеть, сетевой профиль и группу контейнеров с помощью шаблона Resource Manager, см. страницу [создания группы контейнеров Azure с виртуальной сетью](https://github.com/Azure/azure-quickstart-templates/tree/master/101-aci-vnet
 ).

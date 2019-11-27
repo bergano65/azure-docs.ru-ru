@@ -125,7 +125,7 @@ Azure Monitor включает в себя мощную службу log Analyti
 
 Azure Digital Twins также поддерживает ведение журналов для отдельных приложений и аудит безопасности. Подробный обзор всех вариантов ведения журналов Azure, доступных для экземпляра Azure Digital Twins, вы найдете в статье [Аудит журналов Azure](../security/fundamentals/log-audit.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте больше о [журналах действий](../azure-monitor/platform/activity-logs-overview.md) Azure.
 

@@ -130,12 +130,12 @@ ms.locfileid: "74538807"
 Типичная процедура состоит из следующих шагов:
 
 1. подключение к Azure Active Directory с помощью командлета [Connect-MsolService](https://docs.microsoft.com/powershell/module/msonline/connect-msolservice?view=azureadps-1.0);
-1. получение списка устройств;
+1. Получение списка устройств
 1. отключение устройства с помощью командлета [Disable-MsolDevice](https://docs.microsoft.com/powershell/module/msonline/disable-msoldevice?view=azureadps-1.0); 
 1. Ожидание периода времени перед удалением, в зависимости от количества указанных вами дней.
 1. удаление устройства с помощью командлета [Remove-MsolDevice](https://docs.microsoft.com/powershell/module/msonline/remove-msoldevice?view=azureadps-1.0).
 
-### <a name="get-the-list-of-devices"></a>получение списка устройств;
+### <a name="get-the-list-of-devices"></a>Получение списка устройств
 
 Чтобы получить список всех устройств и сохранить эти данные в CSV-файл, выполните:
 
@@ -180,6 +180,6 @@ Get-MsolDevice -all -LogonTimeBefore $dt | select-object -Property Enabled, Devi
 - **Устройства, присоединенные к AAD** — пользователь не может использовать устройство для входа. 
 - **Мобильные устройства** — пользователь не получит доступа к ресурсам AAD, например к Office 365. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы получить общие сведения о том, как управлять устройствами на портале Azure, см. раздел [Управление устройствами с помощью портала Azure (предварительная версия)](device-management-azure-portal.md)
