@@ -6,12 +6,12 @@ ms.service: azure-migrate
 ms.topic: article
 ms.date: 11/19/2019
 ms.author: raynew
-ms.openlocfilehash: 1676ad3dde5a97d2afdb64595d51f5502f9dcc3d
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
-ms.translationtype: HT
+ms.openlocfilehash: a94d11d48728b03dd978af85db4b6c2af4887938
+ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74185936"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74534492"
 ---
 # <a name="set-up-an-appliance-for-hyper-v-vms"></a>Настройка устройства для виртуальных машин Hyper-V
 
@@ -50,7 +50,7 @@ ms.locfileid: "74185936"
 1. На компьютере, на который был скачан файл, откройте командное окно с правами администратора.
 2. Выполните следующую команду, чтобы создать хэш VHD-файла.
     - ```C:\>CertUtil -HashFile <file_location> [Hashing Algorithm]```
-    - Пример использования: ```C:\>CertUtil -HashFile C:\AzureMigrate\AzureMigrate.ova SHA256```
+    - Пример использования: ```C:\>CertUtil -HashFile C:\AzureMigrate\AzureMigrate.vhd SHA256```
 3.  Для устройства версии 2.19.11.12 созданный хэш должен соответствовать этим параметрам.
 
   **Алгоритм** | **Значение хэша**
@@ -153,6 +153,6 @@ ms.locfileid: "74185936"
 2. На странице " **Миграция Azure" — серверы** > **Azure Migrate: Оценка сервера** щелкните значок, отображающий количество **обнаруженных серверов**.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 Испытайте оценку [Hyper-V](tutorial-assess-hyper-v.md) с помощью службы "Миграция серверов Azure".
