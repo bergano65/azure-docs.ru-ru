@@ -104,10 +104,10 @@ ms.locfileid: "74481650"
 Хотя мы работаем над упрощением этой задачи, в настоящее время вы отвечаете за обновление. Вам необходимо обновить образ ОС на виртуальных машинах кластера поочередно. 
 
 ### <a name="can-i-encrypt-attached-data-disks-in-a-cluster-node-type-virtual-machine-scale-set"></a>Можно ли зашифровать присоединенные диски данных в типе узла кластера (масштабируемый набор виртуальных машин)?
-Да.  For more information, see [Create a cluster with attached data disks](../virtual-machine-scale-sets/virtual-machine-scale-sets-attached-disks.md#create-a-service-fabric-cluster-with-attached-data-disks) and [Azure Disk Encryption for Virtual Machine Scale Sets](../virtual-machine-scale-sets/disk-encryption-overview.md).
+Да.  Дополнительные сведения см. [в статье Создание кластера с подключенными дисками данных](../virtual-machine-scale-sets/virtual-machine-scale-sets-attached-disks.md#create-a-service-fabric-cluster-with-attached-data-disks) и [Шифрование дисков Azure для масштабируемых наборов виртуальных машин](../virtual-machine-scale-sets/disk-encryption-overview.md).
 
 ### <a name="can-i-use-low-priority-vms-in-a-cluster-node-type-virtual-machine-scale-set"></a>Можно ли использовать низкоприоритетные виртуальные машины с типом узла кластера (масштабируемый набор виртуальных машин)?
-Нет. Низкоприоритетные виртуальные машины не поддерживаются. 
+Нет Низкоприоритетные виртуальные машины не поддерживаются. 
 
 ### <a name="what-are-the-directories-and-processes-that-i-need-to-exclude-when-running-an-anti-virus-program-in-my-cluster"></a>Какие каталоги и процессы необходимо исключить при запуске антивирусной программы в кластере?
 
@@ -136,7 +136,7 @@ ms.locfileid: "74481650"
 Ниже приведены средства для того, чтобы ваше приложение получило учетные данные для аутентификации в KeyVault:
 
 О. Во время задания сборки и упаковки вы можете внедрить сертификат в пакет данных приложения Service Fabric и использовать его для аутентификации в KeyVault.
-B. For virtual machine scale set MSI enabled hosts, you can develop a simple PowerShell SetupEntryPoint for your SF app to get [an access token from the MSI endpoint](https://docs.microsoft.com/azure/active-directory/managed-service-identity/how-to-use-vm-token), and then [retrieve your secrets from KeyVault](/powershell/module/azurerm.keyvault/get-azurekeyvaultsecret).
+B. Для узлов с поддержкой MSI масштабируемого набора виртуальных машин можно разработать простой SetupEntryPoint PowerShell для приложения SF, чтобы получить [маркер доступа из конечной точки MSI](https://docs.microsoft.com/azure/active-directory/managed-service-identity/how-to-use-vm-token), а затем [извлечь свои секреты из KeyVault](/powershell/module/azurerm.keyvault/get-azurekeyvaultsecret).
 
 ## <a name="application-design"></a>Проектирование приложений
 
@@ -146,8 +146,8 @@ Reliable Collection обычно содержит несколько [разде
 
 - Создать службу, которая направляет запросы во все разделы другой службы для извлечения необходимых данных.
 - Создать службу, которая может получать данные из всех разделов другой службы.
-- Периодически передавать данные из каждой службы во внешнее хранилище. This approach is only appropriate if the queries you're performing are not part of your core business logic, as the external store's data will be stale.
-- Alternatively, store data that must support querying across all records directly in a data store rather than in a reliable collection. This eliminates the issue with stale data, but doesn't allow the advantages of reliable collections to be leveraged.
+- Периодически передавать данные из каждой службы во внешнее хранилище. Этот подход подходит только в том случае, если выполняемые Вами запросы не являются частью основной бизнес-логики, так как данные внешнего хранилища будут устаревшими.
+- Кроме того, храните данные, которые должны поддерживать запросы для всех записей непосредственно в хранилище данных, а не в надежной коллекции. Это устраняет проблемы с устаревшими данными, но не позволяет использовать преимущества надежных коллекций.
 
 
 ### <a name="whats-the-best-way-to-query-data-across-my-actors"></a>Как лучше запрашивать данные из моих субъектов?
@@ -191,6 +191,6 @@ Reliable Services обычно состоит из нескольких разд
 
 После объявления о начале их реализации см. дополнительные сведения в [блоге Service Fabric](https://blogs.msdn.microsoft.com/azureservicefabric/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-Learn about [core Service Fabric concepts](service-fabric-technical-overview.md) and [best practices](service-fabric-best-practices-overview.md) ice Fabric concepts](service-fabric-technical-overview.md) and [best practices](service-fabric-best-practices-overview.md)
+Сведения о [базовых Service Fabric основных понятиях](service-fabric-technical-overview.md) и рекомендациях по [управлению](service-fabric-best-practices-overview.md) Fabric] (Service-Fabric-Technical-Overview.md [) и рекомендации](service-fabric-best-practices-overview.md)

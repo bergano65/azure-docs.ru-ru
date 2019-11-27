@@ -1,6 +1,6 @@
 ---
 title: Программное создание политик
-description: This article walks you through programmatically creating and managing policies for Azure Policy with Azure CLI, Azure PowerShell, and REST API.
+description: В этой статье описывается программное создание политик и управление ими для политики Azure с помощью Azure CLI, Azure PowerShell и REST API.
 ms.date: 01/31/2019
 ms.topic: conceptual
 ms.openlocfilehash: 98af714e5aaf8e103b81e77c9960589fa0ee6b77
@@ -12,11 +12,11 @@ ms.locfileid: "74463540"
 ---
 # <a name="programmatically-create-policies"></a>Программное создание политик
 
-В этой статье описано программное создание и управление политиками. Azure Policy definitions enforce different rules and effects over your resources. Принудительное применение обеспечивает соответствие ресурсов корпоративным стандартам и соглашениям об уровне обслуживания.
+В этой статье описано программное создание и управление политиками. Определения политик Azure применяют различные правила и эффекты к ресурсам. Принудительное применение обеспечивает соответствие ресурсов корпоративным стандартам и соглашениям об уровне обслуживания.
 
 Сведения о соответствии см. в статье [Получение данных о соответствии](get-compliance-data.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 Прежде чем приступить к работе, убедитесь, что у вас есть следующие необходимые компоненты.
 
@@ -24,7 +24,7 @@ ms.locfileid: "74463540"
 
 1. Обновите свой модуль Azure PowerShell до последней версии. Дополнительные сведения см. в статье [Install the Azure PowerShell module](/powershell/azure/install-az-ps) (Установка модуля Azure PowerShell). Дополнительные сведения о последней версии см. по ссылке [для Azure PowerShell](https://github.com/Azure/azure-powershell/releases).
 
-1. Register the Azure Policy Insights resource provider using Azure PowerShell to validate that your subscription works with the resource provider. Чтобы сделать это, необходимо иметь разрешение на регистрацию поставщика ресурсов. Эта операция включается в роли участника и владельца. Выполните указанную ниже команду для регистрации поставщика ресурсов.
+1. Зарегистрируйте поставщик ресурсов Azure Policy Insights с помощью Azure PowerShell, чтобы проверить, работает подписка с поставщиком ресурсов. Чтобы сделать это, необходимо иметь разрешение на регистрацию поставщика ресурсов. Эта операция включается в роли участника и владельца. Выполните указанную ниже команду для регистрации поставщика ресурсов.
 
    ```azurepowershell-interactive
    Register-AzResourceProvider -ProviderNamespace 'Microsoft.PolicyInsights'
@@ -87,7 +87,7 @@ ms.locfileid: "74463540"
 
    Замените _ContosoRG_ именем вашей целевой группы ресурсов.
 
-   The **Scope** parameter on `New-AzPolicyAssignment` works with management group, subscription, resource group, or a single resource. Параметр использует полный путь к ресурсу, возвращаемый свойством **ResourceId** в `Get-AzResourceGroup`. Формат параметра **Scope** для каждого контейнера приведен ниже. Замените `{rName}`, `{rgName}`, `{subId}` и `{mgName}` именем ресурса, именем группы ресурсов, идентификатором подписки и именем группы управления соответственно.
+   Параметр **области** в `New-AzPolicyAssignment` работает с группой управления, подпиской, группой ресурсов или одним ресурсом. Параметр использует полный путь к ресурсу, возвращаемый свойством **ResourceId** в `Get-AzResourceGroup`. Формат параметра **Scope** для каждого контейнера приведен ниже. Замените `{rName}`, `{rgName}`, `{subId}` и `{mgName}` именем ресурса, именем группы ресурсов, идентификатором подписки и именем группы управления соответственно.
    Замените `{rType}` **типом ресурса**, таким как `Microsoft.Compute/virtualMachines` для виртуальной машины.
 
    - Ресурс: `/subscriptions/{subID}/resourceGroups/{rgName}/providers/{rType}/{rName}`.
@@ -141,7 +141,7 @@ ms.locfileid: "74463540"
 
    Замените {subscriptionId} идентификатором своей подписки или {managementGroupId} идентификатором своей [группы управления](../../management-groups/overview.md).
 
-   For more information about the structure of the query, see [Azure Policy Definitions – Create or Update](/rest/api/resources/policydefinitions/createorupdate) and [Policy Definitions – Create or Update At Management Group](/rest/api/resources/policydefinitions/createorupdateatmanagementgroup)
+   Дополнительные сведения о структуре запроса см. в разделе [определения политик Azure — создание или обновление](/rest/api/resources/policydefinitions/createorupdate) и [определения политик — создание или обновление в группе управления](/rest/api/resources/policydefinitions/createorupdateatmanagementgroup) .
 
 Используйте следующую процедуру для создания назначения политики и назначьте определение политики на уровне группы ресурсов.
 
@@ -223,7 +223,7 @@ ms.locfileid: "74463540"
    - Подписка — `/subscriptions/{subID}`
    - Группа управления — `/providers/Microsoft.Management/managementGroups/{mgName}`
 
-You can get the Azure Policy Definition ID by using PowerShell with the following command:
+Идентификатор определения политики Azure можно получить с помощью PowerShell, выполнив следующую команду:
 
 ```azurecli-interactive
 az policy definition show --name 'Audit Storage Accounts with Open Public Networks'
@@ -237,12 +237,12 @@ az policy definition show --name 'Audit Storage Accounts with Open Public Networ
 
 Дополнительные сведения об управлении политиками ресурсов с помощью Azure CLI см. в [этой статье](/cli/azure/policy?view=azure-cli-latest).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о командах и запросах, используемых в этой статье, см. в следующих ресурсах.
 
 - [Ресурсы REST API Azure](/rest/api/resources/)
 - [Модули Azure PowerShell](/powershell/module/az.resources/#policies).
 - [Команды Azure CLI для роботы с политикой](/cli/azure/policy?view=azure-cli-latest)
-- [Azure Policy Insights resource provider REST API reference](/rest/api/policy-insights)
+- [Справочник по поставщику ресурсов Azure Policy Insights REST API](/rest/api/policy-insights)
 - [Организация ресурсов с помощью групп управления Azure.](../../management-groups/overview.md)

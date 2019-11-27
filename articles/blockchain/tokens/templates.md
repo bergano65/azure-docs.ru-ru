@@ -1,6 +1,6 @@
 ---
-title: Azure Blockchain Tokens templates
-description: Azure Blockchain Tokens templates are standardized and reusable templates that simplify the creation and deployment of ledger-based tokens.
+title: Шаблоны токенов Azure Блокчейн
+description: Шаблоны токенов Azure Блокчейн — это стандартизированные и многократно используемые шаблоны, упрощающие создание и развертывание маркеров на основе главной книги.
 ms.date: 11/04/2019
 ms.topic: conceptual
 ms.reviewer: brendal
@@ -11,81 +11,81 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74324986"
 ---
-# <a name="azure-blockchain-tokens-templates"></a>Azure Blockchain Tokens templates
+# <a name="azure-blockchain-tokens-templates"></a>Шаблоны токенов Azure Блокчейн
 
 [!INCLUDE [Preview note](./includes/preview.md)]
 
-An Azure Blockchain Tokens template is a standardized and reusable template that simplifies the creation and deployment of ledger-based tokens. A template consists of a formula, which is based off the [Token Taxonomy Framework (TTF)](overview.md#token-taxonomy-framework) grammar. The grammar encompasses the base token type and the set of behaviors for the token.  
+Шаблон Azure Блокчейн tokens — это стандартизированный и многократно используемый шаблон, упрощающий создание и развертывание маркеров на основе главной книги. Шаблон состоит из формулы, которая основана на грамматике [токена таксономии (TTF)](overview.md#token-taxonomy-framework) . Грамматика охватывает базовый тип токена и набор поведений для маркера.  
 
-For example, **τϜ{d,m,b,r}** token template describes a fungible base token that is sub-dividable, mintable, burnable, and has role support.
+Например, шаблон токена **τϝ {d, m, b, r}** описывает взаимозаменяемость Базовый маркер, который является подмножеством, минтабле, записываемым и имеет поддержку ролей.
   
-## <a name="base-token-types"></a>Base token types
+## <a name="base-token-types"></a>Базовые типы токенов
 
-When defining and creating the ledger-based token for your particular asset, it is important to consider what base token to use.
+При определении и создании маркера на основе главной книги для конкретного ресурса важно учитывать, какой базовый токен следует использовать.
 
-### <a name="fungible"></a>Fungible
+### <a name="fungible"></a>Взаимозаменяемость
 
-Fungible tokens (𝜏F) have interchangeable value with each other as long as they are in the same class or series. One token has the same value as another token or a given quantity of tokens has the same value as another equal quantity. For example, a dollar is a fungible token. If two people are each holding a dollar bill, they can exchange these dollar bills without consequence. The dollar bills have equal value. 
+Маркеры взаимозаменяемость (Τф) имеют взаимозаменяемое значение друг с другом, если они находятся в одном классе или ряду. Один маркер имеет то же значение, что и другой токен, или заданное количество токенов имеет то же значение, что и другое равное количество. Например, доллар является взаимозаменяемость токеном. Если каждый из двух человек удерживает счет за доллар, он может обмениваться этими ведомостью за долларами без последствий. Счета за доллары имеют одинаковое значение. 
 
-### <a name="non-fungible"></a>Non-Fungible
+### <a name="non-fungible"></a>Не взаимозаменяемость
 
-Non-fungible tokens (𝜏N) are not interchangeable with other tokens of the same type as they typically have different values. For example, a property title is a non-fungible token. Property titles to two different apartments in an apartment complex are not necessarily of equal value, due to either the location of the unit or which floor the unit is on. The perceived value of the two property title tokens are not equal.
+Токены, отличные от взаимозаменяемость (Τн), не взаимозаменяемы с другими токенами того же типа, которые обычно имеют разные значения. Например, заголовок свойства — это не взаимозаменяемость токен. Заголовки свойств для двух разных подразделений в апартаменте не обязательно являются равными значениями из-за расположения единицы или основания, в котором находится единица. Воспринимаемое значение двух маркеров заголовка свойства не равно.
 
 ### <a name="hybrid"></a>Гибридная среда
 
-Hybrid tokens are tokens that have components of both fungible tokens and non-fungible tokens. A hybrid token is a base token type that owns a class of the other token type.
+Гибридные токены — это маркеры, которые содержат компоненты как маркеров взаимозаменяемость, так и токенов, отличных от взаимозаменяемость. Гибридный токен — это базовый тип токена, который владеет классом другого типа токена.
 
-#### <a name="hybrid-non-fungible-base-with-fungible-segments"></a>Hybrid non-fungible base with fungible segments
+#### <a name="hybrid-non-fungible-base-with-fungible-segments"></a>Гибридная база не взаимозаменяемость с сегментами взаимозаменяемость
 
-A hybrid non-fungible base with fungible segments token has a non-fungible base with fungible token segments.
-For example, a concert ticket is a hybrid token where the date and time of the concert is the non-fungible base token. The tickets in various seating sections for the given concert are the segments with fungible tokens. The tickets are exchangeable in their individual seating sections, but not across sections.
+Гибридная база не взаимозаменяемость с маркером сегментов взаимозаменяемость имеет базовую базу, отличную от взаимозаменяемость с сегментами взаимозаменяемость Token.
+Например, билет концерта — это гибридный маркер, в котором Дата и время концерта являются базовым маркером, не являющимся взаимозаменяемость. Билеты в различных разделах для данного концерта — это сегменты с токенами взаимозаменяемость. Билеты могут обмениваться в отдельных частях, но не в разделах.
 
-#### <a name="hybrid-fungible-base-with-non-fungible-segments"></a>Hybrid fungible base with non-fungible segments
+#### <a name="hybrid-fungible-base-with-non-fungible-segments"></a>Гибридная база взаимозаменяемость с сегментами, не являющимися взаимозаменяемость
 
-A hybrid fungible base with a non-fungible segments token has a fungible base with non-fungible token segments. For example, a mortgage backed security is a hybrid token where multiple owners are the fungible base that is split across many owners. The security is interchangeable. The individual mortgages are the non-fungible segments that represent the specific mortgage backed security.
+Гибридная база взаимозаменяемость с маркером взаимозаменяемость сегментов имеет базовую взаимозаменяемость с сегментами токенов, отличными от взаимозаменяемость. Например, безопасность с закладкой — это гибридный маркер, в котором несколько владельцев являются основой взаимозаменяемость, разделенной между несколькими владельцами. Безопасность является взаимозаменяемой. Отдельные закладки — это взаимозаменяемость сегменты, представляющие конкретную защиту от закладов.
 
-## <a name="token-behaviors"></a>Token behaviors
+## <a name="token-behaviors"></a>Поведения токенов
 
-A token behavior defines capabilities or restrictions of the token. The behavior includes supporting properties that are a part of the token definition. Behaviors can be applied across all token types or just one. Behaviors can be internal or external depending on what the behavior effects. An internal behavior enables or restricts properties on the token itself. An external behavior enables or restricts the invocation of the behavior from an external actor.
+Поведение маркера определяет возможности или ограничения маркера. Поведение включает вспомогательные свойства, которые являются частью определения маркера. Поведения могут применяться ко всем типам маркеров или только к одному. Поведение может быть внутренним или внешним в зависимости от влияния поведения. Внутреннее поведение включает или ограничивают свойства в самом маркере. Внешнее поведение позволяет или ограничивать вызов поведения внешнего субъекта.
 
-For more information about Azure Blockchain Tokens supported Token Taxonomy Framework (TTF) token behaviors, see [token composability](composability.md).
+Дополнительные сведения о поведении маркеров Azure Блокчейн Token Framework (TTF) см. в разделе [Token компонуемости](composability.md).
 
-## <a name="pre-built-token-templates"></a>Pre-built token templates
+## <a name="pre-built-token-templates"></a>Предварительно созданные шаблоны маркеров
 
-Azure Blockchain Tokens provides four pre-built token templates that can be used without modification. You can call into these pre-built templates for most use cases to get started creating, deploying, and managing your tokens quickly.
+Маркеры Azure Блокчейн предоставляют четыре готовые шаблоны маркеров, которые можно использовать без изменения. Вы можете вызвать эти предварительно созданные шаблоны для большинства вариантов использования, чтобы быстро приступить к созданию, развертыванию и управлению токенами.
 
-### <a name="commodity-tokens"></a>Commodity tokens
+### <a name="commodity-tokens"></a>Товарные маркеры
 
-Commodity tokens have consistent value and are transferrable. For example, a barrel of oil or a unit of energy.
+Товарные маркеры имеют одинаковое значение и являются локальную систему. Например, произдвигать топливо или единицу энергии.
 
-**𝜏F{~d,t,m,b,r}** - fungible, whole, transferable, mintable, burnable, and have role support
+**τф {~ d, t, m, b, r}** -взаимозаменяемость, целое, передаваемые, минтабле, записываемые и поддерживаемые ролями
 
-Many blockchain scenarios require transparency and visibility across the supply chain or multiple organizations. Commodity tokens are based off these common use cases. The tokens are interchangeable and consistent. The commodity token template is flexible and customizable with metadata.
+Для многих сценариев блокчейн требуется прозрачность и видимость в цепочке поставок или в нескольких организациях. Токены товара основываются на этих распространенных вариантах использования. Токены являются взаимозаменяемыми и совместимыми. Шаблон товарного токена является гибким и настраивается с помощью метаданных.
 
-### <a name="qualified-tokens"></a>Qualified tokens
+### <a name="qualified-tokens"></a>Полные токены
 
-Qualified tokens represent something earned and are usually associated with one entity and cannot be transferred. For example, a diploma or a parking violation.
+Полные маркеры представляют что-то освоенное и обычно связаны с одной сущностью и не могут быть переданы. Например, нарушение диплома или стоянки.
 
-**𝜏N{s,~t}** - non-fungible, singleton, and non-transferable
+**τн {s, ~ t}** — не-взаимозаменяемость, Singleton и non-TX
 
-Various audit and attestation scenarios require that the ownership of the token cannot be changed. There is a set of use cases, which have a need to provide a qualified token whether the association is good or bad.
+Для различных сценариев аудита и аттестации необходимо, чтобы владение маркером не было изменено. Существует набор вариантов использования, которым необходимо предоставить описательный маркер, если ассоциация является хорошей или плохой.
 
-### <a name="asset-tokens"></a>Asset tokens
+### <a name="asset-tokens"></a>Маркеры активов
 
-Asset tokens have unique value dependent on the item and are not commoditized. For example, a museum artifact or a property title.
+Маркеры активов имеют уникальное значение, зависящее от элемента, и не превращены. Например, музей-артефакт или заголовок свойства.
 
-**𝜏N{s,t}** - non-fungible, singleton, and transferable
+**τн {s, t}** — не-взаимозаменяемость, Singleton и передаваемые
 
-Asset tokens may be confused with commodity tokens. The major difference between the two tokens is that asset tokens are inherently unique, and value is independent of the type of token it is. For example, a piece of art like an oil painting by an established artist is an asset token. However, an art print of the Mona Lisa is considered a commodity token. Similarly, a property title is an asset token since the value exists in the subjective qualities of the property.
+Маркеры активов можно путать с маркерами товара. Основное различие между двумя маркерами заключается в том, что маркеры активов по сути уникальны, а значение не зависит от типа токена. Например, в качестве маркера актива может показаться, что художественная прорисовка с помощью установленного исполнителя. Однако художественная печать Mona Lisa считается товарным маркером. Аналогично, заголовок свойства — это маркер актива, так как его значение существует в субъективных качествах свойства.
 
-### <a name="ticket-tokens"></a>Ticket tokens
+### <a name="ticket-tokens"></a>Маркеры билетов
 
-Ticket tokens have consistent value but typically expire. For example, a plane ticket.
+Маркеры билетов имеют одинаковое значение, но обычно истекает. Например, билет на плоскость.
 
-**𝜏N{m,b,r}** - non-fungible, mintable, burnable, and have role support.
+**τн {m, b, r}** — не взаимозаменяемость, минтабле, записываемые и поддерживаемые ролями.
 
-Ticket tokens typically have an expiry date that makes them different from a regular commodity token. For example, an airplane ticket, concert ticket, or sports ticket all have options of assigned seating with specific dates of use. You cannot easily interchange tickets between dates or seating areas.
+Маркеры билетов обычно имеют дату окончания срока действия, которая делает их отличными от обычного маркера товара. Например, билет на самолет, концертный билет или спортивный запрос имеют параметры назначенных участников с конкретными датами использования. Вы не можете легко осуществлять обмен билетами между датами или областями.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-If you require more flexibility for your scenario, learn about creating your own token templates using [token composability](composability.md).
+Если вам требуется дополнительная гибкость для вашего сценария, Узнайте о создании собственных шаблонов маркеров с помощью [Token компонуемости](composability.md).

@@ -1,6 +1,6 @@
 ---
-title: Deploy GPU-enabled container instance
-description: Learn how to deploy Azure container instances to run compute-intensive container apps using GPU resources.
+title: Развернуть экземпляр контейнера с поддержкой GPU
+description: Узнайте, как развертывать экземпляры контейнеров Azure для запуска приложений-контейнеров с ресурсоемкими вычислениями с помощью ресурсов GPU.
 ms.topic: article
 ms.date: 04/17/2019
 ms.openlocfilehash: ea3b0ccba2d84487356f4bbd404cec3af1d0979a
@@ -14,7 +14,7 @@ ms.locfileid: "74484181"
 
 Чтобы выполнить определенные ресурсоемкие рабочие нагрузки в Экземплярах контейнеров Azure, разверните [группы контейнеров](container-instances-container-groups.md) с *ресурсами GPU*. Экземпляры контейнеров в группе могут получить доступ к одному графическому процессору NVIDIA Tesla или нескольким при выполнении рабочих нагрузок контейнеров, таких как CUDA и приложения глубокого обучения.
 
-This article shows how to add GPU resources when you deploy a container group by using a [YAML file](container-instances-multi-container-yaml.md) or [Resource Manager template](container-instances-multi-container-group.md). You can also specify GPU resources when you deploy a container instance using the Azure portal.
+В этой статье показано, как добавлять ресурсы GPU при развертывании группы контейнеров с помощью [файла YAML](container-instances-multi-container-yaml.md) или [шаблона диспетчер ресурсов](container-instances-multi-container-group.md). Можно также указать ресурсы GPU при развертывании экземпляра контейнера с помощью портал Azure.
 
 > [!IMPORTANT]
 > Сейчас эта функция доступна в предварительной версии, и применяются [некоторые ограничения](#preview-limitations). Предварительные версии предоставляются при условии, что вы принимаете [дополнительные условия использования][terms-of-use]. Некоторые аспекты этой функции могут быть изменены до выхода общедоступной версии.
@@ -27,9 +27,9 @@ This article shows how to add GPU resources when you deploy a container group by
 
 Со временем будут поддерживаться другие регионы.
 
-**Supported OS types**: Linux only
+**Поддерживаемые типы ОС**: только Linux
 
-**Additional limitations**: GPU resources can't be used when deploying a container group into a [virtual network](container-instances-vnet.md).
+**Дополнительные ограничения**: ресурсы GPU нельзя использовать при развертывании группы контейнеров в [виртуальной сети](container-instances-vnet.md).
 
 ## <a name="about-gpu-resources"></a>Сведения о ресурсах GPU
 
@@ -37,10 +37,10 @@ This article shows how to add GPU resources when you deploy a container group by
 
 Чтобы использовать GPU в экземпляре контейнера, укажите *ресурс GPU* со следующими сведениями:
 
-* **Count** - The number of GPUs: **1**, **2**, or **4**.
-* **SKU** - The GPU SKU: **K80**, **P100**, or **V100**. Каждый номер SKU сопоставляется с графическим процессором NVIDIA Tesla в одном из следующих семейств виртуальных машин с поддержкой GPU Azure:
+* **Count** — число GPU: **1**, **2**или **4**.
+* **SKU** — номер SKU GPU: **K80**, **P100**или **V100**. Каждый номер SKU сопоставляется с графическим процессором NVIDIA Tesla в одном из следующих семейств виртуальных машин с поддержкой GPU Azure:
 
-  | SKU | Семейство виртуальных машин |
+  | Sku | Семейство виртуальных машин |
   | --- | --- |
   | K80 | [NC](../virtual-machines/linux/sizes-gpu.md#nc-series) |
   | P100 | [NCv2](../virtual-machines/linux/sizes-gpu.md#ncv2-series) |
@@ -48,7 +48,7 @@ This article shows how to add GPU resources when you deploy a container group by
 
 [!INCLUDE [container-instances-gpu-limits](../../includes/container-instances-gpu-limits.md)]
 
-When deploying GPU resources, set CPU and memory resources appropriate for the workload, up to the maximum values shown in the preceding table. These values are currently larger than the CPU and memory resources available in container groups without GPU resources.  
+При развертывании ресурсов GPU задайте ресурсы ЦП и памяти, подходящие для рабочей нагрузки, до максимальных значений, приведенных в предыдущей таблице. В настоящее время эти значения больше ресурсов ЦП и памяти, доступных в группах контейнеров без ресурсов GPU.  
 
 ### <a name="things-to-know"></a>Полезная информация
 
@@ -60,9 +60,9 @@ When deploying GPU resources, set CPU and memory resources appropriate for the w
 
 * **Драйверы CUDA**. Экземпляры контейнеров с ресурсами GPU предварительно снабжены драйверами NVIDIA CUDA и средами выполнения контейнеров, поэтому вы можете использовать образы контейнеров, разработанные для рабочих нагрузок CUDA.
 
-  We support CUDA 9.0 at this stage. For example, you can use following base images for your Docker file:
-  * [nvidia/cuda:9.0-base-ubuntu16.04](https://hub.docker.com/r/nvidia/cuda/)
-  * [tensorflow/tensorflow: 1.12.0-gpu-py3](https://hub.docker.com/r/tensorflow/tensorflow)
+  На этом этапе мы поддерживаем CUDA 9,0. Например, можно использовать следующие базовые образы для файла docker:
+  * [NVIDIA/CUDA: 9.0-base-16.04 Ubuntu](https://hub.docker.com/r/nvidia/cuda/)
+  * [tensorflow/tensorflow: 1.12.0-GPU-PY3](https://hub.docker.com/r/tensorflow/tensorflow)
     
 ## <a name="yaml-example"></a>Пример YAML
 
@@ -88,13 +88,13 @@ properties:
   restartPolicy: OnFailure
 ```
 
-Deploy the container group with the [az container create][az-container-create] command, specifying the YAML file name for the `--file` parameter. Необходимо указать имя группы ресурсов и расположение группы контейнеров, которое поддерживает ресурсы GPU, например *eastus*.  
+Разверните группу контейнеров с помощью команды [AZ Container Create][az-container-create] , указав имя файла YAML для параметра `--file`. Необходимо указать имя группы ресурсов и расположение группы контейнеров, которое поддерживает ресурсы GPU, например *eastus*.  
 
 ```azurecli
 az container create --resource-group myResourceGroup --file gpu-deploy-aci.yaml --location eastus
 ```
 
-Развертывание занимает несколько минут. Затем контейнер запускается и выполняет операцию сложения векторов CUDA. Run the [az container logs][az-container-logs] command to view the log output:
+Развертывание занимает несколько минут. Затем контейнер запускается и выполняет операцию сложения векторов CUDA. Выполните команду [AZ Container Logs][az-container-logs] , чтобы просмотреть выходные данные журнала:
 
 ```azurecli
 az container logs --resource-group myResourceGroup --name gpucontainergroup --container-name gpucontainer
@@ -113,7 +113,7 @@ Done
 
 ## <a name="resource-manager-template-example"></a>Пример шаблона Resource Manager
 
-Чтобы развернуть группу контейнеров с ресурсами GPU, также можно воспользоваться [шаблоном Resource Manager](container-instances-multi-container-group.md). Начните с создания файла с именем `gpudeploy.json` и скопируйте в него приведенный ниже код JSON. This example deploys a container instance with a V100 GPU that runs a [TensorFlow](https://www.tensorflow.org/) training job against the MNIST dataset. Запросов ресурсов достаточно для запуска рабочей нагрузки.
+Чтобы развернуть группу контейнеров с ресурсами GPU, также можно воспользоваться [шаблоном Resource Manager](container-instances-multi-container-group.md). Начните с создания файла с именем `gpudeploy.json` и скопируйте в него приведенный ниже код JSON. В этом примере выполняется развертывание экземпляра контейнера с помощью GPU V100, который запускает задание обучения [TensorFlow](https://www.tensorflow.org/) для набора данных MNIST. Запросов ресурсов достаточно для запуска рабочей нагрузки.
 
 ```JSON
 {
@@ -171,7 +171,7 @@ Done
 az group deployment create --resource-group myResourceGroup --template-file gpudeploy.json
 ```
 
-Развертывание занимает несколько минут. Затем контейнер запустится и выполнит задание TensorFlow. Run the [az container logs][az-container-logs] command to view the log output:
+Развертывание занимает несколько минут. Затем контейнер запустится и выполнит задание TensorFlow. Выполните команду [AZ Container Logs][az-container-logs] , чтобы просмотреть выходные данные журнала:
 
 ```azurecli
 az container logs --resource-group myResourceGroup --name gpucontainergrouprm --container-name gpucontainer
@@ -206,7 +206,7 @@ Adding run metadata for 999
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Так как использование ресурсов GPU может быть дорогостоящим, следите, чтобы ваши контейнеры не работали в течение длительного времени. Monitor your containers in the Azure portal, or check the status of a container group with the [az container show][az-container-show] command. Пример.
+Так как использование ресурсов GPU может быть дорогостоящим, следите, чтобы ваши контейнеры не работали в течение длительного времени. Отслеживайте контейнеры в портал Azure или проверьте состояние группы контейнеров с помощью команды [AZ Container показывать][az-container-show] . Например,
 
 ```azurecli
 az container show --resource-group myResourceGroup --name gpucontainergroup --output table
@@ -219,7 +219,7 @@ az container delete --resource-group myResourceGroup --name gpucontainergroup -y
 az container delete --resource-group myResourceGroup --name gpucontainergrouprm -y
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * Ознакомьтесь со сведениями о развертывании группы контейнеров с помощью [файла YAML](container-instances-multi-container-yaml.md) или [шаблона Resource Manager](container-instances-multi-container-group.md).
 * Ознакомьтесь со статьей [Размеры виртуальных машин, оптимизированных для GPU](../virtual-machines/linux/sizes-gpu.md).

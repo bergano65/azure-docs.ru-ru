@@ -1,6 +1,6 @@
 ---
-title: Security in Azure Database for MySQL - Single Server
-description: An overview of the security features in Azure Database for MySQL - Single Server.
+title: Безопасность в базе данных Azure для MySQL — одиночный сервер
+description: Общие сведения о функциях безопасности в базе данных Azure для MySQL — один сервер.
 author: ajlam
 ms.author: andrela
 ms.service: mysql
@@ -13,42 +13,42 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/25/2019
 ms.locfileid: "74485059"
 ---
-# <a name="security-in-azure-database-for-mysql---single-server"></a>Security in Azure Database for MySQL - Single Server
+# <a name="security-in-azure-database-for-mysql---single-server"></a>Безопасность в базе данных Azure для MySQL — одиночный сервер
 
-There are multiple layers of security that are available to protect the data on your Azure Database for MySQL server. This article outlines those security options.
+Существует несколько уровней безопасности, которые можно использовать для защиты данных на сервере базы данных Azure для MySQL. В этой статье описываются эти возможности безопасности.
 
 ## <a name="information-protection-and-encryption"></a>Защита и шифрование информации
 
-### <a name="in-transit"></a>In-transit
-Azure Database for MySQL secures your data by encrypting data in-transit with Transport Layer Security. Encryption (SSL/TLS) is enforced by default.
+### <a name="in-transit"></a>Транзитный
+База данных Azure для MySQL обеспечивает защиту данных путем шифрования транзитных данных с защитой транспортного уровня. Шифрование (SSL/TLS) применяется по умолчанию.
 
-### <a name="at-rest"></a>At-rest
-В Базе данных Azure для MySQL используется проверенный криптографический модуль FIPS 140-2 для шифрования неактивных данных. Data, including backups, are encrypted on disk, with the exception of temporary files created while running queries. Служба использует 256-разрядный шифр AES, включенный в шифрование службы хранилища Azure. Ключами управляет система. Шифрование хранилища всегда включено, и его нельзя отключить.
+### <a name="at-rest"></a>Неактивных
+В Базе данных Azure для MySQL используется проверенный криптографический модуль FIPS 140-2 для шифрования неактивных данных. Данные, включая резервные копии, шифруются на диске, за исключением временных файлов, созданных во время выполнения запросов. Служба использует 256-разрядный шифр AES, включенный в шифрование службы хранилища Azure. Ключами управляет система. Шифрование хранилища всегда включено, и его нельзя отключить.
 
 
 ## <a name="network-security"></a>Безопасность сети
-Connections to an Azure Database for MySQL server are first routed through a regional gateway. The gateway has a publicly accessible IP, while the server IP addresses are protected. For more information about the gateway, visit the [connectivity architecture article](concepts-connectivity-architecture.md).  
+Подключения к серверу базы данных Azure для MySQL сначала направляются через региональный шлюз. Шлюз имеет общедоступный IP-адрес, а IP-адреса сервера защищены. Дополнительные сведения о шлюзе см. в [статье Архитектура подключения](concepts-connectivity-architecture.md).  
 
-A newly created Azure Database for MySQL server has a firewall that blocks all external connections. Though they reach the gateway, they are not allowed to connect to the server. 
+Недавно созданный сервер базы данных Azure для MySQL имеет брандмауэр, который блокирует все внешние подключения. Хотя они достигают шлюза, им не разрешено подключаться к серверу. 
 
 ### <a name="ip-firewall-rules"></a>Правила брандмауэра для IP-адресов
-IP firewall rules grant access to servers based on the originating IP address of each request. See the [firewall rules overview](concepts-firewall-rules.md) for more information.
+Правила брандмауэра IP-адресов предоставляют доступ к серверам на основе исходного IP-адреса каждого запроса. Дополнительные сведения см. в [обзоре правил брандмауэра](concepts-firewall-rules.md) .
 
 ### <a name="virtual-network-firewall-rules"></a>Правила брандмауэра для виртуальной сети
-Virtual network service endpoints extend your virtual network connectivity over the Azure backbone. Using virtual network rules you can enable your Azure Database for MySQL server to allow connections from selected subnets in a virtual network. For more information, see the [virtual network service endpoint overview](concepts-data-access-and-security-vnet.md).
+Конечные точки службы виртуальной сети расширяют возможности подключения к виртуальной сети по магистрали Azure. С помощью правил виртуальной сети можно включить сервер базы данных Azure для MySQL, чтобы разрешить подключения из выбранных подсетей в виртуальной сети. Дополнительные сведения см. в разделе [Общие сведения о конечной точке службы виртуальной сети](concepts-data-access-and-security-vnet.md).
 
 
 ## <a name="access-management"></a>управление доступом
 
-While creating the Azure Database for MySQL server, you provide credentials for an administrator user. This administrator can be used to create additional MySQL users.
+При создании сервера базы данных Azure для MySQL вы предоставляете учетные данные для пользователя с правами администратора. Этот администратор может использоваться для создания дополнительных пользователей MySQL.
 
 
 ## <a name="threat-protection"></a>Защита от угроз
 
-You can opt in to [Advanced Threat Protection](concepts-data-access-and-security-threat-protection.md) which detects anomalous activities indicating unusual and potentially harmful attempts to access or exploit servers.
+Вы можете принять участие в [расширенной защите от угроз](concepts-data-access-and-security-threat-protection.md) , которая обнаруживает аномальные действия, указывающие на необычные и потенциально опасные попытки доступа или использования серверов.
 
-[Audit logging](concepts-audit-logs.md) is available to track activity in your databases. 
+[Ведение журнала аудита](concepts-audit-logs.md) доступно для наблюдения за действиями в базах данных. 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
-- Enable firewall rules for [IPs](concepts-firewall-rules.md) or [virtual networks](concepts-data-access-and-security-vnet.md)
+## <a name="next-steps"></a>Дополнительная информация
+- Включение правил брандмауэра для [IP-адресов](concepts-firewall-rules.md) или [виртуальных сетей](concepts-data-access-and-security-vnet.md)
